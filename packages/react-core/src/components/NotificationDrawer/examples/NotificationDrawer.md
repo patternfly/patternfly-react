@@ -72,7 +72,7 @@ class BasicNotificationDrawer extends React.Component {
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
       <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
+        Disabled link
       </DropdownItem>
     ];
     return (
@@ -291,7 +291,7 @@ class GroupNotificationDrawer extends React.Component {
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
       <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
+        Disabled link
       </DropdownItem>
     ];
     return (

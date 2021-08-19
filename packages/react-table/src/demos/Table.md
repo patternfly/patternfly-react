@@ -2210,7 +2210,7 @@ class FilterTableDemo extends React.Component {
               <EmptyState>
                 <EmptyStateIcon icon={SearchIcon} />
                 <Title headingLevel="h5" size="lg">
-                  No results found
+                  Clear all filters and try again.
                 </Title>
                 <EmptyStateBody>
                   No results match this filter criteria. Remove all filters or clear all filters to show results.
@@ -2454,7 +2454,7 @@ class ComplexPaginationTableDemo extends React.Component {
                   <EmptyState variant={EmptyStateVariant.small}>
                     <EmptyStateIcon icon={ExclamationCircleIcon} color={globalDangerColor200.value} />
                     <Title headingLevel="h2" size="lg">
-                      Unable to connect
+                      Check your connection and reload the page.
                     </Title>
                     <EmptyStateBody>
                       There was an error retrieving data. Check your connection and try again.
@@ -2741,7 +2741,7 @@ class PageLayoutDefaultNav extends React.Component {
               <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
+                of its relative line height of 1.5.
               </Text>
             </TextContent>
           </PageSection>
@@ -2805,7 +2805,7 @@ class EmptyStateDemo extends React.Component {
               No results found
             </Title>
             <EmptyStateBody>
-              No results match this filter criteria. Remove all filters or clear all filters to show results.
+              No results match this filter criteria. Clear all filters and try again.
             </EmptyStateBody>
             <EmptyStateSecondaryActions>
               <Button variant="link" onClick={() => {}}>
@@ -2901,7 +2901,7 @@ class ErrorStateDemo extends React.Component {
                   Unable to connect
                 </Title>
                 <EmptyStateBody>
-                  There was an error retrieving data. Check your connection and try again.
+                  There was an error retrieving data. Check your connection and reload the page.
                 </EmptyStateBody>
               </EmptyState>
             )

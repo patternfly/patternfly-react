@@ -433,14 +433,14 @@ class ProgressiveWizard extends React.Component {
     }
     this.onGoToStep = ({ id, name }, { prevId, prevName }) => {
       // Remove steps after the currently clicked step
-      if (name === 'Get Started') {
+      if (name === 'Get started') {
         this.setState({
           showReviewStep: false,
           showOptionsStep: false,
           showCreateStep: false,
           showUpdateStep: false
         });
-      } else if (name === 'Create Options' || name === 'Update Options') {
+      } else if (name === 'Create options' || name === 'Update options') {
         this.setState({
           showReviewStep: false,
           showOptionsStep: false
@@ -452,7 +452,7 @@ class ProgressiveWizard extends React.Component {
       }
     };
     this.getNextStep = (activeStep, callback) => {
-      if (activeStep.name === 'Get Started') {
+      if (activeStep.name === 'Get started') {
         if (this.state.getStartedStepRadio === 'Create') {
           this.setState({
             showCreateStep: true,
@@ -472,7 +472,7 @@ class ProgressiveWizard extends React.Component {
             callback();
           });
         }
-      } else if (activeStep.name === 'Create Options' || activeStep.name === 'Update Options') {
+      } else if (activeStep.name === 'Create options' || activeStep.name === 'Update options') {
         this.setState({
           showOptionsStep: true,
           showReviewStep: false
@@ -502,13 +502,13 @@ class ProgressiveWizard extends React.Component {
         }, () => {
           callback();
         });
-      } else if (activeStep.name === 'Create Options') {
+      } else if (activeStep.name === 'Create options') {
         this.setState({
           showCreateStep: false
         }, () => {
           callback();
         });
-      } else if (activeStep.name === 'Update Options') {
+      } else if (activeStep.name === 'Update options') {
         this.setState({
           showUpdateStep: false
         }, () => {
@@ -533,7 +533,7 @@ class ProgressiveWizard extends React.Component {
     } = this.state;
 
     const getStartedStep = {
-      name: 'Get Started',
+      name: 'Get started',
       component: (
         <div>
           <Radio
@@ -557,14 +557,14 @@ class ProgressiveWizard extends React.Component {
     };
 
     const createStep = {
-      name: 'Create Options',
+      name: 'Create options',
       component: (
         <div>
           <Radio
             value="Quick"
             isChecked={createStepRadio === 'Quick'}
             onChange={(_, event) => this.setState({ createStepRadio: event.currentTarget.value })}
-            label="Quick Create"
+            label="Quick create"
             name="radio-step-create"
             id="radio-step-create-1"
           />{' '}
@@ -572,7 +572,7 @@ class ProgressiveWizard extends React.Component {
             value="Custom"
             isChecked={createStepRadio === 'Custom'}
             onChange={(_, event) => this.setState({ createStepRadio: event.currentTarget.value })}
-            label="Custom Create"
+            label="Custom create"
             name="radio-step-create"
             id="radio-step-create-2"
           />
@@ -581,14 +581,14 @@ class ProgressiveWizard extends React.Component {
     };
 
     const updateStep = {
-      name: 'Update Options',
+      name: 'Update options',
       component: (
         <div>
           <Radio
             value="Quick"
             isChecked={updateStepRadio === 'Quick'}
             onChange={(_, event) => this.setState({ updateStepRadio: event.currentTarget.value })}
-            label="Quick Update"
+            label="Quick update"
             name="radio-step-update"
             id="radio-step-update-1"
           />{' '}
@@ -596,7 +596,7 @@ class ProgressiveWizard extends React.Component {
             value="Custom"
             isChecked={updateStepRadio === 'Custom'}
             onChange={(_, event) => this.setState({ updateStepRadio: event.currentTarget.value })}
-            label="Custom Update"
+            label="Custom update"
             name="radio-step-update"
             id="radio-step-update-2"
           />

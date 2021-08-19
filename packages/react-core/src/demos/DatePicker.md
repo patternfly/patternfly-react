@@ -7,7 +7,7 @@ section: components
 
 ### Date range picker
 
-Intended to be used as a filter. After selecting a start date the next day is automatically selected.
+This is intended to be used as a filter. After selecting a start date, the next date is automatically selected.
 
 ```js
 import { Split, SplitItem, DatePicker, isValidDate, yyyyMMddFormat } from '@patternfly/react-core';
@@ -34,6 +34,7 @@ DateRangePicker = () => {
         <DatePicker
           onChange={onFromChange}
           aria-label="Start date"
+          placeholder="YYYY-MM-DD"
         />
       </SplitItem>
       <SplitItem style={{ padding: '6px 12px 0 12px' }}>
@@ -47,6 +48,7 @@ DateRangePicker = () => {
           rangeStart={from}
           validators={[toValidator]}
           aria-label="End date"
+          placeholder="YYYY-MM-DD"
         />
       </SplitItem>
     </Split>
@@ -112,6 +114,7 @@ DateTimeRangePicker = () => {
           <DatePicker
             onChange={onFromDateChange}
             aria-label="Start date"
+            placeholder="YYYY-MM-DD"
           />
           <TimePicker 
             aria-label="Start time"
@@ -132,6 +135,7 @@ DateTimeRangePicker = () => {
             rangeStart={from}
             validators={[toValidator]}
             aria-label="End date"
+            placeholder="YYYY-MM-DD"
           />
           <TimePicker style={{width: '150px'}} onChange={onToTimeChange} isDisabled={!isValidDate(from)}/>
         </InputGroup>

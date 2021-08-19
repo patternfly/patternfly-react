@@ -74,8 +74,8 @@ class BasicWizardDemo extends React.Component {
           mainAriaLabel={`${title} content`}
           titleId="wiz-modal-demo-title"
           descriptionId="wiz-modal-demo-description"
-          title="Simple Wizard in Modal"
-          description="Simple Wizard Description"
+          title="Simple wizard in modal"
+          description="Simple wizard description"
           steps={steps}
           height={400}
         />
@@ -207,7 +207,7 @@ class FullPageWizard extends React.Component {
             <TextContent>
               <Text component="h1">Main title</Text>
               <Text component="p">
-                A demo of the wizard in page.
+                A demo of a wizard in a page.
               </Text>
             </TextContent>
           </PageSection>

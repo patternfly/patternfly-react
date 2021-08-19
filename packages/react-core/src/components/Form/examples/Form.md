@@ -72,7 +72,7 @@ class SimpleForm extends React.Component {
     return (
       <Form>
         <FormGroup
-          label="Name"
+          label="Full name"
           labelIcon={
             <Popover
               headerContent={
@@ -114,7 +114,7 @@ class SimpleForm extends React.Component {
           }
           isRequired
           fieldId="simple-form-name-01"
-          helperText="Please provide your full name"
+          helperText="Include your middle name if you have one."
         >
           <TextInput
             isRequired
@@ -150,21 +150,21 @@ class SimpleForm extends React.Component {
         <FormGroup isInline fieldId="simple-form-checkbox-group" label="How can we contact you?" isRequired>
           <Checkbox label="Email" aria-label="Email" id="inlinecheck01" />
           <Checkbox label="Phone" aria-label="Phone" id="inlinecheck02" />
-          <Checkbox label="Please don't contact me" aria-label="Please don't contact me" id="inlinecheck03" />
+          <Checkbox label="Please don't contact me." aria-label="Please don't contact me." id="inlinecheck03" />
         </FormGroup>
-        <FormGroup label="Additional Note" fieldId="simple-form-note-01">
+        <FormGroup label="Additional note" fieldId="simple-form-note-01">
           <TextInput isDisabled type="text" id="simple-form-note-01" name="simple-form-number" value="disabled" />
         </FormGroup>
         <FormGroup fieldId="checkbox01">
           <Checkbox
-            label="I'd like updates via email"
+            label="I'd like updates via email."
             id="checkbox01"
             name="checkbox01"
             aria-label="Update via email"
           />
         </FormGroup>
         <ActionGroup>
-          <Button variant="primary">Submit form</Button>
+          <Button variant="primary">Submit</Button>
           <Button variant="link">Cancel</Button>
         </ActionGroup>
       </Form>
@@ -211,7 +211,7 @@ class HorizontalForm extends React.Component {
       this.setState({ value3 });
     };
     this.options = [
-      { value: 'please choose', label: 'Please Choose', disabled: false },
+      { value: 'select one', label: 'Select one', disabled: false },
       { value: 'mr', label: 'Mr', disabled: false },
       { value: 'miss', label: 'Miss', disabled: false },
       { value: 'mrs', label: 'Mrs', disabled: false },
@@ -226,7 +226,7 @@ class HorizontalForm extends React.Component {
 
     return (
       <Form isHorizontal>
-        <FormGroup label="Name" isRequired fieldId="horizontal-form-name" helperText="Please provide your full name">
+        <FormGroup label="Full name" isRequired fieldId="horizontal-form-name" helperText="Include your middle name if you have one.">
           <TextInput
             value={value1}
             isRequired
@@ -271,10 +271,10 @@ class HorizontalForm extends React.Component {
         <FormGroup label="How can we contact you?" isRequired isStack hasNoPaddingTop>
           <Checkbox label="Email" id="alt-form-checkbox-1" name="alt-form-checkbox-1" />
           <Checkbox label="Phone" id="alt-form-checkbox-2" name="alt-form-checkbox-2" />
-          <Checkbox label="Please don't contact me" id="alt-form-checkbox-3" name="alt-form-checkbox-3" />
+          <Checkbox label="Please don't contact me." id="alt-form-checkbox-3" name="alt-form-checkbox-3" />
         </FormGroup>
         <ActionGroup>
-          <Button variant="primary">Submit form</Button>
+          <Button variant="primary">Submit</Button>
           <Button variant="link">Cancel</Button>
         </ActionGroup>
       </Form>
@@ -315,7 +315,7 @@ class SimpleForm extends React.Component {
     return (
       <Form isWidthLimited>
         <FormGroup
-          label="Name"
+          label="Full name"
           labelIcon={
             <Popover
               headerContent={
@@ -357,7 +357,7 @@ class SimpleForm extends React.Component {
           }
           isRequired
           fieldId="simple-form-name-02"
-          helperText="Please provide your full name"
+          helperText="Include your middle name if you have one."
         >
           <TextInput
             isRequired
@@ -393,21 +393,21 @@ class SimpleForm extends React.Component {
         <FormGroup isInline label="How can we contact you?" isRequired>
           <Checkbox label="Email" aria-label="Email" id="inlinecheck04" />
           <Checkbox label="Phone" aria-label="Phone" id="inlinecheck05" />
-          <Checkbox label="Please don't contact me" aria-label="Please don't contact me" id="inlinecheck06" />
+          <Checkbox label="Please don't contact me." aria-label="Please don't contact me." id="inlinecheck06" />
         </FormGroup>
-        <FormGroup label="Additional Note" fieldId="simple-form-note-02">
+        <FormGroup label="Additional note" fieldId="simple-form-note-02">
           <TextInput isDisabled type="text" id="simple-form-note-02" name="simple-form-number" value="disabled" />
         </FormGroup>
         <FormGroup fieldId="checkbox02">
           <Checkbox
-            label="I'd like updates via email"
+            label="I'd like updates via email."
             id="checkbox02"
             name="checkbox02"
             aria-label="Update via email"
           />
         </FormGroup>
         <ActionGroup>
-          <Button variant="primary">Submit form</Button>
+          <Button variant="primary">Submit</Button>
           <Button variant="link">Cancel</Button>
         </ActionGroup>
       </Form>
@@ -448,7 +448,7 @@ class InvalidForm extends React.Component {
               Please enter your age
             </FormHelperText>
           }
-          helperTextInvalid="Age has to be a number"
+          helperTextInvalid="Must be a number"
           helperTextInvalidIcon={<ExclamationCircleIcon />}
           fieldId="age-1"
           validated={validated}
@@ -495,7 +495,7 @@ class InvalidFormWithFormAlert extends React.Component {
           <FormAlert>
             <Alert
               variant="danger"
-              title="You must fill out all required fields before you can proceed."
+              title="Fill out all required fields before continuing."
               aria-live="polite"
               isInline
             />
@@ -509,7 +509,7 @@ class InvalidFormWithFormAlert extends React.Component {
               Please enter your age
             </FormHelperText>
           }
-          helperTextInvalid="Age has to be a number"
+          helperTextInvalid="Must be a number"
           helperTextInvalidIcon={<ExclamationCircleIcon />}
           fieldId="age-2"
           validated={validated}
@@ -540,7 +540,7 @@ class InvalidForm extends React.Component {
     super(props);
     this.state = {
       value: '',
-      invalidText: 'Age has to be a number',
+      invalidText: 'Must be a number',
       validated: 'default',
       helperText: 'Enter your age to continue'
     };
@@ -560,7 +560,7 @@ class InvalidForm extends React.Component {
               this.setState({ validated: 'warning', helperText: 'You must be at least 21 to continue' });
             }
           } else {
-            this.setState({ validated: 'error', invalidText: 'Age has to be a number' });
+            this.setState({ validated: 'error', invalidText: 'Must be a number' });
           }
         })
       );
@@ -625,7 +625,7 @@ class HorizontalFormHelperTextOnTop extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      helperText: 'Select all that apply'
+      helperText: 'Select all that apply:'
     };
   }
 
@@ -640,8 +640,8 @@ class HorizontalFormHelperTextOnTop extends React.Component {
           fieldId="options"
           isStack
         >
-          <Checkbox label="option 1" id="option-03" />
-          <Checkbox label="option 2" id="option-04" />
+          <Checkbox label="Option 1" id="option-03" />
+          <Checkbox label="Option 2" id="option-04" />
         </FormGroup>
       </Form>
     );
@@ -673,7 +673,7 @@ class FormGroupLabelInfo extends React.Component {
     return (
       <Form>
         <FormGroup
-          label="Name"
+          label="Full name"
           labelInfo="Additional label info"
           labelIcon={
             <Popover
@@ -716,7 +716,7 @@ class FormGroupLabelInfo extends React.Component {
           }
           isRequired
           fieldId="form-group-label-info"
-          helperText="Please provide your full name"
+          helperText="Include your middle name if you have one."
         >
           <TextInput
             isRequired
@@ -823,7 +823,7 @@ class SimpleForm extends React.Component {
       <Form>
         <Grid hasGutter md={6}>
           <GridItem span={12}>
-            <FormGroup label="Name" isRequired fieldId="grid-form-name-01" helperText="Please provide your full name">
+            <FormGroup label="Full name" isRequired fieldId="grid-form-name-01" helperText="Include your middle name if you have one.">
               <TextInput
                 isRequired
                 type="text"

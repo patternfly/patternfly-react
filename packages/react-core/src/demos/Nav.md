@@ -93,7 +93,7 @@ class PageLayoutDefaultNav extends React.Component {
               <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
+                of its relative line height of 1.5.
               </Text>
             </TextContent>
           </PageSection>
@@ -204,7 +204,7 @@ class PageLayoutGroupsNav extends React.Component {
               <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
+                of its relative line height of 1.5.
               </Text>
             </TextContent>
           </PageSection>
@@ -324,7 +324,7 @@ class PageLayoutExpandableNav extends React.Component {
               <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
+                of its relative line height of 1.5.
               </Text>
             </TextContent>
           </PageSection>
@@ -536,7 +536,7 @@ class PageLayoutHorizontalNav extends React.Component {
               <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
+                of its relative line height of 1.5.
               </Text>
             </TextContent>
           </PageSection>
@@ -639,7 +639,7 @@ class PageLayoutTertiaryNav extends React.Component {
               <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
+                of its relative line height of 1.5.
               </Text>
             </TextContent>
           </PageSection>
@@ -740,7 +740,7 @@ class PageLayoutLightNav extends React.Component {
               <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
+                of its relative line height of 1.5.
               </Text>
             </TextContent>
           </PageSection>
@@ -988,7 +988,7 @@ class PageLayoutManualNav extends React.Component {
               <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
+                of its relative line height of 1.5.
               </Text>
             </TextContent>
           </PageSection>
