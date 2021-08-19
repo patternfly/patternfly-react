@@ -252,7 +252,7 @@ jobs:
         command: yarn test:a11y
     - run:
         name: Upload a11y report
-        command: node .circleci/upload-preview.js packages/react-docs/coverage/dist
+        command: node .circleci/upload-preview.js packages/react-docs/coverage
         when: always
   deploy_prerelease:
     docker:
