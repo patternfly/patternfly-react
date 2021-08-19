@@ -331,29 +331,27 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
           )}
         </div>
         {attributes.length > 0 && (
-          <>
-            <Button
-              className={showSearchMenu && 'pf-m-expanded'}
-              variant={ButtonVariant.control}
-              aria-label={openMenuButtonAriaLabel}
-              onClick={onToggle}
-              isDisabled={isDisabled}
-              aria-expanded={showSearchMenu}
-            >
-              <CaretDownIcon />
-            </Button>
-            {!!onSearch && (
-              <Button
-                type="submit"
-                variant={ButtonVariant.control}
-                aria-label={submitSearchButtonLabel}
-                onClick={onSearchHandler}
-                isDisabled={isDisabled}
-              >
-                <ArrowRightIcon />
-              </Button>
-            )}
-          </>
+          <Button
+            className={showSearchMenu && 'pf-m-expanded'}
+            variant={ButtonVariant.control}
+            aria-label={openMenuButtonAriaLabel}
+            onClick={onToggle}
+            isDisabled={isDisabled}
+            aria-expanded={showSearchMenu}
+          >
+            <CaretDownIcon />
+          </Button>
+        )}
+        {!!onSearch && (
+          <Button
+            type="submit"
+            variant={ButtonVariant.control}
+            aria-label={submitSearchButtonLabel}
+            onClick={onSearchHandler}
+            isDisabled={isDisabled}
+          >
+            <ArrowRightIcon />
+          </Button>
         )}
       </InputGroup>
       {attributes.length > 0 && showSearchMenu && (
