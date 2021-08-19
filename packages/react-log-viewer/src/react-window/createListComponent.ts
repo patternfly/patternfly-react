@@ -7,38 +7,19 @@ import { TimeoutID } from './timer';
 
 export type ScrollToAlign = 'auto' | 'smart' | 'center' | 'start' | 'end';
 
-export interface RowProps {
-  data: any;
-  index: number;
-  isScrolling?: boolean;
-  style: React.CSSProperties;
-}
-export interface VariableSizeProps {
-  estimatedItemSize?: number;
-  children: React.FunctionComponent<RowProps>;
-  [key: string]: any;
-}
-export interface ItemMetadata {
-  offset: number;
-  size: number;
-}
-export interface InstanceProps {
-  itemMetadataMap: { [index: number]: ItemMetadata };
-  estimatedItemSize: number;
-  lastMeasuredIndex: number;
-}
 type itemSize = number | ((index: number) => number);
+type ItemStyleCache = Record<number, Record<string, any>>;
 // TODO Deprecate directions "horizontal" and "vertical"
-type Direction = 'ltr' | 'rtl' | 'horizontal' | 'vertical';
-type Layout = 'horizontal' | 'vertical';
+export type Direction = 'ltr' | 'rtl' | 'horizontal' | 'vertical';
+export type Layout = 'horizontal' | 'vertical';
 
-interface RenderComponentProps<T> {
+export interface RenderComponentProps<T> {
   data: T;
   index: number;
   isScrolling?: boolean;
   style: Object;
 }
-type RenderComponent<T> = React.ComponentType<RenderComponentProps<T>>;
+type RenderComponent<T> = React.ComponentType<Partial<RenderComponentProps<T>>>;
 
 type ScrollDirection = 'forward' | 'backward';
 
@@ -93,7 +74,7 @@ export interface Props<T> {
   itemCount: number;
   itemData: T;
   itemKey?: (index: number, data: T) => any;
-  itemSize: itemSize;
+  itemSize?: itemSize;
   layout: Layout;
   onItemsRendered?: onItemsRenderedCallback;
   onScroll?: onScrollCallback;
@@ -114,29 +95,29 @@ export interface State {
   scrollUpdateWasRequested: boolean;
 }
 
-type GetItemOffset = (props: VariableSizeProps, index: number, instanceProps: any) => number;
-type GetItemSize = (props: VariableSizeProps, index: number, instanceProps: any) => number;
-type GetEstimatedTotalSize = (props: VariableSizeProps, instanceProps: any) => number;
+type GetItemOffset = (props: Props<any>, index: number, instanceProps: any) => number;
+type GetItemSize = (props: Props<any>, index: number, instanceProps: any) => number;
+type GetEstimatedTotalSize = (props: Props<any>, instanceProps: any) => number;
 type GetOffsetForIndexAndAlignment = (
-  props: VariableSizeProps,
+  props: Props<any>,
   index: number,
   align: ScrollToAlign,
   scrollOffset: number,
   instanceProps: any
 ) => number;
-type GetStartIndexForOffset = (props: VariableSizeProps, offset: number, instanceProps: any) => number;
+type GetStartIndexForOffset = (props: Props<any>, offset: number, instanceProps: any) => number;
 type GetStopIndexForStartIndex = (
-  props: VariableSizeProps,
+  props: Props<any>,
   startIndex: number,
   scrollOffset: number,
-  instanceProps: InstanceProps
+  instanceProps: any
 ) => number;
-type InitInstanceProps = (props: VariableSizeProps, instance: any) => any;
+type InitInstanceProps = (props: Props<any>, instance: any) => any;
 type ValidateProps = (props: Props<any>) => void;
 
 const IS_SCROLLING_DEBOUNCE_INTERVAL = 150;
 
-const defaultItemKey = (index: number, _data: any) => index;
+export const defaultItemKey = (index: number, _data: any) => index;
 
 // In DEV mode, this Set helps us only log a warning once per component instance.
 // This avoids spamming the console every time a render happens.
@@ -170,9 +151,9 @@ export default function createListComponent({
   shouldResetStyleCacheOnItemSizeChange: boolean;
   validateProps: ValidateProps;
 }) {
-  return class List<T> extends PureComponent<VariableSizeProps, State> {
-    _instanceProps = initInstanceProps(this.props, this);
-    _outerRef?: HTMLDivElement;
+  return class List<T> extends PureComponent<Props<T>, State> {
+    _instanceProps: any = initInstanceProps(this.props, this);
+    _outerRef: HTMLDivElement | null | undefined;
     _resetIsScrollingTimeoutId: TimeoutID | null = null;
 
     static defaultProps = {
@@ -194,11 +175,11 @@ export default function createListComponent({
     // Always use explicit constructor for React components.
     // It produces less code after transpilation. (#26)
     // eslint-disable-next-line no-useless-constructor
-    constructor(props: VariableSizeProps) {
+    constructor(props: Props<T>) {
       super(props);
     }
 
-    getDerivedStateFromProps(nextProps: Props<T>, prevState: State): State | null {
+    static getDerivedStateFromProps<T>(nextProps: Props<T>, prevState: State): Partial<State> | null {
       validateSharedProps(nextProps, prevState);
       validateProps(nextProps);
       return null;
@@ -242,6 +223,8 @@ export default function createListComponent({
       }
 
       this._callPropsCallbacks();
+
+      this._commitHook();
     }
 
     componentDidUpdate() {
@@ -278,31 +261,30 @@ export default function createListComponent({
       }
 
       this._callPropsCallbacks();
+
+      this._commitHook();
     }
 
     componentWillUnmount() {
       if (this._resetIsScrollingTimeoutId !== null) {
         cancelTimeout(this._resetIsScrollingTimeoutId);
       }
+
+      this._unmountHook();
     }
 
     render() {
       const {
-        children,
         className,
         direction,
         height,
         innerRef,
         innerElementType,
         innerTagName,
-        itemCount,
-        itemData,
-        itemKey = defaultItemKey,
         layout,
         outerElementType,
         outerTagName,
         style,
-        useIsScrolling,
         width
       } = this.props;
       const { isScrolling } = this.state;
@@ -312,29 +294,14 @@ export default function createListComponent({
 
       const onScroll = isHorizontal ? this._onScrollHorizontal : this._onScrollVertical;
 
-      const [startIndex, stopIndex] = this._getRangeToRender();
-
-      const items = [];
-      if (itemCount > 0) {
-        for (let index = startIndex; index <= stopIndex; index++) {
-          items.push(
-            createElement(children, {
-              data: itemData,
-              key: itemKey(index, itemData),
-              index,
-              isScrolling: useIsScrolling ? isScrolling : undefined,
-              style: this._getItemStyle(index)
-            })
-          );
-        }
-      }
+      const items = this._renderItems();
 
       // Read this value AFTER items have been created,
       // So their actual sizes (if variable) are taken into consideration.
       const estimatedTotalSize = getEstimatedTotalSize(this.props, this._instanceProps);
 
       return createElement(
-        outerElementType || outerTagName || 'div',
+        (outerElementType || outerTagName || 'div') as any,
         {
           className,
           onScroll,
@@ -351,7 +318,7 @@ export default function createListComponent({
             ...style
           }
         },
-        createElement(innerElementType || innerTagName || 'div', {
+        createElement((innerElementType || innerTagName || 'div') as any, {
           children: items,
           ref: innerRef,
           style: {
@@ -397,11 +364,19 @@ export default function createListComponent({
       }
     }
 
+    // This method is called after mount and update.
+    // List implementations can override this method to be notified.
+    _commitHook() {}
+
+    // This method is called before unmounting.
+    // List implementations can override this method to be notified.
+    _unmountHook() {}
+
     // Lazily create and cache item styles while scrolling,
     // So that pure component sCU will prevent re-renders.
     // We maintain this cache, and pass a style prop rather than index,
     // So that List can clear cached styles and force item re-render if necessary.
-    _getItemStyle = (index: number): Object => {
+    _getItemStyle = (index: number): Record<string, any> => {
       const { direction, itemSize, layout } = this.props;
 
       const itemStyleCache = this._getItemStyleCache(
@@ -420,12 +395,9 @@ export default function createListComponent({
         // TODO Deprecate direction "horizontal"
         const isHorizontal = direction === 'horizontal' || layout === 'horizontal';
 
-        const isRtl = direction === 'rtl';
-        const offsetHorizontal = isHorizontal ? offset : 0;
         itemStyleCache[index] = style = {
           position: 'absolute',
-          left: isRtl ? undefined : offsetHorizontal,
-          right: isRtl ? offsetHorizontal : undefined,
+          [direction === 'rtl' ? 'right' : 'left']: isHorizontal ? offset : 0,
           top: !isHorizontal ? offset : 0,
           height: !isHorizontal ? size : '100%',
           width: isHorizontal ? size : '100%'
@@ -435,11 +407,13 @@ export default function createListComponent({
       return style;
     };
 
-    _getItemStyleCache = memoizeOne(() => ({})) as (
-      itemSize?: any,
-      layout?: any,
-      direction?: any
-    ) => { [key: number]: Object };
+    _itemStyleCache: ItemStyleCache;
+
+    _getItemStyleCache = memoizeOne((_: any, __: any, ___: any) => {
+      this._itemStyleCache = {};
+
+      return this._itemStyleCache;
+    });
 
     _getRangeToRender(): [number, number, number, number] {
       const { itemCount, overscanCount } = this.props;
@@ -463,6 +437,29 @@ export default function createListComponent({
         startIndex,
         stopIndex
       ];
+    }
+
+    _renderItems() {
+      const { children, itemCount, itemData, itemKey = defaultItemKey, useIsScrolling } = this.props;
+      const { isScrolling } = this.state;
+
+      const [startIndex, stopIndex] = this._getRangeToRender();
+
+      const items = [];
+      if (itemCount > 0) {
+        for (let index = startIndex; index <= stopIndex; index++) {
+          items.push(
+            createElement(children, {
+              data: itemData,
+              key: itemKey(index, itemData),
+              index,
+              isScrolling: useIsScrolling ? isScrolling : undefined,
+              style: this._getItemStyle(index)
+            })
+          );
+        }
+      }
+      return items;
     }
 
     _onScrollHorizontal = (event: ScrollEvent): void => {
@@ -530,7 +527,7 @@ export default function createListComponent({
     _outerRefSetter = (ref: any): void => {
       const { outerRef } = this.props;
 
-      this._outerRef = ref;
+      this._outerRef = ref as HTMLDivElement;
 
       if (typeof outerRef === 'function') {
         outerRef(ref);
@@ -553,7 +550,7 @@ export default function createListComponent({
       this.setState({ isScrolling: false }, () => {
         // Clear style cache after state update has been committed.
         // This way we don't break pure sCU for items that don't use isScrolling param.
-        this._getItemStyleCache(-1, null);
+        this._getItemStyleCache(-1, null, null);
       });
     };
   };
