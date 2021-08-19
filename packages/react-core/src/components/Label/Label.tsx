@@ -6,7 +6,7 @@ import inlineEditStyles from '@patternfly/react-styles/css/components/InlineEdit
 import { Button } from '../Button';
 import { Tooltip } from '../Tooltip';
 import { css } from '@patternfly/react-styles';
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { useIsomorphicLayoutEffect } from '../../helpers';
 
 export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {

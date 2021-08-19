@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tile } from '@patternfly/react-core';
-import PlusIcon from '@patternfly/react-icons/dist/js/icons/plus-icon';
+import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 
 export class TileDemo extends React.Component {
   static displayName = 'TileDemo';

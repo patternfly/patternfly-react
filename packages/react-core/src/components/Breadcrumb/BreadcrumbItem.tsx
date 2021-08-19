@@ -1,5 +1,5 @@
 import * as React from 'react';
-import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import styles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 import { css } from '@patternfly/react-styles';
 
@@ -32,13 +32,13 @@ export interface BreadcrumbItemProps extends React.HTMLProps<HTMLLIElement> {
 export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
   children = null,
   className: classNameProp = '',
-  to = null,
+  to = undefined,
   isActive = false,
   isDropdown = false,
   showDivider,
-  target = null,
+  target = undefined,
   component = 'a',
-  render = null,
+  render = undefined,
   ...props
 }: BreadcrumbItemProps) => {
   const Component = component;

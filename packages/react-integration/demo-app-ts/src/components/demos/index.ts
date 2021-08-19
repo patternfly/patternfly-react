@@ -176,5 +176,6 @@ export * from './ToolbarDemo/ToolbarDemo';
 export * from './TooltipDemo/TooltipDemo';
 export * from './TopologyDemo/TopologyDemo';
 export * from './TreeViewDemo/TreeViewDemo';
+export * from './VerticalTabsDemo/VerticalTabsDemo';
 export * from './WizardDemo/WizardDemo';
 export * from './JumpLinksDemo/JumpLinksDemo';

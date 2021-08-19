@@ -15,7 +15,7 @@ propComponents:
 ---
 
 import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, DescriptionListGroup, DescriptionListTermHelpText, DescriptionListTermHelpTextButton, Popover } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 ## Examples
 
@@ -30,7 +30,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <DescriptionList>
   <DescriptionListGroup>
@@ -76,7 +76,7 @@ import {
   DescriptionListTermHelpTextButton,
   Popover
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <DescriptionList>
   <DescriptionListGroup>
@@ -140,7 +140,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <DescriptionList
   columnModifier={{
@@ -188,7 +188,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <DescriptionList columnModifier={{ lg: '3Col' }}>
   <DescriptionListGroup>
@@ -232,7 +232,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <DescriptionList isHorizontal>
   <DescriptionListGroup>
@@ -276,7 +276,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <DescriptionList isHorizontal columnModifier={{ default: '2Col' }}>
   <DescriptionListGroup>
@@ -320,7 +320,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <DescriptionList isHorizontal columnModifier={{ lg: '3Col' }}>
   <DescriptionListGroup>
@@ -366,7 +366,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <DescriptionList columnModifier={{ lg: '2Col', xl: '3Col' }}>
   <DescriptionListGroup>
@@ -410,7 +410,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <DescriptionList isHorizontal columnModifier={{ lg: '2Col', xl: '3Col' }}>
   <DescriptionListGroup>
@@ -453,7 +453,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <DescriptionList
   isHorizontal
@@ -507,7 +507,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <DescriptionList isAutoColumnWidths columnModifier={{ default: '3Col' }}>
   <DescriptionListGroup>
@@ -551,7 +551,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <DescriptionList isHorizontal isAutoColumnWidths columnModifier={{ lg: '2Col' }}>
   <DescriptionListGroup>
@@ -597,7 +597,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <DescriptionList columnModifier={{ default: '3Col' }} isInlineGrid>
   <DescriptionListGroup>
@@ -643,7 +643,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <DescriptionList isAutoFit>
   <DescriptionListGroup>
@@ -687,7 +687,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <DescriptionList isAutoFit autoFitMinModifier={{ default: '200px' }}>
   <DescriptionListGroup>
@@ -731,7 +731,7 @@ import {
   DescriptionListGroup,
   DescriptionListDescription
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
 <DescriptionList isAutoFit autoFitMinModifier={{ md: '100px', lg: '150px', xl: '200px', '2xl': '300px' }}>
   <DescriptionListGroup>

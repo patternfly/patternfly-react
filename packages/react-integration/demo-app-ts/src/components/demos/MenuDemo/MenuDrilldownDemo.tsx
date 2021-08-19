@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Menu, MenuContent, MenuList, MenuItem, Divider, DrilldownMenu } from '@patternfly/react-core';
-import StorageDomainIcon from '@patternfly/react-icons/dist/js/icons/storage-domain-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 /* eslint-disable no-console */
 export class MenuDrilldownDemo extends Component {

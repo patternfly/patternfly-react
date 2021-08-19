@@ -42,13 +42,13 @@ The second is the original `Table` component. It is configuration based and take
 
 **For most common use cases, we recommend using `TableComposable`. Both implementations are supported and fully maintained.**
 
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import LeafIcon from '@patternfly/react-icons/dist/js/icons/leaf-icon';
-import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
-import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
+import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
+import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
 import { Checkbox, ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
 
@@ -375,6 +375,8 @@ type OnSelect = (
   extraData: IExtraData
 ) => void;
 ```
+**Note:** This example has a `shift + select` feature where holding shift while 
+checking checkboxes will check intermediate rows' checkboxes.
 
 ```js isBeta
 import React from 'react';
@@ -385,12 +387,32 @@ ComposableTableSelectable = () => {
   const rows = [
     ['one', 'two', 'a', 'four', 'five'],
     ['a', 'two', 'k', 'four', 'five'],
+    ['a', 'two', 'k', 'four', 'five'],
+    ['a', 'two', 'k', 'four', 'five'],
+    ['a', 'two', 'k', 'four', 'five'],
     ['p', 'two', 'b', 'four', 'five']
   ];
   const [allRowsSelected, setAllRowsSelected] = React.useState(false);
   const [selected, setSelected] = React.useState(rows.map(row => false));
+  const [recentSelection, setRecentSelection] = React.useState(null);
+  const [shifting, setShifting] = React.useState(false);
   const onSelect = (event, isSelected, rowId) => {
-    setSelected(selected.map((sel, index) => (index === rowId ? isSelected : sel)));
+    let newSelected = selected.map((sel, index) => (index === rowId ? isSelected : sel))
+    
+    // if the user is shift + selecting the checkboxes, then all intermediate checkboxes should be selected
+    if (shifting && recentSelection !== null && isSelected) {
+      const numberSelected = rowId - recentSelection;
+      newSelected = newSelected.map((sel, index) => {
+        // select all between recentSelection and current rowId;
+        const intermediateIndexes = numberSelected > 0 ? 
+          Array.from(new Array(numberSelected + 1), (x, i) => i + (recentSelection)) : 
+          Array.from(new Array(Math.abs(numberSelected) + 1), (x, i) => i + rowId);
+        return intermediateIndexes.includes(index) ? true : sel;
+      })
+    }
+    setSelected(newSelected);
+    setRecentSelection(rowId);
+    
     if (!isSelected && allRowsSelected) {
       setAllRowsSelected(false);
     } else if (isSelected && !allRowsSelected) {
@@ -407,10 +429,33 @@ ComposableTableSelectable = () => {
       }
     }
   };
+  
+  onKeyDown = (e) => {
+    if (e.key === 'Shift') {
+      setShifting(true);
+    }
+  };
+  onKeyUp = (e) => {
+    if (e.key === 'Shift') {
+      setShifting(false);
+    }
+  };
+  
+  React.useEffect(() => {
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("keyup", onKeyUp);
+    
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("keyup", onKeyUp);
+    }
+  }, []);
+  
   const onSelectAll = (event, isSelected) => {
     setAllRowsSelected(isSelected);
     setSelected(selected.map(sel => isSelected));
   };
+  
   return (
     <TableComposable aria-label="Selectable Table">
       <Thead>
@@ -436,7 +481,7 @@ ComposableTableSelectable = () => {
               select={{
                 rowIndex,
                 onSelect,
-                isSelected: selected[rowIndex],
+                isSelected: selected[rowIndex] && rowIndex !== 1,
                 disable: rowIndex === 1
               }}
             />
@@ -843,9 +888,9 @@ export type OnExpand = (
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
 
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 // https://github.com/patternfly/patternfly-react/blob/main/packages/react-table/src/components/Table/composable-table-examples/DemoSortableTable.js
 import DemoSortableTable from './DemoSortableTable';
@@ -1303,9 +1348,9 @@ the voice over technologies will recognize the flat table structure as a tree.
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, Caption, TreeRowWrapper } from '@patternfly/react-table';
 import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
-import LeafIcon from '@patternfly/react-icons/dist/js/icons/leaf-icon';
-import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
-import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
+import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
+import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
+import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
 class TreeTable extends React.Component {
   constructor(props) {

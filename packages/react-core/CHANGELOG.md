@@ -3,6 +3,124 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.150.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.150.2...@patternfly/react-core@4.150.3) (2021-08-19)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.150.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.150.1...@patternfly/react-core@4.150.2) (2021-08-18)
+
+
+### Bug Fixes
+
+* **DualListSelector:** respect initial chosen opts, select subfolders, reset selected on all ([#6180](https://github.com/patternfly/patternfly-react/issues/6180)) ([a1df392](https://github.com/patternfly/patternfly-react/commit/a1df3925e3e464d0caa27cb94b3162ad7cb7212b))
+
+
+
+
+
+## [4.150.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.150.0...@patternfly/react-core@4.150.1) (2021-08-18)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.150.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.149.1...@patternfly/react-core@4.150.0) (2021-08-17)
+
+
+### Features
+
+* **Navigation:** add horizontal subnav variant ([#6149](https://github.com/patternfly/patternfly-react/issues/6149)) ([1ec8488](https://github.com/patternfly/patternfly-react/commit/1ec8488a3056fc659ec83f04a6e793903ddd2e83))
+* **Popover:** support diagonal positions ([#6155](https://github.com/patternfly/patternfly-react/issues/6155)) ([f1b1003](https://github.com/patternfly/patternfly-react/commit/f1b10032eb527ada191cef8f7f21e76dc1d7c56c))
+
+
+
+
+
+## [4.149.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.149.0...@patternfly/react-core@4.149.1) (2021-08-16)
+
+
+### Bug Fixes
+
+* **jumplinks:** improve perf ([#6128](https://github.com/patternfly/patternfly-react/issues/6128)) ([94448e4](https://github.com/patternfly/patternfly-react/commit/94448e4ea83113d5cb5de75dbf362b2ef0ecd5ef))
+* **Popover:** call setVisible before animation ([#6104](https://github.com/patternfly/patternfly-react/issues/6104)) ([bc7dc1a](https://github.com/patternfly/patternfly-react/commit/bc7dc1aab813cec5c6f63b2051cbbc21eecbe947))
+
+
+
+
+
+# [4.149.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.148.2...@patternfly/react-core@4.149.0) (2021-08-12)
+
+
+### Bug Fixes
+
+* **TimePicker:** small fixes ([#6134](https://github.com/patternfly/patternfly-react/issues/6134)) ([b4a9bb5](https://github.com/patternfly/patternfly-react/commit/b4a9bb5fc3c5a60e905055de6c45619e40215e8c))
+* **Toolbar:** use categoryName.key as filter counter index ([#6143](https://github.com/patternfly/patternfly-react/issues/6143)) ([28d1aef](https://github.com/patternfly/patternfly-react/commit/28d1aef59772d6a9669338bd7457591efc72f715))
+
+
+### Features
+
+* **SearchInput:** submit the search when hitting Enter in the main input field ([#6145](https://github.com/patternfly/patternfly-react/issues/6145)) ([6757b8e](https://github.com/patternfly/patternfly-react/commit/6757b8e46f14987f3680a2d6c3614bab938e2065))
+* **TreeView:** Update treeview to consume toolbar ([#6133](https://github.com/patternfly/patternfly-react/issues/6133)) ([3b3b328](https://github.com/patternfly/patternfly-react/commit/3b3b3281aef7a328ee9c7265aeb3575365ae8798))
+
+
+
+
+
+## [4.148.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.148.1...@patternfly/react-core@4.148.2) (2021-08-11)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.148.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.148.0...@patternfly/react-core@4.148.1) (2021-08-11)
+
+
+### Bug Fixes
+
+* **ToolbarFilter:** Add props for customizing ChipGroup text ([#6138](https://github.com/patternfly/patternfly-react/issues/6138)) ([28cbfab](https://github.com/patternfly/patternfly-react/commit/28cbfab02f753ba112f7037c5c9d5562db02edbd))
+
+
+
+
+
+# [4.148.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.147.2...@patternfly/react-core@4.148.0) (2021-08-10)
+
+
+### Features
+
+* **HelperText:** update default icons for success/error ([#6130](https://github.com/patternfly/patternfly-react/issues/6130)) ([0b7d722](https://github.com/patternfly/patternfly-react/commit/0b7d72248e3f5ed8135d75d87d39350f6bbd7bd7))
+
+
+
+
+
+## [4.147.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.147.1...@patternfly/react-core@4.147.2) (2021-08-10)
+
+
+### Bug Fixes
+
+* **SelectMenu:** omit isLastOptionBeforeFooter from props ([#6147](https://github.com/patternfly/patternfly-react/issues/6147)) ([6c6f42c](https://github.com/patternfly/patternfly-react/commit/6c6f42cabf1a7a2e81aefac2bc0fe46b19180c21))
+
+
+
+
+
+## [4.147.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.147.0...@patternfly/react-core@4.147.1) (2021-08-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 # [4.147.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.146.0...@patternfly/react-core@4.147.0) (2021-08-03)
 
 

@@ -20,11 +20,11 @@ import {
   ChartVoronoiContainer,
   getCustomTheme
 } from '@patternfly/react-charts';
-import chart_color_blue_300 from '@patternfly/react-tokens/dist/js/chart_color_blue_300';
-import chart_color_green_300 from '@patternfly/react-tokens/dist/js/chart_color_green_300';
-import chart_color_cyan_300 from '@patternfly/react-tokens/dist/js/chart_color_cyan_300';
-import chart_color_gold_300 from '@patternfly/react-tokens/dist/js/chart_color_gold_300';
-import chart_color_purple_300 from '@patternfly/react-tokens/dist/js/chart_color_purple_300';
+import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
+import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
+import chart_color_cyan_300 from '@patternfly/react-tokens/dist/esm/chart_color_cyan_300';
+import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
+import chart_color_purple_300 from '@patternfly/react-tokens/dist/esm/chart_color_purple_300';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -208,10 +208,10 @@ This demonstrates an alternate way of applying custom colors to individual chart
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartLegend, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
-import chart_color_blue_300 from '@patternfly/react-tokens/dist/js/chart_color_blue_300';
-import chart_color_green_300 from '@patternfly/react-tokens/dist/js/chart_color_green_300';
-import chart_color_gold_300 from '@patternfly/react-tokens/dist/js/chart_color_gold_300';
-import chart_color_purple_300 from '@patternfly/react-tokens/dist/js/chart_color_purple_300';
+import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
+import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
+import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
+import chart_color_purple_300 from '@patternfly/react-tokens/dist/esm/chart_color_purple_300';
 
 <div style={{ height: '275px', width: '450px' }}>
   <Chart
@@ -310,10 +310,10 @@ This demonstrates custom theme properties, which may be applied across multiple 
 ```js
 import React from 'react';
 import { Chart, ChartBar, ChartAxis, ChartGroup, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts';
-import chart_color_blue_300 from '@patternfly/react-tokens/dist/js/chart_color_blue_300';
-import chart_color_green_300 from '@patternfly/react-tokens/dist/js/chart_color_green_300';
-import chart_color_cyan_300 from '@patternfly/react-tokens/dist/js/chart_color_cyan_300';
-import chart_color_gold_300 from '@patternfly/react-tokens/dist/js/chart_color_gold_300';
+import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
+import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
+import chart_color_cyan_300 from '@patternfly/react-tokens/dist/esm/chart_color_cyan_300';
+import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
 
 class MultiColorChart extends React.Component {
   constructor(props) {

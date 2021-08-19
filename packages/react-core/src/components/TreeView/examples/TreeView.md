@@ -2,7 +2,7 @@
 id: Tree view
 section: components
 cssPrefix: pf-c-treeview
-propComponents: ['TreeView', 'TreeViewDataItem']
+propComponents: ['TreeView', 'TreeViewDataItem', 'TreeViewSearch']
 beta: true
 ---
 
@@ -113,7 +113,7 @@ class DefaultTreeView extends React.Component {
 
 ```js
 import React from 'react';
-import { TreeView } from '@patternfly/react-core';
+import { Toolbar, ToolbarContent, ToolbarItem, TreeView, TreeViewSearch } from '@patternfly/react-core';
 
 class SearchTreeView extends React.Component {
   constructor(props) {
@@ -212,15 +212,24 @@ class SearchTreeView extends React.Component {
 
   render() {
     const { activeItems, filteredItems, isFiltered } = this.state;
+    
+    const toolbar = (
+      <Toolbar style={{padding: 0}}>
+        <ToolbarContent style={{padding: 0}}>
+          <ToolbarItem widths={{default: "100%"}}>
+            <TreeViewSearch onSearch={this.onSearch} id='input-search' name='search-input' aria-label='Search input example' />
+          </ToolbarItem>
+        </ToolbarContent>
+       </Toolbar>
+     );  
 
     return (
       <TreeView
         data={filteredItems}
         activeItems={activeItems}
         onSelect={this.onSelect}
-        onSearch={this.onSearch}
-        searchProps={{ id: 'input-search', name: 'search-input', 'aria-label': 'Search input example' }}
         allExpanded={isFiltered}
+        toolbar={toolbar}
       />
     );
   }
@@ -443,8 +452,8 @@ class CheckboxTreeView extends React.Component {
 ```js
 import React from 'react';
 import { TreeView } from '@patternfly/react-core';
-import FolderIcon from '@patternfly/react-icons/dist/js/icons/folder-icon';
-import FolderOpenIcon from '@patternfly/react-icons/dist/js/icons/folder-open-icon';
+import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
+import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
 class IconTreeView extends React.Component {
   constructor(props) {
@@ -710,8 +719,8 @@ class CustomBadgesTreeView extends React.Component {
 ```js
 import React from 'react';
 import { TreeView, Button, Dropdown, DropdownItem, KebabToggle } from '@patternfly/react-core';
-import ClipboardIcon from '@patternfly/react-icons/dist/js/icons/clipboard-icon';
-import HamburgerIcon from '@patternfly/react-icons/dist/js/icons/hamburger-icon';
+import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
+import HamburgerIcon from '@patternfly/react-icons/dist/esm/icons/hamburger-icon';
 
 class IconTreeView extends React.Component {
   constructor(props) {

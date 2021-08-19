@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
 import { Chip } from './Chip';
 import { Tooltip } from '../Tooltip';
-import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
+import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 import { fillTemplate } from '../../helpers';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { getOUIAProps, OUIAProps } from '../../helpers';

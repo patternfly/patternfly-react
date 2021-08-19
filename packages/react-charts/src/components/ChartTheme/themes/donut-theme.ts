@@ -1,8 +1,8 @@
 /* eslint-disable camelcase */
-import chart_donut_pie_Height from '@patternfly/react-tokens/dist/js/chart_donut_pie_Height';
-import chart_donut_pie_angle_Padding from '@patternfly/react-tokens/dist/js/chart_donut_pie_angle_Padding';
-import chart_donut_pie_Padding from '@patternfly/react-tokens/dist/js/chart_donut_pie_Padding';
-import chart_donut_pie_Width from '@patternfly/react-tokens/dist/js/chart_donut_pie_Width';
+import chart_donut_pie_Height from '@patternfly/react-tokens/dist/esm/chart_donut_pie_Height';
+import chart_donut_pie_angle_Padding from '@patternfly/react-tokens/dist/esm/chart_donut_pie_angle_Padding';
+import chart_donut_pie_Padding from '@patternfly/react-tokens/dist/esm/chart_donut_pie_Padding';
+import chart_donut_pie_Width from '@patternfly/react-tokens/dist/esm/chart_donut_pie_Width';
 
 // Donut theme
 export const DonutTheme = {

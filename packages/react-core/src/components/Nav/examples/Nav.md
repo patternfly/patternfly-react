@@ -11,6 +11,7 @@ import './nav.css';
 ## Examples
 
 ### Default
+
 ```js
 import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
@@ -53,6 +54,7 @@ class NavDefaultList extends React.Component {
 ```
 
 ### Grouped
+
 ```js
 import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
@@ -103,6 +105,7 @@ class NavGroupedList extends React.Component {
 ```
 
 ### Expandable
+
 ```js
 import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
@@ -199,6 +202,7 @@ class NavExpandableList extends React.Component {
 ```
 
 ### Expandable (w/subnavigation titles)
+
 ```js
 import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
@@ -289,6 +293,7 @@ class NavExpandableTitlesList extends React.Component {
 ```
 
 ### Mixed
+
 ```js
 import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
@@ -382,6 +387,7 @@ class NavMixedList extends React.Component {
 ```
 
 ### Horizontal (only in PageHeader)
+
 ```js
 import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup, PageHeader } from '@patternfly/react-core';
@@ -420,7 +426,47 @@ class NavHorizontalList extends React.Component {
 }
 ```
 
-### Tertiary
+### Horizontal subnav
+
+```js
+import React from 'react';
+import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup, PageHeader } from '@patternfly/react-core';
+
+class HorizontalSubNav extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeItem: 0
+    };
+    this.onSelect = result => {
+      this.setState({
+        activeItem: result.itemId
+      });
+    };
+  }
+
+  render() {
+    const { activeItem } = this.state;
+    return (
+      <Nav onSelect={this.onSelect} variant="horizontal-subnav">
+        <NavList>
+          {Array.apply(0, Array(10)).map(function(x, i) {
+            const num = i + 1;
+            return (
+              <NavItem key={num} itemId={num} isActive={activeItem === num} href="#">
+                Horizontal nav item {num}
+              </NavItem>
+            );
+          })}
+        </NavList>
+      </Nav>
+    );
+  }
+}
+```
+
+### Legacy tertiary
+
 ```js
 import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup, PageSection } from '@patternfly/react-core';

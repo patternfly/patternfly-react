@@ -4,15 +4,15 @@ section: demos
 ---
 
 import DashboardWrapper from './examples/DashboardWrapper';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import pfIcon from './Card/pf-logo-small.svg';
 import activeMQIcon from './Card/activemq-core_200x150.png';
 import avroIcon from './Card/camel-avro_200x150.png';
@@ -70,14 +70,14 @@ import {
   Title
 } from '@patternfly/react-core';
 import DashboardWrapper from './examples/DashboardWrapper';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 
 class PrimaryDetailFullPage extends React.Component {
   constructor(props) {
@@ -530,14 +530,14 @@ import {
   Title
 } from '@patternfly/react-core';
 import DashboardWrapper from './examples/DashboardWrapper';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 
 class PrimaryDetailContentPadding extends React.Component {
   constructor(props) {
@@ -1543,7 +1543,7 @@ import {
   Title
 } from '@patternfly/react-core';
 import DashboardWrapper from './examples/DashboardWrapper';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 class PrimaryDetailDataListInCard extends React.Component {
   constructor(props) {
@@ -1793,14 +1793,14 @@ import {
   Title
 } from '@patternfly/react-core';
 import DashboardWrapper from './examples/DashboardWrapper';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/js/icons/times-circle-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 
 class PrimaryDetailInlineModifier extends React.Component {
   constructor(props) {

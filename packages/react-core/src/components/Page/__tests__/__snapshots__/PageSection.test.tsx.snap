@@ -1,11 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Check page main breadcrumb section against snapshot 1`] = `
+<PageSection
+  type="breadcrumb"
+>
+  <section
+    className="pf-c-page__main-breadcrumb"
+  />
+</PageSection>
+`;
+
 exports[`Check page main nav section against snapshot 1`] = `
 <PageSection
   type="nav"
 >
   <section
     className="pf-c-page__main-nav"
+  />
+</PageSection>
+`;
+
+exports[`Check page main subnav section against snapshot 1`] = `
+<PageSection
+  type="subnav"
+>
+  <section
+    className="pf-c-page__main-subnav"
   />
 </PageSection>
 `;

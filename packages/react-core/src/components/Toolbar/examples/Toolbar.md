@@ -5,11 +5,11 @@ propComponents: ['Toolbar', 'ToolbarContent', 'ToolbarGroup', 'ToolbarItem', 'To
 section: components
 ---
 
-import EditIcon from '@patternfly/react-icons/dist/js/icons/edit-icon';
-import CloneIcon from '@patternfly/react-icons/dist/js/icons/clone-icon';
-import SyncIcon from '@patternfly/react-icons/dist/js/icons/sync-icon';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
+import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
+import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
 ## Examples
 
@@ -21,7 +21,7 @@ Toolbar items are individual components that can be placed inside of a toolbar. 
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, TextInput } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 class ToolbarItems extends React.Component {
   constructor(props) {
@@ -247,9 +247,9 @@ Often, it makes sense to group sets of like items to create desired associations
 import React from 'react';
 import { Toolbar, ToolbarContent, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
 import { Button, Select, SelectOption, SelectVariant } from '@patternfly/react-core';
-import EditIcon from '@patternfly/react-icons/dist/js/icons/edit-icon';
-import CloneIcon from '@patternfly/react-icons/dist/js/icons/clone-icon';
-import SyncIcon from '@patternfly/react-icons/dist/js/icons/sync-icon';
+import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
+import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
+import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 
 class ToolbarGroupTypes extends React.Component {
   constructor(props) {
@@ -443,8 +443,8 @@ A toggle group can be used when you want to collapse a set of items into an over
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption, SelectVariant, TextInput } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
 class ToolbarComponentMangedToggleGroup extends React.Component {
   constructor(props) {
@@ -600,9 +600,9 @@ If the consumer would prefer to manage the expanded state of the toggle group fo
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
 import { Button, ButtonVariant, InputGroup, Select, SelectOption, SelectVariant } from '@patternfly/react-core';
-import TextInput from '@patternfly/react-icons/dist/js/icons/text-input';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import TextInput from '@patternfly/react-icons/dist/esm/icons/text-input';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
 class ToolbarConsumerMangedToggleGroup extends React.Component {
   constructor(props) {
@@ -784,12 +784,12 @@ import {
   DropdownSeparator,
   KebabToggle
 } from '@patternfly/react-core';
-import TextInput from '@patternfly/react-icons/dist/js/icons/text-input';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import EditIcon from '@patternfly/react-icons/dist/js/icons/edit-icon';
-import CloneIcon from '@patternfly/react-icons/dist/js/icons/clone-icon';
-import SyncIcon from '@patternfly/react-icons/dist/js/icons/sync-icon';
+import TextInput from '@patternfly/react-icons/dist/esm/icons/text-input';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
+import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
+import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 
 class ToolbarWithFilterExample extends React.Component {
   constructor(props) {
@@ -1061,7 +1061,7 @@ import {
   ToolbarToggleGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
 class ToolbarStacked extends React.Component {
   constructor(props) {
@@ -1093,8 +1093,6 @@ class ToolbarStacked extends React.Component {
       resourceSelected: null,
       statusIsExpanded: false,
       statusSelected: null,
-      typeIsExpanded: false,
-      typeSelected: null,
       splitButtonDropdownIsOpen: false,
       page: 1,
       perPage: 20
@@ -1132,19 +1130,6 @@ class ToolbarStacked extends React.Component {
       });
     };
 
-    this.onTypeToggle = isExpanded => {
-      this.setState({
-        typeIsExpanded: isExpanded
-      });
-    };
-
-    this.onTypeSelect = (event, selection) => {
-      this.setState({
-        typeSelected: selection,
-        typeIsExpanded: false
-      });
-    };
-
     this.onSetPage = (_event, pageNumber) => {
       this.setState({
         page: pageNumber
@@ -1177,8 +1162,6 @@ class ToolbarStacked extends React.Component {
       resourceSelected,
       statusIsExpanded,
       statusSelected,
-      typeIsExpanded,
-      typeSelected,
       splitButtonDropdownIsOpen
     } = this.state;
 
@@ -1247,24 +1230,6 @@ class ToolbarStacked extends React.Component {
             ariaLabelledBy="stacked-example-status-select"
           >
             {this.statusOptions.map((option, index) => (
-              <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
-            ))}
-          </Select>
-        </ToolbarItem>
-        <ToolbarItem variant="label" id="stacked-example-type-select">
-          Type
-        </ToolbarItem>
-        <ToolbarItem>
-          <Select
-            variant={SelectVariant.single}
-            aria-label="Select Input"
-            onToggle={this.onTypeToggle}
-            onSelect={this.onTypeSelect}
-            selections={typeSelected}
-            isOpen={typeIsExpanded}
-            ariaLabelledBy="stacked-example-type-select"
-          >
-            {this.typeOptions.map((option, index) => (
               <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
             ))}
           </Select>

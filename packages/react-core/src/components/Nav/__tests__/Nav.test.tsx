@@ -81,7 +81,7 @@ test('Default Nav List - Trigger item active update', () => {
 test('Simple Nav List', () => {
   const view = mount(
     <Nav>
-      <NavList variant="simple">
+      <NavList>
         {props.items.map(item => (
           <NavItem to={item.to} key={item.to}>
             {item.label}
@@ -203,8 +203,24 @@ test('Nav Grouped List', () => {
 
 test('Horizontal Nav List', () => {
   const view = mount(
-    <Nav>
-      <NavList variant="horizontal">
+    <Nav variant="horizontal">
+      <NavList>
+        {props.items.map(item => (
+          <NavItem to={item.to} key={item.to}>
+            {item.label}
+          </NavItem>
+        ))}
+      </NavList>
+    </Nav>,
+    { context }
+  );
+  expect(view).toMatchSnapshot();
+});
+
+test('Horizontal SubNav List', () => {
+  const view = mount(
+    <Nav variant="horizontal-subnav">
+      <NavList>
         {props.items.map(item => (
           <NavItem to={item.to} key={item.to}>
             {item.label}
@@ -219,8 +235,8 @@ test('Horizontal Nav List', () => {
 
 test('Tertiary Nav List', () => {
   const view = mount(
-    <Nav>
-      <NavList variant="tertiary">
+    <Nav variant="tertiary">
+      <NavList>
         {props.items.map(item => (
           <NavItem to={item.to} key={item.to}>
             {item.label}
@@ -235,8 +251,8 @@ test('Tertiary Nav List', () => {
 
 test('Nav List with custom item nodes', () => {
   const view = mount(
-    <Nav>
-      <NavList variant="tertiary">
+    <Nav variant="tertiary">
+      <NavList>
         <NavItem to="/components/nav#link1" className="test-nav-item-class">
           <div className="my-custom-node">My custom node</div>
         </NavItem>

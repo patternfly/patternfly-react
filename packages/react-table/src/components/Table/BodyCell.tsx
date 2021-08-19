@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Tooltip } from '@patternfly/react-core/dist/js/components/Tooltip/Tooltip';
+import { Tooltip } from '@patternfly/react-core/dist/esm/components/Tooltip/Tooltip';
 import { Bullseye, EmptyState, SelectProps } from '@patternfly/react-core';
 import { Td } from '../TableComposable/Td';
 

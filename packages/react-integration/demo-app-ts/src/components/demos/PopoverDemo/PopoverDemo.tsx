@@ -1,6 +1,6 @@
 import { Popover } from '@patternfly/react-core';
 import React, { Component } from 'react';
-import { Instance as TippyInstance } from '@patternfly/react-core/dist/js/helpers/Popper/DeprecatedTippyTypes';
+import { Instance as TippyInstance } from '@patternfly/react-core/dist/esm/helpers/Popper/DeprecatedTippyTypes';
 
 export class PopoverDemo extends Component {
   popoverRef: React.RefObject<HTMLButtonElement>;
@@ -78,6 +78,16 @@ export class PopoverDemo extends Component {
           footerContent="Popover footer"
         >
           <button id="popover-content-close-toggle">Toggle Popover</button>
+        </Popover>
+        <Popover
+          id="popover-right-start"
+          aria-label="Diagonal right top"
+          headerContent={<div>Popover header</div>}
+          bodyContent="I'm right top"
+          footerContent="Popover footer"
+          position="right-start"
+        >
+          <button id="popover-right-top-toggle">Toggle Popover</button>
         </Popover>
       </>
     );

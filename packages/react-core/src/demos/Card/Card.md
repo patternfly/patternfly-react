@@ -5,9 +5,9 @@ section: demos
 
 import DashboardWrapper from '../examples/DashboardWrapper';
 
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';
@@ -68,9 +68,9 @@ import {
 } from '@patternfly/react-core';
 import DashboardWrapper from '../examples/DashboardWrapper';
 
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';

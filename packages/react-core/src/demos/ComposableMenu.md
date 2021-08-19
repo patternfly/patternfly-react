@@ -5,16 +5,16 @@ beta: true
 ---
 
 import './composable-menu.css';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
-import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
-import StorageDomainIcon from '@patternfly/react-icons/dist/js/icons/storage-domain-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-import ClipboardIcon from '@patternfly/react-icons/dist/js/icons/clipboard-icon';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
+import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 ## Demos
 
@@ -106,13 +106,13 @@ import {
   MenuItemAction,
   Popper
 } from '@patternfly/react-core';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-import ClipboardIcon from '@patternfly/react-icons/dist/js/icons/clipboard-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 ActionComposableMenu = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -227,7 +227,7 @@ ActionComposableMenu = () => {
 ```js
 import React from 'react';
 import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper } from '@patternfly/react-core';
-import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
+import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 
 SelectComposableMenu = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -309,10 +309,10 @@ import {
   Divider,
   Popper
 } from '@patternfly/react-core';
-import StorageDomainIcon from '@patternfly/react-icons/dist/js/icons/storage-domain-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
+import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 DrilldownComposableMenu = () => {
   const [isOpen, setIsOpen] = React.useState(false);

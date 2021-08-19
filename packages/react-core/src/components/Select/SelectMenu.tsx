@@ -192,6 +192,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
       innerRef,
       footer,
       footerRef,
+      isLastOptionBeforeFooter,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */

@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { css } from '@patternfly/react-styles';
 import { DropdownItem, DropdownDirection, DropdownWithContext, DropdownContext } from '../Dropdown';
-import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
+import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import { OptionsToggle } from './OptionsToggle';
 import { ToggleTemplateProps } from './ToggleTemplate';
 import { PerPageOptions, OnPerPageSelect } from './Pagination';

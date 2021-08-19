@@ -14,7 +14,17 @@ module.exports = {
   waitFor,
   crawl: false,
   urls: Object.keys(fullscreenRoutes),
-  ignoreRules: 'color-contrast,page-has-heading-one,scrollable-region-focusable,bypass',
+  ignoreRules: [
+    'color-contrast',
+    'page-has-heading-one',
+    'scrollable-region-focusable',
+    'aria-allowed-attr',
+    'bypass',
+    'aria-progressbar-name',
+    'aria-required-parent',
+    'aria-required-children',
+    'nested-interactive'
+  ].join(','),
   ignoreIncomplete: true,
   // tree-table examples are skipped because aria-level, aria-posinset, aria-setsize are intentionally
   // being used slightly unconventionally in those examples

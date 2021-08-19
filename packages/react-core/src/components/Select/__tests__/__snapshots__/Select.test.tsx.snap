@@ -655,7 +655,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
         >
           <div
             className="pf-c-select__menu"
-            isLastOptionBeforeFooter={[Function]}
           >
             <SelectGroup
               key=".0"
@@ -2020,7 +2019,6 @@ exports[`checkbox select renders expanded successfully 1`] = `
             aria-label=""
             aria-labelledby={null}
             className="pf-c-select__menu"
-            isLastOptionBeforeFooter={[Function]}
             role="listbox"
           >
             <SelectOption
@@ -2552,7 +2550,6 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
             aria-label=""
             aria-labelledby={null}
             className="pf-c-select__menu"
-            isLastOptionBeforeFooter={[Function]}
             role="listbox"
           >
             <SelectOption
@@ -3158,7 +3155,6 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
         >
           <div
             className="pf-c-select__menu"
-            isLastOptionBeforeFooter={[Function]}
           >
             <fieldset
               aria-label=""
@@ -3807,7 +3803,6 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
         >
           <div
             className="pf-c-select__menu"
-            isLastOptionBeforeFooter={[Function]}
           >
             <fieldset
               aria-label=""
@@ -5164,7 +5159,6 @@ exports[`renders select with favorites successfully 1`] = `
         >
           <div
             className="pf-c-select__menu"
-            isLastOptionBeforeFooter={[Function]}
           >
             <SelectGroup
               key=".$group-1"
@@ -6177,7 +6171,6 @@ exports[`select custom select filter filters properly 1`] = `
             aria-label=""
             aria-labelledby={null}
             className="pf-c-select__menu"
-            isLastOptionBeforeFooter={[Function]}
             role="listbox"
           >
             <SelectOption
@@ -6931,7 +6924,6 @@ exports[`select renders select groups successfully 1`] = `
         >
           <div
             className="pf-c-select__menu"
-            isLastOptionBeforeFooter={[Function]}
           >
             <SelectGroup
               key=".0"
@@ -8219,7 +8211,6 @@ exports[`select single select renders expanded successfully 1`] = `
             aria-label=""
             aria-labelledby={null}
             className="pf-c-select__menu"
-            isLastOptionBeforeFooter={[Function]}
             role="listbox"
           >
             <SelectOption
@@ -8736,7 +8727,6 @@ exports[`select single select renders expanded successfully with custom objects 
             aria-label=""
             aria-labelledby={null}
             className="pf-c-select__menu"
-            isLastOptionBeforeFooter={[Function]}
             role="listbox"
           >
             <SelectOption
@@ -9285,7 +9275,6 @@ exports[`select with custom content renders expanded successfully 1`] = `
         >
           <div
             className="pf-c-select__menu"
-            isLastOptionBeforeFooter={[Function]}
           >
             testing custom
           </div>
@@ -9947,7 +9936,6 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
             aria-label=""
             aria-labelledby={null}
             className="pf-c-select__menu"
-            isLastOptionBeforeFooter={[Function]}
             role="listbox"
           >
             <SelectOption
@@ -10971,7 +10959,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             aria-label=""
             aria-labelledby={null}
             className="pf-c-select__menu"
-            isLastOptionBeforeFooter={[Function]}
             role="listbox"
           >
             <SelectOption
@@ -11806,7 +11793,6 @@ exports[`typeahead select renders expanded successfully 1`] = `
             aria-label=""
             aria-labelledby={null}
             className="pf-c-select__menu"
-            isLastOptionBeforeFooter={[Function]}
             role="listbox"
           >
             <SelectOption
@@ -12440,7 +12426,6 @@ exports[`typeahead select renders selected successfully 1`] = `
             aria-label=""
             aria-labelledby={null}
             className="pf-c-select__menu"
-            isLastOptionBeforeFooter={[Function]}
             role="listbox"
           >
             <SelectOption
@@ -12930,7 +12915,6 @@ exports[`typeahead select test select existing option on a non-creatable select 
             aria-label=""
             aria-labelledby={null}
             className="pf-c-select__menu"
-            isLastOptionBeforeFooter={[Function]}
             role="listbox"
           >
             <SelectOption
