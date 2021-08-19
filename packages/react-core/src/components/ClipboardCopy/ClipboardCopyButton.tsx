@@ -1,5 +1,5 @@
 import * as React from 'react';
-import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
+import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import { Button } from '../Button';
 import { Tooltip } from '../Tooltip';
 
@@ -22,7 +22,20 @@ export interface ClipboardCopyButtonProps
   /** Max width of the copy button tooltip */
   maxWidth?: string;
   /** Position of the copy button tooltip */
-  position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  position?:
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
   /** Aria-label for the copy button */
   'aria-label'?: string;
   /** Variant of the copy button */

@@ -5,9 +5,9 @@ cssPrefix: pf-c-list
 propComponents: ['List', 'ListItem']
 ---
 
-import BookOpen from '@patternfly/react-icons/dist/js/icons/book-open-icon';
-import Key from '@patternfly/react-icons/dist/js/icons/key-icon';
-import Desktop from '@patternfly/react-icons/dist/js/icons/desktop-icon';
+import BookOpen from '@patternfly/react-icons/dist/esm/icons/book-open-icon';
+import Key from '@patternfly/react-icons/dist/esm/icons/key-icon';
+import Desktop from '@patternfly/react-icons/dist/esm/icons/desktop-icon';
 
 ## Examples
 ### Basic
@@ -74,9 +74,9 @@ import { List, ListItem } from '@patternfly/react-core';
 ```js
 import React from 'react';
 import { List, ListItem } from '@patternfly/react-core';
-import BookOpen from '@patternfly/react-icons/dist/js/icons/book-open-icon';
-import Key from '@patternfly/react-icons/dist/js/icons/key-icon';
-import Desktop from '@patternfly/react-icons/dist/js/icons/desktop-icon';
+import BookOpen from '@patternfly/react-icons/dist/esm/icons/book-open-icon';
+import Key from '@patternfly/react-icons/dist/esm/icons/key-icon';
+import Desktop from '@patternfly/react-icons/dist/esm/icons/desktop-icon';
 
 <List isPlain>
   <ListItem icon={<BookOpen />}>First</ListItem>
@@ -89,9 +89,9 @@ import Desktop from '@patternfly/react-icons/dist/js/icons/desktop-icon';
 ```js
 import React from 'react';
 import { List, ListItem } from '@patternfly/react-core';
-import BookOpen from '@patternfly/react-icons/dist/js/icons/book-open-icon';
-import Key from '@patternfly/react-icons/dist/js/icons/key-icon';
-import Desktop from '@patternfly/react-icons/dist/js/icons/desktop-icon';
+import BookOpen from '@patternfly/react-icons/dist/esm/icons/book-open-icon';
+import Key from '@patternfly/react-icons/dist/esm/icons/key-icon';
+import Desktop from '@patternfly/react-icons/dist/esm/icons/desktop-icon';
 
 <List isPlain iconSize="large">
   <ListItem icon={<BookOpen />}>First</ListItem>

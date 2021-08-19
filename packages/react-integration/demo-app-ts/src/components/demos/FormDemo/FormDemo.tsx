@@ -14,8 +14,8 @@ import {
   SelectVariant,
   ValidatedOptions
 } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 export interface FormState {
   value: string;

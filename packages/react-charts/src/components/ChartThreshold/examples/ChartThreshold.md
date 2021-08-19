@@ -23,8 +23,8 @@ import {
   ChartVoronoiContainer
 } from '@patternfly/react-charts';
 import '@patternfly/patternfly/patternfly-charts.css';
-import chart_color_blue_300 from '@patternfly/react-tokens/dist/js/chart_color_blue_300';
-import chart_color_orange_300 from '@patternfly/react-tokens/dist/js/chart_color_orange_300';
+import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
+import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 
 
 ## Introduction
@@ -47,8 +47,8 @@ import {
   ChartThemeColor,
   ChartVoronoiContainer
 } from '@patternfly/react-charts';
-import chart_color_blue_300 from '@patternfly/react-tokens/dist/js/chart_color_blue_300';
-import chart_color_orange_300 from '@patternfly/react-tokens/dist/js/chart_color_orange_300';
+import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
+import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 
 class MultiColorChart extends React.Component {
   constructor(props) {

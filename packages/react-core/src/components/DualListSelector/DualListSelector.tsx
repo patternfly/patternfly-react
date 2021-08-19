@@ -2,10 +2,10 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import { Button, ButtonVariant } from '../Button';
-import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-double-left-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
-import AngleDoubleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-double-right-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
+import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { DualListSelectorPane } from './DualListSelectorPane';
 import { getUniqueId, PickOptional } from '../../helpers';
 import { DualListSelectorTreeItemData } from './DualListSelectorTree';
@@ -138,7 +138,8 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
     removeSelectedAriaLabel: 'Remove selected',
     removeAllAriaLabel: 'Remove all'
   };
-  private originalCopy = this.props.availableOptions;
+  private originalAvailableCopy = this.props.availableOptions;
+  private originalChosenCopy = this.props.chosenOptions;
 
   constructor(props: DualListSelectorProps) {
     super(props);
@@ -228,7 +229,9 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
 
       return {
         chosenOptions: newChosen,
-        availableOptions: newAvailable
+        availableOptions: newAvailable,
+        chosenOptionsSelected: [],
+        availableOptionsSelected: []
       };
     });
   };
@@ -245,7 +248,11 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
 
       const currChosen = flattenTree(prevState.chosenOptions as DualListSelectorTreeItemData[]);
       const nextChosenOptions = currChosen.concat(movedOptions);
-      const newChosen = (this.originalCopy as DualListSelectorTreeItemData[])
+
+      const allOptions = (this.originalAvailableCopy as DualListSelectorTreeItemData[]).concat(
+        this.originalChosenCopy as DualListSelectorTreeItemData[]
+      );
+      const newChosen = allOptions
         .map(opt => Object.assign({}, opt))
         .filter(item => filterTreeItemsWithoutFolders(item as DualListSelectorTreeItemData, nextChosenOptions));
 
@@ -256,7 +263,11 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
         chosenOptions: newChosen,
         chosenFilteredOptions: newChosen,
         availableOptions: newAvailable,
-        availableFilteredOptions: newAvailable
+        availableFilteredOptions: newAvailable,
+        availableTreeOptionsSelected: [],
+        chosenTreeOptionsSelected: [],
+        availableTreeOptionsChecked: [],
+        chosenTreeOptionsChecked: []
       };
     });
   };
@@ -298,7 +309,10 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       // Get next chosen options from current + new nodes and remap from base
       const currChosen = flattenTree(prevState.chosenOptions as DualListSelectorTreeItemData[]);
       const nextChosenOptions = currChosen.concat(prevState.availableTreeOptionsSelected);
-      const newChosen = (this.originalCopy as DualListSelectorTreeItemData[])
+      const allOptions = (this.originalAvailableCopy as DualListSelectorTreeItemData[]).concat(
+        this.originalChosenCopy as DualListSelectorTreeItemData[]
+      );
+      const newChosen = allOptions
         .map(opt => Object.assign({}, opt))
         .filter(item => filterTreeItemsWithoutFolders(item as DualListSelectorTreeItemData, nextChosenOptions));
 
@@ -335,7 +349,9 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
 
       return {
         chosenOptions: newChosen,
-        availableOptions: newAvailable
+        availableOptions: newAvailable,
+        chosenOptionsSelected: [],
+        availableOptionsSelected: []
       };
     });
   };
@@ -352,7 +368,10 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       const currAvailable = flattenTree(prevState.availableOptions as DualListSelectorTreeItemData[]);
       const nextAvailableOptions = currAvailable.concat(movedOptions);
 
-      const newAvailable = (this.originalCopy as DualListSelectorTreeItemData[])
+      const allOptions = (this.originalAvailableCopy as DualListSelectorTreeItemData[]).concat(
+        this.originalChosenCopy as DualListSelectorTreeItemData[]
+      );
+      const newAvailable = allOptions
         .map(opt => Object.assign({}, opt))
         .filter(item => filterTreeItemsWithoutFolders(item as DualListSelectorTreeItemData, nextAvailableOptions));
 
@@ -361,7 +380,11 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
 
       return {
         chosenOptions: newChosen,
-        availableOptions: newAvailable
+        availableOptions: newAvailable,
+        availableTreeOptionsSelected: [],
+        chosenTreeOptionsSelected: [],
+        availableTreeOptionsChecked: [],
+        chosenTreeOptionsChecked: []
       };
     });
   };
@@ -401,7 +424,11 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       // Get next chosen options from current and remap from base
       const currAvailable = flattenTree(prevState.availableOptions as DualListSelectorTreeItemData[]);
       const nextAvailableOptions = currAvailable.concat(prevState.chosenTreeOptionsSelected);
-      const newAvailable = (this.originalCopy as DualListSelectorTreeItemData[])
+
+      const allOptions = (this.originalAvailableCopy as DualListSelectorTreeItemData[]).concat(
+        this.originalChosenCopy as DualListSelectorTreeItemData[]
+      );
+      const newAvailable = allOptions
         .map(opt => Object.assign({}, opt))
         .filter(item => filterTreeItemsWithoutFolders(item as DualListSelectorTreeItemData, nextAvailableOptions));
 

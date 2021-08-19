@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { IExtra, IFormatterValueType, ITransform } from '../../TableTypes';
 import { SortColumn, SortByDirection } from '../../SortColumn';
-import StarIcon from '@patternfly/react-icons/dist/js/icons/star-icon';
+import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
 
 export const sortableFavorites = (sort: any) => () =>
   sortable(<StarIcon aria-hidden />, {

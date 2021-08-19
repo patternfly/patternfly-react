@@ -9,6 +9,10 @@ export interface TreeViewRootProps {
   children: React.ReactNode;
   /** Flag indicating if the tree view has checkboxes */
   hasChecks?: boolean;
+  /** Flag indicating if tree view has guide lines. */
+  hasGuides?: boolean;
+  /** Variant presentation styles for the tree view. */
+  variant?: 'default' | 'compact' | 'compactNoBackground';
   /** Class to add to add if not passed a parentItem */
   className?: string;
 }
@@ -68,7 +72,9 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
     );
 
     if (['ArrowLeft', 'ArrowRight'].includes(key)) {
-      const isExpandable = activeElement.firstElementChild.classList.contains('pf-c-tree-view__node-toggle');
+      const isExpandable = activeElement.firstElementChild.firstElementChild.classList.contains(
+        'pf-c-tree-view__node-toggle'
+      );
       const isExpanded = activeElement.closest('li').classList.contains('pf-m-expanded');
       if (key === 'ArrowLeft') {
         if (isExpandable && isExpanded) {
@@ -186,11 +192,26 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
     }
   };
 
+  variantStyleModifiers: { [key in TreeViewRootProps['variant']]: string | string[] } = {
+    default: '',
+    compact: styles.modifiers.compact,
+    compactNoBackground: [styles.modifiers.compact, styles.modifiers.noBackground]
+  };
+
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { children, hasChecks, className, ...props } = this.props;
+    const { children, hasChecks, hasGuides, variant, className, ...props } = this.props;
     return (
-      <div className={css(styles.treeView, className)} ref={this.treeRef} {...props}>
+      <div
+        className={css(
+          styles.treeView,
+          hasGuides && styles.modifiers.guides,
+          this.variantStyleModifiers[variant],
+          className
+        )}
+        ref={this.treeRef}
+        {...props}
+      >
         {children}
       </div>
     );

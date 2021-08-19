@@ -3,12 +3,12 @@ import styles from '@patternfly/react-styles/css/components/SearchInput/search-i
 import { css } from '@patternfly/react-styles';
 import { Button, ButtonVariant } from '../Button';
 import { Badge } from '../Badge';
-import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
-import AngleUpIcon from '@patternfly/react-icons/dist/js/icons/angle-up-icon';
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
-import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
+import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
+import AngleUpIcon from '@patternfly/react-icons/dist/esm/icons/angle-up-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 import { ActionGroup, Form, FormGroup } from '../Form';
 import { InputGroup } from '../InputGroup';
 import { TextInput } from '../TextInput';

@@ -6,8 +6,8 @@ propComponents: ['Tile']
 beta: true
 ---
 
-import PlusIcon from '@patternfly/react-icons/dist/js/icons/plus-icon';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 
 ## Examples
@@ -50,7 +50,7 @@ import { Tile } from '@patternfly/react-core';
 ```js
 import React from 'react';
 import { Tile } from '@patternfly/react-core';
-import PlusIcon from '@patternfly/react-icons/dist/js/icons/plus-icon';
+import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 
 <React.Fragment>
   <Tile title="Default" icon={<PlusIcon />}>
@@ -70,7 +70,7 @@ import PlusIcon from '@patternfly/react-icons/dist/js/icons/plus-icon';
 ```js
 import React from 'react';
 import { Tile } from '@patternfly/react-core';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 <React.Fragment>
   <Tile title="Default" icon={<BellIcon />} isStacked>
@@ -90,7 +90,7 @@ import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 ```js
 import React from 'react';
 import { Tile } from '@patternfly/react-core';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 <React.Fragment>
   <Tile title="Default" icon={<BellIcon />} isStacked isDisplayLarge>
@@ -110,7 +110,7 @@ import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 ```js
 import React from 'react';
 import { Tile, Flex } from '@patternfly/react-core';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 <Flex>
   <Flex flex={{ default: 'flex_1' }}>

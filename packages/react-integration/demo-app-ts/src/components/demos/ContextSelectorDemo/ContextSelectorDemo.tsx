@@ -78,6 +78,8 @@ export class ContextSelectorDemo extends React.Component<{}, ContextSelectorStat
             <Button variant="link">Footer action</Button>
           </ContextSelectorFooter>
         }
+        isPlain
+        isText
       >
         {filteredItems.map((item, index) => (
           <ContextSelectorItem key={index}>{item}</ContextSelectorItem>

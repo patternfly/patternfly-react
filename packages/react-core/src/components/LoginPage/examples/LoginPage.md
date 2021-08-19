@@ -27,7 +27,7 @@ import {
   LoginPage,
   ListItem
 } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 ## Examples
 ### Basic
@@ -43,7 +43,7 @@ import {
   BackgroundImageSrc,
   ListItem
 } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 class SimpleLoginPage extends React.Component {
   constructor(props) {
@@ -157,6 +157,7 @@ class SimpleLoginPage extends React.Component {
         isRememberMeChecked={this.state.isRememberMeChecked}
         onChangeRememberMe={this.onRememberMeClick}
         onLoginButtonClick={this.onLoginButtonClick}
+        loginButtonLabel="Log in"
       />
     );
 
@@ -178,7 +179,7 @@ class SimpleLoginPage extends React.Component {
         footerListItems={listItem}
         textContent="This is placeholder text only. Use this area to place any information or introductory message about your application that may be relevant to users."
         loginTitle="Log in to your account"
-        loginSubtitle="Please use your single sign-on LDAP credentials"
+        loginSubtitle="Enter your single sign-on LDAP credentials."
         socialMediaLoginContent={socialMediaLoginContent}
         signUpForAccountMessage={signUpForAccountMessage}
         forgotCredentials={forgotCredentials}
@@ -203,7 +204,7 @@ import {
   BackgroundImageSrc,
   ListItem
 } from '@patternfly/react-core';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 class HideShowPasswordPage extends React.Component {
   constructor(props) {
@@ -318,6 +319,7 @@ class HideShowPasswordPage extends React.Component {
         isRememberMeChecked={this.state.isRememberMeChecked}
         onChangeRememberMe={this.onRememberMeClick}
         onLoginButtonClick={this.onLoginButtonClick}
+        loginButtonLabel="Log in"
       />
     );
 
@@ -339,7 +341,7 @@ class HideShowPasswordPage extends React.Component {
         footerListItems={listItem}
         textContent="This is placeholder text only. Use this area to place any information or introductory message about your application that may be relevant to users."
         loginTitle="Log in to your account"
-        loginSubtitle="Please use your single sign-on LDAP credentials"
+        loginSubtitle="Enter your single sign-on LDAP credentials."
         socialMediaLoginContent={socialMediaLoginContent}
         signUpForAccountMessage={signUpForAccountMessage}
         forgotCredentials={forgotCredentials}

@@ -45,14 +45,14 @@ class FinishedStep extends React.Component {
         <EmptyState variant="large">
           <EmptyStateIcon icon={CogsIcon} />
           <Title headingLevel="h4" size="lg">
-            {percent === 100 ? 'Configuration Complete' : 'Configuration in progress'}
+            {percent === 100 ? 'Validation complete' : 'Validating credentials'}
           </Title>
           <EmptyStateBody>
             <Progress value={percent} measureLocation="outside" />
           </EmptyStateBody>
           <EmptyStateBody>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non pulvinar tortor. Maecenas sit amet
-            pellentesque velit, eu eleifend mauris.
+            Description can be used to further elaborate on the validation step, or give the user a better idea of how
+            long the process will take.
           </EmptyStateBody>
           <EmptyStateSecondaryActions>
             <Button isDisabled={percent !== 100} onClick={this.props.onClose}>

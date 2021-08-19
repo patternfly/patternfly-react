@@ -17,13 +17,13 @@ import {
   Button,
   Spinner
 } from '@patternfly/react-core';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import CubeIcon from '@patternfly/react-icons/dist/js/icons/cube-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/js/icons/layer-group-icon';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
-import ClipboardIcon from '@patternfly/react-icons/dist/js/icons/clipboard-icon';
-import TableIcon from '@patternfly/react-icons/dist/js/icons/table-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
+import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 
 export class MenuDemo extends Component {
   state = {

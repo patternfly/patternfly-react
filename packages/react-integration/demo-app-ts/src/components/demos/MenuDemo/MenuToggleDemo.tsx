@@ -1,7 +1,7 @@
 import React from 'react';
 import { MenuToggle, Badge, Stack, StackItem } from '@patternfly/react-core';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 export class MenuToggleDemo extends React.Component {
   static displayName = 'MenuToggleDemo';

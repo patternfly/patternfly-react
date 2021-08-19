@@ -1,7 +1,7 @@
 import React from 'react';
 import { CodeBlock, CodeBlockAction, CodeBlockCode, Button } from '@patternfly/react-core';
-import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
-import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
+import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 export class CodeBlockDemo extends React.Component {
   static displayName = 'CodeBlockDemo';

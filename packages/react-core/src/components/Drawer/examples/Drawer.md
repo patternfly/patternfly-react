@@ -81,7 +81,7 @@ class SimpleDrawer extends React.Component {
     return (
       <React.Fragment>
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
@@ -156,7 +156,7 @@ class SimpleDrawerPanelRight extends React.Component {
     return (
       <React.Fragment>
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
@@ -231,7 +231,7 @@ class SimpleDrawerPanelLeft extends React.Component {
     return (
       <React.Fragment>
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <Drawer isExpanded={isExpanded} position="left" onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
@@ -306,7 +306,7 @@ class SimpleDrawerPanelBottom extends React.Component {
     return (
       <React.Fragment>
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <div style={{ height: '400px' }}>
           <Drawer isExpanded={isExpanded} position="bottom" onExpand={this.onExpand}>
@@ -383,7 +383,7 @@ class SimpleDrawerInlineContent extends React.Component {
     return (
       <React.Fragment>
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <Drawer isExpanded={isExpanded} isInline onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
@@ -458,7 +458,7 @@ class DrawerInlineContentPanelRight extends React.Component {
     return (
       <React.Fragment>
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <Drawer isExpanded={isExpanded} isInline onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
@@ -533,7 +533,7 @@ class DrawerInlineContentPanelLeft extends React.Component {
     return (
       <React.Fragment>
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <Drawer isExpanded={isExpanded} isInline position="left" onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
@@ -609,7 +609,7 @@ class DrawerStackedContentBodyElements extends React.Component {
     return (
       <React.Fragment>
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
@@ -687,7 +687,7 @@ class DrawerStackedContentBodyElements extends React.Component {
     return (
       <React.Fragment>
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
@@ -764,7 +764,7 @@ class DrawerModifiedContentPadding extends React.Component {
     return (
       <React.Fragment>
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
@@ -841,7 +841,7 @@ class DrawerModifiedPanelPadding extends React.Component {
     return (
       <React.Fragment>
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
@@ -917,7 +917,7 @@ class DrawerWithSection extends React.Component {
     return (
       <React.Fragment>
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerSection>drawer-section</DrawerSection>
@@ -988,7 +988,7 @@ class StaticDrawer extends React.Component {
     return (
       <React.Fragment>
         <Button className="pf-u-hidden-on-md" aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <Drawer isStatic isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
@@ -1063,7 +1063,7 @@ class SimpleDrawer extends React.Component {
     return (
       <React.Fragment>
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
@@ -1155,7 +1155,7 @@ class ResizableDrawer extends React.Component {
     return (
       <React.Fragment>
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerContent panelContent={panelContent}>
@@ -1231,7 +1231,7 @@ class ResizableDrawer extends React.Component {
     return (
       <React.Fragment>
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <Drawer isExpanded={isExpanded} onExpand={this.onExpand} position="left">
           <DrawerContent panelContent={panelContent}>
@@ -1307,7 +1307,7 @@ class ResizableDrawer extends React.Component {
     return (
       <React.Fragment>
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <div style={{ height: '400px' }}>
           <Drawer isExpanded={isExpanded} onExpand={this.onExpand} position="bottom">
@@ -1385,7 +1385,7 @@ class ResizableDrawer extends React.Component {
     return (
       <React.Fragment>
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <Drawer isExpanded={isExpanded} onExpand={this.onExpand} isInline>
           <DrawerContent panelContent={panelContent}>
@@ -1508,7 +1508,7 @@ class LightGrayDrawer extends React.Component {
         />
         <br />
         <Button aria-expanded={isExpanded} onClick={this.onClick}>
-          Toggle Drawer
+          Toggle drawer
         </Button>
         <Drawer isExpanded={isExpanded} onExpand={this.onExpand}>
           <DrawerSection colorVariant={sectionGray ? DrawerColorVariant.light200 : DrawerColorVariant.default}>

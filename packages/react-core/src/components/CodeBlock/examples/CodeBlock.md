@@ -6,8 +6,8 @@ propComponents: ['CodeBlock', 'CodeBlockAction', 'CodeBlockCode']
 beta: true
 ---
 
-import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
-import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
+import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 ## Examples
 
@@ -16,8 +16,8 @@ import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
 ```js
 import React from 'react';
 import { CodeBlock, CodeBlockAction, CodeBlockCode, ClipboardCopyButton, Button } from '@patternfly/react-core';
-import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
-import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
+import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 class BasicCodeBlock extends React.Component {
   constructor(props) {
@@ -107,8 +107,8 @@ import {
   ExpandableSectionToggle,
   Button
 } from '@patternfly/react-core';
-import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
-import PlayIcon from '@patternfly/react-icons/dist/js/icons/play-icon';
+import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 class BasicCodeBlock extends React.Component {
   constructor(props) {

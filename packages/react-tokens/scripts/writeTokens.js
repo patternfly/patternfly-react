@@ -24,14 +24,15 @@ exports["default"] = exports.${tokenName};
 `.trim()
   );
 
-const writeDTSExport = (tokenName, tokenString) =>
-  outputFileSync(
-    join(outDir, 'js', `${tokenName}.d.ts`),
-    `
+const writeDTSExport = (tokenName, tokenString) => {
+  const text = `
 export const ${tokenName}: ${tokenString};
 export default ${tokenName};
-`.trim()
-  );
+`.trim();
+  const filename = `${tokenName}.d.ts`;
+  outputFileSync(join(outDir, 'esm', filename), text);
+  outputFileSync(join(outDir, 'js', filename), text);
+};
 
 const allIndex = {};
 const componentIndex = [];

@@ -6,6 +6,8 @@ import { TreeViewRoot } from './TreeViewRoot';
 export interface TreeViewDataItem {
   /** Internal content of a tree view item */
   name: React.ReactNode;
+  /** Title a tree view item. Only used in Compact presentations. */
+  title?: React.ReactNode;
   /** ID of a tree view item */
   id?: string;
   /** Child nodes of a tree view item */
@@ -41,6 +43,10 @@ export interface TreeViewProps {
   hasChecks?: boolean;
   /** Flag indicating if all nodes in the tree view should have badges */
   hasBadges?: boolean;
+  /** Flag indicating if tree view has guide lines. */
+  hasGuides?: boolean;
+  /** Variant presentation styles for the tree view. */
+  variant?: 'default' | 'compact' | 'compactNoBackground';
   /** Icon for all leaf or unexpanded node items */
   icon?: React.ReactNode;
   /** Icon for all expanded node items */
@@ -70,6 +76,8 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   isNested = false,
   hasChecks = false,
   hasBadges = false,
+  hasGuides = false,
+  variant = 'default',
   defaultAllExpanded = false,
   allExpanded,
   icon,
@@ -89,6 +97,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
         <TreeViewListItem
           key={item.id?.toString() || item.name.toString()}
           name={item.name}
+          title={item.title}
           id={item.id}
           isExpanded={allExpanded}
           defaultExpanded={item.defaultExpanded !== undefined ? item.defaultExpanded : defaultAllExpanded}
@@ -106,6 +115,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
           expandedIcon={item.expandedIcon !== undefined ? item.expandedIcon : expandedIcon}
           action={item.action}
           compareItems={compareItems}
+          isCompact={variant === 'compact' || variant === 'compactNoBackground'}
           {...(item.children && {
             children: (
               <TreeView
@@ -114,6 +124,8 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
                 parentItem={item}
                 hasChecks={hasChecks}
                 hasBadges={hasBadges}
+                hasGuides={hasGuides}
+                variant={variant}
                 allExpanded={allExpanded}
                 defaultAllExpanded={defaultAllExpanded}
                 onSelect={onSelect}
@@ -133,7 +145,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
       {parentItem ? (
         treeViewList
       ) : (
-        <TreeViewRoot hasChecks={hasChecks} className={className} {...props}>
+        <TreeViewRoot hasChecks={hasChecks} hasGuides={hasGuides} variant={variant} className={className} {...props}>
           {treeViewList}
         </TreeViewRoot>
       )}

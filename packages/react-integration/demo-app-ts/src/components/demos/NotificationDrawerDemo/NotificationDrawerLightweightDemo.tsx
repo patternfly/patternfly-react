@@ -18,7 +18,7 @@ import {
   NotificationDrawerListItemHeader,
   Title
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 interface GroupsNotificationDrawerDemoState {
   firstGroupIsOpen: boolean;

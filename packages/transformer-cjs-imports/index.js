@@ -2,17 +2,17 @@
 const ts = require('typescript');
 
 /**
- * We import `@patternfly/react-[tokens,icons]/dist/js` to avoid parsing massive modules
- * as well as for cross-module imports with types to `@patternfly/react-core`.
- * HOWEVER we would like for the ESM output to reference `@patternfly/react-[]/dist/esm`
+ * We import `@patternfly/react-[tokens,icons]/dist/esm` to avoid parsing massive modules.
+ * HOWEVER we would like for the CJS output to reference `@patternfly/react-[]/dist/cjs`
  * for better tree-shaking and smaller bundlers.
  * A large offender of this is Tooltip's Popover helper.
  *
  * @param {object} context TS context
  */
 function transformerCJSImports(context) {
-  // Only transform for ESM build
-  if (context.getCompilerOptions().target !== 2) {
+  // Only transform for CJS build
+  // ESM: module = 5, CJS: module = 1
+  if (context.getCompilerOptions().module !== 1) {
     return node => node;
   }
   /**
@@ -22,10 +22,10 @@ function transformerCJSImports(context) {
    * @param {object} node TS Node
    */
   function visit(node) {
-    if (ts.isImportDeclaration(node) && /@patternfly\/.*\/dist\/js/.test(node.moduleSpecifier.text)) {
+    if (ts.isImportDeclaration(node) && /@patternfly\/.*\/dist\/esm/.test(node.moduleSpecifier.text)) {
       const newNode = ts.getMutableClone(node);
-      const newPath = node.moduleSpecifier.text.replace(/dist\/js/, 'dist/esm');
-      newNode.moduleSpecifier = ts.createStringLiteral(newPath);
+      const newPath = node.moduleSpecifier.text.replace(/dist\/esm/, 'dist/js');
+      newNode.moduleSpecifier = ts.createStringLiteral(newPath, true);
       return newNode;
     }
     return ts.visitEachChild(node, child => visit(child), context);

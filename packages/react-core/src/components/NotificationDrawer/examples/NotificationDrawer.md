@@ -17,7 +17,7 @@ propComponents:
 beta: true
 ---
 
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 ## Examples
 
@@ -72,7 +72,7 @@ class BasicNotificationDrawer extends React.Component {
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
       <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
+        Disabled link
       </DropdownItem>
     ];
     return (
@@ -245,7 +245,7 @@ import {
   NotificationDrawerListItemHeader,
   Title
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 class GroupNotificationDrawer extends React.Component {
   constructor(props) {
@@ -291,7 +291,7 @@ class GroupNotificationDrawer extends React.Component {
       </DropdownItem>,
       <DropdownSeparator key="separator" />,
       <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
+        Disabled link
       </DropdownItem>
     ];
     return (
@@ -560,7 +560,7 @@ import {
   NotificationDrawerListItemHeader,
   Title
 } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 class LightweightNotificationDrawerDemo extends React.Component {
   constructor(props) {

@@ -8,7 +8,7 @@ import {
   BadgeToggle,
   DropdownItem
 } from '@patternfly/react-core';
-import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
+import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 
 export class BreadcrumbDemo extends React.Component {
   static displayName = 'BreadcrumbDemo';

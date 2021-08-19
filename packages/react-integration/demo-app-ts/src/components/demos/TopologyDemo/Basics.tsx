@@ -16,7 +16,7 @@ import {
 import defaultComponentFactory from './components/defaultComponentFactory';
 import DefaultNode from './components/DefaultNode';
 import withTopologySetup from './utils/withTopologySetup';
-import Dimensions from '@patternfly/react-topology/dist/js/geom/Dimensions';
+import Dimensions from '@patternfly/react-topology/dist/esm/geom/Dimensions';
 
 export const SingleNode = withTopologySetup(() => {
   useComponentFactory(defaultComponentFactory);

@@ -1,8 +1,8 @@
 import { List, ListProps, ListVariant, ListComponent, ListItem } from '@patternfly/react-core';
 import React, { Component } from 'react';
-import BookOpen from '@patternfly/react-icons/dist/js/icons/book-open-icon';
-import Key from '@patternfly/react-icons/dist/js/icons/key-icon';
-import Desktop from '@patternfly/react-icons/dist/js/icons/desktop-icon';
+import BookOpen from '@patternfly/react-icons/dist/esm/icons/book-open-icon';
+import Key from '@patternfly/react-icons/dist/esm/icons/key-icon';
+import Desktop from '@patternfly/react-icons/dist/esm/icons/desktop-icon';
 
 export class ListDemo extends Component {
   myInlineListProps: ListProps = {

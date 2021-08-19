@@ -25,9 +25,9 @@ describe('TreeView Demo Test', () => {
     cy.get('#App1').should('not.exist');
     cy.get('#Sources').should('exist');
     cy.get('#mixed').should('exist');
-    cy.get('#FCost > :nth-child(1) > .pf-c-tree-view__node > .pf-c-tree-view__node-count > .pf-c-badge').contains(
-      'custom badge'
-    );
+    cy.get(
+      '#FCost > :nth-child(1) > .pf-c-tree-view__node > .pf-c-tree-view__node-container > .pf-c-tree-view__node-count > .pf-c-badge'
+    ).contains('custom badge');
   });
 
   it('Verify treeview keyboard interactions', () => {

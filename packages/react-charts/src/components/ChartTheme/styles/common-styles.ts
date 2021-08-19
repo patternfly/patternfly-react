@@ -1,10 +1,10 @@
 /* eslint-disable camelcase */
-import chart_global_FontFamily from '@patternfly/react-tokens/dist/js/chart_global_FontFamily';
-import chart_global_FontSize_sm from '@patternfly/react-tokens/dist/js/chart_global_FontSize_sm';
-import chart_global_label_Margin from '@patternfly/react-tokens/dist/js/chart_global_label_Margin';
-import chart_global_letter_spacing from '@patternfly/react-tokens/dist/js/chart_global_letter_spacing';
-import chart_legend_Margin from '@patternfly/react-tokens/dist/js/chart_legend_Margin';
-import chart_legend_position from '@patternfly/react-tokens/dist/js/chart_legend_position';
+import chart_global_FontFamily from '@patternfly/react-tokens/dist/esm/chart_global_FontFamily';
+import chart_global_FontSize_sm from '@patternfly/react-tokens/dist/esm/chart_global_FontSize_sm';
+import chart_global_label_Margin from '@patternfly/react-tokens/dist/esm/chart_global_label_Margin';
+import chart_global_letter_spacing from '@patternfly/react-tokens/dist/esm/chart_global_letter_spacing';
+import chart_legend_Margin from '@patternfly/react-tokens/dist/esm/chart_legend_Margin';
+import chart_legend_position from '@patternfly/react-tokens/dist/esm/chart_legend_position';
 
 // Typography
 const TYPOGRAPHY_FONT_FAMILY = chart_global_FontFamily.var;

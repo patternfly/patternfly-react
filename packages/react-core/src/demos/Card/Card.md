@@ -5,9 +5,9 @@ section: demos
 
 import DashboardWrapper from '../examples/DashboardWrapper';
 
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';
@@ -68,9 +68,9 @@ import {
 } from '@patternfly/react-core';
 import DashboardWrapper from '../examples/DashboardWrapper';
 
-import FilterIcon from '@patternfly/react-icons/dist/js/icons/filter-icon';
-import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';
@@ -421,7 +421,7 @@ class CardViewBasic extends React.Component {
     const { isLowerToolbarDropdownOpen, filters } = this.state;
 
     const filterDropdownItems = [
-      <SelectOption key="patternfly" value="Patternfly" />,
+      <SelectOption key="patternfly" value="PatternFly" />,
       <SelectOption key="activemq" value="ActiveMQ" />,
       <SelectOption key="apachespark" value="Apache Spark" />,
       <SelectOption key="avro" value="Avro" />,
@@ -494,7 +494,7 @@ class CardViewBasic extends React.Component {
         <ToolbarItem variant="overflow-menu">
           <OverflowMenu breakpoint="md">
             <OverflowMenuItem>
-              <Button variant="primary">Create a Project</Button>
+              <Button variant="primary">Create a project</Button>
             </OverflowMenuItem>
             <OverflowMenuControl hasAdditionalOptions>
               <Dropdown
@@ -539,7 +539,7 @@ class CardViewBasic extends React.Component {
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Projects</Text>
-              <Text component="p">This is a demo that showcases Patternfly Cards.</Text>
+              <Text component="p">This is a demo that showcases PatternFly cards.</Text>
             </TextContent>
             <Toolbar id="toolbar-group-types" clearAllFilters={this.onDelete}>
               <ToolbarContent>{toolbarItems}</ToolbarContent>

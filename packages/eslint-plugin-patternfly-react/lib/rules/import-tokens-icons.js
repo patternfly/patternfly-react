@@ -5,11 +5,11 @@
  */
 function makeImport(specifier, moduleName) {
   if (moduleName.endsWith('createIcon') && moduleName.startsWith('@patternfly/react-icons')) {
-    return `import { ${specifier.local.name} } from '@patternfly/react-icons/dist/js/createIcon';`;
+    return `import { ${specifier.local.name} } from '@patternfly/react-icons/dist/esm/createIcon';`;
   }
   let res = `import ${specifier.local.name} from '`;
   res += moduleName.replace(/\/dist\/(js|esm)/, '');
-  res += '/dist/js';
+  res += '/dist/esm';
   if (moduleName.includes('icon')) {
     res += '/icons/';
     res += specifier.imported.name.replace(/[A-Z]/g, match => `-${match.toLowerCase()}`).replace(/^-/, '');
@@ -46,13 +46,13 @@ module.exports = {
               specifier.type === 'ImportSpecifier' &&
               !(
                 node.source.value.startsWith('@patternfly/react-icons') &&
-                node.source.value.endsWith('/dist/js/createIcon')
+                node.source.value.endsWith('/dist/esm/createIcon')
               )
           );
           if (esmSpecifiers.length > 0) {
             context.report({
               node,
-              message: `Importing from the barrel ${node.source.value} file will blow up CJS bundle sizes. Import directly from dist/js file instead.`,
+              message: `Importing from the barrel ${node.source.value} file will blow up CJS bundle sizes. Import directly from dist/esm file instead.`,
               fix(fixer) {
                 return fixer.replaceText(
                   node,

@@ -6,8 +6,8 @@ propComponents: ['MenuToggle']
 beta: true
 ---
 
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 ## Examples
 
@@ -55,7 +55,7 @@ class MenuToggleCollapsed extends React.Component {
 ```js
 import React from 'react';
 import { MenuToggle } from '@patternfly/react-core';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
 class MenuToggleCollapsed extends React.Component {
   render() {
@@ -82,7 +82,7 @@ class MenuToggleCollapsed extends React.Component {
 ```js
 import React from 'react';
 import { MenuToggle } from '@patternfly/react-core';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 
 class MenuToggleCollapsed extends React.Component {
   render() {
@@ -109,7 +109,7 @@ class MenuToggleCollapsed extends React.Component {
 ```js
 import React from 'react';
 import { MenuToggle } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/js/icons/ellipsis-v-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 class MenuToggleCollapsed extends React.Component {
   render() {

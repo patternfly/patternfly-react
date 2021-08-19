@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
 import { css } from '@patternfly/react-styles';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import { ContextSelectorToggle } from './ContextSelectorToggle';
 import { ContextSelectorMenuList } from './ContextSelectorMenuList';
 import { ContextSelectorContext } from './contextSelectorConstants';
@@ -45,6 +45,10 @@ export interface ContextSelectorProps extends ToggleMenuBaseProps, OUIAProps {
   onSearchButtonClick?: (event?: React.SyntheticEvent<HTMLButtonElement>) => void;
   /** Footer of the context selector */
   footer?: React.ReactNode;
+  /** Flag to indicate the toggle has no border or background */
+  isPlain?: boolean;
+  /** Flag to indicate if toggle is textual toggle */
+  isText?: boolean;
 }
 
 export class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateId: string }> {
@@ -64,7 +68,9 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     onSearchButtonClick: () => undefined as any,
     menuAppendTo: 'inline',
     ouiaSafe: true,
-    footer: null as React.ReactNode
+    footer: null as React.ReactNode,
+    isPlain: false,
+    isText: false
   };
   constructor(props: ContextSelectorProps) {
     super(props);
@@ -101,6 +107,8 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
       menuAppendTo,
       ouiaId,
       ouiaSafe,
+      isPlain,
+      isText,
       footer,
       ...props
     } = this.props;
@@ -164,6 +172,8 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
           id={toggleId}
           parentRef={this.parentRef.current}
           aria-labelledby={`${screenReaderLabelId} ${toggleId}`}
+          isPlain={isPlain}
+          isText={isText}
         />
         {isOpen && menuAppendTo === 'inline' && menuContainer}
       </div>

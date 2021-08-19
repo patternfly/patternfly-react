@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 import { Navigation } from './Navigation';
 import { PaginationOptionsMenu } from './PaginationOptionsMenu';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
-import widthChars from '@patternfly/react-tokens/dist/js/c_pagination__nav_page_select_c_form_control_width_chars';
+import widthChars from '@patternfly/react-tokens/dist/esm/c_pagination__nav_page_select_c_form_control_width_chars';
 import { PickOptional } from '../../helpers';
 
 export enum PaginationVariant {

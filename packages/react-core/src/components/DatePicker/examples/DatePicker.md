@@ -49,7 +49,7 @@ AmericanFormat = () => {
 import React from 'react';
 import { DatePicker } from '@patternfly/react-core';
 
-<DatePicker value="2020-03-05" helperText="Use the calendar button to select a date." />
+<DatePicker value="2020-03-05" helperText="Select a date." />
 ```
 
 ### Min and max date

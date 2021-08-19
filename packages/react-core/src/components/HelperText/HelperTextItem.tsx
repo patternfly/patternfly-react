@@ -1,10 +1,10 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/HelperText/helper-text';
 import { css } from '@patternfly/react-styles';
-import MinusIcon from '@patternfly/react-icons/dist/js/icons/minus-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-circle-icon';
+import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 export interface HelperTextItemProps extends React.HTMLProps<HTMLDivElement | HTMLLIElement> {
   /** Content rendered inside the helper text item. */
