@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "5.21.4",
+  "version": "5.21.5",
   "publishConfig": {
     "access": "public",
     "tag": "prerelease-v4"
@@ -23,18 +23,18 @@
   },
   "dependencies": {
     "@patternfly/patternfly": "4.127.0",
-    "@patternfly/react-catalog-view-extension": "^4.12.47",
+    "@patternfly/react-catalog-view-extension": "^4.12.48",
     "@patternfly/react-charts": "^6.15.16",
-    "@patternfly/react-code-editor": "^4.3.33",
-    "@patternfly/react-core": "^4.150.3",
+    "@patternfly/react-code-editor": "^4.3.34",
+    "@patternfly/react-core": "^4.150.4",
     "@patternfly/react-icons": "^4.11.10",
-    "@patternfly/react-inline-edit-extension": "^4.7.55",
-    "@patternfly/react-log-viewer": "^4.4.12",
+    "@patternfly/react-inline-edit-extension": "^4.7.56",
+    "@patternfly/react-log-viewer": "^4.4.13",
     "@patternfly/react-styles": "^4.11.10",
-    "@patternfly/react-table": "^4.29.48",
+    "@patternfly/react-table": "^4.29.49",
     "@patternfly/react-tokens": "^4.12.11",
-    "@patternfly/react-topology": "^4.9.53",
-    "@patternfly/react-virtualized-extension": "^4.9.22"
+    "@patternfly/react-topology": "^4.9.54",
+    "@patternfly/react-virtualized-extension": "^4.9.23"
   },
   "devDependencies": {
     "@patternfly/patternfly-a11y": "4.2.1",

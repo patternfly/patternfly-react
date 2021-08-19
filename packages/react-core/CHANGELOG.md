@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.150.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.150.3...@patternfly/react-core@4.150.4) (2021-08-19)
+
+
+### Bug Fixes
+
+* **NumberInput:** call 'onPlus' and 'onMinus' if set only ([#6197](https://github.com/patternfly/patternfly-react/issues/6197)) ([ac3b03e](https://github.com/patternfly/patternfly-react/commit/ac3b03e466d21cef330ade1010caf915c59a69cd))
+* **Select:** correct typeahead children check ([#6176](https://github.com/patternfly/patternfly-react/issues/6176)) ([4899e6e](https://github.com/patternfly/patternfly-react/commit/4899e6e799fb5b1ae7747353c718d7b3a1464abd))
+
+
+
+
+
 ## [4.150.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.150.2...@patternfly/react-core@4.150.3) (2021-08-19)
 
 **Note:** Version bump only for package @patternfly/react-core
