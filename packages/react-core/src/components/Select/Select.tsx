@@ -256,7 +256,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         if (child.props && this.props.children[index].props) {
           return child.props.value !== this.props.children[index].props.value;
         } else {
-          return child === this.props.children[index];
+          return child !== this.props.children[index];
         }
       })
     ) {
