@@ -12,7 +12,7 @@ beta: true
 import React from 'react';
 import { DatePicker } from '@patternfly/react-core';
 
-<DatePicker onChange={(str, date) => console.log('onChange', str, date)} placeholder="YYYY-MM-DD" />
+<DatePicker onChange={(str, date) => console.log('onChange', str, date)} />
 ```
 
 ### American format
@@ -21,11 +21,7 @@ import React from 'react';
 import { DatePicker } from '@patternfly/react-core';
 
 AmericanFormat = () => {
-  const dateFormat = date => {
-    const localeDate = date.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
-    const dasherizedDate = localeDate.replaceAll('/', '-');
-    return dasherizedDate;
-  };
+  const dateFormat = date => date.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
   const dateParse = date => {
     const split = date.split('/');
     if (split.length !== 3) {
@@ -39,7 +35,7 @@ AmericanFormat = () => {
 
   return (
     <DatePicker
-      value="03-05-2020"
+      value="03/05/2020"
       placeholder="MM/dd/yyyy"
       dateFormat={dateFormat}
       dateParse={dateParse}
