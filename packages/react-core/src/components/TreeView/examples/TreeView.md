@@ -844,3 +844,199 @@ class IconTreeView extends React.Component {
   }
 }
 ```
+
+### Guides
+
+```ts
+import React from 'react';
+import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
+
+const GuidesTreeView: React.FunctionComponent = () => {
+  const options: TreeViewDataItem[] = [
+      {
+        name: 'Application launcher',
+        id: 'AppLaunch',
+        children: [
+          {
+            name: 'Application 1',
+            id: 'App1',
+            children: [
+              { name: 'Settings', id: 'App1Settings' },
+              { name: 'Current', id: 'App1Current' }
+            ]
+          },
+          {
+            name: 'Application 2',
+            id: 'App2',
+            children: [
+              { name: 'Settings', id: 'App2Settings' },
+              {
+                name: 'Loader',
+                id: 'App2Loader',
+                children: [
+                  { name: 'Loading App 1', id: 'LoadApp1' },
+                  { name: 'Loading App 2', id: 'LoadApp2' },
+                  { name: 'Loading App 3', id: 'LoadApp3' }
+                ]
+              }
+            ]
+          }
+        ],
+        defaultExpanded: true
+      },
+      {
+        name: 'Cost management',
+        id: 'Cost',
+        children: [
+          {
+            name: 'Application 3',
+            id: 'App3',
+            children: [
+              { name: 'Settings', id: 'App3Settings' },
+              { name: 'Current', id: 'App3Current' }
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Sources',
+        id: 'Sources',
+        children: [{ name: 'Application 4', id: 'App4', children: [{ name: 'Settings', id: 'App4Settings' }] }]
+      },
+      {
+        name: 'Really really really long folder name that overflows the container it is in',
+        id: 'Long',
+        children: [{ name: 'Application 5', id: 'App5' }]
+      }
+    ];
+    return <TreeView data={options} hasGuides={true} />;
+}
+```
+
+### Compact
+
+```ts
+import React from 'react';
+import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
+
+const CompactTreeView: React.FunctionComponent = () => {
+  const options: TreeViewDataItem[] = [
+      {
+        name: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value and may reject unrecognized values.',
+        title: 'apiVersion',
+        id: 'apiVersion'
+      },
+      {
+        name: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated is CamelCase. More info:',
+        title: 'kind',
+        id: 'kind'
+      },
+      {
+        name: 'Standard metadata object',
+        title: 'metadata',
+        id: 'metadata'
+      },
+      {
+        name: 'Standard metadata object',
+        title: 'spec',
+        id: 'spec',
+        children: [
+          {
+            name: 'Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Default to 0 (pod will be considered available as soon as it is ready).',
+            title: 'minReadySeconds',
+            id: 'minReadySeconds'
+          },
+          {
+            name: 'Indicates that the deployment is paused',
+            title: 'paused',
+            id: 'paused'
+          },
+          {
+            name: 'The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that the progress will not de estimated during the time a deployment is paused. Defaults to 600s.',
+            title: 'progressDeadlineSeconds',
+            id: 'progressDeadlineSeconds',
+            children: [
+              {
+                name: 'The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10.',
+                title: 'revisionHistoryLimit',
+                id: 'revisionHistoryLimit',
+                children: [
+                  {
+                    name: 'Map of {key.value} pairs. A single {key.value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In" and the values array contains only "value". The requirements are ANDed.',
+                    title: 'matchLabels',
+                    id: 'matchLabels'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ];
+    return <TreeView data={options} variant='compact' />;
+}
+``` 
+
+### Compact, no background
+
+```ts
+import React from 'react';
+import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
+
+const CompactNoBackgroundTreeView: React.FunctionComponent = () => {
+  const options: TreeViewDataItem[] = [
+      {
+        name: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value and may reject unrecognized values.',
+        title: 'apiVersion',
+        id: 'apiVersion'
+      },
+      {
+        name: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated is CamelCase. More info:',
+        title: 'kind',
+        id: 'kind'
+      },
+      {
+        name: 'Standard metadata object',
+        title: 'metadata',
+        id: 'metadata'
+      },
+      {
+        name: 'Standard metadata object',
+        title: 'spec',
+        id: 'spec',
+        children: [
+          {
+            name: 'Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Default to 0 (pod will be considered available as soon as it is ready).',
+            title: 'minReadySeconds',
+            id: 'minReadySeconds'
+          },
+          {
+            name: 'Indicates that the deployment is paused',
+            title: 'paused',
+            id: 'paused'
+          },
+          {
+            name: 'The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that the progress will not de estimated during the time a deployment is paused. Defaults to 600s.',
+            title: 'progressDeadlineSeconds',
+            id: 'progressDeadlineSeconds',
+            children: [
+              {
+                name: 'The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10.',
+                title: 'revisionHistoryLimit',
+                id: 'revisionHistoryLimit',
+                children: [
+                  {
+                    name: 'Map of {key.value} pairs. A single {key.value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In" and the values array contains only "value". The requirements are ANDed.',
+                    title: 'matchLabels',
+                    id: 'matchLabels'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ];
+    return <TreeView data={options} variant='compactNoBackground' />;
+}
+```
