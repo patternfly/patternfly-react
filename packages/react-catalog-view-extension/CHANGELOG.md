@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.12.45](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.12.44...@patternfly/react-catalog-view-extension@4.12.45) (2021-08-18)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [4.12.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.12.43...@patternfly/react-catalog-view-extension@4.12.44) (2021-08-17)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## [4.12.43](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.12.42...@patternfly/react-catalog-view-extension@4.12.43) (2021-08-16)
+
+
+### Bug Fixes
+
+* **VerticalTabs:** expose href to allow links ([#6072](https://github.com/patternfly/patternfly-react/issues/6072)) ([2b66bcd](https://github.com/patternfly/patternfly-react/commit/2b66bcd07d1675649c045d6cd06a99377c77fcca))
+
+
+
+
+
+## [4.12.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.12.41...@patternfly/react-catalog-view-extension@4.12.42) (2021-08-12)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
 ## [4.12.41](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.12.40...@patternfly/react-catalog-view-extension@4.12.41) (2021-08-11)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension

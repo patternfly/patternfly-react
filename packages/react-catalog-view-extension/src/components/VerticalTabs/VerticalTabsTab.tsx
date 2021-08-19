@@ -18,6 +18,8 @@ export interface VerticalTabsTabProps extends Omit<React.HTMLProps<HTMLLIElement
   shown?: boolean;
   /** Callback function when the tab is activated */
   onActivate?: () => void;
+  /** HREF location */
+  href?: string;
 }
 
 export const VerticalTabsTab: React.FunctionComponent<VerticalTabsTabProps> = ({
@@ -29,6 +31,7 @@ export const VerticalTabsTab: React.FunctionComponent<VerticalTabsTabProps> = ({
   hasActiveDescendant = false,
   shown = false,
   onActivate = null,
+  href,
   ...props
 }: VerticalTabsTabProps) => {
   const classes = css('vertical-tabs-pf-tab', { active, 'active-descendant': hasActiveDescendant, shown }, className);
@@ -47,7 +50,7 @@ export const VerticalTabsTab: React.FunctionComponent<VerticalTabsTabProps> = ({
 
   return (
     <li className={classes} {...props}>
-      <a className={linkClasses} onClick={e => handleActivate(e)} href="#">
+      <a className={linkClasses} onClick={e => handleActivate(e)} href={href}>
         {title}
       </a>
       {children}

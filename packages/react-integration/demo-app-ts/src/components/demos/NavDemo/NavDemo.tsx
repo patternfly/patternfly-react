@@ -266,7 +266,32 @@ export class NavDemo extends Component {
       </StackItem>
     );
   }
+  renderHorizontalSubNav() {
+    const { horizontalActiveItem } = this.state;
 
+    return (
+      <StackItem>
+        <Title headingLevel="h2" size="2xl">
+          Horizontal Nav
+        </Title>
+        <div style={{ backgroundColor: '#292e34', padding: '1rem' }}>
+          <Nav onSelect={this.onHorizontalSelect} id="subnav-horizontal" variant="horizontal-subnav">
+            <NavList>
+              <NavItem id="horizontal-link1" preventDefault itemId={0} isActive={horizontalActiveItem === 0}>
+                Item 1
+              </NavItem>
+              <NavItem id="horizontal-link2" preventDefault itemId={1} isActive={horizontalActiveItem === 1}>
+                Item 2
+              </NavItem>
+              <NavItem id="horizontal-link3" preventDefault itemId={2} isActive={horizontalActiveItem === 2}>
+                Item 3
+              </NavItem>
+            </NavList>
+          </Nav>
+        </div>
+      </StackItem>
+    );
+  }
   onTertiarySelect = (result: SelectedItem) => {
     this.setState({ tertiaryActiveItem: result.itemId });
   };
@@ -314,6 +339,7 @@ export class NavDemo extends Component {
         {this.renderExpandableNav()}
         {this.renderHorizontalNav()}
         {this.renderTertiaryNav()}
+        {this.renderHorizontalSubNav()}
       </Stack>
     );
   }

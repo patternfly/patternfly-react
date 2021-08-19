@@ -28,6 +28,18 @@ test('Check page main nav section against snapshot', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('Check page main subnav section against snapshot', () => {
+  const Section = <PageSection type={PageSectionTypes.subNav} />;
+  const view = mount(Section);
+  expect(view).toMatchSnapshot();
+});
+
+test('Check page main breadcrumb section against snapshot', () => {
+  const Section = <PageSection type={PageSectionTypes.breadcrumb} />;
+  const view = mount(Section);
+  expect(view).toMatchSnapshot();
+});
+
 test('Check page section with no fill example against snapshot', () => {
   const Section = <PageSection isFilled={false} />;
   const view = mount(Section);

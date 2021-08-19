@@ -46,4 +46,11 @@ describe('Popover Demo Test', () => {
       });
     });
   });
+
+  it('Applies diagonal modifiers', () => {
+    cy.get('#popover-right-top-toggle').click();
+    cy.get('.pf-c-popover').should('have.class', 'pf-m-right-top');
+    cy.get('#popover-right-top-toggle').click();
+    cy.get('.pf-c-popover').should('not.exist');
+  });
 });

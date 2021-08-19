@@ -1,30 +1,26 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import { TreeViewSearch } from './TreeViewSearch';
 import { Divider } from '../Divider';
 
-export interface TreeViewListProps {
+export interface TreeViewListProps extends React.HTMLProps<HTMLUListElement> {
   /** Flag indicating if the tree view is nested under another tree view */
   isNested?: boolean;
-  /** Callback for search input */
-  onSearch?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  /** Additional props for search input */
-  searchProps?: any;
+  /** Toolbar to display above the tree view */
+  toolbar?: React.ReactNode;
   /** Child nodes of the current tree view */
   children: React.ReactNode;
 }
 
 export const TreeViewList: React.FunctionComponent<TreeViewListProps> = ({
   isNested = false,
-  onSearch,
-  searchProps,
+  toolbar,
   children,
   ...props
 }: TreeViewListProps) => (
   <>
-    {onSearch && (
+    {toolbar && (
       <React.Fragment>
-        <TreeViewSearch onChange={onSearch} {...searchProps} />
+        {toolbar}
         <Divider />
       </React.Fragment>
     )}

@@ -6,6 +6,7 @@ propComponents: ['Avatar']
 ---
 
 import avatarImg from './avatarImg.svg';
+import avatarImgDark from './avatarImgDark.svg';
 import './example.css';
 
 ## Examples
@@ -22,7 +23,7 @@ import avatarImg from './avatarImg.svg';
 ```js
 import React from 'react';
 import { Avatar } from '@patternfly/react-core';
-import avatarImg from './avatarImg.svg';
+import avatarImg from './img_avatar.svg';
 
 <Avatar src={avatarImg} alt="avatar" border="light" />
 ```
@@ -31,8 +32,8 @@ import avatarImg from './avatarImg.svg';
 ```js
 import React from 'react';
 import { Avatar } from '@patternfly/react-core';
-import avatarImg from './avatarImg.svg';
+import avatarImgDark from './img_avatar-dark.svg';
 
-<Avatar src={avatarImg} alt="avatar" border="dark" />
+<Avatar src={avatarImgDark} alt="avatar" border="dark" />
 ```
 

@@ -24,7 +24,6 @@ exports[`Vertical Tabs Tab onActivate is called correctly 1`] = `
   >
     <a
       className=""
-      href="#"
       onClick={[Function]}
     >
       Click Me
@@ -45,7 +44,6 @@ exports[`Vertical Tabs Tab wrap styling is set correctly 1`] = `
     >
       <a
         className=""
-        href="#"
         onClick={[Function]}
       >
         Default Wrap
@@ -63,7 +61,6 @@ exports[`Vertical Tabs Tab wrap styling is set correctly 1`] = `
     >
       <a
         className=""
-        href="#"
         onClick={[Function]}
       >
         Word Wrap
@@ -81,7 +78,6 @@ exports[`Vertical Tabs Tab wrap styling is set correctly 1`] = `
     >
       <a
         className="truncate"
-        href="#"
         onClick={[Function]}
       >
         Truncate
@@ -99,7 +95,6 @@ exports[`Vertical Tabs Tab wrap styling is set correctly 1`] = `
     >
       <a
         className="no-wrap"
-        href="#"
         onClick={[Function]}
       >
         No Wrap
@@ -131,7 +126,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
       >
         <a
           className=""
-          href="#"
           onClick={[Function]}
         >
           All
@@ -149,7 +143,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
       >
         <a
           className=""
-          href="#"
           onClick={[Function]}
         >
           Tab One
@@ -171,7 +164,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
               >
                 <a
                   className=""
-                  href="#"
                   onClick={[Function]}
                 >
                   Tab One-One
@@ -195,7 +187,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
                       >
                         <a
                           className=""
-                          href="#"
                           onClick={[Function]}
                         >
                           Tab One-One-One
@@ -214,7 +205,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
                       >
                         <a
                           className=""
-                          href="#"
                           onClick={[Function]}
                         >
                           Tab One-One-Two
@@ -232,7 +222,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
                       >
                         <a
                           className=""
-                          href="#"
                           onClick={[Function]}
                         >
                           Tab One-One-Three
@@ -254,7 +243,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
               >
                 <a
                   className=""
-                  href="#"
                   onClick={[Function]}
                 >
                   Tab One-Two
@@ -272,7 +260,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
               >
                 <a
                   className=""
-                  href="#"
                   onClick={[Function]}
                 >
                   Tab One-Three
@@ -294,7 +281,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
       >
         <a
           className=""
-          href="#"
           onClick={[Function]}
         >
           Tab Two
@@ -318,7 +304,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
               >
                 <a
                   className=""
-                  href="#"
                   onClick={[Function]}
                 >
                   Tab Two-One
@@ -337,7 +322,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
               >
                 <a
                   className=""
-                  href="#"
                   onClick={[Function]}
                 >
                   Tab Two-Two
@@ -355,7 +339,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
               >
                 <a
                   className=""
-                  href="#"
                   onClick={[Function]}
                 >
                   Tab Two-Three
@@ -376,7 +359,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
       >
         <a
           className=""
-          href="#"
           onClick={[Function]}
         >
           Tab Three
@@ -398,7 +380,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
               >
                 <a
                   className=""
-                  href="#"
                   onClick={[Function]}
                 >
                   Tab Three-One
@@ -416,7 +397,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
               >
                 <a
                   className=""
-                  href="#"
                   onClick={[Function]}
                 >
                   Tab Three-Two
@@ -437,7 +417,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
       >
         <a
           className=""
-          href="#"
           onClick={[Function]}
         >
           Tab Four
@@ -454,7 +433,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
       >
         <a
           className=""
-          href="#"
           onClick={[Function]}
         >
           Tab Five
@@ -471,7 +449,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
       >
         <a
           className=""
-          href="#"
           onClick={[Function]}
         >
           Tab Six
@@ -488,7 +465,6 @@ exports[`Vertical Tabs renders restricted tabs properly 1`] = `
       >
         <a
           className=""
-          href="#"
           onClick={[Function]}
         >
           Tab Seven
@@ -519,7 +495,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
       >
         <a
           className=""
-          href="#"
           onClick={[Function]}
         >
           All
@@ -536,7 +511,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
       >
         <a
           className=""
-          href="#"
           onClick={[Function]}
         >
           Tab One
@@ -556,7 +530,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
               >
                 <a
                   className=""
-                  href="#"
                   onClick={[Function]}
                 >
                   Tab One-One
@@ -579,7 +552,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
                       >
                         <a
                           className=""
-                          href="#"
                           onClick={[Function]}
                         >
                           Tab One-One-One
@@ -598,7 +570,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
                       >
                         <a
                           className=""
-                          href="#"
                           onClick={[Function]}
                         >
                           Tab One-One-Two
@@ -616,7 +587,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
                       >
                         <a
                           className=""
-                          href="#"
                           onClick={[Function]}
                         >
                           Tab One-One-Three
@@ -638,7 +608,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
               >
                 <a
                   className=""
-                  href="#"
                   onClick={[Function]}
                 >
                   Tab One-Two
@@ -656,7 +625,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
               >
                 <a
                   className=""
-                  href="#"
                   onClick={[Function]}
                 >
                   Tab One-Three
@@ -678,7 +646,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
       >
         <a
           className=""
-          href="#"
           onClick={[Function]}
         >
           Tab Two
@@ -698,7 +665,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
               >
                 <a
                   className=""
-                  href="#"
                   onClick={[Function]}
                 >
                   Tab Two-One
@@ -716,7 +682,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
               >
                 <a
                   className=""
-                  href="#"
                   onClick={[Function]}
                 >
                   Tab Two-Two
@@ -734,7 +699,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
               >
                 <a
                   className=""
-                  href="#"
                   onClick={[Function]}
                 >
                   Tab Two-Three
@@ -755,7 +719,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
       >
         <a
           className=""
-          href="#"
           onClick={[Function]}
         >
           Tab Three
@@ -775,7 +738,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
               >
                 <a
                   className=""
-                  href="#"
                   onClick={[Function]}
                 >
                   Tab Three-One
@@ -793,7 +755,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
               >
                 <a
                   className=""
-                  href="#"
                   onClick={[Function]}
                 >
                   Tab Three-Two
@@ -814,7 +775,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
       >
         <a
           className=""
-          href="#"
           onClick={[Function]}
         >
           Tab Four
@@ -831,7 +791,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
       >
         <a
           className=""
-          href="#"
           onClick={[Function]}
         >
           Tab Five
@@ -848,7 +807,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
       >
         <a
           className=""
-          href="#"
           onClick={[Function]}
         >
           Tab Six
@@ -865,7 +823,6 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
       >
         <a
           className=""
-          href="#"
           onClick={[Function]}
         >
           Tab Seven

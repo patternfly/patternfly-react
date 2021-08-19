@@ -59,13 +59,23 @@ export class ToolbarFilter extends React.Component<ToolbarFilterProps, ToolbarFi
 
   componentDidMount() {
     const { categoryName, chips } = this.props;
-    this.context.updateNumberFilters(typeof categoryName === 'string' ? categoryName : categoryName.name, chips.length);
+    this.context.updateNumberFilters(
+      typeof categoryName !== 'string' && categoryName.hasOwnProperty('key')
+        ? categoryName.key
+        : categoryName.toString(),
+      chips.length
+    );
     this.setState({ isMounted: true });
   }
 
   componentDidUpdate() {
     const { categoryName, chips } = this.props;
-    this.context.updateNumberFilters(typeof categoryName === 'string' ? categoryName : categoryName.name, chips.length);
+    this.context.updateNumberFilters(
+      typeof categoryName !== 'string' && categoryName.hasOwnProperty('key')
+        ? categoryName.key
+        : categoryName.toString(),
+      chips.length
+    );
   }
 
   render() {

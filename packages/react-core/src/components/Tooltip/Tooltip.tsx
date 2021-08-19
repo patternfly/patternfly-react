@@ -70,7 +70,20 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
    * The 'auto' position chooses the side with the most space.
    * The 'auto' position requires the 'enableFlip' prop to be true.
    */
-  position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  position?:
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
   /**
    * Tooltip trigger: click, mouseenter, focus, manual
    * Set to manual to trigger tooltip programmatically (through the isVisible prop)
