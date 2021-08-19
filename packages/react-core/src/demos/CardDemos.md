@@ -271,7 +271,7 @@ import {
 CardHorizontalSplitDemo = () => {
   return (
     <Card id="card-demo-horizontal-split-example" isFlat>
-      <Grid md={6} hasGutter>
+      <Grid md={6}>
         <GridItem style={{minHeight: '200px', backgroundPosition: 'center', backgroundSize: 'cover', backgroundImage: 'url(/assets/images/pfbg_992@2x.jpg)' }}/>
         <GridItem>
           <CardTitle>Headline</CardTitle>
@@ -288,7 +288,7 @@ CardHorizontalSplitDemo = () => {
 }
 ```
 
-### Card details
+### Details Card
 
 ```js
 import React from 'react';
