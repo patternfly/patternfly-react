@@ -26,6 +26,7 @@ propComponents:
     'EditableTextCell',
     'EditableSelectInputProps', 
     'EditableTextCellProps', 
+    'ThSortType',
   ]
 ouia: true
 ---
