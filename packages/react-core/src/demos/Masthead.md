@@ -30,7 +30,8 @@ import {
   DropdownSeparator,
   DropdownToggle,
   KebabToggle,
-  DropdownItem
+  DropdownItem,
+  Brand
 } from '@patternfly/react-core';
 import imgBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
@@ -145,7 +146,7 @@ class BasicMasthead extends React.Component {
         </MastheadToggle>
         <MastheadMain>
           <MastheadBrand>
-            <img src={imgBrand} alt="Patternfly logo" />
+            <Brand src={imgBrand} alt="Patternfly logo" />
           </MastheadBrand>
         </MastheadMain>
         <MastheadContent>
@@ -185,6 +186,7 @@ class BasicMasthead extends React.Component {
                 <ToolbarItem>
                   <Dropdown
                     onSelect={this.onKebabSelect}
+                    position="right"
                     toggle={<KebabToggle onToggle={this.onKebabToggle} id="toggle-id-kebab" />}
                     isOpen={isKebabOpen}
                     isPlain
