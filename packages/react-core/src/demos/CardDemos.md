@@ -19,21 +19,14 @@ import {
   CardActions,
   CardTitle,
   CardBody,
-  CardFooter,
   CardExpandableContent,
   Level,
-  LevelItem,
   LabelGroup,
   Label,
   Dropdown,
-  DropdownToggle,
   DropdownItem,
-  DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
   KebabToggle,
   Grid,
-  GridItem,
   Flex,
   List,
   ListItem,
@@ -258,5 +251,165 @@ class CardGridDemo extends React.Component {
       </Card>
     );
   }
+}
+```
+
+### Horizontal split
+
+```js
+import React from 'react';
+import {
+  Card,
+  CardTitle,
+  CardBody,
+  CardFooter,
+  Grid,
+  GridItem,
+  Button
+} from '@patternfly/react-core';
+
+CardHorizontalSplitDemo = () => {
+  return (
+    <Card id="card-demo-horizontal-split-example" isFlat>
+      <Grid md={6}>
+        <GridItem style={{minHeight: '200px', backgroundPosition: 'center', backgroundSize: 'cover', backgroundImage: 'url(/assets/images/pfbg_992@2x.jpg)' }}/>
+        <GridItem>
+          <CardTitle>Headline</CardTitle>
+          <CardBody>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse arcu purus, lobortis nec euismod eu, tristique ut sapien. Nullam turpis lectus, aliquet sit amet volutpat eu, semper eget quam. Maecenas in tempus diam. Aenean interdum velit sed massa aliquet, sit amet malesuada nulla hendrerit. Aenean non faucibus odio. Etiam non metus turpis. Praesent sollicitudin elit neque, id ullamcorper nibh faucibus eget.
+          </CardBody>
+          <CardFooter>
+            <Button variant="tertiary">Call to action</Button>
+          </CardFooter>
+        </GridItem>
+      </Grid>
+    </Card>
+  );
+}
+```
+
+### Details Card
+
+```js
+import React from 'react';
+import {
+  Card,
+  CardTitle,
+  CardBody,
+  CardFooter,
+  Gallery,
+  Title,
+  DescriptionList,
+  DescriptionListGroup,
+  DescriptionListTerm,
+  DescriptionListDescription,
+  Divider
+} from '@patternfly/react-core';
+
+CardDetailsDemo = () => {
+  return (
+    <Gallery hasGutter style={{'--pf-l-gallery--GridTemplateColumns--min': '260px'}}>
+      <Card>
+        <CardTitle>
+          <Title headingLevel="h2" size="xl">
+            Details
+          </Title> 
+        </CardTitle>
+        <CardBody>
+           <DescriptionList>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Cluster API Address</DescriptionListTerm>
+              <DescriptionListDescription>
+                <a href="#">https://api1.devcluster.openshift.com</a>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>
+                Cluster ID
+              </DescriptionListTerm>
+              <DescriptionListDescription>
+                63b97ac1-b850-41d9-8820-239becde9e86
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Provide</DescriptionListTerm>
+              <DescriptionListDescription>
+                AWS
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>OpenShift Version</DescriptionListTerm>
+              <DescriptionListDescription>
+                4.5.0.ci-2020-06-16-015028
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Update Channel</DescriptionListTerm>
+              <DescriptionListDescription>
+                stable-4.5
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+          </DescriptionList>
+        </CardBody>
+        <Divider />
+        <CardFooter>
+          <a href="#">View Settings</a>
+        </CardFooter>
+      </Card>
+      <Card>
+        <CardTitle>
+          <Title headingLevel="h2" size="xl">
+            Details
+          </Title>
+        </CardTitle>
+        <CardBody>
+          <DescriptionList>
+            <DescriptionListGroup>
+              <DescriptionListTerm>
+                Cluster API Address
+              </DescriptionListTerm>
+              <DescriptionListDescription>
+                <a href="#">https://api2.devcluster.openshift.com</a>
+             </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>
+                Cluster ID
+              </DescriptionListTerm>
+              <DescriptionListDescription>
+                08908908-b850-41d9-8820-239becde9e86
+             </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>
+                Provider
+              </DescriptionListTerm>
+              <DescriptionListDescription>
+                Azure
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>
+                OpenShift Version
+              </DescriptionListTerm>
+              <DescriptionListDescription>
+                4.5.0.ci-2020-06-16-015026
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Update Channel</DescriptionListTerm>
+              <DescriptionListDescription>
+                stable-4.4
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+          </DescriptionList>
+        </CardBody>
+        <Divider />
+        <CardFooter>
+          <a href="#">View Settings</a>
+        </CardFooter>
+      </Card>
+    </Gallery>
+  );
 }
 ```
