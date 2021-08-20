@@ -1036,21 +1036,42 @@ MenuAppLauncher = () => {
     if (filteredIds.length === 1 && filteredIds[0] === '*') {
       return items;
     }
+    let keepDivider = false;
     let filteredCopy = items
       .map(group => {
         if (group.type === MenuGroup) {
           let filteredGroup = React.cloneElement(group, {
+            children: React.cloneElement(group.props.children, {
+              children: group.props.children.props.children.filter(child => {
+                if (filteredIds.includes(child.props.itemId)) {
+                  return child;
+                }
+              })
+            })
+          });
+          const filteredList = filteredGroup.props.children;
+          if (filteredList.props.children.length > 0) {
+            keepDivider = true;
+            return filteredGroup;
+          } else {
+            keepDivider = false;
+          }
+        } else if (group.type === MenuList) {
+          let filteredGroup = React.cloneElement(group, {
             children: group.props.children.filter(child => {
-              if (filteredIds.includes(child.props.itemId) || child.type === Divider) {
+              if (filteredIds.includes(child.props.itemId)) {
                 return child;
               }
             })
           });
-          if (filteredGroup.props.children.length > 0 && filteredGroup.props.children[0].type !== Divider) {
+          if (filteredGroup.props.children.length > 0) {
+            keepDivider = true;
             return filteredGroup;
+          } else {
+            keepDivider = false;
           }
         } else {
-          if (filteredIds.includes(group.props.itemId)) {
+          if ((keepDivider && group.type === Divider) || filteredIds.includes(group.props.itemId)) {
             return group;
           }
         }
@@ -1059,13 +1080,11 @@ MenuAppLauncher = () => {
 
     if (filteredCopy.length > 0) {
       let lastGroup = filteredCopy.pop();
-      if (lastGroup.type === MenuGroup) {
-        lastGroup = React.cloneElement(lastGroup, {
-          children: lastGroup.props.children.filter(item => item.type !== Divider)
-        });
+      if (lastGroup.type !== Divider) {
+        filteredCopy.push(lastGroup);
       }
-      filteredCopy.push(lastGroup);
     }
+
     return filteredCopy;
   };
 
