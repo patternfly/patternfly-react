@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.152.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.151.2...@patternfly/react-core@4.152.0) (2021-08-20)
+
+
+### Features
+
+* **Menu:** add app-launcher mockup ([#6175](https://github.com/patternfly/patternfly-react/issues/6175)) ([9f2fdcc](https://github.com/patternfly/patternfly-react/commit/9f2fdcce55e087f39b7f5b3ce6f1f5939ac1e1c7))
+
+
+
+
+
 ## [4.151.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.151.1...@patternfly/react-core@4.151.2) (2021-08-20)
 
 **Note:** Version bump only for package @patternfly/react-core
