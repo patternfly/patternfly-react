@@ -1557,15 +1557,14 @@ Example:
 },
 ```
 
-```js isBeta
+```js
 import React from 'react';
-import { TextInput, SelectOption } from '@patternfly/react-core';
+import { SelectOption } from '@patternfly/react-core';
 import {
   Table,
   TableHeader,
   TableBody,
   TableVariant,
-  getErrorTextByValidator,
   cancelCellEdits,
   validateCellEdits,
   applyCellEdits,
@@ -2033,10 +2032,7 @@ import {
   TableHeader,
   TableBody,
   sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable
+  SortByDirection
 } from '@patternfly/react-table';
 import { Checkbox } from '@patternfly/react-core';
 
@@ -2211,7 +2207,7 @@ Note: If this table is going to be tested using axe-core, the tests will flag th
 aria-posinset, and aria-setsize as violations. This is an intentional choice at this time so that
 the voice over technologies will recognize the flat table structure as a tree.
 
-```js
+```js isBeta
 import React from 'react';
 import { Table, TableHeader, TableBody, headerCol, treeRow } from '@patternfly/react-table';
 import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';

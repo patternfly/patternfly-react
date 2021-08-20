@@ -3,12 +3,10 @@ id: Action list
 section: components
 cssPrefix: pf-c-action-list
 propComponents: ['ActionList', 'ActionListGroup', 'ActionListItem']
-beta: true
 ---
 
-import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
-import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
 
 ## Examples
 
@@ -25,7 +23,6 @@ import {
   DropdownSeparator,
   KebabToggle
 } from '@patternfly/react-core';
-import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 class BasicActionList extends React.Component {
   constructor(props) {

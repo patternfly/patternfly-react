@@ -15,7 +15,6 @@ propComponents:
     DrawerColorVariant
   ]
 section: components
-beta: true
 ---
 
 ## Examples

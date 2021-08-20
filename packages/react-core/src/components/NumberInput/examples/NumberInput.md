@@ -3,7 +3,6 @@ id: Number input
 section: components
 cssPrefix: pf-c-number-input
 propComponents: ['NumberInput']
-beta: true
 ---
 
 ## Examples

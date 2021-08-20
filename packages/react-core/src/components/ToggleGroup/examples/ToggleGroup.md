@@ -3,7 +3,6 @@ id: Toggle group
 section: components
 cssPrefix: pf-c-toggle-group
 propComponents: ['ToggleGroup', 'ToggleGroupItem']
-beta: true
 ---
 import './toggleGroup.css';
 

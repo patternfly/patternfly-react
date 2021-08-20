@@ -62,7 +62,7 @@ export interface TableProps extends OUIAProps {
   canSelectAll?: boolean;
   /** Specifies the type of the select element variant - can be one of checkbox or radio button */
   selectVariant?: 'checkbox' | 'radio';
-  /** @beta Function triggered when a row's inline edit is activated. Adds a column for inline edit when present. */
+  /** Function triggered when a row's inline edit is activated. Adds a column for inline edit when present. */
   onRowEdit?: OnRowEdit;
   /** Function triggered when sort icon is clicked */
   onSort?: OnSort;
@@ -148,16 +148,6 @@ export class Table extends React.Component<TableProps, {}> {
     }
     return rows.every(row => this.isSelected(row) || (row.hasOwnProperty('parent') && !row.showSelect));
   };
-
-  componentDidMount() {
-    if (this.props.onRowEdit && process.env.NODE_ENV !== 'production' && !Table.hasWarnBeta) {
-      // eslint-disable-next-line no-console
-      console.warn(
-        'You are using a beta component feature (onRowEdit). These api parts are subject to change in the future.'
-      );
-      Table.hasWarnBeta = true;
-    }
-  }
 
   render() {
     const {

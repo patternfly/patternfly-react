@@ -3,7 +3,6 @@ id: Skeleton
 section: components
 cssPrefix: pf-c-skeleton
 propComponents: ['Skeleton']
-beta: true
 ---
 
 ## Examples
