@@ -4,6 +4,8 @@ section: demos
 beta: true
 ---
 
+import { Link } from '@reach/router';
+
 import './composable-menu.css';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
@@ -15,6 +17,8 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
+import pfIcon from './examples/pf-logo-small.svg';
 
 ## Demos
 
@@ -65,7 +69,7 @@ BasicComposableMenu = () => {
       firstElement && firstElement.focus();
     }, 0);
     setIsOpen(!isOpen);
-  }
+  };
 
   const toggle = (
     <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
@@ -89,7 +93,7 @@ BasicComposableMenu = () => {
     </Menu>
   );
   return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
-}
+};
 ```
 
 ### Menu with actions
@@ -146,7 +150,7 @@ ActionComposableMenu = () => {
 
   const onSelect = (event, itemId) => {
     if (selectedItems.includes(itemId)) {
-      setSelectedItems(selectedItems.filter(id => id !== itemId))
+      setSelectedItems(selectedItems.filter(id => id !== itemId));
     } else {
       setSelectedItems([...selectedItems, itemId]);
     }
@@ -159,7 +163,7 @@ ActionComposableMenu = () => {
       firstElement && firstElement.focus();
     }, 0);
     setIsOpen(!isOpen);
-  }
+  };
 
   const toggle = (
     <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
@@ -219,7 +223,7 @@ ActionComposableMenu = () => {
   );
 
   return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
-}
+};
 ```
 
 ### Select menu
@@ -266,7 +270,7 @@ SelectComposableMenu = () => {
       firstElement && firstElement.focus();
     }, 0);
     setIsOpen(!isOpen);
-  }
+  };
 
   const toggle = (
     <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
@@ -274,12 +278,7 @@ SelectComposableMenu = () => {
     </MenuToggle>
   );
   const menu = (
-    <Menu
-      ref={menuRef}
-      id="select-menu"
-      onSelect={(_ev, itemId) => setSelected(itemId)}
-      selected={selected}
-    >
+    <Menu ref={menuRef} id="select-menu" onSelect={(_ev, itemId) => setSelected(itemId)} selected={selected}>
       <MenuContent>
         <MenuList>
           <MenuItem itemId="Option 1">Option 1</MenuItem>
@@ -292,7 +291,7 @@ SelectComposableMenu = () => {
     </Menu>
   );
   return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
-}
+};
 ```
 
 ### Drilldown menu with toggle
@@ -357,7 +356,7 @@ DrilldownComposableMenu = () => {
     setMenuDrilledIn([]);
     setDrilldownPath([]);
     setActiveMenu('rootMenu');
-  }
+  };
 
   const drillIn = (fromMenuId, toMenuId, pathId) => {
     setMenuDrilledIn([...menuDrilledIn, fromMenuId]);
@@ -532,7 +531,7 @@ DrilldownComposableMenu = () => {
     </Menu>
   );
   return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
-}
+};
 ```
 
 ### Filter tree menu
@@ -685,13 +684,12 @@ FilterTreeComposableMenu = () => {
         break;
     }
 
-    const checkedItemTree = options
-      .map(opt => Object.assign({}, opt))
-      .filter(item => filterItems(item, treeViewItem));
+    const checkedItemTree = options.map(opt => Object.assign({}, opt)).filter(item => filterItems(item, treeViewItem));
     const flatCheckedItems = flattenTree(checkedItemTree);
 
     setCheckedItems(
-      prevState => checked
+      prevState =>
+        checked
           ? prevState.checkedItems.concat(
               flatCheckedItems.filter(item => !prevState.checkedItems.some(i => i.id === item.id))
             )
@@ -701,7 +699,6 @@ FilterTreeComposableMenu = () => {
       }
     );
   };
-
 
   const handleMenuKeys = event => {
     if (!isOpen) {
@@ -737,7 +734,7 @@ FilterTreeComposableMenu = () => {
       firstElement && firstElement.focus();
     }, 0);
     setIsOpen(!isOpen);
-  }
+  };
 
   const toggle = (
     <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
@@ -771,7 +768,7 @@ FilterTreeComposableMenu = () => {
     </Menu>
   );
   return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
-}
+};
 ```
 
 ### Flyout
@@ -820,11 +817,17 @@ MenuWithFlyout = () => {
     <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={onSelect}>
       <MenuContent>
         <MenuList>
-          <MenuItem flyoutMenu={children} itemId={`next-menu-${depth}`}>Next menu</MenuItem>
-          {[...Array(numFlyouts - depth).keys()].map(j =>
-            <MenuItem key={`${depth}-${j}`} itemId={`${depth}-${j}`}>Menu {depth} item {j}</MenuItem>
-          )}
-          <MenuItem flyoutMenu={children} itemId={`next-menu-2-${depth}`}>Next menu</MenuItem>
+          <MenuItem flyoutMenu={children} itemId={`next-menu-${depth}`}>
+            Next menu
+          </MenuItem>
+          {[...Array(numFlyouts - depth).keys()].map(j => (
+            <MenuItem key={`${depth}-${j}`} itemId={`${depth}-${j}`}>
+              Menu {depth} item {j}
+            </MenuItem>
+          ))}
+          <MenuItem flyoutMenu={children} itemId={`next-menu-2-${depth}`}>
+            Next menu
+          </MenuItem>
         </MenuList>
       </MenuContent>
     </Menu>
@@ -841,7 +844,7 @@ MenuWithFlyout = () => {
       firstElement && firstElement.focus();
     }, 0);
     setIsOpen(!isOpen);
-  }
+  };
 
   const toggle = (
     <MenuToggle onClick={onToggleClick} isExpanded={isOpen}>
@@ -856,11 +859,7 @@ MenuWithFlyout = () => {
           <MenuItem itemId="start">Start rollout</MenuItem>
           <MenuItem itemId="pause">Pause rollouts</MenuItem>
           <MenuItem itemId="storage">Add storage</MenuItem>
-          <MenuItem
-            description="Description"
-            flyoutMenu={curFlyout}
-            itemId="next-menu-root"
-          >
+          <MenuItem description="Description" flyoutMenu={curFlyout} itemId="next-menu-root">
             Edit
           </MenuItem>
           <MenuItem itemId="delete">Delete deployment config</MenuItem>
@@ -869,14 +868,290 @@ MenuWithFlyout = () => {
     </Menu>
   );
 
-  return (
-    <Popper
-      trigger={toggle}
-      popper={menu}
-      isVisible={isOpen}
-      popperMatchesTriggerWidth={false}
-    />
-  );
-}
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
+};
 ```
 
+### Application Launcher using Menu components
+
+```js
+import React from 'react';
+import {
+  MenuToggle,
+  Menu,
+  MenuContent,
+  MenuList,
+  MenuItem,
+  MenuGroup,
+  MenuInput,
+  Popper,
+  Tooltip,
+  Divider,
+  TextInput
+} from '@patternfly/react-core';
+import { Link } from '@reach/router';
+import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
+import pfIcon from './examples/pf-logo-small.svg';
+
+MenuAppLauncher = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [refFullOptions, setRefFullOptions] = React.useState();
+  const [favorites, setFavorites] = React.useState([]);
+  const [filteredIds, setFilteredIds] = React.useState(['*']);
+  const toggleRef = React.useRef();
+  const menuRef = React.useRef();
+  const containerRef = React.useRef();
+
+  const handleMenuKeys = event => {
+    if (!isOpen) {
+      return;
+    }
+    if (menuRef.current.contains(event.target) || toggleRef.current.contains(event.target)) {
+      if (event.key === 'Escape') {
+        setIsOpen(!isOpen);
+        toggleRef.current.focus();
+      }
+    }
+  };
+
+  const handleClickOutside = event => {
+    if (isOpen && !menuRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  const onToggleClick = ev => {
+    ev.stopPropagation(); // Stop handleClickOutside from handling
+    setTimeout(() => {
+      const firstElement = menuRef.current.querySelector('li > button,input:not(:disabled)');
+      firstElement && firstElement.focus();
+      setRefFullOptions(Array.from(menuRef.current.querySelectorAll('li:not(li[role=separator])')));
+    }, 0);
+    setIsOpen(!isOpen);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', handleMenuKeys);
+    window.addEventListener('click', handleClickOutside);
+
+    return () => {
+      window.removeEventListener('keydown', handleMenuKeys);
+      window.removeEventListener('click', handleClickOutside);
+    };
+  }, [isOpen, menuRef]);
+
+  const toggle = (
+    <MenuToggle
+      aria-label="Toggle"
+      ref={toggleRef}
+      variant="plain"
+      onClick={onToggleClick}
+      isExpanded={isOpen}
+      style={{ width: 'auto' }}
+    >
+      <ThIcon />
+    </MenuToggle>
+  );
+
+  const menuItems = [
+    <MenuGroup key="group1" label="Group 1">
+      <MenuList>
+        <MenuItem itemId="0" id="0" isFavorited={favorites.includes('0')}>
+          Application 1
+        </MenuItem>
+        <MenuItem
+          itemId="1"
+          id="1"
+          isFavorited={favorites.includes('1')}
+          to="#default-link2"
+          onClick={ev => ev.preventDefault()}
+        >
+          Application 2
+        </MenuItem>
+      </MenuList>
+    </MenuGroup>,
+    <Divider key="group1-divider" />,
+    <MenuGroup key="group2" label="Group 2">
+      <MenuList>
+        <MenuItem
+          itemId="2"
+          id="2"
+          isFavorited={favorites.includes('2')}
+          component={props => <Link {...props} to="#router-link" />}
+        >
+          @reach/router Link
+        </MenuItem>
+        <MenuItem
+          itemId="3"
+          id="3"
+          isFavorited={favorites.includes('3')}
+          isExternalLink
+          icon={<img src={pfIcon} />}
+          component={props => <Link {...props} to="#router-link2" />}
+        >
+          @reach/router Link with icon
+        </MenuItem>
+      </MenuList>
+    </MenuGroup>,
+    <Divider key="group2-divider" />,
+    <MenuList key="other-items">
+      <MenuItem key="tooltip-app" isFavorited={favorites.includes('4')} itemId="4" id="4">
+        <Tooltip content={<div>Launch Application 3</div>} position="right">
+          <span>Application 3 with tooltip</span>
+        </Tooltip>
+      </MenuItem>
+      <MenuItem key="disabled-app" itemId="5" id="5" isDisabled>
+        Unavailable Application
+      </MenuItem>
+    </MenuList>
+  ];
+
+  const createFavorites = favIds => {
+    let favorites = [];
+
+    menuItems.forEach(item => {
+      if (item.type === MenuList) {
+        item.props.children.filter(child => {
+          if (favIds.includes(child.props.itemId)) {
+            favorites.push(child);
+          }
+        });
+      } else if (item.type === MenuGroup) {
+        item.props.children.props.children.filter(child => {
+          if (favIds.includes(child.props.itemId)) {
+            favorites.push(child);
+          }
+        });
+      } else {
+        if (favIds.includes(item.props.itemId)) {
+          favorites.push(item);
+        }
+      }
+    });
+
+    return favorites;
+  };
+
+  const filterItems = (items, filteredIds) => {
+    if (filteredIds.length === 1 && filteredIds[0] === '*') {
+      return items;
+    }
+    let keepDivider = false;
+    let filteredCopy = items
+      .map(group => {
+        if (group.type === MenuGroup) {
+          let filteredGroup = React.cloneElement(group, {
+            children: React.cloneElement(group.props.children, {
+              children: group.props.children.props.children.filter(child => {
+                if (filteredIds.includes(child.props.itemId)) {
+                  return child;
+                }
+              })
+            })
+          });
+          const filteredList = filteredGroup.props.children;
+          if (filteredList.props.children.length > 0) {
+            keepDivider = true;
+            return filteredGroup;
+          } else {
+            keepDivider = false;
+          }
+        } else if (group.type === MenuList) {
+          let filteredGroup = React.cloneElement(group, {
+            children: group.props.children.filter(child => {
+              if (filteredIds.includes(child.props.itemId)) {
+                return child;
+              }
+            })
+          });
+          if (filteredGroup.props.children.length > 0) {
+            keepDivider = true;
+            return filteredGroup;
+          } else {
+            keepDivider = false;
+          }
+        } else {
+          if ((keepDivider && group.type === Divider) || filteredIds.includes(group.props.itemId)) {
+            return group;
+          }
+        }
+      })
+      .filter(newGroup => newGroup);
+
+    if (filteredCopy.length > 0) {
+      let lastGroup = filteredCopy.pop();
+      if (lastGroup.type !== Divider) {
+        filteredCopy.push(lastGroup);
+      }
+    }
+
+    return filteredCopy;
+  };
+
+  const onTextChange = textValue => {
+    if (textValue === '') {
+      setFilteredIds(['*']);
+      return;
+    }
+
+    const filteredIds = refFullOptions
+      .filter(item => item.innerText.toLowerCase().includes(textValue.toString().toLowerCase()))
+      .map(item => item.id);
+    setFilteredIds(filteredIds);
+  };
+
+  const onFavorite = (event, itemId, actionId) => {
+    event.stopPropagation();
+    if (actionId === 'fav') {
+      const isFavorite = favorites.includes(itemId);
+      if (isFavorite) {
+        setFavorites(favorites.filter(fav => fav !== itemId));
+      } else {
+        setFavorites([...favorites, itemId]);
+      }
+    }
+  };
+
+  const filteredFavorites = filterItems(createFavorites(favorites), filteredIds);
+  const filteredItems = filterItems(menuItems, filteredIds);
+  if (filteredItems.length === 0) {
+    filteredItems.push(<MenuItem key="no-items">No results found</MenuItem>);
+  }
+
+  const menu = (
+    <Menu ref={menuRef} onActionClick={onFavorite} onSelect={(_ev, itemId) => console.log('selected', itemId)}>
+      <MenuInput>
+        <TextInput
+          aria-label="Filter menu items"
+          iconVariant="search"
+          type="search"
+          onChange={value => onTextChange(value)}
+        />
+      </MenuInput>
+      <Divider />
+      <MenuContent>
+        {filteredFavorites.length > 0 && (
+          <React.Fragment>
+            <MenuGroup key="favorites-group" label="Favorites">
+              <MenuList>{filteredFavorites}</MenuList>
+            </MenuGroup>
+            <Divider key="favorites-divider" />
+          </React.Fragment>
+        )}
+        {filteredItems}
+      </MenuContent>
+    </Menu>
+  );
+  return (
+    <div ref={containerRef}>
+      <Popper
+        trigger={toggle}
+        popper={menu}
+        isVisible={isOpen}
+        popperMatchesTriggerWidth={false}
+        appendTo={containerRef.current}
+      />
+    </div>
+  );
+};
+```
