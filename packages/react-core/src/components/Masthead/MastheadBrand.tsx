@@ -20,7 +20,7 @@ export const MastheadBrand: React.FunctionComponent<MastheadBrandProps> = ({
 }: MastheadBrandProps) => {
   const Component = component as any;
   return (
-    <Component className={css(styles.mastheadBrand, className)} {...props}>
+    <Component className={css(styles.mastheadBrand, className)} tabIndex={0} {...props}>
       {children}
     </Component>
   );

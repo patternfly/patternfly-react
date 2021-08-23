@@ -39,6 +39,7 @@ exports[`Masthead verify full structure 1`] = `
         <MastheadBrand>
           <a
             className="pf-c-masthead__brand"
+            tabIndex={0}
           >
             Logo
           </a>
@@ -271,6 +272,7 @@ exports[`Masthead verify stack display breakpoints 1`] = `
 exports[`MastheadBrand verify basic 1`] = `
 <a
   className="pf-c-masthead__brand"
+  tabIndex={0}
 >
   test
 </a>
@@ -282,6 +284,7 @@ exports[`MastheadBrand verify custom class 1`] = `
 >
   <a
     className="pf-c-masthead__brand custom-css"
+    tabIndex={0}
   >
     test
   </a>
@@ -294,6 +297,7 @@ exports[`MastheadBrand verify custom component 1`] = `
 >
   <div
     className="pf-c-masthead__brand"
+    tabIndex={0}
   >
     test
   </div>
