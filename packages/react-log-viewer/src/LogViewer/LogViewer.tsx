@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { LogViewerRow } from './LogViewerRow';
 import { DEFAULT_FOCUS, DEFAULT_SEARCH_INDEX, DEFAULT_INDEX } from './utils/constants';
 import { searchForKeyword, parseConsoleOutput, escapeString } from './utils/utils';
-import { VariableSizeList as List, areEqual } from '../react-window';
+import { DynamicSizeList as List, areEqual } from '../react-window';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
 
 interface LogViewerProps {
@@ -18,7 +18,7 @@ interface LogViewerProps {
   width?: number;
   /** Height in pixels of the log viewer. */
   height?: number;
-  /** Rows being rendered outside of view. The more rows are rendered, the higher impact on performance */
+  /** Rows rendered outside of view. The more rows are rendered, the higher impact on performance */
   overScanCount?: number;
   /** Toolbar rendered in the log viewer header */
   toolbar?: React.ReactNode;
@@ -30,18 +30,8 @@ interface LogViewerProps {
   scrollToRow?: number;
   /** Number of rows to display in the log viewer */
   itemCount?: number;
-}
-
-let canvas: HTMLCanvasElement | undefined;
-
-function getTextWidth(text: string, font: string) {
-  // if given, use cached canvas for better performance
-  // else, create new canvas
-  canvas = canvas || document.createElement('canvas');
-  const context = canvas.getContext('2d');
-  context.font = font;
-  const metrics = context.measureText(text);
-  return metrics.width;
+  /** Component rendered in the log viewer console window header */
+  headerComponent?: React.ReactNode;
 }
 
 export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
@@ -56,6 +46,7 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
     theme = 'light',
     scrollToRow = 0,
     itemCount = undefined,
+    headerComponent,
     ...props
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
@@ -122,12 +113,6 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
     }, [data]);
 
     useEffect(() => {
-      if (logViewerRef && logViewerRef.current) {
-        logViewerRef.current.resetAfterIndex(0);
-      }
-    }, [parsedData]);
-
-    useEffect(() => {
       if (scrollToRow && parsedData.length) {
         setRowInFocus(parsedData.length - 1);
         if (logViewerRef && logViewerRef.current) {
@@ -147,6 +132,7 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
         if (foundKeywordIndexes.length !== 0) {
           setSearchedWordIndexes(foundKeywordIndexes);
           scrollToRowInFocus(foundKeywordIndexes[DEFAULT_SEARCH_INDEX]);
+          setCurrentSearchedItemCount(DEFAULT_INDEX);
         }
       }
 
@@ -166,20 +152,11 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
       logViewerRef.current.scrollToItem(searchedRowIndex, 'center');
     };
 
-    const guessRowHeight = (rowIndex: number) => {
-      const rowText = parsedData[rowIndex];
-      const textWidth = getTextWidth(rowText, 'Liberation Mono');
-      const numRows = Math.ceil(textWidth / (currentWidth || 600));
-
-      return 60 * (numRows || 1);
-    };
-
     const createList = (parsedData: string[]) => (
       <List
         className={css(styles.logViewerList)}
         height={height}
-        width={`${currentWidth}px`}
-        itemSize={guessRowHeight}
+        width={currentWidth}
         itemCount={typeof itemCount === 'undefined' ? parsedData.length : itemCount}
         itemData={dataToRender}
         ref={logViewerRef}
@@ -221,6 +198,7 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
               <div className={css(styles.logViewerHeader)}>{toolbar}</div>
             </LogViewerToolbarContext.Provider>
           )}
+          {headerComponent}
           <div className={css(styles.logViewerMain)} ref={containerRef}>
             {loading ? <div style={{ height }}>{loadingContent}</div> : createList(parsedData)}
           </div>

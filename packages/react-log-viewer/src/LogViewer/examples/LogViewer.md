@@ -21,7 +21,7 @@ import { Checkbox } from '@patternfly/react-core';
 
 BasicLogViewer = () => {
   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
-  
+
   return (
     <React.Fragment>
       <Checkbox
@@ -35,7 +35,7 @@ BasicLogViewer = () => {
       <LogViewer hasLineNumbers={false} height={300} data={data.data} theme={isDarkTheme ? 'dark' : 'light'} />
     </React.Fragment>
   );
-}
+};
 ```
 
 ### With search
@@ -104,6 +104,29 @@ CustomControlLogViewer = () => {
         </Toolbar>
       }
     />
+  );
+};
+```
+
+### With header component
+
+```js
+import React from 'react';
+import { data } from './realTestData.js';
+import { LogViewer } from '@patternfly/react-log-viewer';
+import { Banner } from '@patternfly/react-core';
+
+HeaderComponentLogViewer = () => {
+  return (
+    <React.Fragment>
+      <LogViewer
+        hasLineNumbers={false}
+        height={300}
+        data={data.data}
+        theme="dark"
+        headerComponent={<Banner>{data.data.length} lines</Banner>}
+      />
+    </React.Fragment>
   );
 };
 ```
