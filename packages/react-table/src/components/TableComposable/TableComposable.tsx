@@ -5,7 +5,7 @@ import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-
 import { css } from '@patternfly/react-styles';
 import { toCamel } from '../Table/utils/utils';
 import { IVisibility } from '../Table/utils/decorators/classNames';
-import { useOUIAProps, OUIAProps } from '@patternfly/react-core';
+import { useOUIAProps, OUIAProps, handleArrows, setTabIndex } from '@patternfly/react-core';
 import { TableGridBreakpoint, TableVariant } from '../Table/TableTypes';
 
 export interface BaseCellProps {
@@ -48,9 +48,11 @@ export interface TableComposableProps extends React.HTMLProps<HTMLTableElement>,
   /** If set to true, the table header sticks to the top of its container */
   isStickyHeader?: boolean;
   /** Forwarded ref */
-  innerRef?: React.Ref<any>;
+  innerRef?: React.RefObject<any>;
   /** Flag indicating table is a tree table */
   isTreeTable?: boolean;
+  /** Flag indicating this table is nested within another table */
+  isNested?: boolean;
 }
 
 const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
@@ -66,8 +68,25 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   ouiaId,
   ouiaSafe = true,
   isTreeTable = false,
+  isNested = false,
   ...props
 }: TableComposableProps) => {
+  const tableRef = innerRef || React.useRef(null);
+
+  React.useEffect(() => {
+    document.addEventListener('keydown', handleKeys);
+
+    // sets up roving tab-index to tree tables only
+    if (tableRef && tableRef.current && tableRef.current.classList.contains('pf-m-tree-view')) {
+      const tbody = tableRef.current.querySelector('tbody');
+      tbody && setTabIndex(Array.from(tbody.querySelectorAll('button, a, input')));
+    }
+
+    return function cleanup() {
+      document.removeEventListener('keydown', handleKeys);
+    };
+  }, [tableRef, tableRef.current]);
+
   const ouiaProps = useOUIAProps('Table', ouiaId, ouiaSafe);
   const grid =
     stylesGrid.modifiers?.[
@@ -83,6 +102,41 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
         | 'treeViewGridXl'
         | 'treeViewGrid_2xl'
     ];
+
+  const handleKeys = (event: KeyboardEvent) => {
+    if (
+      isNested ||
+      !(tableRef && tableRef.current && tableRef.current.classList.contains('pf-m-tree-view')) || // implements roving tab-index to tree tables only
+      (tableRef && tableRef.current !== (event.target as HTMLElement).closest('.pf-c-table:not(.pf-m-nested)'))
+    ) {
+      return;
+    }
+    const activeElement = document.activeElement;
+    const key = event.key;
+    const rows = (Array.from(tableRef.current.querySelectorAll('tbody tr')) as Element[]).filter(
+      el => !el.classList.contains('pf-m-disabled') && !(el as HTMLElement).hidden
+    );
+    if (key === 'Space' || key === 'Enter') {
+      (activeElement as HTMLElement).click();
+      event.preventDefault();
+    }
+
+    const getFocusableElement = (element: Element) =>
+      element.querySelectorAll('button:not(:disabled), input:not(:disabled), a:not(:disabled)')[0];
+
+    handleArrows(
+      event,
+      rows,
+      (element: Element) => element === activeElement.closest('tr'),
+      getFocusableElement,
+      ['button', 'input', 'a'],
+      undefined,
+      false,
+      true,
+      false
+    );
+  };
+
   return (
     <table
       aria-label={ariaLabel}
@@ -94,9 +148,10 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
         styles.modifiers[variant],
         !borders && styles.modifiers.noBorderRows,
         isStickyHeader && styles.modifiers.stickyHeader,
-        isTreeTable && stylesTreeView.modifiers.treeView
+        isTreeTable && stylesTreeView.modifiers.treeView,
+        isNested && 'pf-m-nested'
       )}
-      ref={innerRef}
+      ref={tableRef}
       {...(isTreeTable && { role: 'treegrid' })}
       {...ouiaProps}
       {...props}
@@ -107,6 +162,6 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
 };
 
 export const TableComposable = React.forwardRef((props: TableComposableProps, ref: React.Ref<HTMLTableElement>) => (
-  <TableComposableBase {...props} innerRef={ref} />
+  <TableComposableBase {...props} innerRef={ref as React.MutableRefObject<any>} />
 ));
 TableComposable.displayName = 'TableComposable';

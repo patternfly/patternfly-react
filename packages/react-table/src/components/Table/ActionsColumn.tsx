@@ -35,6 +35,7 @@ export interface ActionsColumnState {
 
 export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsColumnState> {
   static displayName = 'ActionsColumn';
+  private toggleRef = React.createRef<HTMLButtonElement>();
   static defaultProps = {
     children: null as React.ReactNode,
     items: [] as IAction[],

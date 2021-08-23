@@ -120,12 +120,16 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     }
     if (event.key === 'ArrowUp') {
       this.props.context.keyHandler(this.props.index, innerIndex, KEYHANDLER_DIRECTION.UP);
+      event.stopPropagation();
     } else if (event.key === 'ArrowDown') {
       this.props.context.keyHandler(this.props.index, innerIndex, KEYHANDLER_DIRECTION.DOWN);
+      event.stopPropagation();
     } else if (event.key === 'ArrowRight') {
       this.props.context.keyHandler(this.props.index, innerIndex, KEYHANDLER_DIRECTION.RIGHT);
+      event.stopPropagation();
     } else if (event.key === 'ArrowLeft') {
       this.props.context.keyHandler(this.props.index, innerIndex, KEYHANDLER_DIRECTION.LEFT);
+      event.stopPropagation();
     } else if (event.key === 'Enter' || event.key === ' ') {
       event.target.click();
       this.props.enterTriggersArrowDown &&
