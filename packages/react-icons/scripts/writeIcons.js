@@ -92,6 +92,7 @@ function writeIcons(icons) {
     .sort()
     .join('\n');
   outputFileSync(join(outDir, 'esm', 'icons/index.js'), esmIndexString);
+  outputFileSync(join(outDir, 'esm', 'icons/index.d.ts'), esmIndexString);
   outputFileSync(join(outDir, 'js', 'icons/index.d.ts'), esmIndexString);
   outputFileSync(
     join(outDir, 'js', 'icons/index.js'),
