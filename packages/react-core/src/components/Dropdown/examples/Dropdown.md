@@ -26,7 +26,7 @@ import {
   Dropdown,
   DropdownToggle,
   DropdownItem,
-  DropdownSeparator,
+  DropdownSeparator
 } from '@patternfly/react-core';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 

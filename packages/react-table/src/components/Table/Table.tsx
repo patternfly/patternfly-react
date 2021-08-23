@@ -109,6 +109,8 @@ export interface TableProps extends OUIAProps {
   canSortFavorites?: boolean;
   /** Flag indicating table is a tree table */
   isTreeTable?: boolean;
+  /** Flag indicating this table is nested within another table */
+  isNested?: boolean;
 }
 
 export class Table extends React.Component<TableProps, {}> {
@@ -134,7 +136,8 @@ export class Table extends React.Component<TableProps, {}> {
     ouiaSafe: true,
     isStickyHeader: false,
     canSortFavorites: true,
-    isTreeTable: false
+    isTreeTable: false,
+    isNested: false
   };
   state = {
     ouiaStateId: getDefaultOUIAId(Table.displayName)

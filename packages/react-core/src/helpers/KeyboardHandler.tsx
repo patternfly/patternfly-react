@@ -39,20 +39,22 @@ export interface KeyboardHandlerProps {
  * @param {boolean} noVerticalArrowHandling Flag indicating that the included vertical arrow key handling should be ignored
  * @param {boolean} noHorizontalArrowHandling Flag indicating that the included horizontal arrow key handling should be ignored
  * @param {boolean} updateTabIndex Flag indicating that the tabIndex of the currently focused element and next focused element should be updated, in the case of using a roving tabIndex
+ * @param {boolean} onlyTraverseSiblings Flag indicating that next focusable element of a horizontal movement will be this element's sibling
  */
 export const handleArrows = (
   event: KeyboardEvent,
   navigableElements: Element[],
   isActiveElement: (element: Element) => boolean = element => document.activeElement.contains(element),
   getFocusableElement: (element: Element) => Element = element => element,
-  validSiblingTags: string[] = ['A', 'BUTTON'],
+  validSiblingTags: string[] = ['A', 'BUTTON', 'INPUT'],
   noVerticalArrowHandling: boolean = false,
   noHorizontalArrowHandling: boolean = false,
-  updateTabIndex: boolean = true
+  updateTabIndex: boolean = true,
+  onlyTraverseSiblings: boolean = true
 ) => {
   const activeElement = document.activeElement;
   const key = event.key;
-  let moveTarget = null;
+  let moveTarget: Element = null;
 
   // Handle vertical arrow keys. If noVerticalArrowHandling is passed, skip this block
   if (!noVerticalArrowHandling) {
@@ -62,23 +64,30 @@ export const handleArrows = (
 
       // Traverse navigableElements to find the element which is currently active
       let currentIndex = -1;
+      // while (currentIndex === -1) {
       navigableElements.forEach((element, index) => {
         if (isActiveElement(element)) {
           // Once found, move up or down the array by 1. Determined by the vertical arrow key direction
-          const increment = key === 'ArrowUp' ? -1 : 1;
-          currentIndex = index + increment;
+          let increment = 0;
 
-          if (currentIndex >= navigableElements.length) {
-            currentIndex = 0;
-          }
-          if (currentIndex < 0) {
-            currentIndex = navigableElements.length - 1;
-          }
+          // keep increasing the increment until you've tried the whole navigableElement
+          while (!moveTarget && increment < navigableElements.length && increment * -1 < navigableElements.length) {
+            key === 'ArrowUp' ? increment-- : increment++;
+            currentIndex = index + increment;
 
-          // Set the next target element
-          moveTarget = getFocusableElement(navigableElements[currentIndex]);
+            if (currentIndex >= navigableElements.length) {
+              currentIndex = 0;
+            }
+            if (currentIndex < 0) {
+              currentIndex = navigableElements.length - 1;
+            }
+
+            // Set the next target element (undefined if none found)
+            moveTarget = getFocusableElement(navigableElements[currentIndex]);
+          }
         }
       });
+      // }
     }
   }
 
@@ -87,21 +96,47 @@ export const handleArrows = (
     if (['ArrowLeft', 'ArrowRight'].includes(key)) {
       event.preventDefault();
       event.stopImmediatePropagation(); // For menus in menus
-      let nextSibling = activeElement;
 
-      // While a sibling exists, check each sibling to determine if it should be focussed
-      while (nextSibling) {
-        // Set the next checked sibling, determined by the horizontal arrow key direction
-        nextSibling = key === 'ArrowLeft' ? nextSibling.previousElementSibling : nextSibling.nextElementSibling;
-        if (nextSibling) {
-          if (validSiblingTags.includes(nextSibling.tagName)) {
-            // If the sibling's tag is included in validSiblingTags, set the next target element and break the loop
-            moveTarget = nextSibling;
-            break;
+      let currentIndex = -1;
+      navigableElements.forEach((element, index) => {
+        if (isActiveElement(element)) {
+          const activeRow = navigableElements[index].querySelectorAll(validSiblingTags.join(',')); // all focusable elements in my row
+
+          if (!activeRow.length || onlyTraverseSiblings) {
+            let nextSibling = activeElement;
+            // While a sibling exists, check each sibling to determine if it should be focussed
+            while (nextSibling) {
+              // Set the next checked sibling, determined by the horizontal arrow key direction
+              nextSibling = key === 'ArrowLeft' ? nextSibling.previousElementSibling : nextSibling.nextElementSibling;
+              if (nextSibling) {
+                if (validSiblingTags.includes(nextSibling.tagName)) {
+                  // If the sibling's tag is included in validSiblingTags, set the next target element and break the loop
+                  moveTarget = nextSibling;
+                  break;
+                }
+                // If the sibling's tag is not valid, skip to the next sibling if possible
+              }
+            }
+          } else {
+            activeRow.forEach((focusableElement, index) => {
+              if (event.target === focusableElement) {
+                // Once found, move up or down the array by 1. Determined by the vertical arrow key direction
+                const increment = key === 'ArrowLeft' ? -1 : 1;
+                currentIndex = index + increment;
+                if (currentIndex >= activeRow.length) {
+                  currentIndex = 0;
+                }
+                if (currentIndex < 0) {
+                  currentIndex = activeRow.length - 1;
+                }
+
+                // Set the next target element
+                moveTarget = activeRow[currentIndex];
+              }
+            });
           }
-          // If the sibling's tag is not valid, skip to the next sibling if possible
         }
-      }
+      });
     }
   }
 
@@ -112,7 +147,7 @@ export const handleArrows = (
       (activeElement as HTMLElement).tabIndex = -1;
       (moveTarget as HTMLElement).tabIndex = 0;
     }
-    // If a move target has been set by eithe arrow handler, focus that target
+    // If a move target has been set by either arrow handler, focus that target
     (moveTarget as HTMLElement).focus();
   }
 };
