@@ -40,6 +40,7 @@ export * from './Label';
 export * from './LabelGroup';
 export * from './List';
 export * from './LoginPage';
+export * from './Masthead';
 export * from './Menu';
 export * from './MenuToggle';
 export * from './Modal';
