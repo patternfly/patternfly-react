@@ -93,7 +93,7 @@ function writeTokens(tokens) {
   outputIndex(componentIndex, 'componentIndex.js');
 
   // eslint-disable-next-line no-console
-  console.log('Wrote', Object.keys(allIndex).length * 3 + 4, 'token files');
+  console.log('Wrote', Object.keys(allIndex).length * 4 + 4, 'token files');
 }
 
 writeTokens(generateTokens());
