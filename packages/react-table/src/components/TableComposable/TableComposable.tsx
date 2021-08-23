@@ -5,9 +5,8 @@ import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-
 import { css } from '@patternfly/react-styles';
 import { toCamel } from '../Table/utils/utils';
 import { IVisibility } from '../Table/utils/decorators/classNames';
-import { useOUIAProps, OUIAProps } from '@patternfly/react-core';
+import { useOUIAProps, OUIAProps, handleArrows, setTabIndex } from '@patternfly/react-core';
 import { TableGridBreakpoint, TableVariant } from '../Table/TableTypes';
-import { handleArrows, setTabIndex } from '@patternfly/react-core/dist/js/helpers/KeyboardHandler';
 
 export interface BaseCellProps {
   /** Content rendered inside the cell */
@@ -77,7 +76,8 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   React.useEffect(() => {
     document.addEventListener('keydown', handleKeys);
 
-    if (tableRef && tableRef.current) {
+    // sets up roving tab-index to tree tables only
+    if (tableRef && tableRef.current && tableRef.current.classList.contains('pf-m-tree-view')) {
       const tbody = tableRef.current.querySelector('tbody');
       tbody && setTabIndex(Array.from(tbody.querySelectorAll('button, a, input')));
     }
@@ -106,6 +106,7 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   const handleKeys = (event: KeyboardEvent) => {
     if (
       isNested ||
+      !(tableRef && tableRef.current.classList.contains('pf-m-tree-view')) || // implements roving tab-index to tree tables only
       (tableRef && tableRef.current !== (event.target as HTMLElement).closest('.pf-c-table:not(.pf-m-nested)'))
     ) {
       return;
