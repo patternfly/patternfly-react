@@ -106,7 +106,7 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   const handleKeys = (event: KeyboardEvent) => {
     if (
       isNested ||
-      !(tableRef && tableRef.current.classList.contains('pf-m-tree-view')) || // implements roving tab-index to tree tables only
+      !(tableRef && tableRef.current && tableRef.current.classList.contains('pf-m-tree-view')) || // implements roving tab-index to tree tables only
       (tableRef && tableRef.current !== (event.target as HTMLElement).closest('.pf-c-table:not(.pf-m-nested)'))
     ) {
       return;
