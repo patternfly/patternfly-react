@@ -76,7 +76,14 @@ export interface DualListSelectorProps {
   /** Additonal tooltip properties for the remove all tooltip */
   removeAllTooltipProps?: any;
   /** Optional callback fired when an option is selected */
-  onOptionSelect?: (e: React.MouseEvent | React.ChangeEvent) => void;
+  onOptionSelect?: (
+    e: React.MouseEvent | React.ChangeEvent,
+    index: number,
+    isChosen: boolean,
+    id: string,
+    itemData: any,
+    parentData: any
+  ) => void;
   /** Optional callback fired when an option is checked */
   onOptionCheck?: (
     e: React.MouseEvent | React.ChangeEvent<HTMLInputElement>,
@@ -472,7 +479,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       };
     });
 
-    this.props.onOptionSelect && this.props.onOptionSelect(e);
+    this.props.onOptionSelect && this.props.onOptionSelect(e, index, isChosen, id, itemData, parentData);
   };
 
   onTreeOptionSelect = (
@@ -514,7 +521,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       };
     });
 
-    this.props.onOptionSelect && this.props.onOptionSelect(e);
+    this.props.onOptionSelect && this.props.onOptionSelect(e, index, isChosen, id, itemData, parentData);
   };
 
   isChecked = (treeItem: DualListSelectorTreeItemData, isChosen: boolean) =>
@@ -613,7 +620,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       }
     );
 
-    this.props.onOptionSelect && this.props.onOptionSelect(evt);
+    this.props.onOptionSelect && this.props.onOptionSelect(evt, null, isChosen, itemData.id, itemData, null);
   };
 
   handleKeys = (event: KeyboardEvent) => {
