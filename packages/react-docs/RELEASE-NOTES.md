@@ -20,14 +20,12 @@ section: developer-resources
 ### Components
 - **Avatar:**
   - Updated example image to match core ([#6137](https://github.com/patternfly/patternfly-react/pull/6137))
-- **Breadcrumb**
-  - Fixed ts-lint errors ([#6113](https://github.com/patternfly/patternfly-react/pull/6113))
 - **Card:**
   - Added horizontal split and details demos ([#6193](https://github.com/patternfly/patternfly-react/pull/6193))
 - **Context selector:**
   - Added plain variant ([#6141](https://github.com/patternfly/patternfly-react/pull/6141))
 - **Dual list selector:**
-  - Fixed to respect initial chosen options, allow checking of sub folders, and reset selected states when options are moved via add/remove al([#6180](https://github.com/patternfly/patternfly-react/pull/6180))
+  - Fixed to respect initial chosen options, allow checking of sub folders, and reset selected states when options are moved via add/remove all ([#6180](https://github.com/patternfly/patternfly-react/pull/6180))
 - **Helper text:**
   - Updated default icons for success/error ([#6130](https://github.com/patternfly/patternfly-react/pull/6130))
 - **Jump links:**
@@ -43,7 +41,7 @@ section: developer-resources
   - Fixed to only call 'onPlus' and 'onMinus' if set ([#6197](https://github.com/patternfly/patternfly-react/pull/6197))
 - **Popover:**
   - Updated to call setVisible before animation ([#6104](https://github.com/patternfly/patternfly-react/pull/6104))
-  - Addedd support for diagonal positions ([#6155](https://github.com/patternfly/patternfly-react/pull/6155))
+  - Added support for diagonal positions ([#6155](https://github.com/patternfly/patternfly-react/pull/6155))
 - **Search input:**
   - Added support for submit button ([#6178](https://github.com/patternfly/patternfly-react/pull/6178))
   - Updated to submit the search when hitting enter in the main input field ([#6145](https://github.com/patternfly/patternfly-react/pull/6145))
@@ -51,7 +49,7 @@ section: developer-resources
   - Fixed typeahead children check ([#6176](https://github.com/patternfly/patternfly-react/pull/6176))
   - Omit isLastOptionBeforeFooter from props ([#6147](https://github.com/patternfly/patternfly-react/pull/6147))
 - **Time picker:**
-  - Fixed so 0 & 00 are no longer a valid hour values in 12 hour time. Updated onChange handler to return flag indicating if current time value is valid. ([#6134](https://github.com/patternfly/patternfly-react/pull/6134))
+  - Fixed 0 & 00 are no longer valid hour values in 12 hour time. Updated onChange handler to return flag indicating if current time value is valid. ([#6134](https://github.com/patternfly/patternfly-react/pull/6134))
 - **Toolbar:**
   - Updated to use categoryName.key as filter counter index ([#6143](https://github.com/patternfly/patternfly-react/pull/6143))
   - Added props for customizing ChipGroup text to ToolbarFilter ([#6138](https://github.com/patternfly/patternfly-react/pull/6138))
@@ -81,6 +79,7 @@ section: developer-resources
 - **Chore**
   - Upgraded to TypeScript 4 ([#6192](https://github.com/patternfly/patternfly-react/pull/6192))
   - Promoted beta components  ([#6182](https://github.com/patternfly/patternfly-react/pull/6182))
+  - Fixed ts-lint errors ([#6113](https://github.com/patternfly/patternfly-react/pull/6113))
 - **Deps:**
   - Updated dependency @patternfly/patternfly-a11y to v4 ([#6125](https://github.com/patternfly/patternfly-react/pull/6125))
   - Updated dependency theme-patternfly-org to v0.6.21 ([#6177](https://github.com/patternfly/patternfly-react/pull/6177))
