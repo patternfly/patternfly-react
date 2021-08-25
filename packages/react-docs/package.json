@@ -17,7 +17,7 @@
     "build:docs": "yarn theme-patternfly-org build all",
     "clean": "rimraf .cache public static/assets static/base.css src/generated/**/*.js",
     "develop": "theme-patternfly-org start",
-    "serve": "serve public",
+    "serve": "theme-patternfly-org serve public",
     "screenshots": "theme-patternfly-org screenshots --urlPrefix http://localhost:5000",
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config"
   },
@@ -43,9 +43,8 @@
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "rimraf": "^2.6.3",
-    "serve": "^11.3.2",
     "shx": "^0.3.2",
-    "theme-patternfly-org": "0.6.24"
+    "theme-patternfly-org": "0.6.26"
   },
   "keywords": [
     "gatsby"
