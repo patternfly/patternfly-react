@@ -16219,10 +16219,10 @@ textextensions@^2.5.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/textextensions/-/textextensions-2.6.0.tgz#d7e4ab13fe54e32e08873be40d51b74229b00fc4"
 
-theme-patternfly-org@0.6.24:
-  version "0.6.24"
-  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.6.24.tgz#956d364c133010b419c9923a9bcdcf2148c93491"
-  integrity sha512-VRe2m7B9QNH7JOl5HtDcq4Yy4Etspm9WaQqDAVizRUgKPWk3MKHNiEfIMuo3lTlpgt1tynQzXyAR/2GbE+VzNg==
+theme-patternfly-org@0.6.26:
+  version "0.6.26"
+  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.6.26.tgz#2de20372fe2e146b9daeb34e45d190081505b4d8"
+  integrity sha512-ab/ksS1AY6IdKs6nklo77c9SuSjUS4RXx+1FQeSxtL9Wbma2VaP0ix1+RsbaNU+Hk8dxYXiwIYbZkxf7yJ7+jw==
   dependencies:
     "@babel/core" "^7.13.0"
     "@babel/plugin-proposal-class-properties" "^7.13.0"
@@ -16275,7 +16275,6 @@ theme-patternfly-org@0.6.24:
     remark-parse "^8.0.3"
     remark-squeeze-paragraphs "^4.0.0"
     responsive-loader "^2.1.1"
-    serve "^11.3.2"
     sharp "^0.25.4"
     style-to-object "^0.3.0"
     to-vfile "^6.1.0"
