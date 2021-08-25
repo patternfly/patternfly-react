@@ -49,7 +49,11 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   /** Position of the input */
   inputPosition?: 'aboveThumb' | 'right';
   /** Value change callback. This is called when the slider value changes */
-  onChange?: (value: number, inputValue?: number) => void;
+  onChange?: (
+    value: number,
+    inputValue?: number,
+    setLocalInputValue?: React.Dispatch<React.SetStateAction<number>>
+  ) => void;
   /** Actions placed to the left of the slider */
   leftActions?: React.ReactNode;
   /** Actions placed to the right of the slider */
@@ -109,7 +113,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     if (event.key === 'Enter') {
       event.preventDefault();
       if (onChange) {
-        onChange(localValue, localInputValue);
+        onChange(localValue, localInputValue, setLocalInputValue);
       }
     }
   };
@@ -124,7 +128,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
 
   const onBlur = () => {
     if (onChange) {
-      onChange(localValue, localInputValue);
+      onChange(localValue, localInputValue, setLocalInputValue);
     }
   };
 
