@@ -17,6 +17,10 @@ export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps
   isExpanded?: boolean;
   /** Only applicable to Tr within the Tbody: Whether the row is editable */
   isEditable?: boolean;
+  /** */
+  isHoverable?: boolean;
+  /** */
+  isSelected?: boolean;
 }
 
 const TrBase: React.FunctionComponent<TrProps> = ({
@@ -25,6 +29,8 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   isExpanded,
   isEditable,
   isHidden = false,
+  isHoverable = false,
+  isSelected = false,
   innerRef,
   ouiaId,
   ouiaSafe = true,
@@ -37,9 +43,12 @@ const TrBase: React.FunctionComponent<TrProps> = ({
         className,
         isExpanded !== undefined && styles.tableExpandableRow,
         isExpanded && styles.modifiers.expanded,
-        isEditable && inlineStyles.modifiers.inlineEditable
+        isEditable && inlineStyles.modifiers.inlineEditable,
+        isHoverable && styles.modifiers.hoverable,
+        isSelected && styles.modifiers.selected
       )}
       hidden={isHidden || (isExpanded !== undefined && !isExpanded)}
+      {...(isHoverable && { tabIndex: 0 })}
       ref={innerRef}
       {...ouiaProps}
       {...props}

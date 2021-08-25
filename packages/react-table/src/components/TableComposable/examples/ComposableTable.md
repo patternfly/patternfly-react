@@ -139,11 +139,11 @@ ComposableTableBasic = () => {
 };
 ```
 
-### Composable: Row click handler, custom row wrapper, header tooltips & popovers
+### Composable: Custom row wrapper, header tooltips & popovers
 
 - If you add the `noWrap` prop to `Thead`, it won't wrap it if there is no space
 - You can add the `textCenter` prop to `Th` or `Td` to center the contents
-- You can pass `onClick`, `className`, `style` and more to `Tr`
+- You can pass `className`, `style` and more to `Tr`
 
 To add a header tooltip or popover to `Th`, pass a `ThInfoType` object via the `info` prop.
 
@@ -152,15 +152,14 @@ import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
 
 ComposableTableMisc = () => {
+  const [selectedRow, setSelectedRow] = React.useState(null);
   const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
   const rows = [
     ['one', 'two', 'three', 'four', 'five'],
     [{ title: 'one - 2', colSpan: 3 }, null, null, 'four - 2', 'five - 2'],
     ['one - 3', 'two - 3', 'three - 3', 'four - 3', { title: 'five - 3 (not centered)', textCenter: false }]
   ];
-  const onRowClick = (event, rowIndex, row) => {
-    console.log(`handle row click ${rowIndex}`, row);
-  };
+  
   return (
     <TableComposable aria-label="Misc table">
       <Thead noWrap>
@@ -206,9 +205,10 @@ ComposableTableMisc = () => {
           return (
             <Tr
               key={rowIndex}
-              onClick={event => onRowClick(event, rowIndex, row)}
               className={isOddRow ? 'odd-row-class' : 'even-row-class'}
               style={isOddRow ? customStyle : {}}
+              isHoverable
+              isSelected={selectedRow === rowIndex}
             >
               {row.map((cell, cellIndex) => {
                 if (!cell) {
@@ -231,6 +231,68 @@ ComposableTableMisc = () => {
                     {...rest}
                   >
                     {title}
+                  </Td>
+                );
+              })}
+            </Tr>
+          );
+        })}
+      </Tbody>
+    </TableComposable>
+  );
+};
+```
+
+### Composable: Row click handler, hoverable & selected rows
+
+```js
+import React from 'react';
+import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
+
+ComposableTableHoverable = () => {
+  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
+  const [rows, setRows] = React.useState([
+    { cells: ['one', 'two', 'a', 'four', 'five'], isSelected: false},
+    { cells: ['a', 'two', 'k', 'four', 'five'], isSelected: false},
+    { cells: ['p', 'two', 'b', 'four', 'five'], isSelected: false}
+  ]);
+  const onRowClick = (event, rowIndex, row) => {
+    const updatedRows = [...rows];
+    updatedRows[rowIndex].isSelected = !rows[rowIndex].isSelected;
+    setRows(updatedRows); 
+  };
+  
+  return (
+    <TableComposable aria-label="Misc table">
+      <Thead noWrap>
+        <Tr>
+          <Th>
+            {columns[0]}
+          </Th>
+          <Th>{columns[1]}</Th>
+          <Th>
+            {columns[2]}
+          </Th>
+          <Th>{columns[3]}</Th>
+          <Th>{columns[4]}</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        {rows.map((row, rowIndex) => {
+          return (
+            <Tr
+              key={rowIndex}
+              onClick={event => onRowClick(event, rowIndex, row.cells)}
+              isHoverable
+              isSelected={row.isSelected}
+            >
+              {row.cells.map((cell, cellIndex) => {
+                return (
+                  <Td
+                    key={`${rowIndex}_${cellIndex}`}
+                    dataLabel={columns[cellIndex]}
+                  >
+                    {cell}
                   </Td>
                 );
               })}
@@ -354,7 +416,7 @@ ComposableTableSortable = () => {
 };
 ```
 
-### Composable: Selectable
+### Composable: Selectable with checkbox
 
 To make a row selectable, the table needs a selection column.
 The selection column is just another column, but with selection specific props added. 
