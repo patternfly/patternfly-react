@@ -16219,10 +16219,10 @@ textextensions@^2.5.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/textextensions/-/textextensions-2.6.0.tgz#d7e4ab13fe54e32e08873be40d51b74229b00fc4"
 
-theme-patternfly-org@0.6.21:
-  version "0.6.21"
-  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.6.21.tgz#c04a26bfe824541605a4bcf73ed5f53eb8b25f23"
-  integrity sha512-dEHa4VmcNTAMcr8l/WBjoKdfjOAgDfaunxf41QXCjh0k0/jMxBvGIh7kwJzG+XhvB9PLfWuhm8wfFZHYZkFyeQ==
+theme-patternfly-org@0.6.24:
+  version "0.6.24"
+  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.6.24.tgz#956d364c133010b419c9923a9bcdcf2148c93491"
+  integrity sha512-VRe2m7B9QNH7JOl5HtDcq4Yy4Etspm9WaQqDAVizRUgKPWk3MKHNiEfIMuo3lTlpgt1tynQzXyAR/2GbE+VzNg==
   dependencies:
     "@babel/core" "^7.13.0"
     "@babel/plugin-proposal-class-properties" "^7.13.0"
@@ -16279,7 +16279,7 @@ theme-patternfly-org@0.6.21:
     sharp "^0.25.4"
     style-to-object "^0.3.0"
     to-vfile "^6.1.0"
-    typescript "^3.0.0"
+    typescript "^4.0.0"
     unified "9.1.0"
     unist-util-remove "^2.0.0"
     unist-util-visit "^2.0.0"
@@ -16629,10 +16629,6 @@ typedarray-to-buffer@^3.1.5:
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
-
-typescript@^3.0.0:
-  version "3.9.7"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
 
 typescript@^4.0.0:
   version "4.3.5"
