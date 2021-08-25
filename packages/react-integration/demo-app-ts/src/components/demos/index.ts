@@ -11,7 +11,6 @@ export * from './AlertDemo/AlertDefaultTimeoutDemo';
 export * from './AreaChart/SparklineDemo';
 export * from './AreaChart/CyanAreaDemo';
 export * from './AreaChart/ColorAreaBottomLegendDemo';
-export * from './AvatarDemo/AvatarDemo';
 export * from './BackdropDemo/BackdropDemo';
 export * from './BackgroundImageDemo/BackgroundImageDemo';
 export * from './BadgeDemo/BadgeDemo';

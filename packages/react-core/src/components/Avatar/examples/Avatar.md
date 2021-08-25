@@ -11,7 +11,7 @@ import './example.css';
 
 ## Examples
 ### Basic
-```js
+```ts
 import React from 'react';
 import { Avatar } from '@patternfly/react-core';
 import avatarImg from './avatarImg.svg';
@@ -20,7 +20,7 @@ import avatarImg from './avatarImg.svg';
 ```
 
 ### Bordered - light
-```js
+```ts
 import React from 'react';
 import { Avatar } from '@patternfly/react-core';
 import avatarImg from './img_avatar.svg';
@@ -29,7 +29,7 @@ import avatarImg from './img_avatar.svg';
 ```
 
 ### Bordered - dark
-```js
+```ts
 import React from 'react';
 import { Avatar } from '@patternfly/react-core';
 import avatarImgDark from './img_avatar-dark.svg';

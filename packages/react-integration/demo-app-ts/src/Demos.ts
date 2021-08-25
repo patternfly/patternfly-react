@@ -81,11 +81,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.StackedAreaDemo
   },
   {
-    id: 'avatar-demo',
-    name: 'Avatar Demo',
-    componentType: Examples.AvatarDemo
-  },
-  {
     id: 'backdrop-demo',
     name: 'Backdrop Demo',
     componentType: Examples.BackdropDemo
