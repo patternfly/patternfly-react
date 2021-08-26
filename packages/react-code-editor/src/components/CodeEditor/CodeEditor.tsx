@@ -121,6 +121,14 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   loading?: React.ReactNode;
   /** Content to display in space of the code editor when there is no code to display */
   emptyState?: React.ReactNode;
+  /** Override default empty state title text */
+  emptyStateTitle?: React.ReactNode;
+  /** Override default empty state body text */
+  emptyStateBody?: React.ReactNode;
+  /** Override default empty state title text */
+  emptyStateButton?: React.ReactNode;
+  /** Override default empty state body text */
+  emptyStateLink?: React.ReactNode;
   /** Name of the file if user downloads code to local file */
   downloadFileName?: string;
   /** Flag to add upload button to code editor actions. Also makes the code editor accept a file using drag and drop */
@@ -199,6 +207,10 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     isLanguageLabelVisible: false,
     loading: '',
     emptyState: '',
+    emptyStateTitle: 'Start editing',
+    emptyStateBody: 'Drag and drop a file or upload one.',
+    emptyStateButton: 'Browse',
+    emptyStateLink: 'Start from scratch',
     downloadFileName: Date.now().toString(),
     isUploadEnabled: false,
     isDownloadEnabled: false,
@@ -396,6 +408,10 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       isDownloadEnabled,
       language,
       emptyState: providedEmptyState,
+      emptyStateTitle,
+      emptyStateBody,
+      emptyStateButton,
+      emptyStateLink,
       customControls,
       isMinimapVisible,
       showEditor,
@@ -422,15 +438,15 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
               <EmptyState variant={EmptyStateVariant.small}>
                 <EmptyStateIcon icon={CodeIcon} />
                 <Title headingLevel="h4" size="lg">
-                  Start editing
+                  {emptyStateTitle}
                 </Title>
-                <EmptyStateBody>Drag a file here or browse to upload</EmptyStateBody>
+                <EmptyStateBody>{emptyStateBody}</EmptyStateBody>
                 <Button variant="primary" onClick={open}>
-                  Browse
+                  {emptyStateButton}
                 </Button>
                 <EmptyStateSecondaryActions>
                   <Button variant="link" onClick={this.toggleEmptyState}>
-                    Start from scratch
+                    {emptyStateLink}
                   </Button>
                 </EmptyStateSecondaryActions>
               </EmptyState>
@@ -438,10 +454,10 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
               <EmptyState variant={EmptyStateVariant.small}>
                 <EmptyStateIcon icon={CodeIcon} />
                 <Title headingLevel="h4" size="lg">
-                  Start editing
+                  {emptyStateTitle}
                 </Title>
                 <Button variant="primary" onClick={this.toggleEmptyState}>
-                  Start from scratch
+                  {emptyStateLink}
                 </Button>
               </EmptyState>
             ));
