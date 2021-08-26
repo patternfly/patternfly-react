@@ -215,12 +215,15 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
 
     /* If custom steps are discrete, snap to closest step value */
     if (!areCustomStepsContinuous && customSteps) {
-      const stepIndex = customSteps.findIndex(stepObj => stepObj.value >= newPercentage);
-      if (customSteps[stepIndex].value === newPercentage) {
+      const numSteps = customSteps.length - 1;
+      const percentagePerStep = 100 / numSteps;
+      const customStepPercentage = newPercentage / percentagePerStep;
+      const stepIndex = customSteps.findIndex(stepObj => stepObj.value >= customStepPercentage);
+      if (customSteps[stepIndex].value === customStepPercentage) {
         snapValue = customSteps[stepIndex].value;
       } else {
         const midpoint = (customSteps[stepIndex].value + customSteps[stepIndex - 1].value) / 2;
-        if (midpoint > newPercentage) {
+        if (midpoint > customStepPercentage) {
           snapValue = customSteps[stepIndex - 1].value;
         } else {
           snapValue = customSteps[stepIndex].value;
