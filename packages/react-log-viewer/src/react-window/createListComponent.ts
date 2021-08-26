@@ -37,10 +37,12 @@ type onItemsRenderedCallback = ({
 type onScrollCallback = ({
   scrollDirection,
   scrollOffset,
+  scrollOffsetToBottom,
   scrollUpdateWasRequested
 }: {
   scrollDirection: ScrollDirection;
   scrollOffset: number;
+  scrollOffsetToBottom: number;
   scrollUpdateWasRequested: boolean;
 }) => void;
 
@@ -92,6 +94,7 @@ export interface State {
   isScrolling: boolean;
   scrollDirection: ScrollDirection;
   scrollOffset: number;
+  scrollOffsetToBottom: number;
   scrollUpdateWasRequested: boolean;
 }
 
@@ -169,6 +172,7 @@ export default function createListComponent({
       isScrolling: false,
       scrollDirection: 'forward',
       scrollOffset: typeof this.props.initialScrollOffset === 'number' ? this.props.initialScrollOffset : 0,
+      scrollOffsetToBottom: -1,
       scrollUpdateWasRequested: false
     };
 
@@ -207,6 +211,13 @@ export default function createListComponent({
       index = Math.max(0, Math.min(index, itemCount - 1));
 
       this.scrollTo(getOffsetForIndexAndAlignment(this.props, index, align, scrollOffset, this._instanceProps));
+    }
+
+    scrollToBottom(): void {
+      const outerRef = this._outerRef as HTMLElement;
+      const { scrollHeight, clientHeight } = outerRef;
+
+      this.scrollTo(scrollHeight - clientHeight);
     }
 
     componentDidMount() {
@@ -341,10 +352,16 @@ export default function createListComponent({
     );
 
     _callOnScroll = memoizeOne(
-      (scrollDirection: ScrollDirection, scrollOffset: number, scrollUpdateWasRequested: boolean) =>
+      (
+        scrollDirection: ScrollDirection,
+        scrollOffset: number,
+        scrollOffsetToBottom: number,
+        scrollUpdateWasRequested: boolean
+      ) =>
         this.props.onScroll({
           scrollDirection,
           scrollOffset,
+          scrollOffsetToBottom,
           scrollUpdateWasRequested
         })
     );
@@ -359,8 +376,8 @@ export default function createListComponent({
       }
 
       if (typeof this.props.onScroll === 'function') {
-        const { scrollDirection, scrollOffset, scrollUpdateWasRequested } = this.state;
-        this._callOnScroll(scrollDirection, scrollOffset, scrollUpdateWasRequested);
+        const { scrollDirection, scrollOffset, scrollOffsetToBottom, scrollUpdateWasRequested } = this.state;
+        this._callOnScroll(scrollDirection, scrollOffset, scrollOffsetToBottom, scrollUpdateWasRequested);
       }
     }
 
@@ -515,10 +532,13 @@ export default function createListComponent({
         // Prevent Safari's elastic scrolling from causing visual shaking when scrolling past bounds.
         const scrollOffset = Math.max(0, Math.min(scrollTop, scrollHeight - clientHeight));
 
+        const scrollOffsetToBottom = scrollHeight - scrollTop - clientHeight;
+
         return {
           isScrolling: true,
           scrollDirection: prevState.scrollOffset < scrollOffset ? 'forward' : 'backward',
           scrollOffset,
+          scrollOffsetToBottom,
           scrollUpdateWasRequested: false
         };
       }, this._resetIsScrollingDebounced);

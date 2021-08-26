@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { LOGGER_LINE_NUMBER_INDEX_DELTA } from './utils/constants';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
 import { LogViewerContext } from './LogViewerContext';
-import { forwardRef } from 'react';
 
 interface LogViewerRowProps {
   index?: number;
@@ -15,9 +14,10 @@ interface LogViewerRowProps {
     highlightedRowIndexes: number[];
     setHighlightedRowIndexes: (indexes: number[]) => void;
   };
+  innerRef?: React.Ref<any>;
 }
 
-export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = forwardRef(({ index, style, data }, ref) => {
+const LogViewerRowBase: React.FunctionComponent<LogViewerRowProps> = memo(({ index, style, data, innerRef }) => {
   const { parsedData, highlightedRowIndexes, searchedWordIndexes, setHighlightedRowIndexes, rowInFocus } = data;
   const [clickCounter, setClickCounter] = useState(0);
   const [isHiglighted, setIsHiglighted] = useState(false);
@@ -87,7 +87,7 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = forwardR
   return (
     <div
       key={index}
-      ref={ref as any}
+      ref={innerRef}
       style={style}
       className={css(styles.logViewerListItem)}
       onClick={() => handleHighlightRow()}
@@ -99,4 +99,9 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = forwardR
     </div>
   );
 });
+
+export const LogViewerRow = React.forwardRef((props: LogViewerRowProps, ref: React.Ref<HTMLButtonElement>) => (
+  <LogViewerRowBase {...props} innerRef={ref} />
+));
+
 LogViewerRow.displayName = 'LogViewerRow';
