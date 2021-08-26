@@ -25,6 +25,15 @@ describe('Alert Demo Test', () => {
     cy.get('#default-alert').should('have.class', 'pf-m-inline');
   });
 
+  it('Verify default inline plain alert', () => {
+    cy.get('#default-alert-inline-plain').should('not.have.class', 'pf-m-info');
+    cy.get('#default-alert-inline-plain').should('not.have.class', 'pf-success');
+    cy.get('#default-alert-inline-plain').should('not.have.class', 'pf-m-danger');
+    cy.get('#default-alert-inline-plain').should('not.have.class', 'pf-m-warning');
+    cy.get('#default-alert-inline-plain').should('have.class', 'pf-m-inline');
+    cy.get('#default-alert-inline-plain').should('have.class', 'pf-m-plain');
+  });
+
   it('Verify alerts close', () => {
     cy.get('#test-button-1').click();
     cy.get('#test-button-2').click();

@@ -156,6 +156,83 @@ class InlineAlertVariations extends React.Component {
 }
 ```
 
+### Inline plain types
+```js
+import React from 'react';
+import { Alert } from '@patternfly/react-core';
+
+class InlineAlert extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Alert variant="default" isInline isPlain title="Default inline alert title" />
+        <Alert variant="info" isInline isPlain title="Info inline alert title" />
+        <Alert variant="success" isInline isPlain title="Success inline alert title" />
+        <Alert variant="warning" isInline isPlain title="Warning inline alert title" />
+        <Alert variant="danger" isInline isPlain title="Danger inline alert title" />
+      </React.Fragment>
+    );
+  }
+}
+```
+
+### Inline plain variations
+```js
+import React from 'react';
+import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
+
+class InlineAlertVariations extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Alert
+          isInline
+          isPlain
+          variant="success"
+          title="Success alert title"
+          actionClose={<AlertActionCloseButton onClose={() => alert('Clicked the close button')} />}
+          actionLinks={
+            <React.Fragment>
+              <AlertActionLink onClick={() => alert('Clicked on View details')}>View details</AlertActionLink>
+              <AlertActionLink onClick={() => alert('Clicked on Ignore')}>Ignore</AlertActionLink>
+            </React.Fragment>
+          }
+        >
+          <p>Success alert description. This should tell the user more information about the alert.</p>
+        </Alert>
+        <Alert isInline isPlain variant="success" title="Success alert title" actionClose={<AlertActionCloseButton onClose={() => alert('Clicked the close button')} />}>
+          <p>
+            Success alert description. This should tell the user more information about the alert.{' '}
+            <a href="#">This is a link.</a>
+          </p>
+        </Alert>
+        <Alert
+          isInline
+          isPlain
+          variant="success"
+          title="Success alert title"
+          actionClose={<AlertActionCloseButton onClose={() => alert('Clicked the close button')} />}
+          actionLinks={
+            <React.Fragment>
+              <AlertActionLink onClick={() => alert('Clicked on View details')}>View details</AlertActionLink>
+              <AlertActionLink onClick={() => alert('Clicked on Ignore')}>Ignore</AlertActionLink>
+            </React.Fragment>
+          }
+        />
+        <Alert
+          isInline
+          isPlain
+          variant="success"
+          title="Success alert title"
+          actionClose={<AlertActionCloseButton onClose={() => alert('Clicked the close button')} />}
+        />
+        <Alert isInline isPlain variant="success" title="Success alert title" />
+      </React.Fragment>
+    );
+  }
+}
+```
+
 ### Static live region alert
 ```js
 import React from 'react';

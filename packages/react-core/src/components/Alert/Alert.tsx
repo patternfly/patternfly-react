@@ -22,6 +22,8 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   variant?: 'success' | 'danger' | 'warning' | 'info' | 'default';
   /** Flag to indicate if the Alert is inline */
   isInline?: boolean;
+  /** Flag to indicate if the Alert is plain */
+  isPlain?: boolean;
   /** Title of the Alert  */
   title: React.ReactNode;
   /** Close button; use the AlertActionCloseButton component  */
@@ -55,6 +57,7 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
 export const Alert: React.FunctionComponent<AlertProps> = ({
   variant = AlertVariant.default,
   isInline = false,
+  isPlain = false,
   isLiveRegion = false,
   variantLabel = `${capitalize(variant)} alert:`,
   'aria-label': ariaLabel = `${capitalize(variant)} Alert`,
@@ -165,6 +168,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       className={css(
         styles.alert,
         isInline && styles.modifiers.inline,
+        isPlain && styles.modifiers.plain,
         styles.modifiers[variant as 'success' | 'danger' | 'warning' | 'info'],
         className
       )}
