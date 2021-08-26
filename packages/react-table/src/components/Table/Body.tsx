@@ -11,7 +11,7 @@ export interface IComputedData {
 }
 
 export type OnRowClick = (
-  event: React.MouseEvent,
+  event: React.KeyboardEvent | React.MouseEvent,
   row: IRow,
   rowProps: IExtraRowData,
   computedData: IComputedData
@@ -70,7 +70,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
             isInput: (event.target as HTMLElement).tagName !== 'INPUT',
             isButton: (event.target as HTMLElement).tagName !== 'BUTTON'
           };
-          onRowClick(undefined as React.MouseEvent, row, rowProps, computedData);
+          onRowClick(event, row, rowProps, computedData);
           event.preventDefault();
         }
       }
@@ -174,7 +174,12 @@ export const TableBody = ({
   rowKey = 'secretTableRowKeyId' as string,
   /* eslint-disable @typescript-eslint/no-unused-vars */
   onRow = (...args: any) => ({}),
-  onRowClick = (event: React.MouseEvent, row: IRow, rowProps: IExtraRowData, computedData: IComputedData) =>
+  onRowClick = (
+    event: React.MouseEvent | React.KeyboardEvent,
+    row: IRow,
+    rowProps: IExtraRowData,
+    computedData: IComputedData
+  ) =>
     /* eslint-enable @typescript-eslint/no-unused-vars */
     undefined as OnRowClick,
   ...props
