@@ -21,6 +21,8 @@ export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps
   isHoverable?: boolean;
   /** */
   isSelected?: boolean;
+  /** */
+  onRowClick?: (event?: React.KeyboardEvent | React.MouseEvent) => void;
 }
 
 const TrBase: React.FunctionComponent<TrProps> = ({
@@ -34,9 +36,21 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   innerRef,
   ouiaId,
   ouiaSafe = true,
+  onRowClick,
   ...props
 }: TrProps) => {
   const ouiaProps = useOUIAProps('TableRow', ouiaId, ouiaSafe);
+
+  let onKeyDown = null;
+  if (onRowClick) {
+    onKeyDown = (e: React.KeyboardEvent) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        onRowClick(e);
+        e.preventDefault();
+      }
+    };
+  }
+
   return (
     <tr
       className={css(
@@ -50,6 +64,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
       hidden={isHidden || (isExpanded !== undefined && !isExpanded)}
       {...(isHoverable && { tabIndex: 0 })}
       ref={innerRef}
+      {...(onRowClick && { onClick: onRowClick, onKeyDown })}
       {...ouiaProps}
       {...props}
     >

@@ -280,7 +280,6 @@ class RowClickTable extends React.Component {
     };
     
     this.rowClickHandler = (event, row, rowProps) => {
-      console.log(event);
       this.setState(prevState => {
         const updatedRows = [...prevState.rows];
         updatedRows[rowProps.rowIndex].isSelected = !prevState.rows[rowProps.rowIndex].isSelected;

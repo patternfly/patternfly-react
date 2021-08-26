@@ -152,7 +152,6 @@ import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
 
 ComposableTableMisc = () => {
-  const [selectedRow, setSelectedRow] = React.useState(null);
   const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
   const rows = [
     ['one', 'two', 'three', 'four', 'five'],
@@ -207,8 +206,6 @@ ComposableTableMisc = () => {
               key={rowIndex}
               className={isOddRow ? 'odd-row-class' : 'even-row-class'}
               style={isOddRow ? customStyle : {}}
-              isHoverable
-              isSelected={selectedRow === rowIndex}
             >
               {row.map((cell, cellIndex) => {
                 if (!cell) {
@@ -282,7 +279,7 @@ ComposableTableHoverable = () => {
           return (
             <Tr
               key={rowIndex}
-              onClick={event => onRowClick(event, rowIndex, row.cells)}
+              onRowClick={event => onRowClick(event, rowIndex, row.cells)}
               isHoverable
               isSelected={row.isSelected}
             >
