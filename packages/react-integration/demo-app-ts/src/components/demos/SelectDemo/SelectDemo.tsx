@@ -13,7 +13,7 @@ import {
   Divider
 } from '@patternfly/react-core';
 import React, { Component } from 'react';
-import CartArrowDownIcon from '@patternfly/react-icons/dist/js/icons/cart-arrow-down-icon';
+import CartArrowDownIcon from '@patternfly/react-icons/dist/esm/icons/cart-arrow-down-icon';
 import { State } from '../../../common/State';
 
 /* eslint-disable no-console */

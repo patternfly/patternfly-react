@@ -5,9 +5,9 @@ cssPrefix: pf-c-overflow-menu
 propComponents: ['OverflowMenu', 'OverflowMenuContent', 'OverflowMenuControl', 'OverflowMenuDropdownItem', 'OverflowMenuGroup', 'OverflowMenuItem']
 ---
 
-import AlignLeftIcon from '@patternfly/react-icons/dist/js/icons/align-left-icon';
-import AlignCenterIcon from '@patternfly/react-icons/dist/js/icons/align-center-icon';
-import AlignRightIcon from '@patternfly/react-icons/dist/js/icons/align-right-icon';
+import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
+import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
+import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
 
 ## Examples
 ### Simple (responsive)
@@ -74,9 +74,9 @@ class SimpleOverflowMenu extends React.Component {
 import React from 'react';
 import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
-import AlignLeftIcon from '@patternfly/react-icons/dist/js/icons/align-left-icon';
-import AlignCenterIcon from '@patternfly/react-icons/dist/js/icons/align-center-icon';
-import AlignRightIcon from '@patternfly/react-icons/dist/js/icons/align-right-icon';
+import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
+import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
+import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
 
 class OverflowMenuGroupTypes extends React.Component {
   constructor(props) {
@@ -167,9 +167,9 @@ class OverflowMenuGroupTypes extends React.Component {
 import React from 'react';
 import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core';
 import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
-import AlignLeftIcon from '@patternfly/react-icons/dist/js/icons/align-left-icon';
-import AlignCenterIcon from '@patternfly/react-icons/dist/js/icons/align-center-icon';
-import AlignRightIcon from '@patternfly/react-icons/dist/js/icons/align-right-icon';
+import AlignLeftIcon from '@patternfly/react-icons/dist/esm/icons/align-left-icon';
+import AlignCenterIcon from '@patternfly/react-icons/dist/esm/icons/align-center-icon';
+import AlignRightIcon from '@patternfly/react-icons/dist/esm/icons/align-right-icon';
 
 class OverflowMenuAdditionalOptions extends React.Component {
   constructor(props) {

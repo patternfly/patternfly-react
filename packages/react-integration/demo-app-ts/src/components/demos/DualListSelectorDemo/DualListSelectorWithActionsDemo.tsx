@@ -8,8 +8,8 @@ import {
   DualListSelectorProps,
   KebabToggle
 } from '@patternfly/react-core';
-import PficonSortCommonDescIcon from '@patternfly/react-icons/dist/js/icons/pficon-sort-common-desc-icon';
-import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/js/icons/pficon-sort-common-asc-icon';
+import PficonSortCommonDescIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-desc-icon';
+import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 
 interface DualListSelectorState {
   availableOptions: React.ReactNode[];

@@ -13,10 +13,10 @@ import {
 } from '@patternfly/react-core';
 import MonacoEditor from 'react-monaco-editor';
 import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
-import CopyIcon from '@patternfly/react-icons/dist/js/icons/copy-icon';
-import UploadIcon from '@patternfly/react-icons/dist/js/icons/upload-icon';
-import DownloadIcon from '@patternfly/react-icons/dist/js/icons/download-icon';
-import CodeIcon from '@patternfly/react-icons/dist/js/icons/code-icon';
+import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
+import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
+import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import Dropzone from 'react-dropzone';
 import { CodeEditorContext } from './CodeEditorUtils';
 

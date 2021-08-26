@@ -1,8 +1,8 @@
 import { HelperText, HelperTextItem } from '@patternfly/react-core';
 import React from 'react';
-import InfoIcon from '@patternfly/react-icons/dist/js/icons/info-icon';
-import ExclamationTriangleIcon from '@patternfly/react-icons/dist/js/icons/exclamation-triangle-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+import InfoIcon from '@patternfly/react-icons/dist/esm/icons/info-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 
 export class HelperTextDemo extends React.Component {
   static displayName = 'HelperTextDemo';

@@ -24,14 +24,15 @@ exports["default"] = exports.${tokenName};
 `.trim()
   );
 
-const writeDTSExport = (tokenName, tokenString) =>
-  outputFileSync(
-    join(outDir, 'js', `${tokenName}.d.ts`),
-    `
+const writeDTSExport = (tokenName, tokenString) => {
+  const text = `
 export const ${tokenName}: ${tokenString};
 export default ${tokenName};
-`.trim()
-  );
+`.trim();
+  const filename = `${tokenName}.d.ts`;
+  outputFileSync(join(outDir, 'esm', filename), text);
+  outputFileSync(join(outDir, 'js', filename), text);
+};
 
 const allIndex = {};
 const componentIndex = [];
@@ -39,7 +40,6 @@ const componentIndex = [];
 const outputIndex = (index, indexFile) => {
   const esmIndexString = index.map(file => `export { ${file} } from './${file}';`).join('\n');
   outputFileSync(join(outDir, 'esm', indexFile), esmIndexString);
-  outputFileSync(join(outDir, 'js', indexFile.replace('.js', '.d.ts')), esmIndexString);
   outputFileSync(
     join(outDir, 'js', indexFile),
     `
@@ -51,6 +51,8 @@ exports.__esModule = true;
 ${index.map(file => `__export(require('./${file}'));`).join('\n')}
 `.trim()
   );
+  outputFileSync(join(outDir, 'esm', indexFile.replace('.js', '.d.ts')), esmIndexString);
+  outputFileSync(join(outDir, 'js', indexFile.replace('.js', '.d.ts')), esmIndexString);
 };
 
 /**
@@ -91,7 +93,7 @@ function writeTokens(tokens) {
   outputIndex(componentIndex, 'componentIndex.js');
 
   // eslint-disable-next-line no-console
-  console.log('Wrote', Object.keys(allIndex).length * 3 + 3, 'token files');
+  console.log('Wrote', Object.keys(allIndex).length * 4 + 4, 'token files');
 }
 
 writeTokens(generateTokens());

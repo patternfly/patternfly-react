@@ -1,13 +1,14 @@
-import React, { useState, useEffect, memo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { LOGGER_LINE_NUMBER_INDEX_DELTA } from './utils/constants';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
 import { LogViewerContext } from './LogViewerContext';
+import { forwardRef } from 'react';
 
-interface LogViewerRowProps extends React.Props<HTMLElement> {
-  index: number;
+interface LogViewerRowProps {
+  index?: number;
   style?: React.CSSProperties;
-  data: {
+  data?: {
     parsedData: string[] | null;
     rowInFocus: number;
     searchedWordIndexes: number[];
@@ -16,7 +17,7 @@ interface LogViewerRowProps extends React.Props<HTMLElement> {
   };
 }
 
-export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ index, style, data }) => {
+export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = forwardRef(({ index, style, data }, ref) => {
   const { parsedData, highlightedRowIndexes, searchedWordIndexes, setHighlightedRowIndexes, rowInFocus } = data;
   const [clickCounter, setClickCounter] = useState(0);
   const [isHiglighted, setIsHiglighted] = useState(false);
@@ -84,7 +85,13 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
   };
 
   return (
-    <div style={style} className={css(styles.logViewerListItem)} onClick={() => handleHighlightRow()}>
+    <div
+      key={index}
+      ref={ref as any}
+      style={style}
+      className={css(styles.logViewerListItem)}
+      onClick={() => handleHighlightRow()}
+    >
       <span className={css(styles.logViewerIndex)}>{getRowIndex(index)}</span>
       <span className={css(styles.logViewerText)} onClick={() => handleHighlightRow()}>
         {getFormattedData()}

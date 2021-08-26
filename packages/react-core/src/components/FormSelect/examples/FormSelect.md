@@ -23,7 +23,7 @@ class FormSelectInput extends React.Component {
       this.setState({ value });
     };
     this.options = [
-      { value: 'please choose', label: 'Please Choose', disabled: true },
+      { value: 'please choose', label: 'Select one', disabled: true },
       { value: 'mr', label: 'Mr', disabled: false },
       { value: 'miss', label: 'Miss', disabled: false },
       { value: 'mrs', label: 'Mrs', disabled: false },
@@ -63,7 +63,7 @@ class FormSelectInputInvalid extends React.Component {
       this.setState({ value, validated });
     };
     this.options = [
-      { value: '', label: 'Choose a number', disabled: false, isPlaceholder: true },
+      { value: '', label: 'Select a number', disabled: false, isPlaceholder: true },
       { value: '1', label: 'One', disabled: false, isPlaceholder: false },
       { value: '2', label: 'Two', disabled: false, isPlaceholder: false  },
       { value: '3', label: 'Three', disabled: false, isPlaceholder: false  }
@@ -100,8 +100,7 @@ class FormSelectInputInvalid extends React.Component {
     this.state = {
       value: '',
       invalidText: 'You must choose something',
-      validated: ValidatedOptions.default,
-      helperText: 'Make a selection'
+      validated: ValidatedOptions.default
     };
 
     this.simulateNetworkCall = callback => {
@@ -124,7 +123,7 @@ class FormSelectInputInvalid extends React.Component {
     };
 
     this.options = [
-      { value: '', label: 'Choose a number', disabled: false, isPlaceholder: true  },
+      { value: '', label: 'Select a number', disabled: false, isPlaceholder: true  },
       { value: '1', label: 'One', disabled: false, isPlaceholder: false  },
       { value: '2', label: 'Two', disabled: false, isPlaceholder: false  },
       { value: '3', label: 'Three - the only valid option', disabled: false, isPlaceholder: false  }
@@ -176,7 +175,7 @@ class FormSelectInputDisabled extends React.Component {
       this.setState({ value });
     };
     this.options = [
-      { value: 'please choose', label: 'Please Choose', disabled: true },
+      { value: 'please choose', label: 'Select one', disabled: true },
       { value: 'mr', label: 'Mr', disabled: false },
       { value: 'miss', label: 'Miss', disabled: false },
       { value: 'mrs', label: 'Mrs', disabled: false },
@@ -217,7 +216,7 @@ class FormSelectInputGrouped extends React.Component {
         groupLabel: 'Group1',
         disabled: false,
         options: [
-          { value: '1', label: 'The First Option', disabled: false },
+          { value: '1', label: 'The first option', disabled: false },
           { value: '2', label: 'Second option is selected by default', disabled: false }
         ]
       },
@@ -225,16 +224,16 @@ class FormSelectInputGrouped extends React.Component {
         groupLabel: 'Group2',
         disabled: false,
         options: [
-          { value: '3', label: 'The Third Option', disabled: false },
-          { value: '4', label: 'The Fourth option', disabled: false }
+          { value: '3', label: 'The third option', disabled: false },
+          { value: '4', label: 'The fourth option', disabled: false }
         ]
       },
       {
         groupLabel: 'Group3',
         disabled: true,
         options: [
-          { value: '5', label: 'The Fifth Option', disabled: false },
-          { value: '6', label: 'The Sixth option', disabled: false }
+          { value: '5', label: 'The fifth option', disabled: false },
+          { value: '6', label: 'The sixth option', disabled: false }
         ]
       }
     ];

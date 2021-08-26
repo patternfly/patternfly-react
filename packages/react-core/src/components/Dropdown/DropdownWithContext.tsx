@@ -66,6 +66,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
       isOpen,
       isPlain,
       isGrouped,
+      isFullHeight,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onSelect,
       position,
@@ -126,6 +127,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
                 direction === DropdownDirection.up && styles.modifiers.top,
                 position === DropdownPosition.right && styles.modifiers.alignRight,
                 isOpen && styles.modifiers.expanded,
+                isFullHeight && styles.modifiers.fullHeight,
                 className
               )}
               ref={this.baseComponentRef}

@@ -18,9 +18,9 @@ propComponents:
   ]
 ---
 
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { css } from '@patternfly/react-styles';
 
 ## Examples
@@ -474,9 +474,9 @@ import {
   DropdownPosition,
   KebabToggle
 } from '@patternfly/react-core';
-import CodeBranchIcon from '@patternfly/react-icons/dist/js/icons/code-branch-icon';
-import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
 class ExpandableDataList extends React.Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { Button } from '@patternfly/react-core';
 import '@patternfly/react-styles/css/components/Topology/topology-side-bar.css';
 

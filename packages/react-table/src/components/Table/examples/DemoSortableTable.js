@@ -50,6 +50,7 @@ export default class DemoSortableTable extends React.Component {
         rows={rows}
         className="pf-m-no-border-rows"
         id={id}
+        isNested
       >
         <TableHeader />
         <TableBody />

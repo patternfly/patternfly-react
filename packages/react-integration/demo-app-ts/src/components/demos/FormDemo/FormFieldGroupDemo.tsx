@@ -9,7 +9,7 @@ import {
   TextInput,
   Button
 } from '@patternfly/react-core';
-import TrashIcon from '@patternfly/react-icons/dist/js/icons/trash-icon';
+import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 
 export interface FormFieldGroupState {
   value1: string;

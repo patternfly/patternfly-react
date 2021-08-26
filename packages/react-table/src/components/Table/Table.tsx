@@ -3,7 +3,7 @@ import { OUIAProps, getDefaultOUIAId } from '@patternfly/react-core';
 import {
   DropdownDirection,
   DropdownPosition
-} from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
+} from '@patternfly/react-core/dist/esm/components/Dropdown/dropdownConstants';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
 import { Provider } from './base';
@@ -62,7 +62,7 @@ export interface TableProps extends OUIAProps {
   canSelectAll?: boolean;
   /** Specifies the type of the select element variant - can be one of checkbox or radio button */
   selectVariant?: 'checkbox' | 'radio';
-  /** @beta Function triggered when a row's inline edit is activated. Adds a column for inline edit when present. */
+  /** Function triggered when a row's inline edit is activated. Adds a column for inline edit when present. */
   onRowEdit?: OnRowEdit;
   /** Function triggered when sort icon is clicked */
   onSort?: OnSort;
@@ -109,6 +109,8 @@ export interface TableProps extends OUIAProps {
   canSortFavorites?: boolean;
   /** Flag indicating table is a tree table */
   isTreeTable?: boolean;
+  /** Flag indicating this table is nested within another table */
+  isNested?: boolean;
 }
 
 export class Table extends React.Component<TableProps, {}> {
@@ -134,7 +136,8 @@ export class Table extends React.Component<TableProps, {}> {
     ouiaSafe: true,
     isStickyHeader: false,
     canSortFavorites: true,
-    isTreeTable: false
+    isTreeTable: false,
+    isNested: false
   };
   state = {
     ouiaStateId: getDefaultOUIAId(Table.displayName)
@@ -148,16 +151,6 @@ export class Table extends React.Component<TableProps, {}> {
     }
     return rows.every(row => this.isSelected(row) || (row.hasOwnProperty('parent') && !row.showSelect));
   };
-
-  componentDidMount() {
-    if (this.props.onRowEdit && process.env.NODE_ENV !== 'production' && !Table.hasWarnBeta) {
-      // eslint-disable-next-line no-console
-      console.warn(
-        'You are using a beta component feature (onRowEdit). These api parts are subject to change in the future.'
-      );
-      Table.hasWarnBeta = true;
-    }
-  }
 
   render() {
     const {

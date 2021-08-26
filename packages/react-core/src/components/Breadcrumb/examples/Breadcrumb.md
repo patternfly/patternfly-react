@@ -6,7 +6,7 @@ propComponents: ['Breadcrumb', 'BreadcrumbItem', 'BreadcrumbHeading']
 ouia: true
 ---
 
-import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
+import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 
 ## Examples
 
@@ -21,7 +21,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react
   <BreadcrumbItem to="#">Section title</BreadcrumbItem>
   <BreadcrumbItem to="#">Section title</BreadcrumbItem>
   <BreadcrumbItem to="#" isActive>
-    Section Landing
+    Section landing
   </BreadcrumbItem>
 </Breadcrumb>;
 ```
@@ -39,7 +39,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react
   <BreadcrumbItem to="#">Section title</BreadcrumbItem>
   <BreadcrumbItem to="#">Section title</BreadcrumbItem>
   <BreadcrumbItem to="#" isActive>
-    Section Landing
+    Section landing
   </BreadcrumbItem>
 </Breadcrumb>;
 ```
@@ -71,7 +71,7 @@ import {
   DropdownItem,
   BadgeToggle
 } from '@patternfly/react-core';
-import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
+import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 
 class BreadcrumbDropdown extends React.Component {
   constructor(props) {

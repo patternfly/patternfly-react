@@ -1,5 +1,5 @@
 import React from 'react';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import { NotificationDrawerListItemHeader } from '../NotificationDrawerListItemHeader';
 import { shallow } from 'enzyme';
 

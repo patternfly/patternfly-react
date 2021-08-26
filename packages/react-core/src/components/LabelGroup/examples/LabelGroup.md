@@ -7,7 +7,7 @@ beta: true
 ouia: true
 ---
 
-import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
 ## Examples
 
@@ -16,7 +16,7 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-ic
 ```js
 import React from 'react';
 import { Label, LabelGroup } from '@patternfly/react-core';
-import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
 <LabelGroup>
   <Label icon={<InfoCircleIcon />}>Label 1</Label>
@@ -34,7 +34,7 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-ic
 ```js
 import React from 'react';
 import { Label, LabelGroup } from '@patternfly/react-core';
-import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
 <LabelGroup>
   <Label icon={<InfoCircleIcon />}>Label 1</Label>
@@ -61,7 +61,7 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-ic
 ```js
 import React from 'react';
 import { Label, LabelGroup } from '@patternfly/react-core';
-import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
 <LabelGroup categoryName="Group label">
   <Label icon={<InfoCircleIcon />}>Label 1</Label>
@@ -79,15 +79,15 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-ic
 ```js
 import React from 'react';
 import { Label, LabelGroup } from '@patternfly/react-core';
-import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
 CategoryLabelGroupRemovable = () => {
   const [labels, setLabels] = React.useState([
-    ['Label one', 'grey'],
-    ['Label two', 'blue'],
-    ['Label three', 'green'],
-    ['Label four', 'orange'],
-    ['Label five', 'red']
+    ['Label 1', 'grey'],
+    ['Label 2', 'blue'],
+    ['Label 3', 'green'],
+    ['Label 4', 'orange'],
+    ['Label 5', 'red']
   ]);
   const deleteCategory = () => setLabels([]);
 
@@ -108,15 +108,15 @@ CategoryLabelGroupRemovable = () => {
 ```js
 import React from 'react';
 import { Label, LabelGroup } from '@patternfly/react-core';
-import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
 VerticalCategoryLabelGroupOverflowRemovable = () => {
   const [labels, setLabels] = React.useState([
-    ['Label one', 'grey'],
-    ['Label two', 'blue'],
-    ['Label three', 'green'],
-    ['Label four', 'orange'],
-    ['Label five', 'red']
+    ['Label 1', 'grey'],
+    ['Label 2', 'blue'],
+    ['Label 3', 'green'],
+    ['Label 4', 'orange'],
+    ['Label 5', 'red']
   ]);
   const deleteCategory = () => setLabels([]);
 

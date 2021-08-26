@@ -52,9 +52,7 @@ export default ${jsName};
 };
 
 const writeDTSExport = (fname, jsName, icon) => {
-  outputFileSync(
-    join(outDir, 'js/icons', `${fname}.d.ts`),
-    `import * as React from 'react';
+  const text = `import * as React from 'react';
 import { SVGIconProps } from '../createIcon';
 export declare const ${jsName}Config: {
   name: '${jsName}',
@@ -66,8 +64,10 @@ export declare const ${jsName}Config: {
 };
 export declare const ${jsName}: React.ComponentClass<SVGIconProps>;
 export default ${jsName};
-    `.trim()
-  );
+    `.trim();
+  const filename = `${fname}.d.ts`;
+  outputFileSync(join(outDir, 'js/icons', filename), text);
+  outputFileSync(join(outDir, 'esm/icons', filename), text);
 };
 
 /**
@@ -92,6 +92,7 @@ function writeIcons(icons) {
     .sort()
     .join('\n');
   outputFileSync(join(outDir, 'esm', 'icons/index.js'), esmIndexString);
+  outputFileSync(join(outDir, 'esm', 'icons/index.d.ts'), esmIndexString);
   outputFileSync(join(outDir, 'js', 'icons/index.d.ts'), esmIndexString);
   outputFileSync(
     join(outDir, 'js', 'icons/index.js'),

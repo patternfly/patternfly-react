@@ -1,13 +1,13 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
-import topOffset from '@patternfly/react-tokens/dist/js/c_menu_m_flyout__menu_top_offset';
-import rightOffset from '@patternfly/react-tokens/dist/js/c_menu_m_flyout__menu_m_left_right_offset';
-import leftOffset from '@patternfly/react-tokens/dist/js/c_menu_m_flyout__menu_left_offset';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/js/icons/angle-right-icon';
-import AngleLeftIcon from '@patternfly/react-icons/dist/js/icons/angle-left-icon';
-import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
+import topOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_top_offset';
+import rightOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_m_left_right_offset';
+import leftOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_left_offset';
+import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import { MenuContext, MenuItemContext } from './MenuContext';
 import { MenuItemAction } from './MenuItemAction';
 import { canUseDOM } from '../../helpers/util';
@@ -33,7 +33,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   /** Callback for item click */
   onClick?: (event?: any) => void;
   /** Component used to render the menu item */
-  component?: React.ReactNode;
+  component?: React.ElementType<any> | React.ComponentType<any>;
   /** Render item as disabled option */
   isDisabled?: boolean;
   /** Render item with icon */
@@ -77,7 +77,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   direction,
   description = null as string,
   onClick = () => {},
-  component,
+  component = 'button',
   isDisabled = false,
   isExternalLink = false,
   isSelected = null,
@@ -102,7 +102,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
     setFlyoutRef,
     disableHover
   } = React.useContext(MenuContext);
-  const Component = component || to ? 'a' : 'button';
+  const Component = (to ? 'a' : component) as any;
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
   const flyoutContext = React.useContext(FlyoutContext);
   const [flyoutXDirection, setFlyoutXDirection] = React.useState(flyoutContext.direction);

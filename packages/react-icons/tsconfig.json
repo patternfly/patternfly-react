@@ -3,7 +3,6 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist/esm",
-    "declarationDir": "./dist/js",
     "rootDirs": [
       "src",
       "src/icons",

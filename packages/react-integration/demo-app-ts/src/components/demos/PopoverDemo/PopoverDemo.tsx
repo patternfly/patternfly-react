@@ -1,6 +1,6 @@
 import { Popover } from '@patternfly/react-core';
 import React, { Component } from 'react';
-import { Instance as TippyInstance } from '@patternfly/react-core/dist/js/helpers/Popper/DeprecatedTippyTypes';
+import { Instance as TippyInstance } from '@patternfly/react-core/dist/esm/helpers/Popper/DeprecatedTippyTypes';
 
 export class PopoverDemo extends Component {
   popoverRef: React.RefObject<HTMLButtonElement>;

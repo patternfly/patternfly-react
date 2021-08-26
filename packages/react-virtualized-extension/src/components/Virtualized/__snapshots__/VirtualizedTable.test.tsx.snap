@@ -32,6 +32,7 @@ exports[`Actions virtualized table 1`] = `
   dropdownPosition="right"
   expandId="expandable-toggle"
   gridBreakPoint="grid-md"
+  isNested={false}
   isStickyHeader={false}
   isTreeTable={false}
   ouiaSafe={true}
@@ -419,6 +420,7 @@ exports[`Actions virtualized table 1`] = `
       ]
     }
     gridBreakPoint="grid-md"
+    isNested={false}
     isStickyHeader={false}
     isTreeTable={false}
     ouiaSafe={true}
@@ -442,6 +444,7 @@ exports[`Actions virtualized table 1`] = `
       borders={true}
       className=""
       gridBreakPoint="grid-md"
+      isNested={false}
       isStickyHeader={false}
       isTreeTable={false}
       ouiaSafe={true}
@@ -454,6 +457,7 @@ exports[`Actions virtualized table 1`] = `
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}
+        isNested={false}
         isStickyHeader={false}
         isTreeTable={false}
         ouiaSafe={true}
@@ -472,7 +476,7 @@ exports[`Actions virtualized table 1`] = `
             <ContextHeader
               headerRows={null}
             >
-              <Component
+              <Header
                 className=""
                 headerRows={null}
               >
@@ -1416,7 +1420,7 @@ exports[`Actions virtualized table 1`] = `
                     </TheadBase>
                   </Thead>
                 </BaseHeader>
-              </Component>
+              </Header>
             </ContextHeader>
           </TableHeader>
         </table>
@@ -1456,6 +1460,7 @@ exports[`Selectable virtualized table 1`] = `
   dropdownPosition="right"
   expandId="expandable-toggle"
   gridBreakPoint="grid-md"
+  isNested={false}
   isStickyHeader={false}
   isTreeTable={false}
   onSelect={[Function]}
@@ -1844,6 +1849,7 @@ exports[`Selectable virtualized table 1`] = `
       ]
     }
     gridBreakPoint="grid-md"
+    isNested={false}
     isStickyHeader={false}
     isTreeTable={false}
     ouiaSafe={true}
@@ -1867,6 +1873,7 @@ exports[`Selectable virtualized table 1`] = `
       borders={true}
       className=""
       gridBreakPoint="grid-md"
+      isNested={false}
       isStickyHeader={false}
       isTreeTable={false}
       ouiaSafe={true}
@@ -1879,6 +1886,7 @@ exports[`Selectable virtualized table 1`] = `
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}
+        isNested={false}
         isStickyHeader={false}
         isTreeTable={false}
         ouiaSafe={true}
@@ -1897,7 +1905,7 @@ exports[`Selectable virtualized table 1`] = `
             <ContextHeader
               headerRows={null}
             >
-              <Component
+              <Header
                 className=""
                 headerRows={null}
               >
@@ -2859,7 +2867,7 @@ exports[`Selectable virtualized table 1`] = `
                     </TheadBase>
                   </Thead>
                 </BaseHeader>
-              </Component>
+              </Header>
             </ContextHeader>
           </TableHeader>
         </table>
@@ -2921,6 +2929,7 @@ exports[`Simple Actions table 1`] = `
   dropdownPosition="right"
   expandId="expandable-toggle"
   gridBreakPoint="grid-md"
+  isNested={false}
   isStickyHeader={false}
   isTreeTable={false}
   ouiaSafe={true}
@@ -3432,6 +3441,7 @@ exports[`Simple Actions table 1`] = `
       ]
     }
     gridBreakPoint="grid-md"
+    isNested={false}
     isStickyHeader={false}
     isTreeTable={false}
     ouiaSafe={true}
@@ -3455,6 +3465,7 @@ exports[`Simple Actions table 1`] = `
       borders={true}
       className=""
       gridBreakPoint="grid-md"
+      isNested={false}
       isStickyHeader={false}
       isTreeTable={false}
       ouiaSafe={true}
@@ -3467,6 +3478,7 @@ exports[`Simple Actions table 1`] = `
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}
+        isNested={false}
         isStickyHeader={false}
         isTreeTable={false}
         ouiaSafe={true}
@@ -3485,7 +3497,7 @@ exports[`Simple Actions table 1`] = `
             <ContextHeader
               headerRows={null}
             >
-              <Component
+              <Header
                 className=""
                 headerRows={null}
               >
@@ -4657,7 +4669,7 @@ exports[`Simple Actions table 1`] = `
                     </TheadBase>
                   </Thead>
                 </BaseHeader>
-              </Component>
+              </Header>
             </ContextHeader>
           </TableHeader>
         </table>
@@ -4694,6 +4706,7 @@ exports[`Simple virtualized table aria-label 1`] = `
   dropdownPosition="right"
   expandId="expandable-toggle"
   gridBreakPoint="grid-md"
+  isNested={false}
   isStickyHeader={false}
   isTreeTable={false}
   ouiaSafe={true}
@@ -5031,6 +5044,7 @@ exports[`Simple virtualized table aria-label 1`] = `
       ]
     }
     gridBreakPoint="grid-md"
+    isNested={false}
     isStickyHeader={false}
     isTreeTable={false}
     ouiaSafe={true}
@@ -5054,6 +5068,7 @@ exports[`Simple virtualized table aria-label 1`] = `
       borders={true}
       className=""
       gridBreakPoint="grid-md"
+      isNested={false}
       isStickyHeader={false}
       isTreeTable={false}
       ouiaSafe={true}
@@ -5066,6 +5081,7 @@ exports[`Simple virtualized table aria-label 1`] = `
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}
+        isNested={false}
         isStickyHeader={false}
         isTreeTable={false}
         ouiaSafe={true}
@@ -5084,7 +5100,7 @@ exports[`Simple virtualized table aria-label 1`] = `
             <ContextHeader
               headerRows={null}
             >
-              <Component
+              <Header
                 className=""
                 headerRows={null}
               >
@@ -5835,7 +5851,7 @@ exports[`Simple virtualized table aria-label 1`] = `
                     </TheadBase>
                   </Thead>
                 </BaseHeader>
-              </Component>
+              </Header>
             </ContextHeader>
           </TableHeader>
         </table>
@@ -5872,6 +5888,7 @@ exports[`Simple virtualized table className 1`] = `
   dropdownPosition="right"
   expandId="expandable-toggle"
   gridBreakPoint="grid-md"
+  isNested={false}
   isStickyHeader={false}
   isTreeTable={false}
   ouiaSafe={true}
@@ -6209,6 +6226,7 @@ exports[`Simple virtualized table className 1`] = `
       ]
     }
     gridBreakPoint="grid-md"
+    isNested={false}
     isStickyHeader={false}
     isTreeTable={false}
     ouiaSafe={true}
@@ -6232,6 +6250,7 @@ exports[`Simple virtualized table className 1`] = `
       borders={true}
       className=""
       gridBreakPoint="grid-md"
+      isNested={false}
       isStickyHeader={false}
       isTreeTable={false}
       ouiaSafe={true}
@@ -6244,6 +6263,7 @@ exports[`Simple virtualized table className 1`] = `
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}
+        isNested={false}
         isStickyHeader={false}
         isTreeTable={false}
         ouiaSafe={true}
@@ -6262,7 +6282,7 @@ exports[`Simple virtualized table className 1`] = `
             <ContextHeader
               headerRows={null}
             >
-              <Component
+              <Header
                 className=""
                 headerRows={null}
               >
@@ -7013,7 +7033,7 @@ exports[`Simple virtualized table className 1`] = `
                     </TheadBase>
                   </Thead>
                 </BaseHeader>
-              </Component>
+              </Header>
             </ContextHeader>
           </TableHeader>
         </table>
@@ -7053,6 +7073,7 @@ exports[`Sortable Virtualized Table 1`] = `
   dropdownPosition="right"
   expandId="expandable-toggle"
   gridBreakPoint="grid-md"
+  isNested={false}
   isStickyHeader={false}
   isTreeTable={false}
   onSort={[Function]}
@@ -7393,6 +7414,7 @@ exports[`Sortable Virtualized Table 1`] = `
       ]
     }
     gridBreakPoint="grid-md"
+    isNested={false}
     isStickyHeader={false}
     isTreeTable={false}
     ouiaSafe={true}
@@ -7416,6 +7438,7 @@ exports[`Sortable Virtualized Table 1`] = `
       borders={true}
       className=""
       gridBreakPoint="grid-md"
+      isNested={false}
       isStickyHeader={false}
       isTreeTable={false}
       ouiaSafe={true}
@@ -7428,6 +7451,7 @@ exports[`Sortable Virtualized Table 1`] = `
         className=""
         gridBreakPoint="grid-md"
         innerRef={null}
+        isNested={false}
         isStickyHeader={false}
         isTreeTable={false}
         ouiaSafe={true}
@@ -7446,7 +7470,7 @@ exports[`Sortable Virtualized Table 1`] = `
             <ContextHeader
               headerRows={null}
             >
-              <Component
+              <Header
                 className=""
                 headerRows={null}
               >
@@ -8255,7 +8279,7 @@ exports[`Sortable Virtualized Table 1`] = `
                     </TheadBase>
                   </Thead>
                 </BaseHeader>
-              </Component>
+              </Header>
             </ContextHeader>
           </TableHeader>
         </table>

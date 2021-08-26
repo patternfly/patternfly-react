@@ -6,10 +6,10 @@ propComponents: ['Modal', 'ModalBox', 'ModalBoxBody', 'ModalBoxCloseButton', 'Mo
 ouia: true
 ---
 
-import WarningTriangleIcon from '@patternfly/react-icons/dist/js/icons/warning-triangle-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
-import BullhornIcon from '@patternfly/react-icons/dist/js/icons/bullhorn-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 ## Examples
 
@@ -38,7 +38,7 @@ class SimpleModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Modal
+          Show modal
         </Button>
         <Modal
           title="Simple modal header"
@@ -90,7 +90,7 @@ class SimpleModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Modal
+          Show modal
         </Button>
         <Modal
           aria-label="My modal context"
@@ -144,7 +144,7 @@ class TopModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Top Aligned Modal
+          Show top aligned modal
         </Button>
         <Modal
           position="top"
@@ -197,7 +197,7 @@ class SmallModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Small Modal
+          Show small modal
         </Button>
         <Modal
           variant={ModalVariant.small}
@@ -250,7 +250,7 @@ class MediumModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Medium Modal
+          Show medium modal
         </Button>
         <Modal
           variant={ModalVariant.medium}
@@ -303,7 +303,7 @@ class LargeModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Large Modal
+          Show large modal
         </Button>
         <Modal
           variant={ModalVariant.large}
@@ -356,7 +356,7 @@ class WidthModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show 50% Width Modal
+          Show 50% width modal
         </Button>
         <Modal
           width={'50%'}
@@ -389,7 +389,7 @@ class WidthModal extends React.Component {
 ```js
 import React from 'react';
 import { Modal, ModalVariant, Button, Title, TitleSizes } from '@patternfly/react-core';
-import WarningTriangleIcon from '@patternfly/react-icons/dist/js/icons/warning-triangle-icon';
+import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
 
 class CustomHeaderFooter extends React.Component {
   constructor(props) {
@@ -426,7 +426,7 @@ class CustomHeaderFooter extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Custom Header/Footer Modal
+          Show custom header/footer modal
         </Button>
         <Modal
           variant={ModalVariant.large}
@@ -480,7 +480,7 @@ class NoHeader extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show No Header Modal
+          Show no header modal
         </Button>
         <Modal
           variant={ModalVariant.large}
@@ -512,7 +512,7 @@ class NoHeader extends React.Component {
 ```js
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
-import BullhornIcon from '@patternfly/react-icons/dist/js/icons/bullhorn-icon';
+import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 
 class NoHeader extends React.Component {
   constructor(props) {
@@ -533,7 +533,7 @@ class NoHeader extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Icon Modal
+          Show icon modal
         </Button>
         <Modal
           isOpen={isModalOpen}
@@ -585,7 +585,7 @@ class NoHeader extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Icon Modal
+          Show icon modal
         </Button>
         <Modal
           isOpen={isModalOpen}
@@ -645,7 +645,7 @@ class WithWizard extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Modal
+          Show modal
         </Button>
         <Modal
           isOpen={isModalOpen}
@@ -677,7 +677,7 @@ class WithWizard extends React.Component {
 ```js
 import React from 'react';
 import { Modal, Button, Dropdown, DropdownToggle, DropdownItem, KebabToggle } from '@patternfly/react-core';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
 class WithDropdown extends React.Component {
   constructor(props) {
@@ -748,7 +748,7 @@ class WithDropdown extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Modal
+          Show modal
         </Button>
         <Modal
           title="Modal with dropdown"
@@ -800,7 +800,7 @@ class WithDropdown extends React.Component {
 ```js
 import React from 'react';
 import { Modal, Button, Popover } from '@patternfly/react-core';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 class HelpModal extends React.Component {
   constructor(props) {
@@ -821,7 +821,7 @@ class HelpModal extends React.Component {
     return (
       <React.Fragment>
         <Button variant="primary" onClick={this.handleModalToggle}>
-          Show Modal
+          Show modal
         </Button>
         <Modal
           title="Simple modal header"

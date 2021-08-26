@@ -24,6 +24,10 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement>, OUIAProps
   children?: React.ReactNode;
   /** Id of the data toolbar */
   id?: string;
+  /** Flag indicating the toolbar height should expand to the full height of the container */
+  isFullHeight?: boolean;
+  /** Flag indicating the toolbar is static */
+  isStatic?: boolean;
   /** Flag indicating the toolbar should use the Page insets */
   usePageInsets?: boolean;
   /** Insets at various breakpoints. */
@@ -113,6 +117,8 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
       toggleIsExpanded,
       className,
       children,
+      isFullHeight,
+      isStatic,
       inset,
       usePageInsets,
       ouiaId,
@@ -130,6 +136,8 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
       <div
         className={css(
           styles.toolbar,
+          isFullHeight && styles.modifiers.fullHeight,
+          isStatic && styles.modifiers.static,
           usePageInsets && styles.modifiers.pageInsets,
           formatBreakpointMods(inset, styles),
           className

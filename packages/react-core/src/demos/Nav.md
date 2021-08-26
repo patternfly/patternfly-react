@@ -5,8 +5,8 @@ section: components
 
 import { DashboardBreadcrumb } from './examples/DashboardWrapper';
 import DashboardHeader from './examples/DashboardHeader';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import imgColorBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
@@ -94,7 +94,7 @@ class PageLayoutDefaultNav extends React.Component {
               <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
+                of its relative line height of 1.5.
               </Text>
             </TextContent>
           </PageSection>
@@ -205,7 +205,7 @@ class PageLayoutGroupsNav extends React.Component {
               <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
+                of its relative line height of 1.5.
               </Text>
             </TextContent>
           </PageSection>
@@ -325,7 +325,7 @@ class PageLayoutExpandableNav extends React.Component {
               <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
+                of its relative line height of 1.5.
               </Text>
             </TextContent>
           </PageSection>
@@ -380,8 +380,8 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { DashboardBreadcrumb } from './examples/DashboardWrapper';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -537,7 +537,7 @@ class PageLayoutHorizontalNav extends React.Component {
               <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
+                of its relative line height of 1.5.
               </Text>
             </TextContent>
           </PageSection>
@@ -736,8 +736,8 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { DashboardBreadcrumb } from './examples/DashboardWrapper';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import imgColorBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -1042,7 +1042,7 @@ class PageLayoutTertiaryNav extends React.Component {
               <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
+                of its relative line height of 1.5.
               </Text>
             </TextContent>
           </PageSection>
@@ -1143,7 +1143,7 @@ class PageLayoutLightNav extends React.Component {
               <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
+                of its relative line height of 1.5.
               </Text>
             </TextContent>
           </PageSection>
@@ -1198,8 +1198,8 @@ import {
   PageHeaderToolsGroup,
   PageHeaderToolsItem
 } from '@patternfly/react-core';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -1391,7 +1391,7 @@ class PageLayoutManualNav extends React.Component {
               <Text component="h1">Main title</Text>
               <Text component="p">
                 Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                of it’s relative line height of 1.5.
+                of its relative line height of 1.5.
               </Text>
             </TextContent>
           </PageSection>

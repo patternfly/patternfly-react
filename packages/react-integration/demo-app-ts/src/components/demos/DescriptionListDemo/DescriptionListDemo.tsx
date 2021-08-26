@@ -12,7 +12,7 @@ import {
   Divider,
   Popover
 } from '@patternfly/react-core';
-import PlusCircleIcon from '@patternfly/react-icons/dist/js/icons/plus-circle-icon';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import React, { Component } from 'react';
 
 export class DescriptionListDemo extends Component {

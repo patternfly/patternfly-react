@@ -2,8 +2,8 @@ import * as React from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationBadge/notification-badge';
-import AttentionBellIcon from '@patternfly/react-icons/dist/js/icons/attention-bell-icon';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
+import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 export enum NotificationBadgeVariant {
   read = 'read',

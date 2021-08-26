@@ -5,7 +5,7 @@ cssPrefix: pf-c-label
 propComponents: ['Label']
 ---
 
-import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 import { Link } from '@reach/router';
 
 ## Examples
@@ -15,7 +15,7 @@ import { Link } from '@reach/router';
 ```js
 import React from 'react';
 import { Label } from '@patternfly/react-core';
-import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
 <React.Fragment>
   <Label>Grey</Label> <Label icon={<InfoCircleIcon />}>Grey icon</Label>{' '}
@@ -164,7 +164,7 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-ic
 ```js
 import React from 'react';
 import { Label } from '@patternfly/react-core';
-import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 
 <React.Fragment>
   <Label variant="outline">Grey</Label>{' '}
@@ -332,7 +332,7 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-ic
 ```js
 import React from 'react';
 import { Label } from '@patternfly/react-core';
-import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 import { Link } from '@reach/router';
 
 <Label

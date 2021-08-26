@@ -38,7 +38,7 @@ class SampleForm extends React.Component {
         <FormGroup
           label="Age:"
           type="number"
-          helperText="Please write your age"
+          helperText="Write your age in numbers."
           helperTextInvalid="Age has to be a number"
           fieldId="age"
           validated={validated}

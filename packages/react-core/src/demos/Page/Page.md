@@ -4,9 +4,9 @@ section: components
 ---
 
 import { css } from '@patternfly/react-styles';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -60,9 +60,9 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -112,7 +112,7 @@ class PageLayoutGrouped extends React.Component {
       <Nav variant="tertiary" onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
           <NavItem itemId={0} isActive={activeItem === 0}>
-            System Panel
+            System panel
           </NavItem>
           <NavItem itemId={1} isActive={activeItem === 1}>
             Policy
@@ -121,7 +121,7 @@ class PageLayoutGrouped extends React.Component {
             Authentication
           </NavItem>
           <NavItem itemId={3} isActive={activeItem === 3}>
-            Network Services
+            Network services
           </NavItem>
           <NavItem itemId={4} isActive={activeItem === 4}>
             Server
@@ -233,7 +233,7 @@ class PageLayoutGrouped extends React.Component {
                 <Text component="h1">Main title</Text>
                 <Text component="p">
                   Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                  of it’s relative line height of 1.5.
+                  of its relative line height of 1.5.
                 </Text>
               </TextContent>
             </PageSection>
@@ -300,9 +300,9 @@ import {
   PageHeaderToolsItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
-import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
@@ -430,7 +430,7 @@ class PageLayoutGroupedAlt extends React.Component {
               <Nav variant="tertiary" onSelect={this.onNavSelect} aria-label="Nav">
                 <NavList>
                   <NavItem itemId={0} isActive={activeItem === 0}>
-                    System Panel
+                    System panel
                   </NavItem>
                   <NavItem itemId={1} isActive={activeItem === 1}>
                     Policy
@@ -439,7 +439,7 @@ class PageLayoutGroupedAlt extends React.Component {
                     Authentication
                   </NavItem>
                   <NavItem itemId={3} isActive={activeItem === 3}>
-                    Network Services
+                    Network services
                   </NavItem>
                   <NavItem itemId={4} isActive={activeItem === 4}>
                     Server
@@ -462,7 +462,7 @@ class PageLayoutGroupedAlt extends React.Component {
                 <Text component="h1">Main title</Text>
                 <Text component="p">
                   Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                  of it’s relative line height of 1.5.
+                  of its relative line height of 1.5.
                 </Text>
               </TextContent>
             </PageSection>{' '}

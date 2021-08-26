@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import AddCircleOIcon from '@patternfly/react-icons/dist/js/icons/add-circle-o-icon';
+import AddCircleOIcon from '@patternfly/react-icons/dist/esm/icons/add-circle-o-icon';
 import { Tooltip } from '@patternfly/react-core';
 import Point from '../geom/Point';
 import ConnectorArrow from './ConnectorArrow';

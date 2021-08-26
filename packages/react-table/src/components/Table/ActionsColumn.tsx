@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { Dropdown } from '@patternfly/react-core/dist/js/components/Dropdown';
-import { KebabToggle } from '@patternfly/react-core/dist/js/components/Dropdown/KebabToggle';
-import { DropdownItem } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownItem';
-import { DropdownSeparator } from '@patternfly/react-core/dist/js/components/Dropdown/DropdownSeparator';
-import { Button } from '@patternfly/react-core/dist/js/components/Button/Button';
+import { Dropdown } from '@patternfly/react-core/dist/esm/components/Dropdown';
+import { KebabToggle } from '@patternfly/react-core/dist/esm/components/Dropdown/KebabToggle';
+import { DropdownItem } from '@patternfly/react-core/dist/esm/components/Dropdown/DropdownItem';
+import { DropdownSeparator } from '@patternfly/react-core/dist/esm/components/Dropdown/DropdownSeparator';
+import { Button } from '@patternfly/react-core/dist/esm/components/Button/Button';
 
 import {
   DropdownDirection,
   DropdownPosition
-} from '@patternfly/react-core/dist/js/components/Dropdown/dropdownConstants';
+} from '@patternfly/react-core/dist/esm/components/Dropdown/dropdownConstants';
 
 import { IAction, IExtraData, IRowData } from './TableTypes';
 
@@ -35,6 +35,7 @@ export interface ActionsColumnState {
 
 export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsColumnState> {
   static displayName = 'ActionsColumn';
+  private toggleRef = React.createRef<HTMLButtonElement>();
   static defaultProps = {
     children: null as React.ReactNode,
     items: [] as IAction[],

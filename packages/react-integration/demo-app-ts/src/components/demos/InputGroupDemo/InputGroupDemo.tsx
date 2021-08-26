@@ -1,9 +1,9 @@
 import React from 'react';
-import DollarSignIcon from '@patternfly/react-icons/dist/js/icons/dollar-sign-icon';
-import AtIcon from '@patternfly/react-icons/dist/js/icons/at-icon';
-import CalendarAltIcon from '@patternfly/react-icons/dist/js/icons/calendar-alt-icon';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import QuestionCircleIcon from '@patternfly/react-icons/dist/js/icons/question-circle-icon';
+import DollarSignIcon from '@patternfly/react-icons/dist/esm/icons/dollar-sign-icon';
+import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
+import CalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/calendar-alt-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import {
   Button,
   ButtonVariant,

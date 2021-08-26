@@ -375,11 +375,11 @@ class GroupPage extends React.Component {
             <Nav aria-label="Nav" variant="tertiary">
               <NavList>
                 <NavItem itemId={0} isActive>
-                  System Panel
+                  System panel
                 </NavItem>
                 <NavItem itemId={1}>Policy</NavItem>
                 <NavItem itemId={2}>Authentication</NavItem>
-                <NavItem itemId={3}>Network Services</NavItem>
+                <NavItem itemId={3}>Network services</NavItem>
                 <NavItem itemId={4}>Server</NavItem>
               </NavList>
             </Nav>

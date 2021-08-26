@@ -15,7 +15,7 @@ class SimpleSkipToContent extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <SkipToContent href="#main-content">Skip to Content</SkipToContent>
+        <SkipToContent href="#main-content">Skip to content</SkipToContent>
         <p>Press tab to skip to content at the bottom of the page.</p>
         <div style={{ height: '2000px' }}></div>
         <h1 id="main-content">Main content</h1>

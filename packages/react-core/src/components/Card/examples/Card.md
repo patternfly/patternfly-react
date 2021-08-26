@@ -365,7 +365,7 @@ class KebabDropdown extends React.Component {
             />
           </CardActions>
         </CardHeader>
-        <CardBody>This is the card body, there is only actions in the card head.</CardBody>
+        <CardBody>This is the card body. There are only actions in the card head.</CardBody>
       </Card>
     );
   }

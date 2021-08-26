@@ -17,8 +17,8 @@ class StaticAlertGroup extends React.Component {
     return (
       <React.Fragment>
         <AlertGroup>
-          <Alert title="Success Alert" variant="success" isInline />
-          <Alert title="Info Alert" variant="info" isInline/>
+          <Alert title="Success alert" variant="success" isInline />
+          <Alert title="Info alert" variant="info" isInline/>
         </AlertGroup>
       </React.Fragment>
     );
@@ -47,15 +47,15 @@ class ToastAlertGroup extends React.Component {
   render() {
     const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
     const getUniqueId = () => (new Date().getTime());
-    const addSuccessAlert = () => { this.addAlert('Toast Success Alert', 'success', getUniqueId()) };
-    const addDangerAlert = () => { this.addAlert('Toast Danger Alert', 'danger', getUniqueId()) };
-    const addInfoAlert = () => { this.addAlert('Toast Info Alert', 'info', getUniqueId()) };
+    const addSuccessAlert = () => { this.addAlert('Toast success alert', 'success', getUniqueId()) };
+    const addDangerAlert = () => { this.addAlert('Toast danger alert', 'danger', getUniqueId()) };
+    const addInfoAlert = () => { this.addAlert('Toast info alert', 'info', getUniqueId()) };
     return (
       <React.Fragment>
         <InputGroup style={{ marginBottom: '16px' }}>
-          <button onClick={addSuccessAlert} type="button" className={btnClasses}>Add Toast Success Alert</button>
-          <button onClick={addDangerAlert} type="button" className={btnClasses}>Add Toast Danger Alert</button>
-          <button onClick={addInfoAlert} type="button" className={btnClasses}>Add Toast Info Alert</button>
+          <button onClick={addSuccessAlert} type="button" className={btnClasses}>Add toast success alert</button>
+          <button onClick={addDangerAlert} type="button" className={btnClasses}>Add toast danger alert</button>
+          <button onClick={addInfoAlert} type="button" className={btnClasses}>Add toast info alert</button>
         </InputGroup>
         <AlertGroup isToast isLiveRegion>
           {this.state.alerts.map(({key, variant, title}) => (
@@ -96,18 +96,18 @@ class SingularAdditiveAlertGroup extends React.Component {
     };
     const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
     const getUniqueId = () => (new Date().getTime());
-    const addSuccessAlert = () => { addAlert('Single Success Alert', 'success', getUniqueId()) };
-    const addDangerAlert = () => { addAlert('Single Danger Alert', 'danger', getUniqueId()) };
-    const addInfoAlert = () => { addAlert('Single Info Alert', 'info', getUniqueId()) };
+    const addSuccessAlert = () => { addAlert('Single success alert', 'success', getUniqueId()) };
+    const addDangerAlert = () => { addAlert('Single danger alert', 'danger', getUniqueId()) };
+    const addInfoAlert = () => { addAlert('Single info alert', 'info', getUniqueId()) };
     this.removeAlert = key => {
       this.setState({ alerts: [...this.state.alerts.filter(el => el.key !== key)] });
     };
     return (
       <React.Fragment>
         <InputGroup style={{ marginBottom: '16px' }}>
-          <button onClick={addSuccessAlert} type="button" className={btnClasses}>Add Single Success Alert</button>
-          <button onClick={addDangerAlert} type="button" className={btnClasses}>Add Single Danger Alert</button>
-          <button onClick={addInfoAlert} type="button" className={btnClasses}>Add Single Info Alert</button>
+          <button onClick={addSuccessAlert} type="button" className={btnClasses}>Add single success alert</button>
+          <button onClick={addDangerAlert} type="button" className={btnClasses}>Add single danger alert</button>
+          <button onClick={addInfoAlert} type="button" className={btnClasses}>Add single info alert</button>
         </InputGroup>
         <AlertGroup isLiveRegion>
           {this.state.alerts.map(({ title, variant, key }) => (
@@ -153,9 +153,9 @@ class MultipleAdditiveAlertGroup extends React.Component {
     const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
     const addAlertCollection = () => {
       addAlerts([
-        { title: 'First Alert Notification.', variant: 'success', key: getUniqueId() },
-        { title: 'Second Alert Notification.', variant: 'warning', key: getUniqueId() },
-        { title: 'Third Alert Notification.', variant: 'danger', key: getUniqueId() }
+        { title: 'First alert notification.', variant: 'success', key: getUniqueId() },
+        { title: 'Second alert notification.', variant: 'warning', key: getUniqueId() },
+        { title: 'Third alert notification.', variant: 'danger', key: getUniqueId() }
       ])
     };
     this.removeAlert = key => {
@@ -164,7 +164,7 @@ class MultipleAdditiveAlertGroup extends React.Component {
     return (
       <React.Fragment>
         <InputGroup style={{ marginBottom: '16px' }}>
-          <button onClick={addAlertCollection} type="button" className={btnClasses}>Add Alert Collection</button>
+          <button onClick={addAlertCollection} type="button" className={btnClasses}>Add alert collection</button>
         </InputGroup>
         <AlertGroup isToast isLiveRegion>
           {this.state.alerts.map(({ title, variant, key, action }) => (
@@ -213,7 +213,7 @@ class AsyncAdditiveAlertGroup extends React.Component {
       let timerValue = setInterval(() => {
         addAlerts([
           {
-            title: `Async Notification ${this.state.alerts.length + 1} was added to the queue.`,
+            title: `Async notification ${this.state.alerts.length + 1} was added to the queue.`,
             variant: 'danger',
             key: getUniqueId()
           }
@@ -224,8 +224,8 @@ class AsyncAdditiveAlertGroup extends React.Component {
     return (
       <React.Fragment>
         <InputGroup style={{ marginBottom: '16px' }}>
-          <button onClick={startAsyncAlerts} type="button" className={btnClasses}>Start Async Alerts</button>
-          <button onClick={this.stopAsyncAlerts} type="button" className={btnClasses}>Stop Async Alerts</button>
+          <button onClick={startAsyncAlerts} type="button" className={btnClasses}>Start async alerts</button>
+          <button onClick={this.stopAsyncAlerts} type="button" className={btnClasses}>Stop async alerts</button>
         </InputGroup>
         <AlertGroup isToast isLiveRegion aria-live="assertive">
           {this.state.alerts.map(({ title, variant, key }) => (

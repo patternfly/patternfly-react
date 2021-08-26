@@ -8,8 +8,8 @@ import {
   DropdownSeparator,
   KebabToggle
 } from '@patternfly/react-core';
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
-import CheckIcon from '@patternfly/react-icons/dist/js/icons/check-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import React from 'react';
 
 interface ActionListDemoState {

@@ -2,9 +2,9 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { List, ListVariant, ListComponent, OrderType } from '../List';
 import { ListItem } from '../ListItem';
-import BookOpen from '@patternfly/react-icons/dist/js/icons/book-open-icon';
-import Key from '@patternfly/react-icons/dist/js/icons/key-icon';
-import Desktop from '@patternfly/react-icons/dist/js/icons/desktop-icon';
+import BookOpen from '@patternfly/react-icons/dist/esm/icons/book-open-icon';
+import Key from '@patternfly/react-icons/dist/esm/icons/key-icon';
+import Desktop from '@patternfly/react-icons/dist/esm/icons/desktop-icon';
 
 const ListItems = () => (
   <React.Fragment>

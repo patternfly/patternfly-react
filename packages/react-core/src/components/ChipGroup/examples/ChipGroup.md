@@ -22,7 +22,7 @@ class SingleChip extends React.Component {
         name: 'Chip 1'
       },
       longchip: {
-        name: 'Really long Chip that goes on and on'
+        name: 'Really long chip that goes on and on'
       },
       badgechip: {
         name: 'Chip',
@@ -30,10 +30,10 @@ class SingleChip extends React.Component {
         count: 7
       },
       readonlychip: {
-        name: 'Read-only Chip'
+        name: 'Read-only chip'
       },
       overflowchip: {
-        name: 'Overflow Chip'
+        name: 'Overflow chip'
       }
     };
     this.deleteItem = id => {

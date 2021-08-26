@@ -30,7 +30,7 @@ class SimpleExpandableSection extends React.Component {
     const { isExpanded } = this.state;
     return (
       <ExpandableSection
-        toggleText={isExpanded ? 'Show Less' : 'Show More'}
+        toggleText={isExpanded ? 'Show less' : 'Show more'}
         onToggle={this.onToggle}
         isExpanded={isExpanded}
       >
@@ -47,7 +47,7 @@ class SimpleExpandableSection extends React.Component {
 import React from 'react';
 import { ExpandableSection } from '@patternfly/react-core';
 
-<ExpandableSection toggleText="Show More">
+<ExpandableSection toggleText="Show more">
   This content is visible only when the component is expanded.
 </ExpandableSection>;
 ```
@@ -58,7 +58,7 @@ import { ExpandableSection } from '@patternfly/react-core';
 import React from 'react';
 import { ExpandableSection } from '@patternfly/react-core';
 
-<ExpandableSection toggleTextExpanded="Show Less" toggleTextCollapsed="Show More">
+<ExpandableSection toggleTextExpanded="Show less" toggleTextCollapsed="Show more">
   This content is visible only when the component is expanded.
 </ExpandableSection>;
 ```
@@ -99,7 +99,7 @@ class DetachedExpandableSection extends React.Component {
             contentId={contentId}
             direction="up"
           >
-            {isExpanded ? 'Show Less' : 'Show More'}
+            {isExpanded ? 'Show less' : 'Show more'}
           </ExpandableSectionToggle>
         </StackItem>
       </Stack>
@@ -131,7 +131,7 @@ class DisclosureExpandableSection extends React.Component {
     const { isExpanded } = this.state;
     return (
       <ExpandableSection
-        toggleText={isExpanded ? 'Show Less' : 'Show More'}
+        toggleText={isExpanded ? 'Show less' : 'Show more'}
         onToggle={this.onToggle}
         isExpanded={isExpanded}
         displaySize="large"

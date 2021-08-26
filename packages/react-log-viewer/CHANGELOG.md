@@ -3,6 +3,116 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.5.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.5.3...@patternfly/react-log-viewer@4.5.4) (2021-08-23)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.5.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.5.2...@patternfly/react-log-viewer@4.5.3) (2021-08-23)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.5.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.5.1...@patternfly/react-log-viewer@4.5.2) (2021-08-23)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.5.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.5.0...@patternfly/react-log-viewer@4.5.1) (2021-08-23)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+# [4.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.4.17...@patternfly/react-log-viewer@4.5.0) (2021-08-23)
+
+
+### Features
+
+* **LogViewer:** refactor the component to get rid of the gaps between items ([#6201](https://github.com/patternfly/patternfly-react/issues/6201)) ([65f89d4](https://github.com/patternfly/patternfly-react/commit/65f89d47f28d2100f8a204e40831d6d034b31c9a))
+
+
+
+
+
+## [4.4.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.4.16...@patternfly/react-log-viewer@4.4.17) (2021-08-20)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.4.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.4.15...@patternfly/react-log-viewer@4.4.16) (2021-08-20)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.4.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.4.14...@patternfly/react-log-viewer@4.4.15) (2021-08-20)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.4.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.4.13...@patternfly/react-log-viewer@4.4.14) (2021-08-19)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.4.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.4.12...@patternfly/react-log-viewer@4.4.13) (2021-08-19)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.4.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.4.11...@patternfly/react-log-viewer@4.4.12) (2021-08-19)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## [4.4.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.4.10...@patternfly/react-log-viewer@4.4.11) (2021-08-19)
+
+
+### Bug Fixes
+
+* **LogViewer:** remove unused props ([#6186](https://github.com/patternfly/patternfly-react/issues/6186)) ([c828e21](https://github.com/patternfly/patternfly-react/commit/c828e215d9cbdb46134280e5a0479b55fe6c9c53))
+
+
+
+
+
+## [4.4.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.4.9...@patternfly/react-log-viewer@4.4.10) (2021-08-18)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
 ## [4.4.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.4.8...@patternfly/react-log-viewer@4.4.9) (2021-08-18)
 
 **Note:** Version bump only for package @patternfly/react-log-viewer

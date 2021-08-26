@@ -200,8 +200,8 @@ This demonstrates how to embed a legend within a tooltip. Combining cursor and v
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLegendTooltip, ChartLine, ChartThemeColor, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
 
-import chart_voronoi_labels_Fill from '@patternfly/react-tokens/dist/js/chart_voronoi_labels_Fill';
-import global_FontWeight_bold from '@patternfly/react-tokens/dist/js/global_FontWeight_bold';
+import chart_voronoi_labels_Fill from '@patternfly/react-tokens/dist/esm/chart_voronoi_labels_Fill';
+import global_FontWeight_bold from '@patternfly/react-tokens/dist/esm/global_FontWeight_bold';
 
 class EmbeddedLegend extends React.Component {
   render() {

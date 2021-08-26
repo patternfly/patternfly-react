@@ -3,6 +3,114 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.152.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.152.3...@patternfly/react-core@4.152.4) (2021-08-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.152.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.152.2...@patternfly/react-core@4.152.3) (2021-08-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.152.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.152.1...@patternfly/react-core@4.152.2) (2021-08-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.152.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.152.0...@patternfly/react-core@4.152.1) (2021-08-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.152.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.151.2...@patternfly/react-core@4.152.0) (2021-08-20)
+
+
+### Features
+
+* **Menu:** add app-launcher mockup ([#6175](https://github.com/patternfly/patternfly-react/issues/6175)) ([9f2fdcc](https://github.com/patternfly/patternfly-react/commit/9f2fdcce55e087f39b7f5b3ce6f1f5939ac1e1c7))
+
+
+
+
+
+## [4.151.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.151.1...@patternfly/react-core@4.151.2) (2021-08-20)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.151.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.151.0...@patternfly/react-core@4.151.1) (2021-08-20)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.151.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.150.4...@patternfly/react-core@4.151.0) (2021-08-19)
+
+
+### Bug Fixes
+
+* **examples:** updating example microcopy ([#6196](https://github.com/patternfly/patternfly-react/issues/6196)) ([b1d90f2](https://github.com/patternfly/patternfly-react/commit/b1d90f2c3e05eb6f5ee9aaa34b46a5a5d7a203fd))
+
+
+### Features
+
+* **ContextSelector:** Add plain variant ([#6141](https://github.com/patternfly/patternfly-react/issues/6141)) ([b4ab0e0](https://github.com/patternfly/patternfly-react/commit/b4ab0e0094917739ff7c02797ce305498dc8fc9f))
+* **Search input:** Added support for submit button ([#6178](https://github.com/patternfly/patternfly-react/issues/6178)) ([4a2679a](https://github.com/patternfly/patternfly-react/commit/4a2679abab52d612d4f13386b43d89db87053dab))
+* **TreeView:** add guides + compact variants ([#6172](https://github.com/patternfly/patternfly-react/issues/6172)) ([7526e23](https://github.com/patternfly/patternfly-react/commit/7526e236c218a54d37e74baebbfd180f7024587e))
+
+
+
+
+
+## [4.150.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.150.3...@patternfly/react-core@4.150.4) (2021-08-19)
+
+
+### Bug Fixes
+
+* **NumberInput:** call 'onPlus' and 'onMinus' if set only ([#6197](https://github.com/patternfly/patternfly-react/issues/6197)) ([ac3b03e](https://github.com/patternfly/patternfly-react/commit/ac3b03e466d21cef330ade1010caf915c59a69cd))
+* **Select:** correct typeahead children check ([#6176](https://github.com/patternfly/patternfly-react/issues/6176)) ([4899e6e](https://github.com/patternfly/patternfly-react/commit/4899e6e799fb5b1ae7747353c718d7b3a1464abd))
+
+
+
+
+
+## [4.150.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.150.2...@patternfly/react-core@4.150.3) (2021-08-19)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.150.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.150.1...@patternfly/react-core@4.150.2) (2021-08-18)
+
+
+### Bug Fixes
+
+* **DualListSelector:** respect initial chosen opts, select subfolders, reset selected on all ([#6180](https://github.com/patternfly/patternfly-react/issues/6180)) ([a1df392](https://github.com/patternfly/patternfly-react/commit/a1df3925e3e464d0caa27cb94b3162ad7cb7212b))
+
+
+
+
+
 ## [4.150.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.150.0...@patternfly/react-core@4.150.1) (2021-08-18)
 
 **Note:** Version bump only for package @patternfly/react-core

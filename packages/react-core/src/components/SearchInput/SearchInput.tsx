@@ -3,12 +3,12 @@ import styles from '@patternfly/react-styles/css/components/SearchInput/search-i
 import { css } from '@patternfly/react-styles';
 import { Button, ButtonVariant } from '../Button';
 import { Badge } from '../Badge';
-import AngleDownIcon from '@patternfly/react-icons/dist/js/icons/angle-down-icon';
-import AngleUpIcon from '@patternfly/react-icons/dist/js/icons/angle-up-icon';
-import TimesIcon from '@patternfly/react-icons/dist/js/icons/times-icon';
-import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/js/icons/caret-down-icon';
-import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-icon';
+import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
+import AngleUpIcon from '@patternfly/react-icons/dist/esm/icons/angle-up-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 import { ActionGroup, Form, FormGroup } from '../Form';
 import { InputGroup } from '../InputGroup';
 import { TextInput } from '../TextInput';
@@ -331,29 +331,27 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
           )}
         </div>
         {attributes.length > 0 && (
-          <>
-            <Button
-              className={showSearchMenu && 'pf-m-expanded'}
-              variant={ButtonVariant.control}
-              aria-label={openMenuButtonAriaLabel}
-              onClick={onToggle}
-              isDisabled={isDisabled}
-              aria-expanded={showSearchMenu}
-            >
-              <CaretDownIcon />
-            </Button>
-            {!!onSearch && (
-              <Button
-                type="submit"
-                variant={ButtonVariant.control}
-                aria-label={submitSearchButtonLabel}
-                onClick={onSearchHandler}
-                isDisabled={isDisabled}
-              >
-                <ArrowRightIcon />
-              </Button>
-            )}
-          </>
+          <Button
+            className={showSearchMenu && 'pf-m-expanded'}
+            variant={ButtonVariant.control}
+            aria-label={openMenuButtonAriaLabel}
+            onClick={onToggle}
+            isDisabled={isDisabled}
+            aria-expanded={showSearchMenu}
+          >
+            <CaretDownIcon />
+          </Button>
+        )}
+        {!!onSearch && (
+          <Button
+            type="submit"
+            variant={ButtonVariant.control}
+            aria-label={submitSearchButtonLabel}
+            onClick={onSearchHandler}
+            isDisabled={isDisabled}
+          >
+            <ArrowRightIcon />
+          </Button>
         )}
       </InputGroup>
       {attributes.length > 0 && showSearchMenu && (

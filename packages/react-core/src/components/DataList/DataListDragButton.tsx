@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
-import GripVerticalIcon from '@patternfly/react-icons/dist/js/icons/grip-vertical-icon';
+import GripVerticalIcon from '@patternfly/react-icons/dist/esm/icons/grip-vertical-icon';
 import { DataListContext } from './DataList';
 
 export interface DataListDragButtonProps extends React.HTMLProps<HTMLButtonElement> {

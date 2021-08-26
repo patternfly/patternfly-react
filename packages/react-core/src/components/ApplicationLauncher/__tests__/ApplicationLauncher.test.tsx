@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import { ApplicationLauncher } from '../ApplicationLauncher';
 import { ApplicationLauncherItem } from '../ApplicationLauncherItem';
 

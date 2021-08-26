@@ -5,9 +5,9 @@ section: components
 
 Note: Topology lives in its own package at [`@patternfly/react-topology`](https://www.npmjs.com/package/@patternfly/react-topology)
 
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
-import FilmIcon from '@patternfly/react-icons/dist/js/icons/film-icon';
-import GlassCheersIcon from '@patternfly/react-icons/dist/js/icons/glass-cheers-icon';
+import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
+import FilmIcon from '@patternfly/react-icons/dist/esm/icons/film-icon';
+import GlassCheersIcon from '@patternfly/react-icons/dist/esm/icons/glass-cheers-icon';
 import { TopologyView, TopologyControlBar, createTopologyControlButtons, TopologySideBar } from '@patternfly/react-topology';
 import { ProjectToolbar } from './ProjectToolbar';
 import { ViewToolbar } from './ViewToolbar';
@@ -90,9 +90,9 @@ class SelectedTopologyView extends React.Component {
 ### Custom controls
 ```js
 import React from 'react';
-import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
-import FilmIcon from '@patternfly/react-icons/dist/js/icons/film-icon';
-import GlassCheersIcon from '@patternfly/react-icons/dist/js/icons/glass-cheers-icon';
+import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
+import FilmIcon from '@patternfly/react-icons/dist/esm/icons/film-icon';
+import GlassCheersIcon from '@patternfly/react-icons/dist/esm/icons/glass-cheers-icon';
 import { TopologyView, TopologyControlBar, createTopologyControlButtons } from '@patternfly/react-topology';
 import { ItemDetails } from './ItemDetails';
 import { ViewToolbar } from './ViewToolbar';
