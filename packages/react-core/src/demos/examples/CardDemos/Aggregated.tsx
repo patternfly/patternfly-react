@@ -196,7 +196,7 @@ const AggregateStatusCards: React.FunctionComponent = () => {
         }
         return (
           <GridItem key={groupIndex}>
-            <Gallery hasGutter style={{ '--pf-l-gallery--GridTemplateColumns--min': galleryWidth }}>
+            <Gallery hasGutter style={{ '--pf-l-gallery--GridTemplateColumns--min': galleryWidth } as any}>
               {cardData[cardGroup].map(({ title, content, layout }, cardIndex) => (
                 <Card style={{ textAlign: cardAlign }} key={`${groupIndex}${cardIndex}`} component="div">
                   <CardTitle style={{ textAlign: titleAlign }}>{title}</CardTitle>

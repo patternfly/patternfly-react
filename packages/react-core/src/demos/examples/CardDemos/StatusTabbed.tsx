@@ -47,11 +47,11 @@ const descriptionListData = [
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const StatusTabbedCard: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);
-  const handleTabClick = (event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number) => {
+  const handleTabClick = (event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: any) => {
     setActiveTabKey(tabIndex);
   };
   return (
-    <Card style={{ maxWidth: '800px' }}>
+    <Card>
       <CardHeader>
         <Title headingLevel="h2" size="lg">
           Status
