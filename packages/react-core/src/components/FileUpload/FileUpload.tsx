@@ -30,7 +30,7 @@ export interface FileUploadProps
       | Event
   ) => void;
   /** Change event emitted from the \<input\> field associated with the component  */
-  onInputChange?: (event: React.ChangeEvent<HTMLInputElement>, items?: (FileWithPath | DataTransferItem)[]) => void
+  onInputChange?: (event: React.ChangeEvent<HTMLInputElement>, file: File) => void
   /** Callback for clicking on the FileUploadField text area. By default, prevents a click in the text area from opening file dialog. */
   onClick?: (event: React.MouseEvent) => void;
   /** Additional classes added to the FileUpload container element. */
@@ -162,7 +162,8 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
         inputProps.onChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
           oldInputChange?.(e);
           const files = await fromEvent(e.nativeEvent);
-          onInputChange?.(e, files);
+          if (files.length === 1)
+            onInputChange?.(e, (files[0] as File));
         };
 
         return (
