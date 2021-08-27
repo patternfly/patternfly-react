@@ -2,7 +2,6 @@ import * as React from 'react';
 import Dropzone, { DropzoneProps, DropEvent, DropzoneInputProps, FileWithPath } from 'react-dropzone';
 import { FileUploadField, FileUploadFieldProps } from './FileUploadField';
 import { readFile, fileReaderType } from '../../helpers/fileUtils';
-import { MouseEventHandler } from 'react';
 import { fromEvent } from 'file-selector'
 export interface FileUploadProps
   extends Omit<
@@ -80,7 +79,7 @@ export interface FileUploadProps
   /** Optional extra props to customize react-dropzone. */
   dropzoneProps?: DropzoneProps;
   /** Clear button was clicked */
-  onClearClicked?: MouseEventHandler<HTMLButtonElement>;
+  onClearClicked?: React.MouseEventHandler<HTMLButtonElement>;
   /** Text area text changed */
   onTextChanged?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   /** On data changed - if type='text' or type='dataURL' and file was loaded it will call this method */
