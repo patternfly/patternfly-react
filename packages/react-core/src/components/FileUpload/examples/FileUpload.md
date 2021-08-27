@@ -25,9 +25,8 @@ class SimpleTextFileUpload extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: '', filename: '', isLoading: false };
-    this.handleFileChanged = (event, file, filename) => this.setState({ filename });
-    this.handleDataChanged = value => { this.setState({ value });
-    console.log("onDataChanged",value);};
+    this.handleInputChange = (event, file) => this.setState({ filename: file.name });
+    this.handleTextChanged = value => { this.setState({ value });
     this.handleFileReadStarted = fileHandle => this.setState({ isLoading: true });
     this.handleFileReadFinished = fileHandle => this.setState({ isLoading: false });
     this.handleClear = event => this.setState({ filename: '', value: '' });
@@ -42,8 +41,8 @@ class SimpleTextFileUpload extends React.Component {
         value={value}
         filename={filename}
         filenamePlaceholder="Drag and drop a file or upload one"
-        onFileChanged={this.handleFileChanged}
-        onDataChanged={this.handleDataChanged}
+        onInputChange={this.handleInputChange}
+        onTextChanged={this.handleDataChanged}
         onReadStarted={this.handleFileReadStarted}
         onReadFinished={this.handleFileReadFinished}
         onClearButtonClick={this.handleClear}
@@ -67,7 +66,7 @@ class TextFileWithEditsAllowed extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: '', filename: '', isLoading: false };
-    this.handleFileChange = (value, filename, event) => this.setState({ value, filename });
+    this.handleInputChange = (event,file) => this.setState({ value, file.name });
     this.handleFileReadStarted = fileHandle => this.setState({ isLoading: true });
     this.handleFileReadFinished = fileHandle => this.setState({ isLoading: false });
   }
@@ -111,8 +110,8 @@ class TextFileUploadWithRestrictions extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: '', filename: '', isLoading: false, isRejected: false };
-    this.handleFileChange = (value, filename, event) => {
-      this.setState({ value, filename, isRejected: false });
+    this.handleInputChange = (event,file) => {
+      this.setState({ value, file.name, isRejected: false });
     };
     this.handleFileRejected = (rejectedFiles, event) => this.setState({ isRejected: true });
     this.handleFileReadStarted = fileHandle => this.setState({ isLoading: true });
@@ -168,12 +167,14 @@ class SimpleFileUpload extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: null, filename: '' };
-    this.handleFileChange = (value, filename, event) => this.setState({ value, filename });
+    this.handleInputChange = (event,file) => {
+      this.setState({ value, file.name});
+    };
   }
 
   render() {
     const { value, filename } = this.state;
-    return <FileUpload id="simple-file" value={value} filename={filename} filenamePlaceholder="Drag and drop a file or upload one" browseButtonText="Upload" onChange={this.handleFileChange} />;
+    return <FileUpload id="simple-file" value={value} filename={filename} filenamePlaceholder="Drag and drop a file or upload one" browseButtonText="Upload" onInputChange={this.handleInputChange} />;
   }
 }
 ```
@@ -193,7 +194,9 @@ class CustomPreviewFileUpload extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: null, filename: '' };
-    this.handleFileChange = (value, filename, event) => this.setState({ value, filename });
+    this.handleInputChange = (event,file) => {
+      this.setState({ value, file.name });
+    };
   }
 
   render() {
@@ -203,8 +206,8 @@ class CustomPreviewFileUpload extends React.Component {
         id="customized-preview-file"
         value={value}
         filename={filename}
-        filenamePlaceholder="Drag and drop a file or upload one"
-        onChange={this.handleFileChange}
+        filenamePlaceholder="Drag and drop a file or upload one"      
+        onInputChange={this.handleInputChange}
         hideDefaultPreview
         browseButtonText="Upload"
       >
