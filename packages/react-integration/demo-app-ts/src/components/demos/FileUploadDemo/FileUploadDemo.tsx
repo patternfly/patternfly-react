@@ -10,7 +10,14 @@ export class FileUploadDemo extends React.Component {
   handleFileChange = (...args: any[]) => {
     const [value, filename] = args
     this.setState({ value, filename })
-    console.log(args)
+    console.log("onChange",args)
+  }
+  handleInputChange= (...args: any[])=> {
+    console.log("onInputChange",args);
+  }
+
+  handleInputChange2= (...args: any[])=> {
+    console.log("onInputChange2",args);
   }
   /* eslint-disable @typescript-eslint/no-unused-vars */
   handleFileReadStarted = (fileHandle: File) => this.setState({ isLoading: true });
@@ -26,12 +33,12 @@ export class FileUploadDemo extends React.Component {
         value={value}
         filename={filename}
         onChange={this.handleFileChange}
+        onInputChange={this.handleInputChange}
         onReadStarted={this.handleFileReadStarted}
         onReadFinished={this.handleFileReadFinished}
         onClick={this.handleClick}
         onClearClicked={(e) => console.log("clear clicked", e)}
         onTextChanged={(e) => console.log("text changed", e)}
-        onFileChanged={(...args) => console.log("file changed", args)}
         isLoading={isLoading}
       >
         <TextInput value={value}>
@@ -39,6 +46,7 @@ export class FileUploadDemo extends React.Component {
         </TextInput>
       </FileUpload>
       <br></br>
+      <input type="file" onChange={this.handleInputChange2} />
     </>
     );
   }

@@ -1,13 +1,13 @@
 import * as React from 'react';
-import Dropzone, { DropzoneProps, DropEvent, FileRejection } from 'react-dropzone';
+import Dropzone, { DropzoneProps, DropEvent, DropzoneInputProps, FileWithPath } from 'react-dropzone';
 import { FileUploadField, FileUploadFieldProps } from './FileUploadField';
 import { readFile, fileReaderType } from '../../helpers/fileUtils';
 import { MouseEventHandler } from 'react';
-
+import { fromEvent } from 'file-selector'
 export interface FileUploadProps
   extends Omit<
-    FileUploadFieldProps,
-    'children' | 'onBrowseButtonClick' | 'onClearButtonClick' | 'isDragActive' | 'containerRef'
+  FileUploadFieldProps,
+  'children' | 'onBrowseButtonClick' | 'onClearButtonClick' | 'isDragActive' | 'containerRef'
   > {
   /** Unique id for the TextArea, also used to generate ids for accessible labels. */
   id: string;
@@ -30,6 +30,8 @@ export interface FileUploadProps
       | DragEvent
       | Event
   ) => void;
+  /** Change event emitted from the \<input\> field associated with the component  */
+  onInputChange?: (event: React.ChangeEvent<HTMLInputElement>, items?: (FileWithPath | DataTransferItem)[]) => void
   /** Callback for clicking on the FileUploadField text area. By default, prevents a click in the text area from opening file dialog. */
   onClick?: (event: React.MouseEvent) => void;
   /** Additional classes added to the FileUpload container element. */
@@ -81,8 +83,6 @@ export interface FileUploadProps
   onClearClicked?: MouseEventHandler<HTMLButtonElement>;
   /** Text area text changed */
   onTextChanged?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  /** On file changed */
-  onFileChanged?: (event: DropEvent, fileHandle: File, filename: string) => void;
   /** On data changed - if type='text' or type='dataURL' and file was loaded it will call this method */
   onDataChanged?: (data: string) => void;
 }
@@ -93,14 +93,14 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   value = type === fileReaderType.text || type === fileReaderType.dataURL ? '' : null,
   filename = '',
   children = null,
-  onChange = () => {},
-  onReadStarted = () => {},
-  onReadFinished = () => {},
-  onReadFailed = () => {},
+  onChange = () => { },
+  onInputChange = null,
+  onReadStarted = () => { },
+  onReadFinished = () => { },
+  onReadFailed = () => { },
   onClearClicked,
   onClick = event => event.preventDefault(),
-  onTextChanged = () => {},
-  onFileChanged,
+  onTextChanged = () => { },
   onDataChanged,
   dropzoneProps = {},
   ...props
@@ -108,7 +108,6 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   const onDropAccepted = (acceptedFiles: File[], event: DropEvent) => {
     if (acceptedFiles.length > 0) {
       const fileHandle = acceptedFiles[0];
-      onFileChanged?.(event, fileHandle, fileHandle.name);
       if (type === fileReaderType.text || type === fileReaderType.dataURL) {
         onChange('', fileHandle.name, event); // Show the filename while reading
         onReadStarted(fileHandle);
@@ -131,7 +130,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
     dropzoneProps.onDropAccepted && dropzoneProps.onDropAccepted(acceptedFiles, event);
   };
 
-  const onDropRejected = (rejectedFiles: FileRejection[], event: DropEvent) => {
+  const onDropRejected = (rejectedFiles: any[], event: DropEvent) => {
     if (rejectedFiles.length > 0) {
       onChange('', rejectedFiles[0].file.name, event);
     }
@@ -147,7 +146,6 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
     onChange('', '', event);
     onClearClicked?.(event);
     setFileValue(null);
-    onFileChanged?.(null, null, '');
   };
 
   return (
@@ -159,8 +157,15 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
       noClick={true}
     >
       {({ getRootProps, getInputProps, isDragActive, open }) => {
-        const inputProps = { ref: '', ...getInputProps() };
+        const inputProps: DropzoneInputProps & { ref: React.Ref<HTMLInputElement> } = { ref: null, ...getInputProps() };
         textInput = inputProps.ref;
+        const oldInputChange = inputProps.onChange;
+        inputProps.onChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+          oldInputChange?.(e);
+          const files = await fromEvent(e.nativeEvent);
+          onInputChange?.(e, files);
+        };
+
         return (
           <FileUploadField
             {...getRootProps({
