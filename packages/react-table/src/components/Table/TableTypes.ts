@@ -228,7 +228,7 @@ export interface IRow extends RowType {
   isOpen?: boolean;
   isEditable?: boolean;
   isHoverable?: boolean;
-  isSelectable?: boolean;
+  isRowSelected?: boolean;
   isValid?: boolean;
   /** An array of validation functions to run against every cell for a given row */
   rowEditValidationRules?: IValidatorDef[];

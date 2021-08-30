@@ -28,7 +28,7 @@ export interface TableBodyProps {
   rows?: IRow[];
   /** @hide This prop should not be set manually  */
   rowKey?: RowKeyType;
-  /** An click handler for the row  */
+  /** A click handler for the row  */
   onRowClick?: OnRowClick;
   /** @hide This prop should not be set manually  */
   onRow?: Function;

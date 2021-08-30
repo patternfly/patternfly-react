@@ -26,17 +26,17 @@ export class TableRowClickDemo extends React.Component<TableProps, ITableRowClic
         {
           cells: ['Repositories one', 'Branches one', 'Pull requests one', 'Workspaces one'],
           isHoverable: true,
-          isSelected: true
+          isRowSelected: true
         },
         {
           cells: ['Repositories two', 'Branches two', 'Pull requests two', 'Workspaces two'],
           isHoverable: true,
-          isSelected: false
+          isRowSelected: false
         },
         {
           cells: ['Repositories three', 'Branches three', 'Pull requests three', 'Workspaces three'],
           isHoverable: true,
-          isSelected: false
+          isRowSelected: false
         }
       ]
     };

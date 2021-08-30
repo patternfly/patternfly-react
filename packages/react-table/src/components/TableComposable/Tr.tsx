@@ -17,11 +17,11 @@ export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps
   isExpanded?: boolean;
   /** Only applicable to Tr within the Tbody: Whether the row is editable */
   isEditable?: boolean;
-  /** */
+  /** Flag which adds hover styles for the table row */
   isHoverable?: boolean;
-  /** */
-  isSelected?: boolean;
-  /** */
+  /** Flag indicating the row is selected - adds selected styling */
+  isRowSelected?: boolean;
+  /** An event handler for the row */
   onRowClick?: (event?: React.KeyboardEvent | React.MouseEvent) => void;
 }
 
@@ -32,7 +32,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   isEditable,
   isHidden = false,
   isHoverable = false,
-  isSelected = false,
+  isRowSelected = false,
   innerRef,
   ouiaId,
   ouiaSafe = true,
@@ -59,7 +59,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
         isExpanded && styles.modifiers.expanded,
         isEditable && inlineStyles.modifiers.inlineEditable,
         isHoverable && styles.modifiers.hoverable,
-        isSelected && styles.modifiers.selected
+        isRowSelected && styles.modifiers.selected
       )}
       hidden={isHidden || (isExpanded !== undefined && !isExpanded)}
       {...(isHoverable && { tabIndex: 0 })}

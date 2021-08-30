@@ -248,7 +248,7 @@ class RowClickTable extends React.Component {
         {
           cells: ['Repository one', 'Branch one', 'PR one', 'Workspace one', 'Commit one'],
           isHoverable: true,
-          isSelected: false
+          isRowSelected: false
         },
         {
           cells: [
@@ -260,7 +260,7 @@ class RowClickTable extends React.Component {
             'five - 2'
           ],
           isHoverable: true,
-          isSelected: false
+          isRowSelected: false
         },
         {
           cells: [
@@ -274,7 +274,7 @@ class RowClickTable extends React.Component {
             }
           ],
           isHoverable: true,
-          isSelected: false
+          isRowSelected: false
         }
       ]
     };
@@ -282,18 +282,10 @@ class RowClickTable extends React.Component {
     this.rowClickHandler = (event, row, rowProps) => {
       this.setState(prevState => {
         const updatedRows = [...prevState.rows];
-        updatedRows[rowProps.rowIndex].isSelected = !prevState.rows[rowProps.rowIndex].isSelected;
+        updatedRows[rowProps.rowIndex].isRowSelected = !prevState.rows[rowProps.rowIndex].isRowSelected;
         return {
           rows: updatedRows
         }
-      });
-    }
-  }
-  
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.selectedRow != this.state.selectedRow) {
-      this.setState(() => {
-        
       });
     }
   }

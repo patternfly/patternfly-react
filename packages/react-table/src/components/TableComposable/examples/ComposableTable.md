@@ -249,13 +249,13 @@ import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-tab
 ComposableTableHoverable = () => {
   const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
   const [rows, setRows] = React.useState([
-    { cells: ['one', 'two', 'a', 'four', 'five'], isSelected: false},
-    { cells: ['a', 'two', 'k', 'four', 'five'], isSelected: false},
-    { cells: ['p', 'two', 'b', 'four', 'five'], isSelected: false}
+    { cells: ['one', 'two', 'a', 'four', 'five'], isRowSelected: false},
+    { cells: ['a', 'two', 'k', 'four', 'five'], isRowSelected: false},
+    { cells: ['p', 'two', 'b', 'four', 'five'], isRowSelected: false}
   ]);
   const onRowClick = (event, rowIndex, row) => {
     const updatedRows = [...rows];
-    updatedRows[rowIndex].isSelected = !rows[rowIndex].isSelected;
+    updatedRows[rowIndex].isRowSelected = !rows[rowIndex].isRowSelected;
     setRows(updatedRows); 
   };
   
@@ -281,7 +281,7 @@ ComposableTableHoverable = () => {
               key={rowIndex}
               onRowClick={event => onRowClick(event, rowIndex, row.cells)}
               isHoverable
-              isSelected={row.isSelected}
+              isRowSelected={row.isRowSelected}
             >
               {row.cells.map((cell, cellIndex) => {
                 return (
