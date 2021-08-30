@@ -177,6 +177,7 @@ class InlineAlert extends React.Component {
 ```
 
 ### Inline plain variations
+
 ```js
 import React from 'react';
 import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
@@ -227,6 +228,51 @@ class InlineAlertVariations extends React.Component {
           actionClose={<AlertActionCloseButton onClose={() => alert('Clicked the close button')} />}
         />
         <Alert isInline isPlain variant="success" title="Success alert title" />
+      </React.Fragment>
+    );
+  }
+}
+```
+
+### Expandable
+
+```js
+import React from 'react';
+import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
+
+class ExpandableAlert extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Alert
+          isExpandable
+          variant="success"
+          title="Success alert title"
+          actionClose={<AlertActionCloseButton onClose={() => alert('Clicked the close button')} />}
+          actionLinks={
+            <React.Fragment>
+              <AlertActionLink onClick={() => alert('Clicked on View details')}>View details</AlertActionLink>
+              <AlertActionLink onClick={() => alert('Clicked on Ignore')}>Ignore</AlertActionLink>
+            </React.Fragment>
+          }
+        >
+          <p>Success alert description. This should tell the user more information about the alert.</p>
+        </Alert>
+        <Alert
+          isExpandable
+          isInline
+          variant="success"
+          title="Success alert title"
+          actionClose={<AlertActionCloseButton onClose={() => alert('Clicked the close button')} />}
+          actionLinks={
+            <React.Fragment>
+              <AlertActionLink onClick={() => alert('Clicked on View details')}>View details</AlertActionLink>
+              <AlertActionLink onClick={() => alert('Clicked on Ignore')}>Ignore</AlertActionLink>
+            </React.Fragment>
+          } 
+        >
+          <p>Success alert description. This should tell the user more information about the alert.</p>
+        </Alert>
       </React.Fragment>
     );
   }

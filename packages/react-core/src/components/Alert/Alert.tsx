@@ -8,6 +8,8 @@ import { capitalize, useOUIAProps, OUIAProps } from '../../helpers';
 import { AlertContext } from './AlertContext';
 import maxLines from '@patternfly/react-tokens/dist/esm/c_alert__title_max_lines';
 import { Tooltip } from '../Tooltip';
+import { Button, ButtonVariant } from '../Button';
+import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
 export enum AlertVariant {
   success = 'success',
@@ -52,6 +54,8 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /** Set a custom icon to the Alert. If not set the icon is set according to the variant */
   customIcon?: React.ReactNode;
+  /** Flag indicating that the Alert is expandable */
+  isExpandable?: boolean;
 }
 
 export const Alert: React.FunctionComponent<AlertProps> = ({
@@ -74,6 +78,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   truncateTitle = 0,
   tooltipPosition,
   customIcon,
+  isExpandable = false,
   onMouseEnter = () => {},
   onMouseLeave = () => {},
   ...props
@@ -138,6 +143,11 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     dismissed && onTimeout();
   }, [dismissed]);
 
+  const [isExpanded, setIsExpanded] = useState(false);
+  const onToggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   const myOnMouseEnter = (ev: React.MouseEvent<HTMLDivElement>) => {
     setIsMouseOver(true);
     setTimedOutAnimation(false);
@@ -169,6 +179,8 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
         styles.alert,
         isInline && styles.modifiers.inline,
         isPlain && styles.modifiers.plain,
+        isExpandable && styles.modifiers.expandable,
+        isExpanded && styles.modifiers.expanded,
         styles.modifiers[variant as 'success' | 'danger' | 'warning' | 'info'],
         className
       )}
@@ -182,6 +194,20 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       onMouseLeave={myOnMouseLeave}
       {...props}
     >
+      {isExpandable && (
+        <div className={css(styles.alertToggle)}>
+          <Button
+            variant={ButtonVariant.plain}
+            onClick={onToggleExpand}
+            aria-expanded={isExpanded}
+            aria-label={`Toggle ${ariaLabel} description`}
+          >
+            <span className={css(styles.alertToggleIcon)}>
+              <AngleRightIcon aria-hidden="true" />
+            </span>
+          </Button>
+        </div>
+      )}
       <AlertIcon variant={variant} customIcon={customIcon} />
       {isTooltipVisible ? (
         <Tooltip content={getHeadingContent} position={tooltipPosition}>
@@ -195,7 +221,9 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
           <div className={css(styles.alertAction)}>{actionClose}</div>
         </AlertContext.Provider>
       )}
-      {children && <div className={css(styles.alertDescription)}>{children}</div>}
+      {children && (!isExpandable || (isExpandable && isExpanded)) && (
+        <div className={css(styles.alertDescription)}>{children}</div>
+      )}
       {actionLinks && <div className={css(styles.alertActionGroup)}>{actionLinks}</div>}
     </div>
   );

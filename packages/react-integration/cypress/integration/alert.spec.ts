@@ -64,4 +64,19 @@ describe('Alert Demo Test', () => {
         cy.wrap(tooltipLink).trigger('mouseleave');
       });
   });
+
+  it('Verify expandable alert', () => {
+    cy.get('#expandable-alert')
+      .should('have.class', 'pf-m-expandable')
+      .should('not.have.class', 'pf-m-expanded')
+      .within(() => {
+        cy.get('.pf-c-alert__description').should('not.exist');
+        cy.get('.pf-c-alert__toggle').click();
+        cy.get('.pf-c-alert__description').should('exist');
+        cy.root().should('have.class', 'pf-m-expanded');
+        cy.get('.pf-c-alert__toggle').click();
+        cy.get('.pf-c-alert__description').should('not.exist');
+        cy.root().should('not.have.class', 'pf-m-expanded');
+      });
+  });
 });

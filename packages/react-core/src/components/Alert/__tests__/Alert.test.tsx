@@ -93,6 +93,25 @@ Object.values(AlertVariant).forEach(variant => {
       expect(view).toMatchSnapshot();
     });
 
+    test('expandable variation', () => {
+      const view = mount(
+        <Alert variant={variant} title="Some title" isExpandable>
+          <p>Success alert description. This should tell the user more information about the alert.</p>
+        </Alert>
+      )
+      expect(view).toMatchSnapshot();
+    })
+
+    test('expandable variation description hidden', () => {
+      const wrapper = mount(
+        <Alert variant={variant} title="Some title" isExpandable>
+          <p>Success alert description. This should tell the user more information about the alert.</p>
+        </Alert>
+      )
+      const descriptionExists = wrapper.find('.pf-c-alert__description').exists();
+      expect(descriptionExists).toBeFalsy();
+    })
+
     test('Toast alerts match snapsnot', () => {
       const view = mount(
         <Alert isLiveRegion={true} variant={variant} aria-label={`${variant} toast alert`} title="Some title">

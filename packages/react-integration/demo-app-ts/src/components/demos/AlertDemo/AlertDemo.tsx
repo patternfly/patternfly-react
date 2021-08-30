@@ -62,6 +62,9 @@ export class AlertDemo extends React.Component<{}, AlertDemoState> {
         <Alert id="custom-icon-alert" title="Custom icon alert title" customIcon={<UserIcon />}>
           Custom icon alert description
         </Alert>
+        <Alert id="expandable-alert" title="Expandable alert title" isExpandable>
+          Expandable alert description
+        </Alert>
       </React.Fragment>
     );
   }
