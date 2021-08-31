@@ -10,8 +10,7 @@ interface Repository {
   lastCommit: string;
 }
 
-// TODO FIXME this isn't getting recognized by the docs site
-// type ExampleType = 'default' | 'compact' | 'compactBorderless';
+type ExampleType = 'default' | 'compact' | 'compactBorderless';
 
 export const ComposableTableBasic: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
@@ -22,14 +21,10 @@ export const ComposableTableBasic: React.FunctionComponent = () => {
   ];
 
   // This state is just for the ToggleGroup in this example and isn't necessary for TableComposable usage.
-  // TODO FIXME use ExampleType instead of string here
-  // const [exampleChoice, setExampleChoice] = React.useState<ExampleType>('default');
-  const [exampleChoice, setExampleChoice] = React.useState('default');
+  const [exampleChoice, setExampleChoice] = React.useState<ExampleType>('default');
   const onExampleTypeChange: ToggleGroupItemProps['onChange'] = (_isSelected, event) => {
     const id = event.currentTarget.id;
-    // TODO FIXME use ExampleType
-    // setExampleChoice(id as ExampleType);
-    setExampleChoice(id);
+    setExampleChoice(id as ExampleType);
   };
 
   return (

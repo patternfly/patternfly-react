@@ -84,9 +84,7 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
   // This is to prevent state from being based on row order index in case we later add sorting.
   // Note that this behavior is very similar to selection state.
   const initialExpandedRepoNames = repositories.filter(repo => !!repo.details).map(repo => repo.name); // Default to all expanded
-  // TODO put the generic type param back when the TS parser is fixed.
-  // const [expandedRepoNames, setExpandedRepoNames] = React.useState<string[]>(initialExpandedRepoNames);
-  const [expandedRepoNames, setExpandedRepoNames] = React.useState(initialExpandedRepoNames);
+  const [expandedRepoNames, setExpandedRepoNames] = React.useState<string[]>(initialExpandedRepoNames);
   const setRepoExpanded = (repo: Repository, isExpanding = true) =>
     setExpandedRepoNames(prevExpanded => {
       const otherExpandedRepoNames = prevExpanded.filter(r => r !== repo.name);

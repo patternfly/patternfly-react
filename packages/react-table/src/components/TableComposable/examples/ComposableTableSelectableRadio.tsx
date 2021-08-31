@@ -20,9 +20,7 @@ export const ComposableTableSelectableRadio: React.FunctionComponent = () => {
 
   // In this example, selected rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
-  // TODO put the generic type param back when the TS parser is fixed.
-  // const [selectedRepoName, setSelectedRepoName] = React.useState<string | null>(null);
-  const [selectedRepoName, setSelectedRepoName] = React.useState(null);
+  const [selectedRepoName, setSelectedRepoName] = React.useState<string | null>(null);
 
   return (
     <TableComposable aria-label="Selectable table">

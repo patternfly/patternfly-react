@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { TableComposable, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-table';
 
 interface Repository {
   name: string;
@@ -18,21 +18,15 @@ export const ComposableTableSortable: React.FunctionComponent = () => {
   ];
 
   // Index of the currently sorted column
-  // TODO put the type param back in this useState call when the TS parser is fixed
-  // const [activeSortIndex, setActiveSortIndex] = React.useState<number | null>(null);
-  const [activeSortIndex, setActiveSortIndex] = React.useState(null);
+  const [activeSortIndex, setActiveSortIndex] = React.useState<number | null>(null);
 
   // Sort direction of the currently sorted column
-  // TODO put the type param back in this useState call when the TS parser is fixed
-  // const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | null>(null);
-  const [activeSortDirection, setActiveSortDirection] = React.useState(null);
+  const [activeSortDirection, setActiveSortDirection] = React.useState<'asc' | 'desc' | null>(null);
 
   // Since OnSort specifies sorted columns by index, we need sortable values for our object by column index.
   // This example is trivial since our data objects just contain strings, but if the data was more complex
   // this would be a place to return simplified string or number versions of each column to sort by.
-  // TODO put the return type back on here when we can fix that issue with the TS parser
-  // const getSortableRowValues = (repo: Repository): (string | number)[] => {
-  const getSortableRowValues = (repo: Repository) => {
+  const getSortableRowValues = (repo: Repository): (string | number)[] => {
     const { name, branches, prs, workspaces, lastCommit } = repo;
     return [name, branches, prs, workspaces, lastCommit];
   };
@@ -44,8 +38,6 @@ export const ComposableTableSortable: React.FunctionComponent = () => {
     sortedRepositories = repositories.sort((a, b) => {
       const aValue = getSortableRowValues(a)[activeSortIndex];
       const bValue = getSortableRowValues(b)[activeSortIndex];
-      // TODO replace this numeric sort case when we can fix the TS issues with the return type on getSortableRowValues
-      /*
       if (typeof aValue === 'number') {
         // Numeric sort
         if (activeSortDirection === 'asc') {
@@ -53,19 +45,16 @@ export const ComposableTableSortable: React.FunctionComponent = () => {
         }
         return (bValue as number) - (aValue as number);
       } else {
-      */
-      // String sort
-      if (activeSortDirection === 'asc') {
-        return (aValue as string).localeCompare(bValue as string);
+        // String sort
+        if (activeSortDirection === 'asc') {
+          return (aValue as string).localeCompare(bValue as string);
+        }
+        return (bValue as string).localeCompare(aValue as string);
       }
-      return (bValue as string).localeCompare(aValue as string);
-      // }
     });
   }
 
-  // TODO put the return type back on here when we can fix that issue with the TS parser
-  // const getSortParams = (columnIndex: number): ThProps['sort'] => ({
-  const getSortParams = (columnIndex: number) => ({
+  const getSortParams = (columnIndex: number): ThProps['sort'] => ({
     sortBy: {
       index: activeSortIndex,
       direction: activeSortDirection,

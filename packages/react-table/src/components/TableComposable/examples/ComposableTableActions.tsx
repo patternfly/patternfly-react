@@ -7,7 +7,7 @@ import {
   ToggleGroupItem,
   ToggleGroupItemProps
 } from '@patternfly/react-core';
-import { TableComposable, Thead, Tr, Th, Tbody, Td, CustomActionsToggleProps } from '@patternfly/react-table';
+import { TableComposable, Thead, Tr, Th, Tbody, Td, CustomActionsToggleProps, TdProps } from '@patternfly/react-table';
 
 interface Repository {
   name: string;
@@ -17,8 +17,7 @@ interface Repository {
   lastCommit: string;
 }
 
-// TODO FIXME this isn't getting recognized by the docs site
-// type ExampleType = 'defaultToggle' | 'customToggle';
+type ExampleType = 'defaultToggle' | 'customToggle';
 
 export const ComposableTableActions: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
@@ -31,14 +30,10 @@ export const ComposableTableActions: React.FunctionComponent = () => {
   ];
 
   // This state is just for the ToggleGroup in this example and isn't necessary for TableComposable usage.
-  // TODO FIXME use ExampleType instead of string here
-  // const [exampleChoice, setExampleChoice] = React.useState<ExampleType>('default');
-  const [exampleChoice, setExampleChoice] = React.useState('default');
+  const [exampleChoice, setExampleChoice] = React.useState<ExampleType>('defaultToggle');
   const onExampleTypeChange: ToggleGroupItemProps['onChange'] = (_isSelected, event) => {
     const id = event.currentTarget.id;
-    // TODO FIXME use ExampleType
-    // setExampleChoice(id as ExampleType);
-    setExampleChoice(id);
+    setExampleChoice(id as ExampleType);
   };
 
   const customActionsToggle = (props: CustomActionsToggleProps) => (
@@ -47,9 +42,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
     </DropdownToggle>
   );
 
-  // TODO add this type annotation back when the TS parser is fixed
-  // const defaultActions: TdProps['actions']['items'] = [
-  const defaultActions = [
+  const defaultActions: TdProps['actions']['items'] = [
     {
       title: 'Some action',
       onClick: (_event, rowIndex, _rowData, _extra) => console.log(`clicked on Some action, on row ${rowIndex}`)
@@ -72,9 +65,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
     }
   ];
 
-  // TODO add this type annotation back when the TS parser is fixed
-  // const lastRowActions: TdProps['actions']['items'] = [
-  const lastRowActions = [
+  const lastRowActions: TdProps['actions']['items'] = [
     {
       title: 'Some action',
       onClick: (_event, rowIndex, _rowData, _extra) => console.log(`clicked on Some action, on row ${rowIndex}`)
@@ -121,9 +112,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
         <Tbody>
           {repositories.map(repo => {
             // Arbitrary logic to determine which rows get which actions in this example
-            // TODO add this type annotation back when the TS parser is fixed
-            // let rowActions: TdProps['actions']['items'] = defaultActions;
-            let rowActions: any = defaultActions;
+            let rowActions: TdProps['actions']['items'] = defaultActions;
             if (repo.name === 'a') {
               rowActions = null;
             }
