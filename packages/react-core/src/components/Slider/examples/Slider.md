@@ -190,7 +190,7 @@ class ValueInput extends React.Component {
       { value: 100, label: '100%' }
     ];
 
-    this.onChangeDiscrete = (value, inputValue) => {
+    this.onChangeDiscrete = (value, inputValue, setLocalInputValue) => {
 
       let newValue;
       let newInputValue;
@@ -204,19 +204,28 @@ class ValueInput extends React.Component {
         const maxValue =  Number(this.stepsDiscrete[this.stepsDiscrete.length -1].label);
         if (inputValue > maxValue) {
           newValue = Number(this.stepsDiscrete[this.stepsDiscrete.length -1].value);
-          newInputValue =  maxValue
+          newInputValue =  maxValue;
+          setLocalInputValue(maxValue);
         } else {
-          const stepIndex = this.stepsDiscrete.findIndex(step => Number(step.label) >= inputValue);
-          if (Number(this.stepsDiscrete[stepIndex].label) === inputValue) {
-            newValue = this.stepsDiscrete[stepIndex].value;
+          const minValue =  Number(this.stepsDiscrete[0].label);
+          if (inputValue < minValue) {
+            newValue = Number(this.stepsDiscrete[0].value);
+            newInputValue =  minValue;
+            setLocalInputValue(minValue);
           } else {
-            const midpoint = (Number(this.stepsDiscrete[stepIndex].label) + Number(this.stepsDiscrete[stepIndex - 1].label)) / 2;
-            if (midpoint > inputValue) {
-              newValue = this.stepsDiscrete[stepIndex - 1].value;
-              newInputValue = Number(this.stepsDiscrete[stepIndex - 1].label);
-            } else {
+            const stepIndex = this.stepsDiscrete.findIndex(step => Number(step.label) >= inputValue);
+            if (Number(this.stepsDiscrete[stepIndex].label) === inputValue) {
               newValue = this.stepsDiscrete[stepIndex].value;
-              newInputValue = Number(this.stepsDiscrete[stepIndex].label);
+              newInputValue = inputValue;
+            } else {
+              const midpoint = (Number(this.stepsDiscrete[stepIndex].label) + Number(this.stepsDiscrete[stepIndex - 1].label)) / 2;
+              if (midpoint > inputValue) {
+                newValue = this.stepsDiscrete[stepIndex - 1].value;
+                newInputValue = Number(this.stepsDiscrete[stepIndex - 1].label);
+              } else {
+                newValue = this.stepsDiscrete[stepIndex].value;
+                newInputValue = Number(this.stepsDiscrete[stepIndex].label);
+              }
             }
           }
         }
@@ -228,7 +237,7 @@ class ValueInput extends React.Component {
       });
     };
 
-    this.onChangePercent = (value, inputValue) => {
+    this.onChangePercent = (value, inputValue, setLocalInputValue) => {
       let newValue;
       let newInputValue;
 
@@ -237,23 +246,31 @@ class ValueInput extends React.Component {
         newInputValue = step ? step.label.slice(0, -1) : 0;
         newInputValue = Number(newInputValue);
         newValue = value;
-      }  else {
+      } else {
         const maxValue =  Number(this.stepsPercent[this.stepsPercent.length -1].label.slice(0, -1));
         if (inputValue > maxValue) {
           newValue = Number(this.stepsPercent[this.stepsPercent.length -1].value);
           newInputValue =  maxValue;
+          setLocalInputValue(maxValue);
         } else {
-          const stepIndex = this.stepsPercent.findIndex(step => Number(step.label.slice(0, -1)) >= inputValue);
-          if (Number(this.stepsPercent[stepIndex].label.slice(0, -1)) === inputValue) {
-            newValue = this.stepsPercent[stepIndex].value;
+          const minValue =  Number(this.stepsPercent[0].label.slice(0, -1));
+          if (inputValue < minValue) {
+            newValue = minValue;
+            setLocalInputValue(minValue);
           } else {
-            const midpoint = (Number(this.stepsPercent[stepIndex].label.slice(0, -1)) + Number(this.stepsPercent[stepIndex - 1].label.slice(0, -1))) / 2;
-            if (midpoint > inputValue) {
-              newValue = this.stepsPercent[stepIndex - 1].value;
-              newInputValue = Number(this.stepsPercent[stepIndex - 1].label.slice(0, -1));
-            } else {
+            const stepIndex = this.stepsPercent.findIndex(step => Number(step.label.slice(0, -1)) >= inputValue);
+            if (Number(this.stepsPercent[stepIndex].label.slice(0, -1)) === inputValue) {
               newValue = this.stepsPercent[stepIndex].value;
-              newInputValue = Number(this.stepsPercent[stepIndex].label.slice(0, -1));
+              newInputValue = inputValue;
+            } else {
+              const midpoint = (Number(this.stepsPercent[stepIndex].label.slice(0, -1)) + Number(this.stepsPercent[stepIndex - 1].label.slice(0, -1))) / 2;
+              if (midpoint > inputValue) {
+                newValue = this.stepsPercent[stepIndex - 1].value;
+                newInputValue = Number(this.stepsPercent[stepIndex - 1].label.slice(0, -1));
+              } else {
+                newValue = this.stepsPercent[stepIndex].value;
+                newInputValue = Number(this.stepsPercent[stepIndex].label.slice(0, -1));
+              }
             }
           }
         }
@@ -265,12 +282,20 @@ class ValueInput extends React.Component {
       });
     };
 
-    this.onChangeContinuous = (value, inputValue) => { 
+    this.onChangeContinuous = (value, inputValue, setLocalInputValue) => { 
       let newValue;
       if (inputValue === undefined) { 
         newValue = Math.floor(value);
       } else {
-        newValue = inputValue > 100 ? 100 : Math.floor(inputValue);
+        if (inputValue > 100) {
+          newValue = 100;
+          setLocalInputValue(100);
+        } else if (inputValue < 0) {
+          newValue = 0;
+          setLocalInputValue(0);
+        } else {
+          newValue = Math.floor(inputValue);
+        }
       }
       this.setState({
         inputValueContinuous: newValue,
@@ -326,12 +351,20 @@ class ThumbValueInput extends React.Component {
       inputValue: 50
     };
 
-    this.onChange = (value, inputValue) => { 
+    this.onChange = (value, inputValue, setLocalInputValue) => { 
       let newValue;
       if (inputValue === undefined) { 
         newValue = Number(value).toFixed(2);
       } else {
-        newValue = inputValue > 100 ? 100 : Math.floor(inputValue);
+        if (inputValue > 100) {
+          newValue = 100;
+          setLocalInputValue(100);
+        } else if (inputValue < 0) {
+          newValue = 0;
+          setLocalInputValue(0);
+        } else {
+          newValue = Math.floor(inputValue);
+        }
       }
       this.setState({
         value: newValue,
@@ -382,12 +415,20 @@ class SliderActions extends React.Component {
       });
     };
 
-    this.onChange2 =(value, inputValue) => { 
+    this.onChange2 =(value, inputValue, setLocalInputValue) => { 
       let newValue;
       if (inputValue === undefined) { 
         newValue = Math.floor(Number(value));
       } else {
-        newValue = inputValue > 100 ? 100 : Math.floor(inputValue);
+        if (inputValue > 100) {
+          newValue = 100;
+          setLocalInputValue(100);
+        } else if (inputValue < 0) {
+          newValue = 0;
+          setLocalInputValue(0);
+        } else {
+          newValue = Math.floor(inputValue);
+        }
       }
       this.setState({
         value2: newValue,
