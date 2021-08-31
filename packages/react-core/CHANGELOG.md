@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.152.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.152.5...@patternfly/react-core@4.152.6) (2021-08-31)
+
+
+### Bug Fixes
+
+* **Slider:** update slider to respect min/max constraints ([#6232](https://github.com/patternfly/patternfly-react/issues/6232)) ([11dd20e](https://github.com/patternfly/patternfly-react/commit/11dd20e34ed7f1dafc3043e061b9f3e6f221daa2))
+
+
+
+
+
 ## [4.152.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.152.4...@patternfly/react-core@4.152.5) (2021-08-30)
 
 **Note:** Version bump only for package @patternfly/react-core
