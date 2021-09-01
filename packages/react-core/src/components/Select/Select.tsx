@@ -408,16 +408,26 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     if (typeaheadFilteredChildren.length === 0) {
       !isCreatable &&
         typeaheadFilteredChildren.push(
-          <SelectOption isDisabled key={0} value={noResultsFoundText} isNoResultsOption />
+          <SelectOption isDisabled key="no-results" value={noResultsFoundText} isNoResultsOption />
         );
     }
     if (isCreatable && typeaheadInputValue !== '') {
       const newValue = typeaheadInputValue;
-      typeaheadFilteredChildren.push(
-        <SelectOption key={0} value={newValue} onClick={() => onCreateOption && onCreateOption(newValue)}>
-          {createText} "{newValue}"
-        </SelectOption>
-      );
+      if (
+        !typeaheadFilteredChildren.find(
+          (i: React.ReactElement) => i.props.value.toLowerCase() === newValue.toLowerCase()
+        )
+      ) {
+        typeaheadFilteredChildren.push(
+          <SelectOption
+            key={`create ${newValue}`}
+            value={newValue}
+            onClick={() => onCreateOption && onCreateOption(newValue)}
+          >
+            {createText} "{newValue}"
+          </SelectOption>
+        );
+      }
     }
 
     this.setState({
