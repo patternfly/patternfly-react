@@ -34,6 +34,7 @@ exports[`Dark Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-5"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -56,6 +57,7 @@ exports[`Dark Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-6"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -78,6 +80,7 @@ exports[`Dark Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-7"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -100,6 +103,7 @@ exports[`Dark Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-8"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -149,6 +153,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-1"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -170,6 +175,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-2"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -191,6 +197,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-3"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -212,6 +219,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-4"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -264,6 +272,7 @@ exports[`Default Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-1"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -286,6 +295,7 @@ exports[`Default Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-2"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -308,6 +318,7 @@ exports[`Default Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-3"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -330,6 +341,7 @@ exports[`Default Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-4"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -444,6 +456,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                     data-ouia-component-id="OUIA-Generated-NavItem-5"
                     data-ouia-component-type="PF4/NavItem"
                     data-ouia-safe={true}
+                    onMouseOver={[Function]}
                   >
                     <a
                       aria-current={null}
@@ -465,6 +478,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                     data-ouia-component-id="OUIA-Generated-NavItem-6"
                     data-ouia-component-type="PF4/NavItem"
                     data-ouia-safe={true}
+                    onMouseOver={[Function]}
                   >
                     <a
                       aria-current={null}
@@ -486,6 +500,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                     data-ouia-component-id="OUIA-Generated-NavItem-7"
                     data-ouia-component-type="PF4/NavItem"
                     data-ouia-safe={true}
+                    onMouseOver={[Function]}
                   >
                     <a
                       aria-current={null}
@@ -507,6 +522,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                     data-ouia-component-id="OUIA-Generated-NavItem-8"
                     data-ouia-component-type="PF4/NavItem"
                     data-ouia-safe={true}
+                    onMouseOver={[Function]}
                   >
                     <a
                       aria-current={null}
@@ -625,6 +641,7 @@ exports[`Expandable Nav List 1`] = `
                     data-ouia-component-id="OUIA-Generated-NavItem-13"
                     data-ouia-component-type="PF4/NavItem"
                     data-ouia-safe={true}
+                    onMouseOver={[Function]}
                   >
                     <a
                       aria-current={null}
@@ -646,6 +663,7 @@ exports[`Expandable Nav List 1`] = `
                     data-ouia-component-id="OUIA-Generated-NavItem-14"
                     data-ouia-component-type="PF4/NavItem"
                     data-ouia-safe={true}
+                    onMouseOver={[Function]}
                   >
                     <a
                       aria-current={null}
@@ -667,6 +685,7 @@ exports[`Expandable Nav List 1`] = `
                     data-ouia-component-id="OUIA-Generated-NavItem-15"
                     data-ouia-component-type="PF4/NavItem"
                     data-ouia-safe={true}
+                    onMouseOver={[Function]}
                   >
                     <a
                       aria-current={null}
@@ -688,6 +707,7 @@ exports[`Expandable Nav List 1`] = `
                     data-ouia-component-id="OUIA-Generated-NavItem-16"
                     data-ouia-component-type="PF4/NavItem"
                     data-ouia-safe={true}
+                    onMouseOver={[Function]}
                   >
                     <a
                       aria-current={null}
@@ -813,6 +833,7 @@ exports[`Expandable Nav List with aria label 1`] = `
                     data-ouia-component-id="OUIA-Generated-NavItem-21"
                     data-ouia-component-type="PF4/NavItem"
                     data-ouia-safe={true}
+                    onMouseOver={[Function]}
                   >
                     <a
                       aria-current={null}
@@ -834,6 +855,7 @@ exports[`Expandable Nav List with aria label 1`] = `
                     data-ouia-component-id="OUIA-Generated-NavItem-22"
                     data-ouia-component-type="PF4/NavItem"
                     data-ouia-safe={true}
+                    onMouseOver={[Function]}
                   >
                     <a
                       aria-current={null}
@@ -855,6 +877,7 @@ exports[`Expandable Nav List with aria label 1`] = `
                     data-ouia-component-id="OUIA-Generated-NavItem-23"
                     data-ouia-component-type="PF4/NavItem"
                     data-ouia-safe={true}
+                    onMouseOver={[Function]}
                   >
                     <a
                       aria-current={null}
@@ -876,6 +899,7 @@ exports[`Expandable Nav List with aria label 1`] = `
                     data-ouia-component-id="OUIA-Generated-NavItem-24"
                     data-ouia-component-type="PF4/NavItem"
                     data-ouia-safe={true}
+                    onMouseOver={[Function]}
                   >
                     <a
                       aria-current={null}
@@ -962,6 +986,7 @@ exports[`Horizontal Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-33"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -983,6 +1008,7 @@ exports[`Horizontal Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-34"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -1004,6 +1030,7 @@ exports[`Horizontal Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-35"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -1025,6 +1052,7 @@ exports[`Horizontal Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-36"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -1139,6 +1167,7 @@ exports[`Horizontal SubNav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-37"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -1160,6 +1189,7 @@ exports[`Horizontal SubNav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-38"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -1181,6 +1211,7 @@ exports[`Horizontal SubNav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-39"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -1202,6 +1233,7 @@ exports[`Horizontal SubNav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-40"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -1300,6 +1332,7 @@ exports[`Nav Grouped List 1`] = `
                   data-ouia-component-id="OUIA-Generated-NavItem-25"
                   data-ouia-component-type="PF4/NavItem"
                   data-ouia-safe={true}
+                  onMouseOver={[Function]}
                 >
                   <a
                     aria-current={null}
@@ -1321,6 +1354,7 @@ exports[`Nav Grouped List 1`] = `
                   data-ouia-component-id="OUIA-Generated-NavItem-26"
                   data-ouia-component-type="PF4/NavItem"
                   data-ouia-safe={true}
+                  onMouseOver={[Function]}
                 >
                   <a
                     aria-current={null}
@@ -1342,6 +1376,7 @@ exports[`Nav Grouped List 1`] = `
                   data-ouia-component-id="OUIA-Generated-NavItem-27"
                   data-ouia-component-type="PF4/NavItem"
                   data-ouia-safe={true}
+                  onMouseOver={[Function]}
                 >
                   <a
                     aria-current={null}
@@ -1363,6 +1398,7 @@ exports[`Nav Grouped List 1`] = `
                   data-ouia-component-id="OUIA-Generated-NavItem-28"
                   data-ouia-component-type="PF4/NavItem"
                   data-ouia-safe={true}
+                  onMouseOver={[Function]}
                 >
                   <a
                     aria-current={null}
@@ -1414,6 +1450,7 @@ exports[`Nav Grouped List 1`] = `
                   data-ouia-component-id="OUIA-Generated-NavItem-29"
                   data-ouia-component-type="PF4/NavItem"
                   data-ouia-safe={true}
+                  onMouseOver={[Function]}
                 >
                   <a
                     aria-current={null}
@@ -1435,6 +1472,7 @@ exports[`Nav Grouped List 1`] = `
                   data-ouia-component-id="OUIA-Generated-NavItem-30"
                   data-ouia-component-type="PF4/NavItem"
                   data-ouia-safe={true}
+                  onMouseOver={[Function]}
                 >
                   <a
                     aria-current={null}
@@ -1456,6 +1494,7 @@ exports[`Nav Grouped List 1`] = `
                   data-ouia-component-id="OUIA-Generated-NavItem-31"
                   data-ouia-component-type="PF4/NavItem"
                   data-ouia-safe={true}
+                  onMouseOver={[Function]}
                 >
                   <a
                     aria-current={null}
@@ -1477,6 +1516,7 @@ exports[`Nav Grouped List 1`] = `
                   data-ouia-component-id="OUIA-Generated-NavItem-32"
                   data-ouia-component-type="PF4/NavItem"
                   data-ouia-safe={true}
+                  onMouseOver={[Function]}
                 >
                   <a
                     aria-current={null}
@@ -1562,6 +1602,7 @@ exports[`Nav List with custom item nodes 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-45"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <div
               aria-current={null}
@@ -1642,6 +1683,7 @@ exports[`Simple Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-9"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -1663,6 +1705,7 @@ exports[`Simple Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-10"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -1684,6 +1727,7 @@ exports[`Simple Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-11"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -1705,6 +1749,7 @@ exports[`Simple Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-12"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -1787,6 +1832,7 @@ exports[`Tertiary Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-41"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -1808,6 +1854,7 @@ exports[`Tertiary Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-42"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -1829,6 +1876,7 @@ exports[`Tertiary Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-43"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}
@@ -1850,6 +1898,7 @@ exports[`Tertiary Nav List 1`] = `
             data-ouia-component-id="OUIA-Generated-NavItem-44"
             data-ouia-component-type="PF4/NavItem"
             data-ouia-safe={true}
+            onMouseOver={[Function]}
           >
             <a
               aria-current={null}

@@ -35,7 +35,7 @@ export interface NavProps
   /** Indicates which theme color to use */
   theme?: 'dark' | 'light';
   /** For horizontal navs */
-  variant?: 'default' | 'horizontal' | 'tertiary' | 'horizontal-subnav';
+  variant?: 'default' | 'horizontal' | 'tertiary' | 'horizontal-subnav' | 'subnav';
 }
 
 export const NavContext = React.createContext<{
@@ -55,9 +55,15 @@ export const NavContext = React.createContext<{
   onToggle?: (event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) => void;
   updateIsScrollable?: (isScrollable: boolean) => void;
   isHorizontal?: boolean;
+  flyoutRef?: React.Ref<HTMLLIElement>;
+  setFlyoutRef?: (ref: React.Ref<HTMLLIElement>) => void;
+  disableHover?: boolean;
 }>({});
 
-export class Nav extends React.Component<NavProps, { isScrollable: boolean; ouiaStateId: string }> {
+export class Nav extends React.Component<
+  NavProps,
+  { isScrollable: boolean; ouiaStateId: string; flyoutRef: React.Ref<HTMLLIElement> | null; disableHover: boolean }
+> {
   static displayName = 'Nav';
   static defaultProps: NavProps = {
     onSelect: () => undefined,
@@ -68,7 +74,9 @@ export class Nav extends React.Component<NavProps, { isScrollable: boolean; ouia
 
   state = {
     isScrollable: false,
-    ouiaStateId: getDefaultOUIAId(Nav.displayName, this.props.variant)
+    ouiaStateId: getDefaultOUIAId(Nav.displayName, this.props.variant),
+    flyoutRef: null as React.Ref<HTMLLIElement>,
+    disableHover: false
   };
 
   // Callback from NavItem
@@ -116,6 +124,7 @@ export class Nav extends React.Component<NavProps, { isScrollable: boolean; ouia
       ...props
     } = this.props;
     const isHorizontal = ['horizontal', 'tertiary'].includes(variant);
+    const Component = variant === 'subnav' ? 'section' : 'nav';
 
     return (
       <NavContext.Provider
@@ -136,12 +145,16 @@ export class Nav extends React.Component<NavProps, { isScrollable: boolean; ouia
           onToggle: (event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) =>
             this.onToggle(event, groupId, expanded),
           updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable }),
-          isHorizontal: ['horizontal', 'tertiary', 'horizontal-subnav'].includes(variant)
+          isHorizontal: ['horizontal', 'tertiary', 'horizontal-subnav'].includes(variant),
+          flyoutRef: this.state.flyoutRef,
+          setFlyoutRef: flyoutRef => this.setState({ flyoutRef }),
+          disableHover: this.state.disableHover
         }}
       >
-        <nav
+        <Component
           className={css(
-            styles.nav,
+            variant !== 'subnav' && styles.nav,
+            variant === 'subnav' && styles.navSubnav,
             theme === 'light' && styles.modifiers.light,
             isHorizontal && styles.modifiers.horizontal,
             variant === 'tertiary' && styles.modifiers.tertiary,
@@ -154,7 +167,7 @@ export class Nav extends React.Component<NavProps, { isScrollable: boolean; ouia
           {...props}
         >
           {children}
-        </nav>
+        </Component>
       </NavContext.Provider>
     );
   }
