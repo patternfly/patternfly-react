@@ -18,6 +18,12 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
   tabContentRef?: React.RefObject<any>;
   /** whether to render the tab or not */
   isHidden?: boolean;
+  /** Adds disabled styling and disables the button using the disabled html attribute */
+  isDisabled?: boolean;
+  /** Adds disabled styling and communicates that the button is disabled using the aria-disabled html attribute */
+  isAriaDisabled?: boolean;
+  /** Events to prevent when the button is in an aria-disabled state */
+  inoperableEvents?: string[];
 }
 
 /** The parent <Tabs> component accecesses this component's propeties directly in order to present each Tab */

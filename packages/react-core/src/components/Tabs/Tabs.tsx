@@ -314,12 +314,25 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
                 ouiaId: childOuiaId,
                 // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 isHidden,
+                isDisabled,
+                isAriaDisabled,
+                inoperableEvents = ['onClick', 'onKeyPress'],
+                href,
                 ...rest
               } = child.props;
               let ariaControls = tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`;
               if ((mountOnEnter || unmountOnExit) && eventKey !== localActiveKey) {
                 ariaControls = undefined;
               }
+              const preventedEvents = inoperableEvents.reduce(
+                (handlers, eventToPrevent) => ({
+                  ...handlers,
+                  [eventToPrevent]: (event: React.SyntheticEvent<HTMLButtonElement>) => {
+                    event.preventDefault();
+                  }
+                }),
+                {}
+              );
               return (
                 <li
                   key={index}
@@ -330,8 +343,15 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
                   )}
                 >
                   <TabButton
-                    className={css(styles.tabsLink)}
+                    className={css(
+                      styles.tabsLink,
+                      isDisabled && href && styles.modifiers.disabled,
+                      isAriaDisabled && styles.modifiers.ariaDisabled
+                    )}
+                    disabled={isDisabled}
+                    aria-disabled={isDisabled || isAriaDisabled}
                     onClick={(event: any) => this.handleTabClick(event, eventKey, tabContentRef, mountOnEnter)}
+                    {...(isAriaDisabled ? preventedEvents : null)}
                     id={`pf-tab-${eventKey}-${childId || uniqueId}`}
                     aria-controls={ariaControls}
                     tabContentRef={tabContentRef}
