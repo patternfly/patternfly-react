@@ -383,7 +383,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           typeaheadInputValue.toString() !== ''
             ? childrenArray.filter(child => {
                 const valueToCheck = child.props.value;
-                // Dividers don't have value and should not be filtered
+                // Dividers don't have value, they will be handled after the whole collection is filtered
                 if (!valueToCheck) {
                   return true;
                 }
@@ -400,6 +400,10 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 }
               })
             : childrenArray;
+        if (typeaheadInputValue.toString() !== '') {
+          // filter out Dividers if necessary
+          typeaheadFilteredChildren = this.pruneDividers(typeaheadFilteredChildren);
+        }
       }
     }
     if (!typeaheadFilteredChildren) {
@@ -448,6 +452,23 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       typeaheadCurrIndex: -1
     });
   };
+
+  // remove superfluous Dividers from the filtered collection
+  pruneDividers(typeaheadFilteredChildren: any[]) {
+    const filtered = [];
+    let skip = true;
+    for (const child of typeaheadFilteredChildren) {
+      if (!child.props.value && skip) {
+        continue;
+      }
+      skip = !child.props.value;
+      filtered.push(child);
+    }
+    if (skip) {
+      filtered.pop();
+    }
+    return filtered;
+  }
 
   extendTypeaheadChildren(typeaheadCurrIndex: number, favoritesGroup?: React.ReactNode[]) {
     const { isGrouped, onFavorite } = this.props;
