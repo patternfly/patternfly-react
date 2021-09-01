@@ -219,12 +219,15 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
 
     /* If custom steps are discrete, snap to closest step value */
     if (!areCustomStepsContinuous && customSteps) {
-      const stepIndex = customSteps.findIndex(stepObj => stepObj.value >= newPercentage);
-      if (customSteps[stepIndex].value === newPercentage) {
+      const numSteps = customSteps.length - 1;
+      const percentagePerStep = 100 / numSteps;
+      const customStepPercentage = newPercentage / percentagePerStep;
+      const stepIndex = customSteps.findIndex(stepObj => stepObj.value >= customStepPercentage);
+      if (customSteps[stepIndex].value === customStepPercentage) {
         snapValue = customSteps[stepIndex].value;
       } else {
         const midpoint = (customSteps[stepIndex].value + customSteps[stepIndex - 1].value) / 2;
-        if (midpoint > newPercentage) {
+        if (midpoint > customStepPercentage) {
           snapValue = customSteps[stepIndex - 1].value;
         } else {
           snapValue = customSteps[stepIndex].value;
@@ -310,10 +313,11 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     }
   };
 
+  const getStepValue = (val: number, min: number, max: number) => ((val - min) * 100) / (max - min);
   const buildSteps = () => {
     const builtSteps = [];
     for (let i = min; i <= max; i = i + step) {
-      const stepValue = ((i - min) * 100) / (max - min);
+      const stepValue = getStepValue(i, min, max);
 
       // If we boundaries but not ticks just generate the needed steps
       // so that we don't pullute them DOM with empty divs
@@ -344,15 +348,21 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
         </div>
         {customSteps && (
           <div className={css(styles.sliderSteps)} aria-hidden="true">
-            {customSteps.map(stepObj => (
-              <SliderStep
-                key={stepObj.value}
-                value={stepObj.value}
-                label={stepObj.label}
-                isLabelHidden={stepObj.isLabelHidden}
-                isActive={stepObj.value <= localValue}
-              />
-            ))}
+            {customSteps.map(stepObj => {
+              const minValue = customSteps[0].value;
+              const maxValue = customSteps[customSteps.length - 1].value;
+              const stepValue = getStepValue(stepObj.value, minValue, maxValue);
+
+              return (
+                <SliderStep
+                  key={stepObj.value}
+                  value={stepValue}
+                  label={stepObj.label}
+                  isLabelHidden={stepObj.isLabelHidden}
+                  isActive={stepObj.value <= localValue}
+                />
+              );
+            })}
           </div>
         )}
         {!customSteps && (showTicks || showBoundaries) && (
