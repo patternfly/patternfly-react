@@ -32,7 +32,8 @@
     "@patternfly/react-core": "^4.152.7",
     "@patternfly/react-icons": "^4.11.15",
     "@patternfly/react-styles": "^4.11.14",
-    "memoize-one": "^5.1.0"
+    "memoize-one": "^5.1.0",
+    "resize-observer-polyfill": "^1.5.1"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0",
