@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.153.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.152.7...@patternfly/react-core@4.153.0) (2021-09-01)
+
+
+### Bug Fixes
+
+* **Slider:** fixed customSteps spacing to respect min/max ([#6231](https://github.com/patternfly/patternfly-react/issues/6231)) ([ed777b2](https://github.com/patternfly/patternfly-react/commit/ed777b2288167bd42fe4e5564510b1ef135164fa))
+
+
+### Features
+
+* **DualListSelector:** add arguments to onOptionsSelect ([#6224](https://github.com/patternfly/patternfly-react/issues/6224)) ([#6225](https://github.com/patternfly/patternfly-react/issues/6225)) ([a59c4af](https://github.com/patternfly/patternfly-react/commit/a59c4afc84a7892035c9c80dd1c7b1d431406619))
+
+
+
+
+
 ## [4.152.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.152.6...@patternfly/react-core@4.152.7) (2021-08-31)
 
 **Note:** Version bump only for package @patternfly/react-core

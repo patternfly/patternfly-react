@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.47](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.3.46...@patternfly/react-code-editor@4.3.47) (2021-09-01)
+
+
+### Bug Fixes
+
+* **code-editor:** replace hardcoded empty state text with props and update microcopy ([#6241](https://github.com/patternfly/patternfly-react/issues/6241)) ([9cdd64b](https://github.com/patternfly/patternfly-react/commit/9cdd64bf9d2e63b2a7fa4bf905ed90e8cc64cc08))
+
+
+
+
+
 ## [4.3.46](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-code-editor@4.3.45...@patternfly/react-code-editor@4.3.46) (2021-08-31)
 
 
