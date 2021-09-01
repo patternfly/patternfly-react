@@ -444,7 +444,7 @@ const cardData = {
       title: '5 Clusters',
       content: [
         {
-          icon: <CheckCircleIcon style={{color: 'var(--pf-global--success-color--100)'}} />
+          icon: <CheckCircleIcon color='var(--pf-global--success-color--100)' />
         }
       ],
       layout: 'icon'
@@ -453,7 +453,7 @@ const cardData = {
       title: '15 Clusters',
       content: [
         {
-          icon: <ExclamationTriangleIcon style={{color: 'var(--pf-global--warning-color--100)'}} />
+          icon: <ExclamationTriangleIcon color='var(--pf-global--warning-color--100)' />
         }
       ],
       layout: 'icon'
@@ -462,7 +462,7 @@ const cardData = {
       title: '3 Clusters',
       content: [
         {
-          icon: <TimesCircleIcon style={{color: 'var(--pf-global--danger-color--100)'}} />
+          icon: <TimesCircleIcon color='var(--pf-global--danger-color--100)' />
         }
       ],
       layout: 'icon'
@@ -473,11 +473,11 @@ const cardData = {
       title: '10 Hosts',
       content: [
         {
-          icon: <ExclamationCircleIcon style={{color: 'var(--pf-global--success-color--100)'}} />,
+          icon: <ExclamationCircleIcon color='var(--pf-global--success-color--100)' />,
           count: 2
         },
         {
-          icon: <ExclamationTriangleIcon style={{color: 'var(--pf-global--warning-color--100)'}} />,
+          icon: <ExclamationTriangleIcon color='var(--pf-global--warning-color--100)' />,
           count: 1
         }
       ],
@@ -487,11 +487,11 @@ const cardData = {
       title: '50 Hosts',
       content: [
         {
-          icon: <CheckCircleIcon style={{color: 'var(--pf-global--success-color--100)'}} />,
+          icon: <CheckCircleIcon color='var(--pf-global--success-color--100)' />,
           count: 5
         },
         {
-          icon: <TimesCircleIcon style={{color: 'var(--pf-global--danger-color--100)'}} />,
+          icon: <TimesCircleIcon color='var(--pf-global--danger-color--100)' />,
           count: 12
         }
       ],
@@ -501,11 +501,11 @@ const cardData = {
       title: '12 Hosts',
       content: [
         {
-          icon: <ExclamationTriangleIcon style={{color: 'var(--pf-global--warning-color--100)'}} />,
+          icon: <ExclamationTriangleIcon color='var(--pf-global--warning-color--100)' />,
           count: 3
         },
         {
-          icon: <TimesCircleIcon style={{color: 'var(--pf-global--danger-color--100)'}} />,
+          icon: <TimesCircleIcon color='var(--pf-global--danger-color--100)' />,
           count: 7
         }
       ],
@@ -517,12 +517,12 @@ const cardData = {
       title: '13 Hosts',
       content: [
         {
-          icon: <TimesCircleIcon style={{color: 'var(--pf-global--danger-color--100)'}} />,
+          icon: <TimesCircleIcon color='var(--pf-global--danger-color--100)' />,
           status: '2 errors',
           subtitle: 'subtitle'
         },
         {
-          icon: <ExclamationTriangleIcon style={{color: 'var(--pf-global--warning-color--100)'}} />,
+          icon: <ExclamationTriangleIcon color='var(--pf-global--warning-color--100)' />,
           status: '1 warning',
           subtitle: 'subtitle'
         }
@@ -533,12 +533,12 @@ const cardData = {
       title: '3 Hosts',
       content: [
         {
-          icon: <CheckCircleIcon style={{color: 'var(--pf-global--success-color--100)'}} />,
+          icon: <CheckCircleIcon color='var(--pf-global--success-color--100)' />,
           status: '2 successes',
           subtitle: 'subtitle'
         },
         {
-          icon: <ExclamationTriangleIcon style={{color: 'var(--pf-global--warning-color--100)'}} />,
+          icon: <ExclamationTriangleIcon color='var(--pf-global--warning-color--100)' />,
           status: '3 warnings',
           subtitle: 'subtitle'
         }
@@ -549,12 +549,12 @@ const cardData = {
       title: '50 Hosts',
       content: [
         {
-          icon: <ExclamationTriangleIcon style={{color: 'var(--pf-global--warning-color--100)'}} />,
+          icon: <ExclamationTriangleIcon color='var(--pf-global--warning-color--100)' />,
           status: '7 warnings',
           subtitle: 'subtitle'
         },
         {
-          icon: <TimesCircleIcon style={{color: 'var(--pf-global--danger-color--100)'}} />,
+          icon: <TimesCircleIcon color='var(--pf-global--danger-color--100)' />,
           status: '1 error',
           subtitle: 'subtitle'
         }
@@ -776,7 +776,7 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <CheckCircleIcon style={{color: 'var(--pf-global--success-color--100)'}} />
+              <CheckCircleIcon color='var(--pf-global--success-color--100)' />
             </FlexItem>
             <FlexItem>
               <span>Cluster</span>
@@ -786,7 +786,7 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <ExclamationCircleIcon style={{color: 'var(--pf-global--danger-color--100)'}} />
+              <ExclamationCircleIcon color='var(--pf-global--danger-color--100)' />
             </FlexItem>
             <FlexItem>
               <Popover headerContent="Control Panel Status" bodyContent={popoverBodyContent} minWidth="400px">
@@ -800,7 +800,7 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <ExclamationCircleIcon style={{color: 'var(--pf-global--danger-color--100)'}} />
+              <ExclamationCircleIcon color='var(--pf-global--danger-color--100)' />
             </FlexItem>
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
               <FlexItem>
@@ -815,7 +815,7 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <CheckCircleIcon style={{color: 'var(--pf-global--success-color--100)'}} />
+              <CheckCircleIcon color='var(--pf-global--success-color--100)' />
             </FlexItem>
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
               <FlexItem>
