@@ -14663,7 +14663,7 @@ resize-img@^1.1.0:
     jpeg-js "^0.1.1"
     parse-png "^1.1.1"
 
-resize-observer-polyfill@^1.5.0:
+resize-observer-polyfill@^1.5.0, resize-observer-polyfill@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
 
@@ -16097,10 +16097,10 @@ textextensions@^2.5.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/textextensions/-/textextensions-2.6.0.tgz#d7e4ab13fe54e32e08873be40d51b74229b00fc4"
 
-theme-patternfly-org@0.6.26:
-  version "0.6.26"
-  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.6.26.tgz#2de20372fe2e146b9daeb34e45d190081505b4d8"
-  integrity sha512-ab/ksS1AY6IdKs6nklo77c9SuSjUS4RXx+1FQeSxtL9Wbma2VaP0ix1+RsbaNU+Hk8dxYXiwIYbZkxf7yJ7+jw==
+theme-patternfly-org@0.6.36:
+  version "0.6.36"
+  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.6.36.tgz#8fe1aa94ad513dfba564329c7bb8138c4ec6dcfa"
+  integrity sha512-nFL1ysbpqJ01fGJV1M0r/yTOLWerLPMiMToRXKZjkslHBEKUsck7zbKKczLhKXn233tCJnrSRbmYZ7An97j0pg==
   dependencies:
     "@babel/core" "^7.13.0"
     "@babel/plugin-proposal-class-properties" "^7.13.0"
