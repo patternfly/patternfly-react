@@ -80,6 +80,7 @@ const TabBase: React.FunctionComponent<TabProps> = ({
         aria-controls={ariaControls}
         tabContentRef={tabContentRef}
         ouiaId={childOuiaId}
+        href={href}
         {...props}
       >
         {title}
