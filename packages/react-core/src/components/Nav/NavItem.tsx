@@ -135,6 +135,10 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     }
   };
 
+  const onMouseLeave = () => {
+    showFlyout(false);
+  };
+
   const handleFlyout = (event: React.KeyboardEvent) => {
     const key = event.key;
     const target = event.target as HTMLElement;
@@ -217,7 +221,8 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   return (
     <li
       {...(hasFlyout && {
-        onKeyDown: handleFlyout
+        onKeyDown: handleFlyout,
+        onMouseLeave
       })}
       onMouseOver={onMouseOver}
       className={css(styles.navItem, hasFlyout && styles.modifiers.flyout, className)}
