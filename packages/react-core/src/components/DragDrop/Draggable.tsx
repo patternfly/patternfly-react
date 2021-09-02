@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { createPortal } from 'react-dom';
-import { css } from '@patternfly/react-styles';
 
 interface DraggableProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside DragDrop */
@@ -16,18 +15,28 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   style: styleProp,
   ...props
 }: DraggableProps) => {
+  // eslint-disable-next-line prefer-const
   let [style, setStyle] = React.useState(styleProp);
   const [isDragging, setIsDragging] = React.useState(false);
-  let startX = 0, startY = 0;
+  let startX = 0;
+  let startY = 0;
 
   const ref = React.createRef<HTMLDivElement>();
 
+  const onTransitionEnd = (_ev: React.TransitionEvent<HTMLDivElement>) => {
+    setIsDragging(false);
+    setStyle(styleProp);
+  };
+
   const onMouseUp = (ev: MouseEvent) => {
     if (ev.button === 0) {
-      setStyle(styleProp);
+      setStyle({
+        ...style,
+        transition: 'transform 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s',
+        transform: ''
+      });
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseup', onMouseUp);
-      setIsDragging(false);
     }
   };
 
@@ -48,11 +57,10 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
       position: 'fixed',
       top: boundingClientRect.y,
       left: boundingClientRect.x,
-      width: ref.current.clientWidth,
-      height: ref.current.clientHeight,
+      width: boundingClientRect.width,
+      height: boundingClientRect.height,
       background: 'green',
-      zIndex: 5000,
-      transition: 'opacity 0.2s cubic-bezier(0.2, 0, 0, 1) 0s',
+      zIndex: 5000
     };
     setStyle(style);
     document.addEventListener('mousemove', onMouseMove);
@@ -68,7 +76,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
       role="button"
       className={className}
       onDragStart={onDragStart}
-      onDragEnd={() => console.log('onDragEnd')}
+      onTransitionEnd={onTransitionEnd}
       style={style}
       ref={ref}
       {...props}
@@ -77,7 +85,13 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     </div>
   );
 
-  return isDragging ? createPortal(div, document.body) : div;
-}
+  return (
+    <React.Fragment>
+      {/* Leave behind blank spot per-design */}
+      {isDragging && React.cloneElement(div, { style: { ...styleProp, visibility: 'hidden' } })}
+      {/* Move dragging part into portal to appear above side/top nav */}
+      {isDragging ? createPortal(div, document.body) : div}
+    </React.Fragment>
+  );
+};
 Draggable.displayName = 'Draggable';
-
