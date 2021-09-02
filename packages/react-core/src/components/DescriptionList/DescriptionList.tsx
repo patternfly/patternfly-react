@@ -24,6 +24,10 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
   isAutoColumnWidths?: boolean;
   /** Modifies the description list display to inline-grid. */
   isInlineGrid?: boolean;
+  /** Sets the description list to compact styling. */
+  isCompact?: boolean;
+  /** Sets a horizontal description list to have fluid styling. */
+  isFluid?: boolean;
   /** Sets the number of columns on the description list */
   columnModifier?: {
     default?: '1Col' | '2Col' | '3Col';
@@ -68,6 +72,8 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   isAutoColumnWidths,
   isAutoFit,
   isInlineGrid,
+  isCompact,
+  isFluid,
   columnModifier,
   autoFitMinModifier,
   orientation,
@@ -77,12 +83,14 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   <dl
     className={css(
       styles.descriptionList,
-      isHorizontal && styles.modifiers.horizontal,
+      (isHorizontal || isFluid) && styles.modifiers.horizontal,
       isAutoColumnWidths && styles.modifiers.autoColumnWidths,
       isAutoFit && styles.modifiers.autoFit,
       formatBreakpointMods(columnModifier, styles),
       formatBreakpointMods(orientation, styles),
       isInlineGrid && styles.modifiers.inlineGrid,
+      isCompact && styles.modifiers.compact,
+      isFluid && styles.modifiers.fluid,
       className
     )}
     style={

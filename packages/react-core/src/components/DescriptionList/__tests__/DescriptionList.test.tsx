@@ -39,6 +39,21 @@ describe('Description List', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('Compact Description List', () => {
+    const view = shallow(<DescriptionList isCompact />);
+    expect(view).toMatchSnapshot();
+  });
+
+  test('Compact Horizontal Description List', () => {
+    const view = shallow(<DescriptionList isCompact isHorizontal />);
+    expect(view).toMatchSnapshot();
+  });
+
+  test('Fluid Horizontal Description List', () => {
+    const view = shallow(<DescriptionList isFluid isHorizontal />);
+    expect(view).toMatchSnapshot();
+  });
+
   test('alignment breakpoints', () => {
     const view = mount(
       <DescriptionList

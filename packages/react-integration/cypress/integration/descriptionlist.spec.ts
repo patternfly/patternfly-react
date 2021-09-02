@@ -60,4 +60,12 @@ describe('Description List Demo Test', () => {
     ).click();
     cy.get('.pf-c-popover__content').should('exist');
   });
+
+  it('Verify compact list', () => {
+    cy.get('#compact-description-list').should('have.class', 'pf-m-compact');
+  });
+
+  it('Verify fluid list', () => {
+    cy.get('#fluid-description-list').should('have.class', 'pf-m-fluid');
+  });
 });
