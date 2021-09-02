@@ -288,6 +288,9 @@ type OnSelect = (
 ) => void;
 ```
 
+**Note:** This example has a `shift + select` feature where holding shift while
+checking checkboxes will check intermediate rows' checkboxes.
+
 ```ts file="ComposableTableSelectable.tsx"
 ```
 
