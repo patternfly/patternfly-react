@@ -6,7 +6,6 @@ import { PickOptional } from '../../helpers/typeUtils';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { getUniqueId, isElementInView, formatBreakpointMods } from '../../helpers/util';
-import { TabButton } from './TabButton';
 import { TabContent } from './TabContent';
 import { TabProps } from './Tab';
 import { TabsContextProvider } from './TabsContext';
@@ -113,8 +112,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
   handleTabClick(
     event: React.MouseEvent<HTMLElement, MouseEvent>,
     eventKey: number | string,
-    tabContentRef: React.RefObject<any>,
-    mountOnEnter: boolean
+    tabContentRef: React.RefObject<any>
   ) {
     const { shownKeys } = this.state;
     const { onSelect, defaultActiveKey } = this.props;
@@ -138,7 +136,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
         tabContentRef.current.hidden = false;
       }
     }
-    if (mountOnEnter) {
+    if (this.props.mountOnEnter) {
       this.setState({
         shownKeys: shownKeys.concat(eventKey)
       });
@@ -274,7 +272,16 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     const localActiveKey = defaultActiveKey !== undefined ? uncontrolledActiveKey : activeKey;
 
     return (
-      <TabsContextProvider value={{ variant }}>
+      <TabsContextProvider
+        value={{
+          variant,
+          mountOnEnter,
+          unmountOnExit,
+          localActiveKey,
+          uniqueId,
+          handleTabClick: (...args) => this.handleTabClick(...args)
+        }}
+      >
         <Component
           aria-label={ariaLabel}
           className={css(
@@ -303,66 +310,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             <AngleLeftIcon />
           </button>
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
-            {filteredChildren.map((child, index) => {
-              const {
-                title,
-                eventKey,
-                tabContentRef,
-                id: childId,
-                tabContentId,
-                className: childClassName = '',
-                ouiaId: childOuiaId,
-                // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                isHidden,
-                isDisabled,
-                isAriaDisabled,
-                inoperableEvents = ['onClick', 'onKeyPress'],
-                href,
-                ...rest
-              } = child.props;
-              let ariaControls = tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`;
-              if ((mountOnEnter || unmountOnExit) && eventKey !== localActiveKey) {
-                ariaControls = undefined;
-              }
-              const preventedEvents = inoperableEvents.reduce(
-                (handlers, eventToPrevent) => ({
-                  ...handlers,
-                  [eventToPrevent]: (event: React.SyntheticEvent<HTMLButtonElement>) => {
-                    event.preventDefault();
-                  }
-                }),
-                {}
-              );
-              return (
-                <li
-                  key={index}
-                  className={css(
-                    styles.tabsItem,
-                    eventKey === localActiveKey && styles.modifiers.current,
-                    childClassName
-                  )}
-                >
-                  <TabButton
-                    className={css(
-                      styles.tabsLink,
-                      isDisabled && href && styles.modifiers.disabled,
-                      isAriaDisabled && styles.modifiers.ariaDisabled
-                    )}
-                    disabled={isDisabled}
-                    aria-disabled={isDisabled || isAriaDisabled}
-                    onClick={(event: any) => this.handleTabClick(event, eventKey, tabContentRef, mountOnEnter)}
-                    {...(isAriaDisabled ? preventedEvents : null)}
-                    id={`pf-tab-${eventKey}-${childId || uniqueId}`}
-                    aria-controls={ariaControls}
-                    tabContentRef={tabContentRef}
-                    ouiaId={childOuiaId}
-                    {...rest}
-                  >
-                    {title}
-                  </TabButton>
-                </li>
-              );
-            })}
+            {filteredChildren}
           </ul>
           <button
             className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}

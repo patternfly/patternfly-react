@@ -2,10 +2,24 @@ import * as React from 'react';
 
 export interface TabsContextProps {
   variant: 'default' | 'light300';
+  mountOnEnter: boolean;
+  unmountOnExit: boolean;
+  localActiveKey: string | number;
+  uniqueId: string;
+  handleTabClick: (
+    event: React.MouseEvent<HTMLElement, MouseEvent>,
+    eventKey: number | string,
+    tabContentRef: React.RefObject<any>
+  ) => void;
 }
 
-const TabsContext = React.createContext<TabsContextProps>({
-  variant: 'default'
+export const TabsContext = React.createContext<TabsContextProps>({
+  variant: 'default',
+  mountOnEnter: false,
+  unmountOnExit: false,
+  localActiveKey: '',
+  uniqueId: '',
+  handleTabClick: () => null
 });
 
 export const TabsContextProvider = TabsContext.Provider;
