@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { createPortal } from 'react-dom';
+import { DroppableContext } from './Droppable';
+import { DragDropContext } from './DragDrop';
 
 interface DraggableProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside DragDrop */
@@ -18,6 +20,8 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   // eslint-disable-next-line prefer-const
   let [style, setStyle] = React.useState(styleProp);
   const [isDragging, setIsDragging] = React.useState(false);
+  const { zone } = React.useContext(DroppableContext);
+  const { setDraggingZone } = React.useContext(DragDropContext);
   let startX = 0;
   let startY = 0;
 
@@ -28,16 +32,16 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     setStyle(styleProp);
   };
 
-  const onMouseUp = (ev: MouseEvent) => {
-    if (ev.button === 0) {
-      setStyle({
-        ...style,
-        transition: 'transform 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s',
-        transform: ''
-      });
-      document.removeEventListener('mousemove', onMouseMove);
-      document.removeEventListener('mouseup', onMouseUp);
-    }
+  const onMouseUp = (_ev: MouseEvent) => {
+    setStyle({
+      ...style,
+      transition: 'transform 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s',
+      transform: '',
+      background: styleProp.background
+    });
+    document.removeEventListener('mousemove', onMouseMove);
+    document.removeEventListener('mouseup', onMouseUp);
+    setDraggingZone('');
   };
 
   const onMouseMove = (ev: MouseEvent) => {
@@ -50,6 +54,10 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
 
   const onDragStart = (ev: React.DragEvent<HTMLDivElement>) => {
     ev.preventDefault();
+    if (isDragging) {
+      // still in animation
+      return;
+    }
     onDragStartProp(ev);
     const boundingClientRect = ref.current.getBoundingClientRect();
     style = {
@@ -68,6 +76,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     startX = ev.pageX;
     startY = ev.pageY;
     setIsDragging(true);
+    setDraggingZone(zone);
   };
 
   const div = (
