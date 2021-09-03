@@ -30,7 +30,6 @@ export const AlertToggleExpandButton: React.FunctionComponent<AlertToggleExpandB
       onClick={onToggleExpand}
       aria-expanded={isExpanded}
       aria-label={ariaLabel === '' ? `Toggle ${variantLabel || alertVariantLabel} alert: ${title}` : ariaLabel}
-      aria-labeledby={`${title} toggle`}
       {...props}
     >
       <span className={css(styles.alertToggleIcon)}>
