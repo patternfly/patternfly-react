@@ -8,9 +8,9 @@ import { AboutModalContainer } from './AboutModalContainer';
 import { PickOptional } from '../../helpers/typeUtils';
 
 export interface AboutModalProps {
-  /** Content rendered inside the about modal  */
+  /** Content rendered inside the about modal */
   children: React.ReactNode;
-  /** Additional classes added to the about modal  */
+  /** Additional classes added to the about modal */
   className?: string;
   /** Flag to show the about modal  */
   isOpen?: boolean;
