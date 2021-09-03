@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { DragDropContext } from './DragDrop';
-
-export const DroppableContext = React.createContext({
-  zone: 'defaultZone'
-});
+import { DroppableContext } from './DroppableContext';
 
 interface DroppableProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside DragDrop */
@@ -24,7 +21,11 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
 
   return (
     <DroppableContext.Provider value={{ zone }}>
-      <div className={className} style={draggingZone === zone ? { background: 'blue' } : {}} {...props}>
+      <div
+        className={className}
+        style={draggingZone === zone ? { boxShadow: '0px 0px 0px 1px blue, 0px 2px 5px rgba(0, 0, 0, 0.2)' } : {}}
+        {...props}
+      >
         {children}
       </div>
     </DroppableContext.Provider>

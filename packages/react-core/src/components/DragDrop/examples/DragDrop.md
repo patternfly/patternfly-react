@@ -1,6 +1,11 @@
 ---
 id: Drag and drop
 section: components
+propComponents: [
+  DragDrop,
+  Draggable,
+  Droppable
+]
 ---
 
 You can use Draggable and Droppable components to move items in or between lists.
@@ -23,7 +28,7 @@ Basic = () => {
 
   return (
     <DragDrop>
-      <Droppable id="todolist">
+      <Droppable zone="basic">
         {items.map(({ id, content }) =>
           <Draggable key={id} style={{ padding: '8px' }}>
             {content}
@@ -54,7 +59,7 @@ Basic = () => {
     <DragDrop>
       <Split hasGutter>
         <SplitItem>
-          <Droppable id="todolist">
+          <Droppable zone="multizone">
             {items.map(({ id, content }) =>
               <Draggable key={id} style={{ padding: '8px' }}>
                 {content}
@@ -63,7 +68,7 @@ Basic = () => {
           </Droppable>
         </SplitItem>
         <SplitItem>
-          <Droppable id="todolist">
+          <Droppable zone="multizone">
             {items.map(({ id, content }) =>
               <Draggable key={id} style={{ padding: '8px' }}>
                 {content}
