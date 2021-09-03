@@ -53,39 +53,52 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
 
 ComplexToolbarLogViewer = () => {
-  const [isPaused, setIsPaused] = React.useState(false);
-  const [isFullScreen, setIsFullScreen] = React.useState(false);
-  const [currentItemCount, setCurrentItemCount] = React.useState(0);
-  const [selectedDataSource, setSelectedDataSource] = React.useState('container-1');
-  const [selectDataSourceOpen, setSelectDataSourceOpen] = React.useState(false);
-  const [timer, setTimer] = React.useState(null);
-
   const dataSources = {
     'container-1': { type: 'C', id: 'data1' },
     'container-2': { type: 'D', id: 'data2' },
     'container-3': { type: 'E', id: 'data3' }
   };
+  const [isPaused, setIsPaused] = React.useState(false);
+  const [isFullScreen, setIsFullScreen] = React.useState(false);
+  const [itemCount, setItemCount] = React.useState(1);
+  const [currentItemCount, setCurrentItemCount] = React.useState(0);
+  const [renderData, setRenderData] = React.useState('');
+  const [selectedDataSource, setSelectedDataSource] = React.useState('container-1');
+  const [selectDataSourceOpen, setSelectDataSourceOpen] = React.useState(false);
+  const [timer, setTimer] = React.useState(null);
+  const [selectedData, setSelectedData] = React.useState(data[dataSources[selectedDataSource].id].split('\n'));
+  const [buffer, setBuffer] = React.useState([]);
+  const [linesBehind, setLinesBehind] = React.useState(0);
 
   React.useEffect(() => {
-    if (!isPaused) {
-      setTimer(
-        window.setInterval(() => {
-          setCurrentItemCount(currentItemCount => currentItemCount + 1);
-        }, 1000)
-      );
-    } else {
-      timer && window.clearInterval(timer);
-    }
+    setTimer(
+      window.setInterval(() => {
+        setItemCount(itemCount => itemCount + 1);
+      }, 500)
+    );
     return () => {
       window.clearInterval(timer);
     };
-  }, [isPaused]);
+  }, []);
 
   React.useEffect(() => {
-    if (currentItemCount > 29) {
+    if (itemCount > selectedData.length) {
       window.clearInterval(timer);
+    } else {
+      setBuffer(selectedData.slice(0, itemCount));
     }
-  }, [currentItemCount]);
+  }, [itemCount]);
+
+  React.useEffect(() => {
+    if (!isPaused && buffer.length > 0) {
+      setCurrentItemCount(buffer.length);
+      setRenderData(buffer.join('\n'));
+    } else if (buffer.length !== currentItemCount) {
+      setLinesBehind(buffer.length - currentItemCount);
+    } else {
+      setLinesBehind(0);
+    }
+  }, [isPaused, buffer]);
 
   const onExpandClick = event => {
     const element = document.querySelector('#complex-toolbar-demo');
@@ -124,7 +137,7 @@ ComplexToolbarLogViewer = () => {
     document.body.removeChild(element);
   };
 
-  const onScroll = ({ scrollOffsetToBottom, scrollUpdateWasRequested }) => {
+  const onScroll = ({ scrollOffsetToBottom, scrollDirection, scrollUpdateWasRequested }) => {
     if (!scrollUpdateWasRequested) {
       if (scrollOffsetToBottom > 0) {
         setIsPaused(true);
@@ -180,6 +193,10 @@ ComplexToolbarLogViewer = () => {
             onSelect={(event, selection) => {
               setSelectDataSourceOpen(false);
               setSelectedDataSource(selection);
+              setSelectedData(data[dataSources[selection].id].split('\n'));
+              setLinesBehind(0);
+              setBuffer([]);
+              setItemCount(1);
               setCurrentItemCount(0);
             }}
             selections={selectedDataSource}
@@ -229,16 +246,15 @@ ComplexToolbarLogViewer = () => {
     return (
       <Button onClick={handleClick} isBlock>
         <OutlinedPlayCircleIcon />
-        resume
+        resume {linesBehind === 0 ? null : `and show ${linesBehind} lines`}
       </Button>
     );
   };
 
   return (
     <LogViewer
-      data={data[dataSources[selectedDataSource].id]}
+      data={renderData}
       id="complex-toolbar-demo"
-      itemCount={currentItemCount}
       scrollToRow={currentItemCount}
       toolbar={
         <Toolbar>
@@ -248,6 +264,7 @@ ComplexToolbarLogViewer = () => {
           </ToolbarContent>
         </Toolbar>
       }
+      overScanCount={linesBehind}
       footer={isPaused && <FooterButton />}
       onScroll={onScroll}
     />

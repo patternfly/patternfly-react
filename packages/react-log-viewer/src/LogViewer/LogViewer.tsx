@@ -137,7 +137,7 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
       if (scrollToRow && parsedData.length) {
         setRowInFocus(parsedData.length - 1);
         if (logViewerRef && logViewerRef.current) {
-          logViewerRef.current.scrollToItem(scrollToRow, 'center');
+          logViewerRef.current.scrollToItem(scrollToRow, 'auto');
         }
       }
     }, [parsedData, scrollToRow]);
