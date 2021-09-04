@@ -26,10 +26,10 @@ class SimpleTextFileUpload extends React.Component {
     super(props);
     this.state = { value: '', filename: '', isLoading: false };
     this.handleInputChange = (event, file) => this.setState({ filename: file.name });
-    this.handleTextChanged = value => { this.setState({ value });
+    this.handleDataChanged = value => this.setState({ value });
+    this.handleClear = event => this.setState({ filename: '', value: '' });
     this.handleFileReadStarted = fileHandle => this.setState({ isLoading: true });
     this.handleFileReadFinished = fileHandle => this.setState({ isLoading: false });
-    this.handleClear = event => this.setState({ filename: '', value: '' });
   }
 
   render() {
@@ -42,10 +42,10 @@ class SimpleTextFileUpload extends React.Component {
         filename={filename}
         filenamePlaceholder="Drag and drop a file or upload one"
         onInputChange={this.handleInputChange}
-        onTextChanged={this.handleDataChanged}
+        onDataChanged={this.handleDataChanged}
         onReadStarted={this.handleFileReadStarted}
         onReadFinished={this.handleFileReadFinished}
-        onClearButtonClick={this.handleClear}
+        onClearClicked={this.handleClear}
         isLoading={isLoading}
         browseButtonText="Upload"
       />
@@ -66,7 +66,9 @@ class TextFileWithEditsAllowed extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: '', filename: '', isLoading: false };
-    this.handleInputChange = (event,file) => this.setState({ value, file.name });
+    this.handleInputChange = (event, file) => this.setState({ filename: file.name });
+    this.handleTextOrDataChanged = value => this.setState({ value });
+    this.handleClear = event => this.setState({ filename: '', value: '' });
     this.handleFileReadStarted = fileHandle => this.setState({ isLoading: true });
     this.handleFileReadFinished = fileHandle => this.setState({ isLoading: false });
   }
@@ -80,7 +82,10 @@ class TextFileWithEditsAllowed extends React.Component {
         value={value}
         filename={filename}
         filenamePlaceholder="Drag and drop a file or upload one"
-        onChange={this.handleFileChange}
+        onInputChange={this.handleInputChange}
+        onDataChanged={this.handleTextOrDataChanged}
+        onClearClicked={this.handleClear}
+        onTextChanged={this.handleTextOrDataChanged}
         onReadStarted={this.handleFileReadStarted}
         onReadFinished={this.handleFileReadFinished}
         isLoading={isLoading}
@@ -110,9 +115,9 @@ class TextFileUploadWithRestrictions extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: '', filename: '', isLoading: false, isRejected: false };
-    this.handleInputChange = (event,file) => {
-      this.setState({ value, file.name, isRejected: false });
-    };
+    this.handleInputChange = (event, file) => this.setState({ filename: file.name });
+    this.handleTextOrDataChanged = value => this.setState({ value });
+    this.handleClear = event => this.setState({ filename: '', value: '', isRejected: false });
     this.handleFileRejected = (rejectedFiles, event) => this.setState({ isRejected: true });
     this.handleFileReadStarted = fileHandle => this.setState({ isLoading: true });
     this.handleFileReadFinished = fileHandle => this.setState({ isLoading: false });
@@ -134,7 +139,10 @@ class TextFileUploadWithRestrictions extends React.Component {
             value={value}
             filename={filename}
             filenamePlaceholder="Drag and drop a file or upload one"
-            onChange={this.handleFileChange}
+            onInputChange={this.handleInputChange}
+            onDataChanged={this.handleTextOrDataChanged}
+            onTextChanged={this.handleTextOrDataChanged}
+            onClearClicked={this.handleClear}
             onReadStarted={this.handleFileReadStarted}
             onReadFinished={this.handleFileReadFinished}
             isLoading={isLoading}
@@ -167,14 +175,25 @@ class SimpleFileUpload extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: null, filename: '' };
-    this.handleInputChange = (event,file) => {
-      this.setState({ value, file.name});
+    this.handleInputChange = (event, file) => {
+      this.setState({ filename: file.name });
     };
+    this.handleClear = event => this.setState({ filename: '', value: ''});
   }
 
   render() {
     const { value, filename } = this.state;
-    return <FileUpload id="simple-file" value={value} filename={filename} filenamePlaceholder="Drag and drop a file or upload one" browseButtonText="Upload" onInputChange={this.handleInputChange} />;
+    return (
+      <FileUpload
+        id="simple-file"
+        value={value}
+        filename={filename}
+        filenamePlaceholder="Drag and drop a file or upload one"
+        browseButtonText="Upload"
+        onInputChange={this.handleInputChange}
+        onClearClicked={this.handleClear}
+      />
+    );
   }
 }
 ```
@@ -194,9 +213,10 @@ class CustomPreviewFileUpload extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: null, filename: '' };
-    this.handleInputChange = (event,file) => {
-      this.setState({ value, file.name });
+    this.handleInputChange = (event, file) => {
+      this.setState({ value: file, filename: file.name });
     };
+    this.handleClear = event => this.setState({ filename: '', value: ''});
   }
 
   render() {
@@ -206,8 +226,9 @@ class CustomPreviewFileUpload extends React.Component {
         id="customized-preview-file"
         value={value}
         filename={filename}
-        filenamePlaceholder="Drag and drop a file or upload one"      
+        filenamePlaceholder="Drag and drop a file or upload one"
         onInputChange={this.handleInputChange}
+        onClearClicked={this.handleClear}
         hideDefaultPreview
         browseButtonText="Upload"
       >

@@ -30,7 +30,7 @@ export interface FileUploadProps
       | Event
   ) => void;
   /** Change event emitted from the \<input\> field associated with the component  */
-  onInputChange?: (event: React.ChangeEvent<HTMLInputElement>, file: File) => void
+  onInputChange?: (event: React.ChangeEvent<HTMLInputElement> | DropEvent, file: File) => void
   /** Callback for clicking on the FileUploadField text area. By default, prevents a click in the text area from opening file dialog. */
   onClick?: (event: React.MouseEvent) => void;
   /** Additional classes added to the FileUpload container element. */
@@ -81,7 +81,7 @@ export interface FileUploadProps
   /** Clear button was clicked */
   onClearClicked?: React.MouseEventHandler<HTMLButtonElement>;
   /** Text area text changed */
-  onTextChanged?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onTextChanged?: (text: string) => void;
   /** On data changed - if type='text' or type='dataURL' and file was loaded it will call this method */
   onDataChanged?: (data: string) => void;
 }
@@ -99,7 +99,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   onReadFailed = () => { },
   onClearClicked,
   onClick = event => event.preventDefault(),
-  onTextChanged = () => { },
+  onTextChanged,
   onDataChanged,
   dropzoneProps = {},
   ...props
@@ -107,6 +107,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   const onDropAccepted = (acceptedFiles: File[], event: DropEvent) => {
     if (acceptedFiles.length > 0) {
       const fileHandle = acceptedFiles[0];
+      if (event.type === "drop") onInputChange?.(event, fileHandle);
       if (type === fileReaderType.text || type === fileReaderType.dataURL) {
         onChange('', fileHandle.name, event); // Show the filename while reading
         onReadStarted(fileHandle);
@@ -129,9 +130,9 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
     dropzoneProps.onDropAccepted && dropzoneProps.onDropAccepted(acceptedFiles, event);
   };
 
-  const onDropRejected = (rejectedFiles: any[], event: DropEvent) => {
+  const onDropRejected = (rejectedFiles: File[], event: DropEvent) => {
     if (rejectedFiles.length > 0) {
-      onChange('', rejectedFiles[0].file.name, event);
+      onChange('', rejectedFiles[0].name, event);
     }
     dropzoneProps.onDropRejected && dropzoneProps.onDropRejected(rejectedFiles, event);
   };
