@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Gallery } from '../Gallery';
+import { GalleryItem } from '../GalleryItem';
 import { shallow, mount } from 'enzyme';
 
 test('gutter', () => {
@@ -21,6 +22,15 @@ test('gutter breakpoints', () => {
         xl: '1fr'
       }}
     />
+  );
+  expect(view).toMatchSnapshot();
+});
+
+test('alternative component', () => {
+  const view = mount(
+    <Gallery component='ul'>
+      <GalleryItem component='li'>Test</GalleryItem>
+    </Gallery>
   );
   expect(view).toMatchSnapshot();
 });

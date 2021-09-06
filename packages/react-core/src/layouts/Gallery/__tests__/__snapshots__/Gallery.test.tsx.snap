@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`alternative component 1`] = `
+<Gallery
+  component="ul"
+>
+  <ul
+    className="pf-l-gallery"
+  >
+    <GalleryItem
+      component="li"
+    >
+      <li>
+        Test
+      </li>
+    </GalleryItem>
+  </ul>
+</Gallery>
+`;
+
 exports[`gutter 1`] = `
 <div
   className="pf-l-gallery pf-m-gutter"

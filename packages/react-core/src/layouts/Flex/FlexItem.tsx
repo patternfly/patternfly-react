@@ -135,11 +135,14 @@ export interface FlexItemProps extends React.HTMLProps<HTMLDivElement> {
     xl?: string;
     '2xl'?: string;
   };
+  /** Sets the base component to render. defaults to div */
+  component?: React.ElementType<any> | React.ComponentType<any>;
 }
 
 export const FlexItem: React.FunctionComponent<FlexItemProps> = ({
   children = null,
   className = '',
+  component = 'div',
   spacer,
   grow,
   shrink,
@@ -150,22 +153,28 @@ export const FlexItem: React.FunctionComponent<FlexItemProps> = ({
   order,
   style,
   ...props
-}: FlexItemProps) => (
-  <div
-    {...props}
-    className={css(
-      formatBreakpointMods(spacer, styles),
-      formatBreakpointMods(grow, styles),
-      formatBreakpointMods(shrink, styles),
-      formatBreakpointMods(flex, styles),
-      formatBreakpointMods(alignSelf, styles),
-      formatBreakpointMods(align, styles),
-      formatBreakpointMods(fullWidth, styles),
-      className
-    )}
-    style={style || order ? { ...style, ...setBreakpointCssVars(order, flexToken.l_flex_item_Order.name) } : undefined}
-  >
-    {children}
-  </div>
-);
+}: FlexItemProps) => {
+  const Component: any = component;
+
+  return (
+    <Component
+      {...props}
+      className={css(
+        formatBreakpointMods(spacer, styles),
+        formatBreakpointMods(grow, styles),
+        formatBreakpointMods(shrink, styles),
+        formatBreakpointMods(flex, styles),
+        formatBreakpointMods(alignSelf, styles),
+        formatBreakpointMods(align, styles),
+        formatBreakpointMods(fullWidth, styles),
+        className
+      )}
+      style={
+        style || order ? { ...style, ...setBreakpointCssVars(order, flexToken.l_flex_item_Order.name) } : undefined
+      }
+    >
+      {children}
+    </Component>
+  );
+};
 FlexItem.displayName = 'FlexItem';
