@@ -231,6 +231,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
             >
               <button
                 aria-expanded="true"
+                aria-label="Options menu"
                 aria-labelledby=" pf-select-toggle-id-7"
                 class="pf-c-select__toggle"
                 id="pf-select-toggle-id-7"
@@ -418,6 +419,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
         <button
           aria-expanded={true}
           aria-haspopup={null}
+          aria-label="Options menu"
           aria-labelledby=" pf-select-toggle-id-7"
           className="pf-c-select__toggle"
           disabled={false}
@@ -1143,6 +1145,7 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Options menu"
                 aria-labelledby=" checkbox-select-selections"
                 class="pf-c-select__toggle"
                 id="checkbox-select-selections"
@@ -1191,6 +1194,7 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
         <button
           aria-expanded={false}
           aria-haspopup={null}
+          aria-label="Options menu"
           aria-labelledby=" checkbox-select-selections"
           className="pf-c-select__toggle"
           disabled={false}
@@ -1358,6 +1362,7 @@ exports[`checkbox select renders checkbox select selections properly when isChec
             >
               <button
                 aria-expanded="false"
+                aria-label="Options menu"
                 aria-labelledby=" checkbox-select-hidden-badge"
                 class="pf-c-select__toggle"
                 id="checkbox-select-hidden-badge"
@@ -1397,6 +1402,7 @@ exports[`checkbox select renders checkbox select selections properly when isChec
         <button
           aria-expanded={false}
           aria-haspopup={null}
+          aria-label="Options menu"
           aria-labelledby=" checkbox-select-hidden-badge"
           className="pf-c-select__toggle"
           disabled={false}
@@ -1531,6 +1537,7 @@ exports[`checkbox select renders closed successfully 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-label="Options menu"
                 aria-labelledby=" checkbox-select-closed"
                 class="pf-c-select__toggle"
                 id="checkbox-select-closed"
@@ -1570,6 +1577,7 @@ exports[`checkbox select renders closed successfully 1`] = `
         <button
           aria-expanded={false}
           aria-haspopup={null}
+          aria-label="Options menu"
           aria-labelledby=" checkbox-select-closed"
           className="pf-c-select__toggle"
           disabled={false}
@@ -1765,6 +1773,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
             >
               <button
                 aria-expanded="true"
+                aria-label="Options menu"
                 aria-labelledby=" pf-select-toggle-id-4"
                 class="pf-c-select__toggle"
                 id="pf-select-toggle-id-4"
@@ -1866,6 +1875,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
         <button
           aria-expanded={true}
           aria-haspopup={null}
+          aria-label="Options menu"
           aria-labelledby=" pf-select-toggle-id-4"
           className="pf-c-select__toggle"
           disabled={false}
@@ -2324,6 +2334,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
             >
               <button
                 aria-expanded="true"
+                aria-label="Options menu"
                 aria-labelledby=" pf-select-toggle-id-6"
                 class="pf-c-select__toggle"
                 id="pf-select-toggle-id-6"
@@ -2411,6 +2422,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
         <button
           aria-expanded={true}
           aria-haspopup={null}
+          aria-label="Options menu"
           aria-labelledby=" pf-select-toggle-id-6"
           className="pf-c-select__toggle"
           disabled={false}
@@ -4406,6 +4418,7 @@ exports[`renders select with favorites successfully 1`] = `
               <button
                 aria-expanded="true"
                 aria-haspopup="listbox"
+                aria-label="Options menu"
                 aria-labelledby=" pf-select-toggle-id-3"
                 class="pf-c-select__toggle"
                 id="pf-select-toggle-id-3"
@@ -4759,6 +4772,7 @@ exports[`renders select with favorites successfully 1`] = `
         <button
           aria-expanded={true}
           aria-haspopup="listbox"
+          aria-label="Options menu"
           aria-labelledby=" pf-select-toggle-id-3"
           className="pf-c-select__toggle"
           disabled={false}
@@ -6523,6 +6537,7 @@ exports[`select renders select groups successfully 1`] = `
               <button
                 aria-expanded="true"
                 aria-haspopup="listbox"
+                aria-label="Options menu"
                 aria-labelledby=" pf-select-toggle-id-2"
                 class="pf-c-select__toggle"
                 id="pf-select-toggle-id-2"
@@ -6700,6 +6715,7 @@ exports[`select renders select groups successfully 1`] = `
         <button
           aria-expanded={true}
           aria-haspopup="listbox"
+          aria-label="Options menu"
           aria-labelledby=" pf-select-toggle-id-2"
           className="pf-c-select__toggle"
           disabled={false}
@@ -7372,6 +7388,7 @@ exports[`select renders up direction successfully 1`] = `
               <button
                 aria-expanded="false"
                 aria-haspopup="listbox"
+                aria-label="Options menu"
                 aria-labelledby=" select-up"
                 class="pf-c-select__toggle"
                 id="select-up"
@@ -7413,6 +7430,7 @@ exports[`select renders up direction successfully 1`] = `
         <button
           aria-expanded={false}
           aria-haspopup="listbox"
+          aria-label="Options menu"
           aria-labelledby=" select-up"
           className="pf-c-select__toggle"
           disabled={false}
@@ -7550,6 +7568,7 @@ exports[`select single select renders closed successfully 1`] = `
               <button
                 aria-expanded="false"
                 aria-haspopup="listbox"
+                aria-label="Options menu"
                 aria-labelledby=" single-select-closed"
                 class="pf-c-select__toggle"
                 id="single-select-closed"
@@ -7591,6 +7610,7 @@ exports[`select single select renders closed successfully 1`] = `
         <button
           aria-expanded={false}
           aria-haspopup="listbox"
+          aria-label="Options menu"
           aria-labelledby=" single-select-closed"
           className="pf-c-select__toggle"
           disabled={false}
@@ -7728,6 +7748,7 @@ exports[`select single select renders disabled successfully 1`] = `
               <button
                 aria-expanded="false"
                 aria-haspopup="listbox"
+                aria-label="Options menu"
                 aria-labelledby=" single-select-disabled"
                 class="pf-c-select__toggle pf-m-disabled"
                 disabled=""
@@ -7770,6 +7791,7 @@ exports[`select single select renders disabled successfully 1`] = `
         <button
           aria-expanded={false}
           aria-haspopup="listbox"
+          aria-label="Options menu"
           aria-labelledby=" single-select-disabled"
           className="pf-c-select__toggle pf-m-disabled"
           disabled={true}
@@ -7964,6 +7986,7 @@ exports[`select single select renders expanded successfully 1`] = `
               <button
                 aria-expanded="true"
                 aria-haspopup="listbox"
+                aria-label="Options menu"
                 aria-labelledby=" pf-select-toggle-id-0"
                 class="pf-c-select__toggle"
                 id="pf-select-toggle-id-0"
@@ -8063,6 +8086,7 @@ exports[`select single select renders expanded successfully 1`] = `
         <button
           aria-expanded={true}
           aria-haspopup="listbox"
+          aria-label="Options menu"
           aria-labelledby=" pf-select-toggle-id-0"
           className="pf-c-select__toggle"
           disabled={false}
@@ -8506,6 +8530,7 @@ exports[`select single select renders expanded successfully with custom objects 
               <button
                 aria-expanded="true"
                 aria-haspopup="listbox"
+                aria-label="Options menu"
                 aria-labelledby=" pf-select-toggle-id-1"
                 class="pf-c-select__toggle"
                 id="pf-select-toggle-id-1"
@@ -8592,6 +8617,7 @@ exports[`select single select renders expanded successfully with custom objects 
         <button
           aria-expanded={true}
           aria-haspopup="listbox"
+          aria-label="Options menu"
           aria-labelledby=" pf-select-toggle-id-1"
           className="pf-c-select__toggle"
           disabled={false}
@@ -8962,6 +8988,7 @@ exports[`select with custom content renders closed successfully 1`] = `
               <button
                 aria-expanded="false"
                 aria-haspopup="listbox"
+                aria-label="Options menu"
                 aria-labelledby=" select-custom-content"
                 class="pf-c-select__toggle"
                 id="select-custom-content"
@@ -9001,6 +9028,7 @@ exports[`select with custom content renders closed successfully 1`] = `
         <button
           aria-expanded={false}
           aria-haspopup="listbox"
+          aria-label="Options menu"
           aria-labelledby=" select-custom-content"
           className="pf-c-select__toggle"
           disabled={false}
@@ -9139,6 +9167,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
               <button
                 aria-expanded="true"
                 aria-haspopup="listbox"
+                aria-label="Options menu"
                 aria-labelledby=" pf-select-toggle-id-17"
                 class="pf-c-select__toggle"
                 id="pf-select-toggle-id-17"
@@ -9183,6 +9212,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
         <button
           aria-expanded={true}
           aria-haspopup="listbox"
+          aria-label="Options menu"
           aria-labelledby=" pf-select-toggle-id-17"
           className="pf-c-select__toggle"
           disabled={false}
