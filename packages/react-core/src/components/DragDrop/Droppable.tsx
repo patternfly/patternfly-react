@@ -18,12 +18,32 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
   ...props
 }: DroppableProps) => {
   const { draggingZone } = React.useContext(DragDropContext);
+  const ref = React.useRef<HTMLDivElement>();
+  const [isCursorInside, setIsCursorInside] = React.useState(true);
 
   return (
     <DroppableContext.Provider value={{ zone }}>
       <div
         className={className}
-        style={draggingZone === zone ? { boxShadow: '0px 0px 0px 1px blue, 0px 2px 5px rgba(0, 0, 0, 0.2)' } : {}}
+        style={
+          draggingZone === zone
+            ? { boxShadow: `0px 0px 0px 1px ${isCursorInside ? 'blue' : 'red'}, 0px 2px 5px rgba(0, 0, 0, 0.2)` }
+            : {}
+        }
+        ref={ref}
+        onMouseMove={ev => {
+          const rect = ref.current.getBoundingClientRect();
+          if (
+            ev.clientX > rect.x &&
+            ev.clientX < rect.x + rect.width &&
+            ev.clientY > rect.y &&
+            ev.clientY < rect.y + rect.height
+          ) {
+            setIsCursorInside(true);
+          } else {
+            setIsCursorInside(false);
+          }
+        }}
         {...props}
       >
         {children}

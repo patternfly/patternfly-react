@@ -10,7 +10,7 @@ export interface DraggableProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-// They really like being different from each other.
+// Browsers really like being different from each other.
 function getDefaultBackground() {
   const div = document.createElement('div');
   document.head.appendChild(div);
@@ -62,7 +62,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   const onMouseUpWhileDragging = (draggableNodes: HTMLDivElement[]) => {
     setStyle({
       ...style,
-      transition: 'transform 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s',
+      transition: 'transform 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s',
       transform: '',
       background: styleProp.background,
       boxShadow: styleProp.boxShadow
@@ -76,24 +76,32 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   const onMouseMoveWhileDragging = (
     ev: MouseEvent,
     draggableNodes: HTMLDivElement[],
+    boundingClientRects: DOMRect[],
     blankDivPos: number,
     blankDivHeight: number
   ) => {
+    const isCursorInside = true;
     setStyle({
       ...style,
-      transform: `translate(${ev.pageX - startX}px, ${ev.pageY - startY}px)`
+      boxShadow: `0px 0px 0px 1px ${isCursorInside ? 'blue' : 'red'}, 0px 2px 5px rgba(0, 0, 0, 0.2)`,
+      transform: `translate(${ev.pageX - startX}px, ${ev.pageY - startY}px)`,
+      cursor: !isCursorInside && 'not-allowed'
     });
-    draggableNodes.forEach((node, i) => {
-      if (i !== blankDivPos) {
-        const boundingClientRect = node.getBoundingClientRect();
-        const halfway = boundingClientRect.y + boundingClientRect.height / 2;
-        if (ev.pageY > halfway) {
-          node.style.transform = `translate(0, -${blankDivHeight}px`;
-        } else {
-          node.style.transform = '';
+    if (isCursorInside) {
+      draggableNodes.forEach((node, i) => {
+        if (i !== blankDivPos) {
+          const boundingClientRect = boundingClientRects[i];
+          const halfway = boundingClientRect.y + boundingClientRect.height / 2;
+          if (startY < halfway && ev.pageY > halfway) {
+            node.style.transform = `translate(0, -${blankDivHeight}px`;
+          } else if (startY > halfway && ev.pageY < halfway) {
+            node.style.transform = `translate(0, ${blankDivHeight}px`;
+          } else {
+            node.style.transform = '';
+          }
         }
-      }
-    });
+      });
+    }
   };
 
   const onDragStart = (ev: React.DragEvent<HTMLDivElement>) => {
@@ -119,7 +127,10 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     draggableNodes = Array.from(document.querySelectorAll(`[data-pf-dropzone="${zone}"]`));
     blankDivPos = draggableNodes.indexOf(ref.current);
     blankDivHeight = ref.current.getBoundingClientRect().height;
-    mouseMoveListener = ev => onMouseMoveWhileDragging(ev as MouseEvent, draggableNodes, blankDivPos, blankDivHeight);
+    const boundingClientRects = draggableNodes.map(node => node.getBoundingClientRect());
+    draggableNodes.forEach(node => (node.style.transition = 'transform 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s'));
+    mouseMoveListener = ev =>
+      onMouseMoveWhileDragging(ev as MouseEvent, draggableNodes, boundingClientRects, blankDivPos, blankDivHeight);
     mouseUpListener = () => onMouseUpWhileDragging(draggableNodes);
     document.addEventListener('mousemove', mouseMoveListener);
     document.addEventListener('mouseup', mouseUpListener);
