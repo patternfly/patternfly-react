@@ -18,7 +18,7 @@ import {
   ToolbarContent,
   ToolbarGroup,
   ToolbarItem,
-  PageContextConsumer,
+  PageToggleButton,
   Divider
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
@@ -113,98 +113,85 @@ export default class DashboardHeader extends React.Component {
       </DropdownItem>
     ];
 
-    return (
-      <PageContextConsumer>
-        {({ onNavToggle: managedOnNavToggle, isNavOpen: managedIsNavOpen }) => {
-          const headerToolbar = (
-            <Toolbar id="toolbar" isFullHeight isStatic>
-              <ToolbarContent>
-                <ToolbarGroup
-                  variant="icon-button-group"
-                  alignment={{ default: 'alignRight' }}
-                  spacer={{ default: 'spacerNone', md: 'spacerMd' }}
-                >
-                  <ToolbarItem>
-                    <Button aria-label="Notifications" variant={ButtonVariant.plain}>
-                      <AttentionBellIcon />
-                    </Button>
-                  </ToolbarItem>
-                  <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
-                    <ToolbarItem>
-                      <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
-                        <CogIcon />
-                      </Button>
-                    </ToolbarItem>
-                    <ToolbarItem>
-                      <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-                        <HelpIcon />
-                      </Button>
-                    </ToolbarItem>
-                  </ToolbarGroup>
-                </ToolbarGroup>
-                <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
-                  <Dropdown
-                    isPlain
-                    position="right"
-                    onSelect={this.onKebabDropdownSelect}
-                    toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
-                    isOpen={isKebabDropdownOpen}
-                    dropdownItems={kebabDropdownItems}
-                  />
-                </ToolbarItem>
-                <ToolbarItem
-                  visibility={{ default: 'visible', md: 'hidden', lg: 'hidden', xl: 'hidden', '2xl': 'hidden' }}
-                >
-                  <Dropdown
-                    isPlain
-                    position="right"
-                    onSelect={this.onFullKebabSelect}
-                    toggle={<KebabToggle onToggle={this.onFullKebabToggle} />}
-                    isOpen={isFullKebabDropdownOpen}
-                    dropdownItems={fullKebabItems}
-                  />
-                </ToolbarItem>
-                <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
-                  <Dropdown
-                    position="right"
-                    onSelect={this.onDropdownSelect}
-                    isOpen={isDropdownOpen}
-                    toggle={
-                      <DropdownToggle icon={<Avatar src={imgAvatar} alt="Avatar" />} onToggle={this.onDropdownToggle}>
-                        John Smith
-                      </DropdownToggle>
-                    }
-                    dropdownItems={userDropdownItems}
-                  />
-                </ToolbarItem>
-              </ToolbarContent>
-            </Toolbar>
-          );
-
-          const masthead = (
-            <Masthead id="basic">
-              <MastheadToggle>
-                <Button
-                  variant="plain"
-                  onClick={managedOnNavToggle}
-                  aria-label="Global navigation"
-                  aria-expanded={managedIsNavOpen ? 'true' : 'false'}
-                >
-                  <BarsIcon />
+    const headerToolbar = (
+      <Toolbar id="toolbar" isFullHeight isStatic>
+        <ToolbarContent>
+          <ToolbarGroup
+            variant="icon-button-group"
+            alignment={{ default: 'alignRight' }}
+            spacer={{ default: 'spacerNone', md: 'spacerMd' }}
+          >
+            <ToolbarItem>
+              <Button aria-label="Notifications" variant={ButtonVariant.plain}>
+                <AttentionBellIcon />
+              </Button>
+            </ToolbarItem>
+            <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
+              <ToolbarItem>
+                <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
+                  <CogIcon />
                 </Button>
-              </MastheadToggle>
-              <MastheadMain>
-                <MastheadBrand>
-                  <Brand src={imgBrand} alt="Patternfly logo" />
-                </MastheadBrand>
-              </MastheadMain>
-              <MastheadContent>{headerToolbar}</MastheadContent>
-            </Masthead>
-          );
-
-          return masthead;
-        }}
-      </PageContextConsumer>
+              </ToolbarItem>
+              <ToolbarItem>
+                <Button aria-label="Help actions" variant={ButtonVariant.plain}>
+                  <HelpIcon />
+                </Button>
+              </ToolbarItem>
+            </ToolbarGroup>
+          </ToolbarGroup>
+          <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
+            <Dropdown
+              isPlain
+              position="right"
+              onSelect={this.onKebabDropdownSelect}
+              toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+              isOpen={isKebabDropdownOpen}
+              dropdownItems={kebabDropdownItems}
+            />
+          </ToolbarItem>
+          <ToolbarItem visibility={{ default: 'visible', md: 'hidden', lg: 'hidden', xl: 'hidden', '2xl': 'hidden' }}>
+            <Dropdown
+              isPlain
+              position="right"
+              onSelect={this.onFullKebabSelect}
+              toggle={<KebabToggle onToggle={this.onFullKebabToggle} />}
+              isOpen={isFullKebabDropdownOpen}
+              dropdownItems={fullKebabItems}
+            />
+          </ToolbarItem>
+          <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
+            <Dropdown
+              position="right"
+              onSelect={this.onDropdownSelect}
+              isOpen={isDropdownOpen}
+              toggle={
+                <DropdownToggle icon={<Avatar src={imgAvatar} alt="Avatar" />} onToggle={this.onDropdownToggle}>
+                  John Smith
+                </DropdownToggle>
+              }
+              dropdownItems={userDropdownItems}
+            />
+          </ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
     );
+
+    const masthead = (
+      <Masthead>
+        <MastheadToggle>
+          <PageToggleButton variant="plain" aria-label="Global navigation">
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
+        <MastheadMain>
+          <MastheadBrand>
+            <Brand src={imgBrand} alt="Patternfly logo" />
+          </MastheadBrand>
+        </MastheadMain>
+        <MastheadContent>{headerToolbar}</MastheadContent>
+      </Masthead>
+    );
+
+    return masthead;
   }
 }
