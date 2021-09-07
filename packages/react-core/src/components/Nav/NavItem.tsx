@@ -135,9 +135,24 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     }
   };
 
-  const onMouseLeave = () => {
-    showFlyout(false);
+  const onFlyoutClick = (event: MouseEvent) => {
+    const target = event.target;
+    const closestItem = (target as HTMLElement).closest('.pf-c-nav__item');
+    if (!closestItem) {
+      if (hasFlyout) {
+        showFlyout(true);
+      } else {
+        setFlyoutRef(null);
+      }
+    }
   };
+
+  React.useEffect(() => {
+    window.addEventListener('click', onFlyoutClick);
+    return () => {
+      window.removeEventListener('click', onFlyoutClick);
+    };
+  }, []);
 
   const handleFlyout = (event: React.KeyboardEvent) => {
     const key = event.key;
@@ -221,8 +236,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   return (
     <li
       {...(hasFlyout && {
-        onKeyDown: handleFlyout,
-        onMouseLeave
+        onKeyDown: handleFlyout
       })}
       onMouseOver={onMouseOver}
       className={css(styles.navItem, hasFlyout && styles.modifiers.flyout, className)}
