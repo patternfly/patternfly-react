@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { render } from 'react-dom';
 import { createPortal } from 'react-dom';
 import { DroppableContext } from './DroppableContext';
 import { DragDropContext } from './DragDrop';
@@ -32,6 +33,29 @@ function getInheritedBackgroundColor(el: HTMLElement): string {
   return getInheritedBackgroundColor(el.parentElement);
 }
 
+function removeBlankDiv(node: HTMLDivElement) {
+  if (node.getAttribute('blankDiv') === 'true') {
+    node.removeChild(node.lastChild);
+    node.setAttribute('blankDiv', 'false');
+  }
+}
+
+interface DroppableItem {
+  node: HTMLDivElement;
+  rect: DOMRect;
+  isDraggingHost: boolean;
+  draggableNodes: HTMLDivElement[];
+  draggableNodesRects: DOMRect[];
+}
+
+function resetDroppableItem(droppableItem: DroppableItem) {
+  removeBlankDiv(droppableItem.node);
+  droppableItem.node.style.boxShadow = '';
+  droppableItem.draggableNodes.forEach(n => {
+    n.style.transform = '';
+  });
+}
+
 export const Draggable: React.FunctionComponent<DraggableProps> = ({
   className,
   children,
@@ -43,23 +67,30 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   let [style, setStyle] = React.useState(styleProp);
   const [isDragging, setIsDragging] = React.useState(false);
   const { zone } = React.useContext(DroppableContext);
-  const { setDraggingZone } = React.useContext(DragDropContext);
+  const { setDraggingZone, onDrop } = React.useContext(DragDropContext);
   let startX = 0;
   let startY = 0;
   let mouseMoveListener: EventListener;
   let mouseUpListener: EventListener;
-  let draggableNodes = [] as HTMLDivElement[];
-  let blankDivPos = -1;
   let blankDivHeight = 0;
 
   const ref = React.createRef<HTMLDivElement>();
 
+  const blankDiv = (
+    <div draggable role="button" {...props} style={{ ...styleProp, visibility: 'hidden' }}>
+      {children}
+    </div>
+  );
+
   const onTransitionEnd = (_ev: React.TransitionEvent<HTMLDivElement>) => {
-    setIsDragging(false);
-    setStyle(styleProp);
+    if (isDragging) {
+      setIsDragging(false);
+      setStyle(styleProp);
+      onDrop(0, 0, 0, 1);
+    }
   };
 
-  const onMouseUpWhileDragging = (draggableNodes: HTMLDivElement[]) => {
+  const onMouseUpWhileDragging = (droppableItems: DroppableItem[]) => {
     setStyle({
       ...style,
       transition: 'transform 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s',
@@ -70,35 +101,53 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     document.removeEventListener('mousemove', mouseMoveListener);
     document.removeEventListener('mouseup', mouseUpListener);
     setDraggingZone('');
-    draggableNodes.forEach(node => (node.style.transform = ''));
+    droppableItems.forEach(resetDroppableItem);
   };
 
-  const onMouseMoveWhileDragging = (
-    ev: MouseEvent,
-    draggableNodes: HTMLDivElement[],
-    boundingClientRects: DOMRect[],
-    blankDivPos: number,
-    blankDivHeight: number
-  ) => {
-    const isCursorInside = true;
+  const onMouseMoveWhileDragging = (ev: MouseEvent, droppableItems: DroppableItem[], blankDivHeight: number) => {
+    let hoveringDroppable: HTMLDivElement;
+    droppableItems.forEach(droppableItem => {
+      const { node, rect, isDraggingHost } = droppableItem;
+      if (
+        ev.clientX > rect.x &&
+        ev.clientX < rect.x + rect.width &&
+        ev.clientY > rect.y &&
+        ev.clientY < rect.y + rect.height
+      ) {
+        node.style.boxShadow = '0px 0px 0px 1px blue, 0px 2px 5px rgba(0, 0, 0, 0.2)';
+        hoveringDroppable = node;
+        if (node.getAttribute('blankDiv') !== 'true' && !isDraggingHost) {
+          const container = document.createElement('div');
+          node.appendChild(container);
+          render(blankDiv, container);
+          node.setAttribute('blankDiv', 'true');
+          rect.height += blankDivHeight;
+        }
+      } else {
+        node.style.boxShadow = '0px 0px 0px 1px red, 0px 2px 5px rgba(0, 0, 0, 0.2)';
+        resetDroppableItem(droppableItem);
+      }
+    });
     setStyle({
       ...style,
-      boxShadow: `0px 0px 0px 1px ${isCursorInside ? 'blue' : 'red'}, 0px 2px 5px rgba(0, 0, 0, 0.2)`,
+      boxShadow: `0px 0px 0px 1px ${hoveringDroppable ? 'blue' : 'red'}, 0px 2px 5px rgba(0, 0, 0, 0.2)`,
       transform: `translate(${ev.pageX - startX}px, ${ev.pageY - startY}px)`,
-      cursor: !isCursorInside && 'not-allowed'
+      cursor: !hoveringDroppable && 'not-allowed'
     });
-    if (isCursorInside) {
-      draggableNodes.forEach((node, i) => {
-        if (i !== blankDivPos) {
-          const boundingClientRect = boundingClientRects[i];
-          const halfway = boundingClientRect.y + boundingClientRect.height / 2;
-          if (startY < halfway && ev.pageY > halfway) {
-            node.style.transform = `translate(0, -${blankDivHeight}px`;
-          } else if (startY > halfway && ev.pageY < halfway) {
-            node.style.transform = `translate(0, ${blankDivHeight}px`;
-          } else {
-            node.style.transform = '';
-          }
+    if (hoveringDroppable) {
+      droppableItems.forEach(({ node, isDraggingHost, draggableNodes, draggableNodesRects }) => {
+        if (node === hoveringDroppable) {
+          draggableNodes.forEach((node, i) => {
+            const boundingClientRect = draggableNodesRects[i];
+            let translateY = isDraggingHost ? 0 : blankDivHeight;
+            const halfway = boundingClientRect.y + translateY + boundingClientRect.height / 2;
+            if (startY < halfway && ev.pageY > halfway) {
+              translateY -= blankDivHeight;
+            } else if (startY > halfway && ev.pageY < halfway) {
+              translateY += blankDivHeight;
+            }
+            node.style.transform = `translate(0, ${translateY}px`;
+          });
         }
       });
     }
@@ -124,14 +173,23 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
       zIndex: 5000
     };
     setStyle(style);
-    draggableNodes = Array.from(document.querySelectorAll(`[data-pf-dropzone="${zone}"]`));
-    blankDivPos = draggableNodes.indexOf(ref.current);
+    const droppableNodes = Array.from(document.querySelectorAll(`[data-pf-droppable="${zone}"]`)) as HTMLDivElement[];
+    const droppableItems = droppableNodes.reduce((acc, cur) => {
+      const draggableNodes = Array.from(cur.querySelectorAll(`[data-pf-draggable="${zone}"]`)) as HTMLDivElement[];
+      draggableNodes.forEach(node => (node.style.transition = 'transform 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s'));
+      const droppableItem = {
+        node: cur,
+        rect: cur.getBoundingClientRect(),
+        isDraggingHost: cur.contains(ref.current),
+        draggableNodes,
+        draggableNodesRects: draggableNodes.map(node => node.getBoundingClientRect())
+      };
+      acc.push(droppableItem);
+      return acc;
+    }, []);
     blankDivHeight = ref.current.getBoundingClientRect().height;
-    const boundingClientRects = draggableNodes.map(node => node.getBoundingClientRect());
-    draggableNodes.forEach(node => (node.style.transition = 'transform 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s'));
-    mouseMoveListener = ev =>
-      onMouseMoveWhileDragging(ev as MouseEvent, draggableNodes, boundingClientRects, blankDivPos, blankDivHeight);
-    mouseUpListener = () => onMouseUpWhileDragging(draggableNodes);
+    mouseMoveListener = ev => onMouseMoveWhileDragging(ev as MouseEvent, droppableItems, blankDivHeight);
+    mouseUpListener = () => onMouseUpWhileDragging(droppableItems);
     document.addEventListener('mousemove', mouseMoveListener);
     document.addEventListener('mouseup', mouseUpListener);
     startX = ev.pageX;
@@ -142,7 +200,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
 
   const div = (
     <div
-      data-pf-dropzone={isDragging ? null : zone}
+      data-pf-draggable={isDragging ? null : zone}
       draggable
       role="button"
       className={className}
@@ -155,13 +213,6 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
       {children}
     </div>
   );
-
-  const blankDiv = React.useMemo(() => React.cloneElement(div, { style: { ...styleProp, visibility: 'hidden' } }), [
-    zone,
-    className,
-    styleProp,
-    children
-  ]);
 
   return (
     <React.Fragment>

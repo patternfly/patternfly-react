@@ -6,6 +6,7 @@ propComponents: [
   Draggable,
   Droppable
 ]
+beta: true
 ---
 
 You can use Draggable and Droppable components to move items in or between lists.
@@ -26,8 +27,12 @@ const getItems = count =>
 Basic = () => {
   const [items, setItems] = React.useState(getItems(10));
 
+  function onDrop(sourceDroppableIndex, sourceDraggableIndex, destDroppableIndex, destDraggableIndex) {
+    console.log('onDrop', arguments);
+  }
+
   return (
-    <DragDrop>
+    <DragDrop onDrop={onDrop}>
       <Droppable zone="basic">
         {items.map(({ id, content }) =>
           <Draggable key={id} style={{ padding: '8px' }}>
@@ -46,21 +51,22 @@ Basic = () => {
 import React from 'react';
 import { DragDrop, Draggable, Droppable, Split, SplitItem } from '@patternfly/react-core';
 
-const getItems = count =>
+const getItems = (count, start) =>
   Array.from({ length: count }, (v, k) => k).map(k => ({
-    id: `item-${k}`,
-    content: `item ${k}`
+    id: `item-${k + start}`,
+    content: `item ${k + start}`
   }));
 
 Basic = () => {
-  const [items, setItems] = React.useState(getItems(10));
+  const [items1, setItems1] = React.useState(getItems(10, 0));
+  const [items2, setItems2] = React.useState(getItems(10, 10));
 
   return (
     <DragDrop>
       <Split hasGutter>
         <SplitItem>
           <Droppable zone="multizone">
-            {items.map(({ id, content }) =>
+            {items1.map(({ id, content }) =>
               <Draggable key={id} style={{ padding: '8px' }}>
                 {content}
               </Draggable>
@@ -69,7 +75,7 @@ Basic = () => {
         </SplitItem>
         <SplitItem>
           <Droppable zone="multizone">
-            {items.map(({ id, content }) =>
+            {items2.map(({ id, content }) =>
               <Draggable key={id} style={{ padding: '8px' }}>
                 {content}
               </Draggable>
