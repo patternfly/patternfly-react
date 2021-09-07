@@ -202,7 +202,6 @@ import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/ex
 AdvancedSearchInput = () => {
   const [value, setValue] = React.useState('username:player firstname:john');
   const [useEqualsAsDelimiter, setUseEqualsAsDelimiter] = React.useState(false);
-  const [showLink, setShowLink] = React.useState(false);
   const [useCustomFooter, setUseCustomFooter] = React.useState(false);
 
   const toggleDelimiter = checked => {
