@@ -12,7 +12,7 @@ beta: true
 import React from 'react';
 import { DatePicker } from '@patternfly/react-core';
 
-<DatePicker placeholder="YYYY-MM-DD" onChange={(str, date) => console.log('onChange', str, date)} />
+<DatePicker onChange={(str, date) => console.log('onChange', str, date)} />
 ```
 
 ### American format
@@ -49,7 +49,7 @@ AmericanFormat = () => {
 import React from 'react';
 import { DatePicker } from '@patternfly/react-core';
 
-<DatePicker  placeholder="YYYY-MM-DD" value="2020-03-05" helperText="Select a date." />
+<DatePicker value="2020-03-05" helperText="Select a date." />
 ```
 
 ### Min and max date
@@ -70,7 +70,7 @@ MinMaxDate = () => {
 
     return '';
   };
-  return <DatePicker  placeholder="YYYY-MM-DD" value="2020-03-17" validators={[rangeValidator]} />;
+  return <DatePicker value="2020-03-17" validators={[rangeValidator]} />;
 }
 ```
 
@@ -121,7 +121,6 @@ ControlledDate = () => {
         Reset date
       </Button>
       <DatePicker
-        placeholder="YYYY-MM-DD"
         value={value}
         onChange={value => setValue(value)}
       />

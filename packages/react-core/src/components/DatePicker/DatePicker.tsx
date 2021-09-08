@@ -55,7 +55,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   dateFormat = yyyyMMddFormat,
   dateParse = (val: string) => val.split('-').length === 3 && new Date(`${val}T00:00:00`),
   isDisabled = false,
-  placeholder = 'yyyy-MM-dd',
+  placeholder = 'YYYY-MM-DD',
   value: valueProp = '',
   'aria-label': ariaLabel = 'Date picker',
   buttonAriaLabel = 'Toggle date picker',
