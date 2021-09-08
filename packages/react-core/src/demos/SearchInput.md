@@ -70,7 +70,7 @@ AdvancedComposableSearchInput = () => {
       }
     } 
     if (isAdvancedSearchOpen && advancedSearchPaneRef.current && advancedSearchPaneRef.current.contains(event.target)) {
-      if (event.key === 'Escape' || event.key === 'Tab') {
+      if (event.key === 'Escape') {
         setIsAdvancedSearchOpen(!isAdvancedSearchOpen);
         searchInputRef.current.focus();
       }
@@ -133,7 +133,6 @@ AdvancedComposableSearchInput = () => {
     <Menu ref={dateWithinMenuRef} selected={dateWithin} onSelect={(e, itemId) => {
       e.stopPropagation();
       setDateWithin(itemId);
-      toggleDateWithinMenu(e);
     }}>
       <MenuContent>
         <MenuList>
@@ -157,7 +156,7 @@ AdvancedComposableSearchInput = () => {
   );
   
   const advancedForm = (
-    <div ref={advancedSearchPaneRef}>
+    <div ref={advancedSearchPaneRef} role="dialog" aria-label="Advanced search form">
       <Form>
         <Card>
           <CardBody>

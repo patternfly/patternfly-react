@@ -9,11 +9,11 @@ import { SearchAttribute } from './SearchInput';
 export interface AdvancedSearchMenuProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
   /** Value of the search input */
   value?: string;
-  /** **/
-  parentRef?: HTMLElement;
-  /** **/
-  parentInputRef?: HTMLElement;
-  /** */
+  /** Ref of the div wrapping the whole search input **/
+  parentRef?: React.RefObject<any>;
+  /** Ref of the input element within the search input**/
+  parentInputRef?: React.RefObject<any>;
+  /** Function which builds an attribute-value map by parsing the value in the search input */
   getAttrValueMap?: () => { [key: string]: string };
   /** A callback for when the search button clicked changes */
   onSearch?: (
@@ -63,8 +63,8 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
   showSearchMenu,
   onToggleAdvancedMenu
 }: AdvancedSearchMenuProps) => {
-  const isInitialMount = React.useRef(true);
   const firstAttrRef = React.useRef(null);
+  const [putFocusBackOnInput, setPutFocusBackOnInput] = React.useState(false);
 
   React.useEffect(() => {
     if (attributes.length > 0 && !advancedSearchDelimiter) {
@@ -76,14 +76,11 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
   });
 
   React.useEffect(() => {
-    if (isInitialMount.current) {
-      isInitialMount.current = false;
-    } else {
-      if (showSearchMenu && firstAttrRef && firstAttrRef.current) {
-        firstAttrRef.current.focus();
-      } else if (!showSearchMenu && parentInputRef) {
-        parentInputRef.focus();
-      }
+    if (showSearchMenu && firstAttrRef && firstAttrRef.current) {
+      firstAttrRef.current.focus();
+      setPutFocusBackOnInput(true);
+    } else if (!showSearchMenu && putFocusBackOnInput && parentInputRef && parentInputRef.current) {
+      parentInputRef.current.focus();
     }
   }, [showSearchMenu]);
 
@@ -100,7 +97,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
   });
 
   const onDocClick = (event: Event) => {
-    const clickedWithinSearchInput = parentRef && parentRef.contains(event.target as Node);
+    const clickedWithinSearchInput = parentRef && parentRef.current.contains(event.target as Node);
     if (showSearchMenu && !clickedWithinSearchInput) {
       onToggleAdvancedMenu(event as any);
     }
@@ -108,10 +105,15 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
 
   const onEscPress = (event: KeyboardEvent) => {
     const keyCode = event.keyCode || event.which;
-    if (showSearchMenu && keyCode === KEY_CODES.ESCAPE_KEY && parentRef && parentRef.contains(event.target as Node)) {
+    if (
+      showSearchMenu &&
+      keyCode === KEY_CODES.ESCAPE_KEY &&
+      parentRef &&
+      parentRef.current.contains(event.target as Node)
+    ) {
       onToggleAdvancedMenu(event as any);
       if (parentInputRef) {
-        parentInputRef.focus();
+        parentInputRef.current.focus();
       }
     }
   };

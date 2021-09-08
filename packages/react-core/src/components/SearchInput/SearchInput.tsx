@@ -50,7 +50,7 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   submitSearchButtonLabel?: string;
   /** A callback for when the open advanced search button is clicked */
   onToggleAdvancedSearch?: (event: React.SyntheticEvent<HTMLButtonElement>, isOpen?: boolean) => void;
-  /** */
+  /** A flag for controlling the open state of a custom advanced search implementation */
   isAdvancedSearchOpen?: boolean;
   /** Label for the button which opens the advanced search form menu */
   openMenuButtonAriaLabel?: string;
@@ -62,9 +62,6 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   /** The number of search results returned. Either a total number of results,
    * or a string representing the current result over the total number of results. i.e. "1 / 5" */
   resultsCount?: number | string;
-
-  /** The custom contents of an advanced search form */
-  children?: React.ReactNode;
 
   /** Array of attribute values used for dynamically generated advanced search */
   attributes?: string[] | SearchAttribute[];
@@ -252,8 +249,8 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       {attributes.length > 0 && (
         <AdvancedSearchMenu
           value={value}
-          parentRef={searchInputRef.current}
-          parentInputRef={searchInputInputRef.current}
+          parentRef={searchInputRef}
+          parentInputRef={searchInputInputRef}
           onSearch={onSearch}
           onClear={onClear}
           onChange={onChange}
