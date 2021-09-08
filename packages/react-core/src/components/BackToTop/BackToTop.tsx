@@ -2,18 +2,20 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/BackToTop/back-to-top';
 import { css } from '@patternfly/react-styles';
 import { Button } from '..';
-import AngleUpIcon from '@patternfly/react-icons/icons/angle-up-icon/dist/esm/icons/angle-up-icon';
+import AngleUpIcon from '@patternfly/react-icons/dist/esm/icons/angle-up-icon';
 import { canUseDOM } from '../../helpers/util';
 
 interface BackToTopProps extends React.DetailedHTMLProps<React.HTMLProps<HTMLDivElement>, HTMLDivElement> {
-  /** Additional classes added to the back to top */
+  /** Additional classes added to the back to top. */
   className?: string;
-  /** Title to appear in back to top button */
+  /** Title to appear in back to top button, defaults to 'Back to top'. */
   title?: string;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
-  /** Selector for the scrollable element to spy on. Not passing a selector disables spying. */
+  /** Selector for the scrollable element to spy on. Not passing a selector defaults to spying on window scroll events. */
   scrollableSelector?: string;
+  /** Flag to always show back to top button, defaults to false. */
+  alwaysShow?: boolean;
 }
 
 const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
@@ -21,18 +23,21 @@ const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
   title = 'Back to top',
   innerRef,
   scrollableSelector,
+  alwaysShow = false,
   ...props
 }: BackToTopProps) => {
-  const [hidden, setHidden] = React.useState(true);
+  const [hidden, setHidden] = React.useState(alwaysShow ? false : true);
   const [scrollElement, setScrollElement] = React.useState(null);
 
   const toggleHidden = () => {
     // scrollTop returns undefined in window use case
     const scrolled = scrollElement.scrollY ? scrollElement.scrollY : scrollElement.scrollTop;
-    if (scrolled > 400) {
-      setHidden(false);
-    } else {
-      setHidden(true);
+    if (!alwaysShow) {
+      if (scrolled > 400) {
+        setHidden(false);
+      } else {
+        setHidden(true);
+      }
     }
   };
 

@@ -8,6 +8,10 @@ beta: true
 
 import './BackToTop.css'
 
+Below example does not demonstrate functionality see React demos for a full demonstration.
+
+Back to top only shows after overflowing element has been scrolled 400px.
+
 ## Examples
 
 ### Basic
@@ -16,5 +20,5 @@ import './BackToTop.css'
 import React from 'react';
 import { BackToTop } from '@patternfly/react-core';
 
-<BackToTop />
+<BackToTop alwaysShow/>
 ```

@@ -7,12 +7,12 @@ import DashboardWrapper from './examples/DashboardWrapper';
 
 ## Demos
 
-### Using name selector
+### Using name selector to indicate overflowing element
 
 ```js isFullscreen file="./examples/BackToTop/BackToTopNameDemo.tsx"
 ```
 
-### Default to scroll window
+### Default window as overflowing element
 
 ```js isFullscreen file="./examples/BackToTop/BackToTopWindowDemo.tsx"
 ```
