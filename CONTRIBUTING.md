@@ -229,9 +229,10 @@ $ git checkout -b my-branch upstream/main
     ComponentName.md - Component Docs
   ```
 
-4.  Develop your component. After development is complete, ensure tests and lint standards pass.
+4.  Develop your component. After development is complete, run build and ensure tests and lint standards pass.
 
 ```text
+$ yarn build
 $ yarn test
 ```
 
