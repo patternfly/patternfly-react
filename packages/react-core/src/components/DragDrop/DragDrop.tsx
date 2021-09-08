@@ -5,8 +5,6 @@ interface ZoneNodes {
 }
 
 export const DragDropContext = React.createContext({
-  draggingZone: '',
-  setDraggingZone: (_zone: string) => {},
   draggableZoneNodes: {} as ZoneNodes,
   setDraggableZoneNodes: (_nodes: ZoneNodes) => {},
   onDrop: (
@@ -30,15 +28,11 @@ interface DragDropProps {
 }
 
 export const DragDrop: React.FunctionComponent<DragDropProps> = ({ children, onDrop = () => {} }: DragDropProps) => {
-  // Used for highlighting Droppable
-  const [draggingZone, setDraggingZone] = React.useState('');
   // Used for reordering
   const [draggableZoneNodes, setDraggableZoneNodes] = React.useState({});
 
   return (
-    <DragDropContext.Provider
-      value={{ draggingZone, setDraggingZone, draggableZoneNodes, setDraggableZoneNodes, onDrop }}
-    >
+    <DragDropContext.Provider value={{ draggableZoneNodes, setDraggableZoneNodes, onDrop }}>
       {children}
     </DragDropContext.Provider>
   );

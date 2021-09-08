@@ -21,7 +21,7 @@ import { DragDrop, Draggable, Droppable } from '@patternfly/react-core';
 const getItems = count =>
   Array.from({ length: count }, (v, k) => k).map(k => ({
     id: `item-${k}`,
-    content: `item ${k}`
+    content: `item ${k} `.repeat(k === 5 ? 20 : 1)
   }));
 
 Basic = () => {
@@ -35,7 +35,7 @@ Basic = () => {
     <DragDrop onDrop={onDrop}>
       <Droppable zone="basic">
         {items.map(({ id, content }) =>
-          <Draggable key={id} style={{ padding: '8px' }}>
+          <Draggable key={id} draggableId={id} style={{ padding: '8px' }}>
             {content}
           </Draggable>
         )}
@@ -54,7 +54,7 @@ import { DragDrop, Draggable, Droppable, Split, SplitItem } from '@patternfly/re
 const getItems = (count, start) =>
   Array.from({ length: count }, (v, k) => k).map(k => ({
     id: `item-${k + start}`,
-    content: `item ${k + start}`
+    content: `item ${k + start} `.repeat(k === 5 ? 20 : 1)
   }));
 
 Basic = () => {
@@ -65,18 +65,18 @@ Basic = () => {
     <DragDrop>
       <Split hasGutter>
         <SplitItem>
-          <Droppable zone="multizone">
+          <Droppable zone="multizone" droppableId="items1">
             {items1.map(({ id, content }) =>
-              <Draggable key={id} style={{ padding: '8px' }}>
+              <Draggable key={id} draggableId={id} style={{ padding: '8px' }}>
                 {content}
               </Draggable>
             )}
           </Droppable>
         </SplitItem>
         <SplitItem>
-          <Droppable zone="multizone">
+          <Droppable zone="multizone" droppableId="items2">
             {items2.map(({ id, content }) =>
-              <Draggable key={id} style={{ padding: '8px' }}>
+              <Draggable key={id} draggableId={id} style={{ padding: '8px' }}>
                 {content}
               </Draggable>
             )}
