@@ -6,6 +6,7 @@ export * from './Alert';
 export * from './AlertGroup';
 export * from './ApplicationLauncher';
 export * from './Avatar';
+export * from './BackToTop';
 export * from './Backdrop';
 export * from './BackgroundImage';
 export * from './Badge';
