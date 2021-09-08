@@ -59,7 +59,7 @@ const getItems = (count, start) =>
 
 Basic = () => {
   const [items1, setItems1] = React.useState(getItems(10, 0));
-  const [items2, setItems2] = React.useState(getItems(10, 10));
+  const [items2, setItems2] = React.useState(getItems(5, 10));
 
   return (
     <DragDrop>

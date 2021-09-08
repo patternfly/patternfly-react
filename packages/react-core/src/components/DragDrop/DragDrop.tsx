@@ -10,10 +10,10 @@ export const DragDropContext = React.createContext({
   draggableZoneNodes: {} as ZoneNodes,
   setDraggableZoneNodes: (_nodes: ZoneNodes) => {},
   onDrop: (
-    _sourceDroppableIndex: number,
-    _sourceDraggableIndex: number,
-    _destDroppableIndex: number,
-    _destDraggableIndex: number
+    _sourceDroppableKey: string | number,
+    _sourceDraggableKey: string | number,
+    _destDroppableKey: string | number | null,
+    _destDraggableKey: string | number | null
   ) => {}
 });
 
@@ -22,10 +22,10 @@ interface DragDropProps {
   children?: React.ReactNode;
   /** Callback for drop event */
   onDrop?: (
-    sourceDroppableIndex: number,
-    sourceDraggableIndex: number,
-    destDroppableIndex: number,
-    destDraggableIndex: number
+    sourceDroppableKey: string | number,
+    sourceDraggableKey: string | number,
+    destDroppableKey: string | number | null,
+    destDraggableKey: string | number | null
   ) => void;
 }
 
