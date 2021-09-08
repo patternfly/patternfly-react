@@ -2765,7 +2765,7 @@ class PageLayoutDefaultNav extends React.Component {
 
 ## Empty states
 
-These examples demonstrate the use of an [Empty State component](/documentation/react/components/emptystate) inside of a [Table](/documentation/react/components/table). Empty states are useful in a table when a filter returns no results, while data is loading, or when any type of error or exception condition occurs.
+These examples demonstrate the use of an [Empty State component](/components/empty-state) inside of a [Table](/components/table). Empty states are useful in a table when a filter returns no results, while data is loading, or when any type of error or exception condition occurs.
 
 ### Empty
 
