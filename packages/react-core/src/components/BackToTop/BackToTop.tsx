@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/BackToTop/back-to-top';
 import { css } from '@patternfly/react-styles';
-import { Button } from '..';
 import AngleUpIcon from '@patternfly/react-icons/dist/esm/icons/angle-up-icon';
 import { canUseDOM } from '../../helpers/util';
+import { Button } from '../Button';
 
 interface BackToTopProps extends React.DetailedHTMLProps<React.HTMLProps<HTMLDivElement>, HTMLDivElement> {
   /** Additional classes added to the back to top. */
