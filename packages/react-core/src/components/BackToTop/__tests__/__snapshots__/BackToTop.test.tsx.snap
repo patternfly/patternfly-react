@@ -13,7 +13,6 @@ exports[`BackToTop verify always show 1`] = `
       onClick={[Function]}
     >
       <Button
-        component="a"
         icon={
           <AngleUpIcon
             aria-hidden="true"
@@ -26,7 +25,6 @@ exports[`BackToTop verify always show 1`] = `
         variant="primary"
       >
         <ButtonBase
-          component="a"
           icon={
             <AngleUpIcon
               aria-hidden="true"
@@ -39,16 +37,16 @@ exports[`BackToTop verify always show 1`] = `
           innerRef={null}
           variant="primary"
         >
-          <a
+          <button
             aria-disabled={false}
             aria-label={null}
             className="pf-c-button pf-m-primary"
             data-ouia-component-id="OUIA-Generated-Button-primary-2"
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
-            disabled={null}
+            disabled={false}
             role={null}
-            type={null}
+            type="button"
           >
             Back to top
             <span
@@ -80,7 +78,7 @@ exports[`BackToTop verify always show 1`] = `
                 </svg>
               </AngleUpIcon>
             </span>
-          </a>
+          </button>
         </ButtonBase>
       </Button>
     </div>
@@ -107,7 +105,6 @@ exports[`BackToTop verify custom class 1`] = `
       onClick={[Function]}
     >
       <Button
-        component="a"
         icon={
           <AngleUpIcon
             aria-hidden="true"
@@ -120,7 +117,6 @@ exports[`BackToTop verify custom class 1`] = `
         variant="primary"
       >
         <ButtonBase
-          component="a"
           icon={
             <AngleUpIcon
               aria-hidden="true"
@@ -133,16 +129,16 @@ exports[`BackToTop verify custom class 1`] = `
           innerRef={null}
           variant="primary"
         >
-          <a
+          <button
             aria-disabled={false}
             aria-label={null}
             className="pf-c-button pf-m-primary"
             data-ouia-component-id="OUIA-Generated-Button-primary-1"
             data-ouia-component-type="PF4/Button"
             data-ouia-safe={true}
-            disabled={null}
+            disabled={false}
             role={null}
-            type={null}
+            type="button"
           >
             Back to top
             <span
@@ -174,7 +170,7 @@ exports[`BackToTop verify custom class 1`] = `
                 </svg>
               </AngleUpIcon>
             </span>
-          </a>
+          </button>
         </ButtonBase>
       </Button>
     </div>
