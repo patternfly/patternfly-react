@@ -7,6 +7,12 @@ section: components
 
 ### Composable Advanced Search
 
+This demo handles building the advanced search form using the composable Menu, as well as wiring up a 
+select using the composable Menu and MenuToggle components. This demo also demonstrates wiring up the appropriate
+keyboard interactions, focus management, and general event handling.
+
+Note: This demo and its handling of 'date within' and a date picker is modeled after the gmail advanced search form.
+
 ```js
 import React from 'react';
 import { 
@@ -19,6 +25,7 @@ import {
   FormGroup,
   Grid,
   GridItem, 
+  isValidDate,
   Menu,
   MenuContent,
   MenuItem,
@@ -26,13 +33,15 @@ import {
   MenuToggle,
   Popper, 
   SearchInput, 
-  TextInput 
+  TextInput,
+  yyyyMMddFormat
 } from '@patternfly/react-core';
 
 AdvancedComposableSearchInput = () => {
+  const [value, setValue] = React.useState('');
   const [hasWords, setHasWords] = React.useState('');
   const [dateWithin, setDateWithin] = React.useState('1 day');
-  const [date, setDate] = React.useState('');
+  const [date, setDate] = React.useState();
   
   const [isAdvancedSearchOpen, setIsAdvancedSearchOpen] = React.useState(false);
   const [isDateWithinOpen, setIsDateWithinOpen] = React.useState(false);
@@ -45,11 +54,24 @@ AdvancedComposableSearchInput = () => {
   const dateWithinMenuRef = React.useRef();
   
   const onClear = () => {
+    setValue('');
     setHasWords('');
     setDateWithin('');
     setDate('');
   };
   
+  const onChange = (value) => {
+    if (value.length <= hasWords.length + 1) {
+      setValue(value);
+      setHasWords(value);
+    } else {
+      setValue(hasWords);
+    }
+  };
+  
+  // After initial page load, whenever the advanced search menu is opened, the browser focus should be placed on the
+  // first advanced search form input. Whenever the advanced search menu is closed, the browser focus should
+  // be returned to the search input.
   React.useEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false;
@@ -62,6 +84,10 @@ AdvancedComposableSearchInput = () => {
     }
   }, [isAdvancedSearchOpen]);
   
+  // If a menu is open and has browser focus, then the escape key closes them and puts the browser focus onto their 
+  // respective toggle. The 'date within' menu also needs to close when the 'tab' key is hit. However, hitting tab while
+  // focus is in the advanced search form should move the focus to the next form input, not close the advanced search
+  // menu.
   const handleMenuKeys = event => {
     if (isDateWithinOpen && dateWithinMenuRef.current && dateWithinMenuRef.current.contains(event.target)) {
       if (event.key === 'Escape' || event.key === 'Tab') {
@@ -77,12 +103,12 @@ AdvancedComposableSearchInput = () => {
     }  
   };
   
+  // If a menu is open and has browser focus, then clicking outside the menu should close it.
   const handleClickOutside = event => {
-    if (isDateWithinOpen && !dateWithinMenuRef.current.contains(event.target)) {
+    if (isDateWithinOpen && dateWithinMenuRef && dateWithinMenuRef.current && !dateWithinMenuRef.current.contains(event.target)) {
       setIsDateWithinOpen(false);
     } 
-    if (isAdvancedSearchOpen && !advancedSearchPaneRef.current.contains(event.target)) {
-      console.log("close on click");
+    if (isAdvancedSearchOpen && advancedSearchPaneRef && advancedSearchPaneRef.current && !advancedSearchPaneRef.current.contains(event.target)) {
       setIsAdvancedSearchOpen(false);
     }
   };
@@ -96,28 +122,81 @@ AdvancedComposableSearchInput = () => {
     };
   }, [dateWithinMenuRef.current, advancedSearchPaneRef.current]);
   
-  const onSubmit = (event) => {
+  
+  // This demo and its handling of 'date within' and a date picker is modeled after the gmail advanced search form.
+  const onSubmit = (value, event) => {
     event.preventDefault();
+    
+    if (isValidDate(new Date(date)) && dateWithin) {
+      let afterDate = new Date(date);
+      let toDate = new Date(date);
+      switch (dateWithin) {
+        case '1 day':
+          afterDate.setDate(afterDate.getDate());
+          toDate.setDate(toDate.getDate() + 2);
+          break;
+        case '3 days':
+          afterDate.setDate(afterDate.getDate() - 2);
+          toDate.setDate(toDate.getDate() + 4);
+          break;
+        case '1 week':
+          afterDate.setDate(afterDate.getDate() - 6);
+          toDate.setDate(toDate.getDate() + 8);
+          break;
+        case '2 weeks':
+          afterDate.setDate(afterDate.getDate() - 13);
+          toDate.setDate(toDate.getDate() + 15);
+          break;
+        case '1 month':
+          afterDate.setMonth(afterDate.getMonth() - 1);
+          afterDate.setDate(afterDate.getDate() + 1);
+          toDate.setMonth(toDate.getMonth() + 1);
+          toDate.setDate(toDate.getDate() + 1);
+          break;
+        case '2 months':
+          afterDate.setMonth(afterDate.getMonth() - 2);
+          afterDate.setDate(afterDate.getDate() + 1);
+          toDate.setMonth(toDate.getMonth() + 2);
+          toDate.setDate(toDate.getDate() + 1);
+          break;
+        case '6 months':
+          afterDate.setMonth(afterDate.getMonth() - 6);
+          afterDate.setDate(afterDate.getDate() + 1);
+          toDate.setMonth(toDate.getMonth() + 6);
+          toDate.setDate(toDate.getDate() + 1);
+          break;
+        case '1 year':
+          afterDate.setFullYear(afterDate.getFullYear() - 1);
+          afterDate.setDate(afterDate.getDate() + 1);
+          toDate.setFullYear(toDate.getFullYear() + 1);
+          toDate.setDate(toDate.getDate() + 1);
+          break;
+      }
+      setValue(`${hasWords && (hasWords + " ")}after:${yyyyMMddFormat(afterDate)} to:${yyyyMMddFormat(toDate)}`)
+    } else {
+      setValue(hasWords);
+    }
+    
     setIsAdvancedSearchOpen(false);
-    console.log("hasWords", hasWords);
-    console.log("dateWithin", dateWithin);
-    console.log("date", date);
   };
   
   const searchInput = (
     <SearchInput
-      value={hasWords}
-      onChange={setHasWords}
+      value={value}
+      onChange={onChange}
       onToggleAdvancedSearch={(e, isOpen) => {
         e.stopPropagation();
         setIsAdvancedSearchOpen(isOpen)
       }}
       isAdvancedSearchOpen={isAdvancedSearchOpen}
       onClear={onClear}
+      onSearch={onSubmit}
       ref={searchInputRef}
     />
   );
   
+  // Clicking the 'date within' toggle should open its associated menu and then place the browser 
+  // focus on the first menu item. 
   const toggleDateWithinMenu = ev => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
@@ -132,6 +211,7 @@ AdvancedComposableSearchInput = () => {
   const dateWithinOptions = (
     <Menu ref={dateWithinMenuRef} selected={dateWithin} onSelect={(e, itemId) => {
       e.stopPropagation();
+      setIsDateWithinOpen(false);
       setDateWithin(itemId);
     }}>
       <MenuContent>
@@ -167,7 +247,10 @@ AdvancedComposableSearchInput = () => {
                     type='text'
                     id='has-words'
                     value={hasWords}
-                    onChange={value => setHasWords(value)}
+                    onChange={value => {
+                      setHasWords(value);
+                      setValue(value);
+                    }}
                     ref={firstAttrRef}
                   />
                 </FormGroup>
@@ -176,13 +259,19 @@ AdvancedComposableSearchInput = () => {
                 <Popper trigger={dateWithinToggle} popper={dateWithinOptions} isVisible={isDateWithinOpen} />
               </FormGroup>
               <FormGroup label='Date' fieldId='date' key='date'>
-                <DatePicker id="datePicker" style={{width: "100%"}} onChange={(value) => setDate(value)} appendTo={() => document.querySelector("#datePicker")}/>
+                <DatePicker 
+                  id="datePicker" 
+                  style={{width: "100%"}} 
+                  value={date} 
+                  onChange={setDate} 
+                  appendTo={() => document.querySelector("#datePicker")}
+                />
               </FormGroup>
             </Grid>
           </CardBody>
           <CardFooter>
             <FormGroup>
-              <Button variant="primary" type="submit" onClick={onSubmit}>Submit</Button>
+              <Button variant="primary" type="submit" onClick={(e) => onSubmit(null, e)}>Submit</Button>
               {!!onClear && (
                 <Button variant="link" type="reset" onClick={onClear}>Reset</Button>
               )}
@@ -193,6 +282,7 @@ AdvancedComposableSearchInput = () => {
     </div>
   );
 
+  // Popper is just one way to build a relationship between a toggle and a menu.
   return (
     <Popper
       trigger={searchInput}
