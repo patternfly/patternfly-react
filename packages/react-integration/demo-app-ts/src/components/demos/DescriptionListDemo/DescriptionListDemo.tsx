@@ -385,6 +385,88 @@ export class DescriptionListDemo extends Component {
       </StackItem>
     );
   }
+  renderCompactDescriptionList() {
+    return (
+      <StackItem isFilled>
+        <Title headingLevel="h2" size="2xl">
+          Compact Description List
+        </Title>
+        <Divider component="div" />
+        <br />
+        <div className="example">
+          <DescriptionList id="compact-description-list" isCompact>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Name</DescriptionListTerm>
+              <DescriptionListDescription>Example</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Namespace</DescriptionListTerm>
+              <DescriptionListDescription>
+                <a href="#">mary-test</a>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Labels</DescriptionListTerm>
+              <DescriptionListDescription>example</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Pod selector</DescriptionListTerm>
+              <DescriptionListDescription>
+                <Button variant="link" isInline icon={<PlusCircleIcon />}>
+                  app=MyApp
+                </Button>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Annotation</DescriptionListTerm>
+              <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+            </DescriptionListGroup>
+          </DescriptionList>
+        </div>
+      </StackItem>
+    );
+  }
+  renderFluidDescriptionList() {
+    return (
+      <StackItem isFilled>
+        <Title headingLevel="h2" size="2xl">
+          Compact Description List
+        </Title>
+        <Divider component="div" />
+        <br />
+        <div className="example">
+          <DescriptionList id="fluid-description-list" isFluid isHorizontal>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Name</DescriptionListTerm>
+              <DescriptionListDescription>Example</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Namespace</DescriptionListTerm>
+              <DescriptionListDescription>
+                <a href="#">mary-test</a>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Labels</DescriptionListTerm>
+              <DescriptionListDescription>example</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Pod selector</DescriptionListTerm>
+              <DescriptionListDescription>
+                <Button variant="link" isInline icon={<PlusCircleIcon />}>
+                  app=MyApp
+                </Button>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Annotation</DescriptionListTerm>
+              <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+            </DescriptionListGroup>
+          </DescriptionList>
+        </div>
+      </StackItem>
+    );
+  }
   render() {
     return (
       <Stack hasGutter>
@@ -395,6 +477,8 @@ export class DescriptionListDemo extends Component {
         {this.renderAutoColumnWidthsDescriptionList()}
         {this.renderInlineGridDescriptionList()}
         {this.renderAutoFitDescriptionList()}
+        {this.renderCompactDescriptionList()}
+        {this.renderFluidDescriptionList()}
       </Stack>
     );
   }

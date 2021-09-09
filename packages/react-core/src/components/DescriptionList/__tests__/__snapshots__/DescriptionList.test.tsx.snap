@@ -44,6 +44,18 @@ exports[`Description List Auto fit with responsive grid Description List 1`] = `
 />
 `;
 
+exports[`Description List Compact Description List 1`] = `
+<dl
+  className="pf-c-description-list pf-m-compact"
+/>
+`;
+
+exports[`Description List Compact Horizontal Description List 1`] = `
+<dl
+  className="pf-c-description-list pf-m-horizontal pf-m-compact"
+/>
+`;
+
 exports[`Description List Description 1`] = `
 <dd
   aria-labelledby="description-1"
@@ -55,6 +67,12 @@ exports[`Description List Description 1`] = `
     test
   </div>
 </dd>
+`;
+
+exports[`Description List Fluid Horizontal Description List 1`] = `
+<dl
+  className="pf-c-description-list pf-m-horizontal pf-m-fluid"
+/>
 `;
 
 exports[`Description List Group 1`] = `
