@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.154.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.153.0...@patternfly/react-core@4.154.0) (2021-09-09)
+
+
+### Bug Fixes
+
+* **datepicker:** updated date picker microcopy ([#6263](https://github.com/patternfly/patternfly-react/issues/6263)) ([6975851](https://github.com/patternfly/patternfly-react/commit/6975851f389d3834597c24769f35ad84d0339a08))
+
+
+### Features
+
+* **DescriptionList:** add compact and fluid modifiers ([#6260](https://github.com/patternfly/patternfly-react/issues/6260)) ([8b7cd70](https://github.com/patternfly/patternfly-react/commit/8b7cd704a4aae20ebf5953d4de4cc4f894052851))
+
+
+
+
+
 # [4.153.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.152.7...@patternfly/react-core@4.153.0) (2021-09-01)
 
 

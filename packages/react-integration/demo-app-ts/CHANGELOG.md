@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.119.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.118.11...demo-app-ts@4.119.0) (2021-09-09)
+
+
+### Features
+
+* **DescriptionList:** add compact and fluid modifiers ([#6260](https://github.com/patternfly/patternfly-react/issues/6260)) ([8b7cd70](https://github.com/patternfly/patternfly-react/commit/8b7cd704a4aae20ebf5953d4de4cc4f894052851))
+
+
+
+
+
 ## [4.118.11](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.118.10...demo-app-ts@4.118.11) (2021-09-01)
 
 **Note:** Version bump only for package demo-app-ts
