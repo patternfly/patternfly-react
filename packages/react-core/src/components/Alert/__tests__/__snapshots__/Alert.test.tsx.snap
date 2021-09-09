@@ -752,14 +752,12 @@ exports[`Alert - danger expandable variation 1`] = `
         <Button
           aria-expanded={false}
           aria-label="Danger alert details"
-          aria-labeledby="Some title toggle"
           onClick={[Function]}
           variant="plain"
         >
           <ButtonBase
             aria-expanded={false}
             aria-label="Danger alert details"
-            aria-labeledby="Some title toggle"
             innerRef={null}
             onClick={[Function]}
             variant="plain"
@@ -768,7 +766,6 @@ exports[`Alert - danger expandable variation 1`] = `
               aria-disabled={false}
               aria-expanded={false}
               aria-label="Danger alert details"
-              aria-labeledby="Some title toggle"
               className="pf-c-button pf-m-plain"
               data-ouia-component-id="OUIA-Generated-Button-plain-5"
               data-ouia-component-type="PF4/Button"
@@ -1676,14 +1673,12 @@ exports[`Alert - default expandable variation 1`] = `
         <Button
           aria-expanded={false}
           aria-label="Default alert details"
-          aria-labeledby="Some title toggle"
           onClick={[Function]}
           variant="plain"
         >
           <ButtonBase
             aria-expanded={false}
             aria-label="Default alert details"
-            aria-labeledby="Some title toggle"
             innerRef={null}
             onClick={[Function]}
             variant="plain"
@@ -1692,7 +1687,6 @@ exports[`Alert - default expandable variation 1`] = `
               aria-disabled={false}
               aria-expanded={false}
               aria-label="Default alert details"
-              aria-labeledby="Some title toggle"
               className="pf-c-button pf-m-plain"
               data-ouia-component-id="OUIA-Generated-Button-plain-14"
               data-ouia-component-type="PF4/Button"
@@ -2600,14 +2594,12 @@ exports[`Alert - info expandable variation 1`] = `
         <Button
           aria-expanded={false}
           aria-label="Info alert details"
-          aria-labeledby="Some title toggle"
           onClick={[Function]}
           variant="plain"
         >
           <ButtonBase
             aria-expanded={false}
             aria-label="Info alert details"
-            aria-labeledby="Some title toggle"
             innerRef={null}
             onClick={[Function]}
             variant="plain"
@@ -2616,7 +2608,6 @@ exports[`Alert - info expandable variation 1`] = `
               aria-disabled={false}
               aria-expanded={false}
               aria-label="Info alert details"
-              aria-labeledby="Some title toggle"
               className="pf-c-button pf-m-plain"
               data-ouia-component-id="OUIA-Generated-Button-plain-11"
               data-ouia-component-type="PF4/Button"
@@ -3524,14 +3515,12 @@ exports[`Alert - success expandable variation 1`] = `
         <Button
           aria-expanded={false}
           aria-label="Success alert details"
-          aria-labeledby="Some title toggle"
           onClick={[Function]}
           variant="plain"
         >
           <ButtonBase
             aria-expanded={false}
             aria-label="Success alert details"
-            aria-labeledby="Some title toggle"
             innerRef={null}
             onClick={[Function]}
             variant="plain"
@@ -3540,7 +3529,6 @@ exports[`Alert - success expandable variation 1`] = `
               aria-disabled={false}
               aria-expanded={false}
               aria-label="Success alert details"
-              aria-labeledby="Some title toggle"
               className="pf-c-button pf-m-plain"
               data-ouia-component-id="OUIA-Generated-Button-plain-2"
               data-ouia-component-type="PF4/Button"
@@ -4448,14 +4436,12 @@ exports[`Alert - warning expandable variation 1`] = `
         <Button
           aria-expanded={false}
           aria-label="Warning alert details"
-          aria-labeledby="Some title toggle"
           onClick={[Function]}
           variant="plain"
         >
           <ButtonBase
             aria-expanded={false}
             aria-label="Warning alert details"
-            aria-labeledby="Some title toggle"
             innerRef={null}
             onClick={[Function]}
             variant="plain"
@@ -4464,7 +4450,6 @@ exports[`Alert - warning expandable variation 1`] = `
               aria-disabled={false}
               aria-expanded={false}
               aria-label="Warning alert details"
-              aria-labeledby="Some title toggle"
               className="pf-c-button pf-m-plain"
               data-ouia-component-id="OUIA-Generated-Button-plain-8"
               data-ouia-component-type="PF4/Button"
