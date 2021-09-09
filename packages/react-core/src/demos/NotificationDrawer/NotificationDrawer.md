@@ -231,7 +231,7 @@ class BasicNotificationDrawer extends React.Component {
     const headerToolbar = (
       <Toolbar>
         <ToolbarContent>
-          <ToolbarGroup alignment={{ default: 'alignRight' }}>
+          <ToolbarGroup spaceItems={{ default: 'spacerNone' }} alignment={{ default: 'alignRight' }}>
             <ToolbarGroup variant="icon-button-group">
               <ToolbarItem visibility={{ default: 'visible' }} isSelected={isDrawerExpanded}>
                 <NotificationBadge
@@ -280,16 +280,18 @@ class BasicNotificationDrawer extends React.Component {
                 visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
               >
                 <Dropdown
-                  isPlain
                   position="right"
                   onSelect={this.onDropdownSelect}
                   isOpen={isDropdownOpen}
-                  toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
+                  toggle={
+                    <DropdownToggle icon={<Avatar src={imgAvatar} alt="Avatar" />} onToggle={this.onDropdownToggle}>
+                      John Smith
+                    </DropdownToggle>
+                  }
                   dropdownItems={userDropdownItems}
                 />
               </ToolbarItem>
             </ToolbarGroup>
-            <Avatar src={imgAvatar} alt="Avatar image" />
           </ToolbarGroup>
         </ToolbarContent>
       </Toolbar>
@@ -788,7 +790,7 @@ class GroupedNotificationDrawer extends React.Component {
     const headerToolbar = (
       <Toolbar>
         <ToolbarContent>
-          <ToolbarGroup alignment={{ default: 'alignRight' }}>
+          <ToolbarGroup spaceItems={{ default: 'spacerNone' }} alignment={{ default: 'alignRight' }}>
             <ToolbarGroup variant="icon-button-group">
               <ToolbarItem visibility={{ default: 'visible' }} isSelected={isDrawerExpanded}>
                 <NotificationBadge
@@ -837,16 +839,18 @@ class GroupedNotificationDrawer extends React.Component {
                 visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
               >
                 <Dropdown
-                  isPlain
                   position="right"
                   onSelect={this.onDropdownSelect}
                   isOpen={isDropdownOpen}
-                  toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
+                  toggle={
+                    <DropdownToggle icon={<Avatar src={imgAvatar} alt="Avatar" />} onToggle={this.onDropdownToggle}>
+                      John Smith
+                    </DropdownToggle>
+                  }
                   dropdownItems={userDropdownItems}
                 />
               </ToolbarItem>
             </ToolbarGroup>
-            <Avatar src={imgAvatar} alt="Avatar image" />
           </ToolbarGroup>
         </ToolbarContent>
       </Toolbar>
