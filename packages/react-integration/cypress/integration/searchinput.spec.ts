@@ -23,6 +23,17 @@ describe('Search Input Demo Test', () => {
       .should('be.disabled');
   });
 
+  it('Verify search input with hint', () => {
+    cy.get('#hinted-search .pf-c-search-input__text-input').should('have.length', 2);
+    const hint = cy.get('#hinted-search .pf-c-search-input__text-input').eq(0);
+    hint.should('be.disabled');
+    hint.should('have.class', 'pf-m-hint');
+    hint.should('have.value', 'hint');
+    cy.get('#hinted-search .pf-c-search-input__text-input')
+      .eq(1)
+      .should('not.be.disabled');
+  });
+
   it('Verify search input and its handlers work', () => {
     cy.get('#enabled-search .pf-c-search-input__count').should('not.exist');
     cy.get('#enabled-search .pf-c-search-input__clear').should('not.exist');
