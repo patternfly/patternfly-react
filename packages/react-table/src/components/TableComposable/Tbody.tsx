@@ -3,9 +3,9 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
 export interface TbodyProps extends React.HTMLProps<HTMLTableSectionElement> {
-  /** Content rendered inside the <tr> row */
+  /** Content rendered inside the <tbody> row group */
   children?: React.ReactNode;
-  /** Additional classes added to the <tr> row  */
+  /** Additional classes added to the <tbody> element  */
   className?: string;
   /** Modifies the body to allow for expandable rows */
   isExpanded?: boolean;
