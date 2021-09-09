@@ -21,9 +21,9 @@ import React from 'react';
 import { DatePicker } from '@patternfly/react-core';
 
 AmericanFormat = () => {
-  const dateFormat = date => date.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
+  const dateFormat = date => date.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g,'-');
   const dateParse = date => {
-    const split = date.split('/');
+    const split = date.split('-');
     if (split.length !== 3) {
       return new Date();
     }
@@ -35,8 +35,8 @@ AmericanFormat = () => {
 
   return (
     <DatePicker
-      value="03/05/2020"
-      placeholder="MM/dd/yyyy"
+      value="03-05-2020"
+      placeholder="MM-DD-YYYY"
       dateFormat={dateFormat}
       dateParse={dateParse}
     />
