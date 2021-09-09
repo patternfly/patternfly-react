@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.5.8...@patternfly/react-log-viewer@4.6.0) (2021-09-09)
+
+
+### Features
+
+* **LogViewer:** add onScroll and footer props ([#6238](https://github.com/patternfly/patternfly-react/issues/6238)) ([096192a](https://github.com/patternfly/patternfly-react/commit/096192a3ed35f960069aa1da41a3eea52c3387f7))
+
+
+
+
+
 ## [4.5.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.5.7...@patternfly/react-log-viewer@4.5.8) (2021-09-01)
 
 
