@@ -60,7 +60,7 @@ export class DualListSelectorListItem extends React.Component<DualListSelectorLi
       >
         <div className={css(styles.dualListSelectorListItemRow, isSelected && styles.modifiers.selected)}>
           <button
-            className={css(styles.dualListSelectorItem, isSelected && styles.modifiers.selected)}
+            className={css(styles.dualListSelectorItem)}
             onClick={e => onOptionSelect(e, orderIndex, isChosen)}
             id={id}
             ref={this.ref}

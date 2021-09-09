@@ -101,11 +101,7 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
           )}
         >
           <div
-            className={css(
-              styles.dualListSelectorItem,
-              isSelected && styles.modifiers.selected,
-              styles.modifiers.check
-            )}
+            className={css(styles.dualListSelectorItem)}
             ref={this.ref}
             tabIndex={-1}
             onClick={evt => {
