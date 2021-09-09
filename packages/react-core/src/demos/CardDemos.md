@@ -8,8 +8,6 @@ import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-ic
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import { CheckCircleIcon, ExclamationCircleIcon, ExclamationTriangleIcon, TimesCircleIcon, BellIcon } from '@patternfly/react-icons';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
-
-
 ## Demos
 
 ### Horizontal card grid
@@ -261,25 +259,27 @@ class CardGridDemo extends React.Component {
 
 ```js
 import React from 'react';
-import {
-  Card,
-  CardTitle,
-  CardBody,
-  CardFooter,
-  Grid,
-  GridItem,
-  Button
-} from '@patternfly/react-core';
+import { Card, CardTitle, CardBody, CardFooter, Grid, GridItem, Button } from '@patternfly/react-core';
 
 CardHorizontalSplitDemo = () => {
   return (
     <Card id="card-demo-horizontal-split-example" isFlat>
       <Grid md={6}>
-        <GridItem style={{minHeight: '200px', backgroundPosition: 'center', backgroundSize: 'cover', backgroundImage: 'url(/assets/images/pfbg_992@2x.jpg)' }}/>
+        <GridItem
+          style={{
+            minHeight: '200px',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundImage: 'url(/assets/images/pfbg_992@2x.jpg)'
+          }}
+        />
         <GridItem>
           <CardTitle>Headline</CardTitle>
           <CardBody>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse arcu purus, lobortis nec euismod eu, tristique ut sapien. Nullam turpis lectus, aliquet sit amet volutpat eu, semper eget quam. Maecenas in tempus diam. Aenean interdum velit sed massa aliquet, sit amet malesuada nulla hendrerit. Aenean non faucibus odio. Etiam non metus turpis. Praesent sollicitudin elit neque, id ullamcorper nibh faucibus eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse arcu purus, lobortis nec euismod eu,
+            tristique ut sapien. Nullam turpis lectus, aliquet sit amet volutpat eu, semper eget quam. Maecenas in
+            tempus diam. Aenean interdum velit sed massa aliquet, sit amet malesuada nulla hendrerit. Aenean non
+            faucibus odio. Etiam non metus turpis. Praesent sollicitudin elit neque, id ullamcorper nibh faucibus eget.
           </CardBody>
           <CardFooter>
             <Button variant="tertiary">Call to action</Button>
@@ -288,10 +288,10 @@ CardHorizontalSplitDemo = () => {
       </Grid>
     </Card>
   );
-}
+};
 ```
 
-### Details Card
+### Details card
 
 ```js
 import React from 'react';
@@ -311,15 +311,15 @@ import {
 
 CardDetailsDemo = () => {
   return (
-    <Gallery hasGutter style={{'--pf-l-gallery--GridTemplateColumns--min': '260px'}}>
+    <Gallery hasGutter style={{ '--pf-l-gallery--GridTemplateColumns--min': '260px' }}>
       <Card>
         <CardTitle>
           <Title headingLevel="h2" size="xl">
             Details
-          </Title> 
+          </Title>
         </CardTitle>
         <CardBody>
-           <DescriptionList>
+          <DescriptionList>
             <DescriptionListGroup>
               <DescriptionListTerm>Cluster API Address</DescriptionListTerm>
               <DescriptionListDescription>
@@ -327,30 +327,20 @@ CardDetailsDemo = () => {
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
-              <DescriptionListTerm>
-                Cluster ID
-              </DescriptionListTerm>
-              <DescriptionListDescription>
-                63b97ac1-b850-41d9-8820-239becde9e86
-              </DescriptionListDescription>
+              <DescriptionListTerm>Cluster ID</DescriptionListTerm>
+              <DescriptionListDescription>63b97ac1-b850-41d9-8820-239becde9e86</DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
               <DescriptionListTerm>Provide</DescriptionListTerm>
-              <DescriptionListDescription>
-                AWS
-              </DescriptionListDescription>
+              <DescriptionListDescription>AWS</DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
               <DescriptionListTerm>OpenShift Version</DescriptionListTerm>
-              <DescriptionListDescription>
-                4.5.0.ci-2020-06-16-015028
-              </DescriptionListDescription>
+              <DescriptionListDescription>4.5.0.ci-2020-06-16-015028</DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
               <DescriptionListTerm>Update Channel</DescriptionListTerm>
-              <DescriptionListDescription>
-                stable-4.5
-              </DescriptionListDescription>
+              <DescriptionListDescription>stable-4.5</DescriptionListDescription>
             </DescriptionListGroup>
           </DescriptionList>
         </CardBody>
@@ -368,42 +358,26 @@ CardDetailsDemo = () => {
         <CardBody>
           <DescriptionList>
             <DescriptionListGroup>
-              <DescriptionListTerm>
-                Cluster API Address
-              </DescriptionListTerm>
+              <DescriptionListTerm>Cluster API Address</DescriptionListTerm>
               <DescriptionListDescription>
                 <a href="#">https://api2.devcluster.openshift.com</a>
-             </DescriptionListDescription>
-            </DescriptionListGroup>
-            <DescriptionListGroup>
-              <DescriptionListTerm>
-                Cluster ID
-              </DescriptionListTerm>
-              <DescriptionListDescription>
-                08908908-b850-41d9-8820-239becde9e86
-             </DescriptionListDescription>
-            </DescriptionListGroup>
-            <DescriptionListGroup>
-              <DescriptionListTerm>
-                Provider
-              </DescriptionListTerm>
-              <DescriptionListDescription>
-                Azure
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
-              <DescriptionListTerm>
-                OpenShift Version
-              </DescriptionListTerm>
-              <DescriptionListDescription>
-                4.5.0.ci-2020-06-16-015026
-              </DescriptionListDescription>
+              <DescriptionListTerm>Cluster ID</DescriptionListTerm>
+              <DescriptionListDescription>08908908-b850-41d9-8820-239becde9e86</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Provider</DescriptionListTerm>
+              <DescriptionListDescription>Azure</DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>OpenShift Version</DescriptionListTerm>
+              <DescriptionListDescription>4.5.0.ci-2020-06-16-015026</DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
               <DescriptionListTerm>Update Channel</DescriptionListTerm>
-              <DescriptionListDescription>
-                stable-4.4
-              </DescriptionListDescription>
+              <DescriptionListDescription>stable-4.4</DescriptionListDescription>
             </DescriptionListGroup>
           </DescriptionList>
         </CardBody>
@@ -414,7 +388,7 @@ CardDetailsDemo = () => {
       </Card>
     </Gallery>
   );
-}
+};
 ```
 
 ### Aggregate status card
@@ -985,4 +959,275 @@ const Status: React.FunctionComponent = () => {
         </>
   )
 }
+```
+
+### Log view
+
+```js
+import React from 'react';
+import {
+  Card,
+  CardHeader,
+  CardActions,
+  CardTitle,
+  CardBody,
+  CardFooter,
+  Gallery,
+  Title,
+  DescriptionList,
+  DescriptionListGroup,
+  DescriptionListTerm,
+  DescriptionListDescription,
+  Dropdown,
+  DropdownItem,
+  DropdownToggle
+} from '@patternfly/react-core';
+
+CardLogViewDemo = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+
+  const onActionSelect = event => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const onActionToggle = isOpen => {
+    setIsDropdownOpen(isOpen);
+  };
+
+  const dropdownItems = [
+    <DropdownItem key="action1" component="a">
+      Link
+    </DropdownItem>,
+    <DropdownItem key="action2" component="button">
+      Action
+    </DropdownItem>,
+    <DropdownItem key="disabled action3" isDisabled component="a">
+      Disabled link
+    </DropdownItem>,
+    <DropdownItem key="action4" component="button">
+      Disabled action
+    </DropdownItem>,
+    <DropdownItem key="action5" component="a">
+      Separated link
+    </DropdownItem>
+  ];
+
+  return (
+    <Gallery hasGutter style={{ '--pf-l-gallery--GridTemplateColumns--min': '360px' }}>
+      <Card id="card-log-view-example">
+        <CardHeader>
+          <CardActions>
+            <Dropdown
+              onSelect={onActionSelect}
+              toggle={<DropdownToggle onToggle={onActionToggle}>Most recent</DropdownToggle>}
+              isOpen={isDropdownOpen}
+              dropdownItems={dropdownItems}
+              position="right"
+            />
+          </CardActions>
+          <CardTitle>
+            <Title headingLevel="h2" size="xl">
+              Activity
+            </Title>
+          </CardTitle>
+        </CardHeader>
+        <CardBody>
+          <DescriptionList>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Readiness probe failed</DescriptionListTerm>
+              <DescriptionListDescription>
+                Readiness probe failed: Get https://10.131.0.7:5000/healthz: dial tcp 10.131.0.7:5000: connect:
+                connection refused
+              </DescriptionListDescription>
+              <DescriptionListDescription>
+                <date className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:02 am</date>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Successful assignment</DescriptionListTerm>
+              <DescriptionListDescription>
+                Successfully assigned default/example to ip-10-0-130-149.ec2.internal
+              </DescriptionListDescription>
+              <DescriptionListDescription>
+                <date className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:13 am</date>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Pulling image</DescriptionListTerm>
+              <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
+              <DescriptionListDescription>
+                <date className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:59 am</date>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm>Created container</DescriptionListTerm>
+              <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
+              <DescriptionListDescription>
+                <date className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:45 am</date>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+          </DescriptionList>
+        </CardBody>
+        <CardFooter>
+          <a href="#">View all activity</a>
+        </CardFooter>
+      </Card>
+    </Gallery>
+  );
+};
+```
+
+### Event view
+
+```js
+import React from 'react';
+import {
+  Card,
+  CardHeader,
+  CardActions,
+  CardTitle,
+  CardBody,
+  CardFooter,
+  Gallery,
+  Flex,
+  FlexItem,
+  Title,
+  DescriptionList,
+  DescriptionListGroup,
+  DescriptionListTerm,
+  DescriptionListDescription,
+  Spinner,
+  Dropdown,
+  DropdownItem,
+  DropdownToggle
+} from '@patternfly/react-core';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+
+CardEventViewDemo = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+
+  const onActionSelect = event => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const onActionToggle = isOpen => {
+    setIsDropdownOpen(isOpen);
+  };
+
+  const dropdownItems = [
+    <DropdownItem key="action1" component="a">
+      Link
+    </DropdownItem>,
+    <DropdownItem key="action2" component="button">
+      Action
+    </DropdownItem>,
+    <DropdownItem key="disabled action3" isDisabled component="a">
+      Disabled link
+    </DropdownItem>,
+    <DropdownItem key="disabled action4" isDisabled component="button">
+      Disabled action
+    </DropdownItem>,
+    <DropdownItem key="action5" component="a">
+      Separated link
+    </DropdownItem>
+  ];
+
+  return (
+    <Gallery hasGutter style={{ '--pf-l-gallery--GridTemplateColumns--min': '360px' }}>
+      <Card id="card-events-view-example">
+        <CardHeader>
+          <CardActions>
+            <Dropdown
+              onSelect={onActionSelect}
+              toggle={<DropdownToggle onToggle={onActionToggle}>Status</DropdownToggle>}
+              isOpen={isDropdownOpen}
+              dropdownItems={dropdownItems}
+              position="right"
+            />
+          </CardActions>
+          <CardTitle>
+            <Title headingLevel="h2" size="xl">
+              Events
+            </Title>
+          </CardTitle>
+        </CardHeader>
+        <CardBody>
+          <DescriptionList>
+            <DescriptionListGroup>
+              <DescriptionListTerm className=" pf-u-font-size-lg">
+                <Flex flexWrap={{ default: 'nowrap' }}>
+                  <FlexItem>
+                    <ExclamationCircleIcon className="pf-u-danger-color-100" aria-hidden="true" />
+                  </FlexItem>
+                  <FlexItem>
+                    <span>Readiness probe failed</span>
+                  </FlexItem>
+                </Flex>
+              </DescriptionListTerm>
+              <DescriptionListDescription>
+                Readiness probe failed: Get https://10.131.0.7:5000/healthz: dial tcp 10.131.0.7:5000: connect:
+                connection refused
+              </DescriptionListDescription>
+              <DescriptionListDescription>
+                <date className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:02 am</date>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm className=" pf-u-font-size-lg">
+                <Flex flexWrap={{ default: 'nowrap' }}>
+                  <FlexItem>
+                    <CheckCircleIcon className="pf-u-success-color-100" aria-hidden="true" />
+                  </FlexItem>
+                  <FlexItem>
+                    <span>Successful assignment</span>
+                  </FlexItem>
+                </Flex>
+              </DescriptionListTerm>
+              <DescriptionListDescription>
+                Successfully assigned default/example to ip-10-0-130-149.ec2.internal
+              </DescriptionListDescription>
+              <DescriptionListDescription>
+                <date className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:13 am</date>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <DescriptionListTerm className=" pf-u-font-size-lg">
+                <Flex flexWrap={{ default: 'nowrap' }}>
+                  <FlexItem>
+                    <Spinner size="md" />
+                  </FlexItem>
+                  <FlexItem>
+                    <span>Pulling image</span>
+                  </FlexItem>
+                </Flex>
+              </DescriptionListTerm>
+              <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
+              <DescriptionListDescription>
+                <date className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:59 am</date>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+            <DescriptionListGroup>
+              <Flex flexWrap={{ default: 'nowrap' }}>
+                <FlexItem>
+                  <CheckCircleIcon className="pf-u-success-color-100" aria-hidden="true" />
+                </FlexItem>
+                <FlexItem>
+                  <span>Created container</span>
+                </FlexItem>
+              </Flex>
+              <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
+              <DescriptionListDescription>
+                <date className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:45 am</date>
+              </DescriptionListDescription>
+            </DescriptionListGroup>
+          </DescriptionList>
+        </CardBody>
+        <CardFooter>
+          <a href="#">View all events</a>
+        </CardFooter>
+      </Card>
+    </Gallery>
+  );
+};
 ```
