@@ -84,11 +84,15 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   let [style, setStyle] = React.useState(styleProp);
   let [hoveringDroppable, setHoveringDroppable] = React.useState<HTMLDivElement>();
   /* eslint-enable prefer-const */
+  let hoveringDraggableId: string = null;
   const [isDragging, setIsDragging] = React.useState(false);
   const { zone, droppableId } = React.useContext(DroppableContext);
   const { onDrop } = React.useContext(DragDropContext);
   let startX = 0;
   let startY = 0;
+  // Makes it so dragging the _bottom_ of the item over the halfway of another
+  // moves it (rather than the cursor)
+  let startYOffset = 0;
   let mouseMoveListener: EventListener;
   let mouseUpListener: EventListener;
   let blankDivHeight = 0;
@@ -115,17 +119,28 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   };
 
   const onMouseUpWhileDragging = (droppableItems: DroppableItem[]) => {
-    setStyle({
-      ...style,
-      transition: 'transform 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s',
-      transform: '',
-      background: styleProp.background,
-      boxShadow: styleProp.boxShadow
-    });
+    droppableItems.forEach(resetDroppableItem);
+    const consumerReordered = onDrop(
+      droppableId,
+      draggableId,
+      hoveringDroppable ? hoveringDroppable.getAttribute('data-pf-droppableid') : null,
+      hoveringDraggableId
+    );
+    if (consumerReordered) {
+      setIsDragging(false);
+      setStyle(styleProp);
+    } else {
+      // Animate item returning to where it started
+      setStyle({
+        ...style,
+        transition: 'transform 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s',
+        transform: '',
+        background: styleProp.background,
+        boxShadow: styleProp.boxShadow
+      });
+    }
     document.removeEventListener('mousemove', mouseMoveListener);
     document.removeEventListener('mouseup', mouseUpListener);
-    droppableItems.forEach(resetDroppableItem);
-    onDrop(droppableId, draggableId, hoveringDroppable.getAttribute('data-pf-droppableid'), 'hard');
   };
 
   const onMouseMoveWhileDragging = (ev: MouseEvent, droppableItems: DroppableItem[], blankDivHeight: number) => {
@@ -144,6 +159,8 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
             const rect = draggableNodesRects[i];
             const isLast = i === draggableNodes.length - 1;
             const startOverlaps = startY > rect.y && startY < rect.y + rect.height;
+            // TODO: fix pf.org layout bug when inserting div with width equal to container
+            // Then the hacky container can simply be the size of the real node
             if ((startOverlaps || isLast) && !inserted) {
               if (isLast && !startOverlaps) {
                 dnode.after(container);
@@ -163,6 +180,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
       } else {
         node.style.boxShadow = '0px 0px 0px 1px red, 0px 2px 5px rgba(0, 0, 0, 0.2)';
         resetDroppableItem(droppableItem);
+        hoveringDraggableId = null;
       }
     });
     setStyle({
@@ -172,21 +190,27 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
       cursor: !hoveringDroppable && 'not-allowed'
     });
     if (hoveringDroppable) {
-      droppableItems.forEach(({ node, draggableNodes, draggableNodesRects }) => {
-        if (node === hoveringDroppable) {
+      droppableItems
+        .filter(item => item.node === hoveringDroppable)
+        .forEach(({ draggableNodes, draggableNodesRects }) => {
+          let lastTranslate = 0;
           draggableNodes.forEach((n, i) => {
             const rect = draggableNodesRects[i];
             const halfway = rect.y + rect.height / 2;
             let translateY = 0;
-            if (startY < halfway && ev.pageY > halfway) {
+            // Use offset for more interactive translations
+            if (startY < halfway && ev.pageY + (blankDivHeight - startYOffset) > halfway) {
               translateY -= blankDivHeight;
-            } else if (startY >= halfway && ev.pageY <= halfway) {
+            } else if (startY >= halfway && ev.pageY - startYOffset <= halfway) {
               translateY += blankDivHeight;
             }
+            if ((translateY <= lastTranslate && translateY < 0) || (translateY > lastTranslate && translateY > 0)) {
+              hoveringDraggableId = n.getAttribute('data-pf-draggableid');
+            }
             n.style.transform = `translate(0, ${translateY}px`;
+            lastTranslate = translateY;
           });
-        }
-      });
+        });
       setHoveringDroppable(hoveringDroppable);
     }
   };
@@ -198,14 +222,14 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
       return;
     }
     onDragStartProp(ev);
-    const boundingClientRect = ref.current.getBoundingClientRect();
+    const rect = ref.current.getBoundingClientRect();
     style = {
       ...style,
       position: 'fixed',
-      top: boundingClientRect.y,
-      left: boundingClientRect.x,
-      width: boundingClientRect.width,
-      height: boundingClientRect.height,
+      top: rect.y,
+      left: rect.x,
+      width: rect.width,
+      height: rect.height,
       background: getInheritedBackgroundColor(ref.current),
       boxShadow: '0px 0px 0px 1px blue, 0px 2px 5px rgba(0, 0, 0, 0.2)',
       zIndex: 5000
@@ -230,9 +254,13 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     mouseUpListener = () => onMouseUpWhileDragging(droppableItems);
     document.addEventListener('mousemove', mouseMoveListener);
     document.addEventListener('mouseup', mouseUpListener);
+    // Comment out this line to debug while dragging by right clicking
+    // document.addEventListener('contextmenu', mouseUpListener);
     startX = ev.pageX;
     startY = ev.pageY;
+    startYOffset = startY - rect.y;
     setIsDragging(true);
+    hoveringDraggableId = ref.current.getAttribute('data-pf-draggableid');
   };
 
   const div = (

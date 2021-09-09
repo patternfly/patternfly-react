@@ -12,7 +12,7 @@ export const DragDropContext = React.createContext({
     _sourceDraggableKey: string | number,
     _destDroppableKey: string | number | null,
     _destDraggableKey: string | number | null
-  ) => {}
+  ) => false as boolean
 });
 
 interface DragDropProps {
@@ -24,10 +24,10 @@ interface DragDropProps {
     sourceDraggableKey: string | number,
     destDroppableKey: string | number | null,
     destDraggableKey: string | number | null
-  ) => void;
+  ) => boolean;
 }
 
-export const DragDrop: React.FunctionComponent<DragDropProps> = ({ children, onDrop = () => {} }: DragDropProps) => {
+export const DragDrop: React.FunctionComponent<DragDropProps> = ({ children, onDrop = () => false }: DragDropProps) => {
   // Used for reordering
   const [draggableZoneNodes, setDraggableZoneNodes] = React.useState({});
 
