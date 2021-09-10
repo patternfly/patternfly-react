@@ -99,7 +99,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   isDisabled = false,
   ...props
 }: SearchInputProps) => {
-  const [showSearchMenu, setShowSearchMenu] = React.useState(false);
+  const [isSearchMenuOpen, setIsSearchMenuOpen] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState(value);
   const searchInputRef = React.useRef(null);
   const searchInputInputRef = innerRef || React.useRef(null);
@@ -118,7 +118,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   });
 
   React.useEffect(() => {
-    setShowSearchMenu(isAdvancedSearchOpen);
+    setIsSearchMenuOpen(isAdvancedSearchOpen);
   }, [isAdvancedSearchOpen]);
 
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -129,8 +129,8 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   };
 
   const onToggle = (e: React.SyntheticEvent<HTMLButtonElement>) => {
-    const isOpen = !showSearchMenu;
-    setShowSearchMenu(isOpen);
+    const isOpen = !isSearchMenuOpen;
+    setIsSearchMenuOpen(isOpen);
     if (onToggleAdvancedSearch) {
       onToggleAdvancedSearch(e, isOpen);
     }
@@ -141,7 +141,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     if (onSearch) {
       onSearch(value, event, getAttrValueMap());
     }
-    setShowSearchMenu(false);
+    setIsSearchMenuOpen(false);
   };
 
   const getAttrValueMap = () => {
@@ -224,12 +224,12 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
         </div>
         {(attributes.length > 0 || onToggleAdvancedSearch) && (
           <Button
-            className={showSearchMenu && 'pf-m-expanded'}
+            className={isSearchMenuOpen && 'pf-m-expanded'}
             variant={ButtonVariant.control}
             aria-label={openMenuButtonAriaLabel}
             onClick={onToggle}
             isDisabled={isDisabled}
-            aria-expanded={showSearchMenu}
+            aria-expanded={isSearchMenuOpen}
           >
             <CaretDownIcon />
           </Button>
@@ -262,7 +262,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
           hasWordsAttrLabel={hasWordsAttrLabel}
           advancedSearchDelimiter={advancedSearchDelimiter}
           getAttrValueMap={getAttrValueMap}
-          showSearchMenu={showSearchMenu}
+          isSearchMenuOpen={isSearchMenuOpen}
         />
       )}
     </div>

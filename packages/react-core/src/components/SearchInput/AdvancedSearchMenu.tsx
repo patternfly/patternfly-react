@@ -28,7 +28,7 @@ export interface AdvancedSearchMenuProps extends Omit<React.HTMLProps<HTMLDivEle
   /** Function called to toggle the advanced search menu */
   onToggleAdvancedMenu?: (e: React.SyntheticEvent<HTMLButtonElement>) => void;
   /** Flag for toggling the open/close state of the advanced search menu */
-  showSearchMenu?: boolean;
+  isSearchMenuOpen?: boolean;
   /** Label for the buttons which reset the advanced search form and clear the search input */
   resetButtonLabel?: string;
   /** Label for the buttons which called the onSearch event handler */
@@ -59,7 +59,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
   onClear,
   resetButtonLabel = 'Reset',
   submitSearchButtonLabel = 'Search',
-  showSearchMenu,
+  isSearchMenuOpen,
   onToggleAdvancedMenu
 }: AdvancedSearchMenuProps) => {
   const firstAttrRef = React.useRef(null);
@@ -75,13 +75,13 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
   });
 
   React.useEffect(() => {
-    if (showSearchMenu && firstAttrRef && firstAttrRef.current) {
+    if (isSearchMenuOpen && firstAttrRef && firstAttrRef.current) {
       firstAttrRef.current.focus();
       setPutFocusBackOnInput(true);
-    } else if (!showSearchMenu && putFocusBackOnInput && parentInputRef && parentInputRef.current) {
+    } else if (!isSearchMenuOpen && putFocusBackOnInput && parentInputRef && parentInputRef.current) {
       parentInputRef.current.focus();
     }
-  }, [showSearchMenu]);
+  }, [isSearchMenuOpen]);
 
   React.useEffect(() => {
     document.addEventListener('mousedown', onDocClick);
@@ -97,7 +97,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
 
   const onDocClick = (event: Event) => {
     const clickedWithinSearchInput = parentRef && parentRef.current.contains(event.target as Node);
-    if (showSearchMenu && !clickedWithinSearchInput) {
+    if (isSearchMenuOpen && !clickedWithinSearchInput) {
       onToggleAdvancedMenu(event as any);
     }
   };
@@ -105,7 +105,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
   const onEscPress = (event: KeyboardEvent) => {
     const keyCode = event.keyCode || event.which;
     if (
-      showSearchMenu &&
+      isSearchMenuOpen &&
       keyCode === KEY_CODES.ESCAPE_KEY &&
       parentRef &&
       parentRef.current.contains(event.target as Node)
@@ -122,7 +122,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
     if (onSearch) {
       onSearch(value, event, getAttrValueMap());
     }
-    if (showSearchMenu) {
+    if (isSearchMenuOpen) {
       onToggleAdvancedMenu(event as any);
     }
   };
@@ -199,7 +199,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
     return formGroups;
   };
 
-  return showSearchMenu ? (
+  return isSearchMenuOpen ? (
     <div className={styles.searchInputMenu}>
       <div className={styles.searchInputMenuBody}>
         <Form>
