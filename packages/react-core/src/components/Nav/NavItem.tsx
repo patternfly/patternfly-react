@@ -52,6 +52,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
 }: NavItemProps) => {
   const { flyoutRef, setFlyoutRef } = React.useContext(NavContext);
   const { isNavOpen } = React.useContext(PageSidebarContext);
+  const [flyoutTarget, setFlyoutTarget] = React.useState(null);
   const ref = React.useRef<HTMLLIElement>();
   const flyoutVisible = ref === flyoutRef;
   const Component = component as any;
@@ -93,6 +94,20 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     };
   }, []);
 
+  React.useEffect(() => {
+    if (flyoutTarget) {
+      if (flyoutVisible) {
+        const flyoutMenu = (flyoutTarget as HTMLElement).nextElementSibling;
+        const flyoutItems = Array.from(flyoutMenu.getElementsByTagName('UL')[0].children).filter(
+          el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
+        );
+        (flyoutItems[0].firstChild as HTMLElement).focus();
+      } else {
+        flyoutTarget.focus();
+      }
+    }
+  }, [flyoutVisible, flyoutTarget]);
+
   const handleFlyout = (event: React.KeyboardEvent) => {
     const key = event.key;
     const target = event.target as HTMLElement;
@@ -106,6 +121,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       event.preventDefault();
       if (!flyoutVisible) {
         showFlyout(true);
+        setFlyoutTarget(target as HTMLElement);
       }
     }
 
