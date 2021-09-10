@@ -95,13 +95,12 @@ MultiList = () => {
     items1: getItems(10, 0),
     items2: getItems(5, 10)
   });
-  console.log('items', items);
 
   function onDrop(sourceDroppableId, sourceDraggableId, destDroppableId, destDraggableId) {
     console.log(sourceDroppableId, sourceDraggableId, destDroppableId, destDraggableId);
     if (destDroppableId) {
       const sourceIndex = items[sourceDroppableId].findIndex(item => item.id === sourceDraggableId);
-      const destIndex = items[destDroppableId].findIndex(item => item.id === destDraggableId);
+      const destIndex = items[destDroppableId].findIndex(item => item.id === destDraggableId) + 1;
       if (sourceDroppableId === destDroppableId) {
         const newItems = reorder(
           sourceDroppableId === 'items1' ? items.items1 : items.items2,
@@ -127,8 +126,8 @@ MultiList = () => {
           destIndex
         );
         setItems({
-          items1: newItems1,
-          items2: newItems2
+          items1: sourceDroppableId === 'items1' ? newItems1 : newItems2,
+          items2: destDroppableId   === 'items1' ? newItems1 : newItems2
         });
       }
       return true;
