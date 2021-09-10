@@ -1195,7 +1195,7 @@ CardEventViewDemo = () => {
               <DescriptionListTerm className=" pf-u-font-size-lg">
                 <Flex flexWrap={{ default: 'nowrap' }}>
                   <FlexItem>
-                    <Spinner size="md" />
+                    <Spinner size="md" aria-label="loading spinner"/>
                   </FlexItem>
                   <FlexItem>
                     <span>Pulling image</span>
@@ -1208,14 +1208,16 @@ CardEventViewDemo = () => {
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
-              <Flex flexWrap={{ default: 'nowrap' }}>
-                <FlexItem>
-                  <CheckCircleIcon className="pf-u-success-color-100" aria-hidden="true" />
-                </FlexItem>
-                <FlexItem>
-                  <span>Created container</span>
-                </FlexItem>
-              </Flex>
+              <DescriptionListTerm className=" pf-u-font-size-lg">
+                <Flex flexWrap={{ default: 'nowrap' }}>
+                  <FlexItem>
+                    <CheckCircleIcon className="pf-u-success-color-100" aria-hidden="true" />
+                  </FlexItem>
+                  <FlexItem>
+                    <span>Created container</span>
+                  </FlexItem>
+                </Flex>
+              </DescriptionListTerm>
               <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
               <DescriptionListDescription>
                 <date className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:45 am</date>
