@@ -801,11 +801,11 @@ class TabsNav extends React.Component {
         <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>} href="#">
           Database
         </Tab>
-        <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>} href="#">
-          Server
+        <Tab eventKey={3} title={<TabTitleText>Disabled</TabTitleText>} isDisabled href="#">
+          Disabled
         </Tab>
-        <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>} href="#">
-          System
+        <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled href="#">
+          ARIA Disabled
         </Tab>
         <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>} href="#">
           Network
@@ -861,23 +861,23 @@ class SecondaryTabsNav extends React.Component {
             aria-label="Local secondary"
             component={TabsComponent.nav}
           >
-            <Tab eventKey={20} title={<TabTitleText>Secondary tab item 1</TabTitleText>} href="#">
-              Secondary tab item 1 item section
+            <Tab eventKey={20} title={<TabTitleText>Item 1</TabTitleText>} href="#">
+              Item 1 item section
             </Tab>
-            <Tab eventKey={21} title={<TabTitleText>Secondary tab item 2</TabTitleText>} href="#">
-              Secondary tab item 2 section
+            <Tab eventKey={21} title={<TabTitleText>Item 2</TabTitleText>} href="#">
+              Item 2 section
             </Tab>
-            <Tab eventKey={22} title={<TabTitleText>Secondary tab item 3</TabTitleText>} href="#">
-              Secondary tab item 3 section
+            <Tab eventKey={22} title={<TabTitleText>Item 3</TabTitleText>} href="#">
+              Item 3 section
             </Tab>
-            <Tab eventKey={23} title={<TabTitleText>Secondary tab item 4</TabTitleText>}href="#" >
-              Secondary tab item 4 section
+            <Tab eventKey={3} title={<TabTitleText>Disabled</TabTitleText>} isDisabled href="#">
+              Disabled
             </Tab>
-            <Tab eventKey={24} title={<TabTitleText>Secondary tab item 5</TabTitleText>} href="#">
-              Secondary tab item 5 section
+            <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled href="#">
+              ARIA Disabled
             </Tab>
-            <Tab eventKey={25} title={<TabTitleText>Secondary tab item 6</TabTitleText>} href="#">
-              Secondary tab item 6 section
+            <Tab eventKey={25} title={<TabTitleText>Item 6</TabTitleText>} href="#">
+              Item 6 section
             </Tab>
           </Tabs>
         </Tab>
@@ -887,11 +887,11 @@ class SecondaryTabsNav extends React.Component {
         <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>} href="#">
           Database
         </Tab>
-        <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>} href="#">
-          Server
+        <Tab eventKey={3} title={<TabTitleText>Disabled</TabTitleText>} isDisabled href="#">
+          Disabled
         </Tab>
-        <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>} href="#">
-          System
+        <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled href="#">
+          ARIA Disabled
         </Tab>
         <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>} href="#">
           Network

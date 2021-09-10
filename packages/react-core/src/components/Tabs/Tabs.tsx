@@ -114,6 +114,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     eventKey: number | string,
     tabContentRef: React.RefObject<any>
   ) {
+    // When tab is an achor tag with href, cancel navigation event
+    event.preventDefault();
     const { shownKeys } = this.state;
     const { onSelect, defaultActiveKey } = this.props;
     // if defaultActiveKey Tabs are uncontrolled, set new active key internally
