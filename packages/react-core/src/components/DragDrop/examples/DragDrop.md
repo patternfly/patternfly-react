@@ -4,12 +4,32 @@ section: components
 propComponents: [
   DragDrop,
   Draggable,
-  Droppable
+  Droppable,
+  DraggableItemPosition
 ]
 beta: true
 ---
 
-You can use Draggable and Droppable components to move items in or between lists.
+You can use `DragDrop` to move items in or between lists. `DragDrop`s should contain `Droppable`s which contain `Draggable`s.
+
+```js noLive
+import React from 'react';
+import { DragDrop, Draggable, Droppable } from '@patternfly/react-core';
+
+<DragDrop> {/* DragDrop houses the context for dragging and dropping */}
+  <Droppable>
+    <Draggable>
+      You can put anything here! It will be wrapped in a styled div.
+    </Draggable>
+    <Draggable>
+      You can have as many Draggables as you like.
+    </Draggable>
+  </Droppable>
+  <Droppable> {/* You can also have many droppables! */}
+    <Draggable />
+  </Droppable>
+</DragDrop>
+```
 
 ## Examples
 ### Basic
@@ -34,14 +54,12 @@ const reorder = (list, startIndex, endIndex) => {
 Basic = () => {
   const [items, setItems] = React.useState(getItems(10));
 
-  function onDrop(_sourceDroppableId, sourceDraggableId, destDroppableId, destDraggableId) {
-    if (destDroppableId) {
-      const sourceIndex = items.findIndex(item => item.id === sourceDraggableId);
-      const destIndex = items.findIndex(item => item.id === destDraggableId);
+  function onDrop(source, dest) {
+    if (dest) {
       const newItems = reorder(
         items,
-        sourceIndex,
-        destIndex
+        source.index,
+        dest.index
       );
       setItems(newItems);
 
@@ -51,9 +69,9 @@ Basic = () => {
 
   return (
     <DragDrop onDrop={onDrop}>
-      <Droppable zone="basic">
-        {items.map(({ id, content }) =>
-          <Draggable key={id} draggableId={id} style={{ padding: '8px' }}>
+      <Droppable>
+        {items.map(({ id, content }, i) =>
+          <Draggable key={i} style={{ padding: '8px' }}>
             {content}
           </Draggable>
         )}
@@ -96,18 +114,16 @@ MultiList = () => {
     items2: getItems(5, 10)
   });
 
-  function onDrop(sourceDroppableId, sourceDraggableId, destDroppableId, destDraggableId) {
-    console.log(sourceDroppableId, sourceDraggableId, destDroppableId, destDraggableId);
-    if (destDroppableId) {
-      const sourceIndex = items[sourceDroppableId].findIndex(item => item.id === sourceDraggableId);
-      const destIndex = items[destDroppableId].findIndex(item => item.id === destDraggableId) + 1;
-      if (sourceDroppableId === destDroppableId) {
+  function onDrop(source, dest) {
+    console.log(source, dest);
+    if (dest) {
+      if (source.droppableId === dest.droppableId) {
         const newItems = reorder(
-          sourceDroppableId === 'items1' ? items.items1 : items.items2,
-          sourceIndex,
-          destIndex
+          source.droppableId === 'items1' ? items.items1 : items.items2,
+          source.index,
+          dest.index
         );
-        if (sourceDroppableId === 'items1') {
+        if (source.droppableId === 'items1') {
           setItems({
             items1: newItems,
             items2: items.items2
@@ -120,14 +136,14 @@ MultiList = () => {
         }
       } else {
         const [newItems1, newItems2] = move(
-          sourceDroppableId === 'items1' ? items.items1 : items.items2,
-          destDroppableId   === 'items1' ? items.items1 : items.items2,
-          sourceIndex,
-          destIndex
+          source.droppableId === 'items1' ? items.items1 : items.items2,
+          dest.droppableId   === 'items1' ? items.items1 : items.items2,
+          source.index,
+          dest.index
         );
         setItems({
-          items1: sourceDroppableId === 'items1' ? newItems1 : newItems2,
-          items2: destDroppableId   === 'items1' ? newItems1 : newItems2
+          items1: source.droppableId === 'items1' ? newItems1 : newItems2,
+          items2: dest.droppableId   === 'items1' ? newItems1 : newItems2
         });
       }
       return true;
@@ -140,8 +156,8 @@ MultiList = () => {
         {Object.entries(items).map(([key, subitems]) =>
           <SplitItem key={key} style={{ flex: 1 }}>
             <Droppable zone="multizone" droppableId={key}>
-              {subitems.map(({ id, content }) =>
-                <Draggable key={key + id} draggableId={id} style={{ padding: '8px' }}>
+              {subitems.map(({ id, content }, i) =>
+                <Draggable key={id} style={{ padding: '8px' }}>
                   {content}
                 </Draggable>
               )}

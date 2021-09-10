@@ -8,8 +8,6 @@ export interface DraggableProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Class to add to outer div */
   className?: string;
-  /** Id to be passed to onDrop event. */
-  draggableId?: string | number | null;
 }
 
 // Browsers really like being different from each other.
@@ -56,6 +54,7 @@ interface DroppableItem {
   draggableNodesRects: DOMRect[];
 }
 
+// Reset per-element state
 function resetDroppableItem(droppableItem: DroppableItem) {
   removeBlankDiv(droppableItem.node);
   droppableItem.node.style.boxShadow = '';
@@ -75,43 +74,29 @@ function overlaps(ev: MouseEvent, rect: DOMRect) {
 export const Draggable: React.FunctionComponent<DraggableProps> = ({
   className,
   children,
-  onDragStart: onDragStartProp = () => {},
   style: styleProp,
-  draggableId,
   ...props
 }: DraggableProps) => {
   /* eslint-disable prefer-const */
   let [style, setStyle] = React.useState(styleProp);
-  let [hoveringDroppable, setHoveringDroppable] = React.useState<HTMLDivElement>();
   /* eslint-enable prefer-const */
-  let hoveringDraggableId: string = null;
   const [isDragging, setIsDragging] = React.useState(false);
   const { zone, droppableId } = React.useContext(DroppableContext);
-  const { onDrop } = React.useContext(DragDropContext);
+  const { onDrag, onDrop } = React.useContext(DragDropContext);
+  const ref = React.createRef<HTMLDivElement>();
   // Some state is better just to leave as vars passed around between various callbacks
+  // You can only drag around one item at a time anyways...
   let startX = 0;
   let startY = 0;
-  // Makes it so dragging the _bottom_ of the item over the halfway of another
-  // moves it (rather than the cursor)
-  let startYOffset = 0;
+  let index: number = null; // Index of this draggable
+  let hoveringDroppable: HTMLDivElement;
+  let hoveringIndex: number = null;
   let mouseMoveListener: EventListener;
   let mouseUpListener: EventListener;
-  let blankDivRect: DOMRect;
+  // Makes it so dragging the _bottom_ of the item over the halfway of another moves it
+  let startYOffset = 0;
 
-  const ref = React.createRef<HTMLDivElement>();
-
-  const blankDiv = (
-    <div
-      data-pf-draggableid={draggableId}
-      draggable
-      role="button"
-      {...props}
-      style={{ ...styleProp, visibility: 'hidden' }}
-    >
-      {children}
-    </div>
-  );
-
+  // After item returning to where it started animation completes
   const onTransitionEnd = (_ev: React.TransitionEvent<HTMLDivElement>) => {
     if (isDragging) {
       setIsDragging(false);
@@ -125,7 +110,18 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     document.removeEventListener('mouseup', mouseUpListener);
     document.removeEventListener('contextmenu', mouseUpListener);
     const hoveringDroppableId = hoveringDroppable ? hoveringDroppable.getAttribute('data-pf-droppableid') : null;
-    const consumerReordered = onDrop(droppableId, draggableId, hoveringDroppableId, hoveringDraggableId);
+    const source = {
+      droppableId,
+      index
+    };
+    const dest =
+      hoveringDroppableId !== null && hoveringIndex !== null
+        ? {
+            droppableId: hoveringDroppableId,
+            index: hoveringIndex
+          }
+        : undefined;
+    const consumerReordered = onDrop(source, dest);
     if (consumerReordered && droppableId === hoveringDroppableId) {
       setIsDragging(false);
       setStyle(styleProp);
@@ -141,86 +137,122 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     }
   };
 
+  // This is where the magic happens
   const onMouseMoveWhileDragging = (ev: MouseEvent, droppableItems: DroppableItem[], blankDivRect: DOMRect) => {
+    // Compute each time what droppable node we are hovering over
     hoveringDroppable = null;
     droppableItems.forEach(droppableItem => {
       const { node, rect, isDraggingHost, draggableNodes, draggableNodesRects } = droppableItem;
       if (overlaps(ev, rect)) {
+        // Add valid dropzone style
         node.style.boxShadow = '0px 0px 0px 1px blue, 0px 2px 5px rgba(0, 0, 0, 0.2)';
         hoveringDroppable = node;
+        // Check if we need to add a blank div row
         if (node.getAttribute('blankDiv') !== 'true' && !isDraggingHost) {
-          const container = document.createElement('div');
-          container.setAttribute('blankDiv', 'true');
-          let inserted = false;
+          const blankDiv = document.createElement('div');
+          blankDiv.setAttribute('blankDiv', 'true'); // Makes removing easier
+          let blankDivPos = -1;
           for (let i = 0; i < draggableNodes.length; i++) {
-            const dnode = draggableNodes[i];
-            const rect = draggableNodesRects[i];
+            const childRect = draggableNodesRects[i];
             const isLast = i === draggableNodes.length - 1;
-            const startOverlaps = rect.y >= startY - startYOffset;
-            if ((startOverlaps || isLast) && !inserted) {
+            const startOverlaps = childRect.y >= startY - startYOffset;
+            if ((startOverlaps || isLast) && blankDivPos === -1) {
               if (isLast && !startOverlaps) {
-                dnode.after(container);
+                draggableNodes[i].after(blankDiv);
               } else {
-                dnode.before(container);
+                draggableNodes[i].before(blankDiv);
               }
-              container.style.height = `${blankDivRect.height}px`;
-              container.style.width = `${blankDivRect.width}px`;
-              node.setAttribute('blankDiv', 'true');
-              inserted = true;
+              blankDiv.style.height = `${blankDivRect.height}px`;
+              blankDiv.style.width = `${blankDivRect.width}px`;
+              node.setAttribute('blankDiv', 'true'); // Makes removing easier
+              blankDivPos = i;
             }
-            if (inserted) {
-              rect.y += blankDivRect.height;
+            if (blankDivPos !== -1) {
+              childRect.y += blankDivRect.height;
             }
           }
+          // Insert so drag + drop behavior matches single-list case
+          draggableNodes.splice(blankDivPos, 0, blankDiv);
+          draggableNodesRects.splice(blankDivPos, 0, blankDivRect);
+          // Extend hitbox of droppable zone
           rect.height += blankDivRect.height;
         }
       } else {
-        node.style.boxShadow = '0px 0px 0px 1px red, 0px 2px 5px rgba(0, 0, 0, 0.2)';
         resetDroppableItem(droppableItem);
+        node.style.boxShadow = '0px 0px 0px 1px red, 0px 2px 5px rgba(0, 0, 0, 0.2)';
       }
     });
+
+    // Move hovering draggable and style it based on cursor position
     setStyle({
       ...style,
       boxShadow: `0px 0px 0px 1px ${hoveringDroppable ? 'blue' : 'red'}, 0px 2px 5px rgba(0, 0, 0, 0.2)`,
       transform: `translate(${ev.pageX - startX}px, ${ev.pageY - startY}px)`,
       cursor: !hoveringDroppable && 'not-allowed'
     });
-    hoveringDraggableId = null;
+
+    // Iterate through sibling draggable nodes to reposition them and store correct hoveringIndex for onDrop
+    hoveringIndex = null;
     if (hoveringDroppable) {
-      droppableItems
-        .filter(item => item.node === hoveringDroppable)
-        .forEach(({ draggableNodes, draggableNodesRects }) => {
-          let lastTranslate = 0;
-          draggableNodes.forEach((n, i) => {
-            n.style.transition = 'transform 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s';
-            const rect = draggableNodesRects[i];
-            const halfway = rect.y + rect.height / 2;
-            let translateY = 0;
-            // Use offset for more interactive translations
-            if (startY < halfway && ev.pageY + (blankDivRect.height - startYOffset) > halfway) {
-              translateY -= blankDivRect.height;
-            } else if (startY >= halfway && ev.pageY - startYOffset <= halfway) {
-              translateY += blankDivRect.height;
-            }
-            if ((translateY <= lastTranslate && translateY < 0) || (translateY > lastTranslate && translateY > 0)) {
-              hoveringDraggableId = n.getAttribute('data-pf-draggableid');
-            }
-            n.style.transform = `translate(0, ${translateY}px`;
-            lastTranslate = translateY;
-          });
-        });
-      setHoveringDroppable(hoveringDroppable);
+      const { draggableNodes, draggableNodesRects } = droppableItems.find(item => item.node === hoveringDroppable);
+      let lastTranslate = 0;
+      draggableNodes.forEach((n, i) => {
+        n.style.transition = 'transform 0.5s cubic-bezier(0.2, 1, 0.1, 1) 0s';
+        const rect = draggableNodesRects[i];
+        const halfway = rect.y + rect.height / 2;
+        let translateY = 0;
+        // Use offset for more interactive translations
+        if (startY < halfway && ev.pageY + (blankDivRect.height - startYOffset) > halfway) {
+          translateY -= blankDivRect.height;
+        } else if (startY >= halfway && ev.pageY - startYOffset <= halfway) {
+          translateY += blankDivRect.height;
+        }
+        // Clever way to find item currently hovering over
+        if ((translateY <= lastTranslate && translateY < 0) || (translateY > lastTranslate && translateY > 0)) {
+          hoveringIndex = i;
+        }
+        n.style.transform = `translate(0, ${translateY}px`;
+        lastTranslate = translateY;
+      });
     }
   };
 
   const onDragStart = (ev: React.DragEvent<HTMLDivElement>) => {
+    // Default HTML drag and drop doesn't allow us to change what the thing
+    // being dragged looks like. Because of this we'll use prevent the default
+    // and use `mouseMove` and `mouseUp` instead
     ev.preventDefault();
     if (isDragging) {
       // still in animation
       return;
     }
-    onDragStartProp(ev);
+
+    // Cache droppable and draggable nodes and their bounding rects
     const rect = ref.current.getBoundingClientRect();
+    const droppableNodes = Array.from(document.querySelectorAll(`[data-pf-droppable="${zone}"]`)) as HTMLDivElement[];
+    const droppableItems = droppableNodes.reduce((acc, cur) => {
+      const draggableNodes = Array.from(cur.querySelectorAll(`[data-pf-draggable-zone="${zone}"]`)) as HTMLDivElement[];
+      const isDraggingHost = cur.contains(ref.current);
+      if (isDraggingHost) {
+        index = draggableNodes.indexOf(ref.current);
+      }
+      const droppableItem = {
+        node: cur,
+        rect: cur.getBoundingClientRect(),
+        isDraggingHost,
+        draggableNodes,
+        draggableNodesRects: draggableNodes.map(node => node.getBoundingClientRect())
+      };
+      acc.push(droppableItem);
+      return acc;
+    }, []);
+
+    if (!onDrag({ droppableId, index })) {
+      // Consumer disallowed drag
+      return;
+    }
+
+    // Set initial style so future style mods take effect
     style = {
       ...style,
       position: 'fixed',
@@ -233,37 +265,22 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
       zIndex: 5000
     };
     setStyle(style);
-    const droppableNodes = Array.from(document.querySelectorAll(`[data-pf-droppable="${zone}"]`)) as HTMLDivElement[];
-    const droppableItems = droppableNodes.reduce((acc, cur) => {
-      const draggableNodes = Array.from(cur.querySelectorAll(`[data-pf-draggable="${zone}"]`)) as HTMLDivElement[];
-      const droppableItem = {
-        node: cur,
-        rect: cur.getBoundingClientRect(),
-        isDraggingHost: cur.contains(ref.current),
-        draggableNodes,
-        draggableNodesRects: draggableNodes.map(node => node.getBoundingClientRect())
-      };
-      acc.push(droppableItem);
-      return acc;
-    }, []);
-    blankDivRect = ref.current.getBoundingClientRect();
-    mouseMoveListener = ev => onMouseMoveWhileDragging(ev as MouseEvent, droppableItems, blankDivRect);
-    mouseUpListener = () => onMouseUpWhileDragging(droppableItems);
-    document.addEventListener('mousemove', mouseMoveListener);
-    document.addEventListener('mouseup', mouseUpListener);
-    // Comment out this line to debug while dragging by right clicking
-    // document.addEventListener('contextmenu', mouseUpListener);
+    // Store event details
     startX = ev.pageX;
     startY = ev.pageY;
     startYOffset = startY - rect.y;
     setIsDragging(true);
-    hoveringDraggableId = ref.current.getAttribute('data-pf-draggableid');
+    mouseMoveListener = ev => onMouseMoveWhileDragging(ev as MouseEvent, droppableItems, rect);
+    mouseUpListener = () => onMouseUpWhileDragging(droppableItems);
+    document.addEventListener('mousemove', mouseMoveListener);
+    document.addEventListener('mouseup', mouseUpListener);
+    // Comment out this line to debug while dragging by right clicking
+    document.addEventListener('contextmenu', mouseUpListener);
   };
 
   const div = (
     <div
-      data-pf-draggable={isDragging ? null : zone}
-      data-pf-draggableid={draggableId}
+      data-pf-draggable-zone={isDragging ? null : zone}
       draggable
       role="button"
       className={className}
@@ -280,7 +297,11 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   return (
     <React.Fragment>
       {/* Leave behind blank spot per-design */}
-      {isDragging && blankDiv}
+      {isDragging && (
+        <div draggable role="button" {...props} style={{ ...styleProp, visibility: 'hidden' }}>
+          {children}
+        </div>
+      )}
       {/* Move dragging part into portal to appear above top and side nav */}
       {isDragging ? createPortal(div, document.body) : div}
     </React.Fragment>

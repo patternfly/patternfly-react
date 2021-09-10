@@ -6,7 +6,7 @@ interface DroppableProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Class to add to outer div */
   className?: string;
-  /** Name of zone that items can be dragged between */
+  /** Name of zone that items can be dragged between. Should specify if there is more than one Droppable on the page. */
   zone?: string;
   /** Id to be passed back on drop events */
   droppableId?: string;

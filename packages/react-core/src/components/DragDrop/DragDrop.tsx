@@ -1,40 +1,29 @@
 import * as React from 'react';
 
-interface ZoneNodes {
-  [zone: string]: HTMLElement[];
+interface DraggableItemPosition {
+  /** Parent droppableId */
+  droppableId: string;
+  /** Index of item in parent Droppable */
+  index: number;
 }
 
 export const DragDropContext = React.createContext({
-  draggableZoneNodes: {} as ZoneNodes,
-  setDraggableZoneNodes: (_nodes: ZoneNodes) => {},
-  onDrop: (
-    _sourceDroppableKey: string | number,
-    _sourceDraggableKey: string | number,
-    _destDroppableKey: string | number | null,
-    _destDraggableKey: string | number | null
-  ) => false as boolean
+  onDrag: (_source: DraggableItemPosition) => true as boolean,
+  onDrop: (_source: DraggableItemPosition, _dest?: DraggableItemPosition) => false as boolean
 });
 
 interface DragDropProps {
   /** Potentially Droppable and Draggable children */
   children?: React.ReactNode;
-  /** Callback for drop event */
-  onDrop?: (
-    sourceDroppableKey: string | number,
-    sourceDraggableKey: string | number,
-    destDroppableKey: string | number | null,
-    destDraggableKey: string | number | null
-  ) => boolean;
+  /** Callback for drag event. Return true to allow drag, false to disallow. */
+  onDrag?: (source: DraggableItemPosition) => boolean;
+  /** Callback for drop event. Return true to allow drop, false to disallow. */
+  onDrop?: (source: DraggableItemPosition, dest?: DraggableItemPosition) => boolean;
 }
 
-export const DragDrop: React.FunctionComponent<DragDropProps> = ({ children, onDrop = () => false }: DragDropProps) => {
-  // Used for reordering
-  const [draggableZoneNodes, setDraggableZoneNodes] = React.useState({});
-
-  return (
-    <DragDropContext.Provider value={{ draggableZoneNodes, setDraggableZoneNodes, onDrop }}>
-      {children}
-    </DragDropContext.Provider>
-  );
-};
+export const DragDrop: React.FunctionComponent<DragDropProps> = ({
+  children,
+  onDrag = () => true,
+  onDrop = () => false
+}: DragDropProps) => <DragDropContext.Provider value={{ onDrag, onDrop }}>{children}</DragDropContext.Provider>;
 DragDrop.displayName = 'DragDrop';
