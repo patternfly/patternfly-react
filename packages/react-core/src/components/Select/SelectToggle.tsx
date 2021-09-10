@@ -261,6 +261,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               isActive && styles.modifiers.active,
               className
             )}
+            aria-label={ariaLabel}
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             onClick={_event => {
               onToggle(!isOpen);
