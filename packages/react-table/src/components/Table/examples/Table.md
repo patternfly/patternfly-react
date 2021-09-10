@@ -195,7 +195,7 @@ class SimpleTable extends React.Component {
 }
 ```
 
-### Row click handler and header cell tooltips/popovers
+### Hoverable rows, selectable rows, and header cell tooltips/popovers
 
 ```js
 import React from 'react';
