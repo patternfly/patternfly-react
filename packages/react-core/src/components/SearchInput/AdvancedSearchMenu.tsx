@@ -25,15 +25,14 @@ export interface AdvancedSearchMenuProps extends Omit<React.HTMLProps<HTMLDivEle
   onClear?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
   /** A callback for when the input value changes */
   onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
-  /** */
+  /** Function called to toggle the advanced search menu */
   onToggleAdvancedMenu?: (e: React.SyntheticEvent<HTMLButtonElement>) => void;
-  /** */
+  /** Flag for toggling the open/close state of the advanced search menu */
   showSearchMenu?: boolean;
   /** Label for the buttons which reset the advanced search form and clear the search input */
   resetButtonLabel?: string;
   /** Label for the buttons which called the onSearch event handler */
   submitSearchButtonLabel?: string;
-
   /** Array of attribute values used for dynamically generated advanced search */
   attributes?: string[] | SearchAttribute[];
   /* Additional elements added after the attributes in the form.
@@ -70,7 +69,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
     if (attributes.length > 0 && !advancedSearchDelimiter) {
       // eslint-disable-next-line no-console
       console.error(
-        'An advancedSearchDelimiter prop is required when advanced search attributes are provided using the attributes prop'
+        'AdvancedSearchMenu: An advancedSearchDelimiter prop is required when advanced search attributes are provided using the attributes prop'
       );
     }
   });
