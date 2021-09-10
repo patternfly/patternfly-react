@@ -19,6 +19,7 @@ import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 import pfIcon from './examples/pf-logo-small.svg';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 ## Demos
 
@@ -872,7 +873,7 @@ MenuWithFlyout = () => {
 };
 ```
 
-### Application Launcher using Menu components
+### Application launcher using menu components
 
 ```js
 import React from 'react';
@@ -1153,5 +1154,170 @@ MenuAppLauncher = () => {
       />
     </div>
   );
+};
+```
+
+### Context selector using menu components
+
+```js
+import React from 'react';
+import {
+  MenuToggle,
+  Menu,
+  MenuContent,
+  MenuFooter,
+  MenuList,
+  MenuItem,
+  MenuGroup,
+  MenuInput,
+  Popper,
+  Tooltip,
+  Divider,
+  TextInput,
+  InputGroup,
+  Button
+} from '@patternfly/react-core';
+import { Link } from '@reach/router';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import pfIcon from './examples/pf-logo-small.svg';
+
+MenuContextSelector = () => {
+  const items = [
+    'My project',
+    'OpenShift cluster',
+    'Production Ansible',
+    'AWS',
+    'Azure',
+    'My project 2',
+    'OpenShift cluster ',
+    'Production Ansible 2 ',
+    'AWS 2',
+    'Azure 2'
+  ];
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [selected, setSelected] = React.useState(items[0]);
+  const [filteredItems, setFilteredItems] = React.useState(items);
+  const [searchInputValue, setSearchInputValue] = React.useState('');
+  const toggleRef = React.useRef();
+  const menuRef = React.useRef();
+  const menuFooterBtnRef = React.useRef();
+
+  const handleMenuKeys = event => {
+    if (!isOpen) {
+      return;
+    }
+    if (menuFooterBtnRef.current.contains(event.target)) {
+      if (event.key === 'Tab') {
+        if (event.shiftKey) {
+          return;
+        }
+        setIsOpen(!isOpen);
+        toggleRef.current.focus();
+      }
+    }
+    if (menuRef.current.contains(event.target)) {
+      if (event.key === 'Escape') {
+        setIsOpen(!isOpen);
+        toggleRef.current.focus();
+      }
+    }
+  };
+
+  const handleClickOutside = event => {
+    if (isOpen && !menuRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', handleMenuKeys);
+    window.addEventListener('click', handleClickOutside);
+
+    return () => {
+      window.removeEventListener('keydown', handleMenuKeys);
+      window.removeEventListener('click', handleClickOutside);
+    };
+  }, [isOpen, menuRef]);
+
+  const onToggleClick = ev => {
+    ev.stopPropagation(); // Stop handleClickOutside from handling
+    setTimeout(() => {
+      const firstElement = menuRef.current.querySelector('li > button,input:not(:disabled)');
+      firstElement && firstElement.focus();
+    }, 0);
+    setIsOpen(!isOpen);
+  };
+
+  const toggle = (
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+      {selected}
+    </MenuToggle>
+  );
+
+  const onSelect = (event, itemId) => {
+    setSelected(itemId);
+    setIsOpen(!isOpen);
+  };
+
+  const onSearchInputChange = value => {
+    setSearchInputValue(value);
+  };
+
+  const onSearchButtonClick = event => {
+    const filtered =
+      searchInputValue === ''
+        ? items
+        : items.filter(str => str.toLowerCase().indexOf(searchInputValue.toLowerCase()) !== -1);
+
+    setFilteredItems(filtered || []);
+    setIsOpen(true); // Keep menu open after search executed
+  };
+
+  const onEnterPressed = event => {
+    if (event.key === 'Enter') {
+      onSearchButtonClick(event);
+    }
+  };
+
+  const menu = (
+    <Menu ref={menuRef} id="context-selector" onSelect={onSelect}>
+      <MenuInput>
+        <InputGroup>
+          <TextInput
+            value={searchInputValue}
+            type="search"
+            placeholder="Search"
+            onChange={onSearchInputChange}
+            onKeyPress={onEnterPressed}
+            aria-labelledby="pf-context-selector-search-button-id-1"
+          />
+          <Button
+            variant={ButtonVariant.control}
+            aria-label="Search menu items"
+            id="pf-context-selector-search-button-id-1"
+            onClick={onSearchButtonClick}
+          >
+            <SearchIcon aria-hidden="true" />
+          </Button>
+        </InputGroup>
+      </MenuInput>
+      <Divider />
+      <MenuContent maxMenuHeight="200px">
+        <MenuList>
+          {filteredItems.map((item, index) => (
+            <MenuItem itemId={item} key={index}>
+              {item}
+            </MenuItem>
+          ))}
+        </MenuList>
+      </MenuContent>
+      <MenuFooter>
+        <Button ref={menuFooterBtnRef} variant="link" isInline>
+          Action
+        </Button>
+      </MenuFooter>
+    </Menu>
+  );
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
 };
 ```
