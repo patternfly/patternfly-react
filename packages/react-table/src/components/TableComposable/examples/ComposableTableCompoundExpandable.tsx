@@ -5,7 +5,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
-// https://github.com/patternfly/patternfly-react/blob/main/packages/react-table/src/components/Table/composable-table-examples/DemoSortableTable.js
+// https://github.com/patternfly/patternfly-react/blob/main/packages/react-table/src/components/TableComposable/examples/DemoSortableTable.tsx
 import DemoSortableTable from './DemoSortableTable';
 
 interface Repository {
@@ -97,7 +97,6 @@ export const ComposableTableCompoundExpandable: React.FunctionComponent = () => 
                     <DemoSortableTable
                       firstColumnRows={[`parent-${repo.name}`, `compound-${expandedCellKey}`, 'three', 'four', 'five']}
                       id={`compound-expansion-table-${repo.name}_${expandedCellKey}`}
-                      key={`${repo.name}_${expandedCellKey}`}
                     />
                   </ExpandableRowContent>
                 </Td>

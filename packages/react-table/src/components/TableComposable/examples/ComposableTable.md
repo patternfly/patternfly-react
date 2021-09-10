@@ -59,8 +59,6 @@ import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
-import DemoSortableTable from './DemoSortableTable';
-
 ## TableComposable examples
 
 The `TableComposable` component differs from the regular `Table` component, in that it allows you to compose the table by nesting the relevant `Thead`, `Tbody`, `Tr`, `Th` and `Td` components within it. For a less declarative and more implicit approach, use the `Table` component instead.
