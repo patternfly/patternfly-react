@@ -57,12 +57,11 @@ export const NavContext = React.createContext<{
   isHorizontal?: boolean;
   flyoutRef?: React.Ref<HTMLLIElement>;
   setFlyoutRef?: (ref: React.Ref<HTMLLIElement>) => void;
-  isHoverDisabled?: boolean;
 }>({});
 
 export class Nav extends React.Component<
   NavProps,
-  { isScrollable: boolean; ouiaStateId: string; flyoutRef: React.Ref<HTMLLIElement> | null; isHoverDisabled: boolean }
+  { isScrollable: boolean; ouiaStateId: string; flyoutRef: React.Ref<HTMLLIElement> | null }
 > {
   static displayName = 'Nav';
   static defaultProps: NavProps = {
@@ -75,8 +74,7 @@ export class Nav extends React.Component<
   state = {
     isScrollable: false,
     ouiaStateId: getDefaultOUIAId(Nav.displayName, this.props.variant),
-    flyoutRef: null as React.Ref<HTMLLIElement>,
-    isHoverDisabled: false
+    flyoutRef: null as React.Ref<HTMLLIElement>
   };
 
   // Callback from NavItem
@@ -147,8 +145,7 @@ export class Nav extends React.Component<
           updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable }),
           isHorizontal: ['horizontal', 'tertiary', 'horizontal-subnav'].includes(variant),
           flyoutRef: this.state.flyoutRef,
-          setFlyoutRef: flyoutRef => this.setState({ flyoutRef }),
-          isHoverDisabled: this.state.isHoverDisabled
+          setFlyoutRef: flyoutRef => this.setState({ flyoutRef })
         }}
       >
         <Component

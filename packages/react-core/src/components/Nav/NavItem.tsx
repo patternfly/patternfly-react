@@ -60,7 +60,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   ouiaSafe,
   ...props
 }: NavItemProps) => {
-  const { flyoutRef, setFlyoutRef, isHoverDisabled } = React.useContext(NavContext);
+  const { flyoutRef, setFlyoutRef } = React.useContext(NavContext);
   const { isNavOpen } = React.useContext(PageSidebarContext);
   const flyoutContext = React.useContext(FlyoutContext);
   const [flyoutXDirection, setFlyoutXDirection] = React.useState(flyoutContext.direction);
@@ -125,9 +125,6 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   }, [flyoutContext]);
 
   const onMouseOver = () => {
-    if (isHoverDisabled) {
-      return;
-    }
     if (hasFlyout) {
       showFlyout(true);
     } else {
@@ -251,9 +248,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
         }
       </NavContext.Consumer>
       {flyoutVisible && (
-        <NavContext.Provider value={{ isHoverDisabled }}>
-          <FlyoutContext.Provider value={{ direction: flyoutXDirection }}>{flyout}</FlyoutContext.Provider>
-        </NavContext.Provider>
+        <FlyoutContext.Provider value={{ direction: flyoutXDirection }}>{flyout}</FlyoutContext.Provider>
       )}
     </li>
   );
