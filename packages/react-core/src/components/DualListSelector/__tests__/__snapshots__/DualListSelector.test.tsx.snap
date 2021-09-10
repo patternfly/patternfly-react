@@ -2667,7 +2667,7 @@ exports[`DualListSelector with tree 1`] = `
                     className="pf-c-dual-list-selector__list-item-row pf-m-check"
                   >
                     <div
-                      className="pf-c-dual-list-selector__item pf-m-check"
+                      className="pf-c-dual-list-selector__item"
                       onClick={[Function]}
                       tabIndex={-1}
                     >
@@ -2807,7 +2807,7 @@ exports[`DualListSelector with tree 1`] = `
                             className="pf-c-dual-list-selector__list-item-row pf-m-check"
                           >
                             <div
-                              className="pf-c-dual-list-selector__item pf-m-check"
+                              className="pf-c-dual-list-selector__item"
                               onClick={[Function]}
                               tabIndex={-1}
                             >
@@ -2867,7 +2867,7 @@ exports[`DualListSelector with tree 1`] = `
                     className="pf-c-dual-list-selector__list-item-row pf-m-check"
                   >
                     <div
-                      className="pf-c-dual-list-selector__item pf-m-check"
+                      className="pf-c-dual-list-selector__item"
                       onClick={[Function]}
                       tabIndex={-1}
                     >
