@@ -936,8 +936,8 @@ const Status: React.FunctionComponent = () => {
 
     const tabContent = (
         <DescriptionList isHorizontal columnModifier={{ lg: '2Col' }}>
-            {descriptionListData.map(({ status, resourceName, detail, icon }) => (
-                <DescriptionListGroup key={status}>
+            {descriptionListData.map(({ status, resourceName, detail, icon }, index) => (
+                <DescriptionListGroup key={index}>
                     <DescriptionListTerm>
                         <Flex>
                             <FlexItem>
@@ -970,7 +970,7 @@ const Status: React.FunctionComponent = () => {
                 <CardBody>
                     <Tabs isFilled id="status-tabs" activeKey={activeTabKey} onSelect={handleTabClick}>
                         {[1, 2, 3].map((tab, tabIndex) =>
-                            <Tab key={tabIndex} eventKey={tabIndex} title={<TabTitleText>{`Object ${tabIndex + 1}`}</TabTitleText>} />
+                            <Tab key={tabIndex} eventKey={tabIndex} title={<TabTitleText>{`Object ${tabIndex + 1}`}</TabTitleText>} tabContentId={`content${tabIndex}`} />
                         )}
                     </Tabs>
                 </CardBody>
