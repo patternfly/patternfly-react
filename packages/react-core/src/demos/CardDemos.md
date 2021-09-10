@@ -1158,7 +1158,7 @@ CardEventViewDemo = () => {
         <CardBody>
           <DescriptionList>
             <DescriptionListGroup>
-              <DescriptionListTerm className=" pf-u-font-size-lg">
+              <DescriptionListTerm>
                 <Flex flexWrap={{ default: 'nowrap' }}>
                   <FlexItem>
                     <ExclamationCircleIcon className="pf-u-danger-color-100" aria-hidden="true" />
@@ -1177,7 +1177,7 @@ CardEventViewDemo = () => {
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
-              <DescriptionListTerm className=" pf-u-font-size-lg">
+              <DescriptionListTerm>
                 <Flex flexWrap={{ default: 'nowrap' }}>
                   <FlexItem>
                     <CheckCircleIcon className="pf-u-success-color-100" aria-hidden="true" />
@@ -1195,7 +1195,7 @@ CardEventViewDemo = () => {
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
-              <DescriptionListTerm className=" pf-u-font-size-lg">
+              <DescriptionListTerm>
                 <Flex flexWrap={{ default: 'nowrap' }}>
                   <FlexItem>
                     <Spinner size="md" aria-label="loading spinner"/>
@@ -1211,7 +1211,7 @@ CardEventViewDemo = () => {
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
-              <DescriptionListTerm className=" pf-u-font-size-lg">
+              <DescriptionListTerm>
                 <Flex flexWrap={{ default: 'nowrap' }}>
                   <FlexItem>
                     <CheckCircleIcon className="pf-u-success-color-100" aria-hidden="true" />
