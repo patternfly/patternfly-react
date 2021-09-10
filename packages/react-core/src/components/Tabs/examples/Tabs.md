@@ -46,6 +46,7 @@ class SimpleTabs extends React.Component {
 
   render() {
     const {activeTabKey, isBox } = this.state;
+    const tooltipRef = React.createRef();
 
     return (
       <div>
@@ -65,12 +66,11 @@ class SimpleTabs extends React.Component {
           <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
             ARIA Disabled
           </Tab>
-          <Tooltip content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support.">
-            <Tab eventKey={5} title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>} isAriaDisabled>
-              ARIA Disabled (Tooltip)
-            </Tab>
-          </Tooltip>
+          <Tab eventKey={5} title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>} isAriaDisabled ref={tooltipRef}>
+            ARIA Disabled (Tooltip)
+          </Tab>
         </Tabs>
+        <Tooltip content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support." reference={tooltipRef} />
         <div style={{marginTop: "20px"}}>
           <Checkbox
               label="isBox"
@@ -95,30 +95,32 @@ import { Tabs, Tab, TabTitleText, Checkbox, Tooltip } from '@patternfly/react-co
 class UncontrolledSimpleTabs extends React.Component {
 
   render() {
+    const tooltipRef = React.createRef();
 
     return (
-      <Tabs defaultActiveKey={0}>
-        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
-          Users
-        </Tab>
-        <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
-          Containers
-        </Tab>
-        <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
-          Database
-        </Tab>
-        <Tab eventKey={3} title={<TabTitleText>Disabled</TabTitleText>} isDisabled>
-            Disabled
-        </Tab>
-        <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
-          ARIA Disabled
-        </Tab>
-        <Tooltip content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support.">
-          <Tab eventKey={5} title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>} isAriaDisabled>
+      <>
+        <Tabs defaultActiveKey={0}>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+            Users
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+            Containers
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+            Database
+          </Tab>
+          <Tab eventKey={3} title={<TabTitleText>Disabled</TabTitleText>} isDisabled>
+              Disabled
+          </Tab>
+          <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
+            ARIA Disabled
+          </Tab>
+          <Tab eventKey={5} title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>} isAriaDisabled ref={tooltipRef}>
             ARIA Disabled (Tooltip)
           </Tab>
-        </Tooltip>
-      </Tabs>
+        </Tabs>
+        <Tooltip content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support." reference={tooltipRef} />
+      </>
     );
   }
 }
@@ -152,6 +154,7 @@ class SimpleTabs extends React.Component {
 
   render() {
     const {activeTabKey, isBox, isTabsLightScheme } = this.state;
+    const tooltipRef = React.createRef();
 
     return (
       <div>
@@ -171,12 +174,11 @@ class SimpleTabs extends React.Component {
           <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
             ARIA Disabled
           </Tab>
-          <Tooltip content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support.">
-            <Tab eventKey={6} title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>} isAriaDisabled>
-              ARIA Disabled (Tooltip)
-            </Tab>
-          </Tooltip>
+          <Tab eventKey={5} title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>} isAriaDisabled ref={tooltipRef}>
+            ARIA Disabled (Tooltip)
+          </Tab>
         </Tabs>
+        <Tooltip content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support." reference={tooltipRef} />
         <div style={{marginTop: "20px"}}>
           <Checkbox
               label="Tabs light variation"
@@ -303,6 +305,7 @@ class VerticalTabs extends React.Component {
 
   render() {
     const {activeTabKey, isBox} = this.state;
+    const tooltipRef = React.createRef();
     return (
       <div>
         <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isVertical isBox={isBox}>
@@ -321,12 +324,11 @@ class VerticalTabs extends React.Component {
           <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
             ARIA Disabled
           </Tab>
-          <Tooltip content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support." position="right">
-            <Tab eventKey={6} title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>} isAriaDisabled>
-              ARIA Disabled (Tooltip)
-            </Tab>
-          </Tooltip>
+          <Tab eventKey={5} title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>} isAriaDisabled ref={tooltipRef}>
+            ARIA Disabled (Tooltip)
+          </Tab>
         </Tabs>
+        <Tooltip content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support." reference={tooltipRef} position="right" />
         <div style={{marginTop: "20px"}}>
           <Checkbox
                 label="isBox"

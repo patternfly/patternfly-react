@@ -23,12 +23,14 @@ exports[`should not render anything 1`] = `
     >
       <TabButton
         aria-controls="pf-tab-section-0-"
+        aria-disabled={false}
         className="pf-c-tabs__link"
         id="pf-tab-0-"
         onClick={[Function]}
       >
         <button
           aria-controls="pf-tab-section-0-"
+          aria-disabled={false}
           className="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe={true}

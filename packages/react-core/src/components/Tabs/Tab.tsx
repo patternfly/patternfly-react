@@ -61,6 +61,14 @@ const TabBase: React.FunctionComponent<TabProps> = ({
   if ((mountOnEnter || unmountOnExit) && eventKey !== localActiveKey) {
     ariaControls = undefined;
   }
+  const isButtonElement = href !== null;
+  const getDefaultTabIdx = () => {
+    if (isDisabled) {
+      return isButtonElement ? null : -1;
+    } else if (isAriaDisabled) {
+      return -1;
+    }
+  };
   return (
     <li
       className={css(styles.tabsItem, eventKey === localActiveKey && styles.modifiers.current, childClassName)}
@@ -72,8 +80,9 @@ const TabBase: React.FunctionComponent<TabProps> = ({
           isDisabled && href && styles.modifiers.disabled,
           isAriaDisabled && styles.modifiers.ariaDisabled
         )}
-        disabled={isDisabled}
-        aria-disabled={isAriaDisabled}
+        disabled={isButtonElement ? isDisabled : null}
+        aria-disabled={!isButtonElement && isAriaDisabled}
+        tabIndex={getDefaultTabIdx()}
         onClick={(event: any) => handleTabClick(event, eventKey, tabContentRef)}
         {...(isAriaDisabled ? preventedEvents : null)}
         id={`pf-tab-${eventKey}-${childId || uniqueId}`}
