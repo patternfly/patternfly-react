@@ -16097,10 +16097,10 @@ textextensions@^2.5.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/textextensions/-/textextensions-2.6.0.tgz#d7e4ab13fe54e32e08873be40d51b74229b00fc4"
 
-theme-patternfly-org@0.6.36:
-  version "0.6.36"
-  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.6.36.tgz#8fe1aa94ad513dfba564329c7bb8138c4ec6dcfa"
-  integrity sha512-nFL1ysbpqJ01fGJV1M0r/yTOLWerLPMiMToRXKZjkslHBEKUsck7zbKKczLhKXn233tCJnrSRbmYZ7An97j0pg==
+theme-patternfly-org@0.6.38:
+  version "0.6.38"
+  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.6.38.tgz#4369ca96aa7b026a8541a2093964786c99b14c1d"
+  integrity sha512-amaR6elzY38kvOpQAwyertvDOz4sSkbTED+/O9hOcu3QDWYwTbsKdy5tx3lJJv1QlN25EENlEz0NEYyTTUe0zQ==
   dependencies:
     "@babel/core" "^7.13.0"
     "@babel/plugin-proposal-class-properties" "^7.13.0"
