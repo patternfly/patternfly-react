@@ -5,7 +5,7 @@ section: components
 
 ## Demos
 
-### Composable Advanced Search
+### Composable advanced search
 
 This demo handles building the advanced search form using the composable Menu, as well as wiring up a 
 select using the composable Menu and MenuToggle components. This demo also demonstrates wiring up the appropriate
@@ -96,7 +96,9 @@ AdvancedComposableSearchInput = () => {
       }
     } 
     if (isAdvancedSearchOpen && advancedSearchPaneRef.current && advancedSearchPaneRef.current.contains(event.target)) {
-      if (event.key === 'Escape') {
+      if (event.key === 'Escape' || 
+      (event.key === 'Tab' && !event.shiftKey && advancedSearchPaneRef.current.querySelector('button[type=reset]') === event.target)
+      ) {
         setIsAdvancedSearchOpen(!isAdvancedSearchOpen);
         searchInputRef.current.focus();
       }
@@ -120,7 +122,7 @@ AdvancedComposableSearchInput = () => {
       window.removeEventListener('keydown', handleMenuKeys);
       window.removeEventListener('click', handleClickOutside);
     };
-  }, [dateWithinMenuRef.current, advancedSearchPaneRef.current]);
+  }, [dateWithinMenuRef.current, advancedSearchPaneRef.current, isAdvancedSearchOpen, isDateWithinOpen]);
   
   
   // This demo and its handling of 'date within' and a date picker is modeled after the gmail advanced search form.
@@ -192,6 +194,7 @@ AdvancedComposableSearchInput = () => {
       onClear={onClear}
       onSearch={onSubmit}
       ref={searchInputRef}
+      id="custom-advanced-search"
     />
   );
   
@@ -258,7 +261,7 @@ AdvancedComposableSearchInput = () => {
               <FormGroup label='Date within' fieldId='date-within' key='date-within'>
                 <Popper trigger={dateWithinToggle} popper={dateWithinOptions} isVisible={isDateWithinOpen} />
               </FormGroup>
-              <FormGroup label='Date' fieldId='date' key='date'>
+              <FormGroup label='Of date' fieldId='date' key='date'>
                 <DatePicker 
                   id="datePicker" 
                   style={{width: "100%"}} 
@@ -289,6 +292,7 @@ AdvancedComposableSearchInput = () => {
       popper={advancedForm}
       isVisible={isAdvancedSearchOpen}
       enableFlip={false}
+      appendTo={() => document.querySelector("#custom-advanced-search")}
     />
   );
 };
