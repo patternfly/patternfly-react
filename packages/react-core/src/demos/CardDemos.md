@@ -970,13 +970,13 @@ const Status: React.FunctionComponent = () => {
                 <CardBody>
                     <Tabs isFilled id="status-tabs" activeKey={activeTabKey} onSelect={handleTabClick}>
                         {[1, 2, 3].map((tab, tabIndex) =>
-                            <Tab key={tabIndex} eventKey={tabIndex} title={<TabTitleText>{`Object ${tabIndex + 1}`}</TabTitleText>} tabContentId={`content${tabIndex}`} />
+                            <Tab key={tabIndex} eventKey={tabIndex} title={<TabTitleText>{`Object ${tabIndex + 1}`}</TabTitleText>} tabContentId={`tabContent${tabIndex}`} />
                         )}
                     </Tabs>
                 </CardBody>
                 <CardBody>
                     {[1, 2, 3].map((tab, tabIndex) =>
-                        <TabContent key={tabIndex} eventKey={tabIndex} id={`${tabIndex}`} activeKey={activeTabKey} hidden={tabIndex !== activeTabKey}>
+                        <TabContent key={tabIndex} eventKey={tabIndex} id={`tabContent${tabIndex}`} activeKey={activeTabKey} hidden={tabIndex !== activeTabKey}>
                             {tabContent}
                         </TabContent>
                     )}
