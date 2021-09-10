@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.11.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.11.30...@patternfly/react-console@4.11.31) (2021-09-10)
+
+
+### Bug Fixes
+
+* **dual-list-selector:** added support for list item row, bumped core ([#6294](https://github.com/patternfly/patternfly-react/issues/6294)) ([010efb5](https://github.com/patternfly/patternfly-react/commit/010efb51c46740bd1e28866d6b956c363819b69d))
+* **SelectToggle:** use aria-label prop ([#6271](https://github.com/patternfly/patternfly-react/issues/6271)) ([5084a46](https://github.com/patternfly/patternfly-react/commit/5084a46531c8d3054e0c8b53f921d18bfb116973))
+
+
+
+
+
 ## [4.11.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.11.29...@patternfly/react-console@4.11.30) (2021-09-10)
 
 **Note:** Version bump only for package @patternfly/react-console

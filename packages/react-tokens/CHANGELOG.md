@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.12.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.12.16...@patternfly/react-tokens@4.12.17) (2021-09-10)
+
+
+### Bug Fixes
+
+* **dual-list-selector:** added support for list item row, bumped core ([#6294](https://github.com/patternfly/patternfly-react/issues/6294)) ([010efb5](https://github.com/patternfly/patternfly-react/commit/010efb51c46740bd1e28866d6b956c363819b69d))
+
+
+
+
+
 ## [4.12.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.12.15...@patternfly/react-tokens@4.12.16) (2021-08-30)
 
 **Note:** Version bump only for package @patternfly/react-tokens

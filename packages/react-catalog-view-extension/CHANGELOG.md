@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.12.63](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.12.62...@patternfly/react-catalog-view-extension@4.12.63) (2021-09-10)
+
+
+### Bug Fixes
+
+* **dual-list-selector:** added support for list item row, bumped core ([#6294](https://github.com/patternfly/patternfly-react/issues/6294)) ([010efb5](https://github.com/patternfly/patternfly-react/commit/010efb51c46740bd1e28866d6b956c363819b69d))
+
+
+
+
+
 ## [4.12.62](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@4.12.61...@patternfly/react-catalog-view-extension@4.12.62) (2021-09-10)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension
