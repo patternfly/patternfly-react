@@ -156,6 +156,97 @@ class InlineAlertVariations extends React.Component {
 }
 ```
 
+### Inline plain types
+```js
+import React from 'react';
+import { Alert } from '@patternfly/react-core';
+
+class InlinePlainAlert extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Alert variant="default" isInline isPlain title="Default inline alert title" />
+        <Alert variant="info" isInline isPlain title="Info inline alert title" />
+        <Alert variant="success" isInline isPlain title="Success inline alert title" />
+        <Alert variant="warning" isInline isPlain title="Warning inline alert title" />
+        <Alert variant="danger" isInline isPlain title="Danger inline alert title" />
+      </React.Fragment>
+    );
+  }
+}
+```
+
+### Inline plain variations
+
+It is not recommended to use an inline plain alert with actionClose nor actionLinks.
+
+```js
+import React from 'react';
+import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
+
+class InlinePlainAlertVariations extends React.Component {
+  render() {
+    return (
+      <Alert
+        isInline
+        isPlain
+        variant="success"
+        title="Success alert title"
+      >
+        <p>Success alert description. This should tell the user more information about the alert.</p>
+      </Alert>
+    );
+  }
+}
+```
+
+### Expandable
+
+It is not recommended to use an expandable alert within a toast Alert group. In such a case, the Alert could timeout before users would have time to interact and view the entire Alert.
+
+```js
+import React from 'react';
+import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
+
+class ExpandableAlert extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Alert
+          isExpandable
+          variant="success"
+          title="Success alert title"
+          actionClose={<AlertActionCloseButton onClose={() => alert('Clicked the close button')} />}
+          actionLinks={
+            <React.Fragment>
+              <AlertActionLink onClick={() => alert('Clicked on View details')}>View details</AlertActionLink>
+              <AlertActionLink onClick={() => alert('Clicked on Ignore')}>Ignore</AlertActionLink>
+            </React.Fragment>
+          }
+        >
+          <p>Success alert description. This should tell the user more information about the alert.</p>
+        </Alert>
+        <Alert
+          isExpandable
+          isInline
+          variant="success"
+          title="Success alert title"
+          actionClose={<AlertActionCloseButton onClose={() => alert('Clicked the close button')} />}
+          actionLinks={
+            <React.Fragment>
+              <AlertActionLink onClick={() => alert('Clicked on View details')}>View details</AlertActionLink>
+              <AlertActionLink onClick={() => alert('Clicked on Ignore')}>Ignore</AlertActionLink>
+            </React.Fragment>
+          } 
+        >
+          <p>Success alert description. This should tell the user more information about the alert.</p>
+        </Alert>
+      </React.Fragment>
+    );
+  }
+}
+```
+
 ### Static live region alert
 ```js
 import React from 'react';

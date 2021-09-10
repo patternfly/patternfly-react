@@ -8,6 +8,7 @@ import { capitalize, useOUIAProps, OUIAProps } from '../../helpers';
 import { AlertContext } from './AlertContext';
 import maxLines from '@patternfly/react-tokens/dist/esm/c_alert__title_max_lines';
 import { Tooltip } from '../Tooltip';
+import { AlertToggleExpandButton } from './AlertToggleExpandButton';
 
 export enum AlertVariant {
   success = 'success',
@@ -18,29 +19,31 @@ export enum AlertVariant {
 }
 
 export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'action' | 'title'>, OUIAProps {
-  /** Adds Alert variant styles  */
+  /** Adds alert variant styles  */
   variant?: 'success' | 'danger' | 'warning' | 'info' | 'default';
-  /** Flag to indicate if the Alert is inline */
+  /** Flag to indicate if the alert is inline */
   isInline?: boolean;
-  /** Title of the Alert  */
+  /** Flag to indicate if the alert is plain */
+  isPlain?: boolean;
+  /** Title of the alert  */
   title: React.ReactNode;
-  /** Close button; use the AlertActionCloseButton component  */
+  /** Close button; use the alertActionCloseButton component  */
   actionClose?: React.ReactNode;
-  /** Action links; use a single AlertActionLink component or multiple wrapped in an array or React.Fragment */
+  /** Action links; use a single alertActionLink component or multiple wrapped in an array or React.Fragment */
   actionLinks?: React.ReactNode;
-  /** Content rendered inside the Alert */
+  /** Content rendered inside the alert */
   children?: React.ReactNode;
-  /** Additional classes added to the Alert  */
+  /** Additional classes added to the alert  */
   className?: string;
-  /** Adds accessible text to the Alert */
+  /** Adds accessible text to the alert */
   'aria-label'?: string;
   /** Variant label text for screen readers */
   variantLabel?: string;
-  /** Flag to indicate if the Alert is in a live region */
+  /** Flag to indicate if the alert is in a live region */
   isLiveRegion?: boolean;
   /** If set to true, the timeout is 8000 milliseconds. If a number is provided, alert will be dismissed after that amount of time in milliseconds. */
   timeout?: number | boolean;
-  /** If the user hovers over the Alert and `timeout` expires, this is how long to wait before finally dismissing the Alert */
+  /** If the user hovers over the alert and `timeout` expires, this is how long to wait before finally dismissing the alert */
   timeoutAnimation?: number;
   /** Function to be executed on alert timeout. Relevant when the timeout prop is set */
   onTimeout?: () => void;
@@ -48,13 +51,18 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   truncateTitle?: number;
   /** Position of the tooltip which is displayed if text is truncated */
   tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
-  /** Set a custom icon to the Alert. If not set the icon is set according to the variant */
+  /** Set a custom icon to the alert. If not set the icon is set according to the variant */
   customIcon?: React.ReactNode;
+  /** Flag indicating that the alert is expandable */
+  isExpandable?: boolean;
+  /** Adds accessible text to the alert Toggle */
+  toggleAriaLabel?: string;
 }
 
 export const Alert: React.FunctionComponent<AlertProps> = ({
   variant = AlertVariant.default,
   isInline = false,
+  isPlain = false,
   isLiveRegion = false,
   variantLabel = `${capitalize(variant)} alert:`,
   'aria-label': ariaLabel = `${capitalize(variant)} Alert`,
@@ -71,6 +79,8 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   truncateTitle = 0,
   tooltipPosition,
   customIcon,
+  isExpandable = false,
+  toggleAriaLabel = `${capitalize(variant)} alert details`,
   onMouseEnter = () => {},
   onMouseLeave = () => {},
   ...props
@@ -135,6 +145,11 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     dismissed && onTimeout();
   }, [dismissed]);
 
+  const [isExpanded, setIsExpanded] = useState(false);
+  const onToggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   const myOnMouseEnter = (ev: React.MouseEvent<HTMLDivElement>) => {
     setIsMouseOver(true);
     setTimedOutAnimation(false);
@@ -165,6 +180,9 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       className={css(
         styles.alert,
         isInline && styles.modifiers.inline,
+        isPlain && styles.modifiers.plain,
+        isExpandable && styles.modifiers.expandable,
+        isExpanded && styles.modifiers.expanded,
         styles.modifiers[variant as 'success' | 'danger' | 'warning' | 'info'],
         className
       )}
@@ -178,6 +196,17 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       onMouseLeave={myOnMouseLeave}
       {...props}
     >
+      {isExpandable && (
+        <AlertContext.Provider value={{ title, variantLabel }}>
+          <div className={css(styles.alertToggle)}>
+            <AlertToggleExpandButton
+              isExpanded={isExpanded}
+              onToggleExpand={onToggleExpand}
+              aria-label={toggleAriaLabel}
+            />
+          </div>
+        </AlertContext.Provider>
+      )}
       <AlertIcon variant={variant} customIcon={customIcon} />
       {isTooltipVisible ? (
         <Tooltip content={getHeadingContent} position={tooltipPosition}>
@@ -191,7 +220,9 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
           <div className={css(styles.alertAction)}>{actionClose}</div>
         </AlertContext.Provider>
       )}
-      {children && <div className={css(styles.alertDescription)}>{children}</div>}
+      {children && (!isExpandable || (isExpandable && isExpanded)) && (
+        <div className={css(styles.alertDescription)}>{children}</div>
+      )}
       {actionLinks && <div className={css(styles.alertActionGroup)}>{actionLinks}</div>}
     </div>
   );
