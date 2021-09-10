@@ -898,14 +898,15 @@ const StatusPlain: React.FunctionComponent = () => {
 ```ts
 import * as React from 'react';
 import { Card, CardBody, CardHeader, DescriptionList, DescriptionListDescription, DescriptionListGroup, DescriptionListTerm, Flex, FlexItem, Grid, GridItem, Spinner, Tab, TabContent, Tabs, TabTitleText, Title } from '@patternfly/react-core';
-import { ExclamationCircleIcon } from '@patternfly/react-icons';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 const descriptionListData = [
     {
         status: 'Running',
         resourceName: 'Resource name that is long and can wrap',
         detail: '121 Systems',
-        icon: <Spinner size='md' aria-valuetext='Loading...'></Spinner>
+        icon: <CheckCircleIcon />
     },
     {
         status: 'Ready',
@@ -917,7 +918,7 @@ const descriptionListData = [
         status: 'Running',
         resourceName: 'Resource name that is long and can wrap',
         detail: '122 Systems',
-        icon: <Spinner size='md' aria-valuetext='Loading...'></Spinner>
+        icon: <CheckCircleIcon />
     },
     {
         status: 'Ready',
