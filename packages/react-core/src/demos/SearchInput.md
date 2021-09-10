@@ -211,12 +211,19 @@ AdvancedComposableSearchInput = () => {
     setIsDateWithinOpen(!isDateWithinOpen);
   };
   
+  // Selecting a date within option closes the menu, sets the value of date within, and puts browser focus back
+  // on the date within toggle.
+  const onDateWithinSelect = (e, itemId) => {
+    e.stopPropagation();
+    setIsDateWithinOpen(false);
+    setDateWithin(itemId);
+    if (dateWithinToggleRef && dateWithinToggleRef.current) {
+      dateWithinToggleRef.current.focus();
+    }
+  };
+  
   const dateWithinOptions = (
-    <Menu ref={dateWithinMenuRef} selected={dateWithin} onSelect={(e, itemId) => {
-      e.stopPropagation();
-      setIsDateWithinOpen(false);
-      setDateWithin(itemId);
-    }}>
+    <Menu ref={dateWithinMenuRef} selected={dateWithin} onSelect={onDateWithinSelect}>
       <MenuContent>
         <MenuList>
           <MenuItem itemId="1 day">1 day</MenuItem>
@@ -240,36 +247,38 @@ AdvancedComposableSearchInput = () => {
   
   const advancedForm = (
     <div ref={advancedSearchPaneRef} role="dialog" aria-label="Advanced search form">
-      <Form>
-        <Card>
-          <CardBody>
+      <Card>
+        <CardBody>
+          <Form>
+            <FormGroup label='Has the words' fieldId='has-words' key='has-words'>
+              <TextInput
+                type='text'
+                id='has-words'
+                value={hasWords}
+                onChange={value => {
+                  setHasWords(value);
+                  setValue(value);
+                }}
+                ref={firstAttrRef}
+              />
+            </FormGroup>
             <Grid hasGutter md={6}>
-              <GridItem span={12}>
-                <FormGroup label='Has the words' fieldId='has-words' key='has-words'>
-                  <TextInput
-                    type='text'
-                    id='has-words'
-                    value={hasWords}
-                    onChange={value => {
-                      setHasWords(value);
-                      setValue(value);
-                    }}
-                    ref={firstAttrRef}
+              <GridItem>
+                <FormGroup label='Date within' fieldId='date-within' key='date-within'>
+                  <Popper trigger={dateWithinToggle} popper={dateWithinOptions} isVisible={isDateWithinOpen} />
+                </FormGroup>
+              </GridItem>
+              <GridItem>
+                <FormGroup label='Of date' fieldId='date' key='date'>
+                  <DatePicker 
+                    id="datePicker" 
+                    style={{width: "100%"}} 
+                    value={date} 
+                    onChange={setDate} 
+                    appendTo={() => document.querySelector("#datePicker")}
                   />
                 </FormGroup>
               </GridItem>
-              <FormGroup label='Date within' fieldId='date-within' key='date-within'>
-                <Popper trigger={dateWithinToggle} popper={dateWithinOptions} isVisible={isDateWithinOpen} />
-              </FormGroup>
-              <FormGroup label='Of date' fieldId='date' key='date'>
-                <DatePicker 
-                  id="datePicker" 
-                  style={{width: "100%"}} 
-                  value={date} 
-                  onChange={setDate} 
-                  appendTo={() => document.querySelector("#datePicker")}
-                />
-              </FormGroup>
             </Grid>
             <ActionGroup>
               <Button variant="primary" type="submit" onClick={(e) => onSubmit(null, e)}>Submit</Button>
@@ -277,9 +286,9 @@ AdvancedComposableSearchInput = () => {
                 <Button variant="link" type="reset" onClick={onClear}>Reset</Button>
               )}
             </ActionGroup>
-          </CardBody>
-        </Card>
-      </Form>
+          </Form>
+        </CardBody>
+      </Card>
     </div>
   );
 
