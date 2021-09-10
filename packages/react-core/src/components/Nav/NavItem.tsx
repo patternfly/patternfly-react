@@ -1,15 +1,9 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
-import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
 import { css } from '@patternfly/react-styles';
 import { NavContext, NavSelectClickHandler } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
 import { useOUIAProps, OUIAProps } from '../../helpers';
-import { useIsomorphicLayoutEffect } from '../../helpers/useIsomorphicLayout';
-import { canUseDOM } from '../../helpers/util';
-import topOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_top_offset';
-import rightOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_m_left_right_offset';
-import leftOffset from '@patternfly/react-tokens/dist/esm/c_menu_m_flyout__menu_left_offset';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
 export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'>, OUIAProps {
@@ -39,10 +33,6 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   onShowFlyout?: () => void;
 }
 
-const FlyoutContext = React.createContext({
-  direction: 'right' as 'left' | 'right'
-});
-
 export const NavItem: React.FunctionComponent<NavItemProps> = ({
   children,
   styleChildren = true,
@@ -62,8 +52,6 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
 }: NavItemProps) => {
   const { flyoutRef, setFlyoutRef } = React.useContext(NavContext);
   const { isNavOpen } = React.useContext(PageSidebarContext);
-  const flyoutContext = React.useContext(FlyoutContext);
-  const [flyoutXDirection, setFlyoutXDirection] = React.useState(flyoutContext.direction);
   const ref = React.useRef<HTMLLIElement>();
   const flyoutVisible = ref === flyoutRef;
   const Component = component as any;
@@ -77,52 +65,6 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     }
     onShowFlyout && show && onShowFlyout();
   };
-
-  useIsomorphicLayoutEffect(() => {
-    if (hasFlyout && ref.current && canUseDOM) {
-      const flyoutMenu = ref.current.lastElementChild as HTMLElement;
-      if (flyoutMenu && flyoutMenu.classList.contains(styles.navSubnav)) {
-        const origin = ref.current.getClientRects()[0];
-        const rect = flyoutMenu.getClientRects()[0];
-        if (origin && rect) {
-          const spaceLeftLeft = origin.x - rect.width;
-          const spaceLeftRight = window.innerWidth - origin.x - origin.width - rect.width;
-          let xDir = flyoutXDirection as 'left' | 'right' | 'none';
-          if (spaceLeftRight < 0 && xDir !== 'left') {
-            setFlyoutXDirection('left');
-            xDir = 'left';
-          } else if (spaceLeftLeft < 0 && xDir !== 'right') {
-            setFlyoutXDirection('right');
-            xDir = 'right';
-          }
-          let xOffset = 0;
-          if (spaceLeftLeft < 0 && spaceLeftRight < 0) {
-            xOffset = xDir === 'right' ? -spaceLeftRight : -spaceLeftLeft;
-          }
-          if (xDir === 'left') {
-            // console.log("Something here isn't working");
-            flyoutMenu.classList.add(menuStyles.modifiers.left);
-            flyoutMenu.style.setProperty(rightOffset.name, `-${xOffset}px`);
-          } else {
-            flyoutMenu.style.setProperty(leftOffset.name, `-${xOffset}px`);
-          }
-
-          const spaceLeftBot = window.innerHeight - origin.y - rect.height;
-          const spaceLeftTop = window.innerHeight - rect.height;
-          if (spaceLeftTop < 0 && spaceLeftBot < 0) {
-            // working idea: page can usually scroll down, but not up
-            // TODO: proper scroll buttons
-          } else if (spaceLeftBot < 0) {
-            flyoutMenu.style.setProperty(topOffset.name, `${spaceLeftBot}px`);
-          }
-        }
-      }
-    }
-  }, [flyoutVisible, flyout]);
-
-  React.useEffect(() => {
-    setFlyoutXDirection(flyoutContext.direction);
-  }, [flyoutContext]);
 
   const onMouseOver = () => {
     if (hasFlyout) {
@@ -247,9 +189,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
             : renderDefaultLink(context)
         }
       </NavContext.Consumer>
-      {flyoutVisible && (
-        <FlyoutContext.Provider value={{ direction: flyoutXDirection }}>{flyout}</FlyoutContext.Provider>
-      )}
+      {flyoutVisible && flyout}
     </li>
   );
 };
