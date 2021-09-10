@@ -61,12 +61,12 @@ const TabBase: React.FunctionComponent<TabProps> = ({
   if ((mountOnEnter || unmountOnExit) && eventKey !== localActiveKey) {
     ariaControls = undefined;
   }
-  const isButtonElement = href !== null;
+  const isButtonElement = Boolean(!href);
   const getDefaultTabIdx = () => {
     if (isDisabled) {
       return isButtonElement ? null : -1;
     } else if (isAriaDisabled) {
-      return -1;
+      return null;
     }
   };
   return (
@@ -81,7 +81,7 @@ const TabBase: React.FunctionComponent<TabProps> = ({
           isAriaDisabled && styles.modifiers.ariaDisabled
         )}
         disabled={isButtonElement ? isDisabled : null}
-        aria-disabled={!isButtonElement && isAriaDisabled}
+        aria-disabled={isDisabled || isAriaDisabled}
         tabIndex={getDefaultTabIdx()}
         onClick={(event: any) => handleTabClick(event, eventKey, tabContentRef)}
         {...(isAriaDisabled ? preventedEvents : null)}

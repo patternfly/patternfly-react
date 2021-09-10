@@ -37,7 +37,6 @@ Array [
       >
         <a
           aria-controls="pf-tab-section-0-tab1"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -56,7 +55,6 @@ Array [
       >
         <a
           aria-controls="pf-tab-section-1-tab2"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -75,7 +73,6 @@ Array [
       >
         <a
           aria-controls="pf-tab-section-2-tab3"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -184,7 +181,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-0-tab1"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -202,7 +198,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-1-tab2"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -220,7 +215,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-2-tab3"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -238,7 +232,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-3-tab4"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -367,7 +360,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-0-tab1"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -385,7 +377,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-1-tab2"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -403,7 +394,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-2-tab3"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -511,7 +501,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-0-tab1"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -529,7 +518,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-1-tab2"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -547,7 +535,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-2-tab3"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -655,7 +642,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-0-primarieTabs"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -673,7 +659,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-1-tab2"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -691,7 +676,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-2-tab3"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -768,7 +752,6 @@ Array [
         >
           <button
             aria-controls="pf-tab-section-10-secondary tab1"
-            aria-disabled="false"
             class="pf-c-tabs__link"
             data-ouia-component-type="PF4/TabButton"
             data-ouia-safe="true"
@@ -786,7 +769,6 @@ Array [
         >
           <button
             aria-controls="pf-tab-section-11-secondary tab2"
-            aria-disabled="false"
             class="pf-c-tabs__link"
             data-ouia-component-type="PF4/TabButton"
             data-ouia-safe="true"
@@ -804,7 +786,6 @@ Array [
         >
           <button
             aria-controls="pf-tab-section-12-secondary tab3"
-            aria-disabled="false"
             class="pf-c-tabs__link"
             data-ouia-component-type="PF4/TabButton"
             data-ouia-safe="true"
@@ -938,7 +919,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-0-tab1"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -956,7 +936,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-1-tab2"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -974,7 +953,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-2-tab3"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -992,7 +970,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-3-tab4"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -1121,7 +1098,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-one-tab1"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -1139,7 +1115,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-two-tab2"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -1157,7 +1132,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-three-tab3"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -1266,7 +1240,6 @@ Array [
       >
         <button
           aria-controls="refTab1Section"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -1284,7 +1257,6 @@ Array [
       >
         <button
           aria-controls="refTab2Section"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -1302,7 +1274,6 @@ Array [
       >
         <button
           aria-controls="refTab3Section"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -1411,7 +1382,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-0-tab1"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -1429,7 +1399,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-1-tab2"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -1447,7 +1416,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-2-tab3"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -1465,7 +1433,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-3-tab4"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -1594,7 +1561,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-0-tab1"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -1612,7 +1578,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-1-tab2"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -1630,7 +1595,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-2-tab3"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
@@ -1648,7 +1612,6 @@ Array [
       >
         <button
           aria-controls="pf-tab-section-3-tab4"
-          aria-disabled="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
