@@ -94,49 +94,57 @@ export class DualListSelectorTreeItem extends React.Component<DualListSelectorTr
         {...(isExpanded && { 'aria-expanded': 'true' })}
       >
         <div
-          className={css(styles.dualListSelectorItem, isSelected && styles.modifiers.selected, styles.modifiers.check)}
-          ref={this.ref}
-          tabIndex={-1}
-          onClick={evt => {
-            onOptionCheck && onOptionCheck(evt, !isChecked, isChosen, itemData);
-          }}
+          className={css(
+            styles.dualListSelectorListItemRow,
+            isSelected && styles.modifiers.selected,
+            styles.modifiers.check
+          )}
         >
-          <span className={css(styles.dualListSelectorItemMain)}>
-            {children && (
-              <div
-                className={css(styles.dualListSelectorItemToggle)}
-                onClick={e => {
-                  if (children) {
-                    this.setState({ isExpanded: !this.state.isExpanded });
+          <div
+            className={css(styles.dualListSelectorItem)}
+            ref={this.ref}
+            tabIndex={-1}
+            onClick={evt => {
+              onOptionCheck && onOptionCheck(evt, !isChecked, isChosen, itemData);
+            }}
+          >
+            <span className={css(styles.dualListSelectorItemMain)}>
+              {children && (
+                <div
+                  className={css(styles.dualListSelectorItemToggle)}
+                  onClick={e => {
+                    if (children) {
+                      this.setState({ isExpanded: !this.state.isExpanded });
+                    }
+                    e.stopPropagation();
+                  }}
+                >
+                  <span className={css(styles.dualListSelectorItemToggleIcon)}>
+                    <AngleRightIcon aria-hidden />
+                  </span>
+                </div>
+              )}
+              <span className={css(styles.dualListSelectorItemCheck)}>
+                <input
+                  type="checkbox"
+                  onChange={(evt: React.ChangeEvent<HTMLInputElement>) =>
+                    onOptionCheck && onOptionCheck(evt, !isChecked, isChosen, itemData)
                   }
-                  e.stopPropagation();
-                }}
-              >
-                <span className={css(styles.dualListSelectorItemToggleIcon)}>
-                  <AngleRightIcon aria-hidden />
-                </span>
-              </div>
-            )}
-            <span className={css(styles.dualListSelectorItemCheck)}>
-              <input
-                type="checkbox"
-                onChange={(evt: React.ChangeEvent<HTMLInputElement>) =>
-                  onOptionCheck && onOptionCheck(evt, !isChecked, isChosen, itemData)
-                }
-                onClick={(evt: React.MouseEvent) => evt.stopPropagation()}
-                ref={elem => elem && (elem.indeterminate = isChecked === null)}
-                checked={isChecked || false}
-                {...checkProps}
-              />
-            </span>
-
-            <span className={css(styles.dualListSelectorItemText)}>{text}</span>
-            {hasBadge && children && (
-              <span className={css(styles.dualListSelectorItemCount)}>
-                <Badge {...badgeProps}>{flattenTree((children as React.ReactElement).props.data).length}</Badge>
+                  onClick={(evt: React.MouseEvent) => evt.stopPropagation()}
+                  ref={elem => elem && (elem.indeterminate = isChecked === null)}
+                  checked={isChecked || false}
+                  {...checkProps}
+                />
               </span>
-            )}
-          </span>
+
+              <span className={css(styles.dualListSelectorItemText)}>{text}</span>
+              {hasBadge && children && (
+                <span className={css(styles.dualListSelectorItemCount)}>
+                  <Badge {...badgeProps}>{flattenTree((children as React.ReactElement).props.data).length}</Badge>
+                </span>
+              )}
+            </span>
+          </div>
         </div>
         {isExpanded && children}
       </li>
