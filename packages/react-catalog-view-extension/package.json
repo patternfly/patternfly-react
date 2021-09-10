@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@patternfly/patternfly": "4.135.1",
-    "@patternfly/react-core": "^4.154.0",
+    "@patternfly/react-core": "^4.154.1",
     "@patternfly/react-styles": "^4.11.14",
     "classnames": "^2.2.5"
   },
