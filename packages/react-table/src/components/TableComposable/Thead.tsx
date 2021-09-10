@@ -3,9 +3,9 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
 export interface TheadProps extends React.HTMLProps<HTMLTableSectionElement> {
-  /** Content rendered inside the <tr> row */
+  /** Content rendered inside the <thead> row group */
   children?: React.ReactNode;
-  /** Additional classes added to the <tr> row  */
+  /** Additional classes added to the <thead> element */
   className?: string;
   /** Won't wrap the table head if true */
   noWrap?: boolean;
