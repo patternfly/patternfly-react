@@ -980,7 +980,8 @@ import {
   DescriptionListDescription,
   Dropdown,
   DropdownItem,
-  DropdownToggle
+  DropdownToggle,
+  Divider
 } from '@patternfly/react-core';
 
 CardLogViewDemo = () => {
@@ -1068,6 +1069,7 @@ CardLogViewDemo = () => {
             </DescriptionListGroup>
           </DescriptionList>
         </CardBody>
+        <Divider />
         <CardFooter>
           <a href="#">View all activity</a>
         </CardFooter>
@@ -1099,7 +1101,8 @@ import {
   Spinner,
   Dropdown,
   DropdownItem,
-  DropdownToggle
+  DropdownToggle,
+  Divider
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
@@ -1225,6 +1228,7 @@ CardEventViewDemo = () => {
             </DescriptionListGroup>
           </DescriptionList>
         </CardBody>
+        <Divider />
         <CardFooter>
           <a href="#">View all events</a>
         </CardFooter>
