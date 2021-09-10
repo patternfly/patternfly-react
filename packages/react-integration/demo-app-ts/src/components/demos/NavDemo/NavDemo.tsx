@@ -27,7 +27,8 @@ export class NavDemo extends Component {
     horizontalActiveItem: 0,
     tertiaryActiveItem: 0,
     expandableClickedGroup: '',
-    expandableClickedItem: ''
+    expandableClickedItem: '',
+    flyoutActiveItem: 0
   };
 
   onSimpleSelect = (result: SelectedItem) => {
@@ -40,6 +41,10 @@ export class NavDemo extends Component {
 
   onDefaultSelect = (result: SelectedItem) => {
     this.setState({ defaultActiveItem: result.itemId });
+  };
+
+  onFlyoutSelect = (result: SelectedItem) => {
+    this.setState({ flyoutActiveItem: result.itemId });
   };
 
   handleNoNavigateLink = (
@@ -330,6 +335,79 @@ export class NavDemo extends Component {
     );
   }
 
+  renderFlyoutNav() {
+    const { flyoutActiveItem } = this.state;
+
+    return (
+      <StackItem>
+        <Title headingLevel="h2" size="2xl">
+          Tertiary Nav
+        </Title>
+        <div
+          style={{
+            backgroundColor: '#212427',
+            border: '1px solid rgb(114, 118, 123)',
+            padding: '1rem',
+            width: '300px'
+          }}
+        >
+          <Nav onSelect={this.onFlyoutSelect}>
+            <NavList>
+              <NavItem id="flyout-link1" to="#flyout-link1" itemId={0} isActive={flyoutActiveItem === 0}>
+                Link 1
+              </NavItem>
+              <NavItem id="flyout-link2" to="#flyout-link2" itemId={1} isActive={flyoutActiveItem === 1}>
+                Link 2
+              </NavItem>
+              <NavItem
+                flyout={
+                  <Nav variant="subnav">
+                    <NavList>
+                      <NavItem id="flyout-link5" to="#flyout-link5" itemId={4} isActive={flyoutActiveItem === 4}>
+                        Link 5
+                      </NavItem>
+                      <NavItem
+                        flyout={
+                          <Nav variant="subnav">
+                            <NavList>
+                              <NavItem
+                                id="flyout-link7"
+                                to="#flyout-link7"
+                                itemId={6}
+                                isActive={flyoutActiveItem === 6}
+                              >
+                                Link 7
+                              </NavItem>
+                            </NavList>
+                          </Nav>
+                        }
+                        id="flyout-link6"
+                        to="#flyout-link6"
+                        itemId={5}
+                        isActive={flyoutActiveItem === 5}
+                      >
+                        Link 6
+                      </NavItem>
+                    </NavList>
+                  </Nav>
+                }
+                id="flyout-link3"
+                to="#flyout-link3"
+                itemId={2}
+                isActive={flyoutActiveItem === 2}
+              >
+                Link 3
+              </NavItem>
+              <NavItem id="flyout-link4" to="#flyout-link4" itemId={3} isActive={flyoutActiveItem === 3}>
+                Link 4
+              </NavItem>
+            </NavList>
+          </Nav>
+        </div>
+      </StackItem>
+    );
+  }
+
   render() {
     // Nav onToggle and onSelect should be optional
     // https://github.com/patternfly/patternfly-react/issues/1234
@@ -340,6 +418,7 @@ export class NavDemo extends Component {
         {this.renderHorizontalNav()}
         {this.renderTertiaryNav()}
         {this.renderHorizontalSubNav()}
+        {this.renderFlyoutNav()}
       </Stack>
     );
   }
