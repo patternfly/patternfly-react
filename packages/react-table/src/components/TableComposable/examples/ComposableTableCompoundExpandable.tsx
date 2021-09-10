@@ -26,10 +26,14 @@ export const ComposableTableCompoundExpandable: React.FunctionComponent = () => 
   // In this example, expanded cells are tracked by the repo and property names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row and column order index in case we later add sorting and rearranging columns.
   // Note that this behavior is very similar to selection state.
-  const [expandedCells, setExpandedCells] = React.useState<Record<string, keyof Repository>>({
+  // TODO restore the `keyof` here when it is supported by the TS parser:
+  // const [expandedCells, setExpandedCells] = React.useState<Record<string, keyof Repository>>({
+  const [expandedCells, setExpandedCells] = React.useState<Record<string, string>>({
     'siemur/test-space': 'branches'
   });
-  const setCellExpanded = (repo: Repository, columnKey: keyof Repository, isExpanding = true) => {
+  // TODO restore the `keyof` here when it is supported by the TS parser:
+  // const setCellExpanded = (repo: Repository, columnKey: keyof Repository, isExpanding = true) => {
+  const setCellExpanded = (repo: Repository, columnKey: string, isExpanding = true) => {
     const newExpandedCells = { ...expandedCells };
     if (isExpanding) {
       newExpandedCells[repo.name] = columnKey;
@@ -39,13 +43,16 @@ export const ComposableTableCompoundExpandable: React.FunctionComponent = () => 
     setExpandedCells(newExpandedCells);
   };
   // TODO export types like TdCompoundExpandType from packages/react-table/src/components/Table/base/types.tsx in packages/react-table/src/components/Table/TableTypes.ts
-  const compoundExpandParams = (repo: Repository, columnKey: keyof Repository): TdProps['compoundExpand'] => ({
+  // TODO restore the `keyof` here when it is supported by the TS parser:
+  // const compoundExpandParams = (repo: Repository, columnKey: keyof Repository): TdProps['compoundExpand'] => ({
+  const compoundExpandParams = (repo: Repository, columnKey: string): TdProps['compoundExpand'] => ({
     isExpanded: expandedCells[repo.name] === columnKey,
     onToggle: () => setCellExpanded(repo, columnKey, expandedCells[repo.name] !== columnKey)
   });
 
   // TODO do this for the other examples to consolidate dataLabel
-  const columnNames: Record<keyof Repository, string> = {
+  // TODO restore the `keyof` here when it is supported by the TS parser:
+  const columnNames: Record<string, string> = {
     name: 'Repositories',
     branches: 'Branches',
     prs: 'Pull requests',
