@@ -16,10 +16,10 @@ Note: This demo and its handling of 'date within' and a date picker is modeled a
 ```js
 import React from 'react';
 import { 
+  ActionGroup,
   Button, 
   Card, 
-  CardBody, 
-  CardFooter, 
+  CardBody,  
   DatePicker,
   Form, 
   FormGroup,
@@ -271,15 +271,13 @@ AdvancedComposableSearchInput = () => {
                 />
               </FormGroup>
             </Grid>
-          </CardBody>
-          <CardFooter>
-            <FormGroup>
+            <ActionGroup>
               <Button variant="primary" type="submit" onClick={(e) => onSubmit(null, e)}>Submit</Button>
               {!!onClear && (
                 <Button variant="link" type="reset" onClick={onClear}>Reset</Button>
               )}
-            </FormGroup>
-          </CardFooter>
+            </ActionGroup>
+          </CardBody>
         </Card>
       </Form>
     </div>
