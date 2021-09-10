@@ -8,14 +8,14 @@ import { Button } from '../Button';
 interface BackToTopProps extends React.DetailedHTMLProps<React.HTMLProps<HTMLDivElement>, HTMLDivElement> {
   /** Additional classes added to the back to top. */
   className?: string;
-  /** Title to appear in back to top button, defaults to 'Back to top'. */
+  /** Title to appear in back to top button. */
   title?: string;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
   /** Selector for the scrollable element to spy on. Not passing a selector defaults to spying on window scroll events. */
   scrollableSelector?: string;
   /** Flag to always show back to top button, defaults to false. */
-  alwaysShow?: boolean;
+  isAlwaysVisible?: boolean;
 }
 
 const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
@@ -23,20 +23,23 @@ const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
   title = 'Back to top',
   innerRef,
   scrollableSelector,
-  alwaysShow = false,
+  isAlwaysVisible = false,
   ...props
 }: BackToTopProps) => {
-  const [hidden, setHidden] = React.useState(alwaysShow ? false : true);
+  const [visible, setVisible] = React.useState(isAlwaysVisible);
+  React.useEffect(() => {
+    setVisible(isAlwaysVisible);
+  }, [isAlwaysVisible]);
+
   const [scrollElement, setScrollElement] = React.useState(null);
 
-  const toggleHidden = () => {
-    // scrollTop returns undefined in window use case
+  const toggleVisible = () => {
     const scrolled = scrollElement.scrollY ? scrollElement.scrollY : scrollElement.scrollTop;
-    if (!alwaysShow) {
+    if (!isAlwaysVisible) {
       if (scrolled > 400) {
-        setHidden(false);
+        setVisible(true);
       } else {
-        setHidden(true);
+        setVisible(false);
       }
     }
   };
@@ -49,10 +52,10 @@ const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
         return;
       }
       setScrollElement(scrollEl);
-      scrollEl.addEventListener('scroll', toggleHidden);
+      scrollEl.addEventListener('scroll', toggleVisible);
 
       return () => {
-        scrollEl.removeEventListener('scroll', toggleHidden);
+        scrollEl.removeEventListener('scroll', toggleVisible);
       };
     } else {
       if (!canUseDOM) {
@@ -60,10 +63,10 @@ const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
       }
       const scrollEl = window;
       setScrollElement(scrollEl);
-      scrollEl.addEventListener('scroll', toggleHidden);
+      scrollEl.addEventListener('scroll', toggleVisible);
 
       return () => {
-        scrollEl.removeEventListener('scroll', toggleHidden);
+        scrollEl.removeEventListener('scroll', toggleVisible);
       };
     }
   });
@@ -74,10 +77,10 @@ const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
 
   return (
     <div
-      className={css(styles.backToTop, hidden && styles.modifiers.hidden, className)}
-      {...props}
+      className={css(styles.backToTop, !visible && styles.modifiers.hidden, className)}
       ref={innerRef}
       onClick={handleClick}
+      {...props}
     >
       <Button variant="primary" icon={<AngleUpIcon aria-hidden="true" />} iconPosition="right">
         {title}

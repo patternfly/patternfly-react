@@ -15,7 +15,7 @@ describe('BackToTop', () => {
   });
 
   test('verify always show', () => {
-    const view = mount(<BackToTop alwaysShow>test</BackToTop>);
+    const view = mount(<BackToTop isAlwaysVisible>test</BackToTop>);
 
     expect(view).toMatchSnapshot();
   });

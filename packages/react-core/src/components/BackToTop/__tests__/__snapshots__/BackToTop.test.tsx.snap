@@ -2,11 +2,11 @@
 
 exports[`BackToTop verify always show 1`] = `
 <BackToTop
-  alwaysShow={true}
+  isAlwaysVisible={true}
 >
   <BackToTopBase
-    alwaysShow={true}
     innerRef={null}
+    isAlwaysVisible={true}
   >
     <div
       className="pf-c-back-to-top"

@@ -9,12 +9,19 @@ import {
   PageSectionVariants,
   TextContent,
   Text,
-  Page
+  Page,
+  Switch
 } from '@patternfly/react-core';
 import DashboardWrapper from '../DashboardWrapper';
 
-export const Name = () => (
-  <>
+export const Name = () => {
+  const [isAlwaysVisible, setIsAlwaysVisible] = React.useState(false);
+
+  const handleChange = isChecked => {
+    setIsAlwaysVisible(isChecked);
+  };
+
+  return (
     <DashboardWrapper breadcrumb={null}>
       <Page>
         <PageSection variant={PageSectionVariants.light}>
@@ -24,6 +31,7 @@ export const Name = () => (
               Body text should be Overpass Regular at 16px.It should have leading of 24px because <br />
               of it’s relative line height of 1.5.
             </Text>
+            <Switch label="Always show BackToTopButton" onChange={handleChange} isChecked={isAlwaysVisible} />
           </TextContent>
         </PageSection>
         <PageSection hasOverflowScroll name="scrolling-section">
@@ -46,8 +54,8 @@ export const Name = () => (
             ))}
           </Gallery>
         </PageSection>
-        <BackToTop scrollableSelector='[name="scrolling-section"]' />
+        <BackToTop scrollableSelector='[name="scrolling-section"]' isAlwaysVisible={isAlwaysVisible} />
       </Page>
     </DashboardWrapper>
-  </>
-);
+  );
+};
