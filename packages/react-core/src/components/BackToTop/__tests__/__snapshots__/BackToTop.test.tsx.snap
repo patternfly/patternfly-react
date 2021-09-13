@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackToTop verify always show 1`] = `
+<BackToTop
+  isAlwaysVisible={true}
+>
+  <BackToTopBase
+    innerRef={null}
+    isAlwaysVisible={true}
+  >
+    <div
+      className="pf-c-back-to-top"
+      onClick={[Function]}
+    >
+      <Button
+        icon={
+          <AngleUpIcon
+            aria-hidden="true"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
+          />
+        }
+        iconPosition="right"
+        variant="primary"
+      >
+        <ButtonBase
+          icon={
+            <AngleUpIcon
+              aria-hidden="true"
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            />
+          }
+          iconPosition="right"
+          innerRef={null}
+          variant="primary"
+        >
+          <button
+            aria-disabled={false}
+            aria-label={null}
+            className="pf-c-button pf-m-primary"
+            data-ouia-component-id="OUIA-Generated-Button-primary-2"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={false}
+            role={null}
+            type="button"
+          >
+            Back to top
+            <span
+              className="pf-c-button__icon pf-m-end"
+            >
+              <AngleUpIcon
+                aria-hidden="true"
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                  />
+                </svg>
+              </AngleUpIcon>
+            </span>
+          </button>
+        </ButtonBase>
+      </Button>
+    </div>
+  </BackToTopBase>
+</BackToTop>
+`;
+
+exports[`BackToTop verify basic 1`] = `
+<BackToTopBase
+  innerRef={null}
+/>
+`;
+
+exports[`BackToTop verify custom class 1`] = `
+<BackToTop
+  className="custom-css"
+>
+  <BackToTopBase
+    className="custom-css"
+    innerRef={null}
+  >
+    <div
+      className="pf-c-back-to-top pf-m-hidden custom-css"
+      onClick={[Function]}
+    >
+      <Button
+        icon={
+          <AngleUpIcon
+            aria-hidden="true"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
+          />
+        }
+        iconPosition="right"
+        variant="primary"
+      >
+        <ButtonBase
+          icon={
+            <AngleUpIcon
+              aria-hidden="true"
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+            />
+          }
+          iconPosition="right"
+          innerRef={null}
+          variant="primary"
+        >
+          <button
+            aria-disabled={false}
+            aria-label={null}
+            className="pf-c-button pf-m-primary"
+            data-ouia-component-id="OUIA-Generated-Button-primary-1"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe={true}
+            disabled={false}
+            role={null}
+            type="button"
+          >
+            Back to top
+            <span
+              className="pf-c-button__icon pf-m-end"
+            >
+              <AngleUpIcon
+                aria-hidden="true"
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"
+                  />
+                </svg>
+              </AngleUpIcon>
+            </span>
+          </button>
+        </ButtonBase>
+      </Button>
+    </div>
+  </BackToTopBase>
+</BackToTop>
+`;
