@@ -8,6 +8,13 @@ import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-ic
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import { CheckCircleIcon, ExclamationCircleIcon, ExclamationTriangleIcon, TimesCircleIcon, BellIcon } from '@patternfly/react-icons';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
+<<<<<<< HEAD
+=======
+import lineChart1 from './images/img_line-chart-1.png';
+import stackChart from './images/img_chart-stack.png';
+import thresholdChart from './images/img_chart-threshold.png';
+
+> > > > > > > docs(Card): add utilization card demos
 
 ## Demos
 
@@ -987,6 +994,250 @@ const Status: React.FunctionComponent = () => {
     </>
   );
 };
+```
+
+### Utilization card 1
+
+```ts
+import React from 'react';
+import {
+  Card,
+  CardTitle,
+  CardBody,
+  CardFooter,
+  Title,
+  Gallery,
+  GalleryItem,
+  Flex,
+  FlexItem,
+  Stack,
+  StackItem,
+  Divider
+} from '@patternfly/react-core';
+import lineChart1 from './images/img_line-chart-1.png';
+
+<Gallery hasGutter minWidths={{ default: '360px' }}>
+  <GalleryItem>
+    <Card id="utilization-card-1" component="div">
+      <CardTitle>
+        <Title headingLevel="h2" size="lg">
+          Top Utilized Clusters
+        </Title>
+      </CardTitle>
+      <CardBody>
+        <Flex direction={{ default: 'column' }}>
+          <FlexItem>
+            <Stack>
+              <b>Cluster-1204</b>
+              <span>27.3 cores available</span>
+            </Stack>
+          </FlexItem>
+          <FlexItem>
+            <img src={lineChart1} alt="Mock line chart" />
+          </FlexItem>
+          <FlexItem>
+            <a href="#">View details</a>
+          </FlexItem>
+        </Flex>
+      </CardBody>
+      <CardBody>
+        <Flex direction={{ default: 'column' }}>
+          <FlexItem>
+            <Stack>
+              <b>Abcdef-1204</b>
+              <span>50.6 cores available</span>
+            </Stack>
+          </FlexItem>
+          <FlexItem>
+            <img src={lineChart1} alt="Mock line chart" />
+          </FlexItem>
+          <FlexItem>
+            <a href="#">View details</a>
+          </FlexItem>
+        </Flex>
+      </CardBody>
+      <Divider />
+      <CardFooter>
+        <a href="#">View all clusters</a>
+      </CardFooter>
+    </Card>
+  </GalleryItem>
+</Gallery>;
+```
+
+### Utilization card 2
+
+```ts
+import React from 'react';
+import {
+  Card,
+  CardTitle,
+  CardBody,
+  CardFooter,
+  Title,
+  Gallery,
+  GalleryItem,
+  Flex,
+  FlexItem,
+  Stack,
+  StackItem,
+  Divider
+} from '@patternfly/react-core';
+import lineChart1 from './images/img_line-chart-1.png';
+
+<Gallery hasGutter minWidths={{ default: '360px' }}>
+  <GalleryItem>
+    <Card id="utilization-card-2" component="div">
+      <CardTitle>
+        <Title headingLevel="h2" size="lg">
+          Top Utilized Clusters
+        </Title>
+      </CardTitle>
+      <CardBody>
+        <Flex direction={{ default: 'column' }}>
+          <FlexItem>
+            <Stack>
+              <a href="#">Cluster-1204</a>
+              <span>27.3 cores available</span>
+            </Stack>
+          </FlexItem>
+          <FlexItem>
+            <img src={lineChart1} alt="Mock line chart" />
+          </FlexItem>
+        </Flex>
+      </CardBody>
+      <CardBody>
+        <Flex direction={{ default: 'column' }}>
+          <FlexItem>
+            <Stack>
+              <a href="#">Abcdef-1204</a>
+              <span>50.6 cores available</span>
+            </Stack>
+          </FlexItem>
+          <FlexItem>
+            <img src={lineChart1} alt="Mock line chart" />
+          </FlexItem>
+        </Flex>
+      </CardBody>
+      <Divider />
+      <CardFooter>
+        <a href="#">View all clusters</a>
+      </CardFooter>
+    </Card>
+  </GalleryItem>
+</Gallery>;
+```
+
+### Utilization card 3
+
+```ts
+import React from 'react';
+import {
+  Card,
+  CardTitle,
+  CardHeader,
+  CardActions,
+  CardBody,
+  CardFooter,
+  Title,
+  Gallery,
+  GalleryItem,
+  Flex,
+  FlexItem,
+  Stack,
+  StackItem,
+  Divider,
+  Dropdown,
+  DropdownItem,
+  DropdownToggle,
+  DropdownSeparator
+} from '@patternfly/react-core';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import stackChart from './images/img_chart-stack.png';
+
+const UtilizationCard3: React.FunctionComponent = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const dropdownItems = [
+    <DropdownItem key="link">Link</DropdownItem>,
+    <DropdownItem key="action" component="button">
+      Action
+    </DropdownItem>,
+    <DropdownItem key="disabled link" isDisabled href="www.google.com">
+      Disabled link
+    </DropdownItem>,
+    <DropdownSeparator key="separator" />,
+    <DropdownItem key="separated link">Separated link</DropdownItem>
+  ];
+
+  return (
+    <Gallery hasGutter minWidths={{ default: '360px' }}>
+      <GalleryItem>
+        <Card id="utilization-card-1" component="div">
+          <CardHeader>
+            <CardTitle>
+              <Title headingLevel="h2" size="lg">
+                Recommendations
+              </Title>
+            </CardTitle>
+            <CardActions>
+              <Dropdown
+                onSelect={() => setIsOpen(!isOpen)}
+                toggle={<DropdownToggle onToggle={() => setIsOpen(!isOpen)}>Filter</DropdownToggle>}
+                isOpen={isOpen}
+                dropdownItems={dropdownItems}
+                position="right"
+              />
+            </CardActions>
+          </CardHeader>
+          <CardBody>
+            <Flex direction={{ default: 'column' }}>
+              <FlexItem>
+                <span>System</span>
+              </FlexItem>
+              <Flex>
+                <ExclamationCircleIcon className="pf-u-danger-color-100" aria-hidden />
+                <a href="#">25 incidents detected</a>
+              </Flex>
+              <FlexItem>
+                <img src={stackChart} alt="Mock line chart" />
+              </FlexItem>
+            </Flex>
+          </CardBody>
+          <CardFooter>
+            <a href="#">See details</a>
+          </CardFooter>
+        </Card>
+      </GalleryItem>
+    </Gallery>
+  );
+};
+```
+
+### Utilization card 4
+
+```ts
+import React from 'react';
+import { Card, CardTitle, CardBody, CardFooter, Title, Gallery, GalleryItem } from '@patternfly/react-core';
+import thresholdChart from './images/img_chart-threshold.png';
+
+<Gallery hasGutter minWidths={{ default: '360px' }}>
+  <GalleryItem>
+    <Card id="utilization-card-1" component="div">
+      <CardTitle>
+        <Title headingLevel="h2" size="lg">
+          CPU Usage
+        </Title>
+      </CardTitle>
+      <CardBody>
+        <img src={thresholdChart} alt="Mock threshold chart" />
+      </CardBody>
+      <CardFooter>
+        <a href="#">See details</a>
+      </CardFooter>
+    </Card>
+  </GalleryItem>
+</Gallery>;
 ```
 
 ### Log view
