@@ -82,7 +82,6 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   ...props
 }: PageSectionProps) => (
   <section
-    {...props}
     className={css(
       variantType[type],
       formatBreakpointMods(padding, styles),
@@ -97,6 +96,8 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
       hasOverflowScroll && styles.modifiers.overflowScroll,
       className
     )}
+    tabIndex={hasOverflowScroll && 0}
+    {...props}
   >
     {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}
     {!isWidthLimited && children}

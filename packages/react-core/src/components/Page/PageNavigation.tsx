@@ -40,6 +40,7 @@ export const PageNavigation = ({
       hasOverflowScroll && styles.modifiers.overflowScroll,
       className
     )}
+    tabIndex={hasOverflowScroll && 0}
     {...props}
   >
     {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}

@@ -27,7 +27,6 @@ export const PageGroup = ({
   ...props
 }: PageGroupProps) => (
   <div
-    {...props}
     className={css(
       styles.pageMainGroup,
       sticky === 'top' && styles.modifiers.stickyTop,
@@ -37,6 +36,8 @@ export const PageGroup = ({
       hasOverflowScroll && styles.modifiers.overflowScroll,
       className
     )}
+    tabIndex={hasOverflowScroll && 0}
+    {...props}
   >
     {children}
   </div>
