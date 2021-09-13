@@ -1,5 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`alternative component 1`] = `
+<Grid
+  component="ul"
+>
+  <ul
+    className="pf-l-grid"
+  >
+    <GridItem
+      component="li"
+    >
+      <li
+        className="pf-l-grid__item"
+      >
+        Test
+      </li>
+    </GridItem>
+  </ul>
+</Grid>
+`;
+
 exports[`gutter 1`] = `
 <div
   className="pf-l-grid pf-m-gutter"

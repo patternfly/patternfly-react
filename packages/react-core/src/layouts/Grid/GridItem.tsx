@@ -57,11 +57,14 @@ export interface GridItemProps extends React.HTMLProps<HTMLDivElement> {
     xl?: string;
     '2xl'?: string;
   };
+  /** Sets the base component to render. defaults to div */
+  component?: React.ElementType<any> | React.ComponentType<any>;
 }
 
 export const GridItem: React.FunctionComponent<GridItemProps> = ({
   children = null,
   className = '',
+  component = 'div',
   span = null,
   rowSpan = null,
   offset = null,
@@ -75,6 +78,7 @@ export const GridItem: React.FunctionComponent<GridItemProps> = ({
     rowSpan && styles.modifiers[`${rowSpan}Row` as keyof typeof styles.modifiers],
     offset && styles.modifiers[`offset_${offset}Col` as keyof typeof styles.modifiers]
   ];
+  const Component: any = component;
 
   Object.entries(DeviceSizes).forEach(([propKey, classModifier]) => {
     const key = propKey as keyof typeof DeviceSizes;
@@ -101,7 +105,7 @@ export const GridItem: React.FunctionComponent<GridItemProps> = ({
   });
 
   return (
-    <div
+    <Component
       className={css(...classes, className)}
       style={
         style || order ? { ...style, ...setBreakpointCssVars(order, gridToken.l_grid_item_Order.name) } : undefined
@@ -109,7 +113,7 @@ export const GridItem: React.FunctionComponent<GridItemProps> = ({
       {...props}
     >
       {children}
-    </div>
+    </Component>
   );
 };
 GridItem.displayName = 'GridItem';

@@ -104,3 +104,12 @@ describe('flexItem modifiers', () => {
       })
     );
 });
+
+test('alternative component', () => {
+  const view = mount(
+    <Flex component='ul'>
+      <FlexItem component='li'>Test</FlexItem>
+    </Flex>
+  );
+  expect(view).toMatchSnapshot();
+});

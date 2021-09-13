@@ -537,3 +537,18 @@ import { Flex, FlexItem } from '@patternfly/react-core';
   </Flex>
 </Flex>
 ```
+
+### Alternative components
+
+```js
+import React from 'react';
+import { Flex, FlexItem } from '@patternfly/react-core';
+
+<Flex component='ul'>
+  <FlexItem component='li'>Flex item</FlexItem>
+  <FlexItem component='li'>Flex item</FlexItem>
+  <FlexItem component='li'>Flex item</FlexItem>
+  <FlexItem component='li'>Flex item</FlexItem>
+  <FlexItem component='li'>Flex item</FlexItem>
+</Flex>
+```
