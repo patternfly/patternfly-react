@@ -8,7 +8,7 @@ import maxLines from '@patternfly/react-tokens/dist/esm/c_notification_drawer__g
 import { Badge } from '../Badge';
 import { Tooltip } from '../Tooltip';
 
-export interface NotificationDrawerGroupProps extends React.HTMLProps<HTMLElement> {
+export interface NotificationDrawerGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'title'> {
   /**  Content rendered inside the group */
   children?: React.ReactNode;
   /**  Additional classes added to the group */
@@ -22,7 +22,7 @@ export interface NotificationDrawerGroupProps extends React.HTMLProps<HTMLElemen
   /**  Callback for when group button is clicked to expand */
   onExpand?: (event: any, value: boolean) => void;
   /**  Notification drawer group title */
-  title: string;
+  title: string | React.ReactNode;
   /** Truncate title to number of lines */
   truncateTitle?: number;
   /** Position of the tooltip which is displayed if text is truncated */
