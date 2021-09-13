@@ -34,7 +34,7 @@ export const Name = () => {
             <Switch label="Always show BackToTopButton" onChange={handleChange} isChecked={isAlwaysVisible} />
           </TextContent>
         </PageSection>
-        <PageSection hasOverflowScroll name="scrolling-section">
+        <PageSection hasOverflowScroll name="scrolling-section" tabIndex={0}>
           <Gallery hasGutter>
             {Array.apply(0, Array(60)).map((_x: any, i: number) => (
               <GalleryItem key={i}>
