@@ -240,68 +240,6 @@ ComposableTableMisc = () => {
 };
 ```
 
-### Composable: Row click handler, hoverable & selected rows
-
-```js
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
-
-ComposableTableHoverable = () => {
-  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-  const [rows, setRows] = React.useState([
-    { cells: ['one', 'two', 'a', 'four', 'five'], isRowSelected: false},
-    { cells: ['a', 'two', 'k', 'four', 'five'], isRowSelected: false},
-    { cells: ['p', 'two', 'b', 'four', 'five'], isRowSelected: false}
-  ]);
-  const onRowClick = (event, rowIndex, row) => {
-    const updatedRows = [...rows];
-    updatedRows[rowIndex].isRowSelected = !rows[rowIndex].isRowSelected;
-    setRows(updatedRows); 
-  };
-  
-  return (
-    <TableComposable aria-label="Misc table">
-      <Thead noWrap>
-        <Tr>
-          <Th>
-            {columns[0]}
-          </Th>
-          <Th>{columns[1]}</Th>
-          <Th>
-            {columns[2]}
-          </Th>
-          <Th>{columns[3]}</Th>
-          <Th>{columns[4]}</Th>
-        </Tr>
-      </Thead>
-      <Tbody>
-        {rows.map((row, rowIndex) => {
-          return (
-            <Tr
-              key={rowIndex}
-              onRowClick={event => onRowClick(event, rowIndex, row.cells)}
-              isHoverable
-              isRowSelected={row.isRowSelected}
-            >
-              {row.cells.map((cell, cellIndex) => {
-                return (
-                  <Td
-                    key={`${rowIndex}_${cellIndex}`}
-                    dataLabel={columns[cellIndex]}
-                  >
-                    {cell}
-                  </Td>
-                );
-              })}
-            </Tr>
-          );
-        })}
-      </Tbody>
-    </TableComposable>
-  );
-};
-```
-
 ### Composable: Sortable & wrapping headers
 
 To make a column sortable, pass a `ThSortType` object via the `sort` prop on a column's `Th`.
@@ -615,6 +553,70 @@ ComposableTableSelectableRadio = () => {
             })}
           </Tr>
         ))}
+      </Tbody>
+    </TableComposable>
+  );
+};
+```
+
+### Composable: Row click handler, hoverable & selected rows
+
+This selectable rows feature is intended for use when a table is used to present a list of objects in a Primary-detail view.
+
+```js
+import React from 'react';
+import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
+
+ComposableTableHoverable = () => {
+  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
+  const [rows, setRows] = React.useState([
+    { cells: ['one', 'two', 'a', 'four', 'five'], isRowSelected: false},
+    { cells: ['a', 'two', 'k', 'four', 'five'], isRowSelected: false},
+    { cells: ['p', 'two', 'b', 'four', 'five'], isRowSelected: false}
+  ]);
+  const onRowClick = (event, rowIndex, row) => {
+    const updatedRows = [...rows];
+    updatedRows[rowIndex].isRowSelected = !rows[rowIndex].isRowSelected;
+    setRows(updatedRows); 
+  };
+  
+  return (
+    <TableComposable aria-label="Misc table">
+      <Thead noWrap>
+        <Tr>
+          <Th>
+            {columns[0]}
+          </Th>
+          <Th>{columns[1]}</Th>
+          <Th>
+            {columns[2]}
+          </Th>
+          <Th>{columns[3]}</Th>
+          <Th>{columns[4]}</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        {rows.map((row, rowIndex) => {
+          return (
+            <Tr
+              key={rowIndex}
+              onRowClick={event => onRowClick(event, rowIndex, row.cells)}
+              isHoverable
+              isRowSelected={row.isRowSelected}
+            >
+              {row.cells.map((cell, cellIndex) => {
+                return (
+                  <Td
+                    key={`${rowIndex}_${cellIndex}`}
+                    dataLabel={columns[cellIndex]}
+                  >
+                    {cell}
+                  </Td>
+                );
+              })}
+            </Tr>
+          );
+        })}
       </Tbody>
     </TableComposable>
   );
