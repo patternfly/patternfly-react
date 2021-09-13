@@ -167,6 +167,7 @@ export * from './TabsDemo/TabsDemo';
 export * from './TabsDemo/TabsInsetDemo';
 export * from './TabsDemo/TabsStringEventKeyDemo';
 export * from './TabsDemo/TabsUncontrolledDemo';
+export * from './TabsDemo/TabsDisabledDemo';
 export * from './TextAreaDemo/TextAreaDemo';
 export * from './TextDemo/TextDemo';
 export * from './TextInputDemo/TextInputDemo';

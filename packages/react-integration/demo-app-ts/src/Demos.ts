@@ -727,6 +727,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TabsInsetDemo
   },
   {
+    id: 'tabs-disabled-demo',
+    name: 'Tabs Disabled Demo',
+    componentType: Examples.TabsDisabledDemo
+  },
+  {
     id: 'table-actions-demo',
     name: 'Table Actions Demo',
     componentType: Examples.TableActionsDemo
