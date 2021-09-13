@@ -8,6 +8,7 @@ import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-ic
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import { CheckCircleIcon, ExclamationCircleIcon, ExclamationTriangleIcon, TimesCircleIcon, BellIcon } from '@patternfly/react-icons';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
+
 ## Demos
 
 ### Horizontal card grid
@@ -418,7 +419,7 @@ const cardData = {
       title: '5 Clusters',
       content: [
         {
-          icon: <CheckCircleIcon color='var(--pf-global--success-color--100)' />
+          icon: <CheckCircleIcon color="var(--pf-global--success-color--100)" />
         }
       ],
       layout: 'icon'
@@ -427,7 +428,7 @@ const cardData = {
       title: '15 Clusters',
       content: [
         {
-          icon: <ExclamationTriangleIcon color='var(--pf-global--warning-color--100)' />
+          icon: <ExclamationTriangleIcon color="var(--pf-global--warning-color--100)" />
         }
       ],
       layout: 'icon'
@@ -436,7 +437,7 @@ const cardData = {
       title: '3 Clusters',
       content: [
         {
-          icon: <TimesCircleIcon color='var(--pf-global--danger-color--100)' />
+          icon: <TimesCircleIcon color="var(--pf-global--danger-color--100)" />
         }
       ],
       layout: 'icon'
@@ -447,11 +448,11 @@ const cardData = {
       title: '10 Hosts',
       content: [
         {
-          icon: <ExclamationCircleIcon color='var(--pf-global--success-color--100)' />,
+          icon: <ExclamationCircleIcon color="var(--pf-global--success-color--100)" />,
           count: 2
         },
         {
-          icon: <ExclamationTriangleIcon color='var(--pf-global--warning-color--100)' />,
+          icon: <ExclamationTriangleIcon color="var(--pf-global--warning-color--100)" />,
           count: 1
         }
       ],
@@ -461,11 +462,11 @@ const cardData = {
       title: '50 Hosts',
       content: [
         {
-          icon: <CheckCircleIcon color='var(--pf-global--success-color--100)' />,
+          icon: <CheckCircleIcon color="var(--pf-global--success-color--100)" />,
           count: 5
         },
         {
-          icon: <TimesCircleIcon color='var(--pf-global--danger-color--100)' />,
+          icon: <TimesCircleIcon color="var(--pf-global--danger-color--100)" />,
           count: 12
         }
       ],
@@ -475,11 +476,11 @@ const cardData = {
       title: '12 Hosts',
       content: [
         {
-          icon: <ExclamationTriangleIcon color='var(--pf-global--warning-color--100)' />,
+          icon: <ExclamationTriangleIcon color="var(--pf-global--warning-color--100)" />,
           count: 3
         },
         {
-          icon: <TimesCircleIcon color='var(--pf-global--danger-color--100)' />,
+          icon: <TimesCircleIcon color="var(--pf-global--danger-color--100)" />,
           count: 7
         }
       ],
@@ -491,12 +492,12 @@ const cardData = {
       title: '13 Hosts',
       content: [
         {
-          icon: <TimesCircleIcon color='var(--pf-global--danger-color--100)' />,
+          icon: <TimesCircleIcon color="var(--pf-global--danger-color--100)" />,
           status: '2 errors',
           subtitle: 'subtitle'
         },
         {
-          icon: <ExclamationTriangleIcon color='var(--pf-global--warning-color--100)' />,
+          icon: <ExclamationTriangleIcon color="var(--pf-global--warning-color--100)" />,
           status: '1 warning',
           subtitle: 'subtitle'
         }
@@ -507,12 +508,12 @@ const cardData = {
       title: '3 Hosts',
       content: [
         {
-          icon: <CheckCircleIcon color='var(--pf-global--success-color--100)' />,
+          icon: <CheckCircleIcon color="var(--pf-global--success-color--100)" />,
           status: '2 successes',
           subtitle: 'subtitle'
         },
         {
-          icon: <ExclamationTriangleIcon color='var(--pf-global--warning-color--100)' />,
+          icon: <ExclamationTriangleIcon color="var(--pf-global--warning-color--100)" />,
           status: '3 warnings',
           subtitle: 'subtitle'
         }
@@ -523,12 +524,12 @@ const cardData = {
       title: '50 Hosts',
       content: [
         {
-          icon: <ExclamationTriangleIcon color='var(--pf-global--warning-color--100)' />,
+          icon: <ExclamationTriangleIcon color="var(--pf-global--warning-color--100)" />,
           status: '7 warnings',
           subtitle: 'subtitle'
         },
         {
-          icon: <TimesCircleIcon color='var(--pf-global--danger-color--100)' />,
+          icon: <TimesCircleIcon color="var(--pf-global--danger-color--100)" />,
           status: '1 error',
           subtitle: 'subtitle'
         }
@@ -750,7 +751,7 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <CheckCircleIcon color='var(--pf-global--success-color--100)' />
+              <CheckCircleIcon color="var(--pf-global--success-color--100)" />
             </FlexItem>
             <FlexItem>
               <span>Cluster</span>
@@ -760,7 +761,7 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <ExclamationCircleIcon color='var(--pf-global--danger-color--100)' />
+              <ExclamationCircleIcon color="var(--pf-global--danger-color--100)" />
             </FlexItem>
             <FlexItem>
               <Popover headerContent="Control Panel Status" bodyContent={popoverBodyContent} minWidth="400px">
@@ -774,7 +775,7 @@ const StatusPlain: React.FunctionComponent = () => {
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <ExclamationCircleIcon color='var(--pf-global--danger-color--100)' />
+              <ExclamationCircleIcon color="var(--pf-global--danger-color--100)" />
             </FlexItem>
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
               <FlexItem>
@@ -782,14 +783,14 @@ const StatusPlain: React.FunctionComponent = () => {
               </FlexItem>
               <FlexItem>
                 <span style={{ color: 'var(--pf-global--Color--400)' }}>1 degraded</span>
-              </FlexItem> 
+              </FlexItem>
             </Flex>
           </Flex>
         </GridItem>
         <GridItem>
           <Flex spaceItems={{ default: 'spaceItemsSm' }}>
             <FlexItem>
-              <CheckCircleIcon color='var(--pf-global--success-color--100)' />
+              <CheckCircleIcon color="var(--pf-global--success-color--100)" />
             </FlexItem>
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
               <FlexItem>
@@ -871,94 +872,121 @@ const StatusPlain: React.FunctionComponent = () => {
 
 ```ts
 import * as React from 'react';
-import { Card, CardBody, CardHeader, DescriptionList, DescriptionListDescription, DescriptionListGroup, DescriptionListTerm, Flex, FlexItem, Grid, GridItem, Spinner, Tab, TabContent, Tabs, TabTitleText, Title } from '@patternfly/react-core';
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  DescriptionList,
+  DescriptionListDescription,
+  DescriptionListGroup,
+  DescriptionListTerm,
+  Flex,
+  FlexItem,
+  Grid,
+  GridItem,
+  Spinner,
+  Tab,
+  TabContent,
+  Tabs,
+  TabTitleText,
+  Title
+} from '@patternfly/react-core';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 const descriptionListData = [
-    {
-        status: 'Running',
-        resourceName: 'Resource name that is long and can wrap',
-        detail: '121 Systems',
-        icon: <CheckCircleIcon />
-    },
-    {
-        status: 'Ready',
-        resourceName: 'Resource name that is long and can wrap',
-        detail: '123 Systems',
-        icon: <ExclamationCircleIcon />
-    },
-    {
-        status: 'Running',
-        resourceName: 'Resource name that is long and can wrap',
-        detail: '122 Systems',
-        icon: <CheckCircleIcon />
-    },
-    {
-        status: 'Ready',
-        resourceName: 'Resource name that is long and can wrap',
-        detail: '124 Systems',
-        icon: <ExclamationCircleIcon />
-    },
-]
+  {
+    status: 'Running',
+    resourceName: 'Resource name that is long and can wrap',
+    detail: '121 Systems',
+    icon: <CheckCircleIcon />
+  },
+  {
+    status: 'Ready',
+    resourceName: 'Resource name that is long and can wrap',
+    detail: '123 Systems',
+    icon: <ExclamationCircleIcon />
+  },
+  {
+    status: 'Running',
+    resourceName: 'Resource name that is long and can wrap',
+    detail: '122 Systems',
+    icon: <CheckCircleIcon />
+  },
+  {
+    status: 'Ready',
+    resourceName: 'Resource name that is long and can wrap',
+    detail: '124 Systems',
+    icon: <ExclamationCircleIcon />
+  }
+];
 
 const Status: React.FunctionComponent = () => {
-    const [activeTabKey, setActiveTabKey] = React.useState(0);
-    const handleTabClick = (event: React.MouseEvent, tabIndex: number) => {
-        setActiveTabKey(tabIndex);
-    }
+  const [activeTabKey, setActiveTabKey] = React.useState(0);
+  const handleTabClick = (event: React.MouseEvent, tabIndex: number) => {
+    setActiveTabKey(tabIndex);
+  };
 
-    const tabContent = (
-        <DescriptionList isHorizontal columnModifier={{ lg: '2Col' }}>
-            {descriptionListData.map(({ status, resourceName, detail, icon }, index) => (
-                <DescriptionListGroup key={index}>
-                    <DescriptionListTerm>
-                        <Flex>
-                            <FlexItem>
-                                {icon}
-                            </FlexItem>
-                            <FlexItem>
-                                <Title headingLevel='h3' size='md'>{status}</Title>
-                            </FlexItem>
-                        </Flex>
-                    </DescriptionListTerm>
-                    <DescriptionListDescription>
-                        <a href="#">
-                            {resourceName}
-                        </a>
-                        <div>{detail}</div>
-                    </DescriptionListDescription>
-                </DescriptionListGroup>
+  const tabContent = (
+    <DescriptionList isHorizontal columnModifier={{ lg: '2Col' }}>
+      {descriptionListData.map(({ status, resourceName, detail, icon }, index) => (
+        <DescriptionListGroup key={index}>
+          <DescriptionListTerm>
+            <Flex>
+              <FlexItem>{icon}</FlexItem>
+              <FlexItem>
+                <Title headingLevel="h3" size="md">
+                  {status}
+                </Title>
+              </FlexItem>
+            </Flex>
+          </DescriptionListTerm>
+          <DescriptionListDescription>
+            <a href="#">{resourceName}</a>
+            <div>{detail}</div>
+          </DescriptionListDescription>
+        </DescriptionListGroup>
+      ))}
+    </DescriptionList>
+  );
+
+  return (
+    <>
+      <Card>
+        <CardHeader>
+          <Title headingLevel="h2" size="lg">
+            Status
+          </Title>
+        </CardHeader>
+        <CardBody>
+          <Tabs isFilled id="status-tabs" activeKey={activeTabKey} onSelect={handleTabClick}>
+            {[1, 2, 3].map((tab, tabIndex) => (
+              <Tab
+                key={tabIndex}
+                eventKey={tabIndex}
+                title={<TabTitleText>{`Object ${tabIndex + 1}`}</TabTitleText>}
+                tabContentId={`tabContent${tabIndex}`}
+              />
             ))}
-        </DescriptionList>
-    )
-
-    return (
-        <>
-            <Card>
-                <CardHeader>
-                    <Title headingLevel='h2' size='lg'>
-                        Status
-                    </Title>
-                </CardHeader>
-                <CardBody>
-                    <Tabs isFilled id="status-tabs" activeKey={activeTabKey} onSelect={handleTabClick}>
-                        {[1, 2, 3].map((tab, tabIndex) =>
-                            <Tab key={tabIndex} eventKey={tabIndex} title={<TabTitleText>{`Object ${tabIndex + 1}`}</TabTitleText>} tabContentId={`tabContent${tabIndex}`} />
-                        )}
-                    </Tabs>
-                </CardBody>
-                <CardBody>
-                    {[1, 2, 3].map((tab, tabIndex) =>
-                        <TabContent key={tabIndex} eventKey={tabIndex} id={`tabContent${tabIndex}`} activeKey={activeTabKey} hidden={tabIndex !== activeTabKey}>
-                            {tabContent}
-                        </TabContent>
-                    )}
-                </CardBody>
-            </Card>
-        </>
-  )
-}
+          </Tabs>
+        </CardBody>
+        <CardBody>
+          {[1, 2, 3].map((tab, tabIndex) => (
+            <TabContent
+              key={tabIndex}
+              eventKey={tabIndex}
+              id={`tabContent${tabIndex}`}
+              activeKey={activeTabKey}
+              hidden={tabIndex !== activeTabKey}
+            >
+              {tabContent}
+            </TabContent>
+          ))}
+        </CardBody>
+      </Card>
+    </>
+  );
+};
 ```
 
 ### Log view
@@ -1198,7 +1226,7 @@ CardEventViewDemo = () => {
               <DescriptionListTerm>
                 <Flex flexWrap={{ default: 'nowrap' }}>
                   <FlexItem>
-                    <Spinner size="md" aria-label="loading spinner"/>
+                    <Spinner size="md" aria-label="loading spinner" />
                   </FlexItem>
                   <FlexItem>
                     <span>Pulling image</span>
