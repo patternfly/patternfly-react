@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.156.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.155.2...@patternfly/react-core@4.156.0) (2021-09-13)
+
+
+### Features
+
+* **Flex, Gallery, Grid:** allow setting alternative component ([#6270](https://github.com/patternfly/patternfly-react/issues/6270)) ([1703fdf](https://github.com/patternfly/patternfly-react/commit/1703fdfad6e2e058e0bd7e82269c79f41b8c0809)), closes [#5967](https://github.com/patternfly/patternfly-react/issues/5967)
+
+
+
+
+
 ## [4.155.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.155.1...@patternfly/react-core@4.155.2) (2021-09-13)
 
 **Note:** Version bump only for package @patternfly/react-core
