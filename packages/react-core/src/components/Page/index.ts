@@ -8,3 +8,4 @@ export * from './PageHeaderTools';
 export * from './PageHeaderToolsGroup';
 export * from './PageHeaderToolsItem';
 export * from './PageNavigation';
+export * from './PageToggleButton';

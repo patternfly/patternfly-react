@@ -5,14 +5,17 @@ section: components
 
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 
 ## Demos
 
 ### Basic
+
 ```js isFullscreen
 import React from 'react';
 import {
@@ -51,7 +54,6 @@ import {
   NotificationDrawerListItemBody,
   NotificationDrawerListItemHeader,
   Page,
-  PageHeader,
   PageSection,
   PageSectionVariants,
   PageSidebar,
@@ -59,14 +61,22 @@ import {
   TextContent,
   Text,
   Title,
-  PageHeaderTools,
-  PageHeaderToolsGroup,
-  PageHeaderToolsItem
+  PageToggleButton,
+  Masthead,
+  MastheadMain,
+  MastheadToggle,
+  MastheadContent,
+  MastheadBrand,
+  Toolbar,
+  ToolbarItem,
+  ToolbarGroup,
+  ToolbarContent
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
@@ -80,8 +90,8 @@ class BasicNotificationDrawer extends React.Component {
       activeItem: 0,
       isDrawerExpanded: false,
       isUnreadMap: {
-        "notification-1": true,
-        "notification-2": true
+        'notification-1': true,
+        'notification-2': true
       },
       showNotifications: true,
       isActionsMenuOpen: null
@@ -115,65 +125,65 @@ class BasicNotificationDrawer extends React.Component {
         activeItem: result.itemId
       });
     };
-    
+
     this.onCloseNotificationDrawer = () => {
       this.setState(prevState => {
         return {
           isDrawerExpanded: !prevState.isDrawerExpanded
-        }
+        };
       });
     };
-    
+
     this.onToggle = (id, isOpen) => {
       this.setState({
         isActionsMenuOpen: { [id]: isOpen }
       });
     };
-    
+
     this.onSelect = event => {
       this.setState({
         isActionsMenuOpen: null
       });
     };
-    
-    this.onListItemClick = (id) => {
+
+    this.onListItemClick = id => {
       this.setState(prevState => {
         if (!prevState.isUnreadMap) return;
         prevState.isUnreadMap[id] = false;
         return {
           isUnreadMap: prevState.isUnreadMap
-        }
+        };
       });
-    }
-    
+    };
+
     this.getNumberUnread = () => {
-      const { isUnreadMap } = this.state
+      const { isUnreadMap } = this.state;
       if (isUnreadMap === null) return 0;
       return Object.keys(isUnreadMap).reduce((count, id) => {
         return isUnreadMap[id] ? count + 1 : count;
       }, 0);
-    }
-    
+    };
+
     this.markAllRead = () => {
       this.setState({
         isUnreadMap: null
       });
-    }
-    
-    this.showNotifications = (showNotifications) => {
+    };
+
+    this.showNotifications = showNotifications => {
       this.setState({
         isUnreadMap: null,
         showNotifications: showNotifications
       });
-    }
+    };
   }
 
   render() {
-    const { 
-      isDropdownOpen, 
-      isKebabDropdownOpen, 
-      activeItem, 
-      res, 
+    const {
+      isDropdownOpen,
+      isKebabDropdownOpen,
+      activeItem,
+      res,
       isDrawerExpanded,
       isActionsMenuOpen,
       isUnreadMap,
@@ -218,64 +228,89 @@ class BasicNotificationDrawer extends React.Component {
         <DropdownItem key="group 2 logout">Logout</DropdownItem>
       </DropdownGroup>
     ];
-    const headerTools = (
-      <PageHeaderTools>
-        <PageHeaderToolsItem visibility={{default: 'visible'}} isSelected={isDrawerExpanded}>
-          <NotificationBadge variant={this.getNumberUnread() === 0 ? 'read' : 'unread'} onClick={this.onCloseNotificationDrawer} aria-label="Notifications">
-            <BellIcon />
-          </NotificationBadge>
-        </PageHeaderToolsItem>
-        <PageHeaderToolsGroup
-          visibility={{
-            default: 'hidden',
-            lg: 'visible'
-          }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
-        >
-          <PageHeaderToolsItem>
-            <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </PageHeaderToolsItem>
-          <PageHeaderToolsItem>
-            <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <HelpIcon />
-            </Button>
-          </PageHeaderToolsItem>
-        </PageHeaderToolsGroup>
-        <PageHeaderToolsGroup>
-          <PageHeaderToolsItem
-            visibility={{
-              lg: 'hidden'
-            }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */
-          >
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onKebabDropdownSelect}
-              toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
-              isOpen={isKebabDropdownOpen}
-              dropdownItems={kebabDropdownItems}
-            />
-          </PageHeaderToolsItem>
-          <PageHeaderToolsItem
-            visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
-          >
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onDropdownSelect}
-              isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
-              dropdownItems={userDropdownItems}
-            />
-          </PageHeaderToolsItem>
-        </PageHeaderToolsGroup>
-        <Avatar src={imgAvatar} alt="Avatar image" />
-      </PageHeaderTools>
+    const headerToolbar = (
+      <Toolbar>
+        <ToolbarContent>
+          <ToolbarGroup spaceItems={{ default: 'spacerNone' }} alignment={{ default: 'alignRight' }}>
+            <ToolbarGroup variant="icon-button-group">
+              <ToolbarItem visibility={{ default: 'visible' }} isSelected={isDrawerExpanded}>
+                <NotificationBadge
+                  variant={this.getNumberUnread() === 0 ? 'read' : 'unread'}
+                  onClick={this.onCloseNotificationDrawer}
+                  aria-label="Notifications"
+                >
+                  <BellIcon />
+                </NotificationBadge>
+              </ToolbarItem>
+              <ToolbarGroup
+                variant="icon-button-group"
+                visibility={{
+                  default: 'hidden',
+                  lg: 'visible'
+                }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
+              >
+                <ToolbarItem>
+                  <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
+                    <CogIcon />
+                  </Button>
+                </ToolbarItem>
+                <ToolbarItem>
+                  <Button aria-label="Help actions" variant={ButtonVariant.plain}>
+                    <HelpIcon />
+                  </Button>
+                </ToolbarItem>
+              </ToolbarGroup>
+            </ToolbarGroup>
+            <ToolbarGroup>
+              <ToolbarItem
+                visibility={{
+                  lg: 'hidden'
+                }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */
+              >
+                <Dropdown
+                  isPlain
+                  position="right"
+                  onSelect={this.onKebabDropdownSelect}
+                  toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+                  isOpen={isKebabDropdownOpen}
+                  dropdownItems={kebabDropdownItems}
+                />
+              </ToolbarItem>
+              <ToolbarItem
+                visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
+              >
+                <Dropdown
+                  position="right"
+                  onSelect={this.onDropdownSelect}
+                  isOpen={isDropdownOpen}
+                  toggle={
+                    <DropdownToggle icon={<Avatar src={imgAvatar} alt="Avatar" />} onToggle={this.onDropdownToggle}>
+                      John Smith
+                    </DropdownToggle>
+                  }
+                  dropdownItems={userDropdownItems}
+                />
+              </ToolbarItem>
+            </ToolbarGroup>
+          </ToolbarGroup>
+        </ToolbarContent>
+      </Toolbar>
     );
 
     const Header = (
-      <PageHeader logo={<Brand src={imgBrand} alt="Patternfly Logo" />} headerTools={headerTools} showNavToggle />
+      <Masthead>
+        <MastheadToggle>
+          <PageToggleButton variant="plain" aria-label="Global navigation">
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
+        <MastheadMain>
+          <MastheadBrand>
+            <Brand src={imgBrand} alt="Patternfly logo" />
+          </MastheadBrand>
+        </MastheadMain>
+        <MastheadContent>{headerToolbar}</MastheadContent>
+      </Masthead>
     );
     const Sidebar = <PageSidebar nav={PageNav} />;
     const pageId = 'main-content-page-layout-default-nav';
@@ -291,9 +326,9 @@ class BasicNotificationDrawer extends React.Component {
         </BreadcrumbItem>
       </Breadcrumb>
     );
-    
-    const drawerContent = "Panel content";
-    
+
+    const drawerContent = 'Panel content';
+
     const notificationDrawerActions = [
       <DropdownItem key="markAllRead" onClick={this.markAllRead} component="button">
         Mark all read
@@ -301,14 +336,14 @@ class BasicNotificationDrawer extends React.Component {
       <DropdownItem key="clearAll" onClick={() => this.showNotifications(false)} component="button">
         Clear all
       </DropdownItem>,
-      <DropdownItem key="unclearLast" onClick={() => this.showNotifications(true)}component="button">
+      <DropdownItem key="unclearLast" onClick={() => this.showNotifications(true)} component="button">
         Unclear last
       </DropdownItem>,
       <DropdownItem key="settings" component="button">
         Settings
-      </DropdownItem>,
+      </DropdownItem>
     ];
-    
+
     const notificationDrawerDropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
       <DropdownItem key="action" component="button">
@@ -319,7 +354,7 @@ class BasicNotificationDrawer extends React.Component {
         Disabled Link
       </DropdownItem>
     ];
-    
+
     const notificationDrawer = (
       <NotificationDrawer>
         <NotificationDrawerHeader count={this.getNumberUnread()} onClose={this.onCloseNotificationDrawer}>
@@ -336,7 +371,11 @@ class BasicNotificationDrawer extends React.Component {
         <NotificationDrawerBody>
           {showNotifications && (
             <NotificationDrawerList>
-              <NotificationDrawerListItem variant="info" onClick={() => this.onListItemClick("notification-1")} isRead={isUnreadMap === null || !isUnreadMap["notification-1"]}>
+              <NotificationDrawerListItem
+                variant="info"
+                onClick={() => this.onListItemClick('notification-1')}
+                isRead={isUnreadMap === null || !isUnreadMap['notification-1']}
+              >
                 <NotificationDrawerListItemHeader
                   variant="info"
                   title="Unread info notification title"
@@ -356,7 +395,11 @@ class BasicNotificationDrawer extends React.Component {
                   This is an info notification description.
                 </NotificationDrawerListItemBody>
               </NotificationDrawerListItem>
-              <NotificationDrawerListItem variant="danger" onClick={() => this.onListItemClick("notification-2")} isRead={isUnreadMap === null || !isUnreadMap["notification-2"]}>
+              <NotificationDrawerListItem
+                variant="danger"
+                onClick={() => this.onListItemClick('notification-2')}
+                isRead={isUnreadMap === null || !isUnreadMap['notification-2']}
+              >
                 <NotificationDrawerListItemHeader
                   variant="danger"
                   title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
@@ -373,11 +416,15 @@ class BasicNotificationDrawer extends React.Component {
                   />
                 </NotificationDrawerListItemHeader>
                 <NotificationDrawerListItemBody timestamp="10 minutes ago">
-                  This is a danger notification description. This is a long description to show how the title will wrap if
-                  it is long and wraps to multiple lines.
+                  This is a danger notification description. This is a long description to show how the title will wrap
+                  if it is long and wraps to multiple lines.
                 </NotificationDrawerListItemBody>
               </NotificationDrawerListItem>
-              <NotificationDrawerListItem variant="warning" onClick={() => this.onListItemClick("notification-3")} isRead={isUnreadMap === null || !isUnreadMap["notification-3"]}>
+              <NotificationDrawerListItem
+                variant="warning"
+                onClick={() => this.onListItemClick('notification-3')}
+                isRead={isUnreadMap === null || !isUnreadMap['notification-3']}
+              >
                 <NotificationDrawerListItemHeader
                   variant="warning"
                   title="Read warning notification title"
@@ -397,7 +444,11 @@ class BasicNotificationDrawer extends React.Component {
                   This is a warning notification description.
                 </NotificationDrawerListItemBody>
               </NotificationDrawerListItem>
-              <NotificationDrawerListItem variant="success" onClick={() => this.onListItemClick("notification-4")} isRead={isUnreadMap === null || !isUnreadMap["notification-4"]}>
+              <NotificationDrawerListItem
+                variant="success"
+                onClick={() => this.onListItemClick('notification-4')}
+                isRead={isUnreadMap === null || !isUnreadMap['notification-4']}
+              >
                 <NotificationDrawerListItemHeader
                   variant="success"
                   title="Read success notification title"
@@ -470,6 +521,7 @@ class BasicNotificationDrawer extends React.Component {
 ```
 
 ### Grouped
+
 ```js isFullscreen
 import React from 'react';
 import {
@@ -510,7 +562,6 @@ import {
   NotificationDrawerListItemBody,
   NotificationDrawerListItemHeader,
   Page,
-  PageHeader,
   PageSection,
   PageSectionVariants,
   PageSidebar,
@@ -518,13 +569,22 @@ import {
   Title,
   TextContent,
   Text,
-  PageHeaderTools,
-  PageHeaderToolsGroup,
-  PageHeaderToolsItem
+  PageToggleButton,
+  Masthead,
+  MastheadMain,
+  MastheadToggle,
+  MastheadContent,
+  MastheadBrand,
+  Toolbar,
+  ToolbarItem,
+  ToolbarGroup,
+  ToolbarContent
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
@@ -544,15 +604,15 @@ class GroupedNotificationDrawer extends React.Component {
       isActionsMenuOpen: null,
       showNotifications: true,
       isUnreadMap: {
-        "group-1": {
-          "notification-5": true,
-          "notification-6": true
+        'group-1': {
+          'notification-5': true,
+          'notification-6': true
         },
-        "group-2": {
-          "notification-9": true,
-          "notification-10": true 
+        'group-2': {
+          'notification-9': true,
+          'notification-10': true
         },
-        "group-3": null
+        'group-3': null
       }
     };
     this.onDropdownToggle = isDropdownOpen => {
@@ -584,27 +644,27 @@ class GroupedNotificationDrawer extends React.Component {
         activeItem: result.itemId
       });
     };
-    
+
     this.onCloseNotificationDrawer = () => {
       this.setState(prevState => {
         return {
           isDrawerExpanded: !prevState.isDrawerExpanded
-        }
+        };
       });
     };
-    
+
     this.onToggle = (id, isOpen) => {
       this.setState({
         isActionsMenuOpen: { [id]: isOpen }
       });
     };
-    
+
     this.onSelect = event => {
       this.setState({
         isActionsMenuOpen: null
       });
     };
-    
+
     this.onListItemClick = (groupId, id) => {
       this.setState(prevState => {
         if (!prevState.isUnreadMap || !prevState.isUnreadMap[groupId]) return;
@@ -612,62 +672,61 @@ class GroupedNotificationDrawer extends React.Component {
         prevState.isUnreadMap[groupId][id] = false;
         return {
           isUnreadMap: prevState.isUnreadMap
-        }
+        };
       });
-    }
-    
+    };
+
     this.isUnread = (groupId, id) => {
-      const { isUnreadMap } = this.state
+      const { isUnreadMap } = this.state;
       return isUnreadMap && isUnreadMap[groupId] && isUnreadMap[groupId][id];
-    }
-    
-    this.getNumberUnread = (groupId) => {
-      const { isUnreadMap } = this.state
-      if (isUnreadMap === null) return 0
-      
+    };
+
+    this.getNumberUnread = groupId => {
+      const { isUnreadMap } = this.state;
+      if (isUnreadMap === null) return 0;
+
       if (groupId) {
         if (isUnreadMap[groupId] === null) return 0;
-        
+
         return Object.keys(isUnreadMap[groupId]).reduce((count, id) => {
           return isUnreadMap[groupId][id] ? count + 1 : count;
         }, 0);
       }
-      
+
       return Object.keys(isUnreadMap).reduce((count, groupId) => {
         if (isUnreadMap[groupId] === null) return count;
-                
+
         return Object.keys(isUnreadMap[groupId]).reduce((groupCount, id) => {
           return isUnreadMap[groupId][id] ? groupCount + 1 : groupCount;
         }, count);
-        
       }, 0);
-    }
-    
+    };
+
     this.markAllRead = () => {
       this.setState({
         isUnreadMap: null
       });
-    }
-    
-    this.showNotifications = (showNotifications) => {
+    };
+
+    this.showNotifications = showNotifications => {
       this.setState({
         isUnreadMap: null,
         showNotifications: showNotifications
       });
-    }
-    
+    };
+
     this.toggleFirstDrawer = (event, value) => {
       this.setState({
         firstDrawerGroupExpanded: value
       });
     };
-    
+
     this.toggleSecondDrawer = (event, value) => {
       this.setState({
         secondDrawerGroupExpanded: value
       });
     };
-    
+
     this.toggleThirdDrawer = (event, value) => {
       this.setState({
         thirdDrawerGroupExpanded: value
@@ -676,20 +735,20 @@ class GroupedNotificationDrawer extends React.Component {
   }
 
   render() {
-    const { 
-      isDropdownOpen, 
-      isKebabDropdownOpen, 
-      activeItem, 
-      res, 
+    const {
+      isDropdownOpen,
+      isKebabDropdownOpen,
+      activeItem,
+      res,
       isDrawerExpanded,
       isActionsMenuOpen,
-      isUnreadMap, 
+      isUnreadMap,
       showNotifications,
-      firstDrawerGroupExpanded, 
-      secondDrawerGroupExpanded, 
+      firstDrawerGroupExpanded,
+      secondDrawerGroupExpanded,
       thirdDrawerGroupExpanded
     } = this.state;
-    
+
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
@@ -728,64 +787,89 @@ class GroupedNotificationDrawer extends React.Component {
         <DropdownItem key="group 2 logout">Logout</DropdownItem>
       </DropdownGroup>
     ];
-    const headerTools = (
-      <PageHeaderTools>
-        <PageHeaderToolsItem visibility={{default: 'visible'}} isSelected={isDrawerExpanded}>
-          <NotificationBadge variant={this.getNumberUnread() === 0 ? 'read' : 'unread'} onClick={this.onCloseNotificationDrawer} aria-label="Notifications">
-            <BellIcon />
-          </NotificationBadge>
-        </PageHeaderToolsItem>
-        <PageHeaderToolsGroup
-          visibility={{
-            default: 'hidden',
-            lg: 'visible'
-          }} /** the notificaitons, settings, and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
-        >
-          <PageHeaderToolsItem>
-            <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
-              <CogIcon />
-            </Button>
-          </PageHeaderToolsItem>
-          <PageHeaderToolsItem>
-            <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <HelpIcon />
-            </Button>
-          </PageHeaderToolsItem>
-        </PageHeaderToolsGroup>
-        <PageHeaderToolsGroup>
-          <PageHeaderToolsItem
-            visibility={{
-              lg: 'hidden'
-            }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */
-          >
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onKebabDropdownSelect}
-              toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
-              isOpen={isKebabDropdownOpen}
-              dropdownItems={kebabDropdownItems}
-            />
-          </PageHeaderToolsItem>
-          <PageHeaderToolsItem
-            visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
-          >
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onDropdownSelect}
-              isOpen={isDropdownOpen}
-              toggle={<DropdownToggle onToggle={this.onDropdownToggle}>John Smith</DropdownToggle>}
-              dropdownItems={userDropdownItems}
-            />
-          </PageHeaderToolsItem>
-        </PageHeaderToolsGroup>
-        <Avatar src={imgAvatar} alt="Avatar image" />
-      </PageHeaderTools>
+    const headerToolbar = (
+      <Toolbar>
+        <ToolbarContent>
+          <ToolbarGroup spaceItems={{ default: 'spacerNone' }} alignment={{ default: 'alignRight' }}>
+            <ToolbarGroup variant="icon-button-group">
+              <ToolbarItem visibility={{ default: 'visible' }} isSelected={isDrawerExpanded}>
+                <NotificationBadge
+                  variant={this.getNumberUnread() === 0 ? 'read' : 'unread'}
+                  onClick={this.onCloseNotificationDrawer}
+                  aria-label="Notifications"
+                >
+                  <BellIcon />
+                </NotificationBadge>
+              </ToolbarItem>
+              <ToolbarGroup
+                variant="icon-button-group"
+                visibility={{
+                  default: 'hidden',
+                  lg: 'visible'
+                }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
+              >
+                <ToolbarItem>
+                  <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
+                    <CogIcon />
+                  </Button>
+                </ToolbarItem>
+                <ToolbarItem>
+                  <Button aria-label="Help actions" variant={ButtonVariant.plain}>
+                    <HelpIcon />
+                  </Button>
+                </ToolbarItem>
+              </ToolbarGroup>
+            </ToolbarGroup>
+            <ToolbarGroup>
+              <ToolbarItem
+                visibility={{
+                  lg: 'hidden'
+                }} /** this kebab dropdown replaces the icon buttons and is hidden for desktop sizes */
+              >
+                <Dropdown
+                  isPlain
+                  position="right"
+                  onSelect={this.onKebabDropdownSelect}
+                  toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+                  isOpen={isKebabDropdownOpen}
+                  dropdownItems={kebabDropdownItems}
+                />
+              </ToolbarItem>
+              <ToolbarItem
+                visibility={{ default: 'hidden', md: 'visible' }} /** this user dropdown is hidden on mobile sizes */
+              >
+                <Dropdown
+                  position="right"
+                  onSelect={this.onDropdownSelect}
+                  isOpen={isDropdownOpen}
+                  toggle={
+                    <DropdownToggle icon={<Avatar src={imgAvatar} alt="Avatar" />} onToggle={this.onDropdownToggle}>
+                      John Smith
+                    </DropdownToggle>
+                  }
+                  dropdownItems={userDropdownItems}
+                />
+              </ToolbarItem>
+            </ToolbarGroup>
+          </ToolbarGroup>
+        </ToolbarContent>
+      </Toolbar>
     );
 
     const Header = (
-      <PageHeader logo={<Brand src={imgBrand} alt="Patternfly Logo" />} headerTools={headerTools} showNavToggle />
+      <Masthead>
+        <MastheadToggle>
+          <PageToggleButton variant="plain" aria-label="Global navigation">
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
+        <MastheadMain>
+          <MastheadBrand>
+            <Brand src={imgBrand} alt="Patternfly logo" />
+          </MastheadBrand>
+        </MastheadMain>
+        <MastheadContent>{headerToolbar}</MastheadContent>
+      </Masthead>
     );
     const Sidebar = <PageSidebar nav={PageNav} />;
     const pageId = 'main-content-page-layout-default-nav';
@@ -801,9 +885,9 @@ class GroupedNotificationDrawer extends React.Component {
         </BreadcrumbItem>
       </Breadcrumb>
     );
-    
-    const drawerContent = "Panel content";
-    
+
+    const drawerContent = 'Panel content';
+
     const notificationDrawerDropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
       <DropdownItem key="action" component="button">
@@ -814,7 +898,7 @@ class GroupedNotificationDrawer extends React.Component {
         Disabled Link
       </DropdownItem>
     ];
-    
+
     const notificationDrawerActions = [
       <DropdownItem key="markAllRead" onClick={this.markAllRead} component="button">
         Mark all read
@@ -822,14 +906,14 @@ class GroupedNotificationDrawer extends React.Component {
       <DropdownItem key="clearAll" onClick={() => this.showNotifications(false)} component="button">
         Clear all
       </DropdownItem>,
-      <DropdownItem key="unclearLast" onClick={() => this.showNotifications(true)}component="button">
+      <DropdownItem key="unclearLast" onClick={() => this.showNotifications(true)} component="button">
         Unclear last
       </DropdownItem>,
       <DropdownItem key="settings" component="button">
         Settings
-      </DropdownItem>,
+      </DropdownItem>
     ];
-    
+
     const notificationDrawer = (
       <NotificationDrawer>
         <NotificationDrawerHeader count={this.getNumberUnread()} onClose={this.onCloseNotificationDrawer}>
@@ -849,11 +933,15 @@ class GroupedNotificationDrawer extends React.Component {
               <NotificationDrawerGroup
                 title="First notification group"
                 isExpanded={firstDrawerGroupExpanded}
-                count={this.getNumberUnread("group-1")}
+                count={this.getNumberUnread('group-1')}
                 onExpand={this.toggleFirstDrawer}
               >
                 <NotificationDrawerList isHidden={!firstDrawerGroupExpanded}>
-                  <NotificationDrawerListItem variant="info" onClick={() => this.onListItemClick("group-1", "notification-5")} isRead={!this.isUnread("group-1","notification-5")}>
+                  <NotificationDrawerListItem
+                    variant="info"
+                    onClick={() => this.onListItemClick('group-1', 'notification-5')}
+                    isRead={!this.isUnread('group-1', 'notification-5')}
+                  >
                     <NotificationDrawerListItemHeader
                       variant="info"
                       title="Unread info notification title"
@@ -875,7 +963,11 @@ class GroupedNotificationDrawer extends React.Component {
                       This is an info notification description.
                     </NotificationDrawerListItemBody>
                   </NotificationDrawerListItem>
-                  <NotificationDrawerListItem variant="danger" onClick={() => this.onListItemClick("group-1", "notification-6")} isRead={!this.isUnread("group-1","notification-6")}>
+                  <NotificationDrawerListItem
+                    variant="danger"
+                    onClick={() => this.onListItemClick('group-1', 'notification-6')}
+                    isRead={!this.isUnread('group-1', 'notification-6')}
+                  >
                     <NotificationDrawerListItemHeader
                       variant="danger"
                       title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
@@ -898,7 +990,11 @@ class GroupedNotificationDrawer extends React.Component {
                       wrap if it is long and wraps to multiple lines.
                     </NotificationDrawerListItemBody>
                   </NotificationDrawerListItem>
-                  <NotificationDrawerListItem variant="warning" onClick={() => this.onListItemClick("group-1", "notification-7")} isRead={!this.isUnread("group-1","notification-7")}>
+                  <NotificationDrawerListItem
+                    variant="warning"
+                    onClick={() => this.onListItemClick('group-1', 'notification-7')}
+                    isRead={!this.isUnread('group-1', 'notification-7')}
+                  >
                     <NotificationDrawerListItemHeader
                       variant="warning"
                       title="Read warning notification title"
@@ -920,7 +1016,11 @@ class GroupedNotificationDrawer extends React.Component {
                       This is a warning notification description.
                     </NotificationDrawerListItemBody>
                   </NotificationDrawerListItem>
-                  <NotificationDrawerListItem variant="success" onClick={() => this.onListItemClick("group-1", "notification-8")} isRead={!this.isUnread("group-1","notification-8")}>
+                  <NotificationDrawerListItem
+                    variant="success"
+                    onClick={() => this.onListItemClick('group-1', 'notification-8')}
+                    isRead={!this.isUnread('group-1', 'notification-8')}
+                  >
                     <NotificationDrawerListItemHeader
                       variant="success"
                       title="Read success notification title"
@@ -948,11 +1048,15 @@ class GroupedNotificationDrawer extends React.Component {
               <NotificationDrawerGroup
                 title="Second notification group"
                 isExpanded={secondDrawerGroupExpanded}
-                count={this.getNumberUnread("group-2")}
+                count={this.getNumberUnread('group-2')}
                 onExpand={this.toggleSecondDrawer}
               >
                 <NotificationDrawerList isHidden={!secondDrawerGroupExpanded}>
-                  <NotificationDrawerListItem variant="info" onClick={() => this.onListItemClick("group-2", "notification-9")} isRead={!this.isUnread("group-2","notification-9")}>
+                  <NotificationDrawerListItem
+                    variant="info"
+                    onClick={() => this.onListItemClick('group-2', 'notification-9')}
+                    isRead={!this.isUnread('group-2', 'notification-9')}
+                  >
                     <NotificationDrawerListItemHeader
                       variant="info"
                       title="Unread info notification title"
@@ -974,7 +1078,11 @@ class GroupedNotificationDrawer extends React.Component {
                       This is an info notification description.
                     </NotificationDrawerListItemBody>
                   </NotificationDrawerListItem>
-                  <NotificationDrawerListItem variant="danger" onClick={() => this.onListItemClick("group-2", "notification-10")} isRead={!this.isUnread("group-2","notification-10")}>
+                  <NotificationDrawerListItem
+                    variant="danger"
+                    onClick={() => this.onListItemClick('group-2', 'notification-10')}
+                    isRead={!this.isUnread('group-2', 'notification-10')}
+                  >
                     <NotificationDrawerListItemHeader
                       variant="danger"
                       title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
@@ -997,7 +1105,11 @@ class GroupedNotificationDrawer extends React.Component {
                       wrap if it is long and wraps to multiple lines.
                     </NotificationDrawerListItemBody>
                   </NotificationDrawerListItem>
-                  <NotificationDrawerListItem variant="warning" onClick={() => this.onListItemClick("group-2", "notification-11")} isRead={!this.isUnread("group-2","notification-11")}>
+                  <NotificationDrawerListItem
+                    variant="warning"
+                    onClick={() => this.onListItemClick('group-2', 'notification-11')}
+                    isRead={!this.isUnread('group-2', 'notification-11')}
+                  >
                     <NotificationDrawerListItemHeader
                       variant="warning"
                       title="Read warning notification title"
@@ -1019,7 +1131,11 @@ class GroupedNotificationDrawer extends React.Component {
                       This is a warning notification description.
                     </NotificationDrawerListItemBody>
                   </NotificationDrawerListItem>
-                  <NotificationDrawerListItem variant="success" onClick={() => this.onListItemClick("group-2", "notification-12")} isRead={!this.isUnread("group-2","notification-12")}>
+                  <NotificationDrawerListItem
+                    variant="success"
+                    onClick={() => this.onListItemClick('group-2', 'notification-12')}
+                    isRead={!this.isUnread('group-2', 'notification-12')}
+                  >
                     <NotificationDrawerListItemHeader
                       variant="success"
                       title="Read success notification title"
@@ -1047,7 +1163,7 @@ class GroupedNotificationDrawer extends React.Component {
               <NotificationDrawerGroup
                 title="Third notification group"
                 isExpanded={thirdDrawerGroupExpanded}
-                count={this.getNumberUnread("group-3")}
+                count={this.getNumberUnread('group-3')}
                 onExpand={this.toggleThirdDrawer}
               >
                 <NotificationDrawerList isHidden={!thirdDrawerGroupExpanded}>
@@ -1083,7 +1199,7 @@ class GroupedNotificationDrawer extends React.Component {
             </EmptyState>
           )}
         </NotificationDrawerBody>
-    </  NotificationDrawer>
+      </NotificationDrawer>
     );
 
     return (

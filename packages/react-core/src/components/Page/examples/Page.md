@@ -14,6 +14,7 @@ propComponents:
     'PageGroup',
     'PageBreadcrumb',
     'PageNavigation',
+    'PageToggleButton',
   ]
 ---
 
