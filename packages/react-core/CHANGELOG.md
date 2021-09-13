@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.156.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.156.1...@patternfly/react-core@4.156.2) (2021-09-13)
+
+
+### Bug Fixes
+
+* wrapper nav should have hrefs ([#6297](https://github.com/patternfly/patternfly-react/issues/6297)) ([98af96d](https://github.com/patternfly/patternfly-react/commit/98af96d0bdf4db68ed27b106041588de881855ac))
+
+
+
+
+
 ## [4.156.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.156.0...@patternfly/react-core@4.156.1) (2021-09-13)
 
 **Note:** Version bump only for package @patternfly/react-core
