@@ -71,7 +71,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   weekStart,
   validators = [],
   rangeStart,
-  style = {},
+  style: styleProps = {},
   inputProps = {},
   ...props
 }: DatePickerProps) => {
@@ -82,7 +82,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   const [selectOpen, setSelectOpen] = React.useState(false);
   const [pristine, setPristine] = React.useState(true);
   const widthChars = React.useMemo(() => Math.max(dateFormat(new Date()).length, placeholder.length), [dateFormat]);
-  (style as any)['--pf-c-date-picker__input--c-form-control--width-chars'] = widthChars;
+  const style = { '--pf-c-date-picker__input--c-form-control--width-chars': widthChars, ...styleProps };
   const buttonRef = React.useRef<HTMLButtonElement>();
 
   React.useEffect(() => {

@@ -194,6 +194,12 @@ TextInputSelectAll = () => {
 
 ### Advanced
 
+The search input component can be used to dynamically build a one to one attribute-value advanced search.
+Using the `attributes` prop alongside the `advancedSearchDelimiter` will expose this functionality, as demonstrated in
+the following example. The search input component can also be used as a composable component and paired with a Popper 
+or other elements to build a completely custom advanced search form. This feature is demonstrated 
+in the search input's <a href="/components/search-input/react-demos">react demos</a>.
+
 ```js
 import React from 'react';
 import { Button, Checkbox, FormGroup, SearchInput } from '@patternfly/react-core';
@@ -202,7 +208,6 @@ import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/ex
 AdvancedSearchInput = () => {
   const [value, setValue] = React.useState('username:player firstname:john');
   const [useEqualsAsDelimiter, setUseEqualsAsDelimiter] = React.useState(false);
-  const [showLink, setShowLink] = React.useState(false);
   const [useCustomFooter, setUseCustomFooter] = React.useState(false);
 
   const toggleDelimiter = checked => {
