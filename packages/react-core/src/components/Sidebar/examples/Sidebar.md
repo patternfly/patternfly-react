@@ -3,6 +3,7 @@ id: Sidebar
 beta: true
 cssPrefix: pf-c-sidebar
 section: components
+propComponents: ['Sidebar', 'SidebarContent', 'SidebarPanel']
 ---
 
 ## Examples
