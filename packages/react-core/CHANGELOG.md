@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.157.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.157.0...@patternfly/react-core@4.157.1) (2021-09-14)
+
+
+### Bug Fixes
+
+* **calendarmonth:** make useEffect respect validators ([#6315](https://github.com/patternfly/patternfly-react/issues/6315)) ([155eb0c](https://github.com/patternfly/patternfly-react/commit/155eb0cc9e6eaea22f0a3301b1e7be66c5982204))
+
+
+
+
+
 # [4.157.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.156.4...@patternfly/react-core@4.157.0) (2021-09-14)
 
 
