@@ -93,9 +93,7 @@ export const ComposableTableCompoundExpandable: React.FunctionComponent = () => 
               <Td dataLabel={columnNames.workspaces} compoundExpand={compoundExpandParams(repo, 'workspaces')}>
                 <CubeIcon key="icon" /> {repo.workspaces}
               </Td>
-              <Td dataLabel={columnNames.lastCommit} compoundExpand={compoundExpandParams(repo, 'lastCommit')}>
-                {repo.lastCommit}
-              </Td>
+              <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
               <Td>
                 <a href="#">Open in GitHub</a>
               </Td>
