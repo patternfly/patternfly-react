@@ -17,6 +17,11 @@ test('simple search input', () => {
   expect(view.find('input')).toMatchSnapshot();
 });
 
+test('search input with hint', () => {
+  const view = mount(<SearchInput {...props} hint="test hint" aria-label="simple text input" />);
+  expect(view.find('input')).toMatchSnapshot();
+});
+
 test('result count', () => {
   const view = mount(<SearchInput {...props} resultsCount={3} aria-label="simple text input" />);
   expect(view.find('.pf-c-badge')).toMatchSnapshot();

@@ -101,6 +101,7 @@ export class SearchInputDemo extends React.Component<SearchInputProps, SearchInp
           onClear={this.onClear}
           isDisabled
         />
+        <SearchInput id="hinted-search" hint="hint" />
       </React.Fragment>
     );
   }

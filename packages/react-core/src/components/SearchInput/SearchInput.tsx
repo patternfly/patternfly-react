@@ -35,6 +35,8 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   innerRef?: React.RefObject<any>;
   /** A callback for when the input value changes */
   onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
+  /** A suggestion for autocompleting */
+  hint?: string;
 
   /** A callback for when the search button clicked changes */
   onSearch?: (
@@ -83,6 +85,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   hasWordsAttrLabel = 'Has words',
   advancedSearchDelimiter,
   placeholder,
+  hint,
   onChange,
   onSearch,
   onClear,
@@ -166,6 +169,15 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     }
   };
 
+  const onClearInput = (e: React.SyntheticEvent<HTMLButtonElement>) => {
+    if (onClear) {
+      onClear(e);
+    }
+    if (searchInputInputRef && searchInputInputRef.current) {
+      searchInputInputRef.current.focus();
+    }
+  };
+
   return (
     <div className={css(className, styles.searchInput)} ref={searchInputRef} {...props}>
       <InputGroup>
@@ -174,6 +186,15 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             <span className={css(styles.searchInputIcon)}>
               <SearchIcon />
             </span>
+            {hint && (
+              <input
+                className={css(styles.searchInputTextInput, styles.modifiers.hint)}
+                type="text"
+                disabled
+                aria-hidden="true"
+                value={hint}
+              />
+            )}
             <input
               ref={searchInputInputRef}
               className={css(styles.searchInputTextInput)}
@@ -213,7 +234,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
                     variant={ButtonVariant.plain}
                     isDisabled={isDisabled}
                     aria-label={resetButtonLabel}
-                    onClick={onClear}
+                    onClick={onClearInput}
                   >
                     <TimesIcon />
                   </Button>
