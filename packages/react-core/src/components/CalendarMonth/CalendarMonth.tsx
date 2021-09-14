@@ -176,7 +176,8 @@ export const CalendarMonth = ({
   const calendar = React.useMemo(() => buildCalendar(focusedYear, focusedMonth, weekStart, validators), [
     focusedYear,
     focusedMonth,
-    weekStart
+    weekStart,
+    validators
   ]);
   if (!focusedDateValidated) {
     const toFocus = calendar
