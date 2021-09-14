@@ -11,7 +11,7 @@ export interface IComputedData {
 }
 
 export type OnRowClick = (
-  event: React.MouseEvent,
+  event: React.KeyboardEvent | React.MouseEvent,
   row: IRow,
   rowProps: IExtraRowData,
   computedData: IComputedData
@@ -28,14 +28,14 @@ export interface TableBodyProps {
   rows?: IRow[];
   /** @hide This prop should not be set manually  */
   rowKey?: RowKeyType;
-  /** @hide This prop should not be set manually  */
+  /** A click handler for the row  */
   onRowClick?: OnRowClick;
   /** @hide This prop should not be set manually  */
   onRow?: Function;
 }
 
 const flagVisibility = (rows: IRow[]) => {
-  const visibleRows = (rows as []).filter((oneRow: IRow) => !oneRow.parent || oneRow.isExpanded) as IRow[];
+  const visibleRows = (rows as IRow[]).filter((oneRow: IRow) => !oneRow.parent || oneRow.isExpanded) as IRow[];
   if (visibleRows.length > 0) {
     visibleRows[0].isFirstVisible = true;
     visibleRows[visibleRows.length - 1].isLastVisible = true;
@@ -56,13 +56,23 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
     return {
       row,
       rowProps: extendedRowProps,
-      onMouseDown: (event: React.MouseEvent) => {
+      onClick: (event: React.MouseEvent) => {
         const computedData = {
           isInput: (event.target as HTMLElement).tagName !== 'INPUT',
           isButton: (event.target as HTMLElement).tagName !== 'BUTTON'
         };
 
         onRowClick(event, row, rowProps, computedData);
+      },
+      onKeyDown: (event: React.KeyboardEvent) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          const computedData = {
+            isInput: (event.target as HTMLElement).tagName !== 'INPUT',
+            isButton: (event.target as HTMLElement).tagName !== 'BUTTON'
+          };
+          onRowClick(event, row, rowProps, computedData);
+          event.preventDefault();
+        }
       }
     };
   };
@@ -128,7 +138,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
 
     let mappedRows: IRow[];
     if (headerData.length > 0) {
-      mappedRows = (rows as []).map((oneRow: IRow, oneRowKey: number) => ({
+      mappedRows = (rows as IRow[]).map((oneRow: IRow, oneRowKey: number) => ({
         ...oneRow,
         ...this.mapCells(headerData, oneRow, oneRowKey),
         isExpanded: isRowExpanded(oneRow, rows),
@@ -164,7 +174,12 @@ export const TableBody = ({
   rowKey = 'secretTableRowKeyId' as string,
   /* eslint-disable @typescript-eslint/no-unused-vars */
   onRow = (...args: any) => ({}),
-  onRowClick = (event: React.MouseEvent, row: IRow, rowProps: IExtraRowData, computedData: IComputedData) =>
+  onRowClick = (
+    event: React.MouseEvent | React.KeyboardEvent,
+    row: IRow,
+    rowProps: IExtraRowData,
+    computedData: IComputedData
+  ) =>
     /* eslint-enable @typescript-eslint/no-unused-vars */
     undefined as OnRowClick,
   ...props
