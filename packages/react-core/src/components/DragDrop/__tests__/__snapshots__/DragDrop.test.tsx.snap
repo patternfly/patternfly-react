@@ -4,9 +4,8 @@ exports[`renders some divs 1`] = `
 <ContextProvider
   value={
     Object {
-      "draggableZoneNodes": Object {},
+      "onDrag": [Function],
       "onDrop": [Function],
-      "setDraggableZoneNodes": [Function],
     }
   }
 >
