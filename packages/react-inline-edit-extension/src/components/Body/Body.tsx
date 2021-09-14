@@ -128,7 +128,7 @@ export const Body = ({ BodyComponent, rows = [], editConfig, onRowClick = () => 
       {...props}
       rows={mappedRows}
       onRowClick={(event, row, rowProps, computedData) =>
-        onRow(event, row, rowProps, computedData, { onRowClick, editConfig })
+        onRow(event as any, row, rowProps, computedData, { onRowClick, editConfig })
       }
     />
   );
