@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.30.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.29.73...@patternfly/react-table@4.30.0) (2021-09-14)
+
+
+### Features
+
+* **Table:** Add hoverable and selectable rows ([#6233](https://github.com/patternfly/patternfly-react/issues/6233)) ([b2527e2](https://github.com/patternfly/patternfly-react/commit/b2527e209bab0da4c0327df494c52cd5cbd28113))
+
+
+
+
+
 ## [4.29.73](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.29.72...@patternfly/react-table@4.29.73) (2021-09-14)
 
 **Note:** Version bump only for package @patternfly/react-table

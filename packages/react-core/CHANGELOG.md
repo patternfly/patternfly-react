@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.157.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.156.4...@patternfly/react-core@4.157.0) (2021-09-14)
+
+
+### Features
+
+* **SearchInput:** Autocomplete SearchInput demo ([#6305](https://github.com/patternfly/patternfly-react/issues/6305)) ([8456945](https://github.com/patternfly/patternfly-react/commit/84569455a9662f6e0be951a0431b2bacea61ee73))
+
+
+
+
+
 ## [4.156.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.156.3...@patternfly/react-core@4.156.4) (2021-09-14)
 
 **Note:** Version bump only for package @patternfly/react-core

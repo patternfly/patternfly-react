@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.121.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.120.7...demo-app-ts@4.121.0) (2021-09-14)
+
+
+### Features
+
+* **SearchInput:** Autocomplete SearchInput demo ([#6305](https://github.com/patternfly/patternfly-react/issues/6305)) ([8456945](https://github.com/patternfly/patternfly-react/commit/84569455a9662f6e0be951a0431b2bacea61ee73))
+* **Table:** Add hoverable and selectable rows ([#6233](https://github.com/patternfly/patternfly-react/issues/6233)) ([b2527e2](https://github.com/patternfly/patternfly-react/commit/b2527e209bab0da4c0327df494c52cd5cbd28113))
+
+
+
+
+
 ## [4.120.7](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.120.6...demo-app-ts@4.120.7) (2021-09-14)
 
 **Note:** Version bump only for package demo-app-ts
