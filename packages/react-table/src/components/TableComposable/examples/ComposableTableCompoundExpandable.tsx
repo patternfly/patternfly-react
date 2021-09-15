@@ -23,15 +23,12 @@ export const ComposableTableCompoundExpandable: React.FunctionComponent = () => 
     { name: 'siemur/test-space-2', branches: 3, prs: 4, workspaces: 4, lastCommit: '20 minutes' }
   ];
 
-  // TODO move this back the useState below as Record<string, keyof Repository> when the TS parser issues are resolved:
-  type CellRecord = Record<string, string>;
-
   // In this example, expanded cells are tracked by the repo and property names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row and column order index in case we later add sorting and rearranging columns.
   // Note that this behavior is very similar to selection state.
   // TODO restore the `keyof` here when it is supported by the TS parser:
   // const [expandedCells, setExpandedCells] = React.useState<Record<string, keyof Repository>>({
-  const [expandedCells, setExpandedCells] = React.useState<CellRecord>({
+  const [expandedCells, setExpandedCells] = React.useState<Record<string, string>>({
     'siemur/test-space': 'branches'
   });
   // TODO restore the `keyof` here when it is supported by the TS parser:
