@@ -91,7 +91,7 @@ export class RowWrapper extends React.Component<RowWrapperProps> {
       /* eslint-disable @typescript-eslint/no-unused-vars */
       onScroll,
       onResize,
-      row: { isExpanded, isEditable },
+      row: { isExpanded, isEditable, isHoverable, isRowSelected },
       rowProps,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       trRef,
@@ -108,6 +108,8 @@ export class RowWrapper extends React.Component<RowWrapperProps> {
         isEditable={isEditable}
         className={className}
         ouiaId={ouiaId}
+        isHoverable={isHoverable}
+        isRowSelected={isRowSelected}
       />
     );
   }

@@ -5,6 +5,7 @@ exports[`SelectToggle should match snapshot (auto-generated) 1`] = `
   <button
     aria-expanded={false}
     aria-haspopup="listbox"
+    aria-label="''"
     aria-labelledby="''"
     className="pf-c-select__toggle ''"
     disabled={false}

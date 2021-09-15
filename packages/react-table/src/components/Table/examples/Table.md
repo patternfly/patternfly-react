@@ -195,99 +195,6 @@ class SimpleTable extends React.Component {
 }
 ```
 
-### Row click handler and header cell tooltips/popovers
-
-```js
-import React from 'react';
-import { Table, TableHeader, TableBody, textCenter } from '@patternfly/react-table';
-import styles from '@patternfly/react-styles/css/components/Table/table';
-
-class RowClickTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: [
-        {
-          title: 'Repositories',
-          transforms: [
-            info({
-              tooltip: 'More information about repositories',
-              className: 'repositories-info-tip',
-              tooltipProps: {
-                isContentLeftAligned: true
-              }
-            })
-          ]
-        },
-        'Branches',
-        {
-          title: 'Pull requests',
-          transforms: [
-            info({
-              popover: (
-                <div>
-                  More <strong>information</strong> on pull requests
-                </div>
-              ),
-              ariaLabel: 'More information on pull requests',
-              popoverProps: {
-                headerContent: 'Pull requests',
-                footerContent: <a href="">Click here for even more info</a>
-              }
-            })
-          ]
-        },
-        'Workspaces',
-        {
-          title: 'Last commit',
-          transforms: [textCenter],
-          cellTransforms: [textCenter]
-        }
-      ],
-      rows: [
-        ['Repository one', 'Branch one', 'PR one', 'Workspace one', 'Commit one'],
-        {
-          cells: [
-            {
-              title: <div>one - 2</div>,
-              props: { title: 'hover title', colSpan: 3 }
-            },
-            'four - 2',
-            'five - 2'
-          ]
-        },
-        {
-          cells: [
-            'one - 3',
-            'two - 3',
-            'three - 3',
-            'four - 3',
-            {
-              title: 'five - 3 (not centered)',
-              props: { textCenter: false }
-            }
-          ]
-        }
-      ]
-    };
-    this.rowClickHandler = (event, row) => {
-      console.log('handle row click', row);
-    };
-  }
-
-  render() {
-    const { columns, rows } = this.state;
-
-    return (
-      <Table caption="Row click handler table" cells={columns} rows={rows}>
-        <TableHeader className={styles.modifiers.nowrap} />
-        <TableBody onRowClick={this.rowClickHandler} />
-      </Table>
-    );
-  }
-}
-```
-
 ### Custom row wrapper
 
 Custom row wrappers are passed to the `Table` component via the `rowWrapper` prop.
@@ -458,7 +365,7 @@ class SortableTable extends React.Component {
 }
 ```
 
-### Selectable
+### Selectable with checkbox
 
 To enable row selection, set the `onSelect` callback prop on the Table.
 
@@ -631,6 +538,116 @@ class SelectableTable extends React.Component {
       >
         <TableHeader />
         <TableBody />
+      </Table>
+    );
+  }
+}
+```
+
+### Hoverable rows, selectable rows, and header cell tooltips/popovers
+
+This selectable rows feature is intended for use when a table is used to present a list of objects in a Primary-detail view.
+
+```js
+import React from 'react';
+import { Table, TableHeader, TableBody, textCenter } from '@patternfly/react-table';
+import styles from '@patternfly/react-styles/css/components/Table/table';
+
+class RowClickTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        {
+          title: 'Repositories',
+          transforms: [
+            info({
+              tooltip: 'More information about repositories',
+              className: 'repositories-info-tip',
+              tooltipProps: {
+                isContentLeftAligned: true
+              }
+            })
+          ]
+        },
+        'Branches',
+        {
+          title: 'Pull requests',
+          transforms: [
+            info({
+              popover: (
+                <div>
+                  More <strong>information</strong> on pull requests
+                </div>
+              ),
+              ariaLabel: 'More information on pull requests',
+              popoverProps: {
+                headerContent: 'Pull requests',
+                footerContent: <a href="">Click here for even more info</a>
+              }
+            })
+          ]
+        },
+        'Workspaces',
+        {
+          title: 'Last commit',
+          transforms: [textCenter],
+          cellTransforms: [textCenter]
+        }
+      ],
+      rows: [
+        {
+          cells: ['Repository one', 'Branch one', 'PR one', 'Workspace one', 'Commit one'],
+          isHoverable: true,
+          isRowSelected: false
+        },
+        {
+          cells: [
+            {
+              title: <div>one - 2</div>,
+              props: { title: 'hover title', colSpan: 3 }
+            },
+            'four - 2',
+            'five - 2'
+          ],
+          isHoverable: true,
+          isRowSelected: false
+        },
+        {
+          cells: [
+            'one - 3',
+            'two - 3',
+            'three - 3',
+            'four - 3',
+            {
+              title: 'five - 3 (not centered)',
+              props: { textCenter: false }
+            }
+          ],
+          isHoverable: true,
+          isRowSelected: false
+        }
+      ]
+    };
+    
+    this.rowClickHandler = (event, row, rowProps) => {
+      this.setState(prevState => {
+        const updatedRows = [...prevState.rows];
+        updatedRows[rowProps.rowIndex].isRowSelected = !prevState.rows[rowProps.rowIndex].isRowSelected;
+        return {
+          rows: updatedRows
+        }
+      });
+    }
+  }
+
+  render() {
+    const { columns, rows } = this.state;
+
+    return (
+      <Table caption="Row click handler table" cells={columns} rows={rows}>
+        <TableHeader className={styles.modifiers.nowrap} />
+        <TableBody onRowClick={this.rowClickHandler} />
       </Table>
     );
   }

@@ -27,16 +27,21 @@ export interface GalleryProps extends React.HTMLProps<HTMLDivElement> {
     xl?: string;
     '2xl'?: string;
   };
+  /** Sets the base component to render. defaults to div */
+  component?: React.ElementType<any> | React.ComponentType<any>;
 }
 export const Gallery: React.FunctionComponent<GalleryProps> = ({
   children = null,
   className = '',
+  component = 'div',
   hasGutter = false,
   minWidths,
   maxWidths,
   ...props
 }: GalleryProps) => {
   const minWidthStyles: any = {};
+  const Component: any = component;
+
   if (minWidths) {
     Object.entries(minWidths || {}).map(
       ([breakpoint, value]) =>
@@ -57,13 +62,13 @@ export const Gallery: React.FunctionComponent<GalleryProps> = ({
   const widthStyles = { ...minWidthStyles, ...maxWidthStyles };
 
   return (
-    <div
+    <Component
       className={css(styles.gallery, hasGutter && styles.modifiers.gutter, className)}
       {...props}
       {...((minWidths || maxWidths) && { style: { ...widthStyles, ...props.style } as React.CSSProperties })}
     >
       {children}
-    </div>
+    </Component>
   );
 };
 Gallery.displayName = 'Gallery';

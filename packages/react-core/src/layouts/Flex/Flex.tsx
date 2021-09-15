@@ -334,11 +334,14 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
     xl?: string;
     '2xl'?: string;
   };
+  /** Sets the base component to render. defaults to div */
+  component?: React.ElementType<any> | React.ComponentType<any>;
 }
 
 export const Flex: React.FunctionComponent<FlexProps> = ({
   children = null,
   className = '',
+  component = 'div',
   spacer,
   spaceItems,
   grow,
@@ -356,30 +359,36 @@ export const Flex: React.FunctionComponent<FlexProps> = ({
   order,
   style,
   ...props
-}: FlexProps) => (
-  <div
-    className={css(
-      styles.flex,
-      formatBreakpointMods(spacer, styles),
-      formatBreakpointMods(spaceItems, styles),
-      formatBreakpointMods(grow, styles),
-      formatBreakpointMods(shrink, styles),
-      formatBreakpointMods(flex, styles),
-      formatBreakpointMods(direction, styles),
-      formatBreakpointMods(alignItems, styles),
-      formatBreakpointMods(alignContent, styles),
-      formatBreakpointMods(alignSelf, styles),
-      formatBreakpointMods(align, styles),
-      formatBreakpointMods(justifyContent, styles),
-      formatBreakpointMods(display, styles),
-      formatBreakpointMods(fullWidth, styles),
-      formatBreakpointMods(flexWrap, styles),
-      className
-    )}
-    style={style || order ? { ...style, ...setBreakpointCssVars(order, flexToken.l_flex_item_Order.name) } : undefined}
-    {...props}
-  >
-    {children}
-  </div>
-);
+}: FlexProps) => {
+  const Component: any = component;
+
+  return (
+    <Component
+      className={css(
+        styles.flex,
+        formatBreakpointMods(spacer, styles),
+        formatBreakpointMods(spaceItems, styles),
+        formatBreakpointMods(grow, styles),
+        formatBreakpointMods(shrink, styles),
+        formatBreakpointMods(flex, styles),
+        formatBreakpointMods(direction, styles),
+        formatBreakpointMods(alignItems, styles),
+        formatBreakpointMods(alignContent, styles),
+        formatBreakpointMods(alignSelf, styles),
+        formatBreakpointMods(align, styles),
+        formatBreakpointMods(justifyContent, styles),
+        formatBreakpointMods(display, styles),
+        formatBreakpointMods(fullWidth, styles),
+        formatBreakpointMods(flexWrap, styles),
+        className
+      )}
+      style={
+        style || order ? { ...style, ...setBreakpointCssVars(order, flexToken.l_flex_item_Order.name) } : undefined
+      }
+      {...props}
+    >
+      {children}
+    </Component>
+  );
+};
 Flex.displayName = 'Flex';

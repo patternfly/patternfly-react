@@ -3,6 +3,64 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.122.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.121.2...@patternfly/react-integration@4.122.0) (2021-09-14)
+
+
+### Features
+
+* **SearchInput:** Autocomplete SearchInput demo ([#6305](https://github.com/patternfly/patternfly-react/issues/6305)) ([8456945](https://github.com/patternfly/patternfly-react/commit/84569455a9662f6e0be951a0431b2bacea61ee73))
+* **Table:** Add hoverable and selectable rows ([#6233](https://github.com/patternfly/patternfly-react/issues/6233)) ([b2527e2](https://github.com/patternfly/patternfly-react/commit/b2527e209bab0da4c0327df494c52cd5cbd28113))
+
+
+
+
+
+## [4.121.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.121.1...@patternfly/react-integration@4.121.2) (2021-09-13)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [4.121.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.121.0...@patternfly/react-integration@4.121.1) (2021-09-13)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# [4.121.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.120.1...@patternfly/react-integration@4.121.0) (2021-09-10)
+
+
+### Features
+
+* **Nav:** add flyout ([#6253](https://github.com/patternfly/patternfly-react/issues/6253)) ([fec556d](https://github.com/patternfly/patternfly-react/commit/fec556dab5478aec27f7ec56e35be11ac5774d4a))
+
+
+
+
+
+## [4.120.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.120.0...@patternfly/react-integration@4.120.1) (2021-09-10)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# [4.120.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.119.2...@patternfly/react-integration@4.120.0) (2021-09-09)
+
+
+### Features
+
+* **DescriptionList:** add compact and fluid modifiers ([#6260](https://github.com/patternfly/patternfly-react/issues/6260)) ([8b7cd70](https://github.com/patternfly/patternfly-react/commit/8b7cd704a4aae20ebf5953d4de4cc4f894052851))
+
+
+
+
+
 ## [4.119.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.119.1...@patternfly/react-integration@4.119.2) (2021-08-31)
 
 **Note:** Version bump only for package @patternfly/react-integration

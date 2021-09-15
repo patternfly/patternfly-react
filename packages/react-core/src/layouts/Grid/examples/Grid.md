@@ -129,3 +129,18 @@ import { Grid, GridItem } from '@patternfly/react-core';
   </Grid>
 </Grid>
 ```
+
+### Alternative components
+
+```js
+import React from 'react';
+import { Grid, GridItem } from '@patternfly/react-core';
+
+<Grid component='ul'>
+  <GridItem component='li'>Grid item</GridItem>
+  <GridItem component='li'>Grid item</GridItem>
+  <GridItem component='li'>Grid item</GridItem>
+  <GridItem component='li'>Grid item</GridItem>
+  <GridItem component='li'>Grid item</GridItem>
+</Grid>
+```

@@ -22,4 +22,24 @@ exports[`Simple flex with single item 1`] = `
 </div>
 `;
 
+exports[`alternative component 1`] = `
+<Flex
+  component="ul"
+>
+  <ul
+    className="pf-l-flex"
+  >
+    <FlexItem
+      component="li"
+    >
+      <li
+        className=""
+      >
+        Test
+      </li>
+    </FlexItem>
+  </ul>
+</Flex>
+`;
+
 exports[`className is added to the root element 1`] = `"pf-l-flex extra-class"`;

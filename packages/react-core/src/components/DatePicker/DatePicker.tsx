@@ -55,7 +55,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   dateFormat = yyyyMMddFormat,
   dateParse = (val: string) => val.split('-').length === 3 && new Date(`${val}T00:00:00`),
   isDisabled = false,
-  placeholder = 'yyyy-MM-dd',
+  placeholder = 'YYYY-MM-DD',
   value: valueProp = '',
   'aria-label': ariaLabel = 'Date picker',
   buttonAriaLabel = 'Toggle date picker',
@@ -71,7 +71,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   weekStart,
   validators = [],
   rangeStart,
-  style = {},
+  style: styleProps = {},
   inputProps = {},
   ...props
 }: DatePickerProps) => {
@@ -82,7 +82,7 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   const [selectOpen, setSelectOpen] = React.useState(false);
   const [pristine, setPristine] = React.useState(true);
   const widthChars = React.useMemo(() => Math.max(dateFormat(new Date()).length, placeholder.length), [dateFormat]);
-  (style as any)['--pf-c-date-picker__input--c-form-control--width-chars'] = widthChars;
+  const style = { '--pf-c-date-picker__input--c-form-control--width-chars': widthChars, ...styleProps };
   const buttonRef = React.useRef<HTMLButtonElement>();
 
   React.useEffect(() => {

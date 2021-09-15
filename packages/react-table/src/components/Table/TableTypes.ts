@@ -227,6 +227,8 @@ export interface IRow extends RowType {
   cells?: (React.ReactNode | IRowCell)[];
   isOpen?: boolean;
   isEditable?: boolean;
+  isHoverable?: boolean;
+  isRowSelected?: boolean;
   isValid?: boolean;
   /** An array of validation functions to run against every cell for a given row */
   rowEditValidationRules?: IValidatorDef[];

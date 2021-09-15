@@ -95,23 +95,27 @@ exports[`DualListSelector basic 1`] = `
                 key="0"
                 role="option"
               >
-                <button
-                  className="pf-c-dual-list-selector__item"
-                  id="firstTest-available-pane-option-0"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                  type="button"
+                <div
+                  className="pf-c-dual-list-selector__list-item-row"
                 >
-                  <span
-                    className="pf-c-dual-list-selector__item-main"
+                  <button
+                    className="pf-c-dual-list-selector__item"
+                    id="firstTest-available-pane-option-0"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                    type="button"
                   >
                     <span
-                      className="pf-c-dual-list-selector__item-text"
+                      className="pf-c-dual-list-selector__item-main"
                     >
-                      Option 1
+                      <span
+                        className="pf-c-dual-list-selector__item-text"
+                      >
+                        Option 1
+                      </span>
                     </span>
-                  </span>
-                </button>
+                  </button>
+                </div>
               </li>
             </DualListSelectorListItem>
             <DualListSelectorListItem
@@ -130,23 +134,27 @@ exports[`DualListSelector basic 1`] = `
                 key="1"
                 role="option"
               >
-                <button
-                  className="pf-c-dual-list-selector__item"
-                  id="firstTest-available-pane-option-1"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                  type="button"
+                <div
+                  className="pf-c-dual-list-selector__list-item-row"
                 >
-                  <span
-                    className="pf-c-dual-list-selector__item-main"
+                  <button
+                    className="pf-c-dual-list-selector__item"
+                    id="firstTest-available-pane-option-1"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                    type="button"
                   >
                     <span
-                      className="pf-c-dual-list-selector__item-text"
+                      className="pf-c-dual-list-selector__item-main"
                     >
-                      Option 2
+                      <span
+                        className="pf-c-dual-list-selector__item-text"
+                      >
+                        Option 2
+                      </span>
                     </span>
-                  </span>
-                </button>
+                  </button>
+                </div>
               </li>
             </DualListSelectorListItem>
           </ul>
@@ -705,23 +713,27 @@ exports[`DualListSelector with actions 1`] = `
                 key="0"
                 role="option"
               >
-                <button
-                  className="pf-c-dual-list-selector__item"
-                  id="fourthTest-available-pane-option-0"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                  type="button"
+                <div
+                  className="pf-c-dual-list-selector__list-item-row"
                 >
-                  <span
-                    className="pf-c-dual-list-selector__item-main"
+                  <button
+                    className="pf-c-dual-list-selector__item"
+                    id="fourthTest-available-pane-option-0"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                    type="button"
                   >
                     <span
-                      className="pf-c-dual-list-selector__item-text"
+                      className="pf-c-dual-list-selector__item-main"
                     >
-                      Option 1
+                      <span
+                        className="pf-c-dual-list-selector__item-text"
+                      >
+                        Option 1
+                      </span>
                     </span>
-                  </span>
-                </button>
+                  </button>
+                </div>
               </li>
             </DualListSelectorListItem>
             <DualListSelectorListItem
@@ -740,23 +752,27 @@ exports[`DualListSelector with actions 1`] = `
                 key="1"
                 role="option"
               >
-                <button
-                  className="pf-c-dual-list-selector__item"
-                  id="fourthTest-available-pane-option-1"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                  type="button"
+                <div
+                  className="pf-c-dual-list-selector__list-item-row"
                 >
-                  <span
-                    className="pf-c-dual-list-selector__item-main"
+                  <button
+                    className="pf-c-dual-list-selector__item"
+                    id="fourthTest-available-pane-option-1"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                    type="button"
                   >
                     <span
-                      className="pf-c-dual-list-selector__item-text"
+                      className="pf-c-dual-list-selector__item-main"
                     >
-                      Option 2
+                      <span
+                        className="pf-c-dual-list-selector__item-text"
+                      >
+                        Option 2
+                      </span>
                     </span>
-                  </span>
-                </button>
+                  </button>
+                </div>
               </li>
             </DualListSelectorListItem>
           </ul>
@@ -1214,23 +1230,27 @@ exports[`DualListSelector with actions 1`] = `
                 key="0"
                 role="option"
               >
-                <button
-                  className="pf-c-dual-list-selector__item"
-                  id="fourthTest-chosen-pane-option-0"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                  type="button"
+                <div
+                  className="pf-c-dual-list-selector__list-item-row"
                 >
-                  <span
-                    className="pf-c-dual-list-selector__item-main"
+                  <button
+                    className="pf-c-dual-list-selector__item"
+                    id="fourthTest-chosen-pane-option-0"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                    type="button"
                   >
                     <span
-                      className="pf-c-dual-list-selector__item-text"
+                      className="pf-c-dual-list-selector__item-main"
                     >
-                      Option 3
+                      <span
+                        className="pf-c-dual-list-selector__item-text"
+                      >
+                        Option 3
+                      </span>
                     </span>
-                  </span>
-                </button>
+                  </button>
+                </div>
               </li>
             </DualListSelectorListItem>
             <DualListSelectorListItem
@@ -1249,23 +1269,27 @@ exports[`DualListSelector with actions 1`] = `
                 key="1"
                 role="option"
               >
-                <button
-                  className="pf-c-dual-list-selector__item"
-                  id="fourthTest-chosen-pane-option-1"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                  type="button"
+                <div
+                  className="pf-c-dual-list-selector__list-item-row"
                 >
-                  <span
-                    className="pf-c-dual-list-selector__item-main"
+                  <button
+                    className="pf-c-dual-list-selector__item"
+                    id="fourthTest-chosen-pane-option-1"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                    type="button"
                   >
                     <span
-                      className="pf-c-dual-list-selector__item-text"
+                      className="pf-c-dual-list-selector__item-main"
                     >
-                      Option 4
+                      <span
+                        className="pf-c-dual-list-selector__item-text"
+                      >
+                        Option 4
+                      </span>
                     </span>
-                  </span>
-                </button>
+                  </button>
+                </div>
               </li>
             </DualListSelectorListItem>
           </ul>
@@ -1373,23 +1397,27 @@ exports[`DualListSelector with custom status 1`] = `
                 key="0"
                 role="option"
               >
-                <button
-                  className="pf-c-dual-list-selector__item"
-                  id="thirdTest-available-pane-option-0"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                  type="button"
+                <div
+                  className="pf-c-dual-list-selector__list-item-row"
                 >
-                  <span
-                    className="pf-c-dual-list-selector__item-main"
+                  <button
+                    className="pf-c-dual-list-selector__item"
+                    id="thirdTest-available-pane-option-0"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                    type="button"
                   >
                     <span
-                      className="pf-c-dual-list-selector__item-text"
+                      className="pf-c-dual-list-selector__item-main"
                     >
-                      Option 1
+                      <span
+                        className="pf-c-dual-list-selector__item-text"
+                      >
+                        Option 1
+                      </span>
                     </span>
-                  </span>
-                </button>
+                  </button>
+                </div>
               </li>
             </DualListSelectorListItem>
             <DualListSelectorListItem
@@ -1408,23 +1436,27 @@ exports[`DualListSelector with custom status 1`] = `
                 key="1"
                 role="option"
               >
-                <button
-                  className="pf-c-dual-list-selector__item"
-                  id="thirdTest-available-pane-option-1"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                  type="button"
+                <div
+                  className="pf-c-dual-list-selector__list-item-row"
                 >
-                  <span
-                    className="pf-c-dual-list-selector__item-main"
+                  <button
+                    className="pf-c-dual-list-selector__item"
+                    id="thirdTest-available-pane-option-1"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                    type="button"
                   >
                     <span
-                      className="pf-c-dual-list-selector__item-text"
+                      className="pf-c-dual-list-selector__item-main"
                     >
-                      Option 2
+                      <span
+                        className="pf-c-dual-list-selector__item-text"
+                      >
+                        Option 2
+                      </span>
                     </span>
-                  </span>
-                </button>
+                  </button>
+                </div>
               </li>
             </DualListSelectorListItem>
           </ul>
@@ -1959,23 +1991,27 @@ exports[`DualListSelector with search inputs 1`] = `
                 key="0"
                 role="option"
               >
-                <button
-                  className="pf-c-dual-list-selector__item"
-                  id="secondTest-available-pane-option-0"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                  type="button"
+                <div
+                  className="pf-c-dual-list-selector__list-item-row"
                 >
-                  <span
-                    className="pf-c-dual-list-selector__item-main"
+                  <button
+                    className="pf-c-dual-list-selector__item"
+                    id="secondTest-available-pane-option-0"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                    type="button"
                   >
                     <span
-                      className="pf-c-dual-list-selector__item-text"
+                      className="pf-c-dual-list-selector__item-main"
                     >
-                      Option 1
+                      <span
+                        className="pf-c-dual-list-selector__item-text"
+                      >
+                        Option 1
+                      </span>
                     </span>
-                  </span>
-                </button>
+                  </button>
+                </div>
               </li>
             </DualListSelectorListItem>
             <DualListSelectorListItem
@@ -1994,23 +2030,27 @@ exports[`DualListSelector with search inputs 1`] = `
                 key="1"
                 role="option"
               >
-                <button
-                  className="pf-c-dual-list-selector__item"
-                  id="secondTest-available-pane-option-1"
-                  onClick={[Function]}
-                  tabIndex={-1}
-                  type="button"
+                <div
+                  className="pf-c-dual-list-selector__list-item-row"
                 >
-                  <span
-                    className="pf-c-dual-list-selector__item-main"
+                  <button
+                    className="pf-c-dual-list-selector__item"
+                    id="secondTest-available-pane-option-1"
+                    onClick={[Function]}
+                    tabIndex={-1}
+                    type="button"
                   >
                     <span
-                      className="pf-c-dual-list-selector__item-text"
+                      className="pf-c-dual-list-selector__item-main"
                     >
-                      Option 2
+                      <span
+                        className="pf-c-dual-list-selector__item-text"
+                      >
+                        Option 2
+                      </span>
                     </span>
-                  </span>
-                </button>
+                  </button>
+                </div>
               </li>
             </DualListSelectorListItem>
           </ul>
@@ -2624,63 +2664,67 @@ exports[`DualListSelector with tree 1`] = `
                   role="treeitem"
                 >
                   <div
-                    className="pf-c-dual-list-selector__item pf-m-check"
-                    onClick={[Function]}
-                    tabIndex={-1}
+                    className="pf-c-dual-list-selector__list-item-row pf-m-check"
                   >
-                    <span
-                      className="pf-c-dual-list-selector__item-main"
+                    <div
+                      className="pf-c-dual-list-selector__item"
+                      onClick={[Function]}
+                      tabIndex={-1}
                     >
-                      <div
-                        className="pf-c-dual-list-selector__item-toggle"
-                        onClick={[Function]}
-                      >
-                        <span
-                          className="pf-c-dual-list-selector__item-toggle-icon"
-                        >
-                          <AngleRightIcon
-                            aria-hidden={true}
-                            color="currentColor"
-                            noVerticalAlign={false}
-                            size="sm"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              aria-labelledby={null}
-                              fill="currentColor"
-                              height="1em"
-                              role="img"
-                              style={
-                                Object {
-                                  "verticalAlign": "-0.125em",
-                                }
-                              }
-                              viewBox="0 0 256 512"
-                              width="1em"
-                            >
-                              <path
-                                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                              />
-                            </svg>
-                          </AngleRightIcon>
-                        </span>
-                      </div>
                       <span
-                        className="pf-c-dual-list-selector__item-check"
+                        className="pf-c-dual-list-selector__item-main"
                       >
-                        <input
-                          checked={false}
-                          onChange={[Function]}
+                        <div
+                          className="pf-c-dual-list-selector__item-toggle"
                           onClick={[Function]}
-                          type="checkbox"
-                        />
+                        >
+                          <span
+                            className="pf-c-dual-list-selector__item-toggle-icon"
+                          >
+                            <AngleRightIcon
+                              aria-hidden={true}
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                aria-labelledby={null}
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
+                                viewBox="0 0 256 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                                />
+                              </svg>
+                            </AngleRightIcon>
+                          </span>
+                        </div>
+                        <span
+                          className="pf-c-dual-list-selector__item-check"
+                        >
+                          <input
+                            checked={false}
+                            onChange={[Function]}
+                            onClick={[Function]}
+                            type="checkbox"
+                          />
+                        </span>
+                        <span
+                          className="pf-c-dual-list-selector__item-text"
+                        >
+                          Opt1
+                        </span>
                       </span>
-                      <span
-                        className="pf-c-dual-list-selector__item-text"
-                      >
-                        Opt1
-                      </span>
-                    </span>
+                    </div>
                   </div>
                   <DualListSelectorTree
                     data={
@@ -2760,29 +2804,33 @@ exports[`DualListSelector with tree 1`] = `
                           role="treeitem"
                         >
                           <div
-                            className="pf-c-dual-list-selector__item pf-m-check"
-                            onClick={[Function]}
-                            tabIndex={-1}
+                            className="pf-c-dual-list-selector__list-item-row pf-m-check"
                           >
-                            <span
-                              className="pf-c-dual-list-selector__item-main"
+                            <div
+                              className="pf-c-dual-list-selector__item"
+                              onClick={[Function]}
+                              tabIndex={-1}
                             >
                               <span
-                                className="pf-c-dual-list-selector__item-check"
+                                className="pf-c-dual-list-selector__item-main"
                               >
-                                <input
-                                  checked={false}
-                                  onChange={[Function]}
-                                  onClick={[Function]}
-                                  type="checkbox"
-                                />
+                                <span
+                                  className="pf-c-dual-list-selector__item-check"
+                                >
+                                  <input
+                                    checked={false}
+                                    onChange={[Function]}
+                                    onClick={[Function]}
+                                    type="checkbox"
+                                  />
+                                </span>
+                                <span
+                                  className="pf-c-dual-list-selector__item-text"
+                                >
+                                  Opt3
+                                </span>
                               </span>
-                              <span
-                                className="pf-c-dual-list-selector__item-text"
-                              >
-                                Opt3
-                              </span>
-                            </span>
+                            </div>
                           </div>
                         </li>
                       </DualListSelectorTreeItem>
@@ -2816,29 +2864,33 @@ exports[`DualListSelector with tree 1`] = `
                   role="treeitem"
                 >
                   <div
-                    className="pf-c-dual-list-selector__item pf-m-check"
-                    onClick={[Function]}
-                    tabIndex={-1}
+                    className="pf-c-dual-list-selector__list-item-row pf-m-check"
                   >
-                    <span
-                      className="pf-c-dual-list-selector__item-main"
+                    <div
+                      className="pf-c-dual-list-selector__item"
+                      onClick={[Function]}
+                      tabIndex={-1}
                     >
                       <span
-                        className="pf-c-dual-list-selector__item-check"
+                        className="pf-c-dual-list-selector__item-main"
                       >
-                        <input
-                          checked={false}
-                          onChange={[Function]}
-                          onClick={[Function]}
-                          type="checkbox"
-                        />
+                        <span
+                          className="pf-c-dual-list-selector__item-check"
+                        >
+                          <input
+                            checked={false}
+                            onChange={[Function]}
+                            onClick={[Function]}
+                            type="checkbox"
+                          />
+                        </span>
+                        <span
+                          className="pf-c-dual-list-selector__item-text"
+                        >
+                          Opt2
+                        </span>
                       </span>
-                      <span
-                        className="pf-c-dual-list-selector__item-text"
-                      >
-                        Opt2
-                      </span>
-                    </span>
+                    </div>
                   </div>
                 </li>
               </DualListSelectorTreeItem>

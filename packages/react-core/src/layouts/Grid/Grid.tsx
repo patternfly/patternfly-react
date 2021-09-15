@@ -35,11 +35,14 @@ export interface GridProps extends React.HTMLProps<HTMLDivElement> {
     xl?: string;
     '2xl'?: string;
   };
+  /** Sets the base component to render. defaults to div */
+  component?: React.ElementType<any> | React.ComponentType<any>;
 }
 
 export const Grid: React.FunctionComponent<GridProps> = ({
   children = null,
   className = '',
+  component = 'div',
   hasGutter,
   span = null,
   order,
@@ -47,6 +50,7 @@ export const Grid: React.FunctionComponent<GridProps> = ({
   ...props
 }: GridProps) => {
   const classes = [styles.grid, span && styles.modifiers[`all_${span}Col` as keyof typeof styles.modifiers]];
+  const Component: any = component;
 
   Object.entries(DeviceSizes).forEach(([propKey, gridSpanModifier]) => {
     const key = propKey as keyof typeof DeviceSizes;
@@ -58,7 +62,7 @@ export const Grid: React.FunctionComponent<GridProps> = ({
   });
 
   return (
-    <div
+    <Component
       className={css(...classes, hasGutter && styles.modifiers.gutter, className)}
       style={
         style || order ? { ...style, ...setBreakpointCssVars(order, gridToken.l_grid_item_Order.name) } : undefined
@@ -66,7 +70,7 @@ export const Grid: React.FunctionComponent<GridProps> = ({
       {...props}
     >
       {children}
-    </div>
+    </Component>
   );
 };
 Grid.displayName = 'Grid';

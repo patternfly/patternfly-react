@@ -122,3 +122,18 @@ import { Gallery, GalleryItem } from '@patternfly/react-core';
   <GalleryItem>Gallery Item</GalleryItem>
 </Gallery>;
 ```
+
+### Alternative components
+
+```js
+import React from 'react';
+import { Gallery, GalleryItem } from '@patternfly/react-core';
+
+<Gallery component='ul'>
+  <GalleryItem component='li'>Gallery item</GalleryItem>
+  <GalleryItem component='li'>Gallery item</GalleryItem>
+  <GalleryItem component='li'>Gallery item</GalleryItem>
+  <GalleryItem component='li'>Gallery item</GalleryItem>
+  <GalleryItem component='li'>Gallery item</GalleryItem>
+</Gallery>
+```

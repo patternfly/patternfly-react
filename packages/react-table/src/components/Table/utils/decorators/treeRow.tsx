@@ -26,9 +26,15 @@ export const treeRow = (
   } = rowData.props;
   const content = value.title || value;
   const text = (
-    <div className={css(stylesTreeView.tableTreeViewText)}>
-      {icon && <span className={css(stylesTreeView.tableTreeViewIcon)}>{icon}</span>}
-      <span className="pf-c-table__text">{content}</span>
+    <div className={css(stylesTreeView.tableTreeViewText)} key="tree-view-text">
+      {icon && (
+        <span className={css(stylesTreeView.tableTreeViewIcon)} key="tree-view-text-icon">
+          {icon}
+        </span>
+      )}
+      <span className="pf-c-table__text" key="table-text">
+        {content}
+      </span>
     </div>
   );
   const onChange = (isChecked: boolean, event: React.FormEvent<HTMLInputElement>) => {
@@ -41,7 +47,7 @@ export const treeRow = (
       level !== undefined ? (
         <div className={css(stylesTreeView.tableTreeViewMain)}>
           {setsize > 0 && (
-            <span className={css(stylesTreeView.tableToggle)}>
+            <span className={css(stylesTreeView.tableToggle)} key="table-toggle">
               <Button
                 variant="plain"
                 onClick={event => onCollapse && onCollapse(event, rowIndex, content, rowData)}
@@ -56,7 +62,7 @@ export const treeRow = (
             </span>
           )}
           {!!onCheckChange && (
-            <span className={css(stylesTreeView.tableCheck)}>
+            <span className={css(stylesTreeView.tableCheck)} key="table-check">
               <Checkbox
                 id={checkboxId || `checkbox_${rowIndex}`}
                 aria-label={checkAriaLabel || `Row ${rowIndex} checkbox`}
@@ -67,7 +73,7 @@ export const treeRow = (
           )}
           {text}
           {!!onToggleRowDetails && (
-            <span className={css(stylesTreeView.tableTreeViewDetailsToggle)}>
+            <span className={css(stylesTreeView.tableTreeViewDetailsToggle)} key="view-details-toggle">
               <Button
                 variant="plain"
                 aria-expanded={isDetailsExpanded}

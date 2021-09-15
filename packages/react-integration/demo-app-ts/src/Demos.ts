@@ -81,6 +81,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.StackedAreaDemo
   },
   {
+    id: 'back-to-top-demo',
+    name: 'Back To Top Demo',
+    componentType: Examples.BackToTopDemo
+  },
+  {
     id: 'backdrop-demo',
     name: 'Backdrop Demo',
     componentType: Examples.BackdropDemo
@@ -720,6 +725,11 @@ export const Demos: DemoInterface[] = [
     id: 'tabs-inset-demo',
     name: 'Tabs Inset Demo',
     componentType: Examples.TabsInsetDemo
+  },
+  {
+    id: 'tabs-disabled-demo',
+    name: 'Tabs Disabled Demo',
+    componentType: Examples.TabsDisabledDemo
   },
   {
     id: 'table-actions-demo',

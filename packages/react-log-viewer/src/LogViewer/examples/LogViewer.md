@@ -5,7 +5,7 @@ section: extensions
 propComponents: [LogViewer, LogViewerSearch]
 ---
 
-import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
+import { LogViewer, LogViewerSearch, LogViewerContext } from '@patternfly/react-log-viewer';
 import { Button, Checkbox, Toolbar, ToolbarContent, ToolbarItem } from '@patternfly/react-core';
 import { data } from './realTestData.js';
 
@@ -124,8 +124,33 @@ HeaderComponentLogViewer = () => {
         height={300}
         data={data.data}
         theme="dark"
-        headerComponent={<Banner>{data.data.length} lines</Banner>}
+        header={<Banner>5019 lines</Banner>}
       />
+    </React.Fragment>
+  );
+};
+```
+
+### With footer component
+
+```js
+import React from 'react';
+import { data } from './realTestData.js';
+import { LogViewer, LogViewerContext } from '@patternfly/react-log-viewer';
+import { Button } from '@patternfly/react-core';
+
+FooterComponentLogViewer = () => {
+  const FooterButton = () => {
+    const { scrollToBottom } = React.useContext(LogViewerContext);
+    const handleClick = e => {
+      scrollToBottom();
+    };
+    return <Button onClick={handleClick}>Jump to the bottom</Button>;
+  };
+
+  return (
+    <React.Fragment>
+      <LogViewer hasLineNumbers={false} height={300} data={data.data} theme="dark" footer={<FooterButton />} />
     </React.Fragment>
   );
 };

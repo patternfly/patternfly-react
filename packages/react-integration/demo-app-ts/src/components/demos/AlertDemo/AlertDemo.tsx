@@ -49,6 +49,9 @@ export class AlertDemo extends React.Component<{}, AlertDemoState> {
         <Alert id="default-alert" title="Default alert title" truncateTitle={10} isInline>
           Info alert description
         </Alert>
+        <Alert id="default-alert-inline-plain" title="Default alert title" truncateTitle={10} isInline isPlain>
+          Info alert description
+        </Alert>
         <Alert
           id="long-title-alert"
           title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque cursus enim fringilla tincidunt. Proin lobortis aliquam dictum. Nam vel ullamcorper nulla, nec blandit dolor. Vivamus pellentesque neque justo, nec accumsan nulla rhoncus id. Suspendisse mollis, tortor quis faucibus volutpat, sem leo fringilla turpis, ac lacinia augue metus in nulla. Cras vestibulum lacinia orci. Pellentesque sodales consequat interdum. Sed porttitor tincidunt metus nec iaculis. Pellentesque non commodo justo. Morbi feugiat rhoncus neque, vitae facilisis diam aliquam nec. Sed dapibus vitae quam at tristique. Nunc vel commodo mi. Mauris et rhoncus leo."
@@ -58,6 +61,9 @@ export class AlertDemo extends React.Component<{}, AlertDemoState> {
         />
         <Alert id="custom-icon-alert" title="Custom icon alert title" customIcon={<UserIcon />}>
           Custom icon alert description
+        </Alert>
+        <Alert id="expandable-alert" title="Expandable alert title" isExpandable>
+          Expandable alert description
         </Alert>
       </React.Fragment>
     );

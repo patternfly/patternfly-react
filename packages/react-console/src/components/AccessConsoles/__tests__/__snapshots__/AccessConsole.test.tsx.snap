@@ -92,6 +92,7 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
                     <button
                       aria-expanded="false"
                       aria-haspopup="listbox"
+                      aria-label="Options menu"
                       aria-labelledby=" pf-c-console__type-selector"
                       class="pf-c-select__toggle"
                       id="pf-c-console__type-selector"
@@ -133,6 +134,7 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
               <button
                 aria-expanded={false}
                 aria-haspopup="listbox"
+                aria-label="Options menu"
                 aria-labelledby=" pf-c-console__type-selector"
                 className="pf-c-select__toggle"
                 disabled={false}

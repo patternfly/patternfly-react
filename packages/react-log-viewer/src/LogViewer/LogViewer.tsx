@@ -31,7 +31,26 @@ interface LogViewerProps {
   /** Number of rows to display in the log viewer */
   itemCount?: number;
   /** Component rendered in the log viewer console window header */
-  headerComponent?: React.ReactNode;
+  header?: React.ReactNode;
+  /** Component rendered in the log viewer console window footer */
+  footer?: React.ReactNode;
+  /** Callback function when scrolling the window.
+   * scrollDirection is the direction of scroll, could be 'forward'|'backward'.
+   * scrollOffset and scrollOffsetToBottom are the offset of the current position to the top or the bottom.
+   * scrollUpdateWasRequested is false when the scroll event is cause by the user interaction in the browser, else it's true.
+   * @example onScroll={({scrollDirection, scrollOffset, scrollOffsetToBottom, scrollUpdateWasRequested})=>{}}
+   */
+  onScroll?: ({
+    scrollDirection,
+    scrollOffset,
+    scrollOffsetToBottom,
+    scrollUpdateWasRequested
+  }: {
+    scrollDirection: 'forward' | 'backward';
+    scrollOffset: number;
+    scrollOffsetToBottom: number;
+    scrollUpdateWasRequested: boolean;
+  }) => void;
 }
 
 export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
@@ -46,7 +65,9 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
     theme = 'light',
     scrollToRow = 0,
     itemCount = undefined,
-    headerComponent,
+    header,
+    footer,
+    onScroll,
     ...props
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
@@ -61,8 +82,8 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
     const [loading, setLoading] = useState(true);
     const [firstMount, setFirstMount] = useState(true);
 
-    const logViewerRef = React.createRef<any>();
-    const containerRef = React.createRef<any>();
+    const logViewerRef = React.useRef<any>();
+    const containerRef = React.useRef<any>();
     let resizeTimer = null as any;
 
     React.useEffect(() => {
@@ -116,7 +137,7 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
       if (scrollToRow && parsedData.length) {
         setRowInFocus(parsedData.length - 1);
         if (logViewerRef && logViewerRef.current) {
-          logViewerRef.current.scrollToItem(scrollToRow, 'center');
+          logViewerRef.current.scrollToItem(scrollToRow, 'auto');
         }
       }
     }, [parsedData, scrollToRow]);
@@ -152,6 +173,10 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
       logViewerRef.current.scrollToItem(searchedRowIndex, 'center');
     };
 
+    const scrollToBottom = () => {
+      logViewerRef.current.scrollToBottom();
+    };
+
     const createList = (parsedData: string[]) => (
       <List
         className={css(styles.logViewerList)}
@@ -161,6 +186,7 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
         itemData={dataToRender}
         ref={logViewerRef}
         overscanCount={overScanCount}
+        onScroll={onScroll}
       >
         {LogViewerRow}
       </List>
@@ -170,7 +196,8 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
       <LogViewerContext.Provider
         value={{
           parsedData,
-          searchedInput
+          searchedInput,
+          scrollToBottom
         }}
       >
         <div
@@ -198,10 +225,11 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
               <div className={css(styles.logViewerHeader)}>{toolbar}</div>
             </LogViewerToolbarContext.Provider>
           )}
-          {headerComponent}
+          {header}
           <div className={css(styles.logViewerMain)} ref={containerRef}>
             {loading ? <div style={{ height }}>{loadingContent}</div> : createList(parsedData)}
           </div>
+          {footer}
         </div>
       </LogViewerContext.Provider>
     );

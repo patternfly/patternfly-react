@@ -4,6 +4,11 @@ exports[`Tabs should match snapshot (auto-generated) 1`] = `
 <ContextProvider
   value={
     Object {
+      "handleTabClick": [Function],
+      "localActiveKey": 0,
+      "mountOnEnter": false,
+      "uniqueId": "string",
+      "unmountOnExit": false,
       "variant": "div",
     }
   }
@@ -34,17 +39,11 @@ exports[`Tabs should match snapshot (auto-generated) 1`] = `
       className="pf-c-tabs__list"
       onScroll={[Function]}
     >
-      <li
-        className="pf-c-tabs__item"
-        key="0"
+      <div
+        key=".0"
       >
-        <TabButton
-          aria-controls="pf-tab-section-undefined-string"
-          className="pf-c-tabs__link"
-          id="pf-tab-undefined-string"
-          onClick={[Function]}
-        />
-      </li>
+        ReactNode
+      </div>
     </ul>
     <button
       aria-hidden={false}
