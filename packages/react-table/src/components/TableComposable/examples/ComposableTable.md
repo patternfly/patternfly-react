@@ -364,50 +364,7 @@ export type OnExpand = (
 
 ### Composable: Cell width, breakpoint modifiers
 
-```js
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
-
-ComposableTableCellWidth = () => {
-  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-  const rows = [
-    ['one', 'two', 'three', 'four', 'five'],
-    ['one - 2', null, null, 'four - 2', 'five - 2'],
-    ['one - 3', 'two - 3', 'three - 3', 'four - 3', 'five - 3']
-  ];
-  return (
-    <TableComposable aria-label="Cell widths">
-      <Thead>
-        <Tr>
-          {columns.map((column, columnIndex) => (
-            <Th
-              key={columnIndex}
-              width={columnIndex === 2 ? 40 : 15}
-              visibility={columnIndex === 2 ? ['hiddenOnMd', 'visibleOnLg'] : null}
-            >
-              {column}
-            </Th>
-          ))}
-        </Tr>
-      </Thead>
-      <Tbody>
-        {rows.map((row, rowIndex) => (
-          <Tr key={rowIndex}>
-            {row.map((cell, cellIndex) => (
-              <Td
-                key={`${rowIndex}_${cellIndex}`}
-                dataLabel={columns[cellIndex]}
-                visibility={cellIndex === 2 ? ['hiddenOnMd', 'visibleOnLg'] : null}
-              >
-                {cell}
-              </Td>
-            ))}
-          </Tr>
-        ))}
-      </Tbody>
-    </TableComposable>
-  );
-};
+```ts file="ComposableTableCellWidth.tsx"
 ```
 
 ### Composable: Controlling text
