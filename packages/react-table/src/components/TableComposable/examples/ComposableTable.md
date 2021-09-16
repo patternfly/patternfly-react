@@ -369,63 +369,7 @@ export type OnExpand = (
 
 ### Composable: Controlling text
 
-```js
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
-
-ComposableControllingText = () => {
-  const columns = [
-    'Truncate (width 20%)',
-    'Break word',
-    'Wrapping table header text. This th text will wrap instead of truncate.',
-    'Fit content',
-    'No wrap'
-  ];
-  const rows = [
-    [
-      'This text will truncate instead of wrap.',
-      <a href="#">http://thisisaverylongurlthatneedstobreakusethebreakwordmodifier.org</a>,
-      <p>
-        By default,
-        <code>thead</code> cells will truncate and
-        <code>tbody</code> cells will wrap. Use
-        <code>.pf-m-wrap</code> on a<code>th</code> to change its behavior.
-      </p>,
-      "This cell's content will adjust itself to the parent th width. This modifier only affects table layouts.",
-      <a href="#">No wrap</a>
-    ]
-  ];
-  return (
-    <TableComposable aria-label="Controlling text">
-      <Thead>
-        <Tr>
-          <Th width={20}>{columns[0]}</Th>
-          <Th>{columns[1]}</Th>
-          <Th modifier="wrap">{columns[2]}</Th>
-          <Th modifier="fitContent">{columns[3]}</Th>
-          <Th>{columns[4]}</Th>
-        </Tr>
-      </Thead>
-      <Tbody>
-        {rows.map((row, rowIndex) => (
-          <Tr key={rowIndex}>
-            <Td dataLabel={columns[0]} modifier="truncate">
-              {row[0]}
-            </Td>
-            <Td dataLabel={columns[1]} modifier="breakWord">
-              {row[1]}
-            </Td>
-            <Td dataLabel={columns[2]}>{row[2]}</Td>
-            <Td dataLabel={columns[3]}>{row[3]}</Td>
-            <Td dataLabel={columns[4]} modifier="nowrap">
-              {row[4]}
-            </Td>
-          </Tr>
-        ))}
-      </Tbody>
-    </TableComposable>
-  );
-};
+```ts file="ComposableTableControllingText.tsx"
 ```
 
 ### Composable: Modifiers with table text
