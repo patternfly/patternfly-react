@@ -13,8 +13,8 @@ const columnNames = [
   'No wrap'
 ];
 
-export const ComposableTableCellWidth: React.FunctionComponent = () => (
-  <TableComposable aria-label="Simple table">
+export const ComposableTableControllingText: React.FunctionComponent = () => (
+  <TableComposable aria-label="Controlling text">
     <Thead>
       <Tr>
         <Th width={20}>{columnNames[0]}</Th>
