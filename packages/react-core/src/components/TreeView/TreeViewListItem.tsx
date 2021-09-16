@@ -85,14 +85,10 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
   useEffect(() => {
     if (isExpanded !== undefined && isExpanded !== null) {
       setIsExpanded(isExpanded);
-    }
-  }, [isExpanded]);
-
-  useEffect(() => {
-    if (defaultExpanded !== undefined && defaultExpanded !== null) {
+    } else if (defaultExpanded !== undefined && defaultExpanded !== null) {
       setIsExpanded(internalIsExpanded || defaultExpanded);
     }
-  }, [defaultExpanded]);
+  }, [isExpanded, defaultExpanded]);
 
   const Component = hasCheck ? 'div' : 'button';
   const ToggleComponent = hasCheck ? 'button' : 'div';
