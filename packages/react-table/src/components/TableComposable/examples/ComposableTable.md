@@ -372,44 +372,11 @@ export type OnExpand = (
 ```ts file="ComposableTableControllingText.tsx"
 ```
 
+#### TODO: distinguish between the use cases for modifier on Td vs on TableText?
+
 ### Composable: Modifiers with table text
 
-```js
-import React from 'react';
-import { TableComposable, Thead, Tbody, Tr, Th, Td, TableText } from '@patternfly/react-table';
-
-ComposableTableText = () => {
-  const columns = ['Truncating text', 'Wrapping table header text. This th text will wrap instead of truncate.'];
-  const rows = [
-    [
-      <TableText wrapModifier="truncate">This text will truncate instead of wrap.</TableText>,
-      <TableText wrapModifier="nowrap">
-        <a href="#">This is a link that needs to be on one line and fully readable.</a>
-      </TableText>
-    ]
-  ];
-  return (
-    <TableComposable aria-label="Table text">
-      <Thead>
-        <Tr>
-          <Th width={30}>{columns[0]}</Th>
-          <Th>{columns[1]}</Th>
-        </Tr>
-      </Thead>
-      <Tbody>
-        {rows.map((row, rowIndex) => (
-          <Tr key={rowIndex}>
-            {row.map((cell, cellIndex) => (
-              <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
-                {cell}
-              </Td>
-            ))}
-          </Tr>
-        ))}
-      </Tbody>
-    </TableComposable>
-  );
-};
+```ts file="ComposableTableText.tsx"
 ```
 
 ### Composable: Favoritable (implemented with sortable)
