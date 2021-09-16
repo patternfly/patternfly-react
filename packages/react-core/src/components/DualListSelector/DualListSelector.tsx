@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
-import { Button, ButtonVariant } from '../Button';
 import AngleDoubleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-left-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
@@ -9,7 +8,6 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import { DualListSelectorPane } from './DualListSelectorPane';
 import { getUniqueId, PickOptional } from '../../helpers';
 import { DualListSelectorTreeItemData } from './DualListSelectorTree';
-import { Tooltip } from '../Tooltip';
 import {
   flattenTree,
   flattenTreeWithFolders,
@@ -18,95 +16,99 @@ import {
   filterTreeItemsWithoutFolders,
   filterRestTreeItems
 } from './treeUtils';
-import { canUseDOM } from '../../helpers/util';
-import { handleArrows } from '../../helpers';
+import { DualListSelectorControlsWrapper } from './DualListSelectorControlsWrapper';
+import { DualListSelectorControl } from './DualListSelectorControl';
+import { DualListSelectorContext } from './DualListSelectorContext';
+
 export interface DualListSelectorProps {
   /** Additional classes applied to the dual list selector. */
   className?: string;
-  /** Title applied to the available options pane. */
+  /** Id of the dual list selector. */
+  id?: string;
+  /** Flag indicating if the dual list selector uses trees instead of simple lists */
+  isTree?: boolean;
+  /** Content to be rendered in the dual list selector. Panes & controls will not be built dynamically when children are provided. */
+  children?: React.ReactNode;
+  /** Title applied to the dynamically built available options pane. */
   availableOptionsTitle?: string;
-  /** Options to display in the available options pane. When using trees, the options should be in the DualListSelectorTreeItemData[] format. */
+  /** Options to display in the dynamically built available options pane. When using trees, the options should be in the DualListSelectorTreeItemData[] format. */
   availableOptions?: React.ReactNode[] | DualListSelectorTreeItemData[];
-  /** Status message to display above the available options pane. */
+  /** Status message to display above the dynamically built available options pane. */
   availableOptionsStatus?: string;
-  /** Actions to be displayed above the available options pane. */
+  /** Actions to be displayed above the dynamically built available options pane. */
   availableOptionsActions?: React.ReactNode[];
-  /** Title applied to the chosen options pane. */
+  /** Title applied to the dynamically built chosen options pane. */
   chosenOptionsTitle?: string;
-  /** Options to display in the chosen options pane. When using trees, the options should be in the DualListSelectorTreeItemData[] format. */
+  /** Options to display in the dynamically built chosen options pane. When using trees, the options should be in the DualListSelectorTreeItemData[] format. */
   chosenOptions?: React.ReactNode[] | DualListSelectorTreeItemData[];
-  /** Status message to display above the chosen options pane.*/
+  /** Status message to display above the dynamically built chosen options pane.*/
   chosenOptionsStatus?: string;
-  /** Actions to be displayed above the chosen options pane. */
+  /** Actions to be displayed above the dynamically built chosen options pane. */
   chosenOptionsActions?: React.ReactNode[];
-  /** Accessible label for the controls between the two panes. */
+  /** Accessible label for the dynamically built controls between the two panes. */
   controlsAriaLabel?: string;
-  /** Optional callback for the add selected button */
+  /** Optional callback for the dynamically built add selected button */
   addSelected?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
-  /** Accessible label for the add selected button */
+  /** Accessible label for the dynamically built add selected button */
   addSelectedAriaLabel?: string;
-  /** Tooltip content for the add selected button */
+  /** Tooltip content for the dynamically built add selected button */
   addSelectedTooltip?: React.ReactNode;
-  /** Additonal tooltip properties for the add selected tooltip */
+  /** Additonal tooltip properties for the dynamically built add selected tooltip */
   addSelectedTooltipProps?: any;
-  /** Callback fired every time options are chosen or removed */
+  /** Callback fired every time dynamically built options are chosen or removed */
   onListChange?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
-  /** Optional callback for the add all button */
+  /** Optional callback for the dynamically built add all button */
   addAll?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
-  /** Accessible label for the add all button */
+  /** Accessible label for the dynamically built add all button */
   addAllAriaLabel?: string;
-  /** Tooltip content for the add all button */
+  /** Tooltip content for the dynamically built add all button */
   addAllTooltip?: React.ReactNode;
-  /** Additonal tooltip properties for the add all tooltip */
+  /** Additonal tooltip properties for the dynamically built add all tooltip */
   addAllTooltipProps?: any;
-  /** Optional callback for the remove selected button */
+  /** Optional callback for the dynamically built remove selected button */
   removeSelected?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
-  /** Accessible label for the remove selected button */
+  /** Accessible label for the dynamically built remove selected button */
   removeSelectedAriaLabel?: string;
-  /** Tooltip content for the remove selected button */
+  /** Tooltip content for the dynamically built remove selected button */
   removeSelectedTooltip?: React.ReactNode;
-  /** Additonal tooltip properties for the remove selected tooltip  */
+  /** Additonal tooltip properties for the dynamically built remove selected tooltip  */
   removeSelectedTooltipProps?: any;
-  /** Optional callback for the remove all button */
+  /** Optional callback for the dynamically built remove all button */
   removeAll?: (newAvailableOptions: React.ReactNode[], newChosenOptions: React.ReactNode[]) => void;
-  /** Accessible label for the remove all button */
+  /** Accessible label for the dynamically built remove all button */
   removeAllAriaLabel?: string;
-  /** Tooltip content for the remove all button */
+  /** Tooltip content for the dynamically built remove all button */
   removeAllTooltip?: React.ReactNode;
-  /** Additonal tooltip properties for the remove all tooltip */
+  /** Additonal tooltip properties for the dynamically built remove all tooltip */
   removeAllTooltipProps?: any;
-  /** Optional callback fired when an option is selected */
+  /** Optional callback fired when a dynamically built option is selected */
   onOptionSelect?: (
-    e: React.MouseEvent | React.ChangeEvent,
+    e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent,
     index: number,
     isChosen: boolean,
     id: string,
     itemData: any,
     parentData: any
   ) => void;
-  /** Optional callback fired when an option is checked */
+  /** Optional callback fired when a dynamically built option is checked */
   onOptionCheck?: (
-    e: React.MouseEvent | React.ChangeEvent<HTMLInputElement>,
+    e: React.MouseEvent | React.ChangeEvent<HTMLInputElement> | React.KeyboardEvent,
     checked: boolean,
     checkedId: string,
     newCheckedItems: string[]
   ) => void;
-  /** Flag indicating a search bar should be included above both the available and chosen panes. */
+  /** Flag indicating a search bar should be included above both the dynamically built available and chosen panes. */
   isSearchable?: boolean;
-  /** Accessible label for the search input on the available options pane. */
+  /** Accessible label for the search input on the dynamically built available options pane. */
   availableOptionsSearchAriaLabel?: string;
-  /** A callback for when the search input value for available options changes. */
+  /** A callback for when the search input value for the dynamically built available options changes. */
   onAvailableOptionsSearchInputChanged?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
-  /** Accessible label for the search input on the chosen options pane. */
+  /** Accessible label for the search input on the dynamically built chosen options pane. */
   chosenOptionsSearchAriaLabel?: string;
-  /** A callback for when the search input value for chosen options changes. */
+  /** A callback for when the search input value for the dynamically built chosen options changes. */
   onChosenOptionsSearchInputChanged?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
-  /** Optional filter function for custom filtering based on search string. */
+  /** Optional filter function for custom filtering based on search string. Used with a dynamically built search input. */
   filterOption?: (option: React.ReactNode, input: string) => boolean;
-  /** Id of the dual list selector. */
-  id?: string;
-  /* Flag indicating if the dual list selector uses trees instead of simple lists */
-  isTree?: boolean;
 }
 
 interface DualListSelectorState {
@@ -116,9 +118,7 @@ interface DualListSelectorState {
   chosenOptions: React.ReactNode[];
   chosenOptionsSelected: number[];
   chosenFilteredOptions: React.ReactNode[];
-  availableTreeOptionsSelected: string[];
   availableTreeFilteredOptions: string[];
-  chosenTreeOptionsSelected: string[];
   availableTreeOptionsChecked: string[];
   chosenTreeOptionsChecked: string[];
   chosenTreeFilteredOptions: string[];
@@ -126,12 +126,12 @@ interface DualListSelectorState {
 
 export class DualListSelector extends React.Component<DualListSelectorProps, DualListSelectorState> {
   static displayName = 'DualListSelector';
-  private controlsEl = React.createRef<HTMLDivElement>();
   private addAllButtonRef = React.createRef<HTMLButtonElement>();
   private addSelectedButtonRef = React.createRef<HTMLButtonElement>();
   private removeSelectedButtonRef = React.createRef<HTMLButtonElement>();
   private removeAllButtonRef = React.createRef<HTMLButtonElement>();
   static defaultProps: PickOptional<DualListSelectorProps> = {
+    children: '',
     availableOptions: [] as React.ReactNode[],
     availableOptionsTitle: 'Available options',
     availableOptionsSearchAriaLabel: 'Available search input',
@@ -143,7 +143,8 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
     addAllAriaLabel: 'Add all',
     addSelectedAriaLabel: 'Add selected',
     removeSelectedAriaLabel: 'Remove selected',
-    removeAllAriaLabel: 'Remove all'
+    removeAllAriaLabel: 'Remove all',
+    isTree: false
   };
   private originalAvailableCopy = this.props.availableOptions;
   private originalChosenCopy = this.props.chosenOptions;
@@ -159,8 +160,6 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       chosenOptionsSelected: [],
       chosenFilteredOptions: null,
       chosenTreeFilteredOptions: null,
-      availableTreeOptionsSelected: [],
-      chosenTreeOptionsSelected: [],
       availableTreeOptionsChecked: [],
       chosenTreeOptionsChecked: []
     };
@@ -271,8 +270,6 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
         chosenFilteredOptions: newChosen,
         availableOptions: newAvailable,
         availableFilteredOptions: newAvailable,
-        availableTreeOptionsSelected: [],
-        chosenTreeOptionsSelected: [],
         availableTreeOptionsChecked: [],
         chosenTreeOptionsChecked: []
       };
@@ -310,12 +307,12 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       const newAvailable = prevState.availableOptions
         .map(opt => Object.assign({}, opt))
         .filter(item =>
-          filterRestTreeItems(item as DualListSelectorTreeItemData, prevState.availableTreeOptionsSelected)
+          filterRestTreeItems(item as DualListSelectorTreeItemData, prevState.availableTreeOptionsChecked)
         );
 
       // Get next chosen options from current + new nodes and remap from base
       const currChosen = flattenTree(prevState.chosenOptions as DualListSelectorTreeItemData[]);
-      const nextChosenOptions = currChosen.concat(prevState.availableTreeOptionsSelected);
+      const nextChosenOptions = currChosen.concat(prevState.availableTreeOptionsChecked);
       const allOptions = (this.originalAvailableCopy as DualListSelectorTreeItemData[]).concat(
         this.originalChosenCopy as DualListSelectorTreeItemData[]
       );
@@ -327,8 +324,6 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       this.props.onListChange && this.props.onListChange(newAvailable, newChosen);
 
       return {
-        availableTreeOptionsSelected: [],
-        chosenTreeOptionsSelected: [],
         availableTreeOptionsChecked: [],
         chosenTreeOptionsChecked: [],
         availableOptions: newAvailable,
@@ -388,8 +383,6 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       return {
         chosenOptions: newChosen,
         availableOptions: newAvailable,
-        availableTreeOptionsSelected: [],
-        chosenTreeOptionsSelected: [],
         availableTreeOptionsChecked: [],
         chosenTreeOptionsChecked: []
       };
@@ -426,11 +419,11 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       // Remove selected chosen nodes from current chosen nodes
       const newChosen = prevState.chosenOptions
         .map(opt => Object.assign({}, opt))
-        .filter(item => filterRestTreeItems(item as DualListSelectorTreeItemData, prevState.chosenTreeOptionsSelected));
+        .filter(item => filterRestTreeItems(item as DualListSelectorTreeItemData, prevState.chosenTreeOptionsChecked));
 
       // Get next chosen options from current and remap from base
       const currAvailable = flattenTree(prevState.availableOptions as DualListSelectorTreeItemData[]);
-      const nextAvailableOptions = currAvailable.concat(prevState.chosenTreeOptionsSelected);
+      const nextAvailableOptions = currAvailable.concat(prevState.chosenTreeOptionsChecked);
 
       const allOptions = (this.originalAvailableCopy as DualListSelectorTreeItemData[]).concat(
         this.originalChosenCopy as DualListSelectorTreeItemData[]
@@ -443,8 +436,6 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       this.props.onListChange && this.props.onListChange(newAvailable, newChosen);
 
       return {
-        availableTreeOptionsSelected: [],
-        chosenTreeOptionsSelected: [],
         availableTreeOptionsChecked: [],
         chosenTreeOptionsChecked: [],
         availableOptions: newAvailable,
@@ -454,7 +445,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
   };
 
   onOptionSelect = (
-    e: React.MouseEvent | React.ChangeEvent,
+    e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent,
     index: number,
     isChosen: boolean,
     /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -476,48 +467,6 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       return {
         chosenOptionsSelected: isChosen ? updatedArray : prevState.chosenOptionsSelected,
         availableOptionsSelected: isChosen ? prevState.availableOptionsSelected : updatedArray
-      };
-    });
-
-    this.props.onOptionSelect && this.props.onOptionSelect(e, index, isChosen, id, itemData, parentData);
-  };
-
-  onTreeOptionSelect = (
-    e: React.MouseEvent | React.ChangeEvent,
-    index: number,
-    isChosen: boolean,
-    id?: string,
-    itemData?: any,
-    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
-    parentData?: any
-  ) => {
-    this.setState(prevState => {
-      const selectedOptions = isChosen ? prevState.chosenTreeOptionsSelected : prevState.availableTreeOptionsSelected;
-
-      let updatedArray = null;
-      if (itemData.children) {
-        const panelOptions = isChosen ? this.state.chosenOptions : this.state.availableOptions;
-        const selectedOptionTree = panelOptions
-          .map(opt => Object.assign({}, opt))
-          .filter(item => filterTreeItems(item as DualListSelectorTreeItemData, [id]));
-        const flatSelectedItems = flattenTreeWithFolders(selectedOptionTree as DualListSelectorTreeItemData[]);
-
-        if (selectedOptions.includes(id)) {
-          updatedArray = selectedOptions.filter(id => !flatSelectedItems.includes(id));
-        } else {
-          updatedArray = selectedOptions.concat(flatSelectedItems.filter(id => !selectedOptions.includes(id)));
-        }
-      } else {
-        if (selectedOptions.includes(id)) {
-          updatedArray = selectedOptions.filter(id => !selectedOptions.includes(id));
-        } else {
-          updatedArray = [...selectedOptions, id];
-        }
-      }
-
-      return {
-        chosenTreeOptionsSelected: isChosen ? updatedArray : prevState.chosenTreeOptionsSelected,
-        availableTreeOptionsSelected: isChosen ? prevState.availableTreeOptionsSelected : updatedArray
       };
     });
 
@@ -560,15 +509,12 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
   };
 
   onTreeOptionCheck = (
-    evt: React.MouseEvent | React.ChangeEvent<HTMLInputElement>,
+    evt: React.MouseEvent | React.ChangeEvent<HTMLInputElement> | React.KeyboardEvent,
     isChecked: boolean,
-    isChosen: boolean,
-    itemData: DualListSelectorTreeItemData
+    itemData: DualListSelectorTreeItemData,
+    isChosen: boolean
   ) => {
     const { availableOptions, availableTreeFilteredOptions, chosenOptions, chosenTreeFilteredOptions } = this.state;
-    const checked = (evt as React.ChangeEvent<HTMLInputElement>).target.checked
-      ? (evt as React.ChangeEvent<HTMLInputElement>).target.checked
-      : isChecked;
     let panelOptions;
     if (isChosen) {
       if (chosenTreeFilteredOptions) {
@@ -598,70 +544,22 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
 
     const prevChecked = isChosen ? this.state.chosenTreeOptionsChecked : this.state.availableTreeOptionsChecked;
     let updatedChecked = [] as string[];
-    let updatedSelected = [] as string[];
-    const selectedOptions = isChosen ? this.state.chosenTreeOptionsSelected : this.state.availableTreeOptionsSelected;
-    if (checked) {
+    if (isChecked) {
       updatedChecked = prevChecked.concat(flatTree.filter(id => !prevChecked.includes(id)));
-      updatedSelected = selectedOptions.concat(flatTree.filter(id => !selectedOptions.includes(id)));
     } else {
       updatedChecked = prevChecked.filter(id => !flatTree.includes(id));
-      updatedSelected = selectedOptions.filter(id => !flatTree.includes(id));
     }
 
     this.setState(
       prevState => ({
         availableTreeOptionsChecked: isChosen ? prevState.availableTreeOptionsChecked : updatedChecked,
-        chosenTreeOptionsChecked: isChosen ? updatedChecked : prevState.chosenTreeOptionsChecked,
-        availableTreeOptionsSelected: isChosen ? prevState.availableTreeOptionsSelected : updatedSelected,
-        chosenTreeOptionsSelected: isChosen ? updatedSelected : prevState.chosenTreeOptionsSelected
+        chosenTreeOptionsChecked: isChosen ? updatedChecked : prevState.chosenTreeOptionsChecked
       }),
       () => {
         this.props.onOptionCheck && this.props.onOptionCheck(evt, isChecked, itemData.id, updatedChecked);
       }
     );
-
-    this.props.onOptionSelect && this.props.onOptionSelect(evt, null, isChosen, itemData.id, itemData, null);
   };
-
-  handleKeys = (event: KeyboardEvent) => {
-    if (
-      !this.controlsEl.current ||
-      (this.controlsEl.current !== (event.target as HTMLElement).closest('.pf-c-dual-list-selector__controls') &&
-        !Array.from(this.controlsEl.current.getElementsByClassName('pf-c-dual-list-selector__controls')).includes(
-          (event.target as HTMLElement).closest('.pf-c-dual-list-selector__controls')
-        ))
-    ) {
-      return;
-    }
-    event.stopImmediatePropagation();
-
-    const controls = Array.from(this.controlsEl.current.getElementsByTagName('BUTTON')).filter(
-      el => !el.classList.contains('pf-m-disabled')
-    );
-    const activeElement = document.activeElement;
-    handleArrows(
-      event,
-      controls,
-      (element: Element) => activeElement.contains(element),
-      (element: Element) => element,
-      undefined,
-      undefined,
-      true,
-      false
-    );
-  };
-
-  componentDidMount() {
-    if (canUseDOM) {
-      window.addEventListener('keydown', this.handleKeys);
-    }
-  }
-
-  componentWillUnmount() {
-    if (canUseDOM) {
-      window.removeEventListener('keydown', this.handleKeys);
-    }
-  }
 
   render() {
     const {
@@ -669,6 +567,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       availableOptionsActions,
       availableOptionsSearchAriaLabel,
       className,
+      children,
       chosenOptionsTitle,
       chosenOptionsActions,
       chosenOptionsSearchAriaLabel,
@@ -710,21 +609,21 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       chosenOptions,
       chosenOptionsSelected,
       availableOptionsSelected,
-      chosenTreeOptionsSelected,
-      availableTreeOptionsSelected
+      chosenTreeOptionsChecked,
+      availableTreeOptionsChecked
     } = this.state;
 
     const availableOptionsStatusToDisplay =
       availableOptionsStatus ||
       (isTree
         ? `${
-            filterFolders(availableOptions as DualListSelectorTreeItemData[], availableTreeOptionsSelected).length
+            filterFolders(availableOptions as DualListSelectorTreeItemData[], availableTreeOptionsChecked).length
           } of ${flattenTree(availableOptions as DualListSelectorTreeItemData[]).length} items selected`
         : `${availableOptionsSelected.length} of ${availableOptions.length} items selected`);
     const chosenOptionsStatusToDisplay =
       chosenOptionsStatus ||
       (isTree
-        ? `${filterFolders(chosenOptions as DualListSelectorTreeItemData[], chosenTreeOptionsSelected).length} of ${
+        ? `${filterFolders(chosenOptions as DualListSelectorTreeItemData[], chosenTreeOptionsChecked).length} of ${
             flattenTree(chosenOptions as DualListSelectorTreeItemData[]).length
           } items selected`
         : `${chosenOptionsSelected.length} of ${chosenOptions.length} items selected`);
@@ -737,132 +636,89 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       : chosenOptions;
 
     return (
-      <div className={css(styles.dualListSelector, className)} id={id} {...props}>
-        <DualListSelectorPane
-          isSearchable={isSearchable}
-          onFilterUpdate={this.onFilterUpdate}
-          searchInputAriaLabel={availableOptionsSearchAriaLabel}
-          filterOption={filterOption}
-          onSearchInputChanged={onAvailableOptionsSearchInputChanged}
-          status={availableOptionsStatusToDisplay}
-          title={availableOptionsTitle}
-          options={available}
-          selectedOptions={isTree ? availableTreeOptionsSelected : availableOptionsSelected}
-          onOptionSelect={isTree ? this.onTreeOptionSelect : this.onOptionSelect}
-          onOptionCheck={this.onTreeOptionCheck}
-          actions={availableOptionsActions}
-          id={`${id}-available-pane`}
-          isTree={isTree}
-        />
-        <div
-          className={css(styles.dualListSelectorControls)}
-          tabIndex={0}
-          ref={this.controlsEl}
-          aria-label={controlsAriaLabel}
-        >
-          <div className={css('pf-c-dual-list-selector__controls-item')}>
-            <Button
-              isDisabled={isTree ? availableTreeOptionsSelected.length === 0 : availableOptionsSelected.length === 0}
-              aria-disabled={isTree ? availableTreeOptionsSelected.length === 0 : availableOptionsSelected.length === 0}
-              variant={ButtonVariant.plain}
-              onClick={isTree ? this.addTreeSelected : this.addSelected}
-              aria-label={addSelectedAriaLabel}
-              tabIndex={-1}
-              ref={this.addSelectedButtonRef}
-            >
-              <AngleRightIcon />
-            </Button>
-            {addSelectedTooltip && (
-              <Tooltip
-                content={addSelectedTooltip}
-                position="right"
-                reference={this.addSelectedButtonRef}
-                {...addSelectedTooltipProps}
+      <DualListSelectorContext.Provider value={{ isTree }}>
+        <div className={css(styles.dualListSelector, className)} id={id} {...props}>
+          {children === '' ? (
+            <>
+              <DualListSelectorPane
+                isSearchable={isSearchable}
+                onFilterUpdate={this.onFilterUpdate}
+                searchInputAriaLabel={availableOptionsSearchAriaLabel}
+                filterOption={filterOption}
+                onSearchInputChanged={onAvailableOptionsSearchInputChanged}
+                status={availableOptionsStatusToDisplay}
+                title={availableOptionsTitle}
+                options={available}
+                selectedOptions={isTree ? availableTreeOptionsChecked : availableOptionsSelected}
+                onOptionSelect={this.onOptionSelect}
+                onOptionCheck={(e, isChecked, itemData) => this.onTreeOptionCheck(e, isChecked, itemData, false)}
+                actions={availableOptionsActions}
+                id={`${id}-available-pane`}
               />
-            )}
-          </div>
-          <div className={css('pf-c-dual-list-selector__controls-item')}>
-            <Button
-              isDisabled={availableOptions.length === 0}
-              aria-disabled={availableOptions.length === 0}
-              variant={ButtonVariant.plain}
-              onClick={isTree ? this.addAllTreeVisible : this.addAllVisible}
-              aria-label={addAllAriaLabel}
-              tabIndex={-1}
-              ref={this.addAllButtonRef}
-            >
-              <AngleDoubleRightIcon />
-            </Button>
-            {addAllTooltip && (
-              <Tooltip
-                content={addAllTooltip}
-                position="left"
-                reference={this.addAllButtonRef}
-                {...addAllTooltipProps}
+              <DualListSelectorControlsWrapper aria-label={controlsAriaLabel}>
+                <DualListSelectorControl
+                  isDisabled={isTree ? availableTreeOptionsChecked.length === 0 : availableOptionsSelected.length === 0}
+                  onClick={isTree ? this.addTreeSelected : this.addSelected}
+                  ref={this.addSelectedButtonRef}
+                  aria-label={addSelectedAriaLabel}
+                  tooltipContent={addSelectedTooltip}
+                  tooltipProps={addSelectedTooltipProps}
+                >
+                  <AngleRightIcon />
+                </DualListSelectorControl>
+                <DualListSelectorControl
+                  isDisabled={availableOptions.length === 0}
+                  onClick={isTree ? this.addAllTreeVisible : this.addAllVisible}
+                  ref={this.addAllButtonRef}
+                  aria-label={addAllAriaLabel}
+                  tooltipContent={addAllTooltip}
+                  tooltipProps={addAllTooltipProps}
+                >
+                  <AngleDoubleRightIcon />
+                </DualListSelectorControl>
+                <DualListSelectorControl
+                  isDisabled={chosenOptions.length === 0}
+                  onClick={isTree ? this.removeAllTreeVisible : this.removeAllVisible}
+                  aria-label={removeAllAriaLabel}
+                  ref={this.removeAllButtonRef}
+                  tooltipContent={removeAllTooltip}
+                  tooltipProps={removeAllTooltipProps}
+                >
+                  <AngleDoubleLeftIcon />
+                </DualListSelectorControl>
+                <DualListSelectorControl
+                  onClick={isTree ? this.removeTreeSelected : this.removeSelected}
+                  isDisabled={isTree ? chosenTreeOptionsChecked.length === 0 : chosenOptionsSelected.length === 0}
+                  ref={this.removeSelectedButtonRef}
+                  aria-label={removeSelectedAriaLabel}
+                  tooltipContent={removeSelectedTooltip}
+                  tooltipProps={removeSelectedTooltipProps}
+                >
+                  <AngleLeftIcon />
+                </DualListSelectorControl>
+              </DualListSelectorControlsWrapper>
+              <DualListSelectorPane
+                isChosen
+                isSearchable={isSearchable}
+                onFilterUpdate={this.onFilterUpdate}
+                searchInputAriaLabel={chosenOptionsSearchAriaLabel}
+                filterOption={filterOption}
+                onSearchInputChanged={onChosenOptionsSearchInputChanged}
+                title={chosenOptionsTitle}
+                status={chosenOptionsStatusToDisplay}
+                options={chosen}
+                selectedOptions={isTree ? chosenTreeOptionsChecked : chosenOptionsSelected}
+                onOptionSelect={this.onOptionSelect}
+                onOptionCheck={(e, isChecked, itemData) => this.onTreeOptionCheck(e, isChecked, itemData, true)}
+                actions={chosenOptionsActions}
+                id={`${id}-chosen-pane`}
               />
-            )}
-          </div>
-          <div className={css('pf-c-dual-list-selector__controls-item')}>
-            <Button
-              isDisabled={chosenOptions.length === 0}
-              aria-disabled={chosenOptions.length === 0}
-              variant={ButtonVariant.plain}
-              onClick={isTree ? this.removeAllTreeVisible : this.removeAllVisible}
-              aria-label={removeAllAriaLabel}
-              tabIndex={-1}
-              ref={this.removeAllButtonRef}
-            >
-              <AngleDoubleLeftIcon />
-            </Button>
-            {removeAllTooltip && (
-              <Tooltip
-                content={removeAllTooltip}
-                position="right"
-                reference={this.removeAllButtonRef}
-                {...removeAllTooltipProps}
-              />
-            )}
-          </div>
-          <div className={css('pf-c-dual-list-selector__controls-item')}>
-            <Button
-              variant={ButtonVariant.plain}
-              onClick={isTree ? this.removeTreeSelected : this.removeSelected}
-              aria-label={removeSelectedAriaLabel}
-              tabIndex={-1}
-              isDisabled={isTree ? chosenTreeOptionsSelected.length === 0 : chosenOptionsSelected.length === 0}
-              aria-disabled={isTree ? chosenTreeOptionsSelected.length === 0 : chosenOptionsSelected.length === 0}
-              ref={this.removeSelectedButtonRef}
-            >
-              <AngleLeftIcon />
-            </Button>
-            {removeSelectedTooltip && (
-              <Tooltip
-                content={removeSelectedTooltip}
-                position="left"
-                reference={this.removeSelectedButtonRef}
-                {...removeSelectedTooltipProps}
-              />
-            )}
-          </div>
+            </>
+          ) : (
+            children
+          )}
         </div>
-        <DualListSelectorPane
-          isChosen
-          isSearchable={isSearchable}
-          onFilterUpdate={this.onFilterUpdate}
-          searchInputAriaLabel={chosenOptionsSearchAriaLabel}
-          filterOption={filterOption}
-          onSearchInputChanged={onChosenOptionsSearchInputChanged}
-          title={chosenOptionsTitle}
-          status={chosenOptionsStatusToDisplay}
-          options={chosen}
-          selectedOptions={isTree ? chosenTreeOptionsSelected : chosenOptionsSelected}
-          onOptionSelect={isTree ? this.onTreeOptionSelect : this.onOptionSelect}
-          onOptionCheck={this.onTreeOptionCheck}
-          actions={chosenOptionsActions}
-          id={`${id}-chosen-pane`}
-          isTree={isTree}
-        />
-      </div>
+      </DualListSelectorContext.Provider>
     );
   }
 }
