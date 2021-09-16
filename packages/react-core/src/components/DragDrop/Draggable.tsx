@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { createPortal } from 'react-dom';
 import { DroppableContext } from './DroppableContext';
 import { DragDropContext } from './DragDrop';
 
@@ -74,7 +73,7 @@ function overlaps(ev: MouseEvent, rect: DOMRect) {
 export const Draggable: React.FunctionComponent<DraggableProps> = ({
   className,
   children,
-  style: styleProp,
+  style: styleProp = {},
   ...props
 }: DraggableProps) => {
   /* eslint-disable prefer-const */
@@ -240,7 +239,8 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
         node: cur,
         rect: cur.getBoundingClientRect(),
         isDraggingHost,
-        draggableNodes,
+        // We don't want styles to apply to the left behind div in onMouseMoveWhileDragging
+        draggableNodes: draggableNodes.map(node => (node === ref.current ? node.cloneNode(false) : node)),
         draggableNodesRects: draggableNodes.map(node => node.getBoundingClientRect())
       };
       acc.push(droppableItem);
@@ -275,24 +275,8 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     document.addEventListener('mousemove', mouseMoveListener);
     document.addEventListener('mouseup', mouseUpListener);
     // Comment out this line to debug while dragging by right clicking
-    document.addEventListener('contextmenu', mouseUpListener);
+    // document.addEventListener('contextmenu', mouseUpListener);
   };
-
-  const div = (
-    <div
-      data-pf-draggable-zone={isDragging ? null : zone}
-      draggable
-      role="button"
-      className={className}
-      onDragStart={onDragStart}
-      onTransitionEnd={onTransitionEnd}
-      style={style}
-      ref={ref}
-      {...props}
-    >
-      {children}
-    </div>
-  );
 
   return (
     <React.Fragment>
@@ -302,8 +286,19 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
           {children}
         </div>
       )}
-      {/* Move dragging part into portal to appear above top and side nav */}
-      {isDragging ? createPortal(div, document.body) : div}
+      <div
+        data-pf-draggable-zone={isDragging ? null : zone}
+        draggable
+        role="button"
+        className={className}
+        onDragStart={onDragStart}
+        onTransitionEnd={onTransitionEnd}
+        style={style}
+        ref={ref}
+        {...props}
+      >
+        {children}
+      </div>
     </React.Fragment>
   );
 };
