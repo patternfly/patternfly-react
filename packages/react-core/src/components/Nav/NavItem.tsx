@@ -70,7 +70,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   const onMouseOver = () => {
     if (hasFlyout) {
       showFlyout(true);
-    } else {
+    } else if (flyoutRef !== null) {
       setFlyoutRef(null);
     }
   };
