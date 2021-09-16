@@ -19,13 +19,13 @@ section: developer-resources
 
 ### Components
 - **Alert:**
-  - Added plain variant, add expandable inline ([#6236](https://github.com/patternfly/patternfly-react/pull/6236))
+  - Added plain variant, added expandable inline ([#6236](https://github.com/patternfly/patternfly-react/pull/6236))
 - **Avatar:**
-  - Convert examples to typescript ([#6228](https://github.com/patternfly/patternfly-react/pull/6228))
+  - Converted examples to typescript ([#6228](https://github.com/patternfly/patternfly-react/pull/6228))
 - **Back to top:**
-  - Introduced Back to Top component and demos ([#6282](https://github.com/patternfly/patternfly-react/pull/6282))
+  - Introduced back to top component and demos ([#6282](https://github.com/patternfly/patternfly-react/pull/6282))
 - **Calendar month:**
-  - Make useEffect respect validators ([#6315](https://github.com/patternfly/patternfly-react/pull/6315))
+  - Made useEffect respect validators ([#6315](https://github.com/patternfly/patternfly-react/pull/6315))
 - **Card:**
   - Added demos for log and event views ([#6289](https://github.com/patternfly/patternfly-react/pull/6289))
   - Added aggregate status, status tabbed and status demos ([#6206](https://github.com/patternfly/patternfly-react/pull/6206))
@@ -61,7 +61,7 @@ section: developer-resources
 - **Spinner:**
   - Fixed spinner tests to check all component sizes ([#6269](https://github.com/patternfly/patternfly-react/pull/6269))
 - **Tabs:**
-  - Added Support for disabled state tabs ([#6261](https://github.com/patternfly/patternfly-react/pull/6261))
+  - Added support for disabled state tabs ([#6261](https://github.com/patternfly/patternfly-react/pull/6261))
 
 ### Log viewer extension
 - Added onScroll and footer props ([#6238](https://github.com/patternfly/patternfly-react/pull/6238))
