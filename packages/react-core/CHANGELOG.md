@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.157.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.157.1...@patternfly/react-core@4.157.2) (2021-09-16)
+
+
+### Bug Fixes
+
+* **nav:** flyout onMouseOver logic ([#6325](https://github.com/patternfly/patternfly-react/issues/6325)) ([2157b73](https://github.com/patternfly/patternfly-react/commit/2157b73d6953add7a67772c8fc3f86d822f8a5a3))
+
+
+
+
+
 ## [4.157.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.157.0...@patternfly/react-core@4.157.1) (2021-09-14)
 
 
