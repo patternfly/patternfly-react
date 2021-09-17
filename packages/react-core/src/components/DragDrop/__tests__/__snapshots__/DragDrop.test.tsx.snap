@@ -5,6 +5,7 @@ exports[`renders some divs 1`] = `
   value={
     Object {
       "onDrag": [Function],
+      "onDragMove": [Function],
       "onDrop": [Function],
     }
   }
