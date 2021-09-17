@@ -84,7 +84,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   /* eslint-enable prefer-const */
   const [isDragging, setIsDragging] = React.useState(false);
   const { zone, droppableId } = React.useContext(DroppableContext);
-  const { onDrag, onDrop } = React.useContext(DragDropContext);
+  const { onDrag, onDragMove, onDrop } = React.useContext(DragDropContext);
   // Some state is better just to leave as vars passed around between various callbacks
   // You can only drag around one item at a time anyways...
   let startX = 0;
@@ -105,11 +105,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     }
   };
 
-  const onMouseUpWhileDragging = (droppableItems: DroppableItem[]) => {
-    droppableItems.forEach(resetDroppableItem);
-    document.removeEventListener('mousemove', mouseMoveListener);
-    document.removeEventListener('mouseup', mouseUpListener);
-    document.removeEventListener('contextmenu', mouseUpListener);
+  function getSourceAndDest() {
     const hoveringDroppableId = hoveringDroppable ? hoveringDroppable.getAttribute('data-pf-droppableid') : null;
     const source = {
       droppableId,
@@ -122,6 +118,15 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
             index: hoveringIndex
           }
         : undefined;
+    return { source, dest, hoveringDroppableId };
+  }
+
+  const onMouseUpWhileDragging = (droppableItems: DroppableItem[]) => {
+    droppableItems.forEach(resetDroppableItem);
+    document.removeEventListener('mousemove', mouseMoveListener);
+    document.removeEventListener('mouseup', mouseUpListener);
+    document.removeEventListener('contextmenu', mouseUpListener);
+    const { source, dest, hoveringDroppableId } = getSourceAndDest();
     const consumerReordered = onDrop(source, dest);
     if (consumerReordered && droppableId === hoveringDroppableId) {
       setIsDragging(false);
@@ -216,6 +221,9 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
         lastTranslate = translateY;
       });
     }
+
+    const { source, dest } = getSourceAndDest();
+    onDragMove(source, dest);
   };
 
   const onDragStart = (ev: React.DragEvent<HTMLElement>) => {
@@ -284,7 +292,6 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   const childProps = {
     'data-pf-draggable-zone': isDragging ? null : zone,
     draggable: true,
-    role: 'button',
     className,
     onDragStart,
     onTransitionEnd,
@@ -296,7 +303,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     <React.Fragment>
       {/* Leave behind blank spot per-design */}
       {isDragging && (
-        <div draggable role="button" {...props} style={{ ...styleProp, visibility: 'hidden' }}>
+        <div draggable {...props} style={{ ...styleProp, visibility: 'hidden' }}>
           {children}
         </div>
       )}

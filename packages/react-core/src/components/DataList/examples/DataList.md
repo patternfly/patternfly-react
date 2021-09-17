@@ -1160,6 +1160,21 @@ const reorder = (list, startIndex, endIndex) => {
 
 DraggableDataList = () => {
   const [items, setItems] = React.useState(getItems(10));
+  const [liveText, setLiveText] = React.useState('');
+
+  function onDrag(source) {
+    setLiveText(`Started dragging ${items[source.index].content}`);
+    return true;
+  }
+
+  function onDragMove(source, dest) {
+    const newText = dest
+      ? `Move ${items[source.index].content} to ${items[dest.index].content}`
+      : 'Invalid drop zone';
+    if (newText !== liveText) {
+      setLiveText(newText);
+    }
+  }
 
   function onDrop(source, dest) {
     if (dest) {
@@ -1170,12 +1185,15 @@ DraggableDataList = () => {
       );
       setItems(newItems);
 
+      setLiveText('Dragging finished.');
       return true;
+    } else {
+      setLiveText('Dragging cancelled. List unchanged.');
     }
   }
 
   return (
-    <DragDrop onDrop={onDrop}>
+    <DragDrop onDrag={onDrag} onDragMove={onDragMove} onDrop={onDrop}>
       <Droppable noWrap>
         <DataList aria-label="draggable data list example" isCompact>
           {items.map(({id, content}) =>
@@ -1204,6 +1222,9 @@ DraggableDataList = () => {
           )}
         </DataList>
       </Droppable>
+      <div className="pf-screen-reader" aria-live="assertive">
+        {liveText}
+      </div>
     </DragDrop>
   );
 };
