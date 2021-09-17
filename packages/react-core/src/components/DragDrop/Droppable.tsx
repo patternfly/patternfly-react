@@ -10,6 +10,8 @@ interface DroppableProps extends React.HTMLProps<HTMLDivElement> {
   zone?: string;
   /** Id to be passed back on drop events */
   droppableId?: string;
+  /** Don't wrap the component in a div. Requires passing a single child. */
+  noWrap?: boolean;
 }
 
 export const Droppable: React.FunctionComponent<DroppableProps> = ({
@@ -17,12 +19,20 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
   children,
   zone = 'defaultZone',
   droppableId = 'defaultId',
+  noWrap = false,
   ...props
-}: DroppableProps) => (
-  <DroppableContext.Provider value={{ zone, droppableId }}>
-    <div data-pf-droppable={zone} data-pf-droppableid={droppableId} className={className} {...props}>
-      {children}
-    </div>
-  </DroppableContext.Provider>
-);
+}: DroppableProps) => {
+  const childProps = {
+    'data-pf-droppable': zone,
+    'data-pf-droppableid': droppableId,
+    className,
+    ...props
+  };
+
+  return (
+    <DroppableContext.Provider value={{ zone, droppableId }}>
+      {noWrap ? React.cloneElement(children as React.ReactElement, childProps) : <div>{children}</div>}
+    </DroppableContext.Provider>
+  );
+};
 Droppable.displayName = 'Droppable';

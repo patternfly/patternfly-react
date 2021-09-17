@@ -27,15 +27,15 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
   className?: string;
   /** Adds accessible text to the DataList list */
   'aria-label': string;
-  /** Optional callback to make DataList selectable, fired when DataListItem selected */
+  /** @deprecated Optional callback to make DataList selectable, fired when DataListItem selected */
   onSelectDataListItem?: (id: string) => void;
-  /** Optional callback to make DataList draggable, fired when dragging ends */
+  /** @deprecated Optional callback to make DataList draggable, fired when dragging ends */
   onDragFinish?: (newItemOrder: string[]) => void;
-  /** Optional informational callback for dragging, fired when dragging starts */
+  /** @deprecated Optional informational callback for dragging, fired when dragging starts */
   onDragStart?: (id: string) => void;
-  /** Optional informational callback for dragging, fired when an item moves */
+  /** @deprecated Optional informational callback for dragging, fired when an item moves */
   onDragMove?: (oldIndex: number, newIndex: number) => void;
-  /** Optional informational callback for dragging, fired when dragging is cancelled */
+  /** @deprecated Optional informational callback for dragging, fired when dragging is cancelled */
   onDragCancel?: () => void;
   /** Id of DataList item currently selected */
   selectedDataListItemId?: string;
@@ -45,7 +45,7 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
   gridBreakpoint?: 'none' | 'always' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   /** Determines which wrapping modifier to apply to the DataList */
   wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
-  /** Order of items in a draggable DataList */
+  /** @deprecated Order of items in a draggable DataList */
   itemOrder?: string[];
 }
 
