@@ -27,9 +27,9 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   onClick?: NavSelectClickHandler;
   /** Component used to render NavItems if  React.isValidElement(children) is false */
   component?: React.ReactNode;
-  /** Flyout sub-navigation of a nav item */
+  /** @hide Flyout sub-navigation of a nav item */
   flyout?: React.ReactNode;
-  /** Callback when flyout is opened or closed */
+  /** @hide Callback when flyout is opened or closed */
   onShowFlyout?: () => void;
 }
 

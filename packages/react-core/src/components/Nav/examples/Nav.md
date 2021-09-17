@@ -504,7 +504,7 @@ class NavTertiaryList extends React.Component {
 }
 ```
 
-### Flyout
+<!--- ### Flyout
 
 A flyout should be another `Nav` component with the `subnav` variant. Press `space` or `right arrow` to open a flyout using the keyboard, use `tab` to navigate between items, and press `escape` or `left arrow` to close a flyout.
 
@@ -566,4 +566,4 @@ NavWithFlyout = () => {
     </Nav>
   );
 };
-```
+``` -->
