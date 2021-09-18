@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.157.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.157.2...@patternfly/react-core@4.157.3) (2021-09-18)
+
+
+### Bug Fixes
+
+* **Nav:** Hide flyout example and props ([#6329](https://github.com/patternfly/patternfly-react/issues/6329)) ([e83e4e7](https://github.com/patternfly/patternfly-react/commit/e83e4e783023bb876457677c9627e9e25eed95d6))
+
+
+
+
+
 ## [4.157.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.157.1...@patternfly/react-core@4.157.2) (2021-09-16)
 
 
