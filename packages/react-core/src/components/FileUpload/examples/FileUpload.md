@@ -9,11 +9,12 @@ import FileUploadIcon from '@patternfly/react-icons/dist/esm/icons/file-upload-i
 
 ## Examples
 
-The basic `FileUpload` component can accept a file via browse or drag-and-drop, and behaves like a standard form field with its `value` and `onChange` props. The `type` prop determines how the `FileUpload` component behaves upon accepting a file, what type of value it passes to its `onChange` prop, and what type it expects for its `value` prop.
+The basic `FileUpload` component can accept a file via browse or drag-and-drop, and behaves like a standard form field with its `value` and `onInputChange` event that is similar to `<input onChange="...">` prop. The `type` prop determines how the `FileUpload` component behaves upon accepting a file, what type of value it passes to its `onDataChanged` event.
 
 ### Text files
 
-If `type="text"` is passed (and `hideDefaultPreview` is not), a `TextArea` preview will be rendered underneath the filename bar. When a file is selected, its contents will be read into memory and passed to the `onChange` prop as a string (along with its filename). Typing/pasting text in the box will also call `onChange` with a string, and a string value is expected for the `value` prop.
+If `type="text"` is passed (and `hideDefaultPreview` is not), a `TextArea` preview will be rendered underneath the filename bar. When a file is selected, its contents will be read into memory and passed to the `onDataChanged` event as a string. Every filename change is passed to `onInputChange` same as it would do with the `<input>` element. 
+Pressing *Clear* button triggers `onClearClicked` event.
 
 ### Simple text file
 
@@ -54,7 +55,8 @@ class SimpleTextFileUpload extends React.Component {
 }
 ```
 
-A user can always type instead of selecting a file, but by default, once a user selects a text file from their disk they are not allowed to edit it (to prevent unintended changes to a format-sensitive file). This behavior can be changed with the `allowEditingUploadedText` prop:
+A user can always type instead of selecting a file, but by default, once a user selects a text file from their disk they are not allowed to edit it (to prevent unintended changes to a format-sensitive file). This behavior can be changed with the `allowEditingUploadedText` prop.
+Typing/pasting text in the box will call `onTextChanged` with a string, and a string value is expected for the `value` prop. :
 
 ### Text file with edits allowed
 
@@ -163,7 +165,7 @@ class TextFileUploadWithRestrictions extends React.Component {
 
 ### Other file types
 
-If no `type` prop is specified, the component will not read files directly. When a file is selected, a [`File` object](https://developer.mozilla.org/en-US/docs/Web/API/File) will be passed to `onChange` and your application will be responsible for reading from it (e.g. by using the [FileReader API](https://developer.mozilla.org/en-US/docs/Web/API/FileReader) or attaching it to a [FormData object](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects)). A `File` object will also be expected for the `value` prop instead of a string, and no preview of the file contents will be shown by default. The `onReadStarted` and `onReadFinished` callbacks will also not be called since the component is not reading the file.
+If no `type` prop is specified, the component will not read files directly. When a file is selected, a [`File` object](https://developer.mozilla.org/en-US/docs/Web/API/File) will be passed as a second argument to `onInputChange` and your application will be responsible for reading from it (e.g. by using the [FileReader API](https://developer.mozilla.org/en-US/docs/Web/API/FileReader) or attaching it to a [FormData object](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects)). A `File` object will also be expected for the `value` prop instead of a string, and no preview of the file contents will be shown by default. The `onReadStarted` and `onReadFinished` callbacks will also not be called since the component is not reading the file.
 
 ### Simple file of any format
 
@@ -309,7 +311,7 @@ class CustomFileUpload extends React.Component {
           type="text"
           value={value}
           filename={filename ? 'example-filename.txt' : ''}
-          onChange={this.handleTextAreaChange}
+          onTextChanged={this.handleTextAreaChange}
           filenamePlaceholder="Do something custom with this!"
           onBrowseButtonClick={() => alert('Browse button clicked!')}
           onClearButtonClick={() => alert('Clear button clicked!')}
