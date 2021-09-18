@@ -85,9 +85,9 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
   type,
   value = '',
   filename = '',
-  onChange = () => { },
-  onBrowseButtonClick = () => { },
-  onClearButtonClick = () => { },  
+  onChange = () => {},
+  onBrowseButtonClick = () => {},
+  onClearButtonClick = () => {},
   onTextAreaClick,
   onTextChanged,
   className = '',
@@ -113,7 +113,7 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
 }: FileUploadFieldProps) => {
   const onTextAreaChange = (newValue: string, event: React.ChangeEvent<HTMLTextAreaElement>) => {
     onChange(newValue, filename, event);
-    onTextChanged?.(newValue)
+    onTextChanged?.(newValue);
   };
   return (
     <div
