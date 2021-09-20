@@ -7946,10 +7946,10 @@ exports[`renders component data 1`] = `
     tickValues={
       Array [
         0,
-        100,
         25,
         50,
         75,
+        100,
         100,
       ]
     }

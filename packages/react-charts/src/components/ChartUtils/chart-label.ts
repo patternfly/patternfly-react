@@ -8,7 +8,7 @@ interface ChartBulletLabelInterface {
   chartHeight?: number; // Width of chart within SVG
   chartWidth?: number; // Width of chart (e.g., donut) within SVG
   labelPosition?: 'bottom' | 'left' | 'top' | 'top-left'; // Position of label
-  legendPosition?: 'bottom' | 'bottom-left' | 'right'; // Position of legend
+  legendPosition?: 'bottom' | 'bottom-left' | 'bottom-right' | 'right'; // Position of legend
   svgHeight?: number; // Overall height of SVG
   svgWidth?: number; // Overall width of SVG
   width?: number; // Chart width

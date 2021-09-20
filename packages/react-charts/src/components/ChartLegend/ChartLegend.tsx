@@ -31,6 +31,7 @@ export enum ChartLegendOrientation {
 export enum ChartLegendPosition {
   bottom = 'bottom',
   bottomLeft = 'bottom-left',
+  bottomRight = 'bottom-right',
   right = 'right'
 }
 

@@ -47,7 +47,7 @@ export interface ChartBulletTitleProps {
   /**
    * The legend position relation to the chart. Valid values are 'bottom', 'bottom-left', and 'right'
    */
-  legendPosition?: 'bottom' | 'bottom-left' | 'right';
+  legendPosition?: 'bottom' | 'bottom-left' | 'bottom-right' | 'right';
   /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given

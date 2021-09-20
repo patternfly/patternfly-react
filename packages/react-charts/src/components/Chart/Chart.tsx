@@ -251,7 +251,7 @@ export interface ChartProps extends VictoryChartProps {
    * Note: When adding a legend, padding may need to be adjusted in order to accommodate the extra legend. In some
    * cases, the legend may not be visible until enough padding is applied.
    */
-  legendPosition?: 'bottom' | 'bottom-left' | 'right';
+  legendPosition?: 'bottom' | 'bottom-left' | 'bottom-right' | 'right';
   /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain

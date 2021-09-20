@@ -190,7 +190,7 @@ class BottomAlignedLegend extends React.Component {
 
 ### Multi-color (unordered) with responsive container
 
-This demonstrates zoom for the x axis only.
+This demonstrates zoom and pan behavior for the x axis only.
 
 ```js
 import React from 'react';
