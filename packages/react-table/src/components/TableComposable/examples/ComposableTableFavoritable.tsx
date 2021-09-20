@@ -54,7 +54,12 @@ export const ComposableTableFavoritable: React.FunctionComponent = () => {
   // Since OnSort specifies sorted columns by index, we need sortable values for our object by column index.
   // In this example we only deal with booleans here because we only sort on the favorites column.
   // For more complex sorting, see Composable: Sortable.
-  const getSortableRowValues = (repo: Repository): boolean[] => [isRepoFavorited(repo)];
+  // Note: We also memoize the sortable values with useCallback to prevent rows jumping around when you change
+  // the favorites while sorting on that column. Only updating the sort state will reorder the rows.
+  const getSortableRowValues = React.useCallback((repo: Repository): boolean[] => [isRepoFavorited(repo)], [
+    activeSortIndex,
+    activeSortDirection
+  ]);
 
   // Note that we perform the sort as part of the component's render logic and not in onSort.
   // We shouldn't store the list of data in state because we don't want to have to sync that with props.
