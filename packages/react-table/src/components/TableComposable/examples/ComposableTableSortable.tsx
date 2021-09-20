@@ -17,6 +17,7 @@ export const ComposableTableSortable: React.FunctionComponent = () => {
     { name: 'p', branches: 'two', prs: 'b', workspaces: 'four', lastCommit: 'five' }
   ];
 
+  // TODO maybe change this to use column keys instead of indexes, like compound expand state? how?
   // Index of the currently sorted column
   const [activeSortIndex, setActiveSortIndex] = React.useState<number | null>(null);
 
