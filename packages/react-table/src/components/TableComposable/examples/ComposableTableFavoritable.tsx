@@ -1,6 +1,7 @@
 import React from 'react';
 import { TableComposable, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-table';
 
+// TODO review all these for which types don't need the | null
 interface Repository {
   name: string;
   branches: string | null;
