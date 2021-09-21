@@ -1,0 +1,71 @@
+---
+id: Progress stepper
+section: components
+---
+
+## Demos
+
+### Basic
+
+```js
+import React from 'react';
+import { ProgressStepper, ProgressStep, Button, Stack, StackItem } from '@patternfly/react-core';
+
+ProgressStepperDemo = () => {
+  const [currentStep, setCurrentStep] = React.useState(0);
+
+  const steps = [
+    { title: 'First step' },
+    { title: 'Second step' },
+    { title: 'Third step' },
+    { title: 'Fourth step' },
+    { title: 'Fifth step' }
+  ];
+
+  const onStepForward = event => {
+    const next = currentStep + 1;
+    setCurrentStep(next <= 5 ? next : 4);
+  };
+
+  const onStepBack = event => {
+    const next = currentStep - 1;
+    setCurrentStep(next > 0 ? next : 0);
+  };
+
+  return (
+    <Stack>
+      <StackItem>
+        <Button onClick={onStepBack} isDisabled={currentStep === 0} aria-label="Step back">
+          Step back
+        </Button>{' '}
+        <Button onClick={onStepForward} isDisabled={currentStep === 5} aria-label="Step forward">
+          Step forward
+        </Button>
+        <br />
+        <br />
+      </StackItem>
+      <StackItem>
+        <ProgressStepper aria-live="polite">
+          {steps.map((step, index) => {
+            let variant = 'pending';
+            let ariaLabel = 'pending step';
+            if (index < currentStep) {
+              variant = 'success';
+              ariaLabel = 'completed step';
+            } else if (index === currentStep) {
+              variant = 'info';
+              ariaLabel = 'current step';
+            }
+
+            return (
+              <ProgressStep key={index} variant={variant} isCurrent={index === currentStep} aria-label={ariaLabel}>
+                {step.title}
+              </ProgressStep>
+            );
+          })}
+        </ProgressStepper>
+      </StackItem>
+    </Stack>
+  );
+};
+```

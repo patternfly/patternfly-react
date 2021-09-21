@@ -57,6 +57,8 @@ export * from './PageDemo/PageDemo';
 export * from './PageDemo/PageManagedSidebarClosedDemo';
 export * from './PaginationDemo/PaginationDemo';
 export * from './PopoverDemo/PopoverDemo';
+export * from './ProgressDemo/ProgressDemo';
+export * from './ProgressStepperDemo/ProgressStepperDemo';
 export * from './RadioDemo/RadioDemo';
 export * from './SearchInputDemo/SearchInputDemo';
 export * from './SelectDemo/FilteringSelectDemo';
