@@ -18,7 +18,7 @@ interface DragDropProps {
   children?: React.ReactNode;
   /** Callback for drag event. Return true to allow drag, false to disallow. */
   onDrag?: (source: DraggableItemPosition) => boolean;
-  /** Callback for drag event. */
+  /** Callback on mouse move while dragging. */
   onDragMove?: (source: DraggableItemPosition, dest?: DraggableItemPosition) => void;
   /** Callback for drop event. Return true to allow drop, false to disallow. */
   onDrop?: (source: DraggableItemPosition, dest?: DraggableItemPosition) => boolean;

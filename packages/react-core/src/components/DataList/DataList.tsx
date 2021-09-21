@@ -27,7 +27,7 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
   className?: string;
   /** Adds accessible text to the DataList list */
   'aria-label': string;
-  /** @deprecated Optional callback to make DataList selectable, fired when DataListItem selected */
+  /** Optional callback to make DataList selectable, fired when DataListItem selected */
   onSelectDataListItem?: (id: string) => void;
   /** @deprecated Optional callback to make DataList draggable, fired when dragging ends */
   onDragFinish?: (newItemOrder: string[]) => void;
@@ -102,6 +102,15 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     draggingToItemIndex: null,
     dragging: false
   };
+
+  constructor(props: DataListProps) {
+    super(props);
+
+    if (props.onDragFinish || props.onDragStart || props.onDragMove || props.onDragCancel) {
+      // eslint-disable-next-line no-console
+      console.warn("DataList's onDrag API is deprecated. Use DragDrop instead.");
+    }
+  }
 
   componentDidUpdate(oldProps: DataListProps) {
     if (this.dragFinished) {

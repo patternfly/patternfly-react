@@ -11,7 +11,7 @@ interface DroppableProps extends React.HTMLProps<HTMLDivElement> {
   /** Id to be passed back on drop events */
   droppableId?: string;
   /** Don't wrap the component in a div. Requires passing a single child. */
-  noWrap?: boolean;
+  noWrapper?: boolean;
 }
 
 export const Droppable: React.FunctionComponent<DroppableProps> = ({
@@ -19,7 +19,7 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
   children,
   zone = 'defaultZone',
   droppableId = 'defaultId',
-  noWrap = false,
+  noWrapper = false,
   ...props
 }: DroppableProps) => {
   const childProps = {
@@ -31,7 +31,7 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
 
   return (
     <DroppableContext.Provider value={{ zone, droppableId }}>
-      {noWrap ? React.cloneElement(children as React.ReactElement, childProps) : <div>{children}</div>}
+      {noWrapper ? React.cloneElement(children as React.ReactElement, childProps) : <div>{children}</div>}
     </DroppableContext.Provider>
   );
 };
