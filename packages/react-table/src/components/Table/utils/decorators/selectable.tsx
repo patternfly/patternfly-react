@@ -50,7 +50,7 @@ export const selectable: ITransform = (
         disabled: true,
         className: checkStyles.checkInput
       }),
-    ...(isHeaderSelectDisabled && { disabled: true })
+    ...(!rowData && isHeaderSelectDisabled && { disabled: true })
   };
   let selectName = 'check-all';
   if (rowId !== -1 && selectVariant === RowSelectVariant.checkbox) {
