@@ -75,7 +75,7 @@ describe('Data Toolbar Demo Test', () => {
 
       it('displays filter chips', () => {
         cy.get('.pf-m-chip-group').should('be.visible');
-        cy.get('.pf-m-filters-applied-message').should('not.be.visible');
+        cy.get('.pf-m-filters-applied-message').should('not.exist');
         cy.get('.pf-c-toolbar__item .pf-c-button').should('be.visible');
         cy.get('.pf-c-toolbar__item .pf-c-chip-group__close').should('be.visible');
         cy.get('.pf-c-toolbar__item .pf-c-button').contains('Clear filters');
@@ -95,7 +95,7 @@ describe('Data Toolbar Demo Test', () => {
       });
 
       it('displays X filters applied message', () => {
-        cy.get('.pf-m-chip-container .pf-m-chip-group').should('not.be.visible');
+        cy.get('.pf-m-chip-container .pf-m-chip-group').should('not.exist');
         cy.get('.pf-c-toolbar__item').should('contain.text', 'filters applied');
         cy.get('.pf-c-toolbar__item .pf-c-button').should('be.visible');
         cy.get('.pf-c-toolbar__item .pf-c-chip-group__close').should('not.be.visible');
