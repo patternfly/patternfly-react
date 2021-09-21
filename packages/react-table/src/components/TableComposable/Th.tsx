@@ -93,7 +93,8 @@ const ThBase: React.FunctionComponent<ThProps> = ({
           extraParams: {
             onSelect: select?.onSelect,
             selectVariant: 'checkbox',
-            allRowsSelected: select.isSelected
+            allRowsSelected: select.isSelected,
+            isHeaderSelectDisabled: !!select.isHeaderSelectDisabled
           }
         }
       })

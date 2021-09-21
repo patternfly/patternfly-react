@@ -159,6 +159,8 @@ export interface ThSelectType {
   onSelect?: OnSelect;
   /** Whether the cell is selected */
   isSelected: boolean;
+  /** Flag indicating the select checkbox in the th is disabled */
+  isHeaderSelectDisabled?: boolean;
 }
 
 // Rows Types

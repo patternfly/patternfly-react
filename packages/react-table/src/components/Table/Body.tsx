@@ -58,8 +58,8 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
       rowProps: extendedRowProps,
       onClick: (event: React.MouseEvent) => {
         const computedData = {
-          isInput: (event.target as HTMLElement).tagName !== 'INPUT',
-          isButton: (event.target as HTMLElement).tagName !== 'BUTTON'
+          isInput: (event.target as HTMLElement).tagName === 'INPUT',
+          isButton: (event.target as HTMLElement).tagName === 'BUTTON'
         };
 
         onRowClick(event, row, rowProps, computedData);
@@ -67,11 +67,13 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
       onKeyDown: (event: React.KeyboardEvent) => {
         if (event.key === 'Enter' || event.key === ' ') {
           const computedData = {
-            isInput: (event.target as HTMLElement).tagName !== 'INPUT',
-            isButton: (event.target as HTMLElement).tagName !== 'BUTTON'
+            isInput: (event.target as HTMLElement).tagName === 'INPUT',
+            isButton: (event.target as HTMLElement).tagName === 'BUTTON'
           };
           onRowClick(event, row, rowProps, computedData);
-          event.preventDefault();
+          if (!computedData.isInput) {
+            event.preventDefault();
+          }
         }
       }
     };

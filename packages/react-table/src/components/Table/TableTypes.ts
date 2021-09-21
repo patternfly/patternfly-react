@@ -106,6 +106,7 @@ export interface IColumn {
     dropdownDirection?: DropdownDirection;
     actionsToggle?: (props: CustomActionsToggleProps) => React.ReactNode;
     allRowsSelected?: boolean;
+    isHeaderSelectDisabled?: boolean;
     onFavorite?: OnFavorite;
   };
 }
