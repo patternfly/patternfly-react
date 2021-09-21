@@ -35,7 +35,7 @@ export interface NavProps
   /** Indicates which theme color to use */
   theme?: 'dark' | 'light';
   /** For horizontal navs */
-  variant?: 'default' | 'horizontal' | 'tertiary' | 'horizontal-subnav' | 'subnav';
+  variant?: 'default' | 'horizontal' | 'tertiary' | 'horizontal-subnav';
 }
 
 export const NavContext = React.createContext<{
@@ -55,14 +55,9 @@ export const NavContext = React.createContext<{
   onToggle?: (event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) => void;
   updateIsScrollable?: (isScrollable: boolean) => void;
   isHorizontal?: boolean;
-  flyoutRef?: React.Ref<HTMLLIElement>;
-  setFlyoutRef?: (ref: React.Ref<HTMLLIElement>) => void;
 }>({});
 
-export class Nav extends React.Component<
-  NavProps,
-  { isScrollable: boolean; ouiaStateId: string; flyoutRef: React.Ref<HTMLLIElement> | null }
-> {
+export class Nav extends React.Component<NavProps, { isScrollable: boolean; ouiaStateId: string }> {
   static displayName = 'Nav';
   static defaultProps: NavProps = {
     onSelect: () => undefined,
@@ -73,8 +68,7 @@ export class Nav extends React.Component<
 
   state = {
     isScrollable: false,
-    ouiaStateId: getDefaultOUIAId(Nav.displayName, this.props.variant),
-    flyoutRef: null as React.Ref<HTMLLIElement>
+    ouiaStateId: getDefaultOUIAId(Nav.displayName, this.props.variant)
   };
 
   // Callback from NavItem
@@ -122,7 +116,6 @@ export class Nav extends React.Component<
       ...props
     } = this.props;
     const isHorizontal = ['horizontal', 'tertiary'].includes(variant);
-    const Component = variant === 'subnav' ? 'section' : 'nav';
 
     return (
       <NavContext.Provider
@@ -143,15 +136,12 @@ export class Nav extends React.Component<
           onToggle: (event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) =>
             this.onToggle(event, groupId, expanded),
           updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable }),
-          isHorizontal: ['horizontal', 'tertiary', 'horizontal-subnav'].includes(variant),
-          flyoutRef: this.state.flyoutRef,
-          setFlyoutRef: flyoutRef => this.setState({ flyoutRef })
+          isHorizontal: ['horizontal', 'tertiary', 'horizontal-subnav'].includes(variant)
         }}
       >
-        <Component
+        <nav
           className={css(
-            variant !== 'subnav' && styles.nav,
-            variant === 'subnav' && styles.navSubnav,
+            styles.nav,
             theme === 'light' && styles.modifiers.light,
             isHorizontal && styles.modifiers.horizontal,
             variant === 'tertiary' && styles.modifiers.tertiary,
@@ -164,7 +154,7 @@ export class Nav extends React.Component<
           {...props}
         >
           {children}
-        </Component>
+        </nav>
       </NavContext.Provider>
     );
   }

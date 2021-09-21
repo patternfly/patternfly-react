@@ -4,11 +4,9 @@ exports[`Nav should match snapshot (auto-generated) 1`] = `
 <ContextProvider
   value={
     Object {
-      "flyoutRef": null,
       "isHorizontal": false,
       "onSelect": [Function],
       "onToggle": [Function],
-      "setFlyoutRef": [Function],
       "updateIsScrollable": [Function],
     }
   }
