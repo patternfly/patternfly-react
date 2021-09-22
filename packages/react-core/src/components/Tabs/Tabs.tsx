@@ -64,7 +64,7 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
     xl?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
     '2xl'?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
   };
-    /** Enable expandable vertical tabs at various breakpoints. (isVertical should be set to true for this to work) */
+  /** Enable expandable vertical tabs at various breakpoints. (isVertical should be set to true for this to work) */
   expandable?: {
     default?: 'expandable' | 'nonExpandable';
     sm?: 'expandable' | 'nonExpandable';
@@ -356,7 +356,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           id={id && id}
           {...props}
         >
-        {expandable && isVertical && (
+          {expandable && isVertical && (
             <GenerateId>
               {randomId => (
                 <div className={css(styles.tabsToggle)}>
@@ -372,13 +372,13 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
                       <span className={css(styles.tabsToggleIcon)}>
                         <AngleRightIcon arian-hidden="true" />
                       </span>
-                       {toggleText && (
-                      <span className={css('pf-c-tabs__toggle-text')} id={`${randomId}-text`}>
-                        {toggleText}
-                      </span>
-                  )}
+                      {toggleText && (
+                        <span className={css('pf-c-tabs__toggle-text')} id={`${randomId}-text`}>
+                          {toggleText}
+                        </span>
+                      )}
                     </Button>
-                  </div> 
+                  </div>
                 </div>
               )}
             </GenerateId>
