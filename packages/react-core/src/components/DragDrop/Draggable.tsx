@@ -6,7 +6,7 @@ export interface DraggableProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside DragDrop */
   children?: React.ReactNode;
   /** Don't wrap the component in a div. Requires passing a single child. */
-  noWrapper?: boolean;
+  hasNoWrapper?: boolean;
   /** Class to add to outer div */
   className?: string;
 }
@@ -76,7 +76,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   className,
   children,
   style: styleProp = {},
-  noWrapper = false,
+  hasNoWrapper = false,
   ...props
 }: DraggableProps) => {
   /* eslint-disable prefer-const */
@@ -307,7 +307,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
           {children}
         </div>
       )}
-      {noWrapper ? React.cloneElement(children as React.ReactElement, childProps) : <div>{children}</div>}
+      {hasNoWrapper ? React.cloneElement(children as React.ReactElement, childProps) : <div>{children}</div>}
     </React.Fragment>
   );
 };
