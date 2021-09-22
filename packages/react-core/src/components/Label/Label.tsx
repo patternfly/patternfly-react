@@ -187,8 +187,9 @@ export const Label: React.FunctionComponent<LabelProps> = ({
             ref={editableDivRef}
             className={css(inlineEditStyles.inlineEditEditableText)}
             role="textbox"
-            {...(isEditableActive && { contentEditable: true })}
+            {...isEditableActive}
             suppressContentEditableWarning
+            contentEditable="true"
             {...editableProps}
           >
             {children}
