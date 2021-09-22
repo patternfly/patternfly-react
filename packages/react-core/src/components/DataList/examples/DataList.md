@@ -1195,10 +1195,10 @@ DraggableDataList = () => {
 
   return (
     <DragDrop onDrag={onDrag} onDragMove={onDragMove} onDrop={onDrop}>
-      <Droppable noWrapper>
+      <Droppable hasNoWrapper>
         <DataList aria-label="draggable data list example" isCompact>
           {items.map(({id, content}) =>
-            <Draggable key={id} noWrapper>
+            <Draggable key={id} hasNoWrapper>
               <DataListItem aria-labelledby={id} ref={React.createRef()}>
                 <DataListItemRow>
                   <DataListControl>
