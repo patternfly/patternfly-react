@@ -1164,6 +1164,7 @@ DraggableDataList = () => {
 
   function onDrag(source) {
     setLiveText(`Started dragging ${items[source.index].content}`);
+    // Return true to allow drag
     return true;
   }
 
