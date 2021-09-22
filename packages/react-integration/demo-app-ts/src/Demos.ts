@@ -96,11 +96,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.BreadcrumbDemo
   },
   {
-    id: 'bullseye-demo',
-    name: 'Bullseye Demo',
-    componentType: Examples.BullseyeDemo
-  },
-  {
     id: 'button-demo',
     name: 'Button Demo',
     componentType: Examples.ButtonDemo
@@ -109,11 +104,6 @@ export const Demos: DemoInterface[] = [
     id: 'card-demo',
     name: 'Card Demo',
     componentType: Examples.CardDemo
-  },
-  {
-    id: 'checkbox-demo',
-    name: 'Checkbox Demo',
-    componentType: Examples.CheckboxDemo
   },
   {
     id: 'chipgroup-demo',
