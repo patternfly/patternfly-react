@@ -31,7 +31,11 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
 
   return (
     <DroppableContext.Provider value={{ zone, droppableId }}>
-      {hasNoWrapper ? React.cloneElement(children as React.ReactElement, childProps) : <div>{children}</div>}
+      {hasNoWrapper ? (
+        React.cloneElement(children as React.ReactElement, childProps)
+      ) : (
+        <div {...childProps}>{children}</div>
+      )}
     </DroppableContext.Provider>
   );
 };
