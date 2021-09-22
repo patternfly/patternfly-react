@@ -6,7 +6,6 @@ exports[`NavItem should match snapshot (auto-generated) 1`] = `
   data-ouia-component-id="OUIA-Generated-NavItem-1"
   data-ouia-component-type="PF4/NavItem"
   data-ouia-safe={true}
-  onMouseOver={[Function]}
 >
   <ContextConsumer>
     <Component />

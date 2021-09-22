@@ -42,15 +42,15 @@ references:
   lint_cache_paths: &lint_cache_paths
   - .eslintcache
   js_deps_cache_key: &js_deps_cache_key
-    js-deps-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
+    js-deps-14-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   cypress_cache_key: &cypress_cache_key
-    cypress-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
+    cypress-14-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   webpack_cache_key: &webpack_cache_key
-    webpack-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
+    webpack-14-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   build_cache_key: &build_cache_key
-    build-cache-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
+    build-cache-14-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   lint_cache_key: &lint_cache_key
-    lint-cache-v{{.Environment.CACHE_VERSION}}-{{checksum "package.json"}}
+    lint-cache-14-v{{.Environment.CACHE_VERSION}}-{{checksum "package.json"}}
   attach_workspace: &attach_workspace
     attach_workspace:
       at: ~/project
@@ -89,7 +89,7 @@ workflows:
 jobs:
   build_pf4:
     docker:
-    - image: circleci/node:12
+    - image: circleci/node:14
     steps:
     - checkout
     - persist_to_workspace:
@@ -123,7 +123,7 @@ jobs:
         paths: *build_cache_paths
   test_jest_pf4:
     docker:
-    - image: circleci/node:12
+    - image: circleci/node:14
     steps:
     - *attach_workspace
     - restore_cache:
@@ -134,7 +134,7 @@ jobs:
         command: yarn test --maxWorkers=2
   build_demo_app:
     docker:
-    - image: circleci/node:12
+    - image: circleci/node:14
     steps:
     - *attach_workspace
     - restore_cache:
@@ -149,8 +149,8 @@ jobs:
           - packages/react-integration/demo-app-ts/public/
   test_integration:
     docker:
-    - image: circleci/node:12
-    parallelism: 3
+    - image: circleci/node:14
+    parallelism: 2
     steps:
     - *attach_workspace
     - restore_cache:
@@ -178,7 +178,7 @@ jobs:
         path: packages/react-integration/results
   lint_pf4:
     docker:
-    - image: circleci/node:12
+    - image: circleci/node:14
     steps:
     - *attach_workspace
     - restore_cache:
@@ -212,7 +212,7 @@ jobs:
         when: always
   build_docs_pf4:
     docker:
-    - image: circleci/node:12
+    - image: circleci/node:14
     steps:
     - *attach_workspace
     - restore_cache:
@@ -237,7 +237,7 @@ jobs:
         - packages/react-docs/src/generated
   test_a11y_pf4:
     docker:
-    - image: circleci/node:12-browsers
+    - image: circleci/node:14-browsers
     steps:
     - *attach_workspace
     - restore_cache:
@@ -256,7 +256,7 @@ jobs:
         when: always
   deploy_prerelease:
     docker:
-    - image: circleci/node:12
+    - image: circleci/node:14
     steps:
     - *attach_workspace
     - restore_cache:

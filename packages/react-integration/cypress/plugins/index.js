@@ -1,3 +1,4 @@
+// / <reference types="cypress" />
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
 //
@@ -10,15 +11,12 @@
 
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
-const webpack = require('@cypress/webpack-preprocessor');
 
-module.exports = on => {
-  const options = {
-    // send in the options from your webpack.config.js, so it works the same
-    // as your app's code
-    // eslint-disable-next-line global-require
-    webpackOptions: require('../../webpack.config')
-  };
-
-  on('file:preprocessor', webpack(options));
+/**
+ * @type {Cypress.PluginConfig}
+ */
+// eslint-disable-next-line no-unused-vars
+module.exports = (_on, _config) => {
+  // `on` is used to hook into various events Cypress emits
+  // `config` is the resolved Cypress config
 };
