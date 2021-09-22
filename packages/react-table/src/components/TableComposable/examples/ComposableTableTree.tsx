@@ -1,5 +1,8 @@
 import React from 'react';
-import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { TableComposable, Thead, Tr, Th, Tbody, Td, TreeRowWrapper } from '@patternfly/react-table';
+import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
+import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
+import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 
 interface RepositoriesTreeNode {
   name: string;
@@ -10,9 +13,8 @@ interface RepositoriesTreeNode {
 }
 
 // TODO see line 280 in ComposableTable.md
-
 // TODO remove this
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable */
 
 export const ComposableTableTree: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
@@ -82,6 +84,33 @@ export const ComposableTableTree: React.FunctionComponent = () => {
   const [expandedNodeNames, setExpandedNodeNames] = React.useState([]);
   const [expandedDetailsNodeNames, setExpandedDetailsNodeNames] = React.useState([]);
   const [selectedNodeNames, setSelectedNodeNames] = React.useState([]);
+
+  /** 
+      Recursive function which flattens the data into an array of flattened TreeRowWrapper components
+      params: 
+        - nodes - array of top-level tree nodes
+        - level - number representing how deeply nested the current row is
+        - posinset - position of the row relative to this row's siblings
+        - isHidden - defaults to false, true if this row's parent is expanded
+    */
+  const renderRows = (
+    nodes: RepositoriesTreeNode[],
+    level: number,
+    posinset: number,
+    isHidden = false
+  ): React.ReactNode[] =>
+    nodes.flatMap(node => {
+      const isExpanded = expandedNodeNames.includes(node.name);
+      const isDetailsExpanded = expandedDetailsNodeNames.includes(node.name);
+      const isSelected = selectedNodeNames.includes(node.name);
+      let icon = <LeafIcon />;
+      if (node.children) {
+        icon = isExpanded ? <FolderOpenIcon aria-hidden /> : <FolderIcon aria-hidden />;
+      }
+      const row = <TreeRowWrapper key={node.name}>{/* TODO */}</TreeRowWrapper>;
+      // TODO handle children
+      return null;
+    });
 
   return (
     <TableComposable aria-label="Tree table">
