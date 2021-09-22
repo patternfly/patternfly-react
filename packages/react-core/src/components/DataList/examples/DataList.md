@@ -1125,7 +1125,7 @@ import {
 
 ### Draggable
 
-Draggable data lists used to have their own HTML5 API based drag and drop. This was unable to fulfill requirements like custom styling on items as they are being dragged.
+Draggable data lists used to have their own HTML5-based API for drag and drop. This was unable to fulfill requirements like custom styling on items as they are being dragged.
 
 Since then we've written generic new `DragDrop`, `Draggable`, and `Droppable` components for this purpose. This should be used instead of the old deprecated (and buggy!) HTML5-based API.
 

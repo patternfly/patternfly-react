@@ -93,6 +93,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     wrapModifier: null
   };
   dragFinished: boolean = false;
+  html5DragDrop: boolean = false;
   arrayCopy: React.ReactElement[] = React.Children.toArray(this.props.children) as React.ReactElement[];
   ref = React.createRef<HTMLUListElement>();
 
@@ -106,7 +107,8 @@ export class DataList extends React.Component<DataListProps, DataListState> {
   constructor(props: DataListProps) {
     super(props);
 
-    if (props.onDragFinish || props.onDragStart || props.onDragMove || props.onDragCancel) {
+    this.html5DragDrop = Boolean(props.onDragFinish || props.onDragStart || props.onDragMove || props.onDragCancel);
+    if (this.html5DragDrop) {
       // eslint-disable-next-line no-console
       console.warn("DataList's onDrag API is deprecated. Use DragDrop instead.");
     }
@@ -251,13 +253,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
 
   handleDragButtonKeys = (evt: React.KeyboardEvent) => {
     const { dragging } = this.state;
-    if (
-      evt.key !== ' ' &&
-      evt.key !== 'Escape' &&
-      evt.key !== 'Enter' &&
-      evt.key !== 'ArrowUp' &&
-      evt.key !== 'ArrowDown'
-    ) {
+    if (![' ', 'Escape', 'Enter', 'ArrowUp', 'ArrowDown'].includes(evt.key) || !this.html5DragDrop) {
       if (dragging) {
         evt.preventDefault();
       }
@@ -317,13 +313,12 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     } = this.props;
     const { dragging } = this.state;
     const isSelectable = onSelectDataListItem !== undefined;
-    const isDraggable = onDragFinish !== undefined;
 
     const updateSelectedDataListItem = (id: string) => {
       onSelectDataListItem(id);
     };
 
-    const dragProps = isDraggable && {
+    const dragProps = this.html5DragDrop && {
       onDragOver: this.dragOver,
       onDrop: this.dragOver,
       onDragLeave: this.dragLeave
@@ -335,7 +330,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
           isSelectable,
           selectedDataListItemId,
           updateSelectedDataListItem,
-          isDraggable,
+          isDraggable: this.html5DragDrop,
           dragStart: this.dragStart,
           dragEnd: this.dragEnd,
           drop: this.drop,
