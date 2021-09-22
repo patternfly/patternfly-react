@@ -9,7 +9,9 @@ import { getUniqueId, isElementInView, formatBreakpointMods } from '../../helper
 import { TabContent } from './TabContent';
 import { TabProps } from './Tab';
 import { TabsContextProvider } from './TabsContext';
+import { Button } from '../Button';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId, canUseDOM } from '../../helpers';
+import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
 export enum TabsComponent {
   div = 'div',
@@ -62,6 +64,25 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
     xl?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
     '2xl'?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
   };
+    /** Enable expandable vertical tabs at various breakpoints. (isVertical should be set to true for this to work) */
+  expandable?: {
+    default?: 'expandable' | 'nonExpandable';
+    sm?: 'expandable' | 'nonExpandable';
+    md?: 'expandable' | 'nonExpandable';
+    lg?: 'expandable' | 'nonExpandable';
+    xl?: 'expandable' | 'nonExpandable';
+    '2xl'?: 'expandable' | 'nonExpandable';
+  };
+  /** Flag to indicate if the vertical tabs are expanded */
+  isExpanded?: boolean;
+  /** Flag indicating the default expanded state for uncontrolled expand/collapse of */
+  defaultIsExpanded?: boolean;
+  /** Text that appears in the expandable toggle */
+  toggleText?: string;
+  /** Aria-label for the left expandable toggle */
+  toggleAriaLabel?: string;
+  /** Callback function to toggle the expandable tabs. */
+  onToggle?: (isExpanded: boolean) => void;
 }
 
 const variantStyle = {
@@ -75,6 +96,7 @@ interface TabsState {
   disableRightScrollButton: boolean;
   shownKeys: (string | number)[];
   uncontrolledActiveKey: number | string;
+  uncontrolledIsExpandedLocal: boolean;
   ouiaStateId: string;
 }
 
@@ -89,8 +111,19 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       disableRightScrollButton: false,
       shownKeys: this.props.defaultActiveKey !== undefined ? [this.props.defaultActiveKey] : [this.props.activeKey], // only for mountOnEnter case
       uncontrolledActiveKey: this.props.defaultActiveKey,
+      uncontrolledIsExpandedLocal: this.props.defaultIsExpanded,
       ouiaStateId: getDefaultOUIAId(Tabs.displayName)
     };
+
+    if (this.props.isVertical && this.props.expandable !== undefined) {
+      if (!this.props.toggleAriaLabel && !this.props.toggleText) {
+        // eslint-disable-next-line no-console
+        console.error(
+          'Tabs:',
+          'toggleAriaLabel or the toggleText prop is required to make the toggle button accessible'
+        );
+      }
+    }
   }
 
   static defaultProps: PickOptional<TabsProps> = {
@@ -106,7 +139,9 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     mountOnEnter: false,
     unmountOnExit: false,
     ouiaSafe: true,
-    variant: 'default'
+    variant: 'default',
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    onToggle: (isExpanded): void => undefined
   };
 
   handleTabClick(
@@ -256,6 +291,12 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       usePageInsets,
       inset,
       variant,
+      expandable,
+      isExpanded,
+      defaultIsExpanded,
+      toggleText,
+      toggleAriaLabel,
+      onToggle,
       ...props
     } = this.props;
     const {
@@ -263,7 +304,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       disableLeftScrollButton,
       disableRightScrollButton,
       shownKeys,
-      uncontrolledActiveKey
+      uncontrolledActiveKey,
+      uncontrolledIsExpandedLocal
     } = this.state;
     const filteredChildren = (React.Children.toArray(children) as React.ReactElement<TabProps>[])
       .filter(Boolean)
@@ -272,6 +314,16 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     const uniqueId = id || getUniqueId();
     const Component: any = component === TabsComponent.nav ? 'nav' : 'div';
     const localActiveKey = defaultActiveKey !== undefined ? uncontrolledActiveKey : activeKey;
+
+    const isExpandedLocal = defaultIsExpanded !== undefined ? uncontrolledIsExpandedLocal : isExpanded;
+    /*  Uncontrolled expandable tabs */
+    const toggleTabs = (newValue: boolean) => {
+      if (isExpanded === undefined) {
+        this.setState({ uncontrolledIsExpandedLocal: newValue });
+      } else {
+        onToggle(newValue);
+      }
+    };
 
     return (
       <TabsContextProvider
@@ -291,6 +343,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             isFilled && styles.modifiers.fill,
             isSecondary && styles.modifiers.secondary,
             isVertical && styles.modifiers.vertical,
+            isVertical && expandable && formatBreakpointMods(expandable, styles),
+            isVertical && expandable && isExpandedLocal && styles.modifiers.expanded,
             isBox && styles.modifiers.box,
             showScrollButtons && !isVertical && styles.modifiers.scrollable,
             usePageInsets && styles.modifiers.pageInsets,
@@ -302,6 +356,33 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           id={id && id}
           {...props}
         >
+        {expandable && isVertical && (
+            <GenerateId>
+              {randomId => (
+                <div className={css(styles.tabsToggle)}>
+                  <div className={css(styles.tabsToggleButton)}>
+                    <Button
+                      onClick={() => toggleTabs(!isExpandedLocal)}
+                      variant="plain"
+                      aria-label={toggleAriaLabel}
+                      aria-expanded={isExpandedLocal}
+                      id={`${randomId}-button`}
+                      aria-labelledby={`${randomId}-text ${randomId}-button`}
+                    >
+                      <span className={css(styles.tabsToggleIcon)}>
+                        <AngleRightIcon arian-hidden="true" />
+                      </span>
+                       {toggleText && (
+                      <span className={css('pf-c-tabs__toggle-text')} id={`${randomId}-text`}>
+                        {toggleText}
+                      </span>
+                  )}
+                    </Button>
+                  </div> 
+                </div>
+              )}
+            </GenerateId>
+          )}
           <button
             className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
             aria-label={leftScrollAriaLabel}
