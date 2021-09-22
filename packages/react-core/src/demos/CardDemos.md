@@ -8,13 +8,9 @@ import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-ic
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import { CheckCircleIcon, ExclamationCircleIcon, ExclamationTriangleIcon, TimesCircleIcon, BellIcon } from '@patternfly/react-icons';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
-<<<<<<< HEAD
-=======
 import lineChart1 from './images/img_line-chart-1.png';
 import stackChart from './images/img_chart-stack.png';
 import thresholdChart from './images/img_chart-threshold.png';
-
-> > > > > > > docs(Card): add utilization card demos
 
 ## Demos
 
