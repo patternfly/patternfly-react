@@ -61,26 +61,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ApplicationLauncherFavoritesDemo
   },
   {
-    id: 'area-chart-color-demo',
-    name: 'Area Chart Color with Bottom Legend Demo',
-    componentType: Examples.ColorAreaBottomLegendDemo
-  },
-  {
-    id: 'area-chart-cyan-demo',
-    name: 'Area Chart Cyan Demo',
-    componentType: Examples.CyanAreaDemo
-  },
-  {
-    id: 'sparkline-chart-demo',
-    name: 'Area Sparkline Chart Demo',
-    componentType: Examples.SparklineDemo
-  },
-  {
-    id: 'stacked-area-chart-demo',
-    name: 'Area Stacked Chart Demo',
-    componentType: Examples.StackedAreaDemo
-  },
-  {
     id: 'back-to-top-demo',
     name: 'Back To Top Demo',
     componentType: Examples.BackToTopDemo
@@ -104,21 +84,6 @@ export const Demos: DemoInterface[] = [
     id: 'banner-demo',
     name: 'Banner Demo',
     componentType: Examples.BannerDemo
-  },
-  {
-    id: 'purple-bar-grouped-demo',
-    name: 'Bar Chart Grouped Purple Demo',
-    componentType: Examples.PurpleBarGroupedDemo
-  },
-  {
-    id: 'color-bar-zoom-demo',
-    name: 'Bar Chart Multi-color, horizontal with Zoom and Bottom-aligned Legend Demo',
-    componentType: Examples.ColorBarZoomDemo
-  },
-  {
-    id: 'bar-chart-simple-demo',
-    name: 'Bar Chart Simple Demo',
-    componentType: Examples.SimpleBarDemo
   },
   {
     id: 'brand-demo',
@@ -234,112 +199,6 @@ export const Demos: DemoInterface[] = [
     id: 'divider-inset-demo',
     name: 'Divider Inset Demo',
     componentType: Examples.DividerInsetDemo
-  },
-  {
-    id: 'donut-chart-bottom-legend-demo',
-    name: 'Donut Chart with Bottom Aligned Legend Demo',
-    componentType: Examples.DonutBottomAlignedLegendDemo
-  },
-  {
-    id: 'donut-chart-small-bottom-legend-demo',
-    name: 'Donut Chart Small with Bottom Aligned Legend Demo',
-    componentType: Examples.DonutSmallBottomAlignedLegend
-  },
-  {
-    id: 'donut-chart-small-demo',
-    name: 'Donut Chart Small Demo',
-    componentType: Examples.DonutSmallDemo
-  },
-  {
-    id: 'donut-chart-small-right-legend-demo',
-    name: 'Donut Chart Small with Right Aligned Legend Demo',
-    componentType: Examples.DonutSmallRightAlignedLegendDemo
-  },
-  {
-    id: 'donut-chart-right-legend-color-demo',
-    name: 'Donut Chart Multi-colored with Right Aligned Legend Demo',
-    componentType: Examples.DonutRightAlignedLegendColorDemo
-  },
-  {
-    id: 'donut-chart-right-legend-demo',
-    name: 'Donut Chart with Right Aligned Legend Demo',
-    componentType: Examples.DonutRightAlignedLegendDemo
-  },
-  {
-    id: 'donut-utilization-green-static-right-demo',
-    name: 'Donut Utilization Green Static Right Demo',
-    componentType: Examples.DonutUtilizationGreenStaticRightDemo
-  },
-  {
-    id: 'donut-utilization-inverted-right-demo',
-    name: 'Donut Utilization Inverted Right Demo',
-    componentType: Examples.DonutUtilizationInvertedRightDemo
-  },
-  {
-    id: 'donut-utilization-simple-bottom-demo',
-    name: 'Donut Utilization Simple Chart, Bottom-aligned Legend Demo',
-    componentType: Examples.DonutUtilizationSimpleBottomDemo
-  },
-  {
-    id: 'donut-utilization-simple-demo',
-    name: 'Donut Utilization Simple Chart Demo',
-    componentType: Examples.DonutUtilizationSimpleDemo
-  },
-
-  {
-    id: 'donut-utilization-simple-right-demo',
-    name: 'Donut Utilization Simple Right Demo',
-    componentType: Examples.DonutUtilizationSimpleRightDemo
-  },
-  {
-    id: 'donut-utilization-simple-right-green-demo',
-    name: 'Donut Utilization Simple Right Green Demo',
-    componentType: Examples.DonutUtilizationSimpleRightGreenDemo
-  },
-  {
-    id: 'donut-utilization-sm-demo',
-    name: 'Donut Utilization Small Demo',
-    componentType: Examples.DonutUtilizationSmallDemo
-  },
-  {
-    id: 'donut-utilization-sm-right-demo',
-    name: 'Donut Utilization Small Right Demo',
-    componentType: Examples.DonutUtilizationSmallRightDemo
-  },
-  {
-    id: 'donut-utilization-sm-static-bottom-demo',
-    name: 'Donut Utilization Small Static Bottom Demo',
-    componentType: Examples.DonutUtilizationSmallStaticBottomDemo
-  },
-  {
-    id: 'donut-utilization-sm-static-demo',
-    name: 'Donut Utilization Small Static Demo',
-    componentType: Examples.DonutUtilizationSmallStaticDemo
-  },
-  {
-    id: 'donut-utilization-sm-static-right-demo',
-    name: 'Donut Utilization Small Static Right Demo',
-    componentType: Examples.DonutUtilizationSmallStaticRightDemo
-  },
-  {
-    id: 'donut-utilization-static-bottom-demo',
-    name: 'Donut Utilization Static Bottom Demo',
-    componentType: Examples.DonutUtilizationStaticBottomDemo
-  },
-  {
-    id: 'donut-utilization-static-demo',
-    name: 'Donut Utilization Static Demo',
-    componentType: Examples.DonutUtilizationStaticDemo
-  },
-  {
-    id: 'donut-utilization-static-inverted-right-demo',
-    name: 'Donut Utilization Static Inverted Right Demo',
-    componentType: Examples.DonutUtilizationStaticInvertedRightDemo
-  },
-  {
-    id: 'donut-utilization-static-right-demo',
-    name: 'Donut Utilization Static Right Demo',
-    componentType: Examples.DonutUtilizationStaticRightDemo
   },
   {
     id: 'drawer-demo',
@@ -477,21 +336,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.LevelDemo
   },
   {
-    id: 'line-chart-green-demo',
-    name: 'Line Chart Green Demo',
-    componentType: Examples.LineChartGreenDemo
-  },
-  {
-    id: 'line-chart-color-demo',
-    name: 'Line Chart Multi-color Demo',
-    componentType: Examples.LineChartColorDemo
-  },
-  {
-    id: 'line-chart-simple-demo',
-    name: 'Line Chart Simple Demo',
-    componentType: Examples.LineChartSimpleDemo
-  },
-  {
     id: 'list-demo',
     name: 'List Demo',
     componentType: Examples.ListDemo
@@ -597,21 +441,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.PaginationDemo
   },
   {
-    id: 'pie-blue-demo',
-    name: 'Pie Chart Blue Demo',
-    componentType: Examples.PieBlueDemo
-  },
-  {
-    id: 'pie-color-demo',
-    name: 'Pie Chart Multi-color Demo',
-    componentType: Examples.PieColorDemo
-  },
-  {
-    id: 'pie-orange-demo',
-    name: 'Pie Chart Orange Demo',
-    componentType: Examples.PieOrangeDemo
-  },
-  {
     id: 'popover-demo',
     name: 'Popover Demo',
     componentType: Examples.PopoverDemo
@@ -685,26 +514,6 @@ export const Demos: DemoInterface[] = [
     id: 'split-demo',
     name: 'Split Demo',
     componentType: Examples.SplitDemo
-  },
-  {
-    id: 'stack-demo',
-    name: 'Stack Demo',
-    componentType: Examples.StackDemo
-  },
-  {
-    id: 'stack-blue-demo',
-    name: 'Stack Chart Blue Demo',
-    componentType: Examples.StackBlueDemo
-  },
-  {
-    id: 'stack-gold-bottom-legend-demo',
-    name: 'Stack Chart Gold with Bottom Legend Demo',
-    componentType: Examples.StackGoldBottomLegendDemo
-  },
-  {
-    id: 'stack-color-zoom-demo',
-    name: 'Stack Chart Color Demo',
-    componentType: Examples.StackColorZoomDemo
   },
   {
     id: 'switch-demo',
