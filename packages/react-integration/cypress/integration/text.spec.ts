@@ -1,8 +1,6 @@
 describe('Text Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#text-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/text-demo-nav-link');
+    cy.visit('http://localhost:3000/text-demo-nav-link');
   });
 
   it('Verify header text and text content', () => {

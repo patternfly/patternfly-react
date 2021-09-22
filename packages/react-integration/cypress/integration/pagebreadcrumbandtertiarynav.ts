@@ -1,8 +1,6 @@
 describe('Page Breadcrumb and Nav Demo Test', () => {
   it('Navigate to page section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#page-breadcrumb-and-tertiary-nav-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/page-breadcrumb-and-tertiary-nav-demo-nav-link');
+    cy.visit('http://localhost:3000/page-breadcrumb-and-tertiary-nav-demo-nav-link');
   });
 
   it('Test Page elements', () => {

@@ -1,8 +1,6 @@
 describe('Form Horizontal Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#form-horizontal-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/form-horizontal-demo-nav-link');
+    cy.visit('http://localhost:3000/form-horizontal-demo-nav-link');
   });
 
   it('Verify form is horizontal content', () => {

@@ -1,8 +1,6 @@
 describe('Tab Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#tabs-inset-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/tabs-inset-demo-nav-link');
+    cy.visit('http://localhost:3000/tabs-inset-demo-nav-link');
   });
 
   it('Verify no inset applied for all viewport sizes ', () => {

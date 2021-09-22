@@ -1,8 +1,6 @@
 describe('Description List Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#description-list-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/description-list-demo-nav-link');
+    cy.visit('http://localhost:3000/description-list-demo-nav-link');
   });
 
   it('Verify default list and group', () => {

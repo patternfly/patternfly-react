@@ -1,8 +1,6 @@
 describe('Table Compact Expandable Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#table-compact-expandable-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/table-compact-expandable-demo-nav-link');
+    cy.visit('http://localhost:3000/table-compact-expandable-demo-nav-link');
   });
 
   it('Verify table string', () => {

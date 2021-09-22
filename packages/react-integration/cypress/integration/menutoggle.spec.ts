@@ -1,8 +1,6 @@
 describe('MenuToggle Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#menu-toggle-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/menu-toggle-demo-nav-link');
+    cy.visit('http://localhost:3000/menu-toggle-demo-nav-link');
   });
 
   it('Verify basic', () => {

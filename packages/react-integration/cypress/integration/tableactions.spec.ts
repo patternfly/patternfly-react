@@ -1,8 +1,6 @@
 describe('Table Actions Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#table-actions-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/table-actions-demo-nav-link');
+    cy.visit('http://localhost:3000/table-actions-demo-nav-link');
   });
 
   it('Verify table string', () => {

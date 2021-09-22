@@ -1,8 +1,6 @@
 describe('Tooltip Demo Test', () => {
   it('Navigate to tooltip section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#tooltip-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/tooltip-demo-nav-link');
+    cy.visit('http://localhost:3000/tooltip-demo-nav-link');
   });
 
   it('Display Tooltip', () => {

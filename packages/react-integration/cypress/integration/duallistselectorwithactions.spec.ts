@@ -1,8 +1,6 @@
 describe('Dual List Selector With Actions Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#dual-list-selector-with-actions-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/dual-list-selector-with-actions-demo-nav-link');
+    cy.visit('http://localhost:3000/dual-list-selector-with-actions-demo-nav-link');
   });
 
   it('Verify existence', () => {

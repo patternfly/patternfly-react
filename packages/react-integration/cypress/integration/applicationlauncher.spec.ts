@@ -1,8 +1,6 @@
 describe('Application Launcher Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#application-launcher-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/application-launcher-demo-nav-link');
+    cy.visit('http://localhost:3000/application-launcher-demo-nav-link');
   });
 
   it('Verify application launcher button', () => {
@@ -26,9 +24,7 @@ describe('Application Launcher Demo Test', () => {
 
 describe('Application Launcher Favorites Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#application-launcher-favorites-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/application-launcher-favorites-demo-nav-link');
+    cy.visit('http://localhost:3000/application-launcher-favorites-demo-nav-link');
   });
 
   it('Verify application launcher button', () => {

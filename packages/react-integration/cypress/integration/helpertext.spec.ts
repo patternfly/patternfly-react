@@ -1,8 +1,6 @@
 describe('Hint Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#helper-text-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/helper-text-demo-nav-link');
+    cy.visit('http://localhost:3000/helper-text-demo-nav-link');
   });
 
   it('Verify default helper text', () => {

@@ -1,8 +1,6 @@
 describe('Notification Drawer Basic Demo Test', () => {
   it('Navigate to the notification drawer basic demo', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#notification-drawer-basic-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/notification-drawer-basic-demo-nav-link');
+    cy.visit('http://localhost:3000/notification-drawer-basic-demo-nav-link');
   });
 
   it('Verify svg width and height', () => {

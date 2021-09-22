@@ -1,8 +1,6 @@
 describe('Label Group Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#labelgroup-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/labelgroup-demo-nav-link');
+    cy.visit('http://localhost:3000/labelgroup-demo-nav-link');
   });
 
   it('Verify label default content', () => {

@@ -1,8 +1,6 @@
 describe('Wizard Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#wizard-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/wizard-demo-nav-link');
+    cy.visit('http://localhost:3000/wizard-demo-nav-link');
   });
 
   it('Verify wizard in modal launches in a dialog and has a custom width', () => {

@@ -1,8 +1,6 @@
 describe('Notification Badge Demo Test', () => {
   it('Navigate to notificatoin badge demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#notification-badge-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/notification-badge-demo-nav-link');
+    cy.visit('http://localhost:3000/notification-badge-demo-nav-link');
   });
 
   it('Verify notification badge is unread', () => {

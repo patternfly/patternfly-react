@@ -1,8 +1,6 @@
 describe('Flex Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#flex-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/flex-demo-nav-link');
+    cy.visit('http://localhost:3000/flex-demo-nav-link');
   });
   it('Verify flex', () => {
     cy.get('.pf-c-page__main-section')

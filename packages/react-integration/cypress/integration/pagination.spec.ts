@@ -1,8 +1,6 @@
 describe('Pagination Demo Test', () => {
   it('Navigate to Pagination section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#pagination-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/pagination-demo-nav-link');
+    cy.visit('http://localhost:3000/pagination-demo-nav-link');
   });
 
   it('should be disabled when flag is present', () => {

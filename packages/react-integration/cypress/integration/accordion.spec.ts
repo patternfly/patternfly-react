@@ -1,8 +1,6 @@
 describe('Accordion Demo Test', () => {
   it('Navigate to Accordion section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#accordion-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/accordion-demo-nav-link');
+    cy.visit('http://localhost:3000/accordion-demo-nav-link');
   });
 
   it('Verify initial state', () => {

@@ -1,8 +1,6 @@
 describe('Data List Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#data-list-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/data-list-demo-nav-link');
+    cy.visit('http://localhost:3000/data-list-demo-nav-link');
   });
 
   it('Verify rows selectable', () => {
@@ -24,9 +22,7 @@ describe('Data List Demo Test', () => {
 
 describe('Data List Draggable Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#data-list-draggable-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/data-list-draggable-demo-nav-link');
+    cy.visit('http://localhost:3000/data-list-draggable-demo-nav-link');
   });
 
   it('Verify drag', () => {

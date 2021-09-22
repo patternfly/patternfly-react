@@ -1,8 +1,6 @@
 describe('Select Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#select-view-more-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/select-view-more-demo-nav-link');
+    cy.visit('http://localhost:3000/select-view-more-demo-nav-link');
   });
 
   it('Verify Select with view more button', () => {

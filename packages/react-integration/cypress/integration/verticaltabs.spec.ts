@@ -1,8 +1,6 @@
 describe('VerticalTabs Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#vertical-tabs-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/vertical-tabs-demo-nav-link');
+    cy.visit('http://localhost:3000/vertical-tabs-demo-nav-link');
   });
 
   // Component is designed to preventDefault on <a/> clicks, desired behavior

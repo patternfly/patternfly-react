@@ -1,8 +1,6 @@
 describe('Modal Test', () => {
   it('Navigate to Modal section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#modal-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/modal-demo-nav-link');
+    cy.visit('http://localhost:3000/modal-demo-nav-link');
   });
 
   it('Verify Default Modal', () => {
