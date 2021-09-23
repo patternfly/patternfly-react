@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableComposable, Thead, Tr, Th, Tbody, Td, TreeRowWrapper } from '@patternfly/react-table';
+import { TableComposable, Thead, Tr, Th, Tbody, Td, TreeRowWrapper, TdProps } from '@patternfly/react-table';
 import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
@@ -11,10 +11,6 @@ interface RepositoriesTreeNode {
   workspaces: string;
   children?: RepositoriesTreeNode[];
 }
-
-// TODO see line 280 in ComposableTable.md
-// TODO remove this
-/* eslint-disable */
 
 export const ComposableTableTree: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
@@ -85,32 +81,96 @@ export const ComposableTableTree: React.FunctionComponent = () => {
   const [expandedDetailsNodeNames, setExpandedDetailsNodeNames] = React.useState([]);
   const [selectedNodeNames, setSelectedNodeNames] = React.useState([]);
 
-  /** 
-      Recursive function which flattens the data into an array of flattened TreeRowWrapper components
-      params: 
-        - nodes - array of top-level tree nodes
-        - level - number representing how deeply nested the current row is
-        - posinset - position of the row relative to this row's siblings
-        - isHidden - defaults to false, true if this row's parent is expanded
-    */
-  const renderRows = (
-    nodes: RepositoriesTreeNode[],
-    level: number,
-    posinset: number,
-    isHidden = false
-  ): React.ReactNode[] =>
-    nodes.flatMap(node => {
-      const isExpanded = expandedNodeNames.includes(node.name);
-      const isDetailsExpanded = expandedDetailsNodeNames.includes(node.name);
-      const isSelected = selectedNodeNames.includes(node.name);
-      let icon = <LeafIcon />;
-      if (node.children) {
-        icon = isExpanded ? <FolderOpenIcon aria-hidden /> : <FolderIcon aria-hidden />;
-      }
-      const row = <TreeRowWrapper key={node.name}>{/* TODO */}</TreeRowWrapper>;
-      // TODO handle children
+  const getDescendants = (node: RepositoriesTreeNode): RepositoriesTreeNode[] => [
+    node,
+    ...(node.children?.flatMap(getDescendants) || [])
+  ];
+  const areAllDescendantsSelected = (node: RepositoriesTreeNode) =>
+    getDescendants(node).every(n => selectedNodeNames.includes(n.name));
+  const areSomeDescendantsSelected = (node: RepositoriesTreeNode) =>
+    getDescendants(node).some(n => selectedNodeNames.includes(n.name));
+
+  const isNodeChecked = (node: RepositoriesTreeNode) => {
+    if (areAllDescendantsSelected(node)) {
+      return true;
+    }
+    if (areSomeDescendantsSelected(node)) {
       return null;
-    });
+    }
+    return false;
+  };
+
+  /** 
+    Recursive function which flattens the data into an array of flattened TreeRowWrapper components
+    params: 
+      - nodes - array of a single level of tree nodes
+      - level - number representing how deeply nested the current row is
+      - posinset - position of the row relative to this row's siblings
+      - isHidden - defaults to false, true if this row's parent is expanded
+      - currentRowIndex - position of the row relative to the entire table
+  */
+  const renderRows = (
+    [node, ...remainingNodes]: RepositoriesTreeNode[],
+    level = 1,
+    posinset = 1,
+    rowIndex = 0,
+    isHidden = false
+  ): React.ReactNode[] => {
+    if (!node) {
+      return [];
+    }
+    const isExpanded = expandedNodeNames.includes(node.name);
+    const isDetailsExpanded = expandedDetailsNodeNames.includes(node.name);
+    const isChecked = isNodeChecked(node);
+    let icon = <LeafIcon />;
+    if (node.children) {
+      icon = isExpanded ? <FolderOpenIcon aria-hidden /> : <FolderIcon aria-hidden />;
+    }
+
+    const treeRow: TdProps['treeRow'] = {
+      onCollapse: () =>
+        setExpandedNodeNames(prevExpanded => {
+          const otherExpandedNodeNames = prevExpanded.filter(n => n !== node.name);
+          return isExpanded ? otherExpandedNodeNames : [...otherExpandedNodeNames, node.name];
+        }),
+      onToggleRowDetails: () =>
+        setExpandedDetailsNodeNames(prevDetailsExpanded => {
+          const otherDetailsExpandedNodeNames = prevDetailsExpanded.filter(n => n !== node.name);
+          return isDetailsExpanded ? otherDetailsExpandedNodeNames : [...otherDetailsExpandedNodeNames, node.name];
+        }),
+      onCheckChange: (_event, isChecking) => {
+        const nodeNamesToCheck = getDescendants(node).map(n => n.name);
+        setSelectedNodeNames(prevSelected => {
+          const otherSelectedNodeNames = prevSelected.filter(n => !nodeNamesToCheck.includes(n.name));
+          return !isChecking ? otherSelectedNodeNames : [...otherSelectedNodeNames, ...nodeNamesToCheck];
+        });
+      },
+      rowIndex,
+      props: {
+        isExpanded,
+        isDetailsExpanded,
+        isHidden,
+        'aria-level': level,
+        'aria-posinset': posinset,
+        'aria-setsize': node.children ? node.children.length : 0,
+        isChecked,
+        icon
+      }
+    };
+
+    return [
+      <TreeRowWrapper key={node.name} row={{ props: treeRow.props }}>
+        <Td dataLabel="Repositories" treeRow={treeRow}>
+          {node.name}
+        </Td>
+        <Td dataLabel="Branches">{node.branches}</Td>
+        <Td dataLabel="Pull Requests">{node.pullRequests}</Td>
+        <Td dataLabel="Workspaces">{node.workspaces}</Td>
+      </TreeRowWrapper>,
+      ...(node.children?.length ? renderRows(node.children, level + 1, 1, rowIndex + 1, !isExpanded || isHidden) : []),
+      ...renderRows(remainingNodes, level, posinset + 1, rowIndex + 1 + (node.children?.length || 0), isHidden)
+    ];
+  };
 
   return (
     <TableComposable aria-label="Tree table">
@@ -123,17 +183,7 @@ export const ComposableTableTree: React.FunctionComponent = () => {
           <Th>Last commit</Th>
         </Tr>
       </Thead>
-      <Tbody>
-        {[].map(repo => (
-          <Tr key={repo.name}>
-            <Td dataLabel="Repositories">{repo.name}</Td>
-            <Td dataLabel="Branches">{repo.branches}</Td>
-            <Td dataLabel="Pull requests">{repo.prs}</Td>
-            <Td dataLabel="Workspaces">{repo.workspaces}</Td>
-            <Td dataLabel="Last commit">{repo.lastCommit}</Td>
-          </Tr>
-        ))}
-      </Tbody>
+      <Tbody>{renderRows(data)}</Tbody>
     </TableComposable>
   );
 };
