@@ -81,10 +81,8 @@ export const ComposableTableTree: React.FunctionComponent = () => {
   const [expandedDetailsNodeNames, setExpandedDetailsNodeNames] = React.useState([]);
   const [selectedNodeNames, setSelectedNodeNames] = React.useState([]);
 
-  const getDescendants = (node: RepositoriesTreeNode): RepositoriesTreeNode[] => [
-    node,
-    ...(node.children?.flatMap(getDescendants) || [])
-  ];
+  const getDescendants = (node: RepositoriesTreeNode): RepositoriesTreeNode[] =>
+    [node].concat(...(node.children ? node.children.map(getDescendants) : []));
   const areAllDescendantsSelected = (node: RepositoriesTreeNode) =>
     getDescendants(node).every(n => selectedNodeNames.includes(n.name));
   const areSomeDescendantsSelected = (node: RepositoriesTreeNode) =>
@@ -167,8 +165,16 @@ export const ComposableTableTree: React.FunctionComponent = () => {
         <Td dataLabel="Pull Requests">{node.pullRequests}</Td>
         <Td dataLabel="Workspaces">{node.workspaces}</Td>
       </TreeRowWrapper>,
-      ...(node.children?.length ? renderRows(node.children, level + 1, 1, rowIndex + 1, !isExpanded || isHidden) : []),
-      ...renderRows(remainingNodes, level, posinset + 1, rowIndex + 1 + (node.children?.length || 0), isHidden)
+      ...(node.children && node.children.length
+        ? renderRows(node.children, level + 1, 1, rowIndex + 1, !isExpanded || isHidden)
+        : []),
+      ...renderRows(
+        remainingNodes,
+        level,
+        posinset + 1,
+        rowIndex + 1 + ((node.children && node.children.length) || 0),
+        isHidden
+      )
     ];
   };
 
