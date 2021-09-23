@@ -4,27 +4,27 @@ describe('Select Test', () => {
   });
 
   it('Verify Select with view more button', () => {
+    cy.clock();
     cy.get('#view-more-select').click();
     cy.get('.pf-c-select__menu').contains('View more');
     cy.get('.pf-m-load').should('exist');
     cy.get('button.pf-c-select__menu-item.pf-m-load').click();
     cy.get('.pf-m-loading').should('exist');
-    cy.wait(16000).then(() => {
-      cy.get('.pf-m-load').should('exist');
-      cy.get('.pf-m-loading').should('not.exist');
-    });
+    cy.tick(16000);
+    cy.get('.pf-m-load').should('exist');
+    cy.get('.pf-m-loading').should('not.exist');
     cy.get('#view-more-select').click();
   });
 
   it('Verify Select with view more button checkboxes', () => {
+    cy.clock();
     cy.get('#view-more-select-check').click();
     cy.get('.pf-c-select__menu').contains('View more');
     cy.get('.pf-m-load').should('exist');
     cy.get('button.pf-c-select__menu-item.pf-m-load').click();
     cy.get('.pf-m-loading').should('exist');
-    cy.wait(16000).then(() => {
-      cy.get('.pf-m-load').should('exist');
-      cy.get('.pf-m-loading').should('not.exist');
-    });
+    cy.tick(16000);
+    cy.get('.pf-m-load').should('exist');
+    cy.get('.pf-m-loading').should('not.exist');
   });
 });
