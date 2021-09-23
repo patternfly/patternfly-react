@@ -77,9 +77,9 @@ export const ComposableTableTree: React.FunctionComponent = () => {
     }
   ];
 
-  const [expandedNodeNames, setExpandedNodeNames] = React.useState([]);
-  const [expandedDetailsNodeNames, setExpandedDetailsNodeNames] = React.useState([]);
-  const [selectedNodeNames, setSelectedNodeNames] = React.useState([]);
+  const [expandedNodeNames, setExpandedNodeNames] = React.useState<string[]>(['Repositories one']);
+  const [expandedDetailsNodeNames, setExpandedDetailsNodeNames] = React.useState<string[]>([]);
+  const [selectedNodeNames, setSelectedNodeNames] = React.useState<string[]>([]);
 
   const getDescendants = (node: RepositoriesTreeNode): RepositoriesTreeNode[] =>
     [node].concat(...(node.children ? node.children.map(getDescendants) : []));
@@ -128,18 +128,18 @@ export const ComposableTableTree: React.FunctionComponent = () => {
     const treeRow: TdProps['treeRow'] = {
       onCollapse: () =>
         setExpandedNodeNames(prevExpanded => {
-          const otherExpandedNodeNames = prevExpanded.filter(n => n !== node.name);
+          const otherExpandedNodeNames = prevExpanded.filter(name => name !== node.name);
           return isExpanded ? otherExpandedNodeNames : [...otherExpandedNodeNames, node.name];
         }),
       onToggleRowDetails: () =>
         setExpandedDetailsNodeNames(prevDetailsExpanded => {
-          const otherDetailsExpandedNodeNames = prevDetailsExpanded.filter(n => n !== node.name);
+          const otherDetailsExpandedNodeNames = prevDetailsExpanded.filter(name => name !== node.name);
           return isDetailsExpanded ? otherDetailsExpandedNodeNames : [...otherDetailsExpandedNodeNames, node.name];
         }),
       onCheckChange: (_event, isChecking) => {
         const nodeNamesToCheck = getDescendants(node).map(n => n.name);
         setSelectedNodeNames(prevSelected => {
-          const otherSelectedNodeNames = prevSelected.filter(n => !nodeNamesToCheck.includes(n.name));
+          const otherSelectedNodeNames = prevSelected.filter(name => !nodeNamesToCheck.includes(name));
           return !isChecking ? otherSelectedNodeNames : [...otherSelectedNodeNames, ...nodeNamesToCheck];
         });
       },
@@ -179,14 +179,13 @@ export const ComposableTableTree: React.FunctionComponent = () => {
   };
 
   return (
-    <TableComposable aria-label="Tree table">
+    <TableComposable isTreeTable aria-label="Tree table">
       <Thead>
         <Tr>
           <Th>Repositories</Th>
           <Th>Branches</Th>
           <Th>Pull requests</Th>
           <Th>Workspaces</Th>
-          <Th>Last commit</Th>
         </Tr>
       </Thead>
       <Tbody>{renderRows(data)}</Tbody>
