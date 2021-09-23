@@ -1092,7 +1092,6 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
                           data-ouia-component-id="OUIA-Generated-NavItem-6"
                           data-ouia-component-type="PF4/NavItem"
                           data-ouia-safe={true}
-                          onMouseOver={[Function]}
                         >
                           <a
                             aria-current="page"
@@ -1112,7 +1111,6 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
                           data-ouia-component-id="OUIA-Generated-NavItem-7"
                           data-ouia-component-type="PF4/NavItem"
                           data-ouia-safe={true}
-                          onMouseOver={[Function]}
                         >
                           <a
                             aria-current={null}
@@ -1132,7 +1130,6 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
                           data-ouia-component-id="OUIA-Generated-NavItem-8"
                           data-ouia-component-type="PF4/NavItem"
                           data-ouia-safe={true}
-                          onMouseOver={[Function]}
                         >
                           <a
                             aria-current={null}
@@ -1152,7 +1149,6 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
                           data-ouia-component-id="OUIA-Generated-NavItem-9"
                           data-ouia-component-type="PF4/NavItem"
                           data-ouia-safe={true}
-                          onMouseOver={[Function]}
                         >
                           <a
                             aria-current={null}
@@ -1172,7 +1168,6 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
                           data-ouia-component-id="OUIA-Generated-NavItem-10"
                           data-ouia-component-type="PF4/NavItem"
                           data-ouia-safe={true}
-                          onMouseOver={[Function]}
                         >
                           <a
                             aria-current={null}
@@ -1486,7 +1481,6 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
                         data-ouia-component-id="OUIA-Generated-NavItem-11"
                         data-ouia-component-type="PF4/NavItem"
                         data-ouia-safe={true}
-                        onMouseOver={[Function]}
                       >
                         <a
                           aria-current="page"
@@ -1506,7 +1500,6 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
                         data-ouia-component-id="OUIA-Generated-NavItem-12"
                         data-ouia-component-type="PF4/NavItem"
                         data-ouia-safe={true}
-                        onMouseOver={[Function]}
                       >
                         <a
                           aria-current={null}
@@ -1526,7 +1519,6 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
                         data-ouia-component-id="OUIA-Generated-NavItem-13"
                         data-ouia-component-type="PF4/NavItem"
                         data-ouia-safe={true}
-                        onMouseOver={[Function]}
                       >
                         <a
                           aria-current={null}
@@ -1546,7 +1538,6 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
                         data-ouia-component-id="OUIA-Generated-NavItem-14"
                         data-ouia-component-type="PF4/NavItem"
                         data-ouia-safe={true}
-                        onMouseOver={[Function]}
                       >
                         <a
                           aria-current={null}
@@ -1566,7 +1557,6 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
                         data-ouia-component-id="OUIA-Generated-NavItem-15"
                         data-ouia-component-type="PF4/NavItem"
                         data-ouia-safe={true}
-                        onMouseOver={[Function]}
                       >
                         <a
                           aria-current={null}
@@ -1966,7 +1956,6 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
                       data-ouia-component-id="OUIA-Generated-NavItem-1"
                       data-ouia-component-type="PF4/NavItem"
                       data-ouia-safe={true}
-                      onMouseOver={[Function]}
                     >
                       <a
                         aria-current="page"
@@ -1986,7 +1975,6 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
                       data-ouia-component-id="OUIA-Generated-NavItem-2"
                       data-ouia-component-type="PF4/NavItem"
                       data-ouia-safe={true}
-                      onMouseOver={[Function]}
                     >
                       <a
                         aria-current={null}
@@ -2006,7 +1994,6 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
                       data-ouia-component-id="OUIA-Generated-NavItem-3"
                       data-ouia-component-type="PF4/NavItem"
                       data-ouia-safe={true}
-                      onMouseOver={[Function]}
                     >
                       <a
                         aria-current={null}
@@ -2026,7 +2013,6 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
                       data-ouia-component-id="OUIA-Generated-NavItem-4"
                       data-ouia-component-type="PF4/NavItem"
                       data-ouia-safe={true}
-                      onMouseOver={[Function]}
                     >
                       <a
                         aria-current={null}
@@ -2046,7 +2032,6 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
                       data-ouia-component-id="OUIA-Generated-NavItem-5"
                       data-ouia-component-type="PF4/NavItem"
                       data-ouia-safe={true}
-                      onMouseOver={[Function]}
                     >
                       <a
                         aria-current={null}

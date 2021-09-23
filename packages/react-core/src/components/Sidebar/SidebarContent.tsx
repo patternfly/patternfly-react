@@ -4,6 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Sidebar/sidebar';
 
 export interface SidebarContentProps extends React.HTMLProps<HTMLDivElement> {
   children: React.ReactNode;
+  /** Removes the background color. */
   hasNoBackground?: boolean;
 }
 

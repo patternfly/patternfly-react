@@ -3,6 +3,7 @@ id: Sidebar
 beta: true
 cssPrefix: pf-c-sidebar
 section: components
+propComponents: ['Sidebar', 'SidebarContent', 'SidebarPanel']
 ---
 
 ## Examples
@@ -27,7 +28,7 @@ import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
 import React from 'react';
 import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
 
-<Sidebar variant="stack">
+<Sidebar orientation="stack">
   <SidebarPanel>
     Sidebar panel stacked on top
   </SidebarPanel>
@@ -43,7 +44,7 @@ import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
 import React from 'react';
 import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
 
-<Sidebar variant="panelRight" hasGutter>
+<Sidebar isPanelRight hasGutter>
   <SidebarPanel>
     Sidebar panel on the right
   </SidebarPanel>

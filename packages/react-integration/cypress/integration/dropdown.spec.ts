@@ -5,14 +5,6 @@ describe('Dropdown Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/dropdown-demo-nav-link');
   });
 
-  it('Verify toggle dropdown', () => {
-    cy.get('#dropdown > button').should('have.class', 'pf-c-dropdown__toggle');
-  });
-
-  it('Verify badge toggle dropdown', () => {
-    cy.get('#badge-dropdown span').should('have.class', 'pf-c-badge');
-  });
-
   // Accessibility Tests:
   // Mouse click opens panel
   it('Verify dropdown menu expanded', () => {
@@ -33,23 +25,6 @@ describe('Dropdown Demo Test', () => {
     menu.should('have.class', 'pf-m-align-left-on-2xl');
     cy.get('#toggle-id').click();
     cy.get('#dropdown').should('not.have.class', 'pf-m-expanded');
-  });
-
-  it('Verify dropdown menu items disabled', () => {
-    // Links are disabled
-    cy.get('#dropdown > button').click();
-    cy.get('#disabled-link > a').click();
-    cy.url().should('eq', 'http://localhost:3000/dropdown-demo-nav-link'); // shouldn't have navigated anywhere
-    cy.get('#disabled-link > a').type('{enter}');
-    cy.url().should('eq', 'http://localhost:3000/dropdown-demo-nav-link'); // shouldn't have navigated anywhere
-    // Buttons are disabled
-    cy.get('#disabled-button > button')
-      .click()
-      .should('have.text', 'Disabled Action0');
-    cy.get('#disabled-button > button')
-      .type('{enter}')
-      .should('have.text', 'Disabled Action0');
-    cy.get('#dropdown > button').click();
   });
 
   // When toggle is collapsed:
@@ -133,37 +108,6 @@ describe('Dropdown Demo Test', () => {
       .last()
       .should('not.have.class', 'pf-m-expanded');
     cy.focused().contains('Dropdown');
-  });
-
-  it('Arrow down places focus on next enabled menu item', () => {
-    cy.get('.pf-c-dropdown__menu-item')
-      .first()
-      .trigger('keydown', { keyCode: 40 });
-    cy.focused().contains('Action');
-    // except if focus is on the last enabled menu item, then places focus on the first enabled menu item
-    cy.get('.pf-c-dropdown__menu-item')
-      .last()
-      .trigger('keydown', { keyCode: 40 });
-    cy.focused().contains('Link');
-  });
-
-  it('Arrow up places focus on previous enabled menu item', () => {
-    cy.get('.pf-c-dropdown__menu-item')
-      .last()
-      .trigger('keydown', { keyCode: 38 });
-    cy.focused().contains('Separated Link');
-    // except if focus is on the last enabled menu item, then places focus on the first enabled menu item
-    cy.get('.pf-c-dropdown__menu-item')
-      .first()
-      .trigger('keydown', { keyCode: 38 });
-    cy.focused().contains('Separated Action');
-  });
-
-  // Needs to be last because of redirect
-  it('Verify menu selection/link works', () => {
-    cy.get('.pf-c-dropdown__menu-item')
-      .first()
-      .should('have.attr', 'href', 'https://www.google.com');
   });
 });
 
@@ -281,30 +225,6 @@ describe('Action Dropdown Demo Test', () => {
       .last()
       .should('not.have.class', 'pf-m-expanded');
   });
-
-  it('Arrow down places focus on next enabled menu item', () => {
-    cy.get('.pf-c-dropdown__menu-item')
-      .first()
-      .trigger('keydown', { keyCode: 40 });
-    cy.focused().contains('Disabled action');
-    // except if focus is on the last enabled menu item, then places focus on the first enabled menu item
-    cy.get('.pf-c-dropdown__menu-item')
-      .last()
-      .trigger('keydown', { keyCode: 40 });
-    cy.focused().contains('Action');
-  });
-
-  it('Arrow up places focus on previous enabled menu item', () => {
-    cy.get('.pf-c-dropdown__menu-item')
-      .last()
-      .trigger('keydown', { keyCode: 38 });
-    cy.focused().contains('Disabled action');
-    // except if focus is on the last enabled menu item, then places focus on the first enabled menu item
-    cy.get('.pf-c-dropdown__menu-item')
-      .first()
-      .trigger('keydown', { keyCode: 38 });
-    cy.focused().contains('Other action');
-  });
 });
 
 describe('Cog Dropdown Demo Test', () => {
@@ -421,30 +341,6 @@ describe('Cog Dropdown Demo Test', () => {
       .last()
       .should('not.have.class', 'pf-m-expanded');
   });
-
-  it('Arrow down places focus on next enabled menu item', () => {
-    cy.get('.pf-c-dropdown__menu-item')
-      .first()
-      .trigger('keydown', { keyCode: 40 });
-    cy.focused().contains('Disabled action');
-    // except if focus is on the last enabled menu item, then places focus on the first enabled menu item
-    cy.get('.pf-c-dropdown__menu-item')
-      .last()
-      .trigger('keydown', { keyCode: 40 });
-    cy.focused().contains('Action');
-  });
-
-  it('Arrow up places focus on previous enabled menu item', () => {
-    cy.get('.pf-c-dropdown__menu-item')
-      .last()
-      .trigger('keydown', { keyCode: 38 });
-    cy.focused().contains('Disabled action');
-    // except if focus is on the last enabled menu item, then places focus on the first enabled menu item
-    cy.get('.pf-c-dropdown__menu-item')
-      .first()
-      .trigger('keydown', { keyCode: 38 });
-    cy.focused().contains('Other action');
-  });
 });
 
 describe('Dropdown with menu on document body demo test', () => {
@@ -557,36 +453,5 @@ describe('Dropdown with menu on document body demo test', () => {
       .last()
       .should('not.have.class', 'pf-m-expanded');
     cy.focused().contains('Dropdown');
-  });
-
-  it('Arrow down places focus on next enabled menu item', () => {
-    cy.get('.pf-c-dropdown__menu-item')
-      .first()
-      .trigger('keydown', { keyCode: 40 });
-    cy.focused().contains('Action');
-    // except if focus is on the last enabled menu item, then places focus on the first enabled menu item
-    cy.get('.pf-c-dropdown__menu-item')
-      .last()
-      .trigger('keydown', { keyCode: 40 });
-    cy.focused().contains('Link');
-  });
-
-  it('Arrow up places focus on previous enabled menu item', () => {
-    cy.get('.pf-c-dropdown__menu-item')
-      .last()
-      .trigger('keydown', { keyCode: 38 });
-    cy.focused().contains('Separated Link');
-    // except if focus is on the last enabled menu item, then places focus on the first enabled menu item
-    cy.get('.pf-c-dropdown__menu-item')
-      .first()
-      .trigger('keydown', { keyCode: 38 });
-    cy.focused().contains('Separated Action');
-  });
-
-  // Needs to be last because of redirect
-  it('Verify menu selection/link works', () => {
-    cy.get('.pf-c-dropdown__menu-item')
-      .first()
-      .should('have.attr', 'href', 'https://www.google.com');
   });
 });

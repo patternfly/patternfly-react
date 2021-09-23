@@ -12,8 +12,8 @@ describe('OverflowMenu Demo Test', () => {
       });
 
       it('displays OverflowMenuContent', () => {
-        cy.get('#simple-overflow-menu .pf-c-overflow-menu__content').should('be.visible');
-        cy.get('#simple-overflow-menu .pf-c-overflow-menu__control').should('not.be.visible');
+        cy.get('#simple-overflow-menu .pf-c-overflow-menu__content').should('exist');
+        cy.get('#simple-overflow-menu .pf-c-overflow-menu__control').should('not.exist');
       });
     });
 
@@ -23,8 +23,8 @@ describe('OverflowMenu Demo Test', () => {
       });
 
       it('displays OverflowMenuControl', () => {
-        cy.get('#simple-overflow-menu .pf-c-overflow-menu__control').should('be.visible');
-        cy.get('#simple-overflow-menu .pf-c-overflow-menu__content').should('not.be.visible');
+        cy.get('#simple-overflow-menu .pf-c-overflow-menu__control').should('exist');
+        cy.get('#simple-overflow-menu .pf-c-overflow-menu__content').should('not.exist');
       });
 
       it('Verify toggle dropdown', () => {
@@ -63,8 +63,8 @@ describe('OverflowMenu Demo Test', () => {
       });
 
       it('displays OverflowMenuControl', () => {
-        cy.get('#additional-options-overflow-menu .pf-c-overflow-menu__control').should('be.visible');
-        cy.get('#additional-options-overflow-menu .pf-c-overflow-menu__content').should('not.be.visible');
+        cy.get('#additional-options-overflow-menu .pf-c-overflow-menu__control').should('exist');
+        cy.get('#additional-options-overflow-menu .pf-c-overflow-menu__content').should('not.exist');
       });
 
       it('Verify toggle dropdown', () => {

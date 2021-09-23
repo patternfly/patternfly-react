@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.157.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.157.4...@patternfly/react-core@4.157.5) (2021-09-22)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.157.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.157.3...@patternfly/react-core@4.157.4) (2021-09-20)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.157.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.157.2...@patternfly/react-core@4.157.3) (2021-09-18)
+
+
+### Bug Fixes
+
+* **Nav:** Hide flyout example and props ([#6329](https://github.com/patternfly/patternfly-react/issues/6329)) ([e83e4e7](https://github.com/patternfly/patternfly-react/commit/e83e4e783023bb876457677c9627e9e25eed95d6))
+
+
+
+
+
+## [4.157.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.157.1...@patternfly/react-core@4.157.2) (2021-09-16)
+
+
+### Bug Fixes
+
+* **nav:** flyout onMouseOver logic ([#6325](https://github.com/patternfly/patternfly-react/issues/6325)) ([2157b73](https://github.com/patternfly/patternfly-react/commit/2157b73d6953add7a67772c8fc3f86d822f8a5a3))
+
+
+
+
+
 ## [4.157.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.157.0...@patternfly/react-core@4.157.1) (2021-09-14)
 
 

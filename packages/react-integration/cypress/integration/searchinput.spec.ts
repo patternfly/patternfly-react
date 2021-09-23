@@ -101,7 +101,7 @@ describe('Search Input Demo Test', () => {
     cy.get('#enabled-search .pf-c-form__actions button')
       .eq(0)
       .click();
-    cy.get('#enabled-search .pf-c-search-input__menu').should('not.be.visible');
+    cy.get('#enabled-search .pf-c-search-input__menu').should('not.exist');
     cy.get('#enabled-search .pf-c-search-input__text-input').should('have.value', 'username:test');
   });
 });

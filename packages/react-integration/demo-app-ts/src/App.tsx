@@ -33,23 +33,6 @@ class App extends React.Component<{}, AppState> {
     this.setState({ activeItem: selectedItem.itemId });
   };
 
-  private getNav = () => {
-    const { activeItem } = this.state;
-    return (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav">
-        <NavList>
-          {Demos.map((demo, index) => (
-            <NavItem itemId={index} isActive={activeItem === index} key={demo.id}>
-              <Link id={`${demo.id}-nav-item-link`} to={`/${demo.id}-nav-link`}>
-                {demo.name}
-              </Link>
-            </NavItem>
-          ))}
-        </NavList>
-      </Nav>
-    );
-  };
-
   private getPages = () => (
     <React.Fragment>
       {Demos.map(demo => (
@@ -70,7 +53,7 @@ class App extends React.Component<{}, AppState> {
   private getSkipToContentLink = () => <SkipToContent href={`#${this.pageId}`}>Skip to Content</SkipToContent>;
 
   render() {
-    const { isNavOpen } = this.state;
+    const { isNavOpen, activeItem } = this.state;
 
     const AppToolbar = (
       <PageHeaderTools>
@@ -88,7 +71,21 @@ class App extends React.Component<{}, AppState> {
       />
     );
 
-    const AppSidebar = <PageSidebar isNavOpen={isNavOpen} nav={this.getNav()} />;
+    const nav = (
+      <Nav onSelect={this.onNavSelect} aria-label="Nav">
+        <NavList>
+          {Demos.map((demo, index) => (
+            <NavItem itemId={index} isActive={activeItem === index} key={demo.id}>
+              <Link id={`${demo.id}-nav-item-link`} to={`/${demo.id}-nav-link`}>
+                {demo.name}
+              </Link>
+            </NavItem>
+          ))}
+        </NavList>
+      </Nav>
+    );
+
+    const AppSidebar = <PageSidebar isNavOpen={isNavOpen} nav={nav} />;
 
     return (
       <Router>
