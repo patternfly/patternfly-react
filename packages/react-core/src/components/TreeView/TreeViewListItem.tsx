@@ -186,10 +186,10 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
               )}
               onClick={(evt: React.MouseEvent) => {
                 if (!hasCheck) {
-                  if (children) {
+                  onSelect && onSelect(evt, itemData, parentItem);
+                  if (children && evt.isDefaultPrevented() !== true) {
                     setIsExpanded(!internalIsExpanded);
                   }
-                  onSelect && onSelect(evt, itemData, parentItem);
                 }
               }}
               {...(!children && { role: 'treeitem' })}
