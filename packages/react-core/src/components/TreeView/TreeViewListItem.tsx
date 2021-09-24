@@ -23,7 +23,7 @@ export interface TreeViewListItemProps {
   defaultExpanded?: boolean;
   /** Child nodes of a tree view item */
   children?: React.ReactNode;
-  /** Callback for item selection */
+  /** Callback for item selection. Note: calling event.preventDefault() will prevent the node from toggling. */
   onSelect?: (event: React.MouseEvent, item: TreeViewDataItem, parent: TreeViewDataItem) => void;
   /** Callback for item checkbox selection */
   onCheck?: (event: React.ChangeEvent, item: TreeViewDataItem, parent: TreeViewDataItem) => void;
