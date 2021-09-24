@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.122.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.122.1...@patternfly/react-integration@4.122.2) (2021-09-24)
+
+
+### Bug Fixes
+
+* **dragdrop:** remove React.createPortal, add noWrap ([#6328](https://github.com/patternfly/patternfly-react/issues/6328)) ([425f9f2](https://github.com/patternfly/patternfly-react/commit/425f9f2f8b2c0281349f7e689f9f83f547af1c5c))
+
+
+
+
+
 ## [4.122.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.122.0...@patternfly/react-integration@4.122.1) (2021-09-22)
 
 **Note:** Version bump only for package @patternfly/react-integration
