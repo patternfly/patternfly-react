@@ -29,13 +29,13 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
   'aria-label': string;
   /** Optional callback to make DataList selectable, fired when DataListItem selected */
   onSelectDataListItem?: (id: string) => void;
-  /** Optional callback to make DataList draggable, fired when dragging ends */
+  /** @deprecated Optional callback to make DataList draggable, fired when dragging ends */
   onDragFinish?: (newItemOrder: string[]) => void;
-  /** Optional informational callback for dragging, fired when dragging starts */
+  /** @deprecated Optional informational callback for dragging, fired when dragging starts */
   onDragStart?: (id: string) => void;
-  /** Optional informational callback for dragging, fired when an item moves */
+  /** @deprecated Optional informational callback for dragging, fired when an item moves */
   onDragMove?: (oldIndex: number, newIndex: number) => void;
-  /** Optional informational callback for dragging, fired when dragging is cancelled */
+  /** @deprecated Optional informational callback for dragging, fired when dragging is cancelled */
   onDragCancel?: () => void;
   /** Id of DataList item currently selected */
   selectedDataListItemId?: string;
@@ -45,7 +45,7 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
   gridBreakpoint?: 'none' | 'always' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   /** Determines which wrapping modifier to apply to the DataList */
   wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
-  /** Order of items in a draggable DataList */
+  /** @deprecated Order of items in a draggable DataList */
   itemOrder?: string[];
 }
 
@@ -93,6 +93,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     wrapModifier: null
   };
   dragFinished: boolean = false;
+  html5DragDrop: boolean = false;
   arrayCopy: React.ReactElement[] = React.Children.toArray(this.props.children) as React.ReactElement[];
   ref = React.createRef<HTMLUListElement>();
 
@@ -102,6 +103,16 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     draggingToItemIndex: null,
     dragging: false
   };
+
+  constructor(props: DataListProps) {
+    super(props);
+
+    this.html5DragDrop = Boolean(props.onDragFinish || props.onDragStart || props.onDragMove || props.onDragCancel);
+    if (this.html5DragDrop) {
+      // eslint-disable-next-line no-console
+      console.warn("DataList's onDrag API is deprecated. Use DragDrop instead.");
+    }
+  }
 
   componentDidUpdate(oldProps: DataListProps) {
     if (this.dragFinished) {
@@ -242,13 +253,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
 
   handleDragButtonKeys = (evt: React.KeyboardEvent) => {
     const { dragging } = this.state;
-    if (
-      evt.key !== ' ' &&
-      evt.key !== 'Escape' &&
-      evt.key !== 'Enter' &&
-      evt.key !== 'ArrowUp' &&
-      evt.key !== 'ArrowDown'
-    ) {
+    if (![' ', 'Escape', 'Enter', 'ArrowUp', 'ArrowDown'].includes(evt.key) || !this.html5DragDrop) {
       if (dragging) {
         evt.preventDefault();
       }
@@ -308,13 +313,12 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     } = this.props;
     const { dragging } = this.state;
     const isSelectable = onSelectDataListItem !== undefined;
-    const isDraggable = onDragFinish !== undefined;
 
     const updateSelectedDataListItem = (id: string) => {
       onSelectDataListItem(id);
     };
 
-    const dragProps = isDraggable && {
+    const dragProps = this.html5DragDrop && {
       onDragOver: this.dragOver,
       onDrop: this.dragOver,
       onDragLeave: this.dragLeave
@@ -326,7 +330,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
           isSelectable,
           selectedDataListItemId,
           updateSelectedDataListItem,
-          isDraggable,
+          isDraggable: this.html5DragDrop,
           dragStart: this.dragStart,
           dragEnd: this.dragEnd,
           drop: this.drop,

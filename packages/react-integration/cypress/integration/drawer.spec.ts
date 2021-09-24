@@ -45,6 +45,6 @@ describe('Drawer Demo Test', () => {
 
   it('Verify that focus gets sent to drawer', () => {
     cy.get('#toggleButton').click();
-    setTimeout(() => cy.focused().contains('drawer-panel'), 1000);
+    cy.wrap(() => cy.focused().contains('drawer-panel'), { timeout: 1000 });
   });
 });
