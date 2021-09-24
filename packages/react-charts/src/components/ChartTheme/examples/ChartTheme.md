@@ -16,6 +16,7 @@ import {
   ChartStack,
   ChartThemeColor,
   ChartThemeVariant,
+  ChartThreshold,
   ChartTooltip,
   ChartVoronoiContainer,
   getCustomTheme
@@ -201,9 +202,9 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
 </div>
 ```
 
-### Custom colors
+### Custom color scale
 
-This demonstrates an alternate way of applying custom colors to individual charts.
+This demonstrates an alternate way of applying a custom color scale and fill colors to individual charts.
 
 ```js
 import React from 'react';
@@ -299,6 +300,85 @@ import chart_color_purple_300 from '@patternfly/react-tokens/dist/esm/chart_colo
         labelComponent={<ChartTooltip constrainToVisibleArea />}
       />
     </ChartStack>
+  </Chart>
+</div>
+```
+
+### Custom stroke color
+
+This demonstrates an alternate way of applying custom stroke and fill colors to a threshold chart.
+
+```js
+import React from 'react';
+import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartThreshold, ChartVoronoiContainer } from '@patternfly/react-charts';
+import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
+
+<div style={{ height: '275px', width: '450px' }}>
+  <Chart
+    ariaDesc="Average number of pets"
+    ariaTitle="Line chart example"
+    containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+    legendData={[
+      { name: 'Cats' },
+      { name: 'Birds' },
+      { name: 'Mice' },
+      { name: 'Cats Threshold', symbol: { fill: chart_color_blue_300.value, type: 'threshold' }}
+    ]}
+    legendPosition="bottom"
+    height={275}
+    maxDomain={{y: 10}}
+    minDomain={{y: 0}}
+    padding={{
+      bottom: 75, // Adjusted to accommodate legend
+      left: 50,
+      right: 50,
+      top: 50
+    }}
+    themeColor={ChartThemeColor.multiUnordered}
+    width={450}
+  >
+    <ChartAxis tickValues={[2, 3, 4]} />
+    <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+    <ChartGroup>
+      <ChartLine
+        data={[
+          { name: 'Cats', x: '2015', y: 1 },
+          { name: 'Cats', x: '2016', y: 2 },
+          { name: 'Cats', x: '2017', y: 5 },
+          { name: 'Cats', x: '2018', y: 3 }
+        ]}
+      />
+      <ChartLine
+        data={[
+          { name: 'Birds', x: '2015', y: 3 },
+          { name: 'Birds', x: '2016', y: 4 },
+          { name: 'Birds', x: '2017', y: 9 },
+          { name: 'Birds', x: '2018', y: 5 }
+        ]}
+      />
+      <ChartLine
+        data={[
+          { name: 'Mice', x: '2015', y: 3 },
+          { name: 'Mice', x: '2016', y: 3 },
+          { name: 'Mice', x: '2017', y: 8 },
+          { name: 'Mice', x: '2018', y: 7 }
+        ]}
+      />
+      <ChartThreshold
+        data={[
+          { name: 'Cats Threshold', x: '2015', y: 5 },
+          { name: 'Cats Threshold', x: '2016', y: 5 },
+          { name: 'Cats Threshold', x: '2016', y: 6 },
+          { name: 'Cats Threshold', x: '2017', y: 6 },
+          { name: 'Cats Threshold', x: '2018', y: 6 }
+        ]}
+        style={{
+          data: {
+            stroke: chart_color_blue_300.value,
+          }
+        }}
+      />
+    </ChartGroup>
   </Chart>
 </div>
 ```
