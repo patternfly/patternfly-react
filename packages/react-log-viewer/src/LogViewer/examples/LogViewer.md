@@ -140,17 +140,24 @@ import { LogViewer, LogViewerContext } from '@patternfly/react-log-viewer';
 import { Button } from '@patternfly/react-core';
 
 FooterComponentLogViewer = () => {
+  const logViewerRef = React.useRef();
   const FooterButton = () => {
-    const { scrollToBottom } = React.useContext(LogViewerContext);
     const handleClick = e => {
-      scrollToBottom();
+      logViewerRef.current.scrollToBottom();
     };
     return <Button onClick={handleClick}>Jump to the bottom</Button>;
   };
 
   return (
     <React.Fragment>
-      <LogViewer hasLineNumbers={false} height={300} data={data.data} theme="dark" footer={<FooterButton />} />
+      <LogViewer
+        ref={logViewerRef}
+        hasLineNumbers={false}
+        height={300}
+        data={data.data}
+        theme="dark"
+        footer={<FooterButton />}
+      />
     </React.Fragment>
   );
 };

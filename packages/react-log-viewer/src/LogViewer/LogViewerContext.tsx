@@ -2,10 +2,9 @@ import { createContext, useContext } from 'react';
 
 export const useLogViewerContext = () => useContext(LogViewerContext);
 
-export interface LogViewerContextInterface {
+interface LogViewerContextInterface {
   parsedData: string[];
   searchedInput: string;
-  scrollToBottom: () => void;
 }
 
 export const LogViewerContext = createContext<LogViewerContextInterface | null>(null);

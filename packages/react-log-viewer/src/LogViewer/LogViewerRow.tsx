@@ -5,19 +5,18 @@ import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer
 import { LogViewerContext } from './LogViewerContext';
 
 interface LogViewerRowProps {
-  index?: number;
+  index: number;
   style?: React.CSSProperties;
-  data?: {
+  data: {
     parsedData: string[] | null;
     rowInFocus: number;
     searchedWordIndexes: number[];
     highlightedRowIndexes: number[];
     setHighlightedRowIndexes: (indexes: number[]) => void;
   };
-  innerRef?: React.Ref<any>;
 }
 
-const LogViewerRowBase: React.FunctionComponent<LogViewerRowProps> = memo(({ index, style, data, innerRef }) => {
+export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ index, style, data }) => {
   const { parsedData, highlightedRowIndexes, searchedWordIndexes, setHighlightedRowIndexes, rowInFocus } = data;
   const [clickCounter, setClickCounter] = useState(0);
   const [isHiglighted, setIsHiglighted] = useState(false);
@@ -85,23 +84,16 @@ const LogViewerRowBase: React.FunctionComponent<LogViewerRowProps> = memo(({ ind
   };
 
   return (
-    <div
-      key={index}
-      ref={innerRef}
-      style={style}
-      className={css(styles.logViewerListItem)}
-      onClick={() => handleHighlightRow()}
-    >
+    <div style={style} className={css(styles.logViewerListItem)} onClick={() => handleHighlightRow()}>
       <span className={css(styles.logViewerIndex)}>{getRowIndex(index)}</span>
-      <span className={css(styles.logViewerText)} onClick={() => handleHighlightRow()}>
+      <span
+        style={{ whiteSpace: 'break-spaces' }}
+        className={css(styles.logViewerText)}
+        onClick={() => handleHighlightRow()}
+      >
         {getFormattedData()}
       </span>
     </div>
   );
 });
-
-export const LogViewerRow = React.forwardRef((props: LogViewerRowProps, ref: React.Ref<HTMLButtonElement>) => (
-  <LogViewerRowBase {...props} innerRef={ref} />
-));
-
 LogViewerRow.displayName = 'LogViewerRow';

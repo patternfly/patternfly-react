@@ -4,7 +4,7 @@ beta: true
 section: extensions
 ---
 
-import { LogViewer, LogViewerSearch, LogViewerContext } from '@patternfly/react-log-viewer';
+import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
 import {
 Badge,
 Button,
@@ -32,7 +32,7 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 ```js
 import React from 'react';
 import { data } from './realTestData';
-import { LogViewer, LogViewerSearch, LogViewerContext } from '@patternfly/react-log-viewer';
+import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
 import {
   Badge,
   Button,
@@ -69,6 +69,7 @@ ComplexToolbarLogViewer = () => {
   const [selectedData, setSelectedData] = React.useState(data[dataSources[selectedDataSource].id].split('\n'));
   const [buffer, setBuffer] = React.useState([]);
   const [linesBehind, setLinesBehind] = React.useState(0);
+  const logViewerRef = React.useRef();
 
   React.useEffect(() => {
     setTimer(
@@ -93,6 +94,9 @@ ComplexToolbarLogViewer = () => {
     if (!isPaused && buffer.length > 0) {
       setCurrentItemCount(buffer.length);
       setRenderData(buffer.join('\n'));
+      if (logViewerRef && logViewerRef.current) {
+        logViewerRef.current.scrollToBottom();
+      }
     } else if (buffer.length !== currentItemCount) {
       setLinesBehind(buffer.length - currentItemCount);
     } else {
@@ -167,14 +171,10 @@ ComplexToolbarLogViewer = () => {
   );
 
   const ControlButton = () => {
-    const { scrollToBottom } = React.useContext(LogViewerContext);
     return (
       <Button
         variant={isPaused ? 'plain' : 'link'}
         onClick={() => {
-          if (isPaused) {
-            scrollToBottom();
-          }
           setIsPaused(!isPaused);
         }}
       >
@@ -238,10 +238,8 @@ ComplexToolbarLogViewer = () => {
   );
 
   const FooterButton = () => {
-    const { scrollToBottom } = React.useContext(LogViewerContext);
     const handleClick = e => {
       setIsPaused(false);
-      scrollToBottom();
     };
     return (
       <Button onClick={handleClick} isBlock>
@@ -250,12 +248,12 @@ ComplexToolbarLogViewer = () => {
       </Button>
     );
   };
-
   return (
     <LogViewer
       data={renderData}
       id="complex-toolbar-demo"
       scrollToRow={currentItemCount}
+      innerRef={logViewerRef}
       toolbar={
         <Toolbar>
           <ToolbarContent>
@@ -264,7 +262,7 @@ ComplexToolbarLogViewer = () => {
           </ToolbarContent>
         </Toolbar>
       }
-      overScanCount={linesBehind}
+      overScanCount={10}
       footer={isPaused && <FooterButton />}
       onScroll={onScroll}
     />
