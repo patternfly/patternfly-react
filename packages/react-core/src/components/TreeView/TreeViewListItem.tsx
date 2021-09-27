@@ -53,9 +53,10 @@ export interface TreeViewListItemProps {
   action?: React.ReactNode;
   /** Callback for item comparison function */
   compareItems?: (item: TreeViewDataItem, itemToCheck: TreeViewDataItem) => boolean;
+  useMemo?: boolean;
 }
 
-export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = ({
+const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
   name,
   title,
   id,
@@ -78,10 +79,11 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
   icon,
   expandedIcon,
   action,
-  compareItems
+  compareItems,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  useMemo
 }: TreeViewListItemProps) => {
   const [internalIsExpanded, setIsExpanded] = useState(defaultExpanded);
-
   useEffect(() => {
     if (isExpanded !== undefined && isExpanded !== null) {
       setIsExpanded(isExpanded);
@@ -207,4 +209,31 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
     </li>
   );
 };
+
+export const TreeViewListItem = React.memo(TreeViewListItemBase, (prevProps, nextProps) => {
+  const prevIncludes =
+    prevProps.activeItems &&
+    prevProps.activeItems.length > 0 &&
+    prevProps.activeItems.some(
+      item => prevProps.compareItems && item && prevProps.compareItems(item, prevProps.itemData)
+    );
+  const nextIncludes =
+    nextProps.activeItems &&
+    nextProps.activeItems.length > 0 &&
+    nextProps.activeItems.some(
+      item => nextProps.compareItems && item && nextProps.compareItems(item, nextProps.itemData)
+    );
+  // console.log(
+  //   `id: ${id}. prevActiveIncludes? ${prevIncludes}. nextActiveIncludes? ${nextIncludes}. Should update? ${!(
+  //     prevIncludes || nextIncludes
+  //   )}`
+  // );
+
+  if (!nextProps.useMemo) {
+    return false;
+  }
+
+  return !(prevIncludes || nextIncludes);
+});
+
 TreeViewListItem.displayName = 'TreeViewListItem';
