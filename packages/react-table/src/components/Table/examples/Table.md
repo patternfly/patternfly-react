@@ -27,18 +27,6 @@ import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
-import { Checkbox, ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
-import {
-Toolbar,
-ToolbarItem,
-ToolbarContent,
-OptionsMenu,
-OptionsMenuItemGroup,
-OptionsMenuItem,
-OptionsMenuSeparator,
-OptionsMenuToggle
-} from '@patternfly/react-core';
-
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
