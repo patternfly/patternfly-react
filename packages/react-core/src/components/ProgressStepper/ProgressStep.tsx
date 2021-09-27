@@ -8,7 +8,7 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclam
 
 export interface ProgressStepProps
   extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement> {
-  /** Content rendered inside the progress step */
+  /** Content rendered inside the progress step. */
   children?: React.ReactNode;
   /** Additional classes applied to the progress step container. */
   className?: string;
@@ -20,6 +20,8 @@ export interface ProgressStepProps
   icon?: React.ReactNode;
   /** Description text of a progress step. */
   description?: string;
+  /** ID of the title of the progress step. */
+  titleId?: string;
 }
 
 const variantIcons = {
@@ -47,10 +49,10 @@ export const ProgressStep: React.FunctionComponent<ProgressStepProps> = ({
   isCurrent,
   description,
   icon,
+  titleId,
   ...props
 }: ProgressStepProps) => {
   const _icon = icon !== undefined ? icon : variantIcons[variant];
-
   return (
     <li
       className={css(
@@ -65,7 +67,13 @@ export const ProgressStep: React.FunctionComponent<ProgressStepProps> = ({
         <span className={css(styles.progressStepperStepIcon)}>{_icon && _icon}</span>
       </div>
       <div className={css(styles.progressStepperStepMain)}>
-        <div className={css(styles.progressStepperStepTitle)}>{children}</div>
+        <div
+          className={css(styles.progressStepperStepTitle)}
+          id={titleId}
+          {...(props.id !== undefined && titleId !== undefined && { 'aria-labelledby': `${props.id} ${titleId}` })}
+        >
+          {children}
+        </div>
         {description && <div className={css(styles.progressStepperStepDescription)}>{description}</div>}
       </div>
     </li>

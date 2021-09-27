@@ -15,11 +15,11 @@ ProgressStepperDemo = () => {
   const [currentStep, setCurrentStep] = React.useState(0);
 
   const steps = [
-    { title: 'First step' },
-    { title: 'Second step' },
-    { title: 'Third step' },
-    { title: 'Fourth step' },
-    { title: 'Fifth step' }
+    { title: 'First step', id: 'step1' },
+    { title: 'Second step', id: 'step2' },
+    { title: 'Third step', id: 'step3' },
+    { title: 'Fourth step', id: 'step4' },
+    { title: 'Fifth step', id: 'step5' }
   ];
 
   const onStepForward = event => {
@@ -45,7 +45,11 @@ ProgressStepperDemo = () => {
         <br />
       </StackItem>
       <StackItem>
-        <ProgressStepper aria-live="polite">
+        <div className="pf-screen-reader" aria-live="polite">
+          {steps[currentStep] && `On ${steps[currentStep].title}.`}
+          {steps[currentStep - 1] && `${steps[currentStep - 1].title} was successful.`}
+        </div>
+        <ProgressStepper>
           {steps.map((step, index) => {
             let variant = 'pending';
             let ariaLabel = 'pending step';
@@ -58,7 +62,14 @@ ProgressStepperDemo = () => {
             }
 
             return (
-              <ProgressStep key={index} variant={variant} isCurrent={index === currentStep} aria-label={ariaLabel}>
+              <ProgressStep
+                id={index}
+                titleId={step.id}
+                key={index}
+                variant={variant}
+                isCurrent={index === currentStep}
+                aria-label={ariaLabel}
+              >
                 {step.title}
               </ProgressStep>
             );
