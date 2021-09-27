@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.157.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.157.6...@patternfly/react-core@4.157.7) (2021-09-27)
+
+
+### Bug Fixes
+
+* **TreeView:** isExpanded should override defaultExpanded ([#6326](https://github.com/patternfly/patternfly-react/issues/6326)) ([8f15ae3](https://github.com/patternfly/patternfly-react/commit/8f15ae30245c8238ff541f2040251a811d378f58))
+
+
+
+
+
 ## [4.157.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.157.5...@patternfly/react-core@4.157.6) (2021-09-24)
 
 
