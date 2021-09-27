@@ -352,9 +352,9 @@ ComposableTableSortable = () => {
 };
 ```
 
-### Composable: Sortable with toolbar
+### Composable: Sortable - responsive
 
-Sorting a table may also be controlled with a toolbar. This is useful for small screen sizes, when the table will responsively shrink into a compact form that displays column headers per row and selecting a column header will not work to sort a table.
+Sorting a table may also be controlled with a toolbar. This is useful for small screen sizes, when the table will responsively shrink into a compact form that displays column headers per row and selecting a column header will not work to sort a table. This toolbar item may also be hidden at large screen sizes and only displayed when the screen size is small.
 
 ```js
 import React from 'react';
