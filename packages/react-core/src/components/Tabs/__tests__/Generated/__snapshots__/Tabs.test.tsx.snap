@@ -23,10 +23,10 @@ exports[`Tabs should match snapshot (auto-generated) 1`] = `
     onSelect={[Function]}
   >
     <button
-      aria-hidden={false}
+      aria-hidden={true}
       aria-label="'Scroll left'"
       className="pf-c-tabs__scroll-button"
-      disabled={false}
+      disabled={true}
       onClick={[Function]}
     >
       <AngleLeftIcon
@@ -46,10 +46,10 @@ exports[`Tabs should match snapshot (auto-generated) 1`] = `
       </div>
     </ul>
     <button
-      aria-hidden={false}
+      aria-hidden={true}
       aria-label="'Scroll right'"
       className="pf-c-tabs__scroll-button"
-      disabled={false}
+      disabled={true}
       onClick={[Function]}
     >
       <AngleRightIcon

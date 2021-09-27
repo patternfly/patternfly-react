@@ -182,27 +182,27 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
 
   handleScrollButtons = () => {
     const container = this.tabList.current;
-    if (this.props.isVertical) {
-      const disableLeftScrollButton = true;
-      const disableRightScrollButton = true;
-    } else if (container) {
+    let disableLeftScrollButton = true;
+    let disableRightScrollButton = true;
+    let showScrollButtons = false;
+
+    if (container && this.props.isVertical) {
       // get first element and check if it is in view
       const overflowOnLeft = !isElementInView(container, container.firstChild as HTMLElement, false);
 
       // get last element and check if it is in view
       const overflowOnRight = !isElementInView(container, container.lastChild as HTMLElement, false);
 
-      const showScrollButtons = overflowOnLeft || overflowOnRight;
+      showScrollButtons = overflowOnLeft || overflowOnRight;
 
-      const disableLeftScrollButton = !overflowOnLeft;
-      const disableRightScrollButton = !overflowOnRight;
-
-      this.setState({
-        showScrollButtons,
-        disableLeftScrollButton,
-        disableRightScrollButton
-      });
+      disableLeftScrollButton = !overflowOnLeft;
+      disableRightScrollButton = !overflowOnRight;
     }
+    this.setState({
+      showScrollButtons,
+      disableLeftScrollButton,
+      disableRightScrollButton
+    });
   };
 
   scrollLeft = () => {
