@@ -35,10 +35,10 @@ ProgressStepperDemo = () => {
   return (
     <Stack>
       <StackItem>
-        <Button onClick={onStepBack} isDisabled={currentStep === 0} aria-label="Step back">
+        <Button onClick={onStepBack} isDisabled={currentStep === 0}>
           Step back
         </Button>{' '}
-        <Button onClick={onStepForward} isDisabled={currentStep === 5} aria-label="Step forward">
+        <Button onClick={onStepForward} isDisabled={currentStep === 5}>
           Step forward
         </Button>
         <br />
