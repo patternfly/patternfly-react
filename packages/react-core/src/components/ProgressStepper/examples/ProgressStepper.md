@@ -19,13 +19,13 @@ import React from 'react';
 import { ProgressStepper, ProgressStep } from '@patternfly/react-core';
 
 <ProgressStepper>
-  <ProgressStep variant="success" aria-label="completed step">
+  <ProgressStep variant="success" id="basic-step1" titleId="basic-step1-title">
     First step
   </ProgressStep>
-  <ProgressStep variant="info" isCurrent aria-label="current step">
+  <ProgressStep variant="info" isCurrent id="basic-step2" titleId="basic-step2-title">
     Second step
   </ProgressStep>
-  <ProgressStep variant="pending" aria-label="pending step">
+  <ProgressStep variant="pending" id="basic-step3" titleId="basic-step3-title">
     Third step
   </ProgressStep>
 </ProgressStepper>;
@@ -38,13 +38,29 @@ import React from 'react';
 import { ProgressStepper, ProgressStep } from '@patternfly/react-core';
 
 <ProgressStepper>
-  <ProgressStep variant="success" description="This is the first thing to happen" aria-label="completed step">
+  <ProgressStep
+    variant="success"
+    description="This is the first thing to happen"
+    id="basic-desc-step1"
+    titleId="basic-desc-step1-title"
+  >
     First step
   </ProgressStep>
-  <ProgressStep variant="info" isCurrent description="This is the second thing to happen" aria-label="current step">
+  <ProgressStep
+    variant="info"
+    isCurrent
+    description="This is the second thing to happen"
+    id="basic-desc-step2"
+    titleId="basic-desc-step2-title"
+  >
     Second step
   </ProgressStep>
-  <ProgressStep variant="pending" description="This is the last thing to happen" aria-label="pending step">
+  <ProgressStep
+    variant="pending"
+    description="This is the last thing to happen"
+    id="basic-desc-step3"
+    titleId="basic-desc-step3-title"
+  >
     Third step
   </ProgressStep>
 </ProgressStepper>;
@@ -57,13 +73,29 @@ import React from 'react';
 import { ProgressStepper, ProgressStep } from '@patternfly/react-core';
 
 <ProgressStepper isCenterAligned>
-  <ProgressStep variant="success" description="This is the first thing to happen" aria-label="completed step">
+  <ProgressStep
+    variant="success"
+    description="This is the first thing to happen"
+    id="center-desc-step1"
+    titleId="center-desc-step1-title"
+  >
     First step
   </ProgressStep>
-  <ProgressStep variant="info" isCurrent description="This is the second thing to happen" aria-label="current step">
+  <ProgressStep
+    variant="info"
+    isCurrent
+    description="This is the second thing to happen"
+    id="center-desc-step2"
+    titleId="center-desc-step2-title"
+  >
     Second step
   </ProgressStep>
-  <ProgressStep variant="pending" description="This is the last thing to happen" aria-label="pending step">
+  <ProgressStep
+    variant="pending"
+    description="This is the last thing to happen"
+    id="center-desc-step3"
+    titleId="center-desc-step3-title"
+  >
     Third step
   </ProgressStep>
 </ProgressStepper>;
@@ -76,13 +108,29 @@ import React from 'react';
 import { ProgressStepper, ProgressStep } from '@patternfly/react-core';
 
 <ProgressStepper isVertical>
-  <ProgressStep variant="success" description="This is the first thing to happen" aria-label="completed step">
+  <ProgressStep
+    variant="success"
+    description="This is the first thing to happen"
+    id="vertical-desc-step1"
+    titleId="vertical-desc-step1-title"
+  >
     First step
   </ProgressStep>
-  <ProgressStep variant="info" isCurrent description="This is the second thing to happen" aria-label="current step">
+  <ProgressStep
+    variant="info"
+    isCurrent
+    description="This is the second thing to happen"
+    id="vertical-desc-step2"
+    titleId="vertical-desc-step2-title"
+  >
     Second step
   </ProgressStep>
-  <ProgressStep variant="pending" description="This is the last thing to happen" aria-label="pending step">
+  <ProgressStep
+    variant="pending"
+    description="This is the last thing to happen"
+    id="vertical-desc-step3"
+    titleId="vertical-desc-step3-title"
+  >
     Third step
   </ProgressStep>
 </ProgressStepper>;
@@ -97,13 +145,13 @@ import React from 'react';
 import { ProgressStepper, ProgressStep } from '@patternfly/react-core';
 
 <ProgressStepper isCompact>
-  <ProgressStep variant="success" aria-label="completed step">
+  <ProgressStep variant="success" id="compact-step1" titleId="compact-step1-title">
     First step
   </ProgressStep>
-  <ProgressStep variant="info" isCurrent aria-label="current step">
+  <ProgressStep variant="info" isCurrent id="compact-step2" titleId="compact-step2-title">
     Second step
   </ProgressStep>
-  <ProgressStep variant="pending" aria-label="pending step">
+  <ProgressStep variant="pending" id="compact-step3" titleId="compact-step3-title">
     Third step
   </ProgressStep>
 </ProgressStepper>;
@@ -116,19 +164,19 @@ import React from 'react';
 import { ProgressStepper, ProgressStep } from '@patternfly/react-core';
 
 <ProgressStepper>
-  <ProgressStep variant="success" aria-label="completed step">
+  <ProgressStep variant="success" id="basic-with-issue-step1" titleId="basic-with-issue-step1-title">
     First step
   </ProgressStep>
-  <ProgressStep variant="success" aria-label="completed step">
+  <ProgressStep variant="success" id="basic-with-issue-step2" titleId="basic-with-issue-step2-title">
     Second step
   </ProgressStep>
-  <ProgressStep variant="warning" aria-label="warning step">
+  <ProgressStep variant="warning" id="basic-with-issue-step3" titleId="basic-with-issue-step3-title">
     Third step
   </ProgressStep>
-  <ProgressStep variant="info" isCurrent aria-label="current step">
+  <ProgressStep variant="info" isCurrent id="basic-with-issue-step4" titleId="basic-with-issue-step4-title">
     Fourth step
   </ProgressStep>
-  <ProgressStep variant="pending" aria-label="pending step">
+  <ProgressStep variant="pending" id="basic-with-issue-step5" titleId="basic-with-issue-step5-title">
     Fifth step
   </ProgressStep>
 </ProgressStepper>;
@@ -141,19 +189,19 @@ import React from 'react';
 import { ProgressStepper, ProgressStep } from '@patternfly/react-core';
 
 <ProgressStepper>
-  <ProgressStep variant="success" aria-label="completed step">
+  <ProgressStep variant="success" id="basic-with-failure-step1" titleId="basic-with-failure-step1-title">
     First step
   </ProgressStep>
-  <ProgressStep variant="success" aria-label="completed step">
+  <ProgressStep variant="success" id="basic-with-failure-step2" titleId="basic-with-failure-step2-title">
     Second step
   </ProgressStep>
-  <ProgressStep variant="success" aria-label="completed step">
+  <ProgressStep variant="success" id="basic-with-failure-step3" titleId="basic-with-failure-step3-title">
     Third step
   </ProgressStep>
-  <ProgressStep variant="danger" isCurrent aria-label="danger step">
+  <ProgressStep variant="danger" isCurrent id="basic-with-failure-step4" titleId="basic-with-failure-step4-title">
     Fourth step
   </ProgressStep>
-  <ProgressStep variant="pending" aria-label="pending step">
+  <ProgressStep variant="pending" id="basic-with-failure-step5" titleId="basic-with-failure-step5-title">
     Fifth step
   </ProgressStep>
 </ProgressStepper>;
@@ -168,13 +216,13 @@ import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-i
 import PendingIcon from '@patternfly/react-icons/dist/esm/icons/pending-icon';
 
 <ProgressStepper>
-  <ProgressStep variant="success" aria-label="completed step">
+  <ProgressStep variant="success" id="custom-step1" titleId="custom-step1-title">
     Successful completion
   </ProgressStep>
-  <ProgressStep isCurrent icon={<InProgressIcon />} aria-label="current step">
+  <ProgressStep isCurrent icon={<InProgressIcon />} id="custom-step2" titleId="custom-step2-title">
     In process
   </ProgressStep>
-  <ProgressStep variant="pending" icon={<PendingIcon />} aria-label="pending step">
+  <ProgressStep variant="pending" icon={<PendingIcon />} id="custom-step2" titleId="custom-step2-title">
     Pending
   </ProgressStep>
 </ProgressStepper>;
