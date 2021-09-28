@@ -5,9 +5,6 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
-// https://github.com/patternfly/patternfly-react/blob/main/packages/react-table/src/components/TableComposable/examples/DemoSortableTable.tsx
-// import DemoSortableTable from './DemoSortableTable';
-
 interface Repository {
   name: string;
   branches: number;
@@ -92,11 +89,9 @@ export const ComposableTableCompoundExpandable: React.FunctionComponent = () => 
               <Tr isExpanded={isRowExpanded}>
                 <Td dataLabel={columnNames[expandedCellKey]} noPadding colSpan={6}>
                   <ExpandableRowContent>
-                    {/* <DemoSortableTable
-                      firstColumnRows={[`parent-${repo.name}`, `compound-${expandedCellKey}`, 'three', 'four', 'five']}
-                      id={`compound-expansion-table-${repo.name}_${expandedCellKey}`}
-                    /> */}
-                    Expanded content goes here!
+                    <div className="pf-u-m-md">
+                      Expanded content for {repo.name}: {expandedCellKey} goes here!
+                    </div>
                   </ExpandableRowContent>
                 </Td>
               </Tr>
