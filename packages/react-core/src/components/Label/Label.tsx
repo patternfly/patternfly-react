@@ -143,6 +143,10 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       sel.removeAllRanges();
       sel.addRange(range);
     }
+    if (!isEditableActive && key !== 'Enter' && key !== 'Tab') {
+      event.preventDefault();
+      return false;
+    }
   };
 
   const LabelComponent = (isOverflowLabel ? 'button' : 'span') as any;
@@ -189,7 +193,8 @@ export const Label: React.FunctionComponent<LabelProps> = ({
             role="textbox"
             {...isEditableActive}
             suppressContentEditableWarning
-            contentEditable="true"
+            contentEditable={true}
+            {...isEditableActive}
             {...editableProps}
           >
             {children}
