@@ -301,11 +301,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ProgressDemo
   },
   {
-    id: 'progress-stepper-demo',
-    name: 'Progress Stepper Demo',
-    componentType: Examples.ProgressStepperDemo
-  },
-  {
     id: 'radio-demo',
     name: 'Radio Demo',
     componentType: Examples.RadioDemo
