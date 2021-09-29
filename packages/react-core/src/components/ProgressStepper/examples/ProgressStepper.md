@@ -292,8 +292,8 @@ import PendingIcon from '@patternfly/react-icons/dist/esm/icons/pending-icon';
   <ProgressStep
     variant="pending"
     icon={<PendingIcon />}
-    id="custom-step2"
-    titleId="custom-step2-title"
+    id="custom-step3"
+    titleId="custom-step3-title"
     aria-label="pending step"
   >
     Pending
