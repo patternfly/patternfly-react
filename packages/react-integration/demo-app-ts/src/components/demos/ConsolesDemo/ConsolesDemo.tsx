@@ -11,6 +11,7 @@ export const ConsolesDemo: React.FC = () => {
   return (
     <div className="consoles-demo-area">
       <AccessConsoles preselectedType="SerialConsole">
+        <SerialConsoleCustom type="SerialConsole" typeText="Serial Console pty2" />
         <SerialConsole
           onConnect={() => {
             setStatus('loading');
@@ -30,3 +31,24 @@ export const ConsolesDemo: React.FC = () => {
   );
 };
 ConsolesDemo.displayName = 'ConsolesDemo';
+
+const SerialConsoleCustom: React.FC<{ type: string; typeText: string }> = () => {
+  const [status, setStatus] = React.useState('disconnected');
+  const setConnected = React.useRef(debounce(() => setStatus('connected'), 3000)).current;
+  const ref2 = React.createRef<any>();
+
+  return (
+    <SerialConsole
+      onConnect={() => {
+        setStatus('loading');
+        setConnected();
+      }}
+      onDisconnect={() => setStatus('disconnected')}
+      onData={(data: string) => {
+        ref2.current.onDataReceived(data);
+      }}
+      status={status}
+      ref={ref2}
+    />
+  );
+};

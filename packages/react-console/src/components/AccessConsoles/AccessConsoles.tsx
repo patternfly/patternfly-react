@@ -30,11 +30,11 @@ export interface AccessConsolesProps {
   children?: React.ReactElement[] | React.ReactNode;
   /** Placeholder text for the console selection */
   textSelectConsoleType?: string;
-  /** The value for the Serial Console option */
+  /** The value for the Serial Console option. This can be overriden by the type property of the child component */
   textSerialConsole?: string;
-  /** The value for the VNC Console option */
+  /** The value for the VNC Console option. This can be overriden by the type property of the child component */
   textVncConsole?: string;
-  /** The value for the Desktop Viewer Console option */
+  /** The value for the Desktop Viewer Console option. This can be overriden by the type property of the child component */
   textDesktopViewerConsole?: string;
   /** Initial selection of the Select */
   preselectedType?: string; // NONE_TYPE | SERIAL_CONSOLE_TYPE | VNC_CONSOLE_TYPE | DESKTOP_VIEWER_CONSOLE_TYPE;
@@ -50,16 +50,11 @@ export const AccessConsoles: React.FunctionComponent<AccessConsolesProps> = ({
 }) => {
   const [type, setType] = React.useState(preselectedType);
   const [isOpen, setIsOpen] = React.useState(false);
-
-  const isChildOfTypePresent = (type: string) => {
-    let found = false;
-    React.Children.forEach(children as React.ReactElement[], (child: any) => {
-      found = found || isChildOfType(child, type);
-    });
-
-    return found;
+  const typeMap = {
+    [textSerialConsole]: SERIAL_CONSOLE_TYPE,
+    [textVncConsole]: VNC_CONSOLE_TYPE,
+    [textDesktopViewerConsole]: DESKTOP_VIEWER_CONSOLE_TYPE
   };
-
   const getConsoleForType = (type: string) =>
     React.Children.map(children as React.ReactElement[], (child: any) => {
       if (getChildTypeName(child) === type) {
@@ -73,31 +68,26 @@ export const AccessConsoles: React.FunctionComponent<AccessConsolesProps> = ({
     setIsOpen(isOpen);
   };
 
-  const items = {
-    [SERIAL_CONSOLE_TYPE]: textSerialConsole,
-    [VNC_CONSOLE_TYPE]: textVncConsole,
-    [DESKTOP_VIEWER_CONSOLE_TYPE]: textDesktopViewerConsole
-  };
+  const selectOptions: any[] = [];
 
-  const selectOptions = [];
-  if (isChildOfTypePresent(VNC_CONSOLE_TYPE)) {
-    selectOptions.push(<SelectOption key={VNC_CONSOLE_TYPE} id={VNC_CONSOLE_TYPE} value={items[VNC_CONSOLE_TYPE]} />);
-  }
-  if (isChildOfTypePresent(SERIAL_CONSOLE_TYPE)) {
-    selectOptions.push(
-      <SelectOption key={SERIAL_CONSOLE_TYPE} id={SERIAL_CONSOLE_TYPE} value={items[SERIAL_CONSOLE_TYPE]} />
-    );
-  }
-  if (isChildOfTypePresent(DESKTOP_VIEWER_CONSOLE_TYPE)) {
-    selectOptions.push(
-      <SelectOption
-        key={DESKTOP_VIEWER_CONSOLE_TYPE}
-        id={DESKTOP_VIEWER_CONSOLE_TYPE}
-        value={items[DESKTOP_VIEWER_CONSOLE_TYPE]}
-      />
-    );
-  }
-
+  React.Children.toArray(children as React.ReactElement[]).forEach((child: any) => {
+    if (isChildOfType(child, VNC_CONSOLE_TYPE)) {
+      selectOptions.push(<SelectOption key={VNC_CONSOLE_TYPE} id={VNC_CONSOLE_TYPE} value={textVncConsole} />);
+    } else if (isChildOfType(child, SERIAL_CONSOLE_TYPE)) {
+      selectOptions.push(<SelectOption key={SERIAL_CONSOLE_TYPE} id={SERIAL_CONSOLE_TYPE} value={textSerialConsole} />);
+    } else if (isChildOfType(child, DESKTOP_VIEWER_CONSOLE_TYPE)) {
+      selectOptions.push(
+        <SelectOption
+          key={DESKTOP_VIEWER_CONSOLE_TYPE}
+          id={DESKTOP_VIEWER_CONSOLE_TYPE}
+          value={textDesktopViewerConsole}
+        />
+      );
+    } else {
+      const typeText = getChildTypeName(child);
+      selectOptions.push(<SelectOption key={typeText} id={typeText} value={typeText} />);
+    }
+  });
   return (
     <div className={css(styles.console)}>
       {React.Children.toArray(children).length > 1 && (
@@ -108,10 +98,14 @@ export const AccessConsoles: React.FunctionComponent<AccessConsolesProps> = ({
             toggleId="pf-c-console__type-selector"
             variant={SelectVariant.single}
             onSelect={(_, selection, __) => {
-              setType(Object.keys(items).find(key => items[key] === selection));
+              if ((selection as string) in typeMap) {
+                setType(typeMap[selection as string]);
+              } else {
+                setType(selection as string);
+              }
               setIsOpen(false);
             }}
-            selections={type !== NONE_TYPE ? items[type] : null}
+            selections={type !== NONE_TYPE ? type : null}
             isOpen={isOpen}
             onToggle={onToggle}
           >
