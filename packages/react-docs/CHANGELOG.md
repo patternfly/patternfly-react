@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.22.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.21.50...@patternfly/react-docs@5.22.0) (2021-09-29)
+
+
+### Features
+
+* **JumpLinks:** Added toggle text ([#6347](https://github.com/patternfly/patternfly-react/issues/6347)) ([36042f6](https://github.com/patternfly/patternfly-react/commit/36042f679880f819afd26618797167a42f5fe901))
+
+
+
+
+
 ## [5.21.50](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.21.49...@patternfly/react-docs@5.21.50) (2021-09-29)
 
 **Note:** Version bump only for package @patternfly/react-docs
