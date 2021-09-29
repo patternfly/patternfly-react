@@ -186,7 +186,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     let disableRightScrollButton = true;
     let showScrollButtons = false;
 
-    if (container && this.props.isVertical) {
+    if (container && !this.props.isVertical) {
       // get first element and check if it is in view
       const overflowOnLeft = !isElementInView(container, container.firstChild as HTMLElement, false);
 
