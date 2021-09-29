@@ -55,7 +55,7 @@ ProgressStepperDemo = () => {
             let ariaLabel = 'pending step';
             if (index < currentStep) {
               variant = 'success';
-              ariaLabel = 'completed step';
+              ariaLabel = 'completed step, step with success';
             } else if (index === currentStep) {
               variant = 'info';
               ariaLabel = 'current step';
