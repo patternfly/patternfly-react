@@ -255,6 +255,8 @@ type OnSort = (
 
 ```
 
+The built in display for sorting is not fully responsive, as the column headers will be displayed per row when the screen size is small. To see a full page demo of a responsive sortable table, utilizing a toolbar item to control sorting for small screens, view the `Sortable - responsive` demo in the `React demos` tab.
+
 ```js
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
@@ -350,9 +352,9 @@ ComposableTableSortable = () => {
 };
 ```
 
-### Composable: Sortable - responsive
+### Composable: Sortable - custom control
 
-Sorting a table may also be controlled with a toolbar. This is useful for small screen sizes, when the table will responsively shrink into a compact form that displays column headers per row and selecting a column header will not work to sort a table. This toolbar item may also be hidden at large screen sizes and only displayed when the screen size is small.
+Sorting a table may also be controlled manually with a toolbar control. To see a full page demo of a responsive table, view the `Sortable - responsive` demo in the `React demos` tab.
 
 ```js
 import React from 'react';

@@ -281,6 +281,8 @@ To implement sortable columns:
 
 Note: If you want to add a tooltip/popover to a sortable header, in the `transforms` array the `info` transform has to precede the `sortable` transform.
 
+The built in display for sorting is not fully responsive, as the column headers will be displayed per row when the screen size is small. The example below showcases how sorting may have a custom control display that can be used for small screen sizes.
+
 ```js
 import React from 'react';
 import {
@@ -357,9 +359,9 @@ class SortableTable extends React.Component {
 }
 ```
 
-### Sortable - responsive
+### Sortable - custom control
 
-Sorting a table may also be controlled with a toolbar. This is useful for small screen sizes, when the table will responsively shrink into a compact form that displays column headers per row and selecting a column header will not work to sort a table. This toolbar item may also be hidden at large screen sizes and only displayed when the screen size is small.
+Sorting a table may also be controlled with a toolbar. This toolbar item may also be hidden at large screen sizes and only displayed when the screen size is small to support responsive tables.
 
 ```js
 import React from 'react';
