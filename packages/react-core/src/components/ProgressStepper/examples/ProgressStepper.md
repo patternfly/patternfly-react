@@ -11,7 +11,7 @@ import PendingIcon from '@patternfly/react-icons/dist/esm/icons/pending-icon';
 
 ## Examples
 
-Progress steppers have defeault icons associated with the `variant` property, and may be overriden and customized using the `icon` property.
+Progress steppers have default icons associated with the `variant` property, and may be overriden and customized using the `icon` property.
 
 ### Basic
 
