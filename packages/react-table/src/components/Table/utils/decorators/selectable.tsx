@@ -10,7 +10,7 @@ export const selectable: ITransform = (
   { rowIndex, columnIndex, rowData, column, property }: IExtra
 ) => {
   const {
-    extraParams: { onSelect, selectVariant, allRowsSelected }
+    extraParams: { onSelect, selectVariant, allRowsSelected, isHeaderSelectDisabled }
   } = column;
   const extraData = {
     rowIndex,
@@ -49,7 +49,8 @@ export const selectable: ITransform = (
       (rowData.disableCheckbox || rowData.disableSelection) && {
         disabled: true,
         className: checkStyles.checkInput
-      })
+      }),
+    ...(!rowData && isHeaderSelectDisabled && { disabled: true })
   };
   let selectName = 'check-all';
   if (rowId !== -1 && selectVariant === RowSelectVariant.checkbox) {
