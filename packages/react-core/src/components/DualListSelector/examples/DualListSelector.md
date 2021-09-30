@@ -383,6 +383,7 @@ import {
   ButtonVariant,
   DualListSelector, 
   DualListSelectorPane,
+  DualListSelectorList,
   DualListSelectorListItem,
   DualListSelectorControlsWrapper,
   DualListSelectorControl,
@@ -504,6 +505,7 @@ const ComposableDualListSelector = () => {
         searchInput={buildSearchInput(true)}
         actions={[buildSort(true)]}
       >
+        <DualListSelectorList>
           {availableOptions.map((option, index) => {
             return option.isVisible ? (
               <DualListSelectorListItem
@@ -516,6 +518,7 @@ const ComposableDualListSelector = () => {
               </DualListSelectorListItem>
             ) : null;
           })}
+        </DualListSelectorList>
       </DualListSelectorPane>
       <DualListSelectorControlsWrapper
         aria-label="Selector controls"
@@ -560,6 +563,7 @@ const ComposableDualListSelector = () => {
         actions={[buildSort(false)]}
         isChosen
       >
+        <DualListSelectorList>
           {chosenOptions.map((option, index) => {
             return option.isVisible ? (
               <DualListSelectorListItem
@@ -572,6 +576,7 @@ const ComposableDualListSelector = () => {
               </DualListSelectorListItem>
             ) : null;
           })}
+        </DualListSelectorList>
       </DualListSelectorPane>
     </DualListSelector>
   );
@@ -585,6 +590,7 @@ import React from 'react';
 import { 
   DualListSelector, 
   DualListSelectorPane,
+  DualListSelectorList,
   DualListSelectorControlsWrapper,
   DualListSelectorControl,
   DualListSelectorTree
@@ -739,6 +745,13 @@ const ComposableDualListSelectorTree = () => {
     }
   };
   
+  const findCheckedTrees = (tree) => {
+    if (tree.isChecked) return tree;
+    if (tree.children) {
+      return findCheckedTrees(tree)
+    }
+  };
+  
   const moveChecked = (fromAvailable) => {
     
   };
@@ -749,10 +762,12 @@ const ComposableDualListSelectorTree = () => {
         title="Available"
         status={`${availableOptions.filter(x => x.selected && x.isVisible).length} of ${availableOptions.filter(x => x.isVisible).length} options selected`}
       >
+        <DualListSelectorList>
           <DualListSelectorTree
             data={availableOptions}
             onOptionCheck={(e, checked, checkedId, newCheckedItems) => onOptionCheck(e, checked,checkedId, newCheckedItems, true)}
           />
+        </DualListSelectorList>
       </DualListSelectorPane>
       <DualListSelectorControlsWrapper
         aria-label="Selector controls"
@@ -791,10 +806,12 @@ const ComposableDualListSelectorTree = () => {
         status={`${chosenOptions.filter(x => x.selected && x.isVisible).length} of ${chosenOptions.filter(x => x.isVisible).length} options selected`}
         isChosen
       >
-        <DualListSelectorTree
-          data={chosenOptions}
-          onOptionCheck={(e, checked, newCheckedItems) => onOptionCheck(e, checked, newCheckedItems, false)}
-        />
+        <DualListSelectorList>
+          <DualListSelectorTree
+            data={chosenOptions}
+            onOptionCheck={(e, checked, newCheckedItems) => onOptionCheck(e, checked, newCheckedItems, false)}
+          />
+        </DualListSelectorList>
       </DualListSelectorPane>
     </DualListSelector>
   );

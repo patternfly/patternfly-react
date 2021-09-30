@@ -19,6 +19,7 @@ import {
   Draggable,
   DualListSelector, 
   DualListSelectorPane,
+  DualListSelectorList,
   DualListSelectorListItem,
   DualListSelectorControlsWrapper,
   DualListSelectorControl,
@@ -101,6 +102,7 @@ const ComposableDualListSelector = () => {
         title="Available"
         status={`${availableOptions.filter(x => x.selected && x.isVisible).length} of ${availableOptions.filter(x => x.isVisible).length} options selected`}
       >
+        <DualListSelectorList>
           {availableOptions.map((option, index) => {
             return option.isVisible ? (
               <DualListSelectorListItem
@@ -113,6 +115,7 @@ const ComposableDualListSelector = () => {
               </DualListSelectorListItem>
             ) : null;
           })}
+        </DualListSelectorList>
       </DualListSelectorPane>
       <DualListSelectorControlsWrapper
         aria-label="Selector controls"
@@ -152,21 +155,23 @@ const ComposableDualListSelector = () => {
           status={`${chosenOptions.filter(x => x.selected && x.isVisible).length} of ${chosenOptions.filter(x => x.isVisible).length} options selected`}
           isChosen
         >
-          <Droppable>
-          {chosenOptions.map((option, index) => {
-            return option.isVisible ? (
-              <Draggable key={index}>
-                <DualListSelectorListItem
-                  isSelected={option.selected}
-                  id={`composable-option-${index}`}
-                  onOptionSelect={(e) => onOptionSelect(e, index, true)}
-                  isDraggable
-                >
-                  {option.text}
-                </DualListSelectorListItem>
-              </Draggable>
-            ) : null;
-          })}
+          <Droppable hasNoWrapper>
+            <DualListSelectorList>
+            {chosenOptions.map((option, index) => {
+              return option.isVisible ? (
+                <Draggable key={index} hasNoWrapper>
+                  <DualListSelectorListItem
+                    isSelected={option.selected}
+                    id={`composable-option-${index}`}
+                    onOptionSelect={(e) => onOptionSelect(e, index, true)}
+                    isDraggable
+                  >
+                    {option.text}
+                  </DualListSelectorListItem>
+                </Draggable>
+              ) : null;
+            })}
+            </DualListSelectorList>
           </Droppable>
         </DualListSelectorPane>
       </DragDrop>

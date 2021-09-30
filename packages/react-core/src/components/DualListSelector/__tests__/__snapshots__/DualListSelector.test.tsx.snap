@@ -104,14 +104,14 @@ exports[`DualListSelector basic 1`] = `
                 role="listbox"
               >
                 <DualListSelectorListItem
-                  id="dual-list-selector-list-1632936532467kqxqrao27ij-option-0"
+                  id="dual-list-selector-list-1632939828258dy06eov7xw-option-0"
                   isSelected={false}
                   key="0"
                   onOptionSelect={[Function]}
                   orderIndex={0}
                 >
                   <DualListSelectorListItemBase
-                    id="dual-list-selector-list-1632936532467kqxqrao27ij-option-0"
+                    id="dual-list-selector-list-1632939828258dy06eov7xw-option-0"
                     innerRef={null}
                     isSelected={false}
                     onOptionSelect={[Function]}
@@ -120,7 +120,7 @@ exports[`DualListSelector basic 1`] = `
                     <li
                       aria-selected={false}
                       className="pf-c-dual-list-selector__list-item"
-                      id="dual-list-selector-list-1632936532467kqxqrao27ij-option-0"
+                      id="dual-list-selector-list-1632939828258dy06eov7xw-option-0"
                       key="0"
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -148,14 +148,14 @@ exports[`DualListSelector basic 1`] = `
                   </DualListSelectorListItemBase>
                 </DualListSelectorListItem>
                 <DualListSelectorListItem
-                  id="dual-list-selector-list-1632936532467kqxqrao27ij-option-1"
+                  id="dual-list-selector-list-1632939828258dy06eov7xw-option-1"
                   isSelected={false}
                   key="1"
                   onOptionSelect={[Function]}
                   orderIndex={1}
                 >
                   <DualListSelectorListItemBase
-                    id="dual-list-selector-list-1632936532467kqxqrao27ij-option-1"
+                    id="dual-list-selector-list-1632939828258dy06eov7xw-option-1"
                     innerRef={null}
                     isSelected={false}
                     onOptionSelect={[Function]}
@@ -164,7 +164,7 @@ exports[`DualListSelector basic 1`] = `
                     <li
                       aria-selected={false}
                       className="pf-c-dual-list-selector__list-item"
-                      id="dual-list-selector-list-1632936532467kqxqrao27ij-option-1"
+                      id="dual-list-selector-list-1632939828258dy06eov7xw-option-1"
                       key="1"
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -946,14 +946,14 @@ exports[`DualListSelector with actions 1`] = `
                 role="listbox"
               >
                 <DualListSelectorListItem
-                  id="dual-list-selector-list-163293653256923cenl7tdnu-option-0"
+                  id="dual-list-selector-list-1632939828402oe84z9t7xa-option-0"
                   isSelected={false}
                   key="0"
                   onOptionSelect={[Function]}
                   orderIndex={0}
                 >
                   <DualListSelectorListItemBase
-                    id="dual-list-selector-list-163293653256923cenl7tdnu-option-0"
+                    id="dual-list-selector-list-1632939828402oe84z9t7xa-option-0"
                     innerRef={null}
                     isSelected={false}
                     onOptionSelect={[Function]}
@@ -962,7 +962,7 @@ exports[`DualListSelector with actions 1`] = `
                     <li
                       aria-selected={false}
                       className="pf-c-dual-list-selector__list-item"
-                      id="dual-list-selector-list-163293653256923cenl7tdnu-option-0"
+                      id="dual-list-selector-list-1632939828402oe84z9t7xa-option-0"
                       key="0"
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -990,14 +990,14 @@ exports[`DualListSelector with actions 1`] = `
                   </DualListSelectorListItemBase>
                 </DualListSelectorListItem>
                 <DualListSelectorListItem
-                  id="dual-list-selector-list-163293653256923cenl7tdnu-option-1"
+                  id="dual-list-selector-list-1632939828402oe84z9t7xa-option-1"
                   isSelected={false}
                   key="1"
                   onOptionSelect={[Function]}
                   orderIndex={1}
                 >
                   <DualListSelectorListItemBase
-                    id="dual-list-selector-list-163293653256923cenl7tdnu-option-1"
+                    id="dual-list-selector-list-1632939828402oe84z9t7xa-option-1"
                     innerRef={null}
                     isSelected={false}
                     onOptionSelect={[Function]}
@@ -1006,7 +1006,7 @@ exports[`DualListSelector with actions 1`] = `
                     <li
                       aria-selected={false}
                       className="pf-c-dual-list-selector__list-item"
-                      id="dual-list-selector-list-163293653256923cenl7tdnu-option-1"
+                      id="dual-list-selector-list-1632939828402oe84z9t7xa-option-1"
                       key="1"
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -1670,14 +1670,14 @@ exports[`DualListSelector with actions 1`] = `
                 role="listbox"
               >
                 <DualListSelectorListItem
-                  id="dual-list-selector-list-1632936532575yk7pd4ayocj-option-0"
+                  id="dual-list-selector-list-1632939828412dikds3xa67g-option-0"
                   isSelected={false}
                   key="0"
                   onOptionSelect={[Function]}
                   orderIndex={0}
                 >
                   <DualListSelectorListItemBase
-                    id="dual-list-selector-list-1632936532575yk7pd4ayocj-option-0"
+                    id="dual-list-selector-list-1632939828412dikds3xa67g-option-0"
                     innerRef={null}
                     isSelected={false}
                     onOptionSelect={[Function]}
@@ -1686,7 +1686,7 @@ exports[`DualListSelector with actions 1`] = `
                     <li
                       aria-selected={false}
                       className="pf-c-dual-list-selector__list-item"
-                      id="dual-list-selector-list-1632936532575yk7pd4ayocj-option-0"
+                      id="dual-list-selector-list-1632939828412dikds3xa67g-option-0"
                       key="0"
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -1714,14 +1714,14 @@ exports[`DualListSelector with actions 1`] = `
                   </DualListSelectorListItemBase>
                 </DualListSelectorListItem>
                 <DualListSelectorListItem
-                  id="dual-list-selector-list-1632936532575yk7pd4ayocj-option-1"
+                  id="dual-list-selector-list-1632939828412dikds3xa67g-option-1"
                   isSelected={false}
                   key="1"
                   onOptionSelect={[Function]}
                   orderIndex={1}
                 >
                   <DualListSelectorListItemBase
-                    id="dual-list-selector-list-1632936532575yk7pd4ayocj-option-1"
+                    id="dual-list-selector-list-1632939828412dikds3xa67g-option-1"
                     innerRef={null}
                     isSelected={false}
                     onOptionSelect={[Function]}
@@ -1730,7 +1730,7 @@ exports[`DualListSelector with actions 1`] = `
                     <li
                       aria-selected={false}
                       className="pf-c-dual-list-selector__list-item"
-                      id="dual-list-selector-list-1632936532575yk7pd4ayocj-option-1"
+                      id="dual-list-selector-list-1632939828412dikds3xa67g-option-1"
                       key="1"
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -1873,14 +1873,14 @@ exports[`DualListSelector with custom status 1`] = `
                 role="listbox"
               >
                 <DualListSelectorListItem
-                  id="dual-list-selector-list-1632936532528cbdyej8jxse-option-0"
+                  id="dual-list-selector-list-1632939828315kp0t9vbf1rg-option-0"
                   isSelected={false}
                   key="0"
                   onOptionSelect={[Function]}
                   orderIndex={0}
                 >
                   <DualListSelectorListItemBase
-                    id="dual-list-selector-list-1632936532528cbdyej8jxse-option-0"
+                    id="dual-list-selector-list-1632939828315kp0t9vbf1rg-option-0"
                     innerRef={null}
                     isSelected={false}
                     onOptionSelect={[Function]}
@@ -1889,7 +1889,7 @@ exports[`DualListSelector with custom status 1`] = `
                     <li
                       aria-selected={false}
                       className="pf-c-dual-list-selector__list-item"
-                      id="dual-list-selector-list-1632936532528cbdyej8jxse-option-0"
+                      id="dual-list-selector-list-1632939828315kp0t9vbf1rg-option-0"
                       key="0"
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -1917,14 +1917,14 @@ exports[`DualListSelector with custom status 1`] = `
                   </DualListSelectorListItemBase>
                 </DualListSelectorListItem>
                 <DualListSelectorListItem
-                  id="dual-list-selector-list-1632936532528cbdyej8jxse-option-1"
+                  id="dual-list-selector-list-1632939828315kp0t9vbf1rg-option-1"
                   isSelected={false}
                   key="1"
                   onOptionSelect={[Function]}
                   orderIndex={1}
                 >
                   <DualListSelectorListItemBase
-                    id="dual-list-selector-list-1632936532528cbdyej8jxse-option-1"
+                    id="dual-list-selector-list-1632939828315kp0t9vbf1rg-option-1"
                     innerRef={null}
                     isSelected={false}
                     onOptionSelect={[Function]}
@@ -1933,7 +1933,7 @@ exports[`DualListSelector with custom status 1`] = `
                     <li
                       aria-selected={false}
                       className="pf-c-dual-list-selector__list-item"
-                      id="dual-list-selector-list-1632936532528cbdyej8jxse-option-1"
+                      id="dual-list-selector-list-1632939828315kp0t9vbf1rg-option-1"
                       key="1"
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -2692,14 +2692,14 @@ exports[`DualListSelector with search inputs 1`] = `
                 role="listbox"
               >
                 <DualListSelectorListItem
-                  id="dual-list-selector-list-1632936532507sjsf77zn1ze-option-0"
+                  id="dual-list-selector-list-1632939828288brbtj8m94nh-option-0"
                   isSelected={false}
                   key="0"
                   onOptionSelect={[Function]}
                   orderIndex={0}
                 >
                   <DualListSelectorListItemBase
-                    id="dual-list-selector-list-1632936532507sjsf77zn1ze-option-0"
+                    id="dual-list-selector-list-1632939828288brbtj8m94nh-option-0"
                     innerRef={null}
                     isSelected={false}
                     onOptionSelect={[Function]}
@@ -2708,7 +2708,7 @@ exports[`DualListSelector with search inputs 1`] = `
                     <li
                       aria-selected={false}
                       className="pf-c-dual-list-selector__list-item"
-                      id="dual-list-selector-list-1632936532507sjsf77zn1ze-option-0"
+                      id="dual-list-selector-list-1632939828288brbtj8m94nh-option-0"
                       key="0"
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -2736,14 +2736,14 @@ exports[`DualListSelector with search inputs 1`] = `
                   </DualListSelectorListItemBase>
                 </DualListSelectorListItem>
                 <DualListSelectorListItem
-                  id="dual-list-selector-list-1632936532507sjsf77zn1ze-option-1"
+                  id="dual-list-selector-list-1632939828288brbtj8m94nh-option-1"
                   isSelected={false}
                   key="1"
                   onOptionSelect={[Function]}
                   orderIndex={1}
                 >
                   <DualListSelectorListItemBase
-                    id="dual-list-selector-list-1632936532507sjsf77zn1ze-option-1"
+                    id="dual-list-selector-list-1632939828288brbtj8m94nh-option-1"
                     innerRef={null}
                     isSelected={false}
                     onOptionSelect={[Function]}
@@ -2752,7 +2752,7 @@ exports[`DualListSelector with search inputs 1`] = `
                     <li
                       aria-selected={false}
                       className="pf-c-dual-list-selector__list-item"
-                      id="dual-list-selector-list-1632936532507sjsf77zn1ze-option-1"
+                      id="dual-list-selector-list-1632939828288brbtj8m94nh-option-1"
                       key="1"
                       onClick={[Function]}
                       onKeyDown={[Function]}

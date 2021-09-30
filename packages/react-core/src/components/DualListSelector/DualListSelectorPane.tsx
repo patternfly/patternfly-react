@@ -4,8 +4,9 @@ import { css } from '@patternfly/react-styles';
 import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { DualListSelectorTree, DualListSelectorTreeItemData } from './DualListSelectorTree';
 import { getUniqueId } from '../../helpers';
-import { DualListSelectorList } from './DualListSelectorList';
+import { DualListSelectorListWrapper } from './DualListSelectorListWrapper';
 import { DualListSelectorContext, DualListSelectorPaneContext } from './DualListSelectorContext';
+import { DualListSelectorList } from './DualListSelectorList';
 
 export interface DualListSelectorPaneProps {
   /** Additional classes applied to the dual list selector pane. */
@@ -172,32 +173,39 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
       )}
       <DualListSelectorPaneContext.Provider value={{ isChosen }}>
         {!isTree && (
-          <DualListSelectorList
+          <DualListSelectorListWrapper
             aria-labelledby={`${id}-status`}
             options={options}
             selectedOptions={selectedOptions}
-            onOptionSelect={(e, index, id) => onOptionSelect(e, index, isChosen, id)}
+            onOptionSelect={(
+              e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent,
+              index: number,
+              id: string
+            ) => onOptionSelect(e, index, isChosen, id)}
             displayOption={displayOption}
           >
             {children}
-          </DualListSelectorList>
+          </DualListSelectorListWrapper>
         )}
         {isTree && (
-          <DualListSelectorList aria-labelledby={`${id}-status`}>
-            {options.length > 0 && (
-              <DualListSelectorTree
-                data={
-                  isSearchable
-                    ? (options as DualListSelectorTreeItemData[])
-                        .map(opt => Object.assign({}, opt))
-                        .filter(item => filterInput(item as DualListSelectorTreeItemData, input))
-                    : (options as DualListSelectorTreeItemData[])
-                }
-                onOptionCheck={onOptionCheck}
-              />
+          <DualListSelectorListWrapper aria-labelledby={`${id}-status`}>
+            {options.length > 0 ? (
+              <DualListSelectorList>
+                <DualListSelectorTree
+                  data={
+                    isSearchable
+                      ? (options as DualListSelectorTreeItemData[])
+                          .map(opt => Object.assign({}, opt))
+                          .filter(item => filterInput(item as DualListSelectorTreeItemData, input))
+                      : (options as DualListSelectorTreeItemData[])
+                  }
+                  onOptionCheck={onOptionCheck}
+                />
+              </DualListSelectorList>
+            ) : (
+              children
             )}
-            {children}
-          </DualListSelectorList>
+          </DualListSelectorListWrapper>
         )}
       </DualListSelectorPaneContext.Provider>
     </div>

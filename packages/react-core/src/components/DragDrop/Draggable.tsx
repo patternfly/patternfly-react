@@ -125,10 +125,10 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     return { source, dest, hoveringDroppableId };
   }
 
-  const onMouseUpWhileDragging = (droppableItems: DroppableItem[]) => {
+  const onMouseUpWhileDragging = (ev: MouseEvent, droppableItems: DroppableItem[]) => {
     droppableItems.forEach(resetDroppableItem);
     document.removeEventListener('mousemove', mouseMoveListener);
-    document.removeEventListener('mouseup', mouseUpListener);
+    document.removeEventListener('click', mouseUpListener, { capture: true });
     document.removeEventListener('contextmenu', mouseUpListener);
     const { source, dest, hoveringDroppableId } = getSourceAndDest();
     const consumerReordered = onDrop(source, dest);
@@ -145,6 +145,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
         boxShadow: styleProp.boxShadow
       });
     }
+    ev.stopPropagation();
   };
 
   // This is where the magic happens
@@ -286,9 +287,9 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     startYOffset = startY - rect.y;
     setIsDragging(true);
     mouseMoveListener = ev => onMouseMoveWhileDragging(ev as MouseEvent, droppableItems, rect);
-    mouseUpListener = () => onMouseUpWhileDragging(droppableItems);
+    mouseUpListener = ev => onMouseUpWhileDragging(ev as MouseEvent, droppableItems);
     document.addEventListener('mousemove', mouseMoveListener);
-    document.addEventListener('mouseup', mouseUpListener);
+    document.addEventListener('click', mouseUpListener, { capture: true });
     // Comment out this line to debug while dragging by right clicking
     // document.addEventListener('contextmenu', mouseUpListener);
   };
