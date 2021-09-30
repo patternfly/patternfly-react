@@ -792,7 +792,17 @@ exports[`DualListSelector basic 1`] = `
             <div
               className="pf-c-dual-list-selector__menu"
               tabIndex={0}
-            />
+            >
+              <DualListSelectorList>
+                <ul
+                  aria-activedescendant=""
+                  aria-labelledby="firstTest-chosen-pane-status"
+                  aria-multiselectable="true"
+                  className="pf-c-dual-list-selector__list"
+                  role="listbox"
+                />
+              </DualListSelectorList>
+            </div>
           </DualListSelectorListWrapperBase>
         </DualListSelectorListWrapper>
       </div>
@@ -2567,7 +2577,17 @@ exports[`DualListSelector with custom status 1`] = `
             <div
               className="pf-c-dual-list-selector__menu"
               tabIndex={0}
-            />
+            >
+              <DualListSelectorList>
+                <ul
+                  aria-activedescendant=""
+                  aria-labelledby="thirdTest-chosen-pane-status"
+                  aria-multiselectable="true"
+                  className="pf-c-dual-list-selector__list"
+                  role="listbox"
+                />
+              </DualListSelectorList>
+            </div>
           </DualListSelectorListWrapperBase>
         </DualListSelectorListWrapper>
       </div>
@@ -3399,7 +3419,17 @@ exports[`DualListSelector with search inputs 1`] = `
             <div
               className="pf-c-dual-list-selector__menu"
               tabIndex={0}
-            />
+            >
+              <DualListSelectorList>
+                <ul
+                  aria-activedescendant=""
+                  aria-labelledby="secondTest-chosen-pane-status"
+                  aria-multiselectable="true"
+                  className="pf-c-dual-list-selector__list"
+                  role="listbox"
+                />
+              </DualListSelectorList>
+            </div>
           </DualListSelectorListWrapperBase>
         </DualListSelectorListWrapper>
       </div>
@@ -4378,7 +4408,17 @@ exports[`DualListSelector with tree 1`] = `
             <div
               className="pf-c-dual-list-selector__menu"
               tabIndex={0}
-            />
+            >
+              <DualListSelectorList>
+                <ul
+                  aria-activedescendant=""
+                  aria-labelledby="tree-test-chosen-pane-status"
+                  aria-multiselectable="true"
+                  className="pf-c-dual-list-selector__list"
+                  role="tree"
+                />
+              </DualListSelectorList>
+            </div>
           </DualListSelectorListWrapperBase>
         </DualListSelectorListWrapper>
       </div>
