@@ -108,7 +108,7 @@ const ComposableDualListSelector = () => {
               <DualListSelectorListItem
                 key={index}
                 isSelected={option.selected}
-                id={`composable-option-${index}`}
+                id={`composable-available-option-${index}`}
                 onOptionSelect={(e) => onOptionSelect(e, index, false)}
               >
                 {option.text}
@@ -162,7 +162,7 @@ const ComposableDualListSelector = () => {
                 <Draggable key={index} hasNoWrapper>
                   <DualListSelectorListItem
                     isSelected={option.selected}
-                    id={`composable-option-${index}`}
+                    id={`composable-chosen-option-${index}`}
                     onOptionSelect={(e) => onOptionSelect(e, index, true)}
                     isDraggable
                   >

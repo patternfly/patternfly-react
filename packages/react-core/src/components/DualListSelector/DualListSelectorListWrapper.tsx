@@ -107,7 +107,7 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
           onOptionSelect
         }}
       >
-        {options.length > 0 ? <DualListSelectorList /> : children}
+        {children ? children : <DualListSelectorList />}
       </DualListSelectorListContext.Provider>
     </div>
   );

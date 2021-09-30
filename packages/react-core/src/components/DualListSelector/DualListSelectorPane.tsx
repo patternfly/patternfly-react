@@ -183,12 +183,13 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
               id: string
             ) => onOptionSelect(e, index, isChosen, id)}
             displayOption={displayOption}
+            id={`${id}-list`}
           >
             {children}
           </DualListSelectorListWrapper>
         )}
         {isTree && (
-          <DualListSelectorListWrapper aria-labelledby={`${id}-status`}>
+          <DualListSelectorListWrapper aria-labelledby={`${id}-status`} id={`${id}-list`}>
             {options.length > 0 ? (
               <DualListSelectorList>
                 <DualListSelectorTree
@@ -200,6 +201,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
                       : (options as DualListSelectorTreeItemData[])
                   }
                   onOptionCheck={onOptionCheck}
+                  id={`${id}-tree`}
                 />
               </DualListSelectorList>
             ) : (

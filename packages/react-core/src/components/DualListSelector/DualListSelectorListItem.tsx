@@ -23,6 +23,8 @@ export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIEle
   innerRef?: React.RefObject<HTMLLIElement>;
   /** Flag indicating this item is draggable for reordring */
   isDraggable?: boolean;
+  /** Accessible label for the draggable button on draggable list items */
+  draggableButtonAriaLabel?: string;
 }
 
 export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelectorListItemProps> = ({
@@ -34,6 +36,7 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
   isSelected,
   innerRef,
   isDraggable = false,
+  draggableButtonAriaLabel = 'Reorder option',
   ...props
 }: DualListSelectorListItemProps) => {
   const ref = innerRef || React.useRef<HTMLLIElement>(null);
@@ -63,7 +66,7 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
       <div className={css(styles.dualListSelectorListItemRow, isSelected && styles.modifiers.selected)}>
         {isDraggable && (
           <div className={css(styles.dualListSelectorDraggable)}>
-            <Button isDisabled variant={ButtonVariant.plain}>
+            <Button isDisabled variant={ButtonVariant.plain} aria-label={draggableButtonAriaLabel}>
               <GripVerticalIcon />
             </Button>
           </div>

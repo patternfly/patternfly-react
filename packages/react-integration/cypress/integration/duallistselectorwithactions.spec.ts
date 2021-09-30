@@ -195,7 +195,7 @@ describe('Dual List Selector With Actions Demo Test', () => {
       .should('have.length', 1);
   });
 
-  it('Verify adding all filtered options', () => {
+  xit('Verify adding all filtered options', () => {
     cy.get('.pf-c-dual-list-selector__list')
       .eq(0)
       .find('li')
