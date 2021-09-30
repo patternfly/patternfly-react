@@ -1321,3 +1321,109 @@ MenuContextSelector = () => {
   return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
 };
 ```
+
+### Options menu using menu components
+
+```js
+import React from 'react';
+import {
+  MenuToggle,
+  Menu,
+  MenuContent,
+  MenuList,
+  MenuItem,
+  MenuGroup,
+  Popper,
+  Tooltip,
+  Divider
+} from '@patternfly/react-core';
+import { Link } from '@reach/router';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import pfIcon from './examples/pf-logo-small.svg';
+
+MenuOptionsMenu = () => {
+
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [selected, setSelected] = React.useState(undefined);
+  const toggleRef = React.useRef();
+  const menuRef = React.useRef();
+
+  const handleMenuKeys = event => {
+    if (!isOpen) {
+      return;
+    }
+    if (menuFooterBtnRef.current.contains(event.target)) {
+      if (event.key === 'Tab') {
+        if (event.shiftKey) {
+          return;
+        }
+        setIsOpen(!isOpen);
+        toggleRef.current.focus();
+      }
+    }
+    if (menuRef.current.contains(event.target)) {
+      if (event.key === 'Escape') {
+        setIsOpen(!isOpen);
+        toggleRef.current.focus();
+      }
+    }
+  };
+
+  const handleClickOutside = event => {
+    if (isOpen && !menuRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', handleMenuKeys);
+    window.addEventListener('click', handleClickOutside);
+
+    return () => {
+      window.removeEventListener('keydown', handleMenuKeys);
+      window.removeEventListener('click', handleClickOutside);
+    };
+  }, [isOpen, menuRef]);
+
+  const onToggleClick = ev => {
+    ev.stopPropagation(); // Stop handleClickOutside from handling
+    setTimeout(() => {
+      const firstElement = menuRef.current.querySelector('li > button,input:not(:disabled)');
+      firstElement && firstElement.focus();
+    }, 0);
+    setIsOpen(!isOpen);
+  };
+
+  const toggle = (
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+      Options menu
+    </MenuToggle>
+  );
+
+  const menu = (
+    <Menu ref={menuRef} id="options-menu"  selected={selected} onSelect={(_ev, itemId) => setSelected(itemId)}>
+      <MenuContent>
+        <MenuList>
+          <MenuItem itemId={0}>Option 1</MenuItem>
+          <MenuItem itemId={1} isDisabled>Disabled Option</MenuItem>
+          <Divider key="group1-divider" />
+          <MenuGroup label="Group 1">
+            <MenuList>
+              <MenuItem itemId={2}>Option 1</MenuItem>
+              <MenuItem itemId={3}>Option 2</MenuItem>
+            </MenuList>
+          </MenuGroup>
+          <Divider key="group2-divider" />
+          <MenuGroup label="Group 2">
+            <MenuList>
+              <MenuItem itemId={4}>Option 1</MenuItem>
+              <MenuItem itemId={5}>Option 2</MenuItem>
+            </MenuList>
+          </MenuGroup>
+        </MenuList>
+      </MenuContent>
+    </Menu>
+  );
+  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
+};
+```
