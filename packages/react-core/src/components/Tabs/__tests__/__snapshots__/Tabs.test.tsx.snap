@@ -11,9 +11,10 @@ Array [
     id="accessibleTabs"
   >
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll left"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -88,9 +89,10 @@ Array [
       </li>
     </ul>
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll right"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -155,9 +157,10 @@ Array [
     id="boxTabs"
   >
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll left"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -255,9 +258,10 @@ Array [
       </li>
     </ul>
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll right"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -334,9 +338,10 @@ Array [
     id="boxLightVariantTabs"
   >
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll left"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -408,9 +413,10 @@ Array [
       </li>
     </ul>
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll right"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -518,9 +524,10 @@ Array [
       </div>
     </div>
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll left"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -618,9 +625,10 @@ Array [
       </li>
     </ul>
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll right"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -697,9 +705,10 @@ Array [
     id="filledTabs"
   >
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll left"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -771,9 +780,10 @@ Array [
       </li>
     </ul>
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll right"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -838,9 +848,10 @@ Array [
     id="primarieTabs"
   >
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll left"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -912,9 +923,10 @@ Array [
       </li>
     </ul>
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll right"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -948,9 +960,10 @@ Array [
       id="secondaryTabs"
     >
       <button
-        aria-hidden="false"
+        aria-hidden="true"
         aria-label="Scroll left"
         class="pf-c-tabs__scroll-button pf-m-secondary"
+        disabled=""
       >
         <svg
           aria-hidden="true"
@@ -1022,9 +1035,10 @@ Array [
         </li>
       </ul>
       <button
-        aria-hidden="false"
+        aria-hidden="true"
         aria-label="Scroll right"
         class="pf-c-tabs__scroll-button pf-m-secondary"
+        disabled=""
       >
         <svg
           aria-hidden="true"
@@ -1115,9 +1129,10 @@ Array [
     id="simpleTabs"
   >
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll left"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -1215,9 +1230,10 @@ Array [
       </li>
     </ul>
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll right"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -1294,9 +1310,10 @@ Array [
     id="eventKeyTabs"
   >
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll left"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -1368,9 +1385,10 @@ Array [
       </li>
     </ul>
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll right"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -1436,9 +1454,10 @@ Array [
     id="separateTabs"
   >
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll left"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -1510,9 +1529,10 @@ Array [
       </li>
     </ul>
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll right"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -1578,9 +1598,10 @@ Array [
     data-ouia-safe="true"
   >
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll left"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -1678,9 +1699,10 @@ Array [
       </li>
     </ul>
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll right"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -1757,9 +1779,10 @@ Array [
     id="verticalTabs"
   >
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll left"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
@@ -1857,9 +1880,10 @@ Array [
       </li>
     </ul>
     <button
-      aria-hidden="false"
+      aria-hidden="true"
       aria-label="Scroll right"
       class="pf-c-tabs__scroll-button"
+      disabled=""
     >
       <svg
         aria-hidden="true"
