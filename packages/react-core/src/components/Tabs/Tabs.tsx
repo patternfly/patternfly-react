@@ -107,8 +107,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     super(props);
     this.state = {
       showScrollButtons: false,
-      disableLeftScrollButton: false,
-      disableRightScrollButton: false,
+      disableLeftScrollButton: true,
+      disableRightScrollButton: true,
       shownKeys: this.props.defaultActiveKey !== undefined ? [this.props.defaultActiveKey] : [this.props.activeKey], // only for mountOnEnter case
       uncontrolledActiveKey: this.props.defaultActiveKey,
       uncontrolledIsExpandedLocal: this.props.defaultIsExpanded,
