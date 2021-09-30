@@ -1,8 +1,6 @@
 describe('Select Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#select-validated-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/select-validated-demo-nav-link');
+    cy.visit('http://localhost:3000/select-validated-demo-nav-link');
   });
 
   it('Verify Validated Select', () => {

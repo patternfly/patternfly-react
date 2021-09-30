@@ -1,8 +1,6 @@
 describe('Text Input Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#text-input-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/text-input-demo-nav-link');
+    cy.visit('http://localhost:3000/text-input-demo-nav-link');
   });
 
   it('Verify text input', () => {

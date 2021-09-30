@@ -1,8 +1,6 @@
 describe('Nav Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#nav-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/nav-demo-nav-link');
+    cy.visit('http://localhost:3000/nav-demo-nav-link');
   });
 
   it('Verify Default Nav', () => {
@@ -105,10 +103,6 @@ describe('Nav Test', () => {
         }
       );
     });
-  });
-
-  it('Verify Horizontal SubNav', () => {
-    cy.get('#subnav-horizontal').should('have.class', 'pf-m-horizontal-subnav');
   });
 
   it('Verify Tertiary Nav', () => {

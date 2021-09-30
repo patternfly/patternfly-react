@@ -1,8 +1,6 @@
 describe('NumberInput Demo Test', () => {
   it('Navigate to numberInput section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#numberInput-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/numberInput-demo-nav-link');
+    cy.visit('http://localhost:3000/numberInput-demo-nav-link');
   });
 
   it('has initial value of 0 & shows min threshold', () => {

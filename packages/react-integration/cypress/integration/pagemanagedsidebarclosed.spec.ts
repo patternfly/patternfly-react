@@ -1,8 +1,6 @@
 describe('Page Managed Sidebar Closed Demo Test', () => {
   it('Navigate to page section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#page-managed-sidebar-closed-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/page-managed-sidebar-closed-demo-nav-link');
+    cy.visit('http://localhost:3000/page-managed-sidebar-closed-demo-nav-link');
   });
 
   it('Test Page elements', () => {

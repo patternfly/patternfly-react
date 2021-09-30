@@ -1,8 +1,6 @@
 describe('About Modal Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#about-modal-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/about-modal-demo-nav-link');
+    cy.visit('http://localhost:3000/about-modal-demo-nav-link');
   });
 
   it('Open + close about modal', () => {

@@ -1,8 +1,6 @@
 describe('Page Demo Test', () => {
   it('Navigate to page section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#page-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/page-demo-nav-link');
+    cy.visit('http://localhost:3000/page-demo-nav-link');
   });
 
   it('Test Page elements', () => {

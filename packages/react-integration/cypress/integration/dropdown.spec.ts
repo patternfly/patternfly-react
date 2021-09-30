@@ -1,8 +1,6 @@
 describe('Dropdown Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#dropdown-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/dropdown-demo-nav-link');
+    cy.visit('http://localhost:3000/dropdown-demo-nav-link');
   });
 
   // Accessibility Tests:
@@ -113,9 +111,7 @@ describe('Dropdown Demo Test', () => {
 
 describe('Action Dropdown Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#dropdown-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/dropdown-demo-nav-link');
+    cy.visit('http://localhost:3000/dropdown-demo-nav-link');
   });
 
   it('Verify toggle dropdown', () => {
@@ -229,9 +225,7 @@ describe('Action Dropdown Demo Test', () => {
 
 describe('Cog Dropdown Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#dropdown-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/dropdown-demo-nav-link');
+    cy.visit('http://localhost:3000/dropdown-demo-nav-link');
   });
 
   it('Verify toggle dropdown', () => {
@@ -345,9 +339,7 @@ describe('Cog Dropdown Demo Test', () => {
 
 describe('Dropdown with menu on document body demo test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#dropdown-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/dropdown-demo-nav-link');
+    cy.visit('http://localhost:3000/dropdown-demo-nav-link');
   });
 
   it('Verify toggle dropdown', () => {

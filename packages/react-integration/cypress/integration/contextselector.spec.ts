@@ -1,8 +1,6 @@
 describe('Context Selector Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#context-selector-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/context-selector-demo-nav-link');
+    cy.visit('http://localhost:3000/context-selector-demo-nav-link');
   });
 
   it('Verify toggle class', () => {

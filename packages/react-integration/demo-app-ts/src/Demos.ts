@@ -21,11 +21,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AccordionDemo
   },
   {
-    id: 'action-list-demo',
-    name: 'Action List Demo',
-    componentType: Examples.ActionListDemo
-  },
-  {
     id: 'alert-timeout-close-button-demo',
     name: 'Alert Timeout Close Button Demo',
     componentType: Examples.AlertTimeoutCloseButtonDemo
@@ -51,34 +46,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AlertDefaultTimeoutDemo
   },
   {
-    id: 'application-launcher-demo',
-    name: 'Application Launcher Demo',
-    componentType: Examples.ApplicationLauncherDemo
-  },
-  {
     id: 'application-launcher-favorites-demo',
     name: 'Application Launcher Favorites Demo',
     componentType: Examples.ApplicationLauncherFavoritesDemo
-  },
-  {
-    id: 'area-chart-color-demo',
-    name: 'Area Chart Color with Bottom Legend Demo',
-    componentType: Examples.ColorAreaBottomLegendDemo
-  },
-  {
-    id: 'area-chart-cyan-demo',
-    name: 'Area Chart Cyan Demo',
-    componentType: Examples.CyanAreaDemo
-  },
-  {
-    id: 'sparkline-chart-demo',
-    name: 'Area Sparkline Chart Demo',
-    componentType: Examples.SparklineDemo
-  },
-  {
-    id: 'stacked-area-chart-demo',
-    name: 'Area Stacked Chart Demo',
-    componentType: Examples.StackedAreaDemo
   },
   {
     id: 'back-to-top-demo',
@@ -86,54 +56,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.BackToTopDemo
   },
   {
-    id: 'backdrop-demo',
-    name: 'Backdrop Demo',
-    componentType: Examples.BackdropDemo
-  },
-  {
-    id: 'backgroundimage-demo',
-    name: 'Background Image Demo',
-    componentType: Examples.BackgroundImageDemo
-  },
-  {
-    id: 'badge-demo',
-    name: 'Badge Demo',
-    componentType: Examples.BadgeDemo
-  },
-  {
-    id: 'banner-demo',
-    name: 'Banner Demo',
-    componentType: Examples.BannerDemo
-  },
-  {
-    id: 'purple-bar-grouped-demo',
-    name: 'Bar Chart Grouped Purple Demo',
-    componentType: Examples.PurpleBarGroupedDemo
-  },
-  {
-    id: 'color-bar-zoom-demo',
-    name: 'Bar Chart Multi-color, horizontal with Zoom and Bottom-aligned Legend Demo',
-    componentType: Examples.ColorBarZoomDemo
-  },
-  {
-    id: 'bar-chart-simple-demo',
-    name: 'Bar Chart Simple Demo',
-    componentType: Examples.SimpleBarDemo
-  },
-  {
-    id: 'brand-demo',
-    name: 'Brand Demo',
-    componentType: Examples.BrandDemo
-  },
-  {
     id: 'breadcrumb-demo',
     name: 'Breadcrumb Demo',
     componentType: Examples.BreadcrumbDemo
-  },
-  {
-    id: 'bullseye-demo',
-    name: 'Bullseye Demo',
-    componentType: Examples.BullseyeDemo
   },
   {
     id: 'button-demo',
@@ -144,11 +69,6 @@ export const Demos: DemoInterface[] = [
     id: 'card-demo',
     name: 'Card Demo',
     componentType: Examples.CardDemo
-  },
-  {
-    id: 'checkbox-demo',
-    name: 'Checkbox Demo',
-    componentType: Examples.CheckboxDemo
   },
   {
     id: 'chipgroup-demo',
@@ -174,16 +94,6 @@ export const Demos: DemoInterface[] = [
     id: 'clipboard-copy-demo',
     name: 'ClipboardCopy Demo',
     componentType: Examples.ClipboardCopyDemo
-  },
-  {
-    id: 'clipboard-copy-expanded-demo',
-    name: 'ClipboardCopy Expanded Demo',
-    componentType: Examples.ClipboardCopyExpandedDemo
-  },
-  {
-    id: 'code-block-demo',
-    name: 'CodeBlock Demo',
-    componentType: Examples.CodeBlockDemo
   },
   {
     id: 'code-editor-demo',
@@ -226,122 +136,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DescriptionListBreakpointsDemo
   },
   {
-    id: 'divider-demo',
-    name: 'Divider Demo',
-    componentType: Examples.DividerDemo
-  },
-  {
-    id: 'divider-inset-demo',
-    name: 'Divider Inset Demo',
-    componentType: Examples.DividerInsetDemo
-  },
-  {
-    id: 'donut-chart-bottom-legend-demo',
-    name: 'Donut Chart with Bottom Aligned Legend Demo',
-    componentType: Examples.DonutBottomAlignedLegendDemo
-  },
-  {
-    id: 'donut-chart-small-bottom-legend-demo',
-    name: 'Donut Chart Small with Bottom Aligned Legend Demo',
-    componentType: Examples.DonutSmallBottomAlignedLegend
-  },
-  {
-    id: 'donut-chart-small-demo',
-    name: 'Donut Chart Small Demo',
-    componentType: Examples.DonutSmallDemo
-  },
-  {
-    id: 'donut-chart-small-right-legend-demo',
-    name: 'Donut Chart Small with Right Aligned Legend Demo',
-    componentType: Examples.DonutSmallRightAlignedLegendDemo
-  },
-  {
-    id: 'donut-chart-right-legend-color-demo',
-    name: 'Donut Chart Multi-colored with Right Aligned Legend Demo',
-    componentType: Examples.DonutRightAlignedLegendColorDemo
-  },
-  {
-    id: 'donut-chart-right-legend-demo',
-    name: 'Donut Chart with Right Aligned Legend Demo',
-    componentType: Examples.DonutRightAlignedLegendDemo
-  },
-  {
-    id: 'donut-utilization-green-static-right-demo',
-    name: 'Donut Utilization Green Static Right Demo',
-    componentType: Examples.DonutUtilizationGreenStaticRightDemo
-  },
-  {
-    id: 'donut-utilization-inverted-right-demo',
-    name: 'Donut Utilization Inverted Right Demo',
-    componentType: Examples.DonutUtilizationInvertedRightDemo
-  },
-  {
-    id: 'donut-utilization-simple-bottom-demo',
-    name: 'Donut Utilization Simple Chart, Bottom-aligned Legend Demo',
-    componentType: Examples.DonutUtilizationSimpleBottomDemo
-  },
-  {
-    id: 'donut-utilization-simple-demo',
-    name: 'Donut Utilization Simple Chart Demo',
-    componentType: Examples.DonutUtilizationSimpleDemo
-  },
-
-  {
-    id: 'donut-utilization-simple-right-demo',
-    name: 'Donut Utilization Simple Right Demo',
-    componentType: Examples.DonutUtilizationSimpleRightDemo
-  },
-  {
-    id: 'donut-utilization-simple-right-green-demo',
-    name: 'Donut Utilization Simple Right Green Demo',
-    componentType: Examples.DonutUtilizationSimpleRightGreenDemo
-  },
-  {
-    id: 'donut-utilization-sm-demo',
-    name: 'Donut Utilization Small Demo',
-    componentType: Examples.DonutUtilizationSmallDemo
-  },
-  {
-    id: 'donut-utilization-sm-right-demo',
-    name: 'Donut Utilization Small Right Demo',
-    componentType: Examples.DonutUtilizationSmallRightDemo
-  },
-  {
-    id: 'donut-utilization-sm-static-bottom-demo',
-    name: 'Donut Utilization Small Static Bottom Demo',
-    componentType: Examples.DonutUtilizationSmallStaticBottomDemo
-  },
-  {
-    id: 'donut-utilization-sm-static-demo',
-    name: 'Donut Utilization Small Static Demo',
-    componentType: Examples.DonutUtilizationSmallStaticDemo
-  },
-  {
-    id: 'donut-utilization-sm-static-right-demo',
-    name: 'Donut Utilization Small Static Right Demo',
-    componentType: Examples.DonutUtilizationSmallStaticRightDemo
-  },
-  {
-    id: 'donut-utilization-static-bottom-demo',
-    name: 'Donut Utilization Static Bottom Demo',
-    componentType: Examples.DonutUtilizationStaticBottomDemo
-  },
-  {
-    id: 'donut-utilization-static-demo',
-    name: 'Donut Utilization Static Demo',
-    componentType: Examples.DonutUtilizationStaticDemo
-  },
-  {
-    id: 'donut-utilization-static-inverted-right-demo',
-    name: 'Donut Utilization Static Inverted Right Demo',
-    componentType: Examples.DonutUtilizationStaticInvertedRightDemo
-  },
-  {
-    id: 'donut-utilization-static-right-demo',
-    name: 'Donut Utilization Static Right Demo',
-    componentType: Examples.DonutUtilizationStaticRightDemo
-  },
-  {
     id: 'drawer-demo',
     name: 'Drawer Demo',
     componentType: Examples.DrawerDemo
@@ -372,19 +166,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DualListSelectorWithActionsDemo
   },
   {
-    id: 'empty-state-demo',
-    name: 'Empty State Demo',
-    componentType: Examples.EmptyStateDemo
-  },
-  {
     id: 'expandable-section-demo',
     name: 'Expandable Section Demo',
     componentType: Examples.ExpandableSectionDemo
-  },
-  {
-    id: 'flex-demo',
-    name: 'Flex Demo',
-    componentType: Examples.FlexDemo
   },
   {
     id: 'fileupload-demo',
@@ -395,41 +179,6 @@ export const Demos: DemoInterface[] = [
     id: 'form-demo',
     name: 'Form Demo',
     componentType: Examples.FormDemo
-  },
-  {
-    id: 'form-horizontal-demo',
-    name: 'Form HorizontalDemo',
-    componentType: Examples.HorizontalFormDemo
-  },
-  {
-    id: 'form-field-group-demo',
-    name: 'Form Field Group Demo',
-    componentType: Examples.FormFieldGroupDemo
-  },
-  {
-    id: 'form-select-demo',
-    name: 'Form Select Demo',
-    componentType: Examples.FormSelectDemo
-  },
-  {
-    id: 'gallery-demo',
-    name: 'Gallery Demo',
-    componentType: Examples.GalleryDemo
-  },
-  {
-    id: 'grid-demo',
-    name: 'Grid Demo',
-    componentType: Examples.GridDemo
-  },
-  {
-    id: 'helper-text-demo',
-    name: 'Helper Text Demo',
-    componentType: Examples.HelperTextDemo
-  },
-  {
-    id: 'hint-demo',
-    name: 'Hint Demo',
-    componentType: Examples.HintDemo
   },
   {
     id: 'jump-links-demo',
@@ -447,19 +196,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.LabelDemo
   },
   {
-    id: 'labelgroup-demo',
-    name: 'LabelGroup Demo',
-    componentType: Examples.LabelGroupDemo
-  },
-  {
     id: 'labelgroup-editable-demo',
     name: 'LabelGroup Editable Demo',
     componentType: Examples.LabelGroupEditableDemo
-  },
-  {
-    id: 'labelgroup-default-is-open-demo',
-    name: 'LabelGroup Default is Open Demo',
-    componentType: Examples.LabelGroupDefaultIsOpenDemo
   },
   {
     id: 'labelgroup-vertical-demo',
@@ -470,31 +209,6 @@ export const Demos: DemoInterface[] = [
     id: 'labelgroup-with-category-demo',
     name: 'LabelGroup With Category Demo',
     componentType: Examples.LabelGroupWithCategoryDemo
-  },
-  {
-    id: 'level-demo',
-    name: 'Level Demo',
-    componentType: Examples.LevelDemo
-  },
-  {
-    id: 'line-chart-green-demo',
-    name: 'Line Chart Green Demo',
-    componentType: Examples.LineChartGreenDemo
-  },
-  {
-    id: 'line-chart-color-demo',
-    name: 'Line Chart Multi-color Demo',
-    componentType: Examples.LineChartColorDemo
-  },
-  {
-    id: 'line-chart-simple-demo',
-    name: 'Line Chart Simple Demo',
-    componentType: Examples.LineChartSimpleDemo
-  },
-  {
-    id: 'list-demo',
-    name: 'List Demo',
-    componentType: Examples.ListDemo
   },
   {
     id: 'login-page-demo',
@@ -515,11 +229,6 @@ export const Demos: DemoInterface[] = [
     id: 'menu-drilldown-demo',
     name: 'Menu Drilldown Demo',
     componentType: Examples.MenuDrilldownDemo
-  },
-  {
-    id: 'menu-toggle-demo',
-    name: 'Menu Toggle Demo',
-    componentType: Examples.MenuToggleDemo
   },
   {
     id: 'modal-demo',
@@ -562,11 +271,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.OptionsMenuDemo
   },
   {
-    id: 'ouia-demo',
-    name: 'Ouia Demo',
-    componentType: Examples.OuiaDemo
-  },
-  {
     id: 'overflow-menu-demo',
     name: 'Overflow Menu Demo',
     componentType: Examples.OverflowMenuDemo
@@ -575,16 +279,6 @@ export const Demos: DemoInterface[] = [
     id: 'page-demo',
     name: 'Page Demo',
     componentType: Examples.PageDemo
-  },
-  {
-    id: 'page-breadcrumb-and-tertiary-nav-demo',
-    name: 'Page Breadcrumb and Tertiary Nav Demo',
-    componentType: Examples.PageBreadcrumbAndTertiaryNavDemo
-  },
-  {
-    id: 'page-managed-sidebar-demo',
-    name: 'Page Managed Sidebar Demo',
-    componentType: Examples.PageManagedSidebarDemo
   },
   {
     id: 'page-managed-sidebar-closed-demo',
@@ -597,29 +291,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.PaginationDemo
   },
   {
-    id: 'pie-blue-demo',
-    name: 'Pie Chart Blue Demo',
-    componentType: Examples.PieBlueDemo
-  },
-  {
-    id: 'pie-color-demo',
-    name: 'Pie Chart Multi-color Demo',
-    componentType: Examples.PieColorDemo
-  },
-  {
-    id: 'pie-orange-demo',
-    name: 'Pie Chart Orange Demo',
-    componentType: Examples.PieOrangeDemo
-  },
-  {
     id: 'popover-demo',
     name: 'Popover Demo',
     componentType: Examples.PopoverDemo
-  },
-  {
-    id: 'progress-demo',
-    name: 'Progress Demo',
-    componentType: Examples.ProgressDemo
   },
   {
     id: 'radio-demo',
@@ -667,44 +341,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.SimpleListDemo
   },
   {
-    id: 'skeleton-demo',
-    name: 'Skeleton Demo',
-    componentType: Examples.SkeletonDemo
-  },
-  {
     id: 'slider-demo',
     name: 'Slider Demo',
     componentType: Examples.SliderDemo
-  },
-  {
-    id: 'spinner-demo',
-    name: 'Spinner Demo',
-    componentType: Examples.SpinnerDemo
-  },
-  {
-    id: 'split-demo',
-    name: 'Split Demo',
-    componentType: Examples.SplitDemo
-  },
-  {
-    id: 'stack-demo',
-    name: 'Stack Demo',
-    componentType: Examples.StackDemo
-  },
-  {
-    id: 'stack-blue-demo',
-    name: 'Stack Chart Blue Demo',
-    componentType: Examples.StackBlueDemo
-  },
-  {
-    id: 'stack-gold-bottom-legend-demo',
-    name: 'Stack Chart Gold with Bottom Legend Demo',
-    componentType: Examples.StackGoldBottomLegendDemo
-  },
-  {
-    id: 'stack-color-zoom-demo',
-    name: 'Stack Chart Color Demo',
-    componentType: Examples.StackColorZoomDemo
   },
   {
     id: 'switch-demo',
@@ -722,24 +361,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TabUncontrolledDemo
   },
   {
-    id: 'tabs-inset-demo',
-    name: 'Tabs Inset Demo',
-    componentType: Examples.TabsInsetDemo
-  },
-  {
     id: 'tabs-disabled-demo',
     name: 'Tabs Disabled Demo',
     componentType: Examples.TabsDisabledDemo
-  },
-  {
-    id: 'table-actions-demo',
-    name: 'Table Actions Demo',
-    componentType: Examples.TableActionsDemo
-  },
-  {
-    id: 'table-breakpoint-modifers-demo',
-    name: 'Table Breakpoint Modifers Demo',
-    componentType: Examples.TableBreakpointModifersDemo
   },
   {
     id: 'table-collapsible-demo',
@@ -747,29 +371,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TableCollapsibleDemo
   },
   {
-    id: 'table-compact-borderless-rows-demo',
-    name: 'Table Compact Borderless Rows Demo',
-    componentType: Examples.TableCompactBorderlessRowsDemo
-  },
-  {
-    id: 'table-compact-demo',
-    name: 'Table Compact Demo',
-    componentType: Examples.TableCompactDemo
-  },
-  {
-    id: 'table-compact-expandable-demo',
-    name: 'Table Compact Expandable Demo',
-    componentType: Examples.TableCompactExpandableDemo
-  },
-  {
     id: 'table-compound-expandable-demo',
     name: 'Table Compound Expandable Demo',
     componentType: Examples.TableCompoundExpandableDemo
-  },
-  {
-    id: 'table-control-text-demo',
-    name: 'Table Control Text Demo',
-    componentType: Examples.TableControlTextDemo
   },
   {
     id: 'table-editable-demo',
@@ -780,16 +384,6 @@ export const Demos: DemoInterface[] = [
     id: 'table-editable-compound-expandable-demo',
     name: 'Table Editable Compound Expandable Demo',
     componentType: Examples.TableEditableCompoundExpandableDemo
-  },
-  {
-    id: 'table-first-cell-as-header-demo',
-    name: 'Table First Cell As Header Demo',
-    componentType: Examples.TableFirstCellAsHeaderDemo
-  },
-  {
-    id: 'table-headers-wrappable-demo',
-    name: 'Table Headers Wrappable Demo',
-    componentType: Examples.TableHeadersWrappableDemo
   },
   {
     id: 'table-row-wrapper-demo',
@@ -822,16 +416,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TableSortableDemo
   },
   {
-    id: 'table-sticky-header-demo',
-    name: 'Table Sticky Header Demo',
-    componentType: Examples.TableStickyHeaderDemo
-  },
-  {
-    id: 'table-width-modifiers-demo',
-    name: 'Table Width Modifers Demo',
-    componentType: Examples.TableWidthModifiersDemo
-  },
-  {
     id: 'table-favorites-demo',
     name: 'Table Favorites Demo',
     componentType: Examples.TableFavoritesDemo
@@ -852,24 +436,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TextAreaDemo
   },
   {
-    id: 'text-demo',
-    name: 'Text Demo',
-    componentType: Examples.TextDemo
-  },
-  {
     id: 'text-input-demo',
     name: 'Text Input Demo',
     componentType: Examples.TextInputDemo
-  },
-  {
-    id: 'tile-demo',
-    name: 'Tile Demo',
-    componentType: Examples.TileDemo
-  },
-  {
-    id: 'title-demo',
-    name: 'Title Demo',
-    componentType: Examples.TitleDemo
   },
   {
     id: 'toggle-group-demo',
@@ -905,11 +474,6 @@ export const Demos: DemoInterface[] = [
     id: 'treeview-demo',
     name: 'Tree View Demo',
     componentType: Examples.TreeViewDemo
-  },
-  {
-    id: 'vertical-tabs-demo',
-    name: 'Vertical Tabs Demo',
-    componentType: Examples.VerticalTabsDemo
   },
   {
     id: 'wizard-demo',

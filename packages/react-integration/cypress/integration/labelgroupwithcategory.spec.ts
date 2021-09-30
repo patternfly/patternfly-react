@@ -1,8 +1,6 @@
 describe('Label Group with Category Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#labelgroup-with-category-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/labelgroup-with-category-demo-nav-link');
+    cy.visit('http://localhost:3000/labelgroup-with-category-demo-nav-link');
   });
 
   it('Verify delete button on first label group', () => {
