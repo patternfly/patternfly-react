@@ -11,6 +11,14 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 
 ### Reordering lists using drag and drop
 
+To make a pane able to be reordered:
+ - wrap the `DualListSelectorPane` in a `DragDrop` component
+ - wrap the `DualListSelectorList` in a `Droppable` component
+ - wrap the `DualListSelectorListItem` components in a `Draggable` component
+ - define an `onDrop` callback which reorders the sortable options. The `onDrop` function provides the starting 
+ location and destination location for a dragged item. It should return true to enable the 'drop' animation in 
+ the new location and false to enable the 'drop' animation back to the item's old position.
+
 ```js
 import React from 'react';
 import { 

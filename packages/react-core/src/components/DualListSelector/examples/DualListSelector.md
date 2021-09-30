@@ -376,6 +376,33 @@ class TreeDualListSelector extends React.Component {
 
 ### Composable dual list selector
 
+For more flexibility, a Dual list selector can be built using sub components. When doing so, the intended component
+relationships are arranged as follows:
+
+```js noLive
+import React from 'react';
+import { DualListSelector, DualListSelectorPane, DualListSelectorList, DualListSelectorListItem, DualListSelectorControlsWrapper, DualListSelectorControl } from '@patternfly/react-core';
+<DualListSelector>
+
+  <DualListSelectorPane>
+    <DualListSelectorList>
+      <DualListSelectorListItem/>
+    </DualListSelectorList>
+  </DualListSelectorPane>
+  
+  <DualListSelectorControlsWrapper>
+    <DualListSelectorControl/> {/* The standard Dual list selector has 4 controls */}
+  </DualListSelectorControlsWrapper>
+  
+  <DualListSelectorPane isChosen>
+    <DualListSelectorList>
+      <DualListSelectorListItem/>
+    </DualListSelectorList>
+  </DualListSelectorPane>
+  
+</DualListSelector>
+```
+
 ```js
 import React from 'react';
 import { 
@@ -409,6 +436,7 @@ const ComposableDualListSelector = () => {
   const [availableFilter, setAvailableFilter] = React.useState('');
   const [chosenFilter, setChosenFilter] = React.useState('');
 
+  // callback for moving selected options between lists
   const moveSelected = (fromAvailable) => {
     const sourceOptions = fromAvailable ? availableOptions : chosenOptions;
     const destinationOptions = fromAvailable ? chosenOptions : availableOptions;
@@ -430,6 +458,7 @@ const ComposableDualListSelector = () => {
     }
   };
   
+  // callback for moving all options between lists
   const moveAll = (fromAvailable) => {
     if (fromAvailable) {
       setChosenOptions([...availableOptions.filter(x => x.isVisible), ...chosenOptions]);
@@ -440,6 +469,7 @@ const ComposableDualListSelector = () => {
     }
   };
   
+  // callback when option is selected
   const onOptionSelect = (event, index, isChosen) => {
     if (isChosen) {
       const newChosen = [...chosenOptions];
@@ -452,6 +482,7 @@ const ComposableDualListSelector = () => {
     }
   };
   
+  // builds a search input - used in each dual list selector pane
   const buildSearchInput = (isAvailable) => {
     const onChange = (value) => {
       isAvailable ? setAvailableFilter(value) : setChosenFilter(value);
@@ -470,6 +501,7 @@ const ComposableDualListSelector = () => {
     );
   };
   
+  // builds a sort control - passed to both dual list selector panes
   const buildSort = (isAvailable) => {
     const onSort = () => {
       const toSort = isAvailable ? [...availableOptions] : [...chosenOptions];
