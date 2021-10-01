@@ -1627,14 +1627,14 @@ CardNestedDemo = () => {
             </CardBody>
           </CardExpandableContent>
         </Card>
-        <Card id="nested-cards-toggle-group-3" isPlain isExpanded={isCardExpanded3}>
+        <Card id="nested-cards-toggle-group-2" isPlain isExpanded={isCardExpanded3}>
           <CardHeader
             onExpand={() => onCardExpand3(!isCardExpanded3)}
             isToggleRightAligned={isToggleOnRight}
             toggleButtonProps={{
-              id: 'toggle-button-3',
+              id: 'toggle-button-2',
               'aria-label': 'Details',
-              'aria-labelledby': 'nested-cards-toggle-group-3-title toggle-button-3',
+              'aria-labelledby': 'nested-cards-toggle-group-2-title toggle-button-2',
               'aria-expanded': isCardExpanded3
             }}
           >
@@ -1776,6 +1776,7 @@ CardNestedDemo = () => {
             </CardBody>
           </CardExpandableContent>
         </Card>
+
         <Card id="nested-cards-toggle-group-3" isPlain isExpanded={isCardExpanded2}>
           <CardHeader
             onExpand={() => onCardExpand2(!isCardExpanded2)}
