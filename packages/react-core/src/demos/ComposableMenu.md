@@ -66,8 +66,10 @@ BasicComposableMenu = () => {
   const onToggleClick = ev => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
-      const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
-      firstElement && firstElement.focus();
+      if (menuRef.current) {
+        const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+        firstElement && firstElement.focus();
+      }
     }, 0);
     setIsOpen(!isOpen);
   };
@@ -160,8 +162,10 @@ ActionComposableMenu = () => {
   const onToggleClick = ev => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
-      const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
-      firstElement && firstElement.focus();
+      if (menuRef.current) {
+        const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+        firstElement && firstElement.focus();
+      }
     }, 0);
     setIsOpen(!isOpen);
   };
@@ -267,8 +271,10 @@ SelectComposableMenu = () => {
   const onToggleClick = ev => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
-      const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
-      firstElement && firstElement.focus();
+      if (menuRef.current) {
+        const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+        firstElement && firstElement.focus();
+      }
     }, 0);
     setIsOpen(!isOpen);
   };
@@ -350,8 +356,10 @@ DrilldownComposableMenu = () => {
   const onToggleClick = ev => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
-      const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
-      firstElement && firstElement.focus();
+      if (menuRef.current) {
+        const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+        firstElement && firstElement.focus();
+      }
     }, 0);
     setIsOpen(!isOpen);
     setMenuDrilledIn([]);
@@ -731,8 +739,10 @@ FilterTreeComposableMenu = () => {
   const onToggleClick = ev => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
-      const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
-      firstElement && firstElement.focus();
+       if (menuRef.current) {
+        const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+        firstElement && firstElement.focus();
+       }
     }, 0);
     setIsOpen(!isOpen);
   };
@@ -841,8 +851,10 @@ MenuWithFlyout = () => {
   const onToggleClick = ev => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
-      const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
-      firstElement && firstElement.focus();
+      if (menuRef.current) {
+        const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+        firstElement && firstElement.focus();
+      }
     }, 0);
     setIsOpen(!isOpen);
   };
@@ -924,9 +936,11 @@ MenuAppLauncher = () => {
   const onToggleClick = ev => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
-      const firstElement = menuRef.current.querySelector('li > button,input:not(:disabled)');
-      firstElement && firstElement.focus();
-      setRefFullOptions(Array.from(menuRef.current.querySelectorAll('li:not(li[role=separator])')));
+       if (menuRef.current) {
+        const firstElement = menuRef.current.querySelector('li > button,input:not(:disabled)');
+        firstElement && firstElement.focus();
+        setRefFullOptions(Array.from(menuRef.current.querySelectorAll('li:not(li[role=separator])')));
+       }
     }, 0);
     setIsOpen(!isOpen);
   };
@@ -1242,8 +1256,10 @@ MenuContextSelector = () => {
   const onToggleClick = ev => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
-      const firstElement = menuRef.current.querySelector('li > button,input:not(:disabled)');
-      firstElement && firstElement.focus();
+      if (menuRef.current) {
+        const firstElement = menuRef.current.querySelector('li > button,input:not(:disabled)');
+        firstElement && firstElement.focus();
+      }
     }, 0);
     setIsOpen(!isOpen);
   };
@@ -1334,12 +1350,8 @@ import {
   MenuItem,
   MenuGroup,
   Popper,
-  Tooltip,
   Divider
 } from '@patternfly/react-core';
-import { Link } from '@reach/router';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import pfIcon from './examples/pf-logo-small.svg';
 
 MenuOptionsMenu = () => {
 
@@ -1349,20 +1361,8 @@ MenuOptionsMenu = () => {
   const menuRef = React.useRef();
 
   const handleMenuKeys = event => {
-    if (!isOpen) {
-      return;
-    }
-    if (menuFooterBtnRef.current.contains(event.target)) {
-      if (event.key === 'Tab') {
-        if (event.shiftKey) {
-          return;
-        }
-        setIsOpen(!isOpen);
-        toggleRef.current.focus();
-      }
-    }
-    if (menuRef.current.contains(event.target)) {
-      if (event.key === 'Escape') {
+    if (isOpen && menuRef.current.contains(event.target)) {
+      if (event.key === 'Escape' || event.key === 'Tab') {
         setIsOpen(!isOpen);
         toggleRef.current.focus();
       }
@@ -1388,8 +1388,10 @@ MenuOptionsMenu = () => {
   const onToggleClick = ev => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
-      const firstElement = menuRef.current.querySelector('li > button,input:not(:disabled)');
-      firstElement && firstElement.focus();
+      if (menuRef.current) {
+        const firstElement = menuRef.current.querySelector('li > button,input:not(:disabled)');
+        firstElement && firstElement.focus();
+      }
     }, 0);
     setIsOpen(!isOpen);
   };
