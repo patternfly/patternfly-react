@@ -2246,7 +2246,7 @@ class FavoritesSelect extends React.Component {
 ```js
 import React from 'react';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox, Divider, Button } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SelectDirection, Divider, Button } from '@patternfly/react-core';
 
 class SelectWithFooter extends React.Component {
   constructor(props) {
