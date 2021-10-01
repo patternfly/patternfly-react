@@ -39,7 +39,6 @@ import {
   PageToggleButton,
   Toolbar,
   ToolbarContent,
-  ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
@@ -63,9 +62,7 @@ class VerticalPage extends React.Component {
     const headerToolbar = (
       <Toolbar id="toolbar">
         <ToolbarContent>
-          <ToolbarGroup>
             <ToolbarItem>header-tools</ToolbarItem>
-          </ToolbarGroup>
         </ToolbarContent>
       </Toolbar>
     );
@@ -117,7 +114,6 @@ import {
   PageSectionVariants,
   Toolbar,
   ToolbarContent,
-  ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
 
@@ -125,10 +121,8 @@ HorizontalPage = () => {
   const headerToolbar = (
     <Toolbar id="toolbar">
       <ToolbarContent>
-        <ToolbarGroup>
           <ToolbarItem>Navigation</ToolbarItem>
           <ToolbarItem>header-tools</ToolbarItem>
-        </ToolbarGroup>
       </ToolbarContent>
     </Toolbar>
   );
@@ -168,7 +162,6 @@ import {
   PageSectionVariants,
   Toolbar,
   ToolbarContent,
-  ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
 
@@ -176,9 +169,7 @@ TertiaryPage = () => {
   const headerToolbar = (
     <Toolbar id="toolbar">
       <ToolbarContent>
-        <ToolbarGroup>
           <ToolbarItem>header-tools</ToolbarItem>
-        </ToolbarGroup>
       </ToolbarContent>
     </Toolbar>
   );
@@ -221,7 +212,6 @@ import {
   PageToggleButton,
   Toolbar,
   ToolbarContent,
-  ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
@@ -245,9 +235,7 @@ class VerticalPage extends React.Component {
     const headerToolbar = (
       <Toolbar id="toolbar">
         <ToolbarContent>
-          <ToolbarGroup>
             <ToolbarItem>header-tools</ToolbarItem>
-          </ToolbarGroup>
         </ToolbarContent>
       </Toolbar>
     );
@@ -308,7 +296,6 @@ import {
   PageToggleButton,
   Toolbar,
   ToolbarContent,
-  ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
@@ -332,9 +319,7 @@ class FillPage extends React.Component {
     const headerToolbar = (
       <Toolbar id="toolbar">
         <ToolbarContent>
-          <ToolbarGroup>
             <ToolbarItem>header-tools</ToolbarItem>
-          </ToolbarGroup>
         </ToolbarContent>
       </Toolbar>
     );
@@ -394,7 +379,6 @@ import {
   PageToggleButton,
   Toolbar,
   ToolbarContent,
-  ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
@@ -404,9 +388,7 @@ class UncontrolledNavPage extends React.Component {
     const headerToolbar = (
       <Toolbar id="toolbar">
         <ToolbarContent>
-          <ToolbarGroup>
             <ToolbarItem>header-tools</ToolbarItem>
-          </ToolbarGroup>
         </ToolbarContent>
       </Toolbar>
     );
@@ -464,7 +446,6 @@ import {
   NavItem,
   Toolbar,
   ToolbarContent,
-  ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
@@ -488,9 +469,7 @@ class GroupPage extends React.Component {
     const headerToolbar = (
       <Toolbar id="toolbar">
         <ToolbarContent>
-          <ToolbarGroup>
             <ToolbarItem>header-tools</ToolbarItem>
-          </ToolbarGroup>
         </ToolbarContent>
       </Toolbar>
     );
