@@ -205,7 +205,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
       ref: innerRef,
       className: css(
         !footer ? styles.selectMenu : 'pf-c-select__menu-list',
-        position === 'right' && styles.modifiers.alignRight,
+        position === SelectPosition.right && styles.modifiers.alignRight,
         className
       ),
       ...(maxHeight && { style: { maxHeight, overflow: 'auto' } })
