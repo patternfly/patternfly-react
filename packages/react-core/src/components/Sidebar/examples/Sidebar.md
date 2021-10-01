@@ -56,7 +56,7 @@ import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
 ```
 
 ### Sticky panel
-A `tabindex` should be added to the `Sidbear` when there is scrollable content in order for the  overflow content to be accessible by keyboard.
+A `tabindex` should be added to the `Sidebar` when there is scrollable content in order for the  overflow content to be accessible by keyboard.
 ```js
 import React from 'react';
 import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
@@ -74,7 +74,7 @@ import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
 ```
 
 ### Static panel
-A `tabindex` should be added to the `Sidbear` when there is scrollable content in order for the  overflow content to be accessible by keyboard.
+A `tabindex` should be added to the `Sidebar` when there is scrollable content in order for the  overflow content to be accessible by keyboard.
 ```js
 import React from 'react';
 import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
@@ -92,7 +92,7 @@ import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
 ```
 
 ### Responsive panel width
-A `tabindex` should be added to the `Sidbear` when there is scrollable content in order for the  overflow content to be accessible by keyboard.
+A `tabindex` should be added to the `Sidebar` when there is scrollable content in order for the  overflow content to be accessible by keyboard.
 ```js
 import React from 'react';
 import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
