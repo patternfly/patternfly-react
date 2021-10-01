@@ -1442,10 +1442,13 @@ import {
   CardTitle,
   CardBody,
   CardExpandableContent,
+  Checkbox,
   Title,
+  Divider,
   Grid,
   GridItem,
-  Flex
+  Flex,
+  FlexItem
 } from '@patternfly/react-core';
 import { ChartArea, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 
@@ -1469,10 +1472,13 @@ CardNestedDemo = () => {
       <Card id="nested-cards">
         <CardHeader>
           <CardTitle id="nested-cards-toggle-title">
-            <Title headingLevel="h2"  size="lg"> Hardware Monitor </Title>
+            <Title headingLevel="h2" size="lg">
+              {' '}
+              Hardware Monitor{' '}
+            </Title>
           </CardTitle>
         </CardHeader>
-        <Card id="nested-cards-toggle-group-1" isExpanded={isCardExpanded1}>
+        <Card id="nested-cards-toggle-group-1" isPlain isExpanded={isCardExpanded1}>
           <CardHeader
             onExpand={() => onCardExpand1(!isCardExpanded1)}
             isToggleRightAligned={isToggleOnRight}
@@ -1535,7 +1541,7 @@ CardNestedDemo = () => {
                           padding={0}
                           width={400}
                         >
-                          <ChartArea 
+                          <ChartArea
                             data={[
                               { name: 'Temp', x: '1', y: 25 },
                               { name: 'Temp', x: '2', y: 40 },
@@ -1621,7 +1627,7 @@ CardNestedDemo = () => {
             </CardBody>
           </CardExpandableContent>
         </Card>
-        <Card id="nested-cards-toggle-group-3" isExpanded={isCardExpanded3}>
+        <Card id="nested-cards-toggle-group-3" isPlain isExpanded={isCardExpanded3}>
           <CardHeader
             onExpand={() => onCardExpand3(!isCardExpanded3)}
             isToggleRightAligned={isToggleOnRight}
@@ -1770,18 +1776,18 @@ CardNestedDemo = () => {
             </CardBody>
           </CardExpandableContent>
         </Card>
-        <Card id="nested-cards-toggle-group-2" isExpanded={isCardExpanded2}>
+        <Card id="nested-cards-toggle-group-3" isPlain isExpanded={isCardExpanded2}>
           <CardHeader
             onExpand={() => onCardExpand2(!isCardExpanded2)}
             isToggleRightAligned={isToggleOnRight}
             toggleButtonProps={{
-              id: 'toggle-button-2',
+              id: 'toggle-button-3',
               'aria-label': 'Details',
-              'aria-labelledby': 'nested-cards-toggle-group-2-title toggle-button-2',
+              'aria-labelledby': 'nested-cards-toggle-group-3-title toggle-button-3',
               'aria-expanded': isCardExpanded2
             }}
           >
-            <CardTitle id="nested-cards-toggle-group-2-title">
+            <CardTitle id="nested-cards-toggle-group-3-title">
               <span className="pf-u-font-weight-light">CPU 3</span>
             </CardTitle>
           </CardHeader>
@@ -2005,7 +2011,7 @@ CardLogViewDemo = () => {
                 connection refused
               </DescriptionListDescription>
               <DescriptionListDescription>
-                <date className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:02 am</date>
+                <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:02 am</time>
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
@@ -2014,21 +2020,21 @@ CardLogViewDemo = () => {
                 Successfully assigned default/example to ip-10-0-130-149.ec2.internal
               </DescriptionListDescription>
               <DescriptionListDescription>
-                <date className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:13 am</date>
+                <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:13 am</time>
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
               <DescriptionListTerm>Pulling image</DescriptionListTerm>
               <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
               <DescriptionListDescription>
-                <date className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:59 am</date>
+                <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:59 am</time>
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
               <DescriptionListTerm>Created container</DescriptionListTerm>
               <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
               <DescriptionListDescription>
-                <date className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:45 am</date>
+                <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:45 am</time>
               </DescriptionListDescription>
             </DescriptionListGroup>
           </DescriptionList>
@@ -2137,7 +2143,7 @@ CardEventViewDemo = () => {
                 connection refused
               </DescriptionListDescription>
               <DescriptionListDescription>
-                <date className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:02 am</date>
+                <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:02 am</time>
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
@@ -2155,7 +2161,7 @@ CardEventViewDemo = () => {
                 Successfully assigned default/example to ip-10-0-130-149.ec2.internal
               </DescriptionListDescription>
               <DescriptionListDescription>
-                <date className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:13 am</date>
+                <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:13 am</time>
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
@@ -2171,7 +2177,7 @@ CardEventViewDemo = () => {
               </DescriptionListTerm>
               <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
               <DescriptionListDescription>
-                <date className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:59 am</date>
+                <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:59 am</time>
               </DescriptionListDescription>
             </DescriptionListGroup>
             <DescriptionListGroup>
@@ -2187,7 +2193,7 @@ CardEventViewDemo = () => {
               </DescriptionListTerm>
               <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
               <DescriptionListDescription>
-                <date className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:45 am</date>
+                <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:45 am</time>
               </DescriptionListDescription>
             </DescriptionListGroup>
           </DescriptionList>
