@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 import { DroppableContext } from './DroppableContext';
 
 interface DroppableProps extends React.HTMLProps<HTMLDivElement> {
@@ -25,7 +27,7 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
   const childProps = {
     'data-pf-droppable': zone,
     'data-pf-droppableid': droppableId,
-    className,
+    className: css(styles.droppable, className),
     ...props
   };
 
