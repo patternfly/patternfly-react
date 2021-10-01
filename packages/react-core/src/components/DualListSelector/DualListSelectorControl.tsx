@@ -25,11 +25,11 @@ export interface DualListSelectorControlProps extends Omit<React.HTMLProps<HTMLD
 export const DualListSelectorControlBase: React.FunctionComponent<DualListSelectorControlProps> = ({
   innerRef,
   children = null,
-  className = '',
+  className,
   'aria-label': ariaLabel,
   isDisabled = true,
   onClick = () => {},
-  tooltipContent = '',
+  tooltipContent,
   tooltipProps = {} as any,
   ...props
 }: DualListSelectorControlProps) => {

@@ -17,8 +17,8 @@ export interface DualListSelectorControlsWrapperProps extends React.HTMLProps<HT
 export const DualListSelectorControlsWrapperBase: React.FunctionComponent<DualListSelectorControlsWrapperProps> = ({
   innerRef,
   children = null,
-  className = '',
-  'aria-label': ariaLabel,
+  className,
+  'aria-label': ariaLabel = 'Controls for moving options between lists',
   ...props
 }: DualListSelectorControlsWrapperProps) => {
   const wrapperRef = innerRef || React.useRef(null);
