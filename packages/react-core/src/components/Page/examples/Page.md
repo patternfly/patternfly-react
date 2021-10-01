@@ -62,7 +62,7 @@ class VerticalPage extends React.Component {
     const headerToolbar = (
       <Toolbar id="toolbar">
         <ToolbarContent>
-            <ToolbarItem>header-tools</ToolbarItem>
+          <ToolbarItem>header-tools</ToolbarItem>
         </ToolbarContent>
       </Toolbar>
     );
@@ -121,8 +121,8 @@ HorizontalPage = () => {
   const headerToolbar = (
     <Toolbar id="toolbar">
       <ToolbarContent>
-          <ToolbarItem>Navigation</ToolbarItem>
-          <ToolbarItem>header-tools</ToolbarItem>
+        <ToolbarItem>Navigation</ToolbarItem>
+        <ToolbarItem>header-tools</ToolbarItem>
       </ToolbarContent>
     </Toolbar>
   );
@@ -169,7 +169,7 @@ TertiaryPage = () => {
   const headerToolbar = (
     <Toolbar id="toolbar">
       <ToolbarContent>
-          <ToolbarItem>header-tools</ToolbarItem>
+        <ToolbarItem>header-tools</ToolbarItem>
       </ToolbarContent>
     </Toolbar>
   );
@@ -235,7 +235,7 @@ class VerticalPage extends React.Component {
     const headerToolbar = (
       <Toolbar id="toolbar">
         <ToolbarContent>
-            <ToolbarItem>header-tools</ToolbarItem>
+          <ToolbarItem>header-tools</ToolbarItem>
         </ToolbarContent>
       </Toolbar>
     );
@@ -319,7 +319,7 @@ class FillPage extends React.Component {
     const headerToolbar = (
       <Toolbar id="toolbar">
         <ToolbarContent>
-            <ToolbarItem>header-tools</ToolbarItem>
+          <ToolbarItem>header-tools</ToolbarItem>
         </ToolbarContent>
       </Toolbar>
     );
@@ -388,7 +388,7 @@ class UncontrolledNavPage extends React.Component {
     const headerToolbar = (
       <Toolbar id="toolbar">
         <ToolbarContent>
-            <ToolbarItem>header-tools</ToolbarItem>
+          <ToolbarItem>header-tools</ToolbarItem>
         </ToolbarContent>
       </Toolbar>
     );
@@ -469,7 +469,7 @@ class GroupPage extends React.Component {
     const headerToolbar = (
       <Toolbar id="toolbar">
         <ToolbarContent>
-            <ToolbarItem>header-tools</ToolbarItem>
+          <ToolbarItem>header-tools</ToolbarItem>
         </ToolbarContent>
       </Toolbar>
     );
