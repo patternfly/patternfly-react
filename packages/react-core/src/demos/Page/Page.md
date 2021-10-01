@@ -135,19 +135,19 @@ class PageLayoutGrouped extends React.Component {
     const PageNav = (
       <Nav variant="tertiary" onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
-          <NavItem itemId={0} isActive={activeItem === 0}>
+          <NavItem href="#" itemId={0} isActive={activeItem === 0}>
             System panel
           </NavItem>
-          <NavItem itemId={1} isActive={activeItem === 1}>
+          <NavItem href="#" itemId={1} isActive={activeItem === 1}>
             Policy
           </NavItem>
-          <NavItem itemId={2} isActive={activeItem === 2}>
+          <NavItem href="#" itemId={2} isActive={activeItem === 2}>
             Authentication
           </NavItem>
-          <NavItem itemId={3} isActive={activeItem === 3}>
+          <NavItem href="#" itemId={3} isActive={activeItem === 3}>
             Network services
           </NavItem>
-          <NavItem itemId={4} isActive={activeItem === 4}>
+          <NavItem href="#" itemId={4} isActive={activeItem === 4}>
             Server
           </NavItem>
         </NavList>
@@ -417,19 +417,19 @@ class PageLayoutGrouped extends React.Component {
     const PageNav = (
       <Nav variant="tertiary" onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
-          <NavItem itemId={0} isActive={activeItem === 0}>
+          <NavItem href="#" itemId={0} isActive={activeItem === 0}>
             System panel
           </NavItem>
-          <NavItem itemId={1} isActive={activeItem === 1}>
+          <NavItem href="#" itemId={1} isActive={activeItem === 1}>
             Policy
           </NavItem>
-          <NavItem itemId={2} isActive={activeItem === 2}>
+          <NavItem href="#" itemId={2} isActive={activeItem === 2}>
             Authentication
           </NavItem>
-          <NavItem itemId={3} isActive={activeItem === 3}>
+          <NavItem href="#" itemId={3} isActive={activeItem === 3}>
             Network services
           </NavItem>
-          <NavItem itemId={4} isActive={activeItem === 4}>
+          <NavItem href="#" itemId={4} isActive={activeItem === 4}>
             Server
           </NavItem>
         </NavList>
@@ -735,19 +735,19 @@ class PageLayoutGroupedAlt extends React.Component {
             <PageNavigation isWidthLimited>
               <Nav variant="tertiary" onSelect={this.onNavSelect} aria-label="Nav">
                 <NavList>
-                  <NavItem itemId={0} isActive={activeItem === 0}>
+                  <NavItem href="#" itemId={0} isActive={activeItem === 0}>
                     System panel
                   </NavItem>
-                  <NavItem itemId={1} isActive={activeItem === 1}>
+                  <NavItem href="#" itemId={1} isActive={activeItem === 1}>
                     Policy
                   </NavItem>
-                  <NavItem itemId={2} isActive={activeItem === 2}>
+                  <NavItem href="#" itemId={2} isActive={activeItem === 2}>
                     Authentication
                   </NavItem>
-                  <NavItem itemId={3} isActive={activeItem === 3}>
+                  <NavItem href="#" itemId={3} isActive={activeItem === 3}>
                     Network services
                   </NavItem>
-                  <NavItem itemId={4} isActive={activeItem === 4}>
+                  <NavItem href="#" itemId={4} isActive={activeItem === 4}>
                     Server
                   </NavItem>
                 </NavList>
