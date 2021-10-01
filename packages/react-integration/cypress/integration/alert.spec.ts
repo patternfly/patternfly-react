@@ -1,37 +1,6 @@
 describe('Alert Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#alert-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/alert-demo-nav-link');
-  });
-
-  it('Verify info alert', () => {
-    cy.get('#info-alert').should('have.class', 'pf-m-info');
-  });
-
-  it('Verify custom icon alert', () => {
-    cy.get('#custom-icon-alert').should('have.class', 'pf-c-alert');
-    cy.get('#custom-icon-alert').should('not.have.class', 'pf-m-info');
-    cy.get('#custom-icon-alert').should('not.have.class', 'pf-m-success');
-    cy.get('#custom-icon-alert').should('not.have.class', 'pf-m-danger');
-    cy.get('#custom-icon-alert').should('not.have.class', 'pf-m-warning');
-  });
-
-  it('Verify default inline alert', () => {
-    cy.get('#default-alert').should('not.have.class', 'pf-m-info');
-    cy.get('#default-alert').should('not.have.class', 'pf-success');
-    cy.get('#default-alert').should('not.have.class', 'pf-m-danger');
-    cy.get('#default-alert').should('not.have.class', 'pf-m-warning');
-    cy.get('#default-alert').should('have.class', 'pf-m-inline');
-  });
-
-  it('Verify default inline plain alert', () => {
-    cy.get('#default-alert-inline-plain').should('not.have.class', 'pf-m-info');
-    cy.get('#default-alert-inline-plain').should('not.have.class', 'pf-success');
-    cy.get('#default-alert-inline-plain').should('not.have.class', 'pf-m-danger');
-    cy.get('#default-alert-inline-plain').should('not.have.class', 'pf-m-warning');
-    cy.get('#default-alert-inline-plain').should('have.class', 'pf-m-inline');
-    cy.get('#default-alert-inline-plain').should('have.class', 'pf-m-plain');
+    cy.visit('http://localhost:3000/alert-demo-nav-link');
   });
 
   it('Verify alerts close', () => {

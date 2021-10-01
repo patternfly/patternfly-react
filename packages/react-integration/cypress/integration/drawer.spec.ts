@@ -1,8 +1,6 @@
 describe('Drawer Demo Test', () => {
   it('Navigate to the drawer demo', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#drawer-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/drawer-demo-nav-link');
+    cy.visit('http://localhost:3000/drawer-demo-nav-link');
   });
 
   it('Verify text in content', () => {

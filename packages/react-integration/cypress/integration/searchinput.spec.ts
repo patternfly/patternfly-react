@@ -1,8 +1,6 @@
 describe('Search Input Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#search-input-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/search-input-demo-nav-link');
+    cy.visit('http://localhost:3000/search-input-demo-nav-link');
   });
 
   it('Verify search input ref by clicking focus button', () => {

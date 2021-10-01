@@ -1,8 +1,6 @@
 describe('Text Area Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#text-area-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/text-area-nav-link');
+    cy.visit('http://localhost:3000/text-area-nav-link');
   });
 
   it('Verify Text area exist', () => {

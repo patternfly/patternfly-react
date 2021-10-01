@@ -1,8 +1,6 @@
 describe('Description List Breakpoints Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#description-list-breakpoints-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/description-list-breakpoints-demo-nav-link');
+    cy.visit('http://localhost:3000/description-list-breakpoints-demo-nav-link');
   });
 
   it('Verify 1Col modifier applied for all viewport sizes ', () => {

@@ -1,20 +1,6 @@
 describe('Label Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#label-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/label-demo-nav-link');
-  });
-
-  it('Verify default label', () => {
-    cy.get('.pf-c-label')
-      .first()
-      .contains('Grey');
-  });
-
-  it('Verify editable label', () => {
-    cy.get('.pf-m-editable')
-      .contains('Edit')
-      .should('exist');
+    cy.visit('http://localhost:3000/label-demo-nav-link');
   });
 
   it('Verify isTruncated label and no tooltip on short text', () => {
@@ -44,12 +30,7 @@ describe('Label Demo Test', () => {
       });
   });
 
-  it('Verify isOverflowLabel label', () => {
-    cy.get('#overflow-label').should('have.class', 'pf-m-overflow');
-  });
-
   it('Verify router link label', () => {
-    cy.url().should('eq', 'http://localhost:3000/label-demo-nav-link');
     cy.get('#router-link > .pf-c-label__content').then((routerTooltipLink: JQuery<HTMLDivElement>) => {
       cy.get('.pf-c-tooltip').should('not.exist');
       cy.wrap(routerTooltipLink)
@@ -57,7 +38,8 @@ describe('Label Demo Test', () => {
         .get('.pf-c-tooltip')
         .should('exist');
     });
-    cy.get('#router-link').click();
-    cy.url().should('eq', 'http://localhost:3000/');
+    cy.get('#router-link > a')
+      .invoke('attr', 'href')
+      .should('eq', '/');
   });
 });

@@ -11,9 +11,7 @@ function checkFiltering() {
 
 describe('Select with Filtering Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#select-demo-filtering-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/select-demo-filtering-nav-link');
+    cy.visit('http://localhost:3000/select-demo-filtering-nav-link');
   });
 
   it('Verify Checkbox Select with filtering chips', () => {

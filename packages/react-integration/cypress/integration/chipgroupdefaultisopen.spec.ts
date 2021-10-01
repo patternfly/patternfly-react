@@ -1,8 +1,6 @@
 describe('Chip Group Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#chipgroup-default-is-open-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/chipgroup-default-is-open-demo-nav-link');
+    cy.visit('http://localhost:3000/chipgroup-default-is-open-demo-nav-link');
   });
 
   it('Verify chip default text', () => {

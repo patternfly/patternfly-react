@@ -1,8 +1,6 @@
 describe('Dual List Selector TreeDemo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#dual-list-selector-tree-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/dual-list-selector-tree-demo-nav-link');
+    cy.visit('http://localhost:3000/dual-list-selector-tree-demo-nav-link');
   });
 
   it('Verify existence', () => {

@@ -1,8 +1,6 @@
 describe('Menu Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#menu-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/menu-demo-nav-link');
+    cy.visit('http://localhost:3000/menu-demo-nav-link');
   });
 
   it('Verify Basic Menu', () => {
@@ -136,9 +134,7 @@ describe('Menu Test', () => {
   });
 
   it('Navigate to drilldown demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#menu-drilldown-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/menu-drilldown-demo-nav-link');
+    cy.visit('http://localhost:3000/menu-drilldown-demo-nav-link');
   });
 
   it('Verify Drilldown Menu', () => {
