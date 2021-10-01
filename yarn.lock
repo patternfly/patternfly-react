@@ -2901,6 +2901,17 @@
   dependencies:
     "@types/node" ">= 8"
 
+"@patternfly/ast-helpers@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@patternfly/ast-helpers/-/ast-helpers-0.0.4.tgz#087b419d0c5df346f77841a586a77f0a28d82dce"
+  integrity sha512-ufAdFLP9FyJh4HMVJ2mlpUZOd4GzQkUAaHjEi1v/Meu+rf2FJ6r45Usw/oRe9ToA3ANQAJAMlL2LcrrQx0KMHg==
+  dependencies:
+    acorn "^8.4.1"
+    acorn-class-fields "^1.0.0"
+    acorn-jsx "^5.3.2"
+    acorn-static-class-features "^1.0.0"
+    astring "^1.7.5"
+
 "@patternfly/patternfly-a11y@4.2.1":
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly-a11y/-/patternfly-a11y-4.2.1.tgz#5bfd4c246c9222a4f0c192f922e71d71e2a3062d"
@@ -15348,22 +15359,18 @@ textextensions@^2.5.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/textextensions/-/textextensions-2.6.0.tgz#d7e4ab13fe54e32e08873be40d51b74229b00fc4"
 
-theme-patternfly-org@0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.7.2.tgz#bd7f26de5c55b5671a79f95a2ebd6e61f8e91216"
-  integrity sha512-VGxLjGJ7lYaD2tHXUc2RBqiB4SUcOolwtIPf8dDtj6oUuHFuB1/cQG8Lh4gJhjwVp2XV5Ioy4aE2nP9duWIX7Q==
+theme-patternfly-org@0.7.6:
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/theme-patternfly-org/-/theme-patternfly-org-0.7.6.tgz#c03268b28381d44e824696934afe161bb84d2bd9"
+  integrity sha512-0kh2Kb+zgUKvSUXKnwRoVTA2xYFBmBTWvWxVsfGu06SNnVezPTY2RwTe0zTnreT7rRHykLwQ/jdUG9n1NAhP3A==
   dependencies:
     "@babel/core" "^7.13.0"
     "@babel/plugin-proposal-class-properties" "^7.13.0"
     "@babel/plugin-transform-react-jsx" "^7.12.0"
     "@babel/preset-env" "^7.13.0"
     "@mdx-js/util" "^1.6.16"
+    "@patternfly/ast-helpers" "^0.0.4"
     "@reach/router" "^1.3.4"
-    acorn "^8.4.1"
-    acorn-class-fields "^1.0.0"
-    acorn-jsx "^5.3.2"
-    acorn-static-class-features "^1.0.0"
-    astring "^1.7.5"
     autoprefixer "^9.8.6"
     babel-loader "^8.1.0"
     camelcase-css "2.0.1"
