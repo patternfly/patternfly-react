@@ -15,6 +15,7 @@ exports[`SelectMenu should match snapshot (auto-generated) 1`] = `
   maxHeight=""
   noResultsFoundText="string"
   openedOnEnter={false}
+  position="left"
   selected=""
   sendRef={[Function]}
 />
