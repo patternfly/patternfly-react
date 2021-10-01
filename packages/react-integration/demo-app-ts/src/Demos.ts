@@ -366,6 +366,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TabUncontrolledDemo
   },
   {
+    id: 'tabs-disabled-demo',
+    name: 'Tabs Disabled Demo',
+    componentType: Examples.TabsDisabledDemo
+  },
+  {
     id: 'table-collapsible-demo',
     name: 'Table Collapsible Demo',
     componentType: Examples.TableCollapsibleDemo

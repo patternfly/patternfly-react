@@ -81,6 +81,7 @@ export * from './TableDemo/TableSortableDemo';
 export * from './TableDemo/TableFavoritesDemo';
 export * from './TableDemo/TableComposableDemo';
 export * from './TabsDemo/TabsDemo';
+export * from './TabsDemo/TabsDisabledDemo';
 export * from './TabsDemo/TabsExpandableDemo';
 export * from './TabsDemo/TabsStringEventKeyDemo';
 export * from './TabsDemo/TabsUncontrolledDemo';
