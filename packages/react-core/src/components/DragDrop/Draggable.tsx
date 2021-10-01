@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 import { DroppableContext } from './DroppableContext';
 import { DragDropContext } from './DragDrop';
 
@@ -58,7 +60,8 @@ interface DroppableItem {
 // Reset per-element state
 function resetDroppableItem(droppableItem: DroppableItem) {
   removeBlankDiv(droppableItem.node);
-  droppableItem.node.style.boxShadow = '';
+  droppableItem.node.classList.remove(styles.modifiers.dragging);
+  droppableItem.node.classList.remove(styles.modifiers.dragOutside);
   droppableItem.draggableNodes.forEach((n, i) => {
     n.style.transform = '';
     n.style.transition = '';
@@ -83,6 +86,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   let [style, setStyle] = React.useState(styleProp);
   /* eslint-enable prefer-const */
   const [isDragging, setIsDragging] = React.useState(false);
+  const [isValidDrag, setIsValidDrag] = React.useState(true);
   const { zone, droppableId } = React.useContext(DroppableContext);
   const { onDrag, onDragMove, onDrop } = React.useContext(DragDropContext);
   // Some state is better just to leave as vars passed around between various callbacks
@@ -151,7 +155,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
       const { node, rect, isDraggingHost, draggableNodes, draggableNodesRects } = droppableItem;
       if (overlaps(ev, rect)) {
         // Add valid dropzone style
-        node.style.boxShadow = '0px 0px 0px 1px blue, 0px 2px 5px rgba(0, 0, 0, 0.2)';
+        node.classList.remove(styles.modifiers.dragOutside);
         hoveringDroppable = node;
         // Check if we need to add a blank div row
         if (node.getAttribute('blankDiv') !== 'true' && !isDraggingHost) {
@@ -185,17 +189,17 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
         }
       } else {
         resetDroppableItem(droppableItem);
-        node.style.boxShadow = '0px 0px 0px 1px red, 0px 2px 5px rgba(0, 0, 0, 0.2)';
+        node.classList.add(styles.modifiers.dragging);
+        node.classList.add(styles.modifiers.dragOutside);
       }
     });
 
     // Move hovering draggable and style it based on cursor position
     setStyle({
       ...style,
-      boxShadow: `0px 0px 0px 1px ${hoveringDroppable ? 'blue' : 'red'}, 0px 2px 5px rgba(0, 0, 0, 0.2)`,
-      transform: `translate(${ev.pageX - startX}px, ${ev.pageY - startY}px)`,
-      cursor: !hoveringDroppable && 'not-allowed'
+      transform: `translate(${ev.pageX - startX}px, ${ev.pageY - startY}px)`
     });
+    setIsValidDrag(Boolean(hoveringDroppable));
 
     // Iterate through sibling draggable nodes to reposition them and store correct hoveringIndex for onDrop
     hoveringIndex = null;
@@ -241,6 +245,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     const rect = dragging.getBoundingClientRect();
     const droppableNodes = Array.from(document.querySelectorAll(`[data-pf-droppable="${zone}"]`)) as HTMLElement[];
     const droppableItems = droppableNodes.reduce((acc, cur) => {
+      cur.classList.add(styles.modifiers.dragging);
       const draggableNodes = Array.from(cur.querySelectorAll(`[data-pf-draggable-zone="${zone}"]`)) as HTMLElement[];
       const isDraggingHost = cur.contains(dragging);
       if (isDraggingHost) {
@@ -266,15 +271,14 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     // Set initial style so future style mods take effect
     style = {
       ...style,
-      position: 'fixed',
       top: rect.y,
       left: rect.x,
       width: rect.width,
       height: rect.height,
-      background: getInheritedBackgroundColor(dragging),
-      boxShadow: '0px 0px 0px 1px blue, 0px 2px 5px rgba(0, 0, 0, 0.2)',
+      '--pf-c-draggable--m-dragging--BackgroundColor': getInheritedBackgroundColor(dragging),
+      position: 'fixed',
       zIndex: 5000
-    };
+    } as any;
     setStyle(style);
     // Store event details
     startX = ev.pageX;
@@ -292,7 +296,12 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   const childProps = {
     'data-pf-draggable-zone': isDragging ? null : zone,
     draggable: true,
-    className,
+    className: css(
+      styles.draggable,
+      isDragging && styles.modifiers.dragging,
+      !isValidDrag && styles.modifiers.dragOutside,
+      className
+    ),
     onDragStart,
     onTransitionEnd,
     style,
