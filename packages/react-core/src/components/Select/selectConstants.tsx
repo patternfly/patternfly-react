@@ -25,6 +25,11 @@ export enum SelectVariant {
   typeaheadMulti = 'typeaheadmulti'
 }
 
+export enum SelectPosition {
+  right = 'right',
+  left = 'left'
+}
+
 export enum SelectDirection {
   up = 'up',
   down = 'down'
