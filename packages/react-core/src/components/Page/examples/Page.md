@@ -534,6 +534,8 @@ class GroupPage extends React.Component {
 
 ### Vertical nav using PageHeader component
 
+This example is provided becuase PageHeader and PageHeaderTools are still in use; however, going forward Masthead and Toolbar should be used to make headers rather than PageHeader and PageHeaderTools.
+
 ```js
 import React from 'react';
 import {

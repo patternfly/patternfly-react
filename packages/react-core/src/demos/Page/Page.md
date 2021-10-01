@@ -331,6 +331,8 @@ class PageLayoutGrouped extends React.Component {
 
 ### Sticky section group (using PageHeader)
 
+This demo is provided becuase PageHeader and PageHeaderTools are still in use; however, going forward Masthead and Toolbar should be used to make headers rather than PageHeader and PageHeaderTools.
+
 ```js isFullscreen
 import React from 'react';
 import {
@@ -567,6 +569,8 @@ class PageLayoutGrouped extends React.Component {
 ```
 
 ### Sticky section group (alternate syntax and using PageHeader)
+
+Please see <a href="#sticky-section-group-using-pageheader">this</a> note regarding PageHeader.
 
 ```js isFullscreen
 import React from 'react';
