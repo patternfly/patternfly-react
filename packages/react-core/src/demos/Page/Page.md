@@ -213,27 +213,27 @@ class PageLayoutGrouped extends React.Component {
                 <HelpIcon />
               </Button>
             </ToolbarItem>
+            <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
+              <Dropdown
+                isPlain
+                position="right"
+                onSelect={this.onKebabDropdownSelect}
+                toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+                isOpen={isKebabDropdownOpen}
+                dropdownItems={kebabDropdownItems}
+              />
+            </ToolbarItem>
+            <ToolbarItem visibility={{ default: 'visible', md: 'hidden', lg: 'hidden', xl: 'hidden', '2xl': 'hidden' }}>
+              <Dropdown
+                isPlain
+                position="right"
+                onSelect={this.onFullKebabSelect}
+                toggle={<KebabToggle onToggle={this.onFullKebabToggle} />}
+                isOpen={isFullKebabDropdownOpen}
+                dropdownItems={fullKebabItems}
+              />
+            </ToolbarItem>
           </ToolbarGroup>
-          <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onKebabDropdownSelect}
-              toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
-              isOpen={isKebabDropdownOpen}
-              dropdownItems={kebabDropdownItems}
-            />
-          </ToolbarItem>
-          <ToolbarItem visibility={{ default: 'visible', md: 'hidden', lg: 'hidden', xl: 'hidden', '2xl': 'hidden' }}>
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onFullKebabSelect}
-              toggle={<KebabToggle onToggle={this.onFullKebabToggle} />}
-              isOpen={isFullKebabDropdownOpen}
-              dropdownItems={fullKebabItems}
-            />
-          </ToolbarItem>
           <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
             <Dropdown
               position="right"
