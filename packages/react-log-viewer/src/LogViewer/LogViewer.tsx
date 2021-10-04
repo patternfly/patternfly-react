@@ -108,19 +108,28 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
           setLoading(false);
           setFirstMount(false);
         }
+        const dummyIndex = document.createElement('span');
+        dummyIndex.className = css(styles.logViewerIndex);
         const dummyText = document.createElement('span');
         dummyText.className = css(styles.logViewerText);
+        containerRef.current.appendChild(dummyIndex);
         containerRef.current.appendChild(dummyText);
+        const dummyIndexStyles = getComputedStyle(dummyIndex);
         const dummyTextStyles = getComputedStyle(dummyText);
         setLineHeight(parseFloat(dummyTextStyles.lineHeight));
         const lineWidth = hasLineNumbers
-          ? (containerRef.current as HTMLDivElement).clientWidth - 97
-          : (containerRef.current as HTMLDivElement).clientWidth - 32;
+          ? (containerRef.current as HTMLDivElement).clientWidth -
+            (parseFloat(dummyTextStyles.paddingLeft) +
+              parseFloat(dummyTextStyles.paddingRight) +
+              parseFloat(dummyIndexStyles.width))
+          : (containerRef.current as HTMLDivElement).clientWidth -
+            (parseFloat(dummyTextStyles.paddingLeft) + parseFloat(dummyTextStyles.paddingRight));
         const charNumsPerLine = getCharNums(
           lineWidth,
           `${dummyTextStyles.fontWeight} ${dummyTextStyles.fontSize} ${dummyTextStyles.fontFamily}`
         );
         setCharNumsPerLine(charNumsPerLine);
+        containerRef.current.removeChild(dummyIndex);
         containerRef.current.removeChild(dummyText);
       }
       return () => window.removeEventListener('resize', callbackResize);
