@@ -203,18 +203,16 @@ class PageLayoutGrouped extends React.Component {
                 <AttentionBellIcon />
               </Button>
             </ToolbarItem>
-            <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
-              <ToolbarItem>
-                <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
-                  <CogIcon />
-                </Button>
-              </ToolbarItem>
-              <ToolbarItem>
-                <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-                  <HelpIcon />
-                </Button>
-              </ToolbarItem>
-            </ToolbarGroup>
+            <ToolbarItem>
+              <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
+                <CogIcon />
+              </Button>
+            </ToolbarItem>
+            <ToolbarItem>
+              <Button aria-label="Help actions" variant={ButtonVariant.plain}>
+                <HelpIcon />
+              </Button>
+            </ToolbarItem>
           </ToolbarGroup>
           <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
             <Dropdown
