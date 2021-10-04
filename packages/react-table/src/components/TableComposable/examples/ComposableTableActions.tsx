@@ -11,8 +11,8 @@ import { TableComposable, Thead, Tr, Th, Tbody, Td, CustomActionsToggleProps, Td
 
 interface Repository {
   name: string;
-  branches: string | null;
-  prs: string | null;
+  branches: string;
+  prs: string;
   workspaces: string;
   lastCommit: string;
 }
@@ -28,6 +28,14 @@ export const ComposableTableActions: React.FunctionComponent = () => {
     { name: '4', branches: '2', prs: 'b', workspaces: 'four', lastCommit: 'five' },
     { name: '5', branches: '2', prs: 'b', workspaces: 'four', lastCommit: 'five' }
   ];
+
+  const columnNames = {
+    name: 'Repositories',
+    branches: 'Branches',
+    prs: 'Pull requests',
+    workspaces: 'Workspaces',
+    lastCommit: 'Last commit'
+  };
 
   // This state is just for the ToggleGroup in this example and isn't necessary for TableComposable usage.
   const [exampleChoice, setExampleChoice] = React.useState<ExampleType>('defaultToggle');
@@ -102,11 +110,11 @@ export const ComposableTableActions: React.FunctionComponent = () => {
       <TableComposable aria-label="Actions table">
         <Thead>
           <Tr>
-            <Th>Repositories</Th>
-            <Th>Branches</Th>
-            <Th>Pull requests</Th>
-            <Th>Workspaces</Th>
-            <Th>Last commit</Th>
+            <Th>{columnNames.name}</Th>
+            <Th>{columnNames.branches}</Th>
+            <Th>{columnNames.prs}</Th>
+            <Th>{columnNames.workspaces}</Th>
+            <Th>{columnNames.lastCommit}</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -121,11 +129,11 @@ export const ComposableTableActions: React.FunctionComponent = () => {
             }
             return (
               <Tr key={repo.name}>
-                <Td dataLabel="Repositories">{repo.name}</Td>
-                <Td dataLabel="Branches">{repo.branches}</Td>
-                <Td dataLabel="Pull requests">{repo.prs}</Td>
-                <Td dataLabel="Workspaces">{repo.workspaces}</Td>
-                <Td dataLabel="Last commit">{repo.lastCommit}</Td>
+                <Td dataLabel={columnNames.name}>{repo.name}</Td>
+                <Td dataLabel={columnNames.branches}>{repo.branches}</Td>
+                <Td dataLabel={columnNames.prs}>{repo.prs}</Td>
+                <Td dataLabel={columnNames.workspaces}>{repo.workspaces}</Td>
+                <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
                 <Td
                   actions={{
                     items: rowActions,

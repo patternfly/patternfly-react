@@ -17,6 +17,14 @@ export const ComposableTableMisc: React.FunctionComponent = () => {
     { name: 'one - 3', branches: 'two - 3', prs: 'three - 3', workspaces: 'four - 3', lastCommit: 'five - 3' }
   ];
 
+  const columnNames = {
+    name: 'Repositories',
+    branches: 'Branches',
+    prs: 'Pull requests',
+    workspaces: 'Workspaces',
+    lastCommit: 'Last commit'
+  };
+
   return (
     <TableComposable aria-label="Misc table">
       <Thead noWrap>
@@ -30,9 +38,9 @@ export const ComposableTableMisc: React.FunctionComponent = () => {
               }
             }}
           >
-            Repositories
+            {columnNames.name}
           </Th>
-          <Th>Branches</Th>
+          <Th>{columnNames.branches}</Th>
           <Th
             info={{
               popover: (
@@ -42,15 +50,15 @@ export const ComposableTableMisc: React.FunctionComponent = () => {
               ),
               ariaLabel: 'More information on pull requests',
               popoverProps: {
-                headerContent: 'Pull requests',
+                headerContent: columnNames.prs,
                 footerContent: <a href="">Click here for even more info</a>
               }
             }}
           >
-            Pull requests
+            {columnNames.prs}
           </Th>
-          <Th>Workspaces</Th>
-          <Th textCenter>Last commit</Th>
+          <Th>{columnNames.workspaces}</Th>
+          <Th textCenter>{columnNames.lastCommit}</Th>
         </Tr>
       </Thead>
       <Tbody>
@@ -68,13 +76,13 @@ export const ComposableTableMisc: React.FunctionComponent = () => {
               className={isOddRow ? 'odd-row-class' : 'even-row-class'}
               style={isOddRow ? customStyle : {}}
             >
-              <Td dataLabel="Repositories" colSpan={nameColSpan}>
+              <Td dataLabel={columnNames.name} colSpan={nameColSpan}>
                 {repo.name}
               </Td>
-              <Td dataLabel="Branches">{repo.branches}</Td>
-              <Td dataLabel="Pull requests"></Td>
-              <Td dataLabel="Workspaces"></Td>
-              <Td dataLabel="Last commit" textCenter={lastCommitTextCenter}></Td>
+              <Td dataLabel={columnNames.branches}>{repo.branches}</Td>
+              <Td dataLabel={columnNames.prs}></Td>
+              <Td dataLabel={columnNames.workspaces}></Td>
+              <Td dataLabel={columnNames.lastCommit} textCenter={lastCommitTextCenter}></Td>
             </Tr>
           );
         })}

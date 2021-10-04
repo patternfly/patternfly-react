@@ -3,8 +3,8 @@ import { TableComposable, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/
 
 interface Repository {
   name: string;
-  branches: string | null;
-  prs: string | null;
+  branches: string;
+  prs: string;
   workspaces: string;
   lastCommit: string;
 }
@@ -16,6 +16,14 @@ export const ComposableTableSortable: React.FunctionComponent = () => {
     { name: 'a', branches: 'two', prs: 'k', workspaces: 'four', lastCommit: 'five' },
     { name: 'p', branches: 'two', prs: 'b', workspaces: 'four', lastCommit: 'five' }
   ];
+
+  const columnNames = {
+    name: 'Repositories table header that goes on for a long time.',
+    branches: 'Branches table header that goes on for a long time.',
+    prs: 'Pull requests table header that goes on for a long time.',
+    workspaces: 'Workspaces table header that goes on for a long time.',
+    lastCommit: 'Last commit table header that goes on for a long time.'
+  };
 
   // TODO maybe change this to use column keys instead of indexes, like compound expand state? how?
   // Index of the currently sorted column
@@ -73,23 +81,23 @@ export const ComposableTableSortable: React.FunctionComponent = () => {
     <TableComposable aria-label="Sortable table">
       <Thead>
         <Tr>
-          <Th sort={getSortParams(0)}>Repositories table header that goes on for a long time.</Th>
-          <Th modifier="wrap">Branches table header that goes on for a long time.</Th>
+          <Th sort={getSortParams(0)}>{columnNames.name}</Th>
+          <Th modifier="wrap">{columnNames.branches}</Th>
           <Th modifier="wrap" sort={getSortParams(2)} info={{ tooltip: 'More information ' }}>
-            Pull requests table header that goes on for a long time.
+            {columnNames.prs}
           </Th>
-          <Th modifier="wrap">Workspaces table header that goes on for a long time.</Th>
-          <Th modifier="wrap">Last commit table header that goes on for a long time.</Th>
+          <Th modifier="wrap">{columnNames.workspaces}</Th>
+          <Th modifier="wrap">{columnNames.lastCommit}</Th>
         </Tr>
       </Thead>
       <Tbody>
         {sortedRepositories.map((repo, rowIndex) => (
           <Tr key={rowIndex}>
-            <Td dataLabel="Repositories table header that goes on for a long time.">{repo.name}</Td>
-            <Td dataLabel="Branches table header that goes on for a long time.">{repo.branches}</Td>
-            <Td dataLabel="Pull requests table header that goes on for a long time.">{repo.prs}</Td>
-            <Td dataLabel="Workspaces table header that goes on for a long time.">{repo.workspaces}</Td>
-            <Td dataLabel="Last commit table header that goes on for a long time.">{repo.lastCommit}</Td>
+            <Td dataLabel={columnNames.name}>{repo.name}</Td>
+            <Td dataLabel={columnNames.branches}>{repo.branches}</Td>
+            <Td dataLabel={columnNames.prs}>{repo.prs}</Td>
+            <Td dataLabel={columnNames.workspaces}>{repo.workspaces}</Td>
+            <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
           </Tr>
         ))}
       </Tbody>

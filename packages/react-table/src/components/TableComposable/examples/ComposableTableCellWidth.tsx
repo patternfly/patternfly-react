@@ -17,29 +17,37 @@ export const ComposableTableCellWidth: React.FunctionComponent = () => {
     { name: 'one - 3', branches: 'two - 3', prs: 'three - 3', workspaces: 'four - 3', lastCommit: 'five - 3' }
   ];
 
+  const columnNames = {
+    name: 'Repositories',
+    branches: 'Branches',
+    prs: 'Pull requests',
+    workspaces: 'Workspaces',
+    lastCommit: 'Last commit'
+  };
+
   return (
     <TableComposable aria-label="Cell widths">
       <Thead>
         <Tr>
-          <Th width={15}>Repositories</Th>
-          <Th width={15}>Branches</Th>
+          <Th width={15}>{columnNames.name}</Th>
+          <Th width={15}>{columnNames.branches}</Th>
           <Th width={40} visibility={['hiddenOnMd', 'visibleOnLg']}>
-            Pull requests
+            {columnNames.prs}
           </Th>
-          <Th width={15}>Workspaces</Th>
-          <Th width={15}>Last commit</Th>
+          <Th width={15}>{columnNames.workspaces}</Th>
+          <Th width={15}>{columnNames.lastCommit}</Th>
         </Tr>
       </Thead>
       <Tbody>
         {repositories.map(repo => (
           <Tr key={repo.name}>
-            <Td dataLabel="Repositories">{repo.name}</Td>
-            <Td dataLabel="Branches">{repo.branches}</Td>
-            <Td dataLabel="Pull requests" visibility={['hiddenOnMd', 'visibleOnLg']}>
+            <Td dataLabel={columnNames.name}>{repo.name}</Td>
+            <Td dataLabel={columnNames.branches}>{repo.branches}</Td>
+            <Td dataLabel={columnNames.prs} visibility={['hiddenOnMd', 'visibleOnLg']}>
               {repo.prs}
             </Td>
-            <Td dataLabel="Workspaces">{repo.workspaces}</Td>
-            <Td dataLabel="Last commit">{repo.lastCommit}</Td>
+            <Td dataLabel={columnNames.workspaces}>{repo.workspaces}</Td>
+            <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
           </Tr>
         ))}
       </Tbody>

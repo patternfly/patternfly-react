@@ -17,6 +17,14 @@ export const ComposableTableHoverable: React.FunctionComponent = () => {
     { name: 'one - 3', branches: 'two - 3', prs: 'three - 3', workspaces: 'four - 3', lastCommit: 'five - 3' }
   ];
 
+  const columnNames = {
+    name: 'Repositories',
+    branches: 'Branches',
+    prs: 'Pull requests',
+    workspaces: 'Workspaces',
+    lastCommit: 'Last commit'
+  };
+
   // In this example, selected rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
   const [selectedRepoNames, setSelectedRepoNames] = React.useState<string[]>([]);
@@ -31,11 +39,11 @@ export const ComposableTableHoverable: React.FunctionComponent = () => {
     <TableComposable aria-label="Hoverable table">
       <Thead>
         <Tr>
-          <Th>Repositories</Th>
-          <Th>Branches</Th>
-          <Th>Pull requests</Th>
-          <Th>Workspaces</Th>
-          <Th>Last commit</Th>
+          <Th>{columnNames.name}</Th>
+          <Th>{columnNames.branches}</Th>
+          <Th>{columnNames.prs}</Th>
+          <Th>{columnNames.workspaces}</Th>
+          <Th>{columnNames.lastCommit}</Th>
         </Tr>
       </Thead>
       <Tbody>
@@ -46,11 +54,11 @@ export const ComposableTableHoverable: React.FunctionComponent = () => {
             isHoverable
             isRowSelected={isRepoSelected(repo)}
           >
-            <Td dataLabel="Repositories">{repo.name}</Td>
-            <Td dataLabel="Branches">{repo.branches}</Td>
-            <Td dataLabel="Pull requests">{repo.prs}</Td>
-            <Td dataLabel="Workspaces">{repo.workspaces}</Td>
-            <Td dataLabel="Last commit">{repo.lastCommit}</Td>
+            <Td dataLabel={columnNames.name}>{repo.name}</Td>
+            <Td dataLabel={columnNames.branches}>{repo.branches}</Td>
+            <Td dataLabel={columnNames.prs}>{repo.prs}</Td>
+            <Td dataLabel={columnNames.workspaces}>{repo.workspaces}</Td>
+            <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
           </Tr>
         ))}
       </Tbody>

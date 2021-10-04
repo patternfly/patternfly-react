@@ -77,6 +77,13 @@ export const ComposableTableTree: React.FunctionComponent = () => {
     }
   ];
 
+  const columnNames = {
+    name: 'Repositories',
+    branches: 'Branches',
+    prs: 'Pull requests',
+    workspaces: 'Workspaces'
+  };
+
   const [expandedNodeNames, setExpandedNodeNames] = React.useState<string[]>(['Repositories one']);
   const [expandedDetailsNodeNames, setExpandedDetailsNodeNames] = React.useState<string[]>([]);
   const [selectedNodeNames, setSelectedNodeNames] = React.useState<string[]>([]);
@@ -158,12 +165,12 @@ export const ComposableTableTree: React.FunctionComponent = () => {
 
     return [
       <TreeRowWrapper key={node.name} row={{ props: treeRow.props }}>
-        <Td dataLabel="Repositories" treeRow={treeRow}>
+        <Td dataLabel={columnNames.name} treeRow={treeRow}>
           {node.name}
         </Td>
-        <Td dataLabel="Branches">{node.branches}</Td>
-        <Td dataLabel="Pull Requests">{node.pullRequests}</Td>
-        <Td dataLabel="Workspaces">{node.workspaces}</Td>
+        <Td dataLabel={columnNames.branches}>{node.branches}</Td>
+        <Td dataLabel={columnNames.prs}>{node.pullRequests}</Td>
+        <Td dataLabel={columnNames.workspaces}>{node.workspaces}</Td>
       </TreeRowWrapper>,
       ...(node.children && node.children.length
         ? renderRows(node.children, level + 1, 1, rowIndex + 1, !isExpanded || isHidden)
@@ -182,10 +189,10 @@ export const ComposableTableTree: React.FunctionComponent = () => {
     <TableComposable isTreeTable aria-label="Tree table">
       <Thead>
         <Tr>
-          <Th>Repositories</Th>
-          <Th>Branches</Th>
-          <Th>Pull requests</Th>
-          <Th>Workspaces</Th>
+          <Th>{columnNames.name}</Th>
+          <Th>{columnNames.branches}</Th>
+          <Th>{columnNames.prs}</Th>
+          <Th>{columnNames.workspaces}</Th>
         </Tr>
       </Thead>
       <Tbody>{renderRows(data)}</Tbody>

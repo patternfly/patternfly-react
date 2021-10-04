@@ -3,8 +3,8 @@ import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-tab
 
 interface Repository {
   name: string;
-  branches: string | null;
-  prs: string | null;
+  branches: string;
+  prs: string;
   workspaces: string;
   lastCommit: string;
 }
@@ -16,6 +16,15 @@ export const ComposableTableSelectableRadio: React.FunctionComponent = () => {
     { name: 'a', branches: 'two', prs: 'k', workspaces: 'four', lastCommit: 'five' },
     { name: 'p', branches: 'two', prs: 'b', workspaces: 'four', lastCommit: 'five' }
   ];
+
+  const columnNames = {
+    name: 'Repositories',
+    branches: 'Branches',
+    prs: 'Pull requests',
+    workspaces: 'Workspaces',
+    lastCommit: 'Last commit'
+  };
+
   const isRepoSelectable = (repo: Repository) => repo.name !== 'a'; // Arbitrary logic for this example
 
   // In this example, selected rows are tracked by the repo names from each row. This could be any unique identifier.
@@ -27,11 +36,11 @@ export const ComposableTableSelectableRadio: React.FunctionComponent = () => {
       <Thead>
         <Tr>
           <Th />
-          <Th>Repositories</Th>
-          <Th>Branches</Th>
-          <Th>Pull requests</Th>
-          <Th>Workspaces</Th>
-          <Th>Last commit</Th>
+          <Th>{columnNames.name}</Th>
+          <Th>{columnNames.branches}</Th>
+          <Th>{columnNames.prs}</Th>
+          <Th>{columnNames.workspaces}</Th>
+          <Th>{columnNames.lastCommit}</Th>
         </Tr>
       </Thead>
       <Tbody>
@@ -46,11 +55,11 @@ export const ComposableTableSelectableRadio: React.FunctionComponent = () => {
                 variant: 'radio'
               }}
             />
-            <Td dataLabel="Repositories">{repo.name}</Td>
-            <Td dataLabel="Branches">{repo.branches}</Td>
-            <Td dataLabel="Pull requests">{repo.prs}</Td>
-            <Td dataLabel="Workspaces">{repo.workspaces}</Td>
-            <Td dataLabel="Last commit">{repo.lastCommit}</Td>
+            <Td dataLabel={columnNames.name}>{repo.name}</Td>
+            <Td dataLabel={columnNames.branches}>{repo.branches}</Td>
+            <Td dataLabel={columnNames.prs}>{repo.prs}</Td>
+            <Td dataLabel={columnNames.workspaces}>{repo.workspaces}</Td>
+            <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
           </Tr>
         ))}
       </Tbody>
