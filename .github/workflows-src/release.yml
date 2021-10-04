@@ -14,11 +14,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: [lint, test_jest, test_integration, docs]
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       %install%
       - name: Avoid Unknown Host for github.com
         run: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
       - name: Deploy to NPM and Github
-        run: .circleci/release.sh
+        run: .github/release.sh
 

@@ -1,6 +1,10 @@
 docs:
   runs-on: ubuntu-latest
   needs: build
+  env:
+    SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+    SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+    GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
   steps:
     %checkout%
     %install%

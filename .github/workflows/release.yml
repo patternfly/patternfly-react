@@ -97,6 +97,10 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     needs: build
+    env:
+      SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+      SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+      GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       # Yes, we really want to checkout the PR
@@ -208,6 +212,10 @@ jobs:
   test_a11y:
     runs-on: ubuntu-latest
     needs: docs
+    env:
+      SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+      SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+      GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       # Yes, we really want to checkout the PR
@@ -235,6 +243,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: [lint, test_jest, test_integration, docs]
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -253,5 +263,5 @@ jobs:
       - name: Avoid Unknown Host for github.com
         run: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
       - name: Deploy to NPM and Github
-        run: .circleci/release.sh
+        run: .github/release.sh
 
