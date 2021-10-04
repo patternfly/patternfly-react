@@ -55,24 +55,16 @@ interface LogViewerProps {
   innerRef?: React.RefObject<any>;
 }
 
-interface FontObject {
-  fontFamily: string;
-  fontSize: string;
-  fontWeight: string;
-  lineHeight: string;
-}
-
 let canvas: HTMLCanvasElement | undefined;
 
-const getTextWidth = (text: string, font: string) => {
+const getCharNums = (windowWidth: number, font: string) => {
   // if given, use cached canvas for better performance
   // else, create new canvas
   canvas = canvas || document.createElement('canvas');
   const context = canvas.getContext('2d');
   context.font = font;
   const oneChar = context.measureText('a');
-  const metrics = context.measureText(text);
-  return metrics.width + Math.floor(text.length / 700) * oneChar.width;
+  return Math.floor(windowWidth / oneChar.width);
 };
 
 const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
@@ -99,36 +91,46 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     const [highlightedRowIndexes, setHighlightedRowIndexes] = useState<number[] | null>([]);
     const [currentSearchedItemCount, setCurrentSearchedItemCount] = useState<number>(0);
     const [parsedData, setParsedData] = useState<string[] | null>([]);
-    const [font, setFont] = useState<FontObject>(null);
-
-    const [currentWidth, setCurrentWidth] = useState<number | null>(width || 600);
+    const [lineHeight, setLineHeight] = useState<number>(0);
+    const [charNumsPerLine, setCharNumsPerLine] = useState<number>(0);
     const [resizing, setResizing] = useState(false);
     const [loading, setLoading] = useState(true);
     const [firstMount, setFirstMount] = useState(true);
 
-    const logViewerRef = innerRef || React.useRef<any>();
-    const containerRef = React.useRef<any>();
+    const logViewerRef = innerRef || React.createRef<any>();
+    const containerRef = React.createRef<any>();
     let resizeTimer = null as any;
 
-    React.useEffect(() => {
+    useEffect(() => {
       if (containerRef && containerRef.current && loading) {
         window.addEventListener('resize', callbackResize);
         if (firstMount) {
-          setCurrentWidth((containerRef.current as HTMLDivElement).clientWidth);
           setLoading(false);
-          const dummyText = document.createElement('span');
-          dummyText.className = css(styles.logViewerText);
-          containerRef.current.appendChild(dummyText);
-          const dummyTextStyles = getComputedStyle(dummyText);
-          setFont({
-            fontFamily: dummyTextStyles.fontFamily,
-            fontWeight: dummyTextStyles.fontWeight,
-            fontSize: dummyTextStyles.fontSize,
-            lineHeight: dummyTextStyles.lineHeight
-          });
-          containerRef.current.removeChild(dummyText);
           setFirstMount(false);
         }
+        const dummyIndex = document.createElement('span');
+        dummyIndex.className = css(styles.logViewerIndex);
+        const dummyText = document.createElement('span');
+        dummyText.className = css(styles.logViewerText);
+        containerRef.current.appendChild(dummyIndex);
+        containerRef.current.appendChild(dummyText);
+        const dummyIndexStyles = getComputedStyle(dummyIndex);
+        const dummyTextStyles = getComputedStyle(dummyText);
+        setLineHeight(parseFloat(dummyTextStyles.lineHeight));
+        const lineWidth = hasLineNumbers
+          ? (containerRef.current as HTMLDivElement).clientWidth -
+            (parseFloat(dummyTextStyles.paddingLeft) +
+              parseFloat(dummyTextStyles.paddingRight) +
+              parseFloat(dummyIndexStyles.width))
+          : (containerRef.current as HTMLDivElement).clientWidth -
+            (parseFloat(dummyTextStyles.paddingLeft) + parseFloat(dummyTextStyles.paddingRight));
+        const charNumsPerLine = getCharNums(
+          lineWidth,
+          `${dummyTextStyles.fontWeight} ${dummyTextStyles.fontSize} ${dummyTextStyles.fontFamily}`
+        );
+        setCharNumsPerLine(charNumsPerLine);
+        containerRef.current.removeChild(dummyIndex);
+        containerRef.current.removeChild(dummyText);
       }
       return () => window.removeEventListener('resize', callbackResize);
     }, [containerRef.current]);
@@ -146,7 +148,6 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
 
     useEffect(() => {
       if (!resizing) {
-        setCurrentWidth((containerRef.current as HTMLDivElement).clientWidth);
         setLoading(false);
       }
     }, [resizing]);
@@ -216,14 +217,10 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
 
     const guessRowHeight = (rowIndex: number) => {
       const rowText = parsedData[rowIndex];
-      // 1: pass the font size along with the font name to 'getTextWidth'
-      // see example: https://developer.mozilla.org/en-US/docs/Web/API/TextMetrics#measuring_text_width
-      const textWidth = getTextWidth(rowText, `${font.fontWeight} ${font.fontSize} ${font.fontFamily}`);
-      // 2: if hasLineNumbers is true: subtract 97px from currentWidth as each line has 16px padding left & right, and line number width is 65px
-      //    else: subtract 32px from currentWidth as each line has 16px padding left & right
-      const numRows = Math.ceil(textWidth / (hasLineNumbers ? currentWidth - 97 : currentWidth - 32));
-      // 3: multiply by 21, as 21px is the line height for log viewer text
-      return parseFloat(font.lineHeight) * (numRows || 1);
+      // get the row numbers of the current text
+      const numRows = Math.ceil(rowText.length / charNumsPerLine);
+      // multiply by line height to get the total height
+      return lineHeight * (numRows || 1);
     };
 
     const createList = (parsedData: string[]) => (
