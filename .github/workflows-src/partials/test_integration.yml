@@ -1,0 +1,10 @@
+test_integration:
+  runs-on: ubuntu-latest
+  needs: demo_app
+  steps:
+    %checkout%
+    %install%
+    - name: Build React demo app
+      run: yarn build:integration
+    - name: Serve and test
+      run: yarn serve:integration & yarn test:integration
