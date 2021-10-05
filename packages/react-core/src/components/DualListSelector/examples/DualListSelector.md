@@ -621,9 +621,12 @@ To make a pane able to be reordered:
  - wrap the `DualListSelectorPane` in a `DragDrop` component
  - wrap the `DualListSelectorList` in a `Droppable` component
  - wrap the `DualListSelectorListItem` components in a `Draggable` component
- - define an `onDrop` callback which reorders the sortable options. The `onDrop` function provides the starting 
- location and destination location for a dragged item. It should return true to enable the 'drop' animation in 
- the new location and false to enable the 'drop' animation back to the item's old position.
+ - define an `onDrop` callback which reorders the sortable options. 
+    - The `onDrop` function provides the starting location and destination location for a dragged item. It should return 
+    true to enable the 'drop' animation in the new location and false to enable the 'drop' animation back to the item's 
+    old position.
+    - define an `onDrag` callback which ensures that the drag event will not cross hairs with the `onOptionSelect` click 
+    event set on the option. Note: the `ignoreNextOptionSelect` state value is used to prevent selection while dragging.
 
 ```js
 import React from 'react';
@@ -644,6 +647,7 @@ import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-d
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
 const ComposableDualListSelector = () => {
+  const [ignoreNextOptionSelect, setIgnoreNextOptionSelect] = React.useState(false);
   const [availableOptions, setAvailableOptions] = React.useState([
     { text: 'Apple', selected: false, isVisible: true },
     { text: 'Banana', selected: false, isVisible: true },
@@ -688,6 +692,10 @@ const ComposableDualListSelector = () => {
   };
   
   const onOptionSelect = (event, index, isChosen) => {
+    if (ignoreNextOptionSelect) {
+      setIgnoreNextOptionSelect(false);
+      return;
+    }
     if (isChosen) {
       const newChosen = [...chosenOptions];
       newChosen[index].selected = !chosenOptions[index].selected;
@@ -763,7 +771,7 @@ const ComposableDualListSelector = () => {
           <AngleLeftIcon />
         </DualListSelectorControl>
       </DualListSelectorControlsWrapper>
-      <DragDrop onDrop={onDrop}>
+      <DragDrop onDrag={() => { setIgnoreNextOptionSelect(true); return true; }} onDrop={onDrop}>
         <DualListSelectorPane
           title="Chosen"
           status={`${chosenOptions.filter(x => x.selected && x.isVisible).length} of ${chosenOptions.filter(x => x.isVisible).length} options selected`}
