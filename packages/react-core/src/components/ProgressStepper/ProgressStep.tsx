@@ -53,6 +53,14 @@ export const ProgressStep: React.FunctionComponent<ProgressStepProps> = ({
   ...props
 }: ProgressStepProps) => {
   const _icon = icon !== undefined ? icon : variantIcons[variant];
+
+  if (props.id === undefined || titleId === undefined) {
+    /* eslint-disable no-console */
+    console.warn(
+      'The titleId and id properties are required to make this component accessible, and one or both of these properties are missing.'
+    );
+  }
+
   return (
     <li
       className={css(
