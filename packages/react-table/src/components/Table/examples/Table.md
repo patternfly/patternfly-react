@@ -403,7 +403,8 @@ class SortableTable extends React.Component {
           transforms: [
             info({
               tooltip: 'More information about commits'
-            })
+            }),
+            sortable
           ]
         }
       ],
