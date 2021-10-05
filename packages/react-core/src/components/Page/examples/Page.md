@@ -18,6 +18,8 @@ propComponents:
   ]
 ---
 
+import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+
 ## Examples
 
 ### Vertical nav
@@ -26,12 +28,20 @@ propComponents:
 import React from 'react';
 import {
   Page,
-  PageHeader,
-  PageHeaderTools,
+  Masthead,
+  MastheadToggle,
+  MastheadMain,
+  MastheadBrand,
+  MastheadContent,
   PageSidebar,
   PageSection,
-  PageSectionVariants
+  PageSectionVariants,
+  PageToggleButton,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem
 } from '@patternfly/react-core';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
 class VerticalPage extends React.Component {
   constructor(props) {
@@ -49,20 +59,33 @@ class VerticalPage extends React.Component {
   render() {
     const { isNavOpen } = this.state;
 
-    const logoProps = {
-      href: 'https://patternfly.org',
-      onClick: () => console.log('clicked logo'),
-      target: '_blank'
-    };
+    const headerToolbar = (
+      <Toolbar id="toolbar">
+        <ToolbarContent>
+          <ToolbarItem>header-tools</ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    );
+
     const Header = (
-      <PageHeader
-        logo="Logo"
-        logoProps={logoProps}
-        headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
-        showNavToggle
-        isNavOpen={isNavOpen}
-        onNavToggle={this.onNavToggle}
-      />
+      <Masthead>
+        <MastheadToggle>
+          <PageToggleButton
+            variant="plain"
+            aria-label="Global navigation"
+            isNavOpen={isNavOpen}
+            onNavToggle={this.onNavToggle}
+          >
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
+        <MastheadMain>
+          <MastheadBrand href="https://patternfly.org" onClick={() => console.log('clicked logo')} target="_blank">
+            Logo
+          </MastheadBrand>
+        </MastheadMain>
+        <MastheadContent>{headerToolbar}</MastheadContent>
+      </Masthead>
     );
     const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
 
@@ -83,26 +106,36 @@ class VerticalPage extends React.Component {
 import React from 'react';
 import {
   Page,
-  PageHeader,
-  PageHeaderTools,
-  PageSidebar,
+  Masthead,
+  MastheadMain,
+  MastheadBrand,
+  MastheadContent,
   PageSection,
-  PageSectionVariants
+  PageSectionVariants,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem
 } from '@patternfly/react-core';
 
 HorizontalPage = () => {
-  const logoProps = {
-    href: 'https://patternfly.org',
-    onClick: () => console.log('clicked logo'),
-    target: '_blank'
-  };
+  const headerToolbar = (
+    <Toolbar id="toolbar">
+      <ToolbarContent>
+        <ToolbarItem>Navigation</ToolbarItem>
+        <ToolbarItem>header-tools</ToolbarItem>
+      </ToolbarContent>
+    </Toolbar>
+  );
+
   const Header = (
-    <PageHeader
-      logo="Logo"
-      logoProps={logoProps}
-      headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
-      topNav="Navigation"
-    />
+    <Masthead display={{ default: 'stack' }} inset={{ default: 'insetXs' }}>
+      <MastheadMain>
+        <MastheadBrand href="https://patternfly.org" onClick={() => console.log('clicked logo')} target="_blank">
+          Logo
+        </MastheadBrand>
+      </MastheadMain>
+      <MastheadContent>{headerToolbar}</MastheadContent>
+    </Masthead>
   );
 
   return (
@@ -121,21 +154,35 @@ HorizontalPage = () => {
 import React from 'react';
 import {
   Page,
-  PageHeader,
-  PageHeaderTools,
-  PageSidebar,
+  Masthead,
+  MastheadMain,
+  MastheadBrand,
+  MastheadContent,
   PageSection,
-  PageSectionVariants
+  PageSectionVariants,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem
 } from '@patternfly/react-core';
 
 TertiaryPage = () => {
-  const logoProps = {
-    href: 'https://patternfly.org',
-    onClick: () => console.log('clicked logo'),
-    target: '_blank'
-  };
+  const headerToolbar = (
+    <Toolbar id="toolbar">
+      <ToolbarContent>
+        <ToolbarItem>header-tools</ToolbarItem>
+      </ToolbarContent>
+    </Toolbar>
+  );
+
   const Header = (
-    <PageHeader logo="Logo" logoProps={logoProps} headerTools={<PageHeaderTools>header-tools</PageHeaderTools>} />
+    <Masthead display={{ default: 'stack' }} inset={{ default: 'insetXs' }}>
+      <MastheadMain>
+        <MastheadBrand href="https://patternfly.org" onClick={() => console.log('clicked logo')} target="_blank">
+          Logo
+        </MastheadBrand>
+      </MastheadMain>
+      <MastheadContent>{headerToolbar}</MastheadContent>
+    </Masthead>
   );
 
   return (
@@ -154,12 +201,20 @@ TertiaryPage = () => {
 import React from 'react';
 import {
   Page,
-  PageHeader,
-  PageHeaderTools,
+  Masthead,
+  MastheadToggle,
+  MastheadMain,
+  MastheadBrand,
+  MastheadContent,
   PageSidebar,
   PageSection,
-  PageSectionVariants
+  PageSectionVariants,
+  PageToggleButton,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem
 } from '@patternfly/react-core';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
 class VerticalPage extends React.Component {
   constructor(props) {
@@ -177,20 +232,33 @@ class VerticalPage extends React.Component {
   render() {
     const { isNavOpen } = this.state;
 
-    const logoProps = {
-      href: 'https://patternfly.org',
-      onClick: () => console.log('clicked logo'),
-      target: '_blank'
-    };
+    const headerToolbar = (
+      <Toolbar id="toolbar">
+        <ToolbarContent>
+          <ToolbarItem>header-tools</ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    );
+
     const Header = (
-      <PageHeader
-        logo="Logo"
-        logoProps={logoProps}
-        headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
-        showNavToggle
-        isNavOpen={isNavOpen}
-        onNavToggle={this.onNavToggle}
-      />
+      <Masthead>
+        <MastheadToggle>
+          <PageToggleButton
+            variant="plain"
+            aria-label="Global navigation"
+            isNavOpen={isNavOpen}
+            onNavToggle={this.onNavToggle}
+          >
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
+        <MastheadMain>
+          <MastheadBrand href="https://patternfly.org" onClick={() => console.log('clicked logo')} target="_blank">
+            Logo
+          </MastheadBrand>
+        </MastheadMain>
+        <MastheadContent>{headerToolbar}</MastheadContent>
+      </Masthead>
     );
     const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
 
@@ -218,12 +286,19 @@ class VerticalPage extends React.Component {
 import React from 'react';
 import {
   Page,
-  PageHeader,
-  PageHeaderTools,
+  Masthead,
+  MastheadToggle,
+  MastheadMain,
+  MastheadBrand,
+  MastheadContent,
   PageSidebar,
   PageSection,
-  PageSectionVariants
+  PageToggleButton,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem
 } from '@patternfly/react-core';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
 class FillPage extends React.Component {
   constructor(props) {
@@ -241,20 +316,33 @@ class FillPage extends React.Component {
   render() {
     const { isNavOpen } = this.state;
 
-    const logoProps = {
-      href: 'https://patternfly.org',
-      onClick: () => console.log('clicked logo'),
-      target: '_blank'
-    };
+    const headerToolbar = (
+      <Toolbar id="toolbar">
+        <ToolbarContent>
+          <ToolbarItem>header-tools</ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    );
+
     const Header = (
-      <PageHeader
-        logo="Logo"
-        logoProps={logoProps}
-        headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
-        showNavToggle
-        isNavOpen={isNavOpen}
-        onNavToggle={this.onNavToggle}
-      />
+      <Masthead>
+        <MastheadToggle>
+          <PageToggleButton
+            variant="plain"
+            aria-label="Global navigation"
+            isNavOpen={isNavOpen}
+            onNavToggle={this.onNavToggle}
+          >
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
+        <MastheadMain>
+          <MastheadBrand href="https://patternfly.org" onClick={() => console.log('clicked logo')} target="_blank">
+            Logo
+          </MastheadBrand>
+        </MastheadMain>
+        <MastheadContent>{headerToolbar}</MastheadContent>
+      </Masthead>
     );
     const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
 
@@ -280,27 +368,45 @@ class FillPage extends React.Component {
 import React from 'react';
 import {
   Page,
-  PageHeader,
-  PageHeaderTools,
+  Masthead,
+  MastheadToggle,
+  MastheadMain,
+  MastheadBrand,
+  MastheadContent,
   PageSidebar,
   PageSection,
-  PageSectionVariants
+  PageSectionVariants,
+  PageToggleButton,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem
 } from '@patternfly/react-core';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
 class UncontrolledNavPage extends React.Component {
   render() {
-    const logoProps = {
-      href: 'https://patternfly.org',
-      onClick: () => console.log('clicked logo'),
-      target: '_blank'
-    };
+    const headerToolbar = (
+      <Toolbar id="toolbar">
+        <ToolbarContent>
+          <ToolbarItem>header-tools</ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    );
+
     const Header = (
-      <PageHeader
-        logo="Logo"
-        logoProps={logoProps}
-        headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
-        showNavToggle
-      />
+      <Masthead>
+        <MastheadToggle>
+          <PageToggleButton variant="plain" aria-label="Global navigation">
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
+        <MastheadMain>
+          <MastheadBrand href="https://patternfly.org" onClick={() => console.log('clicked logo')} target="_blank">
+            Logo
+          </MastheadBrand>
+        </MastheadMain>
+        <MastheadContent>{headerToolbar}</MastheadContent>
+      </Masthead>
     );
     const Sidebar = <PageSidebar nav="Navigation" />;
 
@@ -321,20 +427,28 @@ class UncontrolledNavPage extends React.Component {
 import React from 'react';
 import {
   Page,
-  PageHeader,
-  PageHeaderTools,
+  Masthead,
+  MastheadToggle,
+  MastheadMain,
+  MastheadBrand,
+  MastheadContent,
   PageSidebar,
   PageSection,
   PageGroup,
   PageBreadcrumb,
   PageNavigation,
   PageSectionVariants,
+  PageToggleButton,
   Breadcrumb,
   BreadcrumbItem,
   Nav,
   NavList,
-  NavItem
+  NavItem,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem
 } from '@patternfly/react-core';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
 class GroupPage extends React.Component {
   constructor(props) {
@@ -352,20 +466,33 @@ class GroupPage extends React.Component {
   render() {
     const { isNavOpen } = this.state;
 
-    const logoProps = {
-      href: 'https://patternfly.org',
-      onClick: () => console.log('clicked logo'),
-      target: '_blank'
-    };
+    const headerToolbar = (
+      <Toolbar id="toolbar">
+        <ToolbarContent>
+          <ToolbarItem>header-tools</ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    );
+
     const Header = (
-      <PageHeader
-        logo="Logo"
-        logoProps={logoProps}
-        headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
-        showNavToggle
-        isNavOpen={isNavOpen}
-        onNavToggle={this.onNavToggle}
-      />
+      <Masthead>
+        <MastheadToggle>
+          <PageToggleButton
+            variant="plain"
+            aria-label="Global navigation"
+            isNavOpen={isNavOpen}
+            onNavToggle={this.onNavToggle}
+          >
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
+        <MastheadMain>
+          <MastheadBrand href="https://patternfly.org" onClick={() => console.log('clicked logo')} target="_blank">
+            Logo
+          </MastheadBrand>
+        </MastheadMain>
+        <MastheadContent>{headerToolbar}</MastheadContent>
+      </Masthead>
     );
     const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
 
@@ -399,6 +526,65 @@ class GroupPage extends React.Component {
         </PageGroup>
         <PageSection variant={PageSectionVariants.dark}>Section 1</PageSection>
         <PageSection variant={PageSectionVariants.dark}>Section 2</PageSection>
+      </Page>
+    );
+  }
+}
+```
+
+### Vertical nav using PageHeader component
+
+This example is provided becuase PageHeader and PageHeaderTools are still in use; however, going forward Masthead and Toolbar should be used to make headers rather than PageHeader and PageHeaderTools.
+
+```js
+import React from 'react';
+import {
+  Page,
+  PageHeader,
+  PageHeaderTools,
+  PageSidebar,
+  PageSection,
+  PageSectionVariants
+} from '@patternfly/react-core';
+
+class VerticalPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isNavOpen: true
+    };
+    this.onNavToggle = () => {
+      this.setState({
+        isNavOpen: !this.state.isNavOpen
+      });
+    };
+  }
+
+  render() {
+    const { isNavOpen } = this.state;
+
+    const logoProps = {
+      href: 'https://patternfly.org',
+      onClick: () => console.log('clicked logo'),
+      target: '_blank'
+    };
+    const Header = (
+      <PageHeader
+        logo="Logo"
+        logoProps={logoProps}
+        headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
+        showNavToggle
+        isNavOpen={isNavOpen}
+        onNavToggle={this.onNavToggle}
+      />
+    );
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
+
+    return (
+      <Page header={Header} sidebar={Sidebar}>
+        <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
+        <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
+        <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
       </Page>
     );
   }

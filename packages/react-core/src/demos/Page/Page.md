@@ -7,8 +7,10 @@ import { css } from '@patternfly/react-styles';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
+import imgBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 
 - All but the last example set the `isManagedSidebar` prop on the Page component to have the sidebar automatically close for smaller screen widths. You can also manually control this behavior by not adding the `isManagedSidebar` prop and instead:
 
@@ -24,6 +26,312 @@ import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/ava
 This demonstrates a variety of navigation patterns in the context of a full page layout. These can be used as a basis for choosing the most appropriate page template for your application.
 
 ### Sticky section group
+
+```js isFullscreen
+import React from 'react';
+import {
+  Avatar,
+  Brand,
+  Breadcrumb,
+  BreadcrumbItem,
+  Button,
+  ButtonVariant,
+  Card,
+  CardBody,
+  Divider,
+  Dropdown,
+  DropdownGroup,
+  DropdownToggle,
+  DropdownItem,
+  DropdownSeparator,
+  Gallery,
+  GalleryItem,
+  KebabToggle,
+  Masthead,
+  MastheadBrand,
+  MastheadContent,
+  MastheadMain,
+  MastheadToggle,
+  Nav,
+  NavItem,
+  NavList,
+  Page,
+  PageSection,
+  PageSectionVariants,
+  PageSidebar,
+  PageToggleButton,
+  SkipToContent,
+  TextContent,
+  Text,
+  Toolbar,
+  ToolbarContent,
+  ToolbarGroup,
+  ToolbarItem
+} from '@patternfly/react-core';
+import { css } from '@patternfly/react-styles';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
+import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import imgBrand from './imgBrand.svg';
+import imgAvatar from './imgAvatar.svg';
+
+class PageLayoutGrouped extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isDropdownOpen: false,
+      isKebabDropdownOpen: false,
+      isFullKebabDropdownOpen: false,
+      activeItem: 0
+    };
+    this.onDropdownToggle = isDropdownOpen => {
+      this.setState({
+        isDropdownOpen
+      });
+    };
+
+    this.onDropdownSelect = event => {
+      this.setState({
+        isDropdownOpen: !this.state.isDropdownOpen
+      });
+    };
+
+    this.onKebabDropdownToggle = isKebabDropdownOpen => {
+      this.setState({
+        isKebabDropdownOpen
+      });
+    };
+
+    this.onKebabDropdownSelect = event => {
+      this.setState({
+        isKebabDropdownOpen: !this.state.isKebabDropdownOpen
+      });
+    };
+
+    this.onNavSelect = result => {
+      this.setState({
+        activeItem: result.itemId
+      });
+    };
+
+    this.onFullKebabToggle = isFullKebabDropdownOpen => {
+      this.setState({
+        isFullKebabDropdownOpen
+      });
+    };
+
+    this.onFullKebabSelect = () => {
+      this.setState({
+        isFullKebabDropdownOpen: !this.state.isFullKebabDropdownOpen
+      });
+    };
+  }
+
+  render() {
+    const { isDropdownOpen, isKebabDropdownOpen, activeItem, isFullKebabDropdownOpen } = this.state;
+
+    const PageNav = (
+      <Nav variant="tertiary" onSelect={this.onNavSelect} aria-label="Nav">
+        <NavList>
+          <NavItem href="#" itemId={0} isActive={activeItem === 0}>
+            System panel
+          </NavItem>
+          <NavItem href="#" itemId={1} isActive={activeItem === 1}>
+            Policy
+          </NavItem>
+          <NavItem href="#" itemId={2} isActive={activeItem === 2}>
+            Authentication
+          </NavItem>
+          <NavItem href="#" itemId={3} isActive={activeItem === 3}>
+            Network services
+          </NavItem>
+          <NavItem href="#" itemId={4} isActive={activeItem === 4}>
+            Server
+          </NavItem>
+        </NavList>
+      </Nav>
+    );
+
+    const kebabDropdownItems = [
+      <DropdownItem>
+        <CogIcon /> Settings
+      </DropdownItem>,
+      <DropdownItem>
+        <HelpIcon /> Help
+      </DropdownItem>
+    ];
+
+    const userDropdownItems = [
+      <DropdownGroup key="group 2">
+        <DropdownItem key="group 2 profile">My profile</DropdownItem>
+        <DropdownItem key="group 2 user" component="button">
+          User management
+        </DropdownItem>
+        <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      </DropdownGroup>
+    ];
+
+    const fullKebabItems = [
+      <DropdownGroup key="group 2">
+        <DropdownItem key="group 2 profile">My profile</DropdownItem>
+        <DropdownItem key="group 2 user" component="button">
+          User management
+        </DropdownItem>
+        <DropdownItem key="group 2 logout">Logout</DropdownItem>
+      </DropdownGroup>,
+      <Divider key="divider" />,
+      <DropdownItem key="kebab-1">
+        <CogIcon /> Settings
+      </DropdownItem>,
+      <DropdownItem key="kebab-2">
+        <HelpIcon /> Help
+      </DropdownItem>
+    ];
+
+    const headerToolbar = (
+      <Toolbar id="toolbar" isFullHeight isStatic>
+        <ToolbarContent>
+          <ToolbarGroup
+            variant="icon-button-group"
+            alignment={{ default: 'alignRight' }}
+            spacer={{ default: 'spacerNone', md: 'spacerMd' }}
+          >
+            <ToolbarItem>
+              <Button aria-label="Notifications" variant={ButtonVariant.plain}>
+                <AttentionBellIcon />
+              </Button>
+            </ToolbarItem>
+            <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
+              <ToolbarItem>
+                <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
+                  <CogIcon />
+                </Button>
+              </ToolbarItem>
+              <ToolbarItem>
+                <Button aria-label="Help actions" variant={ButtonVariant.plain}>
+                  <HelpIcon />
+                </Button>
+              </ToolbarItem>
+            </ToolbarGroup>
+            <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
+              <Dropdown
+                isPlain
+                position="right"
+                onSelect={this.onKebabDropdownSelect}
+                toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+                isOpen={isKebabDropdownOpen}
+                dropdownItems={kebabDropdownItems}
+              />
+            </ToolbarItem>
+            <ToolbarItem visibility={{ default: 'visible', md: 'hidden', lg: 'hidden', xl: 'hidden', '2xl': 'hidden' }}>
+              <Dropdown
+                isPlain
+                position="right"
+                onSelect={this.onFullKebabSelect}
+                toggle={<KebabToggle onToggle={this.onFullKebabToggle} />}
+                isOpen={isFullKebabDropdownOpen}
+                dropdownItems={fullKebabItems}
+              />
+            </ToolbarItem>
+          </ToolbarGroup>
+          <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
+            <Dropdown
+              position="right"
+              onSelect={this.onDropdownSelect}
+              isOpen={isDropdownOpen}
+              toggle={
+                <DropdownToggle icon={<Avatar src={imgAvatar} alt="Avatar" />} onToggle={this.onDropdownToggle}>
+                  John Smith
+                </DropdownToggle>
+              }
+              dropdownItems={userDropdownItems}
+            />
+          </ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    );
+
+    const Header = (
+      <Masthead>
+        <MastheadToggle>
+          <PageToggleButton variant="plain" aria-label="Global navigation">
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
+        <MastheadMain>
+          <MastheadBrand>
+            <Brand src={imgBrand} alt="Patternfly Logo" />
+          </MastheadBrand>
+        </MastheadMain>
+        <MastheadContent>{headerToolbar}</MastheadContent>
+      </Masthead>
+    );
+
+    const pageId = 'main-content-page-layout-tertiary-nav';
+    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
+
+    const PageBreadcrumb = (
+      <Breadcrumb>
+        <BreadcrumbItem>Section home</BreadcrumbItem>
+        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+        <BreadcrumbItem to="#" isActive>
+          Section landing
+        </BreadcrumbItem>
+      </Breadcrumb>
+    );
+
+    return (
+      <React.Fragment>
+        <Page
+          header={Header}
+          breadcrumb={PageBreadcrumb}
+          tertiaryNav={PageNav}
+          isManagedSidebar
+          isTertiaryNavWidthLimited
+          isBreadcrumbWidthLimited
+          skipToContent={PageSkipToContent}
+          mainContainerId={pageId}
+          isTertiaryNavGrouped
+          isBreadcrumbGrouped
+          additionalGroupedContent={
+            <PageSection variant={PageSectionVariants.light}>
+              <TextContent>
+                <Text component="h1">Main title</Text>
+                <Text component="p">
+                  Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
+                  of its relative line height of 1.5.
+                </Text>
+              </TextContent>
+            </PageSection>
+          }
+          groupProps={{
+            sticky: 'top'
+          }}
+        >
+          <PageSection>
+            <Gallery hasGutter>
+              {Array.apply(0, Array(20)).map((x, i) => (
+                <GalleryItem key={i}>
+                  <Card>
+                    <CardBody>This is a card</CardBody>
+                  </Card>
+                </GalleryItem>
+              ))}
+            </Gallery>
+          </PageSection>
+        </Page>
+      </React.Fragment>
+    );
+  }
+}
+```
+
+### Sticky section group (using PageHeader)
+
+This demo is provided becuase PageHeader and PageHeaderTools are still in use; however, going forward Masthead and Toolbar should be used to make headers rather than PageHeader and PageHeaderTools.
 
 ```js isFullscreen
 import React from 'react';
@@ -111,19 +419,19 @@ class PageLayoutGrouped extends React.Component {
     const PageNav = (
       <Nav variant="tertiary" onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
-          <NavItem itemId={0} isActive={activeItem === 0}>
+          <NavItem href="#" itemId={0} isActive={activeItem === 0}>
             System panel
           </NavItem>
-          <NavItem itemId={1} isActive={activeItem === 1}>
+          <NavItem href="#" itemId={1} isActive={activeItem === 1}>
             Policy
           </NavItem>
-          <NavItem itemId={2} isActive={activeItem === 2}>
+          <NavItem href="#" itemId={2} isActive={activeItem === 2}>
             Authentication
           </NavItem>
-          <NavItem itemId={3} isActive={activeItem === 3}>
+          <NavItem href="#" itemId={3} isActive={activeItem === 3}>
             Network services
           </NavItem>
-          <NavItem itemId={4} isActive={activeItem === 4}>
+          <NavItem href="#" itemId={4} isActive={activeItem === 4}>
             Server
           </NavItem>
         </NavList>
@@ -260,7 +568,9 @@ class PageLayoutGrouped extends React.Component {
 }
 ```
 
-### Sticky section group (alternate syntax)
+### Sticky section group (alternate syntax and using PageHeader)
+
+Please see <a href="#sticky-section-group-using-pageheader">this</a> note regarding PageHeader.
 
 ```js isFullscreen
 import React from 'react';
@@ -429,19 +739,19 @@ class PageLayoutGroupedAlt extends React.Component {
             <PageNavigation isWidthLimited>
               <Nav variant="tertiary" onSelect={this.onNavSelect} aria-label="Nav">
                 <NavList>
-                  <NavItem itemId={0} isActive={activeItem === 0}>
+                  <NavItem href="#" itemId={0} isActive={activeItem === 0}>
                     System panel
                   </NavItem>
-                  <NavItem itemId={1} isActive={activeItem === 1}>
+                  <NavItem href="#" itemId={1} isActive={activeItem === 1}>
                     Policy
                   </NavItem>
-                  <NavItem itemId={2} isActive={activeItem === 2}>
+                  <NavItem href="#" itemId={2} isActive={activeItem === 2}>
                     Authentication
                   </NavItem>
-                  <NavItem itemId={3} isActive={activeItem === 3}>
+                  <NavItem href="#" itemId={3} isActive={activeItem === 3}>
                     Network services
                   </NavItem>
-                  <NavItem itemId={4} isActive={activeItem === 4}>
+                  <NavItem href="#" itemId={4} isActive={activeItem === 4}>
                     Server
                   </NavItem>
                 </NavList>
