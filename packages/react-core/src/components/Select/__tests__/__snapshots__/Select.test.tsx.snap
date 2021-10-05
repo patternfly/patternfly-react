@@ -34,6 +34,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -479,6 +480,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
         isLastOptionBeforeFooter={[Function]}
         keyHandler={[Function]}
         openedOnEnter={false}
+        position="left"
         selected={Array []}
         sendRef={[Function]}
       >
@@ -652,6 +654,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           keyHandler={[Function]}
           maxHeight=""
           openedOnEnter={false}
+          position="left"
           selected={Array []}
           sendRef={[Function]}
         >
@@ -1071,6 +1074,7 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={
     Array [
@@ -1288,6 +1292,7 @@ exports[`checkbox select renders checkbox select selections properly when isChec
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={
     Array [
@@ -1487,6 +1492,7 @@ exports[`checkbox select renders closed successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -1662,6 +1668,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -1935,6 +1942,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
         isLastOptionBeforeFooter={[Function]}
         keyHandler={[Function]}
         openedOnEnter={false}
+        position="left"
         selected={Array []}
         sendRef={[Function]}
       >
@@ -2022,6 +2030,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
           keyHandler={[Function]}
           maxHeight=""
           openedOnEnter={false}
+          position="left"
           selected={Array []}
           sendRef={[Function]}
         >
@@ -2237,6 +2246,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -2482,6 +2492,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
         isLastOptionBeforeFooter={[Function]}
         keyHandler={[Function]}
         openedOnEnter={false}
+        position="left"
         selected={Array []}
         sendRef={[Function]}
       >
@@ -2555,6 +2566,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
           keyHandler={[Function]}
           maxHeight=""
           openedOnEnter={false}
+          position="left"
           selected={Array []}
           sendRef={[Function]}
         >
@@ -2753,6 +2765,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -3060,6 +3073,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
         isLastOptionBeforeFooter={[Function]}
         keyHandler={[Function]}
         openedOnEnter={false}
+        position="left"
         selected={Array []}
         sendRef={[Function]}
       >
@@ -3162,6 +3176,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
           keyHandler={[Function]}
           maxHeight=""
           openedOnEnter={false}
+          position="left"
           selected={Array []}
           sendRef={[Function]}
         >
@@ -3401,6 +3416,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -3708,6 +3724,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
         isLastOptionBeforeFooter={[Function]}
         keyHandler={[Function]}
         openedOnEnter={false}
+        position="left"
         selected={Array []}
         sendRef={[Function]}
       >
@@ -3810,6 +3827,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
           keyHandler={[Function]}
           maxHeight=""
           openedOnEnter={false}
+          position="left"
           selected={Array []}
           sendRef={[Function]}
         >
@@ -4054,6 +4072,7 @@ exports[`renders select with favorites successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -4831,6 +4850,7 @@ exports[`renders select with favorites successfully 1`] = `
         isLastOptionBeforeFooter={[Function]}
         keyHandler={[Function]}
         openedOnEnter={false}
+        position="left"
         sendRef={[Function]}
       >
         <SelectMenu
@@ -5168,6 +5188,7 @@ exports[`renders select with favorites successfully 1`] = `
           keyHandler={[Function]}
           maxHeight=""
           openedOnEnter={false}
+          position="left"
           selected=""
           sendRef={[Function]}
         >
@@ -5850,6 +5871,7 @@ exports[`select custom select filter filters properly 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -6110,6 +6132,7 @@ exports[`select custom select filter filters properly 1`] = `
         isLastOptionBeforeFooter={[Function]}
         keyHandler={[Function]}
         openedOnEnter={false}
+        position="left"
         sendRef={[Function]}
       >
         <SelectMenu
@@ -6178,6 +6201,7 @@ exports[`select custom select filter filters properly 1`] = `
           keyHandler={[Function]}
           maxHeight=""
           openedOnEnter={false}
+          position="left"
           selected=""
           sendRef={[Function]}
         >
@@ -6349,6 +6373,7 @@ exports[`select renders select groups successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -6774,6 +6799,7 @@ exports[`select renders select groups successfully 1`] = `
         isLastOptionBeforeFooter={[Function]}
         keyHandler={[Function]}
         openedOnEnter={false}
+        position="left"
         sendRef={[Function]}
       >
         <SelectMenu
@@ -6935,6 +6961,7 @@ exports[`select renders select groups successfully 1`] = `
           keyHandler={[Function]}
           maxHeight=""
           openedOnEnter={false}
+          position="left"
           selected=""
           sendRef={[Function]}
         >
@@ -7337,6 +7364,7 @@ exports[`select renders up direction successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -7517,6 +7545,7 @@ exports[`select single select renders closed successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -7697,6 +7726,7 @@ exports[`select single select renders disabled successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -7878,6 +7908,7 @@ exports[`select single select renders expanded successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -8147,6 +8178,7 @@ exports[`select single select renders expanded successfully 1`] = `
         isLastOptionBeforeFooter={[Function]}
         keyHandler={[Function]}
         openedOnEnter={false}
+        position="left"
         sendRef={[Function]}
       >
         <SelectMenu
@@ -8228,6 +8260,7 @@ exports[`select single select renders expanded successfully 1`] = `
           keyHandler={[Function]}
           maxHeight=""
           openedOnEnter={false}
+          position="left"
           selected=""
           sendRef={[Function]}
         >
@@ -8435,6 +8468,7 @@ exports[`select single select renders expanded successfully with custom objects 
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -8678,6 +8712,7 @@ exports[`select single select renders expanded successfully with custom objects 
         isLastOptionBeforeFooter={[Function]}
         keyHandler={[Function]}
         openedOnEnter={false}
+        position="left"
         sendRef={[Function]}
       >
         <SelectMenu
@@ -8746,6 +8781,7 @@ exports[`select single select renders expanded successfully with custom objects 
           keyHandler={[Function]}
           maxHeight=""
           openedOnEnter={false}
+          position="left"
           selected=""
           sendRef={[Function]}
         >
@@ -8937,6 +8973,7 @@ exports[`select with custom content renders closed successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -9112,6 +9149,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -9271,6 +9309,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
         isLastOptionBeforeFooter={[Function]}
         keyHandler={[Function]}
         openedOnEnter={false}
+        position="left"
         selected={Array []}
         sendRef={[Function]}
       >
@@ -9300,6 +9339,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
           keyHandler={[Function]}
           maxHeight=""
           openedOnEnter={false}
+          position="left"
           selected={Array []}
           sendRef={[Function]}
         >
@@ -9389,6 +9429,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -9589,6 +9630,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -9877,6 +9919,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         isLastOptionBeforeFooter={[Function]}
         keyHandler={[Function]}
         openedOnEnter={false}
+        position="left"
         selected={Array []}
         sendRef={[Function]}
       >
@@ -9959,6 +10002,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
           keyHandler={[Function]}
           maxHeight=""
           openedOnEnter={false}
+          position="left"
           selected={Array []}
           sendRef={[Function]}
         >
@@ -10170,6 +10214,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={
     Array [
@@ -10854,6 +10899,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         isLastOptionBeforeFooter={[Function]}
         keyHandler={[Function]}
         openedOnEnter={false}
+        position="left"
         selected={
           Array [
             "Mr",
@@ -10977,6 +11023,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           keyHandler={[Function]}
           maxHeight=""
           openedOnEnter={false}
+          position="left"
           selected={
             Array [
               "Mr",
@@ -11251,6 +11298,7 @@ exports[`typeahead select renders closed successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -11449,6 +11497,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -11735,6 +11784,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
         isLastOptionBeforeFooter={[Function]}
         keyHandler={[Function]}
         openedOnEnter={false}
+        position="left"
         sendRef={[Function]}
       >
         <SelectMenu
@@ -11816,6 +11866,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
           keyHandler={[Function]}
           maxHeight=""
           openedOnEnter={false}
+          position="left"
           selected=""
           sendRef={[Function]}
         >
@@ -12027,6 +12078,7 @@ exports[`typeahead select renders selected successfully 1`] = `
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections="Mr"
   toggleAriaLabel="Options menu"
@@ -12349,6 +12401,7 @@ exports[`typeahead select renders selected successfully 1`] = `
         isLastOptionBeforeFooter={[Function]}
         keyHandler={[Function]}
         openedOnEnter={false}
+        position="left"
         selected="Mr"
         sendRef={[Function]}
       >
@@ -12449,6 +12502,7 @@ exports[`typeahead select renders selected successfully 1`] = `
           keyHandler={[Function]}
           maxHeight=""
           openedOnEnter={false}
+          position="left"
           selected="Mr"
           sendRef={[Function]}
         >
@@ -12688,6 +12742,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
   onTypeaheadInputChanged={null}
   ouiaSafe={true}
   placeholderText=""
+  position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
   toggleAriaLabel="Options menu"
@@ -12896,6 +12951,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
         isLastOptionBeforeFooter={[Function]}
         keyHandler={[Function]}
         openedOnEnter={false}
+        position="left"
         sendRef={[Function]}
       >
         <SelectMenu
@@ -12938,6 +12994,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
           keyHandler={[Function]}
           maxHeight=""
           openedOnEnter={false}
+          position="left"
           selected=""
           sendRef={[Function]}
         >

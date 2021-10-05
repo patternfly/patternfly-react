@@ -12,7 +12,7 @@ import { SelectMenu } from './SelectMenu';
 import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectGroup, SelectGroupProps } from './SelectGroup';
 import { SelectToggle } from './SelectToggle';
-import { SelectContext, SelectVariant, SelectDirection, KeyTypes } from './selectConstants';
+import { SelectContext, SelectVariant, SelectPosition, SelectDirection, KeyTypes } from './selectConstants';
 import { Chip, ChipGroup, ChipGroupProps } from '../ChipGroup';
 import { Spinner } from '../Spinner';
 import {
@@ -46,6 +46,8 @@ export interface SelectProps
   children?: React.ReactElement[];
   /** Classes applied to the root of the Select */
   className?: string;
+  /** Indicates where menu will be aligned horizontally */
+  position?: SelectPosition | 'right' | 'left';
   /** Flag specifying which direction the Select menu expands */
   direction?: 'up' | 'down';
   /** Flag to indicate if select is open */
@@ -171,6 +173,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   static defaultProps: PickOptional<SelectProps> = {
     children: [] as React.ReactElement[],
     className: '',
+    position: SelectPosition.left,
     direction: SelectDirection.down,
     toggleId: null as string,
     isOpen: false,
