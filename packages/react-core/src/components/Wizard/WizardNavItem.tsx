@@ -76,7 +76,7 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
           isDisabled && styles.modifiers.disabled
         )}
         aria-disabled={isDisabled ? true : null}
-        aria-current={isCurrent && !children ? 'page' : false}
+        aria-current={isCurrent && !children ? 'step' : false}
         {...(isExpandable && { 'aria-expanded': isExpanded })}
       >
         {isExpandable ? (
