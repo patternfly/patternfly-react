@@ -57,7 +57,7 @@ export const ProgressStep: React.FunctionComponent<ProgressStepProps> = ({
   if (props.id === undefined || titleId === undefined) {
     /* eslint-disable no-console */
     console.warn(
-      'The titleId and id properties are required to make this component accessible, and one or both of these properties are missing.'
+      'ProgressStep: The titleId and id properties are required to make this component accessible, and one or both of these properties are missing.'
     );
   }
 
