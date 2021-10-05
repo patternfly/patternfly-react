@@ -296,11 +296,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.PopoverDemo
   },
   {
-    id: 'progress-demo',
-    name: 'Progress Demo',
-    componentType: Examples.ProgressDemo
-  },
-  {
     id: 'radio-demo',
     name: 'Radio Demo',
     componentType: Examples.RadioDemo
