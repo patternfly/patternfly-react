@@ -345,6 +345,102 @@ class VerticalTabs extends React.Component {
 }
 ```
 
+### Vertical expandable
+```js
+import React from 'react';
+import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
+class VerticalExpandableTabs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTabKey: 0,
+      isExpanded: false
+    };
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+    this.onToggle = isExpanded => {
+      this.setState({
+        isExpanded
+      });
+    };
+  }
+  render() {
+    const {activeTabKey, isExpanded} = this.state;
+    return (
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isVertical expandable={{default: 'expandable', md: 'nonExpandable', lg: 'expandable'}} isExpanded={isExpanded} onToggle={this.onToggle} toggleText="Containers">
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+            Users
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+            Containers
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+            Database
+          </Tab>
+          <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
+            Server
+          </Tab>
+          <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
+            System
+          </Tab>
+          <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
+            Network
+          </Tab>
+        </Tabs>
+    );
+  }
+}
+```
+
+### Vertical expandable uncontrolled
+```js
+import React from 'react';
+import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
+class VerticalExpandableUncontrolledTabs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTabKey: 0
+    };
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+  }
+  render() {
+    const {activeTabKey} = this.state;
+    return (
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isVertical expandable={{default: 'expandable', md: 'nonExpandable', lg: 'expandable'}}  defaultIsExpanded={false} toggleText="Containers">
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+            Users
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+            Containers
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+            Database
+          </Tab>
+          <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
+            Server
+          </Tab>
+          <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
+            System
+          </Tab>
+          <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
+            Network
+          </Tab>
+        </Tabs>
+    );
+  }
+}
+```
+
 ### Inset
 ```js
 import React from 'react';
