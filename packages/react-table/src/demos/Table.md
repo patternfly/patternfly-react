@@ -2249,6 +2249,8 @@ class FilterTableDemo extends React.Component {
 
 ### Sortable - responsive
 
+This is an example of a responive sortable table. When the screen size is small, the table will change to a compact format and a new toolbar item will be displayed to control sorting.
+
 ```js isFullscreen
 import React from 'react';
 import {
@@ -2265,6 +2267,7 @@ import {
   TextContent,
   Select,
   SelectVariant,
+  SelectOption,
   Nav,
   NavList,
   NavItem,
@@ -2304,6 +2307,7 @@ ComposableTableSortable = () => {
   const [navActiveItem, setNavActiveItem] = React.useState(0);
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
   const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
+  const [isSelectOpen, setIsSelectOpen] = React.useState(false);
   const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
 
   const columns = ['Column 1', 'Column 2', 'Column 3', 'Column 4', 'Column 5'];
@@ -2475,10 +2479,20 @@ ComposableTableSortable = () => {
             aria-label="Select Input"
             placeholderText={
               <>
-                <FilterIcon /> Name
+                <FilterIcon /> Status
               </>
             }
-          />
+            isOpen={isSelectOpen}
+            onToggle={() => setIsSelectOpen(!isSelectOpen)}
+            onSelect={() => setIsSelectOpen(!isSelectOpen)}
+          >
+            {[
+              <SelectOption key={0} value="Debug" />,
+              <SelectOption key={1} value="Info" />,
+              <SelectOption key={2} value="Warn" />,
+              <SelectOption key={3} value="Error" />
+            ]}
+          </Select>
         </ToolbarItem>
         <ToolbarItem visibility={{ default: 'hidden', sm: 'visible', md: 'hidden' }}>
           <OptionsMenu
