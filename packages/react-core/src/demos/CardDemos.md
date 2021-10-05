@@ -8,6 +8,11 @@ import ArrowRightIcon from '@patternfly/react-icons/dist/js/icons/arrow-right-ic
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/js/icons/external-link-alt-icon';
 import { CheckCircleIcon, ExclamationCircleIcon, ExclamationTriangleIcon, TimesCircleIcon, BellIcon } from '@patternfly/react-icons';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, ExpandableRowContent } from '@patternfly/react-table';
+import { Chart, ChartAxis, ChartGroup, ChartVoronoiContainer, ChartStack, ChartBar, ChartTooltip, ChartDonutThreshold, ChartDonutUtilization, ChartArea, ChartContainer, ChartLabel } from '@patternfly/react-charts';
+import chart_color_gold_100 from '@patternfly/react-tokens/dist/esm/chart_color_gold_100';
+import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
+import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
+import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_red_100';
 
 ## Demos
 
@@ -987,6 +992,444 @@ const Status: React.FunctionComponent = () => {
     </>
   );
 };
+```
+
+### Utilization card 1
+
+```ts
+import React from 'react';
+import {
+  Card,
+  CardTitle,
+  CardBody,
+  CardFooter,
+  Title,
+  Gallery,
+  GalleryItem,
+  Flex,
+  FlexItem,
+  Stack,
+  StackItem,
+  Divider
+} from '@patternfly/react-core';
+import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
+
+<Gallery hasGutter minWidths={{ default: '360px' }}>
+  <GalleryItem>
+    <Card id="utilization-card-1" component="div">
+      <CardTitle>
+        <Title headingLevel="h2" size="lg">
+          Top Utilized Clusters
+        </Title>
+      </CardTitle>
+      <CardBody>
+        <Flex direction={{ default: 'column' }}>
+          <FlexItem>
+            <Stack>
+              <b>Cluster-1204</b>
+              <span>27.3 cores available</span>
+            </Stack>
+          </FlexItem>
+          <FlexItem>
+            <ChartGroup
+              ariaDesc="Mock average cluster utilization"
+              ariaTitle="Mock cluster sparkline chart"
+              containerComponent={
+                <ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />
+              }
+              height={100}
+              maxDomain={{ y: 9 }}
+              padding={0}
+              width={400}
+            >
+              <ChartArea
+                data={[
+                  { name: 'Cluster', x: '2015', y: 7 },
+                  { name: 'Cluster', x: '2016', y: 6 },
+                  { name: 'Cluster', x: '2017', y: 8 },
+                  { name: 'Cluster', x: '2018', y: 3 },
+                  { name: 'Cluster', x: '2019', y: 4 },
+                  { name: 'Cluster', x: '2020', y: 1 },
+                  { name: 'Cluster', x: '2021', y: 0 }
+                ]}
+              />
+            </ChartGroup>
+          </FlexItem>
+          <FlexItem>
+            <a href="#">View details</a>
+          </FlexItem>
+        </Flex>
+      </CardBody>
+      <CardBody>
+        <Flex direction={{ default: 'column' }}>
+          <FlexItem>
+            <Stack>
+              <b>Abcdef-1204</b>
+              <span>50.6 cores available</span>
+            </Stack>
+          </FlexItem>
+          <FlexItem>
+            <ChartGroup
+              ariaDesc="Mock average cluster utilization"
+              ariaTitle="Mock cluster sparkline chart"
+              containerComponent={
+                <ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />
+              }
+              height={100}
+              maxDomain={{ y: 9 }}
+              padding={0}
+              width={400}
+            >
+              <ChartArea
+                data={[
+                  { name: 'Cluster', x: '2015', y: 7 },
+                  { name: 'Cluster', x: '2016', y: 6 },
+                  { name: 'Cluster', x: '2017', y: 8 },
+                  { name: 'Cluster', x: '2018', y: 3 },
+                  { name: 'Cluster', x: '2019', y: 4 },
+                  { name: 'Cluster', x: '2020', y: 1 },
+                  { name: 'Cluster', x: '2021', y: 0 }
+                ]}
+              />
+            </ChartGroup>
+          </FlexItem>
+          <FlexItem>
+            <a href="#">View details</a>
+          </FlexItem>
+        </Flex>
+      </CardBody>
+      <Divider />
+      <CardFooter>
+        <a href="#">View all clusters</a>
+      </CardFooter>
+    </Card>
+  </GalleryItem>
+</Gallery>;
+```
+
+### Utilization card 2
+
+```ts
+import React from 'react';
+import {
+  Card,
+  CardTitle,
+  CardBody,
+  CardFooter,
+  Title,
+  Gallery,
+  GalleryItem,
+  Flex,
+  FlexItem,
+  Stack,
+  StackItem,
+  Divider
+} from '@patternfly/react-core';
+import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
+
+<Gallery hasGutter minWidths={{ default: '360px' }}>
+  <GalleryItem>
+    <Card id="utilization-card-2" component="div">
+      <CardTitle>
+        <Title headingLevel="h2" size="lg">
+          Top Utilized Clusters
+        </Title>
+      </CardTitle>
+      <CardBody>
+        <Flex direction={{ default: 'column' }}>
+          <FlexItem>
+            <Stack>
+              <a href="#">Cluster-1204</a>
+              <span>27.3 cores available</span>
+            </Stack>
+          </FlexItem>
+          <FlexItem>
+            <ChartGroup
+              ariaDesc="Mock average cluster utilization"
+              ariaTitle="Mock cluster sparkline chart"
+              containerComponent={
+                <ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />
+              }
+              height={100}
+              maxDomain={{ y: 9 }}
+              padding={0}
+              width={400}
+            >
+              <ChartArea
+                data={[
+                  { name: 'Cluster', x: '2015', y: 7 },
+                  { name: 'Cluster', x: '2016', y: 6 },
+                  { name: 'Cluster', x: '2017', y: 8 },
+                  { name: 'Cluster', x: '2018', y: 3 },
+                  { name: 'Cluster', x: '2019', y: 4 },
+                  { name: 'Cluster', x: '2020', y: 1 },
+                  { name: 'Cluster', x: '2021', y: 0 }
+                ]}
+              />
+            </ChartGroup>
+          </FlexItem>
+        </Flex>
+      </CardBody>
+      <CardBody>
+        <Flex direction={{ default: 'column' }}>
+          <FlexItem>
+            <Stack>
+              <a href="#">Abcdef-1204</a>
+              <span>50.6 cores available</span>
+            </Stack>
+          </FlexItem>
+          <FlexItem>
+            <ChartGroup
+              ariaDesc="Mock average cluster utilization"
+              ariaTitle="Mock cluster sparkline chart"
+              containerComponent={
+                <ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />
+              }
+              height={100}
+              maxDomain={{ y: 9 }}
+              padding={0}
+              width={400}
+            >
+              <ChartArea
+                data={[
+                  { name: 'Cluster', x: '2015', y: 7 },
+                  { name: 'Cluster', x: '2016', y: 6 },
+                  { name: 'Cluster', x: '2017', y: 8 },
+                  { name: 'Cluster', x: '2018', y: 3 },
+                  { name: 'Cluster', x: '2019', y: 4 },
+                  { name: 'Cluster', x: '2020', y: 1 },
+                  { name: 'Cluster', x: '2021', y: 0 }
+                ]}
+              />
+            </ChartGroup>
+          </FlexItem>
+        </Flex>
+      </CardBody>
+      <Divider />
+      <CardFooter>
+        <a href="#">View all clusters</a>
+      </CardFooter>
+    </Card>
+  </GalleryItem>
+</Gallery>;
+```
+
+### Utilization card 3
+
+```ts
+import React from 'react';
+import {
+  Card,
+  CardTitle,
+  CardHeader,
+  CardActions,
+  CardBody,
+  CardFooter,
+  Title,
+  Gallery,
+  GalleryItem,
+  Flex,
+  FlexItem,
+  Stack,
+  StackItem,
+  Divider,
+  Dropdown,
+  DropdownItem,
+  DropdownToggle,
+  DropdownSeparator
+} from '@patternfly/react-core';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import { Chart, ChartStack, ChartBar, ChartTooltip } from '@patternfly/react-charts';
+import chart_color_gold_100 from '@patternfly/react-tokens/dist/esm/chart_color_gold_100';
+import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
+import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
+import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_red_100';
+
+const UtilizationCard3: React.FunctionComponent = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const dropdownItems = [
+    <DropdownItem key="link">Link</DropdownItem>,
+    <DropdownItem key="action" component="button">
+      Action
+    </DropdownItem>,
+    <DropdownItem key="disabled link" isDisabled href="www.google.com">
+      Disabled link
+    </DropdownItem>,
+    <DropdownSeparator key="separator" />,
+    <DropdownItem key="separated link">Separated link</DropdownItem>
+  ];
+
+  return (
+    <Gallery hasGutter minWidths={{ default: '360px' }}>
+      <GalleryItem>
+        <Card id="utilization-card-1" component="div">
+          <CardHeader>
+            <CardTitle>
+              <Title headingLevel="h2" size="lg">
+                Recommendations
+              </Title>
+            </CardTitle>
+            <CardActions>
+              <Dropdown
+                onSelect={() => setIsOpen(!isOpen)}
+                toggle={<DropdownToggle onToggle={() => setIsOpen(!isOpen)}>Filter</DropdownToggle>}
+                isOpen={isOpen}
+                dropdownItems={dropdownItems}
+                position="right"
+              />
+            </CardActions>
+          </CardHeader>
+          <CardBody>
+            <Flex direction={{ default: 'column' }}>
+              <FlexItem>
+                <span>System</span>
+              </FlexItem>
+              <Flex>
+                <ExclamationCircleIcon className="pf-u-danger-color-100" aria-hidden />
+                <a href="#">25 incidents detected</a>
+              </Flex>
+              <FlexItem>
+                <Chart
+                  ariaDesc="Mock incidents chart"
+                  ariaTitle="Mock stack chart"
+                  domainPadding={{ x: [30, 25] }}
+                  legendData={[
+                    { name: 'Low', symbol: { fill: chart_color_gold_100.value } },
+                    { name: 'Important', symbol: { fill: chart_color_gold_300.value } },
+                    { name: 'Moderate', symbol: { fill: chart_color_orange_300.value } },
+                    { name: 'Critical', symbol: { fill: chart_color_red_100.value } }
+                  ]}
+                  legendPosition="bottom-left"
+                  height={50}
+                  padding={{
+                    bottom: 40,
+                    left: 0,
+                    right: 0,
+                    top: 0
+                  }}
+                  width={350}
+                  showAxis={false}
+                >
+                  <ChartStack
+                    horizontal
+                    colorScale={[
+                      chart_color_gold_100.value,
+                      chart_color_gold_300.value,
+                      chart_color_orange_300.value,
+                      chart_color_red_100.value
+                    ]}
+                  >
+                    <ChartBar
+                      data={[
+                        {
+                          name: 'Low',
+                          x: 'Cluster A',
+                          y: 6,
+                          label: 'Low: 6'
+                        }
+                      ]}
+                      labelComponent={<ChartTooltip constrainToVisibleArea />}
+                    />
+                    <ChartBar
+                      data={[
+                        {
+                          name: 'Important',
+                          x: 'Cluster A',
+                          y: 2,
+                          label: 'Important: 2'
+                        }
+                      ]}
+                      labelComponent={<ChartTooltip constrainToVisibleArea />}
+                    />
+                    <ChartBar
+                      data={[
+                        {
+                          name: 'Moderate',
+                          x: 'Cluster A',
+                          y: 4,
+                          label: 'Moderate: 4'
+                        }
+                      ]}
+                      labelComponent={<ChartTooltip constrainToVisibleArea />}
+                    />
+                    <ChartBar
+                      data={[
+                        {
+                          name: 'Critical',
+                          x: 'Cluster A',
+                          y: 2,
+                          label: 'Critical: 2'
+                        }
+                      ]}
+                      labelComponent={<ChartTooltip constrainToVisibleArea />}
+                    />
+                  </ChartStack>
+                </Chart>
+              </FlexItem>
+            </Flex>
+          </CardBody>
+          <CardFooter>
+            <a href="#">See details</a>
+          </CardFooter>
+        </Card>
+      </GalleryItem>
+    </Gallery>
+  );
+};
+```
+
+### Utilization card 4
+
+```ts
+import React from 'react';
+import { Card, CardTitle, CardBody, CardFooter, Title, Gallery, GalleryItem } from '@patternfly/react-core';
+import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
+
+<Gallery hasGutter minWidths={{ default: '360px' }}>
+  <GalleryItem>
+    <Card id="utilization-card-1" component="div">
+      <CardTitle>
+        <Title headingLevel="h2" size="lg">
+          CPU Usage
+        </Title>
+      </CardTitle>
+      <CardBody>
+        <ChartDonutThreshold
+          ariaDesc="Mock storage capacity"
+          ariaTitle="Mock donut utilization chart"
+          constrainToVisibleArea={true}
+          data={[
+            { x: 'Warning at 60%', y: 60 },
+            { x: 'Danger at 90%', y: 90 }
+          ]}
+          height={200}
+          labels={({ datum }) => (datum.x ? datum.x : null)}
+          padding={{
+            bottom: 0,
+            left: 10,
+            right: 150,
+            top: 0
+          }}
+          width={350}
+        >
+          <ChartDonutUtilization
+            data={{ x: 'Storage capacity', y: 80 }}
+            labels={({ datum }) => (datum.x ? `${datum.x}: ${datum.y}%` : null)}
+            legendData={[{ name: `Capacity: 80%` }, { name: 'Warning at 60%' }, { name: 'Danger at 90%' }]}
+            legendOrientation="vertical"
+            title="80%"
+            subTitle="of 100 GBps"
+            thresholds={[{ value: 60 }, { value: 90 }]}
+          />
+        </ChartDonutThreshold>{' '}
+      </CardBody>
+      <CardFooter>
+        <a href="#">See details</a>
+      </CardFooter>
+    </Card>
+  </GalleryItem>
+</Gallery>;
 ```
 
 ### Log view

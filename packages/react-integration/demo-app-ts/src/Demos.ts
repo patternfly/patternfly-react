@@ -356,6 +356,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TabDemo
   },
   {
+    id: 'tab-expandable-demo',
+    name: 'Tab Expandable Demo',
+    componentType: Examples.TabsExpandableDemo
+  },
+  {
     id: 'tab-uncontrolled-demo',
     name: 'Tab Uncontrolled Demo',
     componentType: Examples.TabUncontrolledDemo
