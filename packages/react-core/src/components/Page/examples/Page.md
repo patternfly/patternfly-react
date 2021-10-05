@@ -128,7 +128,7 @@ HorizontalPage = () => {
   );
 
   const Header = (
-    <Masthead display={{ default: 'stack' }} inset={{ default: 'insetXs' }}>
+    <Masthead inset={{ default: 'insetXs' }}>
       <MastheadMain>
         <MastheadBrand href="https://patternfly.org" onClick={() => console.log('clicked logo')} target="_blank">
           Logo
