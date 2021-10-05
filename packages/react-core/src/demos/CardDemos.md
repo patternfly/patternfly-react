@@ -1776,7 +1776,6 @@ CardNestedDemo = () => {
             </CardBody>
           </CardExpandableContent>
         </Card>
-
         <Card id="nested-cards-toggle-group-3" isPlain isExpanded={isCardExpanded2}>
           <CardHeader
             onExpand={() => onCardExpand2(!isCardExpanded2)}
