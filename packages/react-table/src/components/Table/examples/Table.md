@@ -365,16 +365,7 @@ Sorting a table may also be controlled with a toolbar. This toolbar item may als
 
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  sortable,
-  SortByDirection,
-  wrappable,
-  cellWidth,
-  info
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, sortable, SortByDirection, info } from '@patternfly/react-table';
 import {
   Toolbar,
   ToolbarItem,
@@ -418,8 +409,8 @@ class SortableTable extends React.Component {
       ],
       rows: [
         ['one', 'two', 'a', 'four', 'five'],
-        ['a', 'two', 'k', 'four', 'five'],
-        ['p', 'two', 'b', 'four', 'five']
+        ['a', 'five', 'k', 'two', 'three'],
+        ['p', 'seven', 'b', 'one', 'six']
       ],
       sortBy: {},
       isSortDropdownOpen: false
