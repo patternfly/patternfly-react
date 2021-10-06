@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.31.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.30.19...@patternfly/react-table@4.31.0) (2021-10-06)
+
+
+### Features
+
+* **Table:** add toolbar sort demos ([#6353](https://github.com/patternfly/patternfly-react/issues/6353)) ([a806836](https://github.com/patternfly/patternfly-react/commit/a80683675821c81ccdc9b3a0ea8bb91cc81d14a8))
+
+
+
+
+
 ## [4.30.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.30.18...@patternfly/react-table@4.30.19) (2021-10-06)
 
 **Note:** Version bump only for package @patternfly/react-table
