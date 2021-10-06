@@ -1062,3 +1062,91 @@ const CompactNoBackgroundTreeView: React.FunctionComponent = () => {
   return <TreeView data={options} variant="compactNoBackground" />;
 };
 ```
+
+### With memoization
+
+Turning on memoization with the `useMemo` property helps prevent unnecessary re-renders for large data sets. With this flag active, `activeItems` must pass in an array of nodes along the selected item's path to update properly.
+
+```js
+import React from 'react';
+import { TreeView, Button } from '@patternfly/react-core';
+
+class MemoTreeView extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { activeItems: {}, allExpanded: false };
+
+    this.onSelect = (evt, treeViewItem) => {
+      let filtered = [];
+      this.options.forEach(item => this.filterItems(item, treeViewItem.id, filtered));
+      this.setState({
+        activeItems: filtered
+      });
+    };
+
+    this.onToggle = evt => {
+      const { allExpanded } = this.state;
+      this.setState({
+        allExpanded: allExpanded !== undefined ? !allExpanded : true
+      });
+    };
+
+    this.filterItems = (item, input, list) => {
+      if (item.children) {
+        let childContained = false;
+        item.children.forEach(child => {
+          if (childContained) {
+            this.filterItems(child, input, list);
+          } else {
+            childContained = this.filterItems(child, input, list);
+          }
+        });
+        if (childContained) {
+          list.push(item);
+        }
+      }
+
+      if (item.id === input) {
+        list.push(item);
+        return true;
+      } else {
+        return false;
+      }
+    };
+
+    this.options = [];
+    for (let i = 1; i <= 20; i++) {
+      const childNum = 5;
+      let childOptions = [];
+      for (let j = 1; j <= childNum; j++) {
+        childOptions.push({ name: 'Child ' + j, id: `Option${i} - Child${j}` });
+      }
+      this.options.push({ name: 'Option ' + i, id: i, children: childOptions });
+    }
+  }
+
+  render() {
+    const { activeItems, allExpanded } = this.state;
+    const tree = (
+      <TreeView
+        data={this.options}
+        activeItems={activeItems}
+        onSelect={this.onSelect}
+        allExpanded={allExpanded}
+        useMemo
+      />
+    );
+
+    return (
+      <React.Fragment>
+        <Button variant="link" onClick={this.onToggle}>
+          {allExpanded && 'Collapse all'}
+          {!allExpanded && 'Expand all'}
+        </Button>
+        {tree}
+      </React.Fragment>
+    );
+  }
+}
+```
