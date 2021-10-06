@@ -66,8 +66,8 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
       <div className={css(styles.dualListSelectorListItemRow, isSelected && styles.modifiers.selected)}>
         {isDraggable && (
           <div className={css(styles.dualListSelectorDraggable)}>
-            <Button variant={ButtonVariant.plain} aria-label={draggableButtonAriaLabel} tabIndex={-1}>
-              <GripVerticalIcon />
+            <Button variant={ButtonVariant.plain} aria-label={draggableButtonAriaLabel} component="span">
+              <GripVerticalIcon style={{ verticalAlign: '-0.3em' }} />
             </Button>
           </div>
         )}
