@@ -69,6 +69,7 @@ export interface TreeViewProps {
   className?: string;
   /** Toolbar to display above the tree view */
   toolbar?: React.ReactNode;
+  /** Flag indicating the TreeView should utilize memoization to help render large data sets. Setting this property requires that `activeItems` now pass in every node in the selected item's path. */
   useMemo?: boolean;
 }
 

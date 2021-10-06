@@ -223,12 +223,6 @@ export const TreeViewListItem = React.memo(TreeViewListItemBase, (prevProps, nex
     nextProps.activeItems.some(
       item => nextProps.compareItems && item && nextProps.compareItems(item, nextProps.itemData)
     );
-  // console.log(
-  //   `id: ${id}. prevActiveIncludes? ${prevIncludes}. nextActiveIncludes? ${nextIncludes}. Should update? ${!(
-  //     prevIncludes || nextIncludes
-  //   )}`
-  // );
-
   if (!nextProps.useMemo) {
     return false;
   }
