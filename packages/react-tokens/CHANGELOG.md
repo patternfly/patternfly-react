@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.13.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.13.1...@patternfly/react-tokens@4.13.2) (2021-10-06)
+
+
+### Bug Fixes
+
+* **react-tokens:** parse var(--pf, initialValue) ([#6408](https://github.com/patternfly/patternfly-react/issues/6408)) ([4879a2b](https://github.com/patternfly/patternfly-react/commit/4879a2b05dac307ff5c13ef42b4a14a0515a4092))
+
+
+
+
+
 ## [4.13.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.13.0...@patternfly/react-tokens@4.13.1) (2021-10-01)
 
 **Note:** Version bump only for package @patternfly/react-tokens
