@@ -1,4 +1,8 @@
 const path = require('path');
+const sass = require('sass');
+const fs = require('fs');
+
+const outDir = 'dist/css';
 
 /**
  * @param {string} url - Url string
@@ -16,4 +20,13 @@ function importer(url) {
   return { file: url };
 }
 
-module.exports = importer;
+const res = sass.renderSync({
+  file: 'sass/react-catalog-view-extension.scss',
+  outputStyle: 'compressed',
+  importer
+});
+if (!fs.existsSync(outDir)) {
+  fs.mkdirSync(outDir);
+}
+
+fs.writeFileSync(path.join(outDir, 'react-catalog-view-extension.css'), res.css);
