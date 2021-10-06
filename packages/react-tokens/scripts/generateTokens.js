@@ -112,16 +112,16 @@ function generateTokens() {
   };
 
   const getComputedCSSVarValue = (value, selector, varMap) =>
-    value.replace(/var\(([\w-]*)\)/g, (full, match) => {
-      if (match.startsWith('--pf-global')) {
-        if (varMap[match]) {
-          return varMap[match];
+    value.replace(/var\(([\w-]*)(,.*)?\)/g, (full, m1, m2) => {
+      if (m1.startsWith('--pf-global')) {
+        if (varMap[m1]) {
+          return varMap[m1] + (m2 || '');
         } else {
           return full;
         }
       } else {
         if (selector) {
-          return getFromLocalVarsMap(match, selector);
+          return getFromLocalVarsMap(m1, selector) + (m2 || '');
         }
       }
     });
@@ -158,7 +158,7 @@ function generateTokens() {
       varsMap.push(finalValue);
     }
     // all values should not be boxed by var()
-    return varsMap.map(variable => variable.replace(/var\(([\w-]*)\)/g, (full, match) => match));
+    return varsMap.map(variable => variable.replace(/var\(([\w-]*)\)/g, (_, match) => match));
   };
 
   // pre-populate the localVarsMap so we can lookup local variables within or across files, e.g. if we have the declaration:
