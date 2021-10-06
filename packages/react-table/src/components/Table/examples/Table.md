@@ -2,17 +2,11 @@
 id: Table
 cssPrefix: pf-c-table
 section: components
-propComponents:
-  [
-    'Table',
-    'TableHeader',
-    'TableBody'
-  ]
+propComponents: ['Table', 'TableHeader', 'TableBody']
 ouia: true
 ---
 
 # Table
-
 
 Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
 
@@ -20,7 +14,7 @@ PatternFly has two implementations of a React table.
 
 The first is the newer `TableComposable` component. It takes a more explicit and declarative approach, and its implementation more closely mirrors that of an html table. Generally, updates and new feature requests are implemented in the `ComposableTable`.
 
-The second is the original `Table` component. It is configuration based and takes a less declarative and more implicit approach about laying out the table structure, such as the rows and cells within it. 
+The second is the original `Table` component. It is configuration based and takes a less declarative and more implicit approach about laying out the table structure, such as the rows and cells within it.
 
 **For most common use cases, we recommend using `TableComposable`. Both implementations are supported and fully maintained.**
 
@@ -31,8 +25,7 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
-
-import { Checkbox, ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
@@ -40,7 +33,6 @@ import styles from '@patternfly/react-styles/css/components/Table/table';
 import DemoSortableTable from './DemoSortableTable';
 
 ### Table Columns
-
 
 Array items for columns provided to the `Table`'s `cells` prop, can be simple strings or objects.
 
@@ -69,8 +61,8 @@ interface ICell {
 }
 ```
 
-If you wish to enable other built in features, use `transforms` to apply them to 
-column headers or `cellTransforms` to apply them to every cell in that column. 
+If you wish to enable other built in features, use `transforms` to apply them to
+column headers or `cellTransforms` to apply them to every cell in that column.
 
 ```
 // simple
@@ -95,10 +87,10 @@ columns: [
   }
 ]
 ```
+
 Many of the subsequent examples demonstrate how to apply different transformations to enable `Table` features.
 
 ### Table Rows
-
 
 Array items for rows provided to the `Table`'s `rows` prop, can be simple strings or objects.
 
@@ -199,10 +191,13 @@ class SimpleTable extends React.Component {
 
 Custom row wrappers are passed to the `Table` component via the `rowWrapper` prop.
 Each `rowWrapper` should return a tr element.
+
 ```
 rowWrapper?: (props: RowWrapperProps) => JSX.Element;
 ```
+
 RowWrapperProps:
+
 ```
 interface RowWrapperProps {
   trRef?: React.Ref<any> | Function;
@@ -249,11 +244,7 @@ class RowWrapperTable extends React.Component {
         <tr
           {...props}
           ref={trRef}
-          className={css(
-            className,
-            isOddRow ? 'odd-row-class' : 'even-row-class',
-            'custom-static-class'
-          )}
+          className={css(className, isOddRow ? 'odd-row-class' : 'even-row-class', 'custom-static-class')}
           style={isOddRow ? customStyle : {}}
         />
       );
@@ -281,13 +272,16 @@ class RowWrapperTable extends React.Component {
 ### Sortable & wrapping column headers
 
 To implement sortable columns:
+
 1. Import and apply the `sortable` transform to the desired column.
 2. Pass a managed `sortBy` prop to the `Table` component.
-``` `sortBy` - Specifies the initial sorting pattern for the table - asc/desc and the index of the column to sort by```
+   `` `sortBy` - Specifies the initial sorting pattern for the table - asc/desc and the index of the column to sort by ``
 3. Pass an `onSort` callback to the `Table` component
-``` `onSort` - (event: React.MouseEvent, columnIndex: number, sortByDirection: SortByDirection, extraData: IExtraColumnData) => void;```
+   `` `onSort` - (event: React.MouseEvent, columnIndex: number, sortByDirection: SortByDirection, extraData: IExtraColumnData) => void; ``
 
 Note: If you want to add a tooltip/popover to a sortable header, in the `transforms` array the `info` transform has to precede the `sortable` transform.
+
+The built in display for sorting is not fully responsive, as the column headers will be displayed per row when the screen size is small. The example below showcases how sorting may have a custom control display that can be used for small screen sizes.
 
 ```js
 import React from 'react';
@@ -365,6 +359,151 @@ class SortableTable extends React.Component {
 }
 ```
 
+### Sortable - custom control
+
+Sorting a table may also be controlled with a toolbar. This toolbar item may also be hidden at large screen sizes and only displayed when the screen size is small to support responsive tables.
+
+```js
+import React from 'react';
+import { Table, TableHeader, TableBody, sortable, SortByDirection, info } from '@patternfly/react-table';
+import {
+  Toolbar,
+  ToolbarItem,
+  ToolbarContent,
+  OptionsMenu,
+  OptionsMenuItemGroup,
+  OptionsMenuItem,
+  OptionsMenuSeparator,
+  OptionsMenuToggle
+} from '@patternfly/react-core';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+
+class SortableTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        { title: 'Repositories', transforms: [sortable] },
+        {
+          title: 'Branches',
+          transforms: [
+            info({
+              tooltip: 'More information about branches'
+            }),
+            sortable
+          ]
+        },
+        { title: 'Pull requests', transforms: [sortable] },
+        {
+          title: 'Workspaces',
+          transforms: [sortable]
+        },
+        {
+          title: 'Last commit',
+          transforms: [
+            info({
+              tooltip: 'More information about commits'
+            }),
+            sortable
+          ]
+        }
+      ],
+      rows: [
+        ['one', 'two', 'a', 'four', 'five'],
+        ['a', 'five', 'k', 'two', 'three'],
+        ['p', 'seven', 'b', 'one', 'six']
+      ],
+      sortBy: {},
+      isSortDropdownOpen: false
+    };
+
+    this.onSort = this.onSort.bind(this);
+    this.onToggle = this.onToggle.bind(this);
+  }
+
+  onSort(_event, index, direction) {
+    const sortedRows = this.state.rows.sort((a, b) => (a[index] < b[index] ? -1 : a[index] > b[index] ? 1 : 0));
+    this.setState({
+      sortBy: {
+        index,
+        direction
+      },
+      rows: direction === SortByDirection.asc ? sortedRows : sortedRows.reverse()
+    });
+  }
+
+  onToggle(isSortDropdownOpen) {
+    this.setState({
+      isSortDropdownOpen
+    });
+  }
+
+  render() {
+    const { columns, rows, sortBy, isSortDropdownOpen } = this.state;
+
+    return (
+      <React.Fragment>
+        <Toolbar id="toolbar">
+          <ToolbarContent>
+            <ToolbarItem>
+              <OptionsMenu
+                id="options-menu-multiple-options-example"
+                menuItems={[
+                  <OptionsMenuItemGroup key="first group" aria-label="Sort column">
+                    {columns.map((column, columnIndex) => (
+                      <OptionsMenuItem
+                        key={column.title}
+                        isSelected={sortBy.index === columnIndex}
+                        onSelect={evt => this.onSort(evt, columnIndex, sortBy.direction ? sortBy.direction : 'asc')}
+                      >
+                        {column.title}
+                      </OptionsMenuItem>
+                    ))}
+                  </OptionsMenuItemGroup>,
+                  <OptionsMenuSeparator key="separator" />,
+                  <OptionsMenuItemGroup key="second group" aria-label="Sort direction">
+                    <OptionsMenuItem
+                      onSelect={evt => this.onSort(evt, sortBy.index ? sortBy.index : 0, 'asc')}
+                      isSelected={sortBy.direction === 'asc'}
+                      id="ascending"
+                      key="ascending"
+                    >
+                      Ascending
+                    </OptionsMenuItem>
+                    <OptionsMenuItem
+                      onSelect={evt => this.onSort(evt, sortBy.index ? sortBy.index : 0, 'desc')}
+                      isSelected={sortBy.direction === 'desc'}
+                      id="descending"
+                      key="descending"
+                    >
+                      Descending
+                    </OptionsMenuItem>
+                  </OptionsMenuItemGroup>
+                ]}
+                isOpen={isSortDropdownOpen}
+                toggle={
+                  <OptionsMenuToggle
+                    hideCaret
+                    onToggle={() => this.onToggle(!isSortDropdownOpen)}
+                    toggleTemplate={<SortAmountDownIcon />}
+                  />
+                }
+                isPlain
+                isGrouped
+              />
+            </ToolbarItem>
+          </ToolbarContent>
+        </Toolbar>
+        <Table aria-label="Sortable Table" sortBy={sortBy} onSort={this.onSort} cells={columns} rows={rows}>
+          <TableHeader />
+          <TableBody />
+        </Table>
+      </React.Fragment>
+    );
+  }
+}
+```
+
 ### Selectable with checkbox
 
 To enable row selection, set the `onSelect` callback prop on the Table.
@@ -375,19 +514,13 @@ To disable selection for a row, set `disableSelection: true` on the row definiti
 
 To include a 'select all' checkbox in the header row, pass `true` to the`canSelectAll` prop on the Table.
 
-
 Note: this example also demonstrates the use of the `headerCol` transformation being applied to the first
 column via the `cellTransforms` in the column definition. `headerCol` transforms the column so that instead
 of using `td` elements, the cells in that column use `th` elements.
 
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  headerCol,
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, headerCol } from '@patternfly/react-table';
 import { Checkbox } from '@patternfly/react-core';
 
 class SelectableTable extends React.Component {
@@ -473,20 +606,14 @@ class SelectableTable extends React.Component {
 
 ### Selectable radio input
 
-To enable row radio selection, set the `onSelect` callback prop on the Table, and set `RowSelectVariant.radio` as the 
+To enable row radio selection, set the `onSelect` callback prop on the Table, and set `RowSelectVariant.radio` as the
 `selectVariant` prop on the Table.
 
 To disable selection for a row, set `disableSelection: true` on the row definition.
 
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  RowSelectVariant,
-  headerCol,
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, RowSelectVariant, headerCol } from '@patternfly/react-table';
 
 class SelectableTable extends React.Component {
   constructor(props) {
@@ -629,16 +756,16 @@ class RowClickTable extends React.Component {
         }
       ]
     };
-    
+
     this.rowClickHandler = (event, row, rowProps) => {
       this.setState(prevState => {
         const updatedRows = [...prevState.rows];
         updatedRows[rowProps.rowIndex].isRowSelected = !prevState.rows[rowProps.rowIndex].isRowSelected;
         return {
           rows: updatedRows
-        }
+        };
       });
-    }
+    };
   }
 
   render() {
@@ -927,6 +1054,7 @@ To make an exapandable row, define a child row with the `parent` field set to it
 The parent row can have an `isOpen` field for managing the expanded state of the parent row.
 
 Also, pass an `onCollapse` event handler via the prop on the Table
+
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody, TableVariant, expandable } from '@patternfly/react-table';
@@ -1086,13 +1214,14 @@ class CompactExpandableTable extends React.Component {
 ### Compound expandable
 
 To build a compound expandable table:
+
 1. Pass the `compoundExpand` transformation via the `cellTransforms` field in the column definition for each column that will have an expanded section.
 2. For each expandable parent row, the cells in the expandable columns should:
-    1. have a managed `isOpen` prop passed to the cell definition
-    2. have an `ariaControls` value which matches the `id` of it’s child row
+   1. have a managed `isOpen` prop passed to the cell definition
+   2. have an `ariaControls` value which matches the `id` of it’s child row
 3. For each expandable child row, the row definition needs:
-    1. A `parent` field set to its parent’s row index
-    2. A `compoundParent` field set to the cell index which will control the expanding/collapsing of this row
+   1. A `parent` field set to its parent’s row index
+   2. A `compoundParent` field set to the cell index which will control the expanding/collapsing of this row
 4. An `onExpand` event handler prop should be passed to the Table.
 
 ```js
@@ -1449,13 +1578,7 @@ class ControllingText extends React.Component {
 
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableText,
-  cellWidth
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableText, cellWidth } from '@patternfly/react-table';
 
 class ModifiersWithTableText extends React.Component {
   constructor(props) {
@@ -1498,14 +1621,7 @@ class ModifiersWithTableText extends React.Component {
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import {
-  Button,
-  EmptyState,
-  EmptyStateBody,
-  Bullseye,
-  Title,
-  EmptyStateIcon
-} from '@patternfly/react-core';
+import { Button, EmptyState, EmptyStateBody, Bullseye, Title, EmptyStateIcon } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 EmptyStateTable = () => {
@@ -1523,9 +1639,7 @@ EmptyStateTable = () => {
                 <Title headingLevel="h2" size="lg">
                   No results found
                 </Title>
-                <EmptyStateBody>
-                  Clear all filters and try again.
-                </EmptyStateBody>
+                <EmptyStateBody>Clear all filters and try again.</EmptyStateBody>
                 <Button variant="link">Clear all filters</Button>
               </EmptyState>
             </Bullseye>
@@ -1548,13 +1662,15 @@ EmptyStateTable = () => {
 ### Editable rows
 
 To make a table row editable:
+
 1. Pass a callback to Table via the `onRowEdit` prop.
-2. Define the title for the editable cells using the RowCellContent type function. 
+2. Define the title for the editable cells using the RowCellContent type function.
 3. Have the function return an `EditableTextCell`.
 4. Pass the `value` and `name` of the cell's input to the `EditableTextCell` via the cell's `props` field, which is
-defined as being of type `EditableTextCellProps`.
+   defined as being of type `EditableTextCellProps`.
 
 Example:
+
 ```
 {
   title: (value, rowIndex, cellIndex, props) => (
@@ -2038,19 +2154,13 @@ To enable favoriting of a row, set the `onFavorite` callback prop on the Table.
 
 To control whether a row is favorited or not, the Table looks for `favorited: true | falsy` on the row definition.
 
-When you also pass a sort callback through the `onSort` prop, favorites sorting is also enabled. 
+When you also pass a sort callback through the `onSort` prop, favorites sorting is also enabled.
 
 If you want to exclude favorites from sorting, set `canSortFavorites={false}` on the Table.
 
 ```js
 import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  sortable,
-  SortByDirection
-} from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, sortable, SortByDirection } from '@patternfly/react-table';
 import { Checkbox } from '@patternfly/react-core';
 
 class FavoritesTable extends React.Component {

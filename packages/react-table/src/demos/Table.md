@@ -18,6 +18,8 @@ import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLog
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 
 ### Bulk select
 
@@ -126,7 +128,6 @@ class BulkSelectTableDemo extends React.Component {
         return { isDropDownOpen: !prevState.isDropDownOpen };
       });
     };
-
   }
 
   fetch(page, perPage) {
@@ -914,9 +915,7 @@ class ColumnManagementAction extends React.Component {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item1" key="table-column-management-item1">
-                    <label htmlFor="check1">
-                      Repositories
-                    </label>
+                    <label htmlFor="check1">Repositories</label>
                   </DataListCell>
                 ]}
               />
@@ -934,13 +933,11 @@ class ColumnManagementAction extends React.Component {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item2" key="table-column-management-item2">
-                    <label htmlFor="check2">
-                      Branches
-                    </label>
+                    <label htmlFor="check2">Branches</label>
                   </DataListCell>
                 ]}
               />
-          </DataListItemRow>
+            </DataListItemRow>
           </DataListItem>
           <DataListItem aria-labelledby="table-column-management-item3">
             <DataListItemRow>
@@ -954,9 +951,7 @@ class ColumnManagementAction extends React.Component {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item3" key="table-column-management-item3">
-                    <label htmlFor="check3">
-                      Pull requests
-                    </label>            
+                    <label htmlFor="check3">Pull requests</label>
                   </DataListCell>
                 ]}
               />
@@ -974,9 +969,7 @@ class ColumnManagementAction extends React.Component {
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item4" key="table-column-management-item4">
-                    <label htmlFor="check4">
-                      Workspaces
-                    </label>
+                    <label htmlFor="check4">Workspaces</label>
                   </DataListCell>
                 ]}
               />
@@ -993,11 +986,9 @@ class ColumnManagementAction extends React.Component {
               />
               <DataListItemCells
                 dataListCells={[
-                    <DataListCell id="table-column-management-item5" key="table-column-management-item5">
-                      <label htmlFor="check5">
-                        Last commit
-                      </label>
-                    </DataListCell>
+                  <DataListCell id="table-column-management-item5" key="table-column-management-item5">
+                    <label htmlFor="check5">Last commit</label>
+                  </DataListCell>
                 ]}
               />
             </DataListItemRow>
@@ -1424,7 +1415,7 @@ class ColumnManagementAction extends React.Component {
       check4: true,
       check5: true,
       liveText: '',
-      id: '', 
+      id: '',
       itemOrder: ['data1', 'data2', 'data3', 'data4', 'data5']
     };
     this.onSelect = this.onSelect.bind(this);
@@ -1501,7 +1492,6 @@ class ColumnManagementAction extends React.Component {
       this.setState({
         [target.name]: value
       });
-
     };
     this.handleModalToggle = () => {
       this.setState(({ isModalOpen }) => ({
@@ -1511,7 +1501,9 @@ class ColumnManagementAction extends React.Component {
     this.onSave = () => {
       const orderedColumns = this.state.itemOrder.map(item => this.matchDataListNameToColumn(item));
       // concat empty string at the end for actions column
-      const filteredOrderedColumns = orderedColumns.filter(col => this.state.filteredColumns.indexOf(col) > -1).concat(['']);
+      const filteredOrderedColumns = orderedColumns
+        .filter(col => this.state.filteredColumns.indexOf(col) > -1)
+        .concat(['']);
       const orderedRows = [];
       this.state.filteredRows.forEach(row => {
         const updatedCells = row.cells.sort((cellA, cellB) => {
@@ -1596,7 +1588,7 @@ class ColumnManagementAction extends React.Component {
       canSelectAll: checked
     });
   }
-  
+
   renderModal() {
     const { isModalOpen } = this.state;
     return (
@@ -1622,7 +1614,7 @@ class ColumnManagementAction extends React.Component {
           </Button>
         ]}
       >
-        <DataList 
+        <DataList
           aria-label="Table column management"
           id="table-column-management"
           isCompact
@@ -1635,27 +1627,25 @@ class ColumnManagementAction extends React.Component {
           <DataListItem aria-labelledby="table-column-management-item1" id="data1">
             <DataListItemRow>
               <DataListControl>
-                  <DataListDragButton
-                    aria-label="Reorder"
-                    aria-labelledby="table-column-management-item1"
-                    aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
-                    aria-pressed="false"
-                  />
-                  <DataListCheck
-                    aria-labelledby="table-column-management-item1"
-                    checked={this.state.check1}
-                    name="check1"
-                    id="check1"
-                    onChange={this.handleChange}
-                    otherControls
-                  />
-                </DataListControl>
+                <DataListDragButton
+                  aria-label="Reorder"
+                  aria-labelledby="table-column-management-item1"
+                  aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
+                  aria-pressed="false"
+                />
+                <DataListCheck
+                  aria-labelledby="table-column-management-item1"
+                  checked={this.state.check1}
+                  name="check1"
+                  id="check1"
+                  onChange={this.handleChange}
+                  otherControls
+                />
+              </DataListControl>
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item1" key="table-column-management-item1">
-                    <label htmlFor="check1">                  
-                      Repositories
-                    </label>
+                    <label htmlFor="check1">Repositories</label>
                   </DataListCell>
                 ]}
               />
@@ -1663,58 +1653,54 @@ class ColumnManagementAction extends React.Component {
           </DataListItem>
           <DataListItem aria-labelledby="table-column-management-item2" id="data2">
             <DataListItemRow>
-             <DataListControl>
-              <DataListDragButton
-                aria-label="Reorder"
-                aria-labelledby="table-column-management-item2"
-                aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
-                aria-pressed="false"
-              />
-              <DataListCheck
-                aria-labelledby="table-column-management-item2"
-                checked={this.state.check2}
-                name="check2"
-                id="check2"
-                onChange={this.handleChange}
-                otherControls
-              />
+              <DataListControl>
+                <DataListDragButton
+                  aria-label="Reorder"
+                  aria-labelledby="table-column-management-item2"
+                  aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
+                  aria-pressed="false"
+                />
+                <DataListCheck
+                  aria-labelledby="table-column-management-item2"
+                  checked={this.state.check2}
+                  name="check2"
+                  id="check2"
+                  onChange={this.handleChange}
+                  otherControls
+                />
               </DataListControl>
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item2" key="table-column-management-item2">
-                    <label htmlFor="check2">
-                      Branches
-                    </label>
+                    <label htmlFor="check2">Branches</label>
                   </DataListCell>
                 ]}
               />
-          </DataListItemRow>
+            </DataListItemRow>
           </DataListItem>
           <DataListItem aria-labelledby="table-column-management-item3" id="data3">
             <DataListItemRow>
               <DataListControl>
-                  <DataListDragButton
-                    aria-label="Reorder"
-                    aria-labelledby="table-column-management-item3"
-                    aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
-                    aria-pressed="false"
-                  />
-              <DataListCheck
-                aria-labelledby="table-column-management-item3"
-                checked={this.state.check3}
-                name="check3"
-                id="check3"
-                onChange={this.handleChange}
-                otherControls
-              />
+                <DataListDragButton
+                  aria-label="Reorder"
+                  aria-labelledby="table-column-management-item3"
+                  aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
+                  aria-pressed="false"
+                />
+                <DataListCheck
+                  aria-labelledby="table-column-management-item3"
+                  checked={this.state.check3}
+                  name="check3"
+                  id="check3"
+                  onChange={this.handleChange}
+                  otherControls
+                />
               </DataListControl>
               <DataListItemCells
                 dataListCells={[
-                    <DataListCell id="table-column-management-item3" key="table-column-management-item3">
-                      <label htmlFor="check3">
-                        Pull requests
-                      </label>            
-                    </DataListCell>
+                  <DataListCell id="table-column-management-item3" key="table-column-management-item3">
+                    <label htmlFor="check3">Pull requests</label>
+                  </DataListCell>
                 ]}
               />
             </DataListItemRow>
@@ -1728,21 +1714,19 @@ class ColumnManagementAction extends React.Component {
                   aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
                   aria-pressed="false"
                 />
-              <DataListCheck
-                aria-labelledby="table-column-management-item4"
-                checked={this.state.check4}
-                name="check4"
-                id="check4"
-                onChange={this.handleChange}
-                otherControls
-              />
+                <DataListCheck
+                  aria-labelledby="table-column-management-item4"
+                  checked={this.state.check4}
+                  name="check4"
+                  id="check4"
+                  onChange={this.handleChange}
+                  otherControls
+                />
               </DataListControl>
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item4" key="table-column-management-item4">
-                    <label htmlFor="check4">
-                      Workspaces
-                    </label>
+                    <label htmlFor="check4">Workspaces</label>
                   </DataListCell>
                 ]}
               />
@@ -1757,21 +1741,19 @@ class ColumnManagementAction extends React.Component {
                   aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
                   aria-pressed="false"
                 />
-              <DataListCheck
-                aria-labelledby="table-column-management-item5"
-                checked={this.state.check5}
-                name="check5"
-                id="check5"
-                onChange={this.handleChange}
-                otherControls
-              />
+                <DataListCheck
+                  aria-labelledby="table-column-management-item5"
+                  checked={this.state.check5}
+                  name="check5"
+                  id="check5"
+                  onChange={this.handleChange}
+                  otherControls
+                />
               </DataListControl>
               <DataListItemCells
                 dataListCells={[
                   <DataListCell id="table-column-management-item5" key="table-column-management-item5">
-                    <label htmlFor="check5">
-                      Last commit
-                    </label>
+                    <label htmlFor="check5">Last commit</label>
                   </DataListCell>
                 ]}
               />
@@ -2201,42 +2183,55 @@ class FilterTableDemo extends React.Component {
 
     let tableRows = filteredRows;
     if (!loading && filteredRows.length === 0) {
-      tableRows = [{
-        heightAuto: true,
-        cells: [{
-          props: { colSpan: 8 },
-          title: (
-            <Bullseye>
-              <EmptyState>
-                <EmptyStateIcon icon={SearchIcon} />
-                <Title headingLevel="h5" size="lg">
-                  Clear all filters and try again.
-                </Title>
-                <EmptyStateBody>
-                  No results match this filter criteria. Remove all filters or clear all filters to show results.
-                </EmptyStateBody>
-                <EmptyStateSecondaryActions>
-                  <Button variant="link" onClick={() => { this.onDelete(null); }}>
-                    Clear all filters
-                  </Button>
-                </EmptyStateSecondaryActions>
-              </EmptyState>
-            </Bullseye>
-          )
-        }]
-      }]
+      tableRows = [
+        {
+          heightAuto: true,
+          cells: [
+            {
+              props: { colSpan: 8 },
+              title: (
+                <Bullseye>
+                  <EmptyState>
+                    <EmptyStateIcon icon={SearchIcon} />
+                    <Title headingLevel="h5" size="lg">
+                      Clear all filters and try again.
+                    </Title>
+                    <EmptyStateBody>
+                      No results match this filter criteria. Remove all filters or clear all filters to show results.
+                    </EmptyStateBody>
+                    <EmptyStateSecondaryActions>
+                      <Button
+                        variant="link"
+                        onClick={() => {
+                          this.onDelete(null);
+                        }}
+                      >
+                        Clear all filters
+                      </Button>
+                    </EmptyStateSecondaryActions>
+                  </EmptyState>
+                </Bullseye>
+              )
+            }
+          ]
+        }
+      ];
     } else if (loading) {
-      tableRows = [{
-        heightAuto: true,
-        cells: [{
-          props: { colSpan: 8 },
-          title: (
-            <Title headingLevel="h2" size="3xl">
-              Please wait while loading data
-            </Title>
-          )
-        }]
-      }]
+      tableRows = [
+        {
+          heightAuto: true,
+          cells: [
+            {
+              props: { colSpan: 8 },
+              title: (
+                <Title headingLevel="h2" size="3xl">
+                  Please wait while loading data
+                </Title>
+              )
+            }
+          ]
+        }
+      ];
     }
 
     return (
@@ -2250,6 +2245,402 @@ class FilterTableDemo extends React.Component {
     );
   }
 }
+```
+
+### Sortable - responsive
+
+This is an example of a responive sortable table. When the screen size is small, the table will change to a compact format and a new toolbar item will be displayed to control sorting.
+
+```js isFullscreen
+import React from 'react';
+import {
+  Button,
+  Toolbar,
+  ToolbarContent,
+  ToolbarGroup,
+  ToolbarItem,
+  OptionsMenu,
+  OptionsMenuToggle,
+  Pagination,
+  PaginationVariant,
+  Text,
+  TextContent,
+  Select,
+  SelectVariant,
+  SelectOption,
+  Nav,
+  NavList,
+  NavItem,
+  Dropdown,
+  DropdownItem,
+  DropdownGroup,
+  DropdownToggle,
+  Divider,
+  KebabToggle,
+  Avatar,
+  OptionsMenuItem,
+  OptionsMenuSeparator,
+  OptionsMenuItemGroup,
+  Page,
+  PageSidebar,
+  Masthead,
+  MastheadToggle,
+  PageToggleButton,
+  MastheadMain,
+  MastheadContent,
+  SkipToContent,
+  PageSection
+} from '@patternfly/react-core';
+import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
+
+ComposableTableSortable = () => {
+  const [navActiveItem, setNavActiveItem] = React.useState(0);
+  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+  const [isKebabDropdownOpen, setIsKebabDropdownOpen] = React.useState(false);
+  const [isSelectOpen, setIsSelectOpen] = React.useState(false);
+  const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
+
+  const columns = ['Column 1', 'Column 2', 'Column 3', 'Column 4', 'Column 5'];
+  const [rows, setRows] = React.useState([
+    ['one', 'two', 'a', 'four', 'five'],
+    ['a', 'two', 'k', 'four', 'five'],
+    ['p', 'two', 'b', 'four', 'five']
+  ]);
+  // index of the currently active column
+  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
+  // sort direction of the currently active column
+  const [activeSortDirection, setActiveSortDirection] = React.useState('none');
+  // sort dropdown expansion
+  const [isSortDropdownOpen, setIsSortDropdownOpen] = React.useState(false);
+
+  const onSort = (event, index, direction) => {
+    setActiveSortIndex(index);
+    setActiveSortDirection(direction);
+    console.log('i; ', index, direction);
+    // sorts the rows
+    const updatedRows = rows.sort((a, b) => {
+      if (typeof a[index] === 'number') {
+        // numeric sort
+        if (direction === 'asc') {
+          return a[index] - b[index];
+        }
+        return b[index] - a[index];
+      } else {
+        // string sort
+        if (direction === 'asc') {
+          return a[index].localeCompare(b[index]);
+        }
+        return b[index].localeCompare(a[index]);
+      }
+    });
+    setRows(updatedRows);
+  };
+
+  const PageNav = (
+    <Nav onSelect={result => setNavActiveItem(result.itemId)} aria-label="Nav">
+      <NavList>
+        <NavItem itemId={0} isActive={navActiveItem === 0} to="#system-panel">
+          System Panel
+        </NavItem>
+        <NavItem itemId={1} isActive={navActiveItem === 1} to="#policy">
+          Policy
+        </NavItem>
+        <NavItem itemId={2} isActive={navActiveItem === 2} to="#auth">
+          Authentication
+        </NavItem>
+        <NavItem itemId={3} isActive={navActiveItem === 3} to="#network">
+          Network Services
+        </NavItem>
+        <NavItem itemId={4} isActive={navActiveItem === 4} to="#server">
+          Server
+        </NavItem>
+      </NavList>
+    </Nav>
+  );
+
+  const kebabDropdownItems = [
+    <DropdownItem key="kebab-1">
+      <CogIcon /> Settings
+    </DropdownItem>,
+    <DropdownItem key="kebab-2">
+      <HelpIcon /> Help
+    </DropdownItem>
+  ];
+  const userDropdownItems = [
+    <DropdownGroup key="group 2">
+      <DropdownItem key="group 2 profile">My profile</DropdownItem>
+      <DropdownItem key="group 2 user" component="button">
+        User management
+      </DropdownItem>
+      <DropdownItem key="group 2 logout">Logout</DropdownItem>
+    </DropdownGroup>
+  ];
+
+  const fullKebabItems = [
+    <DropdownGroup key="group 2">
+      <DropdownItem key="group 2 profile">My profile</DropdownItem>
+      <DropdownItem key="group 2 user" component="button">
+        User management
+      </DropdownItem>
+      <DropdownItem key="group 2 logout">Logout</DropdownItem>
+    </DropdownGroup>,
+    <Divider key="divider" />,
+    <DropdownItem key="kebab-1">
+      <CogIcon /> Settings
+    </DropdownItem>,
+    <DropdownItem key="kebab-2">
+      <HelpIcon /> Help
+    </DropdownItem>
+  ];
+
+  const headerToolbar = (
+    <Toolbar id="toolbar" isFullHeight isStatic>
+      <ToolbarContent>
+        <ToolbarGroup
+          variant="icon-button-group"
+          alignment={{ default: 'alignRight' }}
+          spacer={{ default: 'spacerNone', md: 'spacerMd' }}
+        >
+          <ToolbarItem>
+            <Button aria-label="Notifications" variant={ButtonVariant.plain}>
+              <AttentionBellIcon />
+            </Button>
+          </ToolbarItem>
+          <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
+            <ToolbarItem>
+              <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
+                <CogIcon />
+              </Button>
+            </ToolbarItem>
+            <ToolbarItem>
+              <Button aria-label="Help actions" variant={ButtonVariant.plain}>
+                <HelpIcon />
+              </Button>
+            </ToolbarItem>
+          </ToolbarGroup>
+        </ToolbarGroup>
+        <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
+          <Dropdown
+            isPlain
+            position="right"
+            onSelect={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)}
+            toggle={<KebabToggle onToggle={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)} />}
+            isOpen={isKebabDropdownOpen}
+            dropdownItems={kebabDropdownItems}
+          />
+        </ToolbarItem>
+        <ToolbarItem visibility={{ default: 'visible', md: 'hidden', lg: 'hidden', xl: 'hidden', '2xl': 'hidden' }}>
+          <Dropdown
+            isPlain
+            position="right"
+            onSelect={() => setIsFullKebabDropdownOpen(!isFullKebabDropdownOpen)}
+            toggle={<KebabToggle onToggle={() => setIsFullKebabDropdownOpen(!isFullKebabDropdownOpen)} />}
+            isOpen={isFullKebabDropdownOpen}
+            dropdownItems={fullKebabItems}
+          />
+        </ToolbarItem>
+        <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
+          <Dropdown
+            position="right"
+            onSelect={() => setIsDropdownOpen(!isDropdownOpen)}
+            isOpen={isDropdownOpen}
+            toggle={
+              <DropdownToggle
+                icon={<Avatar src={imgAvatar} alt="Avatar" />}
+                onToggle={() => setIsDropdownOpen(!isDropdownOpen)}
+              >
+                John Smith
+              </DropdownToggle>
+            }
+            dropdownItems={userDropdownItems}
+          />
+        </ToolbarItem>
+      </ToolbarContent>
+    </Toolbar>
+  );
+
+  const tableToolbar = (
+    <Toolbar id="sortable-toolbar">
+      <ToolbarContent>
+        <ToolbarItem>
+          <Select
+            id="select-example"
+            variant={SelectVariant.single}
+            aria-label="Select Input"
+            placeholderText={
+              <>
+                <FilterIcon /> Status
+              </>
+            }
+            isOpen={isSelectOpen}
+            onToggle={() => setIsSelectOpen(!isSelectOpen)}
+            onSelect={() => setIsSelectOpen(!isSelectOpen)}
+          >
+            {[
+              <SelectOption key={0} value="Debug" />,
+              <SelectOption key={1} value="Info" />,
+              <SelectOption key={2} value="Warn" />,
+              <SelectOption key={3} value="Error" />
+            ]}
+          </Select>
+        </ToolbarItem>
+        <ToolbarItem visibility={{ default: 'hidden', sm: 'visible', md: 'hidden' }}>
+          <OptionsMenu
+            id="options-menu-multiple-options-example"
+            menuItems={[
+              <OptionsMenuItemGroup key="first group" aria-label="Sort column">
+                {columns.map((column, columnIndex) => (
+                  <OptionsMenuItem
+                    key={column}
+                    isSelected={activeSortIndex === columnIndex}
+                    onSelect={evt =>
+                      onSort(evt, columnIndex, activeSortDirection !== 'none' ? activeSortDirection : 'asc')
+                    }
+                  >
+                    {column}
+                  </OptionsMenuItem>
+                ))}
+              </OptionsMenuItemGroup>,
+              <OptionsMenuSeparator key="separator" />,
+              <OptionsMenuItemGroup key="second group" aria-label="Sort direction">
+                <OptionsMenuItem
+                  onSelect={evt => onSort(evt, activeSortIndex, 'asc')}
+                  isSelected={activeSortDirection === 'asc'}
+                  id="ascending"
+                  key="ascending"
+                >
+                  Ascending
+                </OptionsMenuItem>
+                <OptionsMenuItem
+                  onSelect={evt => onSort(evt, activeSortIndex, 'desc')}
+                  isSelected={activeSortDirection === 'desc'}
+                  id="descending"
+                  key="descending"
+                >
+                  Descending
+                </OptionsMenuItem>
+              </OptionsMenuItemGroup>
+            ]}
+            isOpen={isSortDropdownOpen}
+            toggle={
+              <OptionsMenuToggle
+                hideCaret
+                onToggle={() => setIsSortDropdownOpen(!isSortDropdownOpen)}
+                toggleTemplate={<SortAmountDownIcon />}
+              />
+            }
+            isPlain
+            isGrouped
+          />
+        </ToolbarItem>
+        <ToolbarGroup>
+          <ToolbarItem>
+            <Button variant="primary">Action</Button>
+          </ToolbarItem>
+          <ToolbarItem visibility={{ default: 'visible', sm: 'hidden', md: 'visible' }}>
+            <Button variant="primary">Responsive hidden action on small</Button>
+          </ToolbarItem>
+        </ToolbarGroup>
+        <ToolbarItem variant="pagination">
+          <Pagination
+            itemCount={37}
+            widgetId="pagination-options-menu-bottom"
+            page={1}
+            variant={PaginationVariant.top}
+            isCompact
+          />
+        </ToolbarItem>
+      </ToolbarContent>
+    </Toolbar>
+  );
+
+  return (
+    <React.Fragment>
+      <Page
+        header={
+          <Masthead>
+            <MastheadToggle>
+              <PageToggleButton variant="plain" aria-label="Global navigation">
+                <BarsIcon />
+              </PageToggleButton>
+            </MastheadToggle>
+            <MastheadMain></MastheadMain>
+            <MastheadContent>{headerToolbar}</MastheadContent>
+          </Masthead>
+        }
+        sidebar={<PageSidebar nav={PageNav} />}
+        isManagedSidebar
+        skipToContent={<SkipToContent href={'#main-content-page-layout-default-nav'}>Skip to content</SkipToContent>}
+        mainContainerId={'main-content-page-layout-default-nav'}
+      >
+        <PageSection variant={PageSectionVariants.light}>
+          <TextContent>
+            <Text component="h1">Table demos</Text>
+            <Text component="p">
+              Below is an example of a responsive sortable table. When the screen size shrinks the table into a compact
+              form, the toolbar will display a dropdown menu containing sorting options.
+            </Text>
+          </TextContent>
+        </PageSection>
+        <PageSection isFilled>
+          {tableToolbar}
+          <TableComposable aria-label="Sortable Table">
+            <Thead>
+              <Tr>
+                {columns.map((column, columnIndex) => {
+                  const sortParams = {
+                    sort: {
+                      sortBy: {
+                        index: activeSortIndex,
+                        direction: activeSortDirection
+                      },
+                      onSort,
+                      columnIndex
+                    }
+                  };
+                  const infoParams =
+                    columnIndex === 2
+                      ? {
+                          info: {
+                            tooltip: 'More information'
+                          }
+                        }
+                      : {};
+                  return (
+                    <Th key={columnIndex} {...sortParams} {...infoParams}>
+                      {column}
+                    </Th>
+                  );
+                })}
+              </Tr>
+            </Thead>
+            <Tbody>
+              {rows.map((row, rowIndex) => (
+                <Tr key={rowIndex}>
+                  {row.map((cell, cellIndex) => (
+                    <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
+                      {cell}
+                    </Td>
+                  ))}
+                </Tr>
+              ))}
+            </Tbody>
+          </TableComposable>
+        </PageSection>
+      </Page>
+    </React.Fragment>
+  );
+};
 ```
 
 ### Automatic pagination
@@ -2794,28 +3185,30 @@ class EmptyStateDemo extends React.Component {
       { title: 'Location' }
     ];
 
-    const rows = [{
-      heightAuto: true,
-      cells: [{
-        props: { colSpan: 8 },
-        title: (
-          <EmptyState>
-            <EmptyStateIcon icon={SearchIcon} />
-            <Title headingLevel="h5" size="lg">
-              No results found
-            </Title>
-            <EmptyStateBody>
-              No results match this filter criteria. Clear all filters and try again.
-            </EmptyStateBody>
-            <EmptyStateSecondaryActions>
-              <Button variant="link" onClick={() => {}}>
-                Clear all filters
-              </Button>
-            </EmptyStateSecondaryActions>
-          </EmptyState>
-        )
-      }]
-    }];
+    const rows = [
+      {
+        heightAuto: true,
+        cells: [
+          {
+            props: { colSpan: 8 },
+            title: (
+              <EmptyState>
+                <EmptyStateIcon icon={SearchIcon} />
+                <Title headingLevel="h5" size="lg">
+                  No results found
+                </Title>
+                <EmptyStateBody>No results match this filter criteria. Clear all filters and try again.</EmptyStateBody>
+                <EmptyStateSecondaryActions>
+                  <Button variant="link" onClick={() => {}}>
+                    Clear all filters
+                  </Button>
+                </EmptyStateSecondaryActions>
+              </EmptyState>
+            )
+          }
+        ]
+      }
+    ];
 
     return (
       <Table cells={columns} rows={rows} aria-label="Empty state demo">
