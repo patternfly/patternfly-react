@@ -8,8 +8,14 @@ import {
   NavItemSeparator,
   Stack,
   StackItem,
-  Title
+  Title,
+  Menu,
+  MenuContent,
+  MenuList,
+  MenuItem
 } from '@patternfly/react-core';
+
+import './nav.css';
 
 interface SelectedItem {
   groupId: number | string;
@@ -338,12 +344,33 @@ export class NavDemo extends Component {
   renderFlyoutNav() {
     const { flyoutActiveItem } = this.state;
 
+    const numFlyouts = 5;
+    const FlyoutMenu = ({ depth, children }: { depth: number; children?: any }) => (
+      <Menu key={depth} containsFlyout id={`menu-${depth}`}>
+        <MenuContent>
+          <MenuList>
+            <MenuItem flyoutMenu={children} id={`next-menu-${depth}`}>
+              Next menu
+            </MenuItem>
+            <MenuItem key={`${depth}-child`} id={`${depth}-child`}>
+              Menu item {depth}
+            </MenuItem>
+          </MenuList>
+        </MenuContent>
+      </Menu>
+    );
+    let curFlyout = <FlyoutMenu depth={1} />;
+    for (let i = 2; i < numFlyouts - 1; i++) {
+      curFlyout = <FlyoutMenu depth={i}>{curFlyout}</FlyoutMenu>;
+    }
+
     return (
       <StackItem>
         <Title headingLevel="h2" size="2xl">
           Tertiary Nav
         </Title>
         <div
+          id="flyout-nav"
           style={{
             backgroundColor: '#212427',
             border: '1px solid rgb(114, 118, 123)',
@@ -360,37 +387,7 @@ export class NavDemo extends Component {
                 Link 2
               </NavItem>
               <NavItem
-                flyout={
-                  <Nav variant="subnav">
-                    <NavList>
-                      <NavItem id="flyout-link5" to="#flyout-link5" itemId={4} isActive={flyoutActiveItem === 4}>
-                        Link 5
-                      </NavItem>
-                      <NavItem
-                        flyout={
-                          <Nav variant="subnav">
-                            <NavList>
-                              <NavItem
-                                id="flyout-link7"
-                                to="#flyout-link7"
-                                itemId={6}
-                                isActive={flyoutActiveItem === 6}
-                              >
-                                Link 7
-                              </NavItem>
-                            </NavList>
-                          </Nav>
-                        }
-                        id="flyout-link6"
-                        to="#flyout-link6"
-                        itemId={5}
-                        isActive={flyoutActiveItem === 5}
-                      >
-                        Link 6
-                      </NavItem>
-                    </NavList>
-                  </Nav>
-                }
+                flyout={curFlyout}
                 id="flyout-link3"
                 to="#flyout-link3"
                 itemId={2}
