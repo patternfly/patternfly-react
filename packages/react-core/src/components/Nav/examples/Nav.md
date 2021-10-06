@@ -506,15 +506,51 @@ class NavTertiaryList extends React.Component {
 
 ### Flyout
 
-A flyout should be another `Nav` component with the `subnav` variant. Press `space` or `right arrow` to open a flyout using the keyboard, use `tab` to navigate between items, and press `escape` or `left arrow` to close a flyout.
+A flyout should be a `Menu` component. Press `space` or `right arrow` to open a flyout using the keyboard, use the arrow keys to navigate between flyout items, and press `escape` or `left arrow` to close a flyout.
 
 ```js
 import React from 'react';
-import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
+import {
+  Nav,
+  NavExpandable,
+  NavItem,
+  NavItemSeparator,
+  NavList,
+  NavGroup,
+  Menu,
+  MenuContent,
+  MenuList,
+  MenuItem
+} from '@patternfly/react-core';
 
 NavWithFlyout = () => {
   const [activeItem, setActiveItem] = React.useState(0);
   const onSelect = result => setActiveItem(result.itemId);
+
+  const numFlyouts = 5;
+  const FlyoutMenu = ({ depth, children }) => (
+    <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={onSelect}>
+      <MenuContent>
+        <MenuList>
+          <MenuItem flyoutMenu={children} itemId={`next-menu-${depth}`}>
+            Next menu
+          </MenuItem>
+          {[...Array(numFlyouts - depth).keys()].map(j => (
+            <MenuItem key={`${depth}-${j}`} itemId={`${depth}-${j}`}>
+              Menu {depth} item {j}
+            </MenuItem>
+          ))}
+          <MenuItem flyoutMenu={children} itemId={`next-menu-2-${depth}`}>
+            Next menu
+          </MenuItem>
+        </MenuList>
+      </MenuContent>
+    </Menu>
+  );
+  let curFlyout = <FlyoutMenu depth={1} />;
+  for (let i = 2; i < numFlyouts - 1; i++) {
+    curFlyout = <FlyoutMenu depth={i}>{curFlyout}</FlyoutMenu>;
+  }
 
   return (
     <Nav onSelect={onSelect}>
@@ -525,38 +561,7 @@ NavWithFlyout = () => {
         <NavItem id="default-link2" to="#default-link2" itemId={1} isActive={activeItem === 1}>
           Link 2
         </NavItem>
-        <NavItem
-          flyout={
-            <Nav variant="subnav">
-              <NavList>
-                <NavItem id="default-link5" to="#default-link5" itemId={4} isActive={activeItem === 4}>
-                  Link 5
-                </NavItem>
-                <NavItem
-                  flyout={
-                    <Nav variant="subnav">
-                      <NavList>
-                        <NavItem id="default-link7" to="#default-link7" itemId={6} isActive={activeItem === 6}>
-                          Link 7
-                        </NavItem>
-                      </NavList>
-                    </Nav>
-                  }
-                  id="default-link6"
-                  to="#default-link6"
-                  itemId={5}
-                  isActive={activeItem === 5}
-                >
-                  Link 6
-                </NavItem>
-              </NavList>
-            </Nav>
-          }
-          id="default-link3"
-          to="#default-link3"
-          itemId={2}
-          isActive={activeItem === 2}
-        >
+        <NavItem flyout={curFlyout} id="default-link3" to="#default-link3" itemId={2} isActive={activeItem === 2}>
           Link 3
         </NavItem>
         <NavItem id="default-link4" to="#default-link4" itemId={3} isActive={activeItem === 3}>

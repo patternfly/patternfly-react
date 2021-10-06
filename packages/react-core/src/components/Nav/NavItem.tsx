@@ -58,39 +58,45 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   const Component = component as any;
   const hasFlyout = flyout !== undefined;
 
-  const showFlyout = (show: boolean) => {
-    if (!flyoutVisible && show) {
+  const showFlyout = (show: boolean, override?: boolean) => {
+    if ((!flyoutVisible || override) && show) {
       setFlyoutRef(ref);
-    } else if (flyoutVisible && !show) {
+    } else if ((flyoutVisible || override) && !show) {
       setFlyoutRef(null);
     }
+
     onShowFlyout && show && onShowFlyout();
   };
 
-  const onMouseOver = () => {
-    if (hasFlyout) {
+  const onMouseOver = (event: React.MouseEvent) => {
+    const evtContainedInFlyout = (event.target as HTMLElement).closest('.pf-c-nav__item.pf-m-flyout');
+    if (hasFlyout && !flyoutVisible) {
       showFlyout(true);
-    } else {
+    } else if (flyoutRef !== null && !evtContainedInFlyout) {
       setFlyoutRef(null);
     }
   };
 
   const onFlyoutClick = (event: MouseEvent) => {
     const target = event.target;
-    const closestItem = (target as HTMLElement).closest('.pf-c-nav__item');
+    const closestItem = (target as HTMLElement).closest('.pf-m-flyout');
     if (!closestItem) {
       if (hasFlyout) {
-        showFlyout(true);
-      } else {
+        showFlyout(false, true);
+      } else if (flyoutRef !== null) {
         setFlyoutRef(null);
       }
     }
   };
 
   React.useEffect(() => {
-    window.addEventListener('click', onFlyoutClick);
+    if (hasFlyout) {
+      window.addEventListener('click', onFlyoutClick);
+    }
     return () => {
-      window.removeEventListener('click', onFlyoutClick);
+      if (hasFlyout) {
+        window.removeEventListener('click', onFlyoutClick);
+      }
     };
   }, []);
 
@@ -129,15 +135,6 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       if (flyoutVisible) {
         event.stopPropagation();
         event.preventDefault();
-        let closestFlyout = target.closest('.pf-c-nav__item.pf-m-flyout');
-        if (target.parentElement === closestFlyout) {
-          closestFlyout = closestFlyout.parentElement.closest('.pf-c-nav__item.pf-m-flyout');
-        }
-
-        if (closestFlyout) {
-          (closestFlyout.firstChild as HTMLElement).focus();
-        }
-
         showFlyout(false);
       }
     }

@@ -12,3 +12,13 @@
 #ws-react-c-navigation-flyout {
   width: 300px;
 }
+
+#ws-react-c-navigation-flyout .pf-c-menu.pf-m-flyout {
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+
+#ws-react-c-navigation-flyout .pf-c-nav__item.pf-m-flyout {
+  position: relative;
+}
