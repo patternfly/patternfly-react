@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.160.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.160.0...@patternfly/react-core@4.160.1) (2021-10-06)
+
+
+### Bug Fixes
+
+* **catalog, umd:** remove node-sass to allow building on node16 ([#6398](https://github.com/patternfly/patternfly-react/issues/6398)) ([212611a](https://github.com/patternfly/patternfly-react/commit/212611aae49d30385b500b5299be2975900ec22c))
+
+
+
+
+
 # [4.160.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.159.1...@patternfly/react-core@4.160.0) (2021-10-05)
 
 
