@@ -35,7 +35,7 @@ export interface NavProps
   /** Indicates which theme color to use */
   theme?: 'dark' | 'light';
   /** For horizontal navs */
-  variant?: 'default' | 'horizontal' | 'tertiary' | 'horizontal-subnav' | 'subnav';
+  variant?: 'default' | 'horizontal' | 'tertiary' | 'horizontal-subnav';
 }
 
 export const NavContext = React.createContext<{
@@ -122,7 +122,6 @@ export class Nav extends React.Component<
       ...props
     } = this.props;
     const isHorizontal = ['horizontal', 'tertiary'].includes(variant);
-    const Component = variant === 'subnav' ? 'section' : 'nav';
 
     return (
       <NavContext.Provider
@@ -148,10 +147,9 @@ export class Nav extends React.Component<
           setFlyoutRef: flyoutRef => this.setState({ flyoutRef })
         }}
       >
-        <Component
+        <nav
           className={css(
-            variant !== 'subnav' && styles.nav,
-            variant === 'subnav' && styles.navSubnav,
+            styles.nav,
             theme === 'light' && styles.modifiers.light,
             isHorizontal && styles.modifiers.horizontal,
             variant === 'tertiary' && styles.modifiers.tertiary,
@@ -164,7 +162,7 @@ export class Nav extends React.Component<
           {...props}
         >
           {children}
-        </Component>
+        </nav>
       </NavContext.Provider>
     );
   }
