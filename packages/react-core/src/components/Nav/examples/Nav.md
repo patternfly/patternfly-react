@@ -526,21 +526,22 @@ import {
 NavWithFlyout = () => {
   const [activeItem, setActiveItem] = React.useState(0);
   const onSelect = result => setActiveItem(result.itemId);
+  const onMenuSelect = (event, itemId) => setActiveItem(itemId);
 
   const numFlyouts = 5;
   const FlyoutMenu = ({ depth, children }) => (
-    <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={onSelect}>
+    <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={onMenuSelect}>
       <MenuContent>
         <MenuList>
-          <MenuItem flyoutMenu={children} itemId={`next-menu-${depth}`}>
+          <MenuItem flyoutMenu={children} itemId={`next-menu-${depth}`} to={`#menu-link-${depth}`}>
             Next menu
           </MenuItem>
           {[...Array(numFlyouts - depth).keys()].map(j => (
-            <MenuItem key={`${depth}-${j}`} itemId={`${depth}-${j}`}>
+            <MenuItem key={`${depth}-${j}`} itemId={`${depth}-${j}`} to={`#menu-link-${depth}-${j}`}>
               Menu {depth} item {j}
             </MenuItem>
           ))}
-          <MenuItem flyoutMenu={children} itemId={`next-menu-2-${depth}`}>
+          <MenuItem flyoutMenu={children} itemId={`next-menu-2-${depth}`} to={`#second-menu-link-${depth}`}>
             Next menu
           </MenuItem>
         </MenuList>
