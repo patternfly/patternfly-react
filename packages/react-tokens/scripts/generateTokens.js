@@ -1,5 +1,5 @@
 const glob = require('glob');
-const { dirname, basename } = require('path');
+const { dirname, basename, sep } = require('path');
 const { parse } = require('css');
 const { readFileSync } = require('fs');
 
@@ -75,14 +75,14 @@ const getLocalVarsMap = cssFiles => {
  * }
  */
 function generateTokens() {
-  const cssFiles = glob.sync(
-    ['{**/{components,layouts}/**/*.css', '**/patternfly-charts.css', '**/patternfly-variables.css}'].join(','),
-    {
+  const cssFiles = glob
+    .sync(['{**/{components,layouts}/**/*.css', '**/patternfly-charts.css', '**/patternfly-variables.css}'].join(','), {
       cwd: pfStylesDir,
       ignore: ['assets/**'],
       absolute: true
-    }
-  );
+    })
+    // Sort to put variables and charts at END of list so getLocalVarsMap returns correct values
+    .sort((a, b) => (a.split(sep).length < b.split(sep).length ? 1 : -1));
 
   // various lookup tables to resolve variables
   const variables = readFileSync(require.resolve('@patternfly/patternfly/base/_variables.scss'), 'utf8');
