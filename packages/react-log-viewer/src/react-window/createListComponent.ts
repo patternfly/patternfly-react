@@ -362,15 +362,18 @@ export default function createListComponent({
             ...style
           }
         },
-        createElement(innerElementType || innerTagName || 'div', {
-          children: items,
-          ref: innerRef,
-          style: {
-            height: isHorizontal ? '100%' : estimatedTotalSize,
-            pointerEvents: isScrolling ? 'none' : undefined,
-            width: isHorizontal ? estimatedTotalSize : '100%'
-          }
-        })
+        createElement(
+          innerElementType || innerTagName || 'div',
+          {
+            ref: innerRef,
+            style: {
+              height: isHorizontal ? '100%' : estimatedTotalSize,
+              pointerEvents: isScrolling ? 'none' : undefined,
+              width: isHorizontal ? estimatedTotalSize : '100%'
+            }
+          },
+          items
+        )
       );
     }
 
