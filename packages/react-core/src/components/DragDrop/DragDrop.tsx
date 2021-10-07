@@ -10,7 +10,9 @@ interface DraggableItemPosition {
 export const DragDropContext = React.createContext({
   onDrag: (_source: DraggableItemPosition) => true as boolean,
   onDragMove: (_source: DraggableItemPosition, _dest?: DraggableItemPosition) => {},
-  onDrop: (_source: DraggableItemPosition, _dest?: DraggableItemPosition) => false as boolean
+  onDrop: (_source: DraggableItemPosition, _dest?: DraggableItemPosition) => false as boolean,
+  isDragging: false,
+  setIsDragging: (isDragging: boolean) => {}
 });
 
 interface DragDropProps {
@@ -28,8 +30,13 @@ export const DragDrop: React.FunctionComponent<DragDropProps> = ({
   children,
   onDrag = () => true,
   onDragMove = () => {},
-  onDrop = () => false
-}: DragDropProps) => (
-  <DragDropContext.Provider value={{ onDrag, onDragMove, onDrop }}>{children}</DragDropContext.Provider>
-);
+  onDrop = () => false,
+
+}: DragDropProps) => {
+  const [isDragging, setIsDragging] = React.useState(false);
+
+  return (
+    <DragDropContext.Provider value={{ onDrag, onDragMove, onDrop, isDragging, setIsDragging }}>{children}</DragDropContext.Provider>
+  );
+};
 DragDrop.displayName = 'DragDrop';

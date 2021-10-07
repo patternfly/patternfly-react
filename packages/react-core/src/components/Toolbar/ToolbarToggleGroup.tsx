@@ -9,7 +9,7 @@ import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/global_breakpo
 import { formatBreakpointMods, toCamel, capitalize, canUseDOM } from '../../helpers/util';
 
 export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
-  /** An icon to be rendered when the toggle group has collapsed down */
+  /** Content to be rendered when the toggle group has collapsed down */
   toggleIcon: React.ReactNode;
   /** Controls when filters are shown and when the toggle button is hidden. */
   breakpoint: 'md' | 'lg' | 'xl' | '2xl';
