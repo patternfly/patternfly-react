@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.123.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.122.4...@patternfly/react-integration@4.123.0) (2021-10-07)
+
+
+### Features
+
+* **DualListSelector:** introduce composable example and drag/drop demo ([#6369](https://github.com/patternfly/patternfly-react/issues/6369)) ([7cdda0f](https://github.com/patternfly/patternfly-react/commit/7cdda0fdd7f794e64bb8a8adebb48dfede5ebff9))
+
+
+
+
+
 ## [4.122.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.122.3...@patternfly/react-integration@4.122.4) (2021-10-05)
 
 **Note:** Version bump only for package @patternfly/react-integration
