@@ -110,60 +110,24 @@ export class TreeViewRoot extends React.Component<TreeViewRootProps> {
     }
     const activeElement = document.activeElement;
     const key = event.key;
-    let moveFocus = false;
-    let currentIndex = -1;
-    let innerIndex = -1;
-    let previousIndex = -1;
-    const treeNodes = Array.from(this.treeRef.current.getElementsByClassName('pf-c-tree-view__node'));
-    const mappedItems = treeNodes.map(item => {
-      const itemChildren = item.childNodes;
-      const firstItem = itemChildren[0];
-      if ((firstItem as HTMLElement).tagName === 'SPAN') {
-        return [null as HTMLElement, firstItem.firstChild as HTMLElement];
-      } else {
-        return [itemChildren[0] as HTMLElement, itemChildren[1].firstChild as HTMLElement];
-      }
-    });
 
     if (key === 'Space') {
       (document.activeElement as HTMLElement).click();
       event.preventDefault();
     }
 
-    if (['ArrowUp', 'ArrowDown'].includes(key)) {
-      mappedItems.forEach((treeItem, treeItemIndex) => {
-        treeItem.forEach((element, index) => {
-          if (activeElement === element) {
-            const increment = key === 'ArrowUp' ? -1 : 1;
-            innerIndex = index;
-            previousIndex = treeItemIndex;
-            currentIndex = treeItemIndex + increment;
-            while (
-              currentIndex < mappedItems.length &&
-              currentIndex >= 0 &&
-              (!mappedItems[currentIndex][index] ||
-                mappedItems[currentIndex][index].classList.contains('pf-m-disabled'))
-            ) {
-              currentIndex = currentIndex + increment;
-            }
-            moveFocus = true;
-            event.preventDefault();
-          }
-        });
-      });
+    const treeNodes = Array.from(this.treeRef.current.getElementsByClassName('pf-c-tree-view__node'));
 
-      if (moveFocus && mappedItems[currentIndex] && mappedItems[currentIndex][innerIndex]) {
-        if (mappedItems[previousIndex][0]) {
-          (mappedItems[previousIndex][0] as HTMLElement).tabIndex = -1;
-        }
-        (mappedItems[previousIndex][1] as HTMLElement).tabIndex = -1;
-        if (mappedItems[currentIndex][0]) {
-          (mappedItems[currentIndex][0] as HTMLElement).tabIndex = 0;
-        }
-        (mappedItems[currentIndex][1] as HTMLElement).tabIndex = 0;
-        (mappedItems[currentIndex][innerIndex] as HTMLElement).focus();
-      }
-    }
+    handleArrows(
+      event,
+      treeNodes as HTMLElement[],
+      (element: Element) => element.contains(activeElement),
+      (element: Element) => element.querySelector('BUTTON,INPUT'),
+      [],
+      undefined,
+      true,
+      true
+    );
 
     if (['ArrowLeft', 'ArrowRight'].includes(key)) {
       if (key === 'ArrowLeft') {
