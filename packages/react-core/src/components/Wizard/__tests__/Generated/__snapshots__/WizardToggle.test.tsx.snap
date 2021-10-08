@@ -8,18 +8,18 @@ exports[`WizardToggle should match snapshot (auto-generated) 1`] = `
     className="pf-c-wizard__toggle pf-m-expanded"
     onClick={[Function]}
   >
-    <ol
+    <span
       className="pf-c-wizard__toggle-list"
     >
-      <li
+      <span
         className="pf-c-wizard__toggle-list-item"
       >
         <span
           className="pf-c-wizard__toggle-num"
         />
          
-      </li>
-    </ol>
+      </span>
+    </span>
     <span
       className="pf-c-wizard__toggle-icon"
     >
