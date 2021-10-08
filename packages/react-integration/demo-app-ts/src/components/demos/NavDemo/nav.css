@@ -1,9 +1,0 @@
-#flyout-nav .pf-c-menu.pf-m-flyout {
-  position: absolute;
-  top: 0;
-  left: 100%;
-}
-
-#flyout-nav .pf-c-nav__item.pf-m-flyout {
-  position: relative;
-}

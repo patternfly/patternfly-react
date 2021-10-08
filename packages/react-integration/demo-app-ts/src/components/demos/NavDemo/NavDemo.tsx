@@ -15,8 +15,6 @@ import {
   MenuItem
 } from '@patternfly/react-core';
 
-import './nav.css';
-
 interface SelectedItem {
   groupId: number | string;
   itemId: number | string;
