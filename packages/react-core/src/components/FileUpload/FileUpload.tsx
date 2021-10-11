@@ -29,8 +29,8 @@ export interface FileUploadProps
       | DragEvent
       | Event
   ) => void;
-  /** Change event emitted from the \<input\> field associated with the component  */
-  onInputChange?: (event: React.ChangeEvent<HTMLInputElement> | DropEvent, file: File) => void;
+  /** Change event emitted from the hidden \<input type="file" \> field associated with the component  */
+  onFileInputChange?: (event: React.ChangeEvent<HTMLInputElement> | DropEvent, file: File) => void;
   /** Callback for clicking on the FileUploadField text area. By default, prevents a click in the text area from opening file dialog. */
   onClick?: (event: React.MouseEvent) => void;
   /** Additional classes added to the FileUpload container element. */
@@ -93,7 +93,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   filename = '',
   children = null,
   onChange = () => {},
-  onInputChange = null,
+  onFileInputChange = null,
   onReadStarted = () => {},
   onReadFinished = () => {},
   onReadFailed = () => {},
@@ -108,7 +108,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
     if (acceptedFiles.length > 0) {
       const fileHandle = acceptedFiles[0];
       if (event.type === 'drop') {
-        onInputChange?.(event, fileHandle);
+        onFileInputChange?.(event, fileHandle);
       }
       if (type === fileReaderType.text || type === fileReaderType.dataURL) {
         onChange('', fileHandle.name, event); // Show the filename while reading
@@ -166,7 +166,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
             oldInputProps.onChange?.(e);
             const files = await fromEvent(e.nativeEvent);
             if (files.length === 1) {
-              onInputChange?.(e, files[0] as File);
+              onFileInputChange?.(e, files[0] as File);
             }
           }
         };
