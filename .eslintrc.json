@@ -120,5 +120,13 @@
         "spaced-comment": "error",
         "use-isnan": "error",
         "patternfly-react/no-layout-effect": "error"
-    }
+    },
+    "overrides": [
+        {
+            "files": ["**/examples/*"],
+            "rules": {
+                "patternfly-react/no-anonymous-functions": "off"
+            }
+        }
+    ]
 }
