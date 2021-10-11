@@ -188,92 +188,10 @@ Note: this example also demonstrates the use of the `headerCol` transformation b
 column via the `cellTransforms` in the column definition. `headerCol` transforms the column so that instead
 of using `td` elements, the cells in that column use `th` elements.
 
-```js
-import React from 'react';
-import { Table, TableHeader, TableBody, headerCol } from '@patternfly/react-table';
-import { Checkbox } from '@patternfly/react-core';
+**Note:** This example has a `shift + select` feature where holding shift while
+checking checkboxes will check intermediate rows' checkboxes.
 
-class SelectableTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: [
-        { title: 'Repositories', cellTransforms: [headerCol()] },
-        'Branches',
-        { title: 'Pull requests' },
-        'Workspaces',
-        'Last commit'
-      ],
-      rows: [
-        {
-          cells: ['one', 'two', 'a', 'four', 'five']
-        },
-        {
-          cells: ['a', 'two', 'k', 'four', 'five'],
-          disableSelection: true
-        },
-        {
-          cells: ['p', 'two', 'b', 'four', 'five']
-        }
-      ],
-      canSelectAll: true
-    };
-    this.onSelect = this.onSelect.bind(this);
-    this.toggleSelect = this.toggleSelect.bind(this);
-  }
-
-  onSelect(event, isSelected, rowId) {
-    let rows;
-    if (rowId === -1) {
-      rows = this.state.rows.map(oneRow => {
-        if (!oneRow.disableSelection) {
-          oneRow.selected = isSelected;
-        }
-        return oneRow;
-      });
-    } else {
-      rows = [...this.state.rows];
-      rows[rowId].selected = isSelected;
-    }
-    this.setState({
-      rows
-    });
-  }
-
-  toggleSelect(checked) {
-    this.setState({
-      canSelectAll: checked
-    });
-  }
-
-  render() {
-    const { columns, rows, canSelectAll } = this.state;
-
-    return (
-      <div>
-        <Checkbox
-          label="Can select all"
-          className="pf-u-mb-lg"
-          isChecked={canSelectAll}
-          onChange={this.toggleSelect}
-          aria-label="toggle select all checkbox"
-          id="toggle-select-all"
-          name="toggle-select-all"
-        />
-        <Table
-          onSelect={this.onSelect}
-          canSelectAll={canSelectAll}
-          aria-label="Selectable Table"
-          cells={columns}
-          rows={rows}
-        >
-          <TableHeader />
-          <TableBody />
-        </Table>
-      </div>
-    );
-  }
-}
+```ts file="TableSelectable.tsx"
 ```
 
 ### Selectable radio input

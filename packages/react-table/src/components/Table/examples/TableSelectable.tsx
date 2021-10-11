@@ -1,5 +1,6 @@
 import React from 'react';
-import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { TableProps, headerCol, Table, TableBody, TableHeader } from '@patternfly/react-table';
+import { Checkbox } from '@patternfly/react-core';
 
 interface Repository {
   name: string;
@@ -9,7 +10,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const ComposableTableSelectable: React.FunctionComponent = () => {
+export const TableSelectable: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'a', workspaces: 'four', lastCommit: 'five' },
@@ -19,14 +20,6 @@ export const ComposableTableSelectable: React.FunctionComponent = () => {
     { name: 'd', branches: 'two', prs: 'k', workspaces: 'four', lastCommit: 'five' },
     { name: 'e', branches: 'two', prs: 'b', workspaces: 'four', lastCommit: 'five' }
   ];
-
-  const columnNames = {
-    name: 'Repositories',
-    branches: 'Branches',
-    prs: 'Pull requests',
-    workspaces: 'Workspaces',
-    lastCommit: 'Last commit'
-  };
 
   const isRepoSelectable = (repo: Repository) => repo.name !== 'a'; // Arbitrary logic for this example
   const selectableRepos = repositories.filter(isRepoSelectable);
@@ -41,8 +34,9 @@ export const ComposableTableSelectable: React.FunctionComponent = () => {
     });
   const selectAllRepos = (isSelecting = true) =>
     setSelectedRepoNames(isSelecting ? selectableRepos.map(r => r.name) : []);
-  const areAllReposSelected = selectedRepoNames.length === selectableRepos.length;
   const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
+
+  const [canSelectAll, setCanSelectAll] = React.useState(true);
 
   // To allow shift+click to select/deselect multiple rows
   const [recentSelectedRowIndex, setRecentSelectedRowIndex] = React.useState<number | null>(null);
@@ -84,42 +78,47 @@ export const ComposableTableSelectable: React.FunctionComponent = () => {
     };
   }, []);
 
+  const columns: TableProps['cells'] = [
+    { title: 'Repositories', cellTransforms: [headerCol()] },
+    'Branches',
+    { title: 'Pull requests' },
+    'Workspaces',
+    'Last commit'
+  ];
+  const rows: TableProps['rows'] = repositories.map(repo => ({
+    cells: [repo.name, repo.branches, repo.prs, repo.workspaces, repo.lastCommit],
+    selected: isRepoSelected(repo),
+    disableSelection: !isRepoSelectable(repo)
+  }));
+
   return (
-    <TableComposable aria-label="Selectable table">
-      <Thead>
-        <Tr>
-          <Th
-            select={{
-              onSelect: (_event, isSelecting) => selectAllRepos(isSelecting),
-              isSelected: areAllReposSelected
-            }}
-          />
-          <Th>{columnNames.name}</Th>
-          <Th>{columnNames.branches}</Th>
-          <Th>{columnNames.prs}</Th>
-          <Th>{columnNames.workspaces}</Th>
-          <Th>{columnNames.lastCommit}</Th>
-        </Tr>
-      </Thead>
-      <Tbody>
-        {repositories.map((repo, rowIndex) => (
-          <Tr key={repo.name}>
-            <Td
-              select={{
-                rowIndex,
-                onSelect: (_event, isSelecting) => onSelectRepo(repo, rowIndex, isSelecting),
-                isSelected: isRepoSelected(repo),
-                disable: !isRepoSelectable(repo)
-              }}
-            />
-            <Td dataLabel={columnNames.name}>{repo.name}</Td>
-            <Td dataLabel={columnNames.branches}>{repo.branches}</Td>
-            <Td dataLabel={columnNames.prs}>{repo.prs}</Td>
-            <Td dataLabel={columnNames.workspaces}>{repo.workspaces}</Td>
-            <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
-          </Tr>
-        ))}
-      </Tbody>
-    </TableComposable>
+    <div>
+      <Checkbox
+        label="Can select all"
+        className="pf-u-mb-lg"
+        isChecked={canSelectAll}
+        onChange={checked => setCanSelectAll(checked)}
+        aria-label="toggle select all checkbox"
+        id="toggle-select-all"
+        name="toggle-select-all"
+      />
+      <Table
+        onSelect={(_event, isSelecting, rowIndex) => {
+          if (rowIndex === -1) {
+            selectAllRepos(isSelecting);
+          } else {
+            const repo = repositories[rowIndex];
+            onSelectRepo(repo, rowIndex, isSelecting);
+          }
+        }}
+        canSelectAll={canSelectAll}
+        aria-label="Selectable Table"
+        cells={columns}
+        rows={rows}
+      >
+        <TableHeader />
+        <TableBody />
+      </Table>
+    </div>
   );
 };
