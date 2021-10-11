@@ -147,60 +147,7 @@ interface RowWrapperProps {
 }
 ```
 
-```js
-import React from 'react';
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import { css } from '@patternfly/react-styles';
-
-class RowWrapperTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces'],
-      rows: [
-        {
-          cells: ['Repositories one', 'Branches one', 'Pull requests one', 'Workspaces one']
-        },
-        {
-          cells: ['Repositories two', 'Branches two', 'Pull requests two', 'Workspaces two']
-        },
-        {
-          cells: ['Repositories three', 'Branches three', 'Pull requests three', 'Workspaces three']
-        }
-      ]
-    };
-    this.customRowWrapper = ({ trRef, className, rowProps, row, ...props }) => {
-      const isOddRow = (rowProps.rowIndex + 1) % 2;
-      const customStyle = {
-        borderLeft: '3px solid var(--pf-global--primary-color--100)'
-      };
-      return (
-        <tr
-          {...props}
-          ref={trRef}
-          className={css(className, isOddRow ? 'odd-row-class' : 'even-row-class', 'custom-static-class')}
-          style={isOddRow ? customStyle : {}}
-        />
-      );
-    };
-  }
-
-  render() {
-    const { columns, rows } = this.state;
-
-    return (
-      <Table
-        caption="Table with custom row wrapper that styles odd rows"
-        cells={columns}
-        rows={rows}
-        rowWrapper={this.customRowWrapper}
-      >
-        <TableHeader />
-        <TableBody />
-      </Table>
-    );
-  }
-}
+```ts file="TableMisc.tsx"
 ```
 
 ### Sortable & wrapping column headers
