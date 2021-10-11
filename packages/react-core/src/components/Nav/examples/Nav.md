@@ -504,3 +504,72 @@ class NavTertiaryList extends React.Component {
 }
 ```
 
+### Flyout
+
+A flyout should be a `Menu` component. Press `space` or `right arrow` to open a flyout using the keyboard, use the arrow keys to navigate between flyout items, and press `escape` or `left arrow` to close a flyout.
+
+```js
+import React from 'react';
+import {
+  Nav,
+  NavExpandable,
+  NavItem,
+  NavItemSeparator,
+  NavList,
+  NavGroup,
+  Menu,
+  MenuContent,
+  MenuList,
+  MenuItem
+} from '@patternfly/react-core';
+
+NavWithFlyout = () => {
+  const [activeItem, setActiveItem] = React.useState(0);
+  const onSelect = result => setActiveItem(result.itemId);
+  const onMenuSelect = (event, itemId) => setActiveItem(itemId);
+
+  const numFlyouts = 5;
+  const FlyoutMenu = ({ depth, children }) => (
+    <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={onMenuSelect}>
+      <MenuContent>
+        <MenuList>
+          <MenuItem flyoutMenu={children} itemId={`next-menu-${depth}`} to={`#menu-link-${depth}`}>
+            Next menu
+          </MenuItem>
+          {[...Array(numFlyouts - depth).keys()].map(j => (
+            <MenuItem key={`${depth}-${j}`} itemId={`${depth}-${j}`} to={`#menu-link-${depth}-${j}`}>
+              Menu {depth} item {j}
+            </MenuItem>
+          ))}
+          <MenuItem flyoutMenu={children} itemId={`next-menu-2-${depth}`} to={`#second-menu-link-${depth}`}>
+            Next menu
+          </MenuItem>
+        </MenuList>
+      </MenuContent>
+    </Menu>
+  );
+  let curFlyout = <FlyoutMenu depth={1} />;
+  for (let i = 2; i < numFlyouts - 1; i++) {
+    curFlyout = <FlyoutMenu depth={i}>{curFlyout}</FlyoutMenu>;
+  }
+
+  return (
+    <Nav onSelect={onSelect}>
+      <NavList>
+        <NavItem id="default-link1" to="#default-link1" itemId={0} isActive={activeItem === 0}>
+          Link 1
+        </NavItem>
+        <NavItem id="default-link2" to="#default-link2" itemId={1} isActive={activeItem === 1}>
+          Link 2
+        </NavItem>
+        <NavItem flyout={curFlyout} id="default-link3" to="#default-link3" itemId={2} isActive={activeItem === 2}>
+          Link 3
+        </NavItem>
+        <NavItem id="default-link4" to="#default-link4" itemId={3} isActive={activeItem === 3}>
+          Link 4
+        </NavItem>
+      </NavList>
+    </Nav>
+  );
+};
+```

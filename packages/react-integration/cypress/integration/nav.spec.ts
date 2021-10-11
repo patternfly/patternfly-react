@@ -120,4 +120,16 @@ describe('Nav Test', () => {
       );
     });
   });
+
+  it('Verify Flyout Nav', () => {
+    cy.get('#3-child').should('not.exist');
+    cy.get('#flyout-link3').trigger('mouseover');
+    cy.get('#3-child').should('exist');
+    cy.get('#2-child').should('not.exist');
+    cy.get('#next-menu-3').trigger('mouseover');
+    cy.get('#2-child').should('exist');
+    cy.get('#flyout-link2').trigger('mouseover');
+    cy.get('#3-child').should('not.exist');
+    cy.get('#2-child').should('not.exist');
+  });
 });

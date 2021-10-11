@@ -4,6 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { NavContext, NavSelectClickHandler } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
 import { useOUIAProps, OUIAProps } from '../../helpers';
+import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
 export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'>, OUIAProps {
   /** Content rendered inside the nav item. */
@@ -26,6 +27,10 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   onClick?: NavSelectClickHandler;
   /** Component used to render NavItems if  React.isValidElement(children) is false */
   component?: React.ReactNode;
+  /** Flyout of a nav item. This should be a Menu component. */
+  flyout?: React.ReactNode;
+  /** Callback when flyout is opened or closed */
+  onShowFlyout?: () => void;
 }
 
 export const NavItem: React.FunctionComponent<NavItemProps> = ({
@@ -39,12 +44,110 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   preventDefault = false,
   onClick = null as NavSelectClickHandler,
   component = 'a',
+  flyout,
+  onShowFlyout,
   ouiaId,
   ouiaSafe,
   ...props
 }: NavItemProps) => {
-  const Component = component as any;
+  const { flyoutRef, setFlyoutRef } = React.useContext(NavContext);
   const { isNavOpen } = React.useContext(PageSidebarContext);
+  const [flyoutTarget, setFlyoutTarget] = React.useState(null);
+  const ref = React.useRef<HTMLLIElement>();
+  const flyoutVisible = ref === flyoutRef;
+  const Component = component as any;
+  const hasFlyout = flyout !== undefined;
+
+  const showFlyout = (show: boolean, override?: boolean) => {
+    if ((!flyoutVisible || override) && show) {
+      setFlyoutRef(ref);
+    } else if ((flyoutVisible || override) && !show) {
+      setFlyoutRef(null);
+    }
+
+    onShowFlyout && show && onShowFlyout();
+  };
+
+  const onMouseOver = (event: React.MouseEvent) => {
+    const evtContainedInFlyout = (event.target as HTMLElement).closest('.pf-c-nav__item.pf-m-flyout');
+    if (hasFlyout && !flyoutVisible) {
+      showFlyout(true);
+    } else if (flyoutRef !== null && !evtContainedInFlyout) {
+      setFlyoutRef(null);
+    }
+  };
+
+  const onFlyoutClick = (event: MouseEvent) => {
+    const target = event.target;
+    const closestItem = (target as HTMLElement).closest('.pf-m-flyout');
+    if (!closestItem) {
+      if (hasFlyout) {
+        showFlyout(false, true);
+      } else if (flyoutRef !== null) {
+        setFlyoutRef(null);
+      }
+    }
+  };
+
+  React.useEffect(() => {
+    if (hasFlyout) {
+      window.addEventListener('click', onFlyoutClick);
+    }
+    return () => {
+      if (hasFlyout) {
+        window.removeEventListener('click', onFlyoutClick);
+      }
+    };
+  }, []);
+
+  React.useEffect(() => {
+    if (flyoutTarget) {
+      if (flyoutVisible) {
+        const flyoutMenu = (flyoutTarget as HTMLElement).nextElementSibling;
+        const flyoutItems = Array.from(flyoutMenu.getElementsByTagName('UL')[0].children).filter(
+          el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
+        );
+        (flyoutItems[0].firstChild as HTMLElement).focus();
+      } else {
+        flyoutTarget.focus();
+      }
+    }
+  }, [flyoutVisible, flyoutTarget]);
+
+  const handleFlyout = (event: React.KeyboardEvent) => {
+    const key = event.key;
+    const target = event.target as HTMLElement;
+
+    if (!hasFlyout) {
+      return;
+    }
+
+    if (key === ' ' || key === 'ArrowRight') {
+      event.stopPropagation();
+      event.preventDefault();
+      if (!flyoutVisible) {
+        showFlyout(true);
+        setFlyoutTarget(target as HTMLElement);
+      }
+    }
+
+    if (key === 'Escape' || key === 'ArrowLeft') {
+      if (flyoutVisible) {
+        event.stopPropagation();
+        event.preventDefault();
+        showFlyout(false);
+      }
+    }
+  };
+
+  const flyoutButton = (
+    <span className={css(styles.navToggle)}>
+      <span className={css(styles.navToggleIcon)}>
+        <AngleRightIcon aria-hidden />
+      </span>
+    </span>
+  );
+
   const renderDefaultLink = (context: any): React.ReactNode => {
     const preventLinkDefault = preventDefault || !to;
     return (
@@ -57,6 +160,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
         {...props}
       >
         {children}
+        {flyout && flyoutButton}
       </Component>
     );
   };
@@ -68,13 +172,29 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       ...(styleChildren && {
         className: css(styles.navLink, isActive && styles.modifiers.current, child.props && child.props.className)
       }),
-      tabIndex: child.props.tabIndex || isNavOpen ? null : -1
+      tabIndex: child.props.tabIndex || isNavOpen ? null : -1,
+      children: hasFlyout ? (
+        <React.Fragment>
+          {child.props.children}
+          {flyoutButton}
+        </React.Fragment>
+      ) : (
+        child.props.children
+      )
     });
 
   const ouiaProps = useOUIAProps(NavItem.displayName, ouiaId, ouiaSafe);
 
   return (
-    <li className={css(styles.navItem, className)} {...ouiaProps}>
+    <li
+      {...(hasFlyout && {
+        onKeyDown: handleFlyout
+      })}
+      onMouseOver={onMouseOver}
+      className={css(styles.navItem, hasFlyout && styles.modifiers.flyout, className)}
+      ref={ref}
+      {...ouiaProps}
+    >
       <NavContext.Consumer>
         {context =>
           React.isValidElement(children)
@@ -82,6 +202,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
             : renderDefaultLink(context)
         }
       </NavContext.Consumer>
+      {flyoutVisible && flyout}
     </li>
   );
 };

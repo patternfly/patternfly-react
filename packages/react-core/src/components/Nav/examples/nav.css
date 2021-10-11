@@ -4,6 +4,11 @@
 #ws-react-c-navigation-expandable,
 #ws-react-c-navigation-expandable-wsubnavigation-titles,
 #ws-react-c-navigation-mixed,
-#ws-react-c-navigation-horizontal-subnav {
+#ws-react-c-navigation-horizontal-subnav,
+#ws-react-c-navigation-flyout {
   background-color: var(--pf-global--BackgroundColor--dark-300);
+}
+
+#ws-react-c-navigation-flyout {
+  width: 300px;
 }
