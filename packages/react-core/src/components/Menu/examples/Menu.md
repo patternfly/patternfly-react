@@ -23,7 +23,7 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-ico
 
 ```js
 import React from 'react';
-import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
+import { Menu, MenuContent, MenuList, MenuItem, Checkbox } from '@patternfly/react-core';
 
 class MenuBasicList extends React.Component {
   constructor(props) {
