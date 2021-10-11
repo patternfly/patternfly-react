@@ -81,9 +81,9 @@ export interface FileUploadProps
   /** Clear button was clicked */
   onClearClicked?: React.MouseEventHandler<HTMLButtonElement>;
   /** Text area text changed */
-  onTextChanged?: (text: string) => void;
+  onTextChange?: (text: string) => void;
   /** On data changed - if type='text' or type='dataURL' and file was loaded it will call this method */
-  onDataChanged?: (data: string) => void;
+  onDataChange?: (data: string) => void;
 }
 
 export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
@@ -99,8 +99,8 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   onReadFailed = () => {},
   onClearClicked,
   onClick = event => event.preventDefault(),
-  onTextChanged,
-  onDataChanged,
+  onTextChange,
+  onDataChange,
   dropzoneProps = {},
   ...props
 }: FileUploadProps) => {
@@ -117,13 +117,13 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
           .then(data => {
             onReadFinished(fileHandle);
             onChange(data as string, fileHandle.name, event);
-            onDataChanged?.(data as string);
+            onDataChange?.(data as string);
           })
           .catch((error: DOMException) => {
             onReadFailed(error, fileHandle);
             onReadFinished(fileHandle);
             onChange('', '', event); // Clear the filename field on a failure
-            onDataChanged?.('');
+            onDataChange?.('');
           });
       } else {
         onChange(fileHandle, fileHandle.name, event);
@@ -188,7 +188,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
             onBrowseButtonClick={open}
             onClearButtonClick={onClearButtonClick}
             onTextAreaClick={onClick}
-            onTextChanged={onTextChanged}
+            onTextChange={onTextChange}
           >
             <input {...inputProps} ref={fileInputRef} /* hidden, necessary for react-dropzone */ />
             {children}
