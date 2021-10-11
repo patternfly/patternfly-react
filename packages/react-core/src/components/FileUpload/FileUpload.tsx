@@ -79,7 +79,7 @@ export interface FileUploadProps
   /** Optional extra props to customize react-dropzone. */
   dropzoneProps?: DropzoneProps;
   /** Clear button was clicked */
-  onClearClicked?: React.MouseEventHandler<HTMLButtonElement>;
+  onClearClick?: React.MouseEventHandler<HTMLButtonElement>;
   /** Text area text changed */
   onTextChange?: (text: string) => void;
   /** On data changed - if type='text' or type='dataURL' and file was loaded it will call this method */
@@ -97,7 +97,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   onReadStarted = () => {},
   onReadFinished = () => {},
   onReadFailed = () => {},
-  onClearClicked,
+  onClearClick,
   onClick = event => event.preventDefault(),
   onTextChange,
   onDataChange,
@@ -146,7 +146,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
 
   const onClearButtonClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     onChange('', '', event);
-    onClearClicked?.(event);
+    onClearClick?.(event);
     setFileValue(null);
   };
 
