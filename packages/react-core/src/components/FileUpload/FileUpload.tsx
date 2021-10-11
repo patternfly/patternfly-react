@@ -139,9 +139,9 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
     dropzoneProps.onDropRejected && dropzoneProps.onDropRejected(rejectedFiles, event);
   };
 
-  let textInput: any;
+  const fileInputRef = React.useRef<HTMLInputElement>();
   const setFileValue = (filename: string) => {
-    textInput.current.value = filename;
+    fileInputRef.current.value = filename;
   };
 
   const onClearButtonClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -159,14 +159,15 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
       noClick={true}
     >
       {({ getRootProps, getInputProps, isDragActive, open }) => {
-        const inputProps: DropzoneInputProps & { ref: React.Ref<HTMLInputElement> } = { ref: null, ...getInputProps() };
-        textInput = inputProps.ref;
-        const oldInputChange = inputProps.onChange;
-        inputProps.onChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-          oldInputChange?.(e);
-          const files = await fromEvent(e.nativeEvent);
-          if (files.length === 1) {
-            onInputChange?.(e, files[0] as File);
+        const oldInputProps = getInputProps();
+        const inputProps: DropzoneInputProps = {
+          ...oldInputProps,
+          onChange: async (e: React.ChangeEvent<HTMLInputElement>) => {
+            oldInputProps.onChange?.(e);
+            const files = await fromEvent(e.nativeEvent);
+            if (files.length === 1) {
+              onInputChange?.(e, files[0] as File);
+            }
           }
         };
 
@@ -189,7 +190,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
             onTextAreaClick={onClick}
             onTextChanged={onTextChanged}
           >
-            <input {...inputProps} ref={textInput} /* hidden, necessary for react-dropzone */ />
+            <input {...inputProps} ref={fileInputRef} /* hidden, necessary for react-dropzone */ />
             {children}
           </FileUploadField>
         );
