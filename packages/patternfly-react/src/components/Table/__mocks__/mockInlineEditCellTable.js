@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
-import { compose } from '@nivo/recompose';
+import { compose } from 'react-recompose';
 import { cloneDeep, findIndex, orderBy } from 'lodash';
 import { KEY_CODES } from '../../../common/helpers';
 import {
@@ -338,7 +338,7 @@ export const mockInlineEditCellTableSource = `
 import React from 'react';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
-import { compose } from '@nivo/recompose';
+import { compose } from 'react-recompose';
 import { cloneDeep, findIndex, orderBy } from 'lodash';
 import { KEY_CODES } from '../../../common/helpers';
 import {

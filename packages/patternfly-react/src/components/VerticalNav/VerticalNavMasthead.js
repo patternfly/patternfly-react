@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getContext } from '@nivo/recompose';
+import { getContext } from 'react-recompose';
 import { Navbar } from 'react-bootstrap';
 import VerticalNavBrand from './VerticalNavBrand';
 import { navContextTypes } from './VerticalNavConstants';

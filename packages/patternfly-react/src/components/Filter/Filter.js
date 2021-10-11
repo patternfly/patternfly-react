@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getContext } from '@nivo/recompose';
+import { getContext } from 'react-recompose';
 import { toolbarContextTypes } from '../Toolbar/ToolbarConstants';
 import FilterTypeSelector from './FilterTypeSelector';
 import FilterValueSelector from './FilterValueSelector';
