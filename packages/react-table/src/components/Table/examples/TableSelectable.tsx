@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableProps, headerCol, Table, TableBody, TableHeader } from '@patternfly/react-table';
+import { Table, TableBody, TableHeader, headerCol, TableProps } from '@patternfly/react-table';
 import { Checkbox } from '@patternfly/react-core';
 
 interface Repository {

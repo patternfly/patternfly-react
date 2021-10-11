@@ -196,69 +196,12 @@ checking checkboxes will check intermediate rows' checkboxes.
 
 ### Selectable radio input
 
-To enable row radio selection, set the `onSelect` callback prop on the Table, and set `RowSelectVariant.radio` as the
-`selectVariant` prop on the Table.
+To enable row radio selection, set the `onSelect` callback prop on the Table, and set
+`RowSelectVariant.radio` or `"radio"` as the `selectVariant` prop on the Table.
 
 To disable selection for a row, set `disableSelection: true` on the row definition.
 
-```js
-import React from 'react';
-import { Table, TableHeader, TableBody, RowSelectVariant, headerCol } from '@patternfly/react-table';
-
-class SelectableTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: [
-        { title: 'Repositories', cellTransforms: [headerCol()] },
-        'Branches',
-        { title: 'Pull requests' },
-        'Workspaces',
-        'Last commit'
-      ],
-      rows: [
-        {
-          cells: ['one', 'two', 'a', 'four', 'five']
-        },
-        {
-          cells: ['a', 'two', 'k', 'four', 'five'],
-          disableSelection: true
-        },
-        {
-          cells: ['p', 'two', 'b', 'four', 'five']
-        }
-      ]
-    };
-    this.onSelect = this.onSelect.bind(this);
-  }
-
-  onSelect(event, isSelected, rowId) {
-    let rows = this.state.rows.map((oneRow, index) => {
-      oneRow.selected = rowId === index;
-      return oneRow;
-    });
-    this.setState({
-      rows
-    });
-  }
-
-  render() {
-    const { columns, rows } = this.state;
-
-    return (
-      <Table
-        onSelect={this.onSelect}
-        selectVariant={RowSelectVariant.radio}
-        aria-label="Selectable Table"
-        cells={columns}
-        rows={rows}
-      >
-        <TableHeader />
-        <TableBody />
-      </Table>
-    );
-  }
-}
+```ts file="TableSelectableRadio.tsx"
 ```
 
 ### Hoverable rows, selectable rows, and header cell tooltips/popovers
