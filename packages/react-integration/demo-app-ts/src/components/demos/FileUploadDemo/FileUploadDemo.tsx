@@ -6,9 +6,9 @@ export class FileUploadDemo extends React.Component {
 
   state = { value: '', filename: '', isLoading: false };
   /* eslint-disable-next-line no-console */
-  handleInputChange = (event: React.ChangeEvent<HTMLInputElement>, file: File) =>
+  handleFileInputChange = (event: React.ChangeEvent<HTMLInputElement>, file: File) =>
     this.setState({ value: file, filename: file.name });
-  handleDataChanged = (value: string) => this.setState({ value });
+  handleDataChange = (value: string) => this.setState({ value });
   /* eslint-disable @typescript-eslint/no-unused-vars */
   handleFileReadStarted = (fileHandle: File) => this.setState({ isLoading: true });
   handleFileReadFinished = (fileHandle: File) => this.setState({ isLoading: false });
@@ -22,8 +22,8 @@ export class FileUploadDemo extends React.Component {
         type="text"
         value={value}
         filename={filename}
-        onInputChange={this.handleInputChange}
-        onDataChanged={this.handleDataChanged}
+        onFileInputChange={this.handleFileInputChange}
+        onDataChange={this.handleDataChange}
         onReadStarted={this.handleFileReadStarted}
         onReadFinished={this.handleFileReadFinished}
         isLoading={isLoading}
