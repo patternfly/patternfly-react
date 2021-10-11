@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
+    "@nivo/recompose": "^0.74.0",
     "bootstrap-slider-without-jquery": "^10.0.0",
     "breakjs": "^1.0.0",
     "classnames": "^2.2.5",
@@ -41,7 +42,6 @@
     "react-fontawesome": "^1.6.1",
     "react-motion": "^0.5.2",
     "reactabular-table": "^8.14.0",
-    "recompose": "^0.26.0",
     "uuid": "^3.3.2"
   },
   "optionalDependencies": {

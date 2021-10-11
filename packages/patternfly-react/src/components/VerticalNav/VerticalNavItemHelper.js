@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { getContext } from 'recompose';
+import { getContext } from '@nivo/recompose';
 import { ListGroup, ListGroupItem } from '../ListGroup';
 import { OverlayTrigger } from '../OverlayTrigger';
 import { Tooltip } from '../Tooltip';

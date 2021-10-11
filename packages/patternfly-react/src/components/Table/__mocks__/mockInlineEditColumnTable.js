@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
 import { cloneDeep, findIndex, orderBy } from 'lodash';
-import { compose } from 'recompose';
+import { compose } from '@nivo/recompose';
 import {
   customHeaderFormattersDefinition,
   defaultSortingOrder,
@@ -289,7 +289,7 @@ import React from 'react';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
 import { cloneDeep, findIndex, orderBy } from 'lodash';
-import { compose } from 'recompose';
+import { compose } from '@nivo/recompose';
 import {
   customHeaderFormattersDefinition,
   defaultSortingOrder,

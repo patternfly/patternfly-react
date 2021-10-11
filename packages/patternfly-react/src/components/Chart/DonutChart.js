@@ -1,7 +1,7 @@
 import React from 'react';
 import C3Chart from 'react-c3js';
 import { findDOMNode } from 'react-dom';
-import { lifecycle, compose } from 'recompose';
+import { lifecycle, compose } from '@nivo/recompose';
 
 import { patternfly } from '../../common/patternfly';
 import { getComposer } from './ChartConstants';

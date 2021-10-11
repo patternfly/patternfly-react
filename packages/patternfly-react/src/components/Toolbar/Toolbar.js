@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withContext } from 'recompose';
+import { withContext } from '@nivo/recompose';
 import { hasDisplayName, filterChildren } from '../../common/helpers';
 import { Grid } from '../Grid';
 import ToolbarResults from './ToolbarResults';

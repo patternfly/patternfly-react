@@ -1,5 +1,5 @@
 import React from 'react';
-import { getContext } from 'recompose';
+import { getContext } from '@nivo/recompose';
 import { wrongDepth, correctDepth, navContextTypes } from './VerticalNavConstants';
 import VerticalNavItemHelper from './VerticalNavItemHelper';
 
