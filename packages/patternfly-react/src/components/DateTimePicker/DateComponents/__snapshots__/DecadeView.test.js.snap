@@ -38,12 +38,12 @@ exports[`DecadeView is working properly 1`] = `
           colspan="7"
         >
           <span
-            class="year active"
+            class="year "
           >
             2020
           </span>
           <span
-            class="year "
+            class="year active"
           >
             2021
           </span>
