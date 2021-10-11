@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.122.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.121.23...demo-app-ts@4.122.0) (2021-10-11)
+
+
+### Features
+
+* **Navigation:** add flyout with menu components ([#6416](https://github.com/patternfly/patternfly-react/issues/6416)) ([1d85989](https://github.com/patternfly/patternfly-react/commit/1d85989935aeaa3daa5c6f42b4f487be6a555be8))
+
+
+
+
+
 ## [4.121.23](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@4.121.22...demo-app-ts@4.121.23) (2021-10-11)
 
 **Note:** Version bump only for package demo-app-ts

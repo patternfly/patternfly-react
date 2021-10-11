@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.124.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.123.0...@patternfly/react-integration@4.124.0) (2021-10-11)
+
+
+### Features
+
+* **Navigation:** add flyout with menu components ([#6416](https://github.com/patternfly/patternfly-react/issues/6416)) ([1d85989](https://github.com/patternfly/patternfly-react/commit/1d85989935aeaa3daa5c6f42b4f487be6a555be8))
+
+
+
+
+
 # [4.123.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.122.4...@patternfly/react-integration@4.123.0) (2021-10-07)
 
 
