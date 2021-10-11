@@ -53,6 +53,8 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   innerRef?: React.Ref<HTMLDivElement>;
   /** Internal flag indicating if the Menu is the root of a menu tree */
   isRootMenu?: boolean;
+  /** Indicates if the menu should be without the outer box-shadow */
+  isPlain?: boolean;
 }
 
 export interface MenuState {
@@ -70,7 +72,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
   private activeMenu = null as Element;
   static defaultProps: MenuProps = {
     ouiaSafe: true,
-    isRootMenu: true
+    isRootMenu: true,
+    // isPlain: false
   };
 
   constructor(props: MenuProps) {
@@ -230,6 +233,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       /* eslint-disable @typescript-eslint/no-unused-vars */
       innerRef,
       isRootMenu,
+      // isPlain,
       activeMenu,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props

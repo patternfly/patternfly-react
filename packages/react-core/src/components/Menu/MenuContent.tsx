@@ -12,12 +12,14 @@ export interface MenuContentProps extends React.HTMLProps<HTMLElement> {
   menuHeight?: string;
   /** Maximum height of menu content */
   maxMenuHeight?: string;
+  /** Indicates if the menu content is scrollable */
+  isScrollable?: boolean;
   /** Callback to return the height of the menu content */
   getHeight?: (height: string) => void;
 }
 
 export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React.Ref<HTMLDivElement>) => {
-  const { getHeight, children, menuHeight, maxMenuHeight, ...rest } = props;
+  const { getHeight, children, menuHeight, maxMenuHeight, isScrollable, ...rest } = props;
   const menuContentRef = React.createRef<HTMLDivElement>();
   const refCallback = (el: any, menuId: string, onGetMenuHeight: (menuId: string, height: number) => void) => {
     if (el) {
@@ -31,7 +33,13 @@ export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React
       {({ menuId, onGetMenuHeight }) => (
         <div
           {...rest}
-          className={css(styles.menuContent, props.className)}
+          // className={css(styles.menuContent, props.className)}
+          // scrollable does not exist
+          className={css(
+            styles.menuContent,
+            isScrollable && styles.modifiers.scrollable,
+            props.className
+          )}
           ref={el => refCallback(el, menuId, onGetMenuHeight)}
           style={
             {

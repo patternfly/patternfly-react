@@ -29,7 +29,9 @@ class MenuBasicList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeItem: 0
+      activeItem: 0,
+      isPlain: false,
+      isScrollable: false
     };
     this.onSelect = (event, itemId) => {
       console.log(`clicked ${itemId}`);
@@ -37,30 +39,69 @@ class MenuBasicList extends React.Component {
         activeItem: itemId
       });
     };
+    this.togglePlain = checked => {
+      this.setState({
+        isPlain: checked
+      });
+    };
+    this.toggleScrollable = checked => {
+      this.setState({
+        isScrollable: checked
+      });
+    };
   }
 
   render() {
-    const { activeItem } = this.state;
+    const { activeItem, isPlain, isScrollable } = this.state;
     return (
-      <Menu activeItemId={activeItem} onSelect={this.onSelect}>
-        <MenuContent>
-          <MenuList>
-            <MenuItem itemId={0}>Action</MenuItem>
-            <MenuItem
-              itemId={1}
-              to="#default-link2"
-              // just for demo so that navigation is not triggered
-              onClick={event => event.preventDefault()}
-            >
-              Link
-            </MenuItem>
-            <MenuItem isDisabled>Disabled action</MenuItem>
-            <MenuItem isDisabled to="#default-link4">
-              Disabled link
-            </MenuItem>
-          </MenuList>
-        </MenuContent>
-      </Menu>
+      <React.Fragment>
+        <Menu
+          activeItemId={activeItem}
+          onSelect={this.onSelect}
+          isPlain
+          >
+          <MenuContent isScrollable>
+            <MenuList>
+              <MenuItem itemId={0}>Action</MenuItem>
+              <MenuItem
+                itemId={1}
+                to="#default-link2"
+                // just for demo so that navigation is not triggered
+                onClick={event => event.preventDefault()}
+              >
+                Link
+              </MenuItem>
+              <MenuItem isDisabled>Disabled action</MenuItem>
+              <MenuItem isDisabled to="#default-link4">
+                Disabled link
+              </MenuItem>
+              <MenuItem isDisabled>Disabled action</MenuItem>
+              <MenuItem isDisabled>Disabled action</MenuItem>
+              <MenuItem isDisabled>Disabled action</MenuItem>
+              <MenuItem isDisabled>Disabled action</MenuItem>
+              <MenuItem isDisabled>Disabled action</MenuItem>
+              <MenuItem isDisabled>Disabled action</MenuItem>
+              <MenuItem isDisabled>Disabled action</MenuItem>
+            </MenuList>
+          </MenuContent>
+        </Menu>
+        <Checkbox
+          label="Plain menu"
+          isChecked={isPlain}
+          onChange={this.togglePlain}
+          aria-label="plain menu checkbox"
+          id="toggle-plain"
+          name="toggle-plain"
+        />
+        <Checkbox
+          label="Scrollable menu"
+          isChecked={isScrollable}
+          onChange={this.toggleScrollable}
+          aria-label="scrollable menu checkbox"
+          id="toggle-scrollable"
+          name="toggle-scrollable"
+        />
+      </React.Fragment>
     );
   }
 }
