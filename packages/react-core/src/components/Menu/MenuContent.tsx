@@ -28,7 +28,7 @@ export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React
   };
   return (
     <MenuContext.Consumer>
-      {({ menuId, onGetMenuHeight }) => (
+      {({ menuId, onGetMenuHeight, isScrollable }) => (
         <div
           {...rest}
           className={css(styles.menuContent, props.className)}
@@ -36,7 +36,7 @@ export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React
           style={
             {
               '--pf-c-menu__content--Height': menuHeight || 'auto',
-              '--pf-c-menu__content--MaxHeight': maxMenuHeight || 'auto'
+              '--pf-c-menu__content--MaxHeight': !isScrollable ? maxMenuHeight || 'auto' : ''
             } as React.CSSProperties
           }
         >

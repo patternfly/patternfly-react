@@ -55,7 +55,7 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   isRootMenu?: boolean;
   /** Indicates if the menu should be without the outer box-shadow */
   isPlain?: boolean;
-  /** * Indicates if the menu should be srollable */
+  /** Indicates if the menu should be srollable */
   isScrollable?: boolean;
 }
 
@@ -259,7 +259,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           onGetMenuHeight,
           flyoutRef: this.state.flyoutRef,
           setFlyoutRef: flyoutRef => this.setState({ flyoutRef }),
-          disableHover: this.state.disableHover
+          disableHover: this.state.disableHover,
+          isScrollable
         }}
       >
         {isRootMenu && (
