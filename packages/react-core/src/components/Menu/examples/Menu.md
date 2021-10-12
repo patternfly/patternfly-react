@@ -46,7 +46,7 @@ class MenuBasicList extends React.Component {
   }
 
   render() {
-    const { activeItem, isPlain, isScrollable } = this.state;
+    const { activeItem, isPlain } = this.state;
     return (
       <React.Fragment>
         <Menu

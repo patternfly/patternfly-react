@@ -11,7 +11,6 @@ export interface DrilldownMenuProps extends Omit<React.HTMLAttributes<HTMLDivEle
   id?: string;
   /** Flag indicating whether the menu is drilled in */
   isMenuDrilledIn?: boolean;
-  isPlain?: boolean;
   /** Optional callback to get the height of the sub menu */
   getHeight?: (height: string) => void;
 }
