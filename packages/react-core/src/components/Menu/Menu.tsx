@@ -55,6 +55,8 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   isRootMenu?: boolean;
   /** Indicates if the menu should be without the outer box-shadow */
   isPlain?: boolean;
+  /** * Indicates if the menu should be srollable */
+  isScrollable?: boolean;
 }
 
 export interface MenuState {
@@ -73,7 +75,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
   static defaultProps: MenuProps = {
     ouiaSafe: true,
     isRootMenu: true,
-    // isPlain: false
+    isPlain: false,
+    isScrollable: false
   };
 
   constructor(props: MenuProps) {
@@ -223,6 +226,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       containsFlyout,
       containsDrilldown,
       isMenuDrilledIn,
+      isPlain,
+      isScrollable,
       drilldownItemPath,
       drilledInMenus,
       onDrillIn,
@@ -233,7 +238,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       /* eslint-disable @typescript-eslint/no-unused-vars */
       innerRef,
       isRootMenu,
-      // isPlain,
       activeMenu,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
@@ -281,6 +285,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           id={id}
           className={css(
             styles.menu,
+            isPlain && styles.modifiers.plain,
+            isScrollable && styles.modifiers.scrollable,
             containsFlyout && styles.modifiers.flyout,
             containsDrilldown && styles.modifiers.drilldown,
             _isMenuDrilledIn && styles.modifiers.drilledIn,

@@ -30,8 +30,7 @@ class MenuBasicList extends React.Component {
     super(props);
     this.state = {
       activeItem: 0,
-      isPlain: false,
-      isScrollable: false
+      isPlain: false
     };
     this.onSelect = (event, itemId) => {
       console.log(`clicked ${itemId}`);
@@ -44,11 +43,6 @@ class MenuBasicList extends React.Component {
         isPlain: checked
       });
     };
-    this.toggleScrollable = checked => {
-      this.setState({
-        isScrollable: checked
-      });
-    };
   }
 
   render() {
@@ -58,9 +52,9 @@ class MenuBasicList extends React.Component {
         <Menu
           activeItemId={activeItem}
           onSelect={this.onSelect}
-          isPlain
+          isPlain={isPlain}
           >
-          <MenuContent isScrollable>
+          <MenuContent>
             <MenuList>
               <MenuItem itemId={0}>Action</MenuItem>
               <MenuItem
@@ -75,13 +69,6 @@ class MenuBasicList extends React.Component {
               <MenuItem isDisabled to="#default-link4">
                 Disabled link
               </MenuItem>
-              <MenuItem isDisabled>Disabled action</MenuItem>
-              <MenuItem isDisabled>Disabled action</MenuItem>
-              <MenuItem isDisabled>Disabled action</MenuItem>
-              <MenuItem isDisabled>Disabled action</MenuItem>
-              <MenuItem isDisabled>Disabled action</MenuItem>
-              <MenuItem isDisabled>Disabled action</MenuItem>
-              <MenuItem isDisabled>Disabled action</MenuItem>
             </MenuList>
           </MenuContent>
         </Menu>
@@ -92,14 +79,6 @@ class MenuBasicList extends React.Component {
           aria-label="plain menu checkbox"
           id="toggle-plain"
           name="toggle-plain"
-        />
-        <Checkbox
-          label="Scrollable menu"
-          isChecked={isScrollable}
-          onChange={this.toggleScrollable}
-          aria-label="scrollable menu checkbox"
-          id="toggle-scrollable"
-          name="toggle-scrollable"
         />
       </React.Fragment>
     );
@@ -1273,6 +1252,67 @@ class MenuWithDrilldownBreadcrumbs extends React.Component {
 ```
 
 ### Scrollable
+
+```js
+import React from 'react';
+import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
+
+class MenuBasicList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeItem: 0
+    };
+    this.onSelect = (event, itemId) => {
+      console.log(`clicked ${itemId}`);
+      this.setState({
+        activeItem: itemId
+      });
+    };
+  }
+
+  render() {
+    const { activeItem } = this.state;
+    return (
+      <Menu activeItemId={activeItem} onSelect={this.onSelect} isScrollable>
+        <MenuContent>
+          <MenuList>
+            <MenuItem>Action 1</MenuItem>
+            <MenuItem>Action 2</MenuItem>
+            <MenuItem>Action 3</MenuItem>
+            <MenuItem>Action 4</MenuItem>
+            <MenuItem>Action 5</MenuItem>
+            <MenuItem>Action 6</MenuItem>
+            <MenuItem>Action 7</MenuItem>
+            <MenuItem>Action 8</MenuItem>
+            <MenuItem>Action 9</MenuItem>
+            <MenuItem>Action 10</MenuItem>
+            <MenuItem>Action 11</MenuItem>
+            <MenuItem>Action 12</MenuItem>
+            <MenuItem>Action 13</MenuItem>
+            <MenuItem>Action 14</MenuItem>
+            <MenuItem>Action 15</MenuItem>
+            <MenuItem
+              itemId={1}
+              to="#default-link2"
+              // just for demo so that navigation is not triggered
+              onClick={event => event.preventDefault()}
+            >
+              Link
+            </MenuItem>
+            <MenuItem isDisabled>Disabled action</MenuItem>
+            <MenuItem isDisabled to="#default-link4">
+              Disabled link
+            </MenuItem>
+          </MenuList>
+        </MenuContent>
+      </Menu>
+    );
+  }
+}
+```
+
+### Scrollable with custom menu height
 
 ```js
 import React from 'react';
