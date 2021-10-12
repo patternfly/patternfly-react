@@ -80,7 +80,7 @@ export const TableHoverable: React.FunctionComponent = () => {
   ];
   const rows: TableProps['rows'] = repositories.map(repo => {
     let cells: (string | ICell)[] = [repo.name, repo.branches, repo.prs, repo.workspaces, repo.lastCommit];
-    // These rows have arbitrary differences for this example, but this could be based on some other condition
+    // These rows have arbitrary differences for this example, but these could be based on some other conditions
     if (repo.name === 'one - 2') {
       cells = [
         {
