@@ -18,7 +18,7 @@ section: developer-resources
 - [@patternfly/react-virtualized-extension@4.9.73](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.9.73)
 
 ### Components
- **Card:**
+- **Card:**
   - Added utilization card demos ([#6307](https://github.com/patternfly/patternfly-react/pull/6307))
   - Added nested card demo ([#6391](https://github.com/patternfly/patternfly-react/pull/6391))
 - **Drag and drop:**
@@ -27,7 +27,7 @@ section: developer-resources
 - **Drawer:**
   - Removed duplicate example from drawer (#6348) ([#6397](https://github.com/patternfly/patternfly-react/pull/6397))
 - **Dual list selector:**
-  -Introduced composable example and drag/drop demo ([#6369](https://github.com/patternfly/patternfly-react/pull/6369))
+  - Introduced composable example and drag/drop demo ([#6369](https://github.com/patternfly/patternfly-react/pull/6369))
 - **Grid layout:**
   - Fixed tests for size offsets of GridItem ([#6373](https://github.com/patternfly/patternfly-react/pull/6373))
 - **Jump links:**
