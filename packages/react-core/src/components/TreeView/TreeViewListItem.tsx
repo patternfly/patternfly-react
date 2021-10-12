@@ -53,6 +53,7 @@ export interface TreeViewListItemProps {
   action?: React.ReactNode;
   /** Callback for item comparison function */
   compareItems?: (item: TreeViewDataItem, itemToCheck: TreeViewDataItem) => boolean;
+  /** Flag indicating the TreeView should utilize memoization to help render large data sets. Setting this property requires that `activeItems` pass in an array containing every node in the selected item's path. */
   useMemo?: boolean;
 }
 
@@ -211,6 +212,10 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
 };
 
 export const TreeViewListItem = React.memo(TreeViewListItemBase, (prevProps, nextProps) => {
+  if (!nextProps.useMemo) {
+    return false;
+  }
+
   const prevIncludes =
     prevProps.activeItems &&
     prevProps.activeItems.length > 0 &&
@@ -223,11 +228,35 @@ export const TreeViewListItem = React.memo(TreeViewListItemBase, (prevProps, nex
     nextProps.activeItems.some(
       item => nextProps.compareItems && item && nextProps.compareItems(item, nextProps.itemData)
     );
-  if (!nextProps.useMemo) {
+
+  if (prevIncludes || nextIncludes) {
     return false;
   }
 
-  return !(prevIncludes || nextIncludes);
+  if (
+    prevProps.name !== nextProps.name ||
+    prevProps.title !== nextProps.title ||
+    prevProps.id !== nextProps.id ||
+    prevProps.isExpanded !== nextProps.isExpanded ||
+    prevProps.defaultExpanded !== nextProps.defaultExpanded ||
+    prevProps.onSelect !== nextProps.onSelect ||
+    prevProps.onCheck !== nextProps.onCheck ||
+    prevProps.hasCheck !== nextProps.hasCheck ||
+    prevProps.checkProps !== nextProps.checkProps ||
+    prevProps.hasBadge !== nextProps.hasBadge ||
+    prevProps.customBadgeContent !== nextProps.customBadgeContent ||
+    prevProps.badgeProps !== nextProps.badgeProps ||
+    prevProps.isCompact !== nextProps.isCompact ||
+    prevProps.icon !== nextProps.icon ||
+    prevProps.expandedIcon !== nextProps.expandedIcon ||
+    prevProps.action !== nextProps.action ||
+    prevProps.parentItem !== nextProps.parentItem ||
+    prevProps.itemData !== nextProps.itemData
+  ) {
+    return false;
+  }
+
+  return true;
 });
 
 TreeViewListItem.displayName = 'TreeViewListItem';
