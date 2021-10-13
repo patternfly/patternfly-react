@@ -508,7 +508,7 @@ class NavTertiaryList extends React.Component {
 
 A flyout should be a `Menu` component. Press `space` or `right arrow` to open a flyout using the keyboard, use the arrow keys to navigate between flyout items, and press `escape` or `left arrow` to close a flyout.
 
-```js
+```js isBeta
 import React from 'react';
 import {
   Nav,
