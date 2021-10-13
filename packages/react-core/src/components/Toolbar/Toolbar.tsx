@@ -30,6 +30,8 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement>, OUIAProps
   isStatic?: boolean;
   /** Flag indicating the toolbar should use the Page insets */
   usePageInsets?: boolean;
+  /** Flag indicating the toolbar should stick to the top of its container */
+  stickyTop?: boolean;
   /** Insets at various breakpoints. */
   inset?: {
     default?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
@@ -121,6 +123,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
       isStatic,
       inset,
       usePageInsets,
+      stickyTop,
       ouiaId,
       ...props
     } = this.props;
@@ -139,6 +142,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
           isFullHeight && styles.modifiers.fullHeight,
           isStatic && styles.modifiers.static,
           usePageInsets && styles.modifiers.pageInsets,
+          stickyTop && styles.modifiers.stickyTop,
           formatBreakpointMods(inset, styles),
           className
         )}
