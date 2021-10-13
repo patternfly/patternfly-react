@@ -34,6 +34,8 @@ export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIEle
   badgeProps?: any;
   /** Raw data of the option */
   itemData?: DualListSelectorTreeItemData;
+  /** Flag indicating whether the component is disabled. */
+  isDisabled?: boolean;
 }
 
 export const DualListSelectorTreeItem: React.FunctionComponent<DualListSelectorTreeItemProps> = ({
@@ -48,6 +50,7 @@ export const DualListSelectorTreeItem: React.FunctionComponent<DualListSelectorT
   checkProps,
   badgeProps,
   itemData,
+  isDisabled = false,
   ...props
 }: DualListSelectorTreeItemProps) => {
   const ref = React.useRef(null);
@@ -79,10 +82,14 @@ export const DualListSelectorTreeItem: React.FunctionComponent<DualListSelectorT
           className={css(styles.dualListSelectorItem)}
           ref={ref}
           tabIndex={-1}
-          onClick={evt => {
-            onOptionCheck && onOptionCheck(evt, !isChecked, itemData);
-            setFocusedOption(id);
-          }}
+          onClick={
+            isDisabled
+              ? undefined
+              : evt => {
+                  onOptionCheck && onOptionCheck(evt, !isChecked, itemData);
+                  setFocusedOption(id);
+                }
+          }
         >
           <span className={css(styles.dualListSelectorItemMain)}>
             {children && (
@@ -125,6 +132,7 @@ export const DualListSelectorTreeItem: React.FunctionComponent<DualListSelectorT
                 ref={elem => elem && (elem.indeterminate = isChecked === null)}
                 checked={isChecked || false}
                 tabIndex={-1}
+                disabled={isDisabled}
                 {...checkProps}
               />
             </span>

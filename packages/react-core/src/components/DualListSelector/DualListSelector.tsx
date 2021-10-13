@@ -27,6 +27,8 @@ export interface DualListSelectorProps {
   id?: string;
   /** Flag indicating if the dual list selector uses trees instead of simple lists */
   isTree?: boolean;
+  /** Flag indicating if the dual list selector is in a disabled state */
+  isDisabled?: boolean;
   /** Content to be rendered in the dual list selector. Panes & controls will not be built dynamically when children are provided. */
   children?: React.ReactNode;
   /** Title applied to the dynamically built available options pane. */
@@ -144,7 +146,8 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
     addSelectedAriaLabel: 'Add selected',
     removeSelectedAriaLabel: 'Remove selected',
     removeAllAriaLabel: 'Remove all',
-    isTree: false
+    isTree: false,
+    isDisabled: false
   };
   private originalAvailableCopy = this.props.availableOptions;
   private originalChosenCopy = this.props.chosenOptions;
@@ -594,6 +597,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       onOptionCheck,
       id,
       isTree,
+      isDisabled,
       addAllTooltip,
       addAllTooltipProps,
       addSelectedTooltip,
@@ -654,10 +658,14 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
                 onOptionCheck={(e, isChecked, itemData) => this.onTreeOptionCheck(e, isChecked, itemData, false)}
                 actions={availableOptionsActions}
                 id={`${id}-available-pane`}
+                isDisabled={isDisabled}
               />
               <DualListSelectorControlsWrapper aria-label={controlsAriaLabel}>
                 <DualListSelectorControl
-                  isDisabled={isTree ? availableTreeOptionsChecked.length === 0 : availableOptionsSelected.length === 0}
+                  isDisabled={
+                    (isTree ? availableTreeOptionsChecked.length === 0 : availableOptionsSelected.length === 0) ||
+                    isDisabled
+                  }
                   onClick={isTree ? this.addTreeSelected : this.addSelected}
                   ref={this.addSelectedButtonRef}
                   aria-label={addSelectedAriaLabel}
@@ -667,7 +675,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
                   <AngleRightIcon />
                 </DualListSelectorControl>
                 <DualListSelectorControl
-                  isDisabled={availableOptions.length === 0}
+                  isDisabled={availableOptions.length === 0 || isDisabled}
                   onClick={isTree ? this.addAllTreeVisible : this.addAllVisible}
                   ref={this.addAllButtonRef}
                   aria-label={addAllAriaLabel}
@@ -677,7 +685,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
                   <AngleDoubleRightIcon />
                 </DualListSelectorControl>
                 <DualListSelectorControl
-                  isDisabled={chosenOptions.length === 0}
+                  isDisabled={chosenOptions.length === 0 || isDisabled}
                   onClick={isTree ? this.removeAllTreeVisible : this.removeAllVisible}
                   aria-label={removeAllAriaLabel}
                   ref={this.removeAllButtonRef}
@@ -688,7 +696,9 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
                 </DualListSelectorControl>
                 <DualListSelectorControl
                   onClick={isTree ? this.removeTreeSelected : this.removeSelected}
-                  isDisabled={isTree ? chosenTreeOptionsChecked.length === 0 : chosenOptionsSelected.length === 0}
+                  isDisabled={
+                    (isTree ? chosenTreeOptionsChecked.length === 0 : chosenOptionsSelected.length === 0) || isDisabled
+                  }
                   ref={this.removeSelectedButtonRef}
                   aria-label={removeSelectedAriaLabel}
                   tooltipContent={removeSelectedTooltip}
@@ -712,6 +722,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
                 onOptionCheck={(e, isChecked, itemData) => this.onTreeOptionCheck(e, isChecked, itemData, true)}
                 actions={chosenOptionsActions}
                 id={`${id}-chosen-pane`}
+                isDisabled={isDisabled}
               />
             </>
           ) : (

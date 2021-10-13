@@ -30,6 +30,7 @@ export * from './DrawerDemo/DrawerDemo';
 export * from './DrawerDemo/DrawerResizeDemo';
 export * from './DropdownDemo/DropdownDemo';
 export * from './DualListSelectorDemo/DualListSelectorBasicDemo';
+export * from './DualListSelectorDemo/DualListSelectorDisabledDemo';
 export * from './DualListSelectorDemo/DualListSelectorTreeDemo';
 export * from './DualListSelectorDemo/DualListSelectorWithActionsDemo';
 export * from './ExpandableSectionDemo/ExpandableSectionDemo';

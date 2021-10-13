@@ -21,7 +21,8 @@ export const DualListSelectorList: React.FunctionComponent<DualListSelectorListP
     selectedOptions,
     id,
     onOptionSelect,
-    options
+    options,
+    isDisabled
   } = React.useContext(DualListSelectorListContext);
 
   // only called when options are passed via options prop
@@ -50,6 +51,7 @@ export const DualListSelectorList: React.FunctionComponent<DualListSelectorListP
                   id={`${id}-option-${index}`}
                   onOptionSelect={(e, id) => onOptionClick(e, index, id)}
                   orderIndex={index}
+                  disabled={isDisabled}
                 >
                   {option}
                 </DualListSelectorListItem>

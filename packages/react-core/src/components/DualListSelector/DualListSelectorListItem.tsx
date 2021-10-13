@@ -37,6 +37,7 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
   innerRef,
   isDraggable = false,
   draggableButtonAriaLabel = 'Reorder option',
+  disabled,
   ...props
 }: DualListSelectorListItemProps) => {
   const ref = innerRef || React.useRef<HTMLLIElement>(null);
@@ -46,10 +47,14 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
     <li
       className={css(styles.dualListSelectorListItem, className)}
       key={orderIndex}
-      onClick={(e: React.MouseEvent) => {
-        setFocusedOption(id);
-        onOptionSelect(e, id);
-      }}
+      onClick={
+        disabled
+          ? undefined
+          : (e: React.MouseEvent) => {
+              setFocusedOption(id);
+              onOptionSelect(e, id);
+            }
+      }
       onKeyDown={(e: React.KeyboardEvent) => {
         if (e.key === ' ' || e.key === 'Enter') {
           (document.activeElement as HTMLElement).click();
@@ -64,7 +69,7 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
       {...props}
     >
       <div className={css(styles.dualListSelectorListItemRow, isSelected && styles.modifiers.selected)}>
-        {isDraggable && (
+        {isDraggable && !disabled && (
           <div className={css(styles.dualListSelectorDraggable)}>
             <Button variant={ButtonVariant.plain} aria-label={draggableButtonAriaLabel} component="span">
               <GripVerticalIcon style={{ verticalAlign: '-0.3em' }} />

@@ -25,6 +25,11 @@ describe('DualListSelector', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('basic with disabled controls', () => {
+    const view = mount(<DualListSelector isDisabled availableOptions={['Option 1', 'Option 2']} id="disabledTest" />);
+    expect(view).toMatchSnapshot();
+  });
+
   test('with tree', () => {
     const view = mount(
       <DualListSelector

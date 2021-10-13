@@ -31,6 +31,8 @@ export interface DualListSelectorTreeItemData {
   checkProps?: any;
   /** Additional properties to pass to the option badge */
   badgeProps?: any;
+  /** Flag indicating whether the component is disabled. */
+  isDisabled?: boolean;
 }
 
 export interface DualListSelectorTreeProps {
@@ -45,6 +47,7 @@ export interface DualListSelectorTreeProps {
   /** Sets the default expanded behavior */
   defaultAllExpanded?: boolean;
   /** Callback fired when an option is checked */
+  isDisabled?: boolean;
   onOptionCheck?: (
     event: React.MouseEvent | React.ChangeEvent<HTMLInputElement> | React.KeyboardEvent,
     isChecked: boolean,
@@ -58,6 +61,7 @@ export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeP
   isNested = false,
   defaultAllExpanded = false,
   onOptionCheck,
+  isDisabled = false,
   ...props
 }: DualListSelectorTreeProps) => {
   const tree = data.map(item => (
@@ -72,6 +76,7 @@ export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeP
       hasBadge={item.hasBadge !== undefined ? item.hasBadge : hasBadges}
       badgeProps={item.badgeProps}
       itemData={item}
+      isDisabled={isDisabled}
       {...(item.children && {
         children: (
           <DualListSelectorTree
@@ -80,6 +85,7 @@ export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeP
             hasBadges={hasBadges}
             defaultAllExpanded={defaultAllExpanded}
             onOptionCheck={onOptionCheck}
+            isDisabled={isDisabled}
           />
         )
       })}
