@@ -3,7 +3,7 @@ id: Release notes
 section: developer-resources
 ---
 
-## 2021.13 release notes (2021-09-11)
+## 2021.13 release notes (2021-10-13)
 - [@patternfly/react-catalog-view-extension@4.13.17](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.13.17)
 - [@patternfly/react-charts@6.15.31](https://www.npmjs.com/package/@patternfly/react-charts/v/6.15.31)
 - [@patternfly/react-code-editor@4.3.84](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.3.84)
