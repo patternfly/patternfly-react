@@ -222,7 +222,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
         areActionsDisabled={rowData => rowData.disableActions}
         dropdownPosition="left"
         dropdownDirection="down"
-        actionsToggle={useCustomToggle ? ((customActionsToggle as unknown) as TableProps['actionsToggle']) : undefined} // TODO
+        actionsToggle={useCustomToggle ? customActionsToggle : undefined}
       >
         <TableHeader />
         <TableBody />
