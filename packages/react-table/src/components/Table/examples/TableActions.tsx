@@ -199,26 +199,12 @@ export const ComposableTableActions: React.FunctionComponent = () => {
           </ToolbarItem>
         </ToolbarContent>
       </Toolbar>
-      <ToggleGroup aria-label="Default uses kebab toggle">
-        <ToggleGroupItem
-          text="Default actions toggle"
-          buttonId="defaultToggle"
-          isSelected={propToUse === 'actions'}
-          onChange={onPropToUseChange}
-        />
-        <ToggleGroupItem
-          text="Custom actions toggle"
-          buttonId="customToggle"
-          isSelected={propToUse === 'actionResolver'}
-          onChange={onPropToUseChange}
-        />
-      </ToggleGroup>
       <Table
         aria-label="Actions table"
         cells={columns}
         rows={rows}
-        {...(propToUse === 'actions' && actions)}
-        {...(propToUse === 'actionResolver' && actionResolver)}
+        {...(propToUse === 'actions' && { actions })}
+        {...(propToUse === 'actionResolver' && { actionResolver })}
         areActionsDisabled={rowData => rowData.disableActions}
         dropdownPosition="left"
         dropdownDirection="down"
