@@ -8802,7 +8802,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
         "name": "ApplicationLauncher",
       },
       Object {
-        "action": <ForwardRef(Button)
+        "action": <Button
           aria-label="Folder action"
           variant="plain"
         >
@@ -8811,7 +8811,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
             noVerticalAlign={false}
             size="sm"
           />
-        </ForwardRef(Button)>,
+        </Button>,
         "children": Array [
           Object {
             "children": Array [
@@ -9624,7 +9624,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
           </TreeViewListItem>
           <TreeViewListItem
             action={
-              <ForwardRef(Button)
+              <Button
                 aria-label="Folder action"
                 variant="plain"
               >
@@ -9633,7 +9633,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                   noVerticalAlign={false}
                   size="sm"
                 />
-              </ForwardRef(Button)>
+              </Button>
             }
             activeItems={
               Array [
@@ -9661,7 +9661,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
             isCompact={false}
             itemData={
               Object {
-                "action": <ForwardRef(Button)
+                "action": <Button
                   aria-label="Folder action"
                   variant="plain"
                 >
@@ -9670,7 +9670,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                     noVerticalAlign={false}
                     size="sm"
                   />
-                </ForwardRef(Button)>,
+                </Button>,
                 "children": Array [
                   Object {
                     "children": Array [
