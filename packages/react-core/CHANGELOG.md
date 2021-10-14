@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.162.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.162.4...@patternfly/react-core@4.162.5) (2021-10-14)
+
+
+### Bug Fixes
+
+* **wizard:** change wizard toggle and wizard toggle item to span tags ([#6428](https://github.com/patternfly/patternfly-react/issues/6428)) ([7b73e61](https://github.com/patternfly/patternfly-react/commit/7b73e61a26d29be8b8ebed5e87a1682600dee1e8))
+
+
+
+
+
 ## [4.162.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.162.3...@patternfly/react-core@4.162.4) (2021-10-14)
 
 

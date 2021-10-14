@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.9.106](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.9.105...@patternfly/react-topology@4.9.106) (2021-10-14)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
 ## [4.9.105](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@4.9.104...@patternfly/react-topology@4.9.105) (2021-10-14)
 
 **Note:** Version bump only for package @patternfly/react-topology
