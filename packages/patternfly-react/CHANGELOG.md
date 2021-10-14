@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.39.18](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.17...patternfly-react@2.39.18) (2021-10-14)
+
+
+### Bug Fixes
+
+* **pf3:** replace recompose with react-recompose ([#6429](https://github.com/patternfly/patternfly-react/issues/6429)) ([69ed2b2](https://github.com/patternfly/patternfly-react/commit/69ed2b23904bd59c6c06bab3d32b43b604ef7f36))
+
+
+
+
+
 ## [2.39.17](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.16...patternfly-react@2.39.17) (2020-09-29)
 
 
