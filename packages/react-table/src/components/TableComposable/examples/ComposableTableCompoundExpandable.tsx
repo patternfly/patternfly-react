@@ -29,11 +29,11 @@ export const ComposableTableCompoundExpandable: React.FunctionComponent = () => 
   };
   type ColumnKey = keyof typeof columnNames;
 
-  // In this example, expanded cells are tracked by the repo and property names from each row. This could be any unique identifier.
+  // In this example, expanded cells are tracked by the repo and property names from each row. This could be any pair of unique identifiers.
   // This is to prevent state from being based on row and column order index in case we later add sorting and rearranging columns.
   // Note that this behavior is very similar to selection state.
   const [expandedCells, setExpandedCells] = React.useState<Record<string, ColumnKey>>({
-    'siemur/test-space': 'branches'
+    'siemur/test-space': 'branches' // Default to the first cell of the first row being expanded
   });
   const setCellExpanded = (repo: Repository, columnKey: ColumnKey, isExpanding = true) => {
     const newExpandedCells = { ...expandedCells };
