@@ -212,16 +212,21 @@ class SearchTreeView extends React.Component {
 
   render() {
     const { activeItems, filteredItems, isFiltered } = this.state;
-    
+
     const toolbar = (
-      <Toolbar style={{padding: 0}}>
-        <ToolbarContent style={{padding: 0}}>
-          <ToolbarItem widths={{default: "100%"}}>
-            <TreeViewSearch onSearch={this.onSearch} id='input-search' name='search-input' aria-label='Search input example' />
+      <Toolbar style={{ padding: 0 }}>
+        <ToolbarContent style={{ padding: 0 }}>
+          <ToolbarItem widths={{ default: '100%' }}>
+            <TreeViewSearch
+              onSearch={this.onSearch}
+              id="input-search"
+              name="search-input"
+              aria-label="Search input example"
+            />
           </ToolbarItem>
         </ToolbarContent>
-       </Toolbar>
-     );  
+      </Toolbar>
+    );
 
     return (
       <TreeView
@@ -440,9 +445,7 @@ class CheckboxTreeView extends React.Component {
 
   render() {
     const mapped = this.options.map(item => this.mapTree(item));
-    return (
-      <TreeView data={mapped} onCheck={this.onCheck} hasChecks />
-    );
+    return <TreeView data={mapped} onCheck={this.onCheck} hasChecks />;
   }
 }
 ```
@@ -700,7 +703,14 @@ class CustomBadgesTreeView extends React.Component {
         name: 'Sources',
         id: 'Sources',
         customBadgeContent: '1 source',
-        children: [{ name: 'Application 4', id: 'App4', customBadgeContent: '1 child', children: [{ name: 'Settings', id: 'App4Settings' }] }]
+        children: [
+          {
+            name: 'Application 4',
+            id: 'App4',
+            customBadgeContent: '1 child',
+            children: [{ name: 'Settings', id: 'App4Settings' }]
+          }
+        ]
       },
       {
         name: 'Really really really long folder name that overflows the container it is in',
@@ -853,64 +863,64 @@ import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
 
 const GuidesTreeView: React.FunctionComponent = () => {
   const options: TreeViewDataItem[] = [
-      {
-        name: 'Application launcher',
-        id: 'AppLaunch',
-        children: [
-          {
-            name: 'Application 1',
-            id: 'App1',
-            children: [
-              { name: 'Settings', id: 'App1Settings' },
-              { name: 'Current', id: 'App1Current' }
-            ]
-          },
-          {
-            name: 'Application 2',
-            id: 'App2',
-            children: [
-              { name: 'Settings', id: 'App2Settings' },
-              {
-                name: 'Loader',
-                id: 'App2Loader',
-                children: [
-                  { name: 'Loading App 1', id: 'LoadApp1' },
-                  { name: 'Loading App 2', id: 'LoadApp2' },
-                  { name: 'Loading App 3', id: 'LoadApp3' }
-                ]
-              }
-            ]
-          }
-        ],
-        defaultExpanded: true
-      },
-      {
-        name: 'Cost management',
-        id: 'Cost',
-        children: [
-          {
-            name: 'Application 3',
-            id: 'App3',
-            children: [
-              { name: 'Settings', id: 'App3Settings' },
-              { name: 'Current', id: 'App3Current' }
-            ]
-          }
-        ]
-      },
-      {
-        name: 'Sources',
-        id: 'Sources',
-        children: [{ name: 'Application 4', id: 'App4', children: [{ name: 'Settings', id: 'App4Settings' }] }]
-      },
-      {
-        name: 'Really really really long folder name that overflows the container it is in',
-        id: 'Long',
-        children: [{ name: 'Application 5', id: 'App5' }]
-      }
-    ];
-    return <TreeView data={options} hasGuides={true} />;
-}
+    {
+      name: 'Application launcher',
+      id: 'AppLaunch',
+      children: [
+        {
+          name: 'Application 1',
+          id: 'App1',
+          children: [
+            { name: 'Settings', id: 'App1Settings' },
+            { name: 'Current', id: 'App1Current' }
+          ]
+        },
+        {
+          name: 'Application 2',
+          id: 'App2',
+          children: [
+            { name: 'Settings', id: 'App2Settings' },
+            {
+              name: 'Loader',
+              id: 'App2Loader',
+              children: [
+                { name: 'Loading App 1', id: 'LoadApp1' },
+                { name: 'Loading App 2', id: 'LoadApp2' },
+                { name: 'Loading App 3', id: 'LoadApp3' }
+              ]
+            }
+          ]
+        }
+      ],
+      defaultExpanded: true
+    },
+    {
+      name: 'Cost management',
+      id: 'Cost',
+      children: [
+        {
+          name: 'Application 3',
+          id: 'App3',
+          children: [
+            { name: 'Settings', id: 'App3Settings' },
+            { name: 'Current', id: 'App3Current' }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'Sources',
+      id: 'Sources',
+      children: [{ name: 'Application 4', id: 'App4', children: [{ name: 'Settings', id: 'App4Settings' }] }]
+    },
+    {
+      name: 'Really really really long folder name that overflows the container it is in',
+      id: 'Long',
+      children: [{ name: 'Application 5', id: 'App5' }]
+    }
+  ];
+  return <TreeView data={options} hasGuides={true} />;
+};
 ```
 
 ### Compact
@@ -921,61 +931,67 @@ import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
 
 const CompactTreeView: React.FunctionComponent = () => {
   const options: TreeViewDataItem[] = [
-      {
-        name: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value and may reject unrecognized values.',
-        title: 'apiVersion',
-        id: 'apiVersion'
-      },
-      {
-        name: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated is CamelCase. More info:',
-        title: 'kind',
-        id: 'kind'
-      },
-      {
-        name: 'Standard metadata object',
-        title: 'metadata',
-        id: 'metadata'
-      },
-      {
-        name: 'Standard metadata object',
-        title: 'spec',
-        id: 'spec',
-        children: [
-          {
-            name: 'Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Default to 0 (pod will be considered available as soon as it is ready).',
-            title: 'minReadySeconds',
-            id: 'minReadySeconds'
-          },
-          {
-            name: 'Indicates that the deployment is paused',
-            title: 'paused',
-            id: 'paused'
-          },
-          {
-            name: 'The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that the progress will not de estimated during the time a deployment is paused. Defaults to 600s.',
-            title: 'progressDeadlineSeconds',
-            id: 'progressDeadlineSeconds',
-            children: [
-              {
-                name: 'The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10.',
-                title: 'revisionHistoryLimit',
-                id: 'revisionHistoryLimit',
-                children: [
-                  {
-                    name: 'Map of {key.value} pairs. A single {key.value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In" and the values array contains only "value". The requirements are ANDed.',
-                    title: 'matchLabels',
-                    id: 'matchLabels'
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ];
-    return <TreeView data={options} variant='compact' />;
-}
-``` 
+    {
+      name:
+        'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value and may reject unrecognized values.',
+      title: 'apiVersion',
+      id: 'apiVersion'
+    },
+    {
+      name:
+        'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated is CamelCase. More info:',
+      title: 'kind',
+      id: 'kind'
+    },
+    {
+      name: 'Standard metadata object',
+      title: 'metadata',
+      id: 'metadata'
+    },
+    {
+      name: 'Standard metadata object',
+      title: 'spec',
+      id: 'spec',
+      children: [
+        {
+          name:
+            'Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Default to 0 (pod will be considered available as soon as it is ready).',
+          title: 'minReadySeconds',
+          id: 'minReadySeconds'
+        },
+        {
+          name: 'Indicates that the deployment is paused',
+          title: 'paused',
+          id: 'paused'
+        },
+        {
+          name:
+            'The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that the progress will not de estimated during the time a deployment is paused. Defaults to 600s.',
+          title: 'progressDeadlineSeconds',
+          id: 'progressDeadlineSeconds',
+          children: [
+            {
+              name:
+                'The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10.',
+              title: 'revisionHistoryLimit',
+              id: 'revisionHistoryLimit',
+              children: [
+                {
+                  name:
+                    'Map of {key.value} pairs. A single {key.value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In" and the values array contains only "value". The requirements are ANDed.',
+                  title: 'matchLabels',
+                  id: 'matchLabels'
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ];
+  return <TreeView data={options} variant="compact" />;
+};
+```
 
 ### Compact, no background
 
@@ -985,58 +1001,152 @@ import { TreeView, TreeViewDataItem } from '@patternfly/react-core';
 
 const CompactNoBackgroundTreeView: React.FunctionComponent = () => {
   const options: TreeViewDataItem[] = [
-      {
-        name: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value and may reject unrecognized values.',
-        title: 'apiVersion',
-        id: 'apiVersion'
-      },
-      {
-        name: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated is CamelCase. More info:',
-        title: 'kind',
-        id: 'kind'
-      },
-      {
-        name: 'Standard metadata object',
-        title: 'metadata',
-        id: 'metadata'
-      },
-      {
-        name: 'Standard metadata object',
-        title: 'spec',
-        id: 'spec',
-        children: [
-          {
-            name: 'Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Default to 0 (pod will be considered available as soon as it is ready).',
-            title: 'minReadySeconds',
-            id: 'minReadySeconds'
-          },
-          {
-            name: 'Indicates that the deployment is paused',
-            title: 'paused',
-            id: 'paused'
-          },
-          {
-            name: 'The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that the progress will not de estimated during the time a deployment is paused. Defaults to 600s.',
-            title: 'progressDeadlineSeconds',
-            id: 'progressDeadlineSeconds',
-            children: [
-              {
-                name: 'The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10.',
-                title: 'revisionHistoryLimit',
-                id: 'revisionHistoryLimit',
-                children: [
-                  {
-                    name: 'Map of {key.value} pairs. A single {key.value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In" and the values array contains only "value". The requirements are ANDed.',
-                    title: 'matchLabels',
-                    id: 'matchLabels'
-                  }
-                ]
-              }
-            ]
+    {
+      name:
+        'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value and may reject unrecognized values.',
+      title: 'apiVersion',
+      id: 'apiVersion'
+    },
+    {
+      name:
+        'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated is CamelCase. More info:',
+      title: 'kind',
+      id: 'kind'
+    },
+    {
+      name: 'Standard metadata object',
+      title: 'metadata',
+      id: 'metadata'
+    },
+    {
+      name: 'Standard metadata object',
+      title: 'spec',
+      id: 'spec',
+      children: [
+        {
+          name:
+            'Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Default to 0 (pod will be considered available as soon as it is ready).',
+          title: 'minReadySeconds',
+          id: 'minReadySeconds'
+        },
+        {
+          name: 'Indicates that the deployment is paused',
+          title: 'paused',
+          id: 'paused'
+        },
+        {
+          name:
+            'The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that the progress will not de estimated during the time a deployment is paused. Defaults to 600s.',
+          title: 'progressDeadlineSeconds',
+          id: 'progressDeadlineSeconds',
+          children: [
+            {
+              name:
+                'The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10.',
+              title: 'revisionHistoryLimit',
+              id: 'revisionHistoryLimit',
+              children: [
+                {
+                  name:
+                    'Map of {key.value} pairs. A single {key.value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In" and the values array contains only "value". The requirements are ANDed.',
+                  title: 'matchLabels',
+                  id: 'matchLabels'
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ];
+  return <TreeView data={options} variant="compactNoBackground" />;
+};
+```
+
+### With memoization
+
+Turning on memoization with the `useMemo` property helps prevent unnecessary re-renders for large data sets. With this flag active, `activeItems` must pass in an array of nodes along the selected item's path to update properly.
+
+```js
+import React from 'react';
+import { TreeView, Button } from '@patternfly/react-core';
+
+class MemoTreeView extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { activeItems: {}, allExpanded: false };
+
+    this.onSelect = (evt, treeViewItem) => {
+      let filtered = [];
+      this.options.forEach(item => this.filterItems(item, treeViewItem.id, filtered));
+      this.setState({
+        activeItems: filtered
+      });
+    };
+
+    this.onToggle = evt => {
+      const { allExpanded } = this.state;
+      this.setState({
+        allExpanded: allExpanded !== undefined ? !allExpanded : true
+      });
+    };
+
+    this.filterItems = (item, input, list) => {
+      if (item.children) {
+        let childContained = false;
+        item.children.forEach(child => {
+          if (childContained) {
+            this.filterItems(child, input, list);
+          } else {
+            childContained = this.filterItems(child, input, list);
           }
-        ]
+        });
+        if (childContained) {
+          list.push(item);
+        }
       }
-    ];
-    return <TreeView data={options} variant='compactNoBackground' />;
+
+      if (item.id === input) {
+        list.push(item);
+        return true;
+      } else {
+        return false;
+      }
+    };
+
+    this.options = [];
+    for (let i = 1; i <= 20; i++) {
+      const childNum = 5;
+      let childOptions = [];
+      for (let j = 1; j <= childNum; j++) {
+        childOptions.push({ name: 'Child ' + j, id: `Option${i} - Child${j}` });
+      }
+      this.options.push({ name: 'Option ' + i, id: i, children: childOptions });
+    }
+  }
+
+  render() {
+    const { activeItems, allExpanded } = this.state;
+    const tree = (
+      <TreeView
+        data={this.options}
+        activeItems={activeItems}
+        onSelect={this.onSelect}
+        allExpanded={allExpanded}
+        useMemo
+      />
+    );
+
+    return (
+      <React.Fragment>
+        <Button variant="link" onClick={this.onToggle}>
+          {allExpanded && 'Collapse all'}
+          {!allExpanded && 'Expand all'}
+        </Button>
+        {tree}
+      </React.Fragment>
+    );
+  }
 }
 ```

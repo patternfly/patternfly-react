@@ -69,6 +69,8 @@ export interface TreeViewProps {
   className?: string;
   /** Toolbar to display above the tree view */
   toolbar?: React.ReactNode;
+  /** Flag indicating the TreeView should utilize memoization to help render large data sets. Setting this property requires that `activeItems` pass in an array containing every node in the selected item's path. */
+  useMemo?: boolean;
 }
 
 export const TreeView: React.FunctionComponent<TreeViewProps> = ({
@@ -89,6 +91,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   activeItems,
   compareItems = (item, itemToCheck) => item.id === itemToCheck.id,
   className,
+  useMemo,
   ...props
 }: TreeViewProps) => {
   const treeViewList = (
@@ -116,6 +119,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
           action={item.action}
           compareItems={compareItems}
           isCompact={variant === 'compact' || variant === 'compactNoBackground'}
+          useMemo={useMemo}
           {...(item.children && {
             children: (
               <TreeView

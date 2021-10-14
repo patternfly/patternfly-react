@@ -53,9 +53,11 @@ export interface TreeViewListItemProps {
   action?: React.ReactNode;
   /** Callback for item comparison function */
   compareItems?: (item: TreeViewDataItem, itemToCheck: TreeViewDataItem) => boolean;
+  /** Flag indicating the TreeView should utilize memoization to help render large data sets. Setting this property requires that `activeItems` pass in an array containing every node in the selected item's path. */
+  useMemo?: boolean;
 }
 
-export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = ({
+const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
   name,
   title,
   id,
@@ -78,10 +80,11 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
   icon,
   expandedIcon,
   action,
-  compareItems
+  compareItems,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  useMemo
 }: TreeViewListItemProps) => {
   const [internalIsExpanded, setIsExpanded] = useState(defaultExpanded);
-
   useEffect(() => {
     if (isExpanded !== undefined && isExpanded !== null) {
       setIsExpanded(isExpanded);
@@ -207,4 +210,53 @@ export const TreeViewListItem: React.FunctionComponent<TreeViewListItemProps> = 
     </li>
   );
 };
+
+export const TreeViewListItem = React.memo(TreeViewListItemBase, (prevProps, nextProps) => {
+  if (!nextProps.useMemo) {
+    return false;
+  }
+
+  const prevIncludes =
+    prevProps.activeItems &&
+    prevProps.activeItems.length > 0 &&
+    prevProps.activeItems.some(
+      item => prevProps.compareItems && item && prevProps.compareItems(item, prevProps.itemData)
+    );
+  const nextIncludes =
+    nextProps.activeItems &&
+    nextProps.activeItems.length > 0 &&
+    nextProps.activeItems.some(
+      item => nextProps.compareItems && item && nextProps.compareItems(item, nextProps.itemData)
+    );
+
+  if (prevIncludes || nextIncludes) {
+    return false;
+  }
+
+  if (
+    prevProps.name !== nextProps.name ||
+    prevProps.title !== nextProps.title ||
+    prevProps.id !== nextProps.id ||
+    prevProps.isExpanded !== nextProps.isExpanded ||
+    prevProps.defaultExpanded !== nextProps.defaultExpanded ||
+    prevProps.onSelect !== nextProps.onSelect ||
+    prevProps.onCheck !== nextProps.onCheck ||
+    prevProps.hasCheck !== nextProps.hasCheck ||
+    prevProps.checkProps !== nextProps.checkProps ||
+    prevProps.hasBadge !== nextProps.hasBadge ||
+    prevProps.customBadgeContent !== nextProps.customBadgeContent ||
+    prevProps.badgeProps !== nextProps.badgeProps ||
+    prevProps.isCompact !== nextProps.isCompact ||
+    prevProps.icon !== nextProps.icon ||
+    prevProps.expandedIcon !== nextProps.expandedIcon ||
+    prevProps.action !== nextProps.action ||
+    prevProps.parentItem !== nextProps.parentItem ||
+    prevProps.itemData !== nextProps.itemData
+  ) {
+    return false;
+  }
+
+  return true;
+});
+
 TreeViewListItem.displayName = 'TreeViewListItem';
