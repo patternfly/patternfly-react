@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.7.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.7.21...@patternfly/react-log-viewer@4.7.22) (2021-10-14)
+
+
+### Bug Fixes
+
+* **linter:** add .eslintignore items and bump linting packages ([#6420](https://github.com/patternfly/patternfly-react/issues/6420)) ([9d734cf](https://github.com/patternfly/patternfly-react/commit/9d734cfa68c3e425d70688020538c0ba71c8ac7d))
+
+
+
+
+
 ## [4.7.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-log-viewer@4.7.20...@patternfly/react-log-viewer@4.7.21) (2021-10-13)
 
 **Note:** Version bump only for package @patternfly/react-log-viewer
