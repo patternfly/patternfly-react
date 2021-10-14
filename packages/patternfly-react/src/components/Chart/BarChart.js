@@ -1,6 +1,6 @@
 import React from 'react';
 import C3Chart from 'react-c3js';
-import { compose, mapProps } from 'recompose';
+import { compose, mapProps } from 'react-recompose';
 import { getComposer } from './ChartConstants';
 import { c3ChartDefaults } from '../../common/patternfly';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withContext } from 'recompose';
+import { withContext } from 'react-recompose';
 import { selectKeys, filterChildren } from '../../common/helpers';
 import { VerticalNavItem, VerticalNavSecondaryItem, VerticalNavTertiaryItem } from './index';
 

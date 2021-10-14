@@ -4,7 +4,7 @@ import { orderBy } from 'lodash';
 import classNames from 'classnames';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
-import { compose } from 'recompose';
+import { compose } from 'react-recompose';
 import {
   actionHeaderCellFormatter,
   customHeaderFormattersDefinition,
@@ -440,7 +440,7 @@ import {
 import { MenuItem } from '../../MenuItem';
 import { Grid } from '../../Grid';
 import { PaginationRow, paginate, PAGINATION_VIEW } from '../../Pagination';
-import { compose } from 'recompose';
+import { compose } from 'react-recompose';
 import { mockRows } from './mockRows';
 
 /**

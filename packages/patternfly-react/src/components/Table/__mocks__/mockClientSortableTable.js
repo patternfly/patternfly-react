@@ -2,7 +2,7 @@ import React from 'react';
 import { orderBy } from 'lodash';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
-import { compose } from 'recompose';
+import { compose } from 'react-recompose';
 import {
   actionHeaderCellFormatter,
   customHeaderFormattersDefinition,
@@ -263,7 +263,7 @@ import {
   TABLE_SORT_DIRECTION
 } from '../index';
 import { MenuItem } from '../../MenuItem';
-import { compose } from 'recompose';
+import { compose } from 'react-recompose';
 import { mockRows } from './mockRows';
 
 /**

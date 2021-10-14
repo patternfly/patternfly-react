@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withContext } from 'recompose';
+import { withContext } from 'react-recompose';
 
 const toolbarContextTypes = { isDescendantOfToolbar: PropTypes.bool };
 

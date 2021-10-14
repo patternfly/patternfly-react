@@ -40,8 +40,8 @@
     "react-ellipsis-with-tooltip": "^1.0.8",
     "react-fontawesome": "^1.6.1",
     "react-motion": "^0.5.2",
+    "react-recompose": "^0.31.1",
     "reactabular-table": "^8.14.0",
-    "recompose": "^0.26.0",
     "uuid": "^3.3.2"
   },
   "optionalDependencies": {
