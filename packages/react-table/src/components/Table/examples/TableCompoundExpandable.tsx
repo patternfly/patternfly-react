@@ -166,9 +166,7 @@ export const TableCompoundExpandable: React.FunctionComponent = () => {
     <Table
       aria-label="Compound expandable table"
       onExpand={(_event, rowIndex, colIndex, isOpen) => {
-        const repo = reposByRowIndex[rowIndex];
-        const columnKey = columnKeys[colIndex];
-        setCellExpanded(repo, columnKey, isOpen);
+        setCellExpanded(reposByRowIndex[rowIndex], columnKeys[colIndex], !isOpen);
       }}
       rows={rows}
       cells={columns}
