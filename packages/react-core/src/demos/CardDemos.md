@@ -108,7 +108,7 @@ class CardGridDemo extends React.Component {
           {!isCardExpanded && (
             <Level hasGutter>
               <CardTitle id="titleId">Getting Started</CardTitle>
-              <LabelGroup isCompact asdf>
+              <LabelGroup isCompact>
                 <Label isCompact icon={<InfoCircleIcon />} color="blue">
                   Set up your cluster
                 </Label>

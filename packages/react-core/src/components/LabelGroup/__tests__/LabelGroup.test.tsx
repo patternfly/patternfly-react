@@ -60,4 +60,18 @@ describe('LabelGroup', () => {
     );
     expect(view).toMatchSnapshot();
   });
+
+  test('label group compact', () => {
+    const view = shallow(
+      <LabelGroup isCompact>
+        <Label>1</Label>
+        <Label>2</Label>
+        <Label>3</Label>
+        <Label>4</Label>
+      </LabelGroup>
+    );
+    const overflowButton = view.find('.pf-m-overflow');
+    expect(overflowButton).toHaveClass('pf-m-compact');
+    expect(view).toMatchSnapshot();
+  });
 });
