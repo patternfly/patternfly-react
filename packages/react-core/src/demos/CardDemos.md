@@ -1944,6 +1944,8 @@ import {
   Accordion,
   AccordionItem,
   AccordionToggle,
+  AccordionContent,
+  Divider,
   Grid,
   GridItem,
   Flex,
@@ -2419,6 +2421,7 @@ import {
   CardTitle,
   CardBody,
   CardHeader,
+  CardActions,
   Title,
   Gallery,
   GalleryItem,
@@ -2426,6 +2429,7 @@ import {
   FlexItem,
   Dropdown,
   DropdownItem,
+  DropdownSeparator,
   DropdownToggle
 } from '@patternfly/react-core';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
