@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, TableBody, TableHeader, TableVariant, TableProps, expandable } from '@patternfly/react-table';
+import { Table, TableBody, TableHeader, TableVariant, TableProps, expandable, IRowCell } from '@patternfly/react-table';
 import { Checkbox } from '@patternfly/react-core';
 
 interface Repository {
@@ -89,6 +89,11 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
 
   const [isExampleCompact, setIsExampleCompact] = React.useState(true);
 
+  // We want to be able to reference the original data object based on row index. But because an expanded
+  // row takes up two row indexes, repositories[rowIndex] will not be accurate like it would in a normal table.
+  // One solution to this is to create an array of data objects indexed by the displayed row index.
+  const reposByRowIndex: (Repository | null)[] = [];
+
   const columns: TableProps['cells'] = [
     {
       title: 'Repositories',
@@ -101,15 +106,42 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
   const rows: TableProps['rows'] = [];
   repositories.forEach(repo => {
     rows.push({
-      isOpen: isRepoExpanded(repo),
+      ...(repo.details ? { isOpen: isRepoExpanded(repo) } : {}),
       cells: [repo.name, repo.branches, repo.prs, repo.workspaces]
     });
+    reposByRowIndex.push(repo);
     if (repo.details) {
+      // Some arbitrary examples of how you could customize the child row based on your needs
+      const { detail1, detail2, detail3, detailFormat } = repo.details;
+      const numColumns = 5;
+      const childIsFullWidth = [1, 3].includes(detailFormat);
+      const childHasNoPadding = [2, 3].includes(detailFormat);
+      let detailColSpans = [1, 1, 1];
+      if (detail1 && !detail2 && !detail3) {
+        detailColSpans = [childIsFullWidth ? numColumns : numColumns + 1]; // Account for toggle column
+      } else if (detail1 && detail2 && !detail3) {
+        detailColSpans = [2, childIsFullWidth ? 3 : 4];
+      } else if (detail1 && detail2 && detail3) {
+        detailColSpans = [2, 2, childIsFullWidth ? 1 : 2];
+      }
+      const cells: IRowCell[] = [];
+      [detail1, detail2, detail3].forEach((detail, index) => {
+        if (detail) {
+          cells.push({
+            title: detail1,
+            props: {
+              colSpan: detailColSpans[index]
+            }
+          });
+        }
+      });
       rows.push({
         parent: rows.length - 1,
-        cells: [repo.details.detail1] // TODO lay out cells depending on detailFormat
-        // TODO noPadding, fullWidth based on detailFormat
+        cells,
+        fullWidth: childIsFullWidth,
+        noPadding: childHasNoPadding
       });
+      reposByRowIndex.push(null);
     }
   });
 
@@ -126,93 +158,13 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
       <Table
         aria-label="Expandable table"
         variant={isExampleCompact ? TableVariant.compact : null}
-        onCollapse={this.onCollapse} // TODO examine how these callbacks work in the old example
+        onCollapse={(_event, rowIndex, isOpen) => setRepoExpanded(reposByRowIndex[rowIndex], isOpen)}
         rows={rows}
         cells={columns}
       >
         <TableHeader />
         <TableBody />
       </Table>
-      {/*
-      <TableComposable aria-label="Expandable table" variant={isExampleCompact ? 'compact' : null}>
-        <Thead>
-          <Tr>
-            <Th />
-            <Th>{columnNames.name}</Th>
-            <Th>{columnNames.branches}</Th>
-            <Th>{columnNames.prs}</Th>
-            <Th>{columnNames.workspaces}</Th>
-            <Th>{columnNames.lastCommit}</Th>
-          </Tr>
-        </Thead>
-        {repositories.map((repo, rowIndex) => {
-          // Some arbitrary examples of how you could customize the child row based on your needs
-          let childIsFullWidth = false;
-          let childHasNoPadding = false;
-          let detail1Colspan = 1;
-          let detail2Colspan = 1;
-          let detail3Colspan = 1;
-          if (repo.details) {
-            const { detail1, detail2, detail3, detailFormat } = repo.details;
-            const numColumns = 5;
-            childIsFullWidth = [1, 3].includes(detailFormat);
-            childHasNoPadding = [2, 3].includes(detailFormat);
-            if (detail1 && !detail2 && !detail3) {
-              detail1Colspan = childIsFullWidth ? numColumns : numColumns + 1; // Account for toggle column
-            } else if (detail1 && detail2 && !detail3) {
-              detail1Colspan = 2;
-              detail2Colspan = childIsFullWidth ? 3 : 4;
-            } else if (detail1 && detail2 && detail3) {
-              detail1Colspan = 2;
-              detail2Colspan = 2;
-              detail3Colspan = childIsFullWidth ? 1 : 2;
-            }
-          }
-          return (
-            <Tbody key={repo.name} isExpanded={isRepoExpanded(repo)}>
-              <Tr>
-                <Td
-                  expand={
-                    repo.details
-                      ? {
-                          rowIndex,
-                          isExpanded: isRepoExpanded(repo),
-                          onToggle: () => setRepoExpanded(repo, !isRepoExpanded(repo))
-                        }
-                      : null
-                  }
-                />
-                <Td dataLabel={columnNames.name}>{repo.name}</Td>
-                <Td dataLabel={columnNames.branches}>{repo.branches}</Td>
-                <Td dataLabel={columnNames.prs}>{repo.prs}</Td>
-                <Td dataLabel={columnNames.workspaces}>{repo.workspaces}</Td>
-                <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
-              </Tr>
-              {repo.details ? (
-                <Tr isExpanded={isRepoExpanded(repo)}>
-                  {!childIsFullWidth ? <Td /> : null}
-                  {repo.details.detail1 ? (
-                    <Td dataLabel="Repo detail 1" noPadding={childHasNoPadding} colSpan={detail1Colspan}>
-                      <ExpandableRowContent>{repo.details.detail1}</ExpandableRowContent>
-                    </Td>
-                  ) : null}
-                  {repo.details.detail2 ? (
-                    <Td dataLabel="Repo detail 2" noPadding={childHasNoPadding} colSpan={detail2Colspan}>
-                      <ExpandableRowContent>{repo.details.detail2}</ExpandableRowContent>
-                    </Td>
-                  ) : null}
-                  {repo.details.detail3 ? (
-                    <Td dataLabel="Repo detail 3" noPadding={childHasNoPadding} colSpan={detail3Colspan}>
-                      <ExpandableRowContent>{repo.details.detail3}</ExpandableRowContent>
-                    </Td>
-                  ) : null}
-                </Tr>
-              ) : null}
-            </Tbody>
-          );
-        })}
-      </TableComposable>
-      */}
     </React.Fragment>
   );
 };
