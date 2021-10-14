@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.162.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.162.3...@patternfly/react-core@4.162.4) (2021-10-14)
+
+
+### Performance Improvements
+
+* **TreeView:** add memoization + test demo ([#6362](https://github.com/patternfly/patternfly-react/issues/6362)) ([6e35627](https://github.com/patternfly/patternfly-react/commit/6e35627ded8d156da8898ffb6252c868504fbcd9))
+
+
+
+
+
 ## [4.162.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.162.2...@patternfly/react-core@4.162.3) (2021-10-13)
 
 **Note:** Version bump only for package @patternfly/react-core
