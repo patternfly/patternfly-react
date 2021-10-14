@@ -1967,6 +1967,7 @@ const AccordionCard: React.FunctionComponent = () => {
         <Accordion asDefinitionList>
           <AccordionItem>
             <AccordionToggle
+              id="cpu1-toggle"
               onClick={() => {
                 if (openCPU === 'cpu1') {
                   setOpenCPU(null);
@@ -2112,6 +2113,7 @@ const AccordionCard: React.FunctionComponent = () => {
           </AccordionItem>
           <AccordionItem>
             <AccordionToggle
+              id="cpu2-toggle"
               onClick={() => {
                 if (openCPU === 'cpu2') {
                   setOpenCPU(null);
@@ -2257,6 +2259,7 @@ const AccordionCard: React.FunctionComponent = () => {
           </AccordionItem>
           <AccordionItem>
             <AccordionToggle
+              id="cpu3-toggle"
               onClick={() => {
                 if (openCPU === 'cpu3') {
                   setOpenCPU(null);
