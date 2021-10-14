@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.31.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.31.9...@patternfly/react-table@4.31.10) (2021-10-14)
+
+
+### Bug Fixes
+
+* **Table:** Account for `disableSelection` in `areAllRowsSelected` method of legacy Table ([#6437](https://github.com/patternfly/patternfly-react/issues/6437)) ([16cf6da](https://github.com/patternfly/patternfly-react/commit/16cf6da3e1bb4af4c036dd7986f63bf81803cfe9))
+
+
+
+
+
 ## [4.31.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@4.31.8...@patternfly/react-table@4.31.9) (2021-10-14)
 
 **Note:** Version bump only for package @patternfly/react-table
