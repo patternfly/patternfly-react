@@ -86,6 +86,7 @@ const ProgressStepBase: React.FunctionComponent<ProgressStepProps> = ({
           className={css(styles.progressStepperStepTitle, hasPopover && styles.modifiers.helpText)}
           id={titleId}
           ref={innerRef}
+          {...(hasPopover && { tabIndex: 0 })}
           {...(props.id !== undefined && titleId !== undefined && { 'aria-labelledby': `${props.id} ${titleId}` })}
         >
           {children}
