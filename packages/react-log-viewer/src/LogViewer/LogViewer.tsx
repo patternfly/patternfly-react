@@ -14,10 +14,10 @@ interface LogViewerProps {
   hasToolbar?: boolean;
   /** Flag to enable or disable line numbers on the log viewer. */
   hasLineNumbers?: boolean;
-  /** Width in pixels of the log viewer. */
-  width?: number;
-  /** Height in pixels of the log viewer. */
-  height?: number;
+  /** Width of the log viewer. */
+  width?: number | string;
+  /** Height of the log viewer. */
+  height?: number | string;
   /** Rows rendered outside of view. The more rows are rendered, the higher impact on performance */
   overScanCount?: number;
   /** Toolbar rendered in the log viewer header */
@@ -95,61 +95,36 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     const [charNumsPerLine, setCharNumsPerLine] = useState<number>(0);
     const [resizing, setResizing] = useState(false);
     const [loading, setLoading] = useState(true);
-    const [firstMount, setFirstMount] = useState(true);
+    const [listKey, setListKey] = useState(1);
 
-    const logViewerRef = innerRef || React.createRef<any>();
-    const containerRef = React.createRef<any>();
+    const logViewerRef = innerRef || React.useRef<any>();
+    const containerRef = React.useRef<any>();
     let resizeTimer = null as any;
 
     useEffect(() => {
-      if (containerRef && containerRef.current && loading) {
+      if (containerRef && containerRef.current) {
         window.addEventListener('resize', callbackResize);
-        if (firstMount) {
-          setLoading(false);
-          setFirstMount(false);
-        }
-        const dummyIndex = document.createElement('span');
-        dummyIndex.className = css(styles.logViewerIndex);
-        const dummyText = document.createElement('span');
-        dummyText.className = css(styles.logViewerText);
-        containerRef.current.appendChild(dummyIndex);
-        containerRef.current.appendChild(dummyText);
-        const dummyIndexStyles = getComputedStyle(dummyIndex);
-        const dummyTextStyles = getComputedStyle(dummyText);
-        setLineHeight(parseFloat(dummyTextStyles.lineHeight));
-        const lineWidth = hasLineNumbers
-          ? (containerRef.current as HTMLDivElement).clientWidth -
-            (parseFloat(dummyTextStyles.paddingLeft) +
-              parseFloat(dummyTextStyles.paddingRight) +
-              parseFloat(dummyIndexStyles.width))
-          : (containerRef.current as HTMLDivElement).clientWidth -
-            (parseFloat(dummyTextStyles.paddingLeft) + parseFloat(dummyTextStyles.paddingRight));
-        const charNumsPerLine = getCharNums(
-          lineWidth,
-          `${dummyTextStyles.fontWeight} ${dummyTextStyles.fontSize} ${dummyTextStyles.fontFamily}`
-        );
-        setCharNumsPerLine(charNumsPerLine);
-        containerRef.current.removeChild(dummyIndex);
-        containerRef.current.removeChild(dummyText);
+        setLoading(false);
+        createDummyElements();
       }
       return () => window.removeEventListener('resize', callbackResize);
     }, [containerRef.current]);
 
     const callbackResize = () => {
-      setResizing(true);
-      setLoading(true);
+      if (!resizing) {
+        setResizing(true);
+      }
       if (resizeTimer) {
         clearTimeout(resizeTimer);
       }
       resizeTimer = setTimeout(() => {
         setResizing(false);
+        createDummyElements();
       }, 100);
     };
 
     useEffect(() => {
-      if (!resizing) {
-        setLoading(false);
-      }
+      setLoading(resizing);
     }, [resizing]);
 
     const dataToRender = React.useMemo(
@@ -210,6 +185,33 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
       }
     }, [searchedInput]);
 
+    const createDummyElements = () => {
+      const dummyIndex = document.createElement('span');
+      dummyIndex.className = css(styles.logViewerIndex);
+      const dummyText = document.createElement('span');
+      dummyText.className = css(styles.logViewerText);
+      containerRef.current.appendChild(dummyIndex);
+      containerRef.current.appendChild(dummyText);
+      const dummyIndexStyles = getComputedStyle(dummyIndex);
+      const dummyTextStyles = getComputedStyle(dummyText);
+      setLineHeight(parseFloat(dummyTextStyles.lineHeight));
+      const lineWidth = hasLineNumbers
+        ? (containerRef.current as HTMLDivElement).clientWidth -
+          (parseFloat(dummyTextStyles.paddingLeft) +
+            parseFloat(dummyTextStyles.paddingRight) +
+            parseFloat(dummyIndexStyles.width))
+        : (containerRef.current as HTMLDivElement).clientWidth -
+          (parseFloat(dummyTextStyles.paddingLeft) + parseFloat(dummyTextStyles.paddingRight));
+      const charNumsPerLine = getCharNums(
+        lineWidth,
+        `${dummyTextStyles.fontWeight} ${dummyTextStyles.fontSize} ${dummyTextStyles.fontFamily}`
+      );
+      setCharNumsPerLine(charNumsPerLine);
+      containerRef.current.removeChild(dummyIndex);
+      containerRef.current.removeChild(dummyText);
+      setListKey(listKey => listKey + 1);
+    };
+
     const scrollToRowInFocus = (searchedRowIndex: number) => {
       setRowInFocus(searchedRowIndex);
       logViewerRef.current.scrollToItem(searchedRowIndex, 'center');
@@ -225,9 +227,10 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
 
     const createList = (parsedData: string[]) => (
       <List
+        key={listKey}
         className={css(styles.logViewerList)}
-        height={height}
-        width={width}
+        height={containerRef.current.clientHeight}
+        width={containerRef.current.clientWidth}
         itemSize={guessRowHeight}
         itemCount={typeof itemCount === 'undefined' ? parsedData.length : itemCount}
         itemData={dataToRender}
@@ -272,8 +275,8 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
             </LogViewerToolbarContext.Provider>
           )}
           {header}
-          <div className={css(styles.logViewerMain)} ref={containerRef}>
-            {loading ? <div style={{ height }}>{loadingContent}</div> : createList(parsedData)}
+          <div className={css(styles.logViewerMain)} style={{ height, width }} ref={containerRef}>
+            {loading ? <div>{loadingContent}</div> : createList(parsedData)}
           </div>
           {footer}
         </div>

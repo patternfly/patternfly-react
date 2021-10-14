@@ -254,6 +254,7 @@ ComplexToolbarLogViewer = () => {
       id="complex-toolbar-demo"
       scrollToRow={currentItemCount}
       innerRef={logViewerRef}
+      height={isFullScreen ? '100%' : 600}
       toolbar={
         <Toolbar>
           <ToolbarContent>
