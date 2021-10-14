@@ -60,6 +60,8 @@ export interface TableProps extends OUIAProps {
   onSelect?: OnSelect;
   /** Enables or Disables the ability to select all - this is mutually exclusive with radio button select variant */
   canSelectAll?: boolean;
+  /** Flag indicating the select all checkbox is disabled */
+  isHeaderSelectDisabled?: boolean;
   /** Specifies the type of the select element variant - can be one of checkbox or radio button */
   selectVariant?: 'checkbox' | 'radio';
   /** Function triggered when a row's inline edit is activated. Adds a column for inline edit when present. */
@@ -132,6 +134,7 @@ export class Table extends React.Component<TableProps, {}> {
     gridBreakPoint: TableGridBreakpoint.gridMd,
     role: 'grid',
     canSelectAll: true,
+    isHeaderSelectDisabled: false,
     selectVariant: 'checkbox',
     ouiaSafe: true,
     isStickyHeader: false,
@@ -160,6 +163,7 @@ export class Table extends React.Component<TableProps, {}> {
       onSort,
       onSelect,
       canSelectAll,
+      isHeaderSelectDisabled,
       selectVariant,
       sortBy,
       children,
@@ -197,6 +201,7 @@ export class Table extends React.Component<TableProps, {}> {
       onSort,
       onSelect,
       canSelectAll: selectVariant === RowSelectVariant.radio ? false : canSelectAll,
+      isHeaderSelectDisabled,
       selectVariant,
       allRowsSelected: onSelect ? this.areAllRowsSelected(rows as IRow[]) : false,
       actions,

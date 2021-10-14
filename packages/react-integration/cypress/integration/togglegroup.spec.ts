@@ -1,8 +1,6 @@
 describe('Toggle Group Demo Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#toggle-group-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/toggle-group-demo-nav-link');
+    cy.visit('http://localhost:3000/toggle-group-demo-nav-link');
   });
 
   it('Verify toggle group buttons can be checked unless disabled', () => {

@@ -3,6 +3,79 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.14.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.14.0...@patternfly/react-tokens@4.14.1) (2021-10-13)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+# [4.14.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.13.5...@patternfly/react-tokens@4.14.0) (2021-10-11)
+
+
+### Features
+
+* **tokens:** bump ([#6434](https://github.com/patternfly/patternfly-react/issues/6434)) ([ff47603](https://github.com/patternfly/patternfly-react/commit/ff47603803644574dc66a20a6b6c3d3a30836565))
+
+
+
+
+
+## [4.13.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.13.4...@patternfly/react-tokens@4.13.5) (2021-10-11)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [4.13.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.13.3...@patternfly/react-tokens@4.13.4) (2021-10-08)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [4.13.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.13.2...@patternfly/react-tokens@4.13.3) (2021-10-06)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [4.13.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.13.1...@patternfly/react-tokens@4.13.2) (2021-10-06)
+
+
+### Bug Fixes
+
+* **react-tokens:** parse var(--pf, initialValue) ([#6408](https://github.com/patternfly/patternfly-react/issues/6408)) ([4879a2b](https://github.com/patternfly/patternfly-react/commit/4879a2b05dac307ff5c13ef42b4a14a0515a4092))
+
+
+
+
+
+## [4.13.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.13.0...@patternfly/react-tokens@4.13.1) (2021-10-01)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+# [4.13.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.12.18...@patternfly/react-tokens@4.13.0) (2021-09-29)
+
+
+### Features
+
+* **JumpLinks:** Added toggle text ([#6347](https://github.com/patternfly/patternfly-react/issues/6347)) ([36042f6](https://github.com/patternfly/patternfly-react/commit/36042f679880f819afd26618797167a42f5fe901))
+
+
+
+
+
 ## [4.12.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@4.12.17...@patternfly/react-tokens@4.12.18) (2021-09-14)
 
 **Note:** Version bump only for package @patternfly/react-tokens

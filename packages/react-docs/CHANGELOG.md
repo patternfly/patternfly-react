@@ -3,6 +3,268 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.23.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.12...@patternfly/react-docs@5.23.13) (2021-10-14)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.23.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.11...@patternfly/react-docs@5.23.12) (2021-10-14)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.23.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.10...@patternfly/react-docs@5.23.11) (2021-10-14)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.23.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.9...@patternfly/react-docs@5.23.10) (2021-10-13)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.23.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.8...@patternfly/react-docs@5.23.9) (2021-10-13)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.23.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.7...@patternfly/react-docs@5.23.8) (2021-10-12)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.23.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.6...@patternfly/react-docs@5.23.7) (2021-10-11)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.23.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.5...@patternfly/react-docs@5.23.6) (2021-10-11)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.23.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.4...@patternfly/react-docs@5.23.5) (2021-10-11)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.23.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.3...@patternfly/react-docs@5.23.4) (2021-10-11)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.23.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.2...@patternfly/react-docs@5.23.3) (2021-10-08)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.23.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.1...@patternfly/react-docs@5.23.2) (2021-10-07)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.23.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.0...@patternfly/react-docs@5.23.1) (2021-10-07)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+# [5.23.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.22.11...@patternfly/react-docs@5.23.0) (2021-10-06)
+
+
+### Features
+
+* **Table:** add toolbar sort demos ([#6353](https://github.com/patternfly/patternfly-react/issues/6353)) ([a806836](https://github.com/patternfly/patternfly-react/commit/a80683675821c81ccdc9b3a0ea8bb91cc81d14a8))
+
+
+
+
+
+## [5.22.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.22.10...@patternfly/react-docs@5.22.11) (2021-10-06)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.22.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.22.9...@patternfly/react-docs@5.22.10) (2021-10-06)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.22.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.22.8...@patternfly/react-docs@5.22.9) (2021-10-05)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.22.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.22.7...@patternfly/react-docs@5.22.8) (2021-10-05)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.22.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.22.6...@patternfly/react-docs@5.22.7) (2021-10-05)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.22.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.22.5...@patternfly/react-docs@5.22.6) (2021-10-05)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.22.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.22.4...@patternfly/react-docs@5.22.5) (2021-10-04)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.22.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.22.3...@patternfly/react-docs@5.22.4) (2021-10-01)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.22.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.22.2...@patternfly/react-docs@5.22.3) (2021-10-01)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.22.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.22.1...@patternfly/react-docs@5.22.2) (2021-10-01)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.22.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.22.0...@patternfly/react-docs@5.22.1) (2021-09-30)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+# [5.22.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.21.50...@patternfly/react-docs@5.22.0) (2021-09-29)
+
+
+### Features
+
+* **JumpLinks:** Added toggle text ([#6347](https://github.com/patternfly/patternfly-react/issues/6347)) ([36042f6](https://github.com/patternfly/patternfly-react/commit/36042f679880f819afd26618797167a42f5fe901))
+
+
+
+
+
+## [5.21.50](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.21.49...@patternfly/react-docs@5.21.50) (2021-09-29)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.21.49](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.21.48...@patternfly/react-docs@5.21.49) (2021-09-28)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.21.48](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.21.47...@patternfly/react-docs@5.21.48) (2021-09-27)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.21.47](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.21.46...@patternfly/react-docs@5.21.47) (2021-09-27)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.21.46](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.21.45...@patternfly/react-docs@5.21.46) (2021-09-24)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.21.45](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.21.44...@patternfly/react-docs@5.21.45) (2021-09-24)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
 ## [5.21.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.21.43...@patternfly/react-docs@5.21.44) (2021-09-22)
 
 **Note:** Version bump only for package @patternfly/react-docs

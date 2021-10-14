@@ -3,6 +3,78 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.15.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.15.31...@patternfly/react-charts@6.15.32) (2021-10-13)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.15.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.15.30...@patternfly/react-charts@6.15.31) (2021-10-11)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.15.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.15.29...@patternfly/react-charts@6.15.30) (2021-10-11)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.15.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.15.28...@patternfly/react-charts@6.15.29) (2021-10-08)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.15.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.15.27...@patternfly/react-charts@6.15.28) (2021-10-06)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.15.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.15.26...@patternfly/react-charts@6.15.27) (2021-10-06)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.15.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.15.25...@patternfly/react-charts@6.15.26) (2021-10-01)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.15.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.15.24...@patternfly/react-charts@6.15.25) (2021-09-29)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [6.15.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.15.23...@patternfly/react-charts@6.15.24) (2021-09-24)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
 ## [6.15.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@6.15.22...@patternfly/react-charts@6.15.23) (2021-09-14)
 
 **Note:** Version bump only for package @patternfly/react-charts

@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 import { DroppableContext } from './DroppableContext';
 
 interface DroppableProps extends React.HTMLProps<HTMLDivElement> {
@@ -10,6 +12,8 @@ interface DroppableProps extends React.HTMLProps<HTMLDivElement> {
   zone?: string;
   /** Id to be passed back on drop events */
   droppableId?: string;
+  /** Don't wrap the component in a div. Requires passing a single child. */
+  hasNoWrapper?: boolean;
 }
 
 export const Droppable: React.FunctionComponent<DroppableProps> = ({
@@ -17,12 +21,24 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
   children,
   zone = 'defaultZone',
   droppableId = 'defaultId',
+  hasNoWrapper = false,
   ...props
-}: DroppableProps) => (
-  <DroppableContext.Provider value={{ zone, droppableId }}>
-    <div data-pf-droppable={zone} data-pf-droppableid={droppableId} className={className} {...props}>
-      {children}
-    </div>
-  </DroppableContext.Provider>
-);
+}: DroppableProps) => {
+  const childProps = {
+    'data-pf-droppable': zone,
+    'data-pf-droppableid': droppableId,
+    className: css(styles.droppable, className),
+    ...props
+  };
+
+  return (
+    <DroppableContext.Provider value={{ zone, droppableId }}>
+      {hasNoWrapper ? (
+        React.cloneElement(children as React.ReactElement, childProps)
+      ) : (
+        <div {...childProps}>{children}</div>
+      )}
+    </DroppableContext.Provider>
+  );
+};
 Droppable.displayName = 'Droppable';

@@ -1,8 +1,6 @@
 describe('Nav Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#nav-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/nav-demo-nav-link');
+    cy.visit('http://localhost:3000/nav-demo-nav-link');
   });
 
   it('Verify Default Nav', () => {
@@ -107,10 +105,6 @@ describe('Nav Test', () => {
     });
   });
 
-  it('Verify Horizontal SubNav', () => {
-    cy.get('#subnav-horizontal').should('have.class', 'pf-m-horizontal-subnav');
-  });
-
   it('Verify Tertiary Nav', () => {
     cy.get('#nav-primary-tertiary .pf-c-nav__link').each((tertiaryLink: JQuery<HTMLAnchorElement>, index: number) => {
       const isCurrent = tertiaryLink.hasClass('pf-m-current');
@@ -125,5 +119,17 @@ describe('Nav Test', () => {
         }
       );
     });
+  });
+
+  it('Verify Flyout Nav', () => {
+    cy.get('#3-child').should('not.exist');
+    cy.get('#flyout-link3').trigger('mouseover');
+    cy.get('#3-child').should('exist');
+    cy.get('#2-child').should('not.exist');
+    cy.get('#next-menu-3').trigger('mouseover');
+    cy.get('#2-child').should('exist');
+    cy.get('#flyout-link2').trigger('mouseover');
+    cy.get('#3-child').should('not.exist');
+    cy.get('#2-child').should('not.exist');
   });
 });

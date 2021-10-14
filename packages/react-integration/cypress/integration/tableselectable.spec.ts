@@ -1,8 +1,6 @@
 describe('Table Selectable Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#table-selectable-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/table-selectable-demo-nav-link');
+    cy.visit('http://localhost:3000/table-selectable-demo-nav-link');
   });
 
   it('Verify table string', () => {

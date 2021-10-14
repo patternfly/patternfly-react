@@ -219,7 +219,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
       {...props}
     >
       <div className={styles.jumpLinksMain}>
-        <div className={styles.jumpLinksHeader}>
+        <div className={css('pf-c-jump-links__header')}>
           {expandable && (
             <div className={styles.jumpLinksToggle}>
               <Button
@@ -231,14 +231,11 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                 <span className={styles.jumpLinksToggleIcon}>
                   <AngleRightIcon />
                 </span>
+                {label && <span className={css(styles.jumpLinksToggleText)}> {label} </span>}
               </Button>
             </div>
           )}
-          {label && (
-            <div className={css(styles.jumpLinksLabel, expandable && !alwaysShowLabel && styles.modifiers.toggle)}>
-              {label}
-            </div>
-          )}
+          {label && alwaysShowLabel && <div className={css(styles.jumpLinksLabel)}>{label}</div>}
         </div>
         <ul className={styles.jumpLinksList}>{cloneChildren(children)}</ul>
       </div>

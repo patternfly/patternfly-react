@@ -1,8 +1,6 @@
 describe('Tab Demo String Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#tab-string-event-key-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/tab-string-event-key-demo-nav-link');
+    cy.visit('http://localhost:3000/tab-string-event-key-demo-nav-link');
   });
 
   it('Verify tabs with string event keys, and tab navigation', () => {

@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { LogViewerRow } from './LogViewerRow';
 import { DEFAULT_FOCUS, DEFAULT_SEARCH_INDEX, DEFAULT_INDEX } from './utils/constants';
 import { searchForKeyword, parseConsoleOutput, escapeString } from './utils/utils';
-import { DynamicSizeList as List, areEqual } from '../react-window';
+import { VariableSizeList as List, areEqual } from '../react-window';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
 
 interface LogViewerProps {
@@ -51,9 +51,23 @@ interface LogViewerProps {
     scrollOffsetToBottom: number;
     scrollUpdateWasRequested: boolean;
   }) => void;
+  /** Forwarded ref */
+  innerRef?: React.RefObject<any>;
 }
 
-export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
+let canvas: HTMLCanvasElement | undefined;
+
+const getCharNums = (windowWidth: number, font: string) => {
+  // if given, use cached canvas for better performance
+  // else, create new canvas
+  canvas = canvas || document.createElement('canvas');
+  const context = canvas.getContext('2d');
+  context.font = font;
+  const oneChar = context.measureText('a');
+  return Math.floor(windowWidth / oneChar.width);
+};
+
+const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
   ({
     data = '',
     hasLineNumbers = true,
@@ -68,6 +82,7 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
     header,
     footer,
     onScroll,
+    innerRef,
     ...props
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
@@ -76,24 +91,46 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
     const [highlightedRowIndexes, setHighlightedRowIndexes] = useState<number[] | null>([]);
     const [currentSearchedItemCount, setCurrentSearchedItemCount] = useState<number>(0);
     const [parsedData, setParsedData] = useState<string[] | null>([]);
-
-    const [currentWidth, setCurrentWidth] = useState<number | null>(width || 600);
+    const [lineHeight, setLineHeight] = useState<number>(0);
+    const [charNumsPerLine, setCharNumsPerLine] = useState<number>(0);
     const [resizing, setResizing] = useState(false);
     const [loading, setLoading] = useState(true);
     const [firstMount, setFirstMount] = useState(true);
 
-    const logViewerRef = React.useRef<any>();
-    const containerRef = React.useRef<any>();
+    const logViewerRef = innerRef || React.createRef<any>();
+    const containerRef = React.createRef<any>();
     let resizeTimer = null as any;
 
-    React.useEffect(() => {
+    useEffect(() => {
       if (containerRef && containerRef.current && loading) {
         window.addEventListener('resize', callbackResize);
         if (firstMount) {
-          setCurrentWidth((containerRef.current as HTMLDivElement).clientWidth);
           setLoading(false);
           setFirstMount(false);
         }
+        const dummyIndex = document.createElement('span');
+        dummyIndex.className = css(styles.logViewerIndex);
+        const dummyText = document.createElement('span');
+        dummyText.className = css(styles.logViewerText);
+        containerRef.current.appendChild(dummyIndex);
+        containerRef.current.appendChild(dummyText);
+        const dummyIndexStyles = getComputedStyle(dummyIndex);
+        const dummyTextStyles = getComputedStyle(dummyText);
+        setLineHeight(parseFloat(dummyTextStyles.lineHeight));
+        const lineWidth = hasLineNumbers
+          ? (containerRef.current as HTMLDivElement).clientWidth -
+            (parseFloat(dummyTextStyles.paddingLeft) +
+              parseFloat(dummyTextStyles.paddingRight) +
+              parseFloat(dummyIndexStyles.width))
+          : (containerRef.current as HTMLDivElement).clientWidth -
+            (parseFloat(dummyTextStyles.paddingLeft) + parseFloat(dummyTextStyles.paddingRight));
+        const charNumsPerLine = getCharNums(
+          lineWidth,
+          `${dummyTextStyles.fontWeight} ${dummyTextStyles.fontSize} ${dummyTextStyles.fontFamily}`
+        );
+        setCharNumsPerLine(charNumsPerLine);
+        containerRef.current.removeChild(dummyIndex);
+        containerRef.current.removeChild(dummyText);
       }
       return () => window.removeEventListener('resize', callbackResize);
     }, [containerRef.current]);
@@ -111,7 +148,6 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
 
     useEffect(() => {
       if (!resizing) {
-        setCurrentWidth((containerRef.current as HTMLDivElement).clientWidth);
         setLoading(false);
       }
     }, [resizing]);
@@ -134,10 +170,16 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
     }, [data]);
 
     useEffect(() => {
+      if (logViewerRef && logViewerRef.current) {
+        logViewerRef.current.resetAfterIndex(0);
+      }
+    }, [parsedData]);
+
+    useEffect(() => {
       if (scrollToRow && parsedData.length) {
         setRowInFocus(parsedData.length - 1);
         if (logViewerRef && logViewerRef.current) {
-          logViewerRef.current.scrollToItem(scrollToRow, 'auto');
+          logViewerRef.current.scrollToItem(scrollToRow, 'center');
         }
       }
     }, [parsedData, scrollToRow]);
@@ -173,15 +215,20 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
       logViewerRef.current.scrollToItem(searchedRowIndex, 'center');
     };
 
-    const scrollToBottom = () => {
-      logViewerRef.current.scrollToBottom();
+    const guessRowHeight = (rowIndex: number) => {
+      const rowText = parsedData[rowIndex];
+      // get the row numbers of the current text
+      const numRows = Math.ceil(rowText.length / charNumsPerLine);
+      // multiply by line height to get the total height
+      return lineHeight * (numRows || 1);
     };
 
     const createList = (parsedData: string[]) => (
       <List
         className={css(styles.logViewerList)}
         height={height}
-        width={currentWidth}
+        width={width}
+        itemSize={guessRowHeight}
         itemCount={typeof itemCount === 'undefined' ? parsedData.length : itemCount}
         itemData={dataToRender}
         ref={logViewerRef}
@@ -196,8 +243,7 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
       <LogViewerContext.Provider
         value={{
           parsedData,
-          searchedInput,
-          scrollToBottom
+          searchedInput
         }}
       >
         <div
@@ -236,5 +282,9 @@ export const LogViewer: React.FunctionComponent<LogViewerProps> = memo(
   },
   areEqual
 );
+
+export const LogViewer = React.forwardRef((props: LogViewerProps, ref: React.Ref<any>) => (
+  <LogViewerBase innerRef={ref as React.MutableRefObject<any>} {...props} />
+));
 
 LogViewer.displayName = 'LogViewer';

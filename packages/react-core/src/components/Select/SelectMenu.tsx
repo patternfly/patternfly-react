@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Select/select';
 import formStyles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 import { SelectOptionObject, SelectOption } from './SelectOption';
-import { SelectConsumer, SelectVariant, SelectContextInterface } from './selectConstants';
+import { SelectConsumer, SelectPosition, SelectVariant, SelectContextInterface } from './selectConstants';
 import { PickOptional } from '../../helpers/typeUtils';
 
 import { SelectGroup } from './SelectGroup';
@@ -28,6 +28,8 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
   openedOnEnter?: boolean;
   /** Flag to specify the  maximum height of the menu, as a string percentage or number of pixels */
   maxHeight?: string | number;
+  /** Indicates where menu will be alligned horizontally */
+  position?: SelectPosition | 'right' | 'left';
   /** Inner prop passed from parent */
   noResultsFoundText?: string;
   /** Inner prop passed from parent */
@@ -56,6 +58,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
     openedOnEnter: false,
     selected: '',
     maxHeight: '',
+    position: SelectPosition.left,
     sendRef: () => {},
     keyHandler: () => {},
     isCustomContent: false,
@@ -181,6 +184,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
       selected,
       checked,
       isGrouped,
+      position,
       sendRef,
       keyHandler,
       maxHeight,
@@ -199,7 +203,11 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
     let Component = 'div';
     const variantProps = {
       ref: innerRef,
-      className: css(!footer ? styles.selectMenu : 'pf-c-select__menu-list', className),
+      className: css(
+        !footer ? styles.selectMenu : 'pf-c-select__menu-list',
+        position === SelectPosition.right && styles.modifiers.alignRight,
+        className
+      ),
       ...(maxHeight && { style: { maxHeight, overflow: 'auto' } })
     } as React.HTMLAttributes<HTMLElement>;
     const extendedChildren = () =>

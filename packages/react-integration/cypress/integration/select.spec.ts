@@ -1,8 +1,6 @@
 describe('Select Test', () => {
   it('Navigate to demo section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#select-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/select-demo-nav-link');
+    cy.visit('http://localhost:3000/select-demo-nav-link');
   });
 
   it('Verify Select with Divider', () => {

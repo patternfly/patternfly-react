@@ -1,4 +1,4 @@
-const resolve = require('@rollup/plugin-node-resolve');
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const commonjs = require('@rollup/plugin-commonjs');
 const scss = require('rollup-plugin-scss');
 const replace = require('@rollup/plugin-replace');
@@ -34,7 +34,7 @@ module.exports = ({ packageName, name }) => ({
     replace({
       'process.env.NODE_ENV': `'${isProduction ? 'production' : 'development'}'`
     }),
-    resolve(),
+    nodeResolve(),
     commonjs(),
     scss(),
     isProduction && terser(),

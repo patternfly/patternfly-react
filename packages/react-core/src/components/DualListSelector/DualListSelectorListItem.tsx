@@ -1,6 +1,10 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
+import { getUniqueId } from '../../helpers';
+import GripVerticalIcon from '@patternfly/react-icons/dist/esm/icons/grip-vertical-icon';
+import { Button, ButtonVariant } from '../Button';
+import { DualListSelectorListContext } from './DualListSelectorContext';
 
 export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Content rendered inside the dual list selector. */
@@ -9,70 +13,78 @@ export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIEle
   className?: string;
   /** Flag indicating the list item is currently selected. */
   isSelected?: boolean;
-  /** Flag indicating this list item is in the chosen pane. */
-  isChosen?: boolean;
-  /** Internal callback to pass this ref up to the parent. */
-  sendRef?: (optionRef: React.ReactNode, index: number) => void;
-  /** Internal field used to keep track of the order of filtered options. */
-  filteredIndex?: number;
-  /** Internal field used to keep track of order of unfiltered options. */
-  orderIndex?: number;
   /** Callback fired when an option is selected.  */
-  onOptionSelect?: (e: React.MouseEvent | React.ChangeEvent, index: number, isChosen: boolean) => void;
-  /** ID of the option */
-  id: string;
+  onOptionSelect?: (e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent, id?: string) => void;
+  /** ID of the option. */
+  id?: string;
+  /** @hide Internal field used to keep track of order of unfiltered options. */
+  orderIndex?: number;
+  /** @hide Forwarded ref */
+  innerRef?: React.RefObject<HTMLLIElement>;
+  /** Flag indicating this item is draggable for reordring */
+  isDraggable?: boolean;
+  /** Accessible label for the draggable button on draggable list items */
+  draggableButtonAriaLabel?: string;
 }
 
-export class DualListSelectorListItem extends React.Component<DualListSelectorListItemProps> {
-  private ref = React.createRef<HTMLButtonElement>();
-  static displayName = 'DualListSelectorListItem';
+export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelectorListItemProps> = ({
+  onOptionSelect,
+  orderIndex,
+  children,
+  className,
+  id = getUniqueId('dual-list-selector-list-item'),
+  isSelected,
+  innerRef,
+  isDraggable = false,
+  draggableButtonAriaLabel = 'Reorder option',
+  ...props
+}: DualListSelectorListItemProps) => {
+  const ref = innerRef || React.useRef<HTMLLIElement>(null);
+  const { setFocusedOption } = React.useContext(DualListSelectorListContext);
 
-  componentDidMount() {
-    this.props.sendRef(this.ref.current, this.props.filteredIndex);
-  }
+  return (
+    <li
+      className={css(styles.dualListSelectorListItem, className)}
+      key={orderIndex}
+      onClick={(e: React.MouseEvent) => {
+        setFocusedOption(id);
+        onOptionSelect(e, id);
+      }}
+      onKeyDown={(e: React.KeyboardEvent) => {
+        if (e.key === ' ' || e.key === 'Enter') {
+          (document.activeElement as HTMLElement).click();
+          e.preventDefault();
+        }
+      }}
+      aria-selected={isSelected}
+      id={id}
+      ref={ref}
+      role="option"
+      tabIndex={-1}
+      {...props}
+    >
+      <div className={css(styles.dualListSelectorListItemRow, isSelected && styles.modifiers.selected)}>
+        {isDraggable && (
+          <div className={css(styles.dualListSelectorDraggable)}>
+            <Button variant={ButtonVariant.plain} aria-label={draggableButtonAriaLabel} component="span">
+              <GripVerticalIcon style={{ verticalAlign: '-0.3em' }} />
+            </Button>
+          </div>
+        )}
+        <span className={css(styles.dualListSelectorItem)}>
+          <span className={css(styles.dualListSelectorItemMain)}>
+            <span className={css(styles.dualListSelectorItemText)}>{children}</span>
+          </span>
+        </span>
+      </div>
+    </li>
+  );
+};
+DualListSelectorListItemBase.displayName = 'DualListSelectorListItemBase';
 
-  componentDidUpdate() {
-    this.props.sendRef(this.ref.current, this.props.filteredIndex);
-  }
-
-  render() {
-    const {
-      onOptionSelect,
-      orderIndex,
-      children,
-      className,
-      id,
-      isSelected,
-      isChosen,
-      /* eslint-disable @typescript-eslint/no-unused-vars */
-      sendRef,
-      filteredIndex,
-      ...props
-    } = this.props;
-
-    return (
-      <li
-        className={css(styles.dualListSelectorListItem, className)}
-        key={orderIndex}
-        {...props}
-        aria-selected={isSelected}
-        role="option"
-      >
-        <div className={css(styles.dualListSelectorListItemRow, isSelected && styles.modifiers.selected)}>
-          <button
-            className={css(styles.dualListSelectorItem)}
-            onClick={e => onOptionSelect(e, orderIndex, isChosen)}
-            id={id}
-            ref={this.ref}
-            tabIndex={-1}
-            type="button"
-          >
-            <span className={css(styles.dualListSelectorItemMain)}>
-              <span className={css(styles.dualListSelectorItemText)}>{children}</span>
-            </span>
-          </button>
-        </div>
-      </li>
-    );
-  }
-}
+export const DualListSelectorListItem = React.forwardRef(
+  (props: DualListSelectorListItemProps, ref: React.Ref<HTMLLIElement>) => (
+    <DualListSelectorListItemBase innerRef={ref as React.MutableRefObject<any>} {...props} />
+  )
+);
+DualListSelectorListItem.displayName = 'DualListSelectorListItem';

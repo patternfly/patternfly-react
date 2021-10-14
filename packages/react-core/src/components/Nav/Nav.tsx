@@ -55,9 +55,14 @@ export const NavContext = React.createContext<{
   onToggle?: (event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) => void;
   updateIsScrollable?: (isScrollable: boolean) => void;
   isHorizontal?: boolean;
+  flyoutRef?: React.Ref<HTMLLIElement>;
+  setFlyoutRef?: (ref: React.Ref<HTMLLIElement>) => void;
 }>({});
 
-export class Nav extends React.Component<NavProps, { isScrollable: boolean; ouiaStateId: string }> {
+export class Nav extends React.Component<
+  NavProps,
+  { isScrollable: boolean; ouiaStateId: string; flyoutRef: React.Ref<HTMLLIElement> | null }
+> {
   static displayName = 'Nav';
   static defaultProps: NavProps = {
     onSelect: () => undefined,
@@ -68,7 +73,8 @@ export class Nav extends React.Component<NavProps, { isScrollable: boolean; ouia
 
   state = {
     isScrollable: false,
-    ouiaStateId: getDefaultOUIAId(Nav.displayName, this.props.variant)
+    ouiaStateId: getDefaultOUIAId(Nav.displayName, this.props.variant),
+    flyoutRef: null as React.Ref<HTMLLIElement>
   };
 
   // Callback from NavItem
@@ -136,7 +142,9 @@ export class Nav extends React.Component<NavProps, { isScrollable: boolean; ouia
           onToggle: (event: React.MouseEvent<HTMLButtonElement>, groupId: number | string, expanded: boolean) =>
             this.onToggle(event, groupId, expanded),
           updateIsScrollable: (isScrollable: boolean) => this.setState({ isScrollable }),
-          isHorizontal: ['horizontal', 'tertiary', 'horizontal-subnav'].includes(variant)
+          isHorizontal: ['horizontal', 'tertiary', 'horizontal-subnav'].includes(variant),
+          flyoutRef: this.state.flyoutRef,
+          setFlyoutRef: flyoutRef => this.setState({ flyoutRef })
         }}
       >
         <nav

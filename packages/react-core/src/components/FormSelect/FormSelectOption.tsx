@@ -9,7 +9,7 @@ export interface FormSelectOptionProps extends Omit<React.HTMLProps<HTMLOptionEl
   label: string;
   /** flag indicating if the option is disabled */
   isDisabled?: boolean;
-  /* flag indicating if option will have placeholder styling applied when selected */
+  /** flag indicating if option will have placeholder styling applied when selected **/
   isPlaceholder?: boolean;
 }
 

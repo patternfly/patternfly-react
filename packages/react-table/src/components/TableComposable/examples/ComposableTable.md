@@ -12,26 +12,26 @@ propComponents:
     'Td',
     'Caption',
     'TableText',
-    'TdActionsType', 
-    'TdSelectType', 
+    'TdActionsType',
+    'TdSelectType',
     'ThSelectType',
-    'TdTreeRowType', 
-    'IActions', 
-    'TdCompoundExpandType', 
-    'TdFavoritesType', 
-    'TdDraggableType', 
-    'ThInfoType', 
+    'TdTreeRowType',
+    'IActions',
+    'TdCompoundExpandType',
+    'TdFavoritesType',
+    'TdDraggableType',
+    'ThInfoType',
     'TdExpandType',
     'EditableSelectInputCell',
     'EditableTextCell',
-    'EditableSelectInputProps', 
-    'EditableTextCellProps', 
+    'EditableSelectInputProps',
+    'EditableTextCellProps',
     'ThSortType',
   ]
 ouia: true
 ---
-# Table Composable 
 
+# Table Composable
 
 Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
 
@@ -50,8 +50,7 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
-
-import { Checkbox, ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
@@ -59,7 +58,6 @@ import styles from '@patternfly/react-styles/css/components/Table/table';
 import DemoSortableTable from './DemoSortableTable';
 
 ## TableComposable examples
-
 
 The `TableComposable` component differs from the regular `Table` component, in that it allows you to compose the table by nesting the relevant `Thead`, `Tbody`, `Tr`, `Th` and `Td` components within it. For a less declarative and more implicit approach, use the `Table` component instead.
 
@@ -70,6 +68,7 @@ Some general notes:
 - You can set the `TableComposable` variant to `compact`
 
 ### Composable: Basic
+
 ```js
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, Caption } from '@patternfly/react-table';
@@ -158,7 +157,7 @@ ComposableTableMisc = () => {
     [{ title: 'one - 2', colSpan: 3 }, null, null, 'four - 2', 'five - 2'],
     ['one - 3', 'two - 3', 'three - 3', 'four - 3', { title: 'five - 3 (not centered)', textCenter: false }]
   ];
-  
+
   return (
     <TableComposable aria-label="Misc table">
       <Thead noWrap>
@@ -256,6 +255,8 @@ type OnSort = (
 
 ```
 
+The built in display for sorting is not fully responsive, as the column headers will be displayed per row when the screen size is small. To see a full page demo of a responsive sortable table, utilizing a toolbar item to control sorting for small screens, view the `Sortable - responsive` demo in the `React demos` tab.
+
 ```js
 import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
@@ -351,10 +352,166 @@ ComposableTableSortable = () => {
 };
 ```
 
+### Composable: Sortable - custom control
+
+Sorting a table may also be controlled manually with a toolbar control. To see a full page demo of a responsive table, view the `Sortable - responsive` demo in the `React demos` tab.
+
+```js
+import React from 'react';
+import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
+import {
+  Toolbar,
+  ToolbarItem,
+  ToolbarContent,
+  OptionsMenu,
+  OptionsMenuItemGroup,
+  OptionsMenuItem,
+  OptionsMenuSeparator,
+  OptionsMenuToggle
+} from '@patternfly/react-core';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+
+ComposableTableSortable = () => {
+  const columns = ['Column 1', 'Column 2', 'Column 3', 'Column 4', 'Column 5'];
+  const [rows, setRows] = React.useState([
+    ['one', 'two', 'a', 'four', 'five'],
+    ['a', 'two', 'k', 'four', 'five'],
+    ['p', 'two', 'b', 'four', 'five']
+  ]);
+  // index of the currently active column
+  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
+  // sort direction of the currently active column
+  const [activeSortDirection, setActiveSortDirection] = React.useState('none');
+  // sort dropdown expansion
+  const [isSortDropdownOpen, setIsSortDropdownOpen] = React.useState(false);
+  const onSort = (event, index, direction) => {
+    setActiveSortIndex(index);
+    setActiveSortDirection(direction);
+    console.log('i; ', index, direction);
+    // sorts the rows
+    const updatedRows = rows.sort((a, b) => {
+      if (typeof a[index] === 'number') {
+        // numeric sort
+        if (direction === 'asc') {
+          return a[index] - b[index];
+        }
+        return b[index] - a[index];
+      } else {
+        // string sort
+        if (direction === 'asc') {
+          return a[index].localeCompare(b[index]);
+        }
+        return b[index].localeCompare(a[index]);
+      }
+    });
+    setRows(updatedRows);
+  };
+  return (
+    <React.Fragment>
+      <Toolbar id="toolbar">
+        <ToolbarContent>
+          <ToolbarItem>
+            <OptionsMenu
+              id="options-menu-multiple-options-example"
+              menuItems={[
+                <OptionsMenuItemGroup key="first group" aria-label="Sort column">
+                  {columns.map((column, columnIndex) => (
+                    <OptionsMenuItem
+                      key={column}
+                      isSelected={activeSortIndex === columnIndex}
+                      onSelect={evt =>
+                        onSort(evt, columnIndex, activeSortDirection !== 'none' ? activeSortDirection : 'asc')
+                      }
+                    >
+                      {column}
+                    </OptionsMenuItem>
+                  ))}
+                </OptionsMenuItemGroup>,
+                <OptionsMenuSeparator key="separator" />,
+                <OptionsMenuItemGroup key="second group" aria-label="Sort direction">
+                  <OptionsMenuItem
+                    onSelect={evt => onSort(evt, activeSortIndex, 'asc')}
+                    isSelected={activeSortDirection === 'asc'}
+                    id="ascending"
+                    key="ascending"
+                  >
+                    Ascending
+                  </OptionsMenuItem>
+                  <OptionsMenuItem
+                    onSelect={evt => onSort(evt, activeSortIndex, 'desc')}
+                    isSelected={activeSortDirection === 'desc'}
+                    id="descending"
+                    key="descending"
+                  >
+                    Descending
+                  </OptionsMenuItem>
+                </OptionsMenuItemGroup>
+              ]}
+              isOpen={isSortDropdownOpen}
+              toggle={
+                <OptionsMenuToggle
+                  hideCaret
+                  onToggle={() => setIsSortDropdownOpen(!isSortDropdownOpen)}
+                  toggleTemplate={<SortAmountDownIcon />}
+                />
+              }
+              isPlain
+              isGrouped
+            />
+          </ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+      <TableComposable aria-label="Sortable Table">
+        <Thead>
+          <Tr>
+            {columns.map((column, columnIndex) => {
+              const sortParams = {
+                sort: {
+                  sortBy: {
+                    index: activeSortIndex,
+                    direction: activeSortDirection
+                  },
+                  onSort,
+                  columnIndex
+                }
+              };
+              const infoParams =
+                columnIndex === 2
+                  ? {
+                      info: {
+                        tooltip: 'More information'
+                      }
+                    }
+                  : {};
+              return (
+                <Th key={columnIndex} {...sortParams} {...infoParams}>
+                  {column}
+                </Th>
+              );
+            })}
+          </Tr>
+        </Thead>
+        <Tbody>
+          {rows.map((row, rowIndex) => (
+            <Tr key={rowIndex}>
+              {row.map((cell, cellIndex) => (
+                <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
+                  {cell}
+                </Td>
+              ))}
+            </Tr>
+          ))}
+        </Tbody>
+      </TableComposable>
+    </React.Fragment>
+  );
+};
+```
+
 ### Composable: Selectable with checkbox
 
 To make a row selectable, the table needs a selection column.
-The selection column is just another column, but with selection specific props added. 
+The selection column is just another column, but with selection specific props added.
 We add it as the first header cell and also as the first body cell for each row.
 
 To make a column sortable, pass a `ThSelectType` object via the `select` prop on a column's `Th`.
@@ -364,6 +521,7 @@ To make a row sortable, pass a `TdSelectType` object via the `select` prop on ea
 Both the `TdSelectType` and the `ThSelectType` expect an `OnSelect` event handler with the following signature:
 
 `OnSelect:`
+
 ```
 type OnSelect = (
   event: React.FormEvent<HTMLInputElement>,
@@ -373,7 +531,8 @@ type OnSelect = (
   extraData: IExtraData
 ) => void;
 ```
-**Note:** This example has a `shift + select` feature where holding shift while 
+
+**Note:** This example has a `shift + select` feature where holding shift while
 checking checkboxes will check intermediate rows' checkboxes.
 
 ```js
@@ -395,22 +554,23 @@ ComposableTableSelectable = () => {
   const [recentSelection, setRecentSelection] = React.useState(null);
   const [shifting, setShifting] = React.useState(false);
   const onSelect = (event, isSelected, rowId) => {
-    let newSelected = selected.map((sel, index) => (index === rowId ? isSelected : sel))
-    
+    let newSelected = selected.map((sel, index) => (index === rowId ? isSelected : sel));
+
     // if the user is shift + selecting the checkboxes, then all intermediate checkboxes should be selected
     if (shifting && recentSelection !== null && isSelected) {
       const numberSelected = rowId - recentSelection;
       newSelected = newSelected.map((sel, index) => {
         // select all between recentSelection and current rowId;
-        const intermediateIndexes = numberSelected > 0 ? 
-          Array.from(new Array(numberSelected + 1), (x, i) => i + (recentSelection)) : 
-          Array.from(new Array(Math.abs(numberSelected) + 1), (x, i) => i + rowId);
+        const intermediateIndexes =
+          numberSelected > 0
+            ? Array.from(new Array(numberSelected + 1), (x, i) => i + recentSelection)
+            : Array.from(new Array(Math.abs(numberSelected) + 1), (x, i) => i + rowId);
         return intermediateIndexes.includes(index) ? true : sel;
-      })
+      });
     }
     setSelected(newSelected);
     setRecentSelection(rowId);
-    
+
     if (!isSelected && allRowsSelected) {
       setAllRowsSelected(false);
     } else if (isSelected && !allRowsSelected) {
@@ -427,33 +587,33 @@ ComposableTableSelectable = () => {
       }
     }
   };
-  
-  onKeyDown = (e) => {
+
+  onKeyDown = e => {
     if (e.key === 'Shift') {
       setShifting(true);
     }
   };
-  onKeyUp = (e) => {
+  onKeyUp = e => {
     if (e.key === 'Shift') {
       setShifting(false);
     }
   };
-  
+
   React.useEffect(() => {
-    document.addEventListener("keydown", onKeyDown);
-    document.addEventListener("keyup", onKeyUp);
-    
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('keyup', onKeyUp);
+
     return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.removeEventListener("keyup", onKeyUp);
-    }
+      document.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener('keyup', onKeyUp);
+    };
   }, []);
-  
+
   const onSelectAll = (event, isSelected) => {
     setAllRowsSelected(isSelected);
     setSelected(selected.map(sel => isSelected));
   };
-  
+
   return (
     <TableComposable aria-label="Selectable Table">
       <Thead>
@@ -570,27 +730,23 @@ import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-tab
 ComposableTableHoverable = () => {
   const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
   const [rows, setRows] = React.useState([
-    { cells: ['one', 'two', 'a', 'four', 'five'], isRowSelected: false},
-    { cells: ['a', 'two', 'k', 'four', 'five'], isRowSelected: false},
-    { cells: ['p', 'two', 'b', 'four', 'five'], isRowSelected: false}
+    { cells: ['one', 'two', 'a', 'four', 'five'], isRowSelected: false },
+    { cells: ['a', 'two', 'k', 'four', 'five'], isRowSelected: false },
+    { cells: ['p', 'two', 'b', 'four', 'five'], isRowSelected: false }
   ]);
   const onRowClick = (event, rowIndex, row) => {
     const updatedRows = [...rows];
     updatedRows[rowIndex].isRowSelected = !rows[rowIndex].isRowSelected;
-    setRows(updatedRows); 
+    setRows(updatedRows);
   };
-  
+
   return (
     <TableComposable aria-label="Misc table">
       <Thead noWrap>
         <Tr>
-          <Th>
-            {columns[0]}
-          </Th>
+          <Th>{columns[0]}</Th>
           <Th>{columns[1]}</Th>
-          <Th>
-            {columns[2]}
-          </Th>
+          <Th>{columns[2]}</Th>
           <Th>{columns[3]}</Th>
           <Th>{columns[4]}</Th>
         </Tr>
@@ -606,10 +762,7 @@ ComposableTableHoverable = () => {
             >
               {row.cells.map((cell, cellIndex) => {
                 return (
-                  <Td
-                    key={`${rowIndex}_${cellIndex}`}
-                    dataLabel={columns[cellIndex]}
-                  >
+                  <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
                     {cell}
                   </Td>
                 );
@@ -750,6 +903,7 @@ ComposableTableActions = () => {
 ### Composable: Expandable
 
 To make a parent/child row pair expandable:
+
 1. Make the first cell in every row an expandable cell by passing `TdExpandType` object to the `expand` prop on the `Td`
 2. Wrap the content of each child row cell in `ExpandableRowContent`.
 3. Enclose each parent/child row pair in a `Tbody` component with an `isExpanded` prop.
@@ -930,11 +1084,13 @@ ComposableTableExpandable = () => {
 ### Composable: Compound expandable
 
 To make a parent/child row pair compound expandable:
+
 1. Pass a `TdCompoundExpandType` object to the `compoundExpand` prop on any `Td` that has an expandable child row
 2. Wrap the content of each child row cell in `ExpandableRowContent`.
 3. Each child `Tr` has an `isExpanded` prop.
 
 The `TdCompoundExpandType` expects an `OnExpand` event handler with the following signature
+
 ```
 export type OnExpand = (
   event: React.MouseEvent,
@@ -1647,7 +1803,8 @@ class TreeTable extends React.Component {
 
 ### Composable: Draggable row table
 
-To make a row draggable: 
+To make a row draggable:
+
 1. The table needs a draggable column.
 2. Each draggable `Tr` needs to be passed `draggable`, `onDrop`, `onDragEnd`, and `onDragStart` props.
 3. The `Tbody` needs `onDragOver`, `onDrop`, and `onDragLeave` props.

@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.124.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.123.0...@patternfly/react-integration@4.124.0) (2021-10-11)
+
+
+### Features
+
+* **Navigation:** add flyout with menu components ([#6416](https://github.com/patternfly/patternfly-react/issues/6416)) ([1d85989](https://github.com/patternfly/patternfly-react/commit/1d85989935aeaa3daa5c6f42b4f487be6a555be8))
+
+
+
+
+
+# [4.123.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.122.4...@patternfly/react-integration@4.123.0) (2021-10-07)
+
+
+### Features
+
+* **DualListSelector:** introduce composable example and drag/drop demo ([#6369](https://github.com/patternfly/patternfly-react/issues/6369)) ([7cdda0f](https://github.com/patternfly/patternfly-react/commit/7cdda0fdd7f794e64bb8a8adebb48dfede5ebff9))
+
+
+
+
+
+## [4.122.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.122.3...@patternfly/react-integration@4.122.4) (2021-10-05)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [4.122.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.122.2...@patternfly/react-integration@4.122.3) (2021-09-30)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [4.122.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.122.1...@patternfly/react-integration@4.122.2) (2021-09-24)
+
+
+### Bug Fixes
+
+* **dragdrop:** remove React.createPortal, add noWrap ([#6328](https://github.com/patternfly/patternfly-react/issues/6328)) ([425f9f2](https://github.com/patternfly/patternfly-react/commit/425f9f2f8b2c0281349f7e689f9f83f547af1c5c))
+
+
+
+
+
 ## [4.122.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@4.122.0...@patternfly/react-integration@4.122.1) (2021-09-22)
 
 **Note:** Version bump only for package @patternfly/react-integration

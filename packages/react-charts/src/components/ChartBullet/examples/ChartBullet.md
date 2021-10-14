@@ -429,6 +429,46 @@ import { ChartBullet } from '@patternfly/react-charts';
 </div>
 ```
 
+### Custom labels
+```js
+import React from 'react';
+import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
+
+<div style={{ height: '150px', width: '600px' }}>
+  <ChartBullet
+    ariaDesc="Storage capacity"
+    ariaTitle="Bullet chart example"
+    axisComponent={
+      <ChartAxis 
+        tickValues={[0, 25, 50, 75, 100]}
+        tickFormat={val => {
+          switch (val) {
+            case 0:
+              return 'New';
+            case 25:
+              return 'Beginner';
+            case 50:
+              return 'Intermediate';
+            case 75:
+              return 'Advanced';
+            case 100:
+              return 'Expert';
+          }
+        }}
+      />
+    }
+    comparativeWarningMeasureData={[{ name: 'Warning', y: 88 }]}
+    constrainToVisibleArea
+    height={150}
+    labels={({ datum }) => `${datum.name}: ${datum.y}`}
+    maxDomain={{y: 100}}
+    primarySegmentedMeasureData={[{ name: 'Measure', y: 60 }]}
+    qualitativeRangeData={[{ name: 'Range', y: 50 }, { name: 'Range', y: 75 }]}
+    width={600}
+  />
+</div>
+```
+
 ### Custom size
 ```js
 import React from 'react';

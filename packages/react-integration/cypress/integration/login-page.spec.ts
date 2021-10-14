@@ -1,8 +1,6 @@
 describe('Login Page Demo Test', () => {
   it('Navigate to login page section', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#login-page-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/login-page-demo-nav-link');
+    cy.visit('http://localhost:3000/login-page-demo-nav-link');
   });
 
   it('Verify initial state', () => {

@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-catalog-view-extension",
-  "version": "4.12.76",
+  "version": "4.13.19",
   "description": "This library provides catalog view extensions for PatternFly 4 React.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -30,20 +30,19 @@
   "homepage": "https://github.com/patternfly/patternfly-react/blob/main/packages/react-catalog-view-extension/README.md",
   "scripts": {
     "generate": "concurrently \"yarn build:sass\" \"yarn copy:sass\"",
-    "build:sass": "node-sass --output-style compressed --importer=./node-sass-patternfly-importer.js -o dist/css sass/react-catalog-view-extension.scss",
+    "build:sass": "node buildSass.js",
     "copy:sass": "shx mkdir -p dist/sass && shx cp -r sass/react-catalog-view-extension/* dist/sass",
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@patternfly/patternfly": "4.135.2",
-    "@patternfly/react-core": "^4.157.5",
-    "@patternfly/react-styles": "^4.11.16",
-    "classnames": "^2.2.5"
+    "@patternfly/patternfly": "4.144.5",
+    "@patternfly/react-core": "^4.162.4",
+    "@patternfly/react-styles": "^4.12.5"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
-    "node-sass": "^4.14.1",
     "rimraf": "^2.6.2",
+    "sass": "^1.42.1",
     "shx": "^0.3.2",
     "tslib": "^2.0.0",
     "typescript": "^4.0.0"

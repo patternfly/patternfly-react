@@ -1,8 +1,6 @@
 describe('Drawer Resize Demo Test', () => {
   it('Navigate to the drawer demo', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('#drawer-resize-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/drawer-resize-demo-nav-link');
+    cy.visit('http://localhost:3000/drawer-resize-demo-nav-link');
   });
 
   it('Verify resizable drawer', () => {

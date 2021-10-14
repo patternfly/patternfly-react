@@ -2,148 +2,112 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DualListSelector/dual-list-selector';
 import { css } from '@patternfly/react-styles';
 import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import { DualListSelectorListItem } from './DualListSelectorListItem';
 import { DualListSelectorTree, DualListSelectorTreeItemData } from './DualListSelectorTree';
-import { PickOptional } from '../../helpers';
-import { canUseDOM } from '../../helpers/util';
-import { handleArrows } from '../../helpers';
+import { getUniqueId } from '../../helpers';
+import { DualListSelectorListWrapper } from './DualListSelectorListWrapper';
+import { DualListSelectorContext, DualListSelectorPaneContext } from './DualListSelectorContext';
+import { DualListSelectorList } from './DualListSelectorList';
 
 export interface DualListSelectorPaneProps {
-  /** Additional classes applied to the dual list selector. */
+  /** Additional classes applied to the dual list selector pane. */
   className?: string;
+  /** A dual list selector list or dual list selector tree to be rendered in the pane. */
+  children?: React.ReactNode;
   /** Flag indicating if this pane is the chosen pane. */
   isChosen?: boolean;
-  /* Flag indicating if the dual list selector uses trees instead of simple lists */
-  isTree?: boolean;
   /** Status to display above the pane. */
   status?: string;
   /** Title of the pane. */
   title?: React.ReactNode;
-  /** Options to list in the pane. */
+  /** A search input placed above the list at the top of the pane, before actions. */
+  searchInput?: React.ReactNode;
+  /** Actions to place above the pane. */
+  actions?: React.ReactNode[];
+  /** Id of the pane. */
+  id?: string;
+  /** @hide Options to list in the pane. */
   options?: React.ReactNode[];
-  /** Options currently selected in the pane. */
+  /** @hide Options currently selected in the pane. */
   selectedOptions?: string[] | number[];
-  /** Callback for search input. */
-  onSearch?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  /** Callback for when an option is selected. */
+  /** @hide Callback for when an option is selected. Optionally used only when options prop is provided. */
   onOptionSelect?: (
-    e: React.MouseEvent | React.ChangeEvent,
+    e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent,
     index: number,
     isChosen: boolean,
-    text?: string,
+    id?: string,
     itemData?: any,
     parentData?: any
   ) => void;
+  /** @hide Callback for when a tree option is checked. Optionally used only when options prop is provided. */
   onOptionCheck?: (
-    evt: React.MouseEvent | React.ChangeEvent<HTMLInputElement>,
+    evt: React.MouseEvent | React.ChangeEvent<HTMLInputElement> | React.KeyboardEvent,
     isChecked: boolean,
-    isChosen: boolean,
     itemData: DualListSelectorTreeItemData
   ) => void;
-  /** Actions to place above the pane. */
-  actions?: React.ReactNode[];
-  /** A callback for when the search input value for changes. */
-  onSearchInputChanged?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
-  /** Filter function for custom filtering based on search string. */
-  filterOption?: (option: React.ReactNode, input: string) => boolean;
-  /** Flag indicating a search bar should be included above the pane. */
+  /** @hide Flag indicating a dynamically built search bar should be included above the pane. */
   isSearchable?: boolean;
-  /** Accessible label for the search input */
+  /** @hide Callback for search input. To be used when isSearchable is true. */
+  onSearch?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  /** @hide A callback for when the search input value for changes.  To be used when isSearchable is true. */
+  onSearchInputChanged?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
+  /** @hide Filter function for custom filtering based on search string. To be used when isSearchable is true. */
+  filterOption?: (option: React.ReactNode, input: string) => boolean;
+  /** @hide Accessible label for the search input. To be used when isSearchable is true. */
   searchInputAriaLabel?: string;
-  /** Id of the pane. */
-  id: string;
-  /** Callback for updating the filtered options in DualListSelector */
+  /** @hide Callback for updating the filtered options in DualListSelector. To be used when isSearchable is true. */
   onFilterUpdate?: (newFilteredOptions: React.ReactNode[], paneType: string, isSearchReset: boolean) => void;
 }
 
-interface DualListSelectorPaneState {
-  input: string;
-  focusedOption: string;
-}
+export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneProps> = ({
+  isChosen = false,
+  className = '',
+  status = '',
+  actions,
+  searchInput,
+  children,
+  onOptionSelect,
+  onOptionCheck,
+  title = '',
+  options = [] as React.ReactNode[],
+  selectedOptions = [],
+  isSearchable = false,
+  searchInputAriaLabel = '',
+  onFilterUpdate,
+  onSearchInputChanged,
+  filterOption,
+  id = getUniqueId('dual-list-selector-pane'),
+  ...props
+}: DualListSelectorPaneProps) => {
+  const [input, setInput] = React.useState('');
+  const { isTree } = React.useContext(DualListSelectorContext);
 
-export class DualListSelectorPane extends React.Component<DualListSelectorPaneProps, DualListSelectorPaneState> {
-  static displayName = 'DualListSelectorPane';
-  static defaultProps: PickOptional<DualListSelectorPaneProps> = {
-    isChosen: false,
-    status: '',
-    title: '',
-    options: [] as React.ReactNode[],
-    selectedOptions: [],
-    isSearchable: false,
-    searchInputAriaLabel: ''
-  };
-  private menuEl = React.createRef<HTMLDivElement>();
-  private optionsRefs = [] as HTMLElement[];
-
-  constructor(props: DualListSelectorPaneProps) {
-    super(props);
-    this.state = {
-      input: '',
-      focusedOption: null
-    };
-  }
-
-  onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { isTree, options, isChosen } = this.props;
-
-    this.setState({ input: e.target.value }, () => {
-      const { input } = this.state;
-      let filtered;
-      if (isTree) {
-        filtered = (options as DualListSelectorTreeItemData[])
-          .map(opt => Object.assign({}, opt))
-          .filter(item => this.filterInput(item as DualListSelectorTreeItemData, input));
-      } else {
-        filtered = options.filter(option => {
-          if (this.displayOption(option, input)) {
-            return option;
-          }
-        });
-      }
-      this.props.onFilterUpdate(filtered, isChosen ? 'chosen' : 'available', input === '');
-    });
-
-    if (this.props.onSearchInputChanged) {
-      this.props.onSearchInputChanged(e.target.value, e);
+  // only called when search input is dynamically built
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value;
+    let filtered;
+    if (isTree) {
+      filtered = (options as DualListSelectorTreeItemData[])
+        .map(opt => Object.assign({}, opt))
+        .filter(item => filterInput(item as DualListSelectorTreeItemData, newValue));
+    } else {
+      filtered = options.filter(option => {
+        if (displayOption(option)) {
+          return option;
+        }
+      });
     }
-    this.optionsRefs = [];
-  };
+    onFilterUpdate(filtered, isChosen ? 'chosen' : 'available', newValue === '');
 
-  sendRef = (optionRef: React.ReactNode, index: number) => {
-    this.optionsRefs[index] = optionRef as HTMLElement;
-  };
-
-  handleKeys = (event: KeyboardEvent) => {
-    if (
-      !this.menuEl.current ||
-      (this.menuEl.current !== (event.target as HTMLElement).closest('.pf-c-dual-list-selector__menu') &&
-        !Array.from(this.menuEl.current.getElementsByClassName('pf-c-dual-list-selector__menu')).includes(
-          (event.target as HTMLElement).closest('.pf-c-dual-list-selector__menu')
-        ))
-    ) {
-      return;
+    if (onSearchInputChanged) {
+      onSearchInputChanged(newValue, e);
     }
-    event.stopImmediatePropagation();
-
-    const validOptions = Array.from(this.menuEl.current.getElementsByTagName('BUTTON')).filter(
-      el => !el.classList.contains('pf-m-disabled')
-    );
-    const activeElement = document.activeElement;
-    handleArrows(
-      event,
-      validOptions,
-      (element: Element) => activeElement.contains(element),
-      (element: Element) => element,
-      undefined,
-      undefined,
-      true,
-      false
-    );
+    setInput(newValue);
   };
 
-  filterInput = (item: DualListSelectorTreeItemData, input: string): boolean => {
-    if (this.props.filterOption) {
-      return this.props.filterOption(item, input);
+  // only called when options are passed via options prop and isTree === true
+  const filterInput = (item: DualListSelectorTreeItemData, input: string): boolean => {
+    if (filterOption) {
+      return filterOption(item, input);
     } else {
       if (item.text.toLowerCase().includes(input.toLowerCase()) || input === '') {
         return true;
@@ -151,16 +115,16 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
     }
     if (item.children) {
       return (
-        (item.children = item.children
-          .map(opt => Object.assign({}, opt))
-          .filter(child => this.filterInput(child, input))).length > 0
+        (item.children = item.children.map(opt => Object.assign({}, opt)).filter(child => filterInput(child, input)))
+          .length > 0
       );
     }
   };
 
-  displayOption = (option: React.ReactNode, input: string) => {
-    if (this.props.filterOption) {
-      return this.props.filterOption(option, input);
+  // only called when options are passed via options prop and isTree === false
+  const displayOption = (option: React.ReactNode) => {
+    if (filterOption) {
+      return filterOption(option, input);
     } else {
       return option
         .toString()
@@ -169,140 +133,84 @@ export class DualListSelectorPane extends React.Component<DualListSelectorPanePr
     }
   };
 
-  onOptionSelect = (
-    e: React.MouseEvent | React.ChangeEvent,
-    index: number,
-    isChosen: boolean,
-    text?: string,
-    itemData?: any,
-    parentItem?: any
-  ) => {
-    this.setState({ focusedOption: `${this.props.id}-option-${index}` });
-    this.props.onOptionSelect(e, index, isChosen, text, itemData, parentItem);
-  };
-
-  componentDidMount() {
-    if (canUseDOM) {
-      window.addEventListener('keydown', this.handleKeys);
-    }
-  }
-
-  componentWillUnmount() {
-    if (canUseDOM) {
-      window.removeEventListener('keydown', this.handleKeys);
-    }
-  }
-
-  render() {
-    const {
-      isChosen,
-      title,
-      actions,
-      isSearchable,
-      isTree,
-      searchInputAriaLabel,
-      className,
-      status,
-      selectedOptions,
-      options,
-      id,
-      /* eslint-disable @typescript-eslint/no-unused-vars */
-      onSearchInputChanged,
-      /* eslint-disable @typescript-eslint/no-unused-vars */
-      filterOption,
-      onOptionSelect,
-      onOptionCheck,
-      onFilterUpdate,
-      ...props
-    } = this.props;
-    const { input, focusedOption } = this.state;
-
-    let displayIndex = -1;
-
-    return (
-      <div
-        className={css(styles.dualListSelectorPane, isChosen ? styles.modifiers.chosen : 'pf-m-available', className)}
-        {...props}
-      >
-        {title && (
-          <div className={css(styles.dualListSelectorHeader)}>
-            <div className="pf-c-dual-list-selector__title">
-              <div className={css(styles.dualListSelectorTitleText)}>{title}</div>
-            </div>
+  return (
+    <div
+      className={css(styles.dualListSelectorPane, isChosen ? styles.modifiers.chosen : 'pf-m-available', className)}
+      {...props}
+    >
+      {title && (
+        <div className={css(styles.dualListSelectorHeader)}>
+          <div className="pf-c-dual-list-selector__title">
+            <div className={css(styles.dualListSelectorTitleText)}>{title}</div>
           </div>
-        )}
-        {(actions || isSearchable) && (
-          <div className={css(styles.dualListSelectorTools)}>
-            {isSearchable && (
-              <div className={css(styles.dualListSelectorToolsFilter)}>
+        </div>
+      )}
+      {(actions || searchInput || isSearchable) && (
+        <div className={css(styles.dualListSelectorTools)}>
+          {(isSearchable || searchInput) && (
+            <div className={css(styles.dualListSelectorToolsFilter)}>
+              {searchInput ? (
+                searchInput
+              ) : (
                 <input
                   className={css(formStyles.formControl, formStyles.modifiers.search)}
                   type="search"
-                  onChange={this.onChange}
+                  onChange={onChange}
                   aria-label={searchInputAriaLabel}
                 />
-              </div>
-            )}
-            {actions && <div className={css(styles.dualListSelectorToolsActions)}>{actions}</div>}
-          </div>
-        )}
-        {status && (
-          <div className={css(styles.dualListSelectorStatus)}>
-            <div className={css(styles.dualListSelectorStatusText)} id={`${id}-status`}>
-              {status}
+              )}
             </div>
+          )}
+          {actions && <div className={css(styles.dualListSelectorToolsActions)}>{actions}</div>}
+        </div>
+      )}
+      {status && (
+        <div className={css(styles.dualListSelectorStatus)}>
+          <div className={css(styles.dualListSelectorStatusText)} id={`${id}-status`}>
+            {status}
           </div>
+        </div>
+      )}
+      <DualListSelectorPaneContext.Provider value={{ isChosen }}>
+        {!isTree && (
+          <DualListSelectorListWrapper
+            aria-labelledby={`${id}-status`}
+            options={options}
+            selectedOptions={selectedOptions}
+            onOptionSelect={(
+              e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent,
+              index: number,
+              id: string
+            ) => onOptionSelect(e, index, isChosen, id)}
+            displayOption={displayOption}
+            id={`${id}-list`}
+          >
+            {children}
+          </DualListSelectorListWrapper>
         )}
-        {options && !isTree && (
-          <div className={css(styles.dualListSelectorMenu)} ref={this.menuEl} tabIndex={0}>
-            <ul
-              className={css(styles.dualListSelectorList)}
-              role="listbox"
-              aria-multiselectable="true"
-              aria-labelledby={`${id}-status`}
-              aria-activedescendant={focusedOption}
-            >
-              {options.map((option, index) => {
-                if (this.displayOption(option, input)) {
-                  displayIndex = displayIndex + 1;
-                  return (
-                    <DualListSelectorListItem
-                      key={index}
-                      isSelected={(selectedOptions as number[]).indexOf(index) !== -1}
-                      onOptionSelect={this.onOptionSelect}
-                      isChosen={isChosen}
-                      orderIndex={index}
-                      filteredIndex={displayIndex}
-                      sendRef={this.sendRef}
-                      id={`${id}-option-${index}`}
-                    >
-                      {option}
-                    </DualListSelectorListItem>
-                  );
-                }
-                return;
-              })}
-            </ul>
-          </div>
+        {isTree && (
+          <DualListSelectorListWrapper aria-labelledby={`${id}-status`} id={`${id}-list`}>
+            {options.length > 0 ? (
+              <DualListSelectorList>
+                <DualListSelectorTree
+                  data={
+                    isSearchable
+                      ? (options as DualListSelectorTreeItemData[])
+                          .map(opt => Object.assign({}, opt))
+                          .filter(item => filterInput(item as DualListSelectorTreeItemData, input))
+                      : (options as DualListSelectorTreeItemData[])
+                  }
+                  onOptionCheck={onOptionCheck}
+                  id={`${id}-tree`}
+                />
+              </DualListSelectorList>
+            ) : (
+              children
+            )}
+          </DualListSelectorListWrapper>
         )}
-        {options && isTree && (
-          <div className={css(styles.dualListSelectorMenu)} ref={this.menuEl} tabIndex={0}>
-            <DualListSelectorTree
-              data={
-                isSearchable
-                  ? (options as DualListSelectorTreeItemData[])
-                      .map(opt => Object.assign({}, opt))
-                      .filter(item => this.filterInput(item as DualListSelectorTreeItemData, input))
-                  : (options as DualListSelectorTreeItemData[])
-              }
-              isChosen={isChosen}
-              onOptionSelect={this.onOptionSelect}
-              onOptionCheck={onOptionCheck}
-              selectedOptions={selectedOptions as string[]}
-            />
-          </div>
-        )}
-      </div>
-    );
-  }
-}
+      </DualListSelectorPaneContext.Provider>
+    </div>
+  );
+};
+DualListSelectorPane.displayName = 'DualListSelectorPane';

@@ -1,11 +1,14 @@
 import * as React from 'react';
-import { createPortal } from 'react-dom';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/DragDrop/drag-drop';
 import { DroppableContext } from './DroppableContext';
 import { DragDropContext } from './DragDrop';
 
 export interface DraggableProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside DragDrop */
   children?: React.ReactNode;
+  /** Don't wrap the component in a div. Requires passing a single child. */
+  hasNoWrapper?: boolean;
   /** Class to add to outer div */
   className?: string;
 }
@@ -32,7 +35,7 @@ function getInheritedBackgroundColor(el: HTMLElement): string {
   return getInheritedBackgroundColor(el.parentElement);
 }
 
-function removeBlankDiv(node: HTMLDivElement) {
+function removeBlankDiv(node: HTMLElement) {
   if (node.getAttribute('blankDiv') === 'true') {
     // eslint-disable-next-line @typescript-eslint/prefer-for-of
     for (let i = 0; i < node.children.length; i++) {
@@ -47,17 +50,18 @@ function removeBlankDiv(node: HTMLDivElement) {
 }
 
 interface DroppableItem {
-  node: HTMLDivElement;
+  node: HTMLElement;
   rect: DOMRect;
   isDraggingHost: boolean;
-  draggableNodes: HTMLDivElement[];
+  draggableNodes: HTMLElement[];
   draggableNodesRects: DOMRect[];
 }
 
 // Reset per-element state
 function resetDroppableItem(droppableItem: DroppableItem) {
   removeBlankDiv(droppableItem.node);
-  droppableItem.node.style.boxShadow = '';
+  droppableItem.node.classList.remove(styles.modifiers.dragging);
+  droppableItem.node.classList.remove(styles.modifiers.dragOutside);
   droppableItem.draggableNodes.forEach((n, i) => {
     n.style.transform = '';
     n.style.transition = '';
@@ -74,22 +78,23 @@ function overlaps(ev: MouseEvent, rect: DOMRect) {
 export const Draggable: React.FunctionComponent<DraggableProps> = ({
   className,
   children,
-  style: styleProp,
+  style: styleProp = {},
+  hasNoWrapper = false,
   ...props
 }: DraggableProps) => {
   /* eslint-disable prefer-const */
   let [style, setStyle] = React.useState(styleProp);
   /* eslint-enable prefer-const */
   const [isDragging, setIsDragging] = React.useState(false);
+  const [isValidDrag, setIsValidDrag] = React.useState(true);
   const { zone, droppableId } = React.useContext(DroppableContext);
-  const { onDrag, onDrop } = React.useContext(DragDropContext);
-  const ref = React.createRef<HTMLDivElement>();
+  const { onDrag, onDragMove, onDrop } = React.useContext(DragDropContext);
   // Some state is better just to leave as vars passed around between various callbacks
   // You can only drag around one item at a time anyways...
   let startX = 0;
   let startY = 0;
   let index: number = null; // Index of this draggable
-  let hoveringDroppable: HTMLDivElement;
+  let hoveringDroppable: HTMLElement;
   let hoveringIndex: number = null;
   let mouseMoveListener: EventListener;
   let mouseUpListener: EventListener;
@@ -97,18 +102,14 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   let startYOffset = 0;
 
   // After item returning to where it started animation completes
-  const onTransitionEnd = (_ev: React.TransitionEvent<HTMLDivElement>) => {
+  const onTransitionEnd = (_ev: React.TransitionEvent<HTMLElement>) => {
     if (isDragging) {
       setIsDragging(false);
       setStyle(styleProp);
     }
   };
 
-  const onMouseUpWhileDragging = (droppableItems: DroppableItem[]) => {
-    droppableItems.forEach(resetDroppableItem);
-    document.removeEventListener('mousemove', mouseMoveListener);
-    document.removeEventListener('mouseup', mouseUpListener);
-    document.removeEventListener('contextmenu', mouseUpListener);
+  function getSourceAndDest() {
     const hoveringDroppableId = hoveringDroppable ? hoveringDroppable.getAttribute('data-pf-droppableid') : null;
     const source = {
       droppableId,
@@ -121,6 +122,15 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
             index: hoveringIndex
           }
         : undefined;
+    return { source, dest, hoveringDroppableId };
+  }
+
+  const onMouseUpWhileDragging = (droppableItems: DroppableItem[]) => {
+    droppableItems.forEach(resetDroppableItem);
+    document.removeEventListener('mousemove', mouseMoveListener);
+    document.removeEventListener('mouseup', mouseUpListener);
+    document.removeEventListener('contextmenu', mouseUpListener);
+    const { source, dest, hoveringDroppableId } = getSourceAndDest();
     const consumerReordered = onDrop(source, dest);
     if (consumerReordered && droppableId === hoveringDroppableId) {
       setIsDragging(false);
@@ -145,7 +155,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
       const { node, rect, isDraggingHost, draggableNodes, draggableNodesRects } = droppableItem;
       if (overlaps(ev, rect)) {
         // Add valid dropzone style
-        node.style.boxShadow = '0px 0px 0px 1px blue, 0px 2px 5px rgba(0, 0, 0, 0.2)';
+        node.classList.remove(styles.modifiers.dragOutside);
         hoveringDroppable = node;
         // Check if we need to add a blank div row
         if (node.getAttribute('blankDiv') !== 'true' && !isDraggingHost) {
@@ -179,17 +189,17 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
         }
       } else {
         resetDroppableItem(droppableItem);
-        node.style.boxShadow = '0px 0px 0px 1px red, 0px 2px 5px rgba(0, 0, 0, 0.2)';
+        node.classList.add(styles.modifiers.dragging);
+        node.classList.add(styles.modifiers.dragOutside);
       }
     });
 
     // Move hovering draggable and style it based on cursor position
     setStyle({
       ...style,
-      boxShadow: `0px 0px 0px 1px ${hoveringDroppable ? 'blue' : 'red'}, 0px 2px 5px rgba(0, 0, 0, 0.2)`,
-      transform: `translate(${ev.pageX - startX}px, ${ev.pageY - startY}px)`,
-      cursor: !hoveringDroppable && 'not-allowed'
+      transform: `translate(${ev.pageX - startX}px, ${ev.pageY - startY}px)`
     });
+    setIsValidDrag(Boolean(hoveringDroppable));
 
     // Iterate through sibling draggable nodes to reposition them and store correct hoveringIndex for onDrop
     hoveringIndex = null;
@@ -215,9 +225,12 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
         lastTranslate = translateY;
       });
     }
+
+    const { source, dest } = getSourceAndDest();
+    onDragMove(source, dest);
   };
 
-  const onDragStart = (ev: React.DragEvent<HTMLDivElement>) => {
+  const onDragStart = (ev: React.DragEvent<HTMLElement>) => {
     // Default HTML drag and drop doesn't allow us to change what the thing
     // being dragged looks like. Because of this we'll use prevent the default
     // and use `mouseMove` and `mouseUp` instead
@@ -228,19 +241,22 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     }
 
     // Cache droppable and draggable nodes and their bounding rects
-    const rect = ref.current.getBoundingClientRect();
-    const droppableNodes = Array.from(document.querySelectorAll(`[data-pf-droppable="${zone}"]`)) as HTMLDivElement[];
+    const dragging = ev.target as HTMLElement;
+    const rect = dragging.getBoundingClientRect();
+    const droppableNodes = Array.from(document.querySelectorAll(`[data-pf-droppable="${zone}"]`)) as HTMLElement[];
     const droppableItems = droppableNodes.reduce((acc, cur) => {
-      const draggableNodes = Array.from(cur.querySelectorAll(`[data-pf-draggable-zone="${zone}"]`)) as HTMLDivElement[];
-      const isDraggingHost = cur.contains(ref.current);
+      cur.classList.add(styles.modifiers.dragging);
+      const draggableNodes = Array.from(cur.querySelectorAll(`[data-pf-draggable-zone="${zone}"]`)) as HTMLElement[];
+      const isDraggingHost = cur.contains(dragging);
       if (isDraggingHost) {
-        index = draggableNodes.indexOf(ref.current);
+        index = draggableNodes.indexOf(dragging);
       }
       const droppableItem = {
         node: cur,
         rect: cur.getBoundingClientRect(),
         isDraggingHost,
-        draggableNodes,
+        // We don't want styles to apply to the left behind div in onMouseMoveWhileDragging
+        draggableNodes: draggableNodes.map(node => (node === dragging ? node.cloneNode(false) : node)),
         draggableNodesRects: draggableNodes.map(node => node.getBoundingClientRect())
       };
       acc.push(droppableItem);
@@ -255,15 +271,14 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     // Set initial style so future style mods take effect
     style = {
       ...style,
-      position: 'fixed',
       top: rect.y,
       left: rect.x,
       width: rect.width,
       height: rect.height,
-      background: getInheritedBackgroundColor(ref.current),
-      boxShadow: '0px 0px 0px 1px blue, 0px 2px 5px rgba(0, 0, 0, 0.2)',
+      '--pf-c-draggable--m-dragging--BackgroundColor': getInheritedBackgroundColor(dragging),
+      position: 'fixed',
       zIndex: 5000
-    };
+    } as any;
     setStyle(style);
     // Store event details
     startX = ev.pageX;
@@ -275,35 +290,37 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     document.addEventListener('mousemove', mouseMoveListener);
     document.addEventListener('mouseup', mouseUpListener);
     // Comment out this line to debug while dragging by right clicking
-    document.addEventListener('contextmenu', mouseUpListener);
+    // document.addEventListener('contextmenu', mouseUpListener);
   };
 
-  const div = (
-    <div
-      data-pf-draggable-zone={isDragging ? null : zone}
-      draggable
-      role="button"
-      className={className}
-      onDragStart={onDragStart}
-      onTransitionEnd={onTransitionEnd}
-      style={style}
-      ref={ref}
-      {...props}
-    >
-      {children}
-    </div>
-  );
+  const childProps = {
+    'data-pf-draggable-zone': isDragging ? null : zone,
+    draggable: true,
+    className: css(
+      styles.draggable,
+      isDragging && styles.modifiers.dragging,
+      !isValidDrag && styles.modifiers.dragOutside,
+      className
+    ),
+    onDragStart,
+    onTransitionEnd,
+    style,
+    ...props
+  };
 
   return (
     <React.Fragment>
       {/* Leave behind blank spot per-design */}
       {isDragging && (
-        <div draggable role="button" {...props} style={{ ...styleProp, visibility: 'hidden' }}>
+        <div draggable {...props} style={{ ...styleProp, visibility: 'hidden' }}>
           {children}
         </div>
       )}
-      {/* Move dragging part into portal to appear above top and side nav */}
-      {isDragging ? createPortal(div, document.body) : div}
+      {hasNoWrapper ? (
+        React.cloneElement(children as React.ReactElement, childProps)
+      ) : (
+        <div {...childProps}>{children}</div>
+      )}
     </React.Fragment>
   );
 };

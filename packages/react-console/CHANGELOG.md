@@ -3,6 +3,196 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.13.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.13.13...@patternfly/react-console@4.13.14) (2021-10-14)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.13.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.13.12...@patternfly/react-console@4.13.13) (2021-10-13)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.13.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.13.11...@patternfly/react-console@4.13.12) (2021-10-11)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.13.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.13.10...@patternfly/react-console@4.13.11) (2021-10-11)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.13.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.13.9...@patternfly/react-console@4.13.10) (2021-10-11)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.13.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.13.8...@patternfly/react-console@4.13.9) (2021-10-11)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.13.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.13.7...@patternfly/react-console@4.13.8) (2021-10-08)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.13.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.13.6...@patternfly/react-console@4.13.7) (2021-10-07)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.13.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.13.5...@patternfly/react-console@4.13.6) (2021-10-07)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.13.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.13.4...@patternfly/react-console@4.13.5) (2021-10-06)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.13.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.13.3...@patternfly/react-console@4.13.4) (2021-10-06)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.13.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.13.2...@patternfly/react-console@4.13.3) (2021-10-06)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.13.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.13.1...@patternfly/react-console@4.13.2) (2021-10-05)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.13.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.13.0...@patternfly/react-console@4.13.1) (2021-10-05)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+# [4.13.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.12.4...@patternfly/react-console@4.13.0) (2021-10-05)
+
+
+### Features
+
+* **select:** add support for right aligned menu ([#6395](https://github.com/patternfly/patternfly-react/issues/6395)) ([74a586b](https://github.com/patternfly/patternfly-react/commit/74a586b51f6f7100f28f976d5f822b4874e6b7f4))
+
+
+
+
+
+## [4.12.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.12.3...@patternfly/react-console@4.12.4) (2021-10-05)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.12.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.12.2...@patternfly/react-console@4.12.3) (2021-10-01)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.12.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.12.1...@patternfly/react-console@4.12.2) (2021-10-01)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.12.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.12.0...@patternfly/react-console@4.12.1) (2021-09-30)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+# [4.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.11.47...@patternfly/react-console@4.12.0) (2021-09-29)
+
+
+### Features
+
+* **JumpLinks:** Added toggle text ([#6347](https://github.com/patternfly/patternfly-react/issues/6347)) ([36042f6](https://github.com/patternfly/patternfly-react/commit/36042f679880f819afd26618797167a42f5fe901))
+
+
+
+
+
+## [4.11.47](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.11.46...@patternfly/react-console@4.11.47) (2021-09-27)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.11.46](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.11.45...@patternfly/react-console@4.11.46) (2021-09-27)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## [4.11.45](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.11.44...@patternfly/react-console@4.11.45) (2021-09-24)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
 ## [4.11.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@4.11.43...@patternfly/react-console@4.11.44) (2021-09-22)
 
 **Note:** Version bump only for package @patternfly/react-console

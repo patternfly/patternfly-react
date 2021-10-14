@@ -3,6 +3,217 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.162.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.162.3...@patternfly/react-core@4.162.4) (2021-10-14)
+
+
+### Performance Improvements
+
+* **TreeView:** add memoization + test demo ([#6362](https://github.com/patternfly/patternfly-react/issues/6362)) ([6e35627](https://github.com/patternfly/patternfly-react/commit/6e35627ded8d156da8898ffb6252c868504fbcd9))
+
+
+
+
+
+## [4.162.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.162.2...@patternfly/react-core@4.162.3) (2021-10-13)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.162.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.162.1...@patternfly/react-core@4.162.2) (2021-10-11)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.162.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.162.0...@patternfly/react-core@4.162.1) (2021-10-11)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.162.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.161.3...@patternfly/react-core@4.162.0) (2021-10-11)
+
+
+### Features
+
+* **Navigation:** add flyout with menu components ([#6416](https://github.com/patternfly/patternfly-react/issues/6416)) ([1d85989](https://github.com/patternfly/patternfly-react/commit/1d85989935aeaa3daa5c6f42b4f487be6a555be8))
+
+
+
+
+
+## [4.161.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.161.2...@patternfly/react-core@4.161.3) (2021-10-11)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.161.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.161.1...@patternfly/react-core@4.161.2) (2021-10-08)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.161.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.161.0...@patternfly/react-core@4.161.1) (2021-10-07)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.161.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.160.3...@patternfly/react-core@4.161.0) (2021-10-07)
+
+
+### Features
+
+* **DualListSelector:** introduce composable example and drag/drop demo ([#6369](https://github.com/patternfly/patternfly-react/issues/6369)) ([7cdda0f](https://github.com/patternfly/patternfly-react/commit/7cdda0fdd7f794e64bb8a8adebb48dfede5ebff9))
+
+
+
+
+
+## [4.160.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.160.2...@patternfly/react-core@4.160.3) (2021-10-06)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.160.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.160.1...@patternfly/react-core@4.160.2) (2021-10-06)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.160.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.160.0...@patternfly/react-core@4.160.1) (2021-10-06)
+
+
+### Bug Fixes
+
+* **catalog, umd:** remove node-sass to allow building on node16 ([#6398](https://github.com/patternfly/patternfly-react/issues/6398)) ([212611a](https://github.com/patternfly/patternfly-react/commit/212611aae49d30385b500b5299be2975900ec22c))
+
+
+
+
+
+# [4.160.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.159.1...@patternfly/react-core@4.160.0) (2021-10-05)
+
+
+### Features
+
+* **ProgressStepper:** add progress stepper ([#6339](https://github.com/patternfly/patternfly-react/issues/6339)) ([ba25ab3](https://github.com/patternfly/patternfly-react/commit/ba25ab399717356981ce8a54ede4ba3be91d9e94))
+
+
+
+
+
+## [4.159.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.159.0...@patternfly/react-core@4.159.1) (2021-10-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.159.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.158.4...@patternfly/react-core@4.159.0) (2021-10-05)
+
+
+### Features
+
+* **select:** add support for right aligned menu ([#6395](https://github.com/patternfly/patternfly-react/issues/6395)) ([74a586b](https://github.com/patternfly/patternfly-react/commit/74a586b51f6f7100f28f976d5f822b4874e6b7f4))
+
+
+
+
+
+## [4.158.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.158.3...@patternfly/react-core@4.158.4) (2021-10-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.158.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.158.2...@patternfly/react-core@4.158.3) (2021-10-01)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.158.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.158.1...@patternfly/react-core@4.158.2) (2021-10-01)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.158.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.158.0...@patternfly/react-core@4.158.1) (2021-09-30)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [4.158.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.157.8...@patternfly/react-core@4.158.0) (2021-09-29)
+
+
+### Features
+
+* **JumpLinks:** Added toggle text ([#6347](https://github.com/patternfly/patternfly-react/issues/6347)) ([36042f6](https://github.com/patternfly/patternfly-react/commit/36042f679880f819afd26618797167a42f5fe901))
+
+
+
+
+
+## [4.157.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.157.7...@patternfly/react-core@4.157.8) (2021-09-27)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [4.157.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.157.6...@patternfly/react-core@4.157.7) (2021-09-27)
+
+
+### Bug Fixes
+
+* **TreeView:** isExpanded should override defaultExpanded ([#6326](https://github.com/patternfly/patternfly-react/issues/6326)) ([8f15ae3](https://github.com/patternfly/patternfly-react/commit/8f15ae30245c8238ff541f2040251a811d378f58))
+
+
+
+
+
+## [4.157.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.157.5...@patternfly/react-core@4.157.6) (2021-09-24)
+
+
+### Bug Fixes
+
+* **dragdrop:** remove React.createPortal, add noWrap ([#6328](https://github.com/patternfly/patternfly-react/issues/6328)) ([425f9f2](https://github.com/patternfly/patternfly-react/commit/425f9f2f8b2c0281349f7e689f9f83f547af1c5c))
+
+
+
+
+
 ## [4.157.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.157.4...@patternfly/react-core@4.157.5) (2021-09-22)
 
 **Note:** Version bump only for package @patternfly/react-core
