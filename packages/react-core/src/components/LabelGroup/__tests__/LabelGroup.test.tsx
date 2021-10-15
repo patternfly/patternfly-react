@@ -71,7 +71,7 @@ describe('LabelGroup', () => {
       </LabelGroup>
     );
     const overflowButton = view.find('.pf-m-overflow');
-    expect(overflowButton).toHaveClass('pf-m-compact');
+    expect(overflowButton).hasClass('pf-m-compact');
     expect(view).toMatchSnapshot();
   });
 });
