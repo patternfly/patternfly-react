@@ -346,7 +346,7 @@ PopoverProgressStep = () => {
         variant="success"
         id="popover-step1"
         titleId="popover-step1-title"
-        aria-label="completed step, step with success"
+        aria-label="completed step with popover, step with success"
         hasPopover
         ref={firstStepRef}
       >
@@ -363,7 +363,7 @@ PopoverProgressStep = () => {
         variant="danger"
         id="popover-step2"
         titleId="popover-step2-title"
-        aria-label="completed step, step with danger"
+        aria-label="completed step with popover, step with danger"
         hasPopover
         ref={secondStepRef}
       >
@@ -380,7 +380,7 @@ PopoverProgressStep = () => {
         variant="info"
         id="popover-step3"
         titleId="popover-step3-title"
-        aria-label="current step"
+        aria-label="current step with popover"
         hasPopover
         isCurrent
         ref={thirdStepRef}

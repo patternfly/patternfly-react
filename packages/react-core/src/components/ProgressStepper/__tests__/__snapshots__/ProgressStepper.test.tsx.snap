@@ -321,6 +321,7 @@ exports[`ProgressStep renders help text styling 1`] = `
       >
         <span
           className="pf-c-progress-stepper__step-title pf-m-help-text"
+          role="button"
           tabIndex={0}
         >
           Title
