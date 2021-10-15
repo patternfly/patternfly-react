@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`LabelGroup label group compact 1`] = `
+<GenerateId
+  prefix="pf-random-id-"
+>
+  <Component />
+</GenerateId>
+`;
+
 exports[`LabelGroup label group default 1`] = `
 <GenerateId
   prefix="pf-random-id-"
