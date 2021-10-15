@@ -63,7 +63,8 @@ export const DualListSelectorTreeItem: React.FunctionComponent<DualListSelectorT
         styles.dualListSelectorListItem,
         className,
         children && styles.modifiers.expandable,
-        isExpanded && styles.modifiers.expanded
+        isExpanded && styles.modifiers.expanded,
+        isDisabled && styles.modifiers.disabled
       )}
       id={id}
       {...props}
@@ -132,7 +133,6 @@ export const DualListSelectorTreeItem: React.FunctionComponent<DualListSelectorT
                 ref={elem => elem && (elem.indeterminate = isChecked === null)}
                 checked={isChecked || false}
                 tabIndex={-1}
-                disabled={isDisabled}
                 {...checkProps}
               />
             </span>

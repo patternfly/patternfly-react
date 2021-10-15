@@ -51,7 +51,7 @@ export const DualListSelectorList: React.FunctionComponent<DualListSelectorListP
                   id={`${id}-option-${index}`}
                   onOptionSelect={(e, id) => onOptionClick(e, index, id)}
                   orderIndex={index}
-                  disabled={isDisabled}
+                  isDisabled={isDisabled}
                 >
                   {option}
                 </DualListSelectorListItem>

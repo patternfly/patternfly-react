@@ -156,11 +156,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DualListSelectorBasicDemo
   },
   {
-    id: 'dual-list-selector-disabled-demo',
-    name: 'DualListSelector disabled Demo',
-    componentType: Examples.DualListSelectorDisabledDemo
-  },
-  {
     id: 'dual-list-selector-tree-demo',
     name: 'DualListSelector Tree Demo',
     componentType: Examples.DualListSelectorTreeDemo

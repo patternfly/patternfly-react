@@ -25,6 +25,8 @@ export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIEle
   isDraggable?: boolean;
   /** Accessible label for the draggable button on draggable list items */
   draggableButtonAriaLabel?: string;
+  /** Flag indicating if the dual list selector is in a disabled state */
+  isDisabled?: boolean;
 }
 
 export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelectorListItemProps> = ({
@@ -37,7 +39,7 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
   innerRef,
   isDraggable = false,
   draggableButtonAriaLabel = 'Reorder option',
-  disabled,
+  isDisabled,
   ...props
 }: DualListSelectorListItemProps) => {
   const ref = innerRef || React.useRef<HTMLLIElement>(null);
@@ -45,10 +47,10 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
 
   return (
     <li
-      className={css(styles.dualListSelectorListItem, className)}
+      className={css(styles.dualListSelectorListItem, className, isDisabled && styles.modifiers.disabled)}
       key={orderIndex}
       onClick={
-        disabled
+        isDisabled
           ? undefined
           : (e: React.MouseEvent) => {
               setFocusedOption(id);
@@ -69,7 +71,7 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
       {...props}
     >
       <div className={css(styles.dualListSelectorListItemRow, isSelected && styles.modifiers.selected)}>
-        {isDraggable && !disabled && (
+        {isDraggable && !isDisabled && (
           <div className={css(styles.dualListSelectorDraggable)}>
             <Button variant={ButtonVariant.plain} aria-label={draggableButtonAriaLabel} component="span">
               <GripVerticalIcon style={{ verticalAlign: '-0.3em' }} />

@@ -111,17 +111,17 @@ exports[`DualListSelector basic 1`] = `
                   role="listbox"
                 >
                   <DualListSelectorListItem
-                    disabled={false}
                     id="firstTest-available-pane-list-option-0"
+                    isDisabled={false}
                     isSelected={false}
                     key="0"
                     onOptionSelect={[Function]}
                     orderIndex={0}
                   >
                     <DualListSelectorListItemBase
-                      disabled={false}
                       id="firstTest-available-pane-list-option-0"
                       innerRef={null}
+                      isDisabled={false}
                       isSelected={false}
                       onOptionSelect={[Function]}
                       orderIndex={0}
@@ -157,17 +157,17 @@ exports[`DualListSelector basic 1`] = `
                     </DualListSelectorListItemBase>
                   </DualListSelectorListItem>
                   <DualListSelectorListItem
-                    disabled={false}
                     id="firstTest-available-pane-list-option-1"
+                    isDisabled={false}
                     isSelected={false}
                     key="1"
                     onOptionSelect={[Function]}
                     orderIndex={1}
                   >
                     <DualListSelectorListItemBase
-                      disabled={false}
                       id="firstTest-available-pane-list-option-1"
                       innerRef={null}
+                      isDisabled={false}
                       isSelected={false}
                       onOptionSelect={[Function]}
                       orderIndex={1}
@@ -933,24 +933,24 @@ exports[`DualListSelector basic with disabled controls 1`] = `
                   role="listbox"
                 >
                   <DualListSelectorListItem
-                    disabled={true}
                     id="disabledTest-available-pane-list-option-0"
+                    isDisabled={true}
                     isSelected={false}
                     key="0"
                     onOptionSelect={[Function]}
                     orderIndex={0}
                   >
                     <DualListSelectorListItemBase
-                      disabled={true}
                       id="disabledTest-available-pane-list-option-0"
                       innerRef={null}
+                      isDisabled={true}
                       isSelected={false}
                       onOptionSelect={[Function]}
                       orderIndex={0}
                     >
                       <li
                         aria-selected={false}
-                        className="pf-c-dual-list-selector__list-item"
+                        className="pf-c-dual-list-selector__list-item pf-m-disabled"
                         id="disabledTest-available-pane-list-option-0"
                         key="0"
                         onKeyDown={[Function]}
@@ -978,24 +978,24 @@ exports[`DualListSelector basic with disabled controls 1`] = `
                     </DualListSelectorListItemBase>
                   </DualListSelectorListItem>
                   <DualListSelectorListItem
-                    disabled={true}
                     id="disabledTest-available-pane-list-option-1"
+                    isDisabled={true}
                     isSelected={false}
                     key="1"
                     onOptionSelect={[Function]}
                     orderIndex={1}
                   >
                     <DualListSelectorListItemBase
-                      disabled={true}
                       id="disabledTest-available-pane-list-option-1"
                       innerRef={null}
+                      isDisabled={true}
                       isSelected={false}
                       onOptionSelect={[Function]}
                       orderIndex={1}
                     >
                       <li
                         aria-selected={false}
-                        className="pf-c-dual-list-selector__list-item"
+                        className="pf-c-dual-list-selector__list-item pf-m-disabled"
                         id="disabledTest-available-pane-list-option-1"
                         key="1"
                         onKeyDown={[Function]}
@@ -1794,17 +1794,17 @@ exports[`DualListSelector with actions 1`] = `
                   role="listbox"
                 >
                   <DualListSelectorListItem
-                    disabled={false}
                     id="fourthTest-available-pane-list-option-0"
+                    isDisabled={false}
                     isSelected={false}
                     key="0"
                     onOptionSelect={[Function]}
                     orderIndex={0}
                   >
                     <DualListSelectorListItemBase
-                      disabled={false}
                       id="fourthTest-available-pane-list-option-0"
                       innerRef={null}
+                      isDisabled={false}
                       isSelected={false}
                       onOptionSelect={[Function]}
                       orderIndex={0}
@@ -1840,17 +1840,17 @@ exports[`DualListSelector with actions 1`] = `
                     </DualListSelectorListItemBase>
                   </DualListSelectorListItem>
                   <DualListSelectorListItem
-                    disabled={false}
                     id="fourthTest-available-pane-list-option-1"
+                    isDisabled={false}
                     isSelected={false}
                     key="1"
                     onOptionSelect={[Function]}
                     orderIndex={1}
                   >
                     <DualListSelectorListItemBase
-                      disabled={false}
                       id="fourthTest-available-pane-list-option-1"
                       innerRef={null}
+                      isDisabled={false}
                       isSelected={false}
                       onOptionSelect={[Function]}
                       orderIndex={1}
@@ -2529,17 +2529,17 @@ exports[`DualListSelector with actions 1`] = `
                   role="listbox"
                 >
                   <DualListSelectorListItem
-                    disabled={false}
                     id="fourthTest-chosen-pane-list-option-0"
+                    isDisabled={false}
                     isSelected={false}
                     key="0"
                     onOptionSelect={[Function]}
                     orderIndex={0}
                   >
                     <DualListSelectorListItemBase
-                      disabled={false}
                       id="fourthTest-chosen-pane-list-option-0"
                       innerRef={null}
+                      isDisabled={false}
                       isSelected={false}
                       onOptionSelect={[Function]}
                       orderIndex={0}
@@ -2575,17 +2575,17 @@ exports[`DualListSelector with actions 1`] = `
                     </DualListSelectorListItemBase>
                   </DualListSelectorListItem>
                   <DualListSelectorListItem
-                    disabled={false}
                     id="fourthTest-chosen-pane-list-option-1"
+                    isDisabled={false}
                     isSelected={false}
                     key="1"
                     onOptionSelect={[Function]}
                     orderIndex={1}
                   >
                     <DualListSelectorListItemBase
-                      disabled={false}
                       id="fourthTest-chosen-pane-list-option-1"
                       innerRef={null}
+                      isDisabled={false}
                       isSelected={false}
                       onOptionSelect={[Function]}
                       orderIndex={1}
@@ -2744,17 +2744,17 @@ exports[`DualListSelector with custom status 1`] = `
                   role="listbox"
                 >
                   <DualListSelectorListItem
-                    disabled={false}
                     id="thirdTest-available-pane-list-option-0"
+                    isDisabled={false}
                     isSelected={false}
                     key="0"
                     onOptionSelect={[Function]}
                     orderIndex={0}
                   >
                     <DualListSelectorListItemBase
-                      disabled={false}
                       id="thirdTest-available-pane-list-option-0"
                       innerRef={null}
+                      isDisabled={false}
                       isSelected={false}
                       onOptionSelect={[Function]}
                       orderIndex={0}
@@ -2790,17 +2790,17 @@ exports[`DualListSelector with custom status 1`] = `
                     </DualListSelectorListItemBase>
                   </DualListSelectorListItem>
                   <DualListSelectorListItem
-                    disabled={false}
                     id="thirdTest-available-pane-list-option-1"
+                    isDisabled={false}
                     isSelected={false}
                     key="1"
                     onOptionSelect={[Function]}
                     orderIndex={1}
                   >
                     <DualListSelectorListItemBase
-                      disabled={false}
                       id="thirdTest-available-pane-list-option-1"
                       innerRef={null}
+                      isDisabled={false}
                       isSelected={false}
                       onOptionSelect={[Function]}
                       orderIndex={1}
@@ -3583,17 +3583,17 @@ exports[`DualListSelector with search inputs 1`] = `
                   role="listbox"
                 >
                   <DualListSelectorListItem
-                    disabled={false}
                     id="secondTest-available-pane-list-option-0"
+                    isDisabled={false}
                     isSelected={false}
                     key="0"
                     onOptionSelect={[Function]}
                     orderIndex={0}
                   >
                     <DualListSelectorListItemBase
-                      disabled={false}
                       id="secondTest-available-pane-list-option-0"
                       innerRef={null}
+                      isDisabled={false}
                       isSelected={false}
                       onOptionSelect={[Function]}
                       orderIndex={0}
@@ -3629,17 +3629,17 @@ exports[`DualListSelector with search inputs 1`] = `
                     </DualListSelectorListItemBase>
                   </DualListSelectorListItem>
                   <DualListSelectorListItem
-                    disabled={false}
                     id="secondTest-available-pane-list-option-1"
+                    isDisabled={false}
                     isSelected={false}
                     key="1"
                     onOptionSelect={[Function]}
                     orderIndex={1}
                   >
                     <DualListSelectorListItemBase
-                      disabled={false}
                       id="secondTest-available-pane-list-option-1"
                       innerRef={null}
+                      isDisabled={false}
                       isSelected={false}
                       onOptionSelect={[Function]}
                       orderIndex={1}
@@ -4545,7 +4545,6 @@ exports[`DualListSelector with tree 1`] = `
                               >
                                 <input
                                   checked={false}
-                                  disabled={false}
                                   onChange={[Function]}
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
@@ -4620,7 +4619,6 @@ exports[`DualListSelector with tree 1`] = `
                                       >
                                         <input
                                           checked={false}
-                                          disabled={false}
                                           onChange={[Function]}
                                           onClick={[Function]}
                                           onKeyDown={[Function]}
@@ -4681,7 +4679,6 @@ exports[`DualListSelector with tree 1`] = `
                               >
                                 <input
                                   checked={false}
-                                  disabled={false}
                                   onChange={[Function]}
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
