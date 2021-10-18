@@ -35,6 +35,8 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   isPlain?: boolean;
   /** Flag indicating if select is disabled */
   isDisabled?: boolean;
+  /** Flag indicating if placeholder styles should be applied */
+  hasPlaceholderStyle?: boolean;
   /** Type of the toggle button, defaults to 'button' */
   type?: 'reset' | 'button' | 'submit' | undefined;
   /** Id of label for the Select aria-labelledby */
@@ -61,6 +63,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     isActive: false,
     isPlain: false,
     isDisabled: false,
+    hasPlaceholderStyle: false,
     hasClearButton: false,
     hasFooter: false,
     variant: 'single',
@@ -215,6 +218,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       isActive,
       isPlain,
       isDisabled,
+      hasPlaceholderStyle,
       variant,
       onToggle,
       onEnter,
@@ -256,6 +260,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
             type={type}
             className={css(
               styles.selectToggle,
+              hasPlaceholderStyle && styles.modifiers.placeholder,
               isDisabled && styles.modifiers.disabled,
               isPlain && styles.modifiers.plain,
               isActive && styles.modifiers.active,
@@ -284,6 +289,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
             ref={this.toggle as React.RefObject<HTMLDivElement>}
             className={css(
               styles.selectToggle,
+              hasPlaceholderStyle && styles.modifiers.placeholder,
               isDisabled && styles.modifiers.disabled,
               isPlain && styles.modifiers.plain,
               isTypeahead && styles.modifiers.typeahead,

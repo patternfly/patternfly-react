@@ -462,3 +462,14 @@ describe('select with custom content', () => {
     expect(view).toMatchSnapshot();
   });
 });
+
+describe('select with placeholder', () => {
+  test('renders placeholder with the right class applied when not selected', () => {
+    const view = mount(<Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} hasPlaceholderStyle />);
+    expect(view.find('span.pf-m-placeholder')).toMatchSnapshot();
+  });
+  test('does not apply the placeholder class when selected', () => {
+    const view = mount(<Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} hasPlaceholderStyle selections={['selected option']} />);
+    expect(view.find('span.pf-m-placeholder').length).toBeFalsy();
+  });
+});

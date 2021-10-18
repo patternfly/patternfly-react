@@ -7,6 +7,7 @@ exports[`state active 1`] = `
   className=""
   hasClearButton={false}
   hasFooter={false}
+  hasPlaceholderStyle={false}
   id="Select Toggle"
   isActive={true}
   isDisabled={false}
