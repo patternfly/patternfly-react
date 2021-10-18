@@ -9391,7 +9391,56 @@ exports[`select with custom content renders expanded successfully 1`] = `
 </Select>
 `;
 
-exports[`select with placeholder renders placeholder with the right class applied when not selected 1`] = `null`;
+exports[`select with placeholder applies the placeholder class when not selected 1`] = `
+<button
+  aria-expanded={false}
+  aria-haspopup="listbox"
+  aria-label="Options menu"
+  aria-labelledby=" pf-select-toggle-id-18"
+  className="pf-c-select__toggle pf-m-placeholder"
+  disabled={false}
+  id="pf-select-toggle-id-18"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  type="button"
+>
+  <div
+    className="pf-c-select__toggle-wrapper"
+  >
+    <span
+      className="pf-c-select__toggle-text"
+    />
+  </div>
+  <span
+    className="pf-c-select__toggle-arrow"
+  >
+    <CaretDownIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    >
+      <svg
+        aria-hidden={true}
+        aria-labelledby={null}
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style={
+          Object {
+            "verticalAlign": "-0.125em",
+          }
+        }
+        viewBox="0 0 320 512"
+        width="1em"
+      >
+        <path
+          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+        />
+      </svg>
+    </CaretDownIcon>
+  </span>
+</button>
+`;
 
 exports[`toggle icon select checkbox 1`] = `
 <span
