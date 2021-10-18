@@ -11,7 +11,7 @@ export enum ProgressSize {
   lg = 'lg'
 }
 
-export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'size' | 'label'> {
+export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'size' | 'label' | 'title'> {
   /** Classname for progress component. */
   className?: string;
   /** Size variant of progress. */
@@ -20,8 +20,8 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   measureLocation?: 'outside' | 'inside' | 'top' | 'none';
   /** Status variant of progress. */
   variant?: 'danger' | 'success' | 'warning';
-  /** Title above progress. */
-  title?: string;
+  /** Title above progress. The isTitleTruncated property will only affect string titles. Node title truncation must be handled manually. */
+  title?: React.ReactNode;
   /** Text description of current progress value to display instead of percentage. */
   label?: React.ReactNode;
   /** Actual value of progress. */
