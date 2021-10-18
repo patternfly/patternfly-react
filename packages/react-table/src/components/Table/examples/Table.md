@@ -246,65 +246,7 @@ To build a compound expandable table:
 
 ### With width and breakpoint visibility modifiers
 
-```js
-import React from 'react';
-import { Table, TableHeader, TableBody, cellWidth, classNames, Visibility } from '@patternfly/react-table';
-
-class WidthTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: [
-        { title: 'Header cell', transforms: [cellWidth(10)] },
-        {
-          title: 'Branches (visible only on md)',
-          columnTransforms: [
-            classNames(Visibility.hidden, Visibility.visibleOnMd, Visibility.hiddenOnLg, Visibility.visibleOn2Xl)
-          ]
-        },
-        {
-          title: 'Pull requests (hidden only on md)',
-          columnTransforms: [classNames(Visibility.hiddenOnMd, Visibility.visibleOnLg)]
-        },
-        {
-          title: 'Workspaces (hidden on xs)',
-          columnTransforms: [classNames(Visibility.hidden, Visibility.visibleOnSm)]
-        },
-        {
-          title: 'Last commit',
-          transforms: [cellWidth(30)]
-        }
-      ],
-      rows: [
-        [
-          'one - 1',
-          'two - 1 (visible only on md)',
-          'three - 1 (hidden only on md)',
-          'four - 1 (hidden on xs)',
-          'five - 1'
-        ],
-        [
-          'one - 2',
-          'two - 2 (visible only on md)',
-          'three - 2 (hidden only on md)',
-          'four - 2 (hidden on xs)',
-          'five - 2'
-        ]
-      ]
-    };
-  }
-
-  render() {
-    const { columns, rows } = this.state;
-
-    return (
-      <Table aria-label="Table with width and breakpoint visibility modifiers" cells={columns} rows={rows}>
-        <TableHeader />
-        <TableBody />
-      </Table>
-    );
-  }
-}
+```ts file="TableCellWidth.tsx"
 ```
 
 ### Controlling text
