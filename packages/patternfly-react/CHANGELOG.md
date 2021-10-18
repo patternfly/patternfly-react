@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.40.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.18...patternfly-react@2.40.0) (2021-10-18)
+
+
+### Features
+
+* **patternfly-react:** minor bump ([#6473](https://github.com/patternfly/patternfly-react/issues/6473)) ([8046195](https://github.com/patternfly/patternfly-react/commit/8046195ba437aa05e99695b7beb427098e6daa88))
+
+
+
+
+
 ## [2.39.18](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.17...patternfly-react@2.39.18) (2021-10-14)
 
 
