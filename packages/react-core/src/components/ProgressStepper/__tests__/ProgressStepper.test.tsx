@@ -87,7 +87,7 @@ describe('ProgressStep', () => {
   });
 
   test('renders help text styling', () => {
-    const view = mount(<ProgressStep hasPopover>Title</ProgressStep>);
+    const view = mount(<ProgressStep hasHelpPopover>Title</ProgressStep>);
     expect(view).toMatchSnapshot();
   });
 

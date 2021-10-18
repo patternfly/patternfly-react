@@ -22,8 +22,8 @@ export interface ProgressStepProps
   description?: string;
   /** ID of the title of the progress step. */
   titleId?: string;
-  /** Flag indicating the title has a popover help text. */
-  hasPopover?: boolean;
+  /** Flag indicating the title has a help text popover. */
+  hasHelpPopover?: boolean;
   /** @hide Forwarded reference to title container */
   innerRef?: React.Ref<any>;
 }
@@ -54,12 +54,12 @@ const ProgressStepBase: React.FunctionComponent<ProgressStepProps> = ({
   description,
   icon,
   titleId,
-  hasPopover,
+  hasHelpPopover,
   innerRef,
   ...props
 }: ProgressStepProps) => {
   const _icon = icon !== undefined ? icon : variantIcons[variant];
-  const Component = hasPopover !== undefined ? 'span' : 'div';
+  const Component = hasHelpPopover !== undefined ? 'span' : 'div';
 
   if (props.id === undefined || titleId === undefined) {
     /* eslint-disable no-console */
@@ -83,10 +83,10 @@ const ProgressStepBase: React.FunctionComponent<ProgressStepProps> = ({
       </div>
       <div className={css(styles.progressStepperStepMain)}>
         <Component
-          className={css(styles.progressStepperStepTitle, hasPopover && styles.modifiers.helpText)}
+          className={css(styles.progressStepperStepTitle, hasHelpPopover && styles.modifiers.helpText)}
           id={titleId}
           ref={innerRef}
-          {...(hasPopover && { tabIndex: 0, role: 'button' })}
+          {...(hasHelpPopover && { tabIndex: 0, role: 'button', type: 'button' })}
           {...(props.id !== undefined && titleId !== undefined && { 'aria-labelledby': `${props.id} ${titleId}` })}
         >
           {children}
