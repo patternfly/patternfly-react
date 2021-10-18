@@ -72,14 +72,16 @@ class MenuBasicList extends React.Component {
             </MenuList>
           </MenuContent>
         </Menu>
-        <Checkbox
-          label="Plain menu"
-          isChecked={isPlain}
-          onChange={this.togglePlain}
-          aria-label="plain menu checkbox"
-          id="toggle-plain"
-          name="toggle-plain"
-        />
+        <div style={{ marginTop: 20 }}> 
+          <Checkbox
+            label="Plain menu"
+            isChecked={isPlain}
+            onChange={this.togglePlain}
+            aria-label="plain menu checkbox"
+            id="toggle-plain"
+            name="toggle-plain"
+          />
+        </div>
       </React.Fragment>
     );
   }
@@ -1335,8 +1337,8 @@ class MenuBasicList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Menu activeItemId={activeItem} onSelect={this.onSelect}>
-        <MenuContent menuHeight="300px">
+      <Menu activeItemId={activeItem} onSelect={this.onSelect} isScrollable>
+        <MenuContent menuHeight="200px">
           <MenuList>
             <MenuItem>Action 1</MenuItem>
             <MenuItem>Action 2</MenuItem>
