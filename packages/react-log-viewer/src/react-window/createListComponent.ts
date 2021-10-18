@@ -589,7 +589,7 @@ export default function createListComponent({
 // So my doing it would just unnecessarily double the wrappers.
 
 const validateSharedProps = (
-  { children, direction, height, layout, innerTagName, outerTagName, width }: VariableSizeProps,
+  { children, direction, layout, innerTagName, outerTagName }: VariableSizeProps,
   { instance }: State
 ): void => {
   if (process.env.NODE_ENV !== 'production') {
@@ -603,9 +603,6 @@ const validateSharedProps = (
         );
       }
     }
-
-    // TODO Deprecate direction "horizontal"
-    const isHorizontal = direction === 'horizontal' || layout === 'horizontal';
 
     switch (direction) {
       case 'horizontal':
@@ -649,20 +646,6 @@ const validateSharedProps = (
         'An invalid "children" prop has been specified. ' +
           'Value should be a React component. ' +
           `"${children === null ? 'null' : typeof children}" was specified.`
-      );
-    }
-
-    if (isHorizontal && typeof width !== 'number') {
-      throw Error(
-        'An invalid "width" prop has been specified. ' +
-          'Horizontal lists must specify a number for width. ' +
-          `"${width === null ? 'null' : typeof width}" was specified.`
-      );
-    } else if (!isHorizontal && typeof height !== 'number') {
-      throw Error(
-        'An invalid "height" prop has been specified. ' +
-          'Vertical lists must specify a number for height. ' +
-          `"${height === null ? 'null' : typeof height}" was specified.`
       );
     }
   }
