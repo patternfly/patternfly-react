@@ -154,7 +154,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       type="button"
       variant="plain"
       onClick={onClose}
-      {...{ 'aria-label': 'label-close-button', ...closeBtnProps }}
+      {...{ 'aria-label': `Close ${children}`, ...closeBtnProps }}
     >
       <TimesIcon />
     </Button>
