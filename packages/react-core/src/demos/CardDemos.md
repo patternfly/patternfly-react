@@ -1966,7 +1966,7 @@ const AccordionCard: React.FunctionComponent = () => {
         </CardTitle>
       </CardHeader>
       <CardBody>
-        <Accordion asDefinitionList>
+        <Accordion>
           <AccordionItem>
             <AccordionToggle
               id="cpu1-toggle"
