@@ -265,7 +265,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           install: false
-          start: cd demo-app-ts && yarn serve:demo-app
+          start: yarn serve:integration
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 10
           browser: chrome
