@@ -8,15 +8,19 @@ docs:
   steps:
     %checkout%
     %install%
+    - name: Download dist
+      uses: actions/download-artifact@v2
+      with:
+        name: dist
     - uses: actions/cache@v2
       id: docs-cache
-      name: Load webpack cache
+      name: Cache webpack
       with:
         path: '.cache'
         key: ${{ runner.os }}-v4-${{ hashFiles('yarn.lock') }}
     - name: Build docs
       run: yarn build:docs
-    - name: Save build folder
+    - name: Save docs
       uses: actions/upload-artifact@v2
       with:
         name: docs

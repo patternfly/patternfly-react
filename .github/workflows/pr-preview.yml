@@ -28,14 +28,19 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
         id: build-cache
-        name: Cache build
+        name: Cache dist
         with:
-          path: |
-            '**/dist'
-            packages/react-styles/css
-          key: ${{ runner.os }}-build-14-${{ hashFiles('yarn.lock') }}
+          path: packages/*/dist
+          key: ${{ runner.os }}-dist-14-${{ hashFiles('yarn.lock') }}
       - name: Build dist
         run: yarn build && yarn build:umd
+      - name: Upload dist
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: |
+            packages/*/dist
+            packages/react-styles/css
   lint:
     runs-on: ubuntu-latest
     needs: build
@@ -98,6 +103,10 @@ jobs:
           key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
+      - name: Download dist
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
       - name: PF4 Jest Tests
         run: yarn test --maxWorkers=2
   docs:
@@ -129,15 +138,19 @@ jobs:
           key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
+      - name: Download dist
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
       - uses: actions/cache@v2
         id: docs-cache
-        name: Load webpack cache
+        name: Cache webpack
         with:
           path: '.cache'
           key: ${{ runner.os }}-v4-${{ hashFiles('yarn.lock') }}
       - name: Build docs
         run: yarn build:docs
-      - name: Save build folder
+      - name: Save docs
         uses: actions/upload-artifact@v2
         with:
           name: docs
@@ -171,6 +184,10 @@ jobs:
           key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
+      - name: Download dist
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
       - name: Build demo app
         run: yarn build:integration
       - name: Save build folder
@@ -253,9 +270,13 @@ jobs:
           key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
+      - name: Download docs
+        uses: actions/download-artifact@v2
+        with:
+          name: docs
       - name: a11y tests
         run: yarn serve & yarn test
       - name: Upload docs
-        run: node .github/upload-preview.js public
+        run: node .github/upload-preview.js packages/react-docs/coverage
         if: always()
 

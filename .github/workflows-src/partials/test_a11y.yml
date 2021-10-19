@@ -8,9 +8,13 @@ test_a11y:
   steps:
     %checkout%
     %install%
+    - name: Download docs
+      uses: actions/download-artifact@v2
+      with:
+        name: docs
     - name: a11y tests
       run: yarn serve & yarn test
     - name: Upload docs
-      run: node .github/upload-preview.js public
+      run: node .github/upload-preview.js packages/react-docs/coverage
       if: always()
 
