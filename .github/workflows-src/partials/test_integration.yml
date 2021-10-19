@@ -24,7 +24,7 @@ test_integration:
         wait-on: 'http://localhost:3000'
         wait-on-timeout: 10
         browser: chrome
-        record: false
+        record: true
         parallel: true
         group: 'UI - Chrome'
         working-directory: packages/react-integration
