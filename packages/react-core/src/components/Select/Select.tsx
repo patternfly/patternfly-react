@@ -62,7 +62,7 @@ export interface SelectProps
   isCreatable?: boolean;
   /** Flag indicating if placeholder styles should be applied */
   hasPlaceholderStyle?: boolean;
-  /** Flag indicating if the creatable option should set its value as a SelectOptionObject */
+  /** @beta Flag indicating if the creatable option should set its value as a SelectOptionObject */
   isCreateSelectOptionObject?: boolean;
   /** Value to indicate if the select is modified to show that validation state.
    * If set to success, select will be modified to indicate valid state.
