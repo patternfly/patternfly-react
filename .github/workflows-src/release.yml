@@ -15,6 +15,7 @@ jobs:
     needs: [build]
     env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      GH_TOKEN: ${{ secrets.GH_TOKEN_REDALLEN }}
       GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
     steps:
       - uses: actions/checkout@v2
