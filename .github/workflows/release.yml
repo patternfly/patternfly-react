@@ -277,7 +277,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GH_TOKEN_REDALLEN }} # needs to be an admin token to get around branch protection
           fetch-depth: 0 # pulls all commits (needed for lerna / semantic release to correctly version)
       - uses: actions/setup-node@v1
         with:
