@@ -9,10 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      # Yes, we really want to checkout the PR
       - run: |
-          git fetch origin pull/$GH_PR_NUM/head:tmp
-          git checkout tmp
+          if [[ -z $GH_PR_NUM ]]; then 
+            # Yes, we really want to checkout the PR
+            git fetch origin pull/$GH_PR_NUM/head:tmp
+            git checkout tmp
+          end
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
@@ -41,10 +43,12 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v2
-      # Yes, we really want to checkout the PR
       - run: |
-          git fetch origin pull/$GH_PR_NUM/head:tmp
-          git checkout tmp
+          if [[ -z $GH_PR_NUM ]]; then 
+            # Yes, we really want to checkout the PR
+            git fetch origin pull/$GH_PR_NUM/head:tmp
+            git checkout tmp
+          end
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
@@ -75,10 +79,12 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v2
-      # Yes, we really want to checkout the PR
       - run: |
-          git fetch origin pull/$GH_PR_NUM/head:tmp
-          git checkout tmp
+          if [[ -z $GH_PR_NUM ]]; then 
+            # Yes, we really want to checkout the PR
+            git fetch origin pull/$GH_PR_NUM/head:tmp
+            git checkout tmp
+          end
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
@@ -103,10 +109,12 @@ jobs:
       GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
     steps:
       - uses: actions/checkout@v2
-      # Yes, we really want to checkout the PR
       - run: |
-          git fetch origin pull/$GH_PR_NUM/head:tmp
-          git checkout tmp
+          if [[ -z $GH_PR_NUM ]]; then 
+            # Yes, we really want to checkout the PR
+            git fetch origin pull/$GH_PR_NUM/head:tmp
+            git checkout tmp
+          end
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
@@ -142,10 +150,12 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v2
-      # Yes, we really want to checkout the PR
       - run: |
-          git fetch origin pull/$GH_PR_NUM/head:tmp
-          git checkout tmp
+          if [[ -z $GH_PR_NUM ]]; then 
+            # Yes, we really want to checkout the PR
+            git fetch origin pull/$GH_PR_NUM/head:tmp
+            git checkout tmp
+          end
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
@@ -176,10 +186,12 @@ jobs:
         containers: [1, 2, 3, 4, 5]
     steps:
       - uses: actions/checkout@v2
-      # Yes, we really want to checkout the PR
       - run: |
-          git fetch origin pull/$GH_PR_NUM/head:tmp
-          git checkout tmp
+          if [[ -z $GH_PR_NUM ]]; then 
+            # Yes, we really want to checkout the PR
+            git fetch origin pull/$GH_PR_NUM/head:tmp
+            git checkout tmp
+          end
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
@@ -218,10 +230,12 @@ jobs:
       GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
     steps:
       - uses: actions/checkout@v2
-      # Yes, we really want to checkout the PR
       - run: |
-          git fetch origin pull/$GH_PR_NUM/head:tmp
-          git checkout tmp
+          if [[ -z $GH_PR_NUM ]]; then 
+            # Yes, we really want to checkout the PR
+            git fetch origin pull/$GH_PR_NUM/head:tmp
+            git checkout tmp
+          end
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
