@@ -20,17 +20,18 @@ jobs:
           node-version: '14'
       - uses: actions/cache@v2
         id: yarn-cache
-        name: Load npm deps from cache
+        name: Cache npm deps
         with:
           path: |
-           '**/node_modules'
+           node_modules
+           **/node_modules
            ~/.cache/Cypress
           key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
         id: build-cache
-        name: Load build cache
+        name: Cache build
         with:
           path: |
             '**/dist'
@@ -54,10 +55,11 @@ jobs:
           node-version: '14'
       - uses: actions/cache@v2
         id: yarn-cache
-        name: Load npm deps from cache
+        name: Cache npm deps
         with:
           path: |
-           '**/node_modules'
+           node_modules
+           **/node_modules
            ~/.cache/Cypress
           key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
@@ -90,10 +92,11 @@ jobs:
           node-version: '14'
       - uses: actions/cache@v2
         id: yarn-cache
-        name: Load npm deps from cache
+        name: Cache npm deps
         with:
           path: |
-           '**/node_modules'
+           node_modules
+           **/node_modules
            ~/.cache/Cypress
           key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
@@ -120,10 +123,11 @@ jobs:
           node-version: '14'
       - uses: actions/cache@v2
         id: yarn-cache
-        name: Load npm deps from cache
+        name: Cache npm deps
         with:
           path: |
-           '**/node_modules'
+           node_modules
+           **/node_modules
            ~/.cache/Cypress
           key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
@@ -161,10 +165,11 @@ jobs:
           node-version: '14'
       - uses: actions/cache@v2
         id: yarn-cache
-        name: Load npm deps from cache
+        name: Cache npm deps
         with:
           path: |
-           '**/node_modules'
+           node_modules
+           **/node_modules
            ~/.cache/Cypress
           key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
@@ -197,10 +202,11 @@ jobs:
           node-version: '14'
       - uses: actions/cache@v2
         id: yarn-cache
-        name: Load npm deps from cache
+        name: Cache npm deps
         with:
           path: |
-           '**/node_modules'
+           node_modules
+           **/node_modules
            ~/.cache/Cypress
           key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
@@ -241,10 +247,11 @@ jobs:
           node-version: '14'
       - uses: actions/cache@v2
         id: yarn-cache
-        name: Load npm deps from cache
+        name: Cache npm deps
         with:
           path: |
-           '**/node_modules'
+           node_modules
+           **/node_modules
            ~/.cache/Cypress
           key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
@@ -266,10 +273,11 @@ jobs:
           node-version: '14'
       - uses: actions/cache@v2
         id: yarn-cache
-        name: Load npm deps from cache
+        name: Cache npm deps
         with:
           path: |
-           '**/node_modules'
+           node_modules
+           **/node_modules
            ~/.cache/Cypress
           key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile

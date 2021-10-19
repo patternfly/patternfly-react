@@ -3,10 +3,11 @@
     node-version: '14'
 - uses: actions/cache@v2
   id: yarn-cache
-  name: Load npm deps from cache
+  name: Cache npm deps
   with:
     path: |
-     '**/node_modules'
+     node_modules
+     **/node_modules
      ~/.cache/Cypress
     key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
 - run: yarn install --frozen-lockfile
