@@ -17,6 +17,8 @@ import {
   PageSection,
   PageSectionVariants,
   PageBreadcrumb,
+  Breadcrumb,
+  BreadcrumbItem,
   Tabs,
   Tab,
   TabContent,
@@ -40,7 +42,7 @@ TabsOpenDemo = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);
 
   // Toggle currently active tab
-  const handleTabClick = (event: any, tabIndex: number) => {
+  const handleTabClick = (event, tabIndex) => {
     setActiveTabKey(tabIndex);
   };
 
@@ -205,6 +207,8 @@ import {
   PageSection,
   PageSectionVariants,
   PageBreadcrumb,
+  Breadcrumb,
+  BreadcrumbItem,
   Tabs,
   Tab,
   TabContent,
@@ -229,12 +233,12 @@ TabsOpenWithSecondaryTabsDemo = () => {
   const [activeTabKeySecondary, setActiveTabKeySecondary] = React.useState(10);
 
   // Toggle currently active tab
-  const handleTabClick = (event: any, tabIndex: number) => {
+  const handleTabClick = (event, tabIndex) => {
     setActiveTabKey(tabIndex);
   };
 
   // Toggle currently active secondary tab
-  const handleTabClickSecondary = (event: any, tabIndex: number) => {
+  const handleTabClickSecondary = (event, tabIndex) => {
     setActiveTabKeySecondary(tabIndex);
   };
 

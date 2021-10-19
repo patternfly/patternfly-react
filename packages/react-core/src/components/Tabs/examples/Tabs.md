@@ -1054,10 +1054,10 @@ class SeparateTabContent extends React.Component {
 import React from 'react';
 import { Tabs, Tab, TabTitleText, TabContent, TabContentBody } from '@patternfly/react-core';
 
-const TabContentWithBody: React.FunctionComponent = () => {
+const TabContentWithBody = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);
   // Toggle currently active tab
-  const handleTabClick = (event: React.MouseEvent, tabIndex: number) => {
+  const handleTabClick = (event, tabIndex) => {
     setActiveTabKey(tabIndex);
   };
 
