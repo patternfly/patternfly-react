@@ -8,10 +8,9 @@ test_integration:
   steps:
     %checkout%
     %install%
-    - name: Download the build folders
-      uses: actions/download-artifact@v2
-      with:
-        name: demo_app
+    %dist%
+    - name: Build demo app
+      run: yarn build:integration
     - name: Cypress tests
       uses: cypress-io/github-action@v2
       with:

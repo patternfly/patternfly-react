@@ -5,6 +5,5 @@ jobs:
   %lint%
   %test_jest%
   %docs%
-  %demo_app%
   %test_integration%
 
