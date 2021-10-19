@@ -269,5 +269,5 @@ jobs:
           record: false
           parallel: true
           group: 'UI - Chrome'
-          spec: packages/react-integration/cypress/integration/*
+          working-directory: packages/react-integration
 
