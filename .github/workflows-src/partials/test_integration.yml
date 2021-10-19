@@ -20,7 +20,7 @@ test_integration:
       uses: cypress-io/github-action@v2
       with:
         install: false
-        start: yarn serve:integration
+        start: cd demo-app-ts && yarn serve:demo-app
         wait-on: 'http://localhost:3000'
         wait-on-timeout: 10
         browser: chrome
