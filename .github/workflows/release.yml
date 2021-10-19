@@ -175,7 +175,7 @@ jobs:
         if: always()
   test_integration:
     runs-on: ubuntu-latest
-    needs: demo_app
+    needs: build
     strategy:
       fail-fast: false
       matrix:
