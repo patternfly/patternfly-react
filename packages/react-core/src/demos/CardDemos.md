@@ -1931,6 +1931,658 @@ CardNestedDemo = () => {
 };
 ```
 
+### With accordion
+
+```ts
+import React from 'react';
+import {
+  Card,
+  CardTitle,
+  CardBody,
+  CardHeader,
+  Title,
+  Accordion,
+  AccordionItem,
+  AccordionToggle,
+  AccordionContent,
+  Divider,
+  Grid,
+  GridItem,
+  Flex,
+  FlexItem
+} from '@patternfly/react-core';
+import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
+
+const AccordionCard: React.FunctionComponent = () => {
+  const [openCPU, setOpenCPU] = React.useState('cpu1');
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>
+          <Title headingLevel="h2" size="lg">
+            Hardware Monitor
+          </Title>
+        </CardTitle>
+      </CardHeader>
+      <CardBody>
+        <Accordion>
+          <AccordionItem>
+            <AccordionToggle
+              id="cpu1-toggle"
+              onClick={() => {
+                if (openCPU === 'cpu1') {
+                  setOpenCPU(null);
+                } else {
+                  setOpenCPU('cpu1');
+                }
+              }}
+              isExpanded={openCPU === 'cpu1'}
+            >
+              CPU 1
+            </AccordionToggle>
+            <AccordionContent isHidden={openCPU !== 'cpu1'}>
+              <Grid hasGutter>
+                <Grid hasGutter>
+                  <GridItem md={4}>
+                    <Flex
+                      className="pf-u-h-100-on-md"
+                      direction={{ md: 'column' }}
+                      spaceItems={{ md: 'spaceItemsNone' }}
+                      justifyContent={{ md: 'justifyContentCenter' }}
+                    >
+                      <FlexItem>
+                        <b>Temperature</b>
+                      </FlexItem>
+                      <Divider className="pf-u-hidden-on-md" isVertical inset={{ default: 'insetSm' }} />
+                      <FlexItem>
+                        <span>64C</span>
+                      </FlexItem>
+                    </Flex>
+                  </GridItem>
+                  <GridItem md={8}>
+                    <Grid hasGutter>
+                      <GridItem span={2}>
+                        <Flex
+                          direction={{ default: 'column' }}
+                          spaceItems={{ default: 'spaceItemsNone' }}
+                          alignItems={{ md: 'alignItemsFlexEnd' }}
+                        >
+                          <div className="pf-l-flex__item">100C</div>
+                          <div className="pf-l-flex__item">50C</div>
+                          <div className="pf-l-flex__item">0C</div>
+                        </Flex>
+                      </GridItem>
+                      <GridItem span={10}>
+                        <ChartGroup
+                          ariaDesc="Mock CPU temperature"
+                          ariaTitle="Mock CPU temperature sparkline chart"
+                          containerComponent={
+                            <ChartVoronoiContainer
+                              labels={({ datum }) => `${datum.name}: ${datum.y}`}
+                              constrainToVisibleArea
+                            />
+                          }
+                          height={60}
+                          maxDomain={{ y: 100 }}
+                          padding={0}
+                          width={400}
+                        >
+                          <ChartArea
+                            data={[
+                              { name: 'Temp', x: '1', y: 25 },
+                              { name: 'Temp', x: '2', y: 40 },
+                              { name: 'Temp', x: '3', y: 20 },
+                              { name: 'Temp', x: '4', y: 60 },
+                              { name: 'Temp', x: '5', y: 20 },
+                              { name: 'Temp', x: '6', y: 41 },
+                              { name: 'Temp', x: '7', y: 45 },
+                              { name: 'Temp', x: '8', y: 41 },
+                              { name: 'Temp', x: '9', y: 62 }
+                            ]}
+                          />
+                        </ChartGroup>
+                      </GridItem>
+                    </Grid>
+                  </GridItem>
+                </Grid>
+                <Divider className="pf-u-hidden-on-md" />
+                <Grid hasGutter>
+                  <GridItem md={4}>
+                    <Flex
+                      className="pf-u-h-100-on-md"
+                      direction={{ md: 'column' }}
+                      spaceItems={{ md: 'spaceItemsNone' }}
+                      justifyContent={{ md: 'justifyContentCenter' }}
+                    >
+                      <FlexItem>
+                        <b>Speed</b>
+                      </FlexItem>
+                      <Divider className="pf-u-hidden-on-md" isVertical inset={{ default: 'insetSm' }} />
+                      <FlexItem>
+                        <span>2.3Ghz</span>
+                      </FlexItem>
+                    </Flex>
+                  </GridItem>
+                  <GridItem md={8}>
+                    <Grid hasGutter>
+                      <GridItem span={2}>
+                        <Flex
+                          direction={{ default: 'column' }}
+                          spaceItems={{ default: 'spaceItemsNone' }}
+                          alignItems={{ md: 'alignItemsFlexEnd' }}
+                        >
+                          <div className="pf-l-flex__item">3.6Ghz</div>
+                          <div className="pf-l-flex__item">1.5Ghz</div>
+                          <div className="pf-l-flex__item">0GHZ</div>
+                        </Flex>
+                      </GridItem>
+                      <GridItem span={10}>
+                        <ChartGroup
+                          ariaDesc="Mock CPU speed"
+                          ariaTitle="Mock CPU speed sparkline chart"
+                          containerComponent={
+                            <ChartVoronoiContainer
+                              labels={({ datum }) => `${datum.name}: ${datum.y}`}
+                              constrainToVisibleArea
+                            />
+                          }
+                          height={60}
+                          maxDomain={{ y: 3.6 }}
+                          padding={0}
+                          width={400}
+                        >
+                          <ChartArea
+                            data={[
+                              { name: 'Temp', x: '1', y: 0.9 },
+                              { name: 'Temp', x: '2', y: 1.44 },
+                              { name: 'Temp', x: '3', y: 0.72 },
+                              { name: 'Temp', x: '4', y: 2.16 },
+                              { name: 'Temp', x: '5', y: 0.72 },
+                              { name: 'Temp', x: '6', y: 1.48 },
+                              { name: 'Temp', x: '7', y: 1.62 },
+                              { name: 'Temp', x: '8', y: 1.48 },
+                              { name: 'Temp', x: '9', y: 2.23 }
+                            ]}
+                          />
+                        </ChartGroup>
+                      </GridItem>
+                    </Grid>
+                  </GridItem>
+                </Grid>
+              </Grid>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionToggle
+              id="cpu2-toggle"
+              onClick={() => {
+                if (openCPU === 'cpu2') {
+                  setOpenCPU(null);
+                } else {
+                  setOpenCPU('cpu2');
+                }
+              }}
+              isExpanded={openCPU === 'cpu2'}
+            >
+              CPU 2
+            </AccordionToggle>
+            <AccordionContent isHidden={openCPU !== 'cpu2'}>
+              <Grid hasGutter>
+                <Grid hasGutter>
+                  <GridItem md={4}>
+                    <Flex
+                      className="pf-u-h-100-on-md"
+                      direction={{ md: 'column' }}
+                      spaceItems={{ md: 'spaceItemsNone' }}
+                      justifyContent={{ md: 'justifyContentCenter' }}
+                    >
+                      <FlexItem>
+                        <b>Temperature</b>
+                      </FlexItem>
+                      <Divider className="pf-u-hidden-on-md" isVertical inset={{ default: 'insetSm' }} />
+                      <FlexItem>
+                        <span>64C</span>
+                      </FlexItem>
+                    </Flex>
+                  </GridItem>
+                  <GridItem md={8}>
+                    <Grid hasGutter>
+                      <GridItem span={2}>
+                        <Flex
+                          direction={{ default: 'column' }}
+                          spaceItems={{ default: 'spaceItemsNone' }}
+                          alignItems={{ md: 'alignItemsFlexEnd' }}
+                        >
+                          <div className="pf-l-flex__item">100C</div>
+                          <div className="pf-l-flex__item">50C</div>
+                          <div className="pf-l-flex__item">0C</div>
+                        </Flex>
+                      </GridItem>
+                      <GridItem span={10}>
+                        <ChartGroup
+                          ariaDesc="Mock CPU temperature"
+                          ariaTitle="Mock CPU temperature sparkline chart"
+                          containerComponent={
+                            <ChartVoronoiContainer
+                              labels={({ datum }) => `${datum.name}: ${datum.y}`}
+                              constrainToVisibleArea
+                            />
+                          }
+                          height={60}
+                          maxDomain={{ y: 100 }}
+                          padding={0}
+                          width={400}
+                        >
+                          <ChartArea
+                            data={[
+                              { name: 'Temp', x: '1', y: 25 },
+                              { name: 'Temp', x: '2', y: 40 },
+                              { name: 'Temp', x: '3', y: 20 },
+                              { name: 'Temp', x: '4', y: 60 },
+                              { name: 'Temp', x: '5', y: 20 },
+                              { name: 'Temp', x: '6', y: 41 },
+                              { name: 'Temp', x: '7', y: 45 },
+                              { name: 'Temp', x: '8', y: 41 },
+                              { name: 'Temp', x: '9', y: 62 }
+                            ]}
+                          />
+                        </ChartGroup>
+                      </GridItem>
+                    </Grid>
+                  </GridItem>
+                </Grid>
+                <Divider className="pf-u-hidden-on-md" />
+                <Grid hasGutter>
+                  <GridItem md={4}>
+                    <Flex
+                      className="pf-u-h-100-on-md"
+                      direction={{ md: 'column' }}
+                      spaceItems={{ md: 'spaceItemsNone' }}
+                      justifyContent={{ md: 'justifyContentCenter' }}
+                    >
+                      <FlexItem>
+                        <b>Speed</b>
+                      </FlexItem>
+                      <Divider className="pf-u-hidden-on-md" isVertical inset={{ default: 'insetSm' }} />
+                      <FlexItem>
+                        <span>2.3Ghz</span>
+                      </FlexItem>
+                    </Flex>
+                  </GridItem>
+                  <GridItem md={8}>
+                    <Grid hasGutter>
+                      <GridItem span={2}>
+                        <Flex
+                          direction={{ default: 'column' }}
+                          spaceItems={{ default: 'spaceItemsNone' }}
+                          alignItems={{ md: 'alignItemsFlexEnd' }}
+                        >
+                          <div className="pf-l-flex__item">3.6Ghz</div>
+                          <div className="pf-l-flex__item">1.5Ghz</div>
+                          <div className="pf-l-flex__item">0GHZ</div>
+                        </Flex>
+                      </GridItem>
+                      <GridItem span={10}>
+                        <ChartGroup
+                          ariaDesc="Mock CPU speed"
+                          ariaTitle="Mock CPU speed sparkline chart"
+                          containerComponent={
+                            <ChartVoronoiContainer
+                              labels={({ datum }) => `${datum.name}: ${datum.y}`}
+                              constrainToVisibleArea
+                            />
+                          }
+                          height={60}
+                          maxDomain={{ y: 3.6 }}
+                          padding={0}
+                          width={400}
+                        >
+                          <ChartArea
+                            data={[
+                              { name: 'Temp', x: '1', y: 0.9 },
+                              { name: 'Temp', x: '2', y: 1.44 },
+                              { name: 'Temp', x: '3', y: 0.72 },
+                              { name: 'Temp', x: '4', y: 2.16 },
+                              { name: 'Temp', x: '5', y: 0.72 },
+                              { name: 'Temp', x: '6', y: 1.48 },
+                              { name: 'Temp', x: '7', y: 1.62 },
+                              { name: 'Temp', x: '8', y: 1.48 },
+                              { name: 'Temp', x: '9', y: 2.23 }
+                            ]}
+                          />
+                        </ChartGroup>
+                      </GridItem>
+                    </Grid>
+                  </GridItem>
+                </Grid>
+              </Grid>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionToggle
+              id="cpu3-toggle"
+              onClick={() => {
+                if (openCPU === 'cpu3') {
+                  setOpenCPU(null);
+                } else {
+                  setOpenCPU('cpu3');
+                }
+              }}
+              isExpanded={openCPU === 'cpu3'}
+            >
+              CPU 3
+            </AccordionToggle>
+            <AccordionContent isHidden={openCPU !== 'cpu3'}>
+              <Grid hasGutter>
+                <Grid hasGutter>
+                  <GridItem md={4}>
+                    <Flex
+                      className="pf-u-h-100-on-md"
+                      direction={{ md: 'column' }}
+                      spaceItems={{ md: 'spaceItemsNone' }}
+                      justifyContent={{ md: 'justifyContentCenter' }}
+                    >
+                      <FlexItem>
+                        <b>Temperature</b>
+                      </FlexItem>
+                      <Divider className="pf-u-hidden-on-md" isVertical inset={{ default: 'insetSm' }} />
+                      <FlexItem>
+                        <span>64C</span>
+                      </FlexItem>
+                    </Flex>
+                  </GridItem>
+                  <GridItem md={8}>
+                    <Grid hasGutter>
+                      <GridItem span={2}>
+                        <Flex
+                          direction={{ default: 'column' }}
+                          spaceItems={{ default: 'spaceItemsNone' }}
+                          alignItems={{ md: 'alignItemsFlexEnd' }}
+                        >
+                          <div className="pf-l-flex__item">100C</div>
+                          <div className="pf-l-flex__item">50C</div>
+                          <div className="pf-l-flex__item">0C</div>
+                        </Flex>
+                      </GridItem>
+                      <GridItem span={10}>
+                        <ChartGroup
+                          ariaDesc="Mock CPU temperature"
+                          ariaTitle="Mock CPU temperature sparkline chart"
+                          containerComponent={
+                            <ChartVoronoiContainer
+                              labels={({ datum }) => `${datum.name}: ${datum.y}`}
+                              constrainToVisibleArea
+                            />
+                          }
+                          height={60}
+                          maxDomain={{ y: 100 }}
+                          padding={0}
+                          width={400}
+                        >
+                          <ChartArea
+                            data={[
+                              { name: 'Temp', x: '1', y: 25 },
+                              { name: 'Temp', x: '2', y: 40 },
+                              { name: 'Temp', x: '3', y: 20 },
+                              { name: 'Temp', x: '4', y: 60 },
+                              { name: 'Temp', x: '5', y: 20 },
+                              { name: 'Temp', x: '6', y: 41 },
+                              { name: 'Temp', x: '7', y: 45 },
+                              { name: 'Temp', x: '8', y: 41 },
+                              { name: 'Temp', x: '9', y: 62 }
+                            ]}
+                          />
+                        </ChartGroup>
+                      </GridItem>
+                    </Grid>
+                  </GridItem>
+                </Grid>
+                <Divider className="pf-u-hidden-on-md" />
+                <Grid hasGutter>
+                  <GridItem md={4}>
+                    <Flex
+                      className="pf-u-h-100-on-md"
+                      direction={{ md: 'column' }}
+                      spaceItems={{ md: 'spaceItemsNone' }}
+                      justifyContent={{ md: 'justifyContentCenter' }}
+                    >
+                      <FlexItem>
+                        <b>Speed</b>
+                      </FlexItem>
+                      <Divider className="pf-u-hidden-on-md" isVertical inset={{ default: 'insetSm' }} />
+                      <FlexItem>
+                        <span>2.3Ghz</span>
+                      </FlexItem>
+                    </Flex>
+                  </GridItem>
+                  <GridItem md={8}>
+                    <Grid hasGutter>
+                      <GridItem span={2}>
+                        <Flex
+                          direction={{ default: 'column' }}
+                          spaceItems={{ default: 'spaceItemsNone' }}
+                          alignItems={{ md: 'alignItemsFlexEnd' }}
+                        >
+                          <div className="pf-l-flex__item">3.6Ghz</div>
+                          <div className="pf-l-flex__item">1.5Ghz</div>
+                          <div className="pf-l-flex__item">0GHZ</div>
+                        </Flex>
+                      </GridItem>
+                      <GridItem span={10}>
+                        <ChartGroup
+                          ariaDesc="Mock CPU speed"
+                          ariaTitle="Mock CPU speed sparkline chart"
+                          containerComponent={
+                            <ChartVoronoiContainer
+                              labels={({ datum }) => `${datum.name}: ${datum.y}`}
+                              constrainToVisibleArea
+                            />
+                          }
+                          height={60}
+                          maxDomain={{ y: 3.6 }}
+                          padding={0}
+                          width={400}
+                        >
+                          <ChartArea
+                            data={[
+                              { name: 'Temp', x: '1', y: 0.9 },
+                              { name: 'Temp', x: '2', y: 1.44 },
+                              { name: 'Temp', x: '3', y: 0.72 },
+                              { name: 'Temp', x: '4', y: 2.16 },
+                              { name: 'Temp', x: '5', y: 0.72 },
+                              { name: 'Temp', x: '6', y: 1.48 },
+                              { name: 'Temp', x: '7', y: 1.62 },
+                              { name: 'Temp', x: '8', y: 1.48 },
+                              { name: 'Temp', x: '9', y: 2.23 }
+                            ]}
+                          />
+                        </ChartGroup>
+                      </GridItem>
+                    </Grid>
+                  </GridItem>
+                </Grid>
+              </Grid>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </CardBody>
+    </Card>
+  );
+};
+```
+
+### Trend card 1
+
+```ts
+import React from 'react';
+import {
+  Card,
+  CardTitle,
+  CardBody,
+  CardHeader,
+  CardActions,
+  Title,
+  Gallery,
+  GalleryItem,
+  Flex,
+  FlexItem,
+  Dropdown,
+  DropdownItem,
+  DropdownSeparator,
+  DropdownToggle
+} from '@patternfly/react-core';
+import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
+
+const TrendCard1: React.FunctionComponent = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const dropdownItems = [
+    <DropdownItem key="link">Link</DropdownItem>,
+    <DropdownItem key="action" component="button">
+      Action
+    </DropdownItem>,
+    <DropdownItem key="disabled link" isDisabled href="www.google.com">
+      Disabled link
+    </DropdownItem>,
+    <DropdownSeparator key="separator" />,
+    <DropdownItem key="separated link">Separated link</DropdownItem>
+  ];
+  return (
+    <Gallery hasGutter minWidths={{ default: '360px' }}>
+      <GalleryItem>
+        <Card id="trend-card-1" component="div">
+          <CardHeader>
+            <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
+              <FlexItem>
+                <CardTitle>
+                  <Title headingLevel="h1">1,050,765 IOPS</Title>
+                </CardTitle>
+              </FlexItem>
+              <FlexItem>
+                <span className="pf-u-color-200">Workload</span>
+              </FlexItem>
+            </Flex>
+            <CardActions>
+              <Dropdown
+                onSelect={() => setIsOpen(!isOpen)}
+                toggle={<DropdownToggle onToggle={() => setIsOpen(!isOpen)}>Filter</DropdownToggle>}
+                isOpen={isOpen}
+                dropdownItems={dropdownItems}
+                position="right"
+              />
+            </CardActions>
+          </CardHeader>
+          <CardBody>
+            <ChartGroup
+              ariaDesc="Mock average cluster utilization"
+              ariaTitle="Mock cluster sparkline chart"
+              containerComponent={
+                <ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />
+              }
+              height={100}
+              maxDomain={{ y: 9 }}
+              padding={0}
+              width={400}
+            >
+              <ChartArea
+                data={[
+                  { name: 'Cluster', x: '2015', y: 7 },
+                  { name: 'Cluster', x: '2016', y: 6 },
+                  { name: 'Cluster', x: '2017', y: 8 },
+                  { name: 'Cluster', x: '2018', y: 3 },
+                  { name: 'Cluster', x: '2019', y: 4 },
+                  { name: 'Cluster', x: '2020', y: 1 },
+                  { name: 'Cluster', x: '2021', y: 0 }
+                ]}
+              />
+            </ChartGroup>
+          </CardBody>
+        </Card>
+      </GalleryItem>
+    </Gallery>
+  );
+};
+```
+
+### Trend card 2
+
+```ts
+import React from 'react';
+import {
+  Card,
+  CardTitle,
+  CardFooter,
+  CardHeader,
+  Title,
+  Gallery,
+  GalleryItem,
+  Flex,
+  FlexItem
+} from '@patternfly/react-core';
+import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
+
+<Gallery hasGutter minWidths={{ default: '360px' }}>
+  <GalleryItem>
+    <Card id="trend-card-2" component="div">
+      <CardHeader>
+        <Flex alignItems={{ default: 'alignItemsCenter' }}>
+          <FlexItem flex={{ default: 'flexNone' }}>
+            <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
+              <FlexItem>
+                <CardTitle>
+                  <Title headingLevel="h1" size="2xl">
+                    842 TB
+                  </Title>
+                </CardTitle>
+              </FlexItem>
+              <FlexItem>
+                <span className="pf-u-color-200">Storage capacity</span>
+              </FlexItem>
+            </Flex>
+          </FlexItem>
+          <FlexItem flex={{ default: 'flex_1' }}>
+            <ChartGroup
+              ariaDesc="Mock average cluster utilization"
+              ariaTitle="Mock cluster sparkline chart"
+              containerComponent={
+                <ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />
+              }
+              height={100}
+              maxDomain={{ y: 9 }}
+              padding={0}
+              width={400}
+            >
+              <ChartArea
+                data={[
+                  { name: 'Cluster', x: '2015', y: 7 },
+                  { name: 'Cluster', x: '2016', y: 6 },
+                  { name: 'Cluster', x: '2017', y: 8 },
+                  { name: 'Cluster', x: '2018', y: 3 },
+                  { name: 'Cluster', x: '2019', y: 4 },
+                  { name: 'Cluster', x: '2020', y: 1 },
+                  { name: 'Cluster', x: '2021', y: 0 }
+                ]}
+              />
+            </ChartGroup>
+          </FlexItem>
+        </Flex>
+      </CardHeader>
+      <CardFooter>
+        <Flex>
+          <FlexItem>
+            <a href="#">Action 1</a>
+          </FlexItem>
+          <FlexItem>
+            <a href="#">Action 2</a>
+          </FlexItem>
+        </Flex>
+      </CardFooter>
+    </Card>
+  </GalleryItem>
+</Gallery>;
+```
+
 ### Log view
 
 ```js
