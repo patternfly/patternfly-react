@@ -271,8 +271,15 @@ jobs:
     needs: [lint, test_jest, test_integration, docs]
     env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      GH_TOKEN: ${{ GH_TOKEN_REDALLEN }}
     steps:
       - uses: actions/checkout@v2
+      # Yes, we really want to checkout the PR
+      - run: |
+          if [[ -v $GH_PR_NUM ]]; then 
+            git fetch origin pull/$GH_PR_NUM/head:tmp
+            git checkout tmp
+          fi
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
