@@ -254,10 +254,11 @@ jobs:
       - name: Build dist
         run: yarn build && yarn build:umd
         if: steps.dist.outputs.cache-hit != 'true'
-      - name: Download a single artifact
+      - name: Download demo app
         uses: actions/download-artifact@v2
         with:
           name: demo-app
+          path: packages/react-integration/demo-app-ts/public
       - name: Sanity
         run: ls packages/react-integration/demo-app-ts
       - name: Cypress tests

@@ -9,10 +9,11 @@ test_integration:
     %checkout%
     %install%
     %dist%
-    - name: Download a single artifact
+    - name: Download demo app
       uses: actions/download-artifact@v2
       with:
         name: demo-app
+        path: packages/react-integration/demo-app-ts/public
     - name: Sanity
       run: ls packages/react-integration/demo-app-ts
     - name: Cypress tests
