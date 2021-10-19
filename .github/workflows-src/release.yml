@@ -16,12 +16,11 @@ jobs:
     env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       GH_TOKEN: ${{ secrets.GH_TOKEN_REDALLEN }} # needs to be an admin token to get around branch protection
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN_REDALLEN }} # needs to be an admin token to get around branch protection
       GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0 # pulls all commits (needed for lerna / semantic release to correctly version)
+          token: ${{ secrets.GH_TOKEN_REDALLEN }} # needs to be an admin token to get around branch protection
       %install%
       %dist%
       - name: Deploy to NPM and Github

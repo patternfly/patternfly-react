@@ -27,13 +27,7 @@ switch(uploadFolderName) {
     uploadURL += '-a11y.surge.sh';
     break;
   case 'public':
-    if (!prnum && prbranch === 'main') {
-      uploadURL = 'pf4.patternfly.org';
-      fs.writeFileSync(path.join(uploadFolder, 'CNAME'), uploadURL);
-    }
-    else {
-      uploadURL += '.surge.sh';
-    }
+    uploadURL += '.surge.sh';
     break;
   default:
     uploadURL += `-${uploadFolderName}`;
