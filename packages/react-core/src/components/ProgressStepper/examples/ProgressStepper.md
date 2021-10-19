@@ -347,52 +347,55 @@ PopoverProgressStep = () => {
         id="popover-step1"
         titleId="popover-step1-title"
         aria-label="completed step with popover, step with success"
-        hasHelpPopover
+        popover={
+          <Popover
+            aria-label="First step help"
+            headerContent={<div>First step popover</div>}
+            bodyContent={<div>Additional info or help text content.</div>}
+            reference={firstStepRef}
+            position="right"
+          />
+        }
         ref={firstStepRef}
       >
         First Step
-        <Popover
-          aria-label="First step help"
-          headerContent={<div>First step popover</div>}
-          bodyContent={<div>Additional info or help text content.</div>}
-          reference={firstStepRef}
-          position="right"
-        />
       </ProgressStep>
       <ProgressStep
         variant="danger"
         id="popover-step2"
         titleId="popover-step2-title"
         aria-label="completed step with popover, step with danger"
-        hasHelpPopover
+        popover={
+          <Popover
+            aria-label="Second step help"
+            headerContent={<div>Second step popover</div>}
+            bodyContent={<div>Additional info or help text content.</div>}
+            reference={secondStepRef}
+            position="right"
+          />
+        }
         ref={secondStepRef}
       >
         Second Step
-        <Popover
-          aria-label="Second step help"
-          headerContent={<div>Second step popover</div>}
-          bodyContent={<div>Additional info or help text content.</div>}
-          reference={secondStepRef}
-          position="right"
-        />
       </ProgressStep>
       <ProgressStep
         variant="info"
         id="popover-step3"
         titleId="popover-step3-title"
         aria-label="current step with popover"
-        hasHelpPopover
+        popover={
+          <Popover
+            aria-label="Third step help"
+            headerContent={<div>Third step popover</div>}
+            bodyContent={<div>Additional info or help text content.</div>}
+            reference={thirdStepRef}
+            position="right"
+          />
+        }
         isCurrent
         ref={thirdStepRef}
       >
         Third Step
-        <Popover
-          aria-label="Third step help"
-          headerContent={<div>Third step popover</div>}
-          bodyContent={<div>Additional info or help text content.</div>}
-          reference={thirdStepRef}
-          position="right"
-        />
       </ProgressStep>
       <ProgressStep variant="pending" id="popover-step4" titleId="popover-step4-title" aria-label="pending step">
         Fourth step

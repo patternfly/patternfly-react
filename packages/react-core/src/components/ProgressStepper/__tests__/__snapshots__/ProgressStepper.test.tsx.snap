@@ -300,11 +300,11 @@ exports[`ProgressStep renders description 1`] = `
 
 exports[`ProgressStep renders help text styling 1`] = `
 <ProgressStep
-  hasHelpPopover={true}
+  popover={<div />}
 >
   <ProgressStepBase
-    hasHelpPopover={true}
     innerRef={null}
+    popover={<div />}
   >
     <li
       className="pf-c-progress-stepper__step"
@@ -326,6 +326,7 @@ exports[`ProgressStep renders help text styling 1`] = `
           type="button"
         >
           Title
+          <div />
         </span>
       </div>
     </li>
