@@ -4,19 +4,14 @@ build:
     %checkout%
     %install%
     - uses: actions/cache@v2
-      id: build-cache
+      id: dist
       name: Cache dist
       with:
-        path: packages/*/dist
-        key: ${{ runner.os }}-dist-14-${{ hashFiles('yarn.lock') }}
-    - name: Build dist
-      run: yarn build && yarn build:umd
-    - name: Upload dist
-      uses: actions/upload-artifact@v2
-      with:
-        name: dist
         path: |
           packages/*/dist
           packages/react-styles/css
-
+        key: ${{ runner.os }}-dist-14-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
+    - name: Build dist
+      run: yarn build && yarn build:umd
+      if: steps.dist.outputs.cache-hit != 'true'
 

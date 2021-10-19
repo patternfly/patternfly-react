@@ -6,12 +6,7 @@ docs:
     SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
     GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
   steps:
-    %checkout%
-    %install%
-    - name: Download dist
-      uses: actions/download-artifact@v2
-      with:
-        name: dist
+    %build%
     - uses: actions/cache@v2
       id: docs-cache
       name: Cache webpack
