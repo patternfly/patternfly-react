@@ -4,7 +4,7 @@ exports[`Check expandable form field group example against snapshot 1`] = `
 <FormFieldGroupExpandable
   header={
     <FormFieldGroupHeader
-      actions={<ForwardRef(Button) />}
+      actions={<Button />}
       titleDescription="Field group 4 description text."
       titleText={
         Object {
@@ -20,7 +20,7 @@ exports[`Check expandable form field group example against snapshot 1`] = `
   <InternalFormFieldGroup
     header={
       <FormFieldGroupHeader
-        actions={<ForwardRef(Button) />}
+        actions={<Button />}
         titleDescription="Field group 4 description text."
         titleText={
           Object {
@@ -123,7 +123,7 @@ exports[`Check expandable form field group example against snapshot 1`] = `
         </FormFieldGroupToggle>
       </GenerateId>
       <FormFieldGroupHeader
-        actions={<ForwardRef(Button) />}
+        actions={<Button />}
         titleDescription="Field group 4 description text."
         titleText={
           Object {
@@ -189,7 +189,7 @@ exports[`Check form filed group example against snapshot 1`] = `
 <FormFieldGroup
   header={
     <FormFieldGroupHeader
-      actions={<ForwardRef(Button) />}
+      actions={<Button />}
       titleDescription="Field group 4 description text."
       titleText={
         Object {
@@ -203,7 +203,7 @@ exports[`Check form filed group example against snapshot 1`] = `
   <InternalFormFieldGroup
     header={
       <FormFieldGroupHeader
-        actions={<ForwardRef(Button) />}
+        actions={<Button />}
         titleDescription="Field group 4 description text."
         titleText={
           Object {
@@ -218,7 +218,7 @@ exports[`Check form filed group example against snapshot 1`] = `
       className="pf-c-form__field-group"
     >
       <FormFieldGroupHeader
-        actions={<ForwardRef(Button) />}
+        actions={<Button />}
         titleDescription="Field group 4 description text."
         titleText={
           Object {

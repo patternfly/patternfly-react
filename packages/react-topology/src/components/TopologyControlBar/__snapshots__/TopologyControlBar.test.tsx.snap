@@ -177,7 +177,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                               }
                             }
                             trigger={
-                              <ForwardRef(Button)
+                              <Button
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -193,7 +193,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                                 >
                                   test-zoom-in-aria-label
                                 </span>
-                              </ForwardRef(Button)>
+                              </Button>
                             }
                             zIndex={9999}
                           >
@@ -310,7 +310,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                               }
                             }
                             trigger={
-                              <ForwardRef(Button)
+                              <Button
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -328,7 +328,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                                 >
                                   Zoom Out
                                 </span>
-                              </ForwardRef(Button)>
+                              </Button>
                             }
                             zIndex={9999}
                           >
@@ -466,7 +466,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                               }
                             }
                             trigger={
-                              <ForwardRef(Button)
+                              <Button
                                 aria-disabled={true}
                                 className="pf-topology-control-bar__button pf-m-disabled"
                                 disabled={true}
@@ -484,7 +484,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                                 >
                                   Reset View
                                 </span>
-                              </ForwardRef(Button)>
+                              </Button>
                             }
                             zIndex={9999}
                           >
@@ -834,7 +834,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                               }
                             }
                             trigger={
-                              <ForwardRef(Button)
+                              <Button
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -852,7 +852,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                 >
                                   Zoom In
                                 </span>
-                              </ForwardRef(Button)>
+                              </Button>
                             }
                             zIndex={9999}
                           >
@@ -990,7 +990,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                               }
                             }
                             trigger={
-                              <ForwardRef(Button)
+                              <Button
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -1008,7 +1008,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                 >
                                   Zoom Out
                                 </span>
-                              </ForwardRef(Button)>
+                              </Button>
                             }
                             zIndex={9999}
                           >
@@ -1146,7 +1146,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                               }
                             }
                             trigger={
-                              <ForwardRef(Button)
+                              <Button
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -1164,7 +1164,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                 >
                                   Fit to Screen
                                 </span>
-                              </ForwardRef(Button)>
+                              </Button>
                             }
                             zIndex={9999}
                           >
@@ -1302,7 +1302,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                               }
                             }
                             trigger={
-                              <ForwardRef(Button)
+                              <Button
                                 aria-disabled={false}
                                 className="pf-topology-control-bar__button"
                                 disabled={false}
@@ -1320,7 +1320,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                 >
                                   Reset View
                                 </span>
-                              </ForwardRef(Button)>
+                              </Button>
                             }
                             zIndex={9999}
                           >

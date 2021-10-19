@@ -19,5 +19,6 @@ module.exports = {
   coveragePathIgnorePatterns: ['/dist/'],
   moduleNameMapper: {
     '\\.(css|less)$': '<rootDir>/packages/react-styles/__mocks__/styleMock.js'
-  }
+  },
+  testEnvironment: 'jsdom'
 };
