@@ -28,7 +28,7 @@ export interface LabelGroupProps extends React.HTMLProps<HTMLUListElement> {
   numLabels?: number;
   /** Flag if label group can be closed */
   isClosable?: boolean;
-  /** Flag indicating the label is compact. */
+  /** Flag indicating the labels in the group are compact */
   isCompact?: boolean;
   /** Aria label for close button */
   closeBtnAriaLabel?: string;
