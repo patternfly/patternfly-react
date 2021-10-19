@@ -35,7 +35,7 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
   measureLocation?: 'outside' | 'inside' | 'top' | 'none';
   /** Actual progress value. */
   value: number;
-  /** Whether title should be truncated */
+  /** Whether string title should be truncated */
   isTitleTruncated?: boolean;
   /** Position of the tooltip which is displayed if title is truncated */
   tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';

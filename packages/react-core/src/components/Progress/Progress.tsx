@@ -34,7 +34,7 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   max?: number;
   /** Accessible text description of current progress value, for when value is not a percentage. Use with label. */
   valueText?: string;
-  /** Indicate whether to truncate the title */
+  /** Indicate whether to truncate the string title */
   isTitleTruncated?: boolean;
   /** Position of the tooltip which is displayed if title is truncated */
   tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
