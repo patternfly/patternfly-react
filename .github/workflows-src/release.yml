@@ -10,7 +10,6 @@ jobs:
   %docs%
   %demo_app%
   %test_integration%
-  %test_a11y%
   deploy:
     runs-on: ubuntu-latest
     needs: [lint, test_jest, test_integration, docs]

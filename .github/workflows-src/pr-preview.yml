@@ -7,5 +7,4 @@ jobs:
   %docs%
   %demo_app%
   %test_integration%
-  %test_a11y%
 

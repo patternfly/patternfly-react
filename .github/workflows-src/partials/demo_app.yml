@@ -5,10 +5,6 @@ demo_app:
     %checkout%
     %install%
     %dist%
-    - name: Download dist
-      uses: actions/download-artifact@v2
-      with:
-        name: dist
     - name: Build demo app
       run: yarn build:integration
     - name: Save build folder
