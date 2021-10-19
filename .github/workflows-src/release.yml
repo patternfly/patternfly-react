@@ -8,6 +8,7 @@ jobs:
   %lint%
   %test_jest%
   %docs%
+  %demo_app%
   %test_integration%
   deploy:
     runs-on: ubuntu-latest
