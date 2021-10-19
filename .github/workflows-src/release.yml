@@ -18,6 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       %install%
+      %dist%
       - name: Avoid Unknown Host for github.com
         run: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
       - name: Deploy to NPM and Github
