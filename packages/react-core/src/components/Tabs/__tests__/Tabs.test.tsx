@@ -5,6 +5,7 @@ import { Tab } from '../Tab';
 import { TabTitleText } from '../TabTitleText';
 import { TabTitleIcon } from '../TabTitleIcon';
 import { TabContent } from '../TabContent';
+import { TabContentBody } from '../TabContentBody';
 
 test('should render simple tabs', () => {
   const view = render(
@@ -247,10 +248,10 @@ test('should render tabs with separate content', () => {
           Tab 1 section
         </TabContent>
         <TabContent eventKey={1} id="refTab2Section" ref={contentRef2} aria-label="Tab item 2" hidden>
-          Tab 2 section
+        <TabContentBody>Tab 2 section</TabContentBody>
         </TabContent>
-        <TabContent eventKey={2} id="refTab3Section" ref={contentRef3} aria-label="Tab item 3" hidden>
-          Tab 3 section
+        <TabContent  eventKey={2} id="refTab3Section" ref={contentRef3} aria-label="Tab item 3" hidden>
+          <TabContentBody hasPadding>Tab 3 section with padding </TabContentBody>
         </TabContent>
       </div>
     </>
