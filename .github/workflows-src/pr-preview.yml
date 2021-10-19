@@ -1,0 +1,11 @@
+name: build-test-deploy
+on: pull_request_target
+jobs:
+  %build%
+  %lint%
+  %test_jest%
+  %docs%
+  %demo_app%
+  %test_integration%
+  %test_a11y%
+

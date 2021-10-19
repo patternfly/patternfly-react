@@ -1,0 +1,15 @@
+demo_app:
+  runs-on: ubuntu-latest
+  needs: build
+  steps:
+    %checkout%
+    %install%
+    - name: Build demo app
+      run: yarn build:integration
+    - name: Save build folder
+      uses: actions/upload-artifact@v2
+      with:
+        name: demo_app
+        if-no-files-found: error
+        path: packages/react-docs/demo-app/public
+

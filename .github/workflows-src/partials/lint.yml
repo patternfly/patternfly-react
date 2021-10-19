@@ -1,0 +1,19 @@
+lint:
+  runs-on: ubuntu-latest
+  needs: build
+  steps:
+    %checkout%
+    %install%
+    - uses: actions/cache@v2
+      id: yarn-cache
+      name: Load lint cache
+      with:
+        path: '.eslintcache'
+        key: ${{ runner.os }}-lint-14-${{ hashFiles('yarn.lock') }}
+    - name: ESLint
+      run: yarn lint:ts
+    - name: MDLint
+      run: yarn lint:md
+    - name: '@patternfly/patternfly versions match'
+      run: yarn lint:versions
+

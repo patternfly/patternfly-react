@@ -1,0 +1,27 @@
+test_integration:
+  runs-on: ubuntu-latest
+  needs: demo_app
+  strategy:
+    fail-fast: false
+    matrix:
+      containers: [1, 2, 3, 4, 5]
+  steps:
+    %checkout%
+    %install%
+    - name: Download the build folders
+      uses: actions/download-artifact@v2
+      with:
+        name: demo_app
+    - name: Cypress tests
+      uses: cypress-io/github-action@v2
+      with:
+        install: false
+        start: yarn serve:integration
+        wait-on: 'http://localhost:3000'
+        wait-on-timeout: 10
+        browser: chrome
+        record: true
+        parallel: true
+        group: 'UI - Chrome'
+        spec: packages/react-integration/cypress/integration/*
+
