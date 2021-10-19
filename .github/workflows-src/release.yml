@@ -15,7 +15,7 @@ jobs:
     needs: [build]
     env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      GH_TOKEN: ${{ secrets.GH_TOKEN_REDALLEN }} # needs to be an admin token to get around branch protection
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN_REDALLEN }} # needs to be an admin token to get around branch protection
       GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
     steps:
       - uses: actions/checkout@v2
