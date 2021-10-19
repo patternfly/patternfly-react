@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.1.9 (2021-10-19)
+
+
+### Bug Fixes
+
+* **github-actions:** release ([d4703a4](https://github.com/patternfly/patternfly-react/commit/d4703a4ebe10727494e71bd9e5275ced526bafee))
+
+
+
+
+
 ## [4.1.8](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@4.1.7...eslint-plugin-patternfly-react@4.1.8) (2021-08-19)
 
 **Note:** Version bump only for package eslint-plugin-patternfly-react
