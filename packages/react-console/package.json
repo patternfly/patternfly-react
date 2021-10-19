@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@novnc/novnc": "^1.2.0",
-    "@patternfly/patternfly": "4.144.5",
+    "@patternfly/patternfly": "4.146.0",
     "@patternfly/react-core": "^4.162.6",
     "@spice-project/spice-html5": "^0.2.1",
     "@types/file-saver": "^2.0.1",
