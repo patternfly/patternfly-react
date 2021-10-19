@@ -261,45 +261,7 @@ To build a compound expandable table:
 
 ### Empty state
 
-```js
-import React from 'react';
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import { Button, EmptyState, EmptyStateBody, Bullseye, Title, EmptyStateIcon } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-
-EmptyStateTable = () => {
-  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
-  const rows = [
-    {
-      heightAuto: true,
-      cells: [
-        {
-          props: { colSpan: 8 },
-          title: (
-            <Bullseye>
-              <EmptyState variant={EmptyStateVariant.small}>
-                <EmptyStateIcon icon={SearchIcon} />
-                <Title headingLevel="h2" size="lg">
-                  No results found
-                </Title>
-                <EmptyStateBody>Clear all filters and try again.</EmptyStateBody>
-                <Button variant="link">Clear all filters</Button>
-              </EmptyState>
-            </Bullseye>
-          )
-        }
-      ]
-    }
-  ];
-  return (
-    <React.Fragment>
-      <Table caption="Empty State Table Example" cells={columns} rows={rows}>
-        <TableHeader />
-        <TableBody />
-      </Table>
-    </React.Fragment>
-  );
-};
+```ts file="TableEmptyState.tsx"
 ```
 
 ### Editable rows

@@ -230,6 +230,11 @@ export type OnExpand = (
 ```ts file="ComposableTableTextModifiers.tsx"
 ```
 
+### Composable: Empty state
+
+```ts file="ComposableTableEmptyState.tsx"
+```
+
 ### Composable: Favoritable (implemented with sortable)
 
 To make a row favoritable, the table needs a favoritable column.
