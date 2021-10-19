@@ -2,6 +2,8 @@ test_jest:
   runs-on: ubuntu-latest
   needs: build
   steps:
-    %build%
+    %checkout%
+    %install%
+    %dist%
     - name: PF4 Jest Tests
       run: yarn test --maxWorkers=2

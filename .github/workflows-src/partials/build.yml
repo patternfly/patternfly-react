@@ -3,15 +3,4 @@ build:
   steps:
     %checkout%
     %install%
-    - uses: actions/cache@v2
-      id: dist
-      name: Cache dist
-      with:
-        path: |
-          packages/*/dist
-          packages/react-styles/css
-        key: ${{ runner.os }}-dist-14-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
-    - name: Build dist
-      run: yarn build && yarn build:umd
-      if: steps.dist.outputs.cache-hit != 'true'
-
+    %dist%
