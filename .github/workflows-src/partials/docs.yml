@@ -17,10 +17,11 @@ docs:
         key: ${{ runner.os }}-v4-${{ hashFiles('yarn.lock') }}
     - name: Build docs
       run: yarn build:docs
-    - run: node .github/upload-preview.js packages/react-docs/public
-      name: Upload docs
+    - name: Upload docs
+      run: node .github/upload-preview.js packages/react-docs/public
       if: always()
     - name: a11y tests
       run: yarn serve & yarn test:a11y
+    - name: Upload a11y results
       run: node .github/upload-preview.js packages/react-docs/coverage
       if: always()
