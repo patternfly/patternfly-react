@@ -27,7 +27,7 @@ jobs:
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
-        id: yarn-cache
+        id: build-cache
         name: Load build cache
         with:
           path: |
@@ -59,7 +59,7 @@ jobs:
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
-        id: yarn-cache
+        id: lint-cache
         name: Load lint cache
         with:
           path: '.eslintcache'

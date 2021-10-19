@@ -4,7 +4,7 @@ build:
     %checkout%
     %install%
     - uses: actions/cache@v2
-      id: yarn-cache
+      id: build-cache
       name: Load build cache
       with:
         path: |
