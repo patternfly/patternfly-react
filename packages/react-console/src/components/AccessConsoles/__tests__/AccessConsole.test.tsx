@@ -38,8 +38,8 @@ test('AccessConsoles with VncConsole as a single child', () => {
 test('AccessConsoles with SerialConsole and VncConsole as children', () => {
   const view = shallow(
     <AccessConsoles>
-      <SerialConsole onConnect={jest.fn()} onDisconnect={jest.fn()} status={LOADING} />
       <VncConsole host="foo.bar.host" textDisconnected="Disconnected state text" />
+      <SerialConsole onConnect={jest.fn()} onDisconnect={jest.fn()} status={LOADING} />
     </AccessConsoles>
   );
   expect(view).toMatchSnapshot();
@@ -73,8 +73,8 @@ test('AccessConsoles with preselected SerialConsole', () => {
 test('AccessConsoles switching SerialConsole and VncConsole', () => {
   const wrapper = mount(
     <AccessConsoles>
-      <SerialConsole onConnect={jest.fn()} onDisconnect={jest.fn()} status={LOADING} />
       <MyVncConsoleTestWrapper type={VNC_CONSOLE_TYPE} />
+      <SerialConsole onConnect={jest.fn()} onDisconnect={jest.fn()} status={LOADING} />
     </AccessConsoles>
   );
 

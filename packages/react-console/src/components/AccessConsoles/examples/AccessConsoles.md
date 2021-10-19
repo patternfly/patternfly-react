@@ -10,6 +10,7 @@ beta: true
 AccessConsoles lives in its own package at [`@patternfly/react-console`](https://www.npmjs.com/package/@patternfly/react-console)
 
 import { AccessConsoles, SerialConsole, VncConsole, DesktopViewer } from '@patternfly/react-console';
+import { SerialConsoleCustom } from './SerialConsoleCustom.jsx';
 
 ## Examples
 
@@ -17,6 +18,7 @@ import { AccessConsoles, SerialConsole, VncConsole, DesktopViewer } from '@patte
 ```js
 import React from 'react';
 import { AccessConsoles, SerialConsole, VncConsole, DesktopViewer } from '@patternfly/react-console';
+import { SerialConsoleCustom } from './SerialConsoleCustom.jsx';
 
 AccessConsolesVariants = () => {
   const [status, setStatus] = React.useState('disconnected');
@@ -25,6 +27,7 @@ AccessConsolesVariants = () => {
 
   return (
     <AccessConsoles preselectedType="SerialConsole">
+      <VncConsole host="localhost" port="9090" encrypt shared />
       <SerialConsole
         onConnect={() => {
           setStatus('loading');
@@ -37,9 +40,10 @@ AccessConsolesVariants = () => {
         }}
         ref={ref}
       />
+      <SerialConsoleCustom type='Serial Console pty2' />
       <DesktopViewer spice={{ address: '127.0.0.1', port: '5900' }} vnc={{ address: '127.0.0.1', port: '5901' }} />
-      <VncConsole host="localhost" port="9090" encrypt shared />
     </AccessConsoles>
   );
 };
 ```
+
