@@ -15,9 +15,11 @@ jobs:
     needs: [lint, test_jest, test_integration, docs]
     env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN_REDALLEN }}
       GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
     steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_TOKEN_REDALLEN }}
       %checkout%
       %install%
       %dist%
