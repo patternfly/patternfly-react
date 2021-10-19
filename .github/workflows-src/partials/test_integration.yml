@@ -13,6 +13,8 @@ test_integration:
       uses: actions/download-artifact@v2
       with:
         name: demo-app
+    - name: Sanity
+      run: ls packages/react-integration/demo-app-ts
     - name: Cypress tests
       uses: cypress-io/github-action@v2
       with:
@@ -21,7 +23,7 @@ test_integration:
         wait-on: 'http://localhost:3000'
         wait-on-timeout: 10
         browser: chrome
-        record: true
+        record: false
         parallel: true
         group: 'UI - Chrome'
         spec: packages/react-integration/cypress/integration/*
