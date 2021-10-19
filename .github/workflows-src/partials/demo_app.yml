@@ -1,0 +1,14 @@
+demo_app:
+  runs-on: ubuntu-latest
+  needs: build
+  steps:
+    %checkout%
+    %install%
+    %dist%
+    - name: Build demo app
+      run: yarn build:integration
+    - name: Upload demo app
+      uses: actions/upload-artifact@v2
+      with:
+        name: demo-app
+        path: packages/react-integration/demo-app-ts/public

@@ -167,15 +167,12 @@ jobs:
         name: Upload docs
         if: always()
       - name: a11y tests
-        run: yarn serve & yarn test
-      - name: sanity
-        run: ls packages/react-docs
-      - name: Upload a11y results
+        run: yarn serve & yarn test:a11y
         run: node .github/upload-preview.js packages/react-docs/coverage
         if: always()
   test_integration:
     runs-on: ubuntu-latest
-    needs: build
+    needs: demo_app
     strategy:
       fail-fast: false
       matrix:
@@ -213,8 +210,10 @@ jobs:
       - name: Build dist
         run: yarn build && yarn build:umd
         if: steps.dist.outputs.cache-hit != 'true'
-      - name: Build demo app
-        run: yarn build:integration
+      - name: Download a single artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: demo-app
       - name: Cypress tests
         uses: cypress-io/github-action@v2
         with:

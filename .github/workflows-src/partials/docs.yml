@@ -21,11 +21,6 @@ docs:
       name: Upload docs
       if: always()
     - name: a11y tests
-      run: yarn serve & yarn test
-    - name: sanity
-      run: ls packages/react-docs
-    - name: Upload a11y results
+      run: yarn serve & yarn test:a11y
       run: node .github/upload-preview.js packages/react-docs/coverage
       if: always()
-
-
