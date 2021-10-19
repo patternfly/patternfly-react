@@ -1,8 +1,8 @@
 import React from 'react';
 import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
-// This example has been simplified to focus on the text modifier props.
-// In real usage, you may want a type for your underlying data. See other examples.
+// This example has been simplified to focus on the text modifier props. In real usage,
+// you may want to derive your rows from typed underlying data and minimal state. See other examples.
 
 const columnNames = {
   truncate: 'Truncate (width 20%)',

@@ -251,105 +251,12 @@ To build a compound expandable table:
 
 ### Controlling text
 
-```js
-import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  wrappable,
-  truncate,
-  nowrap,
-  breakWord,
-  cellWidth,
-  fitContent
-} from '@patternfly/react-table';
-
-class ControllingText extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: [
-        { title: 'Truncate (width 20%)', transforms: [cellWidth(20)], cellTransforms: [truncate] },
-        { title: 'Break word', cellTransforms: [breakWord] },
-        { title: 'Wrapping table header text. This th text will wrap instead of truncate.', transforms: [wrappable] },
-        { title: 'Fit content', transforms: [fitContent] },
-        { title: '', cellTransforms: [nowrap] }
-      ],
-      rows: [
-        [
-          'This text will truncate instead of wrap.',
-          { title: <a href="#">http://thisisaverylongurlthatneedstobreakusethebreakwordmodifier.org</a> },
-          {
-            title: (
-              <p>
-                By default,
-                <code>thead</code> cells will truncate and
-                <code>tbody</code> cells will wrap. Use
-                <code>.pf-m-wrap</code> on a<code>th</code> to change its behavior.
-              </p>
-            )
-          },
-          "This cell's content will adjust itself to the parent th width. This modifier only affects table layouts.",
-          { title: <a href="#">No wrap</a> }
-        ]
-      ]
-    };
-  }
-
-  render() {
-    const { columns, rows } = this.state;
-
-    return (
-      <Table aria-label="Controlling text" cells={columns} rows={rows}>
-        <TableHeader />
-        <TableBody />
-      </Table>
-    );
-  }
-}
+```ts file="TableControllingText.tsx"
 ```
 
 ### Modifiers with table text
 
-```js
-import React from 'react';
-import { Table, TableHeader, TableBody, TableText, cellWidth } from '@patternfly/react-table';
-
-class ModifiersWithTableText extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: [
-        { title: 'Truncating text', transforms: [cellWidth(30)] },
-        { title: 'Wrapping table header text. This th text will wrap instead of truncate.' }
-      ],
-      rows: [
-        [
-          { title: <TableText wrapModifier="truncate">This text will truncate instead of wrap.</TableText> },
-          {
-            title: (
-              <TableText wrapModifier="nowrap">
-                <a href="#">This is a link that needs to be on one line and fully readable.</a>
-              </TableText>
-            )
-          }
-        ]
-      ]
-    };
-  }
-
-  render() {
-    const { columns, rows } = this.state;
-
-    return (
-      <Table aria-label="Controlling text" cells={columns} rows={rows}>
-        <TableHeader />
-        <TableBody />
-      </Table>
-    );
-  }
-}
+```ts file="TableTextModifiers.tsx"
 ```
 
 ### Empty state

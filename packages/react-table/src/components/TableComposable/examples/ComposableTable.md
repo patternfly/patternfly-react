@@ -227,7 +227,7 @@ export type OnExpand = (
 
 ### Composable: Modifiers with table text
 
-```ts file="ComposableTableText.tsx"
+```ts file="ComposableTableTextModifiers.tsx"
 ```
 
 ### Composable: Favoritable (implemented with sortable)
