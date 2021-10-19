@@ -5,7 +5,7 @@ test_integration:
     fail-fast: false
     matrix:
       worker_num: [0, 1, 2, 3, 4]
-      worker_count: 5
+      worker_count: [5]
   steps:
     %checkout%
     %install%
