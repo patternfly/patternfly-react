@@ -1,5 +1,7 @@
 test_integration:
   runs-on: ubuntu-latest
+  env:
+    GH_PR_NUM: ${{ github.event.number }}
   needs: demo_app
   strategy:
     fail-fast: false

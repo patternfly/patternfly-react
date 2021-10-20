@@ -4,6 +4,8 @@ on: pull_request_target
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GH_PR_NUM: ${{ github.event.number }}
     steps:
       - uses: actions/checkout@v2
       # Yes, we really want to checkout the PR
@@ -41,6 +43,8 @@ jobs:
         if: steps.dist.outputs.cache-hit != 'true'
   lint:
     runs-on: ubuntu-latest
+    env:
+      GH_PR_NUM: ${{ github.event.number }}
     needs: build
     steps:
       - uses: actions/checkout@v2
@@ -80,6 +84,8 @@ jobs:
         run: yarn lint:versions
   test_jest:
     runs-on: ubuntu-latest
+    env:
+      GH_PR_NUM: ${{ github.event.number }}
     needs: build
     steps:
       - uses: actions/checkout@v2
@@ -125,6 +131,7 @@ jobs:
       SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
       SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
       GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
+      GH_PR_NUM: ${{ github.event.number }}
     steps:
       - uses: actions/checkout@v2
       # Yes, we really want to checkout the PR
@@ -178,6 +185,8 @@ jobs:
   #      if: always()
   demo_app:
     runs-on: ubuntu-latest
+    env:
+      GH_PR_NUM: ${{ github.event.number }}
     needs: build
     steps:
       - uses: actions/checkout@v2
@@ -223,6 +232,8 @@ jobs:
           path: packages/react-integration/demo-app-ts/public
   test_integration:
     runs-on: ubuntu-latest
+    env:
+      GH_PR_NUM: ${{ github.event.number }}
     needs: demo_app
     strategy:
       fail-fast: false

@@ -5,6 +5,7 @@ docs:
     SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
     SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
     GH_PR_TOKEN: ${{ secrets.GH_PR_TOKEN }}
+    GH_PR_NUM: ${{ github.event.number }}
   steps:
     %checkout%
     %install%

@@ -1,5 +1,7 @@
 lint:
   runs-on: ubuntu-latest
+  env:
+    GH_PR_NUM: ${{ github.event.number }}
   needs: build
   steps:
     %checkout%
