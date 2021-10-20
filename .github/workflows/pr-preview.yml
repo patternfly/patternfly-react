@@ -9,10 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # Yes, we really want to checkout the PR
-      - run: printenv
-      - run: echo $GH_PR_NUM
       - run: |
-          if [[ -v $GH_PR_NUM ]]; then 
+          if [[ ! -z "${GH_PR_NUM}" ]]; then 
             echo "Checking out PR"
             git fetch origin pull/$GH_PR_NUM/head:tmp
             git checkout tmp
@@ -50,10 +48,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # Yes, we really want to checkout the PR
-      - run: printenv
-      - run: echo $GH_PR_NUM
       - run: |
-          if [[ -v $GH_PR_NUM ]]; then 
+          if [[ ! -z "${GH_PR_NUM}" ]]; then 
             echo "Checking out PR"
             git fetch origin pull/$GH_PR_NUM/head:tmp
             git checkout tmp
@@ -92,10 +88,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # Yes, we really want to checkout the PR
-      - run: printenv
-      - run: echo $GH_PR_NUM
       - run: |
-          if [[ -v $GH_PR_NUM ]]; then 
+          if [[ ! -z "${GH_PR_NUM}" ]]; then 
             echo "Checking out PR"
             git fetch origin pull/$GH_PR_NUM/head:tmp
             git checkout tmp
@@ -138,10 +132,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # Yes, we really want to checkout the PR
-      - run: printenv
-      - run: echo $GH_PR_NUM
       - run: |
-          if [[ -v $GH_PR_NUM ]]; then 
+          if [[ ! -z "${GH_PR_NUM}" ]]; then 
             echo "Checking out PR"
             git fetch origin pull/$GH_PR_NUM/head:tmp
             git checkout tmp
@@ -195,10 +187,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # Yes, we really want to checkout the PR
-      - run: printenv
-      - run: echo $GH_PR_NUM
       - run: |
-          if [[ -v $GH_PR_NUM ]]; then 
+          if [[ ! -z "${GH_PR_NUM}" ]]; then 
             echo "Checking out PR"
             git fetch origin pull/$GH_PR_NUM/head:tmp
             git checkout tmp
@@ -248,10 +238,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # Yes, we really want to checkout the PR
-      - run: printenv
-      - run: echo $GH_PR_NUM
       - run: |
-          if [[ -v $GH_PR_NUM ]]; then 
+          if [[ ! -z "${GH_PR_NUM}" ]]; then 
             echo "Checking out PR"
             git fetch origin pull/$GH_PR_NUM/head:tmp
             git checkout tmp
