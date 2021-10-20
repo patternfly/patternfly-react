@@ -1,5 +1,5 @@
 ---
-id: TextInputGroup
+id: Text input group
 section: components
 cssPrefix: pf-c-text-input-group
 propComponents: ['TextInputGroup', 'TextInputGroupMain', 'TextInputGroupUtilities']
@@ -47,6 +47,7 @@ import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '@pa
 import { Chip, ChipGroup } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
+const [chipGroupDefaultOpen, setChipGroupDefaultOpen] = React.useState(false);
 const [currentChips, setCurrentChips] = React.useState([
   'chip one',
   'chip two',
@@ -67,6 +68,10 @@ const [currentChips, setCurrentChips] = React.useState([
 /** show the search icon only when there are no chips to prevent the chips from being displayed behind the icon */
 const showSearchIcon = !currentChips.length;
 
+const toggleDefault = () => {
+  setChipGroupDefaultOpen(!chipGroupDefaultOpen);
+};
+
 /** callback for removing a chip from the chip selections */
 const deleteChip = chipToDelete => {
   const newChips = currentChips.filter(chip => !Object.is(chip, chipToDelete));
@@ -81,7 +86,7 @@ const clearAllChips = () => {
 const TextInputGroupWithChips = () => (
   <TextInputGroup hasLeftIcon={showSearchIcon}>
     <TextInputGroupMain inputIcon={showSearchIcon && <SearchIcon />}>
-      <ChipGroup>
+      <ChipGroup defaultIsOpen={chipGroupDefaultOpen} onOverflowChipClick={toggleDefault}>
         {currentChips.map(currentChip => (
           <Chip key={currentChip} onClick={() => deleteChip(currentChip)}>
             {currentChip}
