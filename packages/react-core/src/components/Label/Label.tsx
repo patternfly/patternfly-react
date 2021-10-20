@@ -131,7 +131,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       event.preventDefault();
       event.stopImmediatePropagation();
       if (editableInputRef.current.value) {
-        onEditComplete && onEditComplete(editableInputRef.current.value); // for some reason this isn't getting passed, how to get this to save
+        onEditComplete && onEditComplete(editableInputRef.current.value);
       }
       setIsEditableActive(false);
     }
@@ -209,7 +209,11 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     return;
   });
 
-  const [currValue] = useState(children);
+  const [currValue, setCurrValue] = useState(children);
+
+  const updateVal = () => {
+    setCurrValue(editableInputRef.current.value);
+  };
 
   if (isEditable) {
     content = (
@@ -232,7 +236,8 @@ export const Label: React.FunctionComponent<LabelProps> = ({
               type="text"
               id="editable-input"
               ref={editableInputRef}
-              defaultValue={currValue}
+              value={currValue}
+              onChange={updateVal}
               {...isEditableActive}
               {...editableProps}
             ></input>
