@@ -22,10 +22,10 @@ ProgressStepperDemo = () => {
     <Stack>
       <StackItem>
         <Button onClick={() => onProgressUpdate(currentValue - 10)} isDisabled={currentValue === 0}>
-          Decrease progress
+          Decrease value
         </Button>{' '}
         <Button onClick={() => onProgressUpdate(currentValue + 10)} isDisabled={currentValue === 100}>
-          Increase progress
+          Increase value
         </Button>
         <br />
         <br />
@@ -62,10 +62,10 @@ ProgressStepperDemo = () => {
     <Stack>
       <StackItem>
         <Button onClick={() => onProgressUpdate(currentValue - 10)} isDisabled={currentValue === 0}>
-          Decrease progress
+          Decrease value
         </Button>{' '}
         <Button onClick={() => onProgressUpdate(currentValue + 10)} isDisabled={currentValue === 100}>
-          Increase progress
+          Increase value
         </Button>
         <br />
         <br />
