@@ -36,6 +36,8 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   onClose?: (event: React.MouseEvent) => void;
   /** Node for custom close button. */
   closeBtn?: React.ReactNode;
+  /** Aria label for close button */
+  closeBtnAriaLabel?: string;
   /** Additional properties for the default close button. */
   closeBtnProps?: any;
   /** Href for a label that is a link. If present, the label will change to an anchor element. */
@@ -78,6 +80,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   onEditCancel,
   onEditComplete,
   closeBtn,
+  closeBtnAriaLabel,
   closeBtnProps,
   href,
   isOverflowLabel,
@@ -154,7 +157,8 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       type="button"
       variant="plain"
       onClick={onClose}
-      {...{ 'aria-label': 'label-close-button', ...closeBtnProps }}
+      aria-label={closeBtnAriaLabel || `Close ${children}`}
+      {...closeBtnProps}
     >
       <TimesIcon />
     </Button>
