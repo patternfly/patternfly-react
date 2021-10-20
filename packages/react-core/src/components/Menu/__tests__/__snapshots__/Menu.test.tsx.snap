@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Menu successfully 1`] = `
+<Menu
+  activeItemId={0}
+  onSelect={[MockFunction]}
+>
+  <Menu
+    activeItemId={0}
+    innerRef={null}
+    isPlain={false}
+    isRootMenu={true}
+    isScrollable={false}
+    onSelect={[MockFunction]}
+    ouiaSafe={true}
+  >
+    <KeyboardHandler
+      additionalKeyHandler={[Function]}
+      containerRef={
+        Object {
+          "current": <div
+            class="pf-c-menu"
+            data-ouia-component-id="OUIA-Generated-Menu-1"
+            data-ouia-component-type="PF4/Menu"
+            data-ouia-safe="true"
+          >
+            content
+          </div>,
+        }
+      }
+      createNavigableElements={[Function]}
+      getFocusableElement={[Function]}
+      isActiveElement={[Function]}
+      noEnterHandling={true}
+      noHorizontalArrowHandling={false}
+      noSpaceHandling={true}
+      noVerticalArrowHandling={false}
+      updateTabIndex={true}
+      validSiblingTags={
+        Array [
+          "BUTTON",
+          "A",
+        ]
+      }
+    />
+    <div
+      className="pf-c-menu"
+      data-ouia-component-id="OUIA-Generated-Menu-1"
+      data-ouia-component-type="PF4/Menu"
+      data-ouia-safe={true}
+    >
+      content
+    </div>
+  </Menu>
+</Menu>
+`;
+
+exports[`with isPlain should render Menu with plain styles applied 1`] = `
+<div
+  className="pf-c-menu pf-m-plain"
+  data-ouia-component-id="OUIA-Generated-Menu-2"
+  data-ouia-component-type="PF4/Menu"
+  data-ouia-safe={true}
+>
+  content
+</div>
+`;
+
+exports[`with isScrollable should render Menu with scrollable styles applied 1`] = `
+<div
+  className="pf-c-menu pf-m-scrollable"
+  data-ouia-component-id="OUIA-Generated-Menu-3"
+  data-ouia-component-type="PF4/Menu"
+  data-ouia-safe={true}
+>
+  content
+</div>
+`;

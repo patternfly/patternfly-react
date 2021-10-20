@@ -53,6 +53,10 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   innerRef?: React.Ref<HTMLDivElement>;
   /** Internal flag indicating if the Menu is the root of a menu tree */
   isRootMenu?: boolean;
+  /** Indicates if the menu should be without the outer box-shadow */
+  isPlain?: boolean;
+  /** Indicates if the menu should be srollable */
+  isScrollable?: boolean;
 }
 
 export interface MenuState {
@@ -70,7 +74,9 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
   private activeMenu = null as Element;
   static defaultProps: MenuProps = {
     ouiaSafe: true,
-    isRootMenu: true
+    isRootMenu: true,
+    isPlain: false,
+    isScrollable: false
   };
 
   constructor(props: MenuProps) {
@@ -220,6 +226,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       containsFlyout,
       containsDrilldown,
       isMenuDrilledIn,
+      isPlain,
+      isScrollable,
       drilldownItemPath,
       drilledInMenus,
       onDrillIn,
@@ -251,7 +259,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           onGetMenuHeight,
           flyoutRef: this.state.flyoutRef,
           setFlyoutRef: flyoutRef => this.setState({ flyoutRef }),
-          disableHover: this.state.disableHover
+          disableHover: this.state.disableHover,
+          isScrollable
         }}
       >
         {isRootMenu && (
@@ -277,6 +286,8 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           id={id}
           className={css(
             styles.menu,
+            isPlain && styles.modifiers.plain,
+            isScrollable && styles.modifiers.scrollable,
             containsFlyout && styles.modifiers.flyout,
             containsDrilldown && styles.modifiers.drilldown,
             _isMenuDrilledIn && styles.modifiers.drilledIn,

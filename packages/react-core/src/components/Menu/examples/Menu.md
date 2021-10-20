@@ -23,13 +23,14 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-ico
 
 ```js
 import React from 'react';
-import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
+import { Menu, MenuContent, MenuList, MenuItem, Checkbox } from '@patternfly/react-core';
 
 class MenuBasicList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeItem: 0
+      activeItem: 0,
+      isPlain: false
     };
     this.onSelect = (event, itemId) => {
       console.log(`clicked ${itemId}`);
@@ -37,30 +38,51 @@ class MenuBasicList extends React.Component {
         activeItem: itemId
       });
     };
+    this.togglePlain = checked => {
+      this.setState({
+        isPlain: checked
+      });
+    };
   }
 
   render() {
-    const { activeItem } = this.state;
+    const { activeItem, isPlain } = this.state;
     return (
-      <Menu activeItemId={activeItem} onSelect={this.onSelect}>
-        <MenuContent>
-          <MenuList>
-            <MenuItem itemId={0}>Action</MenuItem>
-            <MenuItem
-              itemId={1}
-              to="#default-link2"
-              // just for demo so that navigation is not triggered
-              onClick={event => event.preventDefault()}
-            >
-              Link
-            </MenuItem>
-            <MenuItem isDisabled>Disabled action</MenuItem>
-            <MenuItem isDisabled to="#default-link4">
-              Disabled link
-            </MenuItem>
-          </MenuList>
-        </MenuContent>
-      </Menu>
+      <React.Fragment>
+        <Menu
+          activeItemId={activeItem}
+          onSelect={this.onSelect}
+          isPlain={isPlain}
+          >
+          <MenuContent>
+            <MenuList>
+              <MenuItem itemId={0}>Action</MenuItem>
+              <MenuItem
+                itemId={1}
+                to="#default-link2"
+                // just for demo so that navigation is not triggered
+                onClick={event => event.preventDefault()}
+              >
+                Link
+              </MenuItem>
+              <MenuItem isDisabled>Disabled action</MenuItem>
+              <MenuItem isDisabled to="#default-link4">
+                Disabled link
+              </MenuItem>
+            </MenuList>
+          </MenuContent>
+        </Menu>
+        <div style={{ marginTop: 20 }}> 
+          <Checkbox
+            label="Plain menu"
+            isChecked={isPlain}
+            onChange={this.togglePlain}
+            aria-label="plain menu checkbox"
+            id="toggle-plain"
+            name="toggle-plain"
+          />
+        </div>
+      </React.Fragment>
     );
   }
 }
@@ -1254,8 +1276,69 @@ class MenuBasicList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Menu activeItemId={activeItem} onSelect={this.onSelect}>
-        <MenuContent menuHeight="300px">
+      <Menu activeItemId={activeItem} onSelect={this.onSelect} isScrollable>
+        <MenuContent>
+          <MenuList>
+            <MenuItem>Action 1</MenuItem>
+            <MenuItem>Action 2</MenuItem>
+            <MenuItem>Action 3</MenuItem>
+            <MenuItem>Action 4</MenuItem>
+            <MenuItem>Action 5</MenuItem>
+            <MenuItem>Action 6</MenuItem>
+            <MenuItem>Action 7</MenuItem>
+            <MenuItem>Action 8</MenuItem>
+            <MenuItem>Action 9</MenuItem>
+            <MenuItem>Action 10</MenuItem>
+            <MenuItem>Action 11</MenuItem>
+            <MenuItem>Action 12</MenuItem>
+            <MenuItem>Action 13</MenuItem>
+            <MenuItem>Action 14</MenuItem>
+            <MenuItem>Action 15</MenuItem>
+            <MenuItem
+              itemId={1}
+              to="#default-link2"
+              // just for demo so that navigation is not triggered
+              onClick={event => event.preventDefault()}
+            >
+              Link
+            </MenuItem>
+            <MenuItem isDisabled>Disabled action</MenuItem>
+            <MenuItem isDisabled to="#default-link4">
+              Disabled link
+            </MenuItem>
+          </MenuList>
+        </MenuContent>
+      </Menu>
+    );
+  }
+}
+```
+
+### Scrollable with custom menu height
+
+```js
+import React from 'react';
+import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
+
+class MenuBasicList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeItem: 0
+    };
+    this.onSelect = (event, itemId) => {
+      console.log(`clicked ${itemId}`);
+      this.setState({
+        activeItem: itemId
+      });
+    };
+  }
+
+  render() {
+    const { activeItem } = this.state;
+    return (
+      <Menu activeItemId={activeItem} onSelect={this.onSelect} isScrollable>
+        <MenuContent menuHeight="200px">
           <MenuList>
             <MenuItem>Action 1</MenuItem>
             <MenuItem>Action 2</MenuItem>
