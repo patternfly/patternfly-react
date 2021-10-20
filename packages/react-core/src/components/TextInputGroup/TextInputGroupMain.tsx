@@ -21,13 +21,20 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
   inputIcon,
   onChange,
   'aria-label': ariaLabel,
+  value: inputValue,
   ...props
 }: TextInputGroupMainProps) => (
   <div className={css(styles.textInputGroupMain, className)} {...props}>
     {children}
     <span className={css(styles.textInputGroupText)}>
       {inputIcon && <span className={css(styles.textInputGroupIcon)}>{inputIcon}</span>}
-      <input type="text" className={css(styles.textInputGroupTextInput)} aria-label={ariaLabel} onChange={onChange} />
+      <input
+        type="text"
+        className={css(styles.textInputGroupTextInput)}
+        aria-label={ariaLabel}
+        onChange={onChange}
+        value={inputValue}
+      />
     </span>
   </div>
 );
