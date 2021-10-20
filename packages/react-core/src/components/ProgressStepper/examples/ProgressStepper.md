@@ -331,6 +331,8 @@ import PendingIcon from '@patternfly/react-icons/dist/esm/icons/pending-icon';
 
 ### With help popover
 
+To add a popover to a progress step, set the `popover` and `ref` properties on the `ProgressStep` component and the `reference` property on the `Popover` component.
+
 ```js
 import React from 'react';
 import { ProgressStepper, ProgressStep, Popover } from '@patternfly/react-core';
