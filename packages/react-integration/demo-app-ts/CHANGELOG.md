@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.124.0 (2021-10-20)
+
+
+### Features
+
+* **Progress:** allow node titles ([#6470](https://github.com/patternfly/patternfly-react/issues/6470)) ([46d5252](https://github.com/patternfly/patternfly-react/commit/46d52523ad5111bb11729c2750abe9aeb35d9326))
+
+
+
+
+
 # 4.123.0 (2021-10-20)
 
 
