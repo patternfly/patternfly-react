@@ -14,7 +14,7 @@ export const DescriptionListGroup: React.FC<DescriptionListGroupProps> = ({
   children,
   ...props
 }: DescriptionListGroupProps) => (
-  <div {...props} className={css(styles.descriptionListGroup, className)}>
+  <div className={css(styles.descriptionListGroup, className)} {...props}>
     {children}
   </div>
 );
