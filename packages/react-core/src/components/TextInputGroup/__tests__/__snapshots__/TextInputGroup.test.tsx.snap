@@ -9,7 +9,9 @@ exports[`TextInputGroup gets custom class and id 1`] = `
     className="pf-c-text-input-group custom-class"
     id="test-id"
   >
-    <TextInputGroupMain>
+    <TextInputGroupMain
+      aria-label="Type to filter"
+    >
       <div
         className="pf-c-text-input-group__main"
       >
@@ -25,7 +27,9 @@ exports[`TextInputGroup gets custom class and id 1`] = `
         </span>
       </div>
     </TextInputGroupMain>
-    <TextInputGroupUtilities>
+    <TextInputGroupUtilities
+      aria-label="Clear input"
+    >
       <div
         className="pf-c-text-input-group__utilities"
       />
@@ -39,7 +43,9 @@ exports[`TextInputGroup renders content 1`] = `
   <div
     className="pf-c-text-input-group"
   >
-    <TextInputGroupMain>
+    <TextInputGroupMain
+      aria-label="Type to filter"
+    >
       <div
         className="pf-c-text-input-group__main"
       >
@@ -55,7 +61,9 @@ exports[`TextInputGroup renders content 1`] = `
         </span>
       </div>
     </TextInputGroupMain>
-    <TextInputGroupUtilities>
+    <TextInputGroupUtilities
+      aria-label="Clear input"
+    >
       <div
         className="pf-c-text-input-group__utilities"
       />
@@ -71,7 +79,9 @@ exports[`TextInputGroup renders with the proper stying for an icon on the left s
   <div
     className="pf-c-text-input-group pf-m-icon"
   >
-    <TextInputGroupMain>
+    <TextInputGroupMain
+      aria-label="Type to filter"
+    >
       <div
         className="pf-c-text-input-group__main"
       >
@@ -87,7 +97,9 @@ exports[`TextInputGroup renders with the proper stying for an icon on the left s
         </span>
       </div>
     </TextInputGroupMain>
-    <TextInputGroupUtilities>
+    <TextInputGroupUtilities
+      aria-label="Clear input"
+    >
       <div
         className="pf-c-text-input-group__utilities"
       />
@@ -98,6 +110,7 @@ exports[`TextInputGroup renders with the proper stying for an icon on the left s
 
 exports[`TextInputGroupMain does not call onChange callback when the input does not change 1`] = `
 <TextInputGroupMain
+  aria-label="Type to filter"
   onChange={[MockFunction]}
 >
   <div
@@ -119,7 +132,9 @@ exports[`TextInputGroupMain does not call onChange callback when the input does 
 `;
 
 exports[`TextInputGroupMain renders content 1`] = `
-<TextInputGroupMain>
+<TextInputGroupMain
+  aria-label="Type to filter"
+>
   <div
     className="pf-c-text-input-group__main"
   >
@@ -139,6 +154,7 @@ exports[`TextInputGroupMain renders content 1`] = `
 
 exports[`TextInputGroupMain renders given input icon props 1`] = `
 <TextInputGroupMain
+  aria-label="Type to filter"
   inputIcon={
     <SearchIcon
       color="currentColor"
@@ -192,8 +208,30 @@ exports[`TextInputGroupMain renders given input icon props 1`] = `
 </TextInputGroupMain>
 `;
 
+exports[`TextInputGroupMain renders the input with custom aria label when given 1`] = `
+<TextInputGroupMain
+  aria-label="Foo"
+>
+  <div
+    className="pf-c-text-input-group__main"
+  >
+    Foo
+    <span
+      className="pf-c-text-input-group__text"
+    >
+      <input
+        aria-label="Foo"
+        className="pf-c-text-input-group__text-input"
+        type="text"
+      />
+    </span>
+  </div>
+</TextInputGroupMain>
+`;
+
 exports[`TextInputGroupUtilities renders the clear button 1`] = `
 <TextInputGroupUtilities
+  aria-label="Clear input"
   clearSelection={[Function]}
   isClearable={true}
 >
@@ -235,8 +273,54 @@ exports[`TextInputGroupUtilities renders the clear button 1`] = `
 </TextInputGroupUtilities>
 `;
 
+exports[`TextInputGroupUtilities renders the clear button with custom aria label when given 1`] = `
+<TextInputGroupUtilities
+  aria-label="Foo"
+  clearSelection={[Function]}
+  isClearable={true}
+>
+  <div
+    className="pf-c-text-input-group__utilities"
+  >
+    <button
+      aria-label="Foo"
+      className="pf-c-button"
+      onClick={[Function]}
+      type="button"
+    >
+      <TimesIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      >
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
+            Object {
+              "verticalAlign": "-0.125em",
+            }
+          }
+          viewBox="0 0 352 512"
+          width="1em"
+        >
+          <path
+            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+          />
+        </svg>
+      </TimesIcon>
+    </button>
+  </div>
+</TextInputGroupUtilities>
+`;
+
 exports[`TextInputGroupUtilities renders the content 1`] = `
-<TextInputGroupUtilities>
+<TextInputGroupUtilities
+  aria-label="Clear input"
+>
   <div
     className="pf-c-text-input-group__utilities"
   />

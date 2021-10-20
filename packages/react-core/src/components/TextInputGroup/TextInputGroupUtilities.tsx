@@ -12,6 +12,8 @@ export interface TextInputGroupUtilitiesProps extends React.HTMLProps<HTMLDivEle
   isClearable?: boolean;
   /** Callback for the built in clear button */
   clearSelection?: () => void;
+  /** Accessibility label for the clear button */
+  'aria-label'?: string;
 }
 
 export const TextInputGroupUtilities: React.FunctionComponent<TextInputGroupUtilitiesProps> = ({
@@ -19,16 +21,18 @@ export const TextInputGroupUtilities: React.FunctionComponent<TextInputGroupUtil
   className,
   isClearable,
   clearSelection,
+  'aria-label': ariaLabel,
   ...props
 }: TextInputGroupUtilitiesProps) => (
   <div {...props} className={css(styles.textInputGroupUtilities, className)}>
     {children}
     {isClearable && (
-      <button className={css(styles.button)} type="button" aria-label="Clear input" onClick={clearSelection}>
+      <button className={css(styles.button)} type="button" aria-label={ariaLabel} onClick={clearSelection}>
         <TimesIcon />
       </button>
     )}
   </div>
 );
 
+TextInputGroupUtilities.defaultProps = { 'aria-label': 'Clear input' };
 TextInputGroupUtilities.displayName = 'TextInputGroupUtilities';

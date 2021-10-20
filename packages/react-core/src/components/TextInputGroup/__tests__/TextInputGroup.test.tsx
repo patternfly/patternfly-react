@@ -48,6 +48,11 @@ describe('TextInputGroupMain', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('renders the input with custom aria label when given', () => {
+    const view = mount(<TextInputGroupMain aria-label="Foo">Foo</TextInputGroupMain>);
+    expect(view).toMatchSnapshot();
+  });
+
   test('does not call onChange callback when the input does not change', () => {
     const onChangeMock = jest.fn();
 
@@ -72,6 +77,11 @@ describe('TextInputGroupUtilities', () => {
 
   test('renders the clear button', () => {
     const view = mount(<TextInputGroupUtilities isClearable clearSelection={() => {}} />);
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders the clear button with custom aria label when given', () => {
+    const view = mount(<TextInputGroupUtilities isClearable clearSelection={() => {}} aria-label="Foo"/>);
     expect(view).toMatchSnapshot();
   });
 

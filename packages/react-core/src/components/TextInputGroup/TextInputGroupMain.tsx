@@ -11,6 +11,8 @@ export interface TextInputGroupMainProps extends React.HTMLProps<HTMLDivElement>
   inputIcon?: React.ReactNode;
   /** Callback for when there is a change in the input field*/
   onChange?: () => void;
+  /** Accessibility label for the input */
+  'aria-label'?: string;
 }
 
 export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps> = ({
@@ -18,20 +20,17 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
   className,
   inputIcon,
   onChange,
+  'aria-label': ariaLabel,
   ...props
 }: TextInputGroupMainProps) => (
   <div {...props} className={css(styles.textInputGroupMain, className)}>
     {children}
     <span className={css(styles.textInputGroupText)}>
       {inputIcon && <span className={css(styles.textInputGroupIcon)}>{inputIcon}</span>}
-      <input
-        type="text"
-        className={css(styles.textInputGroupTextInput)}
-        aria-label="Type to filter"
-        onChange={onChange}
-      />
+      <input type="text" className={css(styles.textInputGroupTextInput)} aria-label={ariaLabel} onChange={onChange} />
     </span>
   </div>
 );
 
+TextInputGroupMain.defaultProps = { 'aria-label': 'Type to filter' };
 TextInputGroupMain.displayName = 'TextInputGroupMain';
