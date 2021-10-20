@@ -34,7 +34,7 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 const TextInputGroupWithIcons = () => (
   <TextInputGroup hasLeftIcon>
     <TextInputGroupMain inputIcon={<SearchIcon />} />
-    <TextInputGroupUtilities isClearable />
+    <TextInputGroupUtilities clearSelection={() => {}} />
   </TextInputGroup>
 );
 ```
@@ -89,7 +89,7 @@ const TextInputGroupWithChips = () => (
         ))}
       </ChipGroup>
     </TextInputGroupMain>
-    <TextInputGroupUtilities isClearable clearSelection={clearAllChips} />
+    <TextInputGroupUtilities clearSelection={clearAllChips} />
   </TextInputGroup>
 );
 ```

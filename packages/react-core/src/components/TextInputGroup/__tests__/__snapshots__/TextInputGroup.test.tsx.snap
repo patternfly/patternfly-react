@@ -210,7 +210,6 @@ exports[`TextInputGroupUtilities renders the clear button 1`] = `
 <TextInputGroupUtilities
   aria-label="Clear input"
   clearSelection={[Function]}
-  isClearable={true}
 >
   <div
     className="pf-c-text-input-group__utilities"
@@ -254,7 +253,6 @@ exports[`TextInputGroupUtilities renders the clear button with custom aria label
 <TextInputGroupUtilities
   aria-label="Foo"
   clearSelection={[Function]}
-  isClearable={true}
 >
   <div
     className="pf-c-text-input-group__utilities"
