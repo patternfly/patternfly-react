@@ -10,6 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       # Yes, we really want to checkout the PR
       - run: printenv
+      - run: echo $GH_PR_NUM
       - run: |
           if [[ -v $GH_PR_NUM ]]; then 
             echo "Checking out PR"
@@ -50,6 +51,7 @@ jobs:
       - uses: actions/checkout@v2
       # Yes, we really want to checkout the PR
       - run: printenv
+      - run: echo $GH_PR_NUM
       - run: |
           if [[ -v $GH_PR_NUM ]]; then 
             echo "Checking out PR"
@@ -91,6 +93,7 @@ jobs:
       - uses: actions/checkout@v2
       # Yes, we really want to checkout the PR
       - run: printenv
+      - run: echo $GH_PR_NUM
       - run: |
           if [[ -v $GH_PR_NUM ]]; then 
             echo "Checking out PR"
@@ -136,6 +139,7 @@ jobs:
       - uses: actions/checkout@v2
       # Yes, we really want to checkout the PR
       - run: printenv
+      - run: echo $GH_PR_NUM
       - run: |
           if [[ -v $GH_PR_NUM ]]; then 
             echo "Checking out PR"
@@ -192,6 +196,7 @@ jobs:
       - uses: actions/checkout@v2
       # Yes, we really want to checkout the PR
       - run: printenv
+      - run: echo $GH_PR_NUM
       - run: |
           if [[ -v $GH_PR_NUM ]]; then 
             echo "Checking out PR"
@@ -244,6 +249,7 @@ jobs:
       - uses: actions/checkout@v2
       # Yes, we really want to checkout the PR
       - run: printenv
+      - run: echo $GH_PR_NUM
       - run: |
           if [[ -v $GH_PR_NUM ]]; then 
             echo "Checking out PR"
