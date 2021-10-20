@@ -3,6 +3,7 @@ import { mount } from 'enzyme';
 import { TextInputGroup } from '../TextInputGroup';
 import { TextInputGroupMain } from '../TextInputGroupMain';
 import { TextInputGroupUtilities } from '../TextInputGroupUtilities';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 describe('TextInputGroup', () => {
   test('renders content', () => {
@@ -42,8 +43,8 @@ describe('TextInputGroupMain', () => {
     expect(view).toMatchSnapshot();
   });
 
-  test('renders search icon', () => {
-    const view = mount(<TextInputGroupMain hasSearchIcon>Foo</TextInputGroupMain>);
+  test('renders given input icon props', () => {
+    const view = mount(<TextInputGroupMain inputIcon={<SearchIcon />}>Foo</TextInputGroupMain>);
     expect(view).toMatchSnapshot();
   });
 

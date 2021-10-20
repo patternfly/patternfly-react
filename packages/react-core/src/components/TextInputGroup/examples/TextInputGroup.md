@@ -6,6 +6,8 @@ propComponents: ['TextInputGroup', 'TextInputGroupMain', 'TextInputGroupUtilitie
 beta: true
 ---
 
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+
 ## Examples
 
 ### Basic
@@ -27,10 +29,11 @@ const BasicTextInputGroup = () => (
 ```js
 import React from 'react';
 import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '@patternfly/react-core';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 const TextInputGroupWithIcons = () => (
   <TextInputGroup hasLeftIcon>
-    <TextInputGroupMain hasSearchIcon />
+    <TextInputGroupMain inputIcon={<SearchIcon />} />
     <TextInputGroupUtilities isClearable />
   </TextInputGroup>
 );
@@ -42,6 +45,7 @@ const TextInputGroupWithIcons = () => (
 import React from 'react';
 import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '@patternfly/react-core';
 import { Chip, ChipGroup } from '@patternfly/react-core';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 const [currentChips, setCurrentChips] = React.useState([
   'chip one',
@@ -76,7 +80,7 @@ const clearAllChips = () => {
 
 const TextInputGroupWithChips = () => (
   <TextInputGroup hasLeftIcon={showSearchIcon}>
-    <TextInputGroupMain hasSearchIcon={showSearchIcon}>
+    <TextInputGroupMain inputIcon={showSearchIcon && <SearchIcon />}>
       <ChipGroup>
         {currentChips.map(currentChip => (
           <Chip key={currentChip} onClick={() => deleteChip(currentChip)}>

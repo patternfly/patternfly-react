@@ -137,9 +137,15 @@ exports[`TextInputGroupMain renders content 1`] = `
 </TextInputGroupMain>
 `;
 
-exports[`TextInputGroupMain renders search icon 1`] = `
+exports[`TextInputGroupMain renders given input icon props 1`] = `
 <TextInputGroupMain
-  hasSearchIcon={true}
+  inputIcon={
+    <SearchIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  }
 >
   <div
     className="pf-c-text-input-group__main"
