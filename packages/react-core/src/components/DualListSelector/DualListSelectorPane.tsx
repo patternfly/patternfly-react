@@ -46,7 +46,9 @@ export interface DualListSelectorPaneProps {
   ) => void;
   /** @hide Flag indicating a dynamically built search bar should be included above the pane. */
   isSearchable?: boolean;
-  /** @hide Callback for search input. To be used when isSearchable is true. */
+  /** Flag indicating whether the component is disabled. */
+  isDisabled?: boolean;
+  /** Callback for search input. To be used when isSearchable is true. */
   onSearch?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /** @hide A callback for when the search input value for changes.  To be used when isSearchable is true. */
   onSearchInputChanged?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
@@ -76,6 +78,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
   onSearchInputChanged,
   filterOption,
   id = getUniqueId('dual-list-selector-pane'),
+  isDisabled = false,
   ...props
 }: DualListSelectorPaneProps) => {
   const [input, setInput] = React.useState('');
@@ -155,8 +158,9 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
                 <input
                   className={css(formStyles.formControl, formStyles.modifiers.search)}
                   type="search"
-                  onChange={onChange}
+                  onChange={isDisabled ? undefined : onChange}
                   aria-label={searchInputAriaLabel}
+                  disabled={isDisabled}
                 />
               )}
             </div>
@@ -184,6 +188,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
             ) => onOptionSelect(e, index, isChosen, id)}
             displayOption={displayOption}
             id={`${id}-list`}
+            isDisabled={isDisabled}
           >
             {children}
           </DualListSelectorListWrapper>
@@ -202,6 +207,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
                   }
                   onOptionCheck={onOptionCheck}
                   id={`${id}-tree`}
+                  isDisabled={isDisabled}
                 />
               </DualListSelectorList>
             ) : (

@@ -24,6 +24,8 @@ export interface DualListSelectorListWrapperProps extends React.HTMLProps<HTMLDi
   onOptionSelect?: (e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent, index: number, id: string) => void;
   /** @hide Function to determine if an option should be displayed depending on a dynamically built filter value */
   displayOption?: (option: React.ReactNode) => boolean;
+  /** Flag indicating whether the component is disabled. */
+  isDisabled?: boolean;
 }
 
 export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSelectorListWrapperProps> = ({
@@ -36,6 +38,7 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
   onOptionSelect,
   displayOption,
   id = getUniqueId('dual-list-selector-list'),
+  isDisabled = false,
   ...props
 }: DualListSelectorListWrapperProps) => {
   const [focusedOption, setFocusedOption] = React.useState('');
@@ -104,7 +107,8 @@ export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSe
           selectedOptions,
           id,
           options,
-          onOptionSelect
+          onOptionSelect,
+          isDisabled
         }}
       >
         {children ? children : <DualListSelectorList />}

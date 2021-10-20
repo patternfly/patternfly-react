@@ -140,7 +140,7 @@ class BasicDualListSelectorWithSearch extends React.Component {
 
 ```js
 import React from 'react';
-import { Button, ButtonVariant, Dropdown, DropdownItem, DualListSelector, KebabToggle } from '@patternfly/react-core';
+import { Button, ButtonVariant, Checkbox, Dropdown, DropdownItem, DualListSelector, KebabToggle } from '@patternfly/react-core';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 
 class ComplexDualListSelector extends React.Component {
@@ -150,7 +150,8 @@ class ComplexDualListSelector extends React.Component {
       availableOptions: [<span>Option 1</span>, <span>Option 3</span>, <span>Option 4</span>, <span>Option 2</span>],
       chosenOptions: [],
       isAvailableKebabOpen: false,
-      isChosenKebabOpen: false
+      isChosenKebabOpen: false,
+      isDisabled: false
     };
 
     this.onSort = panel => {
@@ -221,11 +222,12 @@ class ComplexDualListSelector extends React.Component {
         onClick={() => this.onSort('available')}
         aria-label="Sort"
         key="availableSortButton"
+        isDisabled={this.state.isDisabled}
       >
         <PficonSortCommonAscIcon />
       </Button>,
       <Dropdown
-        toggle={<KebabToggle onToggle={isOpen => this.onToggle(isOpen, 'available')} id="toggle-id-1" />}
+        toggle={<KebabToggle isDisabled={this.state.isDisabled} onToggle={isOpen => this.onToggle(isOpen, 'available')} id="toggle-id-1" />}
         isOpen={this.state.isAvailableKebabOpen}
         isPlain
         dropdownItems={dropdownItems}
@@ -239,11 +241,12 @@ class ComplexDualListSelector extends React.Component {
         onClick={() => this.onSort('chosen')}
         aria-label="Sort"
         key="chosenSortButton"
+        isDisabled={this.state.isDisabled}
       >
         <PficonSortCommonAscIcon />
       </Button>,
       <Dropdown
-        toggle={<KebabToggle onToggle={isOpen => this.onToggle(isOpen, 'chosen')} id="toggle-id-2" />}
+        toggle={<KebabToggle isDisabled={this.state.isDisabled} onToggle={isOpen => this.onToggle(isOpen, 'chosen')} id="toggle-id-2" />}
         isOpen={this.state.isChosenKebabOpen}
         isPlain
         dropdownItems={dropdownItems}
@@ -252,19 +255,34 @@ class ComplexDualListSelector extends React.Component {
     ];
 
     return (
-      <DualListSelector
-        isSearchable
-        availableOptions={this.state.availableOptions}
-        availableOptionsActions={availableOptionsActions}
-        chosenOptions={this.state.chosenOptions}
-        chosenOptionsActions={chosenOptionsActions}
-        addAll={this.onListChange}
-        removeAll={this.onListChange}
-        addSelected={this.onListChange}
-        removeSelected={this.onListChange}
-        filterOption={this.filterOption}
-        id="withActions"
-      />
+      <React.Fragment>
+          <DualListSelector
+            isSearchable
+            availableOptions={this.state.availableOptions}
+            availableOptionsActions={availableOptionsActions}
+            chosenOptions={this.state.chosenOptions}
+            chosenOptionsActions={chosenOptionsActions}
+            addAll={this.onListChange}
+            removeAll={this.onListChange}
+            addSelected={this.onListChange}
+            removeSelected={this.onListChange}
+            filterOption={this.filterOption}
+            isDisabled={this.state.isDisabled}
+            id="withActions"
+          />
+        <Checkbox
+          key="isDisabled"
+          id="isDisabled"
+          label="isDisabled"
+          aria-label="isDisabled"
+          isChecked={this.state.isDisabled}
+          onChange={() =>
+            this.setState({
+              isDisabled: !this.state.isDisabled
+            })
+          }
+        />
+      </React.Fragment>
     );
   }
 }
