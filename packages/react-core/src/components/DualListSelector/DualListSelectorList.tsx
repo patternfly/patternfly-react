@@ -38,6 +38,7 @@ export const DualListSelectorList: React.FunctionComponent<DualListSelectorListP
       aria-multiselectable="true"
       aria-labelledby={ariaLabelledBy}
       aria-activedescendant={focusedOption}
+      aria-disabled={isDisabled ? 'true' : undefined}
       {...props}
     >
       {options.length === 0

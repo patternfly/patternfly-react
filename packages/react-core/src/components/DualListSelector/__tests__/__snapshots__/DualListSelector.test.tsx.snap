@@ -927,6 +927,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
               <DualListSelectorList>
                 <ul
                   aria-activedescendant=""
+                  aria-disabled="true"
                   aria-labelledby="disabledTest-available-pane-status"
                   aria-multiselectable="true"
                   className="pf-c-dual-list-selector__list"
@@ -1629,6 +1630,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
               <DualListSelectorList>
                 <ul
                   aria-activedescendant=""
+                  aria-disabled="true"
                   aria-labelledby="disabledTest-chosen-pane-status"
                   aria-multiselectable="true"
                   className="pf-c-dual-list-selector__list"
