@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.16.0 (2021-10-20)
+
+
+### Features
+
+* **DualListSelector:** add disabled flag ([#6442](https://github.com/patternfly/patternfly-react/issues/6442)) ([85e1314](https://github.com/patternfly/patternfly-react/commit/85e131435be12c2df79336e9fa56987ed3717417))
+
+
+
+
+
 ## 6.15.35 (2021-10-20)
 
 **Note:** Version bump only for package @patternfly/react-charts
