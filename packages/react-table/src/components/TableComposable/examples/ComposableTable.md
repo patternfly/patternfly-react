@@ -1813,6 +1813,7 @@ To make a row draggable:
 
 ```js isBeta
 import React from 'react';
+import styles from '@patternfly/react-styles/css/components/Table/table';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
 
 class DraggableTable extends React.Component {
