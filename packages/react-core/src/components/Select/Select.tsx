@@ -60,6 +60,8 @@ export interface SelectProps
   isDisabled?: boolean;
   /** Flag to indicate if the typeahead select allows new items */
   isCreatable?: boolean;
+  /** Flag indicating if placeholder styles should be applied */
+  hasPlaceholderStyle?: boolean;
   /** Value to indicate if the select is modified to show that validation state.
    * If set to success, select will be modified to indicate valid state.
    * If set to error, select will be modified to indicate error state.
@@ -180,6 +182,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     isGrouped: false,
     isPlain: false,
     isDisabled: false,
+    hasPlaceholderStyle: false,
     isCreatable: false,
     validated: 'default',
     'aria-label': '',
@@ -719,6 +722,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       isGrouped,
       isPlain,
       isDisabled,
+      hasPlaceholderStyle,
       validated,
       selections: selectionsProp,
       typeAheadAriaLabel,
@@ -770,6 +774,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     } = this.state;
     const selectToggleId = toggleId || `pf-select-toggle-id-${currentId++}`;
     const selections = Array.isArray(selectionsProp) ? selectionsProp : [selectionsProp];
+    // Find out if the selected option is a placeholder
+    const selectedOption = React.Children.toArray(children).find(
+      (option: any) => option.props.value === selections[0]
+    ) as any;
+    const isSelectedPlaceholder = selectedOption && selectedOption.props.isPlaceholder;
     const hasAnySelections = Boolean(selections[0] && selections[0] !== '');
     const typeaheadActiveChild = this.getTypeaheadActiveChild(typeaheadCurrIndex);
     let childPlaceholderText = null as string;
@@ -1029,6 +1038,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           {...(footer && { footerRef: this.footerRef })}
           isOpen={isOpen}
           isPlain={isPlain}
+          hasPlaceholderStyle={
+            hasPlaceholderStyle && (!selections.length || selections[0] === null || isSelectedPlaceholder)
+          }
           onToggle={this.onToggle}
           onEnter={this.onEnter}
           onClose={this.onClose}
