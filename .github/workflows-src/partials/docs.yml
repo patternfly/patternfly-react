@@ -15,7 +15,7 @@ docs:
       name: Cache webpack
       with:
         path: '.cache'
-        key: ${{ runner.os }}-v4-${{ hashFiles('yarn.lock') }}
+        key: ${{ runner.os }}-v4-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
     - name: Build docs
       run: yarn build:docs
     - name: Upload docs

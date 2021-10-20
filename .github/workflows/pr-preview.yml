@@ -26,7 +26,7 @@ jobs:
            node_modules
            **/node_modules
            ~/.cache/Cypress
-          key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
@@ -36,7 +36,7 @@ jobs:
           path: |
             packages/*/dist
             packages/react-styles/css
-          key: ${{ runner.os }}-dist-14-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
+          key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
         run: yarn build && yarn build:umd
         if: steps.dist.outputs.cache-hit != 'true'
@@ -65,7 +65,7 @@ jobs:
            node_modules
            **/node_modules
            ~/.cache/Cypress
-          key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
@@ -73,7 +73,7 @@ jobs:
         name: Load lint cache
         with:
           path: '.eslintcache'
-          key: ${{ runner.os }}-lint-14-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-lint-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - name: ESLint
         run: yarn lint:ts
       - name: MDLint
@@ -105,7 +105,7 @@ jobs:
            node_modules
            **/node_modules
            ~/.cache/Cypress
-          key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
@@ -115,7 +115,7 @@ jobs:
           path: |
             packages/*/dist
             packages/react-styles/css
-          key: ${{ runner.os }}-dist-14-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
+          key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
         run: yarn build && yarn build:umd
         if: steps.dist.outputs.cache-hit != 'true'
@@ -149,7 +149,7 @@ jobs:
            node_modules
            **/node_modules
            ~/.cache/Cypress
-          key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
@@ -159,7 +159,7 @@ jobs:
           path: |
             packages/*/dist
             packages/react-styles/css
-          key: ${{ runner.os }}-dist-14-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
+          key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
         run: yarn build && yarn build:umd
         if: steps.dist.outputs.cache-hit != 'true'
@@ -168,7 +168,7 @@ jobs:
         name: Cache webpack
         with:
           path: '.cache'
-          key: ${{ runner.os }}-v4-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-v4-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - name: Build docs
         run: yarn build:docs
       - name: Upload docs
@@ -204,7 +204,7 @@ jobs:
            node_modules
            **/node_modules
            ~/.cache/Cypress
-          key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
@@ -214,7 +214,7 @@ jobs:
           path: |
             packages/*/dist
             packages/react-styles/css
-          key: ${{ runner.os }}-dist-14-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
+          key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
         run: yarn build && yarn build:umd
         if: steps.dist.outputs.cache-hit != 'true'
@@ -255,7 +255,7 @@ jobs:
            node_modules
            **/node_modules
            ~/.cache/Cypress
-          key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
@@ -265,7 +265,7 @@ jobs:
           path: |
             packages/*/dist
             packages/react-styles/css
-          key: ${{ runner.os }}-dist-14-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
+          key: ${{ runner.os }}-dist-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock', 'package.json', 'packages/*/*', '!packages/*/dist', '!packages/*/node_modules') }}
       - name: Build dist
         run: yarn build && yarn build:umd
         if: steps.dist.outputs.cache-hit != 'true'

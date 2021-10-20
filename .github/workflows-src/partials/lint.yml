@@ -11,7 +11,7 @@ lint:
       name: Load lint cache
       with:
         path: '.eslintcache'
-        key: ${{ runner.os }}-lint-14-${{ hashFiles('yarn.lock') }}
+        key: ${{ runner.os }}-lint-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
     - name: ESLint
       run: yarn lint:ts
     - name: MDLint

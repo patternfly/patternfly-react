@@ -9,7 +9,7 @@
      node_modules
      **/node_modules
      ~/.cache/Cypress
-    key: ${{ runner.os }}-yarn-14-${{ hashFiles('yarn.lock') }}
+    key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
 - run: yarn install --frozen-lockfile
   if: steps.yarn-cache.outputs.cache-hit != 'true'
 
