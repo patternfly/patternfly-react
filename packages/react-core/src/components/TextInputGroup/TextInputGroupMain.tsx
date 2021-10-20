@@ -23,7 +23,7 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
   'aria-label': ariaLabel,
   ...props
 }: TextInputGroupMainProps) => (
-  <div {...props} className={css(styles.textInputGroupMain, className)}>
+  <div className={css(styles.textInputGroupMain, className)} {...props}>
     {children}
     <span className={css(styles.textInputGroupText)}>
       {inputIcon && <span className={css(styles.textInputGroupIcon)}>{inputIcon}</span>}

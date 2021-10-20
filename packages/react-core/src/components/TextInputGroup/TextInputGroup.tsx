@@ -17,7 +17,7 @@ export const TextInputGroup: React.FunctionComponent<TextInputGroupProps> = ({
   hasLeftIcon,
   ...props
 }: TextInputGroupProps) => (
-  <div {...props} className={css(styles.textInputGroup, hasLeftIcon && styles.modifiers.icon, className)}>
+  <div className={css(styles.textInputGroup, hasLeftIcon && styles.modifiers.icon, className)} {...props}>
     {children}
   </div>
 );

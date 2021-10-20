@@ -24,7 +24,7 @@ export const TextInputGroupUtilities: React.FunctionComponent<TextInputGroupUtil
   'aria-label': ariaLabel,
   ...props
 }: TextInputGroupUtilitiesProps) => (
-  <div {...props} className={css(styles.textInputGroupUtilities, className)}>
+  <div className={css(styles.textInputGroupUtilities, className)} {...props}>
     {children}
     {isClearable && (
       <button className={css(styles.button)} type="button" aria-label={ariaLabel} onClick={clearSelection}>
