@@ -57,7 +57,7 @@ describe('TextInputGroupMain', () => {
     const onChangeMock = jest.fn();
 
     const view = mount(<TextInputGroupMain onChange={onChangeMock}>Foo</TextInputGroupMain>);
-    expect(view).toMatchSnapshot();
+    expect(onChangeMock).not.toHaveBeenCalled();
   });
 
   test('calls the onChange callback when the input changes', () => {
