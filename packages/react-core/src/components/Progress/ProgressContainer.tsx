@@ -20,13 +20,13 @@ export enum ProgressVariant {
   warning = 'warning'
 }
 
-export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
+export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label' | 'title'> {
   /** Properties needed for aria support */
   progressBarAriaProps?: AriaProps;
   /** Progress component DOM ID. */
   parentId: string;
-  /** Progress title. */
-  title?: string;
+  /** Progress title. The isTitleTruncated property will only affect string titles. Node title truncation must be handled manually. */
+  title?: React.ReactNode;
   /** Label to indicate what progress is showing. */
   label?: React.ReactNode;
   /** Type of progress status. */
@@ -35,7 +35,7 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
   measureLocation?: 'outside' | 'inside' | 'top' | 'none';
   /** Actual progress value. */
   value: number;
-  /** Whether title should be truncated */
+  /** Whether string title should be truncated */
   isTitleTruncated?: boolean;
   /** Position of the tooltip which is displayed if title is truncated */
   tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
@@ -69,10 +69,13 @@ export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> 
   };
   const Title = (
     <div
-      className={css(progressStyle.progressDescription, isTitleTruncated && progressStyle.modifiers.truncate)}
+      className={css(
+        progressStyle.progressDescription,
+        isTitleTruncated && typeof title === 'string' && progressStyle.modifiers.truncate
+      )}
       id={`${parentId}-description`}
       aria-hidden="true"
-      onMouseEnter={isTitleTruncated ? onMouseEnter : null}
+      onMouseEnter={isTitleTruncated && typeof title === 'string' ? onMouseEnter : null}
     >
       {title}
     </div>
