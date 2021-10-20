@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.31.14 (2021-10-20)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
 ## 4.31.13 (2021-10-20)
 
 **Note:** Version bump only for package @patternfly/react-table
