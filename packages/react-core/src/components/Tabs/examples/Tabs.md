@@ -1056,6 +1056,7 @@ import { Tabs, Tab, TabTitleText, TabContent, TabContentBody } from '@patternfly
 
 const TabContentWithBody = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);
+  
   // Toggle currently active tab
   const handleTabClick = (event, tabIndex) => {
     setActiveTabKey(tabIndex);
@@ -1068,9 +1069,9 @@ const TabContentWithBody = () => {
   return (
     <React.Fragment>
       <Tabs activeKey={activeTabKey} onSelect={handleTabClick}>
-        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} tabContentId="refTab1Section" tabContentRef={this.contentRef1} />
-        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>}tabContentId="refTab2Section" tabContentRef={this.contentRef2} />
-        <Tab eventKey={2} title={<TabTitleText>Tab item 3</TabTitleText>}  tabContentId="refTab3Section" tabContentRef={this.contentRef3} />
+        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} tabContentId="refTab1Section" tabContentRef={contentRef1} />
+        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>}tabContentId="refTab2Section" tabContentRef={contentRef2} />
+        <Tab eventKey={2} title={<TabTitleText>Tab item 3</TabTitleText>}  tabContentId="refTab3Section" tabContentRef={contentRef3} />
       </Tabs>
       <div>
         <TabContent eventKey={0} id="refTab1Section" ref={contentRef1} aria-label="Tab item 1">
