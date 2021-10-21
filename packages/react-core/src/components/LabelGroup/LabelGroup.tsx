@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/LabelGroup/label-group';
+import labelStyles from '@patternfly/react-styles/css/components/Label/label';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
 import { Label } from '../Label';
@@ -27,6 +28,8 @@ export interface LabelGroupProps extends React.HTMLProps<HTMLUListElement> {
   numLabels?: number;
   /** Flag if label group can be closed */
   isClosable?: boolean;
+  /** Flag indicating the labels in the group are compact */
+  isCompact?: boolean;
   /** Aria label for close button */
   closeBtnAriaLabel?: string;
   /** Function that is called when clicking on the label group close button */
@@ -66,6 +69,7 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
     defaultIsOpen: false,
     numLabels: 3,
     isClosable: false,
+    isCompact: false,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onClick: (_e: React.MouseEvent) => undefined as any,
     closeBtnAriaLabel: 'Close label group',
@@ -121,6 +125,7 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
       children,
       className,
       isClosable,
+      isCompact,
       closeBtnAriaLabel,
       'aria-label': ariaLabel,
       onClick,
@@ -165,7 +170,11 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
             ))}
             {numChildren > numLabels && (
               <li className={css(styles.labelGroupListItem)}>
-                <Label isOverflowLabel onClick={this.toggleCollapse}>
+                <Label
+                  isOverflowLabel
+                  onClick={this.toggleCollapse}
+                  className={css(isCompact && labelStyles.modifiers.compact)}
+                >
                   {isOpen ? expandedText : collapsedTextResult}
                 </Label>
               </li>

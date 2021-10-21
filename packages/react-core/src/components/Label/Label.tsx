@@ -18,6 +18,8 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   color?: 'blue' | 'cyan' | 'green' | 'orange' | 'purple' | 'red' | 'grey';
   /** Variant of the label. */
   variant?: 'outline' | 'filled';
+  /** Flag indicating the label is compact. */
+  isCompact?: boolean;
   /** Flag indicating the label is editable. */
   isEditable?: boolean;
   /** Additional props passed to the editable label text div. Optionally passing onInput and onBlur callbacks will allow finer custom text input control. */
@@ -71,6 +73,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   className = '',
   color = 'grey',
   variant = 'filled',
+  isCompact = false,
   isEditable = false,
   editableProps,
   isTruncated = false,
@@ -237,6 +240,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         colorStyles[color],
         variant === 'outline' && styles.modifiers.outline,
         isOverflowLabel && styles.modifiers.overflow,
+        isCompact && styles.modifiers.compact,
         isEditable && labelGrpStyles.modifiers.editable,
         isEditableActive && styles.modifiers.editableActive,
         className
