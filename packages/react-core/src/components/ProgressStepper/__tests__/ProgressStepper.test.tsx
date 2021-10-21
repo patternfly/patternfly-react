@@ -86,6 +86,11 @@ describe('ProgressStep', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('renders help text styling', () => {
+    const view = mount(<ProgressStep popover={<div></div>}>Title</ProgressStep>);
+    expect(view).toMatchSnapshot();
+  });
+
   test('renders custom icon', () => {
     const view = mount(<ProgressStep icon={<InProgressIcon />}>Title</ProgressStep>);
     expect(view).toMatchSnapshot();

@@ -22,6 +22,10 @@ export interface ProgressStepProps
   description?: string;
   /** ID of the title of the progress step. */
   titleId?: string;
+  /** Popover for a progress step. */
+  popover?: React.ReactNode;
+  /** @hide Forwarded reference to title container */
+  innerRef?: React.Ref<any>;
 }
 
 const variantIcons = {
@@ -42,7 +46,7 @@ const variantStyle = {
   danger: styles.modifiers.danger
 };
 
-export const ProgressStep: React.FunctionComponent<ProgressStepProps> = ({
+const ProgressStepBase: React.FunctionComponent<ProgressStepProps> = ({
   children,
   className,
   variant,
@@ -50,9 +54,12 @@ export const ProgressStep: React.FunctionComponent<ProgressStepProps> = ({
   description,
   icon,
   titleId,
+  popover,
+  innerRef,
   ...props
 }: ProgressStepProps) => {
   const _icon = icon !== undefined ? icon : variantIcons[variant];
+  const Component = popover !== undefined ? 'span' : 'div';
 
   if (props.id === undefined || titleId === undefined) {
     /* eslint-disable no-console */
@@ -75,16 +82,23 @@ export const ProgressStep: React.FunctionComponent<ProgressStepProps> = ({
         <span className={css(styles.progressStepperStepIcon)}>{_icon && _icon}</span>
       </div>
       <div className={css(styles.progressStepperStepMain)}>
-        <div
-          className={css(styles.progressStepperStepTitle)}
+        <Component
+          className={css(styles.progressStepperStepTitle, popover && styles.modifiers.helpText)}
           id={titleId}
+          ref={innerRef}
+          {...(popover && { tabIndex: 0, role: 'button', type: 'button' })}
           {...(props.id !== undefined && titleId !== undefined && { 'aria-labelledby': `${props.id} ${titleId}` })}
         >
           {children}
-        </div>
+          {popover}
+        </Component>
         {description && <div className={css(styles.progressStepperStepDescription)}>{description}</div>}
       </div>
     </li>
   );
 };
+
+export const ProgressStep = React.forwardRef((props: ProgressStepProps, ref: React.Ref<HTMLSpanElement>) => (
+  <ProgressStepBase innerRef={ref} {...props} />
+));
 ProgressStep.displayName = 'ProgressStep';
