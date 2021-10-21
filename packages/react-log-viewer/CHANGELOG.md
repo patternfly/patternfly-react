@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.9.1 (2021-10-21)
+
+
+### Bug Fixes
+
+* **DescriptionListGroup:** forward props to DOM ([#6466](https://github.com/patternfly/patternfly-react/issues/6466)) ([b78e2aa](https://github.com/patternfly/patternfly-react/commit/b78e2aa9c0360ce8418f6e7b55274ea1a50de518))
+
+
+
+
+
 # 4.9.0 (2021-10-20)
 
 
