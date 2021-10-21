@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.4.0 (2021-10-21)
+
+
+### Features
+
+* **label:** added compact label, updated horizontal grid card demo ([#6448](https://github.com/patternfly/patternfly-react/issues/6448)) ([89e0431](https://github.com/patternfly/patternfly-react/commit/89e04317924282140606d45f2292aa3f658b4b6c))
+
+
+
+
+
 ## 4.3.1 (2021-10-21)
 
 
