@@ -62,6 +62,8 @@ export interface SelectProps
   isCreatable?: boolean;
   /** Flag indicating if placeholder styles should be applied */
   hasPlaceholderStyle?: boolean;
+  /** @beta Flag indicating if the creatable option should set its value as a SelectOptionObject */
+  isCreateSelectOptionObject?: boolean;
   /** Value to indicate if the select is modified to show that validation state.
    * If set to success, select will be modified to indicate valid state.
    * If set to error, select will be modified to indicate error state.
@@ -214,7 +216,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     favoritesLabel: 'Favorites',
     ouiaSafe: true,
     chipGroupComponent: null,
-    isInputValuePersisted: false
+    isInputValuePersisted: false,
+    isCreateSelectOptionObject: false
   };
 
   state: SelectState = {
@@ -346,7 +349,16 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   updateTypeAheadFilteredChildren = (typeaheadInputValue: string, e: React.ChangeEvent<HTMLInputElement> | null) => {
     let typeaheadFilteredChildren: any;
 
-    const { onFilter, isCreatable, onCreateOption, createText, noResultsFoundText, children, isGrouped } = this.props;
+    const {
+      onFilter,
+      isCreatable,
+      onCreateOption,
+      createText,
+      noResultsFoundText,
+      children,
+      isGrouped,
+      isCreateSelectOptionObject
+    } = this.props;
 
     if (onFilter) {
       /* The updateTypeAheadFilteredChildren callback is not only called on input changes but also when the children change.
@@ -421,13 +433,24 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       const newValue = typeaheadInputValue;
       if (
         !typeaheadFilteredChildren.find(
-          (i: React.ReactElement) => i.props.value.toLowerCase() === newValue.toLowerCase()
+          (i: React.ReactElement) =>
+            i.props.value && i.props.value.toString().toLowerCase() === newValue.toString().toLowerCase()
         )
       ) {
+        const newOptionValue = isCreateSelectOptionObject
+          ? ({
+              toString: () => newValue,
+              compareTo: value =>
+                this.toString()
+                  .toLowerCase()
+                  .includes(value.toString().toLowerCase())
+            } as SelectOptionObject)
+          : newValue;
+
         typeaheadFilteredChildren.push(
           <SelectOption
             key={`create ${newValue}`}
-            value={newValue}
+            value={newOptionValue}
             onClick={() => onCreateOption && onCreateOption(newValue)}
           >
             {createText} "{newValue}"
@@ -763,6 +786,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       favoritesLabel,
       footer,
       loadingVariant,
+      isCreateSelectOptionObject,
       ...props
     } = this.props;
     const {
