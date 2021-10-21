@@ -34,7 +34,7 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 const TextInputGroupWithIcons = () => (
-  <TextInputGroup hasLeftIcon>
+  <TextInputGroup>
     <TextInputGroupMain inputIcon={<SearchIcon />} />
     <TextInputGroupUtilities>
       <Button variant="plain" aria-label="Clear button and input">
@@ -97,7 +97,7 @@ const TextInputGroupWithChips = () => {
   };
 
   return (
-    <TextInputGroup hasLeftIcon={showSearchIcon}>
+    <TextInputGroup>
       <TextInputGroupMain inputIcon={showSearchIcon && <SearchIcon />} value={inputValue} onChange={handleInputChange}>
         <ChipGroup>
           {currentChips.map(currentChip => (

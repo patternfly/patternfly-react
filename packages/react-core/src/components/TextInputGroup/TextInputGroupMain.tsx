@@ -24,7 +24,7 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
   value: inputValue,
   ...props
 }: TextInputGroupMainProps) => (
-  <div className={css(styles.textInputGroupMain, className)} {...props}>
+  <div className={css(styles.textInputGroupMain, inputIcon && styles.modifiers.icon, className)} {...props}>
     {children}
     <span className={css(styles.textInputGroupText)}>
       {inputIcon && <span className={css(styles.textInputGroupIcon)}>{inputIcon}</span>}

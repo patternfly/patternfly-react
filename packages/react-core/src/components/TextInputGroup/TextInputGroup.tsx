@@ -7,17 +7,14 @@ export interface TextInputGroupProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes applied to the text input group container */
   className?: string;
-  /** Flag indicating that an icon will be placed on the left side of the text input group */
-  hasLeftIcon?: boolean;
 }
 
 export const TextInputGroup: React.FunctionComponent<TextInputGroupProps> = ({
   children,
   className,
-  hasLeftIcon,
   ...props
 }: TextInputGroupProps) => (
-  <div className={css(styles.textInputGroup, hasLeftIcon && styles.modifiers.icon, className)} {...props}>
+  <div className={css(styles.textInputGroup, className)} {...props}>
     {children}
   </div>
 );
