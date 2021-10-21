@@ -23,13 +23,8 @@ export const TableCompoundExpandable: React.FunctionComponent = () => {
   // In this example, expanded cells are tracked by the repo and property names from each row. This could be any pair of unique identifiers.
   // This is to prevent state from being based on row and column order index in case we later add sorting and rearranging columns.
   // Note that these columnKeys must be in the same order as the `columns` below, because columnIndex will be used to look up the matching key.
-  // TODO replace the 'as const' here when the TS parser allows it:
-  // const columnKeys = ['name', 'branches', 'prs', 'workspaces', 'lastCommit'] as const;
-  const columnKeys = ['name', 'branches', 'prs', 'workspaces', 'lastCommit'];
-  // TODO replace the typeof columnKeys[number] here when the TS parser allows it:
-  // type ColumnKey = typeof columnKeys[number];
-  type ColumnKeyArray = typeof columnKeys;
-  type ColumnKey = ColumnKeyArray[number];
+  type ColumnKey = 'name' | 'branches' | 'prs' | 'workspaces' | 'lastCommit'; // For typechecking
+  const columnKeys: ColumnKey[] = ['name', 'branches', 'prs', 'workspaces', 'lastCommit']; // For indexed order
   const [expandedCells, setExpandedCells] = React.useState<Record<string, ColumnKey>>({
     'siemur/test-space': 'branches' // Default to the first cell of the first row being expanded
   });
