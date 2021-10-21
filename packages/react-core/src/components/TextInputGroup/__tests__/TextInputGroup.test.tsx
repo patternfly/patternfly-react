@@ -71,32 +71,7 @@ describe('TextInputGroupMain', () => {
 
 describe('TextInputGroupUtilities', () => {
   test('renders the content', () => {
-    const view = mount(<TextInputGroupUtilities />);
+    const view = mount(<TextInputGroupUtilities>{<button>Foo</button>}</TextInputGroupUtilities>);
     expect(view).toMatchSnapshot();
-  });
-
-  test('renders the clear button', () => {
-    const view = mount(<TextInputGroupUtilities clearSelection={() => {}} />);
-    expect(view).toMatchSnapshot();
-  });
-
-  test('renders the clear button with custom aria label when given', () => {
-    const view = mount(<TextInputGroupUtilities clearSelection={() => {}} aria-label="Foo"/>);
-    expect(view).toMatchSnapshot();
-  });
-
-  test('does not fire the clearSelection callback when the clear button is not clicked', () => {
-    const clearSelectionMock = jest.fn();
-
-    const view = mount(<TextInputGroupUtilities clearSelection={clearSelectionMock} />);
-    expect(clearSelectionMock).not.toHaveBeenCalled();
-  });
-
-  test('fires the clearSelection callback when the clear button is clicked', () => {
-    const clearSelectionMock = jest.fn();
-
-    const view = mount(<TextInputGroupUtilities clearSelection={clearSelectionMock} />);
-    view.find('button').simulate('click');
-    expect(clearSelectionMock).toHaveBeenCalledTimes(1);
   });
 });

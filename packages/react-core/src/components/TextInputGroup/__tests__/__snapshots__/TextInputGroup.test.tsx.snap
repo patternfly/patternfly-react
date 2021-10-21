@@ -27,9 +27,7 @@ exports[`TextInputGroup gets custom class and id 1`] = `
         </span>
       </div>
     </TextInputGroupMain>
-    <TextInputGroupUtilities
-      aria-label="Clear input"
-    >
+    <TextInputGroupUtilities>
       <div
         className="pf-c-text-input-group__utilities"
       />
@@ -61,9 +59,7 @@ exports[`TextInputGroup renders content 1`] = `
         </span>
       </div>
     </TextInputGroupMain>
-    <TextInputGroupUtilities
-      aria-label="Clear input"
-    >
+    <TextInputGroupUtilities>
       <div
         className="pf-c-text-input-group__utilities"
       />
@@ -97,9 +93,7 @@ exports[`TextInputGroup renders with the proper stying for an icon on the left s
         </span>
       </div>
     </TextInputGroupMain>
-    <TextInputGroupUtilities
-      aria-label="Clear input"
-    >
+    <TextInputGroupUtilities>
       <div
         className="pf-c-text-input-group__utilities"
       />
@@ -206,98 +200,14 @@ exports[`TextInputGroupMain renders the input with custom aria label when given 
 </TextInputGroupMain>
 `;
 
-exports[`TextInputGroupUtilities renders the clear button 1`] = `
-<TextInputGroupUtilities
-  aria-label="Clear input"
-  clearSelection={[Function]}
->
-  <div
-    className="pf-c-text-input-group__utilities"
-  >
-    <button
-      aria-label="Clear input"
-      className="pf-c-button"
-      onClick={[Function]}
-      type="button"
-    >
-      <TimesIcon
-        color="currentColor"
-        noVerticalAlign={false}
-        size="sm"
-      >
-        <svg
-          aria-hidden={true}
-          aria-labelledby={null}
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style={
-            Object {
-              "verticalAlign": "-0.125em",
-            }
-          }
-          viewBox="0 0 352 512"
-          width="1em"
-        >
-          <path
-            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-          />
-        </svg>
-      </TimesIcon>
-    </button>
-  </div>
-</TextInputGroupUtilities>
-`;
-
-exports[`TextInputGroupUtilities renders the clear button with custom aria label when given 1`] = `
-<TextInputGroupUtilities
-  aria-label="Foo"
-  clearSelection={[Function]}
->
-  <div
-    className="pf-c-text-input-group__utilities"
-  >
-    <button
-      aria-label="Foo"
-      className="pf-c-button"
-      onClick={[Function]}
-      type="button"
-    >
-      <TimesIcon
-        color="currentColor"
-        noVerticalAlign={false}
-        size="sm"
-      >
-        <svg
-          aria-hidden={true}
-          aria-labelledby={null}
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style={
-            Object {
-              "verticalAlign": "-0.125em",
-            }
-          }
-          viewBox="0 0 352 512"
-          width="1em"
-        >
-          <path
-            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-          />
-        </svg>
-      </TimesIcon>
-    </button>
-  </div>
-</TextInputGroupUtilities>
-`;
-
 exports[`TextInputGroupUtilities renders the content 1`] = `
-<TextInputGroupUtilities
-  aria-label="Clear input"
->
+<TextInputGroupUtilities>
   <div
     className="pf-c-text-input-group__utilities"
-  />
+  >
+    <button>
+      Foo
+    </button>
+  </div>
 </TextInputGroupUtilities>
 `;

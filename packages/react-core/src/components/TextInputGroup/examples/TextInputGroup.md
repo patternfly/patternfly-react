@@ -7,6 +7,7 @@ beta: true
 ---
 
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 ## Examples
 
@@ -28,13 +29,18 @@ const BasicTextInputGroup = () => (
 
 ```js
 import React from 'react';
-import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '@patternfly/react-core';
+import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities, Button } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 const TextInputGroupWithIcons = () => (
   <TextInputGroup hasLeftIcon>
     <TextInputGroupMain inputIcon={<SearchIcon />} />
-    <TextInputGroupUtilities clearSelection={() => {}} />
+    <TextInputGroupUtilities>
+      <Button variant="plain" aria-label="Clear button and input">
+        <TimesIcon />
+      </Button>
+    </TextInputGroupUtilities>
   </TextInputGroup>
 );
 ```
@@ -43,9 +49,10 @@ const TextInputGroupWithIcons = () => (
 
 ```js
 import React from 'react';
-import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '@patternfly/react-core';
+import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities, Button } from '@patternfly/react-core';
 import { Chip, ChipGroup } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 const TextInputGroupWithChips = () => {
   const [inputValue, setInputValue] = React.useState('');
@@ -100,7 +107,13 @@ const TextInputGroupWithChips = () => {
           ))}
         </ChipGroup>
       </TextInputGroupMain>
-      <TextInputGroupUtilities clearSelection={showClearButton && clearChipsAndInput} />
+      <TextInputGroupUtilities>
+        {showClearButton && (
+          <Button variant="plain" onClick={clearChipsAndInput} aria-label="Clear button and input">
+            <TimesIcon />
+          </Button>
+        )}
+      </TextInputGroupUtilities>
     </TextInputGroup>
   );
 };
