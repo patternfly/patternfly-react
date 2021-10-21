@@ -3,7 +3,6 @@ id: Helper text
 section: components
 cssPrefix: pf-c-helper-text
 propComponents: ['HelperText', 'HelperTextItem']
-beta: true
 ---
 
 import InfoIcon from '@patternfly/react-icons/dist/esm/icons/info-icon';

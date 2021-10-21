@@ -4,7 +4,6 @@ section: components
 cssPrefix: pf-c-menu
 propComponents: ['Menu', 'MenuList', 'MenuItem', 'MenuItemAction', 'MenuContent', 'MenuInput']
 ouia: true
-beta: true
 ---
 
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
@@ -341,8 +340,6 @@ class MenuWithTitledGroups extends React.Component {
 import React from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 class MenuWithDescription extends React.Component {
   constructor(props) {
@@ -392,9 +389,6 @@ import { Menu, MenuContent, MenuGroup, MenuList, MenuItem, MenuItemAction } from
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 class MenuWithActions extends React.Component {
@@ -690,7 +684,7 @@ class MenuOptionMultiSelect extends React.Component {
 
 ### With drilldown
 
-```js
+```js isBeta
 import React from 'react';
 import { Menu, MenuContent, MenuList, MenuItem, Divider, DrilldownMenu } from '@patternfly/react-core';
 import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
@@ -888,7 +882,7 @@ class MenuWithDrilldown extends React.Component {
 
 ### With drilldown breadcrumbs
 
-```js
+```js isBeta
 import React from 'react';
 import {
   Menu,
@@ -902,7 +896,6 @@ import {
   BreadcrumbHeading,
   MenuBreadcrumb,
   Dropdown,
-  DropdownToggle,
   DropdownItem,
   BadgeToggle,
   Checkbox

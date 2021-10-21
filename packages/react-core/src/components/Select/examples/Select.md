@@ -2330,8 +2330,7 @@ class SelectWithFooter extends React.Component {
 
 ```js
 import React from 'react';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox, Divider, Button } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, Button } from '@patternfly/react-core';
 
 class SelectWithFooterCheckbox extends React.Component {
   constructor(props) {
@@ -2408,15 +2407,12 @@ class SelectWithFooterCheckbox extends React.Component {
 
 ### View more
 
-```js
+```js isBeta
 import React from 'react';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import {
   Select,
   SelectOption,
-  SelectVariant,
-  Divider,
-  Button,
+  SelectVariant
 } from '@patternfly/react-core';
 
 class SelectViewMore extends React.Component {
@@ -2507,15 +2503,12 @@ class SelectViewMore extends React.Component {
 
 ### View more with checkboxes
 
-```js
+```js isBeta
 import React from 'react';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import {
   Select,
   SelectOption,
   SelectVariant,
-  Divider,
-  Button,
 } from '@patternfly/react-core';
 
 class SelectViewMoreCheckbox extends React.Component {

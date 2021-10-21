@@ -1,6 +1,7 @@
 ---
 id: Date picker
 section: components
+beta: true
 ---
 
 ## Demos

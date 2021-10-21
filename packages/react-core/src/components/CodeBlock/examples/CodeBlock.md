@@ -3,7 +3,6 @@ id: Code block
 section: components
 cssPrefix: pf-c-code-block
 propComponents: ['CodeBlock', 'CodeBlockAction', 'CodeBlockCode']
-beta: true
 ---
 
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
