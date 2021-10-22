@@ -69,11 +69,9 @@ exports[`TextInputGroup renders content 1`] = `
 `;
 
 exports[`TextInputGroup renders with the proper stying for an icon on the left side of the component 1`] = `
-<TextInputGroup
-  hasLeftIcon={true}
->
+<TextInputGroup>
   <div
-    className="pf-c-text-input-group pf-m-icon"
+    className="pf-c-text-input-group"
   >
     <TextInputGroupMain
       aria-label="Type to filter"
@@ -135,7 +133,7 @@ exports[`TextInputGroupMain renders given input icon props 1`] = `
   }
 >
   <div
-    className="pf-c-text-input-group__main"
+    className="pf-c-text-input-group__main pf-m-icon"
   >
     Foo
     <span

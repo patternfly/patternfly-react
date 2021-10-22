@@ -28,7 +28,7 @@ describe('TextInputGroup', () => {
 
   test('renders with the proper stying for an icon on the left side of the component', () => {
     const view = mount(
-      <TextInputGroup hasLeftIcon>
+      <TextInputGroup>
         <TextInputGroupMain>Foo</TextInputGroupMain>
         <TextInputGroupUtilities />
       </TextInputGroup>
