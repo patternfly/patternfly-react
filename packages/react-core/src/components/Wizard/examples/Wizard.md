@@ -319,7 +319,7 @@ class ValidationWizard extends React.Component {
 
 ### Validate on button press
 
-This example demonstrates how to use the `WizardContextConsumer` to consumer the `WizardContext` imperatively move to a specific wizard step.
+This example demonstrates how to use the `WizardContextConsumer` to consume the `WizardContext`. `WizardContext` can be used to imperatively move to a specific wizard step.
 
 The definition of the `WizardContext` is as follows: 
 
