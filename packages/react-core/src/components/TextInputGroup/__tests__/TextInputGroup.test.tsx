@@ -44,7 +44,7 @@ describe('TextInputGroupMain', () => {
   });
 
   test('renders given input icon props', () => {
-    const view = mount(<TextInputGroupMain inputIcon={<SearchIcon />}>Foo</TextInputGroupMain>);
+    const view = mount(<TextInputGroupMain icon={<SearchIcon />}>Foo</TextInputGroupMain>);
     expect(view).toMatchSnapshot();
   });
 

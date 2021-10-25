@@ -8,7 +8,7 @@ export interface TextInputGroupMainProps extends React.HTMLProps<HTMLDivElement>
   /** Additional classes applied to the text input group main container */
   className?: string;
   /** Icon to be shown on the left side of the text input group main container */
-  inputIcon?: React.ReactNode;
+  icon?: React.ReactNode;
   /** Callback for when there is a change in the input field*/
   onChange?: () => void;
   /** Accessibility label for the input */
@@ -18,16 +18,16 @@ export interface TextInputGroupMainProps extends React.HTMLProps<HTMLDivElement>
 export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps> = ({
   children,
   className,
-  inputIcon,
+  icon,
   onChange,
   'aria-label': ariaLabel,
   value: inputValue,
   ...props
 }: TextInputGroupMainProps) => (
-  <div className={css(styles.textInputGroupMain, inputIcon && styles.modifiers.icon, className)} {...props}>
+  <div className={css(styles.textInputGroupMain, icon && styles.modifiers.icon, className)} {...props}>
     {children}
     <span className={css(styles.textInputGroupText)}>
-      {inputIcon && <span className={css(styles.textInputGroupIcon)}>{inputIcon}</span>}
+      {icon && <span className={css(styles.textInputGroupIcon)}>{icon}</span>}
       <input
         type="text"
         className={css(styles.textInputGroupTextInput)}

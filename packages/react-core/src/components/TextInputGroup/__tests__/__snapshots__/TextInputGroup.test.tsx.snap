@@ -124,7 +124,7 @@ exports[`TextInputGroupMain renders content 1`] = `
 exports[`TextInputGroupMain renders given input icon props 1`] = `
 <TextInputGroupMain
   aria-label="Type to filter"
-  inputIcon={
+  icon={
     <SearchIcon
       color="currentColor"
       noVerticalAlign={false}
