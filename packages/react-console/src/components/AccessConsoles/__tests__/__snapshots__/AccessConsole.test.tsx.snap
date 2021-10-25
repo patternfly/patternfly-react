@@ -45,7 +45,12 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
         placeholderText="Select console type"
         position="left"
         removeSelectionAriaLabel="Remove"
-        selections={null}
+        selections={
+          Object {
+            "toString": [Function],
+            "value": null,
+          }
+        }
         toggleAriaLabel="Options menu"
         toggleIcon={null}
         toggleId="pf-c-console__type-selector"
@@ -318,7 +323,12 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
       placeholderText="Select console type"
       position="left"
       removeSelectionAriaLabel="Remove"
-      selections={null}
+      selections={
+        Object {
+          "toString": [Function],
+          "value": null,
+        }
+      }
       toggleAriaLabel="Options menu"
       toggleIcon={null}
       toggleId="pf-c-console__type-selector"
@@ -347,7 +357,12 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
         onClick={[Function]}
         sendRef={[Function]}
         setViewMoreNextIndex={[Function]}
-        value="VNC console"
+        value={
+          Object {
+            "toString": [Function],
+            "value": "VncConsole",
+          }
+        }
       />
       <SelectOption
         className=""
@@ -369,7 +384,12 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
         onClick={[Function]}
         sendRef={[Function]}
         setViewMoreNextIndex={[Function]}
-        value="Serial console"
+        value={
+          Object {
+            "toString": [Function],
+            "value": "SerialConsole",
+          }
+        }
       />
     </Select>
   </div>
