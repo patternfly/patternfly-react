@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.4.0 (2021-10-25)
+
+
+### Features
+
+* **Tabs:** Added support for tab content body with padding, added tabs open and tab secondary tabs demos ([#6484](https://github.com/patternfly/patternfly-react/issues/6484)) ([0ccbe9d](https://github.com/patternfly/patternfly-react/commit/0ccbe9d1e6e0dac0730466c92a90fe2cd9f6560d))
+
+
+
+
+
 ## 4.3.1 (2021-10-21)
 
 **Note:** Version bump only for package transformer-cjs-imports
