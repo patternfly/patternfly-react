@@ -134,7 +134,9 @@ VerticalCategoryLabelGroupOverflowRemovable = () => {
 
 ### Editable labels
 
-```js
+Note: Screen reader accessibility for the editable label is still in development.
+
+```js isBeta
 import React from 'react';
 import { LabelGroup, Label, TextArea } from '@patternfly/react-core';
 

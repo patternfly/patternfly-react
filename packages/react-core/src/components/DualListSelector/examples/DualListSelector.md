@@ -400,6 +400,7 @@ relationships are arranged as follows:
 ```js noLive
 import React from 'react';
 import { DualListSelector, DualListSelectorPane, DualListSelectorList, DualListSelectorListItem, DualListSelectorControlsWrapper, DualListSelectorControl } from '@patternfly/react-core';
+
 <DualListSelector>
 
   <DualListSelectorPane>
@@ -420,6 +421,8 @@ import { DualListSelector, DualListSelectorPane, DualListSelectorList, DualListS
   
 </DualListSelector>
 ```
+
+Note: Keyboard accessibility and screen reader accessibility for the `DragDrop` component are still in development.
 
 ```js
 import React from 'react';
