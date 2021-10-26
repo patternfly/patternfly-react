@@ -20,7 +20,6 @@ import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '@pa
 const BasicTextInputGroup = () => (
   <TextInputGroup>
     <TextInputGroupMain />
-    <TextInputGroupUtilities />
   </TextInputGroup>
 );
 ```
