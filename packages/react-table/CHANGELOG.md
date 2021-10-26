@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.37.5 (2021-10-26)
+
+
+### Bug Fixes
+
+* **tokens:** added check for no matching var to avoid infinite loop ([#6502](https://github.com/patternfly/patternfly-react/issues/6502)) ([99605c2](https://github.com/patternfly/patternfly-react/commit/99605c213f12490d0abe75910e05c3e6da26a1f3))
+
+
+
+
+
 ## 4.37.4 (2021-10-26)
 
 
