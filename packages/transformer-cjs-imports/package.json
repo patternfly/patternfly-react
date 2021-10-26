@@ -1,5 +1,5 @@
 {
-  "name": "transformer-cjs-imports",
+  "name": "@patternfly/transformer-cjs-imports",
   "version": "4.6.2",
   "description": "Transform CJS imports to ESM in typescript depending on module target.",
   "main": "index.js",
