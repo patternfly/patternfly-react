@@ -30,8 +30,6 @@ import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amou
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
-import DemoSortableTable from './DemoSortableTable';
-
 ### Table Columns
 
 Array items for columns provided to the `Table`'s `cells` prop, can be simple strings or objects.
