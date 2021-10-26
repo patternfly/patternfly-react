@@ -46,15 +46,15 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   isExternalLink?: boolean;
   /** Flag indicating if the option is selected */
   isSelected?: boolean;
-  /** Flyout menu */
+  /** @beta Flyout menu */
   flyoutMenu?: React.ReactElement;
-  /** Callback function when mouse leaves trigger */
+  /** @beta Callback function when mouse leaves trigger */
   onShowFlyout?: (event?: any) => void;
-  /** Drilldown menu of the item. Should be a Menu or DrilldownMenu type. */
+  /** @beta Drilldown menu of the item. Should be a Menu or DrilldownMenu type. */
   drilldownMenu?: React.ReactNode;
-  /** Sub menu direction */
+  /** @beta Sub menu direction */
   direction?: 'down' | 'up';
-  /** True if item is on current selection path */
+  /** @beta True if item is on current selection path */
   isOnPath?: boolean;
   /** Accessibility label */
   'aria-label'?: string;

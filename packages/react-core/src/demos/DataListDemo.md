@@ -21,7 +21,6 @@ import {
   DataListItem,
   DataListItemRow,
   DataListCell,
-  DataListCheck,
   DataListAction,
   DataListToggle,
   DataListContent,
@@ -40,7 +39,6 @@ import {
   Tooltip
 } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 

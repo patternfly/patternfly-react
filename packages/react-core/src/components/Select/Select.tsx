@@ -144,7 +144,7 @@ export interface SelectProps
   chipGroupProps?: Omit<ChipGroupProps, 'children' | 'ref'>;
   /** Optional props to render custom chip group in the typeaheadmulti variant */
   chipGroupComponent?: React.ReactNode;
-  /** @beta Flag for retaining keyboard-entered value in typeahead text field when focus leaves input away */
+  /** Flag for retaining keyboard-entered value in typeahead text field when focus leaves input away */
   isInputValuePersisted?: boolean;
   /** Content rendered in the footer of the select menu */
   footer?: React.ReactNode;

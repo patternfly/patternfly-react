@@ -705,6 +705,7 @@ class ExpandableDataList extends React.Component {
               />
               <DataListAction
                 aria-labelledby="ex-item3 ex-action3"
+                aria-labelledby="ex-item3 ex-action3"
                 id="ex-action3"
                 aria-label="Actions"
                 isPlainButtonAction
@@ -1127,7 +1128,8 @@ import {
 
 Draggable data lists used to have their own HTML5-based API for drag and drop, which wasn't able to fulfill requirements such as custom styling on items being dragged. So we wrote generic `DragDrop`, `Draggable`, and `Droppable` components for this purpose. Use those new components instead of the deprecated (and buggy!) HTML5-based API.
 
-```js
+Note: Keyboard accessibility and screen reader accessibility for the `DragDrop` component are still in development.
+```js isBeta
 import React from 'react';
 import {
   DataList,
@@ -1238,8 +1240,7 @@ import {
   DataListItem,
   DataListItemRow,
   DataListItemCells,
-  DataListCell,
-  DataListGridBreakpoint
+  DataListCell
 } from '@patternfly/react-core';
 
 <DataList aria-label="Simple data list example" gridBreakpoint="sm">
