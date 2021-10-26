@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.27.4 (2021-10-26)
+
+
+### Bug Fixes
+
+* **KebabToggle:** adds event to onToggle definition ([#6490](https://github.com/patternfly/patternfly-react/issues/6490)) ([0441575](https://github.com/patternfly/patternfly-react/commit/04415757917062aa13c06b34bd94ef38c2334088))
+
+
+
+
+
 ## 5.27.3 (2021-10-26)
 
 
