@@ -15,7 +15,7 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 ```js
 import React from 'react';
-import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '@patternfly/react-core';
+import { TextInputGroup, TextInputGroupMain } from '@patternfly/react-core';
 
 const BasicTextInputGroup = () => (
   <TextInputGroup>
