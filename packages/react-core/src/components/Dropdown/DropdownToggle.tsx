@@ -16,7 +16,7 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement>,
   /** Flag to indicate if menu is opened */
   isOpen?: boolean;
   /** Callback called when toggle is clicked */
-  onToggle?: (isOpen: boolean) => void;
+  onToggle?: (value: boolean, event: any) => void;
   /** Element which wraps toggle */
   parentRef?: HTMLElement;
   /** The menu element */
