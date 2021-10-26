@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.21.2 (2021-10-26)
+
+
+### Bug Fixes
+
+* **readme:** update react-core readme ([#6505](https://github.com/patternfly/patternfly-react/issues/6505)) ([d4f9a11](https://github.com/patternfly/patternfly-react/commit/d4f9a114584eea7ab67873f199e80b348886e14b))
+
+
+
+
+
 ## 6.21.1 (2021-10-26)
 
 
