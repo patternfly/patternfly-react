@@ -149,8 +149,27 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
     isTree: false,
     isDisabled: false
   };
-  private originalAvailableCopy = this.props.availableOptions;
-  private originalChosenCopy = this.props.chosenOptions;
+  private originalAvailableCopy = JSON.parse(JSON.stringify(this.props.availableOptions));
+  private originalChosenCopy = JSON.parse(JSON.stringify(this.props.chosenOptions));
+
+  // If the DualListSelector uses trees, concat the two initial arrays and merge duplicate folder IDs
+  private mergedCopy = this.props.isTree
+    ? Object.values(
+        (this.originalAvailableCopy as DualListSelectorTreeItemData[])
+          .concat(this.originalChosenCopy as DualListSelectorTreeItemData[])
+          .reduce((mapObj: any, item: DualListSelectorTreeItemData) => {
+            const key = item.id;
+            if (mapObj[key]) {
+              // If map already has an item ID, add the dupe ID's children to the existing map
+              mapObj[key].children.push(...item.children);
+            } else {
+              // Else clone the item data
+              mapObj[key] = { ...item };
+            }
+            return mapObj;
+          }, {})
+      )
+    : null;
 
   constructor(props: DualListSelectorProps) {
     super(props);
@@ -250,18 +269,13 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       const movedOptions =
         prevState.availableTreeFilteredOptions ||
         flattenTreeWithFolders(prevState.availableOptions as DualListSelectorTreeItemData[]);
-
       const newAvailable = prevState.availableOptions
         .map(opt => Object.assign({}, opt))
         .filter(item => filterRestTreeItems(item as DualListSelectorTreeItemData, movedOptions));
 
       const currChosen = flattenTree(prevState.chosenOptions as DualListSelectorTreeItemData[]);
       const nextChosenOptions = currChosen.concat(movedOptions);
-
-      const allOptions = (this.originalAvailableCopy as DualListSelectorTreeItemData[]).concat(
-        this.originalChosenCopy as DualListSelectorTreeItemData[]
-      );
-      const newChosen = allOptions
+      const newChosen = this.mergedCopy
         .map(opt => Object.assign({}, opt))
         .filter(item => filterTreeItemsWithoutFolders(item as DualListSelectorTreeItemData, nextChosenOptions));
 
@@ -316,10 +330,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       // Get next chosen options from current + new nodes and remap from base
       const currChosen = flattenTree(prevState.chosenOptions as DualListSelectorTreeItemData[]);
       const nextChosenOptions = currChosen.concat(prevState.availableTreeOptionsChecked);
-      const allOptions = (this.originalAvailableCopy as DualListSelectorTreeItemData[]).concat(
-        this.originalChosenCopy as DualListSelectorTreeItemData[]
-      );
-      const newChosen = allOptions
+      const newChosen = this.mergedCopy
         .map(opt => Object.assign({}, opt))
         .filter(item => filterTreeItemsWithoutFolders(item as DualListSelectorTreeItemData, nextChosenOptions));
 
@@ -372,11 +383,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
         .filter(item => filterRestTreeItems(item as DualListSelectorTreeItemData, movedOptions));
       const currAvailable = flattenTree(prevState.availableOptions as DualListSelectorTreeItemData[]);
       const nextAvailableOptions = currAvailable.concat(movedOptions);
-
-      const allOptions = (this.originalAvailableCopy as DualListSelectorTreeItemData[]).concat(
-        this.originalChosenCopy as DualListSelectorTreeItemData[]
-      );
-      const newAvailable = allOptions
+      const newAvailable = this.mergedCopy
         .map(opt => Object.assign({}, opt))
         .filter(item => filterTreeItemsWithoutFolders(item as DualListSelectorTreeItemData, nextAvailableOptions));
 
@@ -427,11 +434,7 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       // Get next chosen options from current and remap from base
       const currAvailable = flattenTree(prevState.availableOptions as DualListSelectorTreeItemData[]);
       const nextAvailableOptions = currAvailable.concat(prevState.chosenTreeOptionsChecked);
-
-      const allOptions = (this.originalAvailableCopy as DualListSelectorTreeItemData[]).concat(
-        this.originalChosenCopy as DualListSelectorTreeItemData[]
-      );
-      const newAvailable = allOptions
+      const newAvailable = this.mergedCopy
         .map(opt => Object.assign({}, opt))
         .filter(item => filterTreeItemsWithoutFolders(item as DualListSelectorTreeItemData, nextAvailableOptions));
 
@@ -616,7 +619,6 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       chosenTreeOptionsChecked,
       availableTreeOptionsChecked
     } = this.state;
-
     const availableOptionsStatusToDisplay =
       availableOptionsStatus ||
       (isTree
