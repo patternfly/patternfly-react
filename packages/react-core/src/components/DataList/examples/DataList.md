@@ -1240,11 +1240,10 @@ import {
   DataListItem,
   DataListItemRow,
   DataListItemCells,
-  DataListCell,
-  DataListGridBreakpoint
+  DataListCell
 } from '@patternfly/react-core';
 
-<DataList aria-label="Simple data list example" gridBreakpoint={DataListGridBreakpoint.sm}>
+<DataList aria-label="Simple data list example" gridBreakpoint="sm">
   <DataListItem aria-labelledby="simple-item1">
     <DataListItemRow>
       <DataListItemCells
