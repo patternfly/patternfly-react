@@ -43,6 +43,7 @@ const TextInputGroupWithIcons = () => {
   /** show the input clearing button only when the input is not empty */
   const showClearButton = inputValue;
 
+  /** callback for clearing the text input */
   const clearInput = () => {
     setInputValue('');
   };
@@ -104,10 +105,10 @@ const TextInputGroupWithChips = () => {
     setCurrentChips(newChips);
   };
 
-  /** hide the input/chip clearing button only when the input and chip group are both empty */
+  /** show the input/chip clearing button only when either the text input or chip group are not empty */
   const showClearButton = inputValue || !!currentChips.length;
 
-  /** callback for clearing all selected chips */
+  /** callback for clearing all selected chips and the text input */
   const clearChipsAndInput = () => {
     setCurrentChips([]);
     setInputValue('');
