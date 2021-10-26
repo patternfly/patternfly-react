@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.37.1 (2021-10-26)
+
+
+### Bug Fixes
+
+* **DualListSelector:** account for duplicate folders ([#6499](https://github.com/patternfly/patternfly-react/issues/6499)) ([e531e68](https://github.com/patternfly/patternfly-react/commit/e531e68e7adc58459b3630f5c915ed69e3021012))
+
+
+
+
+
 # 4.37.0 (2021-10-26)
 
 
