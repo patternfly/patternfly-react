@@ -7,5 +7,9 @@
   "license": "MIT",
   "peerDependencies": {
     "typescript": ">=3.7.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "prerelease"
   }
 }
