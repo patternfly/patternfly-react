@@ -151,6 +151,14 @@ function generateTokens() {
       } else {
         computedValue = getComputedScssVarValue(computedValue);
       }
+
+      // error out if variable doesn't exist to avoid infinite loop
+      if (finalValue === value && computedValue === value) {
+        // eslint-disable-next-line no-console
+        console.error(`Error: "${value}" variable not found`);
+        throw Error;
+      }
+
       varsMap.push(computedValue);
     }
     const lastElement = varsMap[varsMap.length - 1];
