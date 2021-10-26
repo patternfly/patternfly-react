@@ -20,13 +20,13 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   variant?: 'outline' | 'filled';
   /** Flag indicating the label is compact. */
   isCompact?: boolean;
-  /** Flag indicating the label is editable. */
+  /** @beta Flag indicating the label is editable. */
   isEditable?: boolean;
-  /** Additional props passed to the editable label text div. Optionally passing onInput and onBlur callbacks will allow finer custom text input control. */
+  /** @beta Additional props passed to the editable label text div. Optionally passing onInput and onBlur callbacks will allow finer custom text input control. */
   editableProps?: any;
-  /** Callback when an editable label completes an edit. */
+  /** @beta Callback when an editable label completes an edit. */
   onEditComplete?: (newText: string) => void;
-  /** Callback when an editable label cancels an edit. */
+  /** @beta Callback when an editable label cancels an edit. */
   onEditCancel?: (previousText: string) => void;
   /** Flag indicating the label text should be truncated. */
   isTruncated?: boolean;

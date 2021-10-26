@@ -386,8 +386,6 @@ Click or press either enter or space to begin editing a label. After editing, cl
 
 You can also customize any Label's close button aria-label as this example shows with `closeBtnAriaLabel`.
 
-Note: Screen reader accessibility for the editable label is still in development.
-
 ```js isBeta
 import React from 'react';
 import { Label } from '@patternfly/react-core';

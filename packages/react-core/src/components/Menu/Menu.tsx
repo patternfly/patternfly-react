@@ -27,27 +27,27 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   ) => void;
   /** Accessibility label */
   'aria-label'?: string;
-  /** Indicates if menu contains a flyout menu */
+  /** @beta Indicates if menu contains a flyout menu */
   containsFlyout?: boolean;
-  /** Indicates if menu contains a drilldown menu */
+  /** @beta Indicates if menu contains a drilldown menu */
   containsDrilldown?: boolean;
-  /** Indicates if a menu is drilled into */
+  /** @beta Indicates if a menu is drilled into */
   isMenuDrilledIn?: boolean;
-  /** Indicates the path of drilled in menu itemIds */
+  /** @beta Indicates the path of drilled in menu itemIds */
   drilldownItemPath?: string[];
-  /** Array of menus that are drilled in */
+  /** @beta Array of menus that are drilled in */
   drilledInMenus?: string[];
-  /** Callback for drilling into a submenu */
+  /** @beta Callback for drilling into a submenu */
   onDrillIn?: (fromItemId: string, toItemId: string, itemId: string) => void;
-  /** Callback for drilling out of a submenu */
+  /** @beta Callback for drilling out of a submenu */
   onDrillOut?: (toItemId: string, itemId: string) => void;
-  /** Callback for collecting menu heights */
+  /** @beta Callback for collecting menu heights */
   onGetMenuHeight?: (menuId: string, height: number) => void;
-  /** ID of parent menu for drilldown menus */
+  /** @beta ID of parent menu for drilldown menus */
   parentMenu?: string;
-  /** ID of the currently active menu for the drilldown variant */
+  /** @beta ID of the currently active menu for the drilldown variant */
   activeMenu?: string;
-  /** itemId of the currently active item. You can also specify isActive on the MenuItem. */
+  /** @beta itemId of the currently active item. You can also specify isActive on the MenuItem. */
   activeItemId?: string | number;
   /** @hide Forwarded ref */
   innerRef?: React.Ref<HTMLDivElement>;
