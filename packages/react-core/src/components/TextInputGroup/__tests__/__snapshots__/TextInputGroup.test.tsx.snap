@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInputGroup gets custom class and id 1`] = `
+<TextInputGroup
+  className="custom-class"
+  id="test-id"
+>
+  <div
+    className="pf-c-text-input-group custom-class"
+    id="test-id"
+  >
+    <TextInputGroupMain
+      aria-label="Type to filter"
+    >
+      <div
+        className="pf-c-text-input-group__main"
+      >
+        Foo
+        <span
+          className="pf-c-text-input-group__text"
+        >
+          <input
+            aria-label="Type to filter"
+            className="pf-c-text-input-group__text-input"
+            type="text"
+          />
+        </span>
+      </div>
+    </TextInputGroupMain>
+    <TextInputGroupUtilities>
+      <div
+        className="pf-c-text-input-group__utilities"
+      />
+    </TextInputGroupUtilities>
+  </div>
+</TextInputGroup>
+`;
+
+exports[`TextInputGroup renders content 1`] = `
+<TextInputGroup>
+  <div
+    className="pf-c-text-input-group"
+  >
+    <TextInputGroupMain
+      aria-label="Type to filter"
+    >
+      <div
+        className="pf-c-text-input-group__main"
+      >
+        Foo
+        <span
+          className="pf-c-text-input-group__text"
+        >
+          <input
+            aria-label="Type to filter"
+            className="pf-c-text-input-group__text-input"
+            type="text"
+          />
+        </span>
+      </div>
+    </TextInputGroupMain>
+    <TextInputGroupUtilities>
+      <div
+        className="pf-c-text-input-group__utilities"
+      />
+    </TextInputGroupUtilities>
+  </div>
+</TextInputGroup>
+`;
+
+exports[`TextInputGroup renders with the proper stying for an icon on the left side of the component 1`] = `
+<TextInputGroup>
+  <div
+    className="pf-c-text-input-group"
+  >
+    <TextInputGroupMain
+      aria-label="Type to filter"
+    >
+      <div
+        className="pf-c-text-input-group__main"
+      >
+        Foo
+        <span
+          className="pf-c-text-input-group__text"
+        >
+          <input
+            aria-label="Type to filter"
+            className="pf-c-text-input-group__text-input"
+            type="text"
+          />
+        </span>
+      </div>
+    </TextInputGroupMain>
+    <TextInputGroupUtilities>
+      <div
+        className="pf-c-text-input-group__utilities"
+      />
+    </TextInputGroupUtilities>
+  </div>
+</TextInputGroup>
+`;
+
+exports[`TextInputGroupMain renders content 1`] = `
+<TextInputGroupMain
+  aria-label="Type to filter"
+>
+  <div
+    className="pf-c-text-input-group__main"
+  >
+    Foo
+    <span
+      className="pf-c-text-input-group__text"
+    >
+      <input
+        aria-label="Type to filter"
+        className="pf-c-text-input-group__text-input"
+        type="text"
+      />
+    </span>
+  </div>
+</TextInputGroupMain>
+`;
+
+exports[`TextInputGroupMain renders given input icon props 1`] = `
+<TextInputGroupMain
+  aria-label="Type to filter"
+  icon={
+    <SearchIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  }
+>
+  <div
+    className="pf-c-text-input-group__main pf-m-icon"
+  >
+    Foo
+    <span
+      className="pf-c-text-input-group__text"
+    >
+      <span
+        className="pf-c-text-input-group__icon"
+      >
+        <SearchIcon
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+          >
+            <path
+              d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+            />
+          </svg>
+        </SearchIcon>
+      </span>
+      <input
+        aria-label="Type to filter"
+        className="pf-c-text-input-group__text-input"
+        type="text"
+      />
+    </span>
+  </div>
+</TextInputGroupMain>
+`;
+
+exports[`TextInputGroupMain renders the input with custom aria label when given 1`] = `
+<TextInputGroupMain
+  aria-label="Foo"
+>
+  <div
+    className="pf-c-text-input-group__main"
+  >
+    Foo
+    <span
+      className="pf-c-text-input-group__text"
+    >
+      <input
+        aria-label="Foo"
+        className="pf-c-text-input-group__text-input"
+        type="text"
+      />
+    </span>
+  </div>
+</TextInputGroupMain>
+`;
+
+exports[`TextInputGroupUtilities renders the content 1`] = `
+<TextInputGroupUtilities>
+  <div
+    className="pf-c-text-input-group__utilities"
+  >
+    <button>
+      Foo
+    </button>
+  </div>
+</TextInputGroupUtilities>
+`;
