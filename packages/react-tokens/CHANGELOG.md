@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.18.3 (2021-10-26)
+
+
+### Bug Fixes
+
+* **Modal:** test clean up ([#6489](https://github.com/patternfly/patternfly-react/issues/6489)) ([c8eaa7c](https://github.com/patternfly/patternfly-react/commit/c8eaa7c838fbedb98ea0f38e4f535488040a72e2))
+
+
+
+
+
 ## 4.18.2 (2021-10-25)
 
 **Note:** Version bump only for package @patternfly/react-tokens
