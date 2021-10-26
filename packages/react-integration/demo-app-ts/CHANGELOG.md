@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.127.1 (2021-10-26)
+
+
+### Bug Fixes
+
+* **types:** SelectOptionProp made optional ([#6503](https://github.com/patternfly/patternfly-react/issues/6503)) ([716ac80](https://github.com/patternfly/patternfly-react/commit/716ac80e2414507d589ee3002fc0cea0068ae59c))
+
+
+
+
+
 # 4.127.0 (2021-10-26)
 
 
