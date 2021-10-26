@@ -68,7 +68,7 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   /** @hide Internal callback for the setting the index of the next item to focus after view more is clicked */
   setViewMoreNextIndex?: () => void;
   /** @hide Flag indicating this is the last option when there is a footer */
-  isLastOptionBeforeFooter: (index: number) => boolean;
+  isLastOptionBeforeFooter?: (index: number) => boolean;
 }
 
 export class SelectOption extends React.Component<SelectOptionProps> {
