@@ -149,8 +149,8 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
     isTree: false,
     isDisabled: false
   };
-  private originalAvailableCopy = this.props.availableOptions;
-  private originalChosenCopy = this.props.chosenOptions;
+  private originalAvailableCopy = JSON.parse(JSON.stringify(this.props.availableOptions));
+  private originalChosenCopy = JSON.parse(JSON.stringify(this.props.chosenOptions));
 
   // If the DualListSelector uses trees, concat the two initial arrays and merge duplicate folder IDs
   private mergedCopy = this.props.isTree
@@ -619,7 +619,6 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
       chosenTreeOptionsChecked,
       availableTreeOptionsChecked
     } = this.state;
-
     const availableOptionsStatusToDisplay =
       availableOptionsStatus ||
       (isTree
