@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.13.3 (2021-10-26)
+
+
+### Bug Fixes
+
+* **transformer:** publish transformer in patternfly org ([#6506](https://github.com/patternfly/patternfly-react/issues/6506)) ([b739af3](https://github.com/patternfly/patternfly-react/commit/b739af318400b41d4e9a53bdff6232ecc176916e))
+
+
+
+
+
 ## 4.13.2 (2021-10-26)
 
 
