@@ -318,6 +318,22 @@ class ValidationWizard extends React.Component {
 ```
 
 ### Validate on button press
+
+This example demonstrates how to use the `WizardContextConsumer` to consume the `WizardContext`. `WizardContext` can be used to imperatively move to a specific wizard step.
+
+The definition of the `WizardContext` is as follows: 
+
+```
+interface WizardContext {
+  goToStepById: (stepId: number | string) => void;
+  goToStepByName: (stepName: string) => void;
+  onNext: () => void;
+  onBack: () => void;
+  onClose: () => void;
+  activeStep: WizardStep;
+}
+```
+
 ```js
 import React from 'react';
 import { Button, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@patternfly/react-core';
@@ -333,7 +349,7 @@ class ValidateButtonPressWizard extends React.Component {
 
     this.closeWizard = () => {
       console.log("close wizard");
-    }
+    };
 
     this.validateLastStep = onNext => {
       const { stepsValid } = this.state;
