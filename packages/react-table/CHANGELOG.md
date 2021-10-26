@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.37.0 (2021-10-26)
+
+
+### Features
+
+* **toolbar:** add sticky top modifier to toolbar ([#6447](https://github.com/patternfly/patternfly-react/issues/6447)) ([fe7605a](https://github.com/patternfly/patternfly-react/commit/fe7605a67428b43ec00b3cb2117270296576737c))
+
+
+
+
+
 ## 4.36.1 (2021-10-26)
 
 
