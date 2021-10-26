@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.17.0 (2021-10-26)
+
+
+### Features
+
+* **TextInputGroup:** add text input group ([#6482](https://github.com/patternfly/patternfly-react/issues/6482)) ([a02fd4f](https://github.com/patternfly/patternfly-react/commit/a02fd4fe3345245b2252ee5a261f5b1460490642)), closes [patternfly/patternfly-react#6409](https://github.com/patternfly/patternfly-react/issues/6409)
+
+
+
+
+
 ## 4.16.4 (2021-10-26)
 
 
