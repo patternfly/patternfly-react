@@ -162,3 +162,25 @@ FooterComponentLogViewer = () => {
   );
 };
 ```
+
+### With ANSI color logs
+
+```js
+import React from 'react';
+import { data } from './realTestData.js';
+import { LogViewer, LogViewerContext } from '@patternfly/react-log-viewer';
+import { Button } from '@patternfly/react-core';
+
+FooterComponentLogViewer = () => {
+  return (
+    <React.Fragment>
+      <LogViewer
+        hasLineNumbers={false}
+        height={300}
+        data={data.data4}
+        theme="dark"
+      />
+    </React.Fragment>
+  );
+};
+```

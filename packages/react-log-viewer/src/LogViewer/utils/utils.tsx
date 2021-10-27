@@ -41,3 +41,26 @@ export const parseConsoleOutput = (data: string) => {
 };
 
 export const escapeString = (inputString: string): string => inputString.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'); // eslint-disable-line
+
+/* eslint-disable no-control-regex */
+export const stripAnsi = (inputString: string): string =>
+  inputString.replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-PRZcf-nqry=><]/g, '');
+
+export const escapeTextForHtml = (inputString: string): string =>
+  inputString.replace(/[&<>"']/gm, str => {
+    if (str === '&') {
+      return '&amp;';
+    }
+    if (str === '<') {
+      return '&lt;';
+    }
+    if (str === '>') {
+      return '&gt;';
+    }
+    if (str === '"') {
+      return '&quot;';
+    }
+    if (str === "'") {
+      return '&#x27;';
+    }
+  });

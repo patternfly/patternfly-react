@@ -3,13 +3,13 @@ import { LogViewerContext, LogViewerToolbarContext } from './LogViewerContext';
 import { css } from '@patternfly/react-styles';
 import { LogViewerRow } from './LogViewerRow';
 import { DEFAULT_FOCUS, DEFAULT_SEARCH_INDEX, DEFAULT_INDEX } from './utils/constants';
-import { searchForKeyword, parseConsoleOutput, escapeString } from './utils/utils';
+import { searchForKeyword, parseConsoleOutput, escapeString, stripAnsi } from './utils/utils';
 import { VariableSizeList as List, areEqual } from '../react-window';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
 
 interface LogViewerProps {
-  /** String data being sent by the consumer*/
-  data?: string;
+  /** String or String Array data being sent by the consumer*/
+  data?: string | string[];
   /** Consumer may turn off the visibility on the toolbar */
   hasToolbar?: boolean;
   /** Flag to enable or disable line numbers on the log viewer. */
@@ -88,7 +88,6 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     const [searchedInput, setSearchedInput] = useState<string | null>('');
     const [rowInFocus, setRowInFocus] = useState<number | null>(scrollToRow);
     const [searchedWordIndexes, setSearchedWordIndexes] = useState<number[] | null>([]);
-    const [highlightedRowIndexes, setHighlightedRowIndexes] = useState<number[] | null>([]);
     const [currentSearchedItemCount, setCurrentSearchedItemCount] = useState<number>(0);
     const [parsedData, setParsedData] = useState<string[] | null>([]);
     const [lineHeight, setLineHeight] = useState<number>(0);
@@ -132,16 +131,14 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
         parsedData,
         logViewerRef,
         rowInFocus,
-        searchedWordIndexes,
-        highlightedRowIndexes,
-        setHighlightedRowIndexes
+        searchedWordIndexes
       }),
-      [data, parsedData, logViewerRef, rowInFocus, searchedWordIndexes, highlightedRowIndexes, setHighlightedRowIndexes]
+      [data, parsedData, logViewerRef, rowInFocus, searchedWordIndexes]
     );
 
     /* Parse data every time it changes */
     useEffect(() => {
-      setParsedData(parseConsoleOutput(data));
+      setParsedData(Array.isArray(data) ? data : parseConsoleOutput(data));
     }, [data]);
 
     useEffect(() => {
@@ -165,7 +162,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
       const adjustedSearchedInput = escapeString(searchedInput);
 
       if (adjustedSearchedInput !== '' && adjustedSearchedInput.length >= 3) {
-        foundKeywordIndexes = searchForKeyword(adjustedSearchedInput, parsedData, itemCount || parsedData.length - 1);
+        foundKeywordIndexes = searchForKeyword(adjustedSearchedInput, parsedData, itemCount || parsedData.length);
 
         if (foundKeywordIndexes.length !== 0) {
           setSearchedWordIndexes(foundKeywordIndexes);
@@ -218,7 +215,8 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     };
 
     const guessRowHeight = (rowIndex: number) => {
-      const rowText = parsedData[rowIndex];
+      // strip ansi escape code before estimate the row height
+      const rowText = stripAnsi(parsedData[rowIndex]);
       // get the row numbers of the current text
       const numRows = Math.ceil(rowText.length / charNumsPerLine);
       // multiply by line height to get the total height
