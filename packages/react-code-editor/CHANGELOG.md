@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.9.7 (2021-10-27)
+
+
+### Bug Fixes
+
+* change transformer cjs package to private ([#6515](https://github.com/patternfly/patternfly-react/issues/6515)) ([efcb357](https://github.com/patternfly/patternfly-react/commit/efcb3573b71541328ce2b16caa80ce33b2a62131))
+
+
+
+
+
 ## 4.9.6 (2021-10-26)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
