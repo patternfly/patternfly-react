@@ -1,5 +1,6 @@
 {
-  "name": "@patternfly/transformer-cjs-imports",
+  "name": "transformer-cjs-imports",
+  "private": true,
   "version": "4.6.6",
   "description": "Transform CJS imports to ESM in typescript depending on module target.",
   "main": "index.js",
@@ -7,9 +8,5 @@
   "license": "MIT",
   "peerDependencies": {
     "typescript": ">=3.7.2"
-  },
-  "publishConfig": {
-    "access": "public",
-    "tag": "prerelease"
   }
 }
