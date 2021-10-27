@@ -1,7 +1,6 @@
 import React from 'react';
 import { TableComposable, Thead, Tr, Th, Tbody, Td, ThProps } from '@patternfly/react-table';
 
-// TODO review all these for which types don't need the | null
 interface Repository {
   name: string;
   branches: string;
@@ -13,27 +12,9 @@ interface Repository {
 export const ComposableTableFavoritable: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
-    {
-      name: 'one',
-      branches: 'two',
-      prs: 'a',
-      workspaces: 'four',
-      lastCommit: 'five'
-    },
-    {
-      name: 'a',
-      branches: 'two',
-      prs: 'k',
-      workspaces: 'four',
-      lastCommit: 'five'
-    },
-    {
-      name: 'p',
-      branches: 'two',
-      prs: 'b',
-      workspaces: 'four',
-      lastCommit: 'five'
-    }
+    { name: 'one', branches: 'two', prs: 'a', workspaces: 'four', lastCommit: 'five' },
+    { name: 'a', branches: 'two', prs: 'k', workspaces: 'four', lastCommit: 'five' },
+    { name: 'p', branches: 'two', prs: 'b', workspaces: 'four', lastCommit: 'five' }
   ];
 
   const columnNames = {
