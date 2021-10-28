@@ -30,8 +30,14 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 const KeyVaueFiltering = () => {
   const [inputValue, setInputValue] = React.useState('');
   const [currentChips, setCurrentChips] = React.useState([]);
-  const [activeItem, setActiveItem] = React.useState(0);
+  const [selectedKey, setSelectedKey] = React.useState('');
   const keyNames = ['Action 1', 'Action 2', 'Action 3'];
+  const [menuItemsText, setMenuItemsText] = React.useState(keyNames);
+  const data = {
+    'Action 1': ['name', 'status'],
+    'Action 2': ['name', 'status'],
+    'Action 3': ['name', 'status']
+  };
 
   /** show the search icon only when there are no chips to prevent the chips from being displayed behind the icon */
   const showSearchIcon = !currentChips.length;
@@ -56,25 +62,51 @@ const KeyVaueFiltering = () => {
     setInputValue('');
   };
 
-  const keyItems = keyNames
-    .filter(item => !inputValue || item.toLowerCase().includes(inputValue.toString().toLowerCase()))
+  const menuItems = menuItemsText
+    .filter(
+      item =>
+        !inputValue ||
+        item.toLowerCase().includes(
+          inputValue
+            .toString()
+            .slice(selectedKey.length + 2)
+            .toLowerCase()
+        )
+    )
     .map((currentValue, index) => (
       <MenuItem key={currentValue} itemId={index}>
         {currentValue}
       </MenuItem>
     ));
 
-  if (inputValue && keyItems.length === 0) {
-    keyItems.push(
+  if (inputValue && menuItems.length === 0) {
+    menuItems.push(
       <MenuItem isDisabled key="no result">
         No results found
       </MenuItem>
     );
   }
 
+  const selectValue = selectedValueText => {
+    setCurrentChips([...currentChips, `${selectedKey}: ${selectedValueText}`]);
+    setSelectedKey('');
+    setInputValue('');
+    setMenuItemsText(keyNames)
+  };
+
+  const selectKey = selectedText => {
+    setInputValue(`${selectedText}: `);
+    setSelectedKey(selectedText);
+    setMenuItemsText(data[selectedText]);
+  };
+
   const onSelect = (event, itemId) => {
-    setInputValue(keyNames[itemId])
-  }
+    if (selectedKey.length) {
+      selectValue(data[selectedKey][itemId]);
+    } else {
+      selectKey(keyNames[itemId]);
+    }
+  };
 
   const inputGroup = (
     <TextInputGroup>
@@ -98,11 +130,9 @@ const KeyVaueFiltering = () => {
   );
 
   const menu = (
-    <Menu onSelect={onSelect} activeItemId={activeItem}>
+    <Menu onSelect={onSelect}>
       <MenuContent>
-        <MenuList>
-          {keyItems}
-        </MenuList>
+        <MenuList>{menuItems}</MenuList>
       </MenuContent>
     </Menu>
   );
