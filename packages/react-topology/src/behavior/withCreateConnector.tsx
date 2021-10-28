@@ -28,6 +28,7 @@ export interface CreateConnectorOptions {
   handleLength?: number;
   dragItem?: DragObjectWithType;
   dragOperation?: DragOperationWithType;
+  hideConnectorMenu?: boolean;
 }
 
 interface ConnectorComponentProps {
@@ -84,7 +85,8 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
     handleLength = DEFAULT_HANDLE_LENGTH,
     contextMenuClass,
     dragItem,
-    dragOperation
+    dragOperation,
+    hideConnectorMenu
   } = props;
   const [prompt, setPrompt] = React.useState<PromptData | null>(null);
   const [active, setActive] = React.useState(false);
@@ -111,7 +113,7 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
         const event = monitor.getDragEvent();
         if ((isNode(dropResult) || isGraph(dropResult)) && event) {
           const choices = await dragProps.onCreate(dragProps.element, dropResult, event, monitor.getDropHints());
-          if (choices && choices.length) {
+          if (choices && choices.length && !hideConnectorMenu) {
             setPrompt({ element: dragProps.element, target: dropResult, event, choices });
             return;
           }
