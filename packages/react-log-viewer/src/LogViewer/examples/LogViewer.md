@@ -168,8 +168,7 @@ FooterComponentLogViewer = () => {
 ```js
 import React from 'react';
 import { data } from './realTestData.js';
-import { LogViewer, LogViewerContext } from '@patternfly/react-log-viewer';
-import { Button } from '@patternfly/react-core';
+import { LogViewer } from '@patternfly/react-log-viewer';
 
 FooterComponentLogViewer = () => {
   return (
