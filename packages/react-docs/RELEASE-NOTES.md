@@ -23,13 +23,13 @@ section: developer-resources
   - Updated horizontal grid card demo ([#6448](https://github.com/patternfly/patternfly-react/pull/6448))
 - **Description list:**
   - Updated DescriptionListGroup to forward props to DOM ([#6466](https://github.com/patternfly/patternfly-react/pull/6466))
+- **Dropdown:**
+  - Added event to onToggle prop definition of KebabToggle ([#6490](https://github.com/patternfly/patternfly-react/pull/6490))
 - **Dual list selector:**
   - Updated to account for duplicate folders ([#6499](https://github.com/patternfly/patternfly-react/pull/6499))
   - Added disabled flag ([#6442](https://github.com/patternfly/patternfly-react/pull/6442))
 - **Form select:**
   - Fixed format for FormSelectOption isPlaceholder doc text ([#6427](https://github.com/patternfly/patternfly-react/pull/6427))
-- **Dropdown:**
-  - Added event to onToggle prop definition of KebabToggle ([#6490](https://github.com/patternfly/patternfly-react/pull/6490))
 - **Label:**
   - Added compact label ([#6448](https://github.com/patternfly/patternfly-react/pull/6448))
   - Updated label's close button aria-label ([#6475](https://github.com/patternfly/patternfly-react/pull/6475))
@@ -45,7 +45,7 @@ section: developer-resources
 - **Select:**
   - Added placeholder style ([#6469](https://github.com/patternfly/patternfly-react/pull/6469))
   - Updated to allow multi-typeahead create with custom options ([#6467](https://github.com/patternfly/patternfly-react/pull/6467))
-  - Made SelectOptionProp optional ([#6503](https://github.com/patternfly/
+  - Made SelectOptionProp optional  ([#6503](https://github.com/patternfly/patternfly-react/pull/6503))
 - **Tabs:**
   - Added support for tab content body with padding, added tabs open and secondary tabs demos ([#6484](https://github.com/patternfly/patternfly-react/pull/6484))
 - **Text input group:**
