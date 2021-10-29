@@ -20,7 +20,8 @@ import {
   ChartThreshold,
   ChartThemeColor,
   ChartThemeVariant,
-  ChartVoronoiContainer
+  ChartVoronoiContainer,
+  getResizeObserver
 } from '@patternfly/react-charts';
 import '@patternfly/patternfly/patternfly-charts.css';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
@@ -45,7 +46,8 @@ import {
   ChartGroup,
   ChartThreshold,
   ChartThemeColor,
-  ChartVoronoiContainer
+  ChartVoronoiContainer,
+  getResizeObserver
 } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
@@ -54,6 +56,7 @@ class MultiColorChart extends React.Component {
   constructor(props) {
     super(props);
     this.containerRef = React.createRef();
+    this.observer = () => {};
     this.state = {
       width: 0
     };
@@ -65,12 +68,12 @@ class MultiColorChart extends React.Component {
   }
 
   componentDidMount() {
+    this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
     this.handleResize();
-    window.addEventListener('resize', this.handleResize);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
+    this.observer();
   }
 
   render() {

@@ -25,7 +25,8 @@ import {
   ChartVoronoiContainer,
   createContainer,
   getInteractiveLegendEvents,
-  getInteractiveLegendItemStyles 
+  getInteractiveLegendItemStyles,
+  getResizeObserver
 } from '@patternfly/react-charts';
 import chart_area_Opacity from '@patternfly/react-tokens/dist/esm/chart_area_Opacity';
 import chart_color_black_500 from '@patternfly/react-tokens/dist/esm/chart_color_black_500';
@@ -105,12 +106,13 @@ This demonstrates a responsive legend which wraps when items are wider than its 
 
 ```js
 import React from 'react';
-import { ChartBullet } from '@patternfly/react-charts';
+import { ChartBullet, getResizeObserver } from '@patternfly/react-charts';
 
 class BulletChart extends React.Component {
   constructor(props) {
     super(props);
     this.containerRef = React.createRef();
+    this.observer = () => {};
     this.state = {
       width: 0
     };
@@ -122,12 +124,12 @@ class BulletChart extends React.Component {
   }
 
   componentDidMount() {
+    this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
     this.handleResize();
-    window.addEventListener('resize', this.handleResize);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
+    this.observer();
   }
 
   render() {
@@ -261,7 +263,8 @@ import {
   ChartVoronoiContainer,
   createContainer, 
   getInteractiveLegendEvents, 
-  getInteractiveLegendItemStyles 
+  getInteractiveLegendItemStyles,
+  getResizeObserver
 } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
 
@@ -269,6 +272,7 @@ class InteractiveLegendChart extends React.Component {
   constructor(props) {
     super(props);
     this.containerRef = React.createRef();
+    this.observer = () => {};
     this.state = {
       hiddenSeries: new Set(),
       width: 0
@@ -373,12 +377,12 @@ class InteractiveLegendChart extends React.Component {
   };
 
   componentDidMount() {
+    this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
     this.handleResize();
-    window.addEventListener('resize', this.handleResize);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
+    this.observer();
   }
 
   // Tips:
@@ -470,7 +474,6 @@ import {
 class InteractivePieLegendChart extends React.Component {
   constructor(props) {
     super(props);
-    this.containerRef = React.createRef();
     this.state = {
       hiddenSeries: new Set(),
       width: 0
