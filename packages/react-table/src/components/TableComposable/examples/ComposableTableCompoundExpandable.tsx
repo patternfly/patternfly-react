@@ -44,7 +44,6 @@ export const ComposableTableCompoundExpandable: React.FunctionComponent = () => 
     }
     setExpandedCells(newExpandedCells);
   };
-  // TODO export types like TdCompoundExpandType from packages/react-table/src/components/Table/base/types.tsx in packages/react-table/src/components/Table/TableTypes.ts
   const compoundExpandParams = (repo: Repository, columnKey: ColumnKey): TdProps['compoundExpand'] => ({
     isExpanded: expandedCells[repo.name] === columnKey,
     onToggle: () => setCellExpanded(repo, columnKey, expandedCells[repo.name] !== columnKey)

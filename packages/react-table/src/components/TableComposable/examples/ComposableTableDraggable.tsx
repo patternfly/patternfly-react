@@ -111,7 +111,6 @@ export const ComposableTableDraggable: React.FunctionComponent = () => {
     setIsDragging(false);
   };
 
-  // TODO refactor this to use a data-driven pattern rather than config-driven, as in the other examples
   const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
   const rows = [
     {

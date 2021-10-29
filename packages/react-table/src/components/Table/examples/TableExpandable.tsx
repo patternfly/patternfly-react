@@ -78,8 +78,6 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
   // Note that this behavior is very similar to selection state.
   const initialExpandedRepoNames = repositories.filter(repo => !!repo.details).map(repo => repo.name); // Default to all expanded
   const [expandedRepoNames, setExpandedRepoNames] = React.useState<string[]>(initialExpandedRepoNames);
-  // TODO remove this
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const setRepoExpanded = (repo: Repository, isExpanding = true) =>
     setExpandedRepoNames(prevExpanded => {
       const otherExpandedRepoNames = prevExpanded.filter(r => r !== repo.name);
