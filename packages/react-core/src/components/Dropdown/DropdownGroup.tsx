@@ -14,13 +14,14 @@ export interface DropdownGroupProps extends Omit<React.HTMLProps<HTMLDivElement>
 export const DropdownGroup: React.FunctionComponent<DropdownGroupProps> = ({
   children = null,
   className = '',
-  label = ''
+  label = '',
+  ...props
 }: DropdownGroupProps) => (
   <DropdownContext.Consumer>
     {({ sectionClass, sectionTitleClass, sectionComponent }) => {
       const SectionComponent = sectionComponent as any;
       return (
-        <SectionComponent className={css(sectionClass, className)}>
+        <SectionComponent className={css(sectionClass, className)} {...props}>
           {label && (
             <h1 className={css(sectionTitleClass)} aria-hidden>
               {label}
