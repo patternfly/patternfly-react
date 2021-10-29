@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.21.10 (2021-10-29)
+
+
+### Bug Fixes
+
+* **Banner:** forward props ([#6511](https://github.com/patternfly/patternfly-react/issues/6511)) ([e36c890](https://github.com/patternfly/patternfly-react/commit/e36c89077afa82340994c0e3c0fc929e601e01bc))
+
+
+
+
+
 ## 6.21.9 (2021-10-28)
 
 **Note:** Version bump only for package @patternfly/react-charts
