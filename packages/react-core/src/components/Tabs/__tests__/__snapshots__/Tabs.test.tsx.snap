@@ -1571,7 +1571,11 @@ Array [
       role="tabpanel"
       tabindex="0"
     >
-      Tab 2 section
+      <div
+        class="pf-c-tab-content__body"
+      >
+        Tab 2 section
+      </div>
     </section>
     <section
       aria-label="Tab item 3"
@@ -1583,7 +1587,11 @@ Array [
       role="tabpanel"
       tabindex="0"
     >
-      Tab 3 section
+      <div
+        class="pf-c-tab-content__body pf-m-padding"
+      >
+        Tab 3 section with padding 
+      </div>
     </section>
   </div>,
 ]

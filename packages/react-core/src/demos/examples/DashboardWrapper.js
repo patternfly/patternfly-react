@@ -37,7 +37,21 @@ export default class DashboardWrapper extends React.Component {
 
   render() {
     const { activeItem } = this.state;
-    const { children, mainContainerId, breadcrumb, header, sidebar, sidebarNavOpen, onPageResize } = this.props;
+    const {
+      children,
+      mainContainerId,
+      breadcrumb,
+      header,
+      sidebar,
+      sidebarNavOpen,
+      onPageResize,
+      hasNoBreadcrumb
+    } = this.props;
+
+    let renderedBreadcrumb;
+    if (!hasNoBreadcrumb) {
+      renderedBreadcrumb = breadcrumb !== undefined ? breadcrumb : DashboardBreadcrumb;
+    }
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
@@ -74,7 +88,7 @@ export default class DashboardWrapper extends React.Component {
         sidebar={sidebar !== undefined ? sidebar : _sidebar}
         isManagedSidebar
         skipToContent={PageSkipToContent}
-        breadcrumb={breadcrumb !== undefined ? breadcrumb : DashboardBreadcrumb}
+        breadcrumb={renderedBreadcrumb}
         mainContainerId={mainContainerId ? mainContainerId : 'main-content-page-layout-default-nav'}
         onPageResize={onPageResize}
       >

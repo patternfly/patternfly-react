@@ -556,7 +556,9 @@ class SelectableTable extends React.Component {
     let rows;
     if (rowId === -1) {
       rows = this.state.rows.map(oneRow => {
-        oneRow.selected = isSelected;
+        if (!oneRow.disableSelection) {
+          oneRow.selected = isSelected;
+        }
         return oneRow;
       });
     } else {

@@ -60,4 +60,16 @@ describe('LabelGroup', () => {
     );
     expect(view).toMatchSnapshot();
   });
+
+  test('label group compact', () => {
+    const view = shallow(
+      <LabelGroup isCompact>
+        <Label isCompact>1</Label>
+        <Label isCompact>2</Label>
+        <Label isCompact>3</Label>
+        <Label isCompact>4</Label>
+      </LabelGroup>
+    );
+    expect(view).toMatchSnapshot();
+  });
 });

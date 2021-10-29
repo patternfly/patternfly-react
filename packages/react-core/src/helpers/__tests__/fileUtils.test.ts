@@ -8,7 +8,7 @@ describe('readFile', () => {
   });
 
   test('dataURL file', () => {
-    return expect(readFile(file, fileReaderType.dataURL)).resolves.toBe('data:;base64,RmlsZSBjb250ZW50cyBoZXJl');
+    return expect(readFile(file, fileReaderType.dataURL)).resolves.toBe('data:application/octet-stream;base64,RmlsZSBjb250ZW50cyBoZXJl');
   });
 
   test('rejects on unknown type', () => {

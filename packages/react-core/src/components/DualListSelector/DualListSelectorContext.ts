@@ -14,6 +14,7 @@ export const DualListSelectorListContext = React.createContext<{
   id?: string;
   onOptionSelect?: (e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent, index: number, id: string) => void;
   options?: React.ReactNode[];
+  isDisabled?: boolean;
 }>({});
 
 export const DualListSelectorPaneContext = React.createContext<{

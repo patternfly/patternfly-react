@@ -1,7 +1,6 @@
 ---
 id: Composable menu
 section: demos
-beta: true
 ---
 
 import { Link } from '@reach/router';
@@ -106,7 +105,6 @@ import React from 'react';
 import {
   MenuToggle,
   Menu,
-  MenuContent,
   MenuList,
   MenuItem,
   MenuGroup,
@@ -116,9 +114,6 @@ import {
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 ActionComposableMenu = () => {
@@ -303,7 +298,7 @@ SelectComposableMenu = () => {
 
 ### Drilldown menu with toggle
 
-```js
+```js isBeta
 import React from 'react';
 import {
   MenuToggle,
@@ -547,7 +542,7 @@ DrilldownComposableMenu = () => {
 
 ```js
 import React from 'react';
-import { MenuToggle, Menu, MenuContent, MenuGroup, MenuList, MenuItem, Popper, TreeView } from '@patternfly/react-core';
+import { MenuToggle, Menu, MenuContent, MenuGroup, MenuList, Popper, TreeView } from '@patternfly/react-core';
 
 FilterTreeComposableMenu = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -786,9 +781,9 @@ FilterTreeComposableMenu = () => {
 
 The flyout will automatically position to the left or top if it would otherwise go outside the window. The menu must be placed in a container outside the main content like Popper, [Popover](/components/popover) or [Tooltip](/components/tooltip) since it may go over the side nav.
 
-```js
+```js isBeta
 import React from 'react';
-import { MenuToggle, Menu, MenuContent, MenuGroup, MenuList, MenuItem, Popper } from '@patternfly/react-core';
+import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper } from '@patternfly/react-core';
 
 MenuWithFlyout = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -1182,18 +1177,14 @@ import {
   MenuFooter,
   MenuList,
   MenuItem,
-  MenuGroup,
   MenuInput,
   Popper,
-  Tooltip,
   Divider,
   TextInput,
   InputGroup,
   Button
 } from '@patternfly/react-core';
-import { Link } from '@reach/router';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
-import pfIcon from './examples/pf-logo-small.svg';
 
 MenuContextSelector = () => {
   const items = [

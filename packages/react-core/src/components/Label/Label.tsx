@@ -18,13 +18,15 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   color?: 'blue' | 'cyan' | 'green' | 'orange' | 'purple' | 'red' | 'grey';
   /** Variant of the label. */
   variant?: 'outline' | 'filled';
-  /** Flag indicating the label is editable. */
+  /** Flag indicating the label is compact. */
+  isCompact?: boolean;
+  /** @beta Flag indicating the label is editable. */
   isEditable?: boolean;
-  /** Additional props passed to the editable label text div. Optionally passing onInput and onBlur callbacks will allow finer custom text input control. */
+  /** @beta Additional props passed to the editable label text div. Optionally passing onInput and onBlur callbacks will allow finer custom text input control. */
   editableProps?: any;
-  /** Callback when an editable label completes an edit. */
+  /** @beta Callback when an editable label completes an edit. */
   onEditComplete?: (newText: string) => void;
-  /** Callback when an editable label cancels an edit. */
+  /** @beta Callback when an editable label cancels an edit. */
   onEditCancel?: (previousText: string) => void;
   /** Flag indicating the label text should be truncated. */
   isTruncated?: boolean;
@@ -36,6 +38,8 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   onClose?: (event: React.MouseEvent) => void;
   /** Node for custom close button. */
   closeBtn?: React.ReactNode;
+  /** Aria label for close button */
+  closeBtnAriaLabel?: string;
   /** Additional properties for the default close button. */
   closeBtnProps?: any;
   /** Href for a label that is a link. If present, the label will change to an anchor element. */
@@ -69,6 +73,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   className = '',
   color = 'grey',
   variant = 'filled',
+  isCompact = false,
   isEditable = false,
   editableProps,
   isTruncated = false,
@@ -78,6 +83,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   onEditCancel,
   onEditComplete,
   closeBtn,
+  closeBtnAriaLabel,
   closeBtnProps,
   href,
   isOverflowLabel,
@@ -154,7 +160,8 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       type="button"
       variant="plain"
       onClick={onClose}
-      {...{ 'aria-label': 'label-close-button', ...closeBtnProps }}
+      aria-label={closeBtnAriaLabel || `Close ${children}`}
+      {...closeBtnProps}
     >
       <TimesIcon />
     </Button>
@@ -233,6 +240,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         colorStyles[color],
         variant === 'outline' && styles.modifiers.outline,
         isOverflowLabel && styles.modifiers.overflow,
+        isCompact && styles.modifiers.compact,
         isEditable && labelGrpStyles.modifiers.editable,
         isEditableActive && styles.modifiers.editableActive,
         className

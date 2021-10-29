@@ -84,7 +84,7 @@ exports[`label with close button 1`] = `
     Something
   </span>
   <Button
-    aria-label="label-close-button"
+    aria-label="Close Something"
     onClick={[MockFunction]}
     type="button"
     variant="plain"
@@ -108,7 +108,7 @@ exports[`label with close button 2`] = `
     Something
   </span>
   <Button
-    aria-label="label-close-button"
+    aria-label="Close Something"
     onClick={[MockFunction]}
     type="button"
     variant="plain"

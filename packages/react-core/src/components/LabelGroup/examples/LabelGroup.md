@@ -134,7 +134,7 @@ VerticalCategoryLabelGroupOverflowRemovable = () => {
 
 ### Editable labels
 
-```js
+```js isBeta
 import React from 'react';
 import { LabelGroup, Label, TextArea } from '@patternfly/react-core';
 

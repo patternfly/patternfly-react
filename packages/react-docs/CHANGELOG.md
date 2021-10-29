@@ -3,6 +3,278 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.29.9 (2021-10-28)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## 5.29.8 (2021-10-27)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## 5.29.7 (2021-10-27)
+
+
+### Bug Fixes
+
+* change transformer cjs package to private ([#6515](https://github.com/patternfly/patternfly-react/issues/6515)) ([efcb357](https://github.com/patternfly/patternfly-react/commit/efcb3573b71541328ce2b16caa80ce33b2a62131))
+
+
+
+
+
+## 5.29.6 (2021-10-26)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## 5.29.5 (2021-10-26)
+
+
+### Bug Fixes
+
+* **tokens:** added check for no matching var to avoid infinite loop ([#6502](https://github.com/patternfly/patternfly-react/issues/6502)) ([99605c2](https://github.com/patternfly/patternfly-react/commit/99605c213f12490d0abe75910e05c3e6da26a1f3))
+
+
+
+
+
+## 5.29.4 (2021-10-26)
+
+
+### Bug Fixes
+
+* add transformer package ([#6507](https://github.com/patternfly/patternfly-react/issues/6507)) ([daffd28](https://github.com/patternfly/patternfly-react/commit/daffd2864388abe63e625f962a8b38c2b7056209))
+
+
+
+
+
+## 5.29.3 (2021-10-26)
+
+
+### Bug Fixes
+
+* **transformer:** publish transformer in patternfly org ([#6506](https://github.com/patternfly/patternfly-react/issues/6506)) ([b739af3](https://github.com/patternfly/patternfly-react/commit/b739af318400b41d4e9a53bdff6232ecc176916e))
+
+
+
+
+
+## 5.29.2 (2021-10-26)
+
+
+### Bug Fixes
+
+* **readme:** update react-core readme ([#6505](https://github.com/patternfly/patternfly-react/issues/6505)) ([d4f9a11](https://github.com/patternfly/patternfly-react/commit/d4f9a114584eea7ab67873f199e80b348886e14b))
+
+
+
+
+
+## 5.29.1 (2021-10-26)
+
+
+### Bug Fixes
+
+* **DualListSelector:** account for duplicate folders ([#6499](https://github.com/patternfly/patternfly-react/issues/6499)) ([e531e68](https://github.com/patternfly/patternfly-react/commit/e531e68e7adc58459b3630f5c915ed69e3021012))
+
+
+
+
+
+# 5.29.0 (2021-10-26)
+
+
+### Features
+
+* **toolbar:** add sticky top modifier to toolbar ([#6447](https://github.com/patternfly/patternfly-react/issues/6447)) ([fe7605a](https://github.com/patternfly/patternfly-react/commit/fe7605a67428b43ec00b3cb2117270296576737c))
+
+
+
+
+
+## 5.28.1 (2021-10-26)
+
+
+### Bug Fixes
+
+* **types:** SelectOptionProp made optional ([#6503](https://github.com/patternfly/patternfly-react/issues/6503)) ([716ac80](https://github.com/patternfly/patternfly-react/commit/716ac80e2414507d589ee3002fc0cea0068ae59c))
+
+
+
+
+
+# 5.28.0 (2021-10-26)
+
+
+### Features
+
+* **TextInputGroup:** add text input group ([#6482](https://github.com/patternfly/patternfly-react/issues/6482)) ([a02fd4f](https://github.com/patternfly/patternfly-react/commit/a02fd4fe3345245b2252ee5a261f5b1460490642)), closes [patternfly/patternfly-react#6409](https://github.com/patternfly/patternfly-react/issues/6409)
+
+
+
+
+
+## 5.27.4 (2021-10-26)
+
+
+### Bug Fixes
+
+* **KebabToggle:** adds event to onToggle definition ([#6490](https://github.com/patternfly/patternfly-react/issues/6490)) ([0441575](https://github.com/patternfly/patternfly-react/commit/04415757917062aa13c06b34bd94ef38c2334088))
+
+
+
+
+
+## 5.27.3 (2021-10-26)
+
+
+### Bug Fixes
+
+* **Modal:** test clean up ([#6489](https://github.com/patternfly/patternfly-react/issues/6489)) ([c8eaa7c](https://github.com/patternfly/patternfly-react/commit/c8eaa7c838fbedb98ea0f38e4f535488040a72e2))
+
+
+
+
+
+## 5.27.2 (2021-10-25)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## 5.27.1 (2021-10-25)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+# 5.27.0 (2021-10-25)
+
+
+### Features
+
+* **Tabs:** Added support for tab content body with padding, added tabs open and tab secondary tabs demos ([#6484](https://github.com/patternfly/patternfly-react/issues/6484)) ([0ccbe9d](https://github.com/patternfly/patternfly-react/commit/0ccbe9d1e6e0dac0730466c92a90fe2cd9f6560d))
+
+
+
+
+
+## 5.26.1 (2021-10-21)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+# 5.26.0 (2021-10-21)
+
+
+### Features
+
+* **label:** added compact label, updated horizontal grid card demo ([#6448](https://github.com/patternfly/patternfly-react/issues/6448)) ([89e0431](https://github.com/patternfly/patternfly-react/commit/89e04317924282140606d45f2292aa3f658b4b6c))
+
+
+
+
+
+## 5.25.1 (2021-10-21)
+
+
+### Bug Fixes
+
+* **DescriptionListGroup:** forward props to DOM ([#6466](https://github.com/patternfly/patternfly-react/issues/6466)) ([b78e2aa](https://github.com/patternfly/patternfly-react/commit/b78e2aa9c0360ce8418f6e7b55274ea1a50de518))
+
+
+
+
+
+# 5.25.0 (2021-10-20)
+
+
+### Features
+
+* **Progress:** allow node titles ([#6470](https://github.com/patternfly/patternfly-react/issues/6470)) ([46d5252](https://github.com/patternfly/patternfly-react/commit/46d52523ad5111bb11729c2750abe9aeb35d9326))
+
+
+
+
+
+# 5.24.0 (2021-10-20)
+
+
+### Features
+
+* **DualListSelector:** add disabled flag ([#6442](https://github.com/patternfly/patternfly-react/issues/6442)) ([85e1314](https://github.com/patternfly/patternfly-react/commit/85e131435be12c2df79336e9fa56987ed3717417))
+
+
+
+
+
+## 5.23.19 (2021-10-20)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## 5.23.18 (2021-10-20)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.23.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.16...@patternfly/react-docs@5.23.17) (2021-10-18)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.23.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.15...@patternfly/react-docs@5.23.16) (2021-10-18)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.23.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.14...@patternfly/react-docs@5.23.15) (2021-10-14)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [5.23.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.13...@patternfly/react-docs@5.23.14) (2021-10-14)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
 ## [5.23.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@5.23.12...@patternfly/react-docs@5.23.13) (2021-10-14)
 
 **Note:** Version bump only for package @patternfly/react-docs

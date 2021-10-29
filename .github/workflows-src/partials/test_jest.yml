@@ -1,0 +1,11 @@
+test_jest:
+  runs-on: ubuntu-latest
+  env:
+    GH_PR_NUM: ${{ github.event.number }}
+  needs: build
+  steps:
+    %checkout%
+    %install%
+    %dist%
+    - name: PF4 Jest Tests
+      run: yarn test --maxWorkers=2

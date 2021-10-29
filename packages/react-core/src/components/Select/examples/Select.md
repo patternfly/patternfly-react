@@ -2330,8 +2330,7 @@ class SelectWithFooter extends React.Component {
 
 ```js
 import React from 'react';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
-import { Select, SelectOption, SelectVariant, SelectDirection, Checkbox, Divider, Button } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, Button } from '@patternfly/react-core';
 
 class SelectWithFooterCheckbox extends React.Component {
   constructor(props) {
@@ -2408,15 +2407,12 @@ class SelectWithFooterCheckbox extends React.Component {
 
 ### View more
 
-```js
+```js isBeta
 import React from 'react';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import {
   Select,
   SelectOption,
-  SelectVariant,
-  Divider,
-  Button,
+  SelectVariant
 } from '@patternfly/react-core';
 
 class SelectViewMore extends React.Component {
@@ -2507,15 +2503,12 @@ class SelectViewMore extends React.Component {
 
 ### View more with checkboxes
 
-```js
+```js isBeta
 import React from 'react';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import {
   Select,
   SelectOption,
   SelectVariant,
-  Divider,
-  Button,
 } from '@patternfly/react-core';
 
 class SelectViewMoreCheckbox extends React.Component {
@@ -2610,5 +2603,114 @@ class SelectViewMoreCheckbox extends React.Component {
     );
   }
 
+}
+```
+
+### With a style applied to the placeholder text
+
+```js
+import React from 'react';
+import { Select, SelectOption } from '@patternfly/react-core';
+
+function SelectWithPlaceholderStyle() {
+  const [ isOpen, setIsOpen ] = React.useState(false);
+  const [ selected, setSelected ] = React.useState([]);
+
+  const options = [
+    <SelectOption key={0} value="Active" />,
+    <SelectOption key={1} value="Cancelled" />,
+    <SelectOption key={2} value="Paused" />
+  ];
+
+  const onToggle = isOpen => setIsOpen(isOpen);
+
+  const onSelect = (event, selection, isPlaceholder) => {
+    setSelected(selection);
+    setIsOpen(false);
+  };
+
+  const clearSelection = () => {
+    setSelected(null);
+    setIsOpen(false);
+  };
+
+  const titleId = 'placeholder-style-select-id';
+
+  return (
+    <div>
+      <span id={titleId} hidden>
+        Placeholder styles
+      </span>
+      <Select
+        variant={SelectVariant.single}
+        hasPlaceholderStyle
+        aria-label="Select input"
+        onToggle={onToggle}
+        onSelect={onSelect}
+        onClear={clearSelection}
+        selections={selected}
+        isOpen={isOpen}
+        placeholderText="Filter by status"
+        aria-labelledby={titleId}
+      >
+        {options}
+      </Select>
+    </div>
+  );
+}
+```
+
+
+### With a style applied to the placeholder option
+
+```js
+import React from 'react';
+import { Select, SelectOption } from '@patternfly/react-core';
+
+function SelectWithPlaceholderStyle() {
+  const [ isOpen, setIsOpen ] = React.useState(false);
+  const [ selected, setSelected ] = React.useState([]);
+
+  const options = [
+    <SelectOption key={0} value="Filter by status" isPlaceholder/>,
+    <SelectOption key={1} value="Active" />,
+    <SelectOption key={2} value="Cancelled" />,
+    <SelectOption key={3} value="Paused" />
+  ];
+
+  const onToggle = isOpen => setIsOpen(isOpen);
+
+  const onSelect = (event, selection, isPlaceholder) => {
+    setSelected(selection);
+    setIsOpen(false);
+  };
+
+  const clearSelection = () => {
+    setSelected(null);
+    setIsOpen(false);
+  };
+
+  const titleId = 'placeholder-style-select-option-id';
+
+  return (
+    <div>
+      <span id={titleId} hidden>
+        Placeholder styles - select option
+      </span>
+      <Select
+        variant={SelectVariant.single}
+        hasPlaceholderStyle
+        aria-label="Select input"
+        onToggle={onToggle}
+        onSelect={onSelect}
+        onClear={clearSelection}
+        selections={selected}
+        isOpen={isOpen}
+        aria-labelledby={titleId}
+      >
+        {options}
+      </Select>
+    </div>
+  );
 }
 ```

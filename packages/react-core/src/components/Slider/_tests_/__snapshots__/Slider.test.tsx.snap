@@ -1032,13 +1032,13 @@ exports[`slider renders slider with input above thumb 1`] = `
 exports[`slider renders slider with input actions 1`] = `
 <Slider
   leftActions={
-    <ForwardRef(Button)
+    <Button
       aria-label="Minus"
       variant="plain"
     />
   }
   rightActions={
-    <ForwardRef(Button)
+    <Button
       aria-label="Plus"
       variant="plain"
     />

@@ -79,3 +79,4 @@ export * from './NumberInput';
 export * from './TreeView';
 export * from './Wizard';
 export * from './DragDrop';
+export * from './TextInputGroup';

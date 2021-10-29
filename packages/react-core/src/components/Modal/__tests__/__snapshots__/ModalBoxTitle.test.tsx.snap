@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalBoxTitle alert variant 1`] = `
+<h1
+  className="pf-c-modal-box__title pf-m-icon"
+  id="boxId"
+>
+  <span
+    className="pf-c-modal-box__title-icon"
+  >
+    <ExclamationTriangleIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </span>
+  <span
+    className="pf-u-screen-reader"
+  >
+    Warning alert:
+  </span>
+  <span
+    className="pf-c-modal-box__title-text"
+  >
+    Test Modal Box warning
+  </span>
+</h1>
+`;
+
+exports[`ModalBoxTitle custom icon variant 1`] = `
+<h1
+  className="pf-c-modal-box__title pf-m-icon"
+  id="boxId"
+>
+  <span
+    className="pf-c-modal-box__title-icon"
+  >
+    <BullhornIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </span>
+  <span
+    className="pf-c-modal-box__title-text"
+  >
+    Test Modal Box custom
+  </span>
+</h1>
+`;
+
+exports[`ModalBoxTitle danger variant 1`] = `
+<h1
+  className="pf-c-modal-box__title pf-m-icon"
+  id="boxId"
+>
+  <span
+    className="pf-c-modal-box__title-icon"
+  >
+    <ExclamationCircleIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </span>
+  <span
+    className="pf-u-screen-reader"
+  >
+    Danger alert:
+  </span>
+  <span
+    className="pf-c-modal-box__title-text"
+  >
+    Test Modal Box danger
+  </span>
+</h1>
+`;
+
+exports[`ModalBoxTitle default variant 1`] = `
+<h1
+  className="pf-c-modal-box__title pf-m-icon"
+  id="boxId"
+>
+  <span
+    className="pf-c-modal-box__title-icon"
+  >
+    <BellIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </span>
+  <span
+    className="pf-u-screen-reader"
+  >
+    Default alert:
+  </span>
+  <span
+    className="pf-c-modal-box__title-text"
+  >
+    Test Modal Box warning
+  </span>
+</h1>
+`;
+
+exports[`ModalBoxTitle info variant 1`] = `
+<h1
+  className="pf-c-modal-box__title pf-m-icon"
+  id="boxId"
+>
+  <span
+    className="pf-c-modal-box__title-icon"
+  >
+    <InfoCircleIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </span>
+  <span
+    className="pf-u-screen-reader"
+  >
+    Info alert:
+  </span>
+  <span
+    className="pf-c-modal-box__title-text"
+  >
+    Test Modal Box info
+  </span>
+</h1>
+`;
+
+exports[`ModalBoxTitle success variant 1`] = `
+<h1
+  className="pf-c-modal-box__title pf-m-icon"
+  id="boxId"
+>
+  <span
+    className="pf-c-modal-box__title-icon"
+  >
+    <CheckCircleIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </span>
+  <span
+    className="pf-u-screen-reader"
+  >
+    Success alert:
+  </span>
+  <span
+    className="pf-c-modal-box__title-text"
+  >
+    Test Modal Box success
+  </span>
+</h1>
+`;

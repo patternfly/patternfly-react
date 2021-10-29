@@ -30,6 +30,7 @@ import { DragDrop, Draggable, Droppable } from '@patternfly/react-core';
   </Droppable>
 </DragDrop>
 ```
+Note: Keyboard accessibility and screen reader accessibility are still in development.
 
 ## Examples
 ### Basic
