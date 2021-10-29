@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Banner/banner';
 import { css } from '@patternfly/react-styles';
 
-export interface BannerProps extends React.HTMLProps<HTMLButtonElement> {
+export interface BannerProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the banner */
   children?: React.ReactNode;
   /** Additional classes added to the banner */
@@ -17,7 +17,8 @@ export const Banner: React.FunctionComponent<BannerProps> = ({
   children,
   className,
   variant = 'default',
-  isSticky = false
+  isSticky = false,
+  ...props
 }: BannerProps) => (
   <div
     className={css(
@@ -26,6 +27,7 @@ export const Banner: React.FunctionComponent<BannerProps> = ({
       isSticky && styles.modifiers.sticky,
       className
     )}
+    {...props}
   >
     {children}
   </div>
