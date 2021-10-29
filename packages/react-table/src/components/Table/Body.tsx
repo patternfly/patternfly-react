@@ -71,9 +71,6 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
             isButton: (event.target as HTMLElement).tagName === 'BUTTON'
           };
           onRowClick(event, row, rowProps, computedData);
-          if (!computedData.isInput) {
-            event.preventDefault();
-          }
         }
       }
     };
