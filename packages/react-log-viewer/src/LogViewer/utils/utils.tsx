@@ -42,45 +42,15 @@ export const parseConsoleOutput = (data: string) => {
 
 export const escapeString = (inputString: string): string => inputString.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'); // eslint-disable-line
 
-/* eslint-disable-next-line no-control-regex */
+/* eslint-disable no-control-regex */
 export const ansiRegex = new RegExp(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-PRZcf-nqry=><]/g);
 
 export const isAnsi = (inputString: string) => inputString.match(ansiRegex);
 
 export const stripAnsi = (inputString: string): string => inputString.replace(ansiRegex, '');
 
-export const splitAnsi = (inputString: string): string[] => {
-  const splitString = isAnsi(inputString);
-  if (!splitString) {
-    return [inputString];
-  }
-
-  const result: string[] = [];
-  let offset = 0;
-  let ptr = 0;
-
-  splitString.forEach(str => {
-    offset = inputString.indexOf(str, offset);
-    if (offset === -1) {
-      throw new Error('Could not split string');
-    }
-    if (ptr !== offset) {
-      result.push(inputString.slice(ptr, offset));
-    }
-    if (ptr === offset && result.length) {
-      result[result.length - 1] += str;
-    } else {
-      if (offset === 0) {
-        result.push('');
-      }
-      result.push(str);
-    }
-    ptr = offset + str.length;
-  });
-
-  result.push(inputString.slice(ptr));
-  return result;
-};
+export const splitAnsi = (inputString: string): string[] =>
+  inputString.split(new RegExp(/([\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-PRZcf-nqry=><])/g));
 
 export const escapeTextForHtml = (inputString: string): string =>
   inputString.replace(/[&<>"']/gm, str => {

@@ -7,13 +7,13 @@ import { escapeString, searchForKeyword } from './utils/utils';
 export interface LogViewerSearchProps extends SearchInputProps {
   /** Place holder text inside of searchbar */
   placeholder: string;
-  /** Number of keyword characters for starting the search */
-  startCharacterNumber: number;
+  /** Minimum number of characters required for searching */
+  minSearchChars: number;
 }
 
 export const LogViewerSearch: React.FunctionComponent<LogViewerSearchProps> = ({
   placeholder = 'Search',
-  startCharacterNumber = 1,
+  minSearchChars = 1,
   ...props
 }) => {
   const [indexAdjuster, setIndexAdjuster] = useState(0);
@@ -46,7 +46,7 @@ export const LogViewerSearch: React.FunctionComponent<LogViewerSearchProps> = ({
     let foundKeywordIndexes: (number | null)[] = [];
     const adjustedSearchedInput = escapeString(searchedInput);
 
-    if (adjustedSearchedInput !== '' && adjustedSearchedInput.length >= startCharacterNumber) {
+    if (adjustedSearchedInput !== '' && adjustedSearchedInput.length >= minSearchChars) {
       foundKeywordIndexes = searchForKeyword(adjustedSearchedInput, parsedData, itemCount || parsedData.length);
 
       if (foundKeywordIndexes.length !== 0) {
