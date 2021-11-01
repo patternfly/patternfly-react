@@ -36,6 +36,8 @@ export interface AboutModalContainerProps extends React.HTMLProps<HTMLDivElement
   aboutModalBoxContentId: string;
   /** Set close button aria label */
   closeButtonAriaLabel?: string;
+  /** Flag to disable focus trap */
+  disableFocusTrap?: boolean;
 }
 
 export const AboutModalContainer: React.FunctionComponent<AboutModalContainerProps> = ({
@@ -51,6 +53,7 @@ export const AboutModalContainer: React.FunctionComponent<AboutModalContainerPro
   closeButtonAriaLabel,
   aboutModalBoxHeaderId,
   aboutModalBoxContentId,
+  disableFocusTrap = false,
   ...props
 }: AboutModalContainerProps) => {
   if (!isOpen) {
@@ -58,7 +61,11 @@ export const AboutModalContainer: React.FunctionComponent<AboutModalContainerPro
   }
   return (
     <Backdrop>
-      <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(styles.bullseye)}>
+      <FocusTrap
+        active={!disableFocusTrap}
+        focusTrapOptions={{ clickOutsideDeactivates: true }}
+        className={css(styles.bullseye)}
+      >
         <AboutModalBox
           className={className}
           aria-labelledby={aboutModalBoxHeaderId}
