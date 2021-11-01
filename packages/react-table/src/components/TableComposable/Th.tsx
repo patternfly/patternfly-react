@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
+import scrollStyles from '@patternfly/react-styles/css/components/Table/table-scrollable';
 import { info } from '../Table/utils/decorators/info';
 import { sortable, sortableFavorites } from '../Table/utils/decorators/sortable';
 import { selectable } from '../Table/utils/decorators/selectable';
@@ -38,6 +39,14 @@ export interface ThProps
   info?: ThInfoType;
   /** Adds scope to the column to associate header cells with data cells*/
   scope?: string;
+  /** Indicates the header column should be sticky */
+  isStickyColumn?: boolean;
+  /** Adds a border to the right side of the cell */
+  hasRightBorder?: boolean;
+  /** Minimum width for a sticky column */
+  stickyMinWidth?: string;
+  /** Left offset of a sticky column */
+  stickyLeftOffset?: string;
 }
 
 const ThBase: React.FunctionComponent<ThProps> = ({
@@ -56,6 +65,10 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   visibility,
   innerRef,
   info: infoProps,
+  isStickyColumn = false,
+  hasRightBorder = false,
+  stickyMinWidth = '100px',
+  stickyLeftOffset,
   ...props
 }: ThProps) => {
   const [showTooltip, setShowTooltip] = React.useState(false);
@@ -132,11 +145,20 @@ const ThBase: React.FunctionComponent<ThProps> = ({
       className={css(
         className,
         textCenter && styles.modifiers.center,
+        isStickyColumn && scrollStyles.tableStickyColumn,
+        hasRightBorder && scrollStyles.modifiers.borderRight,
         modifier && styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap'],
         mergedClassName
       )}
       {...mergedProps}
       {...props}
+      {...(isStickyColumn && {
+        style: {
+          '--pf-c-table__sticky-column--MinWidth': stickyMinWidth ? stickyMinWidth : undefined,
+          '--pf-c-table__sticky-column--Left': stickyLeftOffset ? stickyLeftOffset : undefined,
+          ...props.style
+        } as React.CSSProperties
+      })}
     >
       {transformedChildren}
     </MergedComponent>
