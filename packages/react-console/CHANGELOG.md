@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.19.11 (2021-11-01)
+
+
+### Bug Fixes
+
+* **AboutModal:** allow to disable FocusTrap ([#6509](https://github.com/patternfly/patternfly-react/issues/6509)) ([72536e1](https://github.com/patternfly/patternfly-react/commit/72536e1f73641ff3f19f865f08dbb41ad0ee7b9f))
+
+
+
+
+
 ## 4.19.10 (2021-10-29)
 
 
