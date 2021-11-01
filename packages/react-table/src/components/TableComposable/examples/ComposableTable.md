@@ -161,7 +161,7 @@ This selectable rows feature is intended for use when a table is used to present
 
 This example demonstrates adding actions as the last column. The header's last cell is an empty cell, and each body row's last cell is an action cell.
 
-To make a cell an action cell, pass a `TdActionsType` object via the `actions` prop on a rows's last `Td`.
+To make a cell an action cell, render an `ActionsColumn` component inside a row's last `Td` and pass an array of `IAction` objects via the `items` prop of `ActionsColumn`.
 
 ```ts file="ComposableTableActions.tsx"
 ```

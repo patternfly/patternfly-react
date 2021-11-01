@@ -7,7 +7,17 @@ import {
   ToggleGroupItem,
   ToggleGroupItemProps
 } from '@patternfly/react-core';
-import { TableComposable, Thead, Tr, Th, Tbody, Td, CustomActionsToggleProps, TdProps } from '@patternfly/react-table';
+import {
+  TableComposable,
+  Thead,
+  Tr,
+  Th,
+  Tbody,
+  Td,
+  CustomActionsToggleProps,
+  ActionsColumn,
+  IAction
+} from '@patternfly/react-table';
 
 interface Repository {
   name: string;
@@ -50,10 +60,10 @@ export const ComposableTableActions: React.FunctionComponent = () => {
     </DropdownToggle>
   );
 
-  const defaultActions: TdProps['actions']['items'] = [
+  const defaultActions = (repo: Repository): IAction[] => [
     {
       title: 'Some action',
-      onClick: (_event, rowIndex, _rowData, _extra) => console.log(`clicked on Some action, on row ${rowIndex}`)
+      onClick: () => console.log(`clicked on Some action, on row ${repo.name}`)
     },
     {
       title: <a href="https://www.patternfly.org">Link action</a>
@@ -63,31 +73,31 @@ export const ComposableTableActions: React.FunctionComponent = () => {
     },
     {
       title: 'Third action',
-      onClick: (_event, rowIndex, _rowData, _extra) => console.log(`clicked on Third action, on row ${rowIndex}`)
+      onClick: () => console.log(`clicked on Third action, on row ${repo.name}`)
     },
     {
       title: 'Start',
       variant: ButtonVariant.secondary,
-      onClick: (_event, rowIndex, _rowData, _extra) => console.log(`clicked on extra action, on row ${rowIndex}`),
+      onClick: () => console.log(`clicked on extra action, on row ${repo.name}`),
       isOutsideDropdown: true
     }
   ];
 
-  const lastRowActions: TdProps['actions']['items'] = [
+  const lastRowActions = (repo: Repository): IAction[] => [
     {
       title: 'Some action',
-      onClick: (_event, rowIndex, _rowData, _extra) => console.log(`clicked on Some action, on row ${rowIndex}`)
+      onClick: () => console.log(`clicked on Some action, on row ${repo.name}`)
     },
     {
       title: <div>Another action</div>,
-      onClick: (_event, rowIndex, _rowData, _extra) => console.log(`clicked on Another action, on row ${rowIndex}`)
+      onClick: () => console.log(`clicked on Another action, on row ${repo.name}`)
     },
     {
       isSeparator: true
     },
     {
       title: 'Third action',
-      onClick: (_event, rowIndex, _rowData, _extra) => console.log(`clicked on Third action, on row ${rowIndex}`)
+      onClick: () => console.log(`clicked on Third action, on row ${repo.name}`)
     }
   ];
 
@@ -120,12 +130,12 @@ export const ComposableTableActions: React.FunctionComponent = () => {
         <Tbody>
           {repositories.map(repo => {
             // Arbitrary logic to determine which rows get which actions in this example
-            let rowActions: TdProps['actions']['items'] = defaultActions;
+            let rowActions = defaultActions(repo);
             if (repo.name === 'a') {
               rowActions = null;
             }
             if (repo.name === '5') {
-              rowActions = lastRowActions;
+              rowActions = lastRowActions(repo);
             }
             return (
               <Tr key={repo.name}>
@@ -134,13 +144,15 @@ export const ComposableTableActions: React.FunctionComponent = () => {
                 <Td dataLabel={columnNames.prs}>{repo.prs}</Td>
                 <Td dataLabel={columnNames.workspaces}>{repo.workspaces}</Td>
                 <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
-                <Td
-                  actions={{
-                    items: rowActions,
-                    disable: repo.name === '4', // Also arbitrary for the example
-                    actionsToggle: exampleChoice === 'customToggle' ? customActionsToggle : undefined
-                  }}
-                />
+                <Td>
+                  {rowActions ? (
+                    <ActionsColumn
+                      items={rowActions}
+                      isDisabled={repo.name === '4'} // Also arbitrary for the example
+                      actionsToggle={exampleChoice === 'customToggle' ? customActionsToggle : undefined}
+                    />
+                  ) : null}
+                </Td>
               </Tr>
             );
           })}
