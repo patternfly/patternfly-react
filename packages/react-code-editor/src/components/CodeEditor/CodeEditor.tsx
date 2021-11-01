@@ -11,7 +11,7 @@ import {
   Title,
   Tooltip
 } from '@patternfly/react-core';
-import MonacoEditor from 'react-monaco-editor';
+import MonacoEditor, { ChangeHandler } from 'react-monaco-editor';
 import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
@@ -116,7 +116,7 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   /** Height of code editor. Defaults to 100% */
   height?: string;
   /** Function which fires each time the code changes in the code editor */
-  onChange?: (value?: string, event?: any) => void;
+  onChange?: ChangeHandler;
   /** The loading screen before the editor will be loaded. Defaults 'loading...' */
   loading?: React.ReactNode;
   /** Content to display in space of the code editor when there is no code to display */
@@ -269,7 +269,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     };
   }
 
-  onChange = (value: string, event: any) => {
+  onChange: ChangeHandler = (value, event) => {
     if (this.props.onChange) {
       this.props.onChange(value, event);
     }
