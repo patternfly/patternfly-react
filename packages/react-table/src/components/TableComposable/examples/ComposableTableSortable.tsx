@@ -25,8 +25,9 @@ export const ComposableTableSortable: React.FunctionComponent = () => {
     lastCommit: 'Last commit table header that goes on for a long time.'
   };
 
-  // TODO maybe change this to use column keys instead of indexes, like compound expand state? how?
   // Index of the currently sorted column
+  // Note: if you intend to make columns reorderable, you may instead want to use a non-numeric key
+  // as the identifier of the sorted column. See the "Compound expandable" example.
   const [activeSortIndex, setActiveSortIndex] = React.useState<number | null>(null);
 
   // Sort direction of the currently sorted column
