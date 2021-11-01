@@ -21,7 +21,8 @@ import {
   ChartThemeColor,
   ChartTooltip,
   ChartVoronoiContainer,
-  createContainer
+  createContainer,
+  getResizeObserver
 } from '@patternfly/react-charts';
 
 ## Introduction
@@ -176,12 +177,13 @@ import { Chart, ChartBar, ChartAxis, ChartStack, ChartThemeColor, ChartTooltip }
 ### Monthly data with responsive container
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip, getResizeObserver } from '@patternfly/react-charts';
 
 class MonthlyResponsiveStack extends React.Component {
   constructor(props) {
     super(props);
     this.containerRef = React.createRef();
+    this.observer = () => {};
     this.state = {
       width: 0
     };
@@ -246,12 +248,12 @@ class MonthlyResponsiveStack extends React.Component {
   }
 
   componentDidMount() {
+    this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
     this.handleResize();
-    window.addEventListener('resize', this.handleResize);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
+    this.observer();
   }
 
   render(){
@@ -295,12 +297,13 @@ This demonstrates monthly data with a bottom aligned legend and responsiveness f
 
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartStack, ChartLegendTooltip, ChartThemeColor, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartStack, ChartLegendTooltip, ChartThemeColor, ChartVoronoiContainer, createContainer, getResizeObserver } from '@patternfly/react-charts';
 
 class MultiColorChart extends React.Component {
   constructor(props) {
     super(props);
     this.containerRef = React.createRef();
+    this.observer = () => {};
     this.state = {
       width: 0
     };
@@ -312,12 +315,12 @@ class MultiColorChart extends React.Component {
   }
 
   componentDidMount() {
+    this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
     this.handleResize();
-    window.addEventListener('resize', this.handleResize);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
+    this.observer();
   }
 
   render() {
