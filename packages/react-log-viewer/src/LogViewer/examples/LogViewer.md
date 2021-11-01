@@ -118,15 +118,13 @@ import { Banner } from '@patternfly/react-core';
 
 HeaderComponentLogViewer = () => {
   return (
-    <React.Fragment>
-      <LogViewer
-        hasLineNumbers={false}
-        height={300}
-        data={data.data}
-        theme="dark"
-        header={<Banner>5019 lines</Banner>}
-      />
-    </React.Fragment>
+    <LogViewer
+      hasLineNumbers={false}
+      height={300}
+      data={data.data}
+      theme="dark"
+      header={<Banner>5019 lines</Banner>}
+    />
   );
 };
 ```
@@ -149,16 +147,14 @@ FooterComponentLogViewer = () => {
   };
 
   return (
-    <React.Fragment>
-      <LogViewer
-        ref={logViewerRef}
-        hasLineNumbers={false}
-        height={300}
-        data={data.data}
-        theme="dark"
-        footer={<FooterButton />}
-      />
-    </React.Fragment>
+    <LogViewer
+      ref={logViewerRef}
+      hasLineNumbers={false}
+      height={300}
+      data={data.data}
+      theme="dark"
+      footer={<FooterButton />}
+    />
   );
 };
 ```
@@ -172,14 +168,12 @@ import { LogViewer } from '@patternfly/react-log-viewer';
 
 FooterComponentLogViewer = () => {
   return (
-    <React.Fragment>
-      <LogViewer
-        hasLineNumbers={false}
-        height={300}
-        data={data.data4}
-        theme="dark"
-      />
-    </React.Fragment>
+    <LogViewer
+      hasLineNumbers={false}
+      height={300}
+      data={data.data4}
+      theme="dark"
+    />
   );
 };
 ```

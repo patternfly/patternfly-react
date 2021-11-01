@@ -2,8 +2,7 @@ import React, { useState, useEffect, memo } from 'react';
 import { LogViewerContext, LogViewerToolbarContext } from './LogViewerContext';
 import { css } from '@patternfly/react-styles';
 import { LogViewerRow } from './LogViewerRow';
-import { DEFAULT_FOCUS, DEFAULT_SEARCH_INDEX, DEFAULT_INDEX } from './utils/constants';
-import { searchForKeyword, parseConsoleOutput, escapeString, stripAnsi } from './utils/utils';
+import { parseConsoleOutput, stripAnsi } from './utils/utils';
 import { VariableSizeList as List, areEqual } from '../react-window';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
 
@@ -156,32 +155,6 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
       }
     }, [parsedData, scrollToRow]);
 
-    /* Updating searchedResults context state given changes in searched input */
-    useEffect(() => {
-      let foundKeywordIndexes: (number | null)[] = [];
-      const adjustedSearchedInput = escapeString(searchedInput);
-
-      if (adjustedSearchedInput !== '' && adjustedSearchedInput.length >= 3) {
-        foundKeywordIndexes = searchForKeyword(adjustedSearchedInput, parsedData, itemCount || parsedData.length);
-
-        if (foundKeywordIndexes.length !== 0) {
-          setSearchedWordIndexes(foundKeywordIndexes);
-          scrollToRowInFocus(foundKeywordIndexes[DEFAULT_SEARCH_INDEX]);
-          setCurrentSearchedItemCount(DEFAULT_INDEX);
-        }
-      }
-
-      if (adjustedSearchedInput !== '' && adjustedSearchedInput.length < 3) {
-        setRowInFocus(scrollToRow || DEFAULT_FOCUS);
-        setCurrentSearchedItemCount(DEFAULT_INDEX);
-        setSearchedWordIndexes([]);
-      }
-
-      if (adjustedSearchedInput === '') {
-        setRowInFocus(scrollToRow || DEFAULT_FOCUS);
-      }
-    }, [searchedInput]);
-
     const createDummyElements = () => {
       const dummyIndex = document.createElement('span');
       dummyIndex.className = css(styles.logViewerIndex);
@@ -258,6 +231,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
           {toolbar && (
             <LogViewerToolbarContext.Provider
               value={{
+                itemCount,
                 searchedInput,
                 rowInFocus,
                 searchedWordIndexes,

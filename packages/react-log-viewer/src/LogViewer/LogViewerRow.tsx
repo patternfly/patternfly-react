@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
 import { LogViewerContext } from './LogViewerContext';
 import AnsiUp from '../ansi_up/ansi_up';
-import { escapeTextForHtml } from './utils/utils';
+import { escapeString, escapeTextForHtml, isAnsi, splitAnsi } from './utils/utils';
 
 interface LogViewerRowProps {
   index: number;
@@ -39,29 +39,34 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
   };
 
   const getFormattedData = () => {
-    const rowText = escapeTextForHtml(getData(index));
+    const rowText = getData(index);
     if (context.searchedInput) {
-      const regEx = new RegExp(`(${context.searchedInput})`, 'ig');
-      const splitString = rowText.split(regEx);
+      const splitAnsiString = splitAnsi(rowText);
+      const regEx = new RegExp(`(${escapeString(context.searchedInput)})`, 'ig');
       const composedString: string[] = [];
-      splitString.forEach((substr, newIndex) => {
-        if (substr) {
-          if (substr.match(regEx)) {
-            composedString.push(
-              ReactDOMServer.renderToString(
-                <span className={css(styles.logViewerString, handleHighlight())} key={newIndex}>
-                  {substr}
-                </span>
-              )
-            );
-          } else {
-            composedString.push(substr);
-          }
+      splitAnsiString.forEach(str => {
+        if (isAnsi(str)) {
+          composedString.push(str);
+        } else {
+          const splitString = str.split(regEx);
+          splitString.forEach((substr, newIndex) => {
+            if (substr.match(regEx)) {
+              composedString.push(
+                ReactDOMServer.renderToString(
+                  <span className={css(styles.logViewerString, handleHighlight())} key={newIndex}>
+                    {substr}
+                  </span>
+                )
+              );
+            } else {
+              composedString.push(escapeTextForHtml(substr));
+            }
+          });
         }
       });
       return composedString.join('');
     }
-    return rowText;
+    return escapeTextForHtml(rowText);
   };
 
   return (
