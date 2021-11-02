@@ -60,7 +60,7 @@ export class TableFavoritesDemo extends React.Component<TableProps, TableState> 
     } else {
       // body row
       rows = [...this.state.rows];
-      rows[rowId].selected = isSelected;
+      rows[rowId] = { ...rows[rowId], selected: isSelected };
     }
     this.setState({
       rows
@@ -87,7 +87,7 @@ export class TableFavoritesDemo extends React.Component<TableProps, TableState> 
     let sortedRows;
     if (index === 1) {
       // favorites column
-      sortedRows = this.state.rows.sort((a, b) => {
+      sortedRows = [...this.state.rows].sort((a, b) => {
         if (a.favorited && !b.favorited) {
           return -1;
         } else if (!a.favorited && b.favorited) {
@@ -97,7 +97,7 @@ export class TableFavoritesDemo extends React.Component<TableProps, TableState> 
       });
     } else {
       const userIndex = index - 2;
-      sortedRows = this.state.rows.sort((a, b) => {
+      sortedRows = [...this.state.rows].sort((a, b) => {
         if (a.cells[userIndex] < b.cells[userIndex]) {
           return -1;
         }

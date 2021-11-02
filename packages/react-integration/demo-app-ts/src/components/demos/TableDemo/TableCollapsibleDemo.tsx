@@ -59,15 +59,15 @@ export class TableCollapsibleDemo extends React.Component<TableProps, TableState
     this.onCollapse = this.onCollapse.bind(this);
   }
 
-  onCollapse(event: React.MouseEvent, rowKey: number, isOpen: boolean) {
-    const { rows } = this.state;
+  onCollapse(event: React.MouseEvent, rowIndex: number, isOpen: boolean) {
     /**
-     * Please do not use rowKey as row index for more complex tables.
+     * Please do not use a row index for more complex tables.
      * Rather use some kind of identifier like ID passed with each row.
      */
-    rows[rowKey].isOpen = isOpen;
+    const newRows = Array.from(this.state.rows);
+    newRows[rowIndex] = { ...newRows[rowIndex], isOpen };
     this.setState({
-      rows
+      rows: newRows
     });
   }
 
