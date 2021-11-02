@@ -42,15 +42,16 @@ export const parseConsoleOutput = (data: string) => {
 
 export const escapeString = (inputString: string): string => inputString.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'); // eslint-disable-line
 
-/* eslint-disable no-control-regex */
-export const ansiRegex = new RegExp(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-PRZcf-nqry=><]/g);
+/* eslint-disable-next-line no-control-regex */
+const ansiRegexString = `[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-PRZcf-nqry=><]`;
+
+export const ansiRegex = new RegExp(ansiRegexString, 'g');
 
 export const isAnsi = (inputString: string) => inputString.match(ansiRegex);
 
 export const stripAnsi = (inputString: string): string => inputString.replace(ansiRegex, '');
 
-export const splitAnsi = (inputString: string): string[] =>
-  inputString.split(new RegExp(/([\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-PRZcf-nqry=><])/g));
+export const splitAnsi = (inputString: string): string[] => inputString.split(new RegExp(`(${ansiRegexString})`, 'g'));
 
 export const escapeTextForHtml = (inputString: string): string =>
   inputString.replace(/[&<>"']/gm, str => {
