@@ -139,6 +139,7 @@ export type IFormatterValueType = formatterValueType & {
 export interface ISortBy {
   index?: number;
   direction?: 'asc' | 'desc';
+  defaultDirection?: 'asc' | 'desc';
 }
 
 export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'> {

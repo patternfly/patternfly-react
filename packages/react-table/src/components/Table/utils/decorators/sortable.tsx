@@ -39,8 +39,7 @@ export const sortable: ITransform = (
   function sortClicked(event: React.MouseEvent) {
     let reversedDirection: SortByDirection;
     if (!isSortedBy) {
-      reversedDirection =
-        sortBy.direction && sortBy.direction === SortByDirection.desc ? SortByDirection.desc : SortByDirection.asc;
+      reversedDirection = sortBy.defaultDirection ? (sortBy.defaultDirection as SortByDirection) : SortByDirection.asc;
     } else {
       reversedDirection = sortBy.direction === SortByDirection.asc ? SortByDirection.desc : SortByDirection.asc;
     }
