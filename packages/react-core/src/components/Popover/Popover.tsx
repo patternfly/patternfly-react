@@ -111,7 +111,7 @@ export interface PopoverProps {
    */
   headerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
   /** Sets the heading level to use for the popover header. Default is h6. */
-  headerComponent: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  headerComponent?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   /** Hides the popover when a click occurs outside (only works if isVisible is not controlled by the user) */
   hideOnOutsideClick?: boolean;
   /**

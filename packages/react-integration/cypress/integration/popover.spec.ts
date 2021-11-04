@@ -32,6 +32,18 @@ describe('Popover Demo Test', () => {
     });
   });
 
+  it('Popover header custom heading level', () => {
+    cy.get('[id="popover-heading-level-toggle"]').then((popoverLink: JQuery<HTMLDivElement>) => {
+      cy.wrap(popoverLink).click();
+      cy.get('.pf-c-popover').should('exist');
+      cy.get('h1').should('exist');
+      cy.get('button[aria-label="Close"]').then(closeBtn => {
+        cy.wrap(closeBtn).click();
+        cy.get('.pf-c-popover').should('not.exist');
+      });
+    });
+  });
+
   it('Close popover from content', () => {
     cy.get(`[id="popover-content-close-toggle"]`).then((popoverLink: JQuery<HTMLDivElement>) => {
       cy.get('.pf-c-popover').should('not.exist');
