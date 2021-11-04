@@ -10,7 +10,7 @@ import { canUseDOM } from './util';
  * private observer: any = () => {};
  *
  * public componentDidMount() {
- *   this.observer = getResizeObserver(this.containerRef, this.handleResize);
+ *   this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
  * }
  *
  * public componentWillUnmount() {
@@ -37,7 +37,7 @@ import { canUseDOM } from './util';
  * private observer: any = () => {};
  *
  * public componentDidMount() {
- *   this.observer = getResizeObserver(this.inputRef, this.handleResize);
+ *   this.observer = getResizeObserver(this.inputRef.current, this.handleResize);
  * }
  *
  * public componentWillUnmount() {
