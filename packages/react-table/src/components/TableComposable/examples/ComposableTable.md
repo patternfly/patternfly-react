@@ -2185,31 +2185,20 @@ ComposableTableStickyColumn = () => {
 
                 if (columnIndex === 0) {
                   return (
-                    <Th key={columnIndex} isStickyColumn hasRightBorder modifier="nowrap" {...sortParams}>
-                      <Flex flexWrap={{ default: 'nowrap' }}>
-                        <FlexItem>{column}</FlexItem>
-                      </Flex>
+                    <Th key={columnIndex} isStickyColumn hasRightBorder modifier="truncate" {...sortParams}>
+                      {column}
                     </Th>
                   );
                 } else if (columnIndex === 1) {
                   return (
-                    <Th key={columnIndex} modifier="nowrap" {...sortParams}>
-                      <Flex flexWrap={{ default: 'nowrap' }}>
-                        <FlexItem>{column}</FlexItem>
-                      </Flex>
+                    <Th key={columnIndex} modifier="truncate" {...sortParams}>
+                      {column}
                     </Th>
                   );
                 } else {
                   return (
-                    <Th key={columnIndex} modifier="nowrap">
-                      <TableText>
-                        <Flex flexWrap={{ default: 'nowrap' }}>
-                          <FlexItem>
-                            <BlueprintIcon />
-                          </FlexItem>
-                          <FlexItem>{column}</FlexItem>
-                        </Flex>
-                      </TableText>
+                    <Th key={columnIndex} modifier="truncate">
+                      {column}
                     </Th>
                   );
                 }
@@ -2222,13 +2211,13 @@ ComposableTableStickyColumn = () => {
                 {row.map((cell, cellIndex) => {
                   if (cellIndex === 0) {
                     return (
-                      <Th key={cellIndex} isStickyColumn hasRightBorder>
+                      <Th key={cellIndex} isStickyColumn hasRightBorder modifier="truncate">
                         {cell}
                       </Th>
                     );
                   } else {
                     return (
-                      <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
+                      <Td key={`${rowIndex}_${cellIndex}`} modifier="nowrap" dataLabel={columns[cellIndex]}>
                         {cell}
                       </Td>
                     );
@@ -2415,10 +2404,8 @@ ComposableTableMultipleStickyColumn = () => {
 
                 if (columnIndex === 0) {
                   return (
-                    <Th key={columnIndex} isStickyColumn modifier="nowrap" {...sortParams}>
-                      <Flex flexWrap={{ default: 'nowrap' }}>
-                        <FlexItem>{column}</FlexItem>
-                      </Flex>
+                    <Th key={columnIndex} isStickyColumn modifier="truncate" {...sortParams}>
+                      {column}
                     </Th>
                   );
                 } else if (columnIndex === 1) {
@@ -2426,28 +2413,19 @@ ComposableTableMultipleStickyColumn = () => {
                     <Th
                       key={columnIndex}
                       isStickyColumn
-                      stickyMinWidth="80px"
-                      stickyLeftOffset="107px"
+                      stickyMinWidth="120px"
+                      stickyLeftOffset="100px"
                       hasRightBorder
-                      modifier="nowrap"
+                      modifier="truncate"
                       {...sortParams}
                     >
-                      <Flex flexWrap={{ default: 'nowrap' }}>
-                        <FlexItem>{column}</FlexItem>
-                      </Flex>
+                      {column}
                     </Th>
                   );
                 } else {
                   return (
-                    <Th key={columnIndex} modifier="nowrap">
-                      <TableText>
-                        <Flex flexWrap={{ default: 'nowrap' }}>
-                          <FlexItem>
-                            <BlueprintIcon />
-                          </FlexItem>
-                          <FlexItem>{column}</FlexItem>
-                        </Flex>
-                      </TableText>
+                    <Th key={columnIndex} modifier="truncate">
+                      {column}
                     </Th>
                   );
                 }
@@ -2460,12 +2438,8 @@ ComposableTableMultipleStickyColumn = () => {
                 {row.map((cell, cellIndex) => {
                   if (cellIndex === 0) {
                     return (
-                      <Th key={cellIndex} isStickyColumn modifier="nowrap">
-                        <TableText>
-                          <Flex flexWrap={{ default: 'nowrap' }}>
-                            <FlexItem>{cell}</FlexItem>
-                          </Flex>
-                        </TableText>
+                      <Th key={cellIndex} isStickyColumn modifier="truncate">
+                        {cell}
                       </Th>
                     );
                   } else if (cellIndex === 1) {
@@ -2474,23 +2448,17 @@ ComposableTableMultipleStickyColumn = () => {
                         key={cellIndex}
                         isStickyColumn
                         stickyMinWidth="80px"
-                        stickyLeftOffset="107px"
-                        modifier="nowrap"
+                        stickyLeftOffset="100px"
+                        modifier="truncate"
                         hasRightBorder
                       >
-                        <TableText>
-                          <Flex flexWrap={{ default: 'nowrap' }}>
-                            <FlexItem>
-                              <BlueprintIcon />
-                            </FlexItem>
-                            <FlexItem>{cell}</FlexItem>
-                          </Flex>
-                        </TableText>
+                        <BlueprintIcon />
+                        {` ${cell}`}
                       </Th>
                     );
                   } else {
                     return (
-                      <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
+                      <Td key={`${rowIndex}_${cellIndex}`} modifier="nowrap" dataLabel={columns[cellIndex]}>
                         {cell}
                       </Td>
                     );
@@ -2680,10 +2648,8 @@ ComposableTableStickyColumnAndHeader = () => {
 
                     if (columnIndex === 0) {
                       return (
-                        <Th key={columnIndex} isStickyColumn modifier="nowrap" {...sortParams}>
-                          <Flex flexWrap={{ default: 'nowrap' }}>
-                            <FlexItem>{column}</FlexItem>
-                          </Flex>
+                        <Th key={columnIndex} isStickyColumn modifier="truncate" {...sortParams}>
+                          {column}
                         </Th>
                       );
                     } else if (columnIndex === 1) {
@@ -2694,25 +2660,16 @@ ComposableTableStickyColumnAndHeader = () => {
                           stickyMinWidth="80px"
                           stickyLeftOffset="107px"
                           hasRightBorder
-                          modifier="nowrap"
+                          modifier="truncate"
                           {...sortParams}
                         >
-                          <Flex flexWrap={{ default: 'nowrap' }}>
-                            <FlexItem>{column}</FlexItem>
-                          </Flex>
+                          {column}
                         </Th>
                       );
                     } else {
                       return (
-                        <Th key={columnIndex} modifier="nowrap">
-                          <TableText>
-                            <Flex flexWrap={{ default: 'nowrap' }}>
-                              <FlexItem>
-                                <BlueprintIcon />
-                              </FlexItem>
-                              <FlexItem>{column}</FlexItem>
-                            </Flex>
-                          </TableText>
+                        <Th key={columnIndex} modifier="truncate">
+                          {column}
                         </Th>
                       );
                     }
@@ -2725,12 +2682,8 @@ ComposableTableStickyColumnAndHeader = () => {
                     {row.map((cell, cellIndex) => {
                       if (cellIndex === 0) {
                         return (
-                          <Th key={cellIndex} isStickyColumn modifier="nowrap">
-                            <TableText>
-                              <Flex flexWrap={{ default: 'nowrap' }}>
-                                <FlexItem>{cell}</FlexItem>
-                              </Flex>
-                            </TableText>
+                          <Th key={cellIndex} isStickyColumn modifier="truncate">
+                            {cell}
                           </Th>
                         );
                       } else if (cellIndex === 1) {
@@ -2740,22 +2693,16 @@ ComposableTableStickyColumnAndHeader = () => {
                             isStickyColumn
                             stickyMinWidth="80px"
                             stickyLeftOffset="107px"
-                            modifier="nowrap"
+                            modifier="truncate"
                             hasRightBorder
                           >
-                            <TableText>
-                              <Flex flexWrap={{ default: 'nowrap' }}>
-                                <FlexItem>
-                                  <BlueprintIcon />
-                                </FlexItem>
-                                <FlexItem>{cell}</FlexItem>
-                              </Flex>
-                            </TableText>
+                            <BlueprintIcon />
+                            {` ${cell}`}
                           </Th>
                         );
                       } else {
                         return (
-                          <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
+                          <Td key={`${rowIndex}_${cellIndex}`} modifier="nowrap" dataLabel={columns[cellIndex]}>
                             {cell}
                           </Td>
                         );
