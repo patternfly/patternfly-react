@@ -118,15 +118,13 @@ import { Banner } from '@patternfly/react-core';
 
 HeaderComponentLogViewer = () => {
   return (
-    <React.Fragment>
-      <LogViewer
-        hasLineNumbers={false}
-        height={300}
-        data={data.data}
-        theme="dark"
-        header={<Banner>5019 lines</Banner>}
-      />
-    </React.Fragment>
+    <LogViewer
+      hasLineNumbers={false}
+      height={300}
+      data={data.data}
+      theme="dark"
+      header={<Banner>5019 lines</Banner>}
+    />
   );
 };
 ```
@@ -149,16 +147,33 @@ FooterComponentLogViewer = () => {
   };
 
   return (
-    <React.Fragment>
-      <LogViewer
-        ref={logViewerRef}
-        hasLineNumbers={false}
-        height={300}
-        data={data.data}
-        theme="dark"
-        footer={<FooterButton />}
-      />
-    </React.Fragment>
+    <LogViewer
+      ref={logViewerRef}
+      hasLineNumbers={false}
+      height={300}
+      data={data.data}
+      theme="dark"
+      footer={<FooterButton />}
+    />
+  );
+};
+```
+
+### With ANSI color logs
+
+```js
+import React from 'react';
+import { data } from './realTestData.js';
+import { LogViewer } from '@patternfly/react-log-viewer';
+
+FooterComponentLogViewer = () => {
+  return (
+    <LogViewer
+      hasLineNumbers={false}
+      height={300}
+      data={data.data4}
+      theme="dark"
+    />
   );
 };
 ```
