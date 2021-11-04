@@ -27,6 +27,7 @@ propComponents:
     'EditableSelectInputProps',
     'EditableTextCellProps',
     'ThSortType',
+    'ISortBy',
   ]
 ouia: true
 ---
@@ -313,7 +314,8 @@ ComposableTableSortable = () => {
                     sort: {
                       sortBy: {
                         index: activeSortIndex,
-                        direction: activeSortDirection
+                        direction: activeSortDirection,
+                        defaultDirection: 'asc' // starting sort direction when first sorting a column. Defaults to 'asc'
                       },
                       onSort,
                       columnIndex

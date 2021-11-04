@@ -330,7 +330,9 @@ class SortableTable extends React.Component {
         ['a', 'two', 'k', 'four', 'five'],
         ['p', 'two', 'b', 'four', 'five']
       ],
-      sortBy: {}
+      sortBy: {
+        defaultDirection: 'asc' // starting sort direction when first sorting a column. Defaults to 'asc'
+      }
     };
     this.onSort = this.onSort.bind(this);
   }
