@@ -4,6 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { NavContext, NavSelectClickHandler } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
 import { useOUIAProps, OUIAProps } from '../../helpers';
+import { Popper } from '../../helpers/Popper/Popper';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
 export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'>, OUIAProps {
@@ -28,7 +29,7 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   /** Component used to render NavItems if  React.isValidElement(children) is false */
   component?: React.ReactNode;
   /** Flyout of a nav item. This should be a Menu component. */
-  flyout?: React.ReactNode;
+  flyout?: React.ReactElement;
   /** Callback when flyout is opened or closed */
   onShowFlyout?: () => void;
 }
@@ -185,7 +186,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
 
   const ouiaProps = useOUIAProps(NavItem.displayName, ouiaId, ouiaSafe);
 
-  return (
+  const navItem = (
     <li
       {...(hasFlyout && {
         onKeyDown: handleFlyout
@@ -202,8 +203,13 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
             : renderDefaultLink(context)
         }
       </NavContext.Consumer>
-      {flyoutVisible && flyout}
     </li>
   );
+
+  if (flyout) {
+    return <Popper trigger={navItem} popper={flyout} placement="right-start" isVisible={flyoutVisible} />;
+  }
+
+  return navItem;
 };
 NavItem.displayName = 'NavItem';
