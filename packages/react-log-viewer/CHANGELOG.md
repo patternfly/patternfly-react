@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.14.0 (2021-11-04)
+
+
+### Features
+
+* **log-viewer:** support ANSI color ([#6519](https://github.com/patternfly/patternfly-react/issues/6519)) ([936a699](https://github.com/patternfly/patternfly-react/commit/936a699b0514a492d3c40be08932fb7bab275cce))
+
+
+
+
+
 ## 4.13.11 (2021-11-01)
 
 
