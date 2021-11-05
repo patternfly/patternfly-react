@@ -20,6 +20,20 @@ module.exports = {
         devDependencies: true
       }
     ],
+    'promise/catch-or-return': 'error',
+    'promise/no-return-wrap': 'off',
+    'promise/param-names': 'off',
+    'promise/always-return': 'off',
+    'promise/no-native': 'off',
+    'promise/no-nesting': 'error',
+    'promise/no-promise-in-callback': 'off',
+    'promise/no-callback-in-promise': 'off',
+    'promise/avoid-new': 'off',
+    'promise/no-new-statics': 'error',
+    'promise/no-return-in-finally': 'error',
+    'promise/valid-params': 'error',
+    'promise/prefer-await-to-then': 'off',
+    'promise/prefer-await-to-callbacks': 'off',
     'import/no-named-default': 'off',
     'import/prefer-default-export': 'off',
     'no-alert': 'off',
@@ -28,6 +42,8 @@ module.exports = {
     'no-prototype-builtins': 'off',
     'no-restricted-syntax': 'off',
     'no-underscore-dangle': 'off',
+    'no-return-assign': ['error', 'except-parens'],
+    'no-console': 'error',
     'no-unused-expressions': ['error', { allowShortCircuit: true, allowTernary: true }],
     'no-unused-vars': [
       'error',
@@ -49,14 +65,26 @@ module.exports = {
     'react/no-danger': 'off',
     'react/sort-comp': 'off',
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn'
+    'react-hooks/exhaustive-deps': 'warn',
+    '@typescript-eslint/await-thenable': 'off',
+    '@typescript-eslint/no-for-in-array': 'off',
+    '@typescript-eslint/no-unnecessary-qualifier': 'off',
+    '@typescript-eslint/no-unnecessary-type-assertion': 'off',
+    '@typescript-eslint/prefer-includes': 'off',
+    '@typescript-eslint/prefer-regexp-exec': 'off',
+    '@typescript-eslint/prefer-string-starts-ends-with': 'off',
+    '@typescript-eslint/promise-function-async': 'off',
+    '@typescript-eslint/require-array-sort-compare': 'off',
+    '@typescript-eslint/restrict-plus-operands': 'off',
+    '@typescript-eslint/unbound-method': 'off',
+    'react/default-props-match-prop-types': 'off',
+    'react/prop-types': 'off'
   },
   extends: [
     'standard',
     'standard-react',
     'standard-jsx',
     'airbnb',
-    'plugin:jest/recommended',
     'prettier',
     'prettier/react',
     'plugin:react-hooks/recommended'
@@ -64,9 +92,8 @@ module.exports = {
   env: {
     es6: true,
     browser: true,
-    node: true,
-    jest: true
+    node: true
   },
-  plugins: ['prettier', 'jest', 'react', 'react-hooks', 'patternfly-react'],
-  parser: 'babel-eslint'
+  plugins: ['prettier', 'jest', 'react', 'react-hooks', 'patternfly-react', '@typescript-eslint'],
+  parser: '@typescript-eslint/parser'
 };

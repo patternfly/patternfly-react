@@ -23,6 +23,8 @@
   "homepage": "https://github.com/patternfly/patternfly-react/blob/main/packages/eslint-plugin/README.md",
   "dependencies": {
     "babel-eslint": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "2.11.0",
+    "@typescript-eslint/parser": "2.11.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard": "^11.0.0",
