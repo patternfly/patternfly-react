@@ -88,8 +88,8 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   /** Additional classes for the container. */
   className?: string;
   /** Total number of items. */
-  itemCount: number;
-  /** Position where pagination is rendered. */
+  itemCount?: number;
+  // /** An indeterminate count to show instead of total item count */
   variant?: 'top' | 'bottom' | PaginationVariant;
   /** Flag indicating if pagination is disabled */
   isDisabled?: boolean;
@@ -200,9 +200,10 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
     ouiaStateId: getDefaultOUIAId(Pagination.displayName, this.props.variant)
   };
 
+  // when itemCount is not known let's set lastPage as page+1 as we don't know the total count
   getLastPage() {
-    const { itemCount, perPage } = this.props;
-    return Math.ceil(itemCount / perPage) || 0;
+    const { itemCount, perPage, page } = this.props;
+    return itemCount ? Math.ceil(itemCount / perPage) || 0 : page + 1;
   }
 
   componentDidMount() {
@@ -328,6 +329,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
           ofWord={titles.ofWord}
           page={itemCount <= 0 ? 0 : page}
           perPage={perPage}
+          itemCount={itemCount}
           firstPage={itemsStart !== null ? itemsStart : 1}
           lastPage={lastPage}
           onSetPage={onSetPage}

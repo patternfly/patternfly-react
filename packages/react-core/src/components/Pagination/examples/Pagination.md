@@ -89,6 +89,39 @@ class PaginationBottom extends React.Component {
   }
 }
 ```
+### Indeterminate (item count is not known)
+
+```js
+import React from 'react';
+import { Pagination } from '@patternfly/react-core';
+
+PaginationIndeterminate = () => {
+  const [page, setPage] = React.useState(1);
+  const [perPage, setPerPage] = React.useState(20);
+
+  const onSetPage = (_event, pageNumber) => setPage(pageNumber);
+  const onPerPageSelect = (_event, perPage) => setPerPage(perPage);
+
+  return (
+    <Pagination
+      toggleTemplate={({ firstIndex, lastIndex }) => (
+        <React.Fragment>
+          <b>
+            {firstIndex} - {lastIndex}
+          </b>
+          of
+          <b>many</b>
+        </React.Fragment>
+      )}
+      perPage={perPage}
+      page={page}
+      onSetPage={onSetPage}
+      widgetId="pagination-indeterminate"
+      onPerPageSelect={onPerPageSelect}
+    />
+  );
+}
+```
 
 ### Disabled
 
