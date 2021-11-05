@@ -32,6 +32,8 @@ export interface AboutModalProps {
   appendTo?: HTMLElement | (() => HTMLElement);
   /** Set aria label to the close button */
   closeButtonAriaLabel?: string;
+  /** Flag to disable focus trap */
+  disableFocusTrap?: boolean;
 }
 
 interface ModalState {

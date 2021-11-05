@@ -12,7 +12,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThreshold, ChartThemeColor, ChartLegendTooltip, ChartThemeVariant, ChartVoronoiContainer, createContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThreshold, ChartThemeColor, ChartLegendTooltip, ChartThemeVariant, ChartVoronoiContainer, createContainer, getResizeObserver } from '@patternfly/react-charts';
 import '@patternfly/patternfly/patternfly-charts.css';
 
 ## Introduction
@@ -175,30 +175,31 @@ class BottomAlignedLegend extends React.Component {
 ### Multi-color (unordered) bottom-left aligned legend and responsive container
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer, getResizeObserver } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
 class MultiColorChart extends React.Component {
   constructor(props) {
     super(props);
     this.containerRef = React.createRef();
+    this.observer = () => {};
     this.state = {
       width: 0
     };
     this.handleResize = () => {
-      if(this.containerRef.current && this.containerRef.current.clientWidth){
+      if (this.containerRef.current && this.containerRef.current.clientWidth) {
         this.setState({ width: this.containerRef.current.clientWidth });
       }
     };
   }
 
   componentDidMount() {
+    this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
     this.handleResize();
-    window.addEventListener('resize', this.handleResize);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
+    this.observer();
   }
 
   render() {

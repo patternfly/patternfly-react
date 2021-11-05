@@ -17,7 +17,7 @@ export const searchForKeyword = (searchedInput: string, parsedData: string[], it
 
   const regex = new RegExp(searchedInput, 'i');
   parsedData.map((row, index) => {
-    if (regex.test(row) && index < itemCount) {
+    if (regex.test(stripAnsi(row)) && index < itemCount) {
       searchResults.push(index);
     }
   });
@@ -41,3 +41,33 @@ export const parseConsoleOutput = (data: string) => {
 };
 
 export const escapeString = (inputString: string): string => inputString.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'); // eslint-disable-line
+
+/* eslint-disable-next-line no-control-regex */
+const ansiRegexString = `[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-PRZcf-nqry=><]`;
+
+export const ansiRegex = new RegExp(ansiRegexString, 'g');
+
+export const isAnsi = (inputString: string) => inputString.match(ansiRegex);
+
+export const stripAnsi = (inputString: string): string => inputString.replace(ansiRegex, '');
+
+export const splitAnsi = (inputString: string): string[] => inputString.split(new RegExp(`(${ansiRegexString})`, 'g'));
+
+export const escapeTextForHtml = (inputString: string): string =>
+  inputString.replace(/[&<>"']/gm, str => {
+    if (str === '&') {
+      return '&amp;';
+    }
+    if (str === '<') {
+      return '&lt;';
+    }
+    if (str === '>') {
+      return '&gt;';
+    }
+    if (str === '"') {
+      return '&quot;';
+    }
+    if (str === "'") {
+      return '&#x27;';
+    }
+  });

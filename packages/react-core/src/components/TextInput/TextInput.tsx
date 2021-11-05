@@ -2,8 +2,9 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
 import { ValidatedOptions } from '../../helpers/constants';
-import { debounce, trimLeft, canUseDOM } from '../../helpers/util';
+import { trimLeft } from '../../helpers/util';
 import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
+import { getResizeObserver } from '../../helpers/resizeObserver';
 
 export enum TextInputTypes {
   text = 'text',
@@ -89,6 +90,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
     ouiaSafe: true
   };
   inputRef = React.createRef<HTMLInputElement>();
+  observer: any = () => {};
 
   constructor(props: TextInputProps) {
     super(props);
@@ -109,18 +111,15 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
 
   componentDidMount() {
     if (this.props.isLeftTruncated) {
+      const inputRef = this.props.innerRef || this.inputRef;
+      this.observer = getResizeObserver(inputRef.current, this.handleResize);
       this.handleResize();
-      if (canUseDOM) {
-        window.addEventListener('resize', debounce(this.handleResize, 250));
-      }
     }
   }
 
   componentWillUnmount() {
     if (this.props.isLeftTruncated) {
-      if (canUseDOM) {
-        window.removeEventListener('resize', debounce(this.handleResize, 250));
-      }
+      this.observer();
     }
   }
 

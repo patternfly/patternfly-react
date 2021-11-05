@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.20.0 (2021-11-04)
+
+
+### Features
+
+* **log-viewer:** support ANSI color ([#6519](https://github.com/patternfly/patternfly-react/issues/6519)) ([936a699](https://github.com/patternfly/patternfly-react/commit/936a699b0514a492d3c40be08932fb7bab275cce))
+
+
+
+
+
+## 4.19.11 (2021-11-01)
+
+
+### Bug Fixes
+
+* **AboutModal:** allow to disable FocusTrap ([#6509](https://github.com/patternfly/patternfly-react/issues/6509)) ([72536e1](https://github.com/patternfly/patternfly-react/commit/72536e1f73641ff3f19f865f08dbb41ad0ee7b9f))
+
+
+
+
+
+## 4.19.10 (2021-10-29)
+
+
+### Bug Fixes
+
+* **Banner:** forward props ([#6511](https://github.com/patternfly/patternfly-react/issues/6511)) ([e36c890](https://github.com/patternfly/patternfly-react/commit/e36c89077afa82340994c0e3c0fc929e601e01bc))
+
+
+
+
+
 ## 4.19.9 (2021-10-28)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension

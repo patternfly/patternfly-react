@@ -13,6 +13,7 @@ interface LogViewerToolbarContextProps {
   searchedWordIndexes: number[];
   rowInFocus: number;
   searchedInput: string;
+  itemCount: number;
   currentSearchedItemCount: number;
   scrollToRow: (searchedRow: number) => void;
   setRowInFocus: (index: number) => void;

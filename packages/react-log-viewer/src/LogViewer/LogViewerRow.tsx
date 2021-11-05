@@ -1,8 +1,11 @@
-import React, { useState, useEffect, memo } from 'react';
+import React, { memo, useContext } from 'react';
+import ReactDOMServer from 'react-dom/server';
 import { LOGGER_LINE_NUMBER_INDEX_DELTA } from './utils/constants';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
 import { LogViewerContext } from './LogViewerContext';
+import AnsiUp from '../ansi_up/ansi_up';
+import { escapeString, escapeTextForHtml, isAnsi, splitAnsi } from './utils/utils';
 
 interface LogViewerRowProps {
   index: number;
@@ -11,45 +14,18 @@ interface LogViewerRowProps {
     parsedData: string[] | null;
     rowInFocus: number;
     searchedWordIndexes: number[];
-    highlightedRowIndexes: number[];
-    setHighlightedRowIndexes: (indexes: number[]) => void;
   };
 }
 
+const ansiUp = new AnsiUp();
+
 export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ index, style, data }) => {
-  const { parsedData, highlightedRowIndexes, searchedWordIndexes, setHighlightedRowIndexes, rowInFocus } = data;
-  const [clickCounter, setClickCounter] = useState(0);
-  const [isHiglighted, setIsHiglighted] = useState(false);
-  const context = React.useContext(LogViewerContext);
-
-  useEffect(() => {
-    const currentHighlightedIndexes = highlightedRowIndexes;
-    let temp = 0;
-
-    if (isHiglighted && clickCounter > 0) {
-      currentHighlightedIndexes.push(index);
-      setHighlightedRowIndexes(currentHighlightedIndexes);
-    } else if (!isHiglighted && clickCounter > 0) {
-      temp = currentHighlightedIndexes.indexOf(index);
-      currentHighlightedIndexes.splice(temp, 1);
-      setHighlightedRowIndexes(currentHighlightedIndexes);
-    }
-  }, [clickCounter]);
-
-  useEffect(() => {
-    const highlightIndex = highlightedRowIndexes.indexOf(index);
-    highlightIndex === -1 ? setIsHiglighted(false) : setIsHiglighted(true);
-  }, []);
+  const { parsedData, searchedWordIndexes, rowInFocus } = data;
+  const context = useContext(LogViewerContext);
 
   const getData = (index: number): string => (parsedData ? parsedData[index] : null);
 
   const getRowIndex = (index: number): number => index + LOGGER_LINE_NUMBER_INDEX_DELTA;
-
-  const handleHighlightRow = () => {
-    const counter = clickCounter + 1;
-    setClickCounter(counter);
-    setIsHiglighted(!isHiglighted);
-  };
 
   /** Helper function for applying the correct styling for styling rows containing searched keywords */
   const handleHighlight = () => {
@@ -63,36 +39,43 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
   };
 
   const getFormattedData = () => {
+    const rowText = getData(index);
     if (context.searchedInput) {
-      const regEx = new RegExp(`(${context.searchedInput})`, 'ig');
-      const splitString = getData(index).split(regEx);
-      const composedString = [] as React.ReactNode[];
-      splitString.map((substr, index) => {
-        if (substr.match(regEx)) {
-          composedString.push(
-            <span className={css(styles.logViewerString, handleHighlight())} key={index}>
-              {substr}
-            </span>
-          );
+      const splitAnsiString = splitAnsi(rowText);
+      const regEx = new RegExp(`(${escapeString(context.searchedInput)})`, 'ig');
+      const composedString: string[] = [];
+      splitAnsiString.forEach(str => {
+        if (isAnsi(str)) {
+          composedString.push(str);
         } else {
-          composedString.push(substr);
+          const splitString = str.split(regEx);
+          splitString.forEach((substr, newIndex) => {
+            if (substr.match(regEx)) {
+              composedString.push(
+                ReactDOMServer.renderToString(
+                  <span className={css(styles.logViewerString, handleHighlight())} key={newIndex}>
+                    {substr}
+                  </span>
+                )
+              );
+            } else {
+              composedString.push(escapeTextForHtml(substr));
+            }
+          });
         }
       });
-      return composedString;
+      return composedString.join('');
     }
-    return getData(index);
+    return escapeTextForHtml(rowText);
   };
 
   return (
-    <div style={style} className={css(styles.logViewerListItem)} onClick={() => handleHighlightRow()}>
+    <div style={style} className={css(styles.logViewerListItem)}>
       <span className={css(styles.logViewerIndex)}>{getRowIndex(index)}</span>
       <span
-        style={{ whiteSpace: 'break-spaces' }}
         className={css(styles.logViewerText)}
-        onClick={() => handleHighlightRow()}
-      >
-        {getFormattedData()}
-      </span>
+        dangerouslySetInnerHTML={{ __html: ansiUp.ansi_to_html(getFormattedData()) }}
+      />
     </div>
   );
 });

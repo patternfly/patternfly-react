@@ -20,7 +20,8 @@ import {
   ChartLine,
   ChartScatter,
   ChartThemeColor,
-  ChartVoronoiContainer
+  ChartVoronoiContainer,
+  getResizeObserver
 } from '@patternfly/react-charts';
 
 ## Introduction
@@ -35,18 +36,19 @@ This demonstrates how to add interactive data points to an area chart.
 
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartScatter, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartScatter, ChartThemeColor, ChartVoronoiContainer, getResizeObserver } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
 
 class ScatterAreaChart extends React.Component {
   constructor(props) {
     super(props);
     this.containerRef = React.createRef();
+    this.observer = () => {};
     this.state = {
       width: 0
     };
     this.handleResize = () => {
-      if(this.containerRef.current && this.containerRef.current.clientWidth){
+      if (this.containerRef.current && this.containerRef.current.clientWidth) {
         this.setState({ width: this.containerRef.current.clientWidth });
       }
     };
@@ -84,12 +86,12 @@ class ScatterAreaChart extends React.Component {
   }
 
   componentDidMount() {
+    this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
     this.handleResize();
-    window.addEventListener('resize', this.handleResize);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
+    this.observer();
   }
 
   render() {
@@ -153,17 +155,18 @@ This demonstrates how to add interactive data points to a line chart.
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartScatter, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLine, ChartScatter, ChartThemeColor, ChartVoronoiContainer, getResizeObserver } from '@patternfly/react-charts';
 
 class ScatterLineChart extends React.Component {
   constructor(props) {
     super(props);
     this.containerRef = React.createRef();
+    this.observer = () => {};
     this.state = {
       width: 0
     };
     this.handleResize = () => {
-      if(this.containerRef.current && this.containerRef.current.clientWidth){
+      if (this.containerRef.current && this.containerRef.current.clientWidth) {
         this.setState({ width: this.containerRef.current.clientWidth });
       }
     };
@@ -213,12 +216,12 @@ class ScatterLineChart extends React.Component {
   }
 
   componentDidMount() {
+    this.observer = getResizeObserver(this.containerRef.current, this.handleResize);
     this.handleResize();
-    window.addEventListener('resize', this.handleResize);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
+    this.observer();
   }
 
   render() {
