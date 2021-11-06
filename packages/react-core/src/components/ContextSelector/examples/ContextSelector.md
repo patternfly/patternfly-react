@@ -18,6 +18,20 @@ class SimpleContextSelector extends React.Component {
   constructor(props) {
     super(props);
     this.items = [
+      {
+        text: 'Link',
+        href: '#'
+      },
+      'Action',
+      {
+        text: 'Disabled link',
+        href: '#',
+        isDisabled: true
+      },
+      {
+        text: 'Disabled action',
+        isDisabled: true
+      },
       'My project',
       'OpenShift cluster',
       'Production Ansible',
@@ -32,7 +46,7 @@ class SimpleContextSelector extends React.Component {
 
     this.state = {
       isOpen: false,
-      selected: this.items[0],
+      selected: this.items[0].text || this.items[0],
       searchValue: '',
       filteredItems: this.items
     };
@@ -58,7 +72,10 @@ class SimpleContextSelector extends React.Component {
       const filtered =
         this.state.searchValue === ''
           ? this.items
-          : this.items.filter(str => str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
+          : this.items.filter(item => {
+            const str = item.text ? item.text : item;
+            return str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1;
+          });
 
       this.setState({ filteredItems: filtered || [] });
     };
@@ -77,9 +94,11 @@ class SimpleContextSelector extends React.Component {
         onSearchButtonClick={this.onSearchButtonClick}
         screenReaderLabel="Selected Project:"
       >
-        {filteredItems.map((item, index) => (
-          <ContextSelectorItem key={index}>{item}</ContextSelectorItem>
-        ))}
+        {
+          filteredItems.map((item, index) => {
+            const { text = null, href = null, isDisabled } = item;
+            return (<ContextSelectorItem key={index} href={href} isDisabled={isDisabled}>{text || item}</ContextSelectorItem>);
+        })}
       </ContextSelector>
     );
   }
