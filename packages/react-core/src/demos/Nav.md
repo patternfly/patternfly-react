@@ -61,25 +61,6 @@ class VerticalPage extends React.Component {
 
   render() {
     const numFlyouts = 5;
-    const FlyoutMenu = ({ depth, children }) => (
-      <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={() => {}}>
-        <MenuContent>
-          <MenuList>
-            <MenuItem flyoutMenu={children} itemId={`next-menu-${depth}`} to={`#menu-link-${depth}`}>
-              Next menu
-            </MenuItem>
-            {[...Array(numFlyouts - depth).keys()].map(j => (
-              <MenuItem key={`${depth}-${j}`} itemId={`${depth}-${j}`} to={`#menu-link-${depth}-${j}`}>
-                Menu {depth} item {j}
-              </MenuItem>
-            ))}
-            <MenuItem flyoutMenu={children} itemId={`next-menu-2-${depth}`} to={`#second-menu-link-${depth}`}>
-              Next menu
-            </MenuItem>
-          </MenuList>
-        </MenuContent>
-      </Menu>
-    );
     const newFlyout = (
       <Menu key={1} containsFlyout id={`menu-${1}`} onSelect={() => {}}>
         <MenuContent>
@@ -97,12 +78,44 @@ class VerticalPage extends React.Component {
         </MenuContent>
       </Menu>
     );
-    let curFlyout = <FlyoutMenu depth={1} />;
-    for (let i = 2; i < numFlyouts - 1; i++) {
-      curFlyout = <FlyoutMenu depth={i}>{curFlyout}</FlyoutMenu>;
-    }
+
+    const newFlyout2 = (
+      <Menu key={1} containsFlyout id={`menu-${1}`} onSelect={() => {}}>
+        <MenuContent>
+          <MenuList>
+            <MenuItem flyoutMenu={newFlyout} itemId={`next-menu-${1}`} to={`#menu-link-${1}`}>
+              Next menu
+            </MenuItem>
+            <MenuItem key={`${1}-${2}`} itemId={`${1}-${2}`} to={`#menu-link-${1}-${2}`}>
+              Menu {1} item {2}
+            </MenuItem>
+            <MenuItem itemId={`next-menu-2-${2}`} to={`#second-menu-link-${2}`}>
+              Next menu
+            </MenuItem>
+          </MenuList>
+        </MenuContent>
+      </Menu>
+    );
+
+    const nestedFlyout = (
+      <Menu ref={this.testRef} key={1} containsFlyout id={`menu-${1}`} onSelect={() => {}}>
+        <MenuContent>
+          <MenuList>
+            <MenuItem itemId={`next-menu-${1}`} to={`#menu-link-${1}`}>
+              Foo
+            </MenuItem>
+            <MenuItem flyoutMenu={newFlyout2} key={`${1}-${2}`} itemId={`${1}-${2}`} to={`#menu-link-${1}-${2}`}>
+              Menu {1} item {2}
+            </MenuItem>
+            <MenuItem itemId={`next-menu-2-${2}`} to={`#second-menu-link-${2}`}>
+              Next menu
+            </MenuItem>
+          </MenuList>
+        </MenuContent>
+      </Menu>
+    );
+
     const { isNavOpen } = this.state;
-    // console.log({ curFlyout });
     const logoProps = {
       href: 'https://patternfly.org',
       onClick: () => console.log('clicked logo'),
@@ -128,25 +141,13 @@ class VerticalPage extends React.Component {
                 Link 1
               </NavItem>
               <NavItem
-                flyout={newFlyout}
-                id="flyout-link2"
-                to="#flyout-link2"
-                itemId={1}
-                isActive={flyoutActiveItem === 1}
+                flyout={nestedFlyout}
+                id="flyout-link4"
+                to="#flyout-link4"
+                itemId={3}
+                isActive={flyoutActiveItem === 3}
               >
-                Link 2
-              </NavItem>
-              <NavItem
-                flyout={curFlyout}
-                id="flyout-link3"
-                to="#flyout-link3"
-                itemId={2}
-                isActive={flyoutActiveItem === 2}
-              >
-                Link 3
-              </NavItem>
-              <NavItem id="flyout-link4" to="#flyout-link4" itemId={3} isActive={flyoutActiveItem === 3}>
-                Link 4
+                Manually nested flyout
               </NavItem>
             </NavList>
           </Nav>
