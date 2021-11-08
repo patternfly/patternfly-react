@@ -13,6 +13,135 @@ import imgColorBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo
 
 ## Demos
 
+### Flyout nav
+
+```js isFullscreen
+import React from 'react';
+import {
+  Page,
+  Nav,
+  NavList,
+  NavItem,
+  PageHeader,
+  PageHeaderTools,
+  PageSidebar,
+  PageSection,
+  PageSectionVariants,
+  Menu,
+  MenuContent,
+  MenuList,
+  MenuItem
+} from '@patternfly/react-core';
+
+class VerticalPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isNavOpen: true,
+      activeItem: 0
+    };
+    this.onNavToggle = () => {
+      this.setState({
+        isNavOpen: !this.state.isNavOpen
+      });
+    };
+    this.onNavSelect = result => {
+      this.setState({
+        activeItem: result.itemId
+      });
+    };
+    this.onMenuSelect = (event, itemId) => {
+      this.setState({
+        activeItem: itemId
+      })
+    }
+  }
+
+  render() {
+    const numFlyouts = 5;
+    const FlyoutMenu = ({ depth, children }) => (
+      <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={this.onMenuSelect}>
+        <MenuContent>
+          <MenuList>
+            <MenuItem flyoutMenu={children} itemId={`next-menu-${depth}`} to={`#menu-link-${depth}`}>
+              Next menu
+            </MenuItem>
+            {[...Array(numFlyouts - depth).keys()].map(j => (
+              <MenuItem key={`${depth}-${j}`} itemId={`${depth}-${j}`} to={`#menu-link-${depth}-${j}`}>
+                Menu {depth} item {j}
+              </MenuItem>
+            ))}
+            <MenuItem flyoutMenu={children} itemId={`next-menu-2-${depth}`} to={`#second-menu-link-${depth}`}>
+              Next menu
+            </MenuItem>
+          </MenuList>
+        </MenuContent>
+      </Menu>
+    );
+    let curFlyout = <FlyoutMenu depth={1} />;
+    for (let i = 2; i < numFlyouts - 1; i++) {
+      curFlyout = <FlyoutMenu depth={i}>{curFlyout}</FlyoutMenu>;
+    }
+
+    const { isNavOpen } = this.state;
+
+    const logoProps = {
+      href: 'https://patternfly.org',
+      onClick: () => console.log('clicked logo'),
+      target: '_blank'
+    };
+
+    const Header = (
+      <PageHeader
+        logo="Logo"
+        logoProps={logoProps}
+        headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
+        showNavToggle
+        isNavOpen={isNavOpen}
+        onNavToggle={this.onNavToggle}
+      />
+    );
+
+    const { activeItem } = this.state;
+
+    const Sidebar = (
+      <PageSidebar
+        nav={
+          <Nav onSelect={this.onNavSelect}>
+            <NavList>
+              <NavItem id="flyout-link1" to="#flyout-link1" itemId={0} isActive={activeItem === 0}>
+                Link 1
+              </NavItem>
+              <NavItem
+                flyout={curFlyout}
+                id="flyout-link2"
+                to="#flyout-link2"
+                itemId={1}
+                isActive={activeItem === 1}
+              >
+                Flyout
+              </NavItem>
+              <NavItem id="flyout-link3" to="#flyout-link3" itemId={2} isActive={activeItem === 2}>
+                Link 2
+              </NavItem>
+            </NavList>
+          </Nav>
+        }
+        isNavOpen={isNavOpen}
+      />
+    );
+
+    return (
+      <Page header={Header} sidebar={Sidebar}>
+        <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
+        <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
+        <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
+      </Page>
+    );
+  }
+}
+```
+
 ### Default nav
 
 ```js isFullscreen
