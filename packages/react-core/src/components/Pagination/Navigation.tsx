@@ -204,7 +204,9 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
               className={css(styles.formControl)}
               aria-label={currPage}
               type="number"
-              disabled={isDisabled || (page === firstPage && page === lastPage && itemCount >= 0) || page === 0}
+              disabled={
+                isDisabled || (itemCount && page === firstPage && page === lastPage && itemCount >= 0) || page === 0
+              }
               min={lastPage <= 0 && firstPage <= 0 ? 0 : 1}
               max={lastPage}
               value={userInputPage}

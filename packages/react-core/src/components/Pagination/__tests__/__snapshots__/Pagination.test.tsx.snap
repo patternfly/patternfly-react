@@ -73,14 +73,14 @@ exports[`component render custom pagination toggle 1`] = `
       className="pf-c-pagination__total-items"
     >
       <ToggleTemplate
-        firstIndex={1}
+        firstIndex={-9}
         itemCount={40}
         itemsTitle=""
         lastIndex={10}
         ofWord="of"
       >
         <b>
-          1
+          -9
            - 
           10
         </b>
@@ -97,7 +97,7 @@ exports[`component render custom pagination toggle 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="down"
-      firstIndex={1}
+      firstIndex={-9}
       isDisabled={false}
       itemCount={40}
       itemsPerPageTitle="Items per page"
@@ -194,7 +194,7 @@ exports[`component render custom pagination toggle 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={1}
+            firstIndex={-9}
             isDisabled={false}
             isOpen={false}
             itemCount={40}
@@ -218,7 +218,7 @@ exports[`component render custom pagination toggle 1`] = `
         >
           <OptionsToggle
             aria-haspopup={true}
-            firstIndex={1}
+            firstIndex={-9}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-14"
             isDisabled={false}
@@ -246,7 +246,7 @@ exports[`component render custom pagination toggle 1`] = `
                     <span
                       class="pf-c-options-menu__toggle-text"
                     >
-                      1 - 10 - 40 - 
+                      -9 - 10 - 40 - 
                     </span>
                     <button
                       aria-expanded="false"
@@ -290,7 +290,7 @@ exports[`component render custom pagination toggle 1`] = `
               <span
                 className="pf-c-options-menu__toggle-text"
               >
-                1 - 10 - 40 - 
+                -9 - 10 - 40 - 
               </span>
               <DropdownToggle
                 aria-label="Items per page"
@@ -313,7 +313,7 @@ exports[`component render custom pagination toggle 1`] = `
                         <span
                           class="pf-c-options-menu__toggle-text"
                         >
-                          1 - 10 - 40 - 
+                          -9 - 10 - 40 - 
                         </span>
                         <button
                           aria-expanded="false"
@@ -378,7 +378,7 @@ exports[`component render custom pagination toggle 1`] = `
                           <span
                             class="pf-c-options-menu__toggle-text"
                           >
-                            1 - 10 - 40 - 
+                            -9 - 10 - 40 - 
                           </span>
                           <button
                             aria-expanded="false"
@@ -468,6 +468,7 @@ exports[`component render custom pagination toggle 1`] = `
       firstPage={1}
       isCompact={false}
       isDisabled={false}
+      itemCount={40}
       lastPage={4}
       ofWord="of"
       onFirstClick={[Function]}
@@ -816,14 +817,14 @@ exports[`component render custom perPageOptions 1`] = `
       className="pf-c-pagination__total-items"
     >
       <ToggleTemplate
-        firstIndex={1}
+        firstIndex={-9}
         itemCount={40}
         itemsTitle=""
         lastIndex={10}
         ofWord="of"
       >
         <b>
-          1
+          -9
            - 
           10
         </b>
@@ -840,7 +841,7 @@ exports[`component render custom perPageOptions 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="down"
-      firstIndex={1}
+      firstIndex={-9}
       isDisabled={false}
       itemCount={40}
       itemsPerPageTitle="Items per page"
@@ -889,7 +890,7 @@ exports[`component render custom perPageOptions 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={1}
+            firstIndex={-9}
             isDisabled={false}
             isOpen={false}
             itemCount={40}
@@ -913,7 +914,7 @@ exports[`component render custom perPageOptions 1`] = `
         >
           <OptionsToggle
             aria-haspopup={true}
-            firstIndex={1}
+            firstIndex={-9}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-9"
             isDisabled={false}
@@ -942,7 +943,7 @@ exports[`component render custom perPageOptions 1`] = `
                       class="pf-c-options-menu__toggle-text"
                     >
                       <b>
-                        1
+                        -9
                          - 
                         10
                       </b>
@@ -998,14 +999,14 @@ exports[`component render custom perPageOptions 1`] = `
                 className="pf-c-options-menu__toggle-text"
               >
                 <ToggleTemplate
-                  firstIndex={1}
+                  firstIndex={-9}
                   itemCount={40}
                   itemsTitle=""
                   lastIndex={10}
                   ofWord="of"
                 >
                   <b>
-                    1
+                    -9
                      - 
                     10
                   </b>
@@ -1040,7 +1041,7 @@ exports[`component render custom perPageOptions 1`] = `
                           class="pf-c-options-menu__toggle-text"
                         >
                           <b>
-                            1
+                            -9
                              - 
                             10
                           </b>
@@ -1117,7 +1118,7 @@ exports[`component render custom perPageOptions 1`] = `
                             class="pf-c-options-menu__toggle-text"
                           >
                             <b>
-                              1
+                              -9
                                - 
                               10
                             </b>
@@ -1218,6 +1219,7 @@ exports[`component render custom perPageOptions 1`] = `
       firstPage={1}
       isCompact={false}
       isDisabled={false}
+      itemCount={40}
       lastPage={4}
       ofWord="of"
       onFirstClick={[Function]}
@@ -1578,14 +1580,14 @@ exports[`component render custom start end 1`] = `
       className="pf-c-pagination__total-items"
     >
       <ToggleTemplate
-        firstIndex={1}
+        firstIndex={-9}
         itemCount={40}
         itemsTitle=""
         lastIndex={10}
         ofWord="of"
       >
         <b>
-          1
+          -9
            - 
           10
         </b>
@@ -2028,6 +2030,7 @@ exports[`component render custom start end 1`] = `
       firstPage={5}
       isCompact={false}
       isDisabled={false}
+      itemCount={40}
       lastPage={4}
       ofWord="of"
       onFirstClick={[Function]}
@@ -2367,14 +2370,14 @@ exports[`component render empty per page options 1`] = `
       className="pf-c-pagination__total-items"
     >
       <ToggleTemplate
-        firstIndex={1}
+        firstIndex={-9}
         itemCount={40}
         itemsTitle=""
         lastIndex={10}
         ofWord="of"
       >
         <b>
-          1
+          -9
            - 
           10
         </b>
@@ -2391,7 +2394,7 @@ exports[`component render empty per page options 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="down"
-      firstIndex={1}
+      firstIndex={-9}
       isDisabled={false}
       itemCount={40}
       itemsPerPageTitle="Items per page"
@@ -2421,7 +2424,7 @@ exports[`component render empty per page options 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={1}
+            firstIndex={-9}
             isDisabled={false}
             isOpen={false}
             itemCount={40}
@@ -2445,7 +2448,7 @@ exports[`component render empty per page options 1`] = `
         >
           <OptionsToggle
             aria-haspopup={false}
-            firstIndex={1}
+            firstIndex={-9}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-10"
             isDisabled={false}
@@ -2490,6 +2493,7 @@ exports[`component render empty per page options 1`] = `
       firstPage={1}
       isCompact={false}
       isDisabled={false}
+      itemCount={40}
       lastPage={4}
       ofWord="of"
       onFirstClick={[Function]}
@@ -2775,6 +2779,31 @@ exports[`component render empty per page options 1`] = `
     </Navigation>
   </div>
 </Pagination>
+`;
+
+exports[`component render indeterminate count (no item count) 1`] = `
+<span
+  className="pf-c-options-menu__toggle-text"
+>
+  <ToggleTemplate
+    firstIndex={1}
+    itemsTitle=""
+    lastIndex={10}
+  >
+    <b>
+      1
+       - 
+      10
+    </b>
+     
+    of
+     
+    <b>
+      0
+    </b>
+     
+  </ToggleTemplate>
+</span>
 `;
 
 exports[`component render last page 1`] = `
@@ -3300,6 +3329,7 @@ exports[`component render last page 1`] = `
       firstPage={1}
       isCompact={false}
       isDisabled={false}
+      itemCount={20}
       lastPage={2}
       ofWord="of"
       onFirstClick={[Function]}
@@ -3660,14 +3690,14 @@ exports[`component render limited number of pages 1`] = `
       className="pf-c-pagination__total-items"
     >
       <ToggleTemplate
-        firstIndex={1}
+        firstIndex={-19}
         itemCount={20}
         itemsTitle=""
         lastIndex={20}
         ofWord="of"
       >
         <b>
-          1
+          -19
            - 
           20
         </b>
@@ -3684,7 +3714,7 @@ exports[`component render limited number of pages 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="down"
-      firstIndex={1}
+      firstIndex={-19}
       isDisabled={false}
       itemCount={20}
       itemsPerPageTitle="Items per page"
@@ -3781,7 +3811,7 @@ exports[`component render limited number of pages 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={1}
+            firstIndex={-19}
             isDisabled={false}
             isOpen={false}
             itemCount={20}
@@ -3805,7 +3835,7 @@ exports[`component render limited number of pages 1`] = `
         >
           <OptionsToggle
             aria-haspopup={true}
-            firstIndex={1}
+            firstIndex={-19}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-6"
             isDisabled={false}
@@ -3834,7 +3864,7 @@ exports[`component render limited number of pages 1`] = `
                       class="pf-c-options-menu__toggle-text"
                     >
                       <b>
-                        1
+                        -19
                          - 
                         20
                       </b>
@@ -3890,14 +3920,14 @@ exports[`component render limited number of pages 1`] = `
                 className="pf-c-options-menu__toggle-text"
               >
                 <ToggleTemplate
-                  firstIndex={1}
+                  firstIndex={-19}
                   itemCount={20}
                   itemsTitle=""
                   lastIndex={20}
                   ofWord="of"
                 >
                   <b>
-                    1
+                    -19
                      - 
                     20
                   </b>
@@ -3932,7 +3962,7 @@ exports[`component render limited number of pages 1`] = `
                           class="pf-c-options-menu__toggle-text"
                         >
                           <b>
-                            1
+                            -19
                              - 
                             20
                           </b>
@@ -4009,7 +4039,7 @@ exports[`component render limited number of pages 1`] = `
                             class="pf-c-options-menu__toggle-text"
                           >
                             <b>
-                              1
+                              -19
                                - 
                               20
                             </b>
@@ -4110,6 +4140,7 @@ exports[`component render limited number of pages 1`] = `
       firstPage={1}
       isCompact={false}
       isDisabled={false}
+      itemCount={20}
       lastPage={1}
       ofWord="of"
       onFirstClick={[Function]}
@@ -4472,14 +4503,14 @@ exports[`component render no items 1`] = `
       className="pf-c-pagination__total-items"
     >
       <ToggleTemplate
-        firstIndex={0}
+        firstIndex={-9}
         itemCount={0}
         itemsTitle=""
         lastIndex={0}
         ofWord="of"
       >
         <b>
-          0
+          -9
            - 
           0
         </b>
@@ -4496,14 +4527,18 @@ exports[`component render no items 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="down"
-      firstIndex={0}
+      firstIndex={-9}
       isDisabled={false}
       itemCount={0}
       itemsPerPageTitle="Items per page"
       itemsTitle=""
       lastIndex={0}
+<<<<<<< HEAD
       lastPage={0}
       ofWord="of"
+=======
+      lastPage={1}
+>>>>>>> 87be7e495 (feat(Pagination): handling corner cases)
       onPerPageSelect={[Function]}
       optionsToggle="Items per page"
       page={0}
@@ -4593,7 +4628,7 @@ exports[`component render no items 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={0}
+            firstIndex={-9}
             isDisabled={false}
             isOpen={false}
             itemCount={0}
@@ -4617,7 +4652,7 @@ exports[`component render no items 1`] = `
         >
           <OptionsToggle
             aria-haspopup={true}
-            firstIndex={0}
+            firstIndex={-9}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-11"
             isDisabled={false}
@@ -4646,7 +4681,7 @@ exports[`component render no items 1`] = `
                       class="pf-c-options-menu__toggle-text"
                     >
                       <b>
-                        0
+                        -9
                          - 
                         0
                       </b>
@@ -4666,7 +4701,6 @@ exports[`component render no items 1`] = `
                       data-ouia-component-id="OUIA-Generated-DropdownToggle-11"
                       data-ouia-component-type="PF4/DropdownToggle"
                       data-ouia-safe="true"
-                      disabled=""
                       id="pagination-options-menu-toggle-10"
                       type="button"
                     >
@@ -4703,14 +4737,14 @@ exports[`component render no items 1`] = `
                 className="pf-c-options-menu__toggle-text"
               >
                 <ToggleTemplate
-                  firstIndex={0}
+                  firstIndex={-9}
                   itemCount={0}
                   itemsTitle=""
                   lastIndex={0}
                   ofWord="of"
                 >
                   <b>
-                    0
+                    -9
                      - 
                     0
                   </b>
@@ -4727,7 +4761,7 @@ exports[`component render no items 1`] = `
                 aria-label="Items per page"
                 className="pf-c-options-menu__toggle-button"
                 id="pagination-options-menu-toggle-10"
-                isDisabled={true}
+                isDisabled={0}
                 isOpen={false}
                 onEnter={[Function]}
                 onToggle={[Function]}
@@ -4745,7 +4779,7 @@ exports[`component render no items 1`] = `
                           class="pf-c-options-menu__toggle-text"
                         >
                           <b>
-                            0
+                            -9
                              - 
                             0
                           </b>
@@ -4765,7 +4799,6 @@ exports[`component render no items 1`] = `
                           data-ouia-component-id="OUIA-Generated-DropdownToggle-11"
                           data-ouia-component-type="PF4/DropdownToggle"
                           data-ouia-safe="true"
-                          disabled=""
                           id="pagination-options-menu-toggle-10"
                           type="button"
                         >
@@ -4802,7 +4835,7 @@ exports[`component render no items 1`] = `
                   getMenuRef={null}
                   id="pagination-options-menu-toggle-10"
                   isActive={false}
-                  isDisabled={true}
+                  isDisabled={0}
                   isOpen={false}
                   isPlain={false}
                   isPrimary={false}
@@ -4823,7 +4856,7 @@ exports[`component render no items 1`] = `
                             class="pf-c-options-menu__toggle-text"
                           >
                             <b>
-                              0
+                              -9
                                - 
                               0
                             </b>
@@ -4843,7 +4876,6 @@ exports[`component render no items 1`] = `
                             data-ouia-component-id="OUIA-Generated-DropdownToggle-11"
                             data-ouia-component-type="PF4/DropdownToggle"
                             data-ouia-safe="true"
-                            disabled=""
                             id="pagination-options-menu-toggle-10"
                             type="button"
                           >
@@ -4877,7 +4909,7 @@ exports[`component render no items 1`] = `
                     data-ouia-component-id="OUIA-Generated-DropdownToggle-11"
                     data-ouia-component-type="PF4/DropdownToggle"
                     data-ouia-safe={true}
-                    disabled={true}
+                    disabled={0}
                     id="pagination-options-menu-toggle-10"
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -4925,7 +4957,8 @@ exports[`component render no items 1`] = `
       firstPage={1}
       isCompact={false}
       isDisabled={false}
-      lastPage={0}
+      itemCount={0}
+      lastPage={1}
       ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -5073,20 +5106,14 @@ exports[`component render no items 1`] = `
             aria-label="Current page"
             className="pf-c-form-control"
             disabled={true}
-            max={0}
+            max={1}
             min={1}
             onChange={[Function]}
             onKeyDown={[Function]}
             type="number"
             value={0}
           />
-          <span
-            aria-hidden="true"
-          >
-            of
-             
-            0
-          </span>
+          0
         </div>
         <div
           className="pf-c-pagination__nav-control"
@@ -5094,7 +5121,7 @@ exports[`component render no items 1`] = `
           <Button
             aria-label="Go to next page"
             data-action="next"
-            isDisabled={true}
+            isDisabled={false}
             onClick={[Function]}
             variant="plain"
           >
@@ -5102,22 +5129,21 @@ exports[`component render no items 1`] = `
               aria-label="Go to next page"
               data-action="next"
               innerRef={null}
-              isDisabled={true}
+              isDisabled={false}
               onClick={[Function]}
               variant="plain"
             >
               <button
-                aria-disabled={true}
+                aria-disabled={false}
                 aria-label="Go to next page"
-                className="pf-c-button pf-m-plain pf-m-disabled"
+                className="pf-c-button pf-m-plain"
                 data-action="next"
                 data-ouia-component-id="OUIA-Generated-Button-plain-45"
                 data-ouia-component-type="PF4/Button"
                 data-ouia-safe={true}
-                disabled={true}
+                disabled={false}
                 onClick={[Function]}
                 role={null}
-                tabIndex={null}
                 type="button"
               >
                 <AngleRightIcon
@@ -5154,7 +5180,7 @@ exports[`component render no items 1`] = `
           <Button
             aria-label="Go to last page"
             data-action="last"
-            isDisabled={true}
+            isDisabled={false}
             onClick={[Function]}
             variant="plain"
           >
@@ -5162,22 +5188,21 @@ exports[`component render no items 1`] = `
               aria-label="Go to last page"
               data-action="last"
               innerRef={null}
-              isDisabled={true}
+              isDisabled={false}
               onClick={[Function]}
               variant="plain"
             >
               <button
-                aria-disabled={true}
+                aria-disabled={false}
                 aria-label="Go to last page"
-                className="pf-c-button pf-m-plain pf-m-disabled"
+                className="pf-c-button pf-m-plain"
                 data-action="last"
                 data-ouia-component-id="OUIA-Generated-Button-plain-46"
                 data-ouia-component-type="PF4/Button"
                 data-ouia-safe={true}
-                disabled={true}
+                disabled={false}
                 onClick={[Function]}
                 role={null}
-                tabIndex={null}
                 type="button"
               >
                 <AngleDoubleRightIcon
@@ -5287,7 +5312,7 @@ exports[`component render should render correctly bottom 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="up"
-      firstIndex={1}
+      firstIndex={-9}
       isDisabled={false}
       itemCount={20}
       itemsPerPageTitle="Items per page"
@@ -5384,7 +5409,7 @@ exports[`component render should render correctly bottom 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={1}
+            firstIndex={-9}
             isDisabled={false}
             isOpen={false}
             itemCount={20}
@@ -5408,7 +5433,7 @@ exports[`component render should render correctly bottom 1`] = `
         >
           <OptionsToggle
             aria-haspopup={true}
-            firstIndex={1}
+            firstIndex={-9}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-1"
             isDisabled={false}
@@ -5437,7 +5462,7 @@ exports[`component render should render correctly bottom 1`] = `
                       class="pf-c-options-menu__toggle-text"
                     >
                       <b>
-                        1
+                        -9
                          - 
                         10
                       </b>
@@ -5493,14 +5518,14 @@ exports[`component render should render correctly bottom 1`] = `
                 className="pf-c-options-menu__toggle-text"
               >
                 <ToggleTemplate
-                  firstIndex={1}
+                  firstIndex={-9}
                   itemCount={20}
                   itemsTitle=""
                   lastIndex={10}
                   ofWord="of"
                 >
                   <b>
-                    1
+                    -9
                      - 
                     10
                   </b>
@@ -5535,7 +5560,7 @@ exports[`component render should render correctly bottom 1`] = `
                           class="pf-c-options-menu__toggle-text"
                         >
                           <b>
-                            1
+                            -9
                              - 
                             10
                           </b>
@@ -5612,7 +5637,7 @@ exports[`component render should render correctly bottom 1`] = `
                             class="pf-c-options-menu__toggle-text"
                           >
                             <b>
-                              1
+                              -9
                                - 
                               10
                             </b>
@@ -5713,6 +5738,7 @@ exports[`component render should render correctly bottom 1`] = `
       firstPage={1}
       isCompact={false}
       isDisabled={false}
+      itemCount={20}
       lastPage={2}
       ofWord="of"
       onFirstClick={[Function]}
@@ -6073,7 +6099,7 @@ exports[`component render should render correctly bottom sticky 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="up"
-      firstIndex={1}
+      firstIndex={-9}
       isDisabled={false}
       itemCount={20}
       itemsPerPageTitle="Items per page"
@@ -6170,7 +6196,7 @@ exports[`component render should render correctly bottom sticky 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={1}
+            firstIndex={-9}
             isDisabled={false}
             isOpen={false}
             itemCount={20}
@@ -6194,7 +6220,7 @@ exports[`component render should render correctly bottom sticky 1`] = `
         >
           <OptionsToggle
             aria-haspopup={true}
-            firstIndex={1}
+            firstIndex={-9}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-4"
             isDisabled={false}
@@ -6223,7 +6249,7 @@ exports[`component render should render correctly bottom sticky 1`] = `
                       class="pf-c-options-menu__toggle-text"
                     >
                       <b>
-                        1
+                        -9
                          - 
                         10
                       </b>
@@ -6279,14 +6305,14 @@ exports[`component render should render correctly bottom sticky 1`] = `
                 className="pf-c-options-menu__toggle-text"
               >
                 <ToggleTemplate
-                  firstIndex={1}
+                  firstIndex={-9}
                   itemCount={20}
                   itemsTitle=""
                   lastIndex={10}
                   ofWord="of"
                 >
                   <b>
-                    1
+                    -9
                      - 
                     10
                   </b>
@@ -6321,7 +6347,7 @@ exports[`component render should render correctly bottom sticky 1`] = `
                           class="pf-c-options-menu__toggle-text"
                         >
                           <b>
-                            1
+                            -9
                              - 
                             10
                           </b>
@@ -6398,7 +6424,7 @@ exports[`component render should render correctly bottom sticky 1`] = `
                             class="pf-c-options-menu__toggle-text"
                           >
                             <b>
-                              1
+                              -9
                                - 
                               10
                             </b>
@@ -6499,6 +6525,7 @@ exports[`component render should render correctly bottom sticky 1`] = `
       firstPage={1}
       isCompact={false}
       isDisabled={false}
+      itemCount={20}
       lastPage={2}
       ofWord="of"
       onFirstClick={[Function]}
@@ -6859,14 +6886,14 @@ exports[`component render should render correctly compact 1`] = `
       className="pf-c-pagination__total-items"
     >
       <ToggleTemplate
-        firstIndex={1}
+        firstIndex={-9}
         itemCount={20}
         itemsTitle=""
         lastIndex={10}
         ofWord="of"
       >
         <b>
-          1
+          -9
            - 
           10
         </b>
@@ -6883,7 +6910,7 @@ exports[`component render should render correctly compact 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="down"
-      firstIndex={1}
+      firstIndex={-9}
       isDisabled={false}
       itemCount={20}
       itemsPerPageTitle="Items per page"
@@ -6980,7 +7007,7 @@ exports[`component render should render correctly compact 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={1}
+            firstIndex={-9}
             isDisabled={false}
             isOpen={false}
             itemCount={20}
@@ -7004,7 +7031,7 @@ exports[`component render should render correctly compact 1`] = `
         >
           <OptionsToggle
             aria-haspopup={true}
-            firstIndex={1}
+            firstIndex={-9}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-2"
             isDisabled={false}
@@ -7033,7 +7060,7 @@ exports[`component render should render correctly compact 1`] = `
                       class="pf-c-options-menu__toggle-text"
                     >
                       <b>
-                        1
+                        -9
                          - 
                         10
                       </b>
@@ -7089,14 +7116,14 @@ exports[`component render should render correctly compact 1`] = `
                 className="pf-c-options-menu__toggle-text"
               >
                 <ToggleTemplate
-                  firstIndex={1}
+                  firstIndex={-9}
                   itemCount={20}
                   itemsTitle=""
                   lastIndex={10}
                   ofWord="of"
                 >
                   <b>
-                    1
+                    -9
                      - 
                     10
                   </b>
@@ -7131,7 +7158,7 @@ exports[`component render should render correctly compact 1`] = `
                           class="pf-c-options-menu__toggle-text"
                         >
                           <b>
-                            1
+                            -9
                              - 
                             10
                           </b>
@@ -7208,7 +7235,7 @@ exports[`component render should render correctly compact 1`] = `
                             class="pf-c-options-menu__toggle-text"
                           >
                             <b>
-                              1
+                              -9
                                - 
                               10
                             </b>
@@ -7309,6 +7336,7 @@ exports[`component render should render correctly compact 1`] = `
       firstPage={1}
       isCompact={true}
       isDisabled={false}
+      itemCount={20}
       lastPage={2}
       ofWord="of"
       onFirstClick={[Function]}
@@ -7528,14 +7556,14 @@ exports[`component render should render correctly disabled 1`] = `
       className="pf-c-pagination__total-items"
     >
       <ToggleTemplate
-        firstIndex={1}
+        firstIndex={-9}
         itemCount={20}
         itemsTitle=""
         lastIndex={10}
         ofWord="of"
       >
         <b>
-          1
+          -9
            - 
           10
         </b>
@@ -7552,7 +7580,7 @@ exports[`component render should render correctly disabled 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="down"
-      firstIndex={1}
+      firstIndex={-9}
       isDisabled={true}
       itemCount={20}
       itemsPerPageTitle="Items per page"
@@ -7649,7 +7677,7 @@ exports[`component render should render correctly disabled 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={1}
+            firstIndex={-9}
             isDisabled={true}
             isOpen={false}
             itemCount={20}
@@ -7673,7 +7701,7 @@ exports[`component render should render correctly disabled 1`] = `
         >
           <OptionsToggle
             aria-haspopup={true}
-            firstIndex={1}
+            firstIndex={-9}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-5"
             isDisabled={true}
@@ -7702,7 +7730,7 @@ exports[`component render should render correctly disabled 1`] = `
                       class="pf-c-options-menu__toggle-text"
                     >
                       <b>
-                        1
+                        -9
                          - 
                         10
                       </b>
@@ -7759,14 +7787,14 @@ exports[`component render should render correctly disabled 1`] = `
                 className="pf-c-options-menu__toggle-text"
               >
                 <ToggleTemplate
-                  firstIndex={1}
+                  firstIndex={-9}
                   itemCount={20}
                   itemsTitle=""
                   lastIndex={10}
                   ofWord="of"
                 >
                   <b>
-                    1
+                    -9
                      - 
                     10
                   </b>
@@ -7801,7 +7829,7 @@ exports[`component render should render correctly disabled 1`] = `
                           class="pf-c-options-menu__toggle-text"
                         >
                           <b>
-                            1
+                            -9
                              - 
                             10
                           </b>
@@ -7879,7 +7907,7 @@ exports[`component render should render correctly disabled 1`] = `
                             class="pf-c-options-menu__toggle-text"
                           >
                             <b>
-                              1
+                              -9
                                - 
                               10
                             </b>
@@ -7981,6 +8009,7 @@ exports[`component render should render correctly disabled 1`] = `
       firstPage={1}
       isCompact={false}
       isDisabled={true}
+      itemCount={20}
       lastPage={2}
       ofWord="of"
       onFirstClick={[Function]}
@@ -8343,14 +8372,14 @@ exports[`component render should render correctly sticky 1`] = `
       className="pf-c-pagination__total-items"
     >
       <ToggleTemplate
-        firstIndex={1}
+        firstIndex={-9}
         itemCount={20}
         itemsTitle=""
         lastIndex={10}
         ofWord="of"
       >
         <b>
-          1
+          -9
            - 
           10
         </b>
@@ -8367,7 +8396,7 @@ exports[`component render should render correctly sticky 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="down"
-      firstIndex={1}
+      firstIndex={-9}
       isDisabled={false}
       itemCount={20}
       itemsPerPageTitle="Items per page"
@@ -8464,7 +8493,7 @@ exports[`component render should render correctly sticky 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={1}
+            firstIndex={-9}
             isDisabled={false}
             isOpen={false}
             itemCount={20}
@@ -8488,7 +8517,7 @@ exports[`component render should render correctly sticky 1`] = `
         >
           <OptionsToggle
             aria-haspopup={true}
-            firstIndex={1}
+            firstIndex={-9}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-3"
             isDisabled={false}
@@ -8517,7 +8546,7 @@ exports[`component render should render correctly sticky 1`] = `
                       class="pf-c-options-menu__toggle-text"
                     >
                       <b>
-                        1
+                        -9
                          - 
                         10
                       </b>
@@ -8573,14 +8602,14 @@ exports[`component render should render correctly sticky 1`] = `
                 className="pf-c-options-menu__toggle-text"
               >
                 <ToggleTemplate
-                  firstIndex={1}
+                  firstIndex={-9}
                   itemCount={20}
                   itemsTitle=""
                   lastIndex={10}
                   ofWord="of"
                 >
                   <b>
-                    1
+                    -9
                      - 
                     10
                   </b>
@@ -8615,7 +8644,7 @@ exports[`component render should render correctly sticky 1`] = `
                           class="pf-c-options-menu__toggle-text"
                         >
                           <b>
-                            1
+                            -9
                              - 
                             10
                           </b>
@@ -8692,7 +8721,7 @@ exports[`component render should render correctly sticky 1`] = `
                             class="pf-c-options-menu__toggle-text"
                           >
                             <b>
-                              1
+                              -9
                                - 
                               10
                             </b>
@@ -8793,6 +8822,7 @@ exports[`component render should render correctly sticky 1`] = `
       firstPage={1}
       isCompact={false}
       isDisabled={false}
+      itemCount={20}
       lastPage={2}
       ofWord="of"
       onFirstClick={[Function]}
@@ -9153,14 +9183,14 @@ exports[`component render should render correctly top 1`] = `
       className="pf-c-pagination__total-items"
     >
       <ToggleTemplate
-        firstIndex={1}
+        firstIndex={-9}
         itemCount={20}
         itemsTitle=""
         lastIndex={10}
         ofWord="of"
       >
         <b>
-          1
+          -9
            - 
           10
         </b>
@@ -9177,7 +9207,7 @@ exports[`component render should render correctly top 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="down"
-      firstIndex={1}
+      firstIndex={-9}
       isDisabled={false}
       itemCount={20}
       itemsPerPageTitle="Items per page"
@@ -9274,7 +9304,7 @@ exports[`component render should render correctly top 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={1}
+            firstIndex={-9}
             isDisabled={false}
             isOpen={false}
             itemCount={20}
@@ -9298,7 +9328,7 @@ exports[`component render should render correctly top 1`] = `
         >
           <OptionsToggle
             aria-haspopup={true}
-            firstIndex={1}
+            firstIndex={-9}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-0"
             isDisabled={false}
@@ -9327,7 +9357,7 @@ exports[`component render should render correctly top 1`] = `
                       class="pf-c-options-menu__toggle-text"
                     >
                       <b>
-                        1
+                        -9
                          - 
                         10
                       </b>
@@ -9383,14 +9413,14 @@ exports[`component render should render correctly top 1`] = `
                 className="pf-c-options-menu__toggle-text"
               >
                 <ToggleTemplate
-                  firstIndex={1}
+                  firstIndex={-9}
                   itemCount={20}
                   itemsTitle=""
                   lastIndex={10}
                   ofWord="of"
                 >
                   <b>
-                    1
+                    -9
                      - 
                     10
                   </b>
@@ -9425,7 +9455,7 @@ exports[`component render should render correctly top 1`] = `
                           class="pf-c-options-menu__toggle-text"
                         >
                           <b>
-                            1
+                            -9
                              - 
                             10
                           </b>
@@ -9502,7 +9532,7 @@ exports[`component render should render correctly top 1`] = `
                             class="pf-c-options-menu__toggle-text"
                           >
                             <b>
-                              1
+                              -9
                                - 
                               10
                             </b>
@@ -9603,6 +9633,7 @@ exports[`component render should render correctly top 1`] = `
       firstPage={1}
       isCompact={false}
       isDisabled={false}
+      itemCount={20}
       lastPage={2}
       ofWord="of"
       onFirstClick={[Function]}
@@ -9953,13 +9984,13 @@ exports[`component render titles 1`] = `
       className="pf-c-pagination__total-items"
     >
       <ToggleTemplate
-        firstIndex={1}
+        firstIndex={-9}
         itemCount={40}
         itemsTitle="values"
         lastIndex={10}
       >
         <b>
-          1
+          -9
            - 
           10
         </b>
@@ -9977,7 +10008,7 @@ exports[`component render titles 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="down"
-      firstIndex={1}
+      firstIndex={-9}
       isDisabled={false}
       itemCount={40}
       itemsPerPageTitle="Items per page"
@@ -10074,7 +10105,7 @@ exports[`component render titles 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={1}
+            firstIndex={-9}
             isDisabled={false}
             isOpen={false}
             itemCount={40}
@@ -10098,7 +10129,7 @@ exports[`component render titles 1`] = `
         >
           <OptionsToggle
             aria-haspopup={true}
-            firstIndex={1}
+            firstIndex={-9}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-13"
             isDisabled={false}
@@ -10127,7 +10158,7 @@ exports[`component render titles 1`] = `
                       class="pf-c-options-menu__toggle-text"
                     >
                       <b>
-                        1
+                        -9
                          - 
                         10
                       </b>
@@ -10183,14 +10214,14 @@ exports[`component render titles 1`] = `
                 className="pf-c-options-menu__toggle-text"
               >
                 <ToggleTemplate
-                  firstIndex={1}
+                  firstIndex={-9}
                   itemCount={40}
                   itemsTitle="values"
                   lastIndex={10}
                   ofWord="of"
                 >
                   <b>
-                    1
+                    -9
                      - 
                     10
                   </b>
@@ -10226,7 +10257,7 @@ exports[`component render titles 1`] = `
                           class="pf-c-options-menu__toggle-text"
                         >
                           <b>
-                            1
+                            -9
                              - 
                             10
                           </b>
@@ -10303,7 +10334,7 @@ exports[`component render titles 1`] = `
                             class="pf-c-options-menu__toggle-text"
                           >
                             <b>
-                              1
+                              -9
                                - 
                               10
                             </b>
@@ -10404,6 +10435,7 @@ exports[`component render titles 1`] = `
       firstPage={1}
       isCompact={false}
       isDisabled={false}
+      itemCount={40}
       lastPage={4}
       ofWord="of"
       onFirstClick={[Function]}
@@ -10765,14 +10797,14 @@ exports[`component render up drop direction 1`] = `
       className="pf-c-pagination__total-items"
     >
       <ToggleTemplate
-        firstIndex={1}
+        firstIndex={-9}
         itemCount={40}
         itemsTitle=""
         lastIndex={10}
         ofWord="of"
       >
         <b>
-          1
+          -9
            - 
           10
         </b>
@@ -10789,7 +10821,7 @@ exports[`component render up drop direction 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="up"
-      firstIndex={1}
+      firstIndex={-9}
       isDisabled={false}
       itemCount={40}
       itemsPerPageTitle="Items per page"
@@ -10886,7 +10918,7 @@ exports[`component render up drop direction 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={1}
+            firstIndex={-9}
             isDisabled={false}
             isOpen={false}
             itemCount={40}
@@ -10910,7 +10942,7 @@ exports[`component render up drop direction 1`] = `
         >
           <OptionsToggle
             aria-haspopup={true}
-            firstIndex={1}
+            firstIndex={-9}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-15"
             isDisabled={false}
@@ -10939,7 +10971,7 @@ exports[`component render up drop direction 1`] = `
                       class="pf-c-options-menu__toggle-text"
                     >
                       <b>
-                        1
+                        -9
                          - 
                         10
                       </b>
@@ -10995,14 +11027,14 @@ exports[`component render up drop direction 1`] = `
                 className="pf-c-options-menu__toggle-text"
               >
                 <ToggleTemplate
-                  firstIndex={1}
+                  firstIndex={-9}
                   itemCount={40}
                   itemsTitle=""
                   lastIndex={10}
                   ofWord="of"
                 >
                   <b>
-                    1
+                    -9
                      - 
                     10
                   </b>
@@ -11037,7 +11069,7 @@ exports[`component render up drop direction 1`] = `
                           class="pf-c-options-menu__toggle-text"
                         >
                           <b>
-                            1
+                            -9
                              - 
                             10
                           </b>
@@ -11114,7 +11146,7 @@ exports[`component render up drop direction 1`] = `
                             class="pf-c-options-menu__toggle-text"
                           >
                             <b>
-                              1
+                              -9
                                - 
                               10
                             </b>
@@ -11215,6 +11247,7 @@ exports[`component render up drop direction 1`] = `
       firstPage={1}
       isCompact={false}
       isDisabled={false}
+      itemCount={40}
       lastPage={4}
       ofWord="of"
       onFirstClick={[Function]}
@@ -11575,14 +11608,14 @@ exports[`component render zero results 1`] = `
       className="pf-c-pagination__total-items"
     >
       <ToggleTemplate
-        firstIndex={0}
+        firstIndex={-9}
         itemCount={0}
         itemsTitle=""
         lastIndex={0}
         ofWord="of"
       >
         <b>
-          0
+          -9
            - 
           0
         </b>
@@ -11599,14 +11632,18 @@ exports[`component render zero results 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="down"
-      firstIndex={0}
+      firstIndex={-9}
       isDisabled={false}
       itemCount={0}
       itemsPerPageTitle="Items per page"
       itemsTitle=""
       lastIndex={0}
+<<<<<<< HEAD
       lastPage={0}
       ofWord="of"
+=======
+      lastPage={1}
+>>>>>>> 87be7e495 (feat(Pagination): handling corner cases)
       onPerPageSelect={[Function]}
       optionsToggle="Items per page"
       page={0}
@@ -11696,7 +11733,7 @@ exports[`component render zero results 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={0}
+            firstIndex={-9}
             isDisabled={false}
             isOpen={false}
             itemCount={0}
@@ -11720,7 +11757,7 @@ exports[`component render zero results 1`] = `
         >
           <OptionsToggle
             aria-haspopup={true}
-            firstIndex={0}
+            firstIndex={-9}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-7"
             isDisabled={false}
@@ -11749,7 +11786,7 @@ exports[`component render zero results 1`] = `
                       class="pf-c-options-menu__toggle-text"
                     >
                       <b>
-                        0
+                        -9
                          - 
                         0
                       </b>
@@ -11769,7 +11806,6 @@ exports[`component render zero results 1`] = `
                       data-ouia-component-id="OUIA-Generated-DropdownToggle-8"
                       data-ouia-component-type="PF4/DropdownToggle"
                       data-ouia-safe="true"
-                      disabled=""
                       id="pagination-options-menu-toggle-7"
                       type="button"
                     >
@@ -11806,14 +11842,14 @@ exports[`component render zero results 1`] = `
                 className="pf-c-options-menu__toggle-text"
               >
                 <ToggleTemplate
-                  firstIndex={0}
+                  firstIndex={-9}
                   itemCount={0}
                   itemsTitle=""
                   lastIndex={0}
                   ofWord="of"
                 >
                   <b>
-                    0
+                    -9
                      - 
                     0
                   </b>
@@ -11830,7 +11866,7 @@ exports[`component render zero results 1`] = `
                 aria-label="Items per page"
                 className="pf-c-options-menu__toggle-button"
                 id="pagination-options-menu-toggle-7"
-                isDisabled={true}
+                isDisabled={0}
                 isOpen={false}
                 onEnter={[Function]}
                 onToggle={[Function]}
@@ -11848,7 +11884,7 @@ exports[`component render zero results 1`] = `
                           class="pf-c-options-menu__toggle-text"
                         >
                           <b>
-                            0
+                            -9
                              - 
                             0
                           </b>
@@ -11868,7 +11904,6 @@ exports[`component render zero results 1`] = `
                           data-ouia-component-id="OUIA-Generated-DropdownToggle-8"
                           data-ouia-component-type="PF4/DropdownToggle"
                           data-ouia-safe="true"
-                          disabled=""
                           id="pagination-options-menu-toggle-7"
                           type="button"
                         >
@@ -11905,7 +11940,7 @@ exports[`component render zero results 1`] = `
                   getMenuRef={null}
                   id="pagination-options-menu-toggle-7"
                   isActive={false}
-                  isDisabled={true}
+                  isDisabled={0}
                   isOpen={false}
                   isPlain={false}
                   isPrimary={false}
@@ -11926,7 +11961,7 @@ exports[`component render zero results 1`] = `
                             class="pf-c-options-menu__toggle-text"
                           >
                             <b>
-                              0
+                              -9
                                - 
                               0
                             </b>
@@ -11946,7 +11981,6 @@ exports[`component render zero results 1`] = `
                             data-ouia-component-id="OUIA-Generated-DropdownToggle-8"
                             data-ouia-component-type="PF4/DropdownToggle"
                             data-ouia-safe="true"
-                            disabled=""
                             id="pagination-options-menu-toggle-7"
                             type="button"
                           >
@@ -11980,7 +12014,7 @@ exports[`component render zero results 1`] = `
                     data-ouia-component-id="OUIA-Generated-DropdownToggle-8"
                     data-ouia-component-type="PF4/DropdownToggle"
                     data-ouia-safe={true}
-                    disabled={true}
+                    disabled={0}
                     id="pagination-options-menu-toggle-7"
                     onClick={[Function]}
                     onKeyDown={[Function]}
@@ -12028,7 +12062,8 @@ exports[`component render zero results 1`] = `
       firstPage={1}
       isCompact={false}
       isDisabled={false}
-      lastPage={0}
+      itemCount={0}
+      lastPage={1}
       ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -12176,20 +12211,14 @@ exports[`component render zero results 1`] = `
             aria-label="Current page"
             className="pf-c-form-control"
             disabled={true}
-            max={0}
+            max={1}
             min={1}
             onChange={[Function]}
             onKeyDown={[Function]}
             type="number"
             value={0}
           />
-          <span
-            aria-hidden="true"
-          >
-            of
-             
-            0
-          </span>
+          0
         </div>
         <div
           className="pf-c-pagination__nav-control"
@@ -12197,7 +12226,7 @@ exports[`component render zero results 1`] = `
           <Button
             aria-label="Go to next page"
             data-action="next"
-            isDisabled={true}
+            isDisabled={false}
             onClick={[Function]}
             variant="plain"
           >
@@ -12205,22 +12234,21 @@ exports[`component render zero results 1`] = `
               aria-label="Go to next page"
               data-action="next"
               innerRef={null}
-              isDisabled={true}
+              isDisabled={false}
               onClick={[Function]}
               variant="plain"
             >
               <button
-                aria-disabled={true}
+                aria-disabled={false}
                 aria-label="Go to next page"
-                className="pf-c-button pf-m-plain pf-m-disabled"
+                className="pf-c-button pf-m-plain"
                 data-action="next"
                 data-ouia-component-id="OUIA-Generated-Button-plain-29"
                 data-ouia-component-type="PF4/Button"
                 data-ouia-safe={true}
-                disabled={true}
+                disabled={false}
                 onClick={[Function]}
                 role={null}
-                tabIndex={null}
                 type="button"
               >
                 <AngleRightIcon
@@ -12257,7 +12285,7 @@ exports[`component render zero results 1`] = `
           <Button
             aria-label="Go to last page"
             data-action="last"
-            isDisabled={true}
+            isDisabled={false}
             onClick={[Function]}
             variant="plain"
           >
@@ -12265,22 +12293,21 @@ exports[`component render zero results 1`] = `
               aria-label="Go to last page"
               data-action="last"
               innerRef={null}
-              isDisabled={true}
+              isDisabled={false}
               onClick={[Function]}
               variant="plain"
             >
               <button
-                aria-disabled={true}
+                aria-disabled={false}
                 aria-label="Go to last page"
-                className="pf-c-button pf-m-plain pf-m-disabled"
+                className="pf-c-button pf-m-plain"
                 data-action="last"
                 data-ouia-component-id="OUIA-Generated-Button-plain-30"
                 data-ouia-component-type="PF4/Button"
                 data-ouia-safe={true}
-                disabled={true}
+                disabled={false}
                 onClick={[Function]}
                 role={null}
-                tabIndex={null}
                 type="button"
               >
                 <AngleDoubleRightIcon

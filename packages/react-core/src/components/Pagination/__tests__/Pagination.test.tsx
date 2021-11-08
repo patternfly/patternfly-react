@@ -85,6 +85,14 @@ describe('component render', () => {
     const wrapper = mount(<Pagination itemCount={40} dropDirection="up" />);
     expect(wrapper).toMatchSnapshot();
   });
+
+  test('indeterminate count (no item count)', () => {
+    const toggle = mount(
+      <Pagination />
+    ).find('span.pf-c-options-menu__toggle-text');
+    expect(toggle.find('b').at(0).text()).toBe('1 - 10');
+    expect(toggle).toMatchSnapshot();
+  });
 });
 
 describe('API', () => {

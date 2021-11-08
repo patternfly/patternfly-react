@@ -69,7 +69,6 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
     firstIndex: 0,
     lastIndex: 0,
     defaultToFullPage: false,
-    itemCount: 0,
     itemsTitle: 'items',
     onPerPageSelect: () => null as any
   };
