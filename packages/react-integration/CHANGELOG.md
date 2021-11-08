@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.131.1 (2021-11-08)
+
+
+### Bug Fixes
+
+* **acccessconsoles:** use object type Select options values in order to not mix displayed text with option keys ([#6496](https://github.com/patternfly/patternfly-react/issues/6496)) ([975c8e1](https://github.com/patternfly/patternfly-react/commit/975c8e14d7ea8c53eb4048ea6ef73e804b3ad2be))
+
+
+
+
+
 # 4.131.0 (2021-11-04)
 
 
