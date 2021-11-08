@@ -1432,6 +1432,7 @@ import {
   MenuList,
   MenuItem
 } from '@patternfly/react-core';
+import DashboardHeader from './examples/DashboardHeader';
 
 class VerticalPage extends React.Component {
   constructor(props) {
@@ -1439,11 +1440,6 @@ class VerticalPage extends React.Component {
     this.state = {
       isNavOpen: true,
       activeItem: 0
-    };
-    this.onNavToggle = () => {
-      this.setState({
-        isNavOpen: !this.state.isNavOpen
-      });
     };
     this.onNavSelect = result => {
       this.setState({
@@ -1453,8 +1449,8 @@ class VerticalPage extends React.Component {
     this.onMenuSelect = (event, itemId) => {
       this.setState({
         activeItem: itemId
-      })
-    }
+      });
+    };
   }
 
   render() {
@@ -1464,15 +1460,15 @@ class VerticalPage extends React.Component {
         <MenuContent>
           <MenuList>
             <MenuItem flyoutMenu={children} itemId={`next-menu-${depth}`} to={`#menu-link-${depth}`}>
-              Next menu
+              Additional settings
             </MenuItem>
             {[...Array(numFlyouts - depth).keys()].map(j => (
               <MenuItem key={`${depth}-${j}`} itemId={`${depth}-${j}`} to={`#menu-link-${depth}-${j}`}>
-                Menu {depth} item {j}
+                Settings menu {depth} item {j}
               </MenuItem>
             ))}
             <MenuItem flyoutMenu={children} itemId={`next-menu-2-${depth}`} to={`#second-menu-link-${depth}`}>
-              Next menu
+              Additional settings
             </MenuItem>
           </MenuList>
         </MenuContent>
@@ -1483,25 +1479,6 @@ class VerticalPage extends React.Component {
       curFlyout = <FlyoutMenu depth={i}>{curFlyout}</FlyoutMenu>;
     }
 
-    const { isNavOpen } = this.state;
-
-    const logoProps = {
-      href: 'https://patternfly.org',
-      onClick: () => console.log('clicked logo'),
-      target: '_blank'
-    };
-
-    const Header = (
-      <PageHeader
-        logo="Logo"
-        logoProps={logoProps}
-        headerTools={<PageHeaderTools>header-tools</PageHeaderTools>}
-        showNavToggle
-        isNavOpen={isNavOpen}
-        onNavToggle={this.onNavToggle}
-      />
-    );
-
     const { activeItem } = this.state;
 
     const Sidebar = (
@@ -1510,29 +1487,22 @@ class VerticalPage extends React.Component {
           <Nav onSelect={this.onNavSelect}>
             <NavList>
               <NavItem id="flyout-link1" to="#flyout-link1" itemId={0} isActive={activeItem === 0}>
-                Link 1
+                System Panel
               </NavItem>
-              <NavItem
-                flyout={curFlyout}
-                id="flyout-link2"
-                to="#flyout-link2"
-                itemId={1}
-                isActive={activeItem === 1}
-              >
-                Flyout
+              <NavItem flyout={curFlyout} id="flyout-link2" to="#flyout-link2" itemId={1} isActive={activeItem === 1}>
+                Settings
               </NavItem>
               <NavItem id="flyout-link3" to="#flyout-link3" itemId={2} isActive={activeItem === 2}>
-                Link 2
+                Authentication
               </NavItem>
             </NavList>
           </Nav>
         }
-        isNavOpen={isNavOpen}
       />
     );
 
     return (
-      <Page header={Header} sidebar={Sidebar}>
+      <Page header={<DashboardHeader />} sidebar={Sidebar} isManagedSidebar>
         <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
         <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
         <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
