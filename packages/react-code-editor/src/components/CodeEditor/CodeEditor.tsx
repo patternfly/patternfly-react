@@ -8,6 +8,7 @@ import {
   EmptyStateIcon,
   EmptyStateSecondaryActions,
   EmptyStateVariant,
+  getResizeObserver,
   Title,
   Tooltip
 } from '@patternfly/react-core';
@@ -192,7 +193,9 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
   static displayName = 'CodeEditor';
   private editor: any = null;
   private wrapperRef = React.createRef<HTMLDivElement>();
+  private ref = React.createRef<HTMLDivElement>();
   timer = null as number;
+  observer: any = () => {};
 
   static defaultProps: CodeEditorProps = {
     className: '',
@@ -276,6 +279,12 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     this.setState({ value });
   };
 
+  handleResize = () => {
+    if (this.editor) {
+      this.editor.layout();
+    }
+  };
+
   componentDidUpdate(prevProps: CodeEditorProps) {
     const { code } = this.props;
     if (prevProps.code !== code) {
@@ -285,10 +294,13 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleGlobalKeys);
+    this.observer = getResizeObserver(this.ref.current, this.handleResize);
+    this.handleResize();
   }
 
   componentWillUnmount() {
     document.removeEventListener('keydown', this.handleGlobalKeys);
+    this.observer();
   }
 
   handleGlobalKeys = (event: KeyboardEvent) => {
@@ -541,7 +553,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
           );
 
           return (
-            <div className={css(styles.codeEditor, isReadOnly && styles.modifiers.readOnly, className)}>
+            <div className={css(styles.codeEditor, isReadOnly && styles.modifiers.readOnly, className)} ref={this.ref}>
               {isUploadEnabled || providedEmptyState ? (
                 <div
                   {...getRootProps({
