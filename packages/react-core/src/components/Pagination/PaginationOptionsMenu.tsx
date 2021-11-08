@@ -44,6 +44,8 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   toggleTemplate?: ((props: ToggleTemplateProps) => React.ReactElement) | string;
   /** Function called when user selects number of items per page. */
   onPerPageSelect?: OnPerPageSelect;
+  /** Label for the English word "of" */
+  ofWord?: string;
 }
 
 interface PaginationOptionsMenuState {
@@ -62,20 +64,13 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
     itemsPerPageTitle: 'Items per page',
     perPageSuffix: 'per page',
     optionsToggle: 'Items per page',
+    ofWord: 'of',
     perPage: 0,
     firstIndex: 0,
     lastIndex: 0,
     defaultToFullPage: false,
     itemCount: 0,
     itemsTitle: 'items',
-    toggleTemplate: ({ firstIndex, lastIndex, itemCount, itemsTitle }: ToggleTemplateProps) => (
-      <React.Fragment>
-        <b>
-          {firstIndex} - {lastIndex}
-        </b>{' '}
-        of<b>{itemCount}</b> {itemsTitle}
-      </React.Fragment>
-    ),
     onPerPageSelect: () => null as any
   };
 
@@ -148,7 +143,8 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
       firstIndex,
       lastIndex,
       itemCount,
-      itemsTitle
+      itemsTitle,
+      ofWord
     } = this.props;
     const { isOpen } = this.state;
 
@@ -184,7 +180,19 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
               lastIndex={lastIndex}
               itemCount={itemCount}
               itemsTitle={itemsTitle}
-              toggleTemplate={toggleTemplate}
+              ofWord={ofWord}
+              toggleTemplate={
+                toggleTemplate
+                  ? toggleTemplate
+                  : ({ firstIndex, lastIndex, itemCount, ofWord, itemsTitle }: ToggleTemplateProps) => (
+                      <React.Fragment>
+                        <b>
+                          {firstIndex} - {lastIndex}
+                        </b>{' '}
+                        {ofWord} <b>{itemCount}</b> {itemsTitle}
+                      </React.Fragment>
+                    )
+              }
               parentRef={this.parentRef.current}
               isDisabled={isDisabled}
             />

@@ -35,6 +35,8 @@ export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
   toggleTemplate?: ((props: ToggleTemplateProps) => React.ReactElement) | string;
   /** Callback for toggle open on keyboard entry */
   onEnter?: () => void;
+  /** Label for the English word "of" */
+  ofWord?: string;
 }
 
 let toggleId = 0;
@@ -43,6 +45,7 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   optionsToggle = 'Items per page',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   itemsPerPageTitle = 'Items per page',
+  ofWord = 'of',
   firstIndex = 0,
   lastIndex = 0,
   itemCount = 0,
@@ -68,11 +71,12 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
       <React.Fragment>
         <span className={css(styles.optionsMenuToggleText)}>
           {typeof ToggleTemplate === 'string' ? (
-            fillTemplate(ToggleTemplate, { firstIndex, lastIndex, itemCount, itemsTitle })
+            fillTemplate(ToggleTemplate, { firstIndex, lastIndex, ofWord, itemCount, itemsTitle })
           ) : (
             <ToggleTemplate
               firstIndex={firstIndex}
               lastIndex={lastIndex}
+              ofWord={ofWord}
               itemCount={itemCount}
               itemsTitle={itemsTitle}
             />
