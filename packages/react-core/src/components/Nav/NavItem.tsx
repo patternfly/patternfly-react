@@ -102,17 +102,17 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     if (key === ' ' || key === 'ArrowRight') {
       event.stopPropagation();
       event.preventDefault();
-      if (!(ref === flyoutRef)) {
+      if (!flyoutVisible) {
         showFlyout(true);
         setFlyoutTarget(target as HTMLElement);
       }
     }
 
     if (key === 'Escape' || key === 'ArrowLeft') {
-      if (ref === flyoutRef) {
+      if (flyoutVisible) {
         event.stopPropagation();
         event.preventDefault();
-        showFlyout(false, true);
+        showFlyout(false);
       }
     }
   };
@@ -120,12 +120,10 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   React.useEffect(() => {
     if (hasFlyout) {
       window.addEventListener('click', onFlyoutClick);
-      window.addEventListener('keydown', handleFlyout);
     }
     return () => {
       if (hasFlyout) {
         window.removeEventListener('click', onFlyoutClick);
-        window.removeEventListener('keydown', handleFlyout);
       }
     };
   }, []);
@@ -194,6 +192,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       popper={<div ref={popperRef}>{flyout}</div>}
       placement="right-start"
       isVisible={flyoutVisible}
+      onDocumentKeyDown={handleFlyout}
     />
   );
 
