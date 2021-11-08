@@ -45,7 +45,7 @@ export interface ThProps
   hasRightBorder?: boolean;
   /** Minimum width for a sticky column */
   stickyMinWidth?: string;
-  /** Left offset of a sticky column */
+  /** Left offset of a sticky column. This will typically be equal to the combined value set by stickyMinWidth of any sticky columns that precede the current sticky column. */
   stickyLeftOffset?: string;
 }
 

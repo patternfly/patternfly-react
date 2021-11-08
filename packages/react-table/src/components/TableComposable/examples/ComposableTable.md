@@ -2447,7 +2447,7 @@ ComposableTableMultipleStickyColumn = () => {
                       <Th
                         key={cellIndex}
                         isStickyColumn
-                        stickyMinWidth="80px"
+                        stickyMinWidth="120px"
                         stickyLeftOffset="100px"
                         modifier="truncate"
                         hasRightBorder
@@ -2657,8 +2657,8 @@ ComposableTableStickyColumnAndHeader = () => {
                         <Th
                           key={columnIndex}
                           isStickyColumn
-                          stickyMinWidth="80px"
-                          stickyLeftOffset="107px"
+                          stickyMinWidth="120px"
+                          stickyLeftOffset="100px"
                           hasRightBorder
                           modifier="truncate"
                           {...sortParams}
@@ -2691,8 +2691,8 @@ ComposableTableStickyColumnAndHeader = () => {
                           <Th
                             key={cellIndex}
                             isStickyColumn
-                            stickyMinWidth="80px"
-                            stickyLeftOffset="107px"
+                            stickyMinWidth="120px"
+                            stickyLeftOffset="100px"
                             modifier="truncate"
                             hasRightBorder
                           >
