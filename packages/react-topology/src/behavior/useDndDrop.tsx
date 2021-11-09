@@ -174,7 +174,7 @@ export const useDndDrop = <
 };
 
 export interface WithDndDropProps {
-  dndDropRef: ConnectDropTarget;
+  dndDropRef?: ConnectDropTarget;
 }
 
 export const withDndDrop = <

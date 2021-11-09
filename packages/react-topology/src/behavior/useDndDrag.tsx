@@ -303,7 +303,7 @@ export const useDndDrag = <
 };
 
 export interface WithDndDragProps {
-  dndDragRef: ConnectDragSource;
+  dndDragRef?: ConnectDragSource;
 }
 
 export const withDndDrag = <

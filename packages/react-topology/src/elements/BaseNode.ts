@@ -12,7 +12,8 @@ import {
   Edge,
   GraphElement,
   NODE_COLLAPSE_CHANGE_EVENT,
-  NODE_POSITIONED_EVENT
+  NODE_POSITIONED_EVENT,
+  NodeStatus
 } from '../types';
 import CenterAnchor from '../anchors/CenterAnchor';
 import Rect from '../geom/Rect';
@@ -58,6 +59,9 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
 
   @observable
   private shape: NodeShape | undefined;
+
+  @observable
+  private status: NodeStatus | undefined;
 
   @computed
   private get groupBounds(): Rect {
@@ -239,6 +243,14 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
     this.shape = shape;
   }
 
+  getNodeStatus(): NodeStatus {
+    return this.status || NodeStatus.default;
+  }
+
+  setNodeStatus(status: NodeStatus): void {
+    this.status = status;
+  }
+
   getSourceEdges(): Edge[] {
     return this.sourceEdges;
   }
@@ -295,6 +307,9 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
     if ('shape' in model) {
       this.shape = model.shape;
     }
+    if ('status' in model) {
+      this.status = model.status;
+    }
     if ('collapsed' in model) {
       this.setCollapsed(!!model.collapsed);
     }
@@ -309,7 +324,8 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
       height: this.isDimensionsInitialized() ? this.getDimensions().height : undefined,
       collapsed: this.isCollapsed(),
       group: this.isGroup(),
-      shape: this.shape
+      shape: this.shape,
+      status: this.status
     };
   }
 

@@ -228,8 +228,8 @@ interface ElementProps {
 }
 
 export interface WithCreateConnectorProps {
-  onShowCreateConnector: () => void;
-  onHideCreateConnector: () => void;
+  onShowCreateConnector?: () => void;
+  onHideCreateConnector?: () => void;
 }
 
 export const withCreateConnector = <P extends WithCreateConnectorProps & ElementProps>(

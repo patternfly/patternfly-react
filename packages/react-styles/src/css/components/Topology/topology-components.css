@@ -43,6 +43,10 @@
   height: 100%;
 }
 
+.pf-topology-visualization-surface__svg g:focus {
+  outline: none;
+}
+
 .pf-topology-context-menu__c-dropdown__menu {
   position: initial !important;
 }
@@ -57,4 +61,62 @@
   right: var(--pf-global--spacer--xs);
   top: 50%;
   transform: translateY(-50%);
+}
+
+.pf-topology__node {
+  outline: none;
+}
+
+.pf-topology__node__background {
+  fill: var(--pf-global--palette--white);
+  stroke-width: 1px;
+  stroke: var(--pf-global--palette--black-300);
+}
+
+.pf-topology__node.pf-m-dragging .pf-topology__node__background {
+  cursor: grab;
+}
+
+.pf-topology__node.pf-m-selected .pf-topology__node__background {
+  stroke-width: 2px;
+  stroke: var(--pf-global--active-color--100);
+}
+
+.pf-topology__node.pf-m-info .pf-topology__node__background {
+  stroke: var(--pf-global--primary-color--light-100);
+}
+
+.pf-topology__node.pf-m-success .pf-topology__node__background {
+  stroke: var(--pf-global--success-color--100);
+}
+
+.pf-topology__node.pf-m-warning .pf-topology__node__background {
+  stroke: var(--pf-global--warning-color--100);
+}
+
+.pf-topology__node.pf-m-danger .pf-topology__node__background {
+  stroke: var(--pf-global--danger-color--100);
+}
+
+.pf-topology__node.pf-m-drop-target .pf-topology__node__background {
+}
+
+.pf-topology__node__decorator {
+  color: var(--pf-global--Color--200);
+  transition: color 0.2s ease;
+  outline: none;
+}
+
+.pf-topology__node__decorator__bg {
+  fill: var(--pf-global--BackgroundColor--light-100);
+}
+
+.pf-topology__node__decorator__status .pf-m-danger {
+  color: var(--pf-global--danger-color--100);
+}
+.pf-topology__node__decorator__status .pf-m-warning {
+  color: var(--pf-global--warning-color--100);
+}
+.pf-topology__node__decorator__status .pf-m-success {
+  color: var(--pf-global--success-color--100);
 }

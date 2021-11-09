@@ -76,8 +76,8 @@ export const useSelection = ({ multiSelect, controlled, raiseOnSelect = true }: 
 };
 
 export interface WithSelectionProps {
-  selected: boolean;
-  onSelect: OnSelect;
+  selected?: boolean;
+  onSelect?: OnSelect;
 }
 
 export const withSelection = (options?: Options) => <P extends WithSelectionProps>(

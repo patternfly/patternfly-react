@@ -31,7 +31,18 @@ export interface NodeStyle {
 
 export enum NodeShape {
   circle,
-  rect
+  rect,
+  triangle,
+  hexagon,
+  octagon
+}
+
+export enum NodeStatus {
+  default = 'default',
+  info = 'info',
+  success = 'success',
+  warning = 'warning',
+  danger = 'danger'
 }
 
 export enum ModelKind {
@@ -57,6 +68,7 @@ export interface NodeModel extends ElementModel {
   height?: number;
   group?: boolean;
   shape?: NodeShape;
+  status?: NodeStatus;
   collapsed?: boolean;
 }
 
@@ -135,6 +147,8 @@ export interface Node<E extends NodeModel = NodeModel, D = any> extends GraphEle
   setCollapsed(collapsed: boolean): void;
   getNodeShape(): NodeShape;
   setNodeShape(shape: NodeShape): void;
+  getNodeStatus(): NodeStatus;
+  setNodeStatus(shape: NodeStatus): void;
   getSourceEdges(): Edge[];
   getTargetEdges(): Edge[];
   isDimensionsInitialized(): boolean;

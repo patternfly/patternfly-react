@@ -7,8 +7,8 @@ import ContextMenu from '../components/contextmenu/ContextMenu';
 type Reference = React.ComponentProps<typeof ContextMenu>['reference'];
 
 export interface WithContextMenuProps {
-  onContextMenu: (e: React.MouseEvent) => void;
-  contextMenuOpen: boolean;
+  onContextMenu?: (e: React.MouseEvent) => void;
+  contextMenuOpen?: boolean;
 }
 
 export const withContextMenu = <E extends TopologyElement>(
