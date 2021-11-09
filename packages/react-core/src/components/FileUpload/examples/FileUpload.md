@@ -9,13 +9,15 @@ import FileUploadIcon from '@patternfly/react-icons/dist/esm/icons/file-upload-i
 
 ## Examples
 
-The basic `FileUpload` component can accept a file via browse or drag-and-drop, and behaves like a standard form field with its `value` and `onChange` props. The `type` prop determines how the `FileUpload` component behaves upon accepting a file, what type of value it passes to its `onChange` prop, and what type it expects for its `value` prop.
+The basic `FileUpload` component can accept a file via browse or drag-and-drop, and behaves like a standard form field with its `value` and `onFileInputChange` event that is similar to `<input onChange="...">` prop. The `type` prop determines how the `FileUpload` component behaves upon accepting a file, what type of value it passes to its `onDataChange` event.
 
 ### Text files
 
-If `type="text"` is passed (and `hideDefaultPreview` is not), a `TextArea` preview will be rendered underneath the filename bar. When a file is selected, its contents will be read into memory and passed to the `onChange` prop as a string (along with its filename). Typing/pasting text in the box will also call `onChange` with a string, and a string value is expected for the `value` prop.
+If `type="text"` is passed (and `hideDefaultPreview` is not), a `TextArea` preview will be rendered underneath the filename bar. When a file is selected, its contents will be read into memory and passed to the `onDataChange` event as a string. Every filename change is passed to `onFileInputChange` same as it would do with the `<input>` element.
+Pressing _Clear_ button triggers `onClearClick` event.
 
 ### Simple text file
+
 ```js
 import React from 'react';
 import { FileUpload } from '@patternfly/react-core';
@@ -24,7 +26,9 @@ class SimpleTextFileUpload extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: '', filename: '', isLoading: false };
-    this.handleFileChange = (value, filename, event) => this.setState({ value, filename });
+    this.handleFileInputChange = (event, file) => this.setState({ filename: file.name });
+    this.handleDataChange = value => this.setState({ value });
+    this.handleClear = event => this.setState({ filename: '', value: '' });
     this.handleFileReadStarted = fileHandle => this.setState({ isLoading: true });
     this.handleFileReadFinished = fileHandle => this.setState({ isLoading: false });
   }
@@ -38,9 +42,11 @@ class SimpleTextFileUpload extends React.Component {
         value={value}
         filename={filename}
         filenamePlaceholder="Drag and drop a file or upload one"
-        onChange={this.handleFileChange}
+        onFileInputChange={this.handleFileInputChange}
+        onDataChange={this.handleDataChange}
         onReadStarted={this.handleFileReadStarted}
         onReadFinished={this.handleFileReadFinished}
+        onClearClick={this.handleClear}
         isLoading={isLoading}
         browseButtonText="Upload"
       />
@@ -49,9 +55,11 @@ class SimpleTextFileUpload extends React.Component {
 }
 ```
 
-A user can always type instead of selecting a file, but by default, once a user selects a text file from their disk they are not allowed to edit it (to prevent unintended changes to a format-sensitive file). This behavior can be changed with the `allowEditingUploadedText` prop:
+A user can always type instead of selecting a file, but by default, once a user selects a text file from their disk they are not allowed to edit it (to prevent unintended changes to a format-sensitive file). This behavior can be changed with the `allowEditingUploadedText` prop.
+Typing/pasting text in the box will call `onTextChange` with a string, and a string value is expected for the `value` prop. :
 
 ### Text file with edits allowed
+
 ```js
 import React from 'react';
 import { FileUpload } from '@patternfly/react-core';
@@ -60,7 +68,9 @@ class TextFileWithEditsAllowed extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: '', filename: '', isLoading: false };
-    this.handleFileChange = (value, filename, event) => this.setState({ value, filename });
+    this.handleFileInputChange = (event, file) => this.setState({ filename: file.name });
+    this.handleTextOrDataChange = value => this.setState({ value });
+    this.handleClear = event => this.setState({ filename: '', value: '' });
     this.handleFileReadStarted = fileHandle => this.setState({ isLoading: true });
     this.handleFileReadFinished = fileHandle => this.setState({ isLoading: false });
   }
@@ -74,7 +84,10 @@ class TextFileWithEditsAllowed extends React.Component {
         value={value}
         filename={filename}
         filenamePlaceholder="Drag and drop a file or upload one"
-        onChange={this.handleFileChange}
+        onFileInputChange={this.handleFileInputChange}
+        onDataChange={this.handleTextOrDataChange}
+        onClearClick={this.handleClear}
+        onTextChange={this.handleTextOrDataChange}
         onReadStarted={this.handleFileReadStarted}
         onReadFinished={this.handleFileReadFinished}
         isLoading={isLoading}
@@ -95,6 +108,7 @@ Any [props accepted by `react-dropzone`'s `Dropzone` component](https://react-dr
 Restricting file sizes and types in this way is for user convenience only, and it cannot prevent a malicious user from submitting anything to your server. As with any user input, your application should also validate, sanitize and/or reject restricted files on the server side.
 
 ### Text file with restrictions
+
 ```js
 import React from 'react';
 import { FileUpload, Form, FormGroup } from '@patternfly/react-core';
@@ -103,9 +117,9 @@ class TextFileUploadWithRestrictions extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: '', filename: '', isLoading: false, isRejected: false };
-    this.handleFileChange = (value, filename, event) => {
-      this.setState({ value, filename, isRejected: false });
-    };
+    this.handleFileInputChange = (event, file) => this.setState({ filename: file.name });
+    this.handleTextOrDataChange = value => this.setState({ value });
+    this.handleClear = event => this.setState({ filename: '', value: '', isRejected: false });
     this.handleFileRejected = (rejectedFiles, event) => this.setState({ isRejected: true });
     this.handleFileReadStarted = fileHandle => this.setState({ isLoading: true });
     this.handleFileReadFinished = fileHandle => this.setState({ isLoading: false });
@@ -127,7 +141,10 @@ class TextFileUploadWithRestrictions extends React.Component {
             value={value}
             filename={filename}
             filenamePlaceholder="Drag and drop a file or upload one"
-            onChange={this.handleFileChange}
+            onFileInputChange={this.handleFileInputChange}
+            onDataChange={this.handleTextOrDataChange}
+            onTextChange={this.handleTextOrDataChange}
+            onClearClick={this.handleClear}
             onReadStarted={this.handleFileReadStarted}
             onReadFinished={this.handleFileReadFinished}
             isLoading={isLoading}
@@ -148,9 +165,10 @@ class TextFileUploadWithRestrictions extends React.Component {
 
 ### Other file types
 
-If no `type` prop is specified, the component will not read files directly. When a file is selected, a [`File` object](https://developer.mozilla.org/en-US/docs/Web/API/File) will be passed to `onChange` and your application will be responsible for reading from it (e.g. by using the [FileReader API](https://developer.mozilla.org/en-US/docs/Web/API/FileReader) or attaching it to a [FormData object](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects)). A `File` object will also be expected for the `value` prop instead of a string, and no preview of the file contents will be shown by default. The `onReadStarted` and `onReadFinished` callbacks will also not be called since the component is not reading the file.
+If no `type` prop is specified, the component will not read files directly. When a file is selected, a [`File` object](https://developer.mozilla.org/en-US/docs/Web/API/File) will be passed as a second argument to `onFileInputChange` and your application will be responsible for reading from it (e.g. by using the [FileReader API](https://developer.mozilla.org/en-US/docs/Web/API/FileReader) or attaching it to a [FormData object](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects)). A `File` object will also be expected for the `value` prop instead of a string, and no preview of the file contents will be shown by default. The `onReadStarted` and `onReadFinished` callbacks will also not be called since the component is not reading the file.
 
 ### Simple file of any format
+
 ```js
 import React from 'react';
 import { FileUpload } from '@patternfly/react-core';
@@ -159,12 +177,25 @@ class SimpleFileUpload extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: null, filename: '' };
-    this.handleFileChange = (value, filename, event) => this.setState({ value, filename });
+    this.handleFileInputChange = (event, file) => {
+      this.setState({ filename: file.name });
+    };
+    this.handleClear = event => this.setState({ filename: '', value: '' });
   }
 
   render() {
     const { value, filename } = this.state;
-    return <FileUpload id="simple-file" value={value} filename={filename} filenamePlaceholder="Drag and drop a file or upload one" browseButtonText="Upload" onChange={this.handleFileChange} />;
+    return (
+      <FileUpload
+        id="simple-file"
+        value={value}
+        filename={filename}
+        filenamePlaceholder="Drag and drop a file or upload one"
+        browseButtonText="Upload"
+        onFileInputChange={this.handleFileInputChange}
+        onClearClick={this.handleClear}
+      />
+    );
   }
 }
 ```
@@ -174,6 +205,7 @@ class SimpleFileUpload extends React.Component {
 Regardless of `type`, the preview area (the TextArea, or any future implementations of default previews for other types) can be removed by passing `hideDefaultPreview`, and a custom one can be rendered by passing `children`.
 
 ### Custom file preview
+
 ```js
 import React from 'react';
 import { FileUpload } from '@patternfly/react-core';
@@ -183,7 +215,10 @@ class CustomPreviewFileUpload extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: null, filename: '' };
-    this.handleFileChange = (value, filename, event) => this.setState({ value, filename });
+    this.handleFileInputChange = (event, file) => {
+      this.setState({ value: file, filename: file.name });
+    };
+    this.handleClear = event => this.setState({ filename: '', value: '' });
   }
 
   render() {
@@ -194,7 +229,8 @@ class CustomPreviewFileUpload extends React.Component {
         value={value}
         filename={filename}
         filenamePlaceholder="Drag and drop a file or upload one"
-        onChange={this.handleFileChange}
+        onFileInputChange={this.handleFileInputChange}
+        onClearClick={this.handleClear}
         hideDefaultPreview
         browseButtonText="Upload"
       >
@@ -216,6 +252,7 @@ class CustomPreviewFileUpload extends React.Component {
 Note that the `isLoading` prop is styled to position the spinner dead center above the entire component, so it should not be used with `hideDefaultPreview` unless a custom empty-state preview is provided via `children`. The below example prevents `isLoading` and `hideDefaultPreview` from being used at the same time. You can always provide your own spinner as part of the `children`!
 
 ### Custom file upload
+
 ```js
 import React from 'react';
 import { FileUploadField, Checkbox } from '@patternfly/react-core';
@@ -274,7 +311,7 @@ class CustomFileUpload extends React.Component {
           type="text"
           value={value}
           filename={filename ? 'example-filename.txt' : ''}
-          onChange={this.handleTextAreaChange}
+          onTextChange={this.handleTextAreaChange}
           filenamePlaceholder="Do something custom with this!"
           onBrowseButtonClick={() => alert('Browse button clicked!')}
           onClearButtonClick={() => alert('Clear button clicked!')}

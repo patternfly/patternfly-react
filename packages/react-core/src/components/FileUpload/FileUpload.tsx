@@ -1,8 +1,8 @@
 import * as React from 'react';
-import Dropzone, { DropzoneProps, DropFileEventHandler } from 'react-dropzone';
+import Dropzone, { DropzoneProps, DropEvent, DropzoneInputProps } from 'react-dropzone';
 import { FileUploadField, FileUploadFieldProps } from './FileUploadField';
 import { readFile, fileReaderType } from '../../helpers/fileUtils';
-
+import { fromEvent } from 'file-selector';
 export interface FileUploadProps
   extends Omit<
     FileUploadFieldProps,
@@ -18,15 +18,19 @@ export interface FileUploadProps
   value?: string | File;
   /** Value to be shown in the read-only filename field. */
   filename?: string;
-  /** A callback for when the file contents change. */
+  /** *(deprecated)* A callback for when the file contents change. Please instead use onFileInputChange, onTextChange, onDataChange, onClearClick individually.  */
   onChange?: (
     value: string | File,
     filename: string,
     event:
+      | React.MouseEvent<HTMLButtonElement, MouseEvent> // Clear button was clicked
       | React.DragEvent<HTMLElement> // User dragged/dropped a file
-      | React.ChangeEvent<HTMLTextAreaElement> // User typed in the TextArea
-      | React.MouseEvent<HTMLButtonElement, MouseEvent> // User clicked Clear button
+      | React.ChangeEvent<HTMLElement> // User typed in the TextArea
+      | DragEvent
+      | Event
   ) => void;
+  /** Change event emitted from the hidden \<input type="file" \> field associated with the component  */
+  onFileInputChange?: (event: React.ChangeEvent<HTMLInputElement> | DropEvent, file: File) => void;
   /** Callback for clicking on the FileUploadField text area. By default, prevents a click in the text area from opening file dialog. */
   onClick?: (event: React.MouseEvent) => void;
   /** Additional classes added to the FileUpload container element. */
@@ -74,6 +78,12 @@ export interface FileUploadProps
   onReadFailed?: (error: DOMException, fileHandle: File) => void;
   /** Optional extra props to customize react-dropzone. */
   dropzoneProps?: DropzoneProps;
+  /** Clear button was clicked */
+  onClearClick?: React.MouseEventHandler<HTMLButtonElement>;
+  /** Text area text changed */
+  onTextChange?: (text: string) => void;
+  /** On data changed - if type='text' or type='dataURL' and file was loaded it will call this method */
+  onDataChange?: (data: string) => void;
 }
 
 export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
@@ -83,16 +93,23 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   filename = '',
   children = null,
   onChange = () => {},
+  onFileInputChange = null,
   onReadStarted = () => {},
   onReadFinished = () => {},
   onReadFailed = () => {},
+  onClearClick,
   onClick = event => event.preventDefault(),
+  onTextChange,
+  onDataChange,
   dropzoneProps = {},
   ...props
 }: FileUploadProps) => {
-  const onDropAccepted: DropFileEventHandler = (acceptedFiles: File[], event: React.DragEvent<HTMLElement>) => {
+  const onDropAccepted = (acceptedFiles: File[], event: DropEvent) => {
     if (acceptedFiles.length > 0) {
       const fileHandle = acceptedFiles[0];
+      if (event.type === 'drop') {
+        onFileInputChange?.(event, fileHandle);
+      }
       if (type === fileReaderType.text || type === fileReaderType.dataURL) {
         onChange('', fileHandle.name, event); // Show the filename while reading
         onReadStarted(fileHandle);
@@ -100,11 +117,13 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
           .then(data => {
             onReadFinished(fileHandle);
             onChange(data as string, fileHandle.name, event);
+            onDataChange?.(data as string);
           })
           .catch((error: DOMException) => {
             onReadFailed(error, fileHandle);
             onReadFinished(fileHandle);
             onChange('', '', event); // Clear the filename field on a failure
+            onDataChange?.('');
           });
       } else {
         onChange(fileHandle, fileHandle.name, event);
@@ -113,41 +132,69 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
     dropzoneProps.onDropAccepted && dropzoneProps.onDropAccepted(acceptedFiles, event);
   };
 
-  const onDropRejected: DropFileEventHandler = (rejectedFiles: File[], event: React.DragEvent<HTMLElement>) => {
+  const onDropRejected = (rejectedFiles: File[], event: DropEvent) => {
     if (rejectedFiles.length > 0) {
       onChange('', rejectedFiles[0].name, event);
     }
     dropzoneProps.onDropRejected && dropzoneProps.onDropRejected(rejectedFiles, event);
   };
 
+  const fileInputRef = React.useRef<HTMLInputElement>();
+  const setFileValue = (filename: string) => {
+    fileInputRef.current.value = filename;
+  };
+
   const onClearButtonClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     onChange('', '', event);
+    onClearClick?.(event);
+    setFileValue(null);
   };
 
   return (
-    <Dropzone multiple={false} {...dropzoneProps} onDropAccepted={onDropAccepted} onDropRejected={onDropRejected}>
-      {({ getRootProps, getInputProps, isDragActive, open }) => (
-        <FileUploadField
-          {...getRootProps({
-            ...props,
-            refKey: 'containerRef',
-            onClick: event => event.preventDefault()
-          })}
-          tabIndex={null} // Omit the unwanted tabIndex from react-dropzone's getRootProps
-          id={id}
-          type={type}
-          filename={filename}
-          value={value}
-          onChange={onChange}
-          isDragActive={isDragActive}
-          onBrowseButtonClick={open}
-          onClearButtonClick={onClearButtonClick}
-          onTextAreaClick={onClick}
-        >
-          <input {...getInputProps()} /* hidden, necessary for react-dropzone */ />
-          {children}
-        </FileUploadField>
-      )}
+    <Dropzone
+      multiple={false}
+      {...dropzoneProps}
+      onDropAccepted={onDropAccepted}
+      onDropRejected={onDropRejected}
+      noClick={true}
+    >
+      {({ getRootProps, getInputProps, isDragActive, open }) => {
+        const oldInputProps = getInputProps();
+        const inputProps: DropzoneInputProps = {
+          ...oldInputProps,
+          onChange: async (e: React.ChangeEvent<HTMLInputElement>) => {
+            oldInputProps.onChange?.(e);
+            const files = await fromEvent(e.nativeEvent);
+            if (files.length === 1) {
+              onFileInputChange?.(e, files[0] as File);
+            }
+          }
+        };
+
+        return (
+          <FileUploadField
+            {...getRootProps({
+              ...props,
+              refKey: 'containerRef',
+              onClick: event => event.preventDefault()
+            })}
+            tabIndex={null} // Omit the unwanted tabIndex from react-dropzone's getRootProps
+            id={id}
+            type={type}
+            filename={filename}
+            value={value}
+            onChange={onChange}
+            isDragActive={isDragActive}
+            onBrowseButtonClick={open}
+            onClearButtonClick={onClearButtonClick}
+            onTextAreaClick={onClick}
+            onTextChange={onTextChange}
+          >
+            <input {...inputProps} ref={fileInputRef} /* hidden, necessary for react-dropzone */ />
+            {children}
+          </FileUploadField>
+        );
+      }}
     </Dropzone>
   );
 };
