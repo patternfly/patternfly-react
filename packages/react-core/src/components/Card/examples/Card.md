@@ -533,8 +533,8 @@ class SelectableCard extends React.Component {
           id="first-card"
           onKeyDown={this.onKeyDown}
           onClick={this.onClick}
-          isSelectable
-          isSelected={selected === 'first-card'}
+          isSelectableRaised
+          isSelectedRaised={selected === 'first-card'}
         >
           <CardHeader>
             <CardActions>
@@ -556,8 +556,8 @@ class SelectableCard extends React.Component {
           id="second-card"
           onKeyDown={this.onKeyDown}
           onClick={this.onClick}
-          isSelectable
-          isSelected={selected === 'second-card'}
+          isSelectableRaised
+          isSelectedRaised={selected === 'second-card'}
         >
           <CardTitle>Second card</CardTitle>
           <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
@@ -824,6 +824,119 @@ class ExpandableIconCard extends React.Component {
           <CardFooter>Footer</CardFooter>
         </CardExpandableContent>
       </Card>
+    );
+  }
+}
+```
+
+### Legacy selectable and selected
+
+```js
+import React from 'react';
+import {
+  Card,
+  CardHeader,
+  CardActions,
+  CardTitle,
+  CardBody,
+  Dropdown,
+  DropdownToggle,
+  DropdownItem,
+  DropdownSeparator,
+  KebabToggle
+} from '@patternfly/react-core';
+
+class SelectableCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: null
+    };
+    this.onKeyDown = event => {
+      if (event.target !== event.currentTarget) {
+        return;
+      }
+      if ([13, 32].includes(event.keyCode)) {
+        const newSelected = event.currentTarget.id === this.state.selected ? null : event.currentTarget.id;
+        this.setState({
+          selected: newSelected
+        });
+      }
+    };
+    this.onClick = event => {
+      const newSelected = event.currentTarget.id === this.state.selected ? null : event.currentTarget.id;
+      this.setState({
+        selected: newSelected
+      });
+    };
+    this.onToggle = (isOpen, event) => {
+      event.stopPropagation();
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      event.stopPropagation();
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    };
+  }
+  render() {
+    const { selected, isOpen } = this.state;
+    const dropdownItems = [
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action" component="button">
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button">
+        Disabled Action
+      </DropdownItem>,
+      <DropdownSeparator key="separator" />,
+      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated action" component="button">
+        Separated Action
+      </DropdownItem>
+    ];
+    return (
+      <>
+        <Card
+          id="first-card"
+          onKeyDown={this.onKeyDown}
+          onClick={this.onClick}
+          isSelectable
+          isSelected={selected === 'first-card'}
+        >
+          <CardHeader>
+            <CardActions>
+              <Dropdown
+                onSelect={this.onSelect}
+                toggle={<KebabToggle onToggle={this.onToggle} />}
+                isOpen={isOpen}
+                isPlain
+                dropdownItems={dropdownItems}
+                position={'right'}
+              />
+            </CardActions>
+          </CardHeader>
+          <CardTitle>First card</CardTitle>
+          <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
+        </Card>
+        <br />
+        <Card
+          id="second-card"
+          onKeyDown={this.onKeyDown}
+          onClick={this.onClick}
+          isSelectable
+          isSelected={selected === 'second-card'}
+        >
+          <CardTitle>Second card</CardTitle>
+          <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
+        </Card>
+      </>
     );
   }
 }
