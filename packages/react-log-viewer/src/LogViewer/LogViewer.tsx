@@ -29,6 +29,8 @@ interface LogViewerProps {
   scrollToRow?: number;
   /** Number of rows to display in the log viewer */
   itemCount?: number;
+  /** Flag indicating that log viewer is wrapping text or not */
+  wrapText?: boolean;
   /** Component rendered in the log viewer console window header */
   header?: React.ReactNode;
   /** Component rendered in the log viewer console window footer */
@@ -82,6 +84,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     footer,
     onScroll,
     innerRef,
+    wrapText = false,
     ...props
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
@@ -185,9 +188,20 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     const scrollToRowInFocus = (searchedRowIndex: number) => {
       setRowInFocus(searchedRowIndex);
       logViewerRef.current.scrollToItem(searchedRowIndex, 'center');
+      const element: any = document.querySelector('.pf-c-log-viewer__string.pf-m-current');
+      if (element) {
+        element.scrollIntoViewIfNeeded();
+      }
     };
 
+    useEffect(() => {
+      setListKey(listKey => listKey + 1);
+    }, [wrapText]);
+
     const guessRowHeight = (rowIndex: number) => {
+      if (!wrapText) {
+        return lineHeight;
+      }
       // strip ansi escape code before estimate the row height
       const rowText = stripAnsi(parsedData[rowIndex]);
       // get the row numbers of the current text
@@ -199,7 +213,8 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     const createList = (parsedData: string[]) => (
       <List
         key={listKey}
-        className={css(styles.logViewerList)}
+        outerClassName={css(styles.logViewerScrollContainer)}
+        innerClassName={css(styles.logViewerList)}
         height={containerRef.current.clientHeight}
         width={containerRef.current.clientWidth}
         itemSize={guessRowHeight}
@@ -224,6 +239,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
           className={css(
             styles.logViewer,
             hasLineNumbers && styles.modifiers.lineNumbers,
+            !wrapText && styles.modifiers.nowrap,
             theme === 'dark' && styles.modifiers.dark
           )}
           {...props}

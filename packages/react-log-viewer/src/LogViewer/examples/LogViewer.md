@@ -70,9 +70,10 @@ BasicSearchLogViewer = () => {
 import React from 'react';
 import { data } from './realTestData';
 import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
-import { Toolbar, ToolbarContent, ToolbarItem, Button } from '@patternfly/react-core';
+import { Toolbar, ToolbarContent, ToolbarItem, Button, Checkbox } from '@patternfly/react-core';
 
 CustomControlLogViewer = () => {
+  const [wrapText, setWrapText] = React.useState(false);
   const onActionClick = event => {
     console.log('clicked test action button');
   };
@@ -84,6 +85,7 @@ CustomControlLogViewer = () => {
   return (
     <LogViewer
       data={data.data}
+      wrapText={wrapText}
       toolbar={
         <Toolbar>
           <ToolbarContent>
@@ -99,6 +101,9 @@ CustomControlLogViewer = () => {
               <Button onClick={onPrintClick} variant="control">
                 Print to Console
               </Button>
+            </ToolbarItem>
+            <ToolbarItem>
+              <Checkbox label="Wrap text" aria-label="wrap text checkbox" isChecked={wrapText} id="wrap-text-checkbox" onChange={setWrapText} />
             </ToolbarItem>
           </ToolbarContent>
         </Toolbar>
