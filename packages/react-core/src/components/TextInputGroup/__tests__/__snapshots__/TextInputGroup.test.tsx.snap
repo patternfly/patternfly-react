@@ -11,6 +11,7 @@ exports[`TextInputGroup gets custom class and id 1`] = `
   >
     <TextInputGroupMain
       aria-label="Type to filter"
+      type="text"
     >
       <div
         className="pf-c-text-input-group__main"
@@ -43,6 +44,7 @@ exports[`TextInputGroup renders content 1`] = `
   >
     <TextInputGroupMain
       aria-label="Type to filter"
+      type="text"
     >
       <div
         className="pf-c-text-input-group__main"
@@ -68,13 +70,16 @@ exports[`TextInputGroup renders content 1`] = `
 </TextInputGroup>
 `;
 
-exports[`TextInputGroup renders with the proper stying for an icon on the left side of the component 1`] = `
-<TextInputGroup>
+exports[`TextInputGroup renders with the proper stying when disabled 1`] = `
+<TextInputGroup
+  isDisabled={true}
+>
   <div
-    className="pf-c-text-input-group"
+    className="pf-c-text-input-group pf-m-disabled"
   >
     <TextInputGroupMain
       aria-label="Type to filter"
+      type="text"
     >
       <div
         className="pf-c-text-input-group__main"
@@ -86,6 +91,7 @@ exports[`TextInputGroup renders with the proper stying for an icon on the left s
           <input
             aria-label="Type to filter"
             className="pf-c-text-input-group__text-input"
+            disabled={true}
             type="text"
           />
         </span>
@@ -103,6 +109,7 @@ exports[`TextInputGroup renders with the proper stying for an icon on the left s
 exports[`TextInputGroupMain renders content 1`] = `
 <TextInputGroupMain
   aria-label="Type to filter"
+  type="text"
 >
   <div
     className="pf-c-text-input-group__main"
@@ -114,6 +121,7 @@ exports[`TextInputGroupMain renders content 1`] = `
       <input
         aria-label="Type to filter"
         className="pf-c-text-input-group__text-input"
+        disabled={false}
         type="text"
       />
     </span>
@@ -131,6 +139,7 @@ exports[`TextInputGroupMain renders given input icon props 1`] = `
       size="sm"
     />
   }
+  type="text"
 >
   <div
     className="pf-c-text-input-group__main pf-m-icon"
@@ -170,6 +179,7 @@ exports[`TextInputGroupMain renders given input icon props 1`] = `
       <input
         aria-label="Type to filter"
         className="pf-c-text-input-group__text-input"
+        disabled={false}
         type="text"
       />
     </span>
@@ -180,6 +190,7 @@ exports[`TextInputGroupMain renders given input icon props 1`] = `
 exports[`TextInputGroupMain renders the input with custom aria label when given 1`] = `
 <TextInputGroupMain
   aria-label="Foo"
+  type="text"
 >
   <div
     className="pf-c-text-input-group__main"
@@ -191,6 +202,7 @@ exports[`TextInputGroupMain renders the input with custom aria label when given 
       <input
         aria-label="Foo"
         className="pf-c-text-input-group__text-input"
+        disabled={false}
         type="text"
       />
     </span>
