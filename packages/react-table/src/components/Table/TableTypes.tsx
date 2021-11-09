@@ -137,8 +137,12 @@ export type IFormatterValueType = formatterValueType & {
 };
 
 export interface ISortBy {
+  /** Index of the current sorted column */
   index?: number;
+  /** Current sort direction */
   direction?: 'asc' | 'desc';
+  /** Defaulting sorting direction. Defaults to "asc". */
+  defaultDirection?: 'asc' | 'desc';
 }
 
 export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'> {
