@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {
+  DefaultNode,
   action,
   observer,
   Model,
@@ -10,11 +11,11 @@ import {
   useAnchor,
   RectAnchor,
   EllipseAnchor,
-  Node,
-  ComponentFactory
+  ComponentFactory,
+  ShapeProps,
+  withCustomNodeShape
 } from '@patternfly/react-topology';
 import defaultComponentFactory from './components/defaultComponentFactory';
-import DefaultNode from './components/DefaultNode';
 import withTopologySetup from './utils/withTopologySetup';
 import Dimensions from '@patternfly/react-topology/dist/esm/geom/Dimensions';
 
@@ -246,7 +247,7 @@ const groupStory = (groupType: string): React.FC => () => {
 export const Group = withTopologySetup(groupStory('group'));
 export const GroupHull = withTopologySetup(groupStory('group-hull'));
 
-const CustomCircle: React.FC<{ element: Node }> = observer(({ element }) => {
+const CustomCircle: React.FC<ShapeProps> = ({ element, className }) => {
   useAnchor(EllipseAnchor);
   React.useEffect(() => {
     // init height
@@ -255,23 +256,21 @@ const CustomCircle: React.FC<{ element: Node }> = observer(({ element }) => {
   const r = element.getDimensions().width / 2;
   return (
     <circle
+      className={className}
       cx={r}
       cy={r}
       r={r}
-      fill="grey"
-      strokeWidth={1}
-      stroke="#333333"
       onClick={() => {
         const size = element.getDimensions().width === 40 ? 80 : 40;
         action(() => element.setDimensions(new Dimensions(size, size)))();
       }}
     />
   );
-});
+};
 
-const CustomRect: React.FC = observer(() => {
+const CustomRect: React.FC<ShapeProps> = observer(({ className }) => {
   useAnchor(RectAnchor);
-  return <rect x={0} y={0} width={100} height={20} fill="grey" strokeWidth={1} stroke="#333333" />;
+  return <rect className={className} x={0} y={0} width={100} height={20} />;
 });
 
 export const AutoSizeNode = withTopologySetup(() => {
@@ -279,10 +278,10 @@ export const AutoSizeNode = withTopologySetup(() => {
   useComponentFactory(
     React.useCallback<ComponentFactory>((kind, type) => {
       if (type === 'autoSize-circle') {
-        return CustomCircle;
+        return withCustomNodeShape(() => CustomCircle)(DefaultNode);
       }
       if (type === 'autoSize-rect') {
-        return CustomRect;
+        return withCustomNodeShape(() => CustomRect)(DefaultNode);
       }
       return undefined;
     }, [])

@@ -2,48 +2,58 @@ import * as React from 'react';
 import { action } from 'mobx';
 import * as _ from 'lodash';
 import {
-  TopologyView,
-  TopologySideBar,
-  TopologyControlBar,
+  ContextMenuItem,
+  ContextMenuSeparator,
+  ContextSubMenuItem,
+  Controller,
   createTopologyControlButtons,
   defaultControlButtonsOptions,
+  DefaultNode,
   EdgeModel,
+  GraphComponent,
   Model,
   ModelKind,
+  NodeComponentProps,
+  nodeDragSourceSpec,
+  nodeDropTargetSpec,
   NodeModel,
-  Controller,
-  Visualization,
-  withPanZoom,
-  GraphComponent,
-  withDragNode,
-  withContextMenu,
-  ContextMenuItem,
-  ContextSubMenuItem,
-  ContextMenuSeparator,
-  VisualizationSurface,
   SELECTION_EVENT,
   SelectionEventListener,
-  withSelection,
+  TopologyControlBar,
+  TopologySideBar,
+  TopologyView,
+  useEventListener,
+  Visualization,
   VisualizationProvider,
-  useEventListener
+  VisualizationSurface,
+  withContextMenu,
+  withCustomNodeShape,
+  withDndDrop,
+  withDragNode,
+  withPanZoom,
+  withSelection,
+  withStatus,
+  WithStatusProps
 } from '@patternfly/react-topology';
 import {
-  ToolbarItem,
-  Split,
-  SplitItem,
+  Button,
   Dropdown,
   DropdownItem,
-  DropdownToggle,
   DropdownPosition,
-  Button,
+  DropdownToggle,
+  Flex,
+  Split,
+  SplitItem,
+  TextInput,
+  ToolbarItem,
   Tooltip
 } from '@patternfly/react-core';
 import defaultLayoutFactory from './layouts/defaultLayoutFactory';
-import data from './data/reasonable';
 import GroupHull from './components/GroupHull';
 import Group from './components/DefaultGroup';
-import Node from './components/DefaultNode';
+import Path from './components/shapes/Path';
 import defaultComponentFactory from './components/defaultComponentFactory';
+import { generateData } from './data/generator';
 
 import '@patternfly/patternfly/patternfly.css';
 import '@patternfly/patternfly/patternfly-addons.css';
@@ -84,15 +94,18 @@ const defaultMenu = createContextMenuItems(
   'Sub Menu-> Child1, Child2, Child3, -, Child4'
 );
 
-const getModel = (layout: string): Model => {
+const getDataModel = (numNodes: number, numGroups: number, numEdges: number) => {
   // create nodes from data
+  const data = generateData(numNodes, numGroups, numEdges);
+
   const nodes: NodeModel[] = data.nodes.map(d => {
     // randomize size somewhat
-    const width = 50 + d.id.length + 40;
+    const width = 50 + d.id.length;
     const height = 50 + d.id.length;
     return {
       id: d.id,
-      type: 'node',
+      type: d.shape ? 'default-node' : 'custom-node',
+      shape: d.shape,
       width,
       height,
       data: d
@@ -101,7 +114,10 @@ const getModel = (layout: string): Model => {
 
   // create groups from data
   const groupNodes: NodeModel[] = _.map(
-    _.groupBy(nodes, n => n.data.group),
+    _.groupBy(
+      nodes.filter(n => n.data.group),
+      n => n.data.group
+    ),
     (v, k) => ({
       type: 'group-hull',
       id: k,
@@ -115,7 +131,7 @@ const getModel = (layout: string): Model => {
   );
 
   // create links from data
-  const edges = data.links.map(
+  const edges = data.edges.map(
     (d): EdgeModel => ({
       data: d,
       source: d.source,
@@ -125,19 +141,30 @@ const getModel = (layout: string): Model => {
     })
   );
 
-  // create topology model
   const model: Model = {
-    graph: {
-      id: 'g1',
-      type: 'graph',
-      layout
-    },
     nodes: [...nodes, ...groupNodes],
     edges
   };
 
   return model;
 };
+const getModel = (layout: string): Model => {
+  const dataModel = getDataModel(6, 2, 1);
+
+  // create topology model
+  return {
+    graph: {
+      id: 'g1',
+      type: 'graph',
+      layout
+    },
+    ...dataModel
+  };
+};
+
+const getElementStatus = (): WithStatusProps => ({
+  showStatusDecorator: true
+});
 
 const getVisualization = (model: Model): Visualization => {
   const vis = new Visualization();
@@ -156,8 +183,27 @@ const getVisualization = (model: Model): Visualization => {
     if (type === 'group') {
       return withDragNode({ canCancel: false })(Group);
     }
-    if (kind === ModelKind.node) {
-      return withDragNode({ canCancel: false })(withSelection()(withContextMenu(() => defaultMenu)(Node)));
+    if (type === 'default-node') {
+      return withDndDrop<any, any, { droppable?: boolean; hover?: boolean; canDrop?: boolean }, NodeComponentProps>(
+        nodeDropTargetSpec
+      )(
+        withDragNode(nodeDragSourceSpec(type))(
+          withSelection()(withContextMenu(() => defaultMenu)(withStatus(getElementStatus)(DefaultNode)))
+        )
+      );
+    }
+    if (type === 'custom-node') {
+      return withDndDrop<any, any, { droppable?: boolean; hover?: boolean; canDrop?: boolean }, NodeComponentProps>(
+        nodeDropTargetSpec
+      )(
+        withDragNode(nodeDragSourceSpec(type))(
+          withSelection()(
+            withContextMenu(() => defaultMenu)(
+              withStatus(getElementStatus)(withCustomNodeShape(() => Path)(DefaultNode))
+            )
+          )
+        )
+      );
     }
     return undefined;
   });
@@ -175,10 +221,13 @@ interface TopologyViewComponentProps {
 const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useSidebar, sideBarResizable = false }) => {
   const [selectedIds, setSelectedIds] = React.useState<string[]>();
   const [layoutDropdownOpen, setLayoutDropdownOpen] = React.useState(false);
-  const [layout, setLayout] = React.useState('Force');
+  const [layout, setLayout] = React.useState('ColaNoForce');
   const [savedModel, setSavedModel] = React.useState<Model>();
   const [modelSaved, setModelSaved] = React.useState<boolean>(false);
   const newNodeCount = React.useRef(0);
+  const [numNodes, setNumNodes] = React.useState<number>(6);
+  const [numEdges, setNumEdges] = React.useState<number>(2);
+  const [numGroups, setNumGroups] = React.useState<number>(1);
 
   useEventListener<SelectionEventListener>(SELECTION_EVENT, ids => {
     setSelectedIds(ids);
@@ -302,6 +351,51 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
     setSelectedIds([]);
   };
 
+  const updateValue = (value: number, min: number, max: number, setter: any): void => {
+    if (value >= min && value <= max) {
+      setter(value);
+    }
+  };
+
+  const updateDataModel = () => {
+    const dataModel = getDataModel(numNodes, numGroups, numEdges);
+    vis.fromModel(dataModel);
+    setSelectedIds([]);
+  };
+
+  const contextToolbar = (
+    <>
+      <ToolbarItem>
+        <Flex wrap="no-wrap">
+          <span>Nodes:</span>
+          <TextInput
+            aria-label="nodes"
+            type="number"
+            value={numNodes}
+            onChange={(val: string) => updateValue(parseInt(val), 3, 9999, setNumNodes)}
+          />
+          <span>Edges:</span>
+          <TextInput
+            aria-label="edges"
+            type="number"
+            value={numEdges}
+            onChange={(val: string) => updateValue(parseInt(val), 0, 200, setNumEdges)}
+          />
+          <span>Groups:</span>
+          <TextInput
+            aria-label="groups"
+            type="number"
+            value={numGroups}
+            onChange={(val: string) => updateValue(parseInt(val), 0, 100, setNumGroups)}
+          />
+          <Button variant="link" onClick={updateDataModel}>
+            Apply
+          </Button>
+        </Flex>
+      </ToolbarItem>
+    </>
+  );
+
   const viewToolbar = (
     <>
       <ToolbarItem>{layoutDropdown}</ToolbarItem>
@@ -353,6 +447,7 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
           })}
         />
       }
+      contextToolbar={contextToolbar}
       viewToolbar={viewToolbar}
       sideBar={useSidebar && topologySideBar}
       sideBarOpen={useSidebar && _.size(selectedIds) > 0}
@@ -364,7 +459,7 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
 };
 
 export const Topology = () => {
-  const vis: Visualization = getVisualization(getModel('Force'));
+  const vis: Visualization = getVisualization(getModel('ColaNoForce'));
 
   return (
     <VisualizationProvider controller={vis}>
@@ -374,7 +469,7 @@ export const Topology = () => {
 };
 
 export const WithSideBar = () => {
-  const vis: Visualization = getVisualization(getModel('Force'));
+  const vis: Visualization = getVisualization(getModel('ColaNoForce'));
   return (
     <VisualizationProvider controller={vis}>
       <TopologyViewComponent useSidebar vis={vis} />
@@ -383,7 +478,7 @@ export const WithSideBar = () => {
 };
 
 export const WithResizableSideBar = () => {
-  const vis: Visualization = getVisualization(getModel('Force'));
+  const vis: Visualization = getVisualization(getModel('ColaNoForce'));
   return (
     <VisualizationProvider controller={vis}>
       <TopologyViewComponent useSidebar vis={vis} sideBarResizable />

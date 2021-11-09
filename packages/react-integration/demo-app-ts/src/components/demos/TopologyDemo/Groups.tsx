@@ -15,7 +15,7 @@ import {
 } from '@patternfly/react-topology';
 import defaultComponentFactory from './components/defaultComponentFactory';
 import DefaultGroup from './components/DefaultGroup';
-import DefaultNode from './components/DefaultNode';
+import DefaultNode from './components/DemoDefaultNode';
 import defaultLayoutFactory from './layouts/defaultLayoutFactory';
 import withTopologySetup from './utils/withTopologySetup';
 

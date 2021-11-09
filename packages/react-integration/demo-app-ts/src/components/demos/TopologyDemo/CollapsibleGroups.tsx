@@ -26,7 +26,7 @@ import defaultLayoutFactory from './layouts/defaultLayoutFactory';
 import data from './data/group-types';
 import GroupHull from './components/GroupHull';
 import Group from './components/DefaultGroup';
-import Node from './components/DefaultNode';
+import Node from './components/DemoDefaultNode';
 import defaultComponentFactory from './components/defaultComponentFactory';
 
 import '@patternfly/patternfly/patternfly.css';

@@ -14,15 +14,16 @@ import {
   ComponentFactory
 } from '@patternfly/react-topology';
 import defaultLayoutFactory from './layouts/defaultLayoutFactory';
-import data from './data/miserables';
 import defaultComponentFactory from './components/defaultComponentFactory';
 import GroupHull from './components/GroupHull';
 import Group from './components/DefaultGroup';
-import Node from './components/DefaultNode';
+import Node from './components/DemoDefaultNode';
 import withTopologySetup from './utils/withTopologySetup';
+import { generateData } from './data/generator';
 
 const getModel = (layout: string): Model => {
   // create nodes from data
+  const data = generateData(200, 5, 20);
   const nodes: NodeModel[] = data.nodes.map(d => {
     // randomize size somewhat
     const width = 10 + d.id.length;
@@ -40,7 +41,10 @@ const getModel = (layout: string): Model => {
 
   // create groups from data
   const groupNodes: NodeModel[] = _.map(
-    _.groupBy(nodes, n => n.data.group),
+    _.groupBy(
+      nodes.filter(n => n.data.group),
+      n => n.data.group
+    ),
     (v, k) => ({
       type: 'group-hull',
       id: k,
@@ -54,7 +58,7 @@ const getModel = (layout: string): Model => {
   );
 
   // create links from data
-  const edges = data.links.map(
+  const edges = data.edges.map(
     (d): EdgeModel => ({
       data: d,
       source: d.source,
