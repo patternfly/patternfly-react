@@ -4503,16 +4503,16 @@ exports[`component render no items 1`] = `
       className="pf-c-pagination__total-items"
     >
       <ToggleTemplate
-        firstIndex={-9}
+        firstIndex={1}
         itemCount={0}
         itemsTitle=""
-        lastIndex={0}
+        lastIndex={10}
         ofWord="of"
       >
         <b>
-          -9
+          1
            - 
-          0
+          10
         </b>
          
         of
@@ -4527,21 +4527,25 @@ exports[`component render no items 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="down"
-      firstIndex={-9}
+      firstIndex={1}
       isDisabled={false}
       itemCount={0}
       itemsPerPageTitle="Items per page"
       itemsTitle=""
+<<<<<<< HEAD
       lastIndex={0}
 <<<<<<< HEAD
       lastPage={0}
       ofWord="of"
 =======
+=======
+      lastIndex={10}
+>>>>>>> daf5b02e4 (updated test snapshot)
       lastPage={1}
 >>>>>>> 87be7e495 (feat(Pagination): handling corner cases)
       onPerPageSelect={[Function]}
       optionsToggle="Items per page"
-      page={0}
+      page={1}
       perPage={10}
       perPageOptions={
         Array [
@@ -4628,14 +4632,18 @@ exports[`component render no items 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={-9}
+            firstIndex={1}
             isDisabled={false}
             isOpen={false}
             itemCount={0}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
+<<<<<<< HEAD
             lastIndex={0}
             ofWord="of"
+=======
+            lastIndex={10}
+>>>>>>> daf5b02e4 (updated test snapshot)
             onToggle={[Function]}
             optionsToggle="Items per page"
             parentRef={null}
@@ -4652,7 +4660,7 @@ exports[`component render no items 1`] = `
         >
           <OptionsToggle
             aria-haspopup={true}
-            firstIndex={-9}
+            firstIndex={1}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-11"
             isDisabled={false}
@@ -4662,8 +4670,12 @@ exports[`component render no items 1`] = `
             itemsPerPageTitle="Items per page"
             itemsTitle=""
             key=".0"
+<<<<<<< HEAD
             lastIndex={0}
             ofWord="of"
+=======
+            lastIndex={10}
+>>>>>>> daf5b02e4 (updated test snapshot)
             onEnter={[Function]}
             onToggle={[Function]}
             optionsToggle="Items per page"
@@ -4681,9 +4693,9 @@ exports[`component render no items 1`] = `
                       class="pf-c-options-menu__toggle-text"
                     >
                       <b>
-                        -9
+                        1
                          - 
-                        0
+                        10
                       </b>
                        
                       of
@@ -4737,16 +4749,20 @@ exports[`component render no items 1`] = `
                 className="pf-c-options-menu__toggle-text"
               >
                 <ToggleTemplate
-                  firstIndex={-9}
+                  firstIndex={1}
                   itemCount={0}
                   itemsTitle=""
+<<<<<<< HEAD
                   lastIndex={0}
                   ofWord="of"
+=======
+                  lastIndex={10}
+>>>>>>> daf5b02e4 (updated test snapshot)
                 >
                   <b>
-                    -9
+                    1
                      - 
-                    0
+                    10
                   </b>
                    
                   of
@@ -4779,9 +4795,9 @@ exports[`component render no items 1`] = `
                           class="pf-c-options-menu__toggle-text"
                         >
                           <b>
-                            -9
+                            1
                              - 
-                            0
+                            10
                           </b>
                            
                           of
@@ -4856,9 +4872,9 @@ exports[`component render no items 1`] = `
                             class="pf-c-options-menu__toggle-text"
                           >
                             <b>
-                              -9
+                              1
                                - 
-                              0
+                              10
                             </b>
                              
                             of
@@ -4966,7 +4982,7 @@ exports[`component render no items 1`] = `
       onPageInput={[Function]}
       onPreviousClick={[Function]}
       onSetPage={[Function]}
-      page={0}
+      page={1}
       pagesTitle=""
       paginationTitle="Pagination"
       perPage={10}
@@ -5105,13 +5121,13 @@ exports[`component render no items 1`] = `
           <input
             aria-label="Current page"
             className="pf-c-form-control"
-            disabled={true}
+            disabled={false}
             max={1}
             min={1}
             onChange={[Function]}
             onKeyDown={[Function]}
             type="number"
-            value={0}
+            value={1}
           />
           0
         </div>
@@ -5121,7 +5137,7 @@ exports[`component render no items 1`] = `
           <Button
             aria-label="Go to next page"
             data-action="next"
-            isDisabled={false}
+            isDisabled={true}
             onClick={[Function]}
             variant="plain"
           >
@@ -5129,21 +5145,22 @@ exports[`component render no items 1`] = `
               aria-label="Go to next page"
               data-action="next"
               innerRef={null}
-              isDisabled={false}
+              isDisabled={true}
               onClick={[Function]}
               variant="plain"
             >
               <button
-                aria-disabled={false}
+                aria-disabled={true}
                 aria-label="Go to next page"
-                className="pf-c-button pf-m-plain"
+                className="pf-c-button pf-m-plain pf-m-disabled"
                 data-action="next"
                 data-ouia-component-id="OUIA-Generated-Button-plain-45"
                 data-ouia-component-type="PF4/Button"
                 data-ouia-safe={true}
-                disabled={false}
+                disabled={true}
                 onClick={[Function]}
                 role={null}
+                tabIndex={null}
                 type="button"
               >
                 <AngleRightIcon
@@ -5180,7 +5197,7 @@ exports[`component render no items 1`] = `
           <Button
             aria-label="Go to last page"
             data-action="last"
-            isDisabled={false}
+            isDisabled={true}
             onClick={[Function]}
             variant="plain"
           >
@@ -5188,21 +5205,22 @@ exports[`component render no items 1`] = `
               aria-label="Go to last page"
               data-action="last"
               innerRef={null}
-              isDisabled={false}
+              isDisabled={true}
               onClick={[Function]}
               variant="plain"
             >
               <button
-                aria-disabled={false}
+                aria-disabled={true}
                 aria-label="Go to last page"
-                className="pf-c-button pf-m-plain"
+                className="pf-c-button pf-m-plain pf-m-disabled"
                 data-action="last"
                 data-ouia-component-id="OUIA-Generated-Button-plain-46"
                 data-ouia-component-type="PF4/Button"
                 data-ouia-safe={true}
-                disabled={false}
+                disabled={true}
                 onClick={[Function]}
                 role={null}
+                tabIndex={null}
                 type="button"
               >
                 <AngleDoubleRightIcon
@@ -11608,16 +11626,16 @@ exports[`component render zero results 1`] = `
       className="pf-c-pagination__total-items"
     >
       <ToggleTemplate
-        firstIndex={-9}
+        firstIndex={1}
         itemCount={0}
         itemsTitle=""
-        lastIndex={0}
+        lastIndex={10}
         ofWord="of"
       >
         <b>
-          -9
+          1
            - 
-          0
+          10
         </b>
          
         of
@@ -11632,21 +11650,25 @@ exports[`component render zero results 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="down"
-      firstIndex={-9}
+      firstIndex={1}
       isDisabled={false}
       itemCount={0}
       itemsPerPageTitle="Items per page"
       itemsTitle=""
+<<<<<<< HEAD
       lastIndex={0}
 <<<<<<< HEAD
       lastPage={0}
       ofWord="of"
 =======
+=======
+      lastIndex={10}
+>>>>>>> daf5b02e4 (updated test snapshot)
       lastPage={1}
 >>>>>>> 87be7e495 (feat(Pagination): handling corner cases)
       onPerPageSelect={[Function]}
       optionsToggle="Items per page"
-      page={0}
+      page={1}
       perPage={10}
       perPageOptions={
         Array [
@@ -11733,14 +11755,18 @@ exports[`component render zero results 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={-9}
+            firstIndex={1}
             isDisabled={false}
             isOpen={false}
             itemCount={0}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
+<<<<<<< HEAD
             lastIndex={0}
             ofWord="of"
+=======
+            lastIndex={10}
+>>>>>>> daf5b02e4 (updated test snapshot)
             onToggle={[Function]}
             optionsToggle="Items per page"
             parentRef={null}
@@ -11757,7 +11783,7 @@ exports[`component render zero results 1`] = `
         >
           <OptionsToggle
             aria-haspopup={true}
-            firstIndex={-9}
+            firstIndex={1}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-7"
             isDisabled={false}
@@ -11767,8 +11793,12 @@ exports[`component render zero results 1`] = `
             itemsPerPageTitle="Items per page"
             itemsTitle=""
             key=".0"
+<<<<<<< HEAD
             lastIndex={0}
             ofWord="of"
+=======
+            lastIndex={10}
+>>>>>>> daf5b02e4 (updated test snapshot)
             onEnter={[Function]}
             onToggle={[Function]}
             optionsToggle="Items per page"
@@ -11786,9 +11816,9 @@ exports[`component render zero results 1`] = `
                       class="pf-c-options-menu__toggle-text"
                     >
                       <b>
-                        -9
+                        1
                          - 
-                        0
+                        10
                       </b>
                        
                       of
@@ -11842,16 +11872,20 @@ exports[`component render zero results 1`] = `
                 className="pf-c-options-menu__toggle-text"
               >
                 <ToggleTemplate
-                  firstIndex={-9}
+                  firstIndex={1}
                   itemCount={0}
                   itemsTitle=""
+<<<<<<< HEAD
                   lastIndex={0}
                   ofWord="of"
+=======
+                  lastIndex={10}
+>>>>>>> daf5b02e4 (updated test snapshot)
                 >
                   <b>
-                    -9
+                    1
                      - 
-                    0
+                    10
                   </b>
                    
                   of
@@ -11884,9 +11918,9 @@ exports[`component render zero results 1`] = `
                           class="pf-c-options-menu__toggle-text"
                         >
                           <b>
-                            -9
+                            1
                              - 
-                            0
+                            10
                           </b>
                            
                           of
@@ -11961,9 +11995,9 @@ exports[`component render zero results 1`] = `
                             class="pf-c-options-menu__toggle-text"
                           >
                             <b>
-                              -9
+                              1
                                - 
-                              0
+                              10
                             </b>
                              
                             of
@@ -12071,7 +12105,7 @@ exports[`component render zero results 1`] = `
       onPageInput={[Function]}
       onPreviousClick={[Function]}
       onSetPage={[Function]}
-      page={0}
+      page={1}
       pagesTitle=""
       paginationTitle="Pagination"
       perPage={10}
@@ -12210,13 +12244,13 @@ exports[`component render zero results 1`] = `
           <input
             aria-label="Current page"
             className="pf-c-form-control"
-            disabled={true}
+            disabled={false}
             max={1}
             min={1}
             onChange={[Function]}
             onKeyDown={[Function]}
             type="number"
-            value={0}
+            value={1}
           />
           0
         </div>
@@ -12226,7 +12260,7 @@ exports[`component render zero results 1`] = `
           <Button
             aria-label="Go to next page"
             data-action="next"
-            isDisabled={false}
+            isDisabled={true}
             onClick={[Function]}
             variant="plain"
           >
@@ -12234,21 +12268,22 @@ exports[`component render zero results 1`] = `
               aria-label="Go to next page"
               data-action="next"
               innerRef={null}
-              isDisabled={false}
+              isDisabled={true}
               onClick={[Function]}
               variant="plain"
             >
               <button
-                aria-disabled={false}
+                aria-disabled={true}
                 aria-label="Go to next page"
-                className="pf-c-button pf-m-plain"
+                className="pf-c-button pf-m-plain pf-m-disabled"
                 data-action="next"
                 data-ouia-component-id="OUIA-Generated-Button-plain-29"
                 data-ouia-component-type="PF4/Button"
                 data-ouia-safe={true}
-                disabled={false}
+                disabled={true}
                 onClick={[Function]}
                 role={null}
+                tabIndex={null}
                 type="button"
               >
                 <AngleRightIcon
@@ -12285,7 +12320,7 @@ exports[`component render zero results 1`] = `
           <Button
             aria-label="Go to last page"
             data-action="last"
-            isDisabled={false}
+            isDisabled={true}
             onClick={[Function]}
             variant="plain"
           >
@@ -12293,21 +12328,22 @@ exports[`component render zero results 1`] = `
               aria-label="Go to last page"
               data-action="last"
               innerRef={null}
-              isDisabled={false}
+              isDisabled={true}
               onClick={[Function]}
               variant="plain"
             >
               <button
-                aria-disabled={false}
+                aria-disabled={true}
                 aria-label="Go to last page"
-                className="pf-c-button pf-m-plain"
+                className="pf-c-button pf-m-plain pf-m-disabled"
                 data-action="last"
                 data-ouia-component-id="OUIA-Generated-Button-plain-30"
                 data-ouia-component-type="PF4/Button"
                 data-ouia-safe={true}
-                disabled={false}
+                disabled={true}
                 onClick={[Function]}
                 role={null}
+                tabIndex={null}
                 type="button"
               >
                 <AngleDoubleRightIcon
