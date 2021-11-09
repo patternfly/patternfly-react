@@ -305,6 +305,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
           perPageOptions={perPageOptions}
           firstIndex={itemsStart !== null ? itemsStart : firstIndex}
           lastIndex={itemsEnd !== null ? itemsEnd : lastIndex}
+          ofWord={titles.ofWord}
           defaultToFullPage={defaultToFullPage}
           itemCount={itemCount}
           page={page}

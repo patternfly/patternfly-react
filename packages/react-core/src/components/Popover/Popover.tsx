@@ -3,6 +3,7 @@ import * as React from 'react';
 import { KEY_CODES } from '../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import { css } from '@patternfly/react-styles';
+import { PopoverContext } from './PopoverContext';
 import { PopoverContent } from './PopoverContent';
 import { PopoverBody } from './PopoverBody';
 import { PopoverHeader } from './PopoverHeader';
@@ -109,6 +110,8 @@ export interface PopoverProps {
    * i.e. headerContent={hide => <Button onClick={() => hide()}>Close</Button>}
    */
   headerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
+  /** Sets the heading level to use for the popover header. Default is h6. */
+  headerComponent?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   /** Hides the popover when a click occurs outside (only works if isVisible is not controlled by the user) */
   hideOnOutsideClick?: boolean;
   /**
@@ -206,6 +209,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   'aria-label': ariaLabel = '',
   bodyContent,
   headerContent = null,
+  headerComponent = 'h6',
   footerContent = null,
   appendTo = () => document.body,
   hideOnOutsideClick = true,
@@ -435,24 +439,26 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   );
 
   return (
-    <Popper
-      trigger={children}
-      reference={reference}
-      popper={content}
-      popperMatchesTriggerWidth={false}
-      appendTo={appendTo}
-      isVisible={visible}
-      positionModifiers={positionModifiers}
-      distance={distance}
-      placement={position}
-      onTriggerClick={onTriggerClick}
-      onTriggerEnter={onTriggerEnter}
-      onDocumentClick={onDocumentClick}
-      onDocumentKeyDown={onDocumentKeyDown}
-      enableFlip={enableFlip}
-      zIndex={zIndex}
-      flipBehavior={flipBehavior}
-    />
+    <PopoverContext.Provider value={{ headerComponent }}>
+      <Popper
+        trigger={children}
+        reference={reference}
+        popper={content}
+        popperMatchesTriggerWidth={false}
+        appendTo={appendTo}
+        isVisible={visible}
+        positionModifiers={positionModifiers}
+        distance={distance}
+        placement={position}
+        onTriggerClick={onTriggerClick}
+        onTriggerEnter={onTriggerEnter}
+        onDocumentClick={onDocumentClick}
+        onDocumentKeyDown={onDocumentKeyDown}
+        enableFlip={enableFlip}
+        zIndex={zIndex}
+        flipBehavior={flipBehavior}
+      />
+    </PopoverContext.Provider>
   );
 };
 Popover.displayName = 'Popover';

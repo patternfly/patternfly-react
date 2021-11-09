@@ -30,6 +30,7 @@ exports[`Pagination should match snapshot (auto-generated) 1`] = `
     itemsTitle=""
     lastIndex={42}
     lastPage={1}
+    ofWord="of"
     onPerPageSelect={[Function]}
     optionsToggle="Items per page"
     page={1}

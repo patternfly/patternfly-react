@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.22.4 (2021-11-09)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## 6.22.3 (2021-11-08)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## 6.22.2 (2021-11-08)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## 6.22.1 (2021-11-08)
+
+
+### Bug Fixes
+
+* **acccessconsoles:** use object type Select options values in order to not mix displayed text with option keys ([#6496](https://github.com/patternfly/patternfly-react/issues/6496)) ([975c8e1](https://github.com/patternfly/patternfly-react/commit/975c8e14d7ea8c53eb4048ea6ef73e804b3ad2be))
+
+
+
+
+
 # 6.22.0 (2021-11-04)
 
 

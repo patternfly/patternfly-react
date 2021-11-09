@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import { Select, SelectOption, SelectOptionObject, SelectVariant } from '@patternfly/react-core';
 
 import { constants } from '../common/constants';
 
@@ -46,18 +46,23 @@ export const AccessConsoles: React.FunctionComponent<AccessConsolesProps> = ({
   textSerialConsole = 'Serial console',
   textVncConsole = 'VNC console',
   textDesktopViewerConsole = 'Desktop viewer',
-  preselectedType = NONE_TYPE
+  preselectedType = null
 }) => {
-  const [type, setType] = React.useState(preselectedType);
-  const [isOpen, setIsOpen] = React.useState(false);
   const typeMap = {
-    [textSerialConsole]: SERIAL_CONSOLE_TYPE,
-    [textVncConsole]: VNC_CONSOLE_TYPE,
-    [textDesktopViewerConsole]: DESKTOP_VIEWER_CONSOLE_TYPE
+    [SERIAL_CONSOLE_TYPE]: textSerialConsole,
+    [VNC_CONSOLE_TYPE]: textVncConsole,
+    [DESKTOP_VIEWER_CONSOLE_TYPE]: textDesktopViewerConsole
   };
-  const getConsoleForType = (type: string) =>
+  const [type, setType] = React.useState(
+    preselectedType !== NONE_TYPE
+      ? ({ value: preselectedType, toString: () => typeMap[preselectedType] } as SelectOptionObject)
+      : null
+  );
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const getConsoleForType = (type: any) =>
     React.Children.map(children as React.ReactElement[], (child: any) => {
-      if (getChildTypeName(child) === type) {
+      if (getChildTypeName(child) === type.value) {
         return <React.Fragment key={getChildTypeName(child)}>{child}</React.Fragment>;
       } else {
         return null;
@@ -72,20 +77,38 @@ export const AccessConsoles: React.FunctionComponent<AccessConsolesProps> = ({
 
   React.Children.toArray(children as React.ReactElement[]).forEach((child: any) => {
     if (isChildOfType(child, VNC_CONSOLE_TYPE)) {
-      selectOptions.push(<SelectOption key={VNC_CONSOLE_TYPE} id={VNC_CONSOLE_TYPE} value={textVncConsole} />);
+      selectOptions.push(
+        <SelectOption
+          key={VNC_CONSOLE_TYPE}
+          id={VNC_CONSOLE_TYPE}
+          value={{ value: VNC_CONSOLE_TYPE, toString: () => textVncConsole } as SelectOptionObject}
+        />
+      );
     } else if (isChildOfType(child, SERIAL_CONSOLE_TYPE)) {
-      selectOptions.push(<SelectOption key={SERIAL_CONSOLE_TYPE} id={SERIAL_CONSOLE_TYPE} value={textSerialConsole} />);
+      selectOptions.push(
+        <SelectOption
+          key={SERIAL_CONSOLE_TYPE}
+          id={SERIAL_CONSOLE_TYPE}
+          value={{ value: SERIAL_CONSOLE_TYPE, toString: () => textSerialConsole } as SelectOptionObject}
+        />
+      );
     } else if (isChildOfType(child, DESKTOP_VIEWER_CONSOLE_TYPE)) {
       selectOptions.push(
         <SelectOption
           key={DESKTOP_VIEWER_CONSOLE_TYPE}
           id={DESKTOP_VIEWER_CONSOLE_TYPE}
-          value={textDesktopViewerConsole}
+          value={{ value: DESKTOP_VIEWER_CONSOLE_TYPE, toString: () => textDesktopViewerConsole } as SelectOptionObject}
         />
       );
     } else {
       const typeText = getChildTypeName(child);
-      selectOptions.push(<SelectOption key={typeText} id={typeText} value={typeText} />);
+      selectOptions.push(
+        <SelectOption
+          key={typeText}
+          id={typeText}
+          value={{ value: typeText, toString: () => typeText } as SelectOptionObject}
+        />
+      );
     }
   });
   return (
@@ -98,14 +121,10 @@ export const AccessConsoles: React.FunctionComponent<AccessConsolesProps> = ({
             toggleId="pf-c-console__type-selector"
             variant={SelectVariant.single}
             onSelect={(_, selection, __) => {
-              if ((selection as string) in typeMap) {
-                setType(typeMap[selection as string]);
-              } else {
-                setType(selection as string);
-              }
+              setType(selection as SelectOptionObject);
               setIsOpen(false);
             }}
-            selections={type !== NONE_TYPE ? type : null}
+            selections={type}
             isOpen={isOpen}
             onToggle={onToggle}
           >
@@ -113,7 +132,7 @@ export const AccessConsoles: React.FunctionComponent<AccessConsolesProps> = ({
           </Select>
         </div>
       )}
-      {getConsoleForType(type)}
+      {type && getConsoleForType(type)}
     </div>
   );
 };

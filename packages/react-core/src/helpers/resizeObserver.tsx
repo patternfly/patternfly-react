@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { canUseDOM } from './util';
 
 /**
@@ -57,17 +56,17 @@ import { canUseDOM } from './util';
  *   );
  * }
  *
- * @param {React.RefObject} containerRef The container reference to observe
+ * @param {Element} containerRefElement The container reference to observe
  * @param {Function} handleResize The function to call for resize events
  * @return {Function} The function used to unobserve resize events
  */
-export const getResizeObserver = (containerRef: React.RefObject<any>, handleResize: () => void) => {
+export const getResizeObserver = (containerRefElement: Element, handleResize: () => void) => {
   let unobserve: any;
 
   if (canUseDOM) {
     const { ResizeObserver } = window as any;
 
-    if (containerRef && ResizeObserver) {
+    if (containerRefElement && ResizeObserver) {
       const resizeObserver = new ResizeObserver((entries: any) => {
         // Wrap resize function in requestAnimationFrame to avoid "ResizeObserver loop limit exceeded" errors
         window.requestAnimationFrame(() => {
@@ -76,8 +75,8 @@ export const getResizeObserver = (containerRef: React.RefObject<any>, handleResi
           }
         });
       });
-      resizeObserver.observe(containerRef);
-      unobserve = () => resizeObserver.unobserve(containerRef);
+      resizeObserver.observe(containerRefElement);
+      unobserve = () => resizeObserver.unobserve(containerRefElement);
     } else {
       window.addEventListener('resize', handleResize);
       unobserve = () => window.removeEventListener('resize', handleResize);

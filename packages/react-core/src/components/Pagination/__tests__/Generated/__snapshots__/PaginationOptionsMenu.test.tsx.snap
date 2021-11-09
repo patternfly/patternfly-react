@@ -39,6 +39,7 @@ exports[`PaginationOptionsMenu should match snapshot (auto-generated) 1`] = `
         itemsPerPageTitle="'Items per page'"
         itemsTitle="'items'"
         lastIndex={0}
+        ofWord="of"
         onToggle={[Function]}
         optionsToggle="'Select'"
         parentRef={null}
