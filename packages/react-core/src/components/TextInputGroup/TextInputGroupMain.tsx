@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-
 import { css } from '@patternfly/react-styles';
 import { TextInputGroupContext } from './TextInputGroup';
 
-export interface TextInputGroupMainProps extends React.HTMLProps<HTMLDivElement> {
+export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
   /** Content rendered inside the text input group main div */
   children?: React.ReactNode;
   /** Additional classes applied to the text input group main container */
@@ -24,11 +24,11 @@ export interface TextInputGroupMainProps extends React.HTMLProps<HTMLDivElement>
     | 'time'
     | 'url';
   /** Callback for when there is a change in the input field*/
-  onChange?: () => void;
+  onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
   /** Callback for when the input field is focused*/
-  onFocus?: () => void;
+  onFocus?: (event?: any) => void;
   /** Callback for when focus is lost on the input field*/
-  onBlur?: () => void;
+  onBlur?: (event?: any) => void;
   /** Accessibility label for the input */
   'aria-label'?: string;
 }
@@ -47,6 +47,10 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
 }: TextInputGroupMainProps) => {
   const { isDisabled } = React.useContext(TextInputGroupContext);
 
+  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
+    onChange(event.currentTarget.value, event);
+  };
+
   return (
     <div className={css(styles.textInputGroupMain, icon && styles.modifiers.icon, className)} {...props}>
       {children}
@@ -57,7 +61,7 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
           className={css(styles.textInputGroupTextInput)}
           aria-label={ariaLabel}
           disabled={isDisabled}
-          onChange={onChange}
+          onChange={handleChange}
           onFocus={onFocus}
           onBlur={onBlur}
           value={inputValue}
@@ -67,5 +71,5 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
   );
 };
 
-TextInputGroupMain.defaultProps = { 'aria-label': 'Type to filter', type: 'text' };
+TextInputGroupMain.defaultProps = { 'aria-label': 'Type to filter', type: 'text', onChange: (): any => undefined };
 TextInputGroupMain.displayName = 'TextInputGroupMain';
