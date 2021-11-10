@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.132.0 (2021-11-09)
+
+
+### Features
+
+* **Table:** set default sort direction ([#6544](https://github.com/patternfly/patternfly-react/issues/6544)) ([9ee4942](https://github.com/patternfly/patternfly-react/commit/9ee49428c8e1041721f2a09f8176a5aba3335049))
+
+
+
+
+
 ## 4.131.4 (2021-11-09)
 
 **Note:** Version bump only for package @patternfly/react-integration
