@@ -151,10 +151,13 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
 
     useEffect(() => {
       if (scrollToRow && parsedData.length) {
-        setRowInFocus(parsedData.length - 1);
-        if (logViewerRef && logViewerRef.current) {
-          logViewerRef.current.scrollToItem(scrollToRow, 'center');
-        }
+        setRowInFocus(scrollToRow);
+        // only in this way (setTimeout) the scrollToItem will work
+        setTimeout(() => {
+          if (logViewerRef && logViewerRef.current) {
+            logViewerRef.current.scrollToItem(scrollToRow, 'center');
+          }
+        }, 1);
       }
     }, [parsedData, scrollToRow]);
 
@@ -188,9 +191,13 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     const scrollToRowInFocus = (searchedRowIndex: number) => {
       setRowInFocus(searchedRowIndex);
       logViewerRef.current.scrollToItem(searchedRowIndex, 'center');
-      const element: any = document.querySelector('.pf-c-log-viewer__string.pf-m-current');
-      if (element) {
-        element.scrollIntoViewIfNeeded();
+      // use this method to scroll to the right
+      // if the keyword is out of the window when wrapping text
+      if (!wrapText) {
+        setTimeout(() => {
+          const element = document.querySelector('.pf-c-log-viewer__string.pf-m-current');
+          element && element.scrollIntoView({ block: 'nearest', inline: 'center' });
+        }, 1);
       }
     };
 

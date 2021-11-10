@@ -254,6 +254,8 @@ export default function createListComponent({
           style: {
             height,
             width,
+            paddingTop: 0,
+            paddingBottom: 0,
             WebkitOverflowScrolling: 'touch',
             ...style
           }
