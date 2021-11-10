@@ -84,7 +84,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     footer,
     onScroll,
     innerRef,
-    wrapText = false,
+    wrapText = true,
     ...props
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
