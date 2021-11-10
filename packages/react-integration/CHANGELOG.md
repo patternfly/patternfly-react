@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.132.4 (2021-11-10)
+
+
+### Bug Fixes
+
+* **jumplinks:** fixed to always set clicked item as active ([#6542](https://github.com/patternfly/patternfly-react/issues/6542)) ([845c98f](https://github.com/patternfly/patternfly-react/commit/845c98f5f3df8aa9b6acc190707c5f1d7bf3ca38))
+
+
+
+
+
 ## 4.132.3 (2021-11-10)
 
 
