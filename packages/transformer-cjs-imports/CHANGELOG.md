@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.8.3 (2021-11-10)
+
+
+### Bug Fixes
+
+* **Menu:** stop passing disableHover to DrilldownMenu DOM ([#6571](https://github.com/patternfly/patternfly-react/issues/6571)) ([63dcf25](https://github.com/patternfly/patternfly-react/commit/63dcf256723848ff3789828fc0a5f86d5009fc87))
+
+
+
+
+
 ## 4.8.2 (2021-11-10)
 
 **Note:** Version bump only for package transformer-cjs-imports
