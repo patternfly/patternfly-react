@@ -28,6 +28,8 @@ propComponents:
     'EditableTextCellProps',
     'ThSortType',
     'ISortBy',
+    'InnerScrollContainer',
+    'OuterScrollContainer',
   ]
 ouia: true
 ---
@@ -2830,7 +2832,7 @@ ComposableTableStickyColumnAndHeader = () => {
     });
     setRows(updatedRows);
   };
-  console.log(colSpans);
+
   return (
     <React.Fragment>
       <InnerScrollContainer>
