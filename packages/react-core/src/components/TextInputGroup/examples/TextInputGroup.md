@@ -24,6 +24,19 @@ const BasicTextInputGroup = () => (
 );
 ```
 
+### Disabled
+
+```js
+import React from 'react';
+import { TextInputGroup, TextInputGroupMain } from '@patternfly/react-core';
+
+const DisabledTextInputGroup = () => (
+  <TextInputGroup isDisabled>
+    <TextInputGroupMain value="Disabled" type="text" aria-label="Disabled text input group example input" />
+  </TextInputGroup>
+);
+```
+
 ### Utilities and icon
 
 ```js
