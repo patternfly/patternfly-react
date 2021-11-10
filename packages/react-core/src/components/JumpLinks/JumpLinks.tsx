@@ -100,6 +100,8 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
   const [scrollItems, setScrollItems] = React.useState(hasScrollSpy ? getScrollItems(children, []) : []);
   const [activeIndex, setActiveIndex] = React.useState(activeIndexProp);
   const [isExpanded, setIsExpanded] = React.useState(isExpandedProp);
+  // Boolean to disable scroll listener from overriding active state of clicked jumplink
+  const isLinkClicked = React.useRef(false);
   // Allow expanding to be controlled for a niche use case
   React.useEffect(() => setIsExpanded(isExpandedProp), [isExpandedProp]);
   const navRef = React.useRef<HTMLElement>();
@@ -108,6 +110,10 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
 
   const scrollSpy = React.useCallback(() => {
     if (!canUseDOM || !hasScrollSpy || !(scrollableElement instanceof HTMLElement)) {
+      return;
+    }
+    if (isLinkClicked.current) {
+      isLinkClicked.current = false;
       return;
     }
     const scrollPosition = Math.ceil(scrollableElement.scrollTop + offset);
@@ -158,6 +164,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
             const scrollItem = scrollItems[itemIndex];
             return React.cloneElement(child as React.ReactElement<JumpLinksItemProps>, {
               onClick(ev: React.MouseEvent<HTMLAnchorElement>) {
+                isLinkClicked.current = true;
                 // Items might have rendered after this component. Do a quick refresh.
                 let newScrollItems;
                 if (!scrollItem) {
@@ -188,6 +195,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
                   }
                   newScrollItem.focus();
                   ev.preventDefault();
+                  setActiveIndex(itemIndex);
                 }
                 if (onClickProp) {
                   onClickProp(ev);
