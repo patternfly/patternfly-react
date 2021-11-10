@@ -89,7 +89,9 @@ class PaginationBottom extends React.Component {
   }
 }
 ```
-### Indeterminate (item count is not known)
+### Indeterminate
+
+By not passing `itemCount` and passing `toggleTemplate` you can customize the toggle with text.
 
 ```js
 import React from 'react';
@@ -113,10 +115,10 @@ PaginationIndeterminate = () => {
           <b>many</b>
         </React.Fragment>
       )}
+      widgetId="pagination-indeterminate"
       perPage={perPage}
       page={page}
       onSetPage={onSetPage}
-      widgetId="pagination-indeterminate"
       onPerPageSelect={onPerPageSelect}
     />
   );

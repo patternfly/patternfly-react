@@ -204,7 +204,6 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
     const { itemCount, perPage, page } = this.props;
     // when itemCount is not known let's set lastPage as page+1 as we don't know the total count
     return itemCount ? Math.ceil(itemCount / perPage) || 0 : page + 1;
-    // return Math.ceil(itemCount / perPage) || 0;
   }
 
   componentDidMount() {
