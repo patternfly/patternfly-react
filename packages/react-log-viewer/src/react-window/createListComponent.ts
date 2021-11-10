@@ -216,8 +216,7 @@ export default function createListComponent({
         outerElementType,
         outerTagName,
         style,
-        useIsScrolling,
-        width
+        useIsScrolling
       } = this.props;
       const { isScrolling } = this.state;
 
@@ -253,7 +252,6 @@ export default function createListComponent({
           tabIndex: 0,
           style: {
             height,
-            width,
             paddingTop: 0,
             paddingBottom: 0,
             WebkitOverflowScrolling: 'touch',

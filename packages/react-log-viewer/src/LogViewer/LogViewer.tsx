@@ -223,7 +223,6 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
         outerClassName={css(styles.logViewerScrollContainer)}
         innerClassName={css(styles.logViewerList)}
         height={containerRef.current.clientHeight}
-        width={containerRef.current.clientWidth}
         itemSize={guessRowHeight}
         itemCount={typeof itemCount === 'undefined' ? parsedData.length : itemCount}
         itemData={dataToRender}
