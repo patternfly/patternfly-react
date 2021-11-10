@@ -37,11 +37,11 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
   children,
   className,
   icon,
-  type,
-  onChange,
+  type = 'text',
+  onChange = (): any => undefined,
   onFocus,
   onBlur,
-  'aria-label': ariaLabel,
+  'aria-label': ariaLabel = 'Type to filter',
   value: inputValue,
   ...props
 }: TextInputGroupMainProps) => {
@@ -71,5 +71,4 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
   );
 };
 
-TextInputGroupMain.defaultProps = { 'aria-label': 'Type to filter', type: 'text', onChange: (): any => undefined };
 TextInputGroupMain.displayName = 'TextInputGroupMain';

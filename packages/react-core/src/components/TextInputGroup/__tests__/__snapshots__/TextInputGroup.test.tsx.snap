@@ -9,10 +9,7 @@ exports[`TextInputGroup gets custom class and id 1`] = `
     className="pf-c-text-input-group custom-class"
     id="test-id"
   >
-    <TextInputGroupMain
-      aria-label="Type to filter"
-      type="text"
-    >
+    <TextInputGroupMain>
       <div
         className="pf-c-text-input-group__main"
       >
@@ -23,6 +20,7 @@ exports[`TextInputGroup gets custom class and id 1`] = `
           <input
             aria-label="Type to filter"
             className="pf-c-text-input-group__text-input"
+            onChange={[Function]}
             type="text"
           />
         </span>
@@ -42,10 +40,7 @@ exports[`TextInputGroup renders content 1`] = `
   <div
     className="pf-c-text-input-group"
   >
-    <TextInputGroupMain
-      aria-label="Type to filter"
-      type="text"
-    >
+    <TextInputGroupMain>
       <div
         className="pf-c-text-input-group__main"
       >
@@ -56,6 +51,7 @@ exports[`TextInputGroup renders content 1`] = `
           <input
             aria-label="Type to filter"
             className="pf-c-text-input-group__text-input"
+            onChange={[Function]}
             type="text"
           />
         </span>
@@ -77,10 +73,7 @@ exports[`TextInputGroup renders with the proper stying when disabled 1`] = `
   <div
     className="pf-c-text-input-group pf-m-disabled"
   >
-    <TextInputGroupMain
-      aria-label="Type to filter"
-      type="text"
-    >
+    <TextInputGroupMain>
       <div
         className="pf-c-text-input-group__main"
       >
@@ -92,6 +85,7 @@ exports[`TextInputGroup renders with the proper stying when disabled 1`] = `
             aria-label="Type to filter"
             className="pf-c-text-input-group__text-input"
             disabled={true}
+            onChange={[Function]}
             type="text"
           />
         </span>
@@ -107,10 +101,7 @@ exports[`TextInputGroup renders with the proper stying when disabled 1`] = `
 `;
 
 exports[`TextInputGroupMain renders content 1`] = `
-<TextInputGroupMain
-  aria-label="Type to filter"
-  type="text"
->
+<TextInputGroupMain>
   <div
     className="pf-c-text-input-group__main"
   >
@@ -122,6 +113,7 @@ exports[`TextInputGroupMain renders content 1`] = `
         aria-label="Type to filter"
         className="pf-c-text-input-group__text-input"
         disabled={false}
+        onChange={[Function]}
         type="text"
       />
     </span>
@@ -131,7 +123,6 @@ exports[`TextInputGroupMain renders content 1`] = `
 
 exports[`TextInputGroupMain renders given input icon props 1`] = `
 <TextInputGroupMain
-  aria-label="Type to filter"
   icon={
     <SearchIcon
       color="currentColor"
@@ -139,7 +130,6 @@ exports[`TextInputGroupMain renders given input icon props 1`] = `
       size="sm"
     />
   }
-  type="text"
 >
   <div
     className="pf-c-text-input-group__main pf-m-icon"
@@ -180,6 +170,7 @@ exports[`TextInputGroupMain renders given input icon props 1`] = `
         aria-label="Type to filter"
         className="pf-c-text-input-group__text-input"
         disabled={false}
+        onChange={[Function]}
         type="text"
       />
     </span>
@@ -190,7 +181,6 @@ exports[`TextInputGroupMain renders given input icon props 1`] = `
 exports[`TextInputGroupMain renders the input with custom aria label when given 1`] = `
 <TextInputGroupMain
   aria-label="Foo"
-  type="text"
 >
   <div
     className="pf-c-text-input-group__main"
@@ -203,6 +193,7 @@ exports[`TextInputGroupMain renders the input with custom aria label when given 
         aria-label="Foo"
         className="pf-c-text-input-group__text-input"
         disabled={false}
+        onChange={[Function]}
         type="text"
       />
     </span>
