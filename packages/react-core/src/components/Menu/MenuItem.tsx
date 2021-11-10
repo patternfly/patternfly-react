@@ -287,7 +287,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         }}
         className={css(styles.menuItem, getIsSelected() && styles.modifiers.selected, className)}
         aria-current={getAriaCurrent()}
-        disabled={isDisabled}
+        disabled={Component !== 'a' && isDisabled}
         {...additionalProps}
       >
         <span className={css(styles.menuItemMain)}>
