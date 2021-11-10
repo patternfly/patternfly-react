@@ -40,7 +40,7 @@ export const KeyValueFiltering = () => {
     Kind: ['Template', 'ReplicationController', 'ReplicaSet', 'Deployment'],
     Label: ['release', 'environment', 'partition'],
     Name: ['backup-1', 'backup-2', 'production-1', 'production-2', 'testing'],
-    NameSpace: ['default', 'public'],
+    Namespace: ['default', 'public'],
     Status: ['running', 'idle', 'stopped']
   };
   const [menuItemsText, setMenuItemsText] = React.useState(keyNames);
@@ -49,7 +49,7 @@ export const KeyValueFiltering = () => {
   const showSearchIcon = !currentChips.length;
 
   /** callback for updating the inputValue state in this component so that the input can be controlled */
-  const handleInputChange = (value, event) => {
+  const handleInputChange = (value, _event) => {
     setInputValue(value);
   };
 
@@ -75,7 +75,7 @@ export const KeyValueFiltering = () => {
         item.toLowerCase().includes(
           inputValue
             .toString()
-            .slice(selectedKey.length + 2)
+            .slice(selectedKey.length && selectedKey.length + 2)
             .toLowerCase()
         )
     )
