@@ -27,24 +27,30 @@ import { Chip, ChipGroup } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-const KeyVaueFiltering = () => {
+export const KeyValueFiltering = () => {
   const [inputValue, setInputValue] = React.useState('');
   const [currentChips, setCurrentChips] = React.useState([]);
   const [selectedKey, setSelectedKey] = React.useState('');
-  const keyNames = ['Action 1', 'Action 2', 'Action 3'];
-  const [menuItemsText, setMenuItemsText] = React.useState(keyNames);
+  const [menuIsOpen, setMenuIsOpen] = React.useState(false);
+  const menuRef = React.useRef();
+  const textInputGrouopRef = React.useRef();
+  const keyNames = ['Cluster', 'Kind', 'Label', 'Name', 'Namespace', 'Status'];
   const data = {
-    'Action 1': ['name', 'status'],
-    'Action 2': ['name', 'status'],
-    'Action 3': ['name', 'status']
+    Cluster: ['acmeqe-managed-1', 'local-cluster'],
+    Kind: ['Template', 'ReplicationController', 'ReplicaSet', 'Deployment'],
+    Label: ['release', 'environment', 'partition'],
+    Name: ['backup-1', 'backup-2', 'production-1', 'production-2', 'testing'],
+    NameSpace: ['default', 'public'],
+    Status: ['running', 'idle', 'stopped']
   };
+  const [menuItemsText, setMenuItemsText] = React.useState(keyNames);
 
   /** show the search icon only when there are no chips to prevent the chips from being displayed behind the icon */
   const showSearchIcon = !currentChips.length;
 
   /** callback for updating the inputValue state in this component so that the input can be controlled */
-  const handleInputChange = event => {
-    setInputValue(event.target.value);
+  const handleInputChange = (value, event) => {
+    setInputValue(value);
   };
 
   /** callback for removing a chip from the chip selections */
@@ -87,11 +93,21 @@ const KeyVaueFiltering = () => {
     );
   }
 
+  const handleEnter = event => {
+    if (event.key === 'Enter') {
+      if (selectedKey.length) {
+        selectValue(menuItems[0].props.children);
+      } else {
+        selectKey(menuItems[0].props.children);
+      }
+    }
+  };
+
   const selectValue = selectedValueText => {
     setCurrentChips([...currentChips, `${selectedKey}: ${selectedValueText}`]);
     setSelectedKey('');
     setInputValue('');
-    setMenuItemsText(keyNames)
+    setMenuItemsText(keyNames);
   };
 
   const selectKey = selectedText => {
@@ -106,37 +122,58 @@ const KeyVaueFiltering = () => {
     } else {
       selectKey(keyNames[itemId]);
     }
+    event.stopPropagation();
+  };
+
+  const handleClick = event => {
+    if (
+      menuRef.current &&
+      !menuRef.current.contains(event.target) &&
+      !textInputGrouopRef.current.contains(event.target)
+    ) {
+      setMenuIsOpen(false);
+    }
   };
 
   const inputGroup = (
-    <TextInputGroup>
-      <TextInputGroupMain icon={showSearchIcon && <SearchIcon />} value={inputValue} onChange={handleInputChange}>
-        <ChipGroup>
-          {currentChips.map(currentChip => (
-            <Chip key={currentChip} onClick={() => deleteChip(currentChip)}>
-              {currentChip}
-            </Chip>
-          ))}
-        </ChipGroup>
-      </TextInputGroupMain>
-      <TextInputGroupUtilities>
-        {showClearButton && (
-          <Button variant="plain" onClick={clearChipsAndInput} aria-label="Clear button and input">
-            <TimesIcon />
-          </Button>
-        )}
-      </TextInputGroupUtilities>
-    </TextInputGroup>
+    <div ref={textInputGrouopRef}>
+      <TextInputGroup>
+        <TextInputGroupMain
+          icon={showSearchIcon && <SearchIcon />}
+          value={inputValue}
+          onChange={handleInputChange}
+          onFocus={() => setMenuIsOpen(true)}
+          onKeyDown={handleEnter}
+        >
+          <ChipGroup>
+            {currentChips.map(currentChip => (
+              <Chip key={currentChip} onClick={() => deleteChip(currentChip)}>
+                {currentChip}
+              </Chip>
+            ))}
+          </ChipGroup>
+        </TextInputGroupMain>
+        <TextInputGroupUtilities>
+          {showClearButton && (
+            <Button variant="plain" onClick={clearChipsAndInput} aria-label="Clear button and input">
+              <TimesIcon />
+            </Button>
+          )}
+        </TextInputGroupUtilities>
+      </TextInputGroup>
+    </div>
   );
 
   const menu = (
-    <Menu onSelect={onSelect}>
-      <MenuContent>
-        <MenuList>{menuItems}</MenuList>
-      </MenuContent>
-    </Menu>
+    <div ref={menuRef}>
+      <Menu onSelect={onSelect}>
+        <MenuContent>
+          <MenuList>{menuItems}</MenuList>
+        </MenuContent>
+      </Menu>
+    </div>
   );
 
-  return <Popper trigger={inputGroup} popper={menu} isVisible={showClearButton} />;
+  return <Popper trigger={inputGroup} popper={menu} isVisible={menuIsOpen} onDocumentClick={handleClick} />;
 };
 ```
