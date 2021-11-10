@@ -47,6 +47,8 @@ export interface ThProps
   stickyMinWidth?: string;
   /** Left offset of a sticky column. This will typically be equal to the combined value set by stickyMinWidth of any sticky columns that precede the current sticky column. */
   stickyLeftOffset?: string;
+  /** Indicates the <th> is part of a subheader of a nested header */
+  isSubheader?: boolean;
 }
 
 const ThBase: React.FunctionComponent<ThProps> = ({
@@ -69,6 +71,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   hasRightBorder = false,
   stickyMinWidth = '100px',
   stickyLeftOffset,
+  isSubheader = false,
   ...props
 }: ThProps) => {
   const [showTooltip, setShowTooltip] = React.useState(false);
@@ -145,6 +148,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
       className={css(
         className,
         textCenter && styles.modifiers.center,
+        isSubheader && styles.tableSubhead,
         isStickyColumn && scrollStyles.tableStickyColumn,
         hasRightBorder && scrollStyles.modifiers.borderRight,
         modifier && styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap'],

@@ -2719,3 +2719,400 @@ ComposableTableStickyColumnAndHeader = () => {
   );
 };
 ```
+
+### Composable: Nested column headers
+
+To make a nested column header:
+
+1. Wrap `TableComposable` with `InnerScrollContainer`.
+2. Pass `nestedHeaderColumnSpans` to `TableComposable`. `nestedHeaderColumnSpans` is an array of numbers representing the column spans of the top level columns to `TableComposable`, where each number is equal to the number of sub columns for a column, or `1` if a column contains no sub columns.
+3. Pass `hasNestedHeader` to `Thead`.
+4. Pass two `Tr` as children of `Thead`.
+
+The first `Tr` represents the top level of columns, and each must pass either `rowSpan` if the column does not contain sub columns or `colSpan` if the column contains sub columns. The value of `rowSpan` is equal to the number of rows the nested header will span, typically `2`, and the value of `colSpan` is equal to the number of sub columns in a column. Each `Th` except the last should also pass `hasRightBorder`.
+
+The second `Tr` represents the second level of sub columns. The `Th` in this row each should pass `isSubHeader`, and the last sub column of a column should also pass `hasRightBorder`.
+
+```js
+import React from 'react';
+import {
+  TableComposable,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  Caption,
+  TableText,
+  InnerScrollContainer,
+  OuterScrollContainer
+} from '@patternfly/react-table';
+import { Flex, FlexItem, Stack, StackItem } from '@patternfly/react-core';
+import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
+
+ComposableTableStickyColumnAndHeader = () => {
+  const columnData = [
+    {
+      name: 'Pods',
+      subColumns: [
+        { name: 'Source', index: 0, sort: true },
+        { name: 'Destination', index: 1, sort: true },
+        { name: 'Date & Time', index: 2, sort: true }
+      ]
+    },
+    {
+      name: 'Ports',
+      subColumns: [
+        { name: 'Source', index: 3, sort: true },
+        { name: 'Desination', index: 4, sort: true }
+      ]
+    },
+    { name: 'Protocol', index: 5, sort: true },
+    { name: 'Flow rate', index: 6, sort: true },
+    { name: 'Traffic', index: 7, sort: true },
+    { name: 'Packets', index: 8, sort: true }
+  ];
+  const colSpans = columnData.map(column => {
+    return column.subColumns ? column.subColumns.length : 1;
+  });
+  const [rows, setRows] = React.useState([
+    [
+      'api-pod-source-name',
+      'api-pod-destination-name',
+      <div>
+        <span>June 22, 2021</span>
+        <span className="pf-u-color-200">3:58:24 PM</span>
+      </div>,
+      <Stack>
+        <StackItem>
+          <span>443</span>
+        </StackItem>
+        <StackItem>
+          <span className="pf-u-color-200">(HTTPS)</span>
+        </StackItem>
+      </Stack>,
+      <Stack>
+        <StackItem>
+          <span>24</span>
+        </StackItem>
+        <StackItem>
+          <span className="pf-u-color-200">(smtp)</span>
+        </StackItem>
+      </Stack>,
+      'TCP',
+      '1.9 Kbps',
+      '2.1 KB',
+      '3'
+    ]
+  ]);
+  // index of the currently active column
+  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
+  // sort direction of the currently active column
+  const [activeSortDirection, setActiveSortDirection] = React.useState('none');
+  const onSort = (event, index, direction) => {
+    setActiveSortIndex(index);
+    setActiveSortDirection(direction);
+    // sorts the rows
+    const updatedRows = rows.sort((a, b) => {
+      if (typeof a[index] === 'number') {
+        // numeric sort
+        if (direction === 'asc') {
+          return a[index] - b[index];
+        }
+        return b[index] - a[index];
+      } else {
+        // string sort
+        if (direction === 'asc') {
+          return a[index].localeCompare(b[index]);
+        }
+        return b[index].localeCompare(a[index]);
+      }
+    });
+    setRows(updatedRows);
+  };
+  console.log(colSpans);
+  return (
+    <React.Fragment>
+      <InnerScrollContainer>
+        <TableComposable aria-label="Sticky column table" gridBreakPoint="" nestedHeaderColumnSpans={colSpans}>
+          <Thead hasNestedHeader>
+            <Tr>
+              {columnData.map((column, columnIndex) => {
+                const sortParams = column.sort
+                  ? {
+                      sort: {
+                        sortBy: {
+                          index: activeSortIndex,
+                          direction: activeSortDirection
+                        },
+                        onSort,
+                        columnIndex: column.index
+                      }
+                    }
+                  : {};
+                const colParams = column.subColumns ? { colSpan: column.subColumns.length } : { rowSpan: 2 };
+                return (
+                  <Th
+                    key={`${columnIndex}-${column.name}`}
+                    {...(columnIndex !== 0 && columnIndex !== 1 && { modifier: 'fitContent' })}
+                    {...(columnIndex !== columnData.length - 1 && { hasRightBorder: true })}
+                    {...colParams}
+                    {...sortParams}
+                  >
+                    {column.name}
+                  </Th>
+                );
+              })}
+            </Tr>
+            <Tr>
+              {columnData.map((column, columnIndex) => {
+                if (column.subColumns) {
+                  return column.subColumns.map((subColumn, subColumnIndex) => {
+                    const sortParams = subColumn.sort
+                      ? {
+                          sort: {
+                            sortBy: {
+                              index: activeSortIndex,
+                              direction: activeSortDirection
+                            },
+                            onSort,
+                            columnIndex: subColumn.index
+                          }
+                        }
+                      : {};
+
+                    return (
+                      <Th
+                        key={`${subColumnIndex}-${subColumn.name}`}
+                        isSubheader
+                        {...(columnIndex !== 0 && { modifier: 'fitContent' })}
+                        {...(columnIndex === 0 &&
+                          subColumnIndex !== 0 &&
+                          subColumnIndex !== 1 && { modifier: 'fitContent' })}
+                        {...(subColumnIndex === column.subColumns.length - 1 && { hasRightBorder: true })}
+                        {...sortParams}
+                      >
+                        {subColumn.name}
+                      </Th>
+                    );
+                  });
+                }
+              })}
+            </Tr>
+          </Thead>
+          <Tbody>
+            {rows.map((row, rowIndex) => (
+              <Tr key={rowIndex}>
+                {row.map((cell, cellIndex) => {
+                  return (
+                    <Td key={`${rowIndex}_${cellIndex}`} dataLabel={''}>
+                      {cell}
+                    </Td>
+                  );
+                })}
+              </Tr>
+            ))}
+          </Tbody>
+        </TableComposable>
+      </InnerScrollContainer>
+    </React.Fragment>
+  );
+};
+```
+
+### Composable: Nested column headers and expandable rows
+
+```js
+import React from 'react';
+import {
+  TableComposable,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  ExpandableRowContent,
+  InnerScrollContainer
+} from '@patternfly/react-table';
+import { Button } from '@patternfly/react-core';
+
+ComposableTableNestedExpandable = () => {
+  const columns = [
+    {
+      name: 'Team',
+      index: 0
+    },
+    {
+      name: 'Members',
+      subColumns: [
+        { name: 'Design Lead', index: 1 },
+        { name: 'Interaction Designer', index: 2 },
+        { name: 'Visual Designer', index: 3 }
+      ]
+    },
+    { name: 'Contact', index: 4 }
+  ];
+  const rowPairs = [
+    {
+      parent: [
+        'Developer program',
+        'Person 1',
+        'Person 2',
+        'Person 3',
+        <Button variant="link" isInline>
+          Message us!
+        </Button>
+      ],
+      child: [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      ],
+      fullWidth: true
+    },
+    {
+      parent: [
+        'Developer program',
+        'Person A',
+        'Person B',
+        'Person C',
+        <Button variant="link" isInline>
+          Message us!
+        </Button>
+      ],
+      child: [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      ],
+      fullWidth: true
+    },
+    {
+      parent: [
+        'Developer program',
+        'Person X',
+        'Person Y',
+        'Person Z',
+        <Button variant="link" isInline>
+          Message us!
+        </Button>
+      ],
+      child: [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      ],
+      fullWidth: true
+    }
+  ];
+  const numColumns = 5;
+  const colSpans = columns.map(column => {
+    return column.subColumns ? column.subColumns.length : 1;
+  });
+  // Init all to false
+  const [expanded, setExpanded] = React.useState(
+    Object.fromEntries(Object.entries(rowPairs).map(([k, v]) => [k, !Boolean(v.child)]))
+  );
+  const handleExpansionToggle = (event, pairIndex) => {
+    setExpanded({
+      ...expanded,
+      [pairIndex]: !expanded[pairIndex]
+    });
+  };
+  let rowIndex = -1;
+  return (
+    <InnerScrollContainer>
+      <TableComposable aria-label="Expandable Table" nestedHeaderColumnSpans={colSpans}>
+        <Thead hasNestedHeader>
+          <Tr>
+            <Th rowSpan={2} />
+            <Th rowSpan={2} hasRightBorder>
+              {columns[0].name}
+            </Th>
+            <Th colSpan={3} hasRightBorder>
+              {columns[1].name}
+            </Th>
+            <Th rowSpan={2}>{columns[2].name}</Th>
+          </Tr>
+          <Tr resetOffset>
+            <Th isSubheader>{columns[1].subColumns[0].name}</Th>
+            <Th isSubheader>{columns[1].subColumns[1].name}</Th>
+            <Th isSubheader hasRightBorder>
+              {columns[1].subColumns[2].name}
+            </Th>
+          </Tr>
+        </Thead>
+        {rowPairs.map((pair, pairIndex) => {
+          rowIndex += 1;
+          const parentRow = (
+            <Tr key={rowIndex}>
+              <Td
+                key={`${rowIndex}_0`}
+                expand={
+                  pair.child
+                    ? {
+                        rowIndex: pairIndex,
+                        isExpanded: expanded[pairIndex],
+                        onToggle: handleExpansionToggle
+                      }
+                    : null
+                }
+              />
+              {pair.parent.map((cell, cellIndex) => (
+                <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
+                  {cell}
+                </Td>
+              ))}
+            </Tr>
+          );
+          if (pair.child) {
+            rowIndex += 1;
+          }
+          const childRow = pair.child ? (
+            <Tr key={rowIndex} isExpanded={expanded[pairIndex] === true}>
+              {!rowPairs[pairIndex].fullWidth && <Td key={`${rowIndex}_0`} />}
+              {rowPairs[pairIndex].child.map((cell, cellIndex) => {
+                const numChildCells = rowPairs[pairIndex].child.length;
+                const shift = rowPairs[pairIndex].fullWidth ? 1 : 0;
+                const shiftedCellIndex = cellIndex + shift;
+                // some examples of how you could customize colSpan based on your needs
+                const getColSpan = () => {
+                  // we have 6 columns (1 expandable column + 5 regular columns)
+                  // for the rowPairs where we've specificed `fullWidth`, add +1 to account for the expandable column
+                  let colSpan = 1;
+                  if (numChildCells === 1) {
+                    // single child cell: take up full width
+                    colSpan = numColumns + shift;
+                  } else if (numChildCells === 2) {
+                    // 2 children
+                    // child 1: 2 colspan
+                    // child 2: 3 or 4 colspan depending on fullWidth
+                    colSpan = cellIndex === 0 ? 2 : 3 + shift;
+                  } else if (numChildCells === 3) {
+                    // 3 children
+                    // child 1: 2 colspam
+                    // child 2: 2 colspan
+                    // child 3: 1 or 2 colspan depending on fullWidth
+                    colSpan = cellIndex === 2 ? 1 + shift : 2;
+                  }
+                  return colSpan;
+                };
+                return (
+                  <Td
+                    key={`${rowIndex}_${shiftedCellIndex}`}
+                    dataLabel={columns[cellIndex]}
+                    noPadding={rowPairs[pairIndex].noPadding}
+                    colSpan={getColSpan()}
+                  >
+                    <ExpandableRowContent>{cell.title || cell}</ExpandableRowContent>
+                  </Td>
+                );
+              })}
+            </Tr>
+          ) : null;
+          return (
+            <Tbody key={pairIndex} isExpanded={expanded[pairIndex] === true}>
+              {parentRow}
+              {childRow}
+            </Tbody>
+          );
+        })}
+      </TableComposable>
+    </InnerScrollContainer>
+  );
+};
+```
