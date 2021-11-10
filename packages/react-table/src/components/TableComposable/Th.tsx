@@ -69,7 +69,7 @@ const ThBase: React.FunctionComponent<ThProps> = ({
   info: infoProps,
   isStickyColumn = false,
   hasRightBorder = false,
-  stickyMinWidth = '100px',
+  stickyMinWidth = '120px',
   stickyLeftOffset,
   isSubheader = false,
   ...props

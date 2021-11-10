@@ -2414,7 +2414,7 @@ ComposableTableMultipleStickyColumn = () => {
                       key={columnIndex}
                       isStickyColumn
                       stickyMinWidth="120px"
-                      stickyLeftOffset="100px"
+                      stickyLeftOffset="120px"
                       hasRightBorder
                       modifier="truncate"
                       {...sortParams}
@@ -2448,7 +2448,7 @@ ComposableTableMultipleStickyColumn = () => {
                         key={cellIndex}
                         isStickyColumn
                         stickyMinWidth="120px"
-                        stickyLeftOffset="100px"
+                        stickyLeftOffset="120px"
                         modifier="truncate"
                         hasRightBorder
                       >
@@ -2658,7 +2658,7 @@ ComposableTableStickyColumnAndHeader = () => {
                           key={columnIndex}
                           isStickyColumn
                           stickyMinWidth="120px"
-                          stickyLeftOffset="100px"
+                          stickyLeftOffset="120px"
                           hasRightBorder
                           modifier="truncate"
                           {...sortParams}
@@ -2692,7 +2692,7 @@ ComposableTableStickyColumnAndHeader = () => {
                             key={cellIndex}
                             isStickyColumn
                             stickyMinWidth="120px"
-                            stickyLeftOffset="100px"
+                            stickyLeftOffset="120px"
                             modifier="truncate"
                             hasRightBorder
                           >
