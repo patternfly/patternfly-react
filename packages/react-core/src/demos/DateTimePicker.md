@@ -5,8 +5,7 @@ beta: true
 ---
 
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
-import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon'; 
-import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
+import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
 
 ## Demos
 
@@ -18,7 +17,6 @@ The input is read only meaning that the following example does not cover pasting
 ```js
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, CalendarMonth, InputGroup, TextInput, Button, Popover } from '@patternfly/react-core';
-import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
 import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
 
@@ -71,7 +69,7 @@ DateTimePicker = () => {
       <Dropdown
         onSelect={onSelectTime}
         toggle={
-          <DropdownToggle toggleIndicator={null} onToggle={onToggleTime}>
+          <DropdownToggle toggleIndicator={null} onToggle={onToggleTime} style={{ padding: '6px 16px' }}>
             <OutlinedClockIcon />
           </DropdownToggle>
         }
@@ -85,7 +83,7 @@ DateTimePicker = () => {
       </Button>
   );
   return (
-    <div className={styles.datePicker}>
+    <div style={{ width: '300px' }}>
         <Popover
             position="bottom"
             bodyContent={calendar}
