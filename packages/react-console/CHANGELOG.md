@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.22.0 (2021-11-11)
+
+
+### Features
+
+* enhance type correctness of CodeEditor ([#6579](https://github.com/patternfly/patternfly-react/issues/6579)) ([e1ad65c](https://github.com/patternfly/patternfly-react/commit/e1ad65c225968d5a9c74019d19e4a3c5e2666926))
+
+
+
+
+
 ## 4.21.4 (2021-11-10)
 
 
