@@ -132,28 +132,62 @@ export const KeyValueFiltering = () => {
     setMenuItemsText(data[selectedText]);
   };
 
-  /** enable key/value selection and selected key removal using keyboard events */
-  const handleKeydown = event => {
-    if (event.key === 'Enter') {
-      /** do nothing if the menu contains no real results */
-      if (menuItems.length === 1) {
-        return;
-      }
-
-      /** perform the appropriate action based on key selection state */
-      if (selectedKey.length) {
-        selectValue(menuItems[2].props.children);
-      } else {
-        selectKey(menuItems[2].props.children);
-      }
+  const handleEnter = () => {
+    /** do nothing if the menu contains no real results */
+    if (menuItems.length === 1) {
+      return;
     }
 
-    /** allow the user to backspace at the selected key name or hit escape to drop the selected key */
-    if (
-      event.key === 'Escape' ||
-      (event.key === 'Backspace' && selectedKey.length && inputValue.length === selectedKey.length + 2)
-    ) {
+    /** perform the appropriate action based on key selection state */
+    if (selectedKey.length) {
+      selectValue(menuItems[2].props.children);
+    } else {
+      selectKey(menuItems[2].props.children);
+    }
+  };
+
+  /** allow the user to backspace at the selected key name to drop the currently selected key */
+  const handleBackspace = () => {
+    if (selectedKey.length && inputValue === `${selectedKey}: `) {
       clearSelectedKey();
+    }
+  };
+
+  /** allow the user to select a key by simply typing it and entering a colon, exact (case sensitive) matches only */
+  const handleColon = () => {
+    if (!selectedKey.length && keyNames.includes(inputValue)) {
+      selectKey(inputValue);
+      event.preventDefault();
+    }
+  };
+
+  /** allow the user to focus on the menu and navigate using the arrow keys */
+  const handleArrowKey = () => {
+    if (menuRef.current) {
+      const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+      firstElement && firstElement.focus();
+    }
+  };
+
+  /** enable keyboard only usage */
+  const handleTextInputKeyDown = event => {
+    switch (event.key) {
+      case 'Enter':
+        handleEnter();
+        break;
+      case 'Escape':
+        clearSelectedKey();
+        break;
+      case 'Backspace':
+        handleBackspace();
+        break;
+      case ':':
+        handleColon();
+        break;
+      case 'ArrowUp':
+      case 'ArrowDown':
+        handleArrowKey();
+        break;
     }
   };
 
@@ -167,6 +201,7 @@ export const KeyValueFiltering = () => {
       selectKey(selectedText);
     }
     event.stopPropagation();
+    textInputGroupRef.current.querySelector('input').focus();
   };
 
   /** close the menu when a click occurs outside of the menu or text input group */
@@ -194,7 +229,7 @@ export const KeyValueFiltering = () => {
           value={inputValue}
           onChange={handleInputChange}
           onFocus={() => setMenuIsOpen(true)}
-          onKeyDown={handleKeydown}
+          onKeyDown={handleTextInputKeyDown}
         >
           <ChipGroup>
             {currentChips.map(currentChip => (
