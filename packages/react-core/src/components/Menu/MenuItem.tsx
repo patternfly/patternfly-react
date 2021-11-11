@@ -217,7 +217,9 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   if (Component === 'a') {
     additionalProps = {
       href: to,
-      'aria-disabled': isDisabled ? true : null
+      'aria-disabled': isDisabled ? true : null,
+      // prevent invalid 'disabled' attribute on <a> tags
+      disabled: null
     };
   } else if (Component === 'button') {
     additionalProps = {

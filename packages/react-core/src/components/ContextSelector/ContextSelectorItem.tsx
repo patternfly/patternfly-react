@@ -16,6 +16,8 @@ export interface ContextSelectorItemProps {
   index: number;
   /** Internal callback for ref tracking */
   sendRef: (index: number, current: any) => void;
+  /** Link href, indicates item should render as anchor tag */
+  href?: string;
 }
 
 export class ContextSelectorItem extends React.Component<ContextSelectorItemProps> {
@@ -26,10 +28,11 @@ export class ContextSelectorItem extends React.Component<ContextSelectorItemProp
     isDisabled: false,
     onClick: (): any => undefined,
     index: undefined as number,
-    sendRef: () => {}
+    sendRef: () => {},
+    href: null as string
   };
 
-  ref: React.RefObject<HTMLButtonElement> = React.createRef();
+  ref: React.RefObject<HTMLButtonElement & HTMLAnchorElement> = React.createRef();
 
   componentDidMount() {
     /* eslint-disable-next-line */
@@ -38,13 +41,19 @@ export class ContextSelectorItem extends React.Component<ContextSelectorItemProp
 
   render() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { className, children, onClick, isDisabled, index, sendRef, ...props } = this.props;
+    const { className, children, onClick, isDisabled, index, sendRef, href, ...props } = this.props;
+    const Component = href ? 'a' : 'button';
+    const isDisabledLink = href && isDisabled;
     return (
       <ContextSelectorContext.Consumer>
         {({ onSelect }) => (
           <li role="none">
-            <button
-              className={css(styles.contextSelectorMenuListItem, className)}
+            <Component
+              className={css(
+                styles.contextSelectorMenuListItem,
+                isDisabledLink && styles.modifiers.disabled,
+                className
+              )}
               ref={this.ref}
               onClick={event => {
                 if (!isDisabled) {
@@ -52,11 +61,13 @@ export class ContextSelectorItem extends React.Component<ContextSelectorItemProp
                   onSelect(event, children);
                 }
               }}
-              disabled={isDisabled}
+              disabled={isDisabled && !href}
+              href={href}
+              {...(isDisabledLink && { 'aria-disabled': true, tabIndex: -1 })}
               {...props}
             >
               {children}
-            </button>
+            </Component>
           </li>
         )}
       </ContextSelectorContext.Consumer>
