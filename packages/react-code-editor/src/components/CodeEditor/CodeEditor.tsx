@@ -12,7 +12,7 @@ import {
   Title,
   Tooltip
 } from '@patternfly/react-core';
-import MonacoEditor, { ChangeHandler } from 'react-monaco-editor';
+import MonacoEditor, { ChangeHandler, EditorDidMount } from 'react-monaco-editor';
 import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
@@ -166,7 +166,7 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   customControls?: React.ReactNode | React.ReactNode[];
   /** Callback which fires after the code editor is mounted containing
    * a reference to the monaco editor and the monaco instance */
-  onEditorDidMount?: (editor: any, monaco: any) => void;
+  onEditorDidMount?: EditorDidMount;
   /** Flag to add the minimap to the code editor */
   isMinimapVisible?: boolean;
   /** Flag to show the editor */
@@ -191,11 +191,11 @@ interface CodeEditorState {
 
 export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
   static displayName = 'CodeEditor';
-  private editor: any = null;
+  private editor: editor.IStandaloneCodeEditor | null = null;
   private wrapperRef = React.createRef<HTMLDivElement>();
   private ref = React.createRef<HTMLDivElement>();
-  timer = null as number;
-  observer: any = () => {};
+  private timer: number | null = null;
+  private observer = () => {};
 
   static defaultProps: CodeEditorProps = {
     className: '',
@@ -305,12 +305,12 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
 
   handleGlobalKeys = (event: KeyboardEvent) => {
     if (this.wrapperRef.current === document.activeElement && (event.key === 'ArrowDown' || event.key === ' ')) {
-      this.editor.focus();
+      this.editor?.focus();
       event.preventDefault();
     }
   };
 
-  editorDidMount = (editor: any, monaco: any) => {
+  editorDidMount: EditorDidMount = (editor, monaco) => {
     // eslint-disable-next-line no-bitwise
     editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Tab, () => this.wrapperRef.current.focus());
     Array.from(document.getElementsByClassName('monaco-editor')).forEach(editorElement =>
@@ -331,9 +331,9 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
   handleFileReadFinished = () => this.setState({ isLoading: false });
 
   readFile(fileHandle: Blob) {
-    return new Promise((resolve, reject) => {
+    return new Promise<string>((resolve, reject) => {
       const reader = new FileReader();
-      reader.onload = () => resolve(reader.result);
+      reader.onload = () => resolve(reader.result as string);
       reader.onerror = () => reject(reader.error);
       reader.readAsText(fileHandle);
     });
@@ -347,9 +347,9 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       this.readFile(fileHandle)
         .then(data => {
           this.handleFileReadFinished();
-          this.handleFileChange(data as any, fileHandle.name);
+          this.handleFileChange(data, fileHandle.name);
         })
-        .catch(error => {
+        .catch((error: DOMException) => {
           // eslint-disable-next-line no-console
           console.error('error', error);
           this.handleFileReadFinished();
@@ -370,7 +370,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       window.clearTimeout(this.timer);
       this.setState({ copied: false });
     }
-    this.editor.focus();
+    this.editor?.focus();
     document.execCommand('copy');
     this.setState({ copied: true }, () => {
       this.timer = window.setTimeout(() => {
@@ -430,10 +430,10 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       options: optionsProp,
       overrideServices
     } = this.props;
-    const options = {
+    const options: editor.IStandaloneEditorConstructionOptions = {
       readOnly: isReadOnly,
-      cursorStyle: 'line' as any,
-      lineNumbers: (isLineNumbersVisible ? 'on' : 'off') as any,
+      cursorStyle: 'line',
+      lineNumbers: isLineNumbersVisible ? 'on' : 'off',
       tabIndex: -1,
       minimap: {
         enabled: isMinimapVisible
