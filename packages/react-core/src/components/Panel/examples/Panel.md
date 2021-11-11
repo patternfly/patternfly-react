@@ -49,7 +49,7 @@ import { Panel, PanelMain, PanelMainBody, PanelFooter } from '@patternfly/react-
 const FooterPanel = () => (
   <Panel>
     <PanelMain>
-      <PanelMainBody>Main Content</PanelMainBody>
+      <PanelMainBody>Main content</PanelMainBody>
     </PanelMain>
     <PanelFooter>Footer content</PanelFooter>
   </Panel>
@@ -126,7 +126,7 @@ import { Panel, PanelMain, PanelMainBody } from '@patternfly/react-core';
 const ScrollablePanel = () => {
   const mainContent = (
     <>
-      Main Content
+      Main content
       <br />
       <br />
     </>
@@ -135,7 +135,12 @@ const ScrollablePanel = () => {
   return (
     <Panel isScrollable>
       <PanelMain>
-        <PanelMainBody>{Array(9).fill(mainContent)}</PanelMainBody>
+        <PanelMainBody>
+          <>
+          {Array(8).fill(mainContent)}
+          Main content
+          </>
+        </PanelMainBody>
       </PanelMain>
     </Panel>
   );
@@ -151,7 +156,7 @@ import { Panel, PanelMain, PanelMainBody, PanelHeader, Divider, PanelFooter } fr
 const ScrollableHeaderFooterPanel = () => {
   const mainContent = (
     <>
-      Main Content
+      Main content
       <br />
       <br />
     </>
@@ -162,7 +167,12 @@ const ScrollableHeaderFooterPanel = () => {
       <PanelHeader>Header content</PanelHeader>
       <Divider />
       <PanelMain>
-        <PanelMainBody>{Array(9).fill(mainContent)}</PanelMainBody>
+        <PanelMainBody>
+          <>
+          {Array(8).fill(mainContent)}
+          Main content
+          </>
+        </PanelMainBody>
       </PanelMain>
       <PanelFooter>Footer content</PanelFooter>
     </Panel>
