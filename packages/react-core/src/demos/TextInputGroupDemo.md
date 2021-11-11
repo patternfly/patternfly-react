@@ -158,11 +158,13 @@ export const KeyValueFiltering = () => {
   };
 
   /** perform the proper key or value selection when a menu item is selected */
-  const onSelect = (event, itemId) => {
+  const onSelect = (event, _itemId) => {
+    const selectedText = event.target.innerText;
+
     if (selectedKey.length) {
-      selectValue(data[selectedKey][itemId]);
+      selectValue(selectedText);
     } else {
-      selectKey(keyNames[itemId]);
+      selectKey(selectedText);
     }
     event.stopPropagation();
   };
