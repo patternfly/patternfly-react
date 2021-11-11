@@ -164,7 +164,7 @@ const ScrollableHeaderFooterPanel = () => {
       <PanelMain>
         <PanelMainBody>{Array(9).fill(mainContent)}</PanelMainBody>
       </PanelMain>
-			<PanelFooter>Footer content</PanelFooter>
+      <PanelFooter>Footer content</PanelFooter>
     </Panel>
   );
 };
