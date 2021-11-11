@@ -114,15 +114,18 @@ export const KeyValueFiltering = () => {
       </MenuItem>
     );
 
-    const divider = <Divider key="divider" />
+    const divider = <Divider key="divider" />;
 
     setMenuItems([headingItem, divider, ...filteredMenuItems]);
-
   }, [inputValue]);
 
   /** enable key/value selection and selected key removal using keyboard events */
   const handleKeydown = event => {
     if (event.key === 'Enter') {
+      if (menuItems.length === 1) {
+        return
+      }
+
       if (selectedKey.length) {
         selectValue(menuItems[2].props.children);
       } else {
