@@ -1,6 +1,7 @@
 ---
 id: Text input group
 section: components
+beta: true
 ---
 
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
@@ -29,12 +30,11 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 export const KeyValueFiltering = () => {
   const [inputValue, setInputValue] = React.useState('');
-  const [currentChips, setCurrentChips] = React.useState([]);
   const [selectedKey, setSelectedKey] = React.useState('');
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
-  const menuRef = React.useRef();
-  const textInputGroupRef = React.useRef();
-  const keyNames = ['Cluster', 'Kind', 'Label', 'Name', 'Namespace', 'Status'];
+  const [currentChips, setCurrentChips] = React.useState([]);
+
+  /** key and value data to be shown in the menu */
   const data = {
     Cluster: ['acmeqe-managed-1', 'local-cluster'],
     Kind: ['Template', 'ReplicationController', 'ReplicaSet', 'Deployment'],
@@ -43,10 +43,12 @@ export const KeyValueFiltering = () => {
     Namespace: ['default', 'public'],
     Status: ['running', 'idle', 'stopped']
   };
+  const keyNames = ['Cluster', 'Kind', 'Label', 'Name', 'Namespace', 'Status'];
   const [menuItemsText, setMenuItemsText] = React.useState(keyNames);
 
-  /** show the search icon only when there are no chips to prevent the chips from being displayed behind the icon */
-  const showSearchIcon = !currentChips.length;
+  /** refs used to detect when clicks occur inside vs outside of the textInputGroup and menu popper */
+  const menuRef = React.useRef();
+  const textInputGroupRef = React.useRef();
 
   /** callback for updating the inputValue state in this component so that the input can be controlled */
   const handleInputChange = (value, _event) => {
@@ -59,21 +61,20 @@ export const KeyValueFiltering = () => {
     setCurrentChips(newChips);
   };
 
-  /** show the input/chip clearing button only when either the text input or chip group are not empty */
-  const showClearButton = inputValue || !!currentChips.length;
-
+  /** reset state hooks associated with key selection */
   const clearSelectedKey = () => {
-    setSelectedKey('');
     setInputValue('');
+    setSelectedKey('');
     setMenuItemsText(keyNames);
   };
 
-  /** callback for clearing all selected chips and the text input */
+  /** callback for clearing all selected chips, the text input, and any selected keys */
   const clearChipsAndInput = () => {
     setCurrentChips([]);
     clearSelectedKey();
   };
 
+  /** in the menu only show items that include the text in the input */
   const menuItems = menuItemsText
     .filter(
       item =>
@@ -91,6 +92,7 @@ export const KeyValueFiltering = () => {
       </MenuItem>
     ));
 
+  /** in the menu show a disabled "no result" when all menu items are filtered out */
   if (inputValue && menuItems.length === 0) {
     menuItems.push(
       <MenuItem isDisabled key="no result">
@@ -99,6 +101,7 @@ export const KeyValueFiltering = () => {
     );
   }
 
+  /** enable key/value selection and selected key removal using keyboard events */
   const handleKeydown = event => {
     if (event.key === 'Enter') {
       if (selectedKey.length) {
@@ -116,17 +119,20 @@ export const KeyValueFiltering = () => {
     }
   };
 
-  const selectValue = selectedValueText => {
-    setCurrentChips([...currentChips, `${selectedKey}: ${selectedValueText}`]);
+  /** add selected key/value pair as a chip in the chip group */
+  const selectValue = selectedValue => {
+    setCurrentChips([...currentChips, `${selectedKey}: ${selectedValue}`]);
     clearSelectedKey();
   };
 
+  /** update the input to show the selected key and the menu to show the values associated with that specific key */
   const selectKey = selectedText => {
     setInputValue(`${selectedText}: `);
     setSelectedKey(selectedText);
     setMenuItemsText(data[selectedText]);
   };
 
+  /** perform the proper key or value selection when a menu item is selected */
   const onSelect = (event, itemId) => {
     if (selectedKey.length) {
       selectValue(data[selectedKey][itemId]);
@@ -136,6 +142,7 @@ export const KeyValueFiltering = () => {
     event.stopPropagation();
   };
 
+  /** close the menu when a click occurs outside of the menu or text input group */
   const handleClick = event => {
     if (
       menuRef.current &&
@@ -145,6 +152,12 @@ export const KeyValueFiltering = () => {
       setMenuIsOpen(false);
     }
   };
+
+  /** only show the search icon when no chips are selected */
+  const showSearchIcon = !currentChips.length;
+
+  /** only show the clear button when there is something that can be cleared */
+  const showClearButton = inputValue || !!currentChips.length;
 
   const inputGroup = (
     <div ref={textInputGroupRef}>
