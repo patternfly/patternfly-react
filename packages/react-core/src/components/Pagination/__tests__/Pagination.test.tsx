@@ -93,6 +93,22 @@ describe('component render', () => {
     expect(toggle.find('b').at(0).text()).toBe('1 - 10');
     expect(toggle).toMatchSnapshot();
   });
+
+  test('toggleTemplate toggle text with function', () => {
+    const toggle = mount(
+      <Pagination toggleTemplate={({ firstIndex, lastIndex }) => (<div>{firstIndex} - {lastIndex} of many</div>)} />
+    ).find('span.pf-c-options-menu__toggle-text');
+    expect(toggle.find('div').text()).toBe('1 - 10 of many');
+    expect(toggle).toMatchSnapshot();
+  });
+
+  test('toggleTemplate toggle text with string', () => {
+    const toggle = mount(
+      <Pagination toggleTemplate={'I am a string'} />
+    ).find('span.pf-c-options-menu__toggle-text');
+    expect(toggle.text()).toBe('I am a string');
+    expect(toggle).toMatchSnapshot();
+  });
 });
 
 describe('API', () => {

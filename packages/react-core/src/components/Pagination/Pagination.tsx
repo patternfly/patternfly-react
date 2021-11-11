@@ -2,6 +2,8 @@ import * as React from 'react';
 import { ToggleTemplate, ToggleTemplateProps } from './ToggleTemplate';
 import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
+
+import { fillTemplate } from '../../helpers';
 import { Navigation } from './Navigation';
 import { PaginationOptionsMenu } from './PaginationOptionsMenu';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
@@ -185,7 +187,6 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
     itemsEnd: null,
     perPageOptions: defaultPerPageOptions,
     widgetId: 'pagination-options-menu',
-    toggleTemplate: ToggleTemplate,
     onSetPage: () => undefined,
     onPerPageSelect: () => undefined,
     onFirstClick: () => undefined,
@@ -278,6 +279,8 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
       }
     }
 
+    const toggleTemplateProps = { firstIndex, lastIndex, itemCount, itemsTitle: titles.items, ofWord: titles.ofWord };
+
     return (
       <div
         ref={this.paginationRef}
@@ -295,13 +298,19 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
       >
         {variant === PaginationVariant.top && (
           <div className={css(styles.paginationTotalItems)}>
-            <ToggleTemplate
-              firstIndex={firstIndex}
-              lastIndex={lastIndex}
-              itemCount={itemCount}
-              itemsTitle={titles.items}
-              ofWord={titles.ofWord}
-            />
+            {toggleTemplate && typeof toggleTemplate === 'string' && fillTemplate(toggleTemplate, toggleTemplateProps)}
+            {toggleTemplate &&
+              typeof toggleTemplate !== 'string' &&
+              (toggleTemplate as (props: ToggleTemplateProps) => React.ReactElement)(toggleTemplateProps)}
+            {!toggleTemplate && (
+              <ToggleTemplate
+                firstIndex={firstIndex}
+                lastIndex={lastIndex}
+                itemCount={itemCount}
+                itemsTitle={titles.items}
+                ofWord={titles.ofWord}
+              />
+            )}
           </div>
         )}
         <PaginationOptionsMenu

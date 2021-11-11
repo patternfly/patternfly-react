@@ -56,7 +56,7 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   isOpen = false,
   isDisabled = false,
   parentRef = null,
-  toggleTemplate: ToggleTemplate = '',
+  toggleTemplate: ToggleTemplate,
   onEnter = null
 }: OptionsToggleProps) => (
   <div

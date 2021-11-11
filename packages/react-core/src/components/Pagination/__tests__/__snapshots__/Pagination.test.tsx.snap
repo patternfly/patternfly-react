@@ -72,26 +72,7 @@ exports[`component render custom pagination toggle 1`] = `
     <div
       className="pf-c-pagination__total-items"
     >
-      <ToggleTemplate
-        firstIndex={-9}
-        itemCount={40}
-        itemsTitle=""
-        lastIndex={10}
-        ofWord="of"
-      >
-        <b>
-          -9
-           - 
-          10
-        </b>
-         
-        of
-         
-        <b>
-          40
-        </b>
-         
-      </ToggleTemplate>
+      -9 - 10 - 40 - 
     </div>
     <PaginationOptionsMenu
       className=""
@@ -802,7 +783,6 @@ exports[`component render custom perPageOptions 1`] = `
       "toPreviousPage": "Go to previous page",
     }
   }
-  toggleTemplate={[Function]}
   variant="top"
   widgetId="pagination-options-menu"
 >
@@ -1565,7 +1545,6 @@ exports[`component render custom start end 1`] = `
       "toPreviousPage": "Go to previous page",
     }
   }
-  toggleTemplate={[Function]}
   variant="top"
   widgetId="pagination-options-menu"
 >
@@ -2355,7 +2334,6 @@ exports[`component render empty per page options 1`] = `
       "toPreviousPage": "Go to previous page",
     }
   }
-  toggleTemplate={[Function]}
   variant="top"
   widgetId="pagination-options-menu"
 >
@@ -2789,6 +2767,7 @@ exports[`component render indeterminate count (no item count) 1`] = `
     firstIndex={1}
     itemsTitle=""
     lastIndex={10}
+    ofWord="of"
   >
     <b>
       1
@@ -2864,7 +2843,6 @@ exports[`component render last page 1`] = `
       "toPreviousPage": "Go to previous page",
     }
   }
-  toggleTemplate={[Function]}
   variant="top"
   widgetId="pagination-options-menu"
 >
@@ -3675,7 +3653,6 @@ exports[`component render limited number of pages 1`] = `
       "toPreviousPage": "Go to previous page",
     }
   }
-  toggleTemplate={[Function]}
   variant="top"
   widgetId="pagination-options-menu"
 >
@@ -4488,7 +4465,6 @@ exports[`component render no items 1`] = `
       "toPreviousPage": "Go to previous page",
     }
   }
-  toggleTemplate={[Function]}
   variant="top"
   widgetId="pagination-options-menu"
 >
@@ -4532,17 +4508,9 @@ exports[`component render no items 1`] = `
       itemCount={0}
       itemsPerPageTitle="Items per page"
       itemsTitle=""
-<<<<<<< HEAD
-      lastIndex={0}
-<<<<<<< HEAD
-      lastPage={0}
-      ofWord="of"
-=======
-=======
       lastIndex={10}
->>>>>>> daf5b02e4 (updated test snapshot)
       lastPage={1}
->>>>>>> 87be7e495 (feat(Pagination): handling corner cases)
+      ofWord="of"
       onPerPageSelect={[Function]}
       optionsToggle="Items per page"
       page={1}
@@ -4638,12 +4606,8 @@ exports[`component render no items 1`] = `
             itemCount={0}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
-<<<<<<< HEAD
-            lastIndex={0}
-            ofWord="of"
-=======
             lastIndex={10}
->>>>>>> daf5b02e4 (updated test snapshot)
+            ofWord="of"
             onToggle={[Function]}
             optionsToggle="Items per page"
             parentRef={null}
@@ -4670,12 +4634,8 @@ exports[`component render no items 1`] = `
             itemsPerPageTitle="Items per page"
             itemsTitle=""
             key=".0"
-<<<<<<< HEAD
-            lastIndex={0}
-            ofWord="of"
-=======
             lastIndex={10}
->>>>>>> daf5b02e4 (updated test snapshot)
+            ofWord="of"
             onEnter={[Function]}
             onToggle={[Function]}
             optionsToggle="Items per page"
@@ -4752,12 +4712,8 @@ exports[`component render no items 1`] = `
                   firstIndex={1}
                   itemCount={0}
                   itemsTitle=""
-<<<<<<< HEAD
-                  lastIndex={0}
-                  ofWord="of"
-=======
                   lastIndex={10}
->>>>>>> daf5b02e4 (updated test snapshot)
+                  ofWord="of"
                 >
                   <b>
                     1
@@ -5315,7 +5271,6 @@ exports[`component render should render correctly bottom 1`] = `
       "toPreviousPage": "Go to previous page",
     }
   }
-  toggleTemplate={[Function]}
   variant="bottom"
   widgetId="pagination-options-menu"
 >
@@ -6102,7 +6057,6 @@ exports[`component render should render correctly bottom sticky 1`] = `
       "toPreviousPage": "Go to previous page",
     }
   }
-  toggleTemplate={[Function]}
   variant="bottom"
   widgetId="pagination-options-menu"
 >
@@ -6889,7 +6843,6 @@ exports[`component render should render correctly compact 1`] = `
       "toPreviousPage": "Go to previous page",
     }
   }
-  toggleTemplate={[Function]}
   variant="top"
   widgetId="pagination-options-menu"
 >
@@ -7559,7 +7512,6 @@ exports[`component render should render correctly disabled 1`] = `
       "toPreviousPage": "Go to previous page",
     }
   }
-  toggleTemplate={[Function]}
   variant="top"
   widgetId="pagination-options-menu"
 >
@@ -8375,7 +8327,6 @@ exports[`component render should render correctly sticky 1`] = `
       "toPreviousPage": "Go to previous page",
     }
   }
-  toggleTemplate={[Function]}
   variant="top"
   widgetId="pagination-options-menu"
 >
@@ -9186,7 +9137,6 @@ exports[`component render should render correctly top 1`] = `
       "toPreviousPage": "Go to previous page",
     }
   }
-  toggleTemplate={[Function]}
   variant="top"
   widgetId="pagination-options-menu"
 >
@@ -9987,7 +9937,6 @@ exports[`component render titles 1`] = `
       "page": "books",
     }
   }
-  toggleTemplate={[Function]}
   variant="top"
   widgetId="pagination-options-menu"
 >
@@ -10741,6 +10690,34 @@ exports[`component render titles 1`] = `
 </Pagination>
 `;
 
+exports[`component render toggleTemplate toggle text with function 1`] = `
+<span
+  className="pf-c-options-menu__toggle-text"
+>
+  <toggleTemplate
+    firstIndex={1}
+    itemsTitle=""
+    lastIndex={10}
+    ofWord="of"
+  >
+    <div>
+      1
+       - 
+      10
+       of many
+    </div>
+  </toggleTemplate>
+</span>
+`;
+
+exports[`component render toggleTemplate toggle text with string 1`] = `
+<span
+  className="pf-c-options-menu__toggle-text"
+>
+  I am a string
+</span>
+`;
+
 exports[`component render up drop direction 1`] = `
 <Pagination
   className=""
@@ -10800,7 +10777,6 @@ exports[`component render up drop direction 1`] = `
       "toPreviousPage": "Go to previous page",
     }
   }
-  toggleTemplate={[Function]}
   variant="top"
   widgetId="pagination-options-menu"
 >
@@ -11611,7 +11587,6 @@ exports[`component render zero results 1`] = `
       "toPreviousPage": "Go to previous page",
     }
   }
-  toggleTemplate={[Function]}
   variant="top"
   widgetId="pagination-options-menu"
 >
@@ -11655,17 +11630,9 @@ exports[`component render zero results 1`] = `
       itemCount={0}
       itemsPerPageTitle="Items per page"
       itemsTitle=""
-<<<<<<< HEAD
-      lastIndex={0}
-<<<<<<< HEAD
-      lastPage={0}
-      ofWord="of"
-=======
-=======
       lastIndex={10}
->>>>>>> daf5b02e4 (updated test snapshot)
       lastPage={1}
->>>>>>> 87be7e495 (feat(Pagination): handling corner cases)
+      ofWord="of"
       onPerPageSelect={[Function]}
       optionsToggle="Items per page"
       page={1}
@@ -11761,12 +11728,8 @@ exports[`component render zero results 1`] = `
             itemCount={0}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
-<<<<<<< HEAD
-            lastIndex={0}
-            ofWord="of"
-=======
             lastIndex={10}
->>>>>>> daf5b02e4 (updated test snapshot)
+            ofWord="of"
             onToggle={[Function]}
             optionsToggle="Items per page"
             parentRef={null}
@@ -11793,12 +11756,8 @@ exports[`component render zero results 1`] = `
             itemsPerPageTitle="Items per page"
             itemsTitle=""
             key=".0"
-<<<<<<< HEAD
-            lastIndex={0}
-            ofWord="of"
-=======
             lastIndex={10}
->>>>>>> daf5b02e4 (updated test snapshot)
+            ofWord="of"
             onEnter={[Function]}
             onToggle={[Function]}
             optionsToggle="Items per page"
@@ -11875,12 +11834,8 @@ exports[`component render zero results 1`] = `
                   firstIndex={1}
                   itemCount={0}
                   itemsTitle=""
-<<<<<<< HEAD
-                  lastIndex={0}
-                  ofWord="of"
-=======
                   lastIndex={10}
->>>>>>> daf5b02e4 (updated test snapshot)
+                  ofWord="of"
                 >
                   <b>
                     1
