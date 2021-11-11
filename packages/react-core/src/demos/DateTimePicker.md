@@ -1,12 +1,12 @@
 ---
-id: DateTimePicker
+id: Date and time picker
 section: demos
+beta: true
 ---
 
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
-import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon';
+import OutlinedClockIcon from '@patternfly/react-icons/dist/esm/icons/outlined-clock-icon'; 
 import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
-import * as _ from 'lodash';
 
 ## Demos
 
@@ -17,7 +17,6 @@ The input is read only meaning that the following example does not cover pasting
 
 ```js
 import React from 'react';
-import * as _ from 'lodash';
 import { Dropdown, DropdownToggle, DropdownItem, CalendarMonth, InputGroup, TextInput, Button, Popover } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
@@ -28,7 +27,7 @@ DateTimePicker = () => {
   const [isTimeOpen, setIsTimeOpen] = React.useState(false);
   const [valueDate, setValueDate] = React.useState("YYYY-MM-DD");
   const [valueTime, setValueTime] = React.useState("HH:MM");
-  const times = _.range(8,18);
+  const times = Array.from(new Array(10), (_, i) => i + 8);
   const defaultTime = "0:00";
   const dateFormat = date => date.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g,'-');
 
