@@ -30,7 +30,7 @@ interface LogViewerProps {
   /** Number of rows to display in the log viewer */
   itemCount?: number;
   /** Flag indicating that log viewer is wrapping text or not */
-  wrapText?: boolean;
+  isWrapText?: boolean;
   /** Component rendered in the log viewer console window header */
   header?: React.ReactNode;
   /** Component rendered in the log viewer console window footer */
@@ -84,7 +84,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     footer,
     onScroll,
     innerRef,
-    wrapText = true,
+    isWrapText = true,
     ...props
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
@@ -193,7 +193,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
       logViewerRef.current.scrollToItem(searchedRowIndex, 'center');
       // use this method to scroll to the right
       // if the keyword is out of the window when wrapping text
-      if (!wrapText) {
+      if (!isWrapText) {
         setTimeout(() => {
           const element = document.querySelector('.pf-c-log-viewer__string.pf-m-current');
           element && element.scrollIntoView({ block: 'nearest', inline: 'center' });
@@ -203,10 +203,10 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
 
     useEffect(() => {
       setListKey(listKey => listKey + 1);
-    }, [wrapText]);
+    }, [isWrapText]);
 
     const guessRowHeight = (rowIndex: number) => {
-      if (!wrapText) {
+      if (!isWrapText) {
         return lineHeight;
       }
       // strip ansi escape code before estimate the row height
@@ -245,7 +245,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
           className={css(
             styles.logViewer,
             hasLineNumbers && styles.modifiers.lineNumbers,
-            !wrapText && styles.modifiers.nowrap,
+            !isWrapText && styles.modifiers.nowrap,
             theme === 'dark' && styles.modifiers.dark
           )}
           {...props}
