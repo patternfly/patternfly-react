@@ -22,9 +22,11 @@ import {
   MenuContent,
   MenuList,
   MenuItem,
-  Popper
+  Popper,
+  Chip,
+  ChipGroup,
+  Divider
 } from '@patternfly/react-core';
-import { Chip, ChipGroup } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
@@ -45,6 +47,7 @@ export const KeyValueFiltering = () => {
   };
   const keyNames = ['Cluster', 'Kind', 'Label', 'Name', 'Namespace', 'Status'];
   const [menuItemsText, setMenuItemsText] = React.useState(keyNames);
+  const [menuItems, setMenuItems] = React.useState([]);
 
   /** refs used to detect when clicks occur inside vs outside of the textInputGroup and menu popper */
   const menuRef = React.useRef();
@@ -74,40 +77,56 @@ export const KeyValueFiltering = () => {
     clearSelectedKey();
   };
 
-  /** in the menu only show items that include the text in the input */
-  const menuItems = menuItemsText
-    .filter(
-      item =>
-        !inputValue ||
-        item.toLowerCase().includes(
-          inputValue
-            .toString()
-            .slice(selectedKey.length && selectedKey.length + 2)
-            .toLowerCase()
-        )
-    )
-    .map((currentValue, index) => (
-      <MenuItem key={currentValue} itemId={index}>
-        {currentValue}
-      </MenuItem>
-    ));
+  React.useEffect(() => {
+    /** in the menu only show items that include the text in the input */
+    const filteredMenuItems = menuItemsText
+      .filter(
+        item =>
+          !inputValue ||
+          item.toLowerCase().includes(
+            inputValue
+              .toString()
+              .slice(selectedKey.length && selectedKey.length + 2)
+              .toLowerCase()
+          )
+      )
+      .map((currentValue, index) => (
+        <MenuItem key={currentValue} itemId={index}>
+          {currentValue}
+        </MenuItem>
+      ));
 
-  /** in the menu show a disabled "no result" when all menu items are filtered out */
-  if (inputValue && menuItems.length === 0) {
-    menuItems.push(
-      <MenuItem isDisabled key="no result">
-        No results found
+    /** in the menu show a disabled "no result" when all menu items are filtered out */
+    if (filteredMenuItems.length === 0) {
+      const noResultItem = (
+        <MenuItem isDisabled key="no result">
+          No results found
+        </MenuItem>
+      );
+      setMenuItems([noResultItem]);
+      return;
+    }
+
+    /** determine the menu heading text based on key selection; or lack thereof */
+    const headingItem = (
+      <MenuItem isDisabled key="heading">
+        {selectedKey.length ? `${selectedKey} values` : 'Attributes'}
       </MenuItem>
     );
-  }
+
+    const divider = <Divider key="divider" />
+
+    setMenuItems([headingItem, divider, ...filteredMenuItems]);
+
+  }, [inputValue]);
 
   /** enable key/value selection and selected key removal using keyboard events */
   const handleKeydown = event => {
     if (event.key === 'Enter') {
       if (selectedKey.length) {
-        selectValue(menuItems[0].props.children);
+        selectValue(menuItems[2].props.children);
       } else {
-        selectKey(menuItems[0].props.children);
+        selectKey(menuItems[2].props.children);
       }
     }
 
