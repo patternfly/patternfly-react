@@ -53,6 +53,8 @@ export interface TableComposableProps extends React.HTMLProps<HTMLTableElement>,
   isTreeTable?: boolean;
   /** Flag indicating this table is nested within another table */
   isNested?: boolean;
+  /** Collection of column spans for nested headers */
+  nestedHeaderColumnSpans?: number[];
 }
 
 const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
@@ -69,6 +71,7 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   ouiaSafe = true,
   isTreeTable = false,
   isNested = false,
+  nestedHeaderColumnSpans,
   ...props
 }: TableComposableProps) => {
   const tableRef = innerRef || React.useRef(null);
@@ -156,6 +159,14 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
       {...ouiaProps}
       {...props}
     >
+      {nestedHeaderColumnSpans &&
+        nestedHeaderColumnSpans.map((span: number, index) => {
+          if (span === 1) {
+            return <col key={index} />;
+          } else {
+            return <colgroup key={index} span={span} />;
+          }
+        })}
       {children}
     </table>
   );
