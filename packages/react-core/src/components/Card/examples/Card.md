@@ -31,21 +31,13 @@ import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter, Checkbox } from '@patternfly/react-core';
 
 CardModifiers = () => {
-  const mods = [
-    'isHoverable',
-    'isCompact',
-    'isFlat',
-    'isRounded',
-    'isLarge',
-    'isFullHeight',
-    'isPlain',
-  ];
+  const mods = ['isHoverable', 'isCompact', 'isFlat', 'isRounded', 'isLarge', 'isFullHeight', 'isPlain'];
   const [modifiers, setModifiers] = React.useState({});
 
   return (
     <React.Fragment>
       <div style={{ marginBottom: '12px' }}>
-        {mods.map(mod => 
+        {mods.map(mod => (
           <Checkbox
             id={mod}
             key={mod}
@@ -53,10 +45,10 @@ CardModifiers = () => {
             isChecked={modifiers[mod]}
             onChange={checked => {
               modifiers[mod] = checked;
-              setModifiers({...modifiers});
+              setModifiers({ ...modifiers });
             }}
           />
-        )}
+        ))}
       </div>
       <div style={{ height: '15rem' }}>
         <Card {...modifiers}>
@@ -67,7 +59,7 @@ CardModifiers = () => {
       </div>
     </React.Fragment>
   );
-}
+};
 ```
 
 ### With image and actions
@@ -120,7 +112,7 @@ class KebabDropdown extends React.Component {
       this.setState({
         hasNoOffset: checked
       });
-    }
+    };
   }
 
   render() {
@@ -171,15 +163,15 @@ class KebabDropdown extends React.Component {
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
         </Card>
-        <div style={{marginTop: "20px"}}>
+        <div style={{ marginTop: '20px' }}>
           <Checkbox
-              label="actions hasNoOffset"
-              isChecked={this.state.hasNoOffset}
-              onChange={this.toggleOffset}
-              aria-label="remove actions offset"
-              id="toggle-actions-offset"
-              name="toggle-actions-offset"
-            />
+            label="actions hasNoOffset"
+            isChecked={this.state.hasNoOffset}
+            onChange={this.toggleOffset}
+            aria-label="remove actions offset"
+            id="toggle-actions-offset"
+            name="toggle-actions-offset"
+          />
         </div>
       </>
     );
@@ -483,6 +475,7 @@ class SelectableCard extends React.Component {
         return;
       }
       if ([13, 32].includes(event.keyCode)) {
+        event.preventDefault();
         const newSelected = event.currentTarget.id === this.state.selected ? null : event.currentTarget.id;
         this.setState({
           selected: newSelected
@@ -857,6 +850,7 @@ class SelectableCard extends React.Component {
         return;
       }
       if ([13, 32].includes(event.keyCode)) {
+        event.preventDefault();
         const newSelected = event.currentTarget.id === this.state.selected ? null : event.currentTarget.id;
         this.setState({
           selected: newSelected
