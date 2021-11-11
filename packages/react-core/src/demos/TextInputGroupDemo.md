@@ -33,7 +33,7 @@ export const KeyValueFiltering = () => {
   const [selectedKey, setSelectedKey] = React.useState('');
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
   const menuRef = React.useRef();
-  const textInputGrouopRef = React.useRef();
+  const textInputGroupRef = React.useRef();
   const keyNames = ['Cluster', 'Kind', 'Label', 'Name', 'Namespace', 'Status'];
   const data = {
     Cluster: ['acmeqe-managed-1', 'local-cluster'],
@@ -62,10 +62,16 @@ export const KeyValueFiltering = () => {
   /** show the input/chip clearing button only when either the text input or chip group are not empty */
   const showClearButton = inputValue || !!currentChips.length;
 
+  const clearSelectedKey = () => {
+    setSelectedKey('');
+    setInputValue('');
+    setMenuItemsText(keyNames);
+  };
+
   /** callback for clearing all selected chips and the text input */
   const clearChipsAndInput = () => {
     setCurrentChips([]);
-    setInputValue('');
+    clearSelectedKey();
   };
 
   const menuItems = menuItemsText
@@ -106,17 +112,13 @@ export const KeyValueFiltering = () => {
       event.key === 'Escape' ||
       (event.key === 'Backspace' && selectedKey.length && inputValue.length === selectedKey.length + 2)
     ) {
-      setSelectedKey('');
-      setInputValue('');
-      setMenuItemsText(keyNames);
+      clearSelectedKey();
     }
   };
 
   const selectValue = selectedValueText => {
     setCurrentChips([...currentChips, `${selectedKey}: ${selectedValueText}`]);
-    setSelectedKey('');
-    setInputValue('');
-    setMenuItemsText(keyNames);
+    clearSelectedKey();
   };
 
   const selectKey = selectedText => {
@@ -138,14 +140,14 @@ export const KeyValueFiltering = () => {
     if (
       menuRef.current &&
       !menuRef.current.contains(event.target) &&
-      !textInputGrouopRef.current.contains(event.target)
+      !textInputGroupRef.current.contains(event.target)
     ) {
       setMenuIsOpen(false);
     }
   };
 
   const inputGroup = (
-    <div ref={textInputGrouopRef}>
+    <div ref={textInputGroupRef}>
       <TextInputGroup>
         <TextInputGroupMain
           icon={showSearchIcon && <SearchIcon />}
