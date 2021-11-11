@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.23.0 (2021-11-11)
+
+
+### Features
+
+* **contextselector:** added support for context selector items as links ([#6554](https://github.com/patternfly/patternfly-react/issues/6554)) ([c465388](https://github.com/patternfly/patternfly-react/commit/c4653881eee0cd8ec8e3a7125bbef0bded9f2de0))
+
+
+
+
+
 # 4.22.0 (2021-11-11)
 
 
