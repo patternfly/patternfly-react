@@ -104,6 +104,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   // calculate style value percentage
   const stylePercent = ((localValue - min) * 100) / (max - min);
   const style = { '--pf-c-slider--value': `${stylePercent}%` } as React.CSSProperties;
+  const widthChars = React.useMemo(() => localInputValue.toString().length, [localInputValue]);
+  const inputStyle = { '--pf-c-slider__value--c-form-control--width-chars': widthChars } as React.CSSProperties;
 
   const onChangeHandler = (value: string) => {
     setLocalInputValue(Number(value));
@@ -290,6 +292,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     const textInput = (
       <TextInput
         className={css(styles.formControl)}
+        style={inputStyle}
         isDisabled={isDisabled}
         type="number"
         value={localInputValue}
