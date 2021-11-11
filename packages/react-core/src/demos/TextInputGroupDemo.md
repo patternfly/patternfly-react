@@ -119,28 +119,6 @@ export const KeyValueFiltering = () => {
     setMenuItems([headingItem, divider, ...filteredMenuItems]);
   }, [inputValue]);
 
-  /** enable key/value selection and selected key removal using keyboard events */
-  const handleKeydown = event => {
-    if (event.key === 'Enter') {
-      if (menuItems.length === 1) {
-        return
-      }
-
-      if (selectedKey.length) {
-        selectValue(menuItems[2].props.children);
-      } else {
-        selectKey(menuItems[2].props.children);
-      }
-    }
-
-    if (
-      event.key === 'Escape' ||
-      (event.key === 'Backspace' && selectedKey.length && inputValue.length === selectedKey.length + 2)
-    ) {
-      clearSelectedKey();
-    }
-  };
-
   /** add selected key/value pair as a chip in the chip group */
   const selectValue = selectedValue => {
     setCurrentChips([...currentChips, `${selectedKey}: ${selectedValue}`]);
@@ -152,6 +130,31 @@ export const KeyValueFiltering = () => {
     setInputValue(`${selectedText}: `);
     setSelectedKey(selectedText);
     setMenuItemsText(data[selectedText]);
+  };
+
+  /** enable key/value selection and selected key removal using keyboard events */
+  const handleKeydown = event => {
+    if (event.key === 'Enter') {
+      /** do nothing if the menu contains no real results */
+      if (menuItems.length === 1) {
+        return;
+      }
+
+      /** perform the appropriate action based on key selection state */
+      if (selectedKey.length) {
+        selectValue(menuItems[2].props.children);
+      } else {
+        selectKey(menuItems[2].props.children);
+      }
+    }
+
+    /** allow the user to backspace at the selected key name or hit escape to drop the selected key */
+    if (
+      event.key === 'Escape' ||
+      (event.key === 'Backspace' && selectedKey.length && inputValue.length === selectedKey.length + 2)
+    ) {
+      clearSelectedKey();
+    }
   };
 
   /** perform the proper key or value selection when a menu item is selected */
