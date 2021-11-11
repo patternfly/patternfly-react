@@ -93,13 +93,22 @@ export const KeyValueFiltering = () => {
     );
   }
 
-  const handleEnter = event => {
+  const handleKeydown = event => {
     if (event.key === 'Enter') {
       if (selectedKey.length) {
         selectValue(menuItems[0].props.children);
       } else {
         selectKey(menuItems[0].props.children);
       }
+    }
+
+    if (
+      event.key === 'Escape' ||
+      (event.key === 'Backspace' && selectedKey.length && inputValue.length === selectedKey.length + 2)
+    ) {
+      setSelectedKey('');
+      setInputValue('');
+      setMenuItemsText(keyNames);
     }
   };
 
@@ -143,7 +152,7 @@ export const KeyValueFiltering = () => {
           value={inputValue}
           onChange={handleInputChange}
           onFocus={() => setMenuIsOpen(true)}
-          onKeyDown={handleEnter}
+          onKeyDown={handleKeydown}
         >
           <ChipGroup>
             {currentChips.map(currentChip => (
