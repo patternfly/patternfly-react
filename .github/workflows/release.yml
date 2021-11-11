@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+env:
+  NODE_VERSION: 16
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,7 +22,7 @@ jobs:
           fi
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: ${{ env.NODE_VERSION }}
       - uses: actions/cache@v2
         id: yarn-cache
         name: Cache npm deps
@@ -29,7 +31,7 @@ jobs:
            node_modules
            **/node_modules
            ~/.cache/Cypress
-          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ env.NODE_VERSION }}-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
@@ -59,7 +61,7 @@ jobs:
           fi
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: ${{ env.NODE_VERSION }}
       - uses: actions/cache@v2
         id: yarn-cache
         name: Cache npm deps
@@ -68,7 +70,7 @@ jobs:
            node_modules
            **/node_modules
            ~/.cache/Cypress
-          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ env.NODE_VERSION }}-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
@@ -99,7 +101,7 @@ jobs:
           fi
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: ${{ env.NODE_VERSION }}
       - uses: actions/cache@v2
         id: yarn-cache
         name: Cache npm deps
@@ -108,7 +110,7 @@ jobs:
            node_modules
            **/node_modules
            ~/.cache/Cypress
-          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ env.NODE_VERSION }}-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
@@ -143,7 +145,7 @@ jobs:
           fi
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: ${{ env.NODE_VERSION }}
       - uses: actions/cache@v2
         id: yarn-cache
         name: Cache npm deps
@@ -152,7 +154,7 @@ jobs:
            node_modules
            **/node_modules
            ~/.cache/Cypress
-          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ env.NODE_VERSION }}-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
@@ -198,7 +200,7 @@ jobs:
           fi
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: ${{ env.NODE_VERSION }}
       - uses: actions/cache@v2
         id: yarn-cache
         name: Cache npm deps
@@ -207,7 +209,7 @@ jobs:
            node_modules
            **/node_modules
            ~/.cache/Cypress
-          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ env.NODE_VERSION }}-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
@@ -249,7 +251,7 @@ jobs:
           fi
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: ${{ env.NODE_VERSION }}
       - uses: actions/cache@v2
         id: yarn-cache
         name: Cache npm deps
@@ -258,7 +260,7 @@ jobs:
            node_modules
            **/node_modules
            ~/.cache/Cypress
-          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ env.NODE_VERSION }}-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2
@@ -296,7 +298,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN_REDALLEN }} # needs to be an admin token to get around branch protection
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: ${{ env.NODE_VERSION }}
       - uses: actions/cache@v2
         id: yarn-cache
         name: Cache npm deps
@@ -305,7 +307,7 @@ jobs:
            node_modules
            **/node_modules
            ~/.cache/Cypress
-          key: ${{ runner.os }}-yarn-14-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ env.NODE_VERSION }}-${{ secrets.CACHE_VERSION }}-${{ hashFiles('yarn.lock') }}
       - run: yarn install --frozen-lockfile
         if: steps.yarn-cache.outputs.cache-hit != 'true'
       - uses: actions/cache@v2

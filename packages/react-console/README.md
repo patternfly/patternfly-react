@@ -9,11 +9,11 @@ to be used alongside patternfly-react to access virtual machine or server consol
 
 This project currently supports Node [Active LTS](https://github.com/nodejs/Release#release-schedule) releases. Please stay current with Node Active LTS when developing patternfly-react.
 
-For example, to develop with Node 8, use the following:
+For example, to develop with Node 16, use the following:
 
 ```
-nvm install 8
-nvm use 8
+nvm install 16
+nvm use 16
 ```
 
 This project also requires a Yarn version of >=1.6.0. The latest version can be installed [here](https://yarnpkg.com/).

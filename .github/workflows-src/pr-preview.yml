@@ -1,5 +1,6 @@
 name: build-test-deploy
 on: pull_request_target
+%env%
 jobs:
   %build%
   %lint%
