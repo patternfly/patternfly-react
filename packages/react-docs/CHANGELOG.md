@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.35.0 (2021-11-11)
+
+
+### Features
+
+* **ComposableTable:** add sticky columns and nested headers ([#6538](https://github.com/patternfly/patternfly-react/issues/6538)) ([f11245b](https://github.com/patternfly/patternfly-react/commit/f11245bfccc8c6c02a9d5545a69ed533743cc552))
+
+
+
+
+
 # 5.34.0 (2021-11-11)
 
 
