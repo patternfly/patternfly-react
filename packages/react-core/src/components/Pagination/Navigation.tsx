@@ -213,7 +213,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
               onKeyDown={event => this.onKeyDown(event, page, lastPage, onPageInput)}
               onChange={event => this.onChange(event, lastPage)}
             />
-            {itemCount && (
+            {(itemCount || itemCount === 0) && (
               <span aria-hidden="true">
                 {ofWord} {pagesTitle ? pluralize(lastPage, pagesTitle) : lastPage}
               </span>

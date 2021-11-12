@@ -204,7 +204,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
   getLastPage() {
     const { itemCount, perPage, page } = this.props;
     // when itemCount is not known let's set lastPage as page+1 as we don't know the total count
-    return itemCount ? Math.ceil(itemCount / perPage) || 0 : page + 1;
+    return itemCount || itemCount === 0 ? Math.ceil(itemCount / perPage) || 0 : page + 1;
   }
 
   componentDidMount() {
@@ -265,7 +265,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
     let firstIndex = (page - 1) * perPage + 1;
     let lastIndex = page * perPage;
 
-    if (itemCount) {
+    if (itemCount || itemCount === 0) {
       firstIndex = itemCount <= 0 ? 0 : (page - 1) * perPage + 1;
 
       if (page < firstPage && itemCount > 0) {
@@ -274,8 +274,8 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
         page = lastPage;
       }
 
-      if (itemCount > 0) {
-        lastIndex = page === lastPage ? itemCount : page * perPage;
+      if (itemCount >= 0) {
+        lastIndex = page === lastPage || itemCount === 0 ? itemCount : page * perPage;
       }
     }
 

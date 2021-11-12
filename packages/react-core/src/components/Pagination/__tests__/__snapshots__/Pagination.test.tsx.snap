@@ -4479,16 +4479,16 @@ exports[`component render no items 1`] = `
       className="pf-c-pagination__total-items"
     >
       <ToggleTemplate
-        firstIndex={1}
+        firstIndex={0}
         itemCount={0}
         itemsTitle=""
-        lastIndex={10}
+        lastIndex={0}
         ofWord="of"
       >
         <b>
-          1
+          0
            - 
-          10
+          0
         </b>
          
         of
@@ -4503,17 +4503,17 @@ exports[`component render no items 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="down"
-      firstIndex={1}
+      firstIndex={0}
       isDisabled={false}
       itemCount={0}
       itemsPerPageTitle="Items per page"
       itemsTitle=""
-      lastIndex={10}
-      lastPage={1}
+      lastIndex={0}
+      lastPage={0}
       ofWord="of"
       onPerPageSelect={[Function]}
       optionsToggle="Items per page"
-      page={1}
+      page={0}
       perPage={10}
       perPageOptions={
         Array [
@@ -4600,13 +4600,13 @@ exports[`component render no items 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={1}
+            firstIndex={0}
             isDisabled={false}
             isOpen={false}
             itemCount={0}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
-            lastIndex={10}
+            lastIndex={0}
             ofWord="of"
             onToggle={[Function]}
             optionsToggle="Items per page"
@@ -4624,7 +4624,7 @@ exports[`component render no items 1`] = `
         >
           <OptionsToggle
             aria-haspopup={true}
-            firstIndex={1}
+            firstIndex={0}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-11"
             isDisabled={false}
@@ -4634,7 +4634,7 @@ exports[`component render no items 1`] = `
             itemsPerPageTitle="Items per page"
             itemsTitle=""
             key=".0"
-            lastIndex={10}
+            lastIndex={0}
             ofWord="of"
             onEnter={[Function]}
             onToggle={[Function]}
@@ -4653,9 +4653,9 @@ exports[`component render no items 1`] = `
                       class="pf-c-options-menu__toggle-text"
                     >
                       <b>
-                        1
+                        0
                          - 
-                        10
+                        0
                       </b>
                        
                       of
@@ -4709,16 +4709,16 @@ exports[`component render no items 1`] = `
                 className="pf-c-options-menu__toggle-text"
               >
                 <ToggleTemplate
-                  firstIndex={1}
+                  firstIndex={0}
                   itemCount={0}
                   itemsTitle=""
-                  lastIndex={10}
+                  lastIndex={0}
                   ofWord="of"
                 >
                   <b>
-                    1
+                    0
                      - 
-                    10
+                    0
                   </b>
                    
                   of
@@ -4751,9 +4751,9 @@ exports[`component render no items 1`] = `
                           class="pf-c-options-menu__toggle-text"
                         >
                           <b>
-                            1
+                            0
                              - 
-                            10
+                            0
                           </b>
                            
                           of
@@ -4828,9 +4828,9 @@ exports[`component render no items 1`] = `
                             class="pf-c-options-menu__toggle-text"
                           >
                             <b>
-                              1
+                              0
                                - 
-                              10
+                              0
                             </b>
                              
                             of
@@ -4930,7 +4930,7 @@ exports[`component render no items 1`] = `
       isCompact={false}
       isDisabled={false}
       itemCount={0}
-      lastPage={1}
+      lastPage={0}
       ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -4938,7 +4938,7 @@ exports[`component render no items 1`] = `
       onPageInput={[Function]}
       onPreviousClick={[Function]}
       onSetPage={[Function]}
-      page={1}
+      page={0}
       pagesTitle=""
       paginationTitle="Pagination"
       perPage={10}
@@ -5077,15 +5077,21 @@ exports[`component render no items 1`] = `
           <input
             aria-label="Current page"
             className="pf-c-form-control"
-            disabled={false}
-            max={1}
+            disabled={true}
+            max={0}
             min={1}
             onChange={[Function]}
             onKeyDown={[Function]}
             type="number"
-            value={1}
+            value={0}
           />
-          0
+          <span
+            aria-hidden="true"
+          >
+            of
+             
+            0
+          </span>
         </div>
         <div
           className="pf-c-pagination__nav-control"
@@ -11601,16 +11607,16 @@ exports[`component render zero results 1`] = `
       className="pf-c-pagination__total-items"
     >
       <ToggleTemplate
-        firstIndex={1}
+        firstIndex={0}
         itemCount={0}
         itemsTitle=""
-        lastIndex={10}
+        lastIndex={0}
         ofWord="of"
       >
         <b>
-          1
+          0
            - 
-          10
+          0
         </b>
          
         of
@@ -11625,17 +11631,17 @@ exports[`component render zero results 1`] = `
       className=""
       defaultToFullPage={false}
       dropDirection="down"
-      firstIndex={1}
+      firstIndex={0}
       isDisabled={false}
       itemCount={0}
       itemsPerPageTitle="Items per page"
       itemsTitle=""
-      lastIndex={10}
-      lastPage={1}
+      lastIndex={0}
+      lastPage={0}
       ofWord="of"
       onPerPageSelect={[Function]}
       optionsToggle="Items per page"
-      page={1}
+      page={0}
       perPage={10}
       perPageOptions={
         Array [
@@ -11722,13 +11728,13 @@ exports[`component render zero results 1`] = `
         position="left"
         toggle={
           <OptionsToggle
-            firstIndex={1}
+            firstIndex={0}
             isDisabled={false}
             isOpen={false}
             itemCount={0}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
-            lastIndex={10}
+            lastIndex={0}
             ofWord="of"
             onToggle={[Function]}
             optionsToggle="Items per page"
@@ -11746,7 +11752,7 @@ exports[`component render zero results 1`] = `
         >
           <OptionsToggle
             aria-haspopup={true}
-            firstIndex={1}
+            firstIndex={0}
             getMenuRef={[Function]}
             id="pf-dropdown-toggle-id-7"
             isDisabled={false}
@@ -11756,7 +11762,7 @@ exports[`component render zero results 1`] = `
             itemsPerPageTitle="Items per page"
             itemsTitle=""
             key=".0"
-            lastIndex={10}
+            lastIndex={0}
             ofWord="of"
             onEnter={[Function]}
             onToggle={[Function]}
@@ -11775,9 +11781,9 @@ exports[`component render zero results 1`] = `
                       class="pf-c-options-menu__toggle-text"
                     >
                       <b>
-                        1
+                        0
                          - 
-                        10
+                        0
                       </b>
                        
                       of
@@ -11831,16 +11837,16 @@ exports[`component render zero results 1`] = `
                 className="pf-c-options-menu__toggle-text"
               >
                 <ToggleTemplate
-                  firstIndex={1}
+                  firstIndex={0}
                   itemCount={0}
                   itemsTitle=""
-                  lastIndex={10}
+                  lastIndex={0}
                   ofWord="of"
                 >
                   <b>
-                    1
+                    0
                      - 
-                    10
+                    0
                   </b>
                    
                   of
@@ -11873,9 +11879,9 @@ exports[`component render zero results 1`] = `
                           class="pf-c-options-menu__toggle-text"
                         >
                           <b>
-                            1
+                            0
                              - 
-                            10
+                            0
                           </b>
                            
                           of
@@ -11950,9 +11956,9 @@ exports[`component render zero results 1`] = `
                             class="pf-c-options-menu__toggle-text"
                           >
                             <b>
-                              1
+                              0
                                - 
-                              10
+                              0
                             </b>
                              
                             of
@@ -12052,7 +12058,7 @@ exports[`component render zero results 1`] = `
       isCompact={false}
       isDisabled={false}
       itemCount={0}
-      lastPage={1}
+      lastPage={0}
       ofWord="of"
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -12060,7 +12066,7 @@ exports[`component render zero results 1`] = `
       onPageInput={[Function]}
       onPreviousClick={[Function]}
       onSetPage={[Function]}
-      page={1}
+      page={0}
       pagesTitle=""
       paginationTitle="Pagination"
       perPage={10}
@@ -12199,15 +12205,21 @@ exports[`component render zero results 1`] = `
           <input
             aria-label="Current page"
             className="pf-c-form-control"
-            disabled={false}
-            max={1}
+            disabled={true}
+            max={0}
             min={1}
             onChange={[Function]}
             onKeyDown={[Function]}
             type="number"
-            value={1}
+            value={0}
           />
-          0
+          <span
+            aria-hidden="true"
+          >
+            of
+             
+            0
+          </span>
         </div>
         <div
           className="pf-c-pagination__nav-control"
