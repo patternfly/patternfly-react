@@ -23,6 +23,8 @@ export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps
   isRowSelected?: boolean;
   /** An event handler for the row */
   onRowClick?: (event?: React.KeyboardEvent | React.MouseEvent) => void;
+  /** Flag indicating the spacing offset of the first cell should be reset */
+  resetOffset?: boolean;
 }
 
 const TrBase: React.FunctionComponent<TrProps> = ({
@@ -36,6 +38,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   innerRef,
   ouiaId,
   ouiaSafe = true,
+  resetOffset = false,
   onRowClick,
   ...props
 }: TrProps) => {
@@ -59,7 +62,8 @@ const TrBase: React.FunctionComponent<TrProps> = ({
         isExpanded && styles.modifiers.expanded,
         isEditable && inlineStyles.modifiers.inlineEditable,
         isHoverable && styles.modifiers.hoverable,
-        isRowSelected && styles.modifiers.selected
+        isRowSelected && styles.modifiers.selected,
+        resetOffset && styles.modifiers.firstCellOffsetReset
       )}
       hidden={isHidden || (isExpanded !== undefined && !isExpanded)}
       {...(isHoverable && { tabIndex: 0 })}

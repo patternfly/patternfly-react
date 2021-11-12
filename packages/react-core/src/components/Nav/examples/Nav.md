@@ -292,6 +292,104 @@ class NavExpandableTitlesList extends React.Component {
 }
 ```
 
+### Expandable third level
+
+```js
+import React from 'react';
+import { Nav, NavExpandable, NavItem, NavList } from '@patternfly/react-core';
+
+NavExpandableThirdLevelList = () => {
+  const [activeGroup, setActiveGroup] = React.useState('grp-1');
+  const [activeItem, setActiveItem] = React.useState('grp-1_itm-1');
+
+  onSelect = result => {
+    setActiveGroup(result.groupId);
+    setActiveItem(result.itemId);
+  };  
+
+  onToggle = result => {
+    // eslint-disable-next-line no-console
+    console.log(`Group ${result.groupId} expanded? ${result.isExpanded}`);
+  };
+
+  return (
+    <Nav onSelect={onSelect} onToggle={onToggle}>
+      <NavList>
+        <NavExpandable title="Link 1" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
+          <NavItem
+            preventDefault
+            to="#expandable-1"
+            groupId="grp-1"
+            itemId="grp-1_itm-1"
+            isActive={activeItem === 'grp-1_itm-1'}
+          >
+            Subnav Link 1
+          </NavItem>
+          <NavItem
+            preventDefault
+            to="#expandable-2"
+            groupId="grp-1"
+            itemId="grp-1_itm-2"
+            isActive={activeItem === 'grp-1_itm-2'}
+          >
+            Subnav Link 2
+          </NavItem>
+          <NavItem
+            preventDefault
+            to="#expandable-3"
+            groupId="grp-1"
+            itemId="grp-1_itm-3"
+            isActive={activeItem === 'grp-1_itm-3'}
+          >
+            Subnav Link 3
+          </NavItem>
+        </NavExpandable>
+        <NavExpandable title="Link 2" groupId="grp-2" isActive={activeGroup === 'grp-2'} isExpanded>
+          <NavItem
+            preventDefault
+            to="#expandable-4"
+            groupId="grp-2"
+            itemId="grp-2_itm-1"
+            isActive={activeItem === 'grp-2_itm-1'}
+          >
+            Subnav Link 1
+          </NavItem>
+          <NavExpandable title="Third Level" groupId="grp-3" isActive={activeGroup === 'grp-3'} isExpanded>
+            <NavItem
+              preventDefault
+              to="#expandable-6"
+              groupId="grp-3"
+              itemId="grp-3_itm-1"
+              isActive={activeItem === 'grp-3_itm-1'}
+            >
+              Third Level Link 1
+            </NavItem>
+            <NavItem
+              preventDefault
+              to="#expandable-7"
+              groupId="grp-3"
+              itemId="grp-3_itm-2"
+              isActive={activeItem === 'grp-3_itm-2'}
+            >
+              Third Level Link 2
+            </NavItem>
+          </NavExpandable>
+          <NavItem
+            preventDefault
+            to="#expandable-8"
+            groupId="grp-2"
+            itemId="grp-2_itm-2"
+            isActive={activeItem === 'grp-2_itm-3'}
+          >
+            Subnav Link 3
+          </NavItem>
+        </NavExpandable>
+      </NavList>
+    </Nav>
+  );
+}
+```
+
 ### Mixed
 
 ```js

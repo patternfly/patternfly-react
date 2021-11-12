@@ -11,6 +11,8 @@ export interface TheadProps extends React.HTMLProps<HTMLTableSectionElement> {
   noWrap?: boolean;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
+  /** Indicates the <thead> contains a nested header */
+  hasNestedHeader?: boolean;
 }
 
 const TheadBase: React.FunctionComponent<TheadProps> = ({
@@ -18,9 +20,18 @@ const TheadBase: React.FunctionComponent<TheadProps> = ({
   className,
   noWrap = false,
   innerRef,
+  hasNestedHeader,
   ...props
 }: TheadProps) => (
-  <thead className={css(className, noWrap && styles.modifiers.nowrap)} ref={innerRef} {...props}>
+  <thead
+    className={css(
+      className,
+      noWrap && styles.modifiers.nowrap,
+      hasNestedHeader && styles.modifiers.nestedColumnHeader
+    )}
+    ref={innerRef}
+    {...props}
+  >
     {children}
   </thead>
 );

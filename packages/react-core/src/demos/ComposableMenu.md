@@ -1188,6 +1188,22 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 MenuContextSelector = () => {
   const items = [
+    {
+      text: 'Action'
+    },
+    {
+      text: 'Link',
+      href: '#'
+    },
+    {
+      text: 'Disabled action',
+      isDisabled: true
+    },
+    {
+      text: 'Disabled link',
+      href: '#',
+      isDisabled: true
+    },
     'My project',
     'OpenShift cluster',
     'Production Ansible',
@@ -1200,7 +1216,7 @@ MenuContextSelector = () => {
     'Azure 2'
   ];
   const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState(items[0]);
+  const [selected, setSelected] = React.useState(items[0].text || items[0]);
   const [filteredItems, setFilteredItems] = React.useState(items);
   const [searchInputValue, setSearchInputValue] = React.useState('');
   const toggleRef = React.useRef();
@@ -1311,11 +1327,16 @@ MenuContextSelector = () => {
       <Divider />
       <MenuContent maxMenuHeight="200px">
         <MenuList>
-          {filteredItems.map((item, index) => (
-            <MenuItem itemId={item} key={index}>
-              {item}
-            </MenuItem>
-          ))}
+          {filteredItems.map((item, index) => {
+            const [ itemText, isDisabled, href ] = typeof item === 'string'
+              ? [ item, null, null ]
+              : [ item.text, item.isDisabled || null, item.href || null ];
+            return (
+              <MenuItem itemId={itemText} key={index} isDisabled={isDisabled} to={href}>
+                {itemText}
+              </MenuItem>
+            );
+          })}
         </MenuList>
       </MenuContent>
       <MenuFooter>

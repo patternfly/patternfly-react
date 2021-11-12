@@ -3,6 +3,96 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.27.1 (2021-11-12)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# 6.27.0 (2021-11-11)
+
+
+### Features
+
+* **ComposableTable:** add sticky columns and nested headers ([#6538](https://github.com/patternfly/patternfly-react/issues/6538)) ([f11245b](https://github.com/patternfly/patternfly-react/commit/f11245bfccc8c6c02a9d5545a69ed533743cc552))
+
+
+
+
+
+# 6.26.0 (2021-11-11)
+
+
+### Features
+
+* **contextselector:** added support for context selector items as links ([#6554](https://github.com/patternfly/patternfly-react/issues/6554)) ([c465388](https://github.com/patternfly/patternfly-react/commit/c4653881eee0cd8ec8e3a7125bbef0bded9f2de0))
+
+
+
+
+
+# 6.25.0 (2021-11-11)
+
+
+### Features
+
+* **Navigation:** Added exemple with third level ([#6564](https://github.com/patternfly/patternfly-react/issues/6564)) ([c30da53](https://github.com/patternfly/patternfly-react/commit/c30da532855118f705c8cfc87c545bb1eea11ebb))
+
+
+
+
+
+# 6.24.0 (2021-11-11)
+
+
+### Features
+
+* enhance type correctness of CodeEditor ([#6579](https://github.com/patternfly/patternfly-react/issues/6579)) ([e1ad65c](https://github.com/patternfly/patternfly-react/commit/e1ad65c225968d5a9c74019d19e4a3c5e2666926))
+
+
+
+
+
+## 6.23.4 (2021-11-10)
+
+
+### Bug Fixes
+
+* **jumplinks:** fixed to always set clicked item as active ([#6542](https://github.com/patternfly/patternfly-react/issues/6542)) ([845c98f](https://github.com/patternfly/patternfly-react/commit/845c98f5f3df8aa9b6acc190707c5f1d7bf3ca38))
+
+
+
+
+
+## 6.23.3 (2021-11-10)
+
+
+### Bug Fixes
+
+* **Menu:** stop passing disableHover to DrilldownMenu DOM ([#6571](https://github.com/patternfly/patternfly-react/issues/6571)) ([63dcf25](https://github.com/patternfly/patternfly-react/commit/63dcf256723848ff3789828fc0a5f86d5009fc87))
+
+
+
+
+
+## 6.23.2 (2021-11-10)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## 6.23.1 (2021-11-10)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
 # 6.23.0 (2021-11-09)
 
 

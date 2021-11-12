@@ -28,6 +28,8 @@ propComponents:
     'EditableTextCellProps',
     'ThSortType',
     'ISortBy',
+    'InnerScrollContainer',
+    'OuterScrollContainer',
   ]
 ouia: true
 ---
@@ -52,6 +54,7 @@ import LeafIcon from '@patternfly/react-icons/dist/esm/icons/leaf-icon';
 import FolderIcon from '@patternfly/react-icons/dist/esm/icons/folder-icon';
 import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
 
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
@@ -2011,4 +2014,1107 @@ class DraggableTable extends React.Component {
     );
   }
 }
+```
+
+### Composable: Sticky column
+
+To make a column sticky, wrap `TableComposable` with `InnerScrollContainer` and add the following properties to the `Th` that should be sticky: `isStickyColumn` and `hasRightBorder`. To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` should also have the `modifier="nowrap"` property. To set the minimum width of the sticky column, use the `stickyMinWidth` property.
+
+```js
+import React from 'react';
+import {
+  TableComposable,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  Caption,
+  TableText,
+  InnerScrollContainer
+} from '@patternfly/react-table';
+import { Flex, FlexItem } from '@patternfly/react-core';
+import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
+
+ComposableTableStickyColumn = () => {
+  const columns = ['Fact', 'State', 'Header 3', 'Header 4', 'Header 5', 'Header 6', 'Header 7', 'Header 8', 'Header 9'];
+  const [rows, setRows] = React.useState([
+    [
+      'Fact 1',
+      'State 1',
+      'Test cell 1-3',
+      'Test cell 1-4',
+      'Test cell 1-5',
+      'Test cell 1-6',
+      'Test cell 1-7',
+      'Test cell 1-8',
+      'Test cell 1-9'
+    ],
+    [
+      'Fact 2',
+      'State 2',
+      'Test cell 2-3',
+      'Test cell 2-4',
+      'Test cell 2-5',
+      'Test cell 2-6',
+      'Test cell 2-7',
+      'Test cell 2-8',
+      'Test cell 2-9'
+    ],
+    [
+      'Fact 3',
+      'State 3',
+      'Test cell 3-3',
+      'Test cell 3-4',
+      'Test cell 3-5',
+      'Test cell 3-6',
+      'Test cell 3-7',
+      'Test cell 3-8',
+      'Test cell 3-9'
+    ],
+    [
+      'Fact 4',
+      'State 4',
+      'Test cell 4-3',
+      'Test cell 4-4',
+      'Test cell 4-5',
+      'Test cell 4-6',
+      'Test cell 4-7',
+      'Test cell 4-8',
+      'Test cell 4-9'
+    ],
+    [
+      'Fact 5',
+      'State 5',
+      'Test cell 5-3',
+      'Test cell 5-4',
+      'Test cell 5-5',
+      'Test cell 5-6',
+      'Test cell 5-7',
+      'Test cell 5-8',
+      'Test cell 5-9'
+    ],
+    [
+      'Fact 6',
+      'State 6',
+      'Test cell 6-3',
+      'Test cell 6-4',
+      'Test cell 6-5',
+      'Test cell 6-6',
+      'Test cell 6-7',
+      'Test cell 6-8',
+      'Test cell 6-9'
+    ],
+    [
+      'Fact 7',
+      'State 7',
+      'Test cell 7-3',
+      'Test cell 7-4',
+      'Test cell 7-5',
+      'Test cell 7-6',
+      'Test cell 7-7',
+      'Test cell 7-8',
+      'Test cell 7-9'
+    ],
+    [
+      'Fact 8',
+      'State 8',
+      'Test cell 8-3',
+      'Test cell 8-4',
+      'Test cell 8-5',
+      'Test cell 8-6',
+      'Test cell 8-7',
+      'Test cell 8-8',
+      'Test cell 8-9'
+    ],
+    [
+      'Fact 9',
+      'State 9',
+      'Test cell 9-3',
+      'Test cell 9-4',
+      'Test cell 9-5',
+      'Test cell 9-6',
+      'Test cell 9-7',
+      'Test cell 9-8',
+      'Test cell 9-9'
+    ]
+  ]);
+  // index of the currently active column
+  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
+  // sort direction of the currently active column
+  const [activeSortDirection, setActiveSortDirection] = React.useState('none');
+  const onSort = (event, index, direction) => {
+    setActiveSortIndex(index);
+    setActiveSortDirection(direction);
+    // sorts the rows
+    const updatedRows = rows.sort((a, b) => {
+      if (typeof a[index] === 'number') {
+        // numeric sort
+        if (direction === 'asc') {
+          return a[index] - b[index];
+        }
+        return b[index] - a[index];
+      } else {
+        // string sort
+        if (direction === 'asc') {
+          return a[index].localeCompare(b[index]);
+        }
+        return b[index].localeCompare(a[index]);
+      }
+    });
+    setRows(updatedRows);
+  };
+  return (
+    <React.Fragment>
+      <InnerScrollContainer>
+        <TableComposable aria-label="Sticky column table" gridBreakPoint="">
+          <Thead>
+            <Tr>
+              {columns.map((column, columnIndex) => {
+                const sortParams =
+                  columnIndex === 0 || columnIndex === 1
+                    ? {
+                        sort: {
+                          sortBy: {
+                            index: activeSortIndex,
+                            direction: activeSortDirection
+                          },
+                          onSort,
+                          columnIndex
+                        }
+                      }
+                    : {};
+
+                if (columnIndex === 0) {
+                  return (
+                    <Th key={columnIndex} isStickyColumn hasRightBorder modifier="truncate" {...sortParams}>
+                      {column}
+                    </Th>
+                  );
+                } else if (columnIndex === 1) {
+                  return (
+                    <Th key={columnIndex} modifier="truncate" {...sortParams}>
+                      {column}
+                    </Th>
+                  );
+                } else {
+                  return (
+                    <Th key={columnIndex} modifier="truncate">
+                      {column}
+                    </Th>
+                  );
+                }
+              })}
+            </Tr>
+          </Thead>
+          <Tbody>
+            {rows.map((row, rowIndex) => (
+              <Tr key={rowIndex}>
+                {row.map((cell, cellIndex) => {
+                  if (cellIndex === 0) {
+                    return (
+                      <Th key={cellIndex} isStickyColumn hasRightBorder modifier="truncate">
+                        {cell}
+                      </Th>
+                    );
+                  } else {
+                    return (
+                      <Td key={`${rowIndex}_${cellIndex}`} modifier="nowrap" dataLabel={columns[cellIndex]}>
+                        {cell}
+                      </Td>
+                    );
+                  }
+                })}
+              </Tr>
+            ))}
+          </Tbody>
+        </TableComposable>
+      </InnerScrollContainer>
+    </React.Fragment>
+  );
+};
+```
+
+### Composable: Multiple sticky columns
+
+To make multiple columns sticky, wrap `TableComposable` with `InnerScrollContainer` and add `isStickyColumn` to all columns that should be sticky. The rightmost column should also have the `hasRightBorder` property, and each sticky column after the first must define a `stickyLeftOffset` property that equals the combined width of the previous sticky columns - set by `stickyMinWidth`. To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` should also have the `modifier="nowrap"` property.
+
+```js
+import React from 'react';
+import {
+  TableComposable,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  Caption,
+  TableText,
+  InnerScrollContainer
+} from '@patternfly/react-table';
+import { Flex, FlexItem } from '@patternfly/react-core';
+import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
+
+ComposableTableMultipleStickyColumn = () => {
+  const columns = ['Fact', 'State', 'Header 3', 'Header 4', 'Header 5', 'Header 6', 'Header 7', 'Header 8', 'Header 9'];
+  const [rows, setRows] = React.useState([
+    [
+      'Fact 1',
+      'State 1',
+      'Test cell 1-3',
+      'Test cell 1-4',
+      'Test cell 1-5',
+      'Test cell 1-6',
+      'Test cell 1-7',
+      'Test cell 1-8',
+      'Test cell 1-9'
+    ],
+    [
+      'Fact 2',
+      'State 2',
+      'Test cell 2-3',
+      'Test cell 2-4',
+      'Test cell 2-5',
+      'Test cell 2-6',
+      'Test cell 2-7',
+      'Test cell 2-8',
+      'Test cell 2-9'
+    ],
+    [
+      'Fact 3',
+      'State 3',
+      'Test cell 3-3',
+      'Test cell 3-4',
+      'Test cell 3-5',
+      'Test cell 3-6',
+      'Test cell 3-7',
+      'Test cell 3-8',
+      'Test cell 3-9'
+    ],
+    [
+      'Fact 4',
+      'State 4',
+      'Test cell 4-3',
+      'Test cell 4-4',
+      'Test cell 4-5',
+      'Test cell 4-6',
+      'Test cell 4-7',
+      'Test cell 4-8',
+      'Test cell 4-9'
+    ],
+    [
+      'Fact 5',
+      'State 5',
+      'Test cell 5-3',
+      'Test cell 5-4',
+      'Test cell 5-5',
+      'Test cell 5-6',
+      'Test cell 5-7',
+      'Test cell 5-8',
+      'Test cell 5-9'
+    ],
+    [
+      'Fact 6',
+      'State 6',
+      'Test cell 6-3',
+      'Test cell 6-4',
+      'Test cell 6-5',
+      'Test cell 6-6',
+      'Test cell 6-7',
+      'Test cell 6-8',
+      'Test cell 6-9'
+    ],
+    [
+      'Fact 7',
+      'State 7',
+      'Test cell 7-3',
+      'Test cell 7-4',
+      'Test cell 7-5',
+      'Test cell 7-6',
+      'Test cell 7-7',
+      'Test cell 7-8',
+      'Test cell 7-9'
+    ],
+    [
+      'Fact 8',
+      'State 8',
+      'Test cell 8-3',
+      'Test cell 8-4',
+      'Test cell 8-5',
+      'Test cell 8-6',
+      'Test cell 8-7',
+      'Test cell 8-8',
+      'Test cell 8-9'
+    ],
+    [
+      'Fact 9',
+      'State 9',
+      'Test cell 9-3',
+      'Test cell 9-4',
+      'Test cell 9-5',
+      'Test cell 9-6',
+      'Test cell 9-7',
+      'Test cell 9-8',
+      'Test cell 9-9'
+    ]
+  ]);
+  // index of the currently active column
+  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
+  // sort direction of the currently active column
+  const [activeSortDirection, setActiveSortDirection] = React.useState('none');
+  const onSort = (event, index, direction) => {
+    setActiveSortIndex(index);
+    setActiveSortDirection(direction);
+    // sorts the rows
+    const updatedRows = rows.sort((a, b) => {
+      if (typeof a[index] === 'number') {
+        // numeric sort
+        if (direction === 'asc') {
+          return a[index] - b[index];
+        }
+        return b[index] - a[index];
+      } else {
+        // string sort
+        if (direction === 'asc') {
+          return a[index].localeCompare(b[index]);
+        }
+        return b[index].localeCompare(a[index]);
+      }
+    });
+    setRows(updatedRows);
+  };
+  return (
+    <React.Fragment>
+      <InnerScrollContainer>
+        <TableComposable aria-label="Sticky column table" gridBreakPoint="">
+          <Thead>
+            <Tr>
+              {columns.map((column, columnIndex) => {
+                const sortParams =
+                  columnIndex === 0 || columnIndex === 1
+                    ? {
+                        sort: {
+                          sortBy: {
+                            index: activeSortIndex,
+                            direction: activeSortDirection
+                          },
+                          onSort,
+                          columnIndex
+                        }
+                      }
+                    : {};
+
+                if (columnIndex === 0) {
+                  return (
+                    <Th key={columnIndex} isStickyColumn modifier="truncate" {...sortParams}>
+                      {column}
+                    </Th>
+                  );
+                } else if (columnIndex === 1) {
+                  return (
+                    <Th
+                      key={columnIndex}
+                      isStickyColumn
+                      stickyMinWidth="120px"
+                      stickyLeftOffset="120px"
+                      hasRightBorder
+                      modifier="truncate"
+                      {...sortParams}
+                    >
+                      {column}
+                    </Th>
+                  );
+                } else {
+                  return (
+                    <Th key={columnIndex} modifier="truncate">
+                      {column}
+                    </Th>
+                  );
+                }
+              })}
+            </Tr>
+          </Thead>
+          <Tbody>
+            {rows.map((row, rowIndex) => (
+              <Tr key={rowIndex}>
+                {row.map((cell, cellIndex) => {
+                  if (cellIndex === 0) {
+                    return (
+                      <Th key={cellIndex} isStickyColumn modifier="truncate">
+                        {cell}
+                      </Th>
+                    );
+                  } else if (cellIndex === 1) {
+                    return (
+                      <Th
+                        key={cellIndex}
+                        isStickyColumn
+                        stickyMinWidth="120px"
+                        stickyLeftOffset="120px"
+                        modifier="truncate"
+                        hasRightBorder
+                      >
+                        <BlueprintIcon />
+                        {` ${cell}`}
+                      </Th>
+                    );
+                  } else {
+                    return (
+                      <Td key={`${rowIndex}_${cellIndex}`} modifier="nowrap" dataLabel={columns[cellIndex]}>
+                        {cell}
+                      </Td>
+                    );
+                  }
+                })}
+              </Tr>
+            ))}
+          </Tbody>
+        </TableComposable>
+      </InnerScrollContainer>
+    </React.Fragment>
+  );
+};
+```
+
+### Composable: Sticky columns and header
+
+To maintain proper sticky behavior across sticky columns and header, `TableComposable` must be wrapped with `OuterScrollContainer` and `InnerScrollContainer` as shown in the example below.
+
+```js
+import React from 'react';
+import {
+  TableComposable,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  Caption,
+  TableText,
+  InnerScrollContainer,
+  OuterScrollContainer
+} from '@patternfly/react-table';
+import { Flex, FlexItem } from '@patternfly/react-core';
+import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
+
+ComposableTableStickyColumnAndHeader = () => {
+  const columns = ['Fact', 'State', 'Header 3', 'Header 4', 'Header 5', 'Header 6', 'Header 7', 'Header 8', 'Header 9'];
+  const [rows, setRows] = React.useState([
+    [
+      'Fact 1',
+      'State 1',
+      'Test cell 1-3',
+      'Test cell 1-4',
+      'Test cell 1-5',
+      'Test cell 1-6',
+      'Test cell 1-7',
+      'Test cell 1-8',
+      'Test cell 1-9'
+    ],
+    [
+      'Fact 2',
+      'State 2',
+      'Test cell 2-3',
+      'Test cell 2-4',
+      'Test cell 2-5',
+      'Test cell 2-6',
+      'Test cell 2-7',
+      'Test cell 2-8',
+      'Test cell 2-9'
+    ],
+    [
+      'Fact 3',
+      'State 3',
+      'Test cell 3-3',
+      'Test cell 3-4',
+      'Test cell 3-5',
+      'Test cell 3-6',
+      'Test cell 3-7',
+      'Test cell 3-8',
+      'Test cell 3-9'
+    ],
+    [
+      'Fact 4',
+      'State 4',
+      'Test cell 4-3',
+      'Test cell 4-4',
+      'Test cell 4-5',
+      'Test cell 4-6',
+      'Test cell 4-7',
+      'Test cell 4-8',
+      'Test cell 4-9'
+    ],
+    [
+      'Fact 5',
+      'State 5',
+      'Test cell 5-3',
+      'Test cell 5-4',
+      'Test cell 5-5',
+      'Test cell 5-6',
+      'Test cell 5-7',
+      'Test cell 5-8',
+      'Test cell 5-9'
+    ],
+    [
+      'Fact 6',
+      'State 6',
+      'Test cell 6-3',
+      'Test cell 6-4',
+      'Test cell 6-5',
+      'Test cell 6-6',
+      'Test cell 6-7',
+      'Test cell 6-8',
+      'Test cell 6-9'
+    ],
+    [
+      'Fact 7',
+      'State 7',
+      'Test cell 7-3',
+      'Test cell 7-4',
+      'Test cell 7-5',
+      'Test cell 7-6',
+      'Test cell 7-7',
+      'Test cell 7-8',
+      'Test cell 7-9'
+    ],
+    [
+      'Fact 8',
+      'State 8',
+      'Test cell 8-3',
+      'Test cell 8-4',
+      'Test cell 8-5',
+      'Test cell 8-6',
+      'Test cell 8-7',
+      'Test cell 8-8',
+      'Test cell 8-9'
+    ],
+    [
+      'Fact 9',
+      'State 9',
+      'Test cell 9-3',
+      'Test cell 9-4',
+      'Test cell 9-5',
+      'Test cell 9-6',
+      'Test cell 9-7',
+      'Test cell 9-8',
+      'Test cell 9-9'
+    ]
+  ]);
+  // index of the currently active column
+  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
+  // sort direction of the currently active column
+  const [activeSortDirection, setActiveSortDirection] = React.useState('none');
+  const onSort = (event, index, direction) => {
+    setActiveSortIndex(index);
+    setActiveSortDirection(direction);
+    // sorts the rows
+    const updatedRows = rows.sort((a, b) => {
+      if (typeof a[index] === 'number') {
+        // numeric sort
+        if (direction === 'asc') {
+          return a[index] - b[index];
+        }
+        return b[index] - a[index];
+      } else {
+        // string sort
+        if (direction === 'asc') {
+          return a[index].localeCompare(b[index]);
+        }
+        return b[index].localeCompare(a[index]);
+      }
+    });
+    setRows(updatedRows);
+  };
+  return (
+    <React.Fragment>
+      <div style={{ height: '600px' }}>
+        <OuterScrollContainer>
+          <InnerScrollContainer>
+            <TableComposable aria-label="Sticky column table" gridBreakPoint="" isStickyHeader>
+              <Thead>
+                <Tr>
+                  {columns.map((column, columnIndex) => {
+                    const sortParams =
+                      columnIndex === 0 || columnIndex === 1
+                        ? {
+                            sort: {
+                              sortBy: {
+                                index: activeSortIndex,
+                                direction: activeSortDirection
+                              },
+                              onSort,
+                              columnIndex
+                            }
+                          }
+                        : {};
+
+                    if (columnIndex === 0) {
+                      return (
+                        <Th key={columnIndex} isStickyColumn modifier="truncate" {...sortParams}>
+                          {column}
+                        </Th>
+                      );
+                    } else if (columnIndex === 1) {
+                      return (
+                        <Th
+                          key={columnIndex}
+                          isStickyColumn
+                          stickyMinWidth="120px"
+                          stickyLeftOffset="120px"
+                          hasRightBorder
+                          modifier="truncate"
+                          {...sortParams}
+                        >
+                          {column}
+                        </Th>
+                      );
+                    } else {
+                      return (
+                        <Th key={columnIndex} modifier="truncate">
+                          {column}
+                        </Th>
+                      );
+                    }
+                  })}
+                </Tr>
+              </Thead>
+              <Tbody>
+                {rows.map((row, rowIndex) => (
+                  <Tr key={rowIndex}>
+                    {row.map((cell, cellIndex) => {
+                      if (cellIndex === 0) {
+                        return (
+                          <Th key={cellIndex} isStickyColumn modifier="truncate">
+                            {cell}
+                          </Th>
+                        );
+                      } else if (cellIndex === 1) {
+                        return (
+                          <Th
+                            key={cellIndex}
+                            isStickyColumn
+                            stickyMinWidth="120px"
+                            stickyLeftOffset="120px"
+                            modifier="truncate"
+                            hasRightBorder
+                          >
+                            <BlueprintIcon />
+                            {` ${cell}`}
+                          </Th>
+                        );
+                      } else {
+                        return (
+                          <Td key={`${rowIndex}_${cellIndex}`} modifier="nowrap" dataLabel={columns[cellIndex]}>
+                            {cell}
+                          </Td>
+                        );
+                      }
+                    })}
+                  </Tr>
+                ))}
+              </Tbody>
+            </TableComposable>
+          </InnerScrollContainer>
+        </OuterScrollContainer>
+      </div>
+    </React.Fragment>
+  );
+};
+```
+
+### Composable: Nested column headers
+
+To make a nested column header:
+
+1. Wrap `TableComposable` with `InnerScrollContainer`.
+2. Pass `nestedHeaderColumnSpans` to `TableComposable`. `nestedHeaderColumnSpans` is an array of numbers representing the column spans of the top level columns to `TableComposable`, where each number is equal to the number of sub columns for a column, or `1` if a column contains no sub columns.
+3. Pass `hasNestedHeader` to `Thead`.
+4. Pass two `Tr` as children of `Thead`.
+
+The first `Tr` represents the top level of columns, and each must pass either `rowSpan` if the column does not contain sub columns or `colSpan` if the column contains sub columns. The value of `rowSpan` is equal to the number of rows the nested header will span, typically `2`, and the value of `colSpan` is equal to the number of sub columns in a column. Each `Th` except the last should also pass `hasRightBorder`.
+
+The second `Tr` represents the second level of sub columns. The `Th` in this row each should pass `isSubHeader`, and the last sub column of a column should also pass `hasRightBorder`.
+
+```js
+import React from 'react';
+import {
+  TableComposable,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  Caption,
+  TableText,
+  InnerScrollContainer,
+  OuterScrollContainer
+} from '@patternfly/react-table';
+import { Flex, FlexItem, Stack, StackItem } from '@patternfly/react-core';
+import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
+
+ComposableTableStickyColumnAndHeader = () => {
+  const columnData = [
+    {
+      name: 'Pods',
+      subColumns: [
+        { name: 'Source', index: 0, sort: true },
+        { name: 'Destination', index: 1, sort: true },
+        { name: 'Date & Time', index: 2, sort: true }
+      ]
+    },
+    {
+      name: 'Ports',
+      subColumns: [
+        { name: 'Source', index: 3, sort: true },
+        { name: 'Desination', index: 4, sort: true }
+      ]
+    },
+    { name: 'Protocol', index: 5, sort: true },
+    { name: 'Flow rate', index: 6, sort: true },
+    { name: 'Traffic', index: 7, sort: true },
+    { name: 'Packets', index: 8, sort: true }
+  ];
+  const colSpans = columnData.map(column => {
+    return column.subColumns ? column.subColumns.length : 1;
+  });
+  const [rows, setRows] = React.useState([
+    [
+      'api-pod-source-name',
+      'api-pod-destination-name',
+      <div>
+        <span>June 22, 2021</span>
+        <span className="pf-u-color-200">3:58:24 PM</span>
+      </div>,
+      <Stack>
+        <StackItem>
+          <span>443</span>
+        </StackItem>
+        <StackItem>
+          <span className="pf-u-color-200">(HTTPS)</span>
+        </StackItem>
+      </Stack>,
+      <Stack>
+        <StackItem>
+          <span>24</span>
+        </StackItem>
+        <StackItem>
+          <span className="pf-u-color-200">(smtp)</span>
+        </StackItem>
+      </Stack>,
+      'TCP',
+      '1.9 Kbps',
+      '2.1 KB',
+      '3'
+    ]
+  ]);
+  // index of the currently active column
+  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
+  // sort direction of the currently active column
+  const [activeSortDirection, setActiveSortDirection] = React.useState('none');
+  const onSort = (event, index, direction) => {
+    setActiveSortIndex(index);
+    setActiveSortDirection(direction);
+    // sorts the rows
+    const updatedRows = rows.sort((a, b) => {
+      if (typeof a[index] === 'number') {
+        // numeric sort
+        if (direction === 'asc') {
+          return a[index] - b[index];
+        }
+        return b[index] - a[index];
+      } else {
+        // string sort
+        if (direction === 'asc') {
+          return a[index].localeCompare(b[index]);
+        }
+        return b[index].localeCompare(a[index]);
+      }
+    });
+    setRows(updatedRows);
+  };
+
+  return (
+    <React.Fragment>
+      <InnerScrollContainer>
+        <TableComposable aria-label="Sticky column table" gridBreakPoint="" nestedHeaderColumnSpans={colSpans}>
+          <Thead hasNestedHeader>
+            <Tr>
+              {columnData.map((column, columnIndex) => {
+                const sortParams = column.sort
+                  ? {
+                      sort: {
+                        sortBy: {
+                          index: activeSortIndex,
+                          direction: activeSortDirection
+                        },
+                        onSort,
+                        columnIndex: column.index
+                      }
+                    }
+                  : {};
+                const colParams = column.subColumns ? { colSpan: column.subColumns.length } : { rowSpan: 2 };
+                return (
+                  <Th
+                    key={`${columnIndex}-${column.name}`}
+                    {...(columnIndex !== 0 && columnIndex !== 1 && { modifier: 'fitContent' })}
+                    {...(columnIndex !== columnData.length - 1 && { hasRightBorder: true })}
+                    {...colParams}
+                    {...sortParams}
+                  >
+                    {column.name}
+                  </Th>
+                );
+              })}
+            </Tr>
+            <Tr>
+              {columnData.map((column, columnIndex) => {
+                if (column.subColumns) {
+                  return column.subColumns.map((subColumn, subColumnIndex) => {
+                    const sortParams = subColumn.sort
+                      ? {
+                          sort: {
+                            sortBy: {
+                              index: activeSortIndex,
+                              direction: activeSortDirection
+                            },
+                            onSort,
+                            columnIndex: subColumn.index
+                          }
+                        }
+                      : {};
+
+                    return (
+                      <Th
+                        key={`${subColumnIndex}-${subColumn.name}`}
+                        isSubheader
+                        {...(columnIndex !== 0 && { modifier: 'fitContent' })}
+                        {...(columnIndex === 0 &&
+                          subColumnIndex !== 0 &&
+                          subColumnIndex !== 1 && { modifier: 'fitContent' })}
+                        {...(subColumnIndex === column.subColumns.length - 1 && { hasRightBorder: true })}
+                        {...sortParams}
+                      >
+                        {subColumn.name}
+                      </Th>
+                    );
+                  });
+                }
+              })}
+            </Tr>
+          </Thead>
+          <Tbody>
+            {rows.map((row, rowIndex) => (
+              <Tr key={rowIndex}>
+                {row.map((cell, cellIndex) => {
+                  return (
+                    <Td key={`${rowIndex}_${cellIndex}`} dataLabel={''}>
+                      {cell}
+                    </Td>
+                  );
+                })}
+              </Tr>
+            ))}
+          </Tbody>
+        </TableComposable>
+      </InnerScrollContainer>
+    </React.Fragment>
+  );
+};
+```
+
+### Composable: Nested column headers and expandable rows
+
+```js
+import React from 'react';
+import {
+  TableComposable,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  ExpandableRowContent,
+  InnerScrollContainer
+} from '@patternfly/react-table';
+import { Button } from '@patternfly/react-core';
+
+ComposableTableNestedExpandable = () => {
+  const columns = [
+    {
+      name: 'Team',
+      index: 0
+    },
+    {
+      name: 'Members',
+      subColumns: [
+        { name: 'Design Lead', index: 1 },
+        { name: 'Interaction Designer', index: 2 },
+        { name: 'Visual Designer', index: 3 }
+      ]
+    },
+    { name: 'Contact', index: 4 }
+  ];
+  const rowPairs = [
+    {
+      parent: [
+        'Developer program',
+        'Person 1',
+        'Person 2',
+        'Person 3',
+        <Button variant="link" isInline>
+          Message us!
+        </Button>
+      ],
+      child: [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      ],
+      fullWidth: true
+    },
+    {
+      parent: [
+        'Developer program',
+        'Person A',
+        'Person B',
+        'Person C',
+        <Button variant="link" isInline>
+          Message us!
+        </Button>
+      ],
+      child: [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      ],
+      fullWidth: true
+    },
+    {
+      parent: [
+        'Developer program',
+        'Person X',
+        'Person Y',
+        'Person Z',
+        <Button variant="link" isInline>
+          Message us!
+        </Button>
+      ],
+      child: [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      ],
+      fullWidth: true
+    }
+  ];
+  const numColumns = 5;
+  const colSpans = columns.map(column => {
+    return column.subColumns ? column.subColumns.length : 1;
+  });
+  // Init all to false
+  const [expanded, setExpanded] = React.useState(
+    Object.fromEntries(Object.entries(rowPairs).map(([k, v]) => [k, !Boolean(v.child)]))
+  );
+  const handleExpansionToggle = (event, pairIndex) => {
+    setExpanded({
+      ...expanded,
+      [pairIndex]: !expanded[pairIndex]
+    });
+  };
+  let rowIndex = -1;
+  return (
+    <InnerScrollContainer>
+      <TableComposable aria-label="Expandable Table" nestedHeaderColumnSpans={colSpans}>
+        <Thead hasNestedHeader>
+          <Tr>
+            <Th rowSpan={2} />
+            <Th rowSpan={2} hasRightBorder>
+              {columns[0].name}
+            </Th>
+            <Th colSpan={3} hasRightBorder>
+              {columns[1].name}
+            </Th>
+            <Th rowSpan={2}>{columns[2].name}</Th>
+          </Tr>
+          <Tr resetOffset>
+            <Th isSubheader>{columns[1].subColumns[0].name}</Th>
+            <Th isSubheader>{columns[1].subColumns[1].name}</Th>
+            <Th isSubheader hasRightBorder>
+              {columns[1].subColumns[2].name}
+            </Th>
+          </Tr>
+        </Thead>
+        {rowPairs.map((pair, pairIndex) => {
+          rowIndex += 1;
+          const parentRow = (
+            <Tr key={rowIndex}>
+              <Td
+                key={`${rowIndex}_0`}
+                expand={
+                  pair.child
+                    ? {
+                        rowIndex: pairIndex,
+                        isExpanded: expanded[pairIndex],
+                        onToggle: handleExpansionToggle
+                      }
+                    : null
+                }
+              />
+              {pair.parent.map((cell, cellIndex) => (
+                <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
+                  {cell}
+                </Td>
+              ))}
+            </Tr>
+          );
+          if (pair.child) {
+            rowIndex += 1;
+          }
+          const childRow = pair.child ? (
+            <Tr key={rowIndex} isExpanded={expanded[pairIndex] === true}>
+              {!rowPairs[pairIndex].fullWidth && <Td key={`${rowIndex}_0`} />}
+              {rowPairs[pairIndex].child.map((cell, cellIndex) => {
+                const numChildCells = rowPairs[pairIndex].child.length;
+                const shift = rowPairs[pairIndex].fullWidth ? 1 : 0;
+                const shiftedCellIndex = cellIndex + shift;
+                // some examples of how you could customize colSpan based on your needs
+                const getColSpan = () => {
+                  // we have 6 columns (1 expandable column + 5 regular columns)
+                  // for the rowPairs where we've specificed `fullWidth`, add +1 to account for the expandable column
+                  let colSpan = 1;
+                  if (numChildCells === 1) {
+                    // single child cell: take up full width
+                    colSpan = numColumns + shift;
+                  } else if (numChildCells === 2) {
+                    // 2 children
+                    // child 1: 2 colspan
+                    // child 2: 3 or 4 colspan depending on fullWidth
+                    colSpan = cellIndex === 0 ? 2 : 3 + shift;
+                  } else if (numChildCells === 3) {
+                    // 3 children
+                    // child 1: 2 colspam
+                    // child 2: 2 colspan
+                    // child 3: 1 or 2 colspan depending on fullWidth
+                    colSpan = cellIndex === 2 ? 1 + shift : 2;
+                  }
+                  return colSpan;
+                };
+                return (
+                  <Td
+                    key={`${rowIndex}_${shiftedCellIndex}`}
+                    dataLabel={columns[cellIndex]}
+                    noPadding={rowPairs[pairIndex].noPadding}
+                    colSpan={getColSpan()}
+                  >
+                    <ExpandableRowContent>{cell.title || cell}</ExpandableRowContent>
+                  </Td>
+                );
+              })}
+            </Tr>
+          ) : null;
+          return (
+            <Tbody key={pairIndex} isExpanded={expanded[pairIndex] === true}>
+              {parentRow}
+              {childRow}
+            </Tbody>
+          );
+        })}
+      </TableComposable>
+    </InnerScrollContainer>
+  );
+};
 ```

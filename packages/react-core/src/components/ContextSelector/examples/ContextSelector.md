@@ -18,6 +18,20 @@ class SimpleContextSelector extends React.Component {
   constructor(props) {
     super(props);
     this.items = [
+      {
+        text: 'Link',
+        href: '#'
+      },
+      'Action',
+      {
+        text: 'Disabled link',
+        href: '#',
+        isDisabled: true
+      },
+      {
+        text: 'Disabled action',
+        isDisabled: true
+      },
       'My project',
       'OpenShift cluster',
       'Production Ansible',
@@ -32,7 +46,7 @@ class SimpleContextSelector extends React.Component {
 
     this.state = {
       isOpen: false,
-      selected: this.items[0],
+      selected: this.items[0].text || this.items[0],
       searchValue: '',
       filteredItems: this.items
     };
@@ -58,7 +72,10 @@ class SimpleContextSelector extends React.Component {
       const filtered =
         this.state.searchValue === ''
           ? this.items
-          : this.items.filter(str => str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
+          : this.items.filter(item => {
+            const str = item.text ? item.text : item;
+            return str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1;
+          });
 
       this.setState({ filteredItems: filtered || [] });
     };
@@ -77,9 +94,10 @@ class SimpleContextSelector extends React.Component {
         onSearchButtonClick={this.onSearchButtonClick}
         screenReaderLabel="Selected Project:"
       >
-        {filteredItems.map((item, index) => (
-          <ContextSelectorItem key={index}>{item}</ContextSelectorItem>
-        ))}
+        {filteredItems.map((item, index) => {
+          const { text = null, href = null, isDisabled } = item;
+          return (<ContextSelectorItem key={index} href={href} isDisabled={isDisabled}>{text || item}</ContextSelectorItem>);
+        })}
       </ContextSelector>
     );
   }
@@ -92,7 +110,27 @@ class SimpleContextSelector extends React.Component {
 import React from 'react';
 import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
 
+interface Item {
+  text: string;
+  href?: string;
+  isDisabled?: boolean;
+}
+
 const items = [
+  {
+    text: 'Link',
+    href: '#'
+  },
+  'Action',
+  {
+    text: 'Disabled link',
+    href: '#',
+    isDisabled: true
+  },
+  {
+    text: 'Disabled action',
+    isDisabled: true
+  },
   'My Project',
   'OpenShift Cluster',
   'Production Ansible',
@@ -106,8 +144,9 @@ const items = [
 ];
 
 const PlainTextContextSelector: React.FunctionComponent = () => {
+  const firstItemText = typeof items[0] === 'string' ? items[0] : items[0].text;
   const [isOpen, setOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState(items[0]);
+  const [selected, setSelected] = React.useState(firstItemText);
   const [searchValue, setSearchValue] = React.useState('');
   const [filteredItems, setFilteredItems] = React.useState(items);
 
@@ -126,7 +165,12 @@ const PlainTextContextSelector: React.FunctionComponent = () => {
 
   function onSearchButtonClick(event: React.SyntheticEvent<HTMLButtonElement>) {
     const filtered =
-      searchValue === '' ? items : items.filter(str => str.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1);
+      searchValue === ''
+        ? items
+        : items.filter(item => {
+          const str = (typeof item === 'string') ? item : item.text;
+          return str.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1;
+        });
 
     setFilteredItems(filtered || []);
   };
@@ -143,9 +187,12 @@ const PlainTextContextSelector: React.FunctionComponent = () => {
       isPlain
       isText
     >
-      {filteredItems.map((item, index) => (
-        <ContextSelectorItem key={index}>{item}</ContextSelectorItem>
-      ))}
+      {filteredItems.map((item, index) => {
+        const [text, href = null, isDisabled = false] = (typeof item === 'string')
+          ? [item, null, false]
+          : [item.text, item.href, item.isDisabled];
+        return <ContextSelectorItem key={index} href={href} isDisabled={isDisabled}>{text}</ContextSelectorItem>;
+      })}
     </ContextSelector>
   );
 };
@@ -161,6 +208,20 @@ class FooterContextSelector extends React.Component {
   constructor(props) {
     super(props);
     this.items = [
+      {
+        text: 'Link',
+        href: '#'
+      },
+      'Action',
+      {
+        text: 'Disabled link',
+        href: '#',
+        isDisabled: true
+      },
+      {
+        text: 'Disabled action',
+        isDisabled: true
+      },
       'My project',
       'OpenShift cluster',
       'Production Ansible',
@@ -175,7 +236,7 @@ class FooterContextSelector extends React.Component {
 
     this.state = {
       isOpen: false,
-      selected: this.items[0],
+      selected: this.items[0].text || this.items[0],
       searchValue: '',
       filteredItems: this.items
     };
@@ -201,7 +262,10 @@ class FooterContextSelector extends React.Component {
       const filtered =
         this.state.searchValue === ''
           ? this.items
-          : this.items.filter(str => str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
+          : this.items.filter(item => {
+            const str = item.text ? item.text : item;
+            return str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1;
+          });
 
       this.setState({ filteredItems: filtered || [] });
     };
@@ -225,9 +289,10 @@ class FooterContextSelector extends React.Component {
           </ContextSelectorFooter>
         }
       >
-        {filteredItems.map((item, index) => (
-          <ContextSelectorItem key={index}>{item}</ContextSelectorItem>
-        ))}
+        {filteredItems.map((item, index) => {
+          const { text = null, href = null, isDisabled } = item;
+          return (<ContextSelectorItem key={index} href={href} isDisabled={isDisabled}>{text || item}</ContextSelectorItem>);
+        })}
       </ContextSelector>
     );
   }
