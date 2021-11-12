@@ -32,3 +32,14 @@ describe('with isScrollable', () => {
         expect(view.find('div.pf-m-scrollable')).toMatchSnapshot();
     });
 });
+
+describe('with isNavFlyout', () => {
+    test('should render Menu with nav flyout styles applied', () => {
+        const view = mount(
+            <Menu activeItemId={0} onSelect={jest.fn()} isNavFlyout>
+                content
+            </Menu>
+        );
+        expect(view.find('div.pf-m-nav')).toMatchSnapshot();
+    });
+});
