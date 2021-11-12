@@ -73,7 +73,7 @@ import { LogViewer, LogViewerSearch } from '@patternfly/react-log-viewer';
 import { Toolbar, ToolbarContent, ToolbarItem, Button, Checkbox } from '@patternfly/react-core';
 
 CustomControlLogViewer = () => {
-  const [isTextWrapped, setisTextWrapped] = React.useState(false);
+  const [isTextWrapped, setIsTextWrapped] = React.useState(false);
   const onActionClick = event => {
     console.log('clicked test action button');
   };
@@ -103,7 +103,7 @@ CustomControlLogViewer = () => {
               </Button>
             </ToolbarItem>
             <ToolbarItem>
-              <Checkbox label="Wrap text" aria-label="wrap text checkbox" isChecked={isTextWrapped} id="wrap-text-checkbox" onChange={setisTextWrapped} />
+              <Checkbox label="Wrap text" aria-label="wrap text checkbox" isChecked={isTextWrapped} id="wrap-text-checkbox" onChange={setIsTextWrapped} />
             </ToolbarItem>
           </ToolbarContent>
         </Toolbar>
