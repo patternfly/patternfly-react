@@ -29,6 +29,8 @@ interface LogViewerProps {
   scrollToRow?: number;
   /** Number of rows to display in the log viewer */
   itemCount?: number;
+  /** Flag indicating that log viewer is wrapping text or not */
+  isWrapText?: boolean;
   /** Component rendered in the log viewer console window header */
   header?: React.ReactNode;
   /** Component rendered in the log viewer console window footer */
@@ -82,6 +84,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     footer,
     onScroll,
     innerRef,
+    isWrapText = true,
     ...props
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
@@ -148,10 +151,13 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
 
     useEffect(() => {
       if (scrollToRow && parsedData.length) {
-        setRowInFocus(parsedData.length - 1);
-        if (logViewerRef && logViewerRef.current) {
-          logViewerRef.current.scrollToItem(scrollToRow, 'center');
-        }
+        setRowInFocus(scrollToRow);
+        // only in this way (setTimeout) the scrollToItem will work
+        setTimeout(() => {
+          if (logViewerRef && logViewerRef.current) {
+            logViewerRef.current.scrollToItem(scrollToRow, 'center');
+          }
+        }, 1);
       }
     }, [parsedData, scrollToRow]);
 
@@ -185,9 +191,24 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     const scrollToRowInFocus = (searchedRowIndex: number) => {
       setRowInFocus(searchedRowIndex);
       logViewerRef.current.scrollToItem(searchedRowIndex, 'center');
+      // use this method to scroll to the right
+      // if the keyword is out of the window when wrapping text
+      if (!isWrapText) {
+        setTimeout(() => {
+          const element = document.querySelector('.pf-c-log-viewer__string.pf-m-current');
+          element && element.scrollIntoView({ block: 'nearest', inline: 'center' });
+        }, 1);
+      }
     };
 
+    useEffect(() => {
+      setListKey(listKey => listKey + 1);
+    }, [isWrapText]);
+
     const guessRowHeight = (rowIndex: number) => {
+      if (!isWrapText) {
+        return lineHeight;
+      }
       // strip ansi escape code before estimate the row height
       const rowText = stripAnsi(parsedData[rowIndex]);
       // get the row numbers of the current text
@@ -199,9 +220,9 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     const createList = (parsedData: string[]) => (
       <List
         key={listKey}
-        className={css(styles.logViewerList)}
+        outerClassName={css(styles.logViewerScrollContainer)}
+        innerClassName={css(styles.logViewerList)}
         height={containerRef.current.clientHeight}
-        width={containerRef.current.clientWidth}
         itemSize={guessRowHeight}
         itemCount={typeof itemCount === 'undefined' ? parsedData.length : itemCount}
         itemData={dataToRender}
@@ -224,6 +245,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
           className={css(
             styles.logViewer,
             hasLineNumbers && styles.modifiers.lineNumbers,
+            !isWrapText && styles.modifiers.nowrap,
             theme === 'dark' && styles.modifiers.dark
           )}
           {...props}
