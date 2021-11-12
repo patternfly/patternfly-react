@@ -49,8 +49,8 @@ const TextInputGroupWithIcons = () => {
   const [inputValue, setInputValue] = React.useState('');
 
   /** callback for updating the inputValue state in this component so that the input can be controlled */
-  const handleInputChange = event => {
-    setInputValue(event.target.value);
+  const handleInputChange = (value, _event) => {
+    setInputValue(value);
   };
 
   /** show the input clearing button only when the input is not empty */
@@ -108,8 +108,8 @@ const TextInputGroupWithChips = () => {
   const showSearchIcon = !currentChips.length;
 
   /** callback for updating the inputValue state in this component so that the input can be controlled */
-  const handleInputChange = event => {
-    setInputValue(event.target.value);
+  const handleInputChange = (value, _event) => {
+    setInputValue(value);
   };
 
   /** callback for removing a chip from the chip selections */
