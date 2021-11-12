@@ -1,4 +1,5 @@
 import { createContext, useContext } from 'react';
+import { searchedKeyWordType } from './utils/utils';
 
 export const useLogViewerContext = () => useContext(LogViewerContext);
 
@@ -10,15 +11,15 @@ interface LogViewerContextInterface {
 export const LogViewerContext = createContext<LogViewerContextInterface | null>(null);
 
 interface LogViewerToolbarContextProps {
-  searchedWordIndexes: number[];
-  rowInFocus: number;
+  searchedWordIndexes: searchedKeyWordType[];
+  rowInFocus: searchedKeyWordType;
   searchedInput: string;
   itemCount: number;
   currentSearchedItemCount: number;
-  scrollToRow: (searchedRow: number) => void;
-  setRowInFocus: (index: number) => void;
+  scrollToRow: (searchedRow: searchedKeyWordType) => void;
+  setRowInFocus: (index: searchedKeyWordType) => void;
   setSearchedInput: (input: string) => void;
-  setSearchedWordIndexes: (indexes: number[]) => void;
+  setSearchedWordIndexes: (indexes: searchedKeyWordType[]) => void;
   setCurrentSearchedItemCount: (index: number) => void;
 }
 

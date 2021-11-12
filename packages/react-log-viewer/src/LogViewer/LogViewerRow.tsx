@@ -5,15 +5,15 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
 import { LogViewerContext } from './LogViewerContext';
 import AnsiUp from '../ansi_up/ansi_up';
-import { escapeString, escapeTextForHtml, isAnsi, splitAnsi } from './utils/utils';
+import { escapeString, escapeTextForHtml, isAnsi, searchedKeyWordType, splitAnsi } from './utils/utils';
 
 interface LogViewerRowProps {
   index: number;
   style?: React.CSSProperties;
   data: {
     parsedData: string[] | null;
-    rowInFocus: number;
-    searchedWordIndexes: number[];
+    rowInFocus: searchedKeyWordType;
+    searchedWordIndexes: searchedKeyWordType[];
   };
 }
 
@@ -28,9 +28,10 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
   const getRowIndex = (index: number): number => index + LOGGER_LINE_NUMBER_INDEX_DELTA;
 
   /** Helper function for applying the correct styling for styling rows containing searched keywords */
-  const handleHighlight = () => {
-    if (searchedWordIndexes.includes(index)) {
-      if (rowInFocus === index) {
+  const handleHighlight = (matchCounter: number) => {
+    const searchedWordResult = searchedWordIndexes.filter(searchedWord => searchedWord.rowIndex === index);
+    if (searchedWordResult.length !== 0) {
+      if (rowInFocus.rowIndex === index && rowInFocus.matchIndex === matchCounter) {
         return styles.modifiers.current;
       }
       return styles.modifiers.match;
@@ -40,20 +41,23 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
 
   const getFormattedData = () => {
     const rowText = getData(index);
+    let matchCounter = 0;
     if (context.searchedInput) {
       const splitAnsiString = splitAnsi(rowText);
       const regEx = new RegExp(`(${escapeString(context.searchedInput)})`, 'ig');
       const composedString: string[] = [];
       splitAnsiString.forEach(str => {
+        matchCounter = 0;
         if (isAnsi(str)) {
           composedString.push(str);
         } else {
           const splitString = str.split(regEx);
           splitString.forEach((substr, newIndex) => {
             if (substr.match(regEx)) {
+              matchCounter += 1;
               composedString.push(
                 ReactDOMServer.renderToString(
-                  <span className={css(styles.logViewerString, handleHighlight())} key={newIndex}>
+                  <span className={css(styles.logViewerString, handleHighlight(matchCounter))} key={newIndex}>
                     {substr}
                   </span>
                 )
