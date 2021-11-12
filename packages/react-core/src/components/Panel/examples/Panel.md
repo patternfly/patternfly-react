@@ -94,7 +94,7 @@ import React from 'react';
 import { Panel, PanelMain, PanelMainBody } from '@patternfly/react-core';
 
 const RaisedPanel = () => (
-  <Panel perimeterStyling='raised'>
+  <Panel perimeterStyling="raised">
     <PanelMain>
       <PanelMainBody>Main content</PanelMainBody>
     </PanelMain>
@@ -109,7 +109,7 @@ import React from 'react';
 import { Panel, PanelMain, PanelMainBody } from '@patternfly/react-core';
 
 const BorderedPanel = () => (
-  <Panel perimeterStyling='bordered'>
+  <Panel perimeterStyling="bordered">
     <PanelMain>
       <PanelMainBody>Main content</PanelMainBody>
     </PanelMain>
@@ -123,28 +123,39 @@ const BorderedPanel = () => (
 import React from 'react';
 import { Panel, PanelMain, PanelMainBody } from '@patternfly/react-core';
 
-const ScrollablePanel = () => {
-  const mainContent = (
-    <>
-      Main content
-      <br />
-      <br />
-    </>
-  );
-
-  return (
-    <Panel isScrollable>
-      <PanelMain>
-        <PanelMainBody>
-          <>
-          {Array(8).fill(mainContent)}
-          Main content
-          </>
-        </PanelMainBody>
-      </PanelMain>
-    </Panel>
-  );
-};
+const ScrollablePanel = () => (
+  <Panel isScrollable>
+    <PanelMain>
+      <PanelMainBody>
+        Main content
+        <br />
+        <br />
+        Main content
+        <br />
+        <br />
+        Main content
+        <br />
+        <br />
+        Main content
+        <br />
+        <br />
+        Main content
+        <br />
+        <br />
+        Main content
+        <br />
+        <br />
+        Main content
+        <br />
+        <br />
+        Main content
+        <br />
+        <br />
+        Main content
+      </PanelMainBody>
+    </PanelMain>
+  </Panel>
+);
 ```
 
 ### Scrollable with header and footer
@@ -153,29 +164,40 @@ const ScrollablePanel = () => {
 import React from 'react';
 import { Panel, PanelMain, PanelMainBody, PanelHeader, Divider, PanelFooter } from '@patternfly/react-core';
 
-const ScrollableHeaderFooterPanel = () => {
-  const mainContent = (
-    <>
-      Main content
-      <br />
-      <br />
-    </>
-  );
-
-  return (
-    <Panel isScrollable>
-      <PanelHeader>Header content</PanelHeader>
-      <Divider />
-      <PanelMain>
-        <PanelMainBody>
-          <>
-          {Array(8).fill(mainContent)}
-          Main content
-          </>
-        </PanelMainBody>
-      </PanelMain>
-      <PanelFooter>Footer content</PanelFooter>
-    </Panel>
-  );
-};
+const ScrollableHeaderFooterPanel = () => (
+  <Panel isScrollable>
+    <PanelHeader>Header content</PanelHeader>
+    <Divider />
+    <PanelMain>
+      <PanelMainBody>
+        Main content
+        <br />
+        <br />
+        Main content
+        <br />
+        <br />
+        Main content
+        <br />
+        <br />
+        Main content
+        <br />
+        <br />
+        Main content
+        <br />
+        <br />
+        Main content
+        <br />
+        <br />
+        Main content
+        <br />
+        <br />
+        Main content
+        <br />
+        <br />
+        Main content
+      </PanelMainBody>
+    </PanelMain>
+    <PanelFooter>Footer content</PanelFooter>
+  </Panel>
+);
 ```
