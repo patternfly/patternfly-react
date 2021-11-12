@@ -48,7 +48,7 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   ofWord = 'of',
   firstIndex = 0,
   lastIndex = 0,
-  itemCount = 0,
+  itemCount,
   widgetId = '',
   showToggle = true,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -56,7 +56,7 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   isOpen = false,
   isDisabled = false,
   parentRef = null,
-  toggleTemplate: ToggleTemplate = '',
+  toggleTemplate: ToggleTemplate,
   onEnter = null
 }: OptionsToggleProps) => (
   <div
@@ -86,7 +86,7 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
           onEnter={onEnter}
           aria-label={optionsToggle}
           onToggle={onToggle}
-          isDisabled={isDisabled || itemCount <= 0}
+          isDisabled={isDisabled || (itemCount && itemCount <= 0)}
           isOpen={isOpen}
           id={`${widgetId}-toggle-${toggleId++}`}
           className={styles.optionsMenuToggleButton}

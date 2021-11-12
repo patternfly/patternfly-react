@@ -2,6 +2,8 @@ import * as React from 'react';
 import { ToggleTemplate, ToggleTemplateProps } from './ToggleTemplate';
 import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
+
+import { fillTemplate } from '../../helpers';
 import { Navigation } from './Navigation';
 import { PaginationOptionsMenu } from './PaginationOptionsMenu';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
@@ -88,7 +90,7 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   /** Additional classes for the container. */
   className?: string;
   /** Total number of items. */
-  itemCount: number;
+  itemCount?: number;
   /** Position where pagination is rendered. */
   variant?: 'top' | 'bottom' | PaginationVariant;
   /** Flag indicating if pagination is disabled */
@@ -185,7 +187,6 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
     itemsEnd: null,
     perPageOptions: defaultPerPageOptions,
     widgetId: 'pagination-options-menu',
-    toggleTemplate: ToggleTemplate,
     onSetPage: () => undefined,
     onPerPageSelect: () => undefined,
     onFirstClick: () => undefined,
@@ -201,8 +202,9 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
   };
 
   getLastPage() {
-    const { itemCount, perPage } = this.props;
-    return Math.ceil(itemCount / perPage) || 0;
+    const { itemCount, perPage, page } = this.props;
+    // when itemCount is not known let's set lastPage as page+1 as we don't know the total count
+    return itemCount || itemCount === 0 ? Math.ceil(itemCount / perPage) || 0 : page + 1;
   }
 
   componentDidMount() {
@@ -255,21 +257,29 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
     if (!page && offset) {
       page = Math.ceil(offset / perPage);
     }
+    if (page === 0 && !itemCount) {
+      page = 1;
+    }
 
     const lastPage = this.getLastPage();
-    if (page < firstPage && itemCount > 0) {
-      page = firstPage;
-    } else if (page > lastPage) {
-      page = lastPage;
+    let firstIndex = (page - 1) * perPage + 1;
+    let lastIndex = page * perPage;
+
+    if (itemCount || itemCount === 0) {
+      firstIndex = itemCount <= 0 ? 0 : (page - 1) * perPage + 1;
+
+      if (page < firstPage && itemCount > 0) {
+        page = firstPage;
+      } else if (page > lastPage) {
+        page = lastPage;
+      }
+
+      if (itemCount >= 0) {
+        lastIndex = page === lastPage || itemCount === 0 ? itemCount : page * perPage;
+      }
     }
 
-    const firstIndex = itemCount <= 0 ? 0 : (page - 1) * perPage + 1;
-    let lastIndex;
-    if (itemCount <= 0) {
-      lastIndex = 0;
-    } else {
-      lastIndex = page === lastPage ? itemCount : page * perPage;
-    }
+    const toggleTemplateProps = { firstIndex, lastIndex, itemCount, itemsTitle: titles.items, ofWord: titles.ofWord };
 
     return (
       <div
@@ -288,13 +298,19 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
       >
         {variant === PaginationVariant.top && (
           <div className={css(styles.paginationTotalItems)}>
-            <ToggleTemplate
-              firstIndex={firstIndex}
-              lastIndex={lastIndex}
-              itemCount={itemCount}
-              itemsTitle={titles.items}
-              ofWord={titles.ofWord}
-            />
+            {toggleTemplate && typeof toggleTemplate === 'string' && fillTemplate(toggleTemplate, toggleTemplateProps)}
+            {toggleTemplate &&
+              typeof toggleTemplate !== 'string' &&
+              (toggleTemplate as (props: ToggleTemplateProps) => React.ReactElement)(toggleTemplateProps)}
+            {!toggleTemplate && (
+              <ToggleTemplate
+                firstIndex={firstIndex}
+                lastIndex={lastIndex}
+                itemCount={itemCount}
+                itemsTitle={titles.items}
+                ofWord={titles.ofWord}
+              />
+            )}
           </div>
         )}
         <PaginationOptionsMenu
@@ -326,8 +342,9 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
           currPage={titles.currPage}
           paginationTitle={titles.paginationTitle}
           ofWord={titles.ofWord}
-          page={itemCount <= 0 ? 0 : page}
+          page={itemCount && itemCount <= 0 ? 0 : page}
           perPage={perPage}
+          itemCount={itemCount}
           firstPage={itemsStart !== null ? itemsStart : 1}
           lastPage={lastPage}
           onSetPage={onSetPage}

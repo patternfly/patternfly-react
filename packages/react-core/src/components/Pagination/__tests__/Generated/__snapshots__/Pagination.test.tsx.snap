@@ -11,19 +11,13 @@ exports[`Pagination should match snapshot (auto-generated) 1`] = `
   <div
     className="pf-c-pagination__total-items"
   >
-    <ToggleTemplate
-      firstIndex={1}
-      itemCount={42}
-      itemsTitle=""
-      lastIndex={42}
-      ofWord="of"
-    />
+    string
   </div>
   <PaginationOptionsMenu
     className=""
     defaultToFullPage={false}
     dropDirection="up"
-    firstIndex={1}
+    firstIndex={-41}
     isDisabled={false}
     itemCount={42}
     itemsPerPageTitle="Items per page"
@@ -65,6 +59,7 @@ exports[`Pagination should match snapshot (auto-generated) 1`] = `
     firstPage={1}
     isCompact={false}
     isDisabled={false}
+    itemCount={42}
     lastPage={1}
     ofWord="of"
     onFirstClick={[Function]}

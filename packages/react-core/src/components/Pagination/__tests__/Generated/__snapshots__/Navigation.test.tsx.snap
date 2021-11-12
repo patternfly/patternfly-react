@@ -53,13 +53,6 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
       type="number"
       value={42}
     />
-    <span
-      aria-hidden="true"
-    >
-      of
-       
-      0 ''s
-    </span>
   </div>
   <div
     className="pf-c-pagination__nav-control"

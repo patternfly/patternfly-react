@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { DropdownItem, DropdownDirection, DropdownWithContext, DropdownContext } from '../Dropdown';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import { OptionsToggle } from './OptionsToggle';
-import { ToggleTemplateProps } from './ToggleTemplate';
+import { ToggleTemplateProps, ToggleTemplate } from './ToggleTemplate';
 import { PerPageOptions, OnPerPageSelect } from './Pagination';
 
 export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivElement> {
@@ -41,7 +41,7 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   /** The number of the last page */
   lastPage?: number;
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex, itemCount, itemsTitle props. */
-  toggleTemplate?: ((props: ToggleTemplateProps) => React.ReactElement) | string;
+  toggleTemplate: ((props: ToggleTemplateProps) => React.ReactElement) | string;
   /** Function called when user selects number of items per page. */
   onPerPageSelect?: OnPerPageSelect;
   /** Label for the English word "of" */
@@ -69,8 +69,8 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
     firstIndex: 0,
     lastIndex: 0,
     defaultToFullPage: false,
-    itemCount: 0,
     itemsTitle: 'items',
+    toggleTemplate: ToggleTemplate,
     onPerPageSelect: () => null as any
   };
 
@@ -181,18 +181,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
               itemCount={itemCount}
               itemsTitle={itemsTitle}
               ofWord={ofWord}
-              toggleTemplate={
-                toggleTemplate
-                  ? toggleTemplate
-                  : ({ firstIndex, lastIndex, itemCount, ofWord, itemsTitle }: ToggleTemplateProps) => (
-                      <React.Fragment>
-                        <b>
-                          {firstIndex} - {lastIndex}
-                        </b>{' '}
-                        {ofWord} <b>{itemCount}</b> {itemsTitle}
-                      </React.Fragment>
-                    )
-              }
+              toggleTemplate={toggleTemplate}
               parentRef={this.parentRef.current}
               isDisabled={isDisabled}
             />

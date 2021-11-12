@@ -17,6 +17,8 @@ export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   isDisabled?: boolean;
   /** Flag indicating if the pagination is compact */
   isCompact?: boolean;
+  /** Total number of items. */
+  itemCount?: number;
   /** The number of the last page */
   lastPage?: number;
   /** The number of first page where pagination starts */
@@ -140,6 +142,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onSetPage,
       isDisabled,
+      itemCount,
       lastPage,
       firstPage,
       pagesTitle,
@@ -201,16 +204,20 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
               className={css(styles.formControl)}
               aria-label={currPage}
               type="number"
-              disabled={isDisabled || (page === firstPage && page === lastPage) || page === 0}
+              disabled={
+                isDisabled || (itemCount && page === firstPage && page === lastPage && itemCount >= 0) || page === 0
+              }
               min={lastPage <= 0 && firstPage <= 0 ? 0 : 1}
               max={lastPage}
               value={userInputPage}
               onKeyDown={event => this.onKeyDown(event, page, lastPage, onPageInput)}
               onChange={event => this.onChange(event, lastPage)}
             />
-            <span aria-hidden="true">
-              {ofWord} {pagesTitle ? pluralize(lastPage, pagesTitle) : lastPage}
-            </span>
+            {(itemCount || itemCount === 0) && (
+              <span aria-hidden="true">
+                {ofWord} {pagesTitle ? pluralize(lastPage, pagesTitle) : lastPage}
+              </span>
+            )}
           </div>
         )}
         <div className={styles.paginationNavControl}>
