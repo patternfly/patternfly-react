@@ -125,7 +125,7 @@ import { Panel, PanelMain, PanelMainBody } from '@patternfly/react-core';
 
 const ScrollablePanel = () => (
   <Panel isScrollable>
-    <PanelMain>
+    <PanelMain tabIndex={0}>
       <PanelMainBody>
         Main content
         <br />
@@ -168,7 +168,7 @@ const ScrollableHeaderFooterPanel = () => (
   <Panel isScrollable>
     <PanelHeader>Header content</PanelHeader>
     <Divider />
-    <PanelMain>
+    <PanelMain tabIndex={0}>
       <PanelMainBody>
         Main content
         <br />
