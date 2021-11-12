@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.175.0 (2021-11-12)
+
+
+### Features
+
+* **card:** added hoverable/selectable/selected-raised variant ([#6565](https://github.com/patternfly/patternfly-react/issues/6565)) ([8c60568](https://github.com/patternfly/patternfly-react/commit/8c60568ba4fa18398fed636710e222ce506de82c))
+
+
+
+
+
 ## 4.174.2 (2021-11-12)
 
 **Note:** Version bump only for package @patternfly/react-core
