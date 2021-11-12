@@ -1,10 +1,10 @@
 import createListComponent from './createListComponent';
 
-import { ScrollToAlign, ListProps, InstanceProps, ItemMetadata } from './createListComponent';
+import { ScrollToAlign, VariableSizeProps, InstanceProps, ItemMetadata } from './createListComponent';
 
 const DEFAULT_ESTIMATED_ITEM_SIZE = 50;
 
-const getItemMetadata = (props: ListProps, index: number, instanceProps: InstanceProps): ItemMetadata => {
+const getItemMetadata = (props: VariableSizeProps, index: number, instanceProps: InstanceProps): ItemMetadata => {
   const { itemSize } = props;
   const { itemMetadataMap, lastMeasuredIndex } = instanceProps;
 
@@ -32,7 +32,7 @@ const getItemMetadata = (props: ListProps, index: number, instanceProps: Instanc
   return itemMetadataMap[index];
 };
 
-const findNearestItem = (props: ListProps, instanceProps: InstanceProps, offset: number) => {
+const findNearestItem = (props: VariableSizeProps, instanceProps: InstanceProps, offset: number) => {
   const { itemMetadataMap, lastMeasuredIndex } = instanceProps;
 
   const lastMeasuredItemOffset = lastMeasuredIndex > 0 ? itemMetadataMap[lastMeasuredIndex].offset : 0;
@@ -49,7 +49,7 @@ const findNearestItem = (props: ListProps, instanceProps: InstanceProps, offset:
 };
 
 const findNearestItemBinarySearch = (
-  props: ListProps,
+  props: VariableSizeProps,
   instanceProps: InstanceProps,
   high: number,
   low: number,
@@ -76,7 +76,7 @@ const findNearestItemBinarySearch = (
 };
 
 const findNearestItemExponentialSearch = (
-  props: ListProps,
+  props: VariableSizeProps,
   instanceProps: InstanceProps,
   index: number,
   offset: number
@@ -99,7 +99,7 @@ const findNearestItemExponentialSearch = (
 };
 
 const getEstimatedTotalSize = (
-  { itemCount }: ListProps,
+  { itemCount }: VariableSizeProps,
   { itemMetadataMap, estimatedItemSize, lastMeasuredIndex }: InstanceProps
 ) => {
   let totalSizeOfMeasuredItems = 0;
@@ -122,24 +122,26 @@ const getEstimatedTotalSize = (
 };
 
 export const VariableSizeList = createListComponent({
-  getItemOffset: (props: ListProps, index: number, instanceProps: InstanceProps): number =>
+  getItemOffset: (props: VariableSizeProps, index: number, instanceProps: InstanceProps): number =>
     getItemMetadata(props, index, instanceProps).offset,
 
-  getItemSize: (props: ListProps, index: number, instanceProps: InstanceProps): number =>
+  getItemSize: (props: VariableSizeProps, index: number, instanceProps: InstanceProps): number =>
     instanceProps.itemMetadataMap[index].size,
 
   getEstimatedTotalSize,
 
   getOffsetForIndexAndAlignment: (
-    props: ListProps,
+    props: VariableSizeProps,
     index: number,
     align: ScrollToAlign,
     scrollOffset: number,
     instanceProps: InstanceProps
   ): number => {
-    const { height } = props;
+    const { direction, height, layout, width } = props;
 
-    const size = height;
+    // TODO Deprecate direction "horizontal"
+    const isHorizontal = direction === 'horizontal' || layout === 'horizontal';
+    const size = isHorizontal ? width : height;
     const itemMetadata = getItemMetadata(props, index, instanceProps);
 
     // Get estimated total size after ItemMetadata is computed,
@@ -176,18 +178,20 @@ export const VariableSizeList = createListComponent({
     }
   },
 
-  getStartIndexForOffset: (props: ListProps, offset: number, instanceProps: InstanceProps): number =>
+  getStartIndexForOffset: (props: VariableSizeProps, offset: number, instanceProps: InstanceProps): number =>
     findNearestItem(props, instanceProps, offset),
 
   getStopIndexForStartIndex: (
-    props: ListProps,
+    props: VariableSizeProps,
     startIndex: number,
     scrollOffset: number,
     instanceProps: InstanceProps
   ): number => {
-    const { height, itemCount } = props;
+    const { direction, height, itemCount, layout, width } = props;
 
-    const size = height;
+    // TODO Deprecate direction "horizontal"
+    const isHorizontal = direction === 'horizontal' || layout === 'horizontal';
+    const size = isHorizontal ? width : height;
     const itemMetadata = getItemMetadata(props, startIndex, instanceProps);
     const maxOffset = scrollOffset + size;
 
@@ -202,7 +206,7 @@ export const VariableSizeList = createListComponent({
     return stopIndex;
   },
 
-  initInstanceProps(props: ListProps, instance: any): InstanceProps {
+  initInstanceProps(props: VariableSizeProps, instance: any): InstanceProps {
     const { estimatedItemSize } = props;
 
     const instanceProps = {
@@ -230,7 +234,7 @@ export const VariableSizeList = createListComponent({
 
   shouldResetStyleCacheOnItemSizeChange: false,
 
-  validateProps: ({ itemSize }: ListProps) => {
+  validateProps: ({ itemSize }: VariableSizeProps) => {
     if (process.env.NODE_ENV !== 'production') {
       if (typeof itemSize !== 'function') {
         throw Error(

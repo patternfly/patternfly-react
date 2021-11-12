@@ -35,6 +35,7 @@ export const LogViewerSearch: React.FunctionComponent<LogViewerSearchProps> = ({
   useEffect(() => {
     if (hasFoundResults) {
       setIndexAdjuster(1);
+      scrollToRow(searchedWordIndexes[DEFAULT_INDEX]);
     } else {
       setIndexAdjuster(0);
     }
