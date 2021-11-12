@@ -623,7 +623,6 @@ import {
 
 NavWithFlyout = () => {
   const [activeItem, setActiveItem] = React.useState(0);
-  const [flyoutHovered, setFlyoutHovered] = React.useState(false);
   const onSelect = result => setActiveItem(result.itemId);
   const onMenuSelect = (event, itemId) => setActiveItem(itemId);
 
@@ -653,20 +652,6 @@ NavWithFlyout = () => {
     curFlyout = <FlyoutMenu depth={i}>{curFlyout}</FlyoutMenu>;
   }
 
-  const handleMouseEnter = () => {
-    setFlyoutHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setFlyoutHovered(false);
-  };
-
-  const wrappedCurFlyout = (
-    <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      {curFlyout}
-    </div>
-  );
-
   return (
     <Nav onSelect={onSelect}>
       <NavList>
@@ -677,12 +662,11 @@ NavWithFlyout = () => {
           Link 2
         </NavItem>
         <NavItem
-          flyout={wrappedCurFlyout}
+          flyout={curFlyout}
           id="default-link3"
           to="#default-link3"
           itemId={2}
           isActive={activeItem === 2}
-          isHovered={flyoutHovered}
         >
           Link 3
         </NavItem>

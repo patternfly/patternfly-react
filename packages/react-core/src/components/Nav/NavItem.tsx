@@ -32,8 +32,6 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   flyout?: React.ReactElement;
   /** Callback when flyout is opened or closed */
   onShowFlyout?: () => void;
-  /** Flag that applies hover styling */
-  isHovered?: boolean;
 }
 
 export const NavItem: React.FunctionComponent<NavItemProps> = ({
@@ -49,7 +47,6 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   component = 'a',
   flyout,
   onShowFlyout,
-  isHovered,
   ouiaId,
   ouiaSafe,
   ...props
@@ -158,12 +155,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       <Component
         href={to}
         onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
-        className={css(
-          styles.navLink,
-          isActive && styles.modifiers.current,
-          isHovered && styles.modifiers.hover,
-          className
-        )}
+        className={css(styles.navLink, isActive && styles.modifiers.current, className)}
         aria-current={isActive ? 'page' : null}
         tabIndex={isNavOpen ? null : '-1'}
         {...props}
@@ -194,10 +186,22 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
 
   const ouiaProps = useOUIAProps(NavItem.displayName, ouiaId, ouiaSafe);
 
+  const handleMouseEnter = () => {
+    ref.current.children[0].classList.add(styles.modifiers.hover);
+  };
+
+  const handleMouseLeave = () => {
+    ref.current.children[0].classList.remove(styles.modifiers.hover);
+  };
+
   const flyoutPopper = (
     <Popper
       reference={ref}
-      popper={<div ref={popperRef}>{flyout}</div>}
+      popper={
+        <div ref={popperRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          {flyout}
+        </div>
+      }
       placement="right-start"
       isVisible={flyoutVisible}
       onDocumentKeyDown={handleFlyout}

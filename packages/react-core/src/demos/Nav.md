@@ -1440,7 +1440,6 @@ class VerticalPage extends React.Component {
     this.state = {
       isNavOpen: true,
       activeItem: 0,
-      flyoutHovered: false
     };
     this.onNavSelect = result => {
       this.setState({
@@ -1450,16 +1449,6 @@ class VerticalPage extends React.Component {
     this.onMenuSelect = (event, itemId) => {
       this.setState({
         activeItem: itemId
-      });
-    };
-    this.handleMouseEnter = () => {
-      this.setState({
-        flyoutHovered: true
-      });
-    };
-    this.handleMouseLeave = () => {
-      this.setState({
-        flyoutHovered: false
       });
     };
   }
@@ -1489,9 +1478,8 @@ class VerticalPage extends React.Component {
     for (let i = 2; i < numFlyouts - 1; i++) {
       curFlyout = <FlyoutMenu depth={i}>{curFlyout}</FlyoutMenu>;
     }
-    const wrappedCurFlyout = <div onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>{curFlyout}</div>;
 
-    const { activeItem, flyoutHovered } = this.state;
+    const { activeItem } = this.state;
 
     const Sidebar = (
       <PageSidebar
@@ -1502,12 +1490,11 @@ class VerticalPage extends React.Component {
                 System Panel
               </NavItem>
               <NavItem
-                flyout={wrappedCurFlyout}
+                flyout={curFlyout}
                 id="flyout-link2"
                 to="#flyout-link2"
                 itemId={1}
                 isActive={activeItem === 1}
-                isHovered={flyoutHovered}
               >
                 Settings
               </NavItem>

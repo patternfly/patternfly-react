@@ -23,8 +23,3 @@ it('NavItem should match snapshot (auto-generated)', () => {
   );
   expect(view).toMatchSnapshot();
 });
-
-it('should apply isHovered styling', () => {
-  const view = mount(<NavItem isHovered>Foo</NavItem>);
-  expect(view).toMatchSnapshot();
-});
