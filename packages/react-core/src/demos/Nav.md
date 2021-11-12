@@ -1439,7 +1439,8 @@ class VerticalPage extends React.Component {
     super(props);
     this.state = {
       isNavOpen: true,
-      activeItem: 0
+      activeItem: 0,
+      flyoutHovered: false
     };
     this.onNavSelect = result => {
       this.setState({
@@ -1451,12 +1452,22 @@ class VerticalPage extends React.Component {
         activeItem: itemId
       });
     };
+    this.handleMouseEnter = () => {
+      this.setState({
+        flyoutHovered: true
+      });
+    };
+    this.handleMouseLeave = () => {
+      this.setState({
+        flyoutHovered: false
+      });
+    };
   }
 
   render() {
     const numFlyouts = 5;
     const FlyoutMenu = ({ depth, children }) => (
-      <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={this.onMenuSelect}>
+      <Menu key={depth} containsFlyout isNavFlyout id={`menu-${depth}`} onSelect={this.onMenuSelect}>
         <MenuContent>
           <MenuList>
             <MenuItem flyoutMenu={children} itemId={`next-menu-${depth}`} to={`#menu-link-${depth}`}>
@@ -1478,8 +1489,9 @@ class VerticalPage extends React.Component {
     for (let i = 2; i < numFlyouts - 1; i++) {
       curFlyout = <FlyoutMenu depth={i}>{curFlyout}</FlyoutMenu>;
     }
+    const wrappedCurFlyout = <div onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>{curFlyout}</div>;
 
-    const { activeItem } = this.state;
+    const { activeItem, flyoutHovered } = this.state;
 
     const Sidebar = (
       <PageSidebar
@@ -1489,7 +1501,14 @@ class VerticalPage extends React.Component {
               <NavItem id="flyout-link1" to="#flyout-link1" itemId={0} isActive={activeItem === 0}>
                 System Panel
               </NavItem>
-              <NavItem flyout={curFlyout} id="flyout-link2" to="#flyout-link2" itemId={1} isActive={activeItem === 1}>
+              <NavItem
+                flyout={wrappedCurFlyout}
+                id="flyout-link2"
+                to="#flyout-link2"
+                itemId={1}
+                isActive={activeItem === 1}
+                isHovered={flyoutHovered}
+              >
                 Settings
               </NavItem>
               <NavItem id="flyout-link3" to="#flyout-link3" itemId={2} isActive={activeItem === 2}>

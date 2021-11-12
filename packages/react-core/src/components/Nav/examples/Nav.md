@@ -305,7 +305,7 @@ NavExpandableThirdLevelList = () => {
   onSelect = result => {
     setActiveGroup(result.groupId);
     setActiveItem(result.itemId);
-  };  
+  };
 
   onToggle = result => {
     // eslint-disable-next-line no-console
@@ -387,7 +387,7 @@ NavExpandableThirdLevelList = () => {
       </NavList>
     </Nav>
   );
-}
+};
 ```
 
 ### Mixed
@@ -623,12 +623,13 @@ import {
 
 NavWithFlyout = () => {
   const [activeItem, setActiveItem] = React.useState(0);
+  const [flyoutHovered, setFlyoutHovered] = React.useState(false);
   const onSelect = result => setActiveItem(result.itemId);
   const onMenuSelect = (event, itemId) => setActiveItem(itemId);
 
   const numFlyouts = 5;
   const FlyoutMenu = ({ depth, children }) => (
-    <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={onMenuSelect}>
+    <Menu key={depth} containsFlyout isNavFlyout id={`menu-${depth}`} onSelect={onMenuSelect}>
       <MenuContent>
         <MenuList>
           <MenuItem flyoutMenu={children} itemId={`next-menu-${depth}`} to={`#menu-link-${depth}`}>
@@ -646,10 +647,25 @@ NavWithFlyout = () => {
       </MenuContent>
     </Menu>
   );
+
   let curFlyout = <FlyoutMenu depth={1} />;
   for (let i = 2; i < numFlyouts - 1; i++) {
     curFlyout = <FlyoutMenu depth={i}>{curFlyout}</FlyoutMenu>;
   }
+
+  const handleMouseEnter = () => {
+    setFlyoutHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setFlyoutHovered(false);
+  };
+
+  const wrappedCurFlyout = (
+    <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      {curFlyout}
+    </div>
+  );
 
   return (
     <Nav onSelect={onSelect}>
@@ -660,7 +676,14 @@ NavWithFlyout = () => {
         <NavItem id="default-link2" to="#default-link2" itemId={1} isActive={activeItem === 1}>
           Link 2
         </NavItem>
-        <NavItem flyout={curFlyout} id="default-link3" to="#default-link3" itemId={2} isActive={activeItem === 2}>
+        <NavItem
+          flyout={wrappedCurFlyout}
+          id="default-link3"
+          to="#default-link3"
+          itemId={2}
+          isActive={activeItem === 2}
+          isHovered={flyoutHovered}
+        >
           Link 3
         </NavItem>
         <NavItem id="default-link4" to="#default-link4" itemId={3} isActive={activeItem === 3}>
