@@ -35,7 +35,7 @@ describe('PanelMain', () => {
   });
 
   test('renders content with the set maximum height', () => {
-    const view = shallow(<PanelMain maxHeight={80}>Foo</PanelMain>);
+    const view = shallow(<PanelMain maxHeight={'80px'}>Foo</PanelMain>);
     expect(view).toMatchSnapshot();
   });
 });

@@ -7,8 +7,8 @@ export interface PanelMainProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Class to add to outer div */
   className?: string;
-  /** Max height of the panel main div as a number of px or string percentage */
-  maxHeight?: string | number;
+  /** Max height of the panel main div as a string with the value and unit */
+  maxHeight?: string;
 }
 
 export const PanelMain: React.FunctionComponent<PanelMainProps> = ({
@@ -16,17 +16,14 @@ export const PanelMain: React.FunctionComponent<PanelMainProps> = ({
   children,
   maxHeight,
   ...props
-}: PanelMainProps) => {
-  const compiledProps = {
-    className: css(styles.panelMain, className),
-    ...(maxHeight && { style: { maxHeight, overflow: 'auto' } })
-  } as React.HTMLAttributes<HTMLElement>;
-
-  return (
-    <div {...compiledProps} {...props}>
-      {children}
-    </div>
-  );
-};
+}: PanelMainProps) => (
+  <div
+    className={css(styles.panelMain, className)}
+    style={{ '--pf-c-panel__main--MaxHeight': maxHeight } as React.CSSProperties}
+    {...props}
+  >
+    {children}
+  </div>
+);
 
 PanelMain.displayName = 'PanelMain';

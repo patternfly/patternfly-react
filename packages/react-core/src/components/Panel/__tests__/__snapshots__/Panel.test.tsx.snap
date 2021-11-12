@@ -51,6 +51,11 @@ exports[`PanelHeader renders content 1`] = `
 exports[`PanelMain renders content 1`] = `
 <div
   className="pf-c-panel__main"
+  style={
+    Object {
+      "--pf-c-panel__main--MaxHeight": undefined,
+    }
+  }
 >
   Foo
 </div>
@@ -61,8 +66,7 @@ exports[`PanelMain renders content with the set maximum height 1`] = `
   className="pf-c-panel__main"
   style={
     Object {
-      "maxHeight": 80,
-      "overflow": "auto",
+      "--pf-c-panel__main--MaxHeight": "80px",
     }
   }
 >
