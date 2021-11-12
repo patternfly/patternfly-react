@@ -94,7 +94,7 @@ import React from 'react';
 import { Panel, PanelMain, PanelMainBody } from '@patternfly/react-core';
 
 const RaisedPanel = () => (
-  <Panel perimeterStyling="raised">
+  <Panel variant="raised">
     <PanelMain>
       <PanelMainBody>Main content</PanelMainBody>
     </PanelMain>
@@ -109,7 +109,7 @@ import React from 'react';
 import { Panel, PanelMain, PanelMainBody } from '@patternfly/react-core';
 
 const BorderedPanel = () => (
-  <Panel perimeterStyling="bordered">
+  <Panel variant="bordered">
     <PanelMain>
       <PanelMainBody>Main content</PanelMainBody>
     </PanelMain>

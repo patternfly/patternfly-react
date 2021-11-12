@@ -7,8 +7,8 @@ export interface PanelProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Class to add to outer div */
   className?: string;
-  /** Styling to apply to the perimeter of the panel */
-  perimeterStyling?: 'raised' | 'bordered';
+  /** Adds panel variant styles */
+  variant?: 'raised' | 'bordered';
   /** Flag to add scrollable styling to the panel */
   isScrollable?: boolean;
 }
@@ -16,15 +16,15 @@ export interface PanelProps extends React.HTMLProps<HTMLDivElement> {
 export const Panel: React.FunctionComponent<PanelProps> = ({
   className,
   children,
-  perimeterStyling,
+  variant,
   isScrollable,
   ...props
 }: PanelProps) => (
   <div
     className={css(
       styles.panel,
-      perimeterStyling === 'raised' && styles.modifiers.raised,
-      perimeterStyling === 'bordered' && styles.modifiers.bordered,
+      variant === 'raised' && styles.modifiers.raised,
+      variant === 'bordered' && styles.modifiers.bordered,
       isScrollable && styles.modifiers.scrollable,
       className
     )}

@@ -13,12 +13,12 @@ describe('Panel', () => {
   });
 
   test('renders content with raised styling', () => {
-    const view = shallow(<Panel perimeterStyling='raised'>Foo</Panel>);
+    const view = shallow(<Panel variant='raised'>Foo</Panel>);
     expect(view).toMatchSnapshot();
   });
 
   test('renders content with bordered styling', () => {
-    const view = shallow(<Panel perimeterStyling='bordered'>Foo</Panel>);
+    const view = shallow(<Panel variant='bordered'>Foo</Panel>);
     expect(view).toMatchSnapshot();
   });
 
