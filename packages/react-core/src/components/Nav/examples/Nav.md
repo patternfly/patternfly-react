@@ -661,13 +661,7 @@ NavWithFlyout = () => {
         <NavItem id="default-link2" to="#default-link2" itemId={1} isActive={activeItem === 1}>
           Link 2
         </NavItem>
-        <NavItem
-          flyout={curFlyout}
-          id="default-link3"
-          to="#default-link3"
-          itemId={2}
-          isActive={activeItem === 2}
-        >
+        <NavItem flyout={curFlyout} id="default-link3" to="#default-link3" itemId={2} isActive={activeItem === 2}>
           Link 3
         </NavItem>
         <NavItem id="default-link4" to="#default-link4" itemId={3} isActive={activeItem === 3}>

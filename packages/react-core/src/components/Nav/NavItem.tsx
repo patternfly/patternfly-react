@@ -54,6 +54,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   const { flyoutRef, setFlyoutRef } = React.useContext(NavContext);
   const { isNavOpen } = React.useContext(PageSidebarContext);
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
+  const [isHovered, setIsHovered] = React.useState(false);
   const ref = React.useRef<HTMLLIElement>();
   const flyoutVisible = ref === flyoutRef;
   const popperRef = React.useRef<HTMLDivElement>();
@@ -155,7 +156,12 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       <Component
         href={to}
         onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
-        className={css(styles.navLink, isActive && styles.modifiers.current, className)}
+        className={css(
+          styles.navLink,
+          isActive && styles.modifiers.current,
+          isHovered && styles.modifiers.hover,
+          className
+        )}
         aria-current={isActive ? 'page' : null}
         tabIndex={isNavOpen ? null : '-1'}
         {...props}
@@ -187,11 +193,11 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   const ouiaProps = useOUIAProps(NavItem.displayName, ouiaId, ouiaSafe);
 
   const handleMouseEnter = () => {
-    ref.current.children[0].classList.add(styles.modifiers.hover);
+    setIsHovered(true);
   };
 
   const handleMouseLeave = () => {
-    ref.current.children[0].classList.remove(styles.modifiers.hover);
+    setIsHovered(false);
   };
 
   const flyoutPopper = (
