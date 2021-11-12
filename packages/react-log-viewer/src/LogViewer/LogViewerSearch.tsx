@@ -1,8 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { NUMBER_INDEX_DELTA, DEFAULT_FOCUS, DEFAULT_INDEX, DEFAULT_SEARCH_INDEX } from './utils/constants';
+import {
+  NUMBER_INDEX_DELTA,
+  DEFAULT_FOCUS,
+  DEFAULT_INDEX,
+  DEFAULT_SEARCH_INDEX,
+  DEFAULT_MATCH
+} from './utils/constants';
 import { SearchInput, SearchInputProps } from '@patternfly/react-core';
 import { LogViewerToolbarContext, LogViewerContext } from './LogViewerContext';
-import { escapeString, searchForKeyword } from './utils/utils';
+import { escapeString, searchForKeyword, searchedKeyWordType } from './utils/utils';
 
 export interface LogViewerSearchProps extends SearchInputProps {
   /** Place holder text inside of searchbar */
@@ -31,6 +37,8 @@ export const LogViewerSearch: React.FunctionComponent<LogViewerSearchProps> = ({
 
   const { parsedData } = useContext(LogViewerContext);
 
+  const defaultRowInFocus = { rowIndex: DEFAULT_FOCUS, matchIndex: DEFAULT_MATCH };
+
   /* Defaulting the first focused row that contain searched keywords */
   useEffect(() => {
     if (hasFoundResults) {
@@ -42,7 +50,7 @@ export const LogViewerSearch: React.FunctionComponent<LogViewerSearchProps> = ({
 
   /* Updating searchedResults context state given changes in searched input */
   useEffect(() => {
-    let foundKeywordIndexes: (number | null)[] = [];
+    let foundKeywordIndexes: (searchedKeyWordType | null)[] = [];
     const adjustedSearchedInput = escapeString(searchedInput);
 
     if (adjustedSearchedInput !== '' && adjustedSearchedInput.length >= minSearchChars) {
@@ -56,38 +64,38 @@ export const LogViewerSearch: React.FunctionComponent<LogViewerSearchProps> = ({
     }
 
     if (!adjustedSearchedInput) {
-      setRowInFocus(DEFAULT_FOCUS);
+      setRowInFocus(defaultRowInFocus);
     }
   }, [searchedInput]);
 
-  const hasFoundResults = searchedWordIndexes.length > 0 && searchedWordIndexes[0] !== -1;
+  const hasFoundResults = searchedWordIndexes.length > 0 && searchedWordIndexes[0]?.rowIndex !== -1;
 
   /* Clearing out the search input */
   const handleClear = (): void => {
     setSearchedInput('');
     setCurrentSearchedItemCount(DEFAULT_INDEX);
     setSearchedWordIndexes([]);
-    setRowInFocus(DEFAULT_FOCUS);
+    setRowInFocus(defaultRowInFocus);
   };
 
   /* Moving focus over to next row containing searched word */
   const handleNextSearchItem = (): void => {
-    const adjustedSearchCount = (currentSearchedItemCount + NUMBER_INDEX_DELTA) % searchedWordIndexes.length;
+    const adjustedSearchedItemCount = (currentSearchedItemCount + NUMBER_INDEX_DELTA) % searchedWordIndexes.length;
 
-    setCurrentSearchedItemCount(adjustedSearchCount);
-    scrollToRow(searchedWordIndexes[adjustedSearchCount]);
+    setCurrentSearchedItemCount(adjustedSearchedItemCount);
+    scrollToRow(searchedWordIndexes[adjustedSearchedItemCount]);
   };
 
   /* Moving focus over to next row containing searched word */
   const handlePrevSearchItem = (): void => {
-    let adjustedSearchCount = currentSearchedItemCount - NUMBER_INDEX_DELTA;
+    let adjustedSearchedItemCount = currentSearchedItemCount - NUMBER_INDEX_DELTA;
 
-    if (adjustedSearchCount < DEFAULT_INDEX) {
-      adjustedSearchCount += searchedWordIndexes.length;
+    if (adjustedSearchedItemCount < DEFAULT_INDEX) {
+      adjustedSearchedItemCount += searchedWordIndexes.length;
     }
 
-    setCurrentSearchedItemCount(adjustedSearchCount);
-    scrollToRow(searchedWordIndexes[adjustedSearchCount]);
+    setCurrentSearchedItemCount(adjustedSearchedItemCount);
+    scrollToRow(searchedWordIndexes[adjustedSearchedItemCount]);
   };
 
   return (
