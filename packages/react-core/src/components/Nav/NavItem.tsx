@@ -32,6 +32,8 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   flyout?: React.ReactElement;
   /** Callback when flyout is opened or closed */
   onShowFlyout?: () => void;
+  /** Flag that applies hover styling */
+  isHovered?: boolean;
 }
 
 export const NavItem: React.FunctionComponent<NavItemProps> = ({
@@ -47,6 +49,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   component = 'a',
   flyout,
   onShowFlyout,
+  isHovered,
   ouiaId,
   ouiaSafe,
   ...props
@@ -155,7 +158,12 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       <Component
         href={to}
         onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
-        className={css(styles.navLink, isActive && styles.modifiers.current, className)}
+        className={css(
+          styles.navLink,
+          isActive && styles.modifiers.current,
+          isHovered && styles.modifiers.hover,
+          className
+        )}
         aria-current={isActive ? 'page' : null}
         tabIndex={isNavOpen ? null : '-1'}
         {...props}

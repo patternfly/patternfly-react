@@ -2,7 +2,7 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { NavItem } from '../../NavItem';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
@@ -21,5 +21,10 @@ it('NavItem should match snapshot (auto-generated)', () => {
       component={'a'}
     />
   );
+  expect(view).toMatchSnapshot();
+});
+
+it('should apply isHovered styling', () => {
+  const view = mount(<NavItem isHovered>Foo</NavItem>);
   expect(view).toMatchSnapshot();
 });
