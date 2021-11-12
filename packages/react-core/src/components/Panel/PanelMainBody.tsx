@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Panel/panel';
 import { css } from '@patternfly/react-styles';
 
 export interface PanelMainBodyProps extends React.HTMLProps<HTMLDivElement> {
-  /** Content rendered inside PanelMainBody */
+  /** Content rendered inside the panel main body div */
   children?: React.ReactNode;
   /** Class to add to outer div */
   className?: string;
