@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.175.3 (2021-11-15)
+
+
+### Bug Fixes
+
+* **Menu:** allow maxMenuHeight with Scrollabe ([#6608](https://github.com/patternfly/patternfly-react/issues/6608)) ([8c1f12c](https://github.com/patternfly/patternfly-react/commit/8c1f12c2b0e86bbc5ba1071db3ebf29fee7421a0))
+
+
+
+
+
 ## 4.175.2 (2021-11-15)
 
 **Note:** Version bump only for package @patternfly/react-core
