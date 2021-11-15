@@ -262,8 +262,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           onGetMenuHeight,
           flyoutRef: this.state.flyoutRef,
           setFlyoutRef: flyoutRef => this.setState({ flyoutRef }),
-          disableHover: this.state.disableHover,
-          isScrollable
+          disableHover: this.state.disableHover
         }}
       >
         {isRootMenu && (
