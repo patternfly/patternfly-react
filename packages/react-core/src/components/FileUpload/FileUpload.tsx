@@ -1,8 +1,13 @@
 import * as React from 'react';
-import Dropzone, { DropzoneProps, DropEvent, DropzoneInputProps } from 'react-dropzone';
+import Dropzone, { DropzoneProps, DropzoneInputProps, DropFileEventHandler } from 'react-dropzone';
 import { FileUploadField, FileUploadFieldProps } from './FileUploadField';
 import { readFile, fileReaderType } from '../../helpers/fileUtils';
 import { fromEvent } from 'file-selector';
+
+interface DropzoneInputPropsWithRef extends DropzoneInputProps {
+  ref: React.RefCallback<HTMLInputElement>; // Working around an issue in react-dropzone 9.0.0's types. Should not be necessary in later versions.
+}
+
 export interface FileUploadProps
   extends Omit<
     FileUploadFieldProps,
@@ -26,11 +31,9 @@ export interface FileUploadProps
       | React.MouseEvent<HTMLButtonElement, MouseEvent> // Clear button was clicked
       | React.DragEvent<HTMLElement> // User dragged/dropped a file
       | React.ChangeEvent<HTMLElement> // User typed in the TextArea
-      | DragEvent
-      | Event
   ) => void;
   /** Change event emitted from the hidden \<input type="file" \> field associated with the component  */
-  onFileInputChange?: (event: React.ChangeEvent<HTMLInputElement> | DropEvent, file: File) => void;
+  onFileInputChange?: (event: React.ChangeEvent<HTMLInputElement> | React.DragEvent<HTMLElement>, file: File) => void;
   /** Callback for clicking on the FileUploadField text area. By default, prevents a click in the text area from opening file dialog. */
   onClick?: (event: React.MouseEvent) => void;
   /** Additional classes added to the FileUpload container element. */
@@ -104,7 +107,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   dropzoneProps = {},
   ...props
 }: FileUploadProps) => {
-  const onDropAccepted = (acceptedFiles: File[], event: DropEvent) => {
+  const onDropAccepted: DropFileEventHandler = (acceptedFiles, event) => {
     if (acceptedFiles.length > 0) {
       const fileHandle = acceptedFiles[0];
       if (event.type === 'drop') {
@@ -132,7 +135,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
     dropzoneProps.onDropAccepted && dropzoneProps.onDropAccepted(acceptedFiles, event);
   };
 
-  const onDropRejected = (rejectedFiles: File[], event: DropEvent) => {
+  const onDropRejected: DropFileEventHandler = (rejectedFiles, event) => {
     if (rejectedFiles.length > 0) {
       onChange('', rejectedFiles[0].name, event);
     }
@@ -151,13 +154,7 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
   };
 
   return (
-    <Dropzone
-      multiple={false}
-      {...dropzoneProps}
-      onDropAccepted={onDropAccepted}
-      onDropRejected={onDropRejected}
-      noClick={true}
-    >
+    <Dropzone multiple={false} {...dropzoneProps} onDropAccepted={onDropAccepted} onDropRejected={onDropRejected}>
       {({ getRootProps, getInputProps, isDragActive, open }) => {
         const oldInputProps = getInputProps();
         const inputProps: DropzoneInputProps = {
@@ -190,7 +187,14 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
             onTextAreaClick={onClick}
             onTextChange={onTextChange}
           >
-            <input {...inputProps} ref={fileInputRef} /* hidden, necessary for react-dropzone */ />
+            <input
+              /* hidden, necessary for react-dropzone */
+              {...inputProps}
+              ref={input => {
+                fileInputRef.current = input;
+                (inputProps as DropzoneInputPropsWithRef).ref(input);
+              }}
+            />
             {children}
           </FileUploadField>
         );

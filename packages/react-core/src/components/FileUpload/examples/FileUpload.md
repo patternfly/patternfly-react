@@ -27,7 +27,7 @@ class SimpleTextFileUpload extends React.Component {
     super(props);
     this.state = { value: '', filename: '', isLoading: false };
     this.handleFileInputChange = (event, file) => this.setState({ filename: file.name });
-    this.handleDataChange = value => this.setState({ value });
+    this.handleTextOrDataChange = value => this.setState({ value });
     this.handleClear = event => this.setState({ filename: '', value: '' });
     this.handleFileReadStarted = fileHandle => this.setState({ isLoading: true });
     this.handleFileReadFinished = fileHandle => this.setState({ isLoading: false });
@@ -43,7 +43,8 @@ class SimpleTextFileUpload extends React.Component {
         filename={filename}
         filenamePlaceholder="Drag and drop a file or upload one"
         onFileInputChange={this.handleFileInputChange}
-        onDataChange={this.handleDataChange}
+        onDataChange={this.handleTextOrDataChange}
+        onTextChange={this.handleTextOrDataChange}
         onReadStarted={this.handleFileReadStarted}
         onReadFinished={this.handleFileReadFinished}
         onClearClick={this.handleClear}
