@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.13.4 (2021-11-15)
+
+
+### Bug Fixes
+
+* **FileUpload:** Downgrade react-dropzone back to 9.0.0 to avoid a breaking type change, fix behavior regressions ([#6610](https://github.com/patternfly/patternfly-react/issues/6610)) ([574bf4f](https://github.com/patternfly/patternfly-react/commit/574bf4ff3ccf7f67ce750bc48067eaf826e99990))
+
+
+
+
+
 ## 4.13.3 (2021-11-15)
 
 
