@@ -28,15 +28,15 @@ export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React
   };
   return (
     <MenuContext.Consumer>
-      {({ menuId, onGetMenuHeight, isScrollable }) => (
+      {({ menuId, onGetMenuHeight }) => (
         <div
           {...rest}
           className={css(styles.menuContent, props.className)}
           ref={el => refCallback(el, menuId, onGetMenuHeight)}
           style={
             {
-              '--pf-c-menu__content--Height': menuHeight || 'auto',
-              '--pf-c-menu__content--MaxHeight': !isScrollable ? maxMenuHeight || 'auto' : ''
+              ...(menuHeight && { '--pf-c-menu__content--Height': menuHeight }),
+              ...(maxMenuHeight && { '--pf-c-menu__content--MaxHeight': maxMenuHeight })
             } as React.CSSProperties
           }
         >
