@@ -36,7 +36,7 @@ export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React
           style={
             {
               '--pf-c-menu__content--Height': menuHeight || 'auto',
-              '--pf-c-menu__content--MaxHeight': !isScrollable ? maxMenuHeight || 'auto' : ''
+              '--pf-c-menu__content--MaxHeight': maxMenuHeight || (!isScrollable ? 'auto' : '')
             } as React.CSSProperties
           }
         >
