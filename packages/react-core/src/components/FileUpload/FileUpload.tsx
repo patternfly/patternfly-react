@@ -4,6 +4,10 @@ import { FileUploadField, FileUploadFieldProps } from './FileUploadField';
 import { readFile, fileReaderType } from '../../helpers/fileUtils';
 import { fromEvent } from 'file-selector';
 
+interface DropzoneInputPropsWithRef extends DropzoneInputProps {
+  ref: React.RefCallback<HTMLInputElement>; // Working around an issue in react-dropzone 9.0.0's types. Should not be necessary in later versions.
+}
+
 export interface FileUploadProps
   extends Omit<
     FileUploadFieldProps,
@@ -183,7 +187,14 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
             onTextAreaClick={onClick}
             onTextChange={onTextChange}
           >
-            <input {...inputProps} ref={fileInputRef} /* hidden, necessary for react-dropzone */ />
+            <input
+              /* hidden, necessary for react-dropzone */
+              {...inputProps}
+              ref={input => {
+                fileInputRef.current = input;
+                (inputProps as DropzoneInputPropsWithRef).ref(input);
+              }}
+            />
             {children}
           </FileUploadField>
         );
