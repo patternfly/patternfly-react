@@ -6,6 +6,7 @@ propComponents: ['Tooltip']
 ---
 
 import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-question-circle-icon';
+import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import './TooltipExamples.css';
 
 ## Examples
@@ -66,19 +67,24 @@ import { Tooltip } from '@patternfly/react-core';
 ### On icon
 ```js
 import React from 'react';
-import { Tooltip } from '@patternfly/react-core';
-import OutlinedQuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-question-circle-icon';
+import { Tooltip, Button } from '@patternfly/react-core';
+import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 
-<div style={{ margin: '100px' }}>
-  <Tooltip
-    position="top"
-    content={
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
-    }
-  >
-    <OutlinedQuestionCircleIcon title="An icon with a tooltip" />
-  </Tooltip>
-</div>
+IconExample = () => {
+  const [showSuccessContent, setShowSuccessContent] = React.useState(false);
+  const copyText = 'Copy to clipboard';
+  const doneCopyText = 'Successfully copied to clipboard!';
+  const [content, setContent] = React.useState(copyText);
+  return (
+    <div style={{ margin: '100px' }}>
+      <Tooltip content={showSuccessContent ? doneCopyText : copyText}>
+        <Button variant="plain" id="tt-ref" onClick={() => setShowSuccessContent(!showSuccessContent)}>
+          <CopyIcon />
+        </Button>
+      </Tooltip>
+    </div>
+  );
+};
 ```
 
 ### Options
