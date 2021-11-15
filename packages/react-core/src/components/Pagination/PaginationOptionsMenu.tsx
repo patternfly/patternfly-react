@@ -46,6 +46,8 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   onPerPageSelect?: OnPerPageSelect;
   /** Label for the English word "of" */
   ofWord?: string;
+  /** Label for the English word "many" */
+  manyWord?: string;
 }
 
 interface PaginationOptionsMenuState {
@@ -65,6 +67,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
     perPageSuffix: 'per page',
     optionsToggle: 'Items per page',
     ofWord: 'of',
+    manyWord: 'many',
     perPage: 0,
     firstIndex: 0,
     lastIndex: 0,
@@ -144,7 +147,8 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
       lastIndex,
       itemCount,
       itemsTitle,
-      ofWord
+      ofWord,
+      manyWord,
     } = this.props;
     const { isOpen } = this.state;
 
@@ -181,6 +185,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
               itemCount={itemCount}
               itemsTitle={itemsTitle}
               ofWord={ofWord}
+              manyWord={manyWord}
               toggleTemplate={toggleTemplate}
               parentRef={this.parentRef.current}
               isDisabled={isDisabled}

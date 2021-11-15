@@ -37,6 +37,8 @@ export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
   onEnter?: () => void;
   /** Label for the English word "of" */
   ofWord?: string;
+  /** Label for the English word "many" */
+  manyWord?: string;
 }
 
 let toggleId = 0;
@@ -46,6 +48,7 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   itemsPerPageTitle = 'Items per page',
   ofWord = 'of',
+  manyWord = 'many',
   firstIndex = 0,
   lastIndex = 0,
   itemCount,
@@ -71,12 +74,13 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
       <React.Fragment>
         <span className={css(styles.optionsMenuToggleText)}>
           {typeof ToggleTemplate === 'string' ? (
-            fillTemplate(ToggleTemplate, { firstIndex, lastIndex, ofWord, itemCount, itemsTitle })
+            fillTemplate(ToggleTemplate, { firstIndex, lastIndex, ofWord, manyWord, itemCount, itemsTitle })
           ) : (
             <ToggleTemplate
               firstIndex={firstIndex}
               lastIndex={lastIndex}
               ofWord={ofWord}
+              manyWord={manyWord}
               itemCount={itemCount}
               itemsTitle={itemsTitle}
             />

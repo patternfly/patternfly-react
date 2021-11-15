@@ -18,13 +18,17 @@ export const ToggleTemplate: React.FunctionComponent<ToggleTemplateProps> = ({
   lastIndex = 0,
   itemCount = 0,
   itemsTitle = 'items',
-  ofWord = 'of'
-}: ToggleTemplateProps) => (
-  <React.Fragment>
-    <b>
-      {firstIndex} - {lastIndex}
-    </b>{' '}
-    {ofWord} <b>{itemCount}</b> {itemsTitle}
-  </React.Fragment>
-);
+  ofWord = 'of',
+  manyWord = 'many'
+}: ToggleTemplateProps) => {
+  let total = itemCount === null ? <b>{manyWord}</b> : <><b>{itemCount}</b> {itemsTitle}</>;
+  return (
+    <React.Fragment>
+      <b>
+        {firstIndex} - {lastIndex}
+      </b>{' '}
+      {ofWord} {total}
+    </React.Fragment>
+  )
+};
 ToggleTemplate.displayName = 'ToggleTemplate';

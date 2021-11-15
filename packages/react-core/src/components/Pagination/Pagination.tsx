@@ -66,6 +66,8 @@ export interface PaginationTitles {
   paginationTitle?: string;
   /** Accessible label for the English word "of" */
   ofWord?: string;
+  /** Accessible label for the English word "many" */
+  manyWord?: string;
 }
 
 export type OnSetPage = (
@@ -177,7 +179,8 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
       optionsToggle: 'Items per page',
       currPage: 'Current page',
       paginationTitle: 'Pagination',
-      ofWord: 'of'
+      ofWord: 'of',
+      manyWord: 'many',
     },
     firstPage: 1,
     page: 0,
@@ -279,7 +282,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
       }
     }
 
-    const toggleTemplateProps = { firstIndex, lastIndex, itemCount, itemsTitle: titles.items, ofWord: titles.ofWord };
+    const toggleTemplateProps = { firstIndex, lastIndex, itemCount, itemsTitle: titles.items, ofWord: titles.ofWord, manyWord: titles.manyWord };
 
     return (
       <div
@@ -309,6 +312,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
                 itemCount={itemCount}
                 itemsTitle={titles.items}
                 ofWord={titles.ofWord}
+                manyWord={titles.manyWord}
               />
             )}
           </div>
@@ -322,6 +326,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
           firstIndex={itemsStart !== null ? itemsStart : firstIndex}
           lastIndex={itemsEnd !== null ? itemsEnd : lastIndex}
           ofWord={titles.ofWord}
+          manyWord={titles.manyWord}
           defaultToFullPage={defaultToFullPage}
           itemCount={itemCount}
           page={page}
@@ -342,6 +347,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
           currPage={titles.currPage}
           paginationTitle={titles.paginationTitle}
           ofWord={titles.ofWord}
+          manyWord={titles.manyWord}
           page={itemCount && itemCount <= 0 ? 0 : page}
           perPage={perPage}
           itemCount={itemCount}
