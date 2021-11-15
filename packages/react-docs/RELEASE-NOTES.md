@@ -27,10 +27,6 @@ section: developer-resources
   - Added Date/time picker demo ([#6545](https://github.com/patternfly/patternfly-react/pull/6545))
 - **Card:**
   - Added hoverable, selectable and selected-raised variant ([#6565](https://github.com/patternfly/patternfly-react/pull/6565))
-- **Code editor:**
-  - Added resize observer to code editor ([#6547](https://github.com/patternfly/patternfly-react/pull/6547))
-  - Improved type-safety for onChange prop ([#6535](https://github.com/patternfly/patternfly-react/pull/6535))
-  - Enhanced type correctness of code editor ([#6579](https://github.com/patternfly/patternfly-react/pull/6579))
 - **Context selector:**
   - Added support for context selector items as links ([#6554](https://github.com/patternfly/patternfly-react/pull/6554))
 - **Dropdown:**
@@ -69,6 +65,11 @@ section: developer-resources
 
 ### Charts
 - Added resize observer and examples ([#6528](https://github.com/patternfly/patternfly-react/pull/6528))
+
+### Code editor
+- Added resize observer to code editor ([#6547](https://github.com/patternfly/patternfly-react/pull/6547))
+- Improved type-safety for onChange prop ([#6535](https://github.com/patternfly/patternfly-react/pull/6535))
+- Enhanced type correctness of code editor ([#6579](https://github.com/patternfly/patternfly-react/pull/6579))
 
 ### Log viewer
 - Added support ANSI color ([#6519](https://github.com/patternfly/patternfly-react/pull/6519))
