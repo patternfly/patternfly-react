@@ -292,7 +292,6 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     const textInput = (
       <TextInput
         className={css(styles.formControl)}
-        style={inputStyle}
         isDisabled={isDisabled}
         type="number"
         value={localInputValue}
@@ -343,7 +342,11 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   };
 
   return (
-    <div className={css(styles.slider, className, isDisabled && styles.modifiers.disabled)} style={style} {...props}>
+    <div
+      className={css(styles.slider, className, isDisabled && styles.modifiers.disabled)}
+      style={{ ...style, ...inputStyle }}
+      {...props}
+    >
       {leftActions && <div className={css(styles.sliderActions)}>{leftActions}</div>}
       <div className={css(styles.sliderMain)}>
         <div className={css(styles.sliderRail)} ref={sliderRailRef} onClick={!isDisabled ? onSliderRailClick : null}>
