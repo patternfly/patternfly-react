@@ -3,20 +3,19 @@ id: Release notes
 section: developer-resources
 ---
 
-
 ## 2021.15 release notes (2021-11-17)
-- [@patternfly/react-catalog-view-extension@4.36.2](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.26.2)
-- [@patternfly/react-charts@6.28.2](https://www.npmjs.com/package/@patternfly/react-charts/v/6.28.2)
-- [@patternfly/react-code-editor@4.16.2](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.16.2)
-- [@patternfly/react-core@4.175.2](https://www.npmjs.com/package/@patternfly/react-core/v/4.175.2)
-- [@patternfly/react-icons@4.26.2](https://www.npmjs.com/package/@patternfly/react-icons/v/4.26.2)
-- [@patternfly/react-inline-edit-extension@4.20.2](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.20.2)
-- [@patternfly/react-log-viewer@4.20.2](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.20.2)
-- [@patternfly/react-styles@4.25.2](https://www.npmjs.com/package/@patternfly/react-styles/v/4.25.2)
-- [@patternfly/react-table@4.44.2](https://www.npmjs.com/package/@patternfly/react-table/v/4.44.2)
-- [@patternfly/react-tokens@4.27.2](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.27.2)
-- [@patternfly/react-topology@4.22.2](https://www.npmjs.com/package/@patternfly/react-topology/v/4.22.2)
-- [@patternfly/react-virtualized-extension@4.22.2](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.22.2)
+- [@patternfly/react-catalog-view-extension@4.26.4](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.26.4)
+- [@patternfly/react-charts@6.28.4](https://www.npmjs.com/package/@patternfly/react-charts/v/6.28.4)
+- [@patternfly/react-code-editor@4.16.4](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.16.4)
+- [@patternfly/react-core@4.175.4](https://www.npmjs.com/package/@patternfly/react-core/v/4.175.4)
+- [@patternfly/react-icons@4.26.4](https://www.npmjs.com/package/@patternfly/react-icons/v/4.26.4)
+- [@patternfly/react-inline-edit-extension@4.20.4](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.20.4)
+- [@patternfly/react-log-viewer@4.20.4](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.20.4)
+- [@patternfly/react-styles@4.25.4](https://www.npmjs.com/package/@patternfly/react-styles/v/4.25.4)
+- [@patternfly/react-table@4.44.4](https://www.npmjs.com/package/@patternfly/react-table/v/4.44.4)
+- [@patternfly/react-tokens@4.27.4](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.27.4)
+- [@patternfly/react-topology@4.22.4](https://www.npmjs.com/package/@patternfly/react-topology/v/4.22.4)
+- [@patternfly/react-virtualized-extension@4.22.4](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.22.4)
 
 ### Components
 - **About modal:**
@@ -35,10 +34,12 @@ section: developer-resources
   - Fixed to account for duplicate folders ([#6499](https://github.com/patternfly/patternfly-react/pull/6499))
 - **File upload:**
   - Improved events in the file upload ([#6139](https://github.com/patternfly/patternfly-react/pull/6139))
+  - Downgraded react-dropzone back to 9.0.0 to avoid a breaking type change, fixed behavior regressions ([#6610](https://github.com/patternfly/patternfly-react/pull/6610))
 - **Jump links:** 
   - Fixed to always set clicked item as active ([#6542](https://github.com/patternfly/patternfly-react/pull/6542))
 - **Menu:**
   - Fixed to stop passing disableHover to DrilldownMenu DOM ([#6571](https://github.com/patternfly/patternfly-react/pull/6571))
+  - Fixed to allow maxMenuHeight with scrollable ([#6608](https://github.com/patternfly/patternfly-react/pull/6608))
 - **Modal:**
   - Added example of modal with form ([#6557](https://github.com/patternfly/patternfly-react/pull/6557))
 - **Navigation:**
