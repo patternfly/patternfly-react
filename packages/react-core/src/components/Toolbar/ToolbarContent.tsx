@@ -16,7 +16,7 @@ export interface ToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
-  /** Deprecated: prop misspelled */
+  /** @deprecated prop misspelled */
   visiblity?: {
     default?: 'hidden' | 'visible';
     md?: 'hidden' | 'visible';

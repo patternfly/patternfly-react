@@ -254,7 +254,7 @@ export interface IRow extends RowType {
   isLastVisible?: boolean;
   /** Whether the row checkbox/radio button is selected */
   selected?: boolean;
-  /** deprecated - Use disableSelection instead - Whether the row checkbox is disabled */
+  /** @deprecated Use disableSelection instead - Whether the row checkbox is disabled */
   disableCheckbox?: boolean;
   /** Whether the row checkbox/radio button is disabled */
   disableSelection?: boolean;
