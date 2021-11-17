@@ -123,7 +123,7 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   dropDirection?: 'up' | 'down';
   /** Object with titles to display in pagination. */
   titles?: PaginationTitles;
-  /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex, itemCount, itemsTitle props. */
+  /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex, itemCount, itemsTitle, ofWord props. */
   toggleTemplate?: ((props: ToggleTemplateProps) => React.ReactElement) | string;
   /** Function called when user sets page. */
   onSetPage?: OnSetPage;
