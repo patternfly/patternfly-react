@@ -14,7 +14,7 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   component?: keyof JSX.IntrinsicElements;
   /** Modifies the card to include hover styles on :hover */
   isHoverable?: boolean;
-  /** Modifies the card to include hoverable-raised styles on :hover, this styling is included by default with isSelectableRaised */
+  /** @beta Modifies the card to include hoverable-raised styles on :hover, this styling is included by default with isSelectableRaised */
   isHoverableRaised?: boolean;
   /** Modifies the card to include compact styling. Should not be used with isLarge. */
   isCompact?: boolean;
@@ -22,9 +22,9 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isSelectable?: boolean;
   /** Modifies the card to include selected styling */
   isSelected?: boolean;
-  /** Modifies the card to include selectable-raised styling and hoverable-raised styling */
+  /** @beta Modifies the card to include selectable-raised styling and hoverable-raised styling */
   isSelectableRaised?: boolean;
-  /** Modifies the card to include selected-raised styling */
+  /** @beta Modifies the card to include selected-raised styling */
   isSelectedRaised?: boolean;
   /** Modifies the card to include flat styling */
   isFlat?: boolean;
