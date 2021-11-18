@@ -129,3 +129,28 @@ class MenuToggleCollapsed extends React.Component {
   }
 }
 ```
+### Plain with text
+
+```js
+import React from 'react';
+import { MenuToggle } from '@patternfly/react-core';
+
+class MenuToggleCollapsed extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <MenuToggle variant="plainText" isDisabled aria-label="Disabled plain menu toggle">
+          Disabled
+        </MenuToggle>
+        &nbsp;
+        <MenuToggle variant="plainText" aria-label="Plain menu toggle">
+          Custom text
+        </MenuToggle>
+        <MenuToggle variant="plainText" isExpanded aria-label="Expanded plain menu toggle">
+          Custom text (expanded)
+        </MenuToggle>
+      </React.Fragment>
+    );
+  }
+}
+```

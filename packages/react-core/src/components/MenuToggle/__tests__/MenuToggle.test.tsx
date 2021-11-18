@@ -40,6 +40,11 @@ describe('menu toggle', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('shows plain text', () => {
+    const view = mount(<MenuToggle variant="plainText">Toggle</MenuToggle>);
+    expect(view).toMatchSnapshot();
+  });
+
   test('shows icon', () => {
     const view = mount(<MenuToggle icon={<CogIcon />}>Toggle</MenuToggle>);
     expect(view).toMatchSnapshot();
