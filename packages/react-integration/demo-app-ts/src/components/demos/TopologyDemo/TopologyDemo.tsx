@@ -12,7 +12,18 @@ import { ContextMenuOnNode, ControlledContextMenu, UncontrolledContextMenu } fro
 import { Topology, WithResizableSideBar, WithSideBar } from './TopologyPackage';
 import { ComplexGroup } from './Groups';
 import { CollapsibleGroups } from './CollapsibleGroups';
-import { NodeHoverStyles, NodeSelectedStyles, NodeStyles } from './Styles';
+import {
+  NodeHoverStyles,
+  NodeLabelHoverStyles,
+  NodeLabelSelectedStyles,
+  NodeLabelStyles,
+  NodeHorizontalLabelStyles,
+  NodeSelectedStyles,
+  NodeStyles,
+  NodeBadgedLabelStyles,
+  NodeContextMenuLabelStyles,
+  NodeIconLabelStyles
+} from './Styles';
 
 import './TopologyDemo.css';
 
@@ -32,14 +43,21 @@ const COLLAPSIBLE_GROUPS = 11;
 export const TopologyDemo: React.FC = () => {
   const [activeKey, setActiveKey] = React.useState<number>(STYLES);
   const [activeSecondaryKey, setActiveSecondaryKey] = React.useState<number>(0);
+  const [activeTertiaryKey, setActiveTertiaryKey] = React.useState<number>(0);
 
   const handleTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number) => {
     setActiveKey(tabIndex);
     setActiveSecondaryKey(0);
+    setActiveTertiaryKey(0);
   };
 
   const handleSecondaryTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number) => {
     setActiveSecondaryKey(tabIndex);
+    setActiveTertiaryKey(0);
+  };
+
+  const handleTertiaryTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number) => {
+    setActiveTertiaryKey(tabIndex);
   };
 
   return (
@@ -70,13 +88,42 @@ export const TopologyDemo: React.FC = () => {
         <Tab eventKey={STYLES} title={<TabTitleText>Styles</TabTitleText>}>
           <Tabs unmountOnExit activeKey={activeSecondaryKey} onSelect={handleSecondaryTabClick}>
             <Tab eventKey={0} title={<TabTitleText>Nodes</TabTitleText>}>
-              <NodeStyles />
+              <Tabs unmountOnExit activeKey={activeTertiaryKey} onSelect={handleTertiaryTabClick}>
+                <Tab eventKey={0} title={<TabTitleText>Nodes</TabTitleText>}>
+                  <NodeStyles />
+                </Tab>
+                <Tab eventKey={1} title={<TabTitleText>Hover Nodes</TabTitleText>}>
+                  <NodeHoverStyles />
+                </Tab>
+                <Tab eventKey={2} title={<TabTitleText>Selected Nodes</TabTitleText>}>
+                  <NodeSelectedStyles />
+                </Tab>
+              </Tabs>
             </Tab>
-            <Tab eventKey={1} title={<TabTitleText>Hover Nodes</TabTitleText>}>
-              <NodeHoverStyles />
-            </Tab>
-            <Tab eventKey={2} title={<TabTitleText>Selected Nodes</TabTitleText>}>
-              <NodeSelectedStyles />
+            <Tab eventKey={1} title={<TabTitleText>Labels</TabTitleText>}>
+              <Tabs unmountOnExit activeKey={activeTertiaryKey} onSelect={handleTertiaryTabClick}>
+                <Tab eventKey={0} title={<TabTitleText>Node Labels</TabTitleText>}>
+                  <NodeLabelStyles />
+                </Tab>
+                <Tab eventKey={1} title={<TabTitleText>Hover Labels</TabTitleText>}>
+                  <NodeLabelHoverStyles />
+                </Tab>
+                <Tab eventKey={2} title={<TabTitleText>Selected Labels</TabTitleText>}>
+                  <NodeLabelSelectedStyles />
+                </Tab>
+                <Tab eventKey={3} title={<TabTitleText>Horizontal Labels</TabTitleText>}>
+                  <NodeHorizontalLabelStyles />
+                </Tab>
+                <Tab eventKey={4} title={<TabTitleText>Badged Labels</TabTitleText>}>
+                  <NodeBadgedLabelStyles />
+                </Tab>
+                <Tab eventKey={5} title={<TabTitleText>Context Menu Labels</TabTitleText>}>
+                  <NodeContextMenuLabelStyles />
+                </Tab>
+                <Tab eventKey={6} title={<TabTitleText>Icon Labels</TabTitleText>}>
+                  <NodeIconLabelStyles />
+                </Tab>
+              </Tabs>
             </Tab>
           </Tabs>
         </Tab>

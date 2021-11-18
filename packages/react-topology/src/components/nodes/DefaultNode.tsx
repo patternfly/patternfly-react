@@ -17,8 +17,11 @@ import {
 } from '../../behavior';
 import Decorator, { TopologyDecoratorQuadrant } from '../decorators/Decorator';
 import { createSvgIdUrl, useCombineRefs, useHover, WithStatusProps } from '../../utils';
-import NodeShadows, { NODE_SHADOW_FILTER_ID_DANGER, NODE_SHADOW_FILTER_ID_HOVER } from './NodeShadows';
 import { WithNodeShapeProps } from '../../utils/useCustomNodeShape';
+import { LabelPosition, WithLabelProps } from '../../utils/useLabel';
+import { WithBadgeProps } from '../../utils/useBadge';
+import NodeLabel from './labels/NodeLabel';
+import NodeShadows, { NODE_SHADOW_FILTER_ID_DANGER, NODE_SHADOW_FILTER_ID_HOVER } from './NodeShadows';
 import { getShapeComponent } from './shapes';
 
 const StatusClass = {
@@ -51,7 +54,9 @@ type DefaultNodeProps = {
   edgeDragging?: boolean;
   dropTarget?: boolean;
 } & WithSelectionProps &
+  WithLabelProps &
   WithStatusProps &
+  WithBadgeProps &
   WithNodeShapeProps &
   WithDragNodeProps &
   WithDndDragProps &
@@ -63,8 +68,18 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
   element,
   selected,
   hover,
+  showLabel = true,
+  label,
+  labelPosition = LabelPosition.bottom,
+  truncateLength,
+  labelIconClass,
   showStatusDecorator = false,
   onStatusDecoratorClick,
+  badge,
+  badgeColor,
+  badgeTextColor,
+  badgeBorderColor,
+  badgeClassName,
   getCustomShape,
   onSelect,
   dragNodeRef,
@@ -75,7 +90,8 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
   dndDropRef,
   onHideCreateConnector,
   onShowCreateConnector,
-  onContextMenu
+  onContextMenu,
+  contextMenuOpen
 }) => {
   const [hovered, hoverRef] = useHover();
   const shape = element.getNodeShape();
@@ -131,7 +147,7 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
         </g>
       </Decorator>
     );
-  }, [status, showStatusDecorator, width, height, onStatusDecoratorClick, element]);
+  }, [status, showStatusDecorator, width, height, shape, onStatusDecoratorClick, element]);
 
   const ShapeComponent = (getCustomShape && getCustomShape()) || getShapeComponent(shape) || null;
 
@@ -155,6 +171,29 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
           />
         )}
         {statusDecorator}
+        {showLabel && (label || element.getLabel()) && (
+          <NodeLabel
+            className={css(styles.topologyNodeLabel)}
+            x={labelPosition === LabelPosition.right ? width + 8 : width / 2}
+            y={labelPosition === LabelPosition.right ? height / 2 : height + 6}
+            position={labelPosition}
+            paddingX={8}
+            paddingY={4}
+            truncateLength={truncateLength}
+            status={status}
+            badge={badge}
+            badgeColor={badgeColor}
+            badgeTextColor={badgeTextColor}
+            badgeBorderColor={badgeBorderColor}
+            badgeClassName={badgeClassName}
+            onContextMenu={onContextMenu}
+            contextMenuOpen={contextMenuOpen}
+            hover={isHover}
+            labelIconClass={labelIconClass}
+          >
+            {label || element.getLabel()}
+          </NodeLabel>
+        )}
       </g>
     </g>
   );

@@ -27,7 +27,6 @@ const Rectangle: React.FC<ShapeProps> = ({
       ref={refs}
       x={0}
       y={0}
-      rx="15"
       width={width}
       height={height}
       filter={filter}

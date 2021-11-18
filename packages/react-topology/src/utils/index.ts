@@ -10,4 +10,6 @@ export { default as useHover } from './useHover';
 export * from './useCustomNodeShape';
 export * from './useSize';
 export * from './useStatus';
+export * from './useLabel';
+export * from './useBadge';
 export * from './createAggregateEdges';

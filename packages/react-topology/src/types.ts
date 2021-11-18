@@ -30,11 +30,11 @@ export interface NodeStyle {
 }
 
 export enum NodeShape {
-  circle,
-  rect,
-  triangle,
-  hexagon,
-  octagon
+  circle = 'circle',
+  rect = 'rect',
+  triangle = 'triangle',
+  hexagon = 'hexagon',
+  octagon = 'octagon'
 }
 
 export enum NodeStatus {
