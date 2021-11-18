@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.13.7 (2021-11-18)
+
+
+### Bug Fixes
+
+* **pagination:** updated toggleTemplate prop description to include ofWord prop ([#6622](https://github.com/patternfly/patternfly-react/issues/6622)) ([26733a6](https://github.com/patternfly/patternfly-react/commit/26733a6a256ad0e873afbc268a712027470fdeaa))
+
+
+
+
+
 ## 4.13.6 (2021-11-18)
 
 **Note:** Version bump only for package transformer-cjs-imports
