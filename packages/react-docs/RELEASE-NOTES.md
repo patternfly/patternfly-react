@@ -22,8 +22,6 @@ section: developer-resources
   - Updated to allow disabling FocusTrap ([#6509](https://github.com/patternfly/patternfly-react/pull/6509))
 - **Banner:**
   - Updated to forward props ([#6511](https://github.com/patternfly/patternfly-react/pull/6511))
-- **Calendar month:**
-  - Added Date/time picker demo ([#6545](https://github.com/patternfly/patternfly-react/pull/6545))
 - **Card:**
   - Added hoverable, selectable and selected-raised variant ([#6565](https://github.com/patternfly/patternfly-react/pull/6565))
 - **Context selector:**
@@ -85,6 +83,8 @@ section: developer-resources
 - Added option to hide topology connector menu on drag end ([#6522](https://github.com/patternfly/patternfly-react/pull/6522))
 
 ### Other
+- **Demos:**
+  - Added date/time picker demo ([#6545](https://github.com/patternfly/patternfly-react/pull/6545))
 - **Deps:**
   - Update dependency theme-patternfly-org to v0.8.7 ([#6584](https://github.com/patternfly/patternfly-react/pull/6584))
 
