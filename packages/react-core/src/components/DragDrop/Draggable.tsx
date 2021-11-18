@@ -5,7 +5,9 @@ import { DroppableContext } from './DroppableContext';
 import { DragDropContext } from './DragDrop';
 
 export const DraggableContext = React.createContext({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setHasDragButtons: (hasDragButtons: boolean) => {},
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onKeyDown: (e: React.KeyboardEvent) => {}
 });
 
@@ -101,6 +103,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   let index: number = null; // Index of this draggable
   let mouseMoveListener: EventListener;
   let mouseUpListener: EventListener;
+  let hasMouseUpListener: boolean = false;
   // Makes it so dragging the _bottom_ of the item over the halfway of another moves it
   let startYOffset = 0;
 
@@ -123,19 +126,60 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     const dest =
       hoveringDroppableId !== null && hoveringIndex !== null
         ? {
-          droppableId: hoveringDroppableId,
-          index: hoveringIndex
-        }
+            droppableId: hoveringDroppableId,
+            index: hoveringIndex
+          }
         : undefined;
     return { source, dest, hoveringDroppableId };
   }
 
-  const onMouseUpWhileDragging = (droppableItems: DroppableItem[], hoveringIndex: number, hoveringDroppable: HTMLElement) => {
+  const onMouseUpWhileDragging = (
+    ev: MouseEvent,
+    droppableItems: DroppableItem[],
+    hoveringIndex: number,
+    hoveringDroppable: HTMLElement,
+    blankDivRect: DOMRect,
+    startY: number
+  ) => {
+    // Compute each time what droppable node we are hovering over
+    let newHoveringDroppable = null as HTMLElement;
+    droppableItems.forEach(droppableItem => {
+      const { node, rect } = droppableItem;
+      if (overlaps(ev, rect)) {
+        newHoveringDroppable = node;
+      }
+    });
+    setIsValidDrag(Boolean(newHoveringDroppable));
+
+    let newHoveringIndex: number = null;
+    if (newHoveringDroppable) {
+      const { draggableNodes, draggableNodesRects } = droppableItems.find(item => item.node === newHoveringDroppable);
+      const lastTranslate = 0;
+      draggableNodes.forEach((n, i) => {
+        const rect = draggableNodesRects[i];
+        const halfway = rect.y + rect.height / 2;
+        let translateY = 0;
+        // Use offset for more interactive translations
+        if (startY < halfway && ev.clientY + (blankDivRect.height - startYOffset) > halfway) {
+          translateY -= blankDivRect.height;
+        } else if (startY >= halfway && ev.clientY - startYOffset <= halfway) {
+          translateY += blankDivRect.height;
+        }
+        // Clever way to find item currently hovering over
+        if ((translateY <= lastTranslate && translateY < 0) || (translateY > lastTranslate && translateY > 0)) {
+          newHoveringIndex = i;
+        }
+      });
+    }
+
     droppableItems.forEach(resetDroppableItem);
     document.removeEventListener('mousemove', mouseMoveListener);
     document.removeEventListener('mouseup', mouseUpListener);
     document.removeEventListener('contextmenu', mouseUpListener);
-    const { source, dest, hoveringDroppableId } = getSourceAndDest(hoveringIndex, hoveringDroppable);
+    const { source, dest, hoveringDroppableId } = getSourceAndDest(
+      newHoveringIndex || hoveringIndex,
+      newHoveringDroppable || hoveringDroppable
+    );
     const consumerReordered = onDrop(source, dest);
     if (consumerReordered && droppableId === hoveringDroppableId) {
       setIsDraggingUsingMouse(false);
@@ -154,7 +198,12 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
   };
 
   // This is where the magic happens
-  const onMouseMoveWhileDragging = (ev: MouseEvent, droppableItems: DroppableItem[], blankDivRect: DOMRect, startingCoordinates?: {startX: number, startY: number}) => {
+  const onMouseMoveWhileDragging = (
+    ev: MouseEvent,
+    droppableItems: DroppableItem[],
+    blankDivRect: DOMRect,
+    startingCoordinates?: { startX: number; startY: number }
+  ) => {
     const { startX, startY } = startingCoordinates;
     // Compute each time what droppable node we are hovering over
     let newHoveringDroppable = null as HTMLElement;
@@ -231,11 +280,22 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     }
     const { source, dest } = getSourceAndDest(newHoveringIndex, newHoveringDroppable);
     onDragMove(source, dest);
-    mouseUpListener = () => onMouseUpWhileDragging(droppableItems, newHoveringIndex, newHoveringDroppable);
-    document.addEventListener('mouseup', mouseUpListener);
+    if (!hasMouseUpListener) {
+      mouseUpListener = e =>
+        onMouseUpWhileDragging(
+          e as MouseEvent,
+          droppableItems,
+          newHoveringIndex,
+          newHoveringDroppable,
+          blankDivRect,
+          startY
+        );
+      document.addEventListener('mouseup', mouseUpListener);
+      hasMouseUpListener = true;
+    }
   };
 
-  const calculateBounds = (ev: React.DragEvent<HTMLElement> | React.KeyboardEvent) => {
+  const calculateBounds = (ev: React.DragEvent<HTMLElement> | React.KeyboardEvent | MouseEvent) => {
     // Cache droppable and draggable nodes and their bounding rects
     const dragging = ev.target as HTMLElement;
     const rect = dragging.getBoundingClientRect();
@@ -298,7 +358,8 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     startYOffset = ev.clientY - rect.y;
     setIsDraggingUsingMouse(true);
     setIsDragging(true);
-    mouseMoveListener = e => onMouseMoveWhileDragging(e as MouseEvent, droppableItems, rect, {startX: ev.clientX, startY: ev.clientY});
+    mouseMoveListener = e =>
+      onMouseMoveWhileDragging(e as MouseEvent, droppableItems, rect, { startX: ev.clientX, startY: ev.clientY });
     document.addEventListener('mousemove', mouseMoveListener);
     // Comment out this line to debug while dragging by right clicking
     // document.addEventListener('contextmenu', mouseUpListener);
@@ -333,7 +394,7 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     document.addEventListener('click', () => endDragUsingKeyboard(true));
     return () => {
       document.removeEventListener('click', () => endDragUsingKeyboard(true));
-    }
+    };
   }, [isDraggingUsingKeyboard]);
 
   const onKeyDown = (e: React.KeyboardEvent) => {
@@ -359,9 +420,9 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
           let hoveringDroppable = null as HTMLElement;
           droppableItems.forEach(droppableItem => {
             const { node, rect } = droppableItem;
-            const fakeMouseEvent = new MouseEvent("mousemove", { clientX: rect.x + 1, clientY: rect.y });
+            const fakeMouseEvent = new MouseEvent('mousemove', { clientX: rect.x + 1, clientY: rect.y });
             if (overlaps(fakeMouseEvent, rect)) {
-              hoveringDroppable = node
+              hoveringDroppable = node;
             }
           });
           const { draggableNodes, draggableNodesRects } = droppableItems.find(item => item.node === hoveringDroppable);
@@ -384,13 +445,15 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
             n.style.transform = `translate(0, ${translateY}px`;
             lastTranslate = translateY;
           });
-          onMouseUpWhileDragging(droppableItems, hoveringIndex, hoveringDroppable);
+          const { rect } = calculateBounds(e);
+          const fakeMouseEvent = new MouseEvent('mousemove', { clientX: rect.x + 1, clientY: rect.y });
+          onMouseUpWhileDragging(fakeMouseEvent, droppableItems, hoveringIndex, hoveringDroppable, rect, rect.y);
         }
       } else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
         const { droppableItems, rect } = calculateBounds(e);
         const newClientY = e.key === 'ArrowUp' ? rect.y - rect.height : rect.y + rect.height;
-        const fakeMouseEvent = new MouseEvent("mousemove", { clientX: rect.x + 1, clientY: newClientY });
-        onMouseMoveWhileDragging(fakeMouseEvent, droppableItems, rect, {startX: rect.x, startY: rect.y});
+        const fakeMouseEvent = new MouseEvent('mousemove', { clientX: rect.x + 1, clientY: newClientY });
+        onMouseMoveWhileDragging(fakeMouseEvent, droppableItems, rect, { startX: rect.x, startY: rect.y });
         e.preventDefault();
       }
     } else if (!isDragging) {
@@ -434,12 +497,12 @@ export const Draggable: React.FunctionComponent<DraggableProps> = ({
     onDragStart,
     onTransitionEnd,
     style,
-    ...(!hasDragButtons && {onKeyDown, tabIndex: 0}),
+    ...(!hasDragButtons && { onKeyDown, tabIndex: 0 }),
     ...props
   };
 
   return (
-    <DraggableContext.Provider value={{setHasDragButtons, onKeyDown}}>
+    <DraggableContext.Provider value={{ setHasDragButtons, onKeyDown }}>
       {/* Leave behind blank spot per-design */}
       {isDraggingUsingMouse && (
         <div draggable {...props} style={{ ...styleProp, visibility: 'hidden' }}>
