@@ -1194,3 +1194,69 @@ exports[`slider renders slider with input actions 1`] = `
   </div>
 </Slider>
 `;
+
+exports[`slider renders slider with tooltip on thumb 1`] = `
+<div
+  className="pf-c-slider"
+  style={
+    Object {
+      "--pf-c-slider--value": "50%",
+      "--pf-c-slider__value--c-form-control--width-chars": 1,
+    }
+  }
+>
+  <div
+    className="pf-c-slider__main"
+  >
+    <div
+      className="pf-c-slider__rail"
+      onClick={[Function]}
+    >
+      <div
+        className="pf-c-slider__rail-track"
+      />
+    </div>
+    <div
+      aria-hidden="true"
+      className="pf-c-slider__steps"
+    >
+      <SliderStep
+        isActive={true}
+        isLabelHidden={false}
+        isTickHidden={true}
+        key="0"
+        label="0"
+        value={0}
+      />
+      <SliderStep
+        isActive={false}
+        isLabelHidden={false}
+        isTickHidden={true}
+        key="100"
+        label="100"
+        value={100}
+      />
+    </div>
+    <Tooltip
+      content="50"
+      entryDelay={0}
+    >
+      <div
+        aria-disabled={false}
+        aria-label="Value"
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={50}
+        aria-valuetext="50"
+        className="pf-c-slider__thumb"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchStart={[Function]}
+        role="slider"
+        tabIndex={0}
+      />
+    </Tooltip>
+  </div>
+</div>
+`;
