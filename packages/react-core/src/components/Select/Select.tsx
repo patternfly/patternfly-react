@@ -934,7 +934,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 }
               }}
               ref={this.filterRef}
-              autoComplete="off"
+              autoComplete="never"
             />
           </div>
           <Divider key="inline-filter-divider" />
@@ -1128,7 +1128,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   type="text"
                   onClick={this.onClick}
                   onChange={this.onChange}
-                  autoComplete="off"
+                  autoComplete="never"
                   disabled={isDisabled}
                   ref={this.inputRef}
                 />
@@ -1152,7 +1152,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   type="text"
                   onChange={this.onChange}
                   onClick={this.onClick}
-                  autoComplete="off"
+                  autoComplete="never"
                   disabled={isDisabled}
                   ref={this.inputRef}
                 />
