@@ -23,7 +23,7 @@ export interface FileUploadProps
   value?: string | File;
   /** Value to be shown in the read-only filename field. */
   filename?: string;
-  /** *(deprecated)* A callback for when the file contents change. Please instead use onFileInputChange, onTextChange, onDataChange, onClearClick individually.  */
+  /** @deprecated A callback for when the file contents change. Please instead use onFileInputChange, onTextChange, onDataChange, onClearClick individually.  */
   onChange?: (
     value: string | File,
     filename: string,
