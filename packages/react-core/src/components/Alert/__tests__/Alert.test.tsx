@@ -36,6 +36,15 @@ Object.values(AlertVariant).forEach(variant => {
       expect(view).toMatchSnapshot();
     });
 
+    test('Heading level', () => {
+      const view = mount(
+        <Alert variant={variant} title="Some title" titleHeadingLevel="h1">
+          Some alert
+        </Alert>
+      );
+      expect(view).toMatchSnapshot();
+    });
+
     test('Action Link', () => {
       const view = mount(
         <Alert variant={variant} actionLinks={[<AlertActionLink key={'action-1'}>test</AlertActionLink>]} title="">

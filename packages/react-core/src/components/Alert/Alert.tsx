@@ -27,6 +27,8 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   isPlain?: boolean;
   /** Title of the alert  */
   title: React.ReactNode;
+  /** Sets the heading level to use for the alert title. Default is h4. */
+  titleHeadingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   /** Close button; use the alertActionCloseButton component  */
   actionClose?: React.ReactNode;
   /** Action links; use a single alertActionLink component or multiple wrapped in an array or React.Fragment */
@@ -69,6 +71,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   actionClose,
   actionLinks,
   title,
+  titleHeadingLevel: TitleHeadingLevel = 'h4',
   children = '',
   className = '',
   ouiaId,
@@ -165,13 +168,13 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     return null;
   }
   const Title = (
-    <h4
+    <TitleHeadingLevel
       {...(isTooltipVisible && { tabIndex: 0 })}
       ref={titleRef}
       className={css(styles.alertTitle, truncateTitle && styles.modifiers.truncate)}
     >
       {getHeadingContent}
-    </h4>
+    </TitleHeadingLevel>
   );
 
   return (
