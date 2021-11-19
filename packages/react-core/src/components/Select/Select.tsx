@@ -381,7 +381,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         typeaheadFilteredChildren =
           typeaheadInputValue.toString() !== ''
             ? React.Children.map(children, group => {
-                if (group.type === SelectGroup) {
+                if (React.isValidElement(group) && group.type === SelectGroup) {
                   const filteredGroupChildren = (React.Children.toArray(group.props.children) as React.ReactElement<
                     SelectGroupProps
                   >[]).filter(childFilter);
