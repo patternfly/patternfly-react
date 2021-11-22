@@ -55,179 +55,177 @@ export const yyyyMMddFormat = (date: Date) =>
     .toString()
     .padStart(2, '0')}`;
 
-export const DatePicker = React.forwardRef<DatePickerRef, DatePickerProps>(
-  (
-    {
-      className,
-      locale = undefined,
-      dateFormat = yyyyMMddFormat,
-      dateParse = (val: string) => val.split('-').length === 3 && new Date(`${val}T00:00:00`),
-      isDisabled = false,
-      placeholder = 'YYYY-MM-DD',
-      value: valueProp = '',
-      'aria-label': ariaLabel = 'Date picker',
-      buttonAriaLabel = 'Toggle date picker',
-      onChange = (): any => undefined,
-      invalidFormatText = 'Invalid date',
-      helperText,
-      appendTo,
-      popoverProps,
-      monthFormat,
-      weekdayFormat,
-      longWeekdayFormat,
-      dayFormat,
-      weekStart,
-      validators = [],
-      rangeStart,
-      style: styleProps = {},
-      inputProps = {},
-      ...props
-    }: DatePickerProps,
-    ref
-  ) => {
-    const [value, setValue] = React.useState(valueProp);
-    const [valueDate, setValueDate] = React.useState(dateParse(value));
-    const [errorText, setErrorText] = React.useState('');
-    const [popoverOpen, setPopoverOpen] = React.useState(false);
-    const [selectOpen, setSelectOpen] = React.useState(false);
-    const [pristine, setPristine] = React.useState(true);
-    const widthChars = React.useMemo(() => Math.max(dateFormat(new Date()).length, placeholder.length), [dateFormat]);
-    const style = { '--pf-c-date-picker__input--c-form-control--width-chars': widthChars, ...styleProps };
-    const buttonRef = React.useRef<HTMLButtonElement>();
+const DatePickerBase = (
+  {
+    className,
+    locale = undefined,
+    dateFormat = yyyyMMddFormat,
+    dateParse = (val: string) => val.split('-').length === 3 && new Date(`${val}T00:00:00`),
+    isDisabled = false,
+    placeholder = 'YYYY-MM-DD',
+    value: valueProp = '',
+    'aria-label': ariaLabel = 'Date picker',
+    buttonAriaLabel = 'Toggle date picker',
+    onChange = (): any => undefined,
+    invalidFormatText = 'Invalid date',
+    helperText,
+    appendTo,
+    popoverProps,
+    monthFormat,
+    weekdayFormat,
+    longWeekdayFormat,
+    dayFormat,
+    weekStart,
+    validators = [],
+    rangeStart,
+    style: styleProps = {},
+    inputProps = {},
+    ...props
+  }: DatePickerProps,
+  ref: React.Ref<DatePickerRef>
+) => {
+  const [value, setValue] = React.useState(valueProp);
+  const [valueDate, setValueDate] = React.useState(dateParse(value));
+  const [errorText, setErrorText] = React.useState('');
+  const [popoverOpen, setPopoverOpen] = React.useState(false);
+  const [selectOpen, setSelectOpen] = React.useState(false);
+  const [pristine, setPristine] = React.useState(true);
+  const widthChars = React.useMemo(() => Math.max(dateFormat(new Date()).length, placeholder.length), [dateFormat]);
+  const style = { '--pf-c-date-picker__input--c-form-control--width-chars': widthChars, ...styleProps };
+  const buttonRef = React.useRef<HTMLButtonElement>();
 
-    React.useEffect(() => {
-      setValue(valueProp);
-      setValueDate(dateParse(valueProp));
-    }, [valueProp]);
+  React.useEffect(() => {
+    setValue(valueProp);
+    setValueDate(dateParse(valueProp));
+  }, [valueProp]);
 
-    const setError = (date: Date) => setErrorText(validators.map(validator => validator(date)).join('\n') || '');
+  const setError = (date: Date) => setErrorText(validators.map(validator => validator(date)).join('\n') || '');
 
-    const onTextInput = (value: string) => {
-      setPristine(false);
-      setValue(value);
-      setErrorText('');
-      const newValueDate = dateParse(value);
-      setValueDate(newValueDate);
-      if (isValidDate(newValueDate)) {
-        onChange(value, new Date(newValueDate));
-      } else {
-        onChange(value);
-      }
-    };
+  const onTextInput = (value: string) => {
+    setPristine(false);
+    setValue(value);
+    setErrorText('');
+    const newValueDate = dateParse(value);
+    setValueDate(newValueDate);
+    if (isValidDate(newValueDate)) {
+      onChange(value, new Date(newValueDate));
+    } else {
+      onChange(value);
+    }
+  };
 
-    const onInputBlur = () => {
-      if (pristine) {
-        return;
-      }
-      const newValueDate = dateParse(value);
-      if (isValidDate(newValueDate)) {
-        setError(newValueDate);
+  const onInputBlur = () => {
+    if (pristine) {
+      return;
+    }
+    const newValueDate = dateParse(value);
+    if (isValidDate(newValueDate)) {
+      setError(newValueDate);
+    } else {
+      setErrorText(invalidFormatText);
+    }
+  };
+
+  const onDateClick = (newValueDate: Date) => {
+    const newValue = dateFormat(newValueDate);
+    setValue(newValue);
+    setValueDate(newValueDate);
+    setError(newValueDate);
+    setPopoverOpen(false);
+    onChange(newValue, new Date(newValueDate));
+  };
+
+  const onKeyPress = (ev: React.KeyboardEvent<HTMLInputElement>) => {
+    if (ev.key === 'Enter' && value) {
+      if (isValidDate(valueDate)) {
+        setError(valueDate);
       } else {
         setErrorText(invalidFormatText);
       }
-    };
+    }
+  };
 
-    const onDateClick = (newValueDate: Date) => {
-      const newValue = dateFormat(newValueDate);
-      setValue(newValue);
-      setValueDate(newValueDate);
-      setError(newValueDate);
-      setPopoverOpen(false);
-      onChange(newValue, new Date(newValueDate));
-    };
+  useImperativeHandle<DatePickerRef, DatePickerRef>(
+    ref,
+    () => ({
+      setCalendarOpen: (isOpen: boolean) => setPopoverOpen(isOpen),
+      toggleCalendar: () => setPopoverOpen(prev => !prev)
+    }),
+    [setPopoverOpen]
+  );
 
-    const onKeyPress = (ev: React.KeyboardEvent<HTMLInputElement>) => {
-      if (ev.key === 'Enter' && value) {
-        if (isValidDate(valueDate)) {
-          setError(valueDate);
-        } else {
-          setErrorText(invalidFormatText);
+  return (
+    <div className={css(styles.datePicker, className)} style={style} {...props}>
+      <Popover
+        position="bottom"
+        bodyContent={
+          <CalendarMonth
+            date={valueDate}
+            onChange={onDateClick}
+            locale={locale}
+            // Use truthy values of strings
+            validators={validators.map(validator => (date: Date) => !validator(date))}
+            onSelectToggle={open => setSelectOpen(open)}
+            monthFormat={monthFormat}
+            weekdayFormat={weekdayFormat}
+            longWeekdayFormat={longWeekdayFormat}
+            dayFormat={dayFormat}
+            weekStart={weekStart}
+            rangeStart={rangeStart}
+          />
         }
-      }
-    };
-
-    useImperativeHandle<DatePickerRef, DatePickerRef>(
-      ref,
-      () => ({
-        setCalendarOpen: (isOpen: boolean) => setPopoverOpen(isOpen),
-        toggleCalendar: () => setPopoverOpen(prev => !prev)
-      }),
-      [setPopoverOpen]
-    );
-
-    return (
-      <div className={css(styles.datePicker, className)} style={style} {...props}>
-        <Popover
-          position="bottom"
-          bodyContent={
-            <CalendarMonth
-              date={valueDate}
-              onChange={onDateClick}
-              locale={locale}
-              // Use truthy values of strings
-              validators={validators.map(validator => (date: Date) => !validator(date))}
-              onSelectToggle={open => setSelectOpen(open)}
-              monthFormat={monthFormat}
-              weekdayFormat={weekdayFormat}
-              longWeekdayFormat={longWeekdayFormat}
-              dayFormat={dayFormat}
-              weekStart={weekStart}
-              rangeStart={rangeStart}
-            />
+        showClose={false}
+        isVisible={popoverOpen}
+        shouldClose={(_1, _2, event) => {
+          event = event as KeyboardEvent;
+          // Let the select menu close
+          if (event.keyCode && event.keyCode === 27 && selectOpen) {
+            return false;
           }
-          showClose={false}
-          isVisible={popoverOpen}
-          shouldClose={(_1, _2, event) => {
-            event = event as KeyboardEvent;
-            // Let the select menu close
-            if (event.keyCode && event.keyCode === 27 && selectOpen) {
-              return false;
-            }
-            // Let our button handle toggling
-            if (buttonRef.current && buttonRef.current.contains(event.target as Node)) {
-              return false;
-            }
-            setPopoverOpen(false);
-            return true;
-          }}
-          withFocusTrap
-          hasNoPadding
-          hasAutoWidth
-          appendTo={appendTo}
-          {...popoverProps}
-        >
-          <div className={styles.datePickerInput}>
-            <InputGroup>
-              <TextInput
-                isDisabled={isDisabled}
-                aria-label={ariaLabel}
-                placeholder={placeholder}
-                validated={errorText ? 'error' : 'default'}
-                value={value}
-                onChange={onTextInput}
-                onBlur={onInputBlur}
-                onKeyPress={onKeyPress}
-                {...inputProps}
-              />
-              <button
-                ref={buttonRef}
-                className={css(buttonStyles.button, buttonStyles.modifiers.control)}
-                aria-label={buttonAriaLabel}
-                type="button"
-                onClick={() => setPopoverOpen(!popoverOpen)}
-                disabled={isDisabled}
-              >
-                <OutlinedCalendarAltIcon />
-              </button>
-            </InputGroup>
-          </div>
-        </Popover>
-        {helperText && <div className={styles.datePickerHelperText}>{helperText}</div>}
-        {errorText.trim() && (
-          <div className={css(styles.datePickerHelperText, styles.modifiers.error)}>{errorText}</div>
-        )}
-      </div>
-    );
-  }
-);
-DatePicker.displayName = 'DatePicker';
+          // Let our button handle toggling
+          if (buttonRef.current && buttonRef.current.contains(event.target as Node)) {
+            return false;
+          }
+          setPopoverOpen(false);
+          return true;
+        }}
+        withFocusTrap
+        hasNoPadding
+        hasAutoWidth
+        appendTo={appendTo}
+        {...popoverProps}
+      >
+        <div className={styles.datePickerInput}>
+          <InputGroup>
+            <TextInput
+              isDisabled={isDisabled}
+              aria-label={ariaLabel}
+              placeholder={placeholder}
+              validated={errorText ? 'error' : 'default'}
+              value={value}
+              onChange={onTextInput}
+              onBlur={onInputBlur}
+              onKeyPress={onKeyPress}
+              {...inputProps}
+            />
+            <button
+              ref={buttonRef}
+              className={css(buttonStyles.button, buttonStyles.modifiers.control)}
+              aria-label={buttonAriaLabel}
+              type="button"
+              onClick={() => setPopoverOpen(!popoverOpen)}
+              disabled={isDisabled}
+            >
+              <OutlinedCalendarAltIcon />
+            </button>
+          </InputGroup>
+        </div>
+      </Popover>
+      {helperText && <div className={styles.datePickerHelperText}>{helperText}</div>}
+      {errorText.trim() && <div className={css(styles.datePickerHelperText, styles.modifiers.error)}>{errorText}</div>}
+    </div>
+  );
+};
+
+export const DatePicker = React.forwardRef<DatePickerRef, DatePickerProps>(DatePickerBase);
+DatePicker.displayName = 'DatePickerBase';
