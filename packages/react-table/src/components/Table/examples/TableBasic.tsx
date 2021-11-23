@@ -77,7 +77,7 @@ export const TableBasic: React.FunctionComponent = () => {
       </ToggleGroup>
       <Table
         aria-label="Simple Table"
-        variant={exampleChoice !== 'default' ? 'compact' : null}
+        variant={exampleChoice !== 'default' ? 'compact' : undefined}
         borders={exampleChoice !== 'compactBorderless'}
         cells={columns}
         rows={rows}

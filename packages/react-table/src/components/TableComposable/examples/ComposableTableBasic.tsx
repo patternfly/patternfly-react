@@ -59,7 +59,7 @@ export const ComposableTableBasic: React.FunctionComponent = () => {
       </ToggleGroup>
       <TableComposable
         aria-label="Simple table"
-        variant={exampleChoice !== 'default' ? 'compact' : null}
+        variant={exampleChoice !== 'default' ? 'compact' : undefined}
         borders={exampleChoice !== 'compactBorderless'}
       >
         <Caption>Simple table using composable components</Caption>
