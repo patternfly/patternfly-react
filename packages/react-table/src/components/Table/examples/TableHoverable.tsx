@@ -79,7 +79,7 @@ export const TableHoverable: React.FunctionComponent = () => {
     }
   ];
   const rows: TableProps['rows'] = repositories.map(repo => {
-    let cells: (string | ICell)[] = [repo.name, repo.branches, repo.prs, repo.workspaces, repo.lastCommit];
+    let cells: (string | ICell)[] = [repo.name, repo.branches || '', repo.prs || '', repo.workspaces, repo.lastCommit];
     // These rows have arbitrary differences for this example, but these could be based on some other conditions
     if (repo.name === 'one - 2') {
       cells = [
@@ -93,8 +93,8 @@ export const TableHoverable: React.FunctionComponent = () => {
     } else if (repo.name === 'five - 3 (not centrered)') {
       cells = [
         repo.name,
-        repo.branches,
-        repo.prs,
+        repo.branches || '',
+        repo.prs || '',
         repo.workspaces,
         {
           title: repo.lastCommit,
