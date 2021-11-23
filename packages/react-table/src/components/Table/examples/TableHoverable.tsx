@@ -114,8 +114,10 @@ export const TableHoverable: React.FunctionComponent = () => {
       <TableHeader className={styles.modifiers.nowrap} />
       <TableBody
         onRowClick={(_event, row, rowProps) => {
-          const repo = repositories[rowProps.rowIndex];
-          setRepoSelected(repo, !isRepoSelected(repo));
+          if (rowProps) {
+            const repo = repositories[rowProps.rowIndex];
+            setRepoSelected(repo, !isRepoSelected(repo));
+          }
         }}
       />
     </Table>
