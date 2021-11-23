@@ -1233,10 +1233,8 @@ import {
   Stack,
   StackItem,
   Divider,
-  Dropdown,
-  DropdownItem,
-  DropdownToggle,
-  DropdownSeparator
+  Select,
+  SelectOption
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import { Chart, ChartStack, ChartBar, ChartTooltip } from '@patternfly/react-charts';
@@ -1248,16 +1246,12 @@ import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_r
 const UtilizationCard3: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const dropdownItems = [
-    <DropdownItem key="link">Link</DropdownItem>,
-    <DropdownItem key="action" component="button">
-      Action
-    </DropdownItem>,
-    <DropdownItem key="disabled link" isDisabled href="www.google.com">
-      Disabled link
-    </DropdownItem>,
-    <DropdownSeparator key="separator" />,
-    <DropdownItem key="separated link">Separated link</DropdownItem>
+  const selectItems = [
+    <SelectOption value="Link" key="link" />,
+    <SelectOption value="Action" key="action" component="button" />,
+    <SelectOption value="Disabled link" key="disabled link" isDisabled />,
+    <Divider component="li" key="separator" />,
+    <SelectOption value="Separated link" key="separated link" />
   ];
 
   return (
@@ -1271,13 +1265,16 @@ const UtilizationCard3: React.FunctionComponent = () => {
               </Title>
             </CardTitle>
             <CardActions>
-              <Dropdown
+              <Select
                 onSelect={() => setIsOpen(!isOpen)}
-                toggle={<DropdownToggle onToggle={() => setIsOpen(!isOpen)}>Filter</DropdownToggle>}
+                onToggle={() => setIsOpen(!isOpen)}
                 isOpen={isOpen}
-                dropdownItems={dropdownItems}
+                placeholderText="Filter"
                 position="right"
-              />
+                isPlain
+              >
+                {selectItems}
+              </Select>
             </CardActions>
           </CardHeader>
           <CardBody>
@@ -2427,26 +2424,21 @@ import {
   GalleryItem,
   Flex,
   FlexItem,
-  Dropdown,
-  DropdownItem,
-  DropdownSeparator,
-  DropdownToggle
+  Divider,
+  Select,
+  SelectOption
 } from '@patternfly/react-core';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 const TrendCard1: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const dropdownItems = [
-    <DropdownItem key="link">Link</DropdownItem>,
-    <DropdownItem key="action" component="button">
-      Action
-    </DropdownItem>,
-    <DropdownItem key="disabled link" isDisabled href="www.google.com">
-      Disabled link
-    </DropdownItem>,
-    <DropdownSeparator key="separator" />,
-    <DropdownItem key="separated link">Separated link</DropdownItem>
+  const selectItems = [
+    <SelectOption value="Link" key="link" />,
+    <SelectOption value="Action" key="action" component="button" />,
+    <SelectOption value="Disabled link" key="disabled link" isDisabled />,
+    <Divider component="li" key="separator" />,
+    <SelectOption value="Separated link" key="separated link" />
   ];
   return (
     <Gallery hasGutter minWidths={{ default: '360px' }}>
@@ -2464,13 +2456,16 @@ const TrendCard1: React.FunctionComponent = () => {
               </FlexItem>
             </Flex>
             <CardActions>
-              <Dropdown
+              <Select
                 onSelect={() => setIsOpen(!isOpen)}
-                toggle={<DropdownToggle onToggle={() => setIsOpen(!isOpen)}>Filter</DropdownToggle>}
+                onToggle={() => setIsOpen(!isOpen)}
+                placeholderText="Filter"
                 isOpen={isOpen}
-                dropdownItems={dropdownItems}
                 position="right"
-              />
+                isPlain
+              >
+                {selectItems}
+              </Select>
             </CardActions>
           </CardHeader>
           <CardBody>
@@ -2600,39 +2595,28 @@ import {
   DescriptionListGroup,
   DescriptionListTerm,
   DescriptionListDescription,
-  Dropdown,
-  DropdownItem,
-  DropdownToggle,
+  Select,
+  SelectOption,
   Divider
 } from '@patternfly/react-core';
 
 CardLogViewDemo = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const onActionSelect = event => {
-    setIsDropdownOpen(!isDropdownOpen);
+    setIsOpen(!isOpen);
   };
 
   const onActionToggle = isOpen => {
-    setIsDropdownOpen(isOpen);
+    setIsOpen(isOpen);
   };
 
-  const dropdownItems = [
-    <DropdownItem key="action1" component="a">
-      Link
-    </DropdownItem>,
-    <DropdownItem key="action2" component="button">
-      Action
-    </DropdownItem>,
-    <DropdownItem key="disabled action3" isDisabled component="a">
-      Disabled link
-    </DropdownItem>,
-    <DropdownItem key="action4" component="button">
-      Disabled action
-    </DropdownItem>,
-    <DropdownItem key="action5" component="a">
-      Separated link
-    </DropdownItem>
+  const selectItems = [
+    <SelectOption value="Link" key="action1" component="a" />,
+    <SelectOption value="Action" key="action2" component="button" />,
+    <SelectOption value="Disabled link" key="disabled action3" isDisabled component="a"/>,
+    <Divider component="li" key="separator" />,
+    <SelectOption value="Separated link" key="action4" component="a" />
   ];
 
   return (
@@ -2640,13 +2624,16 @@ CardLogViewDemo = () => {
       <Card id="card-log-view-example">
         <CardHeader>
           <CardActions>
-            <Dropdown
+            <Select
               onSelect={onActionSelect}
-              toggle={<DropdownToggle onToggle={onActionToggle}>Most recent</DropdownToggle>}
-              isOpen={isDropdownOpen}
-              dropdownItems={dropdownItems}
+              onToggle={onActionToggle}
+              placeholderText="Most recent"
+              isOpen={isOpen}
               position="right"
-            />
+              isPlain
+            >
+              {selectItems}
+            </Select>
           </CardActions>
           <CardTitle>
             <Title headingLevel="h2" size="xl">
@@ -2721,41 +2708,30 @@ import {
   DescriptionListTerm,
   DescriptionListDescription,
   Spinner,
-  Dropdown,
-  DropdownItem,
-  DropdownToggle,
+  Select,
+  SelectOption,
   Divider
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 
 CardEventViewDemo = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const onActionSelect = event => {
-    setIsDropdownOpen(!isDropdownOpen);
+    setIsOpen(!isOpen);
   };
 
   const onActionToggle = isOpen => {
-    setIsDropdownOpen(isOpen);
+    setIsOpen(isOpen);
   };
-
-  const dropdownItems = [
-    <DropdownItem key="action1" component="a">
-      Link
-    </DropdownItem>,
-    <DropdownItem key="action2" component="button">
-      Action
-    </DropdownItem>,
-    <DropdownItem key="disabled action3" isDisabled component="a">
-      Disabled link
-    </DropdownItem>,
-    <DropdownItem key="disabled action4" isDisabled component="button">
-      Disabled action
-    </DropdownItem>,
-    <DropdownItem key="action5" component="a">
-      Separated link
-    </DropdownItem>
+  
+  const selectItems = [
+    <SelectOption value="Link" key="action1" component="a" />,
+    <SelectOption value="Action" key="action2" component="button" />,
+    <SelectOption value="Disabled link" key="disabled action3" isDisabled component="a"/>,
+    <Divider component="li" key="separator" />,
+    <SelectOption value="Separated link" key="action4" component="a" />
   ];
 
   return (
@@ -2763,13 +2739,16 @@ CardEventViewDemo = () => {
       <Card id="card-events-view-example">
         <CardHeader>
           <CardActions>
-            <Dropdown
+            <Select
               onSelect={onActionSelect}
-              toggle={<DropdownToggle onToggle={onActionToggle}>Status</DropdownToggle>}
-              isOpen={isDropdownOpen}
-              dropdownItems={dropdownItems}
+              onToggle={onActionToggle}
+              placeholderText="Status"
+              isOpen={isOpen}
               position="right"
-            />
+              isPlain
+            >
+              {selectItems}
+            </Select>
           </CardActions>
           <CardTitle>
             <Title headingLevel="h2" size="xl">
