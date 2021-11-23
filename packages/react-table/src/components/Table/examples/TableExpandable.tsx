@@ -15,7 +15,7 @@ interface Repository {
   };
 }
 
-export const ComposableTableExpandable: React.FunctionComponent = () => {
+export const TableExpandable: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'a', workspaces: 'four' },
@@ -155,8 +155,12 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
       />
       <Table
         aria-label="Expandable table"
-        variant={isExampleCompact ? TableVariant.compact : null}
-        onCollapse={(_event, rowIndex, isOpen) => setRepoExpanded(reposByRowIndex[rowIndex], isOpen)}
+        variant={isExampleCompact ? TableVariant.compact : undefined}
+        onCollapse={(_event, rowIndex, isOpen) => {
+          if (reposByRowIndex[rowIndex]) {
+            setRepoExpanded(reposByRowIndex[rowIndex], isOpen);
+          }
+        }}
         rows={rows}
         cells={columns}
       >
