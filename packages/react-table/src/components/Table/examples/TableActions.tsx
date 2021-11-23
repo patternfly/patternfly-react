@@ -117,7 +117,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
    */
   const actionResolver: IActionsResolver = (rowData, { rowIndex }) => {
     if (rowIndex === 1) {
-      return null;
+      return [];
     }
 
     const extraAction: IActions = [
@@ -205,7 +205,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
         rows={rows}
         {...(propToUse === 'actions' && { actions })}
         {...(propToUse === 'actionResolver' && { actionResolver })}
-        areActionsDisabled={rowData => rowData.disableActions}
+        areActionsDisabled={rowData => !!rowData.disableActions}
         dropdownPosition="left"
         dropdownDirection="down"
         actionsToggle={useCustomToggle ? customActionsToggle : undefined}
