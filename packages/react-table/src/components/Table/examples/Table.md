@@ -116,7 +116,7 @@ interface IRowCell {
 
 ### Basic
 
-```ts file="TableBasic.tsx"
+```ts file="LegacyTableBasic.tsx"
 ```
 
 ### Custom row wrapper
@@ -145,7 +145,7 @@ interface RowWrapperProps {
 }
 ```
 
-```ts file="TableMisc.tsx"
+```ts file="LegacyTableMisc.tsx"
 ```
 
 ### Sortable & wrapping column headers
@@ -162,14 +162,14 @@ Note: If you want to add a tooltip/popover to a sortable header, in the `transfo
 
 The built in display for sorting is not fully responsive, as the column headers will be displayed per row when the screen size is small. The example below showcases how sorting may have a custom control display that can be used for small screen sizes.
 
-```ts file="TableSortable.tsx"
+```ts file="LegacyTableSortable.tsx"
 ```
 
 ### Sortable - custom control
 
 Sorting a table may also be controlled with a toolbar. This toolbar item may also be hidden at large screen sizes and only displayed when the screen size is small to support responsive tables.
 
-```ts file="TableSortableCustom.tsx"
+```ts file="LegacyTableSortableCustom.tsx"
 ```
 
 ### Selectable with checkbox
@@ -189,7 +189,7 @@ of using `td` elements, the cells in that column use `th` elements.
 **Note:** This example has a `shift + select` feature where holding shift while
 checking checkboxes will check intermediate rows' checkboxes.
 
-```ts file="TableSelectable.tsx"
+```ts file="LegacyTableSelectable.tsx"
 ```
 
 ### Selectable radio input
@@ -199,21 +199,21 @@ To enable row radio selection, set the `onSelect` callback prop on the Table, an
 
 To disable selection for a row, set `disableSelection: true` on the row definition.
 
-```ts file="TableSelectableRadio.tsx"
+```ts file="LegacyTableSelectableRadio.tsx"
 ```
 
 ### Hoverable rows, selectable rows, and header cell tooltips/popovers
 
 This selectable rows feature is intended for use when a table is used to present a list of objects in a Primary-detail view.
 
-```ts file="TableHoverable.tsx"
+```ts file="LegacyTableHoverable.tsx"
 ```
 
 ### Actions and first cell in body rows as th
 
 To use actions you can either specify an array of actions and pass that into the `Table`'s `actions` prop, or for more control you can use the `actionResolver` callback prop to add actions conditionally.
 
-```ts file="TableActions.tsx"
+```ts file="LegacyTableActions.tsx"
 ```
 
 ### Expandable
@@ -223,7 +223,7 @@ The parent row can have an `isOpen` field for managing the expanded state of the
 
 Also, pass an `onCollapse` event handler via the prop on the Table
 
-```ts file="TableExpandable.tsx"
+```ts file="LegacyTableExpandable.tsx"
 ```
 
 ### Compound expandable
@@ -239,27 +239,27 @@ To build a compound expandable table:
    2. A `compoundParent` field set to the cell index which will control the expanding/collapsing of this row
 4. An `onExpand` event handler prop should be passed to the Table.
 
-```ts file="TableCompoundExpandable.tsx"
+```ts file="LegacyTableCompoundExpandable.tsx"
 ```
 
 ### With width and breakpoint visibility modifiers
 
-```ts file="TableCellWidth.tsx"
+```ts file="LegacyTableCellWidth.tsx"
 ```
 
 ### Controlling text
 
-```ts file="TableControllingText.tsx"
+```ts file="LegacyTableControllingText.tsx"
 ```
 
 ### Modifiers with table text
 
-```ts file="TableTextModifiers.tsx"
+```ts file="LegacyTableTextModifiers.tsx"
 ```
 
 ### Empty state
 
-```ts file="TableEmptyState.tsx"
+```ts file="LegacyTableEmptyState.tsx"
 ```
 
 ### Editable rows
@@ -761,7 +761,7 @@ When you also pass a sort callback through the `onSort` prop, favorites sorting 
 
 If you want to exclude favorites from sorting, set `canSortFavorites={false}` on the Table.
 
-```ts file="TableFavoritable.tsx"
+```ts file="LegacyTableFavoritable.tsx"
 ```
 
 ### Tree table
@@ -790,5 +790,5 @@ Note: If this table is going to be tested using axe-core, the tests will flag th
 aria-posinset, and aria-setsize as violations. This is an intentional choice at this time so that
 the voice over technologies will recognize the flat table structure as a tree.
 
-```ts isBeta file="TableTree.tsx"
+```ts isBeta file="LegacyTableTree.tsx"
 ```
