@@ -28,7 +28,7 @@ export const TableMisc: React.FunctionComponent = () => {
   ]);
 
   const customRowWrapper: TableProps['rowWrapper'] = ({ trRef, className, rowProps, row: _row, ...props }) => {
-    const isOddRow = !!(((rowProps?.rowIndex || 0) + 1) % 2);
+    const isOddRow = rowProps ? !!((rowProps.rowIndex + 1) % 2) : true;
     const customStyle = {
       borderLeft: '3px solid var(--pf-global--primary-color--100)'
     };
