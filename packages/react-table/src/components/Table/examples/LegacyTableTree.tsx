@@ -21,7 +21,7 @@ interface RepositoriesTreeNode {
   children?: RepositoriesTreeNode[];
 }
 
-export const TableTree: React.FunctionComponent = () => {
+export const LegacyTableTree: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const data: RepositoriesTreeNode[] = [
     {

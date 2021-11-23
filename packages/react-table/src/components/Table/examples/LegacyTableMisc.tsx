@@ -10,7 +10,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const TableMisc: React.FunctionComponent = () => {
+export const LegacyTableMisc: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'three', workspaces: 'four', lastCommit: 'five' },

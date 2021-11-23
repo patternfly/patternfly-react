@@ -18,7 +18,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const TableSortable: React.FunctionComponent = () => {
+export const LegacyTableSortable: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'a', workspaces: 'four', lastCommit: 'five' },

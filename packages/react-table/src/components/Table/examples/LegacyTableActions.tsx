@@ -33,7 +33,7 @@ interface Repository {
 
 type ExampleType = 'actions' | 'actionResolver';
 
-export const ComposableTableActions: React.FunctionComponent = () => {
+export const LegacyTableActions: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'a', branches: 'two', prs: '1', workspaces: 'four', lastCommit: 'five' },

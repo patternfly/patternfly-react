@@ -11,7 +11,7 @@ interface Repository {
 
 type ExampleType = 'default' | 'compact' | 'compactBorderless';
 
-export const TableBasic: React.FunctionComponent = () => {
+export const LegacyTableBasic: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     {
