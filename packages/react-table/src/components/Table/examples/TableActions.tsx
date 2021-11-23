@@ -99,7 +99,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
       onClick: (_event, rowId, rowData, extra) => console.log('clicked on Some action, on row: ', rowId, rowData, extra)
     },
     {
-      title: <a href="https://www.patternfly.org">Link action</a>
+      title: <a href="#">Link action</a>
     },
     {
       isSeparator: true
