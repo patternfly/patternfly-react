@@ -112,7 +112,7 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
         id="toggle-compact"
         name="toggle-compact"
       />
-      <TableComposable aria-label="Expandable table" variant={isExampleCompact ? 'compact' : null}>
+      <TableComposable aria-label="Expandable table" variant={isExampleCompact ? 'compact' : undefined}>
         <Thead>
           <Tr>
             <Th />
@@ -157,7 +157,7 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
                           isExpanded: isRepoExpanded(repo),
                           onToggle: () => setRepoExpanded(repo, !isRepoExpanded(repo))
                         }
-                      : null
+                      : undefined
                   }
                 />
                 <Td dataLabel={columnNames.name}>{repo.name}</Td>
