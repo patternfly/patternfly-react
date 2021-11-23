@@ -130,7 +130,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
         <Tbody>
           {repositories.map(repo => {
             // Arbitrary logic to determine which rows get which actions in this example
-            let rowActions = defaultActions(repo);
+            let rowActions: IAction[] | null = defaultActions(repo);
             if (repo.name === 'a') {
               rowActions = null;
             }
