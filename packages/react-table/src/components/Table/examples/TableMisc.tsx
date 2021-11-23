@@ -10,7 +10,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const ComposableTableMisc: React.FunctionComponent = () => {
+export const TableMisc: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'three', workspaces: 'four', lastCommit: 'five' },
@@ -28,7 +28,7 @@ export const ComposableTableMisc: React.FunctionComponent = () => {
   ]);
 
   const customRowWrapper: TableProps['rowWrapper'] = ({ trRef, className, rowProps, row: _row, ...props }) => {
-    const isOddRow = (rowProps.rowIndex + 1) % 2;
+    const isOddRow = !!(((rowProps?.rowIndex || 0) + 1) % 2);
     const customStyle = {
       borderLeft: '3px solid var(--pf-global--primary-color--100)'
     };
