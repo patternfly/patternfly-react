@@ -33,7 +33,7 @@ export const TableControllingText: React.FunctionComponent = () => {
             By default,
             <code>thead</code> cells will truncate and
             <code>tbody</code> cells will wrap. Use
-            <code>.pf-m-wrap</code> on a<code>th</code> to change its behavior.
+            <code>transforms</code> and/or <code>cellTransforms</code> to change the behavior.
           </p>
         )
       },

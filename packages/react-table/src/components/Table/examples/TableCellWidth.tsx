@@ -31,7 +31,7 @@ export const TableCellWidth: React.FunctionComponent = () => {
   const columns: TableProps['cells'] = [
     { title: 'Header cell', transforms: [cellWidth(10)] },
     {
-      title: 'Branches (visible only on md)',
+      title: 'Branches (visible only on md and 2Xl)',
       columnTransforms: [
         classNames(Visibility.hidden, Visibility.visibleOnMd, Visibility.hiddenOnLg, Visibility.visibleOn2Xl)
       ]
