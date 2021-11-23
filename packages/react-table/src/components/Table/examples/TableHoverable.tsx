@@ -66,7 +66,7 @@ export const TableHoverable: React.FunctionComponent = () => {
           ariaLabel: 'More information on pull requests',
           popoverProps: {
             headerContent: 'Pull requests',
-            footerContent: <a href="">Click here for even more info</a>
+            footerContent: <a href="#">Click here for even more info</a>
           }
         })
       ]

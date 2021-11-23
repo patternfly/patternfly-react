@@ -51,7 +51,7 @@ export const ComposableTableMisc: React.FunctionComponent = () => {
               ariaLabel: 'More information on pull requests',
               popoverProps: {
                 headerContent: columnNames.prs,
-                footerContent: <a href="">Click here for even more info</a>
+                footerContent: <a href="#">Click here for even more info</a>
               }
             }}
           >
