@@ -29,6 +29,7 @@ class DiscreteInput extends React.Component {
       value3: 25,
       value4: 50,
       value5: 50,
+      value6: 3
     };
 
     this.steps = [
@@ -41,6 +42,15 @@ class DiscreteInput extends React.Component {
       { value: 75, label: '6' },
       { value: 87.5, label: '7', isLabelHidden: true },
       { value: 100, label: '8' }
+    ];
+
+    this.stepsDiscreteWithMax = [
+      { value: 0, label: "A" },
+      { value: 1, label: "B" },
+      { value: 2, label: "C" },
+      { value: 3, label: "D" },
+      { value: 4, label: "E" },
+      { value: 5, label: "F" }
     ];
 
     this.onChange = value => {
@@ -72,6 +82,12 @@ class DiscreteInput extends React.Component {
           value5: value
         });
     };
+
+    this.onChange6 = value => {
+        this.setState({
+          value6: value
+        });
+    };
   }
 
   render() {
@@ -97,6 +113,17 @@ class DiscreteInput extends React.Component {
         <Text component={TextVariants.h3}>Slider value is: {Math.floor(this.state.value5)}</Text>
         <Text component={TextVariants.small}>(min = -25, max = 75, step = 10, boundaries shown, ticks not shown) </Text>
         <Slider value={this.state.value5} onChange={this.onChange5} min={-25} max={75} step={10} />
+        <br />
+        <Text component={TextVariants.h3}>Slider value is: {Math.floor(this.state.value6)}</Text>
+        <Text component={TextVariants.small}>(max = 5, custom steps) </Text>
+        <Slider
+            value={this.state.value6}
+            showTicks
+            max={5}
+            customSteps={this.stepsDiscreteWithMax}
+            onChange={this.onChange6}
+          />
+          <br />
       </>
     );
   }
