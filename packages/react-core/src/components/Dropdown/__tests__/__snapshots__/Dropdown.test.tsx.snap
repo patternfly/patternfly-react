@@ -4349,6 +4349,7 @@ exports[`dropdown alignment breakpoints 1`] = `
         <Toggle
           aria-haspopup={true}
           bubbleEvent={false}
+          buttonVariant="default"
           className=""
           data-ouia-component-id="OUIA-Generated-DropdownToggle-3"
           data-ouia-component-type="PF4/DropdownToggle"
@@ -4974,6 +4975,7 @@ exports[`dropdown basic 1`] = `
         <Toggle
           aria-haspopup={false}
           bubbleEvent={false}
+          buttonVariant="default"
           className=""
           data-ouia-component-id="OUIA-Generated-DropdownToggle-8"
           data-ouia-component-type="PF4/DropdownToggle"
@@ -5567,6 +5569,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         <Toggle
           aria-haspopup={true}
           bubbleEvent={false}
+          buttonVariant="default"
           className=""
           data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
           data-ouia-component-type="PF4/DropdownToggle"
@@ -6129,6 +6132,7 @@ exports[`dropdown dropup 1`] = `
         <Toggle
           aria-haspopup={true}
           bubbleEvent={false}
+          buttonVariant="default"
           className=""
           data-ouia-component-id="OUIA-Generated-DropdownToggle-4"
           data-ouia-component-type="PF4/DropdownToggle"
@@ -6764,6 +6768,7 @@ exports[`dropdown expanded 1`] = `
         <Toggle
           aria-haspopup={true}
           bubbleEvent={false}
+          buttonVariant="default"
           className=""
           data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
           data-ouia-component-type="PF4/DropdownToggle"
@@ -7732,6 +7737,7 @@ exports[`dropdown primary 1`] = `
         <Toggle
           aria-haspopup={true}
           bubbleEvent={false}
+          buttonVariant="default"
           className=""
           data-ouia-component-id="OUIA-Generated-DropdownToggle-7"
           data-ouia-component-type="PF4/DropdownToggle"
@@ -8293,6 +8299,7 @@ exports[`dropdown regular 1`] = `
         <Toggle
           aria-haspopup={true}
           bubbleEvent={false}
+          buttonVariant="default"
           className=""
           data-ouia-component-id="OUIA-Generated-DropdownToggle-1"
           data-ouia-component-type="PF4/DropdownToggle"
@@ -8855,6 +8862,7 @@ exports[`dropdown right aligned 1`] = `
         <Toggle
           aria-haspopup={true}
           bubbleEvent={false}
+          buttonVariant="default"
           className=""
           data-ouia-component-id="OUIA-Generated-DropdownToggle-2"
           data-ouia-component-type="PF4/DropdownToggle"

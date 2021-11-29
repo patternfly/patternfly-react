@@ -8,6 +8,7 @@ exports[`state active 1`] = `
 >
   <Toggle
     bubbleEvent={false}
+    buttonVariant="default"
     className=""
     data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
     data-ouia-component-type="PF4/DropdownToggle"
@@ -81,6 +82,7 @@ exports[`state class changes 1`] = `
 >
   <Toggle
     bubbleEvent={false}
+    buttonVariant="default"
     className=""
     data-ouia-component-id="OUIA-Generated-DropdownToggle-8"
     data-ouia-component-type="PF4/DropdownToggle"
@@ -154,6 +156,7 @@ exports[`state class changes 2`] = `
 >
   <Toggle
     bubbleEvent={false}
+    buttonVariant="default"
     className=""
     data-ouia-component-id="OUIA-Generated-DropdownToggle-9"
     data-ouia-component-type="PF4/DropdownToggle"
@@ -227,6 +230,7 @@ exports[`state focus 1`] = `
 >
   <Toggle
     bubbleEvent={false}
+    buttonVariant="default"
     className=""
     data-ouia-component-id="OUIA-Generated-DropdownToggle-7"
     data-ouia-component-type="PF4/DropdownToggle"
@@ -300,6 +304,7 @@ exports[`state hover 1`] = `
 >
   <Toggle
     bubbleEvent={false}
+    buttonVariant="default"
     className=""
     data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
     data-ouia-component-type="PF4/DropdownToggle"
