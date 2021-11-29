@@ -61,13 +61,13 @@ exports[`popover can close from content (uncontrolled) 1`] = `
             aria-label="Close"
             onClose={[Function]}
           />
-          <PopoverHeader
+          <PopoverInternalHeader
             id="popover-test-header"
           >
             <div>
               Popover header
             </div>
-          </PopoverHeader>
+          </PopoverInternalHeader>
           <PopoverBody
             id="popover-test-body"
           >
@@ -183,13 +183,13 @@ exports[`popover can have a custom minimum width 1`] = `
             aria-label="Close"
             onClose={[Function]}
           />
-          <PopoverHeader
+          <PopoverInternalHeader
             id="popover-test-header"
           >
             <div>
               Popover Header
             </div>
-          </PopoverHeader>
+          </PopoverInternalHeader>
           <PopoverBody
             id="popover-test-body"
           >
@@ -288,13 +288,13 @@ exports[`popover can specify position as object value 1`] = `
             aria-label="Close"
             onClose={[Function]}
           />
-          <PopoverHeader
+          <PopoverInternalHeader
             id="popover-test-header"
           >
             <div>
               Popover Header
             </div>
-          </PopoverHeader>
+          </PopoverInternalHeader>
           <PopoverBody
             id="popover-test-body"
           >
@@ -393,13 +393,13 @@ exports[`popover renders close-button, header and body 1`] = `
             aria-label="Close"
             onClose={[Function]}
           />
-          <PopoverHeader
+          <PopoverInternalHeader
             id="popover-test-header"
           >
             <div>
               Popover Header
             </div>
-          </PopoverHeader>
+          </PopoverInternalHeader>
           <PopoverBody
             id="popover-test-body"
           >
