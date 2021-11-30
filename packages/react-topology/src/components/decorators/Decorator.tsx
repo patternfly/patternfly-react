@@ -2,20 +2,9 @@ import * as React from 'react';
 import SvgDropShadowFilter from '../svg/SvgDropShadowFilter';
 import { createSvgIdUrl, useHover } from '../../utils';
 
-export enum TopologyDecoratorQuadrant {
-  upperLeft = 'upperLeft',
-  upperRight = 'upperRight',
-  lowerLeft = 'lowerLeft',
-  lowerRight = 'lowerRight'
-}
-
 interface DecoratorTypes {
-  quadrant: TopologyDecoratorQuadrant;
-  nodeCenterX: number;
-  nodeCenterY: number;
-  nodeWidth?: number;
-  nodeHeight?: number;
-  nodeRadius?: number;
+  x: number;
+  y: number;
   radius: number;
   showBackground?: boolean;
   onClick?(event: React.MouseEvent<SVGGElement, MouseEvent>): void;
@@ -27,12 +16,8 @@ const FILTER_ID = 'DecoratorDropShadowFilterId';
 const HOVER_FILTER_ID = 'DecoratorDropShadowHoverFilterId';
 
 const Decorator: React.FunctionComponent<DecoratorTypes> = ({
-  quadrant,
-  nodeRadius,
-  nodeCenterX,
-  nodeCenterY,
-  nodeWidth,
-  nodeHeight,
+  x,
+  y,
   showBackground,
   radius,
   children,
@@ -41,33 +26,7 @@ const Decorator: React.FunctionComponent<DecoratorTypes> = ({
   circleRef
 }) => {
   const [hover, hoverRef] = useHover();
-  let x: number;
-  let y: number;
-  const deltaX = nodeRadius > 0 ? nodeRadius : nodeWidth / 2;
-  const deltaY = nodeRadius > 0 ? nodeRadius : nodeHeight / 2;
-  const offset = nodeRadius > 0 ? radius * 0.7 : 0;
 
-  switch (quadrant) {
-    case TopologyDecoratorQuadrant.upperRight:
-      x = nodeCenterX + deltaX - offset;
-      y = nodeCenterY - deltaY + offset;
-      break;
-    case TopologyDecoratorQuadrant.lowerRight:
-      x = nodeCenterX + deltaX - offset;
-      y = nodeCenterY + deltaY - offset;
-      break;
-    case TopologyDecoratorQuadrant.upperLeft:
-      x = nodeCenterX - deltaX + offset;
-      y = nodeCenterY - deltaY + offset;
-      break;
-    case TopologyDecoratorQuadrant.lowerLeft:
-      x = nodeCenterX - deltaX + offset;
-      y = nodeCenterY + deltaY - offset;
-      break;
-    default:
-      x = nodeCenterX;
-      y = nodeCenterY;
-  }
   const decorator = (
     <g
       ref={hoverRef}

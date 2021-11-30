@@ -2,7 +2,15 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import { truncateMiddle } from '../../../utils/truncate-middle';
-import { createSvgIdUrl, WithBadgeProps, useCombineRefs, useHover, useSize, LabelPosition } from '../../../utils';
+import {
+  BadgeLocation,
+  createSvgIdUrl,
+  LabelPosition,
+  useCombineRefs,
+  useHover,
+  useSize,
+  WithBadgeProps
+} from '../../../utils';
 import { WithContextMenuProps, WithDndDragProps } from '../../../behavior';
 import { NODE_SHADOW_FILTER_ID_DANGER, NODE_SHADOW_FILTER_ID_HOVER } from '../NodeShadows';
 import LabelBadge from './LabelBadge';
@@ -19,6 +27,7 @@ type NodeLabelProps = {
   position?: LabelPosition;
   cornerRadius?: number;
   status?: string;
+  secondaryLabel?: string;
   truncateLength?: number; // Defaults to 13
   labelIconClass?: string; // Icon to show in label
   labelIconPadding?: number;
@@ -42,12 +51,14 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
   x = 0,
   y = 0,
   position = LabelPosition.bottom,
+  secondaryLabel,
   status,
   badge,
   badgeColor,
   badgeTextColor,
   badgeBorderColor,
   badgeClassName,
+  badgeLocation = BadgeLocation.inner,
   labelIconClass,
   labelIconPadding = 4,
   truncateLength,
@@ -70,31 +81,69 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
     return children;
   }, [truncateLength, children, labelHover]);
 
+  const secondaryTextChildren = React.useMemo(() => {
+    if (truncateLength > 0) {
+      return labelHover ? secondaryLabel : truncateMiddle(secondaryLabel, { length: truncateLength });
+    }
+    return secondaryLabel;
+  }, [truncateLength, secondaryLabel, labelHover]);
+
   const [textSize, textRef] = useSize([textChildren, className, labelHover]);
+  const [secondaryTextSize, secondaryTextRef] = useSize([secondaryTextChildren, className, labelHover]);
   const [badgeSize, badgeRef] = useSize([badge]);
   const [contextSize, contextRef] = useSize([onContextMenu, paddingX]);
 
-  const { width, height, startX, startY, contextStartX, iconSpace, badgeSpace } = React.useMemo(() => {
+  const {
+    width,
+    height,
+    startX,
+    startY,
+    badgeStartX,
+    badgeStartY,
+    contextStartX,
+    iconSpace,
+    badgeSpace
+  } = React.useMemo(() => {
     if (!textSize) {
       return {
         width: 0,
         height: 0,
         startX: 0,
         startY: 0,
+        badgeStartX: 0,
+        badgeStartY: 0,
         contextStartX: 0,
         iconSpace: 0,
         badgeSpace: 0
       };
     }
-    const badgeSpace = badgeSize ? badgeSize.width + paddingX : 0;
+    const badgeSpace = badgeSize && badgeLocation === BadgeLocation.inner ? badgeSize.width + paddingX : 0;
     const height = Math.max(textSize.height, badgeSize?.height ?? 0) + paddingY * 2;
     const iconSpace = labelIconClass ? (height + paddingY * 0.5) / 2 : 0;
     const contextSpace = contextSize ? contextSize.width + paddingX / 2 + 1 : 0;
+    const primaryWidth = iconSpace + badgeSpace + paddingX + textSize.width + paddingX + contextSpace;
+    const secondaryWidth = secondaryTextSize ? secondaryTextSize.width + 2 * paddingX : 0;
+    const width = Math.max(primaryWidth, secondaryWidth);
 
-    const width = iconSpace + badgeSpace + paddingX + textSize.width + paddingX + contextSpace;
     const startX = position === LabelPosition.right ? x + iconSpace : x - width / 2 - iconSpace / 2;
-    const startY = position === LabelPosition.right ? y - height / 2 : y;
+    let startY = position === LabelPosition.right ? y - height / 2 : y;
     const contextStartX = iconSpace + badgeSpace + paddingX + textSize.width + paddingX;
+
+    let badgeStartX = 0;
+    let badgeStartY = 0;
+    if (badgeSize) {
+      if (badgeLocation === BadgeLocation.inner) {
+        badgeStartX = iconSpace + paddingX;
+        badgeStartY = paddingY;
+      } else if (position === LabelPosition.bottom) {
+        badgeStartX = (width - badgeSize.width) / 2;
+        badgeStartY = height + paddingY;
+      } else {
+        badgeStartX = 0;
+        badgeStartY = paddingY + height;
+        startY = y - (height + badgeSize.height + paddingY) / 2;
+      }
+    }
 
     return {
       width,
@@ -102,10 +151,24 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
       startX,
       startY,
       contextStartX,
+      badgeStartX,
+      badgeStartY,
       iconSpace,
-      badgeSpace
+      badgeSpace: badgeSize && badgeLocation === BadgeLocation.inner ? badgeSpace : 0
     };
-  }, [textSize, badgeSize, paddingX, paddingY, labelIconClass, contextSize, position, x, y]);
+  }, [
+    textSize,
+    badgeSize,
+    badgeLocation,
+    paddingX,
+    paddingY,
+    labelIconClass,
+    contextSize,
+    secondaryTextSize,
+    position,
+    x,
+    y
+  ]);
 
   let filterId;
   if (status === 'danger') {
@@ -124,7 +187,7 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
           x={0}
           y={0}
           width={width}
-          height={height}
+          height={height + (secondaryTextSize ? secondaryTextSize.height + paddingY * 2 : 0)}
           rx={cornerRadius}
           ry={cornerRadius}
         />
@@ -133,13 +196,35 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
         <LabelBadge
           className={badgeClassName}
           ref={badgeRef}
-          x={iconSpace + paddingX}
-          y={paddingY}
+          x={badgeStartX}
+          y={badgeStartY}
           badge={badge}
           badgeColor={badgeColor}
           badgeTextColor={badgeTextColor}
           badgeBorderColor={badgeBorderColor}
         />
+      )}
+      {textSize && secondaryLabel && (
+        <>
+          <line
+            className={css(styles.topologyNodeSeparator)}
+            x1={0}
+            y1={height}
+            x2={width}
+            y2={height}
+            shapeRendering="crispEdges"
+          />
+          <text
+            className="pf-m-secondary"
+            ref={secondaryTextRef}
+            x={width / 2}
+            y={height + paddingY + (secondaryTextSize?.height ?? 0) / 2}
+            dy="0.35em"
+            textAnchor="middle"
+          >
+            {secondaryTextChildren}
+          </text>
+        </>
       )}
       {textSize && labelIconClass && (
         <LabelIcon

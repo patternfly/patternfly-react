@@ -50,7 +50,7 @@ const DemoDefaultNode: React.FC<DemoDefaultNodeProps> = ({
   const className = `pf-ri-topology__node__background${canDrop && hover ? ' pf-m-hover' : ''}${
     canDrop && droppable ? ' pf-m-droppable' : ''
   }${selected ? ' pf-m-selected' : ''}`;
-  const ShapeComponent = (getCustomShape && getCustomShape()) || getShapeComponent(shape) || null;
+  const ShapeComponent = getShapeComponent(shape, element, getCustomShape);
 
   return (
     <ShapeComponent

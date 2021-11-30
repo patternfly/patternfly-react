@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
-import { Node } from '../types';
+import { Node, TopologyQuadrant } from '../types';
 import { OnSelect, WithCreateConnectorProps, WithDndDropProps } from '../behavior';
 
 export type ShapeProps = {
@@ -16,7 +16,8 @@ export type ShapeProps = {
   WithDndDropProps;
 
 export interface WithNodeShapeProps {
-  getCustomShape?: () => React.FC<ShapeProps>;
+  getCustomShape?: (node: Node) => React.FC<ShapeProps>;
+  getShapeDecoratorCenter?: (quadrant: TopologyQuadrant, node: Node, radius: number) => { x: number; y: number };
 }
 
 export const useCustomNodeShape = (getCustomShape: () => React.FC<ShapeProps>): WithNodeShapeProps => ({

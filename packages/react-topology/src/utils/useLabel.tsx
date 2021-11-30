@@ -10,6 +10,7 @@ export enum LabelPosition {
 
 export interface WithLabelProps {
   label?: string; // Defaults to element.getLabel()
+  secondaryLabel?: string;
   showLabel?: boolean; // Defaults to true
   labelPosition?: LabelPosition; // Defaults to bottom
   truncateLength?: number; // Defaults to 13

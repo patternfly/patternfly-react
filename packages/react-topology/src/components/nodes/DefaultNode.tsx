@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
 import { css } from '@patternfly/react-styles';
+import { Tooltip, TooltipPosition } from '@patternfly/react-core';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
-import { Node, NodeShape, NodeStatus } from '../../types';
+import { Node, NodeStatus, TopologyQuadrant } from '../../types';
 import {
   useSvgAnchor,
   WithContextMenuProps,
@@ -15,14 +16,16 @@ import {
   WithDragNodeProps,
   WithSelectionProps
 } from '../../behavior';
-import Decorator, { TopologyDecoratorQuadrant } from '../decorators/Decorator';
+import Decorator from '../decorators/Decorator';
 import { createSvgIdUrl, useCombineRefs, useHover, WithStatusProps } from '../../utils';
 import { WithNodeShapeProps } from '../../utils/useCustomNodeShape';
 import { LabelPosition, WithLabelProps } from '../../utils/useLabel';
 import { WithBadgeProps } from '../../utils/useBadge';
 import NodeLabel from './labels/NodeLabel';
 import NodeShadows, { NODE_SHADOW_FILTER_ID_DANGER, NODE_SHADOW_FILTER_ID_HOVER } from './NodeShadows';
-import { getShapeComponent } from './shapes';
+import { DEFAULT_DECORATOR_RADIUS, getDefaultShapeDecoratorCenter, getShapeComponent } from './shapes';
+
+const StatusQuadrant = TopologyQuadrant.upperLeft;
 
 const StatusClass = {
   [NodeStatus.default]: '',
@@ -32,14 +35,14 @@ const StatusClass = {
   [NodeStatus.danger]: 'pf-m-danger'
 };
 
-const getStatusIcon = (status: string) => {
+const getStatusIcon = (status: string, height: number) => {
   switch (status) {
     case 'danger':
-      return <ExclamationCircleIcon className="pf-m-danger" />;
+      return <ExclamationCircleIcon height={height} width={height} className="pf-m-danger" />;
     case 'warning':
-      return <ExclamationTriangleIcon className="pf-m-warning" />;
+      return <ExclamationTriangleIcon height={height} width={height} className="pf-m-warning" />;
     case 'success':
-      return <CheckCircleIcon className="pf-m-success" />;
+      return <CheckCircleIcon height={height} width={height} className="pf-m-success" />;
     default:
       return null;
   }
@@ -70,16 +73,20 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
   hover,
   showLabel = true,
   label,
+  secondaryLabel,
   labelPosition = LabelPosition.bottom,
   truncateLength,
   labelIconClass,
   showStatusDecorator = false,
+  statusDecoratorTooltip,
+  getShapeDecoratorCenter,
   onStatusDecoratorClick,
   badge,
   badgeColor,
   badgeTextColor,
   badgeBorderColor,
   badgeClassName,
+  badgeLocation,
   getCustomShape,
   onSelect,
   dragNodeRef,
@@ -121,35 +128,44 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
     if (!status || !showStatusDecorator) {
       return null;
     }
-    const icon = getStatusIcon(status);
+    const icon = getStatusIcon(status, DEFAULT_DECORATOR_RADIUS * 2);
     if (!icon) {
       return null;
     }
 
-    const decoratorRadius = Math.min(width / 2, height / 2) * 0.25;
-    return (
+    const { x, y } = getShapeDecoratorCenter
+      ? getShapeDecoratorCenter(StatusQuadrant, element, DEFAULT_DECORATOR_RADIUS)
+      : getDefaultShapeDecoratorCenter(StatusQuadrant, element, DEFAULT_DECORATOR_RADIUS);
+
+    const decorator = (
       <Decorator
-        quadrant={TopologyDecoratorQuadrant.upperLeft}
-        nodeCenterX={width / 2}
-        nodeCenterY={height / 2}
-        nodeRadius={shape === NodeShape.circle && width === height ? width / 2 : undefined}
-        nodeWidth={width}
-        nodeHeight={height}
-        radius={decoratorRadius}
+        x={x}
+        y={y}
+        radius={DEFAULT_DECORATOR_RADIUS}
         showBackground={false}
         onClick={e => onStatusDecoratorClick(e, element)}
       >
         <g
-          className="pf-topology__node__decorator__status"
-          transform={`translate(-${decoratorRadius}, -${decoratorRadius})`}
+          className="pf-topology__node__decorator__status pf-topology__node__decorator__bg"
+          transform={`translate(-${DEFAULT_DECORATOR_RADIUS}, -${DEFAULT_DECORATOR_RADIUS})`}
         >
           {icon}
         </g>
       </Decorator>
     );
-  }, [status, showStatusDecorator, width, height, shape, onStatusDecoratorClick, element]);
 
-  const ShapeComponent = (getCustomShape && getCustomShape()) || getShapeComponent(shape) || null;
+    if (statusDecoratorTooltip) {
+      return (
+        <Tooltip content={statusDecoratorTooltip} position={TooltipPosition.left}>
+          {decorator}
+        </Tooltip>
+      );
+    }
+
+    return decorator;
+  }, [status, showStatusDecorator, statusDecoratorTooltip, width, height, shape, onStatusDecoratorClick, element]);
+
+  const ShapeComponent = getShapeComponent(shape, element, getCustomShape);
 
   return (
     <g className={groupClassName}>
@@ -179,6 +195,7 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
             position={labelPosition}
             paddingX={8}
             paddingY={4}
+            secondaryLabel={secondaryLabel}
             truncateLength={truncateLength}
             status={status}
             badge={badge}
@@ -186,6 +203,7 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
             badgeTextColor={badgeTextColor}
             badgeBorderColor={badgeBorderColor}
             badgeClassName={badgeClassName}
+            badgeLocation={badgeLocation}
             onContextMenu={onContextMenu}
             contextMenuOpen={contextMenuOpen}
             hover={isHover}

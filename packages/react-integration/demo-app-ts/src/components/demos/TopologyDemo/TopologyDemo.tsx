@@ -22,7 +22,9 @@ import {
   NodeStyles,
   NodeBadgedLabelStyles,
   NodeContextMenuLabelStyles,
-  NodeIconLabelStyles
+  NodeIconLabelStyles,
+  NodeStatusDecoratorStyles,
+  NodeSecondaryLabelStyles
 } from './Styles';
 
 import './TopologyDemo.css';
@@ -98,6 +100,9 @@ export const TopologyDemo: React.FC = () => {
                 <Tab eventKey={2} title={<TabTitleText>Selected Nodes</TabTitleText>}>
                   <NodeSelectedStyles />
                 </Tab>
+                <Tab eventKey={3} title={<TabTitleText>Status Decorators</TabTitleText>}>
+                  <NodeStatusDecoratorStyles />
+                </Tab>
               </Tabs>
             </Tab>
             <Tab eventKey={1} title={<TabTitleText>Labels</TabTitleText>}>
@@ -123,7 +128,16 @@ export const TopologyDemo: React.FC = () => {
                 <Tab eventKey={6} title={<TabTitleText>Icon Labels</TabTitleText>}>
                   <NodeIconLabelStyles />
                 </Tab>
+                <Tab eventKey={7} title={<TabTitleText>Secondary Labels</TabTitleText>}>
+                  <NodeSecondaryLabelStyles />
+                </Tab>
               </Tabs>
+            </Tab>
+            <Tab eventKey={2} title={<TabTitleText>Groups</TabTitleText>}>
+              <span>TBD</span>
+            </Tab>
+            <Tab eventKey={3} title={<TabTitleText>Edges</TabTitleText>}>
+              <span>TBD</span>
             </Tab>
           </Tabs>
         </Tab>

@@ -3,12 +3,18 @@ import { observer } from 'mobx-react';
 import ElementContext from '../utils/ElementContext';
 import { GraphElement } from '../types';
 
+export enum BadgeLocation {
+  inner,
+  below
+}
+
 export interface WithBadgeProps {
   badge?: string;
   badgeColor?: string;
   badgeTextColor?: string;
   badgeBorderColor?: string;
   badgeClassName?: string;
+  badgeLocation?: BadgeLocation;
 }
 
 export const useBadge = (

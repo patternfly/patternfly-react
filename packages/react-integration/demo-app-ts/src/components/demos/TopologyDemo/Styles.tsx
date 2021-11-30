@@ -1,12 +1,13 @@
 import * as React from 'react';
 import {
+  BadgeLocation,
+  LabelPosition,
   Model,
   NodeModel,
   NodeShape,
   NodeStatus,
   useComponentFactory,
-  useModel,
-  LabelPosition
+  useModel
 } from '@patternfly/react-topology';
 import defaultComponentFactory from './components/defaultComponentFactory';
 import withTopologySetup from './utils/withTopologySetup';
@@ -22,18 +23,22 @@ const createNode = (options: {
   id: string;
   type?: string;
   label?: string;
+  secondaryLabel?: string;
   labelPosition?: LabelPosition;
   badge?: string;
   badgeColor?: string;
   badgeTextColor?: string;
   badgeBorderColor?: string;
   badgeClassName?: string;
+  badgeLocation?: BadgeLocation;
   row: number;
   column: number;
   width?: number;
   height?: number;
   shape?: NodeShape;
   status?: NodeStatus;
+  showStatusDecorator?: boolean;
+  statusDecoratorTooltip?: React.ReactNode;
   selected?: boolean;
   hover?: boolean;
   x?: number;
@@ -61,23 +66,16 @@ const createNode = (options: {
   shape: options.shape || NodeShape.circle,
   status: options.status || NodeStatus.default,
   data: {
+    ...options,
     status: options.status || 'default',
     selected: options.selected === undefined ? false : options.selected,
-    hover: options.hover === undefined ? false : options.hover,
-    labelPosition: options.labelPosition,
-    badge: options.badge,
-    badgeColor: options.badgeColor,
-    badgeTextColor: options.badgeTextColor,
-    badgeBorderColor: options.badgeBorderColor,
-    badgeClassName: options.badgeClassName,
-    showContextMenu: options.showContextMenu ?? false,
-    labelIconClass: options.labelIconClass,
-    truncateLength: options.truncateLength
+    hover: options.hover === undefined ? false : options.hover
   }
 });
 
 const STATUS_VALUES = Object.values(NodeStatus);
 const STATUS_COUNT = STATUS_VALUES.length;
+const ICON_STATUS_VALUES = [NodeStatus.success, NodeStatus.warning, NodeStatus.danger];
 
 const createStatusNodes = (
   shape: NodeShape,
@@ -86,9 +84,11 @@ const createStatusNodes = (
   label: string = '',
   selected = false,
   hover = false,
-  labelPosition?: LabelPosition
+  labelPosition?: LabelPosition,
+  showStatusDecorator?: boolean,
+  statusDecoratorTooltip?: React.ReactNode
 ): NodeModel[] =>
-  STATUS_VALUES.map((status, index) =>
+  (showStatusDecorator ? ICON_STATUS_VALUES : STATUS_VALUES).map((status, index) =>
     createNode({
       id: `${shape}-${status}`,
       shape,
@@ -98,7 +98,9 @@ const createStatusNodes = (
       row: Math.ceil((index + 1) / statusPerRow),
       column: column + ((index * STATUS_COUNT) % statusPerRow) * STATUS_COUNT,
       selected,
-      hover
+      hover,
+      showStatusDecorator,
+      statusDecoratorTooltip
     })
   );
 
@@ -107,11 +109,23 @@ const createStatusNodeShapes = (
   label: string = '',
   selected = false,
   hover = false,
-  labelPosition: LabelPosition = LabelPosition.bottom
+  labelPosition: LabelPosition = LabelPosition.bottom,
+  showStatusDecorator?: boolean,
+  statusDecoratorTooltip?: React.ReactNode
 ): NodeModel[] =>
   Object.values(NodeShape).reduce((nodes: NodeModel[], shape: string | NodeShape, index) => {
     nodes.push(
-      ...createStatusNodes(shape as NodeShape, index + 1, statusPerRow, label, selected, hover, labelPosition)
+      ...createStatusNodes(
+        shape as NodeShape,
+        index + 1,
+        statusPerRow,
+        label,
+        selected,
+        hover,
+        labelPosition,
+        showStatusDecorator,
+        statusDecoratorTooltip
+      )
     );
     return nodes;
   }, []);
@@ -163,6 +177,24 @@ export const NodeSelectedStyles = withTopologySetup(() => {
           type: 'graph'
         },
         nodes: createStatusNodeShapes(1, '', true)
+      }),
+      []
+    )
+  );
+  return null;
+});
+
+export const NodeStatusDecoratorStyles = withTopologySetup(() => {
+  useComponentFactory(defaultComponentFactory);
+  useComponentFactory(stylesComponentFactory);
+  useModel(
+    React.useMemo(
+      (): Model => ({
+        graph: {
+          id: 'g1',
+          type: 'graph'
+        },
+        nodes: createStatusNodeShapes(1, '', false, false, LabelPosition.bottom, true, 'Tooltip Text')
       }),
       []
     )
@@ -245,6 +277,7 @@ export const NodeHorizontalLabelStyles = withTopologySetup(() => {
 const createBadgeNodes = (options: {
   row: number;
   badge?: string;
+  badgeLocation?: BadgeLocation;
   hover?: boolean;
   selected?: boolean;
   showContextMenu?: boolean;
@@ -328,7 +361,8 @@ export const NodeBadgedLabelStyles = withTopologySetup(() => {
         nodes: [
           ...createBadgeNodes({ row: 1, badge: 'C' }),
           ...createBadgeNodes({ row: 2, badge: 'CS', hover: true }),
-          ...createBadgeNodes({ row: 3, badge: 'CSN', selected: true })
+          ...createBadgeNodes({ row: 3, badge: 'CSN', selected: true }),
+          ...createBadgeNodes({ row: 4, badge: 'CSNY', badgeLocation: BadgeLocation.below })
         ]
       }),
       []
@@ -395,6 +429,76 @@ export const NodeIconLabelStyles = withTopologySetup(() => {
             marginX: 100
           })
         ]
+      }),
+      []
+    )
+  );
+  return null;
+});
+
+export const NodeSecondaryLabelStyles = withTopologySetup(() => {
+  useComponentFactory(defaultComponentFactory);
+  useComponentFactory(stylesComponentFactory);
+  const nodes = Object.values(NodeShape).reduce((nodes: NodeModel[], shape: string | NodeShape, index) => {
+    nodes.push(
+      createNode({
+        id: `${shape}-secondary`,
+        shape: shape as NodeShape,
+        label: 'Primary Label',
+        secondaryLabel: 'Secondary Label',
+        labelPosition: LabelPosition.bottom,
+        row: 1,
+        column: index + 1,
+        x: index * RIGHT_LABEL_COLUMN_WIDTH,
+        truncateLength: 13
+      })
+    );
+    nodes.push(
+      createNode({
+        id: `${shape}-secondary-long`,
+        shape: shape as NodeShape,
+        label: 'Primary Label',
+        secondaryLabel: 'Very Long Secondary Label',
+        labelPosition: LabelPosition.bottom,
+        row: 2,
+        column: index + 1,
+        x: index * RIGHT_LABEL_COLUMN_WIDTH,
+        y: 165,
+        truncateLength: 13
+      })
+    );
+    nodes.push(
+      createNode({
+        id: `${shape}-secondary-long-badged`,
+        label: 'Label Bottom',
+        secondaryLabel: 'Very Long Secondary Label',
+        shape: shape as NodeShape,
+        row: 3,
+        column: index + 1,
+        x: index * (RIGHT_LABEL_COLUMN_WIDTH + 45),
+        y: 330,
+        labelIconClass: logos.get('icon-java'),
+        truncateLength: 13,
+        badge: 'CS',
+        hover: true,
+        showContextMenu: true,
+        badgeColor: '#ace12e',
+        badgeTextColor: '#0f280d',
+        badgeBorderColor: '#486b00',
+        marginX: 100
+      })
+    );
+    return nodes;
+  }, []);
+
+  useModel(
+    React.useMemo(
+      (): Model => ({
+        graph: {
+          id: 'g1',
+          type: 'graph'
+        },
+        nodes
       }),
       []
     )

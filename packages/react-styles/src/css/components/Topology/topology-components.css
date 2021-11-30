@@ -116,6 +116,9 @@ rect.pf-topology__node__background {
   fill: var(--pf-global--BackgroundColor--light-100);
 }
 
+.pf-topology__node__decorator__status .pf-m-info {
+  color: var(--pf-global--primary-color--light-100);
+}
 .pf-topology__node__decorator__status .pf-m-danger {
   color: var(--pf-global--danger-color--100);
 }
@@ -133,6 +136,12 @@ rect.pf-topology__node__background {
 .pf-topology__node__label > text {
   fill: var(--pf-global--palette--black-1000);
   pointer-events: none;
+}
+
+.pf-topology__node__label > text.pf-m-secondary {
+  fill: var(--pf-global--secondary-color--100);
+  pointer-events: none;
+  font-size: var(--pf-global--FontSize--xs);
 }
 
 .pf-topology__node.pf-m-selected .pf-topology__node__label > text {

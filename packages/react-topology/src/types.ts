@@ -29,6 +29,13 @@ export interface NodeStyle {
   padding?: Padding;
 }
 
+export enum TopologyQuadrant {
+  upperLeft = 'upperLeft',
+  upperRight = 'upperRight',
+  lowerLeft = 'lowerLeft',
+  lowerRight = 'lowerRight'
+}
+
 export enum NodeShape {
   circle = 'circle',
   rect = 'rect',
