@@ -32,6 +32,7 @@ import {
   OnFavorite
 } from './TableTypes';
 import { TreeRowWrapper } from './TreeRowWrapper';
+import { CustomActionsToggleProps } from './ActionsColumn';
 
 export interface TableProps extends OUIAProps {
   /** Adds an accessible name for the Table */
@@ -89,7 +90,7 @@ export interface TableProps extends OUIAProps {
   /** The desired direction to show the dropdown when clicking on the actions Kebab. Can only be used together with `actions` property */
   dropdownDirection?: 'up' | 'down';
   /** The toggle of the actions menu dropdown. A KebabToggle or DropdownToggle component */
-  actionsToggle?: React.ReactElement;
+  actionsToggle?: (props: CustomActionsToggleProps) => React.ReactNode;
   /** Row data */
   rows: (IRow | string[])[];
   /** Cell/column data */

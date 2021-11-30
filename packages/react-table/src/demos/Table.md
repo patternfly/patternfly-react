@@ -333,17 +333,18 @@ class ExpandCollapseAllTableDemo extends React.Component {
     this.toggleSelectAll = this.toggleSelectAll.bind(this);
   }
 
-  onCollapse(event, rowKey, isOpen) {
+  onCollapse(event, rowIndex, isOpen) {
     const { rows, expandedRows, expandCollapseToggle } = this.state;
     const expandableRowLength = this.state.rows.filter(row => row.isOpen !== undefined).length;
     /**
      * Please do not use rowKey as row index for more complex tables.
      * Rather use some kind of identifier like ID passed with each row.
      */
-    rows[rowKey].isOpen = isOpen;
+    const newRows = Array.from(rows);
+    newRows[rowIndex] = { ...newRows[rowIndex], isOpen };
     const updatedExpandedRows = isOpen ? expandedRows + 1 : expandedRows - 1;
     this.setState({
-      rows,
+      rows: newRows,
       expandedRows: updatedExpandedRows,
       expandCollapseToggle:
         updatedExpandedRows === expandableRowLength
@@ -385,7 +386,7 @@ class ExpandCollapseAllTableDemo extends React.Component {
       selectedRows = isSelected ? selectableRowLength : 0;
     } else {
       rows = [...this.state.rows];
-      rows[rowId].selected = isSelected;
+      rows[rowId] = { ...rows[rowId], selected: isSelected };
       selectedRows = isSelected ? selectedRows + 1 : selectedRows - 1;
       isChecked = selectedRows === 0 ? false : selectedRows === selectableRowLength ? true : null;
     }
@@ -864,7 +865,7 @@ class ColumnManagementAction extends React.Component {
       });
     } else {
       rows = [...this.state.rows];
-      rows[rowId].selected = isSelected;
+      rows[rowId] = { ...rows[rowId], selected: isSelected };
     }
     this.setState({
       rows
@@ -1576,7 +1577,7 @@ class ColumnManagementAction extends React.Component {
       });
     } else {
       rows = [...this.state.rows];
-      rows[rowId].selected = isSelected;
+      rows[rowId] = { ...rows[rowId], selected: isSelected };
     }
     this.setState({
       rows

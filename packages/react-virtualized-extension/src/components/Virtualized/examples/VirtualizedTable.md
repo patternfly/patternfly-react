@@ -450,7 +450,7 @@ class SelectableExample extends React.Component {
     } else {
       rows = [...this.state.rows];
       const rowIndex = rows.findIndex(r => r.id === rowData.id);
-      rows[rowIndex].selected = isSelected;
+      rows[rowIndex] = { ...rows[rowIndex], selected: isSelected };
     }
     this.setState({
       rows

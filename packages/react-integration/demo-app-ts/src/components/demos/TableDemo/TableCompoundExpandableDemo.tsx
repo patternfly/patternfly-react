@@ -1,5 +1,14 @@
 import * as React from 'react';
-import { Table, TableHeader, TableBody, TableProps, compoundExpand, IRow, ICell } from '@patternfly/react-table';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableProps,
+  compoundExpand,
+  IRow,
+  ICell,
+  IRowCell
+} from '@patternfly/react-table';
 
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -196,20 +205,23 @@ export class TableCompoundExpandableDemo extends React.Component<TableProps, Tab
 
   onExpand(event: React.MouseEvent, rowIndex: number, colIndex: number, isOpen: boolean) {
     const newRows = Array.from(this.state.rows);
-    const rowCells = newRows[rowIndex].cells;
+    const rowCells = Array.from(newRows[rowIndex].cells) as IRowCell[];
+    const thisCell = rowCells[colIndex];
 
     if (!isOpen) {
       // set all other expanded cells false in this row if we are expanding
-      (rowCells as ICell[]).forEach(cell => {
+      rowCells.forEach((cell, i) => {
         if (cell.props) {
-          cell.props.isOpen = false;
+          rowCells[i] = { ...cell, props: { ...cell.props, isOpen: false } };
         }
       });
-      (rowCells as ICell[])[colIndex].props.isOpen = true;
-      newRows[rowIndex].isOpen = true;
+      rowCells[colIndex] = { ...thisCell, props: { ...thisCell.props, isOpen: true } };
     } else {
-      (rowCells as ICell[])[colIndex].props.isOpen = false;
-      newRows[rowIndex].isOpen = (rowCells as ICell[]).some(cell => cell.props && cell.props.isOpen);
+      rowCells[colIndex] = { ...thisCell, props: { ...thisCell.props, isOpen: false } };
+      newRows[rowIndex] = {
+        ...newRows[rowIndex],
+        isOpen: rowCells.some(cell => cell.props && cell.props.isOpen)
+      };
     }
     this.setState({
       rows: newRows
