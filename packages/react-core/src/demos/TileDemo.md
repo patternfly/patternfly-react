@@ -7,61 +7,50 @@ section: components
 
 ### Tiles with single selection (space)
 
-```js
+```ts
 import React from 'react';
 import { Tile } from '@patternfly/react-core';
 
-class TileSingleSelect extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedId: ''
-    };
+const TileSingleSelect: React.FunctionComponent = () => {
+  const [selectedId, setSelectedId] = React.useState<string>('');
+  
+  const onSelect = (event: React.MouseEvent) => {``
+    setSelectedId(event.currentTarget.id);
+  };
+  
+  const onKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === ' ' || event.key === 'Enter') {
+      event.preventDefault();
+      setSelectedId(event.currentTarget.id);
+    }
+  };
 
-    this.onSelect = event => {
-      this.setState({
-        selectedId: event.target.id
-      });
-    };
-
-    this.onKeyDown = event => {
-      console.log(event.key);
-      if (event.key === ' ') {
-        event.preventDefault();
-        this.onSelect(event);
-      }
-    };
-  }
-
-  render() {
-    const { selectedId } = this.state;
-    return (
-      <div>
-        <Tile
-          title="Tile 1"
-          id="tile-1"
-          onClick={this.onSelect}
-          onKeyDown={this.onKeyDown}
-          isSelected={selectedId === 'tile-1'}
-        />
-        <Tile
-          title="Tile 2"
-          id="tile-2"
-          onClick={this.onSelect}
-          onKeyDown={this.onKeyDown}
-          isSelected={selectedId === 'tile-2'}
-        />
-        <Tile title="Tile 3" id="tile-3" isDisabled />
-        <Tile
-          title="Tile 4"
-          id="tile-4"
-          onClick={this.onSelect}
-          onKeyDown={this.onKeyDown}
-          isSelected={selectedId === 'tile-4'}
-        />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Tile
+        title="Tile 1"
+        id="tile-1"
+        onClick={onSelect}
+        onKeyDown={onKeyDown}
+        isSelected={selectedId === 'tile-1'}
+      />
+      <Tile
+        title="Tile 2"
+        id="tile-2"
+        onClick={onSelect}
+        onKeyDown={onKeyDown}
+        isSelected={selectedId === 'tile-2'}
+      />
+      <Tile title="Tile 3" id="tile-3" isDisabled />
+      <Tile
+        title="Tile 4"
+        id="tile-4"
+        onClick={onSelect}
+        onKeyDown={onKeyDown}
+        isSelected={selectedId === 'tile-4'}
+      />
+    </div>
+  );
 }
 ```
 
