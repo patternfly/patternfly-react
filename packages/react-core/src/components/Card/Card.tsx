@@ -12,20 +12,18 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   className?: string;
   /** Sets the base component to render. defaults to article */
   component?: keyof JSX.IntrinsicElements;
-  /** Modifies the card to include hover styles on :hover */
+  /** @deprecated Modifies the card to include hover styles on :hover */
   isHoverable?: boolean;
-  /** @beta Modifies the card to include hoverable-raised styles on :hover, this styling is included by default with isSelectableRaised */
-  isHoverableRaised?: boolean;
   /** Modifies the card to include compact styling. Should not be used with isLarge. */
   isCompact?: boolean;
   /** Modifies the card to include selectable styling */
   isSelectable?: boolean;
   /** Modifies the card to include selected styling */
   isSelected?: boolean;
-  /** @beta Modifies the card to include selectable-raised styling and hoverable-raised styling */
-  isSelectableRaised?: boolean;
-  /** @beta Modifies the card to include selected-raised styling */
-  isSelectedRaised?: boolean;
+  /** @beta Specifies the selectable styling variant */
+  selectableVariant?: 'legacy' | 'raised';
+  /** @beta Modifies a selectable card to have disabled styling */
+  isDisabled?: boolean;
   /** Modifies the card to include flat styling */
   isFlat?: boolean;
   /** Modifies the card to include rounded styling */
@@ -56,12 +54,11 @@ export const Card: React.FunctionComponent<CardProps> = ({
   className = '',
   component = 'article',
   isHoverable = false,
-  isHoverableRaised = false,
   isCompact = false,
   isSelectable = false,
   isSelected = false,
-  isSelectableRaised = false,
-  isSelectedRaised = false,
+  selectableVariant = 'legacy',
+  isDisabled = false,
   isFlat = false,
   isExpanded = false,
   isRounded = false,
@@ -79,6 +76,33 @@ export const Card: React.FunctionComponent<CardProps> = ({
     console.warn('Card: Cannot use isCompact with isLarge. Defaulting to isCompact');
     isLarge = false;
   }
+
+  if (isHoverable) {
+    // eslint-disable-next-line no-console
+    console.warn("Card: the 'isHoverable' prop is deprecated. Use isSelectable instead.");
+  }
+
+  const isRaised = selectableVariant === 'raised';
+
+  let selectableModifiers = '';
+  if (isSelectable || isHoverable) {
+    if (isRaised) {
+      if (isDisabled) {
+        selectableModifiers = css((isSelectable || isHoverable) && styles.modifiers.nonSelectableRaised);
+      } else {
+        selectableModifiers = css(
+          (isSelectable || isHoverable) && styles.modifiers.selectableRaised,
+          (isSelectable || isHoverable) && isSelected && styles.modifiers.selectedRaised
+        );
+      }
+    } else {
+      selectableModifiers = css(
+        (isSelectable || isHoverable) && styles.modifiers.selectable,
+        (isSelectable || isHoverable) && isSelected && styles.modifiers.selected
+      );
+    }
+  }
+
   return (
     <CardContext.Provider
       value={{
@@ -90,22 +114,17 @@ export const Card: React.FunctionComponent<CardProps> = ({
         id={id}
         className={css(
           styles.card,
-          isHoverable && styles.modifiers.hoverable,
-          isHoverableRaised && styles.modifiers.hoverableRaised,
           isCompact && styles.modifiers.compact,
-          isSelectable && !isSelectableRaised && styles.modifiers.selectable,
-          isSelected && !isSelectedRaised && isSelectable && styles.modifiers.selected,
-          isSelectableRaised && styles.modifiers.selectableRaised,
-          isSelectedRaised && isSelectableRaised && styles.modifiers.selectedRaised,
           isExpanded && styles.modifiers.expanded,
           isFlat && styles.modifiers.flat,
           isRounded && styles.modifiers.rounded,
           isLarge && styles.modifiers.displayLg,
           isFullHeight && styles.modifiers.fullHeight,
           isPlain && styles.modifiers.plain,
+          selectableModifiers,
           className
         )}
-        tabIndex={isSelectableRaised || isSelectable ? '0' : undefined}
+        tabIndex={isSelectable ? '0' : undefined}
         {...props}
         {...ouiaProps}
       >

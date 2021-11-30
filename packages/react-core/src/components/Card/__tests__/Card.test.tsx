@@ -35,11 +35,6 @@ test('card with isHoverable applied ', () => {
   expect(view).toMatchSnapshot();
 });
 
-test('card with isHoverableRaised applied ', () => {
-  const view = shallow(<Card isHoverableRaised />).dive();
-  expect(view).toMatchSnapshot();
-});
-
 test('card with isCompact applied ', () => {
   const view = shallow(<Card isCompact />).dive();
   expect(view).toMatchSnapshot();
@@ -64,23 +59,23 @@ test('card with only isSelected applied - not change', () => {
   expect(view.prop('tabIndex')).toBe(undefined);
 });
 
-test('card with isSelectableRaised applied ', () => {
-  const view = shallow(<Card isSelectableRaised />).dive();
+test('card with only isSelected raised applied - not change', () => {
+  const view = shallow(<Card isSelected selectableVariant="raised" />).dive();
+  expect(view.prop('className')).not.toMatch(/selected/);
+  expect(view.prop('tabIndex')).toBe(undefined);
+});
+
+test('card with isSelectable raised variant applied ', () => {
+  const view = shallow(<Card isSelectable selectableVariant="raised" />).dive();
   expect(view.prop('className')).toMatch(/selectable-raised/);
   expect(view.prop('tabIndex')).toBe('0');
 });
 
-test('card with isSelectableRaised and isSelectedRaised applied ', () => {
-  const view = shallow(<Card isSelectableRaised isSelectedRaised />).dive();
+test('card with isSelectable and isSelected raised applied ', () => {
+  const view = shallow(<Card isSelectable isSelected selectableVariant="raised" />).dive();
   expect(view.prop('className')).toMatch(/selectable-raised/);
   expect(view.prop('className')).toMatch(/selected-raised/);
   expect(view.prop('tabIndex')).toBe('0');
-});
-
-test('card with only isSelectedRaised applied - not change', () => {
-  const view = shallow(<Card isSelectedRaised />).dive();
-  expect(view.prop('className')).not.toMatch(/selected-raised/);
-  expect(view.prop('tabIndex')).toBe(undefined);
 });
 
 test('card with isFlat applied', () => {
