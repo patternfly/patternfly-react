@@ -45,7 +45,9 @@ export interface DatePickerProps
 }
 
 export interface DatePickerRef {
+  /** Sets the calendar open status */
   setCalendarOpen: (isOpen: boolean) => void;
+  /** Toggles the calendar open status */
   toggleCalendar: () => void;
 }
 
