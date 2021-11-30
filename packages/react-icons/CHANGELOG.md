@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.26.12 (2021-11-30)
+
+
+### Bug Fixes
+
+* **action-list:** added support for classname ([#6647](https://github.com/patternfly/patternfly-react/issues/6647)) ([dd3d2ce](https://github.com/patternfly/patternfly-react/commit/dd3d2ce32b4d3e7562faf465abdc508e17f097d9))
+
+
+
+
+
 ## 4.26.11 (2021-11-30)
 
 **Note:** Version bump only for package @patternfly/react-icons
