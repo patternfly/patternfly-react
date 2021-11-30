@@ -489,7 +489,7 @@ TabsOpenNestedDemo = () => {
           <CardBody>
             <Flex direction={{ default: 'column' }}>
               <FlexItem>
-                <Tabs activeKey={activeNestedTabKey} onSelect={handleNestedTabClick} id="open-nested-tabs-example-tabs-list">
+                <Tabs activeKey={activeNestedTabKey} isSecondary onSelect={handleNestedTabClick} id="open-nested-tabs-example-tabs-list">
                   <Tab eventKey={10} title={<TabTitleText>Cluster</TabTitleText>} tabContentId={`tabContent${10}`} />
                   <Tab eventKey={11} title={<TabTitleText>Control plane</TabTitleText>} tabContentId={`tabContent${11}`} />
                   <Tab eventKey={12} title={<TabTitleText>Operators</TabTitleText>} tabContentId={`tabContent${12}`} />
@@ -554,7 +554,7 @@ TabsOpenNestedDemo = () => {
           <Tab eventKey={1} title={<TabTitleText>Cluster 2</TabTitleText>} tabContentId={`tabContent${1}`} />
         </Tabs>
       </PageSection>
-      <PageSection isWidthLimited variant={PageSectionVariants.light}>
+      <PageSection isWidthLimited>
         <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
           <TabContentBody>{tabContent}</TabContentBody>
         </TabContent>
