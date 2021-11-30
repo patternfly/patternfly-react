@@ -6,6 +6,11 @@ section: components
 import DashboardWrapper from './examples/DashboardWrapper';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
 ## Demos
 
@@ -440,4 +445,315 @@ TabsOpenWithSecondaryTabsDemo = () => {
 
 ### Nested tabs
 ```js isFullscreen file="./Tabs/NestedTabsDemo.js"
+```
+
+### Tables and tabs
+
+```js isFullscreen
+import React from 'react';
+import {
+  Button,
+  Drawer,
+  DrawerContent,
+  DrawerContentBody,
+  DrawerPanelContent,
+  DrawerHead,
+  DrawerActions,
+  DrawerCloseButton,
+  Dropdown,
+  Flex,
+  FlexItem,
+  KebabToggle,
+  PageSection,
+  Tabs,
+  Tab,
+  TabContent,
+  TabContentBody,
+  TabTitleText,
+  Title,
+  Toolbar,
+  ToolbarItem,
+  ToolbarContent,
+  ToolbarToggleGroup,
+  OptionsMenu,
+  OptionsMenuToggle,
+  OverflowMenu,
+  OverflowMenuContent,
+  OverflowMenuControl,
+  OverflowMenuGroup,
+  OverflowMenuItem,
+  Select,
+  SelectOption,
+  Pagination
+} from '@patternfly/react-core';
+import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
+import DashboardWrapper from './examples/DashboardWrapper';
+import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
+import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+
+TablesAndTabsDemo = () => {
+  // tab properties
+  const [activeTabKey, setActiveTabKey] = React.useState(0);
+  // Toggle currently active tab
+  const handleTabClick = (event, tabIndex) => {
+    setActiveTabKey(tabIndex);
+  };
+
+  // drawer properties
+  const [isExpanded, setIsExpanded] = React.useState(false);
+  const drawerRef = React.createRef();
+  const onExpand = () => {
+    drawerRef.current && drawerRef.current.focus();
+  };
+
+  // toolbar properties
+  const [nameIsExpanded, setNameIsExpanded] = React.useState(false);
+  const [nameSelected, setNameSelected] = React.useState(null);
+
+  // table properties
+  // In real usage, this data would come from some external source like an API via props.
+  const repositories = [
+    { name: "Node 1", branches: 10, prs: 25, workspaces: 5, lastCommit: '2 days ago' },
+    { name: "Node 2", branches: 8, prs: 30, workspaces: 2, lastCommit: '2 days ago' },
+    { name: "Node 3", branches: 12, prs: 48, workspaces: 13, lastCommit: '30 days ago' },
+    { name: "Node 4", branches: 3, prs: 8, workspaces: 20, lastCommit: '8 days ago' },
+    { name: "Node 5", branches: 33, prs: 21, workspaces: 2, lastCommit: '26 days ago' },
+  ];
+
+  const columnNames = {
+    name: 'Repositories',
+    branches: 'Branches',
+    prs: 'Pull requests',
+    workspaces: 'Workspaces',
+    lastCommit: 'Last commit'
+  };
+
+  // In this example, selected row is tracked by the repo name from each row. This could be any unique identifier.
+  // This is to prevent state from being based on row order index in case we later add sorting.
+  const [selectedRepoName, setSelectedRepoName] = React.useState('');
+  const setRepoSelected = (repo, isSelecting = true) =>
+    setSelectedRepoName(prevSelected => {
+      const otherSelectedRepoName = (prevSelected !== repo.name);
+      return isSelecting ? repo.name : otherSelectedRepoName;
+    });
+  const isRepoSelected = (repo) => selectedRepoName === repo.name;
+
+  const defaultActions = [
+    {
+      title: 'Some action',
+      onClick: (event, rowId, rowData, extra) => console.log('clicked on Some action, on row: ', rowId)
+    },
+    {
+      title: <a href="https://www.patternfly.org">Link action</a>
+    },
+    {
+      isSeparator: true
+    },
+    {
+      title: 'Third action',
+      onClick: (event, rowId, rowData, extra) => console.log('clicked on Third action, on row: ', rowId)
+    }
+  ];
+
+  const toolbar = (
+    <Toolbar id="page-layout-table-column-management-action-toolbar-top">
+      <ToolbarContent>
+        <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+          <ToolbarItem>
+            <Select
+              variant={SelectVariant.single}
+              aria-label="Select Input"
+              placeholderText="Name"
+            />
+          </ToolbarItem>
+        </ToolbarToggleGroup>
+        <ToolbarItem>
+          <OptionsMenu
+            id="page-layout-table-column-management-action-toolbar-top-options-menu-toggle"
+            isPlain
+            menuItems={[]}
+            toggle={
+              <OptionsMenuToggle
+                toggleTemplate={<SortAmountDownIcon aria-hidden="true" />}
+                aria-label="Sort"
+                hideCaret
+              />
+            }
+          />
+        </ToolbarItem>
+        <ToolbarItem>
+        <OverflowMenu breakpoint="md">
+          <OverflowMenuContent>
+            <OverflowMenuGroup groupType="button" isPersistent>
+              <OverflowMenuItem isPersistent>
+                <Button variant="primary">Action</Button>
+              </OverflowMenuItem>
+              <OverflowMenuItem isPersistent>
+                <Button variant="secondary">Deploy</Button>
+              </OverflowMenuItem>
+            </OverflowMenuGroup>
+          </OverflowMenuContent>
+          <OverflowMenuControl hasAdditionalOptions>
+            <Dropdown
+              onSelect={() => {}}
+              toggle={<KebabToggle onToggle={() => {}} />}
+              isOpen={false}
+              isPlain
+              dropdownItems={[]}
+            />
+          </OverflowMenuControl>
+        </OverflowMenu>
+        </ToolbarItem>
+        <ToolbarItem variant="pagination">
+            <Pagination
+              itemCount={36}
+              widgetId="pagination-options-menu-bottom"
+              page={1}
+              variant={PaginationVariant.top}
+              isCompact
+            />
+          </ToolbarItem>
+      </ToolbarContent>
+    </Toolbar>
+  );
+
+  const tableComposable = (
+    <TableComposable aria-label="`Composable` table">
+      <Thead noWrap>
+        <Tr>
+          <Th>{columnNames.name}</Th>
+          <Th>{columnNames.branches}</Th>
+          <Th>{columnNames.prs}</Th>
+          <Th>{columnNames.workspaces}</Th>
+          <Th>{columnNames.lastCommit}</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        {repositories.map((repo, rowIndex) => (
+          <Tr
+            key={repo.name}
+            onRowClick={() => {
+                setRepoSelected(repo, !isRepoSelected(repo));
+                setIsExpanded(!isRepoSelected(repo));
+              }
+            }
+            isHoverable
+            isRowSelected={isRepoSelected(repo)}
+          >
+            <Td dataLabel={columnNames.name}>
+              {repo.name}
+              <div>
+                <a href="#">siemur/test-space</a>
+              </div>
+            </Td>
+            <Td dataLabel={columnNames.branches}>
+              <Flex>
+                <FlexItem>
+                  {repo.branches}
+                </FlexItem>
+                <FlexItem>
+                  <CodeBranchIcon key="icon" />
+                </FlexItem>
+              </Flex>
+            </Td>
+            <Td dataLabel={columnNames.prs}>
+              <Flex>
+                <FlexItem>
+                  {repo.prs}
+                </FlexItem>
+                <FlexItem>
+                  <CodeIcon key="icon" />
+                </FlexItem>
+              </Flex>
+            </Td>
+            <Td dataLabel={columnNames.workspaces}>
+              <Flex>
+                <FlexItem>
+                  {repo.workspaces}
+                </FlexItem>
+                <FlexItem>
+                  <CubeIcon key="icon" />
+                </FlexItem>
+              </Flex>
+            </Td>
+            <Td dataLabel={columnNames.lastCommit}>
+              {repo.lastCommit}
+            </Td>
+            <Td
+              key={`${rowIndex}_5`}
+              actions={{
+                items: defaultActions
+              }}
+            />
+          </Tr>
+        ))}
+      </Tbody>
+    </TableComposable>
+  );
+
+  const panelContent = (
+    <DrawerPanelContent>
+      <DrawerHead>
+        <span tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
+            drawer-panel
+          </span>
+        <DrawerActions>
+          <DrawerCloseButton onClick={() => {
+            setRepoSelected('', false);
+            setIsExpanded(false);
+          }
+        }/>
+        </DrawerActions>
+      </DrawerHead>
+    </DrawerPanelContent>
+  );
+
+  const tabContent = (
+    <Drawer isExpanded={isExpanded} isInline onExpand={onExpand}>
+      <DrawerContent panelContent={panelContent}>
+        <DrawerContentBody>
+          {toolbar}
+          {tableComposable}
+          <Pagination
+            isCompact
+            id="page-layout-table-column-management-action-toolbar-bottom"
+            itemCount={36}
+            widgetId="pagination-options-menu-bottom"
+            page={1}
+            variant={PaginationVariant.bottom}
+          />
+        </DrawerContentBody>
+      </DrawerContent>
+    </Drawer>
+  );
+
+  return (
+    <DashboardWrapper hasNoBreadcrumb>
+      <PageSection isWidthLimited variant={PageSectionVariants.light}>
+        <Title headingLevel="h1" size="2xl">
+          Nodes
+        </Title>
+      </PageSection>
+      <PageSection type="tabs" variant={PageSectionVariants.light} isWidthLimited>
+        <Tabs activeKey={activeTabKey} onSelect={handleTabClick} usePageInsets id="open-tabs-example-tabs-list">
+          <Tab eventKey={0} title={<TabTitleText>Nodes</TabTitleText>} tabContentId={`tabContent${0}`} />
+          <Tab eventKey={1} title={<TabTitleText>Node connectors</TabTitleText>} tabContentId={`tabContent${1}`} />
+        </Tabs>
+      </PageSection>
+      <PageSection isWidthLimited variant={PageSectionVariants.light}>
+        <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
+          <TabContentBody>{tabContent}</TabContentBody>
+        </TabContent>
+        <TabContent key={1} eventKey={1} id={`tabContent${1}`} activeKey={activeTabKey} hidden={1 !== activeTabKey}>
+          <TabContentBody>Node connectors panel</TabContentBody>
+        </TabContent>
+      </PageSection>
+    </DashboardWrapper>
+  );
+};
 ```
