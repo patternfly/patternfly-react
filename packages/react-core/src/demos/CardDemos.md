@@ -1247,11 +1247,10 @@ const UtilizationCard3: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const selectItems = [
-    <SelectOption value="Link" key="link" />,
-    <SelectOption value="Action" key="action" component="button" />,
-    <SelectOption value="Disabled link" key="disabled link" isDisabled />,
-    <Divider component="li" key="separator" />,
-    <SelectOption value="Separated link" key="separated link" />
+    <SelectOption value="Last hour" key="option1" />,
+    <SelectOption value="Last 6 hours" key="option2" />,
+    <SelectOption value="Last 24 hours" key="option3" />,
+    <SelectOption value="Last 7 days" key="option4" />
   ];
 
   return (
@@ -2434,11 +2433,10 @@ const TrendCard1: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const selectItems = [
-    <SelectOption value="Link" key="link" />,
-    <SelectOption value="Action" key="action" component="button" />,
-    <SelectOption value="Disabled link" key="disabled link" isDisabled />,
-    <Divider component="li" key="separator" />,
-    <SelectOption value="Separated link" key="separated link" />
+    <SelectOption value="Last hour" key="option1" />,
+    <SelectOption value="Last 6 hours" key="option2" />,
+    <SelectOption value="Last 24 hours" key="option3" />,
+    <SelectOption value="Last 7 days" key="option4" />
   ];
   return (
     <Gallery hasGutter minWidths={{ default: '360px' }}>
@@ -2612,11 +2610,10 @@ CardLogViewDemo = () => {
   };
 
   const selectItems = [
-    <SelectOption value="Link" key="action1" component="a" />,
-    <SelectOption value="Action" key="action2" component="button" />,
-    <SelectOption value="Disabled link" key="disabled action3" isDisabled component="a"/>,
-    <Divider component="li" key="separator" />,
-    <SelectOption value="Separated link" key="action4" component="a" />
+    <SelectOption value="Most recent" key="option1" />,
+    <SelectOption value="Last 6 hours" key="option2" />,
+    <SelectOption value="Last 24 hours" key="option3" />,
+    <SelectOption value="Last 7 days" key="option4" />
   ];
 
   return (
@@ -2727,11 +2724,9 @@ CardEventViewDemo = () => {
   };
   
   const selectItems = [
-    <SelectOption value="Link" key="action1" component="a" />,
-    <SelectOption value="Action" key="action2" component="button" />,
-    <SelectOption value="Disabled link" key="disabled action3" isDisabled component="a"/>,
-    <Divider component="li" key="separator" />,
-    <SelectOption value="Separated link" key="action4" component="a" />
+    <SelectOption value="Success" key="option1" />,
+    <SelectOption value="Error" key="option2" />,
+    <SelectOption value="Warning" key="option3" />
   ];
 
   return (
