@@ -334,23 +334,6 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       }
     }
   };
-  const onTriggerEnter = (event: KeyboardEvent) => {
-    if (event.keyCode === KEY_CODES.ENTER) {
-      if (!visible) {
-        if (triggerManually) {
-          shouldOpen(show, event);
-        } else {
-          show(true);
-        }
-      } else {
-        if (triggerManually) {
-          shouldClose(null, hide, event);
-        } else {
-          hide();
-        }
-      }
-    }
-  };
   const onTriggerClick = (event: MouseEvent) => {
     if (triggerManually) {
       if (visible) {
@@ -362,7 +345,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       if (visible) {
         hide();
       } else {
-        show();
+        show(true);
       }
     }
   };
@@ -451,7 +434,6 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         distance={distance}
         placement={position}
         onTriggerClick={onTriggerClick}
-        onTriggerEnter={onTriggerEnter}
         onDocumentClick={onDocumentClick}
         onDocumentKeyDown={onDocumentKeyDown}
         enableFlip={enableFlip}
