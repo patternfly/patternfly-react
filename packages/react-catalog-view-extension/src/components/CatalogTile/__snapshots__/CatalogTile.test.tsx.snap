@@ -22,17 +22,18 @@ exports[`CatalogTile href renders properly 1`] = `
     component="a"
     href="http://patternfly.org"
     id="test-href"
-    isHoverable={true}
+    isSelectable={true}
     onClick={[Function]}
   >
     <a
-      className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
+      className="pf-c-card pf-m-selectable catalog-tile-pf featured"
       data-ouia-component-id="OUIA-Generated-Card-6"
       data-ouia-component-type="PF4/Card"
       data-ouia-safe={true}
       href="http://patternfly.org"
       id="test-href"
       onClick={[Function]}
+      tabIndex="0"
     >
       <CardTitle
         className="catalog-tile-pf-header"
@@ -128,17 +129,18 @@ exports[`CatalogTile renders properly 1`] = `
       component="div"
       href="#"
       id="single-badge-test"
-      isHoverable={true}
+      isSelectable={true}
       onClick={[Function]}
     >
       <div
-        className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
+        className="pf-c-card pf-m-selectable catalog-tile-pf featured"
         data-ouia-component-id="OUIA-Generated-Card-1"
         data-ouia-component-type="PF4/Card"
         data-ouia-safe={true}
         href="#"
         id="single-badge-test"
         onClick={[Function]}
+        tabIndex="0"
       >
         <CardHeader>
           <div
@@ -407,17 +409,18 @@ exports[`CatalogTile renders properly 1`] = `
       component="div"
       href="#"
       id="multi-badge-test"
-      isHoverable={true}
+      isSelectable={true}
       onClick={[Function]}
     >
       <div
-        className="pf-c-card pf-m-hoverable catalog-tile-pf"
+        className="pf-c-card pf-m-selectable catalog-tile-pf"
         data-ouia-component-id="OUIA-Generated-Card-2"
         data-ouia-component-type="PF4/Card"
         data-ouia-safe={true}
         href="#"
         id="multi-badge-test"
         onClick={[Function]}
+        tabIndex="0"
       >
         <CardHeader>
           <div
@@ -757,17 +760,18 @@ exports[`CatalogTile renders properly 1`] = `
       component="div"
       href="#"
       id="test-iconClass"
-      isHoverable={true}
+      isSelectable={true}
       onClick={[Function]}
     >
       <div
-        className="pf-c-card pf-m-hoverable catalog-tile-pf"
+        className="pf-c-card pf-m-selectable catalog-tile-pf"
         data-ouia-component-id="OUIA-Generated-Card-3"
         data-ouia-component-type="PF4/Card"
         data-ouia-safe={true}
         href="#"
         id="test-iconClass"
         onClick={[Function]}
+        tabIndex="0"
       >
         <CardHeader>
           <div
@@ -994,17 +998,18 @@ exports[`CatalogTile renders properly 1`] = `
       component="a"
       href="https://github.com/patternfly/patternfly-react"
       id="tile-footer-test"
-      isHoverable={true}
+      isSelectable={true}
       onClick={[Function]}
     >
       <a
-        className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
+        className="pf-c-card pf-m-selectable catalog-tile-pf featured"
         data-ouia-component-id="OUIA-Generated-Card-4"
         data-ouia-component-type="PF4/Card"
         data-ouia-safe={true}
         href="https://github.com/patternfly/patternfly-react"
         id="tile-footer-test"
         onClick={[Function]}
+        tabIndex="0"
       >
         <CardHeader>
           <div
@@ -1255,17 +1260,18 @@ exports[`CatalogTile renders properly 1`] = `
       component="a"
       href="https://github.com/patternfly/patternfly-react"
       id="custom-icon-svg-test"
-      isHoverable={true}
+      isSelectable={true}
       onClick={[Function]}
     >
       <a
-        className="pf-c-card pf-m-hoverable catalog-tile-pf featured"
+        className="pf-c-card pf-m-selectable catalog-tile-pf featured"
         data-ouia-component-id="OUIA-Generated-Card-5"
         data-ouia-component-type="PF4/Card"
         data-ouia-safe={true}
         href="https://github.com/patternfly/patternfly-react"
         id="custom-icon-svg-test"
         onClick={[Function]}
+        tabIndex="0"
       >
         <CardHeader>
           <div
