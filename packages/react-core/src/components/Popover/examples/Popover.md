@@ -341,7 +341,7 @@ const AlertPopover = () => {
       <div style={{ margin: '50px' }}>
         <Popover
           aria-label="Alert popover"
-          alertVariant={alertVariant}
+          alertVariant={alertVariant as 'default' | 'info' | 'warning' | 'success' | 'danger'}
           header={
             <PopoverHeader>
               <PopoverHeaderIcon>{alertIcons[alertVariant]}</PopoverHeaderIcon>
