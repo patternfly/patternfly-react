@@ -51,6 +51,8 @@ export interface ContextSelectorProps extends ToggleMenuBaseProps, OUIAProps {
   isPlain?: boolean;
   /** Flag to indicate if toggle is textual toggle */
   isText?: boolean;
+  /** Flag to disable focus trap */
+  disableFocusTrap?: boolean;
 }
 
 export class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateId: string }> {
@@ -70,6 +72,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     onSearchButtonClick: () => undefined as any,
     menuAppendTo: 'inline',
     ouiaSafe: true,
+    disableFocusTrap: false,
     footer: null as React.ReactNode,
     isPlain: false,
     isText: false
@@ -113,12 +116,13 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
       isPlain,
       isText,
       footer,
+      disableFocusTrap,
       ...props
     } = this.props;
     const menuContainer = (
       <div className={css(styles.contextSelectorMenu)}>
         {isOpen && (
-          <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
+          <FocusTrap active={!disableFocusTrap} focusTrapOptions={{ clickOutsideDeactivates: true }}>
             <div className={css(styles.contextSelectorMenuSearch)}>
               <InputGroup>
                 <TextInput
