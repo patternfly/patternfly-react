@@ -27,7 +27,6 @@ exports[`popover can close from content (uncontrolled) 1`] = `
     onDocumentClick={[Function]}
     onDocumentKeyDown={[Function]}
     onTriggerClick={[Function]}
-    onTriggerEnter={[Function]}
     placement="top"
     popper={
       <FocusTrap
@@ -150,7 +149,6 @@ exports[`popover can have a custom minimum width 1`] = `
     onDocumentClick={[Function]}
     onDocumentKeyDown={[Function]}
     onTriggerClick={[Function]}
-    onTriggerEnter={[Function]}
     placement="top"
     popper={
       <FocusTrap
@@ -256,7 +254,6 @@ exports[`popover can specify position as object value 1`] = `
     onDocumentClick={[Function]}
     onDocumentKeyDown={[Function]}
     onTriggerClick={[Function]}
-    onTriggerEnter={[Function]}
     placement="right"
     popper={
       <FocusTrap
@@ -362,7 +359,6 @@ exports[`popover renders close-button, header and body 1`] = `
     onDocumentClick={[Function]}
     onDocumentKeyDown={[Function]}
     onTriggerClick={[Function]}
-    onTriggerEnter={[Function]}
     placement="top"
     popper={
       <FocusTrap
