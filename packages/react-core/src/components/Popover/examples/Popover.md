@@ -293,6 +293,7 @@ import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
         <PopoverHeaderIcon>
           <BullhornIcon />
         </PopoverHeaderIcon>
+        <span className="pf-u-screen-reader">Icon popover:</span>
         <PopoverHeaderText>Popover with icon</PopoverHeaderText>
       </PopoverHeader>
     }
