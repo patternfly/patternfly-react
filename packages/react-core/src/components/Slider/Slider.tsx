@@ -104,6 +104,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   // calculate style value percentage
   const stylePercent = ((localValue - min) * 100) / (max - min);
   const style = { '--pf-c-slider--value': `${stylePercent}%` } as React.CSSProperties;
+  const widthChars = React.useMemo(() => localInputValue.toString().length, [localInputValue]);
+  const inputStyle = { '--pf-c-slider__value--c-form-control--width-chars': widthChars } as React.CSSProperties;
 
   const onChangeHandler = (value: string) => {
     setLocalInputValue(Number(value));
@@ -340,7 +342,11 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   };
 
   return (
-    <div className={css(styles.slider, className, isDisabled && styles.modifiers.disabled)} style={style} {...props}>
+    <div
+      className={css(styles.slider, className, isDisabled && styles.modifiers.disabled)}
+      style={{ ...style, ...inputStyle }}
+      {...props}
+    >
       {leftActions && <div className={css(styles.sliderActions)}>{leftActions}</div>}
       <div className={css(styles.sliderMain)}>
         <div className={css(styles.sliderRail)} ref={sliderRailRef} onClick={!isDisabled ? onSliderRailClick : null}>
