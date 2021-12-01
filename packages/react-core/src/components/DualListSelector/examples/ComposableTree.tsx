@@ -24,57 +24,7 @@ interface ExampleProps {
   data: FoodNode[];
 }
 
-export const ComposableDualListSelectorTree: React.FunctionComponent<ExampleProps> = ({
-  data = [
-    {
-      id: 'fruits',
-      text: 'Fruits',
-      children: [
-        { id: 'apple', text: 'Apple' },
-        {
-          id: 'berries',
-          text: 'Berries',
-          children: [
-            { id: 'blueberry', text: 'Blueberry' },
-            { id: 'strawberry', text: 'Strawberry' }
-          ]
-        },
-        { id: 'banana', text: 'Banana' }
-      ]
-    },
-    { id: 'bread', text: 'Bread' },
-    {
-      id: 'vegetables',
-      text: 'Vegetables',
-      children: [
-        { id: 'broccoli', text: 'Broccoli' },
-        { id: 'cauliflower', text: 'Cauliflower' }
-      ]
-    },
-    {
-      id: 'proteins',
-      text: 'Proteins',
-      children: [
-        { id: 'beans', text: 'Beans' },
-        {
-          id: 'meats',
-          text: 'Meats',
-          children: [
-            {
-              id: 'beef',
-              text: 'Beef'
-            },
-            {
-              id: 'chicken',
-              text: 'Chicken'
-            }
-          ]
-        },
-        { id: 'tofu', text: 'Tofu' }
-      ]
-    }
-  ]
-}: ExampleProps) => {
+export const ComposableDualListSelectorTree: React.FunctionComponent<ExampleProps> = ({ data }: ExampleProps) => {
   const [checkedLeafIds, setCheckedLeafIds] = React.useState<string[]>([]);
   const [chosenLeafIds, setChosenLeafIds] = React.useState<string[]>(['beans', 'beef', 'chicken', 'tofu']);
   const [chosenFilter, setChosenFilter] = React.useState<string>('');
@@ -323,3 +273,57 @@ export const ComposableDualListSelectorTree: React.FunctionComponent<ExampleProp
     </DualListSelector>
   );
 };
+
+export const ComposableDualListSelectorTreeExample: React.FunctionComponent = () => (
+  <ComposableDualListSelectorTree
+    data={[
+      {
+        id: 'fruits',
+        text: 'Fruits',
+        children: [
+          { id: 'apple', text: 'Apple' },
+          {
+            id: 'berries',
+            text: 'Berries',
+            children: [
+              { id: 'blueberry', text: 'Blueberry' },
+              { id: 'strawberry', text: 'Strawberry' }
+            ]
+          },
+          { id: 'banana', text: 'Banana' }
+        ]
+      },
+      { id: 'bread', text: 'Bread' },
+      {
+        id: 'vegetables',
+        text: 'Vegetables',
+        children: [
+          { id: 'broccoli', text: 'Broccoli' },
+          { id: 'cauliflower', text: 'Cauliflower' }
+        ]
+      },
+      {
+        id: 'proteins',
+        text: 'Proteins',
+        children: [
+          { id: 'beans', text: 'Beans' },
+          {
+            id: 'meats',
+            text: 'Meats',
+            children: [
+              {
+                id: 'beef',
+                text: 'Beef'
+              },
+              {
+                id: 'chicken',
+                text: 'Chicken'
+              }
+            ]
+          },
+          { id: 'tofu', text: 'Tofu' }
+        ]
+      }
+    ]}
+  />
+);
