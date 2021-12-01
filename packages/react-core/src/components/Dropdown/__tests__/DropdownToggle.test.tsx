@@ -109,7 +109,7 @@ describe('state', () => {
 
   test('button variant - primary', () => {
     const view = mount(
-      <DropdownToggle id="Dropdown Toggle" buttonVariant="primary" parentRef={document.createElement('div')}>
+      <DropdownToggle id="Dropdown Toggle" toggleVariant="primary" parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
     );
@@ -119,7 +119,7 @@ describe('state', () => {
 
   test('button variant - secondary', () => {
     const view = mount(
-      <DropdownToggle id="Dropdown Toggle" buttonVariant="secondary" parentRef={document.createElement('div')}>
+      <DropdownToggle id="Dropdown Toggle" toggleVariant="secondary" parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
     );
@@ -131,7 +131,7 @@ describe('state', () => {
     const view = mount(
       <DropdownToggle
         id="Dropdown Toggle"
-        buttonVariant="primary"
+        toggleVariant="primary"
         splitButtonItems={[<div key="1">test</div>]}
         splitButtonVariant="action"
         parentRef={document.createElement('div')}
@@ -147,7 +147,7 @@ describe('state', () => {
     const view = mount(
       <DropdownToggle
         id="Dropdown Toggle"
-        buttonVariant="primary"
+        toggleVariant="primary"
         splitButtonItems={[<div key="0">test</div>]}
         parentRef={document.createElement('div')}
       >

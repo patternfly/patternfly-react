@@ -498,7 +498,6 @@ exports[`optionsMenu expanded 1`] = `
             aria-haspopup="listbox"
             aria-label="Options menu"
             bubbleEvent={false}
-            buttonVariant="default"
             className=""
             data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
             data-ouia-component-type="PF4/DropdownToggle"
@@ -698,6 +697,7 @@ exports[`optionsMenu expanded 1`] = `
                 </div>,
               }
             }
+            toggleVariant="default"
           >
             <button
               aria-expanded={true}
@@ -1446,7 +1446,6 @@ exports[`optionsMenu isDisabled 1`] = `
             aria-haspopup="listbox"
             aria-label="Options menu"
             bubbleEvent={false}
-            buttonVariant="default"
             className=""
             data-ouia-component-id="OUIA-Generated-DropdownToggle-7"
             data-ouia-component-type="PF4/DropdownToggle"
@@ -1506,6 +1505,7 @@ exports[`optionsMenu isDisabled 1`] = `
                 </div>,
               }
             }
+            toggleVariant="default"
           >
             <button
               aria-expanded={false}
@@ -1777,7 +1777,6 @@ exports[`optionsMenu open up 1`] = `
             aria-haspopup="listbox"
             aria-label="Options menu"
             bubbleEvent={false}
-            buttonVariant="default"
             className=""
             data-ouia-component-id="OUIA-Generated-DropdownToggle-3"
             data-ouia-component-type="PF4/DropdownToggle"
@@ -1836,6 +1835,7 @@ exports[`optionsMenu open up 1`] = `
                 </div>,
               }
             }
+            toggleVariant="default"
           >
             <button
               aria-expanded={false}
@@ -2070,7 +2070,6 @@ exports[`optionsMenu plain 1`] = `
             aria-haspopup="listbox"
             aria-label="Options menu"
             bubbleEvent={false}
-            buttonVariant="default"
             className=""
             data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
             data-ouia-component-type="PF4/DropdownToggle"
@@ -2110,6 +2109,7 @@ exports[`optionsMenu plain 1`] = `
                 </div>,
               }
             }
+            toggleVariant="default"
           >
             <button
               aria-expanded={false}
@@ -2352,7 +2352,6 @@ exports[`optionsMenu regular 1`] = `
             aria-haspopup="listbox"
             aria-label="Options menu"
             bubbleEvent={false}
-            buttonVariant="default"
             className=""
             data-ouia-component-id="OUIA-Generated-DropdownToggle-1"
             data-ouia-component-type="PF4/DropdownToggle"
@@ -2411,6 +2410,7 @@ exports[`optionsMenu regular 1`] = `
                 </div>,
               }
             }
+            toggleVariant="default"
           >
             <button
               aria-expanded={false}
@@ -2683,7 +2683,6 @@ exports[`optionsMenu right aligned + open up 1`] = `
             aria-haspopup="listbox"
             aria-label="Options menu"
             bubbleEvent={false}
-            buttonVariant="default"
             className=""
             data-ouia-component-id="OUIA-Generated-DropdownToggle-4"
             data-ouia-component-type="PF4/DropdownToggle"
@@ -2742,6 +2741,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
                 </div>,
               }
             }
+            toggleVariant="default"
           >
             <button
               aria-expanded={false}
@@ -3013,7 +3013,6 @@ exports[`optionsMenu right aligned 1`] = `
             aria-haspopup="listbox"
             aria-label="Options menu"
             bubbleEvent={false}
-            buttonVariant="default"
             className=""
             data-ouia-component-id="OUIA-Generated-DropdownToggle-2"
             data-ouia-component-type="PF4/DropdownToggle"
@@ -3072,6 +3071,7 @@ exports[`optionsMenu right aligned 1`] = `
                 </div>,
               }
             }
+            toggleVariant="default"
           >
             <button
               aria-expanded={false}

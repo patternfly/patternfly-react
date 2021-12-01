@@ -27,10 +27,10 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement>,
   isPlain?: boolean;
   /** Whether or not the <div> has a disabled state */
   isDisabled?: boolean;
-  /** Whether or not the dropdown toggle button should have primary button styling */
+  /** @deprecated Whether or not the dropdown toggle button should have primary button styling */
   isPrimary?: boolean;
   /** Alternate styles for the dropdown toggle button */
-  buttonVariant?: 'primary' | 'secondary' | 'default';
+  toggleVariant?: 'primary' | 'secondary' | 'default';
   /** An image to display within the dropdown toggle, appearing before any component children */
   icon?: React.ReactNode;
   /** The icon to display for the toggle, appearing after any component children. Defaults to CaretDownIcon. Set to null to not show an icon. */
@@ -59,7 +59,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   isDisabled = false,
   isPlain = false,
   isPrimary = false,
-  buttonVariant = 'default',
+  toggleVariant = 'default',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   isActive = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -90,7 +90,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
           isDisabled={isDisabled}
           isPlain={isPlain}
           isPrimary={isPrimary}
-          buttonVariant={buttonVariant}
+          toggleVariant={toggleVariant}
           onToggle={onToggle}
           aria-haspopup={ariaHasPopup}
           {...ouiaProps}
@@ -115,7 +115,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
           styles.dropdownToggle,
           styles.modifiers.splitButton,
           splitButtonVariant === 'action' && styles.modifiers.action,
-          (buttonVariant === 'primary' || isPrimary) && splitButtonVariant === 'action' && styles.modifiers.primary,
+          (toggleVariant === 'primary' || isPrimary) && splitButtonVariant === 'action' && styles.modifiers.primary,
           isDisabled && styles.modifiers.disabled
         )}
       >

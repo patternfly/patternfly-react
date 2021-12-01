@@ -280,7 +280,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
           aria-haspopup={true}
           aria-label="Application launcher"
           bubbleEvent={false}
-          buttonVariant="default"
           className=""
           data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
           data-ouia-component-type="PF4/DropdownToggle"
@@ -435,6 +434,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               </nav>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={true}
@@ -1184,7 +1184,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
           aria-haspopup={true}
           aria-label="Application launcher"
           bubbleEvent={false}
-          buttonVariant="default"
           className=""
           data-ouia-component-id="OUIA-Generated-DropdownToggle-4"
           data-ouia-component-type="PF4/DropdownToggle"
@@ -1237,6 +1236,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
               </nav>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={false}
@@ -1464,7 +1464,6 @@ exports[`ApplicationLauncher dropup 1`] = `
           aria-haspopup={true}
           aria-label="Application launcher"
           bubbleEvent={false}
-          buttonVariant="default"
           className=""
           data-ouia-component-id="OUIA-Generated-DropdownToggle-3"
           data-ouia-component-type="PF4/DropdownToggle"
@@ -1517,6 +1516,7 @@ exports[`ApplicationLauncher dropup 1`] = `
               </nav>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={false}
@@ -1845,7 +1845,6 @@ exports[`ApplicationLauncher expanded 1`] = `
           aria-haspopup={true}
           aria-label="Application launcher"
           bubbleEvent={false}
-          buttonVariant="default"
           className=""
           data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
           data-ouia-component-type="PF4/DropdownToggle"
@@ -1999,6 +1998,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               </nav>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={true}
@@ -2746,7 +2746,6 @@ exports[`ApplicationLauncher regular 1`] = `
           aria-haspopup={true}
           aria-label="Application launcher"
           bubbleEvent={false}
-          buttonVariant="default"
           className=""
           data-ouia-component-id="OUIA-Generated-DropdownToggle-1"
           data-ouia-component-type="PF4/DropdownToggle"
@@ -2799,6 +2798,7 @@ exports[`ApplicationLauncher regular 1`] = `
               </nav>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={false}
@@ -3026,7 +3026,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
           aria-haspopup={true}
           aria-label="Application launcher"
           bubbleEvent={false}
-          buttonVariant="default"
           className=""
           data-ouia-component-id="OUIA-Generated-DropdownToggle-2"
           data-ouia-component-type="PF4/DropdownToggle"
@@ -3079,6 +3078,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
               </nav>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={false}

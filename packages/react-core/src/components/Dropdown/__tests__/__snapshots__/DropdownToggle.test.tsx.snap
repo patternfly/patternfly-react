@@ -2,7 +2,6 @@
 
 exports[`state action split button - renders primary variant 1`] = `
 <DropdownToggle
-  buttonVariant="primary"
   id="Dropdown Toggle"
   parentRef={<div />}
   splitButtonItems={
@@ -13,6 +12,7 @@ exports[`state action split button - renders primary variant 1`] = `
     ]
   }
   splitButtonVariant="action"
+  toggleVariant="primary"
 >
   <div
     className="pf-c-dropdown__toggle pf-m-split-button pf-m-action pf-m-primary"
@@ -25,7 +25,6 @@ exports[`state action split button - renders primary variant 1`] = `
     <Toggle
       aria-label="Select"
       bubbleEvent={false}
-      buttonVariant="primary"
       className=""
       data-ouia-component-id="OUIA-Generated-DropdownToggle-10"
       data-ouia-component-type="PF4/DropdownToggle"
@@ -41,6 +40,7 @@ exports[`state action split button - renders primary variant 1`] = `
       onEnter={[Function]}
       onToggle={[Function]}
       parentRef={<div />}
+      toggleVariant="primary"
     >
       <button
         aria-expanded={false}
@@ -102,7 +102,6 @@ exports[`state active 1`] = `
 >
   <Toggle
     bubbleEvent={false}
-    buttonVariant="default"
     className=""
     data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
     data-ouia-component-type="PF4/DropdownToggle"
@@ -118,6 +117,7 @@ exports[`state active 1`] = `
     onEnter={[Function]}
     onToggle={[Function]}
     parentRef={<div />}
+    toggleVariant="default"
   >
     <button
       aria-expanded={false}
@@ -171,13 +171,12 @@ exports[`state active 1`] = `
 
 exports[`state button variant - primary 1`] = `
 <DropdownToggle
-  buttonVariant="primary"
   id="Dropdown Toggle"
   parentRef={<div />}
+  toggleVariant="primary"
 >
   <Toggle
     bubbleEvent={false}
-    buttonVariant="primary"
     className=""
     data-ouia-component-id="OUIA-Generated-DropdownToggle-8"
     data-ouia-component-type="PF4/DropdownToggle"
@@ -193,6 +192,7 @@ exports[`state button variant - primary 1`] = `
     onEnter={[Function]}
     onToggle={[Function]}
     parentRef={<div />}
+    toggleVariant="primary"
   >
     <button
       aria-expanded={false}
@@ -246,13 +246,12 @@ exports[`state button variant - primary 1`] = `
 
 exports[`state button variant - secondary 1`] = `
 <DropdownToggle
-  buttonVariant="secondary"
   id="Dropdown Toggle"
   parentRef={<div />}
+  toggleVariant="secondary"
 >
   <Toggle
     bubbleEvent={false}
-    buttonVariant="secondary"
     className=""
     data-ouia-component-id="OUIA-Generated-DropdownToggle-9"
     data-ouia-component-type="PF4/DropdownToggle"
@@ -268,6 +267,7 @@ exports[`state button variant - secondary 1`] = `
     onEnter={[Function]}
     onToggle={[Function]}
     parentRef={<div />}
+    toggleVariant="secondary"
   >
     <button
       aria-expanded={false}
@@ -326,7 +326,6 @@ exports[`state class changes 1`] = `
 >
   <Toggle
     bubbleEvent={false}
-    buttonVariant="default"
     className=""
     data-ouia-component-id="OUIA-Generated-DropdownToggle-12"
     data-ouia-component-type="PF4/DropdownToggle"
@@ -342,6 +341,7 @@ exports[`state class changes 1`] = `
     onEnter={[Function]}
     onToggle={[Function]}
     parentRef={<div />}
+    toggleVariant="default"
   >
     <button
       aria-expanded={false}
@@ -400,7 +400,6 @@ exports[`state class changes 2`] = `
 >
   <Toggle
     bubbleEvent={false}
-    buttonVariant="default"
     className=""
     data-ouia-component-id="OUIA-Generated-DropdownToggle-13"
     data-ouia-component-type="PF4/DropdownToggle"
@@ -416,6 +415,7 @@ exports[`state class changes 2`] = `
     onEnter={[Function]}
     onToggle={[Function]}
     parentRef={<div />}
+    toggleVariant="default"
   >
     <button
       aria-expanded={false}
@@ -474,7 +474,6 @@ exports[`state focus 1`] = `
 >
   <Toggle
     bubbleEvent={false}
-    buttonVariant="default"
     className=""
     data-ouia-component-id="OUIA-Generated-DropdownToggle-7"
     data-ouia-component-type="PF4/DropdownToggle"
@@ -490,6 +489,7 @@ exports[`state focus 1`] = `
     onEnter={[Function]}
     onToggle={[Function]}
     parentRef={<div />}
+    toggleVariant="default"
   >
     <button
       aria-expanded={false}
@@ -548,7 +548,6 @@ exports[`state hover 1`] = `
 >
   <Toggle
     bubbleEvent={false}
-    buttonVariant="default"
     className=""
     data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
     data-ouia-component-type="PF4/DropdownToggle"
@@ -564,6 +563,7 @@ exports[`state hover 1`] = `
     onEnter={[Function]}
     onToggle={[Function]}
     parentRef={<div />}
+    toggleVariant="default"
   >
     <button
       aria-expanded={false}
@@ -617,7 +617,6 @@ exports[`state hover 1`] = `
 
 exports[`state split button - does not render primary variant 1`] = `
 <DropdownToggle
-  buttonVariant="primary"
   id="Dropdown Toggle"
   parentRef={<div />}
   splitButtonItems={
@@ -627,6 +626,7 @@ exports[`state split button - does not render primary variant 1`] = `
       </div>,
     ]
   }
+  toggleVariant="primary"
 >
   <div
     className="pf-c-dropdown__toggle pf-m-split-button"
@@ -639,7 +639,6 @@ exports[`state split button - does not render primary variant 1`] = `
     <Toggle
       aria-label="Select"
       bubbleEvent={false}
-      buttonVariant="primary"
       className=""
       data-ouia-component-id="OUIA-Generated-DropdownToggle-11"
       data-ouia-component-type="PF4/DropdownToggle"
@@ -655,6 +654,7 @@ exports[`state split button - does not render primary variant 1`] = `
       onEnter={[Function]}
       onToggle={[Function]}
       parentRef={<div />}
+      toggleVariant="primary"
     >
       <button
         aria-expanded={false}
