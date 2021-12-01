@@ -10,6 +10,7 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-i
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 
 ## Examples
 
@@ -277,9 +278,35 @@ class AdvancedPopover extends React.Component {
 }
 ```
 
+### Popover with icon in the title
+
+```ts
+import React from 'react';
+import { Popover, PopoverHeader, PopoverHeaderIcon, PopoverHeaderText, Button } from '@patternfly/react-core';
+import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
+
+<div style={{ margin: '50px' }}>
+  <Popover
+    aria-label="Alert popover"
+    header={
+      <PopoverHeader>
+        <PopoverHeaderIcon>
+          <BullhornIcon />
+        </PopoverHeaderIcon>
+        <PopoverHeaderText>Popover with icon</PopoverHeaderText>
+      </PopoverHeader>
+    }
+    bodyContent={<div>Popovers are triggered by click rather than hover.</div>}
+    footerContent="Popover footer"
+  >
+    <Button>Toggle popover</Button>
+  </Popover>
+</div>;
+```
+
 ### Alert popover
 
-```js
+```ts
 import React from 'react';
 import { Popover, PopoverHeader, PopoverHeaderIcon, PopoverHeaderText, Button } from '@patternfly/react-core';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
@@ -288,7 +315,7 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
-AlertPopover = () => {
+const AlertPopover = () => {
   const [alertVariant, setAlertVariant] = React.useState('default');
   const alertIcons = {
     default: <BellIcon />,
