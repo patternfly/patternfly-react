@@ -129,7 +129,7 @@ ControlledDate = () => {
 }
 ```
 
-### Controlling the DatePicker calendar state
+### Controlling the date picker calendar state
 
 ```js
 import React from 'react';
