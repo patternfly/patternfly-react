@@ -2,7 +2,7 @@
 id: Date picker
 section: components
 cssPrefix: pf-c-date-picker
-propComponents: ['DatePicker', 'CalendarFormat']
+propComponents: ['DatePicker', 'CalendarFormat', 'DatePickerRef']
 beta: true
 ---
 
@@ -126,5 +126,29 @@ ControlledDate = () => {
       />
     </React.Fragment>
   );
+}
+```
+
+### Controlling the date picker calendar state
+
+```js
+import React from 'react';
+import { Button, DatePicker } from '@patternfly/react-core';
+
+ControllingDatePicker = () => {
+    const dateRef = React.useRef(null);
+    const onClick = () => {
+        if (dateRef.current) {
+            dateRef.current.toggleCalendar()
+        }
+    };
+    return (
+        <React.Fragment>
+            <Button onClick={onClick}>
+                Toggle calendar
+            </Button>
+            <DatePicker ref={ dateRef } />
+        </React.Fragment>
+    );
 }
 ```
