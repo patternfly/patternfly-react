@@ -34,5 +34,7 @@ The current text in the input can be converted to a chip at any time by hitting 
 
 Hitting `escape` while focused on the input or menu will close the menu, and the menu will reopen when text is entered.
 
+When only one item remains in the suggestion list, tab can be used to auto-complete the typing of that item.
+
 ```js file="./examples/TextInputGroup/AutoCompleteSearch.js"
 ```

@@ -92,6 +92,13 @@ export const AutoCompleteSearch = () => {
     }
   };
 
+  const handleTab = event => {
+    if (menuItems.length === 3) {
+      setInputValue(menuItems[2].props.children);
+      event.preventDefault();
+    }
+  };
+
   /** close the menu when escape is hit */
   const handleEscape = () => {
     setMenuIsOpen(false);
@@ -120,6 +127,9 @@ export const AutoCompleteSearch = () => {
         break;
       case 'Escape':
         handleEscape();
+        break;
+      case 'Tab':
+        handleTab(event);
         break;
       case 'ArrowUp':
       case 'ArrowDown':
