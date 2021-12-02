@@ -77,7 +77,6 @@ import {
   CardFooter,
   Checkbox,
   Dropdown,
-  DropdownToggle,
   DropdownItem,
   DropdownSeparator,
   KebabToggle
@@ -192,7 +191,6 @@ import {
   CardFooter,
   Checkbox,
   Dropdown,
-  DropdownToggle,
   DropdownItem,
   DropdownSeparator,
   KebabToggle
@@ -281,14 +279,12 @@ import React from 'react';
 import {
   Checkbox,
   Dropdown,
-  DropdownToggle,
   DropdownItem,
   DropdownSeparator,
   KebabToggle,
   Card,
   CardHeader,
   CardActions,
-  CardTitle,
   CardBody
 } from '@patternfly/react-core';
 
@@ -458,7 +454,6 @@ import {
   CardTitle,
   CardBody,
   Dropdown,
-  DropdownToggle,
   DropdownItem,
   DropdownSeparator,
   KebabToggle
@@ -589,14 +584,10 @@ import {
   CardExpandableContent,
   Checkbox,
   Dropdown,
-  DropdownToggle,
   DropdownItem,
   DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import pfLogo from './pfLogo.svg';
 
 class ExpandableCard extends React.Component {
   constructor(props) {
@@ -712,25 +703,19 @@ class ExpandableCard extends React.Component {
 ```js
 import React from 'react';
 import {
-  Brand,
   Card,
   CardHeader,
   CardActions,
-  CardTitle,
   CardBody,
   CardFooter,
   CardExpandableContent,
   Checkbox,
   Dropdown,
-  DropdownToggle,
   DropdownItem,
   DropdownSeparator,
-  DropdownPosition,
-  DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
 import pfLogoSmall from './pf-logo-small.svg';
-import pfLogo from './pfLogo.svg';
 
 class ExpandableIconCard extends React.Component {
   constructor(props) {
@@ -833,7 +818,6 @@ import {
   CardTitle,
   CardBody,
   Dropdown,
-  DropdownToggle,
   DropdownItem,
   DropdownSeparator,
   KebabToggle
