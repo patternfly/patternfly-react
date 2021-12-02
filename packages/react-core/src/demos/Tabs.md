@@ -460,11 +460,25 @@ import {
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
+  DrawerPanelBody,
   Dropdown,
   Flex,
   FlexItem,
   KebabToggle,
+  Label,
+  LabelGroup,
+  OptionsMenu,
+  OptionsMenuToggle,
+  OverflowMenu,
+  OverflowMenuContent,
+  OverflowMenuControl,
+  OverflowMenuGroup,
+  OverflowMenuItem,
   PageSection,
+  Pagination,
+  Progress,
+  Select,
+  SelectOption,
   Tabs,
   Tab,
   TabContent,
@@ -474,17 +488,7 @@ import {
   Toolbar,
   ToolbarItem,
   ToolbarContent,
-  ToolbarToggleGroup,
-  OptionsMenu,
-  OptionsMenuToggle,
-  OverflowMenu,
-  OverflowMenuContent,
-  OverflowMenuControl,
-  OverflowMenuGroup,
-  OverflowMenuItem,
-  Select,
-  SelectOption,
-  Pagination
+  ToolbarToggleGroup
 } from '@patternfly/react-core';
 import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
 import DashboardWrapper from './examples/DashboardWrapper';
@@ -504,12 +508,14 @@ TablesAndTabsDemo = () => {
     setActiveTabKey(tabIndex);
   };
 
+  // secondary tab properties
+  const [secondaryActiveTabKey, setSecondaryActiveTabKey] = React.useState(10);
+  const handleSecondaryTabClick = (event, tabIndex) => {
+    setSecondaryActiveTabKey(tabIndex);
+  };
+
   // drawer properties
   const [isExpanded, setIsExpanded] = React.useState(false);
-  const drawerRef = React.createRef();
-  const onExpand = () => {
-    drawerRef.current && drawerRef.current.focus();
-  };
 
   // toolbar properties
   const [nameIsExpanded, setNameIsExpanded] = React.useState(false);
@@ -542,6 +548,33 @@ TablesAndTabsDemo = () => {
       return isSelecting ? repo.name : otherSelectedRepoName;
     });
   const isRepoSelected = (repo) => selectedRepoName === repo.name;
+
+  const [allRowsSelected, setAllRowsSelected] = React.useState(false);
+  const [selected, setSelected] = React.useState(repositories.map(row => false));
+  const onSelectAll = (event, isSelected) => {
+    setAllRowsSelected(isSelected);
+    setSelected(selected.map(sel => isSelected));
+  };
+  const onSelect = (event, isSelected, rowId) => {
+    const newSelected = selected.map((sel, index) => (index === rowId ? isSelected : sel));
+    setSelected(newSelected);
+
+    if (!isSelected && allRowsSelected) {
+      setAllRowsSelected(false);
+    } else if (isSelected && !allRowsSelected) {
+      let allSelected = true;
+      for (let i = 0; i < selected.length; i++) {
+        if (i !== rowId) {
+          if (!selected[i]) {
+            allSelected = false;
+          }
+        }
+      }
+      if (allSelected) {
+        setAllRowsSelected(true);
+      }
+    }
+  };
 
   const defaultActions = [
     {
@@ -626,6 +659,12 @@ TablesAndTabsDemo = () => {
     <TableComposable aria-label="`Composable` table">
       <Thead noWrap>
         <Tr>
+          <Th
+            select={{
+              onSelect: onSelectAll,
+              isSelected: allRowsSelected
+            }}
+          />
           <Th>{columnNames.name}</Th>
           <Th>{columnNames.branches}</Th>
           <Th>{columnNames.prs}</Th>
@@ -645,6 +684,14 @@ TablesAndTabsDemo = () => {
             isHoverable
             isRowSelected={isRepoSelected(repo)}
           >
+           <Td
+              key={`${rowIndex}_0`}
+              select={{
+                rowIndex,
+                onSelect,
+                isSelected: selected[rowIndex]
+              }}
+            />
             <Td dataLabel={columnNames.name}>
               {repo.name}
               <div>
@@ -699,9 +746,6 @@ TablesAndTabsDemo = () => {
   const panelContent = (
     <DrawerPanelContent>
       <DrawerHead>
-        <span tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
-            drawer-panel
-          </span>
         <DrawerActions>
           <DrawerCloseButton onClick={() => {
             setRepoSelected('', false);
@@ -709,12 +753,66 @@ TablesAndTabsDemo = () => {
           }
         }/>
         </DrawerActions>
+        <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+          <FlexItem>
+            <Title headingLevel="h2" size="lg">
+              {selectedRepoName}
+            </Title>
+          </FlexItem>
+          <FlexItem>
+            <a href="#">siemur/test-space</a>
+          </FlexItem>
+        </Flex>
       </DrawerHead>
+      <DrawerPanelBody hasNoPadding>
+        <Tabs activeKey={secondaryActiveTabKey} onSelect={handleSecondaryTabClick} isBox isFilled id="tabs-tables-secondary-tabs">
+          <Tab eventKey={10} title={<TabTitleText>Overview</TabTitleText>} tabContentId={`tabContent${10}`} />
+          <Tab eventKey={11} title={<TabTitleText>Activity</TabTitleText>} tabContentId={`tabContent${11}`} />
+        </Tabs>
+      </DrawerPanelBody>
+      <DrawerPanelBody>
+        <TabContent key={10} eventKey={10} id={`tabContent${10}`} activeKey={secondaryActiveTabKey} hidden={10 !== secondaryActiveTabKey}>
+          <TabContentBody>
+            <Flex direction={{ default: 'column' }}>
+              <FlexItem>
+                <p>
+                  The content of the drawer really is up to you. It could have form fields, definition lists, text lists,
+                  labels, charts, progress bars, etc. Spacing recommendation is 24px margins. You can put tabs in here,
+                  and can also make the drawer scrollable.
+                </p>
+              </FlexItem>
+              <FlexItem>
+                <Progress value={33} title="Capacity" size={ProgressSize.sm} />
+              </FlexItem>
+              <FlexItem>
+                <Progress value={66} title="Modules" size={ProgressSize.sm} />
+              </FlexItem>
+              <Flex direction={{ default: 'column' }}>
+                <FlexItem>
+                  <Title headingLevel="h3" >
+                    Tags
+                  </Title>
+                </FlexItem>
+                <FlexItem>
+                  <LabelGroup>
+                    {[1,2,3,4,5].map(labelNumber => (
+                      <Label key={`label-${labelNumber}`}>{`Tag ${labelNumber}`}</Label>
+                    ))}
+                  </LabelGroup>
+                </FlexItem>
+                </Flex>
+            </Flex>
+          </TabContentBody>
+        </TabContent>
+        <TabContent key={11} eventKey={11} id={`tabContent${11}`} activeKey={secondaryActiveTabKey} hidden={11 !== secondaryActiveTabKey}>
+          <TabContentBody>Activity panel</TabContentBody>
+        </TabContent>
+      </DrawerPanelBody>
     </DrawerPanelContent>
   );
 
   const tabContent = (
-    <Drawer isExpanded={isExpanded} isInline onExpand={onExpand}>
+    <Drawer isExpanded={isExpanded} isInline>
       <DrawerContent panelContent={panelContent}>
         <DrawerContentBody>
           {toolbar}
@@ -739,13 +837,13 @@ TablesAndTabsDemo = () => {
           Nodes
         </Title>
       </PageSection>
-      <PageSection type="tabs" variant={PageSectionVariants.light} isWidthLimited>
+      <PageSection type="tabs" variant={PageSectionVariants.light} isWidthLimited padding={{ default: 'noPadding' }}>
         <Tabs activeKey={activeTabKey} onSelect={handleTabClick} usePageInsets id="open-tabs-example-tabs-list">
           <Tab eventKey={0} title={<TabTitleText>Nodes</TabTitleText>} tabContentId={`tabContent${0}`} />
           <Tab eventKey={1} title={<TabTitleText>Node connectors</TabTitleText>} tabContentId={`tabContent${1}`} />
         </Tabs>
       </PageSection>
-      <PageSection isWidthLimited variant={PageSectionVariants.light}>
+      <PageSection isWidthLimited variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
         <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
           <TabContentBody>{tabContent}</TabContentBody>
         </TabContent>
