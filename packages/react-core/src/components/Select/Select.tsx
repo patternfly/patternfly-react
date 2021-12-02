@@ -146,7 +146,7 @@ export interface SelectProps
   chipGroupComponent?: React.ReactNode;
   /** Flag for retaining keyboard-entered value in typeahead text field when focus leaves input away */
   isInputValuePersisted?: boolean;
-  /** Flag for retaining filter results on blur from keyboard-entered typeahead text applied with isInputValuePersisted */
+  /** @beta Flag for retaining filter results on blur from keyboard-entered typeahead text */
   isInputFilterPersisted?: boolean;
   /** Content rendered in the footer of the select menu */
   footer?: React.ReactNode;
