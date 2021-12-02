@@ -33,7 +33,7 @@ export interface ToggleProps {
   isDisabled?: boolean;
   /** Display the toggle with no border or background */
   isPlain?: boolean;
-  /** @deprecated Display the toggle with a primary button style */
+  /** @deprecated Use `toggleVariant` instead. Display the toggle with a primary button style */
   isPrimary?: boolean;
   /** Style the toggle as a child of a split button */
   isSplitButton?: boolean;

@@ -27,7 +27,7 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement>,
   isPlain?: boolean;
   /** Whether or not the <div> has a disabled state */
   isDisabled?: boolean;
-  /** @deprecated Whether or not the dropdown toggle button should have primary button styling */
+  /** @deprecated Use `toggleVariant` instead. Whether or not the dropdown toggle button should have primary button styling */
   isPrimary?: boolean;
   /** Alternate styles for the dropdown toggle button */
   toggleVariant?: 'primary' | 'secondary' | 'default';
