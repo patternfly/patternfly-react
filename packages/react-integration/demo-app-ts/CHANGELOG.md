@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.135.15 (2021-12-02)
+
+
+### Bug Fixes
+
+* **Tile:** fix selecting tile in tile demo ([#6653](https://github.com/patternfly/patternfly-react/issues/6653)) ([e12e44d](https://github.com/patternfly/patternfly-react/commit/e12e44d4b623de305b7df04174144a9496d282a7))
+
+
+
+
+
 ## 4.135.14 (2021-12-01)
 
 **Note:** Version bump only for package demo-app-ts
