@@ -289,7 +289,7 @@ import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
   <Popover
     aria-label="Alert popover"
     header={
-      <PopoverHeader>
+      <PopoverHeader hasIcon>
         <PopoverHeaderIcon>
           <BullhornIcon />
         </PopoverHeaderIcon>
@@ -343,7 +343,7 @@ const AlertPopover = () => {
           aria-label="Alert popover"
           alertVariant={alertVariant as 'default' | 'info' | 'warning' | 'success' | 'danger'}
           header={
-            <PopoverHeader>
+            <PopoverHeader hasIcon>
               <PopoverHeaderIcon>{alertIcons[alertVariant]}</PopoverHeaderIcon>
               <span className="pf-u-screen-reader">{alertVariant} alert:</span>
               <PopoverHeaderText>Default popover title</PopoverHeaderText>
