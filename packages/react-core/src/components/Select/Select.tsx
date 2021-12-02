@@ -381,7 +381,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         typeaheadFilteredChildren =
           typeaheadInputValue.toString() !== ''
             ? React.Children.map(children, group => {
-                if (group.type === SelectGroup) {
+                if (React.isValidElement(group) && group.type === SelectGroup) {
                   const filteredGroupChildren = (React.Children.toArray(group.props.children) as React.ReactElement<
                     SelectGroupProps
                   >[]).filter(childFilter);
@@ -934,7 +934,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 }
               }}
               ref={this.filterRef}
-              autoComplete="off"
+              autoComplete="never"
             />
           </div>
           <Divider key="inline-filter-divider" />
@@ -1128,7 +1128,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   type="text"
                   onClick={this.onClick}
                   onChange={this.onChange}
-                  autoComplete="off"
+                  autoComplete="never"
                   disabled={isDisabled}
                   ref={this.inputRef}
                 />
@@ -1152,7 +1152,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   type="text"
                   onChange={this.onChange}
                   onClick={this.onClick}
-                  autoComplete="off"
+                  autoComplete="never"
                   disabled={isDisabled}
                   ref={this.inputRef}
                 />

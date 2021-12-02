@@ -75,7 +75,8 @@ class AlertVariations extends React.Component {
           }
         />
         <Alert variant="success" title="Success alert title" actionClose={<AlertActionCloseButton onClose={() => alert('Clicked the close button')} />} />
-        <Alert variant="success" title="Success alert title" />
+        <Alert variant="success" title="h1 Success alert title" titleHeadingLevel="h1" />
+        <Alert variant="success" title="h6 Success alert title" titleHeadingLevel="h6" />
       </React.Fragment>
     );
   }

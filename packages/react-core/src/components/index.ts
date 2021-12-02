@@ -80,3 +80,4 @@ export * from './TreeView';
 export * from './Wizard';
 export * from './DragDrop';
 export * from './TextInputGroup';
+export * from './Panel';

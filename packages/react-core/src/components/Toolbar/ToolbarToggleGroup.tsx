@@ -21,7 +21,7 @@ export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
     xl?: 'hidden' | 'visible';
     '2xl'?: 'hidden' | 'visible';
   };
-  /** Deprecated: prop misspelled */
+  /** @deprecated prop misspelled */
   visiblity?: {
     default?: 'hidden' | 'visible';
     md?: 'hidden' | 'visible';

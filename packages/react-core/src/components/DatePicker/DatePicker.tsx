@@ -7,6 +7,7 @@ import { Popover, PopoverProps } from '../Popover/Popover';
 import { InputGroup } from '../InputGroup/InputGroup';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
 import { CalendarMonth, CalendarFormat, isValidDate } from '../CalendarMonth';
+import { useImperativeHandle } from 'react';
 
 export interface DatePickerProps
   extends CalendarFormat,
@@ -43,38 +44,48 @@ export interface DatePickerProps
   inputProps?: TextInputProps;
 }
 
+export interface DatePickerRef {
+  /** Sets the calendar open status */
+  setCalendarOpen: (isOpen: boolean) => void;
+  /** Toggles the calendar open status */
+  toggleCalendar: () => void;
+}
+
 export const yyyyMMddFormat = (date: Date) =>
   `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date
     .getDate()
     .toString()
     .padStart(2, '0')}`;
 
-export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
-  className,
-  locale = undefined,
-  dateFormat = yyyyMMddFormat,
-  dateParse = (val: string) => val.split('-').length === 3 && new Date(`${val}T00:00:00`),
-  isDisabled = false,
-  placeholder = 'YYYY-MM-DD',
-  value: valueProp = '',
-  'aria-label': ariaLabel = 'Date picker',
-  buttonAriaLabel = 'Toggle date picker',
-  onChange = (): any => undefined,
-  invalidFormatText = 'Invalid date',
-  helperText,
-  appendTo,
-  popoverProps,
-  monthFormat,
-  weekdayFormat,
-  longWeekdayFormat,
-  dayFormat,
-  weekStart,
-  validators = [],
-  rangeStart,
-  style: styleProps = {},
-  inputProps = {},
-  ...props
-}: DatePickerProps) => {
+const DatePickerBase = (
+  {
+    className,
+    locale = undefined,
+    dateFormat = yyyyMMddFormat,
+    dateParse = (val: string) => val.split('-').length === 3 && new Date(`${val}T00:00:00`),
+    isDisabled = false,
+    placeholder = 'YYYY-MM-DD',
+    value: valueProp = '',
+    'aria-label': ariaLabel = 'Date picker',
+    buttonAriaLabel = 'Toggle date picker',
+    onChange = (): any => undefined,
+    invalidFormatText = 'Invalid date',
+    helperText,
+    appendTo,
+    popoverProps,
+    monthFormat,
+    weekdayFormat,
+    longWeekdayFormat,
+    dayFormat,
+    weekStart,
+    validators = [],
+    rangeStart,
+    style: styleProps = {},
+    inputProps = {},
+    ...props
+  }: DatePickerProps,
+  ref: React.Ref<DatePickerRef>
+) => {
   const [value, setValue] = React.useState(valueProp);
   const [valueDate, setValueDate] = React.useState(dateParse(value));
   const [errorText, setErrorText] = React.useState('');
@@ -135,6 +146,15 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
       }
     }
   };
+
+  useImperativeHandle<DatePickerRef, DatePickerRef>(
+    ref,
+    () => ({
+      setCalendarOpen: (isOpen: boolean) => setPopoverOpen(isOpen),
+      toggleCalendar: () => setPopoverOpen(prev => !prev)
+    }),
+    [setPopoverOpen]
+  );
 
   return (
     <div className={css(styles.datePicker, className)} style={style} {...props}>
@@ -208,4 +228,6 @@ export const DatePicker: React.FunctionComponent<DatePickerProps> = ({
     </div>
   );
 };
-DatePicker.displayName = 'DatePicker';
+
+export const DatePicker = React.forwardRef<DatePickerRef, DatePickerProps>(DatePickerBase);
+DatePicker.displayName = 'DatePickerBase';

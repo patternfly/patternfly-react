@@ -7,14 +7,17 @@ export interface ActionListProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Flag indicating the action list contains multiple icons and item padding should be removed */
   isIconList?: boolean;
+  /** Additional classes added to the action list */
+  className?: string;
 }
 
 export const ActionList: React.FunctionComponent<ActionListProps> = ({
   children,
   isIconList,
+  className = '',
   ...props
 }: ActionListProps) => (
-  <div className={css(styles.actionList, isIconList && styles.modifiers.icons)} {...props}>
+  <div className={css(styles.actionList, isIconList && styles.modifiers.icons, className)} {...props}>
     {children}
   </div>
 );

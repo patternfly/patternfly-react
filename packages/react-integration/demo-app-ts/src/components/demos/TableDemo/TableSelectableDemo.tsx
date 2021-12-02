@@ -61,7 +61,7 @@ export class TableSelectableDemo extends React.Component<TableProps, TableState>
       });
     } else if (this.state.selectVariant === RowSelectVariant.checkbox) {
       rows = [...this.state.rows];
-      rows[rowId].selected = isSelected;
+      rows[rowId] = { ...rows[rowId], selected: isSelected };
     } else {
       rows = this.state.rows.map((oneRow, index) => {
         oneRow.selected = rowId === index;

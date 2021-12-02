@@ -3,6 +3,149 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.26.14 (2021-12-01)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## 4.26.13 (2021-11-30)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## 4.26.12 (2021-11-30)
+
+
+### Bug Fixes
+
+* **action-list:** added support for classname ([#6647](https://github.com/patternfly/patternfly-react/issues/6647)) ([dd3d2ce](https://github.com/patternfly/patternfly-react/commit/dd3d2ce32b4d3e7562faf465abdc508e17f097d9))
+
+
+
+
+
+## 4.26.11 (2021-11-30)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## 4.26.10 (2021-11-23)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## 4.26.9 (2021-11-19)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## 4.26.8 (2021-11-19)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## 4.26.7 (2021-11-18)
+
+
+### Bug Fixes
+
+* **pagination:** updated toggleTemplate prop description to include ofWord prop ([#6622](https://github.com/patternfly/patternfly-react/issues/6622)) ([26733a6](https://github.com/patternfly/patternfly-react/commit/26733a6a256ad0e873afbc268a712027470fdeaa))
+
+
+
+
+
+## 4.26.6 (2021-11-18)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## 4.26.5 (2021-11-17)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## 4.26.4 (2021-11-15)
+
+
+### Bug Fixes
+
+* **FileUpload:** Downgrade react-dropzone back to 9.0.0 to avoid a breaking type change, fix behavior regressions ([#6610](https://github.com/patternfly/patternfly-react/issues/6610)) ([574bf4f](https://github.com/patternfly/patternfly-react/commit/574bf4ff3ccf7f67ce750bc48067eaf826e99990))
+
+
+
+
+
+## 4.26.3 (2021-11-15)
+
+
+### Bug Fixes
+
+* **Menu:** allow maxMenuHeight with Scrollabe ([#6608](https://github.com/patternfly/patternfly-react/issues/6608)) ([8c1f12c](https://github.com/patternfly/patternfly-react/commit/8c1f12c2b0e86bbc5ba1071db3ebf29fee7421a0))
+
+
+
+
+
+## 4.26.2 (2021-11-15)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+## 4.26.1 (2021-11-15)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
+# 4.26.0 (2021-11-12)
+
+
+### Features
+
+* **card:** added hoverable/selectable/selected-raised variant ([#6565](https://github.com/patternfly/patternfly-react/issues/6565)) ([8c60568](https://github.com/patternfly/patternfly-react/commit/8c60568ba4fa18398fed636710e222ce506de82c))
+
+
+
+
+
+## 4.25.2 (2021-11-12)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
 ## 4.25.1 (2021-11-12)
 
 **Note:** Version bump only for package @patternfly/react-console

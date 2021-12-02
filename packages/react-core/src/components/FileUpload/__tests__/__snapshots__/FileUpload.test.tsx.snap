@@ -1,12 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`simple fileupload 1`] = `
-<Dropzone
+<t
+  disabled={false}
+  getDataTransferItems={[Function]}
+  maxSize={Infinity}
+  minSize={0}
   multiple={false}
-  noClick={true}
   onDropAccepted={[Function]}
   onDropRejected={[Function]}
+  preventDropOnDocument={true}
 >
   <Component />
-</Dropzone>
+</t>
 `;

@@ -29,6 +29,8 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   'aria-label'?: string;
   /** @beta Indicates if menu contains a flyout menu */
   containsFlyout?: boolean;
+  /** @beta Indicating that the menu should have nav flyout styling */
+  isNavFlyout?: boolean;
   /** @beta Indicates if menu contains a drilldown menu */
   containsDrilldown?: boolean;
   /** @beta Indicates if a menu is drilled into */
@@ -224,6 +226,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       ouiaId,
       ouiaSafe,
       containsFlyout,
+      isNavFlyout,
       containsDrilldown,
       isMenuDrilledIn,
       isPlain,
@@ -259,8 +262,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
           onGetMenuHeight,
           flyoutRef: this.state.flyoutRef,
           setFlyoutRef: flyoutRef => this.setState({ flyoutRef }),
-          disableHover: this.state.disableHover,
-          isScrollable
+          disableHover: this.state.disableHover
         }}
       >
         {isRootMenu && (
@@ -289,6 +291,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             isPlain && styles.modifiers.plain,
             isScrollable && styles.modifiers.scrollable,
             containsFlyout && styles.modifiers.flyout,
+            isNavFlyout && styles.modifiers.nav,
             containsDrilldown && styles.modifiers.drilldown,
             _isMenuDrilledIn && styles.modifiers.drilledIn,
             className

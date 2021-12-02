@@ -4,6 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { NavContext, NavSelectClickHandler } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
 import { useOUIAProps, OUIAProps } from '../../helpers';
+import { Popper } from '../../helpers/Popper/Popper';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
 export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'>, OUIAProps {
@@ -28,7 +29,7 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   /** Component used to render NavItems if  React.isValidElement(children) is false */
   component?: React.ReactNode;
   /** Flyout of a nav item. This should be a Menu component. */
-  flyout?: React.ReactNode;
+  flyout?: React.ReactElement;
   /** Callback when flyout is opened or closed */
   onShowFlyout?: () => void;
 }
@@ -53,8 +54,10 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   const { flyoutRef, setFlyoutRef } = React.useContext(NavContext);
   const { isNavOpen } = React.useContext(PageSidebarContext);
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
+  const [isHovered, setIsHovered] = React.useState(false);
   const ref = React.useRef<HTMLLIElement>();
   const flyoutVisible = ref === flyoutRef;
+  const popperRef = React.useRef<HTMLDivElement>();
   const Component = component as any;
   const hasFlyout = flyout !== undefined;
 
@@ -89,36 +92,11 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     }
   };
 
-  React.useEffect(() => {
-    if (hasFlyout) {
-      window.addEventListener('click', onFlyoutClick);
-    }
-    return () => {
-      if (hasFlyout) {
-        window.removeEventListener('click', onFlyoutClick);
-      }
-    };
-  }, []);
-
-  React.useEffect(() => {
-    if (flyoutTarget) {
-      if (flyoutVisible) {
-        const flyoutMenu = (flyoutTarget as HTMLElement).nextElementSibling;
-        const flyoutItems = Array.from(flyoutMenu.getElementsByTagName('UL')[0].children).filter(
-          el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
-        );
-        (flyoutItems[0].firstChild as HTMLElement).focus();
-      } else {
-        flyoutTarget.focus();
-      }
-    }
-  }, [flyoutVisible, flyoutTarget]);
-
-  const handleFlyout = (event: React.KeyboardEvent) => {
+  const handleFlyout = (event: KeyboardEvent) => {
     const key = event.key;
     const target = event.target as HTMLElement;
 
-    if (!hasFlyout) {
+    if (!(popperRef?.current?.contains(target) || (hasFlyout && ref?.current?.contains(target)))) {
       return;
     }
 
@@ -140,6 +118,30 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     }
   };
 
+  React.useEffect(() => {
+    if (hasFlyout) {
+      window.addEventListener('click', onFlyoutClick);
+    }
+    return () => {
+      if (hasFlyout) {
+        window.removeEventListener('click', onFlyoutClick);
+      }
+    };
+  }, []);
+
+  React.useEffect(() => {
+    if (flyoutTarget) {
+      if (flyoutVisible) {
+        const flyoutItems = Array.from(
+          (popperRef.current as HTMLElement).getElementsByTagName('UL')[0].children
+        ).filter(el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider')));
+        (flyoutItems[0].firstChild as HTMLElement).focus();
+      } else {
+        flyoutTarget.focus();
+      }
+    }
+  }, [flyoutVisible, flyoutTarget]);
+
   const flyoutButton = (
     <span className={css(styles.navToggle)}>
       <span className={css(styles.navToggleIcon)}>
@@ -154,7 +156,12 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       <Component
         href={to}
         onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
-        className={css(styles.navLink, isActive && styles.modifiers.current, className)}
+        className={css(
+          styles.navLink,
+          isActive && styles.modifiers.current,
+          isHovered && styles.modifiers.hover,
+          className
+        )}
         aria-current={isActive ? 'page' : null}
         tabIndex={isNavOpen ? null : '-1'}
         {...props}
@@ -185,25 +192,48 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
 
   const ouiaProps = useOUIAProps(NavItem.displayName, ouiaId, ouiaSafe);
 
-  return (
-    <li
-      {...(hasFlyout && {
-        onKeyDown: handleFlyout
-      })}
-      onMouseOver={onMouseOver}
-      className={css(styles.navItem, hasFlyout && styles.modifiers.flyout, className)}
-      ref={ref}
-      {...ouiaProps}
-    >
-      <NavContext.Consumer>
-        {context =>
-          React.isValidElement(children)
-            ? renderClonedChild(context, children as React.ReactElement)
-            : renderDefaultLink(context)
-        }
-      </NavContext.Consumer>
-      {flyoutVisible && flyout}
-    </li>
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const flyoutPopper = (
+    <Popper
+      reference={ref}
+      popper={
+        <div ref={popperRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          {flyout}
+        </div>
+      }
+      placement="right-start"
+      isVisible={flyoutVisible}
+      onDocumentKeyDown={handleFlyout}
+    />
   );
+
+  const navItem = (
+    <>
+      <li
+        onMouseOver={onMouseOver}
+        className={css(styles.navItem, hasFlyout && styles.modifiers.flyout, className)}
+        ref={ref}
+        {...ouiaProps}
+      >
+        <NavContext.Consumer>
+          {context =>
+            React.isValidElement(children)
+              ? renderClonedChild(context, children as React.ReactElement)
+              : renderDefaultLink(context)
+          }
+        </NavContext.Consumer>
+      </li>
+      {flyout && flyoutPopper}
+    </>
+  );
+
+  return navItem;
 };
 NavItem.displayName = 'NavItem';

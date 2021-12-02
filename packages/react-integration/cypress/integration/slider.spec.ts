@@ -5,7 +5,11 @@ describe('Slider Demo Test', () => {
 
   it('renders the discrete slider', () => {
     cy.get('#discrete-slider').should('exist');
-    cy.get('#discrete-slider').should('have.attr', 'style', '--pf-c-slider--value:62.5%;');
+    cy.get('#discrete-slider').should(
+      'have.attr',
+      'style',
+      '--pf-c-slider--value:62.5%; --pf-c-slider__value--c-form-control--width-chars:1;'
+    );
   });
 
   it('changes discrete slider value when clicked on', () => {
@@ -23,11 +27,19 @@ describe('Slider Demo Test', () => {
     cy.get('#discrete-slider-input-label > .pf-c-slider__value > .pf-c-input-group > .pf-c-input-group__text').should(
       'exist'
     );
-    cy.get('#discrete-slider-input-label').should('have.attr', 'style', '--pf-c-slider--value:50%;');
+    cy.get('#discrete-slider-input-label').should(
+      'have.attr',
+      'style',
+      '--pf-c-slider--value:50%; --pf-c-slider__value--c-form-control--width-chars:2;'
+    );
   });
 
   it('renders the continuous slider', () => {
     cy.get('#continuous-slider').should('exist');
-    cy.get('#continuous-slider').should('have.attr', 'style', '--pf-c-slider--value:50%;');
+    cy.get('#continuous-slider').should(
+      'have.attr',
+      'style',
+      '--pf-c-slider--value:50%; --pf-c-slider__value--c-form-control--width-chars:2;'
+    );
   });
 });

@@ -246,7 +246,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     [popperMatchesTriggerWidth]
   );
 
-  const { styles: popperStyles, attributes } = usePopper(refOrTrigger, popperElement, {
+  const { styles: popperStyles, attributes, forceUpdate } = usePopper(refOrTrigger, popperElement, {
     placement: getPlacementMemo,
     modifiers: [
       {
@@ -274,6 +274,12 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       sameWidthMod
     ]
   });
+
+  // force update when content changes
+  // https://github.com/patternfly/patternfly-react/issues/5620
+  React.useEffect(() => {
+    forceUpdate && forceUpdate();
+  }, [popper]);
 
   // Returns the CSS modifier class in order to place the Popper's arrow properly
   // Depends on the position of the Popper relative to the reference element

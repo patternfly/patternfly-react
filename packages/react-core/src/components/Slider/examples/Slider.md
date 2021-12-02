@@ -354,7 +354,7 @@ class ThumbValueInput extends React.Component {
     this.onChange = (value, inputValue, setLocalInputValue) => { 
       let newValue;
       if (inputValue === undefined) { 
-        newValue = Number(value).toFixed(2);
+        newValue = Number(value);
       } else {
         if (inputValue > 100) {
           newValue = 100;

@@ -2,7 +2,7 @@ import React, { useState, useEffect, memo } from 'react';
 import { LogViewerContext, LogViewerToolbarContext } from './LogViewerContext';
 import { css } from '@patternfly/react-styles';
 import { LogViewerRow } from './LogViewerRow';
-import { parseConsoleOutput, stripAnsi } from './utils/utils';
+import { parseConsoleOutput, searchedKeyWordType, stripAnsi } from './utils/utils';
 import { VariableSizeList as List, areEqual } from '../react-window';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
 
@@ -30,7 +30,7 @@ interface LogViewerProps {
   /** Number of rows to display in the log viewer */
   itemCount?: number;
   /** Flag indicating that log viewer is wrapping text or not */
-  isWrapText?: boolean;
+  isTextWrapped?: boolean;
   /** Component rendered in the log viewer console window header */
   header?: React.ReactNode;
   /** Component rendered in the log viewer console window footer */
@@ -84,12 +84,12 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     footer,
     onScroll,
     innerRef,
-    isWrapText = true,
+    isTextWrapped = true,
     ...props
   }: LogViewerProps) => {
     const [searchedInput, setSearchedInput] = useState<string | null>('');
-    const [rowInFocus, setRowInFocus] = useState<number | null>(scrollToRow);
-    const [searchedWordIndexes, setSearchedWordIndexes] = useState<number[] | null>([]);
+    const [rowInFocus, setRowInFocus] = useState<searchedKeyWordType | null>({ rowIndex: scrollToRow, matchIndex: 0 });
+    const [searchedWordIndexes, setSearchedWordIndexes] = useState<searchedKeyWordType[] | null>([]);
     const [currentSearchedItemCount, setCurrentSearchedItemCount] = useState<number>(0);
     const [parsedData, setParsedData] = useState<string[] | null>([]);
     const [lineHeight, setLineHeight] = useState<number>(0);
@@ -151,7 +151,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
 
     useEffect(() => {
       if (scrollToRow && parsedData.length) {
-        setRowInFocus(scrollToRow);
+        setRowInFocus({ rowIndex: scrollToRow, matchIndex: 0 });
         // only in this way (setTimeout) the scrollToItem will work
         setTimeout(() => {
           if (logViewerRef && logViewerRef.current) {
@@ -188,14 +188,14 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
       setListKey(listKey => listKey + 1);
     };
 
-    const scrollToRowInFocus = (searchedRowIndex: number) => {
+    const scrollToRowInFocus = (searchedRowIndex: searchedKeyWordType) => {
       setRowInFocus(searchedRowIndex);
-      logViewerRef.current.scrollToItem(searchedRowIndex, 'center');
+      logViewerRef.current.scrollToItem(searchedRowIndex.rowIndex, 'center');
       // use this method to scroll to the right
       // if the keyword is out of the window when wrapping text
-      if (!isWrapText) {
+      if (!isTextWrapped) {
         setTimeout(() => {
-          const element = document.querySelector('.pf-c-log-viewer__string.pf-m-current');
+          const element = containerRef.current.querySelector('.pf-c-log-viewer__string.pf-m-current');
           element && element.scrollIntoView({ block: 'nearest', inline: 'center' });
         }, 1);
       }
@@ -203,10 +203,10 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
 
     useEffect(() => {
       setListKey(listKey => listKey + 1);
-    }, [isWrapText]);
+    }, [isTextWrapped]);
 
     const guessRowHeight = (rowIndex: number) => {
-      if (!isWrapText) {
+      if (!isTextWrapped) {
         return lineHeight;
       }
       // strip ansi escape code before estimate the row height
@@ -245,7 +245,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
           className={css(
             styles.logViewer,
             hasLineNumbers && styles.modifiers.lineNumbers,
-            !isWrapText && styles.modifiers.nowrap,
+            !isTextWrapped && styles.modifiers.nowrap,
             theme === 'dark' && styles.modifiers.dark
           )}
           {...props}

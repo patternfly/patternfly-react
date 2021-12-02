@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Panel renders content 1`] = `
+<div
+  className="pf-c-panel"
+>
+  Foo
+</div>
+`;
+
+exports[`Panel renders content with bordered styling 1`] = `
+<div
+  className="pf-c-panel pf-m-bordered"
+>
+  Foo
+</div>
+`;
+
+exports[`Panel renders content with raised styling 1`] = `
+<div
+  className="pf-c-panel pf-m-raised"
+>
+  Foo
+</div>
+`;
+
+exports[`Panel renders content with scrollable styling 1`] = `
+<div
+  className="pf-c-panel pf-m-scrollable"
+>
+  Foo
+</div>
+`;
+
+exports[`PanelFooter renders content 1`] = `
+<div
+  className="pf-c-panel__footer"
+>
+  Foo
+</div>
+`;
+
+exports[`PanelHeader renders content 1`] = `
+<div
+  className="pf-c-panel__header"
+>
+  Foo
+</div>
+`;
+
+exports[`PanelMain renders content 1`] = `
+<div
+  className="pf-c-panel__main"
+  style={
+    Object {
+      "--pf-c-panel__main--MaxHeight": undefined,
+    }
+  }
+>
+  Foo
+</div>
+`;
+
+exports[`PanelMain renders content with the set maximum height 1`] = `
+<div
+  className="pf-c-panel__main"
+  style={
+    Object {
+      "--pf-c-panel__main--MaxHeight": "80px",
+    }
+  }
+>
+  Foo
+</div>
+`;
+
+exports[`PanelMainBody renders content 1`] = `
+<div
+  className="pf-c-panel__main-body"
+>
+  Foo
+</div>
+`;

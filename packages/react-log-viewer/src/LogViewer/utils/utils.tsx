@@ -1,3 +1,8 @@
+export interface searchedKeyWordType {
+  rowIndex: number;
+  matchIndex: number;
+}
+
 export const isArrayOfString = (array: string[]) => {
   for (const str in array) {
     if (typeof str !== 'string') {
@@ -13,22 +18,23 @@ export const isArrayOfString = (array: string[]) => {
   Should always be searching an array of strings. Look into lazy log for ideas.
 */
 export const searchForKeyword = (searchedInput: string, parsedData: string[], itemCount: number) => {
-  const searchResults: number[] = [];
+  const searchResults: searchedKeyWordType[] = [];
 
-  const regex = new RegExp(searchedInput, 'i');
+  const regex = new RegExp(searchedInput, 'ig');
   parsedData.map((row, index) => {
-    if (regex.test(stripAnsi(row)) && index < itemCount) {
-      searchResults.push(index);
+    const rawRow = stripAnsi(row);
+    if (regex.test(rawRow) && index < itemCount) {
+      const numMatches = rawRow.match(regex).length;
+      for (let i = 1; i <= numMatches; i++) {
+        searchResults.push({ rowIndex: index, matchIndex: i });
+      }
     }
   });
 
   if (searchResults.length > 0) {
     return [...searchResults];
   } else if (searchResults.length <= 0) {
-    const negativeResults: number[] = [];
-    negativeResults.push(-1);
-
-    return negativeResults;
+    return [{ rowIndex: -1, matchIndex: 0 }];
   }
 };
 
