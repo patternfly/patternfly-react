@@ -708,7 +708,7 @@ class GroupedCheckboxSelectInput extends React.Component {
 
 ```js
 import React from 'react';
-import { Select, SelectOption, SelectGroup, SelectVariant } from '@patternfly/react-core';
+import { Select, SelectOption, SelectGroup, SelectVariant, Checkbox } from '@patternfly/react-core';
 
 class FilteringSingleSelectInput extends React.Component {
   constructor(props) {
@@ -716,7 +716,10 @@ class FilteringSingleSelectInput extends React.Component {
 
     this.state = {
       isOpen: false,
-      selected: ''
+      selected: '',
+      isCreatable: false,
+      isInputValuePersisted: false,
+      isInputFilterPersisted: false,
     };
 
     this.options = [
@@ -760,10 +763,28 @@ class FilteringSingleSelectInput extends React.Component {
         return filteredGroups;
       }
     };
+
+    this.toggleCreatable = checked => {
+      this.setState({
+        isCreatable: checked
+      });
+    };
+
+    this.toggleInputValuePersisted = checked => {
+      this.setState({
+        isInputValuePersisted: checked
+      });
+    };
+
+    this.toggleInputFilterPersisted = checked => {
+      this.setState({
+        isInputFilterPersisted: checked
+      });
+    };
   }
 
   render() {
-    const { isOpen, selected, filteredOptions } = this.state;
+    const { isOpen, selected, filteredOptions, isInputValuePersisted, isInputFilterPersisted, isCreatable } = this.state;
     const titleId = 'single-filtering-select-id';
     return (
       <div>
@@ -781,9 +802,36 @@ class FilteringSingleSelectInput extends React.Component {
           onFilter={this.onFilter}
           isGrouped
           hasInlineFilter
+          isCreatable={isCreatable}
+          isInputValuePersisted={isInputValuePersisted}
+          isInputFilterPersisted={isInputFilterPersisted}
         >
           {this.options}
         </Select>
+        <Checkbox
+          label="isInputValuePersisted"
+          isChecked={isInputValuePersisted}
+          onChange={this.toggleInputValuePersisted}
+          aria-label="toggle input value persisted"
+          id="toggle-inline-filter-input-value-persisted"
+          name="toggle-inline-filter-input-value-persisted"
+        />
+        <Checkbox
+          label="isInputFilterPersisted"
+          isChecked={isInputFilterPersisted}
+          onChange={this.toggleInputFilterPersisted}
+          aria-label="toggle input filter persisted"
+          id="toggle-inline-filter-input-filter-persisted"
+          name="toggle-inline-filter-input-filter-persisted"
+        />
+        <Checkbox
+          label="isCreatable"
+          isChecked={this.state.isCreatable}
+          onChange={this.toggleCreatable}
+          aria-label="toggle creatable checkbox"
+          id="toggle-inline-filter-creatable-typeahead"
+          name="toggle-inline-filter-creatable-typeahead"
+        />
       </div>
     );
   }
@@ -1134,21 +1182,23 @@ import { Checkbox, Select, SelectOption, SelectVariant } from '@patternfly/react
 class TypeaheadSelectInput extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      options: [
+    this.defaultOptions = [
         { value: 'Alabama' },
         { value: 'Florida', description: 'This is a description' },
         { value: 'New Jersey' },
         { value: 'New Mexico' },
         { value: 'New York' },
         { value: 'North Carolina' }
-      ],
+      ];
+
+    this.state = {
+      options: this.defaultOptions,
       isOpen: false,
       selected: null,
       isDisabled: false,
       isCreatable: false,
       isInputValuePersisted: false,
+      isInputFilterPersisted: false,
       hasOnCreateOption: false
     };
 
@@ -1178,7 +1228,8 @@ class TypeaheadSelectInput extends React.Component {
     this.clearSelection = () => {
       this.setState({
         selected: null,
-        isOpen: false
+        isOpen: false,
+        options: this.defaultOptions
       });
     };
 
@@ -1205,10 +1256,16 @@ class TypeaheadSelectInput extends React.Component {
         isInputValuePersisted: checked
       });
     };
+
+    this.toggleInputFilterPersisted = checked => {
+      this.setState({
+        isInputFilterPersisted: checked
+      });
+    };
   }
 
   render() {
-    const { isOpen, selected, isDisabled, isCreatable, hasOnCreateOption, isInputValuePersisted, options } = this.state;
+    const { isOpen, selected, isDisabled, isCreatable, hasOnCreateOption, isInputValuePersisted, isInputFilterPersisted, options } = this.state;
     const titleId = 'typeahead-select-id-1';
     return (
       <div>
@@ -1225,6 +1282,7 @@ class TypeaheadSelectInput extends React.Component {
           isOpen={isOpen}
           aria-labelledby={titleId}
           isInputValuePersisted={isInputValuePersisted}
+          isInputFilterPersisted={isInputFilterPersisted}
           placeholderText="Select a state"
           isDisabled={isDisabled}
           isCreatable={isCreatable}
@@ -1270,6 +1328,14 @@ class TypeaheadSelectInput extends React.Component {
           aria-label="toggle input value persisted"
           id="toggle-input-value-persisted"
           name="toggle-input-value-persisted"
+        />
+        <Checkbox
+          label="isInputFilterPersisted"
+          isChecked={isInputFilterPersisted}
+          onChange={this.toggleInputFilterPersisted}
+          aria-label="toggle input filter persisted"
+          id="toggle-input-filter-persisted"
+          name="toggle-input-filter-persisted"
         />
       </div>
     );
