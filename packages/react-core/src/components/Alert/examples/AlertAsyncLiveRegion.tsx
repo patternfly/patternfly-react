@@ -59,4 +59,3 @@ export const AsyncLiveRegionAlert: React.FunctionComponent = () => {
     </React.Fragment>
   );
 };
-AsyncLiveRegionAlert.displayName = 'AsyncLiveRegionAlert';

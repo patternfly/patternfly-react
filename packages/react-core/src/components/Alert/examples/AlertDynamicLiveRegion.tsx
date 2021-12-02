@@ -59,4 +59,3 @@ export const DynamicLiveRegionAlert: React.FunctionComponent = () => {
     </React.Fragment>
   );
 };
-DynamicLiveRegionAlert.displayName = 'DynamicLiveRegionAlert';
