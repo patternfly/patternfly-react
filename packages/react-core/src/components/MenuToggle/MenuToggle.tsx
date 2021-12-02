@@ -37,6 +37,8 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
     const { children, className, icon, badge, isExpanded, isDisabled, variant, innerRef, ...props } = this.props;
 
     const isPlain = variant === 'plain';
+    const isPlainText = variant === 'plainText';
+
     const content = (
       <React.Fragment>
         {icon && <span className={css(styles.menuToggleIcon)}>{icon}</span>}
@@ -55,8 +57,8 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
           styles.menuToggle,
           isExpanded && styles.modifiers.expanded,
           variant === 'primary' && styles.modifiers.primary,
-          (isPlain || variant === 'plainText') && styles.modifiers.plain,
-          variant === 'plainText' && styles.modifiers.text,
+          (isPlain || isPlainText) && styles.modifiers.plain,
+          isPlainText && styles.modifiers.text,
           className
         )}
         type="button"
