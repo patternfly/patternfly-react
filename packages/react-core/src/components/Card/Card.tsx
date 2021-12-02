@@ -22,7 +22,7 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isSelectableRaised?: boolean;
   /** Modifies the card to include selected styling */
   isSelected?: boolean;
-  /** @beta Modifies a selectable card to have disabled styling */
+  /** @beta Modifies a raised selectable card to have disabled styling */
   isDisabled?: boolean;
   /** Modifies the card to include flat styling */
   isFlat?: boolean;
