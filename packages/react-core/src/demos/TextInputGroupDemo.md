@@ -32,7 +32,7 @@ This demo showcases a search input with suggestions, which filters possible sele
 
 The current text in the input can be converted to a chip at any time by hitting `enter`. Auto-complete suggestions can be chosen by clicking the corresponding entry in the menu, or by navigating to an entry using the up/down arrow keys and selecting it with `enter`.
 
-Hitting `escape` while focused on the input will close the menu, and the menu will reopen when text is entered.
+Hitting `escape` while focused on the input or menu will close the menu, and the menu will reopen when text is entered.
 
 ```js file="./examples/TextInputGroup/AutoCompleteSearch.js"
 ```

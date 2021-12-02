@@ -112,7 +112,7 @@ export const AutoCompleteSearch = () => {
     }
   };
 
-  /** enable keyboard only usage */
+  /** enable keyboard only usage while focused on the text input */
   const handleTextInputKeyDown = event => {
     switch (event.key) {
       case 'Enter':
@@ -130,12 +130,17 @@ export const AutoCompleteSearch = () => {
     }
   };
 
+  /** apply focus to the text input */
+  const focusTextInput = () => {
+    textInputGroupRef.current.querySelector('input').focus();
+  };
+
   /** add the text of the selected item as a new chip */
   const onSelect = (event, _itemId) => {
     const selectedText = event.target.innerText;
     addChip(selectedText);
     event.stopPropagation();
-    textInputGroupRef.current.querySelector('input').focus();
+    focusTextInput();
   };
 
   /** close the menu when a click occurs outside of the menu or text input group */
@@ -145,6 +150,15 @@ export const AutoCompleteSearch = () => {
       !menuRef.current.contains(event.target) &&
       !textInputGroupRef.current.contains(event.target)
     ) {
+      setMenuIsOpen(false);
+    }
+  };
+
+  /** enable keyboard only usage while focused on the menu */
+  const handleMenuKeyDown = event => {
+    if (event.key === 'Escape') {
+      setInputValue('');
+      focusTextInput();
       setMenuIsOpen(false);
     }
   };
@@ -186,7 +200,7 @@ export const AutoCompleteSearch = () => {
 
   const menu = (
     <div ref={menuRef}>
-      <Menu onSelect={onSelect}>
+      <Menu onSelect={onSelect} onKeyDown={handleMenuKeyDown}>
         <MenuContent>
           <MenuList>{menuItems}</MenuList>
         </MenuContent>
