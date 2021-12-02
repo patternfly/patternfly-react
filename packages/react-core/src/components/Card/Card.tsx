@@ -82,26 +82,22 @@ export const Card: React.FunctionComponent<CardProps> = ({
     console.warn("Card: the 'isHoverable' prop is deprecated. Use isSelectable instead.");
   }
 
-  const isRaised = selectableVariant === 'raised';
+  const getSelectableModifiers = () => {
+    const isRaised = selectableVariant === 'raised';
 
-  let selectableModifiers = '';
-  if (isSelectable || isHoverable) {
-    if (isRaised) {
-      if (isDisabled) {
-        selectableModifiers = css((isSelectable || isHoverable) && styles.modifiers.nonSelectableRaised);
+    if (isSelectable || isHoverable) {
+      if (isRaised) {
+        if (isDisabled) {
+          return css(styles.modifiers.nonSelectableRaised);
+        } else {
+          return css(styles.modifiers.selectableRaised, isSelected && styles.modifiers.selectedRaised);
+        }
       } else {
-        selectableModifiers = css(
-          (isSelectable || isHoverable) && styles.modifiers.selectableRaised,
-          (isSelectable || isHoverable) && isSelected && styles.modifiers.selectedRaised
-        );
+        return css(styles.modifiers.selectable, isSelected && styles.modifiers.selected);
       }
-    } else {
-      selectableModifiers = css(
-        (isSelectable || isHoverable) && styles.modifiers.selectable,
-        (isSelectable || isHoverable) && isSelected && styles.modifiers.selected
-      );
     }
-  }
+    return '';
+  };
 
   return (
     <CardContext.Provider
@@ -121,7 +117,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
           isLarge && styles.modifiers.displayLg,
           isFullHeight && styles.modifiers.fullHeight,
           isPlain && styles.modifiers.plain,
-          selectableModifiers,
+          getSelectableModifiers(),
           className
         )}
         tabIndex={isSelectable ? '0' : undefined}
