@@ -93,7 +93,7 @@ export class CardDemo extends React.Component {
 
     return (
       <React.Fragment>
-        <Card isSelectable selectableVariant="raised">
+        <Card isSelectableRaised>
           <CardTitle>Header</CardTitle>
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
@@ -147,9 +147,8 @@ export class CardDemo extends React.Component {
 
         <Card
           id="selectableCard"
-          isSelectable
+          isSelectableRaised
           isSelected={this.state.selected === 'selectableCard'}
-          selectableVariant="raised"
           onKeyDown={this.onKeyDown}
         >
           <CardTitle>Header</CardTitle>

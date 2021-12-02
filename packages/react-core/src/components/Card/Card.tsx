@@ -18,10 +18,10 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isCompact?: boolean;
   /** Modifies the card to include selectable styling */
   isSelectable?: boolean;
+  /** @beta Specifies the card is selectable, and applies the new raised styling on hover and select */
+  isSelectableRaised?: boolean;
   /** Modifies the card to include selected styling */
   isSelected?: boolean;
-  /** @beta Specifies the selectable styling variant */
-  selectableVariant?: 'legacy' | 'raised';
   /** @beta Modifies a selectable card to have disabled styling */
   isDisabled?: boolean;
   /** Modifies the card to include flat styling */
@@ -56,8 +56,8 @@ export const Card: React.FunctionComponent<CardProps> = ({
   isHoverable = false,
   isCompact = false,
   isSelectable = false,
+  isSelectableRaised = false,
   isSelected = false,
-  selectableVariant = 'legacy',
   isDisabled = false,
   isFlat = false,
   isExpanded = false,
@@ -83,16 +83,14 @@ export const Card: React.FunctionComponent<CardProps> = ({
   }
 
   const getSelectableModifiers = () => {
-    const isRaised = selectableVariant === 'raised';
-
+    if (isSelectableRaised) {
+      if (isDisabled) {
+        return css(styles.modifiers.nonSelectableRaised);
+      }
+      return css(styles.modifiers.selectableRaised, isSelected && styles.modifiers.selectedRaised);
+    }
     if (isSelectable || isHoverable) {
-      if (isRaised) {
-        if (isDisabled) {
-          return css(styles.modifiers.nonSelectableRaised);
-        } else {
-          return css(styles.modifiers.selectableRaised, isSelected && styles.modifiers.selectedRaised);
-        }
-      } else {
+      if (!isDisabled) {
         return css(styles.modifiers.selectable, isSelected && styles.modifiers.selected);
       }
     }
@@ -120,7 +118,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
           getSelectableModifiers(),
           className
         )}
-        tabIndex={isSelectable ? '0' : undefined}
+        tabIndex={isSelectable || isSelectableRaised ? '0' : undefined}
         {...props}
         {...ouiaProps}
       >
