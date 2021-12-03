@@ -59,6 +59,11 @@ test('card with only isSelected applied - not change', () => {
   expect(view.prop('tabIndex')).toBe(undefined);
 });
 
+test('card with isDisabledRaised applied', () => {
+  const view = shallow(<Card isDisabledRaised />).dive();
+  expect(view.prop('className')).toMatch(/non-selectable-raised/);
+});
+
 test('card with isSelectableRaised applied - not change', () => {
   const view = shallow(<Card isSelectableRaised />).dive();
   expect(view.prop('className')).toMatch(/selectable-raised/);

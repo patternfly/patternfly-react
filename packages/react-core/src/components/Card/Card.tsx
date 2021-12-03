@@ -23,7 +23,7 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   /** Modifies the card to include selected styling */
   isSelected?: boolean;
   /** @beta Modifies a raised selectable card to have disabled styling */
-  isDisabled?: boolean;
+  isDisabledRaised?: boolean;
   /** Modifies the card to include flat styling */
   isFlat?: boolean;
   /** Modifies the card to include rounded styling */
@@ -58,7 +58,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
   isSelectable = false,
   isSelectableRaised = false,
   isSelected = false,
-  isDisabled = false,
+  isDisabledRaised = false,
   isFlat = false,
   isExpanded = false,
   isRounded = false,
@@ -83,16 +83,14 @@ export const Card: React.FunctionComponent<CardProps> = ({
   }
 
   const getSelectableModifiers = () => {
+    if (isDisabledRaised) {
+      return css(styles.modifiers.nonSelectableRaised);
+    }
     if (isSelectableRaised) {
-      if (isDisabled) {
-        return css(styles.modifiers.nonSelectableRaised);
-      }
       return css(styles.modifiers.selectableRaised, isSelected && styles.modifiers.selectedRaised);
     }
     if (isSelectable || isHoverable) {
-      if (!isDisabled) {
-        return css(styles.modifiers.selectable, isSelected && styles.modifiers.selected);
-      }
+      return css(styles.modifiers.selectable, isSelected && styles.modifiers.selected);
     }
     return '';
   };

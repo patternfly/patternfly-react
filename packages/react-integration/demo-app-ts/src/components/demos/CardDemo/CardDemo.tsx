@@ -147,8 +147,19 @@ export class CardDemo extends React.Component {
 
         <Card
           id="selectableCard"
-          isSelectableRaised
+          isSelectable
           isSelected={this.state.selected === 'selectableCard'}
+          onKeyDown={this.onKeyDown}
+        >
+          <CardTitle>Header</CardTitle>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </Card>
+        <br></br>
+        <Card
+          id="selectableCardRaised"
+          isSelectableRaised
+          isSelected={this.state.selected === 'selectableCardRaised'}
           onKeyDown={this.onKeyDown}
         >
           <CardTitle>Header</CardTitle>
