@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.138.0 (2021-12-03)
+
+
+### Features
+
+* **Select:** add ability to persist filtered children state ([#6670](https://github.com/patternfly/patternfly-react/issues/6670)) ([f618577](https://github.com/patternfly/patternfly-react/commit/f618577582e389409978bd1d6512ca0cf5d855cf))
+
+
+
+
+
 ## 4.137.17 (2021-12-03)
 
 
