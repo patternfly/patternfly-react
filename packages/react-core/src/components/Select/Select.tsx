@@ -146,6 +146,8 @@ export interface SelectProps
   chipGroupComponent?: React.ReactNode;
   /** Flag for retaining keyboard-entered value in typeahead text field when focus leaves input away */
   isInputValuePersisted?: boolean;
+  /** @beta Flag for retaining filter results on blur from keyboard-entered typeahead text */
+  isInputFilterPersisted?: boolean;
   /** Content rendered in the footer of the select menu */
   footer?: React.ReactNode;
 }
@@ -217,6 +219,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     ouiaSafe: true,
     chipGroupComponent: null,
     isInputValuePersisted: false,
+    isInputFilterPersisted: false,
     isCreateSelectOptionObject: false
   };
 
@@ -319,10 +322,14 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   };
 
   onClose = () => {
+    const { isInputFilterPersisted } = this.props;
+
     this.setState({
       focusFirstOption: false,
       typeaheadInputValue: null,
-      typeaheadFilteredChildren: React.Children.toArray(this.props.children),
+      ...(!isInputFilterPersisted && {
+        typeaheadFilteredChildren: React.Children.toArray(this.props.children)
+      }),
       typeaheadCurrIndex: -1,
       tabbedIntoFavoritesMenu: false
     });
@@ -778,6 +785,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       inputIdPrefix,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       isInputValuePersisted,
+      isInputFilterPersisted,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       menuAppendTo,
       favorites,
