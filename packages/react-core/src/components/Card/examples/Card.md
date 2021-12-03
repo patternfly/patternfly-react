@@ -516,7 +516,7 @@ const SelectableCard: React.FunctionComponent = () => {
       <Card
         id="third-card"
         isSelectableRaised
-        isDisabled
+        isDisabledRaised
       >
         <CardTitle>Third card</CardTitle>
         <CardBody>This is a raised but disabled card.</CardBody>
