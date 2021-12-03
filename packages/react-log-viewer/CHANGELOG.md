@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.20.17 (2021-12-03)
+
+
+### Bug Fixes
+
+* **Slider:** fixed examples with custom steps and input ([#6662](https://github.com/patternfly/patternfly-react/issues/6662)) ([b4cab38](https://github.com/patternfly/patternfly-react/commit/b4cab38a2492564bf91e3711ce322951bcc6a051))
+
+
+
+
+
 ## 4.20.16 (2021-12-02)
 
 **Note:** Version bump only for package @patternfly/react-log-viewer
