@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.27.0 (2021-12-06)
+
+
+### Features
+
+* **Dropdown:** add toggle variants ([#6651](https://github.com/patternfly/patternfly-react/issues/6651)) ([6414309](https://github.com/patternfly/patternfly-react/commit/64143094aec86aed86adb320e059d987af4f5f24))
+
+
+
+
+
 ## 4.26.1 (2021-12-06)
 
 **Note:** Version bump only for package @patternfly/react-styles
