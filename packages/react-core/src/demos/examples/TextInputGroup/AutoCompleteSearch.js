@@ -218,5 +218,13 @@ export const AutoCompleteSearch = () => {
     </div>
   );
 
-  return <Popper trigger={inputGroup} popper={menu} isVisible={menuIsOpen} onDocumentClick={handleClick} />;
+  return (
+    <Popper
+      trigger={inputGroup}
+      popper={menu}
+      appendTo={() => textInputGroupRef.current}
+      isVisible={menuIsOpen}
+      onDocumentClick={handleClick}
+    />
+  );
 };
