@@ -18,12 +18,14 @@ export const OverflowMenuGroup: React.FC<OverflowMenuGroupProps> = ({
   className,
   children,
   isPersistent = false,
-  groupType
+  groupType,
+  ...props
 }: OverflowMenuGroupProps) => (
   <OverflowMenuContext.Consumer>
     {value =>
       (isPersistent || !value.isBelowBreakpoint) && (
         <div
+          {...props}
           className={css(
             styles.overflowMenuGroup,
             groupType === 'button' && styles.modifiers.buttonGroup,
