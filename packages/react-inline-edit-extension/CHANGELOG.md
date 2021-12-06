@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.23.0 (2021-12-06)
+
+
+### Features
+
+* **MenuToggle:** add plain with text variant ([#6627](https://github.com/patternfly/patternfly-react/issues/6627)) ([1f4ca5e](https://github.com/patternfly/patternfly-react/commit/1f4ca5e36d7077da3ff3e6918874048c784216e0))
+
+
+
+
+
 # 4.22.0 (2021-12-06)
 
 
