@@ -29,6 +29,8 @@ export const ComposableDualListSelectorTree: React.FunctionComponent<ExampleProp
   const [chosenLeafIds, setChosenLeafIds] = React.useState<string[]>(['beans', 'beef', 'chicken', 'tofu']);
   const [chosenFilter, setChosenFilter] = React.useState<string>('');
   const [availableFilter, setAvailableFilter] = React.useState<string>('');
+  let hiddenChosen = [] as string[];
+  let hiddenAvailable = [] as string[];
 
   // helper function to build memoized lists
   const buildTextById = (node: FoodNode): { [key: string]: string } => {
@@ -140,8 +142,8 @@ export const ComposableDualListSelectorTree: React.FunctionComponent<ExampleProp
   ) => {
     const nodeIdsToCheck = memoizedLeavesById[node.id].filter(id =>
       isChosen
-        ? chosenLeafIds.includes(id) && (!chosenFilter || memoizedNodeText[id].includes(chosenFilter))
-        : !chosenLeafIds.includes(id) && (!availableFilter || memoizedNodeText[id].includes(availableFilter))
+        ? chosenLeafIds.includes(id) && !hiddenChosen.includes(id)
+        : !chosenLeafIds.includes(id) && !hiddenAvailable.includes(id)
     );
     setCheckedLeafIds(prevChecked => {
       const otherCheckedNodeNames = prevChecked.filter(id => !nodeIdsToCheck.includes(id));
@@ -152,7 +154,12 @@ export const ComposableDualListSelectorTree: React.FunctionComponent<ExampleProp
   // builds a search input - used in each dual list selector pane
   const buildSearchInput = (isChosen: boolean) => {
     const onChange = value => {
-      isChosen ? setChosenFilter(value) : setAvailableFilter(value);
+      if (isChosen) {
+        hiddenChosen = [];
+      } else {
+        hiddenAvailable = [];
+      }
+      return isChosen ? setChosenFilter(value) : setAvailableFilter(value);
     };
 
     return (
@@ -187,6 +194,14 @@ export const ComposableDualListSelectorTree: React.FunctionComponent<ExampleProp
     //   - There is a filter value and this node or one of this node's descendents or ancestors match on this pane
     const isDisplayed =
       (!filterValue && descendentsOnThisPane.length > 0) || hasMatchingChildren || hasParentMatch || isFilterMatch;
+
+    if (!isDisplayed) {
+      if (isChosen) {
+        hiddenChosen.push(node.id);
+      } else {
+        hiddenAvailable.push(node.id);
+      }
+    }
 
     return [
       ...(isDisplayed
