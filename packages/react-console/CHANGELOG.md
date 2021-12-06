@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.30.0 (2021-12-06)
+
+
+### Features
+
+* **Card:** Add disabled card and clean up props ([#6659](https://github.com/patternfly/patternfly-react/issues/6659)) ([86f225a](https://github.com/patternfly/patternfly-react/commit/86f225ab2e02d617e2d380c4a7f7593037c50e84))
+
+
+
+
+
 # 4.29.0 (2021-12-06)
 
 
