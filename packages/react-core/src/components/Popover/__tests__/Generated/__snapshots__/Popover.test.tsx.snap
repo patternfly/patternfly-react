@@ -27,7 +27,6 @@ exports[`Popover should match snapshot (auto-generated) 1`] = `
     onDocumentClick={[Function]}
     onDocumentKeyDown={[Function]}
     onTriggerClick={[Function]}
-    onTriggerEnter={[Function]}
     placement="top"
     popper={
       <FocusTrap
