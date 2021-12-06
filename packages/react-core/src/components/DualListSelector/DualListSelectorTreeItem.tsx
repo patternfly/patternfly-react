@@ -172,6 +172,7 @@ export const DualListSelectorTreeItem = React.memo(DualListSelectorTreeItemBase,
     prevProps.checkProps !== nextProps.checkProps ||
     prevProps.hasBadge !== nextProps.hasBadge ||
     prevProps.badgeProps !== nextProps.badgeProps ||
+    prevProps.isChecked !== nextProps.isChecked ||
     prevProps.itemData !== nextProps.itemData
   ) {
     return false;
