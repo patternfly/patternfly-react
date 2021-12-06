@@ -27,7 +27,11 @@ export const Droppable: React.FunctionComponent<DroppableProps> = ({
   const childProps = {
     'data-pf-droppable': zone,
     'data-pf-droppableid': droppableId,
-    className: css(styles.droppable, className),
+    // if has no wrapper is set, don't overwrite children className with the className prop
+    className:
+      hasNoWrapper && React.Children.count(children) === 1
+        ? css(styles.droppable, className, (children as React.ReactElement).props.className)
+        : css(styles.droppable, className),
     ...props
   };
 
