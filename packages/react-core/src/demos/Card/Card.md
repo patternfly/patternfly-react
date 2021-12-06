@@ -86,8 +86,6 @@ class CardViewBasic extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
-
     this.state = {
       filters: {
         products: []
@@ -199,6 +197,39 @@ class CardViewBasic extends React.Component {
         });
       }
     };
+    
+    this.onKeyDown = (event, productId) => {
+      console.log(productId);
+      if (event.target !== event.currentTarget) {
+        return;
+      }
+      if ([' ', 'Enter'].includes(event.key)) {
+        event.preventDefault();
+        this.setState(prevState => {
+          return prevState.selectedItems.includes(productId*1) ? 
+          {
+            selectedItems: [...prevState.selectedItems.filter(id => productId * 1 != id)],
+            areAllSelected: false
+          } : {
+            selectedItems: [...prevState.selectedItems, productId * 1],
+            areAllSelected: prevState.totalItemCount === prevState.selectedItems.length + 1
+          };
+        });
+      }
+    };
+    
+    this.onClick = productId => {
+      this.setState(prevState => {
+        return prevState.selectedItems.includes(productId*1) ? 
+        {
+          selectedItems: [...prevState.selectedItems.filter(id => productId * 1 != id)],
+          areAllSelected: false
+        } : {
+          selectedItems: [...prevState.selectedItems, productId * 1],
+          areAllSelected: prevState.totalItemCount === prevState.selectedItems.length + 1
+        };
+      });
+    };
   }
 
   selectedItems(e) {
@@ -292,24 +323,6 @@ class CardViewBasic extends React.Component {
     }
 
     return collection;
-  }
-
-  handleCheckboxClick(checked, e) {
-    const { value } = e.target;
-    const { totalItemCount } = this.state;
-
-    if (checked) {
-      const collection = this.getAllItems();
-      this.setState(prevState => ({
-        selectedItems: [...prevState.selectedItems, value * 1],
-        areAllSelected: totalItemCount === prevState.selectedItems.length + 1
-      }));
-    } else {
-      this.setState(prevState => ({
-        selectedItems: prevState.selectedItems.filter(item => item != value),
-        areAllSelected: false
-      }));
-    }
   }
 
   updateSelected() {
@@ -547,7 +560,11 @@ class CardViewBasic extends React.Component {
           </PageSection>
           <PageSection isFilled>
             <Gallery hasGutter>
-              <Card isHoverable isCompact>
+              <Card 
+                isSelectable 
+                selectableVariant="raised" 
+                isCompact
+              >
                 <Bullseye>
                   <EmptyState variant={EmptyStateVariant.xs}>
                     <EmptyStateIcon icon={PlusCircleIcon} />
@@ -561,7 +578,15 @@ class CardViewBasic extends React.Component {
                 </Bullseye>
               </Card>
               {filtered.map((product, key) => (
-                <Card isHoverable isCompact key={product.name}>
+                <Card 
+                  isSelectable 
+                  selectableVariant="raised" 
+                  isCompact 
+                  key={product.name}
+                  onKeyDown={(e) => this.onKeyDown(e, product.id)}
+                  onClick={() => this.onClick(product.id)}
+                  isSelected={selectedItems.includes(product.id)}
+                >
                   <CardHeader>
                     <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ maxWidth: '60px' }} />
                     <CardActions>
@@ -587,7 +612,6 @@ class CardViewBasic extends React.Component {
                       <Checkbox
                         checked={isChecked}
                         value={product.id}
-                        onChange={this.handleCheckboxClick}
                         isChecked={selectedItems.includes(product.id)}
                         aria-label="card checkbox example"
                         id={`check-${product.id}`}

@@ -93,7 +93,7 @@ export class CardDemo extends React.Component {
 
     return (
       <React.Fragment>
-        <Card isHoverable>
+        <Card isSelectableRaised>
           <CardTitle>Header</CardTitle>
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
@@ -149,6 +149,17 @@ export class CardDemo extends React.Component {
           id="selectableCard"
           isSelectable
           isSelected={this.state.selected === 'selectableCard'}
+          onKeyDown={this.onKeyDown}
+        >
+          <CardTitle>Header</CardTitle>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </Card>
+        <br></br>
+        <Card
+          id="selectableCardRaised"
+          isSelectableRaised
+          isSelected={this.state.selected === 'selectableCardRaised'}
           onKeyDown={this.onKeyDown}
         >
           <CardTitle>Header</CardTitle>

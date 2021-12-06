@@ -13,7 +13,7 @@ import pfLogoSmall from './pf-logo-small.svg';
 
 ### Basic
 
-```js
+```ts
 import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
@@ -26,12 +26,12 @@ import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
 ### Modifiers
 
-```js
+```ts
 import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter, Checkbox } from '@patternfly/react-core';
 
-CardModifiers = () => {
-  const mods = ['isHoverable', 'isCompact', 'isFlat', 'isRounded', 'isLarge', 'isFullHeight', 'isPlain'];
+const CardModifiers: React.FunctionComponent = () => {
+  const mods = ['isCompact', 'isFlat', 'isRounded', 'isLarge', 'isFullHeight', 'isPlain'];
   const [modifiers, setModifiers] = React.useState({});
 
   return (
@@ -64,7 +64,7 @@ CardModifiers = () => {
 
 ### With image and actions
 
-```js
+```ts
 import React from 'react';
 import {
   Brand,
@@ -83,104 +83,86 @@ import {
 } from '@patternfly/react-core';
 import pfLogo from './pfLogo.svg';
 
-class KebabDropdown extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false,
-      check1: false,
-      hasNoOffset: false
+const KebabDropdown: React.FunctionComponent = () => {
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const [check1, setCheck1] = React.useState<boolean>(false);
+  const [hasNoOffset, setHasNoOffset] = React.useState<boolean>(false);
+  
+  const onSelect = ()  => {
+      setIsOpen(!isOpen)
     };
-    this.onToggle = isOpen => {
-      this.setState({
-        isOpen
-      });
-    };
-    this.onSelect = event => {
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
-    };
-    this.onClick = (checked, event) => {
-      const target = event.target;
-      const value = target.type === 'checkbox' ? target.checked : target.value;
-      const name = target.name;
-      this.setState({ [name]: value });
-    };
-    this.toggleOffset = checked => {
-      this.setState({
-        hasNoOffset: checked
-      });
-    };
-  }
+  const onClick = (checked: boolean) => {
+    setCheck1(checked);
+  };
+  const toggleOffset = (checked: boolean) => {
+    setHasNoOffset(checked);
+  };
+  
+  const dropdownItems = [
+    <DropdownItem key="link">Link</DropdownItem>,
+    <DropdownItem key="action" component="button">
+      Action
+    </DropdownItem>,
+    <DropdownItem key="disabled link" isDisabled>
+      Disabled Link
+    </DropdownItem>,
+    <DropdownItem key="disabled action" isDisabled component="button">
+      Disabled Action
+    </DropdownItem>,
+    <DropdownSeparator key="separator" />,
+    <DropdownItem key="separated link">Separated Link</DropdownItem>,
+    <DropdownItem key="separated action" component="button">
+      Separated Action
+    </DropdownItem>
+  ];
 
-  render() {
-    const { isOpen } = this.state;
-    const dropdownItems = [
-      <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
-        Action
-      </DropdownItem>,
-      <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
-      </DropdownItem>,
-      <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
-      </DropdownItem>,
-      <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
-      <DropdownItem key="separated action" component="button">
-        Separated Action
-      </DropdownItem>
-    ];
-    return (
-      <>
-        <Card>
-          <CardHeader>
-            <CardHeaderMain>
-              <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }} />
-            </CardHeaderMain>
-            <CardActions hasNoOffset={this.state.hasNoOffset}>
-              <Dropdown
-                onSelect={this.onSelect}
-                toggle={<KebabToggle onToggle={this.onToggle} />}
-                isOpen={isOpen}
-                isPlain
-                dropdownItems={dropdownItems}
-                position={'right'}
-              />
-              <Checkbox
-                isChecked={this.state.check1}
-                onChange={this.onClick}
-                aria-label="card checkbox example"
-                id="check-1"
-                name="check1"
-              />
-            </CardActions>
-          </CardHeader>
-          <CardTitle>Header</CardTitle>
-          <CardBody>Body</CardBody>
-          <CardFooter>Footer</CardFooter>
-        </Card>
-        <div style={{ marginTop: '20px' }}>
-          <Checkbox
-            label="actions hasNoOffset"
-            isChecked={this.state.hasNoOffset}
-            onChange={this.toggleOffset}
-            aria-label="remove actions offset"
-            id="toggle-actions-offset"
-            name="toggle-actions-offset"
-          />
-        </div>
-      </>
-    );
-  }
+  return (
+    <>
+      <Card>
+        <CardHeader>
+          <CardHeaderMain>
+            <Brand src={pfLogo} alt="PatternFly logo" style={{ height: '50px' }} />
+          </CardHeaderMain>
+          <CardActions hasNoOffset={hasNoOffset}>
+            <Dropdown
+              onSelect={onSelect}
+              toggle={<KebabToggle onToggle={setIsOpen} />}
+              isOpen={isOpen}
+              isPlain
+              dropdownItems={dropdownItems}
+              position={'right'}
+            />
+            <Checkbox
+              isChecked={check1}
+              onChange={onClick}
+              aria-label="card checkbox example"
+              id="check-1"
+              name="check1"
+            />
+          </CardActions>
+        </CardHeader>
+        <CardTitle>Header</CardTitle>
+        <CardBody>Body</CardBody>
+        <CardFooter>Footer</CardFooter>
+      </Card>
+      <div style={{ marginTop: '20px' }}>
+        <Checkbox
+          label="actions hasNoOffset"
+          isChecked={hasNoOffset}
+          onChange={toggleOffset}
+          aria-label="remove actions offset"
+          id="toggle-actions-offset"
+          name="toggle-actions-offset"
+        />
+      </div>
+    </>
+  );
 }
 ```
 
 ### Card header in card head
 
-```js
+```ts
 import React from 'react';
 import {
   Card,
@@ -196,79 +178,63 @@ import {
   KebabToggle
 } from '@patternfly/react-core';
 
-class KebabDropdown extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false,
-      check1: false
-    };
-    this.onToggle = isOpen => {
-      this.setState({
-        isOpen
-      });
-    };
-    this.onSelect = event => {
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
-    };
-    this.onClick = (checked, event) => {
-      const target = event.target;
-      const value = target.type === 'checkbox' ? target.checked : target.value;
-      const name = target.name;
-      this.setState({ [name]: value });
-    };
-  }
+const KebabDropdown: React.FunctionComponent = () => {
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const [check1, setCheck1] = React.useState<boolean>(false);
+  
+  const onSelect = ()  => {
+    setIsOpen(!isOpen)
+  };
+  const onClick = (checked: boolean) => {
+    setCheck1(checked);
+  };
+  
+  const dropdownItems = [
+    <DropdownItem key="link">Link</DropdownItem>,
+    <DropdownItem key="action" component="button">
+      Action
+    </DropdownItem>,
+    <DropdownItem key="disabled link" isDisabled>
+      Disabled Link
+    </DropdownItem>,
+    <DropdownItem key="disabled action" isDisabled component="button">
+      Disabled Action
+    </DropdownItem>,
+    <DropdownSeparator key="separator" />,
+    <DropdownItem key="separated link">Separated Link</DropdownItem>,
+    <DropdownItem key="separated action" component="button">
+      Separated Action
+    </DropdownItem>
+  ];
 
-  render() {
-    const { isOpen } = this.state;
-    const dropdownItems = [
-      <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
-        Action
-      </DropdownItem>,
-      <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
-      </DropdownItem>,
-      <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
-      </DropdownItem>,
-      <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
-      <DropdownItem key="separated action" component="button">
-        Separated Action
-      </DropdownItem>
-    ];
-    return (
-      <Card>
-        <CardHeader>
-          <CardActions>
-            <Dropdown
-              onSelect={this.onSelect}
-              toggle={<KebabToggle onToggle={this.onToggle} />}
-              isOpen={isOpen}
-              isPlain
-              dropdownItems={dropdownItems}
-              position={'right'}
-            />
-            <Checkbox
-              isChecked={this.state.check1}
-              onChange={this.onClick}
-              aria-label="card checkbox example"
-              id="check-2"
-              name="check2"
-            />
-          </CardActions>
-          <CardTitle>
-            This is a really really really really really really really really really really long header
-          </CardTitle>
-        </CardHeader>
-        <CardBody>Body</CardBody>
-        <CardFooter>Footer</CardFooter>
-      </Card>
-    );
-  }
+  return (
+    <Card>
+      <CardHeader>
+        <CardActions>
+          <Dropdown
+            onSelect={onSelect}
+            toggle={<KebabToggle onToggle={setIsOpen} />}
+            isOpen={isOpen}
+            isPlain
+            dropdownItems={dropdownItems}
+            position={'right'}
+          />
+          <Checkbox
+            isChecked={check1}
+            onChange={onClick}
+            aria-label="card checkbox example"
+            id="check-2"
+            name="check2"
+          />
+        </CardActions>
+        <CardTitle>
+          This is a really really really really really really really really really really long header
+        </CardTitle>
+      </CardHeader>
+      <CardBody>Body</CardBody>
+      <CardFooter>Footer</CardFooter>
+    </Card>
+  );
 }
 ```
 
@@ -445,7 +411,7 @@ import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
 ### Selectable and selected
 
-```js
+```ts
 import React from 'react';
 import {
   Card,
@@ -459,100 +425,100 @@ import {
   KebabToggle
 } from '@patternfly/react-core';
 
-class SelectableCard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selected: null
-    };
-    this.onKeyDown = event => {
-      if (event.target !== event.currentTarget) {
-        return;
-      }
-      if ([13, 32].includes(event.keyCode)) {
-        event.preventDefault();
-        const newSelected = event.currentTarget.id === this.state.selected ? null : event.currentTarget.id;
-        this.setState({
-          selected: newSelected
-        });
-      }
-    };
-    this.onClick = event => {
-      const newSelected = event.currentTarget.id === this.state.selected ? null : event.currentTarget.id;
-      this.setState({
-        selected: newSelected
-      });
-    };
-    this.onToggle = (isOpen, event) => {
-      event.stopPropagation();
-      this.setState({
-        isOpen
-      });
-    };
-    this.onSelect = event => {
-      event.stopPropagation();
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
-    };
-  }
-  render() {
-    const { selected, isOpen } = this.state;
-    const dropdownItems = [
-      <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
-        Action
-      </DropdownItem>,
-      <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
-      </DropdownItem>,
-      <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
-      </DropdownItem>,
-      <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
-      <DropdownItem key="separated action" component="button">
-        Separated Action
-      </DropdownItem>
-    ];
-    return (
-      <>
-        <Card
-          id="first-card"
-          onKeyDown={this.onKeyDown}
-          onClick={this.onClick}
-          isSelectableRaised
-          isSelectedRaised={selected === 'first-card'}
-        >
-          <CardHeader>
-            <CardActions>
-              <Dropdown
-                onSelect={this.onSelect}
-                toggle={<KebabToggle onToggle={this.onToggle} />}
-                isOpen={isOpen}
-                isPlain
-                dropdownItems={dropdownItems}
-                position={'right'}
-              />
-            </CardActions>
-          </CardHeader>
-          <CardTitle>First card</CardTitle>
-          <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
-        </Card>
-        <br />
-        <Card
-          id="second-card"
-          onKeyDown={this.onKeyDown}
-          onClick={this.onClick}
-          isSelectableRaised
-          isSelectedRaised={selected === 'second-card'}
-        >
-          <CardTitle>Second card</CardTitle>
-          <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
-        </Card>
-      </>
-    );
-  }
+const SelectableCard: React.FunctionComponent = () => {
+  const [selected, setSelected] = React.useState<string>('');
+  const [isKebabOpen, setIsKebabOpen] = React.useState<boolean>(false);
+  
+  const onKeyDown = (event: React.KeyboardEvent) => {
+    if (event.target !== event.currentTarget) {
+      return;
+    }
+    if ([' ', 'Enter'].includes(event.key)) {
+      event.preventDefault();
+      const newSelected = event.currentTarget.id === selected ? null : event.currentTarget.id;
+      setSelected(newSelected);
+    }
+  };  
+  
+  const onClick = (event: React.MouseEvent) => {
+    const newSelected = event.currentTarget.id === selected ? null : event.currentTarget.id;
+    setSelected(newSelected);
+  };
+  
+  const onToggle = (isOpen: boolean, event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    setIsKebabOpen(isOpen);
+  };
+  
+  const onSelect = (event: React.SyntheticEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+    setIsKebabOpen(false);
+  };
+  
+  const dropdownItems = [
+    <DropdownItem key="link">Link</DropdownItem>,
+    <DropdownItem key="action" component="button">
+      Action
+    </DropdownItem>,
+    <DropdownItem key="disabled link" isDisabled>
+      Disabled Link
+    </DropdownItem>,
+    <DropdownItem key="disabled action" isDisabled component="button">
+      Disabled Action
+    </DropdownItem>,
+    <DropdownSeparator key="separator" />,
+    <DropdownItem key="separated link">Separated Link</DropdownItem>,
+    <DropdownItem key="separated action" component="button">
+      Separated Action
+    </DropdownItem>
+  ];
+
+  return (
+    <React.Fragment>
+      <Card
+        id="first-card"
+        onKeyDown={onKeyDown}
+        onClick={onClick}
+        isSelectableRaised
+        isSelected={selected === 'first-card'}
+      >
+        <CardHeader>
+          <CardActions>
+            <Dropdown
+              onSelect={onSelect}
+              toggle={<KebabToggle onToggle={onToggle} />}
+              isOpen={isKebabOpen}
+              isPlain
+              dropdownItems={dropdownItems}
+              position={'right'}
+            />
+          </CardActions>
+        </CardHeader>
+        <CardTitle>First card</CardTitle>
+        <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
+      </Card>
+      <br />
+      <Card
+        id="second-card"
+        onKeyDown={onKeyDown}
+        onClick={onClick}
+        isSelectableRaised
+        isSelected={selected === 'second-card'}
+      >
+        <CardTitle>Second card</CardTitle>
+        <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
+      </Card>
+      <br />
+      <Card
+        id="third-card"
+        isSelectableRaised
+        isDisabledRaised
+      >
+        <CardTitle>Third card</CardTitle>
+        <CardBody>This is a raised but disabled card.</CardBody>
+      </Card>
+    </React.Fragment>
+  );
 }
 ```
 

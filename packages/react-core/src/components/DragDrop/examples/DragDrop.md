@@ -66,6 +66,7 @@ Basic = () => {
 
       return true;
     }
+    return false;
   }
 
   return (
@@ -149,6 +150,7 @@ MultiList = () => {
       }
       return true;
     }
+    return false;
   }
 
   return (
