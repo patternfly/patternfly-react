@@ -50,6 +50,10 @@ export interface TimePickerProps
   stepMinutes?: number;
   /** Additional props for input field */
   inputProps?: TextInputProps;
+  /** A time string. The format could be  an ISO 8601 formatted date string or in 'HH{delimiter}MM' format */
+  minTime?: string | Date;
+  /** A time string. The format could be  an ISO 8601 formatted date string or in 'HH{delimiter}MM' format */
+  maxTime?: string | Date;
 }
 
 interface TimePickerState {
@@ -59,6 +63,8 @@ interface TimePickerState {
   focusedIndex: number;
   scrollIndex: number;
   timeRegex: RegExp;
+  minTimeState: string;
+  maxTimeState: string;
 }
 
 export class TimePicker extends React.Component<TimePickerProps, TimePickerState> {
@@ -81,13 +87,15 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     direction: 'down',
     width: 150,
     stepMinutes: 30,
-    inputProps: {}
+    inputProps: {},
+    minTime: '',
+    maxTime: ''
   };
 
   constructor(props: TimePickerProps) {
     super(props);
 
-    const { is24Hour, delimiter, time } = this.props;
+    const { is24Hour, delimiter, time, minTime, maxTime } = this.props;
     const timeRegex = this.getRegExp();
 
     this.state = {
@@ -96,7 +104,9 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       timeState: parseTime(time, timeRegex, delimiter, !is24Hour),
       focusedIndex: null,
       scrollIndex: 0,
-      timeRegex
+      timeRegex,
+      minTimeState: parseTime(minTime, timeRegex, delimiter, !is24Hour),
+      maxTimeState: parseTime(maxTime, timeRegex, delimiter, !is24Hour)
     };
   }
 
@@ -338,11 +348,13 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       time,
       validateTime,
       inputProps,
+      minTime,
+      maxTime,
       ...props
     } = this.props;
-    const { timeState, isOpen, isInvalid, focusedIndex } = this.state;
+    const { timeState, isOpen, isInvalid, focusedIndex, minTimeState, maxTimeState } = this.state;
     const style = { '--pf-c-date-picker__input--c-form-control--Width': width } as React.CSSProperties;
-    const options = makeTimeOptions(stepMinutes, !is24Hour, delimiter);
+    const options = makeTimeOptions(stepMinutes, !is24Hour, delimiter, minTimeState, maxTimeState);
     const randomId = id || getUniqueId('time-picker');
 
     const menuContainer = (
