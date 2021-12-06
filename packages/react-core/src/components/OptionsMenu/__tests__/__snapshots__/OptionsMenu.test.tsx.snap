@@ -697,6 +697,7 @@ exports[`optionsMenu expanded 1`] = `
                 </div>,
               }
             }
+            toggleVariant="default"
           >
             <button
               aria-expanded={true}
@@ -1504,6 +1505,7 @@ exports[`optionsMenu isDisabled 1`] = `
                 </div>,
               }
             }
+            toggleVariant="default"
           >
             <button
               aria-expanded={false}
@@ -1833,6 +1835,7 @@ exports[`optionsMenu open up 1`] = `
                 </div>,
               }
             }
+            toggleVariant="default"
           >
             <button
               aria-expanded={false}
@@ -2106,6 +2109,7 @@ exports[`optionsMenu plain 1`] = `
                 </div>,
               }
             }
+            toggleVariant="default"
           >
             <button
               aria-expanded={false}
@@ -2406,6 +2410,7 @@ exports[`optionsMenu regular 1`] = `
                 </div>,
               }
             }
+            toggleVariant="default"
           >
             <button
               aria-expanded={false}
@@ -2736,6 +2741,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
                 </div>,
               }
             }
+            toggleVariant="default"
           >
             <button
               aria-expanded={false}
@@ -3065,6 +3071,7 @@ exports[`optionsMenu right aligned 1`] = `
                 </div>,
               }
             }
+            toggleVariant="default"
           >
             <button
               aria-expanded={false}

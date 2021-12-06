@@ -4480,6 +4480,7 @@ exports[`dropdown alignment breakpoints 1`] = `
               </div>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={true}
@@ -5039,6 +5040,7 @@ exports[`dropdown basic 1`] = `
               </div>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={true}
@@ -5625,6 +5627,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               </div>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={false}
@@ -6187,6 +6190,7 @@ exports[`dropdown dropup 1`] = `
               </div>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={false}
@@ -6895,6 +6899,7 @@ exports[`dropdown expanded 1`] = `
               </div>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={true}
@@ -7790,6 +7795,7 @@ exports[`dropdown primary 1`] = `
               </div>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={false}
@@ -8351,6 +8357,7 @@ exports[`dropdown regular 1`] = `
               </div>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={false}
@@ -8913,6 +8920,7 @@ exports[`dropdown right aligned 1`] = `
               </div>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={false}
