@@ -145,6 +145,11 @@ export const ComposableDualListSelectorTree: React.FunctionComponent<ExampleProp
         ? chosenLeafIds.includes(id) && !hiddenChosen.includes(id)
         : !chosenLeafIds.includes(id) && !hiddenAvailable.includes(id)
     );
+    if (isChosen) {
+      hiddenChosen = [];
+    } else {
+      hiddenAvailable = [];
+    }
     setCheckedLeafIds(prevChecked => {
       const otherCheckedNodeNames = prevChecked.filter(id => !nodeIdsToCheck.includes(id));
       return !isChecked ? otherCheckedNodeNames : [...otherCheckedNodeNames, ...nodeIdsToCheck];
@@ -153,14 +158,7 @@ export const ComposableDualListSelectorTree: React.FunctionComponent<ExampleProp
 
   // builds a search input - used in each dual list selector pane
   const buildSearchInput = (isChosen: boolean) => {
-    const onChange = value => {
-      if (isChosen) {
-        hiddenChosen = [];
-      } else {
-        hiddenAvailable = [];
-      }
-      return isChosen ? setChosenFilter(value) : setAvailableFilter(value);
-    };
+    const onChange = value => (isChosen ? setChosenFilter(value) : setAvailableFilter(value));
 
     return (
       <SearchInput value={isChosen ? chosenFilter : availableFilter} onChange={onChange} onClear={() => onChange('')} />
@@ -189,11 +187,14 @@ export const ComposableDualListSelectorTree: React.FunctionComponent<ExampleProp
       filterValue && descendentsOnThisPane.some(id => memoizedNodeText[id].includes(filterValue));
     const isFilterMatch = filterValue && node.text.includes(filterValue) && descendentsOnThisPane.length > 0;
 
-    // A node is displayed if:
+    // A node is displayed if either of the following is true:
     //   - There is no filter value and this node or its descendents belong on this pane
     //   - There is a filter value and this node or one of this node's descendents or ancestors match on this pane
     const isDisplayed =
-      (!filterValue && descendentsOnThisPane.length > 0) || hasMatchingChildren || hasParentMatch || isFilterMatch;
+      (!filterValue && descendentsOnThisPane.length > 0) ||
+      hasMatchingChildren ||
+      (hasParentMatch && descendentsOnThisPane.length > 0) ||
+      isFilterMatch;
 
     if (!isDisplayed) {
       if (isChosen) {
