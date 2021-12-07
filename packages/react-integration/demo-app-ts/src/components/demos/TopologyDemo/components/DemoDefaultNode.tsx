@@ -10,14 +10,14 @@ import {
   WithDndDropProps,
   useCombineRefs,
   useSvgAnchor,
-  WithNodeShapeProps
+  WithNodeShapeProps,
+  useHover,
+  getShapeComponent
 } from '@patternfly/react-topology';
-import { getShapeComponent } from '@patternfly/react-topology/dist/esm/components/nodes/shapes';
 
 type DemoDefaultNodeProps = {
   element: Node;
   droppable?: boolean;
-  hover?: boolean;
   canDrop?: boolean;
 } & WithSelectionProps &
   WithDragNodeProps &
@@ -34,7 +34,6 @@ const DemoDefaultNode: React.FC<DemoDefaultNodeProps> = ({
   dragNodeRef,
   dndDragRef,
   droppable,
-  hover,
   canDrop,
   dndDropRef,
   getCustomShape,
@@ -42,9 +41,10 @@ const DemoDefaultNode: React.FC<DemoDefaultNodeProps> = ({
   onShowCreateConnector,
   onContextMenu
 }) => {
+  const [hover, hoverRef] = useHover();
+  const refs = useCombineRefs(hoverRef, dragNodeRef, dndDragRef);
   const shape = element.getNodeShape();
   const anchorRef = useSvgAnchor();
-  const refs = useCombineRefs<SVGEllipseElement>(dragNodeRef, dndDragRef, dndDropRef);
   const { width, height } = element.getDimensions();
 
   const className = `pf-ri-topology__node__background${canDrop && hover ? ' pf-m-hover' : ''}${
@@ -52,19 +52,25 @@ const DemoDefaultNode: React.FC<DemoDefaultNodeProps> = ({
   }${selected ? ' pf-m-selected' : ''}`;
   const ShapeComponent = getShapeComponent(shape, element, getCustomShape);
 
+  React.useEffect(() => {
+    if (hover) {
+      onShowCreateConnector && onShowCreateConnector();
+    } else {
+      onHideCreateConnector && onHideCreateConnector();
+    }
+  }, [hover, onShowCreateConnector, onHideCreateConnector]);
+
   return (
-    <ShapeComponent
-      className={className}
-      element={element}
-      width={width}
-      height={height}
-      onShowCreateConnector={onShowCreateConnector}
-      onHideCreateConnector={onHideCreateConnector}
-      onContextMenu={onContextMenu}
-      onSelect={onSelect}
-      dndDropRef={refs}
-      anchorRef={anchorRef}
-    />
+    <g ref={refs} onClick={onSelect} onContextMenu={onContextMenu}>
+      <ShapeComponent
+        className={className}
+        element={element}
+        width={width}
+        height={height}
+        dndDropRef={dndDropRef}
+        anchorRef={anchorRef}
+      />
+    </g>
   );
 };
 

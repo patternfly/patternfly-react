@@ -11,21 +11,13 @@ const Ellipse: React.FC<EllipseProps> = ({
   width,
   height,
   filter,
-  onShowCreateConnector,
-  onHideCreateConnector,
-  onSelect,
-  onContextMenu,
-  dndDropRef,
-  anchorRef
+  anchorRef,
+  dndDropRef
 }) => {
   const refs = useCombineRefs<SVGEllipseElement>(dndDropRef, anchorRef);
   return (
     <ellipse
       className={className}
-      onMouseEnter={onShowCreateConnector}
-      onMouseLeave={onHideCreateConnector}
-      onContextMenu={onContextMenu}
-      onClick={onSelect}
       ref={refs}
       cx={width / 2}
       cy={height / 2}

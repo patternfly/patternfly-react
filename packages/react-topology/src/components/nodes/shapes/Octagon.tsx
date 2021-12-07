@@ -10,29 +10,12 @@ const Octagon: React.FC<ShapeProps> = ({
   width,
   height,
   filter,
-  onShowCreateConnector,
-  onHideCreateConnector,
-  onSelect,
-  onContextMenu,
-  dndDropRef,
-  anchorRef
+  anchorRef,
+  dndDropRef
 }) => {
   const refs = useCombineRefs<SVGPathElement>(dndDropRef, anchorRef);
   const path = React.useMemo(() => getPointsForSides(8, width, height, OCTAGON_HULL_PADDING), [width, height]);
-  return (
-    <path
-      className={className}
-      onMouseEnter={onShowCreateConnector}
-      onMouseLeave={onHideCreateConnector}
-      onContextMenu={onContextMenu}
-      onClick={onSelect}
-      ref={refs}
-      d={path}
-      filter={filter}
-      strokeLinejoin="round"
-      strokeWidth={10}
-    />
-  );
+  return <path className={className} ref={refs} d={path} filter={filter} strokeLinejoin="round" strokeWidth={10} />;
 };
 
 export default Octagon;

@@ -12,4 +12,5 @@ export * from './useSize';
 export * from './useStatus';
 export * from './useLabel';
 export * from './useBadge';
+export * from './useCollapsibleGroup';
 export * from './createAggregateEdges';

@@ -2,18 +2,7 @@ import { Point, ShapeProps, useCombineRefs } from '@patternfly/react-topology';
 import * as React from 'react';
 import * as _ from 'lodash';
 
-const Polygon: React.FC<ShapeProps> = ({
-  className,
-  width,
-  height,
-  filter,
-  onShowCreateConnector,
-  onHideCreateConnector,
-  onSelect,
-  onContextMenu,
-  dndDropRef,
-  anchorRef
-}) => {
+const Polygon: React.FC<ShapeProps> = ({ className, width, height, filter, dndDropRef, anchorRef }) => {
   const refs = useCombineRefs<SVGPolygonElement>(dndDropRef, anchorRef);
   const points: Point[] = [
     new Point(width / 2, 0),
@@ -29,18 +18,7 @@ const Polygon: React.FC<ShapeProps> = ({
     ''
   );
 
-  return (
-    <polygon
-      className={className}
-      onMouseEnter={onShowCreateConnector}
-      onMouseLeave={onHideCreateConnector}
-      onContextMenu={onContextMenu}
-      onClick={onSelect}
-      ref={refs}
-      points={p}
-      filter={filter}
-    />
-  );
+  return <polygon className={className} ref={refs} points={p} filter={filter} />;
 };
 
 export default Polygon;

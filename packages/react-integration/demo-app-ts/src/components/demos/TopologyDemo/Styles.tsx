@@ -13,6 +13,7 @@ import defaultComponentFactory from './components/defaultComponentFactory';
 import withTopologySetup from './utils/withTopologySetup';
 import stylesComponentFactory from './components/stylesComponentFactory';
 import { logos } from './utils/logos';
+import { DataTypes } from './components/StyleNode';
 
 const ROW_HEIGHT = 100;
 const BOTTOM_LABEL_ROW_HEIGHT = 125;
@@ -47,6 +48,7 @@ const createNode = (options: {
   labelIconClass?: string;
   marginX?: number;
   truncateLength?: number;
+  dataType?: DataTypes;
 }): NodeModel => ({
   id: options.id,
   type: options.type || 'node',
@@ -66,10 +68,8 @@ const createNode = (options: {
   shape: options.shape || NodeShape.circle,
   status: options.status || NodeStatus.default,
   data: {
-    ...options,
-    status: options.status || 'default',
-    selected: options.selected === undefined ? false : options.selected,
-    hover: options.hover === undefined ? false : options.hover
+    dataType: 'Default',
+    ...options
   }
 });
 
@@ -82,8 +82,8 @@ const createStatusNodes = (
   column: number,
   statusPerRow = 1,
   label: string = '',
-  selected = false,
-  hover = false,
+  selected?: boolean,
+  hover?: boolean,
   labelPosition?: LabelPosition,
   showStatusDecorator?: boolean,
   statusDecoratorTooltip?: React.ReactNode
@@ -107,8 +107,8 @@ const createStatusNodes = (
 const createStatusNodeShapes = (
   statusPerRow = 1,
   label: string = '',
-  selected = false,
-  hover = false,
+  selected?: boolean,
+  hover?: boolean,
   labelPosition: LabelPosition = LabelPosition.bottom,
   showStatusDecorator?: boolean,
   statusDecoratorTooltip?: React.ReactNode
@@ -158,7 +158,7 @@ export const NodeHoverStyles = withTopologySetup(() => {
           id: 'g1',
           type: 'graph'
         },
-        nodes: createStatusNodeShapes(1, '', false, true)
+        nodes: createStatusNodeShapes(1, '', undefined, true)
       }),
       []
     )
@@ -194,7 +194,7 @@ export const NodeStatusDecoratorStyles = withTopologySetup(() => {
           id: 'g1',
           type: 'graph'
         },
-        nodes: createStatusNodeShapes(1, '', false, false, LabelPosition.bottom, true, 'Tooltip Text')
+        nodes: createStatusNodeShapes(1, '', undefined, undefined, LabelPosition.bottom, true, 'Tooltip Text')
       }),
       []
     )
@@ -230,7 +230,7 @@ export const NodeLabelHoverStyles = withTopologySetup(() => {
           id: 'g1',
           type: 'graph'
         },
-        nodes: createStatusNodeShapes(2, 'Node Title', false, true)
+        nodes: createStatusNodeShapes(2, 'Node Title', undefined, true)
       }),
       []
     )
@@ -266,7 +266,7 @@ export const NodeHorizontalLabelStyles = withTopologySetup(() => {
           id: 'g1',
           type: 'graph'
         },
-        nodes: createStatusNodeShapes(1, 'Node Title', false, false, LabelPosition.right)
+        nodes: createStatusNodeShapes(1, 'Node Title', undefined, undefined, LabelPosition.right)
       }),
       []
     )
@@ -407,7 +407,6 @@ export const NodeIconLabelStyles = withTopologySetup(() => {
           ...createBadgeNodes({
             row: 1,
             badge: 'C',
-            hover: false,
             showContextMenu: true,
             showIconClass: true,
             marginX: 100
@@ -483,7 +482,7 @@ export const NodeSecondaryLabelStyles = withTopologySetup(() => {
         hover: true,
         showContextMenu: true,
         badgeColor: '#ace12e',
-        badgeTextColor: '#0f280d',
+        badgeTextColor: '#486b00',
         badgeBorderColor: '#486b00',
         marginX: 100
       })
@@ -491,17 +490,450 @@ export const NodeSecondaryLabelStyles = withTopologySetup(() => {
     return nodes;
   }, []);
 
-  useModel(
-    React.useMemo(
-      (): Model => ({
-        graph: {
-          id: 'g1',
-          type: 'graph'
-        },
-        nodes
-      }),
-      []
-    )
+  useModel({
+    graph: {
+      id: 'g1',
+      type: 'graph'
+    },
+    nodes
+  });
+  return null;
+});
+
+const createGroupNodes = (groupId = 'group1', x = 0): NodeModel[] => {
+  const nodes: NodeModel[] = [];
+  nodes.push(
+    createNode({
+      id: `${groupId}-1`,
+      shape: NodeShape.circle,
+      label: 'Child Node',
+      labelPosition: LabelPosition.right,
+      row: 0,
+      column: 0,
+      x: x + 200,
+      y: 50
+    })
   );
+  nodes.push(
+    createNode({
+      id: `${groupId}-2`,
+      shape: NodeShape.circle,
+      label: 'Child Node',
+      labelPosition: LabelPosition.right,
+      row: 0,
+      column: 0,
+      x,
+      y: 150
+    })
+  );
+  nodes.push(
+    createNode({
+      id: `${groupId}-3`,
+      shape: NodeShape.circle,
+      label: 'Child Node',
+      labelPosition: LabelPosition.right,
+      row: 0,
+      column: 0,
+      x: x + 400,
+      y: 150
+    })
+  );
+  nodes.push(
+    createNode({
+      id: `${groupId}-4`,
+      shape: NodeShape.circle,
+      label: 'Child Node',
+      labelPosition: LabelPosition.right,
+      row: 0,
+      column: 0,
+      x: x + 200,
+      y: 250
+    })
+  );
+  nodes.push(
+    createNode({
+      id: `${groupId}-5`,
+      shape: NodeShape.circle,
+      label: 'Child Node',
+      labelPosition: LabelPosition.right,
+      row: 0,
+      column: 0,
+      x,
+      y: 350
+    })
+  );
+  nodes.push(
+    createNode({
+      id: `${groupId}-6`,
+      shape: NodeShape.circle,
+      label: 'Child Node',
+      labelPosition: LabelPosition.right,
+      row: 0,
+      column: 0,
+      x: x + 400,
+      y: 350
+    })
+  );
+  nodes.push(
+    createNode({
+      id: `${groupId}-7`,
+      shape: NodeShape.circle,
+      label: 'Node 5',
+      labelPosition: LabelPosition.right,
+      row: 0,
+      column: 0,
+      x: x + 200,
+      y: 450
+    })
+  );
+  return nodes;
+};
+
+const createGroupedGroupNodes = (
+  groupId: string,
+  x = 0,
+  y = 100,
+  hover: boolean = undefined,
+  selected: boolean = undefined
+): NodeModel[] => {
+  const nodes: NodeModel[] = [];
+  nodes.push(
+    createNode({
+      id: `${groupId}-Grouped-1`,
+      shape: NodeShape.circle,
+      label: 'Grouped Node 1',
+      labelPosition: LabelPosition.bottom,
+      row: 0,
+      column: 0,
+      x: x + 75,
+      y,
+      dataType: DataTypes.Alternate
+    })
+  );
+  nodes.push(
+    createNode({
+      id: `${groupId}-Grouped-2`,
+      shape: NodeShape.circle,
+      label: 'Grouped Node 2',
+      labelPosition: LabelPosition.bottom,
+      row: 0,
+      column: 0,
+      x: x + 225,
+      y,
+      dataType: DataTypes.Alternate
+    })
+  );
+
+  const groupNode = {
+    id: groupId,
+    type: 'group',
+    label: 'Grouped Group Title',
+    children: nodes.map(n => n.id),
+    group: true,
+    style: { padding: 17 },
+    data: {
+      badge: 'Label',
+      badgeColor: '#F2F0FC',
+      badgeTextColor: '#5752d1',
+      badgeBorderColor: '#CBC1FF',
+      hover,
+      selected,
+      collapsedWidth: 75,
+      collapsedHeight: 75
+    }
+  };
+
+  return [...nodes, groupNode];
+};
+
+const createUnGroupedGroupNodes = (groupId: string, x = 0, y = 325): NodeModel[] => {
+  const nodes: NodeModel[] = [];
+  nodes.push(
+    createNode({
+      id: `${groupId}-UnGrouped-A`,
+      shape: NodeShape.circle,
+      label: 'Grouped Node A',
+      labelPosition: LabelPosition.bottom,
+      row: 0,
+      column: 0,
+      x,
+      y
+    })
+  );
+  nodes.push(
+    createNode({
+      id: `${groupId}-UnGrouped-B`,
+      shape: NodeShape.circle,
+      label: 'Grouped Node B',
+      labelPosition: LabelPosition.bottom,
+      row: 0,
+      column: 0,
+      x: x + 150,
+      y
+    })
+  );
+  nodes.push(
+    createNode({
+      id: `${groupId}-UnGrouped-C`,
+      shape: NodeShape.circle,
+      label: 'Grouped Node C',
+      labelPosition: LabelPosition.bottom,
+      row: 0,
+      column: 0,
+      x: x + 300,
+      y
+    })
+  );
+  return nodes;
+};
+
+export const GroupStyles = withTopologySetup(() => {
+  useComponentFactory(defaultComponentFactory);
+  useComponentFactory(stylesComponentFactory);
+  const nodes: NodeModel[] = createGroupNodes();
+
+  const groupNode = {
+    id: 'Group 1',
+    type: 'group',
+    label: 'Node Group Title',
+    children: nodes.map(n => n.id),
+    group: true,
+    style: { padding: 17 },
+    data: {
+      badge: 'Label',
+      badgeColor: '#F2F0FC',
+      badgeTextColor: '#5752d1',
+      badgeBorderColor: '#CBC1FF',
+      collapsedWidth: 75,
+      collapsedHeight: 75,
+      showContextMenu: true
+    }
+  };
+
+  useModel({
+    graph: {
+      id: 'g1',
+      type: 'graph'
+    },
+    nodes: [...nodes, groupNode]
+  });
+  return null;
+});
+
+export const GroupHoverStyles = withTopologySetup(() => {
+  useComponentFactory(defaultComponentFactory);
+  useComponentFactory(stylesComponentFactory);
+  const nodes: NodeModel[] = createGroupNodes();
+
+  const groupNode = {
+    id: 'Group 1',
+    type: 'group',
+    label: 'Node Group Title',
+    children: nodes.map(n => n.id),
+    group: true,
+    style: { padding: 17 },
+    data: {
+      badge: 'Label',
+      badgeColor: '#F2F0FC',
+      badgeTextColor: '#5752d1',
+      badgeBorderColor: '#CBC1FF',
+      collapsedWidth: 75,
+      collapsedHeight: 75,
+      hover: true
+    }
+  };
+
+  useModel({
+    graph: {
+      id: 'g1',
+      type: 'graph'
+    },
+    nodes: [...nodes, groupNode]
+  });
+  return null;
+});
+
+export const GroupSelectedStyles = withTopologySetup(() => {
+  useComponentFactory(defaultComponentFactory);
+  useComponentFactory(stylesComponentFactory);
+  const nodes: NodeModel[] = createGroupNodes();
+
+  const groupNode = {
+    id: 'Group 1',
+    type: 'group',
+    label: 'Node Group Title',
+    children: nodes.map(n => n.id),
+    group: true,
+    style: { padding: 17 },
+    data: {
+      badge: 'Label',
+      badgeColor: '#F2F0FC',
+      badgeTextColor: '#5752d1',
+      badgeBorderColor: '#CBC1FF',
+      collapsedWidth: 75,
+      collapsedHeight: 75,
+      selected: true
+    }
+  };
+
+  useModel({
+    graph: {
+      id: 'g1',
+      type: 'graph'
+    },
+    nodes: [...nodes, groupNode]
+  });
+  return null;
+});
+
+export const GroupDropTargetStyles = withTopologySetup(() => {
+  useComponentFactory(defaultComponentFactory);
+  useComponentFactory(stylesComponentFactory);
+  const nodes: NodeModel[] = createGroupNodes();
+
+  const groupNode = {
+    id: 'Group 1',
+    type: 'group',
+    label: 'Node Group Title',
+    children: nodes.map(n => n.id),
+    group: true,
+    style: { padding: 17 },
+    data: {
+      badge: 'Label',
+      badgeColor: '#F2F0FC',
+      badgeTextColor: '#5752d1',
+      badgeBorderColor: '#CBC1FF',
+      collapsedWidth: 75,
+      collapsedHeight: 75,
+      canDrop: true,
+      dropTarget: true
+    }
+  };
+
+  useModel({
+    graph: {
+      id: 'g1',
+      type: 'graph'
+    },
+    nodes: [...nodes, groupNode]
+  });
+  return null;
+});
+
+export const GroupedGroupsStyles = withTopologySetup(() => {
+  useComponentFactory(defaultComponentFactory);
+  useComponentFactory(stylesComponentFactory);
+  const groupedGroupNodes: NodeModel[] = createGroupedGroupNodes('GroupedGroup');
+  const ungroupedGroupNodes: NodeModel[] = createUnGroupedGroupNodes('Group 1');
+
+  const groupNode = {
+    id: 'Group 1',
+    type: 'group',
+    label: 'Node Group Title',
+    children: ['GroupedGroup', ...ungroupedGroupNodes.map(n => n.id)],
+    group: true,
+    style: { padding: 17 },
+    data: {
+      badge: 'Label',
+      badgeColor: '#F2F0FC',
+      badgeTextColor: '#5752d1',
+      badgeBorderColor: '#CBC1FF',
+      collapsedWidth: 75,
+      collapsedHeight: 75,
+      showContextMenu: true
+    }
+  };
+
+  const groupedGroupNodes2: NodeModel[] = createGroupedGroupNodes('GroupedGroup2', 500);
+  const ungroupedGroupNodes2: NodeModel[] = createUnGroupedGroupNodes('Group 2', 500);
+
+  const groupNode2 = {
+    id: 'Group 2',
+    type: 'group',
+    label: 'Node Group Title',
+    children: ['GroupedGroup2', ...ungroupedGroupNodes2.map(n => n.id)],
+    group: true,
+    style: { padding: 17 },
+    data: {
+      badge: 'Label',
+      badgeColor: '#F2F0FC',
+      badgeTextColor: '#5752d1',
+      badgeBorderColor: '#CBC1FF',
+      collapsedWidth: 75,
+      collapsedHeight: 75,
+      selected: true,
+      showContextMenu: true
+    }
+  };
+
+  useModel({
+    graph: {
+      id: 'g1',
+      type: 'graph'
+    },
+    nodes: [
+      ...groupedGroupNodes,
+      ...ungroupedGroupNodes,
+      groupNode,
+      ...groupedGroupNodes2,
+      ...ungroupedGroupNodes2,
+      groupNode2
+    ]
+  });
+  return null;
+});
+
+export const CollapsibleGroupStyles = withTopologySetup(() => {
+  useComponentFactory(defaultComponentFactory);
+  useComponentFactory(stylesComponentFactory);
+  const nodes: NodeModel[] = createGroupNodes('Group 1');
+  const nodes2: NodeModel[] = createGroupNodes('Group 2', 600);
+
+  const groupNode = {
+    id: 'Group 1',
+    type: 'group',
+    label: 'Node Group Title',
+    children: nodes.map(n => n.id),
+    group: true,
+    style: { padding: 17 },
+    data: {
+      badge: 'Label',
+      badgeColor: '#F2F0FC',
+      badgeTextColor: '#5752d1',
+      badgeBorderColor: '#CBC1FF',
+      collapsedWidth: 75,
+      collapsedHeight: 75,
+      showContextMenu: true,
+      collapsible: true
+    }
+  };
+
+  const groupNode2: NodeModel = {
+    id: 'Group 2',
+    type: 'group',
+    label: 'Node Group Title',
+    children: nodes2.map(n => n.id),
+    group: true,
+    style: { padding: 17 },
+    collapsed: true,
+    data: {
+      badge: 'Label',
+      badgeColor: '#F2F0FC',
+      badgeTextColor: '#5752d1',
+      badgeBorderColor: '#CBC1FF',
+      collapsedWidth: 75,
+      collapsedHeight: 75,
+      showContextMenu: true,
+      collapsible: true
+    }
+  };
+
+  useModel({
+    graph: {
+      id: 'g1',
+      type: 'graph'
+    },
+    nodes: [...nodes, groupNode, ...nodes2, groupNode2]
+  });
   return null;
 });

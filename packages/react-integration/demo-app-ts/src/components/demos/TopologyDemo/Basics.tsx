@@ -2,6 +2,7 @@ import * as React from 'react';
 import {
   DefaultNode,
   action,
+  Dimensions,
   observer,
   Model,
   ModelKind,
@@ -17,7 +18,6 @@ import {
 } from '@patternfly/react-topology';
 import defaultComponentFactory from './components/defaultComponentFactory';
 import withTopologySetup from './utils/withTopologySetup';
-import Dimensions from '@patternfly/react-topology/dist/esm/geom/Dimensions';
 
 export const SingleNode = withTopologySetup(() => {
   useComponentFactory(defaultComponentFactory);

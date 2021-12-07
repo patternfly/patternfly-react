@@ -119,6 +119,15 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
     return super.getChildren();
   }
 
+  getAllNodeChildren(): Node[] {
+    return super.getChildren().reduce((total, nexChild) => {
+      if (isNode(nexChild)) {
+        total.push(nexChild.isGroup() ? nexChild.getAllNodeChildren() : nexChild);
+      }
+      return total;
+    }, []);
+  }
+
   getKind(): ModelKind {
     return ModelKind.node;
   }

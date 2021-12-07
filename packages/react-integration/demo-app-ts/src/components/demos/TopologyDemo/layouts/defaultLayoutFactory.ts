@@ -11,7 +11,7 @@ const defaultLayoutFactory: LayoutFactory = (type: string, graph: Graph): Layout
     case 'Force':
       return new ForceLayout(graph);
     default:
-      return undefined;
+      return new ColaLayout(graph, { layoutOnDrag: false });
   }
 };
 

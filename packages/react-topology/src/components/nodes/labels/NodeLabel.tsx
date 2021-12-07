@@ -12,10 +12,11 @@ import {
   WithBadgeProps
 } from '../../../utils';
 import { WithContextMenuProps, WithDndDragProps } from '../../../behavior';
-import { NODE_SHADOW_FILTER_ID_DANGER, NODE_SHADOW_FILTER_ID_HOVER } from '../NodeShadows';
+import NodeShadows, { NODE_SHADOW_FILTER_ID_DANGER, NODE_SHADOW_FILTER_ID_HOVER } from '../NodeShadows';
 import LabelBadge from './LabelBadge';
 import LabelContextMenu from './LabelContextMenu';
 import LabelIcon from './LabelIcon';
+import LabelActionIcon from './LabelActionIcon';
 
 type NodeLabelProps = {
   children?: string;
@@ -36,6 +37,9 @@ type NodeLabelProps = {
   dragging?: boolean;
   edgeDragging?: boolean;
   dropTarget?: boolean;
+  actionIcon?: React.ReactElement;
+  actionIconClassName?: string;
+  onActionIconClick?: (e: React.MouseEvent) => void;
 } & WithBadgeProps &
   WithContextMenuProps;
 
@@ -69,6 +73,9 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
   dropTarget,
   onContextMenu,
   contextMenuOpen,
+  actionIcon,
+  actionIconClassName,
+  onActionIconClick,
   ...other
 }) => {
   const [labelHover, labelHoverRef] = useHover();
@@ -91,6 +98,7 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
   const [textSize, textRef] = useSize([textChildren, className, labelHover]);
   const [secondaryTextSize, secondaryTextRef] = useSize([secondaryTextChildren, className, labelHover]);
   const [badgeSize, badgeRef] = useSize([badge]);
+  const [actionSize, actionRef] = useSize([actionIcon, paddingX]);
   const [contextSize, contextRef] = useSize([onContextMenu, paddingX]);
 
   const {
@@ -100,6 +108,7 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
     startY,
     badgeStartX,
     badgeStartY,
+    actionStartX,
     contextStartX,
     iconSpace,
     badgeSpace
@@ -112,6 +121,7 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
         startY: 0,
         badgeStartX: 0,
         badgeStartY: 0,
+        actionStartX: 0,
         contextStartX: 0,
         iconSpace: 0,
         badgeSpace: 0
@@ -120,28 +130,25 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
     const badgeSpace = badgeSize && badgeLocation === BadgeLocation.inner ? badgeSize.width + paddingX : 0;
     const height = Math.max(textSize.height, badgeSize?.height ?? 0) + paddingY * 2;
     const iconSpace = labelIconClass ? (height + paddingY * 0.5) / 2 : 0;
-    const contextSpace = contextSize ? contextSize.width + paddingX / 2 + 1 : 0;
-    const primaryWidth = iconSpace + badgeSpace + paddingX + textSize.width + paddingX + contextSpace;
+    const actionSpace = actionSize ? actionSize.width : 0;
+    const contextSpace = contextSize ? contextSize.width : 0;
+    const primaryWidth = iconSpace + badgeSpace + paddingX + textSize.width + actionSpace + contextSpace + paddingX;
     const secondaryWidth = secondaryTextSize ? secondaryTextSize.width + 2 * paddingX : 0;
     const width = Math.max(primaryWidth, secondaryWidth);
-
     const startX = position === LabelPosition.right ? x + iconSpace : x - width / 2 - iconSpace / 2;
-    let startY = position === LabelPosition.right ? y - height / 2 : y;
-    const contextStartX = iconSpace + badgeSpace + paddingX + textSize.width + paddingX;
+    const startY = position === LabelPosition.right ? y - height / 2 : y;
+    const actionStartX = iconSpace + badgeSpace + paddingX + textSize.width + paddingX;
+    const contextStartX = actionStartX + actionSpace;
 
     let badgeStartX = 0;
     let badgeStartY = 0;
     if (badgeSize) {
-      if (badgeLocation === BadgeLocation.inner) {
-        badgeStartX = iconSpace + paddingX;
-        badgeStartY = paddingY;
-      } else if (position === LabelPosition.bottom) {
+      if (badgeLocation === BadgeLocation.below) {
         badgeStartX = (width - badgeSize.width) / 2;
         badgeStartY = height + paddingY;
       } else {
-        badgeStartX = 0;
-        badgeStartY = paddingY + height;
-        startY = y - (height + badgeSize.height + paddingY) / 2;
+        badgeStartX = iconSpace + paddingX;
+        badgeStartY = (height - badgeSize.height) / 2;
       }
     }
 
@@ -150,6 +157,7 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
       height,
       startX,
       startY,
+      actionStartX,
       contextStartX,
       badgeStartX,
       badgeStartY,
@@ -163,6 +171,7 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
     paddingX,
     paddingY,
     labelIconClass,
+    actionSize,
     contextSize,
     secondaryTextSize,
     position,
@@ -179,6 +188,7 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
 
   return (
     <g className={className} ref={refs} transform={`translate(${startX}, ${startY})`}>
+      <NodeShadows />
       {textSize && (
         <rect
           className={css(styles.topologyNodeLabelBackground)}
@@ -239,21 +249,44 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
       <text {...other} ref={textRef} x={iconSpace + badgeSpace + paddingX} y={height / 2} dy="0.35em">
         {textChildren}
       </text>
+      {textSize && actionIcon && (
+        <>
+          <line
+            className={css(styles.topologyNodeSeparator)}
+            x1={actionStartX}
+            y1={0}
+            x2={actionStartX}
+            y2={height}
+            shapeRendering="crispEdges"
+          />
+          <LabelActionIcon
+            ref={actionRef}
+            x={actionStartX}
+            y={0}
+            height={height}
+            paddingX={paddingX}
+            paddingY={paddingY}
+            icon={actionIcon}
+            className={actionIconClassName}
+            onClick={onActionIconClick}
+          />
+        </>
+      )}
       {textSize && onContextMenu && (
         <>
           <line
             className={css(styles.topologyNodeSeparator)}
             x1={contextStartX}
-            y1={1}
+            y1={0}
             x2={contextStartX}
             y2={height}
             shapeRendering="crispEdges"
           />
           <LabelContextMenu
             ref={contextRef}
-            x={contextStartX - 1}
-            y={2}
-            height={height - 4}
+            x={contextStartX}
+            y={0}
+            height={height}
             paddingX={paddingX}
             paddingY={paddingY}
             onContextMenu={onContextMenu}

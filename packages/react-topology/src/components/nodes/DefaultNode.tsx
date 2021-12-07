@@ -17,10 +17,16 @@ import {
   WithSelectionProps
 } from '../../behavior';
 import Decorator from '../decorators/Decorator';
-import { createSvgIdUrl, useCombineRefs, useHover, WithStatusProps } from '../../utils';
-import { WithNodeShapeProps } from '../../utils/useCustomNodeShape';
-import { LabelPosition, WithLabelProps } from '../../utils/useLabel';
-import { WithBadgeProps } from '../../utils/useBadge';
+import {
+  createSvgIdUrl,
+  useCombineRefs,
+  useHover,
+  WithBadgeProps,
+  WithStatusProps,
+  WithNodeShapeProps,
+  LabelPosition,
+  WithLabelProps
+} from '../../utils';
 import NodeLabel from './labels/NodeLabel';
 import NodeShadows, { NODE_SHADOW_FILTER_ID_DANGER, NODE_SHADOW_FILTER_ID_HOVER } from './NodeShadows';
 import { DEFAULT_DECORATOR_RADIUS, getDefaultShapeDecoratorCenter, getShapeComponent } from './shapes';
@@ -89,6 +95,7 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
   badgeLocation,
   getCustomShape,
   onSelect,
+  children,
   dragNodeRef,
   dragging,
   edgeDragging,
@@ -163,30 +170,33 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
     }
 
     return decorator;
-  }, [status, showStatusDecorator, statusDecoratorTooltip, width, height, shape, onStatusDecoratorClick, element]);
+  }, [status, showStatusDecorator, getShapeDecoratorCenter, element, statusDecoratorTooltip, onStatusDecoratorClick]);
+
+  React.useEffect(() => {
+    if (isHover) {
+      onShowCreateConnector && onShowCreateConnector();
+    } else {
+      onHideCreateConnector && onHideCreateConnector();
+    }
+  }, [isHover, onShowCreateConnector, onHideCreateConnector]);
 
   const ShapeComponent = getShapeComponent(shape, element, getCustomShape);
 
   return (
     <g className={groupClassName}>
       <NodeShadows />
-      <g ref={refs}>
+      <g ref={refs} onClick={onSelect} onContextMenu={onContextMenu}>
         {ShapeComponent && (
           <ShapeComponent
             className={css(styles.topologyNodeBackground)}
             element={element}
             width={width}
             height={height}
-            onShowCreateConnector={onShowCreateConnector}
-            onHideCreateConnector={onHideCreateConnector}
-            onContextMenu={onContextMenu}
-            onSelect={onSelect}
             dndDropRef={dndDropRef}
             anchorRef={anchorRef}
             filter={filter}
           />
         )}
-        {statusDecorator}
         {showLabel && (label || element.getLabel()) && (
           <NodeLabel
             className={css(styles.topologyNodeLabel)}
@@ -212,7 +222,9 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
             {label || element.getLabel()}
           </NodeLabel>
         )}
+        {children}
       </g>
+      {statusDecorator}
     </g>
   );
 };

@@ -24,7 +24,13 @@ import {
   NodeContextMenuLabelStyles,
   NodeIconLabelStyles,
   NodeStatusDecoratorStyles,
-  NodeSecondaryLabelStyles
+  NodeSecondaryLabelStyles,
+  GroupStyles,
+  GroupSelectedStyles,
+  GroupHoverStyles,
+  GroupDropTargetStyles,
+  GroupedGroupsStyles,
+  CollapsibleGroupStyles
 } from './Styles';
 
 import './TopologyDemo.css';
@@ -134,7 +140,26 @@ export const TopologyDemo: React.FC = () => {
               </Tabs>
             </Tab>
             <Tab eventKey={2} title={<TabTitleText>Groups</TabTitleText>}>
-              <span>TBD</span>
+              <Tabs unmountOnExit activeKey={activeTertiaryKey} onSelect={handleTertiaryTabClick}>
+                <Tab eventKey={0} title={<TabTitleText>Group</TabTitleText>}>
+                  <GroupStyles />
+                </Tab>
+                <Tab eventKey={1} title={<TabTitleText>Hover Group</TabTitleText>}>
+                  <GroupHoverStyles />
+                </Tab>
+                <Tab eventKey={2} title={<TabTitleText>Selected Group</TabTitleText>}>
+                  <GroupSelectedStyles />
+                </Tab>
+                <Tab eventKey={3} title={<TabTitleText>Drop Target Group</TabTitleText>}>
+                  <GroupDropTargetStyles />
+                </Tab>
+                <Tab eventKey={4} title={<TabTitleText>Grouped Groups</TabTitleText>}>
+                  <GroupedGroupsStyles />
+                </Tab>
+                <Tab eventKey={5} title={<TabTitleText>Collapsible Groups</TabTitleText>}>
+                  <CollapsibleGroupStyles />
+                </Tab>
+              </Tabs>
             </Tab>
             <Tab eventKey={3} title={<TabTitleText>Edges</TabTitleText>}>
               <span>TBD</span>

@@ -1,19 +1,16 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
 import { Node, TopologyQuadrant } from '../types';
-import { OnSelect, WithCreateConnectorProps, WithDndDropProps } from '../behavior';
 
-export type ShapeProps = {
+export interface ShapeProps {
   className?: string;
   element: Node;
   width: number;
   height: number;
   filter?: string;
-  onContextMenu?: (e: React.MouseEvent) => void;
-  onSelect?: OnSelect;
   anchorRef?: (node: SVGElement | null) => void;
-} & WithCreateConnectorProps &
-  WithDndDropProps;
+  dndDropRef?: (node: SVGElement | null) => void;
+}
 
 export interface WithNodeShapeProps {
   getCustomShape?: (node: Node) => React.FC<ShapeProps>;

@@ -158,6 +158,7 @@ export interface Node<E extends NodeModel = NodeModel, D = any> extends GraphEle
   setNodeStatus(shape: NodeStatus): void;
   getSourceEdges(): Edge[];
   getTargetEdges(): Edge[];
+  getAllNodeChildren(): Node[];
   isDimensionsInitialized(): boolean;
   isPositioned(): boolean;
 }

@@ -9,29 +9,11 @@ const Rectangle: React.FC<ShapeProps> = ({
   width,
   height,
   filter,
-  onShowCreateConnector,
-  onHideCreateConnector,
-  onSelect,
-  onContextMenu,
-  dndDropRef,
-  anchorRef
+  anchorRef,
+  dndDropRef
 }) => {
   const refs = useCombineRefs<SVGRectElement>(dndDropRef, anchorRef);
-  return (
-    <rect
-      className={className}
-      onMouseEnter={onShowCreateConnector}
-      onMouseLeave={onHideCreateConnector}
-      onContextMenu={onContextMenu}
-      onClick={onSelect}
-      ref={refs}
-      x={0}
-      y={0}
-      width={width}
-      height={height}
-      filter={filter}
-    />
-  );
+  return <rect className={className} ref={refs} x={0} y={0} width={width} height={height} filter={filter} />;
 };
 
 export default Rectangle;

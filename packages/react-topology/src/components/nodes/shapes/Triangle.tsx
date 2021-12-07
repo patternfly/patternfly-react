@@ -13,12 +13,8 @@ const Triangle: React.FC<ShapeProps> = ({
   width,
   height,
   filter,
-  onShowCreateConnector,
-  onHideCreateConnector,
-  onSelect,
-  onContextMenu,
-  dndDropRef,
-  anchorRef
+  anchorRef,
+  dndDropRef
 }) => {
   const refs = useCombineRefs<SVGPathElement>(dndDropRef, anchorRef);
   // cast to number and coerce
@@ -32,20 +28,7 @@ const Triangle: React.FC<ShapeProps> = ({
     return hullPath(hullPoints, HULL_PADDING);
   }, [width, height]);
 
-  return (
-    <path
-      className={className}
-      onMouseEnter={onShowCreateConnector}
-      onMouseLeave={onHideCreateConnector}
-      onContextMenu={onContextMenu}
-      onClick={onSelect}
-      ref={refs}
-      d={path}
-      filter={filter}
-      strokeLinejoin="round"
-      strokeWidth={10}
-    />
-  );
+  return <path className={className} ref={refs} d={path} filter={filter} strokeLinejoin="round" strokeWidth={10} />;
 };
 
 export default Triangle;

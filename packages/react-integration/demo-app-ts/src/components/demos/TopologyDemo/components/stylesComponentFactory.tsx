@@ -1,17 +1,21 @@
-import { ComponentType } from 'react';
+import * as React from 'react';
 import {
   GraphElement,
   ComponentFactory,
   withCustomNodeShape,
   withContextMenu,
   ContextMenuSeparator,
-  ContextMenuItem
+  ContextMenuItem,
+  withCollapsibleGroup,
+  withDragNode,
+  withSelection,
+  ModelKind
 } from '@patternfly/react-topology';
-import Node from './DemoDefaultNode';
+import DemoDefaultNode from './DemoDefaultNode';
 import Path from './shapes/Path';
 import Polygon from './shapes/Polygon';
 import StyleNode from './StyleNode';
-import * as React from 'react';
+import StyleGroup from './StyleGroup';
 
 const contextMenuItem = (label: string, i: number): React.ReactElement => {
   if (label === '-') {
@@ -29,17 +33,22 @@ const createContextMenuItems = (...labels: string[]): React.ReactElement[] => la
 
 const defaultMenu = createContextMenuItems('First', 'Second', 'Third', '-', 'Fourth');
 
-const shapesComponentFactory: ComponentFactory = (kind, type): ComponentType<{ element: GraphElement }> | undefined => {
+const stylesComponentFactory: ComponentFactory = (
+  kind: ModelKind,
+  type: string
+): React.ComponentType<{ element: GraphElement }> | undefined => {
   switch (type) {
     case 'node':
-      return withContextMenu(() => defaultMenu)(StyleNode);
+      return withContextMenu(() => defaultMenu)(withDragNode()(withSelection()(StyleNode)));
     case 'node-path':
-      return withCustomNodeShape(() => Path)(Node);
+      return withCustomNodeShape(() => Path)(DemoDefaultNode);
     case 'node-polygon':
-      return withCustomNodeShape(() => Polygon)(Node);
+      return withCustomNodeShape(() => Polygon)(DemoDefaultNode);
+    case 'group':
+      return withContextMenu(() => defaultMenu)(withSelection()(withCollapsibleGroup(75, 75)(StyleGroup)));
     default:
       return undefined;
   }
 };
 
-export default shapesComponentFactory;
+export default stylesComponentFactory;

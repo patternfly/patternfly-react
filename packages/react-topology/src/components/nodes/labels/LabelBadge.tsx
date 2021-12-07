@@ -8,7 +8,7 @@ import styles from '@patternfly/react-styles/css/components/Topology/topology-co
 import { useSize, WithBadgeProps } from '../../../utils';
 
 type LabelBadgeProps = {
-  className: string;
+  className?: string;
   x: number;
   y: number;
 } & WithBadgeProps;
