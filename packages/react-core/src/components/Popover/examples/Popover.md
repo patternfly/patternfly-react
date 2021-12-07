@@ -317,7 +317,7 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/excl
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 const AlertPopover = () => {
-  const [alertVariant, setAlertVariant] = React.useState('default');
+  const [alertSeverityVariant, setAlertSeverityVariant] = React.useState('default');
   const alertIcons = {
     default: <BellIcon />,
     info: <InfoCircleIcon />,
@@ -330,7 +330,7 @@ const AlertPopover = () => {
     <div>
       <div>
         <span style={{ paddingRight: '10px' }}>Alert variant:</span>
-        <select aria-label="Popover alert type" onChange={event => setAlertVariant(event.target.value)}>
+        <select aria-label="Popover alert type" onChange={event => setAlertSeverityVariant(event.target.value)}>
           <option value="default">default</option>
           <option value="info">info</option>
           <option value="success">success</option>
@@ -341,11 +341,11 @@ const AlertPopover = () => {
       <div style={{ margin: '50px' }}>
         <Popover
           aria-label="Alert popover"
-          alertVariant={alertVariant as 'default' | 'info' | 'warning' | 'success' | 'danger'}
+          alertSeverityVariant={alertSeverityVariant as 'default' | 'info' | 'warning' | 'success' | 'danger'}
           header={
             <PopoverHeader hasIcon>
-              <PopoverHeaderIcon>{alertIcons[alertVariant]}</PopoverHeaderIcon>
-              <span className="pf-u-screen-reader">{alertVariant} alert:</span>
+              <PopoverHeaderIcon>{alertIcons[alertSeverityVariant]}</PopoverHeaderIcon>
+              <span className="pf-u-screen-reader">{alertSeverityVariant} alert:</span>
               <PopoverHeaderText>Default popover title</PopoverHeaderText>
             </PopoverHeader>
           }

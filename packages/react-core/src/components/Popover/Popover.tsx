@@ -112,12 +112,12 @@ export interface PopoverProps {
   headerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
   /** Sets the heading level to use for the popover header. Default is h6. */
   headerComponent?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  /** Composable header component. Use with the PopoverHeader, PopoverHeaderText, and PopoverHeaderIcon components. To manually close
+  /** @beta Composable header component. Use with the PopoverHeader, PopoverHeaderText, and PopoverHeaderIcon components. To manually close
    * a popover after an action within the bodyContent you can provide a function which will receive a callback as an argument to hide the popover.
    */
   header?: React.ReactNode | ((hide: () => void) => React.ReactNode);
-  /** Variants for an alert popover */
-  alertVariant?: 'default' | 'info' | 'warning' | 'success' | 'danger';
+  /** @beta Severity variants for an alert popover. This modifies the color of the header to match the severity. */
+  alertSeverityVariant?: 'default' | 'info' | 'warning' | 'success' | 'danger';
   /** Hides the popover when a click occurs outside (only works if isVisible is not controlled by the user) */
   hideOnOutsideClick?: boolean;
   /**
@@ -225,7 +225,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   headerContent = null,
   headerComponent = 'h6',
   header = null,
-  alertVariant,
+  alertSeverityVariant,
   footerContent = null,
   appendTo = () => document.body,
   hideOnOutsideClick = true,
@@ -400,7 +400,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       preventScrollOnDeactivate
       className={css(
         styles.popover,
-        alertVariant && alertStyle[alertVariant],
+        alertSeverityVariant && alertStyle[alertSeverityVariant],
         hasNoPadding && styles.modifiers.noPadding,
         hasAutoWidth && styles.modifiers.widthAuto,
         className
