@@ -3,8 +3,6 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 
 export interface PopoverHeaderProps extends React.HTMLProps<HTMLHeadingElement> {
-  /** ID of the popover header. */
-  id?: string;
   /** Content of the popover header. */
   children: React.ReactNode;
   /** Indicates the header contains an icon. */
