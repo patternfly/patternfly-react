@@ -29,8 +29,8 @@ export const ComposableDualListSelectorTree: React.FunctionComponent<ExampleProp
   const [chosenLeafIds, setChosenLeafIds] = React.useState<string[]>(['beans', 'beef', 'chicken', 'tofu']);
   const [chosenFilter, setChosenFilter] = React.useState<string>('');
   const [availableFilter, setAvailableFilter] = React.useState<string>('');
-  let hiddenChosen = [] as string[];
-  let hiddenAvailable = [] as string[];
+  let hiddenChosen: string[] = [];
+  let hiddenAvailable: string[] = [];
 
   // helper function to build memoized lists
   const buildTextById = (node: FoodNode): { [key: string]: string } => {
