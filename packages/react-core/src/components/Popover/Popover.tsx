@@ -6,7 +6,7 @@ import { css } from '@patternfly/react-styles';
 import { PopoverContext } from './PopoverContext';
 import { PopoverContent } from './PopoverContent';
 import { PopoverBody } from './PopoverBody';
-import { PopoverInternalHeader } from './PopoverInternalHeader';
+import { PopoverHeader } from './PopoverHeader';
 import { PopoverFooter } from './PopoverFooter';
 import { PopoverCloseButton } from './PopoverCloseButton';
 import { PopoverArrow } from './PopoverArrow';
@@ -104,7 +104,7 @@ export interface PopoverProps {
    */
   footerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
   /**
-   * Header content
+   * Simple header content to be placed within a title.
    * If you want to close the popover after an action within the bodyContent, you can use the isVisible prop for manual control,
    * or you can provide a function which will receive a callback as an argument to hide the popover
    * i.e. headerContent={hide => <Button onClick={() => hide()}>Close</Button>}
@@ -112,10 +112,8 @@ export interface PopoverProps {
   headerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
   /** Sets the heading level to use for the popover header. Default is h6. */
   headerComponent?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  /** @beta Composable header component. Use with the PopoverHeader, PopoverHeaderText, and PopoverHeaderIcon components. To manually close
-   * a popover after an action within the bodyContent you can provide a function which will receive a callback as an argument to hide the popover.
-   */
-  header?: React.ReactNode | ((hide: () => void) => React.ReactNode);
+  /** @beta Icon to be displayed in the popover header **/
+  headerIcon?: React.ReactNode;
   /** @beta Severity variants for an alert popover. This modifies the color of the header to match the severity. */
   alertSeverityVariant?: 'default' | 'info' | 'warning' | 'success' | 'danger';
   /** Hides the popover when a click occurs outside (only works if isVisible is not controlled by the user) */
@@ -224,7 +222,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   bodyContent,
   headerContent = null,
   headerComponent = 'h6',
-  header = null,
+  headerIcon = null,
   alertSeverityVariant,
   footerContent = null,
   appendTo = () => document.body,
@@ -422,11 +420,15 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       <PopoverArrow />
       <PopoverContent>
         {showClose && <PopoverCloseButton onClose={closePopover} aria-label={closeBtnAriaLabel} />}
-        {header && <React.Fragment>{typeof header === 'function' ? header(hide) : header}</React.Fragment>}
-        {headerContent && !header && (
-          <PopoverInternalHeader id={`popover-${uniqueId}-header`}>
-            {typeof headerContent === 'function' ? headerContent(hide) : headerContent}
-          </PopoverInternalHeader>
+        {headerContent && (
+          <PopoverHeader
+            id={`popover-${uniqueId}-header`}
+            icon={headerIcon}
+            alertSeverityVariant={alertSeverityVariant}
+            titleHeadingLevel={headerComponent}
+          >
+            <React.Fragment>{typeof headerContent === 'function' ? headerContent(hide) : headerContent}</React.Fragment>
+          </PopoverHeader>
         )}
         <PopoverBody id={`popover-${uniqueId}-body`}>
           {typeof bodyContent === 'function' ? bodyContent(hide) : bodyContent}

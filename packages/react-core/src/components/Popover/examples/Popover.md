@@ -288,15 +288,8 @@ import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 <div style={{ margin: '50px' }}>
   <Popover
     aria-label="Alert popover"
-    header={
-      <PopoverHeader hasIcon>
-        <PopoverHeaderIcon>
-          <BullhornIcon />
-        </PopoverHeaderIcon>
-        <span className="pf-u-screen-reader">Icon popover:</span>
-        <PopoverHeaderText>Popover with icon</PopoverHeaderText>
-      </PopoverHeader>
-    }
+    headerContent="Popover with icon"
+    headerIcon={<BullhornIcon />}
     bodyContent={<div>Popovers are triggered by click rather than hover.</div>}
     footerContent="Popover footer"
   >
@@ -342,13 +335,9 @@ const AlertPopover = () => {
         <Popover
           aria-label="Alert popover"
           alertSeverityVariant={alertSeverityVariant as 'default' | 'info' | 'warning' | 'success' | 'danger'}
-          header={
-            <PopoverHeader hasIcon>
-              <PopoverHeaderIcon>{alertIcons[alertSeverityVariant]}</PopoverHeaderIcon>
-              <span className="pf-u-screen-reader">{alertSeverityVariant} alert:</span>
-              <PopoverHeaderText>Default popover title</PopoverHeaderText>
-            </PopoverHeader>
-          }
+          headerContent="Default popover title"
+          headerIcon={alertIcons[alertSeverityVariant]}
+          headerComponent="h1"
           bodyContent={<div>Popovers are triggered by click rather than hover.</div>}
           footerContent="Popover footer"
         >
