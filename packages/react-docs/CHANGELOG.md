@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.41.0 (2021-12-08)
+
+
+### Features
+
+* **DualListSelector:** add composable tree example ([#6652](https://github.com/patternfly/patternfly-react/issues/6652)) ([5fe977b](https://github.com/patternfly/patternfly-react/commit/5fe977becb5dea615724abf846f315e50931c188))
+
+
+
+
+
 ## 5.40.1 (2021-12-07)
 
 **Note:** Version bump only for package @patternfly/react-docs
