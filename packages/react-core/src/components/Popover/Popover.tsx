@@ -116,6 +116,8 @@ export interface PopoverProps {
   headerIcon?: React.ReactNode;
   /** @beta Severity variants for an alert popover. This modifies the color of the header to match the severity. */
   alertSeverityVariant?: 'default' | 'info' | 'warning' | 'success' | 'danger';
+  /** @beta Text announced by screen reader when alert severity variant is set to indicate severity level */
+  alertSeverityScreenReaderText?: string;
   /** Hides the popover when a click occurs outside (only works if isVisible is not controlled by the user) */
   hideOnOutsideClick?: boolean;
   /**
@@ -224,6 +226,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   headerComponent = 'h6',
   headerIcon = null,
   alertSeverityVariant,
+  alertSeverityScreenReaderText,
   footerContent = null,
   appendTo = () => document.body,
   hideOnOutsideClick = true,
@@ -425,9 +428,10 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
             id={`popover-${uniqueId}-header`}
             icon={headerIcon}
             alertSeverityVariant={alertSeverityVariant}
+            alertSeverityScreenReaderText={alertSeverityScreenReaderText}
             titleHeadingLevel={headerComponent}
           >
-            <React.Fragment>{typeof headerContent === 'function' ? headerContent(hide) : headerContent}</React.Fragment>
+            {typeof headerContent === 'function' ? headerContent(hide) : headerContent}
           </PopoverHeader>
         )}
         <PopoverBody id={`popover-${uniqueId}-body`}>
