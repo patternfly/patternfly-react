@@ -282,7 +282,7 @@ class AdvancedPopover extends React.Component {
 
 ```ts isBeta
 import React from 'react';
-import { Popover, PopoverHeader, PopoverHeaderIcon, PopoverHeaderText, Button } from '@patternfly/react-core';
+import { Popover, Button } from '@patternfly/react-core';
 import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 
 <div style={{ margin: '50px' }}>
@@ -302,7 +302,7 @@ import BullhornIcon from '@patternfly/react-icons/dist/esm/icons/bullhorn-icon';
 
 ```ts isBeta
 import React from 'react';
-import { Popover, PopoverHeader, PopoverHeaderIcon, PopoverHeaderText, Button } from '@patternfly/react-core';
+import { Popover, Button } from '@patternfly/react-core';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';

@@ -428,7 +428,9 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
             id={`popover-${uniqueId}-header`}
             icon={headerIcon}
             alertSeverityVariant={alertSeverityVariant}
-            alertSeverityScreenReaderText={alertSeverityScreenReaderText}
+            alertSeverityScreenReaderText={
+              alertSeverityVariant ? alertSeverityScreenReaderText || `${alertSeverityVariant} alert:` : undefined
+            }
             titleHeadingLevel={headerComponent}
           >
             {typeof headerContent === 'function' ? headerContent(hide) : headerContent}

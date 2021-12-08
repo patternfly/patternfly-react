@@ -1,16 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PopoverHeader should match snapshot (auto-generated) 1`] = `
-<header
-  className="pf-c-popover__header"
+<Title
+  headingLevel="h6"
   id="string"
+  size="md"
 >
-  <h1
-    className="pf-c-popover__title"
-  >
-    <div>
-      ReactNode
-    </div>
-  </h1>
-</header>
+  <div>
+    ReactNode
+  </div>
+</Title>
 `;

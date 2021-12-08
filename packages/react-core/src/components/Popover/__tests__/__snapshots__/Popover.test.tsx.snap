@@ -61,13 +61,15 @@ exports[`popover can close from content (uncontrolled) 1`] = `
             aria-label="Close"
             onClose={[Function]}
           />
-          <PopoverInternalHeader
+          <PopoverHeader
+            icon={null}
             id="popover-test-header"
+            titleHeadingLevel="h6"
           >
             <div>
               Popover header
             </div>
-          </PopoverInternalHeader>
+          </PopoverHeader>
           <PopoverBody
             id="popover-test-body"
           >
@@ -183,13 +185,15 @@ exports[`popover can have a custom minimum width 1`] = `
             aria-label="Close"
             onClose={[Function]}
           />
-          <PopoverInternalHeader
+          <PopoverHeader
+            icon={null}
             id="popover-test-header"
+            titleHeadingLevel="h6"
           >
             <div>
               Popover Header
             </div>
-          </PopoverInternalHeader>
+          </PopoverHeader>
           <PopoverBody
             id="popover-test-body"
           >
@@ -288,13 +292,15 @@ exports[`popover can specify position as object value 1`] = `
             aria-label="Close"
             onClose={[Function]}
           />
-          <PopoverInternalHeader
+          <PopoverHeader
+            icon={null}
             id="popover-test-header"
+            titleHeadingLevel="h6"
           >
             <div>
               Popover Header
             </div>
-          </PopoverInternalHeader>
+          </PopoverHeader>
           <PopoverBody
             id="popover-test-body"
           >
@@ -393,13 +399,15 @@ exports[`popover renders close-button, header and body 1`] = `
             aria-label="Close"
             onClose={[Function]}
           />
-          <PopoverInternalHeader
+          <PopoverHeader
+            icon={null}
             id="popover-test-header"
+            titleHeadingLevel="h6"
           >
             <div>
               Popover Header
             </div>
-          </PopoverInternalHeader>
+          </PopoverHeader>
           <PopoverBody
             id="popover-test-body"
           >

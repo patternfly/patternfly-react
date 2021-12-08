@@ -5,7 +5,7 @@ import { Title, TitleSizes } from '../Title';
 import { PopoverHeaderIcon } from './PopoverHeaderIcon';
 import { PopoverHeaderText } from './PopoverHeaderText';
 
-export interface PopoverHeaderProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 'size' | 'className'> {
+export interface PopoverHeaderProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 'size'> {
   /** Content of the popover header. */
   children: React.ReactNode;
   /** Indicates the header contains an icon. */
@@ -26,7 +26,7 @@ export const PopoverHeader: React.FunctionComponent<PopoverHeaderProps> = ({
   children,
   icon,
   className,
-  titleHeadingLevel = 'h1',
+  titleHeadingLevel = 'h6',
   alertSeverityVariant,
   id,
   alertSeverityScreenReaderText,
