@@ -30,20 +30,10 @@ export const makeTimeOptions = (
       .toString()
       .padStart(2, '0');
     const timeOption = hour + delimiter + minutes + (hour12 ? suffix : '');
-    // if >=min && <=max, res.push
-    if (validateMinMax(minTime, maxTime, timeOption, hour12, delimiter)) {
-      // console.log({ res });
+    // time option is valid if within min/max constraints
+    if (isWithinMinMax(minTime, maxTime, timeOption, delimiter)) {
       res.push(timeOption);
     }
-    // FUNCTIONALITY MOVED ABOVE
-    // (hour12 ? hour.toString() : hour.toString().padStart(2, '0')) +
-    //   delimiter +
-    //   iter
-    //     .getMinutes()
-    //     .toString()
-    //     .padStart(2, '0') +
-    //   (hour12 ? suffix : '')
-
     iter.setMinutes(iter.getMinutes() + stepMinutes);
   }
   return res;
@@ -68,7 +58,6 @@ export const parseTime = (time: string | Date, timeRegex: RegExp, delimiter: str
   } else if (typeof time === 'string') {
     time = time.trim();
     if (is12Hour && time !== '' && validateTime(time, timeRegex, delimiter, is12Hour)) {
-      // console.log(time, timeRegex, delimiter, is12Hour, validateTime(time, timeRegex, delimiter, is12Hour));
       const [, hours, minutes, suffix = ''] = timeRegex.exec(time);
       const uppercaseSuffix = suffix.toUpperCase();
       // Format AM/PM according to design
@@ -122,14 +111,18 @@ export const getMinutes = (time: string, timeRegex: RegExp) => {
   return parts && parts.length ? parseInt(parts[2]) : null;
 };
 
-export const validateMinMax = (minTime: string, maxTime: string, time: string, hour12: boolean, delimiter: string) => {
-  let minTime24Hour = minTime;
-  let maxTime24Hour = maxTime;
-  let time24Hour = time;
+export const isWithinMinMax = (minTime: string, maxTime: string, time: string, delimiter: string) => {
+  // do not throw error if empty string
+  if (time.trim() === '') {
+    return true;
+  }
   const convertTo24Hour = (time: string): string => {
     const timeReg = new RegExp(`^\\s*(\\d\\d?)${delimiter}([0-5]\\d)\\s*([AaPp][Mm])?\\s*$`);
     const regMatches = timeReg.exec(time);
-    let hours = regMatches[1];
+    if (!regMatches || !regMatches.length) {
+      return;
+    }
+    let hours = regMatches[1].padStart(2, '0');
     const minutes = regMatches[2];
     const suffix = regMatches[3] || '';
     if (suffix.toUpperCase() === 'PM' && hours !== '12') {
@@ -139,21 +132,12 @@ export const validateMinMax = (minTime: string, maxTime: string, time: string, h
     }
     return `${hours}${delimiter}${minutes}`;
   };
-  // const convert24HourToInt = (time: string): number => {
-  //   const timeNums = time.split(delimiter).join();
-  //   return parseInt(timeNums);
-  // };
 
-  if (!hour12) {
-    // convert AM/PM times to 24hr times (12:30AM => 00:30)
-    minTime24Hour = convertTo24Hour(minTime24Hour);
-    maxTime24Hour = convertTo24Hour(maxTime24Hour);
-    time24Hour = convertTo24Hour(time24Hour);
-  }
+  // correctly format as 24hr times (12:30AM => 00:30, 1:15 => 01:15)
+  minTime = convertTo24Hour(minTime);
+  time = convertTo24Hour(time);
+  maxTime = convertTo24Hour(maxTime);
 
-  // const minTimeNum = convert24HourToInt(minTime24Hour);
-  // const maxTimeNum = convert24HourToInt(maxTime24Hour);
-  // const timeNum = convert24HourToInt(time24Hour);
-  // simple comparison for 24hr times
-  return minTime24Hour <= time24Hour && time24Hour <= maxTime24Hour;
+  // simple string comparison for 24hr times
+  return minTime <= time && time <= maxTime;
 };

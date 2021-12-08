@@ -41,3 +41,14 @@ import { TimePicker } from '@patternfly/react-core';
 
 <TimePicker is24Hour delimiter="h" placeholder=""/>
 ```
+
+### Minimum/maximum times
+
+The `minTime`/`maxTime` props restrict the options shown for the user to select from as well as trigger the `invalidMinMaxErrorMessage` if the user enters a time outside this range.
+
+```js
+import React from 'react';
+import { TimePicker } from '@patternfly/react-core';
+
+<TimePicker is24Hour minTime="9:30" maxTime="17:15" placeholder="14:00"/>
+```
