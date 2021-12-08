@@ -378,7 +378,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       maxTime,
       ...props
     } = this.props;
-    const { timeState, isOpen, isInvalid, focusedIndex, minTimeState, maxTimeState, timeRegex } = this.state;
+    const { timeState, isOpen, isInvalid, focusedIndex, minTimeState, maxTimeState } = this.state;
     const style = { '--pf-c-date-picker__input--c-form-control--Width': width } as React.CSSProperties;
     const options = makeTimeOptions(stepMinutes, !is24Hour, delimiter, minTimeState, maxTimeState);
     const isValidFormat = this.isValidFormat(timeState);
