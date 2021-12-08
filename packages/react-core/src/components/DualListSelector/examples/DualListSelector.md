@@ -8,7 +8,6 @@ propComponents: [
   'DualListSelectorControl', 
   'DualListSelectorControlsWrapper', 
   'DualListSelectorTree',
-  'DualListSelectorListItem',
   'DualListSelectorTreeItemData'
 ]
 beta: true
@@ -822,3 +821,8 @@ const ComposableDualListSelector = () => {
   );
 }
 ```
+
+### Composable dual list selector tree
+```ts file="ComposableTree.tsx"
+```
+

@@ -36,9 +36,11 @@ export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIEle
   itemData?: DualListSelectorTreeItemData;
   /** Flag indicating whether the component is disabled. */
   isDisabled?: boolean;
+  /** Flag indicating the DualListSelector tree should utilize memoization to help render large data sets. */
+  useMemo?: boolean;
 }
 
-export const DualListSelectorTreeItem: React.FunctionComponent<DualListSelectorTreeItemProps> = ({
+const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTreeItemProps> = ({
   onOptionCheck,
   children,
   className,
@@ -51,11 +53,17 @@ export const DualListSelectorTreeItem: React.FunctionComponent<DualListSelectorT
   badgeProps,
   itemData,
   isDisabled = false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  useMemo,
   ...props
 }: DualListSelectorTreeItemProps) => {
   const ref = React.useRef(null);
   const [isExpanded, setIsExpanded] = React.useState(defaultExpanded || false);
   const { setFocusedOption } = React.useContext(DualListSelectorListContext);
+
+  React.useEffect(() => {
+    setIsExpanded(defaultExpanded);
+  }, [defaultExpanded]);
 
   return (
     <li
@@ -150,4 +158,27 @@ export const DualListSelectorTreeItem: React.FunctionComponent<DualListSelectorT
     </li>
   );
 };
+
+export const DualListSelectorTreeItem = React.memo(DualListSelectorTreeItemBase, (prevProps, nextProps) => {
+  if (!nextProps.useMemo) {
+    return false;
+  }
+
+  if (
+    prevProps.className !== nextProps.className ||
+    prevProps.text !== nextProps.text ||
+    prevProps.id !== nextProps.id ||
+    prevProps.defaultExpanded !== nextProps.defaultExpanded ||
+    prevProps.checkProps !== nextProps.checkProps ||
+    prevProps.hasBadge !== nextProps.hasBadge ||
+    prevProps.badgeProps !== nextProps.badgeProps ||
+    prevProps.isChecked !== nextProps.isChecked ||
+    prevProps.itemData !== nextProps.itemData
+  ) {
+    return false;
+  }
+
+  return true;
+});
+
 DualListSelectorTreeItem.displayName = 'DualListSelectorTreeItem';
