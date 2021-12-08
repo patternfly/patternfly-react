@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.33.1 (2021-12-08)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
 # 6.33.0 (2021-12-08)
 
 
