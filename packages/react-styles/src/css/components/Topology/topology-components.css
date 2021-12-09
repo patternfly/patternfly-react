@@ -77,11 +77,6 @@
   fill: var(--pf-global--BackgroundColor--200);
 }
 
-rect.pf-topology__node__background {
-  rx: 15;
-  ry: 15;
-}
-
 .pf-topology__node.pf-m-dragging .pf-topology__node__background {
   cursor: grab;
 }

@@ -39,9 +39,11 @@ export enum TopologyQuadrant {
 export enum NodeShape {
   circle = 'circle',
   rect = 'rect',
-  triangle = 'triangle',
+  rhombus = 'rhombus',
+  trapezoid = 'trapezoid',
   hexagon = 'hexagon',
-  octagon = 'octagon'
+  octagon = 'octagon',
+  stadium = 'stadium'
 }
 
 export enum NodeStatus {

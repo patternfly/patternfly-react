@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Node, NodeShape, PointTuple, TopologyQuadrant } from '../../../types';
 import { polygonHull } from 'd3-polygon';
 import { hullPath, ShapeProps } from '../../../utils';
-import { Ellipse, Hexagon, Octagon, Rectangle, Triangle } from './index';
+import { Ellipse, Hexagon, Octagon, Rectangle, Trapezoid, Rhombus, Stadium } from './index';
 
 export const HEXAGON_HULL_PADDING = 6;
 export const OCTAGON_HULL_PADDING = 4;
@@ -53,8 +53,12 @@ export const getShapeComponent = (
   switch (shape) {
     case NodeShape.circle:
       return Ellipse;
-    case NodeShape.triangle:
-      return Triangle;
+    case NodeShape.stadium:
+      return Stadium;
+    case NodeShape.rhombus:
+      return Rhombus;
+    case NodeShape.trapezoid:
+      return Trapezoid;
     case NodeShape.rect:
       return Rectangle;
     case NodeShape.hexagon:
@@ -88,7 +92,16 @@ export const getDefaultShapeDecoratorCenter = (
       deltaX = deltaX - 5;
       deltaY = deltaY - 5;
       break;
-    case NodeShape.triangle:
+    case NodeShape.rhombus:
+      if (quadrant === TopologyQuadrant.upperRight || quadrant === TopologyQuadrant.upperLeft) {
+        deltaX = deltaX - 12;
+        deltaY = deltaY - 12;
+      } else {
+        deltaX = deltaX - 3;
+        deltaY = deltaY - 3;
+      }
+      break;
+    case NodeShape.trapezoid:
       if (quadrant === TopologyQuadrant.upperRight || quadrant === TopologyQuadrant.upperLeft) {
         deltaX = deltaX - 12;
         deltaY = deltaY - 12;

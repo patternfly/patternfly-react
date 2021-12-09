@@ -8,7 +8,7 @@ import { hullPath, useCombineRefs } from '../../../utils';
 
 const HULL_PADDING = 10;
 
-const Triangle: React.FC<ShapeProps> = ({
+const Trapezoid: React.FC<ShapeProps> = ({
   className = css(styles.topologyNodeBackground),
   width,
   height,
@@ -20,9 +20,10 @@ const Triangle: React.FC<ShapeProps> = ({
   // cast to number and coerce
   const path = React.useMemo(() => {
     const points: PointTuple[] = [
-      [width / 2, HULL_PADDING],
-      [width - HULL_PADDING, height - HULL_PADDING],
-      [HULL_PADDING, height - HULL_PADDING]
+      [width / 8 + HULL_PADDING, HULL_PADDING],
+      [width * (7 / 8) - HULL_PADDING, HULL_PADDING],
+      [HULL_PADDING, height - HULL_PADDING],
+      [width - HULL_PADDING, height - HULL_PADDING]
     ];
     const hullPoints: PointTuple[] = polygonHull(points);
     return hullPath(hullPoints, HULL_PADDING);
@@ -31,4 +32,4 @@ const Triangle: React.FC<ShapeProps> = ({
   return <path className={className} ref={refs} d={path} filter={filter} strokeLinejoin="round" strokeWidth={10} />;
 };
 
-export default Triangle;
+export default Trapezoid;

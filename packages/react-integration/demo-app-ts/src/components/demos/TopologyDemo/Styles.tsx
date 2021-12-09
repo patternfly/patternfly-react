@@ -20,6 +20,8 @@ const BOTTOM_LABEL_ROW_HEIGHT = 125;
 const COLUMN_WIDTH = 100;
 const RIGHT_LABEL_COLUMN_WIDTH = 200;
 
+const DEFAULT_NODE_SIZE = 75;
+
 const createNode = (options: {
   id: string;
   type?: string;
@@ -49,32 +51,48 @@ const createNode = (options: {
   marginX?: number;
   truncateLength?: number;
   dataType?: DataTypes;
-}): NodeModel => ({
-  id: options.id,
-  type: options.type || 'node',
-  label: options.label,
-  x:
-    (options.marginX || 60) +
-    (options.x ??
-      (options.column - 1) *
-        (options.label && options.labelPosition === LabelPosition.right ? RIGHT_LABEL_COLUMN_WIDTH : COLUMN_WIDTH)),
-  y:
-    20 +
-    (options.y ??
-      (options.row - 1) *
-        (options.label && options.labelPosition === LabelPosition.right ? ROW_HEIGHT : BOTTOM_LABEL_ROW_HEIGHT)),
-  width: options.width || 75,
-  height: options.height || 75,
-  shape: options.shape || NodeShape.circle,
-  status: options.status || NodeStatus.default,
-  data: {
-    dataType: 'Default',
-    ...options
+}): NodeModel => {
+  const shape = options.shape || NodeShape.circle;
+  const width = options.width || DEFAULT_NODE_SIZE;
+  let height = options.height;
+  if (!height) {
+    height = DEFAULT_NODE_SIZE;
+    if (shape === NodeShape.trapezoid) {
+      height *= 0.75;
+    } else if (shape === NodeShape.stadium) {
+      height *= 0.5;
+    }
   }
-});
+
+  return {
+    id: options.id,
+    type: options.type || 'node',
+    label: options.label,
+    x:
+      (options.marginX || 60) +
+      (options.x ??
+        (options.column - 1) *
+          (options.label && options.labelPosition === LabelPosition.right ? RIGHT_LABEL_COLUMN_WIDTH : COLUMN_WIDTH)),
+    y:
+      20 +
+      (width - height) / 2 +
+      (options.y ??
+        (options.row - 1) *
+          (options.label && options.labelPosition === LabelPosition.right ? ROW_HEIGHT : BOTTOM_LABEL_ROW_HEIGHT)),
+    width,
+    height,
+    shape,
+    status: options.status || NodeStatus.default,
+    data: {
+      dataType: 'Default',
+      ...options
+    }
+  };
+};
 
 const STATUS_VALUES = Object.values(NodeStatus);
 const STATUS_COUNT = STATUS_VALUES.length;
+const SHAPE_COUNT = Object.keys(NodeShape).length;
 const ICON_STATUS_VALUES = [NodeStatus.success, NodeStatus.warning, NodeStatus.danger];
 
 const createStatusNodes = (
@@ -96,7 +114,7 @@ const createStatusNodes = (
       labelPosition,
       status,
       row: Math.ceil((index + 1) / statusPerRow),
-      column: column + ((index * STATUS_COUNT) % statusPerRow) * STATUS_COUNT,
+      column: column + ((index * STATUS_COUNT) % statusPerRow) * SHAPE_COUNT,
       selected,
       hover,
       showStatusDecorator,
@@ -285,6 +303,8 @@ const createBadgeNodes = (options: {
   marginX?: number;
 }): NodeModel[] => {
   const nodes: NodeModel[] = [];
+  const columnWidth =
+    COLUMN_WIDTH + (options.badge ? 65 : 0) + (options.showIconClass ? 35 : 0) + (options.showContextMenu ? 24 : 0);
   nodes.push(
     createNode({
       id: `badged-${options.row}-1`,
@@ -301,8 +321,7 @@ const createBadgeNodes = (options: {
       label: 'Label Right',
       column: 2,
       shape: NodeShape.rect,
-      labelPosition: LabelPosition.right,
-      x: COLUMN_WIDTH + 45,
+      x: columnWidth,
       y: (options.row - 1) * BOTTOM_LABEL_ROW_HEIGHT,
       labelIconClass: options.showIconClass ? logos.get('icon-mongodb') : undefined,
       truncateLength: 13,
@@ -314,9 +333,8 @@ const createBadgeNodes = (options: {
       id: `badged-${options.row}-3`,
       label: 'Long Truncated Node Title',
       column: 3,
-      shape: NodeShape.triangle,
-      labelPosition: LabelPosition.bottom,
-      x: COLUMN_WIDTH + RIGHT_LABEL_COLUMN_WIDTH + 175,
+      shape: NodeShape.rhombus,
+      x: columnWidth * 2,
       y: (options.row - 1) * BOTTOM_LABEL_ROW_HEIGHT,
       badgeColor: '#ace12e',
       badgeTextColor: '#0f280d',
@@ -331,15 +349,62 @@ const createBadgeNodes = (options: {
     createNode({
       id: `badged-${options.row}-4`,
       label: 'Long Truncated Node Title',
+      column: 3,
+      shape: NodeShape.trapezoid,
+      x: columnWidth * 3,
+      y: (options.row - 1) * BOTTOM_LABEL_ROW_HEIGHT,
+      badgeColor: '#ace12e',
+      badgeTextColor: '#0f280d',
+      badgeBorderColor: '#486b00',
+      labelIconClass: options.showIconClass ? logos.get('icon-nodejs') : undefined,
+      truncateLength: 13,
+      ...options
+    })
+  );
+
+  nodes.push(
+    createNode({
+      id: `badged-${options.row}-5`,
+      label: 'Long Truncated Node Title',
       column: 4,
       shape: NodeShape.hexagon,
-      labelPosition: LabelPosition.right,
-      x: COLUMN_WIDTH + RIGHT_LABEL_COLUMN_WIDTH + COLUMN_WIDTH + 205,
+      x: columnWidth * 4,
       y: (options.row - 1) * BOTTOM_LABEL_ROW_HEIGHT,
       badgeColor: '#ace12e',
       badgeTextColor: '#0f280d',
       badgeBorderColor: '#486b00',
       labelIconClass: options.showIconClass ? logos.get('icon-jenkins') : undefined,
+      truncateLength: 13,
+      ...options
+    })
+  );
+
+  nodes.push(
+    createNode({
+      id: `badged-${options.row}-6`,
+      label: 'Long Truncated Node Title',
+      column: 4,
+      shape: NodeShape.octagon,
+      x: columnWidth * 5,
+      y: (options.row - 1) * BOTTOM_LABEL_ROW_HEIGHT,
+      badgeColor: '#ace12e',
+      badgeTextColor: '#0f280d',
+      badgeBorderColor: '#486b00',
+      labelIconClass: options.showIconClass ? logos.get('icon-jenkins') : undefined,
+      truncateLength: 13,
+      ...options
+    })
+  );
+
+  nodes.push(
+    createNode({
+      id: `badged-${options.row}-7`,
+      label: 'Label Right',
+      column: 2,
+      shape: NodeShape.stadium,
+      x: columnWidth * 6,
+      y: (options.row - 1) * BOTTOM_LABEL_ROW_HEIGHT,
+      labelIconClass: options.showIconClass ? logos.get('icon-mongodb') : undefined,
       truncateLength: 13,
       ...options
     })

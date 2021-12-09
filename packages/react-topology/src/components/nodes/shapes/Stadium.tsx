@@ -4,7 +4,7 @@ import * as React from 'react';
 import { ShapeProps } from '../../../utils/useCustomNodeShape';
 import { useCombineRefs } from '../../../utils';
 
-const Rectangle: React.FC<ShapeProps> = ({
+const Stadium: React.FC<ShapeProps> = ({
   className = css(styles.topologyNodeBackground),
   width,
   height,
@@ -14,8 +14,18 @@ const Rectangle: React.FC<ShapeProps> = ({
 }) => {
   const refs = useCombineRefs<SVGRectElement>(dndDropRef, anchorRef);
   return (
-    <rect className={className} ref={refs} x={0} y={0} rx={15} ry={15} width={width} height={height} filter={filter} />
+    <rect
+      className={className}
+      ref={refs}
+      x={0}
+      y={0}
+      rx={height / 2}
+      ry={height / 2}
+      width={width}
+      height={height}
+      filter={filter}
+    />
   );
 };
 
-export default Rectangle;
+export default Stadium;

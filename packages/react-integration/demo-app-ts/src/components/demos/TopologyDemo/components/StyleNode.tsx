@@ -2,6 +2,7 @@ import * as React from 'react';
 import {
   DefaultNode,
   Node,
+  NodeShape,
   WithContextMenuProps,
   WithDragNodeProps,
   WithSelectionProps
@@ -32,7 +33,10 @@ const getTypeIcon = (dataType?: DataTypes): any => {
 
 const renderIcon = (data: { dataType?: DataTypes }, element: Node): React.ReactNode => {
   const { width, height } = element.getDimensions();
-  const iconSize = Math.min(width, height) - ICON_PADDING * 2;
+  const shape = element.getNodeShape();
+  const iconSize =
+    (shape === NodeShape.trapezoid ? width : Math.min(width, height)) -
+    (shape === NodeShape.stadium ? 5 : ICON_PADDING) * 2;
   const Component = getTypeIcon(data.dataType);
 
   return (

@@ -9,7 +9,14 @@ const getRandomNode = (numNodes: number, notNode = -1): number => {
 };
 
 const STATUSES = ['default', 'danger', 'warning', 'success'];
-const SHAPES = [NodeShape.circle, NodeShape.rect, NodeShape.octagon, NodeShape.hexagon, NodeShape.triangle];
+const SHAPES = [
+  NodeShape.circle,
+  NodeShape.rect,
+  NodeShape.rhombus,
+  NodeShape.trapezoid,
+  NodeShape.octagon,
+  NodeShape.hexagon
+];
 
 export const generateData = (
   numNodes: number,
