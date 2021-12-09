@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PopoverHeader should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<Title
+  headingLevel="h6"
+  id="string"
+  size="md"
+>
+  <div>
+    ReactNode
+  </div>
+</Title>
 `;

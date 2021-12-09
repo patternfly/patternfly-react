@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.42.0 (2021-12-09)
+
+
+### Features
+
+* **Popover:** add composable header and alert variants ([#6664](https://github.com/patternfly/patternfly-react/issues/6664)) ([9028e8b](https://github.com/patternfly/patternfly-react/commit/9028e8ba5d674bde6a7e29532f7926e200dd632a))
+
+
+
+
+
 ## 5.41.1 (2021-12-08)
 
 **Note:** Version bump only for package @patternfly/react-docs
