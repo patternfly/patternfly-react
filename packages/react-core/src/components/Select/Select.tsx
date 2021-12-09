@@ -12,7 +12,14 @@ import { SelectMenu } from './SelectMenu';
 import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectGroup, SelectGroupProps } from './SelectGroup';
 import { SelectToggle } from './SelectToggle';
-import { SelectContext, SelectVariant, SelectPosition, SelectDirection, KeyTypes } from './selectConstants';
+import {
+  SelectContext,
+  SelectVariant,
+  SelectPosition,
+  SelectDirection,
+  KeyTypes,
+  SelectFooterTabbableItems
+} from './selectConstants';
 import { Chip, ChipGroup, ChipGroupProps } from '../ChipGroup';
 import { Spinner } from '../Spinner';
 import {
@@ -28,6 +35,7 @@ import { Divider } from '../Divider';
 import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
 import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/favorites';
 import { ValidatedOptions } from '../../helpers/constants';
+import { findTabbableElements } from '../../helpers/util';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -613,9 +621,31 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     }));
   };
 
-  handleTypeaheadKeys = (position: string) => {
+  switchFocusToFavoriteMenu = () => {
+    const { typeaheadCurrIndex, typeaheadStoredIndex } = this.state;
+    let indexForFocus = 0;
+
+    if (typeaheadCurrIndex !== -1) {
+      indexForFocus = typeaheadCurrIndex;
+    } else if (typeaheadStoredIndex !== -1) {
+      indexForFocus = typeaheadStoredIndex;
+    }
+
+    if (this.refCollection[indexForFocus] !== null && this.refCollection[indexForFocus][0] !== null) {
+      this.refCollection[indexForFocus][0].focus();
+    } else {
+      this.clearRef.current.focus();
+    }
+
+    this.setState({
+      tabbedIntoFavoritesMenu: true,
+      typeaheadCurrIndex: -1
+    });
+  };
+
+  handleTypeaheadKeys = (position: string, shiftKey: boolean = false) => {
     const { isOpen, onFavorite } = this.props;
-    const { typeaheadCurrIndex, tabbedIntoFavoritesMenu, typeaheadStoredIndex } = this.state;
+    const { typeaheadCurrIndex, tabbedIntoFavoritesMenu } = this.state;
     const typeaheadActiveChild = this.getTypeaheadActiveChild(typeaheadCurrIndex);
 
     if (isOpen) {
@@ -633,30 +663,110 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         }
       } else if (position === 'tab') {
         if (onFavorite) {
+          // if the input has focus, tab to the first item or the last item that was previously focused.
           if (this.inputRef.current === document.activeElement) {
-            let indexForFocus = 0;
-            if (typeaheadCurrIndex !== -1) {
-              indexForFocus = typeaheadCurrIndex;
-            } else if (typeaheadStoredIndex !== -1) {
-              indexForFocus = typeaheadStoredIndex;
-            }
-
-            if (this.refCollection[indexForFocus] !== null && this.refCollection[indexForFocus][0] !== null) {
-              this.refCollection[indexForFocus][0].focus();
+            // If shift is also clicked and there is a footer, tab to the last item in tabbable footer
+            if (this.props.footer && shiftKey) {
+              const tabbableItems = findTabbableElements(this.footerRef, SelectFooterTabbableItems);
+              if (tabbableItems.length > 0) {
+                if (tabbableItems[tabbableItems.length - 1]) {
+                  tabbableItems[tabbableItems.length - 1].focus();
+                }
+              }
             } else {
-              this.clearRef.current.focus();
+              this.switchFocusToFavoriteMenu();
             }
-
-            this.setState({
-              tabbedIntoFavoritesMenu: true,
-              typeaheadCurrIndex: -1
-            });
           } else {
-            this.inputRef.current.focus();
-            this.setState({ tabbedIntoFavoritesMenu: false });
+            // focus is on menu or footer
+            if (this.props.footer) {
+              let tabbedIntoMenu = false;
+              const tabbableItems = findTabbableElements(this.footerRef, SelectFooterTabbableItems);
+              if (tabbableItems.length > 0) {
+                // if current element is not in footer, tab to first tabbable element in footer,
+                // if shift was clicked, tab to input since focus is on menu
+                const currentElementIndex = tabbableItems.findIndex(item => item === document.activeElement);
+                if (currentElementIndex === -1) {
+                  if (shiftKey) {
+                    // currently in menu shift back to input
+                    this.inputRef.current.focus();
+                  } else {
+                    // tab to first tabbable item in footer
+                    tabbableItems[0].focus();
+                  }
+                } else {
+                  // already in footer
+                  if (shiftKey) {
+                    // shift to previous item
+                    if (currentElementIndex === 0) {
+                      // on first footer item, shift back to menu
+                      this.switchFocusToFavoriteMenu();
+                      tabbedIntoMenu = true;
+                    } else {
+                      // shift to previous footer item
+                      tabbableItems[currentElementIndex - 1].focus();
+                    }
+                  } else {
+                    // tab to next tabbable item in footer or to input.
+                    if (tabbableItems[currentElementIndex + 1]) {
+                      tabbableItems[currentElementIndex + 1].focus();
+                    } else {
+                      this.inputRef.current.focus();
+                    }
+                  }
+                }
+              } else {
+                // no tabbable items in footer, tab to input
+                this.inputRef.current.focus();
+                tabbedIntoMenu = false;
+              }
+              this.setState({ tabbedIntoFavoritesMenu: tabbedIntoMenu });
+            } else {
+              this.inputRef.current.focus();
+              this.setState({ tabbedIntoFavoritesMenu: false });
+            }
           }
         } else {
-          this.onToggle(false);
+          // Close if there is no footer
+          if (!this.props.footer) {
+            this.onToggle(false);
+          } else {
+            // has footer
+            const tabbableItems = findTabbableElements(this.footerRef, SelectFooterTabbableItems);
+            const currentElementIndex = tabbableItems.findIndex(item => item === document.activeElement);
+            if (this.inputRef.current === document.activeElement) {
+              if (shiftKey) {
+                // close toggle if shift key and tab on input
+                this.onToggle(false);
+              } else {
+                // tab to first tabbable item in footer
+                if (tabbableItems[0]) {
+                  tabbableItems[0].focus();
+                } else {
+                  this.onToggle(false);
+                }
+              }
+            } else {
+              // focus in footer
+              if (shiftKey) {
+                if (currentElementIndex === 0) {
+                  // shift tab back to input
+                  this.inputRef.current.focus();
+                } else {
+                  // shift to previous footer item
+                  tabbableItems[currentElementIndex - 1].focus();
+                }
+              } else {
+                // tab to next footer item or close tab if last item
+                if (tabbableItems[currentElementIndex + 1]) {
+                  tabbableItems[currentElementIndex + 1].focus();
+                } else {
+                  // no next item, close toggle
+                  this.onToggle(false);
+                  this.inputRef.current.focus();
+                }
+              }
+            }
+          }
         }
       } else if (!tabbedIntoFavoritesMenu) {
         if (this.refCollection[0][0] === null) {
@@ -940,6 +1050,16 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 } else if (event.key === KeyTypes.ArrowRight) {
                   this.handleMenuKeys(0, 0, 'right');
                   event.preventDefault();
+                } else if (event.key === KeyTypes.Tab && variant !== SelectVariant.checkbox && this.props.footer) {
+                  //  tab to footer
+                  const tabbableItems = findTabbableElements(this.footerRef, SelectFooterTabbableItems);
+                  if (tabbableItems.length > 0) {
+                    tabbableItems[0].focus();
+                    event.stopPropagation();
+                    event.preventDefault();
+                  } else {
+                    this.onToggle(false);
+                  }
                 } else if (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) {
                   // More modal-like experience for checkboxes
                   // Let SelectOption handle this
@@ -1079,6 +1199,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           parentRef={this.parentRef}
           menuRef={this.menuComponentRef}
           {...(footer && { footerRef: this.footerRef })}
+          {...(hasInlineFilter && { filterRef: this.filterRef })}
           isOpen={isOpen}
           isPlain={isPlain}
           hasPlaceholderStyle={

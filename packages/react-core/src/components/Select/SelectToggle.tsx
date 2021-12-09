@@ -3,8 +3,9 @@ import styles from '@patternfly/react-styles/css/components/Select/select';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
-import { KeyTypes, SelectVariant } from './selectConstants';
+import { KeyTypes, SelectVariant, SelectFooterTabbableItems } from './selectConstants';
 import { PickOptional } from '../../helpers/typeUtils';
+import { findTabbableElements } from '../../helpers/util';
 
 export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   /** HTML ID of dropdown toggle */
@@ -22,13 +23,15 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   /** Callback for toggle close */
   onClose?: () => void;
   /** @hide Internal callback for toggle keyboard navigation */
-  handleTypeaheadKeys?: (position: string) => void;
+  handleTypeaheadKeys?: (position: string, shiftKey?: boolean) => void;
   /** Element which wraps toggle */
   parentRef: React.RefObject<HTMLDivElement>;
   /** The menu element */
   menuRef?: React.RefObject<HTMLElement>;
   /** The menu footer element */
   footerRef?: React.RefObject<HTMLDivElement>;
+  /** The inline filter ref element */
+  filterRef?: React.RefObject<HTMLInputElement>;
   /** Forces active state */
   isActive?: boolean;
   /** Display the toggle with no border or background */
@@ -106,16 +109,18 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     }
   };
 
-  findTabbableFooterElements = () => {
-    const tabbable = this.props.footerRef.current.querySelectorAll('input, button, select, textarea, a[href]');
-    const list = Array.prototype.filter.call(tabbable, function(item) {
-      return item.tabIndex >= '0';
-    });
-    return list;
-  };
-
   handleGlobalKeys = (event: KeyboardEvent) => {
-    const { parentRef, menuRef, hasFooter, isOpen, variant, onToggle, onClose } = this.props;
+    const {
+      parentRef,
+      menuRef,
+      hasFooter,
+      footerRef,
+      filterRef,
+      isOpen,
+      variant,
+      onToggle,
+      onClose
+    } = this.props;
     const escFromToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
     const escFromWithinMenu =
       menuRef && menuRef.current && menuRef.current.contains && menuRef.current.contains(event.target as Node);
@@ -124,13 +129,13 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       event.key === KeyTypes.Tab &&
       (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti)
     ) {
-      this.props.handleTypeaheadKeys('tab');
+      this.props.handleTypeaheadKeys('tab', event.shiftKey);
       event.preventDefault();
       return;
     }
 
     if (isOpen && event.key === KeyTypes.Tab && hasFooter) {
-      const tabbableItems = this.findTabbableFooterElements();
+      const tabbableItems = findTabbableElements(footerRef, SelectFooterTabbableItems);
 
       // If no tabbable item in footer close select
       if (tabbableItems.length <= 0) {
@@ -147,6 +152,11 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
         }
         // Current element is in footer.
         if (event.shiftKey) {
+          // if has inline footer, focus back to input if current tab index is 0
+          // if (filterRef !== undefined && currentElementIndex === 0) {
+          //   filterRef.current.focus();
+          //   event.preventDefault();
+          // }
           return;
         }
         // Tab to next element in footer or close if there are none
@@ -180,7 +190,9 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     if (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti) {
       if (event.key === KeyTypes.ArrowDown || event.key === KeyTypes.ArrowUp) {
         handleTypeaheadKeys((event.key === KeyTypes.ArrowDown && 'down') || (event.key === KeyTypes.ArrowUp && 'up'));
-        event.preventDefault();
+        // if (!this.props.hasFooter) {
+          event.preventDefault();
+       // }
       } else if (event.key === KeyTypes.Enter) {
         if (isOpen) {
           handleTypeaheadKeys('enter');

@@ -196,6 +196,19 @@ export function keyHandler(
   }
 }
 
+/** This function returns a list of tabbable items in a container
+ *
+ *  @param {any} containerRef to the container
+ *  @param {string} tababbleSelectors CSS selector string of tabbable items
+ */
+export function findTabbableElements(containerRef: any, tababbleSelectors: string): any[] {
+  const tabbable = containerRef.current.querySelectorAll(tababbleSelectors);
+  const list = Array.prototype.filter.call(tabbable, function(item) {
+    return item.tabIndex >= '0';
+  });
+  return list;
+}
+
 /** This function is a helper for keyboard navigation through dropdowns.
  *
  * @param {number} index The index of the element you're on
