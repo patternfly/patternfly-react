@@ -62,7 +62,10 @@ exports[`popover can close from content (uncontrolled) 1`] = `
             onClose={[Function]}
           />
           <PopoverHeader
+            alertSeverityScreenReaderText="undefined alert:"
+            icon={null}
             id="popover-test-header"
+            titleHeadingLevel="h6"
           >
             <div>
               Popover header
@@ -184,7 +187,10 @@ exports[`popover can have a custom minimum width 1`] = `
             onClose={[Function]}
           />
           <PopoverHeader
+            alertSeverityScreenReaderText="undefined alert:"
+            icon={null}
             id="popover-test-header"
+            titleHeadingLevel="h6"
           >
             <div>
               Popover Header
@@ -289,7 +295,10 @@ exports[`popover can specify position as object value 1`] = `
             onClose={[Function]}
           />
           <PopoverHeader
+            alertSeverityScreenReaderText="undefined alert:"
+            icon={null}
             id="popover-test-header"
+            titleHeadingLevel="h6"
           >
             <div>
               Popover Header
@@ -394,7 +403,10 @@ exports[`popover renders close-button, header and body 1`] = `
             onClose={[Function]}
           />
           <PopoverHeader
+            alertSeverityScreenReaderText="undefined alert:"
+            icon={null}
             id="popover-test-header"
+            titleHeadingLevel="h6"
           >
             <div>
               Popover Header

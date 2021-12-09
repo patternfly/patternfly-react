@@ -104,7 +104,7 @@ export interface PopoverProps {
    */
   footerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
   /**
-   * Header content
+   * Simple header content to be placed within a title.
    * If you want to close the popover after an action within the bodyContent, you can use the isVisible prop for manual control,
    * or you can provide a function which will receive a callback as an argument to hide the popover
    * i.e. headerContent={hide => <Button onClick={() => hide()}>Close</Button>}
@@ -112,6 +112,12 @@ export interface PopoverProps {
   headerContent?: React.ReactNode | ((hide: () => void) => React.ReactNode);
   /** Sets the heading level to use for the popover header. Default is h6. */
   headerComponent?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  /** @beta Icon to be displayed in the popover header **/
+  headerIcon?: React.ReactNode;
+  /** @beta Severity variants for an alert popover. This modifies the color of the header to match the severity. */
+  alertSeverityVariant?: 'default' | 'info' | 'warning' | 'success' | 'danger';
+  /** @beta Text announced by screen reader when alert severity variant is set to indicate severity level */
+  alertSeverityScreenReaderText?: string;
   /** Hides the popover when a click occurs outside (only works if isVisible is not controlled by the user) */
   hideOnOutsideClick?: boolean;
   /**
@@ -198,6 +204,14 @@ export interface PopoverProps {
   tippyProps?: Partial<TippyProps>;
 }
 
+const alertStyle = {
+  default: styles.modifiers.default,
+  info: styles.modifiers.info,
+  success: styles.modifiers.success,
+  warning: styles.modifiers.warning,
+  danger: styles.modifiers.danger
+};
+
 export const Popover: React.FunctionComponent<PopoverProps> = ({
   children,
   position = 'top',
@@ -210,6 +224,9 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   bodyContent,
   headerContent = null,
   headerComponent = 'h6',
+  headerIcon = null,
+  alertSeverityVariant,
+  alertSeverityScreenReaderText,
   footerContent = null,
   appendTo = () => document.body,
   hideOnOutsideClick = true,
@@ -253,6 +270,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const transitionTimerRef = React.useRef(null);
   const showTimerRef = React.useRef(null);
   const hideTimerRef = React.useRef(null);
+
   React.useEffect(() => {
     onMount();
   }, []);
@@ -383,6 +401,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       preventScrollOnDeactivate
       className={css(
         styles.popover,
+        alertSeverityVariant && alertStyle[alertSeverityVariant],
         hasNoPadding && styles.modifiers.noPadding,
         hasAutoWidth && styles.modifiers.widthAuto,
         className
@@ -405,7 +424,13 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       <PopoverContent>
         {showClose && <PopoverCloseButton onClose={closePopover} aria-label={closeBtnAriaLabel} />}
         {headerContent && (
-          <PopoverHeader id={`popover-${uniqueId}-header`}>
+          <PopoverHeader
+            id={`popover-${uniqueId}-header`}
+            icon={headerIcon}
+            alertSeverityVariant={alertSeverityVariant}
+            alertSeverityScreenReaderText={alertSeverityScreenReaderText || `${alertSeverityVariant} alert:`}
+            titleHeadingLevel={headerComponent}
+          >
             {typeof headerContent === 'function' ? headerContent(hide) : headerContent}
           </PopoverHeader>
         )}
