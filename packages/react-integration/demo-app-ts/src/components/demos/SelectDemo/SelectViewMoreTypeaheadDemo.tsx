@@ -123,8 +123,7 @@ export class SelectViewMoreTypeaheadDemo extends React.Component<SelectViewMoreT
             Select a state
           </span>
           <Select
-            id="view-more-select-typeahead"
-            toggleId="typeahead-select"
+            toggleId="view-more-typeahead-select"
             variant={SelectVariant.typeahead}
             aria-label="Select a state"
             onToggle={this.onToggle}
