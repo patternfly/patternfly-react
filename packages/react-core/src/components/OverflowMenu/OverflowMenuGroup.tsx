@@ -25,13 +25,13 @@ export const OverflowMenuGroup: React.FC<OverflowMenuGroupProps> = ({
     {value =>
       (isPersistent || !value.isBelowBreakpoint) && (
         <div
-          {...props}
           className={css(
             styles.overflowMenuGroup,
             groupType === 'button' && styles.modifiers.buttonGroup,
             groupType === 'icon' && styles.modifiers.iconButtonGroup,
             className
           )}
+          {...props}
         >
           {children}
         </div>

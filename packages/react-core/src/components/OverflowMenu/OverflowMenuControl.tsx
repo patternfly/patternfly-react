@@ -21,7 +21,7 @@ export const OverflowMenuControl: React.SFC<OverflowMenuControlProps> = ({
   <OverflowMenuContext.Consumer>
     {value =>
       (value.isBelowBreakpoint || hasAdditionalOptions) && (
-        <div {...props} className={css(styles.overflowMenuControl, className)}>
+        <div className={css(styles.overflowMenuControl, className)} {...props}>
           {' '}
           {children}{' '}
         </div>
