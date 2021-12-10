@@ -412,7 +412,6 @@ exports[`SimpleList renders grouped content 1`] = `
 >
   <div
     className="pf-c-simple-list"
-    role="list"
   >
     <SimpleListGroup
       title="Group 1"

@@ -78,7 +78,7 @@ IconExample = () => {
   return (
     <div style={{ margin: '100px' }}>
       <Tooltip content={showSuccessContent ? doneCopyText : copyText}>
-        <Button variant="plain" id="tt-ref" onClick={() => setShowSuccessContent(!showSuccessContent)}>
+        <Button variant="plain" aria-label="Icon with tooltip attached" id="tt-ref" onClick={() => setShowSuccessContent(!showSuccessContent)}>
           <CopyIcon />
         </Button>
       </Tooltip>
@@ -124,6 +124,7 @@ OptionsTooltip = () => {
               setTrigger(updatedTrigger);
             }}
             aria-label="trigger: mouseenter"
+            id="trigger_mouseenter"
           />
           <Checkbox
             label="trigger: focus"
@@ -136,6 +137,7 @@ OptionsTooltip = () => {
               setTrigger(updatedTrigger);
             }}
             aria-label="trigger: focus"
+            id="trigger_focus"
           />
           <Checkbox
             label="trigger: click"
@@ -148,6 +150,7 @@ OptionsTooltip = () => {
               setTimeout(() => setTrigger(updatedTrigger));
             }}
             aria-label="trigger: click"
+            id="trigger_click"
           />
           <Checkbox
             label="trigger: manual"
@@ -159,7 +162,8 @@ OptionsTooltip = () => {
               setIsVisible(false);
               setTrigger(updatedTrigger);
             }}
-            aria-label="trigger: manual"            
+            aria-label="trigger: manual"   
+            id="trigger_manual"         
           />
         </div>
         <div style={{ border: '1px solid'}}>
@@ -167,7 +171,8 @@ OptionsTooltip = () => {
             label="content left-aligned"
             isChecked={contentLeftAligned}
             onChange={(checked) => setContentLeftAligned(checked)}
-            aria-label="content left-aligned"          
+            aria-label="content left-aligned"
+            id="content_left_aligned"          
           />
         </div>
         <div style={{ border: '1px solid'}}>
@@ -175,7 +180,8 @@ OptionsTooltip = () => {
             label="enableFlip"
             isChecked={enableFlip}
             onChange={(checked) => setEnableFlip(checked)}
-            aria-label="enableFlip"        
+            aria-label="enableFlip"    
+            id="enable_flip"    
           />
         </div>
         <div style={{ border: '1px solid'}}>
@@ -210,7 +216,8 @@ OptionsTooltip = () => {
             label="isVisible (also set trigger to only manual to programmatically control it)"
             isChecked={isVisible}
             onChange={(checked) => setIsVisible(checked)}
-            aria-label="isVisible"        
+            aria-label="isVisible" 
+            id="is_visible"       
           />
         </div>
         <div style={{ border: '1px solid'}}>

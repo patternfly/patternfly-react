@@ -273,7 +273,6 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
 
   return (
     <li
-      role="none"
       className={css(
         styles.menuListItem,
         isDisabled && styles.modifiers.disabled,
@@ -286,15 +285,15 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
       tabIndex={-1}
       {...(flyoutMenu && { onKeyDown: handleFlyout })}
       ref={ref}
+      onClick={(event: any) => {
+        onItemSelect(event, onSelect);
+        _drill && _drill();
+      }}
+      role="menuitem"
       {...props}
     >
       <Component
-        role="menuitem"
         tabIndex={-1}
-        onClick={(event: any) => {
-          onItemSelect(event, onSelect);
-          _drill && _drill();
-        }}
         className={css(styles.menuItem, getIsSelected() && styles.modifiers.selected, className)}
         aria-current={getAriaCurrent()}
         disabled={isDisabled}

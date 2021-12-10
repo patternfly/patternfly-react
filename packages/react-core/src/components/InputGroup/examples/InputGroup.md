@@ -50,7 +50,7 @@ class SimpleInputGroups extends React.Component {
         </InputGroup>
         <br />
         <InputGroup>
-          <InputGroupText id="username" aria-label="@">
+          <InputGroupText id="username">
             <AtIcon />
           </InputGroupText>
           <TextInput validated={ValidatedOptions.error} id="textInput7" type="email" aria-label="Error state username example" />

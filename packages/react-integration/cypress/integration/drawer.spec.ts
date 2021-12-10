@@ -32,7 +32,7 @@ describe('Drawer Demo Test', () => {
     $drawerPanel.should('have.css', 'flex-basis', 'max(0% + 24px, min(0% + 300px, 100% + 0px))');
     // Medium viewport
     cy.viewport(800, 660);
-    cy.get('.pf-c-drawer__panel').should('have.css', 'flex-basis', 'max(0% + 24px, min(0% + 300px, 100% + 0px))');
+    cy.get('.pf-c-drawer__panel').should('have.css', 'flex-basis', 'max(0% + 24px, min(100% + 0px, 100% + 0px))');
     // Xl viewport
     cy.viewport(1200, 660);
     cy.get('.pf-c-drawer__panel').should('have.css', 'flex-basis', 'max(0% + 24px, min(0% + 300px, 100% + 0px))');

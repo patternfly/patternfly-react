@@ -11,7 +11,7 @@ propComponents: ['Spinner']
 import React from 'react';
 import { Spinner } from '@patternfly/react-core';
 
-<Spinner isSVG />
+<Spinner isSVG aria-label="Contents of the basic example"/>
 ```
 
 ### Size variations
@@ -20,10 +20,10 @@ import React from 'react';
 import { Spinner } from '@patternfly/react-core';
 
 <React.Fragment>
-  <Spinner isSVG size="sm"/>
-  <Spinner isSVG size="md"/>
-  <Spinner isSVG size="lg"/>
-  <Spinner isSVG size="xl"/>
+  <Spinner isSVG size="sm" aria-label="Contents of the small example"/>
+  <Spinner isSVG size="md" aria-label="Contents of the medium example"/>
+  <Spinner isSVG size="lg" aria-label="Contents of the large example"/>
+  <Spinner isSVG size="xl" aria-label="Contents of the extra large example"/>
 </React.Fragment>
 ```
 
@@ -32,6 +32,6 @@ import { Spinner } from '@patternfly/react-core';
 import React from 'react';
 import { Spinner } from '@patternfly/react-core';
 
-<Spinner isSVG diameter="80px" />
+<Spinner isSVG diameter="80px" aria-label="Contents of the custom size example"/>
 ```
 

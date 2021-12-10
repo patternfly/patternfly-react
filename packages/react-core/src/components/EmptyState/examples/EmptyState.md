@@ -50,11 +50,9 @@ import {
   Button,
   EmptyState,
   EmptyStateVariant,
-  EmptyStateIcon,
   EmptyStateBody,
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
-import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
 <EmptyState variant={EmptyStateVariant.xs}>
   <Title headingLevel="h4" size="md">
@@ -185,22 +183,13 @@ import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 import React from 'react';
 import {
   Title,
-  Button,
   EmptyState,
   EmptyStateIcon,
-  EmptyStateBody,
-  EmptyStateSecondaryActions
+  Spinner
 } from '@patternfly/react-core';
 
 
 EmptyStateSpinner = () => {
-  const Spinner = () => (
-    <span className="pf-c-spinner" role="progressbar" aria-valuetext="Loading...">
-      <span className="pf-c-spinner__clipper" />
-      <span className="pf-c-spinner__lead-ball" />
-      <span className="pf-c-spinner__tail-ball" />
-    </span>
-  )
   return (
     <EmptyState>
       <EmptyStateIcon variant="container" component={Spinner} />
@@ -221,8 +210,7 @@ import {
   EmptyState,
   EmptyStatePrimary,
   EmptyStateIcon,
-  EmptyStateBody,
-  EmptyStateSecondaryActions
+  EmptyStateBody
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 

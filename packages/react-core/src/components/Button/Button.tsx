@@ -37,8 +37,12 @@ export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'r
   isAriaDisabled?: boolean;
   /** Adds progress styling to button */
   isLoading?: boolean;
-  /** Aria-valuetext for the loading spinner */
+  /** Text describing that current loading status or progress */
   spinnerAriaValueText?: string;
+  /** Accessible label for the spinner to describe what is loading */
+  spinnerAriaLabel?: string;
+  /** Id of element which describes what is being loaded */
+  spinnerAriaLabelledBy?: string;
   /** Events to prevent when the button is in an aria-disabled state */
   inoperableEvents?: string[];
   /** Adds inline styling to a link button */
@@ -76,6 +80,8 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
   isLoading = null,
   isDanger = false,
   spinnerAriaValueText,
+  spinnerAriaLabelledBy,
+  spinnerAriaLabel,
   isSmall = false,
   isLarge = false,
   inoperableEvents = ['onClick', 'onKeyPress'],
@@ -146,7 +152,12 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
     >
       {isLoading && (
         <span className={css(styles.buttonProgress)}>
-          <Spinner size={spinnerSize.md} aria-valuetext={spinnerAriaValueText} />
+          <Spinner
+            size={spinnerSize.md}
+            aria-valuetext={spinnerAriaValueText}
+            aria-label={spinnerAriaLabel}
+            aria-labelledby={spinnerAriaLabelledBy}
+          />
         </span>
       )}
       {variant === ButtonVariant.plain && children === null && icon ? icon : null}

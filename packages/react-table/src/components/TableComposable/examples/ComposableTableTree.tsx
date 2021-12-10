@@ -111,8 +111,8 @@ export const ComposableTableTree: React.FunctionComponent = () => {
       - nodes - array of a single level of tree nodes
       - level - number representing how deeply nested the current row is
       - posinset - position of the row relative to this row's siblings
-      - isHidden - defaults to false, true if this row's parent is expanded
       - currentRowIndex - position of the row relative to the entire table
+      - isHidden - defaults to false, true if this row's parent is expanded
   */
   const renderRows = (
     [node, ...remainingNodes]: RepositoriesTreeNode[],
@@ -159,6 +159,7 @@ export const ComposableTableTree: React.FunctionComponent = () => {
         'aria-posinset': posinset,
         'aria-setsize': node.children ? node.children.length : 0,
         isChecked,
+        checkboxId: `checkbox_id_${node.name.replace(/\s+/g, '')}`,
         icon
       }
     };
