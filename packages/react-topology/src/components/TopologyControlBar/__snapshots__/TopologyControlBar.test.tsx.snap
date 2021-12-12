@@ -619,6 +619,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
           collapseListedFiltersBreakpoint="lg"
           isExpanded={false}
           numberOfFilters={0}
+          numberOfFiltersText={[Function]}
           showClearFiltersButton={false}
         >
           <div
@@ -1497,6 +1498,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
           collapseListedFiltersBreakpoint="lg"
           isExpanded={false}
           numberOfFilters={0}
+          numberOfFiltersText={[Function]}
           showClearFiltersButton={false}
         >
           <div
