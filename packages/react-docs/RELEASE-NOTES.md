@@ -28,9 +28,9 @@ section: developer-resources
   - Added disabled card and cleaned up props ([#6659](https://github.com/patternfly/patternfly-react/pull/6659))
   -  Updated card demos to use select instead of dropdown ([#6639](https://github.com/patternfly/patternfly-react/pull/6639))
 - **Context selector:**
-  - Addedd support for focus trap to be made inactive ([#6638](https://github.com/patternfly/patternfly-react/pull/6638))
+  - Added support for focus trap to be made inactive ([#6638](https://github.com/patternfly/patternfly-react/pull/6638))
 - **Date picker:**
-  - Updaetd to allow date picker users to open the calendar programatically ([#6632](https://github.com/patternfly/patternfly-react/pull/6632))
+  - Updated to allow date picker users to open the calendar programatically ([#6632](https://github.com/patternfly/patternfly-react/pull/6632))
 - **Drag drop:**
   - Fixed to not overwrite children class with droppable class ([#6672](https://github.com/patternfly/patternfly-react/pull/6672))
 - **Dropdown:**
@@ -48,7 +48,7 @@ section: developer-resources
   - Added ability to persist filtered children state ([#6670](https://github.com/patternfly/patternfly-react/pull/6670))
   - Fixed no autocomplete for typeahead select ([#6623](https://github.com/patternfly/patternfly-react/pull/6623))
 - **Slider:**
-   Fixed examples with custom steps and input ([#6662](https://github.com/patternfly/patternfly-react/pull/6662))
+  - Fixed examples with custom steps and input ([#6662](https://github.com/patternfly/patternfly-react/pull/6662))
   - Aded input resizing ([#6612](https://github.com/patternfly/patternfly-react/pull/6612))
 - **Tabs:**
   - Added nested Tabs demo ([#6645](https://github.com/patternfly/patternfly-react/pull/6645))
