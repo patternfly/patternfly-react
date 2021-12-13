@@ -54,6 +54,35 @@ export enum NodeStatus {
   danger = 'danger'
 }
 
+export enum EdgeStyle {
+  default = 'default',
+  solid = 'solid',
+  dotted = 'dotted',
+  dashed = 'dashed',
+  dashedMd = 'dashedMd',
+  dashedLg = 'dashedLg',
+  dashedXl = 'dashedXl'
+}
+
+export enum EdgeAnimationSpeed {
+  none = 'none',
+  slow = 'slow',
+  mediumSlow = 'mediumSlow',
+  medium = 'medium',
+  mediumFast = 'mediumFast',
+  fast = 'fast'
+}
+
+export enum EdgeTerminalType {
+  none = 'none',
+  directional = 'directional',
+  directionalAlt = 'directionalAlt',
+  circle = 'circle',
+  square = 'square',
+  cross = 'cross',
+  x = 'x'
+}
+
 export enum ModelKind {
   graph = 'graph',
   node = 'node',
@@ -84,6 +113,8 @@ export interface NodeModel extends ElementModel {
 export interface EdgeModel extends ElementModel {
   source?: string;
   target?: string;
+  edgeStyle?: EdgeStyle;
+  animationSpeed?: EdgeAnimationSpeed;
   bendpoints?: PointTuple[];
 }
 
@@ -169,6 +200,10 @@ export interface Edge<E extends EdgeModel = EdgeModel, D = any> extends GraphEle
   getSource(): Node;
   setSource(source: Node): void;
   getTarget(): Node;
+  getEdgeStyle(): EdgeStyle;
+  setEdgeStyle(edgeStyle: EdgeStyle): void;
+  getEdgeAnimationSpeed(): EdgeAnimationSpeed;
+  setEdgeAnimationSpeed(speed: EdgeAnimationSpeed): void;
   setTarget(target: Node): void;
   getSourceAnchorNode(): Node;
   getTargetAnchorNode(): Node;

@@ -49,12 +49,15 @@ const renderIcon = (data: { dataType?: DataTypes }, element: Node): React.ReactN
 const StyleNode: React.FC<StyleNodeProps> = ({ element, onContextMenu, contextMenuOpen, ...rest }) => {
   const data = element.getData();
 
-  const passedData = { ...data };
-  Object.keys(passedData).forEach(key => {
-    if (passedData[key] === undefined) {
-      delete passedData[key];
-    }
-  });
+  const passedData = React.useMemo(() => {
+    const newData = { ...data };
+    Object.keys(newData).forEach(key => {
+      if (newData[key] === undefined) {
+        delete newData[key];
+      }
+    });
+    return newData;
+  }, [data]);
 
   return (
     <DefaultNode

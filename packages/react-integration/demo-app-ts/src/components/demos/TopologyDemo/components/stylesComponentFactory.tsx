@@ -16,6 +16,7 @@ import Path from './shapes/Path';
 import Polygon from './shapes/Polygon';
 import StyleNode from './StyleNode';
 import StyleGroup from './StyleGroup';
+import StyleEdge from './StyleEdge';
 
 const contextMenuItem = (label: string, i: number): React.ReactElement => {
   if (label === '-') {
@@ -46,6 +47,8 @@ const stylesComponentFactory: ComponentFactory = (
       return withCustomNodeShape(() => Polygon)(DemoDefaultNode);
     case 'group':
       return withContextMenu(() => defaultMenu)(withSelection()(withCollapsibleGroup(75, 75)(StyleGroup)));
+    case 'edge':
+      return withContextMenu(() => defaultMenu)(withSelection()(StyleEdge));
     default:
       return undefined;
   }

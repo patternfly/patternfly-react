@@ -4,6 +4,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-alt-icon';
 import { Layer } from '../layers';
+import { GROUPS_LAYER } from '../../const';
 import {
   createSvgIdUrl,
   LabelPosition,
@@ -91,7 +92,7 @@ const DefaultGroupCollapsed: React.FC<DefaultGroupCollapsedProps> = ({
       onClick={onSelect}
       className={groupClassName}
     >
-      <Layer id="groups">
+      <Layer id={GROUPS_LAYER}>
         <g ref={refs} onClick={onSelect}>
           {ShapeComponent && (
             <>

@@ -30,7 +30,10 @@ import {
   GroupHoverStyles,
   GroupDropTargetStyles,
   GroupedGroupsStyles,
-  CollapsibleGroupStyles
+  CollapsibleGroupStyles,
+  EdgeStyles,
+  EdgeAnimationStyles,
+  EdgeTerminalStyles
 } from './Styles';
 
 import './TopologyDemo.css';
@@ -162,7 +165,17 @@ export const TopologyDemo: React.FC = () => {
               </Tabs>
             </Tab>
             <Tab eventKey={3} title={<TabTitleText>Edges</TabTitleText>}>
-              <span>TBD</span>
+              <Tabs unmountOnExit activeKey={activeTertiaryKey} onSelect={handleTertiaryTabClick}>
+                <Tab eventKey={0} title={<TabTitleText>Edge Styles</TabTitleText>}>
+                  <EdgeStyles />
+                </Tab>
+                <Tab eventKey={1} title={<TabTitleText>Animated Edges</TabTitleText>}>
+                  <EdgeAnimationStyles />
+                </Tab>
+                <Tab eventKey={2} title={<TabTitleText>Edge Terminal Types</TabTitleText>}>
+                  <EdgeTerminalStyles />
+                </Tab>
+              </Tabs>
             </Tab>
           </Tabs>
         </Tab>

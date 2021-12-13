@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import AddCircleOIcon from '@patternfly/react-icons/dist/esm/icons/add-circle-o-icon';
 import { Tooltip } from '@patternfly/react-core';
 import Point from '../geom/Point';
-import ConnectorArrow from './ConnectorArrow';
+import ConnectorArrow from './edges/terminals/ConnectorArrow';
 
 const cursorSize = 20;
 

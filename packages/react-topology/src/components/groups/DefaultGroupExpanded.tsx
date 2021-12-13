@@ -7,6 +7,7 @@ import styles from '@patternfly/react-styles/css/components/Topology/topology-co
 import CollapseIcon from '@patternfly/react-icons/dist/esm/icons/compress-alt-icon';
 import NodeLabel from '../nodes/labels/NodeLabel';
 import { Layer } from '../layers';
+import { GROUPS_LAYER } from '../../const';
 import { hullPath, maxPadding, useCombineRefs, useHover, WithBadgeProps, WithCollapsibleGroupProps } from '../../utils';
 import { isGraph, Node, NodeShape, NodeStyle, PointTuple } from '../../types';
 import { useDragNode, useSvgAnchor, WithContextMenuProps, WithDndDropProps, WithSelectionProps } from '../../behavior';
@@ -163,7 +164,7 @@ const DefaultGroupExpanded: React.FC<DefaultGroupExpandedProps> = ({
       onClick={onSelect}
       className={groupClassName}
     >
-      <Layer id="groups">
+      <Layer id={GROUPS_LAYER}>
         <g ref={refs} onContextMenu={onContextMenu} onClick={onSelect} className={innerGroupClassName}>
           <path
             key={isHover || labelHover || dragging || contextMenuOpen || dropTarget ? 'group-path-hover' : 'group-path'}
