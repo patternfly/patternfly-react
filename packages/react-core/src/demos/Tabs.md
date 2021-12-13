@@ -437,3 +437,7 @@ TabsOpenWithSecondaryTabsDemo = () => {
   );
 };
 ```
+
+### Nested tabs
+```js isFullscreen file="./Tabs/NestedTabsDemo.js"
+```

@@ -15,7 +15,7 @@ export interface MenuToggleProps
   /** Flag indicating the toggle is disabled */
   isDisabled?: boolean;
   /** Variant styles of the menu toggle */
-  variant?: 'default' | 'plain' | 'primary';
+  variant?: 'default' | 'plain' | 'primary' | 'plainText';
   /** Optional icon rendered inside the toggle, before the children content */
   icon?: React.ReactNode;
   /** Optional badge rendered inside the toggle, after the children content */
@@ -37,6 +37,8 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
     const { children, className, icon, badge, isExpanded, isDisabled, variant, innerRef, ...props } = this.props;
 
     const isPlain = variant === 'plain';
+    const isPlainText = variant === 'plainText';
+
     const content = (
       <React.Fragment>
         {icon && <span className={css(styles.menuToggleIcon)}>{icon}</span>}
@@ -55,7 +57,8 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
           styles.menuToggle,
           isExpanded && styles.modifiers.expanded,
           variant === 'primary' && styles.modifiers.primary,
-          isPlain && styles.modifiers.plain,
+          (isPlain || isPlainText) && styles.modifiers.plain,
+          isPlainText && styles.modifiers.text,
           className
         )}
         type="button"

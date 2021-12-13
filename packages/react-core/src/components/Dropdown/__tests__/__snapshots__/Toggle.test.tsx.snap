@@ -21,6 +21,7 @@ exports[`Dropdown toggle 1`] = `
     onEnter={[Function]}
     onToggle={[Function]}
     parentRef={null}
+    toggleVariant="default"
   >
     <button
       aria-expanded={false}

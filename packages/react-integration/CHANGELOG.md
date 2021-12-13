@@ -3,6 +3,134 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.143.1 (2021-12-09)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# 4.143.0 (2021-12-09)
+
+
+### Features
+
+* **Popover:** add composable header and alert variants ([#6664](https://github.com/patternfly/patternfly-react/issues/6664)) ([9028e8b](https://github.com/patternfly/patternfly-react/commit/9028e8ba5d674bde6a7e29532f7926e200dd632a))
+
+
+
+
+
+## 4.142.1 (2021-12-08)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# 4.142.0 (2021-12-08)
+
+
+### Features
+
+* **DualListSelector:** add composable tree example ([#6652](https://github.com/patternfly/patternfly-react/issues/6652)) ([5fe977b](https://github.com/patternfly/patternfly-react/commit/5fe977becb5dea615724abf846f315e50931c188))
+
+
+
+
+
+## 4.141.1 (2021-12-07)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# 4.141.0 (2021-12-06)
+
+
+### Features
+
+* **Card:** Add disabled card and clean up props ([#6659](https://github.com/patternfly/patternfly-react/issues/6659)) ([86f225a](https://github.com/patternfly/patternfly-react/commit/86f225ab2e02d617e2d380c4a7f7593037c50e84))
+
+
+
+
+
+# 4.140.0 (2021-12-06)
+
+
+### Features
+
+* **MenuToggle:** add plain with text variant ([#6627](https://github.com/patternfly/patternfly-react/issues/6627)) ([1f4ca5e](https://github.com/patternfly/patternfly-react/commit/1f4ca5e36d7077da3ff3e6918874048c784216e0))
+
+
+
+
+
+# 4.139.0 (2021-12-06)
+
+
+### Features
+
+* **Dropdown:** add toggle variants ([#6651](https://github.com/patternfly/patternfly-react/issues/6651)) ([6414309](https://github.com/patternfly/patternfly-react/commit/64143094aec86aed86adb320e059d987af4f5f24))
+
+
+
+
+
+## 4.138.1 (2021-12-06)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# 4.138.0 (2021-12-03)
+
+
+### Features
+
+* **Select:** add ability to persist filtered children state ([#6670](https://github.com/patternfly/patternfly-react/issues/6670)) ([f618577](https://github.com/patternfly/patternfly-react/commit/f618577582e389409978bd1d6512ca0cf5d855cf))
+
+
+
+
+
+## 4.137.17 (2021-12-03)
+
+
+### Bug Fixes
+
+* **Slider:** fixed examples with custom steps and input ([#6662](https://github.com/patternfly/patternfly-react/issues/6662)) ([b4cab38](https://github.com/patternfly/patternfly-react/commit/b4cab38a2492564bf91e3711ce322951bcc6a051))
+
+
+
+
+
+## 4.137.16 (2021-12-02)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## 4.137.15 (2021-12-02)
+
+
+### Bug Fixes
+
+* **Tile:** fix selecting tile in tile demo ([#6653](https://github.com/patternfly/patternfly-react/issues/6653)) ([e12e44d](https://github.com/patternfly/patternfly-react/commit/e12e44d4b623de305b7df04174144a9496d282a7))
+
+
+
+
+
 ## 4.137.14 (2021-12-01)
 
 **Note:** Version bump only for package @patternfly/react-integration

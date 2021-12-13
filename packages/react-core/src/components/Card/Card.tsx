@@ -12,20 +12,18 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   className?: string;
   /** Sets the base component to render. defaults to article */
   component?: keyof JSX.IntrinsicElements;
-  /** Modifies the card to include hover styles on :hover */
+  /** @deprecated to make a card hoverable, use isSelectable or isSelectableRaised. */
   isHoverable?: boolean;
-  /** @beta Modifies the card to include hoverable-raised styles on :hover, this styling is included by default with isSelectableRaised */
-  isHoverableRaised?: boolean;
   /** Modifies the card to include compact styling. Should not be used with isLarge. */
   isCompact?: boolean;
   /** Modifies the card to include selectable styling */
   isSelectable?: boolean;
+  /** @beta Specifies the card is selectable, and applies the new raised styling on hover and select */
+  isSelectableRaised?: boolean;
   /** Modifies the card to include selected styling */
   isSelected?: boolean;
-  /** @beta Modifies the card to include selectable-raised styling and hoverable-raised styling */
-  isSelectableRaised?: boolean;
-  /** @beta Modifies the card to include selected-raised styling */
-  isSelectedRaised?: boolean;
+  /** @beta Modifies a raised selectable card to have disabled styling */
+  isDisabledRaised?: boolean;
   /** Modifies the card to include flat styling */
   isFlat?: boolean;
   /** Modifies the card to include rounded styling */
@@ -56,12 +54,11 @@ export const Card: React.FunctionComponent<CardProps> = ({
   className = '',
   component = 'article',
   isHoverable = false,
-  isHoverableRaised = false,
   isCompact = false,
   isSelectable = false,
-  isSelected = false,
   isSelectableRaised = false,
-  isSelectedRaised = false,
+  isSelected = false,
+  isDisabledRaised = false,
   isFlat = false,
   isExpanded = false,
   isRounded = false,
@@ -79,6 +76,20 @@ export const Card: React.FunctionComponent<CardProps> = ({
     console.warn('Card: Cannot use isCompact with isLarge. Defaulting to isCompact');
     isLarge = false;
   }
+
+  const getSelectableModifiers = () => {
+    if (isDisabledRaised) {
+      return css(styles.modifiers.nonSelectableRaised);
+    }
+    if (isSelectableRaised) {
+      return css(styles.modifiers.selectableRaised, isSelected && styles.modifiers.selectedRaised);
+    }
+    if (isSelectable || isHoverable) {
+      return css(styles.modifiers.selectable, isSelected && styles.modifiers.selected);
+    }
+    return '';
+  };
+
   return (
     <CardContext.Provider
       value={{
@@ -90,22 +101,17 @@ export const Card: React.FunctionComponent<CardProps> = ({
         id={id}
         className={css(
           styles.card,
-          isHoverable && styles.modifiers.hoverable,
-          isHoverableRaised && styles.modifiers.hoverableRaised,
           isCompact && styles.modifiers.compact,
-          isSelectable && !isSelectableRaised && styles.modifiers.selectable,
-          isSelected && !isSelectedRaised && isSelectable && styles.modifiers.selected,
-          isSelectableRaised && styles.modifiers.selectableRaised,
-          isSelectedRaised && isSelectableRaised && styles.modifiers.selectedRaised,
           isExpanded && styles.modifiers.expanded,
           isFlat && styles.modifiers.flat,
           isRounded && styles.modifiers.rounded,
           isLarge && styles.modifiers.displayLg,
           isFullHeight && styles.modifiers.fullHeight,
           isPlain && styles.modifiers.plain,
+          getSelectableModifiers(),
           className
         )}
-        tabIndex={isSelectableRaised || isSelectable ? '0' : undefined}
+        tabIndex={isSelectable || isSelectableRaised ? '0' : undefined}
         {...props}
         {...ouiaProps}
       >

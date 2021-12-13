@@ -434,6 +434,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               </nav>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={true}
@@ -1235,6 +1236,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
               </nav>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={false}
@@ -1514,6 +1516,7 @@ exports[`ApplicationLauncher dropup 1`] = `
               </nav>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={false}
@@ -1995,6 +1998,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               </nav>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={true}
@@ -2794,6 +2798,7 @@ exports[`ApplicationLauncher regular 1`] = `
               </nav>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={false}
@@ -3073,6 +3078,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
               </nav>,
             }
           }
+          toggleVariant="default"
         >
           <button
             aria-expanded={false}

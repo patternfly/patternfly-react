@@ -50,7 +50,7 @@ class ToolbarItems extends React.Component {
     );
 
     return (
-      <Toolbar id="toolbar">
+      <Toolbar id="toolbar-items">
         <ToolbarContent>{items}</ToolbarContent>
       </Toolbar>
     );

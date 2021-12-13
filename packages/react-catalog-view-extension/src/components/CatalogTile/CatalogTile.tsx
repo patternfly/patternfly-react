@@ -108,7 +108,7 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
         href={href || '#'}
         className={css('catalog-tile-pf', { featured }, className)}
         onClick={e => this.handleClick(e)}
-        isHoverable
+        isSelectable
         {...props}
       >
         {(badges.length > 0 || iconImg || iconClass || icon) && (

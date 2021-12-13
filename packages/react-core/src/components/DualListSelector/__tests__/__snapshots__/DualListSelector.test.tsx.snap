@@ -4487,6 +4487,7 @@ exports[`DualListSelector with tree 1`] = `
                       key="O1"
                       onOptionCheck={[Function]}
                       text="Opt1"
+                      useMemo={true}
                     >
                       <li
                         aria-expanded="true"
@@ -4598,6 +4599,7 @@ exports[`DualListSelector with tree 1`] = `
                               key="O3"
                               onOptionCheck={[Function]}
                               text="Opt3"
+                              useMemo={true}
                             >
                               <li
                                 aria-selected={false}
@@ -4658,6 +4660,7 @@ exports[`DualListSelector with tree 1`] = `
                       key="O2"
                       onOptionCheck={[Function]}
                       text="Opt2"
+                      useMemo={true}
                     >
                       <li
                         aria-selected={false}

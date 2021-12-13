@@ -37,7 +37,7 @@ export interface DualListSelectorTreeItemData {
 
 export interface DualListSelectorTreeProps {
   /** Data of the tree view */
-  data: DualListSelectorTreeItemData[];
+  data: DualListSelectorTreeItemData[] | (() => DualListSelectorTreeItemData[]);
   /** ID of the tree view */
   id?: string;
   /** @hide Flag indicating if the list is nested */
@@ -64,7 +64,8 @@ export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeP
   isDisabled = false,
   ...props
 }: DualListSelectorTreeProps) => {
-  const tree = data.map(item => (
+  const dataToRender = typeof data === 'function' ? data() : data;
+  const tree = dataToRender.map(item => (
     <DualListSelectorTreeItem
       key={item.id}
       text={item.text}
@@ -77,6 +78,7 @@ export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeP
       badgeProps={item.badgeProps}
       itemData={item}
       isDisabled={isDisabled}
+      useMemo={true}
       {...(item.children && {
         children: (
           <DualListSelectorTree
