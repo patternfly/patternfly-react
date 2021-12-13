@@ -8,6 +8,8 @@ export interface ShapeProps {
   width: number;
   height: number;
   filter?: string;
+  sides?: number;
+  hullPadding?: number;
   anchorRef?: (node: SVGElement | null) => void;
   dndDropRef?: (node: SVGElement | null) => void;
 }

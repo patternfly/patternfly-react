@@ -1,35 +1,69 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import * as React from 'react';
-import { polygonHull } from 'd3-polygon';
 import { ShapeProps } from '../../../utils/useCustomNodeShape';
 import { PointTuple } from '../../../types';
-import { hullPath, useCombineRefs } from '../../../utils';
+import { useCombineRefs } from '../../../utils';
+import { getHullPath } from './shapeUtils';
 
-const HULL_PADDING = 10;
+type TrapezoidProps = ShapeProps & {
+  hullPadding?: number;
+};
 
-const Trapezoid: React.FC<ShapeProps> = ({
+const Trapezoid: React.FC<TrapezoidProps> = ({
   className = css(styles.topologyNodeBackground),
   width,
   height,
   filter,
+  hullPadding = 0,
   anchorRef,
   dndDropRef
 }) => {
-  const refs = useCombineRefs<SVGPathElement>(dndDropRef, anchorRef);
-  // cast to number and coerce
-  const path = React.useMemo(() => {
-    const points: PointTuple[] = [
-      [width / 8 + HULL_PADDING, HULL_PADDING],
-      [width * (7 / 8) - HULL_PADDING, HULL_PADDING],
-      [HULL_PADDING, height - HULL_PADDING],
-      [width - HULL_PADDING, height - HULL_PADDING]
+  const refs = useCombineRefs<SVGPolygonElement>(dndDropRef, anchorRef);
+  const topInset = width / 8 + hullPadding / 2;
+  if (!hullPadding) {
+    const polygonPoints: PointTuple[] = [
+      [topInset, 0],
+      [width - topInset, 0],
+      [width, height],
+      [0, height]
     ];
-    const hullPoints: PointTuple[] = polygonHull(points);
-    return hullPath(hullPoints, HULL_PADDING);
-  }, [width, height]);
+    return (
+      <polygon
+        className={className}
+        ref={refs}
+        points={polygonPoints.map(p => `${p[0]},${p[1]}`).join(' ')}
+        filter={filter}
+      />
+    );
+  }
 
-  return <path className={className} ref={refs} d={path} filter={filter} strokeLinejoin="round" strokeWidth={10} />;
+  const hullExcess = hullPadding / 2;
+  const polygonPoints: PointTuple[] = [
+    [-hullExcess + topInset, 0],
+    [width - topInset + hullExcess, 0],
+    [width + hullExcess, height],
+    [-hullExcess, height]
+  ];
+
+  const points: PointTuple[] = [
+    [width / 8 + (hullPadding || 4), hullPadding],
+    [width * (7 / 8) - (hullPadding || 4), hullPadding],
+    [width - hullPadding, height - hullPadding],
+    [hullPadding, height - hullPadding]
+  ];
+
+  return (
+    <>
+      <polygon
+        ref={anchorRef}
+        points={polygonPoints.map(p => `${p[0]},${p[1]}`).join(' ')}
+        fillOpacity={0}
+        strokeWidth={0}
+      />
+      <path className={className} ref={dndDropRef} d={getHullPath(points, hullPadding)} filter={filter} />
+    </>
+  );
 };
 
 export default Trapezoid;

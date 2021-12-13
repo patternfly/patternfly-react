@@ -8,6 +8,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import { getEdgeAnimationDuration, getEdgeStyleClassModifier } from './edgeUtils';
 import DefaultConnectorTerminal from './terminals/DefaultConnectorTerminal';
+import { TOP_LAYER } from '../../const';
 
 type BaseEdgeProps = {
   element: Edge;
@@ -67,7 +68,7 @@ const BaseEdge: React.FC<BaseEdgeProps> = ({
   const linkClassName = css(styles.topologyEdgeLink, getEdgeStyleClassModifier(element.getEdgeStyle()));
 
   return (
-    <Layer id={dragging || hover ? 'top' : undefined}>
+    <Layer id={dragging || hover ? TOP_LAYER : undefined}>
       <g
         ref={hoverRef}
         data-test-id="edge-handler"

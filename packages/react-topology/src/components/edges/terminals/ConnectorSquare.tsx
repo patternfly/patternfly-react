@@ -31,13 +31,14 @@ const ConnectorSquare: React.FC<ConnectorSquareProps> = ({
 
   const classNames = css(styles.topologyConnectorSquare, className, !isTarget && styles.modifiers.source);
 
+  const rect = React.useMemo(() => <rect x={size / 2 - 1} y={-size / 4} width={size / 2} height={size / 2} />, [size]);
   return (
     <g
       transform={`translate(${connectorStartPoint[0]}, ${connectorStartPoint[1]}) rotate(${angleDeg})`}
       ref={dragRef}
       className={classNames}
     >
-      <rect x={size / 2 - 1} y={-size / 4} width={size / 2} height={size / 2} />
+      {rect}
     </g>
   );
 };

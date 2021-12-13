@@ -31,14 +31,23 @@ const ConnectorX: React.FC<ConnectorXProps> = ({
 
   const classNames = css(styles.topologyConnectorX, className, !isTarget && styles.modifiers.source);
 
+  const lines = React.useMemo(
+    () => (
+      <>
+        <line x1={size / 2} y1={-size / 2} x2={size + size / 2} y2={size / 2} />
+        <line x1={size / 2} y1={size / 2} x2={size + size / 2} y2={-size / 2} />
+      </>
+    ),
+    [size]
+  );
+
   return (
     <g
       transform={`translate(${connectorStartPoint[0]}, ${connectorStartPoint[1]}) rotate(${angleDeg})`}
       ref={dragRef}
       className={classNames}
     >
-      <line x1={size / 2} y1={-size / 2} x2={size + size / 2} y2={size / 2} />
-      <line x1={size / 2} y1={size / 2} x2={size + size / 2} y2={-size / 2} />
+      {lines}
     </g>
   );
 };

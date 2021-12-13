@@ -29,7 +29,12 @@ import {
 } from '../../utils';
 import NodeLabel from './labels/NodeLabel';
 import NodeShadows, { NODE_SHADOW_FILTER_ID_DANGER, NODE_SHADOW_FILTER_ID_HOVER } from './NodeShadows';
-import { DEFAULT_DECORATOR_RADIUS, getDefaultShapeDecoratorCenter, getShapeComponent } from './shapes';
+import {
+  DEFAULT_DECORATOR_RADIUS,
+  getDefaultShapeDecoratorCenter,
+  getShapeComponent,
+  getShapeParameters
+} from './shapes';
 
 const StatusQuadrant = TopologyQuadrant.upperLeft;
 
@@ -192,6 +197,7 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
             element={element}
             width={width}
             height={height}
+            {...getShapeParameters(shape)}
             dndDropRef={dndDropRef}
             anchorRef={anchorRef}
             filter={filter}

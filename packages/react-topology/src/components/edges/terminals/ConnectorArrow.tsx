@@ -33,11 +33,14 @@ const ConnectorArrow: React.FC<ConnectorArrowProps> = ({
   const boundingBox = getConnectorBoundingBox(startPoint, endPoint, size);
   const angleDeg = getConnectorRotationAngle(startPoint, endPoint);
 
-  const arrowPoints: [number, number][] = [
-    [size / 2, size / 2],
-    [size / 2, -size / 2],
-    [size - 1, 0]
-  ];
+  const arrowPolygon = React.useMemo(() => {
+    const arrowPoints: [number, number][] = [
+      [size / 2, size / 2],
+      [size / 2, -size / 2],
+      [size - 1, 0]
+    ];
+    return <polygon points={pointsStringFromPoints(arrowPoints)} />;
+  }, [size]);
 
   return (
     <g
@@ -45,7 +48,7 @@ const ConnectorArrow: React.FC<ConnectorArrowProps> = ({
       ref={dragRef}
       className={css(styles.topologyConnectorArrow, className)}
     >
-      <polygon points={pointsStringFromPoints(arrowPoints)} />
+      {arrowPolygon}
       <polygon points={pointsStringFromPoints(boundingBox)} fillOpacity={0} strokeWidth={0} />
     </g>
   );

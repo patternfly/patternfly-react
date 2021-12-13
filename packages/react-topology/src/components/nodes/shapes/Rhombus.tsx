@@ -1,35 +1,61 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import * as React from 'react';
-import { polygonHull } from 'd3-polygon';
 import { ShapeProps } from '../../../utils/useCustomNodeShape';
 import { PointTuple } from '../../../types';
-import { hullPath, useCombineRefs } from '../../../utils';
+import { useCombineRefs } from '../../../utils';
+import { getHullPath } from './shapeUtils';
 
-const HULL_PADDING = 10;
+type RhombusProps = ShapeProps & {
+  hullPadding?: number;
+};
 
-const Rhombus: React.FC<ShapeProps> = ({
+const Rhombus: React.FC<RhombusProps> = ({
   className = css(styles.topologyNodeBackground),
   width,
   height,
   filter,
+  hullPadding = 0,
   anchorRef,
   dndDropRef
 }) => {
-  const refs = useCombineRefs<SVGPathElement>(dndDropRef, anchorRef);
-  // cast to number and coerce
-  const path = React.useMemo(() => {
-    const points: PointTuple[] = [
-      [width / 2, HULL_PADDING],
-      [width - HULL_PADDING, height / 2],
-      [width / 2, height - HULL_PADDING],
-      [HULL_PADDING, height / 2]
-    ];
-    const hullPoints: PointTuple[] = polygonHull(points);
-    return hullPath(hullPoints, HULL_PADDING);
-  }, [width, height]);
+  const refs = useCombineRefs<SVGPolygonElement>(dndDropRef, anchorRef);
+  const polygonPoints: PointTuple[] = [
+    [width / 2, 0],
+    [width, height / 2],
+    [width / 2, height],
+    [0, height / 2]
+  ];
 
-  return <path className={className} ref={refs} d={path} filter={filter} strokeLinejoin="round" strokeWidth={10} />;
+  if (!hullPadding) {
+    return (
+      <polygon
+        className={className}
+        ref={refs}
+        points={polygonPoints.map(p => `${p[0]},${p[1]}`).join(' ')}
+        filter={filter}
+      />
+    );
+  }
+
+  const points: PointTuple[] = [
+    [width / 2, hullPadding],
+    [width - hullPadding, height / 2],
+    [width / 2, height - hullPadding],
+    [hullPadding, height / 2]
+  ];
+
+  return (
+    <>
+      <polygon
+        ref={anchorRef}
+        points={polygonPoints.map(p => `${p[0]},${p[1]}`).join(' ')}
+        fillOpacity={0}
+        strokeWidth={0}
+      />
+      <path className={className} ref={dndDropRef} d={getHullPath(points, hullPadding)} filter={filter} />
+    </>
+  );
 };
 
 export default Rhombus;
