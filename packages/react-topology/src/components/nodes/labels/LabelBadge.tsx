@@ -5,13 +5,20 @@ import { global_palette_blue_50 as defaultBadgeFill } from '@patternfly/react-to
 import { global_palette_blue_300 as defaultBadgeBorder } from '@patternfly/react-tokens/dist/js/global_palette_blue_300';
 import { global_palette_blue_300 as defaultBadgeTextColor } from '@patternfly/react-tokens/dist/js/global_palette_blue_300';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
-import { useSize, WithBadgeProps } from '../../../utils';
+import { useSize } from '../../../utils';
+import { BadgeLocation } from '../../../types';
 
-type LabelBadgeProps = {
+interface LabelBadgeProps {
   className?: string;
   x: number;
   y: number;
-} & WithBadgeProps;
+  badge?: string;
+  badgeColor?: string;
+  badgeTextColor?: string;
+  badgeBorderColor?: string;
+  badgeClassName?: string;
+  badgeLocation?: BadgeLocation;
+}
 
 const LabelBadge = React.forwardRef<SVGRectElement, LabelBadgeProps>(
   (

@@ -2,21 +2,14 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import { truncateMiddle } from '../../../utils/truncate-middle';
-import {
-  BadgeLocation,
-  createSvgIdUrl,
-  LabelPosition,
-  useCombineRefs,
-  useHover,
-  useSize,
-  WithBadgeProps
-} from '../../../utils';
+import { createSvgIdUrl, useCombineRefs, useHover, useSize } from '../../../utils';
 import { WithContextMenuProps, WithDndDragProps } from '../../../behavior';
 import NodeShadows, { NODE_SHADOW_FILTER_ID_DANGER, NODE_SHADOW_FILTER_ID_HOVER } from '../NodeShadows';
 import LabelBadge from './LabelBadge';
 import LabelContextMenu from './LabelContextMenu';
 import LabelIcon from './LabelIcon';
 import LabelActionIcon from './LabelActionIcon';
+import { BadgeLocation, LabelPosition } from '../../../types';
 
 type NodeLabelProps = {
   children?: string;
@@ -40,8 +33,13 @@ type NodeLabelProps = {
   actionIcon?: React.ReactElement;
   actionIconClassName?: string;
   onActionIconClick?: (e: React.MouseEvent) => void;
-} & WithBadgeProps &
-  WithContextMenuProps;
+  badge?: string;
+  badgeColor?: string;
+  badgeTextColor?: string;
+  badgeBorderColor?: string;
+  badgeClassName?: string;
+  badgeLocation?: BadgeLocation;
+} & WithContextMenuProps;
 
 /**
  * Renders a `<text>` component with a `<rect>` box behind.

@@ -8,8 +8,8 @@ import CollapseIcon from '@patternfly/react-icons/dist/esm/icons/compress-alt-ic
 import NodeLabel from '../nodes/labels/NodeLabel';
 import { Layer } from '../layers';
 import { GROUPS_LAYER } from '../../const';
-import { hullPath, maxPadding, useCombineRefs, useHover, WithBadgeProps, WithCollapsibleGroupProps } from '../../utils';
-import { isGraph, Node, NodeShape, NodeStyle, PointTuple } from '../../types';
+import { hullPath, maxPadding, useCombineRefs, useHover, WithCollapsibleGroupProps } from '../../utils';
+import { BadgeLocation, isGraph, Node, NodeShape, NodeStyle, PointTuple } from '../../types';
 import { useDragNode, useSvgAnchor, WithContextMenuProps, WithDndDropProps, WithSelectionProps } from '../../behavior';
 
 type DefaultGroupExpandedProps = {
@@ -19,9 +19,14 @@ type DefaultGroupExpandedProps = {
   dropTarget?: boolean;
   dragging?: boolean;
   hover?: boolean;
+  badge?: string;
+  badgeColor?: string;
+  badgeTextColor?: string;
+  badgeBorderColor?: string;
+  badgeClassName?: string;
+  badgeLocation?: BadgeLocation;
 } & WithSelectionProps &
   WithCollapsibleGroupProps &
-  WithBadgeProps &
   WithDndDropProps &
   WithContextMenuProps;
 

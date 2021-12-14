@@ -2,8 +2,8 @@ import * as React from 'react';
 import { observer } from 'mobx-react';
 import DefaultGroupExpanded from './DefaultGroupExpanded';
 import { WithContextMenuProps, WithDndDropProps, WithSelectionProps } from '../../behavior';
-import { Node } from '../../types';
-import { WithBadgeProps, WithCollapsibleGroupProps, WithLabelProps } from '../../utils';
+import { BadgeLocation, LabelPosition, Node } from '../../types';
+import { WithCollapsibleGroupProps } from '../../utils';
 import DefaultGroupCollapsed from './DefaultGroupCollapsed';
 
 type DefaultGroupProps = {
@@ -14,9 +14,20 @@ type DefaultGroupProps = {
   dragging?: boolean;
   dragRegroupable?: boolean;
   hover?: boolean;
+  label?: string; // Defaults to element.getLabel()
+  secondaryLabel?: string;
+  showLabel?: boolean; // Defaults to true
+  labelPosition?: LabelPosition; // Defaults to bottom
+  truncateLength?: number; // Defaults to 13
+  labelIconClass?: string; // Icon to show in label
+  labelIconPadding?: number;
+  badge?: string;
+  badgeColor?: string;
+  badgeTextColor?: string;
+  badgeBorderColor?: string;
+  badgeClassName?: string;
+  badgeLocation?: BadgeLocation;
 } & WithSelectionProps &
-  WithLabelProps &
-  WithBadgeProps &
   WithDndDropProps &
   WithContextMenuProps &
   WithCollapsibleGroupProps;

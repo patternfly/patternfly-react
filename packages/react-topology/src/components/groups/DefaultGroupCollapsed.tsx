@@ -5,18 +5,9 @@ import styles from '@patternfly/react-styles/css/components/Topology/topology-co
 import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-alt-icon';
 import { Layer } from '../layers';
 import { GROUPS_LAYER } from '../../const';
-import {
-  createSvgIdUrl,
-  LabelPosition,
-  useCombineRefs,
-  useHover,
-  useSize,
-  WithBadgeProps,
-  WithCollapsibleGroupProps,
-  WithLabelProps
-} from '../../utils';
-import { Node } from '../../types';
-import { useDragNode, useSvgAnchor, WithContextMenuProps, WithDndDropProps, WithSelectionProps } from '../../behavior';
+import { createSvgIdUrl, useCombineRefs, useHover, useSize, WithCollapsibleGroupProps } from '../../utils';
+import { BadgeLocation, LabelPosition, Node } from '../../types';
+import { useDragNode, WithContextMenuProps, WithDndDropProps, WithSelectionProps } from '../../behavior';
 import { Ellipse } from '../nodes/shapes';
 import NodeLabel from '../nodes/labels/NodeLabel';
 import { NODE_SHADOW_FILTER_ID_HOVER } from '../nodes/NodeShadows';
@@ -29,10 +20,21 @@ type DefaultGroupCollapsedProps = {
   dropTarget?: boolean;
   dragging?: boolean;
   hover?: boolean;
+  label?: string; // Defaults to element.getLabel()
+  secondaryLabel?: string;
+  showLabel?: boolean; // Defaults to true
+  labelPosition?: LabelPosition; // Defaults to bottom
+  truncateLength?: number; // Defaults to 13
+  labelIconClass?: string; // Icon to show in label
+  labelIconPadding?: number;
+  badge?: string;
+  badgeColor?: string;
+  badgeTextColor?: string;
+  badgeBorderColor?: string;
+  badgeClassName?: string;
+  badgeLocation?: BadgeLocation;
 } & WithSelectionProps &
-  WithLabelProps &
   WithCollapsibleGroupProps &
-  WithBadgeProps &
   WithDndDropProps &
   WithContextMenuProps;
 
@@ -66,11 +68,9 @@ const DefaultGroupCollapsed: React.FC<DefaultGroupCollapsedProps> = ({
   const [labelHover, labelHoverRef] = useHover();
   const dragNodeRef = useDragNode()[1];
   const dragLabelRef = useDragNode()[1];
-  const refs = useCombineRefs<SVGPathElement>(hoverRef, dragNodeRef);
-  const isHover = hover !== undefined ? hover : hovered;
   const [shapeSize, shapeRef] = useSize([collapsedWidth, collapsedHeight]);
-  const anchorRef = useSvgAnchor();
-  const shapeAnchorRef = useCombineRefs(shapeRef, anchorRef);
+  const refs = useCombineRefs<SVGPathElement>(hoverRef, dragNodeRef, shapeRef);
+  const isHover = hover !== undefined ? hover : hovered;
   const childCount = element.getAllNodeChildren().length;
   const [badgeSize, badgeRef] = useSize([childCount]);
 
@@ -118,7 +118,6 @@ const DefaultGroupCollapsed: React.FC<DefaultGroupCollapsedProps> = ({
                 width={collapsedWidth}
                 height={collapsedHeight}
                 dndDropRef={dndDropRef}
-                anchorRef={shapeAnchorRef}
                 filter={filter}
               />
             </>

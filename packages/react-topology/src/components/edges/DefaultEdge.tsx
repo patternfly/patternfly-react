@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
-import { Edge } from '../../types';
+import { Edge, EdgeTerminalType, NodeStatus } from '../../types';
 import { WithContextMenuProps, WithRemoveConnectorProps, WithSelectionProps } from '../../behavior';
-import { useHover, WithTerminalsProps } from '../../utils';
+import { useHover } from '../../utils';
 import { Layer } from '../layers';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
@@ -16,8 +16,16 @@ type BaseEdgeProps = {
   dragging?: boolean;
   className?: string;
   animationDuration?: number;
+  startTerminalType?: EdgeTerminalType;
+  startTerminalClass?: string;
+  startTerminalStatus?: NodeStatus;
+  endTerminalType?: EdgeTerminalType;
+  endTerminalClass?: string;
+  endTerminalStatus?: NodeStatus;
+  tag?: string;
+  tagClass?: string;
+  tagStatus?: NodeStatus;
 } & WithRemoveConnectorProps &
-  WithTerminalsProps &
   WithSelectionProps &
   Partial<WithContextMenuProps>;
 

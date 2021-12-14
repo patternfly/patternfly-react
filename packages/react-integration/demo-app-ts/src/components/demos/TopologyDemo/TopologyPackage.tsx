@@ -31,9 +31,7 @@ import {
   withDndDrop,
   withDragNode,
   withPanZoom,
-  withSelection,
-  withStatus,
-  WithStatusProps
+  withSelection
 } from '@patternfly/react-topology';
 import {
   Button,
@@ -162,10 +160,6 @@ const getModel = (layout: string): Model => {
   };
 };
 
-const getElementStatus = (): WithStatusProps => ({
-  showStatusDecorator: true
-});
-
 const getVisualization = (model: Model): Visualization => {
   const vis = new Visualization();
 
@@ -186,22 +180,14 @@ const getVisualization = (model: Model): Visualization => {
     if (type === 'default-node') {
       return withDndDrop<any, any, { droppable?: boolean; hover?: boolean; canDrop?: boolean }, NodeComponentProps>(
         nodeDropTargetSpec
-      )(
-        withDragNode(nodeDragSourceSpec(type))(
-          withSelection()(withContextMenu(() => defaultMenu)(withStatus(getElementStatus)(DefaultNode)))
-        )
-      );
+      )(withDragNode(nodeDragSourceSpec(type))(withSelection()(withContextMenu(() => defaultMenu)(DefaultNode))));
     }
     if (type === 'custom-node') {
       return withDndDrop<any, any, { droppable?: boolean; hover?: boolean; canDrop?: boolean }, NodeComponentProps>(
         nodeDropTargetSpec
       )(
         withDragNode(nodeDragSourceSpec(type))(
-          withSelection()(
-            withContextMenu(() => defaultMenu)(
-              withStatus(getElementStatus)(withCustomNodeShape(() => Path)(DefaultNode))
-            )
-          )
+          withSelection()(withContextMenu(() => defaultMenu)(withCustomNodeShape(() => Path)(DefaultNode)))
         )
       );
     }

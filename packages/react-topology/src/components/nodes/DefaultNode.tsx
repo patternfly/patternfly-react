@@ -6,7 +6,7 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
-import { Node, TopologyQuadrant } from '../../types';
+import { LabelPosition, Node, TopologyQuadrant, BadgeLocation, GraphElement } from '../../types';
 import {
   WithContextMenuProps,
   WithCreateConnectorProps,
@@ -16,17 +16,7 @@ import {
   WithSelectionProps
 } from '../../behavior';
 import Decorator from '../decorators/Decorator';
-import {
-  createSvgIdUrl,
-  useCombineRefs,
-  useHover,
-  WithBadgeProps,
-  WithStatusProps,
-  WithNodeShapeProps,
-  LabelPosition,
-  WithLabelProps,
-  StatusModifier
-} from '../../utils';
+import { createSvgIdUrl, useCombineRefs, useHover, WithNodeShapeProps, StatusModifier } from '../../utils';
 import NodeLabel from './labels/NodeLabel';
 import NodeShadows, { NODE_SHADOW_FILTER_ID_DANGER, NODE_SHADOW_FILTER_ID_HOVER } from './NodeShadows';
 import {
@@ -59,10 +49,23 @@ type DefaultNodeProps = {
   dragging?: boolean;
   edgeDragging?: boolean;
   dropTarget?: boolean;
+  label?: string; // Defaults to element.getLabel()
+  secondaryLabel?: string;
+  showLabel?: boolean; // Defaults to true
+  labelPosition?: LabelPosition; // Defaults to bottom
+  truncateLength?: number; // Defaults to 13
+  labelIconClass?: string; // Icon to show in label
+  labelIconPadding?: number;
+  badge?: string;
+  badgeColor?: string;
+  badgeTextColor?: string;
+  badgeBorderColor?: string;
+  badgeClassName?: string;
+  badgeLocation?: BadgeLocation;
+  showStatusDecorator?: boolean;
+  statusDecoratorTooltip?: React.ReactNode;
+  onStatusDecoratorClick?: (event: React.MouseEvent<SVGGElement, MouseEvent>, element: GraphElement) => void;
 } & WithSelectionProps &
-  WithLabelProps &
-  WithStatusProps &
-  WithBadgeProps &
   WithNodeShapeProps &
   WithDragNodeProps &
   WithDndDragProps &

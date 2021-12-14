@@ -82,6 +82,16 @@ export enum EdgeTerminalType {
   cross = 'cross'
 }
 
+export enum LabelPosition {
+  right,
+  bottom
+}
+
+export enum BadgeLocation {
+  inner,
+  below
+}
+
 export enum ModelKind {
   graph = 'graph',
   node = 'node',
