@@ -42,7 +42,7 @@ section: developer-resources
 - **Pagination:**
   - Updated `toggleTemplate` description to include `ofWord` prop ([#6622](https://github.com/patternfly/patternfly-react/pull/6622))
 - **Popover:**
-  - Added composable header and alert variants ([#6664](https://github.com/patternfly/patternfly-react/pull/6664))
+  - Added alert variants ([#6664](https://github.com/patternfly/patternfly-react/pull/6664))
   - Forwarded focus to close button with voice over click ([#6660](https://github.com/patternfly/patternfly-react/pull/6660))
 - **Select:**
   - Added ability to persist filtered children state ([#6670](https://github.com/patternfly/patternfly-react/pull/6670))
