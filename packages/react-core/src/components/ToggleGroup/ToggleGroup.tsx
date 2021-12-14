@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/ToggleGroup/toggle-group';
+import { ToggleGroupItem } from './ToggleGroupItem';
 
 export interface ToggleGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the toggle group */
@@ -9,6 +10,7 @@ export interface ToggleGroupProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Modifies the toggle group to include compact styling. */
   isCompact?: boolean;
+  disableAll?: boolean;
   /** Accessible label for the toggle group */
   'aria-label'?: string;
 }
@@ -17,12 +19,18 @@ export const ToggleGroup: React.FunctionComponent<ToggleGroupProps> = ({
   className,
   children,
   isCompact = false,
+  disableAll = false,
   'aria-label': ariaLabel,
   ...props
 }: ToggleGroupProps) => {
   const toggleGroupItemList = [] as any[];
   React.Children.forEach(children, child => {
-    toggleGroupItemList.push(child);
+    const childCompName = (child as any).type.name;
+    const newChild =
+      childCompName !== ToggleGroupItem.name
+        ? child
+        : React.cloneElement(child as React.ReactElement, disableAll ? { isDisabled: true } : {});
+    toggleGroupItemList.push(newChild);
   });
 
   return (
