@@ -23,8 +23,8 @@ export const useBadge = (
 ): WithBadgeProps => {
   const element = React.useContext(ElementContext);
   return {
-    ...(getBadgeProps ? getBadgeProps(element) : {}),
-    ...(options ? options : {})
+    ...(options ? options : {}),
+    ...(getBadgeProps ? getBadgeProps(element) : {})
   };
 };
 

@@ -8,6 +8,7 @@ import {
   Model,
   NodeModel,
   NodeShape,
+  NodeStatus,
   useComponentFactory,
   useModel
 } from '@patternfly/react-topology';
@@ -29,8 +30,10 @@ import {
   EDGE_STYLES,
   EDGE_TERMINAL_TYPES,
   EDGE_TERMINAL_TYPES_COUNT,
-  RIGHT_LABEL_COLUMN_WIDTH
+  RIGHT_LABEL_COLUMN_WIDTH,
+  STATUS_VALUES
 } from './utils/styleUtils';
+import { DataTypes } from './components/StyleNode';
 
 export const NodeStyles = withTopologySetup(() => {
   useComponentFactory(defaultComponentFactory);
@@ -692,6 +695,113 @@ export const EdgeTerminalStyles = withTopologySetup(() => {
       data: {
         startTerminalType: EdgeTerminalType.directional,
         endTerminalType: EdgeTerminalType.directional
+      }
+    });
+  });
+
+  useModel({
+    graph: {
+      id: 'g1',
+      type: 'graph'
+    },
+    nodes,
+    edges
+  });
+  return null;
+});
+
+export const EdgeTerminalStatusStyles = withTopologySetup(() => {
+  useComponentFactory(defaultComponentFactory);
+  useComponentFactory(stylesComponentFactory);
+  const nodes: NodeModel[] = [];
+  const edges: EdgeModel[] = [];
+
+  STATUS_VALUES.forEach((status, statusIndex) => {
+    if (status === NodeStatus.default) {
+      return;
+    }
+    EDGE_TERMINAL_TYPES.forEach((terminalType, typeIndex) => {
+      if (terminalType === EdgeTerminalType.none) {
+        return;
+      }
+      const n1 = createNode({
+        id: `${terminalType}--${status}-1`,
+        shape: NodeShape.circle,
+        label: 'Node 1',
+        row: typeIndex,
+        column: statusIndex * 3 - 2
+      });
+      const n2 = createNode({
+        id: `${terminalType}-${status}-1`,
+        shape: NodeShape.circle,
+        dataType: DataTypes.Alternate,
+        label: 'Node 1',
+        row: typeIndex,
+        column: statusIndex * 3
+      });
+      nodes.push(n1);
+      nodes.push(n2);
+      edges.push({
+        id: `edge-${n1.id}-${n2.id}`,
+        type: 'edge',
+        source: n1.id,
+        target: n2.id,
+        edgeStyle: EdgeStyle.default,
+        data: {
+          startTerminalType: terminalType,
+          startTerminalStatus: STATUS_VALUES[statusIndex],
+          endTerminalType: terminalType,
+          endTerminalStatus: STATUS_VALUES[statusIndex]
+        }
+      });
+    });
+  });
+
+  useModel({
+    graph: {
+      id: 'g1',
+      type: 'graph'
+    },
+    nodes,
+    edges
+  });
+  return null;
+});
+
+export const EdgeTerminalTagStyles = withTopologySetup(() => {
+  useComponentFactory(defaultComponentFactory);
+  useComponentFactory(stylesComponentFactory);
+  const nodes: NodeModel[] = [];
+  const edges: EdgeModel[] = [];
+
+  STATUS_VALUES.forEach((status, statusIndex) => {
+    const n1 = createNode({
+      id: `${status}-1`,
+      shape: NodeShape.circle,
+      label: 'Node 1',
+      row: statusIndex + 1,
+      column: 1
+    });
+    const n2 = createNode({
+      id: `${status}-2`,
+      shape: NodeShape.circle,
+      dataType: DataTypes.Alternate,
+      label: 'Node 1',
+      row: statusIndex + 1,
+      column: 4
+    });
+    nodes.push(n1);
+    nodes.push(n2);
+    edges.push({
+      id: `edge-${n1.id}-${n2.id}`,
+      type: 'edge',
+      source: n1.id,
+      target: n2.id,
+      edgeStyle: EdgeStyle.default,
+      data: {
+        endTerminalType: EdgeTerminalType.directional,
+        tag: '250 kbs',
+        tagStatus: status
       }
     });
   });

@@ -1,27 +1,23 @@
 import * as React from 'react';
-import { Edge, EdgeTerminalType } from '../../types';
-import { observer } from '../../mobx-exports';
+import { observer } from 'mobx-react';
+import { Edge } from '../../types';
 import { WithContextMenuProps, WithRemoveConnectorProps, WithSelectionProps } from '../../behavior';
-import { useHover } from '../../utils';
+import { useHover, WithTerminalsProps } from '../../utils';
 import { Layer } from '../layers';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
-import { getEdgeAnimationDuration, getEdgeStyleClassModifier } from './edgeUtils';
+import { getEdgeAnimationDuration, getEdgeStyleClassModifier } from '../../utils/style-utils';
 import DefaultConnectorTerminal from './terminals/DefaultConnectorTerminal';
 import { TOP_LAYER } from '../../const';
+import DefaultConnectorTag from './DefaultConnectorTag';
 
 type BaseEdgeProps = {
   element: Edge;
   dragging?: boolean;
   className?: string;
   animationDuration?: number;
-  startTerminalType?: EdgeTerminalType;
-  startTerminalClass?: string;
-  startTerminalStatus?: string;
-  endTerminalType?: EdgeTerminalType;
-  endTerminalClass?: string;
-  endTerminalStatus?: string;
 } & WithRemoveConnectorProps &
+  WithTerminalsProps &
   WithSelectionProps &
   Partial<WithContextMenuProps>;
 
@@ -37,6 +33,9 @@ const BaseEdge: React.FC<BaseEdgeProps> = ({
   endTerminalType,
   endTerminalClass,
   endTerminalStatus,
+  tag,
+  tagClass,
+  tagStatus,
   children,
   className,
   selected,
@@ -92,24 +91,31 @@ const BaseEdge: React.FC<BaseEdgeProps> = ({
           y2={endPoint.y}
           style={{ animationDuration: `${edgeAnimationDuration}s` }}
         />
-        {startTerminalType && (
-          <DefaultConnectorTerminal
-            className={startTerminalClass}
-            isTarget={false}
-            edge={element}
-            terminalType={startTerminalType}
-            status={startTerminalStatus}
+        {tag && (
+          <DefaultConnectorTag
+            className={tagClass}
+            startPoint={element.getStartPoint()}
+            endPoint={element.getEndPoint()}
+            tag={tag}
+            status={tagStatus}
           />
         )}
-        {endTerminalType && (
-          <DefaultConnectorTerminal
-            className={endTerminalClass}
-            isTarget
-            edge={element}
-            terminalType={endTerminalType}
-            status={endTerminalStatus}
-          />
-        )}
+        <DefaultConnectorTerminal
+          className={startTerminalClass}
+          isTarget={false}
+          edge={element}
+          terminalType={startTerminalType}
+          status={startTerminalStatus}
+          highlight={dragging || hover}
+        />
+        <DefaultConnectorTerminal
+          className={endTerminalClass}
+          isTarget
+          edge={element}
+          terminalType={endTerminalType}
+          status={endTerminalStatus}
+          highlight={dragging || hover}
+        />
         {children}
       </g>
     </Layer>

@@ -33,7 +33,9 @@ import {
   CollapsibleGroupStyles,
   EdgeStyles,
   EdgeAnimationStyles,
-  EdgeTerminalStyles
+  EdgeTerminalStyles,
+  EdgeTerminalStatusStyles,
+  EdgeTerminalTagStyles
 } from './Styles';
 
 import './TopologyDemo.css';
@@ -174,6 +176,12 @@ export const TopologyDemo: React.FC = () => {
                 </Tab>
                 <Tab eventKey={2} title={<TabTitleText>Edge Terminal Types</TabTitleText>}>
                   <EdgeTerminalStyles />
+                </Tab>
+                <Tab eventKey={3} title={<TabTitleText>Edge Terminal Status</TabTitleText>}>
+                  <EdgeTerminalStatusStyles />
+                </Tab>
+                <Tab eventKey={4} title={<TabTitleText>Edge Terminal Tags</TabTitleText>}>
+                  <EdgeTerminalTagStyles />
                 </Tab>
               </Tabs>
             </Tab>

@@ -79,8 +79,7 @@ export enum EdgeTerminalType {
   directionalAlt = 'directionalAlt',
   circle = 'circle',
   square = 'square',
-  cross = 'cross',
-  x = 'x'
+  cross = 'cross'
 }
 
 export enum ModelKind {

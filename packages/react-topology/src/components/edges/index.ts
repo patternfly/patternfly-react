@@ -1,3 +1,3 @@
 export { default as DefaultEdge } from './DefaultEdge';
-export * from './edgeUtils';
+export { default as DefaultConntectorTag } from './DefaultConnectorTag';
 export * from './terminals';

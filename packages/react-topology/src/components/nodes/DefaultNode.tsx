@@ -6,7 +6,7 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
-import { Node, NodeStatus, TopologyQuadrant } from '../../types';
+import { Node, TopologyQuadrant } from '../../types';
 import {
   useSvgAnchor,
   WithContextMenuProps,
@@ -25,7 +25,8 @@ import {
   WithStatusProps,
   WithNodeShapeProps,
   LabelPosition,
-  WithLabelProps
+  WithLabelProps,
+  StatusModifier
 } from '../../utils';
 import NodeLabel from './labels/NodeLabel';
 import NodeShadows, { NODE_SHADOW_FILTER_ID_DANGER, NODE_SHADOW_FILTER_ID_HOVER } from './NodeShadows';
@@ -37,14 +38,6 @@ import {
 } from './shapes';
 
 const StatusQuadrant = TopologyQuadrant.upperLeft;
-
-const StatusClass = {
-  [NodeStatus.default]: '',
-  [NodeStatus.info]: 'pf-m-info',
-  [NodeStatus.success]: 'pf-m-success',
-  [NodeStatus.warning]: 'pf-m-warning',
-  [NodeStatus.danger]: 'pf-m-danger'
-};
 
 const getStatusIcon = (status: string, height: number) => {
   switch (status) {
@@ -126,7 +119,7 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
     (dragging || edgeDragging) && 'pf-m-dragging',
     canDrop && dropTarget && 'pf-m-drop-target',
     selected && 'pf-m-selected',
-    StatusClass[status]
+    StatusModifier[status]
   );
 
   let filter;

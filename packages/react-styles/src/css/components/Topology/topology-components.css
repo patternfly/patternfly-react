@@ -117,7 +117,7 @@
   stroke: var(--pf-global--primary-color--light-100);
 }
 
-.pf-topology__node.pf-m-success .pf-topology__node__background {
+.pf-topology__node.pf-m- success.pf-topology__node__background {
   stroke: var(--pf-global--success-color--100);
 }
 
@@ -311,6 +311,22 @@
   opacity: var(--edge--opacity);
 }
 
+.pf-topology__edge.pf-m-info {
+  --edge--stroke: var(--pf-global--primary-color--light-100);
+}
+
+.pf-topology__edge.pf-m-success {
+  --edge--stroke: var(--pf-global--success-color--100);
+}
+
+.pf-topology__edge.pf-m-warning {
+  --edge--stroke: var(--pf-global--warning-color--100);
+}
+
+.pf-topology__edge.pf-m-danger {
+  --edge--stroke: var(--pf-global--danger-color--100);
+}
+
 .pf-topology__edge__link {
    stroke-width: var(--edge--stroke-width);
    stroke-dasharray: var(--edge--stroke-dasharray);
@@ -368,5 +384,38 @@
 .pf-topology__edge .pf-topology-connector-arrow {
   cursor: var(--edge__arrow--cursor);
   stroke: var(--edge--stroke);
+}
+
+.pf-topology__edge__tag__background {
+  fill: var(--edge--stroke);
+  stroke-width: 0;
+}
+
+.pf-topology__edge__tag > text {
+  stroke: var(--pf-global--palette--white);
+  stroke-width: 0.5;
+  font-size: 10px;
+  pointer-events: none;
+  fill: var(--pf-global--palette--white);
+}
+
+.pf-topology__edge__tag.pf-m-info .pf-topology__edge__tag__background {
+  fill: var(--pf-global--primary-color--light-100);
+}
+
+.pf-topology__edge__tag.pf-m-success .pf-topology__edge__tag__background {
+  fill: var(--pf-global--success-color--100);
+}
+
+.pf-topology__edge__tag.pf-m-warning .pf-topology__edge__tag__background {
+  fill: var(--pf-global--warning-color--100);
+}
+.pf-topology__edge__tag.pf-m-warning > text {
+  stroke: var(--pf-global--palette--black-1000);
+  fill: var(--pf-global--palette--black-1000);
+}
+
+.pf-topology__edge__tag.pf-m-danger .pf-topology__edge__tag__background {
+  fill: var(--pf-global--danger-color--100);
 }
 

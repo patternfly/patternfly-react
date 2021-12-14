@@ -9,7 +9,14 @@ import {
   withCollapsibleGroup,
   withDragNode,
   withSelection,
-  ModelKind
+  ModelKind,
+  DragSourceSpec,
+  DragObjectWithType,
+  EditableDragOperationType,
+  DragSpecOperationType,
+  NodeComponentProps,
+  NODE_DRAG_TYPE,
+  Node
 } from '@patternfly/react-topology';
 import DemoDefaultNode from './DemoDefaultNode';
 import Path from './shapes/Path';
@@ -34,13 +41,29 @@ const createContextMenuItems = (...labels: string[]): React.ReactElement[] => la
 
 const defaultMenu = createContextMenuItems('First', 'Second', 'Third', '-', 'Fourth');
 
+const nodeDragSourceSpec = (): DragSourceSpec<
+  DragObjectWithType,
+  DragSpecOperationType<EditableDragOperationType>,
+  Node,
+  {
+    dragging?: boolean;
+    regrouping?: boolean;
+  },
+  NodeComponentProps & { canEdit?: boolean }
+> => ({
+  item: { type: NODE_DRAG_TYPE },
+  collect: monitor => ({
+    dragging: monitor.isDragging()
+  })
+});
+
 const stylesComponentFactory: ComponentFactory = (
   kind: ModelKind,
   type: string
 ): React.ComponentType<{ element: GraphElement }> | undefined => {
   switch (type) {
     case 'node':
-      return withContextMenu(() => defaultMenu)(withDragNode()(withSelection()(StyleNode)));
+      return withContextMenu(() => defaultMenu)(withDragNode(nodeDragSourceSpec())(withSelection()(StyleNode)));
     case 'node-path':
       return withCustomNodeShape(() => Path)(DemoDefaultNode);
     case 'node-polygon':
