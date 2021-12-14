@@ -1,24 +1,24 @@
-import { Point, ShapeProps, useCombineRefs } from '@patternfly/react-topology';
+import { PointTuple, ShapeProps, usePolygonAnchor } from '@patternfly/react-topology';
 import * as React from 'react';
-import * as _ from 'lodash';
 
-const Polygon: React.FC<ShapeProps> = ({ className, width, height, filter, dndDropRef, anchorRef }) => {
-  const refs = useCombineRefs<SVGPolygonElement>(dndDropRef, anchorRef);
-  const points: Point[] = [
-    new Point(width / 2, 0),
-    new Point(width - width / 8, height),
-    new Point(0, height / 3),
-    new Point(width, height / 3),
-    new Point(width / 8, height)
+const Polygon: React.FC<ShapeProps> = ({ className, width, height, filter, dndDropRef }) => {
+  const setPolygonAnchorPoints = usePolygonAnchor();
+  const points: PointTuple[] = [
+    [width / 2, 0],
+    [width - width / 8, height],
+    [0, height / 3],
+    [width, height / 3],
+    [width / 8, height]
   ];
-
-  const p: string = _.reduce(
-    points,
-    (result: string, nextPoint: Point) => `${result}${nextPoint.x},${nextPoint.y} `,
-    ''
+  setPolygonAnchorPoints(points);
+  return (
+    <polygon
+      className={className}
+      ref={dndDropRef}
+      points={points.map(p => `${p[0]},${p[1]}`).join(' ')}
+      filter={filter}
+    />
   );
-
-  return <polygon className={className} ref={refs} points={p} filter={filter} />;
 };
 
 export default Polygon;

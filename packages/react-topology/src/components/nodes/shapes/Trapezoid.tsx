@@ -3,8 +3,8 @@ import styles from '@patternfly/react-styles/css/components/Topology/topology-co
 import * as React from 'react';
 import { ShapeProps } from '../../../utils/useCustomNodeShape';
 import { PointTuple } from '../../../types';
-import { useCombineRefs } from '../../../utils';
 import { getHullPath } from './shapeUtils';
+import { usePolygonAnchor } from '../../../behavior';
 
 type TrapezoidProps = ShapeProps & {
   hullPadding?: number;
@@ -16,10 +16,9 @@ const Trapezoid: React.FC<TrapezoidProps> = ({
   height,
   filter,
   hullPadding = 0,
-  anchorRef,
   dndDropRef
 }) => {
-  const refs = useCombineRefs<SVGPolygonElement>(dndDropRef, anchorRef);
+  const setPolygonAnchorPoints = usePolygonAnchor();
   const topInset = width / 8 + hullPadding / 2;
   if (!hullPadding) {
     const polygonPoints: PointTuple[] = [
@@ -28,10 +27,11 @@ const Trapezoid: React.FC<TrapezoidProps> = ({
       [width, height],
       [0, height]
     ];
+    setPolygonAnchorPoints(polygonPoints);
     return (
       <polygon
         className={className}
-        ref={refs}
+        ref={dndDropRef}
         points={polygonPoints.map(p => `${p[0]},${p[1]}`).join(' ')}
         filter={filter}
       />
@@ -45,6 +45,7 @@ const Trapezoid: React.FC<TrapezoidProps> = ({
     [width + hullExcess, height],
     [-hullExcess, height]
   ];
+  setPolygonAnchorPoints(polygonPoints);
 
   const points: PointTuple[] = [
     [width / 8 + (hullPadding || 4), hullPadding],
@@ -53,17 +54,7 @@ const Trapezoid: React.FC<TrapezoidProps> = ({
     [hullPadding, height - hullPadding]
   ];
 
-  return (
-    <>
-      <polygon
-        ref={anchorRef}
-        points={polygonPoints.map(p => `${p[0]},${p[1]}`).join(' ')}
-        fillOpacity={0}
-        strokeWidth={0}
-      />
-      <path className={className} ref={dndDropRef} d={getHullPath(points, hullPadding)} filter={filter} />
-    </>
-  );
+  return <path className={className} ref={dndDropRef} d={getHullPath(points, hullPadding)} filter={filter} />;
 };
 
 export default Trapezoid;

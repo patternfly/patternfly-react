@@ -8,6 +8,7 @@ export * from './useDragNode';
 export * from './usePanZoom';
 export * from './useReconnect';
 export * from './useSelection';
+export * from './usePolygonAnchor';
 export * from './useSvgAnchor';
 export * from './withContextMenu';
 export * from './withCreateConnector';

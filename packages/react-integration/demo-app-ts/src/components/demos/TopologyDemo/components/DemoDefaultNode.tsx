@@ -9,7 +9,6 @@ import {
   WithDndDragProps,
   WithDndDropProps,
   useCombineRefs,
-  useSvgAnchor,
   WithNodeShapeProps,
   useHover,
   getShapeComponent
@@ -44,7 +43,6 @@ const DemoDefaultNode: React.FC<DemoDefaultNodeProps> = ({
   const [hover, hoverRef] = useHover();
   const refs = useCombineRefs(hoverRef, dragNodeRef, dndDragRef);
   const shape = element.getNodeShape();
-  const anchorRef = useSvgAnchor();
   const { width, height } = element.getDimensions();
 
   const className = `pf-ri-topology__node__background${canDrop && hover ? ' pf-m-hover' : ''}${
@@ -62,14 +60,7 @@ const DemoDefaultNode: React.FC<DemoDefaultNodeProps> = ({
 
   return (
     <g ref={refs} onClick={onSelect} onContextMenu={onContextMenu}>
-      <ShapeComponent
-        className={className}
-        element={element}
-        width={width}
-        height={height}
-        dndDropRef={dndDropRef}
-        anchorRef={anchorRef}
-      />
+      <ShapeComponent className={className} element={element} width={width} height={height} dndDropRef={dndDropRef} />
     </g>
   );
 };

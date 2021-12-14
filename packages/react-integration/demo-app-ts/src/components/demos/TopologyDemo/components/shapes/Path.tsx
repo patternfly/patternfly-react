@@ -1,7 +1,8 @@
-import { ShapeProps, useCombineRefs } from '@patternfly/react-topology';
+import { ShapeProps, useCombineRefs, useSvgAnchor } from '@patternfly/react-topology';
 import * as React from 'react';
 
-const Path: React.FC<ShapeProps> = ({ className, width, height, filter, dndDropRef, anchorRef }) => {
+const Path: React.FC<ShapeProps> = ({ className, width, height, filter, dndDropRef }) => {
+  const anchorRef = useSvgAnchor();
   const refs = useCombineRefs<SVGPathElement>(dndDropRef, anchorRef);
 
   return (

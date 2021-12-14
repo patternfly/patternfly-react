@@ -2,21 +2,21 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import * as React from 'react';
 import { ShapeProps } from '../../../utils/useCustomNodeShape';
-import { useCombineRefs } from '../../../utils';
+import { useAnchor } from '../../../behavior';
+import { RectAnchor } from '../../../anchors';
 
 const Stadium: React.FC<ShapeProps> = ({
   className = css(styles.topologyNodeBackground),
   width,
   height,
   filter,
-  anchorRef,
   dndDropRef
 }) => {
-  const refs = useCombineRefs<SVGRectElement>(dndDropRef, anchorRef);
+  useAnchor(RectAnchor);
   return (
     <rect
       className={className}
-      ref={refs}
+      ref={dndDropRef}
       x={0}
       y={0}
       rx={height / 2}

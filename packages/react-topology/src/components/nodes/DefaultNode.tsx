@@ -8,7 +8,6 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/excl
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import { Node, TopologyQuadrant } from '../../types';
 import {
-  useSvgAnchor,
   WithContextMenuProps,
   WithCreateConnectorProps,
   WithDndDragProps,
@@ -108,7 +107,6 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
   const [hovered, hoverRef] = useHover();
   const shape = element.getNodeShape();
   const status = element.getNodeStatus();
-  const anchorRef = useSvgAnchor();
   const refs = useCombineRefs<SVGEllipseElement>(hoverRef, dragNodeRef);
   const { width, height } = element.getDimensions();
   const isHover = hover !== undefined ? hover : hovered;
@@ -192,7 +190,6 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
             height={height}
             {...getShapeParameters(shape)}
             dndDropRef={dndDropRef}
-            anchorRef={anchorRef}
             filter={filter}
           />
         )}
