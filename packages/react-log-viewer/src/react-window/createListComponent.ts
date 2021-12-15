@@ -143,7 +143,7 @@ export default function createListComponent({
     }
 
     scrollTo(scrollOffset: number): void {
-      scrollOffset = Math.max(0, scrollOffset);
+      scrollOffset = Math.max(0, scrollOffset + 15);
 
       this.setState(prevState => {
         if (prevState.scrollOffset === scrollOffset) {
@@ -216,7 +216,10 @@ export default function createListComponent({
         outerElementType,
         outerTagName,
         style,
-        useIsScrolling
+        useIsScrolling,
+        width,
+        isTextWrapped,
+        hasLineNumbers
       } = this.props;
       const { isScrolling } = this.state;
 
@@ -255,6 +258,7 @@ export default function createListComponent({
             paddingTop: 0,
             paddingBottom: 0,
             WebkitOverflowScrolling: 'touch',
+            overflowX: isTextWrapped ? 'hidden' : 'auto',
             ...style
           }
         },
@@ -264,7 +268,9 @@ export default function createListComponent({
             className: innerClassName,
             ref: innerRef,
             style: {
-              height: estimatedTotalSize > height ? estimatedTotalSize : height,
+              height: estimatedTotalSize > height ? estimatedTotalSize + 15 : height, // get rid of the effects of always on scrollbar
+              /* eslint-disable-next-line no-nested-ternary */
+              width: isTextWrapped ? (hasLineNumbers ? width - 65 : width) : 'auto',
               pointerEvents: isScrolling ? 'none' : undefined
             }
           },
