@@ -78,6 +78,7 @@ export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ 
       <span className={css(styles.logViewerIndex)}>{getRowIndex(index)}</span>
       <span
         className={css(styles.logViewerText)}
+        style={{ width: 'fit-content' }}
         dangerouslySetInnerHTML={{ __html: ansiUp.ansi_to_html(getFormattedData()) }}
       />
     </div>

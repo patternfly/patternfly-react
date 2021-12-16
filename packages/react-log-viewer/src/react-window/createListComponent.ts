@@ -216,7 +216,10 @@ export default function createListComponent({
         outerElementType,
         outerTagName,
         style,
-        useIsScrolling
+        useIsScrolling,
+        width,
+        isTextWrapped,
+        hasLineNumbers
       } = this.props;
       const { isScrolling } = this.state;
 
@@ -255,6 +258,7 @@ export default function createListComponent({
             paddingTop: 0,
             paddingBottom: 0,
             WebkitOverflowScrolling: 'touch',
+            overflowX: isTextWrapped ? 'hidden' : 'auto',
             ...style
           }
         },
@@ -265,6 +269,8 @@ export default function createListComponent({
             ref: innerRef,
             style: {
               height: estimatedTotalSize > height ? estimatedTotalSize : height,
+              /* eslint-disable-next-line no-nested-ternary */
+              width: isTextWrapped ? (hasLineNumbers ? width - 65 : width) : 'auto',
               pointerEvents: isScrolling ? 'none' : undefined
             }
           },
