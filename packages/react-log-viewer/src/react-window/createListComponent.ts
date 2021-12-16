@@ -268,7 +268,7 @@ export default function createListComponent({
             className: innerClassName,
             ref: innerRef,
             style: {
-              height: estimatedTotalSize > height ? estimatedTotalSize : height, // get rid of the effects of always on scrollbar
+              height: estimatedTotalSize > height ? estimatedTotalSize : height,
               /* eslint-disable-next-line no-nested-ternary */
               width: isTextWrapped ? (hasLineNumbers ? width - 65 : width) : 'auto',
               pointerEvents: isScrolling ? 'none' : undefined
