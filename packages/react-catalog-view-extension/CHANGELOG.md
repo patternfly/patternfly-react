@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.32.5 (2021-12-16)
+
+
+### Bug Fixes
+
+* **LogViewer:** fix the issue that scrollbar could compress the content of the logs ([#6702](https://github.com/patternfly/patternfly-react/issues/6702)) ([11aab1f](https://github.com/patternfly/patternfly-react/commit/11aab1f71a1aa9959cf14b887ab55b845a794a00))
+
+
+
+
+
 ## 4.32.4 (2021-12-14)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension
