@@ -143,7 +143,7 @@ export default function createListComponent({
     }
 
     scrollTo(scrollOffset: number): void {
-      scrollOffset = Math.max(0, scrollOffset + 15);
+      scrollOffset = Math.max(0, scrollOffset);
 
       this.setState(prevState => {
         if (prevState.scrollOffset === scrollOffset) {
@@ -268,7 +268,7 @@ export default function createListComponent({
             className: innerClassName,
             ref: innerRef,
             style: {
-              height: estimatedTotalSize > height ? estimatedTotalSize + 15 : height, // get rid of the effects of always on scrollbar
+              height: estimatedTotalSize > height ? estimatedTotalSize : height, // get rid of the effects of always on scrollbar
               /* eslint-disable-next-line no-nested-ternary */
               width: isTextWrapped ? (hasLineNumbers ? width - 65 : width) : 'auto',
               pointerEvents: isScrolling ? 'none' : undefined
