@@ -448,5 +448,5 @@ TabsOpenWithSecondaryTabsDemo = () => {
 ```
 
 ### Tables and tabs
-```ts isFullscreen file="./examples/Tabs/TabsAndTable.tsx"
+```js isFullscreen file="./examples/Tabs/TabsAndTable.tsx"
 ```

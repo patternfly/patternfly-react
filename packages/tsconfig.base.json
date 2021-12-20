@@ -26,6 +26,6 @@
     "**/**.test.tsx",
     "**/**.test.ts",
     "**/examples/**",
-    "**/demos/shared/**"
+    "**/demos/Tabs/**"
   ]
 }
