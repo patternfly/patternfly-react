@@ -111,6 +111,12 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     }
   };
 
+  componentWillUnmount = () => {
+    if (this.timer) {
+      window.clearTimeout(this.timer);
+    }
+  };
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   expandContent = (_event: React.MouseEvent<Element, MouseEvent>) => {
     this.setState(prevState => ({
