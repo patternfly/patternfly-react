@@ -95,6 +95,7 @@ describe('Data Toolbar Demo Test', () => {
       it('displays X filters applied message', () => {
         cy.get('.pf-m-chip-container .pf-m-chip-group').should('not.exist');
         cy.get('.pf-c-toolbar__item').should('contain.text', 'filters applied');
+        cy.get('.pf-c-toolbar__item').should('contain.text', 'Applied filters: ');
         cy.get('.pf-c-toolbar__item .pf-c-button').should('be.visible');
         cy.get('.pf-c-toolbar__item .pf-c-chip-group__close').should('not.be.visible');
         cy.get('.pf-c-toolbar__item .pf-c-button').contains('Clear filters');
