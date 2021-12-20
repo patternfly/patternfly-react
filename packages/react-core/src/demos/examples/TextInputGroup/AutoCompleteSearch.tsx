@@ -157,8 +157,8 @@ export const AutoCompleteSearch = () => {
   const handleClick = (event: MouseEvent) => {
     if (
       menuRef.current &&
-      !menuRef.current.contains(event.target as Node) &&
-      !textInputGroupRef.current.contains(event.target as Node)
+      !menuRef.current.contains(event.target as HTMLElement) &&
+      !textInputGroupRef.current.contains(event.target as HTMLElement)
     ) {
       setMenuIsOpen(false);
     }
