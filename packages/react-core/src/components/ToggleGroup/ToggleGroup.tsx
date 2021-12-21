@@ -10,6 +10,7 @@ export interface ToggleGroupProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Modifies the toggle group to include compact styling. */
   isCompact?: boolean;
+  /** Disable all ToggleGroupItems under this component. */
   disableAll?: boolean;
   /** Accessible label for the toggle group */
   'aria-label'?: string;
