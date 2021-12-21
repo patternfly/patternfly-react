@@ -30,7 +30,7 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement>,
   /** @deprecated Use `toggleVariant` instead. Whether or not the dropdown toggle button should have primary button styling */
   isPrimary?: boolean;
   /** Alternate styles for the dropdown toggle button */
-  toggleVariant?: 'primary' | 'secondary' | 'default';
+  toggleVariant?: 'plain-text' | 'primary' | 'secondary' | 'default';
   /** An image to display within the dropdown toggle, appearing before any component children */
   icon?: React.ReactNode;
   /** The icon to display for the toggle, appearing after any component children. Defaults to CaretDownIcon. Set to null to not show an icon. */

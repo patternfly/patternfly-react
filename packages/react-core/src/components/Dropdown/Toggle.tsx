@@ -38,7 +38,7 @@ export interface ToggleProps {
   /** Style the toggle as a child of a split button */
   isSplitButton?: boolean;
   /** Alternate styles for the dropdown toggle button */
-  toggleVariant?: 'primary' | 'secondary' | 'default';
+  toggleVariant?: 'plain-text' | 'primary' | 'secondary' | 'default';
   /** Flag for aria popup */
   'aria-haspopup'?: boolean | 'listbox' | 'menu' | 'dialog' | 'grid' | 'tree';
   /** Allows selecting toggle to select parent */
@@ -48,7 +48,8 @@ export interface ToggleProps {
 const buttonVariantStyles = {
   default: '',
   primary: styles.modifiers.primary,
-  secondary: styles.modifiers.secondary
+  secondary: styles.modifiers.secondary,
+  'plain-text': `${styles.modifiers.plain} ${styles.modifiers.text}`
 };
 
 export class Toggle extends React.Component<ToggleProps> {
