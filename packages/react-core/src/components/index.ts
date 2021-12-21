@@ -81,3 +81,4 @@ export * from './Wizard';
 export * from './DragDrop';
 export * from './TextInputGroup';
 export * from './Panel';
+export * from './Truncate';

@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders default truncation 1`] = `
+<Fragment>
+  <span
+    className="pf-c-truncate"
+  >
+    <span
+      className="pf-c-truncate__start"
+    >
+      <span
+        className="pf-c-truncate__text"
+      >
+        Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
+      </span>
+    </span>
+  </span>
+</Fragment>
+`;
+
+exports[`renders middle truncation 1`] = `
+<Fragment>
+  <span
+    className="pf-c-truncate"
+  >
+    <span
+      className="pf-c-truncate__start"
+    >
+      <span
+        className="pf-c-truncate__text"
+      >
+        Vestibulum interdum risus et enim fauc
+      </span>
+    </span>
+    <span
+      className="pf-c-truncate__end"
+    >
+      <span
+        className="pf-c-truncate__text"
+      >
+        ibus, sit amet molestie est accumsan.
+      </span>
+    </span>
+  </span>
+</Fragment>
+`;
+
+exports[`renders start truncation 1`] = `
+<Fragment>
+  <span
+    className="pf-c-truncate"
+  >
+    <span
+      className="pf-c-truncate__end"
+    >
+      <span
+        className="pf-c-truncate__text"
+      >
+        Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
+      </span>
+    </span>
+  </span>
+</Fragment>
+`;
