@@ -7,14 +7,13 @@ beta: true
 
 ## Examples
 
-### End
+### Default
 ```js
 import React from 'react';
 import { Truncate } from '@patternfly/react-core';
 <div style={{ width: '226px', resize: 'horizontal', overflow: 'auto' }}>
   <Truncate
     content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
-    position={'end'}
   />
 </div>
 ```
@@ -39,6 +38,18 @@ import { Truncate } from '@patternfly/react-core';
   <Truncate
     content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
     position={'start'}
+  />
+</div>
+```
+
+### Default with tooltip at the bottom
+```js
+import React from 'react';
+import { Truncate } from '@patternfly/react-core';
+<div style={{  width: '226px', resize: 'horizontal', overflow: 'auto' }}>
+  <Truncate
+    content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
+    tooltipPosition={'bottom'}
   />
 </div>
 ```

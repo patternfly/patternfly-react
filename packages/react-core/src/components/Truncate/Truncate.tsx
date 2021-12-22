@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
 import { css } from '@patternfly/react-styles';
+import { Tooltip } from '../Tooltip';
 
 export enum TruncatePosition {
   start = 'start',
@@ -8,25 +9,21 @@ export enum TruncatePosition {
   middle = 'middle'
 }
 
+const truncateStyles = {
+  start: styles.truncateEnd,
+  end: styles.truncateStart
+};
+
 interface TruncateProps extends React.HTMLProps<HTMLDivElement> {
   /** Class to add to outer span */
   className?: string;
   /** Text to truncate */
   content: string;
-  /** Where you want to truncate the text. */
+  /** Where the text will be truncated */
   position?: 'start' | 'middle' | 'end';
   /** Tooltip position */
-  tooltipPosition?: string;
+  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
 }
-
-const getStyle = (position: 'start' | 'middle' | 'end') => {
-  if (position === TruncatePosition.start) {
-    return styles.truncateEnd;
-  }
-  if (position === TruncatePosition.end) {
-    return styles.truncateStart;
-  }
-};
 
 const splitToHalf = (str: string) => {
   const half = Math.ceil(str.length / 2);
@@ -35,28 +32,32 @@ const splitToHalf = (str: string) => {
 
 export const Truncate: React.FunctionComponent<TruncateProps> = ({
   className,
-  position = TruncatePosition.end,
+  position = 'end',
+  tooltipPosition = 'top',
   content,
   ...props
 }: TruncateProps) => (
-  <React.Fragment>
-    {(position === TruncatePosition.end || position === TruncatePosition.start) && (
-      <span className={css(styles.truncate, className)} {...props}>
-        <span className={getStyle(position)}>
-          <span className={styles.truncateText}>{content}</span>
+  <Tooltip position={tooltipPosition} content={content}>
+    <span className={css(styles.truncate, className)} {...props}>
+      {(position === TruncatePosition.end || position === TruncatePosition.start) && (
+        <span className={truncateStyles[position]}>
+          <span className={styles.truncateText}>
+            {content}
+            {TruncatePosition.start && <React.Fragment>&lrm;</React.Fragment>}
+          </span>
         </span>
-      </span>
-    )}
-    {position === TruncatePosition.middle && (
-      <span className={css(styles.truncate, className)} {...props}>
-        <span className={styles.truncateStart}>
-          <span className={styles.truncateText}>{splitToHalf(content)[0]}</span>
-        </span>
-        <span className={styles.truncateEnd}>
-          <span className={styles.truncateText}>{splitToHalf(content)[1]}</span>
-        </span>
-      </span>
-    )}
-  </React.Fragment>
+      )}
+      {position === TruncatePosition.middle && (
+        <React.Fragment>
+          <span className={styles.truncateStart}>
+            <span className={styles.truncateText}>{splitToHalf(content)[0]}</span>
+          </span>
+          <span className={styles.truncateEnd}>
+            <span className={styles.truncateText}>{splitToHalf(content)[1]}</span>
+          </span>
+        </React.Fragment>
+      )}
+    </span>
+  </Tooltip>
 );
 Truncate.displayName = 'Truncate';
