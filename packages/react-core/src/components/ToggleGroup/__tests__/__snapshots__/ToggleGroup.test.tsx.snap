@@ -71,9 +71,11 @@ exports[`isCompact 1`] = `
   role="group"
 >
   <ToggleGroupItem
+    key=".0"
     text="Test"
   />
   <ToggleGroupItem
+    key=".1"
     text="Test"
   />
 </div>
