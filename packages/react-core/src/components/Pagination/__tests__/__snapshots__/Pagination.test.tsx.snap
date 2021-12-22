@@ -50,6 +50,7 @@ exports[`component render custom pagination toggle 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -461,6 +462,7 @@ exports[`component render custom pagination toggle 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -776,6 +778,7 @@ exports[`component render custom perPageOptions 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -1212,6 +1215,7 @@ exports[`component render custom perPageOptions 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -1539,6 +1543,7 @@ exports[`component render custom start end 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -2023,6 +2028,7 @@ exports[`component render custom start end 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -2329,6 +2335,7 @@ exports[`component render empty per page options 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -2485,6 +2492,7 @@ exports[`component render empty per page options 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -2838,6 +2846,7 @@ exports[`component render last page 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -3322,6 +3331,7 @@ exports[`component render last page 1`] = `
       onSetPage={[Function]}
       page={2}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -3649,6 +3659,7 @@ exports[`component render limited number of pages 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -4133,6 +4144,7 @@ exports[`component render limited number of pages 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={20}
       toFirstPage="Go to first page"
@@ -4462,6 +4474,7 @@ exports[`component render no items 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -4946,6 +4959,7 @@ exports[`component render no items 1`] = `
       onSetPage={[Function]}
       page={0}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -5275,6 +5289,7 @@ exports[`component render should render correctly bottom 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -5735,6 +5750,7 @@ exports[`component render should render correctly bottom 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -6062,6 +6078,7 @@ exports[`component render should render correctly bottom sticky 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -6522,6 +6539,7 @@ exports[`component render should render correctly bottom sticky 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -6849,6 +6867,7 @@ exports[`component render should render correctly compact 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -7333,6 +7352,7 @@ exports[`component render should render correctly compact 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -7519,6 +7539,7 @@ exports[`component render should render correctly disabled 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -8006,6 +8027,7 @@ exports[`component render should render correctly disabled 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -8335,6 +8357,7 @@ exports[`component render should render correctly sticky 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -8819,6 +8842,7 @@ exports[`component render should render correctly sticky 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -9146,6 +9170,7 @@ exports[`component render should render correctly top 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -9630,6 +9655,7 @@ exports[`component render should render correctly top 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -10432,6 +10458,7 @@ exports[`component render titles 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle="books"
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -10788,6 +10815,7 @@ exports[`component render up drop direction 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -11272,6 +11300,7 @@ exports[`component render up drop direction 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -11599,6 +11628,7 @@ exports[`component render zero results 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -12083,6 +12113,7 @@ exports[`component render zero results 1`] = `
       onSetPage={[Function]}
       page={0}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
