@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.29.0 (2021-12-22)
+
+
+### Features
+
+* **Toolbar:** support customizing text in ToolbarChipGroupContent ([#6694](https://github.com/patternfly/patternfly-react/issues/6694)) ([24266ad](https://github.com/patternfly/patternfly-react/commit/24266adf569c027574abd1503b5e46974220349a))
+
+
+
+
+
 ## 4.28.5 (2021-12-16)
 
 
