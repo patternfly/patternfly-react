@@ -416,6 +416,15 @@ export class ToolbarDemo extends React.Component<ToolbarProps, ToolbarState> {
         >
           <ToolbarContent>{toolbarItems}</ToolbarContent>
         </Toolbar>
+        <Toolbar
+          id="toolbar-number-of-filters-text"
+          clearAllFilters={this.onDelete}
+          className="pf-m-toggle-group-container"
+          clearFiltersButtonText="Clear filters"
+          numberOfFiltersText={numOfFilters => `Applied filters: ${numOfFilters}`}
+        >
+          <ToolbarContent>{toolbarItems}</ToolbarContent>
+        </Toolbar>
       </React.Fragment>
     );
   }

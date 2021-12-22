@@ -41,6 +41,8 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement>, OUIAProps
     xl?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
     '2xl'?: 'insetNone' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl';
   };
+  /** Text to display in the total number of applied filters ToolbarFilter */
+  numberOfFiltersText?: (numberOfFilters: number) => string;
 }
 
 export interface ToolbarState {
@@ -125,6 +127,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
       usePageInsets,
       isSticky,
       ouiaId,
+      numberOfFiltersText,
       ...props
     } = this.props;
 
@@ -171,6 +174,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
             showClearFiltersButton={showClearFiltersButton}
             clearFiltersButtonText={clearFiltersButtonText}
             numberOfFilters={numberOfFilters}
+            numberOfFiltersText={numberOfFiltersText}
             collapseListedFiltersBreakpoint={collapseListedFiltersBreakpoint}
           />
         </ToolbarContext.Provider>
