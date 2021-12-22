@@ -43,7 +43,7 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
         <span className={truncateStyles[position]}>
           <span className={styles.truncateText}>
             {content}
-            {TruncatePosition.start && <React.Fragment>&lrm;</React.Fragment>}
+            {position === TruncatePosition.start && <React.Fragment>&lrm;</React.Fragment>}
           </span>
         </span>
       )}
