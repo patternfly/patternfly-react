@@ -1,6 +1,6 @@
 # React-docs
 
-This project uses [theme-patternfly-org](https://github.com/patternfly/patternfly-org/tree/master/packages/theme-patternfly-org) to render example MD files.
+This project uses [theme-patternfly-org](https://github.com/patternfly/patternfly-org/tree/main/packages/theme-patternfly-org) to render example MD files.
 
 ## Writing an MD file
 
