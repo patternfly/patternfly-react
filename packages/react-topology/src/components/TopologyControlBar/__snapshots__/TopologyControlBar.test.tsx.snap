@@ -189,7 +189,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                                   test zoom in
                                 </span>
                                 <span
-                                  className="sr-only"
+                                  className="pf-u-screen-reader"
                                 >
                                   test-zoom-in-aria-label
                                 </span>
@@ -234,7 +234,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                                       test zoom in
                                     </span>
                                     <span
-                                      className="sr-only"
+                                      className="pf-u-screen-reader"
                                     >
                                       test-zoom-in-aria-label
                                     </span>
@@ -324,7 +324,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                                   size="sm"
                                 />
                                 <span
-                                  className="sr-only"
+                                  className="pf-u-screen-reader"
                                 >
                                   Zoom Out
                                 </span>
@@ -390,7 +390,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                                       </svg>
                                     </SearchMinusIcon>
                                     <span
-                                      className="sr-only"
+                                      className="pf-u-screen-reader"
                                     >
                                       Zoom Out
                                     </span>
@@ -480,7 +480,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                                   size="sm"
                                 />
                                 <span
-                                  className="sr-only"
+                                  className="pf-u-screen-reader"
                                 >
                                   Reset View
                                 </span>
@@ -546,7 +546,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                                       </svg>
                                     </ExpandIcon>
                                     <span
-                                      className="sr-only"
+                                      className="pf-u-screen-reader"
                                     >
                                       Reset View
                                     </span>
@@ -849,7 +849,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                   size="sm"
                                 />
                                 <span
-                                  className="sr-only"
+                                  className="pf-u-screen-reader"
                                 >
                                   Zoom In
                                 </span>
@@ -915,7 +915,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                       </svg>
                                     </SearchPlusIcon>
                                     <span
-                                      className="sr-only"
+                                      className="pf-u-screen-reader"
                                     >
                                       Zoom In
                                     </span>
@@ -1005,7 +1005,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                   size="sm"
                                 />
                                 <span
-                                  className="sr-only"
+                                  className="pf-u-screen-reader"
                                 >
                                   Zoom Out
                                 </span>
@@ -1071,7 +1071,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                       </svg>
                                     </SearchMinusIcon>
                                     <span
-                                      className="sr-only"
+                                      className="pf-u-screen-reader"
                                     >
                                       Zoom Out
                                     </span>
@@ -1161,7 +1161,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                   size="sm"
                                 />
                                 <span
-                                  className="sr-only"
+                                  className="pf-u-screen-reader"
                                 >
                                   Fit to Screen
                                 </span>
@@ -1227,7 +1227,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                       </svg>
                                     </ExpandArrowsAltIcon>
                                     <span
-                                      className="sr-only"
+                                      className="pf-u-screen-reader"
                                     >
                                       Fit to Screen
                                     </span>
@@ -1317,7 +1317,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                   size="sm"
                                 />
                                 <span
-                                  className="sr-only"
+                                  className="pf-u-screen-reader"
                                 >
                                   Reset View
                                 </span>
@@ -1383,7 +1383,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                                       </svg>
                                     </ExpandIcon>
                                     <span
-                                      className="sr-only"
+                                      className="pf-u-screen-reader"
                                     >
                                       Reset View
                                     </span>
