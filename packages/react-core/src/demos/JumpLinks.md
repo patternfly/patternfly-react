@@ -30,7 +30,8 @@ import {
   SidebarPanel,
   Switch,
   Title,
-  TextContent
+  TextContent,
+  getResizeObserver
 } from '@patternfly/react-core';
 import DashboardWrapper from './examples/DashboardWrapper';
 
