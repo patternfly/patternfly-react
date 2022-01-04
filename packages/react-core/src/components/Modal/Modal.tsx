@@ -39,6 +39,8 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   actions?: any;
   /** A callback for when the close button is clicked */
   onClose?: () => void;
+  /** Close button id */
+  closeButtonId?: string;
   /** Default width of the Modal. */
   width?: number | string;
   /** The parent container to append the modal to. Defaults to document.body */

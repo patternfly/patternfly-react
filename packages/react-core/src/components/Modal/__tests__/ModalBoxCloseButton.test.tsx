@@ -4,7 +4,7 @@ import { ModalBoxCloseButton } from '../ModalBoxCloseButton';
 
 test('ModalBoxCloseButton Test', () => {
   const mockfn = jest.fn();
-  const view = shallow(<ModalBoxCloseButton className="test-box-close-button-class" onClose={mockfn} />);
+  const view = shallow(<ModalBoxCloseButton className="test-box-close-button-class" onClose={mockfn} id="close-button-id"/>);
   expect(view).toMatchSnapshot();
   view
     .find('.test-box-close-button-class')
