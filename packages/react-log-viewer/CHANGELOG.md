@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.27.1 (2022-01-04)
+
+
+### Bug Fixes
+
+* **OverflowMenu:** pass HTMLDivElements props to group and control divs ([#6674](https://github.com/patternfly/patternfly-react/issues/6674)) ([e6d0d64](https://github.com/patternfly/patternfly-react/commit/e6d0d6406a07de04f4b232ca9a21247c0e9746c0))
+
+
+
+
+
 # 4.27.0 (2021-12-22)
 
 

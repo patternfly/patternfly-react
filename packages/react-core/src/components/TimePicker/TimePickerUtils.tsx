@@ -1,12 +1,18 @@
 export const amSuffix = ' AM';
 export const pmSuffix = ' PM';
 
-export const makeTimeOptions = (stepMinutes: number, hour12: boolean, delimiter: string) => {
+export const makeTimeOptions = (
+  stepMinutes: number,
+  hour12: boolean,
+  delimiter: string,
+  minTime: string,
+  maxTime: string
+) => {
   const res = [];
   const iter = new Date(new Date().setHours(0, 0, 0, 0));
   const iterDay = iter.getDay();
   while (iter.getDay() === iterDay) {
-    let hour = iter.getHours();
+    let hour: string | number = iter.getHours();
     let suffix = amSuffix;
     if (hour12) {
       if (hour === 0) {
@@ -18,19 +24,18 @@ export const makeTimeOptions = (stepMinutes: number, hour12: boolean, delimiter:
         hour %= 12;
       }
     }
-    res.push(
-      (hour12 ? hour.toString() : hour.toString().padStart(2, '0')) +
-        delimiter +
-        iter
-          .getMinutes()
-          .toString()
-          .padStart(2, '0') +
-        (hour12 ? suffix : '')
-    );
-
+    hour = hour12 ? hour.toString() : hour.toString().padStart(2, '0');
+    const minutes = iter
+      .getMinutes()
+      .toString()
+      .padStart(2, '0');
+    const timeOption = hour + delimiter + minutes + (hour12 ? suffix : '');
+    // time option is valid if within min/max constraints
+    if (isWithinMinMax(minTime, maxTime, timeOption, delimiter)) {
+      res.push(timeOption);
+    }
     iter.setMinutes(iter.getMinutes() + stepMinutes);
   }
-
   return res;
 };
 
@@ -53,26 +58,20 @@ export const parseTime = (time: string | Date, timeRegex: RegExp, delimiter: str
   } else if (typeof time === 'string') {
     time = time.trim();
     if (is12Hour && time !== '' && validateTime(time, timeRegex, delimiter, is12Hour)) {
+      const [, hours, minutes, suffix = ''] = timeRegex.exec(time);
+      const uppercaseSuffix = suffix.toUpperCase();
       // Format AM/PM according to design
       let ampm = '';
-      if (time.toUpperCase().includes(amSuffix.toUpperCase().trim())) {
-        time = time
-          .toUpperCase()
-          .replace(amSuffix.toUpperCase().trim(), '')
-          .trim();
+      if (uppercaseSuffix === amSuffix.toUpperCase().trim()) {
         ampm = amSuffix;
-      } else if (time.toUpperCase().includes(pmSuffix.toUpperCase().trim())) {
-        time = time
-          .toUpperCase()
-          .replace(pmSuffix.toUpperCase().trim(), '')
-          .trim();
+      } else if (uppercaseSuffix === pmSuffix.toUpperCase().trim()) {
         ampm = pmSuffix;
       } else {
         // if this 12 hour time is missing am/pm but otherwise valid,
         // append am/pm depending on time of day
         ampm = new Date().getHours() > 11 ? pmSuffix : amSuffix;
       }
-      return `${time}${ampm}`;
+      return `${hours}${delimiter}${minutes}${ampm}`;
     }
   }
   return time.toString();
@@ -110,4 +109,35 @@ export const getHours = (time: string, timeRegex: RegExp) => {
 export const getMinutes = (time: string, timeRegex: RegExp) => {
   const parts = time.match(timeRegex);
   return parts && parts.length ? parseInt(parts[2]) : null;
+};
+
+export const isWithinMinMax = (minTime: string, maxTime: string, time: string, delimiter: string) => {
+  // do not throw error if empty string
+  if (time.trim() === '') {
+    return true;
+  }
+  const convertTo24Hour = (time: string): string => {
+    const timeReg = new RegExp(`^\\s*(\\d\\d?)${delimiter}([0-5]\\d)\\s*([AaPp][Mm])?\\s*$`);
+    const regMatches = timeReg.exec(time);
+    if (!regMatches || !regMatches.length) {
+      return;
+    }
+    let hours = regMatches[1].padStart(2, '0');
+    const minutes = regMatches[2];
+    const suffix = regMatches[3] || '';
+    if (suffix.toUpperCase() === 'PM' && hours !== '12') {
+      hours = `${parseInt(hours) + 12}`;
+    } else if (suffix.toUpperCase() === 'AM' && hours === '12') {
+      hours = '00';
+    }
+    return `${hours}${delimiter}${minutes}`;
+  };
+
+  // correctly format as 24hr times (12:30AM => 00:30, 1:15 => 01:15)
+  minTime = convertTo24Hour(minTime);
+  time = convertTo24Hour(time);
+  maxTime = convertTo24Hour(maxTime);
+
+  // simple string comparison for 24hr times
+  return minTime <= time && time <= maxTime;
 };
