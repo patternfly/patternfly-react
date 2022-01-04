@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.142.3 (2022-01-04)
+
+
+### Bug Fixes
+
+* **docs:** fix broken theme-patternfly-org link ([#6726](https://github.com/patternfly/patternfly-react/issues/6726)) ([4ba15e9](https://github.com/patternfly/patternfly-react/commit/4ba15e9d9611afbb80d995e4d63f5478c4212a9e))
+
+
+
+
+
 ## 4.142.2 (2022-01-04)
 
 **Note:** Version bump only for package demo-app-ts
