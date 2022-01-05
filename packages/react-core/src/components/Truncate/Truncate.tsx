@@ -14,7 +14,7 @@ const truncateStyles = {
   end: styles.truncateStart
 };
 
-interface TruncateProps extends React.HTMLProps<HTMLDivElement> {
+interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
   /** Class to add to outer span */
   className?: string;
   /** Text to truncate */
