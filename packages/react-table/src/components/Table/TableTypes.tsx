@@ -215,11 +215,11 @@ export interface ICell {
   dataLabel?: string;
 }
 
-export type RowCellContent = (value?: string, rowIndex?: number, cellIndex?: number, props?: any) => void;
+export type RowCellContent<T = any> = (value?: string, rowIndex?: number, cellIndex?: number, props?: T) => void;
 
-export interface IRowCell {
-  title?: string | React.ReactNode | RowCellContent;
-  props?: any;
+export interface IRowCell<T = any> {
+  title?: string | React.ReactNode | RowCellContent<T>;
+  props?: T;
   formatters?: IFormatter[];
 }
 
