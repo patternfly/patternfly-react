@@ -7,17 +7,14 @@ export interface ModalBoxCloseButtonProps {
   className?: string;
   /** A callback for when the close button is clicked */
   onClose?: () => void;
-  /** Close button id */
-  id?: string;
 }
 
 export const ModalBoxCloseButton: React.FunctionComponent<ModalBoxCloseButtonProps> = ({
   className = '',
   onClose = () => undefined as any,
-  id,
   ...props
 }: ModalBoxCloseButtonProps) => (
-  <Button className={className} variant="plain" onClick={onClose} aria-label="Close" id={id} {...props}>
+  <Button className={className} variant="plain" onClick={onClose} aria-label="Close" {...props}>
     <TimesIcon />
   </Button>
 );

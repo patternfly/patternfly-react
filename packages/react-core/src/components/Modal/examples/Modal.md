@@ -44,7 +44,7 @@ class SimpleModal extends React.Component {
           title="Simple modal header"
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
-          closeButtonId="basic-close-button"
+          closeButtonProps={{ id: 'basic-close-button', 'data-example': 'example-data-attribute' }}
           actions={[
             <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
               Confirm
