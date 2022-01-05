@@ -1,12 +1,18 @@
 import * as React from 'react';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import SvgDropShadowFilter from '../svg/SvgDropShadowFilter';
 import { createSvgIdUrl, useHover } from '../../utils';
+import { DEFAULT_DECORATOR_PADDING } from '../nodes';
 
 interface DecoratorTypes {
+  className?: string;
   x: number;
   y: number;
   radius: number;
+  padding?: number;
   showBackground?: boolean;
+  icon?: React.ReactNode;
   onClick?(event: React.MouseEvent<SVGGElement, MouseEvent>): void;
   ariaLabel?: string;
   circleRef?: React.Ref<SVGCircleElement>;
@@ -16,21 +22,25 @@ const FILTER_ID = 'DecoratorDropShadowFilterId';
 const HOVER_FILTER_ID = 'DecoratorDropShadowHoverFilterId';
 
 const Decorator: React.FunctionComponent<DecoratorTypes> = ({
+  className,
   x,
   y,
   showBackground,
   radius,
+  padding = DEFAULT_DECORATOR_PADDING,
   children,
+  icon,
   onClick,
   ariaLabel,
   circleRef
 }) => {
   const [hover, hoverRef] = useHover();
+  const iconRadius = radius - padding;
 
   const decorator = (
     <g
       ref={hoverRef}
-      className="pf-topology__node__decorator"
+      className={css(styles.topologyNodeDecorator, className)}
       {...(onClick
         ? {
             onClick: e => {
@@ -48,14 +58,25 @@ const Decorator: React.FunctionComponent<DecoratorTypes> = ({
         <circle
           key={hover ? 'circle-hover' : 'circle'}
           ref={circleRef}
-          className="pf-topology__node__decorator__bg"
+          className={css(styles.topologyNodeDecoratorBg)}
           cx={x}
           cy={y}
           r={radius}
           filter={createSvgIdUrl(hover ? HOVER_FILTER_ID : FILTER_ID)}
         />
       )}
-      <g transform={`translate(${x}, ${y})`}>{children}</g>
+      <g transform={`translate(${x}, ${y})`}>
+        {icon ? (
+          <g
+            className={css(styles.topologyNodeDecoratorIcon)}
+            style={{ fontSize: `${iconRadius * 2}px` }}
+            transform={`translate(-${iconRadius}, -${iconRadius})`}
+          >
+            {icon}
+          </g>
+        ) : null}
+        {children}
+      </g>
     </g>
   );
 

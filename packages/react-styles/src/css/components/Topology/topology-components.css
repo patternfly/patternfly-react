@@ -142,6 +142,10 @@
   fill: var(--pf-global--BackgroundColor--light-100);
 }
 
+.pf-topology__node__decorator__icon {
+  font-size: var(--pf-global--icon--FontSize--sm);
+}
+
 .pf-topology__node__decorator__status .pf-m-info {
   color: var(--pf-global--primary-color--light-100);
 }
@@ -330,7 +334,8 @@
 .pf-topology__edge__link {
    stroke-width: var(--edge--stroke-width);
    stroke-dasharray: var(--edge--stroke-dasharray);
-  animation: pf-topology__edge__dash 0s linear infinite forwards;
+  fill-opacity: 0;
+   animation: pf-topology__edge__dash 0s linear infinite forwards;
  }
 .pf-topology__edge__link.pf-m-dotted {
   stroke-dasharray: 2;

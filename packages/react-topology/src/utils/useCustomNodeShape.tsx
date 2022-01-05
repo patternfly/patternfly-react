@@ -15,7 +15,7 @@ export interface ShapeProps {
 
 export interface WithNodeShapeProps {
   getCustomShape?: (node: Node) => React.FC<ShapeProps>;
-  getShapeDecoratorCenter?: (quadrant: TopologyQuadrant, node: Node, radius: number) => { x: number; y: number };
+  getShapeDecoratorCenter?: (quadrant: TopologyQuadrant, node: Node, radius?: number) => { x: number; y: number };
 }
 
 export const useCustomNodeShape = (getCustomShape: () => React.FC<ShapeProps>): WithNodeShapeProps => ({

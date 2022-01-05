@@ -28,14 +28,14 @@ import {
 
 const StatusQuadrant = TopologyQuadrant.upperLeft;
 
-const getStatusIcon = (status: string, height: number) => {
+const getStatusIcon = (status: string) => {
   switch (status) {
     case 'danger':
-      return <ExclamationCircleIcon height={height} width={height} className="pf-m-danger" />;
+      return <ExclamationCircleIcon className="pf-m-danger" />;
     case 'warning':
-      return <ExclamationTriangleIcon height={height} width={height} className="pf-m-warning" />;
+      return <ExclamationTriangleIcon className="pf-m-warning" />;
     case 'success':
-      return <CheckCircleIcon height={height} width={height} className="pf-m-success" />;
+      return <CheckCircleIcon className="pf-m-success" />;
     default:
       return null;
   }
@@ -62,6 +62,7 @@ type DefaultNodeProps = {
   badgeBorderColor?: string;
   badgeClassName?: string;
   badgeLocation?: BadgeLocation;
+  attachments?: React.ReactNode; // ie. decorators
   showStatusDecorator?: boolean;
   statusDecoratorTooltip?: React.ReactNode;
   onStatusDecoratorClick?: (event: React.MouseEvent<SVGGElement, MouseEvent>, element: GraphElement) => void;
@@ -96,6 +97,7 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
   getCustomShape,
   onSelect,
   children,
+  attachments,
   dragNodeRef,
   dragging,
   edgeDragging,
@@ -134,7 +136,7 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
     if (!status || !showStatusDecorator) {
       return null;
     }
-    const icon = getStatusIcon(status, DEFAULT_DECORATOR_RADIUS * 2);
+    const icon = getStatusIcon(status);
     if (!icon) {
       return null;
     }
@@ -150,14 +152,8 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
         radius={DEFAULT_DECORATOR_RADIUS}
         showBackground={false}
         onClick={e => onStatusDecoratorClick(e, element)}
-      >
-        <g
-          className="pf-topology__node__decorator__status pf-topology__node__decorator__bg"
-          transform={`translate(-${DEFAULT_DECORATOR_RADIUS}, -${DEFAULT_DECORATOR_RADIUS})`}
-        >
-          {icon}
-        </g>
-      </Decorator>
+        icon={<g className={css(styles.topologyNodeDecoratorStatus)}>{icon}</g>}
+      />
     );
 
     if (statusDecoratorTooltip) {
@@ -224,6 +220,7 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
         {children}
       </g>
       {statusDecorator}
+      {attachments}
     </g>
   );
 };

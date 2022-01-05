@@ -88,6 +88,10 @@ const DefaultGroupExpanded: React.FC<DefaultGroupExpandedProps> = ({
   const children = element.getNodes().filter(c => c.isVisible());
   const prevPoints = React.useRef<(PointWithSize | PointTuple)[]>();
 
+  if (!children.length) {
+    return null;
+  }
+
   let parent = element.getParent();
   let altGroup = false;
   while (!isGraph(parent)) {

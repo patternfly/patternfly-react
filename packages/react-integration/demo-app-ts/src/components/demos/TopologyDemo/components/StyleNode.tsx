@@ -1,14 +1,25 @@
 import * as React from 'react';
 import {
+  DEFAULT_DECORATOR_RADIUS,
+  Decorator,
   DefaultNode,
+  getDefaultShapeDecoratorCenter,
   Node,
   NodeShape,
+  NodeStatus,
+  observer,
+  TopologyQuadrant,
   WithContextMenuProps,
   WithDragNodeProps,
+  WithNodeShapeProps,
   WithSelectionProps
 } from '@patternfly/react-topology';
 import DefaultIcon from '@patternfly/react-icons/dist/esm/icons/builder-image-icon';
 import AlternateIcon from '@patternfly/react-icons/dist/esm/icons/regions-icon';
+import FolderOpenIcon from '@patternfly/react-icons/dist/esm/icons/folder-open-icon';
+import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
+import PauseCircle from '@patternfly/react-icons/dist/esm/icons/pause-circle-icon';
+import Thumbtack from '@patternfly/react-icons/dist/esm/icons/thumbtack-icon';
 
 export enum DataTypes {
   Default,
@@ -19,6 +30,7 @@ const ICON_PADDING = 20;
 type StyleNodeProps = {
   element: Node;
 } & WithContextMenuProps &
+  WithNodeShapeProps &
   WithDragNodeProps &
   WithSelectionProps;
 
@@ -46,6 +58,54 @@ const renderIcon = (data: { dataType?: DataTypes }, element: Node): React.ReactN
   );
 };
 
+const renderDecorator = (
+  element: Node,
+  quadrant: TopologyQuadrant,
+  icon: React.ReactNode,
+  getShapeDecoratorCenter?: (
+    quadrant: TopologyQuadrant,
+    node: Node,
+    radius?: number
+  ) => {
+    x: number;
+    y: number;
+  }
+): React.ReactNode => {
+  const { x, y } = getShapeDecoratorCenter
+    ? getShapeDecoratorCenter(quadrant, element)
+    : getDefaultShapeDecoratorCenter(quadrant, element);
+
+  return <Decorator x={x} y={y} radius={DEFAULT_DECORATOR_RADIUS} showBackground icon={icon} />;
+};
+
+const renderDecorators = (
+  element: Node,
+  data: { showDecorators?: boolean },
+  getShapeDecoratorCenter?: (
+    quadrant: TopologyQuadrant,
+    node: Node,
+    radius?: number
+  ) => {
+    x: number;
+    y: number;
+  }
+): React.ReactNode => {
+  if (!data.showDecorators) {
+    return null;
+  }
+  const nodeStatus = element.getNodeStatus();
+  return (
+    <>
+      {!nodeStatus || nodeStatus === NodeStatus.default
+        ? renderDecorator(element, TopologyQuadrant.upperLeft, <FolderOpenIcon />, getShapeDecoratorCenter)
+        : null}
+      {renderDecorator(element, TopologyQuadrant.upperRight, <BlueprintIcon />, getShapeDecoratorCenter)}
+      {renderDecorator(element, TopologyQuadrant.lowerLeft, <PauseCircle />, getShapeDecoratorCenter)}
+      {renderDecorator(element, TopologyQuadrant.lowerRight, <Thumbtack />, getShapeDecoratorCenter)}
+    </>
+  );
+};
+
 const StyleNode: React.FC<StyleNodeProps> = ({ element, onContextMenu, contextMenuOpen, ...rest }) => {
   const data = element.getData();
 
@@ -66,10 +126,11 @@ const StyleNode: React.FC<StyleNodeProps> = ({ element, onContextMenu, contextMe
       {...passedData}
       onContextMenu={data.showContextMenu ? onContextMenu : undefined}
       contextMenuOpen={contextMenuOpen}
+      attachments={renderDecorators(element, passedData, rest.getShapeDecoratorCenter)}
     >
       {renderIcon(passedData, element)}
     </DefaultNode>
   );
 };
 
-export default StyleNode;
+export default observer(StyleNode);

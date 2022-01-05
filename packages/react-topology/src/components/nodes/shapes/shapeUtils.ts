@@ -14,7 +14,8 @@ export const LOWER_RIGHT_RADIANS = Math.PI / 4;
 export const UPPER_LEFT_RADIANS = (5 * Math.PI) / 4;
 export const UPPER_RIGHT_RADIANS = (7 * Math.PI) / 4;
 
-export const DEFAULT_DECORATOR_RADIUS = 8;
+export const DEFAULT_DECORATOR_RADIUS = 12;
+export const DEFAULT_DECORATOR_PADDING = 4;
 
 const quadrantRadians = (quadrant: TopologyQuadrant): number => {
   switch (quadrant) {
@@ -104,7 +105,7 @@ export const getShapeParameters = (
 export const getDefaultShapeDecoratorCenter = (
   quadrant: TopologyQuadrant,
   node: Node,
-  radius: number
+  radius: number = DEFAULT_DECORATOR_RADIUS
 ): { x: number; y: number } => {
   const { width, height } = node.getDimensions();
   const shape = node.getNodeShape();

@@ -2,6 +2,7 @@ import * as React from 'react';
 import {
   BadgeLocation,
   EdgeAnimationSpeed,
+  EdgeModel,
   EdgeStyle,
   EdgeTerminalType,
   LabelPosition,
@@ -19,38 +20,54 @@ export const RIGHT_LABEL_COLUMN_WIDTH = 200;
 
 export const DEFAULT_NODE_SIZE = 75;
 
+export const NODE_STATUSES = [
+  NodeStatus.danger,
+  NodeStatus.success,
+  NodeStatus.warning,
+  NodeStatus.info,
+  NodeStatus.default
+];
+export const NODE_SHAPES = [
+  NodeShape.circle,
+  NodeShape.rect,
+  NodeShape.rhombus,
+  NodeShape.trapezoid,
+  NodeShape.hexagon,
+  NodeShape.octagon,
+  NodeShape.stadium
+];
 export const STATUS_VALUES = Object.values(NodeStatus);
 export const STATUS_COUNT = STATUS_VALUES.length;
 export const SHAPE_COUNT = Object.keys(NodeShape).length;
 export const ICON_STATUS_VALUES = [NodeStatus.success, NodeStatus.warning, NodeStatus.danger];
 
 export const EDGE_STYLES = [
-  EdgeStyle.solid,
-  EdgeStyle.dotted,
   EdgeStyle.dashed,
   EdgeStyle.dashedMd,
+  EdgeStyle.dotted,
   EdgeStyle.dashedLg,
-  EdgeStyle.dashedXl
+  EdgeStyle.dashedXl,
+  EdgeStyle.solid
 ];
 export const EDGE_STYLE_COUNT = EDGE_STYLES.length;
 
 export const EDGE_ANIMATION_SPEEDS = [
-  EdgeAnimationSpeed.none,
-  EdgeAnimationSpeed.slow,
-  EdgeAnimationSpeed.mediumSlow,
   EdgeAnimationSpeed.medium,
   EdgeAnimationSpeed.mediumFast,
-  EdgeAnimationSpeed.fast
+  EdgeAnimationSpeed.mediumSlow,
+  EdgeAnimationSpeed.fast,
+  EdgeAnimationSpeed.none,
+  EdgeAnimationSpeed.slow
 ];
 export const EDGE_ANIMATION_SPEED_COUNT = EDGE_ANIMATION_SPEEDS.length;
 
 export const EDGE_TERMINAL_TYPES = [
-  EdgeTerminalType.none,
-  EdgeTerminalType.directional,
   EdgeTerminalType.directionalAlt,
   EdgeTerminalType.circle,
   EdgeTerminalType.square,
-  EdgeTerminalType.cross
+  EdgeTerminalType.cross,
+  EdgeTerminalType.none,
+  EdgeTerminalType.directional
 ];
 export const EDGE_TERMINAL_TYPES_COUNT = EDGE_TERMINAL_TYPES.length;
 
@@ -68,14 +85,15 @@ export const createNode = (options: {
   badgeBorderColor?: string;
   badgeClassName?: string;
   badgeLocation?: BadgeLocation;
-  row: number;
-  column: number;
+  row?: number;
+  column?: number;
   width?: number;
   height?: number;
   shape?: NodeShape;
   status?: NodeStatus;
   showStatusDecorator?: boolean;
   statusDecoratorTooltip?: React.ReactNode;
+  showDecorators?: boolean;
   selected?: boolean;
   hover?: boolean;
   x?: number;
@@ -84,6 +102,7 @@ export const createNode = (options: {
   labelIconClass?: string;
   marginX?: number;
   truncateLength?: number;
+  setLocation?: boolean;
   dataType?: DataTypes;
 }): NodeModel => {
   const shape = options.shape || NodeShape.circle;
@@ -98,21 +117,10 @@ export const createNode = (options: {
     }
   }
 
-  return {
+  const nodeModel: NodeModel = {
     id: options.id,
     type: options.type || 'node',
     label: options.label,
-    x:
-      (options.marginX || 60) +
-      (options.x ??
-        (options.column - 1) *
-          (options.label && options.labelPosition === LabelPosition.right ? RIGHT_LABEL_COLUMN_WIDTH : COLUMN_WIDTH)),
-    y:
-      20 +
-      (width - height) / 2 +
-      (options.y ??
-        (options.row - 1) *
-          (options.label && options.labelPosition === LabelPosition.right ? ROW_HEIGHT : BOTTOM_LABEL_ROW_HEIGHT)),
     width,
     height,
     shape,
@@ -122,7 +130,48 @@ export const createNode = (options: {
       ...options
     }
   };
+  if (options.setLocation !== false) {
+    nodeModel.x =
+      (options.marginX || 60) +
+      (options.x ??
+        (options.column - 1) *
+          (options.label && options.labelPosition === LabelPosition.right ? RIGHT_LABEL_COLUMN_WIDTH : COLUMN_WIDTH));
+    nodeModel.y =
+      20 +
+      (width - height) / 2 +
+      (options.y ??
+        (options.row - 1) *
+          (options.label && options.labelPosition === LabelPosition.right ? ROW_HEIGHT : BOTTOM_LABEL_ROW_HEIGHT));
+  }
+
+  return nodeModel;
 };
+
+export const createEdge = (
+  sourceId: string,
+  targetId: string,
+  options: {
+    style?: EdgeStyle;
+    animation?: EdgeAnimationSpeed;
+    terminalType?: EdgeTerminalType;
+    terminalStatus?: NodeStatus;
+    tag?: string;
+    tagStatus?: string;
+  }
+): EdgeModel => ({
+  id: `edge-${sourceId}-${targetId}`,
+  type: 'edge',
+  source: sourceId,
+  target: targetId,
+  edgeStyle: options.style,
+  animationSpeed: options.animation,
+  data: {
+    endTerminalType: options.terminalType,
+    endTerminalStatus: options.terminalStatus,
+    tag: options.tag,
+    tagStatus: options.tagStatus
+  }
+});
 
 const createStatusNodes = (
   shape: NodeShape,

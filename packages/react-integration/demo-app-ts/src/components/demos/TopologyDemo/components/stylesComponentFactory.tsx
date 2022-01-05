@@ -16,7 +16,9 @@ import {
   DragSpecOperationType,
   NodeComponentProps,
   NODE_DRAG_TYPE,
-  Node
+  Node,
+  withPanZoom,
+  GraphComponent
 } from '@patternfly/react-topology';
 import DemoDefaultNode from './DemoDefaultNode';
 import Path from './shapes/Path';
@@ -61,6 +63,9 @@ const stylesComponentFactory: ComponentFactory = (
   kind: ModelKind,
   type: string
 ): React.ComponentType<{ element: GraphElement }> | undefined => {
+  if (kind === ModelKind.graph) {
+    return withPanZoom()(GraphComponent);
+  }
   switch (type) {
     case 'node':
       return withContextMenu(() => defaultMenu)(withDragNode(nodeDragSourceSpec())(withSelection()(StyleNode)));

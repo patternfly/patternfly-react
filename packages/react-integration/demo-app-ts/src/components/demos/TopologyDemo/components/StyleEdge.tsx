@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { observer } from 'mobx-react';
 import { DefaultEdge, Edge, WithContextMenuProps, WithSelectionProps } from '@patternfly/react-topology';
 
 type StyleEdgeProps = {
@@ -30,4 +31,4 @@ const StyleEdge: React.FC<StyleEdgeProps> = ({ element, onContextMenu, contextMe
   );
 };
 
-export default StyleEdge;
+export default observer(StyleEdge);
