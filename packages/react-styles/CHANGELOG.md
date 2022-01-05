@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.33.0 (2022-01-05)
+
+
+### Features
+
+* **Table:** allow a generic to be passed for cell props ([#6691](https://github.com/patternfly/patternfly-react/issues/6691)) ([e22c7be](https://github.com/patternfly/patternfly-react/commit/e22c7bebf630b7cd71e4dc434c593b69fa2fb2c8))
+
+
+
+
+
 ## 4.32.3 (2022-01-04)
 
 

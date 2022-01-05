@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-patternfly-react",
-  "version": "4.21.3",
+  "version": "4.22.0",
   "private": false,
   "main": "./lib/index.js",
   "license": "MIT",
