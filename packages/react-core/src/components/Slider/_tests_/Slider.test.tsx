@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { Slider } from '../Slider';
 import { Button } from '../../Button';
 
@@ -67,6 +67,11 @@ describe('slider', () => {
 
   test('renders disabled slider', () => {
     const view = mount(<Slider value={50} isDisabled />);
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders slider with tooltip on thumb', () => {
+    const view = shallow(<Slider value={50} hasTooltipOverThumb />);
     expect(view).toMatchSnapshot();
   });
 });
