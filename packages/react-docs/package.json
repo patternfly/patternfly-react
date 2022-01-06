@@ -21,6 +21,7 @@
     "screenshots": "theme-patternfly-org screenshots --urlPrefix http://localhost:5000",
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config"
   },
+  "dependencies": {
     "@patternfly/patternfly": "4.164.4",
     "@patternfly/react-catalog-view-extension": "^4.34.0",
     "@patternfly/react-charts": "^6.36.0",
