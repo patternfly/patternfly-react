@@ -6,6 +6,11 @@ section: components
 import DashboardWrapper from './examples/DashboardWrapper';
 import CheckCircleIcon from '@patternfly/react-icons/dist/js/icons/check-circle-icon';
 import InfoCircleIcon from '@patternfly/react-icons/dist/js/icons/info-circle-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 
 ## Demos
 
@@ -440,4 +445,8 @@ TabsOpenWithSecondaryTabsDemo = () => {
 
 ### Nested tabs
 ```js isFullscreen file="./Tabs/NestedTabsDemo.js"
+```
+
+### Tables and tabs
+```js isFullscreen file="./examples/Tabs/TabsAndTable.tsx"
 ```
