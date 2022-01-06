@@ -1,7 +1,7 @@
 import React from 'react';
 import { Accordion, AccordionItem, AccordionContent, AccordionToggle } from '@patternfly/react-core';
 
-export const FixedAccordionWithMultipleExpandBehavior = () => {
+export const AccordionFixedWithMultipleExpandBehavior = () => {
   const [expanded, setExpanded] = React.useState(['ex2-toggle4']);
 
   const toggle = id => {

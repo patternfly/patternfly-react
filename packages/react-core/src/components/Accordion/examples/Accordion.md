@@ -21,10 +21,10 @@ import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-i
 
 ### Fixed with multiple expand behavior
 
-```ts file="./FixedAccordionWithMultipleExpandBehavior.tsx"
+```ts file="./AccordionFixedWithMultipleExpandBehavior.tsx"
 ```
 
 ### Bordered
 
-```ts file="./BorderedAccordion.tsx"
+```ts file="./AccordionBordered.tsx"
 ```
