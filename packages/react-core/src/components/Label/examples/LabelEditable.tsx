@@ -25,8 +25,7 @@ export const LabelEditable: React.FunctionComponent = () => {
     <React.Fragment>
       <Label
         color="blue"
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        onClose={(event: React.MouseEvent) => {}}
+        onClose={() => {}}
         closeBtnAriaLabel="Custom close button for editable label"
         onEditCancel={onEditCancel}
         onEditComplete={onEditComplete}
@@ -41,8 +40,7 @@ export const LabelEditable: React.FunctionComponent = () => {
       <Label
         color="grey"
         isCompact
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        onClose={(event: React.MouseEvent) => {}}
+        onClose={() => {}}
         closeBtnAriaLabel="Custom close button for compact editable label"
         onEditCancel={onCompactEditCancel}
         onEditComplete={onCompactEditComplete}
