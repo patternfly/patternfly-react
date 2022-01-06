@@ -3,7 +3,7 @@ import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patter
 import brandImg from './brandImg.svg';
 import bgImg from './patternfly-orb.svg';
 
-export const AboutModalCustomBackgroundImage = () => {
+export const AboutModalCustomBackgroundImage: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   const toggleModal = () => {
