@@ -1,4 +1,5 @@
 import * as React from 'react';
+import isDeepEqual from 'fast-deep-equal/react';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 import badgeStyles from '@patternfly/react-styles/css/components/Badge/badge';
 import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
@@ -262,16 +263,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     }
 
     // the number or contents of the children has changed, update state.typeaheadFilteredChildren
-    if (
-      prevProps.children.length !== this.props.children.length ||
-      prevProps.children.some((child: React.ReactElement, index: number) => {
-        if (child.props && this.props.children[index].props) {
-          return child.props.value !== this.props.children[index].props.value;
-        } else {
-          return child !== this.props.children[index];
-        }
-      })
-    ) {
+    if (!isDeepEqual(prevProps.children, this.props.children)) {
       this.updateTypeAheadFilteredChildren(prevState.typeaheadInputValue || '', null);
     }
 
