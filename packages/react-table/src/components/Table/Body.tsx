@@ -57,21 +57,27 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
       row,
       rowProps: extendedRowProps,
       onClick: (event: React.MouseEvent) => {
+        const tagName = (event.target as HTMLElement).tagName;
         const computedData = {
-          isInput: (event.target as HTMLElement).tagName === 'INPUT',
-          isButton: (event.target as HTMLElement).tagName === 'BUTTON'
+          isInput: tagName === 'INPUT',
+          isButton: tagName === 'BUTTON'
         };
 
         onRowClick(event, row, rowProps, computedData);
       },
       onKeyDown: (event: React.KeyboardEvent) => {
+        const targetElement = event.target as HTMLElement;
+        const tagName = targetElement.tagName;
+        const computedData = {
+          isInput: tagName === 'INPUT',
+          isButton: tagName === 'BUTTON'
+        };
         if (event.key === 'Enter' || event.key === ' ') {
-          const computedData = {
-            isInput: (event.target as HTMLElement).tagName === 'INPUT',
-            isButton: (event.target as HTMLElement).tagName === 'BUTTON'
-          };
           onRowClick(event, row, rowProps, computedData);
-          if (!computedData.isInput) {
+
+          // prevent event default if space is typed while focusing on a hoverable row
+          // so that the page does not scroll when trying to use spacebar to select a row
+          if (event.key === ' ' && !!targetElement.closest('.pf-m-hoverable')) {
             event.preventDefault();
           }
         }
