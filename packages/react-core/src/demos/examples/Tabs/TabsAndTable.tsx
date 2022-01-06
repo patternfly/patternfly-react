@@ -1,6 +1,8 @@
+/* eslint-disable no-console */
 import React from 'react';
 import {
   Button,
+  Divider,
   Drawer,
   DrawerContent,
   DrawerContentBody,
@@ -41,7 +43,17 @@ import {
   ToolbarContent,
   ToolbarToggleGroup
 } from '@patternfly/react-core';
-import { TableComposable, Thead, Tbody, Tr, Th, Td } from '@patternfly/react-table';
+import {
+  TableComposable,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  IAction,
+  ActionsColumn,
+  CustomActionsToggleProps
+} from '@patternfly/react-table';
 import DashboardWrapper from '../DashboardWrapper';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
@@ -107,20 +119,42 @@ export const TablesAndTabs = () => {
   const [rowClicked, setRowClicked] = React.useState<string>(null);
   const isRowClicked = (repo: Repository) => rowClicked === repo.name;
 
-  const defaultActions = [
+  const defaultActions: IAction[] = [
     {
-      title: 'Some action'
+      title: 'Some action',
+      onClick: event => {
+        event.stopPropagation();
+        console.log('clicked on Some action');
+      }
     },
     {
-      title: <a href="https://www.patternfly.org">Link action</a>
+      title: <a href="https://www.patternfly.org">Link action</a>,
+      onClick: event => {
+        event.stopPropagation();
+        console.log('clicked on Link action');
+      }
     },
     {
       isSeparator: true
     },
     {
-      title: 'Third action'
+      title: 'Third action',
+      onClick: event => {
+        event.stopPropagation();
+        console.log('clicked on Third action');
+      }
     }
   ];
+
+  const customActionsToggle = (props: CustomActionsToggleProps) => (
+    <KebabToggle
+      isDisabled={props.isDisabled}
+      onToggle={(value, event) => {
+        props.onToggle(value);
+        event.stopPropagation();
+      }}
+    />
+  );
 
   const toolbar = (
     <Toolbar id="page-layout-table-column-management-action-toolbar-top" usePageInsets>
@@ -252,12 +286,9 @@ export const TablesAndTabs = () => {
               </Flex>
             </Td>
             <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
-            <Td
-              key={`${rowIndex}_5`}
-              actions={{
-                items: defaultActions
-              }}
-            />
+            <Td key={`${rowIndex}_5`}>
+              <ActionsColumn items={defaultActions} actionsToggle={customActionsToggle} />
+            </Td>
           </Tr>
         ))}
       </Tbody>
@@ -265,7 +296,7 @@ export const TablesAndTabs = () => {
   );
 
   const panelContent = (
-    <DrawerPanelContent>
+    <DrawerPanelContent widths={{ default: 'width_33', xl: 'width_33' }}>
       <DrawerHead>
         <DrawerActions>
           <DrawerCloseButton
@@ -307,7 +338,7 @@ export const TablesAndTabs = () => {
           hidden={10 !== secondaryActiveTabKey}
         >
           <TabContentBody>
-            <Flex direction={{ default: 'column' }}>
+            <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsLg' }}>
               <FlexItem>
                 <p>
                   The content of the drawer really is up to you. It could have form fields, definition lists, text
@@ -328,7 +359,7 @@ export const TablesAndTabs = () => {
                 <FlexItem>
                   <LabelGroup>
                     {[1, 2, 3, 4, 5].map(labelNumber => (
-                      <Label key={`label-${labelNumber}`}>{`Tag ${labelNumber}`}</Label>
+                      <Label variant="outline" key={`label-${labelNumber}`}>{`Tag ${labelNumber}`}</Label>
                     ))}
                   </LabelGroup>
                 </FlexItem>
@@ -354,9 +385,9 @@ export const TablesAndTabs = () => {
       <DrawerContent panelContent={panelContent}>
         <DrawerContentBody>
           {toolbar}
+          <Divider />
           {tableComposable}
           <Pagination
-            isCompact
             id="page-layout-table-column-management-action-toolbar-bottom"
             itemCount={36}
             widgetId="pagination-options-menu-bottom"
@@ -369,14 +400,14 @@ export const TablesAndTabs = () => {
   );
 
   return (
-    <DashboardWrapper>
+    <DashboardWrapper hasNoBreadcrumb>
       <React.Fragment>
-        <PageSection isWidthLimited variant={PageSectionVariants.light}>
+        <PageSection variant={PageSectionVariants.light}>
           <Title headingLevel="h1" size="2xl">
             Nodes
           </Title>
         </PageSection>
-        <PageSection type="tabs" variant={PageSectionVariants.light} isWidthLimited padding={{ default: 'noPadding' }}>
+        <PageSection type="tabs" variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
           <Tabs
             activeKey={activeTabKey}
             onSelect={(_event, tabIndex) => handleTabClick(Number(tabIndex))}
@@ -387,7 +418,7 @@ export const TablesAndTabs = () => {
             <Tab eventKey={1} title={<TabTitleText>Node connectors</TabTitleText>} tabContentId={`tabContent${1}`} />
           </Tabs>
         </PageSection>
-        <PageSection isWidthLimited variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
+        <PageSection variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
           <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
             <TabContentBody>{tabContent}</TabContentBody>
           </TabContent>
