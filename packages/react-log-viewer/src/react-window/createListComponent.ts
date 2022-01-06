@@ -173,6 +173,18 @@ export default function createListComponent({
       this.scrollTo(scrollHeight - clientHeight);
     }
 
+    onTextSelectionStart(): void {
+      if (this._outerRef) {
+        this._outerRef.style.overflowY = 'hidden';
+      }
+    }
+
+    onTextSelectionStop(): void {
+      if (this._outerRef) {
+        this._outerRef.style.overflowY = 'auto';
+      }
+    }
+
     componentDidMount() {
       const { initialScrollOffset } = this.props;
 
@@ -180,7 +192,16 @@ export default function createListComponent({
         const outerRef = this._outerRef as HTMLElement;
         outerRef.scrollTop = initialScrollOffset;
       }
-
+      const innerRef = this._outerRef.firstChild; // innerRef will be 'pf-c-log-viewer__list'
+      ['mousedown', 'touchstart'].forEach(event => {
+        innerRef.addEventListener(event, this.onTextSelectionStart.bind(this));
+      });
+      // set mouseup event listener on the whole document
+      // because the cursor could be out side of the log window when the mouse is up
+      // in that case the window would not be able to scroll up and down because overflow-Y is not set back to 'auto'
+      ['mouseup', 'touchend'].forEach(event => {
+        document.addEventListener(event, this.onTextSelectionStop.bind(this));
+      });
       this._callPropsCallbacks();
     }
 
@@ -199,6 +220,13 @@ export default function createListComponent({
       if (this._resetIsScrollingTimeoutId !== null) {
         cancelTimeout(this._resetIsScrollingTimeoutId);
       }
+      const innerRef = this._outerRef.firstChild; // innerRef will be 'pf-c-log-viewer__list'
+      ['mousedown', 'touchstart'].forEach(event => {
+        innerRef.removeEventListener(event, this.onTextSelectionStart.bind(this));
+      });
+      ['mouseup', 'touchend'].forEach(event => {
+        document.removeEventListener(event, this.onTextSelectionStop.bind(this));
+      });
     }
 
     render() {
