@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.28.3 (2022-01-06)
+
+
+### Bug Fixes
+
+* **TopologyControlBar:** Update screen reader className to latest ([#6739](https://github.com/patternfly/patternfly-react/issues/6739)) ([ed9da57](https://github.com/patternfly/patternfly-react/commit/ed9da575fddf9fe7af8a891972f7a66520785411))
+
+
+
+
+
 ## 4.28.2 (2022-01-06)
 
 **Note:** Version bump only for package @patternfly/react-log-viewer
