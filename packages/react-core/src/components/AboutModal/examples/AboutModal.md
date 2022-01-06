@@ -9,7 +9,7 @@ import bgImg from './patternfly-orb.svg';
 
 ## Examples
 ### Basic
-```ts file="./BasicAboutModal.tsx"
+```ts file="./AboutModalBasic.tsx"
 ```
 
 ### Without product name
@@ -17,9 +17,9 @@ import bgImg from './patternfly-orb.svg';
 ```
 
 ### Complex user positioned content
-```ts file="./ComplexUserPositionedContentAboutModal.tsx"
+```ts file="./AboutModalComplexUserPositionedContent.tsx"
 ```
 
 ### Custom background image
-```ts file="./CustomBackgroundImageAboutModal.tsx"
+```ts file="./AboutModalCustomBackgroundImage.tsx"
 ```

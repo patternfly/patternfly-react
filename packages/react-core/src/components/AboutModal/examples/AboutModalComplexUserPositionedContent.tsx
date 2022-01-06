@@ -1,8 +1,8 @@
 import React from 'react';
-import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
+import { AboutModal, Alert, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './brandImg.svg';
 
-export const BasicAboutModal = () => {
+export const AboutModalComplexUserPositionedContent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   const toggleModal = () => {
@@ -20,9 +20,15 @@ export const BasicAboutModal = () => {
         trademark="Trademark and copyright information here"
         brandImageSrc={brandImg}
         brandImageAlt="Patternfly Logo"
+        noAboutModalBoxContentContainer={true}
         productName="Product Name"
       >
-        <TextContent>
+        <TextContent id="test1" className="pf-u-py-xl">
+          <h4>About</h4>
+          <p>Content here</p>
+        </TextContent>
+        <Alert variant="info" title="Updates available" />
+        <TextContent id="test2" className="pf-u-py-xl">
           <TextList component="dl">
             <TextListItem component="dt">CFME Version</TextListItem>
             <TextListItem component="dd">5.5.3.4.20102789036450</TextListItem>
