@@ -271,7 +271,9 @@ export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps
         variant="tertiary"
       >
         {button.icon}
-        {(button.ariaLabel || button.tooltip) && <span className="sr-only">{button.ariaLabel || button.tooltip}</span>}
+        {(button.ariaLabel || button.tooltip) && (
+          <span className="pf-u-screen-reader">{button.ariaLabel || button.tooltip}</span>
+        )}
       </Button>
     );
 
