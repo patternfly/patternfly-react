@@ -13,20 +13,20 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 ### Basic
 
-```ts file="./BasicTextInputGroup.tsx"
+```ts file="./TextInputGroupBasic.tsx"
 ```
 
 ### Disabled
 
-```ts file="./DisabledTextInputGroup.tsx"
+```ts file="./TextInputGroupDisabled.tsx"
 ```
 
 ### Utilities and icon
 
-```ts file="./TextInputGroupWithIcons.tsx"
+```ts file="./TextInputGroupUtilitiesAndIcon.tsx"
 ```
 
 ### Filters
 
-```ts file="./TextInputGroupWithChips.tsx"
+```ts file="./TextInputGroupFilters.tsx"
 ```
