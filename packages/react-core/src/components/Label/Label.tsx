@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Label/label';
 import labelGrpStyles from '@patternfly/react-styles/css/components/LabelGroup/label-group';
-import inlineEditStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { Button } from '../Button';
 import { Tooltip } from '../Tooltip';
 import { css } from '@patternfly/react-styles';
@@ -217,33 +216,16 @@ export const Label: React.FunctionComponent<LabelProps> = ({
 
   if (isEditable) {
     content = (
-      <React.Fragment>
-        <div className={css(inlineEditStyles.inlineEdit)}>
-          {!isEditableActive && (
-            <button
-              ref={editableDivRef}
-              className={css(inlineEditStyles.inlineEditEditableText)}
-              onClick={event => onEditClick(event, isEditableActive)}
-              currvalue={currValue}
-              {...isEditableActive}
-              {...editableProps}
-            >
-              {children}
-            </button>
-          )}
-          {isEditableActive && (
-            <input
-              type="text"
-              id="editable-input"
-              ref={editableInputRef}
-              value={currValue}
-              onChange={updateVal}
-              {...isEditableActive}
-              {...editableProps}
-            ></input>
-          )}
-        </div>
-      </React.Fragment>
+      <button
+        ref={editableDivRef}
+        className={css(styles.labelEditableText)}
+        onClick={event => onEditClick(event, isEditableActive)}
+        currvalue={currValue}
+        {...isEditableActive}
+        {...editableProps}
+      >
+        {children}
+      </button>
     );
   }
 
@@ -287,18 +269,20 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         isEditableActive && styles.modifiers.editableActive,
         className
       )}
-      {...(isEditable && {
-        onClick: (evt: MouseEvent) => {
-          const isEvtFromButton = (evt.target as HTMLElement).closest('button');
-          if (isEvtFromButton !== null) {
-            return;
-          }
-          setIsEditableActive(true);
-        }
-      })}
     >
-      {labelComponentChild}
-      {onClose && button}
+      {!isEditableActive && labelComponentChild}
+      {!isEditableActive && onClose && button}
+      {isEditableActive && (
+        <input
+          className={css(styles.labelEditableText)}
+          type="text"
+          id="editable-input"
+          ref={editableInputRef}
+          value={currValue}
+          onChange={updateVal}
+          {...editableProps}
+        />
+      )}
     </LabelComponent>
   );
 };
