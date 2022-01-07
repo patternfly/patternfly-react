@@ -1,5 +1,4 @@
 import * as React from 'react';
-import isDeepEqual from 'fast-deep-equal/react';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 import badgeStyles from '@patternfly/react-styles/css/components/Badge/badge';
 import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
@@ -262,8 +261,26 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       this.refCollection[this.state.viewMoreNextIndex][0].focus();
     }
 
-    // the number or contents of the children has changed, update state.typeaheadFilteredChildren
-    if (!isDeepEqual(prevProps.children, this.props.children)) {
+    const hasUpdatedChildren =
+      prevProps.children.length !== this.props.children.length ||
+      prevProps.children.some((prevChild: React.ReactElement, index: number) => {
+        const prevChildProps = prevChild.props;
+        const currChild = this.props.children[index];
+        const { props: currChildProps } = currChild;
+
+        if (prevChildProps && currChildProps) {
+          return (
+            prevChildProps.value !== currChildProps.value ||
+            prevChildProps.label !== currChildProps.label ||
+            prevChildProps.isDisabled !== currChildProps.isDisabled ||
+            prevChildProps.isPlaceholder !== currChildProps.isPlaceholder
+          );
+        } else {
+          return prevChild !== currChild;
+        }
+      });
+
+    if (hasUpdatedChildren) {
       this.updateTypeAheadFilteredChildren(prevState.typeaheadInputValue || '', null);
     }
 
