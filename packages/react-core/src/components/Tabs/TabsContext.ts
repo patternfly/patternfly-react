@@ -9,7 +9,8 @@ export interface TabsContextProps {
   handleTabClick: (
     event: React.MouseEvent<HTMLElement, MouseEvent>,
     eventKey: number | string,
-    tabContentRef: React.RefObject<any>
+    tabContentRef: React.RefObject<any>,
+    href?: string
   ) => void;
 }
 

@@ -147,10 +147,15 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
   handleTabClick(
     event: React.MouseEvent<HTMLElement, MouseEvent>,
     eventKey: number | string,
-    tabContentRef: React.RefObject<any>
+    tabContentRef: React.RefObject<any>,
+    href?: string
   ) {
     // When tab is an achor tag with href, cancel navigation event
-    event.preventDefault();
+    if (href) {
+      event.preventDefault();
+      window.history.pushState(null, null, href);
+    }
+
     const { shownKeys } = this.state;
     const { onSelect, defaultActiveKey } = this.props;
     // if defaultActiveKey Tabs are uncontrolled, set new active key internally

@@ -83,7 +83,7 @@ const TabBase: React.FunctionComponent<TabProps> = ({
         disabled={isButtonElement ? isDisabled : null}
         aria-disabled={isDisabled || isAriaDisabled}
         tabIndex={getDefaultTabIdx()}
-        onClick={(event: any) => handleTabClick(event, eventKey, tabContentRef)}
+        onClick={(event: any) => handleTabClick(event, eventKey, tabContentRef, href)}
         {...(isAriaDisabled ? preventedEvents : null)}
         id={`pf-tab-${eventKey}-${childId || uniqueId}`}
         aria-controls={ariaControls}
