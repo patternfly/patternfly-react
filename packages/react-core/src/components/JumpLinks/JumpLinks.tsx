@@ -137,7 +137,7 @@ export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
         }
       }
     });
-  }, [scrollItems, hasScrollSpy, scrollableElement]);
+  }, [scrollItems, hasScrollSpy, scrollableElement, offset]);
 
   React.useEffect(() => {
     scrollableElement = document.querySelector(scrollableSelector) as HTMLElement;
