@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.183.5 (2022-01-07)
+
+
+### Bug Fixes
+
+* **jumplinks:** Updated JumpLinks demo to allow for horizontal display ([#6731](https://github.com/patternfly/patternfly-react/issues/6731)) ([f37b934](https://github.com/patternfly/patternfly-react/commit/f37b9342e678da247056c73767d5d40ff5435bda))
+
+
+
+
+
 ## 4.183.4 (2022-01-06)
 
 **Note:** Version bump only for package @patternfly/react-core
