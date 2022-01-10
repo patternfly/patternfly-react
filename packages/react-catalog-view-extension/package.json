@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-catalog-view-extension",
-  "version": "4.34.9",
+  "version": "4.34.10",
   "description": "This library provides catalog view extensions for PatternFly 4 React.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -36,8 +36,8 @@
   },
   "dependencies": {
     "@patternfly/patternfly": "4.165.1",
-    "@patternfly/react-core": "^4.183.9",
-    "@patternfly/react-styles": "^4.33.9"
+    "@patternfly/react-core": "^4.183.10",
+    "@patternfly/react-styles": "^4.33.10"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
