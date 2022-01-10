@@ -275,7 +275,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
           <div className={css(styles.logViewerMain)} style={{ height, width }} ref={containerRef}>
             {loading ? <div>{loadingContent}</div> : createList(parsedData)}
           </div>
-          {footer}
+          <div className={css(styles.logViewerFooter)}>{footer}</div>
         </div>
       </LogViewerContext.Provider>
     );
