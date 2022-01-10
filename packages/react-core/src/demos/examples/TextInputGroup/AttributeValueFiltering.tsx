@@ -16,14 +16,18 @@ import {
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export const AttributeValueFiltering = () => {
+export const AttributeValueFiltering: React.FunctionComponent = () => {
   const [inputValue, setInputValue] = React.useState('');
   const [selectedKey, setSelectedKey] = React.useState('');
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
-  const [currentChips, setCurrentChips] = React.useState([]);
+  const [currentChips, setCurrentChips] = React.useState<string[]>([]);
+
+  interface attributeValueData {
+    [attribute: string]: string[];
+  }
 
   /** key and value data to be shown in the menu */
-  const data = {
+  const data: attributeValueData = {
     Cluster: ['acmeqe-managed-1', 'local-cluster'],
     Kind: ['Template', 'ReplicationController', 'ReplicaSet', 'Deployment'],
     Label: ['release', 'environment', 'partition'],
@@ -33,19 +37,19 @@ export const AttributeValueFiltering = () => {
   };
   const keyNames = ['Cluster', 'Kind', 'Label', 'Name', 'Namespace', 'Status'];
   const [menuItemsText, setMenuItemsText] = React.useState(keyNames);
-  const [menuItems, setMenuItems] = React.useState([]);
+  const [menuItems, setMenuItems] = React.useState<React.ReactElement[]>([]);
 
   /** refs used to detect when clicks occur inside vs outside of the textInputGroup and menu popper */
-  const menuRef = React.useRef();
-  const textInputGroupRef = React.useRef();
+  const menuRef = React.useRef<HTMLDivElement>();
+  const textInputGroupRef = React.useRef<HTMLDivElement>();
 
   /** callback for updating the inputValue state in this component so that the input can be controlled */
-  const handleInputChange = (value, _event) => {
+  const handleInputChange = (value: string, _event: React.FormEvent<HTMLInputElement>) => {
     setInputValue(value);
   };
 
   /** callback for removing a chip from the chip selections */
-  const deleteChip = chipToDelete => {
+  const deleteChip = (chipToDelete: string) => {
     const newChips = currentChips.filter(chip => !Object.is(chip, chipToDelete));
     setCurrentChips(newChips);
   };
@@ -106,13 +110,13 @@ export const AttributeValueFiltering = () => {
   }, [inputValue]);
 
   /** add selected key/value pair as a chip in the chip group */
-  const selectValue = selectedValue => {
+  const selectValue = (selectedValue: string) => {
     setCurrentChips([...currentChips, `${selectedKey}: ${selectedValue}`]);
     clearSelectedKey();
   };
 
   /** update the input to show the selected key and the menu to show the values associated with that specific key */
-  const selectKey = selectedText => {
+  const selectKey = (selectedText: string) => {
     setInputValue(`${selectedText}: `);
     setSelectedKey(selectedText);
     setMenuItemsText(data[selectedText]);
@@ -150,13 +154,13 @@ export const AttributeValueFiltering = () => {
   /** allow the user to focus on the menu and navigate using the arrow keys */
   const handleArrowKey = () => {
     if (menuRef.current) {
-      const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+      const firstElement = menuRef.current.querySelector<HTMLButtonElement>('li > button:not(:disabled)');
       firstElement && firstElement.focus();
     }
   };
 
   /** enable keyboard only usage */
-  const handleTextInputKeyDown = event => {
+  const handleTextInputKeyDown = (event: React.KeyboardEvent) => {
     switch (event.key) {
       case 'Enter':
         handleEnter();
@@ -178,8 +182,8 @@ export const AttributeValueFiltering = () => {
   };
 
   /** perform the proper key or value selection when a menu item is selected */
-  const onSelect = (event, _itemId) => {
-    const selectedText = event.target.innerText;
+  const onSelect = (event: React.MouseEvent<Element, MouseEvent>, _itemId: string | number) => {
+    const selectedText = (event.target as HTMLElement).innerText;
 
     if (selectedKey.length) {
       selectValue(selectedText);
@@ -191,11 +195,11 @@ export const AttributeValueFiltering = () => {
   };
 
   /** close the menu when a click occurs outside of the menu or text input group */
-  const handleClick = event => {
+  const handleClick = (event: MouseEvent) => {
     if (
       menuRef.current &&
-      !menuRef.current.contains(event.target) &&
-      !textInputGroupRef.current.contains(event.target)
+      !menuRef.current.contains(event.target as HTMLElement) &&
+      !textInputGroupRef.current.contains(event.target as HTMLElement)
     ) {
       setMenuIsOpen(false);
     }
@@ -205,7 +209,7 @@ export const AttributeValueFiltering = () => {
   const showSearchIcon = !currentChips.length;
 
   /** only show the clear button when there is something that can be cleared */
-  const showClearButton = inputValue || !!currentChips.length;
+  const showClearButton = !!inputValue || !!currentChips.length;
 
   const inputGroup = (
     <div ref={textInputGroupRef}>
