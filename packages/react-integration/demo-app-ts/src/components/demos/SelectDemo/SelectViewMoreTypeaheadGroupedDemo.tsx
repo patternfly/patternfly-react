@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, SelectOption, SelectVariant, SelectGroup, Checkbox, StackItem, Title } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SelectGroup, StackItem, Title } from '@patternfly/react-core';
 
 /* eslint-disable no-console */
 interface TypeAheadOption {
