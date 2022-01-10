@@ -33,6 +33,7 @@ exports[`Dropdown should match snapshot (auto-generated) 1`] = `
     isGrouped={true}
     isOpen={true}
     isPlain={true}
+    isText={false}
     menuAppendTo="inline"
     onSelect={[Function]}
     position="right"
