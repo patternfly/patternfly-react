@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, SelectOption, SelectVariant, Checkbox, StackItem, Title } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SelectGroup, Checkbox, StackItem, Title } from '@patternfly/react-core';
 
 /* eslint-disable no-console */
 interface TypeAheadOption {
@@ -8,7 +8,7 @@ interface TypeAheadOption {
 }
 
 /* eslint-disable no-console */
-export interface SelectViewMoreTypeaheadDemoState {
+export interface SelectViewMoreTypeaheadGroupedDemoState {
   isOpen: boolean;
   selected: string[];
   numOptions: number;
@@ -19,24 +19,32 @@ export interface SelectViewMoreTypeaheadDemoState {
   options: TypeAheadOption[];
 }
 
-export class SelectViewMoreTypeaheadDemo extends React.Component<SelectViewMoreTypeaheadDemoState> {
-  static displayName = 'SelectViewMoreTypeaheadDemo';
+export class SelectViewMoreTypeaheadGroupedDemo extends React.Component<SelectViewMoreTypeaheadGroupedDemoState> {
+  static displayName = 'SelectViewMoreTypeaheadGroupedDemo';
   state = {
     isOpen: false,
     selected: [] as string[],
-    numOptions: 3,
+    numOptions: 1,
     isLoading: false,
     isCreatable: false,
     newOptions: false,
-    inputValuePersisted: false,
-    options: [
-      { value: 'Alabama', disabled: false, itemCount: 3 },
-      { value: 'Boston', disabled: false, itemCount: 10 },
-      { value: 'Florida', disabled: false, itemCount: 7 },
-      { value: 'New Jersey', disabled: false, itemCount: 1 },
-      { value: 'Texas', disabled: false, itemCount: 20 }
-    ]
+    inputValuePersisted: false
   };
+
+  options = [
+    <SelectGroup label="Status" key="group1">
+      <SelectOption id={'option-grouped-1'} key={0} value="Running" />
+      <SelectOption id={'option-grouped-2'} key={1} value="Stopped" />
+      <SelectOption id={'option-grouped-3'} key={2} value="Down" />
+      <SelectOption id={'option-grouped-4'} key={3} value="Degraded" />
+      <SelectOption id={'option-grouped-5'} key={4} value="Needs Maintenance" />
+    </SelectGroup>,
+    <SelectGroup label="Vendor Names" key="group2">
+      <SelectOption id={'option-grouped-6'} key={5} value="Dell" />
+      <SelectOption id={'option-grouped-7'} key={6} value="Samsung" isDisabled />
+      <SelectOption id={'option-grouped-8'} key={7} value="Hewlett-Packard" />
+    </SelectGroup>
+  ];
 
   toggleCreatable = (checked: boolean) => {
     this.setState({
@@ -58,7 +66,7 @@ export class SelectViewMoreTypeaheadDemo extends React.Component<SelectViewMoreT
 
   createNew = (newValue: string) => {
     this.setState({
-      typeaheadOptions: [...this.state.options, { value: newValue, disabled: false }]
+      typeaheadOptions: [...this.options, { value: newValue, disabled: false }]
     });
   };
 
@@ -96,23 +104,14 @@ export class SelectViewMoreTypeaheadDemo extends React.Component<SelectViewMoreT
     this.setState({ isLoading: true });
     this.simulateNetworkCall(() => {
       const newLength =
-        this.state.numOptions + 3 < this.state.options.length ? this.state.numOptions + 3 : this.state.options.length;
+        this.state.numOptions + 3 < this.options.length ? this.state.numOptions + 3 : this.options.length;
       this.setState({ numOptions: newLength, isLoading: false });
     });
   };
 
   render() {
     const titleId = 'view-more-typeahead-select-id';
-    const {
-      options,
-      isOpen,
-      selected,
-      isCreatable,
-      newOptions,
-      inputValuePersisted,
-      isLoading,
-      numOptions
-    } = this.state;
+    const { isOpen, selected, isCreatable, newOptions, inputValuePersisted, isLoading, numOptions } = this.state;
     return (
       <StackItem isFilled={false}>
         <Title headingLevel="h2" size="2xl">
@@ -139,20 +138,12 @@ export class SelectViewMoreTypeaheadDemo extends React.Component<SelectViewMoreT
             createText="Create item"
             noResultsFoundText="Item not found"
             {...(!isLoading &&
-              numOptions < options.length && {
+              numOptions < this.options.length && {
                 loadingVariant: { text: 'View more', onClick: this.onViewMoreClick }
               })}
             {...(isLoading && { loadingVariant: 'spinner' })}
           >
-            {options.slice(0, numOptions).map((option, index) => (
-              <SelectOption
-                isDisabled={option.disabled}
-                key={index}
-                value={option.value}
-                id={option.value}
-                itemCount={option.itemCount}
-              />
-            ))}
+            {this.options.slice(0, numOptions)}
           </Select>
         </div>
         <Checkbox

@@ -65,7 +65,7 @@ export * from './SelectDemo/SelectDemo';
 export * from './SelectDemo/SelectFavoritesDemo';
 export * from './SelectDemo/SelectValidatedDemo';
 export * from './SelectDemo/SelectViewMoreDemo';
-export * from './SelectDemo/SelectViewMoreTypeaheadDemo';
+export * from './SelectDemo/SelectViewMoreTypeaheadGroupedDemo';
 export * from './SimpleList/SimpleListDemo';
 export * from './SliderDemo/SliderDemo';
 export * from './SwitchDemo/SwitchDemo';

@@ -336,9 +336,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.SelectViewMoreDemo
   },
   {
-    id: 'select-view-more-typeahead-demo',
-    name: 'Select View More Typeahead Demo',
-    componentType: Examples.SelectViewMoreTypeaheadDemo
+    id: 'select-view-more-typeahead-grouped-demo',
+    name: 'Select View More Typeahead Grouped Demo',
+    componentType: Examples.SelectViewMoreTypeaheadGroupedDemo
   },
   {
     id: 'simple-list-demo',
