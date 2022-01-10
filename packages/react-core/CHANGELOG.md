@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.183.9 (2022-01-10)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## 4.183.8 (2022-01-07)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## 4.183.7 (2022-01-07)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## 4.183.6 (2022-01-07)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## 4.183.5 (2022-01-07)
 
 

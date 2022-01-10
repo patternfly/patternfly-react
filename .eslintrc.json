@@ -123,7 +123,7 @@
     },
     "overrides": [
         {
-            "files": ["**/examples/*"],
+            "files": ["**/examples/*", "**/demos/examples/**/*"],
             "rules": {
                 "patternfly-react/no-anonymous-functions": "off"
             }
