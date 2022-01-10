@@ -890,22 +890,22 @@ class TabsNav extends React.Component {
         aria-label="Local"
         component={TabsComponent.nav}
       >
-       <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#">
+       <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#users">
           Users
         </Tab>
-        <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>} href="#">
+        <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>} href="#containers">
           Containers
         </Tab>
-        <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>} href="#">
+        <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>} href="#database">
           Database
         </Tab>
-        <Tab eventKey={3} title={<TabTitleText>Disabled</TabTitleText>} isDisabled href="#">
+        <Tab eventKey={3} title={<TabTitleText>Disabled</TabTitleText>} isDisabled href="#disabled">
           Disabled
         </Tab>
-        <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled href="#">
+        <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled href="#aria-disabled">
           ARIA Disabled
         </Tab>
-        <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>} href="#">
+        <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>} href="#network">
           Network
         </Tab>
       </Tabs>
