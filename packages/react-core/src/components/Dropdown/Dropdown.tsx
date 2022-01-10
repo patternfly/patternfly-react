@@ -16,6 +16,8 @@ export interface DropdownProps extends ToggleMenuBaseProps, React.HTMLProps<HTML
   isOpen?: boolean;
   /** Display the toggle with no border or background */
   isPlain?: boolean;
+  /** Display the toggle in text only mode */
+  isText?: boolean;
   /** Flag indicating that the dropdown should expand to full height */
   isFullHeight?: boolean;
   /** Indicates where menu will be aligned horizontally */

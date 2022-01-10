@@ -59,6 +59,7 @@ exports[`ApplicationLauncher should match snapshot (auto-generated) 1`] = `
       isGrouped={false}
       isOpen={false}
       isPlain={false}
+      isText={false}
       menuAppendTo="inline"
       onSelect={[Function]}
       position="right"

@@ -27,6 +27,7 @@ exports[`PaginationOptionsMenu should match snapshot (auto-generated) 1`] = `
     isGrouped={false}
     isOpen={false}
     isPlain={true}
+    isText={false}
     menuAppendTo="inline"
     onSelect={[Function]}
     position="left"
