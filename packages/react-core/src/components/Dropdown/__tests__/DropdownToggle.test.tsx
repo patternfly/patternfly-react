@@ -129,7 +129,7 @@ describe('state', () => {
 
   test('button variant - secondary', () => {
     const view = mount(
-      <DropdownToggle id="Dropdown Toggle" toggleVariant="plain-text" parentRef={document.createElement('div')}>
+      <DropdownToggle id="Dropdown Toggle" isText isPlain parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
     );

@@ -33,12 +33,14 @@ export interface ToggleProps {
   isDisabled?: boolean;
   /** Display the toggle with no border or background */
   isPlain?: boolean;
+  /** Display the toggle in text only mode */
+  isText?: boolean;
   /** @deprecated Use `toggleVariant` instead. Display the toggle with a primary button style */
   isPrimary?: boolean;
   /** Style the toggle as a child of a split button */
   isSplitButton?: boolean;
   /** Alternate styles for the dropdown toggle button */
-  toggleVariant?: 'plain-text' | 'primary' | 'secondary' | 'default';
+  toggleVariant?: 'primary' | 'secondary' | 'default';
   /** Flag for aria popup */
   'aria-haspopup'?: boolean | 'listbox' | 'menu' | 'dialog' | 'grid' | 'tree';
   /** Allows selecting toggle to select parent */
@@ -48,8 +50,7 @@ export interface ToggleProps {
 const buttonVariantStyles = {
   default: '',
   primary: styles.modifiers.primary,
-  secondary: styles.modifiers.secondary,
-  'plain-text': `${styles.modifiers.plain} ${styles.modifiers.text}`
+  secondary: styles.modifiers.secondary
 };
 
 export class Toggle extends React.Component<ToggleProps> {
@@ -62,6 +63,7 @@ export class Toggle extends React.Component<ToggleProps> {
     isActive: false,
     isDisabled: false,
     isPlain: false,
+    isText: false,
     isPrimary: false,
     isSplitButton: false,
     onToggle: () => {},
@@ -136,6 +138,7 @@ export class Toggle extends React.Component<ToggleProps> {
       isOpen,
       isDisabled,
       isPlain,
+      isText,
       isPrimary,
       isSplitButton,
       toggleVariant,
@@ -163,6 +166,7 @@ export class Toggle extends React.Component<ToggleProps> {
               isSplitButton ? styles.dropdownToggleButton : toggleClass || styles.dropdownToggle,
               isActive && styles.modifiers.active,
               isPlain && styles.modifiers.plain,
+              isText && styles.modifiers.text,
               isPrimary && styles.modifiers.primary,
               buttonVariantStyles[toggleVariant],
               className

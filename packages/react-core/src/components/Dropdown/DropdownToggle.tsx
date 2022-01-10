@@ -25,12 +25,14 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement>,
   isActive?: boolean;
   /** Display the toggle with no border or background */
   isPlain?: boolean;
+  /** Display the toggle in text only mode */
+  isText?: boolean;
   /** Whether or not the <div> has a disabled state */
   isDisabled?: boolean;
   /** @deprecated Use `toggleVariant` instead. Whether or not the dropdown toggle button should have primary button styling */
   isPrimary?: boolean;
   /** Alternate styles for the dropdown toggle button */
-  toggleVariant?: 'plain-text' | 'primary' | 'secondary' | 'default';
+  toggleVariant?: 'primary' | 'secondary' | 'default';
   /** An image to display within the dropdown toggle, appearing before any component children */
   icon?: React.ReactNode;
   /** The icon to display for the toggle, appearing after any component children. Defaults to CaretDownIcon. Set to null to not show an icon. */
@@ -58,6 +60,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   getMenuRef = null,
   isDisabled = false,
   isPlain = false,
+  isText = false,
   isPrimary = false,
   toggleVariant = 'default',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -89,6 +92,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
           isActive={isActive}
           isDisabled={isDisabled}
           isPlain={isPlain}
+          isText={isText}
           isPrimary={isPrimary}
           toggleVariant={toggleVariant}
           onToggle={onToggle}

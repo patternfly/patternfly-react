@@ -13,6 +13,7 @@ exports[`KebabToggle should match snapshot (auto-generated) 1`] = `
   isPlain={false}
   isPrimary={false}
   isSplitButton={false}
+  isText={false}
   onEnter={[Function]}
   onToggle={[Function]}
   parentRef={null}

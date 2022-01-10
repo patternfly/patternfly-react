@@ -402,7 +402,7 @@ const SecondaryDropdown = () => {
 };
 ```
 
-### Plain-text toggle
+### Plain with text toggle
 
 ```ts
 import React from 'react';
@@ -437,6 +437,8 @@ const SecondaryDropdown = () => {
 
   return (
     <Dropdown
+      isText
+      isPlain
       onSelect={() => {
         setIsOpen(!isOpen);
         onFocus();
@@ -445,7 +447,6 @@ const SecondaryDropdown = () => {
         <DropdownToggle
           onToggle={next => setIsOpen(next)}
           toggleIndicator={CaretDownIcon}
-          toggleVariant="plain-text"
           id="toggle-id-plain-text"
         >
           Dropdown
@@ -457,6 +458,7 @@ const SecondaryDropdown = () => {
   );
 };
 ```
+
 ### Position right
 
 ```js
