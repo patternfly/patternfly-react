@@ -90,8 +90,9 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   ...props
 }: LabelProps) => {
   const [isEditableActive, setIsEditableActive] = useState(false);
-  const editableDivRef = React.createRef<HTMLButtonElement>();
-  const editableInputRef = React.createRef<HTMLInputElement>();
+  const [currValue, setCurrValue] = useState(children);
+  const editableButtonRef = React.useRef<HTMLButtonElement>();
+  const editableInputRef = React.useRef<HTMLInputElement>();
 
   React.useEffect(() => {
     document.addEventListener('click', onDocClick);
@@ -120,7 +121,9 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     const key = event.key;
     if (
       (!isEditableActive &&
-        (!editableDivRef || !editableDivRef.current || !editableDivRef.current.contains(event.target as Node))) ||
+        (!editableButtonRef ||
+          !editableButtonRef.current ||
+          !editableButtonRef.current.contains(event.target as Node))) ||
       (isEditableActive &&
         (!editableInputRef || !editableInputRef.current || !editableInputRef.current.contains(event.target as Node)))
     ) {
@@ -194,21 +197,11 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     </React.Fragment>
   );
 
-  const onEditClick = (event: any, isEditableActive: boolean) => {
-    if (!isEditableActive) {
-      setIsEditableActive(true);
-    }
-    return;
-  };
-
   React.useEffect(() => {
     if (isEditableActive && editableInputRef) {
       editableInputRef.current && editableInputRef.current.focus();
     }
-    return;
-  });
-
-  const [currValue, setCurrValue] = useState(children);
+  }, [editableInputRef, isEditableActive]);
 
   const updateVal = () => {
     setCurrValue(editableInputRef.current.value);
@@ -217,11 +210,12 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   if (isEditable) {
     content = (
       <button
-        ref={editableDivRef}
+        ref={editableButtonRef}
         className={css(styles.labelEditableText)}
-        onClick={event => onEditClick(event, isEditableActive)}
-        currvalue={currValue}
-        {...isEditableActive}
+        onClick={e => {
+          setIsEditableActive(true);
+          e.stopPropagation();
+        }}
         {...editableProps}
       >
         {children}
