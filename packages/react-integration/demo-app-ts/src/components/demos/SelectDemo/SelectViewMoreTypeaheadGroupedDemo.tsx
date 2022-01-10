@@ -15,12 +15,11 @@ export interface SelectViewMoreTypeaheadGroupedDemoState {
   isLoading: boolean;
   isCreatable: boolean;
   newOptions: boolean;
-  inputValuePersisted: boolean;
   options: TypeAheadOption[];
 }
 
 export class SelectViewMoreTypeaheadGroupedDemo extends React.Component<SelectViewMoreTypeaheadGroupedDemoState> {
-  static displayName = 'SelectViewMoreTypeaheadGroupedDemo';
+  static displayName = 'SelectViewMoreTypeaheadDemo';
   state = {
     isOpen: false,
     selected: [] as string[],
@@ -61,12 +60,6 @@ export class SelectViewMoreTypeaheadGroupedDemo extends React.Component<SelectVi
   toggleNew = (checked: boolean) => {
     this.setState({
       newOptions: checked
-    });
-  };
-
-  createNew = (newValue: string) => {
-    this.setState({
-      typeaheadOptions: [...this.options, { value: newValue, disabled: false }]
     });
   };
 
@@ -111,7 +104,7 @@ export class SelectViewMoreTypeaheadGroupedDemo extends React.Component<SelectVi
 
   render() {
     const titleId = 'view-more-typeahead-select-id';
-    const { isOpen, selected, isCreatable, newOptions, inputValuePersisted, isLoading, numOptions } = this.state;
+    const { isOpen, selected, isLoading, numOptions } = this.state;
     return (
       <StackItem isFilled={false}>
         <Title headingLevel="h2" size="2xl">
@@ -132,10 +125,6 @@ export class SelectViewMoreTypeaheadGroupedDemo extends React.Component<SelectVi
             isOpen={isOpen}
             aria-labelledby={titleId}
             placeholderText="Select a state"
-            isCreatable={isCreatable}
-            onCreateOption={(newOptions && this.createNew) || undefined}
-            isInputValuePersisted={inputValuePersisted}
-            createText="Create item"
             noResultsFoundText="Item not found"
             {...(!isLoading &&
               numOptions < this.options.length && {
@@ -146,30 +135,6 @@ export class SelectViewMoreTypeaheadGroupedDemo extends React.Component<SelectVi
             {this.options.slice(0, numOptions)}
           </Select>
         </div>
-        <Checkbox
-          label="isCreatable"
-          isChecked={this.state.isCreatable}
-          onChange={this.toggleCreatable}
-          aria-label="toggle creatable checkbox"
-          id="toggle-creatable-typeahead"
-          name="toggle-creatable-typeahead"
-        />
-        <Checkbox
-          label="onCreateOption"
-          isChecked={this.state.newOptions}
-          onChange={this.toggleNew}
-          aria-label="toggle new checkbox"
-          id="toggle-new-typeahead"
-          name="toggle-new-typeahead"
-        />
-        <Checkbox
-          label="isInputValuePersisted"
-          isChecked={this.state.inputValuePersisted}
-          onChange={this.toggleInputValuePersisted}
-          aria-label="toggle input value persisted"
-          id="toggle-input-value-persisted"
-          name="toggle-input-value-persisted"
-        />
       </StackItem>
     );
   }
