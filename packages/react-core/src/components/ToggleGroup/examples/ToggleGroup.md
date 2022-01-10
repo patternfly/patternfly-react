@@ -53,7 +53,7 @@ class DefaultToggleGroupExample extends React.Component {
           </Button>
         </StackItem>
         <StackItem>
-          <ToggleGroup disableAll={this.state.disableAll} aria-label="Default with multiple selectable">
+          <ToggleGroup areAllGroupsDisabled={this.state.disableAll} aria-label="Default with multiple selectable">
             <ToggleGroupItem text="Option 1" key={0} buttonId="first" isSelected={isSelected.first} onChange={this.handleItemClick} />
             <ToggleGroupItem text="Option 2" key={1} buttonId="second" isSelected={isSelected.second} onChange={this.handleItemClick} />
             <ToggleGroupItem text="Option 3" key={2} isDisabled/>

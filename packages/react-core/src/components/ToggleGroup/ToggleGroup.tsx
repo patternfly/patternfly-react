@@ -11,7 +11,7 @@ export interface ToggleGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Modifies the toggle group to include compact styling. */
   isCompact?: boolean;
   /** Disable all toggle group items under this component. */
-  disableAll?: boolean;
+  areAllGroupsDisabled?: boolean;
   /** Accessible label for the toggle group */
   'aria-label'?: string;
 }
@@ -20,7 +20,7 @@ export const ToggleGroup: React.FunctionComponent<ToggleGroupProps> = ({
   className,
   children,
   isCompact = false,
-  disableAll = false,
+  areAllGroupsDisabled = false,
   'aria-label': ariaLabel,
   ...props
 }: ToggleGroupProps) => {
@@ -28,7 +28,7 @@ export const ToggleGroup: React.FunctionComponent<ToggleGroupProps> = ({
     const childCompName = (child as any).type.name;
     return childCompName !== ToggleGroupItem.name
       ? child
-      : React.cloneElement(child as React.ReactElement, disableAll ? { isDisabled: true } : {});
+      : React.cloneElement(child as React.ReactElement, areAllGroupsDisabled ? { isDisabled: true } : {});
   });
 
   return (
