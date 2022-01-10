@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.52.10 (2022-01-10)
+
+
+### Bug Fixes
+
+* **Tabs:** allow href navigation from tabs ([#6755](https://github.com/patternfly/patternfly-react/issues/6755)) ([290d89a](https://github.com/patternfly/patternfly-react/commit/290d89aed2dd4517db9859cc80ef2745cb8a779b))
+
+
+
+
+
 ## 4.52.9 (2022-01-10)
 
 **Note:** Version bump only for package @patternfly/react-table
