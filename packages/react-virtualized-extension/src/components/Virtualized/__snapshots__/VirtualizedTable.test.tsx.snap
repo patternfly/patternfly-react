@@ -2635,13 +2635,15 @@ exports[`Selectable virtualized table 1`] = `
                                           onSelect={[Function]}
                                           selectVariant="checkbox"
                                         >
-                                          <input
-                                            aria-label="Select all rows"
-                                            checked={false}
-                                            name="check-all"
-                                            onChange={[Function]}
-                                            type="checkbox"
-                                          />
+                                          <label>
+                                            <input
+                                              aria-label="Select all rows"
+                                              checked={false}
+                                              name="check-all"
+                                              onChange={[Function]}
+                                              type="checkbox"
+                                            />
+                                          </label>
                                         </SelectColumn>
                                       </td>
                                     </ThBase>
