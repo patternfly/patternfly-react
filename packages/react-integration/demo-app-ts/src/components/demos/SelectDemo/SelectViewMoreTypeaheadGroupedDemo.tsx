@@ -45,24 +45,6 @@ export class SelectViewMoreTypeaheadGroupedDemo extends React.Component<SelectVi
     </SelectGroup>
   ];
 
-  toggleCreatable = (checked: boolean) => {
-    this.setState({
-      isCreatable: checked
-    });
-  };
-
-  toggleInputValuePersisted = (checked: boolean) => {
-    this.setState({
-      inputValuePersisted: checked
-    });
-  };
-
-  toggleNew = (checked: boolean) => {
-    this.setState({
-      newOptions: checked
-    });
-  };
-
   onToggle = (isOpen: boolean) => {
     this.setState({
       isOpen
