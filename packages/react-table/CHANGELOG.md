@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.53.0 (2022-01-10)
+
+
+### Features
+
+* **Dropdown:** add plain-text variant support ([#6721](https://github.com/patternfly/patternfly-react/issues/6721)) ([e5000e3](https://github.com/patternfly/patternfly-react/commit/e5000e36194e36b9c6ae49efdb0a513125efcb70))
+
+
+
+
+
 ## 4.52.11 (2022-01-10)
 
 **Note:** Version bump only for package @patternfly/react-table
