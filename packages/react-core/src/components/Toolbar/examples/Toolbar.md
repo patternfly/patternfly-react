@@ -239,6 +239,70 @@ class ToolbarSpacers extends React.Component {
 }
 ```
 
+### Sticky
+
+```js
+import React from 'react';
+import {
+  Toolbar,
+  ToolbarItem,
+  ToolbarContent,
+  Button,
+  ButtonVariant,
+  InputGroup,
+  TextInput,
+  Checkbox
+} from '@patternfly/react-core';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+
+const ToolbarItems = () => {
+  const [isSticky, setIsSticky] = React.useState(true);
+  const [showEvenOnly, setShowEvenOnly] = React.useState(true);
+  const array = [...Array(30).keys()];
+  const numbers = showEvenOnly ?  array.filter(number => number % 2 === 0):array;
+
+  return (
+    <React.Fragment>
+      <div style={{ overflowY: 'scroll', height: '200px' }}>
+        <Toolbar id="toolbar-spacers" inset={{ default: 'insetNone' }} isSticky={isSticky}>
+          <ToolbarContent>
+            <ToolbarItem>
+              <InputGroup>
+                <TextInput name="textInput1" id="textInput1" type="search" aria-label="search input example" />
+                <Button variant={ButtonVariant.control} aria-label="search button for search input">
+                  <SearchIcon />
+                </Button>
+              </InputGroup>
+            </ToolbarItem>
+            <ToolbarItem>
+              <Checkbox
+                label="Show only even number items"
+                isChecked={showEvenOnly}
+                onChange={setShowEvenOnly}
+                aria-label="checkbox for showing only even numbers"
+                id="showOnlyEvenCheckbox"
+              />
+            </ToolbarItem>
+          </ToolbarContent>
+        </Toolbar>
+        <ul>
+          {numbers.map(number => (
+            <li key={number}>{`item ${number}`}</li>
+          ))}
+        </ul>
+      </div>
+      <Checkbox
+        label="Is toolbar sticky"
+        isChecked={isSticky}
+        onChange={setIsSticky}
+        aria-label="checkbox for is sticky"
+        id="isStickyCheckbox"
+      />
+    </React.Fragment>
+  );
+};
+```
+
 ### Groups
 
 Often, it makes sense to group sets of like items to create desired associations and to enable items to respond together to changes in viewport width. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
