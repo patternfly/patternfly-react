@@ -92,10 +92,9 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
     }
   };
 
-  const handleTab = (event: React.KeyboardEvent) => {
+  const handleTab = () => {
     if (menuItems.length === 3) {
       setInputValue(menuItems[2].props.children);
-      event.preventDefault();
     }
   };
 
@@ -129,7 +128,7 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
         handleEscape();
         break;
       case 'Tab':
-        handleTab(event);
+        handleTab();
         break;
       case 'ArrowUp':
       case 'ArrowDown':
@@ -167,13 +166,16 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
   /** enable keyboard only usage while focused on the menu */
   const handleMenuKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === 'Escape') {
-      setInputValue('');
       focusTextInput();
       setMenuIsOpen(false);
     }
+
+    if (event.key === 'Tab') {
+      setInputValue('');
+    }
   };
 
-  /** only show the search icon when no chips are selected */
+  /** show the search icon only when there are no chips to prevent the chips from being displayed behind the icon */
   const showSearchIcon = !currentChips.length;
 
   /** only show the clear button when there is something that can be cleared */
@@ -188,6 +190,8 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
           onChange={handleInputChange}
           onFocus={() => setMenuIsOpen(true)}
           onKeyDown={handleTextInputKeyDown}
+          placeholder="search"
+          aria-label="Search input"
         >
           <ChipGroup>
             {currentChips.map(currentChip => (
@@ -199,7 +203,7 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
         </TextInputGroupMain>
         <TextInputGroupUtilities>
           {showClearButton && (
-            <Button variant="plain" onClick={clearChipsAndInput} aria-label="Clear button and input">
+            <Button variant="plain" onClick={clearChipsAndInput} aria-label="Clear button for chips and input">
               <TimesIcon />
             </Button>
           )}
