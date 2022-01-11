@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.25.1 (2022-01-11)
+
+
+### Bug Fixes
+
+* **Select:** update typeahead Select children when any option attribute changes ([#6747](https://github.com/patternfly/patternfly-react/issues/6747)) ([1e03f3c](https://github.com/patternfly/patternfly-react/commit/1e03f3c6d0a7c507e33398c98863e40bb2233a62))
+
+
+
+
+
 # 4.25.0 (2022-01-11)
 
 
