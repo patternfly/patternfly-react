@@ -256,7 +256,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     if (
       this.state.viewMoreNextIndex !== -1 &&
       this.refCollection.length > this.state.viewMoreNextIndex &&
-      this.props.loadingVariant !== 'spinner'
+      this.props.loadingVariant !== 'spinner' &&
+      this.refCollection[this.state.viewMoreNextIndex][0]
     ) {
       this.refCollection[this.state.viewMoreNextIndex][0].focus();
     }
