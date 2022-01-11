@@ -13,9 +13,10 @@ import {
   NodeCollapseChangeEventListener,
   ElementVisibilityChangeEventListener,
   ELEMENT_VISIBILITY_CHANGE_EVENT,
-  ElementVisibilityChangeEvent
+  ElementVisibilityChangeEvent,
+  isNode
 } from '../types';
-import { leafNodeElements, groupNodeElements, getClosestVisibleParent } from '../utils/element-utils';
+import { leafNodeElements, groupNodeElements, getClosestVisibleParent } from '../utils';
 import {
   DRAG_MOVE_OPERATION,
   DRAG_NODE_END_EVENT,
@@ -42,7 +43,7 @@ export const LAYOUT_DEFAULTS: LayoutOptions = {
   layoutOnDrag: true
 };
 export class BaseLayout implements Layout {
-  private graph: Graph;
+  private readonly graph: Graph;
 
   protected forceSimulation: ForceSimulation;
 
@@ -118,8 +119,7 @@ export class BaseLayout implements Layout {
     if (dragNode) {
       dragNode.isFixed = true;
       found = true;
-    }
-    if (!found) {
+    } else {
       const dragGroup: LayoutGroup | undefined = this.groups.find((group: LayoutGroup) => group.id === id);
       if (dragGroup) {
         const groupNodes = dragGroup.leaves;
@@ -248,7 +248,7 @@ export class BaseLayout implements Layout {
     }
 
     let layoutNode = _.find(nodes, { id: node.getId() });
-    if (!layoutNode && _.size(node.getChildren())) {
+    if (!layoutNode && _.size(node.getNodes())) {
       layoutNode = _.find(nodes, { id: node.getChildren()[0].getId() });
     }
     if (!layoutNode) {
@@ -258,6 +258,7 @@ export class BaseLayout implements Layout {
     return layoutNode;
   }
 
+  // Faux Edges are used to layout nodes in a group together, as if they had links between them
   protected getFauxEdges(groups: LayoutGroup[], nodes: LayoutNode[]): LayoutLink[] {
     const fauxEdges: LayoutLink[] = [];
     groups.forEach((group: LayoutGroup) => {
@@ -317,12 +318,14 @@ export class BaseLayout implements Layout {
     return links;
   }
 
+  protected hasVisibleChildren = (group: Node): boolean => !!group.getNodes().find(c => isNode(c) && c.isVisible());
+
   // Turn empty groups into nodes
   protected getNodesFromGroups(groups: Node[], nodeDistance: number, nodeCount: number): LayoutNode[] {
     let count = 0;
     const groupNodes: LayoutNode[] = [];
     groups.forEach((group: Node) => {
-      if (group.getChildren().filter(c => c.isVisible()).length === 0) {
+      if (!this.hasVisibleChildren(group)) {
         groupNodes.push(this.createLayoutNode(group, nodeDistance, nodeCount + count++));
       }
     });
@@ -331,17 +334,17 @@ export class BaseLayout implements Layout {
   }
 
   protected getGroups(groups: Node[], nodes: LayoutNode[], padding: number): LayoutGroup[] {
-    let nodeIndex = nodes.length;
+    let nodeIndex = 2 * nodes.length;
     // Create groups only for those with children
     const layoutGroups: LayoutGroup[] = groups
-      .filter(g => g.getChildren().filter(c => c.isVisible()).length > 0)
+      .filter(g => this.hasVisibleChildren(g))
       .map((group: Node) => this.createLayoutGroup(group, padding, nodeIndex++));
 
     layoutGroups.forEach((groupNode: LayoutGroup) => {
       const leaves: LayoutNode[] = [];
       const leafElements = groupNode.element
-        .getChildren()
-        .filter((node: any) => !node.isGroup() || node.getChildren().length === 0);
+        .getNodes()
+        .filter((node: any) => !node.isGroup() || !this.hasVisibleChildren(node));
       leafElements.forEach((leaf: any) => {
         const layoutLeaf = nodes.find(n => n.id === leaf.getId());
         if (layoutLeaf) {
@@ -352,8 +355,8 @@ export class BaseLayout implements Layout {
       groupNode.leaves = leaves;
       const childGroups: LayoutGroup[] = [];
       const groupElements = groupNode.element
-        .getChildren()
-        .filter((node: any) => node.isGroup() && !node.isCollapsed());
+        .getNodes()
+        .filter((node: any) => node.isGroup() && node.isVisible() && !node.isCollapsed());
       groupElements.forEach((group: any) => {
         const layoutGroup = layoutGroups.find(g => g.id === group.getId());
         if (layoutGroup) {

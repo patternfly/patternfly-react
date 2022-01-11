@@ -10,6 +10,7 @@ import { getEdgeAnimationDuration, getEdgeStyleClassModifier } from '../../utils
 import DefaultConnectorTerminal from './terminals/DefaultConnectorTerminal';
 import { TOP_LAYER } from '../../const';
 import DefaultConnectorTag from './DefaultConnectorTag';
+import { Point } from '../../geom';
 
 type BaseEdgeProps = {
   element: Edge;
@@ -74,6 +75,12 @@ const BaseEdge: React.FC<BaseEdgeProps> = ({
   const edgeAnimationDuration = animationDuration ?? getEdgeAnimationDuration(element.getEdgeAnimationSpeed());
   const linkClassName = css(styles.topologyEdgeLink, getEdgeStyleClassModifier(element.getEdgeStyle()));
 
+  const bendpoints = element.getBendpoints();
+
+  const d = `M${startPoint.x} ${startPoint.y} ${bendpoints.map((b: Point) => `L${b.x} ${b.y} `).join('')}L${
+    endPoint.x
+  } ${endPoint.y}`;
+
   return (
     <Layer id={dragging || hover ? TOP_LAYER : undefined}>
       <g
@@ -83,22 +90,15 @@ const BaseEdge: React.FC<BaseEdgeProps> = ({
         onClick={onSelect}
         onContextMenu={onContextMenu}
       >
-        <line
-          x1={startPoint.x}
-          y1={startPoint.y}
-          x2={endPoint.x}
-          y2={endPoint.y}
+        <path
           strokeWidth={10}
           stroke="transparent"
+          d={d}
+          fill="none"
+          onMouseEnter={onShowRemoveConnector}
+          onMouseLeave={onHideRemoveConnector}
         />
-        <line
-          className={linkClassName}
-          x1={startPoint.x}
-          y1={startPoint.y}
-          x2={endPoint.x}
-          y2={endPoint.y}
-          style={{ animationDuration: `${edgeAnimationDuration}s` }}
-        />
+        <path className={linkClassName} d={d} style={{ animationDuration: `${edgeAnimationDuration}s` }} />
         {tag && (
           <DefaultConnectorTag
             className={tagClass}
