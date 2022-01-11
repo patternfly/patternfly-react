@@ -262,17 +262,26 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       this.refCollection[this.state.viewMoreNextIndex][0].focus();
     }
 
-    // the number or contents of the children has changed, update state.typeaheadFilteredChildren
-    if (
+    const hasUpdatedChildren =
       prevProps.children.length !== this.props.children.length ||
-      prevProps.children.some((child: React.ReactElement, index: number) => {
-        if (child.props && this.props.children[index].props) {
-          return child.props.value !== this.props.children[index].props.value;
+      prevProps.children.some((prevChild: React.ReactElement, index: number) => {
+        const prevChildProps = prevChild.props;
+        const currChild = this.props.children[index];
+        const { props: currChildProps } = currChild;
+
+        if (prevChildProps && currChildProps) {
+          return (
+            prevChildProps.value !== currChildProps.value ||
+            prevChildProps.label !== currChildProps.label ||
+            prevChildProps.isDisabled !== currChildProps.isDisabled ||
+            prevChildProps.isPlaceholder !== currChildProps.isPlaceholder
+          );
         } else {
-          return child !== this.props.children[index];
+          return prevChild !== currChild;
         }
-      })
-    ) {
+      });
+
+    if (hasUpdatedChildren) {
       this.updateTypeAheadFilteredChildren(prevState.typeaheadInputValue || '', null);
     }
 
