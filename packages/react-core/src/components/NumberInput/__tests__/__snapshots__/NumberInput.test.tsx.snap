@@ -72,6 +72,7 @@ exports[`numberInput disables lower threshold 1`] = `
       <input
         aria-label="Input"
         className="pf-c-form-control"
+        onKeyDown={[Function]}
         readOnly={true}
         type="number"
         value={0}
@@ -209,6 +210,7 @@ exports[`numberInput disables upper threshold 1`] = `
       <input
         aria-label="Input"
         className="pf-c-form-control"
+        onKeyDown={[Function]}
         readOnly={true}
         type="number"
         value={100}
@@ -361,6 +363,7 @@ exports[`numberInput passes button props successfully 1`] = `
       <input
         aria-label="Input"
         className="pf-c-form-control"
+        onKeyDown={[Function]}
         readOnly={true}
         type="number"
         value={5}
@@ -504,6 +507,7 @@ exports[`numberInput passes input props successfully 1`] = `
         className="pf-c-form-control"
         name="test-name"
         onChange={[MockFunction]}
+        onKeyDown={[Function]}
         type="number"
         value={5}
       />
@@ -645,6 +649,7 @@ exports[`numberInput renders custom width 1`] = `
       <input
         aria-label="Input"
         className="pf-c-form-control"
+        onKeyDown={[Function]}
         readOnly={true}
         type="number"
         value={5}
@@ -783,6 +788,7 @@ exports[`numberInput renders defaults & extra props 1`] = `
       <input
         aria-label="Input"
         className="pf-c-form-control"
+        onKeyDown={[Function]}
         readOnly={true}
         type="number"
         value={0}
@@ -922,6 +928,7 @@ exports[`numberInput renders disabled 1`] = `
         aria-label="Input"
         className="pf-c-form-control"
         disabled={true}
+        onKeyDown={[Function]}
         readOnly={true}
         type="number"
         value={90}
@@ -1066,6 +1073,7 @@ exports[`numberInput renders unit & position 1`] = `
       <input
         aria-label="Input"
         className="pf-c-form-control"
+        onKeyDown={[Function]}
         readOnly={true}
         type="number"
         value={5}
@@ -1204,6 +1212,7 @@ exports[`numberInput renders unit 1`] = `
       <input
         aria-label="Input"
         className="pf-c-form-control"
+        onKeyDown={[Function]}
         readOnly={true}
         type="number"
         value={5}
@@ -1345,6 +1354,7 @@ exports[`numberInput renders value 1`] = `
       <input
         aria-label="Input"
         className="pf-c-form-control"
+        onKeyDown={[Function]}
         readOnly={true}
         type="number"
         value={90}
