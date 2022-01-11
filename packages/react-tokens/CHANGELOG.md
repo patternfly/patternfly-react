@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.37.0 (2022-01-11)
+
+
+### Features
+
+* **Table:** update clickable area for checks/radios ([#6754](https://github.com/patternfly/patternfly-react/issues/6754)) ([c4f3c2d](https://github.com/patternfly/patternfly-react/commit/c4f3c2d7f515e3d6ad73d8b52238ca426281469a))
+
+
+
+
+
 ## 4.36.2 (2022-01-10)
 
 **Note:** Version bump only for package @patternfly/react-tokens
