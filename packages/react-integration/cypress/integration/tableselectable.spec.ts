@@ -26,11 +26,11 @@ describe('Table Selectable Test', () => {
 
   it('Test selectable checkbox', () => {
     for (let i = 1; i <= 3; i++) {
-      cy.get(`tbody tr:nth-child(${i}) .pf-c-table__check > input`).check();
+      cy.get(`tbody tr:nth-child(${i}) .pf-c-table__check > label > input`).check();
     }
 
     for (let i = 1; i <= 3; i++) {
-      cy.get(`tbody tr:nth-child(${i}) .pf-c-table__check > input`).should('be.checked');
+      cy.get(`tbody tr:nth-child(${i}) .pf-c-table__check > label > input`).should('be.checked');
     }
   });
 
@@ -39,14 +39,14 @@ describe('Table Selectable Test', () => {
     cy.get('input[name=selectVariant][value=radio]').click();
 
     for (let i = 1; i <= 3; i++) {
-      cy.get(`tbody tr:nth-child(${i}) .pf-c-table__check > input`).check();
+      cy.get(`tbody tr:nth-child(${i}) .pf-c-table__check > label > input`).check();
     }
     // Only last radio input should be checked in the end of the iteration
     for (let i = 1; i <= 3; i++) {
       if (i < 3) {
-        cy.get(`tbody tr:nth-child(${i}) .pf-c-table__check > input`).should('not.be.checked');
+        cy.get(`tbody tr:nth-child(${i}) .pf-c-table__check > label > input`).should('not.be.checked');
       } else {
-        cy.get(`tbody tr:nth-child(${i}) .pf-c-table__check > input`).should('be.checked');
+        cy.get(`tbody tr:nth-child(${i}) .pf-c-table__check > label > input`).should('be.checked');
       }
     }
   });

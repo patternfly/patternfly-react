@@ -22,7 +22,9 @@ export const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
   ...props
 }: SelectColumnProps) => (
   <React.Fragment>
-    <input {...props} type={selectVariant} onChange={onSelect} />
+    <label>
+      <input {...props} type={selectVariant} onChange={onSelect} />
+    </label>
     {children}
   </React.Fragment>
 );
