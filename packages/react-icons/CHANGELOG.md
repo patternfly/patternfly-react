@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.37.0 (2022-01-11)
+
+
+### Features
+
+* **ToggleGroup:** support disabling all items under the parent ([#6700](https://github.com/patternfly/patternfly-react/issues/6700)) ([a60c8f3](https://github.com/patternfly/patternfly-react/commit/a60c8f3485546c797750451714a70b7e84a4ba0f))
+
+
+
+
+
 ## 4.36.1 (2022-01-11)
 
 **Note:** Version bump only for package @patternfly/react-icons
