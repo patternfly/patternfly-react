@@ -81,16 +81,6 @@ export class ExpandableSectionDemo extends React.Component<null, ExpandableSecti
         >
           This content is visible only when the component is expanded.
         </ExpandableSection>
-        <br />
-        <h1> Indented Expandable Example: </h1>
-        <ExpandableSection
-          toggleText={isExpanded ? 'Show Less' : 'Show More'}
-          onToggle={this.onToggle}
-          isExpanded={isExpanded}
-          isIndented
-        >
-          This content is visible only when the component is expanded.
-        </ExpandableSection>
       </React.Fragment>
     );
   }
