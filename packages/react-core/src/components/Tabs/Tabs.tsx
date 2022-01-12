@@ -167,7 +167,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     if (tabContentRef) {
       React.Children.toArray(this.props.children)
         .filter((child): child is TabElement => React.isValidElement(child))
-        .filter(child => child.props && child.props.tabContentRef && child.props.tabContentRef.current)
+        .filter(({ props }) => props.tabContentRef && props.tabContentRef.current)
         .forEach(child => (child.props.tabContentRef.current.hidden = true));
       // most recently selected tabContent
       if (tabContentRef.current) {
