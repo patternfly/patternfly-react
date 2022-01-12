@@ -102,6 +102,7 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
   const {
     width,
     height,
+    backgroundHeight,
     startX,
     startY,
     badgeStartX,
@@ -115,6 +116,7 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
       return {
         width: 0,
         height: 0,
+        backgroundHeight: 0,
         startX: 0,
         startY: 0,
         badgeStartX: 0,
@@ -125,19 +127,20 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
         badgeSpace: 0
       };
     }
-    const badgeSpace = badgeSize && badgeLocation === BadgeLocation.inner ? badgeSize.width + paddingX : 0;
+    const badgeSpace = badge && badgeSize && badgeLocation === BadgeLocation.inner ? badgeSize.width + paddingX : 0;
     const height = Math.max(textSize.height, badgeSize?.height ?? 0) + paddingY * 2;
     const iconSpace = labelIconClass ? (height + paddingY * 0.5) / 2 : 0;
-    const actionSpace = actionSize ? actionSize.width : 0;
-    const contextSpace = contextSize ? contextSize.width : 0;
+    const actionSpace = actionIcon && actionSize ? actionSize.width : 0;
+    const contextSpace = onContextMenu && contextSize ? contextSize.width : 0;
     const primaryWidth = iconSpace + badgeSpace + paddingX + textSize.width + actionSpace + contextSpace + paddingX;
-    const secondaryWidth = secondaryTextSize ? secondaryTextSize.width + 2 * paddingX : 0;
+    const secondaryWidth = secondaryTextChildren && secondaryTextSize ? secondaryTextSize.width + 2 * paddingX : 0;
     const width = Math.max(primaryWidth, secondaryWidth);
     const startX = position === LabelPosition.right ? x + iconSpace : x - width / 2 - iconSpace / 2;
     const startY = position === LabelPosition.right ? y - height / 2 : y;
     const actionStartX = iconSpace + badgeSpace + paddingX + textSize.width + paddingX;
     const contextStartX = actionStartX + actionSpace;
-
+    const backgroundHeight =
+      height + (secondaryTextChildren && secondaryTextSize ? secondaryTextSize.height + paddingY * 2 : 0);
     let badgeStartX = 0;
     let badgeStartY = 0;
     if (badgeSize) {
@@ -153,6 +156,7 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
     return {
       width,
       height,
+      backgroundHeight,
       startX,
       startY,
       actionStartX,
@@ -164,13 +168,17 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
     };
   }, [
     textSize,
+    badge,
     badgeSize,
     badgeLocation,
     paddingX,
     paddingY,
     labelIconClass,
+    actionIcon,
     actionSize,
+    onContextMenu,
     contextSize,
+    secondaryTextChildren,
     secondaryTextSize,
     position,
     x,
@@ -195,7 +203,7 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
           x={0}
           y={0}
           width={width}
-          height={height + (secondaryTextSize ? secondaryTextSize.height + paddingY * 2 : 0)}
+          height={backgroundHeight}
           rx={cornerRadius}
           ry={cornerRadius}
         />
