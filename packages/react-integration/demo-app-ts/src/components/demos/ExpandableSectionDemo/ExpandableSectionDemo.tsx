@@ -45,7 +45,7 @@ export class ExpandableSectionDemo extends React.Component<null, ExpandableSecti
           This content is visible only when the component is expanded.
         </ExpandableSection>
         <br />
-        <h1>Detached expandable section</h1>
+        <h1>Detached Expandable Section</h1>
         <Stack hasGutter>
           <StackItem>
             <ExpandableSection

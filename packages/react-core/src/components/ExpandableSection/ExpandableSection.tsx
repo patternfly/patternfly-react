@@ -29,6 +29,8 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
   displaySize?: 'default' | 'large';
   /** Flag to indicate the width of the component is limited. Set to true for disclosure styling. */
   isWidthLimited?: boolean;
+  /** Flag to indicate if the content is indented */
+  isIndented?: boolean;
 }
 
 interface ExpandableSectionState {
@@ -56,6 +58,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     isDetached: false,
     displaySize: 'default',
     isWidthLimited: false,
+    isIndented: false,
     contentId: ''
   };
 
@@ -88,6 +91,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
       isDetached,
       displaySize,
       isWidthLimited,
+      isIndented,
       contentId,
       ...props
     } = this.props;
@@ -119,6 +123,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
           isDetached && styles.modifiers.detached,
           displaySize === 'large' && styles.modifiers.displayLg,
           isWidthLimited && styles.modifiers.limitWidth,
+          isIndented && styles.modifiers.indented,
           className
         )}
       >
