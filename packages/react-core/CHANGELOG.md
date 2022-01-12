@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.187.0 (2022-01-12)
+
+
+### Features
+
+* **expandable-section:** added indented variation ([#6763](https://github.com/patternfly/patternfly-react/issues/6763)) ([703b922](https://github.com/patternfly/patternfly-react/commit/703b9224e43bedd5b37ec41d8f26f2939836d610))
+
+
+
+
+
 ## 4.186.1 (2022-01-11)
 
 
