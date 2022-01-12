@@ -30,6 +30,7 @@ exports[`OptionsMenu should match snapshot (auto-generated) 1`] = `
     isGrouped={false}
     isOpen={true}
     isPlain={true}
+    isText={false}
     menuAppendTo="inline"
     onSelect={[Function]}
     position="right"

@@ -18,7 +18,8 @@ export const OverflowMenuGroup: React.FC<OverflowMenuGroupProps> = ({
   className,
   children,
   isPersistent = false,
-  groupType
+  groupType,
+  ...props
 }: OverflowMenuGroupProps) => (
   <OverflowMenuContext.Consumer>
     {value =>
@@ -30,6 +31,7 @@ export const OverflowMenuGroup: React.FC<OverflowMenuGroupProps> = ({
             groupType === 'icon' && styles.modifiers.iconButtonGroup,
             className
           )}
+          {...props}
         >
           {children}
         </div>

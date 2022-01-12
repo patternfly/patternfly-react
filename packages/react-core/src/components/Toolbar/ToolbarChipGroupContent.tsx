@@ -25,6 +25,8 @@ export interface ToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivEle
   clearFiltersButtonText?: string;
   /** Total number of filters currently being applied across all ToolbarFilter components */
   numberOfFilters: number;
+  /** Text to display in the total number of applied filters ToolbarFilter */
+  numberOfFiltersText?: (numberOfFilters: number) => string;
   /** The breakpoint at which the listed filters in chip groups are collapsed down to a summary */
   collapseListedFiltersBreakpoint?: 'all' | 'md' | 'lg' | 'xl' | '2xl';
 }
@@ -33,7 +35,8 @@ export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupCon
   static displayName = 'ToolbarChipGroupContent';
   static defaultProps: PickOptional<ToolbarChipGroupContentProps> = {
     clearFiltersButtonText: 'Clear all filters',
-    collapseListedFiltersBreakpoint: 'lg'
+    collapseListedFiltersBreakpoint: 'lg',
+    numberOfFiltersText: (numberOfFilters: number) => `${numberOfFilters} filters applied`
   };
 
   render() {
@@ -46,6 +49,7 @@ export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupCon
       clearFiltersButtonText,
       collapseListedFiltersBreakpoint,
       numberOfFilters,
+      numberOfFiltersText,
       ...props
     } = this.props;
 
@@ -79,7 +83,7 @@ export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupCon
         />
         {collapseListedFilters && numberOfFilters > 0 && !isExpanded && (
           <ToolbarGroup>
-            <ToolbarItem>{numberOfFilters} filters applied</ToolbarItem>
+            <ToolbarItem>{numberOfFiltersText(numberOfFilters)}</ToolbarItem>
           </ToolbarGroup>
         )}
         {showClearFiltersButton && !isExpanded && (

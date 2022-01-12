@@ -15,7 +15,7 @@ JumpLinks has a scrollspy built-in to make your implementation easier. When impl
 
 ### Scrollspy with subsections
 
-This demo expands on the previous to show the JumpLinks in a vertical layout with subsections. It scrolls the [Page](/components/page)'s `mainContainerId` with an `offset` of 76px for the masthead. The headings are given a tab index to allow the jump links to focus them.
+This demo expands on the previous to show the JumpLinks in a vertical layout with subsections. It scrolls the [Page](/components/page)'s `mainContainerId` with an `offset` calculated based on the height of the masthead and the nav list when it appears above the content. The headings are given a tab index to allow the jump links to focus on them.
 
 ```js isFullscreen
 import React from 'react';
@@ -30,7 +30,8 @@ import {
   SidebarPanel,
   Switch,
   Title,
-  TextContent
+  TextContent,
+  getResizeObserver
 } from '@patternfly/react-core';
 import DashboardWrapper from './examples/DashboardWrapper';
 
@@ -38,6 +39,23 @@ ScrollspyH2 = () => {
   const headings = [1, 2, 3, 4, 5];
 
   const [isVertical, setIsVertical] = React.useState(true);
+  const [offsetHeight, setOffsetHeight] = React.useState(10);
+
+  // Update offset based on the masthead and jump links nav heights.
+  React.useEffect(() => {
+    const masthead = document.getElementsByClassName('pf-c-masthead')[0];
+    const offsetForPadding = 10;
+
+    getResizeObserver(masthead, () => {
+      if (isVertical) {
+        setOffsetHeight(masthead.offsetHeight + offsetForPadding);
+      } else {
+        // Append jump links nav height to the masthead height when value exists.
+        const jumpLinksHeaderHeight = document.getElementsByClassName('pf-m-sticky')[0].offsetHeight;
+        jumpLinksHeaderHeight && setOffsetHeight(masthead.offsetHeight + jumpLinksHeaderHeight + offsetForPadding);
+      }
+    });
+  }, [isVertical]);
 
   return (
     <DashboardWrapper breadcrumb={null} mainContainerId="scrollable-element">
@@ -62,8 +80,8 @@ ScrollspyH2 = () => {
                 isCentered={!isVertical}
                 label="Jump to section"
                 scrollableSelector="#scrollable-element"
-                offset={76} // for masthead
-                expandable={{ default: 'expandable', md: 'nonExpandable' }}
+                offset={offsetHeight}
+                expandable={{ default: isVertical ? 'expandable' : 'nonExpandable', md: 'nonExpandable' }}
                 isExpanded
               >
                 {headings.map(i => (

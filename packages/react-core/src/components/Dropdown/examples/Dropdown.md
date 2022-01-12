@@ -402,6 +402,63 @@ const SecondaryDropdown = () => {
 };
 ```
 
+### Plain with text toggle
+
+```ts
+import React from 'react';
+import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
+import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+
+const SecondaryDropdown = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const onFocus = () => {
+    const element = document.getElementById('toggle-id-plain-text');
+    element.focus();
+  };
+
+  const dropdownItems = [
+    <DropdownItem key="link">Link</DropdownItem>,
+    <DropdownItem key="action" component="button">
+      Action
+    </DropdownItem>,
+    <DropdownItem key="disabled link" isDisabled>
+      Disabled link
+    </DropdownItem>,
+    <DropdownItem key="disabled action" isDisabled component="button">
+      Disabled action
+    </DropdownItem>,
+    <DropdownSeparator key="separator" />,
+    <DropdownItem key="separated link">Separated link</DropdownItem>,
+    <DropdownItem key="separated action" component="button">
+      Separated action
+    </DropdownItem>
+  ];
+
+  return (
+    <Dropdown
+      isText
+      isPlain
+      onSelect={() => {
+        setIsOpen(!isOpen);
+        onFocus();
+      }}
+      toggle={
+        <DropdownToggle
+          onToggle={next => setIsOpen(next)}
+          toggleIndicator={CaretDownIcon}
+          id="toggle-id-plain-text"
+        >
+          Dropdown
+        </DropdownToggle>
+      }
+      isOpen={isOpen}
+      dropdownItems={dropdownItems}
+    />
+  );
+};
+```
+
 ### Position right
 
 ```js

@@ -23,6 +23,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
     dropdownItems: [] as any[],
     isOpen: false,
     isPlain: false,
+    isText: false,
     isGrouped: false,
     position: DropdownPosition.left,
     direction: DropdownDirection.down,
@@ -65,6 +66,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
       dropdownItems,
       isOpen,
       isPlain,
+      isText,
       isGrouped,
       isFullHeight,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -140,6 +142,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
                   isOpen,
                   id,
                   isPlain,
+                  isText,
                   'aria-haspopup': ariaHasPopup,
                   onEnter: () => {
                     this.onEnter();

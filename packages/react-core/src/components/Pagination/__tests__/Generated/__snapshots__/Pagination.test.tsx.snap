@@ -70,6 +70,7 @@ exports[`Pagination should match snapshot (auto-generated) 1`] = `
     onSetPage={[Function]}
     page={1}
     pagesTitle=""
+    pagesTitlePlural=""
     paginationTitle="Pagination"
     perPage={42}
     toFirstPage="Go to first page"

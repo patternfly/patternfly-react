@@ -6,7 +6,7 @@ propComponents: ['ToggleGroup', 'ToggleGroupItem']
 ---
 import './toggleGroup.css';
 
-import { ToggleGroup, ToggleGroupItem} from '@patternfly/react-core';
+import { ToggleGroup, ToggleGroupItem, Button, Stack, StackItem } from '@patternfly/react-core';
 import UndoIcon from '@patternfly/react-icons/dist/esm/icons/undo-icon';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square-icon';
@@ -16,7 +16,7 @@ import ShareSquareIcon from '@patternfly/react-icons/dist/esm/icons/share-square
 ### Default with multiple selectable
 ```js
 import React from 'react';
-import { ToggleGroup, ToggleGroupItem } from '@patternfly/react-core';
+import { ToggleGroup, ToggleGroupItem, Button, Stack, StackItem } from '@patternfly/react-core';
 
 class DefaultToggleGroupExample extends React.Component {
   constructor(props) {
@@ -24,7 +24,8 @@ class DefaultToggleGroupExample extends React.Component {
     this.state = {
       isSelected: {
         first: false,
-        second: false
+        second: false,
+        disableAll: false
       }
     };
     this.handleItemClick = (isSelected, event) => {
@@ -36,17 +37,29 @@ class DefaultToggleGroupExample extends React.Component {
         };
       });
     };
+    this.disableAllClick = () => {
+      this.setState(prevState => ({ disableAll: !prevState.disableAll }));
+    };
   }
 
   render() {
     const { isSelected } = this.state;
 
     return (
-      <ToggleGroup aria-label="Default with multiple selectable">
-        <ToggleGroupItem text="Option 1" key={0} buttonId="first" isSelected={isSelected.first} onChange={this.handleItemClick} />
-        <ToggleGroupItem text="Option 2" key={1} buttonId="second" isSelected={isSelected.second} onChange={this.handleItemClick} />
-        <ToggleGroupItem text="Option 3" key={2} isDisabled/>
-      </ToggleGroup>
+      <Stack hasGutter>
+        <StackItem>
+          <Button onClick={this.disableAllClick}>
+            {this.state.disableAll ? "Enable back" : "Disable all"}
+          </Button>
+        </StackItem>
+        <StackItem>
+          <ToggleGroup areAllGroupsDisabled={this.state.disableAll} aria-label="Default with multiple selectable">
+            <ToggleGroupItem text="Option 1" key={0} buttonId="first" isSelected={isSelected.first} onChange={this.handleItemClick} />
+            <ToggleGroupItem text="Option 2" key={1} buttonId="second" isSelected={isSelected.second} onChange={this.handleItemClick} />
+            <ToggleGroupItem text="Option 3" key={2} isDisabled/>
+          </ToggleGroup>
+        </StackItem>
+      </Stack>
     );
   }
 }

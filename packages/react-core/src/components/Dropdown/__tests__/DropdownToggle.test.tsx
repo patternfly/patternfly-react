@@ -127,6 +127,17 @@ describe('state', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('button variant - secondary', () => {
+    const view = mount(
+      <DropdownToggle id="Dropdown Toggle" isText isPlain parentRef={document.createElement('div')}>
+        Dropdown
+      </DropdownToggle>
+    );
+    expect(view.find('button').prop('className')).toMatch(/m-text/);
+    expect(view.find('button').prop('className')).toMatch(/m-plain/);
+    expect(view).toMatchSnapshot();
+  });
+
   test('action split button - renders primary variant', () => {
     const view = mount(
       <DropdownToggle

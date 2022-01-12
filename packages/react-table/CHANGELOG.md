@@ -3,6 +3,234 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.55.1 (2022-01-11)
+
+
+### Bug Fixes
+
+* **Select:** update typeahead Select children when any option attribute changes ([#6747](https://github.com/patternfly/patternfly-react/issues/6747)) ([1e03f3c](https://github.com/patternfly/patternfly-react/commit/1e03f3c6d0a7c507e33398c98863e40bb2233a62))
+
+
+
+
+
+# 4.55.0 (2022-01-11)
+
+
+### Features
+
+* **ToggleGroup:** support disabling all items under the parent ([#6700](https://github.com/patternfly/patternfly-react/issues/6700)) ([a60c8f3](https://github.com/patternfly/patternfly-react/commit/a60c8f3485546c797750451714a70b7e84a4ba0f))
+
+
+
+
+
+## 4.54.1 (2022-01-11)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+# 4.54.0 (2022-01-11)
+
+
+### Features
+
+* **Table:** update clickable area for checks/radios ([#6754](https://github.com/patternfly/patternfly-react/issues/6754)) ([c4f3c2d](https://github.com/patternfly/patternfly-react/commit/c4f3c2d7f515e3d6ad73d8b52238ca426281469a))
+
+
+
+
+
+## 4.53.2 (2022-01-10)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.53.1 (2022-01-10)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+# 4.53.0 (2022-01-10)
+
+
+### Features
+
+* **Dropdown:** add plain-text variant support ([#6721](https://github.com/patternfly/patternfly-react/issues/6721)) ([e5000e3](https://github.com/patternfly/patternfly-react/commit/e5000e36194e36b9c6ae49efdb0a513125efcb70))
+
+
+
+
+
+## 4.52.11 (2022-01-10)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.52.10 (2022-01-10)
+
+
+### Bug Fixes
+
+* **Tabs:** allow href navigation from tabs ([#6755](https://github.com/patternfly/patternfly-react/issues/6755)) ([290d89a](https://github.com/patternfly/patternfly-react/commit/290d89aed2dd4517db9859cc80ef2745cb8a779b))
+
+
+
+
+
+## 4.52.9 (2022-01-10)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.52.8 (2022-01-07)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.52.7 (2022-01-07)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.52.6 (2022-01-07)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.52.5 (2022-01-07)
+
+
+### Bug Fixes
+
+* **jumplinks:** Updated JumpLinks demo to allow for horizontal display ([#6731](https://github.com/patternfly/patternfly-react/issues/6731)) ([f37b934](https://github.com/patternfly/patternfly-react/commit/f37b9342e678da247056c73767d5d40ff5435bda))
+
+
+
+
+
+## 4.52.4 (2022-01-06)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.52.3 (2022-01-06)
+
+
+### Bug Fixes
+
+* **TopologyControlBar:** Update screen reader className to latest ([#6739](https://github.com/patternfly/patternfly-react/issues/6739)) ([ed9da57](https://github.com/patternfly/patternfly-react/commit/ed9da575fddf9fe7af8a891972f7a66520785411))
+
+
+
+
+
+## 4.52.2 (2022-01-06)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.52.1 (2022-01-06)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+# 4.52.0 (2022-01-05)
+
+
+### Features
+
+* **Table:** allow a generic to be passed for cell props ([#6691](https://github.com/patternfly/patternfly-react/issues/6691)) ([e22c7be](https://github.com/patternfly/patternfly-react/commit/e22c7bebf630b7cd71e4dc434c593b69fa2fb2c8))
+
+
+
+
+
+## 4.51.3 (2022-01-04)
+
+
+### Bug Fixes
+
+* **docs:** fix broken theme-patternfly-org link ([#6726](https://github.com/patternfly/patternfly-react/issues/6726)) ([4ba15e9](https://github.com/patternfly/patternfly-react/commit/4ba15e9d9611afbb80d995e4d63f5478c4212a9e))
+
+
+
+
+
+## 4.51.2 (2022-01-04)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.51.1 (2022-01-04)
+
+
+### Bug Fixes
+
+* **OverflowMenu:** pass HTMLDivElements props to group and control divs ([#6674](https://github.com/patternfly/patternfly-react/issues/6674)) ([e6d0d64](https://github.com/patternfly/patternfly-react/commit/e6d0d6406a07de04f4b232ca9a21247c0e9746c0))
+
+
+
+
+
+# 4.51.0 (2021-12-22)
+
+
+### Features
+
+* **Toolbar:** support customizing text in ToolbarChipGroupContent ([#6694](https://github.com/patternfly/patternfly-react/issues/6694)) ([24266ad](https://github.com/patternfly/patternfly-react/commit/24266adf569c027574abd1503b5e46974220349a))
+
+
+
+
+
+## 4.50.5 (2021-12-16)
+
+
+### Bug Fixes
+
+* **LogViewer:** fix the issue that scrollbar could compress the content of the logs ([#6702](https://github.com/patternfly/patternfly-react/issues/6702)) ([11aab1f](https://github.com/patternfly/patternfly-react/commit/11aab1f71a1aa9959cf14b887ab55b845a794a00))
+
+
+
+
+
 ## 4.50.4 (2021-12-14)
 
 **Note:** Version bump only for package @patternfly/react-table

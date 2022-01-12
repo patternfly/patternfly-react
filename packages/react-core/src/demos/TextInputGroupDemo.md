@@ -24,7 +24,7 @@ Additionally, attributes can be selected by typing the full (case sensitive) nam
 
 Attributes can be deselected (returning you to attribute selection mode) by hitting `escape`, or by hitting `backspace` when the only text in the text input is the attribute.
 
-```js file="./examples/TextInputGroup/AttributeValueFiltering.js"
+```ts file="./examples/TextInputGroup/AttributeValueFiltering.tsx"
 ```
 ### Auto-complete search
 
@@ -36,5 +36,5 @@ Hitting `escape` while focused on the input or menu will close the menu, and the
 
 When only one item remains in the suggestion list, tab can be used to auto-complete the typing of that item.
 
-```js file="./examples/TextInputGroup/AutoCompleteSearch.js"
+```ts file="./examples/TextInputGroup/AutoCompleteSearch.tsx"
 ```

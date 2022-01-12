@@ -9,7 +9,16 @@ import { TimeOption } from './TimeOption';
 import { KeyTypes, SelectDirection } from '../Select';
 import { InputGroup } from '../InputGroup';
 import { TextInput, TextInputProps } from '../TextInput';
-import { parseTime, validateTime, makeTimeOptions, amSuffix, pmSuffix, getHours, getMinutes } from './TimePickerUtils';
+import {
+  parseTime,
+  validateTime,
+  makeTimeOptions,
+  amSuffix,
+  pmSuffix,
+  getHours,
+  getMinutes,
+  isWithinMinMax
+} from './TimePickerUtils';
 
 export interface TimePickerProps
   extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'onFocus' | 'onBlur' | 'disabled' | 'ref'> {
@@ -27,6 +36,8 @@ export interface TimePickerProps
   time?: string | Date;
   /** Error message to display when the time is provided in an invalid format. */
   invalidFormatErrorMessage?: string;
+  /** Error message to display when the time provided is not within the minTime/maxTime constriants */
+  invalidMinMaxErrorMessage?: string;
   /** True if the time is 24 hour time. False if the time is 12 hour time */
   is24Hour?: boolean;
   /** Optional event handler called each time the value in the time picker input changes. */
@@ -50,6 +61,10 @@ export interface TimePickerProps
   stepMinutes?: number;
   /** Additional props for input field */
   inputProps?: TextInputProps;
+  /** A time string indicating the minimum value allowed. The format could be  an ISO 8601 formatted date string or in 'HH{delimiter}MM' format */
+  minTime?: string | Date;
+  /** A time string indicating the maximum value allowed. The format could be  an ISO 8601 formatted date string or in 'HH{delimiter}MM' format */
+  maxTime?: string | Date;
 }
 
 interface TimePickerState {
@@ -59,6 +74,8 @@ interface TimePickerState {
   focusedIndex: number;
   scrollIndex: number;
   timeRegex: RegExp;
+  minTimeState: string;
+  maxTimeState: string;
 }
 
 export class TimePicker extends React.Component<TimePickerProps, TimePickerState> {
@@ -74,6 +91,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     time: '',
     is24Hour: false,
     invalidFormatErrorMessage: 'Invalid time format',
+    invalidMinMaxErrorMessage: 'Invalid time entered',
     placeholder: 'hh:mm',
     delimiter: ':',
     'aria-label': 'Time picker',
@@ -81,22 +99,31 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     direction: 'down',
     width: 150,
     stepMinutes: 30,
-    inputProps: {}
+    inputProps: {},
+    minTime: '',
+    maxTime: ''
   };
 
   constructor(props: TimePickerProps) {
     super(props);
-
     const { is24Hour, delimiter, time } = this.props;
+    let { minTime, maxTime } = this.props;
+    if (minTime === '') {
+      minTime = is24Hour ? `00${delimiter}00` : `12${delimiter}00AM`;
+    }
+    if (maxTime === '') {
+      maxTime = is24Hour ? `23${delimiter}59` : `11${delimiter}59PM`;
+    }
     const timeRegex = this.getRegExp();
-
     this.state = {
       isInvalid: false,
       isOpen: false,
       timeState: parseTime(time, timeRegex, delimiter, !is24Hour),
       focusedIndex: null,
       scrollIndex: 0,
-      timeRegex
+      timeRegex,
+      minTimeState: parseTime(minTime, timeRegex, delimiter, !is24Hour),
+      maxTimeState: parseTime(maxTime, timeRegex, delimiter, !is24Hour)
     };
   }
 
@@ -253,13 +280,21 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   getOptions = () =>
     (this.menuRef && this.menuRef.current ? Array.from(this.menuRef.current.children) : []) as HTMLElement[];
 
-  isValid = (time: string) => {
+  isValidFormat = (time: string) => {
     if (this.props.validateTime) {
       return this.props.validateTime(time);
     }
     const { delimiter, is24Hour } = this.props;
     return validateTime(time, this.state.timeRegex, delimiter, !is24Hour);
   };
+
+  isValidTime = (time: string) => {
+    const { delimiter } = this.props;
+    const { minTimeState, maxTimeState } = this.state;
+    return isWithinMinMax(minTimeState, maxTimeState, time, delimiter);
+  };
+
+  isValid = (time: string) => this.isValidFormat(time) && this.isValidTime(time);
 
   onToggle = (isOpen: boolean) => {
     // on close, parse and validate input
@@ -329,6 +364,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       menuAppendTo,
       is24Hour,
       invalidFormatErrorMessage,
+      invalidMinMaxErrorMessage,
       direction,
       stepMinutes,
       width,
@@ -338,11 +374,14 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       time,
       validateTime,
       inputProps,
+      minTime,
+      maxTime,
       ...props
     } = this.props;
-    const { timeState, isOpen, isInvalid, focusedIndex } = this.state;
+    const { timeState, isOpen, isInvalid, focusedIndex, minTimeState, maxTimeState } = this.state;
     const style = { '--pf-c-date-picker__input--c-form-control--Width': width } as React.CSSProperties;
-    const options = makeTimeOptions(stepMinutes, !is24Hour, delimiter);
+    const options = makeTimeOptions(stepMinutes, !is24Hour, delimiter, minTimeState, maxTimeState);
+    const isValidFormat = this.isValidFormat(timeState);
     const randomId = id || getUniqueId('time-picker');
 
     const menuContainer = (
@@ -408,7 +447,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
         </InputGroup>
         {isInvalid && (
           <div className={css(datePickerStyles.datePickerHelperText, datePickerStyles.modifiers.error)}>
-            {invalidFormatErrorMessage}
+            {!isValidFormat ? invalidFormatErrorMessage : invalidMinMaxErrorMessage}
           </div>
         )}
       </div>

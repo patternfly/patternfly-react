@@ -348,7 +348,7 @@ class ValidatedSelect extends React.Component {
         console.log('selected:', selection);
       }
       this.setState({
-          validated: validatedState
+        validated: validatedState
       });
     };
 
@@ -1183,13 +1183,13 @@ class TypeaheadSelectInput extends React.Component {
   constructor(props) {
     super(props);
     this.defaultOptions = [
-        { value: 'Alabama' },
-        { value: 'Florida', description: 'This is a description' },
-        { value: 'New Jersey' },
-        { value: 'New Mexico' },
-        { value: 'New York' },
-        { value: 'North Carolina' }
-      ];
+      { value: 'Alabama' },
+      { value: 'Florida', description: 'This is a description' },
+      { value: 'New Jersey' },
+      { value: 'New Mexico' },
+      { value: 'New York' },
+      { value: 'North Carolina' }
+    ];
 
     this.state = {
       options: this.defaultOptions,
@@ -1579,7 +1579,8 @@ class MultiTypeaheadSelectInput extends React.Component {
       isOpen: false,
       selected: [],
       isCreatable: false,
-      hasOnCreateOption: false
+      hasOnCreateOption: false,
+      hasDisabledOption: false
     };
 
     this.onCreateOption = newValue => {
@@ -1627,10 +1628,19 @@ class MultiTypeaheadSelectInput extends React.Component {
         hasOnCreateOption: checked
       });
     };
+
+    this.toggleOptionDisabled = (toggleIndex) => () => {
+      this.setState(prevState => ({
+        hasDisabledOption: !prevState.hasDisabledOption,
+        options: prevState.options.map((option, index) =>
+          index === toggleIndex ? { ...option, disabled: !option.disabled } : option
+        ),
+      }));
+    };
   }
 
   render() {
-    const { isOpen, selected, isCreatable, hasOnCreateOption } = this.state;
+    const { isOpen, selected, isCreatable, hasOnCreateOption, options } = this.state;
     const titleId = 'multi-typeahead-select-id-1';
 
     return (
@@ -1651,7 +1661,7 @@ class MultiTypeaheadSelectInput extends React.Component {
           isCreatable={isCreatable}
           onCreateOption={(hasOnCreateOption && this.onCreateOption) || undefined}
         >
-          {this.state.options.map((option, index) => (
+          {options.map((option, index) => (
             <SelectOption
               isDisabled={option.disabled}
               key={index}
@@ -1675,6 +1685,14 @@ class MultiTypeaheadSelectInput extends React.Component {
           aria-label="toggle new checkbox"
           id="toggle-new-typeahead-multi"
           name="toggle-new-typeahead-multi"
+        />
+        <Checkbox
+          label="isDisabled (1st option only)"
+          isChecked={this.state.hasDisabledOption}
+          onChange={this.toggleOptionDisabled(0)}
+          aria-label="toggle disable first option"
+          id="toggle-disable-first-option"
+          name="toggle-disable-first-option"
         />
       </div>
     );
@@ -2453,7 +2471,7 @@ class SelectWithFooterCheckbox extends React.Component {
           Title
         </span>
         <Select
-        variant={SelectVariant.checkbox}
+          variant={SelectVariant.checkbox}
           aria-label="Select input"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
@@ -2578,7 +2596,7 @@ import {
 } from '@patternfly/react-core';
 
 class SelectViewMoreCheckbox extends React.Component {
-   constructor(props) {
+  constructor(props) {
     super(props);
 
     this.state = {

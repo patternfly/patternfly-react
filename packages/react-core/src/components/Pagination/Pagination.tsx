@@ -44,6 +44,8 @@ export interface PerPageOptions {
 export interface PaginationTitles {
   /** The title of a page displayed beside the page number */
   page?: string;
+  /** The title of a page displayed beside the page number (plural form) */
+  pages?: string;
   /** The type or title of the items being paginated */
   items?: string;
   /** The Title of the Pagination Options Menu */
@@ -168,6 +170,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
     titles: {
       items: '',
       page: '',
+      pages: '',
       itemsPerPage: 'Items per page',
       perPageSuffix: 'per page',
       toFirstPage: 'Go to first page',
@@ -335,6 +338,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
         />
         <Navigation
           pagesTitle={titles.page}
+          pagesTitlePlural={titles.pages}
           toLastPage={titles.toLastPage}
           toPreviousPage={titles.toPreviousPage}
           toNextPage={titles.toNextPage}

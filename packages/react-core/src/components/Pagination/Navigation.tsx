@@ -25,6 +25,8 @@ export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   firstPage?: number;
   /** The title of a page displayed beside the page number */
   pagesTitle?: string;
+  /** The title of a page displayed beside the page number (the plural form) */
+  pagesTitlePlural?: string;
   /** Accessible label for the button which moves to the last page */
   toLastPage?: string;
   /** Accessible label for the button which moves to the previous page */
@@ -75,6 +77,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     lastPage: 0,
     firstPage: 0,
     pagesTitle: '',
+    pagesTitlePlural: '',
     toLastPage: 'Go to last page',
     toNextPage: 'Go to next page',
     toFirstPage: 'Go to first page',
@@ -146,6 +149,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
       lastPage,
       firstPage,
       pagesTitle,
+      pagesTitlePlural,
       toLastPage,
       toNextPage,
       toFirstPage,
@@ -215,7 +219,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
             />
             {(itemCount || itemCount === 0) && (
               <span aria-hidden="true">
-                {ofWord} {pagesTitle ? pluralize(lastPage, pagesTitle) : lastPage}
+                {ofWord} {pagesTitle ? pluralize(lastPage, pagesTitle, pagesTitlePlural) : lastPage}
               </span>
             )}
           </div>

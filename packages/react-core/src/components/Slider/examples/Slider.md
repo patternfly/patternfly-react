@@ -134,12 +134,13 @@ class DiscreteInput extends React.Component {
 
 ```js
 import React from 'react';
-import { Slider, Text, TextVariants } from '@patternfly/react-core';
+import { Checkbox, Slider, Text, TextVariants } from '@patternfly/react-core';
 
 class ContinuousInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      hasTooltipOverThumb: false,
       value: 50,
       valueCustom: 50
     };
@@ -160,14 +161,24 @@ class ContinuousInput extends React.Component {
   render() {
     return (
       <>
-        <Text component={TextVariants.h3}>Slider value is: {this.state.value.toFixed(2)}</Text>
-        <Slider value={this.state.value} onChange={this.onChange} />
+        <Checkbox
+          id="thumb-has-tooltip"
+          label="hasTooltipOverThumb"
+          isChecked={this.state.hasTooltipOverThumb}
+          onChange={hasTooltipOverThumb => this.setState({ hasTooltipOverThumb })}
+          style={{ marginBottom: 20 }} />
+        <Text component={TextVariants.h3}>Slider Value is: {this.state.value}</Text>
+        <Slider
+          hasTooltipOverThumb={this.state.hasTooltipOverThumb}
+          value={this.state.value}
+          onChange={this.onChange} />
         <br />
-        <Text component={TextVariants.h3}>Slider value is: {this.state.valueCustom.toFixed(2)}</Text>
+        <Text component={TextVariants.h3}>Slider value is: {this.state.valueCustom}</Text>
         <Slider
           onChange={this.onChangeCustom}
           value={this.state.valueCustom}
           areCustomStepsContinuous
+          hasTooltipOverThumb={this.state.hasTooltipOverThumb}
           customSteps={[
             { value: 0, label: '0%' },
             { value: 100, label: '100%' }

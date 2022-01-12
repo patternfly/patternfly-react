@@ -39,6 +39,7 @@ exports[`Toolbar should match snapshot (auto-generated) 1`] = `
       collapseListedFiltersBreakpoint="md"
       isExpanded={true}
       numberOfFilters={0}
+      numberOfFiltersText={[Function]}
       showClearFiltersButton={false}
     />
   </ContextProvider>

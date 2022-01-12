@@ -16,26 +16,26 @@ import {
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export const AutoCompleteSearch = () => {
+export const AutoCompleteSearch: React.FunctionComponent = () => {
   const [inputValue, setInputValue] = React.useState('');
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
-  const [currentChips, setCurrentChips] = React.useState([]);
+  const [currentChips, setCurrentChips] = React.useState<string[]>([]);
 
   /** auto-completing suggestion text items to be shown in the menu */
   const suggestionItems = ['Cluster', 'Kind', 'Label', 'Name', 'Namespace', 'Status'];
-  const [menuItems, setMenuItems] = React.useState([]);
+  const [menuItems, setMenuItems] = React.useState<React.ReactElement[]>([]);
 
   /** refs used to detect when clicks occur inside vs outside of the textInputGroup and menu popper */
-  const menuRef = React.useRef();
-  const textInputGroupRef = React.useRef();
+  const menuRef = React.useRef<HTMLDivElement>();
+  const textInputGroupRef = React.useRef<HTMLDivElement>();
 
   /** callback for updating the inputValue state in this component so that the input can be controlled */
-  const handleInputChange = (value, _event) => {
+  const handleInputChange = (value: string, _event: React.FormEvent<HTMLInputElement>) => {
     setInputValue(value);
   };
 
   /** callback for removing a chip from the chip selections */
-  const deleteChip = chipToDelete => {
+  const deleteChip = (chipToDelete: string) => {
     const newChips = currentChips.filter(chip => !Object.is(chip, chipToDelete));
     setCurrentChips(newChips);
   };
@@ -80,7 +80,7 @@ export const AutoCompleteSearch = () => {
   }, [inputValue]);
 
   /** add the given string as a chip in the chip group and clear the input */
-  const addChip = newChipText => {
+  const addChip = (newChipText: string) => {
     setCurrentChips([...currentChips, `${newChipText}`]);
     setInputValue('');
   };
@@ -92,7 +92,7 @@ export const AutoCompleteSearch = () => {
     }
   };
 
-  const handleTab = event => {
+  const handleTab = (event: React.KeyboardEvent) => {
     if (menuItems.length === 3) {
       setInputValue(menuItems[2].props.children);
       event.preventDefault();
@@ -107,7 +107,7 @@ export const AutoCompleteSearch = () => {
   /** allow the user to focus on the menu and navigate using the arrow keys */
   const handleArrowKey = () => {
     if (menuRef.current) {
-      const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+      const firstElement = menuRef.current.querySelector<HTMLButtonElement>('li > button:not(:disabled)');
       firstElement && firstElement.focus();
     }
   };
@@ -120,7 +120,7 @@ export const AutoCompleteSearch = () => {
   };
 
   /** enable keyboard only usage while focused on the text input */
-  const handleTextInputKeyDown = event => {
+  const handleTextInputKeyDown = (event: React.KeyboardEvent) => {
     switch (event.key) {
       case 'Enter':
         handleEnter();
@@ -146,26 +146,26 @@ export const AutoCompleteSearch = () => {
   };
 
   /** add the text of the selected item as a new chip */
-  const onSelect = (event, _itemId) => {
-    const selectedText = event.target.innerText;
+  const onSelect = (event: React.MouseEvent<Element, MouseEvent>, _itemId: string | number) => {
+    const selectedText = (event.target as HTMLElement).innerText;
     addChip(selectedText);
     event.stopPropagation();
     focusTextInput();
   };
 
   /** close the menu when a click occurs outside of the menu or text input group */
-  const handleClick = event => {
+  const handleClick = (event: MouseEvent) => {
     if (
       menuRef.current &&
-      !menuRef.current.contains(event.target) &&
-      !textInputGroupRef.current.contains(event.target)
+      !menuRef.current.contains(event.target as HTMLElement) &&
+      !textInputGroupRef.current.contains(event.target as HTMLElement)
     ) {
       setMenuIsOpen(false);
     }
   };
 
   /** enable keyboard only usage while focused on the menu */
-  const handleMenuKeyDown = event => {
+  const handleMenuKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === 'Escape') {
       setInputValue('');
       focusTextInput();
@@ -177,7 +177,7 @@ export const AutoCompleteSearch = () => {
   const showSearchIcon = !currentChips.length;
 
   /** only show the clear button when there is something that can be cleared */
-  const showClearButton = inputValue || !!currentChips.length;
+  const showClearButton = !!inputValue || !!currentChips.length;
 
   const inputGroup = (
     <div ref={textInputGroupRef}>

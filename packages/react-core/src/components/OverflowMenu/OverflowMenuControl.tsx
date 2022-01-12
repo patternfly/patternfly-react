@@ -15,12 +15,16 @@ export interface OverflowMenuControlProps extends React.HTMLProps<HTMLDivElement
 export const OverflowMenuControl: React.SFC<OverflowMenuControlProps> = ({
   className,
   children,
-  hasAdditionalOptions
+  hasAdditionalOptions,
+  ...props
 }: OverflowMenuControlProps) => (
   <OverflowMenuContext.Consumer>
     {value =>
       (value.isBelowBreakpoint || hasAdditionalOptions) && (
-        <div className={css(styles.overflowMenuControl, className)}> {children} </div>
+        <div className={css(styles.overflowMenuControl, className)} {...props}>
+          {' '}
+          {children}{' '}
+        </div>
       )
     }
   </OverflowMenuContext.Consumer>

@@ -50,6 +50,7 @@ exports[`component render custom pagination toggle 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -170,6 +171,7 @@ exports[`component render custom pagination toggle 1`] = `
         isGrouped={false}
         isOpen={false}
         isPlain={true}
+        isText={false}
         menuAppendTo="inline"
         onSelect={[Function]}
         position="left"
@@ -205,6 +207,7 @@ exports[`component render custom pagination toggle 1`] = `
             isDisabled={false}
             isOpen={false}
             isPlain={true}
+            isText={false}
             itemCount={40}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
@@ -344,6 +347,7 @@ exports[`component render custom pagination toggle 1`] = `
                   isPlain={false}
                   isPrimary={false}
                   isSplitButton={false}
+                  isText={false}
                   onEnter={[Function]}
                   onToggle={[Function]}
                   parentRef={
@@ -461,6 +465,7 @@ exports[`component render custom pagination toggle 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -776,6 +781,7 @@ exports[`component render custom perPageOptions 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -866,6 +872,7 @@ exports[`component render custom perPageOptions 1`] = `
         isGrouped={false}
         isOpen={false}
         isPlain={true}
+        isText={false}
         menuAppendTo="inline"
         onSelect={[Function]}
         position="left"
@@ -901,6 +908,7 @@ exports[`component render custom perPageOptions 1`] = `
             isDisabled={false}
             isOpen={false}
             isPlain={true}
+            isText={false}
             itemCount={40}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
@@ -1083,6 +1091,7 @@ exports[`component render custom perPageOptions 1`] = `
                   isPlain={false}
                   isPrimary={false}
                   isSplitButton={false}
+                  isText={false}
                   onEnter={[Function]}
                   onToggle={[Function]}
                   parentRef={
@@ -1212,6 +1221,7 @@ exports[`component render custom perPageOptions 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -1539,6 +1549,7 @@ exports[`component render custom start end 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -1677,6 +1688,7 @@ exports[`component render custom start end 1`] = `
         isGrouped={false}
         isOpen={false}
         isPlain={true}
+        isText={false}
         menuAppendTo="inline"
         onSelect={[Function]}
         position="left"
@@ -1712,6 +1724,7 @@ exports[`component render custom start end 1`] = `
             isDisabled={false}
             isOpen={false}
             isPlain={true}
+            isText={false}
             itemCount={40}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
@@ -1894,6 +1907,7 @@ exports[`component render custom start end 1`] = `
                   isPlain={false}
                   isPrimary={false}
                   isSplitButton={false}
+                  isText={false}
                   onEnter={[Function]}
                   onToggle={[Function]}
                   parentRef={
@@ -2023,6 +2037,7 @@ exports[`component render custom start end 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -2329,6 +2344,7 @@ exports[`component render empty per page options 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -2400,6 +2416,7 @@ exports[`component render empty per page options 1`] = `
         isGrouped={false}
         isOpen={false}
         isPlain={true}
+        isText={false}
         menuAppendTo="inline"
         onSelect={[Function]}
         position="left"
@@ -2435,6 +2452,7 @@ exports[`component render empty per page options 1`] = `
             isDisabled={false}
             isOpen={false}
             isPlain={true}
+            isText={false}
             itemCount={40}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
@@ -2485,6 +2503,7 @@ exports[`component render empty per page options 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -2838,6 +2857,7 @@ exports[`component render last page 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -2976,6 +2996,7 @@ exports[`component render last page 1`] = `
         isGrouped={false}
         isOpen={false}
         isPlain={true}
+        isText={false}
         menuAppendTo="inline"
         onSelect={[Function]}
         position="left"
@@ -3011,6 +3032,7 @@ exports[`component render last page 1`] = `
             isDisabled={false}
             isOpen={false}
             isPlain={true}
+            isText={false}
             itemCount={20}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
@@ -3193,6 +3215,7 @@ exports[`component render last page 1`] = `
                   isPlain={false}
                   isPrimary={false}
                   isSplitButton={false}
+                  isText={false}
                   onEnter={[Function]}
                   onToggle={[Function]}
                   parentRef={
@@ -3322,6 +3345,7 @@ exports[`component render last page 1`] = `
       onSetPage={[Function]}
       page={2}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -3649,6 +3673,7 @@ exports[`component render limited number of pages 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -3787,6 +3812,7 @@ exports[`component render limited number of pages 1`] = `
         isGrouped={false}
         isOpen={false}
         isPlain={true}
+        isText={false}
         menuAppendTo="inline"
         onSelect={[Function]}
         position="left"
@@ -3822,6 +3848,7 @@ exports[`component render limited number of pages 1`] = `
             isDisabled={false}
             isOpen={false}
             isPlain={true}
+            isText={false}
             itemCount={20}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
@@ -4004,6 +4031,7 @@ exports[`component render limited number of pages 1`] = `
                   isPlain={false}
                   isPrimary={false}
                   isSplitButton={false}
+                  isText={false}
                   onEnter={[Function]}
                   onToggle={[Function]}
                   parentRef={
@@ -4133,6 +4161,7 @@ exports[`component render limited number of pages 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={20}
       toFirstPage="Go to first page"
@@ -4462,6 +4491,7 @@ exports[`component render no items 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -4600,6 +4630,7 @@ exports[`component render no items 1`] = `
         isGrouped={false}
         isOpen={false}
         isPlain={true}
+        isText={false}
         menuAppendTo="inline"
         onSelect={[Function]}
         position="left"
@@ -4635,6 +4666,7 @@ exports[`component render no items 1`] = `
             isDisabled={false}
             isOpen={false}
             isPlain={true}
+            isText={false}
             itemCount={0}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
@@ -4817,6 +4849,7 @@ exports[`component render no items 1`] = `
                   isPlain={false}
                   isPrimary={false}
                   isSplitButton={false}
+                  isText={false}
                   onEnter={[Function]}
                   onToggle={[Function]}
                   parentRef={
@@ -4946,6 +4979,7 @@ exports[`component render no items 1`] = `
       onSetPage={[Function]}
       page={0}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -5275,6 +5309,7 @@ exports[`component render should render correctly bottom 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -5389,6 +5424,7 @@ exports[`component render should render correctly bottom 1`] = `
         isGrouped={false}
         isOpen={false}
         isPlain={true}
+        isText={false}
         menuAppendTo="inline"
         onSelect={[Function]}
         position="left"
@@ -5424,6 +5460,7 @@ exports[`component render should render correctly bottom 1`] = `
             isDisabled={false}
             isOpen={false}
             isPlain={true}
+            isText={false}
             itemCount={20}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
@@ -5606,6 +5643,7 @@ exports[`component render should render correctly bottom 1`] = `
                   isPlain={false}
                   isPrimary={false}
                   isSplitButton={false}
+                  isText={false}
                   onEnter={[Function]}
                   onToggle={[Function]}
                   parentRef={
@@ -5735,6 +5773,7 @@ exports[`component render should render correctly bottom 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -6062,6 +6101,7 @@ exports[`component render should render correctly bottom sticky 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -6176,6 +6216,7 @@ exports[`component render should render correctly bottom sticky 1`] = `
         isGrouped={false}
         isOpen={false}
         isPlain={true}
+        isText={false}
         menuAppendTo="inline"
         onSelect={[Function]}
         position="left"
@@ -6211,6 +6252,7 @@ exports[`component render should render correctly bottom sticky 1`] = `
             isDisabled={false}
             isOpen={false}
             isPlain={true}
+            isText={false}
             itemCount={20}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
@@ -6393,6 +6435,7 @@ exports[`component render should render correctly bottom sticky 1`] = `
                   isPlain={false}
                   isPrimary={false}
                   isSplitButton={false}
+                  isText={false}
                   onEnter={[Function]}
                   onToggle={[Function]}
                   parentRef={
@@ -6522,6 +6565,7 @@ exports[`component render should render correctly bottom sticky 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -6849,6 +6893,7 @@ exports[`component render should render correctly compact 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -6987,6 +7032,7 @@ exports[`component render should render correctly compact 1`] = `
         isGrouped={false}
         isOpen={false}
         isPlain={true}
+        isText={false}
         menuAppendTo="inline"
         onSelect={[Function]}
         position="left"
@@ -7022,6 +7068,7 @@ exports[`component render should render correctly compact 1`] = `
             isDisabled={false}
             isOpen={false}
             isPlain={true}
+            isText={false}
             itemCount={20}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
@@ -7204,6 +7251,7 @@ exports[`component render should render correctly compact 1`] = `
                   isPlain={false}
                   isPrimary={false}
                   isSplitButton={false}
+                  isText={false}
                   onEnter={[Function]}
                   onToggle={[Function]}
                   parentRef={
@@ -7333,6 +7381,7 @@ exports[`component render should render correctly compact 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -7519,6 +7568,7 @@ exports[`component render should render correctly disabled 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -7657,6 +7707,7 @@ exports[`component render should render correctly disabled 1`] = `
         isGrouped={false}
         isOpen={false}
         isPlain={true}
+        isText={false}
         menuAppendTo="inline"
         onSelect={[Function]}
         position="left"
@@ -7692,6 +7743,7 @@ exports[`component render should render correctly disabled 1`] = `
             isDisabled={true}
             isOpen={false}
             isPlain={true}
+            isText={false}
             itemCount={20}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
@@ -7876,6 +7928,7 @@ exports[`component render should render correctly disabled 1`] = `
                   isPlain={false}
                   isPrimary={false}
                   isSplitButton={false}
+                  isText={false}
                   onEnter={[Function]}
                   onToggle={[Function]}
                   parentRef={
@@ -8006,6 +8059,7 @@ exports[`component render should render correctly disabled 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -8335,6 +8389,7 @@ exports[`component render should render correctly sticky 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -8473,6 +8528,7 @@ exports[`component render should render correctly sticky 1`] = `
         isGrouped={false}
         isOpen={false}
         isPlain={true}
+        isText={false}
         menuAppendTo="inline"
         onSelect={[Function]}
         position="left"
@@ -8508,6 +8564,7 @@ exports[`component render should render correctly sticky 1`] = `
             isDisabled={false}
             isOpen={false}
             isPlain={true}
+            isText={false}
             itemCount={20}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
@@ -8690,6 +8747,7 @@ exports[`component render should render correctly sticky 1`] = `
                   isPlain={false}
                   isPrimary={false}
                   isSplitButton={false}
+                  isText={false}
                   onEnter={[Function]}
                   onToggle={[Function]}
                   parentRef={
@@ -8819,6 +8877,7 @@ exports[`component render should render correctly sticky 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -9146,6 +9205,7 @@ exports[`component render should render correctly top 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -9284,6 +9344,7 @@ exports[`component render should render correctly top 1`] = `
         isGrouped={false}
         isOpen={false}
         isPlain={true}
+        isText={false}
         menuAppendTo="inline"
         onSelect={[Function]}
         position="left"
@@ -9319,6 +9380,7 @@ exports[`component render should render correctly top 1`] = `
             isDisabled={false}
             isOpen={false}
             isPlain={true}
+            isText={false}
             itemCount={20}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
@@ -9501,6 +9563,7 @@ exports[`component render should render correctly top 1`] = `
                   isPlain={false}
                   isPrimary={false}
                   isSplitButton={false}
+                  isText={false}
                   onEnter={[Function]}
                   onToggle={[Function]}
                   parentRef={
@@ -9630,6 +9693,7 @@ exports[`component render should render correctly top 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -10085,6 +10149,7 @@ exports[`component render titles 1`] = `
         isGrouped={false}
         isOpen={false}
         isPlain={true}
+        isText={false}
         menuAppendTo="inline"
         onSelect={[Function]}
         position="left"
@@ -10120,6 +10185,7 @@ exports[`component render titles 1`] = `
             isDisabled={false}
             isOpen={false}
             isPlain={true}
+            isText={false}
             itemCount={40}
             itemsPerPageTitle="Items per page"
             itemsTitle="values"
@@ -10303,6 +10369,7 @@ exports[`component render titles 1`] = `
                   isPlain={false}
                   isPrimary={false}
                   isSplitButton={false}
+                  isText={false}
                   onEnter={[Function]}
                   onToggle={[Function]}
                   parentRef={
@@ -10432,6 +10499,7 @@ exports[`component render titles 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle="books"
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -10788,6 +10856,7 @@ exports[`component render up drop direction 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -10926,6 +10995,7 @@ exports[`component render up drop direction 1`] = `
         isGrouped={false}
         isOpen={false}
         isPlain={true}
+        isText={false}
         menuAppendTo="inline"
         onSelect={[Function]}
         position="left"
@@ -10961,6 +11031,7 @@ exports[`component render up drop direction 1`] = `
             isDisabled={false}
             isOpen={false}
             isPlain={true}
+            isText={false}
             itemCount={40}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
@@ -11143,6 +11214,7 @@ exports[`component render up drop direction 1`] = `
                   isPlain={false}
                   isPrimary={false}
                   isSplitButton={false}
+                  isText={false}
                   onEnter={[Function]}
                   onToggle={[Function]}
                   parentRef={
@@ -11272,6 +11344,7 @@ exports[`component render up drop direction 1`] = `
       onSetPage={[Function]}
       page={1}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"
@@ -11599,6 +11672,7 @@ exports[`component render zero results 1`] = `
       "ofWord": "of",
       "optionsToggle": "Items per page",
       "page": "",
+      "pages": "",
       "paginationTitle": "Pagination",
       "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
@@ -11737,6 +11811,7 @@ exports[`component render zero results 1`] = `
         isGrouped={false}
         isOpen={false}
         isPlain={true}
+        isText={false}
         menuAppendTo="inline"
         onSelect={[Function]}
         position="left"
@@ -11772,6 +11847,7 @@ exports[`component render zero results 1`] = `
             isDisabled={false}
             isOpen={false}
             isPlain={true}
+            isText={false}
             itemCount={0}
             itemsPerPageTitle="Items per page"
             itemsTitle=""
@@ -11954,6 +12030,7 @@ exports[`component render zero results 1`] = `
                   isPlain={false}
                   isPrimary={false}
                   isSplitButton={false}
+                  isText={false}
                   onEnter={[Function]}
                   onToggle={[Function]}
                   parentRef={
@@ -12083,6 +12160,7 @@ exports[`component render zero results 1`] = `
       onSetPage={[Function]}
       page={0}
       pagesTitle=""
+      pagesTitlePlural=""
       paginationTitle="Pagination"
       perPage={10}
       toFirstPage="Go to first page"

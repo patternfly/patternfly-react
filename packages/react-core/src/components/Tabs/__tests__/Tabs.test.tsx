@@ -195,15 +195,15 @@ test('should render secondary tabs', () => {
           <Tab id="secondary tab1" eventKey={10} title={<TabTitleText>"Secondary Tab item 1"</TabTitleText>}>
             Secondary Tab 1 section
           </Tab>
-          <Tab id="secondary tab2" eventKey={11} title={<TabTitleText>"Secondary Tab item 2"</TabTitleText>}>>
+          <Tab id="secondary tab2" eventKey={11} title={<TabTitleText>"Secondary Tab item 2"</TabTitleText>}>
             Secondary Tab 2 section
           </Tab>
-          <Tab id="secondary tab3" eventKey={12} title={<TabTitleText>"Secondary Tab item 3"</TabTitleText>}>>
+          <Tab id="secondary tab3" eventKey={12} title={<TabTitleText>"Secondary Tab item 3"</TabTitleText>}>
             Secondary Tab 3 section
           </Tab>
         </Tabs>
       </Tab>
-      <Tab id="tab2" eventKey={1} title={<TabTitleText>"Tab item 2"</TabTitleText>}>>
+      <Tab id="tab2" eventKey={1} title={<TabTitleText>"Tab item 2"</TabTitleText>}>
         Tab 2 section
       </Tab>
       <Tab id="tab3" eventKey={2} title={<TabTitleText>"Tab item 3"</TabTitleText>}>

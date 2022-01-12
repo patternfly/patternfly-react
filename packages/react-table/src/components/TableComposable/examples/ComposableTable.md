@@ -344,3 +344,8 @@ The second `Tr` represents the second level of sub columns. The `Th` in this row
 
 ```ts file="ComposableTableNestedExpandable.tsx"
 ```
+
+### Composable: Expandable with nested table
+
+```ts file="ComposableTableNestedTableExpandable.tsx"
+```

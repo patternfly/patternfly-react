@@ -5,6 +5,7 @@ import { css } from '@patternfly/react-styles';
 import { SliderStep } from './SliderStep';
 import { InputGroup, InputGroupText } from '../InputGroup';
 import { TextInput } from '../TextInput';
+import { Tooltip } from '../Tooltip';
 
 export interface SliderStepObject {
   /** Value of the step. This value is a percentage of the slider where the  tick is drawn. */
@@ -44,6 +45,8 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   inputAriaLabel?: string;
   /* Aria label for the thumb */
   thumbAriaLabel?: string;
+  /* Adds a tooltip over the thumb containing the current value */
+  hasTooltipOverThumb?: boolean;
   /** Label that is place after the input field */
   inputLabel?: string | number;
   /** Position of the input */
@@ -73,6 +76,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   inputLabel,
   inputAriaLabel = 'Slider value input',
   thumbAriaLabel = 'Value',
+  hasTooltipOverThumb = false,
   inputPosition = 'right',
   onChange,
   leftActions,
@@ -141,7 +145,9 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
         return matchingStep.label;
       }
     }
-    return localValue.toString();
+    // For continuous steps default to showing 2 decimals in tooltip
+    // Consider making it configurable via a property
+    return Number(Number(localValue).toFixed(2)).toString();
   };
 
   const handleThumbDragEnd = () => {
@@ -209,12 +215,12 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
 
     thumbRef.current.style.setProperty('--pf-c-slider--value', `${newPercentage}%`);
     // convert percentage to value
-    const newValue = (newPercentage * (max - min)) / 100 + min;
+    const newValue = Math.round(((newPercentage * (max - min)) / 100 + min) * 100) / 100;
     setValue(newValue);
 
     if (!customSteps) {
       // snap to new value if not custom steps
-      snapValue = Math.round((newValue - min) / step) * step + min;
+      snapValue = Math.round((Math.round((newValue - min) / step) * step + min) * 100) / 100;
       thumbRef.current.style.setProperty('--pf-c-slider--value', `${snapValue}%`);
       setValue(snapValue);
     }
@@ -344,6 +350,25 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     return builtSteps;
   };
 
+  const thumbComponent = (
+    <div
+      className={css(styles.sliderThumb)}
+      ref={thumbRef}
+      tabIndex={isDisabled ? -1 : 0}
+      role="slider"
+      aria-valuemin={customSteps ? customSteps[0].value : min}
+      aria-valuemax={customSteps ? customSteps[customSteps.length - 1].value : max}
+      aria-valuenow={localValue}
+      aria-valuetext={findAriaTextValue()}
+      aria-label={thumbAriaLabel}
+      aria-disabled={isDisabled}
+      onMouseDown={!isDisabled ? handleMouseDown : null}
+      onTouchStart={!isDisabled ? handleTouchStart : null}
+      onKeyDown={!isDisabled ? handleThumbKeys : null}
+      onClick={!isDisabled ? onThumbClick : null}
+    />
+  );
+
   return (
     <div
       className={css(styles.slider, className, isDisabled && styles.modifiers.disabled)}
@@ -379,22 +404,13 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
             {buildSteps()}
           </div>
         )}
-        <div
-          className={css(styles.sliderThumb)}
-          ref={thumbRef}
-          tabIndex={isDisabled ? -1 : 0}
-          role="slider"
-          aria-valuemin={customSteps ? customSteps[0].value : min}
-          aria-valuemax={customSteps ? customSteps[customSteps.length - 1].value : max}
-          aria-valuenow={localValue}
-          aria-valuetext={findAriaTextValue()}
-          aria-label={thumbAriaLabel}
-          aria-disabled={isDisabled}
-          onMouseDown={!isDisabled ? handleMouseDown : null}
-          onTouchStart={!isDisabled ? handleTouchStart : null}
-          onKeyDown={!isDisabled ? handleThumbKeys : null}
-          onClick={!isDisabled ? onThumbClick : null}
-        />
+        {hasTooltipOverThumb ? (
+          <Tooltip entryDelay={0} content={findAriaTextValue()}>
+            {thumbComponent}
+          </Tooltip>
+        ) : (
+          thumbComponent
+        )}
         {isInputVisible && inputPosition === 'aboveThumb' && (
           <div className={css(styles.sliderValue, styles.modifiers.floating)}>{displayInput()}</div>
         )}

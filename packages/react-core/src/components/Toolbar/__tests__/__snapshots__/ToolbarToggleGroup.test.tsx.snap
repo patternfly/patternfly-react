@@ -119,6 +119,7 @@ exports[`Toolbar should render inset 1`] = `
       collapseListedFiltersBreakpoint="lg"
       isExpanded={false}
       numberOfFilters={0}
+      numberOfFiltersText={[Function]}
       showClearFiltersButton={false}
     >
       <div
@@ -255,6 +256,7 @@ exports[`Toolbar should render with page inset flag 1`] = `
       collapseListedFiltersBreakpoint="lg"
       isExpanded={false}
       numberOfFilters={0}
+      numberOfFiltersText={[Function]}
       showClearFiltersButton={false}
     >
       <div

@@ -1077,7 +1077,7 @@ Array [
       role="tabpanel"
       tabindex="0"
     >
-      &gt; Secondary Tab 2 section
+      Secondary Tab 2 section
     </section>
     <section
       aria-labelledby="pf-tab-12-secondary tab3"
@@ -1089,7 +1089,7 @@ Array [
       role="tabpanel"
       tabindex="0"
     >
-      &gt; Secondary Tab 3 section
+      Secondary Tab 3 section
     </section>
   </section>,
   <section
@@ -1102,7 +1102,7 @@ Array [
     role="tabpanel"
     tabindex="0"
   >
-    &gt; Tab 2 section
+    Tab 2 section
   </section>,
   <section
     aria-labelledby="pf-tab-2-tab3"
