@@ -18,9 +18,12 @@ export enum TabsComponent {
   nav = 'nav'
 }
 
+type ChildElement = React.ReactElement<TabProps, React.JSXElementConstructor<TabProps>>;
+type Child = ChildElement | boolean | null | undefined;
+
 export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'>, OUIAProps {
-  /** Content rendered inside the tabs component. Must be React.ReactElement<TabProps>[] */
-  children: React.ReactNode;
+  /** Content rendered inside the tabs component. */
+  children: Child | Child[];
   /** Additional classes added to the tabs */
   className?: string;
   /** Tabs background color variant */
@@ -163,7 +166,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     // process any tab content sections outside of the component
     if (tabContentRef) {
       React.Children.toArray(this.props.children)
-        .map(child => child as React.ReactElement<TabProps>)
+        .filter((child): child is ChildElement => React.isValidElement(child))
         .filter(child => child.props && child.props.tabContentRef && child.props.tabContentRef.current)
         .forEach(child => (child.props.tabContentRef.current.hidden = true));
       // most recently selected tabContent
@@ -308,8 +311,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       uncontrolledActiveKey,
       uncontrolledIsExpandedLocal
     } = this.state;
-    const filteredChildren = (React.Children.toArray(children) as React.ReactElement<TabProps>[])
-      .filter(Boolean)
+    const filteredChildren = React.Children.toArray(children)
+      .filter((child): child is ChildElement => React.isValidElement(child))
       .filter(child => !child.props.isHidden);
 
     const uniqueId = id || getUniqueId();
