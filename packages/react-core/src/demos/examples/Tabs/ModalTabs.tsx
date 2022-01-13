@@ -15,7 +15,10 @@ import {
   Tabs,
   TabTitleText,
   List,
-  ListItem
+  ListItem,
+  Grid,
+  GridItem,
+  TabContent
 } from '@patternfly/react-core';
 
 interface Product {
@@ -46,8 +49,9 @@ const products: Product[] = [
 export const ModalTabs: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [selectedProduct, setSelectedProduct] = React.useState<Product>();
+  const [activeTabKey, setActiveTabKey] = React.useState(0);
 
-  const onDetailsClick = React.useCallback(
+  const onCardClick = React.useCallback(
     (product: Product) => () => {
       setSelectedProduct(product);
       setIsModalOpen(true);
@@ -58,7 +62,10 @@ export const ModalTabs: React.FunctionComponent = () => {
   const closeModal = React.useCallback(() => {
     setSelectedProduct(undefined);
     setIsModalOpen(false);
+    setActiveTabKey(0);
   }, []);
+
+  const onTabSelect = React.useCallback((_event, tabIndex) => setActiveTabKey(tabIndex), []);
 
   return (
     <>
@@ -72,7 +79,7 @@ export const ModalTabs: React.FunctionComponent = () => {
         <PageSection isFilled>
           <Gallery hasGutter>
             {products.map(product => (
-              <Card isSelectable isSelectableRaised isCompact key={product.id} onClick={onDetailsClick(product)}>
+              <Card isSelectable isSelectableRaised isCompact key={product.id} onClick={onCardClick(product)}>
                 <CardTitle>{product.name}</CardTitle>
                 <CardBody>{product.description}</CardBody>
               </Card>
@@ -83,12 +90,18 @@ export const ModalTabs: React.FunctionComponent = () => {
 
       {selectedProduct && (
         <Modal variant={ModalVariant.small} title={selectedProduct.name} isOpen={isModalOpen} onClose={closeModal}>
-          <Tabs defaultActiveKey={0}>
-            <Tab eventKey={0} title={<TabTitleText>Details</TabTitleText>}>
-              <div className="pf-u-mt-md">{selectedProduct.description}</div>
-            </Tab>
-            <Tab eventKey={1} title={<TabTitleText>Documentation</TabTitleText>}>
-              <div className="pf-u-mt-md">
+          <Grid hasGutter>
+            <GridItem>
+              <Tabs activeKey={activeTabKey} onSelect={onTabSelect} isSecondary>
+                <Tab eventKey={0} tabContentId="details-tab" title={<TabTitleText>Details</TabTitleText>} />
+                <Tab eventKey={1} tabContentId="doc-tab" title={<TabTitleText>Documentation</TabTitleText>} />
+              </Tabs>
+            </GridItem>
+            <GridItem>
+              <TabContent eventKey={0} id="details-tab" hidden={activeTabKey !== 0}>
+                {selectedProduct.description}
+              </TabContent>
+              <TabContent eventKey={1} id="doc-tab" hidden={activeTabKey !== 1}>
                 <List>
                   <ListItem>
                     <a>Doc Link 1</a>
@@ -100,9 +113,9 @@ export const ModalTabs: React.FunctionComponent = () => {
                     <a>Doc Link 3</a>
                   </ListItem>
                 </List>
-              </div>
-            </Tab>
-          </Tabs>
+              </TabContent>
+            </GridItem>
+          </Grid>
         </Modal>
       )}
     </>
