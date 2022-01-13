@@ -28,7 +28,7 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
   isCompact?: boolean;
   /** Sets a horizontal description list to have fluid styling. */
   isFluid?: boolean;
-  /** Sets the description list to fill the entire column space. */
+  /** Sets the the default placement of description list groups to fill from top to bottom. */
   isFillColumns?: boolean;
   /** Sets the number of columns on the description list */
   columnModifier?: {
