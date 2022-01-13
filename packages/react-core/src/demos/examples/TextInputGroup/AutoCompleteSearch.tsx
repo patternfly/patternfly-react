@@ -95,6 +95,8 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
   const handleTab = () => {
     if (menuItems.length === 3) {
       setInputValue(menuItems[2].props.children);
+    } else {
+      setMenuIsOpen(false);
     }
   };
 
@@ -165,13 +167,17 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
 
   /** enable keyboard only usage while focused on the menu */
   const handleMenuKeyDown = (event: React.KeyboardEvent) => {
-    if (event.key === 'Escape') {
-      focusTextInput();
-      setMenuIsOpen(false);
-    }
-
-    if (event.key === 'Tab') {
-      setInputValue('');
+    switch (event.key) {
+      case 'Tab':
+      case 'Escape':
+        event.preventDefault();
+        focusTextInput();
+        setMenuIsOpen(false);
+        break;
+      case 'Enter':
+      case ' ':
+        setTimeout(() => setMenuIsOpen(false), 0);
+        break;
     }
   };
 
