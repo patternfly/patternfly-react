@@ -39,10 +39,11 @@ export function debounce(this: any, func: (...args: any[]) => any, wait: number)
  * @param {HTMLElement} container  The container to check if the element is in view of.
  * @param {HTMLElement} element    The element to check if it is view
  * @param {boolean} partial   true if partial view is allowed
+ * @param {boolean} strict    true if strict mode is set, never consider the container width and element width
  *
  * @returns { boolean } True if the component is in View.
  */
-export function isElementInView(container: HTMLElement, element: HTMLElement, partial: boolean) {
+export function isElementInView(container: HTMLElement, element: HTMLElement, partial: boolean, strict?: boolean) {
   if (!container || !element) {
     return false;
   }
@@ -56,7 +57,7 @@ export function isElementInView(container: HTMLElement, element: HTMLElement, pa
   // Check if in view
   const isTotallyInView = elementBoundsLeft >= containerBoundsLeft && elementBoundsRight <= containerBoundsRight;
   const isPartiallyInView =
-    (partial || containerBounds.width < elementBounds.width) &&
+    (partial || (!strict && containerBounds.width < elementBounds.width)) &&
     ((elementBoundsLeft < containerBoundsLeft && elementBoundsRight > containerBoundsLeft) ||
       (elementBoundsRight > containerBoundsRight && elementBoundsLeft < containerBoundsRight));
 
