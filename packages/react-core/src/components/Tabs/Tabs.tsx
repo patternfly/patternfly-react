@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as _ from 'lodash';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
@@ -178,7 +179,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     }
   }
 
-  handleScrollButtons = () => {
+  handleScrollButtons = _.debounce(() => {
     const container = this.tabList.current;
     let disableLeftScrollButton = true;
     let disableRightScrollButton = true;
@@ -201,7 +202,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       disableLeftScrollButton,
       disableRightScrollButton
     });
-  };
+  }, 100);
 
   scrollLeft = () => {
     // find first Element that is fully in view on the left, then scroll to the element before it

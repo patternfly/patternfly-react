@@ -48,15 +48,15 @@ export function isElementInView(container: HTMLElement, element: HTMLElement, pa
   }
   const containerBounds = container.getBoundingClientRect();
   const elementBounds = element.getBoundingClientRect();
-  const containerBoundsLeft = Math.floor(containerBounds.left);
+  const containerBoundsLeft = Math.ceil(containerBounds.left);
   const containerBoundsRight = Math.floor(containerBounds.right);
-  const elementBoundsLeft = Math.floor(elementBounds.left);
+  const elementBoundsLeft = Math.ceil(elementBounds.left);
   const elementBoundsRight = Math.floor(elementBounds.right);
 
   // Check if in view
   const isTotallyInView = elementBoundsLeft >= containerBoundsLeft && elementBoundsRight <= containerBoundsRight;
   const isPartiallyInView =
-    partial &&
+    (partial || containerBounds.width < elementBounds.width) &&
     ((elementBoundsLeft < containerBoundsLeft && elementBoundsRight > containerBoundsLeft) ||
       (elementBoundsRight > containerBoundsRight && elementBoundsLeft < containerBoundsRight));
 
