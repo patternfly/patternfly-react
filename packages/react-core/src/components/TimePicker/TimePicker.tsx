@@ -3,9 +3,10 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 import datePickerStyles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
+import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
 import { getUniqueId } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
-import { TimeOption } from './TimeOption';
+import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
 import { KeyTypes, SelectDirection } from '../Select';
 import { InputGroup } from '../InputGroup';
 import { TextInput, TextInputProps } from '../TextInput';
@@ -86,7 +87,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   private parentRef = React.createRef<HTMLDivElement>();
   private toggleRef = React.createRef<HTMLDivElement>();
   private inputRef = React.createRef<HTMLInputElement>();
-  private menuRef = React.createRef<HTMLUListElement>();
+  private menuRef = React.createRef<HTMLDivElement>();
 
   static defaultProps = {
     className: '',
@@ -98,7 +99,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     placeholder: 'hh:mm',
     delimiter: ':',
     'aria-label': 'Time picker',
-    menuAppendTo: 'inline',
     direction: 'down',
     width: 150,
     stepMinutes: 30,
@@ -170,7 +170,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
           this.onToggle(false);
         } else if (event.key === KeyTypes.Enter) {
           if (focusedIndex !== null) {
-            this.onSelect((this.getOptions()[focusedIndex] as HTMLElement).innerText);
+            this.onSelect(event);
             event.stopPropagation();
           } else {
             this.onToggle(false);
@@ -221,7 +221,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   };
 
   scrollToIndex = (index: number) => {
-    this.getOptions()[index].offsetParent.scrollTop = this.getOptions()[index].offsetTop;
+    this.getOptions()[index].closest(`.${menuStyles.menuContent}`).scrollTop = this.getOptions()[index].offsetTop;
   };
 
   scrollToSelection = (time: string) => {
@@ -289,7 +289,9 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   };
 
   getOptions = () =>
-    (this.menuRef && this.menuRef.current ? Array.from(this.menuRef.current.children) : []) as HTMLElement[];
+    (this.menuRef && this.menuRef.current
+      ? Array.from(this.menuRef.current.querySelectorAll(`.${menuStyles.menuListItem}`))
+      : []) as HTMLElement[];
 
   isValidFormat = (time: string) => {
     if (this.props.validateTime) {
@@ -324,11 +326,11 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     });
   };
 
-  onSelect = (selection: string) => {
-    const { timeRegex, timeState } = this.state;
+  onSelect = (e: any) => {
+    const { timeRegex, timeState, focusedIndex } = this.state;
     const { delimiter, is24Hour, includeSeconds } = this.props;
-    const time = parseTime(selection, timeRegex, delimiter, !is24Hour, includeSeconds);
-
+    const elementText = e.type === 'click' ? e.target.textContent : this.getOptions()[focusedIndex].innerText;
+    const time = parseTime(elementText, timeRegex, delimiter, !is24Hour, includeSeconds);
     if (time !== timeState) {
       this.onInputChange(time);
     }
@@ -401,31 +403,24 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
-    const { timeState, isOpen, isInvalid, focusedIndex, minTimeState, maxTimeState } = this.state;
+    const { timeState, isOpen, isInvalid, minTimeState, maxTimeState } = this.state;
     const style = { '--pf-c-date-picker__input--c-form-control--Width': width } as React.CSSProperties;
     const options = makeTimeOptions(stepMinutes, !is24Hour, delimiter, minTimeState, maxTimeState);
     const isValidFormat = this.isValidFormat(timeState);
     const randomId = id || getUniqueId('time-picker');
 
     const menuContainer = (
-      <ul
-        ref={this.menuRef}
-        className={css(styles.selectMenu)}
-        role="listbox"
-        aria-labelledby={`${id}-input`}
-        style={{ maxHeight: '200px', overflowY: 'auto' }}
-      >
-        {options.map((option, index) => (
-          <TimeOption
-            key={index}
-            value={option}
-            index={index}
-            onSelect={this.onSelect}
-            isFocused={index === focusedIndex}
-            id={`${id}-option-${index}`}
-          />
-        ))}
-      </ul>
+      <Menu ref={this.menuRef} isScrollable>
+        <MenuContent maxMenuHeight="200px">
+          <MenuList aria-labelledby={`${id}-input`}>
+            {options.map((option, index) => (
+              <MenuItem onClick={this.onSelect} key={index} id={`${id}-option-${index}`}>
+                {option}
+              </MenuItem>
+            ))}
+          </MenuList>
+        </MenuContent>
+      </Menu>
     );
 
     const inputAndToggle = (
@@ -476,31 +471,12 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       </div>
     );
 
-    const popperContainer = (
-      <div
-        className={css(
-          styles.select,
-          isOpen && styles.modifiers.expanded,
-          direction === SelectDirection.up && styles.modifiers.top,
-          className
-        )}
-      >
-        {isOpen && menuContainer}
-      </div>
-    );
-
     return (
       <div className={css(datePickerStyles.datePicker, className)}>
         {menuAppendTo === 'inline' ? (
           inputAndToggle
         ) : (
-          <Popper
-            trigger={inputAndToggle}
-            popper={popperContainer}
-            direction={direction}
-            appendTo={menuAppendTo}
-            isVisible={isOpen}
-          />
+          <Popper trigger={inputAndToggle} popper={menuContainer} isVisible={isOpen} />
         )}
       </div>
     );
