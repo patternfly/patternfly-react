@@ -19,10 +19,10 @@ export interface MenuContentProps extends React.HTMLProps<HTMLElement> {
 export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React.Ref<HTMLDivElement>) => {
   const { getHeight, children, menuHeight, maxMenuHeight, ...rest } = props;
   const menuContentRef = React.createRef<HTMLDivElement>();
-  const refCallback = (el: any, menuId: string, onGetMenuHeight: (menuId: string, height: number) => void) => {
+  const refCallback = (el: HTMLElement, menuId: string, onGetMenuHeight: (menuId: string, height: number) => void) => {
     if (el) {
       onGetMenuHeight && onGetMenuHeight(menuId, el.clientHeight);
-      getHeight && getHeight(el.clientHeight);
+      getHeight && getHeight(el.clientHeight.toString());
     }
     return ref || menuContentRef;
   };
