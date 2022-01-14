@@ -142,12 +142,12 @@ export const isWithinMinMax = (
   }
 
   // correctly format as 24hr times (12:30AM => 00:30, 1:15 => 01:15)
-  const minHour24Time = convertTo24Hour(minTime, delimiter, includeSeconds);
+  const min24HourTime = convertTo24Hour(minTime, delimiter, includeSeconds);
   const selected24HourTime = convertTo24Hour(time, delimiter, includeSeconds);
   const max24HourTime = convertTo24Hour(maxTime, delimiter, includeSeconds);
 
   // simple string comparison for 24hr times
-  return minHour24Time <= selected24HourTime && selected24HourTime <= max24HourTime;
+  return min24HourTime <= selected24HourTime && selected24HourTime <= max24HourTime;
 };
 
 const convertTo24Hour = (time: string, delimiter: string, includeSeconds: boolean): string => {
