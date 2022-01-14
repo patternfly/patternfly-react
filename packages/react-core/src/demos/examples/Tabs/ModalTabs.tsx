@@ -30,7 +30,7 @@ interface Product {
 const products: Product[] = [
   {
     id: 0,
-    name: 'Patternfly',
+    name: 'PatternFly',
     description: 'PatternFly is a community project that promotes design commonality and improves user experience.'
   },
   {
@@ -104,13 +104,13 @@ export const ModalTabs: React.FunctionComponent = () => {
               <TabContent eventKey={1} id="doc-tab" hidden={activeTabKey !== 1}>
                 <List>
                   <ListItem>
-                    <a>Doc Link 1</a>
+                    <a>Doc link 1</a>
                   </ListItem>
                   <ListItem>
-                    <a>Doc Link 2</a>
+                    <a>Doc link 2</a>
                   </ListItem>
                   <ListItem>
-                    <a>Doc Link 3</a>
+                    <a>Doc link 3</a>
                   </ListItem>
                 </List>
               </TabContent>
