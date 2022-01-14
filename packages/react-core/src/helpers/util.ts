@@ -43,7 +43,12 @@ export function debounce(this: any, func: (...args: any[]) => any, wait: number)
  *
  * @returns { boolean } True if the component is in View.
  */
-export function isElementInView(container: HTMLElement, element: HTMLElement, partial: boolean, strict?: boolean) {
+export function isElementInView(
+  container: HTMLElement,
+  element: HTMLElement,
+  partial: boolean,
+  strict: boolean = false
+): boolean {
   if (!container || !element) {
     return false;
   }
