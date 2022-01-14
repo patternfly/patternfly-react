@@ -45,6 +45,7 @@ export * from './Masthead';
 export * from './Menu';
 export * from './MenuToggle';
 export * from './Modal';
+export * from './MultipleFileUpload';
 export * from './Nav';
 export * from './NotificationBadge';
 export * from './NotificationDrawer';
