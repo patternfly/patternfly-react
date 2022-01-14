@@ -15,7 +15,6 @@ exports[`editable label 1`] = `
     >
       <button
         className="pf-c-label__editable-text"
-        currvalue="Something"
         onClick={[Function]}
       >
         Something
