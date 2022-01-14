@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as _ from 'lodash';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
@@ -127,6 +126,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     }
   }
 
+  scrollTimeout: NodeJS.Timeout = null;
+
   static defaultProps: PickOptional<TabsProps> = {
     activeKey: 0,
     onSelect: () => undefined as any,
@@ -179,30 +180,34 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     }
   }
 
-  handleScrollButtons = _.debounce(() => {
-    const container = this.tabList.current;
-    let disableLeftScrollButton = true;
-    let disableRightScrollButton = true;
-    let showScrollButtons = false;
+  handleScrollButtons = () => {
+    // add debounce to the scroll event
+    clearTimeout(this.scrollTimeout);
+    this.scrollTimeout = setTimeout(() => {
+      const container = this.tabList.current;
+      let disableLeftScrollButton = true;
+      let disableRightScrollButton = true;
+      let showScrollButtons = false;
 
-    if (container && !this.props.isVertical) {
-      // get first element and check if it is in view
-      const overflowOnLeft = !isElementInView(container, container.firstChild as HTMLElement, false);
+      if (container && !this.props.isVertical) {
+        // get first element and check if it is in view
+        const overflowOnLeft = !isElementInView(container, container.firstChild as HTMLElement, false);
 
-      // get last element and check if it is in view
-      const overflowOnRight = !isElementInView(container, container.lastChild as HTMLElement, false);
+        // get last element and check if it is in view
+        const overflowOnRight = !isElementInView(container, container.lastChild as HTMLElement, false);
 
-      showScrollButtons = overflowOnLeft || overflowOnRight;
+        showScrollButtons = overflowOnLeft || overflowOnRight;
 
-      disableLeftScrollButton = !overflowOnLeft;
-      disableRightScrollButton = !overflowOnRight;
-    }
-    this.setState({
-      showScrollButtons,
-      disableLeftScrollButton,
-      disableRightScrollButton
-    });
-  }, 100);
+        disableLeftScrollButton = !overflowOnLeft;
+        disableRightScrollButton = !overflowOnRight;
+      }
+      this.setState({
+        showScrollButtons,
+        disableLeftScrollButton,
+        disableRightScrollButton
+      });
+    }, 100);
+  };
 
   scrollLeft = () => {
     // find first Element that is fully in view on the left, then scroll to the element before it
@@ -259,6 +264,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
         window.removeEventListener('resize', this.handleScrollButtons, false);
       }
     }
+    clearTimeout(this.scrollTimeout);
   }
 
   componentDidUpdate(prevProps: TabsProps) {
