@@ -146,22 +146,54 @@ export interface ISortBy {
   defaultDirection?: 'asc' | 'desc';
 }
 
-export interface IAction extends Omit<DropdownItemProps, 'title' | 'onClick'>, Pick<ButtonProps, 'variant'> {
+export interface ISeparator {
   /** Flag indicating an item on actions menu is a separator, rather than an action */
-  isSeparator?: boolean;
-  /** Key of actions menu item */
-  itemKey?: string;
-  /** Content to display in the actions menu item */
-  title?: string | React.ReactNode;
-  /** Click handler for the actions menu item */
-  onClick?: (event: React.MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
-  /** Flag indicating this action should be placed outside the actions menu, beside the toggle */
-  isOutsideDropdown?: boolean;
+  isSeparator: true;
 }
 
-export interface ISeparator extends IAction {
-  isSeparator: boolean;
+export interface IActionSeparator extends ISeparator {
+  isOutsideDropdown?: false;
 }
+
+interface IActionClickable {
+  /** Click handler for the actions menu item */
+  onClick?: (event: React.MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
+}
+
+export type IActionOutsideItemBase = IActionClickable & {
+  /** Flag indicating this action should be placed outside the actions menu, beside the toggle */
+  isOutsideDropdown: true;
+  /** Flag indicating an item on actions menu is not a separator, added to make it easy to distinguish */
+  isSeparator?: false;
+  /** Key of actions menu item */
+  itemKey?: undefined;
+};
+
+export type IActionOutsideItemButton = IActionOutsideItemBase &
+  Omit<ButtonProps, 'onClick'> & {
+    title: string;
+    /** Key of actions menu item */
+    itemKey?: string;
+  };
+
+export type IActionOutsideItemCustom = IActionOutsideItemBase & {
+  title: Exclude<React.ReactNode, string>;
+  [key: string]: any;
+};
+
+export type IActionDropdownItem = Omit<DropdownItemProps, 'title' | 'onClick'> &
+  IActionClickable & {
+    /** Flag indicating an item on actions menu is not a separator, added to make it easy to distinguish */
+    isSeparator?: false;
+    /** Flag indicating this action should be placed outside the actions menu, beside the toggle */
+    isOutsideDropdown?: false;
+    /** Key of actions menu item */
+    itemKey?: string;
+    /** Content to display in the actions menu item */
+    title: React.ReactNode;
+  };
+
+export type IAction = IActionSeparator | IActionDropdownItem | IActionOutsideItemButton | IActionOutsideItemCustom;
 
 export type IActions = (IAction | ISeparator)[];
 export type IActionsResolver = (rowData: IRowData, extraData: IExtraData) => (IAction | ISeparator)[];

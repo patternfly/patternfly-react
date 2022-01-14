@@ -48,3 +48,8 @@ test('Disclosure ExpandableSection', () => {
   const view = shallow(<ExpandableSection {...props} displaySize="large" isWidthLimited>test </ExpandableSection>);
   expect(view).toMatchSnapshot();
 });
+
+test('Renders ExpandableSection indented', () => {
+  const view = shallow(<ExpandableSection isExpanded isIndented> test </ExpandableSection>);
+  expect(view).toMatchSnapshot();
+});

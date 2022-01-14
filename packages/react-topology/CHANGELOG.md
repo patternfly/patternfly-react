@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.35.0 (2022-01-14)
+
+
+### Features
+
+* **DescriptionList:** add option to fill columns first ([#6736](https://github.com/patternfly/patternfly-react/issues/6736)) ([c955c29](https://github.com/patternfly/patternfly-react/commit/c955c2917dbc4b85ce58fac4f93845c429186e1b))
+
+
+
+
+
+## 4.34.2 (2022-01-14)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.34.1 (2022-01-14)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+# 4.34.0 (2022-01-12)
+
+
+### Features
+
+* **expandable-section:** added indented variation ([#6763](https://github.com/patternfly/patternfly-react/issues/6763)) ([703b922](https://github.com/patternfly/patternfly-react/commit/703b9224e43bedd5b37ec41d8f26f2939836d610))
+
+
+
+
+
 ## 4.33.1 (2022-01-11)
 
 

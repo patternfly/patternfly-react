@@ -28,6 +28,8 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
   isCompact?: boolean;
   /** Sets a horizontal description list to have fluid styling. */
   isFluid?: boolean;
+  /** Sets the the default placement of description list groups to fill from top to bottom. */
+  isFillColumns?: boolean;
   /** Sets the number of columns on the description list */
   columnModifier?: {
     default?: '1Col' | '2Col' | '3Col';
@@ -74,6 +76,7 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   isInlineGrid,
   isCompact,
   isFluid,
+  isFillColumns,
   columnModifier,
   autoFitMinModifier,
   orientation,
@@ -91,6 +94,7 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
       isInlineGrid && styles.modifiers.inlineGrid,
       isCompact && styles.modifiers.compact,
       isFluid && styles.modifiers.fluid,
+      isFillColumns && styles.modifiers.fillColumns,
       className
     )}
     style={
@@ -103,4 +107,5 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
     {children}
   </dl>
 );
+
 DescriptionList.displayName = 'DescriptionList';
