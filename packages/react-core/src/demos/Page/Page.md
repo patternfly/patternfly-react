@@ -66,7 +66,14 @@ import {
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
-  ToolbarItem
+  ToolbarItem,
+  Drawer,
+  DrawerPanelContent,
+  DrawerContent,
+  DrawerContentBody,
+  DrawerHead,
+  DrawerActions,
+  DrawerCloseButton,
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
@@ -78,13 +85,16 @@ import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
 class PageLayoutGrouped extends React.Component {
+  counter = 0;
   constructor(props) {
     super(props);
     this.state = {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
       isFullKebabDropdownOpen: false,
-      activeItem: 0
+      activeItem: 0,
+      isDrawerExpanded: false,
+      useResizeObserver: false
     };
     this.onDropdownToggle = isDropdownOpen => {
       this.setState({
@@ -127,10 +137,30 @@ class PageLayoutGrouped extends React.Component {
         isFullKebabDropdownOpen: !this.state.isFullKebabDropdownOpen
       });
     };
+
+    this.onDrawerToggle = () => {
+      const isDrawerExpanded = !this.state.isDrawerExpanded;
+      this.setState({
+        isDrawerExpanded
+      });
+    };
+
+    this.onDrawerClose = () => {
+      this.setState({
+        isDrawerExpanded: false
+      });
+    };
+
+    this.handleChange = (checked, event) => {
+      const target = event.target;
+      const value = target.type === 'checkbox' ? target.checked : target.value;
+      const name = target.name;
+      this.setState({ [name]: value });
+    };
   }
 
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, activeItem, isFullKebabDropdownOpen } = this.state;
+    const { isDropdownOpen, isKebabDropdownOpen, activeItem, isFullKebabDropdownOpen, isDrawerExpanded, useResizeObserver } = this.state;
 
     const PageNav = (
       <Nav variant="tertiary" onSelect={this.onNavSelect} aria-label="Nav">
@@ -283,47 +313,78 @@ class PageLayoutGrouped extends React.Component {
       </Breadcrumb>
     );
 
+    const panelContent = (
+      <DrawerPanelContent isResizable>
+        <DrawerHead>
+          <span tabIndex={isDrawerExpanded ? 0 : -1}>
+            drawer-panel
+          </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onDrawerClose} />
+          </DrawerActions>
+        </DrawerHead>
+      </DrawerPanelContent>
+    );
+
+    const Sidebar = <PageSidebar nav="Navigation" />;
+
     return (
-      <React.Fragment>
-        <Page
-          header={Header}
-          breadcrumb={PageBreadcrumb}
-          tertiaryNav={PageNav}
-          isManagedSidebar
-          isTertiaryNavWidthLimited
-          isBreadcrumbWidthLimited
-          skipToContent={PageSkipToContent}
-          mainContainerId={pageId}
-          isTertiaryNavGrouped
-          isBreadcrumbGrouped
-          additionalGroupedContent={
-            <PageSection variant={PageSectionVariants.light}>
-              <TextContent>
-                <Text component="h1">Main title</Text>
-                <Text component="p">
-                  Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
-                  of its relative line height of 1.5.
-                </Text>
-              </TextContent>
-            </PageSection>
-          }
-          groupProps={{
-            sticky: 'top'
-          }}
-        >
-          <PageSection>
-            <Gallery hasGutter>
-              {Array.apply(0, Array(20)).map((x, i) => (
-                <GalleryItem key={i}>
-                  <Card>
-                    <CardBody>This is a card</CardBody>
-                  </Card>
-                </GalleryItem>
-              ))}
-            </Gallery>
-          </PageSection>
-        </Page>
-      </React.Fragment>
+      <Drawer isExpanded={isDrawerExpanded} isInline onExpand={this.onExpand}>
+        <DrawerContent panelContent={panelContent}>
+          <DrawerContentBody>
+            <Page
+              header={Header}
+              breadcrumb={PageBreadcrumb}
+              sidebar={Sidebar}
+              tertiaryNav={PageNav}
+              isManagedSidebar
+              isTertiaryNavWidthLimited
+              isBreadcrumbWidthLimited
+              skipToContent={PageSkipToContent}
+              mainContainerId={pageId}
+              isTertiaryNavGrouped
+              isBreadcrumbGrouped
+              additionalGroupedContent={
+                <PageSection variant={PageSectionVariants.light}>
+                  <TextContent>
+                    <Text component="h1">Main title</Text>
+                    <Text component="p">
+                      Body text should be Overpass Regular at 16px. It should have leading of 24px because <br />
+                      of its relative line height of 1.5.
+                    </Text>
+                  </TextContent>
+                  <Button onClick={this.onDrawerToggle}>Toggle drawer</Button>
+                  <Checkbox
+                    label="Use Page resize observer"
+                    isChecked={this.state.useResizeObserver}
+                    onChange={this.handleChange}
+                    aria-label="Use Page resize observer"
+                    id="useResizeObserver"
+                    name="useResizeObserver"
+                  />
+                </PageSection>
+              }
+              groupProps={{
+                sticky: 'top'
+              }}
+              useResizeObserver={useResizeObserver}
+              key={`${useResizeObserver}${++this.counter}`}
+            >
+              <PageSection>
+                <Gallery hasGutter>
+                  {Array.apply(0, Array(20)).map((x, i) => (
+                    <GalleryItem key={i}>
+                      <Card>
+                        <CardBody>This is a card</CardBody>
+                      </Card>
+                    </GalleryItem>
+                  ))}
+                </Gallery>
+              </PageSection>
+            </Page>
+          </DrawerContentBody>
+        </DrawerContent>
+      </Drawer>
     );
   }
 }

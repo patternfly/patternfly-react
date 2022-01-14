@@ -5,6 +5,7 @@ import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/global_breakpo
 import { debounce, canUseDOM } from '../../helpers/util';
 import { Drawer, DrawerContent, DrawerContentBody, DrawerPanelContent } from '../Drawer';
 import { PageGroup, PageGroupProps } from './PageGroup';
+import { getResizeObserver } from '../../helpers/resizeObserver';
 
 export enum PageLayouts {
   vertical = 'vertical',
@@ -15,12 +16,14 @@ export interface PageContextProps {
   isManagedSidebar: boolean;
   onNavToggle: () => void;
   isNavOpen: boolean;
+  width: number;
 }
 
-const PageContext = React.createContext<PageContextProps>({
+export const PageContext = React.createContext<PageContextProps>({
   isManagedSidebar: false,
   isNavOpen: false,
-  onNavToggle: () => null
+  onNavToggle: () => null,
+  width: 0
 });
 
 export const PageContextProvider = PageContext.Provider;
@@ -67,6 +70,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    * Returns object { mobileView: boolean, windowSize: number }
    */
   onPageResize?: (object: any) => void;
+  /** True to listen to page width changes on a resize observer */
+  useResizeObserver?: boolean;
   /** Breadcrumb component for the page */
   breadcrumb?: React.ReactNode;
   /** Tertiary nav component for the page */
@@ -87,6 +92,7 @@ export interface PageState {
   desktopIsNavOpen: boolean;
   mobileIsNavOpen: boolean;
   mobileView: boolean;
+  width: number;
 }
 
 export class Page extends React.Component<PageProps, PageState> {
@@ -98,9 +104,12 @@ export class Page extends React.Component<PageProps, PageState> {
     onPageResize: (): void => null,
     mainTabIndex: -1,
     isNotificationDrawerExpanded: false,
-    onNotificationDrawerExpand: () => null
+    onNotificationDrawerExpand: () => null,
+    useResizeObserver: false
   };
   mainRef = React.createRef<HTMLDivElement>();
+  pageRef = React.createRef<HTMLDivElement>();
+  observer: any = () => {};
 
   constructor(props: PageProps) {
     super(props);
@@ -110,15 +119,20 @@ export class Page extends React.Component<PageProps, PageState> {
     this.state = {
       desktopIsNavOpen: managedSidebarOpen,
       mobileIsNavOpen: false,
-      mobileView: false
+      mobileView: false,
+      width: 0
     };
   }
 
   componentDidMount() {
-    const { isManagedSidebar, onPageResize } = this.props;
-    if (isManagedSidebar || onPageResize) {
+    const { isManagedSidebar, onPageResize, useResizeObserver } = this.props;
+    if (isManagedSidebar || onPageResize || useResizeObserver) {
       if (canUseDOM) {
-        window.addEventListener('resize', this.handleResize);
+        if (useResizeObserver) {
+          this.observer = getResizeObserver(this.pageRef.current, this.handleResize);
+        } else {
+          window.addEventListener('resize', this.handleResize);
+        }
       }
       const currentRef = this.mainRef.current;
       if (currentRef) {
@@ -131,10 +145,14 @@ export class Page extends React.Component<PageProps, PageState> {
   }
 
   componentWillUnmount() {
-    const { isManagedSidebar, onPageResize } = this.props;
-    if (isManagedSidebar || onPageResize) {
+    const { isManagedSidebar, onPageResize, useResizeObserver } = this.props;
+    if (isManagedSidebar || onPageResize || useResizeObserver) {
       if (canUseDOM) {
-        window.removeEventListener('resize', this.handleResize);
+        if (useResizeObserver) {
+          this.observer();
+        } else {
+          window.removeEventListener('resize', this.handleResize);
+        }
       }
       const currentRef = this.mainRef.current;
       if (currentRef) {
@@ -144,13 +162,20 @@ export class Page extends React.Component<PageProps, PageState> {
     }
   }
 
-  getWindowWidth = () => (canUseDOM ? window.innerWidth : 1200);
+  getWindowWidth = () => {
+    if (canUseDOM) {
+      return this.pageRef.current.clientWidth;
+    } else {
+      return 1200;
+    }
+  };
 
   isMobile = () =>
     // eslint-disable-next-line radix
     this.getWindowWidth() < Number.parseInt(globalBreakpointXl.value, 10);
 
   resize = () => {
+    console.log('resize');
     const { onPageResize } = this.props;
     const mobileView = this.isMobile();
     if (onPageResize) {
@@ -159,6 +184,7 @@ export class Page extends React.Component<PageProps, PageState> {
     if (mobileView !== this.state.mobileView) {
       this.setState({ mobileView });
     }
+    this.setState({ width: this.pageRef.current.clientWidth });
   };
 
   handleResize = debounce(this.resize, 250);
@@ -215,7 +241,8 @@ export class Page extends React.Component<PageProps, PageState> {
     const context = {
       isManagedSidebar,
       onNavToggle: mobileView ? this.onNavToggleMobile : this.onNavToggleDesktop,
-      isNavOpen: mobileView ? mobileIsNavOpen : desktopIsNavOpen
+      isNavOpen: mobileView ? mobileIsNavOpen : desktopIsNavOpen,
+      width: this.state.width
     };
 
     let nav = null;
@@ -270,7 +297,7 @@ export class Page extends React.Component<PageProps, PageState> {
 
     return (
       <PageContextProvider value={context}>
-        <div {...rest} className={css(styles.page, className)}>
+        <div ref={this.pageRef} {...rest} className={css(styles.page, className)}>
           {skipToContent}
           {header}
           {sidebar}

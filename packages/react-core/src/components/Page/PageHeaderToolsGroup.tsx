@@ -1,7 +1,8 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
-import { formatBreakpointMods } from '../../helpers/util';
+import { formatBreakpointMods, getVisibilityVars } from '../../helpers/util';
+import { PageContext } from '../Page/Page';
 
 export interface PageHeaderToolsGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered in the page header tools group */
@@ -23,10 +24,25 @@ export const PageHeaderToolsGroup: React.FunctionComponent<PageHeaderToolsGroupP
   children,
   className,
   visibility,
+  style,
   ...props
-}: PageHeaderToolsGroupProps) => (
-  <div className={css(styles.pageHeaderToolsGroup, formatBreakpointMods(visibility, styles), className)} {...props}>
-    {children}
-  </div>
-);
+}: PageHeaderToolsGroupProps) => {
+  const { width } = React.useContext(PageContext);
+  let visibilityStyle;
+  if (width && visibility) {
+    visibilityStyle = getVisibilityVars(width, visibility);
+  }
+  return (
+    <div
+      className={css(styles.pageHeaderToolsGroup, formatBreakpointMods(visibility, styles), className)}
+      style={{
+        ...(visibilityStyle as React.CSSProperties),
+        ...style
+      }}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};
 PageHeaderToolsGroup.displayName = 'PageHeaderToolsGroup';

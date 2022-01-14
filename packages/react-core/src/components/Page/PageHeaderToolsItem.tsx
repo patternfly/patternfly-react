@@ -1,7 +1,8 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
-import { formatBreakpointMods } from '../../helpers/util';
+import { formatBreakpointMods, getVisibilityVars } from '../../helpers/util';
+import { PageContext } from '../Page/Page';
 
 export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered in page header tools item. */
@@ -28,18 +29,32 @@ export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemPro
   id,
   className,
   visibility,
-  isSelected
-}: PageHeaderToolsItemProps) => (
-  <div
-    className={css(
-      styles.pageHeaderToolsItem,
-      isSelected && styles.modifiers.selected,
-      formatBreakpointMods(visibility, styles),
-      className
-    )}
-    id={id}
-  >
-    {children}
-  </div>
-);
+  isSelected,
+  style,
+  ...props
+}: PageHeaderToolsItemProps) => {
+  const { width } = React.useContext(PageContext);
+  let visibilityStyle;
+  if (width && visibility) {
+    visibilityStyle = getVisibilityVars(width, visibility);
+  }
+  return (
+    <div
+      className={css(
+        styles.pageHeaderToolsItem,
+        isSelected && styles.modifiers.selected,
+        formatBreakpointMods(visibility, styles),
+        className
+      )}
+      id={id}
+      style={{
+        ...(visibilityStyle as React.CSSProperties),
+        ...style
+      }}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};
 PageHeaderToolsItem.displayName = 'PageHeaderToolsItem';

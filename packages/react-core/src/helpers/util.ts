@@ -283,6 +283,82 @@ export const formatBreakpointMods = (
     .filter(Boolean)
     .join(' ');
 
+/**
+ * Returns the visibility and display CSS variables for a given width
+ * Useful for setting the visibility of a component based on a component observer
+ * 
+ * @param width Component width
+ * @param visibility Visibility modifiers
+ * @returns any You may want to cast it to React.CSSProperties
+ */
+export const getVisibilityVars = (
+  width: number,
+  visibility: {
+    default?: 'hidden' | 'visible';
+    sm?: 'hidden' | 'visible';
+    md?: 'hidden' | 'visible';
+    lg?: 'hidden' | 'visible';
+    xl?: 'hidden' | 'visible';
+    '2xl'?: 'hidden' | 'visible';
+    '3xl'?: 'hidden' | 'visible';
+  }
+) => {
+  if (!visibility) {
+    return null;
+  }
+  const visible = {
+    '--pf-hidden-visible--Display': 'var(--pf-hidden-visible--visible--Display)',
+    '--pf-hidden-visible--Visibility': 'var(--pf-hidden-visible--visible--Visibility)'
+  };
+  const hidden = {
+    '--pf-hidden-visible--Display': 'var(--pf-hidden-visible--hidden--Display)',
+    '--pf-hidden-visible--Visibility': 'var(--pf-hidden-visible--hidden--Visibility)'
+  };
+  if (width >= 1450 && '2xl' in visibility) {
+    if (visibility['2xl'] === 'visible') {
+      return visible;
+    } else if (visibility['2xl'] === 'hidden') {
+      return hidden;
+    }
+  }
+  if (width >= 1200 && 'xl' in visibility) {
+    if (visibility.xl === 'visible') {
+      return visible;
+    } else if (visibility.xl === 'hidden') {
+      return hidden;
+    }
+  }
+  if (width >= 992 && 'lg' in visibility) {
+    if (visibility.lg === 'visible') {
+      return visible;
+    } else if (visibility.lg === 'hidden') {
+      return hidden;
+    }
+  }
+  if (width >= 768 && 'md' in visibility) {
+    if (visibility.md === 'visible') {
+      return visible;
+    } else if (visibility.md === 'hidden') {
+      return hidden;
+    }
+  }
+  if (width >= 576 && 'sm' in visibility) {
+    if (visibility.sm === 'visible') {
+      return visible;
+    } else if (visibility.sm === 'hidden') {
+      return hidden;
+    }
+  }
+  if ('default' in visibility) {
+    if (visibility.default === 'visible') {
+      return visible;
+    } else if (visibility.default === 'hidden') {
+      return hidden;
+    }
+  }
+  return {};
+};
+
 const camelize = (s: string) =>
   s
     .toUpperCase()
