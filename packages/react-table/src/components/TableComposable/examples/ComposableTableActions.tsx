@@ -1,14 +1,9 @@
 /* eslint-disable no-console */
 import React from 'react';
-import {
-  ButtonVariant,
-  DropdownToggle,
-  ToggleGroup,
-  ToggleGroupItem,
-  ToggleGroupItemProps
-} from '@patternfly/react-core';
+import { Button, DropdownToggle, ToggleGroup, ToggleGroupItem, ToggleGroupItemProps } from '@patternfly/react-core';
 import {
   TableComposable,
+  TableText,
   Thead,
   Tr,
   Th,
@@ -25,6 +20,7 @@ interface Repository {
   prs: string;
   workspaces: string;
   lastCommit: string;
+  singleAction: string;
 }
 
 type ExampleType = 'defaultToggle' | 'customToggle';
@@ -32,11 +28,11 @@ type ExampleType = 'defaultToggle' | 'customToggle';
 export const ComposableTableActions: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
-    { name: 'one', branches: 'two', prs: 'a', workspaces: 'four', lastCommit: 'five' },
-    { name: 'a', branches: 'two', prs: 'k', workspaces: 'four', lastCommit: 'five' },
-    { name: 'p', branches: 'two', prs: 'b', workspaces: 'four', lastCommit: 'five' },
-    { name: '4', branches: '2', prs: 'b', workspaces: 'four', lastCommit: 'five' },
-    { name: '5', branches: '2', prs: 'b', workspaces: 'four', lastCommit: 'five' }
+    { name: 'one', branches: 'two', prs: 'a', workspaces: 'four', lastCommit: 'five', singleAction: 'Start' },
+    { name: 'a', branches: 'two', prs: 'k', workspaces: 'four', lastCommit: 'five', singleAction: '' },
+    { name: 'p', branches: 'two', prs: 'b', workspaces: 'four', lastCommit: 'five', singleAction: 'Start' },
+    { name: '4', branches: '2', prs: 'b', workspaces: 'four', lastCommit: 'five', singleAction: 'Start' },
+    { name: '5', branches: '2', prs: 'b', workspaces: 'four', lastCommit: 'five', singleAction: 'Start' }
   ];
 
   const columnNames = {
@@ -44,7 +40,8 @@ export const ComposableTableActions: React.FunctionComponent = () => {
     branches: 'Branches',
     prs: 'Pull requests',
     workspaces: 'Workspaces',
-    lastCommit: 'Last commit'
+    lastCommit: 'Last commit',
+    singleAction: 'Single action'
   };
 
   // This state is just for the ToggleGroup in this example and isn't necessary for TableComposable usage.
@@ -74,12 +71,6 @@ export const ComposableTableActions: React.FunctionComponent = () => {
     {
       title: 'Third action',
       onClick: () => console.log(`clicked on Third action, on row ${repo.name}`)
-    },
-    {
-      title: 'Start',
-      variant: ButtonVariant.secondary,
-      onClick: () => console.log(`clicked on extra action, on row ${repo.name}`),
-      isOutsideDropdown: true
     }
   ];
 
@@ -125,6 +116,8 @@ export const ComposableTableActions: React.FunctionComponent = () => {
             <Th>{columnNames.prs}</Th>
             <Th>{columnNames.workspaces}</Th>
             <Th>{columnNames.lastCommit}</Th>
+            <Td></Td>
+            <Td></Td>
           </Tr>
         </Thead>
         <Tbody>
@@ -137,6 +130,15 @@ export const ComposableTableActions: React.FunctionComponent = () => {
             if (repo.name === '5') {
               rowActions = lastRowActions(repo);
             }
+            let singleActionButton = null;
+            if (repo.singleAction !== '') {
+              singleActionButton = (
+                <TableText>
+                  <Button variant="secondary">{repo.singleAction}</Button>
+                </TableText>
+              );
+            }
+
             return (
               <Tr key={repo.name}>
                 <Td dataLabel={columnNames.name}>{repo.name}</Td>
@@ -144,7 +146,10 @@ export const ComposableTableActions: React.FunctionComponent = () => {
                 <Td dataLabel={columnNames.prs}>{repo.prs}</Td>
                 <Td dataLabel={columnNames.workspaces}>{repo.workspaces}</Td>
                 <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
-                <Td>
+                <Td dataLabel={columnNames.singleAction} modifier="fitContent">
+                  {singleActionButton}
+                </Td>
+                <Td isActionCell>
                   {rowActions ? (
                     <ActionsColumn
                       items={rowActions}

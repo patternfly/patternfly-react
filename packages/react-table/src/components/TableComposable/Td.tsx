@@ -45,11 +45,14 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
   draggableRow?: TdDraggableType;
   /** True to remove padding */
   noPadding?: boolean;
+  /** Applies pf-c-table__action to td */
+  isActionCell?: boolean;
 }
 
 const TdBase: React.FunctionComponent<TdProps> = ({
   children,
   className,
+  isActionCell = false,
   component = 'td',
   dataLabel,
   textCenter = false,
@@ -205,6 +208,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
       {...(!treeTableTitleCell && { 'data-label': dataLabel })}
       className={css(
         className,
+        isActionCell && styles.tableAction,
         textCenter && styles.modifiers.center,
         noPadding && styles.modifiers.noPadding,
         styles.modifiers[modifier as 'breakWord' | 'fitContent' | 'nowrap' | 'truncate' | 'wrap' | undefined],
