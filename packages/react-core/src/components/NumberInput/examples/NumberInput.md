@@ -357,3 +357,46 @@ class NumberInputSizes extends React.Component {
   }
 }
 ```
+
+### Custom increment/decrement
+
+```js
+import React from 'react';
+import { NumberInput } from '@patternfly/react-core';
+
+class CustomStepNumberInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 90,
+      step: 3,
+    };
+
+    this.stepper = step => () => {
+      this.setState(prev => ({...prev, value: prev.value + step }))
+    }
+
+    this.onChange = event => {
+      this.setState({
+        value: Number(event.target.value)
+      });
+    };
+  }
+
+  render() {
+    const { value } = this.state;
+    return (
+      <NumberInput
+        value={value}
+        onMinus={this.stepper(-3)}
+        onChange={this.onChange}
+        onPlus={this.stepper(3)}
+        inputName="input"
+        inputAriaLabel="number input"
+        minusBtnAriaLabel="minus"
+        plusBtnAriaLabel="plus"
+      />
+    );
+  }
+}
+```
