@@ -124,7 +124,7 @@ export const getMinutes = (time: string, timeRegex: RegExp) => {
 };
 
 export const getSeconds = (time: string, timeRegex: RegExp) => {
-  const { 3: seconds } = time.match(timeRegex);
+  const seconds = time.match(timeRegex)?.[3];
 
   return seconds ? parseInt(seconds) : null;
 };
