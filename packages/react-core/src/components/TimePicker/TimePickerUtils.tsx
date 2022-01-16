@@ -69,7 +69,7 @@ export const parseTime = (
     time = time.trim();
     if (is12Hour && time !== '' && validateTime(time, timeRegex, delimiter, is12Hour)) {
       const [, hours, minutes, seconds, suffix = ''] = timeRegex.exec(time);
-      const secondsWithDelimiter = seconds ? `${delimiter}${seconds}` : '';
+      const secondsWithDelimiter = includeSeconds ? `${delimiter}${seconds ?? '00'}` : '';
       const uppercaseSuffix = suffix.toUpperCase();
       // Format AM/PM according to design
       let ampm = '';
