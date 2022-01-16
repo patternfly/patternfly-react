@@ -49,12 +49,21 @@ const products: Product[] = [
 export const ModalTabs: React.FunctionComponent = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [selectedProduct, setSelectedProduct] = React.useState<Product>();
-  const [activeTabKey, setActiveTabKey] = React.useState(0);
+  const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
 
   const onCardClick = React.useCallback(
     (product: Product) => () => {
       setSelectedProduct(product);
       setIsModalOpen(true);
+    },
+    []
+  );
+
+  const onCardKeyPress = React.useCallback(
+    (product: Product) => (event: React.KeyboardEvent<HTMLElement>) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        onCardClick(product)();
+      }
     },
     []
   );
@@ -65,7 +74,10 @@ export const ModalTabs: React.FunctionComponent = () => {
     setActiveTabKey(0);
   }, []);
 
-  const onTabSelect = React.useCallback((_event, tabIndex) => setActiveTabKey(tabIndex), []);
+  const onTabSelect = React.useCallback(
+    (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: string | number) => setActiveTabKey(tabIndex),
+    []
+  );
 
   return (
     <>
@@ -79,7 +91,14 @@ export const ModalTabs: React.FunctionComponent = () => {
         <PageSection isFilled>
           <Gallery hasGutter>
             {products.map(product => (
-              <Card isSelectable isSelectableRaised isCompact key={product.id} onClick={onCardClick(product)}>
+              <Card
+                isSelectable
+                isSelectableRaised
+                isCompact
+                key={product.id}
+                onClick={onCardClick(product)}
+                onKeyPress={onCardKeyPress(product)}
+              >
                 <CardTitle>{product.name}</CardTitle>
                 <CardBody>{product.description}</CardBody>
               </Card>
