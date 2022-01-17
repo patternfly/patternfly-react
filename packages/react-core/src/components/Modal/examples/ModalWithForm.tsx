@@ -25,12 +25,10 @@ export const ModalWithForm: React.FunctionComponent = () => {
   };
 
   React.useEffect(() => {
-    if (isModalOpen) {
-      if (nameInputRef && nameInputRef.current) {
-        nameInputRef.current.focus();
-      }
+    if (isModalOpen && nameInputRef && nameInputRef.current) {
+      (nameInputRef.current as HTMLInputElement).focus();
     }
-  }, [isModalOpen, nameInputRef]);
+  }, [isModalOpen]);
 
   return (
     <React.Fragment>
