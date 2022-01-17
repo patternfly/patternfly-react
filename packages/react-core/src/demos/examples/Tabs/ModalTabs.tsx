@@ -84,8 +84,8 @@ export const ModalTabs: React.FunctionComponent = () => {
       <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
         <PageSection variant={PageSectionVariants.light}>
           <TextContent>
-            <Text component="h1">Products</Text>
-            <Text component="p">Click any product card to view Tabs within Modals.</Text>
+            <Text component="h1">Projects</Text>
+            <Text component="p">Click any project card to view Tabs within Modals.</Text>
           </TextContent>
         </PageSection>
         <PageSection isFilled>
