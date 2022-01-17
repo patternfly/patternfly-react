@@ -95,9 +95,8 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
   const handleTab = () => {
     if (menuItems.length === 3) {
       setInputValue(menuItems[2].props.children);
-    } else {
-      setMenuIsOpen(false);
     }
+    setMenuIsOpen(false);
   };
 
   /** close the menu when escape is hit */
