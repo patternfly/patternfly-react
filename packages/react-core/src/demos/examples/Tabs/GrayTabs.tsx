@@ -42,7 +42,7 @@ export const GrayTabsDemo: React.FunctionComponent = () => {
       <GridItem xl={8} md={6}>
         <Card>
           <CardHeader>
-            <Title headingLevel="h2">Status</Title>
+            <Title headingLevel="h3">Status</Title>
           </CardHeader>
           <CardBody>
             <Flex direction={{ default: 'column' }}>
