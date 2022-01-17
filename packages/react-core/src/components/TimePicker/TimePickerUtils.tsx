@@ -67,20 +67,24 @@ export const parseTime = (
     return `${hours}${delimiter}${minutes}${secondsWithDelimiter}${ampm}`;
   } else if (typeof time === 'string') {
     time = time.trim();
-    if (is12Hour && time !== '' && validateTime(time, timeRegex, delimiter, is12Hour)) {
+    if (time !== '' && validateTime(time, timeRegex, delimiter, is12Hour)) {
       const [, hours, minutes, seconds, suffix = ''] = timeRegex.exec(time);
       const secondsWithDelimiter = includeSeconds ? `${delimiter}${seconds ?? '00'}` : '';
-      const uppercaseSuffix = suffix.toUpperCase();
-      // Format AM/PM according to design
       let ampm = '';
-      if (uppercaseSuffix === amSuffix.toUpperCase().trim()) {
-        ampm = amSuffix;
-      } else if (uppercaseSuffix === pmSuffix.toUpperCase().trim()) {
-        ampm = pmSuffix;
-      } else {
-        // if this 12 hour time is missing am/pm but otherwise valid,
-        // append am/pm depending on time of day
-        ampm = new Date().getHours() > 11 ? pmSuffix : amSuffix;
+
+      // Format AM/PM according to design
+      if (is12Hour) {
+        const uppercaseSuffix = suffix.toUpperCase();
+
+        if (uppercaseSuffix === amSuffix.toUpperCase().trim()) {
+          ampm = amSuffix;
+        } else if (uppercaseSuffix === pmSuffix.toUpperCase().trim()) {
+          ampm = pmSuffix;
+        } else {
+          // if this 12 hour time is missing am/pm but otherwise valid,
+          // append am/pm depending on time of day
+          ampm = new Date().getHours() > 11 ? pmSuffix : amSuffix;
+        }
       }
 
       return `${hours}${delimiter}${minutes}${secondsWithDelimiter}${ampm}`;

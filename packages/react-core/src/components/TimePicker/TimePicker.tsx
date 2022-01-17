@@ -277,9 +277,13 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     });
   };
 
-  getRegExp = () => {
+  getRegExp = (includeSeconds: boolean = true) => {
     const { is24Hour, delimiter } = this.props;
-    const baseRegex = `\\s*(\\d\\d?)${delimiter}([0-5]\\d)${delimiter}?([0-5]\\d)?`;
+    let baseRegex = `\\s*(\\d\\d?)${delimiter}([0-5]\\d)`;
+
+    if (includeSeconds) {
+      baseRegex += `${delimiter}?([0-5]\\d)?`;
+    }
 
     return new RegExp(`^${baseRegex}${is24Hour ? '' : '\\s*([AaPp][Mm])?'}\\s*$`);
   };
@@ -291,8 +295,9 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     if (this.props.validateTime) {
       return this.props.validateTime(time);
     }
-    const { delimiter, is24Hour } = this.props;
-    return validateTime(time, this.state.timeRegex, delimiter, !is24Hour);
+
+    const { delimiter, is24Hour, includeSeconds } = this.props;
+    return validateTime(time, this.getRegExp(includeSeconds), delimiter, !is24Hour);
   };
 
   isValidTime = (time: string) => {
@@ -310,6 +315,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       const { timeRegex, isInvalid } = prevState;
       const { delimiter, is24Hour, includeSeconds } = this.props;
       const time = parseTime(prevState.timeState, timeRegex, delimiter, !is24Hour, includeSeconds);
+
       return {
         isOpen,
         timeState: time,
@@ -321,19 +327,12 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   onSelect = (selection: string) => {
     const { timeRegex, timeState } = this.state;
     const { delimiter, is24Hour, includeSeconds } = this.props;
-    let time = parseTime(selection, timeRegex, delimiter, !is24Hour, includeSeconds);
-
-    // Append 0 seconds to the selected time when includeSeconds is enabled.
-    if (includeSeconds) {
-      const [timeDigits, ampm] = time.split(' ');
-      const suffix = is24Hour ? '' : ` ${ampm}`;
-
-      time = `${timeDigits}${delimiter}00${suffix}`;
-    }
+    const time = parseTime(selection, timeRegex, delimiter, !is24Hour, includeSeconds);
 
     if (time !== timeState) {
       this.onInputChange(time);
     }
+
     this.setState({
       isOpen: false
     });
