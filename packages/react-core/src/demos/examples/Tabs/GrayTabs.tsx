@@ -23,10 +23,19 @@ export const GrayTabsDemo: React.FunctionComponent = () => {
   const [activeNestedTabKey, setActiveNestedTabKey] = React.useState(10);
 
   // Toggle currently active tab
-  const handleTabClick = (_: React.MouseEvent, tabIndex: string) => setActiveTabKey(parseInt(tabIndex));
-
+  const handleTabClick = (_: React.MouseEvent, tabIndex: string | number) => {
+    if (typeof tabIndex === 'string') {
+      return setActiveTabKey(parseInt(tabIndex));
+    }
+    return setActiveTabKey(tabIndex);
+  };
   // Toggle currently active nested tab
-  const handleNestedTabClick = (_: React.MouseEvent, tabIndex: string) => setActiveNestedTabKey(parseInt(tabIndex));
+  const handleNestedTabClick = (_: React.MouseEvent, tabIndex: string | number) => {
+    if (typeof tabIndex === 'string') {
+      return setActiveNestedTabKey(parseInt(tabIndex));
+    }
+    return setActiveNestedTabKey(tabIndex);
+  };
 
   const tabContent = (
     <Grid hasGutter>
