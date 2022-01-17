@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.58.0 (2022-01-17)
+
+
+### Features
+
+* **Tabs:** enforce restricted type for children ([#6767](https://github.com/patternfly/patternfly-react/issues/6767)) ([0d224df](https://github.com/patternfly/patternfly-react/commit/0d224dfb71b1a89c5783bd9ea290ece2f325ad21))
+
+
+
+
+
 ## 4.57.1 (2022-01-17)
 
 **Note:** Version bump only for package @patternfly/react-table
