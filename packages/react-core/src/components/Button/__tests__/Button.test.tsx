@@ -124,3 +124,8 @@ test('setting tab index through props', () => {
   const view = mount(<Button tabIndex={0}>TabIndex 0 Button</Button>);
   expect(view.find('button').props().tabIndex).toBe(0);
 });
+
+test('isLoading icon only', () => {
+  const view = mount(<Button variant="plain" isLoading aria-label="Upload" isLoading spinnerAriaValueText="Loading" icon={<div>ICON</div>} />)
+  expect(view).toMatchSnapshot();
+})

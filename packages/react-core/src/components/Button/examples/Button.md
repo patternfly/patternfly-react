@@ -11,6 +11,7 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-i
 import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-square-alt-icon';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
+import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 import { Link } from '@reach/router';
 
 ## Examples
@@ -79,3 +80,4 @@ import { Link } from '@reach/router';
 
 ```ts file="./ButtonRouterLink.tsx"
 ```
+
