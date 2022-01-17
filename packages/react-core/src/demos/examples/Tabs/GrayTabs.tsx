@@ -33,7 +33,7 @@ export const GrayTabsDemo = () => {
       <GridItem xl={8} md={6}>
         <Card>
           <CardHeader>
-            <Title headingLevel="h2">Status</Title>
+            <Title headingLevel="h3">Status</Title>
           </CardHeader>
           <CardBody>
             <Flex direction={{ default: 'column' }}>
@@ -132,7 +132,7 @@ export const GrayTabsDemo = () => {
           Overview
         </Title>
       </PageSection>
-      <PageSection type="tabs" variant={PageSectionVariants.light} isWidthLimited>
+      <PageSection type="tabs" isWidthLimited>
         <Tabs
           activeKey={activeTabKey}
           onSelect={handleTabClick}

@@ -33,7 +33,7 @@ export const NestedTabsDemo = () => {
       <GridItem xl={8} md={6}>
         <Card>
           <CardHeader>
-            <Title headingLevel="h2">Status</Title>
+            <Title headingLevel="h3">Status</Title>
           </CardHeader>
           <CardBody>
             <Flex direction={{ default: 'column' }}>
@@ -132,7 +132,7 @@ export const NestedTabsDemo = () => {
           Overview
         </Title>
       </PageSection>
-      <PageSection type="tabs" variant={PageSectionVariants.light} isWidthLimited>
+      <PageSection type="tabs" isWidthLimited>
         <Tabs activeKey={activeTabKey} onSelect={handleTabClick} usePageInsets id="nested-tabs-example-tabs-list">
           <Tab eventKey={0} title={<TabTitleText>Cluster 1</TabTitleText>} tabContentId={`tabContent${0}`} />
           <Tab eventKey={1} title={<TabTitleText>Cluster 2</TabTitleText>} tabContentId={`tabContent${1}`} />
