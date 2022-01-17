@@ -2,7 +2,6 @@
 id: Jump links
 section: components
 propComponents: ['JumpLinks', 'JumpLinksItem']
-beta: true
 ---
 
 ## Examples
