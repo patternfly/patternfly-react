@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
-import { formatBreakpointMods, toCamel, getVisibilityVars } from '../../helpers/util';
+import { formatBreakpointMods, toCamel, getBreakpoint } from '../../helpers/util';
 import { PageContext } from '../Page/Page';
 
 export enum ToolbarGroupVariant {
@@ -73,7 +73,6 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
       variant,
       children,
       innerRef,
-      style,
       ...props
     } = this.props;
 
@@ -87,33 +86,23 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
 
     return (
       <PageContext.Consumer>
-        {({ width }) => {
-          let visibilityStyle;
-          if (width && (visibility || visiblity)) {
-            visibilityStyle = getVisibilityVars(width, visibility || visiblity);
-          }
-          return (
-            <div
-              className={css(
-                styles.toolbarGroup,
-                variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
-                formatBreakpointMods(visibility || visiblity, styles),
-                formatBreakpointMods(alignment, styles),
-                formatBreakpointMods(spacer, styles),
-                formatBreakpointMods(spaceItems, styles),
-                className
-              )}
-              style={{
-                ...(visibilityStyle as React.CSSProperties),
-                ...style
-              }}
-              {...props}
-              ref={innerRef}
-            >
-              {children}
-            </div>
-          );
-        }}
+        {({ useResizeObserver, width }) => (
+          <div
+            className={css(
+              styles.toolbarGroup,
+              variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
+              formatBreakpointMods(visibility || visiblity, styles, '', getBreakpoint(width, useResizeObserver)),
+              formatBreakpointMods(alignment, styles, '', getBreakpoint(width, useResizeObserver)),
+              formatBreakpointMods(spacer, styles, '', getBreakpoint(width, useResizeObserver)),
+              formatBreakpointMods(spaceItems, styles, '', getBreakpoint(width, useResizeObserver)),
+              className
+            )}
+            {...props}
+            ref={innerRef}
+          >
+            {children}
+          </div>
+        )}
       </PageContext.Consumer>
     );
   }

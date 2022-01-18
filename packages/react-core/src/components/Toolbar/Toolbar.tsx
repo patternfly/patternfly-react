@@ -4,7 +4,7 @@ import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { css } from '@patternfly/react-styles';
 import { ToolbarContext } from './ToolbarUtils';
 import { ToolbarChipGroupContent } from './ToolbarChipGroupContent';
-import { formatBreakpointMods, canUseDOM } from '../../helpers/util';
+import { formatBreakpointMods, canUseDOM, getBreakpoint } from '../../helpers/util';
 import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
 import { PageContext } from '../Page/Page';
 
@@ -95,81 +95,12 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
     if (this.isToggleManaged() && canUseDOM) {
       window.addEventListener('resize', this.closeExpandableContent);
     }
-
-    // this.observer = getResizeObserver(this.toolbarRef.current, this.handleResize);
-    // this.handleResize();
   }
 
   componentWillUnmount() {
     if (this.isToggleManaged() && canUseDOM) {
       window.removeEventListener('resize', this.closeExpandableContent);
     }
-
-    // this.observer();
-  }
-
-  // resize = () => {
-  //   console.log(`resize: ${this.toolbarRef.current.clientWidth}`);
-  // };
-
-  // handleResize = debounce(this.resize, 250);
-
-  /**
-   * Instead of relying on CSS media queries on the window, use the width reported by the Page resizeObserver
-   *
-   * @param width Page width
-   */
-  getVisibilityMod = (width: number) => {
-    /* 
-    width < 576 (default):
-    --pf-hidden-visible--visible--Visibility: visible;
-    --pf-hidden-visible--hidden--Display: none;
-    --pf-hidden-visible--hidden--Visibility: hidden;
-    --pf-hidden-visible--Display: var(--pf-hidden-visible--visible--Display);
-    --pf-hidden-visible--Visibility: var(--pf-hidden-visible--visible--Visibility);
-    display: var(--pf-hidden-visible--Display);
-    visibility: var(--pf-hidden-visible--Visibility);
-
-    min-width: 576px && .pf-m-hidden-on-sm:
-    --pf-hidden-visible--Display: var(--pf-hidden-visible--hidden--Display);
-    --pf-hidden-visible--Visibility: var(--pf-hidden-visible--hidden--Visibility);
-
-    min-width: 576px && .pf-m-visible-on-sm:
-    --pf-hidden-visible--Display: var(--pf-hidden-visible--visible--Display);
-    --pf-hidden-visible--Visibility: var(--pf-hidden-visible--visible--Visibility);
-
-    min-width: 768px && .pf-m-hidden-on-md:
-    --pf-hidden-visible--Display: var(--pf-hidden-visible--hidden--Display);
-    --pf-hidden-visible--Visibility: var(--pf-hidden-visible--hidden--Visibility);
-
-    min-width: 768px && .pf-m-visible-on-md:
-    --pf-hidden-visible--Display: var(--pf-hidden-visible--visible--Display);
-    --pf-hidden-visible--Visibility: var(--pf-hidden-visible--visible--Visibility);
-
-    min-width: 992px && .pf-m-hidden-on-lg:
-    --pf-hidden-visible--Display: var(--pf-hidden-visible--hidden--Display);
-    --pf-hidden-visible--Visibility: var(--pf-hidden-visible--hidden--Visibility);
-
-    min-width: 992px && .pf-m-visible-on-lg:
-    --pf-hidden-visible--Display: var(--pf-hidden-visible--visible--Display);
-    --pf-hidden-visible--Visibility: var(--pf-hidden-visible--visible--Visibility);
-
-    min-width: 1200px && .pf-m-hidden-on-xl:
-    --pf-hidden-visible--Display: var(--pf-hidden-visible--hidden--Display);
-    --pf-hidden-visible--Visibility: var(--pf-hidden-visible--hidden--Visibility);
-
-    min-width: 1200px && .pf-m-visible-on-xl:
-    --pf-hidden-visible--Display: var(--pf-hidden-visible--visible--Display);
-    --pf-hidden-visible--Visibility: var(--pf-hidden-visible--visible--Visibility);
-
-    min-width: 1450px && .pf-m-hidden-on-2xl:
-    --pf-hidden-visible--Display: var(--pf-hidden-visible--hidden--Display);
-    --pf-hidden-visible--Visibility: var(--pf-hidden-visible--hidden--Visibility);
-
-    min-width: 1450px && .pf-m-visible-on-2xl:
-    --pf-hidden-visible--Display: var(--pf-hidden-visible--visible--Display);
-    --pf-hidden-visible--Visibility: var(--pf-hidden-visible--visible--Visibility);
-    */
   }
 
   updateNumberFilters = (categoryName: string, numberOfFilters: number) => {
@@ -212,9 +143,8 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
 
     return (
       <PageContext.Consumer>
-        {({ width }) => {
-          console.log(`page width: ${width}`);
-          const breakpointMods = formatBreakpointMods(inset, styles);
+        {({ useResizeObserver, width }) => {
+          const breakpointMods = formatBreakpointMods(inset, styles, '', getBreakpoint(width, useResizeObserver));
           return (
             <div
               ref={this.toolbarRef}

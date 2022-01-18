@@ -38,6 +38,7 @@ import {
   ButtonVariant,
   Card,
   CardBody,
+  Checkbox,
   Divider,
   Dropdown,
   DropdownGroup,
@@ -85,7 +86,6 @@ import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
 class PageLayoutGrouped extends React.Component {
-  counter = 0;
   constructor(props) {
     super(props);
     this.state = {
@@ -94,7 +94,7 @@ class PageLayoutGrouped extends React.Component {
       isFullKebabDropdownOpen: false,
       activeItem: 0,
       isDrawerExpanded: false,
-      useResizeObserver: false
+      useResizeObserver: true
     };
     this.onDropdownToggle = isDropdownOpen => {
       this.setState({
@@ -368,7 +368,6 @@ class PageLayoutGrouped extends React.Component {
                 sticky: 'top'
               }}
               useResizeObserver={useResizeObserver}
-              key={`${useResizeObserver}${++this.counter}`}
             >
               <PageSection>
                 <Gallery hasGutter>

@@ -256,6 +256,16 @@ export const setBreakpointCssVars = (
     {}
   );
 
+export interface Mods {
+  default?: string;
+  sm?: string;
+  md?: string;
+  lg?: string;
+  xl?: string;
+  '2xl'?: string;
+  '3xl'?: string;
+}
+
 /**
  * This function is a helper for turning arrays of breakpointMod objects for data toolbar and flex into classes
  *
@@ -263,100 +273,67 @@ export const setBreakpointCssVars = (
  * @param {any} styles The appropriate styles object for the component
  */
 export const formatBreakpointMods = (
-  mods: {
-    default?: string;
-    sm?: string;
-    md?: string;
-    lg?: string;
-    xl?: string;
-    '2xl'?: string;
-    '3xl'?: string;
-  },
+  mods: Mods,
   styles: any,
-  stylePrefix: string = ''
-) =>
-  Object.entries(mods || {})
+  stylePrefix: string = '',
+  resizeObserverBreakpoint?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
+) => {
+  if (!mods) {
+    return '';
+  }
+  if (resizeObserverBreakpoint) {
+    if ('default' in mods && resizeObserverBreakpoint === 'xs') {
+      return styles.modifiers[`${stylePrefix}${mods.default}`];
+    }
+    if (resizeObserverBreakpoint in mods) {
+      return styles.modifiers[mods[resizeObserverBreakpoint as keyof Mods]];
+    } else {
+      // find the nearest breakpoint specified in mods
+      const breakpointsOrder = ['2xl', 'xl', 'lg', 'md', 'sm', 'default'];
+      const breakpointsIndex = breakpointsOrder.indexOf(resizeObserverBreakpoint);
+      for (let i = breakpointsIndex; i < breakpointsOrder.length; i++) {
+        if (breakpointsOrder[i] in mods) {
+          return styles.modifiers[mods[breakpointsOrder[i] as keyof Mods]];
+        }
+      }
+    }
+  }
+  return Object.entries(mods || {})
     .map(([breakpoint, mod]) => `${stylePrefix}${mod}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`)
     .map(toCamel)
     .map(mod => mod.replace(/-?(\dxl)/gi, (_res, group) => `_${group}`))
     .map(modifierKey => styles.modifiers[modifierKey])
     .filter(Boolean)
     .join(' ');
+};
 
 /**
- * Returns the visibility and display CSS variables for a given width
- * Useful for setting the visibility of a component based on a component observer
- * 
- * @param width Component width
- * @param visibility Visibility modifiers
- * @returns any You may want to cast it to React.CSSProperties
+ * Return the breakpoint for the given width
+ *
+ * @param {number} width The width to check
+ * @param {boolean} enabled Function returns null if this is set to false
+ * @returns {string | null}
  */
-export const getVisibilityVars = (
-  width: number,
-  visibility: {
-    default?: 'hidden' | 'visible';
-    sm?: 'hidden' | 'visible';
-    md?: 'hidden' | 'visible';
-    lg?: 'hidden' | 'visible';
-    xl?: 'hidden' | 'visible';
-    '2xl'?: 'hidden' | 'visible';
-    '3xl'?: 'hidden' | 'visible';
-  }
-) => {
-  if (!visibility) {
+export const getBreakpoint = (width: number, enabled?: boolean) => {
+  if (enabled === false) {
     return null;
   }
-  const visible = {
-    '--pf-hidden-visible--Display': 'var(--pf-hidden-visible--visible--Display)',
-    '--pf-hidden-visible--Visibility': 'var(--pf-hidden-visible--visible--Visibility)'
-  };
-  const hidden = {
-    '--pf-hidden-visible--Display': 'var(--pf-hidden-visible--hidden--Display)',
-    '--pf-hidden-visible--Visibility': 'var(--pf-hidden-visible--hidden--Visibility)'
-  };
-  if (width >= 1450 && '2xl' in visibility) {
-    if (visibility['2xl'] === 'visible') {
-      return visible;
-    } else if (visibility['2xl'] === 'hidden') {
-      return hidden;
-    }
+  if (width >= 1450) {
+    return '2xl';
   }
-  if (width >= 1200 && 'xl' in visibility) {
-    if (visibility.xl === 'visible') {
-      return visible;
-    } else if (visibility.xl === 'hidden') {
-      return hidden;
-    }
+  if (width >= 1200) {
+    return 'xl';
   }
-  if (width >= 992 && 'lg' in visibility) {
-    if (visibility.lg === 'visible') {
-      return visible;
-    } else if (visibility.lg === 'hidden') {
-      return hidden;
-    }
+  if (width >= 992) {
+    return 'lg';
   }
-  if (width >= 768 && 'md' in visibility) {
-    if (visibility.md === 'visible') {
-      return visible;
-    } else if (visibility.md === 'hidden') {
-      return hidden;
-    }
+  if (width >= 768) {
+    return 'md';
   }
-  if (width >= 576 && 'sm' in visibility) {
-    if (visibility.sm === 'visible') {
-      return visible;
-    } else if (visibility.sm === 'hidden') {
-      return hidden;
-    }
+  if (width >= 576) {
+    return 'sm';
   }
-  if ('default' in visibility) {
-    if (visibility.default === 'visible') {
-      return visible;
-    } else if (visibility.default === 'hidden') {
-      return hidden;
-    }
-  }
-  return {};
+  return 'xs';
 };
 
 const camelize = (s: string) =>

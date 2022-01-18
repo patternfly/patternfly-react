@@ -6,6 +6,7 @@ import { debounce, canUseDOM } from '../../helpers/util';
 import { Drawer, DrawerContent, DrawerContentBody, DrawerPanelContent } from '../Drawer';
 import { PageGroup, PageGroupProps } from './PageGroup';
 import { getResizeObserver } from '../../helpers/resizeObserver';
+import { getBreakpoint } from '../../helpers/util';
 
 export enum PageLayouts {
   vertical = 'vertical',
@@ -16,6 +17,7 @@ export interface PageContextProps {
   isManagedSidebar: boolean;
   onNavToggle: () => void;
   isNavOpen: boolean;
+  useResizeObserver: boolean;
   width: number;
 }
 
@@ -23,6 +25,7 @@ export const PageContext = React.createContext<PageContextProps>({
   isManagedSidebar: false,
   isNavOpen: false,
   onNavToggle: () => null,
+  useResizeObserver: false,
   width: 0
 });
 
@@ -70,7 +73,10 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    * Returns object { mobileView: boolean, windowSize: number }
    */
   onPageResize?: (object: any) => void;
-  /** True to listen to page width changes on a resize observer */
+  /**
+   * True to listen to page width changes on a resize observer
+   * Will also add a breakpoint modifier class (pf-m-breakpoint-[xs|sm|md|lg|xl|2xl]) to the page component
+   */
   useResizeObserver?: boolean;
   /** Breadcrumb component for the page */
   breadcrumb?: React.ReactNode;
@@ -164,7 +170,7 @@ export class Page extends React.Component<PageProps, PageState> {
 
   getWindowWidth = () => {
     if (canUseDOM) {
-      return this.pageRef.current.clientWidth;
+      return this.props.useResizeObserver ? this.pageRef.current.clientWidth : window.innerWidth;
     } else {
       return 1200;
     }
@@ -175,7 +181,6 @@ export class Page extends React.Component<PageProps, PageState> {
     this.getWindowWidth() < Number.parseInt(globalBreakpointXl.value, 10);
 
   resize = () => {
-    console.log('resize');
     const { onPageResize } = this.props;
     const mobileView = this.isMobile();
     if (onPageResize) {
@@ -227,6 +232,8 @@ export class Page extends React.Component<PageProps, PageState> {
       defaultManagedSidebarIsOpen,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onPageResize,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      useResizeObserver,
       mainAriaLabel,
       mainTabIndex,
       tertiaryNav,
@@ -236,13 +243,14 @@ export class Page extends React.Component<PageProps, PageState> {
       groupProps,
       ...rest
     } = this.props;
-    const { mobileView, mobileIsNavOpen, desktopIsNavOpen } = this.state;
+    const { mobileView, mobileIsNavOpen, desktopIsNavOpen, width } = this.state;
 
     const context = {
       isManagedSidebar,
       onNavToggle: mobileView ? this.onNavToggleMobile : this.onNavToggleDesktop,
       isNavOpen: mobileView ? mobileIsNavOpen : desktopIsNavOpen,
-      width: this.state.width
+      useResizeObserver,
+      width
     };
 
     let nav = null;
@@ -297,7 +305,11 @@ export class Page extends React.Component<PageProps, PageState> {
 
     return (
       <PageContextProvider value={context}>
-        <div ref={this.pageRef} {...rest} className={css(styles.page, className)}>
+        <div
+          ref={this.pageRef}
+          {...rest}
+          className={css(styles.page, useResizeObserver && `pf-m-breakpoint-${getBreakpoint(width)}`, className)}
+        >
           {skipToContent}
           {header}
           {sidebar}
