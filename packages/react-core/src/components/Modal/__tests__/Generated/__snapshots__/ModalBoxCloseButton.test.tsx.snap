@@ -5,6 +5,7 @@ exports[`ModalBoxCloseButton should match snapshot (auto-generated) 1`] = `
   aria-label="Close"
   className="''"
   onClick={[Function]}
+  ouiaId="undefined-ModalBoxCloseButton"
   variant="plain"
 >
   <TimesIcon

@@ -57,8 +57,6 @@ export interface ModalContentProps extends OUIAProps {
   actions?: any;
   /** A callback for when the close button is clicked */
   onClose?: () => void;
-  /** Additional props added to the close button */
-  closeButtonProps?: any;
   /** Id of the ModalBox container */
   boxId: string;
   /** Id of the ModalBox title */
@@ -88,7 +86,6 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   footer = null,
   actions = [],
   onClose = () => undefined as any,
-  closeButtonProps,
   variant = 'default',
   position,
   positionOffset,
@@ -165,7 +162,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       aria-describedby={ariaDescribedby || (hasNoBodyWrapper ? null : descriptorId)}
       {...getOUIAProps(ModalContent.displayName, ouiaId, ouiaSafe)}
     >
-      {showClose && <ModalBoxCloseButton onClose={onClose} {...closeButtonProps} />}
+      {showClose && <ModalBoxCloseButton onClose={onClose} ouiaId={ouiaId} ouiaSafe={ouiaSafe} />}
       {modalBoxHeader}
       {modalBody}
       {modalBoxFooter}

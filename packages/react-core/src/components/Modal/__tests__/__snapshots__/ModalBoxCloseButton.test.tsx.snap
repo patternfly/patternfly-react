@@ -11,6 +11,7 @@ exports[`ModalBoxCloseButton Test 1`] = `
     }
   }
   onClick={[MockFunction]}
+  ouiaId="undefined-ModalBoxCloseButton"
   variant="plain"
 >
   <TimesIcon
