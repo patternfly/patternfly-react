@@ -159,16 +159,17 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
 
   handleGlobalKeys = (event: KeyboardEvent) => {
     const { isOpen, focusedIndex } = this.state;
+    if (event.key === KeyTypes.Escape) {
+      this.onToggle(false);
+    } else if (event.key === KeyTypes.Tab) {
+      this.onToggle(false);
+    }
     // keyboard pressed while focus on toggle
     if (this.inputRef && this.inputRef.current && this.inputRef.current.contains(event.target as Node)) {
       if (!isOpen && event.key !== KeyTypes.Tab) {
         this.onToggle(true);
       } else if (isOpen) {
-        if (event.key === KeyTypes.Escape) {
-          this.onToggle(false);
-        } else if (event.key === KeyTypes.Tab) {
-          this.onToggle(false);
-        } else if (event.key === KeyTypes.Enter) {
+        if (event.key === KeyTypes.Enter) {
           if (focusedIndex !== null) {
             this.onSelect(event);
             event.stopPropagation();
@@ -205,23 +206,39 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   }
 
   updateFocusedIndex = (increment: number) => {
-    this.setState(prevState => {
-      const maxIndex = this.getOptions().length - 1;
-      let nextIndex = prevState.focusedIndex !== null ? prevState.focusedIndex + increment : prevState.scrollIndex;
-      if (nextIndex < 0) {
-        nextIndex = maxIndex;
-      } else if (nextIndex > maxIndex) {
-        nextIndex = 0;
-      }
-      this.scrollToIndex(nextIndex);
-      return {
-        focusedIndex: nextIndex
-      };
-    });
+    this.setState(
+      prevState => {
+        const maxIndex = this.getOptions().length - 1;
+        let nextIndex = prevState.focusedIndex !== null ? prevState.focusedIndex + increment : prevState.scrollIndex;
+        if (nextIndex < 0) {
+          nextIndex = maxIndex;
+        } else if (nextIndex > maxIndex) {
+          nextIndex = 0;
+        }
+        this.scrollToIndex(nextIndex);
+        return {
+          focusedIndex: nextIndex
+        };
+      },
+      () => this.focusSelection(this.state.scrollIndex)
+    );
   };
 
   scrollToIndex = (index: number) => {
-    this.getOptions()[index].closest(`.${menuStyles.menuContent}`).scrollTop = this.getOptions()[index].offsetTop;
+    // inline value for menutAppendTo results in incorrect menu item being scrolled to; subtracting 1 from index param solves this issue
+    const indexToScroll = this.props.menuAppendTo !== 'inline' ? index : index - 1;
+
+    this.getOptions()[index].closest(`.${menuStyles.menuContent}`).scrollTop = this.getOptions()[
+      indexToScroll
+    ].offsetTop;
+  };
+
+  focusSelection = (index: number) => {
+    const indexToFocus = index !== -1 ? index : 0;
+
+    if (this.menuRef && this.menuRef.current) {
+      (this.getOptions()[indexToFocus].querySelector(`.${menuStyles.menuItem}`) as HTMLElement).focus();
+    }
   };
 
   scrollToSelection = (time: string) => {
@@ -327,10 +344,9 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   };
 
   onSelect = (e: any) => {
-    const { timeRegex, timeState, focusedIndex } = this.state;
+    const { timeRegex, timeState } = this.state;
     const { delimiter, is24Hour, includeSeconds } = this.props;
-    const elementText = e.type === 'click' ? e.target.textContent : this.getOptions()[focusedIndex].innerText;
-    const time = parseTime(elementText, timeRegex, delimiter, !is24Hour, includeSeconds);
+    const time = parseTime(e.target.textContent, timeRegex, delimiter, !is24Hour, includeSeconds);
     if (time !== timeState) {
       this.onInputChange(time);
     }
@@ -344,6 +360,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     if (!this.state.isOpen) {
       this.onToggle(true);
     }
+
     e.stopPropagation();
   };
 
@@ -412,7 +429,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     const menuContainer = (
       <Menu ref={this.menuRef} isScrollable>
         <MenuContent maxMenuHeight="200px">
-          <MenuList aria-labelledby={`${id}-input`}>
+          <MenuList aria-labelledby={`${randomId}-input`}>
             {options.map((option, index) => (
               <MenuItem onClick={this.onSelect} key={index} id={`${id}-option-${index}`}>
                 {option}
