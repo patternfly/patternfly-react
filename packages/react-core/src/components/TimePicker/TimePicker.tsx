@@ -158,31 +158,38 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   };
 
   handleGlobalKeys = (event: KeyboardEvent) => {
-    const { isOpen, focusedIndex } = this.state;
-    if (event.key === KeyTypes.Escape) {
-      this.onToggle(false);
-    } else if (event.key === KeyTypes.Tab) {
-      this.onToggle(false);
-    }
+    const { isOpen, focusedIndex, scrollIndex } = this.state;
     // keyboard pressed while focus on toggle
     if (this.inputRef && this.inputRef.current && this.inputRef.current.contains(event.target as Node)) {
       if (!isOpen && event.key !== KeyTypes.Tab) {
         this.onToggle(true);
       } else if (isOpen) {
-        if (event.key === KeyTypes.Enter) {
+        if (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab) {
+          this.onToggle(false);
+        } else if (event.key === KeyTypes.Enter) {
           if (focusedIndex !== null) {
-            this.onSelect(event);
+            this.focusSelection(focusedIndex);
             event.stopPropagation();
           } else {
             this.onToggle(false);
           }
-        } else if (event.key === KeyTypes.ArrowDown) {
-          this.updateFocusedIndex(1);
-          event.preventDefault();
-        } else if (event.key === KeyTypes.ArrowUp) {
-          this.updateFocusedIndex(-1);
+        } else if (event.key === KeyTypes.ArrowDown || event.key === KeyTypes.ArrowUp) {
+          this.focusSelection(scrollIndex);
+          this.updateFocusedIndex(0);
           event.preventDefault();
         }
+      }
+      // keyboard pressed while focus on menu item
+    } else if (this.menuRef && this.menuRef.current && this.menuRef.current.contains(event.target as Node)) {
+      if (event.key === KeyTypes.ArrowDown) {
+        this.updateFocusedIndex(1);
+        event.preventDefault();
+      } else if (event.key === KeyTypes.ArrowUp) {
+        this.updateFocusedIndex(-1);
+        event.preventDefault();
+      } else if (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab) {
+        this.inputRef.current.focus();
+        this.onToggle(false);
       }
     }
   };
@@ -206,22 +213,20 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   }
 
   updateFocusedIndex = (increment: number) => {
-    this.setState(
-      prevState => {
-        const maxIndex = this.getOptions().length - 1;
-        let nextIndex = prevState.focusedIndex !== null ? prevState.focusedIndex + increment : prevState.scrollIndex;
-        if (nextIndex < 0) {
-          nextIndex = maxIndex;
-        } else if (nextIndex > maxIndex) {
-          nextIndex = 0;
-        }
-        this.scrollToIndex(nextIndex);
-        return {
-          focusedIndex: nextIndex
-        };
-      },
-      () => this.focusSelection(this.state.scrollIndex)
-    );
+    this.setState(prevState => {
+      const maxIndex = this.getOptions().length - 1;
+      let nextIndex =
+        prevState.focusedIndex !== null ? prevState.focusedIndex + increment : prevState.scrollIndex + increment;
+      if (nextIndex < 0) {
+        nextIndex = maxIndex;
+      } else if (nextIndex > maxIndex) {
+        nextIndex = 0;
+      }
+      this.scrollToIndex(nextIndex);
+      return {
+        focusedIndex: nextIndex
+      };
+    });
   };
 
   scrollToIndex = (index: number) => {
@@ -351,6 +356,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       this.onInputChange(time);
     }
 
+    this.inputRef.current.focus();
     this.setState({
       isOpen: false
     });
