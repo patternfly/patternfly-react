@@ -143,52 +143,49 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
 
     return (
       <PageContext.Consumer>
-        {({ useResizeObserver, width }) => {
-          const breakpointMods = formatBreakpointMods(inset, styles, '', getBreakpoint(width, useResizeObserver));
-          return (
-            <div
-              ref={this.toolbarRef}
-              className={css(
-                styles.toolbar,
-                isFullHeight && styles.modifiers.fullHeight,
-                isStatic && styles.modifiers.static,
-                usePageInsets && styles.modifiers.pageInsets,
-                isSticky && styles.modifiers.sticky,
-                breakpointMods,
-                className
-              )}
-              id={randomId}
-              {...getOUIAProps(Toolbar.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
-              {...props}
+        {({ useResizeObserver, width }) => (
+          <div
+            ref={this.toolbarRef}
+            className={css(
+              styles.toolbar,
+              isFullHeight && styles.modifiers.fullHeight,
+              isStatic && styles.modifiers.static,
+              usePageInsets && styles.modifiers.pageInsets,
+              isSticky && styles.modifiers.sticky,
+              formatBreakpointMods(inset, styles, '', getBreakpoint(width, useResizeObserver)),
+              className
+            )}
+            id={randomId}
+            {...getOUIAProps(Toolbar.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
+            {...props}
+          >
+            <ToolbarContext.Provider
+              value={{
+                isExpanded,
+                toggleIsExpanded: isToggleManaged ? this.toggleIsExpanded : toggleIsExpanded,
+                chipGroupContentRef: this.chipGroupContentRef,
+                updateNumberFilters: this.updateNumberFilters,
+                numberOfFilters,
+                clearAllFilters,
+                clearFiltersButtonText,
+                showClearFiltersButton,
+                toolbarId: randomId
+              }}
             >
-              <ToolbarContext.Provider
-                value={{
-                  isExpanded,
-                  toggleIsExpanded: isToggleManaged ? this.toggleIsExpanded : toggleIsExpanded,
-                  chipGroupContentRef: this.chipGroupContentRef,
-                  updateNumberFilters: this.updateNumberFilters,
-                  numberOfFilters,
-                  clearAllFilters,
-                  clearFiltersButtonText,
-                  showClearFiltersButton,
-                  toolbarId: randomId
-                }}
-              >
-                {children}
-                <ToolbarChipGroupContent
-                  isExpanded={isExpanded}
-                  chipGroupContentRef={this.chipGroupContentRef}
-                  clearAllFilters={clearAllFilters}
-                  showClearFiltersButton={showClearFiltersButton}
-                  clearFiltersButtonText={clearFiltersButtonText}
-                  numberOfFilters={numberOfFilters}
-                  numberOfFiltersText={numberOfFiltersText}
-                  collapseListedFiltersBreakpoint={collapseListedFiltersBreakpoint}
-                />
-              </ToolbarContext.Provider>
-            </div>
-          );
-        }}
+              {children}
+              <ToolbarChipGroupContent
+                isExpanded={isExpanded}
+                chipGroupContentRef={this.chipGroupContentRef}
+                clearAllFilters={clearAllFilters}
+                showClearFiltersButton={showClearFiltersButton}
+                clearFiltersButtonText={clearFiltersButtonText}
+                numberOfFilters={numberOfFilters}
+                numberOfFiltersText={numberOfFiltersText}
+                collapseListedFiltersBreakpoint={collapseListedFiltersBreakpoint}
+              />
+            </ToolbarContext.Provider>
+          </div>
+        )}
       </PageContext.Consumer>
     );
   };

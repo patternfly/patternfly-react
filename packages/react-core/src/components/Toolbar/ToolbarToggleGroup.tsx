@@ -114,7 +114,8 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
                         styles.modifiers.toggleGroup,
                         variant &&
                           styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
-                        breakpoint &&
+                        !useResizeObserver &&
+                          breakpoint &&
                           styles.modifiers[
                             `showOn${capitalize(breakpoint.replace('2xl', '_2xl'))}` as
                               | 'showOnMd'
@@ -122,6 +123,7 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
                               | 'showOnXl'
                               | 'showOn_2xl'
                           ],
+                        useResizeObserver && breakpoint && getBreakpoint(width) === breakpoint && styles.modifiers.show,
                         formatBreakpointMods(
                           visibility || visiblity,
                           styles,

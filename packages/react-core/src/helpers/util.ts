@@ -276,21 +276,21 @@ export const formatBreakpointMods = (
   mods: Mods,
   styles: any,
   stylePrefix: string = '',
-  resizeObserverBreakpoint?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
+  breakpoint?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
 ) => {
   if (!mods) {
     return '';
   }
-  if (resizeObserverBreakpoint) {
-    if ('default' in mods && resizeObserverBreakpoint === 'xs') {
+  if (breakpoint) {
+    if ('default' in mods && breakpoint === 'xs') {
       return styles.modifiers[`${stylePrefix}${mods.default}`];
     }
-    if (resizeObserverBreakpoint in mods) {
-      return styles.modifiers[mods[resizeObserverBreakpoint as keyof Mods]];
+    if (breakpoint in mods) {
+      return styles.modifiers[mods[breakpoint as keyof Mods]];
     } else {
-      // find the nearest breakpoint specified in mods
+      // find the next nearest breakpoint specified in mods
       const breakpointsOrder = ['2xl', 'xl', 'lg', 'md', 'sm', 'default'];
-      const breakpointsIndex = breakpointsOrder.indexOf(resizeObserverBreakpoint);
+      const breakpointsIndex = breakpointsOrder.indexOf(breakpoint);
       for (let i = breakpointsIndex; i < breakpointsOrder.length; i++) {
         if (breakpointsOrder[i] in mods) {
           return styles.modifiers[mods[breakpointsOrder[i] as keyof Mods]];
