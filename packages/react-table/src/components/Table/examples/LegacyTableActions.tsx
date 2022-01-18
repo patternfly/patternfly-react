@@ -39,23 +39,9 @@ export const LegacyTableActions: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'a', branches: 'two', prs: '1', workspaces: 'four', lastCommit: 'five', singleAction: 'Start' },
-    {
-      name: 'disable actions',
-      branches: 'two',
-      prs: '3',
-      workspaces: 'four',
-      lastCommit: 'five',
-      singleAction: 'Start'
-    },
+    { name: 'disable actions', branches: 'two', prs: '3', workspaces: 'four', lastCommit: 'five', singleAction: '' },
     { name: 'green actions', branches: 'two', prs: '4', workspaces: 'four', lastCommit: 'five', singleAction: 'Start' },
-    {
-      name: 'extra action props',
-      branches: 'two',
-      prs: '5',
-      workspaces: 'four',
-      lastCommit: 'five',
-      singleAction: 'Start'
-    },
+    { name: 'extra action props', branches: 'two', prs: '5', workspaces: 'four', lastCommit: 'five', singleAction: 'Start' },
     { name: 'blue actions', branches: 'two', prs: '6', workspaces: 'four', lastCommit: 'five', singleAction: 'Start' }
   ];
 
@@ -84,14 +70,14 @@ export const LegacyTableActions: React.FunctionComponent = () => {
   ];
 
   const rows: TableProps['rows'] = repositories.map(repo => {
-    const singleActionButton = {
-      title: (
+    let singleActionButton = null;
+    if (repo.singleAction !== '') {
+      singleActionButton = (
         <TableText>
           <Button variant="secondary">{repo.singleAction}</Button>
         </TableText>
-      ),
-      cellTransforms: [fitContent]
-    };
+      );
+    }
 
     const cells = [repo.name, repo.branches, repo.prs, repo.workspaces, repo.lastCommit, singleActionButton];
 
