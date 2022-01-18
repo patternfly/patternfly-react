@@ -129,6 +129,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     }
   }
 
+  scrollTimeout: NodeJS.Timeout = null;
+
   static defaultProps: PickOptional<TabsProps> = {
     activeKey: 0,
     onSelect: () => undefined as any,
@@ -182,28 +184,32 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
   }
 
   handleScrollButtons = () => {
-    const container = this.tabList.current;
-    let disableLeftScrollButton = true;
-    let disableRightScrollButton = true;
-    let showScrollButtons = false;
+    // add debounce to the scroll event
+    clearTimeout(this.scrollTimeout);
+    this.scrollTimeout = setTimeout(() => {
+      const container = this.tabList.current;
+      let disableLeftScrollButton = true;
+      let disableRightScrollButton = true;
+      let showScrollButtons = false;
 
-    if (container && !this.props.isVertical) {
-      // get first element and check if it is in view
-      const overflowOnLeft = !isElementInView(container, container.firstChild as HTMLElement, false);
+      if (container && !this.props.isVertical) {
+        // get first element and check if it is in view
+        const overflowOnLeft = !isElementInView(container, container.firstChild as HTMLElement, false);
 
-      // get last element and check if it is in view
-      const overflowOnRight = !isElementInView(container, container.lastChild as HTMLElement, false);
+        // get last element and check if it is in view
+        const overflowOnRight = !isElementInView(container, container.lastChild as HTMLElement, false);
 
-      showScrollButtons = overflowOnLeft || overflowOnRight;
+        showScrollButtons = overflowOnLeft || overflowOnRight;
 
-      disableLeftScrollButton = !overflowOnLeft;
-      disableRightScrollButton = !overflowOnRight;
-    }
-    this.setState({
-      showScrollButtons,
-      disableLeftScrollButton,
-      disableRightScrollButton
-    });
+        disableLeftScrollButton = !overflowOnLeft;
+        disableRightScrollButton = !overflowOnRight;
+      }
+      this.setState({
+        showScrollButtons,
+        disableLeftScrollButton,
+        disableRightScrollButton
+      });
+    }, 100);
   };
 
   scrollLeft = () => {
@@ -261,6 +267,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
         window.removeEventListener('resize', this.handleScrollButtons, false);
       }
     }
+    clearTimeout(this.scrollTimeout);
   }
 
   componentDidUpdate(prevProps: TabsProps) {
