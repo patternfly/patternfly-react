@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { ToolbarContentContext, ToolbarContext } from './ToolbarUtils';
-import { formatBreakpointMods, getBreakpoint } from '../../helpers/util';
+import { formatBreakpointMods } from '../../helpers/util';
 import { ToolbarExpandableContent } from './ToolbarExpandableContent';
 import { PageContext } from '../Page/Page';
 
@@ -83,7 +83,7 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
 
     return (
       <PageContext.Consumer>
-        {({ useResizeObserver, width }) => (
+        {({ useResizeObserver, width, getBreakpoint }) => (
           <div
             className={css(
               styles.toolbarContent,

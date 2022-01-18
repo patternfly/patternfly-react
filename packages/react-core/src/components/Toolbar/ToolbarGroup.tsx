@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
-import { formatBreakpointMods, toCamel, getBreakpoint } from '../../helpers/util';
+import { formatBreakpointMods, toCamel } from '../../helpers/util';
 import { PageContext } from '../Page/Page';
 
 export enum ToolbarGroupVariant {
@@ -86,7 +86,7 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
 
     return (
       <PageContext.Consumer>
-        {({ useResizeObserver, width }) => (
+        {({ useResizeObserver, width, getBreakpoint }) => (
           <div
             className={css(
               styles.toolbarGroup,

@@ -4,7 +4,7 @@ import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { css } from '@patternfly/react-styles';
 import { ToolbarContext } from './ToolbarUtils';
 import { ToolbarChipGroupContent } from './ToolbarChipGroupContent';
-import { formatBreakpointMods, canUseDOM, getBreakpoint } from '../../helpers/util';
+import { formatBreakpointMods, canUseDOM } from '../../helpers/util';
 import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
 import { PageContext } from '../Page/Page';
 
@@ -141,7 +141,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
 
     return (
       <PageContext.Consumer>
-        {({ useResizeObserver, width }) => (
+        {({ useResizeObserver, width, getBreakpoint }) => (
           <div
             className={css(
               styles.toolbar,

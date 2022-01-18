@@ -6,7 +6,7 @@ import { ToolbarGroupProps } from './ToolbarGroup';
 import { ToolbarContext, ToolbarContentContext } from './ToolbarUtils';
 import { Button } from '../Button';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/global_breakpoint_lg';
-import { formatBreakpointMods, toCamel, capitalize, canUseDOM, getBreakpoint } from '../../helpers/util';
+import { formatBreakpointMods, toCamel, capitalize, canUseDOM } from '../../helpers/util';
 import { PageContext } from '../Page/Page';
 
 export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
@@ -94,7 +94,7 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
 
     return (
       <PageContext.Consumer>
-        {({ useResizeObserver, width }) => (
+        {({ useResizeObserver, width, getBreakpoint }) => (
           <ToolbarContext.Consumer>
             {({ isExpanded, toggleIsExpanded }) => (
               <ToolbarContentContext.Consumer>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
-import { formatBreakpointMods, getBreakpoint } from '../../helpers/util';
+import { formatBreakpointMods } from '../../helpers/util';
 import { PageContext } from '../Page/Page';
 
 export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement> {
@@ -32,7 +32,7 @@ export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemPro
   isSelected,
   ...props
 }: PageHeaderToolsItemProps) => {
-  const { useResizeObserver, width } = React.useContext(PageContext);
+  const { useResizeObserver, width, getBreakpoint } = React.useContext(PageContext);
   return (
     <div
       className={css(

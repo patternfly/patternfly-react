@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 
-import { formatBreakpointMods, toCamel, getBreakpoint } from '../../helpers/util';
+import { formatBreakpointMods, toCamel } from '../../helpers/util';
 import { Divider } from '../Divider';
 import { PageContext } from '../Page/Page';
 
@@ -115,7 +115,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
 
   return (
     <PageContext.Consumer>
-      {({ useResizeObserver, width }) => (
+      {({ useResizeObserver, width, getBreakpoint }) => (
         <div
           className={css(
             styles.toolbarItem,
