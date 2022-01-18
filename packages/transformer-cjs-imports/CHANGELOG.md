@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.27.5 (2022-01-18)
+
+
+### Bug Fixes
+
+* **Tabs:** enable tabs scroll button for small window ([#6784](https://github.com/patternfly/patternfly-react/issues/6784)) ([a29b430](https://github.com/patternfly/patternfly-react/commit/a29b43094ae3d5ce7f4b26e4041cd595e675ee58))
+
+
+
+
+
 ## 4.27.4 (2022-01-18)
 
 **Note:** Version bump only for package transformer-cjs-imports
