@@ -230,8 +230,15 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   };
 
   scrollToIndex = (index: number) => {
-    // inline value for menutAppendTo results in incorrect menu item being scrolled to; subtracting 1 from index param solves this issue
-    const indexToScroll = this.props.menuAppendTo !== 'inline' ? index : index - 1;
+    // fixes issue where inline value for menutAppendTo results in initial menu item that is scrolled to being out of view
+    let indexToScroll = index;
+    if (this.props.menuAppendTo === 'inline') {
+      if (indexToScroll > 0) {
+        indexToScroll = index - 1;
+      } else {
+        indexToScroll = 0;
+      }
+    }
 
     this.getOptions()[index].closest(`.${menuStyles.menuContent}`).scrollTop = this.getOptions()[
       indexToScroll
@@ -437,7 +444,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
         <MenuContent maxMenuHeight="200px">
           <MenuList aria-labelledby={`${randomId}-input`}>
             {options.map((option, index) => (
-              <MenuItem onClick={this.onSelect} key={index} id={`${id}-option-${index}`}>
+              <MenuItem onClick={this.onSelect} key={index} id={`${randomId}-option-${index}`}>
                 {option}
               </MenuItem>
             ))}
