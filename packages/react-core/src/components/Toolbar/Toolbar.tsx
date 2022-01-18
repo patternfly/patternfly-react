@@ -64,8 +64,6 @@ interface FilterInfo {
 export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
   static displayName = 'Toolbar';
   chipGroupContentRef = React.createRef<HTMLDivElement>();
-  toolbarRef = React.createRef<HTMLDivElement>();
-  observer: any = () => {};
   staticFilterInfo = {};
   state = {
     isManagedToggleExpanded: false,
@@ -145,7 +143,6 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
       <PageContext.Consumer>
         {({ useResizeObserver, width }) => (
           <div
-            ref={this.toolbarRef}
             className={css(
               styles.toolbar,
               isFullHeight && styles.modifiers.fullHeight,
