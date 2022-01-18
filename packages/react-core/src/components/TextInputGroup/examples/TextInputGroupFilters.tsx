@@ -40,6 +40,9 @@ export const TextInputGroupFilters: React.FunctionComponent = () => {
   /** show the input/chip clearing button only when either the text input or chip group are not empty */
   const showClearButton = !!inputValue || !!currentChips.length;
 
+  /** render the utilities component only when a component it contains is being rendered */
+  const showUtilities = showClearButton;
+
   /** callback for clearing all selected chips and the text input */
   const clearChipsAndInput = () => {
     setCurrentChips([]);
@@ -57,13 +60,15 @@ export const TextInputGroupFilters: React.FunctionComponent = () => {
           ))}
         </ChipGroup>
       </TextInputGroupMain>
-      <TextInputGroupUtilities>
-        {showClearButton && (
-          <Button variant="plain" onClick={clearChipsAndInput} aria-label="Clear button and input">
-            <TimesIcon />
-          </Button>
-        )}
-      </TextInputGroupUtilities>
+      {showUtilities && (
+        <TextInputGroupUtilities>
+          {showClearButton && (
+            <Button variant="plain" onClick={clearChipsAndInput} aria-label="Clear button and input">
+              <TimesIcon />
+            </Button>
+          )}
+        </TextInputGroupUtilities>
+      )}
     </TextInputGroup>
   );
 };
