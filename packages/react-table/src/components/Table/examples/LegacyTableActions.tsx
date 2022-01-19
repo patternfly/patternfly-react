@@ -41,7 +41,14 @@ export const LegacyTableActions: React.FunctionComponent = () => {
     { name: 'a', branches: 'two', prs: '1', workspaces: 'four', lastCommit: 'five', singleAction: 'Start' },
     { name: 'disable actions', branches: 'two', prs: '3', workspaces: 'four', lastCommit: 'five', singleAction: '' },
     { name: 'green actions', branches: 'two', prs: '4', workspaces: 'four', lastCommit: 'five', singleAction: 'Start' },
-    { name: 'extra action props', branches: 'two', prs: '5', workspaces: 'four', lastCommit: 'five', singleAction: 'Start' },
+    {
+      name: 'extra action props',
+      branches: 'two',
+      prs: '5',
+      workspaces: 'four',
+      lastCommit: 'five',
+      singleAction: 'Start'
+    },
     { name: 'blue actions', branches: 'two', prs: '6', workspaces: 'four', lastCommit: 'five', singleAction: 'Start' }
   ];
 
