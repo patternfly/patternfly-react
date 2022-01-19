@@ -143,3 +143,38 @@ class DisclosureExpandableSection extends React.Component {
   }
 }
 ```
+
+### Indented
+
+```js
+import React from 'react';
+import { ExpandableSection } from '@patternfly/react-core';
+
+class SimpleExpandableSection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isExpanded: false
+    };
+    this.onToggle = isExpanded => {
+      this.setState({
+        isExpanded
+      });
+    };
+  }
+
+  render() {
+    const { isExpanded } = this.state;
+    return (
+      <ExpandableSection
+        toggleText={isExpanded ? 'Show less' : 'Show more'}
+        onToggle={this.onToggle}
+        isExpanded={isExpanded}
+        isIndented={true}
+      >
+        This content is visible only when the component is expanded.
+      </ExpandableSection>
+    );
+  }
+}
+```

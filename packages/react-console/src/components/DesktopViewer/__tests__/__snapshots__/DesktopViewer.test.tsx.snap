@@ -1161,6 +1161,7 @@ exports[`DesktopViewer with custom more-info content 1`] = `
           isActive={false}
           isDetached={false}
           isExpanded={false}
+          isIndented={false}
           isWidthLimited={false}
           onToggle={[Function]}
           toggleText="Remote Viewer Details"

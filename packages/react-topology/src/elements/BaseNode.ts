@@ -253,16 +253,17 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
 
   setModel(model: E): void {
     super.setModel(model);
+
     let d: Dimensions | undefined;
     let p: Point | undefined;
 
-    if ('width' in model && model.width != null) {
+    if ('width' in model && model.width != null && model.width !== this.dimensions.width) {
       if (!d) {
         d = this.dimensions.clone();
       }
       d.width = model.width;
     }
-    if ('height' in model && model.height != null) {
+    if ('height' in model && model.height != null && model.height !== this.dimensions.height) {
       if (!d) {
         d = this.dimensions.clone();
       }
@@ -272,13 +273,13 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
       this.setDimensions(d);
     }
 
-    if ('x' in model && model.x != null) {
+    if ('x' in model && model.x != null && model.x !== this.position.x) {
       if (!p) {
         p = this.position.clone();
       }
       p.x = model.x;
     }
-    if ('y' in model && model.y != null) {
+    if ('y' in model && model.y != null && model.y !== this.position.y) {
       if (!p) {
         p = this.position.clone();
       }

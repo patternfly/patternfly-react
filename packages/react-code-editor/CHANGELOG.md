@@ -3,6 +3,106 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.30.5 (2022-01-18)
+
+
+### Bug Fixes
+
+* **Tabs:** enable tabs scroll button for small window ([#6784](https://github.com/patternfly/patternfly-react/issues/6784)) ([a29b430](https://github.com/patternfly/patternfly-react/commit/a29b43094ae3d5ce7f4b26e4041cd595e675ee58))
+
+
+
+
+
+## 4.30.4 (2022-01-18)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## 4.30.3 (2022-01-18)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## 4.30.2 (2022-01-18)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## 4.30.1 (2022-01-18)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+# 4.30.0 (2022-01-17)
+
+
+### Features
+
+* **Tabs:** enforce restricted type for children ([#6767](https://github.com/patternfly/patternfly-react/issues/6767)) ([0d224df](https://github.com/patternfly/patternfly-react/commit/0d224dfb71b1a89c5783bd9ea290ece2f325ad21))
+
+
+
+
+
+## 4.29.1 (2022-01-17)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+# 4.29.0 (2022-01-14)
+
+
+### Features
+
+* **DescriptionList:** add option to fill columns first ([#6736](https://github.com/patternfly/patternfly-react/issues/6736)) ([c955c29](https://github.com/patternfly/patternfly-react/commit/c955c2917dbc4b85ce58fac4f93845c429186e1b))
+
+
+
+
+
+## 4.28.2 (2022-01-14)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## 4.28.1 (2022-01-14)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+# 4.28.0 (2022-01-12)
+
+
+### Features
+
+* **expandable-section:** added indented variation ([#6763](https://github.com/patternfly/patternfly-react/issues/6763)) ([703b922](https://github.com/patternfly/patternfly-react/commit/703b9224e43bedd5b37ec41d8f26f2939836d610))
+
+
+
+
+
 ## 4.27.1 (2022-01-11)
 
 

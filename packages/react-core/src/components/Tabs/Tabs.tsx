@@ -18,9 +18,12 @@ export enum TabsComponent {
   nav = 'nav'
 }
 
+type TabElement = React.ReactElement<TabProps, React.JSXElementConstructor<TabProps>>;
+type TabsChild = TabElement | boolean | null | undefined;
+
 export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'>, OUIAProps {
-  /** Content rendered inside the tabs component. Must be React.ReactElement<TabProps>[] */
-  children: React.ReactNode;
+  /** Content rendered inside the tabs component. Only `Tab` components or expressions resulting in a falsy value are allowed here. */
+  children: TabsChild | TabsChild[];
   /** Additional classes added to the tabs */
   className?: string;
   /** Tabs background color variant */
@@ -126,6 +129,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     }
   }
 
+  scrollTimeout: NodeJS.Timeout = null;
+
   static defaultProps: PickOptional<TabsProps> = {
     activeKey: 0,
     onSelect: () => undefined as any,
@@ -163,8 +168,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     // process any tab content sections outside of the component
     if (tabContentRef) {
       React.Children.toArray(this.props.children)
-        .map(child => child as React.ReactElement<TabProps>)
-        .filter(child => child.props && child.props.tabContentRef && child.props.tabContentRef.current)
+        .filter((child): child is TabElement => React.isValidElement(child))
+        .filter(({ props }) => props.tabContentRef && props.tabContentRef.current)
         .forEach(child => (child.props.tabContentRef.current.hidden = true));
       // most recently selected tabContent
       if (tabContentRef.current) {
@@ -179,28 +184,32 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
   }
 
   handleScrollButtons = () => {
-    const container = this.tabList.current;
-    let disableLeftScrollButton = true;
-    let disableRightScrollButton = true;
-    let showScrollButtons = false;
+    // add debounce to the scroll event
+    clearTimeout(this.scrollTimeout);
+    this.scrollTimeout = setTimeout(() => {
+      const container = this.tabList.current;
+      let disableLeftScrollButton = true;
+      let disableRightScrollButton = true;
+      let showScrollButtons = false;
 
-    if (container && !this.props.isVertical) {
-      // get first element and check if it is in view
-      const overflowOnLeft = !isElementInView(container, container.firstChild as HTMLElement, false);
+      if (container && !this.props.isVertical) {
+        // get first element and check if it is in view
+        const overflowOnLeft = !isElementInView(container, container.firstChild as HTMLElement, false);
 
-      // get last element and check if it is in view
-      const overflowOnRight = !isElementInView(container, container.lastChild as HTMLElement, false);
+        // get last element and check if it is in view
+        const overflowOnRight = !isElementInView(container, container.lastChild as HTMLElement, false);
 
-      showScrollButtons = overflowOnLeft || overflowOnRight;
+        showScrollButtons = overflowOnLeft || overflowOnRight;
 
-      disableLeftScrollButton = !overflowOnLeft;
-      disableRightScrollButton = !overflowOnRight;
-    }
-    this.setState({
-      showScrollButtons,
-      disableLeftScrollButton,
-      disableRightScrollButton
-    });
+        disableLeftScrollButton = !overflowOnLeft;
+        disableRightScrollButton = !overflowOnRight;
+      }
+      this.setState({
+        showScrollButtons,
+        disableLeftScrollButton,
+        disableRightScrollButton
+      });
+    }, 100);
   };
 
   scrollLeft = () => {
@@ -258,6 +267,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
         window.removeEventListener('resize', this.handleScrollButtons, false);
       }
     }
+    clearTimeout(this.scrollTimeout);
   }
 
   componentDidUpdate(prevProps: TabsProps) {
@@ -308,8 +318,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       uncontrolledActiveKey,
       uncontrolledIsExpandedLocal
     } = this.state;
-    const filteredChildren = (React.Children.toArray(children) as React.ReactElement<TabProps>[])
-      .filter(Boolean)
+    const filteredChildren = React.Children.toArray(children)
+      .filter((child): child is TabElement => React.isValidElement(child))
       .filter(child => !child.props.isHidden);
 
     const uniqueId = id || getUniqueId();
