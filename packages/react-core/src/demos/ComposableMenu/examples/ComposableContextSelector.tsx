@@ -16,8 +16,16 @@ import {
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
+interface ItemData {
+  text: string;
+  href?: string;
+  isDisabled?: boolean;
+}
+
+type ItemArrayType = (ItemData | string)[];
+
 export const ComposableContextSelector: React.FunctionComponent = () => {
-  const items: any[] = [
+  const items: ItemArrayType = [
     {
       text: 'Action'
     },
@@ -46,8 +54,10 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
     'Azure 2'
   ];
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [selected, setSelected] = React.useState<string>(items[0].text || items[0]);
-  const [filteredItems, setFilteredItems] = React.useState<any[]>(items);
+  const [selected, setSelected] = React.useState<ItemData | string>(
+    typeof items[0] === 'string' ? items[0] : items[0].text
+  );
+  const [filteredItems, setFilteredItems] = React.useState<ItemArrayType>(items);
   const [searchInputValue, setSearchInputValue] = React.useState<string>('');
   const menuRef = React.useRef<HTMLDivElement>();
   const toggleRef = React.useRef<HTMLButtonElement>();
@@ -120,7 +130,10 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
     const filtered =
       searchInputValue === ''
         ? items
-        : items.filter(str => str.toLowerCase().indexOf(searchInputValue.toLowerCase()) !== -1);
+        : items.filter(item => {
+            const str = typeof item === 'string' ? item : item.text;
+            return str.toLowerCase().indexOf(searchInputValue.toLowerCase()) !== -1;
+          });
 
     setFilteredItems(filtered || []);
     setIsOpen(true); // Keep menu open after search executed

@@ -140,7 +140,7 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   isCopyEnabled?: boolean;
   /** Flag to include a label indicating the currently configured editor language */
   isLanguageLabelVisible?: boolean;
-  /** Accessibly label for the copy button */
+  /** Accessible label for the copy button */
   copyButtonAriaLabel?: string;
   /** Text to display in the tooltip on the copy button before text is copied */
   copyButtonToolTipText?: string;

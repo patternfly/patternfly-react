@@ -6,8 +6,8 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
 export const ComposableActionsMenu: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selectedItems, setSelectedItems] = React.useState([]);
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const [selectedItems, setSelectedItems] = React.useState<number[]>([]);
   const toggleRef = React.useRef<HTMLButtonElement>();
   const menuRef = React.useRef<HTMLDivElement>();
 
@@ -35,7 +35,7 @@ export const ComposableActionsMenu: React.FunctionComponent = () => {
     };
   }, [isOpen, menuRef]);
 
-  const onSelect = (event: React.MouseEvent, itemId: string) => {
+  const onSelect = (event: React.MouseEvent, itemId: number) => {
     if (selectedItems.includes(itemId)) {
       setSelectedItems(selectedItems.filter(id => id !== itemId));
     } else {
