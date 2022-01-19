@@ -444,9 +444,16 @@ TabsOpenWithSecondaryTabsDemo = () => {
 ```
 
 ### Nested tabs
+
 ```js isFullscreen file="./Tabs/NestedTabsDemo.js"
 ```
 
 ### Tables and tabs
+
 ```js isFullscreen file="./examples/Tabs/TabsAndTable.tsx"
+```
+
+### Modal tabs
+
+```js isFullscreen file="./examples/Tabs/ModalTabs.tsx"
 ```
