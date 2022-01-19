@@ -163,6 +163,11 @@ export const ComposableTableTree: React.FunctionComponent = () => {
       }
     };
 
+    const childRows =
+      node.children && node.children.length
+        ? renderRows(node.children, level + 1, 1, rowIndex + 1, !isExpanded || isHidden)
+        : [];
+
     return [
       <TreeRowWrapper key={node.name} row={{ props: treeRow.props }}>
         <Td dataLabel={columnNames.name} treeRow={treeRow}>
@@ -172,16 +177,8 @@ export const ComposableTableTree: React.FunctionComponent = () => {
         <Td dataLabel={columnNames.prs}>{node.pullRequests}</Td>
         <Td dataLabel={columnNames.workspaces}>{node.workspaces}</Td>
       </TreeRowWrapper>,
-      ...(node.children && node.children.length
-        ? renderRows(node.children, level + 1, 1, rowIndex + 1, !isExpanded || isHidden)
-        : []),
-      ...renderRows(
-        remainingNodes,
-        level,
-        posinset + 1,
-        rowIndex + 1 + ((node.children && node.children.length) || 0),
-        isHidden
-      )
+      ...childRows,
+      ...renderRows(remainingNodes, level, posinset + 1, rowIndex + 1 + childRows.length, isHidden)
     ];
   };
 
