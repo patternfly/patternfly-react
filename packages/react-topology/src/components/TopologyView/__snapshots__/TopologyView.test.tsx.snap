@@ -90,7 +90,6 @@ exports[`TopologyView should display resizable topology sidebar correctly 1`] = 
                 >
                   <div
                     className="pf-c-toolbar__content"
-                    style={Object {}}
                   >
                     <div
                       className="pf-c-toolbar__content-section"
@@ -104,7 +103,6 @@ exports[`TopologyView should display resizable topology sidebar correctly 1`] = 
                         >
                           <div
                             className="pf-c-toolbar__group project-toolbar"
-                            style={Object {}}
                           >
                             <div
                               id="test-context-bar"
@@ -146,7 +144,6 @@ exports[`TopologyView should display resizable topology sidebar correctly 1`] = 
                           >
                             <div
                               className="pf-c-toolbar__group"
-                              style={Object {}}
                             />
                           </ToolbarGroupWithRef>
                         </ForwardRef>
@@ -160,7 +157,6 @@ exports[`TopologyView should display resizable topology sidebar correctly 1`] = 
                 >
                   <div
                     className="pf-c-toolbar__content"
-                    style={Object {}}
                   >
                     <div
                       className="pf-c-toolbar__content-section"
@@ -174,7 +170,6 @@ exports[`TopologyView should display resizable topology sidebar correctly 1`] = 
                         >
                           <div
                             className="pf-c-toolbar__group view-toolbar"
-                            style={Object {}}
                           >
                             <div
                               id="test-view-bar"
@@ -216,7 +211,6 @@ exports[`TopologyView should display resizable topology sidebar correctly 1`] = 
                           >
                             <div
                               className="pf-c-toolbar__group"
-                              style={Object {}}
                             />
                           </ToolbarGroupWithRef>
                         </ForwardRef>
@@ -262,7 +256,6 @@ exports[`TopologyView should display resizable topology sidebar correctly 1`] = 
                       >
                         <div
                           className="pf-c-toolbar__group"
-                          style={Object {}}
                         />
                       </ToolbarGroupWithRef>
                     </ForwardRef>
@@ -416,7 +409,6 @@ exports[`TopologyView should display topology correctly 1`] = `
                 >
                   <div
                     className="pf-c-toolbar__content"
-                    style={Object {}}
                   >
                     <div
                       className="pf-c-toolbar__content-section"
@@ -430,7 +422,6 @@ exports[`TopologyView should display topology correctly 1`] = `
                         >
                           <div
                             className="pf-c-toolbar__group project-toolbar"
-                            style={Object {}}
                           >
                             <div
                               id="test-context-bar"
@@ -472,7 +463,6 @@ exports[`TopologyView should display topology correctly 1`] = `
                           >
                             <div
                               className="pf-c-toolbar__group"
-                              style={Object {}}
                             />
                           </ToolbarGroupWithRef>
                         </ForwardRef>
@@ -486,7 +476,6 @@ exports[`TopologyView should display topology correctly 1`] = `
                 >
                   <div
                     className="pf-c-toolbar__content"
-                    style={Object {}}
                   >
                     <div
                       className="pf-c-toolbar__content-section"
@@ -500,7 +489,6 @@ exports[`TopologyView should display topology correctly 1`] = `
                         >
                           <div
                             className="pf-c-toolbar__group view-toolbar"
-                            style={Object {}}
                           >
                             <div
                               id="test-view-bar"
@@ -542,7 +530,6 @@ exports[`TopologyView should display topology correctly 1`] = `
                           >
                             <div
                               className="pf-c-toolbar__group"
-                              style={Object {}}
                             />
                           </ToolbarGroupWithRef>
                         </ForwardRef>
@@ -588,7 +575,6 @@ exports[`TopologyView should display topology correctly 1`] = `
                       >
                         <div
                           className="pf-c-toolbar__group"
-                          style={Object {}}
                         />
                       </ToolbarGroupWithRef>
                     </ForwardRef>
@@ -686,7 +672,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                 >
                   <div
                     className="pf-c-toolbar__content"
-                    style={Object {}}
                   >
                     <div
                       className="pf-c-toolbar__content-section"
@@ -700,7 +685,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                         >
                           <div
                             className="pf-c-toolbar__group project-toolbar"
-                            style={Object {}}
                           >
                             <div
                               id="test-context-bar"
@@ -742,7 +726,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                           >
                             <div
                               className="pf-c-toolbar__group"
-                              style={Object {}}
                             />
                           </ToolbarGroupWithRef>
                         </ForwardRef>
@@ -756,7 +739,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                 >
                   <div
                     className="pf-c-toolbar__content"
-                    style={Object {}}
                   >
                     <div
                       className="pf-c-toolbar__content-section"
@@ -770,7 +752,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                         >
                           <div
                             className="pf-c-toolbar__group view-toolbar"
-                            style={Object {}}
                           >
                             <div
                               id="test-view-bar"
@@ -812,7 +793,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                           >
                             <div
                               className="pf-c-toolbar__group"
-                              style={Object {}}
                             />
                           </ToolbarGroupWithRef>
                         </ForwardRef>
@@ -858,7 +838,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                       >
                         <div
                           className="pf-c-toolbar__group"
-                          style={Object {}}
                         />
                       </ToolbarGroupWithRef>
                     </ForwardRef>
@@ -960,7 +939,6 @@ exports[`TopologyView should display topology w/ open resizable sidebar correctl
                 >
                   <div
                     className="pf-c-toolbar__content"
-                    style={Object {}}
                   >
                     <div
                       className="pf-c-toolbar__content-section"
@@ -974,7 +952,6 @@ exports[`TopologyView should display topology w/ open resizable sidebar correctl
                         >
                           <div
                             className="pf-c-toolbar__group project-toolbar"
-                            style={Object {}}
                           >
                             <div
                               id="test-context-bar"
@@ -1016,7 +993,6 @@ exports[`TopologyView should display topology w/ open resizable sidebar correctl
                           >
                             <div
                               className="pf-c-toolbar__group"
-                              style={Object {}}
                             />
                           </ToolbarGroupWithRef>
                         </ForwardRef>
@@ -1030,7 +1006,6 @@ exports[`TopologyView should display topology w/ open resizable sidebar correctl
                 >
                   <div
                     className="pf-c-toolbar__content"
-                    style={Object {}}
                   >
                     <div
                       className="pf-c-toolbar__content-section"
@@ -1044,7 +1019,6 @@ exports[`TopologyView should display topology w/ open resizable sidebar correctl
                         >
                           <div
                             className="pf-c-toolbar__group view-toolbar"
-                            style={Object {}}
                           >
                             <div
                               id="test-view-bar"
@@ -1086,7 +1060,6 @@ exports[`TopologyView should display topology w/ open resizable sidebar correctl
                           >
                             <div
                               className="pf-c-toolbar__group"
-                              style={Object {}}
                             />
                           </ToolbarGroupWithRef>
                         </ForwardRef>
@@ -1132,7 +1105,6 @@ exports[`TopologyView should display topology w/ open resizable sidebar correctl
                       >
                         <div
                           className="pf-c-toolbar__group"
-                          style={Object {}}
                         />
                       </ToolbarGroupWithRef>
                     </ForwardRef>
@@ -1316,7 +1288,6 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                 >
                   <div
                     className="pf-c-toolbar__content"
-                    style={Object {}}
                   >
                     <div
                       className="pf-c-toolbar__content-section"
@@ -1330,7 +1301,6 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                         >
                           <div
                             className="pf-c-toolbar__group project-toolbar"
-                            style={Object {}}
                           >
                             <div
                               id="test-context-bar"
@@ -1372,7 +1342,6 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                           >
                             <div
                               className="pf-c-toolbar__group"
-                              style={Object {}}
                             />
                           </ToolbarGroupWithRef>
                         </ForwardRef>
@@ -1386,7 +1355,6 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                 >
                   <div
                     className="pf-c-toolbar__content"
-                    style={Object {}}
                   >
                     <div
                       className="pf-c-toolbar__content-section"
@@ -1400,7 +1368,6 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                         >
                           <div
                             className="pf-c-toolbar__group view-toolbar"
-                            style={Object {}}
                           >
                             <div
                               id="test-view-bar"
@@ -1442,7 +1409,6 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                           >
                             <div
                               className="pf-c-toolbar__group"
-                              style={Object {}}
                             />
                           </ToolbarGroupWithRef>
                         </ForwardRef>
@@ -1488,7 +1454,6 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                       >
                         <div
                           className="pf-c-toolbar__group"
-                          style={Object {}}
                         />
                       </ToolbarGroupWithRef>
                     </ForwardRef>

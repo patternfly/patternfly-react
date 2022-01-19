@@ -91,7 +91,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
         >
           <div
             className="pf-c-toolbar__content"
-            style={Object {}}
           >
             <div
               className="pf-c-toolbar__content-section"
@@ -113,14 +112,12 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                 >
                   <div
                     className="pf-c-toolbar__group pf-m-space-items-none"
-                    style={Object {}}
                   >
                     <ToolbarItem
                       key="zoom-in"
                     >
                       <div
                         className="pf-c-toolbar__item"
-                        style={Object {}}
                       >
                         <Tooltip
                           content="test zoom in tooltip"
@@ -254,7 +251,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                     >
                       <div
                         className="pf-c-toolbar__item"
-                        style={Object {}}
                       >
                         <Tooltip
                           content="Zoom Out"
@@ -411,7 +407,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                     >
                       <div
                         className="pf-c-toolbar__item"
-                        style={Object {}}
                       >
                         <Tooltip
                           content="Reset View"
@@ -600,7 +595,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   >
                     <div
                       className="pf-c-toolbar__group"
-                      style={Object {}}
                     />
                   </ToolbarGroupWithRef>
                 </ForwardRef>
@@ -641,7 +635,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
               >
                 <div
                   className="pf-c-toolbar__group"
-                  style={Object {}}
                 />
               </ToolbarGroupWithRef>
             </ForwardRef>
@@ -756,7 +749,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
         >
           <div
             className="pf-c-toolbar__content"
-            style={Object {}}
           >
             <div
               className="pf-c-toolbar__content-section"
@@ -778,14 +770,12 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 >
                   <div
                     className="pf-c-toolbar__group pf-m-space-items-none"
-                    style={Object {}}
                   >
                     <ToolbarItem
                       key="zoom-in"
                     >
                       <div
                         className="pf-c-toolbar__item"
-                        style={Object {}}
                       >
                         <Tooltip
                           content="Zoom In"
@@ -942,7 +932,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     >
                       <div
                         className="pf-c-toolbar__item"
-                        style={Object {}}
                       >
                         <Tooltip
                           content="Zoom Out"
@@ -1099,7 +1088,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     >
                       <div
                         className="pf-c-toolbar__item"
-                        style={Object {}}
                       >
                         <Tooltip
                           content="Fit to Screen"
@@ -1256,7 +1244,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     >
                       <div
                         className="pf-c-toolbar__item"
-                        style={Object {}}
                       >
                         <Tooltip
                           content="Reset View"
@@ -1413,7 +1400,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     >
                       <div
                         className="pf-c-toolbar__item"
-                        style={Object {}}
                       >
                         <Button
                           aria-disabled={false}
@@ -1488,7 +1474,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   >
                     <div
                       className="pf-c-toolbar__group"
-                      style={Object {}}
                     />
                   </ToolbarGroupWithRef>
                 </ForwardRef>
@@ -1529,7 +1514,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
               >
                 <div
                   className="pf-c-toolbar__group"
-                  style={Object {}}
                 />
               </ToolbarGroupWithRef>
             </ForwardRef>
