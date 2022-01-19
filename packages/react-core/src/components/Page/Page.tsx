@@ -180,7 +180,9 @@ export class Page extends React.Component<PageProps, PageState> {
 
   getWindowWidth = () => {
     if (canUseDOM) {
-      return this.props.useResizeObserver ? this.pageRef.current.clientWidth : window.innerWidth;
+      return this.props.useResizeObserver && this.pageRef.current
+        ? this.pageRef.current.clientWidth
+        : window.innerWidth;
     } else {
       return 1200;
     }
@@ -199,7 +201,7 @@ export class Page extends React.Component<PageProps, PageState> {
     if (mobileView !== this.state.mobileView) {
       this.setState({ mobileView });
     }
-    this.setState({ width: this.pageRef.current.clientWidth });
+    this.pageRef.current && this.setState({ width: this.pageRef.current.clientWidth });
   };
 
   handleResize = debounce(this.resize, 250);

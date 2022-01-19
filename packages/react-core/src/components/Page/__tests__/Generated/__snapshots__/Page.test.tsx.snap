@@ -4,9 +4,12 @@ exports[`Page should match snapshot (auto-generated) 1`] = `
 <ContextProvider
   value={
     Object {
+      "getBreakpoint": [Function],
       "isManagedSidebar": false,
       "isNavOpen": false,
       "onNavToggle": [Function],
+      "useResizeObserver": false,
+      "width": 0,
     }
   }
 >

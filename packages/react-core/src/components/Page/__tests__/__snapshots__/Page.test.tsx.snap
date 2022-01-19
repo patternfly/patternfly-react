@@ -5,6 +5,7 @@ exports[`Check dark page against snapshot 1`] = `
   aria-label="Page layout"
   className="my-page-class"
   defaultManagedSidebarIsOpen={true}
+  getBreakpoint={[Function]}
   header={
     <PageHeader
       headerTools="PageHeaderTools | Avatar"
@@ -26,6 +27,7 @@ exports[`Check dark page against snapshot 1`] = `
       theme="dark"
     />
   }
+  useResizeObserver={false}
 >
   <div
     aria-label="Page layout"
@@ -119,6 +121,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   aria-label="Page layout"
   className="my-page-class"
   defaultManagedSidebarIsOpen={true}
+  getBreakpoint={[Function]}
   header={
     <PageHeader
       headerTools="PageHeaderTools | Avatar"
@@ -138,6 +141,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
       isNavOpen={true}
     />
   }
+  useResizeObserver={false}
 >
   <div
     aria-label="Page layout"
@@ -232,6 +236,7 @@ exports[`Check page to verify breadcrumb is created - PageBreadcrumb syntax 1`] 
   aria-label="Page layout"
   className="my-page-class"
   defaultManagedSidebarIsOpen={true}
+  getBreakpoint={[Function]}
   header={
     <PageHeader
       headerTools="PageHeaderTools | Avatar"
@@ -251,6 +256,7 @@ exports[`Check page to verify breadcrumb is created - PageBreadcrumb syntax 1`] 
       isNavOpen={true}
     />
   }
+  useResizeObserver={false}
 >
   <div
     aria-label="Page layout"
@@ -510,6 +516,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
   breadcrumb={<PageBreadcrumb />}
   className="my-page-class"
   defaultManagedSidebarIsOpen={true}
+  getBreakpoint={[Function]}
   header={
     <PageHeader
       headerTools="PageHeaderTools | Avatar"
@@ -529,6 +536,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
       isNavOpen={true}
     />
   }
+  useResizeObserver={false}
 >
   <div
     aria-label="Page layout"
@@ -787,6 +795,7 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
   aria-label="Page layout"
   className="my-page-class"
   defaultManagedSidebarIsOpen={true}
+  getBreakpoint={[Function]}
   header={
     <PageHeader
       headerTools="PageHeaderTools | Avatar"
@@ -806,6 +815,7 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
       isNavOpen={true}
     />
   }
+  useResizeObserver={false}
 >
   <div
     aria-label="Page layout"
@@ -1295,6 +1305,7 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
   }
   className="my-page-class"
   defaultManagedSidebarIsOpen={true}
+  getBreakpoint={[Function]}
   groupProps={
     Object {
       "hasShadowTop": true,
@@ -1364,6 +1375,7 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
       </NavList>
     </Nav>
   }
+  useResizeObserver={false}
 >
   <div
     aria-label="Page layout"
@@ -1831,6 +1843,7 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
   aria-label="Page layout"
   className="my-page-class"
   defaultManagedSidebarIsOpen={true}
+  getBreakpoint={[Function]}
   header={
     <PageHeader
       headerTools="PageHeaderTools | Avatar"
@@ -1850,6 +1863,7 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
       isNavOpen={true}
     />
   }
+  useResizeObserver={false}
 >
   <div
     aria-label="Page layout"
@@ -2165,6 +2179,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
   }
   className="my-page-class"
   defaultManagedSidebarIsOpen={true}
+  getBreakpoint={[Function]}
   header={
     <PageHeader
       headerTools="PageHeaderTools | Avatar"
@@ -2193,6 +2208,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
       Skip to Content
     </SkipToContent>
   }
+  useResizeObserver={false}
 >
   <div
     aria-label="Page layout"
@@ -2461,6 +2477,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   aria-label="Page layout"
   className="my-page-class"
   defaultManagedSidebarIsOpen={true}
+  getBreakpoint={[Function]}
   header={
     <PageHeader
       headerTools="PageHeaderTools | Avatar"
@@ -2481,6 +2498,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
       nav="Navigation"
     />
   }
+  useResizeObserver={false}
 >
   <div
     aria-label="Page layout"
