@@ -33,7 +33,7 @@ export const NestedTabsDemo = () => {
       <GridItem xl={8} md={6}>
         <Card>
           <CardHeader>
-            <Title headingLevel="h3">Status</Title>
+            <Title headingLevel="h2">Status</Title>
           </CardHeader>
           <CardBody>
             <Flex direction={{ default: 'column' }}>
@@ -109,14 +109,14 @@ export const NestedTabsDemo = () => {
           <FlexItem flex={{ default: 'flex_1' }}>
             <Card isFullHeight>
               <CardHeader>
-                <Title headingLevel="h3">Title of Card</Title>
+                <Title headingLevel="h2">Title of Card</Title>
               </CardHeader>
             </Card>
           </FlexItem>
           <FlexItem flex={{ default: 'flex_1' }}>
             <Card isFullHeight>
               <CardHeader>
-                <Title headingLevel="h3">Title of Card</Title>
+                <Title headingLevel="h2">Title of Card</Title>
               </CardHeader>
             </Card>
           </FlexItem>
