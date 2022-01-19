@@ -18,7 +18,7 @@ export interface PageContextProps {
   onNavToggle: () => void;
   isNavOpen: boolean;
   width: number;
-  getBreakpoint: (width: number, enabled?: boolean) => 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | null;
+  getBreakpoint: (width: number) => 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 }
 export const pageContextDefaults: PageContextProps = {
   isManagedSidebar: false,
