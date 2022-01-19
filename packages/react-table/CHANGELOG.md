@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.59.0 (2022-01-19)
+
+
+### Features
+
+* **TimePicker:** Allow for seconds via new prop; includeSeconds ([#6769](https://github.com/patternfly/patternfly-react/issues/6769)) ([417b51a](https://github.com/patternfly/patternfly-react/commit/417b51a6b8bd997042e16a0e821fb63281e53d30))
+
+
+
+
+
 ## 4.58.5 (2022-01-18)
 
 
