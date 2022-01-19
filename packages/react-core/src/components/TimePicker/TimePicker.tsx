@@ -262,6 +262,10 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     if (splitTime.length < 2) {
       time = `${time}${delimiter}00`;
       splitTime = time.split(delimiter);
+      // build time without seconds when includeSeconds is true
+    } else if (splitTime.length > 2) {
+      time = parseTime(time, this.state.timeRegex, delimiter, !is24Hour, false);
+      splitTime = time.split(delimiter);
     }
 
     // for 12hr variant, autoscroll to pm if it's currently the afternoon, otherwise autoscroll to am
@@ -277,7 +281,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     ) {
       time = `${time}${new Date().getHours() > 11 ? pmSuffix : amSuffix}`;
     }
-
     let scrollIndex = this.getOptions().findIndex(option => option.innerText === time);
 
     // if we found an exact match, scroll to match and return index of match for focus
@@ -373,7 +376,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     if (!this.state.isOpen) {
       this.onToggle(true);
     }
-
     e.stopPropagation();
   };
 
