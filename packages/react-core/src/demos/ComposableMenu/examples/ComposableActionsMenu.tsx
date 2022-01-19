@@ -35,7 +35,7 @@ export const ComposableActionsMenu: React.FunctionComponent = () => {
     };
   }, [isOpen, menuRef]);
 
-  const onSelect = (event: React.MouseEvent, itemId: number) => {
+  const onSelect = (ev: React.MouseEvent<Element, MouseEvent>, itemId: number) => {
     if (selectedItems.includes(itemId)) {
       setSelectedItems(selectedItems.filter(id => id !== itemId));
     } else {

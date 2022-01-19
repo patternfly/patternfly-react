@@ -24,12 +24,12 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
   const menuRef = React.useRef<HTMLDivElement>();
   const toggleRef = React.useRef<HTMLButtonElement>();
 
-  const handleToggleSwitch = (selected: boolean, e: React.MouseEvent) => {
+  const handleToggleSwitch = (selected: boolean, e: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => {
     setToggleSelected(e.currentTarget.id);
   };
 
   const handleMenuKeys = (event: KeyboardEvent) => {
-    if (isOpen && menuRef.current.contains(event.target as Node)) {
+    if (isOpen && menuRef && menuRef.current && menuRef.current.contains(event.target as Node)) {
       if (event.key === 'Escape' || event.key === 'Tab') {
         setIsOpen(!isOpen);
         toggleRef.current.focus();
@@ -57,14 +57,14 @@ export const ComposableDropdwnVariants: React.FunctionComponent = () => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
       if (menuRef.current) {
-        const firstElement = menuRef.current.querySelector('li > button,input:not(:disabled)');
+        const firstElement = menuRef.current.querySelector('li > button,input:not(:disabled),a');
         firstElement && (firstElement as HTMLElement).focus();
       }
     }, 0);
     setIsOpen(!isOpen);
   };
 
-  const onSelect = (ev: React.MouseEvent, itemId: string) => {
+  const onSelect = (ev: React.MouseEvent<Element, MouseEvent>, itemId: string) => {
     // eslint-disable-next-line no-console
     console.log(`Menu item ${itemId} selected`);
     setIsOpen(false);

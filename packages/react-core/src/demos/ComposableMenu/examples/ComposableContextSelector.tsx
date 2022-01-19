@@ -117,7 +117,7 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
     </MenuToggle>
   );
 
-  const onSelect = (event: React.MouseEvent, itemId: string) => {
+  const onSelect = (ev: React.MouseEvent<Element, MouseEvent>, itemId: string) => {
     setSelected(itemId);
     setIsOpen(!isOpen);
   };

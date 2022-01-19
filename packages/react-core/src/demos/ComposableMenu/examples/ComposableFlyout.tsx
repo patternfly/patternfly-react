@@ -2,7 +2,7 @@ import React from 'react';
 import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper } from '@patternfly/react-core';
 
 // eslint-disable-next-line no-console
-const onSelect = (event: React.MouseEvent, itemId: string) => console.log('selected', itemId);
+const onSelect = (ev: React.MouseEvent<Element, MouseEvent>, itemId: string) => console.log('selected', itemId);
 
 interface FlyoutMenuProps {
   children?: React.ReactElement;
