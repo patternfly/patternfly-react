@@ -36,5 +36,6 @@ export const withAnchor = <P extends {} = {}>(anchor: Anchor, end?: AnchorEnd, t
     );
     return <WrappedComponent {...props} />;
   };
+  Component.displayName = `withAnchor(${WrappedComponent.displayName || WrappedComponent.name})`;
   return observer(Component);
 };

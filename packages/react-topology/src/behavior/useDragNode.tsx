@@ -173,5 +173,6 @@ export const withDragNode = <
     const [dragNodeProps, dragNodeRef] = useDragNode(spec, props as any);
     return <WrappedComponent {...(props as any)} dragNodeRef={dragNodeRef} {...dragNodeProps} />;
   };
+  Component.displayName = `withDragNode(${WrappedComponent.displayName || WrappedComponent.name})`;
   return observer(Component);
 };

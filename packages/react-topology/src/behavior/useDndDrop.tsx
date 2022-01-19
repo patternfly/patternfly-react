@@ -190,5 +190,6 @@ export const withDndDrop = <
     const [dndDropProps, dndDropRef] = useDndDrop(spec, props as any);
     return <WrappedComponent {...(props as any)} {...dndDropProps} dndDropRef={dndDropRef} />;
   };
+  Component.displayName = `withDndDrop(${WrappedComponent.displayName || WrappedComponent.name})`;
   return observer(Component);
 };

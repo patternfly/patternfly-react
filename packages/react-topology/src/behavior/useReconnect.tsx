@@ -26,6 +26,7 @@ export const withSourceDrag = <
     const [dndDragProps, dndDragRef] = useDndDrag(spec, props as any);
     return <WrappedComponent {...(props as any)} sourceDragRef={dndDragRef} {...dndDragProps} />;
   };
+  Component.displayName = `withSourceDrag(${WrappedComponent.displayName || WrappedComponent.name})`;
   return observer(Component);
 };
 
@@ -46,5 +47,6 @@ export const withTargetDrag = <
     const [dndDragProps, dndDragRef] = useDndDrag(spec, props as any);
     return <WrappedComponent {...(props as any)} targetDragRef={dndDragRef} {...dndDragProps} />;
   };
+  Component.displayName = `withTargetDrag(${WrappedComponent.displayName || WrappedComponent.name})`;
   return observer(Component);
 };
