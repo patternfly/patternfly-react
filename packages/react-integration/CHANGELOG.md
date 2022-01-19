@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.153.0 (2022-01-19)
+
+
+### Features
+
+* **NumberInput:** call onMinus/onPlus on arrow-up/down pressed ([#6764](https://github.com/patternfly/patternfly-react/issues/6764)) ([545a7f8](https://github.com/patternfly/patternfly-react/commit/545a7f8791dbf2937416509a01b197cc1daf80db))
+
+
+
+
+
 # 4.152.0 (2022-01-19)
 
 
