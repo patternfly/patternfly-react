@@ -15,13 +15,14 @@ import React from 'react';
 import { TimePicker } from '@patternfly/react-core';
 
 SimpleTimePicker = () => {
-  const onChange = (time, hour, minute, isValid) => {
+  const onChange = (time, hour, minute, seconds, isValid) => {
     console.log("time", time);
     console.log("hour", hour);
     console.log("minute", minute);
+    console.log("seconds", seconds);
     console.log("isValid", isValid);
   };
-  
+
   return <TimePicker time="3:35 AM" onChange={onChange}/>;
 }
 ```
@@ -51,4 +52,20 @@ import React from 'react';
 import { TimePicker } from '@patternfly/react-core';
 
 <TimePicker is24Hour minTime="9:30" maxTime="17:15" placeholder="14:00"/>
+```
+
+### With seconds
+```js
+import React from 'react';
+import { TimePicker } from '@patternfly/react-core';
+
+SimpleTimePicker = () => <TimePicker time="3:35:20 PM" includeSeconds />;
+```
+
+### 24 hours with seconds
+```js
+import React from 'react';
+import { TimePicker } from '@patternfly/react-core';
+
+SimpleTimePicker = () => <TimePicker time="12:35:50" includeSeconds is24Hour />;
 ```

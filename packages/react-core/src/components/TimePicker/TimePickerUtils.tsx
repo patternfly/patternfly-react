@@ -29,7 +29,7 @@ export const makeTimeOptions = (
       .getMinutes()
       .toString()
       .padStart(2, '0');
-    const timeOption = hour + delimiter + minutes + (hour12 ? suffix : '');
+    const timeOption = `${hour}${delimiter}${minutes}${hour12 ? suffix : ''}`;
     // time option is valid if within min/max constraints
     if (isWithinMinMax(minTime, maxTime, timeOption, delimiter)) {
       res.push(timeOption);
@@ -39,7 +39,13 @@ export const makeTimeOptions = (
   return res;
 };
 
-export const parseTime = (time: string | Date, timeRegex: RegExp, delimiter: string, is12Hour: boolean): string => {
+export const parseTime = (
+  time: string | Date,
+  timeRegex: RegExp,
+  delimiter: string,
+  is12Hour: boolean,
+  includeSeconds: boolean
+): string => {
   const date = new Date(time);
 
   // if default time is a ISO 8601 formatted date string, we parse it to hh:mm(am/pm) format
@@ -48,30 +54,40 @@ export const parseTime = (time: string | Date, timeRegex: RegExp, delimiter: str
       ? `${date.getHours() > 12 ? date.getHours() - 12 : date.getHours()}`
       : `${date.getHours()}`.padStart(2, '0');
     const minutes = `${date.getMinutes()}`.padStart(2, '0');
+    const seconds = includeSeconds ? `${date.getSeconds()}`.padStart(2, '0') : '';
+    const secondsWithDelimiter = seconds ? `${delimiter}${seconds}` : '';
     let ampm = '';
+
     if (is12Hour && date.getHours() > 11) {
       ampm = pmSuffix;
     } else if (is12Hour) {
       ampm = amSuffix;
     }
-    return `${hours}${delimiter}${minutes}${ampm}`;
+
+    return `${hours}${delimiter}${minutes}${secondsWithDelimiter}${ampm}`;
   } else if (typeof time === 'string') {
     time = time.trim();
-    if (is12Hour && time !== '' && validateTime(time, timeRegex, delimiter, is12Hour)) {
-      const [, hours, minutes, suffix = ''] = timeRegex.exec(time);
-      const uppercaseSuffix = suffix.toUpperCase();
-      // Format AM/PM according to design
+    if (time !== '' && validateTime(time, timeRegex, delimiter, is12Hour)) {
+      const [, hours, minutes, seconds, suffix = ''] = timeRegex.exec(time);
+      const secondsWithDelimiter = includeSeconds ? `${delimiter}${seconds ?? '00'}` : '';
       let ampm = '';
-      if (uppercaseSuffix === amSuffix.toUpperCase().trim()) {
-        ampm = amSuffix;
-      } else if (uppercaseSuffix === pmSuffix.toUpperCase().trim()) {
-        ampm = pmSuffix;
-      } else {
-        // if this 12 hour time is missing am/pm but otherwise valid,
-        // append am/pm depending on time of day
-        ampm = new Date().getHours() > 11 ? pmSuffix : amSuffix;
+
+      // Format AM/PM according to design
+      if (is12Hour) {
+        const uppercaseSuffix = suffix.toUpperCase();
+
+        if (uppercaseSuffix === amSuffix.toUpperCase().trim()) {
+          ampm = amSuffix;
+        } else if (uppercaseSuffix === pmSuffix.toUpperCase().trim()) {
+          ampm = pmSuffix;
+        } else {
+          // if this 12 hour time is missing am/pm but otherwise valid,
+          // append am/pm depending on time of day
+          ampm = new Date().getHours() > 11 ? pmSuffix : amSuffix;
+        }
       }
-      return `${hours}${delimiter}${minutes}${ampm}`;
+
+      return `${hours}${delimiter}${minutes}${secondsWithDelimiter}${ampm}`;
     }
   }
   return time.toString();
@@ -95,10 +111,10 @@ export const validateTime = (time: string, timeRegex: RegExp, delimiter: string,
 export const getHours = (time: string, timeRegex: RegExp) => {
   const parts = time.match(timeRegex);
   if (parts && parts.length) {
-    if (/pm/i.test(parts[3])) {
+    if (/pm/i.test(parts[4])) {
       return parseInt(parts[1]) === 12 ? parseInt(parts[1]) : parseInt(parts[1]) + 12;
     }
-    if (/am/i.test(parts[3])) {
+    if (/am/i.test(parts[4])) {
       return parseInt(parts[1]) === 12 ? 0 : parseInt(parts[1]);
     }
     return parseInt(parts[1]);
@@ -111,33 +127,54 @@ export const getMinutes = (time: string, timeRegex: RegExp) => {
   return parts && parts.length ? parseInt(parts[2]) : null;
 };
 
-export const isWithinMinMax = (minTime: string, maxTime: string, time: string, delimiter: string) => {
+export const getSeconds = (time: string, timeRegex: RegExp) => {
+  const seconds = time.match(timeRegex)?.[3];
+
+  return seconds ? parseInt(seconds) : null;
+};
+
+export const isWithinMinMax = (
+  minTime: string,
+  maxTime: string,
+  time: string,
+  delimiter: string,
+  includeSeconds?: boolean
+) => {
   // do not throw error if empty string
   if (time.trim() === '') {
     return true;
   }
-  const convertTo24Hour = (time: string): string => {
-    const timeReg = new RegExp(`^\\s*(\\d\\d?)${delimiter}([0-5]\\d)\\s*([AaPp][Mm])?\\s*$`);
-    const regMatches = timeReg.exec(time);
-    if (!regMatches || !regMatches.length) {
-      return;
-    }
-    let hours = regMatches[1].padStart(2, '0');
-    const minutes = regMatches[2];
-    const suffix = regMatches[3] || '';
-    if (suffix.toUpperCase() === 'PM' && hours !== '12') {
-      hours = `${parseInt(hours) + 12}`;
-    } else if (suffix.toUpperCase() === 'AM' && hours === '12') {
-      hours = '00';
-    }
-    return `${hours}${delimiter}${minutes}`;
-  };
 
   // correctly format as 24hr times (12:30AM => 00:30, 1:15 => 01:15)
-  minTime = convertTo24Hour(minTime);
-  time = convertTo24Hour(time);
-  maxTime = convertTo24Hour(maxTime);
+  const min24HourTime = convertTo24Hour(minTime, delimiter, includeSeconds);
+  const selected24HourTime = convertTo24Hour(time, delimiter, includeSeconds);
+  const max24HourTime = convertTo24Hour(maxTime, delimiter, includeSeconds);
 
   // simple string comparison for 24hr times
-  return minTime <= time && time <= maxTime;
+  return min24HourTime <= selected24HourTime && selected24HourTime <= max24HourTime;
+};
+
+const convertTo24Hour = (time: string, delimiter: string, includeSeconds: boolean): string => {
+  const timeReg = new RegExp(`^\\s*(\\d\\d?)${delimiter}([0-5]\\d)${delimiter}?([0-5]\\d)?\\s*([AaPp][Mm])?\\s*$`);
+  const regMatches = timeReg.exec(time);
+  if (!regMatches || !regMatches.length) {
+    return;
+  }
+  let hours = regMatches[1].padStart(2, '0');
+  const minutes = regMatches[2];
+  let seconds = regMatches[3] ? `${delimiter}${regMatches[3]}` : '';
+
+  // When seconds is empty and 'includeSeconds' is enabled, append 0 seconds.
+  if (!seconds && includeSeconds) {
+    seconds = `${delimiter}00`;
+  }
+
+  const suffix = regMatches[4] || '';
+  if (suffix.toUpperCase() === 'PM' && hours !== '12') {
+    hours = `${parseInt(hours) + 12}`;
+  } else if (suffix.toUpperCase() === 'AM' && hours === '12') {
+    hours = '00';
+  }
+
+  return `${hours}${delimiter}${minutes}${seconds}`;
 };
