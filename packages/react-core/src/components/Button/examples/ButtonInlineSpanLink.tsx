@@ -3,8 +3,8 @@ import { Button } from '@patternfly/react-core';
 
 const handleKeydown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
   const { key } = event;
-  const isEnterKey = key === 'Enter';
-  const isEnterOrSpaceKey = isEnterKey || key === 'Space';
+  const isEnterKey: boolean = key === 'Enter';
+  const isEnterOrSpaceKey: boolean = isEnterKey || key === 'Space';
 
   if (isEnterOrSpaceKey) {
     event.preventDefault();

@@ -2,8 +2,8 @@ import React from 'react';
 import { Button, Flex } from '@patternfly/react-core';
 
 export const ButtonProgress: React.FunctionComponent = () => {
-  const [isPrimaryLoading, setIsPrimaryLoading] = React.useState(true);
-  const [isSecondaryLoading, setIsSecondaryLoading] = React.useState(true);
+  const [isPrimaryLoading, setIsPrimaryLoading] = React.useState<boolean>(true);
+  const [isSecondaryLoading, setIsSecondaryLoading] = React.useState<boolean>(true);
 
   return (
     <Flex>
