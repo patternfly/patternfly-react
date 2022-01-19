@@ -19,23 +19,14 @@ import {
 import DashboardWrapper from '../../examples/DashboardWrapper';
 
 export const GrayTabsDemo: React.FunctionComponent = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState(0);
-  const [activeNestedTabKey, setActiveNestedTabKey] = React.useState(10);
+  const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
+  const [activeNestedTabKey, setActiveNestedTabKey] = React.useState<string | number>(0);
 
   // Toggle currently active tab
-  const handleTabClick = (_: React.MouseEvent, tabIndex: string | number) => {
-    if (typeof tabIndex === 'string') {
-      return setActiveTabKey(parseInt(tabIndex));
-    }
-    return setActiveTabKey(tabIndex);
-  };
+  const handleTabClick = (_: React.MouseEvent, tabIndex: string | number) => setActiveTabKey(tabIndex);
+
   // Toggle currently active nested tab
-  const handleNestedTabClick = (_: React.MouseEvent, tabIndex: string | number) => {
-    if (typeof tabIndex === 'string') {
-      return setActiveNestedTabKey(parseInt(tabIndex));
-    }
-    return setActiveNestedTabKey(tabIndex);
-  };
+  const handleNestedTabClick = (_: React.MouseEvent, tabIndex: string | number) => setActiveNestedTabKey(tabIndex);
 
   const tabContent = (
     <Grid hasGutter>
