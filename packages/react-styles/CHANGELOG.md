@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.41.3 (2022-01-19)
+
+
+### Bug Fixes
+
+* **examples:** amend row index in tree table examples ([#6830](https://github.com/patternfly/patternfly-react/issues/6830)) ([e676fb1](https://github.com/patternfly/patternfly-react/commit/e676fb1171618e957a4564af31c15ca6e3800507)), closes [#6719](https://github.com/patternfly/patternfly-react/issues/6719)
+
+
+
+
+
 ## 4.41.2 (2022-01-19)
 
 **Note:** Version bump only for package @patternfly/react-styles
