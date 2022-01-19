@@ -14,26 +14,28 @@ const truncateStyles = {
   end: styles.truncateStart
 };
 
+const minWidthCharacters: number = 12;
+
 interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
   /** Class to add to outer span */
   className?: string;
   /** Text to truncate */
   content: string;
+  /** Number of characters that shoul be sliced at the end of the content string. Works best if the number is between 5 to 10. */
+  charsToSlice?: number;
   /** Where the text will be truncated */
   position?: 'start' | 'middle' | 'end';
   /** Tooltip position */
   tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
 }
 
-const splitToHalf = (str: string) => {
-  const half = Math.ceil(str.length / 2);
-  return [str.substring(0, half), str.substring(half, str.length)];
-};
+const sliceContent = (str: string, slice: number) => [str.slice(0, str.length - slice), str.slice(-slice)];
 
 export const Truncate: React.FunctionComponent<TruncateProps> = ({
   className,
   position = 'end',
   tooltipPosition = 'top',
+  charsToSlice = 7,
   content,
   ...props
 }: TruncateProps) => (
@@ -41,22 +43,20 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
     <span className={css(styles.truncate, className)} {...props}>
       {(position === TruncatePosition.end || position === TruncatePosition.start) && (
         <span className={truncateStyles[position]}>
-          <span className={styles.truncateText}>
-            {content}
-            {position === TruncatePosition.start && <React.Fragment>&lrm;</React.Fragment>}
-          </span>
+          {content}
+          {position === TruncatePosition.start && <React.Fragment>&lrm;</React.Fragment>}
         </span>
       )}
-      {position === TruncatePosition.middle && (
-        <React.Fragment>
-          <span className={styles.truncateStart}>
-            <span className={styles.truncateText}>{splitToHalf(content)[0]}</span>
-          </span>
-          <span className={styles.truncateEnd}>
-            <span className={styles.truncateText}>{splitToHalf(content)[1]}</span>
-          </span>
-        </React.Fragment>
-      )}
+      {position === TruncatePosition.middle &&
+        content.slice(0, content.length - charsToSlice).length > minWidthCharacters && (
+          <React.Fragment>
+            <span className={styles.truncateStart}>{sliceContent(content, charsToSlice)[0]}</span>
+            <span className={styles.truncateEnd}>{sliceContent(content, charsToSlice)[1]}</span>
+          </React.Fragment>
+        )}
+      {position === TruncatePosition.middle &&
+        content.slice(0, content.length - charsToSlice).length <= minWidthCharacters &&
+        content}
     </span>
   </Tooltip>
 );
