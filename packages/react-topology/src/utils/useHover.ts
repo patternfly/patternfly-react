@@ -6,12 +6,12 @@ const useHover = <T extends Element>(
   delayOut: number = 200
 ): [boolean, (node: T) => (() => void) | undefined] => {
   const [hover, setHover] = React.useState<boolean>(false);
-  const unmountRef = React.useRef(false);
+  const mountRef = React.useRef(true);
 
   // need to ensure we do not start the unset timer on unmount
   React.useEffect(
     () => () => {
-      unmountRef.current = true;
+      mountRef.current = false;
     },
     []
   );
@@ -55,12 +55,16 @@ const useHover = <T extends Element>(
             node.removeEventListener('mouseenter', onMouseEnter);
             node.removeEventListener('mouseleave', onMouseLeave);
             clearTimeout(delayHandle);
-            if (!unmountRef.current) {
+            if (mountRef.current) {
               // Queue the unset in case reattaching to a new node in the same location.
               // This can happen with layers. Rendering a node to a new layer will unmount the old node
               // and remount a new node at the same location. This will prevent flickering and getting
               // stuck in a hover state.
-              unsetHandle.current = window.setTimeout(() => setHover(false), Math.max(delayIn, delayOut));
+              unsetHandle.current = window.setTimeout(() => {
+                if (mountRef.current) {
+                  setHover(false);
+                }
+              }, Math.max(delayIn, delayOut));
             }
           };
         }
