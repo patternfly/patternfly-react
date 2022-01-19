@@ -4,6 +4,7 @@ import { css } from '@patternfly/react-styles';
 import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import { Button, ButtonProps } from '../Button';
+import { KEY_CODES } from '../../helpers';
 
 export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
   /** Value of the number input */
@@ -44,6 +45,19 @@ export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
   plusBtnProps?: ButtonProps;
 }
 
+type DefaultKeyDownHandlerArgs = Pick<NumberInputProps, 'inputName' | 'onMinus' | 'onPlus'>;
+
+const defaultKeyDownHandler = (args: DefaultKeyDownHandlerArgs) => (event: React.KeyboardEvent<HTMLInputElement>) => {
+  if (KEY_CODES.ARROW_UP === event.keyCode && args.onPlus) {
+    event.preventDefault();
+    args.onPlus(null, args.inputName);
+  }
+  if (KEY_CODES.ARROW_DOWN === event.keyCode && args.onMinus) {
+    event.preventDefault();
+    args.onMinus(null, args.inputName);
+  }
+};
+
 export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   value = 0,
   className,
@@ -66,6 +80,8 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   ...props
 }: NumberInputProps) => {
   const numberInputUnit = <div className={css(styles.numberInputUnit)}>{unit}</div>;
+  const keyDownHandler =
+    inputProps && inputProps.onKeyDown ? inputProps.onKeyDown : defaultKeyDownHandler({ inputName, onMinus, onPlus });
   return (
     <div
       className={css(styles.numberInput, className)}
@@ -100,6 +116,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
           {...(onChange && { onChange })}
           {...(!onChange && { readOnly: true })}
           {...inputProps}
+          onKeyDown={keyDownHandler}
         />
         <Button
           variant="control"

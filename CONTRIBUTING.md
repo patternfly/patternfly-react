@@ -238,6 +238,8 @@ $ yarn test
 
 Ensure no lint errors are introduced in `yarn-error.log` after running this command.
 
+***Note to Windows users:*** you may need to change the path for the lint script in package.json to be `node_modules/eslint/bin/eslint`
+
 5.  Add a commit using `git commit`:
 
 This project uses [`lerna`](https://lernajs.io/) to do automatic releases and generate a changelog based on the commit history. So we follow [a convention][3] for commit messages. Please follow this convention for your commit messages.

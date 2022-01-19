@@ -3,6 +3,106 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.41.2 (2022-01-19)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.41.1 (2022-01-19)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+# 4.41.0 (2022-01-19)
+
+
+### Features
+
+* **NumberInput:** call onMinus/onPlus on arrow-up/down pressed ([#6764](https://github.com/patternfly/patternfly-react/issues/6764)) ([545a7f8](https://github.com/patternfly/patternfly-react/commit/545a7f8791dbf2937416509a01b197cc1daf80db))
+
+
+
+
+
+# 4.40.0 (2022-01-19)
+
+
+### Features
+
+* **TimePicker:** Allow for seconds via new prop; includeSeconds ([#6769](https://github.com/patternfly/patternfly-react/issues/6769)) ([417b51a](https://github.com/patternfly/patternfly-react/commit/417b51a6b8bd997042e16a0e821fb63281e53d30))
+
+
+
+
+
+## 4.39.5 (2022-01-18)
+
+
+### Bug Fixes
+
+* **Tabs:** enable tabs scroll button for small window ([#6784](https://github.com/patternfly/patternfly-react/issues/6784)) ([a29b430](https://github.com/patternfly/patternfly-react/commit/a29b43094ae3d5ce7f4b26e4041cd595e675ee58))
+
+
+
+
+
+## 4.39.4 (2022-01-18)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.39.3 (2022-01-18)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.39.2 (2022-01-18)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.39.1 (2022-01-18)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+# 4.39.0 (2022-01-17)
+
+
+### Features
+
+* **Tabs:** enforce restricted type for children ([#6767](https://github.com/patternfly/patternfly-react/issues/6767)) ([0d224df](https://github.com/patternfly/patternfly-react/commit/0d224dfb71b1a89c5783bd9ea290ece2f325ad21))
+
+
+
+
+
+## 4.38.1 (2022-01-17)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
 # 4.38.0 (2022-01-14)
 
 
