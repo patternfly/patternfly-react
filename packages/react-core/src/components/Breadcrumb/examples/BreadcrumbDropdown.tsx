@@ -9,7 +9,7 @@ import {
 } from '@patternfly/react-core';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 
-const dropdownItems = [
+const dropdownItems: JSX.Element[] = [
   <DropdownItem key="edit" component="button" icon={<AngleLeftIcon />}>
     Edit
   </DropdownItem>,
@@ -22,13 +22,13 @@ const dropdownItems = [
 ];
 
 export const BreadcrumbDropdown: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const badgeToggleRef = React.useRef<HTMLButtonElement>();
 
-  const onToggle = React.useCallback(isOpen => setIsOpen(isOpen), []);
+  const onToggle = React.useCallback((isOpen: boolean) => setIsOpen(isOpen), []);
 
   const onSelect = React.useCallback(() => {
-    setIsOpen(prevIsOpen => !prevIsOpen);
+    setIsOpen((prevIsOpen: boolean) => !prevIsOpen);
     badgeToggleRef.current.focus();
   }, []);
 
