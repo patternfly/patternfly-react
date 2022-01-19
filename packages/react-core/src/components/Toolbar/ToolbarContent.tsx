@@ -83,12 +83,12 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
 
     return (
       <PageContext.Consumer>
-        {({ useResizeObserver, width, getBreakpoint }) => (
+        {({ width, getBreakpoint }) => (
           <div
             className={css(
               styles.toolbarContent,
-              formatBreakpointMods(visibility || visiblity, styles, '', getBreakpoint(width, useResizeObserver)),
-              formatBreakpointMods(alignment, styles, '', getBreakpoint(width, useResizeObserver)),
+              formatBreakpointMods(visibility || visiblity, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
               className
             )}
             {...props}

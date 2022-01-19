@@ -2,6 +2,8 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Masthead/masthead';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods } from '../../helpers/util';
+import { PageContext } from '../Page/Page';
+
 export interface MastheadProps extends React.DetailedHTMLProps<React.HTMLProps<HTMLDivElement>, HTMLDivElement> {
   /** Content rendered inside of the masthead */
   children?: React.ReactNode;
@@ -33,22 +35,27 @@ export const Masthead: React.FunctionComponent<MastheadProps> = ({
   children,
   className,
   backgroundColor = 'dark',
-  display,
+  display = {
+    md: 'inline'
+  },
   inset,
   ...props
-}: MastheadProps) => (
-  <header
-    className={css(
-      styles.masthead,
-      formatBreakpointMods(display, styles, 'display-'),
-      formatBreakpointMods(inset, styles),
-      backgroundColor === 'light' && styles.modifiers.light,
-      backgroundColor === 'light200' && styles.modifiers.light_200,
-      className
-    )}
-    {...props}
-  >
-    {children}
-  </header>
-);
+}: MastheadProps) => {
+  const { width, getBreakpoint } = React.useContext(PageContext);
+  return (
+    <header
+      className={css(
+        styles.masthead,
+        formatBreakpointMods(display, styles, 'display-', getBreakpoint(width)),
+        formatBreakpointMods(inset, styles, '', getBreakpoint(width)),
+        backgroundColor === 'light' && styles.modifiers.light,
+        backgroundColor === 'light200' && styles.modifiers.light_200,
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </header>
+  );
+};
 Masthead.displayName = 'Masthead';

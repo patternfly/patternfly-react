@@ -17,19 +17,17 @@ export interface PageContextProps {
   isManagedSidebar: boolean;
   onNavToggle: () => void;
   isNavOpen: boolean;
-  useResizeObserver: boolean;
   width: number;
   getBreakpoint: (width: number, enabled?: boolean) => 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | null;
 }
-
-export const PageContext = React.createContext<PageContextProps>({
+export const pageContextDefaults: PageContextProps = {
   isManagedSidebar: false,
   isNavOpen: false,
   onNavToggle: () => null,
-  useResizeObserver: false,
-  width: 0,
+  width: null,
   getBreakpoint
-});
+};
+export const PageContext = React.createContext<PageContextProps>(pageContextDefaults);
 
 export const PageContextProvider = PageContext.Provider;
 export const PageContextConsumer = PageContext.Consumer;
@@ -76,12 +74,7 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    */
   onPageResize?: (object: any) => void;
   /**
-   * True to listen to page width changes on a resize observer
-   * Will also add a breakpoint modifier class (pf-m-breakpoint-[xs|sm|md|lg|xl|2xl]) to the page component
-   */
-  useResizeObserver?: boolean;
-  /**
-   * Used in conjunction with useResizeObserver set to true.
+   * The page resize observer uses the breakpoints returned from this function when adding the pf-m-breakpoint-[xs|sm|md|lg|xl|2xl] class
    * You can override the default getBreakpoint function to return breakpoints at different sizes than the default
    * You can view the default getBreakpoint function here:
    * https://github.com/patternfly/patternfly-react/blob/main/packages/react-core/src/helpers/util.ts
@@ -120,7 +113,6 @@ export class Page extends React.Component<PageProps, PageState> {
     mainTabIndex: -1,
     isNotificationDrawerExpanded: false,
     onNotificationDrawerExpand: () => null,
-    useResizeObserver: false,
     getBreakpoint
   };
   mainRef = React.createRef<HTMLDivElement>();
@@ -136,20 +128,14 @@ export class Page extends React.Component<PageProps, PageState> {
       desktopIsNavOpen: managedSidebarOpen,
       mobileIsNavOpen: false,
       mobileView: false,
-      width: 0
+      width: null
     };
   }
 
   componentDidMount() {
-    const { isManagedSidebar, onPageResize, useResizeObserver } = this.props;
-    if (isManagedSidebar || onPageResize || useResizeObserver) {
-      if (canUseDOM) {
-        if (useResizeObserver) {
-          this.observer = getResizeObserver(this.pageRef.current, this.handleResize);
-        } else {
-          window.addEventListener('resize', this.handleResize);
-        }
-      }
+    const { isManagedSidebar, onPageResize } = this.props;
+    if (isManagedSidebar || onPageResize) {
+      this.observer = getResizeObserver(this.pageRef.current, this.handleResize);
       const currentRef = this.mainRef.current;
       if (currentRef) {
         currentRef.addEventListener('mousedown', this.handleMainClick);
@@ -161,15 +147,9 @@ export class Page extends React.Component<PageProps, PageState> {
   }
 
   componentWillUnmount() {
-    const { isManagedSidebar, onPageResize, useResizeObserver } = this.props;
-    if (isManagedSidebar || onPageResize || useResizeObserver) {
-      if (canUseDOM) {
-        if (useResizeObserver) {
-          this.observer();
-        } else {
-          window.removeEventListener('resize', this.handleResize);
-        }
-      }
+    const { isManagedSidebar, onPageResize } = this.props;
+    if (isManagedSidebar || onPageResize) {
+      this.observer();
       const currentRef = this.mainRef.current;
       if (currentRef) {
         currentRef.removeEventListener('mousedown', this.handleMainClick);
@@ -180,9 +160,7 @@ export class Page extends React.Component<PageProps, PageState> {
 
   getWindowWidth = () => {
     if (canUseDOM) {
-      return this.props.useResizeObserver && this.pageRef.current
-        ? this.pageRef.current.clientWidth
-        : window.innerWidth;
+      return this.pageRef.current ? this.pageRef.current.clientWidth : window.innerWidth;
     } else {
       return 1200;
     }
@@ -244,7 +222,6 @@ export class Page extends React.Component<PageProps, PageState> {
       defaultManagedSidebarIsOpen,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onPageResize,
-      useResizeObserver,
       getBreakpoint,
       mainAriaLabel,
       mainTabIndex,
@@ -261,7 +238,6 @@ export class Page extends React.Component<PageProps, PageState> {
       isManagedSidebar,
       onNavToggle: mobileView ? this.onNavToggleMobile : this.onNavToggleDesktop,
       isNavOpen: mobileView ? mobileIsNavOpen : desktopIsNavOpen,
-      useResizeObserver,
       width,
       getBreakpoint
     };
@@ -321,7 +297,7 @@ export class Page extends React.Component<PageProps, PageState> {
         <div
           ref={this.pageRef}
           {...rest}
-          className={css(styles.page, useResizeObserver && `pf-m-breakpoint-${getBreakpoint(width)}`, className)}
+          className={css(styles.page, 'pf-m-resize-observer', `pf-m-breakpoint-${getBreakpoint(width)}`, className)}
         >
           {skipToContent}
           {header}

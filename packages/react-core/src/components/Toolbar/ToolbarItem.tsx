@@ -115,7 +115,7 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
 
   return (
     <PageContext.Consumer>
-      {({ useResizeObserver, width, getBreakpoint }) => (
+      {({ width, getBreakpoint }) => (
         <div
           className={css(
             styles.toolbarItem,
@@ -130,9 +130,9 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
                   | 'chipGroup'
               ],
             isAllExpanded && styles.modifiers.expanded,
-            formatBreakpointMods(visibility || visiblity, styles, '', getBreakpoint(width, useResizeObserver)),
-            formatBreakpointMods(alignment, styles, '', getBreakpoint(width, useResizeObserver)),
-            formatBreakpointMods(spacer, styles, '', getBreakpoint(width, useResizeObserver)),
+            formatBreakpointMods(visibility || visiblity, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
             className
           )}
           {...(variant === 'label' && { 'aria-hidden': true })}

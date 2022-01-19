@@ -141,7 +141,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
 
     return (
       <PageContext.Consumer>
-        {({ useResizeObserver, width, getBreakpoint }) => (
+        {({ width, getBreakpoint }) => (
           <div
             className={css(
               styles.toolbar,
@@ -149,7 +149,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
               isStatic && styles.modifiers.static,
               usePageInsets && styles.modifiers.pageInsets,
               isSticky && styles.modifiers.sticky,
-              formatBreakpointMods(inset, styles, '', getBreakpoint(width, useResizeObserver)),
+              formatBreakpointMods(inset, styles, '', getBreakpoint(width)),
               className
             )}
             id={randomId}

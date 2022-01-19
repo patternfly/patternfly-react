@@ -6,7 +6,7 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import { isElementInView } from '../../helpers/util';
 import { NavContext } from './Nav';
 import { PageSidebarContext } from '../Page/PageSidebar';
-import { canUseDOM } from '../../helpers/util';
+import { getResizeObserver } from '../../helpers/resizeObserver';
 
 export interface NavListProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement> {
@@ -35,6 +35,7 @@ export class NavList extends React.Component<NavListProps> {
   };
 
   navList = React.createRef<HTMLUListElement>();
+  observer: any = () => {};
 
   handleScrollButtons = () => {
     const container = this.navList.current;
@@ -91,16 +92,12 @@ export class NavList extends React.Component<NavListProps> {
   };
 
   componentDidMount() {
-    if (canUseDOM) {
-      window.addEventListener('resize', this.handleScrollButtons, false);
-    }
+    this.observer = getResizeObserver(this.navList.current, this.handleScrollButtons);
     this.handleScrollButtons();
   }
 
   componentWillUnmount() {
-    if (canUseDOM) {
-      window.removeEventListener('resize', this.handleScrollButtons, false);
-    }
+    this.observer();
   }
 
   render() {

@@ -86,15 +86,15 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
 
     return (
       <PageContext.Consumer>
-        {({ useResizeObserver, width, getBreakpoint }) => (
+        {({ width, getBreakpoint }) => (
           <div
             className={css(
               styles.toolbarGroup,
               variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
-              formatBreakpointMods(visibility || visiblity, styles, '', getBreakpoint(width, useResizeObserver)),
-              formatBreakpointMods(alignment, styles, '', getBreakpoint(width, useResizeObserver)),
-              formatBreakpointMods(spacer, styles, '', getBreakpoint(width, useResizeObserver)),
-              formatBreakpointMods(spaceItems, styles, '', getBreakpoint(width, useResizeObserver)),
+              formatBreakpointMods(visibility || visiblity, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(spaceItems, styles, '', getBreakpoint(width)),
               className
             )}
             {...props}

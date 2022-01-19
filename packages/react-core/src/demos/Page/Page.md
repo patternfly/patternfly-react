@@ -11,6 +11,7 @@ import imgBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg'
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
+import LightbulbIcon from '@patternfly/react-icons/dist/esm/icons/lightbulb-icon';
 
 - All but the last example set the `isManagedSidebar` prop on the Page component to have the sidebar automatically close for smaller screen widths. You can also manually control this behavior by not adding the `isManagedSidebar` prop and instead:
 
@@ -81,6 +82,7 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
+import LightbulbIcon from '@patternfly/react-icons/dist/esm/icons/lightbulb-icon';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
@@ -93,8 +95,7 @@ class PageLayoutGrouped extends React.Component {
       isKebabDropdownOpen: false,
       isFullKebabDropdownOpen: false,
       activeItem: 0,
-      isDrawerExpanded: false,
-      useResizeObserver: true
+      isDrawerExpanded: false
     };
     this.onDropdownToggle = isDropdownOpen => {
       this.setState({
@@ -150,17 +151,10 @@ class PageLayoutGrouped extends React.Component {
         isDrawerExpanded: false
       });
     };
-
-    this.handleChange = (checked, event) => {
-      const target = event.target;
-      const value = target.type === 'checkbox' ? target.checked : target.value;
-      const name = target.name;
-      this.setState({ [name]: value });
-    };
   }
 
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, activeItem, isFullKebabDropdownOpen, isDrawerExpanded, useResizeObserver } = this.state;
+    const { isDropdownOpen, isKebabDropdownOpen, activeItem, isFullKebabDropdownOpen, isDrawerExpanded } = this.state;
 
     const PageNav = (
       <Nav variant="tertiary" onSelect={this.onNavSelect} aria-label="Nav">
@@ -228,6 +222,11 @@ class PageLayoutGrouped extends React.Component {
             alignment={{ default: 'alignRight' }}
             spacer={{ default: 'spacerNone', md: 'spacerMd' }}
           >
+            <ToolbarItem>
+              <Button aria-label="Toggle drawer" variant={ButtonVariant.plain} onClick={this.onDrawerToggle}>
+                <LightbulbIcon color={isDrawerExpanded ? 'yellow' : 'currentColor'} />
+              </Button>
+            </ToolbarItem>
             <ToolbarItem>
               <Button aria-label="Notifications" variant={ButtonVariant.plain}>
                 <AttentionBellIcon />
@@ -353,21 +352,11 @@ class PageLayoutGrouped extends React.Component {
                       of its relative line height of 1.5.
                     </Text>
                   </TextContent>
-                  <Button onClick={this.onDrawerToggle}>Toggle drawer</Button>
-                  <Checkbox
-                    label="Use Page resize observer"
-                    isChecked={this.state.useResizeObserver}
-                    onChange={this.handleChange}
-                    aria-label="Use Page resize observer"
-                    id="useResizeObserver"
-                    name="useResizeObserver"
-                  />
                 </PageSection>
               }
               groupProps={{
                 sticky: 'top'
               }}
-              useResizeObserver={useResizeObserver}
             >
               <PageSection>
                 <Gallery hasGutter>

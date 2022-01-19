@@ -38,7 +38,7 @@ export interface NavProps
   variant?: 'default' | 'horizontal' | 'tertiary' | 'horizontal-subnav';
 }
 
-export const NavContext = React.createContext<{
+export interface NavContextProps {
   onSelect?: (
     event: React.FormEvent<HTMLInputElement>,
     groupId: number | string,
@@ -57,7 +57,9 @@ export const NavContext = React.createContext<{
   isHorizontal?: boolean;
   flyoutRef?: React.Ref<HTMLLIElement>;
   setFlyoutRef?: (ref: React.Ref<HTMLLIElement>) => void;
-}>({});
+}
+export const navContextDefaults = {};
+export const NavContext = React.createContext<NavContextProps>(navContextDefaults);
 
 export class Nav extends React.Component<
   NavProps,

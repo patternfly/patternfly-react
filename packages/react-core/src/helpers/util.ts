@@ -288,21 +288,24 @@ export const formatBreakpointMods = (
     return '';
   }
   if (breakpoint) {
-    if ('default' in mods && breakpoint === 'xs') {
-      return styles.modifiers[`${stylePrefix}${mods.default}`];
+    if (breakpoint === 'xs') {
+      if ('default' in mods) {
+        return styles.modifiers[toCamel(`${stylePrefix}${mods.default}`)];
+      }
+      return '';
     }
     if (breakpoint in mods) {
-      return styles.modifiers[mods[breakpoint as keyof Mods]];
-    } else {
-      // find the next nearest breakpoint specified in mods
-      const breakpointsOrder = ['2xl', 'xl', 'lg', 'md', 'sm', 'default'];
-      const breakpointsIndex = breakpointsOrder.indexOf(breakpoint);
-      for (let i = breakpointsIndex; i < breakpointsOrder.length; i++) {
-        if (breakpointsOrder[i] in mods) {
-          return styles.modifiers[mods[breakpointsOrder[i] as keyof Mods]];
-        }
+      return styles.modifiers[toCamel(`${stylePrefix}${mods[breakpoint as keyof Mods]}`)];
+    }
+    // the current breakpoint is not specified in mods, so we try to find the next nearest
+    const breakpointsOrder = ['2xl', 'xl', 'lg', 'md', 'sm', 'default'];
+    const breakpointsIndex = breakpointsOrder.indexOf(breakpoint);
+    for (let i = breakpointsIndex; i < breakpointsOrder.length; i++) {
+      if (breakpointsOrder[i] in mods) {
+        return styles.modifiers[toCamel(`${stylePrefix}${mods[breakpointsOrder[i] as keyof Mods]}`)];
       }
     }
+    return '';
   }
   return Object.entries(mods || {})
     .map(([breakpoint, mod]) => `${stylePrefix}${mod}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`)
@@ -317,13 +320,9 @@ export const formatBreakpointMods = (
  * Return the breakpoint for the given width
  *
  * @param {number} width The width to check
- * @param {boolean} enabled Function returns null if this is set to false
- * @returns {string | null}
+ * @returns {'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'} The breakpoint
  */
-export const getBreakpoint = (width: number, enabled?: boolean) => {
-  if (enabled === false) {
-    return null;
-  }
+export const getBreakpoint = (width: number): 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' => {
   if (width >= 1450) {
     return '2xl';
   }

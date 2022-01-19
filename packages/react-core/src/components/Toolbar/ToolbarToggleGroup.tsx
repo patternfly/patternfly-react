@@ -6,7 +6,7 @@ import { ToolbarGroupProps } from './ToolbarGroup';
 import { ToolbarContext, ToolbarContentContext } from './ToolbarUtils';
 import { Button } from '../Button';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/global_breakpoint_lg';
-import { formatBreakpointMods, toCamel, capitalize, canUseDOM } from '../../helpers/util';
+import { formatBreakpointMods, toCamel, canUseDOM } from '../../helpers/util';
 import { PageContext } from '../Page/Page';
 
 export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
@@ -94,7 +94,7 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
 
     return (
       <PageContext.Consumer>
-        {({ useResizeObserver, width, getBreakpoint }) => (
+        {({ width, getBreakpoint }) => (
           <ToolbarContext.Consumer>
             {({ isExpanded, toggleIsExpanded }) => (
               <ToolbarContentContext.Consumer>
@@ -114,25 +114,11 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
                         styles.modifiers.toggleGroup,
                         variant &&
                           styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
-                        !useResizeObserver &&
-                          breakpoint &&
-                          styles.modifiers[
-                            `showOn${capitalize(breakpoint.replace('2xl', '_2xl'))}` as
-                              | 'showOnMd'
-                              | 'showOnLg'
-                              | 'showOnXl'
-                              | 'showOn_2xl'
-                          ],
-                        useResizeObserver && breakpoint && getBreakpoint(width) === breakpoint && styles.modifiers.show,
-                        formatBreakpointMods(
-                          visibility || visiblity,
-                          styles,
-                          '',
-                          getBreakpoint(width, useResizeObserver)
-                        ),
-                        formatBreakpointMods(alignment, styles, '', getBreakpoint(width, useResizeObserver)),
-                        formatBreakpointMods(spacer, styles, '', getBreakpoint(width, useResizeObserver)),
-                        formatBreakpointMods(spaceItems, styles, '', getBreakpoint(width, useResizeObserver)),
+                        breakpoint && getBreakpoint(width) === breakpoint && styles.modifiers.show,
+                        formatBreakpointMods(visibility || visiblity, styles, '', getBreakpoint(width)),
+                        formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
+                        formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
+                        formatBreakpointMods(spaceItems, styles, '', getBreakpoint(width)),
                         className
                       )}
                       {...props}

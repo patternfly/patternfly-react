@@ -32,13 +32,13 @@ export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemPro
   isSelected,
   ...props
 }: PageHeaderToolsItemProps) => {
-  const { useResizeObserver, width, getBreakpoint } = React.useContext(PageContext);
+  const { width, getBreakpoint } = React.useContext(PageContext);
   return (
     <div
       className={css(
         styles.pageHeaderToolsItem,
         isSelected && styles.modifiers.selected,
-        formatBreakpointMods(visibility, styles, '', getBreakpoint(width, useResizeObserver)),
+        formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
         className
       )}
       id={id}

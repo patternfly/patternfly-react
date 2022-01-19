@@ -26,12 +26,12 @@ export const PageHeaderToolsGroup: React.FunctionComponent<PageHeaderToolsGroupP
   visibility,
   ...props
 }: PageHeaderToolsGroupProps) => {
-  const { useResizeObserver, width, getBreakpoint } = React.useContext(PageContext);
+  const { width, getBreakpoint } = React.useContext(PageContext);
   return (
     <div
       className={css(
         styles.pageHeaderToolsGroup,
-        formatBreakpointMods(visibility, styles, '', getBreakpoint(width, useResizeObserver)),
+        formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
         className
       )}
       {...props}
