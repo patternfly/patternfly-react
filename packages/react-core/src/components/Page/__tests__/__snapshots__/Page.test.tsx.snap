@@ -30,7 +30,7 @@ exports[`Check dark page against snapshot 1`] = `
 >
   <div
     aria-label="Page layout"
-    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-xs my-page-class"
+    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-default my-page-class"
     id="PageId"
   >
     <PageHeader
@@ -143,7 +143,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
 >
   <div
     aria-label="Page layout"
-    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-xs my-page-class"
+    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-default my-page-class"
     id="PageId"
   >
     <PageHeader
@@ -257,7 +257,7 @@ exports[`Check page to verify breadcrumb is created - PageBreadcrumb syntax 1`] 
 >
   <div
     aria-label="Page layout"
-    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-xs my-page-class"
+    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-default my-page-class"
     id="PageId"
   >
     <PageHeader
@@ -536,7 +536,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
 >
   <div
     aria-label="Page layout"
-    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-xs my-page-class"
+    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-default my-page-class"
     id="PageId"
   >
     <PageHeader
@@ -814,7 +814,7 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
 >
   <div
     aria-label="Page layout"
-    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-xs my-page-class"
+    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-default my-page-class"
     id="PageId"
   >
     <PageHeader
@@ -1373,7 +1373,7 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
 >
   <div
     aria-label="Page layout"
-    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-xs my-page-class"
+    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-default my-page-class"
     id="PageId"
   >
     <PageHeader
@@ -1860,7 +1860,7 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
 >
   <div
     aria-label="Page layout"
-    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-xs my-page-class"
+    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-default my-page-class"
     id="PageId"
   >
     <PageHeader
@@ -2204,7 +2204,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
 >
   <div
     aria-label="Page layout"
-    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-xs my-page-class"
+    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-default my-page-class"
     id="PageId"
   >
     <SkipToContent
@@ -2493,7 +2493,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 >
   <div
     aria-label="Page layout"
-    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-xs my-page-class"
+    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-default my-page-class"
     id="PageId"
   >
     <PageHeader

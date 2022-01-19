@@ -13,7 +13,7 @@ exports[`Page should match snapshot (auto-generated) 1`] = `
   }
 >
   <div
-    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-xs ''"
+    className="pf-c-page pf-m-resize-observer pf-m-breakpoint-default ''"
   >
     <main
       aria-label="string"

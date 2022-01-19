@@ -282,18 +282,12 @@ export const formatBreakpointMods = (
   mods: Mods,
   styles: any,
   stylePrefix: string = '',
-  breakpoint?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
+  breakpoint?: 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
 ) => {
   if (!mods) {
     return '';
   }
   if (breakpoint) {
-    if (breakpoint === 'xs') {
-      if ('default' in mods) {
-        return styles.modifiers[toCamel(`${stylePrefix}${mods.default}`)];
-      }
-      return '';
-    }
     if (breakpoint in mods) {
       return styles.modifiers[toCamel(`${stylePrefix}${mods[breakpoint as keyof Mods]}`)];
     }
@@ -320,9 +314,9 @@ export const formatBreakpointMods = (
  * Return the breakpoint for the given width
  *
  * @param {number} width The width to check
- * @returns {'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'} The breakpoint
+ * @returns {'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'} The breakpoint
  */
-export const getBreakpoint = (width: number): 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' => {
+export const getBreakpoint = (width: number): 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' => {
   if (width >= 1450) {
     return '2xl';
   }
@@ -338,7 +332,7 @@ export const getBreakpoint = (width: number): 'xs' | 'sm' | 'md' | 'lg' | 'xl' |
   if (width >= 576) {
     return 'sm';
   }
-  return 'xs';
+  return 'default';
 };
 
 const camelize = (s: string) =>

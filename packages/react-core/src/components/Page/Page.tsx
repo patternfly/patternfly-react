@@ -18,7 +18,7 @@ export interface PageContextProps {
   onNavToggle: () => void;
   isNavOpen: boolean;
   width: number;
-  getBreakpoint: (width: number) => 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  getBreakpoint: (width: number) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 }
 export const pageContextDefaults: PageContextProps = {
   isManagedSidebar: false,
@@ -74,12 +74,12 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    */
   onPageResize?: (object: any) => void;
   /**
-   * The page resize observer uses the breakpoints returned from this function when adding the pf-m-breakpoint-[xs|sm|md|lg|xl|2xl] class
+   * The page resize observer uses the breakpoints returned from this function when adding the pf-m-breakpoint-[default|sm|md|lg|xl|2xl] class
    * You can override the default getBreakpoint function to return breakpoints at different sizes than the default
    * You can view the default getBreakpoint function here:
    * https://github.com/patternfly/patternfly-react/blob/main/packages/react-core/src/helpers/util.ts
    */
-  getBreakpoint?: (width: number) => 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  getBreakpoint?: (width: number) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   /** Breadcrumb component for the page */
   breadcrumb?: React.ReactNode;
   /** Tertiary nav component for the page */
