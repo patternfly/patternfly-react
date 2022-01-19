@@ -18,22 +18,22 @@ import {
 } from '@patternfly/react-core';
 import DashboardWrapper from '../../examples/DashboardWrapper';
 
-export const GrayTabsDemo = () => {
+export const GrayTabsDemo: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);
   const [activeNestedTabKey, setActiveNestedTabKey] = React.useState(10);
 
   // Toggle currently active tab
-  const handleTabClick = (_, tabIndex) => setActiveTabKey(tabIndex);
+  const handleTabClick = (_: React.MouseEvent, tabIndex: string) => setActiveTabKey(parseInt(tabIndex));
 
   // Toggle currently active nested tab
-  const handleNestedTabClick = (_, tabIndex) => setActiveNestedTabKey(tabIndex);
+  const handleNestedTabClick = (_: React.MouseEvent, tabIndex: string) => setActiveNestedTabKey(parseInt(tabIndex));
 
   const tabContent = (
     <Grid hasGutter>
       <GridItem xl={8} md={6}>
         <Card>
           <CardHeader>
-            <Title headingLevel="h3">Status</Title>
+            <Title headingLevel="h2">Status</Title>
           </CardHeader>
           <CardBody>
             <Flex direction={{ default: 'column' }}>
@@ -109,14 +109,14 @@ export const GrayTabsDemo = () => {
           <FlexItem flex={{ default: 'flex_1' }}>
             <Card isFullHeight>
               <CardHeader>
-                <Title headingLevel="h3">Title of Card</Title>
+                <Title headingLevel="h2">Title of Card</Title>
               </CardHeader>
             </Card>
           </FlexItem>
           <FlexItem flex={{ default: 'flex_1' }}>
             <Card isFullHeight>
               <CardHeader>
-                <Title headingLevel="h3">Title of Card</Title>
+                <Title headingLevel="h2">Title of Card</Title>
               </CardHeader>
             </Card>
           </FlexItem>
