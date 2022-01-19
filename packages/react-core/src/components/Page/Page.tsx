@@ -79,7 +79,7 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    * You can view the default getBreakpoint function here:
    * https://github.com/patternfly/patternfly-react/blob/main/packages/react-core/src/helpers/util.ts
    */
-  getBreakpoint?: (width: number, enabled?: boolean) => 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | null;
+  getBreakpoint?: (width: number) => 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   /** Breadcrumb component for the page */
   breadcrumb?: React.ReactNode;
   /** Tertiary nav component for the page */
