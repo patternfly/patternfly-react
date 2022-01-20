@@ -12,7 +12,10 @@ beta: true
 import React from 'react';
 import { DatePicker } from '@patternfly/react-core';
 
-<DatePicker onChange={(str, date) => console.log('onChange', str, date)} />
+<DatePicker
+  onBlur={(str, date) => console.log('onBlur', str, date)}
+  onChange={(str, date) => console.log('onChange', str, date)}
+/>
 ```
 
 ### American format
