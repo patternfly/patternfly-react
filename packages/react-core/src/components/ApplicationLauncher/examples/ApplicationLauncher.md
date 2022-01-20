@@ -32,12 +32,12 @@ To add a tooltip, use the `tooltip` prop and optionally add more tooltip props b
 
 ### Aligned right
 
-```ts file="./ApplicationLauncherRightAlign.tsx"
+```ts file="./ApplicationLauncherAlignRight.tsx"
 ```
 
 ### Aligned top
 
-```ts file="./ApplicationLauncherTopAlign.tsx"
+```ts file="./ApplicationLauncherAlignTop.tsx"
 ```
 
 ### With tooltip
@@ -62,5 +62,5 @@ To add a tooltip, use the `tooltip` prop and optionally add more tooltip props b
 
 ### Basic with menu appended to document body
 
-```ts file="./ApplicationLauncherMenu.tsx"
+```ts file="./ApplicationLauncherDocumentBody.tsx"
 ```
