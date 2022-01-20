@@ -92,11 +92,11 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
     }
   };
 
-  const handleTab = (event: React.KeyboardEvent) => {
+  const handleTab = () => {
     if (menuItems.length === 3) {
       setInputValue(menuItems[2].props.children);
-      event.preventDefault();
     }
+    setMenuIsOpen(false);
   };
 
   /** close the menu when escape is hit */
@@ -129,7 +129,7 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
         handleEscape();
         break;
       case 'Tab':
-        handleTab(event);
+        handleTab();
         break;
       case 'ArrowUp':
       case 'ArrowDown':
@@ -166,18 +166,28 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
 
   /** enable keyboard only usage while focused on the menu */
   const handleMenuKeyDown = (event: React.KeyboardEvent) => {
-    if (event.key === 'Escape') {
-      setInputValue('');
-      focusTextInput();
-      setMenuIsOpen(false);
+    switch (event.key) {
+      case 'Tab':
+      case 'Escape':
+        event.preventDefault();
+        focusTextInput();
+        setMenuIsOpen(false);
+        break;
+      case 'Enter':
+      case ' ':
+        setTimeout(() => setMenuIsOpen(false), 0);
+        break;
     }
   };
 
-  /** only show the search icon when no chips are selected */
+  /** show the search icon only when there are no chips to prevent the chips from being displayed behind the icon */
   const showSearchIcon = !currentChips.length;
 
   /** only show the clear button when there is something that can be cleared */
   const showClearButton = !!inputValue || !!currentChips.length;
+
+  /** render the utilities component only when a component it contains is being rendered */
+  const showUtilities = showClearButton;
 
   const inputGroup = (
     <div ref={textInputGroupRef}>
@@ -188,6 +198,8 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
           onChange={handleInputChange}
           onFocus={() => setMenuIsOpen(true)}
           onKeyDown={handleTextInputKeyDown}
+          placeholder="search"
+          aria-label="Search input"
         >
           <ChipGroup>
             {currentChips.map(currentChip => (
@@ -197,13 +209,15 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
             ))}
           </ChipGroup>
         </TextInputGroupMain>
-        <TextInputGroupUtilities>
-          {showClearButton && (
-            <Button variant="plain" onClick={clearChipsAndInput} aria-label="Clear button and input">
-              <TimesIcon />
-            </Button>
-          )}
-        </TextInputGroupUtilities>
+        {showUtilities && (
+          <TextInputGroupUtilities>
+            {showClearButton && (
+              <Button variant="plain" onClick={clearChipsAndInput} aria-label="Clear button for chips and input">
+                <TimesIcon />
+              </Button>
+            )}
+          </TextInputGroupUtilities>
+        )}
       </TextInputGroup>
     </div>
   );

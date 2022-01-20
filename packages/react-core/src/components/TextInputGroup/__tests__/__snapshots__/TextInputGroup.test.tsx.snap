@@ -22,6 +22,7 @@ exports[`TextInputGroup gets custom class and id 1`] = `
             className="pf-c-text-input-group__text-input"
             onChange={[Function]}
             type="text"
+            value=""
           />
         </span>
       </div>
@@ -53,6 +54,7 @@ exports[`TextInputGroup renders content 1`] = `
             className="pf-c-text-input-group__text-input"
             onChange={[Function]}
             type="text"
+            value=""
           />
         </span>
       </div>
@@ -87,6 +89,7 @@ exports[`TextInputGroup renders with the proper stying when disabled 1`] = `
             disabled={true}
             onChange={[Function]}
             type="text"
+            value=""
           />
         </span>
       </div>
@@ -115,6 +118,7 @@ exports[`TextInputGroupMain renders content 1`] = `
         disabled={false}
         onChange={[Function]}
         type="text"
+        value=""
       />
     </span>
   </div>
@@ -172,6 +176,7 @@ exports[`TextInputGroupMain renders given input icon props 1`] = `
         disabled={false}
         onChange={[Function]}
         type="text"
+        value=""
       />
     </span>
   </div>
@@ -195,6 +200,7 @@ exports[`TextInputGroupMain renders the input with custom aria label when given 
         disabled={false}
         onChange={[Function]}
         type="text"
+        value=""
       />
     </span>
   </div>

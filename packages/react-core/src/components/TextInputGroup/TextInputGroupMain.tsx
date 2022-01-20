@@ -31,6 +31,10 @@ export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivEle
   onBlur?: (event?: any) => void;
   /** Accessibility label for the input */
   'aria-label'?: string;
+  /** Value for the input */
+  value?: string | number;
+  /** Placeholder value for the input */
+  placeholder?: string;
 }
 
 export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps> = ({
@@ -43,6 +47,7 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
   onBlur,
   'aria-label': ariaLabel = 'Type to filter',
   value: inputValue,
+  placeholder: inputPlaceHolder,
   ...props
 }: TextInputGroupMainProps) => {
   const { isDisabled } = React.useContext(TextInputGroupContext);
@@ -64,7 +69,8 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
           onChange={handleChange}
           onFocus={onFocus}
           onBlur={onBlur}
-          value={inputValue}
+          value={inputValue || ''}
+          placeholder={inputPlaceHolder}
         />
       </span>
     </div>
