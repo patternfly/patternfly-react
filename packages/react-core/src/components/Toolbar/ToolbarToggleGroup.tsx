@@ -107,6 +107,14 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
                     }
                   }
 
+                  const breakpointMod: {
+                    md?: 'show';
+                    lg?: 'show';
+                    xl?: 'show';
+                    '2xl'?: 'show';
+                  } = {};
+                  breakpointMod[breakpoint] = 'show';
+
                   return (
                     <div
                       className={css(
@@ -114,7 +122,7 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
                         styles.modifiers.toggleGroup,
                         variant &&
                           styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
-                        breakpoint && getBreakpoint(width) === breakpoint && styles.modifiers.show,
+                        formatBreakpointMods(breakpointMod, styles, '', getBreakpoint(width)),
                         formatBreakpointMods(visibility || visiblity, styles, '', getBreakpoint(width)),
                         formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
                         formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
