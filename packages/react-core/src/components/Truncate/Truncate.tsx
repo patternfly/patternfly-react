@@ -21,8 +21,8 @@ interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
   className?: string;
   /** Text to truncate */
   content: string;
-  /** Number of characters that shoul be sliced at the end of the content string. Works best if the number is between 5 to 10. */
-  charsToSlice?: number;
+  /** The number of characters displayed in the second half of the truncation */
+  trailingNumChars?: number;
   /** Where the text will be truncated */
   position?: 'start' | 'middle' | 'end';
   /** Tooltip position */
@@ -35,7 +35,7 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
   className,
   position = 'end',
   tooltipPosition = 'top',
-  charsToSlice = 7,
+  trailingNumChars = 7,
   content,
   ...props
 }: TruncateProps) => (
@@ -48,14 +48,14 @@ export const Truncate: React.FunctionComponent<TruncateProps> = ({
         </span>
       )}
       {position === TruncatePosition.middle &&
-        content.slice(0, content.length - charsToSlice).length > minWidthCharacters && (
+        content.slice(0, content.length - trailingNumChars).length > minWidthCharacters && (
           <React.Fragment>
-            <span className={styles.truncateStart}>{sliceContent(content, charsToSlice)[0]}</span>
-            <span className={styles.truncateEnd}>{sliceContent(content, charsToSlice)[1]}</span>
+            <span className={styles.truncateStart}>{sliceContent(content, trailingNumChars)[0]}</span>
+            <span className={styles.truncateEnd}>{sliceContent(content, trailingNumChars)[1]}</span>
           </React.Fragment>
         )}
       {position === TruncatePosition.middle &&
-        content.slice(0, content.length - charsToSlice).length <= minWidthCharacters &&
+        content.slice(0, content.length - trailingNumChars).length <= minWidthCharacters &&
         content}
     </span>
   </Tooltip>
