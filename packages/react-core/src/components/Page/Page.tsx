@@ -297,7 +297,12 @@ export class Page extends React.Component<PageProps, PageState> {
         <div
           ref={this.pageRef}
           {...rest}
-          className={css(styles.page, 'pf-m-resize-observer', `pf-m-breakpoint-${getBreakpoint(width)}`, className)}
+          className={css(
+            styles.page,
+            width !== null && 'pf-m-resize-observer',
+            width !== null && `pf-m-breakpoint-${getBreakpoint(width)}`,
+            className
+          )}
         >
           {skipToContent}
           {header}
