@@ -43,5 +43,6 @@ export const withRemoveConnector = <P extends WithRemoveConnectorProps & Element
       </WrappedComponent>
     );
   };
+  Component.displayName = `withRemoveConnector(${WrappedComponent.displayName || WrappedComponent.name})`;
   return observer(Component);
 };

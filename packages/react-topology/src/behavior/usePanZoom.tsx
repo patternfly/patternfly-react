@@ -114,5 +114,6 @@ export const withPanZoom = () => <P extends WithPanZoomProps>(WrappedComponent: 
     const panZoomRef = usePanZoom();
     return <WrappedComponent {...(props as any)} panZoomRef={panZoomRef} />;
   };
+  Component.displayName = `withPanZoom(${WrappedComponent.displayName || WrappedComponent.name})`;
   return observer(Component);
 };

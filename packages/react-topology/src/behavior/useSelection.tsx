@@ -87,5 +87,6 @@ export const withSelection = (options?: Options) => <P extends WithSelectionProp
     const [selected, onSelect] = useSelection(options);
     return <WrappedComponent {...(props as any)} selected={selected} onSelect={onSelect} />;
   };
+  Component.displayName = `withSelection(${WrappedComponent.displayName || WrappedComponent.name})`;
   return observer(Component);
 };

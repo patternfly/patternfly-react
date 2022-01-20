@@ -50,5 +50,6 @@ export const withContextMenu = <E extends TopologyElement>(
       </>
     );
   };
+  Component.displayName = `withContextMenu(${WrappedComponent.displayName || WrappedComponent.name})`;
   return observer(Component);
 };

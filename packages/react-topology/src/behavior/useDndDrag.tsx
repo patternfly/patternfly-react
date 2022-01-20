@@ -319,5 +319,6 @@ export const withDndDrag = <
     const [dndDragProps, dndDragRef] = useDndDrag(spec, props as any);
     return <WrappedComponent {...(props as any)} {...dndDragProps} dndDragRef={dndDragRef} />;
   };
+  Component.displayName = `withDndDrag(${WrappedComponent.displayName || WrappedComponent.name})`;
   return observer(Component);
 };

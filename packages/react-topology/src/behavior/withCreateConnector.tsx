@@ -264,5 +264,6 @@ export const withCreateConnector = <P extends WithCreateConnectorProps & Element
       </>
     );
   };
+  Component.displayName = `withCreateConnector(${WrappedComponent.displayName || WrappedComponent.name})`;
   return observer(Component);
 };
