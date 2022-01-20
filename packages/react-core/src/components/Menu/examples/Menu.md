@@ -749,7 +749,7 @@ class MenuWithDrilldown extends React.Component {
               direction="down"
               drilldownMenu={
                 <DrilldownMenu id="drilldownMenuStart">
-                  <MenuItem itemId="group:start_rollout" direction="up">
+                  <MenuItem itemId="group:start_rollout_breadcrumb" direction="up">
                     Start rollout
                   </MenuItem>
                   <Divider component="li" />
@@ -759,7 +759,7 @@ class MenuWithDrilldown extends React.Component {
                     direction="down"
                     drilldownMenu={
                       <DrilldownMenu id="drilldownMenuStartGrouping">
-                        <MenuItem itemId="group:app_grouping" direction="up">
+                        <MenuItem itemId="group:app_grouping_breadcrumb" direction="up">
                           Application grouping
                         </MenuItem>
                         <Divider component="li" />
@@ -777,7 +777,7 @@ class MenuWithDrilldown extends React.Component {
                     direction="down"
                     drilldownMenu={
                       <DrilldownMenu id="drilldownMenuStartLabels">
-                        <MenuItem itemId="group:labels" direction="up">
+                        <MenuItem itemId="group:labels_breadcrumb" direction="up">
                           Labels
                         </MenuItem>
                         <Divider component="li" />
@@ -800,7 +800,7 @@ class MenuWithDrilldown extends React.Component {
               direction="down"
               drilldownMenu={
                 <DrilldownMenu id="drilldownMenuPause">
-                  <MenuItem itemId="group:pause_rollout" direction="up">
+                  <MenuItem itemId="group:pause_rollout_breadcrumb" direction="up">
                     Pause rollouts
                   </MenuItem>
                   <Divider component="li" />
@@ -810,7 +810,7 @@ class MenuWithDrilldown extends React.Component {
                     direction="down"
                     drilldownMenu={
                       <DrilldownMenu id="drilldownMenuGrouping">
-                        <MenuItem itemId="group:app_grouping" direction="up">
+                        <MenuItem itemId="group:app_grouping_breadcrumb" direction="up">
                           Application grouping
                         </MenuItem>
                         <Divider component="li" />
@@ -828,7 +828,7 @@ class MenuWithDrilldown extends React.Component {
                     direction="down"
                     drilldownMenu={
                       <DrilldownMenu id="drilldownMenuLabels">
-                        <MenuItem itemId="group:labels" direction="up">
+                        <MenuItem itemId="group:labels_breadcrumb" direction="up">
                           Labels
                         </MenuItem>
                         <Divider component="li" />
@@ -852,7 +852,7 @@ class MenuWithDrilldown extends React.Component {
               direction="down"
               drilldownMenu={
                 <DrilldownMenu id="drilldownMenuStorage">
-                  <MenuItem itemId="group:storage" icon={<StorageDomainIcon aria-hidden />} direction="up">
+                  <MenuItem itemId="group:storage_breadcrumb" icon={<StorageDomainIcon aria-hidden />} direction="up">
                     Add storage
                   </MenuItem>
                   <Divider component="li" />
