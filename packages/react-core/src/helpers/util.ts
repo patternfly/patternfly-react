@@ -318,7 +318,7 @@ export const formatBreakpointMods = (
  */
 export const getBreakpoint = (width: number): 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' => {
   if (width === null) {
-    width = canUseDOM ? window.innerWidth : 1200;
+    return null;
   }
   if (width >= 1450) {
     return '2xl';
