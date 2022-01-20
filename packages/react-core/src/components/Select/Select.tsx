@@ -856,7 +856,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       if (renderableItems.find(item => (item as any)?.key === 'loading') === undefined) {
         if (loadingVariant === 'spinner') {
           renderableItems.push(
-            <SelectOption isLoading key="loading" value="loading">
+            <SelectOption isLoading key="loading" value="loading" isGrouped>
               <Spinner size="lg" />
             </SelectOption>
           );
@@ -866,6 +866,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
               isLoad
               key="loading"
               value={loadingVariant.text}
+              isGrouped
               setViewMoreNextIndex={this.setVieMoreNextIndex}
               onClick={loadingVariant?.onClick}
             />

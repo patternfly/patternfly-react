@@ -326,6 +326,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.SelectFavoritesDemo
   },
   {
+    id: 'select-view-more-grouped-demo',
+    name: 'Select View More Grouped Demo',
+    componentType: Examples.SelectViewMoreGroupedDemo
+  },
+  {
     id: 'select-validated-demo',
     name: 'Select Validated Demo',
     componentType: Examples.SelectValidatedDemo
