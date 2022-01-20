@@ -684,13 +684,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
               if (tabbableItems.length > 0) {
                 // if current element is not in footer, tab to first tabbable element in footer,
                 // if shift was clicked, tab to input since focus is on menu
-                const currentElementIndex = tabbableItems.findIndex(item => item === document.activeElement);
+                const currentElementIndex = tabbableItems.findIndex((item: any) => item === document.activeElement);
                 if (currentElementIndex === -1) {
                   if (shiftKey) {
-                    // currently in menu shift back to input
+                    // currently in menu, shift back to input
                     this.inputRef.current.focus();
                   } else {
-                    // tab to first tabbable item in footer
+                    // currently in menu, tab to first tabbable item in footer
                     tabbableItems[0].focus();
                   }
                 } else {
@@ -732,7 +732,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           } else {
             // has footer
             const tabbableItems = findTabbableElements(this.footerRef, SelectFooterTabbableItems);
-            const currentElementIndex = tabbableItems.findIndex(item => item === document.activeElement);
+            const currentElementIndex = tabbableItems.findIndex((item: any) => item === document.activeElement);
             if (this.inputRef.current === document.activeElement) {
               if (shiftKey) {
                 // close toggle if shift key and tab on input
@@ -746,7 +746,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 }
               }
             } else {
-              // focus in footer
+              // focus is in footer
               if (shiftKey) {
                 if (currentElementIndex === 0) {
                   // shift tab back to input
@@ -1050,14 +1050,18 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   this.handleMenuKeys(0, 0, 'right');
                   event.preventDefault();
                 } else if (event.key === KeyTypes.Tab && variant !== SelectVariant.checkbox && this.props.footer) {
-                  //  tab to footer
-                  const tabbableItems = findTabbableElements(this.footerRef, SelectFooterTabbableItems);
-                  if (tabbableItems.length > 0) {
-                    tabbableItems[0].focus();
-                    event.stopPropagation();
-                    event.preventDefault();
-                  } else {
+                  // tab to footer or close menu if shift key
+                  if (event.shiftKey) {
                     this.onToggle(false);
+                  } else {
+                    const tabbableItems = findTabbableElements(this.footerRef, SelectFooterTabbableItems);
+                    if (tabbableItems.length > 0) {
+                      tabbableItems[0].focus();
+                      event.stopPropagation();
+                      event.preventDefault();
+                    } else {
+                      this.onToggle(false);
+                    }
                   }
                 } else if (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) {
                   // More modal-like experience for checkboxes

@@ -2419,9 +2419,6 @@ class SelectWithFooter extends React.Component {
             <Button tabIndex={1} variant="link" isInline>
               Action
             </Button>
-            <Button tabIndex={1} variant="link" isInline>
-              Action2 
-            </Button>
             </>}
         >
           {this.options}

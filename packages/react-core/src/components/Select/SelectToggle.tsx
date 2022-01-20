@@ -110,17 +110,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   };
 
   handleGlobalKeys = (event: KeyboardEvent) => {
-    const {
-      parentRef,
-      menuRef,
-      hasFooter,
-      footerRef,
-      filterRef,
-      isOpen,
-      variant,
-      onToggle,
-      onClose
-    } = this.props;
+    const { parentRef, menuRef, hasFooter, footerRef, filterRef, isOpen, variant, onToggle, onClose } = this.props;
     const escFromToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
     const escFromWithinMenu =
       menuRef && menuRef.current && menuRef.current.contains && menuRef.current.contains(event.target as Node);
@@ -145,7 +135,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
         return;
       } else {
         // if current element is not in footer, tab to first tabbable element in footer
-        const currentElementIndex = tabbableItems.findIndex(item => item === document.activeElement);
+        const currentElementIndex = tabbableItems.findIndex((item: any) => item === document.activeElement);
         if (currentElementIndex === -1) {
           tabbableItems[0].focus();
           return;
@@ -153,10 +143,10 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
         // Current element is in footer.
         if (event.shiftKey) {
           // if has inline footer, focus back to input if current tab index is 0
-          // if (filterRef !== undefined && currentElementIndex === 0) {
-          //   filterRef.current.focus();
-          //   event.preventDefault();
-          // }
+          if (filterRef !== undefined && currentElementIndex === 0) {
+            filterRef.current.focus();
+            event.preventDefault();
+          }
           return;
         }
         // Tab to next element in footer or close if there are none
@@ -191,8 +181,8 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       if (event.key === KeyTypes.ArrowDown || event.key === KeyTypes.ArrowUp) {
         handleTypeaheadKeys((event.key === KeyTypes.ArrowDown && 'down') || (event.key === KeyTypes.ArrowUp && 'up'));
         // if (!this.props.hasFooter) {
-          event.preventDefault();
-       // }
+        event.preventDefault();
+        // }
       } else if (event.key === KeyTypes.Enter) {
         if (isOpen) {
           handleTypeaheadKeys('enter');
@@ -239,6 +229,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       handleTypeaheadKeys,
       parentRef,
       menuRef,
+      filterRef,
       id,
       type,
       hasClearButton,
