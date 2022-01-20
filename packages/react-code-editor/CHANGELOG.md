@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.32.6 (2022-01-20)
+
+
+### Bug Fixes
+
+* **TextInputGroup:** address various issues ([#6774](https://github.com/patternfly/patternfly-react/issues/6774)) ([010058a](https://github.com/patternfly/patternfly-react/commit/010058acc7115fb76a35fe06634083ada62cece0))
+
+
+
+
+
 ## 4.32.5 (2022-01-20)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
