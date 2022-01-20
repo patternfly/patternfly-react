@@ -1,20 +1,22 @@
 import React from 'react';
-import { Button, Flex } from '@patternfly/react-core';
+import { Button } from '@patternfly/react-core';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 
 export const ButtonCallToAction: React.FunctionComponent = () => (
-  <Flex>
+  <React.Fragment>
     <Button variant="primary" isLarge>
       Call to action
-    </Button>
+    </Button>{' '}
     <Button variant="secondary" isLarge>
       Call to action
-    </Button>
+    </Button>{' '}
     <Button variant="tertiary" isLarge>
       Call to action
-    </Button>
+    </Button>{' '}
     <Button variant="link" isLarge>
       Call to action <ArrowRightIcon />
     </Button>
-  </Flex>
+    <br />
+    <br />
+  </React.Fragment>
 );

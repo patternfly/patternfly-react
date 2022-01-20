@@ -13,7 +13,7 @@ const handleKeydown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
 };
 
 export const ButtonInlineSpanLink: React.FunctionComponent = () => (
-  <>
+  <React.Fragment>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       <Button variant="link" isInline component="span">
@@ -32,5 +32,5 @@ export const ButtonInlineSpanLink: React.FunctionComponent = () => (
       </Button>
       Pressing the Enter or Space keys on the inline link as span above demonstrates this by triggering an alert.
     </p>
-  </>
+  </React.Fragment>
 );

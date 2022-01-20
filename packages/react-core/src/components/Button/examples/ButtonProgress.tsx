@@ -1,22 +1,23 @@
 import React from 'react';
-import { Button, Flex } from '@patternfly/react-core';
+import { Button } from '@patternfly/react-core';
 
 export const ButtonProgress: React.FunctionComponent = () => {
   const [isPrimaryLoading, setIsPrimaryLoading] = React.useState<boolean>(true);
   const [isSecondaryLoading, setIsSecondaryLoading] = React.useState<boolean>(true);
 
   return (
-    <Flex>
+    <React.Fragment>
       <Button
+        spinnerAriaValueText={isPrimaryLoading ? 'Loading' : undefined}
         isLoading={isPrimaryLoading}
         variant="primary"
         onClick={() => setIsPrimaryLoading(!isPrimaryLoading)}
         {...(isPrimaryLoading && { spinnerAriaValueText: 'Loading' })}
       >
         {isPrimaryLoading ? 'Click to stop loading' : 'Click to start loading'}
-      </Button>
-
+      </Button>{' '}
       <Button
+        spinnerAriaValueText={isSecondaryLoading ? 'Loading' : undefined}
         isLoading={isSecondaryLoading}
         variant="secondary"
         onClick={() => setIsSecondaryLoading(!isSecondaryLoading)}
@@ -24,6 +25,8 @@ export const ButtonProgress: React.FunctionComponent = () => {
       >
         {isSecondaryLoading ? 'Click to stop loading' : 'Click to start loading'}
       </Button>
-    </Flex>
+      <br />
+      <br />
+    </React.Fragment>
   );
 };

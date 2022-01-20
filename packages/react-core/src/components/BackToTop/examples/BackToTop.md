@@ -16,9 +16,5 @@ Back to top only shows after overflowing element has been scrolled 400px.
 
 ### Basic
 
-```js
-import React from 'react';
-import { BackToTop } from '@patternfly/react-core';
-
-<BackToTop isAlwaysVisible/>
+```ts file="./BackToTopBasic.tsx"
 ```
