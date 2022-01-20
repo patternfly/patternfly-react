@@ -1,22 +1,24 @@
 import React from 'react';
-import { Button, Flex } from '@patternfly/react-core';
+import { Button } from '@patternfly/react-core';
 
 export const ButtonSmall: React.FunctionComponent = () => (
-  <Flex>
+  <React.Fragment>
     <Button variant="primary" isSmall>
       Primary
-    </Button>
+    </Button>{' '}
     <Button variant="secondary" isSmall>
       Secondary
-    </Button>
+    </Button>{' '}
     <Button variant="tertiary" isSmall>
       Tertiary
-    </Button>
+    </Button>{' '}
     <Button variant="danger" isSmall>
       Danger
-    </Button>
+    </Button>{' '}
     <Button variant="warning" isSmall>
       Warning
     </Button>
-  </Flex>
+    <br />
+    <br />
+  </React.Fragment>
 );

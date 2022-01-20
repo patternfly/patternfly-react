@@ -1,11 +1,8 @@
 import React from 'react';
-import { Badge, Flex } from '@patternfly/react-core';
+import { Badge } from '@patternfly/react-core';
 
 export const BadgeUnread: React.FunctionComponent = () => (
-  <Flex>
-    <Badge>7</Badge>
-    <Badge>24</Badge>
-    <Badge>240</Badge>
-    <Badge>999+</Badge>
-  </Flex>
+  <React.Fragment>
+    <Badge key={1}>7</Badge> <Badge key={2}>24</Badge> <Badge key={3}>240</Badge> <Badge key={4}>999+</Badge>
+  </React.Fragment>
 );

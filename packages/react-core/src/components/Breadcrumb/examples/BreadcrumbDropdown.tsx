@@ -22,15 +22,15 @@ const dropdownItems: JSX.Element[] = [
 ];
 
 export const BreadcrumbDropdown: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const [isOpen, setIsOpen] = React.useState(false);
   const badgeToggleRef = React.useRef<HTMLButtonElement>();
 
-  const onToggle = React.useCallback((isOpen: boolean) => setIsOpen(isOpen), []);
+  const onToggle = (isOpen: boolean) => setIsOpen(isOpen);
 
-  const onSelect = React.useCallback(() => {
+  const onSelect = () => {
     setIsOpen((prevIsOpen: boolean) => !prevIsOpen);
     badgeToggleRef.current.focus();
-  }, []);
+  };
 
   return (
     <Breadcrumb>
