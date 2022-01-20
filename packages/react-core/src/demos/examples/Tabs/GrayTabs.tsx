@@ -1,10 +1,5 @@
 import React from 'react';
 import {
-  Card,
-  CardHeader,
-  CardBody,
-  Grid,
-  GridItem,
   PageSection,
   PageSectionVariants,
   Tabs,
@@ -13,20 +8,25 @@ import {
   TabContentBody,
   TabTitleText,
   Title,
+  Grid,
+  GridItem,
   Flex,
-  FlexItem
+  FlexItem,
+  Card,
+  CardBody,
+  CardHeader
 } from '@patternfly/react-core';
-import DashboardWrapper from '../examples/DashboardWrapper';
+import DashboardWrapper from '../../examples/DashboardWrapper';
 
-export const NestedTabsDemo = () => {
-  const [activeTabKey, setActiveTabKey] = React.useState(0);
-  const [activeNestedTabKey, setActiveNestedTabKey] = React.useState(10);
+export const GrayTabsDemo: React.FunctionComponent = () => {
+  const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
+  const [activeNestedTabKey, setActiveNestedTabKey] = React.useState<string | number>(0);
 
   // Toggle currently active tab
-  const handleTabClick = (_, tabIndex) => setActiveTabKey(tabIndex);
+  const handleTabClick = (_: React.MouseEvent, tabIndex: string | number) => setActiveTabKey(tabIndex);
 
   // Toggle currently active nested tab
-  const handleNestedTabClick = (_, tabIndex) => setActiveNestedTabKey(tabIndex);
+  const handleNestedTabClick = (_: React.MouseEvent, tabIndex: string | number) => setActiveNestedTabKey(tabIndex);
 
   const tabContent = (
     <Grid hasGutter>
@@ -133,7 +133,14 @@ export const NestedTabsDemo = () => {
         </Title>
       </PageSection>
       <PageSection type="tabs" isWidthLimited>
-        <Tabs activeKey={activeTabKey} onSelect={handleTabClick} usePageInsets id="nested-tabs-example-tabs-list">
+        <Tabs
+          activeKey={activeTabKey}
+          onSelect={handleTabClick}
+          usePageInsets
+          isBox
+          variant="light300"
+          id="open-tabs-example-tabs-list"
+        >
           <Tab eventKey={0} title={<TabTitleText>Cluster 1</TabTitleText>} tabContentId={`tabContent${0}`} />
           <Tab eventKey={1} title={<TabTitleText>Cluster 2</TabTitleText>} tabContentId={`tabContent${1}`} />
         </Tabs>
