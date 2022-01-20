@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.45.2 (2022-01-20)
+
+
+### Bug Fixes
+
+* **Select:** Fixed dot next to the spinner in grouped view more variant ([#6831](https://github.com/patternfly/patternfly-react/issues/6831)) ([ccc81b4](https://github.com/patternfly/patternfly-react/commit/ccc81b4c8c30506f28e61e73dcbc106da50ca692))
+
+
+
+
+
 ## 6.45.1 (2022-01-20)
 
 **Note:** Version bump only for package @patternfly/react-charts
