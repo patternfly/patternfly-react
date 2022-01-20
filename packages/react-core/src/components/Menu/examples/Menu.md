@@ -684,7 +684,7 @@ class MenuOptionMultiSelect extends React.Component {
 
 ### With drilldown
 
-```js
+```js isBeta
 import React from 'react';
 import { Menu, MenuContent, MenuList, MenuItem, Divider, DrilldownMenu } from '@patternfly/react-core';
 import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
