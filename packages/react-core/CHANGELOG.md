@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.192.0 (2022-01-20)
+
+
+### Features
+
+* **Truncate:** added Truncate component ([#6713](https://github.com/patternfly/patternfly-react/issues/6713)) ([c803b5d](https://github.com/patternfly/patternfly-react/commit/c803b5df3761f689172d79bbc71bc38623b0bf5a))
+
+
+
+
+
 ## 4.191.6 (2022-01-20)
 
 
