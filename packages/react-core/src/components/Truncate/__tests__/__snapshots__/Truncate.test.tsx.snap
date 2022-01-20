@@ -11,11 +11,7 @@ exports[`renders default truncation 1`] = `
     <span
       className="pf-c-truncate__start"
     >
-      <span
-        className="pf-c-truncate__text"
-      >
-        Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
-      </span>
+      Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
     </span>
   </span>
 </Tooltip>
@@ -32,20 +28,12 @@ exports[`renders middle truncation 1`] = `
     <span
       className="pf-c-truncate__start"
     >
-      <span
-        className="pf-c-truncate__text"
-      >
-        Vestibulum interdum risus et enim fauc
-      </span>
+      Vestibulum interdum risus et enim faucibus, sit amet molestie est ac
     </span>
     <span
       className="pf-c-truncate__end"
     >
-      <span
-        className="pf-c-truncate__text"
-      >
-        ibus, sit amet molestie est accumsan.
-      </span>
+      cumsan.
     </span>
   </span>
 </Tooltip>
@@ -62,12 +50,8 @@ exports[`renders start truncation 1`] = `
     <span
       className="pf-c-truncate__end"
     >
-      <span
-        className="pf-c-truncate__text"
-      >
-        Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
-        ‎
-      </span>
+      Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
+      ‎
     </span>
   </span>
 </Tooltip>
