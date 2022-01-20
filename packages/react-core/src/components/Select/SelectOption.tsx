@@ -231,7 +231,17 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       onClick(event);
     };
 
-    const renderOption = (onSelect: any, onClose: any, variant: string, inputIdPrefix: string, onFavorite: any) => {
+    const renderOption = (
+      onSelect: (
+        event: React.MouseEvent<any, MouseEvent> | React.ChangeEvent<HTMLInputElement>,
+        value: string | SelectOptionObject,
+        isPlaceholder?: boolean
+      ) => void,
+      onClose: () => void,
+      variant: string,
+      inputIdPrefix: string,
+      onFavorite: (itemId: string, isFavorite: boolean) => void
+    ) => {
       if (variant !== SelectVariant.checkbox && isLoading && isGrouped) {
         return (
           <div
@@ -274,7 +284,6 @@ export class SelectOption extends React.Component<SelectOptionProps> {
             ref={this.liRef}
           >
             {isLoading && children}
-            {/* {isLoading && !isGrouped && children} */}
             {isLoad && !isGrouped && (
               <button
                 {...props}
