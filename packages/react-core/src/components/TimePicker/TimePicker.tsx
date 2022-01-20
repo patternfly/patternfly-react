@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Select/select';
 import datePickerStyles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
 import { getUniqueId } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
-import { KeyTypes, SelectDirection } from '../Select';
+import { KeyTypes } from '../Select';
 import { InputGroup } from '../InputGroup';
 import { TextInput, TextInputProps } from '../TextInput';
 import {
@@ -57,8 +56,6 @@ export interface TimePickerProps
    * menuAppendTo={document.getElementById('target')}
    */
   menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline';
-  /** Flag specifying which direction the time picker menu expands */
-  direction?: 'up' | 'down';
   /** Size of step between time options in minutes.*/
   stepMinutes?: number;
   /** Additional props for input field */
@@ -99,8 +96,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     placeholder: 'hh:mm',
     delimiter: ':',
     'aria-label': 'Time picker',
-    direction: 'down',
-    width: 150,
+    width: '150px',
     stepMinutes: 30,
     inputProps: {},
     minTime: '',
@@ -420,7 +416,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       is24Hour,
       invalidFormatErrorMessage,
       invalidMinMaxErrorMessage,
-      direction,
       stepMinutes,
       width,
       delimiter,
@@ -455,61 +450,48 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       </Menu>
     );
 
-    const inputAndToggle = (
-      <div className={css(datePickerStyles.datePickerInput)} style={style} {...props}>
-        <InputGroup>
-          <div
-            className={css(
-              styles.select,
-              isOpen && styles.modifiers.expanded,
-              direction === SelectDirection.up && styles.modifiers.top,
-              className
-            )}
-            id={randomId}
-            ref={this.parentRef}
-          >
-            <div
-              ref={this.toggleRef}
-              className={css(styles.selectToggle, isDisabled && styles.modifiers.disabled, styles.modifiers.typeahead)}
-              style={{ paddingLeft: '0' }}
-            >
-              <TextInput
-                className={css(formStyles.formControl, styles.selectToggleTypeahead)}
-                id={`${randomId}-input`}
-                aria-label={ariaLabel}
-                validated={isInvalid ? 'error' : 'default'}
-                placeholder={placeholder}
-                value={timeState || ''}
-                type="text"
-                iconVariant="clock"
-                onClick={this.onInputFocus}
-                onFocus={this.onInputFocus}
-                onChange={this.onInputChange}
-                onBlur={this.onBlur}
-                autoComplete="off"
-                isDisabled={isDisabled}
-                ref={this.inputRef}
-                {...inputProps}
-              />
-            </div>
-            {isOpen && menuAppendTo === 'inline' && menuContainer}
-          </div>
-        </InputGroup>
-        {isInvalid && (
-          <div className={css(datePickerStyles.datePickerHelperText, datePickerStyles.modifiers.error)}>
-            {!isValidFormat ? invalidFormatErrorMessage : invalidMinMaxErrorMessage}
-          </div>
-        )}
-      </div>
+    const textInput = (
+      <TextInput
+        className={css(formStyles.formControl)}
+        id={`${randomId}-input`}
+        aria-label={ariaLabel}
+        validated={isInvalid ? 'error' : 'default'}
+        placeholder={placeholder}
+        value={timeState || ''}
+        type="text"
+        iconVariant="clock"
+        onClick={this.onInputFocus}
+        onFocus={this.onInputFocus}
+        onChange={this.onInputChange}
+        onBlur={this.onBlur}
+        autoComplete="off"
+        isDisabled={isDisabled}
+        ref={this.inputRef}
+        {...inputProps}
+      />
     );
 
     return (
       <div className={css(datePickerStyles.datePicker, className)}>
-        {menuAppendTo === 'inline' ? (
-          inputAndToggle
-        ) : (
-          <Popper trigger={inputAndToggle} popper={menuContainer} isVisible={isOpen} />
-        )}
+        <div className={css(datePickerStyles.datePickerInput)} style={style} {...props}>
+          <InputGroup>
+            <div id={randomId} ref={this.parentRef}>
+              <div ref={this.toggleRef} style={{ paddingLeft: '0' }}>
+                {menuAppendTo !== 'inline' ? (
+                  <Popper trigger={textInput} popper={menuContainer} isVisible={isOpen} />
+                ) : (
+                  textInput
+                )}
+              </div>
+              {isOpen && menuAppendTo === 'inline' && menuContainer}
+            </div>
+          </InputGroup>
+          {isInvalid && (
+            <div className={css(datePickerStyles.datePickerHelperText, datePickerStyles.modifiers.error)}>
+              {!isValidFormat ? invalidFormatErrorMessage : invalidMinMaxErrorMessage}
+            </div>
+          )}
+        </div>
       </div>
     );
   }
