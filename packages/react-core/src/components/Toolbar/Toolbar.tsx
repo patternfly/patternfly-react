@@ -6,6 +6,7 @@ import { ToolbarContext } from './ToolbarUtils';
 import { ToolbarChipGroupContent } from './ToolbarChipGroupContent';
 import { formatBreakpointMods, canUseDOM } from '../../helpers/util';
 import { getDefaultOUIAId, getOUIAProps, OUIAProps } from '../../helpers';
+import { PageContext } from '../Page/Page';
 
 export interface ToolbarProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Optional callback for clearing all filters in the toolbar */
@@ -139,46 +140,50 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
     const showClearFiltersButton = numberOfFilters > 0;
 
     return (
-      <div
-        className={css(
-          styles.toolbar,
-          isFullHeight && styles.modifiers.fullHeight,
-          isStatic && styles.modifiers.static,
-          usePageInsets && styles.modifiers.pageInsets,
-          isSticky && styles.modifiers.sticky,
-          formatBreakpointMods(inset, styles),
-          className
+      <PageContext.Consumer>
+        {({ width, getBreakpoint }) => (
+          <div
+            className={css(
+              styles.toolbar,
+              isFullHeight && styles.modifiers.fullHeight,
+              isStatic && styles.modifiers.static,
+              usePageInsets && styles.modifiers.pageInsets,
+              isSticky && styles.modifiers.sticky,
+              formatBreakpointMods(inset, styles, '', getBreakpoint(width)),
+              className
+            )}
+            id={randomId}
+            {...getOUIAProps(Toolbar.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
+            {...props}
+          >
+            <ToolbarContext.Provider
+              value={{
+                isExpanded,
+                toggleIsExpanded: isToggleManaged ? this.toggleIsExpanded : toggleIsExpanded,
+                chipGroupContentRef: this.chipGroupContentRef,
+                updateNumberFilters: this.updateNumberFilters,
+                numberOfFilters,
+                clearAllFilters,
+                clearFiltersButtonText,
+                showClearFiltersButton,
+                toolbarId: randomId
+              }}
+            >
+              {children}
+              <ToolbarChipGroupContent
+                isExpanded={isExpanded}
+                chipGroupContentRef={this.chipGroupContentRef}
+                clearAllFilters={clearAllFilters}
+                showClearFiltersButton={showClearFiltersButton}
+                clearFiltersButtonText={clearFiltersButtonText}
+                numberOfFilters={numberOfFilters}
+                numberOfFiltersText={numberOfFiltersText}
+                collapseListedFiltersBreakpoint={collapseListedFiltersBreakpoint}
+              />
+            </ToolbarContext.Provider>
+          </div>
         )}
-        id={randomId}
-        {...getOUIAProps(Toolbar.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
-        {...props}
-      >
-        <ToolbarContext.Provider
-          value={{
-            isExpanded,
-            toggleIsExpanded: isToggleManaged ? this.toggleIsExpanded : toggleIsExpanded,
-            chipGroupContentRef: this.chipGroupContentRef,
-            updateNumberFilters: this.updateNumberFilters,
-            numberOfFilters,
-            clearAllFilters,
-            clearFiltersButtonText,
-            showClearFiltersButton,
-            toolbarId: randomId
-          }}
-        >
-          {children}
-          <ToolbarChipGroupContent
-            isExpanded={isExpanded}
-            chipGroupContentRef={this.chipGroupContentRef}
-            clearAllFilters={clearAllFilters}
-            showClearFiltersButton={showClearFiltersButton}
-            clearFiltersButtonText={clearFiltersButtonText}
-            numberOfFilters={numberOfFilters}
-            numberOfFiltersText={numberOfFiltersText}
-            collapseListedFiltersBreakpoint={collapseListedFiltersBreakpoint}
-          />
-        </ToolbarContext.Provider>
-      </div>
+      </PageContext.Consumer>
     );
   };
 

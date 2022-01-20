@@ -4,6 +4,7 @@ import { css } from '@patternfly/react-styles';
 
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
 import { Divider } from '../Divider';
+import { PageContext } from '../Page/Page';
 
 export enum ToolbarItemVariant {
   separator = 'separator',
@@ -113,26 +114,36 @@ export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
   }
 
   return (
-    <div
-      className={css(
-        styles.toolbarItem,
-        variant &&
-          styles.modifiers[
-            toCamel(variant) as 'bulkSelect' | 'overflowMenu' | 'pagination' | 'searchFilter' | 'label' | 'chipGroup'
-          ],
-        isAllExpanded && styles.modifiers.expanded,
-        formatBreakpointMods(visibility || visiblity, styles),
-        formatBreakpointMods(alignment, styles),
-        formatBreakpointMods(spacer, styles),
-        className
+    <PageContext.Consumer>
+      {({ width, getBreakpoint }) => (
+        <div
+          className={css(
+            styles.toolbarItem,
+            variant &&
+              styles.modifiers[
+                toCamel(variant) as
+                  | 'bulkSelect'
+                  | 'overflowMenu'
+                  | 'pagination'
+                  | 'searchFilter'
+                  | 'label'
+                  | 'chipGroup'
+              ],
+            isAllExpanded && styles.modifiers.expanded,
+            formatBreakpointMods(visibility || visiblity, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
+            formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
+            className
+          )}
+          {...(variant === 'label' && { 'aria-hidden': true })}
+          id={id}
+          {...props}
+          {...(widths && { style: { ...widthStyles, ...props.style } as React.CSSProperties })}
+        >
+          {children}
+        </div>
       )}
-      {...(variant === 'label' && { 'aria-hidden': true })}
-      id={id}
-      {...props}
-      {...(widths && { style: { ...widthStyles, ...props.style } as React.CSSProperties })}
-    >
-      {children}
-    </div>
+    </PageContext.Consumer>
   );
 };
 ToolbarItem.displayName = 'ToolbarItem';

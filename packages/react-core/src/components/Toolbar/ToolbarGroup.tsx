@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Toolbar/toolbar';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods, toCamel } from '../../helpers/util';
+import { PageContext } from '../Page/Page';
 
 export enum ToolbarGroupVariant {
   'filter-group' = 'filter-group',
@@ -84,21 +85,25 @@ class ToolbarGroupWithRef extends React.Component<ToolbarGroupProps> {
     }
 
     return (
-      <div
-        className={css(
-          styles.toolbarGroup,
-          variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
-          formatBreakpointMods(visibility || visiblity, styles),
-          formatBreakpointMods(alignment, styles),
-          formatBreakpointMods(spacer, styles),
-          formatBreakpointMods(spaceItems, styles),
-          className
+      <PageContext.Consumer>
+        {({ width, getBreakpoint }) => (
+          <div
+            className={css(
+              styles.toolbarGroup,
+              variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
+              formatBreakpointMods(visibility || visiblity, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
+              formatBreakpointMods(spaceItems, styles, '', getBreakpoint(width)),
+              className
+            )}
+            {...props}
+            ref={innerRef}
+          >
+            {children}
+          </div>
         )}
-        {...props}
-        ref={innerRef}
-      >
-        {children}
-      </div>
+      </PageContext.Consumer>
     );
   }
 }
