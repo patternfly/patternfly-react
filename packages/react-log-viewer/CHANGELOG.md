@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.37.4 (2022-01-20)
+
+
+### Bug Fixes
+
+* **DatePicker:** update empty state validation and add onblur event ([#6822](https://github.com/patternfly/patternfly-react/issues/6822)) ([258e818](https://github.com/patternfly/patternfly-react/commit/258e81861adc0488ae42f349aff78f06f2874fa7))
+
+
+
+
+
 ## 4.37.3 (2022-01-20)
 
 **Note:** Version bump only for package @patternfly/react-log-viewer
