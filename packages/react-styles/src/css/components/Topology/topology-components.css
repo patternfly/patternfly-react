@@ -35,6 +35,12 @@
   stroke: var(--edge--stroke);
 }
 
+.pf-topology-default-create-connector {
+}
+
+.pf-topology-default-create-connector__create {
+}
+
 .pf-topology-default-create-connector__line {
   stroke: var(--pf-topology-create-connector-color);
   stroke-width: 2px;
@@ -117,7 +123,7 @@
   stroke: var(--pf-global--primary-color--light-100);
 }
 
-.pf-topology__node.pf-m- success.pf-topology__node__background {
+.pf-topology__node.pf-m-success.pf-topology__node__background {
   stroke: var(--pf-global--success-color--100);
 }
 
