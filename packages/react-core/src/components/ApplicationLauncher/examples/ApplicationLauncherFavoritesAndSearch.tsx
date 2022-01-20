@@ -40,22 +40,19 @@ export const ApplicationLauncherFavoritesAndSearch: React.FunctionComponent = ()
   const [favorites, setFavorites] = React.useState<string[]>([]);
   const [filteredItems, setFilteredItems] = React.useState<React.ReactNode[]>(null);
 
-  const onToggle = React.useCallback((isOpen: boolean) => setIsOpen(isOpen), []);
+  const onToggle = (isOpen: boolean) => setIsOpen(isOpen);
 
-  const onFavorite = React.useCallback(
-    (itemId: string, isFavorite: boolean) => {
-      let updatedFavorites: string[] = [...favorites, itemId];
+  const onFavorite = (itemId: string, isFavorite: boolean) => {
+    let updatedFavorites: string[] = [...favorites, itemId];
 
-      if (isFavorite) {
-        updatedFavorites = favorites.filter(id => id !== itemId);
-      }
+    if (isFavorite) {
+      updatedFavorites = favorites.filter(id => id !== itemId);
+    }
 
-      setFavorites(updatedFavorites);
-    },
-    [favorites]
-  );
+    setFavorites(updatedFavorites);
+  };
 
-  const onSearch = React.useCallback((textInput: string) => {
+  const onSearch = (textInput: string) => {
     if (textInput === '') {
       setFilteredItems(null);
     } else {
@@ -92,7 +89,7 @@ export const ApplicationLauncherFavoritesAndSearch: React.FunctionComponent = ()
 
       setFilteredItems(filteredGroups);
     }
-  }, []);
+  };
 
   return (
     <ApplicationLauncher

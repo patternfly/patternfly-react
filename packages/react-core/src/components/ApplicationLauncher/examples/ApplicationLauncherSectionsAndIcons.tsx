@@ -36,10 +36,10 @@ const appLauncherItems: React.ReactElement[] = [
 ];
 
 export const ApplicationLauncherSectionsAndIcons: React.FunctionComponent = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
-  const onToggle = React.useCallback((isOpen: boolean) => setIsOpen(isOpen), []);
-  const onSelect = React.useCallback((_event: any) => setIsOpen(prevIsOpen => !prevIsOpen), []);
+  const onToggle = (isOpen: boolean) => setIsOpen(isOpen);
+  const onSelect = (_event: any) => setIsOpen(prevIsOpen => !prevIsOpen);
 
   return (
     <ApplicationLauncher onSelect={onSelect} onToggle={onToggle} isOpen={isOpen} items={appLauncherItems} isGrouped />

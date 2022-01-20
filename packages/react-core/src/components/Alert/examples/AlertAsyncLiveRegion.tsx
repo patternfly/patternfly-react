@@ -9,7 +9,7 @@ interface AlertInfo {
 
 export const AsyncLiveRegionAlert: React.FunctionComponent = () => {
   const [alerts, setAlerts] = React.useState<AlertInfo[]>([]);
-  const [isActive, setIsActive] = React.useState<boolean>(false);
+  const [isActive, setIsActive] = React.useState(false);
   const getUniqueId: () => number = () => new Date().getTime();
 
   const addAlert = (alertInfo: AlertInfo) => {
