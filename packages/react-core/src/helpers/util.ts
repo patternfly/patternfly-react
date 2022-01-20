@@ -313,10 +313,13 @@ export const formatBreakpointMods = (
 /**
  * Return the breakpoint for the given width
  *
- * @param {number} width The width to check
+ * @param {number | null} width The width to check
  * @returns {'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'} The breakpoint
  */
 export const getBreakpoint = (width: number): 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' => {
+  if (width === null) {
+    width = canUseDOM ? window.innerWidth : 1200;
+  }
   if (width >= 1450) {
     return '2xl';
   }

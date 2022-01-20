@@ -18,7 +18,7 @@ export interface PageContextProps {
   onNavToggle: () => void;
   isNavOpen: boolean;
   width: number;
-  getBreakpoint: (width: number) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  getBreakpoint: (width: number | null) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 }
 export const pageContextDefaults: PageContextProps = {
   isManagedSidebar: false,
@@ -79,7 +79,7 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    * You can view the default getBreakpoint function here:
    * https://github.com/patternfly/patternfly-react/blob/main/packages/react-core/src/helpers/util.ts
    */
-  getBreakpoint?: (width: number) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  getBreakpoint?: (width: number | null) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   /** Breadcrumb component for the page */
   breadcrumb?: React.ReactNode;
   /** Tertiary nav component for the page */
