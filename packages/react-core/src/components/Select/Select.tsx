@@ -942,7 +942,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 }
               }}
               ref={this.filterRef}
-              autoComplete="off"
+              autoComplete={typeaheadInputValue === 'user' ? 'new-user' : 'off'}
             />
           </div>
           <Divider key="inline-filter-divider" />
