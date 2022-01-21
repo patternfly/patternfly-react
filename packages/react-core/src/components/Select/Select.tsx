@@ -1136,7 +1136,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   type="text"
                   onClick={this.onClick}
                   onChange={this.onChange}
-                  autoComplete="never"
+                  autoComplete={typeaheadInputValue === 'user' ? 'new-user' : 'off'}
                   disabled={isDisabled}
                   ref={this.inputRef}
                 />
@@ -1160,7 +1160,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   type="text"
                   onChange={this.onChange}
                   onClick={this.onClick}
-                  autoComplete="never"
+                  autoComplete={typeaheadInputValue === 'user' ? 'new-user' : 'off'}
                   disabled={isDisabled}
                   ref={this.inputRef}
                 />
