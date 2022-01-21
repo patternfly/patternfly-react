@@ -385,7 +385,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       noResultsFoundText,
       children,
       isGrouped,
-      isCreateSelectOptionObject
+      isCreateSelectOptionObject,
+      loadingVariant
     } = this.props;
 
     if (onFilter) {
@@ -439,6 +440,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   (valueToCheck as SelectOptionObject).toString &&
                   (valueToCheck as SelectOptionObject).compareTo;
 
+                // View more option should be returned as not a match
+                if (loadingVariant !== undefined && loadingVariant !== 'spinner') {
+                  if (loadingVariant?.text === valueToCheck && loadingVariant.text === valueToCheck) {
+                    return true;
+                  }
+                }
+
                 if (isSelectOptionObject) {
                   return (valueToCheck as SelectOptionObject).compareTo(typeaheadInputValue);
                 } else {
@@ -449,6 +457,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       }
     }
     if (!typeaheadFilteredChildren) {
+      typeaheadFilteredChildren = [];
+    } else if (typeaheadFilteredChildren.length === 1 && loadingVariant !== undefined) {
+      // if view more button is only item, set typeaheadFilteredChildren to am empty array
       typeaheadFilteredChildren = [];
     }
     if (typeaheadFilteredChildren.length === 0) {
