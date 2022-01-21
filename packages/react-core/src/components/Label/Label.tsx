@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Label/label';
 import labelGrpStyles from '@patternfly/react-styles/css/components/LabelGroup/label-group';
-import inlineEditStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { Button } from '../Button';
 import { Tooltip } from '../Tooltip';
 import { css } from '@patternfly/react-styles';
@@ -91,7 +90,9 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   ...props
 }: LabelProps) => {
   const [isEditableActive, setIsEditableActive] = useState(false);
-  const editableDivRef = React.createRef<HTMLDivElement>();
+  const [currValue, setCurrValue] = useState(children);
+  const editableButtonRef = React.useRef<HTMLButtonElement>();
+  const editableInputRef = React.useRef<HTMLInputElement>();
 
   React.useEffect(() => {
     document.addEventListener('click', onDocClick);
@@ -105,34 +106,45 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   const onDocClick = (event: MouseEvent) => {
     if (
       isEditableActive &&
-      editableDivRef &&
-      editableDivRef.current &&
-      !editableDivRef.current.contains(event.target as Node)
+      editableInputRef &&
+      editableInputRef.current &&
+      !editableInputRef.current.contains(event.target as Node)
     ) {
-      onEditComplete && onEditComplete(editableDivRef.current.textContent);
+      if (editableInputRef.current.value) {
+        onEditComplete && onEditComplete(editableInputRef.current.value);
+      }
       setIsEditableActive(false);
     }
   };
 
   const onKeyDown = (event: KeyboardEvent) => {
     const key = event.key;
-
-    if (!editableDivRef || !editableDivRef.current || !editableDivRef.current.contains(event.target as Node)) {
+    if (
+      (!isEditableActive &&
+        (!editableButtonRef ||
+          !editableButtonRef.current ||
+          !editableButtonRef.current.contains(event.target as Node))) ||
+      (isEditableActive &&
+        (!editableInputRef || !editableInputRef.current || !editableInputRef.current.contains(event.target as Node)))
+    ) {
       return;
     }
-
     if (isEditableActive && (key === 'Enter' || key === 'Tab')) {
       event.preventDefault();
       event.stopImmediatePropagation();
-      onEditComplete && onEditComplete(editableDivRef.current.textContent);
+      if (editableInputRef.current.value) {
+        onEditComplete && onEditComplete(editableInputRef.current.value);
+      }
       setIsEditableActive(false);
     }
     if (isEditableActive && key === 'Escape') {
       event.preventDefault();
       event.stopImmediatePropagation();
       // Reset div text to initial children prop - pre-edit
-      editableDivRef.current.textContent = children as string;
-      onEditCancel && onEditCancel(children as string);
+      if (editableInputRef.current.value) {
+        editableInputRef.current.value = children as string;
+        onEditCancel && onEditCancel(children as string);
+      }
       setIsEditableActive(false);
     }
     if (!isEditableActive && key === 'Enter') {
@@ -185,23 +197,29 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     </React.Fragment>
   );
 
+  React.useEffect(() => {
+    if (isEditableActive && editableInputRef) {
+      editableInputRef.current && editableInputRef.current.focus();
+    }
+  }, [editableInputRef, isEditableActive]);
+
+  const updateVal = () => {
+    setCurrValue(editableInputRef.current.value);
+  };
+
   if (isEditable) {
     content = (
-      <React.Fragment>
-        <div className={css(inlineEditStyles.inlineEdit)}>
-          <div
-            tabIndex={0}
-            ref={editableDivRef}
-            className={css(inlineEditStyles.inlineEditEditableText)}
-            role="textbox"
-            {...(isEditableActive && { contentEditable: true })}
-            suppressContentEditableWarning
-            {...editableProps}
-          >
-            {children}
-          </div>
-        </div>
-      </React.Fragment>
+      <button
+        ref={editableButtonRef}
+        className={css(styles.labelEditableText)}
+        onClick={e => {
+          setIsEditableActive(true);
+          e.stopPropagation();
+        }}
+        {...editableProps}
+      >
+        {children}
+      </button>
     );
   }
 
@@ -245,19 +263,20 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         isEditableActive && styles.modifiers.editableActive,
         className
       )}
-      {...(isEditable && {
-        onClick: (evt: MouseEvent) => {
-          const isEvtFromButton = (evt.target as HTMLElement).closest('button');
-          if (isEvtFromButton !== null) {
-            return;
-          }
-          setIsEditableActive(true);
-          editableDivRef.current.focus();
-        }
-      })}
     >
-      {labelComponentChild}
-      {onClose && button}
+      {!isEditableActive && labelComponentChild}
+      {!isEditableActive && onClose && button}
+      {isEditableActive && (
+        <input
+          className={css(styles.labelEditableText)}
+          type="text"
+          id="editable-input"
+          ref={editableInputRef}
+          value={currValue}
+          onChange={updateVal}
+          {...editableProps}
+        />
+      )}
     </LabelComponent>
   );
 };
