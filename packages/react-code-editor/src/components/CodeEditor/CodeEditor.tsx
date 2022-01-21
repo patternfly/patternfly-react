@@ -279,6 +279,15 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     this.setState({ value });
   };
 
+  static getDerivedStateFromProps(props: CodeEditorProps, state: CodeEditorState) {
+    if (props.code !== state.value) {
+      return {
+        value: props.code
+      };
+    }
+    return null;
+  }
+
   handleResize = () => {
     if (this.editor) {
       this.editor.layout();
