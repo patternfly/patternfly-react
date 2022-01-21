@@ -805,16 +805,6 @@ class FilteringSingleSelectInput extends React.Component {
           isCreatable={isCreatable}
           isInputValuePersisted={isInputValuePersisted}
           isInputFilterPersisted={isInputFilterPersisted}
-          footer={
-            <>
-            <Button tabIndex={1} variant="link" isInline>
-              Action
-            </Button>
-            <Button tabIndex={1} variant="link" isInline>
-              Action2 
-            </Button>
-            </>
-          }
         >
           {this.options}
         </Select>
@@ -944,11 +934,6 @@ class FilteringCheckboxSelectInput extends React.Component {
           onClear={this.clearSelection}
           isGrouped
           hasInlineFilter
-          footer={
-            <Button tabIndex={1} variant="link" isInline>
-              Action
-            </Button>
-          }
         >
           {this.options}
         </Select>

@@ -643,6 +643,17 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     });
   };
 
+  moveFocusToLastMenuItem = () => {
+    const refCollectionLen = this.refCollection.length;
+    if (
+      refCollectionLen > 0 &&
+      this.refCollection[refCollectionLen - 1] !== null &&
+      this.refCollection[refCollectionLen - 1][0] !== null
+    ) {
+      this.refCollection[refCollectionLen - 1][0].focus();
+    }
+  };
+
   handleTypeaheadKeys = (position: string, shiftKey: boolean = false) => {
     const { isOpen, onFavorite } = this.props;
     const { typeaheadCurrIndex, tabbedIntoFavoritesMenu } = this.state;
@@ -1202,7 +1213,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           parentRef={this.parentRef}
           menuRef={this.menuComponentRef}
           {...(footer && { footerRef: this.footerRef })}
-          {...(hasInlineFilter && { filterRef: this.filterRef })}
           isOpen={isOpen}
           isPlain={isPlain}
           hasPlaceholderStyle={
@@ -1215,6 +1225,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           aria-labelledby={`${ariaLabelledBy || ''} ${selectToggleId}`}
           aria-label={toggleAriaLabel}
           handleTypeaheadKeys={this.handleTypeaheadKeys}
+          moveFocusToLastMenuItem={this.moveFocusToLastMenuItem}
           isDisabled={isDisabled}
           hasClearButton={hasOnClear}
           hasFooter={footer !== undefined}

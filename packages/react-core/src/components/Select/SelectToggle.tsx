@@ -24,14 +24,14 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   onClose?: () => void;
   /** @hide Internal callback for toggle keyboard navigation */
   handleTypeaheadKeys?: (position: string, shiftKey?: boolean) => void;
+  /** @hide Internal callback to move focus to last menu item */
+  moveFocusToLastMenuItem?: () => void;
   /** Element which wraps toggle */
   parentRef: React.RefObject<HTMLDivElement>;
   /** The menu element */
   menuRef?: React.RefObject<HTMLElement>;
   /** The menu footer element */
   footerRef?: React.RefObject<HTMLDivElement>;
-  /** The inline filter ref element */
-  filterRef?: React.RefObject<HTMLInputElement>;
   /** Forces active state */
   isActive?: boolean;
   /** Display the toggle with no border or background */
@@ -110,7 +110,17 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   };
 
   handleGlobalKeys = (event: KeyboardEvent) => {
-    const { parentRef, menuRef, hasFooter, footerRef, filterRef, isOpen, variant, onToggle, onClose } = this.props;
+    const {
+      parentRef,
+      menuRef,
+      hasFooter,
+      footerRef,
+      isOpen,
+      variant,
+      onToggle,
+      onClose,
+      moveFocusToLastMenuItem
+    } = this.props;
     const escFromToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
     const escFromWithinMenu =
       menuRef && menuRef.current && menuRef.current.contains && menuRef.current.contains(event.target as Node);
@@ -134,17 +144,27 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
         this.toggle.current.focus();
         return;
       } else {
-        // if current element is not in footer, tab to first tabbable element in footer
+        // if current element is not in footer, tab to first tabbable element in footer, or close if shift clicked
         const currentElementIndex = tabbableItems.findIndex((item: any) => item === document.activeElement);
         if (currentElementIndex === -1) {
-          tabbableItems[0].focus();
-          return;
+          if (event.shiftKey) {
+            if (variant !== 'checkbox') {
+              // only close non checkbox variation on shift clicked
+              onToggle(false);
+              onClose();
+              this.toggle.current.focus();
+            }
+          } else {
+            // tab to footer
+            tabbableItems[0].focus();
+            return;
+          }
         }
         // Current element is in footer.
         if (event.shiftKey) {
-          // if has inline footer, focus back to input if current tab index is 0
-          if (filterRef !== undefined && currentElementIndex === 0) {
-            filterRef.current.focus();
+          // Move focus back to menuif current tab index is 0
+          if (currentElementIndex === 0) {
+            moveFocusToLastMenuItem();
             event.preventDefault();
           }
           return;
@@ -180,9 +200,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     if (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti) {
       if (event.key === KeyTypes.ArrowDown || event.key === KeyTypes.ArrowUp) {
         handleTypeaheadKeys((event.key === KeyTypes.ArrowDown && 'down') || (event.key === KeyTypes.ArrowUp && 'up'));
-        // if (!this.props.hasFooter) {
         event.preventDefault();
-        // }
       } else if (event.key === KeyTypes.Enter) {
         if (isOpen) {
           handleTypeaheadKeys('enter');
@@ -227,9 +245,9 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       onClose,
       onClickTypeaheadToggleButton,
       handleTypeaheadKeys,
+      moveFocusToLastMenuItem,
       parentRef,
       menuRef,
-      filterRef,
       id,
       type,
       hasClearButton,

@@ -69,6 +69,8 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   setViewMoreNextIndex?: () => void;
   /** @hide Flag indicating this is the last option when there is a footer */
   isLastOptionBeforeFooter?: (index: number) => boolean;
+  /** @hide Flag indicating that the the option loading variant is in a grouped select */
+  isGrouped?: boolean;
 }
 
 export class SelectOption extends React.Component<SelectOptionProps> {
@@ -132,7 +134,11 @@ export class SelectOption extends React.Component<SelectOptionProps> {
         }
         event.stopPropagation();
       } else {
-        keyHandler(index, innerIndex, 'tab');
+        if (event.shiftKey) {
+          keyHandler(index, innerIndex, 'up');
+        } else {
+          keyHandler(index, innerIndex, 'tab');
+        }
       }
     }
     event.preventDefault();
@@ -182,6 +188,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       setViewMoreNextIndex,
       // eslint-disable-next-line no-console
       isLastOptionBeforeFooter,
+      isGrouped = false,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
