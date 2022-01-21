@@ -434,7 +434,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
         <MenuContent maxMenuHeight="200px">
           <MenuList aria-labelledby={`${randomId}-input`}>
             {options.map((option, index) => (
-              <MenuItem onClick={this.onSelect} key={index} id={`${randomId}-option-${index}`}>
+              <MenuItem onClick={this.onSelect} key={option} id={`${randomId}-option-${index}`}>
                 {option}
               </MenuItem>
             ))}
