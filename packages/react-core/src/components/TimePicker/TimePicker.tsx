@@ -471,7 +471,12 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
             <div id={randomId} ref={this.parentRef}>
               <div ref={this.toggleRef} style={{ paddingLeft: '0' }}>
                 {menuAppendTo !== 'inline' ? (
-                  <Popper trigger={textInput} popper={menuContainer} isVisible={isOpen} />
+                  <Popper
+                    appendTo={this.parentRef.current}
+                    trigger={textInput}
+                    popper={menuContainer}
+                    isVisible={isOpen}
+                  />
                 ) : (
                   textInput
                 )}
