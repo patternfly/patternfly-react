@@ -2838,7 +2838,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                   class="pf-c-select__menu-search"
                 >
                   <input
-                    autocomplete="never"
+                    autocomplete="off"
                     class="pf-c-form-control pf-m-search"
                     type="search"
                   />
@@ -2963,7 +2963,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                     class="pf-c-select__menu-search"
                   >
                     <input
-                      autocomplete="never"
+                      autocomplete="off"
                       class="pf-c-form-control pf-m-search"
                       type="search"
                     />
@@ -3129,7 +3129,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                     class="pf-c-select__menu-search"
                   >
                     <input
-                      autocomplete="never"
+                      autocomplete="off"
                       class="pf-c-form-control pf-m-search"
                       type="search"
                     />
@@ -3221,7 +3221,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                 key="inline-filter"
               >
                 <input
-                  autoComplete="never"
+                  autoComplete="off"
                   className="pf-c-form-control pf-m-search"
                   key="inline-filter-input"
                   onChange={[Function]}
@@ -3493,7 +3493,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
                   class="pf-c-select__menu-search"
                 >
                   <input
-                    autocomplete="never"
+                    autocomplete="off"
                     class="pf-c-form-control pf-m-search"
                     type="search"
                   />
@@ -3618,7 +3618,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
                     class="pf-c-select__menu-search"
                   >
                     <input
-                      autocomplete="never"
+                      autocomplete="off"
                       class="pf-c-form-control pf-m-search"
                       type="search"
                     />
@@ -3784,7 +3784,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
                     class="pf-c-select__menu-search"
                   >
                     <input
-                      autocomplete="never"
+                      autocomplete="off"
                       class="pf-c-form-control pf-m-search"
                       type="search"
                     />
@@ -3876,7 +3876,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
                 key="inline-filter"
               >
                 <input
-                  autoComplete="never"
+                  autoComplete="off"
                   className="pf-c-form-control pf-m-search"
                   key="inline-filter-input"
                   onChange={[Function]}
@@ -6012,7 +6012,7 @@ exports[`select custom select filter filters properly 1`] = `
                 >
                   <input
                     aria-label=""
-                    autocomplete="never"
+                    autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
                     id="custom-select-filters-select-typeahead"
                     placeholder=""
@@ -6108,7 +6108,7 @@ exports[`select custom select filter filters properly 1`] = `
             <input
               aria-activedescendant={null}
               aria-label=""
-              autoComplete="never"
+              autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
               disabled={false}
               id="custom-select-filters-select-typeahead"
@@ -9614,7 +9614,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
                   <input
                     aria-invalid="false"
                     aria-label=""
-                    autocomplete="never"
+                    autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
                     id="typeahead-multi-select-closed-select-multi-typeahead-typeahead"
                     placeholder=""
@@ -9666,7 +9666,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
               aria-activedescendant={null}
               aria-invalid={false}
               aria-label=""
-              autoComplete="never"
+              autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
               disabled={false}
               id="typeahead-multi-select-closed-select-multi-typeahead-typeahead"
@@ -9876,7 +9876,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   <input
                     aria-invalid="false"
                     aria-label=""
-                    autocomplete="never"
+                    autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
                     id="pf-select-toggle-id-13-select-multi-typeahead-typeahead"
                     placeholder=""
@@ -9986,7 +9986,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               aria-activedescendant={null}
               aria-invalid={false}
               aria-label=""
-              autoComplete="never"
+              autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
               disabled={false}
               id="pf-select-toggle-id-13-select-multi-typeahead-typeahead"
@@ -10606,7 +10606,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   <input
                     aria-invalid="false"
                     aria-label=""
-                    autocomplete="never"
+                    autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
                     id="typeahead-multi-select-selected-select-multi-typeahead-typeahead"
                     placeholder=""
@@ -10970,7 +10970,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               aria-activedescendant={null}
               aria-invalid={false}
               aria-label=""
-              autoComplete="never"
+              autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
               disabled={false}
               id="typeahead-multi-select-selected-select-multi-typeahead-typeahead"
@@ -11494,7 +11494,7 @@ exports[`typeahead select renders closed successfully 1`] = `
                 >
                   <input
                     aria-label=""
-                    autocomplete="never"
+                    autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
                     id="typeahead-select-closed-select-typeahead"
                     placeholder=""
@@ -11545,7 +11545,7 @@ exports[`typeahead select renders closed successfully 1`] = `
             <input
               aria-activedescendant={null}
               aria-label=""
-              autoComplete="never"
+              autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
               disabled={false}
               id="typeahead-select-closed-select-typeahead"
@@ -11754,7 +11754,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 >
                   <input
                     aria-label=""
-                    autocomplete="never"
+                    autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
                     id="pf-select-toggle-id-8-select-typeahead"
                     placeholder=""
@@ -11863,7 +11863,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
             <input
               aria-activedescendant={null}
               aria-label=""
-              autoComplete="never"
+              autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
               disabled={false}
               id="pf-select-toggle-id-8-select-typeahead"
@@ -12357,7 +12357,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 >
                   <input
                     aria-label=""
-                    autocomplete="never"
+                    autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
                     id="pf-select-toggle-id-9-select-typeahead"
                     placeholder=""
@@ -12484,7 +12484,7 @@ exports[`typeahead select renders selected successfully 1`] = `
             <input
               aria-activedescendant={null}
               aria-label=""
-              autoComplete="never"
+              autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
               disabled={false}
               id="pf-select-toggle-id-9-select-typeahead"
@@ -12968,7 +12968,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
                 >
                   <input
                     aria-label=""
-                    autocomplete="never"
+                    autocomplete="off"
                     class="pf-c-form-control pf-c-select__toggle-typeahead"
                     id="pf-select-toggle-id-12-select-typeahead"
                     placeholder=""
@@ -13038,7 +13038,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
             <input
               aria-activedescendant={null}
               aria-label=""
-              autoComplete="never"
+              autoComplete="off"
               className="pf-c-form-control pf-c-select__toggle-typeahead"
               disabled={false}
               id="pf-select-toggle-id-12-select-typeahead"
