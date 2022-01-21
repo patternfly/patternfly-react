@@ -942,7 +942,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 }
               }}
               ref={this.filterRef}
-              autoComplete="never"
+              autoComplete="off"
             />
           </div>
           <Divider key="inline-filter-divider" />

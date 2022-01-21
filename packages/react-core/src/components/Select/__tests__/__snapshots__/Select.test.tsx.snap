@@ -2838,7 +2838,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                   class="pf-c-select__menu-search"
                 >
                   <input
-                    autocomplete="never"
+                    autocomplete="off"
                     class="pf-c-form-control pf-m-search"
                     type="search"
                   />
@@ -2963,7 +2963,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                     class="pf-c-select__menu-search"
                   >
                     <input
-                      autocomplete="never"
+                      autocomplete="off"
                       class="pf-c-form-control pf-m-search"
                       type="search"
                     />
@@ -3129,7 +3129,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                     class="pf-c-select__menu-search"
                   >
                     <input
-                      autocomplete="never"
+                      autocomplete="off"
                       class="pf-c-form-control pf-m-search"
                       type="search"
                     />
@@ -3221,7 +3221,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
                 key="inline-filter"
               >
                 <input
-                  autoComplete="never"
+                  autoComplete="off"
                   className="pf-c-form-control pf-m-search"
                   key="inline-filter-input"
                   onChange={[Function]}
@@ -3493,7 +3493,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
                   class="pf-c-select__menu-search"
                 >
                   <input
-                    autocomplete="never"
+                    autocomplete="off"
                     class="pf-c-form-control pf-m-search"
                     type="search"
                   />
@@ -3618,7 +3618,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
                     class="pf-c-select__menu-search"
                   >
                     <input
-                      autocomplete="never"
+                      autocomplete="off"
                       class="pf-c-form-control pf-m-search"
                       type="search"
                     />
@@ -3784,7 +3784,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
                     class="pf-c-select__menu-search"
                   >
                     <input
-                      autocomplete="never"
+                      autocomplete="off"
                       class="pf-c-form-control pf-m-search"
                       type="search"
                     />
@@ -3876,7 +3876,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
                 key="inline-filter"
               >
                 <input
-                  autoComplete="never"
+                  autoComplete="off"
                   className="pf-c-form-control pf-m-search"
                   key="inline-filter-input"
                   onChange={[Function]}
