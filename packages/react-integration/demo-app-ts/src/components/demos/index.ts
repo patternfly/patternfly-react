@@ -67,6 +67,7 @@ export * from './SelectDemo/SelectFooterFilteringDemo';
 export * from './SelectDemo/SelectTypeaheadFooterDemo';
 export * from './SelectDemo/SelectValidatedDemo';
 export * from './SelectDemo/SelectViewMoreDemo';
+export * from './SelectDemo/SelectViewMoreGroupedDemo';
 export * from './SelectDemo/SelectViewMoreTypeaheadGroupedDemo';
 export * from './SimpleList/SimpleListDemo';
 export * from './SliderDemo/SliderDemo';
