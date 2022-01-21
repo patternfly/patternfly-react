@@ -141,13 +141,8 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   }
 
   onDocClick = (event: MouseEvent | TouchEvent) => {
-    const clickedOnToggle =
-      this.parentRef && this.parentRef.current && this.parentRef.current.contains(event.target as Node);
-    const clickedWithinMenu =
-      this.menuRef &&
-      this.menuRef.current &&
-      this.menuRef.current.contains &&
-      this.menuRef.current.contains(event.target as Node);
+    const clickedOnToggle = this.parentRef?.current?.contains(event.target as Node);
+    const clickedWithinMenu = this.menuRef?.current?.contains(event.target as Node);
     if (this.state.isOpen && !(clickedOnToggle || clickedWithinMenu)) {
       this.onToggle(false);
     }
@@ -156,7 +151,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   handleGlobalKeys = (event: KeyboardEvent) => {
     const { isOpen, focusedIndex, scrollIndex } = this.state;
     // keyboard pressed while focus on toggle
-    if (this.inputRef && this.inputRef.current && this.inputRef.current.contains(event.target as Node)) {
+    if (this.inputRef?.current?.contains(event.target as Node)) {
       if (!isOpen && event.key !== KeyTypes.Tab) {
         this.onToggle(true);
       } else if (isOpen) {
@@ -176,7 +171,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
         }
       }
       // keyboard pressed while focus on menu item
-    } else if (this.menuRef && this.menuRef.current && this.menuRef.current.contains(event.target as Node)) {
+    } else if (this.menuRef?.current?.contains(event.target as Node)) {
       if (event.key === KeyTypes.ArrowDown) {
         this.updateFocusedIndex(1);
         event.preventDefault();
@@ -225,26 +220,24 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     });
   };
 
-  scrollToIndex = (index: number) => {
-    // fixes issue where inline value for menutAppendTo results in initial menu item that is scrolled to being out of view
-    let indexToScroll = index;
+  // fixes issue where menutAppendTo="inline" results in the menu item that should be scrolled to being out of view; this will select the menu item that comes before the intended one, causing that before-item to be placed out of view instead
+  getIndexToScroll = (index: number) => {
     if (this.props.menuAppendTo === 'inline') {
-      if (indexToScroll > 0) {
-        indexToScroll = index - 1;
-      } else {
-        indexToScroll = 0;
-      }
+      return index > 0 ? index - 1 : 0;
     }
+    return index;
+  };
 
+  scrollToIndex = (index: number) => {
     this.getOptions()[index].closest(`.${menuStyles.menuContent}`).scrollTop = this.getOptions()[
-      indexToScroll
+      this.getIndexToScroll(index)
     ].offsetTop;
   };
 
   focusSelection = (index: number) => {
     const indexToFocus = index !== -1 ? index : 0;
 
-    if (this.menuRef && this.menuRef.current) {
+    if (this.menuRef?.current) {
       (this.getOptions()[indexToFocus].querySelector(`.${menuStyles.menuItem}`) as HTMLElement).focus();
     }
   };
@@ -258,7 +251,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     if (splitTime.length < 2) {
       time = `${time}${delimiter}00`;
       splitTime = time.split(delimiter);
-      // build time without seconds when includeSeconds is true
+      // due to only the input including seconds when includeSeconds=true, we need to build a temporary time here without those seconds so that an exact or close match can be scrolled to within the menu (which does not include seconds in any of the options)
     } else if (splitTime.length > 2) {
       time = parseTime(time, this.state.timeRegex, delimiter, !is24Hour, false);
       splitTime = time.split(delimiter);
@@ -317,7 +310,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   };
 
   getOptions = () =>
-    (this.menuRef && this.menuRef.current
+    (this.menuRef?.current
       ? Array.from(this.menuRef.current.querySelectorAll(`.${menuStyles.menuListItem}`))
       : []) as HTMLElement[];
 
