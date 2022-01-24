@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.43.8 (2022-01-24)
+
+
+### Bug Fixes
+
+* **table:** fixed action example ([#6800](https://github.com/patternfly/patternfly-react/issues/6800)) ([eaaedc2](https://github.com/patternfly/patternfly-react/commit/eaaedc28cf54cca1a47aaa5c4f5f76a11d32864d))
+
+
+
+
+
 ## 4.43.7 (2022-01-20)
 
 **Note:** Version bump only for package @patternfly/react-icons
