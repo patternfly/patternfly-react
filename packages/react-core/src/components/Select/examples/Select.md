@@ -2401,7 +2401,7 @@ class SelectWithFooter extends React.Component {
           isDisabled={isDisabled}
           direction={direction}
           footer={ <>
-            <Button tabIndex={1} variant="link" isInline>
+            <Button variant="link" isInline>
               Action
             </Button>
             </>}
