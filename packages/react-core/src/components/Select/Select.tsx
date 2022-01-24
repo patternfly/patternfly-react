@@ -946,7 +946,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 }
               }}
               ref={this.filterRef}
-              autoComplete={typeaheadInputValue === 'user' ? 'new-user' : inputAutoComplete}
+              autoComplete={inputAutoComplete}
             />
           </div>
           <Divider key="inline-filter-divider" />
@@ -1140,7 +1140,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   type="text"
                   onClick={this.onClick}
                   onChange={this.onChange}
-                  autoComplete={typeaheadInputValue === 'user' ? 'new-user' : inputAutoComplete}
+                  autoComplete={inputAutoComplete}
                   disabled={isDisabled}
                   ref={this.inputRef}
                 />
@@ -1164,7 +1164,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   type="text"
                   onChange={this.onChange}
                   onClick={this.onClick}
-                  autoComplete={typeaheadInputValue === 'user' ? 'new-user' : inputAutoComplete}
+                  autoComplete={inputAutoComplete}
                   disabled={isDisabled}
                   ref={this.inputRef}
                 />
