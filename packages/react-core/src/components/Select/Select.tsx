@@ -24,6 +24,7 @@ import {
   PickOptional,
   GenerateId
 } from '../../helpers';
+import { getUniqueId } from '../../helpers/util';
 import { Divider } from '../Divider';
 import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
 import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/favorites';
@@ -215,7 +216,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     inlineFilterPlaceholderText: null,
     customBadgeText: null,
     inputIdPrefix: '',
-    inputAutoComplete: 'off',
+    inputAutoComplete: navigator.userAgent.match('Chrome') ? getUniqueId('pf-no-autocomplete') : 'off',
     menuAppendTo: 'inline',
     favorites: [] as string[],
     favoritesLabel: 'Favorites',
