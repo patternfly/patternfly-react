@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.43.9 (2022-01-25)
+
+
+### Bug Fixes
+
+* **Select:**  Footer keyboard bugs ([#6844](https://github.com/patternfly/patternfly-react/issues/6844)) ([7f06125](https://github.com/patternfly/patternfly-react/commit/7f06125cfb52884708107da82ca3800207c9846f))
+
+
+
+
+
 ## 4.43.8 (2022-01-24)
 
 
