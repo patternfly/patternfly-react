@@ -134,7 +134,11 @@ export class SelectOption extends React.Component<SelectOptionProps> {
         }
         event.stopPropagation();
       } else {
-        keyHandler(index, innerIndex, 'tab');
+        if (event.shiftKey) {
+          keyHandler(index, innerIndex, 'up');
+        } else {
+          keyHandler(index, innerIndex, 'tab');
+        }
       }
     }
     event.preventDefault();

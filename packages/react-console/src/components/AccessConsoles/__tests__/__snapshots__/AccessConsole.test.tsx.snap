@@ -88,6 +88,7 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
                   "current": null,
                 }
               }
+              moveFocusToLastMenuItem={[Function]}
               onClickTypeaheadToggleButton={[Function]}
               onClose={[Function]}
               onEnter={[Function]}

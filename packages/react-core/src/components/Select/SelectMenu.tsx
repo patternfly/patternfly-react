@@ -152,7 +152,8 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
                       isChecked: this.checkForValue(option.props.value, checked),
                       sendRef,
                       keyHandler,
-                      index: index++
+                      index: index++,
+                      isLastOptionBeforeFooter
                     })
               )}
             </fieldset>

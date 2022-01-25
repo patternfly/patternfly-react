@@ -2400,7 +2400,11 @@ class SelectWithFooter extends React.Component {
           aria-labelledby={titleId}
           isDisabled={isDisabled}
           direction={direction}
-          footer={<Button variant="link" isInline>Action</Button>}
+          footer={ <>
+            <Button variant="link" isInline>
+              Action
+            </Button>
+            </>}
         >
           {this.options}
         </Select>

@@ -223,6 +223,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
             </div>,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -1145,6 +1146,7 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
             "current": null,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -1368,6 +1370,7 @@ exports[`checkbox select renders checkbox select selections properly when isChec
             "current": null,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -1549,6 +1552,7 @@ exports[`checkbox select renders closed successfully 1`] = `
             "current": null,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -1791,6 +1795,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
             </ul>,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -2360,6 +2365,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
             </ul>,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -2913,6 +2919,7 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
             </div>,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -3569,6 +3576,7 @@ exports[`checkbox select renders expanded with filtering successfully 2`] = `
             </div>,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -4467,6 +4475,7 @@ exports[`renders select with favorites successfully 1`] = `
             </div>,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -6002,6 +6011,7 @@ exports[`select custom select filter filters properly 1`] = `
             </ul>,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -6602,6 +6612,7 @@ exports[`select renders select groups successfully 1`] = `
             </div>,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -7461,6 +7472,7 @@ exports[`select renders up direction successfully 1`] = `
             "current": null,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -7647,6 +7659,7 @@ exports[`select single select renders closed successfully 1`] = `
             "current": null,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -7833,6 +7846,7 @@ exports[`select single select renders disabled successfully 1`] = `
             "current": null,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -8077,6 +8091,7 @@ exports[`select single select renders expanded successfully 1`] = `
             </ul>,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -8629,6 +8644,7 @@ exports[`select single select renders expanded successfully with custom objects 
             </ul>,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -9095,6 +9111,7 @@ exports[`select with custom content renders closed successfully 1`] = `
             "current": null,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -9280,6 +9297,7 @@ exports[`select with custom content renders expanded successfully 1`] = `
             </div>,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -9612,6 +9630,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
             "current": null,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -9875,6 +9894,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
             </ul>,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -10505,6 +10525,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             </ul>,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -11496,6 +11517,7 @@ exports[`typeahead select renders closed successfully 1`] = `
             "current": null,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -11757,6 +11779,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
             </ul>,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -12361,6 +12384,7 @@ exports[`typeahead select renders selected successfully 1`] = `
             </ul>,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}
@@ -12973,6 +12997,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
             </ul>,
           }
         }
+        moveFocusToLastMenuItem={[Function]}
         onClickTypeaheadToggleButton={[Function]}
         onClose={[Function]}
         onEnter={[Function]}

@@ -45,3 +45,5 @@ export const KeyTypes = {
   ArrowLeft: 'ArrowLeft',
   ArrowRight: 'ArrowRight'
 };
+
+export const SelectFooterTabbableItems = 'input, button, select, textarea, a[href]';
