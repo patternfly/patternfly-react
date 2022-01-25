@@ -24,6 +24,7 @@ import {
   PickOptional,
   GenerateId
 } from '../../helpers';
+import { getUniqueId } from '../../helpers/util';
 import { Divider } from '../Divider';
 import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
 import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/favorites';
@@ -140,6 +141,8 @@ export interface SelectProps
   customBadgeText?: string | number;
   /** Prefix for the id of the input in the checkbox select variant*/
   inputIdPrefix?: string;
+  /** Value for the typeahead and inline filtering input autocomplete attribute */
+  inputAutoComplete?: string;
   /** Optional props to pass to the chip group in the typeaheadmulti variant */
   chipGroupProps?: Omit<ChipGroupProps, 'children' | 'ref'>;
   /** Optional props to render custom chip group in the typeaheadmulti variant */
@@ -213,6 +216,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     inlineFilterPlaceholderText: null,
     customBadgeText: null,
     inputIdPrefix: '',
+    inputAutoComplete: navigator.userAgent.match('Chrome') ? getUniqueId('pf-no-autocomplete') : 'off',
     menuAppendTo: 'inline',
     favorites: [] as string[],
     favoritesLabel: 'Favorites',
@@ -793,6 +797,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       noResultsFoundText,
       customBadgeText,
       inputIdPrefix,
+      inputAutoComplete,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       isInputValuePersisted,
       isInputFilterPersisted,
@@ -953,7 +958,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 }
               }}
               ref={this.filterRef}
-              autoComplete="never"
+              autoComplete={inputAutoComplete}
             />
           </div>
           <Divider key="inline-filter-divider" />
@@ -1147,7 +1152,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   type="text"
                   onClick={this.onClick}
                   onChange={this.onChange}
-                  autoComplete="never"
+                  autoComplete={inputAutoComplete}
                   disabled={isDisabled}
                   ref={this.inputRef}
                 />
@@ -1171,7 +1176,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   type="text"
                   onChange={this.onChange}
                   onClick={this.onClick}
-                  autoComplete="never"
+                  autoComplete={inputAutoComplete}
                   disabled={isDisabled}
                   ref={this.inputRef}
                 />
