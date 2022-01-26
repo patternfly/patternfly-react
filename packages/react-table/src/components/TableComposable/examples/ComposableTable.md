@@ -163,9 +163,6 @@ This example demonstrates adding actions as the last column. The header's last c
 
 To make a cell an action cell, render an `ActionsColumn` component inside a row's last `Td` and pass an array of `IAction` objects via the `items` prop of `ActionsColumn`.
 
-Look [here](https://github.com/patternfly/patternfly-react/blob/main/packages/react-table/src/components/Table/TableTypes.tsx)
-for the `IAction` type to see what it looks like.
-
 ```ts file="ComposableTableActions.tsx"
 ```
 
