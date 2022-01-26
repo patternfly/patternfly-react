@@ -197,6 +197,7 @@ section: developer-resources
   - Made OUIA counter update for node/SSR/NextJS ([#6668](https://github.com/patternfly/patternfly-react/pull/6668))
   - Updated react and react-dom types ([#6583](https://github.com/patternfly/patternfly-react/pull/6583))
   - Updated to use JSDoc comments for all deprecations ([#6613](https://github.com/patternfly/patternfly-react/pull/6613))
+  - fixed overflow nenu integration test by ignoring menu being covered in tests ([#6852](https://github.com/patternfly/patternfly-react/pull/6852))
 - **Deps:** Update dependency theme-patternfly-org to v0.8.12 ([#6640](https://github.com/patternfly/patternfly-react/pull/6640))
 
 ## 2021.15 release notes (2021-11-17)
