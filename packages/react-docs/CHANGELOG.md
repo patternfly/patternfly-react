@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.53.13 (2022-01-26)
+
+
+### Reverts
+
+* Revert "Improve IAction type (#6108)" (#6862) ([94aea84](https://github.com/patternfly/patternfly-react/commit/94aea84036e26f4cc472b7d445ee49b088eb6a47)), closes [#6108](https://github.com/patternfly/patternfly-react/issues/6108) [#6862](https://github.com/patternfly/patternfly-react/issues/6862)
+
+
+
+
+
 ## 5.53.12 (2022-01-26)
 
 
