@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.39.12 (2022-01-26)
+
+
+### Bug Fixes
+
+* **OverflowMenu:** ignore menu being covered in intg. tests ([#6852](https://github.com/patternfly/patternfly-react/issues/6852)) ([066e2bb](https://github.com/patternfly/patternfly-react/commit/066e2bb994f4eca5538fb9287e5d10ddf4a30cac))
+
+
+
+
+
 ## 4.39.11 (2022-01-26)
 
 
