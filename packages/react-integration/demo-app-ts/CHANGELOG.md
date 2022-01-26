@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.152.11 (2022-01-26)
+
+
+### Reverts
+
+* Revert "feat(Tabs): enforce restricted type for children (#6767)" (#6857) ([eca9a70](https://github.com/patternfly/patternfly-react/commit/eca9a708e8d53416e60a790ea876aa0b2e398212)), closes [#6767](https://github.com/patternfly/patternfly-react/issues/6767) [#6857](https://github.com/patternfly/patternfly-react/issues/6857)
+
+
+
+
+
 ## 4.152.10 (2022-01-25)
 
 **Note:** Version bump only for package demo-app-ts
