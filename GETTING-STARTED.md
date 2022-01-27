@@ -41,4 +41,4 @@ ESLint is run on .js, .jsx, .ts, and .tsx files. It uses the [@typescript-eslint
 
 ### Version lint
 
-The `@patternfly` version linter is run on all `package.json` files to ensure that versions of all `@patternfly/*` packages match. This is done to prevent mismatching versions of essential PatternFly packages from accidentally being published. You can run this linter with `yarn lint:versions`.
+The `@patternfly` version linter is run on all `package.json` files to ensure that versions of all `@patternfly/*` packages match. This is done to prevent mismatching versions of essential PatternFly packages from accidentally being published. You can run this linter with `yarn lint:versions`. 
