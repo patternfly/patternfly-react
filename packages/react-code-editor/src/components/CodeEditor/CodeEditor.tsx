@@ -182,6 +182,7 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
 }
 
 interface CodeEditorState {
+  prevPropsCode: string;
   value: string;
   filename: string;
   isLoading: boolean;
@@ -264,6 +265,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
   constructor(props: CodeEditorProps) {
     super(props);
     this.state = {
+      prevPropsCode: this.props.code,
       value: this.props.code,
       filename: '',
       isLoading: false,
@@ -279,12 +281,19 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     this.setState({ value });
   };
 
-  static getDerivedStateFromProps(props: CodeEditorProps, state: CodeEditorState) {
-    if (props.code !== state.value) {
+  // this function is only called when the props change
+  // the only conflict is between props.code and state.value
+  static getDerivedStateFromProps(nextProps: CodeEditorProps, prevState: CodeEditorState) {
+    // if the code changes due to the props.code changing
+    // set the value to props.code
+    if (nextProps.code !== prevState.prevPropsCode) {
       return {
-        value: props.code
+        value: nextProps.code,
+        prevPropsCode: nextProps.code
       };
     }
+    // else, don't need to change the state.value
+    // because the onChange function will do all the work
     return null;
   }
 
@@ -293,13 +302,6 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       this.editor.layout();
     }
   };
-
-  componentDidUpdate(prevProps: CodeEditorProps) {
-    const { code } = this.props;
-    if (prevProps.code !== code) {
-      this.setState({ value: code });
-    }
-  }
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleGlobalKeys);
@@ -356,6 +358,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       this.readFile(fileHandle)
         .then(data => {
           this.handleFileReadFinished();
+          this.toggleEmptyState();
           this.handleFileChange(data, fileHandle.name);
         })
         .catch((error: DOMException) => {
