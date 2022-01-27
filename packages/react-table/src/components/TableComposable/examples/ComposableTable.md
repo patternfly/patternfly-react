@@ -22,6 +22,7 @@ propComponents:
     'TdDraggableType',
     'ThInfoType',
     'TdExpandType',
+    'ThExpandType',
     'EditableSelectInputCell',
     'EditableTextCell',
     'EditableSelectInputProps',

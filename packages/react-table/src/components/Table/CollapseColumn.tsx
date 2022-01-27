@@ -10,6 +10,7 @@ export interface CollapseColumnProps {
   children?: React.ReactNode;
   onToggle?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   isOpen?: boolean;
+  'aria-label'?: string;
 }
 
 export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
@@ -25,7 +26,7 @@ export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
         className={css(className, isOpen && styles.modifiers.expanded)}
         {...props}
         variant="plain"
-        aria-label="Details"
+        aria-label={props['aria-label'] || 'Details'}
         onClick={onToggle}
         aria-expanded={isOpen}
       >
