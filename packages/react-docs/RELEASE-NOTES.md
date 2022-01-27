@@ -3,19 +3,19 @@ id: Release notes
 section: developer-resources
 ---
 
-## 2022.01 release notes (2022-01-26)
-- [@patternfly/react-catalog-view-extension@4.43.10](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.43.10)
-- [@patternfly/react-charts@6.45.10](https://www.npmjs.com/package/@patternfly/react-charts/v/6.45.10)
-- [@patternfly/react-code-editor@4.33.10](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.33.10)
-- [@patternfly/react-core@4.192.10](https://www.npmjs.com/package/@patternfly/react-core/v/4.192.10)
-- [@patternfly/react-icons@4.43.10](https://www.npmjs.com/package/@patternfly/react-icons/v/4.43.10)
-- [@patternfly/react-inline-edit-extension@4.37.10](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.37.10)
-- [@patternfly/react-log-viewer@4.37.10](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.37.10)
-- [@patternfly/react-styles@4.42.10](https://www.npmjs.com/package/@patternfly/react-styles/v/4.42.10)
-- [@patternfly/react-table@4.61.10](https://www.npmjs.com/package/@patternfly/react-table/v/4.61.10)
-- [@patternfly/react-tokens@4.44.10](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.44.10)
-- [@patternfly/react-topology@4.39.10](https://www.npmjs.com/package/@patternfly/react-topology/v/4.39.10)
-- [@patternfly/react-virtualized-extension@4.39.10](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.39.10)
+## 2022.01 release notes (2022-01-25)
+- [@patternfly/react-catalog-view-extension@4.43.14](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.43.14)
+- [@patternfly/react-charts@6.45.14](https://www.npmjs.com/package/@patternfly/react-charts/v/6.45.14)
+- [@patternfly/react-code-editor@4.33.14](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.33.14)
+- [@patternfly/react-core@4.192.14](https://www.npmjs.com/package/@patternfly/react-core/v/4.192.14)
+- [@patternfly/react-icons@4.43.14](https://www.npmjs.com/package/@patternfly/react-icons/v/4.43.14)
+- [@patternfly/react-inline-edit-extension@4.37.14](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.37.14)
+- [@patternfly/react-log-viewer@4.37.14](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.37.14)
+- [@patternfly/react-styles@4.42.14](https://www.npmjs.com/package/@patternfly/react-styles/v/4.42.14)
+- [@patternfly/react-table@4.61.14](https://www.npmjs.com/package/@patternfly/react-table/v/4.61.14)
+- [@patternfly/react-tokens@4.44.14](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.44.14)
+- [@patternfly/react-topology@4.39.14](https://www.npmjs.com/package/@patternfly/react-topology/v/4.39.14)
+- [@patternfly/react-virtualized-extension@4.39.14](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.39.14)
 
 ### Components
 - **AboutModal:**
@@ -114,7 +114,6 @@ section: developer-resources
 - Updated to narrow logic for preventing event default on key down ([#6744](https://github.com/patternfly/patternfly-react/pull/6744))
 - Updated clickable area for checks and radios ([#6754](https://github.com/patternfly/patternfly-react/pull/6754))
 - Fixed row index in tree table examples ([#6830](https://github.com/patternfly/patternfly-react/pull/6830))
-- Improved IAction type ([#6108](https://github.com/patternfly/patternfly-react/pull/6108))
 
   ### Topology
 - Fixed state update on an unmounted component ([#6779](https://github.com/patternfly/patternfly-react/pull/6779))
