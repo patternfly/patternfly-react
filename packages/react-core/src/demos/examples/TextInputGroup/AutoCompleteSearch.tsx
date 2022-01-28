@@ -20,6 +20,7 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
   const [inputValue, setInputValue] = React.useState('');
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
   const [currentChips, setCurrentChips] = React.useState<string[]>([]);
+  const [hint, setHint] = React.useState('');
 
   /** auto-completing suggestion text items to be shown in the menu */
   const suggestionItems = ['Cluster', 'Kind', 'Label', 'Name', 'Namespace', 'Status'];
@@ -65,6 +66,20 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
       );
       setMenuItems([noResultItem]);
       return;
+    }
+
+    /** The hint is set whenever there is only one autocomplete option left. */
+    if (filteredMenuItems.length === 1) {
+      let hint = filteredMenuItems[0].props.children;
+      if (!inputValue.indexOf(hint)) {
+        // the match was found in a place other than the start, so typeahead wouldn't work right
+        setHint("");
+      } else {
+        // use the input for the first part, otherwise case difference could make things look wrong
+        setHint(inputValue + hint.substr(inputValue.length));
+      }
+    } else {
+      setHint("");
     }
 
     /** add a heading to the menu */
@@ -195,6 +210,7 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
         <TextInputGroupMain
           icon={showSearchIcon && <SearchIcon />}
           value={inputValue}
+          hint={hint}
           onChange={handleInputChange}
           onFocus={() => setMenuIsOpen(true)}
           onKeyDown={handleTextInputKeyDown}
