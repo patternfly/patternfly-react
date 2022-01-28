@@ -53,7 +53,8 @@ section: developer-resources
   - Added option to fill columns first ([#6736](https://github.com/patternfly/patternfly-react/pull/6736))
 - **Dropdown:**
   - Added plain-text variant support ([#6721](https://github.com/patternfly/patternfly-react/pull/6721))
-- **Expandable section:** Added indented variation ([#6763](https://github.com/patternfly/patternfly-react/pull/6763))
+- **Expandable section:**
+  - Added indented variation ([#6763](https://github.com/patternfly/patternfly-react/pull/6763))
 - **Jump links:**
   - Fixed scrollspy breakpoints are incorrect if offset prop changes ([#6750](https://github.com/patternfly/patternfly-react/pull/6750))
   - Updated jump links demo to allow for horizontal display ([#6731](https://github.com/patternfly/patternfly-react/pull/6731))
