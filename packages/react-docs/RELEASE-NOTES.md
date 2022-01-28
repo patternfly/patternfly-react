@@ -23,7 +23,7 @@ section: developer-resources
 - **Accordion:**
   - Converted examples to Typescript/functional components ([#6716](https://github.com/patternfly/patternfly-react/pull/6716))
 - **Action list:**
-   Converted examples to Typescript/functional components ([#6718](https://github.com/patternfly/patternfly-react/pull/6718))
+  - Converted examples to Typescript/functional components ([#6718](https://github.com/patternfly/patternfly-react/pull/6718))
 - **Application launcher:**
   - Converted examples to Typescript ([#6834](https://github.com/patternfly/patternfly-react/pull/6834))
 - **Backdrop:**
