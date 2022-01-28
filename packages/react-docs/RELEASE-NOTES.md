@@ -125,7 +125,7 @@ section: developer-resources
 ### Other
 - **Chore:**
   - Promoted beta components ([#6808](https://github.com/patternfly/patternfly-react/pull/6808))
-  - fixed overflow nenu integration test by ignoring menu being covered in tests ([#6852](https://github.com/patternfly/patternfly-react/pull/6852))
+  - fixed overflow menu integration test by ignoring menu being covered in tests ([#6852](https://github.com/patternfly/patternfly-react/pull/6852))
 - **Demos:**
   - Added a password generator demo ([#6725](https://github.com/patternfly/patternfly-react/pull/6725))
 - **Dependencies:**
