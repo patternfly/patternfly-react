@@ -64,14 +64,14 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
       {children}
       <span className={css(styles.textInputGroupText)}>
         {inputHint && (
-                <input
-                  className={css(styles.textInputGroupTextInput, styles.modifiers.hint)}
-                  type="text"
-                  disabled
-                  aria-hidden="true"
-                  value={inputHint}
-                />
-              )}
+          <input
+            className={css(styles.textInputGroupTextInput, styles.modifiers.hint)}
+            type="text"
+            disabled
+            aria-hidden="true"
+            value={inputHint}
+          />
+        )}
         {icon && <span className={css(styles.textInputGroupIcon)}>{icon}</span>}
         <input
           type={type}
