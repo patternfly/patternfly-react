@@ -42,7 +42,7 @@ section: developer-resources
   - Converted examples to typescript ([#6791](https://github.com/patternfly/patternfly-react/pull/6791))
 - **Button:**
   - Added demo for progress button completion state ([#6738](https://github.com/patternfly/patternfly-react/pull/6738))
-- Converted examples to Typescript ([#6796](https://github.com/patternfly/patternfly-react/pull/6796))
+  - Converted examples to Typescript ([#6796](https://github.com/patternfly/patternfly-react/pull/6796))
 - **Clipboard copy:**
   - Fixed to clear timer on unmount ([#6708](https://github.com/patternfly/patternfly-react/pull/6708))
 - **DataList:**
