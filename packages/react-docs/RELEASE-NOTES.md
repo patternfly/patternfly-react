@@ -115,7 +115,7 @@ section: developer-resources
 - Updated clickable area for checks and radios ([#6754](https://github.com/patternfly/patternfly-react/pull/6754))
 - Fixed row index in tree table examples ([#6830](https://github.com/patternfly/patternfly-react/pull/6830))
 
-  ### Topology
+### Topology
 - Fixed state update on an unmounted component ([#6779](https://github.com/patternfly/patternfly-react/pull/6779))
 - Updated screen reader className to latest in TopologyControlBar ([#6739](https://github.com/patternfly/patternfly-react/pull/6739))
 - Added component display names to topology HOC/wrappers ([#6829](https://github.com/patternfly/patternfly-react/pull/6829))
