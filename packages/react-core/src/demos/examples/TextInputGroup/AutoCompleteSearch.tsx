@@ -65,13 +65,14 @@ export const AutoCompleteSearch: React.FunctionComponent = () => {
         </MenuItem>
       );
       setMenuItems([noResultItem]);
+      setHint('');
       return;
     }
 
     /** The hint is set whenever there is only one autocomplete option left. */
     if (filteredMenuItems.length === 1) {
       const hint = filteredMenuItems[0].props.children;
-      if (!inputValue.indexOf(hint)) {
+      if (hint.indexOf(inputValue)) {
         // the match was found in a place other than the start, so typeahead wouldn't work right
         setHint('');
       } else {
