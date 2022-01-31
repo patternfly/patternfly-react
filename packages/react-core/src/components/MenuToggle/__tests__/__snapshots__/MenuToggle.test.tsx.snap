@@ -9,6 +9,7 @@ exports[`menu toggle passes additional classes 1`] = `
     innerRef={null}
     isDisabled={false}
     isExpanded={false}
+    isFullHeight={false}
     variant="default"
   >
     <button
@@ -66,6 +67,7 @@ exports[`menu toggle renders successfully 1`] = `
     innerRef={null}
     isDisabled={false}
     isExpanded={false}
+    isFullHeight={false}
     variant="default"
   >
     <button
@@ -134,6 +136,7 @@ exports[`menu toggle shows badge 1`] = `
     innerRef={null}
     isDisabled={false}
     isExpanded={false}
+    isFullHeight={false}
     variant="default"
   >
     <button
@@ -217,6 +220,7 @@ exports[`menu toggle shows icon 1`] = `
     innerRef={null}
     isDisabled={false}
     isExpanded={false}
+    isFullHeight={false}
     variant="default"
   >
     <button
@@ -304,6 +308,7 @@ exports[`menu toggle shows isDisabled 1`] = `
     innerRef={null}
     isDisabled={true}
     isExpanded={false}
+    isFullHeight={false}
     variant="default"
   >
     <button
@@ -364,6 +369,7 @@ exports[`menu toggle shows isExpanded 1`] = `
     innerRef={null}
     isDisabled={false}
     isExpanded={true}
+    isFullHeight={false}
     variant="default"
   >
     <button
@@ -423,6 +429,7 @@ exports[`menu toggle shows isPlain 1`] = `
     innerRef={null}
     isDisabled={false}
     isExpanded={false}
+    isFullHeight={false}
     variant="plain"
   >
     <button
@@ -468,6 +475,7 @@ exports[`menu toggle shows isPrimary 1`] = `
     innerRef={null}
     isDisabled={false}
     isExpanded={false}
+    isFullHeight={false}
     variant="primary"
   >
     <button
@@ -527,6 +535,7 @@ exports[`menu toggle shows plain text 1`] = `
     innerRef={null}
     isDisabled={false}
     isExpanded={false}
+    isFullHeight={false}
     variant="plainText"
   >
     <button
