@@ -51,7 +51,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   /** @beta Callback function when mouse leaves trigger */
   onShowFlyout?: (event?: any) => void;
   /** @beta Drilldown menu of the item. Should be a Menu or DrilldownMenu type. */
-  drilldownMenu?: React.ReactNode;
+  drilldownMenu?: React.ReactNode | (() => React.ReactNode);
   /** @beta Sub menu direction */
   direction?: 'down' | 'up';
   /** @beta True if item is on current selection path */
@@ -208,7 +208,15 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   let _drill: () => void;
   if (direction) {
     if (direction === 'down') {
-      _drill = () => onDrillIn && onDrillIn(menuId, (drilldownMenu as React.ReactElement).props.id, itemId);
+      _drill = () =>
+        onDrillIn &&
+        onDrillIn(
+          menuId,
+          typeof drilldownMenu === 'function'
+            ? drilldownMenu().props.id
+            : (drilldownMenu as React.ReactElement).props.id,
+          itemId
+        );
     } else {
       _drill = () => onDrillOut && onDrillOut(parentMenu, itemId);
     }
@@ -327,7 +335,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
           <FlyoutContext.Provider value={{ direction: flyoutXDirection }}>{flyoutMenu}</FlyoutContext.Provider>
         </MenuContext.Provider>
       )}
-      {drilldownMenu}
+      {typeof drilldownMenu === 'function' ? drilldownMenu() : drilldownMenu}
       <MenuItemContext.Provider value={{ itemId, isDisabled }}>
         {actions}
         {isFavorited !== null && (
