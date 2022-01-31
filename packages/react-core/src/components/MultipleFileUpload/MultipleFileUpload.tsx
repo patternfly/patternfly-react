@@ -16,7 +16,7 @@ interface MultipleFileUploadProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   /** Optional extra props to customize react-dropzone. */
   dropzoneProps?: DropzoneProps;
   /** Value of the file's contents */
-  values?: File[];
+  currentFiles?: File[];
 
   isHorizontal?: boolean;
   /** Change event emitted from the hidden \<input type="file" \> field associated with the component  */
@@ -26,8 +26,7 @@ interface MultipleFileUploadProps extends Omit<React.HTMLProps<HTMLDivElement>, 
 }
 
 export const MultipleFileUploadContext = React.createContext({
-  open: () => {},
-  isHorizontal: false
+  open: () => {}
 });
 
 export const MultipleFileUpload: React.FunctionComponent<MultipleFileUploadProps> = ({
@@ -37,30 +36,28 @@ export const MultipleFileUpload: React.FunctionComponent<MultipleFileUploadProps
   isHorizontal,
   onFileInputChange,
   onDataChange,
-  values,
+  currentFiles,
   ...props
 }: MultipleFileUploadProps) => {
-  const onDropAccepted = (files: File[]) => {
-    onDataChange([...values, ...files]);
+  // helper functions to prevent duplicate file uploading
+  const identicalFile = (existingFile: File, newFile: File) =>
+    existingFile.name === newFile.name &&
+    existingFile.size === newFile.size &&
+    existingFile.lastModified === newFile.lastModified;
+  const isUnique = (newFile: File) => !currentFiles.some(currentFile => identicalFile(currentFile, newFile));
+
+  const onDropAccepted = (newFiles: File[]) => {
+    const uniqueNewFiles = newFiles.filter(newFile => isUnique(newFile));
+
+    onDataChange([...currentFiles, ...uniqueNewFiles]);
   };
+
   const onDropRejected = () => {};
 
   const fileInputRef = React.useRef<HTMLInputElement>();
 
-  // const uniqueFileValidator = (newFile: File) => {
-  //   if (values.some((file: File) => file.name === newFile.name && file.size === newFile.size)) {
-  //     console.log('Identical file already dropped');
-  //   }
-  // };
-
   return (
-    <Dropzone
-      multiple={true}
-      {...dropzoneProps}
-      onDropAccepted={onDropAccepted}
-      onDropRejected={onDropRejected}
-      // validator={uniqueFileValidator}
-    >
+    <Dropzone multiple={true} {...dropzoneProps} onDropAccepted={onDropAccepted} onDropRejected={onDropRejected}>
       {({ getRootProps, getInputProps, isDragActive, open }) => {
         const rootProps = getRootProps({
           ...props,
@@ -80,7 +77,7 @@ export const MultipleFileUpload: React.FunctionComponent<MultipleFileUploadProps
         };
 
         return (
-          <MultipleFileUploadContext.Provider value={{ open, isHorizontal }}>
+          <MultipleFileUploadContext.Provider value={{ open }}>
             <div
               className={css(
                 styles.multipleFileUpload,

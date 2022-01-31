@@ -13,14 +13,12 @@ import {
 
 export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   const [currentFiles, setCurrentFiles] = React.useState<File[]>([]);
-  // const [isLoading, setIsLoading] = React.useState(false);
   const [showStatus, setShowStatus] = React.useState(false);
 
   if (!showStatus && currentFiles.length > 0) {
     setShowStatus(true);
   }
 
-  // const handleFileInputChange = (_event, file) => setFilename(file.name);
   const handleValueChange = values => setCurrentFiles(values);
 
   const removeFile = (fileToRemove: File) => {
@@ -30,11 +28,10 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
 
   return (
     <MultipleFileUpload
-      values={currentFiles}
-      // onFileInputChange={handleFileInputChange}
+      currentFiles={currentFiles}
       onDataChange={handleValueChange}
-      // isLoading={isLoading}
       isHorizontal
+      dropzoneProps={{ accept: 'image/jpeg, application/msword, application/pdf, image/png' }}
     >
       <MultipleFileUploadMain>
         <MultipleFileUploadTitle>

@@ -15,16 +15,22 @@ interface MultipleFileUploadStatusProps extends React.HTMLProps<HTMLDivElement> 
   files?: File[];
 
   onRemoveFile?: (file: File) => void;
+  /** A callback for when a selected file starts loading */
+  onReadStarted?: (file: File) => void;
   /** A callback for when a selected file finishes loading */
-  onReadFinished?: (fileHandle: File) => void;
+  onReadFinished?: (file: File) => void;
+  /** A callback for when the FileReader API fails */
+  onReadFailed?: (error: DOMException, file: File) => void;
 }
 
 export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploadStatusProps> = ({
   className,
-  files,
+  files = [],
   statusToggleText,
-  onRemoveFile,
-  onReadFinished,
+  onRemoveFile = () => {},
+  onReadStarted = () => {},
+  onReadFinished = () => {},
+  onReadFailed = () => {},
   ...props
 }: MultipleFileUploadStatusProps) => {
   const toggle = (
@@ -50,9 +56,11 @@ export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploa
             files.map(file => (
               <MultipleFileUploadStatusItem
                 file={file}
-                key={`${file.name}${file.size}`}
+                key={`${file.name}${file.size}${file.lastModified}`}
                 onClearClick={() => onRemoveFile(file)}
+                onReadStarted={() => onReadStarted(file)}
                 onReadFinished={() => onReadFinished(file)}
+                onReadFailed={(error: DOMException) => onReadFailed(error, file)}
               />
             ))}
         </ul>
