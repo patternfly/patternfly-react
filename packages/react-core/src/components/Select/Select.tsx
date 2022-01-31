@@ -31,7 +31,6 @@ import {
   PickOptional,
   GenerateId
 } from '../../helpers';
-import { getUniqueId } from '../../helpers/util';
 import { Divider } from '../Divider';
 import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
 import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/favorites';
@@ -149,7 +148,7 @@ export interface SelectProps
   customBadgeText?: string | number;
   /** Prefix for the id of the input in the checkbox select variant*/
   inputIdPrefix?: string;
-  /** Value for the typeahead and inline filtering input autocomplete attribute */
+  /** Value for the typeahead and inline filtering input autocomplete attribute. When targeting Chrome this property should be a random string. */
   inputAutoComplete?: string;
   /** Optional props to pass to the chip group in the typeaheadmulti variant */
   chipGroupProps?: Omit<ChipGroupProps, 'children' | 'ref'>;
@@ -224,7 +223,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     inlineFilterPlaceholderText: null,
     customBadgeText: null,
     inputIdPrefix: '',
-    inputAutoComplete: navigator.userAgent.match('Chrome') ? getUniqueId('pf-no-autocomplete') : 'off',
+    inputAutoComplete: 'off',
     menuAppendTo: 'inline',
     favorites: [] as string[],
     favoritesLabel: 'Favorites',
