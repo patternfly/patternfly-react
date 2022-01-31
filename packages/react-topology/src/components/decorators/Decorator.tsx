@@ -37,7 +37,7 @@ const Decorator: React.FunctionComponent<DecoratorTypes> = ({
   const [hover, hoverRef] = useHover();
   const iconRadius = radius - padding;
 
-  const decorator = (
+  return (
     <g
       ref={hoverRef}
       className={css(styles.topologyNodeDecorator, className)}
@@ -56,7 +56,7 @@ const Decorator: React.FunctionComponent<DecoratorTypes> = ({
       <SvgDropShadowFilter id={HOVER_FILTER_ID} dy={3} stdDeviation={5} floodOpacity={0.5} />
       {showBackground && (
         <circle
-          key={hover ? 'circle-hover' : 'circle'}
+          key={hover ? 'circle-hover' : 'circle'} // update key on hover to force update of shadow filter
           ref={circleRef}
           className={css(styles.topologyNodeDecoratorBg)}
           cx={x}
@@ -79,8 +79,6 @@ const Decorator: React.FunctionComponent<DecoratorTypes> = ({
       </g>
     </g>
   );
-
-  return decorator;
 };
 
 export default Decorator;

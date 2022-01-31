@@ -26,12 +26,8 @@ exports[`TopologySideBar should display topology sidebar correctly 1`] = `
       </span>
     </div>
     <div
-      className="pf-topology-side-bar__body"
-    >
-      <div
-        id="test-canvas"
-      />
-    </div>
+      id="test-canvas"
+    />
   </div>
 </TopologySideBar>
 `;
@@ -99,12 +95,8 @@ exports[`TopologySideBar should display topology sidebar w/ close correctly 1`] 
       </ButtonBase>
     </Button>
     <div
-      className="pf-topology-side-bar__body"
-    >
-      <div
-        id="test-canvas"
-      />
-    </div>
+      id="test-canvas"
+    />
   </div>
 </TopologySideBar>
 `;

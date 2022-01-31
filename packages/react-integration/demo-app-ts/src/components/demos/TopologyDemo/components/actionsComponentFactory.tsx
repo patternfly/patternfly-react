@@ -2,7 +2,6 @@ import * as React from 'react';
 import {
   GraphElement,
   ComponentFactory,
-  withCustomNodeShape,
   withContextMenu,
   ContextMenuSeparator,
   ContextMenuItem,
@@ -19,7 +18,7 @@ import {
   nodeDragSourceSpec
 } from '@patternfly/react-topology';
 import GroupHull from './GroupHull';
-import Path from './shapes/Path';
+import CustomPathNode from './CustomPathNode';
 
 const contextMenuItem = (label: string, i: number): React.ReactElement => {
   if (label === '-') {
@@ -72,11 +71,7 @@ const actionsComponentFactory: ComponentFactory = (
   if (type === 'custom-node') {
     return withDndDrop<any, any, { droppable?: boolean; hover?: boolean; canDrop?: boolean }, NodeComponentProps>(
       nodeDropTargetSpec
-    )(
-      withDragNode(nodeDragSourceSpec(type))(
-        withSelection()(withContextMenu(() => defaultMenu)(withCustomNodeShape(() => Path)(DefaultNode)))
-      )
-    );
+    )(withDragNode(nodeDragSourceSpec(type))(withSelection()(withContextMenu(() => defaultMenu)(CustomPathNode))));
   }
   return undefined;
 };

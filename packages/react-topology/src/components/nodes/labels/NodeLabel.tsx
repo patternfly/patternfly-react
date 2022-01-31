@@ -9,7 +9,7 @@ import LabelBadge from './LabelBadge';
 import LabelContextMenu from './LabelContextMenu';
 import LabelIcon from './LabelIcon';
 import LabelActionIcon from './LabelActionIcon';
-import { BadgeLocation, LabelPosition } from '../../../types';
+import { BadgeLocation, LabelPosition, NodeStatus } from '../../../types';
 
 type NodeLabelProps = {
   children?: string;
@@ -20,7 +20,7 @@ type NodeLabelProps = {
   y?: number;
   position?: LabelPosition;
   cornerRadius?: number;
-  status?: string;
+  status?: NodeStatus;
   secondaryLabel?: string;
   truncateLength?: number; // Defaults to 13
   labelIconClass?: string; // Icon to show in label
@@ -198,7 +198,7 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
       {textSize && (
         <rect
           className={css(styles.topologyNodeLabelBackground)}
-          key={`rect-${filterId}`}
+          key={`rect-${filterId}`} // update key to force remount on filter update
           filter={filterId && createSvgIdUrl(filterId)}
           x={0}
           y={0}

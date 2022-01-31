@@ -1,8 +1,7 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import * as React from 'react';
-import { getPathForSides, getPointsForSides } from './shapeUtils';
-import { ShapeProps } from '../../../utils';
+import { getPathForSides, getPointsForSides, ShapeProps } from './shapeUtils';
 import { usePolygonAnchor } from '../../../behavior';
 
 type SidedProps = ShapeProps & {
@@ -19,9 +18,8 @@ const SidedShape: React.FC<SidedProps> = ({
   hullPadding = 0,
   dndDropRef
 }) => {
-  const setPolygonAnchorPoints = usePolygonAnchor();
-  const points = getPointsForSides(sides, Math.min(width, height), 0);
-  setPolygonAnchorPoints(points);
+  const points = React.useMemo(() => getPointsForSides(sides, Math.min(width, height), 0), [height, sides, width]);
+  usePolygonAnchor(points);
   if (!hullPadding) {
     return (
       <polygon

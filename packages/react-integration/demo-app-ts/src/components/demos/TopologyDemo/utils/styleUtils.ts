@@ -28,7 +28,7 @@ export const NODE_STATUSES = [
   NodeStatus.default
 ];
 export const NODE_SHAPES = [
-  NodeShape.circle,
+  NodeShape.ellipse,
   NodeShape.rect,
   NodeShape.rhombus,
   NodeShape.trapezoid,
@@ -105,7 +105,7 @@ export const createNode = (options: {
   setLocation?: boolean;
   dataType?: DataTypes;
 }): NodeModel => {
-  const shape = options.shape || NodeShape.circle;
+  const shape = options.shape || NodeShape.ellipse;
   const width = options.width || DEFAULT_NODE_SIZE;
   let height = options.height;
   if (!height) {
@@ -424,7 +424,7 @@ export const createGroupNodes = (groupId = 'group1', x = 0): NodeModel[] => {
   nodes.push(
     createNode({
       id: `${groupId}-7`,
-      shape: NodeShape.circle,
+      shape: NodeShape.ellipse,
       label: 'Node 7',
       labelPosition: LabelPosition.right,
       row: 0,
@@ -447,7 +447,7 @@ export const createGroupedGroupNodes = (
   nodes.push(
     createNode({
       id: `${groupId}-Grouped-1`,
-      shape: NodeShape.circle,
+      shape: NodeShape.ellipse,
       label: 'Grouped Node 1',
       labelPosition: LabelPosition.bottom,
       row: 0,
@@ -460,7 +460,7 @@ export const createGroupedGroupNodes = (
   nodes.push(
     createNode({
       id: `${groupId}-Grouped-2`,
-      shape: NodeShape.circle,
+      shape: NodeShape.ellipse,
       label: 'Grouped Node 2',
       labelPosition: LabelPosition.bottom,
       row: 0,
@@ -498,7 +498,7 @@ export const createUnGroupedGroupNodes = (groupId: string, x = 0, y = 325): Node
   nodes.push(
     createNode({
       id: `${groupId}-UnGrouped-A`,
-      shape: NodeShape.circle,
+      shape: NodeShape.ellipse,
       label: 'Grouped Node A',
       labelPosition: LabelPosition.bottom,
       row: 0,
@@ -510,7 +510,7 @@ export const createUnGroupedGroupNodes = (groupId: string, x = 0, y = 325): Node
   nodes.push(
     createNode({
       id: `${groupId}-UnGrouped-B`,
-      shape: NodeShape.circle,
+      shape: NodeShape.ellipse,
       label: 'Grouped Node B',
       labelPosition: LabelPosition.bottom,
       row: 0,
@@ -522,7 +522,7 @@ export const createUnGroupedGroupNodes = (groupId: string, x = 0, y = 325): Node
   nodes.push(
     createNode({
       id: `${groupId}-UnGrouped-C`,
-      shape: NodeShape.circle,
+      shape: NodeShape.ellipse,
       label: 'Grouped Node C',
       labelPosition: LabelPosition.bottom,
       row: 0,

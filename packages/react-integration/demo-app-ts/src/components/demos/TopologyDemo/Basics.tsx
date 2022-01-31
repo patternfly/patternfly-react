@@ -1,23 +1,17 @@
 import * as React from 'react';
 import {
   DefaultNode,
-  action,
-  Dimensions,
-  observer,
   Model,
   ModelKind,
   withDragNode,
   useComponentFactory,
   useModel,
-  useAnchor,
-  RectAnchor,
-  EllipseAnchor,
-  ComponentFactory,
-  ShapeProps,
-  withCustomNodeShape
+  ComponentFactory
 } from '@patternfly/react-topology';
 import defaultComponentFactory from './components/defaultComponentFactory';
 import withTopologySetup from './utils/withTopologySetup';
+import CustomCircleNode from './components/CustomCircleNode';
+import CustomRectNode from './components/CustomRectNode';
 
 export const SingleNode = withTopologySetup(() => {
   useComponentFactory(defaultComponentFactory);
@@ -247,41 +241,15 @@ const groupStory = (groupType: string): React.FC => () => {
 export const Group = withTopologySetup(groupStory('group'));
 export const GroupHull = withTopologySetup(groupStory('group-hull'));
 
-const CustomCircle: React.FC<ShapeProps> = ({ element, className }) => {
-  useAnchor(EllipseAnchor);
-  React.useEffect(() => {
-    // init height
-    action(() => element.setDimensions(new Dimensions(40, 40)))();
-  }, [element]);
-  const r = element.getDimensions().width / 2;
-  return (
-    <circle
-      className={className}
-      cx={r}
-      cy={r}
-      r={r}
-      onClick={() => {
-        const size = element.getDimensions().width === 40 ? 80 : 40;
-        action(() => element.setDimensions(new Dimensions(size, size)))();
-      }}
-    />
-  );
-};
-
-const CustomRect: React.FC<ShapeProps> = observer(({ className }) => {
-  useAnchor(RectAnchor);
-  return <rect className={className} x={0} y={0} width={100} height={20} />;
-});
-
 export const AutoSizeNode = withTopologySetup(() => {
   useComponentFactory(defaultComponentFactory);
   useComponentFactory(
     React.useCallback<ComponentFactory>((kind, type) => {
       if (type === 'autoSize-circle') {
-        return withCustomNodeShape(() => CustomCircle)(DefaultNode);
+        return CustomCircleNode;
       }
       if (type === 'autoSize-rect') {
-        return withCustomNodeShape(() => CustomRect)(DefaultNode);
+        return CustomRectNode;
       }
       return undefined;
     }, [])

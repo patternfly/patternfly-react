@@ -3,9 +3,9 @@ import {
   DefaultGroup,
   Node,
   observer,
+  ShapeProps,
   WithContextMenuProps,
-  WithSelectionProps,
-  WithCollapsibleGroupProps
+  WithSelectionProps
 } from '@patternfly/react-topology';
 import AlternateIcon from '@patternfly/react-icons/dist/esm/icons/regions-icon';
 import DefaultIcon from '@patternfly/react-icons/dist/esm/icons/builder-image-icon';
@@ -19,16 +19,21 @@ export enum DataTypes {
 
 type StyleGroupProps = {
   element: Node;
+  collapsible: boolean;
+  collapsedWidth?: number;
+  collapsedHeight?: number;
+  onCollapseChange?: (group: Node, collapsed: boolean) => void;
+  getCollapsedShape?: (node: Node) => React.FC<ShapeProps>;
+  collapsedShadowOffset?: number; // defaults to 10
 } & WithContextMenuProps &
-  WithCollapsibleGroupProps &
   WithSelectionProps;
 
 const StyleGroup: React.FC<StyleGroupProps> = ({
   element,
   onContextMenu,
   contextMenuOpen,
-  collapsedWidth,
-  collapsedHeight,
+  collapsedWidth = 75,
+  collapsedHeight = 75,
   ...rest
 }) => {
   const data = element.getData();
@@ -68,6 +73,9 @@ const StyleGroup: React.FC<StyleGroupProps> = ({
       onContextMenu={data.showContextMenu ? onContextMenu : undefined}
       contextMenuOpen={contextMenuOpen}
       element={element}
+      collapsible
+      collapsedWidth={collapsedWidth}
+      collapsedHeight={collapsedHeight}
       {...rest}
       {...passedData}
     >

@@ -1,9 +1,9 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import * as React from 'react';
-import { ShapeProps } from '../../../utils/useCustomNodeShape';
 import { useAnchor } from '../../../behavior';
 import { EllipseAnchor } from '../../../anchors';
+import { ShapeProps } from './shapeUtils';
 
 type EllipseProps = ShapeProps;
 

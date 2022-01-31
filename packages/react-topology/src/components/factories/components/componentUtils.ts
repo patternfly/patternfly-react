@@ -210,7 +210,7 @@ const graphDropTargetSpec: DropTargetSpec<DragNodeObject, any, { dragEditInProgr
   dropHint: 'create'
 };
 
-const applicationGroupDropTargetSpec: DropTargetSpec<
+const groupDropTargetSpec: DropTargetSpec<
   any,
   any,
   { droppable: boolean; dropTarget: boolean; canDrop: boolean },
@@ -272,7 +272,7 @@ export {
   nodeDragSourceSpec,
   nodeDropTargetSpec,
   graphDropTargetSpec,
-  applicationGroupDropTargetSpec,
+  groupDropTargetSpec,
   edgeDragSourceSpec,
   noDropTargetSpec,
   REGROUP_OPERATION,

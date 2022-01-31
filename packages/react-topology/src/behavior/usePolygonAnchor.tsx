@@ -1,40 +1,40 @@
 import * as React from 'react';
-import { action } from 'mobx';
-import { isNode, AnchorEnd, PointTuple } from '../types';
+import { runInAction } from 'mobx';
+import { isNode, AnchorEnd, PointTuple, Node } from '../types';
 import ElementContext from '../utils/ElementContext';
 import PolygonAnchor from '../anchors/PolygonAnchor';
 
-export const usePolygonAnchor = (
-  end: AnchorEnd = AnchorEnd.both,
-  type: string = ''
-): ((points: PointTuple[] | null) => void) => {
+export const usePolygonAnchor = (points: PointTuple[], end: AnchorEnd = AnchorEnd.both, type: string = ''): void => {
   const element = React.useContext(ElementContext);
   if (!isNode(element)) {
     throw new Error('usePolygonAnchor must be used within the scope of a Node');
   }
 
-  return React.useCallback(
-    action((points: PointTuple[]) => {
+  React.useEffect(() => {
+    runInAction(() => {
       if (points) {
         const anchor = new PolygonAnchor(element);
         anchor.setPoints(points);
         element.setAnchor(anchor, end, type);
       }
-    }),
-    [element, type, end]
-  );
+    });
+  }, [points, end, type]);
 };
 
 export interface WithPolygonAnchorProps {
   setAnchorPoints: (points: PointTuple[]) => void;
 }
 
-export const withPolygonAnchor = (end?: AnchorEnd, type?: string) => <P extends WithPolygonAnchorProps>() => (
-  WrappedComponent: React.ComponentType<P>
-) => {
-  const Component: React.FC<Omit<P, keyof WithPolygonAnchorProps>> = props => {
-    const setPoints = usePolygonAnchor(end, type);
-    return <WrappedComponent {...(props as any)} setAnchorPoints={setPoints} />;
+export const withPolygonAnchor = <P extends {} = {}>(
+  getPoints: (element: Node) => PointTuple[],
+  end?: AnchorEnd,
+  type?: string
+) => (WrappedComponent: React.ComponentType<P>) => {
+  const element = React.useContext(ElementContext);
+  const Component: React.FC<P> = props => {
+    usePolygonAnchor(getPoints(element as Node), end, type);
+    return <WrappedComponent {...props} />;
   };
+  Component.displayName = `withPolygonAnchor(${WrappedComponent.displayName || WrappedComponent.name})`;
   return Component;
 };

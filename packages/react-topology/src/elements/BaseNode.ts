@@ -119,6 +119,7 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
     return super.getChildren();
   }
 
+  // Return all child leaf nodes regardless of collapse status or child groups' collapsed status
   getAllNodeChildren(): Node[] {
     return super.getChildren().reduce((total, nexChild) => {
       if (isNode(nexChild)) {
@@ -245,7 +246,7 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
   }
 
   getNodeShape(): NodeShape {
-    return this.shape || (this.group ? NodeShape.rect : NodeShape.circle);
+    return this.shape || (this.group ? NodeShape.rect : NodeShape.ellipse);
   }
 
   setNodeShape(shape: NodeShape): void {

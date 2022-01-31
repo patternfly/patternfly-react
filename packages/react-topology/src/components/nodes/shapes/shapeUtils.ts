@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Node, NodeShape, PointTuple, TopologyQuadrant } from '../../../types';
 import { polygonHull } from 'd3-polygon';
-import { hullPath, pointTuplesToPath, ShapeProps } from '../../../utils';
-import { Ellipse, SidedShape, Rectangle, Trapezoid, Rhombus, Stadium } from './index';
+import { hullPath, pointTuplesToPath } from '../../../utils';
+import { Ellipse, Hexagon, Octagon, Rectangle, Trapezoid, Rhombus, Stadium } from './index';
 
 export const HEXAGON_HULL_PADDING = 6;
 export const OCTAGON_HULL_PADDING = 4;
@@ -16,6 +16,17 @@ export const UPPER_RIGHT_RADIANS = (7 * Math.PI) / 4;
 
 export const DEFAULT_DECORATOR_RADIUS = 12;
 export const DEFAULT_DECORATOR_PADDING = 4;
+
+export interface ShapeProps {
+  className?: string;
+  element: Node;
+  width: number;
+  height: number;
+  filter?: string;
+  sides?: number;
+  hullPadding?: number;
+  dndDropRef?: (node: SVGElement | null) => void;
+}
 
 const quadrantRadians = (quadrant: TopologyQuadrant): number => {
   switch (quadrant) {
@@ -59,13 +70,9 @@ export const getPathForSides = (numSides: number, size: number, padding = 0): st
   return getHullPath(points, padding);
 };
 
-export const getShapeComponent = (
-  shape: NodeShape,
-  node: Node,
-  getCustomShape?: (node: Node) => React.FC<ShapeProps>
-): React.FC<ShapeProps> => {
-  switch (shape) {
-    case NodeShape.circle:
+export const getShapeComponent = (node: Node): React.FC<ShapeProps> => {
+  switch (node.getNodeShape()) {
+    case NodeShape.ellipse:
       return Ellipse;
     case NodeShape.stadium:
       return Stadium;
@@ -76,29 +83,11 @@ export const getShapeComponent = (
     case NodeShape.rect:
       return Rectangle;
     case NodeShape.hexagon:
+      return Hexagon;
     case NodeShape.octagon:
-      return SidedShape;
+      return Octagon;
     default:
-      return getCustomShape ? getCustomShape(node) : null;
-  }
-};
-export const getShapeParameters = (
-  shape: NodeShape
-): {
-  sides?: number;
-  hullPadding?: number;
-} => {
-  switch (shape) {
-    case NodeShape.hexagon:
-      return { sides: 6, hullPadding: HEXAGON_HULL_PADDING };
-    case NodeShape.octagon:
-      return { sides: 8, hullPadding: OCTAGON_HULL_PADDING };
-    case NodeShape.trapezoid:
-      return { hullPadding: TRAPEZOID_HULL_PADDING };
-    case NodeShape.rhombus:
-      return { hullPadding: RHOMBUS_HULL_PADDING };
-    default:
-      return {};
+      return Ellipse;
   }
 };
 
@@ -115,7 +104,7 @@ export const getDefaultShapeDecoratorCenter = (
   let deltaY = height / 2 + radius / 3;
 
   switch (shape) {
-    case NodeShape.circle:
+    case NodeShape.ellipse:
       return {
         x: nodeCenterX + Math.cos(quadrantRadians(quadrant)) * deltaX,
         y: nodeCenterY + Math.sin(quadrantRadians(quadrant)) * deltaY

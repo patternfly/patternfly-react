@@ -6,7 +6,7 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
-import { LabelPosition, Node, TopologyQuadrant, BadgeLocation, GraphElement } from '../../types';
+import { BadgeLocation, GraphElement, LabelPosition, Node, NodeStatus, TopologyQuadrant } from '../../types';
 import {
   WithContextMenuProps,
   WithCreateConnectorProps,
@@ -16,25 +16,20 @@ import {
   WithSelectionProps
 } from '../../behavior';
 import Decorator from '../decorators/Decorator';
-import { createSvgIdUrl, useCombineRefs, useHover, WithNodeShapeProps, StatusModifier } from '../../utils';
+import { createSvgIdUrl, StatusModifier, useCombineRefs, useHover } from '../../utils';
 import NodeLabel from './labels/NodeLabel';
 import NodeShadows, { NODE_SHADOW_FILTER_ID_DANGER, NODE_SHADOW_FILTER_ID_HOVER } from './NodeShadows';
-import {
-  DEFAULT_DECORATOR_RADIUS,
-  getDefaultShapeDecoratorCenter,
-  getShapeComponent,
-  getShapeParameters
-} from './shapes';
+import { DEFAULT_DECORATOR_RADIUS, getDefaultShapeDecoratorCenter, getShapeComponent, ShapeProps } from './shapes';
 
 const StatusQuadrant = TopologyQuadrant.upperLeft;
 
-const getStatusIcon = (status: string) => {
+const getStatusIcon = (status: NodeStatus) => {
   switch (status) {
-    case 'danger':
+    case NodeStatus.danger:
       return <ExclamationCircleIcon className="pf-m-danger" />;
-    case 'warning':
+    case NodeStatus.warning:
       return <ExclamationTriangleIcon className="pf-m-warning" />;
-    case 'success':
+    case NodeStatus.success:
       return <CheckCircleIcon className="pf-m-success" />;
     default:
       return null;
@@ -66,13 +61,16 @@ type DefaultNodeProps = {
   showStatusDecorator?: boolean;
   statusDecoratorTooltip?: React.ReactNode;
   onStatusDecoratorClick?: (event: React.MouseEvent<SVGGElement, MouseEvent>, element: GraphElement) => void;
-} & WithSelectionProps &
-  WithNodeShapeProps &
-  WithDragNodeProps &
-  WithDndDragProps &
-  WithDndDropProps &
-  WithCreateConnectorProps &
-  WithContextMenuProps;
+  getCustomShape?: (node: Node) => React.FC<ShapeProps>;
+  getShapeDecoratorCenter?: (quadrant: TopologyQuadrant, node: Node, radius?: number) => { x: number; y: number };
+} & Partial<
+  WithSelectionProps &
+    WithDragNodeProps &
+    WithDndDragProps &
+    WithDndDropProps &
+    WithCreateConnectorProps &
+    WithContextMenuProps
+>;
 
 const DefaultNode: React.FC<DefaultNodeProps> = ({
   element,
@@ -86,6 +84,7 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
   labelIconClass,
   showStatusDecorator = false,
   statusDecoratorTooltip,
+  getCustomShape,
   getShapeDecoratorCenter,
   onStatusDecoratorClick,
   badge,
@@ -94,7 +93,6 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
   badgeBorderColor,
   badgeClassName,
   badgeLocation,
-  getCustomShape,
   onSelect,
   children,
   attachments,
@@ -110,7 +108,6 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
   contextMenuOpen
 }) => {
   const [hovered, hoverRef] = useHover();
-  const shape = element.getNodeShape();
   const status = element.getNodeStatus();
   const refs = useCombineRefs<SVGEllipseElement>(hoverRef, dragNodeRef);
   const { width, height } = element.getDimensions();
@@ -175,7 +172,7 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
     }
   }, [isHover, onShowCreateConnector, onHideCreateConnector]);
 
-  const ShapeComponent = getShapeComponent(shape, element, getCustomShape);
+  const ShapeComponent = (getCustomShape && getCustomShape(element)) || getShapeComponent(element);
 
   return (
     <g className={groupClassName}>
@@ -187,7 +184,6 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
             element={element}
             width={width}
             height={height}
-            {...getShapeParameters(shape)}
             dndDropRef={dndDropRef}
             filter={filter}
           />

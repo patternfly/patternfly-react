@@ -2,15 +2,17 @@ import { PointTuple, ShapeProps, usePolygonAnchor } from '@patternfly/react-topo
 import * as React from 'react';
 
 const Polygon: React.FC<ShapeProps> = ({ className, width, height, filter, dndDropRef }) => {
-  const setPolygonAnchorPoints = usePolygonAnchor();
-  const points: PointTuple[] = [
-    [width / 2, 0],
-    [width - width / 8, height],
-    [0, height / 3],
-    [width, height / 3],
-    [width / 8, height]
-  ];
-  setPolygonAnchorPoints(points);
+  const points: PointTuple[] = React.useMemo(
+    () => [
+      [width / 2, 0],
+      [width - width / 8, height],
+      [0, height / 3],
+      [width, height / 3],
+      [width / 8, height]
+    ],
+    [height, width]
+  );
+  usePolygonAnchor(points);
   return (
     <polygon
       className={className}

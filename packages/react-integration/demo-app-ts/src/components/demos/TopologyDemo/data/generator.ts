@@ -41,7 +41,7 @@ export interface GeneratorEdgeOptions {
 }
 
 export const DefaultNodeOptions: GeneratorNodeOptions = {
-  shapes: [NodeShape.circle],
+  shapes: [NodeShape.ellipse],
   statuses: [NodeStatus.default],
   statusDecorators: false,
   showDecorators: false,

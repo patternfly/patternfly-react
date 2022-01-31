@@ -37,7 +37,7 @@ const ConnectorArrow: React.FC<ConnectorArrowProps> = ({
     const arrowPoints: [number, number][] = [
       [size / 2, size / 2],
       [size / 2, -size / 2],
-      [size - 1, 0]
+      [size, 0]
     ];
     return <polygon points={pointsStringFromPoints(arrowPoints)} />;
   }, [size]);

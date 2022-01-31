@@ -693,7 +693,7 @@ export const EdgeTerminalStyles = withTopologySetup(() => {
       target: nodes[index].id,
       edgeStyle: EdgeStyle.default,
       data: {
-        startTerminalType: EdgeTerminalType.directional,
+        startTerminalType: endTerminalType,
         endTerminalType: EdgeTerminalType.directional
       }
     });
@@ -726,14 +726,14 @@ export const EdgeTerminalStatusStyles = withTopologySetup(() => {
       }
       const n1 = createNode({
         id: `${terminalType}--${status}-1`,
-        shape: NodeShape.circle,
+        shape: NodeShape.ellipse,
         label: 'Node 1',
         row: typeIndex,
         column: statusIndex * 3 - 2
       });
       const n2 = createNode({
         id: `${terminalType}-${status}-1`,
-        shape: NodeShape.circle,
+        shape: NodeShape.ellipse,
         dataType: DataTypes.Alternate,
         label: 'Node 1',
         row: typeIndex,
@@ -777,14 +777,14 @@ export const EdgeTerminalTagStyles = withTopologySetup(() => {
   STATUS_VALUES.forEach((status, statusIndex) => {
     const n1 = createNode({
       id: `${status}-1`,
-      shape: NodeShape.circle,
+      shape: NodeShape.ellipse,
       label: 'Node 1',
       row: statusIndex + 1,
       column: 1
     });
     const n2 = createNode({
       id: `${status}-2`,
-      shape: NodeShape.circle,
+      shape: NodeShape.ellipse,
       dataType: DataTypes.Alternate,
       label: 'Node 1',
       row: statusIndex + 1,

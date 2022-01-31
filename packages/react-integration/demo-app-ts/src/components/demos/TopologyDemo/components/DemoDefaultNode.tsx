@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { observer } from 'mobx-react';
 import {
   WithCreateConnectorProps,
@@ -9,22 +10,22 @@ import {
   WithDndDragProps,
   WithDndDropProps,
   useCombineRefs,
-  WithNodeShapeProps,
   useHover,
-  getShapeComponent
+  getShapeComponent,
+  ShapeProps
 } from '@patternfly/react-topology';
 
 type DemoDefaultNodeProps = {
   element: Node;
   droppable?: boolean;
   canDrop?: boolean;
+  getCustomShape?: (node: Node) => React.FC<ShapeProps>;
 } & WithSelectionProps &
   WithDragNodeProps &
   WithDndDragProps &
   WithDndDropProps &
   WithCreateConnectorProps &
-  WithContextMenuProps &
-  WithNodeShapeProps;
+  WithContextMenuProps;
 
 const DemoDefaultNode: React.FC<DemoDefaultNodeProps> = ({
   element,
@@ -32,7 +33,6 @@ const DemoDefaultNode: React.FC<DemoDefaultNodeProps> = ({
   onSelect,
   dragNodeRef,
   dndDragRef,
-  droppable,
   canDrop,
   dndDropRef,
   getCustomShape,
@@ -42,13 +42,13 @@ const DemoDefaultNode: React.FC<DemoDefaultNodeProps> = ({
 }) => {
   const [hover, hoverRef] = useHover();
   const refs = useCombineRefs(hoverRef, dragNodeRef, dndDragRef);
-  const shape = element.getNodeShape();
   const { width, height } = element.getDimensions();
 
-  const className = `pf-ri-topology__node__background${canDrop && hover ? ' pf-m-hover' : ''}${
-    canDrop && droppable ? ' pf-m-droppable' : ''
-  }${selected ? ' pf-m-selected' : ''}`;
-  const ShapeComponent = getShapeComponent(shape, element, getCustomShape);
+  const className = classNames('pf-ri-topology__node__background', {
+    'pf-m-hover': canDrop && hover,
+    'pf-m-selected': selected
+  });
+  const ShapeComponent = (getCustomShape && getCustomShape(element)) || getShapeComponent(element);
 
   React.useEffect(() => {
     if (hover) {

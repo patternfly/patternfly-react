@@ -8,7 +8,5 @@ export * from './style-utils';
 export { default as useCallbackRef } from './useCallbackRef';
 export { default as useCombineRefs } from './useCombineRefs';
 export { default as useHover } from './useHover';
-export * from './useCustomNodeShape';
 export * from './useSize';
-export * from './useCollapsibleGroup';
 export * from './createAggregateEdges';

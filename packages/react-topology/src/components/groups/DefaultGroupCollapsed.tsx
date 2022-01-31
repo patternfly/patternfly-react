@@ -5,13 +5,14 @@ import styles from '@patternfly/react-styles/css/components/Topology/topology-co
 import ExpandIcon from '@patternfly/react-icons/dist/esm/icons/expand-alt-icon';
 import { Layer } from '../layers';
 import { GROUPS_LAYER } from '../../const';
-import { createSvgIdUrl, useCombineRefs, useHover, useSize, WithCollapsibleGroupProps } from '../../utils';
+import { createSvgIdUrl, useCombineRefs, useHover, useSize } from '../../utils';
 import { BadgeLocation, LabelPosition, Node } from '../../types';
 import { useDragNode, WithContextMenuProps, WithDndDropProps, WithSelectionProps } from '../../behavior';
 import { Ellipse } from '../nodes/shapes';
 import NodeLabel from '../nodes/labels/NodeLabel';
 import { NODE_SHADOW_FILTER_ID_HOVER } from '../nodes/NodeShadows';
 import LabelBadge from '../nodes/labels/LabelBadge';
+import { CollapsibleGroupProps } from './types';
 
 type DefaultGroupCollapsedProps = {
   element: Node;
@@ -33,8 +34,8 @@ type DefaultGroupCollapsedProps = {
   badgeBorderColor?: string;
   badgeClassName?: string;
   badgeLocation?: BadgeLocation;
-} & WithSelectionProps &
-  WithCollapsibleGroupProps &
+} & CollapsibleGroupProps &
+  WithSelectionProps &
   WithDndDropProps &
   WithContextMenuProps;
 
@@ -85,13 +86,7 @@ const DefaultGroupCollapsed: React.FC<DefaultGroupCollapsedProps> = ({
   const filter = isHover || dragging || dropTarget ? createSvgIdUrl(NODE_SHADOW_FILTER_ID_HOVER) : undefined;
 
   return (
-    <g
-      key={`${element.getId()}-collapsed`}
-      ref={labelHoverRef}
-      onContextMenu={onContextMenu}
-      onClick={onSelect}
-      className={groupClassName}
-    >
+    <g ref={labelHoverRef} onContextMenu={onContextMenu} onClick={onSelect} className={groupClassName}>
       <Layer id={GROUPS_LAYER}>
         <g ref={refs} onClick={onSelect}>
           {ShapeComponent && (
@@ -114,6 +109,7 @@ const DefaultGroupCollapsed: React.FC<DefaultGroupCollapsedProps> = ({
               </g>
               <ShapeComponent
                 className={css(styles.topologyNodeBackground)}
+                key={isHover || dragging || dropTarget ? 'shape-background-hover' : 'shape-background'} // update key to force remount and filter update
                 element={element}
                 width={collapsedWidth}
                 height={collapsedHeight}
@@ -143,7 +139,7 @@ const DefaultGroupCollapsed: React.FC<DefaultGroupCollapsedProps> = ({
         paddingX={8}
         paddingY={5}
         dragRef={dragLabelRef}
-        status={status}
+        status={element.getNodeStatus()}
         badge={badge}
         badgeColor={badgeColor}
         badgeTextColor={badgeTextColor}

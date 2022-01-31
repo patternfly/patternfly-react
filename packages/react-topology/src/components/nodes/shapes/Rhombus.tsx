@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
-import { ShapeProps } from '../../../utils/useCustomNodeShape';
 import { PointTuple } from '../../../types';
-import { getHullPath } from './shapeUtils';
+import { getHullPath, RHOMBUS_HULL_PADDING, ShapeProps } from './shapeUtils';
 import { usePolygonAnchor } from '../../../behavior/usePolygonAnchor';
 
 type RhombusProps = ShapeProps & {
@@ -15,18 +14,23 @@ const Rhombus: React.FC<RhombusProps> = ({
   width,
   height,
   filter,
-  hullPadding = 0,
+  hullPadding = RHOMBUS_HULL_PADDING,
   dndDropRef
 }) => {
-  const setPolygonAnchorPoints = usePolygonAnchor();
-  if (!hullPadding) {
-    const polygonPoints: PointTuple[] = [
-      [width / 2, 0],
-      [width, height / 2],
-      [width / 2, height],
-      [0, height / 2]
+  const polygonPoints = React.useMemo(() => {
+    const hullExcess = hullPadding ? hullPadding / 2 : 0;
+    const points: PointTuple[] = [
+      [width / 2, -hullExcess],
+      [width + hullExcess, height / 2],
+      [width / 2, height + hullExcess],
+      [-hullExcess, height / 2]
     ];
-    setPolygonAnchorPoints(polygonPoints);
+    return points;
+  }, [height, hullPadding, width]);
+
+  usePolygonAnchor(polygonPoints);
+
+  if (!hullPadding) {
     return (
       <polygon
         className={className}
@@ -36,16 +40,6 @@ const Rhombus: React.FC<RhombusProps> = ({
       />
     );
   }
-
-  const hullExcess = hullPadding / 2;
-  const polygonPoints: PointTuple[] = [
-    [width / 2, -hullExcess],
-    [width + hullExcess, height / 2],
-    [width / 2, height + hullExcess],
-    [-hullExcess, height / 2]
-  ];
-  setPolygonAnchorPoints(polygonPoints);
-
   const points: PointTuple[] = [
     [width / 2, hullPadding],
     [width - hullPadding, height / 2],

@@ -28,8 +28,9 @@ import {
 } from '@patternfly/react-topology';
 import defaultComponentFactory from './components/defaultComponentFactory';
 import DefaultEdge from './components/DefaultEdge';
-import DefaultNode from './components/DemoDefaultNode';
+import DemoDefaultNode from './components/DemoDefaultNode';
 import withTopologySetup from './utils/withTopologySetup';
+import NodeRect from './components/NodeRect';
 
 interface NodeProps {
   element: Node;
@@ -56,7 +57,7 @@ export const Reconnect = withTopologySetup(() => {
             hover: monitor.isOver(),
             canDrop: monitor.canDrop()
           })
-        })(DefaultNode);
+        })(DemoDefaultNode);
       }
       if (kind === ModelKind.edge) {
         return withSourceDrag<DragObjectWithType, Node, any, EdgeProps>({
@@ -265,7 +266,7 @@ export const CreateConnector = withTopologySetup(() => {
                 hover: monitor.isOver(),
                 canDrop: monitor.canDrop()
               })
-            })(DefaultNode)
+            })(DemoDefaultNode)
           );
         }
         return undefined;
@@ -284,7 +285,7 @@ const NodeWithPointAnchor: React.FC<{ element: Node } & WithDragNodeProps> = pro
   return (
     <>
       <Layer id="bottom">
-        <DefaultNode {...(props as any)} />
+        <NodeRect {...(props as any)} />
       </Layer>
       <circle ref={nodeRef} fill="lightgreen" r="5" cx={width * 0.25} cy={height * 0.25} />
       <circle ref={targetRef} fill="red" r="5" cx={width * 0.75} cy={height * 0.75} />

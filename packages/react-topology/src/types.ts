@@ -37,7 +37,7 @@ export enum TopologyQuadrant {
 }
 
 export enum NodeShape {
-  circle = 'circle',
+  ellipse = 'ellipse',
   rect = 'rect',
   rhombus = 'rhombus',
   trapezoid = 'trapezoid',
@@ -200,7 +200,7 @@ export interface Node<E extends NodeModel = NodeModel, D = any> extends GraphEle
   setNodeStatus(shape: NodeStatus): void;
   getSourceEdges(): Edge[];
   getTargetEdges(): Edge[];
-  getAllNodeChildren(): Node[];
+  getAllNodeChildren(): Node[]; // Return all children regardless of collapse status or child groups' collapsed status
   isDimensionsInitialized(): boolean;
   isPositioned(): boolean;
 }

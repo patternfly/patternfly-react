@@ -1,9 +1,8 @@
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import * as React from 'react';
-import { ShapeProps } from '../../../utils/useCustomNodeShape';
 import { PointTuple } from '../../../types';
-import { getHullPath } from './shapeUtils';
+import { getHullPath, TRAPEZOID_HULL_PADDING, ShapeProps } from './shapeUtils';
 import { usePolygonAnchor } from '../../../behavior';
 
 type TrapezoidProps = ShapeProps & {
@@ -15,19 +14,33 @@ const Trapezoid: React.FC<TrapezoidProps> = ({
   width,
   height,
   filter,
-  hullPadding = 0,
+  hullPadding = TRAPEZOID_HULL_PADDING,
   dndDropRef
 }) => {
-  const setPolygonAnchorPoints = usePolygonAnchor();
-  const topInset = width / 8 + hullPadding / 2;
-  if (!hullPadding) {
+  const polygonPoints = React.useMemo(() => {
+    const topInset = width / 8 + hullPadding / 2;
+    if (!hullPadding) {
+      const polygonPoints: PointTuple[] = [
+        [topInset, 0],
+        [width - topInset, 0],
+        [width, height],
+        [0, height]
+      ];
+      return polygonPoints;
+    }
+    const hullExcess = hullPadding / 2;
     const polygonPoints: PointTuple[] = [
-      [topInset, 0],
-      [width - topInset, 0],
-      [width, height],
-      [0, height]
+      [-hullExcess + topInset, 0],
+      [width - topInset + hullExcess, 0],
+      [width + hullExcess, height],
+      [-hullExcess, height]
     ];
-    setPolygonAnchorPoints(polygonPoints);
+    return polygonPoints;
+  }, [height, hullPadding, width]);
+
+  usePolygonAnchor(polygonPoints);
+
+  if (!hullPadding) {
     return (
       <polygon
         className={className}
@@ -37,16 +50,6 @@ const Trapezoid: React.FC<TrapezoidProps> = ({
       />
     );
   }
-
-  const hullExcess = hullPadding / 2;
-  const polygonPoints: PointTuple[] = [
-    [-hullExcess + topInset, 0],
-    [width - topInset + hullExcess, 0],
-    [width + hullExcess, height],
-    [-hullExcess, height]
-  ];
-  setPolygonAnchorPoints(polygonPoints);
-
   const points: PointTuple[] = [
     [width / 8 + (hullPadding || 4), hullPadding],
     [width * (7 / 8) - (hullPadding || 4), hullPadding],

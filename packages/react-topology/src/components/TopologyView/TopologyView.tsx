@@ -111,12 +111,12 @@ export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
               <Toolbar id={randomId}>
                 {contextToolbar && (
                   <ToolbarContent>
-                    <ToolbarGroup id="project-toolbar">{contextToolbar}</ToolbarGroup>
+                    <ToolbarGroup className="pf-topology-view__project-toolbar">{contextToolbar}</ToolbarGroup>
                   </ToolbarContent>
                 )}
                 {viewToolbar && (
                   <ToolbarContent>
-                    <ToolbarGroup id="view-toolbar">{viewToolbar}</ToolbarGroup>
+                    <ToolbarGroup className="pf-topology-view__view-toolbar">{viewToolbar}</ToolbarGroup>
                   </ToolbarContent>
                 )}
                 <Divider />

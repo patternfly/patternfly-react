@@ -14,23 +14,26 @@ export default class PolygonAnchor extends AbstractAnchor {
   }
 
   getLocation(reference: Point): Point {
-    const translatedRef = reference.clone();
-    this.owner.translateFromParent(translatedRef);
-
     let bestPoint: Point = new Point(0, 0);
-    let bestDistance = Infinity;
-    const bbox = this.getBoundingBox();
 
-    for (let i = 0; i < this.points.length; i++) {
-      const intersectPoint: Point | null = getLinesIntersection(
-        [this.points[i], this.points[i === this.points.length - 1 ? 0 : i + 1]],
-        [bbox.getCenter(), translatedRef]
-      );
-      if (intersectPoint) {
-        const intersectDistance: number = distanceToPoint(intersectPoint, translatedRef);
-        if (intersectDistance < bestDistance) {
-          bestPoint = intersectPoint;
-          bestDistance = intersectDistance;
+    if (this.points) {
+      const translatedRef = reference.clone();
+      this.owner.translateFromParent(translatedRef);
+
+      let bestDistance = Infinity;
+      const bbox = this.getBoundingBox();
+
+      for (let i = 0; i < this.points.length; i++) {
+        const intersectPoint: Point | null = getLinesIntersection(
+          [this.points[i], this.points[i === this.points.length - 1 ? 0 : i + 1]],
+          [bbox.getCenter(), translatedRef]
+        );
+        if (intersectPoint) {
+          const intersectDistance: number = distanceToPoint(intersectPoint, translatedRef);
+          if (intersectDistance < bestDistance) {
+            bestPoint = intersectPoint;
+            bestDistance = intersectDistance;
+          }
         }
       }
     }

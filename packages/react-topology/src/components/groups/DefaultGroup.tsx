@@ -3,8 +3,8 @@ import { observer } from 'mobx-react';
 import DefaultGroupExpanded from './DefaultGroupExpanded';
 import { WithContextMenuProps, WithDndDropProps, WithSelectionProps } from '../../behavior';
 import { BadgeLocation, LabelPosition, Node } from '../../types';
-import { WithCollapsibleGroupProps } from '../../utils';
 import DefaultGroupCollapsed from './DefaultGroupCollapsed';
+import { CollapsibleGroupProps } from './types';
 
 type DefaultGroupProps = {
   element: Node;
@@ -27,10 +27,10 @@ type DefaultGroupProps = {
   badgeBorderColor?: string;
   badgeClassName?: string;
   badgeLocation?: BadgeLocation;
-} & WithSelectionProps &
+} & CollapsibleGroupProps &
+  WithSelectionProps &
   WithDndDropProps &
-  WithContextMenuProps &
-  WithCollapsibleGroupProps;
+  WithContextMenuProps;
 
 const DefaultGroup: React.FC<DefaultGroupProps> = ({ element, onCollapseChange, ...rest }) => {
   const handleCollapse = (group: Node, collapsed: boolean): void => {

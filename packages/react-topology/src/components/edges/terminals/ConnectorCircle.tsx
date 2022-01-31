@@ -26,7 +26,7 @@ const ConnectorCircle: React.FC<ConnectorCircleProps> = ({
     return null;
   }
 
-  const connectorStartPoint = getConnectorStartPoint(startPoint, endPoint, size / 4 + 1); // add stroke width rather than rotating
+  const connectorStartPoint = getConnectorStartPoint(startPoint, endPoint, size / 4); // add stroke width rather than rotating
   const classNames = css(styles.topologyConnectorCircle, className, !isTarget && styles.modifiers.source);
 
   return (

@@ -3,7 +3,7 @@ import { AbstractAnchor } from '../../anchors';
 import { Point } from '../../geom';
 import { getRectAnchorPoint } from '../../utils';
 
-class GroupNodeAnchor extends AbstractAnchor<Node> {
+class CollapsedGroupAnchor extends AbstractAnchor<Node> {
   protected readonly width: number;
 
   protected readonly height: number;
@@ -22,4 +22,4 @@ class GroupNodeAnchor extends AbstractAnchor<Node> {
   }
 }
 
-export default GroupNodeAnchor;
+export default CollapsedGroupAnchor;

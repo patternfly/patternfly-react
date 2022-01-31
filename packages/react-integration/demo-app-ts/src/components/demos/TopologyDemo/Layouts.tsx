@@ -14,7 +14,7 @@ import defaultLayoutFactory from './layouts/defaultLayoutFactory';
 import defaultComponentFactory from './components/defaultComponentFactory';
 import GroupHull from './components/GroupHull';
 import Group from './components/DefaultGroup';
-import Node from './components/DemoDefaultNode';
+import DemoDefaultNode from './components/DemoDefaultNode';
 import withTopologySetup from './utils/withTopologySetup';
 import { generateDataModel } from './data/generator';
 import stylesComponentFactory from './components/stylesComponentFactory';
@@ -49,7 +49,7 @@ const layoutStory = (model: Model): React.FC => () => {
         return withDragNode()(Group);
       }
       if (kind === ModelKind.node) {
-        return withDragNode()(Node);
+        return withDragNode()(DemoDefaultNode);
       }
       return undefined;
     }, [])

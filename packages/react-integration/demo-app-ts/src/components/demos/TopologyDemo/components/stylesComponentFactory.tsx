@@ -2,11 +2,9 @@ import * as React from 'react';
 import {
   GraphElement,
   ComponentFactory,
-  withCustomNodeShape,
   withContextMenu,
   ContextMenuSeparator,
   ContextMenuItem,
-  withCollapsibleGroup,
   withDragNode,
   withSelection,
   ModelKind,
@@ -20,12 +18,11 @@ import {
   withPanZoom,
   GraphComponent
 } from '@patternfly/react-topology';
-import DemoDefaultNode from './DemoDefaultNode';
-import Path from './shapes/Path';
-import Polygon from './shapes/Polygon';
 import StyleNode from './StyleNode';
 import StyleGroup from './StyleGroup';
 import StyleEdge from './StyleEdge';
+import CustomPathNode from './CustomPathNode';
+import CustomPolygonNode from './CustomPolygonNode';
 
 const contextMenuItem = (label: string, i: number): React.ReactElement => {
   if (label === '-') {
@@ -70,11 +67,11 @@ const stylesComponentFactory: ComponentFactory = (
     case 'node':
       return withContextMenu(() => defaultMenu)(withDragNode(nodeDragSourceSpec())(withSelection()(StyleNode)));
     case 'node-path':
-      return withCustomNodeShape(() => Path)(DemoDefaultNode);
+      return CustomPathNode;
     case 'node-polygon':
-      return withCustomNodeShape(() => Polygon)(DemoDefaultNode);
+      return CustomPolygonNode;
     case 'group':
-      return withContextMenu(() => defaultMenu)(withSelection()(withCollapsibleGroup(75, 75)(StyleGroup)));
+      return withContextMenu(() => defaultMenu)(withSelection()(StyleGroup));
     case 'edge':
       return withContextMenu(() => defaultMenu)(withSelection()(StyleEdge));
     default:

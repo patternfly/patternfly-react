@@ -61,7 +61,7 @@ export const TopologySideBar: React.FunctionComponent<TopologySideBarProps> = ({
             </Button>
           )}
           {header && <div className={css(styles.topologySideBarHeader)}>{header}</div>}
-          <div className={css(styles.topologySideBarBody)}>{children}</div>
+          {children}
         </React.Fragment>
       )}
     </div>

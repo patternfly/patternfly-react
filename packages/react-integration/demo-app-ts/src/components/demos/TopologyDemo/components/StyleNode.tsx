@@ -11,8 +11,8 @@ import {
   TopologyQuadrant,
   WithContextMenuProps,
   WithDragNodeProps,
-  WithNodeShapeProps,
-  WithSelectionProps
+  WithSelectionProps,
+  ShapeProps
 } from '@patternfly/react-topology';
 import DefaultIcon from '@patternfly/react-icons/dist/esm/icons/builder-image-icon';
 import AlternateIcon from '@patternfly/react-icons/dist/esm/icons/regions-icon';
@@ -29,8 +29,9 @@ const ICON_PADDING = 20;
 
 type StyleNodeProps = {
   element: Node;
+  getCustomShape?: (node: Node) => React.FC<ShapeProps>;
+  getShapeDecoratorCenter?: (quadrant: TopologyQuadrant, node: Node, radius?: number) => { x: number; y: number };
 } & WithContextMenuProps &
-  WithNodeShapeProps &
   WithDragNodeProps &
   WithSelectionProps;
 

@@ -228,8 +228,8 @@ interface ElementProps {
 }
 
 export interface WithCreateConnectorProps {
-  onShowCreateConnector?: () => void;
-  onHideCreateConnector?: () => void;
+  onShowCreateConnector: () => void;
+  onHideCreateConnector: () => void;
 }
 
 export const withCreateConnector = <P extends WithCreateConnectorProps & ElementProps>(
@@ -237,7 +237,7 @@ export const withCreateConnector = <P extends WithCreateConnectorProps & Element
   ConnectorComponent: CreateConnectorRenderer = DefaultCreateConnector,
   contextMenuClass?: string,
   options?: CreateConnectorOptions
-) => (WrappedComponent: React.ComponentType<P>) => {
+) => (WrappedComponent: React.ComponentType<Partial<P>>) => {
   const Component: React.FC<Omit<P, keyof WithCreateConnectorProps>> = props => {
     const [show, setShow] = React.useState(false);
     const [alive, setKeepAlive] = React.useState(false);

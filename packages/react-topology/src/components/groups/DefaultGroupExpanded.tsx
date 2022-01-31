@@ -8,9 +8,10 @@ import CollapseIcon from '@patternfly/react-icons/dist/esm/icons/compress-alt-ic
 import NodeLabel from '../nodes/labels/NodeLabel';
 import { Layer } from '../layers';
 import { GROUPS_LAYER } from '../../const';
-import { hullPath, maxPadding, useCombineRefs, useHover, WithCollapsibleGroupProps } from '../../utils';
+import { hullPath, maxPadding, useCombineRefs, useHover } from '../../utils';
 import { BadgeLocation, isGraph, Node, NodeShape, NodeStyle, PointTuple } from '../../types';
 import { useDragNode, useSvgAnchor, WithContextMenuProps, WithDndDropProps, WithSelectionProps } from '../../behavior';
+import { CollapsibleGroupProps } from './types';
 
 type DefaultGroupExpandedProps = {
   element: Node;
@@ -25,8 +26,8 @@ type DefaultGroupExpandedProps = {
   badgeBorderColor?: string;
   badgeClassName?: string;
   badgeLocation?: BadgeLocation;
-} & WithSelectionProps &
-  WithCollapsibleGroupProps &
+} & CollapsibleGroupProps &
+  WithSelectionProps &
   WithDndDropProps &
   WithContextMenuProps;
 
@@ -102,7 +103,7 @@ const DefaultGroupExpanded: React.FC<DefaultGroupExpandedProps> = ({
   const points: (PointWithSize | PointTuple)[] = React.useMemo(() => {
     const newPoints: (PointWithSize | PointTuple)[] = [];
     _.forEach(children, c => {
-      if (c.getNodeShape() === NodeShape.circle) {
+      if (c.getNodeShape() === NodeShape.ellipse) {
         const bounds = c.getBounds();
         const { width, height } = bounds;
         const { x, y } = bounds.getCenter();
@@ -162,21 +163,10 @@ const DefaultGroupExpanded: React.FC<DefaultGroupExpandedProps> = ({
   );
 
   return (
-    <g
-      key={`${element.getId()}-expanded`}
-      ref={labelHoverRef}
-      onContextMenu={onContextMenu}
-      onClick={onSelect}
-      className={groupClassName}
-    >
+    <g ref={labelHoverRef} onContextMenu={onContextMenu} onClick={onSelect} className={groupClassName}>
       <Layer id={GROUPS_LAYER}>
         <g ref={refs} onContextMenu={onContextMenu} onClick={onSelect} className={innerGroupClassName}>
-          <path
-            key={isHover || labelHover || dragging || contextMenuOpen || dropTarget ? 'group-path-hover' : 'group-path'}
-            ref={outlineRef}
-            className={styles.topologyGroupBackground}
-            d={locations.path}
-          />
+          <path ref={outlineRef} className={styles.topologyGroupBackground} d={locations.path} />
         </g>
       </Layer>
       <NodeLabel
@@ -186,7 +176,7 @@ const DefaultGroupExpanded: React.FC<DefaultGroupExpandedProps> = ({
         paddingX={8}
         paddingY={5}
         dragRef={dragLabelRef}
-        status={status}
+        status={element.getNodeStatus()}
         badge={badge}
         badgeColor={badgeColor}
         badgeTextColor={badgeTextColor}
