@@ -15,7 +15,15 @@ export enum TooltipPosition {
   top = 'top',
   bottom = 'bottom',
   left = 'left',
-  right = 'right'
+  right = 'right',
+  topLeft = 'topLeft',
+  topRight = 'topRight',
+  bottomLeft = 'bottomLeft',
+  bottonRight = 'bottomRight',
+  leftTop = 'leftTop',
+  leftBottom = 'leftBottom',
+  rightTop = 'rightTop',
+  rightBottom = 'rightBottom'
 }
 
 export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'content'> {
@@ -214,7 +222,15 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
     top: styles.modifiers.top,
     bottom: styles.modifiers.bottom,
     left: styles.modifiers.left,
-    right: styles.modifiers.right
+    right: styles.modifiers.right,
+    topStart: styles.modifiers.topLeft,
+    topEnd: styles.modifiers.topRight,
+    bottomStart: styles.modifiers.bottomLeft,
+    bottomEnd: styles.modifiers.bottomRight,
+    leftStart: styles.modifiers.leftTop,
+    leftEnd: styles.modifiers.leftBottom,
+    rightStart: styles.modifiers.rightTop,
+    rightEnd: styles.modifiers.rightBottom
   };
   const hasCustomMaxWidth = maxWidth !== tooltipMaxWidth.value;
   const content = (
