@@ -1,7 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tile basic 1`] = `
+<<<<<<< HEAD
 <div>
+=======
+<div
+  aria-selected={false}
+  className="pf-c-tile"
+  tabIndex={0}
+>
+>>>>>>> 7dc9003a6 (fix(Tile): add aria-selected to indicate selection state)
   <div
     class="pf-c-tile"
     tabindex="0"
@@ -20,7 +28,15 @@ exports[`Tile basic 1`] = `
 `;
 
 exports[`Tile renders disabled 1`] = `
+<<<<<<< HEAD
 <div>
+=======
+<div
+  aria-selected={false}
+  className="pf-c-tile pf-m-disabled"
+  tabIndex={0}
+>
+>>>>>>> 7dc9003a6 (fix(Tile): add aria-selected to indicate selection state)
   <div
     class="pf-c-tile pf-m-disabled"
     tabindex="0"
@@ -39,7 +55,15 @@ exports[`Tile renders disabled 1`] = `
 `;
 
 exports[`Tile renders selected 1`] = `
+<<<<<<< HEAD
 <div>
+=======
+<div
+  aria-selected={true}
+  className="pf-c-tile pf-m-selected"
+  tabIndex={0}
+>
+>>>>>>> 7dc9003a6 (fix(Tile): add aria-selected to indicate selection state)
   <div
     class="pf-c-tile pf-m-selected"
     tabindex="0"
@@ -58,7 +82,15 @@ exports[`Tile renders selected 1`] = `
 `;
 
 exports[`Tile renders with icon 1`] = `
+<<<<<<< HEAD
 <div>
+=======
+<div
+  aria-selected={false}
+  className="pf-c-tile"
+  tabIndex={0}
+>
+>>>>>>> 7dc9003a6 (fix(Tile): add aria-selected to indicate selection state)
   <div
     class="pf-c-tile"
     tabindex="0"
@@ -94,7 +126,15 @@ exports[`Tile renders with icon 1`] = `
 `;
 
 exports[`Tile renders with stacked icon 1`] = `
+<<<<<<< HEAD
 <div>
+=======
+<div
+  aria-selected={false}
+  className="pf-c-tile"
+  tabIndex={0}
+>
+>>>>>>> 7dc9003a6 (fix(Tile): add aria-selected to indicate selection state)
   <div
     class="pf-c-tile"
     tabindex="0"
@@ -130,7 +170,15 @@ exports[`Tile renders with stacked icon 1`] = `
 `;
 
 exports[`Tile renders with stacked large icon 1`] = `
+<<<<<<< HEAD
 <div>
+=======
+<div
+  aria-selected={false}
+  className="pf-c-tile pf-m-display-lg"
+  tabIndex={0}
+>
+>>>>>>> 7dc9003a6 (fix(Tile): add aria-selected to indicate selection state)
   <div
     class="pf-c-tile pf-m-display-lg"
     tabindex="0"
@@ -166,7 +214,15 @@ exports[`Tile renders with stacked large icon 1`] = `
 `;
 
 exports[`Tile renders with subtext 1`] = `
+<<<<<<< HEAD
 <div>
+=======
+<div
+  aria-selected={false}
+  className="pf-c-tile"
+  tabIndex={0}
+>
+>>>>>>> 7dc9003a6 (fix(Tile): add aria-selected to indicate selection state)
   <div
     class="pf-c-tile"
     tabindex="0"
