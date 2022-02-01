@@ -10,9 +10,11 @@ import {
   MultipleFileUploadButton,
   MultipleFileUploadStatus
 } from '@patternfly/react-core';
+import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
 
 export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   const [currentFiles, setCurrentFiles] = React.useState<File[]>([]);
+  const [readFiles, setReadFiles] = React.useState<File[]>([]);
   const [showStatus, setShowStatus] = React.useState(false);
 
   if (!showStatus && currentFiles.length > 0) {
@@ -45,9 +47,11 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
       </MultipleFileUploadMain>
       {showStatus && (
         <MultipleFileUploadStatus
-          statusToggleText={`${currentFiles.length} of ${currentFiles.length} files uploaded`}
+          statusToggleText={`${readFiles.length} of ${currentFiles.length} files uploaded`}
+          statusToggleIcon={<InProgressIcon />}
           files={currentFiles}
           onRemoveFile={removeFile}
+          onReadFinished={file => setReadFiles([...readFiles, file])}
         />
       )}
     </MultipleFileUpload>

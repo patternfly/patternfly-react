@@ -7,3 +7,4 @@ export * from './MultipleFileUploadTitleText';
 export * from './MultipleFileUploadTitleTextSeparator';
 export * from './MultipleFileUploadButton';
 export * from './MultipleFileUploadStatus';
+export * from './MultipleFileUploadStatusItem';

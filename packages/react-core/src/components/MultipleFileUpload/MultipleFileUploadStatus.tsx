@@ -5,15 +5,20 @@ import { ExpandableSection } from '../ExpandableSection';
 import { MultipleFileUploadStatusItem } from './MultipleFileUploadStatusItem';
 
 interface MultipleFileUploadStatusProps extends React.HTMLProps<HTMLDivElement> {
-  /** Content rendered inside MultipleFileUploadStatus */
+  /** Optional content rendered inside multi file upload status list */
   children?: React.ReactNode;
   /** Class to add to outer div */
   className?: string;
-  /** string to show in the status toggle */
+  /** The string to show in the status toggle */
   statusToggleText?: string;
-
+  /** The icon to show in the status toggle */
+  statusToggleIcon?: React.ReactNode;
+  /** The files to read and display as status items */
   files?: File[];
 
+  // Callbacks passed through to created status item components
+
+  /** A callback called when the status items clear button is clicked */
   onRemoveFile?: (file: File) => void;
   /** A callback for when a selected file starts loading */
   onReadStarted?: (file: File) => void;
@@ -24,9 +29,11 @@ interface MultipleFileUploadStatusProps extends React.HTMLProps<HTMLDivElement> 
 }
 
 export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploadStatusProps> = ({
+  children,
   className,
   files = [],
   statusToggleText,
+  statusToggleIcon,
   onRemoveFile = () => {},
   onReadStarted = () => {},
   onReadFinished = () => {},
@@ -35,9 +42,7 @@ export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploa
 }: MultipleFileUploadStatusProps) => {
   const toggle = (
     <div className={styles.multipleFileUploadStatusProgress}>
-      <div className={styles.multipleFileUploadStatusProgressIcon}>
-        <i className={'pf-icon-in-progress'}></i>
-      </div>
+      <div className={styles.multipleFileUploadStatusProgressIcon}>{statusToggleIcon}</div>
       <div className={styles.multipleFileUploadStatusItemProgressText}>{statusToggleText}</div>
     </div>
   );
@@ -63,6 +68,7 @@ export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploa
                 onReadFailed={(error: DOMException) => onReadFailed(error, file)}
               />
             ))}
+          {children}
         </ul>
       </ExpandableSection>
     </div>
