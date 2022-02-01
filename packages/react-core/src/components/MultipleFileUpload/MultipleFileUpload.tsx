@@ -1,27 +1,21 @@
 import * as React from 'react';
-import Dropzone, { DropzoneProps, DropzoneInputProps } from 'react-dropzone';
-import { fromEvent } from 'file-selector';
+import Dropzone, { DropzoneProps, DropFileEventHandler } from 'react-dropzone';
 import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
 import { css } from '@patternfly/react-styles';
 
-interface DropzoneInputPropsWithRef extends DropzoneInputProps {
-  ref: React.RefCallback<HTMLInputElement>; // Working around an issue in react-dropzone 9.0.0's types. Should not be necessary in later versions.
-}
-
 interface MultipleFileUploadProps extends Omit<React.HTMLProps<HTMLDivElement>, 'value'> {
-  /** Content rendered inside MultipleFileUpload */
+  /** Content rendered inside the multi upload field */
   children?: React.ReactNode;
   /** Class to add to outer div */
   className?: string;
   /** Optional extra props to customize react-dropzone. */
   dropzoneProps?: DropzoneProps;
-  /** Value of the file's contents */
+  /** File objects that have been dropped or selected for upload into the dropzone */
   currentFiles?: File[];
-
+  /** Flag setting the component to horizontal styling mode */
   isHorizontal?: boolean;
-  /** Change event emitted from the hidden \<input type="file" \> field associated with the component  */
-  onFileInputChange?: (event: React.ChangeEvent<HTMLInputElement> | React.DragEvent<HTMLElement>, file: File) => void;
-  /** On data changed - if type='text' or type='dataURL' and file was loaded it will call this method */
+  /** When files are dropped or uploaded this callback will be called with all accepted files that don't already exist
+   * in the current files array */
   onDataChange?: (data: File[]) => void;
 }
 
@@ -34,8 +28,7 @@ export const MultipleFileUpload: React.FunctionComponent<MultipleFileUploadProps
   children,
   dropzoneProps = {},
   isHorizontal,
-  onFileInputChange,
-  onDataChange,
+  onDataChange = () => {},
   currentFiles,
   ...props
 }: MultipleFileUploadProps) => {
@@ -44,17 +37,19 @@ export const MultipleFileUpload: React.FunctionComponent<MultipleFileUploadProps
     existingFile.name === newFile.name &&
     existingFile.size === newFile.size &&
     existingFile.lastModified === newFile.lastModified;
-  const isUnique = (newFile: File) => !currentFiles.some(currentFile => identicalFile(currentFile, newFile));
+  const isInCurrentFiles = (newFile: File) => currentFiles.some(currentFile => identicalFile(currentFile, newFile));
 
-  const onDropAccepted = (newFiles: File[]) => {
-    const uniqueNewFiles = newFiles.filter(newFile => isUnique(newFile));
+  const onDropAccepted: DropFileEventHandler = (acceptedFiles: File[], event) => {
+    const newFiles = acceptedFiles.filter(acceptedFile => !isInCurrentFiles(acceptedFile));
 
-    onDataChange([...currentFiles, ...uniqueNewFiles]);
+    onDataChange([...currentFiles, ...newFiles]);
+    // allow users to set a custom drop accepted handler rather than using on data change
+    dropzoneProps.onDropAccepted && dropzoneProps.onDropAccepted(acceptedFiles, event);
   };
 
-  const onDropRejected = () => {};
-
-  const fileInputRef = React.useRef<HTMLInputElement>();
+  const onDropRejected: DropFileEventHandler = (rejectedFiles, event) => {
+    dropzoneProps.onDropRejected && dropzoneProps?.onDropRejected(rejectedFiles, event);
+  };
 
   return (
     <Dropzone multiple={true} {...dropzoneProps} onDropAccepted={onDropAccepted} onDropRejected={onDropRejected}>
@@ -63,18 +58,7 @@ export const MultipleFileUpload: React.FunctionComponent<MultipleFileUploadProps
           ...props,
           onClick: event => event.preventDefault() // Prevents clicking TextArea from opening file dialog
         });
-
-        const oldInputProps = getInputProps();
-        const inputProps: DropzoneInputProps = {
-          ...oldInputProps,
-          onChange: async (e: React.ChangeEvent<HTMLInputElement>) => {
-            oldInputProps.onChange?.(e);
-            const files = await fromEvent(e.nativeEvent);
-            if (files.length === 1) {
-              onFileInputChange?.(e, files[0] as File);
-            }
-          }
-        };
+        const inputProps = getInputProps();
 
         return (
           <MultipleFileUploadContext.Provider value={{ open }}>
@@ -91,10 +75,6 @@ export const MultipleFileUpload: React.FunctionComponent<MultipleFileUploadProps
               <input
                 /* hidden, necessary for react-dropzone */
                 {...inputProps}
-                ref={input => {
-                  fileInputRef.current = input;
-                  (inputProps as DropzoneInputPropsWithRef).ref(input);
-                }}
               />
               {children}
             </div>
