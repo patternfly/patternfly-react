@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.39.16 (2022-02-02)
+
+
+### Bug Fixes
+
+* **numberinput:** import input group component instead ([#6850](https://github.com/patternfly/patternfly-react/issues/6850)) ([2a94545](https://github.com/patternfly/patternfly-react/commit/2a94545ead3be3ea3c987b1273e18b943315c36e))
+
+
+
+
+
 ## 4.39.15 (2022-01-28)
 
 **Note:** Version bump only for package @patternfly/react-virtualized-extension
