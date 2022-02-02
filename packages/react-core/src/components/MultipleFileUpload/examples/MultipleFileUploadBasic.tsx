@@ -12,9 +12,14 @@ import {
 } from '@patternfly/react-core';
 import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
 
+interface readFile {
+  file: File;
+  data: string;
+}
+
 export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   const [currentFiles, setCurrentFiles] = React.useState<File[]>([]);
-  const [readFiles, setReadFiles] = React.useState<File[]>([]);
+  const [readFileData, setReadFileData] = React.useState<readFile[]>([]);
   const [showStatus, setShowStatus] = React.useState(false);
 
   if (!showStatus && currentFiles.length > 0) {
@@ -23,9 +28,16 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
 
   const handleValueChange = values => setCurrentFiles(values);
 
-  const removeFile = (fileToRemove: File) => {
-    const newFiles = currentFiles.filter(file => !Object.is(file, fileToRemove));
-    setCurrentFiles(newFiles);
+  const handleRemoveFile = (fileToRemove: File) => {
+    const newCurrentFiles = currentFiles.filter(file => !Object.is(file, fileToRemove));
+    setCurrentFiles(newCurrentFiles);
+
+    const newReadFiles = readFileData.filter(readFile => newCurrentFiles.includes(readFile.file));
+    setReadFileData(newReadFiles);
+  };
+
+  const handleReadSuccess = (data: string, file: File) => {
+    setReadFileData(prevReadFiles => [...prevReadFiles, { data, file }]);
   };
 
   return (
@@ -47,11 +59,11 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
       </MultipleFileUploadMain>
       {showStatus && (
         <MultipleFileUploadStatus
-          statusToggleText={`${readFiles.length} of ${currentFiles.length} files uploaded`}
+          statusToggleText={`${readFileData.length} of ${currentFiles.length} files uploaded`}
           statusToggleIcon={<InProgressIcon />}
           files={currentFiles}
-          onRemoveFile={removeFile}
-          onReadFinished={file => setReadFiles([...readFiles, file])}
+          onRemoveFile={handleRemoveFile}
+          onReadSuccess={handleReadSuccess}
         />
       )}
     </MultipleFileUpload>

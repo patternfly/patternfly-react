@@ -17,12 +17,12 @@ interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLLIElemen
   onReadStarted?: (fileHandle: File) => void;
   /** A callback for when a selected file finishes loading */
   onReadFinished?: (fileHandle: File) => void;
+  /** A callback for when the FileReader successfully reads the file */
+  onReadSuccess?: (data: string, file: File) => void;
   /** A callback for when the FileReader API fails */
   onReadFailed?: (error: DOMException, fileHandle: File) => void;
   /** Clear button was clicked */
   onClearClick?: React.MouseEventHandler<HTMLButtonElement>;
-  /** A callback for when the FileReader successfully reads the file */
-  onDataChange?: (data: string) => void;
 
   // Props to bypass built in behavior
 
@@ -44,9 +44,9 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
   fileIcon,
   onReadStarted = () => {},
   onReadFinished = () => {},
+  onReadSuccess = () => {},
   onReadFailed = () => {},
   onClearClick = () => {},
-  onDataChange = () => {},
   useCustomFileHandling,
   fileName,
   fileSize,
@@ -75,7 +75,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
           setLoadResult('success');
           setLoadPercentage(100);
           onReadFinished(file);
-          onDataChange(data as string);
+          onReadSuccess(data as string, file);
         })
         .catch((error: DOMException) => {
           onReadFinished(file);
