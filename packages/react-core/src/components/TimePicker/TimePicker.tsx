@@ -366,6 +366,9 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       this.onToggle(true);
     }
     e.stopPropagation();
+    this.setState({
+      isInvalid: false
+    });
   };
 
   onInputChange = (newTime: string) => {
@@ -383,8 +386,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     }
     this.scrollToSelection(newTime);
     this.setState({
-      timeState: newTime,
-      isInvalid: !this.isValid(newTime)
+      timeState: newTime
     });
   };
 
