@@ -6,7 +6,7 @@ import { usePolygonAnchor } from '../../../behavior';
 
 type SidedProps = ShapeProps & {
   sides?: number;
-  hullPadding?: number;
+  cornerRadius?: number;
 };
 
 const SidedShape: React.FC<SidedProps> = ({
@@ -15,29 +15,25 @@ const SidedShape: React.FC<SidedProps> = ({
   height,
   filter,
   sides = 6,
-  hullPadding = 0,
+  cornerRadius = 0,
   dndDropRef
 }) => {
-  const points = React.useMemo(() => getPointsForSides(sides, Math.min(width, height), 0), [height, sides, width]);
-  usePolygonAnchor(points);
-  if (!hullPadding) {
-    return (
-      <polygon
-        className={className}
-        ref={dndDropRef}
-        points={points.map(p => `${p[0]},${p[1]}`).join(' ')}
-        filter={filter}
-      />
-    );
-  }
+  const [polygonPoints, points] = React.useMemo(() => {
+    const polygonPoints = getPointsForSides(sides, Math.min(width, height));
+    return [
+      polygonPoints,
+      cornerRadius
+        ? getPathForSides(sides, Math.min(width, height), cornerRadius)
+        : polygonPoints.map(p => `${p[0]},${p[1]}`).join(' ')
+    ];
+  }, [cornerRadius, height, sides, width]);
 
-  return (
-    <path
-      className={className}
-      ref={dndDropRef}
-      d={getPathForSides(sides, Math.min(width, height), hullPadding)}
-      filter={filter}
-    />
+  usePolygonAnchor(polygonPoints);
+
+  return cornerRadius ? (
+    <path className={className} ref={dndDropRef} d={points} filter={filter} />
+  ) : (
+    <polygon className={className} ref={dndDropRef} points={points} filter={filter} />
   );
 };
 

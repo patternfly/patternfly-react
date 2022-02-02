@@ -4,10 +4,12 @@ import { polygonHull } from 'd3-polygon';
 import { hullPath, pointTuplesToPath } from '../../../utils';
 import { Ellipse, Hexagon, Octagon, Rectangle, Trapezoid, Rhombus, Stadium } from './index';
 
-export const HEXAGON_HULL_PADDING = 6;
-export const OCTAGON_HULL_PADDING = 4;
-export const RHOMBUS_HULL_PADDING = 10;
-export const TRAPEZOID_HULL_PADDING = 10;
+const TWO_PI = Math.PI * 2;
+
+export const HEXAGON_CORNER_RADIUS = 6;
+export const OCTAGON_CORNER_RADIUS = 4;
+export const RHOMBUS_CORNER_RADIUS = 10;
+export const TRAPEZOID_CORNER_RADIUS = 10;
 
 export const LOWER_LEFT_RADIANS = (3 * Math.PI) / 4;
 export const LOWER_RIGHT_RADIANS = Math.PI / 4;
@@ -24,7 +26,7 @@ export interface ShapeProps {
   height: number;
   filter?: string;
   sides?: number;
-  hullPadding?: number;
+  cornerRadius?: number;
   dndDropRef?: (node: SVGElement | null) => void;
 }
 
@@ -43,17 +45,17 @@ const quadrantRadians = (quadrant: TopologyQuadrant): number => {
 };
 
 export const getPointsForSides = (numSides: number, size: number, padding = 0): PointTuple[] => {
-  const radius = size / 2;
   const points: PointTuple[] = [];
+  const angle = TWO_PI / numSides;
+  const radius = size / 2;
 
-  for (let i = 0; i < numSides; i++) {
-    const angleDegrees = (360 / numSides) * i - 180 / numSides;
-    const angleRadians = (Math.PI / 180) * angleDegrees;
+  for (let point = 0; point < numSides; point++) {
     points.push([
-      radius + (radius - padding) * Math.cos(angleRadians),
-      radius + (radius - padding) * Math.sin(angleRadians)
+      radius + (radius - padding) * Math.cos(angle * point),
+      radius + (radius - padding) * Math.sin(angle * point)
     ]);
   }
+
   return points;
 };
 
@@ -132,11 +134,11 @@ export const getDefaultShapeDecoratorCenter = (
       }
       break;
     case NodeShape.hexagon:
-      deltaX = deltaX - HEXAGON_HULL_PADDING / 2;
+      deltaX = deltaX - HEXAGON_CORNER_RADIUS / 2;
       deltaY = deltaY - height / 4;
       break;
     case NodeShape.octagon:
-      deltaX = deltaX - OCTAGON_HULL_PADDING / 2;
+      deltaX = deltaX - OCTAGON_CORNER_RADIUS / 2;
       deltaY = deltaY - height / 3;
       break;
     default:

@@ -2,11 +2,26 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import * as React from 'react';
 import { PointTuple } from '../../../types';
-import { getHullPath, TRAPEZOID_HULL_PADDING, ShapeProps } from './shapeUtils';
+import { getHullPath, TRAPEZOID_CORNER_RADIUS, ShapeProps } from './shapeUtils';
 import { usePolygonAnchor } from '../../../behavior';
 
+const TOP_INSET_AMOUNT = 1 / 8;
+
+const getTrapezoidPoints = (width: number, height: number, padding: number, outline: boolean = false): PointTuple[] => {
+  const yPadding = outline ? 0 : padding;
+  const topXPadding = outline ? padding / 4 : padding;
+  const bottomXPadding = outline ? -padding / 4 : padding;
+
+  return [
+    [width * TOP_INSET_AMOUNT + topXPadding, yPadding],
+    [width - width * TOP_INSET_AMOUNT - topXPadding, yPadding],
+    [width - bottomXPadding, height - yPadding],
+    [bottomXPadding, height - yPadding]
+  ];
+};
+
 type TrapezoidProps = ShapeProps & {
-  hullPadding?: number;
+  cornerRadius?: number;
 };
 
 const Trapezoid: React.FC<TrapezoidProps> = ({
@@ -14,50 +29,26 @@ const Trapezoid: React.FC<TrapezoidProps> = ({
   width,
   height,
   filter,
-  hullPadding = TRAPEZOID_HULL_PADDING,
+  cornerRadius = TRAPEZOID_CORNER_RADIUS,
   dndDropRef
 }) => {
-  const polygonPoints = React.useMemo(() => {
-    const topInset = width / 8 + hullPadding / 2;
-    if (!hullPadding) {
-      const polygonPoints: PointTuple[] = [
-        [topInset, 0],
-        [width - topInset, 0],
-        [width, height],
-        [0, height]
-      ];
-      return polygonPoints;
-    }
-    const hullExcess = hullPadding / 2;
-    const polygonPoints: PointTuple[] = [
-      [-hullExcess + topInset, 0],
-      [width - topInset + hullExcess, 0],
-      [width + hullExcess, height],
-      [-hullExcess, height]
-    ];
-    return polygonPoints;
-  }, [height, hullPadding, width]);
+  const [polygonPoints, points] = React.useMemo(() => {
+    const polygonPoints: PointTuple[] = getTrapezoidPoints(width, height, cornerRadius, true);
+
+    const path = cornerRadius
+      ? getHullPath(getTrapezoidPoints(width, height, cornerRadius), cornerRadius)
+      : polygonPoints.map(p => `${p[0]},${p[1]}`).join(' ');
+
+    return [polygonPoints, path];
+  }, [height, cornerRadius, width]);
 
   usePolygonAnchor(polygonPoints);
 
-  if (!hullPadding) {
-    return (
-      <polygon
-        className={className}
-        ref={dndDropRef}
-        points={polygonPoints.map(p => `${p[0]},${p[1]}`).join(' ')}
-        filter={filter}
-      />
-    );
-  }
-  const points: PointTuple[] = [
-    [width / 8 + (hullPadding || 4), hullPadding],
-    [width * (7 / 8) - (hullPadding || 4), hullPadding],
-    [width - hullPadding, height - hullPadding],
-    [hullPadding, height - hullPadding]
-  ];
-
-  return <path className={className} ref={dndDropRef} d={getHullPath(points, hullPadding)} filter={filter} />;
+  return cornerRadius ? (
+    <path className={className} ref={dndDropRef} d={points} filter={filter} />
+  ) : (
+    <polygon className={className} ref={dndDropRef} points={points} filter={filter} />
+  );
 };
 
 export default Trapezoid;

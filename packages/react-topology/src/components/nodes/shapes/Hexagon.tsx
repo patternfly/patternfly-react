@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { HEXAGON_HULL_PADDING, ShapeProps } from './shapeUtils';
+import { HEXAGON_CORNER_RADIUS, ShapeProps } from './shapeUtils';
 import { SidedShape } from './index';
 
 type HexagonProps = ShapeProps & {
-  hullPadding?: number;
+  cornerRadius?: number;
 };
 
 const Hexagon: React.FC<HexagonProps> = props => (
-  <SidedShape hullPadding={props.hullPadding ?? HEXAGON_HULL_PADDING} {...props} sides={6} />
+  <SidedShape cornerRadius={props.cornerRadius ?? HEXAGON_CORNER_RADIUS} {...props} sides={6} />
 );
 
 export default Hexagon;

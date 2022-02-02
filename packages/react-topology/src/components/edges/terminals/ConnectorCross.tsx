@@ -26,24 +26,12 @@ const ConnectorCross: React.FC<ConnectorCrossProps> = ({
     return null;
   }
 
+  const width = size / 4;
+  const yDelta = size / 2;
   const connectorStartPoint = getConnectorStartPoint(startPoint, endPoint, size);
   const angleDeg = getConnectorRotationAngle(startPoint, endPoint);
 
   const classNames = css(styles.topologyConnectorCross, className, !isTarget && 'pf-m-source');
-
-  const cross = React.useMemo(() => {
-    const width = size / 4;
-    const yDelta = size / 2;
-    if (isTarget) {
-      return (
-        <>
-          <line x1={width} y1={yDelta} x2={width} y2={-yDelta} />
-          <line x1={2 * width} y1={yDelta} x2={2 * width} y2={-yDelta} />
-        </>
-      );
-    }
-    return <rect x={width} y={-yDelta} width={width} height={size} />;
-  }, [size, isTarget]);
 
   return (
     <g
@@ -51,7 +39,14 @@ const ConnectorCross: React.FC<ConnectorCrossProps> = ({
       ref={dragRef}
       className={classNames}
     >
-      {cross}
+      {isTarget ? (
+        <>
+          <line x1={width} y1={yDelta} x2={width} y2={-yDelta} />
+          <line x1={2 * width} y1={yDelta} x2={2 * width} y2={-yDelta} />
+        </>
+      ) : (
+        <rect x={width} y={-yDelta} width={width} height={size} />
+      )}
     </g>
   );
 };

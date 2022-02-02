@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { OCTAGON_HULL_PADDING, ShapeProps } from './shapeUtils';
+import { OCTAGON_CORNER_RADIUS, ShapeProps } from './shapeUtils';
 import { SidedShape } from './index';
 
 type OctagonProps = ShapeProps & {
-  hullPadding?: number;
+  cornerRadius?: number;
 };
 
 const Octagon: React.FC<OctagonProps> = props => (
-  <SidedShape hullPadding={props.hullPadding ?? OCTAGON_HULL_PADDING} {...props} sides={8} />
+  <SidedShape cornerRadius={props.cornerRadius ?? OCTAGON_CORNER_RADIUS} {...props} sides={8} />
 );
 
 export default Octagon;

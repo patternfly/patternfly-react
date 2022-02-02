@@ -79,22 +79,8 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
   const [labelHover, labelHoverRef] = useHover();
   const refs = useCombineRefs(dragRef, typeof truncateLength === 'number' ? labelHoverRef : undefined);
 
-  const textChildren = React.useMemo(() => {
-    if (truncateLength > 0) {
-      return labelHover ? children : truncateMiddle(children, { length: truncateLength });
-    }
-    return children;
-  }, [truncateLength, children, labelHover]);
-
-  const secondaryTextChildren = React.useMemo(() => {
-    if (truncateLength > 0) {
-      return labelHover ? secondaryLabel : truncateMiddle(secondaryLabel, { length: truncateLength });
-    }
-    return secondaryLabel;
-  }, [truncateLength, secondaryLabel, labelHover]);
-
-  const [textSize, textRef] = useSize([textChildren, className, labelHover]);
-  const [secondaryTextSize, secondaryTextRef] = useSize([secondaryTextChildren, className, labelHover]);
+  const [textSize, textRef] = useSize([children, truncateLength, className, labelHover]);
+  const [secondaryTextSize, secondaryTextRef] = useSize([secondaryLabel, truncateLength, className, labelHover]);
   const [badgeSize, badgeRef] = useSize([badge]);
   const [actionSize, actionRef] = useSize([actionIcon, paddingX]);
   const [contextSize, contextRef] = useSize([onContextMenu, paddingX]);
@@ -133,14 +119,14 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
     const actionSpace = actionIcon && actionSize ? actionSize.width : 0;
     const contextSpace = onContextMenu && contextSize ? contextSize.width : 0;
     const primaryWidth = iconSpace + badgeSpace + paddingX + textSize.width + actionSpace + contextSpace + paddingX;
-    const secondaryWidth = secondaryTextChildren && secondaryTextSize ? secondaryTextSize.width + 2 * paddingX : 0;
+    const secondaryWidth = secondaryLabel && secondaryTextSize ? secondaryTextSize.width + 2 * paddingX : 0;
     const width = Math.max(primaryWidth, secondaryWidth);
     const startX = position === LabelPosition.right ? x + iconSpace : x - width / 2 - iconSpace / 2;
     const startY = position === LabelPosition.right ? y - height / 2 : y;
     const actionStartX = iconSpace + badgeSpace + paddingX + textSize.width + paddingX;
     const contextStartX = actionStartX + actionSpace;
     const backgroundHeight =
-      height + (secondaryTextChildren && secondaryTextSize ? secondaryTextSize.height + paddingY * 2 : 0);
+      height + (secondaryLabel && secondaryTextSize ? secondaryTextSize.height + paddingY * 2 : 0);
     let badgeStartX = 0;
     let badgeStartY = 0;
     if (badgeSize) {
@@ -178,7 +164,7 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
     actionSize,
     onContextMenu,
     contextSize,
-    secondaryTextChildren,
+    secondaryLabel,
     secondaryTextSize,
     position,
     x,
@@ -238,7 +224,9 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
             dy="0.35em"
             textAnchor="middle"
           >
-            {secondaryTextChildren}
+            {truncateLength > 0 && !labelHover
+              ? truncateMiddle(secondaryLabel, { length: truncateLength })
+              : secondaryLabel}
           </text>
         </>
       )}
@@ -253,7 +241,7 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
         />
       )}
       <text {...other} ref={textRef} x={iconSpace + badgeSpace + paddingX} y={height / 2} dy="0.35em">
-        {textChildren}
+        {truncateLength > 0 && !labelHover ? truncateMiddle(children, { length: truncateLength }) : children}
       </text>
       {textSize && actionIcon && (
         <>
