@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/TextInputGroup/text-
 import { css } from '@patternfly/react-styles';
 import { TextInputGroupContext } from './TextInputGroup';
 
-export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange' | 'results' | 'ref'> {
+export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
   /** Content rendered inside the text input group main div */
   children?: React.ReactNode;
   /** Additional classes applied to the text input group main container */
@@ -44,7 +44,7 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
   className,
   icon,
   type = 'text',
-  hint: inputHint,
+  hint,
   onChange = (): any => undefined,
   onFocus,
   onBlur,
@@ -63,13 +63,13 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
     <div className={css(styles.textInputGroupMain, icon && styles.modifiers.icon, className)} {...props}>
       {children}
       <span className={css(styles.textInputGroupText)}>
-        {inputHint && (
+        {hint && (
           <input
             className={css(styles.textInputGroupTextInput, styles.modifiers.hint)}
             type="text"
             disabled
             aria-hidden="true"
-            value={inputHint}
+            value={hint}
           />
         )}
         {icon && <span className={css(styles.textInputGroupIcon)}>{icon}</span>}
