@@ -8,13 +8,17 @@ import {
   MultipleFileUploadTitleText,
   MultipleFileUploadTitleTextSeparator,
   MultipleFileUploadButton,
-  MultipleFileUploadStatus
+  MultipleFileUploadStatus,
+  MultipleFileUploadStatusItem
 } from '@patternfly/react-core';
 import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
 
 interface readFile {
   file: File;
-  data: string;
+  data?: string;
+  loadPercentage?: number;
+  loadResult?: undefined | 'danger' | 'success';
+  loadError?: DOMException;
 }
 
 export const MultipleFileUploadBasic: React.FunctionComponent = () => {
@@ -26,7 +30,9 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
     setShowStatus(true);
   }
 
-  const handleValueChange = values => setCurrentFiles(values);
+  const handleFileDrop = (files: File[]) => {
+    setCurrentFiles(files);
+  };
 
   const handleRemoveFile = (fileToRemove: File) => {
     const newCurrentFiles = currentFiles.filter(file => !Object.is(file, fileToRemove));
@@ -37,13 +43,13 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   };
 
   const handleReadSuccess = (data: string, file: File) => {
-    setReadFileData(prevReadFiles => [...prevReadFiles, { data, file }]);
+    setReadFileData(prevReadFiles => [...prevReadFiles, { data, file, loadPercentage: 100, loadResult: 'success' }]);
   };
 
   return (
     <MultipleFileUpload
       currentFiles={currentFiles}
-      onDataChange={handleValueChange}
+      onDataChange={handleFileDrop}
       dropzoneProps={{ accept: 'image/jpeg, application/msword, application/pdf, image/png' }}
       isHorizontal
     >
@@ -62,10 +68,16 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
         <MultipleFileUploadStatus
           statusToggleText={`${readFileData.length} of ${currentFiles.length} files uploaded`}
           statusToggleIcon={<InProgressIcon />}
-          files={currentFiles}
-          onRemoveFile={handleRemoveFile}
-          onReadSuccess={handleReadSuccess}
-        />
+        >
+          {currentFiles.map(file => (
+            <MultipleFileUploadStatusItem
+              file={file}
+              key={`${file.name}${file.size}${file.lastModified}`}
+              onClearClick={() => handleRemoveFile(file)}
+              onReadSuccess={handleReadSuccess}
+            />
+          ))}
+        </MultipleFileUploadStatus>
       )}
     </MultipleFileUpload>
   );
