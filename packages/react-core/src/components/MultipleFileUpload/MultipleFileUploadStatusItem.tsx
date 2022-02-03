@@ -26,8 +26,8 @@ interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLLIElemen
 
   // Props to bypass built in behavior
 
-  /** A flag to disable having the status item read the file itself */
-  useCustomFileHandling?: boolean;
+  /** A callback to process file reading in a custom way */
+  customFileHandler?: (file: File) => {};
   /** A custom name to display for the file rather than using built in functionality to auto-fill it */
   fileName?: string;
   /** A custom file size to display for the file rather than using built in functionality to auto-fill it */
@@ -47,7 +47,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
   onReadSuccess = () => {},
   onReadFailed = () => {},
   onClearClick = () => {},
-  useCustomFileHandling,
+  customFileHandler,
   fileName,
   fileSize,
   progressValue,
@@ -62,18 +62,21 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
       const reader = new FileReader();
       reader.onload = () => resolve(reader.result);
       reader.onerror = () => reject(reader.error);
+      reader.onprogress = data => {
+        if (data.lengthComputable) {
+          setLoadPercentage((data.loaded / data.total) * 100);
+        }
+      };
       reader.readAsDataURL(file);
     });
   }
 
   React.useEffect(() => {
-    if (!useCustomFileHandling) {
+    if (!customFileHandler) {
       onReadStarted(file);
-      setLoadPercentage(1);
       readFile(file)
         .then(data => {
           setLoadResult('success');
-          setLoadPercentage(100);
           onReadFinished(file);
           onReadSuccess(data as string, file);
         })
@@ -82,6 +85,8 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
           onReadFailed(error, file);
           setLoadResult('danger');
         });
+    } else {
+      customFileHandler(file);
     }
   }, []);
 
