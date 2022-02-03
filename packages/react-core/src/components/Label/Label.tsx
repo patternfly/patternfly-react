@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Label/label';
 import labelGrpStyles from '@patternfly/react-styles/css/components/LabelGroup/label-group';
 import { Button } from '../Button';
-import { Tooltip } from '../Tooltip';
+import { Tooltip, TooltipPosition } from '../Tooltip';
 import { css } from '@patternfly/react-styles';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { useIsomorphicLayoutEffect } from '../../helpers';
@@ -30,7 +30,21 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   /** Flag indicating the label text should be truncated. */
   isTruncated?: boolean;
   /** Position of the tooltip which is displayed if text is truncated */
-  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  tooltipPosition?:
+    | TooltipPosition
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
   /** Icon added to the left of the label text. */
   icon?: React.ReactNode;
   /** Close click callback for removable labels. If present, label will have a close button. */

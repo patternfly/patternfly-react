@@ -12,7 +12,21 @@ export interface CodeEditorControlProps extends Omit<ButtonProps, 'onClick'> {
   /** Text to display in the tooltip*/
   toolTipText: React.ReactNode;
   /** Copy button popover position. */
-  position?: PopoverPosition | 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  position?:
+    | PopoverPosition
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
   /** Maximum width of the tooltip (default 150px). */
   maxWidth?: string;
   /** Delay in ms before the tooltip disappears. */

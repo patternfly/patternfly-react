@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/ChipGroup/chip-group
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
 import { Chip } from './Chip';
-import { Tooltip } from '../Tooltip';
+import { Tooltip, TooltipPosition } from '../Tooltip';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 import { fillTemplate } from '../../helpers';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
@@ -35,7 +35,21 @@ export interface ChipGroupProps extends React.HTMLProps<HTMLUListElement>, OUIAP
   /** Function that is called when clicking on the overflow (expand/collapse) chip button */
   onOverflowChipClick?: (event: React.MouseEvent) => void;
   /** Position of the tooltip which is displayed if the category name text is longer */
-  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  tooltipPosition?:
+    | TooltipPosition
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
 }
 
 interface ChipGroupState {

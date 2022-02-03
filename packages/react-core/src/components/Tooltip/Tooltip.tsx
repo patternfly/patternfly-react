@@ -16,14 +16,14 @@ export enum TooltipPosition {
   bottom = 'bottom',
   left = 'left',
   right = 'right',
-  topLeft = 'topLeft',
-  topRight = 'topRight',
-  bottomLeft = 'bottomLeft',
-  bottonRight = 'bottomRight',
-  leftTop = 'leftTop',
-  leftBottom = 'leftBottom',
-  rightTop = 'rightTop',
-  rightBottom = 'rightBottom'
+  topStart = 'top-start',
+  topEnd = 'top-end',
+  bottomStart = 'bottom-start',
+  bottomEnd = 'bottom-end',
+  leftStart = 'left-start',
+  leftEnd = 'left-end',
+  rightStart = 'right-start',
+  rightEnd = 'right-end'
 }
 
 export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'content'> {
@@ -68,7 +68,22 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
    * ['top', 'right', 'left']. Since there is no space to the top, it checks if right is available. There's also no
    * space to the right, so it finally shows the tooltip on the left.
    */
-  flipBehavior?: 'flip' | ('top' | 'bottom' | 'left' | 'right')[];
+  flipBehavior?:
+    | 'flip'
+    | (
+        | 'top'
+        | 'bottom'
+        | 'left'
+        | 'right'
+        | 'top-start'
+        | 'top-end'
+        | 'bottom-start'
+        | 'bottom-end'
+        | 'left-start'
+        | 'left-end'
+        | 'right-start'
+        | 'right-end'
+      )[];
   /** Maximum width of the tooltip (default 18.75rem) */
   maxWidth?: string;
   /**
@@ -79,6 +94,7 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
    * The 'auto' position requires the 'enableFlip' prop to be true.
    */
   position?:
+    | TooltipPosition
     | 'auto'
     | 'top'
     | 'bottom'
@@ -223,14 +239,14 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
     bottom: styles.modifiers.bottom,
     left: styles.modifiers.left,
     right: styles.modifiers.right,
-    topStart: styles.modifiers.topLeft,
-    topEnd: styles.modifiers.topRight,
-    bottomStart: styles.modifiers.bottomLeft,
-    bottomEnd: styles.modifiers.bottomRight,
-    leftStart: styles.modifiers.leftTop,
-    leftEnd: styles.modifiers.leftBottom,
-    rightStart: styles.modifiers.rightTop,
-    rightEnd: styles.modifiers.rightBottom
+    'top-start': styles.modifiers.topLeft,
+    'top-end': styles.modifiers.topRight,
+    'bottom-start': styles.modifiers.bottomLeft,
+    'bottom-end': styles.modifiers.bottomRight,
+    'left-start': styles.modifiers.leftTop,
+    'left-end': styles.modifiers.leftBottom,
+    'right-start': styles.modifiers.rightTop,
+    'right-end': styles.modifiers.rightBottom
   };
   const hasCustomMaxWidth = maxWidth !== tooltipMaxWidth.value;
   const content = (

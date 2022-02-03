@@ -162,6 +162,7 @@ export interface PopoverProps {
    * The behavior of where it flips to can be controlled through the flipBehavior prop.
    */
   position?:
+    | PopoverPosition
     | 'auto'
     | 'top'
     | 'bottom'

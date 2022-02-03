@@ -195,14 +195,14 @@ OptionsTooltip = () => {
             <SelectOption value="bottom" />
             <SelectOption value="left" />
             <SelectOption value="right" />
-            <SelectOption value="topLeft" />
-            <SelectOption value="topRight" />
-            <SelectOption value="bottomLeft" />
-            <SelectOption value="bottomRight" />
-            <SelectOption value="leftTop" />
-            <SelectOption value="leftBottom" />
-            <SelectOption value="rightTop" />
-            <SelectOption value="rightBottom" />
+            <SelectOption value="top-start" />
+            <SelectOption value="top-end" />
+            <SelectOption value="bottom-start" />
+            <SelectOption value="bottom-end" />
+            <SelectOption value="left-start" />
+            <SelectOption value="left-end" />
+            <SelectOption value="right-start" />
+            <SelectOption value="right-end" />
           </Select>
         </div>
         <div style={{ border: '1px solid'}}>
