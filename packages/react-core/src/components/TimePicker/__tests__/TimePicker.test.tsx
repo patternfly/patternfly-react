@@ -72,7 +72,7 @@ describe('test isInvalid', () => {
     expect(view.find('.pf-m-error')).toHaveLength(0);
   })
 
-  test('should be invalid after onChange and onBlur', () => {
+  test('should be invalid after onBlur', () => {
     const validateTime = (time: string) => {
       return false;
     }
