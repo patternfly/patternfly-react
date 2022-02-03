@@ -12,6 +12,8 @@ import {
   MultipleFileUploadStatusItem
 } from '@patternfly/react-core';
 import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 
 interface readFile {
   file: File;
@@ -29,6 +31,18 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   if (!showStatus && currentFiles.length > 0) {
     setShowStatus(true);
   }
+
+  const getStatusIcon = () => {
+    if (readFileData.length < currentFiles.length) {
+      return <InProgressIcon />;
+    }
+
+    if (readFileData.every(file => file.loadResult === 'success')) {
+      return <CheckCircleIcon />;
+    }
+
+    return <TimesCircleIcon />;
+  };
 
   const handleFileDrop = (files: File[]) => {
     setCurrentFiles(files);
@@ -67,11 +81,12 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
       {showStatus && (
         <MultipleFileUploadStatus
           statusToggleText={`${readFileData.length} of ${currentFiles.length} files uploaded`}
-          statusToggleIcon={<InProgressIcon />}
+          statusToggleIcon={getStatusIcon()}
         >
           {currentFiles.map(file => (
             <MultipleFileUploadStatusItem
               file={file}
+              fileName="fooooooooooooooooooooooooooooooooooooofoooooooooooooooooooooooooooooooooooooofoooooooooooooooooooooooooooooooooooooofoooooooooooooooooooooooooooooooooooooofoooooooooooooooooooooooooooooooooooooofoooooooooooooooooooooooooooooooooooooofoooooooooooooooooooooooooooooooooooooofoooooooooooooooooooooooooooooooooooooofoooooooooooooooooooooooooooooooooooooofoooooooooooooooooooooooooooooooooooooo"
               key={`${file.name}${file.size}${file.lastModified}`}
               onClearClick={() => handleRemoveFile(file)}
               onReadSuccess={handleReadSuccess}
