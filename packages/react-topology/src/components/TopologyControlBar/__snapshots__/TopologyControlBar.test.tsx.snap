@@ -171,9 +171,17 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                             positionModifiers={
                               Object {
                                 "bottom": "pf-m-bottom",
+                                "bottomEnd": "pf-m-bottom-right",
+                                "bottomStart": "pf-m-bottom-left",
                                 "left": "pf-m-left",
+                                "leftEnd": "pf-m-left-bottom",
+                                "leftStart": "pf-m-left-top",
                                 "right": "pf-m-right",
+                                "rightEnd": "pf-m-right-bottom",
+                                "rightStart": "pf-m-right-top",
                                 "top": "pf-m-top",
+                                "topEnd": "pf-m-top-right",
+                                "topStart": "pf-m-top-left",
                               }
                             }
                             trigger={
@@ -304,9 +312,17 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                             positionModifiers={
                               Object {
                                 "bottom": "pf-m-bottom",
+                                "bottomEnd": "pf-m-bottom-right",
+                                "bottomStart": "pf-m-bottom-left",
                                 "left": "pf-m-left",
+                                "leftEnd": "pf-m-left-bottom",
+                                "leftStart": "pf-m-left-top",
                                 "right": "pf-m-right",
+                                "rightEnd": "pf-m-right-bottom",
+                                "rightStart": "pf-m-right-top",
                                 "top": "pf-m-top",
+                                "topEnd": "pf-m-top-right",
+                                "topStart": "pf-m-top-left",
                               }
                             }
                             trigger={
@@ -460,9 +476,17 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                             positionModifiers={
                               Object {
                                 "bottom": "pf-m-bottom",
+                                "bottomEnd": "pf-m-bottom-right",
+                                "bottomStart": "pf-m-bottom-left",
                                 "left": "pf-m-left",
+                                "leftEnd": "pf-m-left-bottom",
+                                "leftStart": "pf-m-left-top",
                                 "right": "pf-m-right",
+                                "rightEnd": "pf-m-right-bottom",
+                                "rightStart": "pf-m-right-top",
                                 "top": "pf-m-top",
+                                "topEnd": "pf-m-top-right",
+                                "topStart": "pf-m-top-left",
                               }
                             }
                             trigger={
@@ -829,9 +853,17 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             positionModifiers={
                               Object {
                                 "bottom": "pf-m-bottom",
+                                "bottomEnd": "pf-m-bottom-right",
+                                "bottomStart": "pf-m-bottom-left",
                                 "left": "pf-m-left",
+                                "leftEnd": "pf-m-left-bottom",
+                                "leftStart": "pf-m-left-top",
                                 "right": "pf-m-right",
+                                "rightEnd": "pf-m-right-bottom",
+                                "rightStart": "pf-m-right-top",
                                 "top": "pf-m-top",
+                                "topEnd": "pf-m-top-right",
+                                "topStart": "pf-m-top-left",
                               }
                             }
                             trigger={
@@ -985,9 +1017,17 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             positionModifiers={
                               Object {
                                 "bottom": "pf-m-bottom",
+                                "bottomEnd": "pf-m-bottom-right",
+                                "bottomStart": "pf-m-bottom-left",
                                 "left": "pf-m-left",
+                                "leftEnd": "pf-m-left-bottom",
+                                "leftStart": "pf-m-left-top",
                                 "right": "pf-m-right",
+                                "rightEnd": "pf-m-right-bottom",
+                                "rightStart": "pf-m-right-top",
                                 "top": "pf-m-top",
+                                "topEnd": "pf-m-top-right",
+                                "topStart": "pf-m-top-left",
                               }
                             }
                             trigger={
@@ -1141,9 +1181,17 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             positionModifiers={
                               Object {
                                 "bottom": "pf-m-bottom",
+                                "bottomEnd": "pf-m-bottom-right",
+                                "bottomStart": "pf-m-bottom-left",
                                 "left": "pf-m-left",
+                                "leftEnd": "pf-m-left-bottom",
+                                "leftStart": "pf-m-left-top",
                                 "right": "pf-m-right",
+                                "rightEnd": "pf-m-right-bottom",
+                                "rightStart": "pf-m-right-top",
                                 "top": "pf-m-top",
+                                "topEnd": "pf-m-top-right",
+                                "topStart": "pf-m-top-left",
                               }
                             }
                             trigger={
@@ -1297,9 +1345,17 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                             positionModifiers={
                               Object {
                                 "bottom": "pf-m-bottom",
+                                "bottomEnd": "pf-m-bottom-right",
+                                "bottomStart": "pf-m-bottom-left",
                                 "left": "pf-m-left",
+                                "leftEnd": "pf-m-left-bottom",
+                                "leftStart": "pf-m-left-top",
                                 "right": "pf-m-right",
+                                "rightEnd": "pf-m-right-bottom",
+                                "rightStart": "pf-m-right-top",
                                 "top": "pf-m-top",
+                                "topEnd": "pf-m-top-right",
+                                "topStart": "pf-m-top-left",
                               }
                             }
                             trigger={
