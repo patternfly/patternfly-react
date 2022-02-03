@@ -114,6 +114,10 @@ export interface TableProps extends OUIAProps {
   isTreeTable?: boolean;
   /** Flag indicating this table is nested within another table */
   isNested?: boolean;
+  /** Flag indicating this table is striped */
+  isStriped?: boolean;
+  /** Flag indicating this table contains expandable rows to maintain proper striping */
+  isExpandable?: boolean;
 }
 
 export class Table extends React.Component<TableProps, {}> {

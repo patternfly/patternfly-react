@@ -21,6 +21,8 @@ export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps
   isHoverable?: boolean;
   /** Flag indicating the row is selected - adds selected styling */
   isRowSelected?: boolean;
+  /** Flag indicating the row is striped */
+  isStriped?: boolean;
   /** An event handler for the row */
   onRowClick?: (event?: React.KeyboardEvent | React.MouseEvent) => void;
   /** Flag indicating the spacing offset of the first cell should be reset */
@@ -35,6 +37,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   isHidden = false,
   isHoverable = false,
   isRowSelected = false,
+  isStriped = false,
   innerRef,
   ouiaId,
   ouiaSafe = true,
@@ -63,6 +66,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
         isEditable && inlineStyles.modifiers.inlineEditable,
         isHoverable && styles.modifiers.hoverable,
         isRowSelected && styles.modifiers.selected,
+        isStriped && styles.modifiers.striped,
         resetOffset && styles.modifiers.firstCellOffsetReset
       )}
       hidden={isHidden || (isExpanded !== undefined && !isExpanded)}

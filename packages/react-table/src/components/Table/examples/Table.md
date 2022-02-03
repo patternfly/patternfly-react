@@ -792,3 +792,24 @@ the voice over technologies will recognize the flat table structure as a tree.
 
 ```ts isBeta file="LegacyTableTree.tsx"
 ```
+
+### Striped
+
+To apply striping to a basic table, add the `isStriped` property to `Table`.
+
+```ts file="LegacyTableStriped.tsx"
+```
+
+### Striped expandable
+
+To apply striping to an expandable table, add the `isStriped` and `isExpandable` properties to `Table`.
+
+```ts file="LegacyTableStripedExpandable.tsx"
+```
+
+### Striped custom tr
+
+To manually control striping, use a custom row wrapper that applies the `pf-m-striped` css class for each desired row.
+
+```ts file="LegacyTableStripedCustomTr.tsx"
+```

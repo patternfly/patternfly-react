@@ -349,3 +349,31 @@ The second `Tr` represents the second level of sub columns. The `Th` in this row
 
 ```ts file="ComposableTableNestedTableExpandable.tsx"
 ```
+
+### Composable: Striped
+
+To apply striping to a basic table, add the `isStriped` property to `TableComposable`.
+
+```ts file="ComposableTableStriped.tsx"
+```
+
+### Composable: Striped expandable
+
+To apply striping to an expandable table, add the `isStriped` and `isExpandable` properties to `TableComposable`.
+
+```ts file="ComposableTableStripedExpandable.tsx"
+```
+
+### Composable: Striped multiple tobdy
+
+When there are multiple `Tbody` components within a table, a more granular application of striping may be controlled by adding either the `isEvenStriped` or `isOddStriped` properties to `Tbody`. These properties will stripe even or odd rows within that `Tbody` respectively.
+
+```ts file="ComposableTableStripedMultipleTbody.tsx"
+```
+
+### Composable: Striped tr
+
+To manually control striping, add the `isStriped` property to each desired `Tr`. This replaces adding the `isStriped` property to `TableComposable`.
+
+```ts file="ComposableTableStripedTr.tsx"
+```
