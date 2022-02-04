@@ -357,7 +357,8 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
 
     this.inputRef.current.focus();
     this.setState({
-      isOpen: false
+      isOpen: false,
+      isInvalid: false
     });
   };
 
@@ -383,8 +384,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     }
     this.scrollToSelection(newTime);
     this.setState({
-      timeState: newTime,
-      isInvalid: !this.isValid(newTime)
+      timeState: newTime
     });
   };
 

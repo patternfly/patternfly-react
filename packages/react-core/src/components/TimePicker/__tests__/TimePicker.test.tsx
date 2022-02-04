@@ -72,7 +72,7 @@ describe('test isInvalid', () => {
     expect(view.find('.pf-m-error')).toHaveLength(0);
   })
 
-  test('should be invalid after onChange', () => {
+  test('should be invalid after onBlur', () => {
     const validateTime = (time: string) => {
       return false;
     }
@@ -86,6 +86,10 @@ describe('test isInvalid', () => {
       view.find('input').prop('onChange')(event);
     })
     view.update();
+
+    expect(view.find('.pf-m-error')).toHaveLength(0);
+
+    view.find('input').simulate('blur');
 
     expect(view.find('.pf-m-error')).toHaveLength(1);
   })
@@ -124,6 +128,10 @@ describe('test includeSeconds', () => {
 
     act(() => view.find('input').prop('onChange')(event));
     view.update();
+
+    expect(view.find('.pf-m-error')).toHaveLength(0);
+
+    view.find('input').simulate('blur');
 
     expect(view.find('.pf-m-error')).toHaveLength(1);
   });
