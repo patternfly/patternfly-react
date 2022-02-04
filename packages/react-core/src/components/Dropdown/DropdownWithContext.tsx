@@ -135,22 +135,20 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
               ref={this.baseComponentRef}
               {...getOUIAProps(ouiaComponentType, ouiaId, ouiaSafe)}
             >
-              {React.Children.map(toggle, oneToggle => {
-                  console.log(oneToggle); // TODO: not include getMenuRef unless its needed
-                  return React.cloneElement(oneToggle, {
-                    parentRef: this.baseComponentRef,
-                    getMenuRef: this.getMenuComponentRef,
-                    isOpen,
-                    id,
-                    isPlain,
-                    isText, //TODO: not include isText unless its needed
-                    'aria-haspopup': ariaHasPopup,
-                    onEnter: () => {
-                      this.onEnter();
-                      oneToggle.props.onEnter && oneToggle.props.onEnter();
-                    }
-                  })
-                }
+              {React.Children.map(toggle, oneToggle =>
+                React.cloneElement(oneToggle, {
+                  parentRef: this.baseComponentRef,
+                  getMenuRef: this.getMenuComponentRef,
+                  isOpen,
+                  id,
+                  isPlain,
+                  isText,
+                  'aria-haspopup': ariaHasPopup,
+                  onEnter: () => {
+                    this.onEnter();
+                    oneToggle.props.onEnter && oneToggle.props.onEnter();
+                  }
+                })
               )}
               {menuAppendTo === 'inline' && isOpen && menuContainer}
             </BaseComponent>
