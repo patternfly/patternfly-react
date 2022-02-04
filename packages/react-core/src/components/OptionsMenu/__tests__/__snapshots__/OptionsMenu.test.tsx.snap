@@ -3320,9 +3320,7 @@ exports[`optionsMenu text 1`] = `
       >
         <div
           className="pf-c-options-menu__toggle pf-m-text"
-          getMenuRef={[Function]}
           id="pf-dropdown-toggle-id-6"
-          isText={false}
         >
           <span
             className="pf-c-options-menu__toggle-text"

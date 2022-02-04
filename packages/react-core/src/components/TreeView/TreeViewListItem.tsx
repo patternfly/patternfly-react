@@ -191,7 +191,6 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
                   }
                 }
               }}
-              // role='treeitem'
               tabIndex={-1}
             >
               <div className={css(styles.treeViewNodeContainer)}>
