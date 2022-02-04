@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.43.18 (2022-02-04)
+
+
+### Bug Fixes
+
+* **TimePicker:** remove automatically validation from onChange event ([#6884](https://github.com/patternfly/patternfly-react/issues/6884)) ([e7088e4](https://github.com/patternfly/patternfly-react/commit/e7088e4e7a9348fa412d2815af1b0820ee7754ef))
+
+
+
+
+
 ## 4.43.17 (2022-02-04)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension
