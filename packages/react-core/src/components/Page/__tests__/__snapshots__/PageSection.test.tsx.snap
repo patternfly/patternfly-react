@@ -40,6 +40,21 @@ exports[`Check page main tabs section against snapshot 1`] = `
 </PageSection>
 `;
 
+exports[`Check page section with center alignment 1`] = `
+<PageSection
+  isCenterAligned={true}
+  isWidthLimited={true}
+>
+  <section
+    className="pf-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      className="pf-c-page__main-body"
+    />
+  </section>
+</PageSection>
+`;
+
 exports[`Check page section with fill and no padding example against snapshot 1`] = `
 <PageSection
   isFilled={true}
