@@ -1886,7 +1886,7 @@ import {
   Select,
   SelectOption,
   SelectVariant,
-  TextInput,
+  SearchInput,
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
@@ -2109,25 +2109,16 @@ class FilterTableDemo extends React.Component {
           categoryName="Name"
           showToolbarItem={currentCategory === 'Name'}
         >
-          <InputGroup>
-            <TextInput
-              name="nameInput"
-              id="nameInput1"
-              type="search"
-              aria-label="name filter"
-              onChange={this.onInputChange}
-              value={inputValue}
-              placeholder="Filter by name..."
-              onKeyDown={this.onNameInput}
-            />
-            <Button
-              variant={ButtonVariant.control}
-              aria-label="search button for search input"
-              onClick={this.onNameInput}
-            >
-              <SearchIcon />
-            </Button>
-          </InputGroup>
+          <SearchInput
+            aria-label="name filter"
+            placeholder="Filter by name..."
+            onChange={this.onInputChange}
+            value={inputValue}
+            onClear={() => {
+              this.onInputChange('');
+            }}
+            onSearch={this.onNameInput}
+          />
         </ToolbarFilter>
         <ToolbarFilter
           chips={filters.status}

@@ -6,7 +6,7 @@ section: components
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+
 import { css } from '@patternfly/react-styles';
 
 ## Demos
@@ -34,13 +34,11 @@ import {
   ToolbarItem,
   ToolbarExpandIconWrapper,
   ToolbarContent,
-  InputGroup,
-  TextInput,
+  SearchInput,
   Tooltip
 } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 class ExpandableDataList extends React.Component {
   constructor(props) {
@@ -131,12 +129,7 @@ class ExpandableDataList extends React.Component {
                 </Tooltip>
               </ToolbarItem>
               <ToolbarItem>
-                <InputGroup>
-                  <TextInput name="textInput1" id="textInput1" type="search" aria-label="search input example" />
-                  <Button variant={ButtonVariant.control} aria-label="search button for search input">
-                    <SearchIcon />
-                  </Button>
-                </InputGroup>
+                <SearchInput aria-label="search input example" />
               </ToolbarItem>
               <ToolbarItem>
                 <Button variant="secondary">Action</Button>
