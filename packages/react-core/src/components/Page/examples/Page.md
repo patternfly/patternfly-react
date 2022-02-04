@@ -612,7 +612,7 @@ import {
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
-export const OptionsMenu: React.FunctionComponent = () => {
+CenterAlignedPageSection = () => {
   const headerToolbar = (
     <Toolbar id="toolbar">
       <ToolbarContent>
