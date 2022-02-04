@@ -350,6 +350,73 @@ exports[`isLoading 1`] = `
 </Button>
 `;
 
+exports[`isLoading icon only 1`] = `
+<Button
+  aria-label="Upload"
+  icon={
+    <div>
+      ICON
+    </div>
+  }
+  isLoading={true}
+  spinnerAriaValueText="Loading"
+  variant="plain"
+>
+  <ButtonBase
+    aria-label="Upload"
+    icon={
+      <div>
+        ICON
+      </div>
+    }
+    innerRef={null}
+    isLoading={true}
+    spinnerAriaValueText="Loading"
+    variant="plain"
+  >
+    <button
+      aria-disabled={false}
+      aria-label="Upload"
+      className="pf-c-button pf-m-plain pf-m-in-progress"
+      data-ouia-component-id="OUIA-Generated-Button-plain-2"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe={true}
+      disabled={false}
+      role={null}
+      type="button"
+    >
+      <span
+        className="pf-c-button__progress"
+      >
+        <Spinner
+          aria-valuetext="Loading"
+          size="md"
+        >
+          <span
+            aria-valuetext="Loading"
+            className="pf-c-spinner pf-m-md"
+            role="progressbar"
+          >
+            <span
+              className="pf-c-spinner__clipper"
+            />
+            <span
+              className="pf-c-spinner__lead-ball"
+            />
+            <span
+              className="pf-c-spinner__tail-ball"
+            />
+          </span>
+        </Spinner>
+      </span>
+      <div>
+        ICON
+      </div>
+    </button>
+  </ButtonBase>
+</Button>
+`;
+
 exports[`isSmall 1`] = `
 <Button
   isSmall={true}

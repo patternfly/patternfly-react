@@ -131,7 +131,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
         isActive && styles.modifiers.active,
         isInline && variant === ButtonVariant.link && styles.modifiers.inline,
         isDanger && (variant === ButtonVariant.secondary || variant === ButtonVariant.link) && styles.modifiers.danger,
-        isLoading !== null && styles.modifiers.progress,
+        isLoading !== null && children !== null && styles.modifiers.progress,
         isLoading && styles.modifiers.inProgress,
         isSmall && styles.modifiers.small,
         isLarge && styles.modifiers.displayLg,
@@ -149,6 +149,7 @@ const ButtonBase: React.FunctionComponent<ButtonProps> = ({
           <Spinner size={spinnerSize.md} aria-valuetext={spinnerAriaValueText} />
         </span>
       )}
+      {variant === ButtonVariant.plain && children === null && icon ? icon : null}
       {variant !== ButtonVariant.plain && icon && iconPosition === 'left' && (
         <span className={css(styles.buttonIcon, styles.modifiers.start)}>{icon}</span>
       )}
