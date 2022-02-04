@@ -12,7 +12,7 @@ interface LoadingPropsType {
 export const ButtonProgress: React.FunctionComponent = () => {
   const [isPrimaryLoading, setIsPrimaryLoading] = React.useState<boolean>(true);
   const [isSecondaryLoading, setIsSecondaryLoading] = React.useState<boolean>(true);
-  const [isUploading, setIsUploading] = React.useState<boolean>(true);
+  const [isUploading, setIsUploading] = React.useState<boolean>(false);
 
   const primaryLoadingProps = {} as LoadingPropsType;
   if (isPrimaryLoading) {
@@ -30,7 +30,7 @@ export const ButtonProgress: React.FunctionComponent = () => {
   if (isUploading) {
     uploadingProps.spinnerAriaValueText = 'Loading';
     uploadingProps.isLoading = true;
-    secondaryLoadingProps.spinnerAriaLabel = 'Content being uploaded';
+    secondaryLoadingProps.spinnerAriaLabel = 'Uploading data';
   }
 
   return (
@@ -47,6 +47,7 @@ export const ButtonProgress: React.FunctionComponent = () => {
         {isSecondaryLoading ? 'Click to stop loading' : 'Click to start loading'}
       </Button>{' '}
       <Button
+        aria-label="Upload"
         variant="plain"
         onClick={() => setIsUploading(!isUploading)}
         icon={<UploadIcon />}
