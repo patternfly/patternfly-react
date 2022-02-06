@@ -71,6 +71,8 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   ouiaSafe = true,
   isTreeTable = false,
   isNested = false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  nestedHeaderColumnSpans,
   ...props
 }: TableComposableProps) => {
   const tableRef = innerRef || React.useRef(null);
