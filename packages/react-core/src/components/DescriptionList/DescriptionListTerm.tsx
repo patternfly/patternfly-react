@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 export interface DescriptionListTermProps extends React.HTMLProps<HTMLElement> {
   /** Anything that can be rendered inside of list term */
   children: React.ReactNode;
-  /** icon that is rendered inside of list term */
+  /** Icon that is rendered inside of list term to the left side of the children */
   icon?: React.ReactNode;
   /** Additional classes added to the DescriptionListTerm */
   className?: string;
