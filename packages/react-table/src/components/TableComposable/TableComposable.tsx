@@ -53,7 +53,7 @@ export interface TableComposableProps extends React.HTMLProps<HTMLTableElement>,
   isTreeTable?: boolean;
   /** Flag indicating this table is nested within another table */
   isNested?: boolean;
-  /** Collection of column spans for nested headers */
+  /** Collection of column spans for nested headers. Deprecated: see https://github.com/patternfly/patternfly/issues/4584 */
   nestedHeaderColumnSpans?: number[];
 }
 
@@ -71,6 +71,7 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   ouiaSafe = true,
   isTreeTable = false,
   isNested = false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   nestedHeaderColumnSpans,
   ...props
 }: TableComposableProps) => {
@@ -159,14 +160,6 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
       {...ouiaProps}
       {...props}
     >
-      {nestedHeaderColumnSpans &&
-        nestedHeaderColumnSpans.map((span: number, index) => {
-          if (span === 1) {
-            return <col key={index} />;
-          } else {
-            return <colgroup key={index} span={span} />;
-          }
-        })}
       {children}
     </table>
   );

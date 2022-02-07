@@ -70,11 +70,7 @@ export const ComposableTableNestedExpandable: React.FunctionComponent = () => {
 
   return (
     <InnerScrollContainer>
-      <TableComposable
-        aria-label="Nested column headers with expandable rows table"
-        gridBreakPoint=""
-        nestedHeaderColumnSpans={[1, 3, 1]}
-      >
+      <TableComposable aria-label="Nested column headers with expandable rows table" gridBreakPoint="">
         <Thead hasNestedHeader>
           <Tr>
             <Th rowSpan={2} />
