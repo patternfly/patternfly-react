@@ -48,11 +48,7 @@ class MenuBasicList extends React.Component {
     const { activeItem, isPlain } = this.state;
     return (
       <React.Fragment>
-        <Menu
-          activeItemId={activeItem}
-          onSelect={this.onSelect}
-          isPlain={isPlain}
-          >
+        <Menu activeItemId={activeItem} onSelect={this.onSelect} isPlain={isPlain}>
           <MenuContent>
             <MenuList>
               <MenuItem itemId={0}>Action</MenuItem>
@@ -71,7 +67,7 @@ class MenuBasicList extends React.Component {
             </MenuList>
           </MenuContent>
         </Menu>
-        <div style={{ marginTop: 20 }}> 
+        <div style={{ marginTop: 20 }}>
           <Checkbox
             label="Plain menu"
             isChecked={isPlain}
@@ -628,7 +624,7 @@ class MenuOptionSingleSelect extends React.Component {
             <MenuItem icon={<TableIcon aria-hidden />} itemId={2}>
               Option 3
             </MenuItem>
-          </MenuList>    
+          </MenuList>
         </MenuContent>
       </Menu>
     );
@@ -880,6 +876,11 @@ class MenuWithDrilldown extends React.Component {
 }
 ```
 
+### With drilldown - submenu functions
+
+```ts file="./MenuDrilldownSubmenuFunctions.tsx" isBeta
+```
+
 ### With drilldown breadcrumbs
 
 ```js isBeta
@@ -934,7 +935,7 @@ class MenuWithDrilldownBreadcrumbs extends React.Component {
           break;
       }
     };
-    
+
     this.onToggleMaxMenuHeight = checked => {
       this.setState({
         withMaxMenuHeight: checked
@@ -1121,10 +1122,7 @@ class MenuWithDrilldownBreadcrumbs extends React.Component {
               <Divider component="li" />
             </>
           )}
-          <MenuContent 
-            menuHeight={`${menuHeights[activeMenu]}px`} 
-            maxMenuHeight={withMaxMenuHeight ? '100px' : 'auto'}
-          >
+          <MenuContent menuHeight={`${menuHeights[activeMenu]}px`} maxMenuHeight={withMaxMenuHeight ? '100px' : 'auto'}>
             <MenuList>
               <MenuItem
                 itemId="group:start_rollout"
