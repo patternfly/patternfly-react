@@ -1,5 +1,9 @@
 'use strict';
 
+import ReactDOM from 'react-dom';
+import App from 'demo-app-ts/src/App';
+import React from 'react';
+
 const e = React.createElement;
 
 class LikeButton extends React.Component {
@@ -25,6 +29,6 @@ class LikeButton extends React.Component {
   }
 }
 
-
 const domContainer = document.querySelector('#react-root');
-ReactDOM.render(e(LikeButton), domContainer);
+const root = ReactDOM.createRoot(domContainer);
+root.render(e(LikeButton));

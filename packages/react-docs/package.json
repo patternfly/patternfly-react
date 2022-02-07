@@ -40,8 +40,8 @@
     "@patternfly/patternfly-a11y": "4.2.1",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
+    "react": "^18.0.0-rc.0",
+    "react-dom": "^18.0.0-rc.0",
     "rimraf": "^2.6.3",
     "shx": "^0.3.2",
     "theme-patternfly-org": "0.9.6"

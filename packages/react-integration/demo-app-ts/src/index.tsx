@@ -4,4 +4,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const domContainer = document.getElementById('root');
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+const root = ReactDOM.createRoot(domContainer);
+root.render(<App />);
