@@ -2234,11 +2234,11 @@ class FilterTableDemo extends React.Component {
         }
       ];
     }
-
+    const onSelect = loading || filteredRows.length === 0 ? null : this.onRowSelect; // To remove the select box when there are no rows
     return (
       <React.Fragment>
         {this.renderToolbar()}
-        <Table cells={columns} rows={tableRows} onSelect={this.onRowSelect} aria-label="Filterable Table Demo">
+        <Table cells={columns} rows={tableRows} onSelect={onSelect} aria-label="Filterable Table Demo">
           <TableHeader />
           <TableBody />
         </Table>
