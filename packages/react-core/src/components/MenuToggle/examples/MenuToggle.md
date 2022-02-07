@@ -129,7 +129,9 @@ import { MenuToggle } from '@patternfly/react-core';
 import React from 'react';
 import { MenuToggle } from '@patternfly/react-core';
 
-<MenuToggle isFullHeight aria-label="Full height menu toggle">
-  Full height
-</MenuToggle>
+<div style={{ height: "80px" }}>
+  <MenuToggle isFullHeight aria-label="Full height menu toggle">
+    Full height
+  </MenuToggle>
+</div>
 ```
