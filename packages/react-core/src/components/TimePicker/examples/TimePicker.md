@@ -64,14 +64,14 @@ import { TimePicker } from '@patternfly/react-core';
 import React from 'react';
 import { TimePicker } from '@patternfly/react-core';
 
-SimpleTimePicker = () => <TimePicker time="3:35:20 PM" includeSeconds />;
+<TimePicker time="3:35:20 PM" includeSeconds />;
 ```
 
-### 24 hours with seconds
+### Basic 24 hours with seconds
 
 ```js
 import React from 'react';
 import { TimePicker } from '@patternfly/react-core';
 
-SimpleTimePicker = () => <TimePicker time="12:35:50" includeSeconds is24Hour />;
+<TimePicker time="12:35:50" includeSeconds is24Hour />;
 ```

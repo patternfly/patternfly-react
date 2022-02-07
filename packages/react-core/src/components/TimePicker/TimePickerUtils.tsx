@@ -6,7 +6,8 @@ export const makeTimeOptions = (
   hour12: boolean,
   delimiter: string,
   minTime: string,
-  maxTime: string
+  maxTime: string,
+  includeSeconds: boolean
 ) => {
   const res = [];
   const iter = new Date(new Date().setHours(0, 0, 0, 0));
@@ -31,7 +32,7 @@ export const makeTimeOptions = (
       .padStart(2, '0');
     const timeOption = `${hour}${delimiter}${minutes}${hour12 ? suffix : ''}`;
     // time option is valid if within min/max constraints
-    if (isWithinMinMax(minTime, maxTime, timeOption, delimiter)) {
+    if (isWithinMinMax(minTime, maxTime, timeOption, delimiter, includeSeconds)) {
       res.push(timeOption);
     }
     iter.setMinutes(iter.getMinutes() + stepMinutes);
