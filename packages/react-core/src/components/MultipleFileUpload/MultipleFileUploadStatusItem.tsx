@@ -20,14 +20,14 @@ interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLLIElemen
   /** A callback for when the FileReader successfully reads the file */
   onReadSuccess?: (data: string, file: File) => void;
   /** A callback for when the FileReader API fails */
-  onReadFailed?: (error: DOMException, fileHandle: File) => void;
+  onReadFail?: (error: DOMException, onReadFail: File) => void;
   /** Clear button was clicked */
   onClearClick?: React.MouseEventHandler<HTMLButtonElement>;
 
   // Props to bypass built in behavior
 
   /** A callback to process file reading in a custom way */
-  customFileHandler?: (file: File) => {};
+  customFileHandler?: (file: File) => void;
   /** A custom name to display for the file rather than using built in functionality to auto-fill it */
   fileName?: string;
   /** A custom file size to display for the file rather than using built in functionality to auto-fill it */
@@ -45,7 +45,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
   onReadStarted = () => {},
   onReadFinished = () => {},
   onReadSuccess = () => {},
-  onReadFailed = () => {},
+  onReadFail = () => {},
   onClearClick = () => {},
   customFileHandler,
   fileName,
@@ -72,7 +72,9 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
   }
 
   React.useEffect(() => {
-    if (!customFileHandler) {
+    if (customFileHandler) {
+      customFileHandler(file);
+    } else {
       onReadStarted(file);
       readFile(file)
         .then(data => {
@@ -82,11 +84,9 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
         })
         .catch((error: DOMException) => {
           onReadFinished(file);
-          onReadFailed(error, file);
+          onReadFail(error, file);
           setLoadResult('danger');
         });
-    } else {
-      customFileHandler(file);
     }
   }, []);
 

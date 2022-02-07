@@ -16,10 +16,9 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 
 interface readFile {
-  file: File;
+  fileName: string;
   data?: string;
-  loadPercentage?: number;
-  loadResult?: undefined | 'danger' | 'success';
+  loadResult?: 'danger' | 'success';
   loadError?: DOMException;
 }
 
@@ -44,27 +43,39 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
     return <TimesCircleIcon />;
   };
 
-  const handleFileDrop = (files: File[]) => {
-    setCurrentFiles(files);
-  };
-
   const handleRemoveFile = (fileToRemove: File) => {
-    const newCurrentFiles = currentFiles.filter(file => !Object.is(file, fileToRemove));
+    const newCurrentFiles = currentFiles.filter(file => file.name !== fileToRemove.name);
     setCurrentFiles(newCurrentFiles);
 
-    const newReadFiles = readFileData.filter(readFile => newCurrentFiles.includes(readFile.file));
+    const newCurrentFileNames = newCurrentFiles.map(file => file.name);
+    const newReadFiles = readFileData.filter(readFile => newCurrentFileNames.includes(readFile.fileName));
     setReadFileData(newReadFiles);
   };
 
-  const handleReadSuccess = (data: string, file: File) => {
-    setReadFileData(prevReadFiles => [...prevReadFiles, { data, file, loadPercentage: 100, loadResult: 'success' }]);
+  const isInCurrentFiles = (newFile: File) => currentFiles.some(currentFile => currentFile.name === newFile.name);
+
+  const handleFileDrop = (droppedFiles: File[]) => {
+    const newFiles = droppedFiles.filter(droppedFile => !isInCurrentFiles(droppedFile));
+    setCurrentFiles(prevFiles => [...prevFiles, ...newFiles]);
   };
+
+  const handleReadSuccess = (data: string, file: File) => {
+    setReadFileData(prevReadFiles => [...prevReadFiles, { data, fileName: file.name, loadResult: 'success' }]);
+  };
+
+  const handleReadFail = (error: DOMException, file: File) => {
+    setReadFileData(prevReadFiles => [
+      ...prevReadFiles,
+      { loadError: error, fileName: file.name, loadResult: 'danger' }
+    ]);
+  };
+
+  const successfullyReadFiles = readFileData.filter(fileData => fileData.loadResult === 'success').length;
 
   return (
     <MultipleFileUpload
-      currentFiles={currentFiles}
       onDataChange={handleFileDrop}
-      dropzoneProps={{ accept: 'image/jpeg, application/msword, application/pdf, image/png' }}
+      dropzoneProps={{ accept: 'image/jpeg, application/msword, application/pdf, image/png, application/zip' }}
     >
       <MultipleFileUploadMain>
         <MultipleFileUploadTitle>
@@ -79,7 +90,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
       </MultipleFileUploadMain>
       {showStatus && (
         <MultipleFileUploadStatus
-          statusToggleText={`${readFileData.length} of ${currentFiles.length} files uploaded`}
+          statusToggleText={`${successfullyReadFiles} of ${currentFiles.length} files uploaded`}
           statusToggleIcon={getStatusIcon()}
         >
           {currentFiles.map(file => (
@@ -88,6 +99,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
               key={`${file.name}${file.size}${file.lastModified}`}
               onClearClick={() => handleRemoveFile(file)}
               onReadSuccess={handleReadSuccess}
+              onReadFail={handleReadFail}
             />
           ))}
         </MultipleFileUploadStatus>
