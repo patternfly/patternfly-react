@@ -275,7 +275,7 @@ class PrimaryDetailFullPage extends React.Component {
     );
     const drawerContent = (
       <React.Fragment>
-        <Toolbar id="full-page-data-toolbar" className="pf-m-page-insets">
+        <Toolbar id="full-page-data-toolbar" usePageInsets>
           <ToolbarContent>{ToolbarItems}</ToolbarContent>
         </Toolbar>
         <DataList
@@ -736,7 +736,7 @@ class PrimaryDetailContentPadding extends React.Component {
 
     const drawerContent = (
       <React.Fragment>
-        <Toolbar id="content-padding-data-toolbar" className="pf-m-page-insets">
+        <Toolbar id="content-padding-data-toolbar" usePageInsets>
           <ToolbarContent>{ToolbarItems}</ToolbarContent>
         </Toolbar>
         <DataList
@@ -1633,7 +1633,7 @@ class PrimaryDetailDataListInCard extends React.Component {
 
     const drawerContent = (
       <React.Fragment>
-        <Toolbar id="data-list-data-toolbar" className="pf-m-page-insets">
+        <Toolbar id="data-list-data-toolbar" usePageInsets>
           <ToolbarContent>
             <ToolbarItem>
               <Dropdown
@@ -1998,7 +1998,7 @@ class PrimaryDetailInlineModifier extends React.Component {
     );
     const drawerContent = (
       <React.Fragment>
-        <Toolbar id="inline-modifier-data-toolbar" className="pf-m-page-insets">
+        <Toolbar id="inline-modifier-data-toolbar" usePageInsets>
           <ToolbarContent>{ToolbarItems}</ToolbarContent>
         </Toolbar>
         <DataList
