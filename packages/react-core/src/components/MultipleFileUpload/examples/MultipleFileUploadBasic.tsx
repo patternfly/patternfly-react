@@ -75,7 +75,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   return (
     <MultipleFileUpload
       onDataChange={handleFileDrop}
-      dropzoneProps={{ accept: 'image/jpeg, application/msword, application/pdf, image/png, application/zip' }}
+      dropzoneProps={{ accept: 'image/jpeg, application/msword, application/pdf, image/png' }}
     >
       <MultipleFileUploadMain>
         <MultipleFileUploadTitle>
