@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.43.21 (2022-02-07)
+
+
+### Bug Fixes
+
+* **TimePicker:** apply includeSeconds when making options ([#6865](https://github.com/patternfly/patternfly-react/issues/6865)) ([5b6d6c9](https://github.com/patternfly/patternfly-react/commit/5b6d6c9979046c111b00456622758f542627ac11))
+
+
+
+
+
 ## 4.43.20 (2022-02-07)
 
 **Note:** Version bump only for package @patternfly/react-console
