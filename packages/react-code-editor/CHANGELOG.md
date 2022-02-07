@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.33.19 (2022-02-07)
+
+
+### Bug Fixes
+
+* **Select:** remove logic from default inputAutoComplete ([#6873](https://github.com/patternfly/patternfly-react/issues/6873)) ([b3b61c1](https://github.com/patternfly/patternfly-react/commit/b3b61c175f23cdc9dad8c71054301d1090795ede))
+
+
+
+
+
 ## 4.33.18 (2022-02-04)
 
 
