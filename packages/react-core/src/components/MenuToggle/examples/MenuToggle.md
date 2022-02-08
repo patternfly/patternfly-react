@@ -122,3 +122,16 @@ import { MenuToggle } from '@patternfly/react-core';
   </MenuToggle>
 </React.Fragment>
 ```
+
+### Full height
+
+```ts
+import React from 'react';
+import { MenuToggle } from '@patternfly/react-core';
+
+<div style={{ height: "80px" }}>
+  <MenuToggle isFullHeight aria-label="Full height menu toggle">
+    Full height
+  </MenuToggle>
+</div>
+```
