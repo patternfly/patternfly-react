@@ -12,9 +12,8 @@ interface MultipleFileUploadProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   dropzoneProps?: DropzoneProps;
   /** Flag setting the component to horizontal styling mode */
   isHorizontal?: boolean;
-  /** When files are dropped or uploaded this callback will be called with all accepted files that don't already exist
-   * in the current files array */
-  onDataChange?: (data: File[]) => void;
+  /** When files are dropped or uploaded this callback will be called with all accepted files */
+  onFileDrop?: (data: File[]) => void;
 }
 
 export const MultipleFileUploadContext = React.createContext({
@@ -26,11 +25,11 @@ export const MultipleFileUpload: React.FunctionComponent<MultipleFileUploadProps
   children,
   dropzoneProps = {},
   isHorizontal,
-  onDataChange = () => {},
+  onFileDrop = () => {},
   ...props
 }: MultipleFileUploadProps) => {
   const onDropAccepted: DropFileEventHandler = (acceptedFiles: File[], event) => {
-    onDataChange(acceptedFiles);
+    onFileDrop(acceptedFiles);
     // allow users to set a custom drop accepted handler rather than using on data change
     dropzoneProps.onDropAccepted && dropzoneProps.onDropAccepted(acceptedFiles, event);
   };

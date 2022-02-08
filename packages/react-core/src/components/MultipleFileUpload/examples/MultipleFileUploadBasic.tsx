@@ -27,10 +27,12 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   const [readFileData, setReadFileData] = React.useState<readFile[]>([]);
   const [showStatus, setShowStatus] = React.useState(false);
 
+  // only show the status component once a file has been uploaded, but keep the status list component itself even if all files are removed
   if (!showStatus && currentFiles.length > 0) {
     setShowStatus(true);
   }
 
+  // determine the icon that should be shown for the overall status list
   const getStatusIcon = () => {
     if (readFileData.length < currentFiles.length) {
       return <InProgressIcon />;
@@ -43,41 +45,40 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
     return <TimesCircleIcon />;
   };
 
-  const removeFile = (nameOfFileToRemove: string) => {
-    const newCurrentFiles = currentFiles.filter(file => file.name !== nameOfFileToRemove);
+  // remove files from both state arrays based on their name
+  const removeFiles = (namesOfFilesToRemove: string[]) => {
+    const newCurrentFiles = currentFiles.filter(
+      currentFile => !namesOfFilesToRemove.some(fileName => fileName === currentFile.name)
+    );
+
     setCurrentFiles(newCurrentFiles);
 
-    const newCurrentFileNames = newCurrentFiles.map(file => file.name);
-    const newReadFiles = readFileData.filter(readFile => newCurrentFileNames.includes(readFile.fileName));
+    const newReadFiles = readFileData.filter(
+      readFile => !namesOfFilesToRemove.some(fileName => fileName === readFile.fileName)
+    );
+
     setReadFileData(newReadFiles);
   };
 
-  const removeReUploads = (reUploads: File[]) => {
-    const currentFilesWithoutReUploads = currentFiles.filter(
-      currentFile => !reUploads.some(reUpload => reUpload.name === currentFile.name)
-    );
-
-    setCurrentFiles(currentFilesWithoutReUploads);
-
-    const readFileDataWithoutReUploads = readFileData.filter(
-      readFile => !reUploads.some(reUpload => reUpload.name === readFile.fileName)
-    );
-
-    setReadFileData(readFileDataWithoutReUploads);
-  };
-
+  // callback that will be called by the react dropzone with the newly dropped file objects
   const handleFileDrop = (droppedFiles: File[]) => {
+    // identify what, if any, files are re-uploads of already uploaded files
     const currentFileNames = currentFiles.map(file => file.name);
     const reUploads = droppedFiles.filter(droppedFile => currentFileNames.includes(droppedFile.name));
+
+    /** this promise chain is needed because if the file removal is done at the same time as the file adding react
+     * won't realize that the status items for the re-uploaded files needs to be re-rendered */
     Promise.resolve()
-      .then(() => removeReUploads(reUploads))
+      .then(() => removeFiles(reUploads.map(file => file.name)))
       .then(() => setCurrentFiles(prevFiles => [...prevFiles, ...droppedFiles]));
   };
 
+  // callback called by the status item when a file is successfully read with the built-in file reader
   const handleReadSuccess = (data: string, file: File) => {
     setReadFileData(prevReadFiles => [...prevReadFiles, { data, fileName: file.name, loadResult: 'success' }]);
   };
 
+  // callback called by the status item when a file encounters an error while being read with the built-in file reader
   const handleReadFail = (error: DOMException, file: File) => {
     setReadFileData(prevReadFiles => [
       ...prevReadFiles,
@@ -85,11 +86,11 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
     ]);
   };
 
-  const successfullyReadFiles = readFileData.filter(fileData => fileData.loadResult === 'success').length;
+  const successfullyReadFileCount = readFileData.filter(fileData => fileData.loadResult === 'success').length;
 
   return (
     <MultipleFileUpload
-      onDataChange={handleFileDrop}
+      onFileDrop={handleFileDrop}
       dropzoneProps={{ accept: 'image/jpeg, application/msword, application/pdf, image/png' }}
     >
       <MultipleFileUploadMain>
@@ -105,14 +106,14 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
       </MultipleFileUploadMain>
       {showStatus && (
         <MultipleFileUploadStatus
-          statusToggleText={`${successfullyReadFiles} of ${currentFiles.length} files uploaded`}
+          statusToggleText={`${successfullyReadFileCount} of ${currentFiles.length} files uploaded`}
           statusToggleIcon={getStatusIcon()}
         >
           {currentFiles.map(file => (
             <MultipleFileUploadStatusItem
               file={file}
-              key={`${file.name}`}
-              onClearClick={() => removeFile(file.name)}
+              key={file.name}
+              onClearClick={() => removeFiles([file.name])}
               onReadSuccess={handleReadSuccess}
               onReadFail={handleReadFail}
             />

@@ -11,8 +11,6 @@ interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLLIElemen
   className?: string;
   /** The file object being represented by the status item */
   file?: File;
-  /** A custom icon to show in place of the generic file icon */
-  fileIcon?: React.ReactNode;
   /** A callback for when a selected file starts loading */
   onReadStarted?: (fileHandle: File) => void;
   /** A callback for when a selected file finishes loading */
@@ -28,6 +26,8 @@ interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLLIElemen
 
   /** A callback to process file reading in a custom way */
   customFileHandler?: (file: File) => void;
+  /** A custom icon to show in place of the generic file icon */
+  fileIcon?: React.ReactNode;
   /** A custom name to display for the file rather than using built in functionality to auto-fill it */
   fileName?: string;
   /** A custom file size to display for the file rather than using built in functionality to auto-fill it */

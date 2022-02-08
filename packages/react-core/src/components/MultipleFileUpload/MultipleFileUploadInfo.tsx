@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/m
 import { css } from '@patternfly/react-styles';
 
 interface MultipleFileUploadInfoProps extends React.HTMLProps<HTMLDivElement> {
-  /** Content rendered inside MultipleFileUploadInfo */
+  /** Content rendered inside multiple file upload info */
   children?: React.ReactNode;
   /** Class to add to outer div */
   className?: string;

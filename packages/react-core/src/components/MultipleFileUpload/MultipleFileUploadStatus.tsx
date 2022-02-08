@@ -4,13 +4,13 @@ import { css } from '@patternfly/react-styles';
 import { ExpandableSection } from '../ExpandableSection';
 
 interface MultipleFileUploadStatusProps extends React.HTMLProps<HTMLDivElement> {
-  /** Optional content rendered inside multi file upload status list */
+  /** Content rendered inside multi file upload status list */
   children?: React.ReactNode;
   /** Class to add to outer div */
   className?: string;
-  /** The string to show in the status toggle */
+  /** String to show in the status toggle */
   statusToggleText?: string;
-  /** The icon to show in the status toggle */
+  /** Icon to show in the status toggle */
   statusToggleIcon?: React.ReactNode;
 }
 
