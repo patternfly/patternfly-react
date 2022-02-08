@@ -43,8 +43,8 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
     return <TimesCircleIcon />;
   };
 
-  const handleRemoveFile = (fileToRemove: File) => {
-    const newCurrentFiles = currentFiles.filter(file => file.name !== fileToRemove.name);
+  const removeFile = (nameOfFileToRemove: string) => {
+    const newCurrentFiles = currentFiles.filter(file => file.name !== nameOfFileToRemove);
     setCurrentFiles(newCurrentFiles);
 
     const newCurrentFileNames = newCurrentFiles.map(file => file.name);
@@ -52,11 +52,26 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
     setReadFileData(newReadFiles);
   };
 
-  const isInCurrentFiles = (newFile: File) => currentFiles.some(currentFile => currentFile.name === newFile.name);
+  const removeReUploads = (reUploads: File[]) => {
+    const currentFilesWithoutReUploads = currentFiles.filter(
+      currentFile => !reUploads.some(reUpload => reUpload.name === currentFile.name)
+    );
+
+    setCurrentFiles(currentFilesWithoutReUploads);
+
+    const readFileDataWithoutReUploads = readFileData.filter(
+      readFile => !reUploads.some(reUpload => reUpload.name === readFile.fileName)
+    );
+
+    setReadFileData(readFileDataWithoutReUploads);
+  };
 
   const handleFileDrop = (droppedFiles: File[]) => {
-    const newFiles = droppedFiles.filter(droppedFile => !isInCurrentFiles(droppedFile));
-    setCurrentFiles(prevFiles => [...prevFiles, ...newFiles]);
+    const currentFileNames = currentFiles.map(file => file.name);
+    const reUploads = droppedFiles.filter(droppedFile => currentFileNames.includes(droppedFile.name));
+    Promise.resolve()
+      .then(() => removeReUploads(reUploads))
+      .then(() => setCurrentFiles(prevFiles => [...prevFiles, ...droppedFiles]));
   };
 
   const handleReadSuccess = (data: string, file: File) => {
@@ -97,8 +112,8 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
           {currentFiles.map(file => (
             <MultipleFileUploadStatusItem
               file={file}
-              key={`${file.name}${file.size}${file.lastModified}`}
-              onClearClick={() => handleRemoveFile(file)}
+              key={`${file.name}`}
+              onClearClick={() => removeFile(file.name)}
               onReadSuccess={handleReadSuccess}
               onReadFail={handleReadFail}
             />
