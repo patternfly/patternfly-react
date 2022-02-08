@@ -9,6 +9,8 @@ import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle
 interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Class to add to outer div */
   className?: string;
+  /** Adds accessibility text to the status item deletion button */
+  buttonAriaLabel?: string;
   /** The file object being represented by the status item */
   file?: File;
   /** A callback for when a selected file starts loading */
@@ -36,6 +38,13 @@ interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLLIElemen
   progressValue?: number;
   /** A custom variant to apply to the progress component rather than using built in functionality to auto-fill it */
   progressVariant?: 'danger' | 'success' | 'warning';
+
+  // Props passed through to the progress component
+
+  /** Adds accessible text to the ProgressBar. Required when title not used and there is not any label associated with the progress bar */
+  progressAriaLabel?: string;
+  /** Associates the ProgressBar with it's label for accessibility purposes. Required when title not used */
+  progressAriaLabelledBy?: string;
 }
 
 export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileUploadStatusItemProps> = ({
@@ -52,6 +61,9 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
   fileSize,
   progressValue,
   progressVariant,
+  progressAriaLabel,
+  progressAriaLabelledBy,
+  buttonAriaLabel = 'Remove from list',
   ...props
 }) => {
   const [loadPercentage, setLoadPercentage] = React.useState(0);
@@ -118,10 +130,16 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
     <li className={css(styles.multipleFileUploadStatusItem, className)} {...props}>
       <div className={styles.multipleFileUploadStatusItemIcon}>{fileIcon || <FileIcon />}</div>
       <div className={styles.multipleFileUploadStatusItemMain}>
-        <Progress title={title} value={progressValue || loadPercentage} variant={progressVariant || loadResult} />
+        <Progress
+          title={title}
+          value={progressValue || loadPercentage}
+          variant={progressVariant || loadResult}
+          aria-label={progressAriaLabel}
+          aria-labelledby={progressAriaLabelledBy}
+        />
       </div>
       <div className={styles.multipleFileUploadStatusItemClose}>
-        <Button variant="plain" aria-label="Remove from list" onClick={onClearClick}>
+        <Button variant="plain" aria-label={buttonAriaLabel} onClick={onClearClick}>
           <TimesCircleIcon />
         </Button>
       </div>
