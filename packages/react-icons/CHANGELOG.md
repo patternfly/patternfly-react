@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.45.0 (2022-02-08)
+
+
+### Features
+
+* **MenuToggle:** add full height variation ([#6869](https://github.com/patternfly/patternfly-react/issues/6869)) ([415e02f](https://github.com/patternfly/patternfly-react/commit/415e02f5e5617367db717cd5120df04ec1a208eb))
+
+
+
+
+
 # 4.44.0 (2022-02-08)
 
 
