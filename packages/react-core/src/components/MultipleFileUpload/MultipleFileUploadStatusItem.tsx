@@ -91,6 +91,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
       readFile(file)
         .then(data => {
           setLoadResult('success');
+          setLoadPercentage(100);
           onReadFinished(file);
           onReadSuccess(data as string, file);
         })
