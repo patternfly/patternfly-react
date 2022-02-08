@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.31.0 (2022-02-08)
+
+
+### Features
+
+* **Table:** add striping ([#6886](https://github.com/patternfly/patternfly-react/issues/6886)) ([47abda7](https://github.com/patternfly/patternfly-react/commit/47abda7831e21c58051b90982f02cb48f7a22a22))
+
+
+
+
+
 ## 4.30.21 (2022-02-07)
 
 
