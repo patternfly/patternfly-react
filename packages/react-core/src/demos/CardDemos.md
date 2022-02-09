@@ -1254,123 +1254,127 @@ const UtilizationCard3: React.FunctionComponent = () => {
   ];
 
   return (
-    <Gallery hasGutter minWidths={{ default: '360px' }}>
-      <GalleryItem>
-        <Card id="utilization-card-1" component="div">
-          <CardHeader>
-            <CardTitle>
-              <Title headingLevel="h2" size="lg">
-                Recommendations
-              </Title>
-            </CardTitle>
-            <CardActions>
-              <Select
-                onSelect={() => setIsOpen(!isOpen)}
-                onToggle={() => setIsOpen(!isOpen)}
-                isOpen={isOpen}
-                placeholderText="Filter"
-                position="right"
-                isPlain
-              >
-                {selectItems}
-              </Select>
-            </CardActions>
-          </CardHeader>
-          <CardBody>
-            <Flex direction={{ default: 'column' }}>
-              <FlexItem>
-                <span>System</span>
-              </FlexItem>
-              <Flex>
-                <ExclamationCircleIcon className="pf-u-danger-color-100" aria-hidden />
-                <a href="#">25 incidents detected</a>
-              </Flex>
-              <FlexItem>
-                <Chart
-                  ariaDesc="Mock incidents chart"
-                  ariaTitle="Mock stack chart"
-                  domainPadding={{ x: [30, 25] }}
-                  legendData={[
-                    { name: 'Low', symbol: { fill: chart_color_gold_100.value } },
-                    { name: 'Important', symbol: { fill: chart_color_gold_300.value } },
-                    { name: 'Moderate', symbol: { fill: chart_color_orange_300.value } },
-                    { name: 'Critical', symbol: { fill: chart_color_red_100.value } }
-                  ]}
-                  legendPosition="bottom-left"
-                  height={50}
-                  padding={{
-                    bottom: 40,
-                    left: 0,
-                    right: 0,
-                    top: 0
-                  }}
-                  width={350}
-                  showAxis={false}
+    <React.Fragment>
+      <b>Note:</b> Custom CSS is used in this demo to align the card title and select toggle text to <code>baseline</code> alignment.
+      <br /><br />
+      <Gallery hasGutter minWidths={{ default: '360px' }}>
+        <GalleryItem>
+          <Card id="utilization-card-1" component="div">
+            <CardHeader className="pf-u-align-items-flex-start">
+              <CardTitle>
+                <Title headingLevel="h2" size="lg" style={{ paddingTop: '3px' }}>
+                  Recommendations
+                </Title>
+              </CardTitle>
+              <CardActions hasNoOffset>
+                <Select
+                  onSelect={() => setIsOpen(!isOpen)}
+                  onToggle={() => setIsOpen(!isOpen)}
+                  isOpen={isOpen}
+                  placeholderText="Filter"
+                  position="right"
+                  isPlain
                 >
-                  <ChartStack
-                    horizontal
-                    colorScale={[
-                      chart_color_gold_100.value,
-                      chart_color_gold_300.value,
-                      chart_color_orange_300.value,
-                      chart_color_red_100.value
+                  {selectItems}
+                </Select>
+              </CardActions>
+            </CardHeader>
+            <CardBody>
+              <Flex direction={{ default: 'column' }}>
+                <FlexItem>
+                  <span>System</span>
+                </FlexItem>
+                <Flex>
+                  <ExclamationCircleIcon className="pf-u-danger-color-100" aria-hidden />
+                  <a href="#">25 incidents detected</a>
+                </Flex>
+                <FlexItem>
+                  <Chart
+                    ariaDesc="Mock incidents chart"
+                    ariaTitle="Mock stack chart"
+                    domainPadding={{ x: [30, 25] }}
+                    legendData={[
+                      { name: 'Low', symbol: { fill: chart_color_gold_100.value } },
+                      { name: 'Important', symbol: { fill: chart_color_gold_300.value } },
+                      { name: 'Moderate', symbol: { fill: chart_color_orange_300.value } },
+                      { name: 'Critical', symbol: { fill: chart_color_red_100.value } }
                     ]}
+                    legendPosition="bottom-left"
+                    height={50}
+                    padding={{
+                      bottom: 40,
+                      left: 0,
+                      right: 0,
+                      top: 0
+                    }}
+                    width={350}
+                    showAxis={false}
                   >
-                    <ChartBar
-                      data={[
-                        {
-                          name: 'Low',
-                          x: 'Cluster A',
-                          y: 6,
-                          label: 'Low: 6'
-                        }
+                    <ChartStack
+                      horizontal
+                      colorScale={[
+                        chart_color_gold_100.value,
+                        chart_color_gold_300.value,
+                        chart_color_orange_300.value,
+                        chart_color_red_100.value
                       ]}
-                      labelComponent={<ChartTooltip constrainToVisibleArea />}
-                    />
-                    <ChartBar
-                      data={[
-                        {
-                          name: 'Important',
-                          x: 'Cluster A',
-                          y: 2,
-                          label: 'Important: 2'
-                        }
-                      ]}
-                      labelComponent={<ChartTooltip constrainToVisibleArea />}
-                    />
-                    <ChartBar
-                      data={[
-                        {
-                          name: 'Moderate',
-                          x: 'Cluster A',
-                          y: 4,
-                          label: 'Moderate: 4'
-                        }
-                      ]}
-                      labelComponent={<ChartTooltip constrainToVisibleArea />}
-                    />
-                    <ChartBar
-                      data={[
-                        {
-                          name: 'Critical',
-                          x: 'Cluster A',
-                          y: 2,
-                          label: 'Critical: 2'
-                        }
-                      ]}
-                      labelComponent={<ChartTooltip constrainToVisibleArea />}
-                    />
-                  </ChartStack>
-                </Chart>
-              </FlexItem>
-            </Flex>
-          </CardBody>
-          <CardFooter>
-            <a href="#">See details</a>
-          </CardFooter>
-        </Card>
-      </GalleryItem>
-    </Gallery>
+                    >
+                      <ChartBar
+                        data={[
+                          {
+                            name: 'Low',
+                            x: 'Cluster A',
+                            y: 6,
+                            label: 'Low: 6'
+                          }
+                        ]}
+                        labelComponent={<ChartTooltip constrainToVisibleArea />}
+                      />
+                      <ChartBar
+                        data={[
+                          {
+                            name: 'Important',
+                            x: 'Cluster A',
+                            y: 2,
+                            label: 'Important: 2'
+                          }
+                        ]}
+                        labelComponent={<ChartTooltip constrainToVisibleArea />}
+                      />
+                      <ChartBar
+                        data={[
+                          {
+                            name: 'Moderate',
+                            x: 'Cluster A',
+                            y: 4,
+                            label: 'Moderate: 4'
+                          }
+                        ]}
+                        labelComponent={<ChartTooltip constrainToVisibleArea />}
+                      />
+                      <ChartBar
+                        data={[
+                          {
+                            name: 'Critical',
+                            x: 'Cluster A',
+                            y: 2,
+                            label: 'Critical: 2'
+                          }
+                        ]}
+                        labelComponent={<ChartTooltip constrainToVisibleArea />}
+                      />
+                    </ChartStack>
+                  </Chart>
+                </FlexItem>
+              </Flex>
+            </CardBody>
+            <CardFooter>
+              <a href="#">See details</a>
+            </CardFooter>
+          </Card>
+        </GalleryItem>
+      </Gallery>
+    </React.Fragment>
   );
 };
 ```
@@ -2439,61 +2443,65 @@ const TrendCard1: React.FunctionComponent = () => {
     <SelectOption value="Last 7 days" key="option4" />
   ];
   return (
-    <Gallery hasGutter minWidths={{ default: '360px' }}>
-      <GalleryItem>
-        <Card id="trend-card-1" component="div">
-          <CardHeader>
-            <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
-              <FlexItem>
-                <CardTitle>
-                  <Title headingLevel="h1">1,050,765 IOPS</Title>
-                </CardTitle>
-              </FlexItem>
-              <FlexItem>
-                <span className="pf-u-color-200">Workload</span>
-              </FlexItem>
-            </Flex>
-            <CardActions>
-              <Select
-                onSelect={() => setIsOpen(!isOpen)}
-                onToggle={() => setIsOpen(!isOpen)}
-                placeholderText="Filter"
-                isOpen={isOpen}
-                position="right"
-                isPlain
+    <React.Fragment>
+      <b>Note:</b> Custom CSS is used in this demo to align the card title and select toggle text to <code>baseline</code> alignment.
+      <br /><br />
+      <Gallery hasGutter minWidths={{ default: '360px' }}>
+        <GalleryItem>
+          <Card id="trend-card-1" component="div">
+            <CardHeader>
+              <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
+                <FlexItem>
+                  <CardTitle>
+                    <Title headingLevel="h1">1,050,765 IOPS</Title>
+                  </CardTitle>
+                </FlexItem>
+                <FlexItem>
+                  <span className="pf-u-color-200">Workload</span>
+                </FlexItem>
+              </Flex>
+              <CardActions hasNoOffset style={{ paddingTop: '1px' }}>
+                <Select
+                  onSelect={() => setIsOpen(!isOpen)}
+                  onToggle={() => setIsOpen(!isOpen)}
+                  placeholderText="Filter"
+                  isOpen={isOpen}
+                  position="right"
+                  isPlain
+                >
+                  {selectItems}
+                </Select>
+              </CardActions>
+            </CardHeader>
+            <CardBody>
+              <ChartGroup
+                ariaDesc="Mock average cluster utilization"
+                ariaTitle="Mock cluster sparkline chart"
+                containerComponent={
+                  <ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />
+                }
+                height={100}
+                maxDomain={{ y: 9 }}
+                padding={0}
+                width={400}
               >
-                {selectItems}
-              </Select>
-            </CardActions>
-          </CardHeader>
-          <CardBody>
-            <ChartGroup
-              ariaDesc="Mock average cluster utilization"
-              ariaTitle="Mock cluster sparkline chart"
-              containerComponent={
-                <ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />
-              }
-              height={100}
-              maxDomain={{ y: 9 }}
-              padding={0}
-              width={400}
-            >
-              <ChartArea
-                data={[
-                  { name: 'Cluster', x: '2015', y: 7 },
-                  { name: 'Cluster', x: '2016', y: 6 },
-                  { name: 'Cluster', x: '2017', y: 8 },
-                  { name: 'Cluster', x: '2018', y: 3 },
-                  { name: 'Cluster', x: '2019', y: 4 },
-                  { name: 'Cluster', x: '2020', y: 1 },
-                  { name: 'Cluster', x: '2021', y: 0 }
-                ]}
-              />
-            </ChartGroup>
-          </CardBody>
-        </Card>
-      </GalleryItem>
-    </Gallery>
+                <ChartArea
+                  data={[
+                    { name: 'Cluster', x: '2015', y: 7 },
+                    { name: 'Cluster', x: '2016', y: 6 },
+                    { name: 'Cluster', x: '2017', y: 8 },
+                    { name: 'Cluster', x: '2018', y: 3 },
+                    { name: 'Cluster', x: '2019', y: 4 },
+                    { name: 'Cluster', x: '2020', y: 1 },
+                    { name: 'Cluster', x: '2021', y: 0 }
+                  ]}
+                />
+              </ChartGroup>
+            </CardBody>
+          </Card>
+        </GalleryItem>
+      </Gallery>
+    </React.Fragment>
   );
 };
 ```
@@ -2617,75 +2625,79 @@ CardLogViewDemo = () => {
   ];
 
   return (
-    <Gallery hasGutter style={{ '--pf-l-gallery--GridTemplateColumns--min': '360px' }}>
-      <Card id="card-log-view-example">
-        <CardHeader>
-          <CardActions>
-            <Select
-              onSelect={onActionSelect}
-              onToggle={onActionToggle}
-              placeholderText="Most recent"
-              isOpen={isOpen}
-              position="right"
-              isPlain
-            >
-              {selectItems}
-            </Select>
-          </CardActions>
-          <CardTitle>
-            <Title headingLevel="h2" size="xl">
-              Activity
-            </Title>
-          </CardTitle>
-        </CardHeader>
-        <CardBody>
-          <DescriptionList>
-            <DescriptionListGroup>
-              <DescriptionListTerm>Readiness probe failed</DescriptionListTerm>
-              <DescriptionListDescription>
-                Readiness probe failed: Get https://10.131.0.7:5000/healthz: dial tcp 10.131.0.7:5000: connect:
-                connection refused
-              </DescriptionListDescription>
-              <DescriptionListDescription>
-                <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:02 am</time>
-              </DescriptionListDescription>
-            </DescriptionListGroup>
-            <DescriptionListGroup>
-              <DescriptionListTerm>Successful assignment</DescriptionListTerm>
-              <DescriptionListDescription>
-                Successfully assigned default/example to ip-10-0-130-149.ec2.internal
-              </DescriptionListDescription>
-              <DescriptionListDescription>
-                <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:13 am</time>
-              </DescriptionListDescription>
-            </DescriptionListGroup>
-            <DescriptionListGroup>
-              <DescriptionListTerm>Pulling image</DescriptionListTerm>
-              <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
-              <DescriptionListDescription>
-                <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:59 am</time>
-              </DescriptionListDescription>
-            </DescriptionListGroup>
-            <DescriptionListGroup>
-              <DescriptionListTerm>Created container</DescriptionListTerm>
-              <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
-              <DescriptionListDescription>
-                <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:45 am</time>
-              </DescriptionListDescription>
-            </DescriptionListGroup>
-          </DescriptionList>
-        </CardBody>
-        <Divider />
-        <CardFooter>
-          <a href="#">View all activity</a>
-        </CardFooter>
-      </Card>
-    </Gallery>
+    <React.Fragment>
+      <b>Note:</b> Custom CSS is used in this demo to align the card title and select toggle text to <code>baseline</code> alignment.
+      <br /><br />
+      <Gallery hasGutter style={{ '--pf-l-gallery--GridTemplateColumns--min': '360px' }}>
+        <Card id="card-log-view-example">
+          <CardHeader className="pf-u-align-items-flex-start">
+            <CardActions hasNoOffset>
+              <Select
+                onSelect={onActionSelect}
+                onToggle={onActionToggle}
+                placeholderText="Most recent"
+                isOpen={isOpen}
+                position="right"
+                isPlain
+              >
+                {selectItems}
+              </Select>
+            </CardActions>
+            <CardTitle>
+              <Title headingLevel="h2" size="xl" style={{ paddingTop: '3px' }}>
+                Activity
+              </Title>
+            </CardTitle>
+          </CardHeader>
+          <CardBody>
+            <DescriptionList>
+              <DescriptionListGroup>
+                <DescriptionListTerm>Readiness probe failed</DescriptionListTerm>
+                <DescriptionListDescription>
+                  Readiness probe failed: Get https://10.131.0.7:5000/healthz: dial tcp 10.131.0.7:5000: connect:
+                  connection refused
+                </DescriptionListDescription>
+                <DescriptionListDescription>
+                  <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:02 am</time>
+                </DescriptionListDescription>
+              </DescriptionListGroup>
+              <DescriptionListGroup>
+                <DescriptionListTerm>Successful assignment</DescriptionListTerm>
+                <DescriptionListDescription>
+                  Successfully assigned default/example to ip-10-0-130-149.ec2.internal
+                </DescriptionListDescription>
+                <DescriptionListDescription>
+                  <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:13 am</time>
+                </DescriptionListDescription>
+              </DescriptionListGroup>
+              <DescriptionListGroup>
+                <DescriptionListTerm>Pulling image</DescriptionListTerm>
+                <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
+                <DescriptionListDescription>
+                  <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:59 am</time>
+                </DescriptionListDescription>
+              </DescriptionListGroup>
+              <DescriptionListGroup>
+                <DescriptionListTerm>Created container</DescriptionListTerm>
+                <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
+                <DescriptionListDescription>
+                  <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:45 am</time>
+                </DescriptionListDescription>
+              </DescriptionListGroup>
+            </DescriptionList>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <a href="#">View all activity</a>
+          </CardFooter>
+        </Card>
+      </Gallery>
+    </React.Fragment>
   );
 };
 ```
 
-### Event view
+### Events view
 
 ```js
 import React from 'react';
@@ -2722,7 +2734,7 @@ CardEventViewDemo = () => {
   const onActionToggle = isOpen => {
     setIsOpen(isOpen);
   };
-  
+
   const selectItems = [
     <SelectOption value="Success" key="option1" />,
     <SelectOption value="Error" key="option2" />,
@@ -2730,106 +2742,110 @@ CardEventViewDemo = () => {
   ];
 
   return (
-    <Gallery hasGutter style={{ '--pf-l-gallery--GridTemplateColumns--min': '360px' }}>
-      <Card id="card-events-view-example">
-        <CardHeader>
-          <CardActions>
-            <Select
-              onSelect={onActionSelect}
-              onToggle={onActionToggle}
-              placeholderText="Status"
-              isOpen={isOpen}
-              position="right"
-              isPlain
-            >
-              {selectItems}
-            </Select>
-          </CardActions>
-          <CardTitle>
-            <Title headingLevel="h2" size="xl">
-              Events
-            </Title>
-          </CardTitle>
-        </CardHeader>
-        <CardBody>
-          <DescriptionList>
-            <DescriptionListGroup>
-              <DescriptionListTerm>
-                <Flex flexWrap={{ default: 'nowrap' }}>
-                  <FlexItem>
-                    <ExclamationCircleIcon className="pf-u-danger-color-100" aria-hidden="true" />
-                  </FlexItem>
-                  <FlexItem>
-                    <span>Readiness probe failed</span>
-                  </FlexItem>
-                </Flex>
-              </DescriptionListTerm>
-              <DescriptionListDescription>
-                Readiness probe failed: Get https://10.131.0.7:5000/healthz: dial tcp 10.131.0.7:5000: connect:
-                connection refused
-              </DescriptionListDescription>
-              <DescriptionListDescription>
-                <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:02 am</time>
-              </DescriptionListDescription>
-            </DescriptionListGroup>
-            <DescriptionListGroup>
-              <DescriptionListTerm>
-                <Flex flexWrap={{ default: 'nowrap' }}>
-                  <FlexItem>
-                    <CheckCircleIcon className="pf-u-success-color-100" aria-hidden="true" />
-                  </FlexItem>
-                  <FlexItem>
-                    <span>Successful assignment</span>
-                  </FlexItem>
-                </Flex>
-              </DescriptionListTerm>
-              <DescriptionListDescription>
-                Successfully assigned default/example to ip-10-0-130-149.ec2.internal
-              </DescriptionListDescription>
-              <DescriptionListDescription>
-                <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:13 am</time>
-              </DescriptionListDescription>
-            </DescriptionListGroup>
-            <DescriptionListGroup>
-              <DescriptionListTerm>
-                <Flex flexWrap={{ default: 'nowrap' }}>
-                  <FlexItem>
-                    <Spinner size="md" aria-label="loading spinner" />
-                  </FlexItem>
-                  <FlexItem>
-                    <span>Pulling image</span>
-                  </FlexItem>
-                </Flex>
-              </DescriptionListTerm>
-              <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
-              <DescriptionListDescription>
-                <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:59 am</time>
-              </DescriptionListDescription>
-            </DescriptionListGroup>
-            <DescriptionListGroup>
-              <DescriptionListTerm>
-                <Flex flexWrap={{ default: 'nowrap' }}>
-                  <FlexItem>
-                    <CheckCircleIcon className="pf-u-success-color-100" aria-hidden="true" />
-                  </FlexItem>
-                  <FlexItem>
-                    <span>Created container</span>
-                  </FlexItem>
-                </Flex>
-              </DescriptionListTerm>
-              <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
-              <DescriptionListDescription>
-                <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:45 am</time>
-              </DescriptionListDescription>
-            </DescriptionListGroup>
-          </DescriptionList>
-        </CardBody>
-        <Divider />
-        <CardFooter>
-          <a href="#">View all events</a>
-        </CardFooter>
-      </Card>
-    </Gallery>
+    <React.Fragment>
+      <b>Note:</b> Custom CSS is used in this demo to align the card title and select toggle text to <code>baseline</code> alignment.
+      <br /><br />
+      <Gallery hasGutter style={{ '--pf-l-gallery--GridTemplateColumns--min': '360px' }}>
+        <Card id="card-events-view-example">
+          <CardHeader className="pf-u-align-items-flex-start">
+            <CardActions hasNoOffset>
+              <Select
+                onSelect={onActionSelect}
+                onToggle={onActionToggle}
+                placeholderText="Status"
+                isOpen={isOpen}
+                position="right"
+                isPlain
+              >
+                {selectItems}
+              </Select>
+            </CardActions>
+            <CardTitle>
+              <Title headingLevel="h2" size="xl" style={{ paddingTop: '3px' }}>
+                Events
+              </Title>
+            </CardTitle>
+          </CardHeader>
+          <CardBody>
+            <DescriptionList>
+              <DescriptionListGroup>
+                <DescriptionListTerm>
+                  <Flex flexWrap={{ default: 'nowrap' }}>
+                    <FlexItem>
+                      <ExclamationCircleIcon className="pf-u-danger-color-100" aria-hidden="true" />
+                    </FlexItem>
+                    <FlexItem>
+                      <span>Readiness probe failed</span>
+                    </FlexItem>
+                  </Flex>
+                </DescriptionListTerm>
+                <DescriptionListDescription>
+                  Readiness probe failed: Get https://10.131.0.7:5000/healthz: dial tcp 10.131.0.7:5000: connect:
+                  connection refused
+                </DescriptionListDescription>
+                <DescriptionListDescription>
+                  <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:02 am</time>
+                </DescriptionListDescription>
+              </DescriptionListGroup>
+              <DescriptionListGroup>
+                <DescriptionListTerm>
+                  <Flex flexWrap={{ default: 'nowrap' }}>
+                    <FlexItem>
+                      <CheckCircleIcon className="pf-u-success-color-100" aria-hidden="true" />
+                    </FlexItem>
+                    <FlexItem>
+                      <span>Successful assignment</span>
+                    </FlexItem>
+                  </Flex>
+                </DescriptionListTerm>
+                <DescriptionListDescription>
+                  Successfully assigned default/example to ip-10-0-130-149.ec2.internal
+                </DescriptionListDescription>
+                <DescriptionListDescription>
+                  <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 11:13 am</time>
+                </DescriptionListDescription>
+              </DescriptionListGroup>
+              <DescriptionListGroup>
+                <DescriptionListTerm>
+                  <Flex flexWrap={{ default: 'nowrap' }}>
+                    <FlexItem>
+                      <Spinner size="md" aria-label="loading spinner" />
+                    </FlexItem>
+                    <FlexItem>
+                      <span>Pulling image</span>
+                    </FlexItem>
+                  </Flex>
+                </DescriptionListTerm>
+                <DescriptionListDescription>Pulling image "openshift/hello-openshift"</DescriptionListDescription>
+                <DescriptionListDescription>
+                  <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:59 am</time>
+                </DescriptionListDescription>
+              </DescriptionListGroup>
+              <DescriptionListGroup>
+                <DescriptionListTerm>
+                  <Flex flexWrap={{ default: 'nowrap' }}>
+                    <FlexItem>
+                      <CheckCircleIcon className="pf-u-success-color-100" aria-hidden="true" />
+                    </FlexItem>
+                    <FlexItem>
+                      <span>Created container</span>
+                    </FlexItem>
+                  </Flex>
+                </DescriptionListTerm>
+                <DescriptionListDescription>Created container hello-openshift</DescriptionListDescription>
+                <DescriptionListDescription>
+                  <time className="pf-u-color-200 pf-u-font-size-sm">Jun 17, 10:45 am</time>
+                </DescriptionListDescription>
+              </DescriptionListGroup>
+            </DescriptionList>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <a href="#">View all events</a>
+          </CardFooter>
+        </Card>
+      </Gallery>
+    </React.Fragment>
   );
 };
 ```
