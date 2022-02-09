@@ -1006,6 +1006,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         onClick={e => {
           this.clearSelection(e);
           onClear(e);
+          e.stopPropagation();
         }}
         aria-label={clearSelectionsAriaLabel}
         type="button"

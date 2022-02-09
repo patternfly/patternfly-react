@@ -87,7 +87,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   }
 
   componentDidMount() {
-    document.addEventListener('click', this.onDocClick);
+    document.addEventListener('click', this.onDocClick, { capture: true });
     document.addEventListener('touchstart', this.onDocClick);
     document.addEventListener('keydown', this.handleGlobalKeys);
   }
