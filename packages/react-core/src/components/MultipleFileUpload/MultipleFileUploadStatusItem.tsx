@@ -120,9 +120,9 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
 
   const title = (
     <span className={styles.multipleFileUploadStatusItemProgress}>
-      <span className={styles.multipleFileUploadStatusItemProgressText}>{fileName || file.name}</span>
+      <span className={styles.multipleFileUploadStatusItemProgressText}>{fileName || file?.name || ''}</span>
       <span className={styles.multipleFileUploadStatusItemProgressSize}>
-        {fileSize || getHumanReadableFileSize(file.size)}
+        {fileSize || getHumanReadableFileSize(file?.size || 0)}
       </span>
     </span>
   );
