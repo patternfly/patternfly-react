@@ -10,6 +10,7 @@ export interface TabButtonProps extends Omit<React.HTMLProps<HTMLAnchorElement |
   href?: string;
   /** child reference for case in which a TabContent section is defined outside of a Tabs component */
   tabContentRef?: React.Ref<any>;
+  parentInnerRef?: React.Ref<any>;
 }
 
 export const TabButton: React.FunctionComponent<TabButtonProps> = ({
@@ -17,12 +18,14 @@ export const TabButton: React.FunctionComponent<TabButtonProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   tabContentRef,
   ouiaId,
+  parentInnerRef,
   ouiaSafe,
   ...props
 }: TabButtonProps) => {
   const Component = (props.href ? 'a' : 'button') as any;
+
   return (
-    <Component {...getOUIAProps(TabButton.displayName, ouiaId, ouiaSafe)} {...props}>
+    <Component ref={parentInnerRef} {...getOUIAProps(TabButton.displayName, ouiaId, ouiaSafe)} {...props}>
       {children}
     </Component>
   );
