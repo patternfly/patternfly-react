@@ -48,8 +48,9 @@ export const ButtonProgress: React.FunctionComponent = () => {
       </Button>{' '}
       <Button
         variant="plain"
+        {...(!isUploading && { 'aria-label': 'Upload' })}
         onClick={() => setIsUploading(!isUploading)}
-        icon={<UploadIcon aria-label="Upload" />}
+        icon={<UploadIcon />}
         {...uploadingProps}
       />
       <br />
