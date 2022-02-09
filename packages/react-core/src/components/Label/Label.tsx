@@ -197,8 +197,11 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   const componentRef = React.useRef();
   const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
   useIsomorphicLayoutEffect(() => {
-    setIsTooltipVisible(textRef.current && textRef.current.offsetWidth < textRef.current.scrollWidth);
-  }, []);
+    const currTextRef = isEditable ? editableButtonRef : textRef;
+    if (!isEditableActive) {
+      setIsTooltipVisible(currTextRef.current && currTextRef.current.offsetWidth < currTextRef.current.scrollWidth);
+    }
+  }, [isEditableActive]);
   const content = (
     <React.Fragment>
       {icon && <span className={css(styles.labelIcon)}>{icon}</span>}
