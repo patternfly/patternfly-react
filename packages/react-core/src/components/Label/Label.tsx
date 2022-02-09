@@ -164,7 +164,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   };
 
   const LabelComponent = (isOverflowLabel ? 'button' : 'span') as any;
-  const Component = href ? 'a' : 'span';
+
   const button = closeBtn ? (
     closeBtn
   ) : (
@@ -185,7 +185,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   useIsomorphicLayoutEffect(() => {
     setIsTooltipVisible(textRef.current && textRef.current.offsetWidth < textRef.current.scrollWidth);
   }, []);
-  let content = (
+  const content = (
     <React.Fragment>
       {icon && <span className={css(styles.labelIcon)}>{icon}</span>}
       {isTruncated && (
@@ -207,27 +207,31 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     setCurrValue(editableInputRef.current.value);
   };
 
-  if (isEditable) {
-    content = (
+  let labelComponentChild = null;
+
+  if (href) {
+    labelComponentChild = (
+      <a className={css(styles.labelContent)} href={href}>
+        {content}
+      </a>
+    );
+  } else if (isEditable) {
+    labelComponentChild = (
       <button
         ref={editableButtonRef}
-        className={css(styles.labelEditableText)}
-        onClick={e => {
+        className={css(styles.labelContent)}
+        onClick={(e: React.MouseEvent) => {
           setIsEditableActive(true);
           e.stopPropagation();
         }}
         {...editableProps}
       >
-        {children}
+        {content}
       </button>
     );
+  } else {
+    labelComponentChild = <span className={css(styles.labelContent)}>{content}</span>;
   }
-
-  let labelComponentChild = (
-    <Component className={css(styles.labelContent)} {...(href && { href })}>
-      {content}
-    </Component>
-  );
 
   if (render) {
     labelComponentChild = (
@@ -243,9 +247,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   } else if (isTooltipVisible) {
     labelComponentChild = (
       <Tooltip content={children} position={tooltipPosition}>
-        <Component className={css(styles.labelContent)} {...(href && { href })}>
-          {content}
-        </Component>
+        {labelComponentChild}
       </Tooltip>
     );
   }

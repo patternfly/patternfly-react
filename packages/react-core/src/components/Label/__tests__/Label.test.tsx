@@ -72,12 +72,12 @@ test('editable label', () => {
            onEditCancel={jest.fn()}
            onEditComplete={jest.fn()}
            isEditable>Something</Label>);
-  const button = view.find('button.pf-c-label__editable-text');
+  const button = view.find('button.pf-c-label__content');
   expect(button.length).toBe(1);
   expect(view).toMatchSnapshot();
 
   button.simulate('click');
-  const clickedButton = view.find('button.pf-c-label__editable-text');
+  const clickedButton = view.find('button.pf-c-label__content');
   expect(clickedButton.length).toBe(0);
   expect(view).toMatchSnapshot();
 });
