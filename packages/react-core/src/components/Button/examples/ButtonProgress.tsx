@@ -30,7 +30,7 @@ export const ButtonProgress: React.FunctionComponent = () => {
   if (isUploading) {
     uploadingProps.spinnerAriaValueText = 'Loading';
     uploadingProps.isLoading = true;
-    secondaryLoadingProps.spinnerAriaLabel = 'Uploading data';
+    uploadingProps.spinnerAriaLabel = 'Uploading data';
   }
 
   return (
@@ -47,10 +47,9 @@ export const ButtonProgress: React.FunctionComponent = () => {
         {isSecondaryLoading ? 'Click to stop loading' : 'Click to start loading'}
       </Button>{' '}
       <Button
-        aria-label="Upload"
         variant="plain"
         onClick={() => setIsUploading(!isUploading)}
-        icon={<UploadIcon />}
+        icon={<UploadIcon aria-label="Upload" />}
         {...uploadingProps}
       />
       <br />

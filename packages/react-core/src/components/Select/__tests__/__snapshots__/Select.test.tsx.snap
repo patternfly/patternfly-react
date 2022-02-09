@@ -10545,9 +10545,11 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   class="pf-c-select__toggle-wrapper"
                 >
                   <div
+                    aria-label="Chip group category"
                     class="pf-c-chip-group"
                     data-ouia-component-type="PF4/ChipGroup"
                     data-ouia-safe="true"
+                    role="group"
                   >
                     <div
                       class="pf-c-chip-group__main"
@@ -10807,9 +10809,11 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 prefix="pf-random-id-"
               >
                 <div
+                  aria-label="Chip group category"
                   className="pf-c-chip-group"
                   data-ouia-component-type="PF4/ChipGroup"
                   data-ouia-safe={true}
+                  role="group"
                 >
                   <div
                     className="pf-c-chip-group__main"
