@@ -1,9 +1,20 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { MultipleFileUpload } from '../MultipleFileUpload';
 
-test.skip('basic', () => {
-  const view = shallow(<MultipleFileUpload />);
-  // Add a useful assertion here.
-  expect(view).toBe(false);
-});
+describe('MultipleFileUpload', () => {
+  test('renders with expected class names when not horizontal', () => {
+    const view = mount(<MultipleFileUpload>Foo</MultipleFileUpload>);
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders with expected class names when horizontal', () => {
+    const view = mount(<MultipleFileUpload isHorizontal>Foo</MultipleFileUpload>);
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders custom class names', () => {
+    const view = mount(<MultipleFileUpload className='test'>Foo</MultipleFileUpload>);
+    expect(view).toMatchSnapshot();
+  });
+})
