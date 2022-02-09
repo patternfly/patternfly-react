@@ -456,10 +456,6 @@ exports[`ChartGroup 1`] = `
       }
     />
   }
-  groupComponent={<g />}
-  samples={50}
-  sortOrder="ascending"
-  standalone={true}
   theme={
     Object {
       "area": Object {
@@ -1368,10 +1364,6 @@ exports[`ChartGroup 2`] = `
       }
     />
   }
-  groupComponent={<g />}
-  samples={50}
-  sortOrder="ascending"
-  standalone={true}
   theme={
     Object {
       "area": Object {
@@ -2280,11 +2272,7 @@ exports[`renders container children 1`] = `
       }
     />
   }
-  groupComponent={<g />}
   height={200}
-  samples={50}
-  sortOrder="ascending"
-  standalone={true}
   theme={
     Object {
       "area": Object {
