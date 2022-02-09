@@ -442,7 +442,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
                 // View more option should be returned as not a match
                 if (loadingVariant !== undefined && loadingVariant !== 'spinner') {
-                  if (loadingVariant?.text === valueToCheck && loadingVariant.text === valueToCheck) {
+                  if (loadingVariant?.text === valueToCheck) {
                     return true;
                   }
                 }
