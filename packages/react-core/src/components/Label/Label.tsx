@@ -270,7 +270,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       {!isEditableActive && onClose && button}
       {isEditableActive && (
         <input
-          className={css(styles.labelEditableText)}
+          className={css(styles.labelContent)}
           type="text"
           id="editable-input"
           ref={editableInputRef}

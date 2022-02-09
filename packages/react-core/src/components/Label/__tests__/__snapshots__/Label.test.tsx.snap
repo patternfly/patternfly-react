@@ -83,7 +83,7 @@ exports[`editable label 2`] = `
     className="pf-c-label pf-m-editable pf-m-editable-active"
   >
     <input
-      className="pf-c-label__editable-text"
+      className="pf-c-label__content"
       id="editable-input"
       onChange={[Function]}
       type="text"
