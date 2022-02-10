@@ -23,6 +23,8 @@ export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivEle
     | 'tel'
     | 'time'
     | 'url';
+  /** Suggestion that will show up like a placeholder even with text in the input */
+  hint?: string;
   /** Callback for when there is a change in the input field*/
   onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
   /** Callback for when the input field is focused*/
@@ -42,6 +44,7 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
   className,
   icon,
   type = 'text',
+  hint,
   onChange = (): any => undefined,
   onFocus,
   onBlur,
@@ -60,6 +63,15 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
     <div className={css(styles.textInputGroupMain, icon && styles.modifiers.icon, className)} {...props}>
       {children}
       <span className={css(styles.textInputGroupText)}>
+        {hint && (
+          <input
+            className={css(styles.textInputGroupTextInput, styles.modifiers.hint)}
+            type="text"
+            disabled
+            aria-hidden="true"
+            value={hint}
+          />
+        )}
         {icon && <span className={css(styles.textInputGroupIcon)}>{icon}</span>}
         <input
           type={type}
