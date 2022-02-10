@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
 import { css } from '@patternfly/react-styles';
 
-interface MultipleFileUploadTitleTextSeparatorProps extends React.HTMLProps<HTMLDivElement> {
+export interface MultipleFileUploadTitleTextSeparatorProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside multiple file upload title text separator */
   children?: React.ReactNode;
   /** Class to add to outer div */

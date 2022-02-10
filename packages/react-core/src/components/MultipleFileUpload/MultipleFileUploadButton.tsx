@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { MultipleFileUploadContext } from './MultipleFileUpload';
 import { Button } from '../Button';
 
-interface MultipleFileUploadButtonProps extends React.HTMLProps<HTMLDivElement> {
+export interface MultipleFileUploadButtonProps extends React.HTMLProps<HTMLDivElement> {
   /** Class to add to outer div */
   className?: string;
   /** Aria-label for the button */

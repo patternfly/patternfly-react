@@ -6,7 +6,7 @@ import { Button } from '../Button';
 import FileIcon from '@patternfly/react-icons/dist/esm/icons/file-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 
-interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLLIElement> {
+export interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Class to add to outer div */
   className?: string;
   /** Adds accessibility text to the status item deletion button */

@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/m
 import { css } from '@patternfly/react-styles';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 
-interface MultipleFileUploadTitleIconProps extends React.HTMLProps<HTMLDivElement> {
+export interface MultipleFileUploadTitleIconProps extends React.HTMLProps<HTMLDivElement> {
   /** Class to add to outer div */
   className?: string;
 }

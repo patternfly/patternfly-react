@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/m
 import { css } from '@patternfly/react-styles';
 import { ExpandableSection } from '../ExpandableSection';
 
-interface MultipleFileUploadStatusProps extends React.HTMLProps<HTMLDivElement> {
+export interface MultipleFileUploadStatusProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside multi file upload status list */
   children?: React.ReactNode;
   /** Class to add to outer div */
