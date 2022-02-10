@@ -4,7 +4,7 @@ import labelStyles from '@patternfly/react-styles/css/components/Label/label';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
 import { Label } from '../Label';
-import { Tooltip } from '../Tooltip';
+import { Tooltip, TooltipPosition } from '../Tooltip';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 import { fillTemplate } from '../../helpers';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
@@ -35,7 +35,21 @@ export interface LabelGroupProps extends React.HTMLProps<HTMLUListElement> {
   /** Function that is called when clicking on the label group close button */
   onClick?: (event: React.MouseEvent) => void;
   /** Position of the tooltip which is displayed if the category name text is longer */
-  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  tooltipPosition?:
+    | TooltipPosition
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
   /** Flag to implement a vertical layout */
   isVertical?: boolean;
   /** @beta Flag indicating contained labels are editable. Allows spacing for a text input after the labels. */

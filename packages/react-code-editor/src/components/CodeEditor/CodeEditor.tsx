@@ -10,7 +10,8 @@ import {
   EmptyStateVariant,
   getResizeObserver,
   Title,
-  Tooltip
+  Tooltip,
+  TooltipPosition
 } from '@patternfly/react-core';
 import MonacoEditor, { ChangeHandler, EditorDidMount } from 'react-monaco-editor';
 import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
@@ -161,7 +162,21 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   /** The max width of the tooltips on all button */
   toolTipMaxWidth: string;
   /** The position of tooltips on all buttons */
-  toolTipPosition: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  toolTipPosition?:
+    | TooltipPosition
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
   /** A single node or array of nodes - ideally CodeEditorControls - to display above code editor */
   customControls?: React.ReactNode | React.ReactNode[];
   /** Callback which fires after the code editor is mounted containing

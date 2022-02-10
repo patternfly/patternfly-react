@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
-import { Tooltip } from '../Tooltip';
+import { Tooltip, TooltipPosition } from '../Tooltip';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import styles from '@patternfly/react-styles/css/components/Chip/chip';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
@@ -23,7 +23,21 @@ export interface ChipProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   /** Component that will be used for chip. It is recommended that <button> or <li>  are used when the chip is an overflow chip. */
   component?: React.ReactNode;
   /** Position of the tooltip which is displayed if text is longer */
-  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  tooltipPosition?:
+    | TooltipPosition
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
 }
 
 interface ChipState {

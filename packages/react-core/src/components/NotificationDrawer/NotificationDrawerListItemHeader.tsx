@@ -11,7 +11,7 @@ import a11yStyles from '@patternfly/react-styles/css/utilities/Accessibility/acc
 
 import maxLines from '@patternfly/react-tokens/dist/esm/c_notification_drawer__list_item_header_title_max_lines';
 
-import { Tooltip } from '../Tooltip';
+import { Tooltip, TooltipPosition } from '../Tooltip';
 
 export const variantIcons = {
   success: CheckCircleIcon,
@@ -37,7 +37,21 @@ export interface NotificationDrawerListItemHeaderProps extends React.HTMLProps<H
   /** Truncate title to number of lines */
   truncateTitle?: number;
   /** Position of the tooltip which is displayed if text is truncated */
-  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  tooltipPosition?:
+    | TooltipPosition
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
 }
 
 export const NotificationDrawerListItemHeader: React.FunctionComponent<NotificationDrawerListItemHeaderProps> = ({
