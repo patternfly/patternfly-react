@@ -10,6 +10,7 @@ export interface TabButtonProps extends Omit<React.HTMLProps<HTMLAnchorElement |
   href?: string;
   /** child reference for case in which a TabContent section is defined outside of a Tabs component */
   tabContentRef?: React.Ref<any>;
+  /** Parents' innerRef passed down for properly displaying Tooltips */
   parentInnerRef?: React.Ref<any>;
 }
 

@@ -31,6 +31,7 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
   inoperableEvents?: string[];
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
+  /** Optional Tooltip rendered to a Tab. Should be <Tooltip> with appropriate props for proper rendering. */
   tooltip?: React.ReactElement<any>;
 }
 
