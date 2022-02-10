@@ -9,7 +9,8 @@ import {
   MultipleFileUploadTitleTextSeparator,
   MultipleFileUploadButton,
   MultipleFileUploadStatus,
-  MultipleFileUploadStatusItem
+  MultipleFileUploadStatusItem,
+  Modal
 } from '@patternfly/react-core';
 import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
@@ -26,6 +27,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   const [currentFiles, setCurrentFiles] = React.useState<File[]>([]);
   const [readFileData, setReadFileData] = React.useState<readFile[]>([]);
   const [showStatus, setShowStatus] = React.useState(false);
+  const [modalText, setModalText] = React.useState('');
 
   // only show the status component once a file has been uploaded, but keep the status list component itself even if all files are removed
   if (!showStatus && currentFiles.length > 0) {
@@ -86,13 +88,14 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
     ]);
   };
 
-  // dropzone prop that communicates to the user files they've attempted to upload are not an appropriate type
+  // dropzone prop that communicates to the user that files they've attempted to upload are not an appropriate type
   const handleDropRejected = (files: File[], _event: React.DragEvent<HTMLElement>) => {
     if (files.length === 1) {
-      alert(`${files[0].name} is not an accepted file type`);
+      setModalText(`${files[0].name} is not an accepted file type`);
+    } else {
+      const rejectedMessages = files.reduce((acc, file) => (acc += `${file.name}, `), '');
+      setModalText(`${rejectedMessages}are not accepted file types`);
     }
-    const rejectedMessages = files.reduce((acc, file) => (acc += `${file.name}, `), '');
-    alert(`${rejectedMessages}are not accepted file types`);
   };
 
   const successfullyReadFileCount = readFileData.filter(fileData => fileData.loadResult === 'success').length;
@@ -133,6 +136,16 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
           ))}
         </MultipleFileUploadStatus>
       )}
+      <Modal
+        isOpen={!!modalText}
+        title="Unsupported file"
+        titleIconVariant="warning"
+        showClose
+        aria-label="unsupported file upload attempted"
+        onClose={() => setModalText('')}
+      >
+        {modalText}
+      </Modal>
     </MultipleFileUpload>
   );
 };
