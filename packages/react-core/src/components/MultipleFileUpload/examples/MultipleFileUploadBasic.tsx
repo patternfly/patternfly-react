@@ -86,12 +86,24 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
     ]);
   };
 
+  // dropzone prop that communicates to the user files they've attempted to upload are not an appropriate type
+  const handleDropRejected = (files: File[], _event: React.DragEvent<HTMLElement>) => {
+    if (files.length === 1) {
+      alert(`${files[0].name} is not an accepted file type`);
+    }
+    const rejectedMessages = files.reduce((acc, file) => (acc += `${file.name}, `), '');
+    alert(`${rejectedMessages}are not accepted file types`);
+  };
+
   const successfullyReadFileCount = readFileData.filter(fileData => fileData.loadResult === 'success').length;
 
   return (
     <MultipleFileUpload
       onFileDrop={handleFileDrop}
-      dropzoneProps={{ accept: 'image/jpeg, application/msword, application/pdf, image/png' }}
+      dropzoneProps={{
+        accept: 'image/jpeg, application/msword, application/pdf, image/png',
+        onDropRejected: handleDropRejected
+      }}
     >
       <MultipleFileUploadMain>
         <MultipleFileUploadTitle>
