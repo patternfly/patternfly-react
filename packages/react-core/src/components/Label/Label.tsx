@@ -207,7 +207,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     setCurrValue(editableInputRef.current.value);
   };
 
-  let labelComponentChild = null;
+  let labelComponentChild = <span className={css(styles.labelContent)}>{content}</span>;
 
   if (href) {
     labelComponentChild = (
@@ -229,8 +229,6 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         {content}
       </button>
     );
-  } else {
-    labelComponentChild = <span className={css(styles.labelContent)}>{content}</span>;
   }
 
   if (render) {
