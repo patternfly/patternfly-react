@@ -441,10 +441,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   (valueToCheck as SelectOptionObject).compareTo;
 
                 // View more option should be returned as not a match
-                if (loadingVariant !== undefined && loadingVariant !== 'spinner') {
-                  if (loadingVariant?.text === valueToCheck) {
-                    return true;
-                  }
+                if (loadingVariant !== 'spinner' && loadingVariant?.text === valueToCheck) {
+                  return true;
                 }
 
                 if (isSelectOptionObject) {
