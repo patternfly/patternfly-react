@@ -30,13 +30,13 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@patternfly/react-core": "^4.195.0",
-    "@patternfly/react-icons": "^4.46.0",
-    "@patternfly/react-styles": "^4.45.0",
     "react-dropzone": "9.0.0",
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
+    "@patternfly/react-core": "^4.195.0",
+    "@patternfly/react-icons": "^4.46.0",
+    "@patternfly/react-styles": "^4.45.0",
     "monaco-editor-webpack-plugin": "^2.1.0",
     "react": "^16.8.0 || ^17.0.0",
     "react-dom": "^16.8.0 || ^17.0.0",

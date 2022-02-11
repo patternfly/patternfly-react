@@ -31,10 +31,6 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@patternfly/react-core": "^4.195.0",
-    "@patternfly/react-icons": "^4.46.0",
-    "@patternfly/react-styles": "^4.45.0",
-    "@patternfly/react-tokens": "^4.47.0",
     "lodash": "^4.17.19",
     "tslib": "^2.0.0"
   },
@@ -43,6 +39,10 @@
     "typescript": "^4.0.0"
   },
   "peerDependencies": {
+    "@patternfly/react-core": "^4.195.0",
+    "@patternfly/react-icons": "^4.46.0",
+    "@patternfly/react-styles": "^4.45.0",
+    "@patternfly/react-tokens": "^4.47.0",
     "react": "^16.8.0 || ^17.0.0",
     "react-dom": "^16.8.0 || ^17.0.0"
   }

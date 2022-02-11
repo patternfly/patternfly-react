@@ -34,7 +34,6 @@
   "dependencies": {
     "@novnc/novnc": "^1.2.0",
     "@patternfly/patternfly": "4.176.0",
-    "@patternfly/react-core": "^4.195.0",
     "@spice-project/spice-html5": "^0.2.1",
     "@types/file-saver": "^2.0.1",
     "file-saver": "^1.3.8",
@@ -47,6 +46,7 @@
     "typescript": "^4.0.0"
   },
   "peerDependencies": {
+    "@patternfly/react-core": "^4.195.0",
     "react": "^16.8.0 || ^17.0.0",
     "react-dom": "^16.8.0 || ^17.0.0"
   }

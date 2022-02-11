@@ -30,14 +30,14 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@patternfly/react-core": "^4.195.0",
-    "@patternfly/react-icons": "^4.46.0",
-    "@patternfly/react-styles": "^4.45.0",
     "linear-layout-vector": "0.0.1",
     "react-virtualized": "^9.21.1",
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
+    "@patternfly/react-core": "^4.195.0",
+    "@patternfly/react-icons": "^4.46.0",
+    "@patternfly/react-styles": "^4.45.0",
     "react": "^16.8.0 || ^17.0.0",
     "react-dom": "^16.8.0 || ^17.0.0"
   },

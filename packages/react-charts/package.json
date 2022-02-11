@@ -29,8 +29,6 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
-    "@patternfly/react-styles": "^4.45.0",
-    "@patternfly/react-tokens": "^4.47.0",
     "hoist-non-react-statics": "^3.3.0",
     "lodash": "^4.17.19",
     "tslib": "^2.0.0",
@@ -51,6 +49,8 @@
     "victory-zoom-container": "^35.9.0"
   },
   "peerDependencies": {
+    "@patternfly/react-styles": "^4.45.0",
+    "@patternfly/react-tokens": "^4.47.0",
     "react": "^16.8.0 || ^17.0.0",
     "react-dom": "^16.8.0 || ^17.0.0"
   },
