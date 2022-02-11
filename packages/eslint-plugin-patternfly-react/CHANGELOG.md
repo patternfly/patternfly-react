@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.35.0 (2022-02-11)
+
+
+### Features
+
+* **Menu:** allow drilldown menu functions ([#6872](https://github.com/patternfly/patternfly-react/issues/6872)) ([b345b07](https://github.com/patternfly/patternfly-react/commit/b345b07de7c1576e984a06f4c573641b04956f5c))
+
+
+
+
+
 ## 4.34.3 (2022-02-11)
 
 **Note:** Version bump only for package eslint-plugin-patternfly-react
