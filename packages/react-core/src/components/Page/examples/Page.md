@@ -263,11 +263,11 @@ class FillPage extends React.Component {
 
     return (
       <Page header={Header} sidebar={Sidebar}>
-        <PageSection style={{ height: '10em' }}>This section is set to the default fill variant</PageSection>
-        <PageSection style={{ height: '10em' }} isFilled={true}>
+        <PageSection>A default page section</PageSection>
+        <PageSection isFilled={true}>
           This section fills the available space.
         </PageSection>
-        <PageSection style={{ height: '10em' }} isFilled={false}>
+        <PageSection isFilled={false}>
           This section is set to not fill the available space, since the last page section is set to fill the available space by default.
         </PageSection>
       </Page>
