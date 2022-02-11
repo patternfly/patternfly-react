@@ -268,8 +268,7 @@ class FillPage extends React.Component {
           This section fills the available space.
         </PageSection>
         <PageSection style={{ height: '10em' }} isFilled={false}>
-          {' '}
-          This section does not fill the available space.
+          This section is set to not fill the available space, since the last page section is set to fill the available space by default.
         </PageSection>
       </Page>
     );
