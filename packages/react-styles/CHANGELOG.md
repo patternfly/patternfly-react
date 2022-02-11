@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.45.1 (2022-02-11)
+
+
+### Bug Fixes
+
+* **Select:** Fixed so that view more btn click does not close the menu in React 16 ([#6922](https://github.com/patternfly/patternfly-react/issues/6922)) ([89da91d](https://github.com/patternfly/patternfly-react/commit/89da91dfd3a9e7af8ee26f8b6b5ac01c5b2487d4))
+
+
+
+
+
 # 4.45.0 (2022-02-10)
 
 
