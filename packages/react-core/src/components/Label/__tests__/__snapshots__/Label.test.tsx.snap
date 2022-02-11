@@ -10,16 +10,12 @@ exports[`editable label 1`] = `
   <span
     className="pf-c-label pf-m-editable"
   >
-    <span
+    <button
       className="pf-c-label__content"
+      onClick={[Function]}
     >
-      <button
-        className="pf-c-label__editable-text"
-        onClick={[Function]}
-      >
-        Something
-      </button>
-    </span>
+      Something
+    </button>
     <Button
       aria-label="Close Something"
       onClick={[MockFunction]}
@@ -87,7 +83,7 @@ exports[`editable label 2`] = `
     className="pf-c-label pf-m-editable pf-m-editable-active"
   >
     <input
-      className="pf-c-label__editable-text"
+      className="pf-c-label__content"
       id="editable-input"
       onChange={[Function]}
       type="text"

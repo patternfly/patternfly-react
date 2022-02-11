@@ -178,7 +178,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   };
 
   const LabelComponent = (isOverflowLabel ? 'button' : 'span') as any;
-  const Component = href ? 'a' : 'span';
+
   const button = closeBtn ? (
     closeBtn
   ) : (
@@ -199,7 +199,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   useIsomorphicLayoutEffect(() => {
     setIsTooltipVisible(textRef.current && textRef.current.offsetWidth < textRef.current.scrollWidth);
   }, []);
-  let content = (
+  const content = (
     <React.Fragment>
       {icon && <span className={css(styles.labelIcon)}>{icon}</span>}
       {isTruncated && (
@@ -221,27 +221,29 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     setCurrValue(editableInputRef.current.value);
   };
 
-  if (isEditable) {
-    content = (
+  let labelComponentChild = <span className={css(styles.labelContent)}>{content}</span>;
+
+  if (href) {
+    labelComponentChild = (
+      <a className={css(styles.labelContent)} href={href}>
+        {content}
+      </a>
+    );
+  } else if (isEditable) {
+    labelComponentChild = (
       <button
         ref={editableButtonRef}
-        className={css(styles.labelEditableText)}
-        onClick={e => {
+        className={css(styles.labelContent)}
+        onClick={(e: React.MouseEvent) => {
           setIsEditableActive(true);
           e.stopPropagation();
         }}
         {...editableProps}
       >
-        {children}
+        {content}
       </button>
     );
   }
-
-  let labelComponentChild = (
-    <Component className={css(styles.labelContent)} {...(href && { href })}>
-      {content}
-    </Component>
-  );
 
   if (render) {
     labelComponentChild = (
@@ -257,9 +259,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   } else if (isTooltipVisible) {
     labelComponentChild = (
       <Tooltip content={children} position={tooltipPosition}>
-        <Component className={css(styles.labelContent)} {...(href && { href })}>
-          {content}
-        </Component>
+        {labelComponentChild}
       </Tooltip>
     );
   }
@@ -282,7 +282,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
       {!isEditableActive && onClose && button}
       {isEditableActive && (
         <input
-          className={css(styles.labelEditableText)}
+          className={css(styles.labelContent)}
           type="text"
           id="editable-input"
           ref={editableInputRef}
