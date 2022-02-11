@@ -8,7 +8,6 @@ section: components
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
 ## Examples
@@ -20,8 +19,7 @@ Toolbar items are individual components that can be placed inside of a toolbar. 
 ```js
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent } from '@patternfly/react-core';
-import { Button, ButtonVariant, InputGroup, TextInput } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import { Button, ButtonVariant, InputGroup, SearchInput } from '@patternfly/react-core';
 
 class ToolbarItems extends React.Component {
   constructor(props) {
@@ -31,13 +29,8 @@ class ToolbarItems extends React.Component {
   render() {
     const items = (
       <React.Fragment>
-        <ToolbarItem>
-          <InputGroup>
-            <TextInput name="textInput1" id="textInput1" type="search" aria-label="search input example" />
-            <Button variant={ButtonVariant.control} aria-label="search button for search input">
-              <SearchIcon />
-            </Button>
-          </InputGroup>
+        <ToolbarItem variant="search-filter">
+          <SearchInput aria-label="search input example" />
         </ToolbarItem>
         <ToolbarItem>
           <Button variant="secondary">Action</Button>
@@ -506,8 +499,15 @@ A toggle group can be used when you want to collapse a set of items into an over
 ```js
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
-import { Button, ButtonVariant, InputGroup, Select, SelectOption, SelectVariant, TextInput } from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import {
+  Button,
+  ButtonVariant,
+  InputGroup,
+  Select,
+  SelectOption,
+  SelectVariant,
+  SearchInput
+} from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
 class ToolbarComponentMangedToggleGroup extends React.Component {
@@ -588,20 +588,15 @@ class ToolbarComponentMangedToggleGroup extends React.Component {
 
     const toggleGroupItems = (
       <React.Fragment>
-        <ToolbarItem>
-          <InputGroup>
-            <TextInput
-              name="textInput2"
-              id="textInput2"
-              type="search"
-              aria-label="search input example"
-              onChange={this.onInputChange}
-              value={inputValue}
-            />
-            <Button variant={ButtonVariant.control} aria-label="search button for search input">
-              <SearchIcon />
-            </Button>
-          </InputGroup>
+        <ToolbarItem variant="search-filter">
+          <SearchInput
+            aria-label="search input example"
+            onChange={this.onInputChange}
+            value={inputValue}
+            onClear={() => {
+              this.onInputChange('');
+            }}
+          />
         </ToolbarItem>
         <ToolbarGroup variant="filter-group">
           <ToolbarItem>
@@ -663,9 +658,15 @@ If the consumer would prefer to manage the expanded state of the toggle group fo
 ```js
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
-import { Button, ButtonVariant, InputGroup, Select, SelectOption, SelectVariant } from '@patternfly/react-core';
-import TextInput from '@patternfly/react-icons/dist/esm/icons/text-input';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import {
+  Button,
+  ButtonVariant,
+  InputGroup,
+  Select,
+  SelectOption,
+  SelectVariant,
+  SearchInput
+} from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
 class ToolbarConsumerMangedToggleGroup extends React.Component {
@@ -753,20 +754,15 @@ class ToolbarConsumerMangedToggleGroup extends React.Component {
 
     const toggleGroupItems = (
       <React.Fragment>
-        <ToolbarItem>
-          <InputGroup>
-            <TextInput
-              name="textInput2"
-              id="textInput2"
-              type="search"
-              aria-label="search input example"
-              onChange={this.onInputChange}
-              value={inputValue}
-            />
-            <Button variant={ButtonVariant.control} aria-label="search button for search input">
-              <SearchIcon />
-            </Button>
-          </InputGroup>
+        <ToolbarItem variant="search-filter">
+          <SearchInput
+            aria-label="search input example"
+            onChange={this.onInputChange}
+            value={inputValue}
+            onClear={() => {
+              this.onInputChange('');
+            }}
+          />
         </ToolbarItem>
         <ToolbarGroup variant="filter-group">
           <ToolbarItem>
@@ -846,10 +842,9 @@ import {
   Dropdown,
   DropdownItem,
   DropdownSeparator,
-  KebabToggle
+  KebabToggle,
+  SearchInput
 } from '@patternfly/react-core';
-import TextInput from '@patternfly/react-icons/dist/esm/icons/text-input';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
@@ -980,20 +975,15 @@ class ToolbarWithFilterExample extends React.Component {
 
     const toggleGroupItems = (
       <React.Fragment>
-        <ToolbarItem>
-          <InputGroup>
-            <TextInput
-              name="textInput2"
-              id="textInput2"
-              type="search"
-              aria-label="search input example"
-              onChange={this.onInputChange}
-              value={inputValue}
-            />
-            <Button variant={ButtonVariant.control} aria-label="search button for search input">
-              <SearchIcon />
-            </Button>
-          </InputGroup>
+        <ToolbarItem variant="search-filter">
+          <SearchInput
+            aria-label="search input example"
+            onChange={this.onInputChange}
+            value={inputValue}
+            onClear={() => {
+              this.onInputChange('');
+            }}
+          />
         </ToolbarItem>
         <ToolbarGroup variant="filter-group">
           <ToolbarFilter
