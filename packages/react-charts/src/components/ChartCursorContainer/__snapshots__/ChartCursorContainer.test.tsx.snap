@@ -2348,11 +2348,7 @@ exports[`renders container via ChartGroup 1`] = `
       }
     />
   }
-  groupComponent={<g />}
   height={200}
-  samples={50}
-  sortOrder="ascending"
-  standalone={true}
   theme={
     Object {
       "area": Object {
