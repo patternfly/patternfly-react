@@ -261,8 +261,10 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       if (firstRef && firstRef[0]) {
         firstRef[0].focus();
       }
-    } else if (
-      // if viewMoreNextIndex is not -1, view more was clicked, set focus on first newly loaded item
+    }
+
+    // if viewMoreNextIndex is not -1, view more was clicked, set focus on first newly loaded item
+    if (
       this.state.viewMoreNextIndex !== -1 &&
       this.refCollection.length > this.state.viewMoreNextIndex &&
       this.props.loadingVariant !== 'spinner' &&
