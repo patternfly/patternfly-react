@@ -208,7 +208,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
           onFavorite(generatedId.replace('favorite-', ''), isFavorite);
         }}
         onKeyDown={event => {
-          this.onKeyDown(event, 1, () => onFavorite(generatedId.replace('favorite-', '')));
+          this.onKeyDown(event, 1, () => onFavorite(generatedId.replace('favorite-', ''), isFavorite));
         }}
         ref={this.favoriteRef}
       >
