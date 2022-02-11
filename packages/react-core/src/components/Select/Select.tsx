@@ -255,16 +255,14 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       this.refCollection[0][0] = this.filterRef.current;
     }
 
-    // Move focus to top of the menu if state.focusFirstOption was updated to true and the menu does not have custom content
+    // Move focus to top of the menu if state.c was updated to true and the menu does not have custom content
     if (!prevState.focusFirstOption && this.state.focusFirstOption && !this.props.customContent) {
       const firstRef = this.refCollection.find(ref => ref !== null);
       if (firstRef && firstRef[0]) {
         firstRef[0].focus();
       }
-    }
-
-    // if viewMoreNextIndex is not -1, view more was clicked, set focus on first newly loaded item
-    if (
+    } else if (
+      // if viewMoreNextIndex is not -1, view more was clicked, set focus on first newly loaded item
       this.state.viewMoreNextIndex !== -1 &&
       this.refCollection.length > this.state.viewMoreNextIndex &&
       this.props.loadingVariant !== 'spinner' &&
