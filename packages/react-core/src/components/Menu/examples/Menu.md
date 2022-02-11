@@ -690,6 +690,11 @@ To render an initially drilled in menu, the `menuDrilledIn`, `drilldownPath`, an
 ```ts file="./MenuDrilldownInitialState.tsx" isBeta
 ```
 
+### With drilldown - submenu functions
+
+```ts file="./MenuDrilldownSubmenuFunctions.tsx" isBeta
+```
+
 ### With drilldown breadcrumbs
 
 ```js isBeta
