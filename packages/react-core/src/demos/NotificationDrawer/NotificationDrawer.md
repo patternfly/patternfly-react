@@ -8,6 +8,7 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
@@ -77,6 +78,7 @@ import { css } from '@patternfly/react-styles';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
@@ -257,7 +259,7 @@ class BasicNotificationDrawer extends React.Component {
                 </ToolbarItem>
                 <ToolbarItem>
                   <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-                    <HelpIcon />
+                    <QuestionCircleIcon />
                   </Button>
                 </ToolbarItem>
               </ToolbarGroup>
@@ -587,6 +589,7 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
@@ -816,7 +819,7 @@ class GroupedNotificationDrawer extends React.Component {
                 </ToolbarItem>
                 <ToolbarItem>
                   <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-                    <HelpIcon />
+                    <QuestionCircleIcon />
                   </Button>
                 </ToolbarItem>
               </ToolbarGroup>

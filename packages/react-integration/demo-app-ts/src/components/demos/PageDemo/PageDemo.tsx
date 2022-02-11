@@ -19,6 +19,7 @@ import {
 } from '@patternfly/react-core';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import imgAvatar from '@patternfly/react-integration/demo-app-ts/src/assets/images/imgAvatar.svg';
 
 export class PageDemo extends React.Component {
@@ -108,7 +109,7 @@ export class PageDemo extends React.Component {
           </PageHeaderToolsItem>
           <PageHeaderToolsItem>
             <Button aria-label="Help actions" variant="plain">
-              <HelpIcon />
+              <QuestionCircleIcon />
             </Button>
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>

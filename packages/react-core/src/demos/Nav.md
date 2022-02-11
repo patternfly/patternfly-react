@@ -7,6 +7,7 @@ import { DashboardBreadcrumb } from './examples/DashboardWrapper';
 import DashboardHeader from './examples/DashboardHeader';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import imgColorBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
@@ -382,6 +383,7 @@ import {
 import { DashboardBreadcrumb } from './examples/DashboardWrapper';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -481,7 +483,7 @@ class PageLayoutHorizontalNav extends React.Component {
           </PageHeaderToolsItem>
           <PageHeaderToolsItem>
             <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <HelpIcon />
+              <QuestionCircleIcon />
             </Button>
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
@@ -738,6 +740,7 @@ import {
 import { DashboardBreadcrumb } from './examples/DashboardWrapper';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import imgColorBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -850,7 +853,7 @@ class HorizontalNavWithSubnav extends React.Component {
           </PageHeaderToolsItem>
           <PageHeaderToolsItem>
             <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <HelpIcon />
+              <QuestionCircleIcon />
             </Button>
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
@@ -1200,6 +1203,7 @@ import {
 } from '@patternfly/react-core';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -1327,7 +1331,7 @@ class PageLayoutManualNav extends React.Component {
           </PageHeaderToolsItem>
           <PageHeaderToolsItem>
             <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <HelpIcon />
+              <QuestionCircleIcon />
             </Button>
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
