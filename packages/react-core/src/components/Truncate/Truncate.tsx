@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Truncate/truncate';
 import { css } from '@patternfly/react-styles';
-import { Tooltip } from '../Tooltip';
+import { Tooltip, TooltipPosition } from '../Tooltip';
 
 export enum TruncatePosition {
   start = 'start',
@@ -26,7 +26,21 @@ interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
   /** Where the text will be truncated */
   position?: 'start' | 'middle' | 'end';
   /** Tooltip position */
-  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  tooltipPosition?:
+    | TooltipPosition
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
 }
 
 const sliceContent = (str: string, slice: number) => [str.slice(0, str.length - slice), str.slice(-slice)];

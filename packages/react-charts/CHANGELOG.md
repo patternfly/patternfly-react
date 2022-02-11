@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.48.0 (2022-02-10)
+
+
+### Features
+
+* **ToolTip:** Diagonal tooltip placement ([#6887](https://github.com/patternfly/patternfly-react/issues/6887)) ([897fd7d](https://github.com/patternfly/patternfly-react/commit/897fd7d248888e7324d36f574231985e8523a700))
+
+
+
+
+
 ## 6.47.3 (2022-02-10)
 
 **Note:** Version bump only for package @patternfly/react-charts

@@ -6,7 +6,7 @@ import styles from '@patternfly/react-styles/css/components/NotificationDrawer/n
 import maxLines from '@patternfly/react-tokens/dist/esm/c_notification_drawer__group_toggle_title_max_lines';
 
 import { Badge } from '../Badge';
-import { Tooltip } from '../Tooltip';
+import { Tooltip, TooltipPosition } from '../Tooltip';
 
 export interface NotificationDrawerGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'title'> {
   /**  Content rendered inside the group */
@@ -26,7 +26,21 @@ export interface NotificationDrawerGroupProps extends Omit<React.HTMLProps<HTMLD
   /** Truncate title to number of lines */
   truncateTitle?: number;
   /** Position of the tooltip which is displayed if text is truncated */
-  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  tooltipPosition?:
+    | TooltipPosition
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
 }
 
 export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawerGroupProps> = ({
