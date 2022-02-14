@@ -7,6 +7,7 @@ exports[`Tile basic 1`] = `
 <div
   aria-selected={false}
   className="pf-c-tile"
+  role="option"
   tabIndex={0}
 >
 >>>>>>> 7dc9003a6 (fix(Tile): add aria-selected to indicate selection state)
@@ -34,6 +35,7 @@ exports[`Tile renders disabled 1`] = `
 <div
   aria-selected={false}
   className="pf-c-tile pf-m-disabled"
+  role="option"
   tabIndex={0}
 >
 >>>>>>> 7dc9003a6 (fix(Tile): add aria-selected to indicate selection state)
@@ -61,6 +63,7 @@ exports[`Tile renders selected 1`] = `
 <div
   aria-selected={true}
   className="pf-c-tile pf-m-selected"
+  role="option"
   tabIndex={0}
 >
 >>>>>>> 7dc9003a6 (fix(Tile): add aria-selected to indicate selection state)
@@ -88,6 +91,7 @@ exports[`Tile renders with icon 1`] = `
 <div
   aria-selected={false}
   className="pf-c-tile"
+  role="option"
   tabIndex={0}
 >
 >>>>>>> 7dc9003a6 (fix(Tile): add aria-selected to indicate selection state)
@@ -132,6 +136,7 @@ exports[`Tile renders with stacked icon 1`] = `
 <div
   aria-selected={false}
   className="pf-c-tile"
+  role="option"
   tabIndex={0}
 >
 >>>>>>> 7dc9003a6 (fix(Tile): add aria-selected to indicate selection state)
@@ -176,6 +181,7 @@ exports[`Tile renders with stacked large icon 1`] = `
 <div
   aria-selected={false}
   className="pf-c-tile pf-m-display-lg"
+  role="option"
   tabIndex={0}
 >
 >>>>>>> 7dc9003a6 (fix(Tile): add aria-selected to indicate selection state)
@@ -220,6 +226,7 @@ exports[`Tile renders with subtext 1`] = `
 <div
   aria-selected={false}
   className="pf-c-tile"
+  role="option"
   tabIndex={0}
 >
 >>>>>>> 7dc9003a6 (fix(Tile): add aria-selected to indicate selection state)
