@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.48.0 (2022-02-14)
+
+
+### Features
+
+* **Page:** Added center alignment for page sections ([#6893](https://github.com/patternfly/patternfly-react/issues/6893)) ([440918f](https://github.com/patternfly/patternfly-react/commit/440918fc1bd9795cd916a04fe32677ae5f69ef68))
+
+
+
+
+
 # 4.47.0 (2022-02-11)
 
 
