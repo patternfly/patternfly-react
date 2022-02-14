@@ -18,7 +18,7 @@ export const usePolygonAnchor = (points: PointTuple[], end: AnchorEnd = AnchorEn
         element.setAnchor(anchor, end, type);
       }
     });
-  }, [points, end, type]);
+  }, [points, end, type, element]);
 };
 
 export interface WithPolygonAnchorProps {
