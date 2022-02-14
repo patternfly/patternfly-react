@@ -32,6 +32,8 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   isFilled?: boolean;
   /** Limits the width of the section */
   isWidthLimited?: boolean;
+  /** Flag indicating if the section content is center aligned. isWidthLimited must be set for this to work  */
+  isCenterAligned?: boolean;
   /** Padding at various breakpoints. */
   padding?: {
     default?: 'padding' | 'noPadding';
@@ -75,6 +77,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   padding,
   isFilled,
   isWidthLimited = false,
+  isCenterAligned = false,
   sticky,
   hasShadowTop = false,
   hasShadowBottom = false,
@@ -90,6 +93,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
       isFilled === false && styles.modifiers.noFill,
       isFilled === true && styles.modifiers.fill,
       isWidthLimited && styles.modifiers.limitWidth,
+      isWidthLimited && isCenterAligned && type !== PageSectionTypes.subNav && styles.modifiers.alignCenter,
       sticky === 'top' && styles.modifiers.stickyTop,
       sticky === 'bottom' && styles.modifiers.stickyBottom,
       hasShadowTop && styles.modifiers.shadowTop,

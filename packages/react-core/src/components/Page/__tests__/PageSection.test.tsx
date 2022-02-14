@@ -16,6 +16,12 @@ test('Check page section with limited width', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('Check page section with center alignment', () => {
+  const Section = <PageSection isWidthLimited isCenterAligned/>;
+  const view = mount(Section);
+  expect(view).toMatchSnapshot();
+});
+
 test('Check page main tabs section against snapshot', () => {
   const Section = <PageSection type={PageSectionTypes.tabs} />;
   const view = mount(Section);
