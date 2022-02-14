@@ -9,6 +9,7 @@ import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
+import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 ## Examples
 
