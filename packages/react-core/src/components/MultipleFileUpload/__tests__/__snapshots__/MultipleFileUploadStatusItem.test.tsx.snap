@@ -1,0 +1,403 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MultipleFileUploadStatusItem renders custom aria labels 1`] = `
+<li
+  className="pf-c-multiple-file-upload__status-item"
+>
+  <div
+    className="pf-c-multiple-file-upload__status-item-icon"
+  >
+    <FileIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </div>
+  <div
+    className="pf-c-multiple-file-upload__status-item-main"
+  >
+    <Progress
+      aria-label="progressAriaLabel"
+      aria-labelledby="progressAriaLabelledBy"
+      className=""
+      id=""
+      isTitleTruncated={false}
+      label={null}
+      max={100}
+      measureLocation="top"
+      min={0}
+      size={null}
+      title={
+        <span
+          className="pf-c-multiple-file-upload__status-item-progress"
+        >
+          <span
+            className="pf-c-multiple-file-upload__status-item-progress-text"
+          >
+            testFile.txt
+          </span>
+          <span
+            className="pf-c-multiple-file-upload__status-item-progress-size"
+          >
+            3B
+          </span>
+        </span>
+      }
+      tooltipPosition="top"
+      value={0}
+      valueText={null}
+      variant={null}
+    />
+  </div>
+  <div
+    className="pf-c-multiple-file-upload__status-item-close"
+  >
+    <Button
+      aria-label="buttonAriaLabel"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <TimesCircleIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </Button>
+  </div>
+</li>
+`;
+
+exports[`MultipleFileUploadStatusItem renders custom class names 1`] = `
+<li
+  className="pf-c-multiple-file-upload__status-item test"
+>
+  <div
+    className="pf-c-multiple-file-upload__status-item-icon"
+  >
+    <FileIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </div>
+  <div
+    className="pf-c-multiple-file-upload__status-item-main"
+  >
+    <Progress
+      aria-label={null}
+      aria-labelledby={null}
+      className=""
+      id=""
+      isTitleTruncated={false}
+      label={null}
+      max={100}
+      measureLocation="top"
+      min={0}
+      size={null}
+      title={
+        <span
+          className="pf-c-multiple-file-upload__status-item-progress"
+        >
+          <span
+            className="pf-c-multiple-file-upload__status-item-progress-text"
+          >
+            
+          </span>
+          <span
+            className="pf-c-multiple-file-upload__status-item-progress-size"
+          >
+            0B
+          </span>
+        </span>
+      }
+      tooltipPosition="top"
+      value={0}
+      valueText={null}
+      variant={null}
+    />
+  </div>
+  <div
+    className="pf-c-multiple-file-upload__status-item-close"
+  >
+    <Button
+      aria-label="Remove from list"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <TimesCircleIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </Button>
+  </div>
+</li>
+`;
+
+exports[`MultipleFileUploadStatusItem renders custom file name/size/icon when passed 1`] = `
+<li
+  className="pf-c-multiple-file-upload__status-item"
+>
+  <div
+    className="pf-c-multiple-file-upload__status-item-icon"
+  >
+    <FileImageIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </div>
+  <div
+    className="pf-c-multiple-file-upload__status-item-main"
+  >
+    <Progress
+      aria-label={null}
+      aria-labelledby={null}
+      className=""
+      id=""
+      isTitleTruncated={false}
+      label={null}
+      max={100}
+      measureLocation="top"
+      min={0}
+      size={null}
+      title={
+        <span
+          className="pf-c-multiple-file-upload__status-item-progress"
+        >
+          <span
+            className="pf-c-multiple-file-upload__status-item-progress-text"
+          >
+            testCustomFileName.txt
+          </span>
+          <span
+            className="pf-c-multiple-file-upload__status-item-progress-size"
+          >
+            42
+          </span>
+        </span>
+      }
+      tooltipPosition="top"
+      value={0}
+      valueText={null}
+      variant={null}
+    />
+  </div>
+  <div
+    className="pf-c-multiple-file-upload__status-item-close"
+  >
+    <Button
+      aria-label="Remove from list"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <TimesCircleIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </Button>
+  </div>
+</li>
+`;
+
+exports[`MultipleFileUploadStatusItem renders custom progress value/variant when passed 1`] = `
+<li
+  className="pf-c-multiple-file-upload__status-item"
+>
+  <div
+    className="pf-c-multiple-file-upload__status-item-icon"
+  >
+    <FileIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </div>
+  <div
+    className="pf-c-multiple-file-upload__status-item-main"
+  >
+    <Progress
+      aria-label={null}
+      aria-labelledby={null}
+      className=""
+      id=""
+      isTitleTruncated={false}
+      label={null}
+      max={100}
+      measureLocation="top"
+      min={0}
+      size={null}
+      title={
+        <span
+          className="pf-c-multiple-file-upload__status-item-progress"
+        >
+          <span
+            className="pf-c-multiple-file-upload__status-item-progress-text"
+          >
+            testFile.txt
+          </span>
+          <span
+            className="pf-c-multiple-file-upload__status-item-progress-size"
+          >
+            3B
+          </span>
+        </span>
+      }
+      tooltipPosition="top"
+      value={42}
+      valueText={null}
+      variant="warning"
+    />
+  </div>
+  <div
+    className="pf-c-multiple-file-upload__status-item-close"
+  >
+    <Button
+      aria-label="Remove from list"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <TimesCircleIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </Button>
+  </div>
+</li>
+`;
+
+exports[`MultipleFileUploadStatusItem renders expected values from a passed file object 1`] = `
+<li
+  className="pf-c-multiple-file-upload__status-item"
+>
+  <div
+    className="pf-c-multiple-file-upload__status-item-icon"
+  >
+    <FileIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </div>
+  <div
+    className="pf-c-multiple-file-upload__status-item-main"
+  >
+    <Progress
+      aria-label={null}
+      aria-labelledby={null}
+      className=""
+      id=""
+      isTitleTruncated={false}
+      label={null}
+      max={100}
+      measureLocation="top"
+      min={0}
+      size={null}
+      title={
+        <span
+          className="pf-c-multiple-file-upload__status-item-progress"
+        >
+          <span
+            className="pf-c-multiple-file-upload__status-item-progress-text"
+          >
+            testFile.txt
+          </span>
+          <span
+            className="pf-c-multiple-file-upload__status-item-progress-size"
+          >
+            3B
+          </span>
+        </span>
+      }
+      tooltipPosition="top"
+      value={0}
+      valueText={null}
+      variant={null}
+    />
+  </div>
+  <div
+    className="pf-c-multiple-file-upload__status-item-close"
+  >
+    <Button
+      aria-label="Remove from list"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <TimesCircleIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </Button>
+  </div>
+</li>
+`;
+
+exports[`MultipleFileUploadStatusItem renders with expected class names 1`] = `
+<li
+  className="pf-c-multiple-file-upload__status-item"
+>
+  <div
+    className="pf-c-multiple-file-upload__status-item-icon"
+  >
+    <FileIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+    />
+  </div>
+  <div
+    className="pf-c-multiple-file-upload__status-item-main"
+  >
+    <Progress
+      aria-label={null}
+      aria-labelledby={null}
+      className=""
+      id=""
+      isTitleTruncated={false}
+      label={null}
+      max={100}
+      measureLocation="top"
+      min={0}
+      size={null}
+      title={
+        <span
+          className="pf-c-multiple-file-upload__status-item-progress"
+        >
+          <span
+            className="pf-c-multiple-file-upload__status-item-progress-text"
+          >
+            
+          </span>
+          <span
+            className="pf-c-multiple-file-upload__status-item-progress-size"
+          >
+            0B
+          </span>
+        </span>
+      }
+      tooltipPosition="top"
+      value={0}
+      valueText={null}
+      variant={null}
+    />
+  </div>
+  <div
+    className="pf-c-multiple-file-upload__status-item-close"
+  >
+    <Button
+      aria-label="Remove from list"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <TimesCircleIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+      />
+    </Button>
+  </div>
+</li>
+`;
