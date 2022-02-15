@@ -1439,7 +1439,7 @@ class VerticalPage extends React.Component {
     super(props);
     this.state = {
       isNavOpen: true,
-      activeItem: 0,
+      activeItem: 0
     };
     this.onNavSelect = result => {
       this.setState({
@@ -1489,13 +1489,7 @@ class VerticalPage extends React.Component {
               <NavItem id="flyout-link1" to="#flyout-link1" itemId={0} isActive={activeItem === 0}>
                 System Panel
               </NavItem>
-              <NavItem
-                flyout={curFlyout}
-                id="flyout-link2"
-                to="#flyout-link2"
-                itemId={1}
-                isActive={activeItem === 1}
-              >
+              <NavItem flyout={curFlyout} id="flyout-link2" to="#flyout-link2" itemId={1} isActive={activeItem === 1}>
                 Settings
               </NavItem>
               <NavItem id="flyout-link3" to="#flyout-link3" itemId={2} isActive={activeItem === 2}>
@@ -1516,4 +1510,9 @@ class VerticalPage extends React.Component {
     );
   }
 }
+```
+
+### Drilldown nav
+
+```js isBeta isFullscreen file="./examples/Nav/NavDrilldown.tsx"
 ```
