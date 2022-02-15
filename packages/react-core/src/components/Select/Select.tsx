@@ -350,7 +350,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         typeaheadFilteredChildren: React.Children.toArray(this.props.children)
       }),
       typeaheadCurrIndex: -1,
-      tabbedIntoFavoritesMenu: false
+      tabbedIntoFavoritesMenu: false,
+      viewMoreNextIndex: -1
     });
   };
 
