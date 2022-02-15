@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.50.0 (2022-02-15)
+
+
+### Features
+
+* **table:** ability to add expand/collapse all to th ([#6914](https://github.com/patternfly/patternfly-react/issues/6914)) ([ee510ee](https://github.com/patternfly/patternfly-react/commit/ee510ee8c8d3a069b75c73873ebd32b0b9a4d9c7))
+
+
+
+
+
 ## 4.49.2 (2022-02-15)
 
 **Note:** Version bump only for package @patternfly/react-tokens
