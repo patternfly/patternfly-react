@@ -59,12 +59,16 @@ export interface TableProps extends OUIAProps {
   onExpand?: OnExpand;
   /** Function triggered when a row's checkbox is selected. When this is used, one checkbox/radio button will be positioned in the first or second cell of a non-expandable row */
   onSelect?: OnSelect;
-  /** Enables or Disables the ability to select all - this is mutually exclusive with radio button select variant */
+  /** Enables or disables the ability to select all - this is mutually exclusive with radio button select variant */
   canSelectAll?: boolean;
+  /** Enables or disables the ability to expand all */
+  canCollapseAll?: boolean;
   /** Flag indicating the select all checkbox is disabled */
   isHeaderSelectDisabled?: boolean;
   /** Specifies the type of the select element variant - can be one of checkbox or radio button */
   selectVariant?: 'checkbox' | 'radio';
+  /** An optional alternative aria label for the expand collapse all table header */
+  collapseAllAriaLabel?: string;
   /** Function triggered when a row's inline edit is activated. Adds a column for inline edit when present. */
   onRowEdit?: OnRowEdit;
   /** Function triggered when sort icon is clicked */
@@ -139,8 +143,10 @@ export class Table extends React.Component<TableProps, {}> {
     gridBreakPoint: TableGridBreakpoint.gridMd,
     role: 'grid',
     canSelectAll: true,
+    canCollapseAll: true,
     isHeaderSelectDisabled: false,
     selectVariant: 'checkbox',
+    collapseAllAriaLabel: '',
     ouiaSafe: true,
     isStickyHeader: false,
     canSortFavorites: true,
@@ -162,6 +168,13 @@ export class Table extends React.Component<TableProps, {}> {
     );
   };
 
+  areAllExpanded = (rows: IRow[]) => {
+    if (rows === undefined || rows.length === 0) {
+      return false;
+    }
+    return rows.every(row => row.isOpen === undefined || row.isOpen);
+  };
+
   render() {
     const {
       'aria-label': ariaLabel,
@@ -170,8 +183,10 @@ export class Table extends React.Component<TableProps, {}> {
       onSort,
       onSelect,
       canSelectAll,
+      canCollapseAll,
       isHeaderSelectDisabled,
       selectVariant,
+      collapseAllAriaLabel,
       sortBy,
       children,
       actions,
@@ -208,9 +223,12 @@ export class Table extends React.Component<TableProps, {}> {
       onSort,
       onSelect,
       canSelectAll: selectVariant === RowSelectVariant.radio ? false : canSelectAll,
+      canCollapseAll,
       isHeaderSelectDisabled,
       selectVariant,
+      collapseAllAriaLabel,
       allRowsSelected: onSelect ? this.areAllRowsSelected(rows as IRow[]) : false,
+      allRowsExpanded: onCollapse ? this.areAllExpanded(rows as IRow[]) : false,
       actions,
       actionResolver,
       areActionsDisabled,

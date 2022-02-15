@@ -10,7 +10,13 @@ export const collapsible: IFormatter = (
   { rowIndex, columnIndex, rowData, column, property }: IExtra
 ) => {
   const {
-    extraParams: { onCollapse, rowLabeledBy = 'simple-node', expandId = 'expand-toggle' }
+    extraParams: {
+      onCollapse,
+      rowLabeledBy = 'simple-node',
+      expandId = 'expand-toggle',
+      allRowsExpanded,
+      collapseAllAriaLabel
+    }
   } = column;
   const extraData = {
     rowIndex,
@@ -19,23 +25,38 @@ export const collapsible: IFormatter = (
     property
   };
 
+  const rowId = rowIndex !== undefined ? rowIndex : -1;
+
+  const customProps = {
+    ...(rowId !== -1
+      ? {
+          isOpen: rowData?.isOpen,
+          'aria-labelledby': `${rowLabeledBy}${rowId} ${expandId}${rowId}`
+        }
+      : {
+          isOpen: allRowsExpanded,
+          'aria-label': collapseAllAriaLabel || 'Expand all rows'
+        })
+  };
+
   /**
    * @param {React.MouseEvent} event - Mouse event
    */
   function onToggle(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    const open = rowData ? !rowData.isOpen : !allRowsExpanded;
     // tslint:disable-next-line:no-unused-expression
-    onCollapse && onCollapse(event, rowIndex, rowData && !rowData.isOpen, rowData, extraData);
+    onCollapse && onCollapse(event, rowIndex, open, rowData, extraData);
   }
 
   return {
-    className: rowData.isOpen !== undefined && css(styles.tableToggle),
-    isVisible: !rowData.fullWidth,
+    className: (rowData?.isOpen !== undefined || rowId === -1) && css(styles.tableToggle),
+    isVisible: !rowData?.fullWidth,
     children: (
       <CollapseColumn
-        aria-labelledby={`${rowLabeledBy}${rowIndex} ${expandId}${rowIndex}`}
+        aria-labelledby={`${rowLabeledBy}${rowId} ${expandId}${rowId}`}
         onToggle={onToggle}
-        id={expandId + rowIndex}
-        isOpen={rowData && rowData.isOpen}
+        id={expandId + rowId}
+        {...customProps}
       >
         {value}
       </CollapseColumn>

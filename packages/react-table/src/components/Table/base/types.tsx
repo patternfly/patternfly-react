@@ -163,6 +163,15 @@ export interface ThSelectType {
   isHeaderSelectDisabled?: boolean;
 }
 
+export interface ThExpandType {
+  /** On toggling the expansion */
+  onToggle?: OnCollapse;
+  /** Whether all are expanded */
+  areAllExpanded: boolean;
+  /** Alternative aria label */
+  collapseAllAriaLabel: '';
+}
+
 // Rows Types
 export type RowsType = RowType[] | [][];
 export type RowKeyType = Function | string;

@@ -99,6 +99,7 @@ export interface IColumn {
     onExpand?: OnExpand;
     onSelect?: OnSelect;
     selectVariant?: 'checkbox' | 'radio';
+    collapseAllAriaLabel?: string;
     onRowEdit?: OnRowEdit;
     rowLabeledBy?: string;
     expandId?: string;
@@ -107,6 +108,7 @@ export interface IColumn {
     dropdownDirection?: DropdownDirection;
     actionsToggle?: (props: CustomActionsToggleProps) => React.ReactNode;
     allRowsSelected?: boolean;
+    allRowsExpanded?: boolean;
     isHeaderSelectDisabled?: boolean;
     onFavorite?: OnFavorite;
   };
