@@ -443,6 +443,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   return true;
                 }
 
+                // spinner should be returned as not a match
+                if (loadingVariant === 'spinner' && valueToCheck === 'loading') {
+                  return true;
+                }
+
                 if (isSelectOptionObject) {
                   return (valueToCheck as SelectOptionObject).compareTo(typeaheadInputValue);
                 } else {
