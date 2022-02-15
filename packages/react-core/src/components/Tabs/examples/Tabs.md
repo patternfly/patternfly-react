@@ -21,7 +21,7 @@ Similarly the 'Tab content light variation' checkbox affects the TabContent back
 
 ### Default
 
-The Tooltip component can also be passed in directly to the `tooltip` prop on the Tab component.
+When passing in a Tooltip component to the Tab component, the Tooltip can also be passed in directly to the `tooltip` prop.
 
 ```js
 import React from 'react';
@@ -99,7 +99,7 @@ class SimpleTabs extends React.Component {
 
 ### With tooltip react ref
 
-When using a React ref to add a Tooltip to a Tab component, an `id` must be manually set on the Tooltip component, and the Tab component should have a matching `aria-describedby` attribute.
+When using a React ref to link a Tooltip to a Tab component, an `id` must be manually set on the Tooltip component, and the Tab component must have a matching `aria-describedby` attribute so that screen readers are able to announce the Tooltip contents.
 
 ```js
 import React from 'react';
