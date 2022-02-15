@@ -83,7 +83,7 @@ const GroupHull: React.FC<GroupHullProps> = ({
     }
     const points: PointWithSize[] = [];
     _.forEach(nodeChildren, c => {
-      if (c.getNodeShape() === NodeShape.circle) {
+      if (c.getNodeShape() === NodeShape.ellipse) {
         const { width, height } = c.getBounds();
         const { x, y } = c.getBounds().getCenter();
         const radius = Math.max(width, height) / 2;

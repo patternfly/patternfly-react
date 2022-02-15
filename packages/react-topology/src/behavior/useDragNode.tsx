@@ -152,7 +152,7 @@ export const useDragNode = <
 };
 
 export interface WithDragNodeProps {
-  dragNodeRef: WithDndDragProps['dndDragRef'];
+  dragNodeRef?: WithDndDragProps['dndDragRef'];
 }
 
 export const withDragNode = <

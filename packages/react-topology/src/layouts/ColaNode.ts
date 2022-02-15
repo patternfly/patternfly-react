@@ -1,6 +1,7 @@
+import * as webcola from 'webcola';
 import { Node } from '../types';
 import { LayoutNode } from './LayoutNode';
-import * as webcola from 'webcola';
+
 export class ColaNode extends LayoutNode implements webcola.Node {
   // fixed is used by Cola during node additions: 1 for fixed
   public fixed: number = 0;

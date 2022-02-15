@@ -95,14 +95,14 @@ exports[`TopologyView should display resizable topology sidebar correctly 1`] = 
                       className="pf-c-toolbar__content-section"
                     >
                       <ForwardRef
-                        className="project-toolbar"
+                        className="pf-topology-view__project-toolbar"
                       >
                         <ToolbarGroupWithRef
-                          className="project-toolbar"
+                          className="pf-topology-view__project-toolbar"
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-toolbar__group project-toolbar"
+                            className="pf-c-toolbar__group pf-topology-view__project-toolbar"
                           >
                             <div
                               id="test-context-bar"
@@ -162,14 +162,14 @@ exports[`TopologyView should display resizable topology sidebar correctly 1`] = 
                       className="pf-c-toolbar__content-section"
                     >
                       <ForwardRef
-                        className="view-toolbar"
+                        className="pf-topology-view__view-toolbar"
                       >
                         <ToolbarGroupWithRef
-                          className="view-toolbar"
+                          className="pf-topology-view__view-toolbar"
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-toolbar__group view-toolbar"
+                            className="pf-c-toolbar__group pf-topology-view__view-toolbar"
                           >
                             <div
                               id="test-view-bar"
@@ -414,14 +414,14 @@ exports[`TopologyView should display topology correctly 1`] = `
                       className="pf-c-toolbar__content-section"
                     >
                       <ForwardRef
-                        className="project-toolbar"
+                        className="pf-topology-view__project-toolbar"
                       >
                         <ToolbarGroupWithRef
-                          className="project-toolbar"
+                          className="pf-topology-view__project-toolbar"
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-toolbar__group project-toolbar"
+                            className="pf-c-toolbar__group pf-topology-view__project-toolbar"
                           >
                             <div
                               id="test-context-bar"
@@ -481,14 +481,14 @@ exports[`TopologyView should display topology correctly 1`] = `
                       className="pf-c-toolbar__content-section"
                     >
                       <ForwardRef
-                        className="view-toolbar"
+                        className="pf-topology-view__view-toolbar"
                       >
                         <ToolbarGroupWithRef
-                          className="view-toolbar"
+                          className="pf-topology-view__view-toolbar"
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-toolbar__group view-toolbar"
+                            className="pf-c-toolbar__group pf-topology-view__view-toolbar"
                           >
                             <div
                               id="test-view-bar"
@@ -677,14 +677,14 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                       className="pf-c-toolbar__content-section"
                     >
                       <ForwardRef
-                        className="project-toolbar"
+                        className="pf-topology-view__project-toolbar"
                       >
                         <ToolbarGroupWithRef
-                          className="project-toolbar"
+                          className="pf-topology-view__project-toolbar"
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-toolbar__group project-toolbar"
+                            className="pf-c-toolbar__group pf-topology-view__project-toolbar"
                           >
                             <div
                               id="test-context-bar"
@@ -744,14 +744,14 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
                       className="pf-c-toolbar__content-section"
                     >
                       <ForwardRef
-                        className="view-toolbar"
+                        className="pf-topology-view__view-toolbar"
                       >
                         <ToolbarGroupWithRef
-                          className="view-toolbar"
+                          className="pf-topology-view__view-toolbar"
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-toolbar__group view-toolbar"
+                            className="pf-c-toolbar__group pf-topology-view__view-toolbar"
                           >
                             <div
                               id="test-view-bar"
@@ -944,14 +944,14 @@ exports[`TopologyView should display topology w/ open resizable sidebar correctl
                       className="pf-c-toolbar__content-section"
                     >
                       <ForwardRef
-                        className="project-toolbar"
+                        className="pf-topology-view__project-toolbar"
                       >
                         <ToolbarGroupWithRef
-                          className="project-toolbar"
+                          className="pf-topology-view__project-toolbar"
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-toolbar__group project-toolbar"
+                            className="pf-c-toolbar__group pf-topology-view__project-toolbar"
                           >
                             <div
                               id="test-context-bar"
@@ -1011,14 +1011,14 @@ exports[`TopologyView should display topology w/ open resizable sidebar correctl
                       className="pf-c-toolbar__content-section"
                     >
                       <ForwardRef
-                        className="view-toolbar"
+                        className="pf-topology-view__view-toolbar"
                       >
                         <ToolbarGroupWithRef
-                          className="view-toolbar"
+                          className="pf-topology-view__view-toolbar"
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-toolbar__group view-toolbar"
+                            className="pf-c-toolbar__group pf-topology-view__view-toolbar"
                           >
                             <div
                               id="test-view-bar"
@@ -1293,14 +1293,14 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                       className="pf-c-toolbar__content-section"
                     >
                       <ForwardRef
-                        className="project-toolbar"
+                        className="pf-topology-view__project-toolbar"
                       >
                         <ToolbarGroupWithRef
-                          className="project-toolbar"
+                          className="pf-topology-view__project-toolbar"
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-toolbar__group project-toolbar"
+                            className="pf-c-toolbar__group pf-topology-view__project-toolbar"
                           >
                             <div
                               id="test-context-bar"
@@ -1360,14 +1360,14 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
                       className="pf-c-toolbar__content-section"
                     >
                       <ForwardRef
-                        className="view-toolbar"
+                        className="pf-topology-view__view-toolbar"
                       >
                         <ToolbarGroupWithRef
-                          className="view-toolbar"
+                          className="pf-topology-view__view-toolbar"
                           innerRef={null}
                         >
                           <div
-                            className="pf-c-toolbar__group view-toolbar"
+                            className="pf-c-toolbar__group pf-topology-view__view-toolbar"
                           >
                             <div
                               id="test-view-bar"

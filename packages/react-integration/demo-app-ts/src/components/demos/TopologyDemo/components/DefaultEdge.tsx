@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
 import {
-  Layer,
-  WithSourceDragProps,
-  WithTargetDragProps,
-  Point,
   Edge,
-  useBendpoint,
   EdgeConnectorArrow,
-  WithRemoveConnectorProps
+  EdgeTerminalType,
+  Layer,
+  Point,
+  useBendpoint,
+  WithRemoveConnectorProps,
+  WithSourceDragProps,
+  WithTargetDragProps
 } from '@patternfly/react-topology';
 
 type EdgeProps = {
@@ -66,7 +67,7 @@ const DefaultEdge: React.FC<EdgeProps> = ({
           onMouseLeave={onHideRemoveConnector}
         />
         {sourceDragRef && <circle ref={sourceDragRef} r={8} cx={startPoint.x} cy={startPoint.y} fillOpacity={0} />}
-        <EdgeConnectorArrow dragRef={targetDragRef} edge={element} />
+        <EdgeConnectorArrow dragRef={targetDragRef} edge={element} terminalType={EdgeTerminalType.directional} />
       </Layer>
       {bendpoints && bendpoints.map((p, i) => <Bendpoint point={p} key={i.toString()} />)}
     </>

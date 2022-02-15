@@ -2,48 +2,58 @@ import * as React from 'react';
 import { action } from 'mobx';
 import * as _ from 'lodash';
 import {
-  TopologyView,
-  TopologySideBar,
-  TopologyControlBar,
   createTopologyControlButtons,
   defaultControlButtonsOptions,
   EdgeModel,
   Model,
-  ModelKind,
   NodeModel,
-  Controller,
-  Visualization,
-  withPanZoom,
-  GraphComponent,
-  withDragNode,
-  withContextMenu,
-  ContextMenuItem,
-  ContextSubMenuItem,
-  ContextMenuSeparator,
-  VisualizationSurface,
+  NodeShape,
   SELECTION_EVENT,
   SelectionEventListener,
-  withSelection,
+  TopologyControlBar,
+  TopologySideBar,
+  TopologyView,
+  useEventListener,
+  useVisualizationController,
+  Visualization,
   VisualizationProvider,
-  useEventListener
+  VisualizationSurface
 } from '@patternfly/react-topology';
+import stylesComponentFactory from './components/stylesComponentFactory';
 import {
-  ToolbarItem,
-  Split,
-  SplitItem,
+  Button,
   Dropdown,
   DropdownItem,
-  DropdownToggle,
   DropdownPosition,
-  Button,
+  DropdownToggle,
+  Flex,
+  Select,
+  SelectOption,
+  SelectVariant,
+  Split,
+  SplitItem,
+  TextInput,
+  ToolbarItem,
   Tooltip
 } from '@patternfly/react-core';
 import defaultLayoutFactory from './layouts/defaultLayoutFactory';
-import data from './data/reasonable';
-import GroupHull from './components/GroupHull';
-import Group from './components/DefaultGroup';
-import Node from './components/DefaultNode';
 import defaultComponentFactory from './components/defaultComponentFactory';
+import {
+  DefaultEdgeOptions,
+  DefaultNodeOptions,
+  generateDataModel,
+  generateEdge,
+  generateNode,
+  GeneratorEdgeOptions,
+  GeneratorNodeOptions
+} from './data/generator';
+import {
+  NODE_STATUSES,
+  EDGE_ANIMATION_SPEEDS,
+  EDGE_STYLES,
+  EDGE_TERMINAL_TYPES,
+  NODE_SHAPES
+} from './utils/styleUtils';
 
 import '@patternfly/patternfly/patternfly.css';
 import '@patternfly/patternfly/patternfly-addons.css';
@@ -51,134 +61,53 @@ import '@patternfly/patternfly/patternfly-addons.css';
 const GRAPH_LAYOUT_OPTIONS = ['x', 'y', 'visible', 'style', 'layout', 'scale', 'scaleExtent', 'layers'];
 const NODE_LAYOUT_OPTIONS = ['x', 'y', 'visible', 'style', 'collapsed', 'width', 'height', 'shape'];
 
-const contextMenuItem = (label: string, i: number): React.ReactElement => {
-  if (label === '-') {
-    return <ContextMenuSeparator key={`separator:${i.toString()}`} />;
-  }
-  if (label.includes('->')) {
-    const parent = label.slice(0, label.indexOf('->'));
-    const children = label.slice(label.indexOf('->') + 2).split(',');
-
-    return (
-      <ContextSubMenuItem label={parent} key={parent}>
-        {children.map((child, j) => contextMenuItem(child.trim(), j))}
-      </ContextSubMenuItem>
-    );
-  }
-  return (
-    // eslint-disable-next-line no-alert
-    <ContextMenuItem key={label} onClick={() => alert(`Selected: ${label}`)}>
-      {label}
-    </ContextMenuItem>
-  );
-};
-
-const createContextMenuItems = (...labels: string[]): React.ReactElement[] => labels.map(contextMenuItem);
-
-const defaultMenu = createContextMenuItems(
-  'First',
-  'Second',
-  'Third',
-  '-',
-  'Fourth',
-  'Sub Menu-> Child1, Child2, Child3, -, Child4'
-);
-
-const getModel = (layout: string): Model => {
-  // create nodes from data
-  const nodes: NodeModel[] = data.nodes.map(d => {
-    // randomize size somewhat
-    const width = 50 + d.id.length + 40;
-    const height = 50 + d.id.length;
-    return {
-      id: d.id,
-      type: 'node',
-      width,
-      height,
-      data: d
-    };
-  });
-
-  // create groups from data
-  const groupNodes: NodeModel[] = _.map(
-    _.groupBy(nodes, n => n.data.group),
-    (v, k) => ({
-      type: 'group-hull',
-      id: k,
-      group: true,
-      children: v.map((n: NodeModel) => n.id),
-      label: `group-${k}`,
-      style: {
-        padding: 10
-      }
-    })
-  );
-
-  // create links from data
-  const edges = data.links.map(
-    (d): EdgeModel => ({
-      data: d,
-      source: d.source,
-      target: d.target,
-      id: `${d.source}_${d.target}`,
-      type: 'edge'
-    })
-  );
-
-  // create topology model
-  const model: Model = {
-    graph: {
-      id: 'g1',
-      type: 'graph',
-      layout
-    },
-    nodes: [...nodes, ...groupNodes],
-    edges
-  };
-
-  return model;
-};
-
-const getVisualization = (model: Model): Visualization => {
-  const vis = new Visualization();
-
-  vis.registerLayoutFactory(defaultLayoutFactory);
-  vis.registerComponentFactory(defaultComponentFactory);
-
-  // support pan zoom, drag, context menus, and selection
-  vis.registerComponentFactory((kind, type) => {
-    if (kind === ModelKind.graph) {
-      return withPanZoom()(GraphComponent);
-    }
-    if (type === 'group-hull') {
-      return withDragNode({ canCancel: false })(GroupHull);
-    }
-    if (type === 'group') {
-      return withDragNode({ canCancel: false })(Group);
-    }
-    if (kind === ModelKind.node) {
-      return withDragNode({ canCancel: false })(withSelection()(withContextMenu(() => defaultMenu)(Node)));
-    }
-    return undefined;
-  });
-  vis.fromModel(model);
-
-  return vis;
-};
-
 interface TopologyViewComponentProps {
-  vis: Controller;
   useSidebar: boolean;
   sideBarResizable?: boolean;
 }
 
-const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useSidebar, sideBarResizable = false }) => {
+const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ useSidebar, sideBarResizable = false }) => {
   const [selectedIds, setSelectedIds] = React.useState<string[]>();
   const [layoutDropdownOpen, setLayoutDropdownOpen] = React.useState(false);
-  const [layout, setLayout] = React.useState('Force');
+  const [layout, setLayout] = React.useState('ColaNoForce');
+  const [nodeOptionsOpen, setNodeOptionsOpen] = React.useState<boolean>(false);
+  const [nodeShapesOpen, setNodeShapesOpen] = React.useState<boolean>(false);
+  const [nodeOptions, setNodeOptions] = React.useState<GeneratorNodeOptions>(DefaultNodeOptions);
+  const [edgeOptionsOpen, setEdgeOptionsOpen] = React.useState<boolean>(false);
+  const [edgeOptions, setEdgeOptions] = React.useState<GeneratorEdgeOptions>(DefaultEdgeOptions);
   const [savedModel, setSavedModel] = React.useState<Model>();
   const [modelSaved, setModelSaved] = React.useState<boolean>(false);
   const newNodeCount = React.useRef(0);
+  const [numNodes, setNumNodes] = React.useState<number | undefined>(6);
+  const [numEdges, setNumEdges] = React.useState<number | undefined>(2);
+  const [numGroups, setNumGroups] = React.useState<number | undefined>(1);
+  const [creationCounts, setCreationCounts] = React.useState<{ numNodes: number; numEdges: number; numGroups: number }>(
+    { numNodes, numEdges, numGroups }
+  );
+  const controller = useVisualizationController();
+
+  React.useEffect(() => {
+    const dataModel = generateDataModel(
+      creationCounts.numNodes,
+      creationCounts.numGroups,
+      creationCounts.numEdges,
+      nodeOptions,
+      edgeOptions
+    );
+
+    const model = {
+      graph: {
+        id: 'g1',
+        type: 'graph',
+        layout
+      },
+      ...dataModel
+    };
+
+    controller.fromModel(model, false);
+    // Don't update on option changes, its handled differently to not re-layout
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [creationCounts, layout]);
 
   useEventListener<SelectionEventListener>(SELECTION_EVENT, ids => {
     setSelectedIds(ids);
@@ -191,10 +120,6 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
   );
 
   const updateLayout = (newLayout: string) => {
-    // FIXME reset followed by layout causes a flash of the reset prior to the layout
-    vis.getGraph().reset();
-    vis.getGraph().setLayout(newLayout);
-    vis.getGraph().layout();
     setLayout(newLayout);
     setLayoutDropdownOpen(false);
   };
@@ -228,8 +153,210 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
     </Split>
   );
 
+  React.useEffect(() => {
+    const currentModel = controller.toModel();
+    const nodes = currentModel.nodes;
+    if (nodes.length) {
+      const updatedNodes: NodeModel[] = nodes.map((node, index) => {
+        if (node.group) {
+          return node;
+        }
+        return {
+          ...node,
+          ...generateNode(index, nodeOptions)
+        };
+      });
+      controller.fromModel({ nodes: updatedNodes, edges: currentModel.edges });
+    }
+    // Don't update on controller change
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [nodeOptions]);
+
+  const renderNodeOptionsDropdown = () => {
+    const selectContent = (
+      <div>
+        <SelectOption
+          value="Labels"
+          isChecked={nodeOptions.nodeLabels}
+          onClick={() => setNodeOptions(prev => ({ ...prev, nodeLabels: !prev.nodeLabels }))}
+        />
+        <SelectOption
+          value="Secondary Labels"
+          isChecked={nodeOptions.nodeSecondaryLabels}
+          onClick={() => setNodeOptions(prev => ({ ...prev, nodeSecondaryLabels: !prev.nodeSecondaryLabels }))}
+        />
+        <SelectOption
+          value="Status"
+          isChecked={nodeOptions.statuses.length > 1}
+          onClick={() =>
+            setNodeOptions(prev => ({
+              ...prev,
+              statuses: prev.statuses.length > 1 ? DefaultNodeOptions.statuses : NODE_STATUSES
+            }))
+          }
+        />
+        <SelectOption
+          value="Decorators"
+          isChecked={nodeOptions.statusDecorators}
+          onClick={() =>
+            setNodeOptions(prev => ({
+              ...prev,
+              statusDecorators: !prev.statusDecorators,
+              showDecorators: !prev.showDecorators
+            }))
+          }
+        />
+        <SelectOption
+          value="Badges"
+          isChecked={nodeOptions.nodeBadges}
+          onClick={() => setNodeOptions(prev => ({ ...prev, nodeBadges: !prev.nodeBadges }))}
+        />
+        <SelectOption
+          value="Icons"
+          isChecked={nodeOptions.nodeIcons}
+          onClick={() => setNodeOptions(prev => ({ ...prev, nodeIcons: !prev.nodeIcons }))}
+        />
+        <SelectOption
+          value="Context Menus"
+          isChecked={nodeOptions.contextMenus}
+          onClick={() => setNodeOptions(prev => ({ ...prev, contextMenus: !prev.contextMenus }))}
+        />
+      </div>
+    );
+
+    return (
+      <Select
+        variant={SelectVariant.checkbox}
+        customContent={selectContent}
+        onToggle={() => setNodeOptionsOpen(prev => !prev)}
+        onSelect={() => {}}
+        isCheckboxSelectionBadgeHidden
+        isOpen={nodeOptionsOpen}
+        placeholderText="Node options"
+      />
+    );
+  };
+
+  const toggleNodeShape = (shape: NodeShape): void => {
+    const index = nodeOptions.shapes.indexOf(shape);
+    if (index >= 0) {
+      setNodeOptions(prev => ({
+        ...prev,
+        shapes: [...prev.shapes.slice(0, index), ...prev.shapes.slice(index + 1)]
+      }));
+    } else {
+      setNodeOptions(prev => ({
+        ...prev,
+        shapes: [...prev.shapes, shape]
+      }));
+    }
+  };
+
+  const renderNodeShapesDropdown = () => {
+    const selectContent = (
+      <div>
+        {NODE_SHAPES.map(shape => (
+          <SelectOption
+            key={shape}
+            value={shape}
+            isChecked={nodeOptions.shapes.includes(shape)}
+            onClick={() => toggleNodeShape(shape)}
+          />
+        ))}
+      </div>
+    );
+
+    return (
+      <Select
+        variant={SelectVariant.checkbox}
+        customContent={selectContent}
+        onToggle={() => setNodeShapesOpen(prev => !prev)}
+        onSelect={() => {}}
+        isCheckboxSelectionBadgeHidden
+        isOpen={nodeShapesOpen}
+        placeholderText="Node shapes"
+      />
+    );
+  };
+
+  React.useEffect(() => {
+    const currentModel = controller.toModel();
+    const edges = currentModel.edges;
+    if (edges.length) {
+      const updatedEdges: EdgeModel[] = edges.map((edge, index) => ({
+        ...edge,
+        ...generateEdge(index, edge.source, edge.target, edgeOptions)
+      }));
+      controller.fromModel({ edges: updatedEdges, nodes: currentModel.nodes });
+    }
+  }, [edgeOptions, controller]);
+
+  const renderEdgeOptionsDropdown = () => {
+    const selectContent = (
+      <div>
+        <SelectOption
+          value="Status"
+          isChecked={edgeOptions.edgeStatuses.length > 1}
+          onClick={() =>
+            setEdgeOptions(prev => ({
+              ...prev,
+              edgeStatuses: prev.edgeStatuses.length > 1 ? DefaultEdgeOptions.edgeStatuses : NODE_STATUSES
+            }))
+          }
+        />
+        <SelectOption
+          value="Styles"
+          isChecked={edgeOptions.edgeStyles.length > 1}
+          onClick={() =>
+            setEdgeOptions(prev => ({
+              ...prev,
+              edgeStyles: prev.edgeStyles.length > 1 ? DefaultEdgeOptions.edgeStyles : EDGE_STYLES
+            }))
+          }
+        />
+        <SelectOption
+          value="Animations"
+          isChecked={edgeOptions.edgeAnimations.length > 1}
+          onClick={() =>
+            setEdgeOptions(prev => ({
+              ...prev,
+              edgeAnimations: prev.edgeAnimations.length > 1 ? DefaultEdgeOptions.edgeAnimations : EDGE_ANIMATION_SPEEDS
+            }))
+          }
+        />
+        <SelectOption
+          value="Terminal types"
+          isChecked={edgeOptions.terminalTypes.length > 1}
+          onClick={() =>
+            setEdgeOptions(prev => ({
+              ...prev,
+              terminalTypes: prev.terminalTypes.length > 1 ? DefaultEdgeOptions.terminalTypes : EDGE_TERMINAL_TYPES
+            }))
+          }
+        />
+        <SelectOption
+          value="Tags"
+          isChecked={edgeOptions.edgeTags}
+          onClick={() => setEdgeOptions(prev => ({ ...prev, edgeTags: !prev.edgeTags }))}
+        />
+      </div>
+    );
+
+    return (
+      <Select
+        variant={SelectVariant.checkbox}
+        customContent={selectContent}
+        onToggle={() => setEdgeOptionsOpen(prev => !prev)}
+        onSelect={() => {}}
+        isCheckboxSelectionBadgeHidden
+        isOpen={edgeOptionsOpen}
+        placeholderText="Edge options"
+      />
+    );
+  };
+
   const saveModel = () => {
-    setSavedModel(vis.toModel());
+    setSavedModel(controller.toModel());
     setModelSaved(true);
     window.setTimeout(() => {
       setModelSaved(false);
@@ -238,7 +365,7 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
 
   const restoreLayout = () => {
     if (savedModel) {
-      const currentModel = vis.toModel();
+      const currentModel = controller.toModel();
       currentModel.graph = {
         ...currentModel.graph,
         ..._.pick(savedModel.graph, GRAPH_LAYOUT_OPTIONS)
@@ -253,7 +380,7 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
           ..._.pick(savedNode, NODE_LAYOUT_OPTIONS)
         };
       });
-      vis.fromModel(currentModel, false);
+      controller.fromModel(currentModel, false);
 
       if (savedModel.graph.layout !== layout) {
         setLayout(savedModel.graph.layout);
@@ -269,13 +396,13 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
       height: 100,
       data: {}
     };
-    const currentModel = vis.toModel();
+    const currentModel = controller.toModel();
     currentModel.nodes.push(newNode);
-    vis.fromModel(currentModel);
+    controller.fromModel(currentModel);
   };
 
   const removeSelectedNode = () => {
-    const currentModel = vis.toModel();
+    const currentModel = controller.toModel();
     const selectedIndex = currentModel.nodes.findIndex(n => n.id === selectedIds[0]);
     currentModel.nodes = [
       ...currentModel.nodes.slice(0, selectedIndex),
@@ -298,9 +425,55 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
         }
       });
 
-    vis.fromModel(currentModel);
+    controller.fromModel(currentModel);
     setSelectedIds([]);
   };
+
+  const updateValue = (value: number, min: number, max: number, setter: any): void => {
+    if (value >= min && value <= max) {
+      setter(value);
+    }
+  };
+
+  const contextToolbar = (
+    <>
+      <ToolbarItem>
+        <Flex wrap="no-wrap">
+          <span>Nodes:</span>
+          <TextInput
+            aria-label="nodes"
+            type="number"
+            value={numNodes || ''}
+            onChange={(val: string) => (val ? updateValue(parseInt(val), 0, 9999, setNumNodes) : setNumNodes(0))}
+          />
+          <span>Edges:</span>
+          <TextInput
+            aria-label="edges"
+            type="number"
+            value={numEdges}
+            onChange={(val: string) => (val ? updateValue(parseInt(val), 0, 200, setNumEdges) : setNumEdges(0))}
+          />
+          <span>Groups:</span>
+          <TextInput
+            aria-label="groups"
+            type="number"
+            value={numGroups}
+            onChange={(val: string) => (val ? updateValue(parseInt(val), 0, 100, setNumGroups) : setNumGroups(0))}
+          />
+          <Button
+            variant="link"
+            isDisabled={numNodes === undefined || numNodes < 2 || numEdges === undefined || numGroups === undefined}
+            onClick={() => setCreationCounts({ numNodes, numEdges, numGroups })}
+          >
+            Apply
+          </Button>
+        </Flex>
+      </ToolbarItem>
+      <ToolbarItem>{renderNodeOptionsDropdown()}</ToolbarItem>
+      <ToolbarItem>{renderNodeShapesDropdown()}</ToolbarItem>
+      <ToolbarItem>{renderEdgeOptionsDropdown()}</ToolbarItem>
+    </>
+  );
 
   const viewToolbar = (
     <>
@@ -337,22 +510,23 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
           controlButtons={createTopologyControlButtons({
             ...defaultControlButtonsOptions,
             zoomInCallback: action(() => {
-              vis.getGraph().scaleBy(4 / 3);
+              controller.getGraph().scaleBy(4 / 3);
             }),
             zoomOutCallback: action(() => {
-              vis.getGraph().scaleBy(0.75);
+              controller.getGraph().scaleBy(0.75);
             }),
             fitToScreenCallback: action(() => {
-              vis.getGraph().fit(80);
+              controller.getGraph().fit(80);
             }),
             resetViewCallback: action(() => {
-              vis.getGraph().reset();
-              vis.getGraph().layout();
+              controller.getGraph().reset();
+              controller.getGraph().layout();
             }),
             legend: false
           })}
         />
       }
+      contextToolbar={contextToolbar}
       viewToolbar={viewToolbar}
       sideBar={useSidebar && topologySideBar}
       sideBarOpen={useSidebar && _.size(selectedIds) > 0}
@@ -364,29 +538,39 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis, useS
 };
 
 export const Topology = () => {
-  const vis: Visualization = getVisualization(getModel('Force'));
+  const controller = new Visualization();
+  controller.registerLayoutFactory(defaultLayoutFactory);
+  controller.registerComponentFactory(defaultComponentFactory);
+  controller.registerComponentFactory(stylesComponentFactory);
 
   return (
-    <VisualizationProvider controller={vis}>
-      <TopologyViewComponent useSidebar={false} vis={vis} />
+    <VisualizationProvider controller={controller}>
+      <TopologyViewComponent useSidebar={false} />
     </VisualizationProvider>
   );
 };
 
 export const WithSideBar = () => {
-  const vis: Visualization = getVisualization(getModel('Force'));
+  const controller = new Visualization();
+  controller.registerLayoutFactory(defaultLayoutFactory);
+  controller.registerComponentFactory(defaultComponentFactory);
+  controller.registerComponentFactory(stylesComponentFactory);
+
   return (
-    <VisualizationProvider controller={vis}>
-      <TopologyViewComponent useSidebar vis={vis} />
+    <VisualizationProvider controller={controller}>
+      <TopologyViewComponent useSidebar />
     </VisualizationProvider>
   );
 };
 
 export const WithResizableSideBar = () => {
-  const vis: Visualization = getVisualization(getModel('Force'));
+  const controller = new Visualization();
+  controller.registerLayoutFactory(defaultLayoutFactory);
+  controller.registerComponentFactory(defaultComponentFactory);
+  controller.registerComponentFactory(stylesComponentFactory);
   return (
-    <VisualizationProvider controller={vis}>
-      <TopologyViewComponent useSidebar vis={vis} sideBarResizable />
+    <VisualizationProvider controller={controller}>
+      <TopologyViewComponent useSidebar sideBarResizable />
     </VisualizationProvider>
   );
 };

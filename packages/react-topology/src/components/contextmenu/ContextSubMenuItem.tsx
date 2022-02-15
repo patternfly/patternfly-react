@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { DropdownMenu, DropdownItem } from '@patternfly/react-core';
+import { css } from '@patternfly/react-styles';
+import topologyStyles from '@patternfly/react-styles/css/components/Topology/topology-components';
 // FIXME fully qualified due to the effect of long build times on storybook
 import Popper from '../popper/Popper';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
@@ -19,7 +21,7 @@ const ContextSubMenuItem: React.FC<ContextSubMenuItemProps> = ({ label, children
     <>
       <DropdownItem
         {...other}
-        className="pf-topology-context-sub-menu"
+        className={css(topologyStyles.topologyContextSubMenu)}
         component={
           <button
             ref={nodeRef}
@@ -43,7 +45,7 @@ const ContextSubMenuItem: React.FC<ContextSubMenuItemProps> = ({ label, children
             }}
           >
             {label}
-            <AngleRightIcon className="pf-topology-context-sub-menu__arrow" />
+            <AngleRightIcon className={css(topologyStyles.topologyContextSubMenuArrow)} />
           </button>
         }
       />
@@ -81,7 +83,7 @@ const ContextSubMenuItem: React.FC<ContextSubMenuItemProps> = ({ label, children
             }
           }}
         >
-          <DropdownMenu className="pf-topology-context-menu__c-dropdown__menu" autoFocus>
+          <DropdownMenu className={css(topologyStyles.topologyContextMenuCDropdownMenu)} autoFocus>
             {children}
           </DropdownMenu>
         </div>

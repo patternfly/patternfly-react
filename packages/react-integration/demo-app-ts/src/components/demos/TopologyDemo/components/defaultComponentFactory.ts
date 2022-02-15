@@ -1,6 +1,5 @@
 import { ComponentType } from 'react';
-import { GraphElement, ComponentFactory, ModelKind, GraphComponent } from '@patternfly/react-topology';
-import Node from './DefaultNode';
+import { GraphElement, ComponentFactory, ModelKind, GraphComponent, DefaultNode } from '@patternfly/react-topology';
 import Edge from './DefaultEdge';
 import MultiEdge from './MultiEdge';
 import Group from './DefaultGroup';
@@ -22,7 +21,7 @@ const defaultComponentFactory: ComponentFactory = (
         case ModelKind.graph:
           return GraphComponent;
         case ModelKind.node:
-          return Node;
+          return DefaultNode;
         case ModelKind.edge:
           return Edge;
         default:

@@ -29,9 +29,67 @@ export interface NodeStyle {
   padding?: Padding;
 }
 
+export enum TopologyQuadrant {
+  upperLeft = 'upperLeft',
+  upperRight = 'upperRight',
+  lowerLeft = 'lowerLeft',
+  lowerRight = 'lowerRight'
+}
+
 export enum NodeShape {
-  circle,
-  rect
+  ellipse = 'ellipse',
+  rect = 'rect',
+  rhombus = 'rhombus',
+  trapezoid = 'trapezoid',
+  hexagon = 'hexagon',
+  octagon = 'octagon',
+  stadium = 'stadium'
+}
+
+export enum NodeStatus {
+  default = 'default',
+  info = 'info',
+  success = 'success',
+  warning = 'warning',
+  danger = 'danger'
+}
+
+export enum EdgeStyle {
+  default = 'default',
+  solid = 'solid',
+  dotted = 'dotted',
+  dashed = 'dashed',
+  dashedMd = 'dashedMd',
+  dashedLg = 'dashedLg',
+  dashedXl = 'dashedXl'
+}
+
+export enum EdgeAnimationSpeed {
+  none = 'none',
+  slow = 'slow',
+  mediumSlow = 'mediumSlow',
+  medium = 'medium',
+  mediumFast = 'mediumFast',
+  fast = 'fast'
+}
+
+export enum EdgeTerminalType {
+  none = 'none',
+  directional = 'directional',
+  directionalAlt = 'directionalAlt',
+  circle = 'circle',
+  square = 'square',
+  cross = 'cross'
+}
+
+export enum LabelPosition {
+  right,
+  bottom
+}
+
+export enum BadgeLocation {
+  inner,
+  below
 }
 
 export enum ModelKind {
@@ -57,12 +115,15 @@ export interface NodeModel extends ElementModel {
   height?: number;
   group?: boolean;
   shape?: NodeShape;
+  status?: NodeStatus;
   collapsed?: boolean;
 }
 
 export interface EdgeModel extends ElementModel {
   source?: string;
   target?: string;
+  edgeStyle?: EdgeStyle;
+  animationSpeed?: EdgeAnimationSpeed;
   bendpoints?: PointTuple[];
 }
 
@@ -135,8 +196,11 @@ export interface Node<E extends NodeModel = NodeModel, D = any> extends GraphEle
   setCollapsed(collapsed: boolean): void;
   getNodeShape(): NodeShape;
   setNodeShape(shape: NodeShape): void;
+  getNodeStatus(): NodeStatus;
+  setNodeStatus(shape: NodeStatus): void;
   getSourceEdges(): Edge[];
   getTargetEdges(): Edge[];
+  getAllNodeChildren(): Node[]; // Return all children regardless of collapse status or child groups' collapsed status
   isDimensionsInitialized(): boolean;
   isPositioned(): boolean;
 }
@@ -145,6 +209,10 @@ export interface Edge<E extends EdgeModel = EdgeModel, D = any> extends GraphEle
   getSource(): Node;
   setSource(source: Node): void;
   getTarget(): Node;
+  getEdgeStyle(): EdgeStyle;
+  setEdgeStyle(edgeStyle: EdgeStyle): void;
+  getEdgeAnimationSpeed(): EdgeAnimationSpeed;
+  setEdgeAnimationSpeed(speed: EdgeAnimationSpeed): void;
   setTarget(target: Node): void;
   getSourceAnchorNode(): Node;
   getTargetAnchorNode(): Node;

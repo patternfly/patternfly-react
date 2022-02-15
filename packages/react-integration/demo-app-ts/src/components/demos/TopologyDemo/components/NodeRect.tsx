@@ -35,7 +35,7 @@ const NodeRect: React.FC<NodeRectProps> = ({
   const refs = useCombineRefs<SVGRectElement>(dragNodeRef, dndDragRef, dndDropRef, anchorRef);
   const { width, height } = element.getDimensions();
 
-  let fill = 'grey';
+  let fill = 'lightgrey';
   if (canDrop && hover) {
     fill = 'lightgreen';
   } else if (canDrop && droppable) {

@@ -26,7 +26,7 @@ import defaultLayoutFactory from './layouts/defaultLayoutFactory';
 import data from './data/group-types';
 import GroupHull from './components/GroupHull';
 import Group from './components/DefaultGroup';
-import Node from './components/DefaultNode';
+import DemoDefaultNode from './components/DemoDefaultNode';
 import defaultComponentFactory from './components/defaultComponentFactory';
 
 import '@patternfly/patternfly/patternfly.css';
@@ -107,7 +107,7 @@ const getVisualization = (model: Model): Visualization => {
       return withDragNode({ canCancel: false })(Group);
     }
     if (kind === ModelKind.node) {
-      return withDragNode({ canCancel: false })(withSelection()(Node));
+      return withDragNode({ canCancel: false })(withSelection()(DemoDefaultNode));
     }
     return undefined;
   });

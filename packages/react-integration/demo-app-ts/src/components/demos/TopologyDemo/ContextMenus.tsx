@@ -14,7 +14,7 @@ import {
   ComponentFactory
 } from '@patternfly/react-topology';
 import defaultComponentFactory from './components/defaultComponentFactory';
-import DefaultNode from './components/DefaultNode';
+import DemoDefaultNode from './components/DemoDefaultNode';
 import withTopologySetup from './utils/withTopologySetup';
 
 const contextMenuItem = (label: string, i: number): React.ReactElement => {
@@ -62,7 +62,7 @@ export const ContextMenuOnNode = withTopologySetup(() => {
         return withPanZoom()(GraphComponent);
       }
       if (kind === ModelKind.node) {
-        return withDragNode()(withContextMenu(() => defaultMenu)(DefaultNode));
+        return withDragNode()(withContextMenu(() => defaultMenu)(DemoDefaultNode));
       }
       return undefined;
     }, [])

@@ -15,7 +15,7 @@ import {
   ComponentFactory
 } from '@patternfly/react-topology';
 import defaultComponentFactory from './components/defaultComponentFactory';
-import DefaultNode from './components/DefaultNode';
+import DemoDefaultNode from './components/DemoDefaultNode';
 import GroupHull from './components/GroupHull';
 import withTopologySetup from './utils/withTopologySetup';
 
@@ -62,7 +62,7 @@ export const Dnd = withTopologySetup(() => {
               dropResult.appendChild(props.element);
             }
           }
-        })(DefaultNode);
+        })(DemoDefaultNode);
       }
       return undefined;
     }, [])
@@ -172,7 +172,7 @@ export const DndShiftRegroup = withTopologySetup(() => {
               dropResult.appendChild(props.element);
             }
           }
-        })(DefaultNode);
+        })(DemoDefaultNode);
       }
       return undefined;
     }, [])

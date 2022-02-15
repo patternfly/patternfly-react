@@ -64,7 +64,7 @@ exports[`Check dark page against snapshot 1`] = `
         id="page-sidebar"
       >
         <div
-          className="pf-c-page__sidebar-body"
+          className="pf-topology-side-bar__body"
         >
           Navigation
         </div>
@@ -180,7 +180,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         id="page-sidebar"
       >
         <div
-          className="pf-c-page__sidebar-body"
+          className="pf-topology-side-bar__body"
         />
       </div>
     </PageSidebar>
@@ -294,7 +294,7 @@ exports[`Check page to verify breadcrumb is created - PageBreadcrumb syntax 1`] 
         id="page-sidebar"
       >
         <div
-          className="pf-c-page__sidebar-body"
+          className="pf-topology-side-bar__body"
         />
       </div>
     </PageSidebar>
@@ -573,7 +573,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
         id="page-sidebar"
       >
         <div
-          className="pf-c-page__sidebar-body"
+          className="pf-topology-side-bar__body"
         />
       </div>
     </PageSidebar>
@@ -851,7 +851,7 @@ exports[`Check page to verify grouped nav and breadcrumb - new components syntax
         id="page-sidebar"
       >
         <div
-          className="pf-c-page__sidebar-body"
+          className="pf-topology-side-bar__body"
         />
       </div>
     </PageSidebar>
@@ -1410,7 +1410,7 @@ exports[`Check page to verify grouped nav and breadcrumb - old / props syntax 1`
         id="page-sidebar"
       >
         <div
-          className="pf-c-page__sidebar-body"
+          className="pf-topology-side-bar__body"
         />
       </div>
     </PageSidebar>
@@ -1897,7 +1897,7 @@ exports[`Check page to verify nav is created - PageNavigation syntax 1`] = `
         id="page-sidebar"
       >
         <div
-          className="pf-c-page__sidebar-body"
+          className="pf-topology-side-bar__body"
         />
       </div>
     </PageSidebar>
@@ -2252,7 +2252,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
         id="page-sidebar"
       >
         <div
-          className="pf-c-page__sidebar-body"
+          className="pf-topology-side-bar__body"
         />
       </div>
     </PageSidebar>
@@ -2526,7 +2526,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         id="page-sidebar"
       >
         <div
-          className="pf-c-page__sidebar-body"
+          className="pf-topology-side-bar__body"
         >
           Navigation
         </div>

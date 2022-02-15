@@ -4,6 +4,7 @@ export { default as ElementContext } from './ElementContext';
 export * from './element-utils';
 export * from './geom-utils';
 export * from './svg-utils';
+export * from './style-utils';
 export { default as useCallbackRef } from './useCallbackRef';
 export { default as useCombineRefs } from './useCombineRefs';
 export { default as useHover } from './useHover';

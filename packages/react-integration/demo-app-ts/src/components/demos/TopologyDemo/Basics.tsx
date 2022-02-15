@@ -1,22 +1,17 @@
 import * as React from 'react';
 import {
-  action,
-  observer,
+  DefaultNode,
   Model,
   ModelKind,
   withDragNode,
   useComponentFactory,
   useModel,
-  useAnchor,
-  RectAnchor,
-  EllipseAnchor,
-  Node,
   ComponentFactory
 } from '@patternfly/react-topology';
 import defaultComponentFactory from './components/defaultComponentFactory';
-import DefaultNode from './components/DefaultNode';
 import withTopologySetup from './utils/withTopologySetup';
-import Dimensions from '@patternfly/react-topology/dist/esm/geom/Dimensions';
+import CustomCircleNode from './components/CustomCircleNode';
+import CustomRectNode from './components/CustomRectNode';
 
 export const SingleNode = withTopologySetup(() => {
   useComponentFactory(defaultComponentFactory);
@@ -246,43 +241,15 @@ const groupStory = (groupType: string): React.FC => () => {
 export const Group = withTopologySetup(groupStory('group'));
 export const GroupHull = withTopologySetup(groupStory('group-hull'));
 
-const CustomCircle: React.FC<{ element: Node }> = observer(({ element }) => {
-  useAnchor(EllipseAnchor);
-  React.useEffect(() => {
-    // init height
-    action(() => element.setDimensions(new Dimensions(40, 40)))();
-  }, [element]);
-  const r = element.getDimensions().width / 2;
-  return (
-    <circle
-      cx={r}
-      cy={r}
-      r={r}
-      fill="grey"
-      strokeWidth={1}
-      stroke="#333333"
-      onClick={() => {
-        const size = element.getDimensions().width === 40 ? 80 : 40;
-        action(() => element.setDimensions(new Dimensions(size, size)))();
-      }}
-    />
-  );
-});
-
-const CustomRect: React.FC = observer(() => {
-  useAnchor(RectAnchor);
-  return <rect x={0} y={0} width={100} height={20} fill="grey" strokeWidth={1} stroke="#333333" />;
-});
-
 export const AutoSizeNode = withTopologySetup(() => {
   useComponentFactory(defaultComponentFactory);
   useComponentFactory(
     React.useCallback<ComponentFactory>((kind, type) => {
       if (type === 'autoSize-circle') {
-        return CustomCircle;
+        return CustomCircleNode;
       }
       if (type === 'autoSize-rect') {
-        return CustomRect;
+        return CustomRectNode;
       }
       return undefined;
     }, [])
