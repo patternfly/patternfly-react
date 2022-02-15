@@ -59,6 +59,18 @@ const defaultKeyDownHandler = (args: DefaultKeyDownHandlerArgs) => (event: React
   }
 };
 
+const normalizeBetween = ({ value, min, max }: Pick<NumberInputProps, 'value' | 'min' | 'max'>) => {
+  let result = value;
+  if (min !== undefined && max !== undefined) {
+    result = Math.max(Math.min(value, max), min);
+  } else if (min === undefined && value <= min) {
+    result = min;
+  } else if (max === undefined && value >= max) {
+    result = max;
+  }
+  return result;
+};
+
 export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   value = 0,
   className,
@@ -83,6 +95,22 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   const numberInputUnit = <div className={css(styles.numberInputUnit)}>{unit}</div>;
   const keyDownHandler =
     inputProps && inputProps.onKeyDown ? inputProps.onKeyDown : defaultKeyDownHandler({ inputName, onMinus, onPlus });
+
+  const [state, setState] = React.useState(value);
+  React.useEffect(() => {
+    setState(value);
+  }, [value]);
+
+  const onUpdate = (evt: React.FormEvent<HTMLInputElement>) => {
+    setState(Number(evt.currentTarget.value));
+    onChange(evt);
+  };
+
+  const onBlur = (evt: React.FormEvent<HTMLInputElement>) => {
+    setState(normalizeBetween({ value: Number(evt.currentTarget.value), min, max }));
+    onChange(evt);
+  };
+
   return (
     <div
       className={css(styles.numberInput, className)}
@@ -99,7 +127,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
         <Button
           variant="control"
           aria-label={minusBtnAriaLabel}
-          isDisabled={isDisabled || value === min}
+          isDisabled={isDisabled || value <= min}
           onClick={evt => onMinus(evt, inputName)}
           {...minusBtnProps}
         >
@@ -110,19 +138,20 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
         <input
           className={css(styles.formControl)}
           type="number"
-          value={value}
+          value={state}
           name={inputName}
           aria-label={inputAriaLabel}
           {...(isDisabled && { disabled: isDisabled })}
-          {...(onChange && { onChange })}
+          {...(onChange && { onChange: onUpdate })}
           {...(!onChange && { readOnly: true })}
+          onBlur={onBlur}
           {...inputProps}
           onKeyDown={keyDownHandler}
         />
         <Button
           variant="control"
           aria-label={plusBtnAriaLabel}
-          isDisabled={isDisabled || value === max}
+          isDisabled={isDisabled || value >= max}
           onClick={evt => onPlus(evt, inputName)}
           {...plusBtnProps}
         >
