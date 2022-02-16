@@ -110,6 +110,26 @@
   fill: var(--pf-global--BackgroundColor--200);
 }
 
+.pf-topology__node__background.pf-m-info {
+  fill: var(--pf-global--primary-color--light-100);
+}
+
+.pf-topology__node__background.pf-m-success {
+  fill: var(--pf-global--success-color--100);
+}
+
+.pf-topology__node__background.pf-m-warning {
+  fill: var(--pf-global--warning-color--100);
+}
+
+.pf-topology__node__background.pf-m-danger {
+  fill: var(--pf-global--danger-color--100);
+}
+
+.pf-topology__node__background.pf-m-selected {
+  fill: var(--pf-global--active-color--100);
+}
+
 .pf-topology__node.pf-m-dragging .pf-topology__node__background {
   cursor: grab;
 }
@@ -146,6 +166,8 @@
 
 .pf-topology__node__decorator__bg {
   fill: var(--pf-global--BackgroundColor--light-100);
+  stroke: var(--pf-global--palette--black-300);
+  stroke-width: 1px;
 }
 
 .pf-topology__node__decorator__icon {
@@ -269,7 +291,7 @@
 }
 
 .pf-topology__group__background {
-  fill: var(--pf-global--BackgroundColor--200);
+  fill: var(--pf-global--BackgroundColor--light-300);
   stroke: var(--pf-global--palette--white);
   stroke-width: 5px;
 }

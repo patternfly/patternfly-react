@@ -131,6 +131,16 @@ export interface EdgeModel extends ElementModel {
 // Scale extent: [min scale, max scale]
 export type ScaleExtent = [number, number];
 
+export enum ScaleDetailsLevel {
+  high = 'high',
+  medium = 'medium',
+  low = 'low'
+}
+
+export type ScaleDetailsSettings = {
+  [key in ScaleDetailsLevel]: number;
+};
+
 export interface GraphModel extends ElementModel {
   layout?: string;
   x?: number;
@@ -239,6 +249,9 @@ export interface Graph<E extends GraphModel = GraphModel, D = any> extends Graph
   setScaleExtent(scaleExtent: ScaleExtent): void;
   getScale(): number;
   setScale(scale: number): void;
+  setDetailsLevelSettings(settings: ScaleDetailsSettings): void;
+  setDetailsLevel(level: ScaleDetailsLevel): void;
+  getDetailsLevel(): ScaleDetailsLevel;
   getLayout(): string | undefined;
   setLayout(type: string | undefined): void;
   layout(): void;
@@ -250,6 +263,7 @@ export interface Graph<E extends GraphModel = GraphModel, D = any> extends Graph
   scaleBy(scale: number, location?: Point): void;
   fit(padding?: number): void;
   panIntoView(element: Node, options?: { offset?: number; minimumVisible?: number }): void;
+  isNodeInView(element: Node, options?: { padding: number }): boolean;
 }
 
 export const isGraph = (element: GraphElement): element is Graph => element && element.getKind() === ModelKind.graph;

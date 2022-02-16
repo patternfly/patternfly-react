@@ -18,7 +18,6 @@ interface DecoratorTypes {
   circleRef?: React.Ref<SVGCircleElement>;
 }
 
-const FILTER_ID = 'DecoratorDropShadowFilterId';
 const HOVER_FILTER_ID = 'DecoratorDropShadowHoverFilterId';
 
 const Decorator: React.FunctionComponent<DecoratorTypes> = ({
@@ -52,7 +51,6 @@ const Decorator: React.FunctionComponent<DecoratorTypes> = ({
           }
         : null)}
     >
-      <SvgDropShadowFilter id={FILTER_ID} stdDeviation={1} floodOpacity={0.5} />
       <SvgDropShadowFilter id={HOVER_FILTER_ID} dy={3} stdDeviation={5} floodOpacity={0.5} />
       {showBackground && (
         <circle
@@ -62,7 +60,7 @@ const Decorator: React.FunctionComponent<DecoratorTypes> = ({
           cx={x}
           cy={y}
           r={radius}
-          filter={createSvgIdUrl(hover ? HOVER_FILTER_ID : FILTER_ID)}
+          filter={hover ? createSvgIdUrl(HOVER_FILTER_ID) : undefined}
         />
       )}
       <g transform={`translate(${x}, ${y})`}>

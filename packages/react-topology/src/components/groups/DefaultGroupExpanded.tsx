@@ -20,6 +20,10 @@ type DefaultGroupExpandedProps = {
   dropTarget?: boolean;
   dragging?: boolean;
   hover?: boolean;
+  label?: string; // Defaults to element.getLabel()
+  secondaryLabel?: string;
+  showLabel?: boolean; // Defaults to true
+  truncateLength?: number; // Defaults to 13
   badge?: string;
   badgeColor?: string;
   badgeTextColor?: string;
@@ -62,6 +66,10 @@ const DefaultGroupExpanded: React.FC<DefaultGroupExpandedProps> = ({
   selected,
   onSelect,
   hover,
+  label,
+  secondaryLabel,
+  showLabel,
+  truncateLength,
   dndDropRef,
   droppable,
   canDrop,
@@ -169,28 +177,32 @@ const DefaultGroupExpanded: React.FC<DefaultGroupExpandedProps> = ({
           <path ref={outlineRef} className={styles.topologyGroupBackground} d={locations.path} />
         </g>
       </Layer>
-      <NodeLabel
-        className={styles.topologyGroupLabel}
-        x={locations.labelLocation[0]}
-        y={locations.labelLocation[1] + hullPadding(locations.labelLocation) + 24}
-        paddingX={8}
-        paddingY={5}
-        dragRef={dragLabelRef}
-        status={element.getNodeStatus()}
-        badge={badge}
-        badgeColor={badgeColor}
-        badgeTextColor={badgeTextColor}
-        badgeBorderColor={badgeBorderColor}
-        badgeClassName={badgeClassName}
-        badgeLocation={badgeLocation}
-        onContextMenu={onContextMenu}
-        contextMenuOpen={contextMenuOpen}
-        hover={isHover || labelHover}
-        actionIcon={collapsible ? <CollapseIcon /> : undefined}
-        onActionIconClick={() => onCollapseChange(element, true)}
-      >
-        {element.getLabel()}
-      </NodeLabel>
+      {showLabel && (
+        <NodeLabel
+          className={styles.topologyGroupLabel}
+          x={locations.labelLocation[0]}
+          y={locations.labelLocation[1] + hullPadding(locations.labelLocation) + 24}
+          paddingX={8}
+          paddingY={5}
+          dragRef={dragLabelRef}
+          status={element.getNodeStatus()}
+          secondaryLabel={secondaryLabel}
+          truncateLength={truncateLength}
+          badge={badge}
+          badgeColor={badgeColor}
+          badgeTextColor={badgeTextColor}
+          badgeBorderColor={badgeBorderColor}
+          badgeClassName={badgeClassName}
+          badgeLocation={badgeLocation}
+          onContextMenu={onContextMenu}
+          contextMenuOpen={contextMenuOpen}
+          hover={isHover || labelHover}
+          actionIcon={collapsible ? <CollapseIcon /> : undefined}
+          onActionIconClick={() => onCollapseChange(element, true)}
+        >
+          {label || element.getLabel()}
+        </NodeLabel>
+      )}
     </g>
   );
 };

@@ -4,16 +4,19 @@ import Point from '../geom/Point';
 import Dimensions from '../geom/Dimensions';
 import { DEFAULT_LAYERS } from '../const';
 import {
-  Graph,
   Edge,
-  Node,
+  Graph,
+  GRAPH_POSITION_CHANGE_EVENT,
   GraphModel,
-  ModelKind,
-  isNode,
   isEdge,
+  isNode,
   Layout,
+  ModelKind,
+  Node,
+  NodeModel,
   ScaleExtent,
-  GRAPH_POSITION_CHANGE_EVENT
+  ScaleDetailsLevel,
+  ScaleDetailsSettings
 } from '../types';
 import BaseElement from './BaseElement';
 
@@ -39,6 +42,9 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
   @observable.ref
   private scaleExtent: ScaleExtent = [0.25, 4];
 
+  @observable
+  private detailsLevel?: ScaleDetailsLevel = ScaleDetailsLevel.high;
+
   @computed
   private get edges(): Edge[] {
     return this.getChildren().filter(isEdge);
@@ -48,6 +54,12 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
   private get nodes(): Node[] {
     return this.getChildren().filter(isNode);
   }
+
+  private scaleDetailsSettings: ScaleDetailsSettings = {
+    high: 1.0,
+    medium: 0.5,
+    low: 0.3
+  };
 
   getKind(): ModelKind {
     return ModelKind.graph;
@@ -71,6 +83,27 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
       // eslint-disable-next-line no-empty
     } catch (e) {}
     this.scaleExtent = scaleExtent;
+  }
+
+  setDetailsLevelSettings(settings: ScaleDetailsSettings): void {
+    this.scaleDetailsSettings = settings;
+    let detailsLevel = ScaleDetailsLevel.high;
+    if (this.scaleDetailsSettings) {
+      if (this.scale <= this.scaleDetailsSettings[ScaleDetailsLevel.low]) {
+        detailsLevel = ScaleDetailsLevel.low;
+      } else if (this.scale <= this.scaleDetailsSettings[ScaleDetailsLevel.medium]) {
+        detailsLevel = ScaleDetailsLevel.medium;
+      }
+    }
+    this.setDetailsLevel(detailsLevel);
+  }
+
+  getDetailsLevel(): ScaleDetailsLevel {
+    return this.detailsLevel;
+  }
+
+  setDetailsLevel(level: ScaleDetailsLevel): void {
+    this.detailsLevel = level;
   }
 
   getBounds(): Rect {
@@ -150,6 +183,15 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
   setScale(scale: number): void {
     try {
       this.getController().fireEvent(GRAPH_POSITION_CHANGE_EVENT, { graph: this });
+      if (this.scaleDetailsSettings) {
+        let detailsLevel = ScaleDetailsLevel.high;
+        if (scale <= this.scaleDetailsSettings[ScaleDetailsLevel.low]) {
+          detailsLevel = ScaleDetailsLevel.low;
+        } else if (scale <= this.scaleDetailsSettings[ScaleDetailsLevel.medium]) {
+          detailsLevel = ScaleDetailsLevel.medium;
+        }
+        this.setDetailsLevel(detailsLevel);
+      }
       // eslint-disable-next-line no-empty
     } catch (e) {}
     this.scale = scale;
@@ -262,6 +304,18 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
       this.setBounds(new Rect(newLocation.x, newLocation.y, viewWidth, viewHeight));
     }
   };
+
+  isNodeInView(element: Node<NodeModel, any>, { padding = 0 }): boolean {
+    const graph = element.getGraph();
+    const { x: viewX, y: viewY, width: viewWidth, height: viewHeight } = graph.getBounds();
+    const { x, y, width, height } = element
+      .getBounds()
+      .clone()
+      .scale(graph.getScale())
+      .translate(viewX, viewY);
+
+    return x + width > -padding && x < viewWidth + padding && y + height > -padding && y < viewHeight + padding;
+  }
 
   setModel(model: E): void {
     super.setModel(model);
