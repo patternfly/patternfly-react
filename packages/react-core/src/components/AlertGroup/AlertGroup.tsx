@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { canUseDOM } from '../../helpers';
-import { Alert } from '../Alert';
 import { AlertGroupInline } from './AlertGroupInline';
 
 export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>, 'className'> {
@@ -15,8 +14,6 @@ export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>,
   isLiveRegion?: boolean;
   /** Determine where the alert is appended to */
   appendTo?: HTMLElement | (() => HTMLElement);
-  /** Max number to display before showing overflow, negative numbers will show all, default is 3 */
-  maxDisplayed?: number;
   /** Amount overflowed by */
   overflowedBy?: number;
   /** Function to call if user clicks on overflow message */
@@ -58,17 +55,17 @@ export class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState
   }
 
   render() {
-    const { className, children, isToast, isLiveRegion, maxDisplayed = 3, onOverflowClick, overflowMessage, ...props } = this.props;
-    let shownChildren = children;
-    // let overflow = 0;
-    // if (onOverflowClick && maxDisplayed > -1 && Array.isArray(children) && children.length > maxDisplayed) {
-    //   shownChildren = children.slice(0,maxDisplayed-1);
-    //   overflow = children.length - maxDisplayed + 1;
-    // }
+    const { className, children, isToast, isLiveRegion, onOverflowClick, overflowMessage, ...props } = this.props;
     const alertGroup = (
-      <AlertGroupInline onOverflowClick={onOverflowClick} className={className} isToast={isToast} isLiveRegion={isLiveRegion} overflowMessage={overflowMessage} {...props}>
-      {/* <AlertGroupInline onOverflowClick={onOverflowClick} className={className} isToast={isToast} isLiveRegion={isLiveRegion} overflowedBy={overflow} {...props}> */}
-        {shownChildren}
+      <AlertGroupInline
+        onOverflowClick={onOverflowClick}
+        className={className}
+        isToast={isToast}
+        isLiveRegion={isLiveRegion}
+        overflowMessage={overflowMessage}
+        {...props}
+      >
+        {children}
       </AlertGroupInline>
     );
     if (!this.props.isToast) {

@@ -8,7 +8,6 @@ export const AlertGroupInline: React.FunctionComponent<AlertGroupProps> = ({
   children,
   isToast,
   isLiveRegion,
-  overflowedBy,
   onOverflowClick,
   overflowMessage,
   ...rest
@@ -22,13 +21,13 @@ export const AlertGroupInline: React.FunctionComponent<AlertGroupProps> = ({
     {React.Children.toArray(children).map((Alert: React.ReactNode, index: number) => (
       <li key={index}>{Alert}</li>
     ))}
-    {overflowMessage &&
-    // {overflowedBy > 0 &&
+    {overflowMessage && (
       <li>
-        <button onClick={onOverflowClick} className={css(styles.alertGroupOverflowButton)}>{overflowMessage}</button>
-        {/* <button onClick={onOverflowClick} className={css(styles.alertGroupOverflowButton)}>{overflowMessage || "View " + overflowedBy + " more alerts"}</button> */}
+        <button onClick={onOverflowClick} className={css(styles.alertGroupOverflowButton)}>
+          {overflowMessage}
+        </button>
       </li>
-    }
+    )}
   </ul>
 );
 AlertGroupInline.displayName = 'AlertGroupInline';
