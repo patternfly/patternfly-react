@@ -35,6 +35,8 @@ type StyleNodeProps = {
   getShapeDecoratorCenter?: (quadrant: TopologyQuadrant, node: Node, radius?: number) => { x: number; y: number };
   showLabel?: boolean; // Defaults to true
   showStatusDecorator?: boolean; // Defaults to false
+  regrouping?: boolean;
+  dragging?: boolean;
 } & WithContextMenuProps &
   WithDragNodeProps &
   WithSelectionProps;
@@ -116,6 +118,8 @@ const StyleNode: React.FC<StyleNodeProps> = ({
   onContextMenu,
   contextMenuOpen,
   showLabel,
+  dragging,
+  regrouping,
   ...rest
 }) => {
   const data = element.getData();
@@ -136,7 +140,10 @@ const StyleNode: React.FC<StyleNodeProps> = ({
       element={element}
       {...rest}
       {...passedData}
+      dragging={dragging}
+      regrouping={regrouping}
       showLabel={detailsLevel === ScaleDetailsLevel.high && showLabel}
+      showStatusBackground={detailsLevel === ScaleDetailsLevel.low}
       showStatusDecorator={detailsLevel === ScaleDetailsLevel.high && passedData.showStatusDecorator}
       onContextMenu={data.showContextMenu ? onContextMenu : undefined}
       contextMenuOpen={contextMenuOpen}
@@ -144,7 +151,7 @@ const StyleNode: React.FC<StyleNodeProps> = ({
         detailsLevel === ScaleDetailsLevel.high && renderDecorators(element, passedData, rest.getShapeDecoratorCenter)
       }
     >
-      {renderIcon(passedData, element)}
+      {detailsLevel !== ScaleDetailsLevel.low && renderIcon(passedData, element)}
     </DefaultNode>
   );
 };

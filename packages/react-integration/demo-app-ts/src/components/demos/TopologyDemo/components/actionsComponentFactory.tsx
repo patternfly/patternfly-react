@@ -65,12 +65,12 @@ const actionsComponentFactory: ComponentFactory = (
   }
   if (type === 'default-node' || type === 'node') {
     return withDndDrop<any, any, { droppable?: boolean; hover?: boolean; canDrop?: boolean }, NodeComponentProps>(
-      nodeDropTargetSpec
+      nodeDropTargetSpec()
     )(withDragNode(nodeDragSourceSpec(type))(withSelection()(withContextMenu(() => defaultMenu)(DefaultNode))));
   }
   if (type === 'custom-node') {
     return withDndDrop<any, any, { droppable?: boolean; hover?: boolean; canDrop?: boolean }, NodeComponentProps>(
-      nodeDropTargetSpec
+      nodeDropTargetSpec()
     )(withDragNode(nodeDragSourceSpec(type))(withSelection()(withContextMenu(() => defaultMenu)(CustomPathNode))));
   }
   return undefined;

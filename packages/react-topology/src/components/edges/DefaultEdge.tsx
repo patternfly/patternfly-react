@@ -1,7 +1,13 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
 import { Edge, EdgeTerminalType, NodeStatus } from '../../types';
-import { WithContextMenuProps, WithRemoveConnectorProps, WithSelectionProps } from '../../behavior';
+import {
+  WithContextMenuProps,
+  WithRemoveConnectorProps,
+  WithSelectionProps,
+  WithSourceDragProps,
+  WithTargetDragProps
+} from '../../behavior';
 import { useHover } from '../../utils';
 import { Layer } from '../layers';
 import { css } from '@patternfly/react-styles';
@@ -27,19 +33,23 @@ type BaseEdgeProps = {
   tagClass?: string;
   tagStatus?: NodeStatus;
 } & WithRemoveConnectorProps &
+  WithSourceDragProps &
+  WithTargetDragProps &
   WithSelectionProps &
   Partial<WithContextMenuProps>;
 
 const BaseEdge: React.FC<BaseEdgeProps> = ({
   element,
   dragging,
+  sourceDragRef,
+  targetDragRef,
   animationDuration,
   onShowRemoveConnector,
   onHideRemoveConnector,
-  startTerminalType,
+  startTerminalType = EdgeTerminalType.none,
   startTerminalClass,
   startTerminalStatus,
-  endTerminalType,
+  endTerminalType = EdgeTerminalType.directional,
   endTerminalClass,
   endTerminalStatus,
   tag,
@@ -112,6 +122,7 @@ const BaseEdge: React.FC<BaseEdgeProps> = ({
           className={startTerminalClass}
           isTarget={false}
           edge={element}
+          dragRef={sourceDragRef}
           terminalType={startTerminalType}
           status={startTerminalStatus}
           highlight={dragging || hover}
@@ -119,6 +130,7 @@ const BaseEdge: React.FC<BaseEdgeProps> = ({
         <DefaultConnectorTerminal
           className={endTerminalClass}
           isTarget
+          dragRef={targetDragRef}
           edge={element}
           terminalType={endTerminalType}
           status={endTerminalStatus}

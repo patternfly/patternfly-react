@@ -209,7 +209,7 @@ export const createStatusNodeShapes = (
   showStatusDecorator?: boolean,
   statusDecoratorTooltip?: React.ReactNode
 ): NodeModel[] =>
-  Object.values(NodeShape).reduce((nodes: NodeModel[], shape: string | NodeShape, index) => {
+  NODE_SHAPES.reduce((nodes: NodeModel[], shape: string | NodeShape, index) => {
     nodes.push(
       ...createStatusNodes(
         shape as NodeShape,

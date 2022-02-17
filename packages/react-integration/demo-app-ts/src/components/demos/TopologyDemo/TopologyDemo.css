@@ -15,6 +15,10 @@
   outline: none;
 }
 
+.pf-ri__topology-demo .pf-c-toolbar {
+  --pf-c-toolbar__expandable-content--lg--PaddingBottom: 0;
+  --pf-c-toolbar--PaddingBottom: 0;
+}
 .pf-ri__topology-demo .pf-c-toolbar__item .pf-l-flex {
   --pf-l-flex--FlexWrap: no-wrap;
 }
@@ -52,4 +56,11 @@
 
 .pf-ri-topology__node__background.pf-m-drop-target {
   fill: var(--pf-global--palette--light-blue-200);
+}
+
+.pf-c-page__main-section#\/topology-demo-page-section {
+  --pf-c-page__main-section--PaddingTop: 0;
+  --pf-c-page__main-section--PaddingRight: 0;
+  --pf-c-page__main-section--PaddingLeft: 0;
+  --pf-c-page__main-section--PaddingBottom: 0;
 }
