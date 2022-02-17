@@ -34,7 +34,6 @@ section: developer-resources
   - Updated editable label structure to increase click area ([#6918](https://github.com/patternfly/patternfly-react/pull/6918))
 - **Menu:** 
   - Updated to account for initial drill in state ([#6870](https://github.com/patternfly/patternfly-react/pull/6870))
-- **Menu:**
   - Updated to allow drilldown menu functions ([#6872](https://github.com/patternfly/patternfly-react/pull/6872))
 - **Menu toggle:**
   - Added full height variation ([#6869](https://github.com/patternfly/patternfly-react/pull/6869))
@@ -61,12 +60,12 @@ section: developer-resources
   - Added ability to do typehead with text input group, added to autocomplete demo ([#6868](https://github.com/patternfly/patternfly-react/pull/6868))
 - **Time picker:** 
   - Updated to apply `includeSeconds` when making options ([#6865](https://github.com/patternfly/patternfly-react/pull/6865))
- - Removed automatic validation from `onChange` event ([#6884](https://github.com/patternfly/patternfly-react/pull/6884))
+  - Removed automatic validation from `onChange` event ([#6884](https://github.com/patternfly/patternfly-react/pull/6884))
 - **Tooltip:**
   - Added diagonal tooltip positioning ([#6887](https://github.com/patternfly/patternfly-react/pull/6887))
 - **Toolbar:**
   - Updated toolbar examples and demos to use search input ([#6728](https://github.com/patternfly/patternfly-react/pull/6728))
- - Fixed documentation build error ([#6937](https://github.com/patternfly/patternfly-react/pull/6937))
+  - Fixed documentation build error ([#6937](https://github.com/patternfly/patternfly-react/pull/6937))
 
   ### Catalog view extension
   - Updated so `VerticalTabsTab` takes a custom base component ([#6901](https://github.com/patternfly/patternfly-react/pull/6901))
@@ -77,7 +76,7 @@ section: developer-resources
   - Moved expand/collapse all from toolbar to table header in demo ([#6914](https://github.com/patternfly/patternfly-react/pull/6914))
   - Updated to use `colgroup` and nested `cols` in composable table ([#6724](https://github.com/patternfly/patternfly-react/pull/6724))
 
-### Topology:**
+### Topology
   - Added topology component styles ([#6839](https://github.com/patternfly/patternfly-react/pull/6839))
 
 ### Other
