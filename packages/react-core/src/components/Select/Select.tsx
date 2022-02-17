@@ -460,9 +460,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     }
     if (!typeaheadFilteredChildren) {
       typeaheadFilteredChildren = [];
-    } else if (typeaheadFilteredChildren.length === 1 && loadingVariant !== undefined) {
-      // if view more button is only item, set typeaheadFilteredChildren to am empty array
-      typeaheadFilteredChildren = [];
     }
     if (typeaheadFilteredChildren.length === 0) {
       !isCreatable &&
