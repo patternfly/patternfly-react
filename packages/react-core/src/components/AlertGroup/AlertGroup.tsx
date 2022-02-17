@@ -14,8 +14,6 @@ export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>,
   isLiveRegion?: boolean;
   /** Determine where the alert is appended to */
   appendTo?: HTMLElement | (() => HTMLElement);
-  /** Amount overflowed by */
-  overflowedBy?: number;
   /** Function to call if user clicks on overflow message */
   onOverflowClick?: () => void;
   /** Custom text to show for the overflow message */

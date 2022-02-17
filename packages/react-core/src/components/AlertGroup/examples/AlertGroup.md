@@ -79,7 +79,7 @@ class ToastAlertGroup extends React.Component {
 ```
 
 ### Toast alert group with overflow capture
-After a specified number of alerts displayed is reached, we will see an overflow message instead of new alerts.
+After a specified number of alerts displayed is reached, we will see an overflow message instead of new alerts. Alerts asynchronously appended into dynamic AlertGroups with `isLiveRegion` will be announced to assistive technology at the moment the change happens. When the overflow message appears or is updated in AlertGroups with `isLiveRegion`, the `View 1 more alert` text will be read, but the alert message will not be read. screen reader user or keyboard user will need a way to navigate to and reveal the hidden alerts before they disappear. Alternatively, there should be a place that notifications or alerts are collected to be viewed or read later.
 ```js
 import React from 'react';
 import { Alert, AlertGroup, AlertActionCloseButton, AlertVariant, InputGroup } from '@patternfly/react-core';
@@ -93,11 +93,12 @@ class ToastAlertGroup extends React.Component {
       showAll: false
     };
     this.getOverflowMessage = (alertsNumber, showAll = this.state.showAll) => {
-      if (alertsNumber > this.state.maxDisplayed) {
+      const overflow = alertsNumber - this.state.maxDisplayed;
+      if (overflow > 0) {
         if (showAll) {
-          return "Hide " + (alertsNumber - this.state.maxDisplayed) + " alerts";
+          return "Hide " + (overflow) + " alerts";
         }
-        return "View " + (alertsNumber - this.state.maxDisplayed) + " more alerts";
+        return "View " + (overflow) + " more alerts";
       }
       return '';
     };
@@ -224,11 +225,12 @@ class SingularAdditiveAlertGroup extends React.Component {
       showAll: false
     };
     this.getOverflowMessage = (alertsNumber, showAll = this.state.showAll) => {
-      if (alertsNumber > this.state.maxDisplayed) {
+      const overflow = alertsNumber - this.state.maxDisplayed;
+      if (overflow > 0) {
         if (showAll) {
-          return "Hide " + (alertsNumber - this.state.maxDisplayed) + " alerts";
+          return "Hide " + (overflow) + " alerts";
         }
-        return "View " + (alertsNumber - this.state.maxDisplayed) + " more alerts";
+        return "View " + (overflow) + " more alerts";
       }
       return '';
     };

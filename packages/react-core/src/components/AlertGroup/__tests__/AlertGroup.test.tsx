@@ -28,6 +28,21 @@ test('Alert Group works with n children', () => {
   expect(view).toBeTruthy();
 });
 
+test('Alert group overflow shows up', () => {
+  const overflowMessage = "View 2 more alerts";
+  const onOverflowClick = jest.fn();
+  const wrapper = mount(
+    <AlertGroup overflowMessage={overflowMessage} onOverflowClick={onOverflowClick}>
+      <Alert variant="danger" title="alert title" />
+    </AlertGroup>
+  )
+  expect(wrapper.find('.pf-c-alert-group > li')).toHaveLength(2);
+  expect(wrapper.find('.pf-c-alert-group__overflow-button').text()).toContain(overflowMessage);
+  expect(wrapper).toMatchSnapshot();
+  wrapper.find('.pf-c-alert-group__overflow-button').simulate('click');
+  expect(onOverflowClick).toBeCalled();
+});
+
 test('Standard Alert Group is not a toast alert group', () => {
   const wrapper = mount(
     <AlertGroup>
