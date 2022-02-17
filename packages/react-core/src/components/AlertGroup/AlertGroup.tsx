@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { canUseDOM } from '../../helpers';
+import { Alert } from '../Alert';
 import { AlertGroupInline } from './AlertGroupInline';
 
 export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>, 'className'> {
@@ -14,6 +15,10 @@ export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>,
   isLiveRegion?: boolean;
   /** Determine where the alert is appended to */
   appendTo?: HTMLElement | (() => HTMLElement);
+  /** Max number to display before showing overflow, default is 3 */
+  maxDisplayed?: number;
+  /** Amount overflowed by */
+  overflowedBy?: number;
 }
 
 interface AlertGroupState {
@@ -49,10 +54,16 @@ export class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState
   }
 
   render() {
-    const { className, children, isToast, isLiveRegion, ...props } = this.props;
+    const { className, children, isToast, isLiveRegion, maxDisplayed = 3, ...props } = this.props;
+    let shownChildren = children;
+    let overflow = 0;
+    if (Array.isArray(children) && children.length > maxDisplayed) {
+      shownChildren = children.slice(0,maxDisplayed);
+      overflow = children.length - maxDisplayed;
+    }
     const alertGroup = (
-      <AlertGroupInline className={className} isToast={isToast} isLiveRegion={isLiveRegion} {...props}>
-        {children}
+      <AlertGroupInline className={className} isToast={isToast} isLiveRegion={isLiveRegion} overflowedBy={overflow} {...props}>
+        {shownChildren}
       </AlertGroupInline>
     );
     if (!this.props.isToast) {
