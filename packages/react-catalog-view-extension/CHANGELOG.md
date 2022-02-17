@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.49.4 (2022-02-17)
+
+
+### Bug Fixes
+
+* **Select:** Do not filter out view more button on filter ([#6848](https://github.com/patternfly/patternfly-react/issues/6848)) ([6c7ac8a](https://github.com/patternfly/patternfly-react/commit/6c7ac8a5e287670d7469ecc0ef137bc33583e739))
+
+
+
+
+
 ## 4.49.3 (2022-02-16)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension
