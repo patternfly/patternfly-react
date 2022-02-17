@@ -78,6 +78,84 @@ class ToastAlertGroup extends React.Component {
 }
 ```
 
+### Toast alert group with overflow capture
+After a specified number of alerts displayed is reached, we will see an overflow message instead of new alerts.
+```js
+import React from 'react';
+import { Alert, AlertGroup, AlertActionCloseButton, AlertVariant, InputGroup } from '@patternfly/react-core';
+class ToastAlertGroup extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      alerts: [],
+      maxDisplayed: "4",
+      overflowMessage: '',
+      showAll: false
+    };
+    this.getOverflowMessage = (alertsNumber, showAll = this.state.showAll) => {
+      if (alertsNumber > this.state.maxDisplayed) {
+        if (showAll) {
+          return "Hide " + (alertsNumber - this.state.maxDisplayed) + " alerts";
+        }
+        return "View " + (alertsNumber - this.state.maxDisplayed) + " more alerts";
+      }
+      return '';
+    }
+    this.addAlert = (title, variant, key) => {
+      this.setState({
+        ...this.state,
+        alerts: [ ...this.state.alerts, { title: title, variant: variant, key }],
+        overflowMessage: this.getOverflowMessage(this.state.alerts.length + 1)
+      });
+    };
+    this.removeAlert = key => {
+      const newAlerts = [...this.state.alerts.filter(el => el.key !== key)];
+      this.setState({
+        ...this.state,
+        alerts: newAlerts,
+        overflowMessage: this.getOverflowMessage(newAlerts.length)
+      });
+    };
+  }
+  render() {
+    const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
+    const getUniqueId = () => (new Date().getTime());
+    const addSuccessAlert = () => { this.addAlert('Toast success alert', 'success', getUniqueId()) };
+    const addDangerAlert = () => { this.addAlert('Toast danger alert', 'danger', getUniqueId()) };
+    const addInfoAlert = () => { this.addAlert('Toast info alert', 'info', getUniqueId()) };
+    const onOverflowClick = () => { console.log(this.state.alerts); this.setState({
+      ...this.state,
+      overflowMessage: this.getOverflowMessage(this.state.alerts.length, !this.state.showAll),
+      showAll: !this.state.showAll
+    })};
+    return (
+      <React.Fragment>
+        <InputGroup style={{ marginBottom: '16px' }}>
+          <button onClick={addSuccessAlert} type="button" className={btnClasses}>Add toast success alert</button>
+          <button onClick={addDangerAlert} type="button" className={btnClasses}>Add toast danger alert</button>
+          <button onClick={addInfoAlert} type="button" className={btnClasses}>Add toast info alert</button>
+        </InputGroup>
+        <AlertGroup isToast isLiveRegion onOverflowClick={onOverflowClick} maxDisplayed={this.state.maxDisplayed} overflowMessage={this.state.overflowMessage}>
+          {this.state.alerts.slice(0, this.state.showAll ? this.state.alerts.length : this.state.maxDisplayed).map(({key, variant, title}) => (
+            <Alert
+              variant={AlertVariant[variant]}
+              title={title}
+              actionClose={
+                <AlertActionCloseButton
+                  title={title}
+                  variantLabel={`${variant} alert`}
+                  onClose={() => this.removeAlert(key)}
+                />
+              }
+              key={key} />
+          ))}
+        </AlertGroup>
+      </React.Fragment>
+    );
+  }
+}
+```
+
 ### Singular dynamic alert group
 This alert will appear in the page, most likely in response to a user action.
 ```js

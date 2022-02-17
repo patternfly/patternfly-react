@@ -15,10 +15,14 @@ export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>,
   isLiveRegion?: boolean;
   /** Determine where the alert is appended to */
   appendTo?: HTMLElement | (() => HTMLElement);
-  /** Max number to display before showing overflow, default is 3 */
+  /** Max number to display before showing overflow, negative numbers will show all, default is 3 */
   maxDisplayed?: number;
   /** Amount overflowed by */
   overflowedBy?: number;
+  /** Function to call if user clicks on overflow message */
+  onOverflowClick?: () => void;
+  /** Custom text to show for the overflow message */
+  overflowMessage?: string;
 }
 
 interface AlertGroupState {
@@ -54,15 +58,16 @@ export class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState
   }
 
   render() {
-    const { className, children, isToast, isLiveRegion, maxDisplayed = 3, ...props } = this.props;
+    const { className, children, isToast, isLiveRegion, maxDisplayed = 3, onOverflowClick, overflowMessage, ...props } = this.props;
     let shownChildren = children;
-    let overflow = 0;
-    if (Array.isArray(children) && children.length > maxDisplayed) {
-      shownChildren = children.slice(0,maxDisplayed);
-      overflow = children.length - maxDisplayed;
-    }
+    // let overflow = 0;
+    // if (onOverflowClick && maxDisplayed > -1 && Array.isArray(children) && children.length > maxDisplayed) {
+    //   shownChildren = children.slice(0,maxDisplayed-1);
+    //   overflow = children.length - maxDisplayed + 1;
+    // }
     const alertGroup = (
-      <AlertGroupInline className={className} isToast={isToast} isLiveRegion={isLiveRegion} overflowedBy={overflow} {...props}>
+      <AlertGroupInline onOverflowClick={onOverflowClick} className={className} isToast={isToast} isLiveRegion={isLiveRegion} overflowMessage={overflowMessage} {...props}>
+      {/* <AlertGroupInline onOverflowClick={onOverflowClick} className={className} isToast={isToast} isLiveRegion={isLiveRegion} overflowedBy={overflow} {...props}> */}
         {shownChildren}
       </AlertGroupInline>
     );
