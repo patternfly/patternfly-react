@@ -162,7 +162,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
         }
         // Current element is in footer.
         if (event.shiftKey) {
-          // Move focus back to menuif current tab index is 0
+          // Move focus back to menu if current tab index is 0
           if (currentElementIndex === 0) {
             moveFocusToLastMenuItem();
             event.preventDefault();

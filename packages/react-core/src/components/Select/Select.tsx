@@ -261,10 +261,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       if (firstRef && firstRef[0]) {
         firstRef[0].focus();
       }
-    }
-
-    // if viewMoreNextIndex is not -1, view more was clicked, set focus on first newly loaded item
-    if (
+    } else if (
+      // if viewMoreNextIndex is not -1, view more was clicked, set focus on first newly loaded item
       this.state.viewMoreNextIndex !== -1 &&
       this.refCollection.length > this.state.viewMoreNextIndex &&
       this.props.loadingVariant !== 'spinner' &&
@@ -352,7 +350,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         typeaheadFilteredChildren: React.Children.toArray(this.props.children)
       }),
       typeaheadCurrIndex: -1,
-      tabbedIntoFavoritesMenu: false
+      tabbedIntoFavoritesMenu: false,
+      viewMoreNextIndex: -1
     });
   };
 
@@ -385,7 +384,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       noResultsFoundText,
       children,
       isGrouped,
-      isCreateSelectOptionObject
+      isCreateSelectOptionObject,
+      loadingVariant
     } = this.props;
 
     if (onFilter) {
@@ -438,6 +438,16 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   typeof valueToCheck !== 'string' &&
                   (valueToCheck as SelectOptionObject).toString &&
                   (valueToCheck as SelectOptionObject).compareTo;
+
+                // View more option should be returned as not a match
+                if (loadingVariant !== 'spinner' && loadingVariant?.text === valueToCheck) {
+                  return true;
+                }
+
+                // spinner should be returned as not a match
+                if (loadingVariant === 'spinner' && valueToCheck === 'loading') {
+                  return true;
+                }
 
                 if (isSelectOptionObject) {
                   return (valueToCheck as SelectOptionObject).compareTo(typeaheadInputValue);

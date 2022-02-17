@@ -297,6 +297,9 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   event.stopPropagation();
                 }}
                 ref={this.ref}
+                onKeyDown={(event: React.KeyboardEvent) => {
+                  this.onKeyDown(event, 0);
+                }}
                 type="button"
               >
                 {itemDisplay}
