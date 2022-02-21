@@ -18,7 +18,6 @@ export const CardExpandableWithIcon: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [isChecked, setIsChecked] = React.useState<boolean>(false);
   const [isExpanded, setIsExpanded] = React.useState<boolean>(false);
-  const [isToggleRightAligned, setIsToggleRightAligned] = React.useState<boolean>(false);
 
   const onSelect = () => {
     setIsOpen(!isOpen);
@@ -32,10 +31,6 @@ export const CardExpandableWithIcon: React.FunctionComponent = () => {
     // eslint-disable-next-line no-console
     console.log(id);
     setIsExpanded(!isExpanded);
-  };
-
-  const onRightAlign = () => {
-    setIsToggleRightAligned(!isToggleRightAligned);
   };
 
   const dropdownItems = [
@@ -57,50 +52,38 @@ export const CardExpandableWithIcon: React.FunctionComponent = () => {
   ];
 
   return (
-    <React.Fragment>
-      <div style={{ marginBottom: '12px' }}>
-        <Checkbox
-          id={'isToggleRightAligned-2'}
-          key={'isToggleRightAligned'}
-          label={'isToggleRightAligned'}
-          isChecked={isToggleRightAligned}
-          onChange={onRightAlign}
-        />
-      </div>
-      <Card id="expandable-card-icon" isExpanded={isExpanded}>
-        <CardHeader
-          onExpand={onExpand}
-          isToggleRightAligned={isToggleRightAligned}
-          toggleButtonProps={{
-            id: 'toggle-button2',
-            'aria-label': 'Patternfly Details',
-            'aria-expanded': isExpanded
-          }}
-        >
-          <img src={pfLogoSmall} alt="PatternFly logo" width="27px" />
-          <CardActions>
-            <Dropdown
-              onSelect={onSelect}
-              toggle={<KebabToggle onToggle={setIsOpen} />}
-              isOpen={isOpen}
-              isPlain
-              dropdownItems={dropdownItems}
-              position={'right'}
-            />
-            <Checkbox
-              isChecked={isChecked}
-              onChange={onClick}
-              aria-label="card checkbox example"
-              id="check-5"
-              name="check5"
-            />
-          </CardActions>
-        </CardHeader>
-        <CardExpandableContent>
-          <CardBody>Body</CardBody>
-          <CardFooter>Footer</CardFooter>
-        </CardExpandableContent>
-      </Card>
-    </React.Fragment>
+    <Card id="expandable-card-icon" isExpanded={isExpanded}>
+      <CardHeader
+        onExpand={onExpand}
+        toggleButtonProps={{
+          id: 'toggle-button2',
+          'aria-label': 'Patternfly Details',
+          'aria-expanded': isExpanded
+        }}
+      >
+        <img src={pfLogoSmall} alt="PatternFly logo" width="27px" />
+        <CardActions>
+          <Dropdown
+            onSelect={onSelect}
+            toggle={<KebabToggle onToggle={setIsOpen} />}
+            isOpen={isOpen}
+            isPlain
+            dropdownItems={dropdownItems}
+            position={'right'}
+          />
+          <Checkbox
+            isChecked={isChecked}
+            onChange={onClick}
+            aria-label="card checkbox example"
+            id="check-5"
+            name="check5"
+          />
+        </CardActions>
+      </CardHeader>
+      <CardExpandableContent>
+        <CardBody>Body</CardBody>
+        <CardFooter>Footer</CardFooter>
+      </CardExpandableContent>
+    </Card>
   );
 };
