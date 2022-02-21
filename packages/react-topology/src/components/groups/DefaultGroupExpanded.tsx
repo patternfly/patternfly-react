@@ -103,7 +103,7 @@ const DefaultGroupExpanded: React.FC<DefaultGroupExpandedProps> = ({
   const points: (PointWithSize | PointTuple)[] = React.useMemo(() => {
     const newPoints: (PointWithSize | PointTuple)[] = [];
     _.forEach(children, c => {
-      if (c.getNodeShape() === NodeShape.ellipse) {
+      if (c.getNodeShape() === NodeShape.ellipse || c.getNodeShape() === NodeShape.circle) {
         const bounds = c.getBounds();
         const { width, height } = bounds;
         const { x, y } = bounds.getCenter();

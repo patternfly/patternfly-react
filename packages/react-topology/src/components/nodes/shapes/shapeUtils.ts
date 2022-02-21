@@ -74,6 +74,7 @@ export const getPathForSides = (numSides: number, size: number, padding = 0): st
 
 export const getShapeComponent = (node: Node): React.FC<ShapeProps> => {
   switch (node.getNodeShape()) {
+    case NodeShape.circle:
     case NodeShape.ellipse:
       return Ellipse;
     case NodeShape.stadium:
@@ -106,6 +107,7 @@ export const getDefaultShapeDecoratorCenter = (
   let deltaY = height / 2 + radius / 3;
 
   switch (shape) {
+    case NodeShape.circle:
     case NodeShape.ellipse:
       return {
         x: nodeCenterX + Math.cos(quadrantRadians(quadrant)) * deltaX,
