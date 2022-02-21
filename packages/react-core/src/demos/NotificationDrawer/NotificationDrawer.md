@@ -87,6 +87,7 @@ import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 class BasicNotificationDrawer extends React.Component {
   constructor(props) {
     super(props);
+    this.drawerRef = React.createRef();
     this.state = {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
@@ -178,6 +179,10 @@ class BasicNotificationDrawer extends React.Component {
         isUnreadMap: null,
         showNotifications: showNotifications
       });
+    };
+
+    this.focusDrawer = () => {
+      this.drawerRef.current.focus();
     };
   }
 
@@ -359,7 +364,7 @@ class BasicNotificationDrawer extends React.Component {
     ];
 
     const notificationDrawer = (
-      <NotificationDrawer>
+      <NotificationDrawer ref={this.drawerRef}>
         <NotificationDrawerHeader count={this.getNumberUnread()} onClose={this.onCloseNotificationDrawer}>
           <Dropdown
             onSelect={this.onSelect}
@@ -499,6 +504,7 @@ class BasicNotificationDrawer extends React.Component {
           sidebar={Sidebar}
           isManagedSidebar
           notificationDrawer={notificationDrawer}
+          onNotificationDrawerExpand={this.focusDrawer}
           isNotificationDrawerExpanded={isDrawerExpanded}
           skipToContent={PageSkipToContent}
           breadcrumb={PageBreadcrumb}
