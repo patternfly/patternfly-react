@@ -55,9 +55,6 @@ import {
   NODE_SHAPES
 } from './utils/styleUtils';
 
-import '@patternfly/patternfly/patternfly.css';
-import '@patternfly/patternfly/patternfly-addons.css';
-
 const GRAPH_LAYOUT_OPTIONS = ['x', 'y', 'visible', 'style', 'layout', 'scale', 'scaleExtent', 'layers'];
 const NODE_LAYOUT_OPTIONS = ['x', 'y', 'visible', 'style', 'collapsed', 'width', 'height', 'shape'];
 

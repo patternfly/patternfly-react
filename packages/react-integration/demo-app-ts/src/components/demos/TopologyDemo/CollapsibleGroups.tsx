@@ -29,9 +29,6 @@ import Group from './components/DefaultGroup';
 import DemoDefaultNode from './components/DemoDefaultNode';
 import defaultComponentFactory from './components/defaultComponentFactory';
 
-import '@patternfly/patternfly/patternfly.css';
-import '@patternfly/patternfly/patternfly-addons.css';
-
 const getModel = (collapseTypes: string[] = []): Model => {
   // create nodes from data
   const nodes: NodeModel[] = data.nodes.map(d => {
