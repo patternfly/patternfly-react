@@ -37,6 +37,7 @@ export enum TopologyQuadrant {
 }
 
 export enum NodeShape {
+  circle = 'circle', // backward compatibility
   ellipse = 'ellipse',
   rect = 'rect',
   rhombus = 'rhombus',
