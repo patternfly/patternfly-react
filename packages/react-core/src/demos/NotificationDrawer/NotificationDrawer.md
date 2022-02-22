@@ -603,6 +603,7 @@ import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 class GroupedNotificationDrawer extends React.Component {
   constructor(props) {
     super(props);
+    this.drawerRef = React.createRef();
     this.state = {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
@@ -741,6 +742,12 @@ class GroupedNotificationDrawer extends React.Component {
       this.setState({
         thirdDrawerGroupExpanded: value
       });
+    };
+
+    this.focusDrawer = () => {
+      if (!document.activeElement.closest(`.${this.drawerRef.current.className}`)) {
+        this.drawerRef.current.focus();
+      }
     };
   }
 
@@ -925,7 +932,7 @@ class GroupedNotificationDrawer extends React.Component {
     ];
 
     const notificationDrawer = (
-      <NotificationDrawer>
+      <NotificationDrawer ref={this.drawerRef}>
         <NotificationDrawerHeader count={this.getNumberUnread()} onClose={this.onCloseNotificationDrawer}>
           <Dropdown
             onSelect={this.onSelect}
@@ -1220,6 +1227,7 @@ class GroupedNotificationDrawer extends React.Component {
           isManagedSidebar
           notificationDrawer={notificationDrawer}
           isNotificationDrawerExpanded={isDrawerExpanded}
+          onNotificationDrawerExpand={this.focusDrawer}
           skipToContent={PageSkipToContent}
           breadcrumb={PageBreadcrumb}
           mainContainerId={pageId}
