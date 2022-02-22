@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.49.7 (2022-02-22)
+
+
+### Bug Fixes
+
+* update release version number ([#6964](https://github.com/patternfly/patternfly-react/issues/6964)) ([6eefe79](https://github.com/patternfly/patternfly-react/commit/6eefe79b9eaaf871ecf93e3fdfd0e49c7326b221))
+
+
+
+
+
 ## 4.49.6 (2022-02-22)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension
