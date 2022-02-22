@@ -36,7 +36,6 @@ import {
   CardBody,
   Drawer,
   DrawerContent,
-  DrawerContext,
   DrawerContentBody,
   Dropdown,
   DropdownGroup,
@@ -189,7 +188,6 @@ class BasicNotificationDrawer extends React.Component {
 
     this.focusDrawer = () => {
       this.drawerRef.current.focus();
-      console.log(DrawerContext);
     };
   }
 
