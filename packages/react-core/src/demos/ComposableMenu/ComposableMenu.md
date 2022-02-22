@@ -28,31 +28,26 @@ Composable menus currently require consumer keyboard handling and use of our und
 ### Composable simple dropdown
 
 ```ts file="./examples/ComposableSimpleDropdown.tsx"
-
 ```
 
 ### Composable actions menu
 
 ```ts file="./examples/ComposableActionsMenu.tsx"
-
 ```
 
 ### Composable simple select
 
 ```ts file="./examples/ComposableSimpleSelect.tsx"
-
 ```
 
 ### Composable drilldown menu
 
 ```ts isBeta file="./examples/ComposableDrilldownMenu.tsx"
-
 ```
 
 ### Composable tree view menu
 
 ```ts file="./examples/ComposableTreeViewMenu.tsx"
-
 ```
 
 ### Composable flyout
@@ -60,29 +55,29 @@ Composable menus currently require consumer keyboard handling and use of our und
 The flyout will automatically position to the left or top if it would otherwise go outside the window. The menu must be placed in a container outside the main content like Popper, [Popover](/components/popover) or [Tooltip](/components/tooltip) since it may go over the side nav.
 
 ```ts isBeta file="./examples/ComposableFlyout.tsx"
-
 ```
 
 ### Composable application launcher
 
 ```ts file="./examples/ComposableApplicationLauncher.tsx"
-
 ```
 
 ### Composable context selector
 
 ```ts file="./examples/ComposableContextSelector.tsx"
-
 ```
 
 ### Composable options menu variants
 
 ```ts file="./examples/ComposableOptionsMenuVariants.tsx"
-
 ```
 
 ### Composable dropdown variants
 
 ```ts file="./examples/ComposableDropdwnVariants.tsx"
+```
 
+### Composable date select
+
+```ts file="./examples/ComposableDateSelect.tsx"
 ```
