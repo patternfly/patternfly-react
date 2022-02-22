@@ -16,6 +16,11 @@ import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-
 
 ## Demos
 
+- Focus must be manually managed when the NotificationDrawer component is opened:
+
+  1. Create a React `ref` and pass it into the NotificationDrawer component's `ref` attribute
+  2. Pass in a function to the `onNotificationDrawerExpand` prop of the Page component that will place focus on the NotificationDrawer component via the previously created `ref`
+
 ### Basic
 
 ```js isFullscreen
@@ -31,6 +36,7 @@ import {
   CardBody,
   Drawer,
   DrawerContent,
+  DrawerContext,
   DrawerContentBody,
   Dropdown,
   DropdownGroup,
@@ -183,6 +189,7 @@ class BasicNotificationDrawer extends React.Component {
 
     this.focusDrawer = () => {
       this.drawerRef.current.focus();
+      console.log(DrawerContext);
     };
   }
 
@@ -531,6 +538,8 @@ class BasicNotificationDrawer extends React.Component {
 
 ### Grouped
 
+When using the NotificationDrawerGroupList and related components, the function that is passed in to the `onNotificationDrawerExpand` prop on the Page component must also ensure the NotificationDrawer component only receives focus when it is initially opened. Otherwise any time a drawer group item is opened the NotificationDrawer component will receive focus, which would be unexpected behavior for users.
+
 ```js isFullscreen
 import React from 'react';
 import {
@@ -745,6 +754,7 @@ class GroupedNotificationDrawer extends React.Component {
     };
 
     this.focusDrawer = () => {
+      // Prevent the NotificationDrawer from receiving focus if a drawer group item is opened
       if (!document.activeElement.closest(`.${this.drawerRef.current.className}`)) {
         this.drawerRef.current.focus();
       }
