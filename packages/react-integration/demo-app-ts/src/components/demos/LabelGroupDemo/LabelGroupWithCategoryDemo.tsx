@@ -3,6 +3,7 @@ import { Label, LabelGroup } from '@patternfly/react-core';
 
 interface LabelWithCategoryGroupState {
   labelGroups: {
+    id: string;
     labels: string[];
     category: string;
   }[];
@@ -17,14 +18,17 @@ export class LabelGroupWithCategoryDemo extends Component<{}, LabelWithCategoryG
     this.state = {
       labelGroups: [
         {
+          id: 'category-1',
           category: 'Category 1',
           labels: ['Label 1', 'Label 2']
         },
         {
+          id: 'category-2',
           category: 'Category 2',
           labels: ['Label 3', 'Label 4']
         },
         {
+          id: 'category-3',
           category: 'Category 3 has a very long name',
           labels: ['Label 5', 'Label 6', 'Label 7', 'Label 8']
         }
@@ -63,6 +67,7 @@ export class LabelGroupWithCategoryDemo extends Component<{}, LabelWithCategoryG
 
     return labelGroups.map(currentGroup => (
       <LabelGroup
+        id={currentGroup.id}
         key={currentGroup.category}
         categoryName={currentGroup.category}
         isClosable
@@ -70,8 +75,8 @@ export class LabelGroupWithCategoryDemo extends Component<{}, LabelWithCategoryG
         closeBtnAriaLabel="Close category demo"
         tooltipPosition="bottom"
       >
-        {currentGroup.labels.map(label => (
-          <Label key={label} onClose={() => this.deleteItem(label)}>
+        {currentGroup.labels.map((label, index) => (
+          <Label id={`${currentGroup.id}-label-${index}`} key={label} onClose={() => this.deleteItem(label)}>
             {label}
           </Label>
         ))}

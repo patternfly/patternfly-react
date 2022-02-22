@@ -3,6 +3,7 @@ import { Chip, ChipGroup } from '@patternfly/react-core';
 
 interface ChipWithCategoryGroupState {
   chipGroups: {
+    id: string;
     chips: string[];
     category: string;
   }[];
@@ -17,14 +18,17 @@ export class ChipWithCategoryGroupDemo extends Component<{}, ChipWithCategoryGro
     this.state = {
       chipGroups: [
         {
+          id: 'category-1',
           category: 'Category 1',
           chips: ['Chip 1', 'Chip 2']
         },
         {
+          id: 'category-2',
           category: 'Category 2',
           chips: ['Chip 3', 'Chip 4']
         },
         {
+          id: 'category-3',
           category: 'Category 3 has a very long name',
           chips: ['Chip 5', 'Chip 6', 'Chip 7', 'Chip 8']
         }
@@ -63,6 +67,7 @@ export class ChipWithCategoryGroupDemo extends Component<{}, ChipWithCategoryGro
 
     return chipGroups.map(currentGroup => (
       <ChipGroup
+        id={currentGroup.id}
         key={currentGroup.category}
         categoryName={currentGroup.category}
         isClosable
@@ -71,7 +76,7 @@ export class ChipWithCategoryGroupDemo extends Component<{}, ChipWithCategoryGro
         tooltipPosition="bottom"
       >
         {currentGroup.chips.map(chip => (
-          <Chip key={chip} onClick={() => this.deleteItem(chip)}>
+          <Chip id={`chip-${currentGroup.category}-${chip}`} key={chip} onClick={() => this.deleteItem(chip)}>
             {chip}
           </Chip>
         ))}
