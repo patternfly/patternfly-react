@@ -35,15 +35,4 @@ export enum SelectDirection {
   down = 'down'
 }
 
-export const KeyTypes = {
-  Tab: 'Tab',
-  Space: ' ',
-  Escape: 'Escape',
-  Enter: 'Enter',
-  ArrowUp: 'ArrowUp',
-  ArrowDown: 'ArrowDown',
-  ArrowLeft: 'ArrowLeft',
-  ArrowRight: 'ArrowRight'
-};
-
 export const SelectFooterTabbableItems = 'input, button, select, textarea, a[href]';

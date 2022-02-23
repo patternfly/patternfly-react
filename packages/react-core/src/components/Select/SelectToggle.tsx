@@ -3,9 +3,10 @@ import styles from '@patternfly/react-styles/css/components/Select/select';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
-import { KeyTypes, SelectVariant, SelectFooterTabbableItems } from './selectConstants';
+import { SelectVariant, SelectFooterTabbableItems } from './selectConstants';
 import { PickOptional } from '../../helpers/typeUtils';
 import { findTabbableElements } from '../../helpers/util';
+import { KeyTypes } from '../../helpers/constants';
 
 export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   /** HTML ID of dropdown toggle */
