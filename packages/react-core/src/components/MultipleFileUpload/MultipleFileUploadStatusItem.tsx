@@ -65,7 +65,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
   progressAriaLabelledBy,
   buttonAriaLabel = 'Remove from list',
   ...props
-}) => {
+}: MultipleFileUploadStatusItemProps) => {
   const [loadPercentage, setLoadPercentage] = React.useState(0);
   const [loadResult, setLoadResult] = React.useState<undefined | 'danger' | 'success'>();
 

@@ -4,7 +4,7 @@ import { MultipleFileUploadTitleIcon } from '../MultipleFileUploadTitleIcon';
 
 describe('MultipleFileUploadTitleIcon', () => {
   test('renders with expected class names', () => {
-    const view = mount(<MultipleFileUploadTitleIcon />);
+    const view = mount(<MultipleFileUploadTitleIcon>Foo</MultipleFileUploadTitleIcon>);
     expect(view).toMatchSnapshot();
   });
 

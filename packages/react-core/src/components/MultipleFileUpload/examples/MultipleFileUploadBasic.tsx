@@ -1,20 +1,16 @@
 import React from 'react';
 import {
   MultipleFileUpload,
-  MultipleFileUploadInfo,
   MultipleFileUploadMain,
-  MultipleFileUploadTitle,
-  MultipleFileUploadTitleIcon,
-  MultipleFileUploadTitleText,
-  MultipleFileUploadTitleTextSeparator,
-  MultipleFileUploadButton,
   MultipleFileUploadStatus,
   MultipleFileUploadStatusItem,
-  Modal
+  Modal,
+  Checkbox
 } from '@patternfly/react-core';
 import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 
 interface readFile {
   fileName: string;
@@ -24,6 +20,7 @@ interface readFile {
 }
 
 export const MultipleFileUploadBasic: React.FunctionComponent = () => {
+  const [isHorizontal, setIsHorizontal] = React.useState(false);
   const [currentFiles, setCurrentFiles] = React.useState<File[]>([]);
   const [readFileData, setReadFileData] = React.useState<readFile[]>([]);
   const [showStatus, setShowStatus] = React.useState(false);
@@ -101,50 +98,54 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   const successfullyReadFileCount = readFileData.filter(fileData => fileData.loadResult === 'success').length;
 
   return (
-    <MultipleFileUpload
-      onFileDrop={handleFileDrop}
-      dropzoneProps={{
-        accept: 'image/jpeg, application/msword, application/pdf, image/png',
-        onDropRejected: handleDropRejected
-      }}
-    >
-      <MultipleFileUploadMain>
-        <MultipleFileUploadTitle>
-          <MultipleFileUploadTitleIcon />
-          <MultipleFileUploadTitleText>
-            Drag and drop files here
-            <MultipleFileUploadTitleTextSeparator>or</MultipleFileUploadTitleTextSeparator>
-          </MultipleFileUploadTitleText>
-        </MultipleFileUploadTitle>
-        <MultipleFileUploadButton />
-        <MultipleFileUploadInfo>Accepted file types: JPEG, Doc, PDF, PNG</MultipleFileUploadInfo>
-      </MultipleFileUploadMain>
-      {showStatus && (
-        <MultipleFileUploadStatus
-          statusToggleText={`${successfullyReadFileCount} of ${currentFiles.length} files uploaded`}
-          statusToggleIcon={getStatusIcon()}
-        >
-          {currentFiles.map(file => (
-            <MultipleFileUploadStatusItem
-              file={file}
-              key={file.name}
-              onClearClick={() => removeFiles([file.name])}
-              onReadSuccess={handleReadSuccess}
-              onReadFail={handleReadFail}
-            />
-          ))}
-        </MultipleFileUploadStatus>
-      )}
-      <Modal
-        isOpen={!!modalText}
-        title="Unsupported file"
-        titleIconVariant="warning"
-        showClose
-        aria-label="unsupported file upload attempted"
-        onClose={() => setModalText('')}
+    <>
+      <Checkbox
+        id="horizontal-checkbox"
+        label="Show as horizontal"
+        isChecked={isHorizontal}
+        onChange={() => setIsHorizontal(!isHorizontal)}
+      />
+      <MultipleFileUpload
+        onFileDrop={handleFileDrop}
+        dropzoneProps={{
+          accept: 'image/jpeg, application/msword, application/pdf, image/png',
+          onDropRejected: handleDropRejected
+        }}
+        isHorizontal={isHorizontal}
       >
-        {modalText}
-      </Modal>
-    </MultipleFileUpload>
+        <MultipleFileUploadMain
+          titleIcon={<UploadIcon />}
+          titleText="Drag and drop files here"
+          titleTextSeparator="or"
+          infoText="Accepted file types: JPEG, Doc, PDF, PNG"
+        />
+        {showStatus && (
+          <MultipleFileUploadStatus
+            statusToggleText={`${successfullyReadFileCount} of ${currentFiles.length} files uploaded`}
+            statusToggleIcon={getStatusIcon()}
+          >
+            {currentFiles.map(file => (
+              <MultipleFileUploadStatusItem
+                file={file}
+                key={file.name}
+                onClearClick={() => removeFiles([file.name])}
+                onReadSuccess={handleReadSuccess}
+                onReadFail={handleReadFail}
+              />
+            ))}
+          </MultipleFileUploadStatus>
+        )}
+        <Modal
+          isOpen={!!modalText}
+          title="Unsupported file"
+          titleIconVariant="warning"
+          showClose
+          aria-label="unsupported file upload attempted"
+          onClose={() => setModalText('')}
+        >
+          {modalText}
+        </Modal>
+      </MultipleFileUpload>
+    </>
   );
 };
