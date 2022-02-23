@@ -92,7 +92,10 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
   constructor(props: ClipboardCopyProps) {
     super(props);
     this.state = {
-      text: this.props.children as string | number,
+      text:
+        typeof this.props.children === 'string'
+          ? (this.props.children as string | number)
+          : (this.props.children as string[]).join(''),
       expanded: this.props.isExpanded,
       copied: false
     };
