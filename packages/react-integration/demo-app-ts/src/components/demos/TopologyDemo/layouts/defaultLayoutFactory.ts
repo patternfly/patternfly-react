@@ -1,4 +1,12 @@
-import { Graph, Layout, LayoutFactory, ForceLayout, ColaLayout, DagreLayout } from '@patternfly/react-topology';
+import {
+  Graph,
+  Layout,
+  LayoutFactory,
+  ForceLayout,
+  ColaLayout,
+  DagreLayout,
+  GridLayout
+} from '@patternfly/react-topology';
 
 const defaultLayoutFactory: LayoutFactory = (type: string, graph: Graph): Layout | undefined => {
   switch (type) {
@@ -10,6 +18,8 @@ const defaultLayoutFactory: LayoutFactory = (type: string, graph: Graph): Layout
       return new DagreLayout(graph);
     case 'Force':
       return new ForceLayout(graph);
+    case 'Grid':
+      return new GridLayout(graph);
     default:
       return new ColaLayout(graph, { layoutOnDrag: false });
   }
