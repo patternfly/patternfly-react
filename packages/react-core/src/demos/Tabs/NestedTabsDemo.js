@@ -42,7 +42,7 @@ export const NestedTabsDemo = () => {
                   activeKey={activeNestedTabKey}
                   isSecondary
                   onSelect={handleNestedTabClick}
-                  id="nested-tabs-example-tabs-list"
+                  id="nested-tabs-example-nested-tabs-list"
                 >
                   <Tab eventKey={10} title={<TabTitleText>Cluster</TabTitleText>} tabContentId={`tabContent${10}`} />
                   <Tab

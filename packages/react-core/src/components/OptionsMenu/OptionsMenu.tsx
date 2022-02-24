@@ -71,13 +71,13 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
     }}
   >
     <DropdownWithContext
-      {...props}
       id={id}
       dropdownItems={menuItems}
       className={className}
       isGrouped={isGrouped}
       toggle={toggle}
       menuAppendTo={menuAppendTo}
+      {...props}
     />
   </DropdownContext.Provider>
 );

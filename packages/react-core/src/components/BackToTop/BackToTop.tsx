@@ -69,7 +69,7 @@ const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
         scrollEl.removeEventListener('scroll', toggleVisible);
       };
     }
-  });
+  }, [scrollableSelector, toggleVisible]);
 
   const handleClick = () => {
     scrollElement.scrollTo({ top: 0, behavior: 'smooth' });

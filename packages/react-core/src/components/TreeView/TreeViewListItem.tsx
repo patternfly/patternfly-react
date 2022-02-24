@@ -167,7 +167,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       id={id}
       className={css(styles.treeViewListItem, internalIsExpanded && styles.modifiers.expanded)}
       {...(internalIsExpanded && { 'aria-expanded': 'true' })}
-      role={children ? 'treeitem' : 'none'}
+      role="treeitem"
       tabIndex={-1}
     >
       <div className={css(styles.treeViewContent)}>
@@ -191,7 +191,6 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
                   }
                 }
               }}
-              {...(!children && { role: 'treeitem' })}
               tabIndex={-1}
             >
               <div className={css(styles.treeViewNodeContainer)}>

@@ -328,6 +328,7 @@ exports[`isLoading 1`] = `
           size="md"
         >
           <span
+            aria-label="Contents"
             aria-valuetext="Loading"
             className="pf-c-spinner pf-m-md"
             role="progressbar"
@@ -393,6 +394,7 @@ exports[`isLoading icon only 1`] = `
           size="md"
         >
           <span
+            aria-label="Contents"
             aria-valuetext="Loading"
             className="pf-c-spinner pf-m-md"
             role="progressbar"

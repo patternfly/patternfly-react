@@ -131,7 +131,6 @@ class WindowScrollerExample extends React.Component {
       <div
         id="content-scrollable-1"
         aria-label="Scrollable Table"
-        role="grid"
         className="pf-c-scrollablegrid"
         aria-rowcount={rows.length}
         style={{
@@ -176,6 +175,7 @@ class WindowScrollerExample extends React.Component {
                       scrollToIndex={scrollToIndex}
                       scrollTop={scrollTop}
                       width={width}
+                      role="grid"
                     />
                   </div>
                 )}
@@ -193,7 +193,6 @@ class WindowScrollerExample extends React.Component {
 
 ```js
 import React from 'react';
-import { debounce } from '@patternfly/react-core';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
 import { TableComposable, Thead, Tr, Th, Td, Caption, TableGridBreakpoint } from '@patternfly/react-table';
@@ -263,7 +262,6 @@ ComposableTableWindowScroller = () => {
     <div
       id="content-scrollable-2"
       aria-label="Scrollable Table"
-      role="grid"
       className="pf-c-scrollablegrid"
       aria-rowcount={rows.length}
       style={scrollableContainerStyle}
@@ -301,6 +299,7 @@ ComposableTableWindowScroller = () => {
                   scrollToIndex={scrollToIndex}
                   scrollTop={scrollTop}
                   width={width}
+                  role="grid"
                 />
               </div>
             )}

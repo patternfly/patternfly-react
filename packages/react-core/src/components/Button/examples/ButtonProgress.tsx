@@ -2,37 +2,56 @@ import React from 'react';
 import { Button } from '@patternfly/react-core';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 
+interface LoadingPropsType {
+  spinnerAriaValueText: string;
+  spinnerAriaLabelledBy?: string;
+  spinnerAriaLabel?: string;
+  isLoading: boolean;
+}
+
 export const ButtonProgress: React.FunctionComponent = () => {
   const [isPrimaryLoading, setIsPrimaryLoading] = React.useState<boolean>(true);
   const [isSecondaryLoading, setIsSecondaryLoading] = React.useState<boolean>(true);
-  const [isUploading, setIsUploading] = React.useState(true);
+  const [isUploading, setIsUploading] = React.useState<boolean>(false);
+
+  const primaryLoadingProps = {} as LoadingPropsType;
+  if (isPrimaryLoading) {
+    primaryLoadingProps.spinnerAriaValueText = 'Loading';
+    primaryLoadingProps.spinnerAriaLabelledBy = 'primary-loading-button';
+    primaryLoadingProps.isLoading = true;
+  }
+  const secondaryLoadingProps = {} as LoadingPropsType;
+  if (isSecondaryLoading) {
+    secondaryLoadingProps.spinnerAriaValueText = 'Loading';
+    secondaryLoadingProps.spinnerAriaLabel = 'Content being loaded';
+    secondaryLoadingProps.isLoading = true;
+  }
+  const uploadingProps = {} as LoadingPropsType;
+  if (isUploading) {
+    uploadingProps.spinnerAriaValueText = 'Loading';
+    uploadingProps.isLoading = true;
+    uploadingProps.spinnerAriaLabel = 'Uploading data';
+  }
 
   return (
     <React.Fragment>
       <Button
-        spinnerAriaValueText={isPrimaryLoading ? 'Loading' : undefined}
-        isLoading={isPrimaryLoading}
         variant="primary"
+        id="primary-loading-button"
         onClick={() => setIsPrimaryLoading(!isPrimaryLoading)}
-        {...(isPrimaryLoading && { spinnerAriaValueText: 'Loading' })}
+        {...primaryLoadingProps}
       >
-        {isPrimaryLoading ? 'Click to stop loading' : 'Click to start loading'}
+        {isPrimaryLoading ? 'Pause loading logs' : 'Resume loading logs'}
       </Button>{' '}
-      <Button
-        spinnerAriaValueText={isSecondaryLoading ? 'Loading' : undefined}
-        isLoading={isSecondaryLoading}
-        variant="secondary"
-        onClick={() => setIsSecondaryLoading(!isSecondaryLoading)}
-        {...(isSecondaryLoading && { spinnerAriaValueText: 'Loading' })}
-      >
+      <Button variant="secondary" onClick={() => setIsSecondaryLoading(!isSecondaryLoading)} {...secondaryLoadingProps}>
         {isSecondaryLoading ? 'Click to stop loading' : 'Click to start loading'}
       </Button>{' '}
       <Button
-        spinnerAriaValueText={isUploading ? 'Loading' : undefined}
-        isLoading={isUploading}
         variant="plain"
+        {...(!isUploading && { 'aria-label': 'Upload' })}
         onClick={() => setIsUploading(!isUploading)}
         icon={<UploadIcon />}
+        {...uploadingProps}
       />
       <br />
       <br />

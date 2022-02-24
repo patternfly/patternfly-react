@@ -273,7 +273,6 @@ class BulkSelectTableDemo extends React.Component {
 import React from 'react';
 import {
   Button,
-  Checkbox,
   DataList,
   DataListCheck,
   DataListItem,
@@ -282,7 +281,6 @@ import {
   DataListItemCells,
   Toolbar,
   ToolbarContent,
-  ToolbarGroup,
   ToolbarItem,
   Modal,
   OverflowMenu,
@@ -294,7 +292,6 @@ import {
   PaginationVariant,
   Text,
   TextContent,
-  ToolbarToggleGroup,
   Select,
   SelectVariant
 } from '@patternfly/react-core';
@@ -916,7 +913,6 @@ class ColumnManagementAction extends React.Component {
 import React from 'react';
 import {
   Button,
-  Checkbox,
   DataList,
   DataListCheck,
   DataListControl,
@@ -927,7 +923,6 @@ import {
   DataListItemCells,
   Toolbar,
   ToolbarContent,
-  ToolbarGroup,
   ToolbarItem,
   Modal,
   OverflowMenu,
@@ -939,7 +934,6 @@ import {
   PaginationVariant,
   Text,
   TextContent,
-  ToolbarToggleGroup,
   Select,
   SelectVariant
 } from '@patternfly/react-core';
@@ -2098,9 +2092,6 @@ import {
 } from '@patternfly/react-core';
 import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
-import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
@@ -2727,15 +2718,10 @@ import {
   BreadcrumbItem,
   Button,
   ButtonVariant,
-  Card,
-  CardBody,
   Dropdown,
   DropdownGroup,
   DropdownToggle,
   DropdownItem,
-  DropdownSeparator,
-  Gallery,
-  GalleryItem,
   KebabToggle,
   Nav,
   NavItem,
@@ -2752,8 +2738,6 @@ import {
   PageHeaderToolsGroup,
   PageHeaderToolsItem
 } from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
-import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
@@ -2968,7 +2952,6 @@ These examples demonstrate the use of an [Empty State component](/components/emp
 ```js
 import React from 'react';
 import {
-  Bullseye,
   Button,
   EmptyState,
   EmptyStateIcon,
@@ -3050,7 +3033,7 @@ class LoadingStateDemo extends React.Component {
             props: { colSpan: 8 },
             title: (
               <Bullseye>
-                <Spinner size="xl" />
+                <Spinner size="xl" aria-labelledby="loading-table-demo"/>
               </Bullseye>
             )
           }
@@ -3059,7 +3042,7 @@ class LoadingStateDemo extends React.Component {
     ];
 
     return (
-      <Table cells={columns} rows={rows} aria-label="Loading Table Demo">
+      <Table cells={columns} rows={rows} id="loading-table-demo" aria-label="Loading Table Demo">
         <TableHeader />
         <TableBody />
       </Table>
@@ -3072,10 +3055,8 @@ class LoadingStateDemo extends React.Component {
 
 ```js
 import React from 'react';
-import { Bullseye, EmptyState, EmptyStateBody, EmptyStateIcon, EmptyStateVariant, Title } from '@patternfly/react-core';
+import { EmptyState, EmptyStateBody, EmptyStateVariant, Title } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
-import globalDangerColor200 from '@patternfly/react-tokens/dist/esm/global_danger_color_200';
 
 class ErrorStateDemo extends React.Component {
   render() {

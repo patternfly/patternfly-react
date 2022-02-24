@@ -273,7 +273,6 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
 
   return (
     <li
-      role="none"
       className={css(
         styles.menuListItem,
         isDisabled && styles.modifiers.disabled,
@@ -283,21 +282,21 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         className
       )}
       onMouseOver={onMouseOver}
-      tabIndex={-1}
       {...(flyoutMenu && { onKeyDown: handleFlyout })}
       ref={ref}
+      role="none"
       {...props}
     >
       <Component
-        role="menuitem"
         tabIndex={-1}
+        className={css(styles.menuItem, getIsSelected() && styles.modifiers.selected, className)}
+        aria-current={getAriaCurrent()}
+        disabled={isDisabled}
+        role="menuitem"
         onClick={(event: any) => {
           onItemSelect(event, onSelect);
           _drill && _drill();
         }}
-        className={css(styles.menuItem, getIsSelected() && styles.modifiers.selected, className)}
-        aria-current={getAriaCurrent()}
-        disabled={isDisabled}
         {...additionalProps}
       >
         <span className={css(styles.menuItemMain)}>

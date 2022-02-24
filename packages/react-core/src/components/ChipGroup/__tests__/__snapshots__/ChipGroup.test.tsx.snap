@@ -18,9 +18,11 @@ exports[`ChipGroup chip group default 1`] = `
     prefix="pf-random-id-"
   >
     <div
+      aria-label="Chip group category"
       className="pf-c-chip-group"
       data-ouia-component-type="PF4/ChipGroup"
       data-ouia-safe={true}
+      role="group"
     >
       <div
         className="pf-c-chip-group__main"
@@ -147,15 +149,16 @@ exports[`ChipGroup chip group with category 1`] = `
     prefix="pf-random-id-"
   >
     <div
+      aria-labelledby="pf-random-id-2"
       className="pf-c-chip-group pf-m-category"
       data-ouia-component-type="PF4/ChipGroup"
       data-ouia-safe={true}
+      role="group"
     >
       <div
         className="pf-c-chip-group__main"
       >
         <span
-          aria-hidden="true"
           className="pf-c-chip-group__label"
           id="pf-random-id-2"
         >
@@ -283,15 +286,16 @@ exports[`ChipGroup chip group with category and tooltip 1`] = `
     prefix="pf-random-id-"
   >
     <div
+      aria-labelledby="pf-random-id-12"
       className="pf-c-chip-group pf-m-category"
       data-ouia-component-type="PF4/ChipGroup"
       data-ouia-safe={true}
+      role="group"
     >
       <div
         className="pf-c-chip-group__main"
       >
         <span
-          aria-hidden="true"
           className="pf-c-chip-group__label"
           id="pf-random-id-12"
         >
@@ -419,15 +423,16 @@ exports[`ChipGroup chip group with closable category 1`] = `
     prefix="pf-random-id-"
   >
     <div
+      aria-labelledby="pf-random-id-4"
       className="pf-c-chip-group pf-m-category"
       data-ouia-component-type="PF4/ChipGroup"
       data-ouia-safe={true}
+      role="group"
     >
       <div
         className="pf-c-chip-group__main"
       >
         <span
-          aria-hidden="true"
           className="pf-c-chip-group__label"
           id="pf-random-id-4"
         >

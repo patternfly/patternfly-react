@@ -126,7 +126,7 @@ export const CalendarMonth = ({
     if (!(isValidDate(dateProp) && isSameDate(focusedDate, dateProp))) {
       setFocusedDate(dateProp);
     }
-  }, [dateProp]);
+  }, [dateProp, focusedDate]);
   useEffect(() => {
     // When using header controls don't move focus
     if (shouldFocus) {
@@ -136,7 +136,7 @@ export const CalendarMonth = ({
     } else {
       setShouldFocus(true);
     }
-  }, [focusedDate]);
+  }, [focusedDate, focusedDateValidated, shouldFocus]);
 
   const onMonthClick = (newDate: Date) => {
     setFocusedDate(newDate);

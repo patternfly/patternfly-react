@@ -105,18 +105,12 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
     const { isTooltipVisible } = this.state;
     return isTooltipVisible ? (
       <Tooltip position={tooltipPosition} content={categoryName}>
-        <span
-          tabIndex={0}
-          ref={this.headingRef}
-          className={css(styles.chipGroupLabel)}
-          id={id}
-          aria-label={categoryName}
-        >
-          <span aria-hidden="true">{categoryName}</span>
+        <span tabIndex={0} ref={this.headingRef} className={css(styles.chipGroupLabel)}>
+          <span id={id}>{categoryName}</span>
         </span>
       </Tooltip>
     ) : (
-      <span ref={this.headingRef} className={css(styles.chipGroupLabel)} aria-hidden="true" id={id}>
+      <span ref={this.headingRef} className={css(styles.chipGroupLabel)} id={id}>
         {categoryName}
       </span>
     );
@@ -156,6 +150,9 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
       return (
         <div
           className={css(styles.chipGroup, className, categoryName && styles.modifiers.category)}
+          role="group"
+          {...(categoryName && { 'aria-labelledby': id })}
+          {...(!categoryName && { 'aria-label': ariaLabel })}
           {...getOUIAProps(ChipGroup.displayName, ouiaId)}
         >
           <div className={css(styles.chipGroupMain)}>
