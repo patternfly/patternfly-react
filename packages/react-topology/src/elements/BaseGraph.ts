@@ -16,7 +16,7 @@ import {
   NodeModel,
   ScaleExtent,
   ScaleDetailsLevel,
-  ScaleDetailsSettings
+  ScaleDetailsThresholds
 } from '../types';
 import BaseElement from './BaseElement';
 
@@ -42,8 +42,18 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
   @observable.ref
   private scaleExtent: ScaleExtent = [0.25, 4];
 
-  @observable
-  private detailsLevel?: ScaleDetailsLevel = ScaleDetailsLevel.high;
+  @computed
+  private get detailsLevel(): ScaleDetailsLevel {
+    if (!this.scaleDetailsThresholds) {
+      return ScaleDetailsLevel.high;
+    }
+    if (this.scale <= this.scaleDetailsThresholds.low) {
+      return ScaleDetailsLevel.low;
+    } else if (this.scale <= this.scaleDetailsThresholds.medium) {
+      return ScaleDetailsLevel.medium;
+    }
+    return ScaleDetailsLevel.high;
+  }
 
   @computed
   private get edges(): Edge[] {
@@ -55,10 +65,10 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
     return this.getChildren().filter(isNode);
   }
 
-  private scaleDetailsSettings: ScaleDetailsSettings = {
-    high: 1.0,
-    medium: 0.5,
-    low: 0.3
+  @observable.ref
+  private scaleDetailsThresholds: ScaleDetailsThresholds = {
+    low: 0.3,
+    medium: 0.5
   };
 
   getKind(): ModelKind {
@@ -85,25 +95,16 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
     this.scaleExtent = scaleExtent;
   }
 
-  setDetailsLevelSettings(settings: ScaleDetailsSettings): void {
-    this.scaleDetailsSettings = settings;
-    let detailsLevel = ScaleDetailsLevel.high;
-    if (this.scaleDetailsSettings) {
-      if (this.scale <= this.scaleDetailsSettings[ScaleDetailsLevel.low]) {
-        detailsLevel = ScaleDetailsLevel.low;
-      } else if (this.scale <= this.scaleDetailsSettings[ScaleDetailsLevel.medium]) {
-        detailsLevel = ScaleDetailsLevel.medium;
-      }
-    }
-    this.setDetailsLevel(detailsLevel);
+  getDetailsLevelThresholds(): ScaleDetailsThresholds | undefined {
+    return this.scaleDetailsThresholds;
+  }
+
+  setDetailsLevelThresholds(settings: ScaleDetailsThresholds | undefined): void {
+    this.scaleDetailsThresholds = settings;
   }
 
   getDetailsLevel(): ScaleDetailsLevel {
     return this.detailsLevel;
-  }
-
-  setDetailsLevel(level: ScaleDetailsLevel): void {
-    this.detailsLevel = level;
   }
 
   getBounds(): Rect {
@@ -183,15 +184,6 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
   setScale(scale: number): void {
     try {
       this.getController().fireEvent(GRAPH_POSITION_CHANGE_EVENT, { graph: this });
-      if (this.scaleDetailsSettings) {
-        let detailsLevel = ScaleDetailsLevel.high;
-        if (scale <= this.scaleDetailsSettings[ScaleDetailsLevel.low]) {
-          detailsLevel = ScaleDetailsLevel.low;
-        } else if (scale <= this.scaleDetailsSettings[ScaleDetailsLevel.medium]) {
-          detailsLevel = ScaleDetailsLevel.medium;
-        }
-        this.setDetailsLevel(detailsLevel);
-      }
       // eslint-disable-next-line no-empty
     } catch (e) {}
     this.scale = scale;

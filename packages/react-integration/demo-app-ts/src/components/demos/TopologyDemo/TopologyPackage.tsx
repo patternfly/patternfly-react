@@ -116,10 +116,9 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ useSideba
   });
 
   React.useEffect(() => {
-    controller.getGraph().setDetailsLevelSettings({
-      high: 1.0,
-      medium: medScale,
-      low: lowScale
+    controller.getGraph().setDetailsLevelThresholds({
+      low: lowScale,
+      medium: medScale
     });
   }, [controller, lowScale, medScale]);
 

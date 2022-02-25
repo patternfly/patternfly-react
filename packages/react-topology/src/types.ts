@@ -137,9 +137,10 @@ export enum ScaleDetailsLevel {
   low = 'low'
 }
 
-export type ScaleDetailsSettings = {
-  [key in ScaleDetailsLevel]: number;
-};
+export interface ScaleDetailsThresholds {
+  low: number;
+  medium: number;
+}
 
 export interface GraphModel extends ElementModel {
   layout?: string;
@@ -249,8 +250,8 @@ export interface Graph<E extends GraphModel = GraphModel, D = any> extends Graph
   setScaleExtent(scaleExtent: ScaleExtent): void;
   getScale(): number;
   setScale(scale: number): void;
-  setDetailsLevelSettings(settings: ScaleDetailsSettings): void;
-  setDetailsLevel(level: ScaleDetailsLevel): void;
+  setDetailsLevelThresholds(settings: ScaleDetailsThresholds | undefined): void;
+  getDetailsLevelThresholds(): Readonly<ScaleDetailsThresholds> | undefined;
   getDetailsLevel(): ScaleDetailsLevel;
   getLayout(): string | undefined;
   setLayout(type: string | undefined): void;

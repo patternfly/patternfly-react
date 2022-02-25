@@ -12,8 +12,9 @@ interface ElementWrapperProps {
 }
 
 const NodeElementComponent: React.FC<{ element: Node }> = observer(({ element }) => {
-  const isDragging = useDndManager().isDragging();
-  const dragItem = useDndManager().getItem();
+  const dndManager = useDndManager();
+  const isDragging = dndManager.isDragging();
+  const dragItem = dndManager.getItem();
   const graph = element.getGraph();
   const isVisible = React.useMemo(() => computed(() => graph.isNodeInView(element, { padding: 100 })), [
     element,
