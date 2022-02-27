@@ -415,7 +415,7 @@ class ConsoleLogViewerToolbar extends React.Component {
           <Tooltip position="top" content={<div>Options</div>}>
             <Dropdown
               toggle={
-                <DropdownToggle id="option-toggle-mobile" onToggle={this.onOptionToggleMobile} icon={<CogIcon />} />
+                <DropdownToggle aria-label="Options" id="option-toggle-mobile" onToggle={this.onOptionToggleMobile} icon={<CogIcon />} />
               }
               isOpen={optionExpandedMobile}
               dropdownItems={optionDropdownItems}
@@ -424,7 +424,7 @@ class ConsoleLogViewerToolbar extends React.Component {
         </ToolbarItem>
         <ToolbarItem visibility={{ default: 'visible', '2xl': 'hidden' }}>
           <Tooltip position="top" content={<div>{isPaused ? 'Resume log' : 'Pause log'}</div>}>
-            <Button variant="plain" onClick={this.pauseOrStart}>
+            <Button variant="plain" onClick={this.pauseOrStart} aria-label={isPaused ? 'Play' : 'Paused'}>
               {isPaused ? <PlayIcon /> : <PauseIcon />}
             </Button>
           </Tooltip>
@@ -478,6 +478,7 @@ class ConsoleLogViewerToolbar extends React.Component {
                 <DropdownToggle
                   id="mobile-external-toggle"
                   onToggle={this.onExternalToggleMobile}
+                  aria-label="External logs"
                   icon={<ExternalLinkAltIcon />}
                 />
               }
@@ -493,6 +494,7 @@ class ConsoleLogViewerToolbar extends React.Component {
               toggle={
                 <DropdownToggle
                   id="mobile-download-toggle"
+                  aria-label="Download"
                   onToggle={this.onDownloadToggleMobile}
                   icon={<DownloadIcon />}
                 />

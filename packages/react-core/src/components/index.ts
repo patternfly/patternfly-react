@@ -17,6 +17,7 @@ export * from './Button';
 export * from './CalendarMonth';
 export * from './Card';
 export * from './Checkbox';
+export * from './Chip';
 export * from './ChipGroup';
 export * from './ClipboardCopy';
 export * from './CodeBlock';

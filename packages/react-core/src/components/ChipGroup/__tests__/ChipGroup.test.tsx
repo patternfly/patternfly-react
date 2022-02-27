@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Chip, ChipGroup } from '../index';
+import { ChipGroup } from '../index';
+import { Chip } from '../../Chip';
 
 describe('ChipGroup', () => {
   test('chip group default', () => {
