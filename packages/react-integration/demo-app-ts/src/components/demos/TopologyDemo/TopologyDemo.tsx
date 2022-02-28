@@ -1,6 +1,5 @@
 import React from 'react';
 import { Tab, Tabs, TabTitleText } from '@patternfly/react-core';
-import '@patternfly/react-styles/css/components/Topology/topology-components.css';
 import { Shapes } from './Shapes';
 import { SingleNode, SingleEdge, Group, GroupHull, MultiEdge, AutoSizeNode } from './Basics';
 import { ControlledSelection, MultiSelect, Performance, UncontrolledSelection } from './Selection';

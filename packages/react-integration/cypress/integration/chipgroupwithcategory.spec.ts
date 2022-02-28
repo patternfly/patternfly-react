@@ -5,7 +5,7 @@ describe('Chip Group with Category Demo Test', () => {
 
   it('Verify delete button on first chip group', () => {
     const chipGroup = cy.get('.pf-c-chip-group').first();
-    const chipGroupButton = chipGroup.get('#remove_group_pf-random-id-0');
+    const chipGroupButton = chipGroup.get('#remove_group_category-1');
     chipGroupButton.should('be.visible');
     chipGroupButton.click();
     chipGroup.should('not.exist');
