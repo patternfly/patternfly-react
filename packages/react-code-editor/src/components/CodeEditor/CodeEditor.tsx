@@ -572,7 +572,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
               }
               {<div className={css(styles.codeEditorHeaderMain)}>{headerMainContent}</div>}
               {!!shortcuts.length && (
-                <div className={css(styles.codeEditorShortcuts)}>
+                <div className="pf-c-code-editor__keyboard-shortcuts">
                   <Popover
                     aria-label="Shortcuts"
                     bodyContent={
