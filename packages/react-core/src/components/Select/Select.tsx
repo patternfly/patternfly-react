@@ -671,10 +671,12 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     const { isOpen, onFavorite } = this.props;
     const { typeaheadCurrIndex, tabbedIntoFavoritesMenu } = this.state;
     const typeaheadActiveChild = this.getTypeaheadActiveChild(typeaheadCurrIndex);
-
     if (isOpen) {
       if (position === 'enter') {
-        if (typeaheadActiveChild || (this.refCollection[0] && this.refCollection[0][0])) {
+        if (
+          typeaheadCurrIndex !== -1 && // do not allow selection without moving to an initial option
+          (typeaheadActiveChild || (this.refCollection[0] && this.refCollection[0][0]))
+        ) {
           this.setState({
             typeaheadInputValue:
               (typeaheadActiveChild && typeaheadActiveChild.innerText) || this.refCollection[0][0].innerText
@@ -753,6 +755,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           // Close if there is no footer
           if (!this.props.footer) {
             this.onToggle(false);
+            this.onClose();
           } else {
             // has footer
             const tabbableItems = findTabbableElements(this.footerRef, SelectFooterTabbableItems);
@@ -761,12 +764,14 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
               if (shiftKey) {
                 // close toggle if shift key and tab on input
                 this.onToggle(false);
+                this.onClose();
               } else {
                 // tab to first tabbable item in footer
                 if (tabbableItems[0]) {
                   tabbableItems[0].focus();
                 } else {
                   this.onToggle(false);
+                  this.onClose();
                 }
               }
             } else {
@@ -787,6 +792,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   // no next item, close toggle
                   this.onToggle(false);
                   this.inputRef.current.focus();
+                  this.onClose();
                 }
               }
             }

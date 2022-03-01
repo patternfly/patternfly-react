@@ -320,6 +320,9 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
             onClick={_event => {
               if (!isDisabled) {
                 onToggle(!isOpen);
+                if (isOpen) {
+                  onClose();
+                }
               }
             }}
             onKeyDown={this.onKeyDown}
