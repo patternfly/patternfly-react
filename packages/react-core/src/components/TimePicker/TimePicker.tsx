@@ -6,9 +6,9 @@ import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
 import { getUniqueId } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
-import { KeyTypes } from '../Select';
 import { InputGroup } from '../InputGroup';
 import { TextInput, TextInputProps } from '../TextInput';
+import { KeyTypes } from '../../helpers/constants';
 import {
   parseTime,
   validateTime,

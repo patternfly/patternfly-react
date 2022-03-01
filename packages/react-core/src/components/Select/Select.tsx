@@ -17,7 +17,6 @@ import {
   SelectVariant,
   SelectPosition,
   SelectDirection,
-  KeyTypes,
   SelectFooterTabbableItems
 } from './selectConstants';
 import { Chip, ChipGroup, ChipGroupProps } from '../ChipGroup';
@@ -31,6 +30,7 @@ import {
   PickOptional,
   GenerateId
 } from '../../helpers';
+import { KeyTypes } from '../../helpers/constants';
 import { Divider } from '../Divider';
 import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
 import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/favorites';
