@@ -68,8 +68,7 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
     0: 'Today ',
     1: 'Yesterday ',
     2: 'Last 7 days ',
-    3: 'Last 14 days ',
-    4: 'Custom'
+    3: 'Last 14 days '
   };
 
   const dateText = {
@@ -88,8 +87,7 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
       <small className="pf-u-color-200">
         ({dateString(new Date(new Date().setDate(date.getDate() - 14)))} - {dateString(date)})
       </small>
-    ),
-    4: ''
+    )
   };
 
   const toggle = (
@@ -106,7 +104,6 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
           <MenuItem itemId={1}>Yesterday</MenuItem>
           <MenuItem itemId={2}>Last 7 days</MenuItem>
           <MenuItem itemId={3}>Last 14 days</MenuItem>
-          <MenuItem itemId={4}>Custom</MenuItem>
         </MenuList>
       </MenuContent>
     </Menu>
