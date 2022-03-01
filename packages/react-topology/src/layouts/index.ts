@@ -2,6 +2,7 @@ export * from './BaseLayout';
 export * from './ColaLayout';
 export * from './DagreLayout';
 export * from './ForceLayout';
+export * from './GridLayout';
 export * from './LayoutNode';
 export * from './LayoutGroup';
 export * from './LayoutLink';
