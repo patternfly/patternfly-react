@@ -3,12 +3,17 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CodeEditor/code-editor';
 import {
   Button,
+  ButtonVariant,
+  Chip,
   EmptyState,
   EmptyStateBody,
   EmptyStateIcon,
   EmptyStateSecondaryActions,
   EmptyStateVariant,
   getResizeObserver,
+  Grid,
+  GridItem,
+  Popover,
   Title,
   Tooltip,
   TooltipPosition
@@ -21,6 +26,11 @@ import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import Dropzone from 'react-dropzone';
 import { CodeEditorContext } from './CodeEditorUtils';
+
+export interface Shortcut {
+  description: string;
+  keys: string[];
+}
 
 export enum Language {
   abap = 'abap',
@@ -184,6 +194,10 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   onEditorDidMount?: EditorDidMount;
   /** Flag to add the minimap to the code editor */
   isMinimapVisible?: boolean;
+  /** Editor header main content title */
+  headerMainContent?: string;
+  /** Shortcuts to show users, will show up beside the header */
+  shortcuts?: Shortcut[];
   /** Flag to show the editor */
   showEditor?: boolean;
   /**
@@ -247,6 +261,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     toolTipPosition: 'top',
     customControls: null,
     isMinimapVisible: false,
+    headerMainContent: '',
+    shortcuts: [],
     showEditor: true,
     options: {},
     overrideServices: {}
@@ -453,6 +469,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       emptyStateLink,
       customControls,
       isMinimapVisible,
+      headerMainContent,
+      shortcuts,
       showEditor,
       options: optionsProp,
       overrideServices
@@ -503,7 +521,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
 
           const editorHeader = (
             <div className={css(styles.codeEditorHeader)}>
-              {(isCopyEnabled || isDownloadEnabled || isUploadEnabled || customControls) && (
+              {
                 <div className={css(styles.codeEditorControls)}>
                   {isCopyEnabled && (!showEmptyState || !!value) && (
                     <Tooltip
@@ -550,6 +568,39 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                   {customControls && (
                     <CodeEditorContext.Provider value={{ code: value }}>{customControls}</CodeEditorContext.Provider>
                   )}
+                </div>
+              }
+              {<div className={css(styles.codeEditorHeaderMain)}>{headerMainContent}</div>}
+              {!!shortcuts.length && (
+                <div className={css(styles.codeEditorShortcuts)}>
+                  <Popover
+                    aria-label="Shortcuts"
+                    bodyContent={
+                      <Grid span={6} hasGutter>
+                        {shortcuts.map((s: any) => (
+                          <>
+                            <GridItem style={{ textAlign: 'right' }}>
+                              {s.keys
+                                .map((k: string) => (
+                                  <Chip key={k} isReadOnly>
+                                    {k}
+                                  </Chip>
+                                ))
+                                .reduce((prev: React.ReactNode, curr: React.ReactNode) => [prev, ' + ', curr])}
+                            </GridItem>
+                            <GridItem>{s.description}</GridItem>
+                          </>
+                        ))}
+                      </Grid>
+                    }
+                  >
+                    <Button variant={ButtonVariant.link}>
+                      <span className="pf-c-button__icon pf-m-start">
+                        <i className="pf-icon pf-icon-help" aria-hidden="true"></i>
+                      </span>
+                      View shortcuts
+                    </Button>
+                  </Popover>
                 </div>
               )}
               {isLanguageLabelVisible && (

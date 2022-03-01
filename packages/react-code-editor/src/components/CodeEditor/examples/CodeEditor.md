@@ -12,7 +12,7 @@ import { CodeEditor, CodeEditorControl, Language } from '@patternfly/react-code-
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 ## Examples
-### Basic
+### Basic with view of shortcuts
 ```js
 import React from 'react';
 import { CodeEditor, Language } from '@patternfly/react-code-editor';
@@ -63,6 +63,20 @@ class BasicCodeEditor extends React.Component {
   
   render() {
     const { isDarkTheme, isLineNumbersVisible, isReadOnly, isMinimapVisible } = this.state;
+    const shortcuts = [
+      {
+        keys: ["Opt","F1"],
+        description: "Accessibility help",
+      },
+      {
+        keys: ["F1"],
+        description: "View all editor shortcuts",
+      },
+      {
+        keys: ["Ctrl", "Space"],
+        description: "Activate auto copmlete",
+      },
+    ];
     
     return (
       <>
@@ -99,6 +113,7 @@ class BasicCodeEditor extends React.Component {
           name="toggle-minimap"
         />
         <CodeEditor
+          shortcuts={shortcuts}
           isDarkTheme={isDarkTheme}
           isLineNumbersVisible={isLineNumbersVisible}
           isReadOnly={isReadOnly}
@@ -166,6 +181,8 @@ class customControlExample extends React.Component {
       <>
         <CodeEditor
           isDownloadEnabled
+          isLanguageLabelVisible
+          language={Language.javascript}
           isCopyEnabled
           height='400px'
           customControls={customControl}
