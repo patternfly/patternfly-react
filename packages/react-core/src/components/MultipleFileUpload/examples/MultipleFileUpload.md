@@ -6,12 +6,6 @@ propComponents:
   [
     'MultipleFileUpload',
     'MultipleFileUploadMain',
-    'MultipleFileUploadTitle',
-    'MultipleFileUploadTitleIcon',
-    'MultipleFileUploadTitleText',
-    'MultipleFileUploadTitleTextSeparator',
-    'MultipleFileUploadButton',
-    'MultipleFileUploadInfo',
     'MultipleFileUploadStatus',
     'MultipleFileUploadStatusItem',
   ]
