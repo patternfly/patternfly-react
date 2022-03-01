@@ -764,12 +764,14 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
               if (shiftKey) {
                 // close toggle if shift key and tab on input
                 this.onToggle(false);
+                this.onClose();
               } else {
                 // tab to first tabbable item in footer
                 if (tabbableItems[0]) {
                   tabbableItems[0].focus();
                 } else {
                   this.onToggle(false);
+                  this.onClose();
                 }
               }
             } else {
@@ -790,6 +792,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   // no next item, close toggle
                   this.onToggle(false);
                   this.inputRef.current.focus();
+                  this.onClose();
                 }
               }
             }
