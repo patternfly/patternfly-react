@@ -12,7 +12,7 @@ import { CodeEditor, CodeEditorControl, Language } from '@patternfly/react-code-
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
 ## Examples
-### Basic with view of shortcuts
+### Basic
 ```js
 import React from 'react';
 import { CodeEditor, Language } from '@patternfly/react-code-editor';
@@ -63,20 +63,6 @@ class BasicCodeEditor extends React.Component {
   
   render() {
     const { isDarkTheme, isLineNumbersVisible, isReadOnly, isMinimapVisible } = this.state;
-    const shortcuts = [
-      {
-        keys: ["Opt","F1"],
-        description: "Accessibility help",
-      },
-      {
-        keys: ["F1"],
-        description: "View all editor shortcuts",
-      },
-      {
-        keys: ["Ctrl", "Space"],
-        description: "Activate auto copmlete",
-      },
-    ];
     
     return (
       <>
@@ -113,11 +99,66 @@ class BasicCodeEditor extends React.Component {
           name="toggle-minimap"
         />
         <CodeEditor
-          shortcuts={shortcuts}
           isDarkTheme={isDarkTheme}
           isLineNumbersVisible={isLineNumbersVisible}
           isReadOnly={isReadOnly}
           isMinimapVisible={isMinimapVisible}
+          isLanguageLabelVisible
+          code="Some example content"
+          onChange={this.onChange}
+          language={Language.javascript}
+          onEditorDidMount={this.onEditorDidMount}
+          height='400px'
+        />
+      </>
+    );
+  }
+}
+```
+
+### With shortcut menu and main header content
+```js
+import React from 'react';
+import { CodeEditor, Language } from '@patternfly/react-code-editor';
+import { Checkbox } from '@patternfly/react-core';
+
+class BasicCodeEditor extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.onEditorDidMount = (editor, monaco) => {
+      console.log(editor.getValue());
+      editor.layout();
+      editor.focus();
+      monaco.editor.getModels()[0].updateOptions({ tabSize: 5 });
+    };
+    
+    this.onChange = value => {
+      console.log(value);
+    };
+  }
+  
+  render() {
+    const shortcuts = [
+      {
+        keys: ["Opt","F1"],
+        description: "Accessibility help",
+      },
+      {
+        keys: ["F1"],
+        description: "View all editor shortcuts",
+      },
+      {
+        keys: ["Ctrl", "Space"],
+        description: "Activate auto copmlete",
+      },
+    ];
+    
+    return (
+      <>
+        <CodeEditor
+          headerMainContent="Shortcut Example"
+          shortcuts={shortcuts}
           isLanguageLabelVisible
           code="Some example content"
           onChange={this.onChange}
@@ -181,8 +222,6 @@ class customControlExample extends React.Component {
       <>
         <CodeEditor
           isDownloadEnabled
-          isLanguageLabelVisible
-          language={Language.javascript}
           isCopyEnabled
           height='400px'
           customControls={customControl}
