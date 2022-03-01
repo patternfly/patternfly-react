@@ -19,7 +19,7 @@ import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-
 - Focus must be manually managed when the NotificationDrawer component is opened:
 
   1. Create a React `ref` and pass it into the NotificationDrawer component's `ref` attribute
-  2. Pass in a function to the `onNotificationDrawerExpand` prop of the Page component that will place focus on the NotificationDrawer component via the previously created `ref`
+  2. Pass in a function to the `onNotificationDrawerExpand` prop of the Page component that will place focus on the first interact-able element inside the NotificationDrawer component via the previously created `ref`
 
 ### Basic
 
@@ -187,7 +187,8 @@ class BasicNotificationDrawer extends React.Component {
     };
 
     this.focusDrawer = () => {
-      this.drawerRef.current.focus();
+      const firstTabbableItem = this.drawerRef.current.querySelector('a, button');
+      firstTabbableItem.focus();
     };
   }
 
@@ -754,7 +755,8 @@ class GroupedNotificationDrawer extends React.Component {
     this.focusDrawer = () => {
       // Prevent the NotificationDrawer from receiving focus if a drawer group item is opened
       if (!document.activeElement.closest(`.${this.drawerRef.current.className}`)) {
-        this.drawerRef.current.focus();
+        const firstTabbableItem = this.drawerRef.current.querySelector('a, button');
+        firstTabbableItem.focus();
       }
     };
   }
