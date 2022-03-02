@@ -1,5 +1,6 @@
 import { calculateColumns, mapOpenedRows } from './headerUtils';
 import { ICell, IRow } from '../TableTypes';
+import { HeaderType } from '../base/types';
 
 describe('headerUtils', () => {
   describe('calculateColumns', () => {
@@ -80,7 +81,7 @@ describe('headerUtils', () => {
             {
               header: {
                 someData: 'test'
-              }
+              } as HeaderType
             }
           ] as ICell[],
           {}

@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { FormSelect } from '../../FormSelect';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('FormSelect should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <FormSelect
       children={<div>ReactNode</div>}
       className={"''"}
@@ -22,5 +22,5 @@ it('FormSelect should match snapshot (auto-generated)', () => {
       aria-label={'string'}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

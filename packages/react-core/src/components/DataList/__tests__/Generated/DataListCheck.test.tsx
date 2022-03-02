@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { DataListCheck } from '../../DataListCheck';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('DataListCheck should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <DataListCheck
       className={"''"}
       isValid={true}
@@ -19,5 +19,5 @@ it('DataListCheck should match snapshot (auto-generated)', () => {
       aria-labelledby={'string'}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

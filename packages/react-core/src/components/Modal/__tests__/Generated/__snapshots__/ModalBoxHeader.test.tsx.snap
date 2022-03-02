@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalBoxHeader should match snapshot (auto-generated) 1`] = `
-<header
-  className="pf-c-modal-box__header ''"
->
-  ReactNode
-</header>
+<div>
+  <header
+    class="pf-c-modal-box__header ''"
+  >
+    ReactNode
+  </header>
+</div>
 `;

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 
 import { Alert, AlertVariant } from '../Alert';
@@ -19,39 +20,39 @@ test('default Alert variant is default', () => {
 Object.values(AlertVariant).forEach(variant => {
   describe(`Alert - ${variant}`, () => {
     test('Description', () => {
-      const view = mount(
+      const view = render(
         <Alert variant={variant} title="">
           Some alert
         </Alert>
       );
-      expect(view).toMatchSnapshot();
+      expect(view.container).toMatchSnapshot();
     });
 
     test('Title', () => {
-      const view = mount(
+      const view = render(
         <Alert variant={variant} title="Some title">
           Some alert
         </Alert>
       );
-      expect(view).toMatchSnapshot();
+      expect(view.container).toMatchSnapshot();
     });
 
     test('Heading level', () => {
-      const view = mount(
+      const view = render(
         <Alert variant={variant} title="Some title" titleHeadingLevel="h1">
           Some alert
         </Alert>
       );
-      expect(view).toMatchSnapshot();
+      expect(view.container).toMatchSnapshot();
     });
 
     test('Action Link', () => {
-      const view = mount(
+      const view = render(
         <Alert variant={variant} actionLinks={[<AlertActionLink key={'action-1'}>test</AlertActionLink>]} title="">
           Some alert
         </Alert>
       );
-      expect(view).toMatchSnapshot();
+      expect(view.container).toMatchSnapshot();
     });
 
     test('Action Close Button', () => {
@@ -71,16 +72,16 @@ Object.values(AlertVariant).forEach(variant => {
     });
 
     test('Action and Title', () => {
-      const view = mount(
+      const view = render(
         <Alert variant={variant} actionLinks={[<AlertActionLink key={'action-1'}>test</AlertActionLink>]} title="Some title">
           Some alert
         </Alert>
       );
-      expect(view).toMatchSnapshot();
+      expect(view.container).toMatchSnapshot();
     });
 
     test('Custom aria label', () => {
-      const view = mount(
+      const view = render(
         <Alert
           variant={variant}
           aria-label={`Custom aria label for ${variant}`}
@@ -90,25 +91,25 @@ Object.values(AlertVariant).forEach(variant => {
           Some alert
         </Alert>
       );
-      expect(view).toMatchSnapshot();
+      expect(view.container).toMatchSnapshot();
     });
 
     test('inline variation', () => {
-      const view = mount(
+      const view = render(
         <Alert variant={variant} isInline title="Some title">
           Some alert
         </Alert>
       );
-      expect(view).toMatchSnapshot();
+      expect(view.container).toMatchSnapshot();
     });
 
     test('expandable variation', () => {
-      const view = mount(
+      const view = render(
         <Alert variant={variant} title="Some title" isExpandable>
           <p>Success alert description. This should tell the user more information about the alert.</p>
         </Alert>
       )
-      expect(view).toMatchSnapshot();
+      expect(view.container).toMatchSnapshot();
     })
 
     test('expandable variation description hidden', () => {
@@ -122,12 +123,12 @@ Object.values(AlertVariant).forEach(variant => {
     })
 
     test('Toast alerts match snapsnot', () => {
-      const view = mount(
+      const view = render(
         <Alert isLiveRegion={true} variant={variant} aria-label={`${variant} toast alert`} title="Some title">
           Some toast alert
         </Alert>
       );
-      expect(view).toMatchSnapshot();
+      expect(view.container).toMatchSnapshot();
     });
 
     test('Toast alerts contain default live region', () => {
@@ -170,7 +171,7 @@ Object.values(AlertVariant).forEach(variant => {
     });
 
     test('Custom icon', () => {
-      const view = mount(
+      const view = render(
         <Alert
           customIcon={<UsersIcon />}
           variant={variant}
@@ -180,7 +181,7 @@ Object.values(AlertVariant).forEach(variant => {
           Some noisy alert
         </Alert>
       );
-      expect(view).toMatchSnapshot();
+      expect(view.container).toMatchSnapshot();
     });
   });
 });

@@ -1,20 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LoginMainHeader should match snapshot (auto-generated) 1`] = `
-<header
-  className="pf-c-login__main-header ''"
->
-  <Title
-    headingLevel="h2"
-    size="3xl"
+<div>
+  <header
+    class="pf-c-login__main-header ''"
   >
-    ''
-  </Title>
-  <p
-    className="pf-c-login__main-header-desc"
-  >
-    ''
-  </p>
-  ReactNode
-</header>
+    <h2
+      class="pf-c-title pf-m-3xl"
+      data-ouia-component-id="OUIA-Generated-Title-1"
+      data-ouia-component-type="PF4/Title"
+      data-ouia-safe="true"
+    >
+      ''
+    </h2>
+    <p
+      class="pf-c-login__main-header-desc"
+    >
+      ''
+    </p>
+    ReactNode
+  </header>
+</div>
 `;

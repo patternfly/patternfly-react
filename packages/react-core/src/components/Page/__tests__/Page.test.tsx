@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import { Page } from '../Page';
 import { PageHeader } from '../PageHeader';
@@ -20,7 +21,7 @@ const props = {
 test('Check page vertical layout example against snapshot', () => {
   const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" onNavToggle={() => undefined} />;
   const Sidebar = <PageSidebar nav="Navigation" isNavOpen />;
-  const view = mount(
+  const view = render(
     <Page {...props} header={Header} sidebar={Sidebar}>
       <PageSection variant="default">Section with default background</PageSection>
       <PageSection variant="light">Section with light background</PageSection>
@@ -28,13 +29,13 @@ test('Check page vertical layout example against snapshot', () => {
       <PageSection variant="darker">Section with darker background</PageSection>
     </Page>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Check dark page against snapshot', () => {
   const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" onNavToggle={() => undefined} />;
   const Sidebar = <PageSidebar nav="Navigation" isNavOpen theme="dark" />;
-  const view = mount(
+  const view = render(
     <Page {...props} header={Header} sidebar={Sidebar}>
       <PageSection variant="default">Section with default background</PageSection>
       <PageSection variant="light">Section with light background</PageSection>
@@ -42,13 +43,13 @@ test('Check dark page against snapshot', () => {
       <PageSection variant="darker">Section with darker background</PageSection>
     </Page>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Check page horizontal layout example against snapshot', () => {
   const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" topNav="Navigation" />;
   const Sidebar = <PageSidebar isNavOpen />;
-  const view = mount(
+  const view = render(
     <Page {...props} header={Header} sidebar={Sidebar}>
       <PageSection variant="default">Section with default background</PageSection>
       <PageSection variant="light">Section with light background</PageSection>
@@ -56,7 +57,7 @@ test('Check page horizontal layout example against snapshot', () => {
       <PageSection variant="darker">Section with darker background</PageSection>
     </Page>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Check page to verify breadcrumb is created', () => {

@@ -1,18 +1,18 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Chart } from './Chart';
 import { ChartGroup } from '../ChartGroup';
 import { ChartLine } from '../ChartLine';
 
 Object.values([true, false]).forEach(() => {
   test('Chart', () => {
-    const view = shallow(<Chart />);
-    expect(view).toMatchSnapshot();
+    const view = render(<Chart />);
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 test('renders axis and component children', () => {
-  const view = shallow(
+  const view = render(
     <Chart minDomain={{ y: 0 }} height={200} width={200}>
       <ChartGroup>
         <ChartLine
@@ -50,5 +50,5 @@ test('renders axis and component children', () => {
       </ChartGroup>
     </Chart>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

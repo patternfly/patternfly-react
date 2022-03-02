@@ -1,4 +1,5 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import { TextInputGroup, TextInputGroupContext } from '../TextInputGroup';
 import { TextInputGroupMain } from '../TextInputGroupMain';
@@ -7,33 +8,33 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 describe('TextInputGroup', () => {
   test('renders content', () => {
-    const view = mount(
+    const view = render(
       <TextInputGroup>
         <TextInputGroupMain>Foo</TextInputGroupMain>
         <TextInputGroupUtilities />
       </TextInputGroup>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('gets custom class and id', () => {
-    const view = mount(
+    const view = render(
       <TextInputGroup className="custom-class" id="test-id">
         <TextInputGroupMain>Foo</TextInputGroupMain>
         <TextInputGroupUtilities />
       </TextInputGroup>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('renders with the proper stying when disabled', () => {
-    const view = mount(
+    const view = render(
       <TextInputGroup isDisabled>
         <TextInputGroupMain>Foo</TextInputGroupMain>
         <TextInputGroupUtilities />
       </TextInputGroup>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('passes isDisabled=false to children via a context when isDisabled prop is not passed', () => {
@@ -69,24 +70,24 @@ describe('TextInputGroup', () => {
 
 describe('TextInputGroupMain', () => {
   test('renders content', () => {
-    const view = mount(<TextInputGroupMain>Foo</TextInputGroupMain>);
-    expect(view).toMatchSnapshot();
+    const view = render(<TextInputGroupMain>Foo</TextInputGroupMain>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('renders given input icon props', () => {
-    const view = mount(<TextInputGroupMain icon={<SearchIcon />}>Foo</TextInputGroupMain>);
-    expect(view).toMatchSnapshot();
+    const view = render(<TextInputGroupMain icon={<SearchIcon />}>Foo</TextInputGroupMain>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('renders the input with custom aria label when given', () => {
-    const view = mount(<TextInputGroupMain aria-label="Foo">Foo</TextInputGroupMain>);
-    expect(view).toMatchSnapshot();
+    const view = render(<TextInputGroupMain aria-label="Foo">Foo</TextInputGroupMain>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('does not call onChange callback when the input does not change', () => {
     const onChangeMock = jest.fn();
 
-    const view = mount(<TextInputGroupMain onChange={onChangeMock}>Foo</TextInputGroupMain>);
+    const view = render(<TextInputGroupMain onChange={onChangeMock}>Foo</TextInputGroupMain>);
     expect(onChangeMock).not.toHaveBeenCalled();
   });
 
@@ -101,7 +102,7 @@ describe('TextInputGroupMain', () => {
   test('does not call onFocus callback when the input does not get focus', () => {
     const onFocusMock = jest.fn();
 
-    const view = mount(<TextInputGroupMain onFocus={onFocusMock}>Foo</TextInputGroupMain>);
+    const view = render(<TextInputGroupMain onFocus={onFocusMock}>Foo</TextInputGroupMain>);
     expect(onFocusMock).not.toHaveBeenCalled();
   });
 
@@ -116,7 +117,7 @@ describe('TextInputGroupMain', () => {
   test('does not call onBlur callback when the input does not lose focus', () => {
     const onBlurMock = jest.fn();
 
-    const view = mount(<TextInputGroupMain onBlur={onBlurMock}>Foo</TextInputGroupMain>);
+    const view = render(<TextInputGroupMain onBlur={onBlurMock}>Foo</TextInputGroupMain>);
     expect(onBlurMock).not.toHaveBeenCalled();
   });
 
@@ -159,7 +160,7 @@ describe('TextInputGroupMain', () => {
 
 describe('TextInputGroupUtilities', () => {
   test('renders the content', () => {
-    const view = mount(<TextInputGroupUtilities>{<button>Foo</button>}</TextInputGroupUtilities>);
-    expect(view).toMatchSnapshot();
+    const view = render(<TextInputGroupUtilities>{<button>Foo</button>}</TextInputGroupUtilities>);
+    expect(view.container).toMatchSnapshot();
   });
 });

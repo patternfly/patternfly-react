@@ -26,7 +26,7 @@ test('allows passing in a string as the component', () => {
 
 test('allows passing in a React Component as the component', () => {
   const Component = () => <div>im a div</div>;
-  const view = shallow(<Card component={Component} />).dive();
+  const view = shallow(<Card component={(Component as unknown) as keyof JSX.IntrinsicElements} />).dive();
   expect(view.type()).toBe(Component);
 });
 
@@ -103,5 +103,3 @@ test('card warns when isLarge and isCompact', () => {
   shallow(<Card isLarge isCompact />);
   expect(consoleWarnMock).toBeCalled();
 });
-
-

@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { OptionsMenu } from '../../OptionsMenu';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('OptionsMenu should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <OptionsMenu
       className={"''"}
       id={'string'}
@@ -22,5 +22,5 @@ it('OptionsMenu should match snapshot (auto-generated)', () => {
       direction={'up'}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

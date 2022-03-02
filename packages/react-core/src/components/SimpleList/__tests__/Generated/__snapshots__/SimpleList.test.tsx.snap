@@ -1,21 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SimpleList should match snapshot (auto-generated) 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "currentRef": null,
-      "isControlled": true,
-      "updateCurrentRef": [Function],
-    }
-  }
->
+<div>
   <div
-    className="pf-c-simple-list ''"
+    class="pf-c-simple-list ''"
   >
     <ul>
       ReactNode
     </ul>
   </div>
-</ContextProvider>
+</div>
 `;

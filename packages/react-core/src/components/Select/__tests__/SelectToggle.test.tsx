@@ -1,4 +1,5 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import { SelectToggle } from '../SelectToggle';
 
@@ -91,7 +92,7 @@ describe('API', () => {
       }
     });
     const mockToggle = jest.fn();
-    const view = mount(
+    const view = render(
       <SelectToggle
         id="Select Toggle"
         onToggle={mockToggle}
@@ -118,7 +119,7 @@ describe('API', () => {
       }
     });
     const mockToggle = jest.fn();
-    const view = mount(
+    const view = render(
       <SelectToggle
         id="Select Toggle"
         onToggle={mockToggle}
@@ -137,11 +138,11 @@ describe('API', () => {
 
 describe('state', () => {
   test('active', () => {
-    const view = mount(
+    const view = render(
       <SelectToggle id="Select Toggle" isActive parentRef={{ current: document.createElement('div') }}>
         Select
       </SelectToggle>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });

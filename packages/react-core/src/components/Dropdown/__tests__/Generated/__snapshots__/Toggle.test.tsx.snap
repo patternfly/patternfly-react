@@ -1,7 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Toggle should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<div>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="pf-c-dropdown__toggle ''"
+    id="string"
+    type="button"
+  >
+    <div>
+      ReactNode
+    </div>
+  </button>
+</div>
 `;

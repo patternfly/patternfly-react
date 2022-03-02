@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+import { mount } from 'enzyme';
 import { DropdownToggleCheckbox } from '../DropdownToggleCheckbox';
 
 const props = {
@@ -8,46 +9,46 @@ const props = {
 };
 
 test('controlled', () => {
-  const view = shallow(<DropdownToggleCheckbox isChecked id="check" aria-label="check" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<DropdownToggleCheckbox isChecked id="check" aria-label="check" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('uncontrolled', () => {
-  const view = shallow(<DropdownToggleCheckbox id="check" aria-label="check" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<DropdownToggleCheckbox id="check" aria-label="check" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('with text', () => {
-  const view = shallow(
+  const view = render(
     <DropdownToggleCheckbox id="check" isDisabled aria-label="check">
       Some text
     </DropdownToggleCheckbox>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('isDisabled', () => {
-  const view = shallow(<DropdownToggleCheckbox id="check" isDisabled aria-label="check" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<DropdownToggleCheckbox id="check" isDisabled aria-label="check" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('3rd state', () => {
-  const view = shallow(<DropdownToggleCheckbox id="check" isChecked={null} aria-label="check" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<DropdownToggleCheckbox id="check" isChecked={null} aria-label="check" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('passing class', () => {
-  const view = shallow(
+  const view = render(
     <DropdownToggleCheckbox label="label" className="class-123" id="check" isChecked aria-label="check" />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('passing HTML attribute', () => {
-  const view = shallow(
+  const view = render(
     <DropdownToggleCheckbox label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('checkbox passes value and event to onChange handler', () => {

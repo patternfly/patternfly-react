@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import { Dropdown } from '../Dropdown';
 import { DropdownPosition, DropdownDirection } from '../dropdownConstants';
@@ -27,25 +28,25 @@ const dropdownItems = [
 
 describe('dropdown', () => {
   test('regular', () => {
-    const view = mount(
+    const view = render(
       <Dropdown dropdownItems={dropdownItems} toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>} />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('right aligned', () => {
-    const view = mount(
+    const view = render(
       <Dropdown
         dropdownItems={dropdownItems}
         position={DropdownPosition.right}
         toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('alignment breakpoints', () => {
-    const view = mount(
+    const view = render(
       <Dropdown
         dropdownItems={dropdownItems}
         alignments={{
@@ -59,22 +60,22 @@ describe('dropdown', () => {
         isOpen
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('dropup', () => {
-    const view = mount(
+    const view = render(
       <Dropdown
         dropdownItems={dropdownItems}
         direction={DropdownDirection.up}
         toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('dropup + right aligned', () => {
-    const view = mount(
+    const view = render(
       <Dropdown
         dropdownItems={dropdownItems}
         direction={DropdownDirection.up}
@@ -82,22 +83,22 @@ describe('dropdown', () => {
         toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('expanded', () => {
-    const view = mount(
+    const view = render(
       <Dropdown
         dropdownItems={dropdownItems}
         isOpen
         toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('primary', () => {
-    const view = mount(
+    const view = render(
       <Dropdown
         dropdownItems={dropdownItems}
         toggle={
@@ -107,49 +108,49 @@ describe('dropdown', () => {
         }
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('basic', () => {
-    const view = mount(
+    const view = render(
       <Dropdown isOpen toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}>
         <div>BASIC</div>
       </Dropdown>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 describe('KebabToggle', () => {
   test('regular', () => {
-    const view = mount(<Dropdown dropdownItems={dropdownItems} toggle={<KebabToggle id="Dropdown Toggle" />} />);
-    expect(view).toMatchSnapshot();
+    const view = render(<Dropdown dropdownItems={dropdownItems} toggle={<KebabToggle id="Dropdown Toggle" />} />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('right aligned', () => {
-    const view = mount(
+    const view = render(
       <Dropdown
         dropdownItems={dropdownItems}
         position={DropdownPosition.right}
         toggle={<KebabToggle id="Dropdown Toggle" />}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('dropup', () => {
-    const view = mount(
+    const view = render(
       <Dropdown
         dropdownItems={dropdownItems}
         direction={DropdownDirection.up}
         toggle={<KebabToggle id="Dropdown Toggle" />}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('dropup + right aligned', () => {
-    const view = mount(
+    const view = render(
       <Dropdown
         dropdownItems={dropdownItems}
         direction={DropdownDirection.up}
@@ -157,28 +158,30 @@ describe('KebabToggle', () => {
         toggle={<KebabToggle id="Dropdown Toggle" />}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('expanded', () => {
-    const view = mount(<Dropdown dropdownItems={dropdownItems} isOpen toggle={<KebabToggle id="Dropdown Toggle" />} />);
-    expect(view).toMatchSnapshot();
+    const view = render(
+      <Dropdown dropdownItems={dropdownItems} isOpen toggle={<KebabToggle id="Dropdown Toggle" />} />
+    );
+    expect(view.container).toMatchSnapshot();
   });
 
   test('plain', () => {
-    const view = mount(
+    const view = render(
       <Dropdown dropdownItems={dropdownItems} isPlain toggle={<KebabToggle id="Dropdown Toggle" />} />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('basic', () => {
-    const view = mount(
+    const view = render(
       <Dropdown isOpen toggle={<KebabToggle id="Dropdown Toggle" />}>
         <div>BASIC</div>
       </Dropdown>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });
 
@@ -205,7 +208,7 @@ describe('API', () => {
   test('dropdownItems and children console error ', () => {
     const myMock = jest.fn();
     global.console = { error: myMock } as any;
-    mount(
+    render(
       <Dropdown
         dropdownItems={dropdownItems}
         isOpen
@@ -222,7 +225,7 @@ describe('API', () => {
   test('dropdownItems only, no console error ', () => {
     const myMock = jest.fn();
     global.console = { error: myMock } as any;
-    mount(
+    render(
       <Dropdown
         dropdownItems={dropdownItems}
         isOpen
@@ -235,7 +238,7 @@ describe('API', () => {
   test('children only, no console ', () => {
     const myMock = jest.fn();
     global.console = { error: myMock } as any;
-    mount(
+    render(
       <Dropdown isOpen toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}>
         <div>Children items</div>
       </Dropdown>

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 import AddressBookIcon from '@patternfly/react-icons/dist/esm/icons/address-book-icon';
 import { EmptyState, EmptyStateVariant } from '../EmptyState';
@@ -11,7 +12,7 @@ import { Title, TitleSizes } from '../../Title';
 
 describe('EmptyState', () => {
   test('Main', () => {
-    const view = shallow(
+    const view = render(
       <EmptyState>
         <Title headingLevel="h5" size="lg">
           HTTP Proxies
@@ -27,34 +28,34 @@ describe('EmptyState', () => {
         </EmptyStateSecondaryActions>
       </EmptyState>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('Main variant large', () => {
-    const view = shallow(
+    const view = render(
       <EmptyState variant={EmptyStateVariant.large}>
         <Title headingLevel="h3" size={TitleSizes.md}>EmptyState large</Title>
       </EmptyState>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('Main variant small', () => {
-    const view = shallow(
+    const view = render(
       <EmptyState variant={EmptyStateVariant.small}>
         <Title headingLevel="h3" size={TitleSizes.md}>EmptyState small</Title>
       </EmptyState>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('Main variant xs', () => {
-    const view = shallow(
+    const view = render(
       <EmptyState variant={EmptyStateVariant.xs}>
         <Title headingLevel="h3" size={TitleSizes.md}>EmptyState small</Title>
       </EmptyState>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('Body', () => {
@@ -101,12 +102,12 @@ describe('EmptyState', () => {
   });
 
   test('Full height', () => {
-    const view = shallow(
+    const view = render(
       <EmptyState isFullHeight variant={EmptyStateVariant.large}>
         <Title headingLevel="h3" size={TitleSizes.md}>EmptyState large</Title>
       </EmptyState>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
 });

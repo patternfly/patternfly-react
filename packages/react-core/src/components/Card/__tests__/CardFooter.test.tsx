@@ -1,10 +1,11 @@
 import React from 'react';
 import { CardFooter } from '../CardFooter';
+import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 
 test('renders with PatternFly Core styles', () => {
-  const view = shallow(<CardFooter />);
-  expect(view).toMatchSnapshot();
+  const view = render(<CardFooter />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('className is added to the root element', () => {
@@ -26,6 +27,6 @@ test('allows passing in a string as the component', () => {
 
 test('allows passing in a React Component as the component', () => {
   const Component = () => <div>im a div</div>;
-  const view = shallow(<CardFooter component={Component} />);
+  const view = shallow(<CardFooter component={(Component as unknown) as keyof JSX.IntrinsicElements} />);
   expect(view.type()).toBe(Component);
 });

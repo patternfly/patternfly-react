@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import { LoginPage } from '../LoginPage';
 import { ListVariant } from '../../List';
@@ -11,7 +11,7 @@ const needAccountMesseage = (
 );
 
 test('check loginpage example against snapshot', () => {
-  const view = shallow(
+  const view = render(
     <LoginPage
       footerListVariants={ListVariant.inline}
       brandImgSrc="Brand src"
@@ -25,5 +25,5 @@ test('check loginpage example against snapshot', () => {
       socialMediaLoginContent="Footer"
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

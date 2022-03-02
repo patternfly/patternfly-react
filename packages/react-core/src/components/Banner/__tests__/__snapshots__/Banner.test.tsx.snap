@@ -1,90 +1,72 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`danger banner 1`] = `
-<Banner
-  aria-label="danger"
-  variant="danger"
->
+<div>
   <div
     aria-label="danger"
-    className="pf-c-banner pf-m-danger"
+    class="pf-c-banner pf-m-danger"
   >
     danger
      Banner
   </div>
-</Banner>
+</div>
 `;
 
 exports[`default banner 1`] = `
-<Banner
-  aria-label="default"
-  variant="default"
->
+<div>
   <div
     aria-label="default"
-    className="pf-c-banner"
+    class="pf-c-banner"
   >
     default
      Banner
   </div>
-</Banner>
+</div>
 `;
 
 exports[`info banner 1`] = `
-<Banner
-  aria-label="info"
-  variant="info"
->
+<div>
   <div
     aria-label="info"
-    className="pf-c-banner pf-m-info"
+    class="pf-c-banner pf-m-info"
   >
     info
      Banner
   </div>
-</Banner>
+</div>
 `;
 
 exports[`sticky banner 1`] = `
-<Banner
-  aria-label="sticky"
-  isSticky={true}
->
+<div>
   <div
     aria-label="sticky"
-    className="pf-c-banner pf-m-sticky"
+    class="pf-c-banner pf-m-sticky"
   >
     Sticky Banner
   </div>
-</Banner>
+</div>
 `;
 
 exports[`success banner 1`] = `
-<Banner
-  aria-label="success"
-  variant="success"
->
+<div>
   <div
     aria-label="success"
-    className="pf-c-banner pf-m-success"
+    class="pf-c-banner pf-m-success"
   >
     success
      Banner
   </div>
-</Banner>
+</div>
 `;
 
 exports[`warning banner 1`] = `
-<Banner
-  aria-label="warning"
-  variant="warning"
->
+<div>
   <div
     aria-label="warning"
-    className="pf-c-banner pf-m-warning"
+    class="pf-c-banner pf-m-warning"
   >
     warning
      Banner
   </div>
-</Banner>
+</div>
 `;

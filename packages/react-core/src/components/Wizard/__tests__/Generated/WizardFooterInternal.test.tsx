@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { WizardFooterInternal } from '../../WizardFooterInternal';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('WizardFooterInternal should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <WizardFooterInternal
       onNext={'any'}
       onBack={'any'}
@@ -21,5 +21,5 @@ it('WizardFooterInternal should match snapshot (auto-generated)', () => {
       cancelButtonText={<div>ReactNode</div>}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

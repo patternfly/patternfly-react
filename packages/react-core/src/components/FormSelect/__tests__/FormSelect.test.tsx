@@ -1,4 +1,5 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 import { FormSelect } from '../FormSelect';
 import { FormSelectOption } from '../FormSelectOption';
@@ -49,18 +50,18 @@ const groupedProps = {
 };
 
 test('Simple FormSelect input', () => {
-  const view = shallow(
+  const view = render(
     <FormSelect value={props.value} aria-label="simple FormSelect">
       {props.options.map((option, index) => (
         <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
       ))}
     </FormSelect>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Grouped FormSelect input', () => {
-  const view = shallow(
+  const view = render(
     <FormSelect value={groupedProps.value} aria-label=" grouped FormSelect">
       {groupedProps.groups.map((group, index) => (
         <FormSelectOptionGroup isDisabled={group.disabled} key={index} label={group.groupLabel}>
@@ -71,61 +72,61 @@ test('Grouped FormSelect input', () => {
       ))}
     </FormSelect>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Disabled FormSelect input ', () => {
-  const view = shallow(
+  const view = render(
     <FormSelect isDisabled aria-label="disabled  FormSelect">
       <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
     </FormSelect>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('FormSelect input with aria-label does not generate console error', () => {
   const myMock = jest.fn() as any;
   global.console = { error: myMock } as any;
-  const view = shallow(
+  const view = render(
     <FormSelect aria-label="FormSelect with aria-label">
       <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
     </FormSelect>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
   expect(myMock).not.toBeCalled();
 });
 
 test('FormSelect input with id does not generate console error', () => {
   const myMock = jest.fn() as any;
   global.console = { error: myMock } as any;
-  const view = shallow(
+  const view = render(
     <FormSelect id="id">
       <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
     </FormSelect>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
   expect(myMock).not.toBeCalled();
 });
 
 test('FormSelect input with no aria-label or id generates console error', () => {
   const myMock = jest.fn() as any;
   global.console = { error: myMock } as any;
-  const view = shallow(
+  const view = render(
     <FormSelect>
       <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
     </FormSelect>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
   expect(myMock).toBeCalled();
 });
 
 test('invalid FormSelect input', () => {
-  const view = shallow(
+  const view = render(
     <FormSelect validated={'error'} aria-label="invalid FormSelect">
       <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
     </FormSelect>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('validated success FormSelect input', () => {
@@ -139,12 +140,12 @@ test('validated success FormSelect input', () => {
 });
 
 test('validated error FormSelect input', () => {
-  const view = shallow(
+  const view = render(
     <FormSelect validated={ValidatedOptions.error} aria-label="validated FormSelect">
       <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
     </FormSelect>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('validated warning FormSelect input', () => {
@@ -159,12 +160,12 @@ test('validated warning FormSelect input', () => {
 
 
 test('required FormSelect input', () => {
-  const view = shallow(
+  const view = render(
     <FormSelect required aria-label="required FormSelect">
       <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
     </FormSelect>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('FormSelect passes value and event to onChange handler', () => {

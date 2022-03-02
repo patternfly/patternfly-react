@@ -1,10 +1,11 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+import { mount } from 'enzyme';
 import { ContextSelectorToggle } from '../ContextSelectorToggle';
 
 test('Renders ContextSelectorToggle', () => {
-  const view = shallow(<ContextSelectorToggle id="toggle-id" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<ContextSelectorToggle id="toggle-id" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Verify onToggle is called ', () => {

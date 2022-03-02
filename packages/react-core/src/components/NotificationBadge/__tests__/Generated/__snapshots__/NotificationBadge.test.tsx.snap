@@ -1,17 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NotificationBadge should match snapshot (auto-generated) 1`] = `
-<Button
-  aria-label="string"
-  className="string"
-  variant="plain"
->
-  <span
-    className="pf-c-notification-badge pf-m-unread"
+<div>
+  <button
+    aria-disabled="false"
+    aria-label="string"
+    class="pf-c-button pf-m-plain string"
+    data-ouia-component-id="OUIA-Generated-Button-plain-1"
+    data-ouia-component-type="PF4/Button"
+    data-ouia-safe="true"
+    type="button"
   >
-    <div>
-      ReactNode
-    </div>
-  </span>
-</Button>
+    <span
+      class="pf-c-notification-badge pf-m-unread"
+    >
+      <div>
+        ReactNode
+      </div>
+    </span>
+  </button>
+</div>
 `;

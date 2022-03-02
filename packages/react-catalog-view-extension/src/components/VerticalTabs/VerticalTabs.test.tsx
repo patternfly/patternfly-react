@@ -1,11 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { VerticalTabs } from './VerticalTabs';
 import { VerticalTabsTab } from './VerticalTabsTab';
 
 test('Vertical Tabs renders tabs properly', () => {
-  const component = mount(
+  const component = render(
     <VerticalTabs id="vertical-tabs" className="test-vertical-tabs">
       <VerticalTabsTab id="all" className="test-vertical-tabs-tab" title="All" />
       <VerticalTabsTab id="one" title="Tab One">
@@ -40,11 +41,11 @@ test('Vertical Tabs renders tabs properly', () => {
       <VerticalTabsTab id="seven" title="Tab Seven" />
     </VerticalTabs>
   );
-  expect(component).toMatchSnapshot();
+  expect(component.container).toMatchSnapshot();
 });
 
 test('Vertical Tabs renders restricted tabs properly', () => {
-  const component = mount(
+  const component = render(
     <VerticalTabs id="vertical-tabs" className="test-vertical-tabs" restrictTabs>
       <VerticalTabsTab id="all" className="test-vertical-tabs-tab" title="All" shown />
       <VerticalTabsTab id="one" title="Tab One" hasActiveDescendant>
@@ -79,21 +80,21 @@ test('Vertical Tabs renders restricted tabs properly', () => {
       <VerticalTabsTab id="seven" title="Tab Seven" />
     </VerticalTabs>
   );
-  expect(component).toMatchSnapshot();
+  expect(component.container).toMatchSnapshot();
 });
 
 test('Vertical Tabs Tab onActivate is called correctly', () => {
   const onActivateMock = jest.fn();
 
-  const component = mount(<VerticalTabsTab id="text-click" title="Click Me" onActivate={onActivateMock} />);
-  component.find('#text-click > a').simulate('click');
+  const component = render(<VerticalTabsTab id="text-click" title="Click Me" onActivate={onActivateMock} />);
+  userEvent.click(screen.getByText('Click Me'));
 
-  expect(component).toMatchSnapshot();
+  expect(component.container).toMatchSnapshot();
   expect(onActivateMock).toBeCalled();
 });
 
 test('Vertical Tabs Tab wrap styling is set correctly', () => {
-  const component = mount(
+  const component = render(
     <div>
       <VerticalTabsTab id="default-wrap" title="Default Wrap" />
       <VerticalTabsTab id="word-wrap" title="Word Wrap" wrapStyle="wrap" />
@@ -102,5 +103,5 @@ test('Vertical Tabs Tab wrap styling is set correctly', () => {
     </div>
   );
 
-  expect(component).toMatchSnapshot();
+  expect(component.container).toMatchSnapshot();
 });

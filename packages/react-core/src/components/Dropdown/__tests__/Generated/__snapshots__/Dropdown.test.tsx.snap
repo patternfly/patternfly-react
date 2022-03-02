@@ -1,51 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dropdown should match snapshot (auto-generated) 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "alignments": undefined,
-      "baseClass": "pf-c-dropdown",
-      "baseComponent": "div",
-      "disabledClass": "pf-m-disabled",
-      "itemClass": "pf-c-dropdown__menu-item",
-      "menuClass": "pf-c-dropdown__menu",
-      "onSelect": [Function],
-      "ouiaComponentType": "Dropdown",
-      "ouiaId": "OUIA-Generated-Dropdown-1",
-      "ouiaSafe": undefined,
-      "plainTextClass": "pf-m-text",
-      "sectionClass": "pf-c-dropdown__group",
-      "sectionComponent": "section",
-      "sectionTitleClass": "pf-c-dropdown__group-title",
-      "toggleClass": "pf-c-dropdown__toggle",
-      "toggleIconClass": "pf-c-dropdown__toggle-image",
-      "toggleIndicatorClass": "pf-c-dropdown__toggle-icon",
-      "toggleTextClass": "pf-c-dropdown__toggle-text",
-    }
-  }
->
-  <DropdownWithContext
-    autoFocus={true}
-    className="string"
-    direction="up"
-    dropdownItems={Array []}
-    isGrouped={true}
-    isOpen={true}
-    isPlain={true}
-    isText={false}
-    menuAppendTo="inline"
-    onSelect={[Function]}
-    position="right"
-    toggle={
-      <p>
-        ReactElement
-      </p>
-    }
+<div>
+  <div
+    class="pf-c-dropdown pf-m-top pf-m-align-right pf-m-expanded string"
+    data-ouia-component-id="OUIA-Generated-Dropdown-1"
+    data-ouia-component-type="PF4/Dropdown"
+    data-ouia-safe="true"
   >
-    <div>
-      ReactNode
+    <p
+      aria-haspopup="false"
+      id="pf-dropdown-toggle-id-0"
+      parentref="[object Object]"
+    >
+      ReactElement
+    </p>
+    <div
+      class="pf-c-dropdown__menu pf-m-align-right"
+    >
+      <div>
+        ReactNode
+      </div>
     </div>
-  </DropdownWithContext>
-</ContextProvider>
+  </div>
+</div>
 `;

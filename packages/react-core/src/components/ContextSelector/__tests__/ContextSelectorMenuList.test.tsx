@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ContextSelectorItem } from '../ContextSelectorItem';
 import { ContextSelectorMenuList } from '../ContextSelectorMenuList';
 
@@ -12,11 +12,11 @@ const items = [
 ];
 
 test('Renders ContextSelectorMenuList open', () => {
-  const view = shallow(<ContextSelectorMenuList isOpen={false}>{items}</ContextSelectorMenuList>);
-  expect(view).toMatchSnapshot();
+  const view = render(<ContextSelectorMenuList isOpen={false}>{items}</ContextSelectorMenuList>);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Renders ContextSelectorMenuList closed', () => {
-  const view = shallow(<ContextSelectorMenuList isOpen={false}>{items}</ContextSelectorMenuList>);
-  expect(view).toMatchSnapshot();
+  const view = render(<ContextSelectorMenuList isOpen={false}>{items}</ContextSelectorMenuList>);
+  expect(view.container).toMatchSnapshot();
 });

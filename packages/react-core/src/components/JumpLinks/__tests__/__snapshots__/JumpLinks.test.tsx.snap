@@ -1,210 +1,412 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`expandable vertical with subsection 1`] = `
-<nav
-  aria-label="Jump to section"
-  className="pf-c-jump-links pf-m-vertical pf-m-expandable"
->
-  <div
-    className="pf-c-jump-links__main"
+<div>
+  <nav
+    aria-label="Jump to section"
+    class="pf-c-jump-links pf-m-vertical pf-m-expandable"
   >
     <div
-      className="pf-c-jump-links__header"
+      class="pf-c-jump-links__main"
     >
       <div
-        className="pf-c-jump-links__toggle"
+        class="pf-c-jump-links__header"
       >
-        <Button
-          aria-expanded={false}
-          aria-label="Toggle jump links"
-          onClick={[Function]}
-          variant="plain"
+        <div
+          class="pf-c-jump-links__toggle"
         >
-          <span
-            className="pf-c-jump-links__toggle-icon"
+          <button
+            aria-disabled="false"
+            aria-expanded="false"
+            aria-label="Toggle jump links"
+            class="pf-c-button pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-Button-plain-1"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe="true"
+            type="button"
           >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-            />
-          </span>
-          <span
-            className="pf-c-jump-links__toggle-text"
-          >
-             
-            Jump to section
-             
-          </span>
-        </Button>
+            <span
+              class="pf-c-jump-links__toggle-icon"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                />
+              </svg>
+            </span>
+            <span
+              class="pf-c-jump-links__toggle-text"
+            >
+               
+              Jump to section
+               
+            </span>
+          </button>
+        </div>
+        <div
+          class="pf-c-jump-links__label"
+        >
+          Jump to section
+        </div>
       </div>
-      <div
-        className="pf-c-jump-links__label"
+      <ul
+        class="pf-c-jump-links__list"
       >
-        Jump to section
-      </div>
-    </div>
-    <ul
-      className="pf-c-jump-links__list"
-    >
-      <JumpLinksItem>
-        Inactive section
-      </JumpLinksItem>
-      <JumpLinksItem>
-        Section with active subsection
-        <JumpLinksList>
-          <JumpLinksItem
-            isActive={true}
+        <li
+          class="pf-c-jump-links__item"
+        >
+          <a
+            class="pf-c-jump-links__link"
           >
-            Active subsection
-          </JumpLinksItem>
-          <JumpLinksItem>
-            Inactive subsection
-          </JumpLinksItem>
-          <JumpLinksItem>
-            Inactive subsection
-          </JumpLinksItem>
-        </JumpLinksList>
-      </JumpLinksItem>
-      <JumpLinksItem>
-        Inactive section
-      </JumpLinksItem>
-      <JumpLinksItem>
-        Inactive section
-      </JumpLinksItem>
-    </ul>
-  </div>
-</nav>
+            <span
+              class="pf-c-jump-links__link-text"
+            >
+              Inactive section
+            </span>
+          </a>
+        </li>
+        <li
+          class="pf-c-jump-links__item"
+        >
+          <a
+            class="pf-c-jump-links__link"
+          >
+            <span
+              class="pf-c-jump-links__link-text"
+            >
+              Section with active subsection
+            </span>
+          </a>
+          <ul
+            class="pf-c-jump-links__list"
+          >
+            <li
+              class="pf-c-jump-links__item pf-m-current"
+            >
+              <a
+                class="pf-c-jump-links__link"
+              >
+                <span
+                  class="pf-c-jump-links__link-text"
+                >
+                  Active subsection
+                </span>
+              </a>
+            </li>
+            <li
+              class="pf-c-jump-links__item"
+            >
+              <a
+                class="pf-c-jump-links__link"
+              >
+                <span
+                  class="pf-c-jump-links__link-text"
+                >
+                  Inactive subsection
+                </span>
+              </a>
+            </li>
+            <li
+              class="pf-c-jump-links__item"
+            >
+              <a
+                class="pf-c-jump-links__link"
+              >
+                <span
+                  class="pf-c-jump-links__link-text"
+                >
+                  Inactive subsection
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li
+          class="pf-c-jump-links__item"
+        >
+          <a
+            class="pf-c-jump-links__link"
+          >
+            <span
+              class="pf-c-jump-links__link-text"
+            >
+              Inactive section
+            </span>
+          </a>
+        </li>
+        <li
+          class="pf-c-jump-links__item"
+        >
+          <a
+            class="pf-c-jump-links__link"
+          >
+            <span
+              class="pf-c-jump-links__link-text"
+            >
+              Inactive section
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
 `;
 
 exports[`jumplinks centered 1`] = `
-<nav
-  aria-label={null}
-  className="pf-c-jump-links pf-m-center"
->
-  <div
-    className="pf-c-jump-links__main"
+<div>
+  <nav
+    class="pf-c-jump-links pf-m-center"
   >
     <div
-      className="pf-c-jump-links__header"
-    />
-    <ul
-      className="pf-c-jump-links__list"
+      class="pf-c-jump-links__main"
     >
-      <JumpLinksItem>
-        Inactive section
-      </JumpLinksItem>
-      <JumpLinksItem
-        isActive={true}
+      <div
+        class="pf-c-jump-links__header"
+      />
+      <ul
+        class="pf-c-jump-links__list"
       >
-        Active section
-      </JumpLinksItem>
-      <JumpLinksItem>
-        Inactive section
-      </JumpLinksItem>
-    </ul>
-  </div>
-</nav>
+        <li
+          class="pf-c-jump-links__item"
+        >
+          <a
+            class="pf-c-jump-links__link"
+          >
+            <span
+              class="pf-c-jump-links__link-text"
+            >
+              Inactive section
+            </span>
+          </a>
+        </li>
+        <li
+          class="pf-c-jump-links__item pf-m-current"
+        >
+          <a
+            class="pf-c-jump-links__link"
+          >
+            <span
+              class="pf-c-jump-links__link-text"
+            >
+              Active section
+            </span>
+          </a>
+        </li>
+        <li
+          class="pf-c-jump-links__item"
+        >
+          <a
+            class="pf-c-jump-links__link"
+          >
+            <span
+              class="pf-c-jump-links__link-text"
+            >
+              Inactive section
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
 `;
 
 exports[`jumplinks with label 1`] = `
-<nav
-  aria-label="Jump to section"
-  className="pf-c-jump-links pf-m-center"
->
-  <div
-    className="pf-c-jump-links__main"
+<div>
+  <nav
+    aria-label="Jump to section"
+    class="pf-c-jump-links pf-m-center"
   >
     <div
-      className="pf-c-jump-links__header"
+      class="pf-c-jump-links__main"
     >
       <div
-        className="pf-c-jump-links__label"
+        class="pf-c-jump-links__header"
       >
-        Jump to section
+        <div
+          class="pf-c-jump-links__label"
+        >
+          Jump to section
+        </div>
       </div>
-    </div>
-    <ul
-      className="pf-c-jump-links__list"
-    >
-      <JumpLinksItem>
-        Inactive section
-      </JumpLinksItem>
-      <JumpLinksItem
-        isActive={true}
+      <ul
+        class="pf-c-jump-links__list"
       >
-        Active section
-      </JumpLinksItem>
-      <JumpLinksItem>
-        Inactive section
-      </JumpLinksItem>
-    </ul>
-  </div>
-</nav>
+        <li
+          class="pf-c-jump-links__item"
+        >
+          <a
+            class="pf-c-jump-links__link"
+          >
+            <span
+              class="pf-c-jump-links__link-text"
+            >
+              Inactive section
+            </span>
+          </a>
+        </li>
+        <li
+          class="pf-c-jump-links__item pf-m-current"
+        >
+          <a
+            class="pf-c-jump-links__link"
+          >
+            <span
+              class="pf-c-jump-links__link-text"
+            >
+              Active section
+            </span>
+          </a>
+        </li>
+        <li
+          class="pf-c-jump-links__item"
+        >
+          <a
+            class="pf-c-jump-links__link"
+          >
+            <span
+              class="pf-c-jump-links__link-text"
+            >
+              Inactive section
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
 `;
 
 exports[`simple jumplinks 1`] = `
-<nav
-  aria-label={null}
-  className="pf-c-jump-links"
->
-  <div
-    className="pf-c-jump-links__main"
+<div>
+  <nav
+    class="pf-c-jump-links"
   >
     <div
-      className="pf-c-jump-links__header"
-    />
-    <ul
-      className="pf-c-jump-links__list"
+      class="pf-c-jump-links__main"
     >
-      <JumpLinksItem>
-        Inactive section
-      </JumpLinksItem>
-      <JumpLinksItem
-        isActive={true}
+      <div
+        class="pf-c-jump-links__header"
+      />
+      <ul
+        class="pf-c-jump-links__list"
       >
-        Active section
-      </JumpLinksItem>
-      <JumpLinksItem>
-        Inactive section
-      </JumpLinksItem>
-    </ul>
-  </div>
-</nav>
+        <li
+          class="pf-c-jump-links__item"
+        >
+          <a
+            class="pf-c-jump-links__link"
+          >
+            <span
+              class="pf-c-jump-links__link-text"
+            >
+              Inactive section
+            </span>
+          </a>
+        </li>
+        <li
+          class="pf-c-jump-links__item pf-m-current"
+        >
+          <a
+            class="pf-c-jump-links__link"
+          >
+            <span
+              class="pf-c-jump-links__link-text"
+            >
+              Active section
+            </span>
+          </a>
+        </li>
+        <li
+          class="pf-c-jump-links__item"
+        >
+          <a
+            class="pf-c-jump-links__link"
+          >
+            <span
+              class="pf-c-jump-links__link-text"
+            >
+              Inactive section
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
 `;
 
 exports[`vertical with label 1`] = `
-<nav
-  aria-label="Jump to section"
-  className="pf-c-jump-links pf-m-vertical"
->
-  <div
-    className="pf-c-jump-links__main"
+<div>
+  <nav
+    aria-label="Jump to section"
+    class="pf-c-jump-links pf-m-vertical"
   >
     <div
-      className="pf-c-jump-links__header"
+      class="pf-c-jump-links__main"
     >
       <div
-        className="pf-c-jump-links__label"
+        class="pf-c-jump-links__header"
       >
-        Jump to section
+        <div
+          class="pf-c-jump-links__label"
+        >
+          Jump to section
+        </div>
       </div>
-    </div>
-    <ul
-      className="pf-c-jump-links__list"
-    >
-      <JumpLinksItem>
-        Inactive section
-      </JumpLinksItem>
-      <JumpLinksItem
-        isActive={true}
+      <ul
+        class="pf-c-jump-links__list"
       >
-        Active section
-      </JumpLinksItem>
-      <JumpLinksItem>
-        Inactive section
-      </JumpLinksItem>
-    </ul>
-  </div>
-</nav>
+        <li
+          class="pf-c-jump-links__item"
+        >
+          <a
+            class="pf-c-jump-links__link"
+          >
+            <span
+              class="pf-c-jump-links__link-text"
+            >
+              Inactive section
+            </span>
+          </a>
+        </li>
+        <li
+          class="pf-c-jump-links__item pf-m-current"
+        >
+          <a
+            class="pf-c-jump-links__link"
+          >
+            <span
+              class="pf-c-jump-links__link-text"
+            >
+              Active section
+            </span>
+          </a>
+        </li>
+        <li
+          class="pf-c-jump-links__item"
+        >
+          <a
+            class="pf-c-jump-links__link"
+          >
+            <span
+              class="pf-c-jump-links__link-text"
+            >
+              Inactive section
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
 `;

@@ -1,10 +1,11 @@
 import React from 'react';
 import { CardBody } from '../CardBody';
+import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 
 test('renders with PatternFly Core styles', () => {
-  const view = shallow(<CardBody />);
-  expect(view).toMatchSnapshot();
+  const view = render(<CardBody />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('className is added to the root element', () => {
@@ -26,11 +27,11 @@ test('allows passing in a string as the component', () => {
 
 test('allows passing in a React Component as the component', () => {
   const Component = () => <div>im a div</div>;
-  const view = shallow(<CardBody component={Component} />);
+  const view = shallow(<CardBody component={(Component as unknown) as keyof JSX.IntrinsicElements} />);
   expect(view.type()).toBe(Component);
 });
 
 test('body with no-fill applied ', () => {
-  const view = shallow(<CardBody isFilled={false} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<CardBody isFilled={false} />);
+  expect(view.container).toMatchSnapshot();
 });

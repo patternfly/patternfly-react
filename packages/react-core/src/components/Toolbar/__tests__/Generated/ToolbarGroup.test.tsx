@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ToolbarGroup } from '../../ToolbarGroup';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('ToolbarGroup should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <ToolbarGroup
       className={'string'}
       variant={'filter-group'}
@@ -16,5 +16,5 @@ it('ToolbarGroup should match snapshot (auto-generated)', () => {
       innerRef={{ current: document.createElement('div') }}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

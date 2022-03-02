@@ -1,50 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should not render anything 1`] = `
-<Tab
-  eventKey={0}
-  title={
-    <TabTitleText>
-      "Tab item 1"
-    </TabTitleText>
-  }
->
-  <TabBase
-    eventKey={0}
-    innerRef={null}
-    title={
-      <TabTitleText>
-        "Tab item 1"
-      </TabTitleText>
-    }
+<div>
+  <li
+    class="pf-c-tabs__item"
   >
-    <li
-      className="pf-c-tabs__item"
+    <button
+      aria-controls="pf-tab-section-0-"
+      class="pf-c-tabs__link"
+      data-ouia-component-type="PF4/TabButton"
+      data-ouia-safe="true"
+      id="pf-tab-0-"
     >
-      <TabButton
-        aria-controls="pf-tab-section-0-"
-        className="pf-c-tabs__link"
-        id="pf-tab-0-"
-        onClick={[Function]}
+      <span
+        class="pf-c-tabs__item-text"
       >
-        <button
-          aria-controls="pf-tab-section-0-"
-          className="pf-c-tabs__link"
-          data-ouia-component-type="PF4/TabButton"
-          data-ouia-safe={true}
-          id="pf-tab-0-"
-          onClick={[Function]}
-        >
-          <TabTitleText>
-            <span
-              className="pf-c-tabs__item-text"
-            >
-              "Tab item 1"
-            </span>
-          </TabTitleText>
-        </button>
-      </TabButton>
-    </li>
-  </TabBase>
-</Tab>
+        "Tab item 1"
+      </span>
+    </button>
+  </li>
+</div>
 `;

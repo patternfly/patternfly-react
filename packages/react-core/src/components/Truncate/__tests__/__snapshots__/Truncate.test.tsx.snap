@@ -1,58 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders default truncation 1`] = `
-<Tooltip
-  content="Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan."
-  position="top"
->
+<div>
   <span
-    className="pf-c-truncate"
+    class="pf-c-truncate"
   >
     <span
-      className="pf-c-truncate__start"
+      class="pf-c-truncate__start"
     >
       Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
     </span>
   </span>
-</Tooltip>
+</div>
 `;
 
 exports[`renders middle truncation 1`] = `
-<Tooltip
-  content="Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan."
-  position="top"
->
+<div>
   <span
-    className="pf-c-truncate"
+    class="pf-c-truncate"
   >
     <span
-      className="pf-c-truncate__start"
+      class="pf-c-truncate__start"
     >
       Vestibulum interdum risus et enim faucibus, sit amet molestie est ac
     </span>
     <span
-      className="pf-c-truncate__end"
+      class="pf-c-truncate__end"
     >
       cumsan.
     </span>
   </span>
-</Tooltip>
+</div>
 `;
 
 exports[`renders start truncation 1`] = `
-<Tooltip
-  content="Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan."
-  position="top"
->
+<div>
   <span
-    className="pf-c-truncate"
+    class="pf-c-truncate"
   >
     <span
-      className="pf-c-truncate__end"
+      class="pf-c-truncate__end"
     >
       Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
       ‎
     </span>
   </span>
-</Tooltip>
+</div>
 `;

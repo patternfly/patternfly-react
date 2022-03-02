@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Switch } from '../../Switch';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('Switch should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <Switch
       id={"''"}
       className={"''"}
@@ -20,5 +20,5 @@ it('Switch should match snapshot (auto-generated)', () => {
       aria-label={"''"}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

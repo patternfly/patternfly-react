@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Badge should match snapshot (auto-generated) 1`] = `
-<span
-  className="pf-c-badge pf-m-unread ''"
-/>
+<div>
+  <span
+    class="pf-c-badge pf-m-unread ''"
+  />
+</div>
 `;

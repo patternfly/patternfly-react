@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Avatar } from '../Avatar';
 
 test('simple avatar', () => {
-  const view: any = shallow(<Avatar alt="avatar" src="test.png" border="light" />);
-  expect(view).toMatchSnapshot();
+  const view: any = render(<Avatar alt="avatar" src="test.png" border="light" />);
+  expect(view.container).toMatchSnapshot();
 });

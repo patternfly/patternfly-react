@@ -1,11 +1,12 @@
 import * as React from 'react';
+import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 
 import { LoginFooterItem } from '../LoginFooterItem';
 
 test('renders with PatternFly Core styles', () => {
-  const view = shallow(<LoginFooterItem target="_self" href="#" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<LoginFooterItem target="_self" href="#" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('className is added to the root element', () => {
@@ -21,10 +22,10 @@ test('extra props are spread to the root element', () => {
 
 test('LoginFooterItem  with custom node', () => {
   const CustomNode = () => <div>My custom node</div>;
-  const view = shallow(
+  const view = render(
     <LoginFooterItem>
       <CustomNode />
     </LoginFooterItem>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

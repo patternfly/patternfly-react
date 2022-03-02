@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ToolbarChipGroupContent } from '../../ToolbarChipGroupContent';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('ToolbarChipGroupContent should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <ToolbarChipGroupContent
       className={'string'}
       isExpanded={true}
@@ -20,5 +20,5 @@ it('ToolbarChipGroupContent should match snapshot (auto-generated)', () => {
       collapseListedFiltersBreakpoint={'lg'}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

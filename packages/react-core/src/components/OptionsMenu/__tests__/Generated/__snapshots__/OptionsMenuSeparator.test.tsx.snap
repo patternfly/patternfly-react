@@ -1,8 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OptionsMenuSeparator should match snapshot (auto-generated) 1`] = `
-<Divider
-  className="''"
-  component="li"
-/>
+<div>
+  <li
+    class="pf-c-divider ''"
+    role="separator"
+  />
+</div>
 `;

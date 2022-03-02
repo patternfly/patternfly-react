@@ -1,154 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ConfirmButtons renders correctly 1`] = `
-<ConfirmButtons
-  boldBorder={true}
-  buttonsOnTop={true}
-  environment={
-    Object {
-      "row": Object {
-        "bottom": 90,
-        "left": 30,
-        "right": 40,
-        "top": 100,
-      },
-      "window": Object {
-        "height": 500,
-        "width": 500,
-      },
-    }
-  }
-  messages={
-    Object {
-      "cancelButtonLabel": "Discard",
-      "confirmButtonLabel": "Confirm",
-    }
-  }
-  onCancel={[MockFunction]}
-  onConfirm={[MockFunction]}
->
+<div>
   <div
-    className="pf-c-table__inline-edit-buttons pf-m-top pf-m-bold"
-    key="confirmButtons"
-    style={
-      Object {
-        "bottom": 398,
-        "right": 470,
-      }
-    }
+    class="pf-c-table__inline-edit-buttons pf-m-top pf-m-bold"
+    style="bottom: 398px; right: 470px;"
   >
-    <ConfirmButton
+    <button
+      aria-disabled="false"
       aria-label="Confirm"
-      key="confirm"
-      onMouseUp={[MockFunction]}
+      class="pf-c-button pf-m-primary"
+      data-ouia-component-id="OUIA-Generated-Button-primary-1"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      type="button"
     >
-      <Button
-        aria-label="Confirm"
-        onMouseUp={[MockFunction]}
-        variant="primary"
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align: -0.125em;"
+        viewBox="0 0 512 512"
+        width="1em"
       >
-        <ButtonBase
-          aria-label="Confirm"
-          innerRef={null}
-          onMouseUp={[MockFunction]}
-          variant="primary"
-        >
-          <button
-            aria-disabled={false}
-            aria-label="Confirm"
-            className="pf-c-button pf-m-primary"
-            data-ouia-component-id="OUIA-Generated-Button-primary-1"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            onMouseUp={[MockFunction]}
-            role={null}
-            type="button"
-          >
-            <CheckIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                />
-              </svg>
-            </CheckIcon>
-          </button>
-        </ButtonBase>
-      </Button>
-    </ConfirmButton>
-    <CancelButton
+        <path
+          d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+        />
+      </svg>
+    </button>
+    <button
+      aria-disabled="false"
       aria-label="Discard"
-      key="cancel"
-      onMouseUp={[MockFunction]}
+      class="pf-c-button pf-m-plain"
+      data-ouia-component-id="OUIA-Generated-Button-plain-1"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      type="button"
     >
-      <Button
-        aria-label="Discard"
-        onMouseUp={[MockFunction]}
-        variant="plain"
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align: -0.125em;"
+        viewBox="0 0 730 1024"
+        width="1em"
       >
-        <ButtonBase
-          aria-label="Discard"
-          innerRef={null}
-          onMouseUp={[MockFunction]}
-          variant="plain"
-        >
-          <button
-            aria-disabled={false}
-            aria-label="Discard"
-            className="pf-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-1"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            onMouseUp={[MockFunction]}
-            role={null}
-            type="button"
-          >
-            <CloseIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 730 1024"
-                width="1em"
-              >
-                <path
-                  d="M725.499315,767.757345 L469.242169,511.500499 L725.499315,255.243653 C729.196254,251.545719 731.096195,247.248119 731,242.4498 C731,237.653479 728.997365,233.35588 725.299427,229.558002 L647.542773,151.701495 C643.743891,147.903617 639.446287,146 634.64996,146 C629.852635,146 625.55503,147.803673 621.857092,151.500607 L365.5,407.857398 L109.241857,151.500607 C105.544917,147.803673 101.246314,145.904733 96.4499876,146 C91.6526619,146.104622 87.3550577,148.002562 83.5571748,151.701495 L5.7005771,229.457058 C1.90269428,233.255936 0,237.553535 0,242.350855 C0,247.148175 1.80175055,251.444775 5.50068853,255.143709 L261.857779,511.500499 L5.50068853,767.757345 C1.80175055,771.454279 -0.0961914123,775.752878 0,779.750645 C0.103697157,784.547965 2.00263857,788.845564 5.7005771,792.642443 L83.4572306,871.299502 C87.2541139,875.096381 91.5527176,877 96.3500433,877 C101.147369,877 105.444973,875.197325 109.142912,871.499391 L365.400058,615.241545 L621.657203,871.499391 C625.355142,875.197325 629.652746,877.095265 634.449072,877 C639.246398,877 643.545002,874.997437 647.342885,871.299502 L725.099538,793.54294 C728.896421,789.745062 730.796362,785.446463 730.796362,780.649143 C731.096195,775.752878 729.196254,771.454279 725.499315,767.757345"
-                />
-              </svg>
-            </CloseIcon>
-          </button>
-        </ButtonBase>
-      </Button>
-    </CancelButton>
+        <path
+          d="M725.499315,767.757345 L469.242169,511.500499 L725.499315,255.243653 C729.196254,251.545719 731.096195,247.248119 731,242.4498 C731,237.653479 728.997365,233.35588 725.299427,229.558002 L647.542773,151.701495 C643.743891,147.903617 639.446287,146 634.64996,146 C629.852635,146 625.55503,147.803673 621.857092,151.500607 L365.5,407.857398 L109.241857,151.500607 C105.544917,147.803673 101.246314,145.904733 96.4499876,146 C91.6526619,146.104622 87.3550577,148.002562 83.5571748,151.701495 L5.7005771,229.457058 C1.90269428,233.255936 0,237.553535 0,242.350855 C0,247.148175 1.80175055,251.444775 5.50068853,255.143709 L261.857779,511.500499 L5.50068853,767.757345 C1.80175055,771.454279 -0.0961914123,775.752878 0,779.750645 C0.103697157,784.547965 2.00263857,788.845564 5.7005771,792.642443 L83.4572306,871.299502 C87.2541139,875.096381 91.5527176,877 96.3500433,877 C101.147369,877 105.444973,875.197325 109.142912,871.499391 L365.400058,615.241545 L621.657203,871.499391 C625.355142,875.197325 629.652746,877.095265 634.449072,877 C639.246398,877 643.545002,874.997437 647.342885,871.299502 L725.099538,793.54294 C728.896421,789.745062 730.796362,785.446463 730.796362,780.649143 C731.096195,775.752878 729.196254,771.454279 725.499315,767.757345"
+        />
+      </svg>
+    </button>
   </div>
-</ConfirmButtons>
+</div>
 `;

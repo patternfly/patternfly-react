@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Tabs } from '../../Tabs';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('Tabs should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <Tabs
       children={<div>ReactNode</div>}
       className={"''"}
@@ -25,5 +25,5 @@ it('Tabs should match snapshot (auto-generated)', () => {
       unmountOnExit={false}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Radio } from '../../Radio';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('Radio should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <Radio
       className={"''"}
       id={'string'}
@@ -25,5 +25,5 @@ it('Radio should match snapshot (auto-generated)', () => {
       description={<div>ReactNode</div>}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

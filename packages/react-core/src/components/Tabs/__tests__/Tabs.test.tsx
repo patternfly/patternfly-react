@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Tabs } from '../Tabs';
 import { Tab } from '../Tab';
 import { TabTitleText } from '../TabTitleText';
@@ -28,7 +28,7 @@ test('should render simple tabs', () => {
       </Tab>
     </Tabs>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('should render uncontrolled tabs', () => {
@@ -52,7 +52,7 @@ test('should render uncontrolled tabs', () => {
       </Tab>
     </Tabs>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('should render vertical tabs', () => {
@@ -76,7 +76,7 @@ test('should render vertical tabs', () => {
       </Tab>
     </Tabs>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('should render expandable vertical tabs', () => {
@@ -100,7 +100,7 @@ test('should render expandable vertical tabs', () => {
       </Tab>
     </Tabs>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('should log error when there is no aria-label or toggleText for expandable vertical tabs', () => {
@@ -150,7 +150,7 @@ test('should render box tabs', () => {
       </Tab>
     </Tabs>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('should render accessible tabs', () => {
@@ -167,7 +167,7 @@ test('should render accessible tabs', () => {
       </Tab>
     </Tabs>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('should render filled tabs', () => {
@@ -184,7 +184,7 @@ test('should render filled tabs', () => {
       </Tab>
     </Tabs>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('should render secondary tabs', () => {
@@ -211,7 +211,7 @@ test('should render secondary tabs', () => {
       </Tab>
     </Tabs>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('should render tabs with eventKey Strings', () => {
@@ -228,7 +228,7 @@ test('should render tabs with eventKey Strings', () => {
       </Tab>
     </Tabs>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('should render tabs with separate content', () => {
@@ -256,7 +256,7 @@ test('should render tabs with separate content', () => {
       </div>
     </>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('should render box tabs of light variant', () => {
@@ -273,6 +273,6 @@ test('should render box tabs of light variant', () => {
       </Tab>
     </Tabs>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import { shallow, mount } from 'enzyme';
 import { DataList } from '../DataList';
 import { DataListItem } from '../DataListItem';
@@ -13,43 +14,43 @@ import { DropdownItem, Dropdown, KebabToggle, DropdownPosition } from '../../Dro
 
 describe('DataList', () => {
   test('List default', () => {
-    const view = shallow(<DataList aria-label="this is a simple list" />);
-    expect(view).toMatchSnapshot();
+    const view = render(<DataList aria-label="this is a simple list" />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('List compact', () => {
-    const view = shallow(<DataList aria-label="this is a simple list" isCompact />);
-    expect(view).toMatchSnapshot();
+    const view = render(<DataList aria-label="this is a simple list" isCompact />);
+    expect(view.container).toMatchSnapshot();
   });
 
   describe('DataList variants', () => {
     ['none', 'always', 'sm', 'md', 'lg', 'xl', '2xl'].forEach(oneBreakpoint => {
       test(`Breakpoint - ${oneBreakpoint}`, () => {
-        const view = mount(
-          <DataList aria-label="this is a simple list" gridBreakpoint={oneBreakpoint} />
+        const view = render(
+          <DataList aria-label="this is a simple list" gridBreakpoint={oneBreakpoint as any} />
         );
-        expect(view).toMatchSnapshot();
+        expect(view.container).toMatchSnapshot();
       });
     });
   });
 
   test('List draggable', () => {
-    const view = shallow(<DataList aria-label="this is a simple list" isCompact onDragFinish={jest.fn()} />);
-    expect(view).toMatchSnapshot();
+    const view = render(<DataList aria-label="this is a simple list" isCompact onDragFinish={jest.fn()} />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('List', () => {
-    const view = shallow(<DataList key="list-id-1" className="data-list-custom" aria-label="this is a simple list" />);
-    expect(view).toMatchSnapshot();
+    const view = render(<DataList key="list-id-1" className="data-list-custom" aria-label="this is a simple list" />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('Item default', () => {
-    const view = shallow(
+    const view = render(
       <DataListItem key="item-id-1" aria-labelledby="item-1">
         test
       </DataListItem>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('Item expanded', () => {
@@ -62,26 +63,26 @@ describe('DataList', () => {
   });
 
   test('Item', () => {
-    const view = shallow(
+    const view = render(
       <DataListItem className="data-list-item-custom" aria-labelledby="item-1">
         test
       </DataListItem>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('item row default', () => {
-    const view = shallow(<DataListItemRow>test</DataListItemRow>);
-    expect(view).toMatchSnapshot();
+    const view = render(<DataListItemRow>test</DataListItemRow>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('Cell default', () => {
-    const view = shallow(<DataListCell>Secondary</DataListCell>);
-    expect(view).toMatchSnapshot();
+    const view = render(<DataListCell>Secondary</DataListCell>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('Cells', () => {
-    const view = shallow(
+    const view = render(
       <DataListItemCells
         dataListCells={[
           <DataListCell key="list-id-1" id="primary-item" className="data-list-custom">
@@ -93,7 +94,7 @@ describe('DataList', () => {
         ]}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('Cell with width modifier', () => {
@@ -117,7 +118,7 @@ describe('DataList', () => {
 
   test('Cell with text modifiers', () => {
     [
-      { wrapModifier: null as const, class: '' },
+      { wrapModifier: null as any, class: '' },
       { wrapModifier: 'breakWord' as const, class: 'pf-m-break-word' },
       { wrapModifier: 'nowrap' as const, class: 'pf-m-nowrap' },
       { wrapModifier: 'truncate' as const, class: 'pf-m-truncate' },
@@ -149,7 +150,7 @@ describe('DataList', () => {
   });
 
   test('DataListAction dropdown', () => {
-    const view = shallow(
+    const view = render(
       <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action" isPlainButtonAction>
         <Dropdown
           isPlain
@@ -166,16 +167,16 @@ describe('DataList', () => {
         />
       </DataListAction>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('DataListAction button', () => {
-    const view = shallow(
+    const view = render(
       <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action">
         <Button id="delete-item-1">Delete</Button>
       </DataListAction>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('DataListAction visibility - show button when lg', () => {
@@ -208,16 +209,16 @@ describe('DataList', () => {
   });
 
   test('DataListContent', () => {
-    const view = shallow(<DataListContent aria-label="Primary Content Details"> test</DataListContent>);
-    expect(view).toMatchSnapshot();
+    const view = render(<DataListContent aria-label="Primary Content Details"> test</DataListContent>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('DataListContent hasNoPadding', () => {
-    const view = shallow(
+    const view = render(
       <DataListContent aria-label="Primary Content Details" hidden hasNoPadding>
         test
       </DataListContent>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });

@@ -1,15 +1,15 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ChartBulletComparativeErrorMeasure } from './ChartBulletComparativeErrorMeasure';
 
 Object.values([true, false]).forEach(() => {
   test('ChartBulletComparativeErrorMeasure', () => {
-    const view = shallow(<ChartBulletComparativeErrorMeasure />);
-    expect(view).toMatchSnapshot();
+    const view = render(<ChartBulletComparativeErrorMeasure />);
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = shallow(<ChartBulletComparativeErrorMeasure data={[{ y: 88 }]} domain={{ x: [0, 200] }} width={450} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<ChartBulletComparativeErrorMeasure data={[{ y: 88 }]} domain={{ x: [0, 200] }} width={450} />);
+  expect(view.container).toMatchSnapshot();
 });

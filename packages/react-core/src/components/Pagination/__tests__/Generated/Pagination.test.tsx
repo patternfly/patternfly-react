@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Pagination } from '../../Pagination';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('Pagination should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <Pagination
       children={<>ReactNode</>}
       className={"''"}
@@ -54,5 +54,5 @@ it('Pagination should match snapshot (auto-generated)', () => {
       onPerPageSelect={() => undefined}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

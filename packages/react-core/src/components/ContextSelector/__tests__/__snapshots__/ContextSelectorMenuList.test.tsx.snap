@@ -1,129 +1,113 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Renders ContextSelectorMenuList closed 1`] = `
-<ul
-  className="pf-c-context-selector__menu-list"
-  hidden={true}
-  role="menu"
->
-  <ContextSelectorItem
-    className=""
-    href={null}
-    index={0}
-    isDisabled={false}
-    key=".$0"
-    onClick={[Function]}
-    sendRef={[Function]}
+<div>
+  <ul
+    class="pf-c-context-selector__menu-list"
+    hidden=""
+    role="menu"
   >
-    My Project
-  </ContextSelectorItem>
-  <ContextSelectorItem
-    className=""
-    href={null}
-    index={1}
-    isDisabled={false}
-    key=".$1"
-    onClick={[Function]}
-    sendRef={[Function]}
-  >
-    OpenShift Cluster
-  </ContextSelectorItem>
-  <ContextSelectorItem
-    className=""
-    href={null}
-    index={2}
-    isDisabled={false}
-    key=".$2"
-    onClick={[Function]}
-    sendRef={[Function]}
-  >
-    Production Ansible
-  </ContextSelectorItem>
-  <ContextSelectorItem
-    className=""
-    href={null}
-    index={3}
-    isDisabled={false}
-    key=".$3"
-    onClick={[Function]}
-    sendRef={[Function]}
-  >
-    AWS
-  </ContextSelectorItem>
-  <ContextSelectorItem
-    className=""
-    href={null}
-    index={4}
-    isDisabled={false}
-    key=".$4"
-    onClick={[Function]}
-    sendRef={[Function]}
-  >
-    Azure
-  </ContextSelectorItem>
-</ul>
+    <li
+      role="none"
+    >
+      <button
+        class="pf-c-context-selector__menu-list-item"
+      >
+        My Project
+      </button>
+    </li>
+    <li
+      role="none"
+    >
+      <button
+        class="pf-c-context-selector__menu-list-item"
+      >
+        OpenShift Cluster
+      </button>
+    </li>
+    <li
+      role="none"
+    >
+      <button
+        class="pf-c-context-selector__menu-list-item"
+      >
+        Production Ansible
+      </button>
+    </li>
+    <li
+      role="none"
+    >
+      <button
+        class="pf-c-context-selector__menu-list-item"
+      >
+        AWS
+      </button>
+    </li>
+    <li
+      role="none"
+    >
+      <button
+        class="pf-c-context-selector__menu-list-item"
+      >
+        Azure
+      </button>
+    </li>
+  </ul>
+</div>
 `;
 
 exports[`Renders ContextSelectorMenuList open 1`] = `
-<ul
-  className="pf-c-context-selector__menu-list"
-  hidden={true}
-  role="menu"
->
-  <ContextSelectorItem
-    className=""
-    href={null}
-    index={0}
-    isDisabled={false}
-    key=".$0"
-    onClick={[Function]}
-    sendRef={[Function]}
+<div>
+  <ul
+    class="pf-c-context-selector__menu-list"
+    hidden=""
+    role="menu"
   >
-    My Project
-  </ContextSelectorItem>
-  <ContextSelectorItem
-    className=""
-    href={null}
-    index={1}
-    isDisabled={false}
-    key=".$1"
-    onClick={[Function]}
-    sendRef={[Function]}
-  >
-    OpenShift Cluster
-  </ContextSelectorItem>
-  <ContextSelectorItem
-    className=""
-    href={null}
-    index={2}
-    isDisabled={false}
-    key=".$2"
-    onClick={[Function]}
-    sendRef={[Function]}
-  >
-    Production Ansible
-  </ContextSelectorItem>
-  <ContextSelectorItem
-    className=""
-    href={null}
-    index={3}
-    isDisabled={false}
-    key=".$3"
-    onClick={[Function]}
-    sendRef={[Function]}
-  >
-    AWS
-  </ContextSelectorItem>
-  <ContextSelectorItem
-    className=""
-    href={null}
-    index={4}
-    isDisabled={false}
-    key=".$4"
-    onClick={[Function]}
-    sendRef={[Function]}
-  >
-    Azure
-  </ContextSelectorItem>
-</ul>
+    <li
+      role="none"
+    >
+      <button
+        class="pf-c-context-selector__menu-list-item"
+      >
+        My Project
+      </button>
+    </li>
+    <li
+      role="none"
+    >
+      <button
+        class="pf-c-context-selector__menu-list-item"
+      >
+        OpenShift Cluster
+      </button>
+    </li>
+    <li
+      role="none"
+    >
+      <button
+        class="pf-c-context-selector__menu-list-item"
+      >
+        Production Ansible
+      </button>
+    </li>
+    <li
+      role="none"
+    >
+      <button
+        class="pf-c-context-selector__menu-list-item"
+      >
+        AWS
+      </button>
+    </li>
+    <li
+      role="none"
+    >
+      <button
+        class="pf-c-context-selector__menu-list-item"
+      >
+        Azure
+      </button>
+    </li>
+  </ul>
+</div>
 `;

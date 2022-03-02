@@ -1,22 +1,22 @@
 import { NotificationBadge } from '../NotificationBadge';
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 Object.values([true, false]).forEach(isRead => {
   test(`${isRead} NotificationBadge`, () => {
-    const view = shallow(<NotificationBadge isRead={isRead} />);
-    expect(view).toMatchSnapshot();
+    const view = render(<NotificationBadge isRead={isRead} />);
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 Object.values([true, false]).forEach(attentionVariant => {
   test(`${attentionVariant} NotificationBadge needs attention`, () => {
-    const view = shallow(<NotificationBadge variant='attention'>{attentionVariant ? 'needs attention' : 'does not need attention'} Badge</NotificationBadge>);
-    expect(view).toMatchSnapshot();
+    const view = render(<NotificationBadge variant='attention'>{attentionVariant ? 'needs attention' : 'does not need attention'} Badge</NotificationBadge>);
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 test(`NotificationBadge count`, () => {
-  const view = shallow(<NotificationBadge variant='read' count={3} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<NotificationBadge variant='read' count={3} />);
+  expect(view.container).toMatchSnapshot();
 });

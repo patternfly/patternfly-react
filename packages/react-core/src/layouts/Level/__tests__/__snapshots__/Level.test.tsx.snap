@@ -1,13 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Gutter 1`] = `
-<div
-  className="pf-l-level pf-m-gutter"
-/>
+<div>
+  <div
+    class="pf-l-level pf-m-gutter"
+  />
+</div>
 `;
 
 exports[`item 1`] = `
 <div>
-  Level Item
+  <div>
+    Level Item
+  </div>
 </div>
 `;

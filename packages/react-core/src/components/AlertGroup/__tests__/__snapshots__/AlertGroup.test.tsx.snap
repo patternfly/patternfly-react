@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Alert Group should match snapshot 1`] = `<AlertGroupInline />`;
+exports[`Alert Group should match snapshot 1`] = `
+<div>
+  <ul
+    class="pf-c-alert-group"
+  />
+</div>
+`;
 
 exports[`Standard Alert Group is not a toast alert group 1`] = `
 <AlertGroup>
@@ -91,7 +97,7 @@ exports[`Toast Alert Group contains expected modifier class 1`] = `
             <div
               aria-label="Warning Alert"
               class="pf-c-alert pf-m-warning"
-              data-ouia-component-id="OUIA-Generated-Alert-warning-1"
+              data-ouia-component-id="OUIA-Generated-Alert-warning-2"
               data-ouia-component-type="PF4/Alert"
               data-ouia-safe="true"
             >
@@ -148,7 +154,7 @@ exports[`Toast Alert Group contains expected modifier class 1`] = `
             <div
               aria-label="Warning Alert"
               className="pf-c-alert pf-m-warning"
-              data-ouia-component-id="OUIA-Generated-Alert-warning-1"
+              data-ouia-component-id="OUIA-Generated-Alert-warning-2"
               data-ouia-component-type="PF4/Alert"
               data-ouia-safe={true}
               onMouseEnter={[Function]}
@@ -210,9 +216,6 @@ exports[`alertgroup closes when alerts are closed 1`] = `
   appendTo={
     <body>
       <div />
-      <div />
-      <div />
-      <div />
       <div>
         <ul
           class="pf-c-alert-group pf-m-toast"
@@ -221,7 +224,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
             <div
               aria-label="Warning Alert"
               class="pf-c-alert pf-m-warning"
-              data-ouia-component-id="OUIA-Generated-Alert-warning-1"
+              data-ouia-component-id="OUIA-Generated-Alert-warning-2"
               data-ouia-component-type="PF4/Alert"
               data-ouia-safe="true"
             >
@@ -418,9 +421,6 @@ exports[`alertgroup closes when alerts are closed 1`] = `
       appendTo={
         <body>
           <div />
-          <div />
-          <div />
-          <div />
           <div>
             <ul
               class="pf-c-alert-group pf-m-toast"
@@ -429,7 +429,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                 <div
                   aria-label="Warning Alert"
                   class="pf-c-alert pf-m-warning"
-                  data-ouia-component-id="OUIA-Generated-Alert-warning-1"
+                  data-ouia-component-id="OUIA-Generated-Alert-warning-2"
                   data-ouia-component-type="PF4/Alert"
                   data-ouia-safe="true"
                 >
@@ -548,9 +548,6 @@ exports[`alertgroup closes when alerts are closed 1`] = `
         appendTo={
           <body>
             <div />
-            <div />
-            <div />
-            <div />
             <div>
               <ul
                 class="pf-c-alert-group pf-m-toast"
@@ -559,7 +556,7 @@ exports[`alertgroup closes when alerts are closed 1`] = `
                   <div
                     aria-label="Warning Alert"
                     class="pf-c-alert pf-m-warning"
-                    data-ouia-component-id="OUIA-Generated-Alert-warning-1"
+                    data-ouia-component-id="OUIA-Generated-Alert-warning-2"
                     data-ouia-component-type="PF4/Alert"
                     data-ouia-safe="true"
                   >

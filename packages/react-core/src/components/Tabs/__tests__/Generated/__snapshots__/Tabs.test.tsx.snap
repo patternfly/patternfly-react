@@ -1,73 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tabs should match snapshot (auto-generated) 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "handleTabClick": [Function],
-      "localActiveKey": 0,
-      "mountOnEnter": false,
-      "uniqueId": "string",
-      "unmountOnExit": false,
-      "variant": "div",
-    }
-  }
->
+<div>
   <div
     aria-label="string"
-    className="pf-c-tabs ''"
+    class="pf-c-tabs ''"
     data-ouia-component-id="OUIA-Generated-Tabs-1"
     data-ouia-component-type="PF4/Tabs"
-    data-ouia-safe={true}
+    data-ouia-safe="true"
     id="string"
-    onSelect={[Function]}
   >
     <button
-      aria-hidden={true}
+      aria-hidden="true"
       aria-label="'Scroll left'"
-      className="pf-c-tabs__scroll-button"
-      disabled={true}
-      onClick={[Function]}
+      class="pf-c-tabs__scroll-button"
+      disabled=""
     >
-      <AngleLeftIcon
-        color="currentColor"
-        noVerticalAlign={false}
-        size="sm"
-      />
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align: -0.125em;"
+        viewBox="0 0 256 512"
+        width="1em"
+      >
+        <path
+          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+        />
+      </svg>
     </button>
     <ul
-      className="pf-c-tabs__list"
-      onScroll={[Function]}
+      class="pf-c-tabs__list"
     >
-      <div
-        key=".0"
-      >
+      <div>
         ReactNode
       </div>
     </ul>
     <button
-      aria-hidden={true}
+      aria-hidden="true"
       aria-label="'Scroll right'"
-      className="pf-c-tabs__scroll-button"
-      disabled={true}
-      onClick={[Function]}
+      class="pf-c-tabs__scroll-button"
+      disabled=""
     >
-      <AngleRightIcon
-        color="currentColor"
-        noVerticalAlign={false}
-        size="sm"
-      />
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align: -0.125em;"
+        viewBox="0 0 256 512"
+        width="1em"
+      >
+        <path
+          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+        />
+      </svg>
     </button>
   </div>
-  <ForwardRef
-    activeKey={0}
-    child={
-      <div>
-        ReactNode
-      </div>
-    }
-    id="string"
-    key="0"
-  />
-</ContextProvider>
+  <section
+    aria-labelledby="pf-tab-undefined-string"
+    class="pf-c-tab-content"
+    data-ouia-component-type="PF4/TabContent"
+    data-ouia-safe="true"
+    hidden=""
+    id="pf-tab-section-undefined-string"
+    role="tabpanel"
+    tabindex="0"
+  >
+    ReactNode
+  </section>
+</div>
 `;

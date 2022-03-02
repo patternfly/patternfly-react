@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { NavItem } from '../../NavItem';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('NavItem should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <NavItem
       children={<>ReactNode</>}
       className={"''"}
@@ -21,5 +21,5 @@ it('NavItem should match snapshot (auto-generated)', () => {
       component={'a'}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

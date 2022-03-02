@@ -1,14 +1,15 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import { Menu } from '../Menu';
 
 test('should render Menu successfully', () => {
-    const view = mount(
+    const view = render(
         <Menu activeItemId={0} onSelect={jest.fn()}>
             content
         </Menu>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
 });
 
 describe('with isPlain', () => {

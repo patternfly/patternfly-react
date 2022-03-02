@@ -1,13 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DrawerContent should match snapshot (auto-generated) 1`] = `
-<DrawerMain>
+<div>
   <div
-    className="pf-c-drawer__content ''"
+    class="pf-c-drawer__main"
   >
-    <div>
-      ReactNode
+    <div
+      class="pf-c-drawer__content ''"
+    >
+      <div>
+        ReactNode
+      </div>
     </div>
   </div>
-</DrawerMain>
+</div>
 `;

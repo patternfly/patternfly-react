@@ -1,10 +1,11 @@
 import React from 'react';
 import { NotificationDrawerHeader } from '../NotificationDrawerHeader';
+import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 
 test('renders with PatternFly Core styles', () => {
-  const view = shallow(<NotificationDrawerHeader />);
-  expect(view).toMatchSnapshot();
+  const view = render(<NotificationDrawerHeader />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('className is added to the root element', () => {
@@ -19,16 +20,16 @@ test('extra props are spread to the root element', () => {
 });
 
 test('drawer header with count applied', () => {
-  const view = shallow(<NotificationDrawerHeader count={2} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<NotificationDrawerHeader count={2} />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('drawer header with title applied', () => {
-  const view = shallow(<NotificationDrawerHeader title="Notifications" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<NotificationDrawerHeader title="Notifications" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('drawer header with custom unread text applied', () => {
-  const view = shallow(<NotificationDrawerHeader customText="2 unread alerts" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<NotificationDrawerHeader customText="2 unread alerts" />);
+  expect(view.container).toMatchSnapshot();
 });

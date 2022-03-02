@@ -1,11 +1,12 @@
 import * as React from 'react';
+import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 
 import { LoginMainFooter } from '../LoginMainFooter';
 
 test('renders with PatternFly Core styles', () => {
-  const view = shallow(<LoginMainFooter />);
-  expect(view).toMatchSnapshot();
+  const view = render(<LoginMainFooter />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('className is added to the root element', () => {

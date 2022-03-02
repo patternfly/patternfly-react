@@ -1,16 +1,17 @@
 import React from 'react';
 import { FormHelperText } from '../FormHelperText';
+import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
 
 test('renders with PatternFly Core styles', () => {
-  const view = shallow(<FormHelperText isError isHidden={false} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<FormHelperText isError isHidden={false} />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('renders with icon', () => {
-  const view = shallow(<FormHelperText isError isHidden={false} icon={<ExclamationCircleIcon />} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<FormHelperText isError isHidden={false} icon={<ExclamationCircleIcon />} />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('className is added to the root element', () => {
@@ -26,10 +27,10 @@ test('extra props are spread to the root element', () => {
 
 test('LoginFooterItem  with custom node', () => {
   const CustomNode = () => <div>My custom node</div>;
-  const view = shallow(
+  const view = render(
     <FormHelperText>
       <CustomNode />
     </FormHelperText>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

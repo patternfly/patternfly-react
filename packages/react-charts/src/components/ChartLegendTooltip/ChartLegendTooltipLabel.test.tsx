@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ChartLegendTooltipLabel } from './ChartLegendTooltipLabel';
 
 Object.values([true, false]).forEach(() => {
   test('ChartLegendTooltipLabel', () => {
-    const view = shallow(<ChartLegendTooltipLabel />);
-    expect(view).toMatchSnapshot();
+    const view = render(<ChartLegendTooltipLabel />);
+    expect(view.container).toMatchSnapshot();
   });
 });
 
@@ -16,6 +16,6 @@ test('renders component text', () => {
     { name: 'Birds' },
     { name: 'Mice' }
   ];
-  const view = shallow(<ChartLegendTooltipLabel legendData={legendData} text={['1, 2, 3, 4']} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<ChartLegendTooltipLabel legendData={legendData} text={['1, 2, 3, 4']} />);
+  expect(view.container).toMatchSnapshot();
 });

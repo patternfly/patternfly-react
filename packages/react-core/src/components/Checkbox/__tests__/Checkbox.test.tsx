@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 import { Checkbox } from '../Checkbox';
 
@@ -8,49 +9,49 @@ const props = {
 };
 
 test('controlled', () => {
-  const view = shallow(<Checkbox isChecked id="check" aria-label="check" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Checkbox isChecked id="check" aria-label="check" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('controlled - 3rd state', () => {
-  const view = shallow(<Checkbox isChecked={null} id="check" aria-label="check" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Checkbox isChecked={null} id="check" aria-label="check" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('uncontrolled', () => {
-  const view = shallow(<Checkbox id="check" aria-label="check" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Checkbox id="check" aria-label="check" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('isDisabled', () => {
-  const view = shallow(<Checkbox id="check" isDisabled aria-label="check" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Checkbox id="check" isDisabled aria-label="check" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('label is string', () => {
-  const view = shallow(<Checkbox label="Label" id="check" isChecked aria-label="check" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Checkbox label="Label" id="check" isChecked aria-label="check" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('label is function', () => {
   const functionLabel = () => <h1>Header</h1>;
-  const view = shallow(<Checkbox label={functionLabel()} id="check" isChecked aria-label="check" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Checkbox label={functionLabel()} id="check" isChecked aria-label="check" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('label is node', () => {
-  const view = shallow(<Checkbox label={<h1>Header</h1>} id="check" isChecked aria-label="check" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Checkbox label={<h1>Header</h1>} id="check" isChecked aria-label="check" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('passing class', () => {
-  const view = shallow(<Checkbox label="label" className="class-123" id="check" isChecked aria-label="check" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Checkbox label="label" className="class-123" id="check" isChecked aria-label="check" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('passing HTML attribute', () => {
-  const view = shallow(<Checkbox label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Checkbox label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('passing description', () => {
@@ -80,6 +81,6 @@ test('checkbox passes value and event to onChange handler', () => {
 test('should throw console error when no id is given', () => {
   const myMock = jest.fn();
   global.console = { ...global.console, error: myMock };
-  shallow(<Checkbox {...props} />);
+  render(<Checkbox {...props} />);
   expect(myMock).toBeCalled();
 });

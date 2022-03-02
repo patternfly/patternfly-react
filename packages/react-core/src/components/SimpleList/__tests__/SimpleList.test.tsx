@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import { SimpleList } from '../SimpleList';
 import { SimpleListGroup } from '../SimpleListGroup';
@@ -24,17 +25,17 @@ const anchors = [
 
 describe('SimpleList', () => {
   test('renders content', () => {
-    const view = mount(<SimpleList>{items}</SimpleList>);
-    expect(view).toMatchSnapshot();
+    const view = render(<SimpleList>{items}</SimpleList>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('renders grouped content', () => {
-    const view = mount(
+    const view = render(
       <SimpleList>
         <SimpleListGroup title="Group 1">{items}</SimpleListGroup>
       </SimpleList>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('onSelect is called when item is selected', () => {
@@ -50,8 +51,8 @@ describe('SimpleList', () => {
   });
 
   test('renders anchor content', () => {
-    const view = mount(<SimpleList>{anchors}</SimpleList>);
-    expect(view).toMatchSnapshot();
+    const view = render(<SimpleList>{anchors}</SimpleList>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('onSelect is called when anchor item is selected', () => {
@@ -69,19 +70,19 @@ describe('SimpleList', () => {
 
 describe('SimpleListGroup', () => {
   test('renders content', () => {
-    const view = mount(<SimpleListGroup title="Group 1">{items}</SimpleListGroup>);
-    expect(view).toMatchSnapshot();
+    const view = render(<SimpleListGroup title="Group 1">{items}</SimpleListGroup>);
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 describe('SimpleListItem', () => {
   test('renders content', () => {
-    const view = mount(<SimpleListItem>Item 1</SimpleListItem>);
-    expect(view).toMatchSnapshot();
+    const view = render(<SimpleListItem>Item 1</SimpleListItem>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('renders anchor', () => {
-    const view = mount(<SimpleListItem component="a">Item 1</SimpleListItem>);
-    expect(view).toMatchSnapshot();
+    const view = render(<SimpleListItem component="a">Item 1</SimpleListItem>);
+    expect(view.container).toMatchSnapshot();
   });
 });

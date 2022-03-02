@@ -1,7 +1,8 @@
 import React from 'react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { shallow } from 'enzyme';
 import { ClipboardCopyToggle } from '../ClipboardCopyToggle';
-import { Button } from '../../Button';
 
 const props = {
   id: 'my-id',
@@ -14,14 +15,15 @@ const props = {
 
 test('toggle button render', () => {
   const desc = 'toggle content';
-  const view = shallow(<ClipboardCopyToggle {...props} aria-label={desc} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<ClipboardCopyToggle {...props} aria-label={desc} />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('toggle button onClick', () => {
   const onclick = jest.fn();
-  const view = shallow(<ClipboardCopyToggle {...props} onClick={onclick} />);
-  view.find(Button).simulate('click');
+  render(<ClipboardCopyToggle {...props} onClick={onclick} />);
+
+  userEvent.click(screen.getByRole('button'));
   expect(onclick).toBeCalled();
 });
 

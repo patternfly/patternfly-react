@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+import { mount } from 'enzyme';
 
 import { DesktopViewer } from '../DesktopViewer';
 import { MoreInformationDefaultContent } from '../MoreInformationDefaultContent';
@@ -31,22 +32,22 @@ const rdp2 = {
 
 test('DesktopViewer empty', () => {
   const wrapper = render(<DesktopViewer />);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.container).toMatchSnapshot();
 });
 
 test('DesktopViewer with Spice and VNC', () => {
   const wrapper = render(<DesktopViewer spice={spice} vnc={vnc} />);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.container).toMatchSnapshot();
 });
 
 test('DesktopViewer with Spice, VNC and RDP', () => {
   const wrapper = render(<DesktopViewer spice={spice} vnc={vnc} rdp={rdp} />);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.container).toMatchSnapshot();
 });
 
 test('DesktopViewer with Spice, VNC and RDP (different hostname)', () => {
   const wrapper = render(<DesktopViewer spice={spice} vnc={vnc} rdp={rdp2} />);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.container).toMatchSnapshot();
 });
 
 test('DesktopViewer launch button', () => {
@@ -87,7 +88,7 @@ test('DesktopViewer with custom more-info content', () => {
 
 test('default MoreInformationContent', () => {
   const wrapper = render(<MoreInformationDefaultContent />);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.container).toMatchSnapshot();
 });
 
 test('default implementation of generateVVFile()', () => {

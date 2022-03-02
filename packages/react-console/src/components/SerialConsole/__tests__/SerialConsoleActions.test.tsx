@@ -1,21 +1,21 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { SerialConsoleActions } from '../SerialConsoleActions';
 
 test('placeholder render test', () => {
-  const view = shallow(<SerialConsoleActions />);
-  expect(view).toMatchSnapshot();
+  const view = render(<SerialConsoleActions />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Render SerialConsoleActions', () => {
-  const view = shallow(
+  const view = render(
     <SerialConsoleActions onDisconnect={jest.fn()} onReset={jest.fn()} />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Render SerialConsoleActions with custom texts', () => {
-  const view = shallow(
+  const view = render(
     <SerialConsoleActions
       onDisconnect={jest.fn()}
       onReset={jest.fn()}
@@ -23,5 +23,5 @@ test('Render SerialConsoleActions with custom texts', () => {
       textReset="My Reconnect Text"
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

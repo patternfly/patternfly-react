@@ -1,25 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AboutModal should match snapshot (auto-generated) 1`] = `
-<Portal
-  containerInfo={<div />}
->
-  <AboutModalContainer
-    aboutModalBoxContentId="pf-about-modal-content-0"
-    aboutModalBoxHeaderId="pf-about-modal-title-0"
-    backgroundImageSrc="''"
-    brandImageAlt="string"
-    brandImageSrc="string"
-    className="''"
-    isOpen={false}
-    noAboutModalBoxContentContainer={false}
-    onClose={[Function]}
-    productName="''"
-    trademark="''"
-  >
-    <div>
-      ReactNode
-    </div>
-  </AboutModalContainer>
-</Portal>
-`;
+exports[`AboutModal should match snapshot (auto-generated) 1`] = `<div />`;

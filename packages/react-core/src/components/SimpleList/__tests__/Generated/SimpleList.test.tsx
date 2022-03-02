@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { SimpleList } from '../../SimpleList';
 // any missing imports can usually be resolved by adding them here
 import { SimpleListItemProps } from '../..';
 
 it('SimpleList should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <SimpleList
       children={<>ReactNode</>}
       className={"''"}
@@ -18,5 +18,5 @@ it('SimpleList should match snapshot (auto-generated)', () => {
       ) => undefined as void}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Tooltip } from '../Tooltip';
 
 test('tooltip renders', () => {
-  const view = shallow(
+  const view = render(
     <Tooltip
       position="top"
       content={
@@ -15,5 +15,5 @@ test('tooltip renders', () => {
       <div>Toggle tooltip</div>
     </Tooltip>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

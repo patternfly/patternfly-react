@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { AboutModalBoxHeader } from '../AboutModalBoxHeader';
 
 test('AboutModalBoxHeader Test', () => {
-  const view = shallow(
+  const view = render(
     <AboutModalBoxHeader productName="Product Name" id="id">
       This is a AboutModalBox header
     </AboutModalBoxHeader>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

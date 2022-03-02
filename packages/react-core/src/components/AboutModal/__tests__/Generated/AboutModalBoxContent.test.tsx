@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { AboutModalBoxContent } from '../../AboutModalBoxContent';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('AboutModalBoxContent should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <AboutModalBoxContent
       children={<div>ReactNode</div>}
       className={"''"}
@@ -17,5 +17,5 @@ it('AboutModalBoxContent should match snapshot (auto-generated)', () => {
       noAboutModalBoxContentContainer={false}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
