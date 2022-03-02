@@ -55,7 +55,7 @@ class NavDefaultList extends React.Component {
 
 ### Grouped
 
-Note: to keep nav groups accessible an aria label should be supplied if a title prop is not passed.
+Note: to keep nav groups accessible an `aria-label` should be supplied if the `title` prop is not passed.
 
 ```js
 import React from 'react';
