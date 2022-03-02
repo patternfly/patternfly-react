@@ -141,12 +141,12 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
   const customChipGroupContent = (
     <React.Fragment>
       <ToolbarItem>
-        <Button id="save-btn" variant="link" onClick={() => {}} isInline>
+        <Button variant="link" onClick={() => {}} isInline>
           Save filters
         </Button>
       </ToolbarItem>
       <ToolbarItem>
-        <Button id="clear-btn" variant="link" onClick={() => onDelete('', '')} isInline>
+        <Button variant="link" onClick={() => onDelete('', '')} isInline>
           Clear all filters
         </Button>
       </ToolbarItem>
