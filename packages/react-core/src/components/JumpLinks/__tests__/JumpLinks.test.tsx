@@ -1,55 +1,55 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { JumpLinks } from '../JumpLinks';
 import { JumpLinksItem } from '../JumpLinksItem';
 import { JumpLinksList } from '../JumpLinksList';
 
 test('simple jumplinks', () => {
-  const view = shallow(
+  const view = render(
     <JumpLinks>
       <JumpLinksItem>Inactive section</JumpLinksItem>
       <JumpLinksItem isActive>Active section</JumpLinksItem>
       <JumpLinksItem>Inactive section</JumpLinksItem>
     </JumpLinks>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('jumplinks centered', () => {
-  const view = shallow(
+  const view = render(
     <JumpLinks isCentered>
       <JumpLinksItem>Inactive section</JumpLinksItem>
       <JumpLinksItem isActive>Active section</JumpLinksItem>
       <JumpLinksItem>Inactive section</JumpLinksItem>
     </JumpLinks>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('jumplinks with label', () => {
-  const view = shallow(
+  const view = render(
     <JumpLinks isCentered label="Jump to section">
       <JumpLinksItem>Inactive section</JumpLinksItem>
       <JumpLinksItem isActive>Active section</JumpLinksItem>
       <JumpLinksItem>Inactive section</JumpLinksItem>
     </JumpLinks>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('vertical with label', () => {
-  const view = shallow(
+  const view = render(
     <JumpLinks isVertical alwaysShowLabel label="Jump to section">
       <JumpLinksItem>Inactive section</JumpLinksItem>
       <JumpLinksItem isActive>Active section</JumpLinksItem>
       <JumpLinksItem>Inactive section</JumpLinksItem>
     </JumpLinks>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('expandable vertical with subsection', () => {
-  const view = shallow(
+  const view = render(
     <JumpLinks isVertical label="Jump to section" expandable={{ default: 'expandable' }}>
       <JumpLinksItem>Inactive section</JumpLinksItem>
       <JumpLinksItem>
@@ -64,5 +64,5 @@ test('expandable vertical with subsection', () => {
       <JumpLinksItem>Inactive section</JumpLinksItem>
     </JumpLinks>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

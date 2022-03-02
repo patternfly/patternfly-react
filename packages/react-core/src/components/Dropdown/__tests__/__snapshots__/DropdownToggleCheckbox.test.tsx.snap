@@ -1,145 +1,149 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`3rd state 1`] = `
-<label
-  className="pf-c-dropdown__toggle-check"
-  htmlFor="check"
->
-  <input
-    aria-invalid={false}
-    aria-label="check"
-    checked={false}
-    data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-5"
-    data-ouia-component-type="PF4/DropdownToggleCheckbox"
-    data-ouia-safe={true}
-    disabled={false}
-    id="check"
-    onChange={[Function]}
-    type="checkbox"
-  />
-</label>
+<div>
+  <label
+    class="pf-c-dropdown__toggle-check"
+    for="check"
+  >
+    <input
+      aria-invalid="false"
+      aria-label="check"
+      data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-5"
+      data-ouia-component-type="PF4/DropdownToggleCheckbox"
+      data-ouia-safe="true"
+      id="check"
+      type="checkbox"
+    />
+  </label>
+</div>
 `;
 
 exports[`controlled 1`] = `
-<label
-  className="pf-c-dropdown__toggle-check"
-  htmlFor="check"
->
-  <input
-    aria-invalid={false}
-    aria-label="check"
-    checked={true}
-    data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-1"
-    data-ouia-component-type="PF4/DropdownToggleCheckbox"
-    data-ouia-safe={true}
-    disabled={false}
-    id="check"
-    onChange={[Function]}
-    type="checkbox"
-  />
-</label>
+<div>
+  <label
+    class="pf-c-dropdown__toggle-check"
+    for="check"
+  >
+    <input
+      aria-invalid="false"
+      aria-label="check"
+      checked=""
+      data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-1"
+      data-ouia-component-type="PF4/DropdownToggleCheckbox"
+      data-ouia-safe="true"
+      id="check"
+      type="checkbox"
+    />
+  </label>
+</div>
 `;
 
 exports[`isDisabled 1`] = `
-<label
-  className="pf-c-dropdown__toggle-check"
-  htmlFor="check"
->
-  <input
-    aria-invalid={false}
-    aria-label="check"
-    data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-4"
-    data-ouia-component-type="PF4/DropdownToggleCheckbox"
-    data-ouia-safe={true}
-    disabled={true}
-    id="check"
-    type="checkbox"
-  />
-</label>
+<div>
+  <label
+    class="pf-c-dropdown__toggle-check"
+    for="check"
+  >
+    <input
+      aria-invalid="false"
+      aria-label="check"
+      data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-4"
+      data-ouia-component-type="PF4/DropdownToggleCheckbox"
+      data-ouia-safe="true"
+      disabled=""
+      id="check"
+      type="checkbox"
+    />
+  </label>
+</div>
 `;
 
 exports[`passing HTML attribute 1`] = `
-<label
-  className="pf-c-dropdown__toggle-check"
-  htmlFor="check"
->
-  <input
-    aria-invalid={false}
-    aria-label="check"
-    aria-labelledby="labelId"
-    checked={true}
-    data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-7"
-    data-ouia-component-type="PF4/DropdownToggleCheckbox"
-    data-ouia-safe={true}
-    disabled={false}
-    id="check"
-    label="label"
-    onChange={[Function]}
-    type="checkbox"
-  />
-</label>
+<div>
+  <label
+    class="pf-c-dropdown__toggle-check"
+    for="check"
+  >
+    <input
+      aria-invalid="false"
+      aria-label="check"
+      aria-labelledby="labelId"
+      checked=""
+      data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-7"
+      data-ouia-component-type="PF4/DropdownToggleCheckbox"
+      data-ouia-safe="true"
+      id="check"
+      label="label"
+      type="checkbox"
+    />
+  </label>
+</div>
 `;
 
 exports[`passing class 1`] = `
-<label
-  className="pf-c-dropdown__toggle-check class-123"
-  htmlFor="check"
->
-  <input
-    aria-invalid={false}
-    aria-label="check"
-    checked={true}
-    data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-6"
-    data-ouia-component-type="PF4/DropdownToggleCheckbox"
-    data-ouia-safe={true}
-    disabled={false}
-    id="check"
-    label="label"
-    onChange={[Function]}
-    type="checkbox"
-  />
-</label>
+<div>
+  <label
+    class="pf-c-dropdown__toggle-check class-123"
+    for="check"
+  >
+    <input
+      aria-invalid="false"
+      aria-label="check"
+      checked=""
+      data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-6"
+      data-ouia-component-type="PF4/DropdownToggleCheckbox"
+      data-ouia-safe="true"
+      id="check"
+      label="label"
+      type="checkbox"
+    />
+  </label>
+</div>
 `;
 
 exports[`uncontrolled 1`] = `
-<label
-  className="pf-c-dropdown__toggle-check"
-  htmlFor="check"
->
-  <input
-    aria-invalid={false}
-    aria-label="check"
-    data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-2"
-    data-ouia-component-type="PF4/DropdownToggleCheckbox"
-    data-ouia-safe={true}
-    disabled={false}
-    id="check"
-    type="checkbox"
-  />
-</label>
+<div>
+  <label
+    class="pf-c-dropdown__toggle-check"
+    for="check"
+  >
+    <input
+      aria-invalid="false"
+      aria-label="check"
+      data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-2"
+      data-ouia-component-type="PF4/DropdownToggleCheckbox"
+      data-ouia-safe="true"
+      id="check"
+      type="checkbox"
+    />
+  </label>
+</div>
 `;
 
 exports[`with text 1`] = `
-<label
-  className="pf-c-dropdown__toggle-check"
-  htmlFor="check"
->
-  <input
-    aria-invalid={false}
-    aria-label="check"
-    data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-3"
-    data-ouia-component-type="PF4/DropdownToggleCheckbox"
-    data-ouia-safe={true}
-    disabled={true}
-    id="check"
-    type="checkbox"
-  />
-  <span
-    aria-hidden="true"
-    className="pf-c-dropdown__toggle-text"
-    id="check-text"
+<div>
+  <label
+    class="pf-c-dropdown__toggle-check"
+    for="check"
   >
-    Some text
-  </span>
-</label>
+    <input
+      aria-invalid="false"
+      aria-label="check"
+      data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-3"
+      data-ouia-component-type="PF4/DropdownToggleCheckbox"
+      data-ouia-safe="true"
+      disabled=""
+      id="check"
+      type="checkbox"
+    />
+    <span
+      aria-hidden="true"
+      class="pf-c-dropdown__toggle-text"
+      id="check-text"
+    >
+      Some text
+    </span>
+  </label>
+</div>
 `;

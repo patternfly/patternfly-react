@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { WizardToggle } from '../../WizardToggle';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('WizardToggle should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <WizardToggle
       nav={(isWizardNavOpen: boolean) => undefined as React.ReactElement}
       steps={[]}
@@ -23,5 +23,5 @@ it('WizardToggle should match snapshot (auto-generated)', () => {
       isInPage={true}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

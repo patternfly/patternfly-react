@@ -1,39 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Switch should match snapshot (auto-generated) 1`] = `
-<label
-  className="pf-c-switch ''"
-  data-ouia-component-id="OUIA-Generated-Switch-1"
-  data-ouia-component-type="PF4/Switch"
-  data-ouia-safe={true}
-  htmlFor="''"
->
-  <input
-    aria-label="''"
-    aria-labelledby={null}
-    checked={true}
-    className="pf-c-switch__input"
-    disabled={false}
-    id="''"
-    onChange={[Function]}
-    type="checkbox"
-  />
-  <span
-    className="pf-c-switch__toggle"
-  />
-  <span
-    aria-hidden="true"
-    className="pf-c-switch__label pf-m-on"
-    id={null}
+<div>
+  <label
+    class="pf-c-switch ''"
+    data-ouia-component-id="OUIA-Generated-Switch-1"
+    data-ouia-component-type="PF4/Switch"
+    data-ouia-safe="true"
+    for="''"
   >
-    ''
-  </span>
-  <span
-    aria-hidden="true"
-    className="pf-c-switch__label pf-m-off"
-    id={null}
-  >
-    ''
-  </span>
-</label>
+    <input
+      aria-label="''"
+      checked=""
+      class="pf-c-switch__input"
+      id="''"
+      type="checkbox"
+    />
+    <span
+      class="pf-c-switch__toggle"
+    />
+    <span
+      aria-hidden="true"
+      class="pf-c-switch__label pf-m-on"
+    >
+      ''
+    </span>
+    <span
+      aria-hidden="true"
+      class="pf-c-switch__label pf-m-off"
+    >
+      ''
+    </span>
+  </label>
+</div>
 `;

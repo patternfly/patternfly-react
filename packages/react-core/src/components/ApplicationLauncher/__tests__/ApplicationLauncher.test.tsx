@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import { ApplicationLauncher } from '../ApplicationLauncher';
 import { ApplicationLauncherItem } from '../ApplicationLauncherItem';
@@ -27,40 +27,40 @@ const dropdownItems = [
 
 describe('ApplicationLauncher', () => {
   test('regular', () => {
-    const view = mount(<ApplicationLauncher items={dropdownItems} />);
-    expect(view).toMatchSnapshot();
+    const view = render(<ApplicationLauncher items={dropdownItems} />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('right aligned', () => {
-    const view = mount(<ApplicationLauncher items={dropdownItems} position={DropdownPosition.right} />);
-    expect(view).toMatchSnapshot();
+    const view = render(<ApplicationLauncher items={dropdownItems} position={DropdownPosition.right} />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('dropup', () => {
-    const view = mount(<ApplicationLauncher items={dropdownItems} direction={DropdownDirection.up} />);
-    expect(view).toMatchSnapshot();
+    const view = render(<ApplicationLauncher items={dropdownItems} direction={DropdownDirection.up} />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('dropup + right aligned', () => {
-    const view = mount(
+    const view = render(
       <ApplicationLauncher
         items={dropdownItems}
         direction={DropdownDirection.up}
         position={DropdownPosition.right}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('expanded', () => {
-    const view = mount(<ApplicationLauncher items={dropdownItems} isOpen />);
-    expect(view).toMatchSnapshot();
+    const view = render(<ApplicationLauncher items={dropdownItems} isOpen />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('custom icon', () => {
-    const view = mount(
+    const view = render(
       <ApplicationLauncher items={dropdownItems} isOpen toggleIcon={<HelpIcon id="test-icon" />} />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });

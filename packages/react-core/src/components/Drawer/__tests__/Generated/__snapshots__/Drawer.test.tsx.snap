@@ -1,25 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Drawer should match snapshot (auto-generated) 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "drawerRef": Object {
-        "current": undefined,
-      },
-      "isExpanded": false,
-      "isStatic": false,
-      "onExpand": [Function],
-      "position": "right",
-    }
-  }
->
+<div>
   <div
-    className="pf-c-drawer ''"
+    class="pf-c-drawer ''"
   >
     <div>
       ReactNode
     </div>
   </div>
-</ContextProvider>
+</div>
 `;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { AboutModalContainer } from '../AboutModalContainer';
 
 const props = {
@@ -13,24 +13,24 @@ const props = {
   'aria-describedby': 'ariaDescribedById'
 };
 test('About Modal Container Test simple', () => {
-  const view = shallow(<AboutModalContainer {...props}>This is ModalBox content</AboutModalContainer>);
-  expect(view).toMatchSnapshot();
+  const view = render(<AboutModalContainer {...props}>This is ModalBox content</AboutModalContainer>);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('About Modal Container Test isOpen', () => {
-  const view = shallow(
+  const view = render(
     <AboutModalContainer title="Test Modal Container title" {...props} isOpen>
       This is ModalBox content
     </AboutModalContainer>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('About Modal Container Test with onlose', () => {
-  const view = shallow(
+  const view = render(
     <AboutModalContainer onClose={() => undefined} {...props}>
       This is ModalBox content
     </AboutModalContainer>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

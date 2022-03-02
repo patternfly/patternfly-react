@@ -1,293 +1,229 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HelperText default helper text variant applies successfully 1`] = `
-<HelperTextItem
-  variant="default"
->
+<div>
   <div
-    className="pf-c-helper-text__item"
+    class="pf-c-helper-text__item"
   >
     <span
-      className="pf-c-helper-text__item-text"
+      class="pf-c-helper-text__item-text"
     >
       default
        help test text
     </span>
   </div>
-</HelperTextItem>
+</div>
 `;
 
 exports[`HelperText dynamic helper text renders successfully 1`] = `
-<HelperText>
+<div>
   <div
-    className="pf-c-helper-text"
+    class="pf-c-helper-text"
   >
-    <HelperTextItem
-      isDynamic={true}
+    <div
+      class="pf-c-helper-text__item pf-m-dynamic"
     >
-      <div
-        className="pf-c-helper-text__item pf-m-dynamic"
+      <span
+        aria-hidden="true"
+        class="pf-c-helper-text__item-icon"
       >
-        <span
-          aria-hidden={true}
-          className="pf-c-helper-text__item-icon"
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style="vertical-align: -0.125em;"
+          viewBox="0 0 448 512"
+          width="1em"
         >
-          <MinusIcon
-            color="currentColor"
-            noVerticalAlign={false}
-            size="sm"
-          >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 448 512"
-              width="1em"
-            >
-              <path
-                d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-              />
-            </svg>
-          </MinusIcon>
-        </span>
-        <span
-          className="pf-c-helper-text__item-text"
-        >
-          help test text
-        </span>
-      </div>
-    </HelperTextItem>
+          <path
+            d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+          />
+        </svg>
+      </span>
+      <span
+        class="pf-c-helper-text__item-text"
+      >
+        help test text
+      </span>
+    </div>
   </div>
-</HelperText>
+</div>
 `;
 
 exports[`HelperText helper text block renders successfully 1`] = `
-<HelperText>
+<div>
   <div
-    className="pf-c-helper-text"
+    class="pf-c-helper-text"
   >
-    <HelperTextItem>
-      <div
-        className="pf-c-helper-text__item"
+    <div
+      class="pf-c-helper-text__item"
+    >
+      <span
+        class="pf-c-helper-text__item-text"
       >
-        <span
-          className="pf-c-helper-text__item-text"
-        >
-          help test text 1
-        </span>
-      </div>
-    </HelperTextItem>
-    <HelperTextItem>
-      <div
-        className="pf-c-helper-text__item"
+        help test text 1
+      </span>
+    </div>
+    <div
+      class="pf-c-helper-text__item"
+    >
+      <span
+        class="pf-c-helper-text__item-text"
       >
-        <span
-          className="pf-c-helper-text__item-text"
-        >
-          help test text 2
-        </span>
-      </div>
-    </HelperTextItem>
-    <HelperTextItem>
-      <div
-        className="pf-c-helper-text__item"
+        help test text 2
+      </span>
+    </div>
+    <div
+      class="pf-c-helper-text__item"
+    >
+      <span
+        class="pf-c-helper-text__item-text"
       >
-        <span
-          className="pf-c-helper-text__item-text"
-        >
-          help test text 3
-        </span>
-      </div>
-    </HelperTextItem>
+        help test text 3
+      </span>
+    </div>
   </div>
-</HelperText>
+</div>
 `;
 
 exports[`HelperText icon helper text renders properly 1`] = `
-<HelperText>
+<div>
   <div
-    className="pf-c-helper-text"
+    class="pf-c-helper-text"
   >
-    <HelperTextItem
-      icon={
-        <CheckIcon
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-        />
-      }
+    <div
+      class="pf-c-helper-text__item"
     >
-      <div
-        className="pf-c-helper-text__item"
+      <span
+        aria-hidden="true"
+        class="pf-c-helper-text__item-icon"
       >
-        <span
-          aria-hidden={true}
-          className="pf-c-helper-text__item-icon"
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style="vertical-align: -0.125em;"
+          viewBox="0 0 512 512"
+          width="1em"
         >
-          <CheckIcon
-            color="currentColor"
-            noVerticalAlign={false}
-            size="sm"
-          >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 512 512"
-              width="1em"
-            >
-              <path
-                d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-              />
-            </svg>
-          </CheckIcon>
-        </span>
-        <span
-          className="pf-c-helper-text__item-text"
-        >
-          help test text
-        </span>
-      </div>
-    </HelperTextItem>
+          <path
+            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+          />
+        </svg>
+      </span>
+      <span
+        class="pf-c-helper-text__item-text"
+      >
+        help test text
+      </span>
+    </div>
   </div>
-</HelperText>
+</div>
 `;
 
 exports[`HelperText indeterminate helper text variant applies successfully 1`] = `
-<HelperTextItem
-  variant="indeterminate"
->
+<div>
   <div
-    className="pf-c-helper-text__item pf-m-indeterminate"
+    class="pf-c-helper-text__item pf-m-indeterminate"
   >
     <span
-      className="pf-c-helper-text__item-text"
+      class="pf-c-helper-text__item-text"
     >
       indeterminate
        help test text
     </span>
   </div>
-</HelperTextItem>
+</div>
 `;
 
 exports[`HelperText invalid helper text variant applies successfully 1`] = `
-<HelperTextItem
-  variant="invalid"
->
+<div>
   <div
-    className="pf-c-helper-text__item"
+    class="pf-c-helper-text__item"
   >
     <span
-      className="pf-c-helper-text__item-text"
+      class="pf-c-helper-text__item-text"
     >
       invalid
        help test text
     </span>
   </div>
-</HelperTextItem>
+</div>
 `;
 
 exports[`HelperText simple helper text renders successfully 1`] = `
-<HelperText>
+<div>
   <div
-    className="pf-c-helper-text"
+    class="pf-c-helper-text"
   >
-    <HelperTextItem>
-      <div
-        className="pf-c-helper-text__item"
+    <div
+      class="pf-c-helper-text__item"
+    >
+      <span
+        class="pf-c-helper-text__item-text"
       >
-        <span
-          className="pf-c-helper-text__item-text"
-        >
-          help test text
-        </span>
-      </div>
-    </HelperTextItem>
+        help test text
+      </span>
+    </div>
   </div>
-</HelperText>
+</div>
 `;
 
 exports[`HelperText success helper text variant applies successfully 1`] = `
-<HelperTextItem
-  variant="success"
->
+<div>
   <div
-    className="pf-c-helper-text__item pf-m-success"
+    class="pf-c-helper-text__item pf-m-success"
   >
     <span
-      className="pf-c-helper-text__item-text"
+      class="pf-c-helper-text__item-text"
     >
       success
        help test text
     </span>
   </div>
-</HelperTextItem>
+</div>
 `;
 
 exports[`HelperText variant comonent helper text renders properly 1`] = `
-<HelperText
-  component="ul"
->
+<div>
   <ul
-    className="pf-c-helper-text"
+    class="pf-c-helper-text"
   >
-    <HelperTextItem
-      component="li"
+    <li
+      class="pf-c-helper-text__item"
     >
-      <li
-        className="pf-c-helper-text__item"
+      <span
+        class="pf-c-helper-text__item-text"
       >
-        <span
-          className="pf-c-helper-text__item-text"
-        >
-          help test text 1
-        </span>
-      </li>
-    </HelperTextItem>
-    <HelperTextItem
-      component="li"
+        help test text 1
+      </span>
+    </li>
+    <li
+      class="pf-c-helper-text__item"
     >
-      <li
-        className="pf-c-helper-text__item"
+      <span
+        class="pf-c-helper-text__item-text"
       >
-        <span
-          className="pf-c-helper-text__item-text"
-        >
-          help test text 2
-        </span>
-      </li>
-    </HelperTextItem>
+        help test text 2
+      </span>
+    </li>
   </ul>
-</HelperText>
+</div>
 `;
 
 exports[`HelperText warning helper text variant applies successfully 1`] = `
-<HelperTextItem
-  variant="warning"
->
+<div>
   <div
-    className="pf-c-helper-text__item pf-m-warning"
+    class="pf-c-helper-text__item pf-m-warning"
   >
     <span
-      className="pf-c-helper-text__item-text"
+      class="pf-c-helper-text__item-text"
     >
       warning
        help test text
     </span>
   </div>
-</HelperTextItem>
+</div>
 `;

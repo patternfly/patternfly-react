@@ -1,11 +1,12 @@
 import React from 'react';
 import { CardTitle } from '../CardTitle';
 import { CardHeader } from '../CardHeader';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+import { shallow } from 'enzyme';
 
 test('renders with PatternFly Core styles', () => {
-  const view = shallow(<CardTitle />);
-  expect(view).toMatchSnapshot();
+  const view = render(<CardTitle />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('className is added to the root element', () => {
@@ -20,6 +21,6 @@ test('extra props are spread to the root element', () => {
 });
 
 test('onExpand adds the toggle button', () => {
-  const view = mount(<CardHeader onExpand={jest.fn()} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<CardHeader onExpand={jest.fn()} />);
+  expect(view.container).toMatchSnapshot();
 });

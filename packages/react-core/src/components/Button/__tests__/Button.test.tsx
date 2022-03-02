@@ -1,16 +1,17 @@
 import { Button, ButtonVariant } from '../Button';
 import React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import CartArrowDownIcon from '@patternfly/react-icons/dist/esm/icons/cart-arrow-down-icon';
 
 Object.values(ButtonVariant).forEach(variant => {
   test(`${variant} button`, () => {
-    const view = mount(
+    const view = render(
       <Button variant={variant} aria-label={variant}>
         {variant} Button
       </Button>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });
 
@@ -21,82 +22,82 @@ test('it adds an aria-label to plain buttons', () => {
 });
 
 test('link with icon', () => {
-  const view = mount(
+  const view = render(
     <Button variant={ButtonVariant.link} icon={<CartArrowDownIcon />}>
       Block Button
     </Button>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('isBlock', () => {
-  const view = mount(<Button isBlock>Block Button</Button>);
-  expect(view).toMatchSnapshot();
+  const view = render(<Button isBlock>Block Button</Button>);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('isDisabled', () => {
-  const view = mount(<Button isDisabled>Disabled Button</Button>);
-  expect(view).toMatchSnapshot();
+  const view = render(<Button isDisabled>Disabled Button</Button>);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('isDanger secondary', () => {
-  const view = mount(
+  const view = render(
     <Button variant="secondary" isDanger>
       Disabled Button
     </Button>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('isDanger link', () => {
-  const view = mount(
+  const view = render(
     <Button variant="link" isDanger>
       Disabled Button
     </Button>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('isAriaDisabled button', () => {
-  const view = mount(<Button isAriaDisabled>Disabled yet focusable button</Button>);
-  expect(view).toMatchSnapshot();
+  const view = render(<Button isAriaDisabled>Disabled yet focusable button</Button>);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('isAriaDisabled link button', () => {
-  const view = mount(
+  const view = render(
     <Button isAriaDisabled component="a">
       Disabled yet focusable button
     </Button>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('isInline', () => {
-  const view = mount(
+  const view = render(
     <Button variant={ButtonVariant.link} isInline>
       Hovered Button
     </Button>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('isSmall', () => {
-  const view = mount(<Button isSmall>Small Button</Button>);
-  expect(view).toMatchSnapshot();
+  const view = render(<Button isSmall>Small Button</Button>);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('isLarge', () => {
-  const view = mount(<Button isLarge>Large Button</Button>);
-  expect(view).toMatchSnapshot();
+  const view = render(<Button isLarge>Large Button</Button>);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('isLoading', () => {
-  const view = mount(
+  const view = render(
     <Button isLoading spinnerAriaValueText="Loading">
       Loading Button
     </Button>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('allows passing in a string as the component', () => {
@@ -112,12 +113,12 @@ test('allows passing in a React Component as the component', () => {
 });
 
 test('aria-disabled is set to true and tabIndex to -1 if component is not a button and is disabled', () => {
-  const view = mount(
+  const view = render(
     <Button component="a" isDisabled>
       Disabled Anchor Button
     </Button>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('setting tab index through props', () => {
@@ -126,6 +127,6 @@ test('setting tab index through props', () => {
 });
 
 test('isLoading icon only', () => {
-  const view = mount(<Button variant="plain" isLoading aria-label="Upload" isLoading spinnerAriaValueText="Loading" icon={<div>ICON</div>} />)
-  expect(view).toMatchSnapshot();
+  const view = render(<Button variant="plain" isLoading aria-label="Upload" spinnerAriaValueText="Loading" icon={<div>ICON</div>} />)
+  expect(view.container).toMatchSnapshot();
 })

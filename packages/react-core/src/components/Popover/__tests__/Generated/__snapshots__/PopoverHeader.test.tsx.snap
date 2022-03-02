@@ -1,13 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PopoverHeader should match snapshot (auto-generated) 1`] = `
-<Title
-  headingLevel="h6"
-  id="string"
-  size="md"
->
-  <div>
-    ReactNode
-  </div>
-</Title>
+<div>
+  <h6
+    class="pf-c-title pf-m-md"
+    data-ouia-component-id="OUIA-Generated-Title-1"
+    data-ouia-component-type="PF4/Title"
+    data-ouia-safe="true"
+    id="string"
+  >
+    <div>
+      ReactNode
+    </div>
+  </h6>
+</div>
 `;

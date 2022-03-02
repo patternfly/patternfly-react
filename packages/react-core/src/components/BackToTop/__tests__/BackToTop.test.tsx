@@ -1,22 +1,22 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { BackToTop } from '../BackToTop';
 
 describe('BackToTop', () => {
   test('verify basic', () => {
-    const view = shallow(<BackToTop />);
-    expect(view).toMatchSnapshot();
+    const view = render(<BackToTop />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('verify custom class', () => {
-    const view = mount(<BackToTop className="custom-css">test</BackToTop>);
+    const view = render(<BackToTop className="custom-css">test</BackToTop>);
 
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('verify always show', () => {
-    const view = mount(<BackToTop isAlwaysVisible>test</BackToTop>);
+    const view = render(<BackToTop isAlwaysVisible>test</BackToTop>);
 
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });

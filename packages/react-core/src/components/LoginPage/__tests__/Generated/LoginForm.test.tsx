@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { LoginForm } from '../../LoginForm';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('LoginForm should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <LoginForm
       noAutoFocus={false}
       className={"''"}
@@ -30,5 +30,5 @@ it('LoginForm should match snapshot (auto-generated)', () => {
       onChangeRememberMe={() => undefined as any}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ActionList } from '../ActionList';
 
 describe('action list', () => {
   test('renders successfully', () => {
-    const view = mount(<ActionList>test</ActionList>);
-    expect(view).toMatchSnapshot();
+    const view = render(<ActionList>test</ActionList>);
+    expect(view.container).toMatchSnapshot();
   });
   test('isIconList flag adds modifier', () => {
-    const view = mount(<ActionList isIconList>test</ActionList>);
-    expect(view).toMatchSnapshot();
+    const view = render(<ActionList isIconList>test</ActionList>);
+    expect(view.container).toMatchSnapshot();
   });
 });

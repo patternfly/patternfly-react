@@ -1,5 +1,7 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { shallow } from 'enzyme';
 import { ContextSelector } from '../ContextSelector';
 import { ContextSelectorItem } from '../ContextSelectorItem';
 
@@ -12,8 +14,8 @@ const items = [
 ];
 
 test('Renders ContextSelector', () => {
-  const view = shallow(<ContextSelector> {items} </ContextSelector>);
-  expect(view).toMatchSnapshot();
+  const view = render(<ContextSelector> {items} </ContextSelector>);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Renders ContextSelector open', () => {
@@ -23,10 +25,8 @@ test('Renders ContextSelector open', () => {
 
 test('Verify onToggle is called ', () => {
   const mockfn = jest.fn();
-  const view = mount(<ContextSelector onToggle={mockfn}> {items} </ContextSelector>);
-  view
-    .find('button')
-    .at(0)
-    .simulate('click');
+  render(<ContextSelector onToggle={mockfn}> {items} </ContextSelector>);
+
+  userEvent.click(screen.getByRole('button'));
   expect(mockfn.mock.calls).toHaveLength(1);
 });

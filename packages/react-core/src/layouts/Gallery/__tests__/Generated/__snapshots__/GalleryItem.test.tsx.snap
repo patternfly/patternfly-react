@@ -2,6 +2,8 @@
 
 exports[`GalleryItem should match snapshot (auto-generated) 1`] = `
 <div>
-  ReactNode
+  <div>
+    ReactNode
+  </div>
 </div>
 `;

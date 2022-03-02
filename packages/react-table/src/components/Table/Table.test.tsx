@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import {
   Table,
@@ -30,90 +31,90 @@ import { ColumnsType } from './base';
 
 describe('Simple table', () => {
   test('caption', () => {
-    const view = mount(
+    const view = render(
       <Table caption="Simple Table" cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('header', () => {
-    const view = mount(
+    const view = render(
       <Table header={<h4>Header title</h4>} cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
   test('aria-label', () => {
-    const view = mount(
+    const view = render(
       <Table aria-label="Aria labeled" cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 test('Editable table', () => {
   const onRowEdit: OnRowEdit = () => undefined;
-  const view = mount(
+  const view = render(
     <Table caption="Editable Table" cells={editableColumns} rows={editableRows} onRowEdit={onRowEdit}>
       <TableHeader />
       <TableBody />
     </Table>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Sortable table', () => {
   const onSortCall: OnSort = () => undefined;
   columns[0] = { ...(columns[0] as object), transforms: [sortable] };
-  const view = mount(
+  const view = render(
     <Table aria-label="Aria labeled" onSort={onSortCall} sortBy={{}} cells={columns} rows={rows}>
       <TableHeader />
       <TableBody />
     </Table>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Row click table', () => {
   const rowClickHandler = jest.fn();
-  const view = mount(
+  const view = render(
     <Table aria-label="Row click table" cells={columns} rows={rows}>
       <TableHeader />
       <TableBody onRowClick={rowClickHandler} />
     </Table>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 describe('Table variants', () => {
   Object.values(TableGridBreakpoint).forEach(oneBreakpoint => {
     test(`Breakpoint - ${oneBreakpoint}`, () => {
-      const view = mount(
+      const view = render(
         <Table aria-label="Aria labeled" gridBreakPoint={oneBreakpoint} cells={columns} rows={rows}>
           <TableHeader />
           <TableBody />
         </Table>
       );
-      expect(view).toMatchSnapshot();
+      expect(view.container).toMatchSnapshot();
     });
   });
   Object.values(TableVariant).forEach(onevariant => {
     test(`Size - ${onevariant}`, () => {
-      const view = mount(
+      const view = render(
         <Table aria-label="Aria labeled" variant={onevariant} cells={columns} rows={rows}>
           <TableHeader />
           <TableBody />
         </Table>
       );
-      expect(view).toMatchSnapshot();
+      expect(view.container).toMatchSnapshot();
     });
   });
 });
@@ -127,17 +128,17 @@ test('Simple Actions table', () => {
     }
   ];
 
-  const view = mount(
+  const view = render(
     <Table aria-label="Aria labeled" actions={actions} cells={columns} rows={rowsWithDisabledAction}>
       <TableHeader />
       <TableBody />
     </Table>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Actions table', () => {
-  const view = mount(
+  const view = render(
     <Table
       aria-label="Aria labeled"
       actionResolver={() => actions}
@@ -149,18 +150,18 @@ test('Actions table', () => {
       <TableBody />
     </Table>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Cell header table', () => {
   columns[0] = { ...(columns[0] as object), cellTransforms: [headerCol('test-headercol-')] };
-  const view = mount(
+  const view = render(
     <Table aria-label="Aria labeled" cells={columns} rows={rows}>
       <TableHeader />
       <TableBody />
     </Table>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Collapsible table', () => {
@@ -170,13 +171,13 @@ test('Collapsible table', () => {
   rows[4] = { ...rows[4], parent: 3 };
   columns[0] = { ...(columns[0] as object), cellFormatters: [expandable] };
   const onCollapse: OnCollapse = () => undefined;
-  const view = mount(
+  const view = render(
     <Table aria-label="Aria labeled" onCollapse={onCollapse} cells={columns} rows={rows}>
       <TableHeader />
       <TableBody />
     </Table>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Compound Expandable table', () => {
@@ -203,13 +204,13 @@ test('Compound Expandable table', () => {
     { parent: 2, compoundParent: 0, cells: [{ title: 'expanded', props: { colSpan: 2 } }] }
   ];
   const onExpand: OnExpand = () => undefined;
-  const view = mount(
+  const view = render(
     <Table aria-label="Aria labeled" onExpand={onExpand} cells={compoundColumns} rows={compoundRows}>
       <TableHeader />
       <TableBody />
     </Table>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Collapsible nested table', () => {
@@ -217,29 +218,29 @@ test('Collapsible nested table', () => {
   rows[1] = { ...rows[1], parent: 0, isOpen: true };
   rows[2] = { ...rows[2], parent: 1 };
   const onCollapse: OnCollapse = () => undefined;
-  const view = mount(
+  const view = render(
     <Table aria-label="Aria labeled" onCollapse={onCollapse} cells={columns} rows={rows}>
       <TableHeader />
       <TableBody />
     </Table>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Selectable table', () => {
   const onSelect: OnSelect = () => undefined;
-  const view = mount(
+  const view = render(
     <Table aria-label="Aria labeled" onSelect={onSelect} cells={columns} rows={rows}>
       <TableHeader />
       <TableBody />
     </Table>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Selectable table with Radio', () => {
   const onSelect: OnSelect = () => undefined;
-  const view = mount(
+  const view = render(
     <Table
       aria-label="Aria labeled"
       selectVariant={RowSelectVariant.radio}
@@ -251,7 +252,7 @@ test('Selectable table with Radio', () => {
       <TableBody />
     </Table>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Control text table', () => {
@@ -263,26 +264,26 @@ test('Control text table', () => {
     { ...(columns[4] as object), transforms: [fitContent] }
   ];
 
-  const view = mount(
+  const view = render(
     <Table aria-label="Aria labeled" cells={controlTextColumns} rows={rows}>
       <TableHeader />
       <TableBody />
     </Table>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Header width table', () => {
   columns[0] = { ...(columns[0] as object), transforms: [cellWidth(10)] };
   columns[2] = { ...(columns[2] as object), transforms: [cellWidth(30)] };
   columns[4] = { ...(columns[4] as object), transforms: [cellWidth(100)] };
-  const view = mount(
+  const view = render(
     <Table aria-label="Aria labeled" cells={columns} rows={rows}>
       <TableHeader />
       <TableBody />
     </Table>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Selectable table with selected expandable row', () => {

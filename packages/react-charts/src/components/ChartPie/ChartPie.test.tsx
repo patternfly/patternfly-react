@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ChartPie } from './ChartPie';
 
 Object.values([true, false]).forEach(() => {
   test('ChartPie', () => {
-    const view = shallow(<ChartPie />);
-    expect(view).toMatchSnapshot();
+    const view = render(<ChartPie />);
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = shallow(
+  const view = render(
     <ChartPie
       data={[
         { x: 'Cats', y: 35 },
@@ -21,5 +21,5 @@ test('renders component data', () => {
       width={200}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

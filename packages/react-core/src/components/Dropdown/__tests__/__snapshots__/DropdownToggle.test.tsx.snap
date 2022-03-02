@@ -96,79 +96,40 @@ exports[`state action split button - renders primary variant 1`] = `
 `;
 
 exports[`state active 1`] = `
-<DropdownToggle
-  id="Dropdown Toggle"
-  isActive={true}
-  parentRef={<div />}
->
-  <Toggle
-    bubbleEvent={false}
-    className=""
+<div>
+  <button
+    aria-expanded="false"
+    class="pf-c-dropdown__toggle pf-m-active"
     data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
     data-ouia-component-type="PF4/DropdownToggle"
-    data-ouia-safe={true}
-    getMenuRef={null}
+    data-ouia-safe="true"
     id="Dropdown Toggle"
-    isActive={true}
-    isDisabled={false}
-    isOpen={false}
-    isPlain={false}
-    isPrimary={false}
-    isSplitButton={false}
-    isText={false}
-    onEnter={[Function]}
-    onToggle={[Function]}
-    parentRef={<div />}
-    toggleVariant="default"
+    type="button"
   >
-    <button
-      aria-expanded={false}
-      className="pf-c-dropdown__toggle pf-m-active"
-      data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
-      data-ouia-component-type="PF4/DropdownToggle"
-      data-ouia-safe={true}
-      disabled={false}
-      id="Dropdown Toggle"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      type="button"
+    <span
+      class=""
     >
-      <span
-        className=""
+      Dropdown
+    </span>
+    <span
+      class=""
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align: -0.125em;"
+        viewBox="0 0 320 512"
+        width="1em"
       >
-        Dropdown
-      </span>
-      <span
-        className=""
-      >
-        <CaretDownIcon
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 320 512"
-            width="1em"
-          >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </CaretDownIcon>
-      </span>
-    </button>
-  </Toggle>
-</DropdownToggle>
+        <path
+          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
 `;
 
 exports[`state button variant - primary 1`] = `
@@ -401,303 +362,151 @@ exports[`state button variant - secondary 2`] = `
 `;
 
 exports[`state class changes 1`] = `
-<DropdownToggle
-  id="Dropdown Toggle"
-  parentRef={<div />}
->
-  <Toggle
-    bubbleEvent={false}
-    className=""
+<div>
+  <button
+    aria-expanded="false"
+    class="pf-c-dropdown__toggle"
     data-ouia-component-id="OUIA-Generated-DropdownToggle-13"
     data-ouia-component-type="PF4/DropdownToggle"
-    data-ouia-safe={true}
-    getMenuRef={null}
+    data-ouia-safe="true"
     id="Dropdown Toggle"
-    isActive={false}
-    isDisabled={false}
-    isOpen={false}
-    isPlain={false}
-    isPrimary={false}
-    isSplitButton={false}
-    isText={false}
-    onEnter={[Function]}
-    onToggle={[Function]}
-    parentRef={<div />}
-    toggleVariant="default"
+    type="button"
   >
-    <button
-      aria-expanded={false}
-      className="pf-c-dropdown__toggle"
-      data-ouia-component-id="OUIA-Generated-DropdownToggle-13"
-      data-ouia-component-type="PF4/DropdownToggle"
-      data-ouia-safe={true}
-      disabled={false}
-      id="Dropdown Toggle"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      type="button"
+    <span
+      class="some-test-class"
     >
-      <span
-        className="some-test-class"
+      Dropdown
+    </span>
+    <span
+      class="another-test-class"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align: -0.125em;"
+        viewBox="0 0 320 512"
+        width="1em"
       >
-        Dropdown
-      </span>
-      <span
-        className="another-test-class"
-      >
-        <CaretDownIcon
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 320 512"
-            width="1em"
-          >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </CaretDownIcon>
-      </span>
-    </button>
-  </Toggle>
-</DropdownToggle>
+        <path
+          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
 `;
 
 exports[`state class changes 2`] = `
-<DropdownToggle
-  id="Dropdown Toggle"
-  parentRef={<div />}
->
-  <Toggle
-    bubbleEvent={false}
-    className=""
+<div>
+  <button
+    aria-expanded="false"
+    class="pf-c-dropdown__toggle"
     data-ouia-component-id="OUIA-Generated-DropdownToggle-14"
     data-ouia-component-type="PF4/DropdownToggle"
-    data-ouia-safe={true}
-    getMenuRef={null}
+    data-ouia-safe="true"
     id="Dropdown Toggle"
-    isActive={false}
-    isDisabled={false}
-    isOpen={false}
-    isPlain={false}
-    isPrimary={false}
-    isSplitButton={false}
-    isText={false}
-    onEnter={[Function]}
-    onToggle={[Function]}
-    parentRef={<div />}
-    toggleVariant="default"
+    type="button"
   >
-    <button
-      aria-expanded={false}
-      className="pf-c-dropdown__toggle"
-      data-ouia-component-id="OUIA-Generated-DropdownToggle-14"
-      data-ouia-component-type="PF4/DropdownToggle"
-      data-ouia-safe={true}
-      disabled={false}
-      id="Dropdown Toggle"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      type="button"
+    <span
+      class="some-test-class"
     >
-      <span
-        className="some-test-class"
+      Dropdown
+    </span>
+    <span
+      class="another-test-class"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align: -0.125em;"
+        viewBox="0 0 320 512"
+        width="1em"
       >
-        Dropdown
-      </span>
-      <span
-        className="another-test-class"
-      >
-        <CaretDownIcon
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 320 512"
-            width="1em"
-          >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </CaretDownIcon>
-      </span>
-    </button>
-  </Toggle>
-</DropdownToggle>
+        <path
+          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
 `;
 
 exports[`state focus 1`] = `
-<DropdownToggle
-  id="Dropdown Toggle"
-  parentRef={<div />}
->
-  <Toggle
-    bubbleEvent={false}
-    className=""
+<div>
+  <button
+    aria-expanded="false"
+    class="pf-c-dropdown__toggle"
     data-ouia-component-id="OUIA-Generated-DropdownToggle-7"
     data-ouia-component-type="PF4/DropdownToggle"
-    data-ouia-safe={true}
-    getMenuRef={null}
+    data-ouia-safe="true"
     id="Dropdown Toggle"
-    isActive={false}
-    isDisabled={false}
-    isOpen={false}
-    isPlain={false}
-    isPrimary={false}
-    isSplitButton={false}
-    isText={false}
-    onEnter={[Function]}
-    onToggle={[Function]}
-    parentRef={<div />}
-    toggleVariant="default"
+    type="button"
   >
-    <button
-      aria-expanded={false}
-      className="pf-c-dropdown__toggle"
-      data-ouia-component-id="OUIA-Generated-DropdownToggle-7"
-      data-ouia-component-type="PF4/DropdownToggle"
-      data-ouia-safe={true}
-      disabled={false}
-      id="Dropdown Toggle"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      type="button"
+    <span
+      class=""
     >
-      <span
-        className=""
+      Dropdown
+    </span>
+    <span
+      class=""
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align: -0.125em;"
+        viewBox="0 0 320 512"
+        width="1em"
       >
-        Dropdown
-      </span>
-      <span
-        className=""
-      >
-        <CaretDownIcon
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 320 512"
-            width="1em"
-          >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </CaretDownIcon>
-      </span>
-    </button>
-  </Toggle>
-</DropdownToggle>
+        <path
+          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
 `;
 
 exports[`state hover 1`] = `
-<DropdownToggle
-  id="Dropdown Toggle"
-  parentRef={<div />}
->
-  <Toggle
-    bubbleEvent={false}
-    className=""
+<div>
+  <button
+    aria-expanded="false"
+    class="pf-c-dropdown__toggle"
     data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
     data-ouia-component-type="PF4/DropdownToggle"
-    data-ouia-safe={true}
-    getMenuRef={null}
+    data-ouia-safe="true"
     id="Dropdown Toggle"
-    isActive={false}
-    isDisabled={false}
-    isOpen={false}
-    isPlain={false}
-    isPrimary={false}
-    isSplitButton={false}
-    isText={false}
-    onEnter={[Function]}
-    onToggle={[Function]}
-    parentRef={<div />}
-    toggleVariant="default"
+    type="button"
   >
-    <button
-      aria-expanded={false}
-      className="pf-c-dropdown__toggle"
-      data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
-      data-ouia-component-type="PF4/DropdownToggle"
-      data-ouia-safe={true}
-      disabled={false}
-      id="Dropdown Toggle"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      type="button"
+    <span
+      class=""
     >
-      <span
-        className=""
+      Dropdown
+    </span>
+    <span
+      class=""
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align: -0.125em;"
+        viewBox="0 0 320 512"
+        width="1em"
       >
-        Dropdown
-      </span>
-      <span
-        className=""
-      >
-        <CaretDownIcon
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 320 512"
-            width="1em"
-          >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </CaretDownIcon>
-      </span>
-    </button>
-  </Toggle>
-</DropdownToggle>
+        <path
+          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
 `;
 
 exports[`state split button - does not render primary variant 1`] = `

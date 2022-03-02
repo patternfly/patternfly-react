@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ClipboardCopyExpanded } from '../ClipboardCopyExpanded';
 
 const props = {
@@ -8,16 +8,16 @@ const props = {
 };
 
 test('expanded content render', () => {
-  const view = shallow(<ClipboardCopyExpanded {...props}>This is my text</ClipboardCopyExpanded>);
-  expect(view).toMatchSnapshot();
+  const view = render(<ClipboardCopyExpanded {...props}>This is my text</ClipboardCopyExpanded>);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('expanded code content render', () => {
-  const view = shallow(
+  const view = render(
     <ClipboardCopyExpanded isCode {...props}>{`{
     "name": "@patternfly/react-core",
     "version": "1.33.2"
   }`}</ClipboardCopyExpanded>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

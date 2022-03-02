@@ -1,35 +1,36 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import { ChipGroup } from '../index';
 import { Chip } from '../../Chip';
 
 describe('ChipGroup', () => {
   test('chip group default', () => {
-    const view = mount(
+    const view = render(
       <ChipGroup>
         <Chip>1.1</Chip>
       </ChipGroup>
     );
 
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('chip group with category', () => {
-    const view = mount(
+    const view = render(
       <ChipGroup categoryName="category">
         <Chip>1.1</Chip>
       </ChipGroup>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('chip group with closable category', () => {
-    const view = mount(
+    const view = render(
       <ChipGroup categoryName="category" isClosable>
         <Chip>1.1</Chip>
       </ChipGroup>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('chip group expanded', () => {
@@ -53,11 +54,11 @@ describe('ChipGroup', () => {
   });
 
   test('chip group with category and tooltip', () => {
-    const view = mount(
+    const view = render(
       <ChipGroup categoryName="A very long category name">
         <Chip>1.1</Chip>
       </ChipGroup>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });

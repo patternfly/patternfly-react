@@ -71,83 +71,14 @@ exports[`select options is selected renders selected successfully 1`] = `
 `;
 
 exports[`select options renders custom component 1`] = `
-<SelectOption
-  className=""
-  component="div"
-  id="option-1"
-  index={0}
-  inputId=""
-  isChecked={false}
-  isDisabled={false}
-  isFavorite={null}
-  isLastOptionBeforeFooter={[Function]}
-  isLoad={false}
-  isLoading={false}
-  isNoResultsOption={false}
-  isPlaceholder={false}
-  isSelected={false}
-  keyHandler={[Function]}
-  onClick={[Function]}
-  sendRef={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          <div
-            class="pf-c-select__menu-item"
-            role="option"
-            type="button"
-          >
-            <div>
-              test display
-            </div>
-          </div>,
-          null,
-          <li
-            class="pf-c-select__menu-wrapper"
-            id="option-1"
-            role="presentation"
-          >
-            <div
-              class="pf-c-select__menu-item"
-              role="option"
-              type="button"
-            >
-              <div>
-                test display
-              </div>
-            </div>
-          </li>,
-          0,
-        ],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
-  setViewMoreNextIndex={[Function]}
-  value={
-    User {
-      "firstName": "Test",
-      "lastName": "User",
-      "title": "Mr.",
-      "toString": [Function],
-    }
-  }
->
+<div>
   <li
-    className="pf-c-select__menu-wrapper"
+    class="pf-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
     <div
-      aria-selected={null}
-      className="pf-c-select__menu-item"
-      onClick={[Function]}
-      onKeyDown={[Function]}
+      class="pf-c-select__menu-item"
       role="option"
       type="button"
     >
@@ -156,87 +87,18 @@ exports[`select options renders custom component 1`] = `
       </div>
     </div>
   </li>
-</SelectOption>
+</div>
 `;
 
 exports[`select options renders with custom display and custom user object successfully 1`] = `
-<SelectOption
-  className=""
-  component="button"
-  id="option-1"
-  index={0}
-  inputId=""
-  isChecked={false}
-  isDisabled={false}
-  isFavorite={null}
-  isLastOptionBeforeFooter={[Function]}
-  isLoad={false}
-  isLoading={false}
-  isNoResultsOption={false}
-  isPlaceholder={false}
-  isSelected={false}
-  keyHandler={[Function]}
-  onClick={[Function]}
-  sendRef={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          <button
-            class="pf-c-select__menu-item"
-            role="option"
-            type="button"
-          >
-            <div>
-              test display
-            </div>
-          </button>,
-          null,
-          <li
-            class="pf-c-select__menu-wrapper"
-            id="option-1"
-            role="presentation"
-          >
-            <button
-              class="pf-c-select__menu-item"
-              role="option"
-              type="button"
-            >
-              <div>
-                test display
-              </div>
-            </button>
-          </li>,
-          0,
-        ],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
-  setViewMoreNextIndex={[Function]}
-  value={
-    User {
-      "firstName": "Test",
-      "lastName": "User",
-      "title": "Mr.",
-      "toString": [Function],
-    }
-  }
->
+<div>
   <li
-    className="pf-c-select__menu-wrapper"
+    class="pf-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
     <button
-      aria-selected={null}
-      className="pf-c-select__menu-item"
-      onClick={[Function]}
-      onKeyDown={[Function]}
+      class="pf-c-select__menu-item"
       role="option"
       type="button"
     >
@@ -245,80 +107,18 @@ exports[`select options renders with custom display and custom user object succe
       </div>
     </button>
   </li>
-</SelectOption>
+</div>
 `;
 
 exports[`select options renders with custom display successfully 1`] = `
-<SelectOption
-  className=""
-  component="button"
-  id="option-1"
-  index={0}
-  inputId=""
-  isChecked={false}
-  isDisabled={false}
-  isFavorite={null}
-  isLastOptionBeforeFooter={[Function]}
-  isLoad={false}
-  isLoading={false}
-  isNoResultsOption={false}
-  isPlaceholder={false}
-  isSelected={false}
-  keyHandler={[Function]}
-  onClick={[Function]}
-  sendRef={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          <button
-            class="pf-c-select__menu-item"
-            role="option"
-            type="button"
-          >
-            <div>
-              test display
-            </div>
-          </button>,
-          null,
-          <li
-            class="pf-c-select__menu-wrapper"
-            id="option-1"
-            role="presentation"
-          >
-            <button
-              class="pf-c-select__menu-item"
-              role="option"
-              type="button"
-            >
-              <div>
-                test display
-              </div>
-            </button>
-          </li>,
-          0,
-        ],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
-  setViewMoreNextIndex={[Function]}
-  value="test"
->
+<div>
   <li
-    className="pf-c-select__menu-wrapper"
+    class="pf-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
     <button
-      aria-selected={null}
-      className="pf-c-select__menu-item"
-      onClick={[Function]}
-      onKeyDown={[Function]}
+      class="pf-c-select__menu-item"
       role="option"
       type="button"
     >
@@ -327,310 +127,83 @@ exports[`select options renders with custom display successfully 1`] = `
       </div>
     </button>
   </li>
-</SelectOption>
+</div>
 `;
 
 exports[`select options renders with custom user object successfully 1`] = `
-<SelectOption
-  className=""
-  component="button"
-  id="option-1"
-  index={0}
-  inputId=""
-  isChecked={false}
-  isDisabled={false}
-  isFavorite={null}
-  isLastOptionBeforeFooter={[Function]}
-  isLoad={false}
-  isLoading={false}
-  isNoResultsOption={false}
-  isPlaceholder={false}
-  isSelected={false}
-  keyHandler={[Function]}
-  onClick={[Function]}
-  sendRef={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          <button
-            class="pf-c-select__menu-item"
-            role="option"
-            type="button"
-          >
-            Mr.: Test User
-          </button>,
-          null,
-          <li
-            class="pf-c-select__menu-wrapper"
-            id="option-1"
-            role="presentation"
-          >
-            <button
-              class="pf-c-select__menu-item"
-              role="option"
-              type="button"
-            >
-              Mr.: Test User
-            </button>
-          </li>,
-          0,
-        ],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
-  setViewMoreNextIndex={[Function]}
-  value={
-    User {
-      "firstName": "Test",
-      "lastName": "User",
-      "title": "Mr.",
-      "toString": [Function],
-    }
-  }
->
+<div>
   <li
-    className="pf-c-select__menu-wrapper"
+    class="pf-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
     <button
-      aria-selected={null}
-      className="pf-c-select__menu-item"
-      onClick={[Function]}
-      onKeyDown={[Function]}
+      class="pf-c-select__menu-item"
       role="option"
       type="button"
     >
       Mr.: Test User
     </button>
   </li>
-</SelectOption>
+</div>
 `;
 
 exports[`select options renders with description successfully 1`] = `
-<SelectOption
-  className=""
-  component="button"
-  description="This is a description"
-  id="option-1"
-  index={0}
-  inputId=""
-  isChecked={false}
-  isDisabled={false}
-  isFavorite={null}
-  isLastOptionBeforeFooter={[Function]}
-  isLoad={false}
-  isLoading={false}
-  isNoResultsOption={false}
-  isPlaceholder={false}
-  isSelected={false}
-  keyHandler={[Function]}
-  onClick={[Function]}
-  sendRef={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          <button
-            class="pf-c-select__menu-item pf-m-description"
-            role="option"
-            type="button"
-          >
-            <span
-              class="pf-c-select__menu-item-main"
-            >
-              test
-            </span>
-            <span
-              class="pf-c-select__menu-item-description"
-            >
-              This is a description
-            </span>
-          </button>,
-          null,
-          <li
-            class="pf-c-select__menu-wrapper"
-            id="option-1"
-            role="presentation"
-          >
-            <button
-              class="pf-c-select__menu-item pf-m-description"
-              role="option"
-              type="button"
-            >
-              <span
-                class="pf-c-select__menu-item-main"
-              >
-                test
-              </span>
-              <span
-                class="pf-c-select__menu-item-description"
-              >
-                This is a description
-              </span>
-            </button>
-          </li>,
-          0,
-        ],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
-  setViewMoreNextIndex={[Function]}
-  value="test"
->
+<div>
   <li
-    className="pf-c-select__menu-wrapper"
+    class="pf-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
     <button
-      aria-selected={null}
-      className="pf-c-select__menu-item pf-m-description"
-      onClick={[Function]}
-      onKeyDown={[Function]}
+      class="pf-c-select__menu-item pf-m-description"
       role="option"
       type="button"
     >
       <span
-        className="pf-c-select__menu-item-main"
+        class="pf-c-select__menu-item-main"
       >
         test
       </span>
       <span
-        className="pf-c-select__menu-item-description"
+        class="pf-c-select__menu-item-description"
       >
         This is a description
       </span>
     </button>
   </li>
-</SelectOption>
+</div>
 `;
 
 exports[`select options renders with item count successfully 1`] = `
-<SelectOption
-  className=""
-  component="button"
-  id="option-1"
-  index={0}
-  inputId=""
-  isChecked={false}
-  isDisabled={false}
-  isFavorite={null}
-  isLastOptionBeforeFooter={[Function]}
-  isLoad={false}
-  isLoading={false}
-  isNoResultsOption={false}
-  isPlaceholder={false}
-  isSelected={false}
-  itemCount={3}
-  keyHandler={[Function]}
-  onClick={[Function]}
-  sendRef={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          <button
-            class="pf-c-select__menu-item"
-            role="option"
-            type="button"
-          >
-            <span
-              class="pf-c-select__menu-item-row"
-            >
-              <span
-                class="pf-c-select__menu-item-text"
-              >
-                test
-              </span>
-              <span
-                class="pf-c-select__menu-item-count"
-              >
-                3
-              </span>
-            </span>
-          </button>,
-          null,
-          <li
-            class="pf-c-select__menu-wrapper"
-            id="option-1"
-            role="presentation"
-          >
-            <button
-              class="pf-c-select__menu-item"
-              role="option"
-              type="button"
-            >
-              <span
-                class="pf-c-select__menu-item-row"
-              >
-                <span
-                  class="pf-c-select__menu-item-text"
-                >
-                  test
-                </span>
-                <span
-                  class="pf-c-select__menu-item-count"
-                >
-                  3
-                </span>
-              </span>
-            </button>
-          </li>,
-          0,
-        ],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
-  setViewMoreNextIndex={[Function]}
-  value="test"
->
+<div>
   <li
-    className="pf-c-select__menu-wrapper"
+    class="pf-c-select__menu-wrapper"
     id="option-1"
     role="presentation"
   >
     <button
-      aria-selected={null}
-      className="pf-c-select__menu-item"
-      onClick={[Function]}
-      onKeyDown={[Function]}
+      class="pf-c-select__menu-item"
       role="option"
       type="button"
     >
       <span
-        className="pf-c-select__menu-item-row"
+        class="pf-c-select__menu-item-row"
       >
         <span
-          className="pf-c-select__menu-item-text"
+          class="pf-c-select__menu-item-text"
         >
           test
         </span>
         <span
-          className="pf-c-select__menu-item-count"
+          class="pf-c-select__menu-item-count"
         >
           3
         </span>
       </span>
     </button>
   </li>
-</SelectOption>
+</div>
 `;
 
 exports[`select options renders with value parameter successfully 1`] = `

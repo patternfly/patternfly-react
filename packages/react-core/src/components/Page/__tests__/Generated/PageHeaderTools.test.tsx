@@ -2,12 +2,12 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { PageHeaderTools } from '../../PageHeaderTools';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('PageHeaderTools should match snapshot (auto-generated)', () => {
-  const view = shallow(<PageHeaderTools children={<div>ReactNode</div>} className={'string'} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<PageHeaderTools children={<div>ReactNode</div>} className={'string'} />);
+  expect(view.container).toMatchSnapshot();
 });

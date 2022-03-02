@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Popover } from '../../Popover';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('Popover should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <Popover
       id="test"
       aria-label={"''"}
@@ -36,5 +36,5 @@ it('Popover should match snapshot (auto-generated)', () => {
       zIndex={9999}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

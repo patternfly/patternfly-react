@@ -1,44 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OptionsMenu should match snapshot (auto-generated) 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "baseClass": "pf-c-options-menu",
-      "baseComponent": "div",
-      "disabledClass": "pf-m-disabled",
-      "id": "string",
-      "itemClass": "pf-c-options-menu__menu-item",
-      "menuClass": "pf-c-options-menu__menu",
-      "menuComponent": "ul",
-      "onSelect": [Function],
-      "ouiaComponentType": "OptionsMenu",
-      "ouiaId": "OUIA-Generated-OptionsMenu-1",
-      "ouiaSafe": true,
-      "toggleClass": "pf-c-options-menu__toggle",
-      "toggleIndicatorClass": "pf-c-options-menu__toggle-icon",
-      "toggleTextClass": "pf-c-options-menu__toggle-text",
-    }
-  }
->
-  <DropdownWithContext
-    autoFocus={true}
-    className="''"
-    direction="up"
-    dropdownItems={Array []}
+<div>
+  <div
+    class="pf-c-options-menu pf-m-top pf-m-align-right pf-m-expanded ''"
+    data-ouia-component-id="OUIA-Generated-OptionsMenu-1"
+    data-ouia-component-type="PF4/OptionsMenu"
+    data-ouia-safe="true"
     id="string"
-    isGrouped={false}
-    isOpen={true}
-    isPlain={true}
-    isText={false}
-    menuAppendTo="inline"
-    onSelect={[Function]}
-    position="right"
-    toggle={
-      <p>
-        ReactElement
-      </p>
-    }
-  />
-</ContextProvider>
+  >
+    <p
+      aria-haspopup="false"
+      id="pf-dropdown-toggle-id-0"
+      parentref="[object Object]"
+    >
+      ReactElement
+    </p>
+    <div
+      class="pf-c-options-menu__menu pf-m-align-right"
+    />
+  </div>
+</div>
 `;

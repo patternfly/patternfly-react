@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Backdrop } from '../Backdrop';
 
 test('Backdrop Test', () => {
-  const view = shallow(<Backdrop>Backdrop</Backdrop>);
-  expect(view).toMatchSnapshot();
+  const view = render(<Backdrop>Backdrop</Backdrop>);
+  expect(view.container).toMatchSnapshot();
 });

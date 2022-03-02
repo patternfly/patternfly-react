@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { DropdownToggle } from '../../DropdownToggle';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('DropdownToggle should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <DropdownToggle
       id={"''"}
       children={<>ReactNode</>}
@@ -30,5 +30,5 @@ it('DropdownToggle should match snapshot (auto-generated)', () => {
       onEnter={(event?: React.MouseEvent<HTMLButtonElement>) => undefined as void}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

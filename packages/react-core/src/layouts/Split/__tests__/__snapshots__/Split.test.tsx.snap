@@ -1,162 +1,122 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Gutter 1`] = `
-<Split
-  hasGutter={true}
->
+<div>
   <div
-    className="pf-l-split pf-m-gutter"
+    class="pf-l-split pf-m-gutter"
   >
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic Content
-      </div>
-    </SplitItem>
+    <div
+      class="pf-l-split__item"
+    >
+      Basic Content
+    </div>
   </div>
-</Split>
+</div>
 `;
 
 exports[`Wrappable 1`] = `
-<Split
-  isWrappable={true}
->
+<div>
   <div
-    className="pf-l-split pf-m-wrap"
+    class="pf-l-split pf-m-wrap"
   >
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic Content
-      </div>
-    </SplitItem>
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic Content
-      </div>
-    </SplitItem>
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic Content
-      </div>
-    </SplitItem>
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic Content
-      </div>
-    </SplitItem>
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic Content
-      </div>
-    </SplitItem>
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic Content
-      </div>
-    </SplitItem>
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic Content
-      </div>
-    </SplitItem>
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic Content
-      </div>
-    </SplitItem>
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic Content
-      </div>
-    </SplitItem>
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic Content
-      </div>
-    </SplitItem>
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic Content
-      </div>
-    </SplitItem>
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic Content
-      </div>
-    </SplitItem>
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic Content
-      </div>
-    </SplitItem>
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic Content
-      </div>
-    </SplitItem>
+    <div
+      class="pf-l-split__item"
+    >
+      Basic Content
+    </div>
+    <div
+      class="pf-l-split__item"
+    >
+      Basic Content
+    </div>
+    <div
+      class="pf-l-split__item"
+    >
+      Basic Content
+    </div>
+    <div
+      class="pf-l-split__item"
+    >
+      Basic Content
+    </div>
+    <div
+      class="pf-l-split__item"
+    >
+      Basic Content
+    </div>
+    <div
+      class="pf-l-split__item"
+    >
+      Basic Content
+    </div>
+    <div
+      class="pf-l-split__item"
+    >
+      Basic Content
+    </div>
+    <div
+      class="pf-l-split__item"
+    >
+      Basic Content
+    </div>
+    <div
+      class="pf-l-split__item"
+    >
+      Basic Content
+    </div>
+    <div
+      class="pf-l-split__item"
+    >
+      Basic Content
+    </div>
+    <div
+      class="pf-l-split__item"
+    >
+      Basic Content
+    </div>
+    <div
+      class="pf-l-split__item"
+    >
+      Basic Content
+    </div>
+    <div
+      class="pf-l-split__item"
+    >
+      Basic Content
+    </div>
+    <div
+      class="pf-l-split__item"
+    >
+      Basic Content
+    </div>
   </div>
-</Split>
+</div>
 `;
 
 exports[`isFilled 1`] = `
-<Split>
+<div>
   <div
-    className="pf-l-split"
+    class="pf-l-split"
   >
-    <SplitItem
-      isFilled={true}
+    <div
+      class="pf-l-split__item pf-m-fill"
     >
-      <div
-        className="pf-l-split__item pf-m-fill"
-      >
-        Main content
-      </div>
-    </SplitItem>
+      Main content
+    </div>
   </div>
-</Split>
+</div>
 `;
 
 exports[`isFilled defaults to false 1`] = `
-<Split>
+<div>
   <div
-    className="pf-l-split"
+    class="pf-l-split"
   >
-    <SplitItem>
-      <div
-        className="pf-l-split__item"
-      >
-        Basic content
-      </div>
-    </SplitItem>
+    <div
+      class="pf-l-split__item"
+    >
+      Basic content
+    </div>
   </div>
-</Split>
+</div>
 `;

@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { FormGroup } from '../../FormGroup';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('FormGroup should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <FormGroup
       children={<>ReactNode</>}
       className={"''"}
@@ -23,5 +23,5 @@ it('FormGroup should match snapshot (auto-generated)', () => {
       fieldId={'string'}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

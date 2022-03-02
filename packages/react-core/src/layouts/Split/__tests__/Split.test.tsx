@@ -1,37 +1,37 @@
 import * as React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Split } from '../Split';
 import { SplitItem } from '../SplitItem';
 
 test('isFilled', () => {
-  const view = mount(
+  const view = render(
     <Split>
       <SplitItem isFilled>Main content</SplitItem>
     </Split>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('isFilled defaults to false', () => {
-  const view = mount(
+  const view = render(
     <Split>
       <SplitItem>Basic content</SplitItem>
     </Split>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Gutter', () => {
-  const view = mount(
+  const view = render(
     <Split hasGutter>
       <SplitItem>Basic Content</SplitItem>
     </Split>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Wrappable', () => {
-  const view = mount(
+  const view = render(
     <Split isWrappable>
       <SplitItem>Basic Content</SplitItem>
       <SplitItem>Basic Content</SplitItem>
@@ -49,5 +49,5 @@ test('Wrappable', () => {
       <SplitItem>Basic Content</SplitItem>
     </Split>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

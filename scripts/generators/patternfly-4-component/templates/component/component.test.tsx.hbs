@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import {{componentName}} from './{{componentName}}';
 
 test('basic', () => {
-  const view = shallow(<{{componentName}} />);
+  const view = render(<{{componentName}} />);
   // Add a useful assertion here.
   expect(view).toBe(false);
 });

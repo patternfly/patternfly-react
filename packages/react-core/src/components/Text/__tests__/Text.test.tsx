@@ -1,12 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { TextContent } from '../TextContent';
 import { Text, TextVariants } from '../Text';
 import { TextList, TextListVariants } from '../TextList';
 import { TextListItem, TextListItemVariants } from '../TextListItem';
 
 test('Text example should match snapshot', () => {
-  const view = mount(
+  const view = render(
     <TextContent>
       <Text component={TextVariants.h1}>Hello World</Text>
       <Text component={TextVariants.p}>
@@ -108,5 +108,5 @@ test('Text example should match snapshot', () => {
       </Text>
     </TextContent>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

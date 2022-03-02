@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { GenerateId } from '../GenerateId';
 
 test('generates id', () => {
-  const view = shallow(<GenerateId>{id => <div id={id}>div with random ID</div>}</GenerateId>);
+  const view = render(<GenerateId>{id => <div id={id}>div with random ID</div>}</GenerateId>);
 
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

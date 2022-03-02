@@ -1,34 +1,34 @@
 import * as React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { PageNavigation } from '../PageNavigation';
 
 describe('page navigation', () => {
   test('Verify basic render', () => {
-    const view = mount(<PageNavigation>test</PageNavigation>);
-    expect(view).toMatchSnapshot();
+    const view = render(<PageNavigation>test</PageNavigation>);
+    expect(view.container).toMatchSnapshot();
   });
   test('Verify limited width', () => {
-    const view = mount(<PageNavigation isWidthLimited>test</PageNavigation>);
-    expect(view).toMatchSnapshot();
+    const view = render(<PageNavigation isWidthLimited>test</PageNavigation>);
+    expect(view.container).toMatchSnapshot();
   });
   test('Verify top sticky', () => {
-    const view = mount(<PageNavigation sticky="top">test</PageNavigation>);
-    expect(view).toMatchSnapshot();
+    const view = render(<PageNavigation sticky="top">test</PageNavigation>);
+    expect(view.container).toMatchSnapshot();
   });
   test('Verify bottom sticky', () => {
-    const view = mount(<PageNavigation sticky="bottom">test</PageNavigation>);
-    expect(view).toMatchSnapshot();
+    const view = render(<PageNavigation sticky="bottom">test</PageNavigation>);
+    expect(view.container).toMatchSnapshot();
   });
   test('Verify top shadow', () => {
-    const view = mount(<PageNavigation hasShadowTop>test</PageNavigation>);
-    expect(view).toMatchSnapshot();
+    const view = render(<PageNavigation hasShadowTop>test</PageNavigation>);
+    expect(view.container).toMatchSnapshot();
   });
   test('Verify bottom shadow', () => {
-    const view = mount(<PageNavigation hasShadowBottom>test</PageNavigation>);
-    expect(view).toMatchSnapshot();
+    const view = render(<PageNavigation hasShadowBottom>test</PageNavigation>);
+    expect(view.container).toMatchSnapshot();
   });
   test('Verify overflow scroll', () => {
-    const view = mount(<PageNavigation hasOverflowScroll>test</PageNavigation>);
-    expect(view).toMatchSnapshot();
+    const view = render(<PageNavigation hasOverflowScroll>test</PageNavigation>);
+    expect(view.container).toMatchSnapshot();
   });
 });

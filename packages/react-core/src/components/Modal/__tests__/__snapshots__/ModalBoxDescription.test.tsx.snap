@@ -1,10 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalBoxDescription Test 1`] = `
-<div
-  className="pf-c-modal-box__description"
-  id=""
->
-  This is a ModalBox Description
+<div>
+  <div
+    class="pf-c-modal-box__description"
+    id=""
+  >
+    This is a ModalBox Description
+  </div>
 </div>
 `;

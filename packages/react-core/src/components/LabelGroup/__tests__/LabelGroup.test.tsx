@@ -1,35 +1,36 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import { shallow, mount } from 'enzyme';
 import { Label } from '../../Label';
 import { LabelGroup } from '../index';
 
 describe('LabelGroup', () => {
   test('label group default', () => {
-    const view = shallow(
+    const view = render(
       <LabelGroup>
         <Label>1.1</Label>
       </LabelGroup>
     );
 
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('label group with category', () => {
-    const view = shallow(
+    const view = render(
       <LabelGroup categoryName="category">
         <Label>1.1</Label>
       </LabelGroup>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('label group with closable category', () => {
-    const view = shallow(
+    const view = render(
       <LabelGroup categoryName="category" isClosable>
         <Label>1.1</Label>
       </LabelGroup>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('label group expanded', () => {
@@ -53,16 +54,16 @@ describe('LabelGroup', () => {
   });
 
   test('label group with category and tooltip', () => {
-    const view = shallow(
+    const view = render(
       <LabelGroup categoryName="A very long category name">
         <Label>1.1</Label>
       </LabelGroup>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('label group compact', () => {
-    const view = shallow(
+    const view = render(
       <LabelGroup isCompact>
         <Label isCompact>1</Label>
         <Label isCompact>2</Label>
@@ -70,6 +71,6 @@ describe('LabelGroup', () => {
         <Label isCompact>4</Label>
       </LabelGroup>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });

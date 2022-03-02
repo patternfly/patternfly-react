@@ -1,35 +1,35 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { ContextSelectorItem } from '../ContextSelectorItem';
 
 test('Renders ContextSelectorItem', () => {
-  const view = shallow(
+  const view = render(
     <ContextSelectorItem sendRef={jest.fn()} index={0}>
       My Project
     </ContextSelectorItem>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Renders ContextSelectorItem disabled and hovered', () => {
-  const view = shallow(
+  const view = render(
     <ContextSelectorItem isDisabled sendRef={jest.fn()} index={0}>
       My Project
     </ContextSelectorItem>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Verify onClick is called ', () => {
   const mockfn = jest.fn();
-  const view = mount(
+
+  render(
     <ContextSelectorItem onClick={mockfn} sendRef={jest.fn()} index={0}>
       My Project
     </ContextSelectorItem>
   );
-  view
-    .find('button')
-    .at(0)
-    .simulate('click');
+  userEvent.click(screen.getByRole('button'));
+
   expect(mockfn.mock.calls).toHaveLength(1);
 });

@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ToolbarExpandableContent } from '../../ToolbarExpandableContent';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('ToolbarExpandableContent should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <ToolbarExpandableContent
       className={'string'}
       isExpanded={false}
@@ -19,5 +19,5 @@ it('ToolbarExpandableContent should match snapshot (auto-generated)', () => {
       showClearFiltersButton={true}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

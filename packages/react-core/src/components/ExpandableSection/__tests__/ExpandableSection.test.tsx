@@ -1,37 +1,37 @@
 import * as React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { ExpandableSection } from '../ExpandableSection';
 import { ExpandableSectionToggle } from '../ExpandableSectionToggle';
 
 const props = {};
 
 test('ExpandableSection', () => {
-  const view = shallow(<ExpandableSection {...props}>test </ExpandableSection>);
-  expect(view).toMatchSnapshot();
+  const view = render(<ExpandableSection {...props}>test </ExpandableSection>);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Renders ExpandableSection expanded', () => {
-  const view = shallow(<ExpandableSection isExpanded> test </ExpandableSection>);
-  expect(view).toMatchSnapshot();
+  const view = render(<ExpandableSection isExpanded> test </ExpandableSection>);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('ExpandableSection onToggle called', () => {
   const mockfn = jest.fn();
-  const view = shallow(<ExpandableSection onToggle={mockfn}> test </ExpandableSection>);
-  view
-    .find('button')
-    .at(0)
-    .simulate('click');
+
+  render(<ExpandableSection onToggle={mockfn}> test </ExpandableSection>);
+
+  userEvent.click(screen.getByRole('button'));
   expect(mockfn.mock.calls).toHaveLength(1);
 });
 
 test('Renders Uncontrolled ExpandableSection', () => {
-  const view = shallow(<ExpandableSection toggleText="Show More"> test </ExpandableSection>);
-  expect(view).toMatchSnapshot();
+  const view = render(<ExpandableSection toggleText="Show More"> test </ExpandableSection>);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Detached ExpandableSection renders successfully', () => {
-  const view = mount(
+  const view = render(
     <React.Fragment>
       <ExpandableSection {...props} isExpanded isDetached contentId="test">
         test
@@ -41,15 +41,15 @@ test('Detached ExpandableSection renders successfully', () => {
       </ExpandableSectionToggle>
     </React.Fragment>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Disclosure ExpandableSection', () => {
-  const view = shallow(<ExpandableSection {...props} displaySize="large" isWidthLimited>test </ExpandableSection>);
-  expect(view).toMatchSnapshot();
+  const view = render(<ExpandableSection {...props} displaySize="large" isWidthLimited>test </ExpandableSection>);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Renders ExpandableSection indented', () => {
-  const view = shallow(<ExpandableSection isExpanded isIndented> test </ExpandableSection>);
-  expect(view).toMatchSnapshot();
+  const view = render(<ExpandableSection isExpanded isIndented> test </ExpandableSection>);
+  expect(view.container).toMatchSnapshot();
 });

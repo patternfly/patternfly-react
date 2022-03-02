@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { UserIcon } from '@patternfly/react-icons'
 import { EmptyStateIcon } from '../../EmptyStateIcon';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 it('EmptyStateIcon should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <EmptyStateIcon
       color={'string'}
       title={'string'}
@@ -18,11 +18,11 @@ it('EmptyStateIcon should match snapshot (auto-generated)', () => {
       variant={'icon'}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 it('EmptyStateIcon should match snapshot for variant container', () => {
-  const view = shallow(
+  const view = render(
     <EmptyStateIcon
       color={'string'}
       title={'string'}
@@ -32,5 +32,5 @@ it('EmptyStateIcon should match snapshot for variant container', () => {
       variant={'container'}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

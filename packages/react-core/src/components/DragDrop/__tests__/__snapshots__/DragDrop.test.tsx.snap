@@ -1,28 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders some divs 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "onDrag": [Function],
-      "onDragMove": [Function],
-      "onDrop": [Function],
-    }
-  }
->
-  <Droppable
-    droppableId="dropzone"
+<div>
+  <div
+    class="pf-c-droppable"
+    data-pf-droppable="defaultZone"
+    data-pf-droppableid="dropzone"
   >
-    <Draggable
-      draggableId="draggable1"
+    <div
+      class="pf-c-draggable"
+      data-pf-draggable-zone="defaultZone"
+      draggable="true"
+      draggableid="draggable1"
     >
       item 1
-    </Draggable>
-    <Draggable
-      draggableId="draggable2"
+    </div>
+    <div
+      class="pf-c-draggable"
+      data-pf-draggable-zone="defaultZone"
+      draggable="true"
+      draggableid="draggable2"
     >
       item 2
-    </Draggable>
-  </Droppable>
-</ContextProvider>
+    </div>
+  </div>
+</div>
 `;

@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { DragDrop, Draggable, Droppable } from '../';
 
 test('renders some divs', () => {
-  const view = shallow(
+  const view = render(
     <DragDrop>
       <Droppable droppableId="dropzone">
         <Draggable draggableId="draggable1">
@@ -15,5 +15,5 @@ test('renders some divs', () => {
       </Droppable>
     </DragDrop>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

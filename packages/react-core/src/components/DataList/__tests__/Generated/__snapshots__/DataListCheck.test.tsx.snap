@@ -1,22 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataListCheck should match snapshot (auto-generated) 1`] = `
-<Fragment>
+<div>
   <div
-    className="pf-c-data-list__item-control ''"
+    class="pf-c-data-list__item-control ''"
   >
     <div
-      className="pf-c-data-list__check"
+      class="pf-c-data-list__check"
     >
       <input
-        aria-invalid={false}
+        aria-invalid="false"
         aria-labelledby="string"
-        checked={null}
-        disabled={false}
-        onChange={[Function]}
         type="checkbox"
       />
     </div>
   </div>
-</Fragment>
+</div>
 `;

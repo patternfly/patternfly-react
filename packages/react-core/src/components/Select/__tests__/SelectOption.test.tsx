@@ -1,4 +1,5 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import { shallow, mount } from 'enzyme';
 import { SelectOption, SelectOptionObject } from '../SelectOption';
 import { SelectProvider } from '../selectConstants';
@@ -20,7 +21,9 @@ class User implements SelectOptionObject {
 describe('select options', () => {
   test('renders with value parameter successfully', () => {
     const view = mount(
-      <SelectProvider value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
+      <SelectProvider
+        value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+      >
         <SelectOption id="option-1" value="test" sendRef={jest.fn()} />
       </SelectProvider>
     );
@@ -29,69 +32,83 @@ describe('select options', () => {
   });
 
   test('renders with description successfully', () => {
-    const view = mount(
-      <SelectProvider value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
+    const view = render(
+      <SelectProvider
+        value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+      >
         <SelectOption id="option-1" value="test" description="This is a description" sendRef={jest.fn()} />
       </SelectProvider>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('renders with item count successfully', () => {
-    const view = mount(
-      <SelectProvider value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
+    const view = render(
+      <SelectProvider
+        value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+      >
         <SelectOption id="option-1" value="test" itemCount={3} sendRef={jest.fn()} />
       </SelectProvider>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('renders with custom display successfully', () => {
-    const view = mount(
-      <SelectProvider value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
+    const view = render(
+      <SelectProvider
+        value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+      >
         <SelectOption id="option-1" value="test" sendRef={jest.fn()}>
           <div>test display</div>
         </SelectOption>
       </SelectProvider>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('renders with custom user object successfully', () => {
-    const view = mount(
-      <SelectProvider value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
+    const view = render(
+      <SelectProvider
+        value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+      >
         <SelectOption id="option-1" value={new User('Mr.', 'Test', 'User')} sendRef={jest.fn()} />
       </SelectProvider>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('renders with custom display and custom user object successfully', () => {
-    const view = mount(
-      <SelectProvider value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
+    const view = render(
+      <SelectProvider
+        value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+      >
         <SelectOption id="option-1" value={new User('Mr.', 'Test', 'User')} sendRef={jest.fn()}>
           <div>test display</div>
         </SelectOption>
       </SelectProvider>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('renders custom component', () => {
-    const view = mount(
-      <SelectProvider value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
+    const view = render(
+      <SelectProvider
+        value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+      >
         <SelectOption id="option-1" value={new User('Mr.', 'Test', 'User')} sendRef={jest.fn()} component="div">
           <div>test display</div>
         </SelectOption>
       </SelectProvider>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   describe('disabled', () => {
     test('renders disabled successfully', () => {
       const view = mount(
-        <SelectProvider value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
+        <SelectProvider
+          value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+        >
           <SelectOption id="option-1" isDisabled value="test" sendRef={jest.fn()} />
         </SelectProvider>
       );
@@ -118,12 +135,14 @@ describe('select options', () => {
     test('generates warning when id is undefined and isFavorites is set', () => {
       const myMock = jest.fn() as any;
       global.console = { error: myMock } as any;
-      mount(
-        <SelectProvider value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}>
+      render(
+        <SelectProvider
+          value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+        >
           <SelectOption isFavorite value="test" sendRef={jest.fn()} />
         </SelectProvider>
       );
-      expect(myMock).toBeCalled()
+      expect(myMock).toBeCalled();
     });
   });
 });

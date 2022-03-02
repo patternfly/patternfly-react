@@ -1,7 +1,10 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
-import { SearchInput, FormGroup, Button, ExternalLinkSquareAltIcon } from '../SearchInput';
-
+import { SearchInput } from '../SearchInput';
+import { FormGroup } from '../../Form';
+import { Button } from '../../Button';
+import { ExternalLinkSquareAltIcon } from '@patternfly/react-icons';
 
 const props = {
   onChange: jest.fn(),
@@ -13,13 +16,13 @@ const props = {
 };
 
 test('simple search input', () => {
-  const view = mount(<SearchInput {...props} aria-label="simple text input" />);
-  expect(view.find('input')).toMatchSnapshot();
+  const view = render(<SearchInput {...props} aria-label="simple text input" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('search input with hint', () => {
-  const view = mount(<SearchInput {...props} hint="test hint" aria-label="simple text input" />);
-  expect(view.find('input')).toMatchSnapshot();
+  const view = render(<SearchInput {...props} hint="test hint" aria-label="simple text input" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('result count', () => {
@@ -74,7 +77,7 @@ test('advanced search with custom attributes', () => {
     <SearchInput
       attributes={[{attr:"username", display:"Username"}, {attr: "firstname", display: "First name"}]}
       advancedSearchDelimiter=":"
-      formAdditionalItems={<FormGroup><Button variant="link" isInline icon={<ExternalLinkSquareAltIcon />} iconPosition="right">Link</Button></FormGroup>}
+      formAdditionalItems={<FormGroup fieldId='test-form-group'><Button variant="link" isInline icon={<ExternalLinkSquareAltIcon />} iconPosition="right">Link</Button></FormGroup>}
       value='username:player firstname:john'
       onChange={props.onChange}
       onSearch={props.onSearch}

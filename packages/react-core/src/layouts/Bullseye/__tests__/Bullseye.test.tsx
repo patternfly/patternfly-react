@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { Bullseye } from '../Bullseye';
+import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 
 test('renders with PatternFly Core styles', () => {
-  const view = shallow(<Bullseye />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Bullseye />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('className is added to the root element', () => {
@@ -26,6 +27,6 @@ test('allows passing in a string as the component', () => {
 
 test('allows passing in a React Component as the component', () => {
   const Component: React.FunctionComponent = () => null;
-  const view = shallow(<Bullseye component={Component} />);
+  const view = shallow(<Bullseye component={Component as unknown as (keyof JSX.IntrinsicElements)} />);
   expect(view.type()).toBe(Component);
 });

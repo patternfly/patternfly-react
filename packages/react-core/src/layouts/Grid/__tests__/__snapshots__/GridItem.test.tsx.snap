@@ -1,37 +1,145 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`adds lg offset classes 1`] = `"pf-l-grid__item pf-m-offset-1-col-on-lg"`;
+exports[`adds lg offset classes 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-offset-1-col-on-lg"
+  />
+</div>
+`;
 
-exports[`adds lg row classes 1`] = `"pf-l-grid__item pf-m-1-row-on-lg"`;
+exports[`adds lg row classes 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-1-row-on-lg"
+  />
+</div>
+`;
 
-exports[`adds lg span class 1`] = `"pf-l-grid__item pf-m-4-col-on-lg"`;
+exports[`adds lg span class 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-4-col-on-lg"
+  />
+</div>
+`;
 
-exports[`adds md offset classes 1`] = `"pf-l-grid__item pf-m-offset-1-col-on-md"`;
+exports[`adds md offset classes 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-offset-1-col-on-md"
+  />
+</div>
+`;
 
-exports[`adds md row classes 1`] = `"pf-l-grid__item pf-m-1-row-on-md"`;
+exports[`adds md row classes 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-1-row-on-md"
+  />
+</div>
+`;
 
-exports[`adds md span class 1`] = `"pf-l-grid__item pf-m-4-col-on-md"`;
+exports[`adds md span class 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-4-col-on-md"
+  />
+</div>
+`;
 
-exports[`adds offset class 1`] = `"pf-l-grid__item pf-m-offset-4-col"`;
+exports[`adds offset class 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-offset-4-col"
+  />
+</div>
+`;
 
-exports[`adds row class 1`] = `"pf-l-grid__item pf-m-4-row"`;
+exports[`adds row class 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-4-row"
+  />
+</div>
+`;
 
-exports[`adds sm offset classes 1`] = `"pf-l-grid__item pf-m-offset-1-col-on-sm"`;
+exports[`adds sm offset classes 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-offset-1-col-on-sm"
+  />
+</div>
+`;
 
-exports[`adds sm row classes 1`] = `"pf-l-grid__item pf-m-1-row-on-sm"`;
+exports[`adds sm row classes 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-1-row-on-sm"
+  />
+</div>
+`;
 
-exports[`adds sm span class 1`] = `"pf-l-grid__item pf-m-4-col-on-sm"`;
+exports[`adds sm span class 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-4-col-on-sm"
+  />
+</div>
+`;
 
-exports[`adds span class 1`] = `"pf-l-grid__item pf-m-4-col"`;
+exports[`adds span class 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-4-col"
+  />
+</div>
+`;
 
-exports[`adds xl offset classes 1`] = `"pf-l-grid__item pf-m-offset-1-col-on-xl"`;
+exports[`adds xl offset classes 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-offset-1-col-on-xl"
+  />
+</div>
+`;
 
-exports[`adds xl row classes 1`] = `"pf-l-grid__item pf-m-1-row-on-xl"`;
+exports[`adds xl row classes 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-1-row-on-xl"
+  />
+</div>
+`;
 
-exports[`adds xl span class 1`] = `"pf-l-grid__item pf-m-4-col-on-xl"`;
+exports[`adds xl span class 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-4-col-on-xl"
+  />
+</div>
+`;
 
-exports[`adds xl2 offset classes 1`] = `"pf-l-grid__item pf-m-offset-1-col-on-2xl"`;
+exports[`adds xl2 offset classes 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-offset-1-col-on-2xl"
+  />
+</div>
+`;
 
-exports[`adds xl2 row classes 1`] = `"pf-l-grid__item pf-m-1-row-on-2xl"`;
+exports[`adds xl2 row classes 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-1-row-on-2xl"
+  />
+</div>
+`;
 
-exports[`adds xl2 span class 1`] = `"pf-l-grid__item pf-m-4-col-on-2xl"`;
+exports[`adds xl2 span class 1`] = `
+<div>
+  <div
+    class="pf-l-grid__item pf-m-4-col-on-2xl"
+  />
+</div>
+`;

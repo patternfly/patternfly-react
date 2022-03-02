@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+import { shallow } from 'enzyme';
 import { ToolbarToggleGroup } from '../ToolbarToggleGroup';
 import { Toolbar } from '../Toolbar';
 import { ToolbarItem } from '../ToolbarItem';
@@ -25,7 +26,7 @@ describe('Toolbar', () => {
       </React.Fragment>
     );
 
-    const view = mount(
+    const view = render(
       <Toolbar
         id="toolbar"
         inset={{
@@ -38,7 +39,7 @@ describe('Toolbar', () => {
         <ToolbarContent>{items}</ToolbarContent>
       </Toolbar>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   it('should render with page inset flag', () => {
@@ -51,12 +52,12 @@ describe('Toolbar', () => {
       </React.Fragment>
     );
 
-    const view = mount(
+    const view = render(
       <Toolbar id="toolbar" usePageInsets>
         <ToolbarContent>{items}</ToolbarContent>
       </Toolbar>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });
 
@@ -71,7 +72,7 @@ describe('ToolbarItem', () => {
       '2xl': '300px'
     };
 
-    const view = mount(<ToolbarItem widths={widths}>Test</ToolbarItem>);
-    expect(view).toMatchSnapshot();
+    const view = render(<ToolbarItem widths={widths}>Test</ToolbarItem>);
+    expect(view.container).toMatchSnapshot();
   });
 });

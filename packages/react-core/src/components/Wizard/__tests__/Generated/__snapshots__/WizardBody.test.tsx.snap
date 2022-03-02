@@ -1,15 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WizardBody should match snapshot (auto-generated) 1`] = `
-<div
-  aria-label="null"
-  aria-labelledby="string"
-  className="pf-c-wizard__main"
->
+<div>
   <div
-    className="pf-c-wizard__main-body"
+    aria-label="null"
+    aria-labelledby="string"
+    class="pf-c-wizard__main"
   >
-    any
+    <div
+      class="pf-c-wizard__main-body"
+    >
+      any
+    </div>
   </div>
 </div>
 `;

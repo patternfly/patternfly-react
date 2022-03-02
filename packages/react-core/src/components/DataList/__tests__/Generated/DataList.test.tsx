@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { DataList } from '../../DataList';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('DataList should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <DataList
       children={<>ReactNode</>}
       className={"''"}
@@ -17,5 +17,5 @@ it('DataList should match snapshot (auto-generated)', () => {
       selectedDataListItemId={"''"}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

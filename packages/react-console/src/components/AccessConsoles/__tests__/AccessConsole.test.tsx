@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { render } from '@testing-library/react';
+import { mount } from 'enzyme';
 
 import { AccessConsoles } from '../AccessConsoles';
 import { SerialConsole } from '../../SerialConsole';
@@ -18,31 +19,31 @@ const vnc = {
 };
 
 test('AccessConsoles with SerialConsole as a single child', () => {
-  const view = shallow(
+  const view = render(
     <AccessConsoles>
-      <SerialConsole onConnect={jest.fn()} onDisconnect={jest.fn()} status={LOADING} />
+      <SerialConsole onData={jest.fn()} onConnect={jest.fn()} onDisconnect={jest.fn()} status={LOADING} />
     </AccessConsoles>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('AccessConsoles with VncConsole as a single child', () => {
-  const view = shallow(
+  const view = render(
     <AccessConsoles>
       <VncConsole host="foo.bar.host" textDisconnected="Disconnected state text" />
     </AccessConsoles>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('AccessConsoles with SerialConsole and VncConsole as children', () => {
-  const view = shallow(
+  const view = render(
     <AccessConsoles>
       <VncConsole host="foo.bar.host" textDisconnected="Disconnected state text" />
-      <SerialConsole onConnect={jest.fn()} onDisconnect={jest.fn()} status={LOADING} />
+      <SerialConsole onData={jest.fn()} onConnect={jest.fn()} onDisconnect={jest.fn()} status={LOADING} />
     </AccessConsoles>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 const SerialConsoleConnected = () => (
@@ -52,22 +53,21 @@ const SerialConsoleConnected = () => (
 );
 
 test('AccessConsoles with wrapped SerialConsole as a child', () => {
-  const view = shallow(
+  const view = render(
     <AccessConsoles>
       <SerialConsoleConnected type={SERIAL_CONSOLE_TYPE} />
     </AccessConsoles>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('AccessConsoles with preselected SerialConsole', () => {
-  const wrapper = mount(
+  const wrapper = render(
     <AccessConsoles preselectedType={SERIAL_CONSOLE_TYPE}>
       <SerialConsoleConnected type={SERIAL_CONSOLE_TYPE} />
     </AccessConsoles>
   );
-  expect(wrapper).toMatchSnapshot();
-  expect(wrapper.find('SerialConsoleConnected')).toHaveLength(1);
+  expect(wrapper.container).toMatchSnapshot();
 });
 
 test('AccessConsoles switching SerialConsole and VncConsole', () => {
@@ -109,16 +109,9 @@ test('AccessConsoles switching SerialConsole and VncConsole', () => {
 });
 
 test('AccessConsoles default setting', () => {
-  const wrapperDefault = mount(
-    <AccessConsoles>
-      <SerialConsole onConnect={jest.fn()} onDisconnect={jest.fn()} status={LOADING} />
-      <MyVncConsoleTestWrapper type={VNC_CONSOLE_TYPE} />
-    </AccessConsoles>
-  );
-
   const wrapperKeepConnection = mount(
     <AccessConsoles>
-      <SerialConsole onConnect={jest.fn()} onDisconnect={jest.fn()} status={LOADING} />
+      <SerialConsole onData={jest.fn()} onConnect={jest.fn()} onDisconnect={jest.fn()} status={LOADING} />
       <MyVncConsoleTestWrapper type={VNC_CONSOLE_TYPE} />
     </AccessConsoles>
   );
@@ -132,7 +125,7 @@ test('AccessConsoles default setting', () => {
 
 test('Empty AccessConsoles', () => {
   const view = render(<AccessConsoles />);
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('AccessConsoles with DesktopViewer', () => {
@@ -141,5 +134,5 @@ test('AccessConsoles with DesktopViewer', () => {
       <DesktopViewer vnc={vnc} />
     </AccessConsoles>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

@@ -1,39 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WizardFooterInternal should match snapshot (auto-generated) 1`] = `
-<footer
-  className="pf-c-wizard__footer"
->
-  <Button
-    isDisabled={false}
-    onClick="any"
-    type="submit"
-    variant="primary"
+<div>
+  <footer
+    class="pf-c-wizard__footer"
   >
-    <div>
-      ReactNode
-    </div>
-  </Button>
-  <Button
-    isDisabled={true}
-    onClick="any"
-    variant="secondary"
-  >
-    <div>
-      ReactNode
-    </div>
-  </Button>
-  <div
-    className="pf-c-wizard__footer-cancel"
-  >
-    <Button
-      onClick="any"
-      variant="link"
+    <button
+      aria-disabled="false"
+      class="pf-c-button pf-m-primary"
+      data-ouia-component-id="OUIA-Generated-Button-primary-1"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      type="submit"
     >
       <div>
         ReactNode
       </div>
-    </Button>
-  </div>
-</footer>
+    </button>
+    <button
+      aria-disabled="true"
+      class="pf-c-button pf-m-secondary pf-m-disabled"
+      data-ouia-component-id="OUIA-Generated-Button-secondary-1"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      disabled=""
+      type="button"
+    >
+      <div>
+        ReactNode
+      </div>
+    </button>
+    <div
+      class="pf-c-wizard__footer-cancel"
+    >
+      <button
+        aria-disabled="false"
+        class="pf-c-button pf-m-link"
+        data-ouia-component-id="OUIA-Generated-Button-link-1"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <div>
+          ReactNode
+        </div>
+      </button>
+    </div>
+  </footer>
+</div>
 `;

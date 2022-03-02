@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+import { mount, shallow } from 'enzyme';
 import { Alert } from '../../Alert';
 import { AlertGroup } from '../../AlertGroup';
 import { AlertActionCloseButton } from '../../../components/Alert/AlertActionCloseButton';
@@ -8,17 +9,17 @@ jest.spyOn(document, 'createElement');
 jest.spyOn(document.body, 'addEventListener');
 
 test('Alert Group works with zero children', () => {
-  const view = shallow(<AlertGroup></AlertGroup>);
+  const view = render(<AlertGroup></AlertGroup>);
   expect(view).toBeTruthy();
 });
 
 test('Alert Group should match snapshot', () => {
-  const view = shallow(<AlertGroup></AlertGroup>);
-  expect(view).toMatchSnapshot();
+  const view = render(<AlertGroup></AlertGroup>);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Alert Group works with n children', () => {
-  const view = shallow(
+  const view = render(
     <AlertGroup>
       <Alert variant="success" title="alert title" />
       <Alert variant="warning" title="another alert title" />

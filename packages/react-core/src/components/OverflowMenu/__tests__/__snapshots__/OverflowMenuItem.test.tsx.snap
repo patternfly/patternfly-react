@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OverflowMenuItem Below breakpoint and not isPersistent should not show 1`] = `
-<OverflowMenuItem>
+<div>
   <div
-    className="pf-c-overflow-menu__item"
+    class="pf-c-overflow-menu__item"
   >
      
      
   </div>
-</OverflowMenuItem>
+</div>
 `;
 
 exports[`OverflowMenuItem isPersistent and below breakpoint should still show 1`] = `

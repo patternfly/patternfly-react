@@ -1,25 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataList should match snapshot (auto-generated) 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "dragEnd": [Function],
-      "dragKeyHandler": [Function],
-      "dragStart": [Function],
-      "drop": [Function],
-      "isDraggable": false,
-      "isSelectable": true,
-      "selectedDataListItemId": "''",
-      "updateSelectedDataListItem": [Function],
-    }
-  }
->
+<div>
   <ul
     aria-label="string"
-    className="pf-c-data-list pf-m-grid-md ''"
+    class="pf-c-data-list pf-m-grid-md ''"
   >
     ReactNode
   </ul>
-</ContextProvider>
+</div>
 `;

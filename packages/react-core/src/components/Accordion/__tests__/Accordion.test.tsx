@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+import { mount } from 'enzyme';
 import { Accordion } from '../Accordion';
 import { AccordionToggle } from '../AccordionToggle';
 import { AccordionContent } from '../AccordionContent';
@@ -8,12 +9,12 @@ import { AccordionExpandedContentBody } from '../AccordionExpandedContentBody';
 
 describe('Accordion', () => {
   test('Accordion default', () => {
-    const view = shallow(<Accordion aria-label="this is a simple accordion" />);
-    expect(view.render()).toMatchSnapshot();
+    const view = render(<Accordion aria-label="this is a simple accordion" />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('Accordion with non-default headingLevel', () => {
-    const view = shallow(
+    const view = render(
       <Accordion asDefinitionList={false} headingLevel="h2">
         <AccordionItem>
           <AccordionToggle id="item-1">Item One</AccordionToggle>
@@ -21,7 +22,7 @@ describe('Accordion', () => {
         </AccordionItem>
       </Accordion>
     );
-    expect(view.render()).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('It should pass optional aria props', () => {
@@ -64,7 +65,7 @@ describe('Accordion', () => {
   });
 
   test('Accordion bordered', () => {
-    const view = shallow(
+    const view = render(
       <Accordion isBordered>
         <AccordionItem>
           <AccordionToggle id="item-1">Item One</AccordionToggle>
@@ -72,11 +73,11 @@ describe('Accordion', () => {
         </AccordionItem>
       </Accordion>
     );
-    expect(view.render()).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('Accordion display large', () => {
-    const view = shallow(
+    const view = render(
       <Accordion displaySize='large'>
         <AccordionItem>
           <AccordionToggle id="item-1">Item One</AccordionToggle>
@@ -84,11 +85,11 @@ describe('Accordion', () => {
         </AccordionItem>
       </Accordion>
     );
-    expect(view.render()).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('Accordion custom content', () => {
-    const view = shallow(
+    const view = render(
       <Accordion>
         <AccordionItem>
           <AccordionToggle id="item-1">Item One</AccordionToggle>
@@ -99,6 +100,6 @@ describe('Accordion', () => {
         </AccordionItem>
       </Accordion>
     );
-    expect(view.render()).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });

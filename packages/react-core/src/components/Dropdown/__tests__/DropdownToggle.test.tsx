@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import { DropdownToggle } from '../DropdownToggle';
 import { DropdownContext } from '../dropdownConstants';
@@ -45,7 +46,7 @@ describe('API', () => {
       }
     });
     const mockToggle = jest.fn();
-    const view = mount(
+    const view = render(
       <DropdownToggle id="Dropdown Toggle" onToggle={mockToggle} isOpen parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
@@ -67,7 +68,7 @@ describe('API', () => {
       }
     });
     const mockToggle = jest.fn();
-    const view = mount(
+    const view = render(
       <DropdownToggle id="Dropdown Toggle" onToggle={mockToggle} isOpen parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
@@ -81,30 +82,30 @@ describe('API', () => {
 
 describe('state', () => {
   test('hover', () => {
-    const view = mount(
+    const view = render(
       <DropdownToggle id="Dropdown Toggle" parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('active', () => {
-    const view = mount(
+    const view = render(
       <DropdownToggle id="Dropdown Toggle" isActive parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('focus', () => {
-    const view = mount(
+    const view = render(
       <DropdownToggle id="Dropdown Toggle" parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('button variant - primary', () => {
@@ -170,7 +171,7 @@ describe('state', () => {
   });
 
   test('class changes', () => {
-    const view = mount(
+    const view = render(
       <DropdownContext.Provider
         value={{
           toggleTextClass: 'some-test-class',
@@ -182,11 +183,11 @@ describe('state', () => {
         </DropdownToggle>
       </DropdownContext.Provider>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('class changes', () => {
-    const view = mount(
+    const view = render(
       <DropdownContext.Provider
         value={{
           toggleTextClass: 'some-test-class',
@@ -198,6 +199,6 @@ describe('state', () => {
         </DropdownToggle>
       </DropdownContext.Provider>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });

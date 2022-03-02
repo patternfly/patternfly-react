@@ -1,15 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Label should match snapshot (auto-generated) 1`] = `
-<span
-  className="pf-c-label ''"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label ''"
   >
-    <div>
-      ReactNode
-    </div>
+    <span
+      class="pf-c-label__content"
+    >
+      <div>
+        ReactNode
+      </div>
+    </span>
   </span>
-</span>
+</div>
 `;

@@ -1,13 +1,13 @@
 import React from 'react';
 import { CardContext } from '../Card';
 import { CardExpandableContent } from '../CardExpandableContent';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 
 test('renders successfully', () => {
-  const view = mount(
+  const view = render(
     <CardContext.Provider value={{ isExpanded: true }}>
       <CardExpandableContent />
     </CardContext.Provider>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

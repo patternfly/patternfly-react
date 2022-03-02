@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ChartArea } from '../ChartArea';
 import { ChartGroup } from '../ChartGroup';
 import { ChartCursorTooltip } from './ChartCursorTooltip';
@@ -7,14 +7,14 @@ import { createContainer } from '../ChartUtils';
 
 Object.values([true, false]).forEach(() => {
   test('ChartCursorTooltip', () => {
-    const view = shallow(<ChartCursorTooltip text="This is a tooltip" />);
-    expect(view).toMatchSnapshot();
+    const view = render(<ChartCursorTooltip text="This is a tooltip" />);
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 test('allows tooltip via container component', () => {
   const CursorVoronoiContainer = createContainer('cursor', 'voronoi');
-  const view = shallow(
+  const view = render(
     <ChartGroup
       containerComponent={
         <CursorVoronoiContainer labels={point => 'y: ' + point.y} labelComponent={<ChartCursorTooltip />} />
@@ -41,5 +41,5 @@ test('allows tooltip via container component', () => {
       />
     </ChartGroup>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

@@ -1,23 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OverflowMenu basic 1`] = `
-<div
-  class="pf-c-overflow-menu"
->
-  <div>
-    BASIC
+<div>
+  <div
+    class="pf-c-overflow-menu"
+  >
+    <div>
+      BASIC
+    </div>
   </div>
 </div>
 `;
 
 exports[`OverflowMenu lg 1`] = `
-<OverflowMenu
-  breakpoint="lg"
->
+<div>
   <div
-    className="pf-c-overflow-menu"
+    class="pf-c-overflow-menu"
   />
-</OverflowMenu>
+</div>
 `;
 
 exports[`OverflowMenu md 1`] = `
@@ -31,11 +31,9 @@ exports[`OverflowMenu md 1`] = `
 `;
 
 exports[`OverflowMenu xl 1`] = `
-<OverflowMenu
-  breakpoint="xl"
->
+<div>
   <div
-    className="pf-c-overflow-menu"
+    class="pf-c-overflow-menu"
   />
-</OverflowMenu>
+</div>
 `;

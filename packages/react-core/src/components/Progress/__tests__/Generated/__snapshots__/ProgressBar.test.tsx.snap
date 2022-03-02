@@ -1,22 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProgressBar should match snapshot (auto-generated) 1`] = `
-<div
-  className="pf-c-progress__bar ''"
->
+<div>
   <div
-    className="pf-c-progress__indicator"
-    style={
-      Object {
-        "width": "42%",
-      }
-    }
+    class="pf-c-progress__bar ''"
   >
-    <span
-      className="pf-c-progress__measure"
+    <div
+      class="pf-c-progress__indicator"
+      style="width: 42%;"
     >
-      ReactNode
-    </span>
+      <span
+        class="pf-c-progress__measure"
+      >
+        ReactNode
+      </span>
+    </div>
   </div>
 </div>
 `;

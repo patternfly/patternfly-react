@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import { ModalBoxHeader } from '../ModalBoxHeader';
 
 test('ModalBoxHeader Test', () => {
-  const view = shallow(<ModalBoxHeader>This is a ModalBox header</ModalBoxHeader>);
-  expect(view).toMatchSnapshot();
+  const view = render(<ModalBoxHeader>This is a ModalBox header</ModalBoxHeader>);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('ModalBoxHeader help renders', () => {
-  const view = shallow(<ModalBoxHeader help={<div>test</div>}>This is a ModalBox header</ModalBoxHeader>);
-  expect(view).toMatchSnapshot();
+  const view = render(<ModalBoxHeader help={<div>test</div>}>This is a ModalBox header</ModalBoxHeader>);
+  expect(view.container).toMatchSnapshot();
 });
