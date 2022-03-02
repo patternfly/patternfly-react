@@ -1381,6 +1381,22 @@ exports[`Toolbar should render with custom chip content 1`] = `
                       data-ouia-component-id="OUIA-Generated-Button-link-3"
                       data-ouia-component-type="PF4/Button"
                       data-ouia-safe="true"
+                      id="save-button"
+                      type="button"
+                    >
+                      Save filters
+                    </button>
+                  </div>
+                  <div
+                    class="pf-c-toolbar__item"
+                  >
+                    <button
+                      aria-disabled="false"
+                      class="pf-c-button pf-m-link pf-m-inline"
+                      data-ouia-component-id="OUIA-Generated-Button-link-4"
+                      data-ouia-component-type="PF4/Button"
+                      data-ouia-safe="true"
+                      id="clear-button"
                       type="button"
                     >
                       Clear all filters
@@ -1437,11 +1453,13 @@ exports[`Toolbar should render with custom chip content 1`] = `
                       className="pf-c-toolbar__item"
                     >
                       <Button
+                        id="save-button"
                         isInline={true}
                         onClick={[Function]}
                         variant="link"
                       >
                         <ButtonBase
+                          id="save-button"
                           innerRef={null}
                           isInline={true}
                           onClick={[Function]}
@@ -1455,6 +1473,43 @@ exports[`Toolbar should render with custom chip content 1`] = `
                             data-ouia-component-type="PF4/Button"
                             data-ouia-safe={true}
                             disabled={false}
+                            id="save-button"
+                            onClick={[Function]}
+                            role={null}
+                            type="button"
+                          >
+                            Save filters
+                          </button>
+                        </ButtonBase>
+                      </Button>
+                    </div>
+                  </ToolbarItem>
+                  <ToolbarItem>
+                    <div
+                      className="pf-c-toolbar__item"
+                    >
+                      <Button
+                        id="clear-button"
+                        isInline={true}
+                        onClick={[Function]}
+                        variant="link"
+                      >
+                        <ButtonBase
+                          id="clear-button"
+                          innerRef={null}
+                          isInline={true}
+                          onClick={[Function]}
+                          variant="link"
+                        >
+                          <button
+                            aria-disabled={false}
+                            aria-label={null}
+                            className="pf-c-button pf-m-link pf-m-inline"
+                            data-ouia-component-id="OUIA-Generated-Button-link-4"
+                            data-ouia-component-type="PF4/Button"
+                            data-ouia-safe={true}
+                            disabled={false}
+                            id="clear-button"
                             onClick={[Function]}
                             role={null}
                             type="button"

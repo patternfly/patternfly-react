@@ -169,7 +169,8 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
                 clearAllFilters,
                 clearFiltersButtonText,
                 showClearFiltersButton,
-                toolbarId: randomId
+                toolbarId: randomId,
+                customChipGroupContent
               }}
             >
               {children}

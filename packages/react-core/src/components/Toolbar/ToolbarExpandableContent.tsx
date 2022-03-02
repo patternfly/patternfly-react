@@ -46,7 +46,7 @@ export class ToolbarExpandableContent extends React.Component<ToolbarExpandableC
       showClearFiltersButton,
       ...props
     } = this.props;
-    const { numberOfFilters } = this.context;
+    const { numberOfFilters, customChipGroupContent } = this.context;
 
     const clearChipGroups = () => {
       clearAllFilters();
@@ -58,13 +58,14 @@ export class ToolbarExpandableContent extends React.Component<ToolbarExpandableC
         {numberOfFilters > 0 && (
           <ToolbarGroup className={styles.modifiers.chipContainer}>
             <ToolbarGroup ref={chipContainerRef} />
-            {showClearFiltersButton && (
+            {showClearFiltersButton && !customChipGroupContent && (
               <ToolbarItem>
                 <Button variant="link" onClick={clearChipGroups} isInline>
                   {clearFiltersButtonText}
                 </Button>
               </ToolbarItem>
             )}
+            {customChipGroupContent && customChipGroupContent}
           </ToolbarGroup>
         )}
       </div>
