@@ -150,7 +150,7 @@ class BasicCodeEditor extends React.Component {
       },
       {
         keys: ["Ctrl", "Space"],
-        description: "Activate auto copmlete",
+        description: "Activate auto complete",
       },
     ];
     
