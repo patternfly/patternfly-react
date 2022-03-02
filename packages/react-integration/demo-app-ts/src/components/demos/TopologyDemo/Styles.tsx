@@ -117,7 +117,7 @@ export const NodeLabelStyles = withTopologySetup(() => {
           id: 'g1',
           type: 'graph'
         },
-        nodes: createStatusNodeShapes(2, 'Node Title')
+        nodes: createStatusNodeShapes(1, 'Node Title')
       }),
       []
     )
@@ -135,7 +135,7 @@ export const NodeLabelHoverStyles = withTopologySetup(() => {
           id: 'g1',
           type: 'graph'
         },
-        nodes: createStatusNodeShapes(2, 'Node Title', undefined, true)
+        nodes: createStatusNodeShapes(1, 'Node Title', undefined, true)
       }),
       []
     )
@@ -153,7 +153,7 @@ export const NodeLabelSelectedStyles = withTopologySetup(() => {
           id: 'g1',
           type: 'graph'
         },
-        nodes: createStatusNodeShapes(2, 'Node Title', true)
+        nodes: createStatusNodeShapes(1, 'Node Title', true)
       }),
       []
     )

@@ -78,6 +78,8 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ useSideba
   const [numNodes, setNumNodes] = React.useState<number | undefined>(6);
   const [numEdges, setNumEdges] = React.useState<number | undefined>(2);
   const [numGroups, setNumGroups] = React.useState<number | undefined>(1);
+  const [medScale, setMedScale] = React.useState<number | undefined>(0.5);
+  const [lowScale, setLowScale] = React.useState<number | undefined>(0.3);
   const [creationCounts, setCreationCounts] = React.useState<{ numNodes: number; numEdges: number; numGroups: number }>(
     { numNodes, numEdges, numGroups }
   );
@@ -109,6 +111,13 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ useSideba
   useEventListener<SelectionEventListener>(SELECTION_EVENT, ids => {
     setSelectedIds(ids);
   });
+
+  React.useEffect(() => {
+    controller.getGraph().setDetailsLevelThresholds({
+      low: lowScale,
+      medium: medScale
+    });
+  }, [controller, lowScale, medScale]);
 
   const topologySideBar = (
     <TopologySideBar show={_.size(selectedIds) > 0} resizable={sideBarResizable} onClose={() => setSelectedIds([])}>
@@ -499,6 +508,40 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ useSideba
         <Button variant="secondary" onClick={removeSelectedNode} isDisabled={!selectedIds || selectedIds.length === 0}>
           Remove Node
         </Button>
+      </ToolbarItem>
+      <ToolbarItem>
+        <Flex wrap="no-wrap">
+          <span id="med-scale">Medium Scale:</span>
+          <TextInput
+            aria-labelledby="med-scale"
+            max={1.0}
+            min={lowScale}
+            step={0.01}
+            value={medScale}
+            type="number"
+            onChange={val => {
+              const newValue = parseFloat(val);
+              if (!Number.isNaN(newValue) && newValue > lowScale && newValue >= 0.01 && newValue <= 1.0) {
+                setMedScale(parseFloat(val));
+              }
+            }}
+          />
+          <span id="low-scale">Low Scale:</span>
+          <TextInput
+            aria-labelledby="low-scale"
+            max={medScale}
+            min={0.01}
+            step={0.01}
+            value={lowScale}
+            type="number"
+            onChange={val => {
+              const newValue = parseFloat(val);
+              if (!Number.isNaN(newValue) && newValue < medScale && newValue >= 0.01 && newValue <= 1.0) {
+                setLowScale(parseFloat(val));
+              }
+            }}
+          />
+        </Flex>
       </ToolbarItem>
     </>
   );

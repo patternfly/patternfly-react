@@ -9,7 +9,8 @@ import {
   DragSpecOperationType,
   DropTargetMonitor,
   DropTargetSpec,
-  Modifiers
+  Modifiers,
+  TargetType
 } from '../../../behavior';
 
 const MOVE_CONNECTOR_DROP_TYPE = '#moveConnector#';
@@ -161,13 +162,15 @@ const nodesEdgeIsDragging = (monitor: any, props: NodeComponentProps) => {
   return false;
 };
 
-const nodeDropTargetSpec: DropTargetSpec<
+const nodeDropTargetSpec = (
+  accept?: TargetType
+): DropTargetSpec<
   GraphElement,
   any,
   { canDrop: boolean; dropTarget: boolean; edgeDragging: boolean },
   NodeComponentProps
-> = {
-  accept: [EDGE_DRAG_TYPE, CREATE_CONNECTOR_DROP_TYPE],
+> => ({
+  accept: accept || [EDGE_DRAG_TYPE, CREATE_CONNECTOR_DROP_TYPE],
   canDrop: (item, monitor, props) => {
     if (isEdge(item)) {
       return canDropEdgeOnNode(monitor.getOperation()?.type, item as Edge, props.element);
@@ -182,10 +185,12 @@ const nodeDropTargetSpec: DropTargetSpec<
     dropTarget: monitor.isOver({ shallow: true }),
     edgeDragging: nodesEdgeIsDragging(monitor, props)
   })
-};
+});
 
-const graphDropTargetSpec: DropTargetSpec<DragNodeObject, any, { dragEditInProgress: boolean }, GraphComponentProps> = {
-  accept: [NODE_DRAG_TYPE, EDGE_DRAG_TYPE, CREATE_CONNECTOR_DROP_TYPE],
+const graphDropTargetSpec = (
+  accept?: TargetType
+): DropTargetSpec<DragNodeObject, any, { dragEditInProgress: boolean }, GraphComponentProps> => ({
+  accept: accept || [NODE_DRAG_TYPE, EDGE_DRAG_TYPE, CREATE_CONNECTOR_DROP_TYPE],
   hitTest: () => true,
   canDrop: (item, monitor, props) =>
     monitor.isOver({ shallow: monitor.getItemType() === CREATE_CONNECTOR_DROP_TYPE }) &&
@@ -208,7 +213,7 @@ const graphDropTargetSpec: DropTargetSpec<DragNodeObject, any, { dragEditInProgr
     };
   },
   dropHint: 'create'
-};
+});
 
 const groupDropTargetSpec: DropTargetSpec<
   any,

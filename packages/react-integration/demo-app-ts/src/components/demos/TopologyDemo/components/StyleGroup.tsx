@@ -3,12 +3,14 @@ import {
   DefaultGroup,
   Node,
   observer,
+  ScaleDetailsLevel,
   ShapeProps,
   WithContextMenuProps,
   WithSelectionProps
 } from '@patternfly/react-topology';
 import AlternateIcon from '@patternfly/react-icons/dist/esm/icons/regions-icon';
 import DefaultIcon from '@patternfly/react-icons/dist/esm/icons/builder-image-icon';
+import useDetailsLevel from '@patternfly/react-topology/dist/esm/hooks/useDetailsLevel';
 
 const ICON_PADDING = 20;
 
@@ -37,6 +39,7 @@ const StyleGroup: React.FC<StyleGroupProps> = ({
   ...rest
 }) => {
   const data = element.getData();
+  const detailsLevel = useDetailsLevel();
 
   const getTypeIcon = (dataType?: DataTypes): any => {
     switch (dataType) {
@@ -76,6 +79,7 @@ const StyleGroup: React.FC<StyleGroupProps> = ({
       collapsible
       collapsedWidth={collapsedWidth}
       collapsedHeight={collapsedHeight}
+      showLabel={detailsLevel === ScaleDetailsLevel.high}
       {...rest}
       {...passedData}
     >

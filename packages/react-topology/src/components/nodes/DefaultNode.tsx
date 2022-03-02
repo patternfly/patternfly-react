@@ -58,6 +58,7 @@ type DefaultNodeProps = {
   badgeClassName?: string;
   badgeLocation?: BadgeLocation;
   attachments?: React.ReactNode; // ie. decorators
+  showStatusBackground?: boolean;
   showStatusDecorator?: boolean;
   statusDecoratorTooltip?: React.ReactNode;
   onStatusDecoratorClick?: (event: React.MouseEvent<SVGGElement, MouseEvent>, element: GraphElement) => void;
@@ -82,6 +83,7 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
   labelPosition = LabelPosition.bottom,
   truncateLength,
   labelIconClass,
+  showStatusBackground,
   showStatusDecorator = false,
   statusDecoratorTooltip,
   getCustomShape,
@@ -113,26 +115,11 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
   const { width, height } = element.getDimensions();
   const isHover = hover !== undefined ? hover : hovered;
 
-  const groupClassName = css(
-    styles.topologyNode,
-    isHover && 'pf-m-hover',
-    (dragging || edgeDragging) && 'pf-m-dragging',
-    canDrop && dropTarget && 'pf-m-drop-target',
-    selected && 'pf-m-selected',
-    StatusModifier[status]
-  );
-
-  let filter;
-  if (status === 'danger') {
-    filter = createSvgIdUrl(NODE_SHADOW_FILTER_ID_DANGER);
-  } else if (isHover || dragging || edgeDragging || dropTarget) {
-    filter = createSvgIdUrl(NODE_SHADOW_FILTER_ID_HOVER);
-  }
-
   const statusDecorator = React.useMemo(() => {
     if (!status || !showStatusDecorator) {
       return null;
     }
+
     const icon = getStatusIcon(status);
     if (!icon) {
       return null;
@@ -162,7 +149,7 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
     }
 
     return decorator;
-  }, [status, showStatusDecorator, getShapeDecoratorCenter, element, statusDecoratorTooltip, onStatusDecoratorClick]);
+  }, [showStatusDecorator, status, getShapeDecoratorCenter, element, statusDecoratorTooltip, onStatusDecoratorClick]);
 
   React.useEffect(() => {
     if (isHover) {
@@ -174,13 +161,35 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
 
   const ShapeComponent = (getCustomShape && getCustomShape(element)) || getShapeComponent(element);
 
+  const groupClassName = css(
+    styles.topologyNode,
+    isHover && 'pf-m-hover',
+    (dragging || edgeDragging) && 'pf-m-dragging',
+    canDrop && dropTarget && 'pf-m-drop-target',
+    selected && 'pf-m-selected',
+    StatusModifier[status]
+  );
+
+  const backgroundClassName = css(
+    styles.topologyNodeBackground,
+    showStatusBackground && StatusModifier[status],
+    showStatusBackground && selected && 'pf-m-selected'
+  );
+
+  let filter;
+  if (status === 'danger') {
+    filter = createSvgIdUrl(NODE_SHADOW_FILTER_ID_DANGER);
+  } else if (isHover || dragging || edgeDragging || dropTarget) {
+    filter = createSvgIdUrl(NODE_SHADOW_FILTER_ID_HOVER);
+  }
+
   return (
     <g className={groupClassName}>
       <NodeShadows />
       <g ref={refs} onClick={onSelect} onContextMenu={onContextMenu}>
         {ShapeComponent && (
           <ShapeComponent
-            className={css(styles.topologyNodeBackground)}
+            className={backgroundClassName}
             element={element}
             width={width}
             height={height}
