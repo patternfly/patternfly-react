@@ -7,9 +7,6 @@ import {
   Modal,
   Checkbox
 } from '@patternfly/react-core';
-import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 
 interface readFile {
@@ -24,6 +21,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   const [currentFiles, setCurrentFiles] = React.useState<File[]>([]);
   const [readFileData, setReadFileData] = React.useState<readFile[]>([]);
   const [showStatus, setShowStatus] = React.useState(false);
+  const [statusIcon, setStatusIcon] = React.useState('inProgress');
   const [modalText, setModalText] = React.useState('');
 
   // only show the status component once a file has been uploaded, but keep the status list component itself even if all files are removed
@@ -32,17 +30,15 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   }
 
   // determine the icon that should be shown for the overall status list
-  const getStatusIcon = () => {
+  React.useEffect(() => {
     if (readFileData.length < currentFiles.length) {
-      return <InProgressIcon />;
+      setStatusIcon('inProgress');
+    } else if (readFileData.every(file => file.loadResult === 'success')) {
+      setStatusIcon('success');
+    } else {
+      setStatusIcon('danger');
     }
-
-    if (readFileData.every(file => file.loadResult === 'success')) {
-      return <CheckCircleIcon />;
-    }
-
-    return <TimesCircleIcon />;
-  };
+  }, [readFileData, currentFiles]);
 
   // remove files from both state arrays based on their name
   const removeFiles = (namesOfFilesToRemove: string[]) => {
@@ -122,7 +118,7 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
         {showStatus && (
           <MultipleFileUploadStatus
             statusToggleText={`${successfullyReadFileCount} of ${currentFiles.length} files uploaded`}
-            statusToggleIcon={getStatusIcon()}
+            statusToggleIcon={statusIcon}
           >
             {currentFiles.map(file => (
               <MultipleFileUploadStatusItem
