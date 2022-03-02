@@ -26,8 +26,10 @@ export const NavGroup: React.FunctionComponent<NavGroupProps> = ({
     console.warn("For accessibility reasons an aria-label should be specified on nav groups if a title isn't");
   }
 
+  const labelledBy = title ? id : undefined;
+
   return (
-    <section className={css(styles.navSection, className)} aria-labelledby={id} {...props}>
+    <section className={css(styles.navSection, className)} aria-labelledby={labelledBy} {...props}>
       {title && (
         <h2 className={css(styles.navSectionTitle)} id={id}>
           {title}
