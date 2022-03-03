@@ -120,7 +120,7 @@ class BasicCodeEditor extends React.Component {
 ```js
 import React from 'react';
 import { CodeEditor, Language } from '@patternfly/react-code-editor';
-import { Checkbox } from '@patternfly/react-core';
+import { Checkbox, Grid, GridItem, Chip } from '@patternfly/react-core';
 
 class BasicCodeEditor extends React.Component {
   constructor(props) {
@@ -142,7 +142,7 @@ class BasicCodeEditor extends React.Component {
     const shortcuts = [
       {
         keys: ["Opt","F1"],
-        description: "Accessibility help",
+        description: "Accessibility helps",
       },
       {
         keys: ["F1"],
@@ -160,16 +160,16 @@ class BasicCodeEditor extends React.Component {
     const shortcutsPopoverProps = {
       bodyContent:
         <Grid span={6} hasGutter>
-          {shortcuts.map((s: any) => (
+          {shortcuts.map(s => (
             <>
               <GridItem style={{ textAlign: 'right', marginRight: '1em' }}>
                 {s.keys
-                  .map((k: string) => (
+                  .map(k => (
                     <Chip key={k} isReadOnly>
                       {k}
                     </Chip>
                   ))
-                  .reduce((prev: React.ReactNode, curr: React.ReactNode) => [prev, ' + ', curr])}
+                  .reduce((prev, curr) => [prev, ' + ', curr])}
               </GridItem>
               <GridItem>{s.description}</GridItem>
             </>
