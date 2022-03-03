@@ -85,7 +85,7 @@ exports[`Check expandable form field group example against snapshot 1`] = `
 </div>
 `;
 
-exports[`Check form filed group example against snapshot 1`] = `
+exports[`Check form field group example against snapshot 1`] = `
 <div>
   <div
     class="pf-c-form__field-group"
