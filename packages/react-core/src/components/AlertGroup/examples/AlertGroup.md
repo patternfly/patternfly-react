@@ -157,6 +157,104 @@ class ToastAlertGroup extends React.Component {
 }
 ```
 
+### Toast alert group with overflow capture, opening into a notification drawer
+After a specified number of alerts displayed is reached, we will see an overflow message instead of new alerts. Alerts asynchronously appended into dynamic AlertGroups with `isLiveRegion` will be announced to assistive technology at the moment the change happens. When the overflow message appears or is updated in AlertGroups with `isLiveRegion`, the `View 1 more alert` text will be read, but the alert message will not be read. screen reader user or keyboard user will need a way to navigate to and reveal the hidden alerts before they disappear. Alternatively, there should be a place that notifications or alerts are collected to be viewed or read later.
+```js
+import React from 'react';
+import { Alert, AlertGroup, AlertActionCloseButton, AlertVariant, InputGroup,
+NotificationDrawer, NotificationDrawerHeader, NotificationDrawerBody, NotificationDrawerList, 
+NotificationDrawerListItem, NotificationDrawerListItemHeader, NotificationDrawerListItemBody } from '@patternfly/react-core';
+class ToastAlertGroup extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      alerts: [],
+      maxDisplayed: "4",
+      overflowMessage: '',
+      showAll: false
+    };
+    this.getOverflowMessage = (alertsNumber, showAll = this.state.showAll) => {
+      const overflow = alertsNumber - this.state.maxDisplayed;
+      if (overflow > 0) {
+        if (showAll) {
+          return "Show alerts here";
+        }
+        return "View " + (overflow) + " more alerts in the notification drawer";
+      }
+      return '';
+    };
+    this.addAlert = (title, variant, key) => {
+      this.setState({
+        ...this.state,
+        alerts: [ ...this.state.alerts, { title: title, variant: variant, key }],
+        overflowMessage: this.getOverflowMessage(this.state.alerts.length + 1)
+      });
+    };
+    this.removeAlert = key => {
+      const newAlerts = [...this.state.alerts.filter(el => el.key !== key)];
+      this.setState({
+        ...this.state,
+        alerts: newAlerts,
+        overflowMessage: this.getOverflowMessage(newAlerts.length)
+      });
+    };
+  }
+  render() {
+    const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');
+    const getUniqueId = () => (new Date().getTime());
+    const addSuccessAlert = () => { this.addAlert('Toast success alert', 'success', getUniqueId()) };
+    const addDangerAlert = () => { this.addAlert('Toast danger alert', 'danger', getUniqueId()) };
+    const addInfoAlert = () => { this.addAlert('Toast info alert', 'info', getUniqueId()) };
+    const onOverflowClick = () => { this.setState({
+      ...this.state,
+      overflowMessage: this.getOverflowMessage(this.state.alerts.length, !this.state.showAll),
+      showAll: !this.state.showAll
+    })};
+    return (
+      <React.Fragment>
+        <InputGroup style={{ marginBottom: '16px' }}>
+          <button onClick={addSuccessAlert} type="button" className={btnClasses}>Add toast success alert</button>
+          <button onClick={addDangerAlert} type="button" className={btnClasses}>Add toast danger alert</button>
+          <button onClick={addInfoAlert} type="button" className={btnClasses}>Add toast info alert</button>
+        </InputGroup>
+        {this.state.showAll && this.state.alerts.length && <NotificationDrawer>
+          <NotificationDrawerHeader onClose={onOverflowClick}></NotificationDrawerHeader>
+          <NotificationDrawerBody>
+            <NotificationDrawerList>
+              {this.state.showAll && this.state.alerts.length && this.state.alerts.map(({key, variant, title}) => (
+              <NotificationDrawerListItem variant={AlertVariant[variant]}>
+                <NotificationDrawerListItemHeader
+                  variant={AlertVariant[variant]}
+                  title={title}
+                >
+                </NotificationDrawerListItemHeader>
+              </NotificationDrawerListItem>
+              ))}
+            </NotificationDrawerList>
+          </NotificationDrawerBody>
+        </NotificationDrawer>
+        }
+        <AlertGroup isToast isLiveRegion onOverflowClick={onOverflowClick} maxDisplayed={this.state.maxDisplayed} overflowMessage={this.state.overflowMessage}>
+          {this.state.alerts.slice(0, this.state.showAll ? 0 : this.state.maxDisplayed).map(({key, variant, title}) => (
+            <Alert
+              variant={AlertVariant[variant]}
+              title={title}
+              actionClose={
+                <AlertActionCloseButton
+                  title={title}
+                  variantLabel={`${variant} alert`}
+                  onClose={() => this.removeAlert(key)}
+                />
+              }
+              key={key} />
+          ))}
+        </AlertGroup>
+      </React.Fragment>
+    );
+  }
+}
+```
+
 ### Singular dynamic alert group
 This alert will appear in the page, most likely in response to a user action.
 ```js
