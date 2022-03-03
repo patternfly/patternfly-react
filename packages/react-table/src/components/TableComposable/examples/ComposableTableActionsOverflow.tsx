@@ -39,7 +39,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
     branches: 'Branches',
     prs: 'Pull requests',
     workspaces: 'Workspaces',
-    lastCommit: 'Last commit',
+    lastCommit: 'Last commit'
   };
 
   const dropdownItems = [
@@ -92,7 +92,7 @@ export const ComposableTableActions: React.FunctionComponent = () => {
                   </OverflowMenuContent>
                   <OverflowMenuControl>
                     <Dropdown
-                      position='right'
+                      position="right"
                       onSelect={() =>
                         setRepos(repos.map(r => (r.name !== repo.name ? r : { ...r, isMenuOpen: !r.isMenuOpen })))
                       }
