@@ -35,6 +35,8 @@ export const Tile: React.FunctionComponent<TileProps> = ({
   <div
     role="option"
     aria-selected={isSelected ? true : false}
+    // aria-disabled={isDisabled}
+    {...(isDisabled && { 'aria-disabled': isDisabled })}
     className={css(
       styles.tile,
       isSelected && styles.modifiers.selected,
