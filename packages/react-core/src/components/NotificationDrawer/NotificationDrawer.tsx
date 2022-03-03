@@ -18,7 +18,7 @@ const NotificationDrawerBase: React.FunctionComponent<NotificationDrawerProps> =
   innerRef,
   ...props
 }: NotificationDrawerProps) => (
-  <div ref={innerRef} tabIndex={0} {...props} className={css(styles.notificationDrawer, className)}>
+  <div ref={innerRef} {...props} className={css(styles.notificationDrawer, className)}>
     {children}
   </div>
 );
