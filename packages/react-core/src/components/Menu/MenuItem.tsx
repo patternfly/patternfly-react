@@ -58,13 +58,15 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   isOnPath?: boolean;
   /** Accessibility label */
   'aria-label'?: string;
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<HTMLAnchorElement | HTMLButtonElement>;
 }
 
 const FlyoutContext = React.createContext({
   direction: 'right' as 'left' | 'right'
 });
 
-export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
+const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   children,
   className,
   itemId = null,
@@ -86,6 +88,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   onShowFlyout,
   drilldownMenu,
   isOnPath,
+  innerRef,
   ...props
 }: MenuItemProps) => {
   const {
@@ -293,6 +296,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         aria-current={getAriaCurrent()}
         disabled={isDisabled}
         role="menuitem"
+        ref={innerRef}
         onClick={(event: any) => {
           onItemSelect(event, onSelect);
           _drill && _drill();
@@ -351,5 +355,9 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
     </li>
   );
 };
+
+export const MenuItem = React.forwardRef((props: MenuItemProps, ref: React.Ref<any>) => (
+  <MenuItemBase {...props} innerRef={ref} />
+));
 
 MenuItem.displayName = 'MenuItem';
