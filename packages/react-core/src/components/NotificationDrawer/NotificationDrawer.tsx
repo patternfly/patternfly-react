@@ -8,7 +8,7 @@ export interface NotificationDrawerProps extends React.HTMLProps<HTMLDivElement>
   children?: React.ReactNode;
   /**  Additional classes added to the notification drawer */
   className?: string;
-  /** Forwarded ref */
+  /** @hide Forwarded ref */
   innerRef?: React.Ref<any>;
 }
 
