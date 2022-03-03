@@ -1,5 +1,5 @@
 import React from 'react';
-import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper, Flex } from '@patternfly/react-core';
+import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper, Flex, FlexItem } from '@patternfly/react-core';
 
 export const ComposableSimpleDropdown: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -91,18 +91,9 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <MenuToggle
-      ref={toggleRef}
-      onClick={onToggleClick}
-      isExpanded={isOpen}
-      style={
-        {
-          '--pf-c-menu--Width': '250px'
-        } as React.CSSProperties
-      }
-    >
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen} style={{ minWidth: '250px' }}>
       <Flex spaceItems={{ default: 'spaceItemsSm' }} alignItems={{ default: 'alignItemsCenter' }}>
-        {toggleText[selected]}
+        <FlexItem>{toggleText[selected]}</FlexItem>
         {dateText[selected]}
       </Flex>
     </MenuToggle>
