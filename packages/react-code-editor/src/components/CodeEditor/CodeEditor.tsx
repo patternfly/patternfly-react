@@ -14,6 +14,7 @@ import {
   Grid,
   GridItem,
   Popover,
+  PopoverProps,
   Title,
   Tooltip,
   TooltipPosition
@@ -196,8 +197,8 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   isMinimapVisible?: boolean;
   /** Editor header main content title */
   headerMainContent?: string;
-  /** Shortcuts to show users, will show up beside the header */
-  shortcuts?: Shortcut[];
+  /** Properties for the shortcut popover */
+  shortcutsPopoverProps?: PopoverProps;
   /** Flag to show the editor */
   showEditor?: boolean;
   /**
@@ -262,7 +263,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     customControls: null,
     isMinimapVisible: false,
     headerMainContent: '',
-    shortcuts: [],
+    shortcutsPopoverProps: {bodyContent: ''},
     showEditor: true,
     options: {},
     overrideServices: {}
@@ -470,7 +471,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       customControls,
       isMinimapVisible,
       headerMainContent,
-      shortcuts,
+      shortcutsPopoverProps,
       showEditor,
       options: optionsProp,
       overrideServices
@@ -571,28 +572,10 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                 </div>
               }
               {<div className={css(styles.codeEditorHeaderMain)}>{headerMainContent}</div>}
-              {!!shortcuts.length && (
+              {!!shortcutsPopoverProps.bodyContent && (
                 <div className="pf-c-code-editor__keyboard-shortcuts">
                   <Popover
-                    aria-label="Shortcuts"
-                    bodyContent={
-                      <Grid span={6} hasGutter>
-                        {shortcuts.map((s: any) => (
-                          <>
-                            <GridItem style={{ textAlign: 'right' }}>
-                              {s.keys
-                                .map((k: string) => (
-                                  <Chip key={k} isReadOnly>
-                                    {k}
-                                  </Chip>
-                                ))
-                                .reduce((prev: React.ReactNode, curr: React.ReactNode) => [prev, ' + ', curr])}
-                            </GridItem>
-                            <GridItem>{s.description}</GridItem>
-                          </>
-                        ))}
-                      </Grid>
-                    }
+                    {...shortcutsPopoverProps}
                   >
                     <Button variant={ButtonVariant.link}>
                       <span className="pf-c-button__icon pf-m-start">
