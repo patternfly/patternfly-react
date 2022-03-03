@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { shallow } from 'enzyme';
 import { ToolbarToggleGroup } from '../ToolbarToggleGroup';
 import { Toolbar } from '../Toolbar';
@@ -102,19 +102,19 @@ describe('Toolbar', () => {
     const customChipGroupContent = (
       <React.Fragment>
         <ToolbarItem>
-          <Button id="save-button" variant="link" onClick={() => {}} isInline>
+          <Button data-testid="save-button" variant="link" onClick={() => {}} isInline>
             Save filters
           </Button>
         </ToolbarItem>
         <ToolbarItem>
-          <Button id="clear-button" variant="link" onClick={() => {}} isInline>
+          <Button data-testid="clear-button" variant="link" onClick={() => {}} isInline>
             Clear all filters
           </Button>
         </ToolbarItem>
       </React.Fragment>
     );
 
-    const view = mount(
+    const view = render(
       <Toolbar
         id="toolbar-with-filter"
         className="pf-m-toggle-group-container"
@@ -124,8 +124,8 @@ describe('Toolbar', () => {
         <ToolbarContent>{items}</ToolbarContent>
       </Toolbar>
     );
-    expect(view.find('#save-button').exists());
-    expect(view.find('#clear-button').exists());
+    expect(screen.findByTestId('save-button')).toBeTruthy();
+    expect(screen.findByTestId('clear-button')).toBeTruthy();
     expect(view).toMatchSnapshot();
   });
 });
