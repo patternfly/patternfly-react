@@ -116,7 +116,8 @@ class BasicCodeEditor extends React.Component {
 }
 ```
 
-### With shortcut menu and main header content. These examples below are the shortcuts that we recommend describing in the popover since they are monaco features.
+### With shortcut menu and main header content.
+These examples below are the shortcuts that we recommend describing in the popover since they are monaco features.
 ```js
 import React from 'react';
 import { CodeEditor, Language } from '@patternfly/react-code-editor';
