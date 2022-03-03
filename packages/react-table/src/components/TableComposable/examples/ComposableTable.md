@@ -167,6 +167,13 @@ To make a cell an action cell, render an `ActionsColumn` component inside a row'
 ```ts file="ComposableTableActions.tsx"
 ```
 
+### Composable: Actions Overflow
+
+Useing an `OverflowMenu` in the actions column, allowing the actions to condense into a dropdown if necessary for space.
+
+```ts file="ComposableTableActionsOverflow.tsx"
+```
+
 ### Composable: Expandable
 
 To make a parent/child row pair expandable:
