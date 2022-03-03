@@ -5,6 +5,10 @@ import { ToolbarToggleGroup } from '../ToolbarToggleGroup';
 import { Toolbar } from '../Toolbar';
 import { ToolbarItem } from '../ToolbarItem';
 import { ToolbarContent } from '../ToolbarContent';
+import { ToolbarFilter } from '../ToolbarFilter';
+import { ToolbarGroup } from '../ToolbarGroup';
+import { Select, SelectVariant, SelectOption } from '../../Select';
+import { Button } from '../../Button';
 
 describe('ToolbarToggleGroup', () => {
   it('should warn on bad props', () => {
@@ -58,6 +62,71 @@ describe('Toolbar', () => {
       </Toolbar>
     );
     expect(view.container).toMatchSnapshot();
+  });
+
+  it('should render with custom chip content', () => {
+    const statusMenuItems = [
+      <SelectOption key="statusNew" value="New" />,
+      <SelectOption key="statusPending" value="Pending" />,
+      <SelectOption key="statusRunning" value="Running" />,
+      <SelectOption key="statusCancelled" value="Cancelled" />
+    ];
+
+    const items = (
+      <React.Fragment>
+        <ToolbarToggleGroup toggleIcon={<React.Fragment />} breakpoint="xl">
+          <ToolbarGroup variant="filter-group">
+            <ToolbarFilter
+              chips={['New', 'Pending']}
+              deleteChip={(category, chip) => {}}
+              deleteChipGroup={category => {}}
+              categoryName="Status"
+            >
+              <Select
+                variant={SelectVariant.checkbox}
+                aria-label="Status"
+                onToggle={(isExpanded: boolean) => {}}
+                onSelect={(event, selection) => {}}
+                selections={['New', 'Pending']}
+                isOpen={true}
+                placeholderText="Status"
+              >
+                {statusMenuItems}
+              </Select>
+            </ToolbarFilter>
+          </ToolbarGroup>
+        </ToolbarToggleGroup>
+      </React.Fragment>
+    );
+
+    const customChipGroupContent = (
+      <React.Fragment>
+        <ToolbarItem>
+          <Button id="save-button" variant="link" onClick={() => {}} isInline>
+            Save filters
+          </Button>
+        </ToolbarItem>
+        <ToolbarItem>
+          <Button id="clear-button" variant="link" onClick={() => {}} isInline>
+            Clear all filters
+          </Button>
+        </ToolbarItem>
+      </React.Fragment>
+    );
+
+    const view = mount(
+      <Toolbar
+        id="toolbar-with-filter"
+        className="pf-m-toggle-group-container"
+        collapseListedFiltersBreakpoint="xl"
+        customChipGroupContent={customChipGroupContent}
+      >
+        <ToolbarContent>{items}</ToolbarContent>
+      </Toolbar>
+    );
+    expect(view.find('#save-button').exists());
+    expect(view.find('#clear-button').exists());
+    expect(view).toMatchSnapshot();
   });
 });
 

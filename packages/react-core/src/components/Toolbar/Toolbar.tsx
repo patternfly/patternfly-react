@@ -13,7 +13,9 @@ export interface ToolbarProps extends React.HTMLProps<HTMLDivElement>, OUIAProps
   clearAllFilters?: () => void;
   /** Text to display in the clear all filters button */
   clearFiltersButtonText?: string;
-  /** The breakpoint at which the listed fitlers in chip groups are collapsed down to a summary */
+  /** Custom content appended to the filter generated chip group. To maintain spacing and styling, each node should be wrapped in a ToolbarItem or ToolbarGroup. This property will remove the default "Clear all filters" button. */
+  customChipGroupContent?: React.ReactNode;
+  /** The breakpoint at which the listed filters in chip groups are collapsed down to a summary */
   collapseListedFiltersBreakpoint?: 'all' | 'md' | 'lg' | 'xl' | '2xl';
   /** Flag indicating if a data toolbar toggle group's expandable content is expanded */
   isExpanded?: boolean;
@@ -129,6 +131,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
       isSticky,
       ouiaId,
       numberOfFiltersText,
+      customChipGroupContent,
       ...props
     } = this.props;
 
@@ -166,7 +169,8 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
                 clearAllFilters,
                 clearFiltersButtonText,
                 showClearFiltersButton,
-                toolbarId: randomId
+                toolbarId: randomId,
+                customChipGroupContent
               }}
             >
               {children}
@@ -179,6 +183,7 @@ export class Toolbar extends React.Component<ToolbarProps, ToolbarState> {
                 numberOfFilters={numberOfFilters}
                 numberOfFiltersText={numberOfFiltersText}
                 collapseListedFiltersBreakpoint={collapseListedFiltersBreakpoint}
+                customChipGroupContent={customChipGroupContent}
               />
             </ToolbarContext.Provider>
           </div>

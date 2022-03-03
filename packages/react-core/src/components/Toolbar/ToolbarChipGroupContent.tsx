@@ -29,6 +29,8 @@ export interface ToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivEle
   numberOfFiltersText?: (numberOfFilters: number) => string;
   /** The breakpoint at which the listed filters in chip groups are collapsed down to a summary */
   collapseListedFiltersBreakpoint?: 'all' | 'md' | 'lg' | 'xl' | '2xl';
+  /** Custom additional content appended to the generated chips. To maintain spacing and styling, each node should be a ToolbarItem or ToolbarGroup. This property will remove the built in "Clear all filters" button. */
+  customChipGroupContent?: React.ReactNode;
 }
 
 export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupContentProps> {
@@ -50,6 +52,7 @@ export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupCon
       collapseListedFiltersBreakpoint,
       numberOfFilters,
       numberOfFiltersText,
+      customChipGroupContent,
       ...props
     } = this.props;
 
@@ -86,13 +89,14 @@ export class ToolbarChipGroupContent extends React.Component<ToolbarChipGroupCon
             <ToolbarItem>{numberOfFiltersText(numberOfFilters)}</ToolbarItem>
           </ToolbarGroup>
         )}
-        {showClearFiltersButton && !isExpanded && (
+        {showClearFiltersButton && !isExpanded && !customChipGroupContent && (
           <ToolbarItem>
             <Button variant="link" onClick={clearChipGroups} isInline>
               {clearFiltersButtonText}
             </Button>
           </ToolbarItem>
         )}
+        {customChipGroupContent && customChipGroupContent}
       </div>
     );
   }
