@@ -21,7 +21,7 @@ describe('MultipleFileUploadMain', () => {
   });
 
   test('renders without the button when expected', () => {
-    const view = mount(<MultipleFileUploadMain hideButton />);
+    const view = mount(<MultipleFileUploadMain isUploadButtonHidden />);
     expect(view).toMatchSnapshot();
   });
 

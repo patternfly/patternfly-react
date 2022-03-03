@@ -17,7 +17,7 @@ export interface MultipleFileUploadMainProps extends React.HTMLProps<HTMLDivElem
   /** Content rendered inside the info div */
   infoText?: React.ReactNode;
   /** Flag to prevent the upload button from being rendered */
-  hideButton?: boolean;
+  isUploadButtonHidden?: boolean;
 }
 
 export const MultipleFileUploadMain: React.FunctionComponent<MultipleFileUploadMainProps> = ({
@@ -26,7 +26,7 @@ export const MultipleFileUploadMain: React.FunctionComponent<MultipleFileUploadM
   titleText,
   titleTextSeparator,
   infoText,
-  hideButton,
+  isUploadButtonHidden,
   ...props
 }: MultipleFileUploadMainProps) => {
   const showTitle = !!titleIcon || !!titleText || !!titleTextSeparator;
@@ -34,7 +34,7 @@ export const MultipleFileUploadMain: React.FunctionComponent<MultipleFileUploadM
   return (
     <div className={css(styles.multipleFileUploadMain, className)} {...props}>
       {showTitle && <MultipleFileUploadTitle icon={titleIcon} text={titleText} textSeparator={titleTextSeparator} />}
-      {hideButton || <MultipleFileUploadButton />}
+      {isUploadButtonHidden || <MultipleFileUploadButton />}
       {!!infoText && <MultipleFileUploadInfo>{infoText}</MultipleFileUploadInfo>}
     </div>
   );

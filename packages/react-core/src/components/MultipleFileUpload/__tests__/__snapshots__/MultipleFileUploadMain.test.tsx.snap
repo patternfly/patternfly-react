@@ -208,7 +208,7 @@ exports[`MultipleFileUploadMain renders with expected class names 1`] = `
 
 exports[`MultipleFileUploadMain renders without the button when expected 1`] = `
 <MultipleFileUploadMain
-  hideButton={true}
+  isUploadButtonHidden={true}
 >
   <div
     className="pf-c-multiple-file-upload__main"
