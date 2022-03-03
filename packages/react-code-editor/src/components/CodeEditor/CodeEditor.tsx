@@ -260,7 +260,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     customControls: null,
     isMinimapVisible: false,
     headerMainContent: '',
-    shortcutsPopoverProps: {bodyContent: ''},
+    shortcutsPopoverProps: { bodyContent: '' },
     showEditor: true,
     options: {},
     overrideServices: {}
@@ -571,9 +571,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
               {<div className={css(styles.codeEditorHeaderMain)}>{headerMainContent}</div>}
               {!!shortcutsPopoverProps.bodyContent && (
                 <div className="pf-c-code-editor__keyboard-shortcuts">
-                  <Popover
-                    {...shortcutsPopoverProps}
-                  >
+                  <Popover {...shortcutsPopoverProps}>
                     <Button variant={ButtonVariant.link}>
                       <span className="pf-c-button__icon pf-m-start">
                         <i className="pf-icon pf-icon-help" aria-hidden="true"></i>
