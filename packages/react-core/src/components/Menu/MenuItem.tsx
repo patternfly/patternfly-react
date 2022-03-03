@@ -58,7 +58,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   isOnPath?: boolean;
   /** Accessibility label */
   'aria-label'?: string;
-  /** Forwarded ref */
+  /** @hide Forwarded ref */
   innerRef?: React.Ref<HTMLAnchorElement | HTMLButtonElement>;
 }
 
