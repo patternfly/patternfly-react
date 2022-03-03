@@ -13,6 +13,7 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import globalDangerColor200 from '@patternfly/react-tokens/dist/esm/global_danger_color_200';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
@@ -2097,6 +2098,7 @@ import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amou
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 
 ComposableTableSortable = () => {
@@ -2220,7 +2222,7 @@ ComposableTableSortable = () => {
             </ToolbarItem>
             <ToolbarItem>
               <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-                <HelpIcon />
+                <QuestionCircleIcon />
               </Button>
             </ToolbarItem>
           </ToolbarGroup>
@@ -2740,6 +2742,7 @@ import {
 } from '@patternfly/react-core';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
@@ -2852,7 +2855,7 @@ class PageLayoutDefaultNav extends React.Component {
           </PageHeaderToolsItem>
           <PageHeaderToolsItem>
             <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <HelpIcon />
+              <QuestionCircleIcon />
             </Button>
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
