@@ -15,7 +15,6 @@ const TileSingleSelect: React.FunctionComponent = () => {
   const [selectedId, setSelectedId] = React.useState<string>('');
 
   const onSelect = (event: React.MouseEvent) => {
-    ``;
     setSelectedId(event.currentTarget.id);
   };
 
@@ -30,7 +29,7 @@ const TileSingleSelect: React.FunctionComponent = () => {
     <div role="listbox">
       <Tile title="Tile 1" id="tile-1" onClick={onSelect} onKeyDown={onKeyDown} isSelected={selectedId === 'tile-1'} />
       <Tile title="Tile 2" id="tile-2" onClick={onSelect} onKeyDown={onKeyDown} isSelected={selectedId === 'tile-2'} />
-      <Tile title="Tile 3" id="tile-3" isDisabled />
+      <Tile title="Tile 3" id="tile-3" isDisabled isSelected={false} />
       <Tile title="Tile 4" id="tile-4" onClick={onSelect} onKeyDown={onKeyDown} isSelected={selectedId === 'tile-4'} />
     </div>
   );
