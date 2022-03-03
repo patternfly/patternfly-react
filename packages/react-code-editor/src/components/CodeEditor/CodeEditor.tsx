@@ -22,6 +22,7 @@ import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import Dropzone from 'react-dropzone';
 import { CodeEditorContext } from './CodeEditorUtils';
 
@@ -573,10 +574,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                 <div className="pf-c-code-editor__keyboard-shortcuts">
                   <Popover {...shortcutsPopoverProps}>
                     <Button variant={ButtonVariant.link}>
-                      <span className="pf-c-button__icon pf-m-start">
-                        <i className="pf-icon pf-icon-help" aria-hidden="true"></i>
-                      </span>
-                      View shortcuts
+                      <HelpIcon /> View shortcutss
                     </Button>
                   </Popover>
                 </div>
