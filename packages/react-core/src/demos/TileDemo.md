@@ -26,10 +26,10 @@ const TileSingleSelect: React.FunctionComponent = () => {
   };
 
   return (
-    <div role="listbox">
+    <div role="listbox" aria-label="Single selection tiles">
       <Tile title="Tile 1" id="tile-1" onClick={onSelect} onKeyDown={onKeyDown} isSelected={selectedId === 'tile-1'} />
       <Tile title="Tile 2" id="tile-2" onClick={onSelect} onKeyDown={onKeyDown} isSelected={selectedId === 'tile-2'} />
-      <Tile title="Tile 3" id="tile-3" isDisabled isSelected={false} />
+      <Tile title="Tile 3" id="tile-3" isDisabled isSelected={selectedId === 'tile-3'} />
       <Tile title="Tile 4" id="tile-4" onClick={onSelect} onKeyDown={onKeyDown} isSelected={selectedId === 'tile-4'} />
     </div>
   );
@@ -65,7 +65,7 @@ const TileMultiSelect: React.FunctionComponent = () => {
   };
 
   return (
-    <div role="listbox" aria-multiselectable={true}>
+    <div role="listbox" aria-multiselectable={true} aria-label="Multiselectable tiles">
       <Tile
         title="Tile 1"
         id="tile-1"
