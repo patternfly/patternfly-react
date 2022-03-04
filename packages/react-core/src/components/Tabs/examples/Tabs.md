@@ -2,9 +2,10 @@
 id: Tabs
 section: components
 cssPrefix: pf-c-tabs
-propComponents: ['Tabs', 'TabProps', 'TabContent', 'TabTitleText', 'TabTitleIcon' ]
+propComponents: ['Tabs', 'TabProps', 'TabContent', 'TabTitleText', 'TabTitleIcon']
 ouia: true
 ---
+
 import UsersIcon from '@patternfly/react-icons/dist/esm/icons/users-icon';
 import BoxIcon from '@patternfly/react-icons/dist/esm/icons/box-icon';
 import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
@@ -19,6 +20,9 @@ Similarly the 'Tab content light variation' checkbox affects the TabContent back
 ## Examples
 
 ### Default
+
+When passing in a Tooltip component to the Tab component, the Tooltip can also be passed in directly to the `tooltip` prop.
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox, Tooltip } from '@patternfly/react-core';
@@ -28,7 +32,7 @@ class SimpleTabs extends React.Component {
     super(props);
     this.state = {
       activeTabKey: 0,
-      isBox: false,
+      isBox: false
     };
     // Toggle currently active tab
     this.handleTabClick = (event, tabIndex) => {
@@ -45,7 +49,85 @@ class SimpleTabs extends React.Component {
   }
 
   render() {
-    const {activeTabKey, isBox } = this.state;
+    const { activeTabKey, isBox } = this.state;
+    const tooltip = (
+      <Tooltip content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support." />
+    );
+
+    return (
+      <div>
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox}>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+            Users
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+            Containers
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+            Database
+          </Tab>
+          <Tab eventKey={3} title={<TabTitleText>Disabled</TabTitleText>} isDisabled>
+            Disabled
+          </Tab>
+          <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
+            ARIA Disabled
+          </Tab>
+          <Tab
+            tooltip={tooltip}
+            eventKey={5}
+            title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>}
+            isAriaDisabled
+          >
+            ARIA Disabled (Tooltip)
+          </Tab>
+        </Tabs>
+        <div style={{ marginTop: '20px' }}>
+          <Checkbox
+            label="isBox"
+            isChecked={isBox}
+            onChange={this.toggleBox}
+            aria-label="show box variation checkbox"
+            id="toggle-box"
+            name="toggle-box"
+          />
+        </div>
+      </div>
+    );
+  }
+}
+```
+
+### With tooltip react ref
+
+When using a React ref to link a Tooltip to a Tab component, an `id` must be manually set on the Tooltip component, and the Tab component must have a matching `aria-describedby` attribute so that screen readers are able to announce the Tooltip contents.
+
+```js
+import React from 'react';
+import { Tabs, Tab, TabTitleText, Checkbox, Tooltip } from '@patternfly/react-core';
+
+class SimpleTabs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTabKey: 0,
+      isBox: false
+    };
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+
+    this.toggleBox = checked => {
+      this.setState({
+        isBox: checked
+      });
+    };
+  }
+
+  render() {
+    const { activeTabKey, isBox } = this.state;
     const tooltipRef = React.createRef();
 
     return (
@@ -66,20 +148,30 @@ class SimpleTabs extends React.Component {
           <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
             ARIA Disabled
           </Tab>
-          <Tab eventKey={5} title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>} isAriaDisabled ref={tooltipRef}>
+          <Tab
+            eventKey={5}
+            title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>}
+            isAriaDisabled
+            ref={tooltipRef}
+            aria-describedby="tooltip-tab-5"
+          >
             ARIA Disabled (Tooltip)
           </Tab>
         </Tabs>
-        <Tooltip content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support." reference={tooltipRef} />
-        <div style={{marginTop: "20px"}}>
+        <Tooltip
+          content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support."
+          reference={tooltipRef}
+          id="tooltip-tab-5"
+        />
+        <div style={{ marginTop: '20px' }}>
           <Checkbox
-              label="isBox"
-              isChecked={isBox}
-              onChange={this.toggleBox}
-              aria-label="show box variation checkbox"
-              id="toggle-box"
-              name="toggle-box"
-            />
+            label="isBox"
+            isChecked={isBox}
+            onChange={this.toggleBox}
+            aria-label="show box variation checkbox"
+            id="toggle-box"
+            name="toggle-box"
+          />
         </div>
       </div>
     );
@@ -88,14 +180,16 @@ class SimpleTabs extends React.Component {
 ```
 
 ### Uncontrolled
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox, Tooltip } from '@patternfly/react-core';
 
 class UncontrolledSimpleTabs extends React.Component {
-
   render() {
-    const tooltipRef = React.createRef();
+    const tooltip = (
+      <Tooltip content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support." />
+    );
 
     return (
       <>
@@ -110,16 +204,20 @@ class UncontrolledSimpleTabs extends React.Component {
             Database
           </Tab>
           <Tab eventKey={3} title={<TabTitleText>Disabled</TabTitleText>} isDisabled>
-              Disabled
+            Disabled
           </Tab>
           <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
             ARIA Disabled
           </Tab>
-          <Tab eventKey={5} title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>} isAriaDisabled ref={tooltipRef}>
+          <Tab
+            eventKey={5}
+            title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>}
+            isAriaDisabled
+            tooltip={tooltip}
+          >
             ARIA Disabled (Tooltip)
           </Tab>
         </Tabs>
-        <Tooltip content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support." reference={tooltipRef} />
       </>
     );
   }
@@ -127,6 +225,7 @@ class UncontrolledSimpleTabs extends React.Component {
 ```
 
 ### Box light variation
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox, Tooltip } from '@patternfly/react-core';
@@ -136,7 +235,7 @@ class SimpleTabs extends React.Component {
     super(props);
     this.state = {
       activeTabKey: 0,
-      isTabsLightScheme: true,
+      isTabsLightScheme: true
     };
     // Toggle currently active tab
     this.handleTabClick = (event, tabIndex) => {
@@ -153,12 +252,19 @@ class SimpleTabs extends React.Component {
   }
 
   render() {
-    const {activeTabKey, isBox, isTabsLightScheme } = this.state;
-    const tooltipRef = React.createRef();
+    const { activeTabKey, isBox, isTabsLightScheme } = this.state;
+    const tooltip = (
+      <Tooltip content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support." />
+    );
 
     return (
       <div>
-        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} variant={isTabsLightScheme ? 'light300' : 'default'} isBox>
+        <Tabs
+          activeKey={activeTabKey}
+          onSelect={this.handleTabClick}
+          variant={isTabsLightScheme ? 'light300' : 'default'}
+          isBox
+        >
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
           </Tab>
@@ -174,20 +280,24 @@ class SimpleTabs extends React.Component {
           <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
             ARIA Disabled
           </Tab>
-          <Tab eventKey={5} title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>} isAriaDisabled ref={tooltipRef}>
+          <Tab
+            eventKey={5}
+            title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>}
+            isAriaDisabled
+            tooltip={tooltip}
+          >
             ARIA Disabled (Tooltip)
           </Tab>
         </Tabs>
-        <Tooltip content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support." reference={tooltipRef} />
-        <div style={{marginTop: "20px"}}>
+        <div style={{ marginTop: '20px' }}>
           <Checkbox
-              label="Tabs light variation"
-              isChecked={isTabsLightScheme}
-              onChange={this.toggleScheme}
-              aria-label="show light scheme variation checkbox"
-              id="toggle-scheme"
-              name="toggle-scheme"
-            />
+            label="Tabs light variation"
+            isChecked={isTabsLightScheme}
+            onChange={this.toggleScheme}
+            aria-label="show light scheme variation checkbox"
+            id="toggle-scheme"
+            name="toggle-scheme"
+          />
         </div>
       </div>
     );
@@ -196,6 +306,7 @@ class SimpleTabs extends React.Component {
 ```
 
 ### Default overflow
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
@@ -223,7 +334,7 @@ class ScrollButtonsPrimaryTabs extends React.Component {
   }
 
   render() {
-    const {activeTabKey, isBox} = this.state;
+    const { activeTabKey, isBox } = this.state;
     return (
       <div>
         <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox}>
@@ -261,15 +372,15 @@ class ScrollButtonsPrimaryTabs extends React.Component {
             Tab 11 section
           </Tab>
         </Tabs>
-        <div style={{marginTop: "20px"}}>
+        <div style={{ marginTop: '20px' }}>
           <Checkbox
-              label="isBox"
-              isChecked={isBox}
-              onChange={this.toggleBox}
-              aria-label="show box variation checkbox on overflow"
-              id="toggle-box-overflow"
-              name="toggle-box-overflow"
-            />
+            label="isBox"
+            isChecked={isBox}
+            onChange={this.toggleBox}
+            aria-label="show box variation checkbox on overflow"
+            id="toggle-box-overflow"
+            name="toggle-box-overflow"
+          />
         </div>
       </div>
     );
@@ -278,6 +389,7 @@ class ScrollButtonsPrimaryTabs extends React.Component {
 ```
 
 ### Vertical
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox, Tooltip } from '@patternfly/react-core';
@@ -304,8 +416,11 @@ class VerticalTabs extends React.Component {
   }
 
   render() {
-    const {activeTabKey, isBox} = this.state;
-    const tooltipRef = React.createRef();
+    const { activeTabKey, isBox } = this.state;
+    const tooltip = (
+      <Tooltip content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support." />
+    );
+
     return (
       <div>
         <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isVertical isBox={isBox}>
@@ -324,20 +439,24 @@ class VerticalTabs extends React.Component {
           <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
             ARIA Disabled
           </Tab>
-          <Tab eventKey={5} title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>} isAriaDisabled ref={tooltipRef}>
+          <Tab
+            eventKey={5}
+            title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>}
+            isAriaDisabled
+            tooltip={tooltip}
+          >
             ARIA Disabled (Tooltip)
           </Tab>
         </Tabs>
-        <Tooltip content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support." reference={tooltipRef} position="right" />
-        <div style={{marginTop: "20px"}}>
+        <div style={{ marginTop: '20px' }}>
           <Checkbox
-                label="isBox"
-                isChecked={isBox}
-                onChange={this.toggleBox}
-                aria-label="show box variation checkbox with vertical"
-                id="toggle-box-vertical"
-                name="toggle-box-vertical"
-              />
+            label="isBox"
+            isChecked={isBox}
+            onChange={this.toggleBox}
+            aria-label="show box variation checkbox with vertical"
+            id="toggle-box-vertical"
+            name="toggle-box-vertical"
+          />
         </div>
       </div>
     );
@@ -346,6 +465,7 @@ class VerticalTabs extends React.Component {
 ```
 
 ### Vertical expandable
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
@@ -369,34 +489,43 @@ class VerticalExpandableTabs extends React.Component {
     };
   }
   render() {
-    const {activeTabKey, isExpanded} = this.state;
+    const { activeTabKey, isExpanded } = this.state;
     return (
-        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isVertical expandable={{default: 'expandable', md: 'nonExpandable', lg: 'expandable'}} isExpanded={isExpanded} onToggle={this.onToggle} toggleText="Containers">
-          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
-            Users
-          </Tab>
-          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
-            Containers
-          </Tab>
-          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
-            Database
-          </Tab>
-          <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
-            Server
-          </Tab>
-          <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
-            System
-          </Tab>
-          <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
-            Network
-          </Tab>
-        </Tabs>
+      <Tabs
+        activeKey={activeTabKey}
+        onSelect={this.handleTabClick}
+        isVertical
+        expandable={{ default: 'expandable', md: 'nonExpandable', lg: 'expandable' }}
+        isExpanded={isExpanded}
+        onToggle={this.onToggle}
+        toggleText="Containers"
+      >
+        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+          Users
+        </Tab>
+        <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+          Containers
+        </Tab>
+        <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+          Database
+        </Tab>
+        <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
+          Server
+        </Tab>
+        <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
+          System
+        </Tab>
+        <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
+          Network
+        </Tab>
+      </Tabs>
     );
   }
 }
 ```
 
 ### Vertical expandable uncontrolled
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
@@ -414,34 +543,42 @@ class VerticalExpandableUncontrolledTabs extends React.Component {
     };
   }
   render() {
-    const {activeTabKey} = this.state;
+    const { activeTabKey } = this.state;
     return (
-        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isVertical expandable={{default: 'expandable', md: 'nonExpandable', lg: 'expandable'}}  defaultIsExpanded={false} toggleText="Containers">
-          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
-            Users
-          </Tab>
-          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
-            Containers
-          </Tab>
-          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
-            Database
-          </Tab>
-          <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
-            Server
-          </Tab>
-          <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
-            System
-          </Tab>
-          <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
-            Network
-          </Tab>
-        </Tabs>
+      <Tabs
+        activeKey={activeTabKey}
+        onSelect={this.handleTabClick}
+        isVertical
+        expandable={{ default: 'expandable', md: 'nonExpandable', lg: 'expandable' }}
+        defaultIsExpanded={false}
+        toggleText="Containers"
+      >
+        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+          Users
+        </Tab>
+        <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+          Containers
+        </Tab>
+        <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+          Database
+        </Tab>
+        <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
+          Server
+        </Tab>
+        <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
+          System
+        </Tab>
+        <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
+          Network
+        </Tab>
+      </Tabs>
     );
   }
 }
 ```
 
 ### Inset
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
@@ -468,16 +605,20 @@ class InsetTabs extends React.Component {
   }
 
   render() {
-    const {activeTabKey, isBox} = this.state;
+    const { activeTabKey, isBox } = this.state;
     return (
       <div>
-        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} inset={{
-          default: 'insetNone',
-          md: 'insetSm',
-          xl: 'inset2xl',
-          '2xl': 'insetLg'
-        }}
-        isBox={isBox}>
+        <Tabs
+          activeKey={activeTabKey}
+          onSelect={this.handleTabClick}
+          inset={{
+            default: 'insetNone',
+            md: 'insetSm',
+            xl: 'inset2xl',
+            '2xl': 'insetLg'
+          }}
+          isBox={isBox}
+        >
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
           </Tab>
@@ -497,15 +638,15 @@ class InsetTabs extends React.Component {
             Network
           </Tab>
         </Tabs>
-        <div style={{marginTop: "20px"}}>
+        <div style={{ marginTop: '20px' }}>
           <Checkbox
-                label="isBox"
-                isChecked={isBox}
-                onChange={this.toggleBox}
-                aria-label="show box variation checkbox with inset"
-                id="toggle-box-inset"
-                name="toggle-box-inset"
-              />
+            label="isBox"
+            isChecked={isBox}
+            onChange={this.toggleBox}
+            aria-label="show box variation checkbox with inset"
+            id="toggle-box-inset"
+            name="toggle-box-inset"
+          />
         </div>
       </div>
     );
@@ -514,6 +655,7 @@ class InsetTabs extends React.Component {
 ```
 
 ### Page Insets
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
@@ -540,11 +682,10 @@ class PageInsetsTabs extends React.Component {
   }
 
   render() {
-    const {activeTabKey, isBox} = this.state;
+    const { activeTabKey, isBox } = this.state;
     return (
       <div>
-        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} usePageInsets
-        isBox={isBox}>
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} usePageInsets isBox={isBox}>
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
           </Tab>
@@ -564,15 +705,15 @@ class PageInsetsTabs extends React.Component {
             Network
           </Tab>
         </Tabs>
-        <div style={{marginTop: "20px"}}>
+        <div style={{ marginTop: '20px' }}>
           <Checkbox
-                label="isBox"
-                isChecked={isBox}
-                onChange={this.toggleBox}
-                aria-label="show box variation checkbox with inset"
-                id="toggle-box-inset"
-                name="toggle-box-inset"
-              />
+            label="isBox"
+            isChecked={isBox}
+            onChange={this.toggleBox}
+            aria-label="show box variation checkbox with inset"
+            id="toggle-box-inset"
+            name="toggle-box-inset"
+          />
         </div>
       </div>
     );
@@ -581,6 +722,7 @@ class PageInsetsTabs extends React.Component {
 ```
 
 ### Icons and text
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, TabTitleIcon } from '@patternfly/react-core';
@@ -608,22 +750,82 @@ class IconAndTextTabs extends React.Component {
   render() {
     return (
       <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
-        <Tab eventKey={0} title={<><TabTitleIcon><UsersIcon /></TabTitleIcon> <TabTitleText>Users</TabTitleText>  </>}>
+        <Tab
+          eventKey={0}
+          title={
+            <>
+              <TabTitleIcon>
+                <UsersIcon />
+              </TabTitleIcon>{' '}
+              <TabTitleText>Users</TabTitleText>{' '}
+            </>
+          }
+        >
           Users
         </Tab>
-        <Tab eventKey={1} title={<><TabTitleIcon><BoxIcon /></TabTitleIcon> <TabTitleText>Containers</TabTitleText>  </>}>
+        <Tab
+          eventKey={1}
+          title={
+            <>
+              <TabTitleIcon>
+                <BoxIcon />
+              </TabTitleIcon>{' '}
+              <TabTitleText>Containers</TabTitleText>{' '}
+            </>
+          }
+        >
           Containers
         </Tab>
-        <Tab eventKey={2} title={<><TabTitleIcon><DatabaseIcon /></TabTitleIcon> <TabTitleText>Database</TabTitleText>  </>}>
+        <Tab
+          eventKey={2}
+          title={
+            <>
+              <TabTitleIcon>
+                <DatabaseIcon />
+              </TabTitleIcon>{' '}
+              <TabTitleText>Database</TabTitleText>{' '}
+            </>
+          }
+        >
           Database
         </Tab>
-        <Tab eventKey={3} title={<><TabTitleIcon><ServerIcon /></TabTitleIcon> <TabTitleText>Server</TabTitleText>  </>}>
+        <Tab
+          eventKey={3}
+          title={
+            <>
+              <TabTitleIcon>
+                <ServerIcon />
+              </TabTitleIcon>{' '}
+              <TabTitleText>Server</TabTitleText>{' '}
+            </>
+          }
+        >
           Server
         </Tab>
-        <Tab eventKey={4} title={<><TabTitleIcon><LaptopIcon /></TabTitleIcon> <TabTitleText>System</TabTitleText>  </>}>
+        <Tab
+          eventKey={4}
+          title={
+            <>
+              <TabTitleIcon>
+                <LaptopIcon />
+              </TabTitleIcon>{' '}
+              <TabTitleText>System</TabTitleText>{' '}
+            </>
+          }
+        >
           System
         </Tab>
-        <Tab eventKey={6} title={<><TabTitleIcon><ProjectDiagramIcon /></TabTitleIcon> <TabTitleText>Network</TabTitleText>  </>}>
+        <Tab
+          eventKey={6}
+          title={
+            <>
+              <TabTitleIcon>
+                <ProjectDiagramIcon />
+              </TabTitleIcon>{' '}
+              <TabTitleText>Network</TabTitleText>{' '}
+            </>
+          }
+        >
           Network
         </Tab>
       </Tabs>
@@ -633,6 +835,7 @@ class IconAndTextTabs extends React.Component {
 ```
 
 ### Tabs with sub tabs
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
@@ -666,78 +869,78 @@ class SecondaryTabs extends React.Component {
   }
 
   render() {
-    const {activeTabKey1, activeTabKey2, isBox} = this.state;
+    const { activeTabKey1, activeTabKey2, isBox } = this.state;
     return (
       <div>
-      <Tabs activeKey={activeTabKey1} onSelect={this.handleTabClickFirst} isBox={isBox}>
-        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
-          <Tabs activeKey={activeTabKey2} isSecondary onSelect={this.handleTabClickSecond}>
-            <Tab eventKey={20} title={<TabTitleText>Secondary tab item 1</TabTitleText>}>
-              Secondary tab item 1 item section
-            </Tab>
-            <Tab eventKey={21} title={<TabTitleText>Secondary tab item 2</TabTitleText>}>
-              Secondary tab item 2 section
-            </Tab>
-            <Tab eventKey={22} title={<TabTitleText>Secondary tab item 3</TabTitleText>}>
-              Secondary tab item 3 section
-            </Tab>
-            <Tab eventKey={23} title={<TabTitleText>Secondary tab item 4</TabTitleText>}>
-              Secondary tab item 4 section
-            </Tab>
-            <Tab eventKey={24} title={<TabTitleText>Secondary tab item 5</TabTitleText>}>
-              Secondary tab item 5 section
-            </Tab>
-            <Tab eventKey={25} title={<TabTitleText>Secondary tab item 6</TabTitleText>}>
-              Secondary tab item 6 section
-            </Tab>
-            <Tab eventKey={26} title={<TabTitleText>Secondary tab item 7</TabTitleText>}>
-              Secondary tab item 7 section
-            </Tab>
-            <Tab eventKey={27} title={<TabTitleText>Secondary tab item 8</TabTitleText>}>
-              Secondary tab item 8 section
-            </Tab>
-          </Tabs>
-        </Tab>
-        <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
-          Containers
-        </Tab>
-        <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
-          Database
-        </Tab>
-        <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
-          Server
-        </Tab>
-        <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
-          System
-        </Tab>
-        <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
-          Network
-        </Tab>
-        <Tab eventKey={7} title={<TabTitleText>Tab item 7</TabTitleText>}>
-          Tab 7 section
-        </Tab>
-        <Tab eventKey={8} title={<TabTitleText>Tab item 8</TabTitleText>}>
-          Tab 8 section
-        </Tab>
-        <Tab eventKey={9} title={<TabTitleText>Tab item 9</TabTitleText>}>
-          Tab 9 section
-        </Tab>
-        <Tab eventKey={10} title={<TabTitleText>Tab item 10</TabTitleText>}>
-          Tab 10 section
-        </Tab>
-        <Tab eventKey={11} title={<TabTitleText>Tab item 11</TabTitleText>}>
-          Tab 11 section
-        </Tab>
-      </Tabs>
-      <div style={{marginTop: "20px"}}>
-        <Checkbox
-              label="isBox"
-              isChecked={isBox}
-              onChange={this.toggleBox}
-              aria-label="show box variation checkbox with sub tabs"
-              id="toggle-box-secondary"
-              name="toggle-box-secondary"
-            />
+        <Tabs activeKey={activeTabKey1} onSelect={this.handleTabClickFirst} isBox={isBox}>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+            <Tabs activeKey={activeTabKey2} isSecondary onSelect={this.handleTabClickSecond}>
+              <Tab eventKey={20} title={<TabTitleText>Secondary tab item 1</TabTitleText>}>
+                Secondary tab item 1 item section
+              </Tab>
+              <Tab eventKey={21} title={<TabTitleText>Secondary tab item 2</TabTitleText>}>
+                Secondary tab item 2 section
+              </Tab>
+              <Tab eventKey={22} title={<TabTitleText>Secondary tab item 3</TabTitleText>}>
+                Secondary tab item 3 section
+              </Tab>
+              <Tab eventKey={23} title={<TabTitleText>Secondary tab item 4</TabTitleText>}>
+                Secondary tab item 4 section
+              </Tab>
+              <Tab eventKey={24} title={<TabTitleText>Secondary tab item 5</TabTitleText>}>
+                Secondary tab item 5 section
+              </Tab>
+              <Tab eventKey={25} title={<TabTitleText>Secondary tab item 6</TabTitleText>}>
+                Secondary tab item 6 section
+              </Tab>
+              <Tab eventKey={26} title={<TabTitleText>Secondary tab item 7</TabTitleText>}>
+                Secondary tab item 7 section
+              </Tab>
+              <Tab eventKey={27} title={<TabTitleText>Secondary tab item 8</TabTitleText>}>
+                Secondary tab item 8 section
+              </Tab>
+            </Tabs>
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+            Containers
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+            Database
+          </Tab>
+          <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
+            Server
+          </Tab>
+          <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
+            System
+          </Tab>
+          <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
+            Network
+          </Tab>
+          <Tab eventKey={7} title={<TabTitleText>Tab item 7</TabTitleText>}>
+            Tab 7 section
+          </Tab>
+          <Tab eventKey={8} title={<TabTitleText>Tab item 8</TabTitleText>}>
+            Tab 8 section
+          </Tab>
+          <Tab eventKey={9} title={<TabTitleText>Tab item 9</TabTitleText>}>
+            Tab 9 section
+          </Tab>
+          <Tab eventKey={10} title={<TabTitleText>Tab item 10</TabTitleText>}>
+            Tab 10 section
+          </Tab>
+          <Tab eventKey={11} title={<TabTitleText>Tab item 11</TabTitleText>}>
+            Tab 11 section
+          </Tab>
+        </Tabs>
+        <div style={{ marginTop: '20px' }}>
+          <Checkbox
+            label="isBox"
+            isChecked={isBox}
+            onChange={this.toggleBox}
+            aria-label="show box variation checkbox with sub tabs"
+            id="toggle-box-secondary"
+            name="toggle-box-secondary"
+          />
         </div>
       </div>
     );
@@ -746,6 +949,7 @@ class SecondaryTabs extends React.Component {
 ```
 
 ### Filled
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox } from '@patternfly/react-core';
@@ -772,29 +976,29 @@ class FilledTabs extends React.Component {
   }
 
   render() {
-    const {activeTabKey, isBox} = this.state;
+    const { activeTabKey, isBox } = this.state;
     return (
       <div>
-      <Tabs isFilled activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox}>
-        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
-          Users
-        </Tab>
-        <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
-          Containers
-        </Tab>
-        <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
-          Database
-        </Tab>
-      </Tabs>
-       <div style={{marginTop: "20px"}}>
-        <Checkbox
-              label="isBox"
-              isChecked={isBox}
-              onChange={this.toggleBox}
-              aria-label="show box variation checkbox with filled tabs"
-              id="toggle-box-filled"
-              name="toggle-box-filled"
-            />
+        <Tabs isFilled activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox}>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
+            Users
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
+            Containers
+          </Tab>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
+            Database
+          </Tab>
+        </Tabs>
+        <div style={{ marginTop: '20px' }}>
+          <Checkbox
+            label="isBox"
+            isChecked={isBox}
+            onChange={this.toggleBox}
+            aria-label="show box variation checkbox with filled tabs"
+            id="toggle-box-filled"
+            name="toggle-box-filled"
+          />
         </div>
       </div>
     );
@@ -803,6 +1007,7 @@ class FilledTabs extends React.Component {
 ```
 
 ### Filled with icons
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, TabTitleIcon, Checkbox } from '@patternfly/react-core';
@@ -832,29 +1037,59 @@ class FilledTabsWithIcons extends React.Component {
   }
 
   render() {
-    const {activeTabKey, isBox} = this.state;
+    const { activeTabKey, isBox } = this.state;
     return (
       <div>
-      <Tabs isFilled activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox}>
-        <Tab eventKey={0} title={<><TabTitleIcon><UsersIcon /></TabTitleIcon> <TabTitleText>Users</TabTitleText>  </>}>
-          Users
-        </Tab>
-        <Tab eventKey={1} title={<><TabTitleIcon><BoxIcon /></TabTitleIcon> <TabTitleText>Containers</TabTitleText>  </>}>
-          Containers
-        </Tab>
-        <Tab eventKey={2} title={<><TabTitleIcon><DatabaseIcon /></TabTitleIcon> <TabTitleText>Database</TabTitleText>  </>}>
-          Database
-        </Tab>
-      </Tabs>
-      <div style={{marginTop: "20px"}}>
-        <Checkbox
-              label="isBox"
-              isChecked={isBox}
-              onChange={this.toggleBox}
-              aria-label="show box variation checkbox with filled icon tabs"
-              id="toggle-box-filled-icon"
-              name="toggle-box-filled-icon"
-            />
+        <Tabs isFilled activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox}>
+          <Tab
+            eventKey={0}
+            title={
+              <>
+                <TabTitleIcon>
+                  <UsersIcon />
+                </TabTitleIcon>{' '}
+                <TabTitleText>Users</TabTitleText>{' '}
+              </>
+            }
+          >
+            Users
+          </Tab>
+          <Tab
+            eventKey={1}
+            title={
+              <>
+                <TabTitleIcon>
+                  <BoxIcon />
+                </TabTitleIcon>{' '}
+                <TabTitleText>Containers</TabTitleText>{' '}
+              </>
+            }
+          >
+            Containers
+          </Tab>
+          <Tab
+            eventKey={2}
+            title={
+              <>
+                <TabTitleIcon>
+                  <DatabaseIcon />
+                </TabTitleIcon>{' '}
+                <TabTitleText>Database</TabTitleText>{' '}
+              </>
+            }
+          >
+            Database
+          </Tab>
+        </Tabs>
+        <div style={{ marginTop: '20px' }}>
+          <Checkbox
+            label="isBox"
+            isChecked={isBox}
+            onChange={this.toggleBox}
+            aria-label="show box variation checkbox with filled icon tabs"
+            id="toggle-box-filled-icon"
+            name="toggle-box-filled-icon"
+          />
         </div>
       </div>
     );
@@ -863,6 +1098,7 @@ class FilledTabsWithIcons extends React.Component {
 ```
 
 ### Using the nav element
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsComponent, TabTitleText } from '@patternfly/react-core';
@@ -890,7 +1126,7 @@ class TabsNav extends React.Component {
         aria-label="Local"
         component={TabsComponent.nav}
       >
-       <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#users">
+        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#users">
           Users
         </Tab>
         <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>} href="#containers">
@@ -914,8 +1150,8 @@ class TabsNav extends React.Component {
 }
 ```
 
-
 ### Sub nav using the nav element
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsComponent, TabTitleText } from '@patternfly/react-core';
@@ -1001,6 +1237,7 @@ class SecondaryTabsNav extends React.Component {
 ```
 
 ### Separate content
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, TabContent } from '@patternfly/react-core';
@@ -1028,9 +1265,24 @@ class SeparateTabContent extends React.Component {
     return (
       <React.Fragment>
         <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
-          <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} tabContentId="refTab1Section" tabContentRef={this.contentRef1} />
-          <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>}tabContentId="refTab2Section" tabContentRef={this.contentRef2} />
-          <Tab eventKey={2} title={<TabTitleText>Tab item 3</TabTitleText>}  tabContentId="refTab3Section" tabContentRef={this.contentRef3} />
+          <Tab
+            eventKey={0}
+            title={<TabTitleText>Tab item 1</TabTitleText>}
+            tabContentId="refTab1Section"
+            tabContentRef={this.contentRef1}
+          />
+          <Tab
+            eventKey={1}
+            title={<TabTitleText>Tab item 2</TabTitleText>}
+            tabContentId="refTab2Section"
+            tabContentRef={this.contentRef2}
+          />
+          <Tab
+            eventKey={2}
+            title={<TabTitleText>Tab item 3</TabTitleText>}
+            tabContentId="refTab3Section"
+            tabContentRef={this.contentRef3}
+          />
         </Tabs>
         <div>
           <TabContent eventKey={0} id="refTab1Section" ref={this.contentRef1} aria-label="Tab item 1">
@@ -1050,13 +1302,14 @@ class SeparateTabContent extends React.Component {
 ```
 
 ### Tab content with body and padding
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, TabContent, TabContentBody } from '@patternfly/react-core';
 
 const TabContentWithBody = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);
-  
+
   // Toggle currently active tab
   const handleTabClick = (event, tabIndex) => {
     setActiveTabKey(tabIndex);
@@ -1069,9 +1322,24 @@ const TabContentWithBody = () => {
   return (
     <React.Fragment>
       <Tabs activeKey={activeTabKey} onSelect={handleTabClick}>
-        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} tabContentId="refTab1Section" tabContentRef={contentRef1} />
-        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>}tabContentId="refTab2Section" tabContentRef={contentRef2} />
-        <Tab eventKey={2} title={<TabTitleText>Tab item 3</TabTitleText>}  tabContentId="refTab3Section" tabContentRef={contentRef3} />
+        <Tab
+          eventKey={0}
+          title={<TabTitleText>Tab item 1</TabTitleText>}
+          tabContentId="refTab1Section"
+          tabContentRef={contentRef1}
+        />
+        <Tab
+          eventKey={1}
+          title={<TabTitleText>Tab item 2</TabTitleText>}
+          tabContentId="refTab2Section"
+          tabContentRef={contentRef2}
+        />
+        <Tab
+          eventKey={2}
+          title={<TabTitleText>Tab item 3</TabTitleText>}
+          tabContentId="refTab3Section"
+          tabContentRef={contentRef3}
+        />
       </Tabs>
       <div>
         <TabContent eventKey={0} id="refTab1Section" ref={contentRef1} aria-label="Tab item 1">
@@ -1086,10 +1354,11 @@ const TabContentWithBody = () => {
       </div>
     </React.Fragment>
   );
-}
+};
 ```
 
 ### Children mounting on click
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
@@ -1111,13 +1380,13 @@ class MountingSimpleTabs extends React.Component {
   render() {
     return (
       <Tabs mountOnEnter activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
-        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} >
+        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>}>
           Tab 1 section
         </Tab>
-        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>} >
+        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>}>
           Tab 2 section
         </Tab>
-        <Tab eventKey={2} title={<TabTitleText>Tab item 3</TabTitleText>} >
+        <Tab eventKey={2} title={<TabTitleText>Tab item 3</TabTitleText>}>
           Tab 3 section
         </Tab>
       </Tabs>
@@ -1127,6 +1396,7 @@ class MountingSimpleTabs extends React.Component {
 ```
 
 ### Unmounting invisible children
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
@@ -1148,13 +1418,13 @@ class UnmountingSimpleTabs extends React.Component {
   render() {
     return (
       <Tabs unmountOnExit activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
-        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} >
+        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>}>
           Tab 1 section
         </Tab>
-        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>} >
+        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>}>
           Tab 2 section
         </Tab>
-        <Tab eventKey={2} title={<TabTitleText>Tab item 3</TabTitleText>} >
+        <Tab eventKey={2} title={<TabTitleText>Tab item 3</TabTitleText>}>
           Tab 3 section
         </Tab>
       </Tabs>
@@ -1164,6 +1434,7 @@ class UnmountingSimpleTabs extends React.Component {
 ```
 
 ### Toggled separate content
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabContent, Button, Divider } from '@patternfly/react-core';
