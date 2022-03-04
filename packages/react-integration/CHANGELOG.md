@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.160.14 (2022-03-04)
+
+
+### Bug Fixes
+
+* **NotificationDrawer:** Drawer receives focus after opening ([#6963](https://github.com/patternfly/patternfly-react/issues/6963)) ([f5b1c97](https://github.com/patternfly/patternfly-react/commit/f5b1c97f1c3ef6155d39d16da401fb9937b539e9))
+
+
+
+
+
 ## 4.160.13 (2022-03-04)
 
 
