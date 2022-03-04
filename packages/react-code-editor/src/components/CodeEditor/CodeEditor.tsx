@@ -573,8 +573,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
               {!!shortcutsPopoverProps.bodyContent && (
                 <div className="pf-c-code-editor__keyboard-shortcuts">
                   <Popover {...shortcutsPopoverProps}>
-                    <Button variant={ButtonVariant.link}>
-                      <HelpIcon /> View shortcutss
+                    <Button variant={ButtonVariant.link} icon={<HelpIcon />}>
+                      View shortcuts
                     </Button>
                   </Popover>
                 </div>
