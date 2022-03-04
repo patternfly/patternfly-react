@@ -107,7 +107,7 @@ describe('Toolbar', () => {
           </Button>
         </ToolbarItem>
         <ToolbarItem>
-          <Button data-testid="clear-button" variant="link" onClick={() => {}} isInline>
+          <Button variant="link" onClick={() => {}} isInline>
             Clear all filters
           </Button>
         </ToolbarItem>
@@ -124,9 +124,9 @@ describe('Toolbar', () => {
         <ToolbarContent>{items}</ToolbarContent>
       </Toolbar>
     );
-    // Expecting 2 matches for text because the buttons also exist in hidden expandable ontent for mobile view
-    expect(screen.getAllByText('Save filters').length).toBe(2);
-    expect(screen.getAllByText('Clear all filters').length).toBe(2);
+    // Expecting 2 matches for text because the buttons also exist in hidden expandable content for mobile view
+    expect(screen.getAllByRole('button', { name: 'Save filters' }).length).toBe(2);
+    expect(screen.getAllByRole('button', { name: 'Clear all filters' }).length).toBe(2);
     expect(view.container).toMatchSnapshot();
   });
 });
