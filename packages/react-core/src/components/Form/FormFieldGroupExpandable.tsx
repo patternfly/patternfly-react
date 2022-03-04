@@ -7,11 +7,11 @@ export interface FormFieldGroupExpandableProps extends React.HTMLProps<HTMLDivEl
   children?: React.ReactNode;
   /** Additional classes added to the form field group. */
   className?: string;
-  /** Form filed group header */
+  /** Form field group header */
   header?: React.ReactNode;
   /** Flag indicating if the form field group is initially expanded */
   isExpanded?: boolean;
-  /** Aria-label to use on the form filed group toggle button */
+  /** Aria-label to use on the form field group toggle button */
   toggleAriaLabel?: string;
 }
 

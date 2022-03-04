@@ -5,7 +5,7 @@ import { FormFieldGroupHeader } from '../FormFieldGroupHeader';
 import { Button } from '../../Button';
 import { render } from '@testing-library/react';
 
-test('Check form filed group example against snapshot', () => {
+test('Check form field group example against snapshot', () => {
   const FieldGroup = (
     <FormFieldGroup
       header={
