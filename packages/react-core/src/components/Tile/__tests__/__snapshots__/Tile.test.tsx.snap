@@ -4,6 +4,7 @@ exports[`Tile basic 1`] = `
 <div>
   <div
     class="pf-c-tile"
+    role="option"
     tabindex="0"
   >
     <div
@@ -22,7 +23,9 @@ exports[`Tile basic 1`] = `
 exports[`Tile renders disabled 1`] = `
 <div>
   <div
+    aria-disabled="true"
     class="pf-c-tile pf-m-disabled"
+    role="option"
     tabindex="0"
   >
     <div
@@ -41,7 +44,9 @@ exports[`Tile renders disabled 1`] = `
 exports[`Tile renders selected 1`] = `
 <div>
   <div
+    aria-selected="true"
     class="pf-c-tile pf-m-selected"
+    role="option"
     tabindex="0"
   >
     <div
@@ -61,6 +66,7 @@ exports[`Tile renders with icon 1`] = `
 <div>
   <div
     class="pf-c-tile"
+    role="option"
     tabindex="0"
   >
     <div
@@ -97,6 +103,7 @@ exports[`Tile renders with stacked icon 1`] = `
 <div>
   <div
     class="pf-c-tile"
+    role="option"
     tabindex="0"
   >
     <div
@@ -133,6 +140,7 @@ exports[`Tile renders with stacked large icon 1`] = `
 <div>
   <div
     class="pf-c-tile pf-m-display-lg"
+    role="option"
     tabindex="0"
   >
     <div
@@ -169,6 +177,7 @@ exports[`Tile renders with subtext 1`] = `
 <div>
   <div
     class="pf-c-tile"
+    role="option"
     tabindex="0"
   >
     <div
