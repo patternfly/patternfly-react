@@ -102,7 +102,7 @@ describe('Toolbar', () => {
     const customChipGroupContent = (
       <React.Fragment>
         <ToolbarItem>
-          <Button data-testid="save-button" variant="link" onClick={() => {}} isInline>
+          <Button variant="link" onClick={() => {}} isInline>
             Save filters
           </Button>
         </ToolbarItem>
@@ -124,9 +124,10 @@ describe('Toolbar', () => {
         <ToolbarContent>{items}</ToolbarContent>
       </Toolbar>
     );
-    expect(screen.findByTestId('save-button')).toBeTruthy();
-    expect(screen.findByTestId('clear-button')).toBeTruthy();
-    expect(view).toMatchSnapshot();
+    // Expecting 2 matches for text because the buttons also exist in hidden expandable ontent for mobile view
+    expect(screen.getAllByText('Save filters').length).toBe(2);
+    expect(screen.getAllByText('Clear all filters').length).toBe(2);
+    expect(view.container).toMatchSnapshot();
   });
 });
 
