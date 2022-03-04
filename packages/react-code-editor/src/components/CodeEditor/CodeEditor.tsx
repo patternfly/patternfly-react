@@ -31,6 +31,10 @@ export interface Shortcut {
   keys: string[];
 }
 
+export interface ShortcutProps extends PopoverProps {
+  shortcutTitleText?: string;
+}
+
 export enum Language {
   abap = 'abap',
   aes = 'aes',
@@ -196,7 +200,7 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   /** Editor header main content title */
   headerMainContent?: string;
   /** Properties for the shortcut popover */
-  shortcutsPopoverProps?: PopoverProps;
+  shortcutsPopoverProps?: ShortcutProps;
   /** Flag to show the editor */
   showEditor?: boolean;
   /**
@@ -574,7 +578,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                 <div className="pf-c-code-editor__keyboard-shortcuts">
                   <Popover {...shortcutsPopoverProps}>
                     <Button variant={ButtonVariant.link} icon={<HelpIcon />}>
-                      View shortcuts
+                      {shortcutsPopoverProps.shortcutTitleText || "View shortcuts"}
                     </Button>
                   </Popover>
                 </div>
