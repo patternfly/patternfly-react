@@ -95,12 +95,6 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
 
   return (
     <>
-      <Checkbox
-        id="horizontal-checkbox"
-        label="Show as horizontal"
-        isChecked={isHorizontal}
-        onChange={() => setIsHorizontal(!isHorizontal)}
-      />
       <MultipleFileUpload
         onFileDrop={handleFileDrop}
         dropzoneProps={{
@@ -142,6 +136,12 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
           {modalText}
         </Modal>
       </MultipleFileUpload>
+      <Checkbox
+        id="horizontal-checkbox"
+        label="Show as horizontal"
+        isChecked={isHorizontal}
+        onChange={() => setIsHorizontal(!isHorizontal)}
+      />
     </>
   );
 };
