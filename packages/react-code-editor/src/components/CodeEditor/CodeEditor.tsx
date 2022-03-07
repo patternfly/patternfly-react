@@ -31,10 +31,6 @@ export interface Shortcut {
   keys: string[];
 }
 
-export interface ShortcutProps extends PopoverProps {
-  shortcutTitleText?: string;
-}
-
 export enum Language {
   abap = 'abap',
   aes = 'aes',
@@ -199,8 +195,10 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   isMinimapVisible?: boolean;
   /** Editor header main content title */
   headerMainContent?: string;
+  /** Text to show in the button to open the shortcut popover */
+  shortcutsPopoverButtonText: string;
   /** Properties for the shortcut popover */
-  shortcutsPopoverProps?: ShortcutProps;
+  shortcutsPopoverProps?: PopoverProps;
   /** Flag to show the editor */
   showEditor?: boolean;
   /**
@@ -265,7 +263,12 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     customControls: null,
     isMinimapVisible: false,
     headerMainContent: '',
-    shortcutsPopoverProps: { bodyContent: '' },
+    shortcutsPopoverButtonText: 'View Shortcuts',
+    shortcutsPopoverProps: {
+      bodyContent: '',
+      'aria-label': 'Keyboard Shortcuts',
+      ...Popover.defaultProps
+    },
     showEditor: true,
     options: {},
     overrideServices: {}
@@ -473,11 +476,16 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       customControls,
       isMinimapVisible,
       headerMainContent,
-      shortcutsPopoverProps,
+      shortcutsPopoverButtonText,
+      shortcutsPopoverProps: shortcutsPopoverPropsProp,
       showEditor,
       options: optionsProp,
       overrideServices
     } = this.props;
+    const shortcutsPopoverProps: PopoverProps = {
+      ...CodeEditor.defaultProps.shortcutsPopoverProps,
+      ...shortcutsPopoverPropsProp
+    };
     const options: editor.IStandaloneEditorConstructionOptions = {
       readOnly: isReadOnly,
       cursorStyle: 'line',
@@ -578,7 +586,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                 <div className="pf-c-code-editor__keyboard-shortcuts">
                   <Popover {...shortcutsPopoverProps}>
                     <Button variant={ButtonVariant.link} icon={<HelpIcon />}>
-                      {shortcutsPopoverProps.shortcutTitleText || 'View shortcuts'}
+                      {shortcutsPopoverButtonText}
                     </Button>
                   </Popover>
                 </div>

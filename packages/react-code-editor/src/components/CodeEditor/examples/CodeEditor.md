@@ -2,7 +2,7 @@
 id: Code editor
 section: components
 cssPrefix: pf-c-code-editor
-propComponents: ['CodeEditor', 'CodeEditorControl']
+propComponents: ['CodeEditor', 'CodeEditorControl', 'Popover']
 beta: true
 ---
 
