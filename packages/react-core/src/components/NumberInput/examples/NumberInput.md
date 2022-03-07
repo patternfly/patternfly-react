@@ -160,15 +160,14 @@ class UnitThresholdNumberInput extends React.Component {
     this.maxValue = 10;
 
     this.normalizeBetween = (value, min, max) => {
-      let result = value;
       if (min !== undefined && max !== undefined) {
-        result = Math.max(Math.min(value, max), min);
-      } else if (max === undefined && value <= min) {
-        result = min;
-      } else if (min === undefined && value >= max) {
-        result = max;
+        return Math.max(Math.min(value, max), min);
+      } else if (value <= min) {
+        return min;
+      } else if (value >= max) {
+        return max;
       }
-      return result;
+      return value;
     };
 
     this.onMinus = () => {
@@ -430,15 +429,14 @@ class CustomStepNumberInput extends React.Component {
     this.maxValue = 100;
 
     this.normalizeBetween = (value, min, max) => {
-      let result = value;
       if (min !== undefined && max !== undefined) {
-        result = Math.max(Math.min(value, max), min);
-      } else if (max === undefined && value <= min) {
-        result = min;
-      } else if (min === undefined && value >= max) {
-        result = max;
+        return Math.max(Math.min(value, max), min);
+      } else if (value <= min) {
+        return min;
+      } else if (value >= max) {
+        return max;
       }
-      return result;
+      return value;
     };
 
     this.stepper = step => () => {
