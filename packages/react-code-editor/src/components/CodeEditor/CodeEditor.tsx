@@ -3,12 +3,15 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CodeEditor/code-editor';
 import {
   Button,
+  ButtonVariant,
   EmptyState,
   EmptyStateBody,
   EmptyStateIcon,
   EmptyStateSecondaryActions,
   EmptyStateVariant,
   getResizeObserver,
+  Popover,
+  PopoverProps,
   Title,
   Tooltip,
   TooltipPosition
@@ -19,8 +22,14 @@ import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import Dropzone from 'react-dropzone';
 import { CodeEditorContext } from './CodeEditorUtils';
+
+export interface Shortcut {
+  description: string;
+  keys: string[];
+}
 
 export enum Language {
   abap = 'abap',
@@ -184,6 +193,12 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   onEditorDidMount?: EditorDidMount;
   /** Flag to add the minimap to the code editor */
   isMinimapVisible?: boolean;
+  /** Editor header main content title */
+  headerMainContent?: string;
+  /** Text to show in the button to open the shortcut popover */
+  shortcutsPopoverButtonText: string;
+  /** Properties for the shortcut popover */
+  shortcutsPopoverProps?: PopoverProps;
   /** Flag to show the editor */
   showEditor?: boolean;
   /**
@@ -247,6 +262,13 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     toolTipPosition: 'top',
     customControls: null,
     isMinimapVisible: false,
+    headerMainContent: '',
+    shortcutsPopoverButtonText: 'View Shortcuts',
+    shortcutsPopoverProps: {
+      bodyContent: '',
+      'aria-label': 'Keyboard Shortcuts',
+      ...Popover.defaultProps
+    },
     showEditor: true,
     options: {},
     overrideServices: {}
@@ -453,10 +475,17 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       emptyStateLink,
       customControls,
       isMinimapVisible,
+      headerMainContent,
+      shortcutsPopoverButtonText,
+      shortcutsPopoverProps: shortcutsPopoverPropsProp,
       showEditor,
       options: optionsProp,
       overrideServices
     } = this.props;
+    const shortcutsPopoverProps: PopoverProps = {
+      ...CodeEditor.defaultProps.shortcutsPopoverProps,
+      ...shortcutsPopoverPropsProp
+    };
     const options: editor.IStandaloneEditorConstructionOptions = {
       readOnly: isReadOnly,
       cursorStyle: 'line',
@@ -503,7 +532,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
 
           const editorHeader = (
             <div className={css(styles.codeEditorHeader)}>
-              {(isCopyEnabled || isDownloadEnabled || isUploadEnabled || customControls) && (
+              {
                 <div className={css(styles.codeEditorControls)}>
                   {isCopyEnabled && (!showEmptyState || !!value) && (
                     <Tooltip
@@ -550,6 +579,16 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                   {customControls && (
                     <CodeEditorContext.Provider value={{ code: value }}>{customControls}</CodeEditorContext.Provider>
                   )}
+                </div>
+              }
+              {<div className={css(styles.codeEditorHeaderMain)}>{headerMainContent}</div>}
+              {!!shortcutsPopoverProps.bodyContent && (
+                <div className="pf-c-code-editor__keyboard-shortcuts">
+                  <Popover {...shortcutsPopoverProps}>
+                    <Button variant={ButtonVariant.link} icon={<HelpIcon />}>
+                      {shortcutsPopoverButtonText}
+                    </Button>
+                  </Popover>
                 </div>
               )}
               {isLanguageLabelVisible && (
