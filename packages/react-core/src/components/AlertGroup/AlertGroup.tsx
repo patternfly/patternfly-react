@@ -14,6 +14,10 @@ export interface AlertGroupProps extends Omit<React.HTMLProps<HTMLUListElement>,
   isLiveRegion?: boolean;
   /** Determine where the alert is appended to */
   appendTo?: HTMLElement | (() => HTMLElement);
+  /** Function to call if user clicks on overflow message */
+  onOverflowClick?: () => void;
+  /** Custom text to show for the overflow message */
+  overflowMessage?: string;
 }
 
 interface AlertGroupState {
@@ -49,9 +53,16 @@ export class AlertGroup extends React.Component<AlertGroupProps, AlertGroupState
   }
 
   render() {
-    const { className, children, isToast, isLiveRegion, ...props } = this.props;
+    const { className, children, isToast, isLiveRegion, onOverflowClick, overflowMessage, ...props } = this.props;
     const alertGroup = (
-      <AlertGroupInline className={className} isToast={isToast} isLiveRegion={isLiveRegion} {...props}>
+      <AlertGroupInline
+        onOverflowClick={onOverflowClick}
+        className={className}
+        isToast={isToast}
+        isLiveRegion={isLiveRegion}
+        overflowMessage={overflowMessage}
+        {...props}
+      >
         {children}
       </AlertGroupInline>
     );
