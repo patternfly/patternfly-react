@@ -79,7 +79,7 @@ class ToastAlertGroup extends React.Component {
 ```
 
 ### Toast alert group with overflow capture
-After a specified number of alerts displayed is reached, we will see an overflow message instead of new alerts. Alerts asynchronously appended into dynamic AlertGroups with `isLiveRegion` will be announced to assistive technology at the moment the change happens. When the overflow message appears or is updated in AlertGroups with `isLiveRegion`, the `View 1 more alert` text will be read, but the alert message will not be read. screen reader user or keyboard user will need a way to navigate to and reveal the hidden alerts before they disappear. Alternatively, there should be a place that notifications or alerts are collected to be viewed or read later.
+After a specified number of alerts displayed is reached, we will see an overflow message instead of new alerts. Alerts asynchronously appended into dynamic AlertGroups with `isLiveRegion` will be announced to assistive technology at the moment the change happens. When the overflow message appears or is updated in AlertGroups with `isLiveRegion`, the `View 1 more alert` text will be read, but the alert message will not be read. screen reader user or keyboard user will need a way to navigate to and reveal the hidden alerts before they disappear. Alternatively, there should be a place that notifications or alerts are collected to be viewed or read later. In this example we are showing a max of 4 alerts.
 ```js isBeta
 import React from 'react';
 import { Alert, AlertGroup, AlertActionCloseButton, AlertVariant, InputGroup } from '@patternfly/react-core';
@@ -130,7 +130,7 @@ class ToastAlertGroup extends React.Component {
           <button onClick={addDangerAlert} type="button" className={btnClasses}>Add toast danger alert</button>
           <button onClick={addInfoAlert} type="button" className={btnClasses}>Add toast info alert</button>
         </InputGroup>
-        <AlertGroup isToast isLiveRegion onOverflowClick={onOverflowClick} maxDisplayed={this.state.maxDisplayed} overflowMessage={this.state.overflowMessage}>
+        <AlertGroup isToast isLiveRegion onOverflowClick={onOverflowClick} overflowMessage={this.state.overflowMessage}>
           {this.state.alerts.slice(0, this.state.maxDisplayed).map(({key, variant, title}) => (
             <Alert
               variant={AlertVariant[variant]}
@@ -205,7 +205,7 @@ class SingularAdditiveAlertGroup extends React.Component {
 ```
 
 ### Singular dynamic alert group with overflow message
-This alert will appear in the page, most likely in response to a user action.
+This alert will appear in the page, most likely in response to a user action. In this example we are showing a max of 4 alerts.
 ```js isBeta
 import React from 'react';
 import { Alert, AlertGroup, AlertVariant, AlertActionCloseButton, InputGroup } from '@patternfly/react-core';
@@ -256,8 +256,7 @@ class SingularAdditiveAlertGroup extends React.Component {
           <button onClick={addDangerAlert} type="button" className={btnClasses}>Add single danger alert</button>
           <button onClick={addInfoAlert} type="button" className={btnClasses}>Add single info alert</button>
         </InputGroup>
-        <AlertGroup isLiveRegion maxDisplayed={this.state.maxDisplayed}
-          overflowMessage={this.state.overflowMessage} onOverflowClick={onOverflowClick}>
+        <AlertGroup isLiveRegion overflowMessage={this.state.overflowMessage} onOverflowClick={onOverflowClick}>
           {this.state.alerts.slice(0, this.state.maxDisplayed).map(({ title, variant, key }) => (
             <Alert
               isInline
