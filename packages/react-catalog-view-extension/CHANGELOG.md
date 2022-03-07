@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.49.19 (2022-03-07)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
 ## 4.49.18 (2022-03-07)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension
