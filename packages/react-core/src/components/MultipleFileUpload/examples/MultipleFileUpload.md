@@ -23,26 +23,6 @@ File upload - multiple is able to:
   - Uploaded files are represented by the multiple file upload status item component, this component includes the aforementioned built-in file reading logic
   - If you prefer to supply your own file reading logic and strictly use multiple file upload status item as a display component, the `customFileHandler`, `fileName`, `fileSize`, `progressValue`, and `progressVariant` props exist to allow you to do that
 
-### General intended structure
-
-File upload - multiple is designed in a composable manner to maximize flexibility. The general intended component relationships are arranged similarly to:
-
-```js noLive
-import {
-  MultipleFileUpload,
-  MultipleFileUploadMain,
-  MultipleFileUploadStatus,
-  MultipleFileUploadStatusItem
-} from '@patternfly/react-core';
-
-<MultipleFileUpload>
-  <MultipleFileUploadMain />
-  <MultipleFileUploadStatus>
-    <MultipleFileUploadStatusItem />
-  </MultipleFileUploadStatus>
-</MultipleFileUpload>
-```
-
 ### Restricting file size and type
 
 As with singular file upload, any [props accepted by react-dropzone's Dropzone component](https://react-dropzone.js.org/#!/Dropzone) can be passed as a dropzoneProps object in order to customize the behavior of the Dropzone, such as restricting the type of files allowed. The following examples will only accept the files they list as accepted. Note that file type determination is not reliable across platforms (see the note on react-dropzone's docs about the accept prop), so be sure to test the behavior of your file upload restriction on all browsers and operating systems targeted by your application.
