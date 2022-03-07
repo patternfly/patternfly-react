@@ -83,6 +83,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   const numberInputUnit = <div className={css(styles.numberInputUnit)}>{unit}</div>;
   const keyDownHandler =
     inputProps && inputProps.onKeyDown ? inputProps.onKeyDown : defaultKeyDownHandler({ inputName, onMinus, onPlus });
+
   return (
     <div
       className={css(styles.numberInput, className)}
@@ -99,7 +100,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
         <Button
           variant="control"
           aria-label={minusBtnAriaLabel}
-          isDisabled={isDisabled || value === min}
+          isDisabled={isDisabled || value <= min}
           onClick={evt => onMinus(evt, inputName)}
           {...minusBtnProps}
         >
@@ -122,7 +123,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
         <Button
           variant="control"
           aria-label={plusBtnAriaLabel}
-          isDisabled={isDisabled || value === max}
+          isDisabled={isDisabled || value >= max}
           onClick={evt => onPlus(evt, inputName)}
           {...plusBtnProps}
         >
