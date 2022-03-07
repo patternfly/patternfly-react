@@ -1,8 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`className is added to the root element 1`] = `"pf-c-card__title extra-class"`;
-
-exports[`onExpand adds the toggle button 1`] = `
+exports[`CardHeader onExpand adds the toggle button 1`] = `
 <div>
   <div
     class="pf-c-card__header"
@@ -38,13 +36,5 @@ exports[`onExpand adds the toggle button 1`] = `
       </button>
     </div>
   </div>
-</div>
-`;
-
-exports[`renders with PatternFly Core styles 1`] = `
-<div>
-  <div
-    class="pf-c-card__title"
-  />
 </div>
 `;

@@ -1,72 +1,63 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
-import { mount, shallow } from 'enzyme';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+
 import { Alert } from '../../Alert';
 import { AlertGroup } from '../../AlertGroup';
 import { AlertActionCloseButton } from '../../../components/Alert/AlertActionCloseButton';
 
-jest.spyOn(document, 'createElement');
-jest.spyOn(document.body, 'addEventListener');
+describe('AlertGroup', () => {
+  test('Alert Group renders without children', () => {
+    const view = render(<AlertGroup />);
+    expect(view.container).toMatchSnapshot();
+  });
 
-test('Alert Group works with zero children', () => {
-  const view = render(<AlertGroup></AlertGroup>);
-  expect(view).toBeTruthy();
-});
+  test('Alert Group works with n children', () => {
+    const view = render(
+      <AlertGroup>
+        <Alert variant="success" title="alert title" />
+        <Alert variant="warning" title="another alert title" />
+      </AlertGroup>
+    );
+    expect(view).toBeTruthy();
+  });
 
-test('Alert Group should match snapshot', () => {
-  const view = render(<AlertGroup></AlertGroup>);
-  expect(view.container).toMatchSnapshot();
-});
+  test('Standard Alert Group is not a toast alert group', () => {
+    render(
+      <AlertGroup>
+        <Alert variant="danger" title="alert title" />
+      </AlertGroup>
+    );
 
-test('Alert Group works with n children', () => {
-  const view = render(
-    <AlertGroup>
-      <Alert variant="success" title="alert title" />
-      <Alert variant="warning" title="another alert title" />
-    </AlertGroup>
-  );
-  expect(view).toBeTruthy();
-});
+    expect(screen.getByText('alert title').parentElement).not.toHaveClass('pf-m-toast');
+  });
 
-test('Standard Alert Group is not a toast alert group', () => {
-  const wrapper = mount(
-    <AlertGroup>
-      <Alert variant="danger" title="alert title" />
-    </AlertGroup>
-  );
-  expect(wrapper.find('.pf-c-alert-group.pf-m-toast')).toHaveLength(0);
-  expect(wrapper).toMatchSnapshot();
-});
+  test('Toast Alert Group contains expected modifier class', () => {
+    render(
+      <AlertGroup isToast aria-label="group label">
+        <Alert variant="warning" title="alert title" />
+      </AlertGroup>
+    );
 
-test('Toast Alert Group contains expected modifier class', () => {
-  const wrapper = mount(
-    <AlertGroup isToast>
-      <Alert variant="warning" title="alert title" />
-    </AlertGroup>
-  );
-  expect(wrapper.find('.pf-c-alert-group.pf-m-toast')).toHaveLength(1);
-  expect(wrapper).toMatchSnapshot();
-});
+    expect(screen.getByLabelText('group label')).toHaveClass('pf-m-toast');
+  });
 
-test('Alert Group creates a container element once for div', () => {
-  const view = shallow(<AlertGroup> Test About Modal </AlertGroup>);
-  view.update();
-  expect(document.createElement).toBeCalledWith('div');
-  expect(document.createElement).toHaveBeenCalledTimes(1);
-});
+  test('alertgroup closes when alerts are closed', () => {
+    const onClose = jest.fn();
 
-test('alertgroup closes when alerts are closed', () => {
-  const onClose = jest.fn();
-  const wrapper = mount(
-    <AlertGroup isToast appendTo={document.body}>
-      <Alert
-        isLiveRegion
-        title={'Test Alert'}
-        actionClose={<AlertActionCloseButton aria-label="Close" onClose={onClose} />}
-      />
-    </AlertGroup>
-  );
-  expect(wrapper).toMatchSnapshot();
-  wrapper.find('button[aria-label="Close"]').simulate('click');
-  expect(onClose).toBeCalled();
+    render(
+      <AlertGroup isToast appendTo={document.body}>
+        <Alert
+          isLiveRegion
+          title={'Test Alert'}
+          actionClose={<AlertActionCloseButton aria-label="Close" onClose={onClose} />}
+        />
+      </AlertGroup>
+    );
+
+    userEvent.click(screen.getByLabelText('Close'));
+    expect(onClose).toBeCalled();
+  });
 });

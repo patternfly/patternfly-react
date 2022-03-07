@@ -1,37 +1,44 @@
 import React from 'react';
+
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+
 import { CardBody } from '../CardBody';
-import { render } from '@testing-library/react';
-import { shallow } from 'enzyme';
 
-test('renders with PatternFly Core styles', () => {
-  const view = render(<CardBody />);
-  expect(view.container).toMatchSnapshot();
-});
+describe('CardBody', () => {
+  test('renders with PatternFly Core styles', () => {
+    const view = render(<CardBody />);
+    expect(view.container).toMatchSnapshot();
+  });
 
-test('className is added to the root element', () => {
-  const view = shallow(<CardBody className="extra-class" />);
-  expect(view.prop('className')).toMatchSnapshot();
-});
+  test('className is added to the root element', () => {
+    render(<CardBody className="extra-class" data-testid="test-id" />);
+    expect(screen.getByTestId('test-id').className).toContain('extra-class');
+  });
 
-test('extra props are spread to the root element', () => {
-  const testId = 'card-body';
-  const view = shallow(<CardBody data-testid={testId} />);
-  expect(view.prop('data-testid')).toBe(testId);
-});
+  test('extra props are spread to the root element', () => {
+    const testId = 'card-body';
 
-test('allows passing in a string as the component', () => {
-  const component = 'section';
-  const view = shallow(<CardBody component={component} />);
-  expect(view.type()).toBe(component);
-});
+    render(<CardBody data-testid={testId} />);
+    expect(screen.getByTestId(testId)).toBeInTheDocument();
+  });
 
-test('allows passing in a React Component as the component', () => {
-  const Component = () => <div>im a div</div>;
-  const view = shallow(<CardBody component={(Component as unknown) as keyof JSX.IntrinsicElements} />);
-  expect(view.type()).toBe(Component);
-});
+  test('allows passing in a string as the component', () => {
+    const component = 'section';
 
-test('body with no-fill applied ', () => {
-  const view = render(<CardBody isFilled={false} />);
-  expect(view.container).toMatchSnapshot();
+    render(<CardBody component={component}>section content</CardBody>);
+    expect(screen.getByText('section content')).toBeInTheDocument();
+  });
+
+  test('allows passing in a React Component as the component', () => {
+    const Component = () => <div>im a div</div>;
+
+    render(<CardBody component={(Component as unknown) as keyof JSX.IntrinsicElements} />);
+    expect(screen.getByText('im a div')).toBeInTheDocument();
+  });
+
+  test('body with no-fill applied', () => {
+    const view = render(<CardBody isFilled={false} />);
+    expect(view.container).toMatchSnapshot();
+  });
 });

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`aria-disabled is set to true and tabIndex to -1 if component is not a button and is disabled 1`] = `
+exports[`Button aria-disabled is set to true and tabIndex to -1 if component is not a button and is disabled 1`] = `
 <div>
   <a
     aria-disabled="true"
@@ -15,7 +15,7 @@ exports[`aria-disabled is set to true and tabIndex to -1 if component is not a b
 </div>
 `;
 
-exports[`control button 1`] = `
+exports[`Button control button 1`] = `
 <div>
   <button
     aria-disabled="false"
@@ -32,7 +32,7 @@ exports[`control button 1`] = `
 </div>
 `;
 
-exports[`danger button 1`] = `
+exports[`Button danger button 1`] = `
 <div>
   <button
     aria-disabled="false"
@@ -49,7 +49,7 @@ exports[`danger button 1`] = `
 </div>
 `;
 
-exports[`isAriaDisabled button 1`] = `
+exports[`Button isAriaDisabled button 1`] = `
 <div>
   <button
     aria-disabled="true"
@@ -64,7 +64,7 @@ exports[`isAriaDisabled button 1`] = `
 </div>
 `;
 
-exports[`isAriaDisabled link button 1`] = `
+exports[`Button isAriaDisabled link button 1`] = `
 <div>
   <a
     aria-disabled="true"
@@ -78,7 +78,7 @@ exports[`isAriaDisabled link button 1`] = `
 </div>
 `;
 
-exports[`isBlock 1`] = `
+exports[`Button isBlock 1`] = `
 <div>
   <button
     aria-disabled="false"
@@ -93,7 +93,7 @@ exports[`isBlock 1`] = `
 </div>
 `;
 
-exports[`isDanger link 1`] = `
+exports[`Button isDanger link 1`] = `
 <div>
   <button
     aria-disabled="false"
@@ -108,7 +108,7 @@ exports[`isDanger link 1`] = `
 </div>
 `;
 
-exports[`isDanger secondary 1`] = `
+exports[`Button isDanger secondary 1`] = `
 <div>
   <button
     aria-disabled="false"
@@ -123,7 +123,7 @@ exports[`isDanger secondary 1`] = `
 </div>
 `;
 
-exports[`isDisabled 1`] = `
+exports[`Button isDisabled 1`] = `
 <div>
   <button
     aria-disabled="true"
@@ -139,7 +139,7 @@ exports[`isDisabled 1`] = `
 </div>
 `;
 
-exports[`isInline 1`] = `
+exports[`Button isInline 1`] = `
 <div>
   <button
     aria-disabled="false"
@@ -154,7 +154,7 @@ exports[`isInline 1`] = `
 </div>
 `;
 
-exports[`isLarge 1`] = `
+exports[`Button isLarge 1`] = `
 <div>
   <button
     aria-disabled="false"
@@ -169,7 +169,7 @@ exports[`isLarge 1`] = `
 </div>
 `;
 
-exports[`isLoading 1`] = `
+exports[`Button isLoading 1`] = `
 <div>
   <button
     aria-disabled="false"
@@ -204,7 +204,7 @@ exports[`isLoading 1`] = `
 </div>
 `;
 
-exports[`isLoading icon only 1`] = `
+exports[`Button isLoading icon only 1`] = `
 <div>
   <button
     aria-disabled="false"
@@ -242,7 +242,7 @@ exports[`isLoading icon only 1`] = `
 </div>
 `;
 
-exports[`isSmall 1`] = `
+exports[`Button isSmall 1`] = `
 <div>
   <button
     aria-disabled="false"
@@ -257,7 +257,7 @@ exports[`isSmall 1`] = `
 </div>
 `;
 
-exports[`link button 1`] = `
+exports[`Button link button 1`] = `
 <div>
   <button
     aria-disabled="false"
@@ -274,7 +274,7 @@ exports[`link button 1`] = `
 </div>
 `;
 
-exports[`link with icon 1`] = `
+exports[`Button link with icon 1`] = `
 <div>
   <button
     aria-disabled="false"
@@ -306,7 +306,7 @@ exports[`link with icon 1`] = `
 </div>
 `;
 
-exports[`plain button 1`] = `
+exports[`Button plain button 1`] = `
 <div>
   <button
     aria-disabled="false"
@@ -323,7 +323,7 @@ exports[`plain button 1`] = `
 </div>
 `;
 
-exports[`primary button 1`] = `
+exports[`Button primary button 1`] = `
 <div>
   <button
     aria-disabled="false"
@@ -340,7 +340,7 @@ exports[`primary button 1`] = `
 </div>
 `;
 
-exports[`secondary button 1`] = `
+exports[`Button secondary button 1`] = `
 <div>
   <button
     aria-disabled="false"
@@ -357,7 +357,7 @@ exports[`secondary button 1`] = `
 </div>
 `;
 
-exports[`tertiary button 1`] = `
+exports[`Button tertiary button 1`] = `
 <div>
   <button
     aria-disabled="false"
@@ -374,7 +374,7 @@ exports[`tertiary button 1`] = `
 </div>
 `;
 
-exports[`warning button 1`] = `
+exports[`Button warning button 1`] = `
 <div>
   <button
     aria-disabled="false"

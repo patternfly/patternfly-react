@@ -1,26 +1,32 @@
-import { CodeEditor, Language } from '../CodeEditor';
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
+import { CodeEditor, Language } from '../CodeEditor';
 
-test(`CodeEditor`, () => {
-  const view = shallow(<CodeEditor />);
-  expect(view).toMatchSnapshot();
-});
+describe('CodeEditor', () => {
+  beforeAll(() => {
+    window.HTMLCanvasElement.prototype.getContext = () => ({} as any);
+  });
 
-test(`CodeEditor with all flags`, () => {
-  const view = shallow(
-    <CodeEditor
-      isReadOnly
-      isDarkTheme
-      isLineNumbersVisible={false}
-      isUploadEnabled
-      isLanguageLabelVisible
-      isDownloadEnabled
-      isCopyEnabled
-      height="400px"
-      code={'test'}
-      language={Language.javascript}
-    />
-  );
-  expect(view).toMatchSnapshot();
+  test('matches snapshot without props', () => {
+    const view = render(<CodeEditor />);
+    expect(view.container).toMatchSnapshot();
+  });
+
+  test('matches snapshot with all props', () => {
+    const view = render(
+      <CodeEditor
+        isReadOnly
+        isDarkTheme
+        isLineNumbersVisible={false}
+        isUploadEnabled
+        isLanguageLabelVisible
+        isDownloadEnabled
+        isCopyEnabled
+        height="400px"
+        code={'test'}
+        language={Language.javascript}
+      />
+    );
+    expect(view.container).toMatchSnapshot();
+  });
 });

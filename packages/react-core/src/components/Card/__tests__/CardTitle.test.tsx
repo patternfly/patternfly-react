@@ -3,23 +3,23 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import { CardHeaderMain } from '../CardHeaderMain';
+import { CardTitle } from '../CardTitle';
 
-describe('CardHeaderMain', () => {
+describe('CardTitle', () => {
   test('renders with PatternFly Core styles', () => {
-    render(<CardHeaderMain>text</CardHeaderMain>);
+    render(<CardTitle>text</CardTitle>);
     expect(screen.getByText('text').outerHTML).toMatchSnapshot();
   });
 
   test('className is added to the root element', () => {
-    render(<CardHeaderMain className="extra-class">text</CardHeaderMain>);
+    render(<CardTitle className="extra-class">text</CardTitle>);
     expect(screen.getByText('text').className).toContain('extra-class');
   });
 
   test('extra props are spread to the root element', () => {
-    const testId = 'card-head-main';
+    const testId = 'card-header';
 
-    render(<CardHeaderMain data-testid={testId} />);
+    render(<CardTitle data-testid={testId} />);
     expect(screen.getByTestId(testId)).toBeInTheDocument();
   });
 });

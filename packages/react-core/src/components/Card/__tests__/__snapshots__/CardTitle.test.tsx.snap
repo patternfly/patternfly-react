@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardTitle renders with PatternFly Core styles 1`] = `"<div class=\\"pf-c-card__title\\">text</div>"`;

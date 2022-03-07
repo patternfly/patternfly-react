@@ -1,20 +1,22 @@
-/**
- * This test was generated
- */
-import * as React from 'react';
-import { shallow } from 'enzyme';
-import { AlertActionCloseButton } from '../../AlertActionCloseButton';
-// any missing imports can usually be resolved by adding them here
-import {} from '../..';
+import React from 'react';
 
-it('AlertActionCloseButton should match snapshot (auto-generated)', () => {
-  const view = shallow(
-    <AlertActionCloseButton
-      className={"''"}
-      onClose={() => undefined as any}
-      aria-label={"''"}
-      variantLabel={'string'}
-    />
-  );
-  expect(view).toMatchSnapshot();
+import { render } from '@testing-library/react';
+
+import { AlertActionCloseButton } from '../../AlertActionCloseButton';
+import { AlertContext } from '../../AlertContext';
+
+describe('AlertActionCloseButton', () => {
+  it('should match snapshot', () => {
+    const view = render(
+      <AlertContext.Provider value={{ title: 'test title', variantLabel: 'some label' }}>
+        <AlertActionCloseButton
+          className=""
+          onClose={() => console.log('close clicked')}
+          aria-label=""
+          variantLabel=""
+        />
+      </AlertContext.Provider>
+    );
+    expect(view.container).toMatchSnapshot();
+  });
 });
