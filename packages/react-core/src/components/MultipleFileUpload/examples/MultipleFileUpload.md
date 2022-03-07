@@ -6,70 +6,22 @@ propComponents:
   [
     'MultipleFileUpload',
     'MultipleFileUploadMain',
-    'MultipleFileUploadTitle',
-    'MultipleFileUploadTitleIcon',
-    'MultipleFileUploadTitleText',
-    'MultipleFileUploadTitleTextSeparator',
-    'MultipleFileUploadButton',
-    'MultipleFileUploadInfo',
     'MultipleFileUploadStatus',
     'MultipleFileUploadStatusItem',
   ]
 beta: true
 ---
 
-import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 
 File upload - multiple is able to:
 
-- accept one or more files via browse or drag-and-drop
-- provide their data to you using file objects via the `onFileDrop` callback prop
-- read files as dataURLs, calling provided callbacks as needed when files start/finish being read, as well as when the read succeeds or fails
-- display (in real time) the upload progress/status of each file
-  - uploaded files are represented by the `MultipleFileUploadStatusItem` component, this component includes the aforementioned built-in file reading logic
-  - if you prefer to supply your own file reading logic and strictly use `MultipleFileUploadStatusItem` as a display component, the `customFileHandler`, `fileName`, `fileSize`, `progressValue`, and `progressVariant` props exist to allow you to do that
-
-### General intended structure
-
-File upload - multiple is designed in a composable manner to maximize flexibility. The general intended component relationships are arranged similarly to:
-
-```js noLive
-import {
-  MultipleFileUpload,
-  MultipleFileUploadInfo,
-  MultipleFileUploadMain,
-  MultipleFileUploadTitle,
-  MultipleFileUploadTitleIcon,
-  MultipleFileUploadTitleText,
-  MultipleFileUploadTitleTextSeparator,
-  MultipleFileUploadButton,
-  MultipleFileUploadStatus,
-  MultipleFileUploadStatusItem
-} from '@patternfly/react-core';
-
-<MultipleFileUpload>
-  <MultipleFileUploadMain>
-    <MultipleFileUploadTitle>
-      <MultipleFileUploadTitleIcon />
-
-      <MultipleFileUploadTitleText>
-        main title text
-        <MultipleFileUploadTitleTextSeparator>title text separator</MultipleFileUploadTitleTextSeparator>
-      </MultipleFileUploadTitleText>
-    </MultipleFileUploadTitle>
-
-    <MultipleFileUploadButton />
-
-    <MultipleFileUploadInfo>Accepted file types: x, y, z</MultipleFileUploadInfo>
-  </MultipleFileUploadMain>
-
-  <MultipleFileUploadStatus>
-    <MultipleFileUploadStatusItem />
-  </MultipleFileUploadStatus>
-</MultipleFileUpload>
-```
+- Accept one or more files via browse or drag-and-drop
+- Provide their data to you using file objects via the `onFileDrop` callback prop
+- Read files as dataURLs, calling provided callbacks as needed when files start/finish being read, as well as when the read succeeds or fails
+- Display (in real time) the upload progress/status of each file
+  - Uploaded files are represented by the multiple file upload status item component, this component includes the aforementioned built-in file reading logic
+  - If you prefer to supply your own file reading logic and strictly use multiple file upload status item as a display component, the `customFileHandler`, `fileName`, `fileSize`, `progressValue`, and `progressVariant` props exist to allow you to do that
 
 ### Restricting file size and type
 
@@ -84,9 +36,4 @@ Restricting file sizes and types in this way is for user convenience only, and i
 ### Basic
 
 ```ts file="./MultipleFileUploadBasic.tsx"
-```
-
-### Horizontal
-
-```ts file="./MultipleFileUploadHorizontal.tsx"
 ```

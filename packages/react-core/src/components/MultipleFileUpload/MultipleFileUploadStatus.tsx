@@ -2,6 +2,9 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
 import { css } from '@patternfly/react-styles';
 import { ExpandableSection } from '../ExpandableSection';
+import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
+import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
+import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 
 export interface MultipleFileUploadStatusProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside multi file upload status list */
@@ -11,7 +14,7 @@ export interface MultipleFileUploadStatusProps extends React.HTMLProps<HTMLDivEl
   /** String to show in the status toggle */
   statusToggleText?: string;
   /** Icon to show in the status toggle */
-  statusToggleIcon?: React.ReactNode;
+  statusToggleIcon?: 'danger' | 'success' | 'inProgress' | React.ReactNode;
 }
 
 export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploadStatusProps> = ({
@@ -21,14 +24,31 @@ export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploa
   statusToggleIcon,
   ...props
 }: MultipleFileUploadStatusProps) => {
+  const [icon, setIcon] = React.useState<React.ReactNode>();
+  const [isOpen, setIsOpen] = React.useState(true);
+
+  React.useEffect(() => {
+    switch (statusToggleIcon) {
+      case 'danger':
+        setIcon(<TimesCircleIcon />);
+        break;
+      case 'success':
+        setIcon(<CheckCircleIcon />);
+        break;
+      case 'inProgress':
+        setIcon(<InProgressIcon />);
+        break;
+      default:
+        setIcon(statusToggleIcon);
+    }
+  }, [statusToggleIcon]);
+
   const toggle = (
     <div className={styles.multipleFileUploadStatusProgress}>
-      <div className={styles.multipleFileUploadStatusProgressIcon}>{statusToggleIcon}</div>
+      <div className={styles.multipleFileUploadStatusProgressIcon}>{icon}</div>
       <div className={styles.multipleFileUploadStatusItemProgressText}>{statusToggleText}</div>
     </div>
   );
-
-  const [isOpen, setIsOpen] = React.useState(true);
 
   const toggleExpandableSection = () => {
     setIsOpen(!isOpen);

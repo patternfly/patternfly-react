@@ -1,20 +1,12 @@
 import React from 'react';
 import {
   MultipleFileUpload,
-  MultipleFileUploadInfo,
   MultipleFileUploadMain,
-  MultipleFileUploadTitle,
-  MultipleFileUploadTitleIcon,
-  MultipleFileUploadTitleText,
-  MultipleFileUploadTitleTextSeparator,
-  MultipleFileUploadButton,
   MultipleFileUploadStatus,
   MultipleFileUploadStatusItem,
-  Modal
+  Checkbox
 } from '@patternfly/react-core';
-import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
-import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
-import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
+import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 
 interface readFile {
   fileName: string;
@@ -24,10 +16,11 @@ interface readFile {
 }
 
 export const MultipleFileUploadBasic: React.FunctionComponent = () => {
+  const [isHorizontal, setIsHorizontal] = React.useState(false);
   const [currentFiles, setCurrentFiles] = React.useState<File[]>([]);
   const [readFileData, setReadFileData] = React.useState<readFile[]>([]);
   const [showStatus, setShowStatus] = React.useState(false);
-  const [modalText, setModalText] = React.useState('');
+  const [statusIcon, setStatusIcon] = React.useState('inProgress');
 
   // only show the status component once a file has been uploaded, but keep the status list component itself even if all files are removed
   if (!showStatus && currentFiles.length > 0) {
@@ -35,17 +28,15 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
   }
 
   // determine the icon that should be shown for the overall status list
-  const getStatusIcon = () => {
+  React.useEffect(() => {
     if (readFileData.length < currentFiles.length) {
-      return <InProgressIcon />;
+      setStatusIcon('inProgress');
+    } else if (readFileData.every(file => file.loadResult === 'success')) {
+      setStatusIcon('success');
+    } else {
+      setStatusIcon('danger');
     }
-
-    if (readFileData.every(file => file.loadResult === 'success')) {
-      return <CheckCircleIcon />;
-    }
-
-    return <TimesCircleIcon />;
-  };
+  }, [readFileData, currentFiles]);
 
   // remove files from both state arrays based on their name
   const removeFiles = (namesOfFilesToRemove: string[]) => {
@@ -88,63 +79,46 @@ export const MultipleFileUploadBasic: React.FunctionComponent = () => {
     ]);
   };
 
-  // dropzone prop that communicates to the user that files they've attempted to upload are not an appropriate type
-  const handleDropRejected = (files: File[], _event: React.DragEvent<HTMLElement>) => {
-    if (files.length === 1) {
-      setModalText(`${files[0].name} is not an accepted file type`);
-    } else {
-      const rejectedMessages = files.reduce((acc, file) => (acc += `${file.name}, `), '');
-      setModalText(`${rejectedMessages}are not accepted file types`);
-    }
-  };
-
   const successfullyReadFileCount = readFileData.filter(fileData => fileData.loadResult === 'success').length;
 
   return (
-    <MultipleFileUpload
-      onFileDrop={handleFileDrop}
-      dropzoneProps={{
-        accept: 'image/jpeg, application/msword, application/pdf, image/png',
-        onDropRejected: handleDropRejected
-      }}
-    >
-      <MultipleFileUploadMain>
-        <MultipleFileUploadTitle>
-          <MultipleFileUploadTitleIcon />
-          <MultipleFileUploadTitleText>
-            Drag and drop files here
-            <MultipleFileUploadTitleTextSeparator>or</MultipleFileUploadTitleTextSeparator>
-          </MultipleFileUploadTitleText>
-        </MultipleFileUploadTitle>
-        <MultipleFileUploadButton />
-        <MultipleFileUploadInfo>Accepted file types: JPEG, Doc, PDF, PNG</MultipleFileUploadInfo>
-      </MultipleFileUploadMain>
-      {showStatus && (
-        <MultipleFileUploadStatus
-          statusToggleText={`${successfullyReadFileCount} of ${currentFiles.length} files uploaded`}
-          statusToggleIcon={getStatusIcon()}
-        >
-          {currentFiles.map(file => (
-            <MultipleFileUploadStatusItem
-              file={file}
-              key={file.name}
-              onClearClick={() => removeFiles([file.name])}
-              onReadSuccess={handleReadSuccess}
-              onReadFail={handleReadFail}
-            />
-          ))}
-        </MultipleFileUploadStatus>
-      )}
-      <Modal
-        isOpen={!!modalText}
-        title="Unsupported file"
-        titleIconVariant="warning"
-        showClose
-        aria-label="unsupported file upload attempted"
-        onClose={() => setModalText('')}
+    <>
+      <MultipleFileUpload
+        onFileDrop={handleFileDrop}
+        dropzoneProps={{
+          accept: 'image/jpeg, application/msword, application/pdf, image/png'
+        }}
+        isHorizontal={isHorizontal}
       >
-        {modalText}
-      </Modal>
-    </MultipleFileUpload>
+        <MultipleFileUploadMain
+          titleIcon={<UploadIcon />}
+          titleText="Drag and drop files here"
+          titleTextSeparator="or"
+          infoText="Accepted file types: JPEG, Doc, PDF, PNG"
+        />
+        {showStatus && (
+          <MultipleFileUploadStatus
+            statusToggleText={`${successfullyReadFileCount} of ${currentFiles.length} files uploaded`}
+            statusToggleIcon={statusIcon}
+          >
+            {currentFiles.map(file => (
+              <MultipleFileUploadStatusItem
+                file={file}
+                key={file.name}
+                onClearClick={() => removeFiles([file.name])}
+                onReadSuccess={handleReadSuccess}
+                onReadFail={handleReadFail}
+              />
+            ))}
+          </MultipleFileUploadStatus>
+        )}
+      </MultipleFileUpload>
+      <Checkbox
+        id="horizontal-checkbox"
+        label="Show as horizontal"
+        isChecked={isHorizontal}
+        onChange={() => setIsHorizontal(!isHorizontal)}
+      />
+    </>
   );
 };
