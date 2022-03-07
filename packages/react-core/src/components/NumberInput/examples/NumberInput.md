@@ -159,9 +159,21 @@ class UnitThresholdNumberInput extends React.Component {
     this.minValue = 0;
     this.maxValue = 10;
 
+    this.normalizeBetween = (value, min, max) => {
+      let result = value;
+      if (min !== undefined && max !== undefined) {
+        result = Math.max(Math.min(value, max), min);
+      } else if (max === undefined && value <= min) {
+        result = min;
+      } else if (min === undefined && value >= max) {
+        result = max;
+      }
+      return result;
+    };
+
     this.onMinus = () => {
       this.setState({
-        value: this.state.value - 1
+        value: this.normalizeBetween(this.state.value - 1, this.minValue, this.maxValue)
       });
     };
 
@@ -174,7 +186,7 @@ class UnitThresholdNumberInput extends React.Component {
 
     this.onPlus = () => {
       this.setState({
-        value: this.state.value + 1
+        value: this.normalizeBetween(this.state.value + 1, this.minValue, this.maxValue)
       });
     };
   }
@@ -369,12 +381,12 @@ class CustomStepNumberInput extends React.Component {
     super(props);
     this.state = {
       value: 90,
-      step: 3,
+      step: 3
     };
 
     this.stepper = step => () => {
-      this.setState(prev => ({...prev, value: prev.value + step }))
-    }
+      this.setState(prev => ({ ...prev, value: prev.value + step }));
+    };
 
     this.onChange = event => {
       this.setState({
@@ -388,6 +400,69 @@ class CustomStepNumberInput extends React.Component {
     return (
       <NumberInput
         value={value}
+        onMinus={this.stepper(-3)}
+        onChange={this.onChange}
+        onPlus={this.stepper(3)}
+        inputName="input"
+        inputAriaLabel="number input"
+        minusBtnAriaLabel="minus"
+        plusBtnAriaLabel="plus"
+      />
+    );
+  }
+}
+```
+
+### Custom increment/decrement and thresholds
+
+```js
+import React from 'react';
+import { NumberInput } from '@patternfly/react-core';
+
+class CustomStepNumberInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 90,
+      step: 3
+    };
+    this.minValue = 90;
+    this.maxValue = 100;
+
+    this.normalizeBetween = (value, min, max) => {
+      let result = value;
+      if (min !== undefined && max !== undefined) {
+        result = Math.max(Math.min(value, max), min);
+      } else if (max === undefined && value <= min) {
+        result = min;
+      } else if (min === undefined && value >= max) {
+        result = max;
+      }
+      return result;
+    };
+
+    this.stepper = step => () => {
+      this.setState(prev => ({
+        ...prev,
+        value: this.normalizeBetween(prev.value + step, this.minValue, this.maxValue)
+      }));
+    };
+
+    this.onChange = event => {
+      const newValue = isNaN(event.target.value) ? 0 : Number(event.target.value);
+      this.setState({
+        value: newValue > this.maxValue ? this.maxValue : newValue < this.minValue ? this.minValue : newValue
+      });
+    };
+  }
+
+  render() {
+    const { value } = this.state;
+    return (
+      <NumberInput
+        value={value}
+        min={this.minValue}
+        max={this.maxValue}
         onMinus={this.stepper(-3)}
         onChange={this.onChange}
         onPlus={this.stepper(3)}

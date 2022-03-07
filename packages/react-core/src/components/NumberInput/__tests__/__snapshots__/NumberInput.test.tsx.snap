@@ -104,7 +104,6 @@ exports[`numberInput disables upper threshold 1`] = `
             viewBox="0 0 448 512"
             width="1em"
           >
-<<<<<<< HEAD
             <path
               d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
             />
@@ -130,66 +129,6 @@ exports[`numberInput disables upper threshold 1`] = `
       >
         <span
           class="pf-c-number-input__icon"
-=======
-            <button
-              aria-disabled={false}
-              aria-label="Minus"
-              className="pf-c-button pf-m-control"
-              data-ouia-component-id="OUIA-Generated-Button-control-9"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={false}
-              onClick={[Function]}
-              role={null}
-              type="button"
-            >
-              <span
-                className="pf-c-number-input__icon"
-              >
-                <MinusIcon
-                  aria-hidden="true"
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                >
-                  <svg
-                    aria-hidden="true"
-                    aria-labelledby={null}
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style={
-                      Object {
-                        "verticalAlign": "-0.125em",
-                      }
-                    }
-                    viewBox="0 0 448 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                    />
-                  </svg>
-                </MinusIcon>
-              </span>
-            </button>
-          </ButtonBase>
-        </Button>
-        <input
-          aria-label="Input"
-          className="pf-c-form-control"
-          onBlur={[Function]}
-          onKeyDown={[Function]}
-          readOnly={true}
-          type="number"
-          value={100}
-        />
-        <Button
-          aria-label="Plus"
-          isDisabled={true}
-          onClick={[Function]}
-          variant="control"
->>>>>>> 68ee8df2d (fix(NumberInput): better support for min/max)
         >
           <svg
             aria-hidden="true"
@@ -241,7 +180,6 @@ exports[`numberInput passes button props successfully 1`] = `
             viewBox="0 0 448 512"
             width="1em"
           >
-<<<<<<< HEAD
             <path
               d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
             />
@@ -267,70 +205,6 @@ exports[`numberInput passes button props successfully 1`] = `
       >
         <span
           class="pf-c-number-input__icon"
-=======
-            <button
-              aria-disabled={false}
-              aria-label="Minus"
-              className="pf-c-button pf-m-control"
-              data-ouia-component-id="OUIA-Generated-Button-control-19"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={false}
-              id="minus-id"
-              onClick={[Function]}
-              role={null}
-              type="button"
-            >
-              <span
-                className="pf-c-number-input__icon"
-              >
-                <MinusIcon
-                  aria-hidden="true"
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                >
-                  <svg
-                    aria-hidden="true"
-                    aria-labelledby={null}
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style={
-                      Object {
-                        "verticalAlign": "-0.125em",
-                      }
-                    }
-                    viewBox="0 0 448 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                    />
-                  </svg>
-                </MinusIcon>
-              </span>
-            </button>
-          </ButtonBase>
-        </Button>
-        <input
-          aria-label="Input"
-          className="pf-c-form-control"
-          key=".1"
-          onBlur={[Function]}
-          onKeyDown={[Function]}
-          readOnly={true}
-          type="number"
-          value={5}
-        />
-        <Button
-          aria-label="Plus"
-          id="plus-id"
-          isDisabled={false}
-          key=".2"
-          onClick={[Function]}
-          variant="control"
->>>>>>> 68ee8df2d (fix(NumberInput): better support for min/max)
         >
           <svg
             aria-hidden="true"
@@ -381,7 +255,6 @@ exports[`numberInput passes input props successfully 1`] = `
             viewBox="0 0 448 512"
             width="1em"
           >
-<<<<<<< HEAD
             <path
               d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
             />
@@ -406,67 +279,6 @@ exports[`numberInput passes input props successfully 1`] = `
       >
         <span
           class="pf-c-number-input__icon"
-=======
-            <button
-              aria-disabled={false}
-              aria-label="Minus"
-              className="pf-c-button pf-m-control"
-              data-ouia-component-id="OUIA-Generated-Button-control-17"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={false}
-              onClick={[Function]}
-              role={null}
-              type="button"
-            >
-              <span
-                className="pf-c-number-input__icon"
-              >
-                <MinusIcon
-                  aria-hidden="true"
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                >
-                  <svg
-                    aria-hidden="true"
-                    aria-labelledby={null}
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style={
-                      Object {
-                        "verticalAlign": "-0.125em",
-                      }
-                    }
-                    viewBox="0 0 448 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                    />
-                  </svg>
-                </MinusIcon>
-              </span>
-            </button>
-          </ButtonBase>
-        </Button>
-        <input
-          aria-label="Input"
-          className="pf-c-form-control"
-          name="test-name"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          type="number"
-          value={5}
-        />
-        <Button
-          aria-label="Plus"
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
->>>>>>> 68ee8df2d (fix(NumberInput): better support for min/max)
         >
           <svg
             aria-hidden="true"
@@ -518,7 +330,6 @@ exports[`numberInput renders custom width 1`] = `
             viewBox="0 0 448 512"
             width="1em"
           >
-<<<<<<< HEAD
             <path
               d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
             />
@@ -543,66 +354,6 @@ exports[`numberInput renders custom width 1`] = `
       >
         <span
           class="pf-c-number-input__icon"
-=======
-            <button
-              aria-disabled={false}
-              aria-label="Minus"
-              className="pf-c-button pf-m-control"
-              data-ouia-component-id="OUIA-Generated-Button-control-15"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={false}
-              onClick={[Function]}
-              role={null}
-              type="button"
-            >
-              <span
-                className="pf-c-number-input__icon"
-              >
-                <MinusIcon
-                  aria-hidden="true"
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                >
-                  <svg
-                    aria-hidden="true"
-                    aria-labelledby={null}
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style={
-                      Object {
-                        "verticalAlign": "-0.125em",
-                      }
-                    }
-                    viewBox="0 0 448 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                    />
-                  </svg>
-                </MinusIcon>
-              </span>
-            </button>
-          </ButtonBase>
-        </Button>
-        <input
-          aria-label="Input"
-          className="pf-c-form-control"
-          onBlur={[Function]}
-          onKeyDown={[Function]}
-          readOnly={true}
-          type="number"
-          value={5}
-        />
-        <Button
-          aria-label="Plus"
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
->>>>>>> 68ee8df2d (fix(NumberInput): better support for min/max)
         >
           <svg
             aria-hidden="true"
@@ -654,7 +405,6 @@ exports[`numberInput renders defaults & extra props 1`] = `
             viewBox="0 0 448 512"
             width="1em"
           >
-<<<<<<< HEAD
             <path
               d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
             />
@@ -679,66 +429,6 @@ exports[`numberInput renders defaults & extra props 1`] = `
       >
         <span
           class="pf-c-number-input__icon"
-=======
-            <button
-              aria-disabled={false}
-              aria-label="Minus"
-              className="pf-c-button pf-m-control"
-              data-ouia-component-id="OUIA-Generated-Button-control-1"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={false}
-              onClick={[Function]}
-              role={null}
-              type="button"
-            >
-              <span
-                className="pf-c-number-input__icon"
-              >
-                <MinusIcon
-                  aria-hidden="true"
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                >
-                  <svg
-                    aria-hidden="true"
-                    aria-labelledby={null}
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style={
-                      Object {
-                        "verticalAlign": "-0.125em",
-                      }
-                    }
-                    viewBox="0 0 448 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                    />
-                  </svg>
-                </MinusIcon>
-              </span>
-            </button>
-          </ButtonBase>
-        </Button>
-        <input
-          aria-label="Input"
-          className="pf-c-form-control"
-          onBlur={[Function]}
-          onKeyDown={[Function]}
-          readOnly={true}
-          type="number"
-          value={0}
-        />
-        <Button
-          aria-label="Plus"
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
->>>>>>> 68ee8df2d (fix(NumberInput): better support for min/max)
         >
           <svg
             aria-hidden="true"
@@ -790,7 +480,6 @@ exports[`numberInput renders disabled 1`] = `
             viewBox="0 0 448 512"
             width="1em"
           >
-<<<<<<< HEAD
             <path
               d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
             />
@@ -817,68 +506,6 @@ exports[`numberInput renders disabled 1`] = `
       >
         <span
           class="pf-c-number-input__icon"
-=======
-            <button
-              aria-disabled={true}
-              aria-label="Minus"
-              className="pf-c-button pf-m-control pf-m-disabled"
-              data-ouia-component-id="OUIA-Generated-Button-control-5"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={true}
-              onClick={[Function]}
-              role={null}
-              tabIndex={null}
-              type="button"
-            >
-              <span
-                className="pf-c-number-input__icon"
-              >
-                <MinusIcon
-                  aria-hidden="true"
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                >
-                  <svg
-                    aria-hidden="true"
-                    aria-labelledby={null}
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style={
-                      Object {
-                        "verticalAlign": "-0.125em",
-                      }
-                    }
-                    viewBox="0 0 448 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                    />
-                  </svg>
-                </MinusIcon>
-              </span>
-            </button>
-          </ButtonBase>
-        </Button>
-        <input
-          aria-label="Input"
-          className="pf-c-form-control"
-          disabled={true}
-          onBlur={[Function]}
-          onKeyDown={[Function]}
-          readOnly={true}
-          type="number"
-          value={90}
-        />
-        <Button
-          aria-label="Plus"
-          isDisabled={true}
-          onClick={[Function]}
-          variant="control"
->>>>>>> 68ee8df2d (fix(NumberInput): better support for min/max)
         >
           <svg
             aria-hidden="true"
@@ -934,7 +561,6 @@ exports[`numberInput renders unit & position 1`] = `
             viewBox="0 0 448 512"
             width="1em"
           >
-<<<<<<< HEAD
             <path
               d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
             />
@@ -959,66 +585,6 @@ exports[`numberInput renders unit & position 1`] = `
       >
         <span
           class="pf-c-number-input__icon"
-=======
-            <button
-              aria-disabled={false}
-              aria-label="Minus"
-              className="pf-c-button pf-m-control"
-              data-ouia-component-id="OUIA-Generated-Button-control-13"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={false}
-              onClick={[Function]}
-              role={null}
-              type="button"
-            >
-              <span
-                className="pf-c-number-input__icon"
-              >
-                <MinusIcon
-                  aria-hidden="true"
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                >
-                  <svg
-                    aria-hidden="true"
-                    aria-labelledby={null}
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style={
-                      Object {
-                        "verticalAlign": "-0.125em",
-                      }
-                    }
-                    viewBox="0 0 448 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                    />
-                  </svg>
-                </MinusIcon>
-              </span>
-            </button>
-          </ButtonBase>
-        </Button>
-        <input
-          aria-label="Input"
-          className="pf-c-form-control"
-          onBlur={[Function]}
-          onKeyDown={[Function]}
-          readOnly={true}
-          type="number"
-          value={5}
-        />
-        <Button
-          aria-label="Plus"
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
->>>>>>> 68ee8df2d (fix(NumberInput): better support for min/max)
         >
           <svg
             aria-hidden="true"
@@ -1069,7 +635,6 @@ exports[`numberInput renders unit 1`] = `
             viewBox="0 0 448 512"
             width="1em"
           >
-<<<<<<< HEAD
             <path
               d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
             />
@@ -1094,66 +659,6 @@ exports[`numberInput renders unit 1`] = `
       >
         <span
           class="pf-c-number-input__icon"
-=======
-            <button
-              aria-disabled={false}
-              aria-label="Minus"
-              className="pf-c-button pf-m-control"
-              data-ouia-component-id="OUIA-Generated-Button-control-11"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={false}
-              onClick={[Function]}
-              role={null}
-              type="button"
-            >
-              <span
-                className="pf-c-number-input__icon"
-              >
-                <MinusIcon
-                  aria-hidden="true"
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                >
-                  <svg
-                    aria-hidden="true"
-                    aria-labelledby={null}
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style={
-                      Object {
-                        "verticalAlign": "-0.125em",
-                      }
-                    }
-                    viewBox="0 0 448 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                    />
-                  </svg>
-                </MinusIcon>
-              </span>
-            </button>
-          </ButtonBase>
-        </Button>
-        <input
-          aria-label="Input"
-          className="pf-c-form-control"
-          onBlur={[Function]}
-          onKeyDown={[Function]}
-          readOnly={true}
-          type="number"
-          value={5}
-        />
-        <Button
-          aria-label="Plus"
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
->>>>>>> 68ee8df2d (fix(NumberInput): better support for min/max)
         >
           <svg
             aria-hidden="true"
@@ -1209,7 +714,6 @@ exports[`numberInput renders value 1`] = `
             viewBox="0 0 448 512"
             width="1em"
           >
-<<<<<<< HEAD
             <path
               d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
             />
@@ -1234,66 +738,6 @@ exports[`numberInput renders value 1`] = `
       >
         <span
           class="pf-c-number-input__icon"
-=======
-            <button
-              aria-disabled={false}
-              aria-label="Minus"
-              className="pf-c-button pf-m-control"
-              data-ouia-component-id="OUIA-Generated-Button-control-3"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={false}
-              onClick={[Function]}
-              role={null}
-              type="button"
-            >
-              <span
-                className="pf-c-number-input__icon"
-              >
-                <MinusIcon
-                  aria-hidden="true"
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                >
-                  <svg
-                    aria-hidden="true"
-                    aria-labelledby={null}
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style={
-                      Object {
-                        "verticalAlign": "-0.125em",
-                      }
-                    }
-                    viewBox="0 0 448 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                    />
-                  </svg>
-                </MinusIcon>
-              </span>
-            </button>
-          </ButtonBase>
-        </Button>
-        <input
-          aria-label="Input"
-          className="pf-c-form-control"
-          onBlur={[Function]}
-          onKeyDown={[Function]}
-          readOnly={true}
-          type="number"
-          value={90}
-        />
-        <Button
-          aria-label="Plus"
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
->>>>>>> 68ee8df2d (fix(NumberInput): better support for min/max)
         >
           <svg
             aria-hidden="true"
