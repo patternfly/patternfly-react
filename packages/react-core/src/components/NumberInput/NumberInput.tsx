@@ -59,18 +59,6 @@ const defaultKeyDownHandler = (args: DefaultKeyDownHandlerArgs) => (event: React
   }
 };
 
-// const normalizeBetween = ({ value, min, max }: Pick<NumberInputProps, 'value' | 'min' | 'max'>) => {
-//   let result = value;
-//   if (min !== undefined && max !== undefined) {
-//     result = Math.max(Math.min(value, max), min);
-//   } else if (max === undefined && value <= min) {
-//     result = min;
-//   } else if (min === undefined && value >= max) {
-//     result = max;
-//   }
-//   return result;
-// };
-
 export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   value = 0,
   className,
