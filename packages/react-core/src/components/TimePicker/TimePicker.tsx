@@ -82,7 +82,7 @@ interface TimePickerState {
 
 export class TimePicker extends React.Component<TimePickerProps, TimePickerState> {
   static displayName = 'TimePicker';
-  private parentRef = React.createRef<HTMLDivElement>();
+  private baseComponentRef = React.createRef<any>();
   private toggleRef = React.createRef<HTMLDivElement>();
   private inputRef = React.createRef<HTMLInputElement>();
   private menuRef = React.createRef<HTMLDivElement>();
@@ -143,7 +143,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   }
 
   onDocClick = (event: MouseEvent | TouchEvent) => {
-    const clickedOnToggle = this.parentRef?.current?.contains(event.target as Node);
+    const clickedOnToggle = this.toggleRef?.current?.contains(event.target as Node);
     const clickedWithinMenu = this.menuRef?.current?.contains(event.target as Node);
     if (this.state.isOpen && !(clickedOnToggle || clickedWithinMenu)) {
       this.onToggle(false);
@@ -431,6 +431,13 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     const isValidFormat = this.isValidFormat(timeState);
     const randomId = id || getUniqueId('time-picker');
 
+    const getParentElement = () => {
+      if (this.baseComponentRef && this.baseComponentRef.current) {
+        return this.baseComponentRef.current.parentElement;
+      }
+      return null;
+    };
+
     const menuContainer = (
       <Menu ref={this.menuRef} isScrollable>
         <MenuContent maxMenuHeight="200px">
@@ -467,14 +474,14 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     );
 
     return (
-      <div className={css(datePickerStyles.datePicker, className)}>
+      <div ref={this.baseComponentRef} className={css(datePickerStyles.datePicker, className)}>
         <div className={css(datePickerStyles.datePickerInput)} style={style} {...props}>
           <InputGroup>
-            <div id={randomId} ref={this.parentRef}>
+            <div id={randomId}>
               <div ref={this.toggleRef} style={{ paddingLeft: '0' }}>
                 {menuAppendTo !== 'inline' ? (
                   <Popper
-                    appendTo={menuAppendTo === 'parent' ? this.parentRef.current : menuAppendTo}
+                    appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
                     trigger={textInput}
                     popper={menuContainer}
                     isVisible={isOpen}
