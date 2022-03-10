@@ -4,18 +4,18 @@ section: developer-resources
 ---
 
 ## 2022.03 release notes (2022-03-09)
-- [@patternfly/react-catalog-view-extension@4.49.19](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.49.19)
-- [@patternfly/react-charts@6.51.19](https://www.npmjs.com/package/@patternfly/react-charts/v/6.51.19)
-- [@patternfly/react-code-editor@4.39.19](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.39.19)
-- [@patternfly/react-core@4.198.19](https://www.npmjs.com/package/@patternfly/react-core/v/4.198.19)
-- [@patternfly/react-icons@4.49.19](https://www.npmjs.com/package/@patternfly/react-icons/v/4.49.19)
-- [@patternfly/react-inline-edit-extension@4.43.19](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.43.19)
-- [@patternfly/react-log-viewer@4.43.19](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.43.19)
-- [@patternfly/react-styles@4.48.19](https://www.npmjs.com/package/@patternfly/react-styles/v/4.48.19)
-- [@patternfly/react-table@4.67.19](https://www.npmjs.com/package/@patternfly/react-table/v/4.67.19)
-- [@patternfly/react-tokens@4.50.19](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.50.19)
-- [@patternfly/react-topology@4.45.19](https://www.npmjs.com/package/@patternfly/react-topology/v/4.45.19)
-- [@patternfly/react-virtualized-extension@4.45.19](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.45.19)
+- [@patternfly/react-catalog-view-extension@4.49.20](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.49.20)
+- [@patternfly/react-charts@6.51.20](https://www.npmjs.com/package/@patternfly/react-charts/v/6.51.20)
+- [@patternfly/react-code-editor@4.39.20](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.39.20)
+- [@patternfly/react-core@4.198.20](https://www.npmjs.com/package/@patternfly/react-core/v/4.198.19)
+- [@patternfly/react-icons@4.49.20](https://www.npmjs.com/package/@patternfly/react-icons/v/4.49.20)
+- [@patternfly/react-inline-edit-extension@4.43.20](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.43.20)
+- [@patternfly/react-log-viewer@4.43.20](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.43.20)
+- [@patternfly/react-styles@4.48.20](https://www.npmjs.com/package/@patternfly/react-styles/v/4.48.20)
+- [@patternfly/react-table@4.67.20](https://www.npmjs.com/package/@patternfly/react-table/v/4.67.20)
+- [@patternfly/react-tokens@4.50.20](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.50.20)
+- [@patternfly/react-topology@4.45.20](https://www.npmjs.com/package/@patternfly/react-topology/v/4.45.20)
+- [@patternfly/react-virtualized-extension@4.45.20](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.45.20)
 
 ### Components
 - **Alert group:**
@@ -24,6 +24,8 @@ section: developer-resources
   - Converted examples to TypeScript and functional components ([#6954](https://github.com/patternfly/patternfly-react/pull/6954))
 - **Chip:**
   - Separated chip and chip group docs ([#6981](https://github.com/patternfly/patternfly-react/pull/6981))
+  - **Chip group:**
+  - Added chip props back to the chip group page ([#7049](https://github.com/patternfly/patternfly-react/pull/7049))
 - **Clipboard copy:**
   - Fixed rendering comma issue in some situations ([#6971](https://github.com/patternfly/patternfly-react/pull/6971))
 - **Code editor:**
