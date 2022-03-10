@@ -2,7 +2,7 @@
 id: Chip group
 section: components
 cssPrefix: pf-c-chip-group
-propComponents: ['ChipGroup']
+propComponents: ['Chip', 'ChipGroup']
 ouia: true
 ---
 
