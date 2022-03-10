@@ -23,6 +23,8 @@ export interface FormSelectProps
   isDisabled?: boolean;
   /** Sets the FormSelect required. */
   isRequired?: boolean;
+  /** Use the external file instead of a data URI */
+  isIconSprite?: boolean;
   /** Optional callback for updating when selection loses focus */
   onBlur?: (event: React.FormEvent<HTMLSelectElement>) => void;
   /** Optional callback for updating when selection gets focus */
@@ -52,6 +54,7 @@ export class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: 
     validated: 'default',
     isDisabled: false,
     isRequired: false,
+    isIconSprite: false,
     onBlur: (): any => undefined,
     onFocus: (): any => undefined,
     onChange: (): any => undefined,
@@ -63,7 +66,18 @@ export class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: 
   };
 
   render() {
-    const { children, className, value, validated, isDisabled, isRequired, ouiaId, ouiaSafe, ...props } = this.props;
+    const {
+      children,
+      className,
+      value,
+      validated,
+      isDisabled,
+      isRequired,
+      isIconSprite,
+      ouiaId,
+      ouiaSafe,
+      ...props
+    } = this.props;
     /* find selected option and get placeholder flag */
     const selectedOption = React.Children.toArray(children).find((option: any) => option.props.value === value) as any;
     const isSelectedPlaceholder = selectedOption && selectedOption.props.isPlaceholder;
@@ -72,6 +86,7 @@ export class FormSelect extends React.Component<FormSelectProps, { ouiaStateId: 
         {...props}
         className={css(
           styles.formControl,
+          isIconSprite && styles.modifiers.iconSprite,
           className,
           validated === ValidatedOptions.success && styles.modifiers.success,
           validated === ValidatedOptions.warning && styles.modifiers.warning,
