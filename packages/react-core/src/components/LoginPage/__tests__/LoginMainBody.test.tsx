@@ -1,21 +1,15 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
-import { shallow } from 'enzyme';
-
+import { render, screen } from '@testing-library/react';
 import { LoginMainBody } from '../LoginMainBody';
 
-test('renders with PatternFly Core styles', () => {
-  const view = render(<LoginMainBody />);
-  expect(view.container).toMatchSnapshot();
-});
+describe('LoginMainBody', () => {
+  test('renders with PatternFly Core styles', () => {
+    render(<LoginMainBody data-testid="test-id" />);
+    expect(screen.getByTestId('test-id').outerHTML).toMatchSnapshot();
+  });
 
-test('className is added to the root element', () => {
-  const view = shallow(<LoginMainBody className="extra-class" />);
-  expect(view.prop('className')).toMatchSnapshot();
-});
-
-test('extra props are spread to the root element', () => {
-  const testId = 'login-body';
-  const view = shallow(<LoginMainBody data-testid={testId} />);
-  expect(view.prop('data-testid')).toBe(testId);
+  test('className is added to the root element', () => {
+    render(<LoginMainBody className="extra-class" data-testid="test-id" />);
+    expect(screen.getByTestId('test-id').outerHTML).toMatchSnapshot();
+  });
 });

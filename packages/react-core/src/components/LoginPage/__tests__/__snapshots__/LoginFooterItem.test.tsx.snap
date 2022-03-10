@@ -1,20 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginFooterItem  with custom node 1`] = `
-<div>
-  <div>
-    My custom node
-  </div>
-</div>
-`;
+exports[`LoginFooterItem className is added to the root element 1`] = `"<a target=\\"_blank\\" href=\\"#\\"></a>"`;
 
-exports[`className is added to the root element 1`] = `undefined`;
+exports[`LoginFooterItem renders with PatternFly Core styles 1`] = `"<a target=\\"_self\\" href=\\"#\\"></a>"`;
 
-exports[`renders with PatternFly Core styles 1`] = `
-<div>
-  <a
-    href="#"
-    target="_self"
-  />
-</div>
-`;
+exports[`LoginFooterItem with custom node 1`] = `"<div>My custom node</div>"`;

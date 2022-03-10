@@ -1,35 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginFooterItem  with custom node 1`] = `
-<div>
-  <li
-    class="pf-c-login__main-footer-links-item"
-  >
-    <a
-      class="pf-c-login__main-footer-links-item-link"
-      href=""
-      target=""
-    >
-      <div>
-        My custom node
-      </div>
-    </a>
-  </li>
-</div>
-`;
+exports[`LoginMainFooterLinksItem className is added to the root element 1`] = `"<li class=\\"pf-c-login__main-footer-links-item extra-class\\"><a class=\\"pf-c-login__main-footer-links-item-link\\" href=\\"\\" target=\\"\\"></a></li>"`;
 
-exports[`className is added to the root element 1`] = `"pf-c-login__main-footer-links-item extra-class"`;
+exports[`LoginMainFooterLinksItem renders with PatternFly Core styles 1`] = `"<li class=\\"pf-c-login__main-footer-links-item\\"><a class=\\"pf-c-login__main-footer-links-item-link\\" href=\\"#\\" target=\\"\\"></a></li>"`;
 
-exports[`renders with PatternFly Core styles 1`] = `
-<div>
-  <li
-    class="pf-c-login__main-footer-links-item"
-  >
-    <a
-      class="pf-c-login__main-footer-links-item-link"
-      href="#"
-      target=""
-    />
-  </li>
-</div>
-`;
+exports[`LoginMainFooterLinksItem with custom node 1`] = `"<li class=\\"pf-c-login__main-footer-links-item\\"><a class=\\"pf-c-login__main-footer-links-item-link\\" href=\\"\\" target=\\"\\"><div>My custom node</div></a></li>"`;

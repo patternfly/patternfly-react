@@ -1,84 +1,143 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { shallow, mount } from 'enzyme';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+
 import { Label } from '../Label';
 
-test('label', () => {
-  const view = render(<Label>Something</Label>);
-  expect(view.container).toMatchSnapshot();
-  const outline = render(<Label variant="outline">Something</Label>);
-  expect(outline).toMatchSnapshot();
-  const compact = render(<Label isCompact>Something</Label>);
-  expect(compact).toMatchSnapshot();
-});
+const labelColors = ['blue', 'cyan', 'green', 'orange', 'purple', 'red', 'grey'];
 
-test('label with href', () => {
-  const view = render(<Label href="#">Something</Label>);
-  expect(view.container).toMatchSnapshot();
-  const outline = render(
-    <Label href="#" variant="outline">
-      Something
-    </Label>
-  );
-  expect(outline).toMatchSnapshot();
-});
+describe('Label', () => {
+  test('renders', () => {
+    render(<Label data-testid="label-test-id">Something</Label>);
+    expect(screen.getByTestId('label-test-id').outerHTML).toMatchSnapshot();
+  });
 
-test('label with close button', () => {
-  const view = render(<Label onClose={jest.fn()}>Something</Label>);
-  expect(view.container).toMatchSnapshot();
-  const outline = render(
-    <Label onClose={jest.fn()} variant="outline">
-      Something
-    </Label>
-  );
-  expect(outline).toMatchSnapshot();
-});
+  test('renders with outline variant', () => {
+    render(
+      <Label variant="outline" data-testid="label-test-id">
+        Something
+      </Label>
+    );
+    expect(screen.getByTestId('label-test-id').outerHTML).toMatchSnapshot();
+  });
 
-['blue', 'cyan', 'green', 'orange', 'purple', 'red', 'grey'].forEach(
-  (color: string) =>
+  test('renders with isCompact', () => {
+    render(
+      <Label isCompact data-testid="label-test-id">
+        Something
+      </Label>
+    );
+    expect(screen.getByTestId('label-test-id').outerHTML).toMatchSnapshot();
+  });
+
+  test('label with href', () => {
+    render(
+      <Label href="#" data-testid="label-test-id">
+        Something
+      </Label>
+    );
+    expect(screen.getByTestId('label-test-id').outerHTML).toMatchSnapshot();
+  });
+
+  test('label with href with outline variant', () => {
+    render(
+      <Label href="#" variant="outline" data-testid="label-test-id">
+        Something
+      </Label>
+    );
+    expect(screen.getByTestId('label-test-id').outerHTML).toMatchSnapshot();
+  });
+
+  test('label with close button', () => {
+    render(
+      <Label onClose={jest.fn()} data-testid="label-test-id">
+        Something
+      </Label>
+    );
+
+    expect(screen.getByTestId('label-test-id').outerHTML).toMatchSnapshot();
+  });
+
+  test('label with close button and outline variant', () => {
+    render(
+      <Label onClose={jest.fn()} variant="outline" data-testid="label-test-id">
+        Something
+      </Label>
+    );
+    expect(screen.getByTestId('label-test-id').outerHTML).toMatchSnapshot();
+  });
+
+  labelColors.forEach((color: string) =>
     test(`label with ${color} color`, () => {
-      const view = render(<Label color={color as any}>Something</Label>);
-      expect(view.container).toMatchSnapshot();
-      const outline = render(
-        <Label color={color as any} variant="outline">
+      render(
+        <Label color={color as any} data-testid="label-test-id">
           Something
         </Label>
       );
-      expect(outline.container).toMatchSnapshot();
+      expect(screen.getByTestId('label-test-id').outerHTML).toMatchSnapshot();
     })
-);
-
-test('label with additional class name', () => {
-  const view = render(<Label className="klass1">Something</Label>);
-  expect(view.container).toMatchSnapshot();
-});
-
-test('label with additional class name and props', () => {
-  const view = render(
-    <Label className="class-1" id="label-1" data-label-name="something">
-      Something
-    </Label>
   );
-  expect(view.container).toMatchSnapshot();
-});
 
-test('label with truncation', () => {
-  const view = render(<Label isTruncated>Something very very very very very long that should be truncated</Label>);
-  expect(view.container).toMatchSnapshot();
-});
+  labelColors.forEach((color: string) =>
+    test(`label with ${color} color with outline variant`, () => {
+      render(
+        <Label color={color as any} variant="outline" data-testid="label-test-id">
+          Something
+        </Label>
+      );
+      expect(screen.getByTestId('label-test-id').outerHTML).toMatchSnapshot();
+    })
+  );
 
-test('editable label', () => {
-  const view = mount(
-    <Label onClose={jest.fn()}
-           onEditCancel={jest.fn()}
-           onEditComplete={jest.fn()}
-           isEditable>Something</Label>);
-  const button = view.find('button.pf-c-label__content');
-  expect(button.length).toBe(1);
-  expect(view).toMatchSnapshot();
+  test('label with additional class name', () => {
+    render(
+      <Label className="klass1" data-testid="label-test-id">
+        Something
+      </Label>
+    );
+    expect(screen.getByTestId('label-test-id').outerHTML).toMatchSnapshot();
+  });
 
-  button.simulate('click');
-  const clickedButton = view.find('button.pf-c-label__content');
-  expect(clickedButton.length).toBe(0);
-  expect(view).toMatchSnapshot();
+  test('label with additional class name and props', () => {
+    render(
+      <Label className="class-1" id="label-1" data-label-name="something" data-testid="label-test-id">
+        Something
+      </Label>
+    );
+    expect(screen.getByTestId('label-test-id').outerHTML).toMatchSnapshot();
+  });
+
+  test('label with truncation', () => {
+    render(
+      <Label isTruncated data-testid="label-test-id">
+        Something very very very very very long that should be truncated
+      </Label>
+    );
+    expect(screen.getByTestId('label-test-id').outerHTML).toMatchSnapshot();
+  });
+
+  test('editable label', () => {
+    render(
+      <Label
+        onClose={jest.fn()}
+        onEditCancel={jest.fn()}
+        onEditComplete={jest.fn()}
+        isEditable
+        data-testid="label-test-id"
+      >
+        Something
+      </Label>
+    );
+
+    const button = screen.getByRole('button', { name: 'Something' });
+
+    expect(button).toBeInTheDocument();
+    expect(screen.getByTestId('label-test-id').outerHTML).toMatchSnapshot();
+
+    userEvent.click(button);
+    expect(screen.queryByRole('button', { name: 'Something' })).toBeNull();
+    expect(screen.getByTestId('label-test-id').outerHTML).toMatchSnapshot();
+  });
 });
