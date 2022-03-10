@@ -1,29 +1,31 @@
-/**
- * This test was generated
- */
-import * as React from 'react';
-import { shallow } from 'enzyme';
-import { DropdownItem } from '../../DropdownItem';
-// any missing imports can usually be resolved by adding them here
-import {} from '../..';
+import React from 'react';
 
-it('DropdownItem should match snapshot (auto-generated)', () => {
-  const view = shallow(
-    <DropdownItem
-      children={<>ReactNode</>}
-      className={"''"}
-      listItemClassName={'string'}
-      component={'a'}
-      isDisabled={false}
-      isPlainText={false}
-      isHovered={false}
-      href={'string'}
-      tooltip={null}
-      tooltipProps={undefined}
-      additionalChild={<div>ReactNode</div>}
-      customChild={<div>ReactNode</div>}
-      icon={null}
-    />
-  );
-  expect(view).toMatchSnapshot();
+import { render } from '@testing-library/react';
+
+import { DropdownItem } from '../../DropdownItem';
+import { DropdownArrowContext } from '../../dropdownConstants';
+
+describe('DropdownItem', () => {
+  it('should match snapshot', () => {
+    const view = render(
+      <DropdownArrowContext.Provider value={{ sendRef: jest.fn(), keyHandler: undefined }}>
+        <DropdownItem
+          children={<>ReactNode</>}
+          className={"''"}
+          listItemClassName={'string'}
+          component={'a'}
+          isDisabled={false}
+          isPlainText={false}
+          isHovered={false}
+          href={'string'}
+          tooltip={null}
+          tooltipProps={undefined}
+          additionalChild={<div>ReactNode</div>}
+          customChild={<div>ReactNode</div>}
+          icon={null}
+        />
+      </DropdownArrowContext.Provider>
+    );
+    expect(view.container).toMatchSnapshot();
+  });
 });

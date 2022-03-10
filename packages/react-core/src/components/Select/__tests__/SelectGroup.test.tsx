@@ -1,14 +1,21 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { SelectGroup } from '../SelectGroup';
 
-describe('select group', () => {
+import { render, screen } from '@testing-library/react';
+
+import { SelectGroup } from '../SelectGroup';
+import { SelectProvider } from '../selectConstants';
+
+describe('SelectGroup', () => {
   test('renders with children successfully', () => {
-    const view = shallow(
-      <SelectGroup label="test">
-        <div>child</div>
-      </SelectGroup>
+    render(
+      <SelectProvider
+        value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+      >
+        <SelectGroup label="test" data-testid="test-id">
+          <div>child</div>
+        </SelectGroup>
+      </SelectProvider>
     );
-    expect(view).toMatchSnapshot();
+    expect(screen.getByTestId('test-id').outerHTML).toMatchSnapshot();
   });
 });

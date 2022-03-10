@@ -1,21 +1,31 @@
-/**
- * This test was generated
- */
-import * as React from 'react';
-import { shallow } from 'enzyme';
-import { NavList } from '../../NavList';
-// any missing imports can usually be resolved by adding them here
-import {} from '../..';
+import React from 'react';
 
-it('NavList should match snapshot (auto-generated)', () => {
-  const view = shallow(
-    <NavList
-      children={<>ReactNode</>}
-      className={"''"}
-      variant={'default'}
-      ariaLeftScroll={"'Scroll left'"}
-      ariaRightScroll={"'Scroll right'"}
-    />
-  );
-  expect(view).toMatchSnapshot();
+import { render } from '@testing-library/react';
+import * as ReactCoreUtils from '@patternfly/react-core/src/helpers/util';
+
+import { NavList } from '../../NavList';
+import { NavContext } from '../../Nav';
+
+describe('NavList', () => {
+  beforeAll(() => {
+    jest.spyOn(ReactCoreUtils, 'isElementInView').mockReturnValue(true);
+  });
+
+  it('should match snapshot', () => {
+    const view = render(
+      <NavContext.Provider
+        value={{
+          onSelect: jest.fn(),
+          onToggle: jest.fn(),
+          updateIsScrollable: jest.fn(),
+          isHorizontal: false,
+          flyoutRef: undefined,
+          setFlyoutRef: jest.fn()
+        }}
+      >
+        <NavList children={<>ReactNode</>} className="" ariaLeftScroll="Scroll left" ariaRightScroll="Scroll right" />
+      </NavContext.Provider>
+    );
+    expect(view.container).toMatchSnapshot();
+  });
 });

@@ -1,18 +1,17 @@
-/**
- * This test was generated
- */
-import * as React from 'react';
-import { shallow } from 'enzyme';
-import { DropdownSeparator } from '../../DropdownSeparator';
-// any missing imports can usually be resolved by adding them here
-import {} from '../..';
+import React from 'react';
 
-it('DropdownSeparator should match snapshot (auto-generated)', () => {
-  const view = shallow(
-    <DropdownSeparator
-      className={"''"}
-      onClick={(event: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent | MouseEvent) => undefined as void}
-    />
-  );
-  expect(view).toMatchSnapshot();
+import { render } from '@testing-library/react';
+
+import { DropdownSeparator } from '../../DropdownSeparator';
+import { DropdownArrowContext } from '../../dropdownConstants';
+
+describe('DropdownSeparator', () => {
+  it('should match snapshot', () => {
+    const view = render(
+      <DropdownArrowContext.Provider value={{ sendRef: jest.fn(), keyHandler: undefined }}>
+        <DropdownSeparator className={"''"} onClick={() => console.log('clicked')} />
+      </DropdownArrowContext.Provider>
+    );
+    expect(view.container).toMatchSnapshot();
+  });
 });

@@ -1,13 +1,25 @@
-/**
- * This test was generated
- */
-import * as React from 'react';
-import { shallow } from 'enzyme';
-import { SelectGroup } from '../../SelectGroup';
-// any missing imports can usually be resolved by adding them here
-import {} from '../..';
+import React from 'react';
 
-it('SelectGroup should match snapshot (auto-generated)', () => {
-  const view = shallow(<SelectGroup children={[]} className={"''"} label={"''"} titleId={"''"} />);
-  expect(view).toMatchSnapshot();
+import { render } from '@testing-library/react';
+
+import { SelectGroup } from '../../SelectGroup';
+import { SelectContext } from '../..';
+
+describe('SelectGroup', () => {
+  it('should match snapshot', () => {
+    const view = render(
+      <SelectContext.Provider
+        value={{
+          onSelect: jest.fn(),
+          onClose: jest.fn(),
+          onFavorite: jest.fn(),
+          variant: 'default',
+          inputIdPrefix: 'something'
+        }}
+      >
+        <SelectGroup children={[]} className="" label="" titleId="" />
+      </SelectContext.Provider>
+    );
+    expect(view.container).toMatchSnapshot();
+  });
 });

@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DropdownSeparator should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+exports[`DropdownSeparator should match snapshot 1`] = `
+<div>
+  <li
+    role="separator"
+  >
+    <div
+      class="pf-c-divider ''"
+      role="separator"
+    />
+  </li>
+</div>
 `;

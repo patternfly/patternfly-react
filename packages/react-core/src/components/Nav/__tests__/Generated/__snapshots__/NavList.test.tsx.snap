@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavList should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+exports[`NavList should match snapshot 1`] = `
+<div>
+  <ul
+    class="pf-c-nav__list"
+  >
+    ReactNode
+  </ul>
+</div>
 `;

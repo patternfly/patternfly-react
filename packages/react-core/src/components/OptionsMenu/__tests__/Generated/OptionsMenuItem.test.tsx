@@ -1,22 +1,24 @@
-/**
- * This test was generated
- */
-import * as React from 'react';
-import { shallow } from 'enzyme';
-import { OptionsMenuItem } from '../../OptionsMenuItem';
-// any missing imports can usually be resolved by adding them here
-import {} from '../..';
+import React from 'react';
 
-it('OptionsMenuItem should match snapshot (auto-generated)', () => {
-  const view = shallow(
-    <OptionsMenuItem
-      children={<>ReactNode</>}
-      className={'string'}
-      isSelected={false}
-      isDisabled={true}
-      onSelect={() => null as any}
-      id={"''"}
-    />
-  );
-  expect(view).toMatchSnapshot();
+import { render } from '@testing-library/react';
+
+import { OptionsMenuItem } from '../../OptionsMenuItem';
+import { DropdownArrowContext } from '../../../Dropdown';
+
+describe('OptionsMenuItem', () => {
+  it('should match snapshot', () => {
+    const view = render(
+      <DropdownArrowContext.Provider value={{ sendRef: jest.fn(), keyHandler: undefined }}>
+        <OptionsMenuItem
+          children={<>ReactNode</>}
+          className={'string'}
+          isSelected={false}
+          isDisabled={true}
+          onSelect={() => null as any}
+          id={"''"}
+        />{' '}
+      </DropdownArrowContext.Provider>
+    );
+    expect(view.container).toMatchSnapshot();
+  });
 });

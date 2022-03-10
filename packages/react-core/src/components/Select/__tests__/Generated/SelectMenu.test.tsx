@@ -1,29 +1,25 @@
-/**
- * This test was generated
- */
-import * as React from 'react';
-import { shallow } from 'enzyme';
-import { SelectMenu } from '../../SelectMenu';
-// any missing imports can usually be resolved by adding them here
-import {} from '../..';
+import React from 'react';
 
-it('SelectMenu should match snapshot (auto-generated)', () => {
-  const view = shallow(
-    <SelectMenu
-      children={[undefined as React.ReactElement]}
-      isCustomContent={false}
-      className={"''"}
-      isExpanded={false}
-      isGrouped={false}
-      selected={''}
-      checked={[]}
-      openedOnEnter={false}
-      maxHeight={''}
-      noResultsFoundText={'string'}
-      createText={'string'}
-      sendRef={() => {}}
-      keyHandler={() => {}}
-    />
-  );
-  expect(view).toMatchSnapshot();
+import { render } from '@testing-library/react';
+
+import { SelectMenu } from '../../SelectMenu';
+import { SelectContext } from '../..';
+
+describe('SelectMenu', () => {
+  it('should match snapshot', () => {
+    const view = render(
+      <SelectContext.Provider
+        value={{
+          onSelect: jest.fn(),
+          onClose: jest.fn(),
+          onFavorite: jest.fn(),
+          variant: 'default',
+          inputIdPrefix: 'something'
+        }}
+      >
+        <SelectMenu />
+      </SelectContext.Provider>
+    );
+    expect(view.container).toMatchSnapshot();
+  });
 });

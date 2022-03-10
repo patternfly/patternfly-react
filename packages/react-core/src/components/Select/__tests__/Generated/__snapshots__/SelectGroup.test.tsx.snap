@@ -1,7 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SelectGroup should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+exports[`SelectGroup should match snapshot 1`] = `
+<div>
+  <div
+    class="pf-c-select__menu-group"
+  >
+    <div
+      aria-hidden="true"
+      class="pf-c-select__menu-group-title"
+      id=""
+    />
+    <ul
+      role="listbox"
+    />
+  </div>
+</div>
 `;

@@ -1,14 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OptionsMenuItem should match snapshot (auto-generated) 1`] = `
-<DropdownItem
-  aria-disabled={true}
-  className="string"
-  component="button"
-  id="''"
-  isDisabled={true}
-  onClick={[Function]}
->
-  ReactNode
-</DropdownItem>
+exports[`OptionsMenuItem should match snapshot 1`] = `
+<div>
+  <li
+    id="''"
+    role="menuitem"
+  >
+    <button
+      aria-disabled="true"
+      class="string"
+      data-ouia-component-id="OUIA-Generated-DropdownItem-1"
+      data-ouia-component-type="PF4/DropdownItem"
+      data-ouia-safe="true"
+      tabindex="-1"
+      type="button"
+    >
+      ReactNode
+    </button>
+  </li>
+   
+</div>
 `;
