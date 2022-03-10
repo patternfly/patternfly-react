@@ -1,11 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`className is added to the root element 1`] = `"pf-c-notification-drawer__group-list extra-class"`;
+exports[`NotificationDrawerGroupList className is added to the root element 1`] = `"pf-c-notification-drawer__group-list extra-class"`;
 
-exports[`renders with PatternFly Core styles 1`] = `
-<div>
-  <div
-    class="pf-c-notification-drawer__group-list"
-  />
-</div>
-`;
+exports[`NotificationDrawerGroupList renders with PatternFly Core styles 1`] = `"<div data-testid=\\"test-id\\" class=\\"pf-c-notification-drawer__group-list\\"></div>"`;
