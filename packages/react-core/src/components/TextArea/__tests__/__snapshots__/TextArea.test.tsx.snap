@@ -1,180 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`disabled text input using disabled 1`] = `
-<div>
-  <textarea
-    aria-invalid="false"
-    aria-label="disabled textarea"
-    class="pf-c-form-control"
-    disabled=""
-  >
-    test textarea
-  </textarea>
-</div>
-`;
+exports[`TextArea disabled text input using disabled 1`] = `"<textarea class=\\"pf-c-form-control\\" aria-invalid=\\"false\\" disabled=\\"\\" aria-label=\\"disabled textarea\\">test textarea</textarea>"`;
 
-exports[`disabled text input using isDisabled 1`] = `
-<div>
-  <textarea
-    aria-invalid="false"
-    aria-label="is disabled textarea"
-    class="pf-c-form-control"
-    disabled=""
-  >
-    test textarea
-  </textarea>
-</div>
-`;
+exports[`TextArea disabled text input using isDisabled 1`] = `"<textarea class=\\"pf-c-form-control\\" aria-invalid=\\"false\\" disabled=\\"\\" aria-label=\\"is disabled textarea\\">test textarea</textarea>"`;
 
-exports[`horizontally resizable text area 1`] = `
-<div>
-  <textarea
-    aria-invalid="true"
-    aria-label="horizontal resize textarea"
-    class="pf-c-form-control pf-m-resize-horizontal"
-    required=""
-  >
-    test textarea
-  </textarea>
-</div>
-`;
+exports[`TextArea horizontally resizable text area 1`] = `"<textarea class=\\"pf-c-form-control pf-m-resize-horizontal\\" aria-invalid=\\"true\\" required=\\"\\" aria-label=\\"horizontal resize textarea\\">test textarea</textarea>"`;
 
-exports[`invalid text area 1`] = `
-<div>
-  <textarea
-    aria-invalid="true"
-    aria-label="invalid textarea"
-    class="pf-c-form-control"
-    required=""
-  >
-    test textarea
-  </textarea>
-</div>
-`;
+exports[`TextArea invalid text area 1`] = `"<textarea class=\\"pf-c-form-control\\" aria-invalid=\\"true\\" required=\\"\\" aria-label=\\"invalid textarea\\">test textarea</textarea>"`;
 
-exports[`read only text input using isReadOnly 1`] = `
-<div>
-  <textarea
-    aria-invalid="false"
-    aria-label="is read only textarea"
-    class="pf-c-form-control"
-    readonly=""
-  >
-    test textarea
-  </textarea>
-</div>
-`;
+exports[`TextArea read only text input using isReadOnly 1`] = `"<textarea class=\\"pf-c-form-control\\" aria-invalid=\\"false\\" readonly=\\"\\" aria-label=\\"is read only textarea\\">test textarea</textarea>"`;
 
-exports[`read only text input using readOnly 1`] = `
-<div>
-  <textarea
-    aria-invalid="false"
-    aria-label="read only textarea"
-    class="pf-c-form-control"
-    readonly=""
-  >
-    test textarea
-  </textarea>
-</div>
-`;
+exports[`TextArea read only text input using readOnly 1`] = `"<textarea class=\\"pf-c-form-control\\" aria-invalid=\\"false\\" readonly=\\"\\" aria-label=\\"read only textarea\\">test textarea</textarea>"`;
 
-exports[`simple text input 1`] = `
-<div>
-  <textarea
-    aria-invalid="false"
-    aria-label="simple textarea"
-    class="pf-c-form-control"
-  >
-    test textarea
-  </textarea>
-</div>
-`;
+exports[`TextArea simple text input 1`] = `"<textarea class=\\"pf-c-form-control\\" aria-invalid=\\"false\\" aria-label=\\"simple textarea\\">test textarea</textarea>"`;
 
-exports[`validated text area error 1`] = `
-<div>
-  <textarea
-    aria-invalid="true"
-    aria-label="validated textarea"
-    class="pf-c-form-control"
-    required=""
-  >
-    test textarea
-  </textarea>
-</div>
-`;
+exports[`TextArea validated text area error 1`] = `"<textarea class=\\"pf-c-form-control\\" aria-invalid=\\"true\\" required=\\"\\" aria-label=\\"validated textarea\\">test textarea</textarea>"`;
 
-exports[`validated text area success 1`] = `
-<TextArea
-  aria-label="validated textarea"
-  onChange={[MockFunction]}
-  required={true}
-  validated="success"
-  value="test textarea"
->
-  <TextArea
-    aria-label="validated textarea"
-    className=""
-    innerRef={null}
-    isDisabled={false}
-    isRequired={false}
-    onChange={[MockFunction]}
-    required={true}
-    resizeOrientation="both"
-    validated="success"
-    value="test textarea"
-  >
-    <textarea
-      aria-invalid={false}
-      aria-label="validated textarea"
-      className="pf-c-form-control pf-m-success"
-      onChange={[Function]}
-      required={true}
-      value="test textarea"
-    />
-  </TextArea>
-</TextArea>
-`;
-
-exports[`validated text area warning 1`] = `
-<TextArea
-  aria-label="validated textarea"
-  onChange={[MockFunction]}
-  required={true}
-  validated="warning"
-  value="test textarea"
->
-  <TextArea
-    aria-label="validated textarea"
-    className=""
-    innerRef={null}
-    isDisabled={false}
-    isRequired={false}
-    onChange={[MockFunction]}
-    required={true}
-    resizeOrientation="both"
-    validated="warning"
-    value="test textarea"
-  >
-    <textarea
-      aria-invalid={false}
-      aria-label="validated textarea"
-      className="pf-c-form-control pf-m-warning"
-      onChange={[Function]}
-      required={true}
-      value="test textarea"
-    />
-  </TextArea>
-</TextArea>
-`;
-
-exports[`vertically resizable text area 1`] = `
-<div>
-  <textarea
-    aria-invalid="false"
-    aria-label="vertical resize textarea"
-    class="pf-c-form-control pf-m-resize-vertical"
-  >
-    test textarea
-  </textarea>
-</div>
-`;
+exports[`TextArea vertically resizable text area 1`] = `"<textarea class=\\"pf-c-form-control pf-m-resize-vertical\\" aria-invalid=\\"false\\" aria-label=\\"vertical resize textarea\\">test textarea</textarea>"`;
