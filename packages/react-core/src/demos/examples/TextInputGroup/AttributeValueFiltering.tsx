@@ -17,10 +17,15 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 export const AttributeValueFiltering: React.FunctionComponent = () => {
+  interface chipData {
+    attribute: string;
+    values: string[];
+  }
+
   const [inputValue, setInputValue] = React.useState('');
   const [selectedKey, setSelectedKey] = React.useState('');
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
-  const [currentChips, setCurrentChips] = React.useState<string[]>([]);
+  const [currentChips, setCurrentChips] = React.useState<chipData[]>([]);
 
   interface attributeValueData {
     [attribute: string]: string[];
@@ -49,7 +54,7 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
   };
 
   /** callback for removing a chip from the chip selections */
-  const deleteChip = (chipToDelete: string) => {
+  const deleteChip = (chipToDelete: chipData) => {
     const newChips = currentChips.filter(chip => !Object.is(chip, chipToDelete));
     setCurrentChips(newChips);
   };
@@ -109,9 +114,36 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
     setMenuItems([headingItem, divider, ...filteredMenuItems]);
   }, [inputValue]);
 
-  /** add selected key/value pair as a chip in the chip group */
+  /** remove a value from an attribute, if all values have been removed then remove the chip entirely */
+  const deselectValue = (currentValues: string[], valueToRemove: string, otherChips: chipData[]) => {
+    const valuesToKeep = currentValues.filter(value => value !== valueToRemove);
+    if (valuesToKeep.length === 0) {
+      setCurrentChips(otherChips);
+    } else {
+      setCurrentChips([...otherChips, { attribute: selectedKey, values: [...valuesToKeep] }]);
+    }
+  };
+
+  /** remove a selected value if it already exists for that attribute, otherwise add the value to the attribute */
+  const updateChipValues = (updatedChip: chipData, selectedValue: string) => {
+    const otherChips = currentChips.filter(chip => chip.attribute !== selectedKey);
+    if (updatedChip.values.includes(selectedValue)) {
+      deselectValue(updatedChip.values, selectedValue, otherChips);
+    } else {
+      setCurrentChips([...otherChips, { attribute: selectedKey, values: [...updatedChip.values, selectedValue] }]);
+    }
+  };
+
+  /** update the current chip if an attribute already exists in a chip, otherwise add selected key/value pair as a
+   * chip in the chip group */
   const selectValue = (selectedValue: string) => {
-    setCurrentChips([...currentChips, `${selectedKey}: ${selectedValue}`]);
+    const updatedChip = currentChips.find(chip => chip.attribute === selectedKey);
+    if (updatedChip) {
+      updateChipValues(updatedChip, selectedValue);
+    } else {
+      setCurrentChips([...currentChips, { attribute: selectedKey, values: [selectedValue] }]);
+    }
+
     clearSelectedKey();
   };
 
@@ -205,6 +237,16 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
     }
   };
 
+  /** format the chip data as a string to be rendered as text in a chip */
+  const stringifyChipData = (chipData: chipData) => {
+    if (chipData.values.length === 1) {
+      return `${chipData.attribute}: ${chipData.values}`;
+    }
+
+    const values = chipData.values.reduce((valuesString, value) => valuesString + `, ${value}`);
+    return `${chipData.attribute}: ${values}`;
+  };
+
   /** show the search icon only when there are no chips to prevent the chips from being displayed behind the icon */
   const showSearchIcon = !currentChips.length;
 
@@ -226,8 +268,8 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
         >
           <ChipGroup>
             {currentChips.map(currentChip => (
-              <Chip key={currentChip} onClick={() => deleteChip(currentChip)}>
-                {currentChip}
+              <Chip key={currentChip.attribute} onClick={() => deleteChip(currentChip)}>
+                {stringifyChipData(currentChip)}
               </Chip>
             ))}
           </ChipGroup>

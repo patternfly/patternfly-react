@@ -24,6 +24,8 @@ Additionally, attributes can be selected by typing the full (case sensitive) nam
 
 Attributes can be deselected (returning you to attribute selection mode) by hitting `escape`, or by hitting `backspace` when the only text in the text input is the attribute.
 
+Values can be individually removed from associated attributes after selection by selecting them a second time.
+
 ```ts file="./examples/TextInputGroup/AttributeValueFiltering.tsx"
 ```
 ### Auto-complete search with typeahead
