@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { mount } from 'enzyme';
+
+import { render, screen } from '@testing-library/react';
+
 import SVGDefs from '../SVGDefs';
 import { SVGDefsSetter } from '../SVGDefsSetter';
 import SVGDefsContext, { SVGDefsContextProps } from '../SVGDefsContext';
-
-type SVGDefsSetterProps = React.ComponentProps<typeof SVGDefsSetter>;
 
 describe('SVGDefs', () => {
   it('should get #addDef and #removeDef from context', () => {
@@ -16,40 +16,15 @@ describe('SVGDefs', () => {
       id: 'foo',
       children: <span />
     };
-    const wrapper = mount(
-      <SVGDefsContext.Provider value={contextProps}>
-        <SVGDefs {...props} />
-      </SVGDefsContext.Provider>
+
+    render(
+      <div data-testid="wrapper-test-id">
+        <SVGDefsContext.Provider value={contextProps}>
+          <SVGDefs {...props} />
+        </SVGDefsContext.Provider>
+      </div>
     );
-    const innerWrapper = wrapper.find(SVGDefsSetter).first();
-    expect(innerWrapper.props()).toEqual({
-      ...contextProps,
-      ...props
-    });
-  });
-});
 
-describe('SVGDefsSetter', () => {
-  it('should callback #addDef and #removeDef on update', () => {
-    const props: SVGDefsSetterProps = {
-      id: 'foo',
-      addDef: jest.fn(),
-      removeDef: jest.fn(),
-      children: <span />
-    };
-
-    const wrapper = mount(<SVGDefsSetter {...props} />);
-    expect(props.addDef).toHaveBeenCalledWith(props.id, props.children);
-
-    // test update
-    const newChild = <span />;
-    wrapper.setProps({ children: newChild });
-    expect(props.addDef).toHaveBeenCalledTimes(2);
-    expect(props.addDef).toHaveBeenLastCalledWith(props.id, newChild);
-
-    // test unmount
-    wrapper.unmount();
-    expect(props.removeDef).toHaveBeenCalledTimes(1);
-    expect(props.removeDef).toHaveBeenLastCalledWith(props.id);
+    expect(screen.getByTestId('wrapper-test-id').outerHTML).toMatchSnapshot();
   });
 });

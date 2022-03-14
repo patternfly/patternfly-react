@@ -1,15 +1,15 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import { MultipleFileUploadInfo } from '../MultipleFileUploadInfo';
 
 describe('MultipleFileUploadInfo', () => {
   test('renders with expected class names', () => {
-    const view = mount(<MultipleFileUploadInfo>Foo</MultipleFileUploadInfo>);
-    expect(view).toMatchSnapshot();
+    render(<MultipleFileUploadInfo>Foo</MultipleFileUploadInfo>);
+    expect(screen.getByText('Foo').outerHTML).toMatchSnapshot();
   });
 
   test('renders custom class names', () => {
-    const view = mount(<MultipleFileUploadInfo className="test">Foo</MultipleFileUploadInfo>);
-    expect(view).toMatchSnapshot();
+    render(<MultipleFileUploadInfo className="test">Foo</MultipleFileUploadInfo>);
+    expect(screen.getByText('Foo').outerHTML).toMatchSnapshot();
   });
 });

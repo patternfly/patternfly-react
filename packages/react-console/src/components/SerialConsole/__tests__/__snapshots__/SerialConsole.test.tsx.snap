@@ -1,75 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render SerialConsole in the CONNECTED state 1`] = `
-Array [
-  <div
-    class="pf-c-console__actions-serial"
-  >
-    <button
-      aria-disabled="false"
-      class="pf-c-button pf-m-secondary"
-      data-ouia-component-id="OUIA-Generated-Button-secondary-1"
-      data-ouia-component-type="PF4/Button"
-      data-ouia-safe="true"
-      type="button"
-    >
-      My text for Disconnect
-    </button>
-    <button
-      aria-disabled="false"
-      class="pf-c-button pf-m-secondary"
-      data-ouia-component-id="OUIA-Generated-Button-secondary-2"
-      data-ouia-component-type="PF4/Button"
-      data-ouia-safe="true"
-      type="button"
-    >
-      Reset
-    </button>
-  </div>,
-  <div
-    class="pf-c-console__serial"
-  >
-    <div
-      class="pf-c-console__xterm"
-      role="list"
-    />
-  </div>,
-]
-`;
+exports[`SerialConsole in the DISCONNECTED state 1`] = `" <div class=\\"pf-c-console__serial\\"><div class=\\"pf-c-empty-state\\"><div class=\\"pf-c-empty-state__content\\"><div class=\\"pf-c-empty-state__body\\">My text for Disconnected</div><button aria-disabled=\\"false\\" class=\\"pf-c-button pf-m-primary\\" type=\\"button\\" data-ouia-component-type=\\"PF4/Button\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-Button-primary-1\\">My text for Connect</button></div></div></div>"`;
 
-exports[`SerialConsole in the CONNECTED state 1`] = `
-<SerialConsoleBase
-  cols={33}
-  id="myidprefix"
-  innerRef={null}
-  onConnect={[MockFunction]}
-  onDisconnect={[MockFunction]}
-  rows={44}
-  status="connected"
-  textDisconnect="My text for Disconnect"
-  textReconnect="My text for Reconnect"
-/>
-`;
+exports[`SerialConsole in the LOADING state 1`] = `"<div class=\\"pf-c-console__actions-serial\\"><button aria-disabled=\\"false\\" class=\\"pf-c-button pf-m-secondary\\" type=\\"button\\" data-ouia-component-type=\\"PF4/Button\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-Button-secondary-1\\">Disconnect</button><button aria-disabled=\\"false\\" class=\\"pf-c-button pf-m-secondary\\" type=\\"button\\" data-ouia-component-type=\\"PF4/Button\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-Button-secondary-2\\">Reset</button></div><div class=\\"pf-c-console__serial\\"><div class=\\"pf-c-empty-state\\"><div class=\\"pf-c-empty-state__content\\"><div class=\\"pf-c-empty-state__icon\\"><span class=\\"pf-c-spinner pf-m-xl\\" role=\\"progressbar\\" aria-valuetext=\\"Loading...\\" aria-label=\\"Contents\\"><span class=\\"pf-c-spinner__clipper\\"></span><span class=\\"pf-c-spinner__lead-ball\\"></span><span class=\\"pf-c-spinner__tail-ball\\"></span></span></div><div class=\\"pf-c-empty-state__body\\">My text for Loading</div></div></div></div>"`;
 
-exports[`SerialConsole in the DISCONNECTED state 1`] = `
-<SerialConsoleBase
-  id="myidprefix"
-  innerRef={null}
-  onConnect={[MockFunction]}
-  onDisconnect={[MockFunction]}
-  status="disconnected"
-  textConnect="My text for Connect"
-  textDisconnected="My text for Disconnected"
-  textDisconnectedTitle="My title for Disconnected"
-/>
-`;
-
-exports[`SerialConsole in the LOADING state 1`] = `
-<SerialConsoleBase
-  innerRef={null}
-  onConnect={[MockFunction]}
-  onDisconnect={[MockFunction]}
-  status="loading"
-  textLoading="My text for Loading"
-/>
-`;
+exports[`SerialConsole with CONNECTED state renders 1`] = `"<div class=\\"pf-c-console__actions-serial\\"><button aria-disabled=\\"false\\" class=\\"pf-c-button pf-m-secondary\\" type=\\"button\\" data-ouia-component-type=\\"PF4/Button\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-Button-secondary-3\\">My text for Disconnect</button><button aria-disabled=\\"false\\" class=\\"pf-c-button pf-m-secondary\\" type=\\"button\\" data-ouia-component-type=\\"PF4/Button\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-Button-secondary-4\\">Reset</button></div><div class=\\"pf-c-console__serial\\"><div class=\\"pf-c-console__xterm\\" role=\\"list\\"><div dir=\\"ltr\\" class=\\"terminal xterm focus\\" tabindex=\\"0\\"><div class=\\"xterm-accessibility\\"><div class=\\"xterm-accessibility-tree\\" role=\\"document\\"><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div><div role=\\"listitem\\" tabindex=\\"-1\\" style=\\"height: 0px;\\"></div></div><div class=\\"live-region\\" aria-live=\\"assertive\\"></div></div><div class=\\"xterm-viewport\\" style=\\"background-color: rgb(0, 0, 0);\\"><div class=\\"xterm-scroll-area\\"></div></div><div class=\\"xterm-screen\\"><div class=\\"xterm-helpers\\"><textarea class=\\"xterm-helper-textarea\\" aria-label=\\"Terminal input\\" aria-multiline=\\"false\\" autocorrect=\\"off\\" autocapitalize=\\"off\\" spellcheck=\\"false\\" tabindex=\\"0\\"></textarea><span class=\\"xterm-char-measure-element\\" aria-hidden=\\"true\\">W</span><div class=\\"composition-view\\"></div></div><canvas class=\\"xterm-text-layer\\" style=\\"z-index: 0;\\"></canvas><canvas class=\\"xterm-selection-layer\\" style=\\"z-index: 1;\\"></canvas><canvas class=\\"xterm-link-layer\\" style=\\"z-index: 2;\\"></canvas><canvas class=\\"xterm-cursor-layer\\" style=\\"z-index: 3;\\"></canvas></div></div></div></div>"`;

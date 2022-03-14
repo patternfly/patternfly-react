@@ -1,15 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Transformer functions expandable with parent 1`] = `
-<ExpandableRowContent>
-  <div
-    className="pf-c-table__expandable-row-content"
-  >
-    test
-  </div>
-</ExpandableRowContent>
-`;
-
 exports[`Transformer functions selectable unselected 1`] = `
 Object {
   "children": <SelectColumn

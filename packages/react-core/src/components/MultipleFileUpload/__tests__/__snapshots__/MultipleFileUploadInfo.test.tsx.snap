@@ -1,23 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MultipleFileUploadInfo renders custom class names 1`] = `
-<MultipleFileUploadInfo
-  className="test"
->
-  <div
-    className="pf-c-multiple-file-upload__info test"
-  >
-    Foo
-  </div>
-</MultipleFileUploadInfo>
-`;
+exports[`MultipleFileUploadInfo renders custom class names 1`] = `"<div class=\\"pf-c-multiple-file-upload__info test\\">Foo</div>"`;
 
-exports[`MultipleFileUploadInfo renders with expected class names 1`] = `
-<MultipleFileUploadInfo>
-  <div
-    className="pf-c-multiple-file-upload__info"
-  >
-    Foo
-  </div>
-</MultipleFileUploadInfo>
-`;
+exports[`MultipleFileUploadInfo renders with expected class names 1`] = `"<div class=\\"pf-c-multiple-file-upload__info\\">Foo</div>"`;

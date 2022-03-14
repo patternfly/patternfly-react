@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import { RowWrapper, RowWrapperProps } from './RowWrapper';
+import { RowWrapper, RowWrapperProps } from '../RowWrapper';
 
 const getRowWrapper = (props: RowWrapperProps) => (
   <table>
