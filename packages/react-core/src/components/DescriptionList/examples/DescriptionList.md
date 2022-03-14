@@ -235,38 +235,61 @@ import {
   DescriptionListTerm,
   DescriptionListText,
   DescriptionListGroup,
-  DescriptionListDescription
+  DescriptionListDescription,
+  NumberInput,
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-<DescriptionList isHorizontal>
-  <DescriptionListGroup>
-    <DescriptionListTerm>Name</DescriptionListTerm>
-    <DescriptionListDescription>Example</DescriptionListDescription>
-  </DescriptionListGroup>
-  <DescriptionListGroup>
-    <DescriptionListTerm>Namespace</DescriptionListTerm>
-    <DescriptionListDescription>
-      <a href="#">mary-test</a>
-    </DescriptionListDescription>
-  </DescriptionListGroup>
-  <DescriptionListGroup>
-    <DescriptionListTerm>Labels</DescriptionListTerm>
-    <DescriptionListDescription>example</DescriptionListDescription>
-  </DescriptionListGroup>
-  <DescriptionListGroup>
-    <DescriptionListTerm>Pod selector</DescriptionListTerm>
-    <DescriptionListDescription>
-      <Button variant="link" isInline icon={<PlusCircleIcon />}>
-        app=MyApp
-      </Button>
-    </DescriptionListDescription>
-  </DescriptionListGroup>
-  <DescriptionListGroup>
-    <DescriptionListTerm>Annotation</DescriptionListTerm>
-    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
-  </DescriptionListGroup>
-</DescriptionList>;
+const DescriptionListHorizontal = () => {
+  const [customTermWidth, setCustomTermWidth] = React.useState(12);
+  return (
+    <>
+    <div style={{marginBottom: '1em'}}>
+      <label>Custom term width:</label>
+      <NumberInput
+        min='12'
+        max='30'
+        value={customTermWidth}
+        onMinus={() => setCustomTermWidth(customTermWidth - 1)}
+        onPlus={() => setCustomTermWidth(customTermWidth + 1)}
+        inputName="custom term width"
+        inputAriaLabel="custom term width input"
+        minusBtnAriaLabel="minus"
+        plusBtnAriaLabel="plus"
+        unit="ch"
+      />
+    </div>
+    <DescriptionList isHorizontal termWidth={customTermWidth + "ch"}>
+      <DescriptionListGroup>
+        <DescriptionListTerm>Name longer than the default term width</DescriptionListTerm>
+        <DescriptionListDescription>Example</DescriptionListDescription>
+      </DescriptionListGroup>
+      <DescriptionListGroup>
+        <DescriptionListTerm>Namespace</DescriptionListTerm>
+        <DescriptionListDescription>
+          <a href="#">mary-test</a>
+        </DescriptionListDescription>
+      </DescriptionListGroup>
+      <DescriptionListGroup>
+        <DescriptionListTerm>Labels</DescriptionListTerm>
+        <DescriptionListDescription>example</DescriptionListDescription>
+      </DescriptionListGroup>
+      <DescriptionListGroup>
+        <DescriptionListTerm>Pod selector</DescriptionListTerm>
+        <DescriptionListDescription>
+          <Button variant="link" isInline icon={<PlusCircleIcon />}>
+            app=MyApp
+          </Button>
+        </DescriptionListDescription>
+      </DescriptionListGroup>
+      <DescriptionListGroup>
+        <DescriptionListTerm>Annotation</DescriptionListTerm>
+        <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+      </DescriptionListGroup>
+    </DescriptionList>
+    </>
+  )
+}
 ```
 
 ### Horizontal 2 col

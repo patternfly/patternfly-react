@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
 import { formatBreakpointMods } from '../../helpers';
+import termWidthToken from '@patternfly/react-tokens/dist/esm/c_description_list__term_width';
 
 export interface AutoFitModifiers {
   default?: string;
@@ -24,6 +25,8 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
   isAutoColumnWidths?: boolean;
   /** Modifies the description list display to inline-grid. */
   isInlineGrid?: boolean;
+  /** Sets the width of the term column (horizontal mode) */
+  termWidth?: string;
   /** Sets the description list to compact styling. */
   isCompact?: boolean;
   /** Sets a horizontal description list to have fluid styling. */
@@ -71,6 +74,7 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   className = '',
   children = null,
   isHorizontal = false,
+  termWidth = '',
   isAutoColumnWidths,
   isAutoFit,
   isInlineGrid,
@@ -82,30 +86,39 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   orientation,
   style,
   ...props
-}: DescriptionListProps) => (
-  <dl
-    className={css(
-      styles.descriptionList,
-      (isHorizontal || isFluid) && styles.modifiers.horizontal,
-      isAutoColumnWidths && styles.modifiers.autoColumnWidths,
-      isAutoFit && styles.modifiers.autoFit,
-      formatBreakpointMods(columnModifier, styles),
-      formatBreakpointMods(orientation, styles),
-      isInlineGrid && styles.modifiers.inlineGrid,
-      isCompact && styles.modifiers.compact,
-      isFluid && styles.modifiers.fluid,
-      isFillColumns && styles.modifiers.fillColumns,
-      className
-    )}
-    style={
-      autoFitMinModifier || style
-        ? { ...(isAutoFit ? setAutoFitMinModifiers(autoFitMinModifier) : {}), ...style }
-        : undefined
+}: DescriptionListProps) => {
+  const listDivRef = React.useRef(null);
+  React.useEffect(() => {
+    if (termWidth && listDivRef && isHorizontal) {
+      listDivRef.current.style.setProperty(termWidthToken.name, termWidth);
     }
-    {...props}
-  >
-    {children}
-  </dl>
-);
+  }, [listDivRef, termWidth]);
+  return (
+    <dl
+      ref={listDivRef}
+      className={css(
+        styles.descriptionList,
+        (isHorizontal || isFluid) && styles.modifiers.horizontal,
+        isAutoColumnWidths && styles.modifiers.autoColumnWidths,
+        isAutoFit && styles.modifiers.autoFit,
+        formatBreakpointMods(columnModifier, styles),
+        formatBreakpointMods(orientation, styles),
+        isInlineGrid && styles.modifiers.inlineGrid,
+        isCompact && styles.modifiers.compact,
+        isFluid && styles.modifiers.fluid,
+        isFillColumns && styles.modifiers.fillColumns,
+        className
+      )}
+      style={
+        autoFitMinModifier || style
+          ? { ...(isAutoFit ? setAutoFitMinModifiers(autoFitMinModifier) : {}), ...style }
+          : undefined
+      }
+      {...props}
+    >
+      {children}
+    </dl>
+  );
+};
 
 DescriptionList.displayName = 'DescriptionList';
