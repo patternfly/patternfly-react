@@ -619,7 +619,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
           const editor = (
             <div className={css(styles.codeEditorCode)} ref={this.wrapperRef} tabIndex={0}>
               <MonacoEditor
-                height={height === 'heightToFit' ? '100%' : height}
+                height={height}
                 width={width}
                 language={language}
                 value={value}
