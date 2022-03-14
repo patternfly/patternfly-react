@@ -124,8 +124,8 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   isLineNumbersVisible?: boolean;
   /** Flag indicating the editor is read only */
   isReadOnly?: boolean;
-  /** Height of code editor. Defaults to 100% */
-  height?: string;
+  /** Height of code editor. Defaults to 100%. 'sizeToFit' will automatically change the height to the height of the content. */
+  height?: string | 'sizeToFit';
   /** Function which fires each time the code changes in the code editor */
   onChange?: ChangeHandler;
   /** The loading screen before the editor will be loaded. Defaults 'loading...' */
