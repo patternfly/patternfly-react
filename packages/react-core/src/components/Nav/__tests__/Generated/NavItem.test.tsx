@@ -21,5 +21,5 @@ it('NavItem should match snapshot (auto-generated)', () => {
       component={'a'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

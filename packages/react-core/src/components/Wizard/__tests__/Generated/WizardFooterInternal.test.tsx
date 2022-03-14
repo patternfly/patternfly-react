@@ -21,5 +21,5 @@ it('WizardFooterInternal should match snapshot (auto-generated)', () => {
       cancelButtonText={<div>ReactNode</div>}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

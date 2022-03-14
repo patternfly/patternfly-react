@@ -28,39 +28,33 @@ const dropdownItems = [
 describe('ApplicationLauncher', () => {
   test('regular', () => {
     const view = render(<ApplicationLauncher items={dropdownItems} />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('right aligned', () => {
     const view = render(<ApplicationLauncher items={dropdownItems} position={DropdownPosition.right} />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('dropup', () => {
     const view = render(<ApplicationLauncher items={dropdownItems} direction={DropdownDirection.up} />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('dropup + right aligned', () => {
     const view = render(
-      <ApplicationLauncher
-        items={dropdownItems}
-        direction={DropdownDirection.up}
-        position={DropdownPosition.right}
-      />
+      <ApplicationLauncher items={dropdownItems} direction={DropdownDirection.up} position={DropdownPosition.right} />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('expanded', () => {
     const view = render(<ApplicationLauncher items={dropdownItems} isOpen />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('custom icon', () => {
-    const view = render(
-      <ApplicationLauncher items={dropdownItems} isOpen toggleIcon={<HelpIcon id="test-icon" />} />
-    );
-    expect(view.container).toMatchSnapshot();
+    const view = render(<ApplicationLauncher items={dropdownItems} isOpen toggleIcon={<HelpIcon id="test-icon" />} />);
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

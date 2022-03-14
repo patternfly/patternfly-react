@@ -11,5 +11,5 @@ it('AlertGroup should match snapshot (auto-generated)', () => {
   const view = render(
     <AlertGroup className={'string'} children={<div>ReactNode</div>} isToast={true} appendTo={undefined} />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

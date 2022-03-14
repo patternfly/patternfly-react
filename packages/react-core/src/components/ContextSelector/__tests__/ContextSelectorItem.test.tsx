@@ -9,7 +9,7 @@ test('Renders ContextSelectorItem', () => {
       My Project
     </ContextSelectorItem>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Renders ContextSelectorItem disabled and hovered', () => {
@@ -18,7 +18,7 @@ test('Renders ContextSelectorItem disabled and hovered', () => {
       My Project
     </ContextSelectorItem>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Verify onClick is called ', () => {

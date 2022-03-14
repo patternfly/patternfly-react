@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('AlertGroupInline should match snapshot (auto-generated)', () => {
   const view = render(<AlertGroupInline />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

@@ -6,7 +6,7 @@ import { ChartGroup } from './ChartGroup';
 Object.values([true, false]).forEach(() => {
   test('ChartGroup', () => {
     const view = render(<ChartGroup />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -32,5 +32,5 @@ test('renders container children', () => {
       />
     </ChartGroup>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

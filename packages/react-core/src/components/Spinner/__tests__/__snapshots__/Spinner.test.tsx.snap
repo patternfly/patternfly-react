@@ -1,106 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`extra large spinner 1`] = `
-<div>
-  <span
-    aria-label="Contents"
-    aria-valuetext="Loading..."
-    class="pf-c-spinner pf-m-xl"
-    role="progressbar"
-  >
-    <span
-      class="pf-c-spinner__clipper"
-    />
-    <span
-      class="pf-c-spinner__lead-ball"
-    />
-    <span
-      class="pf-c-spinner__tail-ball"
-    />
-  </span>
-</div>
-`;
+exports[`extra large spinner 1`] = `"<div><span class=\\"pf-c-spinner pf-m-xl\\" role=\\"progressbar\\" aria-valuetext=\\"Loading...\\" aria-label=\\"Contents\\"><span class=\\"pf-c-spinner__clipper\\"></span><span class=\\"pf-c-spinner__lead-ball\\"></span><span class=\\"pf-c-spinner__tail-ball\\"></span></span></div>"`;
 
-exports[`large spinner 1`] = `
-<div>
-  <span
-    aria-label="Contents"
-    aria-valuetext="Loading..."
-    class="pf-c-spinner pf-m-lg"
-    role="progressbar"
-  >
-    <span
-      class="pf-c-spinner__clipper"
-    />
-    <span
-      class="pf-c-spinner__lead-ball"
-    />
-    <span
-      class="pf-c-spinner__tail-ball"
-    />
-  </span>
-</div>
-`;
+exports[`large spinner 1`] = `"<div><span class=\\"pf-c-spinner pf-m-lg\\" role=\\"progressbar\\" aria-valuetext=\\"Loading...\\" aria-label=\\"Contents\\"><span class=\\"pf-c-spinner__clipper\\"></span><span class=\\"pf-c-spinner__lead-ball\\"></span><span class=\\"pf-c-spinner__tail-ball\\"></span></span></div>"`;
 
-exports[`medium spinner 1`] = `
-<div>
-  <span
-    aria-label="Contents"
-    aria-valuetext="Loading..."
-    class="pf-c-spinner pf-m-md"
-    role="progressbar"
-  >
-    <span
-      class="pf-c-spinner__clipper"
-    />
-    <span
-      class="pf-c-spinner__lead-ball"
-    />
-    <span
-      class="pf-c-spinner__tail-ball"
-    />
-  </span>
-</div>
-`;
+exports[`medium spinner 1`] = `"<div><span class=\\"pf-c-spinner pf-m-md\\" role=\\"progressbar\\" aria-valuetext=\\"Loading...\\" aria-label=\\"Contents\\"><span class=\\"pf-c-spinner__clipper\\"></span><span class=\\"pf-c-spinner__lead-ball\\"></span><span class=\\"pf-c-spinner__tail-ball\\"></span></span></div>"`;
 
-exports[`simple spinner 1`] = `
-<div>
-  <span
-    aria-label="Contents"
-    aria-valuetext="Loading..."
-    class="pf-c-spinner pf-m-xl"
-    role="progressbar"
-  >
-    <span
-      class="pf-c-spinner__clipper"
-    />
-    <span
-      class="pf-c-spinner__lead-ball"
-    />
-    <span
-      class="pf-c-spinner__tail-ball"
-    />
-  </span>
-</div>
-`;
+exports[`simple spinner 1`] = `"<div><span class=\\"pf-c-spinner pf-m-xl\\" role=\\"progressbar\\" aria-valuetext=\\"Loading...\\" aria-label=\\"Contents\\"><span class=\\"pf-c-spinner__clipper\\"></span><span class=\\"pf-c-spinner__lead-ball\\"></span><span class=\\"pf-c-spinner__tail-ball\\"></span></span></div>"`;
 
-exports[`small spinner 1`] = `
-<div>
-  <span
-    aria-label="Contents"
-    aria-valuetext="Loading..."
-    class="pf-c-spinner pf-m-sm"
-    role="progressbar"
-  >
-    <span
-      class="pf-c-spinner__clipper"
-    />
-    <span
-      class="pf-c-spinner__lead-ball"
-    />
-    <span
-      class="pf-c-spinner__tail-ball"
-    />
-  </span>
-</div>
-`;
+exports[`small spinner 1`] = `"<div><span class=\\"pf-c-spinner pf-m-sm\\" role=\\"progressbar\\" aria-valuetext=\\"Loading...\\" aria-label=\\"Contents\\"><span class=\\"pf-c-spinner__clipper\\"></span><span class=\\"pf-c-spinner__lead-ball\\"></span><span class=\\"pf-c-spinner__tail-ball\\"></span></span></div>"`;

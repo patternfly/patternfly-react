@@ -17,6 +17,6 @@ describe('AlertActionCloseButton', () => {
         />
       </AlertContext.Provider>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

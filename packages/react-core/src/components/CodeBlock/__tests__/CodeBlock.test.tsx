@@ -6,17 +6,17 @@ import { CodeBlockCode } from '../CodeBlockCode';
 
 test('CodeBlock renders successfully', () => {
   const view = render(<CodeBlock>test text</CodeBlock>);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('CodeBlockAction renders successfully', () => {
   const view = render(<CodeBlockAction>action</CodeBlockAction>);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('CodeBlockCode renders successfully', () => {
   const view = render(<CodeBlockCode>action</CodeBlockCode>);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('CodeBlock with components renders successfully', () => {
@@ -26,5 +26,5 @@ test('CodeBlock with components renders successfully', () => {
       test outer text
     </CodeBlock>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

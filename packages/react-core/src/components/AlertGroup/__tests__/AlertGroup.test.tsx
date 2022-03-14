@@ -11,7 +11,7 @@ import { AlertActionCloseButton } from '../../../components/Alert/AlertActionClo
 describe('AlertGroup', () => {
   test('Alert Group renders without children', () => {
     const view = render(<AlertGroup />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('Alert Group works with n children', () => {

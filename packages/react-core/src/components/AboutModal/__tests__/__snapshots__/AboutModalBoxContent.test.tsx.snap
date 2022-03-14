@@ -1,25 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AboutModalBoxContent Test 1`] = `
-<div>
-  <div
-    class="pf-c-about-modal-box__content"
-    id="id"
-  >
-    <div
-      class="pf-c-about-modal-box__body"
-    >
-      <div
-        class="pf-c-content"
-      >
-        This is a AboutModalBoxContent
-      </div>
-    </div>
-    <p
-      class="pf-c-about-modal-box__strapline"
-    >
-      trademark
-    </p>
-  </div>
-</div>
-`;
+exports[`AboutModalBoxContent Test 1`] = `"<div><div class=\\"pf-c-about-modal-box__content\\" id=\\"id\\"><div class=\\"pf-c-about-modal-box__body\\"><div class=\\"pf-c-content\\">This is a AboutModalBoxContent</div></div><p class=\\"pf-c-about-modal-box__strapline\\">trademark</p></div></div>"`;

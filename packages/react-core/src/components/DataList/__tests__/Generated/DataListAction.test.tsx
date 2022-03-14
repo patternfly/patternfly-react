@@ -17,5 +17,5 @@ it('DataListAction should match snapshot (auto-generated)', () => {
       aria-label={'string'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

@@ -17,5 +17,5 @@ it('DataListItem should match snapshot (auto-generated)', () => {
       id={"''"}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

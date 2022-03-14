@@ -31,6 +31,6 @@ const getConfirmButtons = () => (
 describe('ConfirmButtons', () => {
   test('renders correctly', () => {
     const view = render(getConfirmButtons());
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('DrawerPanelContent should match snapshot (auto-generated)', () => {
   const view = render(<DrawerPanelContent className={"''"} children={<div>ReactNode</div>} hasNoPadding={false} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

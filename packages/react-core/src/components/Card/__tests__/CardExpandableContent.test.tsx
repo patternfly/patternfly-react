@@ -9,5 +9,5 @@ test('renders successfully', () => {
       <CardExpandableContent />
     </CardContext.Provider>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

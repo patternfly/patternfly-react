@@ -4,17 +4,17 @@ import { render } from '@testing-library/react';
 import { ModalContent } from '../ModalContent';
 
 const modalContentProps = {
-  boxId: "boxId",
-  labelId: "labelId",
-  descriptorId: "descriptorId"
-}
+  boxId: 'boxId',
+  labelId: 'labelId',
+  descriptorId: 'descriptorId'
+};
 test('Modal Content Test only body', () => {
   const view = render(
     <ModalContent title="Test Modal Content title" isOpen {...modalContentProps}>
       This is a ModalBox header
     </ModalContent>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Modal Content Test isOpen', () => {
@@ -23,16 +23,21 @@ test('Modal Content Test isOpen', () => {
       This is a ModalBox header
     </ModalContent>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Modal Content Test description', () => {
   const view = render(
-    <ModalContent title="Test Modal Content title" isOpen description="This is a test description." {...modalContentProps}>
+    <ModalContent
+      title="Test Modal Content title"
+      isOpen
+      description="This is a test description."
+      {...modalContentProps}
+    >
       This is a ModalBox header
     </ModalContent>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Modal Content Test with footer', () => {
@@ -41,7 +46,7 @@ test('Modal Content Test with footer', () => {
       This is a ModalBox header
     </ModalContent>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Modal Content test without footer', () => {
@@ -50,7 +55,7 @@ test('Modal Content test without footer', () => {
       This is a ModalBox header
     </ModalContent>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Modal Content Test with onclose', () => {
@@ -66,7 +71,7 @@ test('Modal Content Test with onclose', () => {
       This is a ModalBox header
     </ModalContent>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Modal Test with custom header', () => {
@@ -85,16 +90,23 @@ test('Modal Test with custom header', () => {
       This is a ModalBox header
     </ModalContent>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Modal Test with custom footer', () => {
   const footer = <span id="test-custom-footer">TEST</span>;
 
   const view = render(
-    <ModalContent footer={footer} title="Test Modal Custom Footer" variant="large" onClose={() => undefined} isOpen {...modalContentProps}>
+    <ModalContent
+      footer={footer}
+      title="Test Modal Custom Footer"
+      variant="large"
+      onClose={() => undefined}
+      isOpen
+      {...modalContentProps}
+    >
       This is a ModalBox header
     </ModalContent>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

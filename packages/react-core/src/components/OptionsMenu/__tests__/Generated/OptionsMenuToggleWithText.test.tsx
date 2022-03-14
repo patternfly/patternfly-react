@@ -28,5 +28,5 @@ it('OptionsMenuToggleWithText should match snapshot (auto-generated)', () => {
       aria-label={"'Options menu'"}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

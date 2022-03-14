@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('DataListItemRow should match snapshot (auto-generated)', () => {
   const view = render(<DataListItemRow children={<div>ReactNode</div>} className={"''"} rowid={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

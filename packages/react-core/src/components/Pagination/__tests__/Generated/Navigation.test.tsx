@@ -32,5 +32,5 @@ it('Navigation should match snapshot (auto-generated)', () => {
       onPageInput={() => undefined as any}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

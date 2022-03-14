@@ -1,15 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test About Modal Brand 1`] = `
-<div>
-  <div
-    class="pf-c-about-modal-box__brand"
-  >
-    <img
-      alt="brand"
-      class="pf-c-about-modal-box__brand-image"
-      src="testimage.."
-    />
-  </div>
-</div>
-`;
+exports[`test About Modal Brand 1`] = `"<div><div class=\\"pf-c-about-modal-box__brand\\"><img class=\\"pf-c-about-modal-box__brand-image\\" src=\\"testimage..\\" alt=\\"brand\\"></div></div>"`;

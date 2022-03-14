@@ -17,7 +17,7 @@ describe('ClipboardCopyToggle', () => {
     const desc = 'toggle content';
     const view = render(<ClipboardCopyToggle {...props} aria-label={desc} />);
 
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('toggle button onClick', () => {

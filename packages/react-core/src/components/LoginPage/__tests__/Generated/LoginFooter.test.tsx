@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('LoginFooter should match snapshot (auto-generated)', () => {
   const view = render(<LoginFooter children={<>ReactNode</>} className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('SplitItem should match snapshot (auto-generated)', () => {
   const view = render(<SplitItem isFilled={false} children={<>ReactNode</>} className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

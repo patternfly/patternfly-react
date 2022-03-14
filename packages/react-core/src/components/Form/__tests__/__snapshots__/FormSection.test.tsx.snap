@@ -1,25 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Check form section example against snapshot 1`] = `
-<div>
-  <section
-    class="pf-c-form__section"
-  >
-    
-  </section>
-</div>
-`;
+exports[`Check form section example against snapshot 1`] = `"<div><section class=\\"pf-c-form__section\\"></section></div>"`;
 
-exports[`Check form section example with title 1`] = `
-<div>
-  <section
-    class="pf-c-form__section"
-  >
-    <h4
-      class="pf-c-form__section-title"
-    >
-      Title
-    </h4>
-  </section>
-</div>
-`;
+exports[`Check form section example with title 1`] = `"<div><section class=\\"pf-c-form__section\\"><h4 class=\\"pf-c-form__section-title\\">Title</h4></section></div>"`;

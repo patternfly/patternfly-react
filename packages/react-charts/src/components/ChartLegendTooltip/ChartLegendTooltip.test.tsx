@@ -11,7 +11,7 @@ import { ChartLegendTooltip } from './ChartLegendTooltip';
 Object.values([true, false]).forEach(() => {
   test('ChartLegendTooltip', () => {
     const view = render(<ChartLegendTooltip text="This is a tooltip" />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -93,5 +93,5 @@ test('allows tooltip via container component', () => {
       </ChartGroup>
     </Chart>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

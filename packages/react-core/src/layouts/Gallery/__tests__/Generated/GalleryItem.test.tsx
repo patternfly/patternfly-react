@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('GalleryItem should match snapshot (auto-generated)', () => {
   const view = render(<GalleryItem children={<>ReactNode</>} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

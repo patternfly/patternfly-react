@@ -5,7 +5,7 @@ import { ChartPie } from './ChartPie';
 Object.values([true, false]).forEach(() => {
   test('ChartPie', () => {
     const view = render(<ChartPie />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -21,5 +21,5 @@ test('renders component data', () => {
       width={200}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

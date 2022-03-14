@@ -1,77 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ChartBulletComparativeZeroMeasure 1`] = `
-<div>
-  <div
-    class="pf-c-chart"
-    style="pointer-events: none; position: relative; width: 100%; height: 100%;"
-  >
-    <svg
-      height="140"
-      role="img"
-      style="pointer-events: all; width: 100%; height: 100%;"
-      viewBox="0 0 450 140"
-      width="450"
-    />
-    <div
-      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
-    >
-      <svg
-        height="140"
-        style="overflow: visible; width: 100%; height: 100%;"
-        viewBox="0 0 450 140"
-        width="450"
-      />
-    </div>
-  </div>
-</div>
-`;
+exports[`ChartBulletComparativeZeroMeasure 1`] = `"<div><div style=\\"pointer-events: none; position: relative; width: 100%; height: 100%;\\" class=\\"pf-c-chart\\"><svg width=\\"450\\" height=\\"140\\" role=\\"img\\" viewBox=\\"0 0 450 140\\" style=\\"pointer-events: all; width: 100%; height: 100%;\\"></svg><div style=\\"z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\\"><svg width=\\"450\\" height=\\"140\\" viewBox=\\"0 0 450 140\\" style=\\"overflow: visible; width: 100%; height: 100%;\\"></svg></div></div></div>"`;
 
-exports[`ChartBulletComparativeZeroMeasure 2`] = `
-<div>
-  <div
-    class="pf-c-chart"
-    style="pointer-events: none; position: relative; width: 100%; height: 100%;"
-  >
-    <svg
-      height="140"
-      role="img"
-      style="pointer-events: all; width: 100%; height: 100%;"
-      viewBox="0 0 450 140"
-      width="450"
-    />
-    <div
-      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
-    >
-      <svg
-        height="140"
-        style="overflow: visible; width: 100%; height: 100%;"
-        viewBox="0 0 450 140"
-        width="450"
-      />
-    </div>
-  </div>
-</div>
-`;
+exports[`ChartBulletComparativeZeroMeasure 2`] = `"<div><div style=\\"pointer-events: none; position: relative; width: 100%; height: 100%;\\" class=\\"pf-c-chart\\"><svg width=\\"450\\" height=\\"140\\" role=\\"img\\" viewBox=\\"0 0 450 140\\" style=\\"pointer-events: all; width: 100%; height: 100%;\\"></svg><div style=\\"z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\\"><svg width=\\"450\\" height=\\"140\\" viewBox=\\"0 0 450 140\\" style=\\"overflow: visible; width: 100%; height: 100%;\\"></svg></div></div></div>"`;
 
 exports[`renders component data 1`] = `
-<div>
-  <div
-    class="pf-c-chart"
-    style="pointer-events: none; position: relative; width: 100%; height: 100%;"
-  >
-    <svg
-      height="140"
-      role="img"
-      style="pointer-events: all; width: 100%; height: 100%;"
-      viewBox="0 0 450 140"
-      width="450"
-    >
-      <g
-        role="presentation"
-      >
-        <path
-          d="M 225, 104.8 
+"<div><div style=\\"pointer-events: none; position: relative; width: 100%; height: 100%;\\" class=\\"pf-c-chart\\"><svg width=\\"450\\" height=\\"140\\" role=\\"img\\" viewBox=\\"0 0 450 140\\" style=\\"pointer-events: all; width: 100%; height: 100%;\\"><g role=\\"presentation\\"><path style=\\"fill: #ec7a08; stroke: #ec7a08; padding: 8px; stroke-width: 2;\\" d=\\"M 225, 104.8 
 A 0 0 0 0 1, 225, 104.8 
 L 225, 74.8 
 A 0 0 0 0 1, 225, 74.8 
@@ -79,24 +13,5 @@ L 225, 74.8
 A 0 0 0 0 1, 225, 74.8 
 L 225, 104.8 
 A 0 0 0 0 1, 225, 104.8 
- z"
-          index="0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #ec7a08; stroke: #ec7a08; padding: 8px; stroke-width: 2;"
-        />
-      </g>
-    </svg>
-    <div
-      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
-    >
-      <svg
-        height="140"
-        style="overflow: visible; width: 100%; height: 100%;"
-        viewBox="0 0 450 140"
-        width="450"
-      />
-    </div>
-  </div>
-</div>
+ z\\" index=\\"0\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path></g></svg><div style=\\"z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\\"><svg width=\\"450\\" height=\\"140\\" viewBox=\\"0 0 450 140\\" style=\\"overflow: visible; width: 100%; height: 100%;\\"></svg></div></div></div>"
 `;

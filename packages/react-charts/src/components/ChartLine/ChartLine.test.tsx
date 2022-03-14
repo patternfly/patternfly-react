@@ -7,7 +7,7 @@ import { ChartLine } from './ChartLine';
 Object.values([true, false]).forEach(() => {
   test('ChartLine', () => {
     const view = render(<ChartLine />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -50,5 +50,5 @@ test('renders component data', () => {
       </ChartGroup>
     </Chart>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

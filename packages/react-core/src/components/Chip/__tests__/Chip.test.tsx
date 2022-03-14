@@ -2,7 +2,6 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { Chip } from '../Chip';
 
-
 describe('Chip', () => {
   test('overflow', () => {
     const view = render(
@@ -10,7 +9,7 @@ describe('Chip', () => {
         4 more
       </Chip>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('closable', () => {
@@ -19,7 +18,7 @@ describe('Chip', () => {
         Chip
       </Chip>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('closable with tooltip', () => {
@@ -28,7 +27,7 @@ describe('Chip', () => {
         1234567890123456789
       </Chip>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('readonly', () => {
@@ -37,7 +36,6 @@ describe('Chip', () => {
         4 more
       </Chip>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
-

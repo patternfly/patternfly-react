@@ -19,5 +19,5 @@ it('WizardHeader should match snapshot (auto-generated)', () => {
       descriptionId={'string'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

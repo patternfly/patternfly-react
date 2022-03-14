@@ -40,7 +40,7 @@ Object.values([
         </DrawerContent>
       </Drawer>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -66,12 +66,18 @@ test(`Drawer expands from bottom`, () => {
       </DrawerContent>
     </Drawer>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test(`Drawer has resizable css and color variants`, () => {
   const panelContent = (
-    <DrawerPanelContent isResizable minSize={'200px'} defaultSize={'300px'} maxSize={'400px'} colorVariant={DrawerColorVariant.light200}>
+    <DrawerPanelContent
+      isResizable
+      minSize={'200px'}
+      defaultSize={'300px'}
+      maxSize={'400px'}
+      colorVariant={DrawerColorVariant.light200}
+    >
       <DrawerHead>
         <span>drawer-panel</span>
         <DrawerActions>
@@ -91,7 +97,7 @@ test(`Drawer has resizable css and color variants`, () => {
       </DrawerContent>
     </Drawer>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test(`Drawer has resizable callback and id`, () => {
@@ -116,5 +122,5 @@ test(`Drawer has resizable callback and id`, () => {
       </DrawerContent>
     </Drawer>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

@@ -1,11 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Renders ContextSelectorFooter 1`] = `
-<div>
-  <div
-    class="pf-c-context-selector__menu-footer"
-  >
-    testing text
-  </div>
-</div>
-`;
+exports[`Renders ContextSelectorFooter 1`] = `"<div><div class=\\"pf-c-context-selector__menu-footer\\">testing text</div></div>"`;

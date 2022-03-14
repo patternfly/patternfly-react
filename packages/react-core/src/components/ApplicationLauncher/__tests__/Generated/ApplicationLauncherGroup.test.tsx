@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('ApplicationLauncherGroup should match snapshot (auto-generated)', () => {
   const view = render(<ApplicationLauncherGroup />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

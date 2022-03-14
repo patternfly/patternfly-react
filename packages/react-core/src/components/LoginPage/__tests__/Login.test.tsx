@@ -12,5 +12,5 @@ test('Check login layout example against snapshot', () => {
       Main
     </Login>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

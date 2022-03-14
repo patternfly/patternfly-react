@@ -18,5 +18,5 @@ it('DataListCell should match snapshot (auto-generated)', () => {
       isIcon={false}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

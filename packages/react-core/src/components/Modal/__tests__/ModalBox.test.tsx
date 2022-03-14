@@ -9,7 +9,7 @@ test('ModalBox Test', () => {
       This is a ModalBox
     </ModalBox>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('ModalBox Test large', () => {
@@ -18,7 +18,7 @@ test('ModalBox Test large', () => {
       This is a ModalBox
     </ModalBox>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('ModalBox Test medium', () => {
@@ -27,7 +27,7 @@ test('ModalBox Test medium', () => {
       This is a ModalBox
     </ModalBox>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('ModalBox Test small', () => {
@@ -36,7 +36,7 @@ test('ModalBox Test small', () => {
       This is a ModalBox
     </ModalBox>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('ModalBox Test top aligned', () => {
@@ -45,7 +45,7 @@ test('ModalBox Test top aligned', () => {
       This is a ModalBox
     </ModalBox>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('ModalBox Test top aligned distance', () => {
@@ -54,5 +54,5 @@ test('ModalBox Test top aligned distance', () => {
       This is a ModalBox
     </ModalBox>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

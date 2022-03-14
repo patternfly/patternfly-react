@@ -13,7 +13,7 @@ describe('ProgressStepper', () => {
         <ProgressStep>Third</ProgressStep>
       </ProgressStepper>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('gets custom class and id', () => {
@@ -24,7 +24,7 @@ describe('ProgressStepper', () => {
         <ProgressStep>Third</ProgressStep>
       </ProgressStepper>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders vertically', () => {
@@ -35,7 +35,7 @@ describe('ProgressStepper', () => {
         <ProgressStep>Third</ProgressStep>
       </ProgressStepper>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders compact', () => {
@@ -46,7 +46,7 @@ describe('ProgressStepper', () => {
         <ProgressStep>Third</ProgressStep>
       </ProgressStepper>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders center aligned', () => {
@@ -57,14 +57,14 @@ describe('ProgressStepper', () => {
         <ProgressStep>Third</ProgressStep>
       </ProgressStepper>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
 describe('ProgressStep', () => {
   test('renders content', () => {
     const view = render(<ProgressStep>Title</ProgressStep>);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   Object.values(['default', 'success', 'info', 'pending', 'warning', 'danger']).forEach(variant => {
@@ -77,23 +77,23 @@ describe('ProgressStep', () => {
           {variant} step
         </ProgressStep>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(view.container.outerHTML).toMatchSnapshot();
     });
   });
 
   test('renders current', () => {
     const view = render(<ProgressStep isCurrent>Title</ProgressStep>);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders help text styling', () => {
     const view = render(<ProgressStep popover={<div></div>}>Title</ProgressStep>);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders custom icon', () => {
     const view = render(<ProgressStep icon={<InProgressIcon />}>Title</ProgressStep>);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders custom null icon - removing default from variant', () => {
@@ -102,11 +102,11 @@ describe('ProgressStep', () => {
         Title
       </ProgressStep>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders description', () => {
     const view = render(<ProgressStep description="This is a description">Title</ProgressStep>);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

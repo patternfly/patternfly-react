@@ -1,89 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BreadcrumbItem component should render active breadcrumbItem 1`] = `
-<div>
-  <li
-    class="pf-c-breadcrumb__item"
-  >
-    Item
-  </li>
-</div>
-`;
+exports[`BreadcrumbItem component should render active breadcrumbItem 1`] = `"<div><li class=\\"pf-c-breadcrumb__item\\">Item</li></div>"`;
 
-exports[`BreadcrumbItem component should render breadcrumbItem with className 1`] = `
-<div>
-  <li
-    class="pf-c-breadcrumb__item Class"
-  >
-    Item
-  </li>
-</div>
-`;
+exports[`BreadcrumbItem component should render breadcrumbItem with className 1`] = `"<div><li class=\\"pf-c-breadcrumb__item Class\\">Item</li></div>"`;
 
-exports[`BreadcrumbItem component should render breadcrumbItem with component 1`] = `
-<div>
-  <li
-    class="pf-c-breadcrumb__item"
-  >
-    Stuff
-  </li>
-</div>
-`;
+exports[`BreadcrumbItem component should render breadcrumbItem with component 1`] = `"<div><li class=\\"pf-c-breadcrumb__item\\">Stuff</li></div>"`;
 
-exports[`BreadcrumbItem component should render breadcrumbItem with custom element 1`] = `
-<div>
-  <li
-    class="pf-c-breadcrumb__item"
-  >
-    <h1>
-      Header
-    </h1>
-  </li>
-</div>
-`;
+exports[`BreadcrumbItem component should render breadcrumbItem with custom element 1`] = `"<div><li class=\\"pf-c-breadcrumb__item\\"><h1>Header</h1></li></div>"`;
 
-exports[`BreadcrumbItem component should render breadcrumbItem with id 1`] = `
-<div>
-  <li
-    class="pf-c-breadcrumb__item"
-    id="Item 1"
-  >
-    Item
-  </li>
-</div>
-`;
+exports[`BreadcrumbItem component should render breadcrumbItem with id 1`] = `"<div><li id=\\"Item 1\\" class=\\"pf-c-breadcrumb__item\\">Item</li></div>"`;
 
-exports[`BreadcrumbItem component should render breadcrumbItem with target 1`] = `
-<div>
-  <li
-    class="pf-c-breadcrumb__item"
-  >
-    Item
-  </li>
-</div>
-`;
+exports[`BreadcrumbItem component should render breadcrumbItem with target 1`] = `"<div><li class=\\"pf-c-breadcrumb__item\\">Item</li></div>"`;
 
-exports[`BreadcrumbItem component should render default breadcrumbItem 1`] = `
-<div>
-  <li
-    class="pf-c-breadcrumb__item"
-  >
-    Item
-  </li>
-</div>
-`;
+exports[`BreadcrumbItem component should render default breadcrumbItem 1`] = `"<div><li class=\\"pf-c-breadcrumb__item\\">Item</li></div>"`;
 
-exports[`BreadcrumbItem component should render link breadcrumbItem 1`] = `
-<div>
-  <li
-    class="pf-c-breadcrumb__item"
-  >
-    <a
-      class="pf-c-breadcrumb__link"
-      href="/somewhere"
-    >
-      Item
-    </a>
-  </li>
-</div>
-`;
+exports[`BreadcrumbItem component should render link breadcrumbItem 1`] = `"<div><li class=\\"pf-c-breadcrumb__item\\"><a href=\\"/somewhere\\" class=\\"pf-c-breadcrumb__link\\">Item</a></li></div>"`;

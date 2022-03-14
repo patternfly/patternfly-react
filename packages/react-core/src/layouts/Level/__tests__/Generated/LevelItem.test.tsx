@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('LevelItem should match snapshot (auto-generated)', () => {
   const view = render(<LevelItem children={<>ReactNode</>} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

@@ -19,7 +19,7 @@ test('popover renders close-button, header and body', () => {
       <div>Toggle Popover</div>
     </Popover>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('popover can have a custom minimum width', () => {
@@ -40,7 +40,7 @@ test('popover can have a custom minimum width', () => {
       <div>Toggle Popover</div>
     </Popover>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('popover can specify position as object value', () => {
@@ -60,7 +60,7 @@ test('popover can specify position as object value', () => {
       <div>Toggle Popover</div>
     </Popover>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('popover can close from content (uncontrolled)', () => {
@@ -88,5 +88,5 @@ test('popover can close from content (uncontrolled)', () => {
       <button id="uncontrolled-toggle">Toggle Popover</button>
     </Popover>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

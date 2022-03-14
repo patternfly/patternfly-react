@@ -1,17 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Gutter 1`] = `
-<div>
-  <div
-    class="pf-l-level pf-m-gutter"
-  />
-</div>
-`;
+exports[`Gutter 1`] = `"<div><div class=\\"pf-l-level pf-m-gutter\\"></div></div>"`;
 
-exports[`item 1`] = `
-<div>
-  <div>
-    Level Item
-  </div>
-</div>
-`;
+exports[`item 1`] = `"<div><div>Level Item</div></div>"`;

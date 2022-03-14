@@ -5,5 +5,5 @@ import { VncConsole } from '../../VncConsole';
 
 test('placeholder render test', () => {
   const view = render(<VncConsole host="my.unknown.host" />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

@@ -1,9 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ApplicationLauncherContent should match snapshot (auto-generated) 1`] = `
-<div>
-  <div>
-    ReactNode
-  </div>
-</div>
-`;
+exports[`ApplicationLauncherContent should match snapshot (auto-generated) 1`] = `"<div><div>ReactNode</div></div>"`;

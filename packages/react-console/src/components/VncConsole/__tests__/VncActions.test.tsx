@@ -8,7 +8,7 @@ import { VncActions } from '../VncActions';
 describe('VncActions', () => {
   test('placeholder render test', () => {
     const view = render(<VncActions onCtrlAltDel={jest.fn()} onDisconnect={jest.fn()} />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('VncActions renders correctly component hierarchy', () => {

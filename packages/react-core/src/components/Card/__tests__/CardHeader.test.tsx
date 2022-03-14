@@ -5,6 +5,6 @@ import { CardHeader } from '../CardHeader';
 describe('CardHeader', () => {
   test('onExpand adds the toggle button', () => {
     const view = render(<CardHeader onExpand={jest.fn()} />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

@@ -19,5 +19,5 @@ it('DataListCheck should match snapshot (auto-generated)', () => {
       aria-labelledby={'string'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

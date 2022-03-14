@@ -100,7 +100,7 @@ test('CatalogTile href renders properly', () => {
       description="1234567890123"
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('CatalogTile onClick behaves properly', () => {

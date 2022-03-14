@@ -1,246 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DataList Cell default 1`] = `
-<div>
-  <div
-    class="pf-c-data-list__cell"
-  >
-    Secondary
-  </div>
-</div>
-`;
+exports[`DataList Cell default 1`] = `"<div><div class=\\"pf-c-data-list__cell\\">Secondary</div></div>"`;
 
-exports[`DataList Cells 1`] = `
-<div>
-  <div
-    class="pf-c-data-list__item-content"
-  >
-    <div
-      class="pf-c-data-list__cell data-list-custom"
-      id="primary-item"
-    >
-      Primary Id
-    </div>
-    <div
-      class="pf-c-data-list__cell data-list-custom"
-      id="primary-item"
-    >
-      Primary Id 2
-    </div>
-  </div>
-</div>
-`;
+exports[`DataList Cells 1`] = `"<div><div class=\\"pf-c-data-list__item-content\\"><div class=\\"pf-c-data-list__cell data-list-custom\\" id=\\"primary-item\\">Primary Id</div><div class=\\"pf-c-data-list__cell data-list-custom\\" id=\\"primary-item\\">Primary Id 2</div></div></div>"`;
 
-exports[`DataList DataList variants Breakpoint - 2xl 1`] = `
-<div>
-  <ul
-    aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid-2xl"
-  />
-</div>
-`;
+exports[`DataList DataList variants Breakpoint - 2xl 1`] = `"<div><ul class=\\"pf-c-data-list pf-m-grid-2xl\\" aria-label=\\"this is a simple list\\"></ul></div>"`;
 
-exports[`DataList DataList variants Breakpoint - always 1`] = `
-<div>
-  <ul
-    aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid"
-  />
-</div>
-`;
+exports[`DataList DataList variants Breakpoint - always 1`] = `"<div><ul class=\\"pf-c-data-list pf-m-grid\\" aria-label=\\"this is a simple list\\"></ul></div>"`;
 
-exports[`DataList DataList variants Breakpoint - lg 1`] = `
-<div>
-  <ul
-    aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid-lg"
-  />
-</div>
-`;
+exports[`DataList DataList variants Breakpoint - lg 1`] = `"<div><ul class=\\"pf-c-data-list pf-m-grid-lg\\" aria-label=\\"this is a simple list\\"></ul></div>"`;
 
-exports[`DataList DataList variants Breakpoint - md 1`] = `
-<div>
-  <ul
-    aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid-md"
-  />
-</div>
-`;
+exports[`DataList DataList variants Breakpoint - md 1`] = `"<div><ul class=\\"pf-c-data-list pf-m-grid-md\\" aria-label=\\"this is a simple list\\"></ul></div>"`;
 
-exports[`DataList DataList variants Breakpoint - none 1`] = `
-<div>
-  <ul
-    aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid-none"
-  />
-</div>
-`;
+exports[`DataList DataList variants Breakpoint - none 1`] = `"<div><ul class=\\"pf-c-data-list pf-m-grid-none\\" aria-label=\\"this is a simple list\\"></ul></div>"`;
 
-exports[`DataList DataList variants Breakpoint - sm 1`] = `
-<div>
-  <ul
-    aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid-sm"
-  />
-</div>
-`;
+exports[`DataList DataList variants Breakpoint - sm 1`] = `"<div><ul class=\\"pf-c-data-list pf-m-grid-sm\\" aria-label=\\"this is a simple list\\"></ul></div>"`;
 
-exports[`DataList DataList variants Breakpoint - xl 1`] = `
-<div>
-  <ul
-    aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid-xl"
-  />
-</div>
-`;
+exports[`DataList DataList variants Breakpoint - xl 1`] = `"<div><ul class=\\"pf-c-data-list pf-m-grid-xl\\" aria-label=\\"this is a simple list\\"></ul></div>"`;
 
-exports[`DataList DataListAction button 1`] = `
-<div>
-  <div
-    class="pf-c-data-list__item-action"
-  >
-    <button
-      aria-disabled="false"
-      class="pf-c-button pf-m-primary"
-      data-ouia-component-id="OUIA-Generated-Button-primary-1"
-      data-ouia-component-type="PF4/Button"
-      data-ouia-safe="true"
-      id="delete-item-1"
-      type="button"
-    >
-      Delete
-    </button>
-  </div>
-</div>
-`;
+exports[`DataList DataListAction button 1`] = `"<div><div class=\\"pf-c-data-list__item-action\\"><button id=\\"delete-item-1\\" aria-disabled=\\"false\\" class=\\"pf-c-button pf-m-primary\\" type=\\"button\\" data-ouia-component-type=\\"PF4/Button\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-Button-primary-1\\">Delete</button></div></div>"`;
 
-exports[`DataList DataListAction dropdown 1`] = `
-<div>
-  <div
-    class="pf-c-data-list__item-action"
-  >
-    <div
-      class="pf-c-data-list__action"
-    >
-      <div
-        class="pf-c-dropdown pf-m-align-right"
-        data-ouia-component-id="OUIA-Generated-Dropdown-1"
-        data-ouia-component-type="PF4/Dropdown"
-        data-ouia-safe="true"
-      >
-        <button
-          aria-expanded="false"
-          aria-haspopup="true"
-          aria-label="Actions"
-          class="pf-c-dropdown__toggle pf-m-plain"
-          id="pf-dropdown-toggle-id-0"
-          type="button"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style="vertical-align: -0.125em;"
-            viewBox="0 0 192 512"
-            width="1em"
-          >
-            <path
-              d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-            />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
+exports[`DataList DataListAction dropdown 1`] = `"<div><div class=\\"pf-c-data-list__item-action\\"><div class=\\"pf-c-data-list__action\\"><div class=\\"pf-c-dropdown pf-m-align-right\\" data-ouia-component-type=\\"PF4/Dropdown\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-Dropdown-1\\"><button aria-label=\\"Actions\\" id=\\"pf-dropdown-toggle-id-0\\" class=\\"pf-c-dropdown__toggle pf-m-plain\\" type=\\"button\\" aria-expanded=\\"false\\" aria-haspopup=\\"true\\"><svg style=\\"vertical-align: -0.125em;\\" fill=\\"currentColor\\" height=\\"1em\\" width=\\"1em\\" viewBox=\\"0 0 192 512\\" aria-hidden=\\"true\\" role=\\"img\\"><path d=\\"M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z\\"></path></svg></button></div></div></div></div>"`;
 
-exports[`DataList DataListContent 1`] = `
-<div>
-  <section
-    aria-label="Primary Content Details"
-    class="pf-c-data-list__expandable-content"
-    id=""
-  >
-    <div
-      class="pf-c-data-list__expandable-content-body"
-    >
-       test
-    </div>
-  </section>
-</div>
-`;
+exports[`DataList DataListContent 1`] = `"<div><section id=\\"\\" class=\\"pf-c-data-list__expandable-content\\" aria-label=\\"Primary Content Details\\"><div class=\\"pf-c-data-list__expandable-content-body\\"> test</div></section></div>"`;
 
-exports[`DataList DataListContent hasNoPadding 1`] = `
-<div>
-  <section
-    aria-label="Primary Content Details"
-    class="pf-c-data-list__expandable-content"
-    hidden=""
-    id=""
-  >
-    <div
-      class="pf-c-data-list__expandable-content-body pf-m-no-padding"
-    >
-      test
-    </div>
-  </section>
-</div>
-`;
+exports[`DataList DataListContent hasNoPadding 1`] = `"<div><section id=\\"\\" class=\\"pf-c-data-list__expandable-content\\" hidden=\\"\\" aria-label=\\"Primary Content Details\\"><div class=\\"pf-c-data-list__expandable-content-body pf-m-no-padding\\">test</div></section></div>"`;
 
-exports[`DataList Item 1`] = `
-<div>
-  <li
-    aria-labelledby="item-1"
-    class="pf-c-data-list__item data-list-item-custom"
-    id=""
-  />
-</div>
-`;
+exports[`DataList Item 1`] = `"<div><li id=\\"\\" class=\\"pf-c-data-list__item data-list-item-custom\\" aria-labelledby=\\"item-1\\"></li></div>"`;
 
 exports[`DataList Item default 1`] = `"<li id=\\"\\" class=\\"pf-c-data-list__item\\" aria-labelledby=\\"item-1\\"></li>"`;
 
-exports[`DataList List 1`] = `
-<div>
-  <ul
-    aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid-md data-list-custom"
-  />
-</div>
-`;
+exports[`DataList List 1`] = `"<div><ul class=\\"pf-c-data-list pf-m-grid-md data-list-custom\\" aria-label=\\"this is a simple list\\"></ul></div>"`;
 
-exports[`DataList List compact 1`] = `
-<div>
-  <ul
-    aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-compact pf-m-grid-md"
-  />
-</div>
-`;
+exports[`DataList List compact 1`] = `"<div><ul class=\\"pf-c-data-list pf-m-compact pf-m-grid-md\\" aria-label=\\"this is a simple list\\"></ul></div>"`;
 
-exports[`DataList List default 1`] = `
-<div>
-  <ul
-    aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-grid-md"
-  />
-</div>
-`;
+exports[`DataList List default 1`] = `"<div><ul class=\\"pf-c-data-list pf-m-grid-md\\" aria-label=\\"this is a simple list\\"></ul></div>"`;
 
-exports[`DataList List draggable 1`] = `
-<div>
-  <ul
-    aria-label="this is a simple list"
-    class="pf-c-data-list pf-m-compact pf-m-grid-md"
-  />
-</div>
-`;
+exports[`DataList List draggable 1`] = `"<div><ul class=\\"pf-c-data-list pf-m-compact pf-m-grid-md\\" aria-label=\\"this is a simple list\\"></ul></div>"`;
 
-exports[`DataList item row default 1`] = `
-<div>
-  <div
-    class="pf-c-data-list__item-row"
-  />
-</div>
-`;
+exports[`DataList item row default 1`] = `"<div><div class=\\"pf-c-data-list__item-row\\"></div></div>"`;

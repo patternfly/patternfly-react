@@ -1,16 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SimpleListItem should match snapshot (auto-generated) 1`] = `
-<div>
-  <li
-    class="''"
-  >
-    <button
-      class="pf-c-simple-list__item-link ''"
-      type="button"
-    >
-      ReactNode
-    </button>
-  </li>
-</div>
-`;
+exports[`SimpleListItem should match snapshot (auto-generated) 1`] = `"<div><li class=\\"''\\"><button class=\\"pf-c-simple-list__item-link ''\\" type=\\"button\\">ReactNode</button></li></div>"`;

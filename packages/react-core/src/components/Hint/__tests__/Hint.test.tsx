@@ -13,5 +13,5 @@ test('simple hint', () => {
       <HintFooter>Footer</HintFooter>
     </Hint>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

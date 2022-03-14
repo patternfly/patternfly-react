@@ -9,7 +9,7 @@ test('isMain set to true', () => {
       <StackItem isFilled>Filled content</StackItem>
     </Stack>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('isMain defaults to false', () => {
@@ -18,7 +18,7 @@ test('isMain defaults to false', () => {
       <StackItem>Basic content</StackItem>
     </Stack>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('gutter', () => {
@@ -27,5 +27,5 @@ test('gutter', () => {
       <StackItem>Basic content</StackItem>
     </Stack>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

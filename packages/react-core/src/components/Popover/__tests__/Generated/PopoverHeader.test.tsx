@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('PopoverHeader should match snapshot (auto-generated)', () => {
   const view = render(<PopoverHeader id={'string'} children={<div>ReactNode</div>} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

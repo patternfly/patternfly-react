@@ -8,7 +8,7 @@ import { CardFooter } from '../CardFooter';
 describe('CardFooter', () => {
   test('renders with PatternFly Core styles', () => {
     const view = render(<CardFooter />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('className is added to the root element', () => {

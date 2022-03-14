@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('OptionsMenuSeparator should match snapshot (auto-generated)', () => {
   const view = render(<OptionsMenuSeparator className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

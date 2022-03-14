@@ -9,5 +9,5 @@ test('ModalBoxBody Test', () => {
       This is a ModalBox header
     </ModalBoxBody>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

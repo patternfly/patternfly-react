@@ -26,5 +26,5 @@ it('OptionsToggle should match snapshot (auto-generated)', () => {
       onEnter={null}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

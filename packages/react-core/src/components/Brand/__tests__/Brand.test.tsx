@@ -4,5 +4,5 @@ import { Brand } from '../Brand';
 
 test('simple brand', () => {
   const view = render(<Brand alt="brand" />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

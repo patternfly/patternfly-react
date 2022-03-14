@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('TextListItem should match snapshot (auto-generated)', () => {
   const view = render(<TextListItem children={<>ReactNode</>} className={"''"} component={'li'} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

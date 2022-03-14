@@ -4,9 +4,7 @@ import React from 'react';
 
 describe('Form Alert component', () => {
   test('should render form group required variant', () => {
-    const view = render(
-      <FormAlert></FormAlert>
-    );
-    expect(view.container).toMatchSnapshot();
+    const view = render(<FormAlert></FormAlert>);
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

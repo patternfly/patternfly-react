@@ -1,13 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PopoverDialog should match snapshot (auto-generated) 1`] = `
-<div>
-  <div
-    aria-modal="true"
-    class="pf-c-popover pf-m-top null"
-    role="dialog"
-  >
-    ReactNode
-  </div>
-</div>
-`;
+exports[`PopoverDialog should match snapshot (auto-generated) 1`] = `"<div><div class=\\"pf-c-popover pf-m-top null\\" role=\\"dialog\\" aria-modal=\\"true\\">ReactNode</div></div>"`;

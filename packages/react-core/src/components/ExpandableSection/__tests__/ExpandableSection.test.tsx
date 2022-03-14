@@ -8,12 +8,12 @@ const props = {};
 
 test('ExpandableSection', () => {
   const view = render(<ExpandableSection {...props}>test </ExpandableSection>);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Renders ExpandableSection expanded', () => {
   const view = render(<ExpandableSection isExpanded> test </ExpandableSection>);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('ExpandableSection onToggle called', () => {
@@ -27,7 +27,7 @@ test('ExpandableSection onToggle called', () => {
 
 test('Renders Uncontrolled ExpandableSection', () => {
   const view = render(<ExpandableSection toggleText="Show More"> test </ExpandableSection>);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Detached ExpandableSection renders successfully', () => {
@@ -41,15 +41,24 @@ test('Detached ExpandableSection renders successfully', () => {
       </ExpandableSectionToggle>
     </React.Fragment>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Disclosure ExpandableSection', () => {
-  const view = render(<ExpandableSection {...props} displaySize="large" isWidthLimited>test </ExpandableSection>);
-  expect(view.container).toMatchSnapshot();
+  const view = render(
+    <ExpandableSection {...props} displaySize="large" isWidthLimited>
+      test{' '}
+    </ExpandableSection>
+  );
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Renders ExpandableSection indented', () => {
-  const view = render(<ExpandableSection isExpanded isIndented> test </ExpandableSection>);
-  expect(view.container).toMatchSnapshot();
+  const view = render(
+    <ExpandableSection isExpanded isIndented>
+      {' '}
+      test{' '}
+    </ExpandableSection>
+  );
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

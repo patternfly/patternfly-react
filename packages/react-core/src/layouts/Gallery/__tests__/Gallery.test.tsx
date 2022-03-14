@@ -5,7 +5,7 @@ import { render } from '@testing-library/react';
 
 test('gutter', () => {
   const view = render(<Gallery hasGutter />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('gutter breakpoints', () => {
@@ -23,14 +23,14 @@ test('gutter breakpoints', () => {
       }}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('alternative component', () => {
   const view = render(
-    <Gallery component='ul'>
-      <GalleryItem component='li'>Test</GalleryItem>
+    <Gallery component="ul">
+      <GalleryItem component="li">Test</GalleryItem>
     </Gallery>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

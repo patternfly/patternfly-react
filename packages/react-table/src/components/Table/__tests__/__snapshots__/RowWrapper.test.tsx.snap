@@ -1,31 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RowWrapper renders correctly 1`] = `
-<div>
-  <table>
-    <tbody>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-1"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      />
-    </tbody>
-  </table>
-</div>
-`;
+exports[`RowWrapper renders correctly 1`] = `"<div><table><tbody><tr class=\\"\\" data-ouia-component-type=\\"PF4/TableRow\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-TableRow-1\\"></tr></tbody></table></div>"`;
 
-exports[`RowWrapper renders expanded correctly 1`] = `
-<div>
-  <table>
-    <tbody>
-      <tr
-        class="pf-c-table__expandable-row pf-m-expanded"
-        data-ouia-component-id="OUIA-Generated-TableRow-2"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      />
-    </tbody>
-  </table>
-</div>
-`;
+exports[`RowWrapper renders expanded correctly 1`] = `"<div><table><tbody><tr class=\\"pf-c-table__expandable-row pf-m-expanded\\" data-ouia-component-type=\\"PF4/TableRow\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-TableRow-2\\"></tr></tbody></table></div>"`;

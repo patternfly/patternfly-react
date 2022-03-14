@@ -12,6 +12,6 @@ describe('OverflowMenuDropdownItem', () => {
         <OverflowMenuDropdownItem children={'any'} isShared={false} />
       </DropdownArrowContext.Provider>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

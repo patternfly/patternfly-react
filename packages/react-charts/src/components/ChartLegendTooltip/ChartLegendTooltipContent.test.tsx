@@ -5,7 +5,7 @@ import { ChartLegendTooltipContent } from './ChartLegendTooltipContent';
 Object.values([true, false]).forEach(() => {
   test('ChartLegendTooltipContent', () => {
     const view = render(<ChartLegendTooltipContent />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -17,5 +17,5 @@ test('renders component text', () => {
     { name: 'Mice' }
   ];
   const view = render(<ChartLegendTooltipContent data={legendData} text={['1, 2, 3, 4']} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

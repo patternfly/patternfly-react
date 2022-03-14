@@ -10,7 +10,7 @@ describe('ActionGroup component', () => {
         <div>Hello</div>
       </ActionGroup>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('should render horizontal form ActionGroup variant', () => {
@@ -19,6 +19,6 @@ describe('ActionGroup component', () => {
         <ActionGroup />
       </Form>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

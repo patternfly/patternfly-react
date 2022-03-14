@@ -11,7 +11,7 @@ describe('HelperText', () => {
         <HelperTextItem>help test text</HelperTextItem>
       </HelperText>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   Object.values(['default', 'indeterminate', 'warning', 'success', 'invalid']).forEach(variant => {
@@ -21,7 +21,7 @@ describe('HelperText', () => {
           {variant} help test text
         </HelperTextItem>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(view.container.outerHTML).toMatchSnapshot();
     });
   });
 
@@ -32,7 +32,7 @@ describe('HelperText', () => {
         <HelperTextItem component="li">help test text 2</HelperTextItem>
       </HelperText>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('icon helper text renders properly', () => {
@@ -41,7 +41,7 @@ describe('HelperText', () => {
         <HelperTextItem icon={<CheckIcon />}>help test text</HelperTextItem>
       </HelperText>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('dynamic helper text renders successfully', () => {
@@ -50,7 +50,7 @@ describe('HelperText', () => {
         <HelperTextItem isDynamic>help test text</HelperTextItem>
       </HelperText>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('helper text block renders successfully', () => {
@@ -61,6 +61,6 @@ describe('HelperText', () => {
         <HelperTextItem>help test text 3</HelperTextItem>
       </HelperText>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

@@ -24,5 +24,5 @@ it('KebabToggle should match snapshot (auto-generated)', () => {
       bubbleEvent={false}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

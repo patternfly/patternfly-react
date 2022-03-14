@@ -1,224 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChartPoint 1`] = `
-<div>
-  <div
-    class="pf-c-chart"
-    style="height: 100%; width: 100%; pointer-events: none; position: relative;"
-  >
-    <svg
-      height="300"
-      role="img"
-      style="pointer-events: all; width: 100%; height: 100%;"
-      viewBox="0 0 450 300"
-      width="450"
-    >
-      <rect
-        height="30.904999999999998"
-        role="presentation"
-        shape-rendering="auto"
-        style="fill: none;"
-        vector-effect="non-scaling-stroke"
-        width="175.23125"
-        x="0"
-        y="0"
-      />
-      <path
-        d="M 9.128, 18.872
+"<div><div style=\\"height: 100%; width: 100%; pointer-events: none; position: relative;\\" class=\\"pf-c-chart\\"><svg width=\\"450\\" height=\\"300\\" role=\\"img\\" viewBox=\\"0 0 450 300\\" style=\\"pointer-events: all; width: 100%; height: 100%;\\"><rect vector-effect=\\"non-scaling-stroke\\" style=\\"fill: none;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x=\\"0\\" y=\\"0\\" width=\\"175.23125\\" height=\\"30.904999999999998\\"></rect><path d=\\"M 9.128, 18.872
       h9.744
       v-9.744
       h-9.744
-      z"
-        role="presentation"
-        shape-rendering="auto"
-        style="fill: #06c;"
-      />
-      <path
-        d="M 95.05925, 18.872
+      z\\" role=\\"presentation\\" shape-rendering=\\"auto\\" style=\\"fill: #06c;\\"></path><path d=\\"M 95.05925, 18.872
       h9.744
       v-9.744
       h-9.744
-      z"
-        role="presentation"
-        shape-rendering="auto"
-        style="fill: #8bc1f7;"
-      />
-      <text
-        direction="inherit"
-        dx="0"
-        id="legend-labels-0"
-        x="30.8"
-        y="18.97"
-      >
-        <tspan
-          dx="0"
-          dy="0"
-          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;"
-          text-anchor="start"
-          x="30.8"
-        >
-          Series 1
-        </tspan>
-      </text>
-      <text
-        direction="inherit"
-        dx="0"
-        id="legend-labels-1"
-        x="116.73125"
-        y="18.97"
-      >
-        <tspan
-          dx="0"
-          dy="0"
-          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;"
-          text-anchor="start"
-          x="116.73125"
-        >
-          Series 2
-        </tspan>
-      </text>
-    </svg>
-    <div
-      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
-    >
-      <svg
-        height="300"
-        style="overflow: visible; width: 100%; height: 100%;"
-        viewBox="0 0 450 300"
-        width="450"
-      />
-    </div>
-  </div>
-</div>
+      z\\" role=\\"presentation\\" shape-rendering=\\"auto\\" style=\\"fill: #8bc1f7;\\"></path><text direction=\\"inherit\\" dx=\\"0\\" x=\\"30.8\\" y=\\"18.97\\" id=\\"legend-labels-0\\"><tspan x=\\"30.8\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"start\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;\\">Series 1</tspan></text><text direction=\\"inherit\\" dx=\\"0\\" x=\\"116.73125\\" y=\\"18.97\\" id=\\"legend-labels-1\\"><tspan x=\\"116.73125\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"start\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;\\">Series 2</tspan></text></svg><div style=\\"z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\\"><svg width=\\"450\\" height=\\"300\\" viewBox=\\"0 0 450 300\\" style=\\"overflow: visible; width: 100%; height: 100%;\\"></svg></div></div></div>"
 `;
 
 exports[`ChartPoint 2`] = `
-<div>
-  <div
-    class="pf-c-chart"
-    style="height: 100%; width: 100%; pointer-events: none; position: relative;"
-  >
-    <svg
-      height="300"
-      role="img"
-      style="pointer-events: all; width: 100%; height: 100%;"
-      viewBox="0 0 450 300"
-      width="450"
-    >
-      <rect
-        height="30.904999999999998"
-        role="presentation"
-        shape-rendering="auto"
-        style="fill: none;"
-        vector-effect="non-scaling-stroke"
-        width="175.23125"
-        x="0"
-        y="0"
-      />
-      <path
-        d="M 9.128, 18.872
+"<div><div style=\\"height: 100%; width: 100%; pointer-events: none; position: relative;\\" class=\\"pf-c-chart\\"><svg width=\\"450\\" height=\\"300\\" role=\\"img\\" viewBox=\\"0 0 450 300\\" style=\\"pointer-events: all; width: 100%; height: 100%;\\"><rect vector-effect=\\"non-scaling-stroke\\" style=\\"fill: none;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x=\\"0\\" y=\\"0\\" width=\\"175.23125\\" height=\\"30.904999999999998\\"></rect><path d=\\"M 9.128, 18.872
       h9.744
       v-9.744
       h-9.744
-      z"
-        role="presentation"
-        shape-rendering="auto"
-        style="fill: #06c;"
-      />
-      <path
-        d="M 95.05925, 18.872
+      z\\" role=\\"presentation\\" shape-rendering=\\"auto\\" style=\\"fill: #06c;\\"></path><path d=\\"M 95.05925, 18.872
       h9.744
       v-9.744
       h-9.744
-      z"
-        role="presentation"
-        shape-rendering="auto"
-        style="fill: #8bc1f7;"
-      />
-      <text
-        direction="inherit"
-        dx="0"
-        id="legend-labels-0"
-        x="30.8"
-        y="18.97"
-      >
-        <tspan
-          dx="0"
-          dy="0"
-          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;"
-          text-anchor="start"
-          x="30.8"
-        >
-          Series 1
-        </tspan>
-      </text>
-      <text
-        direction="inherit"
-        dx="0"
-        id="legend-labels-1"
-        x="116.73125"
-        y="18.97"
-      >
-        <tspan
-          dx="0"
-          dy="0"
-          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;"
-          text-anchor="start"
-          x="116.73125"
-        >
-          Series 2
-        </tspan>
-      </text>
-    </svg>
-    <div
-      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
-    >
-      <svg
-        height="300"
-        style="overflow: visible; width: 100%; height: 100%;"
-        viewBox="0 0 450 300"
-        width="450"
-      />
-    </div>
-  </div>
-</div>
+      z\\" role=\\"presentation\\" shape-rendering=\\"auto\\" style=\\"fill: #8bc1f7;\\"></path><text direction=\\"inherit\\" dx=\\"0\\" x=\\"30.8\\" y=\\"18.97\\" id=\\"legend-labels-0\\"><tspan x=\\"30.8\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"start\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;\\">Series 1</tspan></text><text direction=\\"inherit\\" dx=\\"0\\" x=\\"116.73125\\" y=\\"18.97\\" id=\\"legend-labels-1\\"><tspan x=\\"116.73125\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"start\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;\\">Series 2</tspan></text></svg><div style=\\"z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\\"><svg width=\\"450\\" height=\\"300\\" viewBox=\\"0 0 450 300\\" style=\\"overflow: visible; width: 100%; height: 100%;\\"></svg></div></div></div>"
 `;
 
 exports[`renders component data 1`] = `
-<div>
-  <div
-    class="pf-c-chart"
-    style="height: 100%; width: 100%; pointer-events: none; position: relative;"
-  >
-    <svg
-      height="50"
-      role="img"
-      style="pointer-events: all; width: 100%; height: 100%;"
-      viewBox="0 0 200 50"
-      width="200"
-    >
-      <rect
-        height="51.809999999999995"
-        role="presentation"
-        shape-rendering="auto"
-        style="fill: none;"
-        vector-effect="non-scaling-stroke"
-        width="155.35312500000003"
-        x="0"
-        y="0"
-      />
-      <path
-        d="M 9.128, 39.777
+"<div><div style=\\"height: 100%; width: 100%; pointer-events: none; position: relative;\\" class=\\"pf-c-chart\\"><svg width=\\"200\\" height=\\"50\\" role=\\"img\\" viewBox=\\"0 0 200 50\\" style=\\"pointer-events: all; width: 100%; height: 100%;\\"><rect vector-effect=\\"non-scaling-stroke\\" style=\\"fill: none;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x=\\"0\\" y=\\"0\\" width=\\"155.35312500000003\\" height=\\"51.809999999999995\\"></rect><path d=\\"M 9.128, 39.777
       h9.744
       v-9.744
       h-9.744
-      z"
-        role="presentation"
-        shape-rendering="auto"
-        style="fill: #06c;"
-      />
-      <path
-        d="M 76.62125, 37.061
+      z\\" role=\\"presentation\\" shape-rendering=\\"auto\\" style=\\"fill: #06c;\\"></path><path d=\\"M 76.62125, 37.061
       h3.695999999999998
       v-4.312
       h-3.695999999999998
@@ -232,73 +43,5 @@ exports[`renders component data 1`] = `
       h3.695999999999998
       v-4.312
       h-3.695999999999998
-      z"
-        role="presentation"
-        shape-rendering="auto"
-        style="fill: #8bc1f7;"
-      />
-      <text
-        direction="inherit"
-        dx="0"
-        id="legend-title-all"
-        x="2"
-        y="13.969999999999999"
-      >
-        <tspan
-          dx="0"
-          dy="0"
-          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 2px; stroke: transparent; fill: #252525;"
-          text-anchor="start"
-          x="2"
-        >
-          Average number of pets
-        </tspan>
-      </text>
-      <text
-        direction="inherit"
-        dx="0"
-        id="legend-labels-0"
-        x="30.8"
-        y="39.875"
-      >
-        <tspan
-          dx="0"
-          dy="0"
-          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;"
-          text-anchor="start"
-          x="30.8"
-        >
-          Cats
-        </tspan>
-      </text>
-      <text
-        direction="inherit"
-        dx="0"
-        id="legend-labels-1"
-        x="99.58125"
-        y="39.875"
-      >
-        <tspan
-          dx="0"
-          dy="0"
-          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;"
-          text-anchor="start"
-          x="99.58125"
-        >
-          Dogs
-        </tspan>
-      </text>
-    </svg>
-    <div
-      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
-    >
-      <svg
-        height="50"
-        style="overflow: visible; width: 100%; height: 100%;"
-        viewBox="0 0 200 50"
-        width="200"
-      />
-    </div>
-  </div>
-</div>
+      z\\" role=\\"presentation\\" shape-rendering=\\"auto\\" style=\\"fill: #8bc1f7;\\"></path><text direction=\\"inherit\\" dx=\\"0\\" x=\\"2\\" y=\\"13.969999999999999\\" id=\\"legend-title-all\\"><tspan x=\\"2\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"start\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 2px; stroke: transparent; fill: #252525;\\">Average number of pets</tspan></text><text direction=\\"inherit\\" dx=\\"0\\" x=\\"30.8\\" y=\\"39.875\\" id=\\"legend-labels-0\\"><tspan x=\\"30.8\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"start\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;\\">Cats</tspan></text><text direction=\\"inherit\\" dx=\\"0\\" x=\\"99.58125\\" y=\\"39.875\\" id=\\"legend-labels-1\\"><tspan x=\\"99.58125\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"start\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;\\">Dogs</tspan></text></svg><div style=\\"z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\\"><svg width=\\"200\\" height=\\"50\\" viewBox=\\"0 0 200 50\\" style=\\"overflow: visible; width: 100%; height: 100%;\\"></svg></div></div></div>"
 `;

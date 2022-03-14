@@ -16,5 +16,5 @@ it('ToolbarGroup should match snapshot (auto-generated)', () => {
       innerRef={{ current: document.createElement('div') }}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

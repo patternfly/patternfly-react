@@ -1,92 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Panel renders content 1`] = `
-<div>
-  <div
-    class="pf-c-panel"
-  >
-    Foo
-  </div>
-</div>
-`;
+exports[`Panel renders content 1`] = `"<div><div class=\\"pf-c-panel\\">Foo</div></div>"`;
 
-exports[`Panel renders content with bordered styling 1`] = `
-<div>
-  <div
-    class="pf-c-panel pf-m-bordered"
-  >
-    Foo
-  </div>
-</div>
-`;
+exports[`Panel renders content with bordered styling 1`] = `"<div><div class=\\"pf-c-panel pf-m-bordered\\">Foo</div></div>"`;
 
-exports[`Panel renders content with raised styling 1`] = `
-<div>
-  <div
-    class="pf-c-panel pf-m-raised"
-  >
-    Foo
-  </div>
-</div>
-`;
+exports[`Panel renders content with raised styling 1`] = `"<div><div class=\\"pf-c-panel pf-m-raised\\">Foo</div></div>"`;
 
-exports[`Panel renders content with scrollable styling 1`] = `
-<div>
-  <div
-    class="pf-c-panel pf-m-scrollable"
-  >
-    Foo
-  </div>
-</div>
-`;
+exports[`Panel renders content with scrollable styling 1`] = `"<div><div class=\\"pf-c-panel pf-m-scrollable\\">Foo</div></div>"`;
 
-exports[`PanelFooter renders content 1`] = `
-<div>
-  <div
-    class="pf-c-panel__footer"
-  >
-    Foo
-  </div>
-</div>
-`;
+exports[`PanelFooter renders content 1`] = `"<div><div class=\\"pf-c-panel__footer\\">Foo</div></div>"`;
 
-exports[`PanelHeader renders content 1`] = `
-<div>
-  <div
-    class="pf-c-panel__header"
-  >
-    Foo
-  </div>
-</div>
-`;
+exports[`PanelHeader renders content 1`] = `"<div><div class=\\"pf-c-panel__header\\">Foo</div></div>"`;
 
-exports[`PanelMain renders content 1`] = `
-<div>
-  <div
-    class="pf-c-panel__main"
-  >
-    Foo
-  </div>
-</div>
-`;
+exports[`PanelMain renders content 1`] = `"<div><div class=\\"pf-c-panel__main\\">Foo</div></div>"`;
 
-exports[`PanelMain renders content with the set maximum height 1`] = `
-<div>
-  <div
-    class="pf-c-panel__main"
-    style="--pf-c-panel__main--MaxHeight: 80px;"
-  >
-    Foo
-  </div>
-</div>
-`;
+exports[`PanelMain renders content with the set maximum height 1`] = `"<div><div class=\\"pf-c-panel__main\\" style=\\"--pf-c-panel__main--MaxHeight: 80px;\\">Foo</div></div>"`;
 
-exports[`PanelMainBody renders content 1`] = `
-<div>
-  <div
-    class="pf-c-panel__main-body"
-  >
-    Foo
-  </div>
-</div>
-`;
+exports[`PanelMainBody renders content 1`] = `"<div><div class=\\"pf-c-panel__main-body\\">Foo</div></div>"`;

@@ -8,8 +8,6 @@ import { PageHeaderToolsGroup } from '../../PageHeaderToolsGroup';
 import {} from '../..';
 
 it('PageHeaderToolsGroup should match snapshot (auto-generated)', () => {
-  const view = render(
-    <PageHeaderToolsGroup children={<div>ReactNode</div>} className={'string'} />
-  );
-  expect(view.container).toMatchSnapshot();
+  const view = render(<PageHeaderToolsGroup children={<div>ReactNode</div>} className={'string'} />);
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

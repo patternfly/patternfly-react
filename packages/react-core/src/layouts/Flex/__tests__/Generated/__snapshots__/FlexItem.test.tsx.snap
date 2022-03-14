@@ -1,11 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FlexItem should match snapshot (auto-generated) 1`] = `
-<div>
-  <div
-    class="''"
-  >
-    ReactNode
-  </div>
-</div>
-`;
+exports[`FlexItem should match snapshot (auto-generated) 1`] = `"<div><div class=\\"''\\">ReactNode</div></div>"`;

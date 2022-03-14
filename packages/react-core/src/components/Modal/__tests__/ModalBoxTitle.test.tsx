@@ -10,7 +10,7 @@ test('ModalBoxTitle alert variant', () => {
       content
     </ModalBoxTitle>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('ModalBoxTitle info variant', () => {
@@ -19,7 +19,7 @@ test('ModalBoxTitle info variant', () => {
       content
     </ModalBoxTitle>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('ModalBoxTitle danger variant', () => {
@@ -28,7 +28,7 @@ test('ModalBoxTitle danger variant', () => {
       content
     </ModalBoxTitle>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('ModalBoxTitle default variant', () => {
@@ -37,7 +37,7 @@ test('ModalBoxTitle default variant', () => {
       content
     </ModalBoxTitle>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('ModalBoxTitle success variant', () => {
@@ -46,7 +46,7 @@ test('ModalBoxTitle success variant', () => {
       content
     </ModalBoxTitle>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('ModalBoxTitle custom icon variant', () => {
@@ -55,5 +55,5 @@ test('ModalBoxTitle custom icon variant', () => {
       content
     </ModalBoxTitle>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

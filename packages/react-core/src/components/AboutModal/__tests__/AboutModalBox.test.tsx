@@ -8,5 +8,5 @@ test('AboutModalBox Test', () => {
       This is a AboutModalBox
     </AboutModalBox>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

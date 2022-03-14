@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('PopoverCloseButton should match snapshot (auto-generated)', () => {
   const view = render(<PopoverCloseButton onClose={() => undefined as void} aria-label={'string'} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

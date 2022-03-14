@@ -1,22 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NavGroup should match snapshot (auto-generated) 1`] = `
-<div>
-  <section
-    aria-labelledby="string"
-    class="pf-c-nav__section ''"
-  >
-    <h2
-      class="pf-c-nav__section-title"
-      id="string"
-    >
-      string
-    </h2>
-    <ul
-      class="pf-c-nav__list ''"
-    >
-      ReactNode
-    </ul>
-  </section>
-</div>
-`;
+exports[`NavGroup should match snapshot (auto-generated) 1`] = `"<div><section class=\\"pf-c-nav__section ''\\" aria-labelledby=\\"string\\"><h2 class=\\"pf-c-nav__section-title\\" id=\\"string\\">string</h2><ul class=\\"pf-c-nav__list ''\\">ReactNode</ul></section></div>"`;

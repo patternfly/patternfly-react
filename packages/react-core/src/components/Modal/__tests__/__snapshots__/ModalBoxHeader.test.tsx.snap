@@ -1,32 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ModalBoxHeader Test 1`] = `
-<div>
-  <header
-    class="pf-c-modal-box__header"
-  >
-    This is a ModalBox header
-  </header>
-</div>
-`;
+exports[`ModalBoxHeader Test 1`] = `"<div><header class=\\"pf-c-modal-box__header\\">This is a ModalBox header</header></div>"`;
 
-exports[`ModalBoxHeader help renders 1`] = `
-<div>
-  <header
-    class="pf-c-modal-box__header pf-m-help"
-  >
-    <div
-      class="pf-c-modal-box__header-main"
-    >
-      This is a ModalBox header
-    </div>
-    <div
-      class="pf-c-modal-box__header-help"
-    >
-      <div>
-        test
-      </div>
-    </div>
-  </header>
-</div>
-`;
+exports[`ModalBoxHeader help renders 1`] = `"<div><header class=\\"pf-c-modal-box__header pf-m-help\\"><div class=\\"pf-c-modal-box__header-main\\">This is a ModalBox header</div><div class=\\"pf-c-modal-box__header-help\\"><div>test</div></div></header></div>"`;

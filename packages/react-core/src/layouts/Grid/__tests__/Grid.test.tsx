@@ -5,14 +5,14 @@ import { render } from '@testing-library/react';
 
 test('gutter', () => {
   const view = render(<Grid hasGutter />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('alternative component', () => {
   const view = render(
-    <Grid component='ul'>
-      <GridItem component='li'>Test</GridItem>
+    <Grid component="ul">
+      <GridItem component="li">Test</GridItem>
     </Grid>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

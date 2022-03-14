@@ -19,5 +19,5 @@ test('simple fileupload', () => {
       isLoading={false}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

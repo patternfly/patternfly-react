@@ -1,11 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`simple brand 1`] = `
-<div>
-  <img
-    alt="brand"
-    class="pf-c-brand"
-    src=""
-  />
-</div>
-`;
+exports[`simple brand 1`] = `"<div><img class=\\"pf-c-brand\\" src=\\"\\" alt=\\"brand\\"></div>"`;

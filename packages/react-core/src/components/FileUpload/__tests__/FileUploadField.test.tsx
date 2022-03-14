@@ -25,5 +25,5 @@ test('simple fileuploadfield', () => {
       {<p>A custom preview of the uploaded file can be passed as children</p>}
     </FileUploadField>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

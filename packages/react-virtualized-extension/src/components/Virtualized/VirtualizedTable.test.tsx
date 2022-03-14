@@ -32,7 +32,7 @@ describe('Simple virtualized table', () => {
         )}
       </Table>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('aria-label', () => {
@@ -52,7 +52,7 @@ describe('Simple virtualized table', () => {
         )}
       </Table>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -76,7 +76,7 @@ test('Sortable Virtualized Table', () => {
       )}
     </Table>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Simple Actions table', () => {
@@ -107,7 +107,7 @@ test('Simple Actions table', () => {
       )}
     </Table>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Actions virtualized table', () => {
@@ -136,7 +136,7 @@ test('Actions virtualized table', () => {
       )}
     </Table>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Selectable virtualized table', () => {
@@ -158,5 +158,5 @@ test('Selectable virtualized table', () => {
       )}
     </Table>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

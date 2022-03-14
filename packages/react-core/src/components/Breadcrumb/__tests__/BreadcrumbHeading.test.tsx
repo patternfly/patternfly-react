@@ -5,22 +5,22 @@ import { render } from '@testing-library/react';
 describe('BreadcrumbHeading component', () => {
   test('should render default breadcrumbHeading', () => {
     const view = render(<BreadcrumbHeading>Item</BreadcrumbHeading>);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('should pass classname', () => {
     const view = render(<BreadcrumbHeading className="Class">Item</BreadcrumbHeading>);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('should pass custom id', () => {
     const view = render(<BreadcrumbHeading id="Id">Item</BreadcrumbHeading>);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('should render link breadcrumbTitle', () => {
     const view = render(<BreadcrumbHeading to="/somewhere">Item</BreadcrumbHeading>);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('should render breadcrumbHeading with target', () => {
@@ -29,6 +29,6 @@ describe('BreadcrumbHeading component', () => {
         Item
       </BreadcrumbHeading>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

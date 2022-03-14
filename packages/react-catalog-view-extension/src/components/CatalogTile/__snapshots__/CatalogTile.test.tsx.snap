@@ -1,46 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CatalogTile href renders properly 1`] = `
-<div>
-  <a
-    class="pf-c-card pf-m-selectable catalog-tile-pf featured"
-    data-ouia-component-id="OUIA-Generated-Card-6"
-    data-ouia-component-type="PF4/Card"
-    data-ouia-safe="true"
-    href="http://patternfly.org"
-    id="test-href"
-    tabindex="0"
-  >
-    <div
-      class="pf-c-card__title catalog-tile-pf-header"
-    >
-      <div
-        class="catalog-tile-pf-title"
-      >
-        Patternfly
-      </div>
-      <div
-        class="catalog-tile-pf-subtitle"
-      >
-        Provided by Red Hat
-      </div>
-    </div>
-    <div
-      class="pf-c-card__body catalog-tile-pf-body"
-    >
-      <div
-        class="catalog-tile-pf-description"
-      >
-        <span
-          class=""
-        >
-          1234567890123
-        </span>
-      </div>
-    </div>
-  </a>
-</div>
-`;
+exports[`CatalogTile href renders properly 1`] = `"<div><a id=\\"test-href\\" class=\\"pf-c-card pf-m-selectable catalog-tile-pf featured\\" tabindex=\\"0\\" href=\\"http://patternfly.org\\" data-ouia-component-type=\\"PF4/Card\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-Card-6\\"><div class=\\"pf-c-card__title catalog-tile-pf-header\\"><div class=\\"catalog-tile-pf-title\\">Patternfly</div><div class=\\"catalog-tile-pf-subtitle\\">Provided by Red Hat</div></div><div class=\\"pf-c-card__body catalog-tile-pf-body\\"><div class=\\"catalog-tile-pf-description\\"><span class=\\"\\">1234567890123</span></div></div></a></div>"`;
 
 exports[`CatalogTile renders properly 1`] = `
 <div>

@@ -1,11 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`simple avatar 1`] = `
-<div>
-  <img
-    alt="avatar"
-    class="pf-c-avatar pf-m-light"
-    src="test.png"
-  />
-</div>
-`;
+exports[`simple avatar 1`] = `"<div><img src=\\"test.png\\" alt=\\"avatar\\" class=\\"pf-c-avatar pf-m-light\\"></div>"`;

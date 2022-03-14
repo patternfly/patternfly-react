@@ -5,7 +5,7 @@ import { ChartLegend } from './ChartLegend';
 Object.values([true, false]).forEach(() => {
   test('ChartLegend', () => {
     const view = render(<ChartLegend />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -13,5 +13,5 @@ test('renders component data', () => {
   const view = render(
     <ChartLegend data={[{ name: 'Cats' }, { name: 'Dogs' }]} title="Average number of pets" height={50} width={200} />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

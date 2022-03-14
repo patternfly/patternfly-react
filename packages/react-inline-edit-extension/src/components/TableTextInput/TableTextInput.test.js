@@ -10,10 +10,10 @@ const props = {
 
 test('simple table text input', () => {
   const view = render(<TableTextInput aria-label="simple text input" />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('focused table text input', () => {
   const view = render(<TableTextInput {...props} aria-label="focused text input" />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

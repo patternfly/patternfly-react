@@ -11,5 +11,5 @@ it('SimpleListGroup should match snapshot (auto-generated)', () => {
   const view = render(
     <SimpleListGroup children={<>ReactNode</>} className={"''"} titleClassName={"''"} title={''} id={"''"} />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

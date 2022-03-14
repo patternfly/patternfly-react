@@ -15,5 +15,5 @@ test('tooltip renders', () => {
       <div>Toggle tooltip</div>
     </Tooltip>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

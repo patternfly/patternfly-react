@@ -20,5 +20,5 @@ it('WizardNavItem should match snapshot (auto-generated)', () => {
       href={'null'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('WizardFooter should match snapshot (auto-generated)', () => {
   const view = render(<WizardFooter children={'any'} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

@@ -25,5 +25,5 @@ test('check loginpage example against snapshot', () => {
       socialMediaLoginContent="Footer"
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

@@ -11,6 +11,6 @@ describe('ApplicationLauncherSeparator', () => {
         <ApplicationLauncherSeparator />
       </DropdownArrowContext.Provider>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

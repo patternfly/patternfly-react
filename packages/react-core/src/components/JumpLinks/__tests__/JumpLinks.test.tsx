@@ -12,7 +12,7 @@ test('simple jumplinks', () => {
       <JumpLinksItem>Inactive section</JumpLinksItem>
     </JumpLinks>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('jumplinks centered', () => {
@@ -23,7 +23,7 @@ test('jumplinks centered', () => {
       <JumpLinksItem>Inactive section</JumpLinksItem>
     </JumpLinks>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('jumplinks with label', () => {
@@ -34,7 +34,7 @@ test('jumplinks with label', () => {
       <JumpLinksItem>Inactive section</JumpLinksItem>
     </JumpLinks>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('vertical with label', () => {
@@ -45,7 +45,7 @@ test('vertical with label', () => {
       <JumpLinksItem>Inactive section</JumpLinksItem>
     </JumpLinks>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('expandable vertical with subsection', () => {
@@ -64,5 +64,5 @@ test('expandable vertical with subsection', () => {
       <JumpLinksItem>Inactive section</JumpLinksItem>
     </JumpLinks>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

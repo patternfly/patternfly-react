@@ -1,12 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormSelectOption should match snapshot (auto-generated) 1`] = `
-<div>
-  <option
-    class="''"
-    value=""
-  >
-    string
-  </option>
-</div>
-`;
+exports[`FormSelectOption should match snapshot (auto-generated) 1`] = `"<div><option class=\\"''\\" value=\\"\\">string</option></div>"`;

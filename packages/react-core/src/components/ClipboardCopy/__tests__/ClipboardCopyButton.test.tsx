@@ -18,7 +18,7 @@ const props = {
 
 test('copy button render', () => {
   const view = render(<ClipboardCopyButton {...props}>Copy Me</ClipboardCopyButton>);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('copy button onClick', () => {

@@ -17,5 +17,5 @@ it('OptionsMenuItemGroup should match snapshot (auto-generated)', () => {
       hasSeparator={false}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

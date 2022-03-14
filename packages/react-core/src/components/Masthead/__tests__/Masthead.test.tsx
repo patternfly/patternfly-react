@@ -6,7 +6,7 @@ describe('Masthead', () => {
   test('verify basic', () => {
     const view = render(<Masthead>test</Masthead>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('verify full structure', () => {
@@ -22,13 +22,13 @@ describe('Masthead', () => {
       </Masthead>
     );
 
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('verify custom class', () => {
     const view = render(<Masthead className="custom-css">test</Masthead>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('verify inline display breakpoints', () => {
@@ -40,7 +40,7 @@ describe('Masthead', () => {
       </Masthead>
     );
 
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('verify stack display breakpoints', () => {
@@ -50,7 +50,7 @@ describe('Masthead', () => {
       </Masthead>
     );
 
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   Object.values(['insetNone', 'insetXs', 'insetSm', 'insetMd', 'insetLg', 'insetXl', 'inset2xl', 'inset3xl'] as [
@@ -67,7 +67,7 @@ describe('Masthead', () => {
       const view = render(
         <Masthead inset={{ default: inset, sm: inset, md: inset, lg: inset, xl: inset, '2xl': inset }}>test</Masthead>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(view.container.outerHTML).toMatchSnapshot();
     });
   });
 });
@@ -76,19 +76,19 @@ describe('MastheadBrand', () => {
   test('verify basic', () => {
     const view = render(<MastheadBrand>test</MastheadBrand>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('verify custom class', () => {
     const view = render(<MastheadBrand className="custom-css">test</MastheadBrand>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('verify custom component', () => {
     const view = render(<MastheadBrand component="div">test</MastheadBrand>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -96,13 +96,13 @@ describe('MastheadContent', () => {
   test('verify basic', () => {
     const view = render(<MastheadContent>test</MastheadContent>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('verify custom class', () => {
     const view = render(<MastheadContent className="custom-css">test</MastheadContent>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -110,13 +110,13 @@ describe('MastheadMain', () => {
   test('verify basic', () => {
     const view = render(<MastheadMain>test</MastheadMain>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('verify custom class', () => {
     const view = render(<MastheadMain className="custom-css">test</MastheadMain>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -124,12 +124,12 @@ describe('MastheadToggle', () => {
   test('verify basic', () => {
     const view = render(<MastheadToggle>test</MastheadToggle>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('verify custom class', () => {
     const view = render(<MastheadToggle className="custom-css">test</MastheadToggle>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

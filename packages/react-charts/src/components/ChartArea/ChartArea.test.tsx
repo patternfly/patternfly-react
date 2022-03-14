@@ -5,7 +5,7 @@ import { ChartArea } from '../ChartArea';
 Object.values([true, false]).forEach(() => {
   test('ChartArea', () => {
     const view = render(<ChartArea />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -20,5 +20,5 @@ test('renders component data', () => {
       ]}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

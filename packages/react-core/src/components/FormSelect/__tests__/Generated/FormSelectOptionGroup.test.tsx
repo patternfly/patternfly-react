@@ -11,5 +11,5 @@ it('FormSelectOptionGroup should match snapshot (auto-generated)', () => {
   const view = render(
     <FormSelectOptionGroup children={<>ReactNode</>} className={"''"} label={'string'} isDisabled={false} />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

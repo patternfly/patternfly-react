@@ -21,5 +21,5 @@ it('NavExpandable should match snapshot (auto-generated)', () => {
       onExpand={(e: React.MouseEvent<HTMLLIElement, MouseEvent>, val: boolean) => undefined as void}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

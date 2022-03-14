@@ -37,5 +37,5 @@ it('PaginationOptionsMenu should match snapshot (auto-generated)', () => {
       onPerPageSelect={() => null as any}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

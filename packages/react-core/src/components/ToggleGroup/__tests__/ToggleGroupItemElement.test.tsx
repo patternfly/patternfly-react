@@ -4,15 +4,15 @@ import { ToggleGroupItemElement, ToggleGroupItemVariant } from '../ToggleGroupIt
 
 test('text variant', () => {
   const view = render(<ToggleGroupItemElement variant={ToggleGroupItemVariant.text}>Test</ToggleGroupItemElement>);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('icon variant', () => {
   const view = render(<ToggleGroupItemElement variant={ToggleGroupItemVariant.icon}>ICON</ToggleGroupItemElement>);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('empty', () => {
   const view = render(<ToggleGroupItemElement />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

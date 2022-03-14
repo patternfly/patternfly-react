@@ -26,5 +26,5 @@ it('OptionsMenuToggle should match snapshot (auto-generated)', () => {
       toggleTemplate={<div>ReactNode</div>}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

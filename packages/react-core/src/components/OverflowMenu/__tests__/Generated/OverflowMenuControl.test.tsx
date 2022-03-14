@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('OverflowMenuControl should match snapshot (auto-generated)', () => {
   const view = render(<OverflowMenuControl children={'any'} className={'string'} hasAdditionalOptions={true} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

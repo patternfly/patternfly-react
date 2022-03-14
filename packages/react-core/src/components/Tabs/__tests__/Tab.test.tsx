@@ -5,9 +5,9 @@ import { TabTitleText } from '../TabTitleText';
 
 test('should not render anything', () => {
   const view = render(
-  <Tab eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
+    <Tab eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
       Tab 1 section
     </Tab>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

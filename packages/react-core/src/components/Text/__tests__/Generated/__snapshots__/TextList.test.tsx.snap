@@ -1,12 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextList should match snapshot (auto-generated) 1`] = `
-<div>
-  <ul
-    class="''"
-    data-pf-content="true"
-  >
-    ReactNode
-  </ul>
-</div>
-`;
+exports[`TextList should match snapshot (auto-generated) 1`] = `"<div><ul data-pf-content=\\"true\\" class=\\"''\\">ReactNode</ul></div>"`;

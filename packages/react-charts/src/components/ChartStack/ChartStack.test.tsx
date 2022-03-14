@@ -7,7 +7,7 @@ import { ChartStack } from './ChartStack';
 Object.values([true, false]).forEach(() => {
   test('ChartStack', () => {
     const view = render(<ChartStack />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -50,5 +50,5 @@ test('renders component data', () => {
       </ChartStack>
     </Chart>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

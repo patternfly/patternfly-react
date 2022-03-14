@@ -108,5 +108,5 @@ test('Text example should match snapshot', () => {
       </Text>
     </TextContent>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

@@ -23,5 +23,5 @@ it('WizardToggle should match snapshot (auto-generated)', () => {
       isInPage={true}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

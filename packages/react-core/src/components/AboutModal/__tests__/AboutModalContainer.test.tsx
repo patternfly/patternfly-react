@@ -14,7 +14,7 @@ const props = {
 };
 test('About Modal Container Test simple', () => {
   const view = render(<AboutModalContainer {...props}>This is ModalBox content</AboutModalContainer>);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('About Modal Container Test isOpen', () => {
@@ -23,7 +23,7 @@ test('About Modal Container Test isOpen', () => {
       This is ModalBox content
     </AboutModalContainer>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('About Modal Container Test with onlose', () => {
@@ -32,5 +32,5 @@ test('About Modal Container Test with onlose', () => {
       This is ModalBox content
     </AboutModalContainer>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

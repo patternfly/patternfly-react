@@ -10,7 +10,7 @@ test('Check form filed group example against snapshot', () => {
     <FormFieldGroup
       header={
         <FormFieldGroupHeader
-          titleText={{text:"Field group 4 (non-expandable)", id:"title-text-id1"}}
+          titleText={{ text: 'Field group 4 (non-expandable)', id: 'title-text-id1' }}
           titleDescription="Field group 4 description text."
           actions={<Button />}
         />
@@ -18,7 +18,7 @@ test('Check form filed group example against snapshot', () => {
     />
   );
   const view = render(FieldGroup);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Check expandable form field group example against snapshot', () => {
@@ -28,7 +28,7 @@ test('Check expandable form field group example against snapshot', () => {
       toggleAriaLabel="toggle"
       header={
         <FormFieldGroupHeader
-          titleText={{text:"Field group 4 (non-expandable)", id:"title-text-id2"}}
+          titleText={{ text: 'Field group 4 (non-expandable)', id: 'title-text-id2' }}
           titleDescription="Field group 4 description text."
           actions={<Button />}
         />
@@ -36,7 +36,7 @@ test('Check expandable form field group example against snapshot', () => {
     />
   );
   const view = render(FieldGroup);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Verify console error logged when there is no aria-label or title', () => {
@@ -45,12 +45,7 @@ test('Verify console error logged when there is no aria-label or title', () => {
   const FieldGroup = (
     <FormFieldGroupExpandable
       isExpanded
-      header={
-        <FormFieldGroupHeader
-          titleDescription="Field group 4 description text."
-          actions={<Button />}
-        />
-      }
+      header={<FormFieldGroupHeader titleDescription="Field group 4 description text." actions={<Button />} />}
     />
   );
   const view = render(FieldGroup);

@@ -12,7 +12,7 @@ import { AccordionExpandedContentBody } from '../AccordionExpandedContentBody';
 describe('Accordion', () => {
   test('Accordion default', () => {
     const view = render(<Accordion aria-label="this is a simple accordion" />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('Accordion with non-default headingLevel', () => {
@@ -24,7 +24,7 @@ describe('Accordion', () => {
         </AccordionItem>
       </Accordion>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('It should pass optional aria props', () => {
@@ -79,7 +79,7 @@ describe('Accordion', () => {
         </AccordionItem>
       </Accordion>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('Accordion display large', () => {
@@ -91,7 +91,7 @@ describe('Accordion', () => {
         </AccordionItem>
       </Accordion>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('Accordion custom content', () => {
@@ -106,6 +106,6 @@ describe('Accordion', () => {
         </AccordionItem>
       </Accordion>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

@@ -1,7 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AccordionToggle should match snapshot (auto-generated) 1`] = `
-<div>
-  <div />
-</div>
-`;
+exports[`AccordionToggle should match snapshot (auto-generated) 1`] = `"<div><div></div></div>"`;

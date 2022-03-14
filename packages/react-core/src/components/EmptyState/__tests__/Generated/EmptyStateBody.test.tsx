@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('EmptyStateBody should match snapshot (auto-generated)', () => {
   const view = render(<EmptyStateBody children={<div>ReactNode</div>} className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

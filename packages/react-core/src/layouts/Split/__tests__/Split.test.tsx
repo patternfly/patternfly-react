@@ -9,7 +9,7 @@ test('isFilled', () => {
       <SplitItem isFilled>Main content</SplitItem>
     </Split>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('isFilled defaults to false', () => {
@@ -18,7 +18,7 @@ test('isFilled defaults to false', () => {
       <SplitItem>Basic content</SplitItem>
     </Split>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Gutter', () => {
@@ -27,7 +27,7 @@ test('Gutter', () => {
       <SplitItem>Basic Content</SplitItem>
     </Split>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Wrappable', () => {
@@ -49,5 +49,5 @@ test('Wrappable', () => {
       <SplitItem>Basic Content</SplitItem>
     </Split>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

@@ -10,7 +10,7 @@ import { render } from '@testing-library/react';
           {variant} Banner
         </Banner>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(view.container.outerHTML).toMatchSnapshot();
     });
   }
 );
@@ -21,5 +21,5 @@ test(`sticky banner`, () => {
       Sticky Banner
     </Banner>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

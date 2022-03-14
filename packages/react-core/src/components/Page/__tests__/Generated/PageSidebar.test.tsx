@@ -11,5 +11,5 @@ it('PageSidebar should match snapshot (auto-generated)', () => {
   const view = render(
     <PageSidebar className={"''"} nav={<div>ReactNode</div>} isManagedSidebar={true} isNavOpen={true} theme={'dark'} />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

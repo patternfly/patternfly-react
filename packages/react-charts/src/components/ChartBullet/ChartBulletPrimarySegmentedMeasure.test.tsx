@@ -5,7 +5,7 @@ import { ChartBulletPrimarySegmentedMeasure } from './ChartBulletPrimarySegmente
 Object.values([true, false]).forEach(() => {
   test('ChartBulletPrimarySegmentedMeasure', () => {
     const view = render(<ChartBulletPrimarySegmentedMeasure />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -13,5 +13,5 @@ test('renders component data', () => {
   const view = render(
     <ChartBulletPrimarySegmentedMeasure data={[{ y: 50 }, { y: 85 }, { y: 150 }]} domain={{ x: [0, 200] }} />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

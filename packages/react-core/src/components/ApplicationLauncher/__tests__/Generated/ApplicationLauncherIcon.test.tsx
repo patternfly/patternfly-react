@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('ApplicationLauncherIcon should match snapshot (auto-generated)', () => {
   const view = render(<ApplicationLauncherIcon children={<div>ReactNode</div>} className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

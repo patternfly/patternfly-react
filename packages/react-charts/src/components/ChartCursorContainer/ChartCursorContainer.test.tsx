@@ -7,7 +7,7 @@ import { ChartCursorContainer } from './ChartCursorContainer';
 Object.values([true, false]).forEach(() => {
   test('ChartVoronoiContainer', () => {
     const view = render(<ChartCursorContainer />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -33,5 +33,5 @@ test('renders container via ChartGroup', () => {
       />
     </ChartGroup>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

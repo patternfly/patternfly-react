@@ -1,72 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`danger banner 1`] = `
-<div>
-  <div
-    aria-label="danger"
-    class="pf-c-banner pf-m-danger"
-  >
-    danger
-     Banner
-  </div>
-</div>
-`;
+exports[`danger banner 1`] = `"<div><div class=\\"pf-c-banner pf-m-danger\\" aria-label=\\"danger\\">danger Banner</div></div>"`;
 
-exports[`default banner 1`] = `
-<div>
-  <div
-    aria-label="default"
-    class="pf-c-banner"
-  >
-    default
-     Banner
-  </div>
-</div>
-`;
+exports[`default banner 1`] = `"<div><div class=\\"pf-c-banner\\" aria-label=\\"default\\">default Banner</div></div>"`;
 
-exports[`info banner 1`] = `
-<div>
-  <div
-    aria-label="info"
-    class="pf-c-banner pf-m-info"
-  >
-    info
-     Banner
-  </div>
-</div>
-`;
+exports[`info banner 1`] = `"<div><div class=\\"pf-c-banner pf-m-info\\" aria-label=\\"info\\">info Banner</div></div>"`;
 
-exports[`sticky banner 1`] = `
-<div>
-  <div
-    aria-label="sticky"
-    class="pf-c-banner pf-m-sticky"
-  >
-    Sticky Banner
-  </div>
-</div>
-`;
+exports[`sticky banner 1`] = `"<div><div class=\\"pf-c-banner pf-m-sticky\\" aria-label=\\"sticky\\">Sticky Banner</div></div>"`;
 
-exports[`success banner 1`] = `
-<div>
-  <div
-    aria-label="success"
-    class="pf-c-banner pf-m-success"
-  >
-    success
-     Banner
-  </div>
-</div>
-`;
+exports[`success banner 1`] = `"<div><div class=\\"pf-c-banner pf-m-success\\" aria-label=\\"success\\">success Banner</div></div>"`;
 
-exports[`warning banner 1`] = `
-<div>
-  <div
-    aria-label="warning"
-    class="pf-c-banner pf-m-warning"
-  >
-    warning
-     Banner
-  </div>
-</div>
-`;
+exports[`warning banner 1`] = `"<div><div class=\\"pf-c-banner pf-m-warning\\" aria-label=\\"warning\\">warning Banner</div></div>"`;

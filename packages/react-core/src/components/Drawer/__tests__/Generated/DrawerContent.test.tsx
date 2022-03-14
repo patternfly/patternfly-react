@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('DrawerContent should match snapshot (auto-generated)', () => {
   const view = render(<DrawerContent className={"''"} children={<div>ReactNode</div>} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

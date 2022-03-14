@@ -21,5 +21,5 @@ it('SimpleListItem should match snapshot (auto-generated)', () => {
       href={"''"}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

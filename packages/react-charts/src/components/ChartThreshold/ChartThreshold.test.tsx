@@ -7,7 +7,7 @@ import { ChartThreshold } from './ChartThreshold';
 Object.values([true, false]).forEach(() => {
   test('ChartThreshold', () => {
     const view = render(<ChartThreshold />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -25,5 +25,5 @@ test('renders component data', () => {
       </ChartGroup>
     </Chart>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

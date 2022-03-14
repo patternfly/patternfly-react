@@ -21,7 +21,7 @@ describe('Alert', () => {
             Some alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(view.container.outerHTML).toMatchSnapshot();
       });
 
       test('Title', () => {
@@ -30,7 +30,7 @@ describe('Alert', () => {
             Some alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(view.container.outerHTML).toMatchSnapshot();
       });
 
       test('Heading level', () => {
@@ -39,7 +39,7 @@ describe('Alert', () => {
             Some alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(view.container.outerHTML).toMatchSnapshot();
       });
 
       test('Action Link', () => {
@@ -48,7 +48,7 @@ describe('Alert', () => {
             Some alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(view.container.outerHTML).toMatchSnapshot();
       });
 
       test('Action Close Button', () => {
@@ -78,7 +78,7 @@ describe('Alert', () => {
             Some alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(view.container.outerHTML).toMatchSnapshot();
       });
 
       test('Custom aria label', () => {
@@ -92,7 +92,7 @@ describe('Alert', () => {
             Some alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(view.container.outerHTML).toMatchSnapshot();
       });
 
       test('inline variation', () => {
@@ -101,7 +101,7 @@ describe('Alert', () => {
             Some alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(view.container.outerHTML).toMatchSnapshot();
       });
 
       test('expandable variation', () => {
@@ -110,7 +110,7 @@ describe('Alert', () => {
             <p>Success alert description. This should tell the user more information about the alert.</p>
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(view.container.outerHTML).toMatchSnapshot();
       });
 
       test('expandable variation description hidden', () => {
@@ -131,7 +131,7 @@ describe('Alert', () => {
             Some toast alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(view.container.outerHTML).toMatchSnapshot();
       });
 
       test('Toast alerts contain default live region', () => {
@@ -191,7 +191,7 @@ describe('Alert', () => {
             Some noisy alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(view.container.outerHTML).toMatchSnapshot();
       });
     });
   });

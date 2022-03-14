@@ -5,17 +5,17 @@ import { DropdownToggleAction } from '../DropdownToggleAction';
 
 test('renders with text', () => {
   const view = render(<DropdownToggleAction id="action" aria-label="action" />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('isDisabled', () => {
   const view = render(<DropdownToggleAction id="action" aria-label="action" isDisabled />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('passing class', () => {
   const view = render(<DropdownToggleAction id="action" aria-label="action" className="abc" />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('checkbox passes value and event to onClick handler', () => {

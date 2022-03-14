@@ -19,5 +19,5 @@ it('ToolbarExpandableContent should match snapshot (auto-generated)', () => {
       showClearFiltersButton={true}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

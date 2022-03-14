@@ -13,10 +13,10 @@ const items = [
 
 test('Renders ContextSelectorMenuList open', () => {
   const view = render(<ContextSelectorMenuList isOpen={false}>{items}</ContextSelectorMenuList>);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('Renders ContextSelectorMenuList closed', () => {
   const view = render(<ContextSelectorMenuList isOpen={false}>{items}</ContextSelectorMenuList>);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

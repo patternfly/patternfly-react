@@ -15,7 +15,7 @@ describe('ChipGroup', () => {
       </ChipGroup>
     );
 
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('chip group with category', () => {
@@ -24,7 +24,7 @@ describe('ChipGroup', () => {
         <Chip>1.1</Chip>
       </ChipGroup>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('chip group with closable category', () => {
@@ -33,7 +33,7 @@ describe('ChipGroup', () => {
         <Chip>1.1</Chip>
       </ChipGroup>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('chip group expanded', () => {
@@ -64,6 +64,6 @@ describe('ChipGroup', () => {
         <Chip>1.1</Chip>
       </ChipGroup>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

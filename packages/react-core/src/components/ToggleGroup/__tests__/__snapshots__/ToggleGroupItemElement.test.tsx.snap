@@ -1,29 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`empty 1`] = `
-<div>
-  <span
-    class=""
-  />
-</div>
-`;
+exports[`empty 1`] = `"<div><span class=\\"\\"></span></div>"`;
 
-exports[`icon variant 1`] = `
-<div>
-  <span
-    class="pf-c-toggle-group__icon"
-  >
-    ICON
-  </span>
-</div>
-`;
+exports[`icon variant 1`] = `"<div><span class=\\"pf-c-toggle-group__icon\\">ICON</span></div>"`;
 
-exports[`text variant 1`] = `
-<div>
-  <span
-    class="pf-c-toggle-group__text"
-  >
-    Test
-  </span>
-</div>
-`;
+exports[`text variant 1`] = `"<div><span class=\\"pf-c-toggle-group__text\\">Test</span></div>"`;

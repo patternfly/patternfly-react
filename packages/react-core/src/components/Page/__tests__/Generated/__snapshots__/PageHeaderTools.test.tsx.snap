@@ -1,13 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PageHeaderTools should match snapshot (auto-generated) 1`] = `
-<div>
-  <div
-    class="pf-c-page__header-tools string"
-  >
-    <div>
-      ReactNode
-    </div>
-  </div>
-</div>
-`;
+exports[`PageHeaderTools should match snapshot (auto-generated) 1`] = `"<div><div class=\\"pf-c-page__header-tools string\\"><div>ReactNode</div></div></div>"`;

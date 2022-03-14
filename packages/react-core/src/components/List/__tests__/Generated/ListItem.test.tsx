@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('ListItem should match snapshot (auto-generated)', () => {
   const view = render(<ListItem children={<>ReactNode</>} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

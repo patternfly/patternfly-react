@@ -1,15 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DataListItemRow should match snapshot (auto-generated) 1`] = `
-<div>
-  <div
-    class="pf-c-data-list__item-row ''"
-  >
-    <div
-      rowid="''"
-    >
-      ReactNode
-    </div>
-  </div>
-</div>
-`;
+exports[`DataListItemRow should match snapshot (auto-generated) 1`] = `"<div><div class=\\"pf-c-data-list__item-row ''\\"><div rowid=\\"''\\">ReactNode</div></div></div>"`;

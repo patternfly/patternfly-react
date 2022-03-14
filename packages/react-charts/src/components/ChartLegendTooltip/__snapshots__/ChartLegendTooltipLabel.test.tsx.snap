@@ -1,42 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ChartLegendTooltipLabel 1`] = `<div />`;
+exports[`ChartLegendTooltipLabel 1`] = `"<div></div>"`;
 
-exports[`ChartLegendTooltipLabel 2`] = `<div />`;
+exports[`ChartLegendTooltipLabel 2`] = `"<div></div>"`;
 
-exports[`renders component text 1`] = `
-<div>
-  <text
-    direction="inherit"
-    dx="0"
-    x="0"
-    y="4.97"
-  >
-    <tspan
-      dx="0"
-      dy="0"
-      style="fill: #f0f0f0; text-anchor: start; font-family: var(--pf-chart-global--FontFamily); font-size: 14px; letter-spacing: var(--pf-chart-global--letter-spacing); stroke: transparent;"
-      text-anchor="start"
-      x="0"
-    >
-      Cats
-    </tspan>
-  </text>
-  <text
-    direction="inherit"
-    dx="0"
-    x="NaN"
-    y="4.97"
-  >
-    <tspan
-      dx="0"
-      dy="0"
-      style="fill: #f0f0f0; text-anchor: end; font-family: var(--pf-chart-global--FontFamily); font-size: 14px; letter-spacing: var(--pf-chart-global--letter-spacing); stroke: transparent;"
-      text-anchor="end"
-      x="NaN"
-    >
-      1, 2, 3, 4
-    </tspan>
-  </text>
-</div>
-`;
+exports[`renders component text 1`] = `"<div><text direction=\\"inherit\\" dx=\\"0\\" x=\\"0\\" y=\\"4.97\\"><tspan x=\\"0\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"start\\" style=\\"fill: #f0f0f0; text-anchor: start; font-family: var(--pf-chart-global--FontFamily); font-size: 14px; letter-spacing: var(--pf-chart-global--letter-spacing); stroke: transparent;\\">Cats</tspan></text><text direction=\\"inherit\\" dx=\\"0\\" x=\\"NaN\\" y=\\"4.97\\"><tspan x=\\"NaN\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"end\\" style=\\"fill: #f0f0f0; text-anchor: end; font-family: var(--pf-chart-global--FontFamily); font-size: 14px; letter-spacing: var(--pf-chart-global--letter-spacing); stroke: transparent;\\">1, 2, 3, 4</tspan></text></div>"`;

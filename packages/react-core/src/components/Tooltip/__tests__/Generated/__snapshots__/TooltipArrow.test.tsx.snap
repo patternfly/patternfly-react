@@ -1,9 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TooltipArrow should match snapshot (auto-generated) 1`] = `
-<div>
-  <div
-    class="pf-c-tooltip__arrow string"
-  />
-</div>
-`;
+exports[`TooltipArrow should match snapshot (auto-generated) 1`] = `"<div><div class=\\"pf-c-tooltip__arrow string\\"></div></div>"`;

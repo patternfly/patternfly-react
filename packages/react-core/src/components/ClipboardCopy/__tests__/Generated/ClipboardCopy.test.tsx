@@ -37,5 +37,5 @@ it('ClipboardCopy should match snapshot (auto-generated)', () => {
       children={<div>ReactNode</div>}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

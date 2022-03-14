@@ -1,9 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AlertGroupInline should match snapshot (auto-generated) 1`] = `
-<div>
-  <ul
-    class="pf-c-alert-group"
-  />
-</div>
-`;
+exports[`AlertGroupInline should match snapshot (auto-generated) 1`] = `"<div><ul class=\\"pf-c-alert-group\\"></ul></div>"`;

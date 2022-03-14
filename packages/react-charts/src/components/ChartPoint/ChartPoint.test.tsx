@@ -6,7 +6,7 @@ import { ChartPoint } from './ChartPoint';
 Object.values([true, false]).forEach(() => {
   test('ChartPoint', () => {
     const view = render(<ChartLegend dataComponent={<ChartPoint />} />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -19,5 +19,5 @@ test('renders component data', () => {
       width={200}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

@@ -17,5 +17,5 @@ it('WizardBody should match snapshot (auto-generated)', () => {
       mainComponent={'div'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

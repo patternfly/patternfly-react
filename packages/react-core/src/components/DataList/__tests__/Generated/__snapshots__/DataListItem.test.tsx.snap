@@ -1,17 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DataListItem should match snapshot (auto-generated) 1`] = `
-<div>
-  <li
-    aria-labelledby="string"
-    class="pf-c-data-list__item ''"
-    id="''"
-  >
-    <div
-      rowid="string"
-    >
-      ReactNode
-    </div>
-  </li>
-</div>
-`;
+exports[`DataListItem should match snapshot (auto-generated) 1`] = `"<div><li id=\\"''\\" class=\\"pf-c-data-list__item ''\\" aria-labelledby=\\"string\\"><div rowid=\\"string\\">ReactNode</div></li></div>"`;

@@ -19,5 +19,5 @@ it('DataListToggle should match snapshot (auto-generated)', () => {
       aria-controls={"''"}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

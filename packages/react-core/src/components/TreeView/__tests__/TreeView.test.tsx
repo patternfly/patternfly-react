@@ -13,7 +13,10 @@ const options = [
       {
         name: 'Application 1',
         id: 'App1',
-        children: [{ name: 'Settings', id: 'App1Settings' }, { name: 'Current', id: 'App1Current' }]
+        children: [
+          { name: 'Settings', id: 'App1Settings' },
+          { name: 'Current', id: 'App1Current' }
+        ]
       },
       {
         name: 'Application 2',
@@ -41,7 +44,10 @@ const options = [
       {
         name: 'Application 3',
         id: 'App3',
-        children: [{ name: 'Settings', id: 'App3Settings' }, { name: 'Current', id: 'App3Current' }]
+        children: [
+          { name: 'Settings', id: 'App3Settings' },
+          { name: 'Current', id: 'App3Current' }
+        ]
       }
     ]
   },
@@ -68,7 +74,10 @@ const flagOptions = [
       {
         name: 'Application 1',
         id: 'App1',
-        children: [{ name: 'Settings', id: 'App1Settings' }, { name: 'Current', id: 'App1Current' }]
+        children: [
+          { name: 'Settings', id: 'App1Settings' },
+          { name: 'Current', id: 'App1Current' }
+        ]
       },
       {
         name: 'Application 2',
@@ -103,7 +112,10 @@ const flagOptions = [
       {
         name: 'Application 3',
         id: 'App3',
-        children: [{ name: 'Settings', id: 'App3Settings' }, { name: 'Current', id: 'App3Current' }]
+        children: [
+          { name: 'Settings', id: 'App3Settings' },
+          { name: 'Current', id: 'App3Current' }
+        ]
       }
     ]
   },
@@ -123,41 +135,41 @@ const active = [
   {
     name: 'Application 1',
     id: 'App1',
-    children: [{ name: 'Settings', id: 'App1Settings' }, { name: 'Current', id: 'App1Current' }]
+    children: [
+      { name: 'Settings', id: 'App1Settings' },
+      { name: 'Current', id: 'App1Current' }
+    ]
   }
 ];
 
 describe('tree view', () => {
   test('renders basic successfully', () => {
     const view = render(<TreeView data={options} onSelect={jest.fn()} />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders active successfully', () => {
     const view = render(<TreeView data={options} activeItems={active} onSelect={jest.fn()} />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders search successfully', () => {
     const view = render(
-      <TreeViewSearch
-        onSearch={jest.fn()}
-        id='input-search'
-        name='search-input'
-        aria-label='Search input example'
-      />
+      <TreeViewSearch onSearch={jest.fn()} id="input-search" name="search-input" aria-label="Search input example" />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders toolbar successfully', () => {
-    const view = render(<TreeView data={options} activeItems={active} onSelect={jest.fn()} toolbar={<div>test</div>} />);
-    expect(view.container).toMatchSnapshot();
+    const view = render(
+      <TreeView data={options} activeItems={active} onSelect={jest.fn()} toolbar={<div>test</div>} />
+    );
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders checkboxes successfully', () => {
     const view = render(<TreeView data={options} activeItems={active} onSelect={jest.fn()} hasChecks />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders icons successfully', () => {
@@ -170,31 +182,31 @@ describe('tree view', () => {
         expandedIcon={<FolderOpenIcon />}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders badges successfully', () => {
     const view = render(<TreeView data={options} activeItems={active} onSelect={jest.fn()} hasBadges />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders individual flag options successfully', () => {
     const view = render(<TreeView data={flagOptions} activeItems={active} onSelect={jest.fn()} />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
 test('renders guides successfully', () => {
-  const view = render(<TreeView data={options} onSelect={jest.fn()} hasGuides={true}/>);
-    expect(view.container).toMatchSnapshot();
+  const view = render(<TreeView data={options} onSelect={jest.fn()} hasGuides={true} />);
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('renders compact successfully', () => {
-  const view = render(<TreeView data={options} onSelect={jest.fn()} variant='compact'/>);
-    expect(view.container).toMatchSnapshot();
+  const view = render(<TreeView data={options} onSelect={jest.fn()} variant="compact" />);
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('renders compact no background successfully', () => {
-  const view = render(<TreeView data={options} onSelect={jest.fn()} variant='compactNoBackground' />);
-    expect(view.container).toMatchSnapshot();
+  const view = render(<TreeView data={options} onSelect={jest.fn()} variant="compactNoBackground" />);
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

@@ -1,9 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Form Alert component should render form group required variant 1`] = `
-<div>
-  <div
-    class="pf-c-form__alert"
-  />
-</div>
-`;
+exports[`Form Alert component should render form group required variant 1`] = `"<div><div class=\\"pf-c-form__alert\\"></div></div>"`;

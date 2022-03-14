@@ -5,12 +5,12 @@ import React from 'react';
 describe('DualListSelector', () => {
   test('basic', () => {
     const view = render(<DualListSelector availableOptions={['Option 1', 'Option 2']} id="firstTest" />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('with search inputs', () => {
     const view = render(<DualListSelector availableOptions={['Option 1', 'Option 2']} id="secondTest" isSearchable />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('with custom status', () => {
@@ -22,12 +22,12 @@ describe('DualListSelector', () => {
         id="thirdTest"
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('basic with disabled controls', () => {
     const view = render(<DualListSelector isDisabled availableOptions={['Option 1', 'Option 2']} id="disabledTest" />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('with tree', () => {
@@ -43,7 +43,7 @@ describe('DualListSelector', () => {
         isTree
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('with actions', () => {
@@ -56,6 +56,6 @@ describe('DualListSelector', () => {
         id="fourthTest"
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

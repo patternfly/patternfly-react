@@ -5,7 +5,7 @@ import { ChartBullet } from './ChartBullet';
 Object.values([true, false]).forEach(() => {
   test('ChartBulletQualitativeRange', () => {
     const view = render(<ChartBullet />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -25,5 +25,5 @@ test('renders component data', () => {
       width={450}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

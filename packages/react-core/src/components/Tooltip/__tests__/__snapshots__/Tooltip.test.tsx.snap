@@ -1,9 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`tooltip renders 1`] = `
-<div>
-  <div>
-    Toggle tooltip
-  </div>
-</div>
-`;
+exports[`tooltip renders 1`] = `"<div><div>Toggle tooltip</div></div>"`;

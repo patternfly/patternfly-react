@@ -16,31 +16,31 @@ import { DropdownItem, Dropdown, KebabToggle, DropdownPosition } from '../../Dro
 describe('DataList', () => {
   test('List default', () => {
     const view = render(<DataList aria-label="this is a simple list" />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('List compact', () => {
     const view = render(<DataList aria-label="this is a simple list" isCompact />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   describe('DataList variants', () => {
     ['none', 'always', 'sm', 'md', 'lg', 'xl', '2xl'].forEach(oneBreakpoint => {
       test(`Breakpoint - ${oneBreakpoint}`, () => {
         const view = render(<DataList aria-label="this is a simple list" gridBreakpoint={oneBreakpoint as any} />);
-        expect(view.container).toMatchSnapshot();
+        expect(view.container.outerHTML).toMatchSnapshot();
       });
     });
   });
 
   test('List draggable', () => {
     const view = render(<DataList aria-label="this is a simple list" isCompact onDragFinish={jest.fn()} />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('List', () => {
     const view = render(<DataList key="list-id-1" className="data-list-custom" aria-label="this is a simple list" />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('Item default', () => {
@@ -67,17 +67,17 @@ describe('DataList', () => {
         test
       </DataListItem>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('item row default', () => {
     const view = render(<DataListItemRow>test</DataListItemRow>);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('Cell default', () => {
     const view = render(<DataListCell>Secondary</DataListCell>);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('Cells', () => {
@@ -93,7 +93,7 @@ describe('DataList', () => {
         ]}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('Cell with width modifier', () => {
@@ -173,7 +173,7 @@ describe('DataList', () => {
         />
       </DataListAction>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('DataListAction button', () => {
@@ -182,7 +182,7 @@ describe('DataList', () => {
         <Button id="delete-item-1">Delete</Button>
       </DataListAction>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('DataListAction visibility - show button when lg', () => {
@@ -218,7 +218,7 @@ describe('DataList', () => {
 
   test('DataListContent', () => {
     const view = render(<DataListContent aria-label="Primary Content Details"> test</DataListContent>);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('DataListContent hasNoPadding', () => {
@@ -227,6 +227,6 @@ describe('DataList', () => {
         test
       </DataListContent>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

@@ -1,1623 +1,367 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChartScatter 1`] = `
-<div>
-  <div
-    class="pf-c-chart"
-    style="height: 100%; width: 100%; pointer-events: none; position: relative;"
-  >
-    <svg
-      height="300"
-      role="img"
-      style="pointer-events: all; width: 100%; height: 100%;"
-      viewBox="0 0 450 300"
-      width="450"
-    >
-      <g>
-        <path
-          d="M 50, 250
+"<div><div style=\\"height: 100%; width: 100%; pointer-events: none; position: relative;\\" class=\\"pf-c-chart\\"><svg width=\\"450\\" height=\\"300\\" role=\\"img\\" viewBox=\\"0 0 450 300\\" style=\\"pointer-events: all; width: 100%; height: 100%;\\"><g><path d=\\"M 50, 250
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 57, 246
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 57, 246
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 64, 242
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 64, 242
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 71, 238
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 71, 238
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 78, 234
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 78, 234
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 85, 230
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 85, 230
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 92, 226
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 92, 226
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 99, 222
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 99, 222
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 106, 218
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 106, 218
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 113, 214.00000000000003
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 113, 214.00000000000003
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 120, 210
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 120, 210
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 126.99999999999999, 206
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 126.99999999999999, 206
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 134, 202
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 134, 202
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 141, 198
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 141, 198
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 148, 194
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 148, 194
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 155, 190
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 155, 190
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 162, 185.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 162, 185.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 169, 181.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 169, 181.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 176.00000000000003, 177.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 176.00000000000003, 177.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 183.00000000000003, 173.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 183.00000000000003, 173.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 190.00000000000003, 169.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 190.00000000000003, 169.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 197.00000000000003, 165.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 197.00000000000003, 165.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 204.00000000000006, 161.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 204.00000000000006, 161.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 211.00000000000006, 157.99999999999994
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 211.00000000000006, 157.99999999999994
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 218.00000000000006, 153.99999999999994
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 218.00000000000006, 153.99999999999994
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 225.00000000000006, 149.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 225.00000000000006, 149.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 232.00000000000006, 145.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 232.00000000000006, 145.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 239.00000000000006, 141.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 239.00000000000006, 141.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 246.00000000000006, 137.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 246.00000000000006, 137.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 253.00000000000009, 133.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 253.00000000000009, 133.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 260.00000000000006, 129.99999999999994
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 260.00000000000006, 129.99999999999994
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 267.00000000000006, 125.99999999999996
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 267.00000000000006, 125.99999999999996
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 274.0000000000001, 121.99999999999996
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 274.0000000000001, 121.99999999999996
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 281.0000000000001, 117.99999999999996
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 281.0000000000001, 117.99999999999996
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 288.0000000000001, 113.99999999999994
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 288.0000000000001, 113.99999999999994
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 295.0000000000001, 109.99999999999994
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 295.0000000000001, 109.99999999999994
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 302.0000000000001, 105.99999999999994
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 302.0000000000001, 105.99999999999994
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 309.0000000000001, 101.99999999999993
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 309.0000000000001, 101.99999999999993
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 316.0000000000001, 97.99999999999993
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 316.0000000000001, 97.99999999999993
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 323.00000000000017, 93.99999999999993
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 323.00000000000017, 93.99999999999993
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 330.00000000000017, 89.99999999999993
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 330.00000000000017, 89.99999999999993
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 337.00000000000017, 85.99999999999991
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 337.00000000000017, 85.99999999999991
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 344.00000000000017, 81.99999999999991
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 344.00000000000017, 81.99999999999991
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 351.00000000000017, 77.99999999999991
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 351.00000000000017, 77.99999999999991
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 358.00000000000017, 73.99999999999991
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 358.00000000000017, 73.99999999999991
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 365.00000000000017, 69.9999999999999
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 365.00000000000017, 69.9999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 372.00000000000017, 65.9999999999999
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 372.00000000000017, 65.9999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 379.0000000000002, 61.9999999999999
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 379.0000000000002, 61.9999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 386.0000000000002, 57.9999999999999
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 386.0000000000002, 57.9999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 393.0000000000002, 53.99999999999989
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 393.0000000000002, 53.99999999999989
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 400, 50
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 400, 50
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-      </g>
-    </svg>
-    <div
-      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
-    >
-      <svg
-        height="300"
-        style="overflow: visible; width: 100%; height: 100%;"
-        viewBox="0 0 450 300"
-        width="450"
-      />
-    </div>
-  </div>
-</div>
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path></g></svg><div style=\\"z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\\"><svg width=\\"450\\" height=\\"300\\" viewBox=\\"0 0 450 300\\" style=\\"overflow: visible; width: 100%; height: 100%;\\"></svg></div></div></div>"
 `;
 
 exports[`ChartScatter 2`] = `
-<div>
-  <div
-    class="pf-c-chart"
-    style="height: 100%; width: 100%; pointer-events: none; position: relative;"
-  >
-    <svg
-      height="300"
-      role="img"
-      style="pointer-events: all; width: 100%; height: 100%;"
-      viewBox="0 0 450 300"
-      width="450"
-    >
-      <g>
-        <path
-          d="M 50, 250
+"<div><div style=\\"height: 100%; width: 100%; pointer-events: none; position: relative;\\" class=\\"pf-c-chart\\"><svg width=\\"450\\" height=\\"300\\" role=\\"img\\" viewBox=\\"0 0 450 300\\" style=\\"pointer-events: all; width: 100%; height: 100%;\\"><g><path d=\\"M 50, 250
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 57, 246
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 57, 246
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 64, 242
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 64, 242
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 71, 238
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 71, 238
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 78, 234
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 78, 234
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 85, 230
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 85, 230
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 92, 226
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 92, 226
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 99, 222
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 99, 222
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 106, 218
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 106, 218
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 113, 214.00000000000003
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 113, 214.00000000000003
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 120, 210
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 120, 210
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 126.99999999999999, 206
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 126.99999999999999, 206
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 134, 202
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 134, 202
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 141, 198
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 141, 198
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 148, 194
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 148, 194
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 155, 190
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 155, 190
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 162, 185.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 162, 185.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 169, 181.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 169, 181.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 176.00000000000003, 177.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 176.00000000000003, 177.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 183.00000000000003, 173.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 183.00000000000003, 173.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 190.00000000000003, 169.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 190.00000000000003, 169.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 197.00000000000003, 165.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 197.00000000000003, 165.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 204.00000000000006, 161.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 204.00000000000006, 161.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 211.00000000000006, 157.99999999999994
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 211.00000000000006, 157.99999999999994
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 218.00000000000006, 153.99999999999994
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 218.00000000000006, 153.99999999999994
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 225.00000000000006, 149.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 225.00000000000006, 149.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 232.00000000000006, 145.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 232.00000000000006, 145.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 239.00000000000006, 141.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 239.00000000000006, 141.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 246.00000000000006, 137.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 246.00000000000006, 137.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 253.00000000000009, 133.99999999999997
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 253.00000000000009, 133.99999999999997
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 260.00000000000006, 129.99999999999994
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 260.00000000000006, 129.99999999999994
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 267.00000000000006, 125.99999999999996
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 267.00000000000006, 125.99999999999996
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 274.0000000000001, 121.99999999999996
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 274.0000000000001, 121.99999999999996
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 281.0000000000001, 117.99999999999996
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 281.0000000000001, 117.99999999999996
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 288.0000000000001, 113.99999999999994
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 288.0000000000001, 113.99999999999994
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 295.0000000000001, 109.99999999999994
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 295.0000000000001, 109.99999999999994
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 302.0000000000001, 105.99999999999994
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 302.0000000000001, 105.99999999999994
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 309.0000000000001, 101.99999999999993
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 309.0000000000001, 101.99999999999993
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 316.0000000000001, 97.99999999999993
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 316.0000000000001, 97.99999999999993
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 323.00000000000017, 93.99999999999993
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 323.00000000000017, 93.99999999999993
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 330.00000000000017, 89.99999999999993
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 330.00000000000017, 89.99999999999993
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 337.00000000000017, 85.99999999999991
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 337.00000000000017, 85.99999999999991
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 344.00000000000017, 81.99999999999991
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 344.00000000000017, 81.99999999999991
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 351.00000000000017, 77.99999999999991
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 351.00000000000017, 77.99999999999991
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 358.00000000000017, 73.99999999999991
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 358.00000000000017, 73.99999999999991
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 365.00000000000017, 69.9999999999999
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 365.00000000000017, 69.9999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 372.00000000000017, 65.9999999999999
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 372.00000000000017, 65.9999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 379.0000000000002, 61.9999999999999
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 379.0000000000002, 61.9999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 386.0000000000002, 57.9999999999999
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 386.0000000000002, 57.9999999999999
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 393.0000000000002, 53.99999999999989
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 393.0000000000002, 53.99999999999989
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-        <path
-          d="M 400, 50
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 400, 50
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-      </g>
-    </svg>
-    <div
-      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
-    >
-      <svg
-        height="300"
-        style="overflow: visible; width: 100%; height: 100%;"
-        viewBox="0 0 450 300"
-        width="450"
-      />
-    </div>
-  </div>
-</div>
+      a 3, 3 0 1,0 -6,0\\" style=\\"fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path></g></svg><div style=\\"z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\\"><svg width=\\"450\\" height=\\"300\\" viewBox=\\"0 0 450 300\\" style=\\"overflow: visible; width: 100%; height: 100%;\\"></svg></div></div></div>"
 `;
 
 exports[`renders component data 1`] = `
-<div>
-  <div
-    class="pf-c-chart"
-    style="height: 100%; width: 100%; user-select: none; pointer-events: none; position: relative;"
-  >
-    <svg
-      height="200"
-      role="img"
-      style="pointer-events: all; width: 100%; height: 100%;"
-      viewBox="0 0 200 200"
-      width="200"
-    >
-      <g>
-        <g>
-          <path
-            d="M 50, 135.71428571428572
+"<div><div style=\\"height: 100%; width: 100%; user-select: none; pointer-events: none; position: relative;\\" class=\\"pf-c-chart\\"><svg width=\\"200\\" height=\\"200\\" role=\\"img\\" viewBox=\\"0 0 200 200\\" style=\\"pointer-events: all; width: 100%; height: 100%;\\"><g><g><path d=\\"M 50, 135.71428571428572
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-            role="presentation"
-            shape-rendering="auto"
-            style="width: 3px; fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;"
-          />
-          <path
-            d="M 66.66666666666667, 121.42857142857142
+      a 3, 3 0 1,0 -6,0\\" style=\\"width: 3px; fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 66.66666666666667, 121.42857142857142
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-            role="presentation"
-            shape-rendering="auto"
-            style="width: 3px; fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;"
-          />
-          <path
-            d="M 83.33333333333334, 107.14285714285714
+      a 3, 3 0 1,0 -6,0\\" style=\\"width: 3px; fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 83.33333333333334, 107.14285714285714
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-            role="presentation"
-            shape-rendering="auto"
-            style="width: 3px; fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;"
-          />
-          <path
-            d="M 100, 92.85714285714286
+      a 3, 3 0 1,0 -6,0\\" style=\\"width: 3px; fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 100, 92.85714285714286
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-            role="presentation"
-            shape-rendering="auto"
-            style="width: 3px; fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;"
-          />
-        </g>
-        <g>
-          <path
-            d="M 66.66666666666667, 121.42857142857142
+      a 3, 3 0 1,0 -6,0\\" style=\\"width: 3px; fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path></g><g><path d=\\"M 66.66666666666667, 121.42857142857142
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-            role="presentation"
-            shape-rendering="auto"
-            style="width: 3px; fill: #8bc1f7; opacity: 1; stroke: transparent; stroke-width: 0;"
-          />
-          <path
-            d="M 83.33333333333334, 107.14285714285714
+      a 3, 3 0 1,0 -6,0\\" style=\\"width: 3px; fill: #8bc1f7; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 83.33333333333334, 107.14285714285714
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-            role="presentation"
-            shape-rendering="auto"
-            style="width: 3px; fill: #8bc1f7; opacity: 1; stroke: transparent; stroke-width: 0;"
-          />
-          <path
-            d="M 100, 92.85714285714286
+      a 3, 3 0 1,0 -6,0\\" style=\\"width: 3px; fill: #8bc1f7; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 100, 92.85714285714286
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-            role="presentation"
-            shape-rendering="auto"
-            style="width: 3px; fill: #8bc1f7; opacity: 1; stroke: transparent; stroke-width: 0;"
-          />
-          <path
-            d="M 116.66666666666667, 78.57142857142857
+      a 3, 3 0 1,0 -6,0\\" style=\\"width: 3px; fill: #8bc1f7; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 116.66666666666667, 78.57142857142857
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-            role="presentation"
-            shape-rendering="auto"
-            style="width: 3px; fill: #8bc1f7; opacity: 1; stroke: transparent; stroke-width: 0;"
-          />
-        </g>
-        <g>
-          <path
-            d="M 83.33333333333334, 107.14285714285714
+      a 3, 3 0 1,0 -6,0\\" style=\\"width: 3px; fill: #8bc1f7; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path></g><g><path d=\\"M 83.33333333333334, 107.14285714285714
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-            role="presentation"
-            shape-rendering="auto"
-            style="width: 3px; fill: #002f5d; opacity: 1; stroke: transparent; stroke-width: 0;"
-          />
-          <path
-            d="M 100, 92.85714285714286
+      a 3, 3 0 1,0 -6,0\\" style=\\"width: 3px; fill: #002f5d; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 100, 92.85714285714286
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-            role="presentation"
-            shape-rendering="auto"
-            style="width: 3px; fill: #002f5d; opacity: 1; stroke: transparent; stroke-width: 0;"
-          />
-          <path
-            d="M 116.66666666666667, 78.57142857142857
+      a 3, 3 0 1,0 -6,0\\" style=\\"width: 3px; fill: #002f5d; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 116.66666666666667, 78.57142857142857
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-            role="presentation"
-            shape-rendering="auto"
-            style="width: 3px; fill: #002f5d; opacity: 1; stroke: transparent; stroke-width: 0;"
-          />
-          <path
-            d="M 133.33333333333334, 64.28571428571429
+      a 3, 3 0 1,0 -6,0\\" style=\\"width: 3px; fill: #002f5d; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 133.33333333333334, 64.28571428571429
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-            role="presentation"
-            shape-rendering="auto"
-            style="width: 3px; fill: #002f5d; opacity: 1; stroke: transparent; stroke-width: 0;"
-          />
-        </g>
-        <g>
-          <path
-            d="M 100, 92.85714285714286
+      a 3, 3 0 1,0 -6,0\\" style=\\"width: 3px; fill: #002f5d; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path></g><g><path d=\\"M 100, 92.85714285714286
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-            role="presentation"
-            shape-rendering="auto"
-            style="width: 3px; fill: #519de9; opacity: 1; stroke: transparent; stroke-width: 0;"
-          />
-          <path
-            d="M 116.66666666666667, 78.57142857142857
+      a 3, 3 0 1,0 -6,0\\" style=\\"width: 3px; fill: #519de9; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 116.66666666666667, 78.57142857142857
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-            role="presentation"
-            shape-rendering="auto"
-            style="width: 3px; fill: #519de9; opacity: 1; stroke: transparent; stroke-width: 0;"
-          />
-          <path
-            d="M 133.33333333333334, 64.28571428571429
+      a 3, 3 0 1,0 -6,0\\" style=\\"width: 3px; fill: #519de9; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 133.33333333333334, 64.28571428571429
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-            role="presentation"
-            shape-rendering="auto"
-            style="width: 3px; fill: #519de9; opacity: 1; stroke: transparent; stroke-width: 0;"
-          />
-          <path
-            d="M 150, 50
+      a 3, 3 0 1,0 -6,0\\" style=\\"width: 3px; fill: #519de9; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path><path d=\\"M 150, 50
       m -3, 0
       a 3, 3 0 1,0 6,0
-      a 3, 3 0 1,0 -6,0"
-            role="presentation"
-            shape-rendering="auto"
-            style="width: 3px; fill: #519de9; opacity: 1; stroke: transparent; stroke-width: 0;"
-          />
-        </g>
-      </g>
-      <g
-        role="presentation"
-      >
-        <line
-          role="presentation"
-          shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
-          vector-effect="non-scaling-stroke"
-          x1="50"
-          x2="150"
-          y1="150"
-          y2="150"
-        />
-        <g
-          role="presentation"
-        >
-          <line
-            role="presentation"
-            shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
-            vector-effect="non-scaling-stroke"
-            x1="50"
-            x2="50"
-            y1="150"
-            y2="155"
-          />
-          <text
-            direction="inherit"
-            dx="0"
-            id="chart-axis-1-tickLabels-0"
-            x="50"
-            y="176.97"
-          >
-            <tspan
-              dx="0"
-              dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
-              text-anchor="middle"
-              x="50"
-            >
-              1.0
-            </tspan>
-          </text>
-        </g>
-        <g
-          role="presentation"
-        >
-          <line
-            role="presentation"
-            shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
-            vector-effect="non-scaling-stroke"
-            x1="66.66666666666667"
-            x2="66.66666666666667"
-            y1="150"
-            y2="155"
-          />
-          <text
-            direction="inherit"
-            dx="0"
-            id="chart-axis-1-tickLabels-1"
-            x="66.66666666666667"
-            y="176.97"
-          >
-            <tspan
-              dx="0"
-              dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
-              text-anchor="middle"
-              x="66.66666666666667"
-            >
-              2.0
-            </tspan>
-          </text>
-        </g>
-        <g
-          role="presentation"
-        >
-          <line
-            role="presentation"
-            shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
-            vector-effect="non-scaling-stroke"
-            x1="83.33333333333334"
-            x2="83.33333333333334"
-            y1="150"
-            y2="155"
-          />
-          <text
-            direction="inherit"
-            dx="0"
-            id="chart-axis-1-tickLabels-2"
-            x="83.33333333333334"
-            y="176.97"
-          >
-            <tspan
-              dx="0"
-              dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
-              text-anchor="middle"
-              x="83.33333333333334"
-            >
-              3.0
-            </tspan>
-          </text>
-        </g>
-        <g
-          role="presentation"
-        >
-          <line
-            role="presentation"
-            shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
-            vector-effect="non-scaling-stroke"
-            x1="100"
-            x2="100"
-            y1="150"
-            y2="155"
-          />
-          <text
-            direction="inherit"
-            dx="0"
-            id="chart-axis-1-tickLabels-3"
-            x="100"
-            y="176.97"
-          >
-            <tspan
-              dx="0"
-              dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
-              text-anchor="middle"
-              x="100"
-            >
-              4.0
-            </tspan>
-          </text>
-        </g>
-        <g
-          role="presentation"
-        >
-          <line
-            role="presentation"
-            shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
-            vector-effect="non-scaling-stroke"
-            x1="116.66666666666667"
-            x2="116.66666666666667"
-            y1="150"
-            y2="155"
-          />
-          <text
-            direction="inherit"
-            dx="0"
-            id="chart-axis-1-tickLabels-4"
-            x="116.66666666666667"
-            y="176.97"
-          >
-            <tspan
-              dx="0"
-              dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
-              text-anchor="middle"
-              x="116.66666666666667"
-            >
-              5.0
-            </tspan>
-          </text>
-        </g>
-        <g
-          role="presentation"
-        >
-          <line
-            role="presentation"
-            shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
-            vector-effect="non-scaling-stroke"
-            x1="133.33333333333334"
-            x2="133.33333333333334"
-            y1="150"
-            y2="155"
-          />
-          <text
-            direction="inherit"
-            dx="0"
-            id="chart-axis-1-tickLabels-5"
-            x="133.33333333333334"
-            y="176.97"
-          >
-            <tspan
-              dx="0"
-              dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
-              text-anchor="middle"
-              x="133.33333333333334"
-            >
-              6.0
-            </tspan>
-          </text>
-        </g>
-        <g
-          role="presentation"
-        >
-          <line
-            role="presentation"
-            shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
-            vector-effect="non-scaling-stroke"
-            x1="150"
-            x2="150"
-            y1="150"
-            y2="155"
-          />
-          <text
-            direction="inherit"
-            dx="0"
-            id="chart-axis-1-tickLabels-6"
-            x="150"
-            y="176.97"
-          >
-            <tspan
-              dx="0"
-              dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
-              text-anchor="middle"
-              x="150"
-            >
-              7.0
-            </tspan>
-          </text>
-        </g>
-      </g>
-      <g
-        role="presentation"
-      >
-        <line
-          role="presentation"
-          shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
-          vector-effect="non-scaling-stroke"
-          x1="50"
-          x2="50"
-          y1="50"
-          y2="150"
-        />
-        <g
-          role="presentation"
-        >
-          <line
-            role="presentation"
-            shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
-            vector-effect="non-scaling-stroke"
-            x1="50"
-            x2="45"
-            y1="135.71428571428572"
-            y2="135.71428571428572"
-          />
-          <text
-            direction="inherit"
-            dx="0"
-            id="chart-axis-2-tickLabels-0"
-            x="35"
-            y="140.68428571428572"
-          >
-            <tspan
-              dx="0"
-              dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
-              text-anchor="end"
-              x="35"
-            >
-              1.0
-            </tspan>
-          </text>
-        </g>
-        <g
-          role="presentation"
-        >
-          <line
-            role="presentation"
-            shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
-            vector-effect="non-scaling-stroke"
-            x1="50"
-            x2="45"
-            y1="121.42857142857142"
-            y2="121.42857142857142"
-          />
-          <text
-            direction="inherit"
-            dx="0"
-            id="chart-axis-2-tickLabels-1"
-            x="35"
-            y="126.39857142857142"
-          >
-            <tspan
-              dx="0"
-              dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
-              text-anchor="end"
-              x="35"
-            >
-              2.0
-            </tspan>
-          </text>
-        </g>
-        <g
-          role="presentation"
-        >
-          <line
-            role="presentation"
-            shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
-            vector-effect="non-scaling-stroke"
-            x1="50"
-            x2="45"
-            y1="107.14285714285714"
-            y2="107.14285714285714"
-          />
-          <text
-            direction="inherit"
-            dx="0"
-            id="chart-axis-2-tickLabels-2"
-            x="35"
-            y="112.11285714285714"
-          >
-            <tspan
-              dx="0"
-              dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
-              text-anchor="end"
-              x="35"
-            >
-              3.0
-            </tspan>
-          </text>
-        </g>
-        <g
-          role="presentation"
-        >
-          <line
-            role="presentation"
-            shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
-            vector-effect="non-scaling-stroke"
-            x1="50"
-            x2="45"
-            y1="92.85714285714286"
-            y2="92.85714285714286"
-          />
-          <text
-            direction="inherit"
-            dx="0"
-            id="chart-axis-2-tickLabels-3"
-            x="35"
-            y="97.82714285714286"
-          >
-            <tspan
-              dx="0"
-              dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
-              text-anchor="end"
-              x="35"
-            >
-              4.0
-            </tspan>
-          </text>
-        </g>
-        <g
-          role="presentation"
-        >
-          <line
-            role="presentation"
-            shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
-            vector-effect="non-scaling-stroke"
-            x1="50"
-            x2="45"
-            y1="78.57142857142857"
-            y2="78.57142857142857"
-          />
-          <text
-            direction="inherit"
-            dx="0"
-            id="chart-axis-2-tickLabels-4"
-            x="35"
-            y="83.54142857142857"
-          >
-            <tspan
-              dx="0"
-              dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
-              text-anchor="end"
-              x="35"
-            >
-              5.0
-            </tspan>
-          </text>
-        </g>
-        <g
-          role="presentation"
-        >
-          <line
-            role="presentation"
-            shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
-            vector-effect="non-scaling-stroke"
-            x1="50"
-            x2="45"
-            y1="64.28571428571429"
-            y2="64.28571428571429"
-          />
-          <text
-            direction="inherit"
-            dx="0"
-            id="chart-axis-2-tickLabels-5"
-            x="35"
-            y="69.25571428571429"
-          >
-            <tspan
-              dx="0"
-              dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
-              text-anchor="end"
-              x="35"
-            >
-              6.0
-            </tspan>
-          </text>
-        </g>
-        <g
-          role="presentation"
-        >
-          <line
-            role="presentation"
-            shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
-            vector-effect="non-scaling-stroke"
-            x1="50"
-            x2="45"
-            y1="50"
-            y2="50"
-          />
-          <text
-            direction="inherit"
-            dx="0"
-            id="chart-axis-2-tickLabels-6"
-            x="35"
-            y="54.97"
-          >
-            <tspan
-              dx="0"
-              dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
-              text-anchor="end"
-              x="35"
-            >
-              7.0
-            </tspan>
-          </text>
-        </g>
-      </g>
-    </svg>
-    <div
-      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
-    >
-      <svg
-        height="200"
-        style="overflow: visible; width: 100%; height: 100%;"
-        viewBox="0 0 200 200"
-        width="200"
-      />
-    </div>
-  </div>
-</div>
+      a 3, 3 0 1,0 -6,0\\" style=\\"width: 3px; fill: #519de9; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path></g></g><g role=\\"presentation\\"><line vector-effect=\\"non-scaling-stroke\\" style=\\"stroke: #d2d2d2; fill: transparent; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x1=\\"50\\" x2=\\"150\\" y1=\\"150\\" y2=\\"150\\"></line><g role=\\"presentation\\"><line vector-effect=\\"non-scaling-stroke\\" style=\\"stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x1=\\"50\\" x2=\\"50\\" y1=\\"150\\" y2=\\"155\\"></line><text direction=\\"inherit\\" dx=\\"0\\" x=\\"50\\" y=\\"176.97\\" id=\\"chart-axis-1-tickLabels-0\\"><tspan x=\\"50\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"middle\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;\\">1.0</tspan></text></g><g role=\\"presentation\\"><line vector-effect=\\"non-scaling-stroke\\" style=\\"stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x1=\\"66.66666666666667\\" x2=\\"66.66666666666667\\" y1=\\"150\\" y2=\\"155\\"></line><text direction=\\"inherit\\" dx=\\"0\\" x=\\"66.66666666666667\\" y=\\"176.97\\" id=\\"chart-axis-1-tickLabels-1\\"><tspan x=\\"66.66666666666667\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"middle\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;\\">2.0</tspan></text></g><g role=\\"presentation\\"><line vector-effect=\\"non-scaling-stroke\\" style=\\"stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x1=\\"83.33333333333334\\" x2=\\"83.33333333333334\\" y1=\\"150\\" y2=\\"155\\"></line><text direction=\\"inherit\\" dx=\\"0\\" x=\\"83.33333333333334\\" y=\\"176.97\\" id=\\"chart-axis-1-tickLabels-2\\"><tspan x=\\"83.33333333333334\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"middle\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;\\">3.0</tspan></text></g><g role=\\"presentation\\"><line vector-effect=\\"non-scaling-stroke\\" style=\\"stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x1=\\"100\\" x2=\\"100\\" y1=\\"150\\" y2=\\"155\\"></line><text direction=\\"inherit\\" dx=\\"0\\" x=\\"100\\" y=\\"176.97\\" id=\\"chart-axis-1-tickLabels-3\\"><tspan x=\\"100\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"middle\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;\\">4.0</tspan></text></g><g role=\\"presentation\\"><line vector-effect=\\"non-scaling-stroke\\" style=\\"stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x1=\\"116.66666666666667\\" x2=\\"116.66666666666667\\" y1=\\"150\\" y2=\\"155\\"></line><text direction=\\"inherit\\" dx=\\"0\\" x=\\"116.66666666666667\\" y=\\"176.97\\" id=\\"chart-axis-1-tickLabels-4\\"><tspan x=\\"116.66666666666667\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"middle\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;\\">5.0</tspan></text></g><g role=\\"presentation\\"><line vector-effect=\\"non-scaling-stroke\\" style=\\"stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x1=\\"133.33333333333334\\" x2=\\"133.33333333333334\\" y1=\\"150\\" y2=\\"155\\"></line><text direction=\\"inherit\\" dx=\\"0\\" x=\\"133.33333333333334\\" y=\\"176.97\\" id=\\"chart-axis-1-tickLabels-5\\"><tspan x=\\"133.33333333333334\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"middle\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;\\">6.0</tspan></text></g><g role=\\"presentation\\"><line vector-effect=\\"non-scaling-stroke\\" style=\\"stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x1=\\"150\\" x2=\\"150\\" y1=\\"150\\" y2=\\"155\\"></line><text direction=\\"inherit\\" dx=\\"0\\" x=\\"150\\" y=\\"176.97\\" id=\\"chart-axis-1-tickLabels-6\\"><tspan x=\\"150\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"middle\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;\\">7.0</tspan></text></g></g><g role=\\"presentation\\"><line vector-effect=\\"non-scaling-stroke\\" style=\\"stroke: #d2d2d2; fill: transparent; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x1=\\"50\\" x2=\\"50\\" y1=\\"50\\" y2=\\"150\\"></line><g role=\\"presentation\\"><line vector-effect=\\"non-scaling-stroke\\" style=\\"stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x1=\\"50\\" x2=\\"45\\" y1=\\"135.71428571428572\\" y2=\\"135.71428571428572\\"></line><text direction=\\"inherit\\" dx=\\"0\\" x=\\"35\\" y=\\"140.68428571428572\\" id=\\"chart-axis-2-tickLabels-0\\"><tspan x=\\"35\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"end\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;\\">1.0</tspan></text></g><g role=\\"presentation\\"><line vector-effect=\\"non-scaling-stroke\\" style=\\"stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x1=\\"50\\" x2=\\"45\\" y1=\\"121.42857142857142\\" y2=\\"121.42857142857142\\"></line><text direction=\\"inherit\\" dx=\\"0\\" x=\\"35\\" y=\\"126.39857142857142\\" id=\\"chart-axis-2-tickLabels-1\\"><tspan x=\\"35\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"end\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;\\">2.0</tspan></text></g><g role=\\"presentation\\"><line vector-effect=\\"non-scaling-stroke\\" style=\\"stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x1=\\"50\\" x2=\\"45\\" y1=\\"107.14285714285714\\" y2=\\"107.14285714285714\\"></line><text direction=\\"inherit\\" dx=\\"0\\" x=\\"35\\" y=\\"112.11285714285714\\" id=\\"chart-axis-2-tickLabels-2\\"><tspan x=\\"35\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"end\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;\\">3.0</tspan></text></g><g role=\\"presentation\\"><line vector-effect=\\"non-scaling-stroke\\" style=\\"stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x1=\\"50\\" x2=\\"45\\" y1=\\"92.85714285714286\\" y2=\\"92.85714285714286\\"></line><text direction=\\"inherit\\" dx=\\"0\\" x=\\"35\\" y=\\"97.82714285714286\\" id=\\"chart-axis-2-tickLabels-3\\"><tspan x=\\"35\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"end\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;\\">4.0</tspan></text></g><g role=\\"presentation\\"><line vector-effect=\\"non-scaling-stroke\\" style=\\"stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x1=\\"50\\" x2=\\"45\\" y1=\\"78.57142857142857\\" y2=\\"78.57142857142857\\"></line><text direction=\\"inherit\\" dx=\\"0\\" x=\\"35\\" y=\\"83.54142857142857\\" id=\\"chart-axis-2-tickLabels-4\\"><tspan x=\\"35\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"end\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;\\">5.0</tspan></text></g><g role=\\"presentation\\"><line vector-effect=\\"non-scaling-stroke\\" style=\\"stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x1=\\"50\\" x2=\\"45\\" y1=\\"64.28571428571429\\" y2=\\"64.28571428571429\\"></line><text direction=\\"inherit\\" dx=\\"0\\" x=\\"35\\" y=\\"69.25571428571429\\" id=\\"chart-axis-2-tickLabels-5\\"><tspan x=\\"35\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"end\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;\\">6.0</tspan></text></g><g role=\\"presentation\\"><line vector-effect=\\"non-scaling-stroke\\" style=\\"stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x1=\\"50\\" x2=\\"45\\" y1=\\"50\\" y2=\\"50\\"></line><text direction=\\"inherit\\" dx=\\"0\\" x=\\"35\\" y=\\"54.97\\" id=\\"chart-axis-2-tickLabels-6\\"><tspan x=\\"35\\" dx=\\"0\\" dy=\\"0\\" text-anchor=\\"end\\" style=\\"font-family: &quot;RedHatText&quot;,&quot;Overpass&quot;,overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;\\">7.0</tspan></text></g></g></svg><div style=\\"z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\\"><svg width=\\"200\\" height=\\"200\\" viewBox=\\"0 0 200 200\\" style=\\"overflow: visible; width: 100%; height: 100%;\\"></svg></div></div></div>"
 `;

@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('ApplicationLauncherContent should match snapshot (auto-generated)', () => {
   const view = render(<ApplicationLauncherContent children={<div>ReactNode</div>} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

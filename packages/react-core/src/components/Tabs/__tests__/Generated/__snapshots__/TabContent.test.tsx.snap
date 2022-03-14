@@ -1,17 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TabContent should match snapshot (auto-generated) 1`] = `
-<div>
-  <section
-    aria-label="string"
-    class="pf-c-tab-content string"
-    data-ouia-component-type="PF4/TabContent"
-    data-ouia-safe="true"
-    id="string"
-    role="tabpanel"
-    tabindex="0"
-  >
-    any
-  </section>
-</div>
-`;
+exports[`TabContent should match snapshot (auto-generated) 1`] = `"<div><section class=\\"pf-c-tab-content string\\" id=\\"string\\" aria-label=\\"string\\" role=\\"tabpanel\\" tabindex=\\"0\\" data-ouia-component-type=\\"PF4/TabContent\\" data-ouia-safe=\\"true\\">any</section></div>"`;

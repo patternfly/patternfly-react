@@ -86,7 +86,7 @@ describe('DropdownToggleCheckbox', () => {
           Dropdown
         </DropdownToggle>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(view.container.outerHTML).toMatchSnapshot();
     });
 
     test('active', () => {
@@ -95,7 +95,7 @@ describe('DropdownToggleCheckbox', () => {
           Dropdown
         </DropdownToggle>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(view.container.outerHTML).toMatchSnapshot();
     });
 
     test('focus', () => {
@@ -104,7 +104,7 @@ describe('DropdownToggleCheckbox', () => {
           Dropdown
         </DropdownToggle>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(view.container.outerHTML).toMatchSnapshot();
     });
 
     test('button variant - primary', () => {
@@ -197,7 +197,7 @@ describe('DropdownToggleCheckbox', () => {
           </DropdownToggle>
         </DropdownContext.Provider>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(view.container.outerHTML).toMatchSnapshot();
     });
 
     test('class changes', () => {
@@ -213,7 +213,7 @@ describe('DropdownToggleCheckbox', () => {
           </DropdownToggle>
         </DropdownContext.Provider>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(view.container.outerHTML).toMatchSnapshot();
     });
   });
 });

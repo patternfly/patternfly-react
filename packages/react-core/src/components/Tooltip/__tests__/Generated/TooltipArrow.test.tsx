@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('TooltipArrow should match snapshot (auto-generated)', () => {
   const view = render(<TooltipArrow className={'string'} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

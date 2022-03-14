@@ -5,10 +5,10 @@ import { render } from '@testing-library/react';
 
 test('Gutter', () => {
   const view = render(<Level hasGutter />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('item', () => {
   const view = render(<LevelItem>Level Item</LevelItem>);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

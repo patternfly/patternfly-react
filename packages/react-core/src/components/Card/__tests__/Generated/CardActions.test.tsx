@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('CardActions should match snapshot (auto-generated)', () => {
   const view = render(<CardActions children={<>ReactNode</>} className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

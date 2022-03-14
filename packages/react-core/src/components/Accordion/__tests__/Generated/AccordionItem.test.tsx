@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('AccordionItem should match snapshot (auto-generated)', () => {
   const view = render(<AccordionItem children={<>ReactNode</>} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

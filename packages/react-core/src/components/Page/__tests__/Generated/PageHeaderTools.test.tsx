@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('PageHeaderTools should match snapshot (auto-generated)', () => {
   const view = render(<PageHeaderTools children={<div>ReactNode</div>} className={'string'} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

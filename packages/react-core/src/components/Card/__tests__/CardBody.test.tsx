@@ -8,7 +8,7 @@ import { CardBody } from '../CardBody';
 describe('CardBody', () => {
   test('renders with PatternFly Core styles', () => {
     const view = render(<CardBody />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('className is added to the root element', () => {
@@ -39,6 +39,6 @@ describe('CardBody', () => {
 
   test('body with no-fill applied', () => {
     const view = render(<CardBody isFilled={false} />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

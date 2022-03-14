@@ -1,11 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`StackItem should match snapshot (auto-generated) 1`] = `
-<div>
-  <div
-    class="pf-l-stack__item ''"
-  >
-    ReactNode
-  </div>
-</div>
-`;
+exports[`StackItem should match snapshot (auto-generated) 1`] = `"<div><div class=\\"pf-l-stack__item ''\\">ReactNode</div></div>"`;

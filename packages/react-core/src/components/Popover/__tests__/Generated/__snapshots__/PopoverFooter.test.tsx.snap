@@ -1,13 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PopoverFooter should match snapshot (auto-generated) 1`] = `
-<div>
-  <footer
-    class="pf-c-popover__footer ''"
-  >
-    <div>
-      ReactNode
-    </div>
-  </footer>
-</div>
-`;
+exports[`PopoverFooter should match snapshot (auto-generated) 1`] = `"<div><footer class=\\"pf-c-popover__footer ''\\"><div>ReactNode</div></footer></div>"`;

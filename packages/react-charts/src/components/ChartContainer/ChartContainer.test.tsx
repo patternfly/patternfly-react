@@ -6,7 +6,7 @@ import { ChartLegend } from '../ChartLegend';
 Object.values([true, false]).forEach(() => {
   test('ChartContainer', () => {
     const view = render(<ChartContainer />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -22,5 +22,5 @@ test('renders container via ChartLegend', () => {
       />
     </ChartContainer>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

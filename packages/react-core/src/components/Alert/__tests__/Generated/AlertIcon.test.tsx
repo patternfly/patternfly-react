@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('AlertIcon should match snapshot (auto-generated)', () => {
   const view = render(<AlertIcon variant={'success'} className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

@@ -8,7 +8,7 @@ import { ChartLine } from '../ChartLine';
 Object.values([true, false]).forEach(() => {
   test('ChartAxis', () => {
     const view = render(<ChartAxis />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -53,5 +53,5 @@ test('renders component data', () => {
       <ChartAxis dependentAxis tickValues={[2, 5, 8]} />
     </Chart>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

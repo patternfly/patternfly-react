@@ -4,5 +4,5 @@ import React from 'react';
 
 test('disabled date picker', () => {
   const view = render(<DatePicker value="2020-11-20" isDisabled aria-label="disabled date picker" />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

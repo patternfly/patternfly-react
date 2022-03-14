@@ -5,7 +5,7 @@ import { ChartDonutThreshold } from './ChartDonutThreshold';
 Object.values([true, false]).forEach(() => {
   test('ChartDonutThreshold', () => {
     const view = render(<ChartDonutThreshold />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -21,5 +21,5 @@ test('renders component data', () => {
       width={200}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

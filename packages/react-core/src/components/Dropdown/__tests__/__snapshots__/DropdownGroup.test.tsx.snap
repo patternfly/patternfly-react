@@ -1,21 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`dropdown groups basic render 1`] = `
-<div>
-  <section
-    class=""
-  >
-    <h1
-      aria-hidden="true"
-      class=""
-    >
-      Group 1
-    </h1>
-    <ul
-      role="none"
-    >
-      Something
-    </ul>
-  </section>
-</div>
-`;
+exports[`dropdown groups basic render 1`] = `"<div><section class=\\"\\"><h1 class=\\"\\" aria-hidden=\\"true\\">Group 1</h1><ul role=\\"none\\">Something</ul></section></div>"`;

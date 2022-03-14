@@ -9,7 +9,7 @@ describe('CodeEditor', () => {
 
   test('matches snapshot without props', () => {
     const view = render(<CodeEditor />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('matches snapshot with all props', () => {
@@ -27,6 +27,6 @@ describe('CodeEditor', () => {
         language={Language.javascript}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

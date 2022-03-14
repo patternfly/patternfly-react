@@ -13,5 +13,5 @@ test('simple catalog item header', () => {
       }
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

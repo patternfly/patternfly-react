@@ -14,7 +14,7 @@ describe('Button', () => {
           {variant} Button
         </Button>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(view.container.outerHTML).toMatchSnapshot();
     });
   });
 
@@ -31,17 +31,17 @@ describe('Button', () => {
         Block Button
       </Button>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('isBlock', () => {
     const view = render(<Button isBlock>Block Button</Button>);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('isDisabled', () => {
     const view = render(<Button isDisabled>Disabled Button</Button>);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('isDanger secondary', () => {
@@ -50,7 +50,7 @@ describe('Button', () => {
         Disabled Button
       </Button>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('isDanger link', () => {
@@ -59,12 +59,12 @@ describe('Button', () => {
         Disabled Button
       </Button>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('isAriaDisabled button', () => {
     const view = render(<Button isAriaDisabled>Disabled yet focusable button</Button>);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('isAriaDisabled link button', () => {
@@ -73,7 +73,7 @@ describe('Button', () => {
         Disabled yet focusable button
       </Button>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('isInline', () => {
@@ -82,17 +82,17 @@ describe('Button', () => {
         Hovered Button
       </Button>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('isSmall', () => {
     const view = render(<Button isSmall>Small Button</Button>);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('isLarge', () => {
     const view = render(<Button isLarge>Large Button</Button>);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('isLoading', () => {
@@ -101,7 +101,7 @@ describe('Button', () => {
         Loading Button
       </Button>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('allows passing in a string as the component', () => {
@@ -124,7 +124,7 @@ describe('Button', () => {
         Disabled Anchor Button
       </Button>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('setting tab index through props', () => {
@@ -136,6 +136,6 @@ describe('Button', () => {
     const view = render(
       <Button variant="plain" isLoading aria-label="Upload" spinnerAriaValueText="Loading" icon={<div>ICON</div>} />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

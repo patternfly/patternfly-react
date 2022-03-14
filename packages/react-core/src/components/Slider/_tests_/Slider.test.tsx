@@ -6,12 +6,12 @@ import { Button } from '../../Button';
 describe('slider', () => {
   test('renders continuous slider', () => {
     const view = render(<Slider value={50} isInputVisible inputValue={50} />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders discrete slider', () => {
     const view = render(<Slider value={50} min={10} max={110} step={2} isInputVisible inputValue={50} />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders discrete slider with custom steps', () => {
@@ -27,7 +27,7 @@ describe('slider', () => {
         ]}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders continuous slider with custom steps', () => {
@@ -41,17 +41,17 @@ describe('slider', () => {
         ]}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders slider with input', () => {
     const view = render(<Slider value={50} isInputVisible inputValue={50} inputLabel="%" inputPosition="right" />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders slider with input above thumb', () => {
     const view = render(<Slider value={50} isInputVisible inputValue={50} inputLabel="%" inputPosition="aboveThumb" />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders slider with input actions', () => {
@@ -62,16 +62,16 @@ describe('slider', () => {
         rightActions={<Button variant="plain" aria-label="Plus" />}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders disabled slider', () => {
     const view = render(<Slider value={50} isDisabled />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('renders slider with tooltip on thumb', () => {
     const view = render(<Slider value={50} hasTooltipOverThumb />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

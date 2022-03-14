@@ -15,5 +15,5 @@ it('FocusTrap should match snapshot (auto-generated)', () => {
       focusTrapOptions={undefined}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

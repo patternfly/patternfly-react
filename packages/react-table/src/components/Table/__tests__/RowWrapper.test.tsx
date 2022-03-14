@@ -14,11 +14,11 @@ describe('RowWrapper', () => {
   test('renders correctly', () => {
     const trRef = jest.fn();
     const view = render(getRowWrapper({ onScroll: jest.fn(), onResize: jest.fn(), trRef }));
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
     expect(trRef.mock.calls).toHaveLength(1);
   });
   test('renders expanded correctly', () => {
     const view = render(getRowWrapper({ row: { isExpanded: true } }));
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

@@ -1,75 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`page breadcrumb Verify basic render 1`] = `
-<div>
-  <section
-    class="pf-c-page__main-breadcrumb"
-  >
-    test
-  </section>
-</div>
-`;
+exports[`page breadcrumb Verify basic render 1`] = `"<div><section class=\\"pf-c-page__main-breadcrumb\\">test</section></div>"`;
 
-exports[`page breadcrumb Verify bottom shadow 1`] = `
-<div>
-  <section
-    class="pf-c-page__main-breadcrumb pf-m-shadow-bottom"
-  >
-    test
-  </section>
-</div>
-`;
+exports[`page breadcrumb Verify bottom shadow 1`] = `"<div><section class=\\"pf-c-page__main-breadcrumb pf-m-shadow-bottom\\">test</section></div>"`;
 
-exports[`page breadcrumb Verify bottom sticky 1`] = `
-<div>
-  <section
-    class="pf-c-page__main-breadcrumb pf-m-sticky-bottom"
-  >
-    test
-  </section>
-</div>
-`;
+exports[`page breadcrumb Verify bottom sticky 1`] = `"<div><section class=\\"pf-c-page__main-breadcrumb pf-m-sticky-bottom\\">test</section></div>"`;
 
-exports[`page breadcrumb Verify limited width 1`] = `
-<div>
-  <section
-    class="pf-c-page__main-breadcrumb pf-m-limit-width"
-  >
-    <div
-      class="pf-c-page__main-body"
-    >
-      test
-    </div>
-  </section>
-</div>
-`;
+exports[`page breadcrumb Verify limited width 1`] = `"<div><section class=\\"pf-c-page__main-breadcrumb pf-m-limit-width\\"><div class=\\"pf-c-page__main-body\\">test</div></section></div>"`;
 
-exports[`page breadcrumb Verify overflow scroll 1`] = `
-<div>
-  <section
-    class="pf-c-page__main-breadcrumb pf-m-overflow-scroll"
-  >
-    test
-  </section>
-</div>
-`;
+exports[`page breadcrumb Verify overflow scroll 1`] = `"<div><section class=\\"pf-c-page__main-breadcrumb pf-m-overflow-scroll\\">test</section></div>"`;
 
-exports[`page breadcrumb Verify top shadow 1`] = `
-<div>
-  <section
-    class="pf-c-page__main-breadcrumb pf-m-shadow-top"
-  >
-    test
-  </section>
-</div>
-`;
+exports[`page breadcrumb Verify top shadow 1`] = `"<div><section class=\\"pf-c-page__main-breadcrumb pf-m-shadow-top\\">test</section></div>"`;
 
-exports[`page breadcrumb Verify top sticky 1`] = `
-<div>
-  <section
-    class="pf-c-page__main-breadcrumb pf-m-sticky-top"
-  >
-    test
-  </section>
-</div>
-`;
+exports[`page breadcrumb Verify top sticky 1`] = `"<div><section class=\\"pf-c-page__main-breadcrumb pf-m-sticky-top\\">test</section></div>"`;

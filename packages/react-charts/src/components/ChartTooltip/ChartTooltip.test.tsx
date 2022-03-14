@@ -8,7 +8,7 @@ import { ChartTooltip } from './ChartTooltip';
 Object.values([true, false]).forEach(() => {
   test('ChartTooltip', () => {
     const view = render(<ChartTooltip text="This is a tooltip" />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -38,5 +38,5 @@ test('allows tooltip via container component', () => {
       />
     </ChartGroup>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

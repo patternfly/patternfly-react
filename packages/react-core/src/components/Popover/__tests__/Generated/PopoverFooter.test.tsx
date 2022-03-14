@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('PopoverFooter should match snapshot (auto-generated)', () => {
   const view = render(<PopoverFooter className={"''"} children={<div>ReactNode</div>} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

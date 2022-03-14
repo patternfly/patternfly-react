@@ -17,5 +17,5 @@ it('AccordionToggle should match snapshot (auto-generated)', () => {
       component={() => <div />}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

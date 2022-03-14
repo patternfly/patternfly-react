@@ -1,52 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ChartLegendTooltipContent 1`] = `
-<div>
-  <g>
-    <rect
-      height="0"
-      role="presentation"
-      shape-rendering="auto"
-      style="fill: none;"
-      vector-effect="non-scaling-stroke"
-      width="0"
-      x="NaN"
-      y="NaN"
-    />
-  </g>
-</div>
-`;
+exports[`ChartLegendTooltipContent 1`] = `"<div><g><rect vector-effect=\\"non-scaling-stroke\\" style=\\"fill: none;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x=\\"NaN\\" y=\\"NaN\\" width=\\"0\\" height=\\"0\\"></rect></g></div>"`;
 
-exports[`ChartLegendTooltipContent 2`] = `
-<div>
-  <g>
-    <rect
-      height="0"
-      role="presentation"
-      shape-rendering="auto"
-      style="fill: none;"
-      vector-effect="non-scaling-stroke"
-      width="0"
-      x="NaN"
-      y="NaN"
-    />
-  </g>
-</div>
-`;
+exports[`ChartLegendTooltipContent 2`] = `"<div><g><rect vector-effect=\\"non-scaling-stroke\\" style=\\"fill: none;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x=\\"NaN\\" y=\\"NaN\\" width=\\"0\\" height=\\"0\\"></rect></g></div>"`;
 
-exports[`renders component text 1`] = `
-<div>
-  <g>
-    <rect
-      height="0"
-      role="presentation"
-      shape-rendering="auto"
-      style="fill: none;"
-      vector-effect="non-scaling-stroke"
-      width="0"
-      x="NaN"
-      y="NaN"
-    />
-  </g>
-</div>
-`;
+exports[`renders component text 1`] = `"<div><g><rect vector-effect=\\"non-scaling-stroke\\" style=\\"fill: none;\\" role=\\"presentation\\" shape-rendering=\\"auto\\" x=\\"NaN\\" y=\\"NaN\\" width=\\"0\\" height=\\"0\\"></rect></g></div>"`;

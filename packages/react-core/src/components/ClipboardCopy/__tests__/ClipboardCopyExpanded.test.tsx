@@ -9,7 +9,7 @@ const props = {
 
 test('expanded content render', () => {
   const view = render(<ClipboardCopyExpanded {...props}>This is my text</ClipboardCopyExpanded>);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
 
 test('expanded code content render', () => {
@@ -19,5 +19,5 @@ test('expanded code content render', () => {
     "version": "1.33.2"
   }`}</ClipboardCopyExpanded>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

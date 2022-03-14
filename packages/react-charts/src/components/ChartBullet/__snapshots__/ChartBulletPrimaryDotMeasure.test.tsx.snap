@@ -1,116 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ChartBulletPrimaryDotMeasure 1`] = `
-<div>
-  <div
-    class="pf-c-chart"
-    style="pointer-events: none; position: relative; width: 100%; height: 100%;"
-  >
-    <svg
-      height="140"
-      role="img"
-      style="pointer-events: all; width: 100%; height: 100%;"
-      viewBox="0 0 450 140"
-      width="450"
-    />
-    <div
-      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
-    >
-      <svg
-        height="140"
-        style="overflow: visible; width: 100%; height: 100%;"
-        viewBox="0 0 450 140"
-        width="450"
-      />
-    </div>
-  </div>
-</div>
-`;
+exports[`ChartBulletPrimaryDotMeasure 1`] = `"<div><div style=\\"pointer-events: none; position: relative; width: 100%; height: 100%;\\" class=\\"pf-c-chart\\"><svg width=\\"450\\" height=\\"140\\" role=\\"img\\" viewBox=\\"0 0 450 140\\" style=\\"pointer-events: all; width: 100%; height: 100%;\\"></svg><div style=\\"z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\\"><svg width=\\"450\\" height=\\"140\\" viewBox=\\"0 0 450 140\\" style=\\"overflow: visible; width: 100%; height: 100%;\\"></svg></div></div></div>"`;
 
-exports[`ChartBulletPrimaryDotMeasure 2`] = `
-<div>
-  <div
-    class="pf-c-chart"
-    style="pointer-events: none; position: relative; width: 100%; height: 100%;"
-  >
-    <svg
-      height="140"
-      role="img"
-      style="pointer-events: all; width: 100%; height: 100%;"
-      viewBox="0 0 450 140"
-      width="450"
-    />
-    <div
-      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
-    >
-      <svg
-        height="140"
-        style="overflow: visible; width: 100%; height: 100%;"
-        viewBox="0 0 450 140"
-        width="450"
-      />
-    </div>
-  </div>
-</div>
-`;
+exports[`ChartBulletPrimaryDotMeasure 2`] = `"<div><div style=\\"pointer-events: none; position: relative; width: 100%; height: 100%;\\" class=\\"pf-c-chart\\"><svg width=\\"450\\" height=\\"140\\" role=\\"img\\" viewBox=\\"0 0 450 140\\" style=\\"pointer-events: all; width: 100%; height: 100%;\\"></svg><div style=\\"z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\\"><svg width=\\"450\\" height=\\"140\\" viewBox=\\"0 0 450 140\\" style=\\"overflow: visible; width: 100%; height: 100%;\\"></svg></div></div></div>"`;
 
 exports[`renders component data 1`] = `
-<div>
-  <div
-    class="pf-c-chart"
-    style="pointer-events: none; position: relative; width: 100%; height: 100%;"
-  >
-    <svg
-      height="140"
-      role="img"
-      style="pointer-events: all; width: 100%; height: 100%;"
-      viewBox="0 0 450 140"
-      width="450"
-    >
-      <g>
-        <path
-          d="M 225, 89.8
+"<div><div style=\\"pointer-events: none; position: relative; width: 100%; height: 100%;\\" class=\\"pf-c-chart\\"><svg width=\\"450\\" height=\\"140\\" role=\\"img\\" viewBox=\\"0 0 450 140\\" style=\\"pointer-events: all; width: 100%; height: 100%;\\"><g><path d=\\"M 225, 89.8
       m -6, 0
       a 6, 6 0 1,0 12,0
-      a 6, 6 0 1,0 -12,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-      </g>
-      <g>
-        <path
-          d="M 225, 89.8
+      a 6, 6 0 1,0 -12,0\\" style=\\"fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path></g><g><path d=\\"M 225, 89.8
       m -6, 0
       a 6, 6 0 1,0 12,0
-      a 6, 6 0 1,0 -12,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-      </g>
-      <g>
-        <path
-          d="M 225, 89.8
+      a 6, 6 0 1,0 -12,0\\" style=\\"fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path></g><g><path d=\\"M 225, 89.8
       m -6, 0
       a 6, 6 0 1,0 12,0
-      a 6, 6 0 1,0 -12,0"
-          role="presentation"
-          shape-rendering="auto"
-          style="fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;"
-        />
-      </g>
-    </svg>
-    <div
-      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
-    >
-      <svg
-        height="140"
-        style="overflow: visible; width: 100%; height: 100%;"
-        viewBox="0 0 450 140"
-        width="450"
-      />
-    </div>
-  </div>
-</div>
+      a 6, 6 0 1,0 -12,0\\" style=\\"fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;\\" role=\\"presentation\\" shape-rendering=\\"auto\\"></path></g></svg><div style=\\"z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;\\"><svg width=\\"450\\" height=\\"140\\" viewBox=\\"0 0 450 140\\" style=\\"overflow: visible; width: 100%; height: 100%;\\"></svg></div></div></div>"
 `;

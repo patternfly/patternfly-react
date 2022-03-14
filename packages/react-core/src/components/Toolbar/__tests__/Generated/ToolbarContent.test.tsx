@@ -19,5 +19,5 @@ it('ToolbarContent should match snapshot (auto-generated)', () => {
       toolbarId={'string'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

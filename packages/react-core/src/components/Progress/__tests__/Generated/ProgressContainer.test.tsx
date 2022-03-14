@@ -19,5 +19,5 @@ it('ProgressContainer should match snapshot (auto-generated)', () => {
       value={42}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

@@ -4,5 +4,5 @@ import { Backdrop } from '../Backdrop';
 
 test('Backdrop Test', () => {
   const view = render(<Backdrop>Backdrop</Backdrop>);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

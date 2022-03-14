@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('TextContent should match snapshot (auto-generated)', () => {
   const view = render(<TextContent children={<>ReactNode</>} className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

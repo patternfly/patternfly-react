@@ -7,7 +7,7 @@ import { ChartScatter } from './ChartScatter';
 Object.values([true, false]).forEach(() => {
   test('ChartScatter', () => {
     const view = render(<ChartScatter />);
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });
 
@@ -50,5 +50,5 @@ test('renders component data', () => {
       </ChartGroup>
     </Chart>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

@@ -4,5 +4,5 @@ import { AboutModalBoxHero } from '../AboutModalBoxHero';
 
 test('test About Modal Box SHero', () => {
   const view = render(<AboutModalBoxHero />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

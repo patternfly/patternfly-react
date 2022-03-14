@@ -20,5 +20,5 @@ it('ToolbarChipGroupContent should match snapshot (auto-generated)', () => {
       collapseListedFiltersBreakpoint={'lg'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

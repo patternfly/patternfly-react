@@ -7,5 +7,5 @@ import { FindRefWrapper } from '../../FindRefWrapper';
 
 it('FindRefWrapper should match snapshot (auto-generated)', () => {
   const view = render(<FindRefWrapper children={<div>ReactNode</div>} onFoundRef={(foundRef: any) => {}} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });

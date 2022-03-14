@@ -28,7 +28,7 @@ describe('optionsMenu', () => {
     const view = render(
       <OptionsMenu id="regular" menuItems={menuItems} toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>} />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('right aligned', () => {
@@ -40,7 +40,7 @@ describe('optionsMenu', () => {
         toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('open up', () => {
@@ -52,7 +52,7 @@ describe('optionsMenu', () => {
         toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('right aligned + open up', () => {
@@ -65,7 +65,7 @@ describe('optionsMenu', () => {
         toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('expanded', () => {
@@ -77,7 +77,7 @@ describe('optionsMenu', () => {
         toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('plain', () => {
@@ -89,7 +89,7 @@ describe('optionsMenu', () => {
         toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('text', () => {
@@ -102,7 +102,7 @@ describe('optionsMenu', () => {
         }
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 
   test('isDisabled', () => {
@@ -113,6 +113,6 @@ describe('optionsMenu', () => {
         toggle={<OptionsMenuToggle isDisabled>Options Menu</OptionsMenuToggle>}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(view.container.outerHTML).toMatchSnapshot();
   });
 });

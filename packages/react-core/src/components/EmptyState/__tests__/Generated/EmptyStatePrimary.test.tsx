@@ -9,5 +9,5 @@ import {} from '../..';
 
 it('EmptyStatePrimary should match snapshot (auto-generated)', () => {
   const view = render(<EmptyStatePrimary className={"''"} children={<div>ReactNode</div>} />);
-  expect(view.container).toMatchSnapshot();
+  expect(view.container.outerHTML).toMatchSnapshot();
 });
