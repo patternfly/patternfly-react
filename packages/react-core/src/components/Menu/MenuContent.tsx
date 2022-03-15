@@ -21,8 +21,10 @@ export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React
   const menuContentRef = React.createRef<HTMLDivElement>();
   const refCallback = (el: HTMLElement, menuId: string, onGetMenuHeight: (menuId: string, height: number) => void) => {
     if (el) {
-      onGetMenuHeight && onGetMenuHeight(menuId, el.clientHeight);
-      getHeight && getHeight(el.clientHeight.toString());
+      // if this menu has a parent MenuList, then we need to account for that parent list's padding.
+      const clientHeight = el.closest(`.${styles.menuList}`) ? el.clientHeight + 16 : el.clientHeight;
+      onGetMenuHeight && onGetMenuHeight(menuId, clientHeight);
+      getHeight && getHeight(clientHeight.toString());
     }
     return ref || menuContentRef;
   };
