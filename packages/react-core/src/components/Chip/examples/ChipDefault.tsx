@@ -1,7 +1,7 @@
 import React from 'react';
 import { Badge, Chip } from '@patternfly/react-core';
 
-export const ChipSingle: React.FunctionComponent = () => {
+export const ChipDefault: React.FunctionComponent = () => {
   const [chips, setChips] = React.useState({
     chip: {
       name: 'Chip 1'

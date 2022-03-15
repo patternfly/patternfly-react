@@ -10,5 +10,5 @@ ouia: true
 
 ### Default
 
-```ts file='./ChipSingle.tsx'
+```ts file='./ChipDefault.tsx'
 ```
