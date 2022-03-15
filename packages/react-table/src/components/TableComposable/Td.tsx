@@ -111,6 +111,7 @@ const TdBase: React.FunctionComponent<TdProps> = ({
   const actionParamsFunc = actions ? cellActions(actions.items, null, null) : null;
   const actionParams = actionParamsFunc
     ? actionParamsFunc(null, {
+        rowIndex: actions?.rowIndex,
         rowData: {
           disableActions: actions?.disable
         },

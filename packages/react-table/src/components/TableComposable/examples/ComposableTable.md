@@ -311,6 +311,16 @@ To make a row draggable:
 ```ts isBeta file="ComposableTableDraggable.tsx"
 ```
 
+## Sticky table modifiers
+
+**Note:** Sticky table headers and columns have a higher `z-index` than the `z-index` used for menus (dropdown, select, etc). The intent is that the contents of a scrollable table will scroll under the sticky header/column, including any expanded menus. However, there may be use cases where a menu needs to appear on top of a sticky header/column, such as an expanded menu in a toolbar above a table with a sticky header.
+
+There are a few ways this can be handled:
+
+- Manipulate the `z-index` of the menu and/or table headers/columns manually.
+- Use the `menuAppendTo` prop in non-composable react components with menus to append the menu to an element outside of the table (e.g., the `<body>` element) so that the menu has a higher stacking context than - and can appear on top of - sticky headers/columns as well as appear outside of any scrollable content in the table.
+- In the case where the menu is outside of the table (e.g., above the table in a toolbar, or below the table and the menu expands up), assign the entire table a lower `z-index` than the `z-index` of the menu. This creates a lower stacking context for the entire table compared to the menu, while preserving the stacking context of the elements inside of the table.
+
 ### Composable: Sticky column
 
 To make a column sticky, wrap `TableComposable` with `InnerScrollContainer` and add the following properties to the `Th` that should be sticky: `isStickyColumn` and `hasRightBorder`. To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` should also have the `modifier="nowrap"` property. To set the minimum width of the sticky column, use the `stickyMinWidth` property.
@@ -332,7 +342,7 @@ To maintain proper sticky behavior across sticky columns and header, `TableCompo
 ```ts file="ComposableTableStickyColumnsAndHeader.tsx"
 ```
 
-### Composable: Nested column headers
+## Nested column headers
 
 To make a nested column header:
 
@@ -344,6 +354,8 @@ To make a nested column header:
 The first `Tr` represents the top level of columns, and each must pass either `rowSpan` if the column does not contain sub columns or `colSpan` if the column contains sub columns. The value of `rowSpan` is equal to the number of rows the nested header will span, typically `2`, and the value of `colSpan` is equal to the number of sub columns in a column. Each `Th` except the last should also pass `hasRightBorder`.
 
 The second `Tr` represents the second level of sub columns. The `Th` in this row each should pass `isSubHeader`, and the last sub column of a column should also pass `hasRightBorder`.
+
+### Composable: Nested column headers
 
 ```ts file="ComposableTableNestedHeaders.tsx"
 ```
@@ -357,6 +369,8 @@ The second `Tr` represents the second level of sub columns. The `Th` in this row
 
 ```ts file="ComposableTableNestedTableExpandable.tsx"
 ```
+
+## Striped
 
 ### Composable: Striped
 
