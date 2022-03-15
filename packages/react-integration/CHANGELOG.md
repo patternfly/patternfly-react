@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.161.0 (2022-03-15)
+
+
+### Features
+
+* **CodeEditor:** 6226 size to fit height ([#7033](https://github.com/patternfly/patternfly-react/issues/7033)) ([f18abd3](https://github.com/patternfly/patternfly-react/commit/f18abd3020e04ee6602fd168d503f43cc0de649e))
+
+
+
+
+
 ## 4.160.22 (2022-03-14)
 
 **Note:** Version bump only for package @patternfly/react-integration
