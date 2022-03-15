@@ -116,6 +116,41 @@ class BasicCodeEditor extends React.Component {
 }
 ```
 
+### With sizeToFit height, height will grow/shrink with content
+```js
+import React from 'react';
+import { CodeEditor, Language } from '@patternfly/react-code-editor';
+
+class BasicCodeEditor extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.onEditorDidMount = (editor, monaco) => {
+      console.log(editor.getValue());
+      editor.layout();
+      editor.focus();
+      monaco.editor.getModels()[0].updateOptions({ tabSize: 5 });
+    };
+    
+    this.onChange = value => {
+      console.log(value);
+    };
+  }
+  
+  render() {    
+    return (
+      <CodeEditor
+        code="Some example content"
+        onChange={this.onChange}
+        language={Language.javascript}
+        onEditorDidMount={this.onEditorDidMount}
+        height='sizeToFit'
+      />
+    );
+  }
+}
+```
+
 ### With shortcut menu and main header content.
 These examples below are the shortcuts that we recommend describing in the popover since they are monaco features.
 ```js

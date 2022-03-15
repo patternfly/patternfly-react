@@ -124,8 +124,8 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   isLineNumbersVisible?: boolean;
   /** Flag indicating the editor is read only */
   isReadOnly?: boolean;
-  /** Height of code editor. Defaults to 100% */
-  height?: string;
+  /** Height of code editor. Defaults to 100%. 'sizeToFit' will automatically change the height to the height of the content. */
+  height?: string | 'sizeToFit';
   /** Function which fires each time the code changes in the code editor */
   onChange?: ChangeHandler;
   /** The loading screen before the editor will be loaded. Defaults 'loading...' */
@@ -212,6 +212,7 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
 }
 
 interface CodeEditorState {
+  height: string;
   prevPropsCode: string;
   value: string;
   filename: string;
@@ -302,6 +303,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
   constructor(props: CodeEditorProps) {
     super(props);
     this.state = {
+      height: this.props.height,
       prevPropsCode: this.props.code,
       value: this.props.code,
       filename: '',
@@ -311,7 +313,16 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     };
   }
 
+  setHeightToFitContent() {
+    const contentHeight = this.editor.getContentHeight();
+    const layoutInfo = this.editor.getLayoutInfo();
+    this.editor.layout({ width: layoutInfo.width, height: contentHeight });
+  }
+
   onChange: ChangeHandler = (value, event) => {
+    if (this.props.height === 'sizeToFit') {
+      this.setHeightToFitContent();
+    }
     if (this.props.onChange) {
       this.props.onChange(value, event);
     }
@@ -366,6 +377,9 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     );
     this.props.onEditorDidMount(editor, monaco);
     this.editor = editor;
+    if (this.props.height === 'sizeToFit') {
+      this.setHeightToFitContent();
+    }
   };
 
   handleFileChange = (value: string, filename: string) => {
@@ -444,10 +458,9 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
   };
 
   render() {
-    const { value, isLoading, showEmptyState, copied } = this.state;
+    const { height, value, isLoading, showEmptyState, copied } = this.state;
     const {
       isDarkTheme,
-      height,
       width,
       className,
       isCopyEnabled,
@@ -487,6 +500,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       ...shortcutsPopoverPropsProp
     };
     const options: editor.IStandaloneEditorConstructionOptions = {
+      scrollBeyondLastLine: height !== 'sizeToFit',
       readOnly: isReadOnly,
       cursorStyle: 'line',
       lineNumbers: isLineNumbersVisible ? 'on' : 'off',
