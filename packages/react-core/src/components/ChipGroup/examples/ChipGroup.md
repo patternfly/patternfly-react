@@ -8,145 +8,17 @@ ouia: true
 
 ## Examples
 
-### Simple inline chip group
+### Simple inline
 
-```js
-import React from 'react';
-import { Chip, ChipGroup } from '@patternfly/react-core';
-
-class SimpleInlineChipGroup extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      chips: ['Chip one', 'Really long chip that goes on and on', 'Chip three', 'Chip four', 'Chip five']
-    };
-
-    this.deleteItem = id => {
-      const copyOfChips = this.state.chips;
-      const index = copyOfChips.indexOf(id);
-      if (index !== -1) {
-        copyOfChips.splice(index, 1);
-        this.setState({ chips: copyOfChips });
-      }
-    };
-  }
-
-  render() {
-    const { chips } = this.state;
-
-    return (
-      <ChipGroup>
-        {chips.map(currentChip => (
-          <Chip key={currentChip} onClick={() => this.deleteItem(currentChip)}>
-            {currentChip}
-          </Chip>
-        ))}
-      </ChipGroup>
-    );
-  }
-}
+```ts file='./ChipGroupInline.tsx'
 ```
 
-### Chip groups with categories
+### With categories
 
-```js
-import React from 'react';
-import { Chip, ChipGroup } from '@patternfly/react-core';
-
-class SimpleCategoryChipGroup extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      chips: ['Chip one', 'Chip two', 'Chip three', 'Chip four', 'Chip five']
-    };
-    this.deleteItem = id => {
-      const copyOfChips = this.state.chips;
-      const index = copyOfChips.indexOf(id);
-      if (index !== -1) {
-        copyOfChips.splice(index, 1);
-        this.setState({ chips: copyOfChips });
-      }
-    };
-  }
-
-  render() {
-    const { chips } = this.state;
-
-    return (
-      <ChipGroup categoryName="Category one">
-        {chips.map(currentChip => (
-          <Chip key={currentChip} onClick={() => this.deleteItem(currentChip)}>
-            {currentChip}
-          </Chip>
-        ))}
-      </ChipGroup>
-    );
-  }
-}
+```ts file='./ChipGroupWithCategories.tsx'
 ```
 
-### Chip groups with categories removable
+### With removable categories
 
-```js
-import React from 'react';
-import { Chip, ChipGroup } from '@patternfly/react-core';
-
-class CategoryChipGroupRemovable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      chips: ['Chip one', 'Chip two', 'Chip three'],
-      chips2: ['Chip one', 'Chip two', 'Chip three', 'Chip 4']
-    };
-    this.deleteItem = id => {
-      const copyOfChips = this.state.chips;
-      const index = copyOfChips.indexOf(id);
-      if (index !== -1) {
-        copyOfChips.splice(index, 1);
-        this.setState({ chips: copyOfChips });
-      }
-    };
-
-    this.deleteItem2 = id => {
-      const copyOfChips = this.state.chips2;
-      const index = copyOfChips.indexOf(id);
-      if (index !== -1) {
-        copyOfChips.splice(index, 1);
-        this.setState({ chips2: copyOfChips });
-      }
-    };
-
-    this.deleteCategory = () => {
-      this.setState({ chips: [] });
-    };
-
-    this.deleteCategory2 = () => {
-      this.setState({ chips2: [] });
-    };
-  }
-
-  render() {
-    const { chips, chips2 } = this.state;
-
-    return (
-      <React.Fragment>
-        <ChipGroup categoryName="Category one" isClosable onClick={this.deleteCategory}>
-          {chips.map(currentChip => (
-            <Chip key={currentChip} onClick={() => this.deleteItem(currentChip)}>
-              {currentChip}
-            </Chip>
-          ))}
-        </ChipGroup>
-        <br /> <br />
-        <ChipGroup categoryName="Category two has a very long name" isClosable onClick={this.deleteCategory2}>
-          {chips2.map(currentChip => (
-            <Chip key={currentChip} onClick={() => this.deleteItem2(currentChip)}>
-              {currentChip}
-            </Chip>
-          ))}
-        </ChipGroup>
-      </React.Fragment>
-    );
-  }
-}
+```ts file='./ChipGroupRemovableCategories.tsx'
 ```
