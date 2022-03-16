@@ -150,7 +150,7 @@ TextInputSelectAll = () => {
 
 ```js
 import React from 'react';
-import { Checkbox, TextInput } from '@patternfly/react-core';
+import { TextInput } from '@patternfly/react-core';
 
 SimpleTextInput = () => {
   const [calendar, setCalendar] = React.useState('');
