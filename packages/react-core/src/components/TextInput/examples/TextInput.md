@@ -156,7 +156,6 @@ SimpleTextInput = () => {
   const [calendar, setCalendar] = React.useState('');
   const [clock, setClock] = React.useState('');
   const [custom, setCustom] = React.useState('');
-  const [isIconSprite, setIsIconSprite] = React.useState(false);
 
   return (
     <>
