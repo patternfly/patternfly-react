@@ -81,7 +81,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
-<Flex spaceItems={{ modifier: 'spaceItemsXl' }}>
+<Flex spaceItems={{ default: 'spaceItemsXl' }}>
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
   <FlexItem>Flex item</FlexItem>
