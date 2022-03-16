@@ -56,11 +56,11 @@ import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
 class LeftTruncatedTextInput extends React.Component {
-  constructor(props) {
+
+constructor(props) {
     super(props);
     this.state = {
-      value:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+      value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     };
     this.handleTextInputChange = value => {
       this.setState({ value });
@@ -70,13 +70,7 @@ class LeftTruncatedTextInput extends React.Component {
   render() {
     const { value } = this.state;
     return (
-      <TextInput
-        isLeftTruncated
-        value={value}
-        type="text"
-        onChange={this.handleTextInputChange}
-        aria-label="left-truncated text input example"
-      />
+      <TextInput isLeftTruncated value={value} type="text" onChange={this.handleTextInputChange} aria-label="left-truncated text input example"  />
     );
   }
 }
