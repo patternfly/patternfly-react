@@ -245,7 +245,8 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       onClose: () => void,
       variant: string,
       inputIdPrefix: string,
-      onFavorite: (itemId: string, isFavorite: boolean) => void
+      onFavorite: (itemId: string, isFavorite: boolean) => void,
+      shouldResetOnSelect: boolean
     ) => {
       if (variant !== SelectVariant.checkbox && isLoading && isGrouped) {
         return (
@@ -323,7 +324,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     if (!isDisabled) {
                       onClick(event);
                       onSelect(event, value, isPlaceholder);
-                      onClose();
+                      shouldResetOnSelect && onClose();
                     }
                   }}
                   role="option"
@@ -449,8 +450,10 @@ export class SelectOption extends React.Component<SelectOptionProps> {
 
     return (
       <SelectConsumer>
-        {({ onSelect, onClose, variant, inputIdPrefix, onFavorite }) => (
-          <React.Fragment>{renderOption(onSelect, onClose, variant, inputIdPrefix, onFavorite)}</React.Fragment>
+        {({ onSelect, onClose, variant, inputIdPrefix, onFavorite, shouldResetOnSelect }) => (
+          <React.Fragment>
+            {renderOption(onSelect, onClose, variant, inputIdPrefix, onFavorite, shouldResetOnSelect)}
+          </React.Fragment>
         )}
       </SelectConsumer>
     );

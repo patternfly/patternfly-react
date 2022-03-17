@@ -1184,6 +1184,7 @@ exports[`select custom select filter filters properly 1`] = `
   position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
+  shouldResetOnSelect={true}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId="custom-select-filters"
@@ -3123,6 +3124,7 @@ exports[`typeahead select test select existing option on a non-creatable select 
   position="left"
   removeSelectionAriaLabel="Remove"
   selections={Array []}
+  shouldResetOnSelect={true}
   toggleAriaLabel="Options menu"
   toggleIcon={null}
   toggleId={null}

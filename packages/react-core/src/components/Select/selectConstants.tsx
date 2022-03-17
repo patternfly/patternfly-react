@@ -11,6 +11,7 @@ export interface SelectContextInterface {
   onFavorite: (itemId: string, isFavorite: boolean) => void;
   variant: string;
   inputIdPrefix: string;
+  shouldResetOnSelect: boolean;
 }
 
 export const SelectContext = React.createContext<SelectContextInterface | null>(null);
