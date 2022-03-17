@@ -364,7 +364,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     });
   };
 
-  onInputFocus = (e: any) => {
+  onInputClick = (e: any) => {
     if (!this.state.isOpen) {
       this.onToggle(true);
     }
@@ -441,7 +441,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     const menuContainer = (
       <Menu ref={this.menuRef} isScrollable>
         <MenuContent maxMenuHeight="200px">
-          <MenuList aria-labelledby={`${randomId}-input`}>
+          <MenuList aria-label={ariaLabel}>
             {options.map((option, index) => (
               <MenuItem onClick={this.onSelect} key={option} id={`${randomId}-option-${index}`}>
                 {option}
@@ -454,6 +454,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
 
     const textInput = (
       <TextInput
+        aria-haspopup="menu"
         className={css(formStyles.formControl)}
         id={`${randomId}-input`}
         aria-label={ariaLabel}
@@ -462,8 +463,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
         value={timeState || ''}
         type="text"
         iconVariant="clock"
-        onClick={this.onInputFocus}
-        onFocus={this.onInputFocus}
+        onClick={this.onInputClick}
         onChange={this.onInputChange}
         onBlur={this.onBlur}
         autoComplete="off"
