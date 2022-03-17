@@ -10,6 +10,8 @@ import { TimePicker } from '@patternfly/react-core';
 
 ## Examples
 
+Appending the TimePicker to the `document.body` may cause accessibility issues, including being unable to navigate into the menu via keyboard or other assistive technologies. Instead, appending to the `"parent"` is recommended.
+
 ### Basic 12 hour
 
 ```js
