@@ -90,7 +90,7 @@ export const isValidDate = (date: Date) => Boolean(date && !isNaN(date as any));
 const today = new Date();
 
 export const CalendarMonth = ({
-  date: dateProp = today,
+  date: dateProp,
   locale = undefined,
   monthFormat = date => date.toLocaleDateString(locale, { month: 'long' }),
   weekdayFormat = date => date.toLocaleDateString(locale, { weekday: 'narrow' }),
@@ -119,7 +119,7 @@ export const CalendarMonth = ({
   const [hoveredDate, setHoveredDate] = React.useState(new Date(focusedDate));
   const focusRef = React.useRef<HTMLButtonElement>();
   const [hiddenMonthId] = React.useState(getUniqueId('hidden-month-span'));
-  const [shouldFocus, setShouldFocus] = React.useState(true);
+  const [shouldFocus, setShouldFocus] = React.useState(false);
 
   const isValidated = (date: Date) => validators.every(validator => validator(date));
   const focusedDateValidated = isValidated(focusedDate);
@@ -127,7 +127,8 @@ export const CalendarMonth = ({
     if (!(isValidDate(dateProp) && isSameDate(focusedDate, dateProp))) {
       setFocusedDate(dateProp);
     }
-  }, [dateProp, focusedDate]);
+  }, [dateProp]);
+
   useEffect(() => {
     // When using header controls don't move focus
     if (shouldFocus) {
@@ -137,7 +138,7 @@ export const CalendarMonth = ({
     } else {
       setShouldFocus(true);
     }
-  }, [focusedDate, focusedDateValidated, shouldFocus]);
+  }, [focusedDate]);
 
   const onMonthClick = (newDate: Date) => {
     setFocusedDate(newDate);
@@ -315,6 +316,7 @@ export const CalendarMonth = ({
                       type="button"
                       onClick={() => {
                         setSelectedDate(date);
+                        setFocusedDate(date);
                         onChange(date);
                       }}
                       onMouseOver={() => setHoveredDate(date)}
