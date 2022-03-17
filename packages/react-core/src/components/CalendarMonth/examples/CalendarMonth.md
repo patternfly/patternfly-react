@@ -17,3 +17,8 @@ beta: true
 
 ```ts file="./CalendarMonthSelectableDate.tsx"
 ```
+
+### Date range
+
+```ts file="./CalendarMonthDateRange.tsx"
+```
