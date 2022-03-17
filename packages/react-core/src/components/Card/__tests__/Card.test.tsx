@@ -1,105 +1,124 @@
 import React from 'react';
+
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+
 import { Card } from '../Card';
-import { shallow } from 'enzyme';
 
-test('renders with PatternFly Core styles', () => {
-  const view = shallow(<Card />).dive();
-  expect(view).toMatchSnapshot();
-});
+describe('Card', () => {
+  test('renders with PatternFly Core styles', () => {
+    const view = render(<Card />);
+    expect(view.container).toMatchSnapshot();
+  });
 
-test('className is added to the root element', () => {
-  const view = shallow(<Card className="extra-class" />).dive();
-  expect(view.prop('className')).toMatchSnapshot();
-});
+  test('className is added to the root element', () => {
+    render(<Card className="extra-class" />);
+    expect(screen.getByRole('article').className).toContain('extra-class');
+  });
 
-test('extra props are spread to the root element', () => {
-  const testId = 'card';
-  const view = shallow(<Card data-testid={testId} />).dive();
-  expect(view.prop('data-testid')).toBe(testId);
-});
+  test('extra props are spread to the root element', () => {
+    const testId = 'card';
 
-test('allows passing in a string as the component', () => {
-  const component = 'section';
-  const view = shallow(<Card component={component} />).dive();
-  expect(view.type()).toBe(component);
-});
+    render(<Card data-testid={testId} />);
+    expect(screen.getByTestId(testId)).toBeInTheDocument();
+  });
 
-test('allows passing in a React Component as the component', () => {
-  const Component = () => <div>im a div</div>;
-  const view = shallow(<Card component={(Component as unknown) as keyof JSX.IntrinsicElements} />).dive();
-  expect(view.type()).toBe(Component);
-});
+  test('allows passing in a string as the component', () => {
+    const component = 'section';
 
-test('card with isHoverable applied ', () => {
-  const view = shallow(<Card isHoverable />).dive();
-  expect(view).toMatchSnapshot();
-});
+    render(<Card component={component}>section content</Card>);
+    expect(screen.getByText('section content')).toBeInTheDocument();
+  });
 
-test('card with isCompact applied ', () => {
-  const view = shallow(<Card isCompact />).dive();
-  expect(view).toMatchSnapshot();
-});
+  test('allows passing in a React Component as the component', () => {
+    const Component = () => <div>im a div</div>;
 
-test('card with isSelectable applied ', () => {
-  const view = shallow(<Card isSelectable />).dive();
-  expect(view.prop('className')).toMatch(/selectable/);
-  expect(view.prop('tabIndex')).toBe('0');
-});
+    render(<Card component={(Component as unknown) as keyof JSX.IntrinsicElements} />);
+    expect(screen.getByText('im a div')).toBeInTheDocument();
+  });
 
-test('card with isSelectable and isSelected applied ', () => {
-  const view = shallow(<Card isSelectable isSelected />).dive();
-  expect(view.prop('className')).toMatch(/selectable/);
-  expect(view.prop('className')).toMatch(/selected/);
-  expect(view.prop('tabIndex')).toBe('0');
-});
+  test('card with isHoverable applied ', () => {
+    render(<Card isHoverable />);
+    expect(screen.getByRole('article').outerHTML).toMatchSnapshot();
+  });
 
-test('card with only isSelected applied - not change', () => {
-  const view = shallow(<Card isSelected />).dive();
-  expect(view.prop('className')).not.toMatch(/selected/);
-  expect(view.prop('tabIndex')).toBe(undefined);
-});
+  test('card with isCompact applied ', () => {
+    render(<Card isCompact />);
+    expect(screen.getByRole('article').outerHTML).toMatchSnapshot();
+  });
 
-test('card with isDisabledRaised applied', () => {
-  const view = shallow(<Card isDisabledRaised />).dive();
-  expect(view.prop('className')).toMatch(/non-selectable-raised/);
-});
+  test('card with isSelectable applied ', () => {
+    render(<Card isSelectable />);
 
-test('card with isSelectableRaised applied - not change', () => {
-  const view = shallow(<Card isSelectableRaised />).dive();
-  expect(view.prop('className')).toMatch(/selectable-raised/);
-  expect(view.prop('tabIndex')).toBe('0');
-});
+    const card = screen.getByRole('article');
+    expect(card.className).toContain('selectable');
+    expect(card.getAttribute('tabindex')).toEqual('0');
+  });
 
-test('card with isSelectableRaised and isSelected applied ', () => {
-  const view = shallow(<Card isSelected isSelectableRaised />).dive();
-  expect(view.prop('className')).toMatch(/selectable-raised/);
-  expect(view.prop('className')).toMatch(/selected-raised/);
-  expect(view.prop('tabIndex')).toBe('0');
-});
+  test('card with isSelectable and isSelected applied ', () => {
+    render(<Card isSelectable isSelected />);
 
-test('card with isFlat applied', () => {
-  const view = shallow(<Card isFlat />).dive();
-  expect(view.prop('className')).toMatch(/m-flat/);
-});
+    const card = screen.getByRole('article');
+    expect(card.className).toContain('selectable');
+    expect(card.className).toContain('selected');
+    expect(card.getAttribute('tabindex')).toEqual('0');
+  });
 
-test('card with isExpanded applied', () => {
-  const view = shallow(<Card isExpanded />).dive();
-  expect(view.prop('className')).toMatch(/m-expanded/);
-});
+  test('card with only isSelected applied - not change', () => {
+    render(<Card isSelected />);
 
-test('card with isRounded applied', () => {
-  const view = shallow(<Card isRounded />).dive();
-  expect(view.prop('className')).toMatch(/m-rounded/);
-});
+    const card = screen.getByRole('article');
+    expect(card.className).not.toContain('selected');
+    expect(card.getAttribute('tabindex')).toBeNull();
+  });
 
-test('card with isLarge applied', () => {
-  const view = shallow(<Card isLarge />).dive();
-  expect(view.prop('className')).toMatch(/m-display-lg/);
-});
+  test('card with isDisabledRaised applied', () => {
+    render(<Card isDisabledRaised />);
+    expect(screen.getByRole('article').className).toContain('non-selectable-raised');
+  });
 
-test('card warns when isLarge and isCompact', () => {
-  const consoleWarnMock = jest.fn();
-  global.console = { warn: consoleWarnMock } as any;
-  shallow(<Card isLarge isCompact />);
-  expect(consoleWarnMock).toBeCalled();
+  test('card with isSelectableRaised applied - not change', () => {
+    render(<Card isSelectableRaised />);
+
+    const card = screen.getByRole('article');
+    expect(card.className).toContain('selectable-raised');
+    expect(card.getAttribute('tabindex')).toEqual('0');
+  });
+
+  test('card with isSelectableRaised and isSelected applied ', () => {
+    render(<Card isSelected isSelectableRaised />);
+
+    const card = screen.getByRole('article');
+    expect(card.className).toContain('selectable-raised');
+    expect(card.className).toContain('selected-raised');
+    expect(card.getAttribute('tabindex')).toEqual('0');
+  });
+
+  test('card with isFlat applied', () => {
+    render(<Card isFlat />);
+    expect(screen.getByRole('article').className).toContain('m-flat');
+  });
+
+  test('card with isExpanded applied', () => {
+    render(<Card isExpanded />);
+    expect(screen.getByRole('article').className).toContain('m-expanded');
+  });
+
+  test('card with isRounded applied', () => {
+    render(<Card isRounded />);
+    expect(screen.getByRole('article').className).toContain('m-rounded');
+  });
+
+  test('card with isLarge applied', () => {
+    render(<Card isLarge />);
+    expect(screen.getByRole('article').className).toContain('m-display-lg');
+  });
+
+  test('card warns when isLarge and isCompact', () => {
+    const consoleWarnMock = jest.fn();
+    global.console = { warn: consoleWarnMock } as any;
+
+    render(<Card isLarge isCompact />);
+    expect(consoleWarnMock).toBeCalled();
+  });
 });

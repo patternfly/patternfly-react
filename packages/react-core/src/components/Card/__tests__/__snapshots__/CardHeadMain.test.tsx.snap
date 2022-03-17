@@ -1,13 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`className is added to the root element 1`] = `"pf-c-card__head-main extra-class"`;
-
-exports[`renders with PatternFly Core styles 1`] = `
-<div>
-  <div
-    class="pf-c-card__head-main"
-  >
-    text
-  </div>
-</div>
-`;
+exports[`CardHeadMain renders with PatternFly Core styles 1`] = `"<div class=\\"pf-c-card__head-main\\">text</div>"`;
