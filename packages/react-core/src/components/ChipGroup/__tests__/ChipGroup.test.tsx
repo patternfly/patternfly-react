@@ -1,6 +1,9 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+
 import { ChipGroup } from '../index';
 import { Chip } from '../../Chip';
 
@@ -34,7 +37,7 @@ describe('ChipGroup', () => {
   });
 
   test('chip group expanded', () => {
-    const view = mount(
+    render(
       <ChipGroup>
         <Chip>1</Chip>
         <Chip>2</Chip>
@@ -42,15 +45,17 @@ describe('ChipGroup', () => {
         <Chip>4</Chip>
       </ChipGroup>
     );
-    const overflowButton = view.find('.pf-m-overflow .pf-c-chip__text');
-    expect(overflowButton.text()).toBe('1 more');
-    overflowButton.simulate('click');
-    expect(overflowButton.text()).toBe('Show Less');
+
+    const moreText = screen.getByText('1 more');
+    expect(moreText).toBeInTheDocument();
+
+    userEvent.click(moreText);
+    expect(screen.getByText('Show Less')).toBeInTheDocument();
   });
 
   test('chip group will not render if no children passed', () => {
-    const view = mount(<ChipGroup />);
-    expect(view.html()).toBeNull();
+    render(<ChipGroup />);
+    expect(screen.queryByRole('group')).toBeNull();
   });
 
   test('chip group with category and tooltip', () => {

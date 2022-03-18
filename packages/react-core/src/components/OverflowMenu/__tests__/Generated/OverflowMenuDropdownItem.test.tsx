@@ -1,13 +1,17 @@
-/**
- * This test was generated
- */
-import * as React from 'react';
-import { shallow } from 'enzyme';
-import { OverflowMenuDropdownItem } from '../../OverflowMenuDropdownItem';
-// any missing imports can usually be resolved by adding them here
-import {} from '../..';
+import React from 'react';
 
-it('OverflowMenuDropdownItem should match snapshot (auto-generated)', () => {
-  const view = shallow(<OverflowMenuDropdownItem children={'any'} isShared={false} />);
-  expect(view).toMatchSnapshot();
+import { render } from '@testing-library/react';
+
+import { OverflowMenuDropdownItem } from '../../OverflowMenuDropdownItem';
+import { DropdownArrowContext } from '../../../Dropdown';
+
+describe('OverflowMenuDropdownItem', () => {
+  it('should match snapshot', () => {
+    const view = render(
+      <DropdownArrowContext.Provider value={{ sendRef: jest.fn(), keyHandler: undefined }}>
+        <OverflowMenuDropdownItem children={'any'} isShared={false} />
+      </DropdownArrowContext.Provider>
+    );
+    expect(view.container).toMatchSnapshot();
+  });
 });
