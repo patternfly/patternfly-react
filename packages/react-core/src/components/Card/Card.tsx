@@ -36,6 +36,8 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isPlain?: boolean;
   /** Flag indicating if a card is expanded. Modifies the card to be expandable. */
   isExpanded?: boolean;
+  /** Flag indicating that the card is an option in a listbox */
+  isOption?: boolean;
 }
 
 interface CardContextProps {
@@ -65,6 +67,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
   isLarge = false,
   isFullHeight = false,
   isPlain = false,
+  isOption = false,
   ouiaId,
   ouiaSafe = true,
   ...props
@@ -76,6 +79,8 @@ export const Card: React.FunctionComponent<CardProps> = ({
     console.warn('Card: Cannot use isCompact with isLarge. Defaulting to isCompact');
     isLarge = false;
   }
+
+  const ariaProps = isOption ? { role: 'option', 'aria-selected': isSelected } : {};
 
   const getSelectableModifiers = () => {
     if (isDisabledRaised) {
@@ -112,6 +117,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
           className
         )}
         tabIndex={isSelectable || isSelectableRaised ? '0' : undefined}
+        {...ariaProps}
         {...props}
         {...ouiaProps}
       >

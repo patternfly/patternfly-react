@@ -103,7 +103,8 @@ class CardViewBasic extends React.Component {
       splitButtonDropdownIsOpen: false,
       page: 1,
       perPage: 10,
-      totalItemCount: 10
+      totalItemCount: 10,
+      focusedItemId: '',
     };
 
     this.onToolbarDropdownToggle = isLowerToolbarDropdownOpen => {
@@ -230,6 +231,10 @@ class CardViewBasic extends React.Component {
         };
       });
     };
+
+    this.onFocus = id => {
+      this.setState({focusedItemId: id})
+    }
   }
 
   selectedItems(e) {
@@ -559,11 +564,14 @@ class CardViewBasic extends React.Component {
             </Toolbar>
           </PageSection>
           <PageSection isFilled>
-            <Gallery hasGutter>
+            <Gallery hasGutter role="listbox" aria-multiselectable="true" aria-activedescendant={this.state.focusedItemId} aria-label="card container">
               <Card 
+                isOption
                 isSelectable 
                 selectableVariant="raised" 
                 isCompact
+                id="add-card"
+                onFocus={() => this.onFocus("add-card")}
               >
                 <Bullseye>
                   <EmptyState variant={EmptyStateVariant.xs}>
@@ -579,10 +587,13 @@ class CardViewBasic extends React.Component {
               </Card>
               {filtered.map((product, key) => (
                 <Card 
+                  isOption
                   isSelectable 
                   selectableVariant="raised" 
                   isCompact 
                   key={product.name}
+                  onFocus={() => this.onFocus(product.name)}
+                  id={product.name}
                   onKeyDown={(e) => this.onKeyDown(e, product.id)}
                   onClick={() => this.onClick(product.id)}
                   isSelected={selectedItems.includes(product.id)}
