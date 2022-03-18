@@ -1100,6 +1100,7 @@ class PrimaryDetailCardView extends React.Component {
         return;
       }
       if ([13, 32].includes(event.keyCode)) {
+        event.preventDefault();
         const newSelected = event.currentTarget.id;
         this.setState({
           activeCard: newSelected,
@@ -1117,6 +1118,17 @@ class PrimaryDetailCardView extends React.Component {
 
       this.setState({
         activeCard: newSelected,
+        isDrawerExpanded: true
+      });
+    };
+
+    this.onChange = (labelledById, _event) => {
+      if (labelledById === this.state.activeCard) {
+        return;
+      }
+
+      this.setState({
+        activeCard: labelledById,
         isDrawerExpanded: true
       });
     };
@@ -1271,8 +1283,10 @@ class PrimaryDetailCardView extends React.Component {
               id={'card-view-' + key}
               onKeyDown={this.onKeyDown}
               onClick={this.onCardClick}
+              onHiddenInputChange={this.onChange}
               isSelectable
-              isSelected={activeCard === key}
+              isSelected={activeCard === 'card-view-' + key}
+              hasHiddenInput
             >
               <CardHeader>
                 <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />

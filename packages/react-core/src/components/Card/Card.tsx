@@ -36,6 +36,10 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isPlain?: boolean;
   /** Flag indicating if a card is expanded. Modifies the card to be expandable. */
   isExpanded?: boolean;
+  /** Flag indicating that the card should render a hidden input for a11y reasons */
+  hasHiddenInput?: boolean;
+  /** Callback that executes when the hidden input is changed */
+  onHiddenInputChange?: (labelledBy: string, event: React.FormEvent<HTMLInputElement>) => void;
 }
 
 interface CardContextProps {
@@ -67,6 +71,8 @@ export const Card: React.FunctionComponent<CardProps> = ({
   isPlain = false,
   ouiaId,
   ouiaSafe = true,
+  hasHiddenInput = false,
+  onHiddenInputChange = () => {},
   ...props
 }: CardProps) => {
   const Component = component as any;
@@ -90,6 +96,46 @@ export const Card: React.FunctionComponent<CardProps> = ({
     return '';
   };
 
+  const CardComponent = (
+    <Component
+      id={id}
+      className={css(
+        styles.card,
+        isCompact && styles.modifiers.compact,
+        isExpanded && styles.modifiers.expanded,
+        isFlat && styles.modifiers.flat,
+        isRounded && styles.modifiers.rounded,
+        isLarge && styles.modifiers.displayLg,
+        isFullHeight && styles.modifiers.fullHeight,
+        isPlain && styles.modifiers.plain,
+        getSelectableModifiers(),
+        className
+      )}
+      tabIndex={isSelectable || isSelectableRaised ? '0' : undefined}
+      {...props}
+      {...ouiaProps}
+    >
+      {children}
+    </Component>
+  );
+
+  const inputId = `${id}-input`;
+
+  const CardWithHiddenInput = (
+    <label htmlFor={inputId}>
+      <input
+        className="pf-screen-reader"
+        id={inputId}
+        type="checkbox"
+        checked={isSelected}
+        onChange={event => onHiddenInputChange(id, event)}
+        aria-labelledby={id}
+        disabled={isDisabledRaised}
+      />
+      {CardComponent}
+    </label>
+  );
+
   return (
     <CardContext.Provider
       value={{
@@ -97,26 +143,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
         isExpanded
       }}
     >
-      <Component
-        id={id}
-        className={css(
-          styles.card,
-          isCompact && styles.modifiers.compact,
-          isExpanded && styles.modifiers.expanded,
-          isFlat && styles.modifiers.flat,
-          isRounded && styles.modifiers.rounded,
-          isLarge && styles.modifiers.displayLg,
-          isFullHeight && styles.modifiers.fullHeight,
-          isPlain && styles.modifiers.plain,
-          getSelectableModifiers(),
-          className
-        )}
-        tabIndex={isSelectable || isSelectableRaised ? '0' : undefined}
-        {...props}
-        {...ouiaProps}
-      >
-        {children}
-      </Component>
+      {hasHiddenInput ? CardWithHiddenInput : CardComponent}
     </CardContext.Provider>
   );
 };

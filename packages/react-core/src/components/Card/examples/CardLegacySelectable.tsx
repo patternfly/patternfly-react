@@ -31,6 +31,11 @@ export const CardLegacySelectable: React.FunctionComponent = () => {
     setSelected(newSelected);
   };
 
+  const onChange = (labelledById: string, _event: React.FormEvent<HTMLInputElement>) => {
+    const newSelected = labelledById === selected ? null : labelledById;
+    setSelected(newSelected);
+  };
+
   const onToggle = (isOpen: boolean, event: any) => {
     event.stopPropagation();
     setIsKebabOpen(isOpen);
@@ -65,8 +70,10 @@ export const CardLegacySelectable: React.FunctionComponent = () => {
         id="legacy-first-card"
         onKeyDown={onKeyDown}
         onClick={onClick}
+        onHiddenInputChange={onChange}
         isSelectable
         isSelected={selected === 'legacy-first-card'}
+        hasHiddenInput
       >
         <CardHeader>
           <CardActions>
@@ -88,8 +95,10 @@ export const CardLegacySelectable: React.FunctionComponent = () => {
         id="legacy-second-card"
         onKeyDown={onKeyDown}
         onClick={onClick}
+        onHiddenInputChange={onChange}
         isSelectable
         isSelected={selected === 'legacy-second-card'}
+        hasHiddenInput
       >
         <CardTitle>Second card</CardTitle>
         <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>

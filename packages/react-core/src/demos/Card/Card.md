@@ -581,10 +581,13 @@ class CardViewBasic extends React.Component {
                 <Card 
                   isSelectable 
                   selectableVariant="raised" 
+                  hasHiddenInput
                   isCompact 
                   key={product.name}
+                  id={product.name}
                   onKeyDown={(e) => this.onKeyDown(e, product.id)}
                   onClick={() => this.onClick(product.id)}
+                  onHiddenInputChange={() => this.onClick(product.id)}
                   isSelected={selectedItems.includes(product.id)}
                 >
                   <CardHeader>

@@ -94,9 +94,12 @@ export const ModalTabs: React.FunctionComponent = () => {
               <Card
                 isSelectable
                 isSelectableRaised
+                hasHiddenInput
                 isCompact
                 key={product.id}
+                id={product.name}
                 onClick={onCardClick(product)}
+                onHiddenInputChange={() => onCardClick(product)()}
                 onKeyPress={onCardKeyPress(product)}
               >
                 <CardTitle>{product.name}</CardTitle>
