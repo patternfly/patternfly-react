@@ -58,10 +58,28 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
     xl?: string;
     '2xl'?: string;
   };
+  termAutoFitMinModifier?: {
+    default?: string;
+    sm?: string;
+    md?: string;
+    lg?: string;
+    xl?: string;
+    '2xl'?: string;
+  };
 }
 
 const setAutoFitMinModifiers = (autoFitMinModifier: AutoFitModifiers) => {
   const prefix = '--pf-c-description-list--GridTemplateColumns--min';
+  const mods = autoFitMinModifier as Partial<{ [k: string]: string }>;
+  return Object.keys(mods || {}).reduce(
+    (acc, curr) =>
+      curr === 'default' ? { ...acc, [prefix]: mods[curr] } : { ...acc, [`${prefix}-on-${curr}`]: mods[curr] },
+    {}
+  );
+};
+
+const setTermAutoFitMinModifiers = (autoFitMinModifier: AutoFitModifiers) => {
+  const prefix = termWidthToken.name;
   const mods = autoFitMinModifier as Partial<{ [k: string]: string }>;
   return Object.keys(mods || {}).reduce(
     (acc, curr) =>
@@ -83,10 +101,18 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   isFillColumns,
   columnModifier,
   autoFitMinModifier,
+  termAutoFitMinModifier,
   orientation,
   style,
   ...props
 }: DescriptionListProps) => {
+  if (isAutoFit && (autoFitMinModifier || style)) {
+    style = { ...style, ...setAutoFitMinModifiers(autoFitMinModifier) };
+  }
+  if (termAutoFitMinModifier) {
+    style = { ...style, ...setTermAutoFitMinModifiers(termAutoFitMinModifier) };
+  }
+
   const listDivRef = React.useRef(null);
   React.useEffect(() => {
     if (termWidth && listDivRef && isHorizontal) {
@@ -109,11 +135,7 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
         isFillColumns && styles.modifiers.fillColumns,
         className
       )}
-      style={
-        autoFitMinModifier || style
-          ? { ...(isAutoFit ? setAutoFitMinModifiers(autoFitMinModifier) : {}), ...style }
-          : undefined
-      }
+      style={style}
       {...props}
     >
       {children}

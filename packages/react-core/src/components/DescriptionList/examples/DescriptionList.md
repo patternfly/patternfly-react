@@ -289,7 +289,7 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-i
 
 const DescriptionListHorizontal = () => {
   return (
-    <DescriptionList isHorizontal termWidth="26ch">
+    <DescriptionList isHorizontal termAutoFitMinModifier={{ md: '100px', lg: '150px', xl: '200px', '2xl': '300px' }}>
       <DescriptionListGroup>
         <DescriptionListTerm>Name longer than the default term width</DescriptionListTerm>
         <DescriptionListDescription>Example</DescriptionListDescription>
