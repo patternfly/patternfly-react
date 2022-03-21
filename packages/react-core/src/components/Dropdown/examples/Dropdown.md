@@ -18,6 +18,10 @@ import avatarImg from '../../Avatar/examples/avatarImg.svg';
 
 ## Examples
 
+When passing in a value to the `menuAppendTo` prop on the Dropdown component, passing in `document.body` should be avoided if possible as doing so can cause accessibility issues. These issues can include (but may not be limited to) being unable to enter the contents of the Dropdown options via assistive technologies (like keyboards or screen readers).
+
+Instead prefer to append to `"parent"`, as the same result can be achieved without sacrificing accessibility like using `document.body`.
+
 ### Basic
 
 ```js
@@ -444,11 +448,7 @@ const SecondaryDropdown = () => {
         onFocus();
       }}
       toggle={
-        <DropdownToggle
-          onToggle={next => setIsOpen(next)}
-          toggleIndicator={CaretDownIcon}
-          id="toggle-id-plain-text"
-        >
+        <DropdownToggle onToggle={next => setIsOpen(next)} toggleIndicator={CaretDownIcon} id="toggle-id-plain-text">
           Dropdown
         </DropdownToggle>
       }
@@ -1489,53 +1489,89 @@ class ImageTextDropdown extends React.Component {
 }
 ```
 
-### Append menu document body
+### Appending document body vs parent
 
 ```js
 import React from 'react';
-import { Dropdown, DropdownToggle, DropdownItem } from '@patternfly/react-core';
+import { Dropdown, DropdownToggle, DropdownItem, Flex } from '@patternfly/react-core';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
-class MenuOnDocumentBodyDropdown extends React.Component {
+class DropdownDocumentBodyVsParent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false
+      isBodyOpen: false,
+      isParentOpen: false
     };
-    this.onToggle = isOpen => {
+    this.onBodyToggle = isBodyOpen => {
       this.setState({
-        isOpen
+        isBodyOpen
       });
     };
-    this.onSelect = event => {
+    this.onBodySelect = event => {
       this.setState({
-        isOpen: !this.state.isOpen
+        isBodyOpen: !this.state.isBodyOpen
       });
-      this.onFocus();
+      this.onBodyFocus();
     };
-    this.onFocus = () => {
-      const element = document.getElementById('toggle-id-menu-document-body');
+    this.onBodyFocus = () => {
+      const element = document.getElementById('toggle-id-document-body');
+      element.focus();
+    };
+
+    this.onParentToggle = isParentOpen => {
+      this.setState({
+        isParentOpen
+      });
+    };
+    this.onParentSelect = event => {
+      this.setState({
+        isParentOpen: !this.state.isParentOpen
+      });
+      this.onParentFocus();
+    };
+    this.onParentFocus = () => {
+      const element = document.getElementById('toggle-id-parent');
       element.focus();
     };
   }
 
   render() {
-    const { isOpen } = this.state;
-    const dropdownItems = [<DropdownItem key="link">1</DropdownItem>];
+    const { isBodyOpen, isParentOpen } = this.state;
+    const dropdownItems = [
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action" component="button">
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled href="www.google.com">
+        Disabled link
+      </DropdownItem>
+    ];
     return (
-      <div style={{ height: '50px', overflow: 'hidden' }}>
+      <Flex>
         <Dropdown
-          onSelect={this.onSelect}
+          onSelect={this.onBodySelect}
           toggle={
-            <DropdownToggle id="toggle-id-menu-document-body" onToggle={this.onToggle} toggleIndicator={CaretDownIcon}>
-              Dropdown
+            <DropdownToggle id="toggle-id-document-body" onToggle={this.onBodyToggle} toggleIndicator={CaretDownIcon}>
+              Dropdown - Document Body
             </DropdownToggle>
           }
-          isOpen={isOpen}
+          isOpen={isBodyOpen}
           dropdownItems={dropdownItems}
           menuAppendTo={() => document.body}
         />
-      </div>
+        <Dropdown
+          onSelect={this.onParentSelect}
+          toggle={
+            <DropdownToggle id="toggle-id-parent" onToggle={this.onParentToggle} toggleIndicator={CaretDownIcon}>
+              Dropdown - Parent
+            </DropdownToggle>
+          }
+          isOpen={isParentOpen}
+          dropdownItems={dropdownItems}
+          menuAppendTo="parent"
+        />
+      </Flex>
     );
   }
 }
