@@ -273,7 +273,7 @@ const DescriptionListHorizontal = () => {
 }
 ```
 
-### Horizontal using a custom term width
+### Horizontal using custom term width modifier
 
 ```js
 import React from 'react';
@@ -287,7 +287,7 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-const DescriptionListHorizontal = () => {
+const DescriptionListHorizontalTermWidthModifier = () => {
   return (
     <DescriptionList isHorizontal horizontalTermWidthModifier={{
       default: '12ch',
