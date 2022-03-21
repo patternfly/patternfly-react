@@ -2,7 +2,7 @@
   height: 450px;
   position: relative;
   width: 100%;
-  overflow-y: scroll;
+  overflow: scroll;
   overscroll-behavior: contain;
   margin: 0 auto;
   border: 2px dashed #ff6b81;
@@ -12,10 +12,10 @@
 .tooltip-box::after {
   content: '';
   display: block;
-  width: 1px;
+  width: 1500px;
   height: 600px;
 }
 .tooltip-button {
   position: absolute;
-  left: 300px;
+  left: 600px;
 }

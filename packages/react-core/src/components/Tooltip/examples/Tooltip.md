@@ -105,10 +105,18 @@ OptionsTooltip = () => {
   const [exitDelayInput, setExitDelayInput] = React.useState(0);
   const [animationDuration, setAnimationDuration] = React.useState(300);
   const tipBoxRef = React.useRef(null);
-  const scrollToRef = ref => ref && ref.current && (ref.current.scrollTop = 400);
+  
+  const scrollToRef = ref => {
+    if (ref && ref.current) {
+      ref.current.scrollTop = 400;
+      ref.current.scrollLeft = 300;
+    }
+  }
+  
   React.useEffect(() => {
     scrollToRef(tipBoxRef);
   }, []);
+  
   return (
     <>
       <div>
