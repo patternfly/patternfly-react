@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.53.1 (2022-03-21)
+
+
+### Bug Fixes
+
+* **Tooltip:** horizontal scroll bar causing misaligned tooltip ([#7062](https://github.com/patternfly/patternfly-react/issues/7062)) ([9540d0c](https://github.com/patternfly/patternfly-react/commit/9540d0c5ab256a19143381755e33b661a13d2a00))
+
+
+
+
+
 # 6.53.0 (2022-03-21)
 
 
