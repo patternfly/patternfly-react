@@ -142,6 +142,11 @@ export interface ScaleDetailsThresholds {
   medium: number;
 }
 
+export interface ViewPaddingSettings {
+  padding?: number;
+  paddingPercentage?: number;
+}
+
 export interface GraphModel extends ElementModel {
   layout?: string;
   x?: number;
@@ -253,6 +258,8 @@ export interface Graph<E extends GraphModel = GraphModel, D = any> extends Graph
   setDetailsLevelThresholds(settings: ScaleDetailsThresholds | undefined): void;
   getDetailsLevelThresholds(): Readonly<ScaleDetailsThresholds> | undefined;
   getDetailsLevel(): ScaleDetailsLevel;
+  setViewPaddingSettings(viewPaddingSettings: ViewPaddingSettings): void;
+  getViewPaddingSettings(): ViewPaddingSettings;
   getLayout(): string | undefined;
   setLayout(type: string | undefined): void;
   layout(): void;
@@ -264,7 +271,7 @@ export interface Graph<E extends GraphModel = GraphModel, D = any> extends Graph
   scaleBy(scale: number, location?: Point): void;
   fit(padding?: number): void;
   panIntoView(element: Node, options?: { offset?: number; minimumVisible?: number }): void;
-  isNodeInView(element: Node, options?: { padding: number }): boolean;
+  isNodeInView(element: Node): boolean;
 }
 
 export const isGraph = (element: GraphElement): element is Graph => element && element.getKind() === ModelKind.graph;

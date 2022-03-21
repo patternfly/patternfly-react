@@ -37,6 +37,7 @@ const getStatusIcon = (status: NodeStatus) => {
 };
 
 type DefaultNodeProps = {
+  className?: string;
   element: Node;
   droppable?: boolean;
   hover?: boolean;
@@ -50,6 +51,7 @@ type DefaultNodeProps = {
   labelPosition?: LabelPosition; // Defaults to bottom
   truncateLength?: number; // Defaults to 13
   labelIconClass?: string; // Icon to show in label
+  labelIcon?: React.ReactNode;
   labelIconPadding?: number;
   badge?: string;
   badgeColor?: string;
@@ -74,6 +76,7 @@ type DefaultNodeProps = {
 >;
 
 const DefaultNode: React.FC<DefaultNodeProps> = ({
+  className,
   element,
   selected,
   hover,
@@ -83,6 +86,8 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
   labelPosition = LabelPosition.bottom,
   truncateLength,
   labelIconClass,
+  labelIcon,
+  labelIconPadding,
   showStatusBackground,
   showStatusDecorator = false,
   statusDecoratorTooltip,
@@ -163,6 +168,7 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
 
   const groupClassName = css(
     styles.topologyNode,
+    className,
     isHover && 'pf-m-hover',
     (dragging || edgeDragging) && 'pf-m-dragging',
     canDrop && dropTarget && 'pf-m-drop-target',
@@ -218,6 +224,8 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
             contextMenuOpen={contextMenuOpen}
             hover={isHover}
             labelIconClass={labelIconClass}
+            labelIcon={labelIcon}
+            labelIconPadding={labelIconPadding}
           >
             {label || element.getLabel()}
           </NodeLabel>

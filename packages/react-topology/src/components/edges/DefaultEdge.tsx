@@ -32,11 +32,9 @@ type BaseEdgeProps = {
   tag?: string;
   tagClass?: string;
   tagStatus?: NodeStatus;
-} & WithRemoveConnectorProps &
-  WithSourceDragProps &
-  WithTargetDragProps &
-  WithSelectionProps &
-  Partial<WithContextMenuProps>;
+} & Partial<
+  WithRemoveConnectorProps & WithSourceDragProps & WithTargetDragProps & WithSelectionProps & WithContextMenuProps
+>;
 
 const BaseEdge: React.FC<BaseEdgeProps> = ({
   element,

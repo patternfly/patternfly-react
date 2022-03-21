@@ -95,7 +95,9 @@ const stylesComponentFactory: ComponentFactory = (
     case 'node-polygon':
       return CustomPolygonNode;
     case 'group':
-      return withDndDrop(groupDropTargetSpec)(withContextMenu(() => defaultMenu)(withSelection()(StyleGroup)));
+      return withDndDrop(groupDropTargetSpec)(
+        withContextMenu(() => defaultMenu)(withDragNode(nodeDragSourceSpec('group'))(withSelection()(StyleGroup)))
+      );
     case 'edge':
       return withSourceDrag<DragObjectWithType, Node, any, EdgeProps>({
         item: { type: CONNECTOR_SOURCE_DROP },

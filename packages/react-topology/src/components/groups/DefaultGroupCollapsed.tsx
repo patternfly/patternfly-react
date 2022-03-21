@@ -7,7 +7,13 @@ import { Layer } from '../layers';
 import { GROUPS_LAYER } from '../../const';
 import { createSvgIdUrl, useCombineRefs, useHover, useSize } from '../../utils';
 import { BadgeLocation, LabelPosition, Node } from '../../types';
-import { useDragNode, WithContextMenuProps, WithDndDropProps, WithSelectionProps } from '../../behavior';
+import {
+  useDragNode,
+  WithContextMenuProps,
+  WithDndDropProps,
+  WithDragNodeProps,
+  WithSelectionProps
+} from '../../behavior';
 import { Ellipse } from '../nodes/shapes';
 import NodeLabel from '../nodes/labels/NodeLabel';
 import { NODE_SHADOW_FILTER_ID_HOVER } from '../nodes/NodeShadows';
@@ -15,6 +21,7 @@ import LabelBadge from '../nodes/labels/LabelBadge';
 import { CollapsibleGroupProps } from './types';
 
 type DefaultGroupCollapsedProps = {
+  className?: string;
   element: Node;
   droppable?: boolean;
   canDrop?: boolean;
@@ -27,6 +34,7 @@ type DefaultGroupCollapsedProps = {
   labelPosition?: LabelPosition; // Defaults to bottom
   truncateLength?: number; // Defaults to 13
   labelIconClass?: string; // Icon to show in label
+  labelIcon?: string;
   labelIconPadding?: number;
   badge?: string;
   badgeColor?: string;
@@ -34,24 +42,27 @@ type DefaultGroupCollapsedProps = {
   badgeBorderColor?: string;
   badgeClassName?: string;
   badgeLocation?: BadgeLocation;
-} & CollapsibleGroupProps &
-  WithSelectionProps &
-  WithDndDropProps &
-  WithContextMenuProps;
+} & Partial<CollapsibleGroupProps & WithDragNodeProps & WithSelectionProps & WithDndDropProps & WithContextMenuProps>;
 
 const DefaultGroupCollapsed: React.FC<DefaultGroupCollapsedProps> = ({
+  className,
   element,
   collapsible,
   selected,
   onSelect,
   children,
   hover,
+  label,
+  secondaryLabel,
+  showLabel = true,
+  truncateLength,
   collapsedWidth,
   collapsedHeight,
   getCollapsedShape,
   onCollapseChange,
   collapsedShadowOffset = 8,
   dndDropRef,
+  dragNodeRef,
   canDrop,
   dropTarget,
   onContextMenu,
@@ -63,11 +74,13 @@ const DefaultGroupCollapsed: React.FC<DefaultGroupCollapsedProps> = ({
   badgeTextColor,
   badgeBorderColor,
   badgeClassName,
-  badgeLocation
+  badgeLocation,
+  labelIconClass,
+  labelIcon,
+  labelIconPadding
 }) => {
   const [hovered, hoverRef] = useHover();
   const [labelHover, labelHoverRef] = useHover();
-  const dragNodeRef = useDragNode()[1];
   const dragLabelRef = useDragNode()[1];
   const [shapeSize, shapeRef] = useSize([collapsedWidth, collapsedHeight]);
   const refs = useCombineRefs<SVGPathElement>(hoverRef, dragNodeRef, shapeRef);
@@ -77,6 +90,7 @@ const DefaultGroupCollapsed: React.FC<DefaultGroupCollapsedProps> = ({
 
   const groupClassName = css(
     styles.topologyGroup,
+    className,
     canDrop && 'pf-m-highlight',
     dragging && 'pf-m-dragging',
     selected && 'pf-m-selected'
@@ -132,28 +146,35 @@ const DefaultGroupCollapsed: React.FC<DefaultGroupCollapsedProps> = ({
           badgeBorderColor={badgeBorderColor}
         />
       )}
-      <NodeLabel
-        className={styles.topologyGroupLabel}
-        x={labelPosition === LabelPosition.right ? collapsedWidth + 8 : collapsedWidth / 2}
-        y={labelPosition === LabelPosition.right ? collapsedHeight / 2 : collapsedHeight + 6}
-        paddingX={8}
-        paddingY={5}
-        dragRef={dragLabelRef}
-        status={element.getNodeStatus()}
-        badge={badge}
-        badgeColor={badgeColor}
-        badgeTextColor={badgeTextColor}
-        badgeBorderColor={badgeBorderColor}
-        badgeClassName={badgeClassName}
-        badgeLocation={badgeLocation}
-        onContextMenu={onContextMenu}
-        contextMenuOpen={contextMenuOpen}
-        hover={isHover || labelHover}
-        actionIcon={collapsible ? <ExpandIcon /> : undefined}
-        onActionIconClick={() => onCollapseChange(element, false)}
-      >
-        {element.getLabel()}
-      </NodeLabel>
+      {showLabel && (
+        <NodeLabel
+          className={styles.topologyGroupLabel}
+          x={labelPosition === LabelPosition.right ? collapsedWidth + 8 : collapsedWidth / 2}
+          y={labelPosition === LabelPosition.right ? collapsedHeight / 2 : collapsedHeight + 6}
+          paddingX={8}
+          paddingY={5}
+          dragRef={dragNodeRef ? dragLabelRef : undefined}
+          status={element.getNodeStatus()}
+          secondaryLabel={secondaryLabel}
+          truncateLength={truncateLength}
+          badge={badge}
+          badgeColor={badgeColor}
+          badgeTextColor={badgeTextColor}
+          badgeBorderColor={badgeBorderColor}
+          badgeClassName={badgeClassName}
+          badgeLocation={badgeLocation}
+          labelIconClass={labelIconClass}
+          labelIcon={labelIcon}
+          labelIconPadding={labelIconPadding}
+          onContextMenu={onContextMenu}
+          contextMenuOpen={contextMenuOpen}
+          hover={isHover || labelHover}
+          actionIcon={collapsible ? <ExpandIcon /> : undefined}
+          onActionIconClick={() => onCollapseChange(element, false)}
+        >
+          {label || element.getLabel()}
+        </NodeLabel>
+      )}
       {children}
     </g>
   );

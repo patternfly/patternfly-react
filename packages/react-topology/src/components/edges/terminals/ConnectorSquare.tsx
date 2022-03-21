@@ -28,7 +28,13 @@ const ConnectorSquare: React.FC<ConnectorSquareProps> = ({
 
   const connectorStartPoint = getConnectorStartPoint(startPoint, endPoint, size);
   const angleDeg = getConnectorRotationAngle(startPoint, endPoint);
-  const classNames = css(styles.topologyConnectorSquare, className, !isTarget && styles.modifiers.source);
+  const classNames = css(
+    styles.topologyConnectorArrow,
+    styles.topologyConnectorSquare,
+    !isTarget && styles.modifiers.source,
+    className,
+    dragRef && 'pf-m-draggable'
+  );
 
   return (
     <g

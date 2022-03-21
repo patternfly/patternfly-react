@@ -27,7 +27,13 @@ const ConnectorCircle: React.FC<ConnectorCircleProps> = ({
   }
 
   const connectorStartPoint = getConnectorStartPoint(startPoint, endPoint, size / 4); // add stroke width rather than rotating
-  const classNames = css(styles.topologyConnectorCircle, className, !isTarget && styles.modifiers.source);
+  const classNames = css(
+    styles.topologyConnectorArrow,
+    styles.topologyConnectorCircle,
+    className,
+    !isTarget && styles.modifiers.source,
+    dragRef && 'pf-m-draggable'
+  );
 
   return (
     <g

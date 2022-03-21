@@ -45,12 +45,13 @@ const ConnectorArrow: React.FC<ConnectorArrowProps> = ({
     () => pointsStringFromPoints(getConnectorBoundingBox(startPoint, endPoint, size)),
     [endPoint, size, startPoint]
   );
+  const classNames = css(styles.topologyConnectorArrow, className, dragRef && 'pf-m-draggable');
 
   return (
     <g
       transform={`translate(${connectorStartPoint[0]}, ${connectorStartPoint[1]}) rotate(${angleDeg})`}
       ref={dragRef}
-      className={css(styles.topologyConnectorArrow, className)}
+      className={classNames}
     >
       <polygon points={polygonPoints} />
       <polygon points={boundingPoints} fillOpacity={0} strokeWidth={0} />

@@ -24,6 +24,7 @@ type NodeLabelProps = {
   secondaryLabel?: string;
   truncateLength?: number; // Defaults to 13
   labelIconClass?: string; // Icon to show in label
+  labelIcon?: React.ReactNode;
   labelIconPadding?: number;
   dragRef?: WithDndDragProps['dndDragRef'];
   hover?: boolean;
@@ -39,7 +40,7 @@ type NodeLabelProps = {
   badgeBorderColor?: string;
   badgeClassName?: string;
   badgeLocation?: BadgeLocation;
-} & WithContextMenuProps;
+} & Partial<WithContextMenuProps>;
 
 /**
  * Renders a `<text>` component with a `<rect>` box behind.
@@ -62,6 +63,7 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
   badgeClassName,
   badgeLocation = BadgeLocation.inner,
   labelIconClass,
+  labelIcon,
   labelIconPadding = 4,
   truncateLength,
   dragRef,
@@ -115,13 +117,13 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
     }
     const badgeSpace = badge && badgeSize && badgeLocation === BadgeLocation.inner ? badgeSize.width + paddingX : 0;
     const height = Math.max(textSize.height, badgeSize?.height ?? 0) + paddingY * 2;
-    const iconSpace = labelIconClass ? (height + paddingY * 0.5) / 2 : 0;
+    const iconSpace = labelIconClass || labelIcon ? (height + paddingY * 0.5) / 2 : 0;
     const actionSpace = actionIcon && actionSize ? actionSize.width : 0;
     const contextSpace = onContextMenu && contextSize ? contextSize.width : 0;
     const primaryWidth = iconSpace + badgeSpace + paddingX + textSize.width + actionSpace + contextSpace + paddingX;
     const secondaryWidth = secondaryLabel && secondaryTextSize ? secondaryTextSize.width + 2 * paddingX : 0;
     const width = Math.max(primaryWidth, secondaryWidth);
-    const startX = position === LabelPosition.right ? x + iconSpace : x - width / 2 - iconSpace / 2;
+    const startX = position === LabelPosition.right ? x + iconSpace : x - width / 2 + iconSpace / 2;
     const startY = position === LabelPosition.right ? y - height / 2 : y;
     const actionStartX = iconSpace + badgeSpace + paddingX + textSize.width + paddingX;
     const contextStartX = actionStartX + actionSpace;
@@ -160,6 +162,7 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
     paddingX,
     paddingY,
     labelIconClass,
+    labelIcon,
     actionIcon,
     actionSize,
     onContextMenu,
@@ -196,11 +199,11 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
       )}
       {textSize && badge && (
         <LabelBadge
-          className={badgeClassName}
           ref={badgeRef}
           x={badgeStartX}
           y={badgeStartY}
           badge={badge}
+          badgeClassName={badgeClassName}
           badgeColor={badgeColor}
           badgeTextColor={badgeTextColor}
           badgeBorderColor={badgeBorderColor}
@@ -230,13 +233,14 @@ const NodeLabel: React.FC<NodeLabelProps> = ({
           </text>
         </>
       )}
-      {textSize && labelIconClass && (
+      {textSize && (labelIconClass || labelIcon) && (
         <LabelIcon
           x={iconSpace}
           y={paddingY * -0.25}
           width={iconSpace * 2}
           height={iconSpace * 2}
           iconClass={labelIconClass}
+          icon={labelIcon}
           padding={labelIconPadding}
         />
       )}

@@ -348,6 +348,7 @@ export const GroupStyles = withTopologySetup(() => {
       badgeColor: '#F2F0FC',
       badgeTextColor: '#5752d1',
       badgeBorderColor: '#CBC1FF',
+      labelIconClass: logos.get('icon-java'),
       collapsedWidth: 75,
       collapsedHeight: 75,
       showContextMenu: true
@@ -381,6 +382,7 @@ export const GroupHoverStyles = withTopologySetup(() => {
       badgeColor: '#F2F0FC',
       badgeTextColor: '#5752d1',
       badgeBorderColor: '#CBC1FF',
+      labelIconClass: logos.get('icon-java'),
       collapsedWidth: 75,
       collapsedHeight: 75,
       hover: true
@@ -414,6 +416,7 @@ export const GroupSelectedStyles = withTopologySetup(() => {
       badgeColor: '#F2F0FC',
       badgeTextColor: '#5752d1',
       badgeBorderColor: '#CBC1FF',
+      labelIconClass: logos.get('icon-java'),
       collapsedWidth: 75,
       collapsedHeight: 75,
       selected: true
@@ -447,6 +450,7 @@ export const GroupDropTargetStyles = withTopologySetup(() => {
       badgeColor: '#F2F0FC',
       badgeTextColor: '#5752d1',
       badgeBorderColor: '#CBC1FF',
+      labelIconClass: logos.get('icon-java'),
       collapsedWidth: 75,
       collapsedHeight: 75,
       canDrop: true,
@@ -484,7 +488,8 @@ export const GroupedGroupsStyles = withTopologySetup(() => {
       badgeBorderColor: '#CBC1FF',
       collapsedWidth: 75,
       collapsedHeight: 75,
-      showContextMenu: true
+      showContextMenu: true,
+      labelIconClass: logos.get('icon-java')
     }
   };
 
@@ -506,7 +511,8 @@ export const GroupedGroupsStyles = withTopologySetup(() => {
       collapsedWidth: 75,
       collapsedHeight: 75,
       selected: true,
-      showContextMenu: true
+      showContextMenu: true,
+      labelIconClass: logos.get('icon-jenkins')
     }
   };
 
@@ -545,6 +551,7 @@ export const CollapsibleGroupStyles = withTopologySetup(() => {
       badgeColor: '#F2F0FC',
       badgeTextColor: '#5752d1',
       badgeBorderColor: '#CBC1FF',
+      labelIconClass: logos.get('icon-jenkins'),
       collapsedWidth: 75,
       collapsedHeight: 75,
       showContextMenu: true,
@@ -565,6 +572,7 @@ export const CollapsibleGroupStyles = withTopologySetup(() => {
       badgeColor: '#F2F0FC',
       badgeTextColor: '#5752d1',
       badgeBorderColor: '#CBC1FF',
+      labelIconClass: logos.get('icon-java'),
       collapsedWidth: 75,
       collapsedHeight: 75,
       showContextMenu: true,

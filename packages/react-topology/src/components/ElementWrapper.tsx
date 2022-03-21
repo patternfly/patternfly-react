@@ -16,10 +16,7 @@ const NodeElementComponent: React.FC<{ element: Node }> = observer(({ element })
   const isDragging = dndManager.isDragging();
   const dragItem = dndManager.getItem();
   const graph = element.getGraph();
-  const isVisible = React.useMemo(() => computed(() => graph.isNodeInView(element, { padding: 100 })), [
-    element,
-    graph
-  ]);
+  const isVisible = React.useMemo(() => computed(() => graph.isNodeInView(element)), [element, graph]);
   if (isVisible.get() || (isDragging && dragItem === element)) {
     return <ElementComponent element={element} />;
   }

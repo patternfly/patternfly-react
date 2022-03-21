@@ -16,7 +16,8 @@ import {
   NodeModel,
   ScaleExtent,
   ScaleDetailsLevel,
-  ScaleDetailsThresholds
+  ScaleDetailsThresholds,
+  ViewPaddingSettings
 } from '../types';
 import BaseElement from './BaseElement';
 
@@ -71,6 +72,27 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
     medium: 0.5
   };
 
+  @observable.ref
+  private viewPaddingSettings: ViewPaddingSettings = {
+    padding: 0,
+    paddingPercentage: 50
+  };
+
+  @computed
+  private get viewPadding(): { paddingX: number; paddingY: number } {
+    if (this.viewPaddingSettings.paddingPercentage) {
+      const { width: viewWidth, height: viewHeight } = this.getBounds();
+      return {
+        paddingX: viewWidth * this.scale * (this.viewPaddingSettings.paddingPercentage / 100),
+        paddingY: viewHeight * this.scale * (this.viewPaddingSettings.paddingPercentage / 100)
+      };
+    }
+    return {
+      paddingX: this.viewPaddingSettings.padding,
+      paddingY: this.viewPaddingSettings.padding
+    };
+  }
+
   getKind(): ModelKind {
     return ModelKind.graph;
   }
@@ -105,6 +127,14 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
 
   getDetailsLevel(): ScaleDetailsLevel {
     return this.detailsLevel;
+  }
+
+  setViewPaddingSettings(viewPaddingSettings: ViewPaddingSettings): void {
+    this.viewPaddingSettings = viewPaddingSettings;
+  }
+
+  getViewPaddingSettings(): ViewPaddingSettings {
+    return this.viewPaddingSettings;
   }
 
   getBounds(): Rect {
@@ -297,16 +327,19 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
     }
   };
 
-  isNodeInView(element: Node<NodeModel, any>, { padding = 0 }): boolean {
-    const graph = element.getGraph();
-    const { x: viewX, y: viewY, width: viewWidth, height: viewHeight } = graph.getBounds();
+  isNodeInView(element: Node<NodeModel, any>): boolean {
+    if (this.viewPaddingSettings.padding === Number.POSITIVE_INFINITY) {
+      return true;
+    }
+    const { x: viewX, y: viewY, width: viewWidth, height: viewHeight } = this.getBounds();
     const { x, y, width, height } = element
       .getBounds()
       .clone()
-      .scale(graph.getScale())
+      .scale(this.scale)
       .translate(viewX, viewY);
+    const { paddingX, paddingY } = this.viewPadding;
 
-    return x + width > -padding && x < viewWidth + padding && y + height > -padding && y < viewHeight + padding;
+    return x + width > -paddingX && x < viewWidth + paddingX && y + height > -paddingY && y < viewHeight + paddingY;
   }
 
   setModel(model: E): void {

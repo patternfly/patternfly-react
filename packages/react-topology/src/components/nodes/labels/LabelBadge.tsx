@@ -21,19 +21,7 @@ interface LabelBadgeProps {
 }
 
 const LabelBadge = React.forwardRef<SVGRectElement, LabelBadgeProps>(
-  (
-    {
-      badge,
-      badgeTextColor = defaultBadgeTextColor.value,
-      badgeColor = defaultBadgeFill.value,
-      badgeBorderColor = defaultBadgeBorder.value,
-      badgeClassName,
-      className,
-      x,
-      y
-    },
-    iconRef
-  ) => {
+  ({ badge, badgeTextColor, badgeColor, badgeBorderColor, badgeClassName, className, x, y }, iconRef) => {
     const [textSize, textRef] = useSize([]);
     const classes = css(styles.topologyNodeLabelBadge, badgeClassName && badgeClassName, className && className);
 
@@ -50,8 +38,8 @@ const LabelBadge = React.forwardRef<SVGRectElement, LabelBadgeProps>(
       height += paddingY * 2;
       rect = (
         <rect
-          fill={badgeColor}
-          stroke={badgeBorderColor}
+          fill={badgeColor || (badgeClassName ? undefined : defaultBadgeFill.value)}
+          stroke={badgeBorderColor || (badgeClassName ? undefined : defaultBadgeBorder.value)}
           ref={iconRef}
           x={0}
           width={width + paddingX * 2}
@@ -66,7 +54,7 @@ const LabelBadge = React.forwardRef<SVGRectElement, LabelBadgeProps>(
       <g className={classes} transform={`translate(${x}, ${y})`}>
         {rect}
         <text
-          fill={badgeTextColor}
+          fill={badgeTextColor || badgeClassName ? undefined : defaultBadgeTextColor.value}
           ref={textRef}
           x={width / 2 + paddingX}
           y={height / 2}

@@ -6,6 +6,7 @@ import {
   ScaleDetailsLevel,
   ShapeProps,
   WithContextMenuProps,
+  WithDragNodeProps,
   WithSelectionProps
 } from '@patternfly/react-topology';
 import AlternateIcon from '@patternfly/react-icons/dist/esm/icons/regions-icon';
@@ -28,6 +29,7 @@ type StyleGroupProps = {
   getCollapsedShape?: (node: Node) => React.FC<ShapeProps>;
   collapsedShadowOffset?: number; // defaults to 10
 } & WithContextMenuProps &
+  WithDragNodeProps &
   WithSelectionProps;
 
 const StyleGroup: React.FC<StyleGroupProps> = ({
