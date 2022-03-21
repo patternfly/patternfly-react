@@ -27,7 +27,7 @@ describe('DropdownToggleCheckbox', () => {
         Some text
       </DropdownToggleCheckbox>
     );
-    expect(screen.getByRole('checkbox').outerHTML).toMatchSnapshot();
+    expect(screen.getByRole('checkbox').parentElement.outerHTML).toMatchSnapshot();
   });
 
   test('isDisabled', () => {

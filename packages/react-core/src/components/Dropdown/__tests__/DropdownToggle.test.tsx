@@ -133,7 +133,7 @@ describe('DropdownToggleCheckbox', () => {
       expect(button.outerHTML).toMatchSnapshot();
     });
 
-    test('button variant - secondary', () => {
+    test('button variant - plain with text', () => {
       render(
         <DropdownToggle id="Dropdown Toggle" isText isPlain parentRef={document.createElement('div')}>
           Dropdown
@@ -182,22 +182,6 @@ describe('DropdownToggleCheckbox', () => {
 
       expect(button.className).toContain('primary');
       expect(button.outerHTML).toMatchSnapshot();
-    });
-
-    test('class changes', () => {
-      const view = render(
-        <DropdownContext.Provider
-          value={{
-            toggleTextClass: 'some-test-class',
-            toggleIndicatorClass: 'another-test-class'
-          }}
-        >
-          <DropdownToggle id="Dropdown Toggle" parentRef={document.createElement('div')}>
-            Dropdown
-          </DropdownToggle>
-        </DropdownContext.Provider>
-      );
-      expect(view.container).toMatchSnapshot();
     });
 
     test('class changes', () => {

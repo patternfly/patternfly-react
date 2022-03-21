@@ -147,6 +147,7 @@ describe('DataList', () => {
     render(<DataListToggle aria-label="Toggle details for" id="ex-toggle2" />);
 
     expect(screen.getByRole('button').getAttribute('aria-labelledby')).toEqual(null);
+    expect(screen.getByRole('button').getAttribute('aria-label')).toEqual('Toggle details for');
     expect(screen.getByRole('button').getAttribute('aria-expanded')).toEqual('false');
   });
 

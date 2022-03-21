@@ -65,7 +65,7 @@ describe('InternalDropdownItem', () => {
     describe('description', () => {
       test('a', () => {
         render(<InternalDropdownItem description="Something's link description">Something</InternalDropdownItem>);
-        expect(screen.getByText('Something').outerHTML).toMatchSnapshot();
+        expect(screen.getByText("Something's link description").outerHTML).toMatchSnapshot();
       });
 
       test('button', () => {
@@ -74,7 +74,7 @@ describe('InternalDropdownItem', () => {
             Something
           </InternalDropdownItem>
         );
-        expect(screen.getByText('Something').outerHTML).toMatchSnapshot();
+        expect(screen.getByText("Something's button description").outerHTML).toMatchSnapshot();
       });
     });
   });
