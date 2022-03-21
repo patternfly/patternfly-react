@@ -2,9 +2,8 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DescriptionList/description-list';
 import { formatBreakpointMods } from '../../helpers';
-import termWidthToken from '@patternfly/react-tokens/dist/esm/c_description_list__term_width';
 
-export interface AutoFitModifiers {
+export interface BreakpointModifiers {
   default?: string;
   md?: string;
   lg?: string;
@@ -25,8 +24,6 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
   isAutoColumnWidths?: boolean;
   /** Modifies the description list display to inline-grid. */
   isInlineGrid?: boolean;
-  /** Sets the width of the term column (horizontal mode) */
-  termWidth?: string;
   /** Sets the description list to compact styling. */
   isCompact?: boolean;
   /** Sets a horizontal description list to have fluid styling. */
@@ -50,6 +47,7 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
     xl?: 'vertical' | 'horizontal';
     '2xl'?: 'vertical' | 'horizontal';
   };
+  /** Sets the breakpoint modifiers for the autofit feature */
   autoFitMinModifier?: {
     default?: string;
     sm?: string;
@@ -58,7 +56,8 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
     xl?: string;
     '2xl'?: string;
   };
-  termAutoFitMinModifier?: {
+  /** Sets the breakpoint modifiers for the horizontal width of the term column */
+  horizontalTermWidthModifier?: {
     default?: string;
     sm?: string;
     md?: string;
@@ -68,19 +67,8 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
   };
 }
 
-const setAutoFitMinModifiers = (autoFitMinModifier: AutoFitModifiers) => {
-  const prefix = '--pf-c-description-list--GridTemplateColumns--min';
-  const mods = autoFitMinModifier as Partial<{ [k: string]: string }>;
-  return Object.keys(mods || {}).reduce(
-    (acc, curr) =>
-      curr === 'default' ? { ...acc, [prefix]: mods[curr] } : { ...acc, [`${prefix}-on-${curr}`]: mods[curr] },
-    {}
-  );
-};
-
-const setTermAutoFitMinModifiers = (autoFitMinModifier: AutoFitModifiers) => {
-  const prefix = termWidthToken.name;
-  const mods = autoFitMinModifier as Partial<{ [k: string]: string }>;
+const setBreakpointModifiers = (prefix: string, modifiers: BreakpointModifiers) => {
+  const mods = modifiers as Partial<{ [k: string]: string }>;
   return Object.keys(mods || {}).reduce(
     (acc, curr) =>
       curr === 'default' ? { ...acc, [prefix]: mods[curr] } : { ...acc, [`${prefix}-on-${curr}`]: mods[curr] },
@@ -92,7 +80,6 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   className = '',
   children = null,
   isHorizontal = false,
-  termWidth = '',
   isAutoColumnWidths,
   isAutoFit,
   isInlineGrid,
@@ -101,27 +88,26 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   isFillColumns,
   columnModifier,
   autoFitMinModifier,
-  termAutoFitMinModifier,
+  horizontalTermWidthModifier,
   orientation,
   style,
   ...props
 }: DescriptionListProps) => {
-  if (isAutoFit && (autoFitMinModifier || style)) {
-    style = { ...style, ...setAutoFitMinModifiers(autoFitMinModifier) };
+  if (isAutoFit && autoFitMinModifier) {
+    style = {
+      ...style,
+      ...setBreakpointModifiers('--pf-c-description-list--GridTemplateColumns--min', autoFitMinModifier)
+    };
   }
-  if (termAutoFitMinModifier) {
-    style = { ...style, ...setTermAutoFitMinModifiers(termAutoFitMinModifier) };
+  if (isHorizontal && horizontalTermWidthModifier) {
+    style = {
+      ...style,
+      ...setBreakpointModifiers('--pf-c-description-list--m-horizontal__term--width', horizontalTermWidthModifier)
+    };
   }
 
-  const listDivRef = React.useRef(null);
-  React.useEffect(() => {
-    if (termWidth && listDivRef && isHorizontal) {
-      listDivRef.current.style.setProperty(termWidthToken.name, termWidth);
-    }
-  }, [listDivRef, termWidth]);
   return (
     <dl
-      ref={listDivRef}
       className={css(
         styles.descriptionList,
         (isHorizontal || isFluid) && styles.modifiers.horizontal,
