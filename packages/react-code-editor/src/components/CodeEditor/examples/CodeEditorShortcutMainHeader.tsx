@@ -46,7 +46,9 @@ export const ShortcutMainHeaderCodeEditor: React.FunctionComponent = () => {
                     {k}
                   </Chip>
                 ))
-                .reduce((prev, curr) => [prev, ' + ', curr] as any)}
+                .reduce((prev, curr) => (
+                  <>{[prev, ' + ', curr]}</>
+                ))}
             </GridItem>
             <GridItem>{s.description}</GridItem>
           </>
