@@ -154,7 +154,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     const { isOpen, focusedIndex, scrollIndex } = this.state;
     // keyboard pressed while focus on toggle
     if (this.inputRef?.current?.contains(event.target as Node)) {
-      if (!isOpen && event.key !== KeyTypes.Tab) {
+      if (!isOpen && event.key !== KeyTypes.Tab && event.key !== KeyTypes.Escape) {
         this.onToggle(true);
       } else if (isOpen) {
         if (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab) {
