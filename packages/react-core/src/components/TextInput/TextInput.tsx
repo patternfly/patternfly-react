@@ -65,6 +65,8 @@ export interface TextInputProps
   onBlur?: (event?: any) => void;
   /** icon variant */
   iconVariant?: 'calendar' | 'clock' | 'search';
+  /** Use the external file instead of a data URI */
+  isIconSprite?: boolean;
   /** Custom icon url to set as the input's background-image */
   customIconUrl?: string;
   /** Dimensions for the custom icon set as the input's background-size */
@@ -84,6 +86,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
     validated: 'default' as 'success' | 'warning' | 'error' | 'default',
     isDisabled: false,
     isReadOnly: false,
+    isIconSprite: false,
     type: TextInputTypes.text,
     isLeftTruncated: false,
     onChange: (): any => undefined,
@@ -170,6 +173,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
       isReadOnly,
       isRequired,
       isDisabled,
+      isIconSprite,
       iconVariant,
       customIconUrl,
       customIconDimensions,
@@ -193,6 +197,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
         onBlur={this.onBlur}
         className={css(
           styles.formControl,
+          isIconSprite && styles.modifiers.iconSprite,
           validated === ValidatedOptions.success && styles.modifiers.success,
           validated === ValidatedOptions.warning && styles.modifiers.warning,
           ((iconVariant && iconVariant !== 'search') || customIconUrl) && styles.modifiers.icon,

@@ -20,6 +20,8 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   isDisabled?: boolean;
   /** Flag to show if the TextArea is read only. */
   isReadOnly?: boolean;
+  /** Use the external file instead of a data URI */
+  isIconSprite?: boolean;
   /** Flag to modify height based on contents. */
   autoResize?: boolean;
   /** Value to indicate if the textarea is modified to show that validation state.
@@ -46,6 +48,7 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
     className: '',
     isRequired: false,
     isDisabled: false,
+    isIconSprite: false,
     validated: 'default',
     resizeOrientation: 'both',
     'aria-label': null as string
@@ -86,6 +89,7 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
       validated,
       isRequired,
       isDisabled,
+      isIconSprite,
       isReadOnly,
       resizeOrientation,
       innerRef,
@@ -102,6 +106,7 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
       <textarea
         className={css(
           styles.formControl,
+          isIconSprite && styles.modifiers.iconSprite,
           className,
           resizeOrientation !== TextAreResizeOrientation.both && styles.modifiers[orientation],
           validated === ValidatedOptions.success && styles.modifiers.success,
