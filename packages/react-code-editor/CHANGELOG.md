@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.41.0 (2022-03-21)
+
+
+### Features
+
+* **TextInput, TextArea, FormSelect:** add isIconSprite prop ([#7052](https://github.com/patternfly/patternfly-react/issues/7052)) ([94e1a85](https://github.com/patternfly/patternfly-react/commit/94e1a855840ca74d4d934a863531359a4f84c265))
+
+
+
+
+
 ## 4.40.5 (2022-03-21)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
