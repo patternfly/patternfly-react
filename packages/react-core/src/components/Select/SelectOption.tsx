@@ -282,7 +282,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
             role="presentation"
             className={css(
               isLoading && styles.selectListItem,
-              !isLoad && !isLoading && styles.selectMenuWrapper,
+              !isLoading && styles.selectMenuWrapper,
               isFavorite && styles.modifiers.favorite,
               isFocused && styles.modifiers.focus,
               isLoading && styles.modifiers.loading

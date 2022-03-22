@@ -135,8 +135,16 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
     let index = hasInlineFilter ? 1 : 0;
     if (isGrouped) {
       return React.Children.map(children, (group: React.ReactElement) => {
-        if (group.type === SelectOption || group.type === Divider) {
+        if (group.type === Divider) {
           return group;
+        } else if (group.type === SelectOption) {
+          return React.cloneElement(group, {
+            isChecked: this.checkForValue(group.props.value, checked),
+            sendRef,
+            keyHandler,
+            index: index++,
+            isLastOptionBeforeFooter
+          });
         }
         return React.cloneElement(group, {
           titleId: group.props.label && group.props.label.replace(/\W/g, '-'),

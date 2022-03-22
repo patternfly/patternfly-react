@@ -270,7 +270,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       this.state.viewMoreNextIndex !== -1 &&
       this.refCollection.length > this.state.viewMoreNextIndex &&
       this.props.loadingVariant !== 'spinner' &&
-      this.refCollection[this.state.viewMoreNextIndex][0]
+      this.refCollection[this.state.viewMoreNextIndex][0] &&
+      this.props.variant !== 'typeahead' && // do not hard focus newly added items for typeahead variants
+      this.props.variant !== 'typeaheadmulti'
     ) {
       this.refCollection[this.state.viewMoreNextIndex][0].focus();
     }
@@ -581,17 +583,16 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         }
       });
     }
-
-    return typeaheadChildren.map((child: React.ReactNode) => {
+    return typeaheadChildren.map((child: React.ReactNode, index) => {
       const childElement = child as any;
       return childElement.type.displayName === 'Divider'
         ? child
         : React.cloneElement(child as React.ReactElement, {
-            isFocused:
-              typeaheadActiveChild &&
-              (typeaheadActiveChild.innerText === (child as React.ReactElement).props.value.toString() ||
+            isFocused: typeaheadActiveChild
+              ? typeaheadActiveChild.innerText === (child as React.ReactElement).props.value.toString() ||
                 (this.props.isCreatable &&
-                  typeaheadActiveChild.innerText === `{createText} "${(child as React.ReactElement).props.value}"`))
+                  typeaheadActiveChild.innerText === `{createText} "${(child as React.ReactElement).props.value}"`)
+              : index === typeaheadCurrIndex // fallback for view more + typeahead use cases, when the new expanded list is loaded and refCollection hasn't be updated yet
           });
     });
   }
@@ -621,6 +622,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     const hasDescriptionElm = Boolean(
       this.refCollection[nextIndex][0] && this.refCollection[nextIndex][0].classList.contains('pf-m-description')
     );
+    const isLoad = Boolean(
+      this.refCollection[nextIndex][0] && this.refCollection[nextIndex][0].classList.contains('pf-m-load')
+    );
     const optionTextElm = hasDescriptionElm
       ? (this.refCollection[nextIndex][0].firstElementChild as HTMLElement)
       : this.refCollection[nextIndex][0];
@@ -628,7 +632,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     let typeaheadInputValue = '';
     if (isCreatable && optionTextElm.innerText.includes(createText)) {
       typeaheadInputValue = this.state.creatableValue;
-    } else if (optionTextElm) {
+    } else if (optionTextElm && !isLoad) {
+      // !isLoad prevents the view more button text from appearing the typeahead input
       typeaheadInputValue = optionTextElm.innerText;
     }
     this.setState(prevState => ({
@@ -681,7 +686,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           typeaheadCurrIndex !== -1 && // do not allow selection without moving to an initial option
           (typeaheadActiveChild || (this.refCollection[0] && this.refCollection[0][0]))
         ) {
-          if (typeaheadActiveChild) {
+          if (typeaheadActiveChild && !typeaheadActiveChild.classList.contains('pf-m-load')) {
             const hasDescriptionElm = typeaheadActiveChild.childElementCount > 1;
             const typeaheadActiveChildText = hasDescriptionElm
               ? (typeaheadActiveChild.firstChild as HTMLElement).innerText
@@ -689,12 +694,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             this.setState({
               typeaheadInputValue: typeaheadActiveChildText
             });
-          } else {
+          } else if (this.refCollection[0] && this.refCollection[0][0]) {
             this.setState({
               typeaheadInputValue: this.refCollection[0][0].innerText
             });
           }
-
           if (typeaheadActiveChild) {
             typeaheadActiveChild.click();
           } else {
