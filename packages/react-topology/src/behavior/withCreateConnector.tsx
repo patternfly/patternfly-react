@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import { hullPath } from '../utils/svg-utils';
 import DefaultCreateConnector from '../components/DefaultCreateConnector';
 import Point from '../geom/Point';
@@ -35,6 +37,7 @@ interface ConnectorComponentProps {
   startPoint: Point;
   endPoint: Point;
   hints: string[];
+  active: boolean;
   dragging: boolean;
 }
 
@@ -72,7 +75,7 @@ interface PromptData {
 const isReactElementArray = (choices: ConnectorChoice[] | React.ReactElement[]): choices is React.ReactElement[] =>
   React.isValidElement(choices[0]);
 
-const DEFAULT_HANDLE_ANGLE = 12 * (Math.PI / 180);
+const DEFAULT_HANDLE_ANGLE = Math.PI / 180;
 const DEFAULT_HANDLE_LENGTH = 32;
 
 const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(props => {
@@ -128,7 +131,7 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
       })
     };
     return dragSourceSpec;
-  }, [setActive, dragItem, dragOperation]);
+  }, [setActive, dragItem, dragOperation, hideConnectorMenu]);
   const [{ dragging, event, hints }, dragRef] = useDndDrag(spec, props);
 
   if (!active && dragging && !event) {
@@ -170,7 +173,7 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
     <>
       <Layer id="top">
         <g
-          className="topology-create-connector"
+          className={css(styles.topologyCreateConnector)}
           ref={dragRef}
           onMouseEnter={!active ? () => onKeepAlive(true) : undefined}
           onMouseLeave={!active ? () => onKeepAlive(false) : undefined}
@@ -178,6 +181,7 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
           <ConnectorComponent
             startPoint={startPoint}
             endPoint={endPoint}
+            active={active}
             dragging={dragging}
             hints={hintsRef.current || []}
           />

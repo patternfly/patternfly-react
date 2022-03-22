@@ -1,6 +1,5 @@
 :root {
   --pf-topology-create-connector-color: var(--pf-global--secondary-color--100);
-  --pf-topology-create-connector-bg-color: var(--pf-global--BackgroundColor--light-100);
 }
 
 .pf-topology-connector-arrow {
@@ -35,6 +34,10 @@
   stroke: var(--edge--stroke);
 }
 
+.pf-topology-create-connector {
+  cursor: pointer;
+}
+
 .pf-topology-default-create-connector {
 }
 
@@ -44,7 +47,7 @@
 .pf-topology-default-create-connector__line {
   stroke: var(--pf-topology-create-connector-color);
   stroke-width: 2px;
-  stroke-dasharray: 5px, 5px;
+  stroke-dasharray: 3px, 3px;
 }
 
 .pf-topology-default-create-connector__arrow {
@@ -52,10 +55,14 @@
   stroke: var(--pf-topology-create-connector-color);
 }
 
+.pf-topology-default-create-connector.pf-m-hover .pf-topology-default-create-connector__line {
+  stroke: var(--pf-global--Color--100);
+}
+
 .pf-topology-default-create-connector.pf-m-hover .pf-topology-default-create-connector__arrow {
   fill: var(--pf-global--Color--100);
   stroke: var(--pf-global--Color--100);
- }
+}
 
 .pf-topology-default-create-connector__create__bg {
   stroke-width: 10px;
