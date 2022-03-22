@@ -159,7 +159,7 @@ export interface SelectProps
   isInputValuePersisted?: boolean;
   /** @beta Flag for retaining filter results on blur from keyboard-entered typeahead text */
   isInputFilterPersisted?: boolean;
-  /** Flag indicating that the state of Select such as typeahead input should reset upon selection */
+  /** Flag indicating the typeahead input value should reset upon selection */
   shouldResetOnSelect?: boolean;
   /** Content rendered in the footer of the select menu */
   footer?: React.ReactNode;
@@ -681,10 +681,20 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           typeaheadCurrIndex !== -1 && // do not allow selection without moving to an initial option
           (typeaheadActiveChild || (this.refCollection[0] && this.refCollection[0][0]))
         ) {
-          this.setState({
-            typeaheadInputValue:
-              (typeaheadActiveChild && typeaheadActiveChild.innerText) || this.refCollection[0][0].innerText
-          });
+          if (typeaheadActiveChild) {
+            const hasDescriptionElm = typeaheadActiveChild.childElementCount > 1;
+            const typeaheadActiveChildText = hasDescriptionElm
+              ? (typeaheadActiveChild.firstChild as HTMLElement).innerText
+              : typeaheadActiveChild.innerText;
+            this.setState({
+              typeaheadInputValue: typeaheadActiveChildText
+            });
+          } else {
+            this.setState({
+              typeaheadInputValue: this.refCollection[0][0].innerText
+            });
+          }
+
           if (typeaheadActiveChild) {
             typeaheadActiveChild.click();
           } else {
