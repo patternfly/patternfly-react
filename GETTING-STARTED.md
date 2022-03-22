@@ -21,11 +21,11 @@ When writing examples:
 
 ## Testing
 
-PatternFly React currently uses [Jest](https://facebook.github.io/jest/) for running snapshot tests and [Cypress](https://www.cypress.io/) for running integration tests.
+PatternFly React currently uses [Jest](https://facebook.github.io/jest/) with [React Testing Library](https://github.com/testing-library/react-testing-library) for running unit tests and [Cypress](https://www.cypress.io/) for running integration tests.
 
-### Jest
+### Jest + React Testing Library
 
-Use Jest tests to capture how the DOM should look after rendering. Save Jest tests (`*.test.tsx` files) under a `__tests__` folder. The most commonly used test is to expect a rendered component to match a snapshot. You can run these with `yarn test`.
+Use Jest and React Testing Library to capture how the DOM should look after rendering and verify that it functions as you expect. Save Jest tests (`*.test.tsx` files) under a `__tests__` folder. A common test is to expect a rendered component to match a snapshot. You can run these with `yarn test`. You can find more information about React Testing Library as it pertains to this project and the standards we're following on [this article from our wiki](https://github.com/patternfly/patternfly-react/wiki/React-Testing-Library-Basics,-Best-Practices,-and-Guidelines).
 
 ### Cypress
 
