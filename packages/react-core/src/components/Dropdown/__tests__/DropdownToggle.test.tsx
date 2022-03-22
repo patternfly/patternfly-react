@@ -2,6 +2,7 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 import { DropdownToggle } from '../DropdownToggle';
 import { DropdownContext } from '../dropdownConstants';
@@ -155,15 +156,16 @@ describe('DropdownToggleCheckbox', () => {
           splitButtonItems={[<div key="1">test</div>]}
           splitButtonVariant="action"
           parentRef={document.createElement('div')}
+          data-testid="test-id"
         >
           Dropdown
         </DropdownToggle>
       );
 
-      const button = screen.getByRole('button');
+      const dropdownToggle = screen.getByRole('button').parentElement;
 
-      expect(button.className).toContain('primary');
-      expect(button.outerHTML).toMatchSnapshot();
+      expect(dropdownToggle).toHaveClass('pf-m-primary');
+      expect(dropdownToggle.outerHTML).toMatchSnapshot();
     });
 
     test('split button - does not render primary variant', () => {
@@ -173,15 +175,16 @@ describe('DropdownToggleCheckbox', () => {
           toggleVariant="primary"
           splitButtonItems={[<div key="0">test</div>]}
           parentRef={document.createElement('div')}
+          data-testid="test-id"
         >
           Dropdown
         </DropdownToggle>
       );
 
-      const button = screen.getByRole('button');
+      const dropdownToggle = screen.getByRole('button').parentElement;
 
-      expect(button.className).toContain('primary');
-      expect(button.outerHTML).toMatchSnapshot();
+      expect(dropdownToggle).not.toHaveClass('pf-m-primary');
+      expect(dropdownToggle.outerHTML).toMatchSnapshot();
     });
 
     test('class changes', () => {
