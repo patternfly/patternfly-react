@@ -35,8 +35,8 @@ const ConnectorArrow: React.FC<ConnectorArrowProps> = ({
   const polygonPoints = React.useMemo(
     () =>
       pointsStringFromPoints([
-        [size / 2, size / 2],
-        [size / 2, -size / 2],
+        [0, size / 2],
+        [0, -size / 2],
         [size, 0]
       ]),
     [size]

@@ -59,6 +59,9 @@ const DefaultConnectorTerminal: React.FC<EdgeConnectorArrowProps> = ({
     default:
       return null;
   }
+  if (!Terminal) {
+    return null;
+  }
   return <Terminal className={classes} startPoint={startPoint} endPoint={endPoint} isTarget={isTarget} {...others} />;
 };
 

@@ -19,7 +19,7 @@ const ConnectorSquare: React.FC<ConnectorSquareProps> = ({
   endPoint,
   className = '',
   isTarget = true,
-  size = 18,
+  size = 14,
   dragRef
 }) => {
   if (!startPoint || !endPoint) {
@@ -42,7 +42,7 @@ const ConnectorSquare: React.FC<ConnectorSquareProps> = ({
       ref={dragRef}
       className={classNames}
     >
-      <rect x={size / 2} y={-size / 4} width={size / 2} height={size / 2} />
+      <rect x={0} y={-size / 2} width={size} height={size} />
     </g>
   );
 };

@@ -3,7 +3,8 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import { PointTuple } from '../../../types';
 import { getHullPath, RHOMBUS_CORNER_RADIUS, ShapeProps } from './shapeUtils';
-import { usePolygonAnchor } from '../../../behavior/usePolygonAnchor';
+import { useSvgAnchor } from '../../../behavior';
+import { useCombineRefs } from '../../../utils';
 
 type RhombusProps = ShapeProps & {
   cornerRadius?: number;
@@ -24,23 +25,20 @@ const Rhombus: React.FC<RhombusProps> = ({
   cornerRadius = RHOMBUS_CORNER_RADIUS,
   dndDropRef
 }) => {
-  const [polygonPoints, points] = React.useMemo(() => {
+  const anchorRef = useSvgAnchor();
+  const refs = useCombineRefs(dndDropRef, anchorRef);
+  const points = React.useMemo(() => {
     const polygonPoints: PointTuple[] = getRhombusPoints(width, height, cornerRadius / 2);
 
-    return [
-      polygonPoints,
-      cornerRadius
-        ? getHullPath(getRhombusPoints(width, height, -cornerRadius), cornerRadius)
-        : polygonPoints.map(p => `${p[0]},${p[1]}`).join(' ')
-    ];
+    return cornerRadius
+      ? getHullPath(getRhombusPoints(width, height, -cornerRadius), cornerRadius)
+      : polygonPoints.map(p => `${p[0]},${p[1]}`).join(' ');
   }, [cornerRadius, height, width]);
 
-  usePolygonAnchor(polygonPoints);
-
   return cornerRadius ? (
-    <path className={className} ref={dndDropRef} d={points} filter={filter} />
+    <path className={className} ref={refs} d={points} filter={filter} />
   ) : (
-    <polygon className={className} ref={dndDropRef} points={points} filter={filter} />
+    <polygon className={className} ref={refs} points={points} filter={filter} />
   );
 };
 

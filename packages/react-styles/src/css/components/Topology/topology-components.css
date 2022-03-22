@@ -1,5 +1,5 @@
 :root {
-  --pf-topology-create-connector-color: var(--pf-global--active-color--400);
+  --pf-topology-create-connector-color: var(--pf-global--secondary-color--100);
   --pf-topology-create-connector-bg-color: var(--pf-global--BackgroundColor--light-100);
 }
 
@@ -48,14 +48,19 @@
 }
 
 .pf-topology-default-create-connector__arrow {
-  fill: var(--pf-topology-create-connector-color);
+  fill: var(--pf-global--Color--light-200);
   stroke: var(--pf-topology-create-connector-color);
 }
 
+.pf-topology-default-create-connector.pf-m-hover .pf-topology-default-create-connector__arrow {
+  fill: var(--pf-global--Color--100);
+  stroke: var(--pf-global--Color--100);
+ }
+
 .pf-topology-default-create-connector__create__bg {
-  stroke: var(--pf-topology-create-connector-color);
-  fill: var(--pf-topology-create-connector-bg-color);
-  stroke-width: 2px;
+  stroke-width: 10px;
+  stroke: transparent;
+  fill-opacity: 0;
 }
 
 .pf-topology-default-create-connector__create__cursor {
@@ -406,6 +411,18 @@
   --edge--stroke: var(--pf-global--danger-color--100);
 }
 
+.pf-topology__edge__background {
+  stroke-width: 10px;
+  stroke: transparent;
+  fill: none;
+}
+.pf-topology__edge.pf-m-selected .pf-topology__edge__background {
+  stroke: var(--pf-global--active-color--200);
+}
+.pf-topology__edge.pf-m-hover .pf-topology__edge__background {
+  stroke: var(--pf-global--BorderColor--100);
+}
+
 .pf-topology__edge__link {
    stroke-width: var(--edge--stroke-width);
    stroke-dasharray: var(--edge--stroke-dasharray);
@@ -444,21 +461,20 @@
   stroke: var(--edge--active--stroke);
 }
 
-.pf-topology__edge.pf-m-selected .pf-topology__edge__link,
 .pf-topology__edge.pf-m-selected .pf-topology-connector-arrow {
   stroke: var(--edge--active--stroke);
+  fill: var(--edge--interactive--fill);
 }
 
 .pf-topology__edge.pf-m-hover .pf-topology__edge__link,
-.pf-topology__edge.pf-m-dragging .pf-topology__edge__link {
-  fill: var(--edge--interactive--fill);
-  stroke: var(--edge--interactive--stroke);
+.pf-topology__edge.pf-m-hover .pf-topology-connector-arrow {
+  stroke: var(--pf-global--Color--100);
 }
-.pf-topology__edge.pf-m-hover .pf-topology__edge__link,
+
 .pf-topology__edge.pf-m-dragging .pf-topology__edge__link,
-.pf-topology__edge.pf-m-hover .pf-topology-connector-arrow,
 .pf-topology__edge.pf-m-dragging .pf-topology-connector-arrow {
   stroke: var(--edge--interactive--stroke);
+  fill: var(--edge--interactive--fill);
 }
 
 .pf-topology__edge .pf-topology-connector-arrow {
