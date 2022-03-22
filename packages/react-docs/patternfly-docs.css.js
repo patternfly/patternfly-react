@@ -19,3 +19,6 @@ import '@patternfly/patternfly/patternfly.css';
 
 // Utilities
 import '@patternfly/patternfly/patternfly-addons.css';
+
+// Dark theme
+import '@patternfly/patternfly/patternfly-theme-dark.css';
