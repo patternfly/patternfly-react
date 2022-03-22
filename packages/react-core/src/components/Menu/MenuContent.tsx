@@ -21,8 +21,31 @@ export const MenuContent = React.forwardRef((props: MenuContentProps, ref: React
   const menuContentRef = React.createRef<HTMLDivElement>();
   const refCallback = (el: HTMLElement, menuId: string, onGetMenuHeight: (menuId: string, height: number) => void) => {
     if (el) {
-      // if this menu has a parent MenuList, then we need to account for that parent list's padding.
-      const clientHeight = el.closest(`.${styles.menuList}`) ? el.clientHeight + 16 : el.clientHeight;
+      let clientHeight = el.clientHeight;
+
+      // if this menu is a submenu, we need to account for the root menu list's padding and root menu content's border.
+      let rootMenuList = null;
+      let parentEl = el.closest(`.${styles.menuList}`);
+      while (parentEl !== null && parentEl.nodeType === 1) {
+        if (parentEl.classList.contains(styles.menuList)) {
+          rootMenuList = parentEl;
+        }
+        parentEl = parentEl.parentElement;
+      }
+
+      if (rootMenuList) {
+        const rootMenuListStyles = getComputedStyle(rootMenuList);
+        const rootMenuListPaddingOffset =
+          parseFloat(rootMenuListStyles.getPropertyValue('padding-top').replace(/px/g, '')) +
+          parseFloat(rootMenuListStyles.getPropertyValue('padding-bottom').replace(/px/g, '')) +
+          parseFloat(
+            getComputedStyle(rootMenuList.parentElement)
+              .getPropertyValue('border-bottom-width')
+              .replace(/px/g, '')
+          );
+        clientHeight = clientHeight + rootMenuListPaddingOffset;
+      }
+
       onGetMenuHeight && onGetMenuHeight(menuId, clientHeight);
       getHeight && getHeight(clientHeight.toString());
     }
