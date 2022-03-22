@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`toggle button render 1`] = `
+exports[`ClipboardCopyToggle toggle button render 1`] = `
 <div>
   <button
     aria-controls="my-id my-content-id"

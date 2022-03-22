@@ -1,7 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`select group renders with children successfully 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
+exports[`SelectGroup renders with children successfully 1`] = `"<div data-testid=\\"test-id\\" class=\\"pf-c-select__menu-group\\"><div class=\\"pf-c-select__menu-group-title\\" id=\\"\\" aria-hidden=\\"true\\">test</div><ul role=\\"listbox\\"><div>child</div></ul></div>"`;

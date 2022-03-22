@@ -1,22 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SelectMenu should match snapshot (auto-generated) 1`] = `
-<SelectMenu
-  checked={Array []}
-  className="''"
-  createText="string"
-  hasInlineFilter={false}
-  innerRef={null}
-  isCustomContent={false}
-  isExpanded={false}
-  isGrouped={false}
-  isLastOptionBeforeFooter={[Function]}
-  keyHandler={[Function]}
-  maxHeight=""
-  noResultsFoundText="string"
-  openedOnEnter={false}
-  position="left"
-  selected=""
-  sendRef={[Function]}
-/>
+exports[`SelectMenu should match snapshot 1`] = `
+<div>
+  <ul
+    class="pf-c-select__menu"
+    role="listbox"
+  />
+</div>
 `;

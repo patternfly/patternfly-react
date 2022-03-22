@@ -1,43 +1,58 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import { ContextSelectorToggle } from '../ContextSelectorToggle';
 
-test('Renders ContextSelectorToggle', () => {
-  const view = render(<ContextSelectorToggle id="toggle-id" />);
-  expect(view.container).toMatchSnapshot();
-});
+describe('ContextSelectorToggle', () => {
+  test('Renders ContextSelectorToggle', () => {
+    render(<ContextSelectorToggle id="toggle-id" />);
+    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
+  });
 
-test('Verify onToggle is called ', () => {
-  const mockfnOnToggle = jest.fn();
-  const view = mount(<ContextSelectorToggle onToggle={mockfnOnToggle} id="toggle-id" />);
-  view
-    .find('button')
-    .at(0)
-    .simulate('click');
-  expect(mockfnOnToggle.mock.calls).toHaveLength(1);
-});
+  test('Verify onToggle is called ', () => {
+    const mockfnOnToggle = jest.fn();
 
-test('Verify ESC press ', () => {
-  const view = mount(<ContextSelectorToggle isOpen id="toggle-id" />);
-  view.simulate('keyDown', { key: 'Escape' });
-  expect(view).toMatchSnapshot();
-});
+    render(<ContextSelectorToggle onToggle={mockfnOnToggle} id="toggle-id" />);
 
-test('Verify ESC press with not isOpen', () => {
-  const view = mount(<ContextSelectorToggle onToggle={jest.fn()} id="toggle-id" />);
-  view.simulate('keyDown', { key: 'Escape' });
-  expect(view).toMatchSnapshot();
-});
+    userEvent.click(screen.getByRole('button'));
+    expect(mockfnOnToggle.mock.calls).toHaveLength(1);
+  });
 
-test('Verify keydown tab ', () => {
-  const view = mount(<ContextSelectorToggle isOpen id="toggle-id" />);
-  view.simulate('keyDown', { key: 'Tab' });
-  expect(view).toMatchSnapshot();
-});
+  test('Verify ESC press', () => {
+    render(<ContextSelectorToggle isOpen id="toggle-id" />);
 
-test('Verify keydown enter ', () => {
-  const view = mount(<ContextSelectorToggle onToggle={jest.fn()} onEnter={jest.fn()} id="toggle-id" />);
-  view.simulate('keyDown', { key: 'Enter' });
-  expect(view).toMatchSnapshot();
+    const toggleButton = screen.getByRole('button');
+
+    userEvent.type(toggleButton, '{esc}');
+    expect(toggleButton.outerHTML).toMatchSnapshot();
+  });
+
+  test('Verify ESC press with not isOpen', () => {
+    render(<ContextSelectorToggle onToggle={jest.fn()} id="toggle-id" />);
+
+    const toggleButton = screen.getByRole('button');
+
+    userEvent.type(screen.getByRole('button'), '{esc}');
+    expect(toggleButton.outerHTML).toMatchSnapshot();
+  });
+
+  test('Verify keydown tab ', () => {
+    render(<ContextSelectorToggle isOpen id="toggle-id" />);
+
+    const toggleButton = screen.getByRole('button');
+
+    userEvent.type(screen.getByRole('button'), '{tab}');
+    expect(toggleButton.outerHTML).toMatchSnapshot();
+  });
+
+  test('Verify keydown enter ', () => {
+    render(<ContextSelectorToggle onToggle={jest.fn()} onEnter={jest.fn()} id="toggle-id" />);
+
+    const toggleButton = screen.getByRole('button');
+
+    userEvent.type(screen.getByRole('button'), '{enter}');
+    expect(toggleButton.outerHTML).toMatchSnapshot();
+  });
 });
