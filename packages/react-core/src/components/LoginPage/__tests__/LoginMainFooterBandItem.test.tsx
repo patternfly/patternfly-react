@@ -1,31 +1,26 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
-import { shallow } from 'enzyme';
-
+import { render, screen } from '@testing-library/react';
 import { LoginMainFooterBandItem } from '../LoginMainFooterBandItem';
 
-test('renders with PatternFly Core styles', () => {
-  const view = render(<LoginMainFooterBandItem />);
-  expect(view.container).toMatchSnapshot();
-});
+describe('LoginMainFooterBandItem', () => {
+  test('renders with PatternFly Core styles', () => {
+    render(<LoginMainFooterBandItem data-testid="test-id" />);
+    expect(screen.getByTestId('test-id').outerHTML).toMatchSnapshot();
+  });
 
-test('className is added to the root element', () => {
-  const view = shallow(<LoginMainFooterBandItem className="extra-class" />);
-  expect(view.prop('className')).toMatchSnapshot();
-});
+  test('className is added to the root element', () => {
+    render(<LoginMainFooterBandItem className="extra-class">test</LoginMainFooterBandItem>);
+    expect(screen.getByText('test').outerHTML).toMatchSnapshot();
+  });
 
-test('extra props are spread to the root element', () => {
-  const testId = 'login-body';
-  const view = shallow(<LoginMainFooterBandItem data-testid={testId} />);
-  expect(view.prop('data-testid')).toBe(testId);
-});
+  test('with custom node', () => {
+    const CustomNode = () => <div>My custom node</div>;
 
-test('LoginFooterItem  with custom node', () => {
-  const CustomNode = () => <div>My custom node</div>;
-  const view = render(
-    <LoginMainFooterBandItem>
-      <CustomNode />
-    </LoginMainFooterBandItem>
-  );
-  expect(view.container).toMatchSnapshot();
+    render(
+      <LoginMainFooterBandItem>
+        <CustomNode />
+      </LoginMainFooterBandItem>
+    );
+    expect(screen.getByText('My custom node').outerHTML).toMatchSnapshot();
+  });
 });

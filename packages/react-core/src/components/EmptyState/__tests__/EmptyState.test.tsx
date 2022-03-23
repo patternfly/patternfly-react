@@ -1,6 +1,7 @@
-import * as React from 'react';
-import { render } from '@testing-library/react';
-import { shallow } from 'enzyme';
+import React from 'react';
+
+import { render, screen } from '@testing-library/react';
+
 import AddressBookIcon from '@patternfly/react-icons/dist/esm/icons/address-book-icon';
 import { EmptyState, EmptyStateVariant } from '../EmptyState';
 import { EmptyStateBody } from '../EmptyStateBody';
@@ -12,8 +13,8 @@ import { Title, TitleSizes } from '../../Title';
 
 describe('EmptyState', () => {
   test('Main', () => {
-    const view = render(
-      <EmptyState>
+    render(
+      <EmptyState data-testid="empty-state-test-id">
         <Title headingLevel="h5" size="lg">
           HTTP Proxies
         </Title>
@@ -28,86 +29,74 @@ describe('EmptyState', () => {
         </EmptyStateSecondaryActions>
       </EmptyState>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(screen.getByTestId('empty-state-test-id').outerHTML).toMatchSnapshot();
   });
 
   test('Main variant large', () => {
-    const view = render(
-      <EmptyState variant={EmptyStateVariant.large}>
-        <Title headingLevel="h3" size={TitleSizes.md}>EmptyState large</Title>
+    render(
+      <EmptyState variant={EmptyStateVariant.large} data-testid="empty-state-test-id">
+        <Title headingLevel="h3" size={TitleSizes.md}>
+          EmptyState large
+        </Title>
       </EmptyState>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(screen.getByTestId('empty-state-test-id').outerHTML).toMatchSnapshot();
   });
 
   test('Main variant small', () => {
-    const view = render(
-      <EmptyState variant={EmptyStateVariant.small}>
-        <Title headingLevel="h3" size={TitleSizes.md}>EmptyState small</Title>
+    render(
+      <EmptyState variant={EmptyStateVariant.small} data-testid="empty-state-test-id">
+        <Title headingLevel="h3" size={TitleSizes.md}>
+          EmptyState small
+        </Title>
       </EmptyState>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(screen.getByTestId('empty-state-test-id').outerHTML).toMatchSnapshot();
   });
 
   test('Main variant xs', () => {
-    const view = render(
-      <EmptyState variant={EmptyStateVariant.xs}>
-        <Title headingLevel="h3" size={TitleSizes.md}>EmptyState small</Title>
+    render(
+      <EmptyState variant={EmptyStateVariant.xs} data-testid="empty-state-test-id">
+        <Title headingLevel="h3" size={TitleSizes.md}>
+          EmptyState small
+        </Title>
       </EmptyState>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(screen.getByTestId('empty-state-test-id').outerHTML).toMatchSnapshot();
   });
 
   test('Body', () => {
-    const view = shallow(<EmptyStateBody className="custom-empty-state-body" id="empty-state-1" />);
-    expect(view.props().className).toBe('pf-c-empty-state__body custom-empty-state-body');
-    expect(view.props().id).toBe('empty-state-1');
+    render(<EmptyStateBody data-testid="body-test-id" />);
+    expect(screen.getByTestId('body-test-id').className).toContain('pf-c-empty-state__body');
   });
 
   test('Secondary Action', () => {
-    const view = shallow(<EmptyStateSecondaryActions className="custom-empty-state-secondary" id="empty-state-2" />);
-    expect(view.props().className).toBe('pf-c-empty-state__secondary custom-empty-state-secondary');
-    expect(view.props().id).toBe('empty-state-2');
+    render(<EmptyStateSecondaryActions data-testid="actions-test-id" />);
+    expect(screen.getByTestId('actions-test-id').className).toContain('pf-c-empty-state__secondary');
   });
 
   test('Icon', () => {
-    const view = shallow(
-      <EmptyStateIcon icon={AddressBookIcon} className="custom-empty-state-icon" id="empty-state-icon" />
-    );
-    expect(view.props().className).toBe('pf-c-empty-state__icon custom-empty-state-icon');
-    expect(view.props().id).toBe('empty-state-icon');
-  });
-
-  test('Wrap icon in a div', () => {
-    const view = shallow(
-      <EmptyStateIcon
-        variant="container"
-        component={AddressBookIcon}
-        className="custom-empty-state-icon"
-        id="empty-state-icon"
-      />
-    );
-    expect(view.find('div').props().className).toBe('pf-c-empty-state__icon custom-empty-state-icon');
-    expect(view.find('AddressBookIcon').length).toBe(1);
+    render(<EmptyStateIcon icon={AddressBookIcon} data-testid="icon-test-id" />);
+    expect(screen.getByTestId('icon-test-id').outerHTML).toContain('pf-c-empty-state__icon');
   });
 
   test('Primary div', () => {
-    const view = shallow(
-      <EmptyStatePrimary className="custom-empty-state-prim-cls" id="empty-state-prim-id">
+    render(
+      <EmptyStatePrimary data-testid="primary-test-id">
         <Button variant="link">Link</Button>
       </EmptyStatePrimary>
     );
-    expect(view.props().className).toBe('pf-c-empty-state__primary custom-empty-state-prim-cls');
-    expect(view.props().id).toBe('empty-state-prim-id');
+    expect(screen.getByTestId('primary-test-id').className).toContain('pf-c-empty-state__primary');
   });
 
   test('Full height', () => {
-    const view = render(
-      <EmptyState isFullHeight variant={EmptyStateVariant.large}>
-        <Title headingLevel="h3" size={TitleSizes.md}>EmptyState large</Title>
+    render(
+      <EmptyState isFullHeight variant={EmptyStateVariant.large} data-testid="empty-state-test-id">
+        <Title headingLevel="h3" size={TitleSizes.md}>
+          EmptyState large
+        </Title>
       </EmptyState>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(screen.getByTestId('empty-state-test-id').outerHTML).toMatchSnapshot();
   });
-
 });
