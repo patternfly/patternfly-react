@@ -143,7 +143,7 @@ export class Table extends React.Component<TableProps, {}> {
     gridBreakPoint: TableGridBreakpoint.gridMd,
     role: 'grid',
     canSelectAll: true,
-    canCollapseAll: true,
+    canCollapseAll: false,
     isHeaderSelectDisabled: false,
     selectVariant: 'checkbox',
     collapseAllAriaLabel: '',
