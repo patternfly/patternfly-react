@@ -506,9 +506,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     });
   };
 
-  onClick = (_e: React.MouseEvent) => {
+  onClick = (e: React.MouseEvent) => {
     if (!this.props.isOpen) {
-      this.onToggle(true, _e);
+      this.onToggle(true, e);
     }
   };
 

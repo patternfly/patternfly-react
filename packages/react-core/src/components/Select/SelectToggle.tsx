@@ -290,8 +290,8 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
             )}
             aria-label={ariaLabel}
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            onClick={_event => {
-              onToggle(!isOpen, _event);
+            onClick={event => {
+              onToggle(!isOpen, event);
               if (isOpen) {
                 onClose();
               }
@@ -318,9 +318,9 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               className
             )}
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            onClick={_event => {
+            onClick={event => {
               if (!isDisabled) {
-                onToggle(!isOpen, _event);
+                onToggle(!isOpen, event);
                 if (isOpen) {
                   onClose();
                 }
@@ -334,8 +334,8 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               type={type}
               className={css(buttonStyles.button, styles.selectToggleButton, styles.modifiers.plain)}
               aria-label={ariaLabel}
-              onClick={_event => {
-                onToggle(!isOpen, _event);
+              onClick={event => {
+                onToggle(!isOpen, event);
                 if (isOpen) {
                   onClose();
                 }
