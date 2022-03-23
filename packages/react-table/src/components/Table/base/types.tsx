@@ -58,6 +58,8 @@ export interface TdSelectType {
 }
 
 export interface TdActionsType {
+  /** The row index */
+  rowIndex?: number;
   /** Cell actions */
   items: IActions;
   /** Whether to disable the actions */
