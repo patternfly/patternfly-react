@@ -122,7 +122,7 @@ export interface SelectProps
     isPlaceholder?: boolean
   ) => void;
   /** Callback for toggle button behavior */
-  onToggle: (isExpanded: boolean) => void;
+  onToggle: (isExpanded: boolean, event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent | Event) => void;
   /** Callback for typeahead clear button */
   onClear?: (event: React.MouseEvent) => void;
   /** Optional callback for custom filtering */
@@ -159,6 +159,8 @@ export interface SelectProps
   isInputValuePersisted?: boolean;
   /** @beta Flag for retaining filter results on blur from keyboard-entered typeahead text */
   isInputFilterPersisted?: boolean;
+  /** Flag indicating the typeahead input value should reset upon selection */
+  shouldResetOnSelect?: boolean;
   /** Content rendered in the footer of the select menu */
   footer?: React.ReactNode;
 }
@@ -232,7 +234,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     chipGroupComponent: null,
     isInputValuePersisted: false,
     isInputFilterPersisted: false,
-    isCreateSelectOptionObject: false
+    isCreateSelectOptionObject: false,
+    shouldResetOnSelect: true
   };
 
   state: SelectState = {
@@ -328,7 +331,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     this.setState({ focusFirstOption: true });
   };
 
-  onToggle = (isExpanded: boolean) => {
+  onToggle = (isExpanded: boolean, e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent | Event) => {
     const { isInputValuePersisted, onSelect, onToggle, hasInlineFilter } = this.props;
     if (!isExpanded && isInputValuePersisted && onSelect) {
       onSelect(undefined, this.inputRef.current ? this.inputRef.current.value : '');
@@ -338,7 +341,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         focusFirstOption: true
       });
     }
-    onToggle(isExpanded);
+    onToggle(isExpanded, e);
   };
 
   onClose = () => {
@@ -358,7 +361,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value.toString() !== '' && !this.props.isOpen) {
-      this.onToggle(true);
+      this.onToggle(true, e);
     }
 
     if (this.props.onTypeaheadInputChanged) {
@@ -503,9 +506,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     });
   };
 
-  onClick = (_e: React.MouseEvent) => {
+  onClick = (e: React.MouseEvent) => {
     if (!this.props.isOpen) {
-      this.onToggle(true);
+      this.onToggle(true, e);
     }
   };
 
@@ -678,10 +681,20 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           typeaheadCurrIndex !== -1 && // do not allow selection without moving to an initial option
           (typeaheadActiveChild || (this.refCollection[0] && this.refCollection[0][0]))
         ) {
-          this.setState({
-            typeaheadInputValue:
-              (typeaheadActiveChild && typeaheadActiveChild.innerText) || this.refCollection[0][0].innerText
-          });
+          if (typeaheadActiveChild) {
+            const hasDescriptionElm = typeaheadActiveChild.childElementCount > 1;
+            const typeaheadActiveChildText = hasDescriptionElm
+              ? (typeaheadActiveChild.firstChild as HTMLElement).innerText
+              : typeaheadActiveChild.innerText;
+            this.setState({
+              typeaheadInputValue: typeaheadActiveChildText
+            });
+          } else {
+            this.setState({
+              typeaheadInputValue: this.refCollection[0][0].innerText
+            });
+          }
+
           if (typeaheadActiveChild) {
             typeaheadActiveChild.click();
           } else {
@@ -755,7 +768,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         } else {
           // Close if there is no footer
           if (!this.props.footer) {
-            this.onToggle(false);
+            this.onToggle(false, null);
             this.onClose();
           } else {
             // has footer
@@ -764,14 +777,14 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             if (this.inputRef.current === document.activeElement) {
               if (shiftKey) {
                 // close toggle if shift key and tab on input
-                this.onToggle(false);
+                this.onToggle(false, null);
                 this.onClose();
               } else {
                 // tab to first tabbable item in footer
                 if (tabbableItems[0]) {
                   tabbableItems[0].focus();
                 } else {
-                  this.onToggle(false);
+                  this.onToggle(false, null);
                   this.onClose();
                 }
               }
@@ -791,7 +804,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   tabbableItems[currentElementIndex + 1].focus();
                 } else {
                   // no next item, close toggle
-                  this.onToggle(false);
+                  this.onToggle(false, null);
                   this.inputRef.current.focus();
                   this.onClose();
                 }
@@ -947,6 +960,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       footer,
       loadingVariant,
       isCreateSelectOptionObject,
+      shouldResetOnSelect,
       ...props
     } = this.props;
     const {
@@ -1085,7 +1099,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 } else if (event.key === KeyTypes.Tab && variant !== SelectVariant.checkbox && this.props.footer) {
                   // tab to footer or close menu if shift key
                   if (event.shiftKey) {
-                    this.onToggle(false);
+                    this.onToggle(false, event);
                   } else {
                     const tabbableItems = findTabbableElements(this.footerRef, SelectFooterTabbableItems);
                     if (tabbableItems.length > 0) {
@@ -1093,7 +1107,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                       event.stopPropagation();
                       event.preventDefault();
                     } else {
-                      this.onToggle(false);
+                      this.onToggle(false, event);
                     }
                   }
                 } else if (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) {
@@ -1367,7 +1381,14 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       <GenerateId>
         {randomId => (
           <SelectContext.Provider
-            value={{ onSelect, onFavorite, onClose: this.onClose, variant, inputIdPrefix: inputIdPrefix || randomId }}
+            value={{
+              onSelect,
+              onFavorite,
+              onClose: this.onClose,
+              variant,
+              inputIdPrefix: inputIdPrefix || randomId,
+              shouldResetOnSelect
+            }}
           >
             {menuAppendTo === 'inline' ? (
               mainContainer

@@ -979,6 +979,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             isOpen={typeaheadMultiisOpen}
             aria-labelledby={titleId}
             placeholderText="Select a state"
+            shouldResetOnSelect={false}
           >
             {this.state.typeaheadOptions.map((option, index) => (
               <SelectOption isDisabled={option.disabled} key={index} value={option.value} id={option.value} />

@@ -176,6 +176,17 @@ describe('Select Test', () => {
     cy.get('.pf-c-chip').should('not.exist');
   });
 
+  it('Verify false value of shouldResetOnSelect will not clear typeahead input after selection', () => {
+    cy.get('#typeahead-multi-select').click();
+    cy.get('#typeahead-multi-select-select-multi-typeahead-typeahead').should('contain.value', '');
+    cy.get('#typeahead-multi-select-select-multi-typeahead-typeahead').type('Florida');
+    cy.get('#Florida').click();
+    cy.get('.pf-c-chip')
+      .contains('Florida')
+      .should('exist');
+    cy.get('#typeahead-multi-select-select-multi-typeahead-typeahead').should('contain.value', 'Florida');
+  });
+
   xit('Verify Custom Typeahead Multi Select', () => {
     cy.get('#custom-typeahead-multi-select').click();
     cy.get('#Florida-2').click();
