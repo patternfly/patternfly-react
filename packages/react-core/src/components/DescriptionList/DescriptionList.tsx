@@ -30,7 +30,7 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
   isFluid?: boolean;
   /** Sets the the default placement of description list groups to fill from top to bottom. */
   isFillColumns?: boolean;
-  /** Sets the number of columns on the description list */
+  /** Sets the number of columns on the description list at various breakpoints */
   columnModifier?: {
     default?: '1Col' | '2Col' | '3Col';
     sm?: '1Col' | '2Col' | '3Col';
@@ -39,7 +39,7 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
     xl?: '1Col' | '2Col' | '3Col';
     '2xl'?: '1Col' | '2Col' | '3Col';
   };
-  /** Indicates how the menu will align at screen size breakpoints. Default alignment is set via the position property. */
+  /** Indicates how the menu will align at various breakpoints. */
   orientation?: {
     sm?: 'vertical' | 'horizontal';
     md?: 'vertical' | 'horizontal';
@@ -47,7 +47,7 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
     xl?: 'vertical' | 'horizontal';
     '2xl'?: 'vertical' | 'horizontal';
   };
-  /** Sets the breakpoint modifiers for the autofit feature */
+  /** Sets the minimum column size for the auto-fit (isAutoFit) layout at various breakpoints. */
   autoFitMinModifier?: {
     default?: string;
     sm?: string;
@@ -56,7 +56,7 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
     xl?: string;
     '2xl'?: string;
   };
-  /** Sets the breakpoint modifiers for the horizontal width of the term column */
+  /** Sets the horizontal description list's term column width at various breakpoints. */
   horizontalTermWidthModifier?: {
     default?: string;
     sm?: string;
