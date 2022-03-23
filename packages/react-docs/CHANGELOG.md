@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.62.0 (2022-03-23)
+
+
+### Features
+
+* **CalendarMonth:** make date prop optional ([#7077](https://github.com/patternfly/patternfly-react/issues/7077)) ([e388854](https://github.com/patternfly/patternfly-react/commit/e388854e26b57d7cada63832b7f52e9c7bdad9a0))
+
+
+
+
+
 ## 5.61.2 (2022-03-22)
 
 **Note:** Version bump only for package @patternfly/react-docs
