@@ -1,5 +1,5 @@
 import { ComponentType } from 'react';
-import { action, observable } from 'mobx';
+import { action, computed, observable } from 'mobx';
 import * as _ from 'lodash';
 import {
   Controller,
@@ -16,7 +16,8 @@ import {
   EventListener,
   ModelKind,
   LayoutFactory,
-  Layout
+  Layout,
+  ViewPaddingSettings
 } from './types';
 import defaultElementFactory from './elements/defaultElementFactory';
 import Stateful from './utils/Stateful';
@@ -27,6 +28,25 @@ export class Visualization extends Stateful implements Controller {
 
   @observable.ref
   private graph?: Graph;
+
+  @observable
+  private viewConstraintsEnabled: boolean = true;
+
+  @observable.ref
+  private viewPaddingSettings: ViewPaddingSettings = {
+    paddingPercentage: 50
+  };
+
+  @computed
+  private get viewPadding(): number {
+    if (this.viewPaddingSettings.paddingPercentage) {
+      const { width: viewWidth, height: viewHeight } = this.graph.getBounds();
+      return (
+        Math.max(viewWidth, viewHeight) * this.graph.getScale() * (this.viewPaddingSettings.paddingPercentage / 100)
+      );
+    }
+    return this.viewPaddingSettings.padding;
+  }
 
   private layoutFactories: LayoutFactory[] = [];
 
@@ -220,6 +240,22 @@ export class Visualization extends Stateful implements Controller {
       }
     }
     throw new Error(`Could not find layout for type: ${type}`);
+  }
+
+  setRenderConstraint(constrained: boolean, viewPadding?: ViewPaddingSettings) {
+    this.viewConstraintsEnabled = constrained;
+
+    // only update the view padding if given, this makes for ease of turning on/off w/o losing settings
+    if (viewPadding !== undefined) {
+      this.viewPaddingSettings = viewPadding;
+    }
+  }
+
+  shouldRenderNode(node: Node): boolean {
+    if (!this.viewConstraintsEnabled) {
+      return true;
+    }
+    return this.graph.isNodeInView(node, { padding: this.viewPadding });
   }
 
   registerComponentFactory(factory: ComponentFactory) {

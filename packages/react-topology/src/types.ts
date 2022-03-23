@@ -142,10 +142,17 @@ export interface ScaleDetailsThresholds {
   medium: number;
 }
 
-export interface ViewPaddingSettings {
-  padding?: number;
-  paddingPercentage?: number;
+type Never<Type> = { [K in keyof Type]?: never };
+type EitherNotBoth<TypeA, TypeB> = (TypeA & Never<TypeB>) | (TypeB & Never<TypeA>);
+
+interface ViewPaddingPixels {
+  padding: number; // Set this to Number.POSITIVE_INFINITY to bypass the checks
 }
+interface ViewPaddingPercentage {
+  paddingPercentage: number;
+}
+
+export type ViewPaddingSettings = EitherNotBoth<ViewPaddingPixels, ViewPaddingPercentage>;
 
 export interface GraphModel extends ElementModel {
   layout?: string;
@@ -258,8 +265,6 @@ export interface Graph<E extends GraphModel = GraphModel, D = any> extends Graph
   setDetailsLevelThresholds(settings: ScaleDetailsThresholds | undefined): void;
   getDetailsLevelThresholds(): Readonly<ScaleDetailsThresholds> | undefined;
   getDetailsLevel(): ScaleDetailsLevel;
-  setViewPaddingSettings(viewPaddingSettings: ViewPaddingSettings): void;
-  getViewPaddingSettings(): ViewPaddingSettings;
   getLayout(): string | undefined;
   setLayout(type: string | undefined): void;
   layout(): void;
@@ -271,7 +276,7 @@ export interface Graph<E extends GraphModel = GraphModel, D = any> extends Graph
   scaleBy(scale: number, location?: Point): void;
   fit(padding?: number): void;
   panIntoView(element: Node, options?: { offset?: number; minimumVisible?: number }): void;
-  isNodeInView(element: Node): boolean;
+  isNodeInView(element: Node, options?: { padding: number }): boolean;
 }
 
 export const isGraph = (element: GraphElement): element is Graph => element && element.getKind() === ModelKind.graph;
@@ -318,6 +323,8 @@ export interface Controller extends WithState {
   removeEventListener(type: string, listener: EventListener): Controller;
   fireEvent(type: string, ...args: any): void;
   getElements(): GraphElement[];
+  setRenderConstraint(constrained: boolean, viewPadding?: ViewPaddingSettings): void;
+  shouldRenderNode(node: Node): boolean;
 }
 
 export interface ElementEvent {
