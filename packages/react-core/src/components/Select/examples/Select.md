@@ -10,10 +10,6 @@ import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 ## Examples
 
-When passing in a value to the `menuAppendTo` prop on the Select component, passing in `document.body` should be avoided if possible as doing so can cause accessibility issues. These issues can include (but may not be limited to) being unable to enter the contents of the Select options via assistive technologies (like keyboards or screen readers).
-
-Instead prefer to append to `"parent"`, as the same result can be achieved without sacrificing accessibility like using `document.body`.
-
 ### Single
 
 ```js
@@ -2215,6 +2211,10 @@ class SingleSelectInput extends React.Component {
 ```
 
 ### Appending document body vs parent
+
+When passing in a value to the `menuAppendTo` prop on the Select component, passing in `document.body` should be avoided if possible as doing so can cause accessibility issues. These issues can include (but may not be limited to) being unable to enter the contents of the Select options via assistive technologies (like keyboards or screen readers).
+
+Instead prefer to append to `"parent"`, as the same result can be achieved without sacrificing accessibility like using `document.body`.
 
 In this example, while both Select variants handle focus management within their dropdown contents the same way when the dropdown is opened, you will notice a difference when you try pressing the Tab key after selecting an option.
 
