@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.47.0 (2022-03-23)
+
+
+### Features
+
+* **Select:** add flag to not reset on select, add event to toggle callback ([#7093](https://github.com/patternfly/patternfly-react/issues/7093)) ([ec2afb1](https://github.com/patternfly/patternfly-react/commit/ec2afb1ea414f63a2fadc56bbaa968a0caad5fd6))
+
+
+
+
+
 ## 4.46.2 (2022-03-23)
 
 **Note:** Version bump only for package @patternfly/react-log-viewer
