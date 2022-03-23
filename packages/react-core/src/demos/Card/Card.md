@@ -565,18 +565,18 @@ class CardViewBasic extends React.Component {
           </PageSection>
           <PageSection isFilled>
             <Gallery hasGutter role="listbox" aria-multiselectable="true" aria-activedescendant={this.state.focusedItemId} aria-label="card container">
-              <Card 
-                isOption
+              <Card
                 isSelectable 
                 selectableVariant="raised" 
                 isCompact
                 id="add-card"
                 onFocus={() => this.onFocus("add-card")}
+                aria-describedby="#add-card-title"
               >
                 <Bullseye>
                   <EmptyState variant={EmptyStateVariant.xs}>
                     <EmptyStateIcon icon={PlusCircleIcon} />
-                    <Title headingLevel="h2" size="md">
+                    <Title headingLevel="h2" size="md" id="add-card-title">
                       Add a new card to your page
                     </Title>
                     <EmptyStateSecondaryActions>
