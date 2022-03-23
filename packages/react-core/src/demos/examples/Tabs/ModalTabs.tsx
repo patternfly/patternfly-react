@@ -89,9 +89,10 @@ export const ModalTabs: React.FunctionComponent = () => {
           </TextContent>
         </PageSection>
         <PageSection isFilled>
-          <Gallery hasGutter>
+          <Gallery hasGutter role="listbox" aria-label="Selectable cards">
             {products.map(product => (
               <Card
+                isOption
                 isSelectable
                 isSelectableRaised
                 isCompact

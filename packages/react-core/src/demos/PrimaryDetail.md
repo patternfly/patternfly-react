@@ -1100,6 +1100,7 @@ class PrimaryDetailCardView extends React.Component {
         return;
       }
       if ([13, 32].includes(event.keyCode)) {
+        event.preventDefault();
         const newSelected = event.currentTarget.id;
         this.setState({
           activeCard: newSelected,
@@ -1262,7 +1263,7 @@ class PrimaryDetailCardView extends React.Component {
     };
 
     const drawerContent = (
-      <Gallery hasGutter>
+      <Gallery hasGutter role="listbox" aria-label="Selectable cards">
         {filtered.map((product, key) => (
           <React.Fragment>
             <Card
@@ -1271,6 +1272,7 @@ class PrimaryDetailCardView extends React.Component {
               id={'card-view-' + key}
               onKeyDown={this.onKeyDown}
               onClick={this.onCardClick}
+              isOption
               isSelectable
               isSelected={activeCard === key}
             >

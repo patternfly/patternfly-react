@@ -63,11 +63,12 @@ export const CardSelectable: React.FunctionComponent = () => {
   ];
 
   return (
-    <React.Fragment>
+    <div role="listbox" aria-label="Selectable cards">
       <Card
         id="selectable-first-card"
         onKeyDown={onKeyDown}
         onClick={onClick}
+        isOption
         isSelectableRaised
         isSelected={selected === 'selectable-first-card'}
       >
@@ -91,6 +92,7 @@ export const CardSelectable: React.FunctionComponent = () => {
         id="selectable-second-card"
         onKeyDown={onKeyDown}
         onClick={onClick}
+        isOption
         isSelectableRaised
         isSelected={selected === 'selectable-second-card'}
       >
@@ -98,10 +100,10 @@ export const CardSelectable: React.FunctionComponent = () => {
         <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
       </Card>
       <br />
-      <Card id="selectable-third-card" isSelectableRaised isDisabledRaised>
+      <Card id="selectable-third-card" isOption isSelectableRaised isDisabledRaised aria-disabled>
         <CardTitle>Third card</CardTitle>
         <CardBody>This is a raised but disabled card.</CardBody>
       </Card>
-    </React.Fragment>
+    </div>
   );
 };

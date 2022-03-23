@@ -60,11 +60,12 @@ export const CardLegacySelectable: React.FunctionComponent = () => {
   ];
 
   return (
-    <>
+    <div role="listbox" aria-label="Selectable cards">
       <Card
         id="legacy-first-card"
         onKeyDown={onKeyDown}
         onClick={onClick}
+        isOption
         isSelectable
         isSelected={selected === 'legacy-first-card'}
       >
@@ -88,12 +89,13 @@ export const CardLegacySelectable: React.FunctionComponent = () => {
         id="legacy-second-card"
         onKeyDown={onKeyDown}
         onClick={onClick}
+        isOption
         isSelectable
         isSelected={selected === 'legacy-second-card'}
       >
         <CardTitle>Second card</CardTitle>
         <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
       </Card>
-    </>
+    </div>
   );
 };
