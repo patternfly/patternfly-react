@@ -1,5 +1,6 @@
 export * from './BaseLayout';
 export * from './ColaLayout';
+export * from './ConcentricLayout';
 export * from './DagreLayout';
 export * from './ForceLayout';
 export * from './GridLayout';
