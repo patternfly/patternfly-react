@@ -18,10 +18,6 @@ import avatarImg from '../../Avatar/examples/avatarImg.svg';
 
 ## Examples
 
-When passing in a value to the `menuAppendTo` prop on the Dropdown component, passing in `document.body` should be avoided if possible as doing so can cause accessibility issues. These issues can include (but may not be limited to) being unable to enter the contents of the Dropdown options via assistive technologies (like keyboards or screen readers).
-
-Instead prefer to append to `"parent"`, as the same result can be achieved without sacrificing accessibility like using `document.body`.
-
 ### Basic
 
 ```js
@@ -1490,6 +1486,12 @@ class ImageTextDropdown extends React.Component {
 ```
 
 ### Appending document body vs parent
+
+When passing in a value to the `menuAppendTo` prop on the Dropdown component, passing in `document.body` should be avoided if possible as doing so can cause accessibility issues. These issues can include (but may not be limited to) being unable to enter the contents of the Dropdown options via assistive technologies (like keyboards or screen readers).
+
+Instead prefer to append to `"parent"`, as the same result can be achieved without sacrificing accessibility like using `document.body`.
+
+In this example, while both variants retain focus on their respective Dropdown component after making a selection, the `document.body` options cannot be navigated to via Voice Over.
 
 ```js
 import React from 'react';
