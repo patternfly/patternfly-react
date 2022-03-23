@@ -49,13 +49,14 @@ export interface TimePickerProps
   id?: string;
   /** Width of the time picker. */
   width?: string;
-  /** The container to append the menu to. Defaults to 'inline'
+  /** The container to append the menu to. Defaults to 'inline'.
    * If your menu is being cut off you can append it to an element higher up the DOM tree.
    * Some examples:
+   * menuAppendTo="parent"
    * menuAppendTo={() => document.body}
    * menuAppendTo={document.getElementById('target')}
    */
-  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline';
+  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
   /** Size of step between time options in minutes.*/
   stepMinutes?: number;
   /** Additional props for input field */
@@ -81,7 +82,7 @@ interface TimePickerState {
 
 export class TimePicker extends React.Component<TimePickerProps, TimePickerState> {
   static displayName = 'TimePicker';
-  private parentRef = React.createRef<HTMLDivElement>();
+  private baseComponentRef = React.createRef<any>();
   private toggleRef = React.createRef<HTMLDivElement>();
   private inputRef = React.createRef<HTMLInputElement>();
   private menuRef = React.createRef<HTMLDivElement>();
@@ -97,6 +98,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     delimiter: ':',
     'aria-label': 'Time picker',
     width: '150px',
+    menuAppendTo: 'inline',
     stepMinutes: 30,
     inputProps: {},
     minTime: '',
@@ -141,7 +143,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   }
 
   onDocClick = (event: MouseEvent | TouchEvent) => {
-    const clickedOnToggle = this.parentRef?.current?.contains(event.target as Node);
+    const clickedOnToggle = this.toggleRef?.current?.contains(event.target as Node);
     const clickedWithinMenu = this.menuRef?.current?.contains(event.target as Node);
     if (this.state.isOpen && !(clickedOnToggle || clickedWithinMenu)) {
       this.onToggle(false);
@@ -362,7 +364,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     });
   };
 
-  onInputFocus = (e: any) => {
+  onInputClick = (e: any) => {
     if (!this.state.isOpen) {
       this.onToggle(true);
     }
@@ -429,10 +431,17 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     const isValidFormat = this.isValidFormat(timeState);
     const randomId = id || getUniqueId('time-picker');
 
+    const getParentElement = () => {
+      if (this.baseComponentRef && this.baseComponentRef.current) {
+        return this.baseComponentRef.current.parentElement;
+      }
+      return null;
+    };
+
     const menuContainer = (
       <Menu ref={this.menuRef} isScrollable>
         <MenuContent maxMenuHeight="200px">
-          <MenuList aria-labelledby={`${randomId}-input`}>
+          <MenuList aria-label={ariaLabel}>
             {options.map((option, index) => (
               <MenuItem onClick={this.onSelect} key={option} id={`${randomId}-option-${index}`}>
                 {option}
@@ -445,6 +454,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
 
     const textInput = (
       <TextInput
+        aria-haspopup="menu"
         className={css(formStyles.formControl)}
         id={`${randomId}-input`}
         aria-label={ariaLabel}
@@ -453,8 +463,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
         value={timeState || ''}
         type="text"
         iconVariant="clock"
-        onClick={this.onInputFocus}
-        onFocus={this.onInputFocus}
+        onClick={this.onInputClick}
         onChange={this.onInputChange}
         onBlur={this.onBlur}
         autoComplete="off"
@@ -465,14 +474,14 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     );
 
     return (
-      <div className={css(datePickerStyles.datePicker, className)}>
+      <div ref={this.baseComponentRef} className={css(datePickerStyles.datePicker, className)}>
         <div className={css(datePickerStyles.datePickerInput)} style={style} {...props}>
           <InputGroup>
-            <div id={randomId} ref={this.parentRef}>
+            <div id={randomId}>
               <div ref={this.toggleRef} style={{ paddingLeft: '0' }}>
                 {menuAppendTo !== 'inline' ? (
                   <Popper
-                    appendTo={this.parentRef.current}
+                    appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
                     trigger={textInput}
                     popper={menuContainer}
                     isVisible={isOpen}
