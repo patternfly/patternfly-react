@@ -25,15 +25,13 @@ export const CustomControlCodeEditor: React.FunctionComponent = () => {
   );
 
   return (
-    <>
-      <CodeEditor
-        isDownloadEnabled
-        isCopyEnabled
-        height="400px"
-        customControls={customControl}
-        code={code}
-        onChange={onChange}
-      />
-    </>
+    <CodeEditor
+      isDownloadEnabled
+      isCopyEnabled
+      height="400px"
+      customControls={customControl}
+      code={code}
+      onChange={onChange}
+    />
   );
 };

@@ -59,17 +59,15 @@ export const ShortcutMainHeaderCodeEditor: React.FunctionComponent = () => {
   };
 
   return (
-    <>
-      <CodeEditor
-        headerMainContent="Shortcut Example"
-        shortcutsPopoverProps={shortcutsPopoverProps}
-        isLanguageLabelVisible
-        code="Some example content"
-        onChange={onChange}
-        language={Language.javascript}
-        onEditorDidMount={onEditorDidMount}
-        height="400px"
-      />
-    </>
+    <CodeEditor
+      headerMainContent="Shortcut Example"
+      shortcutsPopoverProps={shortcutsPopoverProps}
+      isLanguageLabelVisible
+      code="Some example content"
+      onChange={onChange}
+      language={Language.javascript}
+      onEditorDidMount={onEditorDidMount}
+      height="400px"
+    />
   );
 };
