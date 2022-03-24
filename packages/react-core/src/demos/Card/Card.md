@@ -566,6 +566,7 @@ class CardViewBasic extends React.Component {
           <PageSection isFilled>
             <Gallery hasGutter role="listbox" aria-multiselectable="true" aria-activedescendant={this.state.focusedItemId} aria-label="card container">
               <Card
+                isOption
                 isSelectable 
                 selectableVariant="raised" 
                 isCompact
