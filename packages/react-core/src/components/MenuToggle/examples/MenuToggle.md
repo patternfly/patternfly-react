@@ -10,7 +10,7 @@ import './MenuToggle.css'
 
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
-import avatarImg from './avatarImg.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 ## Examples
 
@@ -156,12 +156,12 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 ```ts
 import React from 'react';
 import { MenuToggle, Avatar } from '@patternfly/react-core';
-import avatarImg from './avatarImg.svg';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 <React.Fragment>
-  <MenuToggle icon={<Avatar src={avatarImg} alt="avatar" />}>Ned Username</MenuToggle>{' '}
-  <MenuToggle icon={<Avatar src={avatarImg} alt="avatar" />} isExpanded>Ned Username</MenuToggle>{' '}
-  <MenuToggle icon={<Avatar src={avatarImg} alt="avatar" />} isDisabled>Ned Username</MenuToggle>
+  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />}>Ned Username</MenuToggle>{' '}
+  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />} isExpanded>Ned Username</MenuToggle>{' '}
+  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />} isDisabled>Ned Username</MenuToggle>
 </React.Fragment>
 ```
 
