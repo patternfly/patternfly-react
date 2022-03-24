@@ -21,7 +21,7 @@ When writing examples:
 
 ## Testing
 
-PatternFly React currently uses [Jest](https://facebook.github.io/jest/) with [React Testing Library](https://github.com/testing-library/react-testing-library) for running unit tests and [Cypress](https://www.cypress.io/) for running integration tests.
+PatternFly React currently uses [Jest](https://facebook.github.io/jest/) with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for running unit tests and [Cypress](https://www.cypress.io/) for running integration tests.
 
 ### Jest + React Testing Library
 
