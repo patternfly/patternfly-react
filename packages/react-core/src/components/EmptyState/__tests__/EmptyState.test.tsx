@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { render, screen } from '@testing-library/react';
+import "@testing-library/jest-dom";
 
 import AddressBookIcon from '@patternfly/react-icons/dist/esm/icons/address-book-icon';
 import { EmptyState, EmptyStateVariant } from '../EmptyState';
@@ -66,19 +67,33 @@ describe('EmptyState', () => {
   });
 
   test('Body', () => {
-    render(<EmptyStateBody data-testid="body-test-id" />);
-    expect(screen.getByTestId('body-test-id').className).toContain('pf-c-empty-state__body');
+    render(<EmptyStateBody className="custom-empty-state-body" data-testid="body-test-id" />);
+    expect(screen.getByTestId('body-test-id')).toHaveClass('custom-empty-state-body pf-c-empty-state__body');
   });
 
   test('Secondary Action', () => {
-    render(<EmptyStateSecondaryActions data-testid="actions-test-id" />);
-    expect(screen.getByTestId('actions-test-id').className).toContain('pf-c-empty-state__secondary');
+    render(<EmptyStateSecondaryActions className="custom-empty-state-secondary" data-testid="actions-test-id" />);
+    expect(screen.getByTestId('actions-test-id')).toHaveClass('custom-empty-state-secondary pf-c-empty-state__secondary');
   });
 
   test('Icon', () => {
     render(<EmptyStateIcon icon={AddressBookIcon} data-testid="icon-test-id" />);
     expect(screen.getByTestId('icon-test-id').outerHTML).toContain('pf-c-empty-state__icon');
   });
+
+  test('Wrap icon in a div', () => {
+    const view = render(
+      <EmptyStateIcon
+        variant="container"
+        component={AddressBookIcon}
+        className="custom-empty-state-icon"
+        id="empty-state-icon"
+      />
+    );
+
+    expect(view.container.querySelector('div')).toHaveClass('pf-c-empty-state__icon custom-empty-state-icon');
+    expect(view.container.querySelector('svg')).toBeInTheDocument();
+  })
 
   test('Primary div', () => {
     render(

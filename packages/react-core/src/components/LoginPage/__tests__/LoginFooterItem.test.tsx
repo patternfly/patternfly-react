@@ -1,16 +1,19 @@
-import * as React from 'react';
+import React from 'react';
+
 import { render, screen } from '@testing-library/react';
+import "@testing-library/jest-dom";
+
 import { LoginFooterItem } from '../LoginFooterItem';
 
 describe('LoginFooterItem', () => {
   test('renders with PatternFly Core styles', () => {
-    render(<LoginFooterItem target="_self" href="#" />);
-    expect(screen.getByRole('link').outerHTML).toMatchSnapshot();
+    const { asFragment } = render(<LoginFooterItem target="_self" href="#" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('className is added to the root element', () => {
     render(<LoginFooterItem className="extra-class" />);
-    expect(screen.getByRole('link').outerHTML).toMatchSnapshot();
+    expect(screen.getByRole('link')).toHaveClass('extra-class');
   });
 
   test('with custom node', () => {
@@ -21,6 +24,7 @@ describe('LoginFooterItem', () => {
         <CustomNode />
       </LoginFooterItem>
     );
-    expect(screen.getByText('My custom node').outerHTML).toMatchSnapshot();
+
+    expect(screen.getByText('My custom node')).toBeInTheDocument();
   });
 });

@@ -8,30 +8,30 @@ import { LabelGroup } from '../index';
 
 describe('LabelGroup', () => {
   test('label group default', () => {
-    render(
-      <LabelGroup data-testid="label-group-test-id">
+    const { asFragment } = render(
+      <LabelGroup>
         <Label>1.1</Label>
       </LabelGroup>
     );
-    expect(screen.getByTestId('label-group-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('label group with category', () => {
-    render(
-      <LabelGroup categoryName="category" data-testid="label-group-test-id">
+    const { asFragment } = render(
+      <LabelGroup categoryName="category">
         <Label>1.1</Label>
       </LabelGroup>
     );
-    expect(screen.getByTestId('label-group-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('label group with closable category', () => {
-    render(
-      <LabelGroup categoryName="category" isClosable data-testid="label-group-test-id">
+    const { asFragment } = render(
+      <LabelGroup categoryName="category" isClosable>
         <Label>1.1</Label>
       </LabelGroup>
     );
-    expect(screen.getByTestId('label-group-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('label group expanded', () => {
@@ -56,24 +56,25 @@ describe('LabelGroup', () => {
     expect(screen.queryByTestId('label-group-test-id')).toBeNull();
   });
 
+  // TODO, fix test - no tooltip shows up with this categoryName.zzw
   test('label group with category and tooltip', () => {
-    render(
-      <LabelGroup categoryName="A very long category name" data-testid="label-group-test-id">
+    const { asFragment } = render(
+      <LabelGroup categoryName="A very long category name">
         <Label>1.1</Label>
       </LabelGroup>
     );
-    expect(screen.getByTestId('label-group-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('label group compact', () => {
-    render(
-      <LabelGroup isCompact data-testid="label-group-test-id">
+    const { asFragment } = render(
+      <LabelGroup isCompact>
         <Label isCompact>1</Label>
         <Label isCompact>2</Label>
         <Label isCompact>3</Label>
         <Label isCompact>4</Label>
       </LabelGroup>
     );
-    expect(screen.getByTestId('label-group-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

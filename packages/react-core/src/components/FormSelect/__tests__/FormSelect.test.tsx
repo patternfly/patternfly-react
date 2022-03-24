@@ -2,7 +2,9 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
+import { Form } from '../../Form';
 import { FormSelect } from '../FormSelect';
 import { FormSelectOption } from '../FormSelectOption';
 import { FormSelectOptionGroup } from '../FormSelectOptionGroup';
@@ -151,15 +153,6 @@ describe('FormSelect', () => {
     expect(formSelect.outerHTML).toMatchSnapshot();
   });
 
-  test('validated error FormSelect input', () => {
-    render(
-      <FormSelect validated={ValidatedOptions.error} aria-label="validated FormSelect">
-        <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-      </FormSelect>
-    );
-    expect(screen.getByLabelText('validated FormSelect').outerHTML).toMatchSnapshot();
-  });
-
   test('validated warning FormSelect input', () => {
     render(
       <FormSelect validated={ValidatedOptions.warning} aria-label="validated FormSelect">
@@ -175,11 +168,12 @@ describe('FormSelect', () => {
 
   test('required FormSelect input', () => {
     render(
-      <FormSelect required aria-label="required FormSelect">
+      <FormSelect isRequired aria-label="required FormSelect">
         <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
       </FormSelect>
     );
-    expect(screen.getByLabelText('required FormSelect').outerHTML).toMatchSnapshot();
+
+    expect(screen.getByLabelText('required FormSelect')).toHaveAttribute('required');
   });
 
   test('FormSelect passes value and event to onChange handler', () => {
@@ -192,6 +186,8 @@ describe('FormSelect', () => {
     );
 
     userEvent.selectOptions(screen.getByLabelText('Some label'), 'Mr');
+
     expect(myMock).toBeCalled();
+    expect(myMock.mock.calls[0][0]).toEqual('mr');
   });
 });

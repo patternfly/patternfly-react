@@ -14,10 +14,6 @@ exports[`FormSelect Simple FormSelect input 1`] = `"<select aria-label=\\"simple
 
 exports[`FormSelect invalid FormSelect input 1`] = `"<select aria-label=\\"invalid FormSelect\\" class=\\"pf-c-form-control\\" aria-invalid=\\"true\\" data-ouia-component-type=\\"PF4/FormSelect\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-FormSelect-error-1\\"><option class=\\"\\" value=\\"mr\\">Mr</option></select>"`;
 
-exports[`FormSelect required FormSelect input 1`] = `"<select aria-label=\\"required FormSelect\\" class=\\"pf-c-form-control\\" aria-invalid=\\"false\\" data-ouia-component-type=\\"PF4/FormSelect\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-FormSelect-default-7\\"><option class=\\"\\" value=\\"mr\\">Mr</option></select>"`;
-
-exports[`FormSelect validated error FormSelect input 1`] = `"<select aria-label=\\"validated FormSelect\\" class=\\"pf-c-form-control\\" aria-invalid=\\"true\\" data-ouia-component-type=\\"PF4/FormSelect\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-FormSelect-error-2\\"><option class=\\"\\" value=\\"mr\\">Mr</option></select>"`;
-
 exports[`FormSelect validated success FormSelect input 1`] = `"<select aria-label=\\"validated FormSelect\\" class=\\"pf-c-form-control pf-m-success\\" aria-invalid=\\"false\\" data-ouia-component-type=\\"PF4/FormSelect\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-FormSelect-success-1\\"><option class=\\"\\" value=\\"mr\\">Mr</option></select>"`;
 
 exports[`FormSelect validated warning FormSelect input 1`] = `"<select aria-label=\\"validated FormSelect\\" class=\\"pf-c-form-control pf-m-warning\\" aria-invalid=\\"false\\" data-ouia-component-type=\\"PF4/FormSelect\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-FormSelect-warning-1\\"><option class=\\"\\" value=\\"mr\\">Mr</option></select>"`;

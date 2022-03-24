@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import { ValidatedOptions } from '../../../helpers/constants';
 import { FormGroup } from '../FormGroup';
@@ -10,12 +11,12 @@ describe('FormGroup', () => {
   const returnFunction = () => <div>label</div>;
 
   test('should render default form group variant', () => {
-    render(
-      <FormGroup label="label" fieldId="label-id" helperText="this is helper text" data-testid="form-group-test-id">
+    const { asFragment } = render(
+      <FormGroup label="label" fieldId="label-id" helperText="this is helper text">
         <input id="label-id" />
       </FormGroup>
     );
-    expect(screen.getByTestId('form-group-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render inline form group variant', () => {
@@ -24,7 +25,7 @@ describe('FormGroup', () => {
         <input id="label-id" />
       </FormGroup>
     );
-    expect(screen.getByLabelText('label').parentElement.className).toContain('pf-m-inline');
+    expect(screen.getByLabelText('label').parentElement).toHaveClass('pf-m-inline');
   });
 
   test('should render no padding-top form group variant', () => {
@@ -39,131 +40,124 @@ describe('FormGroup', () => {
         <input id="label-id" />
       </FormGroup>
     );
-    expect(screen.getByTestId('form-group-test-id').firstElementChild.className).toContain('no-padding-top');
+    expect(screen.getByTestId('form-group-test-id').firstElementChild).toHaveClass('pf-m-no-padding-top');
   });
 
   test('should render form group variant with required label', () => {
-    render(
-      <FormGroup label="label" isRequired fieldId="label-id" data-testid="form-group-test-id">
+    const { asFragment } = render(
+      <FormGroup label="label" isRequired fieldId="label-id">
         <input id="label-id" />
       </FormGroup>
     );
-    expect(screen.getByTestId('form-group-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render form group variant with node label', () => {
-    render(
-      <FormGroup fieldId="id" label={<h1>Header</h1>} data-testid="form-group-test-id">
+    const { asFragment } = render(
+      <FormGroup fieldId="id" label={<h1>Header</h1>}>
         <input aria-label="input" />
       </FormGroup>
     );
-    expect(screen.getByTestId('form-group-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render form group with additonal label info', () => {
-    render(
-      <FormGroup fieldId="id" label={<h1>Header</h1>} labelInfo="more info" data-testid="form-group-test-id">
+    const { asFragment } = render(
+      <FormGroup fieldId="id" label={<h1>Header</h1>} labelInfo="more info">
         <input aria-label="input" />
       </FormGroup>
     );
-    expect(screen.getByTestId('form-group-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render form group variant with function label', () => {
     render(
-      <FormGroup fieldId="id" label={returnFunction()} data-testid="form-group-test-id">
+      <FormGroup fieldId="id" label={returnFunction()}>
         <input aria-label="input" />
       </FormGroup>
     );
-    expect(screen.getByTestId('form-group-test-id').outerHTML).toMatchSnapshot();
+
+    expect(screen.getByText('label')).toBeInTheDocument();
   });
 
   test('should render form group variant with node helperText', () => {
     render(
-      <FormGroup label="Label" fieldId="label-id" helperText={<h1>Header</h1>} data-testid="form-group-test-id">
+      <FormGroup label="Label" fieldId="label-id" helperText={<h1>Header</h1>}>
         <input id="label-id" />
       </FormGroup>
     );
-    expect(screen.getByTestId('form-group-test-id').outerHTML).toMatchSnapshot();
+
+    expect(screen.getByRole('heading', { name: 'Header' })).toBeInTheDocument();
   });
 
   test('should render form group variant with function helperText', () => {
     render(
-      <FormGroup label="Label" fieldId="label-id" helperText={returnFunction()} data-testid="form-group-test-id">
+      <FormGroup label="Label" fieldId="label-id" helperText={returnFunction()}>
         <input id="label-id" />
       </FormGroup>
     );
-    expect(screen.getByTestId('form-group-test-id').outerHTML).toMatchSnapshot();
+
+    expect(screen.getByText('label')).toBeInTheDocument();
   });
 
   test('should render horizontal form group variant', () => {
-    render(
-      <Form isHorizontal data-testid="form-test-id">
+    const { asFragment } = render(
+      <Form isHorizontal>
         <FormGroup label="label" fieldId="label-id" helperText="this is helperText">
           <input id="label-id" />
         </FormGroup>
       </Form>
     );
-    expect(screen.getByTestId('form-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render stacked horizontal form group variant', () => {
-    render(
-      <Form isHorizontal data-testid="form-test-id">
+    const { asFragment } = render(
+      <Form isHorizontal>
         <FormGroup label="label" fieldId="label-id" isStack helperText="this is helperText">
           <input id="label-id" />
         </FormGroup>
       </Form>
     );
-    expect(screen.getByTestId('form-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render helper text above input', () => {
-    render(
-      <Form isHorizontal data-testid="form-test-id">
+    const { asFragment } = render(
+      <Form isHorizontal>
         <FormGroup label="label" fieldId="label-id" helperText="this is helperText" isHelperTextBeforeField>
           <input id="label-id" />
         </FormGroup>
       </Form>
     );
-    expect(screen.getByTestId('form-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render form group variant without label', () => {
-    render(
-      <FormGroup fieldId="id" data-testid="form-group-test-id">
+    const { asFragment } = render(
+      <FormGroup fieldId="id">
         <input aria-label="input" />
       </FormGroup>
     );
-    expect(screen.getByTestId('form-group-test-id').outerHTML).toMatchSnapshot();
-  });
-
-  test('should render form group required variant', () => {
-    render(
-      <FormGroup isRequired label="label" fieldId="id" data-testid="form-group-test-id">
-        <input id="id" />
-      </FormGroup>
-    );
-    expect(screen.getByTestId('form-group-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render form group invalid variant', () => {
-    render(
+    const { asFragment } = render(
       <FormGroup
         label="label"
         fieldId="label-id"
         validated={'error'}
         helperTextInvalid="Invalid FormGroup"
-        data-testid="form-group-test-id"
       >
         <input id="id" />
       </FormGroup>
     );
-    expect(screen.getByTestId('form-group-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render form group validated success variant', () => {
-    render(
+    const { asFragment } = render(
       <FormGroup
         label="label"
         fieldId="label-id"
@@ -175,29 +169,26 @@ describe('FormGroup', () => {
       </FormGroup>
     );
 
-    const formGroupHtml = screen.getByTestId('form-group-test-id').outerHTML;
-
-    expect(formGroupHtml).toContain('pf-m-success');
-    expect(formGroupHtml).toMatchSnapshot();
+    expect(screen.getByTestId('form-group-test-id').querySelector('input + div')).toHaveClass('pf-m-success');
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render form group validated error variant', () => {
-    render(
+    const { asFragment } = render(
       <FormGroup
         label="label"
         fieldId="label-id"
         validated={ValidatedOptions.error}
         helperText="Validated FormGroup"
-        data-testid="form-group-test-id"
       >
         <input id="id" />
       </FormGroup>
     );
-    expect(screen.getByTestId('form-group-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render form group validated warning variant', () => {
-    render(
+    const { asFragment } = render(
       <FormGroup
         label="label"
         fieldId="label-id"
@@ -209,20 +200,18 @@ describe('FormGroup', () => {
       </FormGroup>
     );
 
-    const formGroupHtml = screen.getByTestId('form-group-test-id').outerHTML;
-
-    expect(formGroupHtml).toContain('pf-m-warning');
-    expect(formGroupHtml).toMatchSnapshot();
+    expect(screen.getByTestId('form-group-test-id').querySelector('input + div')).toHaveClass('pf-m-warning');
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render correctly when label is not a string with Children = Array', () => {
-    render(
-      <FormGroup fieldId="id" label={returnFunction()} data-testid="form-group-test-id">
+    const { asFragment } = render(
+      <FormGroup fieldId="id" label={returnFunction()}>
         <input aria-label="label" />
         <input id="id" />
         <input />
       </FormGroup>
     );
-    expect(screen.getByTestId('form-group-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
