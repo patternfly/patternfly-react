@@ -107,6 +107,30 @@ export const NodeStatusDecoratorStyles = withTopologySetup(() => {
   return null;
 });
 
+export const NodeDecoratorStyles = withTopologySetup(() => {
+  useComponentFactory(defaultComponentFactory);
+  useComponentFactory(stylesComponentFactory);
+  const nodes: NodeModel[] = createGroupNodes();
+  const nodes2: NodeModel[] = createGroupNodes('2', 600);
+
+  nodes.forEach(n => (n.data.showDecorators = true));
+  nodes.forEach(n => (n.data.labelPosition = LabelPosition.bottom));
+  nodes2.forEach(n => (n.data.showDecorators = true));
+  useModel(
+    React.useMemo(
+      (): Model => ({
+        graph: {
+          id: 'g1',
+          type: 'graph'
+        },
+        nodes: [...nodes, ...nodes2]
+      }),
+      [nodes, nodes2]
+    )
+  );
+  return null;
+});
+
 export const NodeLabelStyles = withTopologySetup(() => {
   useComponentFactory(defaultComponentFactory);
   useComponentFactory(stylesComponentFactory);

@@ -65,7 +65,7 @@ type DefaultNodeProps = {
   statusDecoratorTooltip?: React.ReactNode;
   onStatusDecoratorClick?: (event: React.MouseEvent<SVGGElement, MouseEvent>, element: GraphElement) => void;
   getCustomShape?: (node: Node) => React.FC<ShapeProps>;
-  getShapeDecoratorCenter?: (quadrant: TopologyQuadrant, node: Node, radius?: number) => { x: number; y: number };
+  getShapeDecoratorCenter?: (quadrant: TopologyQuadrant, node: Node) => { x: number; y: number };
 } & Partial<
   WithSelectionProps &
     WithDragNodeProps &
@@ -131,8 +131,8 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
     }
 
     const { x, y } = getShapeDecoratorCenter
-      ? getShapeDecoratorCenter(StatusQuadrant, element, DEFAULT_DECORATOR_RADIUS)
-      : getDefaultShapeDecoratorCenter(StatusQuadrant, element, DEFAULT_DECORATOR_RADIUS);
+      ? getShapeDecoratorCenter(StatusQuadrant, element)
+      : getDefaultShapeDecoratorCenter(StatusQuadrant, element);
 
     const decorator = (
       <Decorator

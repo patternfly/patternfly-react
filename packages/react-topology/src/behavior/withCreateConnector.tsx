@@ -154,10 +154,7 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
     startPoint = element.getAnchor(AnchorEnd.source).getLocation(endPoint);
   } else {
     const bounds = element.getBounds();
-    const referencePoint = new Point(
-      bounds.x + bounds.width / 2,
-      bounds.y
-    );
+    const referencePoint = new Point(bounds.x + bounds.width / 2, bounds.y);
     startPoint = element.getAnchor(AnchorEnd.source).getLocation(referencePoint);
     endPoint = new Point(
       Math.cos(handleAngle) * handleLength + startPoint.x,
