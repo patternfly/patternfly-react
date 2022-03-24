@@ -75,7 +75,7 @@ interface PromptData {
 const isReactElementArray = (choices: ConnectorChoice[] | React.ReactElement[]): choices is React.ReactElement[] =>
   React.isValidElement(choices[0]);
 
-const DEFAULT_HANDLE_ANGLE = Math.PI / 180;
+const DEFAULT_HANDLE_ANGLE = 1.5 * Math.PI;
 const DEFAULT_HANDLE_LENGTH = 32;
 
 const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(props => {
@@ -155,8 +155,8 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
   } else {
     const bounds = element.getBounds();
     const referencePoint = new Point(
-      bounds.right(),
-      Math.tan(handleAngle) * (bounds.width / 2) + bounds.y + bounds.height / 2
+      bounds.x + bounds.width / 2,
+      bounds.y
     );
     startPoint = element.getAnchor(AnchorEnd.source).getLocation(referencePoint);
     endPoint = new Point(
