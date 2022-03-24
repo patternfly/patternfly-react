@@ -6,6 +6,8 @@ propComponents: ['MenuToggle']
 beta: true
 ---
 
+import './MenuToggle.css'
+
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 import avatarImg from './avatarImg.svg';
