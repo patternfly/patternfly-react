@@ -279,13 +279,12 @@ export const CalendarMonth = ({
                 const isSelected = isValidDate(dateProp) && isSameDate(date, dateProp);
                 const isFocused = isSameDate(date, focusedDate);
                 const isAdjacentMonth = date.getMonth() !== focusedDate.getMonth();
+                const isRangeStart = isValidDate(rangeStart) && isSameDate(date, rangeStart);
                 let isInRange = false;
-                let isRangeStart = false;
                 let isRangeEnd = false;
                 if (isValidDate(rangeStart) && isHoveredDateValid) {
                   if (hoveredDate > rangeStart || isSameDate(hoveredDate, rangeStart)) {
                     isInRange = date > rangeStart && date < hoveredDate;
-                    isRangeStart = isSameDate(date, rangeStart);
                     isRangeEnd = isSameDate(date, hoveredDate);
                   }
                   // Don't handle focused dates before start dates for now.

@@ -1,8 +1,19 @@
 import React from 'react';
-import { CalendarMonth } from '@patternfly/react-core';
+import { CalendarMonth, isValidDate } from '@patternfly/react-core';
 
 export const CalendarMonthDateRange: React.FunctionComponent = () => {
-  const [date, setDate] = React.useState(new Date(2020, 10, 24));
+  const [endDate, setEndDate] = React.useState(new Date(2020, 10, 24));
+  const startDate = new Date(2020, 10, 11);
 
-  return <CalendarMonth date={date} rangeStart={new Date(2020, 10, 24)} onChange={setDate} />;
+  return (
+    <React.Fragment>
+      <pre>
+        Range Selection:{' '}
+        {isValidDate(startDate) && isValidDate(endDate)
+          ? `${startDate.toLocaleDateString()} to ${endDate.toLocaleDateString()}`
+          : 'No range selected'}
+      </pre>
+      <CalendarMonth date={endDate} rangeStart={startDate} onChange={setEndDate} />
+    </React.Fragment>
+  );
 };
