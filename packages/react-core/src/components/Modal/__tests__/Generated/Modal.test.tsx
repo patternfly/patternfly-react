@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Modal } from '../../Modal';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('Modal should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <Modal
       children={<div>ReactNode</div>}
       className={"''"}
@@ -31,5 +31,5 @@ it('Modal should match snapshot (auto-generated)', () => {
       id={'string'}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

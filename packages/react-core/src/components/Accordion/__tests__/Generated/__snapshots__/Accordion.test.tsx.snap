@@ -1,20 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Accordion should match snapshot (auto-generated) 1`] = `
-<dl
-  aria-label="''"
-  className="pf-c-accordion ''"
-  noBoxShadow={false}
->
-  <ContextProvider
-    value={
-      Object {
-        "ContentContainer": "dd",
-        "ToggleContainer": "dt",
-      }
-    }
+<div>
+  <dl
+    aria-label="''"
+    class="pf-c-accordion ''"
   >
     ReactNode
-  </ContextProvider>
-</dl>
+  </dl>
+</div>
 `;

@@ -11,6 +11,10 @@ export interface TbodyProps extends React.HTMLProps<HTMLTableSectionElement> {
   isExpanded?: boolean;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
+  /** Flag indicating the <tbody> contains oddly striped rows. */
+  isOddStriped?: boolean;
+  /** Flag indicating the <tbody> contains evenly striped rows. */
+  isEvenStriped?: boolean;
 }
 
 const TbodyBase: React.FunctionComponent<TbodyProps> = ({
@@ -18,9 +22,21 @@ const TbodyBase: React.FunctionComponent<TbodyProps> = ({
   className,
   isExpanded,
   innerRef,
+  isEvenStriped = false,
+  isOddStriped = false,
   ...props
 }: TbodyProps) => (
-  <tbody role="rowgroup" className={css(className, isExpanded && styles.modifiers.expanded)} ref={innerRef} {...props}>
+  <tbody
+    role="rowgroup"
+    className={css(
+      className,
+      isExpanded && styles.modifiers.expanded,
+      isOddStriped && styles.modifiers.striped,
+      isEvenStriped && styles.modifiers.stripedEven
+    )}
+    ref={innerRef}
+    {...props}
+  >
     {children}
   </tbody>
 );

@@ -67,7 +67,7 @@ export interface PopoverProps {
   /** Distance of the popover to its target, defaults to 25 */
   distance?: number;
   /**
-   * If true, tries to keep the popover in view by flipping it if necessary
+   * If true, tries to keep the popover in view by flipping it if necessary.
    * If the position is set to 'auto', this prop is ignored
    */
   enableFlip?: boolean;
@@ -162,6 +162,7 @@ export interface PopoverProps {
    * The behavior of where it flips to can be controlled through the flipBehavior prop.
    */
   position?:
+    | PopoverPosition
     | 'auto'
     | 'top'
     | 'bottom'

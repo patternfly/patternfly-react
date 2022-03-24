@@ -42,7 +42,7 @@ export const NestedTabsDemo = () => {
                   activeKey={activeNestedTabKey}
                   isSecondary
                   onSelect={handleNestedTabClick}
-                  id="nested-tabs-example-tabs-list"
+                  id="nested-tabs-example-nested-tabs-list"
                 >
                   <Tab eventKey={10} title={<TabTitleText>Cluster</TabTitleText>} tabContentId={`tabContent${10}`} />
                   <Tab
@@ -109,14 +109,14 @@ export const NestedTabsDemo = () => {
           <FlexItem flex={{ default: 'flex_1' }}>
             <Card isFullHeight>
               <CardHeader>
-                <Title headingLevel="h3">Title of Card</Title>
+                <Title headingLevel="h2">Title of Card</Title>
               </CardHeader>
             </Card>
           </FlexItem>
           <FlexItem flex={{ default: 'flex_1' }}>
             <Card isFullHeight>
               <CardHeader>
-                <Title headingLevel="h3">Title of Card</Title>
+                <Title headingLevel="h2">Title of Card</Title>
               </CardHeader>
             </Card>
           </FlexItem>
@@ -132,7 +132,7 @@ export const NestedTabsDemo = () => {
           Overview
         </Title>
       </PageSection>
-      <PageSection type="tabs" variant={PageSectionVariants.light} isWidthLimited>
+      <PageSection type="tabs" isWidthLimited>
         <Tabs activeKey={activeTabKey} onSelect={handleTabClick} usePageInsets id="nested-tabs-example-tabs-list">
           <Tab eventKey={0} title={<TabTitleText>Cluster 1</TabTitleText>} tabContentId={`tabContent${0}`} />
           <Tab eventKey={1} title={<TabTitleText>Cluster 2</TabTitleText>} tabContentId={`tabContent${1}`} />

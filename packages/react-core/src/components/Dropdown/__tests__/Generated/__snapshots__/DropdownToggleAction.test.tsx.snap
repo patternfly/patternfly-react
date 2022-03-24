@@ -1,14 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DropdownToggleAction should match snapshot (auto-generated) 1`] = `
-<button
-  aria-label="string"
-  className="pf-c-dropdown__toggle-button ''"
-  id="string"
-  onClick={[Function]}
->
-  <div>
-    ReactNode
-  </div>
-</button>
+<div>
+  <button
+    aria-label="string"
+    class="pf-c-dropdown__toggle-button ''"
+    id="string"
+  >
+    <div>
+      ReactNode
+    </div>
+  </button>
+</div>
 `;

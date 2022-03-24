@@ -1,54 +1,54 @@
 import * as React from 'react';
 import { BreadcrumbItem } from '../BreadcrumbItem';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 describe('BreadcrumbItem component', () => {
   test('should render default breadcrumbItem', () => {
-    const view = shallow(<BreadcrumbItem>Item</BreadcrumbItem>);
-    expect(view).toMatchSnapshot();
+    const view = render(<BreadcrumbItem>Item</BreadcrumbItem>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('should render breadcrumbItem with className', () => {
-    const view = shallow(<BreadcrumbItem className="Class">Item</BreadcrumbItem>);
-    expect(view).toMatchSnapshot();
+    const view = render(<BreadcrumbItem className="Class">Item</BreadcrumbItem>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('should render breadcrumbItem with id', () => {
-    const view = shallow(<BreadcrumbItem id="Item 1">Item</BreadcrumbItem>);
-    expect(view).toMatchSnapshot();
+    const view = render(<BreadcrumbItem id="Item 1">Item</BreadcrumbItem>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('should render active breadcrumbItem', () => {
-    const view = shallow(<BreadcrumbItem isActive>Item</BreadcrumbItem>);
-    expect(view).toMatchSnapshot();
+    const view = render(<BreadcrumbItem isActive>Item</BreadcrumbItem>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('should render link breadcrumbItem', () => {
-    const view = shallow(<BreadcrumbItem to="/somewhere">Item</BreadcrumbItem>);
-    expect(view).toMatchSnapshot();
+    const view = render(<BreadcrumbItem to="/somewhere">Item</BreadcrumbItem>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('should render breadcrumbItem with target', () => {
-    const view = shallow(<BreadcrumbItem target="/somewhere">Item</BreadcrumbItem>);
-    expect(view).toMatchSnapshot();
+    const view = render(<BreadcrumbItem target="/somewhere">Item</BreadcrumbItem>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('should render breadcrumbItem with custom element', () => {
-    const view = shallow(
+    const view = render(
       <BreadcrumbItem>
         <h1>Header</h1>
       </BreadcrumbItem>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('should render breadcrumbItem with component', () => {
     const MyComponent = () => <div>My component contents</div>;
     const consoleError = jest.spyOn(console, 'error').mockImplementation();
-    const view = shallow(
+    const view = render(
       <BreadcrumbItem component={MyComponent}>Stuff</BreadcrumbItem>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
     expect(consoleError).not.toHaveBeenCalled();
   });
 });

@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { AboutModalBox } from '../AboutModalBox';
 
 test('AboutModalBox Test', () => {
-  const view = shallow(
+  const view = render(
     <AboutModalBox aria-labelledby="id" aria-describedby="id2">
       This is a AboutModalBox
     </AboutModalBox>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

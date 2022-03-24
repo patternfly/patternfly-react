@@ -1,67 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`tooltip renders 1`] = `
-<Popper
-  appendTo={[Function]}
-  distance={15}
-  enableFlip={true}
-  flipBehavior={
-    Array [
-      "top",
-      "right",
-      "bottom",
-      "left",
-      "top",
-      "right",
-      "bottom",
-    ]
-  }
-  isVisible={false}
-  onBlur={[Function]}
-  onDocumentClick={false}
-  onDocumentKeyDown={[Function]}
-  onFocus={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
-  onTriggerEnter={[Function]}
-  placement="top"
-  popper={
-    <div
-      className="pf-c-tooltip"
-      id="pf-tooltip-1"
-      role="tooltip"
-      style={
-        Object {
-          "maxWidth": null,
-          "opacity": 0,
-          "transition": "opacity 300ms cubic-bezier(.54, 1.5, .38, 1.11)",
-        }
-      }
-    >
-      <TooltipArrow />
-      <TooltipContent
-        isLeftAligned={false}
-      >
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
-        </div>
-      </TooltipContent>
-    </div>
-  }
-  popperMatchesTriggerWidth={false}
-  positionModifiers={
-    Object {
-      "bottom": "pf-m-bottom",
-      "left": "pf-m-left",
-      "right": "pf-m-right",
-      "top": "pf-m-top",
-    }
-  }
-  trigger={
-    <div>
-      Toggle tooltip
-    </div>
-  }
-  zIndex={9999}
-/>
+<div>
+  <div>
+    Toggle tooltip
+  </div>
+</div>
 `;

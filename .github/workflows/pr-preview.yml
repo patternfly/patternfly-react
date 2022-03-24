@@ -174,11 +174,11 @@ jobs:
       - name: Upload docs
         run: node .github/upload-preview.js packages/react-docs/public
         if: always()
-  #    - name: a11y tests
-  #      run: yarn serve:docs & yarn test:a11y
-  #    - name: Upload a11y results
-  #      run: node .github/upload-preview.js packages/react-docs/coverage
-  #      if: always()
+      - name: a11y tests
+        run: yarn serve:docs & yarn test:a11y
+      - name: Upload a11y results
+        run: node .github/upload-preview.js packages/react-docs/coverage
+        if: always()
   demo_app:
     runs-on: ubuntu-latest
     env:

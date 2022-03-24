@@ -258,3 +258,61 @@ class FormSelectInputGrouped extends React.Component {
   }
 }
 ```
+
+### Icon sprite variant
+
+**Note:** The dropdown toggle icon is applied as a background image to the form element. By default, the image URLs for these icons are data URIs. However, there may be cases where data URIs are not ideal, such as in an application with a content security policy that disallows data URIs for security reasons. The `isIconSprite` variation changes the icon source to an external SVG file that serves as a sprite for all of the supported icons.
+
+```js isBeta
+import React from 'react';
+import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
+
+class FormSelectIconSpriteInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '',
+      validated: ValidatedOptions.default
+    };
+
+    this.onChange = (value, event) => {
+      if (value === '3') {
+        this.setState({ value, validated: ValidatedOptions.success, helperText: 'You chose wisely' });
+      } else if (value === '') {
+        this.setState({ value, validated: ValidatedOptions.warning, helperText: 'You must select a value' });
+      } else {
+        this.setState({
+          value,
+          validated: ValidatedOptions.error,
+          invalidText: 'You must chose Three (thought that was obvious)'
+        });
+      }
+    };
+
+    this.options = [
+      { value: '', label: 'Select a number', disabled: false, isPlaceholder: true },
+      { value: '1', label: 'One', disabled: false, isPlaceholder: false },
+      { value: '2', label: 'Two', disabled: false, isPlaceholder: false },
+      { value: '3', label: 'Three - the only valid option', disabled: false, isPlaceholder: false }
+    ];
+  }
+
+  render() {
+    const { value, validated, helperText, invalidText } = this.state;
+
+    return (
+      <FormSelect
+        validated={validated}
+        isIconSprite
+        value={value}
+        onChange={this.onChange}
+        aria-label="FormSelect Input"
+      >
+        {this.options.map((option, index) => (
+          <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
+        ))}
+      </FormSelect>
+    );
+  }
+}
+```

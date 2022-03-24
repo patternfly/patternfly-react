@@ -1,309 +1,855 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`label 1`] = `
-<span
-  className="pf-c-label"
+exports[`editable label 1`] = `
+<Label
+  isEditable={true}
+  onClose={[MockFunction]}
+  onEditCancel={[MockFunction]}
+  onEditComplete={[MockFunction]}
 >
   <span
-    className="pf-c-label__content"
+    className="pf-c-label pf-m-editable"
   >
-    Something
+    <button
+      className="pf-c-label__content"
+      onClick={[Function]}
+    >
+      Something
+    </button>
+    <Button
+      aria-label="Close Something"
+      onClick={[MockFunction]}
+      type="button"
+      variant="plain"
+    >
+      <ButtonBase
+        aria-label="Close Something"
+        innerRef={null}
+        onClick={[MockFunction]}
+        type="button"
+        variant="plain"
+      >
+        <button
+          aria-disabled={false}
+          aria-label="Close Something"
+          className="pf-c-button pf-m-plain"
+          data-ouia-component-id="OUIA-Generated-Button-plain-3"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe={true}
+          disabled={false}
+          onClick={[MockFunction]}
+          role={null}
+          type="button"
+        >
+          <TimesIcon
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
+          >
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
+                Object {
+                  "verticalAlign": "-0.125em",
+                }
+              }
+              viewBox="0 0 352 512"
+              width="1em"
+            >
+              <path
+                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+              />
+            </svg>
+          </TimesIcon>
+        </button>
+      </ButtonBase>
+    </Button>
   </span>
-</span>
+</Label>
+`;
+
+exports[`editable label 2`] = `
+<Label
+  isEditable={true}
+  onClose={[MockFunction]}
+  onEditCancel={[MockFunction]}
+  onEditComplete={[MockFunction]}
+>
+  <span
+    className="pf-c-label pf-m-editable pf-m-editable-active"
+  >
+    <input
+      className="pf-c-label__content"
+      id="editable-input"
+      onChange={[Function]}
+      type="text"
+      value="Something"
+    />
+  </span>
+</Label>
+`;
+
+exports[`label 1`] = `
+<div>
+  <span
+    class="pf-c-label"
+  >
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
+  </span>
+</div>
 `;
 
 exports[`label 2`] = `
-<span
-  className="pf-c-label pf-m-outline"
->
-  <span
-    className="pf-c-label__content"
-  >
-    Something
-  </span>
-</span>
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="pf-c-label"
+      >
+        <span
+          class="pf-c-label__content"
+        >
+          Something
+        </span>
+      </span>
+    </div>
+    <div>
+      <span
+        class="pf-c-label pf-m-outline"
+      >
+        <span
+          class="pf-c-label__content"
+        >
+          Something
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="pf-c-label pf-m-outline"
+    >
+      <span
+        class="pf-c-label__content"
+      >
+        Something
+      </span>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`label 3`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="pf-c-label"
+      >
+        <span
+          class="pf-c-label__content"
+        >
+          Something
+        </span>
+      </span>
+    </div>
+    <div>
+      <span
+        class="pf-c-label pf-m-outline"
+      >
+        <span
+          class="pf-c-label__content"
+        >
+          Something
+        </span>
+      </span>
+    </div>
+    <div>
+      <span
+        class="pf-c-label pf-m-compact"
+      >
+        <span
+          class="pf-c-label__content"
+        >
+          Something
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="pf-c-label pf-m-compact"
+    >
+      <span
+        class="pf-c-label__content"
+      >
+        Something
+      </span>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`label with additional class name 1`] = `
-<span
-  className="pf-c-label klass1"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label klass1"
   >
-    Something
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
   </span>
-</span>
+</div>
 `;
 
 exports[`label with additional class name and props 1`] = `
-<span
-  className="pf-c-label class-1"
-  data-label-name="something"
-  id="label-1"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label class-1"
+    data-label-name="something"
+    id="label-1"
   >
-    Something
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
   </span>
-</span>
+</div>
 `;
 
 exports[`label with blue color 1`] = `
-<span
-  className="pf-c-label pf-m-blue"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label pf-m-blue"
   >
-    Something
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
   </span>
-</span>
+</div>
 `;
 
 exports[`label with blue color 2`] = `
-<span
-  className="pf-c-label pf-m-blue pf-m-outline"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label pf-m-blue pf-m-outline"
   >
-    Something
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
   </span>
-</span>
+</div>
 `;
 
 exports[`label with close button 1`] = `
-<span
-  className="pf-c-label"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label"
   >
-    Something
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
+    <button
+      aria-disabled="false"
+      aria-label="Close Something"
+      class="pf-c-button pf-m-plain"
+      data-ouia-component-id="OUIA-Generated-Button-plain-1"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align: -0.125em;"
+        viewBox="0 0 352 512"
+        width="1em"
+      >
+        <path
+          d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+        />
+      </svg>
+    </button>
   </span>
-  <Button
-    aria-label="Close Something"
-    onClick={[MockFunction]}
-    type="button"
-    variant="plain"
-  >
-    <TimesIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-    />
-  </Button>
-</span>
+</div>
 `;
 
 exports[`label with close button 2`] = `
-<span
-  className="pf-c-label pf-m-outline"
->
-  <span
-    className="pf-c-label__content"
-  >
-    Something
-  </span>
-  <Button
-    aria-label="Close Something"
-    onClick={[MockFunction]}
-    type="button"
-    variant="plain"
-  >
-    <TimesIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-    />
-  </Button>
-</span>
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="pf-c-label"
+      >
+        <span
+          class="pf-c-label__content"
+        >
+          Something
+        </span>
+        <button
+          aria-disabled="false"
+          aria-label="Close Something"
+          class="pf-c-button pf-m-plain"
+          data-ouia-component-id="OUIA-Generated-Button-plain-1"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 352 512"
+            width="1em"
+          >
+            <path
+              d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+            />
+          </svg>
+        </button>
+      </span>
+    </div>
+    <div>
+      <span
+        class="pf-c-label pf-m-outline"
+      >
+        <span
+          class="pf-c-label__content"
+        >
+          Something
+        </span>
+        <button
+          aria-disabled="false"
+          aria-label="Close Something"
+          class="pf-c-button pf-m-plain"
+          data-ouia-component-id="OUIA-Generated-Button-plain-2"
+          data-ouia-component-type="PF4/Button"
+          data-ouia-safe="true"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 352 512"
+            width="1em"
+          >
+            <path
+              d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+            />
+          </svg>
+        </button>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="pf-c-label pf-m-outline"
+    >
+      <span
+        class="pf-c-label__content"
+      >
+        Something
+      </span>
+      <button
+        aria-disabled="false"
+        aria-label="Close Something"
+        class="pf-c-button pf-m-plain"
+        data-ouia-component-id="OUIA-Generated-Button-plain-2"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style="vertical-align: -0.125em;"
+          viewBox="0 0 352 512"
+          width="1em"
+        >
+          <path
+            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+          />
+        </svg>
+      </button>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`label with cyan color 1`] = `
-<span
-  className="pf-c-label pf-m-cyan"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label pf-m-cyan"
   >
-    Something
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
   </span>
-</span>
+</div>
 `;
 
 exports[`label with cyan color 2`] = `
-<span
-  className="pf-c-label pf-m-cyan pf-m-outline"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label pf-m-cyan pf-m-outline"
   >
-    Something
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
   </span>
-</span>
+</div>
 `;
 
 exports[`label with green color 1`] = `
-<span
-  className="pf-c-label pf-m-green"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label pf-m-green"
   >
-    Something
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
   </span>
-</span>
+</div>
 `;
 
 exports[`label with green color 2`] = `
-<span
-  className="pf-c-label pf-m-green pf-m-outline"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label pf-m-green pf-m-outline"
   >
-    Something
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
   </span>
-</span>
+</div>
 `;
 
 exports[`label with grey color 1`] = `
-<span
-  className="pf-c-label"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label"
   >
-    Something
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
   </span>
-</span>
+</div>
 `;
 
 exports[`label with grey color 2`] = `
-<span
-  className="pf-c-label pf-m-outline"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label pf-m-outline"
   >
-    Something
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
   </span>
-</span>
+</div>
 `;
 
 exports[`label with href 1`] = `
-<span
-  className="pf-c-label"
->
-  <a
-    className="pf-c-label__content"
-    href="#"
+<div>
+  <span
+    class="pf-c-label"
   >
-    Something
-  </a>
-</span>
+    <a
+      class="pf-c-label__content"
+      href="#"
+    >
+      Something
+    </a>
+  </span>
+</div>
 `;
 
 exports[`label with href 2`] = `
-<span
-  className="pf-c-label pf-m-outline"
->
-  <a
-    className="pf-c-label__content"
-    href="#"
-  >
-    Something
-  </a>
-</span>
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <span
+        class="pf-c-label"
+      >
+        <a
+          class="pf-c-label__content"
+          href="#"
+        >
+          Something
+        </a>
+      </span>
+    </div>
+    <div>
+      <span
+        class="pf-c-label pf-m-outline"
+      >
+        <a
+          class="pf-c-label__content"
+          href="#"
+        >
+          Something
+        </a>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class="pf-c-label pf-m-outline"
+    >
+      <a
+        class="pf-c-label__content"
+        href="#"
+      >
+        Something
+      </a>
+    </span>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;
 
 exports[`label with orange color 1`] = `
-<span
-  className="pf-c-label pf-m-orange"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label pf-m-orange"
   >
-    Something
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
   </span>
-</span>
+</div>
 `;
 
 exports[`label with orange color 2`] = `
-<span
-  className="pf-c-label pf-m-orange pf-m-outline"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label pf-m-orange pf-m-outline"
   >
-    Something
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
   </span>
-</span>
+</div>
 `;
 
 exports[`label with purple color 1`] = `
-<span
-  className="pf-c-label pf-m-purple"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label pf-m-purple"
   >
-    Something
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
   </span>
-</span>
+</div>
 `;
 
 exports[`label with purple color 2`] = `
-<span
-  className="pf-c-label pf-m-purple pf-m-outline"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label pf-m-purple pf-m-outline"
   >
-    Something
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
   </span>
-</span>
+</div>
 `;
 
 exports[`label with red color 1`] = `
-<span
-  className="pf-c-label pf-m-red"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label pf-m-red"
   >
-    Something
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
   </span>
-</span>
+</div>
 `;
 
 exports[`label with red color 2`] = `
-<span
-  className="pf-c-label pf-m-red pf-m-outline"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label pf-m-red pf-m-outline"
   >
-    Something
+    <span
+      class="pf-c-label__content"
+    >
+      Something
+    </span>
   </span>
-</span>
+</div>
 `;
 
 exports[`label with truncation 1`] = `
-<span
-  className="pf-c-label"
->
+<div>
   <span
-    className="pf-c-label__content"
+    class="pf-c-label"
   >
     <span
-      className="pf-c-label__text"
+      class="pf-c-label__content"
     >
-      Something very very very very very long that should be truncated
+      <span
+        class="pf-c-label__text"
+      >
+        Something very very very very very long that should be truncated
+      </span>
     </span>
   </span>
-</span>
+</div>
 `;

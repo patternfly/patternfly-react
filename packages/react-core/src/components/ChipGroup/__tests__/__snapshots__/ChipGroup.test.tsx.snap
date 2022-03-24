@@ -1,601 +1,309 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChipGroup chip group default 1`] = `
-<ChipGroup
-  aria-label="Chip group category"
-  categoryName=""
-  closeBtnAriaLabel="Close chip group"
-  collapsedText="\${remaining} more"
-  defaultIsOpen={false}
-  expandedText="Show Less"
-  isClosable={false}
-  numChips={3}
-  onClick={[Function]}
-  onOverflowChipClick={[Function]}
-  tooltipPosition="top"
->
-  <GenerateId
-    prefix="pf-random-id-"
+<div>
+  <div
+    aria-label="Chip group category"
+    class="pf-c-chip-group"
+    data-ouia-component-type="PF4/ChipGroup"
+    data-ouia-safe="true"
+    role="group"
   >
     <div
-      className="pf-c-chip-group"
-      data-ouia-component-type="PF4/ChipGroup"
-      data-ouia-safe={true}
+      class="pf-c-chip-group__main"
     >
-      <div
-        className="pf-c-chip-group__main"
+      
+      <ul
+        aria-label="Chip group category"
+        class="pf-c-chip-group__list"
+        role="list"
       >
-        <ul
-          aria-label="Chip group category"
-          className="pf-c-chip-group__list"
-          role="list"
+        <li
+          class="pf-c-chip-group__list-item"
         >
-          <li
-            className="pf-c-chip-group__list-item"
-            key="0"
+          <div
+            class="pf-c-chip"
+            data-ouia-component-id="OUIA-Generated-Chip-1"
+            data-ouia-component-type="PF4/Chip"
+            data-ouia-safe="true"
           >
-            <Chip
-              className=""
-              closeBtnAriaLabel="close"
-              component="div"
-              isOverflowChip={false}
-              isReadOnly={false}
-              key=".0"
-              onClick={[Function]}
-              tooltipPosition="top"
+            <span
+              class="pf-c-chip__text"
+              id="pf-random-id-1"
             >
-              <GenerateId
-                prefix="pf-random-id-"
+              1.1
+            </span>
+            <button
+              aria-disabled="false"
+              aria-label="close"
+              aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
+              class="pf-c-button pf-m-plain"
+              data-ouia-component-id="close"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe="true"
+              id="remove_pf-random-id-1"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 352 512"
+                width="1em"
               >
-                <div
-                  className="pf-c-chip"
-                  data-ouia-component-id="OUIA-Generated-Chip-1"
-                  data-ouia-component-type="PF4/Chip"
-                  data-ouia-safe={true}
-                >
-                  <span
-                    className="pf-c-chip__text"
-                    id="pf-random-id-1"
-                  >
-                    1.1
-                  </span>
-                  <Button
-                    aria-label="close"
-                    aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
-                    id="remove_pf-random-id-1"
-                    onClick={[Function]}
-                    ouiaId="close"
-                    variant="plain"
-                  >
-                    <ButtonBase
-                      aria-label="close"
-                      aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
-                      id="remove_pf-random-id-1"
-                      innerRef={null}
-                      onClick={[Function]}
-                      ouiaId="close"
-                      variant="plain"
-                    >
-                      <button
-                        aria-disabled={false}
-                        aria-label="close"
-                        aria-labelledby="remove_pf-random-id-1 pf-random-id-1"
-                        className="pf-c-button pf-m-plain"
-                        data-ouia-component-id="close"
-                        data-ouia-component-type="PF4/Button"
-                        data-ouia-safe={true}
-                        disabled={false}
-                        id="remove_pf-random-id-1"
-                        onClick={[Function]}
-                        role={null}
-                        type="button"
-                      >
-                        <TimesIcon
-                          aria-hidden="true"
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                        >
-                          <svg
-                            aria-hidden="true"
-                            aria-labelledby={null}
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
-                            }
-                            viewBox="0 0 352 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                            />
-                          </svg>
-                        </TimesIcon>
-                      </button>
-                    </ButtonBase>
-                  </Button>
-                </div>
-              </GenerateId>
-            </Chip>
-          </li>
-        </ul>
-      </div>
+                <path
+                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                />
+              </svg>
+            </button>
+          </div>
+        </li>
+      </ul>
     </div>
-  </GenerateId>
-</ChipGroup>
+  </div>
+</div>
 `;
 
 exports[`ChipGroup chip group with category 1`] = `
-<ChipGroup
-  aria-label="Chip group category"
-  categoryName="category"
-  closeBtnAriaLabel="Close chip group"
-  collapsedText="\${remaining} more"
-  defaultIsOpen={false}
-  expandedText="Show Less"
-  isClosable={false}
-  numChips={3}
-  onClick={[Function]}
-  onOverflowChipClick={[Function]}
-  tooltipPosition="top"
->
-  <GenerateId
-    prefix="pf-random-id-"
+<div>
+  <div
+    aria-labelledby="pf-random-id-2"
+    class="pf-c-chip-group pf-m-category"
+    data-ouia-component-type="PF4/ChipGroup"
+    data-ouia-safe="true"
+    role="group"
   >
     <div
-      className="pf-c-chip-group pf-m-category"
-      data-ouia-component-type="PF4/ChipGroup"
-      data-ouia-safe={true}
+      class="pf-c-chip-group__main"
     >
-      <div
-        className="pf-c-chip-group__main"
+      <span
+        class="pf-c-chip-group__label"
+        id="pf-random-id-2"
       >
-        <span
-          aria-hidden="true"
-          className="pf-c-chip-group__label"
-          id="pf-random-id-2"
+        category
+      </span>
+      <ul
+        aria-labelledby="pf-random-id-2"
+        class="pf-c-chip-group__list"
+        role="list"
+      >
+        <li
+          class="pf-c-chip-group__list-item"
         >
-          category
-        </span>
-        <ul
-          aria-labelledby="pf-random-id-2"
-          className="pf-c-chip-group__list"
-          role="list"
-        >
-          <li
-            className="pf-c-chip-group__list-item"
-            key="0"
+          <div
+            class="pf-c-chip"
+            data-ouia-component-id="OUIA-Generated-Chip-2"
+            data-ouia-component-type="PF4/Chip"
+            data-ouia-safe="true"
           >
-            <Chip
-              className=""
-              closeBtnAriaLabel="close"
-              component="div"
-              isOverflowChip={false}
-              isReadOnly={false}
-              key=".0"
-              onClick={[Function]}
-              tooltipPosition="top"
+            <span
+              class="pf-c-chip__text"
+              id="pf-random-id-3"
             >
-              <GenerateId
-                prefix="pf-random-id-"
+              1.1
+            </span>
+            <button
+              aria-disabled="false"
+              aria-label="close"
+              aria-labelledby="remove_pf-random-id-3 pf-random-id-3"
+              class="pf-c-button pf-m-plain"
+              data-ouia-component-id="close"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe="true"
+              id="remove_pf-random-id-3"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 352 512"
+                width="1em"
               >
-                <div
-                  className="pf-c-chip"
-                  data-ouia-component-id="OUIA-Generated-Chip-2"
-                  data-ouia-component-type="PF4/Chip"
-                  data-ouia-safe={true}
-                >
-                  <span
-                    className="pf-c-chip__text"
-                    id="pf-random-id-3"
-                  >
-                    1.1
-                  </span>
-                  <Button
-                    aria-label="close"
-                    aria-labelledby="remove_pf-random-id-3 pf-random-id-3"
-                    id="remove_pf-random-id-3"
-                    onClick={[Function]}
-                    ouiaId="close"
-                    variant="plain"
-                  >
-                    <ButtonBase
-                      aria-label="close"
-                      aria-labelledby="remove_pf-random-id-3 pf-random-id-3"
-                      id="remove_pf-random-id-3"
-                      innerRef={null}
-                      onClick={[Function]}
-                      ouiaId="close"
-                      variant="plain"
-                    >
-                      <button
-                        aria-disabled={false}
-                        aria-label="close"
-                        aria-labelledby="remove_pf-random-id-3 pf-random-id-3"
-                        className="pf-c-button pf-m-plain"
-                        data-ouia-component-id="close"
-                        data-ouia-component-type="PF4/Button"
-                        data-ouia-safe={true}
-                        disabled={false}
-                        id="remove_pf-random-id-3"
-                        onClick={[Function]}
-                        role={null}
-                        type="button"
-                      >
-                        <TimesIcon
-                          aria-hidden="true"
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                        >
-                          <svg
-                            aria-hidden="true"
-                            aria-labelledby={null}
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
-                            }
-                            viewBox="0 0 352 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                            />
-                          </svg>
-                        </TimesIcon>
-                      </button>
-                    </ButtonBase>
-                  </Button>
-                </div>
-              </GenerateId>
-            </Chip>
-          </li>
-        </ul>
-      </div>
+                <path
+                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                />
+              </svg>
+            </button>
+          </div>
+        </li>
+      </ul>
     </div>
-  </GenerateId>
-</ChipGroup>
+  </div>
+</div>
 `;
 
 exports[`ChipGroup chip group with category and tooltip 1`] = `
-<ChipGroup
-  aria-label="Chip group category"
-  categoryName="A very long category name"
-  closeBtnAriaLabel="Close chip group"
-  collapsedText="\${remaining} more"
-  defaultIsOpen={false}
-  expandedText="Show Less"
-  isClosable={false}
-  numChips={3}
-  onClick={[Function]}
-  onOverflowChipClick={[Function]}
-  tooltipPosition="top"
->
-  <GenerateId
-    prefix="pf-random-id-"
+<div>
+  <div
+    aria-labelledby="pf-random-id-12"
+    class="pf-c-chip-group pf-m-category"
+    data-ouia-component-type="PF4/ChipGroup"
+    data-ouia-safe="true"
+    role="group"
   >
     <div
-      className="pf-c-chip-group pf-m-category"
-      data-ouia-component-type="PF4/ChipGroup"
-      data-ouia-safe={true}
+      class="pf-c-chip-group__main"
     >
-      <div
-        className="pf-c-chip-group__main"
+      <span
+        class="pf-c-chip-group__label"
+        id="pf-random-id-12"
       >
-        <span
-          aria-hidden="true"
-          className="pf-c-chip-group__label"
-          id="pf-random-id-12"
+        A very long category name
+      </span>
+      <ul
+        aria-labelledby="pf-random-id-12"
+        class="pf-c-chip-group__list"
+        role="list"
+      >
+        <li
+          class="pf-c-chip-group__list-item"
         >
-          A very long category name
-        </span>
-        <ul
-          aria-labelledby="pf-random-id-12"
-          className="pf-c-chip-group__list"
-          role="list"
-        >
-          <li
-            className="pf-c-chip-group__list-item"
-            key="0"
+          <div
+            class="pf-c-chip"
+            data-ouia-component-id="OUIA-Generated-Chip-9"
+            data-ouia-component-type="PF4/Chip"
+            data-ouia-safe="true"
           >
-            <Chip
-              className=""
-              closeBtnAriaLabel="close"
-              component="div"
-              isOverflowChip={false}
-              isReadOnly={false}
-              key=".0"
-              onClick={[Function]}
-              tooltipPosition="top"
+            <span
+              class="pf-c-chip__text"
+              id="pf-random-id-13"
             >
-              <GenerateId
-                prefix="pf-random-id-"
+              1.1
+            </span>
+            <button
+              aria-disabled="false"
+              aria-label="close"
+              aria-labelledby="remove_pf-random-id-13 pf-random-id-13"
+              class="pf-c-button pf-m-plain"
+              data-ouia-component-id="close"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe="true"
+              id="remove_pf-random-id-13"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 352 512"
+                width="1em"
               >
-                <div
-                  className="pf-c-chip"
-                  data-ouia-component-id="OUIA-Generated-Chip-9"
-                  data-ouia-component-type="PF4/Chip"
-                  data-ouia-safe={true}
-                >
-                  <span
-                    className="pf-c-chip__text"
-                    id="pf-random-id-13"
-                  >
-                    1.1
-                  </span>
-                  <Button
-                    aria-label="close"
-                    aria-labelledby="remove_pf-random-id-13 pf-random-id-13"
-                    id="remove_pf-random-id-13"
-                    onClick={[Function]}
-                    ouiaId="close"
-                    variant="plain"
-                  >
-                    <ButtonBase
-                      aria-label="close"
-                      aria-labelledby="remove_pf-random-id-13 pf-random-id-13"
-                      id="remove_pf-random-id-13"
-                      innerRef={null}
-                      onClick={[Function]}
-                      ouiaId="close"
-                      variant="plain"
-                    >
-                      <button
-                        aria-disabled={false}
-                        aria-label="close"
-                        aria-labelledby="remove_pf-random-id-13 pf-random-id-13"
-                        className="pf-c-button pf-m-plain"
-                        data-ouia-component-id="close"
-                        data-ouia-component-type="PF4/Button"
-                        data-ouia-safe={true}
-                        disabled={false}
-                        id="remove_pf-random-id-13"
-                        onClick={[Function]}
-                        role={null}
-                        type="button"
-                      >
-                        <TimesIcon
-                          aria-hidden="true"
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                        >
-                          <svg
-                            aria-hidden="true"
-                            aria-labelledby={null}
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
-                            }
-                            viewBox="0 0 352 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                            />
-                          </svg>
-                        </TimesIcon>
-                      </button>
-                    </ButtonBase>
-                  </Button>
-                </div>
-              </GenerateId>
-            </Chip>
-          </li>
-        </ul>
-      </div>
+                <path
+                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                />
+              </svg>
+            </button>
+          </div>
+        </li>
+      </ul>
     </div>
-  </GenerateId>
-</ChipGroup>
+  </div>
+</div>
 `;
 
 exports[`ChipGroup chip group with closable category 1`] = `
-<ChipGroup
-  aria-label="Chip group category"
-  categoryName="category"
-  closeBtnAriaLabel="Close chip group"
-  collapsedText="\${remaining} more"
-  defaultIsOpen={false}
-  expandedText="Show Less"
-  isClosable={true}
-  numChips={3}
-  onClick={[Function]}
-  onOverflowChipClick={[Function]}
-  tooltipPosition="top"
->
-  <GenerateId
-    prefix="pf-random-id-"
+<div>
+  <div
+    aria-labelledby="pf-random-id-4"
+    class="pf-c-chip-group pf-m-category"
+    data-ouia-component-type="PF4/ChipGroup"
+    data-ouia-safe="true"
+    role="group"
   >
     <div
-      className="pf-c-chip-group pf-m-category"
-      data-ouia-component-type="PF4/ChipGroup"
-      data-ouia-safe={true}
+      class="pf-c-chip-group__main"
     >
-      <div
-        className="pf-c-chip-group__main"
+      <span
+        class="pf-c-chip-group__label"
+        id="pf-random-id-4"
       >
-        <span
-          aria-hidden="true"
-          className="pf-c-chip-group__label"
-          id="pf-random-id-4"
+        category
+      </span>
+      <ul
+        aria-labelledby="pf-random-id-4"
+        class="pf-c-chip-group__list"
+        role="list"
+      >
+        <li
+          class="pf-c-chip-group__list-item"
         >
-          category
-        </span>
-        <ul
-          aria-labelledby="pf-random-id-4"
-          className="pf-c-chip-group__list"
-          role="list"
-        >
-          <li
-            className="pf-c-chip-group__list-item"
-            key="0"
+          <div
+            class="pf-c-chip"
+            data-ouia-component-id="OUIA-Generated-Chip-3"
+            data-ouia-component-type="PF4/Chip"
+            data-ouia-safe="true"
           >
-            <Chip
-              className=""
-              closeBtnAriaLabel="close"
-              component="div"
-              isOverflowChip={false}
-              isReadOnly={false}
-              key=".0"
-              onClick={[Function]}
-              tooltipPosition="top"
+            <span
+              class="pf-c-chip__text"
+              id="pf-random-id-5"
             >
-              <GenerateId
-                prefix="pf-random-id-"
-              >
-                <div
-                  className="pf-c-chip"
-                  data-ouia-component-id="OUIA-Generated-Chip-3"
-                  data-ouia-component-type="PF4/Chip"
-                  data-ouia-safe={true}
-                >
-                  <span
-                    className="pf-c-chip__text"
-                    id="pf-random-id-5"
-                  >
-                    1.1
-                  </span>
-                  <Button
-                    aria-label="close"
-                    aria-labelledby="remove_pf-random-id-5 pf-random-id-5"
-                    id="remove_pf-random-id-5"
-                    onClick={[Function]}
-                    ouiaId="close"
-                    variant="plain"
-                  >
-                    <ButtonBase
-                      aria-label="close"
-                      aria-labelledby="remove_pf-random-id-5 pf-random-id-5"
-                      id="remove_pf-random-id-5"
-                      innerRef={null}
-                      onClick={[Function]}
-                      ouiaId="close"
-                      variant="plain"
-                    >
-                      <button
-                        aria-disabled={false}
-                        aria-label="close"
-                        aria-labelledby="remove_pf-random-id-5 pf-random-id-5"
-                        className="pf-c-button pf-m-plain"
-                        data-ouia-component-id="close"
-                        data-ouia-component-type="PF4/Button"
-                        data-ouia-safe={true}
-                        disabled={false}
-                        id="remove_pf-random-id-5"
-                        onClick={[Function]}
-                        role={null}
-                        type="button"
-                      >
-                        <TimesIcon
-                          aria-hidden="true"
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                        >
-                          <svg
-                            aria-hidden="true"
-                            aria-labelledby={null}
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
-                            }
-                            viewBox="0 0 352 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                            />
-                          </svg>
-                        </TimesIcon>
-                      </button>
-                    </ButtonBase>
-                  </Button>
-                </div>
-              </GenerateId>
-            </Chip>
-          </li>
-        </ul>
-      </div>
-      <div
-        className="pf-c-chip-group__close"
-      >
-        <Button
-          aria-label="Close chip group"
-          aria-labelledby="remove_group_pf-random-id-4 pf-random-id-4"
-          id="remove_group_pf-random-id-4"
-          onClick={[Function]}
-          ouiaId="Close chip group"
-          variant="plain"
-        >
-          <ButtonBase
-            aria-label="Close chip group"
-            aria-labelledby="remove_group_pf-random-id-4 pf-random-id-4"
-            id="remove_group_pf-random-id-4"
-            innerRef={null}
-            onClick={[Function]}
-            ouiaId="Close chip group"
-            variant="plain"
-          >
+              1.1
+            </span>
             <button
-              aria-disabled={false}
-              aria-label="Close chip group"
-              aria-labelledby="remove_group_pf-random-id-4 pf-random-id-4"
-              className="pf-c-button pf-m-plain"
-              data-ouia-component-id="Close chip group"
+              aria-disabled="false"
+              aria-label="close"
+              aria-labelledby="remove_pf-random-id-5 pf-random-id-5"
+              class="pf-c-button pf-m-plain"
+              data-ouia-component-id="close"
               data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={false}
-              id="remove_group_pf-random-id-4"
-              onClick={[Function]}
-              role={null}
+              data-ouia-safe="true"
+              id="remove_pf-random-id-5"
               type="button"
             >
-              <TimesCircleIcon
+              <svg
                 aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 352 512"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
-                  />
-                </svg>
-              </TimesCircleIcon>
+                <path
+                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                />
+              </svg>
             </button>
-          </ButtonBase>
-        </Button>
-      </div>
+          </div>
+        </li>
+      </ul>
     </div>
-  </GenerateId>
-</ChipGroup>
+    <div
+      class="pf-c-chip-group__close"
+    >
+      <button
+        aria-disabled="false"
+        aria-label="Close chip group"
+        aria-labelledby="remove_group_pf-random-id-4 pf-random-id-4"
+        class="pf-c-button pf-m-plain"
+        data-ouia-component-id="Close chip group"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        id="remove_group_pf-random-id-4"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style="vertical-align: -0.125em;"
+          viewBox="0 0 512 512"
+          width="1em"
+        >
+          <path
+            d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
 `;

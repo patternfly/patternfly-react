@@ -1,83 +1,108 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChartBulletTitle 1`] = `
-<ChartContainer
-  height={140}
-  width={450}
->
-  <ChartLabel
-    style={
-      Array [
-        Object {
-          "fontSize": 18,
-        },
-        Object {
-          "fill": "#b8bbbe",
-          "fontSize": 14,
-        },
-      ]
-    }
-    textAnchor="end"
-    verticalAnchor="middle"
-    x={36}
-    y={70}
-  />
-</ChartContainer>
+<div>
+  <div
+    class="pf-c-chart"
+    style="pointer-events: none; position: relative; width: 100%; height: 100%;"
+  >
+    <svg
+      height="140"
+      role="img"
+      style="pointer-events: all; width: 100%; height: 100%;"
+      viewBox="0 0 450 140"
+      width="450"
+    />
+    <div
+      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+    >
+      <svg
+        height="140"
+        style="overflow: visible; width: 100%; height: 100%;"
+        viewBox="0 0 450 140"
+        width="450"
+      />
+    </div>
+  </div>
+</div>
 `;
 
 exports[`ChartBulletTitle 2`] = `
-<ChartContainer
-  height={140}
-  width={450}
->
-  <ChartLabel
-    style={
-      Array [
-        Object {
-          "fontSize": 18,
-        },
-        Object {
-          "fill": "#b8bbbe",
-          "fontSize": 14,
-        },
-      ]
-    }
-    textAnchor="end"
-    verticalAnchor="middle"
-    x={36}
-    y={70}
-  />
-</ChartContainer>
+<div>
+  <div
+    class="pf-c-chart"
+    style="pointer-events: none; position: relative; width: 100%; height: 100%;"
+  >
+    <svg
+      height="140"
+      role="img"
+      style="pointer-events: all; width: 100%; height: 100%;"
+      viewBox="0 0 450 140"
+      width="450"
+    />
+    <div
+      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+    >
+      <svg
+        height="140"
+        style="overflow: visible; width: 100%; height: 100%;"
+        viewBox="0 0 450 140"
+        width="450"
+      />
+    </div>
+  </div>
+</div>
 `;
 
 exports[`renders component data 1`] = `
-<ChartContainer
-  height={140}
-  width={450}
->
-  <ChartLabel
-    capHeight={1.1}
-    style={
-      Array [
-        Object {
-          "fontSize": 18,
-        },
-        Object {
-          "fill": "#b8bbbe",
-          "fontSize": 14,
-        },
-      ]
-    }
-    text={
-      Array [
-        "Text label",
-        "Measure details",
-      ]
-    }
-    textAnchor="end"
-    verticalAnchor="middle"
-    x={36}
-    y={70}
-  />
-</ChartContainer>
+<div>
+  <div
+    class="pf-c-chart"
+    style="pointer-events: none; position: relative; width: 100%; height: 100%;"
+  >
+    <svg
+      height="140"
+      role="img"
+      style="pointer-events: all; width: 100%; height: 100%;"
+      viewBox="0 0 450 140"
+      width="450"
+    >
+      <text
+        direction="inherit"
+        dx="0"
+        x="36"
+        y="70.1"
+      >
+        <tspan
+          dx="0"
+          dy="0"
+          style="font-size: 18px; text-anchor: end; font-family: var(--pf-chart-global--FontFamily); letter-spacing: var(--pf-chart-global--letter-spacing); fill: #252525; stroke: transparent;"
+          text-anchor="end"
+          x="36"
+        >
+          Text label
+        </tspan>
+        <tspan
+          dx="0"
+          dy="13.8"
+          style="fill: #b8bbbe; font-size: 14px; text-anchor: end; font-family: var(--pf-chart-global--FontFamily); letter-spacing: var(--pf-chart-global--letter-spacing); stroke: transparent;"
+          text-anchor="end"
+          x="36"
+        >
+          Measure details
+        </tspan>
+      </text>
+    </svg>
+    <div
+      style="z-index: 99; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+    >
+      <svg
+        height="140"
+        style="overflow: visible; width: 100%; height: 100%;"
+        viewBox="0 0 450 140"
+        width="450"
+      />
+    </div>
+  </div>
+</div>
 `;

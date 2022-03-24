@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { NavExpandable } from '../../NavExpandable';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('NavExpandable should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <NavExpandable
       title={'string'}
       srText={"''"}
@@ -21,5 +21,5 @@ it('NavExpandable should match snapshot (auto-generated)', () => {
       onExpand={(e: React.MouseEvent<HTMLLIElement, MouseEvent>, val: boolean) => undefined as void}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

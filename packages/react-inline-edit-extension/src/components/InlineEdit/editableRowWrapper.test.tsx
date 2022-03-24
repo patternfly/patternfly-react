@@ -1,4 +1,5 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 
 import { editableRowWrapper } from './editableRowWrapper';
@@ -12,7 +13,7 @@ TestRow.defaultProps = {
 };
 
 const getRowWrapper = (row, props) => {
-  const RowWrapper = editableRowWrapper(TestRow);
+  const RowWrapper = editableRowWrapper(TestRow as any);
   return <RowWrapper {...props} row={row} />;
 };
 
@@ -44,7 +45,7 @@ describe('editableRowWrapper', () => {
 
   test('renders correctly', () => {
     const trRef = jest.fn();
-    const view = mount(
+    const view = render(
       getRowWrapper(buildRow({}, null), {
         onResize: jest.fn(),
         onScroll: jest.fn(),
@@ -52,13 +53,13 @@ describe('editableRowWrapper', () => {
       }),
       mountOptions
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
     expect(trRef).toHaveBeenCalled();
   });
 
   test('sets editable row classname', () => {
     [...Object.keys(TableEditConfirmation), null].forEach(confirmationType => {
-      const view = mount(getRowWrapper(buildRow({}, confirmationType)), mountOptions);
+      const view = mount(getRowWrapper(buildRow({}, confirmationType), null), mountOptions);
       expect(view.find('.pf-c-table__editable-row')).toHaveLength(1);
       view.detach();
     });
@@ -72,7 +73,7 @@ describe('editableRowWrapper', () => {
       buildRow({ isTableEditing: true, isFirstVisible: true }, TableEditConfirmation.TABLE_TOP),
       buildRow({ isTableEditing: true, isLastVisible: true }, TableEditConfirmation.TABLE_BOTTOM)
     ].forEach(row => {
-      const view = mount(getRowWrapper(row), mountOptions);
+      const view = mount(getRowWrapper(row, null), mountOptions);
       expect(view.find('.pf-c-table__inline-edit-buttons')).toHaveLength(1);
       view.detach();
     });
@@ -92,7 +93,7 @@ describe('editableRowWrapper', () => {
       buildRow({ isTableEditing: true, isLastVisible: true }, TableEditConfirmation.TABLE_TOP),
       buildRow({ isTableEditing: true, isFirstVisible: true }, TableEditConfirmation.TABLE_BOTTOM)
     ].forEach(row => {
-      const view = mount(getRowWrapper(row), mountOptions);
+      const view = mount(getRowWrapper(row, null), mountOptions);
       expect(view.find('.pf-c-table__inline-edit-buttons')).toHaveLength(0);
       view.detach();
     });
@@ -110,7 +111,7 @@ describe('editableRowWrapper', () => {
       }
     };
 
-    const view = mount(getRowWrapper(row), mountOptions);
+    const view = mount(getRowWrapper(row, null), mountOptions);
     view.find('.pf-c-table__inline-edit-buttons button.pf-c-button.pf-m-primary').simulate('mouseup');
     expect(onEditConfirmed).toHaveBeenCalled();
 

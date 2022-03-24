@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { FormSection } from '../FormSection';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 
 test('Check form section example against snapshot', () => {
   const Section = <FormSection />;
-  const view = mount(Section);
-  expect(view).toMatchSnapshot();
+  const view = render(Section);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Check form section example with title', () => {
   const Section = <FormSection title="Title" titleElement="h4"/>;
-  const view = mount(Section);
-  expect(view).toMatchSnapshot();
+  const view = render(Section);
+  expect(view.container).toMatchSnapshot();
 });

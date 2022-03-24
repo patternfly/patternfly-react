@@ -1,1422 +1,760 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`numberInput disables lower threshold 1`] = `
-<NumberInput
-  min={0}
-  value={0}
->
+<div>
   <div
-    className="pf-c-number-input"
+    class="pf-c-number-input"
   >
     <div
-      className="pf-c-input-group"
+      class="pf-c-input-group"
     >
-      <Button
+      <button
+        aria-disabled="true"
         aria-label="Minus"
-        isDisabled={true}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control pf-m-disabled"
+        data-ouia-component-id="OUIA-Generated-Button-control-7"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        disabled=""
+        type="button"
       >
-        <ButtonBase
-          aria-label="Minus"
-          innerRef={null}
-          isDisabled={true}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={true}
-            aria-label="Minus"
-            className="pf-c-button pf-m-control pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-control-7"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
-            onClick={[Function]}
-            role={null}
-            tabIndex={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <MinusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </MinusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
       <input
         aria-label="Input"
-        className="pf-c-form-control"
-        onKeyDown={[Function]}
-        readOnly={true}
+        class="pf-c-form-control"
+        readonly=""
         type="number"
-        value={0}
+        value="0"
       />
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Plus"
-        isDisabled={false}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-8"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
       >
-        <ButtonBase
-          aria-label="Plus"
-          innerRef={null}
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={false}
-            aria-label="Plus"
-            className="pf-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-8"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            onClick={[Function]}
-            role={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <PlusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </PlusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
-</NumberInput>
+</div>
 `;
 
 exports[`numberInput disables upper threshold 1`] = `
-<NumberInput
-  max={100}
-  value={100}
->
+<div>
   <div
-    className="pf-c-number-input"
+    class="pf-c-number-input"
   >
     <div
-      className="pf-c-input-group"
+      class="pf-c-input-group"
     >
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Minus"
-        isDisabled={false}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-9"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
       >
-        <ButtonBase
-          aria-label="Minus"
-          innerRef={null}
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={false}
-            aria-label="Minus"
-            className="pf-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-9"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            onClick={[Function]}
-            role={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <MinusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </MinusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
       <input
         aria-label="Input"
-        className="pf-c-form-control"
-        onKeyDown={[Function]}
-        readOnly={true}
+        class="pf-c-form-control"
+        readonly=""
         type="number"
-        value={100}
+        value="100"
       />
-      <Button
+      <button
+        aria-disabled="true"
         aria-label="Plus"
-        isDisabled={true}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control pf-m-disabled"
+        data-ouia-component-id="OUIA-Generated-Button-control-10"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        disabled=""
+        type="button"
       >
-        <ButtonBase
-          aria-label="Plus"
-          innerRef={null}
-          isDisabled={true}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={true}
-            aria-label="Plus"
-            className="pf-c-button pf-m-control pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-control-10"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
-            onClick={[Function]}
-            role={null}
-            tabIndex={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <PlusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </PlusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
-</NumberInput>
+</div>
 `;
 
 exports[`numberInput passes button props successfully 1`] = `
-<NumberInput
-  minusBtnProps={
-    Object {
-      "id": "minus-id",
-    }
-  }
-  onMinus={[MockFunction]}
-  onPlus={[MockFunction]}
-  plusBtnProps={
-    Object {
-      "id": "plus-id",
-    }
-  }
-  value={5}
->
+<div>
   <div
-    className="pf-c-number-input"
+    class="pf-c-number-input"
   >
     <div
-      className="pf-c-input-group"
+      class="pf-c-input-group"
     >
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Minus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-19"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
         id="minus-id"
-        isDisabled={false}
-        onClick={[Function]}
-        variant="control"
+        type="button"
       >
-        <ButtonBase
-          aria-label="Minus"
-          id="minus-id"
-          innerRef={null}
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={false}
-            aria-label="Minus"
-            className="pf-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-19"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            id="minus-id"
-            onClick={[Function]}
-            role={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <MinusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </MinusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
       <input
         aria-label="Input"
-        className="pf-c-form-control"
-        onKeyDown={[Function]}
-        readOnly={true}
+        class="pf-c-form-control"
+        readonly=""
         type="number"
-        value={5}
+        value="5"
       />
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Plus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-20"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
         id="plus-id"
-        isDisabled={false}
-        onClick={[Function]}
-        variant="control"
+        type="button"
       >
-        <ButtonBase
-          aria-label="Plus"
-          id="plus-id"
-          innerRef={null}
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={false}
-            aria-label="Plus"
-            className="pf-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-20"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            id="plus-id"
-            onClick={[Function]}
-            role={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <PlusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </PlusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
-</NumberInput>
+</div>
 `;
 
 exports[`numberInput passes input props successfully 1`] = `
-<NumberInput
-  inputName="test-name"
-  onChange={[MockFunction]}
-  value={5}
->
+<div>
   <div
-    className="pf-c-number-input"
+    class="pf-c-number-input"
   >
     <div
-      className="pf-c-input-group"
+      class="pf-c-input-group"
     >
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Minus"
-        isDisabled={false}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-17"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
       >
-        <ButtonBase
-          aria-label="Minus"
-          innerRef={null}
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={false}
-            aria-label="Minus"
-            className="pf-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-17"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            onClick={[Function]}
-            role={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <MinusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </MinusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
       <input
         aria-label="Input"
-        className="pf-c-form-control"
+        class="pf-c-form-control"
         name="test-name"
-        onChange={[MockFunction]}
-        onKeyDown={[Function]}
         type="number"
-        value={5}
+        value="5"
       />
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Plus"
-        isDisabled={false}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-18"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
       >
-        <ButtonBase
-          aria-label="Plus"
-          innerRef={null}
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={false}
-            aria-label="Plus"
-            className="pf-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-18"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            onClick={[Function]}
-            role={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <PlusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </PlusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
-</NumberInput>
+</div>
 `;
 
 exports[`numberInput renders custom width 1`] = `
-<NumberInput
-  value={5}
-  widthChars="10"
->
+<div>
   <div
-    className="pf-c-number-input"
-    style={
-      Object {
-        "--pf-c-number-input--c-form-control--width-chars": "10",
-      }
-    }
+    class="pf-c-number-input"
+    style="--pf-c-number-input--c-form-control--width-chars: 10;"
   >
     <div
-      className="pf-c-input-group"
+      class="pf-c-input-group"
     >
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Minus"
-        isDisabled={false}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-15"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
       >
-        <ButtonBase
-          aria-label="Minus"
-          innerRef={null}
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={false}
-            aria-label="Minus"
-            className="pf-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-15"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            onClick={[Function]}
-            role={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <MinusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </MinusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
       <input
         aria-label="Input"
-        className="pf-c-form-control"
-        onKeyDown={[Function]}
-        readOnly={true}
+        class="pf-c-form-control"
+        readonly=""
         type="number"
-        value={5}
+        value="5"
       />
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Plus"
-        isDisabled={false}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-16"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
       >
-        <ButtonBase
-          aria-label="Plus"
-          innerRef={null}
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={false}
-            aria-label="Plus"
-            className="pf-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-16"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            onClick={[Function]}
-            role={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <PlusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </PlusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
-</NumberInput>
+</div>
 `;
 
 exports[`numberInput renders defaults & extra props 1`] = `
-<NumberInput
-  className="custom"
-  id="numberInput1"
->
+<div>
   <div
-    className="pf-c-number-input custom"
+    class="pf-c-number-input custom"
     id="numberInput1"
   >
     <div
-      className="pf-c-input-group"
+      class="pf-c-input-group"
     >
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Minus"
-        isDisabled={false}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-1"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
       >
-        <ButtonBase
-          aria-label="Minus"
-          innerRef={null}
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={false}
-            aria-label="Minus"
-            className="pf-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-1"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            onClick={[Function]}
-            role={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <MinusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </MinusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
       <input
         aria-label="Input"
-        className="pf-c-form-control"
-        onKeyDown={[Function]}
-        readOnly={true}
+        class="pf-c-form-control"
+        readonly=""
         type="number"
-        value={0}
+        value="0"
       />
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Plus"
-        isDisabled={false}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-2"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
       >
-        <ButtonBase
-          aria-label="Plus"
-          innerRef={null}
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={false}
-            aria-label="Plus"
-            className="pf-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-2"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            onClick={[Function]}
-            role={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <PlusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </PlusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
-</NumberInput>
+</div>
 `;
 
 exports[`numberInput renders disabled 1`] = `
-<NumberInput
-  isDisabled={true}
-  value={90}
->
+<div>
   <div
-    className="pf-c-number-input"
+    class="pf-c-number-input"
   >
     <div
-      className="pf-c-input-group"
+      class="pf-c-input-group"
     >
-      <Button
+      <button
+        aria-disabled="true"
         aria-label="Minus"
-        isDisabled={true}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control pf-m-disabled"
+        data-ouia-component-id="OUIA-Generated-Button-control-5"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        disabled=""
+        type="button"
       >
-        <ButtonBase
-          aria-label="Minus"
-          innerRef={null}
-          isDisabled={true}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={true}
-            aria-label="Minus"
-            className="pf-c-button pf-m-control pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-control-5"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
-            onClick={[Function]}
-            role={null}
-            tabIndex={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <MinusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </MinusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
       <input
         aria-label="Input"
-        className="pf-c-form-control"
-        disabled={true}
-        onKeyDown={[Function]}
-        readOnly={true}
+        class="pf-c-form-control"
+        disabled=""
+        readonly=""
         type="number"
-        value={90}
+        value="90"
       />
-      <Button
+      <button
+        aria-disabled="true"
         aria-label="Plus"
-        isDisabled={true}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control pf-m-disabled"
+        data-ouia-component-id="OUIA-Generated-Button-control-6"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        disabled=""
+        type="button"
       >
-        <ButtonBase
-          aria-label="Plus"
-          innerRef={null}
-          isDisabled={true}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={true}
-            aria-label="Plus"
-            className="pf-c-button pf-m-control pf-m-disabled"
-            data-ouia-component-id="OUIA-Generated-Button-control-6"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={true}
-            onClick={[Function]}
-            role={null}
-            tabIndex={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <PlusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </PlusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
-</NumberInput>
+</div>
 `;
 
 exports[`numberInput renders unit & position 1`] = `
-<NumberInput
-  unit="$"
-  unitPosition="before"
-  value={5}
->
+<div>
   <div
-    className="pf-c-number-input"
+    class="pf-c-number-input"
   >
     <div
-      className="pf-c-number-input__unit"
+      class="pf-c-number-input__unit"
     >
       $
     </div>
     <div
-      className="pf-c-input-group"
+      class="pf-c-input-group"
     >
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Minus"
-        isDisabled={false}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-13"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
       >
-        <ButtonBase
-          aria-label="Minus"
-          innerRef={null}
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={false}
-            aria-label="Minus"
-            className="pf-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-13"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            onClick={[Function]}
-            role={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <MinusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </MinusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
       <input
         aria-label="Input"
-        className="pf-c-form-control"
-        onKeyDown={[Function]}
-        readOnly={true}
+        class="pf-c-form-control"
+        readonly=""
         type="number"
-        value={5}
+        value="5"
       />
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Plus"
-        isDisabled={false}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-14"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
       >
-        <ButtonBase
-          aria-label="Plus"
-          innerRef={null}
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={false}
-            aria-label="Plus"
-            className="pf-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-14"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            onClick={[Function]}
-            role={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <PlusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </PlusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
-</NumberInput>
+</div>
 `;
 
 exports[`numberInput renders unit 1`] = `
-<NumberInput
-  unit="%"
-  unitPosition="after"
-  value={5}
->
+<div>
   <div
-    className="pf-c-number-input"
+    class="pf-c-number-input"
   >
     <div
-      className="pf-c-input-group"
+      class="pf-c-input-group"
     >
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Minus"
-        isDisabled={false}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-11"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
       >
-        <ButtonBase
-          aria-label="Minus"
-          innerRef={null}
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={false}
-            aria-label="Minus"
-            className="pf-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-11"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            onClick={[Function]}
-            role={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <MinusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </MinusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
       <input
         aria-label="Input"
-        className="pf-c-form-control"
-        onKeyDown={[Function]}
-        readOnly={true}
+        class="pf-c-form-control"
+        readonly=""
         type="number"
-        value={5}
+        value="5"
       />
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Plus"
-        isDisabled={false}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-12"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
       >
-        <ButtonBase
-          aria-label="Plus"
-          innerRef={null}
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={false}
-            aria-label="Plus"
-            className="pf-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-12"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            onClick={[Function]}
-            role={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <PlusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </PlusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
     <div
-      className="pf-c-number-input__unit"
+      class="pf-c-number-input__unit"
     >
       %
     </div>
   </div>
-</NumberInput>
+</div>
 `;
 
 exports[`numberInput renders value 1`] = `
-<NumberInput
-  value={90}
->
+<div>
   <div
-    className="pf-c-number-input"
+    class="pf-c-number-input"
   >
     <div
-      className="pf-c-input-group"
+      class="pf-c-input-group"
     >
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Minus"
-        isDisabled={false}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-3"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
       >
-        <ButtonBase
-          aria-label="Minus"
-          innerRef={null}
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={false}
-            aria-label="Minus"
-            className="pf-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-3"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            onClick={[Function]}
-            role={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <MinusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </MinusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
       <input
         aria-label="Input"
-        className="pf-c-form-control"
-        onKeyDown={[Function]}
-        readOnly={true}
+        class="pf-c-form-control"
+        readonly=""
         type="number"
-        value={90}
+        value="90"
       />
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Plus"
-        isDisabled={false}
-        onClick={[Function]}
-        variant="control"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-4"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
       >
-        <ButtonBase
-          aria-label="Plus"
-          innerRef={null}
-          isDisabled={false}
-          onClick={[Function]}
-          variant="control"
+        <span
+          class="pf-c-number-input__icon"
         >
-          <button
-            aria-disabled={false}
-            aria-label="Plus"
-            className="pf-c-button pf-m-control"
-            data-ouia-component-id="OUIA-Generated-Button-control-4"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            onClick={[Function]}
-            role={null}
-            type="button"
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
           >
-            <span
-              className="pf-c-number-input__icon"
-            >
-              <PlusIcon
-                aria-hidden="true"
-                color="currentColor"
-                noVerticalAlign={false}
-                size="sm"
-              >
-                <svg
-                  aria-hidden="true"
-                  aria-labelledby={null}
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style={
-                    Object {
-                      "verticalAlign": "-0.125em",
-                    }
-                  }
-                  viewBox="0 0 448 512"
-                  width="1em"
-                >
-                  <path
-                    d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
-                  />
-                </svg>
-              </PlusIcon>
-            </span>
-          </button>
-        </ButtonBase>
-      </Button>
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
-</NumberInput>
+</div>
 `;

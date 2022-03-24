@@ -1,89 +1,90 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import { Pagination, PaginationVariant } from '../index';
 
 describe('component render', () => {
   test('should render correctly top', () => {
-    const wrapper = mount(<Pagination itemCount={20} />);
-    expect(wrapper).toMatchSnapshot();
+    const wrapper = render(<Pagination itemCount={20} />);
+    expect(wrapper.container).toMatchSnapshot();
   });
 
   test('should render correctly bottom', () => {
-    const wrapper = mount(<Pagination itemCount={20} variant={PaginationVariant.bottom} />);
-    expect(wrapper).toMatchSnapshot();
+    const wrapper = render(<Pagination itemCount={20} variant={PaginationVariant.bottom} />);
+    expect(wrapper.container).toMatchSnapshot();
   });
 
   test('should render correctly compact', () => {
-    const wrapper = mount(<Pagination itemCount={20} isCompact />);
-    expect(wrapper).toMatchSnapshot();
+    const wrapper = render(<Pagination itemCount={20} isCompact />);
+    expect(wrapper.container).toMatchSnapshot();
   });
 
   test('should render correctly sticky', () => {
-    const wrapper = mount(<Pagination itemCount={20} isSticky />);
-    expect(wrapper).toMatchSnapshot();
+    const wrapper = render(<Pagination itemCount={20} isSticky />);
+    expect(wrapper.container).toMatchSnapshot();
   });
 
   test('should render correctly bottom sticky', () => {
-    const wrapper = mount(<Pagination itemCount={20} variant={PaginationVariant.bottom} isSticky />);
-    expect(wrapper).toMatchSnapshot();
+    const wrapper = render(<Pagination itemCount={20} variant={PaginationVariant.bottom} isSticky />);
+    expect(wrapper.container).toMatchSnapshot();
   });
 
   test('should render correctly disabled', () => {
-    const wrapper = mount(<Pagination itemCount={20} isDisabled />);
-    expect(wrapper).toMatchSnapshot();
+    const wrapper = render(<Pagination itemCount={20} isDisabled />);
+    expect(wrapper.container).toMatchSnapshot();
   });
 
   test('limited number of pages', () => {
-    const wrapper = mount(<Pagination itemCount={20} perPage={20} />);
-    expect(wrapper).toMatchSnapshot();
+    const wrapper = render(<Pagination itemCount={20} perPage={20} />);
+    expect(wrapper.container).toMatchSnapshot();
   });
 
   test('zero results', () => {
-    const wrapper = mount(<Pagination itemCount={0} />);
-    expect(wrapper).toMatchSnapshot();
+    const wrapper = render(<Pagination itemCount={0} />);
+    expect(wrapper.container).toMatchSnapshot();
   });
 
   test('last page', () => {
-    const wrapper = mount(<Pagination itemCount={20} perPage={10} page={2} />);
-    expect(wrapper).toMatchSnapshot();
+    const wrapper = render(<Pagination itemCount={20} perPage={10} page={2} />);
+    expect(wrapper.container).toMatchSnapshot();
   });
 
   test('custom perPageOptions', () => {
-    const wrapper = mount(<Pagination itemCount={40} perPageOptions={[{ title: 'some', value: 1 }]} />);
-    expect(wrapper).toMatchSnapshot();
+    const wrapper = render(<Pagination itemCount={40} perPageOptions={[{ title: 'some', value: 1 }]} />);
+    expect(wrapper.container).toMatchSnapshot();
   });
 
   test('empty per page options', () => {
-    const wrapper = mount(<Pagination itemCount={40} perPageOptions={[]} />);
-    expect(wrapper).toMatchSnapshot();
+    const wrapper = render(<Pagination itemCount={40} perPageOptions={[]} />);
+    expect(wrapper.container).toMatchSnapshot();
   });
 
   test('no items', () => {
-    const wrapper = mount(<Pagination itemCount={0} />);
-    expect(wrapper).toMatchSnapshot();
+    const wrapper = render(<Pagination itemCount={0} />);
+    expect(wrapper.container).toMatchSnapshot();
   });
 
   test('custom start end', () => {
-    const wrapper = mount(<Pagination itemCount={40} itemsStart={5} itemsEnd={15} />);
-    expect(wrapper).toMatchSnapshot();
+    const wrapper = render(<Pagination itemCount={40} itemsStart={5} itemsEnd={15} />);
+    expect(wrapper.container).toMatchSnapshot();
   });
 
   test('titles', () => {
-    const wrapper = mount(<Pagination itemCount={40} titles={{ items: 'values', page: 'books' }} />);
-    expect(wrapper).toMatchSnapshot();
+    const wrapper = render(<Pagination itemCount={40} titles={{ items: 'values', page: 'books' }} />);
+    expect(wrapper.container).toMatchSnapshot();
   });
 
   test('custom pagination toggle', () => {
-    const wrapper = mount(
+    const wrapper = render(
       // eslint-disable-next-line no-template-curly-in-string
       <Pagination itemCount={40} toggleTemplate={'${firstIndex} - ${lastIndex} - ${itemCount} - ${itemsTitle}'} />
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.container).toMatchSnapshot();
   });
 
   test('up drop direction', () => {
-    const wrapper = mount(<Pagination itemCount={40} dropDirection="up" />);
-    expect(wrapper).toMatchSnapshot();
+    const wrapper = render(<Pagination itemCount={40} dropDirection="up" />);
+    expect(wrapper.container).toMatchSnapshot();
   });
 
   test('indeterminate count (no item count)', () => {

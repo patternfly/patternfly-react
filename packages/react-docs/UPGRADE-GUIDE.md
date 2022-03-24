@@ -3,6 +3,9 @@ id: Upgrade guide
 section: developer-resources
 ---
 
+**Note:** this guide details upgrading from PatternFly v3 to v4, and references [major release 2020.07](/developer-resources/release-notes#2020.07-release-notes-2020-06-05) from 2020-06-05.
+<hr/>
+
 Hey, Flyers! We’ve been busy for the past 12 weeks keeping up with changes to PatternFly’s HTML and CSS. We’ve replaced `babel` with `tsc` as our compiler of choice and removed prop-types in favor of using our `.d.ts` types, which are supported in most editors.
 
 This upgrade guide details **what** was broken and **how** to fix it. To learn **why** a change was made, check out the linked pull requests.

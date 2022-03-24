@@ -12,7 +12,10 @@ import {
   Stack,
   StackItem
 } from '@patternfly/react-core';
-import '@patternfly/react-styles/css/components/Topology/topology-view.css';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Topology/topology-view';
+import sideBarStyles from '@patternfly/react-styles/css/components/Topology/topology-side-bar';
+import controlBarStyles from '@patternfly/react-styles/css/components/Topology/topology-controlbar';
 
 export interface TopologyViewProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the view */
@@ -59,20 +62,20 @@ export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
   const topologyContent = !sideBarResizable ? (
     <StackItem
       isFilled
-      className={
-        'pf-topology-container' +
-        `${sideBar ? ' pf-topology-container__with-sidebar' : ''}` +
-        `${sideBarOpen ? ' pf-topology-container__with-sidebar--open' : ''}`
-      }
+      className={css(
+        styles.topologyContainer,
+        sideBar && sideBarStyles.topologyContainerWithSidebar,
+        sideBarOpen && sideBarStyles.topologyContainerWithSidebarOpen
+      )}
     >
-      <div className="pf-topology-content">
+      <div className={css(styles.topologyContent)}>
         {children}
-        {controlBar && <span className="pf-topology-control-bar">{controlBar}</span>}
+        {controlBar && <span className={css(controlBarStyles.topologyControlBar)}>{controlBar}</span>}
       </div>
       {sideBar}
     </StackItem>
   ) : (
-    <StackItem isFilled className="pf-topology-container">
+    <StackItem isFilled className={css(styles.topologyContainer)}>
       <Drawer isExpanded={sideBarOpen} isInline>
         <DrawerContent
           panelContent={
@@ -89,9 +92,9 @@ export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
           }
         >
           <DrawerContentBody>
-            <div className="pf-topology-content">
+            <div className={css(styles.topologyContent)}>
               {children}
-              {controlBar && <span className="pf-topology-control-bar">{controlBar}</span>}
+              {controlBar && <span className={css(controlBarStyles.topologyControlBar)}>{controlBar}</span>}
             </div>
           </DrawerContentBody>
         </DrawerContent>
@@ -108,12 +111,12 @@ export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
               <Toolbar id={randomId}>
                 {contextToolbar && (
                   <ToolbarContent>
-                    <ToolbarGroup className="project-toolbar">{contextToolbar}</ToolbarGroup>
+                    <ToolbarGroup className="pf-topology-view__project-toolbar">{contextToolbar}</ToolbarGroup>
                   </ToolbarContent>
                 )}
                 {viewToolbar && (
                   <ToolbarContent>
-                    <ToolbarGroup className="view-toolbar">{viewToolbar}</ToolbarGroup>
+                    <ToolbarGroup className="pf-topology-view__view-toolbar">{viewToolbar}</ToolbarGroup>
                   </ToolbarContent>
                 )}
                 <Divider />

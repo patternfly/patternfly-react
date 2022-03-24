@@ -1,14 +1,15 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+import { mount } from 'enzyme';
 import { VncActions } from '../VncActions';
 
 test('placeholder render test', () => {
-  const view = shallow(<VncActions onDisconnect={jest.fn()} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<VncActions onCtrlAltDel={jest.fn()} onDisconnect={jest.fn()} />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('VncActions renders correctly component hierarchy', () => {
-  const view = shallow(
+  const view = render(
     <VncActions
       textSendShortcut="My Send Shortcut description"
       textCtrlAltDel="foobar"
@@ -16,11 +17,11 @@ test('VncActions renders correctly component hierarchy', () => {
       onDisconnect={jest.fn()}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('VncActions renders correctly html', () => {
-  const view = shallow(
+  const view = render(
     <VncActions
       textSendShortcut="My Send Shortcut description"
       textCtrlAltDel="foobar"
@@ -28,7 +29,7 @@ test('VncActions renders correctly html', () => {
       onDisconnect={jest.fn()}
     />
   );
-  expect(view.html()).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('VncActions calls ctrl+alt+del action', () => {

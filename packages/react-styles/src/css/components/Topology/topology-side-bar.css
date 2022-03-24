@@ -39,6 +39,7 @@
   background-color: var(--pf-global--BackgroundColor--100);
   overflow-x: hidden;
 }
+
 .pf-topology-side-bar > .pf-topology-side-bar__dismiss + * {
   margin-right: 2rem;
 }

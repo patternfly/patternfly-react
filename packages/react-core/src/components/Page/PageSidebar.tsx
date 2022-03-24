@@ -22,10 +22,10 @@ export interface PageSidebarProps extends React.HTMLProps<HTMLDivElement> {
 export interface PageSidebarContextProps {
   isNavOpen: boolean;
 }
-
-export const PageSidebarContext = React.createContext<Partial<PageSidebarContextProps>>({
+export const pageSidebarContextDefaults: PageSidebarContextProps = {
   isNavOpen: true
-});
+};
+export const PageSidebarContext = React.createContext<Partial<PageSidebarContextProps>>(pageSidebarContextDefaults);
 
 export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
   className = '',
@@ -51,7 +51,7 @@ export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
           aria-hidden={!navOpen}
           {...props}
         >
-          <div className={css(styles.pageSidebarBody)}>
+          <div className="pf-topology-side-bar__body">
             <PageSidebarContext.Provider value={{ isNavOpen: navOpen }}>{nav}</PageSidebarContext.Provider>
           </div>
         </div>

@@ -18,6 +18,7 @@ export class DagreLayout extends BaseLayout implements Layout {
     super(graph, options);
     this.dagreOptions = {
       ...this.options,
+      layoutOnDrag: false,
       marginx: 0,
       marginy: 0,
       nodesep: this.options.nodeDistance,
@@ -47,6 +48,10 @@ export class DagreLayout extends BaseLayout implements Layout {
     });
   }
 
+  protected getFauxEdges(): LayoutLink[] {
+    return [];
+  }
+
   protected startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean): void {
     if (initialRun || addingNodes) {
       const dagreGraph = new dagre.graphlib.Graph({ compound: true });
@@ -71,13 +76,13 @@ export class DagreLayout extends BaseLayout implements Layout {
 
       dagre.layout(dagreGraph);
       this.nodes.forEach(node => {
-        (node as DagreNode).updateToNode(updatedNodes.find(n => n.id === node.id));
+        (node as DagreNode).updateToNode(dagreGraph.node(node.id));
       });
 
       this.updateEdgeBendpoints(this.edges as DagreLink[]);
     }
 
-    if (this.options.layoutOnDrag) {
+    if (this.dagreOptions.layoutOnDrag) {
       this.forceSimulation.useForceSimulation(this.nodes, this.edges, this.getFixedNodeDistance);
     }
   }

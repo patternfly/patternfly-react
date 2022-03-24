@@ -1,24 +1,24 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ActionGroup } from '../ActionGroup';
 import { Form } from '../Form';
 
 describe('ActionGroup component', () => {
   test('should render default action group variant', () => {
-    const view = mount(
+    const view = render(
       <ActionGroup>
         <div>Hello</div>
       </ActionGroup>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('should render horizontal form ActionGroup variant', () => {
-    const view = mount(
+    const view = render(
       <Form isHorizontal>
         <ActionGroup />
       </Form>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });

@@ -3,8 +3,10 @@ import styles from '@patternfly/react-styles/css/components/Select/select';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
-import { KeyTypes, SelectVariant } from './selectConstants';
+import { SelectVariant, SelectFooterTabbableItems } from './selectConstants';
 import { PickOptional } from '../../helpers/typeUtils';
+import { findTabbableElements } from '../../helpers/util';
+import { KeyTypes } from '../../helpers/constants';
 
 export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   /** HTML ID of dropdown toggle */
@@ -16,13 +18,15 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   /** Flag to indicate if select is open */
   isOpen?: boolean;
   /** Callback called when toggle is clicked */
-  onToggle?: (isExpanded: boolean) => void;
+  onToggle?: (isExpanded: boolean, event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent | Event) => void;
   /** Callback for toggle open on keyboard entry */
   onEnter?: () => void;
   /** Callback for toggle close */
   onClose?: () => void;
   /** @hide Internal callback for toggle keyboard navigation */
-  handleTypeaheadKeys?: (position: string) => void;
+  handleTypeaheadKeys?: (position: string, shiftKey?: boolean) => void;
+  /** @hide Internal callback to move focus to last menu item */
+  moveFocusToLastMenuItem?: () => void;
   /** Element which wraps toggle */
   parentRef: React.RefObject<HTMLDivElement>;
   /** The menu element */
@@ -84,7 +88,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   }
 
   componentDidMount() {
-    document.addEventListener('click', this.onDocClick);
+    document.addEventListener('click', this.onDocClick, { capture: true });
     document.addEventListener('touchstart', this.onDocClick);
     document.addEventListener('keydown', this.handleGlobalKeys);
   }
@@ -101,21 +105,23 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     const clickedWithinMenu =
       menuRef && menuRef.current && menuRef.current.contains && menuRef.current.contains(event.target as Node);
     if (isOpen && !(clickedOnToggle || clickedWithinMenu)) {
-      onToggle(false);
+      onToggle(false, event);
       onClose();
     }
   };
 
-  findTabbableFooterElements = () => {
-    const tabbable = this.props.footerRef.current.querySelectorAll('input, button, select, textarea, a[href]');
-    const list = Array.prototype.filter.call(tabbable, function(item) {
-      return item.tabIndex >= '0';
-    });
-    return list;
-  };
-
   handleGlobalKeys = (event: KeyboardEvent) => {
-    const { parentRef, menuRef, hasFooter, isOpen, variant, onToggle, onClose } = this.props;
+    const {
+      parentRef,
+      menuRef,
+      hasFooter,
+      footerRef,
+      isOpen,
+      variant,
+      onToggle,
+      onClose,
+      moveFocusToLastMenuItem
+    } = this.props;
     const escFromToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
     const escFromWithinMenu =
       menuRef && menuRef.current && menuRef.current.contains && menuRef.current.contains(event.target as Node);
@@ -124,29 +130,44 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       event.key === KeyTypes.Tab &&
       (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti)
     ) {
-      this.props.handleTypeaheadKeys('tab');
+      this.props.handleTypeaheadKeys('tab', event.shiftKey);
       event.preventDefault();
       return;
     }
 
     if (isOpen && event.key === KeyTypes.Tab && hasFooter) {
-      const tabbableItems = this.findTabbableFooterElements();
+      const tabbableItems = findTabbableElements(footerRef, SelectFooterTabbableItems);
 
       // If no tabbable item in footer close select
       if (tabbableItems.length <= 0) {
-        onToggle(false);
+        onToggle(false, event);
         onClose();
         this.toggle.current.focus();
         return;
       } else {
-        // if current element is not in footer, tab to first tabbable element in footer
-        const currentElementIndex = tabbableItems.findIndex(item => item === document.activeElement);
+        // if current element is not in footer, tab to first tabbable element in footer, or close if shift clicked
+        const currentElementIndex = tabbableItems.findIndex((item: any) => item === document.activeElement);
         if (currentElementIndex === -1) {
-          tabbableItems[0].focus();
-          return;
+          if (event.shiftKey) {
+            if (variant !== 'checkbox') {
+              // only close non checkbox variation on shift clicked
+              onToggle(false, event);
+              onClose();
+              this.toggle.current.focus();
+            }
+          } else {
+            // tab to footer
+            tabbableItems[0].focus();
+            return;
+          }
         }
         // Current element is in footer.
         if (event.shiftKey) {
+          // Move focus back to menu if current tab index is 0
+          if (currentElementIndex === 0) {
+            moveFocusToLastMenuItem();
+            event.preventDefault();
+          }
           return;
         }
         // Tab to next element in footer or close if there are none
@@ -154,7 +175,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
           tabbableItems[currentElementIndex + 1].focus();
         } else {
           // no more footer items close menu
-          onToggle(false);
+          onToggle(false, event);
           onClose();
           this.toggle.current.focus();
         }
@@ -168,7 +189,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab) &&
       (escFromToggle || escFromWithinMenu)
     ) {
-      onToggle(false);
+      onToggle(false, event);
       onClose();
       this.toggle.current.focus();
     }
@@ -185,7 +206,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
         if (isOpen) {
           handleTypeaheadKeys('enter');
         } else {
-          onToggle(!isOpen);
+          onToggle(!isOpen, event);
         }
       }
     }
@@ -200,11 +221,11 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     }
     event.preventDefault();
     if ((event.key === KeyTypes.Tab || event.key === KeyTypes.Enter || event.key === KeyTypes.Space) && isOpen) {
-      onToggle(!isOpen);
+      onToggle(!isOpen, event);
       onClose();
       this.toggle.current.focus();
     } else if ((event.key === KeyTypes.Enter || event.key === KeyTypes.Space) && !isOpen) {
-      onToggle(!isOpen);
+      onToggle(!isOpen, event);
       onEnter();
     }
   };
@@ -225,6 +246,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       onClose,
       onClickTypeaheadToggleButton,
       handleTypeaheadKeys,
+      moveFocusToLastMenuItem,
       parentRef,
       menuRef,
       id,
@@ -268,8 +290,8 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
             )}
             aria-label={ariaLabel}
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            onClick={_event => {
-              onToggle(!isOpen);
+            onClick={event => {
+              onToggle(!isOpen, event);
               if (isOpen) {
                 onClose();
               }
@@ -296,9 +318,12 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               className
             )}
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            onClick={_event => {
+            onClick={event => {
               if (!isDisabled) {
-                onToggle(!isOpen);
+                onToggle(!isOpen, event);
+                if (isOpen) {
+                  onClose();
+                }
               }
             }}
             onKeyDown={this.onKeyDown}
@@ -309,8 +334,8 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               type={type}
               className={css(buttonStyles.button, styles.selectToggleButton, styles.modifiers.plain)}
               aria-label={ariaLabel}
-              onClick={_event => {
-                onToggle(!isOpen);
+              onClick={event => {
+                onToggle(!isOpen, event);
                 if (isOpen) {
                   onClose();
                 }

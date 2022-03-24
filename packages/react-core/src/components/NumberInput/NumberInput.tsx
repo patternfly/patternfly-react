@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/NumberInput/number-i
 import { css } from '@patternfly/react-styles';
 import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
+import { InputGroup } from '../InputGroup';
 import { Button, ButtonProps } from '../Button';
 import { KEY_CODES } from '../../helpers';
 
@@ -82,6 +83,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   const numberInputUnit = <div className={css(styles.numberInputUnit)}>{unit}</div>;
   const keyDownHandler =
     inputProps && inputProps.onKeyDown ? inputProps.onKeyDown : defaultKeyDownHandler({ inputName, onMinus, onPlus });
+
   return (
     <div
       className={css(styles.numberInput, className)}
@@ -94,11 +96,11 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
       {...props}
     >
       {unit && unitPosition === 'before' && numberInputUnit}
-      <div className={css(styles.inputGroup)}>
+      <InputGroup>
         <Button
           variant="control"
           aria-label={minusBtnAriaLabel}
-          isDisabled={isDisabled || value === min}
+          isDisabled={isDisabled || value <= min}
           onClick={evt => onMinus(evt, inputName)}
           {...minusBtnProps}
         >
@@ -121,7 +123,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
         <Button
           variant="control"
           aria-label={plusBtnAriaLabel}
-          isDisabled={isDisabled || value === max}
+          isDisabled={isDisabled || value >= max}
           onClick={evt => onPlus(evt, inputName)}
           {...plusBtnProps}
         >
@@ -129,7 +131,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
             <PlusIcon aria-hidden="true" />
           </span>
         </Button>
-      </div>
+      </InputGroup>
       {unit && unitPosition === 'after' && numberInputUnit}
     </div>
   );

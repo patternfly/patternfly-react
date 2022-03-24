@@ -12,6 +12,8 @@ export interface AvatarProps
   alt: string;
   /** Border to add */
   border?: 'light' | 'dark';
+  /** Size variant of avatar. */
+  size?: 'sm' | 'md' | 'lg' | 'xl';
 }
 
 export const Avatar: React.FunctionComponent<AvatarProps> = ({
@@ -19,6 +21,7 @@ export const Avatar: React.FunctionComponent<AvatarProps> = ({
   src = '',
   alt,
   border,
+  size,
   ...props
 }: AvatarProps) => (
   <img
@@ -26,6 +29,7 @@ export const Avatar: React.FunctionComponent<AvatarProps> = ({
     alt={alt}
     className={css(
       styles.avatar,
+      styles.modifiers[size],
       border === 'light' && styles.modifiers.light,
       border === 'dark' && styles.modifiers.dark,
       className

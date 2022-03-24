@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ContextSelectorFooter } from '../ContextSelectorFooter';
 
 test('Renders ContextSelectorFooter', () => {
-  const view = shallow(<ContextSelectorFooter>testing text</ContextSelectorFooter>);
-  expect(view).toMatchSnapshot();
+  const view = render(<ContextSelectorFooter>testing text</ContextSelectorFooter>);
+  expect(view.container).toMatchSnapshot();
 });

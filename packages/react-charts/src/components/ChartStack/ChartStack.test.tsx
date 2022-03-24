@@ -1,18 +1,18 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Chart } from '../Chart';
 import { ChartBar } from '../ChartBar';
 import { ChartStack } from './ChartStack';
 
 Object.values([true, false]).forEach(() => {
   test('ChartStack', () => {
-    const view = shallow(<ChartStack />);
-    expect(view).toMatchSnapshot();
+    const view = render(<ChartStack />);
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = shallow(
+  const view = render(
     <Chart domainPadding={{ x: [30, 25] }} height={200} width={300}>
       <ChartStack>
         <ChartBar
@@ -50,5 +50,5 @@ test('renders component data', () => {
       </ChartStack>
     </Chart>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

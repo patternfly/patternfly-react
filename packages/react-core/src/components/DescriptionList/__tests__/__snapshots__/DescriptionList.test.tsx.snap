@@ -1,146 +1,165 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Description List 1 col on all breakpoints 1`] = `
-<dl
-  className="pf-c-description-list pf-m-1-col pf-m-1-col-on-md pf-m-1-col-on-lg pf-m-1-col-on-xl pf-m-1-col-on-2xl"
-/>
+<div>
+  <dl
+    class="pf-c-description-list pf-m-1-col pf-m-1-col-on-md pf-m-1-col-on-lg pf-m-1-col-on-xl pf-m-1-col-on-2xl"
+  />
+</div>
 `;
 
 exports[`Description List 2 col on all breakpoints 1`] = `
-<dl
-  className="pf-c-description-list pf-m-2-col pf-m-2-col-on-md pf-m-2-col-on-lg pf-m-2-col-on-xl pf-m-2-col-on-2xl"
-/>
+<div>
+  <dl
+    class="pf-c-description-list pf-m-2-col pf-m-2-col-on-md pf-m-2-col-on-lg pf-m-2-col-on-xl pf-m-2-col-on-2xl"
+  />
+</div>
 `;
 
 exports[`Description List 3 col on all breakpoints 1`] = `
-<dl
-  className="pf-c-description-list pf-m-3-col pf-m-3-col-on-md pf-m-3-col-on-lg pf-m-3-col-on-xl pf-m-3-col-on-2xl"
-/>
+<div>
+  <dl
+    class="pf-c-description-list pf-m-3-col pf-m-3-col-on-md pf-m-3-col-on-lg pf-m-3-col-on-xl pf-m-3-col-on-2xl"
+  />
+</div>
 `;
 
 exports[`Description List Auto Column Widths Description List 1`] = `
-<dl
-  className="pf-c-description-list pf-m-auto-column-widths"
-/>
+<div>
+  <dl
+    class="pf-c-description-list pf-m-auto-column-widths"
+  />
+</div>
 `;
 
 exports[`Description List Auto fit Description List 1`] = `
-<dl
-  className="pf-c-description-list pf-m-auto-fit"
-/>
+<div>
+  <dl
+    class="pf-c-description-list pf-m-auto-fit"
+  />
+</div>
 `;
 
 exports[`Description List Auto fit with responsive grid Description List 1`] = `
-<dl
-  className="pf-c-description-list pf-m-auto-fit"
-  style={
-    Object {
-      "--pf-c-description-list--GridTemplateColumns--min-on-2xl": "300px",
-      "--pf-c-description-list--GridTemplateColumns--min-on-lg": "150px",
-      "--pf-c-description-list--GridTemplateColumns--min-on-md": "100px",
-      "--pf-c-description-list--GridTemplateColumns--min-on-xl": "200px",
-    }
-  }
-/>
+<div>
+  <dl
+    class="pf-c-description-list pf-m-auto-fit"
+    style="--pf-c-description-list--GridTemplateColumns--min-on-md: 100px; --pf-c-description-list--GridTemplateColumns--min-on-lg: 150px; --pf-c-description-list--GridTemplateColumns--min-on-xl: 200px; --pf-c-description-list--GridTemplateColumns--min-on-2xl: 300px;"
+  />
+</div>
 `;
 
 exports[`Description List Compact Description List 1`] = `
-<dl
-  className="pf-c-description-list pf-m-compact"
-/>
+<div>
+  <dl
+    class="pf-c-description-list pf-m-compact"
+  />
+</div>
 `;
 
 exports[`Description List Compact Horizontal Description List 1`] = `
-<dl
-  className="pf-c-description-list pf-m-horizontal pf-m-compact"
-/>
+<div>
+  <dl
+    class="pf-c-description-list pf-m-horizontal pf-m-compact"
+  />
+</div>
 `;
 
 exports[`Description List Description 1`] = `
-<dd
-  aria-labelledby="description-1"
-  className="pf-c-description-list__description custom-description-list-description"
->
-  <div
-    className="pf-c-description-list__text"
+<div>
+  <dd
+    aria-labelledby="description-1"
+    class="pf-c-description-list__description custom-description-list-description"
   >
-    test
-  </div>
-</dd>
+    <div
+      class="pf-c-description-list__text"
+    >
+      test
+    </div>
+  </dd>
+</div>
 `;
 
 exports[`Description List Fluid Horizontal Description List 1`] = `
-<dl
-  className="pf-c-description-list pf-m-horizontal pf-m-fluid"
-/>
+<div>
+  <dl
+    class="pf-c-description-list pf-m-horizontal pf-m-fluid"
+  />
+</div>
 `;
 
 exports[`Description List Group 1`] = `
-<div
-  aria-labelledby="group-1"
-  className="pf-c-description-list__group custom-description-list-group"
->
-  test
+<div>
+  <div
+    aria-labelledby="group-1"
+    class="pf-c-description-list__group custom-description-list-group"
+  >
+    test
+  </div>
 </div>
 `;
 
 exports[`Description List Horizontal Description List 1`] = `
-<dl
-  className="pf-c-description-list pf-m-horizontal"
-/>
+<div>
+  <dl
+    class="pf-c-description-list pf-m-horizontal"
+  />
+</div>
 `;
 
 exports[`Description List Inline Grid Description List 1`] = `
-<dl
-  className="pf-c-description-list pf-m-inline-grid"
-/>
+<div>
+  <dl
+    class="pf-c-description-list pf-m-inline-grid"
+  />
+</div>
 `;
 
 exports[`Description List Term default 1`] = `
-<dt
-  aria-labelledby="term-1"
-  className="pf-c-description-list__term"
->
-  <span
-    className="pf-c-description-list__text"
+<div>
+  <dt
+    aria-labelledby="term-1"
+    class="pf-c-description-list__term"
   >
-    test
-  </span>
-</dt>
+    <span
+      class="pf-c-description-list__text"
+    >
+      test
+    </span>
+  </dt>
+</div>
 `;
 
 exports[`Description List Term helper text 1`] = `
-<dt
-  aria-labelledby="term-1"
-  className="pf-c-description-list__term"
->
-  <DescriptionListTermHelpTextButton>
-    test
-  </DescriptionListTermHelpTextButton>
-</dt>
+<div>
+  <dt
+    aria-labelledby="term-1"
+    class="pf-c-description-list__term"
+  >
+    <span
+      class="pf-c-description-list__text pf-m-help-text"
+      role="button"
+      tabindex="0"
+      type="button"
+    >
+      test
+    </span>
+  </dt>
+</div>
 `;
 
 exports[`Description List alignment breakpoints 1`] = `
-<DescriptionList
-  isHorizontal={true}
-  orientation={
-    Object {
-      "2xl": "horizontal",
-      "lg": "horizontal",
-      "md": "vertical",
-      "sm": "horizontal",
-      "xl": "vertical",
-    }
-  }
->
+<div>
   <dl
-    className="pf-c-description-list pf-m-horizontal pf-m-horizontal-on-sm pf-m-vertical-on-md pf-m-horizontal-on-lg pf-m-vertical-on-xl pf-m-horizontal-on-2xl"
+    class="pf-c-description-list pf-m-horizontal pf-m-horizontal-on-sm pf-m-vertical-on-md pf-m-horizontal-on-lg pf-m-vertical-on-xl pf-m-horizontal-on-2xl"
   />
-</DescriptionList>
+</div>
 `;
 
 exports[`Description List default 1`] = `
-<dl
-  className="pf-c-description-list"
-/>
+<div>
+  <dl
+    class="pf-c-description-list"
+  />
+</div>
 `;

@@ -1,85 +1,81 @@
-import * as React from 'react';
-import { shallow } from 'enzyme';
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { InternalDropdownItem } from '../InternalDropdownItem';
-import { DropdownSeparator } from '../DropdownSeparator';
 
-describe('dropdown items', () => {
-  test('a', () => {
-    const view = shallow(<InternalDropdownItem>Something</InternalDropdownItem>);
-    expect(view).toMatchSnapshot();
-  });
-
-  test('button', () => {
-    const view = shallow(<InternalDropdownItem component="button">Something</InternalDropdownItem>);
-    expect(view).toMatchSnapshot();
-  });
-
-  test('separator', () => {
-    const view = shallow(<DropdownSeparator />);
-    expect(view).toMatchSnapshot();
-  });
-
-  describe('hover', () => {
+describe('InternalDropdownItem', () => {
+  describe('dropdown items', () => {
     test('a', () => {
-      const view = shallow(<InternalDropdownItem isHovered>Something</InternalDropdownItem>);
-      expect(view).toMatchSnapshot();
+      render(<InternalDropdownItem>Something</InternalDropdownItem>);
+      expect(screen.getByText('Something').outerHTML).toMatchSnapshot();
     });
+
     test('button', () => {
-      const view = shallow(
-        <InternalDropdownItem isHovered component="button">
-          Something
-        </InternalDropdownItem>
-      );
-      expect(view).toMatchSnapshot();
+      render(<InternalDropdownItem component="button">Something</InternalDropdownItem>);
+      expect(screen.getByText('Something').outerHTML).toMatchSnapshot();
+    });
+
+    describe('hover', () => {
+      test('a', () => {
+        render(<InternalDropdownItem isHovered>Something</InternalDropdownItem>);
+        expect(screen.getByText('Something').outerHTML).toMatchSnapshot();
+      });
+
+      test('button', () => {
+        render(
+          <InternalDropdownItem isHovered component="button">
+            Something
+          </InternalDropdownItem>
+        );
+        expect(screen.getByText('Something').outerHTML).toMatchSnapshot();
+      });
+    });
+
+    describe('disabled', () => {
+      test('a', () => {
+        render(<InternalDropdownItem isDisabled>Something</InternalDropdownItem>);
+        expect(screen.getByText('Something').outerHTML).toMatchSnapshot();
+      });
+
+      test('button', () => {
+        render(
+          <InternalDropdownItem isDisabled component="button">
+            Something
+          </InternalDropdownItem>
+        );
+        expect(screen.getByText('Something').outerHTML).toMatchSnapshot();
+      });
+    });
+
+    describe('aria-disabled', () => {
+      test('a', () => {
+        render(<InternalDropdownItem isAriaDisabled>Something</InternalDropdownItem>);
+        expect(screen.getByText('Something').outerHTML).toMatchSnapshot();
+      });
+
+      test('button', () => {
+        render(
+          <InternalDropdownItem isAriaDisabled component="button">
+            Something
+          </InternalDropdownItem>
+        );
+        expect(screen.getByText('Something').outerHTML).toMatchSnapshot();
+      });
+    });
+
+    describe('description', () => {
+      test('a', () => {
+        render(<InternalDropdownItem description="Something's link description">Something</InternalDropdownItem>);
+        expect(screen.getByText("Something's link description").outerHTML).toMatchSnapshot();
+      });
+
+      test('button', () => {
+        render(
+          <InternalDropdownItem description="Something's button description" component="button">
+            Something
+          </InternalDropdownItem>
+        );
+        expect(screen.getByText("Something's button description").outerHTML).toMatchSnapshot();
+      });
     });
   });
-
-  describe('disabled', () => {
-    test('a', () => {
-      const view = shallow(<InternalDropdownItem isDisabled>Something</InternalDropdownItem>);
-      expect(view).toMatchSnapshot();
-    });
-    test('button', () => {
-      const view = shallow(
-        <InternalDropdownItem isDisabled component="button">
-          Something
-        </InternalDropdownItem>
-      );
-      expect(view).toMatchSnapshot();
-    });
-  });
-
-  describe('aria-disabled', () => {
-    test('a', () => {
-      const view = shallow(<InternalDropdownItem isAriaDisabled>Something</InternalDropdownItem>);
-      expect(view).toMatchSnapshot();
-    });
-    test('button', () => {
-      const view = shallow(
-        <InternalDropdownItem isAriaDisabled component="button">
-          Something
-        </InternalDropdownItem>
-      );
-      expect(view).toMatchSnapshot();
-    });
-  });
-
-  describe('description', () => {
-    test('a', () => {
-      const view = shallow(
-        <InternalDropdownItem description="Something's link description">
-          Something
-        </InternalDropdownItem>
-      );
-      expect(view).toMatchSnapshot();
-    });
-    test('button', () => {
-      const view = shallow(
-        <InternalDropdownItem description="Something's button description" component="button">
-          Something
-        </InternalDropdownItem>
-      );
-      expect(view).toMatchSnapshot();
-    });
-  })
 });

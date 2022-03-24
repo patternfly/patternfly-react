@@ -1,4 +1,5 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import { mount, shallow } from 'enzyme';
 import { TextInput, TextInputBase } from '../TextInput';
 import { ValidatedOptions } from '../../../helpers/constants';
@@ -19,23 +20,23 @@ test('input passes value and event to onChange handler', () => {
 });
 
 test('simple text input', () => {
-  const view = mount(<TextInput {...props} aria-label="simple text input" />);
-  expect(view.find('input')).toMatchSnapshot();
+  const view = render(<TextInput {...props} aria-label="simple text input" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('disabled text input', () => {
-  const view = mount(<TextInput isDisabled aria-label="disabled text input" />);
-  expect(view.find('input')).toMatchSnapshot();
+  const view = render(<TextInput isDisabled aria-label="disabled text input" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('readonly text input', () => {
-  const view = mount(<TextInput isReadOnly value="read only" aria-label="readonly text input" />);
-  expect(view.find('input')).toMatchSnapshot();
+  const view = render(<TextInput isReadOnly value="read only" aria-label="readonly text input" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('invalid text input', () => {
-  const view = mount(<TextInput {...props} required validated={'error'} aria-label="invalid text input" />);
-  expect(view.find('input')).toMatchSnapshot();
+  const view = render(<TextInput {...props} required validated={'error'} aria-label="invalid text input" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('validated text input success', () => {
@@ -56,36 +57,36 @@ test('validated text input success', () => {
 
 
 test('validated text input', () => {
-  const view = shallow(
+  const view = render(
     <TextInput {...props} required validated={ValidatedOptions.error} aria-label="validated text input" />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('should throw console error when no aria-label, id or aria-labelledby is given', () => {
   const myMock = jest.fn();
   global.console = { ...global.console, error: myMock };
-  mount(<TextInput {...props} />);
+  render(<TextInput {...props} />);
   expect(myMock).toBeCalled();
 });
 
 test('should not throw console error when id is given but no aria-label or aria-labelledby', () => {
   const myMock = jest.fn();
   global.console = { ...global.console, error: myMock };
-  mount(<TextInput {...props} id="5" />);
+  render(<TextInput {...props} id="5" />);
   expect(myMock).not.toBeCalled();
 });
 
 test('should not throw console error when aria-label is given but no id or aria-labelledby', () => {
   const myMock = jest.fn();
   global.console = { ...global.console, error: myMock };
-  mount(<TextInput {...props} aria-label="test input" />);
+  render(<TextInput {...props} aria-label="test input" />);
   expect(myMock).not.toBeCalled();
 });
 
 test('should not throw console error when aria-labelledby is given but no id or aria-label', () => {
   const myMock = jest.fn();
   global.console = { ...global.console, error: myMock };
-  mount(<TextInput {...props} aria-labelledby="test input" />);
+  render(<TextInput {...props} aria-labelledby="test input" />);
   expect(myMock).not.toBeCalled();
 });

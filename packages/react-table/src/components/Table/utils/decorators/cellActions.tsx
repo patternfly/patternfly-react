@@ -73,7 +73,7 @@ export const cellActions = (
 
   return {
     className: css(styles.tableAction),
-    style: { width: 'auto', paddingRight: 0 },
+    style: { paddingRight: 0 },
     isVisible: true,
     ...renderProps
   };

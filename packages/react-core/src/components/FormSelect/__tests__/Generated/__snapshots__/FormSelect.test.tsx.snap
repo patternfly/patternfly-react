@@ -1,22 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FormSelect should match snapshot (auto-generated) 1`] = `
-<select
-  aria-invalid={false}
-  aria-label="string"
-  className="pf-c-form-control ''"
-  data-ouia-component-id="OUIA-Generated-FormSelect-default-1"
-  data-ouia-component-type="PF4/FormSelect"
-  data-ouia-safe={true}
-  disabled={false}
-  onBlur={[Function]}
-  onChange={[Function]}
-  onFocus={[Function]}
-  required={false}
-  value=""
->
-  <div>
-    ReactNode
-  </div>
-</select>
+<div>
+  <select
+    aria-invalid="false"
+    aria-label="string"
+    class="pf-c-form-control ''"
+    data-ouia-component-id="OUIA-Generated-FormSelect-default-1"
+    data-ouia-component-type="PF4/FormSelect"
+    data-ouia-safe="true"
+  >
+    <div>
+      ReactNode
+    </div>
+  </select>
+</div>
 `;

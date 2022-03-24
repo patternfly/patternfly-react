@@ -3,7 +3,6 @@ id: Back to top
 section: components
 cssPrefix: pf-c-back-to-top
 propComponents: ['BackToTop']
-beta: true
 ---
 
 import './BackToTop.css'
@@ -16,9 +15,5 @@ Back to top only shows after overflowing element has been scrolled 400px.
 
 ### Basic
 
-```js
-import React from 'react';
-import { BackToTop } from '@patternfly/react-core';
-
-<BackToTop isAlwaysVisible/>
+```ts file="./BackToTopBasic.tsx"
 ```

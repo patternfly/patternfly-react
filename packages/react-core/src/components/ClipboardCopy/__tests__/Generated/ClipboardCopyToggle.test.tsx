@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ClipboardCopyToggle } from '../../ClipboardCopyToggle';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('ClipboardCopyToggle should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <ClipboardCopyToggle
       onClick={(event: React.MouseEvent) => undefined as void}
       id={'string'}
@@ -18,5 +18,5 @@ it('ClipboardCopyToggle should match snapshot (auto-generated)', () => {
       className={"''"}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

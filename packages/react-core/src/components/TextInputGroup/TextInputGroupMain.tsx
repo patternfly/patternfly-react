@@ -23,6 +23,8 @@ export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivEle
     | 'tel'
     | 'time'
     | 'url';
+  /** Suggestion that will show up like a placeholder even with text in the input */
+  hint?: string;
   /** Callback for when there is a change in the input field*/
   onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
   /** Callback for when the input field is focused*/
@@ -31,6 +33,10 @@ export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivEle
   onBlur?: (event?: any) => void;
   /** Accessibility label for the input */
   'aria-label'?: string;
+  /** Value for the input */
+  value?: string | number;
+  /** Placeholder value for the input */
+  placeholder?: string;
 }
 
 export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps> = ({
@@ -38,11 +44,13 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
   className,
   icon,
   type = 'text',
+  hint,
   onChange = (): any => undefined,
   onFocus,
   onBlur,
   'aria-label': ariaLabel = 'Type to filter',
   value: inputValue,
+  placeholder: inputPlaceHolder,
   ...props
 }: TextInputGroupMainProps) => {
   const { isDisabled } = React.useContext(TextInputGroupContext);
@@ -55,6 +63,15 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
     <div className={css(styles.textInputGroupMain, icon && styles.modifiers.icon, className)} {...props}>
       {children}
       <span className={css(styles.textInputGroupText)}>
+        {hint && (
+          <input
+            className={css(styles.textInputGroupTextInput, styles.modifiers.hint)}
+            type="text"
+            disabled
+            aria-hidden="true"
+            value={hint}
+          />
+        )}
         {icon && <span className={css(styles.textInputGroupIcon)}>{icon}</span>}
         <input
           type={type}
@@ -64,7 +81,8 @@ export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps
           onChange={handleChange}
           onFocus={onFocus}
           onBlur={onBlur}
-          value={inputValue}
+          value={inputValue || ''}
+          placeholder={inputPlaceHolder}
         />
       </span>
     </div>

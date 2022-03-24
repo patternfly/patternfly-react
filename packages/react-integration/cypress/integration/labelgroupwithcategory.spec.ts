@@ -5,7 +5,7 @@ describe('Label Group with Category Demo Test', () => {
 
   it('Verify delete button on first label group', () => {
     const labelGroup = cy.get('.pf-c-label-group').first();
-    const labelGroupButton = labelGroup.get('#remove_group_pf-random-id-0');
+    const labelGroupButton = labelGroup.get('#remove_group_category-1');
     labelGroupButton.should('be.visible');
     labelGroupButton.click();
     labelGroup.should('not.exist');

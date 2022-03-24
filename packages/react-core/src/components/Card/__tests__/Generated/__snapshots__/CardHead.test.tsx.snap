@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CardHeader should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<div>
+  <div
+    class="pf-c-card__header ''"
+  >
+    ReactNode
+  </div>
+</div>
 `;

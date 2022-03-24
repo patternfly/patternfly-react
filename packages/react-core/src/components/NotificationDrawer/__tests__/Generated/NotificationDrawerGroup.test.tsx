@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { NotificationDrawerGroup } from '../../NotificationDrawerGroup';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('NotificationDrawerGroup should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <NotificationDrawerGroup
       children={<div>ReactNode</div>}
       className={"''"}
@@ -19,5 +19,5 @@ it('NotificationDrawerGroup should match snapshot (auto-generated)', () => {
       title={'string'}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

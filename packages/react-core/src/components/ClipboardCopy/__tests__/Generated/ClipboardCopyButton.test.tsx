@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ClipboardCopyButton } from '../../ClipboardCopyButton';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('ClipboardCopyButton should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <ClipboardCopyButton
       onClick={(event: React.MouseEvent) => undefined as void}
       children={<div>ReactNode</div>}
@@ -22,5 +22,5 @@ it('ClipboardCopyButton should match snapshot (auto-generated)', () => {
       aria-label={"'Copyable input'"}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

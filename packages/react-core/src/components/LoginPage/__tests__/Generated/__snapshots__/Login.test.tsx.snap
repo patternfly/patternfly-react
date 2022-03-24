@@ -1,17 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Login should match snapshot (auto-generated) 1`] = `
-<div
-  className="pf-c-login ''"
->
+<div>
   <div
-    className="pf-c-login__container"
+    class="pf-c-login ''"
   >
-    <main
-      className="pf-c-login__main"
+    <div
+      class="pf-c-login__container"
     >
-      ReactNode
-    </main>
+      <main
+        class="pf-c-login__main"
+      >
+        ReactNode
+      </main>
+    </div>
   </div>
 </div>
 `;

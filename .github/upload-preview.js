@@ -69,7 +69,7 @@ if (prnum) {
       if (uploadFolderName === 'public') {
         commentBody += tryAddComment(`Preview: https://${uploadURL}`, commentBody);
       }
-      else if (uploadFolderName === 'dist') {
+      else if (uploadFolderName === 'coverage') {
         commentBody += tryAddComment(`A11y report: https://${uploadURL}`, commentBody);
       }
 

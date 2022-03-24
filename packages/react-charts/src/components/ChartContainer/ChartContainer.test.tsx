@@ -1,17 +1,17 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ChartContainer } from './ChartContainer';
 import { ChartLegend } from '../ChartLegend';
 
 Object.values([true, false]).forEach(() => {
   test('ChartContainer', () => {
-    const view = shallow(<ChartContainer />);
-    expect(view).toMatchSnapshot();
+    const view = render(<ChartContainer />);
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 test('renders container via ChartLegend', () => {
-  const view = shallow(
+  const view = render(
     <ChartContainer>
       <ChartLegend
         data={[{ name: 'Cats' }, { name: 'Dogs' }]}
@@ -22,5 +22,5 @@ test('renders container via ChartLegend', () => {
       />
     </ChartContainer>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

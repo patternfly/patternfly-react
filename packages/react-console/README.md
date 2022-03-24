@@ -90,4 +90,4 @@ yarn build
 Note the build scripts for this are located in the root package.json under `yarn build`.
 
 [patternfly-4]: https://github.com/patternfly/patternfly
-[docs]: https://patternfly-react.surge.sh/
+[docs]: https://patternfly-react-main.surge.sh/

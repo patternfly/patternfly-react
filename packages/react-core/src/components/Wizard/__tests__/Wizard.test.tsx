@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { render } from '@testing-library/react';
 import { shallow, mount } from 'enzyme';
 import { Wizard, WizardStepFunctionType, WizardStep } from '../Wizard';
 
@@ -28,13 +29,11 @@ test('Wizard should match snapshot', () => {
     const name = { step };
   };
 
-  const view = mount(
+  const view = render(
     <Wizard title="Wizard title" description="Description here" steps={steps} startAtStep={1} onBack={onBack} />
   );
-  // ran into: https://github.com/airbnb/enzyme/issues/1213
-  // so instead of: expect(view).toMatchSnapshot();
-  const fragment = view.instance().render();
-  expect(mount(<div>{fragment}</div>).getElement()).toMatchSnapshot();
+
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Expandable Nav Wizard should match snapshot', () => {
@@ -63,13 +62,11 @@ test('Expandable Nav Wizard should match snapshot', () => {
     const name = { step };
   };
 
-  const view = mount(
+  const view = render(
     <Wizard title="Wizard title" description="Description here" steps={steps} startAtStep={1} onBack={onBack} isNavExpandable />
   );
-  // ran into: https://github.com/airbnb/enzyme/issues/1213
-  // so instead of: expect(view).toMatchSnapshot();
-  const fragment = view.instance().render();
-  expect(mount(<div>{fragment}</div>).getElement()).toMatchSnapshot();
+
+  expect(view.container).toMatchSnapshot();
 });
 
 test('bare wiz ', () => {

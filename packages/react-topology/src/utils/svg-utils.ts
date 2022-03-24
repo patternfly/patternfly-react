@@ -89,6 +89,14 @@ function roundedHull2(polyPoints: PointTuple[], hp: HullPaddingGetter): string {
    L ${points[3]} A ${hp(polyPoints[0])},${hp(polyPoints[0])},0,0,0,${points[0]}`;
 }
 
+export const pointTuplesToPath = (segments: PointTuple[]): string => {
+  const pathSegments = segments.map(
+    (segment, index) => `${index === 0 ? 'M' : 'L'} ${segments[index][0]}  ${segments[index][1]}`
+  );
+  pathSegments.push(`L ${segments[0][0]}  ${segments[0][1]}`);
+  return pathSegments.join(' ');
+};
+
 // Returns the SVG path data string representing the polygon, expanded and rounded.
 /**
  * @param polyPoints

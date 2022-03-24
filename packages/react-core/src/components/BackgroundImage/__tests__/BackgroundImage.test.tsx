@@ -1,6 +1,6 @@
 import { BackgroundImage } from '../BackgroundImage';
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 const images = {
   'lg': '/assets/images/pfbg_1200.jpg',
@@ -11,11 +11,11 @@ const images = {
 };
 
 test('BackgroundImage', () => {
-  const view = shallow(<BackgroundImage src={images} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<BackgroundImage src={images} />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('allows passing in a single string as the image src', () => {
-  const view = shallow(<BackgroundImage src={images.lg} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<BackgroundImage src={images.lg} />);
+  expect(view.container).toMatchSnapshot();
 });

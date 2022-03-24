@@ -48,11 +48,7 @@ class MenuBasicList extends React.Component {
     const { activeItem, isPlain } = this.state;
     return (
       <React.Fragment>
-        <Menu
-          activeItemId={activeItem}
-          onSelect={this.onSelect}
-          isPlain={isPlain}
-          >
+        <Menu activeItemId={activeItem} onSelect={this.onSelect} isPlain={isPlain}>
           <MenuContent>
             <MenuList>
               <MenuItem itemId={0}>Action</MenuItem>
@@ -71,7 +67,7 @@ class MenuBasicList extends React.Component {
             </MenuList>
           </MenuContent>
         </Menu>
-        <div style={{ marginTop: 20 }}> 
+        <div style={{ marginTop: 20 }}>
           <Checkbox
             label="Plain menu"
             isChecked={isPlain}
@@ -628,7 +624,7 @@ class MenuOptionSingleSelect extends React.Component {
             <MenuItem icon={<TableIcon aria-hidden />} itemId={2}>
               Option 3
             </MenuItem>
-          </MenuList>    
+          </MenuList>
         </MenuContent>
       </Menu>
     );
@@ -684,200 +680,19 @@ class MenuOptionMultiSelect extends React.Component {
 
 ### With drilldown
 
-```js isBeta
-import React from 'react';
-import { Menu, MenuContent, MenuList, MenuItem, Divider, DrilldownMenu } from '@patternfly/react-core';
-import StorageDomainIcon from '@patternfly/react-icons/dist/esm/icons/storage-domain-icon';
-import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
-import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+```ts file="./MenuDrilldown.tsx" isBeta
+```
 
-class MenuWithDrilldown extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      menuDrilledIn: [],
-      drilldownPath: [],
-      menuHeights: {},
-      activeMenu: 'rootMenu'
-    };
-    this.drillIn = (fromMenuId, toMenuId, pathId) => {
-      this.setState({
-        menuDrilledIn: [...this.state.menuDrilledIn, fromMenuId],
-        drilldownPath: [...this.state.drilldownPath, pathId],
-        activeMenu: toMenuId
-      });
-    };
-    this.drillOut = toMenuId => {
-      const menuDrilledInSansLast = this.state.menuDrilledIn.slice(0, this.state.menuDrilledIn.length - 1);
-      const pathSansLast = this.state.drilldownPath.slice(0, this.state.drilldownPath.length - 1);
-      this.setState({
-        menuDrilledIn: menuDrilledInSansLast,
-        drilldownPath: pathSansLast,
-        activeMenu: toMenuId
-      });
-    };
-    this.setHeight = (menuId, height) => {
-      if (!this.state.menuHeights[menuId]) {
-        this.setState({
-          menuHeights: {
-            ...this.state.menuHeights,
-            [menuId]: height
-          }
-        });
-      }
-    };
-  }
+### With drilldown - initial drill in state
 
-  render() {
-    const { menuDrilledIn, drilldownPath, activeMenu, menuHeights } = this.state;
-    return (
-      <Menu
-        id="rootMenu"
-        containsDrilldown
-        drilldownItemPath={drilldownPath}
-        drilledInMenus={menuDrilledIn}
-        activeMenu={activeMenu}
-        onDrillIn={this.drillIn}
-        onDrillOut={this.drillOut}
-        onGetMenuHeight={this.setHeight}
-      >
-        <MenuContent menuHeight={`${menuHeights[activeMenu]}px`}>
-          <MenuList>
-            <MenuItem
-              itemId="group:start_rollout"
-              direction="down"
-              drilldownMenu={
-                <DrilldownMenu id="drilldownMenuStart">
-                  <MenuItem itemId="group:start_rollout" direction="up">
-                    Start rollout
-                  </MenuItem>
-                  <Divider component="li" />
-                  <MenuItem
-                    itemId="group:app_grouping"
-                    description="Groups A-C"
-                    direction="down"
-                    drilldownMenu={
-                      <DrilldownMenu id="drilldownMenuStartGrouping">
-                        <MenuItem itemId="group:app_grouping" direction="up">
-                          Application grouping
-                        </MenuItem>
-                        <Divider component="li" />
-                        <MenuItem itemId="group_a">Group A</MenuItem>
-                        <MenuItem itemId="group_b">Group B</MenuItem>
-                        <MenuItem itemId="group_c">Group C</MenuItem>
-                      </DrilldownMenu>
-                    }
-                  >
-                    Application grouping
-                  </MenuItem>
-                  <MenuItem itemId="count">Count</MenuItem>
-                  <MenuItem
-                    itemId="group:labels"
-                    direction="down"
-                    drilldownMenu={
-                      <DrilldownMenu id="drilldownMenuStartLabels">
-                        <MenuItem itemId="group:labels" direction="up">
-                          Labels
-                        </MenuItem>
-                        <Divider component="li" />
-                        <MenuItem itemId="label_1">Label 1</MenuItem>
-                        <MenuItem itemId="label_2">Label 2</MenuItem>
-                        <MenuItem itemId="label_3">Label 3</MenuItem>
-                      </DrilldownMenu>
-                    }
-                  >
-                    Labels
-                  </MenuItem>
-                  <MenuItem itemId="annotations">Annotations</MenuItem>
-                </DrilldownMenu>
-              }
-            >
-              Start rollout
-            </MenuItem>
-            <MenuItem
-              itemId="group:pause_rollout"
-              direction="down"
-              drilldownMenu={
-                <DrilldownMenu id="drilldownMenuPause">
-                  <MenuItem itemId="group:pause_rollout" direction="up">
-                    Pause rollouts
-                  </MenuItem>
-                  <Divider component="li" />
-                  <MenuItem
-                    itemId="group:app_grouping"
-                    description="Groups A-C"
-                    direction="down"
-                    drilldownMenu={
-                      <DrilldownMenu id="drilldownMenuGrouping">
-                        <MenuItem itemId="group:app_grouping" direction="up">
-                          Application grouping
-                        </MenuItem>
-                        <Divider component="li" />
-                        <MenuItem itemId="group_a">Group A</MenuItem>
-                        <MenuItem itemId="group_b">Group B</MenuItem>
-                        <MenuItem itemId="group_c">Group C</MenuItem>
-                      </DrilldownMenu>
-                    }
-                  >
-                    Application grouping
-                  </MenuItem>
-                  <MenuItem itemId="count">Count</MenuItem>
-                  <MenuItem
-                    itemId="group:labels"
-                    direction="down"
-                    drilldownMenu={
-                      <DrilldownMenu id="drilldownMenuLabels">
-                        <MenuItem itemId="group:labels" direction="up">
-                          Labels
-                        </MenuItem>
-                        <Divider component="li" />
-                        <MenuItem itemId="label_1">Label 1</MenuItem>
-                        <MenuItem itemId="label_2">Label 2</MenuItem>
-                        <MenuItem itemId="label_3">Label 3</MenuItem>
-                      </DrilldownMenu>
-                    }
-                  >
-                    Labels
-                  </MenuItem>
-                  <MenuItem itemId="annotations">Annotations</MenuItem>
-                </DrilldownMenu>
-              }
-            >
-              Pause rollouts
-            </MenuItem>
-            <MenuItem
-              itemId="group:storage"
-              icon={<StorageDomainIcon aria-hidden />}
-              direction="down"
-              drilldownMenu={
-                <DrilldownMenu id="drilldownMenuStorage">
-                  <MenuItem itemId="group:storage" icon={<StorageDomainIcon aria-hidden />} direction="up">
-                    Add storage
-                  </MenuItem>
-                  <Divider component="li" />
-                  <MenuItem icon={<CodeBranchIcon aria-hidden />} itemId="git">
-                    From git
-                  </MenuItem>
-                  <MenuItem icon={<LayerGroupIcon aria-hidden />} itemId="container">
-                    Container image
-                  </MenuItem>
-                  <MenuItem icon={<CubeIcon aria-hidden />} itemId="docker">
-                    Docker file
-                  </MenuItem>
-                </DrilldownMenu>
-              }
-            >
-              Add storage
-            </MenuItem>
-            <MenuItem itemId="edit">Edit</MenuItem>
-            <MenuItem itemId="delete_deployment">Delete deployment config</MenuItem>
-          </MenuList>
-        </MenuContent>
-      </Menu>
-    );
-  }
-}
+To render an initially drilled in menu, the `menuDrilledIn`, `drilldownPath`, and `activeMenu` states must be set to an initial state. The `menuHeights` state must also be set, defining the height of the root menu. The `setHeight` function passed into the `onGetMenuHeight` property must also account for updating heights, other than the root menu, as menus drill in and out of view.
+
+```ts file="./MenuDrilldownInitialState.tsx" isBeta
+```
+
+### With drilldown - submenu functions
+
+```ts file="./MenuDrilldownSubmenuFunctions.tsx" isBeta
 ```
 
 ### With drilldown breadcrumbs
@@ -934,7 +749,7 @@ class MenuWithDrilldownBreadcrumbs extends React.Component {
           break;
       }
     };
-    
+
     this.onToggleMaxMenuHeight = checked => {
       this.setState({
         withMaxMenuHeight: checked
@@ -1121,10 +936,7 @@ class MenuWithDrilldownBreadcrumbs extends React.Component {
               <Divider component="li" />
             </>
           )}
-          <MenuContent 
-            menuHeight={`${menuHeights[activeMenu]}px`} 
-            maxMenuHeight={withMaxMenuHeight ? '100px' : 'auto'}
-          >
+          <MenuContent menuHeight={`${menuHeights[activeMenu]}px`} maxMenuHeight={withMaxMenuHeight ? '100px' : 'auto'}>
             <MenuList>
               <MenuItem
                 itemId="group:start_rollout"
@@ -1434,39 +1246,41 @@ class ViewMoreMenu extends React.Component {
       isLoading: false,
       numOptions: 3
     };
+    this.activeItemRef = React.createRef();
+    this.viewMoreRef = React.createRef();
 
     this.menuOptions = [
-      <MenuItem key={0} itemId={0}>
+      <MenuItem key={0} itemId={'view-more-0'}>
         Action
       </MenuItem>,
       <MenuItem
-        key={2}
-        itemId={1}
+        key={1}
+        itemId={'view-more-1'}
         to="#default-link2"
         // just for demo so that navigation is not triggered
         onClick={event => event.preventDefault()}
       >
         Link
       </MenuItem>,
-      <MenuItem key={3} isDisabled>
+      <MenuItem key={2} itemId="view-more-2" isDisabled>
         Disabled action
       </MenuItem>,
-      <MenuItem key={4} isDisabled to="#default-link4">
+      <MenuItem key={3} itemId="view-more-3" isDisabled to="#default-link4">
         Disabled link
       </MenuItem>,
-      <MenuItem key={5} itemId={2}>
+      <MenuItem key={4} itemId="view-more-4" ref={this.activeItemRef}>
         Action 2
       </MenuItem>,
-      <MenuItem key={6} itemId={3}>
+      <MenuItem key={5} itemId="view-more-5">
         Action 3
       </MenuItem>,
-      <MenuItem key={7} itemId={4}>
+      <MenuItem key={6} itemId="view-more-6">
         Action 4
       </MenuItem>,
-      <MenuItem key={8} itemId={5}>
+      <MenuItem key={7} itemId="view-more-7">
         Action 5
       </MenuItem>,
-      <MenuItem key={9} itemId={6}>
+      <MenuItem key={8} itemId="view-more-8">
         Final option
       </MenuItem>
     ];
@@ -1478,25 +1292,38 @@ class ViewMoreMenu extends React.Component {
       });
     };
 
-    this.simulateNetworkCall = callback => {
-      setTimeout(callback, 2000);
+    this.simulateNetworkCall = networkCallback => {
+      setTimeout(networkCallback, 2000);
     };
 
-    this.getNextValidRef = startingIndex => {
-      let index = startingIndex;
-      while (index < this.menuOptions.length && this.menuOptions[index].ref === null) {
-        index++;
+    this.getNextValidItem = (startingIndex, maxLength) => {
+      let validItem;
+      for (let i = startingIndex; i < maxLength; i++) {
+        if (this.menuOptions[i].props.isDisabled) {
+          continue;
+        } else {
+          validItem = this.menuOptions[i];
+          break;
+        }
       }
-      return this.menuOptions[index].ref.current;
+      return validItem;
     };
 
-    this.onViewMoreClick = () => {
+    this.loadMoreOptions = stateCallback => {
+      const newLength =
+        this.state.numOptions + 3 <= this.menuOptions.length ? this.state.numOptions + 3 : this.menuOptions.length;
+      const prevPosition = this.state.numOptions;
+      const nextValidItem = this.getNextValidItem(prevPosition, newLength);
+
+      this.setState({ numOptions: newLength, isLoading: false, activeItem: nextValidItem.props.itemId }, stateCallback);
+    };
+
+    this.onViewMoreClick = event => {
       this.setState({ isLoading: true });
       this.simulateNetworkCall(() => {
-        const newLength =
-          this.state.numOptions + 3 <= this.menuOptions.length ? this.state.numOptions + 3 : this.menuOptions.length;
-        const prevPosition = this.state.numOptions;
-        this.setState({ numOptions: newLength, isLoading: false });
+        this.loadMoreOptions(() => {
+          this.activeItemRef.current.focus();
+        });
       });
     };
 
@@ -1509,15 +1336,14 @@ class ViewMoreMenu extends React.Component {
 
       this.setState({ isLoading: true });
       this.simulateNetworkCall(() => {
-        const newLength =
-          this.state.numOptions + 3 <= this.menuOptions.length ? this.state.numOptions + 3 : this.menuOptions.length;
-        const prevPosition = this.state.numOptions;
-
-        this.setState({ numOptions: newLength, isLoading: false }, () => {
-          const nextFocus = this.getNextValidRef(prevPosition).querySelector('button, a');
-          this.getNextValidRef(0).querySelector('button, a').tabIndex = -1;
-          nextFocus.tabIndex = 0;
-          nextFocus.focus();
+        this.loadMoreOptions(() => {
+          if (this.viewMoreRef.current) {
+            this.viewMoreRef.current.tabIndex = -1;
+          }
+          const firstMenuItem = this.activeItemRef.current.closest('ul').firstChild;
+          firstMenuItem.querySelector('button, a').tabIndex = -1;
+          this.activeItemRef.current.tabIndex = 0;
+          this.activeItemRef.current.focus();
         });
       });
     };
@@ -1529,7 +1355,17 @@ class ViewMoreMenu extends React.Component {
       <Menu activeItemId={activeItem} onSelect={this.onSelect}>
         <MenuContent>
           <MenuList>
-            {this.menuOptions.slice(0, numOptions)}
+            {this.menuOptions.slice(0, numOptions).map(option => {
+              const props = option.props;
+
+              return (
+                <MenuItem
+                  key={option.key}
+                  {...props}
+                  ref={props.itemId === this.state.activeItem ? this.activeItemRef : null}
+                />
+              );
+            })}
             {numOptions !== this.menuOptions.length && (
               <MenuItem
                 {...(!isLoading && { isLoadButton: true })}
@@ -1537,6 +1373,7 @@ class ViewMoreMenu extends React.Component {
                 onKeyDown={this.onViewMoreKeyDown}
                 onClick={this.onViewMoreClick}
                 itemId="loader"
+                ref={this.viewMoreRef}
               >
                 {isLoading ? <Spinner size="lg" /> : 'View more'}
               </MenuItem>

@@ -1,67 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tooltip should match snapshot (auto-generated) 1`] = `
-<Popper
-  appendTo={[Function]}
-  distance={15}
-  enableFlip={true}
-  flipBehavior={
-    Array [
-      "top",
-      "right",
-      "bottom",
-      "left",
-      "top",
-      "right",
-      "bottom",
-    ]
-  }
-  isVisible={false}
-  onBlur={[Function]}
-  onDocumentClick={false}
-  onDocumentKeyDown={[Function]}
-  onFocus={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
-  onTriggerEnter={[Function]}
-  placement="top"
-  popper={
-    <div
-      className="pf-c-tooltip ''"
-      id="''"
-      role="tooltip"
-      style={
-        Object {
-          "maxWidth": "string",
-          "opacity": 0,
-          "transition": "opacity 300ms cubic-bezier(.54, 1.5, .38, 1.11)",
-        }
-      }
-    >
-      <TooltipArrow />
-      <TooltipContent
-        isLeftAligned={false}
-      >
-        <div>
-          ReactNode
-        </div>
-      </TooltipContent>
-    </div>
-  }
-  popperMatchesTriggerWidth={false}
-  positionModifiers={
-    Object {
-      "bottom": "pf-m-bottom",
-      "left": "pf-m-left",
-      "right": "pf-m-right",
-      "top": "pf-m-top",
-    }
-  }
-  trigger={
-    <p>
-      ReactElement
-    </p>
-  }
-  zIndex={9999}
-/>
+<div>
+  <p>
+    ReactElement
+  </p>
+</div>
 `;

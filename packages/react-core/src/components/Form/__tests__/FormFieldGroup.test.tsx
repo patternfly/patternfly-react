@@ -3,9 +3,9 @@ import { FormFieldGroup } from '../FormFieldGroup';
 import { FormFieldGroupExpandable } from '../FormFieldGroupExpandable';
 import { FormFieldGroupHeader } from '../FormFieldGroupHeader';
 import { Button } from '../../Button';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 
-test('Check form filed group example against snapshot', () => {
+test('Check form field group example against snapshot', () => {
   const FieldGroup = (
     <FormFieldGroup
       header={
@@ -17,8 +17,8 @@ test('Check form filed group example against snapshot', () => {
       }
     />
   );
-  const view = mount(FieldGroup);
-  expect(view).toMatchSnapshot();
+  const view = render(FieldGroup);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Check expandable form field group example against snapshot', () => {
@@ -35,8 +35,8 @@ test('Check expandable form field group example against snapshot', () => {
       }
     />
   );
-  const view = mount(FieldGroup);
-  expect(view).toMatchSnapshot();
+  const view = render(FieldGroup);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Verify console error logged when there is no aria-label or title', () => {
@@ -53,6 +53,6 @@ test('Verify console error logged when there is no aria-label or title', () => {
       }
     />
   );
-  const view = mount(FieldGroup);
+  const view = render(FieldGroup);
   expect(consoleErrorMock).toBeCalled();
 });

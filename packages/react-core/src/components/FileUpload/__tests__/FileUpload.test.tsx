@@ -1,13 +1,13 @@
 import { FileUpload } from '../FileUpload';
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 test('simple fileupload', () => {
   const changeHandler = jest.fn();
   const readStartedHandler = jest.fn();
   const readFinishedHandler = jest.fn();
 
-  const view = shallow(
+  const view = render(
     <FileUpload
       id="simple-text-file"
       type="text"
@@ -19,5 +19,5 @@ test('simple fileupload', () => {
       isLoading={false}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

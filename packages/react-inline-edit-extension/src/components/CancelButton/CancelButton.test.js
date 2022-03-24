@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { CancelButton } from './index';
 
 test('it renders properly', () => {
-  const component = shallow(<CancelButton />);
+  const component = render(<CancelButton />);
 
-  expect(component).toMatchSnapshot();
+  expect(component.container).toMatchSnapshot();
 });

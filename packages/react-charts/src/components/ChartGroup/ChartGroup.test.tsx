@@ -1,17 +1,17 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ChartArea } from '../ChartArea';
 import { ChartGroup } from './ChartGroup';
 
 Object.values([true, false]).forEach(() => {
   test('ChartGroup', () => {
-    const view = shallow(<ChartGroup />);
-    expect(view).toMatchSnapshot();
+    const view = render(<ChartGroup />);
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 test('renders container children', () => {
-  const view = shallow(
+  const view = render(
     <ChartGroup height={200} width={200}>
       <ChartArea
         data={[
@@ -32,5 +32,5 @@ test('renders container children', () => {
       />
     </ChartGroup>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

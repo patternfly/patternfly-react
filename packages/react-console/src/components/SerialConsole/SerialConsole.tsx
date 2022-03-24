@@ -67,7 +67,7 @@ const SerialConsoleBase: React.FunctionComponent<SerialConsoleProps> = ({
     return () => {
       onDisconnect();
     };
-  }, []);
+  }, [onConnect, onDisconnect]);
 
   const onConnectClick = () => {
     onConnect();

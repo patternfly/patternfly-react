@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { DropdownMenu, DropdownContext } from '@patternfly/react-core';
+import { css } from '@patternfly/react-styles';
+import topologyStyles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 // FIXME fully qualified due to the effect of long build times on storybook
 import Popper from '../popper/Popper';
@@ -39,8 +41,8 @@ const ContextMenu: React.FC<ContextMenuProps> = ({ children, open = true, onRequ
           // separatorClass: styles.dropdownSeparator,
         }}
       >
-        <div className="pf-c-dropdown pf-m-expanded">
-          <DropdownMenu className="pf-topology-context-menu__c-dropdown__menu" autoFocus>
+        <div className={css(styles.dropdown, styles.modifiers.expanded)}>
+          <DropdownMenu className={css(topologyStyles.topologyContextMenuCDropdownMenu)} autoFocus>
             {children}
           </DropdownMenu>
         </div>

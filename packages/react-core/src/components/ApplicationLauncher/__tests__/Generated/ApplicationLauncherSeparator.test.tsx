@@ -1,13 +1,16 @@
-/**
- * This test was generated
- */
-import * as React from 'react';
-import { shallow } from 'enzyme';
-import { ApplicationLauncherSeparator } from '../../ApplicationLauncherSeparator';
-// any missing imports can usually be resolved by adding them here
-import {} from '../..';
+import React from 'react';
+import { render } from '@testing-library/react';
 
-it('ApplicationLauncherSeparator should match snapshot (auto-generated)', () => {
-  const view = shallow(<ApplicationLauncherSeparator />);
-  expect(view).toMatchSnapshot();
+import { ApplicationLauncherSeparator } from '../../ApplicationLauncherSeparator';
+import { DropdownArrowContext } from '../../../Dropdown/dropdownConstants';
+
+describe('ApplicationLauncherSeparator', () => {
+  it('should match snapshot', () => {
+    const view = render(
+      <DropdownArrowContext.Provider value={{ sendRef: jest.fn(), keyHandler: undefined }}>
+        <ApplicationLauncherSeparator />
+      </DropdownArrowContext.Provider>
+    );
+    expect(view.container).toMatchSnapshot();
+  });
 });

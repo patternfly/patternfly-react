@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Chart } from '../Chart';
 import { ChartAxis } from './ChartAxis';
 import { ChartGroup } from '../ChartGroup';
@@ -7,13 +7,13 @@ import { ChartLine } from '../ChartLine';
 
 Object.values([true, false]).forEach(() => {
   test('ChartAxis', () => {
-    const view = shallow(<ChartAxis />);
-    expect(view).toMatchSnapshot();
+    const view = render(<ChartAxis />);
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = shallow(
+  const view = render(
     <Chart domainPadding={{ x: [30, 25] }} height={200} width={300}>
       <ChartGroup>
         <ChartLine
@@ -53,5 +53,5 @@ test('renders component data', () => {
       <ChartAxis dependentAxis tickValues={[2, 5, 8]} />
     </Chart>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

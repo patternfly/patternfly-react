@@ -1,19 +1,25 @@
 import React from 'react';
+
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+
 import { CardHeaderMain } from '../CardHeaderMain';
-import { shallow } from 'enzyme';
 
-test('renders with PatternFly Core styles', () => {
-  const view = shallow(<CardHeaderMain>text</CardHeaderMain>);
-  expect(view).toMatchSnapshot();
-});
+describe('CardHeaderMain', () => {
+  test('renders with PatternFly Core styles', () => {
+    render(<CardHeaderMain>text</CardHeaderMain>);
+    expect(screen.getByText('text').outerHTML).toMatchSnapshot();
+  });
 
-test('className is added to the root element', () => {
-  const view = shallow(<CardHeaderMain className="extra-class">text</CardHeaderMain>);
-  expect(view.prop('className')).toMatchSnapshot();
-});
+  test('className is added to the root element', () => {
+    render(<CardHeaderMain className="extra-class">text</CardHeaderMain>);
+    expect(screen.getByText('text').className).toContain('extra-class');
+  });
 
-test('extra props are spread to the root element', () => {
-  const testId = 'card-head-main';
-  const view = shallow(<CardHeaderMain data-testid={testId} />);
-  expect(view.prop('data-testid')).toBe(testId);
+  test('extra props are spread to the root element', () => {
+    const testId = 'card-head-main';
+
+    render(<CardHeaderMain data-testid={testId} />);
+    expect(screen.getByTestId(testId)).toBeInTheDocument();
+  });
 });

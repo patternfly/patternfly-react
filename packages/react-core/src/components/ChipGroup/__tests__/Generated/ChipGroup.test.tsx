@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ChipGroup } from '../../ChipGroup';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('ChipGroup should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <ChipGroup
       children={<div>ReactNode</div>}
       className={"''"}
@@ -20,5 +20,5 @@ it('ChipGroup should match snapshot (auto-generated)', () => {
       numChips={3}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

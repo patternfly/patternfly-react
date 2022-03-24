@@ -1,58 +1,58 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Progress, ProgressSize } from '../Progress';
 import { ProgressVariant, ProgressMeasureLocation } from '../ProgressContainer';
 
 test('Simple progress', () => {
-  const view = mount(<Progress value={33} id="progress-simple-example" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Progress value={33} id="progress-simple-example" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('no value specified', () => {
-  const view = mount(<Progress id="no-value" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Progress id="no-value" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('additional label', () => {
-  const view = mount(<Progress id="additional-label" value={33} label="Additional label" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Progress id="additional-label" value={33} label="Additional label" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Progress with aria-valuetext', () => {
-  const view = mount(<Progress value={33} id="progress-aria-valuetext" valueText="Descriptive text here" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Progress value={33} id="progress-aria-valuetext" valueText="Descriptive text here" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('value lower than minValue', () => {
-  const view = mount(<Progress value={33} id="lower-min-value" min={40} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Progress value={33} id="lower-min-value" min={40} />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('value higher than maxValue', () => {
-  const view = mount(<Progress value={77} id="higher-max-value" max={60} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Progress value={77} id="higher-max-value" max={60} />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('value scaled with minValue', () => {
-  const view = mount(<Progress min={10} value={50} id="scaled-min-value" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Progress min={10} value={50} id="scaled-min-value" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('value scaled with maxValue', () => {
-  const view = mount(<Progress value={50} id="scaled-max-value" max={80} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Progress value={50} id="scaled-max-value" max={80} />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('value scaled between minValue and maxValue', () => {
-  const view = mount(<Progress min={10} value={50} id="scaled-range-value" max={80} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Progress min={10} value={50} id="scaled-range-value" max={80} />);
+  expect(view.container).toMatchSnapshot();
 });
 
 describe('Progress size', () => {
   Object.keys(ProgressSize).forEach(oneSize => {
     test(oneSize, () => {
-      const view = mount(<Progress id={`${oneSize}-progress`} value={33} size={oneSize as ProgressSize} />);
-      expect(view).toMatchSnapshot();
+      const view = render(<Progress id={`${oneSize}-progress`} value={33} size={oneSize as ProgressSize} />);
+      expect(view.container).toMatchSnapshot();
     });
   });
 });
@@ -60,8 +60,10 @@ describe('Progress size', () => {
 describe('Progress variant', () => {
   Object.keys(ProgressVariant).forEach(oneVariant => {
     test(oneVariant, () => {
-      const view = mount(<Progress id={`${oneVariant}-progress`} value={33} variant={oneVariant as ProgressVariant} />);
-      expect(view).toMatchSnapshot();
+      const view = render(
+        <Progress id={`${oneVariant}-progress`} value={33} variant={oneVariant as ProgressVariant} />
+      );
+      expect(view.container).toMatchSnapshot();
     });
   });
 });
@@ -69,15 +71,15 @@ describe('Progress variant', () => {
 describe('Progress measure location', () => {
   Object.keys(ProgressMeasureLocation).forEach(oneLocation => {
     test(oneLocation, () => {
-      const view = mount(
+      const view = render(
         <Progress id={`${oneLocation}-progress`} value={33} measureLocation={oneLocation as ProgressMeasureLocation} />
       );
-      expect(view).toMatchSnapshot();
+      expect(view.container).toMatchSnapshot();
     });
   });
 
   test('inside and small should render large', () => {
-    const view = mount(
+    const view = render(
       <Progress
         id="large-progress"
         value={33}
@@ -85,17 +87,13 @@ describe('Progress measure location', () => {
         size={ProgressSize.sm}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 test('progress component generates console warning when no accessible name is provided', () => {
   const consoleWarnMock = jest.fn();
   global.console = { warn: consoleWarnMock } as any;
-  mount(
-    <Progress
-      value={33}
-    />
-  );
+  render(<Progress value={33} />);
   expect(consoleWarnMock).toBeCalled();
 });

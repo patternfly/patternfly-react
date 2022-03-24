@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { AboutModalContainer } from '../../AboutModalContainer';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('AboutModalContainer should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <AboutModalContainer
       children={<div>ReactNode</div>}
       className={"''"}
@@ -23,5 +23,5 @@ it('AboutModalContainer should match snapshot (auto-generated)', () => {
       aria-describedby={'string'}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

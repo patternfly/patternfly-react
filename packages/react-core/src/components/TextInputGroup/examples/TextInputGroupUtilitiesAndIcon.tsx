@@ -14,6 +14,9 @@ export const TextInputGroupUtilitiesAndIcon: React.FunctionComponent = () => {
   /** show the input clearing button only when the input is not empty */
   const showClearButton = !!inputValue;
 
+  /** render the utilities component only when a component it contains is being rendered */
+  const showUtilities = showClearButton;
+
   /** callback for clearing the text input */
   const clearInput = () => {
     setInputValue('');
@@ -22,13 +25,15 @@ export const TextInputGroupUtilitiesAndIcon: React.FunctionComponent = () => {
   return (
     <TextInputGroup>
       <TextInputGroupMain icon={<SearchIcon />} value={inputValue} onChange={handleInputChange} />
-      <TextInputGroupUtilities>
-        {showClearButton && (
-          <Button variant="plain" onClick={clearInput} aria-label="Clear button and input">
-            <TimesIcon />
-          </Button>
-        )}
-      </TextInputGroupUtilities>
+      {showUtilities && (
+        <TextInputGroupUtilities>
+          {showClearButton && (
+            <Button variant="plain" onClick={clearInput} aria-label="Clear button and input">
+              <TimesIcon />
+            </Button>
+          )}
+        </TextInputGroupUtilities>
+      )}
     </TextInputGroup>
   );
 };

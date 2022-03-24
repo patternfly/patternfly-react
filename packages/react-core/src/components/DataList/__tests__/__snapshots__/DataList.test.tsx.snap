@@ -1,325 +1,246 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataList Cell default 1`] = `
-<div
-  className="pf-c-data-list__cell"
->
-  Secondary
+<div>
+  <div
+    class="pf-c-data-list__cell"
+  >
+    Secondary
+  </div>
 </div>
 `;
 
 exports[`DataList Cells 1`] = `
-<div
-  className="pf-c-data-list__item-content"
->
-  <DataListCell
-    className="data-list-custom"
-    id="primary-item"
-    key="list-id-1"
+<div>
+  <div
+    class="pf-c-data-list__item-content"
   >
-    Primary Id
-  </DataListCell>
-  <DataListCell
-    className="data-list-custom"
-    id="primary-item"
-    key="list-id-2"
-  >
-    Primary Id 2
-  </DataListCell>
+    <div
+      class="pf-c-data-list__cell data-list-custom"
+      id="primary-item"
+    >
+      Primary Id
+    </div>
+    <div
+      class="pf-c-data-list__cell data-list-custom"
+      id="primary-item"
+    >
+      Primary Id 2
+    </div>
+  </div>
 </div>
 `;
 
 exports[`DataList DataList variants Breakpoint - 2xl 1`] = `
-<DataList
-  aria-label="this is a simple list"
-  className=""
-  gridBreakpoint="2xl"
-  isCompact={false}
-  selectedDataListItemId=""
-  wrapModifier={null}
->
+<div>
   <ul
     aria-label="this is a simple list"
-    className="pf-c-data-list pf-m-grid-2xl"
+    class="pf-c-data-list pf-m-grid-2xl"
   />
-</DataList>
+</div>
 `;
 
 exports[`DataList DataList variants Breakpoint - always 1`] = `
-<DataList
-  aria-label="this is a simple list"
-  className=""
-  gridBreakpoint="always"
-  isCompact={false}
-  selectedDataListItemId=""
-  wrapModifier={null}
->
+<div>
   <ul
     aria-label="this is a simple list"
-    className="pf-c-data-list pf-m-grid"
+    class="pf-c-data-list pf-m-grid"
   />
-</DataList>
+</div>
 `;
 
 exports[`DataList DataList variants Breakpoint - lg 1`] = `
-<DataList
-  aria-label="this is a simple list"
-  className=""
-  gridBreakpoint="lg"
-  isCompact={false}
-  selectedDataListItemId=""
-  wrapModifier={null}
->
+<div>
   <ul
     aria-label="this is a simple list"
-    className="pf-c-data-list pf-m-grid-lg"
+    class="pf-c-data-list pf-m-grid-lg"
   />
-</DataList>
+</div>
 `;
 
 exports[`DataList DataList variants Breakpoint - md 1`] = `
-<DataList
-  aria-label="this is a simple list"
-  className=""
-  gridBreakpoint="md"
-  isCompact={false}
-  selectedDataListItemId=""
-  wrapModifier={null}
->
+<div>
   <ul
     aria-label="this is a simple list"
-    className="pf-c-data-list pf-m-grid-md"
+    class="pf-c-data-list pf-m-grid-md"
   />
-</DataList>
+</div>
 `;
 
 exports[`DataList DataList variants Breakpoint - none 1`] = `
-<DataList
-  aria-label="this is a simple list"
-  className=""
-  gridBreakpoint="none"
-  isCompact={false}
-  selectedDataListItemId=""
-  wrapModifier={null}
->
+<div>
   <ul
     aria-label="this is a simple list"
-    className="pf-c-data-list pf-m-grid-none"
+    class="pf-c-data-list pf-m-grid-none"
   />
-</DataList>
+</div>
 `;
 
 exports[`DataList DataList variants Breakpoint - sm 1`] = `
-<DataList
-  aria-label="this is a simple list"
-  className=""
-  gridBreakpoint="sm"
-  isCompact={false}
-  selectedDataListItemId=""
-  wrapModifier={null}
->
+<div>
   <ul
     aria-label="this is a simple list"
-    className="pf-c-data-list pf-m-grid-sm"
+    class="pf-c-data-list pf-m-grid-sm"
   />
-</DataList>
+</div>
 `;
 
 exports[`DataList DataList variants Breakpoint - xl 1`] = `
-<DataList
-  aria-label="this is a simple list"
-  className=""
-  gridBreakpoint="xl"
-  isCompact={false}
-  selectedDataListItemId=""
-  wrapModifier={null}
->
+<div>
   <ul
     aria-label="this is a simple list"
-    className="pf-c-data-list pf-m-grid-xl"
+    class="pf-c-data-list pf-m-grid-xl"
   />
-</DataList>
+</div>
 `;
 
 exports[`DataList DataListAction button 1`] = `
-<div
-  className="pf-c-data-list__item-action"
->
-  <Button
-    id="delete-item-1"
+<div>
+  <div
+    class="pf-c-data-list__item-action"
   >
-    Delete
-  </Button>
+    <button
+      aria-disabled="false"
+      class="pf-c-button pf-m-primary"
+      data-ouia-component-id="OUIA-Generated-Button-primary-1"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      id="delete-item-1"
+      type="button"
+    >
+      Delete
+    </button>
+  </div>
 </div>
 `;
 
 exports[`DataList DataListAction dropdown 1`] = `
-<div
-  className="pf-c-data-list__item-action"
->
+<div>
   <div
-    className="pf-c-data-list__action"
+    class="pf-c-data-list__item-action"
   >
-    <Dropdown
-      dropdownItems={
-        Array [
-          <DropdownItem
-            component="button"
-            onClick={[MockFunction]}
+    <div
+      class="pf-c-data-list__action"
+    >
+      <div
+        class="pf-c-dropdown pf-m-align-right"
+        data-ouia-component-id="OUIA-Generated-Dropdown-1"
+        data-ouia-component-type="PF4/Dropdown"
+        data-ouia-safe="true"
+      >
+        <button
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-label="Actions"
+          class="pf-c-dropdown__toggle pf-m-plain"
+          id="pf-dropdown-toggle-id-0"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 192 512"
+            width="1em"
           >
-            action-1
-          </DropdownItem>,
-          <DropdownItem
-            component="button"
-            onClick={[MockFunction]}
-          >
-            action-2
-          </DropdownItem>,
-        ]
-      }
-      isPlain={true}
-      position="right"
-      toggle={<KebabToggle />}
-    />
+            <path
+              d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`DataList DataListContent 1`] = `
-<section
-  aria-label="Primary Content Details"
-  className="pf-c-data-list__expandable-content"
-  hidden={false}
-  id=""
->
-  <div
-    className="pf-c-data-list__expandable-content-body"
+<div>
+  <section
+    aria-label="Primary Content Details"
+    class="pf-c-data-list__expandable-content"
+    id=""
   >
-     test
-  </div>
-</section>
+    <div
+      class="pf-c-data-list__expandable-content-body"
+    >
+       test
+    </div>
+  </section>
+</div>
 `;
 
 exports[`DataList DataListContent hasNoPadding 1`] = `
-<section
-  aria-label="Primary Content Details"
-  className="pf-c-data-list__expandable-content"
-  hidden={true}
-  id=""
->
-  <div
-    className="pf-c-data-list__expandable-content-body pf-m-no-padding"
+<div>
+  <section
+    aria-label="Primary Content Details"
+    class="pf-c-data-list__expandable-content"
+    hidden=""
+    id=""
   >
-    test
-  </div>
-</section>
+    <div
+      class="pf-c-data-list__expandable-content-body pf-m-no-padding"
+    >
+      test
+    </div>
+  </section>
+</div>
 `;
 
 exports[`DataList Item 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<div>
+  <li
+    aria-labelledby="item-1"
+    class="pf-c-data-list__item data-list-item-custom"
+    id=""
+  />
+</div>
 `;
 
-exports[`DataList Item default 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
+exports[`DataList Item default 1`] = `"<li id=\\"\\" class=\\"pf-c-data-list__item\\" aria-labelledby=\\"item-1\\"></li>"`;
 
 exports[`DataList List 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "dragEnd": [Function],
-      "dragKeyHandler": [Function],
-      "dragStart": [Function],
-      "drop": [Function],
-      "isDraggable": false,
-      "isSelectable": false,
-      "selectedDataListItemId": "",
-      "updateSelectedDataListItem": [Function],
-    }
-  }
->
+<div>
   <ul
     aria-label="this is a simple list"
-    className="pf-c-data-list pf-m-grid-md data-list-custom"
+    class="pf-c-data-list pf-m-grid-md data-list-custom"
   />
-</ContextProvider>
+</div>
 `;
 
 exports[`DataList List compact 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "dragEnd": [Function],
-      "dragKeyHandler": [Function],
-      "dragStart": [Function],
-      "drop": [Function],
-      "isDraggable": false,
-      "isSelectable": false,
-      "selectedDataListItemId": "",
-      "updateSelectedDataListItem": [Function],
-    }
-  }
->
+<div>
   <ul
     aria-label="this is a simple list"
-    className="pf-c-data-list pf-m-compact pf-m-grid-md"
+    class="pf-c-data-list pf-m-compact pf-m-grid-md"
   />
-</ContextProvider>
+</div>
 `;
 
 exports[`DataList List default 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "dragEnd": [Function],
-      "dragKeyHandler": [Function],
-      "dragStart": [Function],
-      "drop": [Function],
-      "isDraggable": false,
-      "isSelectable": false,
-      "selectedDataListItemId": "",
-      "updateSelectedDataListItem": [Function],
-    }
-  }
->
+<div>
   <ul
     aria-label="this is a simple list"
-    className="pf-c-data-list pf-m-grid-md"
+    class="pf-c-data-list pf-m-grid-md"
   />
-</ContextProvider>
+</div>
 `;
 
 exports[`DataList List draggable 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "dragEnd": [Function],
-      "dragKeyHandler": [Function],
-      "dragStart": [Function],
-      "drop": [Function],
-      "isDraggable": true,
-      "isSelectable": false,
-      "selectedDataListItemId": "",
-      "updateSelectedDataListItem": [Function],
-    }
-  }
->
+<div>
   <ul
     aria-label="this is a simple list"
-    className="pf-c-data-list pf-m-compact pf-m-grid-md"
-    onDragLeave={[Function]}
-    onDragOver={[Function]}
-    onDrop={[Function]}
+    class="pf-c-data-list pf-m-compact pf-m-grid-md"
   />
-</ContextProvider>
+</div>
 `;
 
 exports[`DataList item row default 1`] = `
-<div
-  className="pf-c-data-list__item-row"
-/>
+<div>
+  <div
+    class="pf-c-data-list__item-row"
+  />
+</div>
 `;

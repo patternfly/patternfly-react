@@ -1,1262 +1,657 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`slider renders continuous slider 1`] = `
-<Slider
-  inputValue={50}
-  isInputVisible={true}
-  value={50}
->
+<div>
   <div
-    className="pf-c-slider"
-    style={
-      Object {
-        "--pf-c-slider--value": "50%",
-        "--pf-c-slider__value--c-form-control--width-chars": 2,
-      }
-    }
+    class="pf-c-slider"
+    style="--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 2;"
   >
     <div
-      className="pf-c-slider__main"
+      class="pf-c-slider__main"
     >
       <div
-        className="pf-c-slider__rail"
-        onClick={[Function]}
+        class="pf-c-slider__rail"
       >
         <div
-          className="pf-c-slider__rail-track"
+          class="pf-c-slider__rail-track"
         />
       </div>
       <div
         aria-hidden="true"
-        className="pf-c-slider__steps"
+        class="pf-c-slider__steps"
       >
-        <SliderStep
-          isActive={true}
-          isLabelHidden={false}
-          isTickHidden={true}
-          key="0"
-          label="0"
-          value={0}
+        <div
+          class="pf-c-slider__step pf-m-active"
+          style="--pf-c-slider__step--Left: 0%;"
         >
           <div
-            className="pf-c-slider__step pf-m-active"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "0%",
-              }
-            }
+            class="pf-c-slider__step-label"
           >
-            <div
-              className="pf-c-slider__step-label"
-            >
-              0
-            </div>
+            0
           </div>
-        </SliderStep>
-        <SliderStep
-          isActive={false}
-          isLabelHidden={false}
-          isTickHidden={true}
-          key="100"
-          label="100"
-          value={100}
+        </div>
+        <div
+          class="pf-c-slider__step"
+          style="--pf-c-slider__step--Left: 100%;"
         >
           <div
-            className="pf-c-slider__step"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "100%",
-              }
-            }
+            class="pf-c-slider__step-label"
           >
-            <div
-              className="pf-c-slider__step-label"
-            >
-              100
-            </div>
+            100
           </div>
-        </SliderStep>
+        </div>
       </div>
       <div
-        aria-disabled={false}
+        aria-disabled="false"
         aria-label="Value"
-        aria-valuemax={100}
-        aria-valuemin={0}
-        aria-valuenow={50}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="50"
         aria-valuetext="50"
-        className="pf-c-slider__thumb"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        onMouseDown={[Function]}
-        onTouchStart={[Function]}
+        class="pf-c-slider__thumb"
         role="slider"
-        tabIndex={0}
+        tabindex="0"
       />
     </div>
     <div
-      className="pf-c-slider__value"
+      class="pf-c-slider__value"
     >
-      <TextInput
+      <input
+        aria-invalid="false"
         aria-label="Slider value input"
-        className="pf-c-form-control"
-        isDisabled={false}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
+        class="pf-c-form-control pf-c-form-control"
+        data-ouia-component-id="OUIA-Generated-TextInputBase-1"
+        data-ouia-component-type="PF4/TextInput"
+        data-ouia-safe="true"
         type="number"
-        value={50}
-      >
-        <TextInputBase
-          aria-label="Slider value input"
-          className="pf-c-form-control"
-          innerRef={null}
-          isDisabled={false}
-          isLeftTruncated={false}
-          isReadOnly={false}
-          isRequired={false}
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          ouiaSafe={true}
-          type="number"
-          validated="default"
-          value={50}
-        >
-          <input
-            aria-invalid={false}
-            aria-label="Slider value input"
-            className="pf-c-form-control pf-c-form-control"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-1"
-            data-ouia-component-type="PF4/TextInput"
-            data-ouia-safe={true}
-            disabled={false}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            readOnly={false}
-            required={false}
-            type="number"
-            value={50}
-          />
-        </TextInputBase>
-      </TextInput>
+        value="50"
+      />
     </div>
   </div>
-</Slider>
+</div>
 `;
 
 exports[`slider renders continuous slider with custom steps 1`] = `
-<Slider
-  areCustomStepsContinuous={true}
-  customSteps={
-    Array [
-      Object {
-        "label": "0%",
-        "value": 0,
-      },
-      Object {
-        "label": "100%",
-        "value": 100,
-      },
-    ]
-  }
-  value={50}
->
+<div>
   <div
-    className="pf-c-slider"
-    style={
-      Object {
-        "--pf-c-slider--value": "50%",
-        "--pf-c-slider__value--c-form-control--width-chars": 1,
-      }
-    }
+    class="pf-c-slider"
+    style="--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 1;"
   >
     <div
-      className="pf-c-slider__main"
+      class="pf-c-slider__main"
     >
       <div
-        className="pf-c-slider__rail"
-        onClick={[Function]}
+        class="pf-c-slider__rail"
       >
         <div
-          className="pf-c-slider__rail-track"
+          class="pf-c-slider__rail-track"
         />
       </div>
       <div
         aria-hidden="true"
-        className="pf-c-slider__steps"
+        class="pf-c-slider__steps"
       >
-        <SliderStep
-          isActive={true}
-          key="0"
-          label="0%"
-          value={0}
+        <div
+          class="pf-c-slider__step pf-m-active"
+          style="--pf-c-slider__step--Left: 0%;"
         >
           <div
-            className="pf-c-slider__step pf-m-active"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "0%",
-              }
-            }
+            class="pf-c-slider__step-tick"
+          />
+          <div
+            class="pf-c-slider__step-label"
           >
-            <div
-              className="pf-c-slider__step-tick"
-            />
-            <div
-              className="pf-c-slider__step-label"
-            >
-              0%
-            </div>
+            0%
           </div>
-        </SliderStep>
-        <SliderStep
-          isActive={false}
-          key="100"
-          label="100%"
-          value={100}
+        </div>
+        <div
+          class="pf-c-slider__step"
+          style="--pf-c-slider__step--Left: 100%;"
         >
           <div
-            className="pf-c-slider__step"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "100%",
-              }
-            }
+            class="pf-c-slider__step-tick"
+          />
+          <div
+            class="pf-c-slider__step-label"
           >
-            <div
-              className="pf-c-slider__step-tick"
-            />
-            <div
-              className="pf-c-slider__step-label"
-            >
-              100%
-            </div>
+            100%
           </div>
-        </SliderStep>
+        </div>
       </div>
       <div
-        aria-disabled={false}
+        aria-disabled="false"
         aria-label="Value"
-        aria-valuemax={100}
-        aria-valuemin={0}
-        aria-valuenow={50}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="50"
         aria-valuetext="50"
-        className="pf-c-slider__thumb"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        onMouseDown={[Function]}
-        onTouchStart={[Function]}
+        class="pf-c-slider__thumb"
         role="slider"
-        tabIndex={0}
+        tabindex="0"
       />
     </div>
   </div>
-</Slider>
+</div>
 `;
 
 exports[`slider renders disabled slider 1`] = `
-<Slider
-  isDisabled={true}
-  value={50}
->
+<div>
   <div
-    className="pf-c-slider pf-m-disabled"
-    style={
-      Object {
-        "--pf-c-slider--value": "50%",
-        "--pf-c-slider__value--c-form-control--width-chars": 1,
-      }
-    }
+    class="pf-c-slider pf-m-disabled"
+    style="--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 1;"
   >
     <div
-      className="pf-c-slider__main"
+      class="pf-c-slider__main"
     >
       <div
-        className="pf-c-slider__rail"
-        onClick={null}
+        class="pf-c-slider__rail"
       >
         <div
-          className="pf-c-slider__rail-track"
+          class="pf-c-slider__rail-track"
         />
       </div>
       <div
         aria-hidden="true"
-        className="pf-c-slider__steps"
+        class="pf-c-slider__steps"
       >
-        <SliderStep
-          isActive={true}
-          isLabelHidden={false}
-          isTickHidden={true}
-          key="0"
-          label="0"
-          value={0}
+        <div
+          class="pf-c-slider__step pf-m-active"
+          style="--pf-c-slider__step--Left: 0%;"
         >
           <div
-            className="pf-c-slider__step pf-m-active"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "0%",
-              }
-            }
+            class="pf-c-slider__step-label"
           >
-            <div
-              className="pf-c-slider__step-label"
-            >
-              0
-            </div>
+            0
           </div>
-        </SliderStep>
-        <SliderStep
-          isActive={false}
-          isLabelHidden={false}
-          isTickHidden={true}
-          key="100"
-          label="100"
-          value={100}
+        </div>
+        <div
+          class="pf-c-slider__step"
+          style="--pf-c-slider__step--Left: 100%;"
         >
           <div
-            className="pf-c-slider__step"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "100%",
-              }
-            }
+            class="pf-c-slider__step-label"
           >
-            <div
-              className="pf-c-slider__step-label"
-            >
-              100
-            </div>
+            100
           </div>
-        </SliderStep>
+        </div>
       </div>
       <div
-        aria-disabled={true}
+        aria-disabled="true"
         aria-label="Value"
-        aria-valuemax={100}
-        aria-valuemin={0}
-        aria-valuenow={50}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="50"
         aria-valuetext="50"
-        className="pf-c-slider__thumb"
-        onClick={null}
-        onKeyDown={null}
-        onMouseDown={null}
-        onTouchStart={null}
+        class="pf-c-slider__thumb"
         role="slider"
-        tabIndex={-1}
+        tabindex="-1"
       />
     </div>
   </div>
-</Slider>
+</div>
 `;
 
 exports[`slider renders discrete slider 1`] = `
-<Slider
-  inputValue={50}
-  isInputVisible={true}
-  max={110}
-  min={10}
-  step={2}
-  value={50}
->
+<div>
   <div
-    className="pf-c-slider"
-    style={
-      Object {
-        "--pf-c-slider--value": "40%",
-        "--pf-c-slider__value--c-form-control--width-chars": 2,
-      }
-    }
+    class="pf-c-slider"
+    style="--pf-c-slider--value: 40%; --pf-c-slider__value--c-form-control--width-chars: 2;"
   >
     <div
-      className="pf-c-slider__main"
+      class="pf-c-slider__main"
     >
       <div
-        className="pf-c-slider__rail"
-        onClick={[Function]}
+        class="pf-c-slider__rail"
       >
         <div
-          className="pf-c-slider__rail-track"
+          class="pf-c-slider__rail-track"
         />
       </div>
       <div
         aria-hidden="true"
-        className="pf-c-slider__steps"
+        class="pf-c-slider__steps"
       >
-        <SliderStep
-          isActive={true}
-          isLabelHidden={false}
-          isTickHidden={true}
-          key="10"
-          label="10"
-          value={0}
+        <div
+          class="pf-c-slider__step pf-m-active"
+          style="--pf-c-slider__step--Left: 0%;"
         >
           <div
-            className="pf-c-slider__step pf-m-active"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "0%",
-              }
-            }
+            class="pf-c-slider__step-label"
           >
-            <div
-              className="pf-c-slider__step-label"
-            >
-              10
-            </div>
+            10
           </div>
-        </SliderStep>
-        <SliderStep
-          isActive={false}
-          isLabelHidden={false}
-          isTickHidden={true}
-          key="110"
-          label="110"
-          value={100}
+        </div>
+        <div
+          class="pf-c-slider__step"
+          style="--pf-c-slider__step--Left: 100%;"
         >
           <div
-            className="pf-c-slider__step"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "100%",
-              }
-            }
+            class="pf-c-slider__step-label"
           >
-            <div
-              className="pf-c-slider__step-label"
-            >
-              110
-            </div>
+            110
           </div>
-        </SliderStep>
+        </div>
       </div>
       <div
-        aria-disabled={false}
+        aria-disabled="false"
         aria-label="Value"
-        aria-valuemax={110}
-        aria-valuemin={10}
-        aria-valuenow={50}
+        aria-valuemax="110"
+        aria-valuemin="10"
+        aria-valuenow="50"
         aria-valuetext="50"
-        className="pf-c-slider__thumb"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        onMouseDown={[Function]}
-        onTouchStart={[Function]}
+        class="pf-c-slider__thumb"
         role="slider"
-        tabIndex={0}
+        tabindex="0"
       />
     </div>
     <div
-      className="pf-c-slider__value"
+      class="pf-c-slider__value"
     >
-      <TextInput
+      <input
+        aria-invalid="false"
         aria-label="Slider value input"
-        className="pf-c-form-control"
-        isDisabled={false}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
+        class="pf-c-form-control pf-c-form-control"
+        data-ouia-component-id="OUIA-Generated-TextInputBase-2"
+        data-ouia-component-type="PF4/TextInput"
+        data-ouia-safe="true"
         type="number"
-        value={50}
-      >
-        <TextInputBase
-          aria-label="Slider value input"
-          className="pf-c-form-control"
-          innerRef={null}
-          isDisabled={false}
-          isLeftTruncated={false}
-          isReadOnly={false}
-          isRequired={false}
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          ouiaSafe={true}
-          type="number"
-          validated="default"
-          value={50}
-        >
-          <input
-            aria-invalid={false}
-            aria-label="Slider value input"
-            className="pf-c-form-control pf-c-form-control"
-            data-ouia-component-id="OUIA-Generated-TextInputBase-2"
-            data-ouia-component-type="PF4/TextInput"
-            data-ouia-safe={true}
-            disabled={false}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            readOnly={false}
-            required={false}
-            type="number"
-            value={50}
-          />
-        </TextInputBase>
-      </TextInput>
+        value="50"
+      />
     </div>
   </div>
-</Slider>
+</div>
 `;
 
 exports[`slider renders discrete slider with custom steps 1`] = `
-<Slider
-  customSteps={
-    Array [
-      Object {
-        "label": "0%",
-        "value": 0,
-      },
-      Object {
-        "isLabelHidden": true,
-        "label": "25%",
-        "value": 25,
-      },
-      Object {
-        "label": "50%",
-        "value": 50,
-      },
-      Object {
-        "isLabelHidden": true,
-        "label": "75%",
-        "value": 75,
-      },
-      Object {
-        "label": "100%",
-        "value": 100,
-      },
-    ]
-  }
-  value={50}
->
+<div>
   <div
-    className="pf-c-slider"
-    style={
-      Object {
-        "--pf-c-slider--value": "50%",
-        "--pf-c-slider__value--c-form-control--width-chars": 1,
-      }
-    }
+    class="pf-c-slider"
+    style="--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 1;"
   >
     <div
-      className="pf-c-slider__main"
+      class="pf-c-slider__main"
     >
       <div
-        className="pf-c-slider__rail"
-        onClick={[Function]}
+        class="pf-c-slider__rail"
       >
         <div
-          className="pf-c-slider__rail-track"
+          class="pf-c-slider__rail-track"
         />
       </div>
       <div
         aria-hidden="true"
-        className="pf-c-slider__steps"
+        class="pf-c-slider__steps"
       >
-        <SliderStep
-          isActive={true}
-          key="0"
-          label="0%"
-          value={0}
+        <div
+          class="pf-c-slider__step pf-m-active"
+          style="--pf-c-slider__step--Left: 0%;"
         >
           <div
-            className="pf-c-slider__step pf-m-active"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "0%",
-              }
-            }
+            class="pf-c-slider__step-tick"
+          />
+          <div
+            class="pf-c-slider__step-label"
           >
-            <div
-              className="pf-c-slider__step-tick"
-            />
-            <div
-              className="pf-c-slider__step-label"
-            >
-              0%
-            </div>
+            0%
           </div>
-        </SliderStep>
-        <SliderStep
-          isActive={true}
-          isLabelHidden={true}
-          key="25"
-          label="25%"
-          value={25}
+        </div>
+        <div
+          class="pf-c-slider__step pf-m-active"
+          style="--pf-c-slider__step--Left: 25%;"
         >
           <div
-            className="pf-c-slider__step pf-m-active"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "25%",
-              }
-            }
-          >
-            <div
-              className="pf-c-slider__step-tick"
-            />
-          </div>
-        </SliderStep>
-        <SliderStep
-          isActive={true}
-          key="50"
-          label="50%"
-          value={50}
+            class="pf-c-slider__step-tick"
+          />
+        </div>
+        <div
+          class="pf-c-slider__step pf-m-active"
+          style="--pf-c-slider__step--Left: 50%;"
         >
           <div
-            className="pf-c-slider__step pf-m-active"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "50%",
-              }
-            }
+            class="pf-c-slider__step-tick"
+          />
+          <div
+            class="pf-c-slider__step-label"
           >
-            <div
-              className="pf-c-slider__step-tick"
-            />
-            <div
-              className="pf-c-slider__step-label"
-            >
-              50%
-            </div>
+            50%
           </div>
-        </SliderStep>
-        <SliderStep
-          isActive={false}
-          isLabelHidden={true}
-          key="75"
-          label="75%"
-          value={75}
+        </div>
+        <div
+          class="pf-c-slider__step"
+          style="--pf-c-slider__step--Left: 75%;"
         >
           <div
-            className="pf-c-slider__step"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "75%",
-              }
-            }
-          >
-            <div
-              className="pf-c-slider__step-tick"
-            />
-          </div>
-        </SliderStep>
-        <SliderStep
-          isActive={false}
-          key="100"
-          label="100%"
-          value={100}
+            class="pf-c-slider__step-tick"
+          />
+        </div>
+        <div
+          class="pf-c-slider__step"
+          style="--pf-c-slider__step--Left: 100%;"
         >
           <div
-            className="pf-c-slider__step"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "100%",
-              }
-            }
+            class="pf-c-slider__step-tick"
+          />
+          <div
+            class="pf-c-slider__step-label"
           >
-            <div
-              className="pf-c-slider__step-tick"
-            />
-            <div
-              className="pf-c-slider__step-label"
-            >
-              100%
-            </div>
+            100%
           </div>
-        </SliderStep>
+        </div>
       </div>
       <div
-        aria-disabled={false}
+        aria-disabled="false"
         aria-label="Value"
-        aria-valuemax={100}
-        aria-valuemin={0}
-        aria-valuenow={50}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="50"
         aria-valuetext="50%"
-        className="pf-c-slider__thumb"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        onMouseDown={[Function]}
-        onTouchStart={[Function]}
+        class="pf-c-slider__thumb"
         role="slider"
-        tabIndex={0}
+        tabindex="0"
       />
     </div>
   </div>
-</Slider>
+</div>
 `;
 
 exports[`slider renders slider with input 1`] = `
-<Slider
-  inputLabel="%"
-  inputPosition="right"
-  inputValue={50}
-  isInputVisible={true}
-  value={50}
->
+<div>
   <div
-    className="pf-c-slider"
-    style={
-      Object {
-        "--pf-c-slider--value": "50%",
-        "--pf-c-slider__value--c-form-control--width-chars": 2,
-      }
-    }
+    class="pf-c-slider"
+    style="--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 2;"
   >
     <div
-      className="pf-c-slider__main"
+      class="pf-c-slider__main"
     >
       <div
-        className="pf-c-slider__rail"
-        onClick={[Function]}
+        class="pf-c-slider__rail"
       >
         <div
-          className="pf-c-slider__rail-track"
+          class="pf-c-slider__rail-track"
         />
       </div>
       <div
         aria-hidden="true"
-        className="pf-c-slider__steps"
+        class="pf-c-slider__steps"
       >
-        <SliderStep
-          isActive={true}
-          isLabelHidden={false}
-          isTickHidden={true}
-          key="0"
-          label="0"
-          value={0}
+        <div
+          class="pf-c-slider__step pf-m-active"
+          style="--pf-c-slider__step--Left: 0%;"
         >
           <div
-            className="pf-c-slider__step pf-m-active"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "0%",
-              }
-            }
+            class="pf-c-slider__step-label"
           >
-            <div
-              className="pf-c-slider__step-label"
-            >
-              0
-            </div>
+            0
           </div>
-        </SliderStep>
-        <SliderStep
-          isActive={false}
-          isLabelHidden={false}
-          isTickHidden={true}
-          key="100"
-          label="100"
-          value={100}
+        </div>
+        <div
+          class="pf-c-slider__step"
+          style="--pf-c-slider__step--Left: 100%;"
         >
           <div
-            className="pf-c-slider__step"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "100%",
-              }
-            }
+            class="pf-c-slider__step-label"
           >
-            <div
-              className="pf-c-slider__step-label"
-            >
-              100
-            </div>
+            100
           </div>
-        </SliderStep>
+        </div>
       </div>
       <div
-        aria-disabled={false}
+        aria-disabled="false"
         aria-label="Value"
-        aria-valuemax={100}
-        aria-valuemin={0}
-        aria-valuenow={50}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="50"
         aria-valuetext="50"
-        className="pf-c-slider__thumb"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        onMouseDown={[Function]}
-        onTouchStart={[Function]}
+        class="pf-c-slider__thumb"
         role="slider"
-        tabIndex={0}
+        tabindex="0"
       />
     </div>
     <div
-      className="pf-c-slider__value"
+      class="pf-c-slider__value"
     >
-      <InputGroup>
-        <div
-          className="pf-c-input-group"
+      <div
+        class="pf-c-input-group"
+      >
+        <input
+          aria-invalid="false"
+          aria-label="Slider value input"
+          class="pf-c-form-control pf-c-form-control"
+          data-ouia-component-id="OUIA-Generated-TextInputBase-3"
+          data-ouia-component-type="PF4/TextInput"
+          data-ouia-safe="true"
+          type="number"
+          value="50"
+        />
+        <span
+          class="pf-c-input-group__text pf-m-plain"
         >
-          <TextInput
-            aria-label="Slider value input"
-            className="pf-c-form-control"
-            isDisabled={false}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            type="number"
-            value={50}
-          >
-            <TextInputBase
-              aria-label="Slider value input"
-              className="pf-c-form-control"
-              innerRef={null}
-              isDisabled={false}
-              isLeftTruncated={false}
-              isReadOnly={false}
-              isRequired={false}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              ouiaSafe={true}
-              type="number"
-              validated="default"
-              value={50}
-            >
-              <input
-                aria-invalid={false}
-                aria-label="Slider value input"
-                className="pf-c-form-control pf-c-form-control"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-3"
-                data-ouia-component-type="PF4/TextInput"
-                data-ouia-safe={true}
-                disabled={false}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                readOnly={false}
-                required={false}
-                type="number"
-                value={50}
-              />
-            </TextInputBase>
-          </TextInput>
-          <InputGroupText
-            variant="plain"
-          >
-            <span
-              className="pf-c-input-group__text pf-m-plain"
-            >
-               
-              %
-            </span>
-          </InputGroupText>
-        </div>
-      </InputGroup>
+           
+          %
+        </span>
+      </div>
     </div>
   </div>
-</Slider>
+</div>
 `;
 
 exports[`slider renders slider with input above thumb 1`] = `
-<Slider
-  inputLabel="%"
-  inputPosition="aboveThumb"
-  inputValue={50}
-  isInputVisible={true}
-  value={50}
->
+<div>
   <div
-    className="pf-c-slider"
-    style={
-      Object {
-        "--pf-c-slider--value": "50%",
-        "--pf-c-slider__value--c-form-control--width-chars": 2,
-      }
-    }
+    class="pf-c-slider"
+    style="--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 2;"
   >
     <div
-      className="pf-c-slider__main"
+      class="pf-c-slider__main"
     >
       <div
-        className="pf-c-slider__rail"
-        onClick={[Function]}
+        class="pf-c-slider__rail"
       >
         <div
-          className="pf-c-slider__rail-track"
+          class="pf-c-slider__rail-track"
         />
       </div>
       <div
         aria-hidden="true"
-        className="pf-c-slider__steps"
+        class="pf-c-slider__steps"
       >
-        <SliderStep
-          isActive={true}
-          isLabelHidden={false}
-          isTickHidden={true}
-          key="0"
-          label="0"
-          value={0}
+        <div
+          class="pf-c-slider__step pf-m-active"
+          style="--pf-c-slider__step--Left: 0%;"
         >
           <div
-            className="pf-c-slider__step pf-m-active"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "0%",
-              }
-            }
+            class="pf-c-slider__step-label"
           >
-            <div
-              className="pf-c-slider__step-label"
-            >
-              0
-            </div>
+            0
           </div>
-        </SliderStep>
-        <SliderStep
-          isActive={false}
-          isLabelHidden={false}
-          isTickHidden={true}
-          key="100"
-          label="100"
-          value={100}
+        </div>
+        <div
+          class="pf-c-slider__step"
+          style="--pf-c-slider__step--Left: 100%;"
         >
           <div
-            className="pf-c-slider__step"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "100%",
-              }
-            }
+            class="pf-c-slider__step-label"
           >
-            <div
-              className="pf-c-slider__step-label"
-            >
-              100
-            </div>
+            100
           </div>
-        </SliderStep>
+        </div>
       </div>
       <div
-        aria-disabled={false}
+        aria-disabled="false"
         aria-label="Value"
-        aria-valuemax={100}
-        aria-valuemin={0}
-        aria-valuenow={50}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="50"
         aria-valuetext="50"
-        className="pf-c-slider__thumb"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        onMouseDown={[Function]}
-        onTouchStart={[Function]}
+        class="pf-c-slider__thumb"
         role="slider"
-        tabIndex={0}
+        tabindex="0"
       />
       <div
-        className="pf-c-slider__value pf-m-floating"
+        class="pf-c-slider__value pf-m-floating"
       >
-        <InputGroup>
-          <div
-            className="pf-c-input-group"
+        <div
+          class="pf-c-input-group"
+        >
+          <input
+            aria-invalid="false"
+            aria-label="Slider value input"
+            class="pf-c-form-control pf-c-form-control"
+            data-ouia-component-id="OUIA-Generated-TextInputBase-4"
+            data-ouia-component-type="PF4/TextInput"
+            data-ouia-safe="true"
+            type="number"
+            value="50"
+          />
+          <span
+            class="pf-c-input-group__text pf-m-plain"
           >
-            <TextInput
-              aria-label="Slider value input"
-              className="pf-c-form-control"
-              isDisabled={false}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              type="number"
-              value={50}
-            >
-              <TextInputBase
-                aria-label="Slider value input"
-                className="pf-c-form-control"
-                innerRef={null}
-                isDisabled={false}
-                isLeftTruncated={false}
-                isReadOnly={false}
-                isRequired={false}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                ouiaSafe={true}
-                type="number"
-                validated="default"
-                value={50}
-              >
-                <input
-                  aria-invalid={false}
-                  aria-label="Slider value input"
-                  className="pf-c-form-control pf-c-form-control"
-                  data-ouia-component-id="OUIA-Generated-TextInputBase-4"
-                  data-ouia-component-type="PF4/TextInput"
-                  data-ouia-safe={true}
-                  disabled={false}
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  readOnly={false}
-                  required={false}
-                  type="number"
-                  value={50}
-                />
-              </TextInputBase>
-            </TextInput>
-            <InputGroupText
-              variant="plain"
-            >
-              <span
-                className="pf-c-input-group__text pf-m-plain"
-              >
-                 
-                %
-              </span>
-            </InputGroupText>
-          </div>
-        </InputGroup>
+             
+            %
+          </span>
+        </div>
       </div>
     </div>
   </div>
-</Slider>
+</div>
 `;
 
 exports[`slider renders slider with input actions 1`] = `
-<Slider
-  leftActions={
-    <Button
-      aria-label="Minus"
-      variant="plain"
-    />
-  }
-  rightActions={
-    <Button
-      aria-label="Plus"
-      variant="plain"
-    />
-  }
-  value={50}
->
+<div>
   <div
-    className="pf-c-slider"
-    style={
-      Object {
-        "--pf-c-slider--value": "50%",
-        "--pf-c-slider__value--c-form-control--width-chars": 1,
-      }
-    }
+    class="pf-c-slider"
+    style="--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 1;"
   >
     <div
-      className="pf-c-slider__actions"
+      class="pf-c-slider__actions"
     >
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Minus"
-        variant="plain"
-      >
-        <ButtonBase
-          aria-label="Minus"
-          innerRef={null}
-          variant="plain"
-        >
-          <button
-            aria-disabled={false}
-            aria-label="Minus"
-            className="pf-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-1"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            role={null}
-            type="button"
-          />
-        </ButtonBase>
-      </Button>
+        class="pf-c-button pf-m-plain"
+        data-ouia-component-id="OUIA-Generated-Button-plain-1"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      />
     </div>
     <div
-      className="pf-c-slider__main"
+      class="pf-c-slider__main"
     >
       <div
-        className="pf-c-slider__rail"
-        onClick={[Function]}
+        class="pf-c-slider__rail"
       >
         <div
-          className="pf-c-slider__rail-track"
+          class="pf-c-slider__rail-track"
         />
       </div>
       <div
         aria-hidden="true"
-        className="pf-c-slider__steps"
+        class="pf-c-slider__steps"
       >
-        <SliderStep
-          isActive={true}
-          isLabelHidden={false}
-          isTickHidden={true}
-          key="0"
-          label="0"
-          value={0}
+        <div
+          class="pf-c-slider__step pf-m-active"
+          style="--pf-c-slider__step--Left: 0%;"
         >
           <div
-            className="pf-c-slider__step pf-m-active"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "0%",
-              }
-            }
+            class="pf-c-slider__step-label"
           >
-            <div
-              className="pf-c-slider__step-label"
-            >
-              0
-            </div>
+            0
           </div>
-        </SliderStep>
-        <SliderStep
-          isActive={false}
-          isLabelHidden={false}
-          isTickHidden={true}
-          key="100"
-          label="100"
-          value={100}
+        </div>
+        <div
+          class="pf-c-slider__step"
+          style="--pf-c-slider__step--Left: 100%;"
         >
           <div
-            className="pf-c-slider__step"
-            style={
-              Object {
-                "--pf-c-slider__step--Left": "100%",
-              }
-            }
+            class="pf-c-slider__step-label"
           >
-            <div
-              className="pf-c-slider__step-label"
-            >
-              100
-            </div>
+            100
           </div>
-        </SliderStep>
+        </div>
       </div>
       <div
-        aria-disabled={false}
+        aria-disabled="false"
         aria-label="Value"
-        aria-valuemax={100}
-        aria-valuemin={0}
-        aria-valuenow={50}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="50"
         aria-valuetext="50"
-        className="pf-c-slider__thumb"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        onMouseDown={[Function]}
-        onTouchStart={[Function]}
+        class="pf-c-slider__thumb"
         role="slider"
-        tabIndex={0}
+        tabindex="0"
       />
     </div>
     <div
-      className="pf-c-slider__actions"
+      class="pf-c-slider__actions"
     >
-      <Button
+      <button
+        aria-disabled="false"
         aria-label="Plus"
-        variant="plain"
-      >
-        <ButtonBase
-          aria-label="Plus"
-          innerRef={null}
-          variant="plain"
-        >
-          <button
-            aria-disabled={false}
-            aria-label="Plus"
-            className="pf-c-button pf-m-plain"
-            data-ouia-component-id="OUIA-Generated-Button-plain-2"
-            data-ouia-component-type="PF4/Button"
-            data-ouia-safe={true}
-            disabled={false}
-            role={null}
-            type="button"
-          />
-        </ButtonBase>
-      </Button>
+        class="pf-c-button pf-m-plain"
+        data-ouia-component-id="OUIA-Generated-Button-plain-2"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      />
     </div>
   </div>
-</Slider>
+</div>
 `;
 
 exports[`slider renders slider with tooltip on thumb 1`] = `
-<div
-  className="pf-c-slider"
-  style={
-    Object {
-      "--pf-c-slider--value": "50%",
-      "--pf-c-slider__value--c-form-control--width-chars": 1,
-    }
-  }
->
+<div>
   <div
-    className="pf-c-slider__main"
+    class="pf-c-slider"
+    style="--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 1;"
   >
     <div
-      className="pf-c-slider__rail"
-      onClick={[Function]}
+      class="pf-c-slider__main"
     >
       <div
-        className="pf-c-slider__rail-track"
-      />
-    </div>
-    <div
-      aria-hidden="true"
-      className="pf-c-slider__steps"
-    >
-      <SliderStep
-        isActive={true}
-        isLabelHidden={false}
-        isTickHidden={true}
-        key="0"
-        label="0"
-        value={0}
-      />
-      <SliderStep
-        isActive={false}
-        isLabelHidden={false}
-        isTickHidden={true}
-        key="100"
-        label="100"
-        value={100}
-      />
-    </div>
-    <Tooltip
-      content="50"
-      entryDelay={0}
-    >
+        class="pf-c-slider__rail"
+      >
+        <div
+          class="pf-c-slider__rail-track"
+        />
+      </div>
       <div
-        aria-disabled={false}
+        aria-hidden="true"
+        class="pf-c-slider__steps"
+      >
+        <div
+          class="pf-c-slider__step pf-m-active"
+          style="--pf-c-slider__step--Left: 0%;"
+        >
+          <div
+            class="pf-c-slider__step-label"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="pf-c-slider__step"
+          style="--pf-c-slider__step--Left: 100%;"
+        >
+          <div
+            class="pf-c-slider__step-label"
+          >
+            100
+          </div>
+        </div>
+      </div>
+      <div
+        aria-disabled="false"
         aria-label="Value"
-        aria-valuemax={100}
-        aria-valuemin={0}
-        aria-valuenow={50}
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="50"
         aria-valuetext="50"
-        className="pf-c-slider__thumb"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        onMouseDown={[Function]}
-        onTouchStart={[Function]}
+        class="pf-c-slider__thumb"
         role="slider"
-        tabIndex={0}
+        tabindex="0"
       />
-    </Tooltip>
+    </div>
   </div>
 </div>
 `;

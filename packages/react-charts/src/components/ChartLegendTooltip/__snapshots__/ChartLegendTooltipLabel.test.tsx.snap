@@ -1,73 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ChartLegendTooltipLabel 1`] = `
-<Fragment>
-  <ChartLabel
-    style={
-      Object {
-        "fill": "#f0f0f0",
-      }
-    }
-    textAnchor="start"
-  />
-  <ChartLabel
-    style={
-      Object {
-        "fill": "#f0f0f0",
-      }
-    }
-    textAnchor="end"
-    x={NaN}
-  />
-</Fragment>
-`;
+exports[`ChartLegendTooltipLabel 1`] = `<div />`;
 
-exports[`ChartLegendTooltipLabel 2`] = `
-<Fragment>
-  <ChartLabel
-    style={
-      Object {
-        "fill": "#f0f0f0",
-      }
-    }
-    textAnchor="start"
-  />
-  <ChartLabel
-    style={
-      Object {
-        "fill": "#f0f0f0",
-      }
-    }
-    textAnchor="end"
-    x={NaN}
-  />
-</Fragment>
-`;
+exports[`ChartLegendTooltipLabel 2`] = `<div />`;
 
 exports[`renders component text 1`] = `
-<Fragment>
-  <ChartLabel
-    style={
-      Object {
-        "fill": "#f0f0f0",
-      }
-    }
-    text="Cats"
-    textAnchor="start"
-  />
-  <ChartLabel
-    style={
-      Object {
-        "fill": "#f0f0f0",
-      }
-    }
-    text={
-      Array [
-        "1, 2, 3, 4",
-      ]
-    }
-    textAnchor="end"
-    x={NaN}
-  />
-</Fragment>
+<div>
+  <text
+    direction="inherit"
+    dx="0"
+    x="0"
+    y="4.97"
+  >
+    <tspan
+      dx="0"
+      dy="0"
+      style="fill: #f0f0f0; text-anchor: start; font-family: var(--pf-chart-global--FontFamily); font-size: 14px; letter-spacing: var(--pf-chart-global--letter-spacing); stroke: transparent;"
+      text-anchor="start"
+      x="0"
+    >
+      Cats
+    </tspan>
+  </text>
+  <text
+    direction="inherit"
+    dx="0"
+    x="NaN"
+    y="4.97"
+  >
+    <tspan
+      dx="0"
+      dy="0"
+      style="fill: #f0f0f0; text-anchor: end; font-family: var(--pf-chart-global--FontFamily); font-size: 14px; letter-spacing: var(--pf-chart-global--letter-spacing); stroke: transparent;"
+      text-anchor="end"
+      x="NaN"
+    >
+      1, 2, 3, 4
+    </tspan>
+  </text>
+</div>
 `;

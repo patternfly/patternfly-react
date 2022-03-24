@@ -14,6 +14,8 @@ export interface MenuToggleProps
   isExpanded?: boolean;
   /** Flag indicating the toggle is disabled */
   isDisabled?: boolean;
+  /** Flag indicating the toggle is full height */
+  isFullHeight?: boolean;
   /** Variant styles of the menu toggle */
   variant?: 'default' | 'plain' | 'primary' | 'plainText';
   /** Optional icon rendered inside the toggle, before the children content */
@@ -30,11 +32,23 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
     className: '',
     isExpanded: false,
     isDisabled: false,
+    isFullHeight: false,
     variant: 'default'
   };
 
   render() {
-    const { children, className, icon, badge, isExpanded, isDisabled, variant, innerRef, ...props } = this.props;
+    const {
+      children,
+      className,
+      icon,
+      badge,
+      isExpanded,
+      isDisabled,
+      isFullHeight,
+      variant,
+      innerRef,
+      ...props
+    } = this.props;
 
     const isPlain = variant === 'plain';
     const isPlainText = variant === 'plainText';
@@ -59,6 +73,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
           variant === 'primary' && styles.modifiers.primary,
           (isPlain || isPlainText) && styles.modifiers.plain,
           isPlainText && styles.modifiers.text,
+          isFullHeight && styles.modifiers.fullHeight,
           className
         )}
         type="button"

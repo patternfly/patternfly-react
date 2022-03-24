@@ -89,6 +89,7 @@ describe('Select Test', () => {
     find('#typeahead-select-select-typeahead').should('have.value', '');
     find('input:nth-child(1)').type('Flo');
     find('#typeahead-select-select-typeahead').should('have.value', 'Flo');
+    find('#typeahead-select-select-typeahead').trigger('keydown', { keyCode: 40 });
     find('#typeahead-select-select-typeahead').trigger('keydown', { keyCode: 13 });
     find('#typeahead-select-select-typeahead').should('have.value', 'Florida');
     find('button.pf-c-select__toggle-clear:first').click();
@@ -173,6 +174,17 @@ describe('Select Test', () => {
       .should('not.exist');
     cy.get('button.pf-c-select__toggle-clear').click();
     cy.get('.pf-c-chip').should('not.exist');
+  });
+
+  it('Verify false value of shouldResetOnSelect will not clear typeahead input after selection', () => {
+    cy.get('#typeahead-multi-select').click();
+    cy.get('#typeahead-multi-select-select-multi-typeahead-typeahead').should('contain.value', '');
+    cy.get('#typeahead-multi-select-select-multi-typeahead-typeahead').type('Florida');
+    cy.get('#Florida').click();
+    cy.get('.pf-c-chip')
+      .contains('Florida')
+      .should('exist');
+    cy.get('#typeahead-multi-select-select-multi-typeahead-typeahead').should('contain.value', 'Florida');
   });
 
   xit('Verify Custom Typeahead Multi Select', () => {

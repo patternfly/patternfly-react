@@ -81,11 +81,12 @@ export interface WithSelectionProps {
 }
 
 export const withSelection = (options?: Options) => <P extends WithSelectionProps>(
-  WrappedComponent: React.ComponentType<P>
+  WrappedComponent: React.ComponentType<Partial<P>>
 ) => {
   const Component: React.FC<Omit<P, keyof WithSelectionProps>> = props => {
     const [selected, onSelect] = useSelection(options);
     return <WrappedComponent {...(props as any)} selected={selected} onSelect={onSelect} />;
   };
+  Component.displayName = `withSelection(${WrappedComponent.displayName || WrappedComponent.name})`;
   return observer(Component);
 };

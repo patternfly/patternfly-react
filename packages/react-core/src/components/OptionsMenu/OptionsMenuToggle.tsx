@@ -19,9 +19,9 @@ export interface OptionsMenuToggleProps extends React.HTMLProps<HTMLButtonElemen
   hideCaret?: boolean;
   /** Provides an accessible name for the button when an icon is used instead of text */
   'aria-label'?: string;
-  /** Internal function to implement enter click */
+  /** @hide Internal function to implement enter click */
   onEnter?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  /** Internal parent reference */
+  /** @hide Internal parent reference */
   parentRef?: HTMLElement;
   /** Content to be rendered in the options menu toggle button */
   toggleTemplate?: React.ReactNode;

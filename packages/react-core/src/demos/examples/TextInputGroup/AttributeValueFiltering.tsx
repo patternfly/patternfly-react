@@ -205,11 +205,14 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
     }
   };
 
-  /** only show the search icon when no chips are selected */
+  /** show the search icon only when there are no chips to prevent the chips from being displayed behind the icon */
   const showSearchIcon = !currentChips.length;
 
   /** only show the clear button when there is something that can be cleared */
   const showClearButton = !!inputValue || !!currentChips.length;
+
+  /** render the utilities component only when a component it contains is being rendered */
+  const showUtilities = showClearButton;
 
   const inputGroup = (
     <div ref={textInputGroupRef}>
@@ -229,13 +232,15 @@ export const AttributeValueFiltering: React.FunctionComponent = () => {
             ))}
           </ChipGroup>
         </TextInputGroupMain>
-        <TextInputGroupUtilities>
-          {showClearButton && (
-            <Button variant="plain" onClick={clearChipsAndInput} aria-label="Clear button and input">
-              <TimesIcon />
-            </Button>
-          )}
-        </TextInputGroupUtilities>
+        {showUtilities && (
+          <TextInputGroupUtilities>
+            {showClearButton && (
+              <Button variant="plain" onClick={clearChipsAndInput} aria-label="Clear button and input">
+                <TimesIcon />
+              </Button>
+            )}
+          </TextInputGroupUtilities>
+        )}
       </TextInputGroup>
     </div>
   );

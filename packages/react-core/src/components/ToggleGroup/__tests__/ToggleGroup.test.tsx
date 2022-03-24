@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+import { shallow } from 'enzyme';
 import { ToggleGroup } from '../ToggleGroup';
 import { ToggleGroupItem } from '../ToggleGroupItem';
 
@@ -9,23 +10,23 @@ const props = {
 };
 
 test('basic selected', () => {
-  const view = shallow(<ToggleGroupItem text="test" selected buttonId="toggleGroupItem" aria-label="basic selected" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<ToggleGroupItem text="test" selected buttonId="toggleGroupItem" aria-label="basic selected" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('basic not selected', () => {
-  const view = shallow(<ToggleGroupItem text="test" buttonId="toggleGroupItem" aria-label="basic not selected" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<ToggleGroupItem text="test" buttonId="toggleGroupItem" aria-label="basic not selected" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('icon variant', () => {
-  const view = shallow(<ToggleGroupItem selected icon="icon" buttonId="toggleGroupItem" aria-label="icon variant" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<ToggleGroupItem selected icon="icon" buttonId="toggleGroupItem" aria-label="icon variant" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('isDisabled', () => {
-  const view = shallow(<ToggleGroupItem text="test" isDisabled buttonId="toggleGroupItem" aria-label="isDisabled" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<ToggleGroupItem text="test" isDisabled buttonId="toggleGroupItem" aria-label="isDisabled" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('item passes selection and event to onChange handler', () => {
@@ -37,12 +38,12 @@ test('item passes selection and event to onChange handler', () => {
 });
 
 test('isCompact', () => {
-  const view = shallow(
+  const view = render(
     <ToggleGroup isCompact>
       <ToggleGroupItem text="Test" />
       <ToggleGroupItem text="Test" />
     </ToggleGroup>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 

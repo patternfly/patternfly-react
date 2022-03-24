@@ -12,7 +12,7 @@ propComponents:
     'FormFieldGroup',
     'FormFieldGroupExpandable',
     'FormFieldGroupHeader',
-    'FormFiledGroupHeaderTitleTextObject',
+    'FormFieldGroupHeaderTitleTextObject',
     'Button',
     'Popover',
   ]

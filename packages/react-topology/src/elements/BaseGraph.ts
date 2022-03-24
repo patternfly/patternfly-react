@@ -4,16 +4,19 @@ import Point from '../geom/Point';
 import Dimensions from '../geom/Dimensions';
 import { DEFAULT_LAYERS } from '../const';
 import {
-  Graph,
   Edge,
-  Node,
+  Graph,
+  GRAPH_POSITION_CHANGE_EVENT,
   GraphModel,
-  ModelKind,
-  isNode,
   isEdge,
+  isNode,
   Layout,
+  ModelKind,
+  Node,
+  NodeModel,
   ScaleExtent,
-  GRAPH_POSITION_CHANGE_EVENT
+  ScaleDetailsLevel,
+  ScaleDetailsThresholds
 } from '../types';
 import BaseElement from './BaseElement';
 
@@ -40,6 +43,19 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
   private scaleExtent: ScaleExtent = [0.25, 4];
 
   @computed
+  private get detailsLevel(): ScaleDetailsLevel {
+    if (!this.scaleDetailsThresholds) {
+      return ScaleDetailsLevel.high;
+    }
+    if (this.scale <= this.scaleDetailsThresholds.low) {
+      return ScaleDetailsLevel.low;
+    } else if (this.scale <= this.scaleDetailsThresholds.medium) {
+      return ScaleDetailsLevel.medium;
+    }
+    return ScaleDetailsLevel.high;
+  }
+
+  @computed
   private get edges(): Edge[] {
     return this.getChildren().filter(isEdge);
   }
@@ -48,6 +64,12 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
   private get nodes(): Node[] {
     return this.getChildren().filter(isNode);
   }
+
+  @observable.ref
+  private scaleDetailsThresholds: ScaleDetailsThresholds = {
+    low: 0.3,
+    medium: 0.5
+  };
 
   getKind(): ModelKind {
     return ModelKind.graph;
@@ -71,6 +93,18 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
       // eslint-disable-next-line no-empty
     } catch (e) {}
     this.scaleExtent = scaleExtent;
+  }
+
+  getDetailsLevelThresholds(): ScaleDetailsThresholds | undefined {
+    return this.scaleDetailsThresholds;
+  }
+
+  setDetailsLevelThresholds(settings: ScaleDetailsThresholds | undefined): void {
+    this.scaleDetailsThresholds = settings;
+  }
+
+  getDetailsLevel(): ScaleDetailsLevel {
+    return this.detailsLevel;
   }
 
   getBounds(): Rect {
@@ -262,6 +296,18 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
       this.setBounds(new Rect(newLocation.x, newLocation.y, viewWidth, viewHeight));
     }
   };
+
+  isNodeInView(element: Node<NodeModel, any>, { padding = 0 }): boolean {
+    const graph = element.getGraph();
+    const { x: viewX, y: viewY, width: viewWidth, height: viewHeight } = graph.getBounds();
+    const { x, y, width, height } = element
+      .getBounds()
+      .clone()
+      .scale(graph.getScale())
+      .translate(viewX, viewY);
+
+    return x + width > -padding && x < viewWidth + padding && y + height > -padding && y < viewHeight + padding;
+  }
 
   setModel(model: E): void {
     super.setModel(model);

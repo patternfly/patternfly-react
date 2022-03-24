@@ -40,5 +40,6 @@ export const withSvgAnchor = (end?: AnchorEnd, type?: string) => <P extends With
     const svgAnchorRef = useSvgAnchor(end, type);
     return <WrappedComponent {...(props as any)} svgAnchorRef={svgAnchorRef} />;
   };
+  Component.displayName = `withSvgAnchor(${WrappedComponent.displayName || WrappedComponent.name})`;
   return Component;
 };

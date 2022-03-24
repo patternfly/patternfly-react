@@ -1,83 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ApplicationLauncher should match snapshot (auto-generated) 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "onFavorite": [Function],
-    }
-  }
->
-  <ContextProvider
-    value={
-      Object {
-        "baseClass": "pf-c-app-launcher",
-        "baseComponent": "nav",
-        "disabledClass": "pf-m-disabled",
-        "itemClass": "pf-c-app-launcher__menu-item",
-        "menuClass": "pf-c-app-launcher__menu",
-        "onSelect": [Function],
-        "ouiaComponentType": "ApplicationLauncher",
-        "sectionClass": "pf-c-app-launcher__group",
-        "sectionComponent": "section",
-        "sectionTitleClass": "pf-c-app-launcher__group-title",
-        "toggleClass": "pf-c-app-launcher__toggle",
-      }
-    }
+<div>
+  <nav
+    aria-label="'Application launcher'"
+    class="pf-c-app-launcher pf-m-top pf-m-align-right ''"
+    data-ouia-component-type="PF4/ApplicationLauncher"
+    data-ouia-safe="true"
   >
-    <DropdownWithContext
+    <button
+      aria-expanded="false"
+      aria-haspopup="true"
       aria-label="'Application launcher'"
-      autoFocus={true}
-      className="''"
-      direction="up"
-      dropdownItems={
-        Array [
-          <div
-            className="pf-c-app-launcher__menu-search"
-          >
-            <ApplicationLauncherItem
-              customChild={
-                <input
-                  0="a"
-                  1="n"
-                  2="y"
-                  className="pf-c-form-control"
-                  onChange={[Function]}
-                  placeholder="'Filter by name...'"
-                  type="search"
-                />
-              }
-            />
-          </div>,
-          <ApplicationLauncherGroup>
-            <ApplicationLauncherItem>
-              'No results found'
-            </ApplicationLauncherItem>
-          </ApplicationLauncherGroup>,
-        ]
-      }
-      isGrouped={false}
-      isOpen={false}
-      isPlain={false}
-      isText={false}
-      menuAppendTo="inline"
-      onSelect={[Function]}
-      position="right"
-      toggle={
-        <DropdownToggle
-          aria-label="'Application launcher'"
-          id="string"
-          isDisabled={false}
-          isOpen={false}
-          onToggle={[Function]}
-          toggleIndicator={null}
-        >
-          <div>
-            ReactNode
-          </div>
-        </DropdownToggle>
-      }
-    />
-  </ContextProvider>
-</ContextProvider>
+      class="pf-c-app-launcher__toggle"
+      data-ouia-component-id="OUIA-Generated-DropdownToggle-1"
+      data-ouia-component-type="PF4/DropdownToggle"
+      data-ouia-safe="true"
+      id="string"
+      type="button"
+    >
+      <span>
+        <div>
+          ReactNode
+        </div>
+      </span>
+    </button>
+  </nav>
+</div>
 `;

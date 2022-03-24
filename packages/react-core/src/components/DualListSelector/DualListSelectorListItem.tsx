@@ -38,8 +38,9 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
   isSelected,
   innerRef,
   isDraggable = false,
-  draggableButtonAriaLabel = 'Reorder option',
   isDisabled,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  draggableButtonAriaLabel = 'Reorder option',
   ...props
 }: DualListSelectorListItemProps) => {
   const ref = innerRef || React.useRef<HTMLLIElement>(null);
@@ -73,7 +74,9 @@ export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelec
       <div className={css(styles.dualListSelectorListItemRow, isSelected && styles.modifiers.selected)}>
         {isDraggable && !isDisabled && (
           <div className={css(styles.dualListSelectorDraggable)}>
-            <Button variant={ButtonVariant.plain} aria-label={draggableButtonAriaLabel} component="span">
+            {/** TODO once keyboard accessibility is enabled, remove `component=span`
+             and add `aria-label={draggableButtonAriaLabel}` */}
+            <Button variant={ButtonVariant.plain} component="span">
               <GripVerticalIcon style={{ verticalAlign: '-0.3em' }} />
             </Button>
           </div>

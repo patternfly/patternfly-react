@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { OptionsMenuToggle } from '../../OptionsMenuToggle';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('OptionsMenuToggle should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <OptionsMenuToggle
       parentId={"''"}
       onToggle={(isOpen: boolean) => undefined as void}
@@ -26,5 +26,5 @@ it('OptionsMenuToggle should match snapshot (auto-generated)', () => {
       toggleTemplate={<div>ReactNode</div>}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

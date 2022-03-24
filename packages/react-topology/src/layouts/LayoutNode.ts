@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
 import { Node, NodeStyle } from '../types';
-import { Rect } from '../geom';
+import { Point, Rect } from '../geom';
 import { LayoutGroup } from './LayoutGroup';
 
 export class LayoutNode implements d3.SimulationNodeDatum {
@@ -54,12 +54,8 @@ export class LayoutNode implements d3.SimulationNodeDatum {
     return this.isFixed ? this.node.getBounds().getCenter().y : undefined;
   }
   setPosition(x: number, y: number) {
-    this.node.setBounds(
-      this.node
-        .getBounds()
-        .clone()
-        .setCenter(x, y)
-    );
+    const bounds = this.node.getBounds();
+    this.node.setPosition(new Point(x - bounds.width / 2, y - bounds.height / 2));
   }
   setFixed(fixed: boolean): void {
     this.isFixed = fixed;
@@ -83,12 +79,7 @@ export class LayoutNode implements d3.SimulationNodeDatum {
   }
   update() {
     if (!this.isFixed && this.xx != null && this.yy != null) {
-      this.node.setBounds(
-        this.node
-          .getBounds()
-          .clone()
-          .setCenter(this.xx, this.yy)
-      );
+      this.setPosition(this.xx, this.yy);
     }
     this.xx = undefined;
     this.yy = undefined;

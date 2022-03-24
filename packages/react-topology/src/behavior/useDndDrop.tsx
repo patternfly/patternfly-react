@@ -184,11 +184,12 @@ export const withDndDrop = <
   Props extends {} = {}
 >(
   spec: DropTargetSpec<DragObject, DropResult, CollectedProps, Props>
-) => <P extends WithDndDropProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<P>) => {
+) => <P extends WithDndDropProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<Partial<P>>) => {
   const Component: React.FC<Omit<P, keyof WithDndDropProps & CollectedProps>> = props => {
     // TODO fix cast to any
     const [dndDropProps, dndDropRef] = useDndDrop(spec, props as any);
     return <WrappedComponent {...(props as any)} {...dndDropProps} dndDropRef={dndDropRef} />;
   };
+  Component.displayName = `withDndDrop(${WrappedComponent.displayName || WrappedComponent.name})`;
   return observer(Component);
 };

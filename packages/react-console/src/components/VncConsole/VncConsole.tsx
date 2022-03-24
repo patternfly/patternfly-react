@@ -143,7 +143,7 @@ export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
       removeEventListeners();
       rfb.current = undefined;
     };
-  }, []);
+  }, [connect, onInitFailed, removeEventListeners, vncLogging]);
 
   const disconnect = () => {
     if (!rfb.current) {

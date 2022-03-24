@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { BreadcrumbItem } from '../../BreadcrumbItem';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('BreadcrumbItem should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <BreadcrumbItem
       children={<>ReactNode</>}
       className={"''"}
@@ -18,5 +18,5 @@ it('BreadcrumbItem should match snapshot (auto-generated)', () => {
       component={'a'}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

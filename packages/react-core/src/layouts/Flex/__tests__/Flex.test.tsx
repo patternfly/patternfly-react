@@ -1,37 +1,32 @@
 import * as React from 'react';
 import { Flex } from '../Flex';
 import { FlexItem } from '../FlexItem';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+import { mount } from 'enzyme';
 
 test('Simple flex with single item', () => {
-  const view = shallow(
+  const view = render(
     <Flex>
       <FlexItem>Test</FlexItem>
     </Flex>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('Nested flex', () => {
-  const view = shallow(
+  const view = render(
     <Flex>
       <Flex>
         <FlexItem>Test</FlexItem>
       </Flex>
     </Flex>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('className is added to the root element', () => {
-  const view = shallow(<Flex className="extra-class" />);
-  expect(view.prop('className')).toMatchSnapshot();
-});
-
-test('extra props are spread to the root element', () => {
-  const testId = 'flex';
-  const view = shallow(<Flex data-testid={testId} />);
-  expect(view.prop('data-testid')).toBe(testId);
+  const view = render(<Flex className="extra-class" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 const flexModifiers = {
@@ -63,7 +58,7 @@ describe('flex modifiers', () => {
       }
     })))
     .reduce((acc, val) => acc.concat(val), [])
-    .forEach(props => 
+    .forEach(props =>
       test(`${JSON.stringify(props)} add valid classes to Flex`, () => {
         const view = mount(<Flex {...props}>{JSON.stringify(props)}</Flex>);
         const className = view.find('div').prop('className').replace('pf-l-flex', '').trim();
@@ -95,7 +90,7 @@ describe('flexItem modifiers', () => {
       }
     })))
     .reduce((acc, val) => acc.concat(val), [])
-    .forEach(props => 
+    .forEach(props =>
       test(`${JSON.stringify(props)} add valid classes to FlexItem`, () => {
         const view = mount(<FlexItem {...props}>{JSON.stringify(props)}</FlexItem>);
         const className = view.find('div').prop('className').trim();
@@ -106,10 +101,10 @@ describe('flexItem modifiers', () => {
 });
 
 test('alternative component', () => {
-  const view = mount(
+  const view = render(
     <Flex component='ul'>
       <FlexItem component='li'>Test</FlexItem>
     </Flex>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

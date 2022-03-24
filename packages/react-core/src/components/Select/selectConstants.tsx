@@ -11,6 +11,7 @@ export interface SelectContextInterface {
   onFavorite: (itemId: string, isFavorite: boolean) => void;
   variant: string;
   inputIdPrefix: string;
+  shouldResetOnSelect: boolean;
 }
 
 export const SelectContext = React.createContext<SelectContextInterface | null>(null);
@@ -35,13 +36,4 @@ export enum SelectDirection {
   down = 'down'
 }
 
-export const KeyTypes = {
-  Tab: 'Tab',
-  Space: ' ',
-  Escape: 'Escape',
-  Enter: 'Enter',
-  ArrowUp: 'ArrowUp',
-  ArrowDown: 'ArrowDown',
-  ArrowLeft: 'ArrowLeft',
-  ArrowRight: 'ArrowRight'
-};
+export const SelectFooterTabbableItems = 'input, button, select, textarea, a[href]';

@@ -1,13 +1,14 @@
 import * as React from 'react';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import OutlinedCheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/outlined-check-circle-icon';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { CatalogTile } from './CatalogTile';
 import { CatalogTileBadge } from './CatalogTileBadge';
 
 test('CatalogTile renders properly', () => {
-  const component = mount(
+  const result = render(
     <div>
       <CatalogTile
         id="single-badge-test"
@@ -85,11 +86,11 @@ test('CatalogTile renders properly', () => {
       />
     </div>
   );
-  expect(component).toMatchSnapshot();
+  expect(result.container).toMatchSnapshot();
 });
 
 test('CatalogTile href renders properly', () => {
-  const view = mount(
+  const view = render(
     <CatalogTile
       id="test-href"
       href="http://patternfly.org"
@@ -99,13 +100,13 @@ test('CatalogTile href renders properly', () => {
       description="1234567890123"
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('CatalogTile onClick behaves properly', () => {
   const onClickMock = jest.fn();
 
-  const view = mount(
+  render(
     <CatalogTile
       id="test-on-click"
       className="test-click-class"
@@ -117,9 +118,6 @@ test('CatalogTile onClick behaves properly', () => {
     />
   );
 
-  view
-    .find('#test-on-click.test-click-class')
-    .hostNodes()
-    .simulate('click');
+  userEvent.click(screen.getByText('Patternfly'));
   expect(onClickMock).toBeCalled();
 });

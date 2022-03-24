@@ -1,53 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`gutter 1`] = `
-<Stack
-  hasGutter={true}
->
+<div>
   <div
-    className="pf-l-stack pf-m-gutter"
+    class="pf-l-stack pf-m-gutter"
   >
-    <StackItem>
-      <div
-        className="pf-l-stack__item"
-      >
-        Basic content
-      </div>
-    </StackItem>
+    <div
+      class="pf-l-stack__item"
+    >
+      Basic content
+    </div>
   </div>
-</Stack>
+</div>
 `;
 
 exports[`isMain defaults to false 1`] = `
-<Stack>
+<div>
   <div
-    className="pf-l-stack"
+    class="pf-l-stack"
   >
-    <StackItem>
-      <div
-        className="pf-l-stack__item"
-      >
-        Basic content
-      </div>
-    </StackItem>
+    <div
+      class="pf-l-stack__item"
+    >
+      Basic content
+    </div>
   </div>
-</Stack>
+</div>
 `;
 
 exports[`isMain set to true 1`] = `
-<Stack>
+<div>
   <div
-    className="pf-l-stack"
+    class="pf-l-stack"
   >
-    <StackItem
-      isFilled={true}
+    <div
+      class="pf-l-stack__item pf-m-fill"
     >
-      <div
-        className="pf-l-stack__item pf-m-fill"
-      >
-        Filled content
-      </div>
-    </StackItem>
+      Filled content
+    </div>
   </div>
-</Stack>
+</div>
 `;

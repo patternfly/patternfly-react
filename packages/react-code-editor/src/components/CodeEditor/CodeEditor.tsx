@@ -3,14 +3,18 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CodeEditor/code-editor';
 import {
   Button,
+  ButtonVariant,
   EmptyState,
   EmptyStateBody,
   EmptyStateIcon,
   EmptyStateSecondaryActions,
   EmptyStateVariant,
   getResizeObserver,
+  Popover,
+  PopoverProps,
   Title,
-  Tooltip
+  Tooltip,
+  TooltipPosition
 } from '@patternfly/react-core';
 import MonacoEditor, { ChangeHandler, EditorDidMount } from 'react-monaco-editor';
 import { editor } from 'monaco-editor/esm/vs/editor/editor.api';
@@ -18,8 +22,14 @@ import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 import DownloadIcon from '@patternfly/react-icons/dist/esm/icons/download-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import Dropzone from 'react-dropzone';
 import { CodeEditorContext } from './CodeEditorUtils';
+
+export interface Shortcut {
+  description: string;
+  keys: string[];
+}
 
 export enum Language {
   abap = 'abap',
@@ -114,8 +124,8 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   isLineNumbersVisible?: boolean;
   /** Flag indicating the editor is read only */
   isReadOnly?: boolean;
-  /** Height of code editor. Defaults to 100% */
-  height?: string;
+  /** Height of code editor. Defaults to 100%. 'sizeToFit' will automatically change the height to the height of the content. */
+  height?: string | 'sizeToFit';
   /** Function which fires each time the code changes in the code editor */
   onChange?: ChangeHandler;
   /** The loading screen before the editor will be loaded. Defaults 'loading...' */
@@ -140,7 +150,7 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   isCopyEnabled?: boolean;
   /** Flag to include a label indicating the currently configured editor language */
   isLanguageLabelVisible?: boolean;
-  /** Accessibly label for the copy button */
+  /** Accessible label for the copy button */
   copyButtonAriaLabel?: string;
   /** Text to display in the tooltip on the copy button before text is copied */
   copyButtonToolTipText?: string;
@@ -161,7 +171,21 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   /** The max width of the tooltips on all button */
   toolTipMaxWidth: string;
   /** The position of tooltips on all buttons */
-  toolTipPosition: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  toolTipPosition?:
+    | TooltipPosition
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
   /** A single node or array of nodes - ideally CodeEditorControls - to display above code editor */
   customControls?: React.ReactNode | React.ReactNode[];
   /** Callback which fires after the code editor is mounted containing
@@ -169,6 +193,12 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   onEditorDidMount?: EditorDidMount;
   /** Flag to add the minimap to the code editor */
   isMinimapVisible?: boolean;
+  /** Editor header main content title */
+  headerMainContent?: string;
+  /** Text to show in the button to open the shortcut popover */
+  shortcutsPopoverButtonText: string;
+  /** Properties for the shortcut popover */
+  shortcutsPopoverProps?: PopoverProps;
   /** Flag to show the editor */
   showEditor?: boolean;
   /**
@@ -182,6 +212,8 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
 }
 
 interface CodeEditorState {
+  height: string;
+  prevPropsCode: string;
   value: string;
   filename: string;
   isLoading: boolean;
@@ -231,6 +263,13 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     toolTipPosition: 'top',
     customControls: null,
     isMinimapVisible: false,
+    headerMainContent: '',
+    shortcutsPopoverButtonText: 'View Shortcuts',
+    shortcutsPopoverProps: {
+      bodyContent: '',
+      'aria-label': 'Keyboard Shortcuts',
+      ...Popover.defaultProps
+    },
     showEditor: true,
     options: {},
     overrideServices: {}
@@ -264,6 +303,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
   constructor(props: CodeEditorProps) {
     super(props);
     this.state = {
+      height: this.props.height,
+      prevPropsCode: this.props.code,
       value: this.props.code,
       filename: '',
       isLoading: false,
@@ -272,25 +313,43 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     };
   }
 
+  setHeightToFitContent() {
+    const contentHeight = this.editor.getContentHeight();
+    const layoutInfo = this.editor.getLayoutInfo();
+    this.editor.layout({ width: layoutInfo.width, height: contentHeight });
+  }
+
   onChange: ChangeHandler = (value, event) => {
+    if (this.props.height === 'sizeToFit') {
+      this.setHeightToFitContent();
+    }
     if (this.props.onChange) {
       this.props.onChange(value, event);
     }
     this.setState({ value });
   };
 
+  // this function is only called when the props change
+  // the only conflict is between props.code and state.value
+  static getDerivedStateFromProps(nextProps: CodeEditorProps, prevState: CodeEditorState) {
+    // if the code changes due to the props.code changing
+    // set the value to props.code
+    if (nextProps.code !== prevState.prevPropsCode) {
+      return {
+        value: nextProps.code,
+        prevPropsCode: nextProps.code
+      };
+    }
+    // else, don't need to change the state.value
+    // because the onChange function will do all the work
+    return null;
+  }
+
   handleResize = () => {
     if (this.editor) {
       this.editor.layout();
     }
   };
-
-  componentDidUpdate(prevProps: CodeEditorProps) {
-    const { code } = this.props;
-    if (prevProps.code !== code) {
-      this.setState({ value: code });
-    }
-  }
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleGlobalKeys);
@@ -318,6 +377,9 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     );
     this.props.onEditorDidMount(editor, monaco);
     this.editor = editor;
+    if (this.props.height === 'sizeToFit') {
+      this.setHeightToFitContent();
+    }
   };
 
   handleFileChange = (value: string, filename: string) => {
@@ -347,6 +409,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       this.readFile(fileHandle)
         .then(data => {
           this.handleFileReadFinished();
+          this.toggleEmptyState();
           this.handleFileChange(data, fileHandle.name);
         })
         .catch((error: DOMException) => {
@@ -395,10 +458,9 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
   };
 
   render() {
-    const { value, isLoading, showEmptyState, copied } = this.state;
+    const { height, value, isLoading, showEmptyState, copied } = this.state;
     const {
       isDarkTheme,
-      height,
       width,
       className,
       isCopyEnabled,
@@ -426,11 +488,19 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       emptyStateLink,
       customControls,
       isMinimapVisible,
+      headerMainContent,
+      shortcutsPopoverButtonText,
+      shortcutsPopoverProps: shortcutsPopoverPropsProp,
       showEditor,
       options: optionsProp,
       overrideServices
     } = this.props;
+    const shortcutsPopoverProps: PopoverProps = {
+      ...CodeEditor.defaultProps.shortcutsPopoverProps,
+      ...shortcutsPopoverPropsProp
+    };
     const options: editor.IStandaloneEditorConstructionOptions = {
+      scrollBeyondLastLine: height !== 'sizeToFit',
       readOnly: isReadOnly,
       cursorStyle: 'line',
       lineNumbers: isLineNumbersVisible ? 'on' : 'off',
@@ -476,7 +546,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
 
           const editorHeader = (
             <div className={css(styles.codeEditorHeader)}>
-              {(isCopyEnabled || isDownloadEnabled || isUploadEnabled || customControls) && (
+              {
                 <div className={css(styles.codeEditorControls)}>
                   {isCopyEnabled && (!showEmptyState || !!value) && (
                     <Tooltip
@@ -523,6 +593,16 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
                   {customControls && (
                     <CodeEditorContext.Provider value={{ code: value }}>{customControls}</CodeEditorContext.Provider>
                   )}
+                </div>
+              }
+              {<div className={css(styles.codeEditorHeaderMain)}>{headerMainContent}</div>}
+              {!!shortcutsPopoverProps.bodyContent && (
+                <div className="pf-c-code-editor__keyboard-shortcuts">
+                  <Popover {...shortcutsPopoverProps}>
+                    <Button variant={ButtonVariant.link} icon={<HelpIcon />}>
+                      {shortcutsPopoverButtonText}
+                    </Button>
+                  </Popover>
                 </div>
               )}
               {isLanguageLabelVisible && (

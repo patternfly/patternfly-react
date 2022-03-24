@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import AddCircleOIcon from '@patternfly/react-icons/dist/esm/icons/add-circle-o-icon';
 import { Tooltip } from '@patternfly/react-core';
 import Point from '../geom/Point';
-import ConnectorArrow from './ConnectorArrow';
+import ConnectorArrow from './edges/terminals/ConnectorArrow';
 
 const cursorSize = 20;
 
@@ -23,11 +24,11 @@ const DefaultCreateConnector: React.FC<DefaultCreateConnectorProps> = ({
   tipContents,
   className
 }) => {
-  const classes = css('pf-topology-default-create-connector', className);
+  const classes = css(styles.topologyDefaultCreateConnector, className);
   return (
     <g className={classes}>
       <line
-        className="pf-topology-default-create-connector__line"
+        className={css(styles.topologyDefaultCreateConnectorLine)}
         x1={startPoint.x}
         y1={startPoint.y}
         x2={endPoint.x}
@@ -36,10 +37,10 @@ const DefaultCreateConnector: React.FC<DefaultCreateConnectorProps> = ({
       {hints && hints[hints.length - 1] === 'create' ? (
         <g
           transform={`translate(${endPoint.x - cursorSize / 2},${endPoint.y - cursorSize / 2})`}
-          className="pf-topology-default-create-connector__create"
+          className={css(styles.topologyDefaultCreateConnectorCreate)}
         >
           <circle
-            className="pf-topology-default-create-connector__create__bg"
+            className={css(styles.topologyDefaultCreateConnectorCreateBg)}
             cx={cursorSize / 2}
             cy={cursorSize / 2}
             r={cursorSize / 2}
@@ -54,20 +55,20 @@ const DefaultCreateConnector: React.FC<DefaultCreateConnectorProps> = ({
               exitDelay={0}
             >
               <AddCircleOIcon
-                className="pf-topology-default-create-connector__create__cursor"
+                className={css(styles.topologyDefaultCreateConnectorCreateCursor)}
                 style={{ fontSize: cursorSize }}
               />
             </Tooltip>
           ) : (
             <AddCircleOIcon
-              className="pf-topology-default-create-connector__create__cursor"
+              className={css(styles.topologyDefaultCreateConnectorCreateCursor)}
               style={{ fontSize: cursorSize }}
             />
           )}
         </g>
       ) : (
         <ConnectorArrow
-          className="pf-topology-default-create-connector__arrow"
+          className={css(styles.topologyDefaultCreateConnectorArrow)}
           startPoint={startPoint}
           endPoint={endPoint}
         />

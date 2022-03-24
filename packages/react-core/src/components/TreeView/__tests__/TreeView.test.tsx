@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { TreeView } from '../TreeView';
 import { Button } from '@patternfly/react-core';
 import { FolderIcon, FolderOpenIcon } from '@patternfly/react-icons';
@@ -129,17 +129,17 @@ const active = [
 
 describe('tree view', () => {
   test('renders basic successfully', () => {
-    const view = mount(<TreeView data={options} onSelect={jest.fn()} />);
-    expect(view).toMatchSnapshot();
+    const view = render(<TreeView data={options} onSelect={jest.fn()} />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('renders active successfully', () => {
-    const view = mount(<TreeView data={options} activeItems={active} onSelect={jest.fn()} />);
-    expect(view).toMatchSnapshot();
+    const view = render(<TreeView data={options} activeItems={active} onSelect={jest.fn()} />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('renders search successfully', () => {
-    const view = mount(
+    const view = render(
       <TreeViewSearch
         onSearch={jest.fn()}
         id='input-search'
@@ -147,21 +147,21 @@ describe('tree view', () => {
         aria-label='Search input example'
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('renders toolbar successfully', () => {
-    const view = mount(<TreeView data={options} activeItems={active} onSelect={jest.fn()} toolbar={<div>test</div>} />);
-    expect(view).toMatchSnapshot();
+    const view = render(<TreeView data={options} activeItems={active} onSelect={jest.fn()} toolbar={<div>test</div>} />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('renders checkboxes successfully', () => {
-    const view = mount(<TreeView data={options} activeItems={active} onSelect={jest.fn()} hasChecks />);
-    expect(view).toMatchSnapshot();
+    const view = render(<TreeView data={options} activeItems={active} onSelect={jest.fn()} hasChecks />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('renders icons successfully', () => {
-    const view = mount(
+    const view = render(
       <TreeView
         data={options}
         activeItems={active}
@@ -170,31 +170,31 @@ describe('tree view', () => {
         expandedIcon={<FolderOpenIcon />}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('renders badges successfully', () => {
-    const view = mount(<TreeView data={options} activeItems={active} onSelect={jest.fn()} hasBadges />);
-    expect(view).toMatchSnapshot();
+    const view = render(<TreeView data={options} activeItems={active} onSelect={jest.fn()} hasBadges />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('renders individual flag options successfully', () => {
-    const view = mount(<TreeView data={flagOptions} activeItems={active} onSelect={jest.fn()} />);
-    expect(view).toMatchSnapshot();
+    const view = render(<TreeView data={flagOptions} activeItems={active} onSelect={jest.fn()} />);
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 test('renders guides successfully', () => {
-  const view = mount(<TreeView data={options} onSelect={jest.fn()} hasGuides={true}/>);
-    expect(view).toMatchSnapshot();
+  const view = render(<TreeView data={options} onSelect={jest.fn()} hasGuides={true}/>);
+    expect(view.container).toMatchSnapshot();
 });
 
 test('renders compact successfully', () => {
-  const view = mount(<TreeView data={options} onSelect={jest.fn()} variant='compact'/>);
-    expect(view).toMatchSnapshot();
+  const view = render(<TreeView data={options} onSelect={jest.fn()} variant='compact'/>);
+    expect(view.container).toMatchSnapshot();
 });
 
 test('renders compact no background successfully', () => {
-  const view = mount(<TreeView data={options} onSelect={jest.fn()} variant='compactNoBackground' />);
-    expect(view).toMatchSnapshot();
+  const view = render(<TreeView data={options} onSelect={jest.fn()} variant='compactNoBackground' />);
+    expect(view.container).toMatchSnapshot();
 });

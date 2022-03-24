@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import { DefsState } from '../SVGDefsProvider';
-import { Defs } from "../Defs";
+import { Defs } from '../Defs';
 
 describe('Defs', () => {
   it('should render initially empty', () => {
@@ -14,8 +14,8 @@ describe('Defs', () => {
     const state: DefsState = {
       defs: {
         first: { count: 0, node: <span /> },
-        second: { count: 0, node: <span /> },
-      },
+        second: { count: 0, node: <span /> }
+      }
     };
     wrapper.setState(state);
     const defsWrapper = wrapper.find('defs');

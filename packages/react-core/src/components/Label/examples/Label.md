@@ -386,45 +386,5 @@ Click or press either enter or space to begin editing a label. After editing, cl
 
 You can also customize any Label's close button aria-label as this example shows with `closeBtnAriaLabel`.
 
-```js isBeta
-import React from 'react';
-import { Label } from '@patternfly/react-core';
-
-class EditableLabel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: 'Editable label'
-    };
-    this.onEditCancel = prevText => {
-      this.setState({
-        text: prevText
-      });
-    };
-    this.onEditComplete = newText => {
-      this.setState({
-        text: newText
-      });
-    };
-  }
-
-  render() {
-    return (
-      <Label
-        color="blue"
-        onClose={Function.prototype}
-        closeBtnAriaLabel="Custom close button for editable label"
-        onEditCancel={this.onEditCancel}
-        onEditComplete={this.onEditComplete}
-        isEditable
-        editableProps={{
-          'aria-label': 'Editable text',
-          id: 'editable-label'
-        }}
-      >
-        {this.state.text}
-      </Label>
-    );
-  }
-}
+```js file="LabelEditable.tsx" isBeta 
 ```

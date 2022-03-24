@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { DropdownToggle } from '../DropdownToggle';
 import { KebabToggle } from '../KebabToggle';
 
 test('Dropdown toggle', () => {
-  const view = mount(<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>);
-  expect(view).toMatchSnapshot();
+  const view = render(<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>);
+  expect(view.container).toMatchSnapshot();
 });
 test('Kebab toggle', () => {
-  const view = mount(<KebabToggle id="Dropdown Toggle" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<KebabToggle id="Dropdown Toggle" />);
+  expect(view.container).toMatchSnapshot();
 });

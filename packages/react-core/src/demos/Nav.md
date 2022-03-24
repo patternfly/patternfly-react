@@ -7,6 +7,7 @@ import { DashboardBreadcrumb } from './examples/DashboardWrapper';
 import DashboardHeader from './examples/DashboardHeader';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import imgColorBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
@@ -382,6 +383,7 @@ import {
 import { DashboardBreadcrumb } from './examples/DashboardWrapper';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -481,7 +483,7 @@ class PageLayoutHorizontalNav extends React.Component {
           </PageHeaderToolsItem>
           <PageHeaderToolsItem>
             <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <HelpIcon />
+              <QuestionCircleIcon />
             </Button>
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
@@ -738,6 +740,7 @@ import {
 import { DashboardBreadcrumb } from './examples/DashboardWrapper';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import imgColorBrand from '@patternfly/react-core/src/demos/examples/pfColorLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -850,7 +853,7 @@ class HorizontalNavWithSubnav extends React.Component {
           </PageHeaderToolsItem>
           <PageHeaderToolsItem>
             <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <HelpIcon />
+              <QuestionCircleIcon />
             </Button>
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
@@ -1200,6 +1203,7 @@ import {
 } from '@patternfly/react-core';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -1327,7 +1331,7 @@ class PageLayoutManualNav extends React.Component {
           </PageHeaderToolsItem>
           <PageHeaderToolsItem>
             <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-              <HelpIcon />
+              <QuestionCircleIcon />
             </Button>
           </PageHeaderToolsItem>
         </PageHeaderToolsGroup>
@@ -1439,7 +1443,7 @@ class VerticalPage extends React.Component {
     super(props);
     this.state = {
       isNavOpen: true,
-      activeItem: 0,
+      activeItem: 0
     };
     this.onNavSelect = result => {
       this.setState({
@@ -1489,13 +1493,7 @@ class VerticalPage extends React.Component {
               <NavItem id="flyout-link1" to="#flyout-link1" itemId={0} isActive={activeItem === 0}>
                 System Panel
               </NavItem>
-              <NavItem
-                flyout={curFlyout}
-                id="flyout-link2"
-                to="#flyout-link2"
-                itemId={1}
-                isActive={activeItem === 1}
-              >
+              <NavItem flyout={curFlyout} id="flyout-link2" to="#flyout-link2" itemId={1} isActive={activeItem === 1}>
                 Settings
               </NavItem>
               <NavItem id="flyout-link3" to="#flyout-link3" itemId={2} isActive={activeItem === 2}>
@@ -1516,4 +1514,9 @@ class VerticalPage extends React.Component {
     );
   }
 }
+```
+
+### Drilldown nav
+
+```js isBeta isFullscreen file="./examples/Nav/NavDrilldown.tsx"
 ```

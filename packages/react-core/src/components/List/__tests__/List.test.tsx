@@ -1,4 +1,5 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import { List, ListVariant, ListComponent, OrderType } from '../List';
 import { ListItem } from '../ListItem';
@@ -18,21 +19,21 @@ const ListItems = () => (
 
 describe('list', () => {
   test('simple list', () => {
-    const view = mount(
+    const view = render(
       <List>
         <ListItems />
       </List>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('inline list', () => {
-    const view = mount(
+    const view = render(
       <List variant={ListVariant.inline}>
         <ListItems />
       </List>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('ordered list', () => {
@@ -78,42 +79,42 @@ describe('list', () => {
   });
 
   test('bordered list', () => {
-    const view = mount(
+    const view = render(
       <List isBordered>
         <ListItems />
       </List>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('plain list', () => {
-    const view = mount(
+    const view = render(
       <List isPlain>
         <ListItems />
       </List>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('icon list', () => {
-    const view = mount(
+    const view = render(
       <List isPlain>
         <ListItem icon={<BookOpen />}>Apple</ListItem>
         <ListItem icon={<Key />}>Banana</ListItem>
         <ListItem icon={<Desktop />}>Orange</ListItem>
       </List>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('icon large list', () => {
-    const view = mount(
+    const view = render(
       <List iconSize='large'>
         <ListItem icon={<BookOpen />}>Apple</ListItem>
         <ListItem icon={<Key />}>Banana</ListItem>
         <ListItem icon={<Desktop />}>Orange</ListItem>
       </List>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });

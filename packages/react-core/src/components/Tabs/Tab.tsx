@@ -4,6 +4,7 @@ import { OUIAProps } from '../../helpers';
 import { TabButton } from './TabButton';
 import { TabsContext } from './TabsContext';
 import { css } from '@patternfly/react-styles';
+import { Tooltip } from '../Tooltip';
 
 export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'title'>, OUIAProps {
   /** content rendered inside the Tab content area. */
@@ -30,6 +31,8 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
   inoperableEvents?: string[];
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
+  /** Optional Tooltip rendered to a Tab. Should be <Tooltip> with appropriate props for proper rendering. */
+  tooltip?: React.ReactElement<any>;
 }
 
 const TabBase: React.FunctionComponent<TabProps> = ({
@@ -45,6 +48,7 @@ const TabBase: React.FunctionComponent<TabProps> = ({
   inoperableEvents = ['onClick', 'onKeyPress'],
   href,
   innerRef,
+  tooltip,
   ...props
 }: TabProps) => {
   const preventedEvents = inoperableEvents.reduce(
@@ -69,31 +73,34 @@ const TabBase: React.FunctionComponent<TabProps> = ({
       return null;
     }
   };
-  return (
-    <li
-      className={css(styles.tabsItem, eventKey === localActiveKey && styles.modifiers.current, childClassName)}
-      ref={innerRef}
+
+  const tabButton = (
+    <TabButton
+      parentInnerRef={innerRef}
+      className={css(
+        styles.tabsLink,
+        isDisabled && href && styles.modifiers.disabled,
+        isAriaDisabled && styles.modifiers.ariaDisabled
+      )}
+      disabled={isButtonElement ? isDisabled : null}
+      aria-disabled={isDisabled || isAriaDisabled}
+      tabIndex={getDefaultTabIdx()}
+      onClick={(event: any) => handleTabClick(event, eventKey, tabContentRef)}
+      {...(isAriaDisabled ? preventedEvents : null)}
+      id={`pf-tab-${eventKey}-${childId || uniqueId}`}
+      aria-controls={ariaControls}
+      tabContentRef={tabContentRef}
+      ouiaId={childOuiaId}
+      href={href}
+      {...props}
     >
-      <TabButton
-        className={css(
-          styles.tabsLink,
-          isDisabled && href && styles.modifiers.disabled,
-          isAriaDisabled && styles.modifiers.ariaDisabled
-        )}
-        disabled={isButtonElement ? isDisabled : null}
-        aria-disabled={isDisabled || isAriaDisabled}
-        tabIndex={getDefaultTabIdx()}
-        onClick={(event: any) => handleTabClick(event, eventKey, tabContentRef)}
-        {...(isAriaDisabled ? preventedEvents : null)}
-        id={`pf-tab-${eventKey}-${childId || uniqueId}`}
-        aria-controls={ariaControls}
-        tabContentRef={tabContentRef}
-        ouiaId={childOuiaId}
-        href={href}
-        {...props}
-      >
-        {title}
-      </TabButton>
+      {title}
+    </TabButton>
+  );
+
+  return (
+    <li className={css(styles.tabsItem, eventKey === localActiveKey && styles.modifiers.current, childClassName)}>
+      {tooltip ? <Tooltip {...tooltip.props}>{tabButton}</Tooltip> : tabButton}
     </li>
   );
 };

@@ -55,12 +55,12 @@ import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
 ```
 
 ### Sticky panel
-A `tabindex` should be added to the `Sidebar` when there is scrollable content in order for the  overflow content to be accessible by keyboard.
+A `tabIndex` should be added to the `Sidebar` when there is scrollable content in order for the  overflow content to be accessible by keyboard.
 ```js
 import React from 'react';
 import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
 
-<Sidebar style={{ height: '200px', overflow: 'auto' }} tabindex={0}>
+<Sidebar style={{ height: '200px', overflow: 'auto' }} tabIndex={0}>
   <SidebarPanel variant="sticky">
     Sticky sidebar panel
   </SidebarPanel>
@@ -73,12 +73,12 @@ import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
 ```
 
 ### Static panel
-A `tabindex` should be added to the `Sidebar` when there is scrollable content in order for the  overflow content to be accessible by keyboard.
+A `tabIndex` should be added to the `Sidebar` when there is scrollable content in order for the  overflow content to be accessible by keyboard.
 ```js
 import React from 'react';
 import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
 
-<Sidebar style={{ height: '200px', overflow: 'auto' }} tabindex={0}>
+<Sidebar style={{ height: '200px', overflow: 'auto' }} tabIndex={0}>
   <SidebarPanel variant="static">
     Static sidebar panel
   </SidebarPanel>
@@ -91,12 +91,12 @@ import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
 ```
 
 ### Responsive panel width
-A `tabindex` should be added to the `Sidebar` when there is scrollable content in order for the  overflow content to be accessible by keyboard.
+A `tabIndex` should be added to the `Sidebar` when there is scrollable content in order for the  overflow content to be accessible by keyboard.
 ```js
 import React from 'react';
 import { Sidebar, SidebarContent, SidebarPanel } from '@patternfly/react-core';
 
-<Sidebar style={{ height: '200px', overflow: 'auto' }} tabindex={0}>
+<Sidebar style={{ height: '200px', overflow: 'auto' }} tabIndex={0}>
   <SidebarPanel width={{ default: 'width_50', lg: 'width_33', xl: 'width_75' }}>
     Sidebar panel
   </SidebarPanel>

@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { Gallery } from '../Gallery';
 import { GalleryItem } from '../GalleryItem';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
 
 test('gutter', () => {
-  const view = shallow(<Gallery hasGutter />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Gallery hasGutter />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('gutter breakpoints', () => {
-  const view = mount(
+  const view = render(
     <Gallery
       hasGutter
       minWidths={{
@@ -23,14 +23,14 @@ test('gutter breakpoints', () => {
       }}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('alternative component', () => {
-  const view = mount(
+  const view = render(
     <Gallery component='ul'>
       <GalleryItem component='li'>Test</GalleryItem>
     </Gallery>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

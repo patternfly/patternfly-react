@@ -9,7 +9,7 @@ export interface InternalFormFieldGroupProps extends Omit<React.HTMLProps<HTMLDi
   children?: React.ReactNode;
   /** Additional classes added to the form field group. */
   className?: string;
-  /** Form filed group header */
+  /** Form field group header */
   header?: any;
   /** Flag indicating if the field group is expandable */
   isExpandable?: boolean;
@@ -17,7 +17,7 @@ export interface InternalFormFieldGroupProps extends Omit<React.HTMLProps<HTMLDi
   isExpanded?: boolean;
   /** Function callback called when user clicks toggle button */
   onToggle?: () => void;
-  /** Aria-label to use on the form filed group toggle button */
+  /** Aria-label to use on the form field group toggle button */
   toggleAriaLabel?: string;
 }
 

@@ -58,6 +58,8 @@ export interface TdSelectType {
 }
 
 export interface TdActionsType {
+  /** The row index */
+  rowIndex?: number;
   /** Cell actions */
   items: IActions;
   /** Whether to disable the actions */
@@ -161,6 +163,15 @@ export interface ThSelectType {
   isSelected: boolean;
   /** Flag indicating the select checkbox in the th is disabled */
   isHeaderSelectDisabled?: boolean;
+}
+
+export interface ThExpandType {
+  /** On toggling the expansion */
+  onToggle?: OnCollapse;
+  /** Whether all are expanded */
+  areAllExpanded: boolean;
+  /** Alternative aria label */
+  collapseAllAriaLabel: '';
 }
 
 // Rows Types

@@ -1,13 +1,13 @@
 import { FileUploadField } from '../FileUploadField';
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 test('simple fileuploadfield', () => {
   const changeHandler = jest.fn();
   const browserBtnClickHandler = jest.fn();
   const clearBtnClickHandler = jest.fn();
 
-  const view = shallow(
+  const view = render(
     <FileUploadField
       id="custom-file-upload"
       type="text"
@@ -25,5 +25,5 @@ test('simple fileuploadfield', () => {
       {<p>A custom preview of the uploaded file can be passed as children</p>}
     </FileUploadField>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

@@ -162,7 +162,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       aria-describedby={ariaDescribedby || (hasNoBodyWrapper ? null : descriptorId)}
       {...getOUIAProps(ModalContent.displayName, ouiaId, ouiaSafe)}
     >
-      {showClose && <ModalBoxCloseButton onClose={onClose} />}
+      {showClose && <ModalBoxCloseButton onClose={onClose} ouiaId={ouiaId} />}
       {modalBoxHeader}
       {modalBody}
       {modalBoxFooter}

@@ -457,3 +457,7 @@ TabsOpenWithSecondaryTabsDemo = () => {
 
 ```js isFullscreen file="./examples/Tabs/ModalTabs.tsx"
 ```
+### Gray tabs
+
+```js isFullscreen file="./examples/Tabs/GrayTabs.tsx"
+```

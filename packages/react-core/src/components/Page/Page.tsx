@@ -5,6 +5,8 @@ import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/global_breakpo
 import { debounce, canUseDOM } from '../../helpers/util';
 import { Drawer, DrawerContent, DrawerContentBody, DrawerPanelContent } from '../Drawer';
 import { PageGroup, PageGroupProps } from './PageGroup';
+import { getResizeObserver } from '../../helpers/resizeObserver';
+import { getBreakpoint } from '../../helpers/util';
 
 export enum PageLayouts {
   vertical = 'vertical',
@@ -15,13 +17,17 @@ export interface PageContextProps {
   isManagedSidebar: boolean;
   onNavToggle: () => void;
   isNavOpen: boolean;
+  width: number;
+  getBreakpoint: (width: number | null) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 }
-
-const PageContext = React.createContext<PageContextProps>({
+export const pageContextDefaults: PageContextProps = {
   isManagedSidebar: false,
   isNavOpen: false,
-  onNavToggle: () => null
-});
+  onNavToggle: () => null,
+  width: null,
+  getBreakpoint
+};
+export const PageContext = React.createContext<PageContextProps>(pageContextDefaults);
 
 export const PageContextProvider = PageContext.Provider;
 export const PageContextConsumer = PageContext.Consumer;
@@ -67,6 +73,13 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    * Returns object { mobileView: boolean, windowSize: number }
    */
   onPageResize?: (object: any) => void;
+  /**
+   * The page resize observer uses the breakpoints returned from this function when adding the pf-m-breakpoint-[default|sm|md|lg|xl|2xl] class
+   * You can override the default getBreakpoint function to return breakpoints at different sizes than the default
+   * You can view the default getBreakpoint function here:
+   * https://github.com/patternfly/patternfly-react/blob/main/packages/react-core/src/helpers/util.ts
+   */
+  getBreakpoint?: (width: number | null) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   /** Breadcrumb component for the page */
   breadcrumb?: React.ReactNode;
   /** Tertiary nav component for the page */
@@ -87,6 +100,7 @@ export interface PageState {
   desktopIsNavOpen: boolean;
   mobileIsNavOpen: boolean;
   mobileView: boolean;
+  width: number;
 }
 
 export class Page extends React.Component<PageProps, PageState> {
@@ -98,9 +112,12 @@ export class Page extends React.Component<PageProps, PageState> {
     onPageResize: (): void => null,
     mainTabIndex: -1,
     isNotificationDrawerExpanded: false,
-    onNotificationDrawerExpand: () => null
+    onNotificationDrawerExpand: () => null,
+    getBreakpoint
   };
   mainRef = React.createRef<HTMLDivElement>();
+  pageRef = React.createRef<HTMLDivElement>();
+  observer: any = () => {};
 
   constructor(props: PageProps) {
     super(props);
@@ -110,16 +127,15 @@ export class Page extends React.Component<PageProps, PageState> {
     this.state = {
       desktopIsNavOpen: managedSidebarOpen,
       mobileIsNavOpen: false,
-      mobileView: false
+      mobileView: false,
+      width: null
     };
   }
 
   componentDidMount() {
     const { isManagedSidebar, onPageResize } = this.props;
     if (isManagedSidebar || onPageResize) {
-      if (canUseDOM) {
-        window.addEventListener('resize', this.handleResize);
-      }
+      this.observer = getResizeObserver(this.pageRef.current, this.handleResize);
       const currentRef = this.mainRef.current;
       if (currentRef) {
         currentRef.addEventListener('mousedown', this.handleMainClick);
@@ -133,9 +149,7 @@ export class Page extends React.Component<PageProps, PageState> {
   componentWillUnmount() {
     const { isManagedSidebar, onPageResize } = this.props;
     if (isManagedSidebar || onPageResize) {
-      if (canUseDOM) {
-        window.removeEventListener('resize', this.handleResize);
-      }
+      this.observer();
       const currentRef = this.mainRef.current;
       if (currentRef) {
         currentRef.removeEventListener('mousedown', this.handleMainClick);
@@ -144,7 +158,13 @@ export class Page extends React.Component<PageProps, PageState> {
     }
   }
 
-  getWindowWidth = () => (canUseDOM ? window.innerWidth : 1200);
+  getWindowWidth = () => {
+    if (canUseDOM) {
+      return this.pageRef.current ? this.pageRef.current.clientWidth : window.innerWidth;
+    } else {
+      return 1200;
+    }
+  };
 
   isMobile = () =>
     // eslint-disable-next-line radix
@@ -159,6 +179,7 @@ export class Page extends React.Component<PageProps, PageState> {
     if (mobileView !== this.state.mobileView) {
       this.setState({ mobileView });
     }
+    this.pageRef.current && this.setState({ width: this.pageRef.current.clientWidth });
   };
 
   handleResize = debounce(this.resize, 250);
@@ -201,6 +222,7 @@ export class Page extends React.Component<PageProps, PageState> {
       defaultManagedSidebarIsOpen,
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onPageResize,
+      getBreakpoint,
       mainAriaLabel,
       mainTabIndex,
       tertiaryNav,
@@ -210,12 +232,14 @@ export class Page extends React.Component<PageProps, PageState> {
       groupProps,
       ...rest
     } = this.props;
-    const { mobileView, mobileIsNavOpen, desktopIsNavOpen } = this.state;
+    const { mobileView, mobileIsNavOpen, desktopIsNavOpen, width } = this.state;
 
     const context = {
       isManagedSidebar,
       onNavToggle: mobileView ? this.onNavToggleMobile : this.onNavToggleDesktop,
-      isNavOpen: mobileView ? mobileIsNavOpen : desktopIsNavOpen
+      isNavOpen: mobileView ? mobileIsNavOpen : desktopIsNavOpen,
+      width,
+      getBreakpoint
     };
 
     let nav = null;
@@ -270,7 +294,16 @@ export class Page extends React.Component<PageProps, PageState> {
 
     return (
       <PageContextProvider value={context}>
-        <div {...rest} className={css(styles.page, className)}>
+        <div
+          ref={this.pageRef}
+          {...rest}
+          className={css(
+            styles.page,
+            width !== null && 'pf-m-resize-observer',
+            width !== null && `pf-m-breakpoint-${getBreakpoint(width)}`,
+            className
+          )}
+        >
           {skipToContent}
           {header}
           {sidebar}

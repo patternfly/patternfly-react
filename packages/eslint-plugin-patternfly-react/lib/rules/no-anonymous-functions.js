@@ -2,8 +2,7 @@
 module.exports = {
   meta: {
     docs: {
-      description:
-        "Don't use arrow functions or classes without a displayName so Enzyme and React devtools show component name",
+      description: "Don't use arrow functions or classes without a displayName so React devtools show component name",
       category: 'Possible Errors',
       recommended: false
     },

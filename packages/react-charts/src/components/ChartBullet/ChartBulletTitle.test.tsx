@@ -1,15 +1,15 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ChartBulletTitle } from './ChartBulletTitle';
 
 Object.values([true, false]).forEach(() => {
   test('ChartBulletTitle', () => {
-    const view = shallow(<ChartBulletTitle />);
-    expect(view).toMatchSnapshot();
+    const view = render(<ChartBulletTitle />);
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = shallow(<ChartBulletTitle title="Text label" subTitle="Measure details" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<ChartBulletTitle title="Text label" subTitle="Measure details" />);
+  expect(view.container).toMatchSnapshot();
 });

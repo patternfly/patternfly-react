@@ -1,23 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AboutModalBoxContent Test 1`] = `
-<div
-  className="pf-c-about-modal-box__content"
-  id="id"
->
+<div>
   <div
-    className="pf-c-about-modal-box__body"
+    class="pf-c-about-modal-box__content"
+    id="id"
   >
     <div
-      className="pf-c-content"
+      class="pf-c-about-modal-box__body"
     >
-      This is a AboutModalBoxContent
+      <div
+        class="pf-c-content"
+      >
+        This is a AboutModalBoxContent
+      </div>
     </div>
+    <p
+      class="pf-c-about-modal-box__strapline"
+    >
+      trademark
+    </p>
   </div>
-  <p
-    className="pf-c-about-modal-box__strapline"
-  >
-    trademark
-  </p>
 </div>
 `;

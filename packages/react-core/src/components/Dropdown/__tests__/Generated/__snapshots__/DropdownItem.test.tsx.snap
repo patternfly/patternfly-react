@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DropdownItem should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+exports[`DropdownItem should match snapshot 1`] = `
+<div>
+  <div>
+    ReactNode
+  </div>
+</div>
 `;

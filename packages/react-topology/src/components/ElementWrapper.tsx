@@ -1,13 +1,30 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
+import { computed } from 'mobx';
 import ElementContext from '../utils/ElementContext';
-import { GraphElement, isGraph, isEdge, isNode } from '../types';
+import { GraphElement, isGraph, isEdge, isNode, Node } from '../types';
 import { ATTR_DATA_ID, ATTR_DATA_KIND, ATTR_DATA_TYPE } from '../const';
 import ComputeElementDimensions from './ComputeElementDimensions';
+import { useDndManager } from '../behavior/useDndManager';
 
 interface ElementWrapperProps {
   element: GraphElement;
 }
+
+const NodeElementComponent: React.FC<{ element: Node }> = observer(({ element }) => {
+  const dndManager = useDndManager();
+  const isDragging = dndManager.isDragging();
+  const dragItem = dndManager.getItem();
+  const graph = element.getGraph();
+  const isVisible = React.useMemo(() => computed(() => graph.isNodeInView(element, { padding: 100 })), [
+    element,
+    graph
+  ]);
+  if (isVisible.get() || (isDragging && dragItem === element)) {
+    return <ElementComponent element={element} />;
+  }
+  return null;
+});
 
 // in a separate component so that changes to behaviors do not re-render children
 const ElementComponent: React.FC<ElementWrapperProps> = observer(({ element }) => {
@@ -83,11 +100,17 @@ const ElementWrapper: React.FC<ElementWrapperProps> = observer(({ element }) => 
       const { x, y } = element.getPosition();
       return (
         <g {...commonAttrs} transform={`translate(${x}, ${y})`}>
-          <ElementComponent element={element} />
+          <NodeElementComponent element={element} />
           <ElementChildren element={element} />
         </g>
       );
     }
+    return (
+      <g {...commonAttrs}>
+        <NodeElementComponent element={element} />
+        <ElementChildren element={element} />
+      </g>
+    );
   }
   return (
     <g {...commonAttrs}>

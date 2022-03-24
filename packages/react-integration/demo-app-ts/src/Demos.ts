@@ -326,6 +326,16 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.SelectFavoritesDemo
   },
   {
+    id: 'select-typeahead-footer-filtering-demo',
+    name: 'Select Footer filtering Demo',
+    componentType: Examples.SelectFooterFilteringDemo
+  },
+  {
+    id: 'select-typeahead-footer-demo',
+    name: 'Select Typeahead Footer Demo',
+    componentType: Examples.SelectTypeaheadFooterDemo
+  },
+  {
     id: 'select-validated-demo',
     name: 'Select Validated Demo',
     componentType: Examples.SelectValidatedDemo
@@ -334,6 +344,11 @@ export const Demos: DemoInterface[] = [
     id: 'select-view-more-demo',
     name: 'Select View More Demo',
     componentType: Examples.SelectViewMoreDemo
+  },
+  {
+    id: 'select-view-more-grouped-demo',
+    name: 'Select View More Grouped Demo',
+    componentType: Examples.SelectViewMoreGroupedDemo
   },
   {
     id: 'select-view-more-typeahead-grouped-demo',

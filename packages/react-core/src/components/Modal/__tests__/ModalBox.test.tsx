@@ -1,58 +1,58 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import { ModalBox } from '../ModalBox';
 
 test('ModalBox Test', () => {
-  const view = shallow(
+  const view = render(
     <ModalBox aria-describedby="Test Modal Box" id="boxId">
       This is a ModalBox
     </ModalBox>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('ModalBox Test large', () => {
-  const view = shallow(
+  const view = render(
     <ModalBox aria-describedby="Test Modal Box" id="boxId" variant="large">
       This is a ModalBox
     </ModalBox>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('ModalBox Test medium', () => {
-  const view = shallow(
+  const view = render(
     <ModalBox aria-describedby="Test Modal Box" id="boxId" variant="medium">
       This is a ModalBox
     </ModalBox>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('ModalBox Test small', () => {
-  const view = shallow(
+  const view = render(
     <ModalBox aria-describedby="Test Modal Box" id="boxId" variant="small">
       This is a ModalBox
     </ModalBox>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('ModalBox Test top aligned', () => {
-  const view = shallow(
+  const view = render(
     <ModalBox aria-describedby="Test Modal Box" id="boxId" position="top">
       This is a ModalBox
     </ModalBox>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
 
 test('ModalBox Test top aligned distance', () => {
-  const view = shallow(
+  const view = render(
     <ModalBox aria-describedby="Test Modal Box" id="boxId" position="top" positionOffset="50px">
       This is a ModalBox
     </ModalBox>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

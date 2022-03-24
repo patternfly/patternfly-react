@@ -23,7 +23,7 @@ import { AxesType, VictoryChart, VictoryChartProps } from 'victory-chart';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getClassName, getComputedLegend, getLabelTextSize, getPaddingForSide, getTheme } from '../ChartUtils';
+import { getChartTheme, getClassName, getComputedLegend, getLabelTextSize, getPaddingForSide } from '../ChartUtils';
 
 /**
  * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
@@ -433,7 +433,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   themeVariant,
 
   // destructure last
-  theme = getTheme(themeColor, themeVariant),
+  theme = getChartTheme(themeColor, themeVariant, showAxis),
   containerComponent = <ChartContainer />,
   legendOrientation = theme.legend.orientation as ChartLegendOrientation,
   height = theme.chart.height,
@@ -507,17 +507,9 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     });
   };
 
-  const VictoryChartWithContainerComponent = VictoryChart as any;
-
-  if (!showAxis) {
-    const Null = (): any => null;
-    VictoryChartWithContainerComponent.defaultProps.defaultAxes.dependent = <Null />;
-    VictoryChartWithContainerComponent.defaultProps.defaultAxes.independent = <Null />;
-  }
-
   // Note: containerComponent is required for theme
   return (
-    <VictoryChartWithContainerComponent
+    <VictoryChart
       containerComponent={container}
       height={height}
       padding={defaultPadding}
@@ -527,7 +519,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     >
       {children}
       {getLegend()}
-    </VictoryChartWithContainerComponent>
+    </VictoryChart>
   );
 };
 Chart.displayName = 'Chart';

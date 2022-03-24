@@ -1,57 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`alternative component 1`] = `
-<Gallery
-  component="ul"
->
+<div>
   <ul
-    className="pf-l-gallery"
+    class="pf-l-gallery"
   >
-    <GalleryItem
-      component="li"
-    >
-      <li>
-        Test
-      </li>
-    </GalleryItem>
+    <li>
+      Test
+    </li>
   </ul>
-</Gallery>
+</div>
 `;
 
 exports[`gutter 1`] = `
-<div
-  className="pf-l-gallery pf-m-gutter"
-/>
+<div>
+  <div
+    class="pf-l-gallery pf-m-gutter"
+  />
+</div>
 `;
 
 exports[`gutter breakpoints 1`] = `
-<Gallery
-  hasGutter={true}
-  maxWidths={
-    Object {
-      "md": "200px",
-      "xl": "1fr",
-    }
-  }
-  minWidths={
-    Object {
-      "default": "100%",
-      "md": "100px",
-      "xl": "300px",
-    }
-  }
->
+<div>
   <div
-    className="pf-l-gallery pf-m-gutter"
-    style={
-      Object {
-        "--pf-l-gallery--GridTemplateColumns--max-on-md": "200px",
-        "--pf-l-gallery--GridTemplateColumns--max-on-xl": "1fr",
-        "--pf-l-gallery--GridTemplateColumns--min": "100%",
-        "--pf-l-gallery--GridTemplateColumns--min-on-md": "100px",
-        "--pf-l-gallery--GridTemplateColumns--min-on-xl": "300px",
-      }
-    }
+    class="pf-l-gallery pf-m-gutter"
+    style="--pf-l-gallery--GridTemplateColumns--min: 100%; --pf-l-gallery--GridTemplateColumns--min-on-md: 100px; --pf-l-gallery--GridTemplateColumns--min-on-xl: 300px; --pf-l-gallery--GridTemplateColumns--max-on-md: 200px; --pf-l-gallery--GridTemplateColumns--max-on-xl: 1fr;"
   />
-</Gallery>
+</div>
 `;

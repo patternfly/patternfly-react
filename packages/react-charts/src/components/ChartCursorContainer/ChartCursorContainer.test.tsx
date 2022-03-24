@@ -1,18 +1,18 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ChartArea } from '../ChartArea';
 import { ChartGroup } from '../ChartGroup';
 import { ChartCursorContainer } from './ChartCursorContainer';
 
 Object.values([true, false]).forEach(() => {
   test('ChartVoronoiContainer', () => {
-    const view = shallow(<ChartCursorContainer />);
-    expect(view).toMatchSnapshot();
+    const view = render(<ChartCursorContainer />);
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 test('renders container via ChartGroup', () => {
-  const view = shallow(
+  const view = render(
     <ChartGroup containerComponent={<ChartCursorContainer />} height={200} width={200}>
       <ChartArea
         data={[
@@ -33,5 +33,5 @@ test('renders container via ChartGroup', () => {
       />
     </ChartGroup>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

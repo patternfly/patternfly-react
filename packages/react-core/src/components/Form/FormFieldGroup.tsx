@@ -6,7 +6,7 @@ export interface FormFieldGroupProps extends Omit<React.HTMLProps<HTMLDivElement
   children?: React.ReactNode;
   /** Additional classes added to the form field group. */
   className?: string;
-  /** Form filed group header */
+  /** Form field group header */
   header?: React.ReactNode;
 }
 

@@ -26,12 +26,16 @@ export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivE
   isActive?: boolean;
   /** Disables the options menu toggle */
   isDisabled?: boolean;
-  /** Internal parent reference */
+  /** @hide Internal parent reference */
   parentRef?: React.RefObject<HTMLElement>;
   /** Indicates that the element has a popup context menu or sub-level menu */
   'aria-haspopup'?: boolean | 'dialog' | 'menu' | 'listbox' | 'tree' | 'grid';
   /** Provides an accessible name for the button when an icon is used instead of text */
   'aria-label'?: string;
+  /** @hide Display the toggle in text only mode. */
+  isText?: boolean;
+  /** @hide The menu element */
+  getMenuRef?: () => HTMLElement;
 }
 
 export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggleWithTextProps> = ({
@@ -43,11 +47,15 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   onToggle = () => null as any,
   isOpen = false,
   isPlain = false,
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+  isText = true,
   isDisabled = false,
   /* eslint-disable @typescript-eslint/no-unused-vars */
   isActive = false,
   'aria-haspopup': ariaHasPopup,
   parentRef,
+  /* eslint-disable @typescript-eslint/no-unused-vars */
+  getMenuRef,
   onEnter,
   /* eslint-enable @typescript-eslint/no-unused-vars */
   'aria-label': ariaLabel = 'Options menu',

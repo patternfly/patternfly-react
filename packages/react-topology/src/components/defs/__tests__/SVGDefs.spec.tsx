@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
 import SVGDefs from '../SVGDefs';
-import { SVGDefsSetter } from "../SVGDefsSetter";
+import { SVGDefsSetter } from '../SVGDefsSetter';
 import SVGDefsContext, { SVGDefsContextProps } from '../SVGDefsContext';
 
 type SVGDefsSetterProps = React.ComponentProps<typeof SVGDefsSetter>;
@@ -10,21 +10,21 @@ describe('SVGDefs', () => {
   it('should get #addDef and #removeDef from context', () => {
     const contextProps: SVGDefsContextProps = {
       addDef: jest.fn(),
-      removeDef: jest.fn(),
+      removeDef: jest.fn()
     };
     const props: React.ComponentProps<typeof SVGDefs> = {
       id: 'foo',
-      children: <span />,
+      children: <span />
     };
     const wrapper = mount(
       <SVGDefsContext.Provider value={contextProps}>
         <SVGDefs {...props} />
-      </SVGDefsContext.Provider>,
+      </SVGDefsContext.Provider>
     );
     const innerWrapper = wrapper.find(SVGDefsSetter).first();
     expect(innerWrapper.props()).toEqual({
       ...contextProps,
-      ...props,
+      ...props
     });
   });
 });
@@ -35,10 +35,10 @@ describe('SVGDefsSetter', () => {
       id: 'foo',
       addDef: jest.fn(),
       removeDef: jest.fn(),
-      children: <span />,
+      children: <span />
     };
 
-    const wrapper = mount<SVGDefsSetterProps>(<SVGDefsSetter {...props} />);
+    const wrapper = mount(<SVGDefsSetter {...props} />);
     expect(props.addDef).toHaveBeenCalledWith(props.id, props.children);
 
     // test update

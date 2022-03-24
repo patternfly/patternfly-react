@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ActionListGroup } from '../ActionListGroup';
 
 describe('action list group', () => {
   test('renders successfully', () => {
-    const view = mount(<ActionListGroup>test</ActionListGroup>);
-    expect(view).toMatchSnapshot();
+    const view = render(<ActionListGroup>test</ActionListGroup>);
+    expect(view.container).toMatchSnapshot();
   });
 });

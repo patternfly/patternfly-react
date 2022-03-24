@@ -2,8 +2,8 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/ChipGroup/chip-group';
 import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
-import { Chip } from './Chip';
-import { Tooltip } from '../Tooltip';
+import { Chip } from '../Chip';
+import { Tooltip, TooltipPosition } from '../Tooltip';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 import { fillTemplate } from '../../helpers';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
@@ -35,7 +35,21 @@ export interface ChipGroupProps extends React.HTMLProps<HTMLUListElement>, OUIAP
   /** Function that is called when clicking on the overflow (expand/collapse) chip button */
   onOverflowChipClick?: (event: React.MouseEvent) => void;
   /** Position of the tooltip which is displayed if the category name text is longer */
-  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  tooltipPosition?:
+    | TooltipPosition
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
 }
 
 interface ChipGroupState {
@@ -91,18 +105,12 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
     const { isTooltipVisible } = this.state;
     return isTooltipVisible ? (
       <Tooltip position={tooltipPosition} content={categoryName}>
-        <span
-          tabIndex={0}
-          ref={this.headingRef}
-          className={css(styles.chipGroupLabel)}
-          id={id}
-          aria-label={categoryName}
-        >
-          <span aria-hidden="true">{categoryName}</span>
+        <span tabIndex={0} ref={this.headingRef} className={css(styles.chipGroupLabel)}>
+          <span id={id}>{categoryName}</span>
         </span>
       </Tooltip>
     ) : (
-      <span ref={this.headingRef} className={css(styles.chipGroupLabel)} aria-hidden="true" id={id}>
+      <span ref={this.headingRef} className={css(styles.chipGroupLabel)} id={id}>
         {categoryName}
       </span>
     );
@@ -142,6 +150,9 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
       return (
         <div
           className={css(styles.chipGroup, className, categoryName && styles.modifiers.category)}
+          role="group"
+          {...(categoryName && { 'aria-labelledby': id })}
+          {...(!categoryName && { 'aria-label': ariaLabel })}
           {...getOUIAProps(ChipGroup.displayName, ouiaId)}
         >
           <div className={css(styles.chipGroupMain)}>

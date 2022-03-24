@@ -1,9 +1,9 @@
 import { CatalogItemHeader } from './CatalogItemHeader';
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 test('simple catalog item header', () => {
-  const view = shallow(
+  const view = render(
     <CatalogItemHeader
       title="PatternFly"
       vendor={
@@ -13,5 +13,5 @@ test('simple catalog item header', () => {
       }
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

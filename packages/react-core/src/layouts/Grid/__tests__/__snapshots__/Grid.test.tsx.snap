@@ -1,27 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`alternative component 1`] = `
-<Grid
-  component="ul"
->
+<div>
   <ul
-    className="pf-l-grid"
+    class="pf-l-grid"
   >
-    <GridItem
-      component="li"
+    <li
+      class="pf-l-grid__item"
     >
-      <li
-        className="pf-l-grid__item"
-      >
-        Test
-      </li>
-    </GridItem>
+      Test
+    </li>
   </ul>
-</Grid>
+</div>
 `;
 
 exports[`gutter 1`] = `
-<div
-  className="pf-l-grid pf-m-gutter"
-/>
+<div>
+  <div
+    class="pf-l-grid pf-m-gutter"
+  />
+</div>
 `;

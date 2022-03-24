@@ -15,6 +15,7 @@ interface ToolbarContextProps {
   clearFiltersButtonText?: string;
   showClearFiltersButton?: boolean;
   toolbarId?: string;
+  customChipGroupContent?: React.ReactNode;
 }
 
 export const ToolbarContext = React.createContext<ToolbarContextProps>({

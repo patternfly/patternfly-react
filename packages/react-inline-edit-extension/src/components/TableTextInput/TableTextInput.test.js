@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { TableTextInput } from './TableTextInput';
 
 const props = {
@@ -9,11 +9,11 @@ const props = {
 };
 
 test('simple table text input', () => {
-  const view = shallow(<TableTextInput aria-label="simple text input" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<TableTextInput aria-label="simple text input" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('focused table text input', () => {
-  const view = shallow(<TableTextInput {...props} aria-label="focused text input" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<TableTextInput {...props} aria-label="focused text input" />);
+  expect(view.container).toMatchSnapshot();
 });

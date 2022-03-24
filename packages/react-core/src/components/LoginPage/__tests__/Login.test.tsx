@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Login } from '../Login';
 import { LoginFooter } from '../LoginFooter';
 import { LoginHeader } from '../LoginHeader';
@@ -7,10 +7,10 @@ import { LoginHeader } from '../LoginHeader';
 test('Check login layout example against snapshot', () => {
   const Header = <LoginHeader headerBrand="HeaderBrand">Header Text</LoginHeader>;
   const Footer = <LoginFooter>Footer</LoginFooter>;
-  const view = shallow(
+  const view = render(
     <Login footer={Footer} header={Header}>
       Main
     </Login>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

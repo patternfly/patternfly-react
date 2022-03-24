@@ -17,6 +17,8 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
   toggleTextExpanded?: string;
   /** Text that appears in the attached toggle when collapsed (will override toggleText if both are specified; used for uncontrolled expandable with dynamic toggle text) */
   toggleTextCollapsed?: string;
+  /** React node that appears in the attached toggle in place of toggle text */
+  toggleContent?: React.ReactNode;
   /** Callback function to toggle the expandable content. Detached expandable sections should use the onToggle property of ExpandableSectionToggle. */
   onToggle?: (isExpanded: boolean) => void;
   /** Forces active state */
@@ -86,6 +88,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
       toggleText,
       toggleTextExpanded,
       toggleTextCollapsed,
+      toggleContent,
       children,
       isExpanded,
       isDetached,
@@ -137,7 +140,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
             <span className={css(styles.expandableSectionToggleIcon)}>
               <AngleRightIcon aria-hidden />
             </span>
-            <span className={css(styles.expandableSectionToggleText)}>{computedToggleText}</span>
+            <span className={css(styles.expandableSectionToggleText)}>{toggleContent || computedToggleText}</span>
           </button>
         )}
         <div className={css(styles.expandableSectionContent)} hidden={!propOrStateIsExpanded} id={contentId}>

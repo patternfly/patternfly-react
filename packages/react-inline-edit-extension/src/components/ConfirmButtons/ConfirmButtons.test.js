@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme/build';
+import { render } from '@testing-library/react';
 
 import { ConfirmButtons } from './ConfirmButtons';
 
@@ -30,7 +30,7 @@ const getConfirmButtons = () => (
 
 describe('ConfirmButtons', () => {
   test('renders correctly', () => {
-    const view = mount(getConfirmButtons());
-    expect(view).toMatchSnapshot();
+    const view = render(getConfirmButtons());
+    expect(view.container).toMatchSnapshot();
   });
 });

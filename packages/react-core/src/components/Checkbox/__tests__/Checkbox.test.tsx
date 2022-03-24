@@ -1,85 +1,82 @@
-import * as React from 'react';
-import { shallow } from 'enzyme';
+import React from 'react';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+
 import { Checkbox } from '../Checkbox';
 
-const props = {
-  onChange: jest.fn(),
-  isChecked: false
-};
+describe('Checkbox', () => {
+  test('controlled', () => {
+    render(<Checkbox isChecked id="check" aria-label="check" />);
+    expect(screen.getByRole('checkbox').outerHTML).toMatchSnapshot();
+  });
 
-test('controlled', () => {
-  const view = shallow(<Checkbox isChecked id="check" aria-label="check" />);
-  expect(view).toMatchSnapshot();
-});
+  test('controlled - 3rd state', () => {
+    render(<Checkbox isChecked={null} id="check" aria-label="check" />);
+    expect(screen.getByRole('checkbox').outerHTML).toMatchSnapshot();
+  });
 
-test('controlled - 3rd state', () => {
-  const view = shallow(<Checkbox isChecked={null} id="check" aria-label="check" />);
-  expect(view).toMatchSnapshot();
-});
+  test('uncontrolled', () => {
+    render(<Checkbox id="check" aria-label="check" />);
+    expect(screen.getByRole('checkbox').outerHTML).toMatchSnapshot();
+  });
 
-test('uncontrolled', () => {
-  const view = shallow(<Checkbox id="check" aria-label="check" />);
-  expect(view).toMatchSnapshot();
-});
+  test('isDisabled', () => {
+    render(<Checkbox id="check" isDisabled aria-label="check" />);
+    expect(screen.getByRole('checkbox').outerHTML).toMatchSnapshot();
+  });
 
-test('isDisabled', () => {
-  const view = shallow(<Checkbox id="check" isDisabled aria-label="check" />);
-  expect(view).toMatchSnapshot();
-});
+  test('label is string', () => {
+    render(<Checkbox label="Label" id="check" isChecked aria-label="check" />);
+    expect(screen.getByRole('checkbox').outerHTML).toMatchSnapshot();
+  });
 
-test('label is string', () => {
-  const view = shallow(<Checkbox label="Label" id="check" isChecked aria-label="check" />);
-  expect(view).toMatchSnapshot();
-});
+  test('label is function', () => {
+    const functionLabel = () => <h1>Header</h1>;
+    render(<Checkbox label={functionLabel()} id="check" isChecked aria-label="check" />);
+    expect(screen.getByRole('checkbox').outerHTML).toMatchSnapshot();
+  });
 
-test('label is function', () => {
-  const functionLabel = () => <h1>Header</h1>;
-  const view = shallow(<Checkbox label={functionLabel()} id="check" isChecked aria-label="check" />);
-  expect(view).toMatchSnapshot();
-});
+  test('label is node', () => {
+    render(<Checkbox label={<h1>Header</h1>} id="check" isChecked aria-label="check" />);
+    expect(screen.getByRole('checkbox').outerHTML).toMatchSnapshot();
+  });
 
-test('label is node', () => {
-  const view = shallow(<Checkbox label={<h1>Header</h1>} id="check" isChecked aria-label="check" />);
-  expect(view).toMatchSnapshot();
-});
+  test('passing class', () => {
+    render(<Checkbox label="label" className="class-123" id="check" isChecked aria-label="check" />);
+    expect(screen.getByRole('checkbox').outerHTML).toMatchSnapshot();
+  });
 
-test('passing class', () => {
-  const view = shallow(<Checkbox label="label" className="class-123" id="check" isChecked aria-label="check" />);
-  expect(view).toMatchSnapshot();
-});
+  test('passing HTML attribute', () => {
+    render(<Checkbox label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" />);
+    expect(screen.getByRole('checkbox').outerHTML).toMatchSnapshot();
+  });
 
-test('passing HTML attribute', () => {
-  const view = shallow(<Checkbox label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" />);
-  expect(view).toMatchSnapshot();
-});
+  test('passing description', () => {
+    render(<Checkbox id="check" label="checkbox" description="Text description..." />);
+    expect(screen.getByText('Text description...')).toBeInTheDocument();
+  });
 
-test('passing description', () => {
-  const view = shallow(<Checkbox id="check" label="checkbox" description="Text description..." />);
-  const descriptionEl = view.find('span[className="pf-c-check__description"]');
-  expect(descriptionEl.length).toBe(1);
-  expect(descriptionEl.text()).toBe('Text description...');
-});
+  test('passing body', () => {
+    render(<Checkbox id="check" label="checkbox" body="This is where custom content goes." />);
 
-test('passing body', () => {
-  const view = shallow(<Checkbox id="check" label="checkbox" body="This is where custom content goes." />);
-  const bodyEl = view.find('span[className="pf-c-check__body"]');
-  expect(bodyEl.length).toBe(1);
-  expect(bodyEl.text()).toBe('This is where custom content goes.');
-});
+    expect(screen.getByText('This is where custom content goes.')).toBeInTheDocument();
+  });
 
-test('checkbox passes value and event to onChange handler', () => {
-  const newValue = true;
-  const event = {
-    currentTarget: { checked: newValue }
-  };
-  const view = shallow(<Checkbox id="check" {...props} aria-label="check" />);
-  view.find('input').simulate('change', event);
-  expect(props.onChange).toBeCalledWith(newValue, event);
-});
+  test('checkbox onChange handler called when component is clicked', () => {
+    const onChangeHandler = jest.fn();
+    render(<Checkbox id="check" onChange={onChangeHandler} aria-label="check" isChecked={false} />);
 
-test('should throw console error when no id is given', () => {
-  const myMock = jest.fn();
-  global.console = { ...global.console, error: myMock };
-  shallow(<Checkbox {...props} />);
-  expect(myMock).toBeCalled();
+    userEvent.click(screen.getByLabelText('check'));
+    expect(onChangeHandler).toBeCalled();
+  });
+
+  test('should throw console error when no id is given', () => {
+    const myMock = jest.fn();
+    global.console = { ...global.console, error: myMock };
+
+    render(<Checkbox id={undefined} />);
+    expect(myMock).toBeCalled();
+  });
 });

@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ModalBox } from '../../ModalBox';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('ModalBox should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <ModalBox
       children={<div>ReactNode</div>}
       className={"''"}
@@ -18,5 +18,5 @@ it('ModalBox should match snapshot (auto-generated)', () => {
       aria-describedby={'string'}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

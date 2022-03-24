@@ -1,15 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AboutModalBoxHeader Test 1`] = `
-<div
-  className="pf-c-about-modal-box__header"
->
-  <Title
-    headingLevel="h1"
-    id="id"
-    size="4xl"
+<div>
+  <div
+    class="pf-c-about-modal-box__header"
   >
-    Product Name
-  </Title>
+    <h1
+      class="pf-c-title pf-m-4xl"
+      data-ouia-component-id="OUIA-Generated-Title-1"
+      data-ouia-component-type="PF4/Title"
+      data-ouia-safe="true"
+      id="id"
+    >
+      Product Name
+    </h1>
+  </div>
 </div>
 `;

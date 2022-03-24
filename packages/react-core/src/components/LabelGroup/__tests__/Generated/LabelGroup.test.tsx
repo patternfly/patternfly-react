@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { LabelGroup } from '../../LabelGroup';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('LabelGroup should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <LabelGroup
       children={<div>ReactNode</div>}
       className={'string'}
@@ -25,5 +25,5 @@ it('LabelGroup should match snapshot (auto-generated)', () => {
       isVertical={false}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

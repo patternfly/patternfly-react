@@ -36,7 +36,7 @@ const getRectAnchorPoint = (center: Point, width: number, height: number, refere
 
 const svgPointToPoint = (p: SVGPoint): Point => new Point(p.x, p.y);
 
-const distanceToPoint = (p: Point, reference: Point): number => {
+export const distanceToPoint = (p: Point, reference: Point): number => {
   const dx = p.x - reference.x;
   const dy = p.y - reference.y;
 
@@ -46,7 +46,7 @@ const distanceToPoint = (p: Point, reference: Point): number => {
 const isBetween = (a: number, b1: number, b2: number): boolean =>
   Math.ceil(a) >= Math.min(b1, b2) && Math.floor(a) <= Math.max(b1, b2);
 
-const getLinesIntersection = (line1: [Point, Point], line2: [Point, Point]): Point | null => {
+export const getLinesIntersection = (line1: [Point, Point], line2: [Point, Point]): Point | null => {
   const line1xDelta = line1[0].x - line1[1].x;
   const line1yDelta = line1[0].y - line1[1].y;
   const line2xDelta = line2[0].x - line2[1].x;

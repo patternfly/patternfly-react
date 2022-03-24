@@ -5,7 +5,6 @@ cssPrefix: null
 propComponents: ['InputGroup', 'InputGroupText']
 ---
 import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import DollarSignIcon from '@patternfly/react-icons/dist/esm/icons/dollar-sign-icon';
 import CalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/calendar-alt-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
@@ -28,7 +27,6 @@ import {
 ```js
 import React from 'react';
 import AtIcon from '@patternfly/react-icons/dist/esm/icons/at-icon';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import {
   Button,
   InputGroup,
@@ -52,17 +50,10 @@ class SimpleInputGroups extends React.Component {
         </InputGroup>
         <br />
         <InputGroup>
-          <InputGroupText id="username" aria-label="@">
+          <InputGroupText id="username">
             <AtIcon />
           </InputGroupText>
           <TextInput validated={ValidatedOptions.error} id="textInput7" type="email" aria-label="Error state username example" />
-        </InputGroup>
-        <br />
-        <InputGroup>
-          <TextInput name="textInput11" id="textInput11" type="search" aria-label="search input example" />
-          <Button variant="control" aria-label="search button for search input">
-            <SearchIcon />
-          </Button>
         </InputGroup>
         <br />
         <InputGroup>

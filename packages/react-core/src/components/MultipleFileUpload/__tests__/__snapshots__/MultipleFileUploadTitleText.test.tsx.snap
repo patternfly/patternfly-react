@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MultipleFileUploadTitleText renders custom class names 1`] = `
+<MultipleFileUploadTitleText
+  className="test"
+>
+  <div
+    className="pf-c-multiple-file-upload__title-text test"
+  >
+    Foo
+  </div>
+</MultipleFileUploadTitleText>
+`;
+
+exports[`MultipleFileUploadTitleText renders with expected class names 1`] = `
+<MultipleFileUploadTitleText>
+  <div
+    className="pf-c-multiple-file-upload__title-text"
+  >
+    Foo
+  </div>
+</MultipleFileUploadTitleText>
+`;

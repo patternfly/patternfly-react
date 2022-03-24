@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { ClipboardCopyButton } from '../ClipboardCopyButton';
 import { Button } from '../../Button';
 
@@ -16,17 +17,18 @@ const props = {
 };
 
 test('copy button render', () => {
-  const view = shallow(<ClipboardCopyButton {...props}>Copy Me</ClipboardCopyButton>);
-  expect(view).toMatchSnapshot();
+  const view = render(<ClipboardCopyButton {...props}>Copy Me</ClipboardCopyButton>);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('copy button onClick', () => {
   const onclick = jest.fn();
-  const view = shallow(
+  render(
     <ClipboardCopyButton {...props} onClick={onclick}>
       Copy to Clipboard
     </ClipboardCopyButton>
   );
-  view.find(Button).simulate('click');
+
+  userEvent.click(screen.getByRole('button'));
   expect(onclick).toBeCalled();
 });

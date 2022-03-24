@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MultipleFileUploadTitleIcon renders custom class names 1`] = `
+<MultipleFileUploadTitleIcon
+  className="test"
+>
+  <div
+    className="pf-c-multiple-file-upload__title-icon test"
+  />
+</MultipleFileUploadTitleIcon>
+`;
+
+exports[`MultipleFileUploadTitleIcon renders with expected class names 1`] = `
+<MultipleFileUploadTitleIcon>
+  <div
+    className="pf-c-multiple-file-upload__title-icon"
+  >
+    Foo
+  </div>
+</MultipleFileUploadTitleIcon>
+`;

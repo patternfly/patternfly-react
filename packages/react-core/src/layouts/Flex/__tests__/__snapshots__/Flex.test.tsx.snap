@@ -1,45 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Nested flex 1`] = `
-<div
-  className="pf-l-flex"
->
-  <Flex>
-    <FlexItem>
-      Test
-    </FlexItem>
-  </Flex>
+<div>
+  <div
+    class="pf-l-flex"
+  >
+    <div
+      class="pf-l-flex"
+    >
+      <div
+        class=""
+      >
+        Test
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Simple flex with single item 1`] = `
-<div
-  className="pf-l-flex"
->
-  <FlexItem>
-    Test
-  </FlexItem>
+<div>
+  <div
+    class="pf-l-flex"
+  >
+    <div
+      class=""
+    >
+      Test
+    </div>
+  </div>
 </div>
 `;
 
 exports[`alternative component 1`] = `
-<Flex
-  component="ul"
->
+<div>
   <ul
-    className="pf-l-flex"
+    class="pf-l-flex"
   >
-    <FlexItem
-      component="li"
+    <li
+      class=""
     >
-      <li
-        className=""
-      >
-        Test
-      </li>
-    </FlexItem>
+      Test
+    </li>
   </ul>
-</Flex>
+</div>
 `;
 
-exports[`className is added to the root element 1`] = `"pf-l-flex extra-class"`;
+exports[`className is added to the root element 1`] = `
+<div>
+  <div
+    class="pf-l-flex extra-class"
+  />
+</div>
+`;

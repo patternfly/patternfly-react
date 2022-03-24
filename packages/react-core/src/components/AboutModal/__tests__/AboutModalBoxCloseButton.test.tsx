@@ -1,20 +1,20 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { AboutModalBoxCloseButton } from '../AboutModalBoxCloseButton';
 
 test('AboutModalBoxCloseButton Test', () => {
-  const view = shallow(<AboutModalBoxCloseButton />);
-  expect(view).toMatchSnapshot();
+  const view = render(<AboutModalBoxCloseButton />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('AboutModalBoxCloseButton Test onclose', () => {
   const onClose = jest.fn();
-  const view = shallow(<AboutModalBoxCloseButton onClose={onClose} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<AboutModalBoxCloseButton onClose={onClose} />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('AboutModalBoxCloseButton Test close button aria label', () => {
   const closeButtonAriaLabel = 'Klose Daylok';
-  const view = shallow(<AboutModalBoxCloseButton aria-label={closeButtonAriaLabel} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<AboutModalBoxCloseButton aria-label={closeButtonAriaLabel} />);
+  expect(view.container).toMatchSnapshot();
 });

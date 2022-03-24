@@ -57,7 +57,7 @@ DateTimePicker = () => {
       <DropdownItem key={time} component="button" value={`${time}:00`}>
         {`${time}:00`}
       </DropdownItem>
-  ))
+  ));
   const calendar = (
       <CalendarMonth
         date={valueDate}
@@ -68,7 +68,7 @@ DateTimePicker = () => {
       <Dropdown
         onSelect={onSelectTime}
         toggle={
-          <DropdownToggle toggleIndicator={null} onToggle={onToggleTime} style={{ padding: '6px 16px' }}>
+          <DropdownToggle aria-label="Toggle the time picker menu" toggleIndicator={null} onToggle={onToggleTime} style={{ padding: '6px 16px' }}>
             <OutlinedClockIcon />
           </DropdownToggle>
         }
@@ -77,7 +77,7 @@ DateTimePicker = () => {
     />
   );
   const calendarButton = (
-      <Button variant="control" onClick={onToggleCalendar}>
+      <Button variant="control" aria-label="Toggle the calendar" onClick={onToggleCalendar}>
           <OutlinedCalendarAltIcon />
       </Button>
   );
@@ -92,7 +92,7 @@ DateTimePicker = () => {
             hasAutoWidth
         >
             <InputGroup>
-                <TextInput type="'datetime-local" id="date-time" value={valueDate + ' ' + valueTime} isReadOnly/>
+                <TextInput type="'datetime-local" id="date-time" aria-label="date and time picker demo" value={valueDate + ' ' + valueTime} isReadOnly/>
                 {calendarButton}
                 {time}
             </InputGroup>

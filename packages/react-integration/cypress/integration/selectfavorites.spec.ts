@@ -14,6 +14,8 @@ describe('Select Test', () => {
       .first()
       .click();
     cy.get('#Favorites').should('not.exist');
+    // toggle closed
+    cy.get('#favorites-select').click();
   });
 
   it('Verify Single Grouped Select with Favorites', () => {
@@ -52,6 +54,8 @@ describe('Select Test', () => {
       .first()
       .click();
     cy.get('#Favorites').should('not.exist');
+    // toggle closed
+    cy.get('#typeahead-select').click();
   });
 
   it('Verify Multi Typeahead  Select with Favorites', () => {

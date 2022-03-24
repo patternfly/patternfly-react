@@ -97,6 +97,7 @@ const mapHeader = (column: ICell, extra: any, key: number, ...props: any) => {
   } else if (typeof title === 'string') {
     dataLabel = title;
   }
+
   return {
     property:
       (typeof title === 'string' &&
@@ -207,6 +208,11 @@ const actionsTransforms = ({
     : [])
 ];
 
+export interface ICollapseTranform {
+  onCollapse: OnCollapse;
+  canCollapseAll: boolean;
+}
+
 /**
  * Function to define collapsible in first column.
  *
@@ -214,12 +220,12 @@ const actionsTransforms = ({
  * @param {*}  extraObject with onCollapse callback.
  * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
  */
-const collapsibleTransforms = (header: (ICell | string)[], { onCollapse }: { onCollapse: OnCollapse }) => [
+const collapsibleTransforms = (header: (ICell | string)[], { onCollapse, canCollapseAll }: ICollapseTranform) => [
   ...(onCollapse
     ? [
         {
           title: '',
-          transforms: [emptyTD],
+          transforms: (canCollapseAll && [collapsible]) || null,
           cellTransforms: [collapsible, expandedRow(header.length)]
         }
       ]

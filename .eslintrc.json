@@ -116,6 +116,7 @@
         ],
         "react/prop-types": 0,
         "react/display-name": 0,
+        "react-hooks/exhaustive-deps": "warn",
         "react/no-unescaped-entities": ["error", {"forbid": [">", "}"]}],
         "spaced-comment": "error",
         "use-isnan": "error",

@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PageHeader should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<div>
+  <header
+    class="pf-c-page__header ''"
+    role="string"
+  />
+</div>
 `;

@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Button } from '../../Button';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('Button should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <Button
       children={<>ReactNode</>}
       className={"''"}
@@ -27,5 +27,5 @@ it('Button should match snapshot (auto-generated)', () => {
       tabIndex={null}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

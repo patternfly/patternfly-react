@@ -1,6 +1,6 @@
-import { observable, computed } from 'mobx';
+import { computed, observable } from 'mobx';
 import Point from '../geom/Point';
-import { Edge, Node, EdgeModel, ModelKind, AnchorEnd, Anchor } from '../types';
+import { Anchor, AnchorEnd, Edge, EdgeAnimationSpeed, EdgeModel, EdgeStyle, ModelKind, Node } from '../types';
 import { getTopCollapsedParent } from '../utils';
 import BaseElement from './BaseElement';
 
@@ -11,6 +11,12 @@ export default class BaseEdge<E extends EdgeModel = EdgeModel, D = any> extends 
 
   @observable.ref
   private target?: Node;
+
+  @observable.ref
+  private edgeStyle?: EdgeStyle;
+
+  @observable.ref
+  private animationSpeed?: EdgeAnimationSpeed;
 
   @observable.shallow
   private bendpoints?: Point[];
@@ -55,6 +61,22 @@ export default class BaseEdge<E extends EdgeModel = EdgeModel, D = any> extends 
 
   setTarget(target: Node) {
     this.target = target;
+  }
+
+  getEdgeStyle(): EdgeStyle {
+    return this.edgeStyle || EdgeStyle.default;
+  }
+
+  setEdgeStyle(edgeStyle: EdgeStyle) {
+    this.edgeStyle = edgeStyle;
+  }
+
+  getEdgeAnimationSpeed(): EdgeAnimationSpeed {
+    return this.animationSpeed || EdgeAnimationSpeed.none;
+  }
+
+  setEdgeAnimationSpeed(animationSpeed?: EdgeAnimationSpeed) {
+    this.animationSpeed = animationSpeed || EdgeAnimationSpeed.none;
   }
 
   getSourceAnchorNode(): Node {
@@ -156,6 +178,12 @@ export default class BaseEdge<E extends EdgeModel = EdgeModel, D = any> extends 
       }
       this.target = node;
     }
+    if ('edgeStyle' in model) {
+      this.edgeStyle = model.edgeStyle;
+    }
+    if ('animationSpeed' in model) {
+      this.animationSpeed = model.animationSpeed;
+    }
     if ('bendpoints' in model) {
       this.bendpoints = model.bendpoints ? model.bendpoints.map(b => new Point(b[0], b[1])) : [];
     }
@@ -166,6 +194,8 @@ export default class BaseEdge<E extends EdgeModel = EdgeModel, D = any> extends 
       ...super.toModel(),
       source: this.getSource() ? this.getSource().getId() : undefined,
       target: this.getTarget() ? this.getTarget().getId() : undefined,
+      edgeStyle: this.edgeStyle,
+      animationSpeed: this.animationSpeed,
       bendpoints: this.getBendpoints().map(bp => [bp.x, bp.y])
     };
   }

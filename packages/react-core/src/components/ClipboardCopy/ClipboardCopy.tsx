@@ -4,7 +4,6 @@ import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { PopoverPosition } from '../Popover';
 import { TextInput } from '../TextInput';
-import { TooltipPosition } from '../Tooltip';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { ClipboardCopyButton } from './ClipboardCopyButton';
 import { ClipboardCopyToggle } from './ClipboardCopyToggle';
@@ -54,7 +53,21 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   /** Adds Clipboard Copy variant styles. */
   variant?: typeof ClipboardCopyVariant | 'inline' | 'expansion' | 'inline-compact';
   /** Copy button popover position. */
-  position?: PopoverPosition | 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  position?:
+    | PopoverPosition
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
   /** Maximum width of the tooltip (default 150px). */
   maxWidth?: string;
   /** Delay in ms before the tooltip disappears. */
@@ -79,7 +92,9 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
   constructor(props: ClipboardCopyProps) {
     super(props);
     this.state = {
-      text: this.props.children as string | number,
+      text: Array.isArray(this.props.children)
+        ? this.props.children.join('')
+        : (this.props.children as string | number),
       expanded: this.props.isExpanded,
       copied: false
     };
@@ -92,7 +107,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     isExpanded: false,
     isCode: false,
     variant: 'inline',
-    position: TooltipPosition.top,
+    position: PopoverPosition.top,
     maxWidth: '150px',
     exitDelay: 1600,
     entryDelay: 300,

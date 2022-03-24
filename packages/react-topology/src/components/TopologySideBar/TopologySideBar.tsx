@@ -1,8 +1,9 @@
 import * as React from 'react';
 
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Topology/topology-side-bar';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { Button } from '@patternfly/react-core';
-import '@patternfly/react-styles/css/components/Topology/topology-side-bar.css';
 
 export interface TopologySideBarProps {
   /** Additional classes added to the sidebar */
@@ -43,15 +44,15 @@ export const TopologySideBar: React.FunctionComponent<TopologySideBarProps> = ({
   }, [show, isIn]);
 
   const classNames = resizable
-    ? `pf-topology-resizable-side-bar ${className}`
-    : `pf-topology-side-bar fade ${className}${show ? ' shown' : ''}${isIn ? ' in' : ''}`;
+    ? css(styles.topologyResizableSideBar, className)
+    : css(styles.topologySideBar, 'fade', className, show && styles.shown, isIn && styles.in);
   return (
     <div {...otherProps} role="dialog" className={classNames}>
       {(resizable || show) && (
         <React.Fragment>
           {onClose && (
             <Button
-              className="pf-topology-side-bar__dismiss"
+              className={css(styles.topologySideBarDismiss)}
               variant="plain"
               onClick={onClose as any}
               aria-label="Close"
@@ -59,8 +60,8 @@ export const TopologySideBar: React.FunctionComponent<TopologySideBarProps> = ({
               <TimesIcon />
             </Button>
           )}
-          {header && <div className="pf-topology-side-bar__header">{header}</div>}
-          <div className="pf-topology-side-bar__body">{children}</div>
+          {header && <div className={css(styles.topologySideBarHeader)}>{header}</div>}
+          {children}
         </React.Fragment>
       )}
     </div>

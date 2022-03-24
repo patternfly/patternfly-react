@@ -1,164 +1,139 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Check page main breadcrumb section against snapshot 1`] = `
-<PageSection
-  type="breadcrumb"
->
+<div>
   <section
-    className="pf-c-page__main-breadcrumb"
+    class="pf-c-page__main-breadcrumb"
   />
-</PageSection>
+</div>
 `;
 
 exports[`Check page main nav section against snapshot 1`] = `
-<PageSection
-  type="nav"
->
+<div>
   <section
-    className="pf-c-page__main-nav"
+    class="pf-c-page__main-nav"
   />
-</PageSection>
+</div>
 `;
 
 exports[`Check page main subnav section against snapshot 1`] = `
-<PageSection
-  type="subnav"
->
+<div>
   <section
-    className="pf-c-page__main-subnav"
+    class="pf-c-page__main-subnav"
   />
-</PageSection>
+</div>
 `;
 
 exports[`Check page main tabs section against snapshot 1`] = `
-<PageSection
-  type="tabs"
->
+<div>
   <section
-    className="pf-c-page__main-tabs"
+    class="pf-c-page__main-tabs"
   />
-</PageSection>
+</div>
+`;
+
+exports[`Check page section with center alignment 1`] = `
+<div>
+  <section
+    class="pf-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-c-page__main-body"
+    />
+  </section>
+</div>
 `;
 
 exports[`Check page section with fill and no padding example against snapshot 1`] = `
-<PageSection
-  isFilled={true}
-  padding={
-    Object {
-      "default": "noPadding",
-    }
-  }
->
+<div>
   <section
-    className="pf-c-page__main-section pf-m-no-padding pf-m-fill"
+    class="pf-c-page__main-section pf-m-no-padding pf-m-fill"
   />
-</PageSection>
+</div>
 `;
 
 exports[`Check page section with fill example against snapshot 1`] = `
-<PageSection
-  isFilled={true}
->
+<div>
   <section
-    className="pf-c-page__main-section pf-m-fill"
+    class="pf-c-page__main-section pf-m-fill"
   />
-</PageSection>
+</div>
 `;
 
 exports[`Check page section with limited width 1`] = `
-<PageSection
-  isWidthLimited={true}
->
+<div>
   <section
-    className="pf-c-page__main-section pf-m-limit-width"
+    class="pf-c-page__main-section pf-m-limit-width"
   >
     <div
-      className="pf-c-page__main-body"
+      class="pf-c-page__main-body"
     />
   </section>
-</PageSection>
+</div>
 `;
 
 exports[`Check page section with no fill example against snapshot 1`] = `
-<PageSection
-  isFilled={false}
->
+<div>
   <section
-    className="pf-c-page__main-section pf-m-no-fill"
+    class="pf-c-page__main-section pf-m-no-fill"
   />
-</PageSection>
+</div>
 `;
 
 exports[`Check page section with no padding example against snapshot 1`] = `
-<PageSection
-  padding={
-    Object {
-      "default": "noPadding",
-    }
-  }
->
+<div>
   <section
-    className="pf-c-page__main-section pf-m-no-padding"
+    class="pf-c-page__main-section pf-m-no-padding"
   />
-</PageSection>
+</div>
 `;
 
 exports[`Verify page section bottom shadow 1`] = `
-<PageSection
-  hasShadowBottom={true}
->
+<div>
   <section
-    className="pf-c-page__main-section pf-m-shadow-bottom"
+    class="pf-c-page__main-section pf-m-shadow-bottom"
   >
     test
   </section>
-</PageSection>
+</div>
 `;
 
 exports[`Verify page section bottom sticky 1`] = `
-<PageSection
-  sticky="bottom"
->
+<div>
   <section
-    className="pf-c-page__main-section pf-m-sticky-bottom"
+    class="pf-c-page__main-section pf-m-sticky-bottom"
   >
     test
   </section>
-</PageSection>
+</div>
 `;
 
 exports[`Verify page section overflow scroll 1`] = `
-<PageSection
-  hasOverflowScroll={true}
->
+<div>
   <section
-    className="pf-c-page__main-section pf-m-overflow-scroll"
+    class="pf-c-page__main-section pf-m-overflow-scroll"
   >
     test
   </section>
-</PageSection>
+</div>
 `;
 
 exports[`Verify page section top shadow 1`] = `
-<PageSection
-  hasShadowTop={true}
->
+<div>
   <section
-    className="pf-c-page__main-section pf-m-shadow-top"
+    class="pf-c-page__main-section pf-m-shadow-top"
   >
     test
   </section>
-</PageSection>
+</div>
 `;
 
 exports[`Verify page section top sticky 1`] = `
-<PageSection
-  sticky="top"
->
+<div>
   <section
-    className="pf-c-page__main-section pf-m-sticky-top"
+    class="pf-c-page__main-section pf-m-sticky-top"
   >
     test
   </section>
-</PageSection>
+</div>
 `;

@@ -55,6 +55,8 @@ class NavDefaultList extends React.Component {
 
 ### Grouped
 
+Note: to keep nav groups accessible an `aria-label` should be supplied if the `title` prop is not passed.
+
 ```js
 import React from 'react';
 import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
@@ -671,4 +673,9 @@ NavWithFlyout = () => {
     </Nav>
   );
 };
+```
+
+### Drilldown
+
+```ts isBeta file="./NavDrilldown.tsx"
 ```

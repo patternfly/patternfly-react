@@ -16,7 +16,7 @@ describe('Table Collapsible Test', () => {
   it('Check number of columns', () => {
     cy.get('thead')
       .find('th')
-      .should('have.length', 5);
+      .should('have.length', 6);
   });
 
   it('Test collapsible', () => {

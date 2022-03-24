@@ -1,11 +1,12 @@
 import * as React from 'react';
+import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 
 import { LoginForm } from '../LoginForm';
 
 test('should render Login form', () => {
-  const view = shallow(<LoginForm />);
-  expect(view).toMatchSnapshot();
+  const view = render(<LoginForm />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('should call onChangeUsername callback', () => {
@@ -30,11 +31,11 @@ test('should call onChangeRememberMe callback', () => {
 });
 
 test('LoginForm with rememberMeLabel', () => {
-  const view = shallow(<LoginForm rememberMeLabel="remember me" />);
-  expect(view).toMatchSnapshot();
+  const view = render(<LoginForm rememberMeLabel="remember me" />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('LoginForm with show password', () => {
-  const view = shallow(<LoginForm isShowPasswordEnabled />);
-  expect(view).toMatchSnapshot();
+  const view = render(<LoginForm isShowPasswordEnabled />);
+  expect(view.container).toMatchSnapshot();
 });

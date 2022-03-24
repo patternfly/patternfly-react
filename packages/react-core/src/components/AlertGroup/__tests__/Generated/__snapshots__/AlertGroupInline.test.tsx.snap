@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AlertGroupInline should match snapshot (auto-generated) 1`] = `
-<ul
-  aria-atomic={null}
-  aria-live={null}
-  className="pf-c-alert-group"
-/>
+<div>
+  <ul
+    class="pf-c-alert-group"
+  />
+</div>
 `;

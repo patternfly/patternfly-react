@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ToolbarGroup should match snapshot (auto-generated) 1`] = `
-<ToolbarGroupWithRef
-  className="string"
-  innerRef={null}
-  variant="filter-group"
->
-  <div>
-    ReactNode
+<div>
+  <div
+    class="pf-c-toolbar__group pf-m-filter-group string"
+  >
+    <div>
+      ReactNode
+    </div>
   </div>
-</ToolbarGroupWithRef>
+</div>
 `;

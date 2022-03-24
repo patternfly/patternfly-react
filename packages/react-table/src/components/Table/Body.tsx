@@ -32,6 +32,10 @@ export interface TableBodyProps {
   onRowClick?: OnRowClick;
   /** @hide This prop should not be set manually  */
   onRow?: Function;
+  /** Flag indicating the <tbody> contains oddly striped rows. */
+  isOddStriped?: boolean;
+  /** Flag indicating the <tbody> contains evenly striped rows. */
+  isEvenStriped?: boolean;
 }
 
 const flagVisibility = (rows: IRow[]) => {

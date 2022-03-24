@@ -1,11 +1,14 @@
-import * as React from 'react';
-import { mount } from 'enzyme';
+import React from 'react';
+
+import { render, screen } from '@testing-library/react';
+
 import { Dropdown } from '../Dropdown';
 import { DropdownPosition, DropdownDirection } from '../dropdownConstants';
 import { InternalDropdownItem } from '../InternalDropdownItem';
 import { DropdownSeparator } from '../DropdownSeparator';
 import { DropdownToggle } from '../DropdownToggle';
 import { KebabToggle } from '../KebabToggle';
+import userEvent from '@testing-library/user-event';
 
 const dropdownItems = [
   <InternalDropdownItem key="link">Link</InternalDropdownItem>,
@@ -25,27 +28,27 @@ const dropdownItems = [
   </InternalDropdownItem>
 ];
 
-describe('dropdown', () => {
+describe('Dropdown', () => {
   test('regular', () => {
-    const view = mount(
+    render(
       <Dropdown dropdownItems={dropdownItems} toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>} />
     );
-    expect(view).toMatchSnapshot();
+    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
   });
 
   test('right aligned', () => {
-    const view = mount(
+    render(
       <Dropdown
         dropdownItems={dropdownItems}
         position={DropdownPosition.right}
         toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
   });
 
   test('alignment breakpoints', () => {
-    const view = mount(
+    render(
       <Dropdown
         dropdownItems={dropdownItems}
         alignments={{
@@ -55,26 +58,27 @@ describe('dropdown', () => {
           xl: 'right',
           '2xl': 'left'
         }}
+        aria-label="Dropdown button"
         toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
         isOpen
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(screen.getByLabelText('Dropdown button').outerHTML).toMatchSnapshot();
   });
 
   test('dropup', () => {
-    const view = mount(
+    render(
       <Dropdown
         dropdownItems={dropdownItems}
         direction={DropdownDirection.up}
         toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
   });
 
   test('dropup + right aligned', () => {
-    const view = mount(
+    render(
       <Dropdown
         dropdownItems={dropdownItems}
         direction={DropdownDirection.up}
@@ -82,22 +86,23 @@ describe('dropdown', () => {
         toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
   });
 
   test('expanded', () => {
-    const view = mount(
+    render(
       <Dropdown
         dropdownItems={dropdownItems}
         isOpen
+        aria-label="Dropdown button"
         toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(screen.getByLabelText('Dropdown button').outerHTML).toMatchSnapshot();
   });
 
   test('primary', () => {
-    const view = mount(
+    render(
       <Dropdown
         dropdownItems={dropdownItems}
         toggle={
@@ -107,49 +112,55 @@ describe('dropdown', () => {
         }
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
   });
 
   test('basic', () => {
-    const view = mount(
+    render(
       <Dropdown isOpen toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}>
         <div>BASIC</div>
       </Dropdown>
     );
-    expect(view).toMatchSnapshot();
+    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
   });
 });
 
 describe('KebabToggle', () => {
   test('regular', () => {
-    const view = mount(<Dropdown dropdownItems={dropdownItems} toggle={<KebabToggle id="Dropdown Toggle" />} />);
-    expect(view).toMatchSnapshot();
+    render(
+      <Dropdown
+        aria-label="Dropdown button"
+        dropdownItems={dropdownItems}
+        toggle={<KebabToggle id="Dropdown Toggle" />}
+      />
+    );
+    expect(screen.getByLabelText('Dropdown button').outerHTML).toMatchSnapshot();
   });
 
   test('right aligned', () => {
-    const view = mount(
+    render(
       <Dropdown
         dropdownItems={dropdownItems}
         position={DropdownPosition.right}
         toggle={<KebabToggle id="Dropdown Toggle" />}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
   });
 
   test('dropup', () => {
-    const view = mount(
+    render(
       <Dropdown
         dropdownItems={dropdownItems}
         direction={DropdownDirection.up}
         toggle={<KebabToggle id="Dropdown Toggle" />}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
   });
 
   test('dropup + right aligned', () => {
-    const view = mount(
+    render(
       <Dropdown
         dropdownItems={dropdownItems}
         direction={DropdownDirection.up}
@@ -157,28 +168,33 @@ describe('KebabToggle', () => {
         toggle={<KebabToggle id="Dropdown Toggle" />}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
   });
 
   test('expanded', () => {
-    const view = mount(<Dropdown dropdownItems={dropdownItems} isOpen toggle={<KebabToggle id="Dropdown Toggle" />} />);
-    expect(view).toMatchSnapshot();
+    render(
+      <Dropdown
+        aria-label="Dropdown button"
+        dropdownItems={dropdownItems}
+        isOpen
+        toggle={<KebabToggle id="Dropdown Toggle" />}
+      />
+    );
+    expect(screen.getByLabelText('Dropdown button').outerHTML).toMatchSnapshot();
   });
 
   test('plain', () => {
-    const view = mount(
-      <Dropdown dropdownItems={dropdownItems} isPlain toggle={<KebabToggle id="Dropdown Toggle" />} />
-    );
-    expect(view).toMatchSnapshot();
+    render(<Dropdown dropdownItems={dropdownItems} isPlain toggle={<KebabToggle id="Dropdown Toggle" />} />);
+    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
   });
 
   test('basic', () => {
-    const view = mount(
+    render(
       <Dropdown isOpen toggle={<KebabToggle id="Dropdown Toggle" />}>
         <div>BASIC</div>
       </Dropdown>
     );
-    expect(view).toMatchSnapshot();
+    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
   });
 });
 
@@ -186,7 +202,8 @@ describe('API', () => {
   test('click on item', () => {
     const mockToggle = jest.fn();
     const mockSelect = jest.fn();
-    const view = mount(
+
+    render(
       <Dropdown
         dropdownItems={dropdownItems}
         onSelect={mockSelect}
@@ -194,10 +211,8 @@ describe('API', () => {
         toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
       />
     );
-    view
-      .find('a')
-      .first()
-      .simulate('click');
+
+    userEvent.click(screen.getByText('Link')); // "Link" is the text of the first item
     expect(mockToggle.mock.calls).toHaveLength(0);
     expect(mockSelect.mock.calls).toHaveLength(1);
   });
@@ -205,7 +220,7 @@ describe('API', () => {
   test('dropdownItems and children console error ', () => {
     const myMock = jest.fn();
     global.console = { error: myMock } as any;
-    mount(
+    render(
       <Dropdown
         dropdownItems={dropdownItems}
         isOpen
@@ -222,7 +237,7 @@ describe('API', () => {
   test('dropdownItems only, no console error ', () => {
     const myMock = jest.fn();
     global.console = { error: myMock } as any;
-    mount(
+    render(
       <Dropdown
         dropdownItems={dropdownItems}
         isOpen
@@ -235,7 +250,7 @@ describe('API', () => {
   test('children only, no console ', () => {
     const myMock = jest.fn();
     global.console = { error: myMock } as any;
-    mount(
+    render(
       <Dropdown isOpen toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}>
         <div>Children items</div>
       </Dropdown>

@@ -1,10 +1,11 @@
 import React from 'react';
 import { NotificationDrawerListItem } from '../NotificationDrawerListItem';
+import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 
 test('renders with PatternFly Core styles', () => {
-  const view = shallow(<NotificationDrawerListItem />);
-  expect(view).toMatchSnapshot();
+  const view = render(<NotificationDrawerListItem />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('className is added to the root element', () => {

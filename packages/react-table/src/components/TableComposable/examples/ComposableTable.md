@@ -22,6 +22,7 @@ propComponents:
     'TdDraggableType',
     'ThInfoType',
     'TdExpandType',
+    'ThExpandType',
     'EditableSelectInputCell',
     'EditableTextCell',
     'EditableSelectInputProps',
@@ -163,10 +164,14 @@ This example demonstrates adding actions as the last column. The header's last c
 
 To make a cell an action cell, render an `ActionsColumn` component inside a row's last `Td` and pass an array of `IAction` objects via the `items` prop of `ActionsColumn`.
 
-Look [here](https://github.com/patternfly/patternfly-react/blob/main/packages/react-table/src/components/Table/TableTypes.tsx)
-for the `IAction` type to see what it looks like.
-
 ```ts file="ComposableTableActions.tsx"
+```
+
+### Composable: Actions Overflow
+
+Useing an `OverflowMenu` in the actions column, allowing the actions to condense into a dropdown if necessary for space.
+
+```ts file="ComposableTableActionsOverflow.tsx"
 ```
 
 ### Composable: Expandable
@@ -306,6 +311,16 @@ To make a row draggable:
 ```ts isBeta file="ComposableTableDraggable.tsx"
 ```
 
+## Sticky table modifiers
+
+**Note:** Sticky table headers and columns have a higher `z-index` than the `z-index` used for menus (dropdown, select, etc). The intent is that the contents of a scrollable table will scroll under the sticky header/column, including any expanded menus. However, there may be use cases where a menu needs to appear on top of a sticky header/column, such as an expanded menu in a toolbar above a table with a sticky header.
+
+There are a few ways this can be handled:
+
+- Manipulate the `z-index` of the menu and/or table headers/columns manually.
+- Use the `menuAppendTo` prop in non-composable react components with menus to append the menu to an element outside of the table (e.g., the table's parent element) so that the menu has a higher stacking context than - and can appear on top of - sticky headers/columns as well as appear outside of any scrollable content in the table.
+- In the case where the menu is outside of the table (e.g., above the table in a toolbar, or below the table and the menu expands up), assign the entire table a lower `z-index` than the `z-index` of the menu. This creates a lower stacking context for the entire table compared to the menu, while preserving the stacking context of the elements inside of the table.
+
 ### Composable: Sticky column
 
 To make a column sticky, wrap `TableComposable` with `InnerScrollContainer` and add the following properties to the `Th` that should be sticky: `isStickyColumn` and `hasRightBorder`. To prevent the default text wrapping behavior and allow horizontal scrolling, all `Th` should also have the `modifier="nowrap"` property. To set the minimum width of the sticky column, use the `stickyMinWidth` property.
@@ -327,7 +342,7 @@ To maintain proper sticky behavior across sticky columns and header, `TableCompo
 ```ts file="ComposableTableStickyColumnsAndHeader.tsx"
 ```
 
-### Composable: Nested column headers
+## Nested column headers
 
 To make a nested column header:
 
@@ -340,6 +355,8 @@ The first `Tr` represents the top level of columns, and each must pass either `r
 
 The second `Tr` represents the second level of sub columns. The `Th` in this row each should pass `isSubHeader`, and the last sub column of a column should also pass `hasRightBorder`.
 
+### Composable: Nested column headers
+
 ```ts file="ComposableTableNestedHeaders.tsx"
 ```
 
@@ -351,4 +368,34 @@ The second `Tr` represents the second level of sub columns. The `Th` in this row
 ### Composable: Expandable with nested table
 
 ```ts file="ComposableTableNestedTableExpandable.tsx"
+```
+
+## Striped
+
+### Composable: Striped
+
+To apply striping to a basic table, add the `isStriped` property to `TableComposable`.
+
+```ts file="ComposableTableStriped.tsx"
+```
+
+### Composable: Striped expandable
+
+To apply striping to an expandable table, add the `isStriped` and `isExpandable` properties to `TableComposable`.
+
+```ts file="ComposableTableStripedExpandable.tsx"
+```
+
+### Composable: Striped multiple tobdy
+
+When there are multiple `Tbody` components within a table, a more granular application of striping may be controlled by adding either the `isEvenStriped` or `isOddStriped` properties to `Tbody`. These properties will stripe even or odd rows within that `Tbody` respectively.
+
+```ts file="ComposableTableStripedMultipleTbody.tsx"
+```
+
+### Composable: Striped tr
+
+To manually control striping, add the `isStriped` property to each desired `Tr`. This replaces adding the `isStriped` property to `TableComposable`.
+
+```ts file="ComposableTableStripedTr.tsx"
 ```

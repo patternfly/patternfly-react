@@ -237,415 +237,223 @@ exports[`SimpleList onSelect is called when item is selected 1`] = `
 `;
 
 exports[`SimpleList renders anchor content 1`] = `
-<SimpleList
-  className=""
-  isControlled={true}
->
+<div>
   <div
-    className="pf-c-simple-list"
+    class="pf-c-simple-list"
   >
     <ul>
-      <SimpleListItem
-        className=""
-        component="a"
-        componentClassName=""
-        href=""
-        isActive={false}
-        isCurrent={false}
-        key="i1"
-        onClick={[Function]}
-        type="button"
+      <li
+        class=""
       >
-        <li
-          className=""
+        <a
+          class="pf-c-simple-list__item-link"
+          href=""
+          tabindex="0"
         >
-          <a
-            className="pf-c-simple-list__item-link"
-            href=""
-            onClick={[Function]}
-            tabIndex={0}
-          >
-            Item 1
-          </a>
-        </li>
-      </SimpleListItem>
-      <SimpleListItem
-        className=""
-        component="a"
-        componentClassName=""
-        href=""
-        isActive={false}
-        isCurrent={false}
-        key="i2"
-        onClick={[Function]}
-        type="button"
+          Item 1
+        </a>
+      </li>
+      <li
+        class=""
       >
-        <li
-          className=""
+        <a
+          class="pf-c-simple-list__item-link"
+          href=""
+          tabindex="0"
         >
-          <a
-            className="pf-c-simple-list__item-link"
-            href=""
-            onClick={[Function]}
-            tabIndex={0}
-          >
-            Item 2
-          </a>
-        </li>
-      </SimpleListItem>
-      <SimpleListItem
-        className=""
-        component="a"
-        componentClassName=""
-        href=""
-        isActive={false}
-        isCurrent={false}
-        key="i3"
-        onClick={[Function]}
-        type="button"
+          Item 2
+        </a>
+      </li>
+      <li
+        class=""
       >
-        <li
-          className=""
+        <a
+          class="pf-c-simple-list__item-link"
+          href=""
+          tabindex="0"
         >
-          <a
-            className="pf-c-simple-list__item-link"
-            href=""
-            onClick={[Function]}
-            tabIndex={0}
-          >
-            Item 3
-          </a>
-        </li>
-      </SimpleListItem>
+          Item 3
+        </a>
+      </li>
     </ul>
   </div>
-</SimpleList>
+</div>
 `;
 
 exports[`SimpleList renders content 1`] = `
-<SimpleList
-  className=""
-  isControlled={true}
->
+<div>
   <div
-    className="pf-c-simple-list"
+    class="pf-c-simple-list"
   >
     <ul>
-      <SimpleListItem
-        className=""
-        component="button"
-        componentClassName=""
-        href=""
-        isActive={false}
-        isCurrent={false}
-        key="i1"
-        onClick={[Function]}
-        type="button"
+      <li
+        class=""
+      >
+        <button
+          class="pf-c-simple-list__item-link"
+          type="button"
+        >
+          Item 1
+        </button>
+      </li>
+      <li
+        class=""
+      >
+        <button
+          class="pf-c-simple-list__item-link"
+          type="button"
+        >
+          Item 2
+        </button>
+      </li>
+      <li
+        class=""
+      >
+        <button
+          class="pf-c-simple-list__item-link"
+          type="button"
+        >
+          Item 3
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`SimpleList renders grouped content 1`] = `
+<div>
+  <div
+    class="pf-c-simple-list"
+  >
+    <section
+      class="pf-c-simple-list__section"
+    >
+      <h2
+        aria-hidden="true"
+        class="pf-c-simple-list__title"
+        id=""
+      >
+        Group 1
+      </h2>
+      <ul
+        aria-labelledby=""
+        class=""
       >
         <li
-          className=""
+          class=""
         >
           <button
-            className="pf-c-simple-list__item-link"
-            onClick={[Function]}
+            class="pf-c-simple-list__item-link"
             type="button"
           >
             Item 1
           </button>
         </li>
-      </SimpleListItem>
-      <SimpleListItem
-        className=""
-        component="button"
-        componentClassName=""
-        href=""
-        isActive={false}
-        isCurrent={false}
-        key="i2"
-        onClick={[Function]}
-        type="button"
-      >
         <li
-          className=""
+          class=""
         >
           <button
-            className="pf-c-simple-list__item-link"
-            onClick={[Function]}
+            class="pf-c-simple-list__item-link"
             type="button"
           >
             Item 2
           </button>
         </li>
-      </SimpleListItem>
-      <SimpleListItem
-        className=""
-        component="button"
-        componentClassName=""
-        href=""
-        isActive={false}
-        isCurrent={false}
-        key="i3"
-        onClick={[Function]}
-        type="button"
-      >
         <li
-          className=""
+          class=""
         >
           <button
-            className="pf-c-simple-list__item-link"
-            onClick={[Function]}
+            class="pf-c-simple-list__item-link"
             type="button"
           >
             Item 3
           </button>
         </li>
-      </SimpleListItem>
-    </ul>
+      </ul>
+    </section>
   </div>
-</SimpleList>
-`;
-
-exports[`SimpleList renders grouped content 1`] = `
-<SimpleList
-  className=""
-  isControlled={true}
->
-  <div
-    className="pf-c-simple-list"
-    role="list"
-  >
-    <SimpleListGroup
-      title="Group 1"
-    >
-      <section
-        className="pf-c-simple-list__section"
-      >
-        <h2
-          aria-hidden="true"
-          className="pf-c-simple-list__title"
-          id=""
-        >
-          Group 1
-        </h2>
-        <ul
-          aria-labelledby=""
-          className=""
-        >
-          <SimpleListItem
-            className=""
-            component="button"
-            componentClassName=""
-            href=""
-            isActive={false}
-            isCurrent={false}
-            key="i1"
-            onClick={[Function]}
-            type="button"
-          >
-            <li
-              className=""
-            >
-              <button
-                className="pf-c-simple-list__item-link"
-                onClick={[Function]}
-                type="button"
-              >
-                Item 1
-              </button>
-            </li>
-          </SimpleListItem>
-          <SimpleListItem
-            className=""
-            component="button"
-            componentClassName=""
-            href=""
-            isActive={false}
-            isCurrent={false}
-            key="i2"
-            onClick={[Function]}
-            type="button"
-          >
-            <li
-              className=""
-            >
-              <button
-                className="pf-c-simple-list__item-link"
-                onClick={[Function]}
-                type="button"
-              >
-                Item 2
-              </button>
-            </li>
-          </SimpleListItem>
-          <SimpleListItem
-            className=""
-            component="button"
-            componentClassName=""
-            href=""
-            isActive={false}
-            isCurrent={false}
-            key="i3"
-            onClick={[Function]}
-            type="button"
-          >
-            <li
-              className=""
-            >
-              <button
-                className="pf-c-simple-list__item-link"
-                onClick={[Function]}
-                type="button"
-              >
-                Item 3
-              </button>
-            </li>
-          </SimpleListItem>
-        </ul>
-      </section>
-    </SimpleListGroup>
-  </div>
-</SimpleList>
+</div>
 `;
 
 exports[`SimpleListGroup renders content 1`] = `
-<SimpleListGroup
-  title="Group 1"
->
+<div>
   <section
-    className="pf-c-simple-list__section"
+    class="pf-c-simple-list__section"
   >
     <h2
       aria-hidden="true"
-      className="pf-c-simple-list__title"
+      class="pf-c-simple-list__title"
       id=""
     >
       Group 1
     </h2>
     <ul
       aria-labelledby=""
-      className=""
+      class=""
     >
-      <SimpleListItem
-        className=""
-        component="button"
-        componentClassName=""
-        href=""
-        isActive={false}
-        isCurrent={false}
-        key="i1"
-        onClick={[Function]}
-        type="button"
+      <li
+        class=""
       >
-        <li
-          className=""
+        <button
+          class="pf-c-simple-list__item-link"
+          type="button"
         >
-          <button
-            className="pf-c-simple-list__item-link"
-            onClick={[Function]}
-            type="button"
-          >
-            Item 1
-          </button>
-        </li>
-      </SimpleListItem>
-      <SimpleListItem
-        className=""
-        component="button"
-        componentClassName=""
-        href=""
-        isActive={false}
-        isCurrent={false}
-        key="i2"
-        onClick={[Function]}
-        type="button"
+          Item 1
+        </button>
+      </li>
+      <li
+        class=""
       >
-        <li
-          className=""
+        <button
+          class="pf-c-simple-list__item-link"
+          type="button"
         >
-          <button
-            className="pf-c-simple-list__item-link"
-            onClick={[Function]}
-            type="button"
-          >
-            Item 2
-          </button>
-        </li>
-      </SimpleListItem>
-      <SimpleListItem
-        className=""
-        component="button"
-        componentClassName=""
-        href=""
-        isActive={false}
-        isCurrent={false}
-        key="i3"
-        onClick={[Function]}
-        type="button"
+          Item 2
+        </button>
+      </li>
+      <li
+        class=""
       >
-        <li
-          className=""
+        <button
+          class="pf-c-simple-list__item-link"
+          type="button"
         >
-          <button
-            className="pf-c-simple-list__item-link"
-            onClick={[Function]}
-            type="button"
-          >
-            Item 3
-          </button>
-        </li>
-      </SimpleListItem>
+          Item 3
+        </button>
+      </li>
     </ul>
   </section>
-</SimpleListGroup>
+</div>
 `;
 
 exports[`SimpleListItem renders anchor 1`] = `
-<SimpleListItem
-  className=""
-  component="a"
-  componentClassName=""
-  href=""
-  isActive={false}
-  isCurrent={false}
-  onClick={[Function]}
-  type="button"
->
+<div>
   <li
-    className=""
+    class=""
   >
     <a
-      className="pf-c-simple-list__item-link"
+      class="pf-c-simple-list__item-link"
       href=""
-      onClick={[Function]}
-      tabIndex={0}
+      tabindex="0"
     >
       Item 1
     </a>
   </li>
-</SimpleListItem>
+</div>
 `;
 
 exports[`SimpleListItem renders content 1`] = `
-<SimpleListItem
-  className=""
-  component="button"
-  componentClassName=""
-  href=""
-  isActive={false}
-  isCurrent={false}
-  onClick={[Function]}
-  type="button"
->
+<div>
   <li
-    className=""
+    class=""
   >
     <button
-      className="pf-c-simple-list__item-link"
-      onClick={[Function]}
+      class="pf-c-simple-list__item-link"
       type="button"
     >
       Item 1
     </button>
   </li>
-</SimpleListItem>
+</div>
 `;

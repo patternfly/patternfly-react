@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { OverflowMenuControl } from '../OverflowMenuControl';
@@ -16,7 +17,7 @@ describe('OverflowMenuControl', () => {
   });
 
   test('Additional Options', () => {
-    const view = mount(<OverflowMenuControl hasAdditionalOptions />);
-    expect(view).toMatchSnapshot();
+    const view = render(<OverflowMenuControl hasAdditionalOptions />);
+    expect(view.container).toMatchSnapshot();
   });
 });

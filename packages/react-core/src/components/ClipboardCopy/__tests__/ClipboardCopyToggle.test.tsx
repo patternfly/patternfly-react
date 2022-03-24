@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { ClipboardCopyToggle } from '../ClipboardCopyToggle';
-import { Button } from '../../Button';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { ClipboardCopyToggle, ClipboardCopyToggleProps } from '../ClipboardCopyToggle';
 
-const props = {
+const props: ClipboardCopyToggleProps = {
   id: 'my-id',
   textId: 'my-text-id',
   contentId: 'my-content-id',
@@ -12,22 +12,33 @@ const props = {
   onClick: jest.fn()
 };
 
-test('toggle button render', () => {
-  const desc = 'toggle content';
-  const view = shallow(<ClipboardCopyToggle {...props} aria-label={desc} />);
-  expect(view).toMatchSnapshot();
-});
+describe('ClipboardCopyToggle', () => {
+  test('toggle button render', () => {
+    const desc = 'toggle content';
+    const view = render(<ClipboardCopyToggle {...props} aria-label={desc} />);
 
-test('toggle button onClick', () => {
-  const onclick = jest.fn();
-  const view = shallow(<ClipboardCopyToggle {...props} onClick={onclick} />);
-  view.find(Button).simulate('click');
-  expect(onclick).toBeCalled();
-});
+    expect(view.container).toMatchSnapshot();
+  });
 
-test('toggle button is on expanded mode', () => {
-  let view = shallow(<ClipboardCopyToggle {...props} isExpanded />);
-  expect(view.props()['aria-expanded']).toBe(true);
-  view = shallow(<ClipboardCopyToggle {...props} isExpanded={false} />);
-  expect(view.props()['aria-expanded']).toBe(false);
+  test('toggle button onClick', () => {
+    const onclick = jest.fn();
+    render(<ClipboardCopyToggle {...props} onClick={onclick} />);
+
+    userEvent.click(screen.getByRole('button'));
+    expect(onclick).toBeCalled();
+  });
+
+  test('has aria-expanded set to true when isExpanded is true', () => {
+    render(<ClipboardCopyToggle {...props} isExpanded />);
+
+    const toggleButton = screen.getByRole('button');
+    expect(toggleButton.getAttribute('aria-expanded')).toEqual('true');
+  });
+
+  test('has aria-expanded set to false when isExpanded is false', () => {
+    render(<ClipboardCopyToggle {...props} />);
+
+    const toggleButton = screen.getByRole('button');
+    expect(toggleButton.getAttribute('aria-expanded')).toEqual('false');
+  });
 });

@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DrawerPanelContent should match snapshot (auto-generated) 1`] = `
-<div
-  className="pf-c-drawer__panel ''"
-  hasNoPadding={false}
-  hidden={true}
-  onTransitionEnd={[Function]}
-/>
+<div>
+  <div
+    class="pf-c-drawer__panel ''"
+    hidden=""
+  />
+</div>
 `;

@@ -24,6 +24,7 @@ import {
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import imgBrand from './pfColorLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
@@ -134,7 +135,7 @@ export default class DashboardHeader extends React.Component {
               </ToolbarItem>
               <ToolbarItem>
                 <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-                  <HelpIcon />
+                  <QuestionCircleIcon />
                 </Button>
               </ToolbarItem>
             </ToolbarGroup>

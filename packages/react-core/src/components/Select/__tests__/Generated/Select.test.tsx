@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Select } from '../../Select';
 // any missing imports can usually be resolved by adding them here
 import { SelectOptionObject } from '../..';
 
 it('Select should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <Select
       children={[]}
       className={"''"}
@@ -45,5 +45,5 @@ it('Select should match snapshot (auto-generated)', () => {
       customContent={null}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

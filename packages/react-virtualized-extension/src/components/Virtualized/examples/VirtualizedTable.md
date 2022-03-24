@@ -111,7 +111,7 @@ class VirtualizedExample extends React.Component {
     };
 
     return (
-      <div aria-label="Scrollable Table" role="grid" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
+      <div aria-label="Scrollable Table" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
         <Table
           caption="Simple Table"
           cells={columns}
@@ -134,6 +134,7 @@ class VirtualizedExample extends React.Component {
               rowCount={rows.length}
               rowRenderer={rowRenderer}
               width={width}
+              role="grid"
             />
           )}
         </AutoSizer>
@@ -193,7 +194,7 @@ ComposableTableVirtualized = () => {
  );
 
   return (
-    <div aria-label="Scrollable Table" role="grid" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
+    <div aria-label="Scrollable Table" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
       <TableComposable gridBreakPoint={TableGridBreakpoint.none} role="presentation">
         <Caption>Virtualized table with composable table components</Caption>
         <Thead>
@@ -220,6 +221,7 @@ ComposableTableVirtualized = () => {
             rowCount={rows.length}
             rowRenderer={rowRenderer}
             width={width}
+            role="grid"
           />
         )}
       </AutoSizer>
@@ -344,7 +346,7 @@ class SortableExample extends React.Component {
     };
 
     return (
-      <div aria-label="Scrollable Table" role="grid" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
+      <div aria-label="Scrollable Table" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
         <Table
           caption="Sortable Virtualized Table"
           cells={columns}
@@ -352,7 +354,7 @@ class SortableExample extends React.Component {
           gridBreakPoint={TableGridBreakpoint.none}
           sortBy={sortBy}
           onSort={this.onSort}
-          role="presentation"
+          role="grid"
         >
           <TableHeader />
         </Table>
@@ -370,6 +372,7 @@ class SortableExample extends React.Component {
               rowCount={rows.length}
               rowRenderer={rowRenderer}
               width={width}
+              role="grid"
             />
           )}
         </AutoSizer>
@@ -501,7 +504,7 @@ class SelectableExample extends React.Component {
     };
 
     return (
-      <div aria-label="Scrollable Table" role="grid" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
+      <div aria-label="Scrollable Table" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
         <Table
           caption="Selectable Virtualized Table"
           cells={columns}
@@ -526,6 +529,7 @@ class SelectableExample extends React.Component {
               rowCount={rows.length}
               rowRenderer={rowRenderer}
               width={width}
+              role="grid"
             />
           )}
         </AutoSizer>
@@ -653,7 +657,7 @@ class ActionsExample extends React.Component {
     };
 
     return (
-      <div aria-label="Scrollable Table" role="grid" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
+      <div aria-label="Scrollable Table" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
         <Table
           caption="Actions Virtualized Table"
           cells={columns}
@@ -677,6 +681,7 @@ class ActionsExample extends React.Component {
               rowCount={rows.length}
               rowRenderer={rowRenderer}
               width={width}
+              role="grid"
             />
           )}
         </AutoSizer>
@@ -693,7 +698,6 @@ import React from 'react';
 import {
   Button,
   ButtonVariant,
-  Bullseye,
   Toolbar,
   ToolbarItem,
   ToolbarContent,
@@ -705,20 +709,15 @@ import {
   DropdownPosition,
   DropdownToggle,
   InputGroup,
-  Title,
   TextInput,
   Select,
   SelectOption,
   SelectVariant,
-  EmptyState,
-  EmptyStateIcon,
-  EmptyStateBody,
-  EmptyStateSecondaryActions
 } from '@patternfly/react-core';
 import { debounce } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
-import { ActionsColumn, Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
+import { ActionsColumn, Table, TableHeader } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
 
@@ -1116,7 +1115,6 @@ class FilterExample extends React.Component {
         <div
           id="content-scrollable-1"
           aria-label="Scrollable Table"
-          role="grid"
           className="pf-c-scrollablegrid"
           aria-rowcount={rows.length}
           style={{
@@ -1132,7 +1130,6 @@ class FilterExample extends React.Component {
             {!loading && filteredRows.length > 0 && (
               <div
                 aria-label="Scrollable Table"
-                role="grid"
                 className="pf-c-scrollablegrid"
                 aria-rowcount={rows.length}
               >
@@ -1158,6 +1155,7 @@ class FilterExample extends React.Component {
                             rowRenderer={rowRenderer}
                             scrollTop={scrollTop}
                             width={width}
+                            role="grid"
                           />
                         </div>
                       )}

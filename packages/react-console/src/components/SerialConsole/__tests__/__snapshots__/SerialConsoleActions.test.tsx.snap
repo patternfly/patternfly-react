@@ -1,56 +1,88 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render SerialConsoleActions 1`] = `
-<div
-  className="pf-c-console__actions-serial"
->
-  <Button
-    onClick={[MockFunction]}
-    variant="secondary"
+<div>
+  <div
+    class="pf-c-console__actions-serial"
   >
-    Disconnect
-  </Button>
-  <Button
-    onClick={[MockFunction]}
-    variant="secondary"
-  >
-    Reset
-  </Button>
+    <button
+      aria-disabled="false"
+      class="pf-c-button pf-m-secondary"
+      data-ouia-component-id="OUIA-Generated-Button-secondary-3"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      type="button"
+    >
+      Disconnect
+    </button>
+    <button
+      aria-disabled="false"
+      class="pf-c-button pf-m-secondary"
+      data-ouia-component-id="OUIA-Generated-Button-secondary-4"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      type="button"
+    >
+      Reset
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Render SerialConsoleActions with custom texts 1`] = `
-<div
-  className="pf-c-console__actions-serial"
->
-  <Button
-    onClick={[MockFunction]}
-    variant="secondary"
+<div>
+  <div
+    class="pf-c-console__actions-serial"
   >
-    My Disconnect Text
-  </Button>
-  <Button
-    onClick={[MockFunction]}
-    variant="secondary"
-  >
-    My Reconnect Text
-  </Button>
+    <button
+      aria-disabled="false"
+      class="pf-c-button pf-m-secondary"
+      data-ouia-component-id="OUIA-Generated-Button-secondary-5"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      type="button"
+    >
+      My Disconnect Text
+    </button>
+    <button
+      aria-disabled="false"
+      class="pf-c-button pf-m-secondary"
+      data-ouia-component-id="OUIA-Generated-Button-secondary-6"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      type="button"
+    >
+      My Reconnect Text
+    </button>
+  </div>
 </div>
 `;
 
 exports[`placeholder render test 1`] = `
-<div
-  className="pf-c-console__actions-serial"
->
-  <Button
-    variant="secondary"
+<div>
+  <div
+    class="pf-c-console__actions-serial"
   >
-    Disconnect
-  </Button>
-  <Button
-    variant="secondary"
-  >
-    Reset
-  </Button>
+    <button
+      aria-disabled="false"
+      class="pf-c-button pf-m-secondary"
+      data-ouia-component-id="OUIA-Generated-Button-secondary-1"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      type="button"
+    >
+      Disconnect
+    </button>
+    <button
+      aria-disabled="false"
+      class="pf-c-button pf-m-secondary"
+      data-ouia-component-id="OUIA-Generated-Button-secondary-2"
+      data-ouia-component-type="PF4/Button"
+      data-ouia-safe="true"
+      type="button"
+    >
+      Reset
+    </button>
+  </div>
 </div>
 `;

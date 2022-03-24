@@ -3,6 +3,704 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.47.1 (2022-03-23)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+# 4.47.0 (2022-03-23)
+
+
+### Features
+
+* **Select:** add flag to not reset on select, add event to toggle callback ([#7093](https://github.com/patternfly/patternfly-react/issues/7093)) ([ec2afb1](https://github.com/patternfly/patternfly-react/commit/ec2afb1ea414f63a2fadc56bbaa968a0caad5fd6))
+
+
+
+
+
+## 4.46.2 (2022-03-23)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.46.1 (2022-03-23)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+# 4.46.0 (2022-03-23)
+
+
+### Features
+
+* **CalendarMonth:** make date prop optional ([#7077](https://github.com/patternfly/patternfly-react/issues/7077)) ([e388854](https://github.com/patternfly/patternfly-react/commit/e388854e26b57d7cada63832b7f52e9c7bdad9a0))
+
+
+
+
+
+## 4.45.2 (2022-03-22)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.45.1 (2022-03-21)
+
+
+### Bug Fixes
+
+* **Tooltip:** horizontal scroll bar causing misaligned tooltip ([#7062](https://github.com/patternfly/patternfly-react/issues/7062)) ([9540d0c](https://github.com/patternfly/patternfly-react/commit/9540d0c5ab256a19143381755e33b661a13d2a00))
+
+
+
+
+
+# 4.45.0 (2022-03-21)
+
+
+### Features
+
+* **TextInput, TextArea, FormSelect:** add isIconSprite prop ([#7052](https://github.com/patternfly/patternfly-react/issues/7052)) ([94e1a85](https://github.com/patternfly/patternfly-react/commit/94e1a855840ca74d4d934a863531359a4f84c265))
+
+
+
+
+
+## 4.44.5 (2022-03-21)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.44.4 (2022-03-19)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.44.3 (2022-03-17)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.44.2 (2022-03-17)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.44.1 (2022-03-16)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+# 4.44.0 (2022-03-15)
+
+
+### Features
+
+* **CodeEditor:** 6226 size to fit height ([#7033](https://github.com/patternfly/patternfly-react/issues/7033)) ([f18abd3](https://github.com/patternfly/patternfly-react/commit/f18abd3020e04ee6602fd168d503f43cc0de649e))
+
+
+
+
+
+## 4.43.22 (2022-03-14)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.43.21 (2022-03-10)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.43.20 (2022-03-10)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.43.19 (2022-03-07)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.43.18 (2022-03-07)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.43.17 (2022-03-07)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.43.16 (2022-03-04)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.43.15 (2022-03-04)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.43.14 (2022-03-04)
+
+
+### Bug Fixes
+
+* **NotificationDrawer:** Drawer receives focus after opening ([#6963](https://github.com/patternfly/patternfly-react/issues/6963)) ([f5b1c97](https://github.com/patternfly/patternfly-react/commit/f5b1c97f1c3ef6155d39d16da401fb9937b539e9))
+
+
+
+
+
+## 4.43.13 (2022-03-04)
+
+
+### Bug Fixes
+
+* **Toolbar:** update test ([#6995](https://github.com/patternfly/patternfly-react/issues/6995)) ([4ddaeaa](https://github.com/patternfly/patternfly-react/commit/4ddaeaad5cd550b1bd88195a7a0eb9643cdb70f4))
+
+
+
+
+
+## 4.43.12 (2022-03-02)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.43.11 (2022-03-02)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.43.10 (2022-03-02)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.43.9 (2022-03-01)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.43.8 (2022-02-24)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.43.7 (2022-02-22)
+
+
+### Bug Fixes
+
+* update release version number ([#6964](https://github.com/patternfly/patternfly-react/issues/6964)) ([6eefe79](https://github.com/patternfly/patternfly-react/commit/6eefe79b9eaaf871ecf93e3fdfd0e49c7326b221))
+
+
+
+
+
+## 4.43.6 (2022-02-22)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.43.5 (2022-02-21)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.43.4 (2022-02-17)
+
+
+### Bug Fixes
+
+* **Select:** Do not filter out view more button on filter ([#6848](https://github.com/patternfly/patternfly-react/issues/6848)) ([6c7ac8a](https://github.com/patternfly/patternfly-react/commit/6c7ac8a5e287670d7469ecc0ef137bc33583e739))
+
+
+
+
+
+## 4.43.3 (2022-02-16)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.43.2 (2022-02-16)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.43.1 (2022-02-15)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+# 4.43.0 (2022-02-15)
+
+
+### Features
+
+* **table:** ability to add expand/collapse all to th ([#6914](https://github.com/patternfly/patternfly-react/issues/6914)) ([ee510ee](https://github.com/patternfly/patternfly-react/commit/ee510ee8c8d3a069b75c73873ebd32b0b9a4d9c7))
+
+
+
+
+
+## 4.42.2 (2022-02-15)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.42.1 (2022-02-14)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+# 4.42.0 (2022-02-14)
+
+
+### Features
+
+* **Page:** Added center alignment for page sections ([#6893](https://github.com/patternfly/patternfly-react/issues/6893)) ([440918f](https://github.com/patternfly/patternfly-react/commit/440918fc1bd9795cd916a04fe32677ae5f69ef68))
+
+
+
+
+
+# 4.41.0 (2022-02-11)
+
+
+### Features
+
+* **Menu:** allow drilldown menu functions ([#6872](https://github.com/patternfly/patternfly-react/issues/6872)) ([b345b07](https://github.com/patternfly/patternfly-react/commit/b345b07de7c1576e984a06f4c573641b04956f5c))
+
+
+
+
+
+## 4.40.3 (2022-02-11)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.40.2 (2022-02-11)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.40.1 (2022-02-11)
+
+
+### Bug Fixes
+
+* **Select:** Fixed so that view more btn click does not close the menu in React 16 ([#6922](https://github.com/patternfly/patternfly-react/issues/6922)) ([89da91d](https://github.com/patternfly/patternfly-react/commit/89da91dfd3a9e7af8ee26f8b6b5ac01c5b2487d4))
+
+
+
+
+
+# 4.40.0 (2022-02-10)
+
+
+### Features
+
+* **ToolTip:** Diagonal tooltip placement ([#6887](https://github.com/patternfly/patternfly-react/issues/6887)) ([897fd7d](https://github.com/patternfly/patternfly-react/commit/897fd7d248888e7324d36f574231985e8523a700))
+
+
+
+
+
+## 4.39.3 (2022-02-10)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.39.2 (2022-02-09)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.39.1 (2022-02-09)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+# 4.39.0 (2022-02-08)
+
+
+### Features
+
+* **MenuToggle:** add full height variation ([#6869](https://github.com/patternfly/patternfly-react/issues/6869)) ([415e02f](https://github.com/patternfly/patternfly-react/commit/415e02f5e5617367db717cd5120df04ec1a208eb))
+
+
+
+
+
+# 4.38.0 (2022-02-08)
+
+
+### Features
+
+* **Table:** add striping ([#6886](https://github.com/patternfly/patternfly-react/issues/6886)) ([47abda7](https://github.com/patternfly/patternfly-react/commit/47abda7831e21c58051b90982f02cb48f7a22a22))
+
+
+
+
+
+## 4.37.21 (2022-02-07)
+
+
+### Bug Fixes
+
+* **TimePicker:** apply includeSeconds when making options ([#6865](https://github.com/patternfly/patternfly-react/issues/6865)) ([5b6d6c9](https://github.com/patternfly/patternfly-react/commit/5b6d6c9979046c111b00456622758f542627ac11))
+
+
+
+
+
+## 4.37.20 (2022-02-07)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.37.19 (2022-02-07)
+
+
+### Bug Fixes
+
+* **Select:** remove logic from default inputAutoComplete ([#6873](https://github.com/patternfly/patternfly-react/issues/6873)) ([b3b61c1](https://github.com/patternfly/patternfly-react/commit/b3b61c175f23cdc9dad8c71054301d1090795ede))
+
+
+
+
+
+## 4.37.18 (2022-02-04)
+
+
+### Bug Fixes
+
+* **TimePicker:** remove automatically validation from onChange event ([#6884](https://github.com/patternfly/patternfly-react/issues/6884)) ([e7088e4](https://github.com/patternfly/patternfly-react/commit/e7088e4e7a9348fa412d2815af1b0820ee7754ef))
+
+
+
+
+
+## 4.37.17 (2022-02-04)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.37.16 (2022-02-02)
+
+
+### Bug Fixes
+
+* **numberinput:** import input group component instead ([#6850](https://github.com/patternfly/patternfly-react/issues/6850)) ([2a94545](https://github.com/patternfly/patternfly-react/commit/2a94545ead3be3ea3c987b1273e18b943315c36e))
+
+
+
+
+
+## 4.37.15 (2022-01-28)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.37.14 (2022-01-27)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.37.13 (2022-01-26)
+
+
+### Reverts
+
+* Revert "Improve IAction type (#6108)" (#6862) ([94aea84](https://github.com/patternfly/patternfly-react/commit/94aea84036e26f4cc472b7d445ee49b088eb6a47)), closes [#6108](https://github.com/patternfly/patternfly-react/issues/6108) [#6862](https://github.com/patternfly/patternfly-react/issues/6862)
+
+
+
+
+
+## 4.37.12 (2022-01-26)
+
+
+### Bug Fixes
+
+* **OverflowMenu:** ignore menu being covered in intg. tests ([#6852](https://github.com/patternfly/patternfly-react/issues/6852)) ([066e2bb](https://github.com/patternfly/patternfly-react/commit/066e2bb994f4eca5538fb9287e5d10ddf4a30cac))
+
+
+
+
+
+## 4.37.11 (2022-01-26)
+
+
+### Reverts
+
+* Revert "feat(Tabs): enforce restricted type for children (#6767)" (#6857) ([eca9a70](https://github.com/patternfly/patternfly-react/commit/eca9a708e8d53416e60a790ea876aa0b2e398212)), closes [#6767](https://github.com/patternfly/patternfly-react/issues/6767) [#6857](https://github.com/patternfly/patternfly-react/issues/6857)
+
+
+
+
+
+## 4.37.10 (2022-01-25)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.37.9 (2022-01-25)
+
+
+### Bug Fixes
+
+* **Select:**  Footer keyboard bugs ([#6844](https://github.com/patternfly/patternfly-react/issues/6844)) ([7f06125](https://github.com/patternfly/patternfly-react/commit/7f06125cfb52884708107da82ca3800207c9846f))
+
+
+
+
+
+## 4.37.8 (2022-01-24)
+
+
+### Bug Fixes
+
+* **table:** fixed action example ([#6800](https://github.com/patternfly/patternfly-react/issues/6800)) ([eaaedc2](https://github.com/patternfly/patternfly-react/commit/eaaedc28cf54cca1a47aaa5c4f5f76a11d32864d))
+
+
+
+
+
+## 4.37.7 (2022-01-20)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.37.6 (2022-01-20)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.37.5 (2022-01-20)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.37.4 (2022-01-20)
+
+
+### Bug Fixes
+
+* **DatePicker:** update empty state validation and add onblur event ([#6822](https://github.com/patternfly/patternfly-react/issues/6822)) ([258e818](https://github.com/patternfly/patternfly-react/commit/258e81861adc0488ae42f349aff78f06f2874fa7))
+
+
+
+
+
+## 4.37.3 (2022-01-20)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.37.2 (2022-01-20)
+
+
+### Bug Fixes
+
+* **Select:** Fixed dot next to the spinner in grouped view more variant ([#6831](https://github.com/patternfly/patternfly-react/issues/6831)) ([ccc81b4](https://github.com/patternfly/patternfly-react/commit/ccc81b4c8c30506f28e61e73dcbc106da50ca692))
+
+
+
+
+
+## 4.37.1 (2022-01-20)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+# 4.37.0 (2022-01-20)
+
+
+### Features
+
+* **Truncate:** added Truncate component ([#6713](https://github.com/patternfly/patternfly-react/issues/6713)) ([c803b5d](https://github.com/patternfly/patternfly-react/commit/c803b5df3761f689172d79bbc71bc38623b0bf5a))
+
+
+
+
+
+## 4.36.6 (2022-01-20)
+
+
+### Bug Fixes
+
+* **TextInputGroup:** address various issues ([#6774](https://github.com/patternfly/patternfly-react/issues/6774)) ([010058a](https://github.com/patternfly/patternfly-react/commit/010058acc7115fb76a35fe06634083ada62cece0))
+
+
+
+
+
+## 4.36.5 (2022-01-20)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.36.4 (2022-01-19)
+
+**Note:** Version bump only for package @patternfly/react-log-viewer
+
+
+
+
+
+## 4.36.3 (2022-01-19)
+
+
+### Bug Fixes
+
+* **examples:** amend row index in tree table examples ([#6830](https://github.com/patternfly/patternfly-react/issues/6830)) ([e676fb1](https://github.com/patternfly/patternfly-react/commit/e676fb1171618e957a4564af31c15ca6e3800507)), closes [#6719](https://github.com/patternfly/patternfly-react/issues/6719)
+
+
+
+
+
 ## 4.36.2 (2022-01-19)
 
 **Note:** Version bump only for package @patternfly/react-log-viewer

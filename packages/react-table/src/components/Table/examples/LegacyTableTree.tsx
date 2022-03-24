@@ -137,6 +137,12 @@ export const LegacyTableTree: React.FunctionComponent = () => {
       icon = isExpanded ? <FolderOpenIcon aria-hidden /> : <FolderIcon aria-hidden />;
     }
     flattenedNodes.push(node);
+
+    const childRows =
+      node.children && node.children.length
+        ? buildRows(node.children, level + 1, 1, rowIndex + 1, !isExpanded || isHidden)
+        : [];
+
     return [
       {
         cells: [node.name, node.branches, node.pullRequests, node.workspaces],
@@ -151,16 +157,8 @@ export const LegacyTableTree: React.FunctionComponent = () => {
           icon
         }
       },
-      ...(node.children && node.children.length
-        ? buildRows(node.children, level + 1, 1, rowIndex + 1, !isExpanded || isHidden)
-        : []),
-      ...buildRows(
-        remainingNodes,
-        level,
-        posinset + 1,
-        rowIndex + 1 + ((node.children && node.children.length) || 0),
-        isHidden
-      )
+      ...childRows,
+      ...buildRows(remainingNodes, level, posinset + 1, rowIndex + 1 + childRows.length, isHidden)
     ];
   };
 

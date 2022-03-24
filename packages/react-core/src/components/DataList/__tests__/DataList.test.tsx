@@ -1,5 +1,7 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+
+import { render, screen } from '@testing-library/react';
+
 import { DataList } from '../DataList';
 import { DataListItem } from '../DataListItem';
 import { DataListAction } from '../DataListAction';
@@ -13,75 +15,73 @@ import { DropdownItem, Dropdown, KebabToggle, DropdownPosition } from '../../Dro
 
 describe('DataList', () => {
   test('List default', () => {
-    const view = shallow(<DataList aria-label="this is a simple list" />);
-    expect(view).toMatchSnapshot();
+    const view = render(<DataList aria-label="this is a simple list" />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('List compact', () => {
-    const view = shallow(<DataList aria-label="this is a simple list" isCompact />);
-    expect(view).toMatchSnapshot();
+    const view = render(<DataList aria-label="this is a simple list" isCompact />);
+    expect(view.container).toMatchSnapshot();
   });
 
   describe('DataList variants', () => {
     ['none', 'always', 'sm', 'md', 'lg', 'xl', '2xl'].forEach(oneBreakpoint => {
       test(`Breakpoint - ${oneBreakpoint}`, () => {
-        const view = mount(
-          <DataList aria-label="this is a simple list" gridBreakpoint={oneBreakpoint} />
-        );
-        expect(view).toMatchSnapshot();
+        const view = render(<DataList aria-label="this is a simple list" gridBreakpoint={oneBreakpoint as any} />);
+        expect(view.container).toMatchSnapshot();
       });
     });
   });
 
   test('List draggable', () => {
-    const view = shallow(<DataList aria-label="this is a simple list" isCompact onDragFinish={jest.fn()} />);
-    expect(view).toMatchSnapshot();
+    const view = render(<DataList aria-label="this is a simple list" isCompact onDragFinish={jest.fn()} />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('List', () => {
-    const view = shallow(<DataList key="list-id-1" className="data-list-custom" aria-label="this is a simple list" />);
-    expect(view).toMatchSnapshot();
+    const view = render(<DataList key="list-id-1" className="data-list-custom" aria-label="this is a simple list" />);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('Item default', () => {
-    const view = shallow(
+    render(
       <DataListItem key="item-id-1" aria-labelledby="item-1">
         test
       </DataListItem>
     );
-    expect(view).toMatchSnapshot();
+    expect(screen.getByRole('listitem').outerHTML).toMatchSnapshot();
   });
 
   test('Item expanded', () => {
-    const view = mount(
+    render(
       <DataListItem aria-labelledby="item-1" isExpanded>
         test
       </DataListItem>
     );
-    expect(view.find('li').props().className).toBe('pf-c-data-list__item pf-m-expanded');
+    expect(screen.getByRole('listitem').className).toBe('pf-c-data-list__item pf-m-expanded');
   });
 
   test('Item', () => {
-    const view = shallow(
+    const view = render(
       <DataListItem className="data-list-item-custom" aria-labelledby="item-1">
         test
       </DataListItem>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('item row default', () => {
-    const view = shallow(<DataListItemRow>test</DataListItemRow>);
-    expect(view).toMatchSnapshot();
+    const view = render(<DataListItemRow>test</DataListItemRow>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('Cell default', () => {
-    const view = shallow(<DataListCell>Secondary</DataListCell>);
-    expect(view).toMatchSnapshot();
+    const view = render(<DataListCell>Secondary</DataListCell>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('Cells', () => {
-    const view = shallow(
+    const view = render(
       <DataListItemCells
         dataListCells={[
           <DataListCell key="list-id-1" id="primary-item" className="data-list-custom">
@@ -93,63 +93,71 @@ describe('DataList', () => {
         ]}
       />
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('Cell with width modifier', () => {
     [
-      { width: 1 as const, class: '' },
-      { width: 2 as const, class: 'pf-m-flex-2' },
-      { width: 3 as const, class: 'pf-m-flex-3' },
-      { width: 4 as const, class: 'pf-m-flex-4' },
-      { width: 5 as const, class: 'pf-m-flex-5' }
-    ].forEach(testCase => {
-      const view = shallow(
-        <DataListCell width={testCase.width} key="list-id-1" id="primary-item">
+      { width: 1, class: '' },
+      { width: 2, class: 'pf-m-flex-2' },
+      { width: 3, class: 'pf-m-flex-3' },
+      { width: 4, class: 'pf-m-flex-4' },
+      { width: 5, class: 'pf-m-flex-5' }
+    ].forEach((testCase, index) => {
+      const testId = `cell-test-id-${index}`;
+
+      render(
+        <DataListCell data-testid={testId} width={testCase.width as any} key={index}>
           Primary Id
         </DataListCell>
       );
+
+      const dataListCell = screen.getByTestId(testId);
+
       testCase.class === ''
-        ? expect(view.props().className).toBe('pf-c-data-list__cell')
-        : expect(view.props().className).toBe(`pf-c-data-list__cell ${testCase.class}`);
+        ? expect(dataListCell.className).toBe('pf-c-data-list__cell')
+        : expect(dataListCell.className).toBe(`pf-c-data-list__cell ${testCase.class}`);
     });
   });
 
   test('Cell with text modifiers', () => {
     [
-      { wrapModifier: null as const, class: '' },
-      { wrapModifier: 'breakWord' as const, class: 'pf-m-break-word' },
-      { wrapModifier: 'nowrap' as const, class: 'pf-m-nowrap' },
-      { wrapModifier: 'truncate' as const, class: 'pf-m-truncate' },
-    ].forEach(testCase => {
-      const view = shallow(
-        <DataListCell wrapModifier={testCase.wrapModifier} key="list-id-1" id="primary-item">
+      { wrapModifier: null as any, class: '' },
+      { wrapModifier: 'breakWord', class: 'pf-m-break-word' },
+      { wrapModifier: 'nowrap', class: 'pf-m-nowrap' },
+      { wrapModifier: 'truncate', class: 'pf-m-truncate' }
+    ].forEach((testCase, index) => {
+      const testId = `cell-test-id-${index}`;
+
+      render(
+        <DataListCell data-testid={testId} wrapModifier={testCase.wrapModifier} key={index}>
           Primary Id
         </DataListCell>
       );
+
+      const dataListCell = screen.getByTestId(testId);
+
       testCase.class === ''
-        ? expect(view.props().className).toBe('pf-c-data-list__cell')
-        : expect(view.props().className).toBe(`pf-c-data-list__cell ${testCase.class}`);
+        ? expect(dataListCell.className).toBe('pf-c-data-list__cell')
+        : expect(dataListCell.className).toBe(`pf-c-data-list__cell ${testCase.class}`);
     });
   });
 
   test('Toggle default with aria label', () => {
-    const view = shallow(<DataListToggle aria-label="Toggle details for" id="ex-toggle2" />);
+    render(<DataListToggle aria-label="Toggle details for" id="ex-toggle2" />);
 
-    expect(view.find(Button).props()['aria-label']).toBe('Toggle details for');
-    expect(view.find(Button).props()['aria-labelledby']).toBe(null);
-    expect(view.find(Button).props()['aria-expanded']).toBe(false);
-    expect(view.find(Button).props().id).toBe('ex-toggle2');
-    expect(view.find(Button).props().id).toBe('ex-toggle2');
+    expect(screen.getByRole('button').getAttribute('aria-labelledby')).toEqual(null);
+    expect(screen.getByRole('button').getAttribute('aria-label')).toEqual('Toggle details for');
+    expect(screen.getByRole('button').getAttribute('aria-expanded')).toEqual('false');
   });
 
   test('Toggle expanded', () => {
-    const view = shallow(<DataListToggle aria-label="Toggle details for" id="ex-toggle2" isExpanded />);
-    expect(view.find(Button).props()['aria-expanded']).toBe(true);
+    render(<DataListToggle aria-label="Toggle details for" id="ex-toggle2" isExpanded />);
+    expect(screen.getByRole('button').getAttribute('aria-expanded')).toEqual('true');
   });
 
   test('DataListAction dropdown', () => {
-    const view = shallow(
+    const view = render(
       <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action" isPlainButtonAction>
         <Dropdown
           isPlain
@@ -166,20 +174,20 @@ describe('DataList', () => {
         />
       </DataListAction>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('DataListAction button', () => {
-    const view = shallow(
+    const view = render(
       <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action">
         <Button id="delete-item-1">Delete</Button>
       </DataListAction>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 
   test('DataListAction visibility - show button when lg', () => {
-    const view = shallow(
+    render(
       <DataListAction
         visibility={{ default: 'hidden', lg: 'visible' }}
         aria-labelledby="check-action-item2 check-action-action2"
@@ -189,12 +197,13 @@ describe('DataList', () => {
         <Button variant="primary">Primary</Button>
       </DataListAction>
     );
-    expect(view.find('div').props().className).toContain('pf-m-hidden');
-    expect(view.find('div').props().className).toContain('pf-m-visible-on-lg');
+
+    expect(screen.getByRole('button').parentElement.className).toContain('pf-m-hidden');
+    expect(screen.getByRole('button').parentElement.className).toContain('pf-m-visible-on-lg');
   });
 
   test('DataListAction visibility - hide button on 2xl', () => {
-    const view = shallow(
+    render(
       <DataListAction
         visibility={{ '2xl': 'hidden' }}
         aria-labelledby="check-action-item2 check-action-action2"
@@ -204,20 +213,21 @@ describe('DataList', () => {
         <Button variant="primary">Primary</Button>
       </DataListAction>
     );
-    expect(view.find('div').props().className).toContain('pf-m-hidden-on-2xl');
+
+    expect(screen.getByRole('button').parentElement.className).toContain('pf-m-hidden-on-2xl');
   });
 
   test('DataListContent', () => {
-    const view = shallow(<DataListContent aria-label="Primary Content Details"> test</DataListContent>);
-    expect(view).toMatchSnapshot();
+    const view = render(<DataListContent aria-label="Primary Content Details"> test</DataListContent>);
+    expect(view.container).toMatchSnapshot();
   });
 
   test('DataListContent hasNoPadding', () => {
-    const view = shallow(
+    const view = render(
       <DataListContent aria-label="Primary Content Details" hidden hasNoPadding>
         test
       </DataListContent>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });

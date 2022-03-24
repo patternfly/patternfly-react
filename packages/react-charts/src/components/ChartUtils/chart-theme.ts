@@ -90,6 +90,23 @@ export const getBulletPrimarySegmentedMeasureTheme = (themeColor: string, themeV
 export const getBulletQualitativeRangeTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
   getCustomTheme(themeColor, themeVariant, ChartBulletQualitativeRangeTheme);
 
+// Returns theme for Chart component
+export const getChartTheme = (themeColor: string, themeVariant: string, showAxis: boolean): ChartThemeDefinition => {
+  const theme = getTheme(themeColor, themeVariant);
+
+  if (!showAxis) {
+    theme.axis.padding = 0;
+    theme.axis.style.axis.fill = 'none';
+    theme.axis.style.axis.stroke = 'none';
+    theme.axis.style.grid.fill = 'none';
+    theme.axis.style.grid.stroke = 'none';
+    theme.axis.style.ticks.fill = 'none';
+    theme.axis.style.ticks.stroke = 'none';
+    theme.axis.style.tickLabels.fill = 'none';
+  }
+  return theme;
+};
+
 // Returns donut theme
 export const getDonutTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
   getCustomTheme(themeColor, themeVariant, ChartDonutTheme);

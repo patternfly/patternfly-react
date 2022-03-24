@@ -72,7 +72,7 @@ export class SimpleList extends React.Component<SimpleListProps, SimpleListState
           isControlled
         }}
       >
-        <div className={css(styles.simpleList, className)} {...props} {...(isGrouped && { role: 'list' })}>
+        <div className={css(styles.simpleList, className)} {...props}>
           {isGrouped && children}
           {!isGrouped && <ul>{children}</ul>}
         </div>

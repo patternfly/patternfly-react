@@ -5,6 +5,8 @@ import { action } from 'mobx';
 import 'mobx-react/batchingForReactDom';
 import { observer } from 'mobx-react';
 import ReactMeasure from 'react-measure';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import { State } from '../types';
 import SVGDefsProvider from './defs/SVGDefsProvider';
 import ElementWrapper from './ElementWrapper';
@@ -55,8 +57,8 @@ const VisualizationSurface: React.FC<VisualizationSurfaceProps> = ({ state }) =>
     <ReactMeasure client onResize={onMeasure}>
       {({ measureRef }: { measureRef: React.LegacyRef<any> }) => (
         // render an outer div because react-measure doesn't seem to fire events properly on svg resize
-        <div data-test-id="topology" className="pf-topology-visualization-surface" ref={measureRef}>
-          <svg className="pf-topology-visualization-surface__svg" onContextMenu={stopEvent}>
+        <div data-test-id="topology" className={css(styles.topologyVisualizationSurface)} ref={measureRef}>
+          <svg className={css(styles.topologyVisualizationSurfaceSvg)} onContextMenu={stopEvent}>
             <SVGDefsProvider>
               <ElementWrapper element={graph} />
             </SVGDefsProvider>

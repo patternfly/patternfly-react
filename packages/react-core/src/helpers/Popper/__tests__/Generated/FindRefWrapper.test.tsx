@@ -2,10 +2,10 @@
  * This test was generated
  */
 import * as React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { FindRefWrapper } from '../../FindRefWrapper';
 
 it('FindRefWrapper should match snapshot (auto-generated)', () => {
-  const view = mount(<FindRefWrapper children={<div>ReactNode</div>} onFoundRef={(foundRef: any) => {}} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<FindRefWrapper children={<div>ReactNode</div>} onFoundRef={(foundRef: any) => {}} />);
+  expect(view.container).toMatchSnapshot();
 });

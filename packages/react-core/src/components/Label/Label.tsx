@@ -2,9 +2,8 @@ import * as React from 'react';
 import { useState } from 'react';
 import styles from '@patternfly/react-styles/css/components/Label/label';
 import labelGrpStyles from '@patternfly/react-styles/css/components/LabelGroup/label-group';
-import inlineEditStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { Button } from '../Button';
-import { Tooltip } from '../Tooltip';
+import { Tooltip, TooltipPosition } from '../Tooltip';
 import { css } from '@patternfly/react-styles';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { useIsomorphicLayoutEffect } from '../../helpers';
@@ -31,7 +30,21 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   /** Flag indicating the label text should be truncated. */
   isTruncated?: boolean;
   /** Position of the tooltip which is displayed if text is truncated */
-  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  tooltipPosition?:
+    | TooltipPosition
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
   /** Icon added to the left of the label text. */
   icon?: React.ReactNode;
   /** Close click callback for removable labels. If present, label will have a close button. */
@@ -91,7 +104,9 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   ...props
 }: LabelProps) => {
   const [isEditableActive, setIsEditableActive] = useState(false);
-  const editableDivRef = React.createRef<HTMLDivElement>();
+  const [currValue, setCurrValue] = useState(children);
+  const editableButtonRef = React.useRef<HTMLButtonElement>();
+  const editableInputRef = React.useRef<HTMLInputElement>();
 
   React.useEffect(() => {
     document.addEventListener('click', onDocClick);
@@ -105,34 +120,45 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   const onDocClick = (event: MouseEvent) => {
     if (
       isEditableActive &&
-      editableDivRef &&
-      editableDivRef.current &&
-      !editableDivRef.current.contains(event.target as Node)
+      editableInputRef &&
+      editableInputRef.current &&
+      !editableInputRef.current.contains(event.target as Node)
     ) {
-      onEditComplete && onEditComplete(editableDivRef.current.textContent);
+      if (editableInputRef.current.value) {
+        onEditComplete && onEditComplete(editableInputRef.current.value);
+      }
       setIsEditableActive(false);
     }
   };
 
   const onKeyDown = (event: KeyboardEvent) => {
     const key = event.key;
-
-    if (!editableDivRef || !editableDivRef.current || !editableDivRef.current.contains(event.target as Node)) {
+    if (
+      (!isEditableActive &&
+        (!editableButtonRef ||
+          !editableButtonRef.current ||
+          !editableButtonRef.current.contains(event.target as Node))) ||
+      (isEditableActive &&
+        (!editableInputRef || !editableInputRef.current || !editableInputRef.current.contains(event.target as Node)))
+    ) {
       return;
     }
-
     if (isEditableActive && (key === 'Enter' || key === 'Tab')) {
       event.preventDefault();
       event.stopImmediatePropagation();
-      onEditComplete && onEditComplete(editableDivRef.current.textContent);
+      if (editableInputRef.current.value) {
+        onEditComplete && onEditComplete(editableInputRef.current.value);
+      }
       setIsEditableActive(false);
     }
     if (isEditableActive && key === 'Escape') {
       event.preventDefault();
       event.stopImmediatePropagation();
       // Reset div text to initial children prop - pre-edit
-      editableDivRef.current.textContent = children as string;
-      onEditCancel && onEditCancel(children as string);
+      if (editableInputRef.current.value) {
+        editableInputRef.current.value = children as string;
+        onEditCancel && onEditCancel(children as string);
+      }
       setIsEditableActive(false);
     }
     if (!isEditableActive && key === 'Enter') {
@@ -152,7 +178,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   };
 
   const LabelComponent = (isOverflowLabel ? 'button' : 'span') as any;
-  const Component = href ? 'a' : 'span';
+
   const button = closeBtn ? (
     closeBtn
   ) : (
@@ -171,9 +197,12 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   const componentRef = React.useRef();
   const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
   useIsomorphicLayoutEffect(() => {
-    setIsTooltipVisible(textRef.current && textRef.current.offsetWidth < textRef.current.scrollWidth);
-  }, []);
-  let content = (
+    const currTextRef = isEditable ? editableButtonRef : textRef;
+    if (!isEditableActive) {
+      setIsTooltipVisible(currTextRef.current && currTextRef.current.offsetWidth < currTextRef.current.scrollWidth);
+    }
+  }, [isEditableActive]);
+  const content = (
     <React.Fragment>
       {icon && <span className={css(styles.labelIcon)}>{icon}</span>}
       {isTruncated && (
@@ -185,31 +214,39 @@ export const Label: React.FunctionComponent<LabelProps> = ({
     </React.Fragment>
   );
 
-  if (isEditable) {
-    content = (
-      <React.Fragment>
-        <div className={css(inlineEditStyles.inlineEdit)}>
-          <div
-            tabIndex={0}
-            ref={editableDivRef}
-            className={css(inlineEditStyles.inlineEditEditableText)}
-            role="textbox"
-            {...(isEditableActive && { contentEditable: true })}
-            suppressContentEditableWarning
-            {...editableProps}
-          >
-            {children}
-          </div>
-        </div>
-      </React.Fragment>
+  React.useEffect(() => {
+    if (isEditableActive && editableInputRef) {
+      editableInputRef.current && editableInputRef.current.focus();
+    }
+  }, [editableInputRef, isEditableActive]);
+
+  const updateVal = () => {
+    setCurrValue(editableInputRef.current.value);
+  };
+
+  let labelComponentChild = <span className={css(styles.labelContent)}>{content}</span>;
+
+  if (href) {
+    labelComponentChild = (
+      <a className={css(styles.labelContent)} href={href}>
+        {content}
+      </a>
+    );
+  } else if (isEditable) {
+    labelComponentChild = (
+      <button
+        ref={editableButtonRef}
+        className={css(styles.labelContent)}
+        onClick={(e: React.MouseEvent) => {
+          setIsEditableActive(true);
+          e.stopPropagation();
+        }}
+        {...editableProps}
+      >
+        {content}
+      </button>
     );
   }
-
-  let labelComponentChild = (
-    <Component className={css(styles.labelContent)} {...(href && { href })}>
-      {content}
-    </Component>
-  );
 
   if (render) {
     labelComponentChild = (
@@ -225,9 +262,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   } else if (isTooltipVisible) {
     labelComponentChild = (
       <Tooltip content={children} position={tooltipPosition}>
-        <Component className={css(styles.labelContent)} {...(href && { href })}>
-          {content}
-        </Component>
+        {labelComponentChild}
       </Tooltip>
     );
   }
@@ -245,19 +280,20 @@ export const Label: React.FunctionComponent<LabelProps> = ({
         isEditableActive && styles.modifiers.editableActive,
         className
       )}
-      {...(isEditable && {
-        onClick: (evt: MouseEvent) => {
-          const isEvtFromButton = (evt.target as HTMLElement).closest('button');
-          if (isEvtFromButton !== null) {
-            return;
-          }
-          setIsEditableActive(true);
-          editableDivRef.current.focus();
-        }
-      })}
     >
-      {labelComponentChild}
-      {onClose && button}
+      {!isEditableActive && labelComponentChild}
+      {!isEditableActive && onClose && button}
+      {isEditableActive && (
+        <input
+          className={css(styles.labelContent)}
+          type="text"
+          id="editable-input"
+          ref={editableInputRef}
+          value={currValue}
+          onChange={updateVal}
+          {...editableProps}
+        />
+      )}
     </LabelComponent>
   );
 };

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { RowWrapper, RowWrapperProps } from './RowWrapper';
 
 const getRowWrapper = (props: RowWrapperProps) => (
@@ -13,12 +13,12 @@ const getRowWrapper = (props: RowWrapperProps) => (
 describe('RowWrapper', () => {
   test('renders correctly', () => {
     const trRef = jest.fn();
-    const view = mount(getRowWrapper({ onScroll: jest.fn(), onResize: jest.fn(), trRef }));
-    expect(view).toMatchSnapshot();
+    const view = render(getRowWrapper({ onScroll: jest.fn(), onResize: jest.fn(), trRef }));
+    expect(view.container).toMatchSnapshot();
     expect(trRef.mock.calls).toHaveLength(1);
   });
   test('renders expanded correctly', () => {
-    const view = mount(getRowWrapper({ row: { isExpanded: true } }));
-    expect(view).toMatchSnapshot();
+    const view = render(getRowWrapper({ row: { isExpanded: true } }));
+    expect(view.container).toMatchSnapshot();
   });
 });

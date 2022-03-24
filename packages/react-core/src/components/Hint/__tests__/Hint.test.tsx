@@ -1,17 +1,17 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Hint } from '../Hint';
 import { HintBody } from '../HintBody';
 import { HintTitle } from '../HintTitle';
 import { HintFooter } from '../HintFooter';
 
 test('simple hint', () => {
-  const view = shallow(
+  const view = render(
     <Hint>
       <HintTitle>Title</HintTitle>
       <HintBody>Body</HintBody>
       <HintFooter>Footer</HintFooter>
     </Hint>
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

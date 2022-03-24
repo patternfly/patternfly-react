@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { TextArea } from '../../TextArea';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('TextArea should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <TextArea
       className={"''"}
       isRequired={false}
@@ -19,5 +19,5 @@ it('TextArea should match snapshot (auto-generated)', () => {
       aria-label={'null'}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

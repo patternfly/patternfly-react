@@ -1,8 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import { TabButton } from '../TabButton';
 
 test('should render tab button', () => {
-  const view = mount(<TabButton>Tab button</TabButton>);
-  expect(view).toMatchSnapshot();
+  const view = render(<TabButton>Tab button</TabButton>);
+  expect(view.container).toMatchSnapshot();
 });

@@ -30,6 +30,8 @@ export interface DatePickerProps
   invalidFormatText?: string;
   /** Callback called every time the input value changes */
   onChange?: (value: string, date?: Date) => void;
+  /** Callback called every time the input loses focus */
+  onBlur?: (value: string, date?: Date) => void;
   /** Text for label */
   helperText?: React.ReactNode;
   /** Aria label for the button to open the date picker */
@@ -69,6 +71,7 @@ const DatePickerBase = (
     'aria-label': ariaLabel = 'Date picker',
     buttonAriaLabel = 'Toggle date picker',
     onChange = (): any => undefined,
+    onBlur = (): any => undefined,
     invalidFormatText = 'Invalid date',
     helperText,
     appendTo,
@@ -101,10 +104,13 @@ const DatePickerBase = (
     setValueDate(dateParse(valueProp));
   }, [valueProp]);
 
+  React.useEffect(() => {
+    setPristine(!value);
+  }, [value]);
+
   const setError = (date: Date) => setErrorText(validators.map(validator => validator(date)).join('\n') || '');
 
   const onTextInput = (value: string) => {
-    setPristine(false);
     setValue(value);
     setErrorText('');
     const newValueDate = dateParse(value);
@@ -122,8 +128,10 @@ const DatePickerBase = (
     }
     const newValueDate = dateParse(value);
     if (isValidDate(newValueDate)) {
+      onBlur(value, new Date(newValueDate));
       setError(newValueDate);
     } else {
+      onBlur(value);
       setErrorText(invalidFormatText);
     }
   };
@@ -230,4 +238,4 @@ const DatePickerBase = (
 };
 
 export const DatePicker = React.forwardRef<DatePickerRef, DatePickerProps>(DatePickerBase);
-DatePicker.displayName = 'DatePickerBase';
+DatePicker.displayName = 'DatePicker';

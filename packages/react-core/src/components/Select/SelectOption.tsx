@@ -3,9 +3,10 @@ import styles from '@patternfly/react-styles/css/components/Select/select';
 import checkStyles from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
-import { SelectConsumer, SelectVariant, KeyTypes } from './selectConstants';
+import { SelectConsumer, SelectVariant } from './selectConstants';
 import StarIcon from '@patternfly/react-icons/dist/esm/icons/star-icon';
 import { getUniqueId } from '../../helpers/util';
+import { KeyTypes } from '../../helpers/constants';
 
 export interface SelectOptionObject {
   /** Function returns a string to represent the select option object */
@@ -69,6 +70,8 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   setViewMoreNextIndex?: () => void;
   /** @hide Flag indicating this is the last option when there is a footer */
   isLastOptionBeforeFooter?: (index: number) => boolean;
+  /** @hide Flag indicating that the the option loading variant is in a grouped select */
+  isGrouped?: boolean;
 }
 
 export class SelectOption extends React.Component<SelectOptionProps> {
@@ -132,7 +135,11 @@ export class SelectOption extends React.Component<SelectOptionProps> {
         }
         event.stopPropagation();
       } else {
-        keyHandler(index, innerIndex, 'tab');
+        if (event.shiftKey) {
+          keyHandler(index, innerIndex, 'up');
+        } else {
+          keyHandler(index, innerIndex, 'tab');
+        }
       }
     }
     event.preventDefault();
@@ -182,6 +189,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       setViewMoreNextIndex,
       // eslint-disable-next-line no-console
       isLastOptionBeforeFooter,
+      isGrouped = false,
       ...props
     } = this.props;
     /* eslint-enable @typescript-eslint/no-unused-vars */
@@ -201,7 +209,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
           onFavorite(generatedId.replace('favorite-', ''), isFavorite);
         }}
         onKeyDown={event => {
-          this.onKeyDown(event, 1, () => onFavorite(generatedId.replace('favorite-', '')));
+          this.onKeyDown(event, 1, () => onFavorite(generatedId.replace('favorite-', ''), isFavorite));
         }}
         ref={this.favoriteRef}
       >
@@ -228,165 +236,223 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       onClick(event);
     };
 
-    return (
-      <SelectConsumer>
-        {({ onSelect, onClose, variant, inputIdPrefix, onFavorite }) => (
-          <React.Fragment>
-            {variant !== SelectVariant.checkbox && (
-              <li
-                id={generatedId}
-                role="presentation"
-                className={css(
-                  isLoading && styles.selectListItem,
-                  !isLoad && !isLoading && styles.selectMenuWrapper,
-                  isFavorite && styles.modifiers.favorite,
-                  isFocused && styles.modifiers.focus,
-                  isLoading && styles.modifiers.loading
-                )}
-                ref={this.liRef}
-              >
-                {isLoading && children}
-                {!isLoading && (
-                  <>
-                    <Component
-                      {...props}
-                      className={css(
-                        styles.selectMenuItem,
-                        isLoad && styles.modifiers.load,
-                        isSelected && styles.modifiers.selected,
-                        isDisabled && styles.modifiers.disabled,
-                        description && styles.modifiers.description,
-                        isFavorite !== null && styles.modifiers.link,
-                        className
-                      )}
-                      onClick={(event: any) => {
-                        if (isLoad) {
-                          onViewMoreClick(event);
-                          event.stopPropagation();
-                        } else if (!isDisabled && !isLoading) {
-                          onClick(event);
-                          onSelect(event, value, isPlaceholder);
-                          onClose();
-                        }
-                      }}
-                      role="option"
-                      aria-selected={isSelected || null}
-                      ref={this.ref}
-                      onKeyDown={(event: React.KeyboardEvent) => {
-                        this.onKeyDown(event, 0);
-                      }}
-                      type="button"
-                    >
-                      {description && (
-                        <React.Fragment>
-                          <span className={css(styles.selectMenuItemMain)}>
-                            {itemDisplay}
-                            {isSelected && (
-                              <span className={css(styles.selectMenuItemIcon)}>
-                                <CheckIcon aria-hidden />
-                              </span>
-                            )}
-                          </span>
-                          <span className={css(styles.selectMenuItemDescription)}>{description}</span>
-                        </React.Fragment>
-                      )}
-                      {!description && (
-                        <React.Fragment>
-                          {itemDisplay}
-                          {isSelected && (
-                            <span className={css(styles.selectMenuItemIcon)}>
-                              <CheckIcon aria-hidden />
-                            </span>
-                          )}
-                        </React.Fragment>
-                      )}
-                    </Component>
-                    {isFavorite !== null && id && favoriteButton(onFavorite)}
-                  </>
-                )}
-              </li>
+    const renderOption = (
+      onSelect: (
+        event: React.MouseEvent<any, MouseEvent> | React.ChangeEvent<HTMLInputElement>,
+        value: string | SelectOptionObject,
+        isPlaceholder?: boolean
+      ) => void,
+      onClose: () => void,
+      variant: string,
+      inputIdPrefix: string,
+      onFavorite: (itemId: string, isFavorite: boolean) => void,
+      shouldResetOnSelect: boolean
+    ) => {
+      if (variant !== SelectVariant.checkbox && isLoading && isGrouped) {
+        return (
+          <div
+            role="presentation"
+            className={css(styles.selectListItem, isLoading && styles.modifiers.loading, className)}
+          >
+            {children}
+          </div>
+        );
+      } else if (variant !== SelectVariant.checkbox && isLoad && isGrouped) {
+        return (
+          <div>
+            <button
+              {...props}
+              role="presentation"
+              className={css(styles.selectMenuItem, styles.modifiers.load, className)}
+              onClick={(event: any) => {
+                onViewMoreClick(event);
+                event.stopPropagation();
+              }}
+              ref={this.ref}
+              type="button"
+            >
+              {children || value.toString()}
+            </button>
+          </div>
+        );
+      } else if (variant !== SelectVariant.checkbox) {
+        return (
+          <li
+            id={generatedId}
+            role="presentation"
+            className={css(
+              isLoading && styles.selectListItem,
+              !isLoad && !isLoading && styles.selectMenuWrapper,
+              isFavorite && styles.modifiers.favorite,
+              isFocused && styles.modifiers.focus,
+              isLoading && styles.modifiers.loading
             )}
-            {variant === SelectVariant.checkbox && isLoad && (
+            ref={this.liRef}
+          >
+            {isLoading && children}
+            {isLoad && !isGrouped && (
               <button
-                className={css(
-                  styles.selectMenuItem,
-                  styles.modifiers.load,
-                  isFocused && styles.modifiers.focus,
-                  className
-                )}
-                onKeyDown={(event: React.KeyboardEvent) => {
-                  this.onKeyDown(event, 0, undefined, true);
-                }}
+                {...props}
+                className={css(styles.selectMenuItem, styles.modifiers.load, className)}
                 onClick={(event: any) => {
                   onViewMoreClick(event);
                   event.stopPropagation();
                 }}
                 ref={this.ref}
+                onKeyDown={(event: React.KeyboardEvent) => {
+                  this.onKeyDown(event, 0);
+                }}
+                type="button"
               >
-                {children || (value && value.toString && value.toString())}
+                {itemDisplay}
               </button>
             )}
-            {variant === SelectVariant.checkbox && isLoading && (
-              <div className={css(styles.selectListItem, isLoading && styles.modifiers.loading, className)}>
-                {children}
-              </div>
-            )}
-            {variant === SelectVariant.checkbox && !isNoResultsOption && !isLoading && !isLoad && (
-              <label
-                {...props}
-                className={css(
-                  checkStyles.check,
-                  styles.selectMenuItem,
-                  isDisabled && styles.modifiers.disabled,
-                  description && styles.modifiers.description,
-                  className
-                )}
-                onKeyDown={(event: React.KeyboardEvent) => {
-                  this.onKeyDown(event, 0, undefined, true);
-                }}
-              >
-                <input
-                  id={inputId || `${inputIdPrefix}-${value.toString()}`}
-                  className={css(checkStyles.checkInput)}
-                  type="checkbox"
-                  onChange={event => {
-                    if (!isDisabled) {
-                      onClick(event);
-                      onSelect(event, value);
-                    }
-                  }}
-                  ref={this.ref}
-                  checked={isChecked || false}
-                  disabled={isDisabled}
-                />
-                <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>
-                  {itemDisplay}
-                </span>
-                {description && <div className={css(checkStyles.checkDescription)}>{description}</div>}
-              </label>
-            )}
-            {variant === SelectVariant.checkbox && isNoResultsOption && !isLoading && !isLoad && (
-              <div>
+            {!isLoading && !isLoad && (
+              <>
                 <Component
                   {...props}
                   className={css(
                     styles.selectMenuItem,
+                    isLoad && styles.modifiers.load,
                     isSelected && styles.modifiers.selected,
                     isDisabled && styles.modifiers.disabled,
+                    description && styles.modifiers.description,
+                    isFavorite !== null && styles.modifiers.link,
                     className
                   )}
+                  onClick={(event: any) => {
+                    if (!isDisabled) {
+                      onClick(event);
+                      onSelect(event, value, isPlaceholder);
+                      shouldResetOnSelect && onClose();
+                    }
+                  }}
                   role="option"
                   aria-selected={isSelected || null}
                   ref={this.ref}
                   onKeyDown={(event: React.KeyboardEvent) => {
-                    this.onKeyDown(event, 0, undefined, true);
+                    this.onKeyDown(event, 0);
                   }}
                   type="button"
                 >
-                  {itemDisplay}
+                  {description && (
+                    <React.Fragment>
+                      <span className={css(styles.selectMenuItemMain)}>
+                        {itemDisplay}
+                        {isSelected && (
+                          <span className={css(styles.selectMenuItemIcon)}>
+                            <CheckIcon aria-hidden />
+                          </span>
+                        )}
+                      </span>
+                      <span className={css(styles.selectMenuItemDescription)}>{description}</span>
+                    </React.Fragment>
+                  )}
+                  {!description && (
+                    <React.Fragment>
+                      {itemDisplay}
+                      {isSelected && (
+                        <span className={css(styles.selectMenuItemIcon)}>
+                          <CheckIcon aria-hidden />
+                        </span>
+                      )}
+                    </React.Fragment>
+                  )}
                 </Component>
-              </div>
+                {isFavorite !== null && id && favoriteButton(onFavorite)}
+              </>
             )}
+          </li>
+        );
+      } else if (variant === SelectVariant.checkbox && isLoad) {
+        return (
+          <button
+            className={css(
+              styles.selectMenuItem,
+              styles.modifiers.load,
+              isFocused && styles.modifiers.focus,
+              className
+            )}
+            onKeyDown={(event: React.KeyboardEvent) => {
+              this.onKeyDown(event, 0, undefined, true);
+            }}
+            onClick={(event: any) => {
+              onViewMoreClick(event);
+              event.stopPropagation();
+            }}
+            ref={this.ref}
+          >
+            {children || (value && value.toString && value.toString())}
+          </button>
+        );
+      } else if (variant === SelectVariant.checkbox && isLoading) {
+        return (
+          <div className={css(styles.selectListItem, isLoading && styles.modifiers.loading, className)}>{children}</div>
+        );
+      } else if (variant === SelectVariant.checkbox && !isNoResultsOption && !isLoading && !isLoad) {
+        return (
+          <label
+            {...props}
+            className={css(
+              checkStyles.check,
+              styles.selectMenuItem,
+              isDisabled && styles.modifiers.disabled,
+              description && styles.modifiers.description,
+              className
+            )}
+            onKeyDown={(event: React.KeyboardEvent) => {
+              this.onKeyDown(event, 0, undefined, true);
+            }}
+          >
+            <input
+              id={inputId || `${inputIdPrefix}-${value.toString()}`}
+              className={css(checkStyles.checkInput)}
+              type="checkbox"
+              onChange={event => {
+                if (!isDisabled) {
+                  onClick(event);
+                  onSelect(event, value);
+                }
+              }}
+              ref={this.ref}
+              checked={isChecked || false}
+              disabled={isDisabled}
+            />
+            <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{itemDisplay}</span>
+            {description && <div className={css(checkStyles.checkDescription)}>{description}</div>}
+          </label>
+        );
+      } else if (variant === SelectVariant.checkbox && isNoResultsOption && !isLoading && !isLoad) {
+        return (
+          <div>
+            <Component
+              {...props}
+              className={css(
+                styles.selectMenuItem,
+                isSelected && styles.modifiers.selected,
+                isDisabled && styles.modifiers.disabled,
+                className
+              )}
+              role="option"
+              aria-selected={isSelected || null}
+              ref={this.ref}
+              onKeyDown={(event: React.KeyboardEvent) => {
+                this.onKeyDown(event, 0, undefined, true);
+              }}
+              type="button"
+            >
+              {itemDisplay}
+            </Component>
+          </div>
+        );
+      }
+    };
+
+    return (
+      <SelectConsumer>
+        {({ onSelect, onClose, variant, inputIdPrefix, onFavorite, shouldResetOnSelect }) => (
+          <React.Fragment>
+            {renderOption(onSelect, onClose, variant, inputIdPrefix, onFavorite, shouldResetOnSelect)}
           </React.Fragment>
         )}
       </SelectConsumer>

@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Select/select';
 import datePickerStyles from '@patternfly/react-styles/css/components/DatePicker/date-picker';
 import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
+import menuStyles from '@patternfly/react-styles/css/components/Menu/menu';
 import { getUniqueId } from '../../helpers';
 import { Popper } from '../../helpers/Popper/Popper';
-import { TimeOption } from './TimeOption';
-import { KeyTypes, SelectDirection } from '../Select';
+import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
 import { InputGroup } from '../InputGroup';
 import { TextInput, TextInputProps } from '../TextInput';
+import { KeyTypes } from '../../helpers/constants';
 import {
   parseTime,
   validateTime,
@@ -49,15 +49,14 @@ export interface TimePickerProps
   id?: string;
   /** Width of the time picker. */
   width?: string;
-  /** The container to append the menu to. Defaults to 'inline'
+  /** The container to append the menu to. Defaults to 'inline'.
    * If your menu is being cut off you can append it to an element higher up the DOM tree.
    * Some examples:
+   * menuAppendTo="parent"
    * menuAppendTo={() => document.body}
    * menuAppendTo={document.getElementById('target')}
    */
-  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline';
-  /** Flag specifying which direction the time picker menu expands */
-  direction?: 'up' | 'down';
+  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
   /** Size of step between time options in minutes.*/
   stepMinutes?: number;
   /** Additional props for input field */
@@ -83,10 +82,10 @@ interface TimePickerState {
 
 export class TimePicker extends React.Component<TimePickerProps, TimePickerState> {
   static displayName = 'TimePicker';
-  private parentRef = React.createRef<HTMLDivElement>();
+  private baseComponentRef = React.createRef<any>();
   private toggleRef = React.createRef<HTMLDivElement>();
   private inputRef = React.createRef<HTMLInputElement>();
-  private menuRef = React.createRef<HTMLUListElement>();
+  private menuRef = React.createRef<HTMLDivElement>();
 
   static defaultProps = {
     className: '',
@@ -98,9 +97,8 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     placeholder: 'hh:mm',
     delimiter: ':',
     'aria-label': 'Time picker',
+    width: '150px',
     menuAppendTo: 'inline',
-    direction: 'down',
-    width: 150,
     stepMinutes: 30,
     inputProps: {},
     minTime: '',
@@ -145,43 +143,46 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   }
 
   onDocClick = (event: MouseEvent | TouchEvent) => {
-    const clickedOnToggle =
-      this.parentRef && this.parentRef.current && this.parentRef.current.contains(event.target as Node);
-    const clickedWithinMenu =
-      this.menuRef &&
-      this.menuRef.current &&
-      this.menuRef.current.contains &&
-      this.menuRef.current.contains(event.target as Node);
+    const clickedOnToggle = this.toggleRef?.current?.contains(event.target as Node);
+    const clickedWithinMenu = this.menuRef?.current?.contains(event.target as Node);
     if (this.state.isOpen && !(clickedOnToggle || clickedWithinMenu)) {
       this.onToggle(false);
     }
   };
 
   handleGlobalKeys = (event: KeyboardEvent) => {
-    const { isOpen, focusedIndex } = this.state;
+    const { isOpen, focusedIndex, scrollIndex } = this.state;
     // keyboard pressed while focus on toggle
-    if (this.inputRef && this.inputRef.current && this.inputRef.current.contains(event.target as Node)) {
+    if (this.inputRef?.current?.contains(event.target as Node)) {
       if (!isOpen && event.key !== KeyTypes.Tab) {
         this.onToggle(true);
       } else if (isOpen) {
-        if (event.key === KeyTypes.Escape) {
-          this.onToggle(false);
-        } else if (event.key === KeyTypes.Tab) {
+        if (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab) {
           this.onToggle(false);
         } else if (event.key === KeyTypes.Enter) {
           if (focusedIndex !== null) {
-            this.onSelect((this.getOptions()[focusedIndex] as HTMLElement).innerText);
+            this.focusSelection(focusedIndex);
             event.stopPropagation();
           } else {
             this.onToggle(false);
           }
-        } else if (event.key === KeyTypes.ArrowDown) {
-          this.updateFocusedIndex(1);
-          event.preventDefault();
-        } else if (event.key === KeyTypes.ArrowUp) {
-          this.updateFocusedIndex(-1);
+        } else if (event.key === KeyTypes.ArrowDown || event.key === KeyTypes.ArrowUp) {
+          this.focusSelection(scrollIndex);
+          this.updateFocusedIndex(0);
           event.preventDefault();
         }
+      }
+      // keyboard pressed while focus on menu item
+    } else if (this.menuRef?.current?.contains(event.target as Node)) {
+      if (event.key === KeyTypes.ArrowDown) {
+        this.updateFocusedIndex(1);
+        event.preventDefault();
+      } else if (event.key === KeyTypes.ArrowUp) {
+        this.updateFocusedIndex(-1);
+        event.preventDefault();
+      } else if (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab) {
+        this.inputRef.current.focus();
+        this.onToggle(false);
       }
     }
   };
@@ -207,7 +208,8 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   updateFocusedIndex = (increment: number) => {
     this.setState(prevState => {
       const maxIndex = this.getOptions().length - 1;
-      let nextIndex = prevState.focusedIndex !== null ? prevState.focusedIndex + increment : prevState.scrollIndex;
+      let nextIndex =
+        prevState.focusedIndex !== null ? prevState.focusedIndex + increment : prevState.scrollIndex + increment;
       if (nextIndex < 0) {
         nextIndex = maxIndex;
       } else if (nextIndex > maxIndex) {
@@ -220,8 +222,26 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     });
   };
 
+  // fixes issue where menutAppendTo="inline" results in the menu item that should be scrolled to being out of view; this will select the menu item that comes before the intended one, causing that before-item to be placed out of view instead
+  getIndexToScroll = (index: number) => {
+    if (this.props.menuAppendTo === 'inline') {
+      return index > 0 ? index - 1 : 0;
+    }
+    return index;
+  };
+
   scrollToIndex = (index: number) => {
-    this.getOptions()[index].offsetParent.scrollTop = this.getOptions()[index].offsetTop;
+    this.getOptions()[index].closest(`.${menuStyles.menuContent}`).scrollTop = this.getOptions()[
+      this.getIndexToScroll(index)
+    ].offsetTop;
+  };
+
+  focusSelection = (index: number) => {
+    const indexToFocus = index !== -1 ? index : 0;
+
+    if (this.menuRef?.current) {
+      (this.getOptions()[indexToFocus].querySelector(`.${menuStyles.menuItem}`) as HTMLElement).focus();
+    }
   };
 
   scrollToSelection = (time: string) => {
@@ -232,6 +252,10 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     // build out the rest of the time assuming hh:00 if it's a partial time
     if (splitTime.length < 2) {
       time = `${time}${delimiter}00`;
+      splitTime = time.split(delimiter);
+      // due to only the input including seconds when includeSeconds=true, we need to build a temporary time here without those seconds so that an exact or close match can be scrolled to within the menu (which does not include seconds in any of the options)
+    } else if (splitTime.length > 2) {
+      time = parseTime(time, this.state.timeRegex, delimiter, !is24Hour, false);
       splitTime = time.split(delimiter);
     }
 
@@ -248,7 +272,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     ) {
       time = `${time}${new Date().getHours() > 11 ? pmSuffix : amSuffix}`;
     }
-
     let scrollIndex = this.getOptions().findIndex(option => option.innerText === time);
 
     // if we found an exact match, scroll to match and return index of match for focus
@@ -289,7 +312,9 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   };
 
   getOptions = () =>
-    (this.menuRef && this.menuRef.current ? Array.from(this.menuRef.current.children) : []) as HTMLElement[];
+    (this.menuRef?.current
+      ? Array.from(this.menuRef.current.querySelectorAll(`.${menuStyles.menuListItem}`))
+      : []) as HTMLElement[];
 
   isValidFormat = (time: string) => {
     if (this.props.validateTime) {
@@ -324,21 +349,22 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     });
   };
 
-  onSelect = (selection: string) => {
+  onSelect = (e: any) => {
     const { timeRegex, timeState } = this.state;
     const { delimiter, is24Hour, includeSeconds } = this.props;
-    const time = parseTime(selection, timeRegex, delimiter, !is24Hour, includeSeconds);
-
+    const time = parseTime(e.target.textContent, timeRegex, delimiter, !is24Hour, includeSeconds);
     if (time !== timeState) {
       this.onInputChange(time);
     }
 
+    this.inputRef.current.focus();
     this.setState({
-      isOpen: false
+      isOpen: false,
+      isInvalid: false
     });
   };
 
-  onInputFocus = (e: any) => {
+  onInputClick = (e: any) => {
     if (!this.state.isOpen) {
       this.onToggle(true);
     }
@@ -360,8 +386,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     }
     this.scrollToSelection(newTime);
     this.setState({
-      timeState: newTime,
-      isInvalid: !this.isValid(newTime)
+      timeState: newTime
     });
   };
 
@@ -386,7 +411,6 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       is24Hour,
       invalidFormatErrorMessage,
       invalidMinMaxErrorMessage,
-      direction,
       stepMinutes,
       width,
       delimiter,
@@ -401,107 +425,80 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
-    const { timeState, isOpen, isInvalid, focusedIndex, minTimeState, maxTimeState } = this.state;
+    const { timeState, isOpen, isInvalid, minTimeState, maxTimeState } = this.state;
     const style = { '--pf-c-date-picker__input--c-form-control--Width': width } as React.CSSProperties;
-    const options = makeTimeOptions(stepMinutes, !is24Hour, delimiter, minTimeState, maxTimeState);
+    const options = makeTimeOptions(stepMinutes, !is24Hour, delimiter, minTimeState, maxTimeState, includeSeconds);
     const isValidFormat = this.isValidFormat(timeState);
     const randomId = id || getUniqueId('time-picker');
 
+    const getParentElement = () => {
+      if (this.baseComponentRef && this.baseComponentRef.current) {
+        return this.baseComponentRef.current.parentElement;
+      }
+      return null;
+    };
+
     const menuContainer = (
-      <ul
-        ref={this.menuRef}
-        className={css(styles.selectMenu)}
-        role="listbox"
-        aria-labelledby={`${id}-input`}
-        style={{ maxHeight: '200px', overflowY: 'auto' }}
-      >
-        {options.map((option, index) => (
-          <TimeOption
-            key={index}
-            value={option}
-            index={index}
-            onSelect={this.onSelect}
-            isFocused={index === focusedIndex}
-            id={`${id}-option-${index}`}
-          />
-        ))}
-      </ul>
+      <Menu ref={this.menuRef} isScrollable>
+        <MenuContent maxMenuHeight="200px">
+          <MenuList aria-label={ariaLabel}>
+            {options.map((option, index) => (
+              <MenuItem onClick={this.onSelect} key={option} id={`${randomId}-option-${index}`}>
+                {option}
+              </MenuItem>
+            ))}
+          </MenuList>
+        </MenuContent>
+      </Menu>
     );
 
-    const inputAndToggle = (
-      <div className={css(datePickerStyles.datePickerInput)} style={style} {...props}>
-        <InputGroup>
-          <div
-            className={css(
-              styles.select,
-              isOpen && styles.modifiers.expanded,
-              direction === SelectDirection.up && styles.modifiers.top,
-              className
-            )}
-            id={randomId}
-            ref={this.parentRef}
-          >
-            <div
-              ref={this.toggleRef}
-              className={css(styles.selectToggle, isDisabled && styles.modifiers.disabled, styles.modifiers.typeahead)}
-              style={{ paddingLeft: '0' }}
-            >
-              <TextInput
-                className={css(formStyles.formControl, styles.selectToggleTypeahead)}
-                id={`${randomId}-input`}
-                aria-label={ariaLabel}
-                validated={isInvalid ? 'error' : 'default'}
-                placeholder={placeholder}
-                value={timeState || ''}
-                type="text"
-                iconVariant="clock"
-                onClick={this.onInputFocus}
-                onFocus={this.onInputFocus}
-                onChange={this.onInputChange}
-                onBlur={this.onBlur}
-                autoComplete="off"
-                isDisabled={isDisabled}
-                ref={this.inputRef}
-                {...inputProps}
-              />
-            </div>
-            {isOpen && menuAppendTo === 'inline' && menuContainer}
-          </div>
-        </InputGroup>
-        {isInvalid && (
-          <div className={css(datePickerStyles.datePickerHelperText, datePickerStyles.modifiers.error)}>
-            {!isValidFormat ? invalidFormatErrorMessage : invalidMinMaxErrorMessage}
-          </div>
-        )}
-      </div>
-    );
-
-    const popperContainer = (
-      <div
-        className={css(
-          styles.select,
-          isOpen && styles.modifiers.expanded,
-          direction === SelectDirection.up && styles.modifiers.top,
-          className
-        )}
-      >
-        {isOpen && menuContainer}
-      </div>
+    const textInput = (
+      <TextInput
+        aria-haspopup="menu"
+        className={css(formStyles.formControl)}
+        id={`${randomId}-input`}
+        aria-label={ariaLabel}
+        validated={isInvalid ? 'error' : 'default'}
+        placeholder={placeholder}
+        value={timeState || ''}
+        type="text"
+        iconVariant="clock"
+        onClick={this.onInputClick}
+        onChange={this.onInputChange}
+        onBlur={this.onBlur}
+        autoComplete="off"
+        isDisabled={isDisabled}
+        ref={this.inputRef}
+        {...inputProps}
+      />
     );
 
     return (
-      <div className={css(datePickerStyles.datePicker, className)}>
-        {menuAppendTo === 'inline' ? (
-          inputAndToggle
-        ) : (
-          <Popper
-            trigger={inputAndToggle}
-            popper={popperContainer}
-            direction={direction}
-            appendTo={menuAppendTo}
-            isVisible={isOpen}
-          />
-        )}
+      <div ref={this.baseComponentRef} className={css(datePickerStyles.datePicker, className)}>
+        <div className={css(datePickerStyles.datePickerInput)} style={style} {...props}>
+          <InputGroup>
+            <div id={randomId}>
+              <div ref={this.toggleRef} style={{ paddingLeft: '0' }}>
+                {menuAppendTo !== 'inline' ? (
+                  <Popper
+                    appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
+                    trigger={textInput}
+                    popper={menuContainer}
+                    isVisible={isOpen}
+                  />
+                ) : (
+                  textInput
+                )}
+              </div>
+              {isOpen && menuAppendTo === 'inline' && menuContainer}
+            </div>
+          </InputGroup>
+          {isInvalid && (
+            <div className={css(datePickerStyles.datePickerHelperText, datePickerStyles.modifiers.error)}>
+              {!isValidFormat ? invalidFormatErrorMessage : invalidMinMaxErrorMessage}
+            </div>
+          )}
+        </div>
       </div>
     );
   }

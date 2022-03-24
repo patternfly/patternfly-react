@@ -1,62 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ChartLabel 1`] = `
-<VictoryLabel
-  backgroundComponent={<Rect />}
-  capHeight={0.71}
-  direction="inherit"
-  groupComponent={<g />}
-  lineHeight={1}
-  style={
-    Object {
-      "fontFamily": "var(--pf-chart-global--FontFamily)",
-      "fontSize": 14,
-      "letterSpacing": "var(--pf-chart-global--letter-spacing)",
-      "textAnchor": undefined,
-    }
-  }
-  textComponent={<Text />}
-  tspanComponent={<TSpan />}
-/>
-`;
+exports[`ChartLabel 1`] = `<div />`;
 
-exports[`ChartLabel 2`] = `
-<VictoryLabel
-  backgroundComponent={<Rect />}
-  capHeight={0.71}
-  direction="inherit"
-  groupComponent={<g />}
-  lineHeight={1}
-  style={
-    Object {
-      "fontFamily": "var(--pf-chart-global--FontFamily)",
-      "fontSize": 14,
-      "letterSpacing": "var(--pf-chart-global--letter-spacing)",
-      "textAnchor": undefined,
-    }
-  }
-  textComponent={<Text />}
-  tspanComponent={<TSpan />}
-/>
-`;
+exports[`ChartLabel 2`] = `<div />`;
 
 exports[`renders component text 1`] = `
-<VictoryLabel
-  backgroundComponent={<Rect />}
-  capHeight={0.71}
-  direction="inherit"
-  groupComponent={<g />}
-  lineHeight={1}
-  style={
-    Object {
-      "fontFamily": "var(--pf-chart-global--FontFamily)",
-      "fontSize": 14,
-      "letterSpacing": "var(--pf-chart-global--letter-spacing)",
-      "textAnchor": undefined,
-    }
-  }
-  text="This is a test"
-  textComponent={<Text />}
-  tspanComponent={<TSpan />}
-/>
+<div>
+  <text
+    direction="inherit"
+    dx="0"
+    x="0"
+    y="4.97"
+  >
+    <tspan
+      dx="0"
+      dy="0"
+      style="font-family: var(--pf-chart-global--FontFamily); font-size: 14px; letter-spacing: var(--pf-chart-global--letter-spacing); fill: #252525; stroke: transparent;"
+      text-anchor="start"
+      x="0"
+    >
+      This is a test
+    </tspan>
+  </text>
+</div>
 `;

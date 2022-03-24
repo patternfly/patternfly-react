@@ -6,7 +6,8 @@ import { ToolbarGroupProps } from './ToolbarGroup';
 import { ToolbarContext, ToolbarContentContext } from './ToolbarUtils';
 import { Button } from '../Button';
 import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/global_breakpoint_lg';
-import { formatBreakpointMods, toCamel, capitalize, canUseDOM } from '../../helpers/util';
+import { formatBreakpointMods, toCamel, canUseDOM } from '../../helpers/util';
+import { PageContext } from '../Page/Page';
 
 export interface ToolbarToggleGroupProps extends ToolbarGroupProps {
   /** An icon to be rendered when the toggle group has collapsed down */
@@ -92,61 +93,67 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
     }
 
     return (
-      <ToolbarContext.Consumer>
-        {({ isExpanded, toggleIsExpanded }) => (
-          <ToolbarContentContext.Consumer>
-            {({ expandableContentRef, expandableContentId }) => {
-              if (expandableContentRef.current && expandableContentRef.current.classList) {
-                if (isExpanded) {
-                  expandableContentRef.current.classList.add(styles.modifiers.expanded);
-                } else {
-                  expandableContentRef.current.classList.remove(styles.modifiers.expanded);
-                }
-              }
+      <PageContext.Consumer>
+        {({ width, getBreakpoint }) => (
+          <ToolbarContext.Consumer>
+            {({ isExpanded, toggleIsExpanded }) => (
+              <ToolbarContentContext.Consumer>
+                {({ expandableContentRef, expandableContentId }) => {
+                  if (expandableContentRef.current && expandableContentRef.current.classList) {
+                    if (isExpanded) {
+                      expandableContentRef.current.classList.add(styles.modifiers.expanded);
+                    } else {
+                      expandableContentRef.current.classList.remove(styles.modifiers.expanded);
+                    }
+                  }
 
-              return (
-                <div
-                  className={css(
-                    styles.toolbarGroup,
-                    styles.modifiers.toggleGroup,
-                    variant && styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
-                    breakpoint &&
-                      styles.modifiers[
-                        `showOn${capitalize(breakpoint.replace('2xl', '_2xl'))}` as
-                          | 'showOnMd'
-                          | 'showOnLg'
-                          | 'showOnXl'
-                          | 'showOn_2xl'
-                      ],
-                    formatBreakpointMods(visibility || visiblity, styles),
-                    formatBreakpointMods(alignment, styles),
-                    formatBreakpointMods(spacer, styles),
-                    formatBreakpointMods(spaceItems, styles),
-                    className
-                  )}
-                  {...props}
-                >
-                  <div className={css(styles.toolbarToggle)}>
-                    <Button
-                      variant="plain"
-                      onClick={toggleIsExpanded}
-                      aria-label="Show Filters"
-                      {...(isExpanded && { 'aria-expanded': true })}
-                      aria-haspopup={isExpanded && this.isContentPopup()}
-                      aria-controls={expandableContentId}
+                  const breakpointMod: {
+                    md?: 'show';
+                    lg?: 'show';
+                    xl?: 'show';
+                    '2xl'?: 'show';
+                  } = {};
+                  breakpointMod[breakpoint] = 'show';
+
+                  return (
+                    <div
+                      className={css(
+                        styles.toolbarGroup,
+                        styles.modifiers.toggleGroup,
+                        variant &&
+                          styles.modifiers[toCamel(variant) as 'filterGroup' | 'iconButtonGroup' | 'buttonGroup'],
+                        formatBreakpointMods(breakpointMod, styles, '', getBreakpoint(width)),
+                        formatBreakpointMods(visibility || visiblity, styles, '', getBreakpoint(width)),
+                        formatBreakpointMods(alignment, styles, '', getBreakpoint(width)),
+                        formatBreakpointMods(spacer, styles, '', getBreakpoint(width)),
+                        formatBreakpointMods(spaceItems, styles, '', getBreakpoint(width)),
+                        className
+                      )}
+                      {...props}
                     >
-                      {toggleIcon}
-                    </Button>
-                  </div>
-                  {isExpanded
-                    ? ReactDOM.createPortal(children, expandableContentRef.current.firstElementChild)
-                    : children}
-                </div>
-              );
-            }}
-          </ToolbarContentContext.Consumer>
+                      <div className={css(styles.toolbarToggle)}>
+                        <Button
+                          variant="plain"
+                          onClick={toggleIsExpanded}
+                          aria-label="Show Filters"
+                          {...(isExpanded && { 'aria-expanded': true })}
+                          aria-haspopup={isExpanded && this.isContentPopup()}
+                          aria-controls={expandableContentId}
+                        >
+                          {toggleIcon}
+                        </Button>
+                      </div>
+                      {isExpanded
+                        ? ReactDOM.createPortal(children, expandableContentRef.current.firstElementChild)
+                        : children}
+                    </div>
+                  );
+                }}
+              </ToolbarContentContext.Consumer>
+            )}
+          </ToolbarContext.Consumer>
         )}
-      </ToolbarContext.Consumer>
+      </PageContext.Consumer>
     );
   }
 }

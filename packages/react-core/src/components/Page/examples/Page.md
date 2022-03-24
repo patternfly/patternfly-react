@@ -195,7 +195,88 @@ TertiaryPage = () => {
 };
 ```
 
-### Main Section Padding
+### With or without fill
+
+```js
+import React from 'react';
+import {
+  Page,
+  Masthead,
+  MastheadToggle,
+  MastheadMain,
+  MastheadBrand,
+  MastheadContent,
+  PageSidebar,
+  PageSection,
+  PageToggleButton,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem
+} from '@patternfly/react-core';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+
+class FillPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isNavOpen: true
+    };
+    this.onNavToggle = () => {
+      this.setState({
+        isNavOpen: !this.state.isNavOpen
+      });
+    };
+  }
+
+  render() {
+    const { isNavOpen } = this.state;
+
+    const headerToolbar = (
+      <Toolbar id="toolbar">
+        <ToolbarContent>
+          <ToolbarItem>header-tools</ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    );
+
+    const Header = (
+      <Masthead>
+        <MastheadToggle>
+          <PageToggleButton
+            variant="plain"
+            aria-label="Global navigation"
+            isNavOpen={isNavOpen}
+            onNavToggle={this.onNavToggle}
+          >
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
+        <MastheadMain>
+          <MastheadBrand href="https://patternfly.org" onClick={() => console.log('clicked logo')} target="_blank">
+            Logo
+          </MastheadBrand>
+        </MastheadMain>
+        <MastheadContent>{headerToolbar}</MastheadContent>
+      </Masthead>
+    );
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
+
+    return (
+      <Page header={Header} sidebar={Sidebar}>
+        <PageSection>A default page section</PageSection>
+        <PageSection isFilled={true}>
+          This section fills the available space.
+        </PageSection>
+        <PageSection isFilled={false}>
+          This section is set to not fill the available space, since the last page section is set to fill the available space by default.
+        </PageSection>
+      </Page>
+    );
+  }
+}
+```
+
+### Main section padding
 
 ```js
 import React from 'react';
@@ -273,88 +354,6 @@ class VerticalPage extends React.Component {
         </PageSection>
         <PageSection variant={PageSectionVariants.light} padding={{ md: 'noPadding' }}>
           Section with no padding on medium
-        </PageSection>
-      </Page>
-    );
-  }
-}
-```
-
-### With or without fill
-
-```js
-import React from 'react';
-import {
-  Page,
-  Masthead,
-  MastheadToggle,
-  MastheadMain,
-  MastheadBrand,
-  MastheadContent,
-  PageSidebar,
-  PageSection,
-  PageToggleButton,
-  Toolbar,
-  ToolbarContent,
-  ToolbarItem
-} from '@patternfly/react-core';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
-
-class FillPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isNavOpen: true
-    };
-    this.onNavToggle = () => {
-      this.setState({
-        isNavOpen: !this.state.isNavOpen
-      });
-    };
-  }
-
-  render() {
-    const { isNavOpen } = this.state;
-
-    const headerToolbar = (
-      <Toolbar id="toolbar">
-        <ToolbarContent>
-          <ToolbarItem>header-tools</ToolbarItem>
-        </ToolbarContent>
-      </Toolbar>
-    );
-
-    const Header = (
-      <Masthead>
-        <MastheadToggle>
-          <PageToggleButton
-            variant="plain"
-            aria-label="Global navigation"
-            isNavOpen={isNavOpen}
-            onNavToggle={this.onNavToggle}
-          >
-            <BarsIcon />
-          </PageToggleButton>
-        </MastheadToggle>
-        <MastheadMain>
-          <MastheadBrand href="https://patternfly.org" onClick={() => console.log('clicked logo')} target="_blank">
-            Logo
-          </MastheadBrand>
-        </MastheadMain>
-        <MastheadContent>{headerToolbar}</MastheadContent>
-      </Masthead>
-    );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
-
-    return (
-      <Page header={Header} sidebar={Sidebar}>
-        <PageSection style={{ height: '10em' }}>This section is set to the default fill variant</PageSection>
-        <PageSection style={{ height: '10em' }} isFilled={true}>
-          This section fills the available space.
-        </PageSection>
-        <PageSection style={{ height: '10em' }} isFilled={false}>
-          {' '}
-          This section does not fill the available space.
         </PageSection>
       </Page>
     );
@@ -589,4 +588,60 @@ class VerticalPage extends React.Component {
     );
   }
 }
+```
+
+### Centered content
+
+```js
+import React from 'react';
+import {
+  Page,
+  Masthead,
+  MastheadToggle,
+  MastheadMain,
+  MastheadBrand,
+  MastheadContent,
+  PageSidebar,
+  PageSection,
+  PageSectionVariants,
+  PageToggleButton,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem
+} from '@patternfly/react-core';
+import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+
+CenterAlignedPageSection = () => {
+  const headerToolbar = (
+    <Toolbar id="toolbar">
+      <ToolbarContent>
+        <ToolbarItem>header-tools</ToolbarItem>
+      </ToolbarContent>
+    </Toolbar>
+  );
+
+  const Header = (
+    <Masthead>
+      <MastheadToggle>
+        <PageToggleButton variant="plain" aria-label="Global navigation" onNavToggle={this.onNavToggle}>
+          <BarsIcon />
+        </PageToggleButton>
+      </MastheadToggle>
+      <MastheadMain>
+        <MastheadBrand href="https://patternfly.org" onClick={() => console.log('clicked logo')} target="_blank">
+          Logo
+        </MastheadBrand>
+      </MastheadMain>
+      <MastheadContent>{headerToolbar}</MastheadContent>
+    </Masthead>
+  );
+
+  return (
+    <Page header={Header}>
+      <PageSection isWidthLimited isCenterAligned>
+        Page section width limited, centered.
+      </PageSection>
+    </Page>
+  );
+};
 ```

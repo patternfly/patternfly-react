@@ -8,12 +8,18 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 
 ## Demos
+
+- Focus must be manually managed when the NotificationDrawer component is opened:
+
+  1. Create a React `ref` and pass it into the NotificationDrawer component's `ref` attribute
+  2. Pass in a function to the `onNotificationDrawerExpand` prop of the Page component that will place focus on the first interact-able element inside the NotificationDrawer component via the previously created `ref`
 
 ### Basic
 
@@ -77,6 +83,7 @@ import { css } from '@patternfly/react-styles';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
@@ -85,6 +92,7 @@ import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 class BasicNotificationDrawer extends React.Component {
   constructor(props) {
     super(props);
+    this.drawerRef = React.createRef();
     this.state = {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
@@ -177,6 +185,11 @@ class BasicNotificationDrawer extends React.Component {
         showNotifications: showNotifications
       });
     };
+
+    this.focusDrawer = () => {
+      const firstTabbableItem = this.drawerRef.current.querySelector('a, button');
+      firstTabbableItem.focus();
+    };
   }
 
   render() {
@@ -257,7 +270,7 @@ class BasicNotificationDrawer extends React.Component {
                 </ToolbarItem>
                 <ToolbarItem>
                   <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-                    <HelpIcon />
+                    <QuestionCircleIcon />
                   </Button>
                 </ToolbarItem>
               </ToolbarGroup>
@@ -357,7 +370,7 @@ class BasicNotificationDrawer extends React.Component {
     ];
 
     const notificationDrawer = (
-      <NotificationDrawer>
+      <NotificationDrawer ref={this.drawerRef}>
         <NotificationDrawerHeader count={this.getNumberUnread()} onClose={this.onCloseNotificationDrawer}>
           <Dropdown
             onSelect={this.onSelect}
@@ -497,6 +510,7 @@ class BasicNotificationDrawer extends React.Component {
           sidebar={Sidebar}
           isManagedSidebar
           notificationDrawer={notificationDrawer}
+          onNotificationDrawerExpand={this.focusDrawer}
           isNotificationDrawerExpanded={isDrawerExpanded}
           skipToContent={PageSkipToContent}
           breadcrumb={PageBreadcrumb}
@@ -522,6 +536,8 @@ class BasicNotificationDrawer extends React.Component {
 ```
 
 ### Grouped
+
+When using the NotificationDrawerGroupList and related components, the function that is passed in to the `onNotificationDrawerExpand` prop on the Page component must also ensure the NotificationDrawer component only receives focus when it is initially opened. Otherwise any time a drawer group item is opened the NotificationDrawer component will receive focus, which would be unexpected behavior for users.
 
 ```js isFullscreen
 import React from 'react';
@@ -587,6 +603,7 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
@@ -594,6 +611,7 @@ import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 class GroupedNotificationDrawer extends React.Component {
   constructor(props) {
     super(props);
+    this.drawerRef = React.createRef();
     this.state = {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
@@ -733,6 +751,14 @@ class GroupedNotificationDrawer extends React.Component {
         thirdDrawerGroupExpanded: value
       });
     };
+
+    this.focusDrawer = () => {
+      // Prevent the NotificationDrawer from receiving focus if a drawer group item is opened
+      if (!document.activeElement.closest(`.${this.drawerRef.current.className}`)) {
+        const firstTabbableItem = this.drawerRef.current.querySelector('a, button');
+        firstTabbableItem.focus();
+      }
+    };
   }
 
   render() {
@@ -816,7 +842,7 @@ class GroupedNotificationDrawer extends React.Component {
                 </ToolbarItem>
                 <ToolbarItem>
                   <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-                    <HelpIcon />
+                    <QuestionCircleIcon />
                   </Button>
                 </ToolbarItem>
               </ToolbarGroup>
@@ -916,7 +942,7 @@ class GroupedNotificationDrawer extends React.Component {
     ];
 
     const notificationDrawer = (
-      <NotificationDrawer>
+      <NotificationDrawer ref={this.drawerRef}>
         <NotificationDrawerHeader count={this.getNumberUnread()} onClose={this.onCloseNotificationDrawer}>
           <Dropdown
             onSelect={this.onSelect}
@@ -1211,6 +1237,7 @@ class GroupedNotificationDrawer extends React.Component {
           isManagedSidebar
           notificationDrawer={notificationDrawer}
           isNotificationDrawerExpanded={isDrawerExpanded}
+          onNotificationDrawerExpand={this.focusDrawer}
           skipToContent={PageSkipToContent}
           breadcrumb={PageBreadcrumb}
           mainContainerId={pageId}

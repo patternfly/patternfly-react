@@ -146,4 +146,4 @@ yarn test packages/react-table
 ```
 
 [patternfly-4]: https://github.com/patternfly/patternfly-next
-[docs]: https://patternfly-react.surge.sh
+[docs]: https://patternfly-react-main.surge.sh

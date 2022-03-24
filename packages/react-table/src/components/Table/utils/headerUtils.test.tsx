@@ -1,5 +1,6 @@
 import { calculateColumns, mapOpenedRows } from './headerUtils';
 import { ICell, IRow } from '../TableTypes';
+import { HeaderType } from '../base/types';
 
 describe('headerUtils', () => {
   describe('calculateColumns', () => {
@@ -9,7 +10,7 @@ describe('headerUtils', () => {
       expect(collapsibleTransfroms[0].cell.formatters[0].name).toBe('defaultTitle');
       expect(collapsibleTransfroms[0].cell.transforms).toHaveLength(3);
       expect(collapsibleTransfroms[0].extraParams.onCollapse).toBeDefined();
-      expect(collapsibleTransfroms[0].header.transforms).toHaveLength(3);
+      expect(collapsibleTransfroms[0].header.transforms).toHaveLength(2);
       expect(collapsibleTransfroms[1].cell.transforms).toHaveLength(3);
       expect(collapsibleTransfroms[1].cell.transforms.find(transform => transform.name === 'parentId')).toBeDefined();
       expect(
@@ -80,7 +81,7 @@ describe('headerUtils', () => {
             {
               header: {
                 someData: 'test'
-              }
+              } as HeaderType
             }
           ] as ICell[],
           {}

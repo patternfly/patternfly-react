@@ -114,11 +114,7 @@ export const ComposableTableNestedHeaders: React.FunctionComponent = () => {
 
   return (
     <InnerScrollContainer>
-      <TableComposable
-        aria-label="Nested column headers table"
-        gridBreakPoint=""
-        nestedHeaderColumnSpans={[3, 2, 1, 1, 1, 1]}
-      >
+      <TableComposable aria-label="Nested column headers table" gridBreakPoint="">
         <Thead hasNestedHeader>
           <Tr>
             <Th hasRightBorder colSpan={3}>

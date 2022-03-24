@@ -55,9 +55,9 @@ export class ChipGroupDefaultIsOpenDemo extends Component<{}, BadgeChipState> {
   render() {
     const { badgeChipArray } = this.state;
     return (
-      <ChipGroup defaultIsOpen>
+      <ChipGroup id="demo-chip-group" defaultIsOpen>
         {badgeChipArray.map(chip => (
-          <Chip key={chip.name} onClick={() => this.deleteItem(chip.name)}>
+          <Chip id={`chip-${chip.name}`} key={chip.name} onClick={() => this.deleteItem(chip.name)}>
             {chip.name}
             <Badge isRead={chip.isRead}>{chip.count}</Badge>
           </Chip>

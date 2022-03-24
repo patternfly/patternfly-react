@@ -16,6 +16,11 @@ propComponents:
 
 import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, DescriptionListGroup, DescriptionListTermHelpText, DescriptionListTermHelpTextButton, Popover } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import BookIcon from '@patternfly/react-icons/dist/esm/icons/book-icon';
+import KeyIcon from '@patternfly/react-icons/dist/esm/icons/key-icon';
+import GlobeIcon from '@patternfly/react-icons/dist/esm/icons/globe-icon';
+import FlagIcon from '@patternfly/react-icons/dist/esm/icons/flag-icon';
 
 ## Examples
 
@@ -234,34 +239,93 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-<DescriptionList isHorizontal>
-  <DescriptionListGroup>
-    <DescriptionListTerm>Name</DescriptionListTerm>
-    <DescriptionListDescription>Example</DescriptionListDescription>
-  </DescriptionListGroup>
-  <DescriptionListGroup>
-    <DescriptionListTerm>Namespace</DescriptionListTerm>
-    <DescriptionListDescription>
-      <a href="#">mary-test</a>
-    </DescriptionListDescription>
-  </DescriptionListGroup>
-  <DescriptionListGroup>
-    <DescriptionListTerm>Labels</DescriptionListTerm>
-    <DescriptionListDescription>example</DescriptionListDescription>
-  </DescriptionListGroup>
-  <DescriptionListGroup>
-    <DescriptionListTerm>Pod selector</DescriptionListTerm>
-    <DescriptionListDescription>
-      <Button variant="link" isInline icon={<PlusCircleIcon />}>
-        app=MyApp
-      </Button>
-    </DescriptionListDescription>
-  </DescriptionListGroup>
-  <DescriptionListGroup>
-    <DescriptionListTerm>Annotation</DescriptionListTerm>
-    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
-  </DescriptionListGroup>
-</DescriptionList>;
+const DescriptionListHorizontal = () => {
+  return (
+    <DescriptionList isHorizontal>
+      <DescriptionListGroup>
+        <DescriptionListTerm>Name</DescriptionListTerm>
+        <DescriptionListDescription>Example</DescriptionListDescription>
+      </DescriptionListGroup>
+      <DescriptionListGroup>
+        <DescriptionListTerm>Namespace</DescriptionListTerm>
+        <DescriptionListDescription>
+          <a href="#">mary-test</a>
+        </DescriptionListDescription>
+      </DescriptionListGroup>
+      <DescriptionListGroup>
+        <DescriptionListTerm>Labels</DescriptionListTerm>
+        <DescriptionListDescription>example</DescriptionListDescription>
+      </DescriptionListGroup>
+      <DescriptionListGroup>
+        <DescriptionListTerm>Pod selector</DescriptionListTerm>
+        <DescriptionListDescription>
+          <Button variant="link" isInline icon={<PlusCircleIcon />}>
+            app=MyApp
+          </Button>
+        </DescriptionListDescription>
+      </DescriptionListGroup>
+      <DescriptionListGroup>
+        <DescriptionListTerm>Annotation</DescriptionListTerm>
+        <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+      </DescriptionListGroup>
+    </DescriptionList>
+  )
+}
+```
+
+### Horizontal using custom term width modifier
+
+```js
+import React from 'react';
+import {
+  Button,
+  DescriptionList,
+  DescriptionListTerm,
+  DescriptionListText,
+  DescriptionListGroup,
+  DescriptionListDescription,
+} from '@patternfly/react-core';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+
+const DescriptionListHorizontalTermWidthModifier = () => {
+  return (
+    <DescriptionList isHorizontal horizontalTermWidthModifier={{
+      default: '12ch',
+      sm: '15ch',
+      md: '20ch',
+      lg: '28ch',
+      xl: '30ch',
+      '2xl': '35ch'
+      }}>
+      <DescriptionListGroup>
+        <DescriptionListTerm>Name longer than the default term width</DescriptionListTerm>
+        <DescriptionListDescription>Example</DescriptionListDescription>
+      </DescriptionListGroup>
+      <DescriptionListGroup>
+        <DescriptionListTerm>Namespace</DescriptionListTerm>
+        <DescriptionListDescription>
+          <a href="#">mary-test</a>
+        </DescriptionListDescription>
+      </DescriptionListGroup>
+      <DescriptionListGroup>
+        <DescriptionListTerm>Labels</DescriptionListTerm>
+        <DescriptionListDescription>example</DescriptionListDescription>
+      </DescriptionListGroup>
+      <DescriptionListGroup>
+        <DescriptionListTerm>Pod selector</DescriptionListTerm>
+        <DescriptionListDescription>
+          <Button variant="link" isInline icon={<PlusCircleIcon />}>
+            app=MyApp
+          </Button>
+        </DescriptionListDescription>
+      </DescriptionListGroup>
+      <DescriptionListGroup>
+        <DescriptionListTerm>Annotation</DescriptionListTerm>
+        <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+      </DescriptionListGroup>
+    </DescriptionList>
+  )
+}
 ```
 
 ### Horizontal 2 col
@@ -933,6 +997,56 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-i
   </DescriptionListGroup>
   <DescriptionListGroup>
     <DescriptionListTerm>Annotation</DescriptionListTerm>
+    <DescriptionListDescription>2 Annotations</DescriptionListDescription>
+  </DescriptionListGroup>
+</DescriptionList>;
+```
+
+## With icons
+
+### Icons on terms
+
+```js
+import React from 'react';
+import {
+  Button,
+  DescriptionList,
+  DescriptionListTerm,
+  DescriptionListGroup,
+  DescriptionListDescription
+} from '@patternfly/react-core';
+import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import BookIcon from '@patternfly/react-icons/dist/esm/icons/book-icon';
+import KeyIcon from '@patternfly/react-icons/dist/esm/icons/key-icon';
+import GlobeIcon from '@patternfly/react-icons/dist/esm/icons/globe-icon';
+import FlagIcon from '@patternfly/react-icons/dist/esm/icons/flag-icon';
+
+<DescriptionList>
+  <DescriptionListGroup>
+    <DescriptionListTerm icon={<CubeIcon />}>Name</DescriptionListTerm>
+    <DescriptionListDescription>Example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm icon={<BookIcon />}>Namespace</DescriptionListTerm>
+    <DescriptionListDescription>
+      <a href="#">mary-test</a>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm icon={<KeyIcon />}>Labels</DescriptionListTerm>
+    <DescriptionListDescription>example</DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm icon={<GlobeIcon />}>Pod selector</DescriptionListTerm>
+    <DescriptionListDescription>
+      <Button variant="link" isInline icon={<PlusCircleIcon />}>
+        app=MyApp
+      </Button>
+    </DescriptionListDescription>
+  </DescriptionListGroup>
+  <DescriptionListGroup>
+    <DescriptionListTerm icon={<FlagIcon />}>Annotation</DescriptionListTerm>
     <DescriptionListDescription>2 Annotations</DescriptionListDescription>
   </DescriptionListGroup>
 </DescriptionList>;

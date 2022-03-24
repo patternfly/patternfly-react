@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import { Switch } from '../Switch';
 
@@ -19,45 +20,45 @@ test('switch label id is auto generated', () => {
 });
 
 test('switch is checked', () => {
-  const view = mount(<Switch id="switch-is-checked" label="On" labelOff="Off" isChecked />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Switch id="switch-is-checked" label="On" labelOff="Off" isChecked />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('switch is not checked', () => {
-  const view = mount(<Switch id="switch-is-not-checked" label="On" labelOff="Off" isChecked={false} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Switch id="switch-is-not-checked" label="On" labelOff="Off" isChecked={false} />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('switch with only label is checked', () => {
   const check = true;
-  const view = mount(<Switch id="switch-is-checked" label={check ? 'On' : 'Off'} isChecked={check} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Switch id="switch-is-checked" label={check ? 'On' : 'Off'} isChecked={check} />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('switch with only label is not checked', () => {
   const check = false;
-  const view = mount(<Switch id="switch-is-not-checked" label={check ? 'On' : 'Off'} isChecked={check} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Switch id="switch-is-not-checked" label={check ? 'On' : 'Off'} isChecked={check} />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('no label switch is checked', () => {
-  const view = mount(<Switch id="no-label-switch-is-checked" isChecked />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Switch id="no-label-switch-is-checked" isChecked />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('no label switch is not checked', () => {
-  const view = mount(<Switch id="no-label-switch-is-not-checked" isChecked={false} />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Switch id="no-label-switch-is-not-checked" isChecked={false} />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('switch is checked and disabled', () => {
-  const view = mount(<Switch id="switch-is-checked-and-disabled" isChecked isDisabled />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Switch id="switch-is-checked-and-disabled" isChecked isDisabled />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('switch is not checked and disabled', () => {
-  const view = mount(<Switch id="switch-is-not-checked-and-disabled" isChecked={false} isDisabled />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Switch id="switch-is-not-checked-and-disabled" isChecked={false} isDisabled />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('switch passes value and event to onChange handler', () => {

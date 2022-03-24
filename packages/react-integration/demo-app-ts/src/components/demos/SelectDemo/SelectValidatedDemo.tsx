@@ -65,7 +65,7 @@ export class SelectValidatedDemo extends Component<SelectValidatedDemoState> {
     const titleId = 'validated-select-id';
 
     return (
-      <div>
+      <div id="select-validated-demo">
         <StackItem isFilled={false}>
           <Title headingLevel="h2" size="2xl">
             Validated Select

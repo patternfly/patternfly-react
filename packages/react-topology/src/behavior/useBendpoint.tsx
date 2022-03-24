@@ -82,7 +82,7 @@ export interface WithBendpointProps {
   dragNodeRef: WithDndDragProps['dndDragRef'];
 }
 
-export const WithBendpoint = <DropResult, CollectedProps, Props = {}>(
+export const withBendpoint = <DropResult, CollectedProps, Props = {}>(
   spec?: Omit<
     DragSourceSpec<DragObjectWithType, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps, Props>,
     'type'
@@ -92,5 +92,11 @@ export const WithBendpoint = <DropResult, CollectedProps, Props = {}>(
     const [dragProps, bendpointRef] = useBendpoint(props.point, spec as any, props);
     return <WrappedComponent {...(props as any)} bendpointRef={bendpointRef} {...dragProps} />;
   };
+  Component.displayName = `withBendpoint(${WrappedComponent.displayName || WrappedComponent.name})`;
   return observer(Component);
 };
+
+/**
+ * @deprecated Use withBendpoint instead
+ */
+export const WithBendpoint = withBendpoint;

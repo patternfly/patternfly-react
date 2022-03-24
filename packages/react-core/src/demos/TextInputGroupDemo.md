@@ -26,7 +26,7 @@ Attributes can be deselected (returning you to attribute selection mode) by hitt
 
 ```ts file="./examples/TextInputGroup/AttributeValueFiltering.tsx"
 ```
-### Auto-complete search
+### Auto-complete search with typeahead
 
 This demo showcases a search input with suggestions, which filters possible selections based on the text you've entered. Unlike the attribute-value filtering demo, it allows creation of new chip items when the text entered is not available in the list of suggestions.
 
@@ -34,7 +34,7 @@ The current text in the input can be converted to a chip at any time by hitting 
 
 Hitting `escape` while focused on the input or menu will close the menu, and the menu will reopen when text is entered.
 
-When only one item remains in the suggestion list, tab can be used to auto-complete the typing of that item.
+When only one item remains in the suggestion list, a typeahead hint will show and tab can be used to auto-complete the typing of that item.
 
 ```ts file="./examples/TextInputGroup/AutoCompleteSearch.tsx"
 ```

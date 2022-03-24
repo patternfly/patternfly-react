@@ -1,5 +1,8 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import { ContextSelector } from '../ContextSelector';
 import { ContextSelectorItem } from '../ContextSelectorItem';
 
@@ -11,22 +14,26 @@ const items = [
   <ContextSelectorItem key="4">Azure</ContextSelectorItem>
 ];
 
-test('Renders ContextSelector', () => {
-  const view = shallow(<ContextSelector> {items} </ContextSelector>);
-  expect(view).toMatchSnapshot();
-});
+describe('ContextSelector', () => {
+  test('Renders ContextSelector', () => {
+    render(<ContextSelector data-testid="context-test-id">{items}</ContextSelector>);
+    expect(screen.getByTestId('context-test-id').outerHTML).toMatchSnapshot();
+  });
 
-test('Renders ContextSelector open', () => {
-  const view = shallow(<ContextSelector isOpen> {items} </ContextSelector>);
-  expect(view).toMatchSnapshot();
-});
+  test('Renders ContextSelector open', () => {
+    render(
+      <ContextSelector isOpen data-testid="context-test-id">
+        {items}
+      </ContextSelector>
+    );
+    expect(screen.getByTestId('context-test-id').outerHTML).toMatchSnapshot();
+  });
 
-test('Verify onToggle is called ', () => {
-  const mockfn = jest.fn();
-  const view = mount(<ContextSelector onToggle={mockfn}> {items} </ContextSelector>);
-  view
-    .find('button')
-    .at(0)
-    .simulate('click');
-  expect(mockfn.mock.calls).toHaveLength(1);
+  test('Verify onToggle is called ', () => {
+    const mockfn = jest.fn();
+    render(<ContextSelector onToggle={mockfn}>{items}</ContextSelector>);
+
+    userEvent.click(screen.getByRole('button'));
+    expect(mockfn.mock.calls).toHaveLength(1);
+  });
 });

@@ -237,7 +237,7 @@ export const withCreateConnector = <P extends WithCreateConnectorProps & Element
   ConnectorComponent: CreateConnectorRenderer = DefaultCreateConnector,
   contextMenuClass?: string,
   options?: CreateConnectorOptions
-) => (WrappedComponent: React.ComponentType<P>) => {
+) => (WrappedComponent: React.ComponentType<Partial<P>>) => {
   const Component: React.FC<Omit<P, keyof WithCreateConnectorProps>> = props => {
     const [show, setShow] = React.useState(false);
     const [alive, setKeepAlive] = React.useState(false);
@@ -264,5 +264,6 @@ export const withCreateConnector = <P extends WithCreateConnectorProps & Element
       </>
     );
   };
+  Component.displayName = `withCreateConnector(${WrappedComponent.displayName || WrappedComponent.name})`;
   return observer(Component);
 };

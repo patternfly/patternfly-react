@@ -1,67 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`dropdown items a 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
+exports[`InternalDropdownItem dropdown items a 1`] = `"<a class=\\"\\">Something</a>"`;
 
-exports[`dropdown items aria-disabled a 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
+exports[`InternalDropdownItem dropdown items aria-disabled a 1`] = `"<a aria-disabled=\\"true\\" class=\\"pf-m-aria-disabled\\">Something</a>"`;
 
-exports[`dropdown items aria-disabled button 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
+exports[`InternalDropdownItem dropdown items aria-disabled button 1`] = `"<button aria-disabled=\\"true\\" type=\\"button\\" class=\\"pf-m-aria-disabled\\">Something</button>"`;
 
-exports[`dropdown items button 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
+exports[`InternalDropdownItem dropdown items button 1`] = `"<button type=\\"button\\" class=\\"\\">Something</button>"`;
 
-exports[`dropdown items description a 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
+exports[`InternalDropdownItem dropdown items description a 1`] = `"<div class=\\"pf-c-dropdown__menu-item-description\\">Something's link description</div>"`;
 
-exports[`dropdown items description button 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
+exports[`InternalDropdownItem dropdown items description button 1`] = `"<div class=\\"pf-c-dropdown__menu-item-description\\">Something's button description</div>"`;
 
-exports[`dropdown items disabled a 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
+exports[`InternalDropdownItem dropdown items disabled a 1`] = `"<a aria-disabled=\\"true\\" class=\\"\\">Something</a>"`;
 
-exports[`dropdown items disabled button 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
+exports[`InternalDropdownItem dropdown items disabled button 1`] = `"<button aria-disabled=\\"true\\" type=\\"button\\" class=\\"\\">Something</button>"`;
 
-exports[`dropdown items hover a 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
+exports[`InternalDropdownItem dropdown items hover a 1`] = `"<a class=\\"\\">Something</a>"`;
 
-exports[`dropdown items hover button 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
-
-exports[`dropdown items separator 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
+exports[`InternalDropdownItem dropdown items hover button 1`] = `"<button type=\\"button\\" class=\\"\\">Something</button>"`;

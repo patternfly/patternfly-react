@@ -113,7 +113,7 @@ export class Progress extends React.Component<ProgressProps> {
       );
     }
 
-    const scaledValue = Math.min(100, Math.max(0, Math.floor(((value - min) / (max - min)) * 100)));
+    const scaledValue = Math.min(100, Math.max(0, Math.floor(((value - min) / (max - min)) * 100))) || 0;
     return (
       <div
         {...props}

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { DataListContext } from './DataList';
-import { KeyTypes } from '../Select';
+import { KeyTypes } from '../../helpers/constants';
 import { DataListDragButton, DataListDragButtonProps } from './DataListDragButton';
 
 export interface DataListItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'children' | 'ref'> {

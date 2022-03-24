@@ -6,7 +6,9 @@ propComponents: ['TextInput']
 ---
 
 ## Examples
+
 ### Basic
+
 ```js
 import React from 'react';
 import { TextInput } from '@patternfly/react-core';
@@ -139,37 +141,112 @@ TextInputSelectAll = () => {
 ```
 
 ### Icon variants
+
 ```js
 import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
-class SimpleTextInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      calendar: '',
-      clock: '',
-      custom: ''
-    };
-    this.handleTextInputChange = (value, field) => {
-      this.setState({ [field]: value });
-    };
-  }
+SimpleTextInput = () => {
+  const [calendar, setCalendar] = React.useState('');
+  const [clock, setClock] = React.useState('');
+  const [custom, setCustom] = React.useState('');
 
-  render() {
-    const { calendar, clock, custom } = this.state;
+  return (
+    <>
+      <TextInput
+        value={calendar}
+        type="text"
+        iconVariant="calendar"
+        onChange={value => setCalendar(value)}
+        aria-label="text input example"
+      />
+      <br />
+      <br />
+      <TextInput
+        value={clock}
+        type="text"
+        iconVariant="clock"
+        onChange={value => setClock(value)}
+        aria-label="text input example"
+      />
+      <br />
+      <br />
+      <TextInput
+        value={custom}
+        type="text"
+        customIconDimensions="24px 24px"
+        customIconUrl='data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"%3E%3Cpath fill="%23a18fff" d="M158.87.15c-16.16-1.52-31.2 8.42-35.33 24.12l-14.81 56.27c187.62 5.49 314.54 130.61 322.48 317l56.94-15.78c15.72-4.36 25.49-19.68 23.62-35.9C490.89 165.08 340.78 17.32 158.87.15zm-58.47 112L.55 491.64a16.21 16.21 0 0 0 20 19.75l379-105.1c-4.27-174.89-123.08-292.14-299.15-294.1zM128 416a32 32 0 1 1 32-32 32 32 0 0 1-32 32zm48-152a32 32 0 1 1 32-32 32 32 0 0 1-32 32zm104 104a32 32 0 1 1 32-32 32 32 0 0 1-32 32z"/%3E%3C/svg%3E'
+        onChange={value => setCustom(value)}
+        aria-label="text input example"
+      />
+    </>
+  );
+};
+```
 
-    return (
-      <>
-        <TextInput value={calendar} type="text" iconVariant='calendar' onChange={(value) => this.handleTextInputChange(value, "calendar")} aria-label="text input example" />
-        <br />
-        <br />
-        <TextInput value={clock} type="text" iconVariant='clock' onChange={(value) => this.handleTextInputChange(value, "clock")} aria-label="text input example" />
-        <br />
-        <br />
-        <TextInput value={custom} type="text" customIconDimensions='24px 24px' customIconUrl='data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"%3E%3Cpath fill="%23a18fff" d="M158.87.15c-16.16-1.52-31.2 8.42-35.33 24.12l-14.81 56.27c187.62 5.49 314.54 130.61 322.48 317l56.94-15.78c15.72-4.36 25.49-19.68 23.62-35.9C490.89 165.08 340.78 17.32 158.87.15zm-58.47 112L.55 491.64a16.21 16.21 0 0 0 20 19.75l379-105.1c-4.27-174.89-123.08-292.14-299.15-294.1zM128 416a32 32 0 1 1 32-32 32 32 0 0 1-32 32zm48-152a32 32 0 1 1 32-32 32 32 0 0 1-32 32zm104 104a32 32 0 1 1 32-32 32 32 0 0 1-32 32z"/%3E%3C/svg%3E' onChange={(value) => this.handleTextInputChange(value, "custom")} aria-label="text input example" />
-      </>
-    );
-  }
-}
+### Icon sprite variants
+
+**Note:** The icons for the success, invalid, calendar, etc. variations in form control elements are applied as background images to the form element. By default, the image URLs for these icons are data URIs. However, there may be cases where data URIs are not ideal, such as in an application with a content security policy that disallows data URIs for security reasons. The `isIconSprite` variation changes the icon source to an external SVG file that serves as a sprite for all of the supported icons.
+
+```js isBeta
+import React from 'react';
+import { TextInput } from '@patternfly/react-core';
+
+IconSpriteTextInputs = () => {
+  const [success, setSuccess] = React.useState('');
+  const [warning, setWarning] = React.useState('');
+  const [error, setError] = React.useState('');
+  const [calendar, setCalendar] = React.useState('');
+  const [clock, setClock] = React.useState('');
+
+  return (
+    <>
+      <TextInput
+        validated={ValidatedOptions.success}
+        isIconSprite
+        type="text"
+        onChange={value => setSuccess(value)}
+        aria-label="success icon sprite text input example"
+      />
+      <br />
+      <br />
+      <TextInput
+        validated={ValidatedOptions.warning}
+        isIconSprite
+        type="text"
+        onChange={value => setWarning(value)}
+        aria-label="warning icon sprite text input example"
+      />
+      <br />
+      <br />
+      <TextInput
+        validated={ValidatedOptions.error}
+        isIconSprite
+        type="text"
+        onChange={value => setError(value)}
+        aria-label="error icon sprite text input example"
+      />
+      <br />
+      <br />
+      <TextInput
+        value={calendar}
+        isIconSprite
+        type="text"
+        iconVariant="calendar"
+        onChange={value => setCalendar(value)}
+        aria-label="calendar icon sprite text input example"
+      />
+      <br />
+      <br />
+      <TextInput
+        value={clock}
+        isIconSprite
+        type="text"
+        iconVariant="clock"
+        onChange={value => setClock(value)}
+        aria-label="clock icon sprite text input example"
+      />
+    </>
+  );
+};
 ```

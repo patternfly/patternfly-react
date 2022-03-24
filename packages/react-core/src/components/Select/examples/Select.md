@@ -299,7 +299,9 @@ class GroupedSingleSelectInput extends React.Component {
   }
 }
 ```
+
 ### Validated
+
 ```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
@@ -384,12 +386,15 @@ class ValidatedSelect extends React.Component {
         >
           {this.options}
         </Select>
-        <div aria-live="polite" id="validated-helper" hidden>{validated}</div>
+        <div aria-live="polite" id="validated-helper" hidden>
+          {validated}
+        </div>
       </div>
     );
   }
 }
 ```
+
 ### Checkbox input
 
 ```js
@@ -467,6 +472,7 @@ class CheckboxSelectInput extends React.Component {
   }
 }
 ```
+
 ### Checkbox input with counts
 
 ```js
@@ -719,7 +725,7 @@ class FilteringSingleSelectInput extends React.Component {
       selected: '',
       isCreatable: false,
       isInputValuePersisted: false,
-      isInputFilterPersisted: false,
+      isInputFilterPersisted: false
     };
 
     this.options = [
@@ -742,8 +748,7 @@ class FilteringSingleSelectInput extends React.Component {
     };
 
     this.onSelect = (event, selection) => {
-      this.setState({ selected: selection, isOpen: false }),
-      console.log('selected: ', selection);
+      this.setState({ selected: selection, isOpen: false }), console.log('selected: ', selection);
     };
 
     this.onFilter = (_, textInput) => {
@@ -784,7 +789,14 @@ class FilteringSingleSelectInput extends React.Component {
   }
 
   render() {
-    const { isOpen, selected, filteredOptions, isInputValuePersisted, isInputFilterPersisted, isCreatable } = this.state;
+    const {
+      isOpen,
+      selected,
+      filteredOptions,
+      isInputValuePersisted,
+      isInputFilterPersisted,
+      isCreatable
+    } = this.state;
     const titleId = 'single-filtering-select-id';
     return (
       <div>
@@ -1199,7 +1211,8 @@ class TypeaheadSelectInput extends React.Component {
       isCreatable: false,
       isInputValuePersisted: false,
       isInputFilterPersisted: false,
-      hasOnCreateOption: false
+      hasOnCreateOption: false,
+      resetOnSelect: true
     };
 
     this.onToggle = isOpen => {
@@ -1213,7 +1226,7 @@ class TypeaheadSelectInput extends React.Component {
       else {
         this.setState({
           selected: selection,
-          isOpen: false
+          isOpen: this.state.resetOnSelect ? false : this.state.isOpen
         });
         console.log('selected:', selection);
       }
@@ -1262,10 +1275,26 @@ class TypeaheadSelectInput extends React.Component {
         isInputFilterPersisted: checked
       });
     };
+
+    this.toggleResetOnSelect = checked => {
+      this.setState({
+        resetOnSelect: checked
+      });
+    };
   }
 
   render() {
-    const { isOpen, selected, isDisabled, isCreatable, hasOnCreateOption, isInputValuePersisted, isInputFilterPersisted, options } = this.state;
+    const {
+      isOpen,
+      selected,
+      isDisabled,
+      isCreatable,
+      hasOnCreateOption,
+      isInputValuePersisted,
+      isInputFilterPersisted,
+      resetOnSelect,
+      options
+    } = this.state;
     const titleId = 'typeahead-select-id-1';
     return (
       <div>
@@ -1287,6 +1316,7 @@ class TypeaheadSelectInput extends React.Component {
           isDisabled={isDisabled}
           isCreatable={isCreatable}
           onCreateOption={(hasOnCreateOption && this.onCreateOption) || undefined}
+          shouldResetOnSelect={resetOnSelect}
         >
           {options.map((option, index) => (
             <SelectOption
@@ -1336,6 +1366,14 @@ class TypeaheadSelectInput extends React.Component {
           aria-label="toggle input filter persisted"
           id="toggle-input-filter-persisted"
           name="toggle-input-filter-persisted"
+        />
+        <Checkbox
+          label="shouldResetOnSelect"
+          isChecked={this.state.resetOnSelect}
+          onChange={this.toggleResetOnSelect}
+          aria-label="toggle reset checkbox"
+          id="toggle-reset-typeahead"
+          name="toggle-reset-typeahead"
         />
       </div>
     );
@@ -1580,7 +1618,8 @@ class MultiTypeaheadSelectInput extends React.Component {
       selected: [],
       isCreatable: false,
       hasOnCreateOption: false,
-      hasDisabledOption: false
+      hasDisabledOption: false,
+      resetOnSelect: true
     };
 
     this.onCreateOption = newValue => {
@@ -1629,18 +1668,24 @@ class MultiTypeaheadSelectInput extends React.Component {
       });
     };
 
-    this.toggleOptionDisabled = (toggleIndex) => () => {
+    this.toggleOptionDisabled = toggleIndex => () => {
       this.setState(prevState => ({
         hasDisabledOption: !prevState.hasDisabledOption,
         options: prevState.options.map((option, index) =>
           index === toggleIndex ? { ...option, disabled: !option.disabled } : option
-        ),
+        )
       }));
+    };
+
+    this.toggleResetOnSelect = checked => {
+      this.setState({
+        resetOnSelect: checked
+      });
     };
   }
 
   render() {
-    const { isOpen, selected, isCreatable, hasOnCreateOption, options } = this.state;
+    const { isOpen, selected, isCreatable, hasOnCreateOption, resetOnSelect, options } = this.state;
     const titleId = 'multi-typeahead-select-id-1';
 
     return (
@@ -1660,6 +1705,7 @@ class MultiTypeaheadSelectInput extends React.Component {
           placeholderText="Select a state"
           isCreatable={isCreatable}
           onCreateOption={(hasOnCreateOption && this.onCreateOption) || undefined}
+          shouldResetOnSelect={resetOnSelect}
         >
           {options.map((option, index) => (
             <SelectOption
@@ -1693,6 +1739,14 @@ class MultiTypeaheadSelectInput extends React.Component {
           aria-label="toggle disable first option"
           id="toggle-disable-first-option"
           name="toggle-disable-first-option"
+        />
+        <Checkbox
+          label="shouldResetOnSelect"
+          isChecked={this.state.resetOnSelect}
+          onChange={this.toggleResetOnSelect}
+          aria-label="toggle multi reset checkbox"
+          id="toggle-reset-multi-typeahead"
+          name="toggle-reset-multi-typeahead"
         />
       </div>
     );
@@ -2379,8 +2433,6 @@ class SelectWithFooter extends React.Component {
     };
   }
 
-
-
   render() {
     const { isOpen, selected, isDisabled, direction, isToggleIcon } = this.state;
     const titleId = 'title-id-footer';
@@ -2400,7 +2452,13 @@ class SelectWithFooter extends React.Component {
           aria-labelledby={titleId}
           isDisabled={isDisabled}
           direction={direction}
-          footer={<Button variant="link" isInline>Action</Button>}
+          footer={
+            <>
+              <Button variant="link" isInline>
+                Action
+              </Button>
+            </>
+          }
         >
           {this.options}
         </Select>
@@ -2479,7 +2537,11 @@ class SelectWithFooterCheckbox extends React.Component {
           isOpen={isOpen}
           placeholderText="Filter by status"
           aria-labelledby={titleId}
-          footer={<Button variant="link" isInline>Action</Button>}
+          footer={
+            <Button variant="link" isInline>
+              Action
+            </Button>
+          }
         >
           {this.options}
         </Select>
@@ -2493,11 +2555,7 @@ class SelectWithFooterCheckbox extends React.Component {
 
 ```js isBeta
 import React from 'react';
-import {
-  Select,
-  SelectOption,
-  SelectVariant
-} from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
 class SelectViewMore extends React.Component {
   constructor(props) {
@@ -2574,7 +2632,10 @@ class SelectViewMore extends React.Component {
           selections={selected}
           isOpen={isOpen}
           aria-labelledby={titleId}
-          {...(!isLoading && numOptions < this.options.length && { loadingVariant: { text: 'View more', onClick: this.onViewMoreClick } })}
+          {...(!isLoading &&
+            numOptions < this.options.length && {
+              loadingVariant: { text: 'View more', onClick: this.onViewMoreClick }
+            })}
           {...(isLoading && { loadingVariant: 'spinner' })}
         >
           {this.options.slice(0, numOptions)}
@@ -2589,11 +2650,7 @@ class SelectViewMore extends React.Component {
 
 ```js isBeta
 import React from 'react';
-import {
-  Select,
-  SelectOption,
-  SelectVariant,
-} from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
 class SelectViewMoreCheckbox extends React.Component {
   constructor(props) {
@@ -2645,7 +2702,6 @@ class SelectViewMoreCheckbox extends React.Component {
       });
     };
 
-
     this.simulateNetworkCall = callback => {
       setTimeout(callback, 2000);
     };
@@ -2678,7 +2734,10 @@ class SelectViewMoreCheckbox extends React.Component {
           isOpen={isOpen}
           placeholderText="Filter by status"
           aria-labelledby={titleId}
-          {...(!isLoading && numOptions < this.options.length && { loadingVariant: { text: 'View more', onClick: this.onViewMoreClick } })}
+          {...(!isLoading &&
+            numOptions < this.options.length && {
+              loadingVariant: { text: 'View more', onClick: this.onViewMoreClick }
+            })}
           {...(isLoading && { loadingVariant: 'spinner' })}
         >
           {this.options.slice(0, numOptions)}
@@ -2686,7 +2745,6 @@ class SelectViewMoreCheckbox extends React.Component {
       </div>
     );
   }
-
 }
 ```
 
@@ -2697,8 +2755,8 @@ import React from 'react';
 import { Select, SelectOption } from '@patternfly/react-core';
 
 function SelectWithPlaceholderStyle() {
-  const [ isOpen, setIsOpen ] = React.useState(false);
-  const [ selected, setSelected ] = React.useState([]);
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [selected, setSelected] = React.useState([]);
 
   const options = [
     <SelectOption key={0} value="Active" />,
@@ -2744,7 +2802,6 @@ function SelectWithPlaceholderStyle() {
 }
 ```
 
-
 ### With a style applied to the placeholder option
 
 ```js
@@ -2752,11 +2809,11 @@ import React from 'react';
 import { Select, SelectOption } from '@patternfly/react-core';
 
 function SelectWithPlaceholderStyle() {
-  const [ isOpen, setIsOpen ] = React.useState(false);
-  const [ selected, setSelected ] = React.useState([]);
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [selected, setSelected] = React.useState([]);
 
   const options = [
-    <SelectOption key={0} value="Filter by status" isPlaceholder/>,
+    <SelectOption key={0} value="Filter by status" isPlaceholder />,
     <SelectOption key={1} value="Active" />,
     <SelectOption key={2} value="Cancelled" />,
     <SelectOption key={3} value="Paused" />

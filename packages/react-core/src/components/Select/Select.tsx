@@ -12,8 +12,15 @@ import { SelectMenu } from './SelectMenu';
 import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectGroup, SelectGroupProps } from './SelectGroup';
 import { SelectToggle } from './SelectToggle';
-import { SelectContext, SelectVariant, SelectPosition, SelectDirection, KeyTypes } from './selectConstants';
-import { Chip, ChipGroup, ChipGroupProps } from '../ChipGroup';
+import {
+  SelectContext,
+  SelectVariant,
+  SelectPosition,
+  SelectDirection,
+  SelectFooterTabbableItems
+} from './selectConstants';
+import { ChipGroup, ChipGroupProps } from '../ChipGroup';
+import { Chip } from '../Chip';
 import { Spinner } from '../Spinner';
 import {
   keyHandler,
@@ -24,10 +31,12 @@ import {
   PickOptional,
   GenerateId
 } from '../../helpers';
+import { KeyTypes } from '../../helpers/constants';
 import { Divider } from '../Divider';
 import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
 import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/favorites';
 import { ValidatedOptions } from '../../helpers/constants';
+import { findTabbableElements } from '../../helpers/util';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -113,7 +122,7 @@ export interface SelectProps
     isPlaceholder?: boolean
   ) => void;
   /** Callback for toggle button behavior */
-  onToggle: (isExpanded: boolean) => void;
+  onToggle: (isExpanded: boolean, event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent | Event) => void;
   /** Callback for typeahead clear button */
   onClear?: (event: React.MouseEvent) => void;
   /** Optional callback for custom filtering */
@@ -140,6 +149,8 @@ export interface SelectProps
   customBadgeText?: string | number;
   /** Prefix for the id of the input in the checkbox select variant*/
   inputIdPrefix?: string;
+  /** Value for the typeahead and inline filtering input autocomplete attribute. When targeting Chrome this property should be a random string. */
+  inputAutoComplete?: string;
   /** Optional props to pass to the chip group in the typeaheadmulti variant */
   chipGroupProps?: Omit<ChipGroupProps, 'children' | 'ref'>;
   /** Optional props to render custom chip group in the typeaheadmulti variant */
@@ -148,6 +159,8 @@ export interface SelectProps
   isInputValuePersisted?: boolean;
   /** @beta Flag for retaining filter results on blur from keyboard-entered typeahead text */
   isInputFilterPersisted?: boolean;
+  /** Flag indicating the typeahead input value should reset upon selection */
+  shouldResetOnSelect?: boolean;
   /** Content rendered in the footer of the select menu */
   footer?: React.ReactNode;
 }
@@ -213,6 +226,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     inlineFilterPlaceholderText: null,
     customBadgeText: null,
     inputIdPrefix: '',
+    inputAutoComplete: 'off',
     menuAppendTo: 'inline',
     favorites: [] as string[],
     favoritesLabel: 'Favorites',
@@ -220,7 +234,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     chipGroupComponent: null,
     isInputValuePersisted: false,
     isInputFilterPersisted: false,
-    isCreateSelectOptionObject: false
+    isCreateSelectOptionObject: false,
+    shouldResetOnSelect: true
   };
 
   state: SelectState = {
@@ -250,10 +265,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       if (firstRef && firstRef[0]) {
         firstRef[0].focus();
       }
-    }
-
-    // if viewMoreNextIndex is not -1, view more was clicked, set focus on first newly loaded item
-    if (
+    } else if (
+      // if viewMoreNextIndex is not -1, view more was clicked, set focus on first newly loaded item
       this.state.viewMoreNextIndex !== -1 &&
       this.refCollection.length > this.state.viewMoreNextIndex &&
       this.props.loadingVariant !== 'spinner' &&
@@ -318,7 +331,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     this.setState({ focusFirstOption: true });
   };
 
-  onToggle = (isExpanded: boolean) => {
+  onToggle = (isExpanded: boolean, e: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent | Event) => {
     const { isInputValuePersisted, onSelect, onToggle, hasInlineFilter } = this.props;
     if (!isExpanded && isInputValuePersisted && onSelect) {
       onSelect(undefined, this.inputRef.current ? this.inputRef.current.value : '');
@@ -328,7 +341,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         focusFirstOption: true
       });
     }
-    onToggle(isExpanded);
+    onToggle(isExpanded, e);
   };
 
   onClose = () => {
@@ -341,13 +354,14 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         typeaheadFilteredChildren: React.Children.toArray(this.props.children)
       }),
       typeaheadCurrIndex: -1,
-      tabbedIntoFavoritesMenu: false
+      tabbedIntoFavoritesMenu: false,
+      viewMoreNextIndex: -1
     });
   };
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value.toString() !== '' && !this.props.isOpen) {
-      this.onToggle(true);
+      this.onToggle(true, e);
     }
 
     if (this.props.onTypeaheadInputChanged) {
@@ -374,7 +388,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       noResultsFoundText,
       children,
       isGrouped,
-      isCreateSelectOptionObject
+      isCreateSelectOptionObject,
+      loadingVariant
     } = this.props;
 
     if (onFilter) {
@@ -427,6 +442,16 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   typeof valueToCheck !== 'string' &&
                   (valueToCheck as SelectOptionObject).toString &&
                   (valueToCheck as SelectOptionObject).compareTo;
+
+                // View more option should be returned as not a match
+                if (loadingVariant !== 'spinner' && loadingVariant?.text === valueToCheck) {
+                  return true;
+                }
+
+                // spinner should be returned as not a match
+                if (loadingVariant === 'spinner' && valueToCheck === 'loading') {
+                  return true;
+                }
 
                 if (isSelectOptionObject) {
                   return (valueToCheck as SelectOptionObject).compareTo(typeaheadInputValue);
@@ -481,9 +506,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     });
   };
 
-  onClick = (_e: React.MouseEvent) => {
+  onClick = (e: React.MouseEvent) => {
     if (!this.props.isOpen) {
-      this.onToggle(true);
+      this.onToggle(true, e);
     }
   };
 
@@ -613,18 +638,63 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     }));
   };
 
-  handleTypeaheadKeys = (position: string) => {
-    const { isOpen, onFavorite } = this.props;
-    const { typeaheadCurrIndex, tabbedIntoFavoritesMenu, typeaheadStoredIndex } = this.state;
-    const typeaheadActiveChild = this.getTypeaheadActiveChild(typeaheadCurrIndex);
+  switchFocusToFavoriteMenu = () => {
+    const { typeaheadCurrIndex, typeaheadStoredIndex } = this.state;
+    let indexForFocus = 0;
 
+    if (typeaheadCurrIndex !== -1) {
+      indexForFocus = typeaheadCurrIndex;
+    } else if (typeaheadStoredIndex !== -1) {
+      indexForFocus = typeaheadStoredIndex;
+    }
+
+    if (this.refCollection[indexForFocus] !== null && this.refCollection[indexForFocus][0] !== null) {
+      this.refCollection[indexForFocus][0].focus();
+    } else {
+      this.clearRef.current.focus();
+    }
+
+    this.setState({
+      tabbedIntoFavoritesMenu: true,
+      typeaheadCurrIndex: -1
+    });
+  };
+
+  moveFocusToLastMenuItem = () => {
+    const refCollectionLen = this.refCollection.length;
+    if (
+      refCollectionLen > 0 &&
+      this.refCollection[refCollectionLen - 1] !== null &&
+      this.refCollection[refCollectionLen - 1][0] !== null
+    ) {
+      this.refCollection[refCollectionLen - 1][0].focus();
+    }
+  };
+
+  handleTypeaheadKeys = (position: string, shiftKey: boolean = false) => {
+    const { isOpen, onFavorite } = this.props;
+    const { typeaheadCurrIndex, tabbedIntoFavoritesMenu } = this.state;
+    const typeaheadActiveChild = this.getTypeaheadActiveChild(typeaheadCurrIndex);
     if (isOpen) {
       if (position === 'enter') {
-        if (typeaheadActiveChild || (this.refCollection[0] && this.refCollection[0][0])) {
-          this.setState({
-            typeaheadInputValue:
-              (typeaheadActiveChild && typeaheadActiveChild.innerText) || this.refCollection[0][0].innerText
-          });
+        if (
+          typeaheadCurrIndex !== -1 && // do not allow selection without moving to an initial option
+          (typeaheadActiveChild || (this.refCollection[0] && this.refCollection[0][0]))
+        ) {
+          if (typeaheadActiveChild) {
+            const hasDescriptionElm = typeaheadActiveChild.childElementCount > 1;
+            const typeaheadActiveChildText = hasDescriptionElm
+              ? (typeaheadActiveChild.firstChild as HTMLElement).innerText
+              : typeaheadActiveChild.innerText;
+            this.setState({
+              typeaheadInputValue: typeaheadActiveChildText
+            });
+          } else {
+            this.setState({
+              typeaheadInputValue: this.refCollection[0][0].innerText
+            });
+          }
+
           if (typeaheadActiveChild) {
             typeaheadActiveChild.click();
           } else {
@@ -633,30 +703,114 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         }
       } else if (position === 'tab') {
         if (onFavorite) {
+          // if the input has focus, tab to the first item or the last item that was previously focused.
           if (this.inputRef.current === document.activeElement) {
-            let indexForFocus = 0;
-            if (typeaheadCurrIndex !== -1) {
-              indexForFocus = typeaheadCurrIndex;
-            } else if (typeaheadStoredIndex !== -1) {
-              indexForFocus = typeaheadStoredIndex;
-            }
-
-            if (this.refCollection[indexForFocus] !== null && this.refCollection[indexForFocus][0] !== null) {
-              this.refCollection[indexForFocus][0].focus();
+            // If shift is also clicked and there is a footer, tab to the last item in tabbable footer
+            if (this.props.footer && shiftKey) {
+              const tabbableItems = findTabbableElements(this.footerRef, SelectFooterTabbableItems);
+              if (tabbableItems.length > 0) {
+                if (tabbableItems[tabbableItems.length - 1]) {
+                  tabbableItems[tabbableItems.length - 1].focus();
+                }
+              }
             } else {
-              this.clearRef.current.focus();
+              this.switchFocusToFavoriteMenu();
             }
-
-            this.setState({
-              tabbedIntoFavoritesMenu: true,
-              typeaheadCurrIndex: -1
-            });
           } else {
-            this.inputRef.current.focus();
-            this.setState({ tabbedIntoFavoritesMenu: false });
+            // focus is on menu or footer
+            if (this.props.footer) {
+              let tabbedIntoMenu = false;
+              const tabbableItems = findTabbableElements(this.footerRef, SelectFooterTabbableItems);
+              if (tabbableItems.length > 0) {
+                // if current element is not in footer, tab to first tabbable element in footer,
+                // if shift was clicked, tab to input since focus is on menu
+                const currentElementIndex = tabbableItems.findIndex((item: any) => item === document.activeElement);
+                if (currentElementIndex === -1) {
+                  if (shiftKey) {
+                    // currently in menu, shift back to input
+                    this.inputRef.current.focus();
+                  } else {
+                    // currently in menu, tab to first tabbable item in footer
+                    tabbableItems[0].focus();
+                  }
+                } else {
+                  // already in footer
+                  if (shiftKey) {
+                    // shift to previous item
+                    if (currentElementIndex === 0) {
+                      // on first footer item, shift back to menu
+                      this.switchFocusToFavoriteMenu();
+                      tabbedIntoMenu = true;
+                    } else {
+                      // shift to previous footer item
+                      tabbableItems[currentElementIndex - 1].focus();
+                    }
+                  } else {
+                    // tab to next tabbable item in footer or to input.
+                    if (tabbableItems[currentElementIndex + 1]) {
+                      tabbableItems[currentElementIndex + 1].focus();
+                    } else {
+                      this.inputRef.current.focus();
+                    }
+                  }
+                }
+              } else {
+                // no tabbable items in footer, tab to input
+                this.inputRef.current.focus();
+                tabbedIntoMenu = false;
+              }
+              this.setState({ tabbedIntoFavoritesMenu: tabbedIntoMenu });
+            } else {
+              this.inputRef.current.focus();
+              this.setState({ tabbedIntoFavoritesMenu: false });
+            }
           }
         } else {
-          this.onToggle(false);
+          // Close if there is no footer
+          if (!this.props.footer) {
+            this.onToggle(false, null);
+            this.onClose();
+          } else {
+            // has footer
+            const tabbableItems = findTabbableElements(this.footerRef, SelectFooterTabbableItems);
+            const currentElementIndex = tabbableItems.findIndex((item: any) => item === document.activeElement);
+            if (this.inputRef.current === document.activeElement) {
+              if (shiftKey) {
+                // close toggle if shift key and tab on input
+                this.onToggle(false, null);
+                this.onClose();
+              } else {
+                // tab to first tabbable item in footer
+                if (tabbableItems[0]) {
+                  tabbableItems[0].focus();
+                } else {
+                  this.onToggle(false, null);
+                  this.onClose();
+                }
+              }
+            } else {
+              // focus is in footer
+              if (shiftKey) {
+                if (currentElementIndex === 0) {
+                  // shift tab back to input
+                  this.inputRef.current.focus();
+                } else {
+                  // shift to previous footer item
+                  tabbableItems[currentElementIndex - 1].focus();
+                }
+              } else {
+                // tab to next footer item or close tab if last item
+                if (tabbableItems[currentElementIndex + 1]) {
+                  tabbableItems[currentElementIndex + 1].focus();
+                } else {
+                  // no next item, close toggle
+                  this.onToggle(false, null);
+                  this.inputRef.current.focus();
+                  this.onClose();
+                }
+              }
+            }
+          }
         }
       } else if (!tabbedIntoFavoritesMenu) {
         if (this.refCollection[0][0] === null) {
@@ -793,6 +947,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       noResultsFoundText,
       customBadgeText,
       inputIdPrefix,
+      inputAutoComplete,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       isInputValuePersisted,
       isInputFilterPersisted,
@@ -805,6 +960,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       footer,
       loadingVariant,
       isCreateSelectOptionObject,
+      shouldResetOnSelect,
       ...props
     } = this.props;
     const {
@@ -881,6 +1037,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         onClick={e => {
           this.clearSelection(e);
           onClear(e);
+          e.stopPropagation();
         }}
         aria-label={clearSelectionsAriaLabel}
         type="button"
@@ -939,6 +1096,20 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 } else if (event.key === KeyTypes.ArrowRight) {
                   this.handleMenuKeys(0, 0, 'right');
                   event.preventDefault();
+                } else if (event.key === KeyTypes.Tab && variant !== SelectVariant.checkbox && this.props.footer) {
+                  // tab to footer or close menu if shift key
+                  if (event.shiftKey) {
+                    this.onToggle(false, event);
+                  } else {
+                    const tabbableItems = findTabbableElements(this.footerRef, SelectFooterTabbableItems);
+                    if (tabbableItems.length > 0) {
+                      tabbableItems[0].focus();
+                      event.stopPropagation();
+                      event.preventDefault();
+                    } else {
+                      this.onToggle(false, event);
+                    }
+                  }
                 } else if (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) {
                   // More modal-like experience for checkboxes
                   // Let SelectOption handle this
@@ -952,7 +1123,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 }
               }}
               ref={this.filterRef}
-              autoComplete="never"
+              autoComplete={inputAutoComplete}
             />
           </div>
           <Divider key="inline-filter-divider" />
@@ -1090,6 +1261,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           aria-labelledby={`${ariaLabelledBy || ''} ${selectToggleId}`}
           aria-label={toggleAriaLabel}
           handleTypeaheadKeys={this.handleTypeaheadKeys}
+          moveFocusToLastMenuItem={this.moveFocusToLastMenuItem}
           isDisabled={isDisabled}
           hasClearButton={hasOnClear}
           hasFooter={footer !== undefined}
@@ -1146,7 +1318,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   type="text"
                   onClick={this.onClick}
                   onChange={this.onChange}
-                  autoComplete="never"
+                  autoComplete={inputAutoComplete}
                   disabled={isDisabled}
                   ref={this.inputRef}
                 />
@@ -1170,7 +1342,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   type="text"
                   onChange={this.onChange}
                   onClick={this.onClick}
-                  autoComplete="never"
+                  autoComplete={inputAutoComplete}
                   disabled={isDisabled}
                   ref={this.inputRef}
                 />
@@ -1209,7 +1381,14 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       <GenerateId>
         {randomId => (
           <SelectContext.Provider
-            value={{ onSelect, onFavorite, onClose: this.onClose, variant, inputIdPrefix: inputIdPrefix || randomId }}
+            value={{
+              onSelect,
+              onFavorite,
+              onClose: this.onClose,
+              variant,
+              inputIdPrefix: inputIdPrefix || randomId,
+              shouldResetOnSelect
+            }}
           >
             {menuAppendTo === 'inline' ? (
               mainContainer

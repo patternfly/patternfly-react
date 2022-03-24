@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { AboutModalBoxHero } from '../AboutModalBoxHero';
 
 test('test About Modal Box SHero', () => {
-  const view = shallow(<AboutModalBoxHero />);
-  expect(view).toMatchSnapshot();
+  const view = render(<AboutModalBoxHero />);
+  expect(view.container).toMatchSnapshot();
 });

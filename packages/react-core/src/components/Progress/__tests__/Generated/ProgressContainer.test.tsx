@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ProgressContainer } from '../../ProgressContainer';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('ProgressContainer should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <ProgressContainer
       ariaProps={undefined}
       parentId={'string'}
@@ -19,5 +19,5 @@ it('ProgressContainer should match snapshot (auto-generated)', () => {
       value={42}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

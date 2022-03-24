@@ -1,17 +1,17 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ChartLegend } from '../ChartLegend';
 import { ChartPoint } from './ChartPoint';
 
 Object.values([true, false]).forEach(() => {
   test('ChartPoint', () => {
-    const view = shallow(<ChartLegend dataComponent={<ChartPoint />} />);
-    expect(view).toMatchSnapshot();
+    const view = render(<ChartLegend dataComponent={<ChartPoint />} />);
+    expect(view.container).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = shallow(
+  const view = render(
     <ChartLegend
       data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }]}
       title="Average number of pets"
@@ -19,5 +19,5 @@ test('renders component data', () => {
       width={200}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

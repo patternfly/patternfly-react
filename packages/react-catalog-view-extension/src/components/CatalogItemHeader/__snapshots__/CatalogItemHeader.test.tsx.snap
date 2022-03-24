@@ -1,29 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`simple catalog item header 1`] = `
-<header
-  className="catalog-item-header-pf"
->
-  <div
-    className="catalog-item-header-pf-text"
+<div>
+  <header
+    class="catalog-item-header-pf"
   >
-    <h1
-      className="catalog-item-header-pf-title"
+    <div
+      class="catalog-item-header-pf-text"
     >
-      PatternFly
-    </h1>
-    <h5
-      className="catalog-item-header-pf-subtitle"
-    >
-      <span>
-        provided by 
-        <a
-          href="redhat.com"
-        >
-          Red Hat
-        </a>
-      </span>
-    </h5>
-  </div>
-</header>
+      <h1
+        class="catalog-item-header-pf-title"
+      >
+        PatternFly
+      </h1>
+      <h5
+        class="catalog-item-header-pf-subtitle"
+      >
+        <span>
+          provided by 
+          <a
+            href="redhat.com"
+          >
+            Red Hat
+          </a>
+        </span>
+      </h5>
+    </div>
+  </header>
+</div>
 `;

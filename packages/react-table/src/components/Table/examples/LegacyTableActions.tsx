@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import {
-  ButtonVariant,
+  Button,
   Checkbox,
   DropdownToggle,
   ToggleGroup,
@@ -13,14 +13,15 @@ import {
 } from '@patternfly/react-core';
 import {
   CustomActionsToggleProps,
+  fitContent,
   headerCol,
   TableProps,
-  IAction,
   IActions,
   IActionsResolver,
   Table,
   TableBody,
-  TableHeader
+  TableHeader,
+  TableText
 } from '@patternfly/react-table';
 
 interface Repository {
@@ -29,6 +30,7 @@ interface Repository {
   prs: string;
   workspaces: string;
   lastCommit: string;
+  singleAction: string;
 }
 
 type ExampleType = 'actions' | 'actionResolver';
@@ -36,11 +38,18 @@ type ExampleType = 'actions' | 'actionResolver';
 export const LegacyTableActions: React.FunctionComponent = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
-    { name: 'a', branches: 'two', prs: '1', workspaces: 'four', lastCommit: 'five' },
-    { name: 'disable actions', branches: 'two', prs: '3', workspaces: 'four', lastCommit: 'five' },
-    { name: 'green actions', branches: 'two', prs: '4', workspaces: 'four', lastCommit: 'five' },
-    { name: 'extra action props', branches: 'two', prs: '5', workspaces: 'four', lastCommit: 'five' },
-    { name: 'blue actions', branches: 'two', prs: '6', workspaces: 'four', lastCommit: 'five' }
+    { name: 'a', branches: 'two', prs: '1', workspaces: 'four', lastCommit: 'five', singleAction: 'Start' },
+    { name: 'disable actions', branches: 'two', prs: '3', workspaces: 'four', lastCommit: 'five', singleAction: '' },
+    { name: 'green actions', branches: 'two', prs: '4', workspaces: 'four', lastCommit: 'five', singleAction: 'Start' },
+    {
+      name: 'extra action props',
+      branches: 'two',
+      prs: '5',
+      workspaces: 'four',
+      lastCommit: 'five',
+      singleAction: 'Start'
+    },
+    { name: 'blue actions', branches: 'two', prs: '6', workspaces: 'four', lastCommit: 'five', singleAction: 'Start' }
   ];
 
   // This state is just for the ToggleGroup in this example and isn't necessary for Table usage.
@@ -51,7 +60,6 @@ export const LegacyTableActions: React.FunctionComponent = () => {
   };
 
   const [useCustomToggle, setUseCustomToggle] = React.useState(false);
-  const [useExtraAction, setUseExtraAction] = React.useState(false);
 
   const customActionsToggle = (props: CustomActionsToggleProps) => (
     <DropdownToggle onToggle={props.onToggle} isDisabled={props.isDisabled}>
@@ -64,10 +72,22 @@ export const LegacyTableActions: React.FunctionComponent = () => {
     'Branches',
     'Pull requests',
     'Workspaces',
-    'Last commit'
+    'Last commit',
+    { title: '', dataLabel: 'Action', cellTransforms: [fitContent] }
   ];
+
   const rows: TableProps['rows'] = repositories.map(repo => {
-    const cells = [repo.name, repo.branches, repo.prs, repo.workspaces, repo.lastCommit];
+    let singleActionButton = null;
+    if (repo.singleAction !== '') {
+      singleActionButton = (
+        <TableText>
+          <Button variant="secondary">{repo.singleAction}</Button>
+        </TableText>
+      );
+    }
+
+    const cells = [repo.name, repo.branches, repo.prs, repo.workspaces, repo.lastCommit, singleActionButton];
+
     // These rows have arbitrary differences for this example, but these could be based on some other conditions
     if (repo.name === 'disable actions') {
       return { cells, disableActions: true };
@@ -84,15 +104,6 @@ export const LegacyTableActions: React.FunctionComponent = () => {
     return { cells };
   });
 
-  /**
-   * Use actions or actionResolver, not both
-   */
-  const extraAction: IAction = {
-    title: 'Start',
-    variant: ButtonVariant.secondary,
-    onClick: (_event, rowId, rowData, extra) => console.log('clicked on extra action on row: ', rowId, rowData, extra),
-    isOutsideDropdown: true
-  };
   const actions: IActions = [
     {
       title: 'Some action',
@@ -108,8 +119,7 @@ export const LegacyTableActions: React.FunctionComponent = () => {
       title: 'Third action',
       onClick: (_event, rowId, rowData, extra) =>
         console.log('clicked on Third action, on row: ', rowId, rowData, extra)
-    },
-    ...(useExtraAction ? [extraAction] : [])
+    }
   ];
 
   /**
@@ -119,16 +129,6 @@ export const LegacyTableActions: React.FunctionComponent = () => {
     if (rowIndex === 1) {
       return [];
     }
-
-    const extraAction: IActions = [
-      {
-        title: 'Start',
-        variant: ButtonVariant.secondary,
-        onClick: (_event, rowId, rowData, extra) =>
-          console.log('clicked on extra action on row: ', rowId, rowData, extra),
-        isOutsideDropdown: true
-      }
-    ];
 
     const thirdAction: IActions = [
       {
@@ -142,7 +142,6 @@ export const LegacyTableActions: React.FunctionComponent = () => {
     ];
 
     return [
-      ...(useExtraAction ? extraAction : []),
       {
         title: 'actionResolver action',
         onClick: (_event, rowId, rowData, extra) =>
@@ -185,16 +184,6 @@ export const LegacyTableActions: React.FunctionComponent = () => {
               aria-label="toggle use of custom actions toggle"
               id="toggle-custom-actions-toggle"
               name="toggle-custom-actions-toggle"
-            />
-          </ToolbarItem>
-          <ToolbarItem>
-            <Checkbox
-              label="Add extra actions"
-              isChecked={useExtraAction}
-              onChange={setUseExtraAction}
-              aria-label="toggle extra actions"
-              id="toggle-extra-action"
-              name="toggle-extra-action"
             />
           </ToolbarItem>
         </ToolbarContent>

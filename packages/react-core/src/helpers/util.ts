@@ -196,6 +196,19 @@ export function keyHandler(
   }
 }
 
+/** This function returns a list of tabbable items in a container
+ *
+ *  @param {any} containerRef to the container
+ *  @param {string} tababbleSelectors CSS selector string of tabbable items
+ */
+export function findTabbableElements(containerRef: any, tababbleSelectors: string): any[] {
+  const tabbable = containerRef.current.querySelectorAll(tababbleSelectors);
+  const list = Array.prototype.filter.call(tabbable, function(item) {
+    return item.tabIndex >= '0';
+  });
+  return list;
+}
+
 /** This function is a helper for keyboard navigation through dropdowns.
  *
  * @param {number} index The index of the element you're on
@@ -262,6 +275,16 @@ export const setBreakpointCssVars = (
     {}
   );
 
+export interface Mods {
+  default?: string;
+  sm?: string;
+  md?: string;
+  lg?: string;
+  xl?: string;
+  '2xl'?: string;
+  '3xl'?: string;
+}
+
 /**
  * This function is a helper for turning arrays of breakpointMod objects for data toolbar and flex into classes
  *
@@ -269,25 +292,64 @@ export const setBreakpointCssVars = (
  * @param {any} styles The appropriate styles object for the component
  */
 export const formatBreakpointMods = (
-  mods: {
-    default?: string;
-    sm?: string;
-    md?: string;
-    lg?: string;
-    xl?: string;
-    '2xl'?: string;
-    '3xl'?: string;
-  },
+  mods: Mods,
   styles: any,
-  stylePrefix: string = ''
-) =>
-  Object.entries(mods || {})
+  stylePrefix: string = '',
+  breakpoint?: 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
+) => {
+  if (!mods) {
+    return '';
+  }
+  if (breakpoint) {
+    if (breakpoint in mods) {
+      return styles.modifiers[toCamel(`${stylePrefix}${mods[breakpoint as keyof Mods]}`)];
+    }
+    // the current breakpoint is not specified in mods, so we try to find the next nearest
+    const breakpointsOrder = ['2xl', 'xl', 'lg', 'md', 'sm', 'default'];
+    const breakpointsIndex = breakpointsOrder.indexOf(breakpoint);
+    for (let i = breakpointsIndex; i < breakpointsOrder.length; i++) {
+      if (breakpointsOrder[i] in mods) {
+        return styles.modifiers[toCamel(`${stylePrefix}${mods[breakpointsOrder[i] as keyof Mods]}`)];
+      }
+    }
+    return '';
+  }
+  return Object.entries(mods || {})
     .map(([breakpoint, mod]) => `${stylePrefix}${mod}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`)
     .map(toCamel)
     .map(mod => mod.replace(/-?(\dxl)/gi, (_res, group) => `_${group}`))
     .map(modifierKey => styles.modifiers[modifierKey])
     .filter(Boolean)
     .join(' ');
+};
+
+/**
+ * Return the breakpoint for the given width
+ *
+ * @param {number | null} width The width to check
+ * @returns {'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'} The breakpoint
+ */
+export const getBreakpoint = (width: number): 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' => {
+  if (width === null) {
+    return null;
+  }
+  if (width >= 1450) {
+    return '2xl';
+  }
+  if (width >= 1200) {
+    return 'xl';
+  }
+  if (width >= 992) {
+    return 'lg';
+  }
+  if (width >= 768) {
+    return 'md';
+  }
+  if (width >= 576) {
+    return 'sm';
+  }
+  return 'default';
+};
 
 const camelize = (s: string) =>
   s

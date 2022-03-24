@@ -1,7 +1,6 @@
 ---
 id: Jump links
 section: components
-beta: true
 ---
 
 import DashboardWrapper from './examples/DashboardWrapper';

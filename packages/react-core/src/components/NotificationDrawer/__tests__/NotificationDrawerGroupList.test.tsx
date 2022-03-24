@@ -1,10 +1,11 @@
 import React from 'react';
 import { NotificationDrawerGroupList } from '../NotificationDrawerGroupList';
+import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 
 test('renders with PatternFly Core styles', () => {
-  const view = shallow(<NotificationDrawerGroupList />);
-  expect(view).toMatchSnapshot();
+  const view = render(<NotificationDrawerGroupList />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('className is added to the root element', () => {

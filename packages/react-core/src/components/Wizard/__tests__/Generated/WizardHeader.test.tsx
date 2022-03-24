@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { WizardHeader } from '../../WizardHeader';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('WizardHeader should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <WizardHeader
       onClose={() => undefined}
       title={'string'}
@@ -19,5 +19,5 @@ it('WizardHeader should match snapshot (auto-generated)', () => {
       descriptionId={'string'}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

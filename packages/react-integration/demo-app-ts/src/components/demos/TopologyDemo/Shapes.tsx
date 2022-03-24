@@ -7,12 +7,13 @@ import {
   withDragNode,
   useComponentFactory,
   useModel,
-  ComponentFactory
+  ComponentFactory,
+  NodeShape
 } from '@patternfly/react-topology';
 import '@patternfly/react-styles/css/components/Topology/topology-components.css';
 import defaultComponentFactory from './components/defaultComponentFactory';
 import shapesComponentFactory from './components/shapesComponentFactory';
-import Node from './components/DefaultNode';
+import DemoDefaultNode from './components/DemoDefaultNode';
 import withTopologySetup from './utils/withTopologySetup';
 
 export const SHAPE_TITLE = 'Shapes';
@@ -27,7 +28,7 @@ export const Shapes = withTopologySetup(() => {
         return withPanZoom()(GraphComponent);
       }
       if (type === 'node-drag') {
-        return withDragNode()(Node);
+        return withDragNode()(DemoDefaultNode);
       }
       return undefined;
     }, [])
@@ -70,15 +71,17 @@ export const Shapes = withTopologySetup(() => {
           },
           {
             id: 'n2',
-            type: 'node-rect',
+            type: 'node',
             x: 200,
             y: 20,
+            shape: NodeShape.rect,
             width: 30,
             height: 50
           },
           {
             id: 'n3',
-            type: 'node-ellipse',
+            type: 'node',
+            shape: NodeShape.ellipse,
             x: 150,
             y: 100,
             width: 50,
@@ -102,7 +105,8 @@ export const Shapes = withTopologySetup(() => {
           },
           {
             id: 'n6',
-            type: 'node-rect',
+            type: 'node',
+            shape: NodeShape.rect,
             x: 300,
             y: 200,
             width: 60,

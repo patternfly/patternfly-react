@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { OverflowMenuItem } from '../OverflowMenuItem';
@@ -16,11 +17,11 @@ describe('OverflowMenuItem', () => {
   });
 
   test('Below breakpoint and not isPersistent should not show', () => {
-    const view = mount(
+    const view = render(
       <OverflowMenuContext.Provider value={{ isBelowBreakpoint: false }}>
         <OverflowMenuItem />
       </OverflowMenuContext.Provider>
     );
-    expect(view).toMatchSnapshot();
+    expect(view.container).toMatchSnapshot();
   });
 });

@@ -1,7 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DropdownGroup should match snapshot (auto-generated) 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<div>
+  <section
+    class="''"
+  >
+    
+    <ul
+      role="none"
+    >
+      ReactNode
+    </ul>
+  </section>
+</div>
 `;

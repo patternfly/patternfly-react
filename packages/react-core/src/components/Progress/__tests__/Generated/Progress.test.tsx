@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Progress } from '../../Progress';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('Progress should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <Progress
       className={"''"}
       size={null}
@@ -23,5 +23,5 @@ it('Progress should match snapshot (auto-generated)', () => {
       valueText={'null'}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

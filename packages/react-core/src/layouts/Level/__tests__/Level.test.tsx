@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { Level } from '../Level';
 import { LevelItem } from '../LevelItem';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 test('Gutter', () => {
-  const view = shallow(<Level hasGutter />);
-  expect(view).toMatchSnapshot();
+  const view = render(<Level hasGutter />);
+  expect(view.container).toMatchSnapshot();
 });
 
 test('item', () => {
-  const view = shallow(<LevelItem>Level Item</LevelItem>);
-  expect(view).toMatchSnapshot();
+  const view = render(<LevelItem>Level Item</LevelItem>);
+  expect(view.container).toMatchSnapshot();
 });

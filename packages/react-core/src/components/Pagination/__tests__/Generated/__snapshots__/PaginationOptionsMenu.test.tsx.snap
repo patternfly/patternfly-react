@@ -1,54 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PaginationOptionsMenu should match snapshot (auto-generated) 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "baseClass": "pf-c-options-menu",
-      "baseComponent": "div",
-      "disabledClass": "pf-m-disabled",
-      "id": "''",
-      "itemClass": "pf-c-options-menu__menu-item",
-      "menuClass": "pf-c-options-menu__menu",
-      "menuComponent": "ul",
-      "onSelect": [Function],
-      "ouiaComponentType": "PaginationOptionsMenu",
-      "toggleClass": " ",
-      "toggleIndicatorClass": "pf-c-options-menu__toggle-button-icon",
-      "toggleTextClass": "pf-c-options-menu__toggle-text",
-    }
-  }
->
-  <DropdownWithContext
-    autoFocus={true}
-    className=""
-    direction="up"
-    dropdownItems={Array []}
-    isGrouped={false}
-    isOpen={false}
-    isPlain={true}
-    isText={false}
-    menuAppendTo="inline"
-    onSelect={[Function]}
-    position="left"
-    toggle={
-      <OptionsToggle
-        firstIndex={0}
-        isDisabled={false}
-        isOpen={false}
-        itemCount={0}
-        itemsPerPageTitle="'Items per page'"
-        itemsTitle="'items'"
-        lastIndex={0}
-        ofWord="of"
-        onToggle={[Function]}
-        optionsToggle="'Select'"
-        parentRef={null}
-        showToggle={false}
-        toggleTemplate={[Function]}
-        widgetId="''"
-      />
-    }
-  />
-</ContextProvider>
+<div>
+  <div
+    class="pf-c-options-menu pf-m-top"
+    data-ouia-component-type="PF4/PaginationOptionsMenu"
+    data-ouia-safe="true"
+  >
+    <div
+      class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+    />
+  </div>
+</div>
 `;

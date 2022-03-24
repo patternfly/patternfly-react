@@ -51,20 +51,22 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   /** @beta Callback function when mouse leaves trigger */
   onShowFlyout?: (event?: any) => void;
   /** @beta Drilldown menu of the item. Should be a Menu or DrilldownMenu type. */
-  drilldownMenu?: React.ReactNode;
+  drilldownMenu?: React.ReactNode | (() => React.ReactNode);
   /** @beta Sub menu direction */
   direction?: 'down' | 'up';
   /** @beta True if item is on current selection path */
   isOnPath?: boolean;
   /** Accessibility label */
   'aria-label'?: string;
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<HTMLAnchorElement | HTMLButtonElement>;
 }
 
 const FlyoutContext = React.createContext({
   direction: 'right' as 'left' | 'right'
 });
 
-export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
+const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   children,
   className,
   itemId = null,
@@ -86,6 +88,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   onShowFlyout,
   drilldownMenu,
   isOnPath,
+  innerRef,
   ...props
 }: MenuItemProps) => {
   const {
@@ -208,7 +211,15 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
   let _drill: () => void;
   if (direction) {
     if (direction === 'down') {
-      _drill = () => onDrillIn && onDrillIn(menuId, (drilldownMenu as React.ReactElement).props.id, itemId);
+      _drill = () =>
+        onDrillIn &&
+        onDrillIn(
+          menuId,
+          typeof drilldownMenu === 'function'
+            ? drilldownMenu().props.id
+            : (drilldownMenu as React.ReactElement).props.id,
+          itemId
+        );
     } else {
       _drill = () => onDrillOut && onDrillOut(parentMenu, itemId);
     }
@@ -265,7 +276,6 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
 
   return (
     <li
-      role="none"
       className={css(
         styles.menuListItem,
         isDisabled && styles.modifiers.disabled,
@@ -275,21 +285,22 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
         className
       )}
       onMouseOver={onMouseOver}
-      tabIndex={-1}
       {...(flyoutMenu && { onKeyDown: handleFlyout })}
       ref={ref}
+      role="none"
       {...props}
     >
       <Component
-        role="menuitem"
         tabIndex={-1}
+        className={css(styles.menuItem, getIsSelected() && styles.modifiers.selected, className)}
+        aria-current={getAriaCurrent()}
+        disabled={isDisabled}
+        role="menuitem"
+        ref={innerRef}
         onClick={(event: any) => {
           onItemSelect(event, onSelect);
           _drill && _drill();
         }}
-        className={css(styles.menuItem, getIsSelected() && styles.modifiers.selected, className)}
-        aria-current={getAriaCurrent()}
-        disabled={isDisabled}
         {...additionalProps}
       >
         <span className={css(styles.menuItemMain)}>
@@ -327,7 +338,7 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
           <FlyoutContext.Provider value={{ direction: flyoutXDirection }}>{flyoutMenu}</FlyoutContext.Provider>
         </MenuContext.Provider>
       )}
-      {drilldownMenu}
+      {typeof drilldownMenu === 'function' ? drilldownMenu() : drilldownMenu}
       <MenuItemContext.Provider value={{ itemId, isDisabled }}>
         {actions}
         {isFavorited !== null && (
@@ -344,5 +355,9 @@ export const MenuItem: React.FunctionComponent<MenuItemProps> = ({
     </li>
   );
 };
+
+export const MenuItem = React.forwardRef((props: MenuItemProps, ref: React.Ref<any>) => (
+  <MenuItemBase {...props} innerRef={ref} />
+));
 
 MenuItem.displayName = 'MenuItem';

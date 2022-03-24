@@ -45,7 +45,7 @@ export interface CalendarFormat {
 
 export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
   /** Month/year to base other dates around */
-  date: Date;
+  date?: Date;
   /** Callback when date is selected */
   onChange?: (date: Date) => void;
   /** Functions that returns if a date is valid and selectable */
@@ -60,8 +60,8 @@ export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTML
 const yearFormat = (date: Date) => date.getFullYear();
 
 const buildCalendar = (year: number, month: number, weekStart: number, validators: ((date: Date) => boolean)[]) => {
-  const selectedDate = new Date(year, month);
-  const firstDayOfWeek = new Date(selectedDate);
+  const defaultDate = new Date(year, month);
+  const firstDayOfWeek = new Date(defaultDate);
   firstDayOfWeek.setDate(firstDayOfWeek.getDate() - firstDayOfWeek.getDay() + weekStart);
   // We will always show 6 weeks like google calendar
   // Assume we just want the numbers for now...
@@ -90,7 +90,7 @@ export const isValidDate = (date: Date) => Boolean(date && !isNaN(date as any));
 const today = new Date();
 
 export const CalendarMonth = ({
-  date: dateProp = today,
+  date: dateProp,
   locale = undefined,
   monthFormat = date => date.toLocaleDateString(locale, { month: 'long' }),
   weekdayFormat = date => date.toLocaleDateString(locale, { weekday: 'narrow' }),
@@ -110,6 +110,7 @@ export const CalendarMonth = ({
 }: CalendarProps) => {
   const longMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(monthNum => new Date(1990, monthNum)).map(monthFormat);
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
+  const [selectedDate, setSelectedDate] = React.useState(new Date(dateProp));
   // eslint-disable-next-line prefer-const
   let [focusedDate, setFocusedDate] = React.useState(new Date(dateProp));
   if (!isValidDate(focusedDate)) {
@@ -118,7 +119,7 @@ export const CalendarMonth = ({
   const [hoveredDate, setHoveredDate] = React.useState(new Date(focusedDate));
   const focusRef = React.useRef<HTMLButtonElement>();
   const [hiddenMonthId] = React.useState(getUniqueId('hidden-month-span'));
-  const [shouldFocus, setShouldFocus] = React.useState(true);
+  const [shouldFocus, setShouldFocus] = React.useState(false);
 
   const isValidated = (date: Date) => validators.every(validator => validator(date));
   const focusedDateValidated = isValidated(focusedDate);
@@ -127,6 +128,7 @@ export const CalendarMonth = ({
       setFocusedDate(dateProp);
     }
   }, [dateProp]);
+
   useEffect(() => {
     // When using header controls don't move focus
     if (shouldFocus) {
@@ -275,7 +277,7 @@ export const CalendarMonth = ({
               {week.map(({ date, isValid }, index) => {
                 const dayFormatted = dayFormat(date);
                 const isToday = isSameDate(date, today);
-                const isSelected = isValidDate(dateProp) && isSameDate(date, dateProp);
+                const isSelected = isValidDate(selectedDate) && isSameDate(date, selectedDate);
                 const isFocused = isSameDate(date, focusedDate);
                 const isAdjacentMonth = date.getMonth() !== focusedDate.getMonth();
                 let isInRange = false;
@@ -312,7 +314,11 @@ export const CalendarMonth = ({
                         !isValid && styles.modifiers.disabled
                       )}
                       type="button"
-                      onClick={() => onChange(date)}
+                      onClick={() => {
+                        setSelectedDate(date);
+                        setFocusedDate(date);
+                        onChange(date);
+                      }}
                       onMouseOver={() => setHoveredDate(date)}
                       tabIndex={isFocused ? 0 : -1}
                       disabled={!isValid}

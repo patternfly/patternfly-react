@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { ClipboardCopyExpanded } from '../../ClipboardCopyExpanded';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('ClipboardCopyExpanded should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <ClipboardCopyExpanded
       className={"''"}
       children={<div>ReactNode</div>}
@@ -17,5 +17,5 @@ it('ClipboardCopyExpanded should match snapshot (auto-generated)', () => {
       isCode={false}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });

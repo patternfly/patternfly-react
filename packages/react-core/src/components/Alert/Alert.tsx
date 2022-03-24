@@ -7,7 +7,7 @@ import { AlertIcon } from './AlertIcon';
 import { capitalize, useOUIAProps, OUIAProps } from '../../helpers';
 import { AlertContext } from './AlertContext';
 import maxLines from '@patternfly/react-tokens/dist/esm/c_alert__title_max_lines';
-import { Tooltip } from '../Tooltip';
+import { Tooltip, TooltipPosition } from '../Tooltip';
 import { AlertToggleExpandButton } from './AlertToggleExpandButton';
 
 export enum AlertVariant {
@@ -52,7 +52,21 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   /** Truncate title to number of lines */
   truncateTitle?: number;
   /** Position of the tooltip which is displayed if text is truncated */
-  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
+  tooltipPosition?:
+    | TooltipPosition
+    | 'auto'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
   /** Set a custom icon to the alert. If not set the icon is set according to the variant */
   customIcon?: React.ReactNode;
   /** Flag indicating that the alert is expandable */

@@ -2,13 +2,13 @@
  * This test was generated
  */
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Checkbox } from '../../Checkbox';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 
 it('Checkbox should match snapshot (auto-generated)', () => {
-  const view = shallow(
+  const view = render(
     <Checkbox
       className={"''"}
       isValid={true}
@@ -22,5 +22,5 @@ it('Checkbox should match snapshot (auto-generated)', () => {
       description={<div>ReactNode</div>}
     />
   );
-  expect(view).toMatchSnapshot();
+  expect(view.container).toMatchSnapshot();
 });
