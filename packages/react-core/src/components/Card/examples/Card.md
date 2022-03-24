@@ -68,6 +68,10 @@ import pfLogoSmall from './pf-logo-small.svg';
 
 ### Selectable
 
+Note: The listbox role on the containing div of this examples is needed because the cards have the option role via their `isOption` prop, and options are required to be inside a listbox. See the [option role documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/option_role) from MDN for more information.
+
+The cards need to be options in order to effectively communicate that they're selectable (and what their current selection state is) for those using screen readers.
+
 ```ts file='./CardSelectable.tsx'
 ```
 
