@@ -2212,13 +2212,13 @@ class SingleSelectInput extends React.Component {
 
 ### Appending document body vs parent
 
-When passing in a value to the `menuAppendTo` prop on the Select component, passing in `document.body` should be avoided if possible as doing so can cause accessibility issues. These issues can include (but may not be limited to) being unable to enter the contents of the Select options via assistive technologies (like keyboards or screen readers).
+Avoid passing in `document.body` when passing a value to the `menuAppendTo` prop on the Select component, as it can cause accessibility issues. These issues can include, but are not limited to, being unable to enter the contents of the Select options via assistive technologies (like keyboards or screen readers).
 
-Instead prefer to append to `"parent"`, as the same result can be achieved without sacrificing accessibility like using `document.body`.
+Instead append to `"parent"` to achieve the same result without sacrificing accessibility.
 
-In this example, while both Select variants handle focus management within their dropdown contents the same way when the dropdown is opened, you will notice a difference when you try pressing the Tab key after selecting an option.
+In this example, while, when the dropdown is opened, both Select variants handle focus management within their dropdown contents the same way, you'll notice a difference when you try pressing the Tab key after selecting an option.
 
-For the `document.body` variant, the focus will be placed at the end of the page since that is where the dropdown content is appended to in the DOM (rather than focus being placed on the second Select variant as one might expect). For the `"parent"` variant, however, the focus will be placed on the next tab-able element (the "Toggle JS code" button for the code editor in this case).
+For the `document.body` variant, the focus will be placed at the end of the page, since that is where the dropdown content is appended to in the DOM (rather than focus being placed on the second Select variant as one might expect). For the `"parent"` variant, however, the focus will be placed on the next tab-able element (the "Toggle JS code" button for the code editor in this case).
 
 ```js
 import React from 'react';
