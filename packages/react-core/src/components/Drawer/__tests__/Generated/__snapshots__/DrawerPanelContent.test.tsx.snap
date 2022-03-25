@@ -1,10 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DrawerPanelContent should match snapshot (auto-generated) 1`] = `
+<<<<<<< HEAD
 <div>
   <div
     class="pf-c-drawer__panel ''"
     hidden=""
   />
 </div>
+=======
+<GenerateId
+  prefix="pf-drawer-panel-"
+>
+  <Component />
+</GenerateId>
+>>>>>>> fix failing tests
 `;
