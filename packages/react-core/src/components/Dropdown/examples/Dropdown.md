@@ -1487,11 +1487,11 @@ class ImageTextDropdown extends React.Component {
 
 ### Appending document body vs parent
 
-When passing in a value to the `menuAppendTo` prop on the Dropdown component, passing in `document.body` should be avoided if possible as doing so can cause accessibility issues. These issues can include (but may not be limited to) being unable to enter the contents of the Dropdown options via assistive technologies (like keyboards or screen readers).
+Avoid passing in `document.body` when passing a value to the `menuAppendTo` prop on the Dropdown component, as it can cause accessibility issues. These issues can include, but are not limited to, being unable to enter the contents of the Dropdown options via assistive technologies (like keyboards or screen readers).
 
-Instead prefer to append to `"parent"`, as the same result can be achieved without sacrificing accessibility like using `document.body`.
+Instead append to `"parent"` to achieve the same result without sacrificing accessibility.
 
-In this example, while both variants retain focus on their respective Dropdown component after making a selection, the `document.body` options cannot be navigated to via Voice Over.
+In this example, while, after making a selection, both variants retain focus on their respective Dropdown component, the options for the `document.body` variant cannot be navigated to via Voice Over.
 
 ```js
 import React from 'react';
