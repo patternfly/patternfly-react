@@ -2210,79 +2210,122 @@ class SingleSelectInput extends React.Component {
 }
 ```
 
-### Select menu document body
+### Appending document body vs parent
+
+Avoid passing in `document.body` when passing a value to the `menuAppendTo` prop on the Select component, as it can cause accessibility issues. These issues can include, but are not limited to, being unable to enter the contents of the Select options via assistive technologies (like keyboards or screen readers).
+
+Instead append to `"parent"` to achieve the same result without sacrificing accessibility.
+
+In this example, while, when the dropdown is opened, both Select variants handle focus management within their dropdown contents the same way, you'll notice a difference when you try pressing the Tab key after selecting an option.
+
+For the `document.body` variant, the focus will be placed at the end of the page, since that is where the dropdown content is appended to in the DOM (rather than focus being placed on the second Select variant as one might expect). For the `"parent"` variant, however, the focus will be placed on the next tab-able element (the "Toggle JS code" button for the code editor in this case).
 
 ```js
 import React from 'react';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import { Select, SelectOption, Flex, FlexItem } from '@patternfly/react-core';
 
-class SelectMenuDocumentBody extends React.Component {
+class SelectDocumentBodyVsParent extends React.Component {
   constructor(props) {
     super(props);
+    this.bodyOptions = [
+      <SelectOption key={0} value="Select a title - document body" isPlaceholder />,
+      <SelectOption key={1} value="Mr" />,
+      <SelectOption key={2} value="Miss" />,
+      <SelectOption key={3} value="Mrs" />,
+      <SelectOption key={4} value="Ms" />,
+      <SelectOption key={6} value="Dr" />,
+      <SelectOption key={7} value="Other" />
+    ];
+
+    this.parentOptions = [
+      <SelectOption key={0} value="Select a title - parent" isPlaceholder />,
+      <SelectOption key={1} value="Mr" />,
+      <SelectOption key={2} value="Miss" />,
+      <SelectOption key={3} value="Mrs" />,
+      <SelectOption key={4} value="Ms" />,
+      <SelectOption key={6} value="Dr" />,
+      <SelectOption key={7} value="Other" />
+    ];
 
     this.state = {
-      isOpen: false,
-      selected: []
+      isBodyOpen: false,
+      isParentOpen: false,
+      bodySelected: null,
+      parentSelected: null
     };
 
-    this.onToggle = isOpen => {
+    this.onBodyToggle = isBodyOpen => {
       this.setState({
-        isOpen
+        isBodyOpen
       });
     };
 
-    this.onSelect = (event, selection) => {
-      const { selected } = this.state;
-      if (selected.includes(selection)) {
-        this.setState(
-          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
-          () => console.log('selections: ', this.state.selected)
-        );
-      } else {
-        this.setState(
-          prevState => ({ selected: [...prevState.selected, selection] }),
-          () => console.log('selections: ', this.state.selected)
-        );
+    this.onParentToggle = isParentOpen => {
+      this.setState({
+        isParentOpen
+      });
+    };
+
+    this.onBodySelect = (event, selection, isPlaceholder) => {
+      if (isPlaceholder) this.clearSelection();
+      else {
+        this.setState({
+          bodySelected: selection,
+          isBodyOpen: false
+        });
+        console.log('selected on document body:', selection);
+      }
+    };
+
+    this.onParentSelect = (event, selection, isPlaceholder) => {
+      if (isPlaceholder) this.clearSelection();
+      else {
+        this.setState({
+          parentSelected: selection,
+          isParentOpen: false
+        });
+        console.log('selected on parent:', selection);
       }
     };
 
     this.clearSelection = () => {
       this.setState({
-        selected: []
+        selected: null,
+        isOpen: false
       });
     };
-
-    this.options = [
-      <SelectOption key={0} value="Debug" />,
-      <SelectOption key={1} value="Info" />,
-      <SelectOption key={2} value="Warn" />,
-      <SelectOption key={3} value="Error" />
-    ];
   }
 
   render() {
-    const { isOpen, selected } = this.state;
-    const titleId = 'checkbox-select-id-document-body';
+    const { isBodyOpen, isParentOpen, bodySelected, parentSelected } = this.state;
+
     return (
-      <div style={{ height: '50px', overflow: 'hidden' }}>
-        <span id={titleId} hidden>
-          Checkbox Title
-        </span>
-        <Select
-          variant={SelectVariant.checkbox}
-          aria-label="Select Input"
-          onToggle={this.onToggle}
-          onSelect={this.onSelect}
-          selections={selected}
-          isCheckboxSelectionBadgeHidden
-          isOpen={isOpen}
-          placeholderText="Filter by status"
-          aria-labelledby={titleId}
-          menuAppendTo={() => document.body}
-        >
-          {this.options}
-        </Select>
-      </div>
+      <Flex space={{ default: 'spacerMd' }} direction={{ default: 'column' }}>
+        <FlexItem>
+          <Select
+            aria-label="Select Input for Document Body"
+            onToggle={this.onBodyToggle}
+            onSelect={this.onBodySelect}
+            selections={bodySelected}
+            isOpen={isBodyOpen}
+            menuAppendTo={() => document.body}
+          >
+            {this.bodyOptions}
+          </Select>
+        </FlexItem>
+        <FlexItem>
+          <Select
+            aria-label="Select Input for Parent"
+            onToggle={this.onParentToggle}
+            onSelect={this.onParentSelect}
+            selections={parentSelected}
+            isOpen={isParentOpen}
+            menuAppendTo="parent"
+          >
+            {this.parentOptions}
+          </Select>
+        </FlexItem>
+      </Flex>
     );
   }
 }
