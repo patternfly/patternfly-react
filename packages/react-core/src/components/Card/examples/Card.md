@@ -2,7 +2,7 @@
 id: Card
 section: components
 cssPrefix: pf-c-card
-propComponents: ['Card', 'CardHeader', 'CardHeaderMain', 'CardTitle', 'CardBody', 'CardFooter', 'CardExpandableContent']
+propComponents: ['Card', 'CardActions', 'CardHeader', 'CardHeaderMain', 'CardTitle', 'CardBody', 'CardFooter', 'CardExpandableContent']
 ouia: true
 ---
 
