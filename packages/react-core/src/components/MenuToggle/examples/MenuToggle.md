@@ -6,8 +6,11 @@ propComponents: ['MenuToggle']
 beta: true
 ---
 
+import './MenuToggle.css'
+
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 ## Examples
 
@@ -41,17 +44,6 @@ import { MenuToggle } from '@patternfly/react-core';
 
 ```
 
-### Icon
-
-```ts
-import React from 'react';
-import { MenuToggle } from '@patternfly/react-core';
-import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
-
-<MenuToggle icon={<CogIcon />}>Icon</MenuToggle>;
-
-```
-
 ### Count
 
 ```ts
@@ -78,6 +70,28 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
     Expanded
   </MenuToggle>{' '}
   <MenuToggle variant="primary" isDisabled>
+    Disabled
+  </MenuToggle>
+</React.Fragment>
+
+```
+
+### Secondary
+
+```ts
+import React from 'react';
+import { MenuToggle } from '@patternfly/react-core';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+
+<React.Fragment>
+  <MenuToggle variant="secondary">Collapsed</MenuToggle>{' '}
+    <MenuToggle variant="secondary" icon={<CogIcon />}>
+    Icon
+  </MenuToggle>{' '}
+  <MenuToggle variant="secondary" isExpanded>
+    Expanded
+  </MenuToggle>{' '}
+  <MenuToggle variant="secondary" isDisabled>
     Disabled
   </MenuToggle>
 </React.Fragment>
@@ -120,6 +134,34 @@ import { MenuToggle } from '@patternfly/react-core';
   <MenuToggle variant="plainText" isExpanded aria-label="Expanded plain menu toggle">
     Custom text (expanded)
   </MenuToggle>
+</React.Fragment>
+```
+
+
+### With icon/image and text
+
+```ts
+import React from 'react';
+import { MenuToggle, Avatar } from '@patternfly/react-core';
+import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+
+<React.Fragment>
+  <MenuToggle icon={<CogIcon />} variant="secondary">Icon</MenuToggle>{' '}
+  <MenuToggle icon={<CogIcon />} variant="secondary" isDisabled>Icon</MenuToggle>
+</React.Fragment>
+```
+
+### With avatar and text
+
+```ts
+import React from 'react';
+import { MenuToggle, Avatar } from '@patternfly/react-core';
+import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+
+<React.Fragment>
+  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />}>Ned Username</MenuToggle>{' '}
+  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />} isExpanded>Ned Username</MenuToggle>{' '}
+  <MenuToggle icon={<Avatar src={imgAvatar} alt="avatar" />} isDisabled>Ned Username</MenuToggle>
 </React.Fragment>
 ```
 
