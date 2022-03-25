@@ -13,7 +13,7 @@ interface DefaultCreateConnectorProps {
   endPoint: Point;
   hints: string[];
   dragging: boolean;
-  active: boolean;
+  hover?: boolean;
   className?: string;
   tipContents?: React.ReactNode;
 }
@@ -23,14 +23,14 @@ const DefaultCreateConnector: React.FC<DefaultCreateConnectorProps> = ({
   endPoint,
   hints,
   dragging,
-  active,
+  hover,
   tipContents,
   className
 }) => {
   const classes = css(
     styles.topologyCreateConnector,
     className,
-    active && styles.modifiers.hover,
+    hover && styles.modifiers.hover,
     dragging && styles.modifiers.dragging
   );
 
