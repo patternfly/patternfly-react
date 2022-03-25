@@ -113,7 +113,11 @@ export const CalendarMonth = ({
   // eslint-disable-next-line prefer-const
   let [focusedDate, setFocusedDate] = React.useState(new Date(dateProp));
   if (!isValidDate(focusedDate)) {
-    focusedDate = today;
+    if (isValidDate(rangeStart)) {
+      focusedDate = rangeStart;
+    } else {
+      focusedDate = today;
+    }
   }
   const [hoveredDate, setHoveredDate] = React.useState(new Date(focusedDate));
   const focusRef = React.useRef<HTMLButtonElement>();
@@ -282,7 +286,10 @@ export const CalendarMonth = ({
                 const isRangeStart = isValidDate(rangeStart) && isSameDate(date, rangeStart);
                 let isInRange = false;
                 let isRangeEnd = false;
-                if (isValidDate(rangeStart) && isHoveredDateValid) {
+                if (isValidDate(rangeStart) && isValidDate(selectedDate)) {
+                  isInRange = date > rangeStart && date < selectedDate;
+                  isRangeEnd = isSameDate(date, selectedDate);
+                } else if (isValidDate(rangeStart) && isHoveredDateValid) {
                   if (hoveredDate > rangeStart || isSameDate(hoveredDate, rangeStart)) {
                     isInRange = date > rangeStart && date < hoveredDate;
                     isRangeEnd = isSameDate(date, hoveredDate);
