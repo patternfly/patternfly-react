@@ -104,7 +104,8 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
         drawerContentRef.current.getBoundingClientRect().bottom - drawerContentRef.current.getBoundingClientRect().top;
     }
 
-    return Math.round(splitterPos / drawerSize) * 100;
+    const newSplitterPos = (splitterPos / drawerSize) * 100;
+    return Math.round((newSplitterPos + Number.EPSILON) * 100) / 100;
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
