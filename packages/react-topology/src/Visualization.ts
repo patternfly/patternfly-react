@@ -39,13 +39,16 @@ export class Visualization extends Stateful implements Controller {
 
   @computed
   private get viewPadding(): number {
-    if (this.viewPaddingSettings.paddingPercentage) {
-      const { width: viewWidth, height: viewHeight } = this.graph.getBounds();
-      return (
-        Math.max(viewWidth, viewHeight) * this.graph.getScale() * (this.viewPaddingSettings.paddingPercentage / 100)
-      );
+    const { padding, paddingPercentage } = this.viewPaddingSettings;
+    if (paddingPercentage) {
+      const graph = this.graph;
+      if (!graph) {
+        return 0;
+      }
+      const { width: viewWidth, height: viewHeight } = graph.getBounds();
+      return Math.max(viewWidth, viewHeight) * graph.getScale() * (paddingPercentage / 100);
     }
-    return this.viewPaddingSettings.padding;
+    return padding;
   }
 
   private layoutFactories: LayoutFactory[] = [];

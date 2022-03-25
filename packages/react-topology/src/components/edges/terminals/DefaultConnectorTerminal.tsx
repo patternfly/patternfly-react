@@ -31,14 +31,6 @@ const DefaultConnectorTerminal: React.FC<EdgeConnectorArrowProps> = ({
   status,
   ...others
 }) => {
-  if (!terminalType || terminalType === EdgeTerminalType.none) {
-    return null;
-  }
-  const bendPoints = edge.getBendpoints();
-  const startPoint = isTarget ? _.last(bendPoints) || edge.getStartPoint() : _.head(bendPoints) || edge.getEndPoint();
-  const endPoint = isTarget ? edge.getEndPoint() : edge.getStartPoint();
-  const classes = css(styles.topologyEdge, className, StatusModifier[status]);
-
   let Terminal;
   switch (terminalType) {
     case EdgeTerminalType.directional:
@@ -62,6 +54,11 @@ const DefaultConnectorTerminal: React.FC<EdgeConnectorArrowProps> = ({
   if (!Terminal) {
     return null;
   }
+  const bendPoints = edge.getBendpoints();
+  const startPoint = isTarget ? _.last(bendPoints) || edge.getStartPoint() : _.head(bendPoints) || edge.getEndPoint();
+  const endPoint = isTarget ? edge.getEndPoint() : edge.getStartPoint();
+  const classes = css(styles.topologyEdge, className, StatusModifier[status]);
+
   return <Terminal className={classes} startPoint={startPoint} endPoint={endPoint} isTarget={isTarget} {...others} />;
 };
 

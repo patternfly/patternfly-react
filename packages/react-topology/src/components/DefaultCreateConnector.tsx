@@ -28,7 +28,7 @@ const DefaultCreateConnector: React.FC<DefaultCreateConnectorProps> = ({
   className
 }) => {
   const classes = css(
-    styles.topologyDefaultCreateConnector,
+    styles.topologyCreateConnector,
     className,
     active && styles.modifiers.hover,
     dragging && styles.modifiers.dragging
@@ -37,7 +37,7 @@ const DefaultCreateConnector: React.FC<DefaultCreateConnectorProps> = ({
   return (
     <g className={classes}>
       <line
-        className={css(styles.topologyDefaultCreateConnectorLine)}
+        className={css(styles.topologyCreateConnectorLine)}
         x1={startPoint.x}
         y1={startPoint.y}
         x2={endPoint.x}
@@ -46,10 +46,10 @@ const DefaultCreateConnector: React.FC<DefaultCreateConnectorProps> = ({
       {hints && hints[hints.length - 1] === 'create' ? (
         <g
           transform={`translate(${endPoint.x - cursorSize / 2},${endPoint.y - cursorSize / 2})`}
-          className={css(styles.topologyDefaultCreateConnectorCreate)}
+          className={css(styles.topologyCreateConnectorCreate)}
         >
           <circle
-            className={css(styles.topologyDefaultCreateConnectorCreateBg)}
+            className={css(styles.topologyCreateConnectorCreateBg)}
             cx={cursorSize / 2}
             cy={cursorSize / 2}
             r={cursorSize / 2}
@@ -64,20 +64,20 @@ const DefaultCreateConnector: React.FC<DefaultCreateConnectorProps> = ({
               exitDelay={0}
             >
               <AddCircleOIcon
-                className={css(styles.topologyDefaultCreateConnectorCreateCursor)}
+                className={css(styles.topologyCreateConnectorCreateCursor)}
                 style={{ fontSize: cursorSize }}
               />
             </Tooltip>
           ) : (
             <AddCircleOIcon
-              className={css(styles.topologyDefaultCreateConnectorCreateCursor)}
+              className={css(styles.topologyCreateConnectorCreateCursor)}
               style={{ fontSize: cursorSize }}
             />
           )}
         </g>
       ) : (
         <ConnectorArrow
-          className={css(styles.topologyDefaultCreateConnectorArrow)}
+          className={css(styles.topologyCreateConnectorArrow)}
           startPoint={startPoint}
           endPoint={endPoint}
         />

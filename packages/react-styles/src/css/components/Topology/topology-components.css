@@ -1,80 +1,8 @@
 :root {
-  --pf-topology-create-connector-color: var(--pf-global--secondary-color--100);
+  --pf-topology__create-connector-color: var(--pf-global--secondary-color--100);
 }
 
-.pf-topology-connector-arrow {
-  stroke-width: 1;
-  stroke: var(--edge--stroke);
-}
-
-.pf-topology-connector-arrow.pf-m-alt-connector-arrow {
-  fill: var(--pf-global--palette--white);
-}
-
-.pf-topology-connector-cross {
-  stroke-width: 1;
-  stroke: var(--edge--stroke);
-}
-.pf-topology-connector-cross.pf-m-source {
-  fill: var(--edge--stroke);
-}
-
-.pf-topology-connector-square, .pf-topology-connector-circle {
-  stroke-width: 1;
-  stroke: var(--edge--stroke);
-  fill: var(--edge--stroke);
-}
-
-.pf-topology-connector-square.pf-m-source, .pf-topology-connector-circle.pf-m-source {
-  fill: var(--pf-global--palette--white);
-}
-
-.pf-topology-connector-x {
-  stroke-width: 1;
-  stroke: var(--edge--stroke);
-}
-
-.pf-topology-create-connector {
-  cursor: pointer;
-}
-
-.pf-topology-default-create-connector {
-}
-
-.pf-topology-default-create-connector__create {
-}
-
-.pf-topology-default-create-connector__line {
-  stroke: var(--pf-topology-create-connector-color);
-  stroke-width: 2px;
-  stroke-dasharray: 3px, 3px;
-}
-
-.pf-topology-default-create-connector__arrow {
-  fill: var(--pf-global--Color--light-200);
-  stroke: var(--pf-topology-create-connector-color);
-}
-
-.pf-topology-default-create-connector.pf-m-hover .pf-topology-default-create-connector__line {
-  stroke: var(--pf-global--Color--100);
-}
-
-.pf-topology-default-create-connector.pf-m-hover .pf-topology-default-create-connector__arrow {
-  fill: var(--pf-global--Color--100);
-  stroke: var(--pf-global--Color--100);
-}
-
-.pf-topology-default-create-connector__create__bg {
-  stroke-width: 10px;
-  stroke: transparent;
-  fill-opacity: 0;
-}
-
-.pf-topology-default-create-connector__create__cursor {
-  fill: var(--pf-topology-create-connector-color);
-}
-
-.pf-topology-visualization-surface {
+.pf-topology__visualization-surface {
   height: 100%;
   flex-grow: 1;
   flex-shrink: 1;
@@ -82,26 +10,26 @@
   position: relative;
 }
 
-.pf-topology-visualization-surface__svg {
+.pf-topology__visualization-surface__svg {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.pf-topology-visualization-surface__svg g:focus {
+.pf-topology__visualization-surface__svg g:focus {
   outline: none;
 }
 
-.pf-topology-context-menu__c-dropdown__menu {
+.pf-topology__context-menu__c-dropdown__menu {
   position: initial !important;
 }
 
-.pf-topology-context-sub-menu {
+.pf-topology__context-sub-menu {
   position: relative;
   padding-right: var(--pf-global--spacer--lg) !important;
 }
 
-.pf-topology-context-sub-menu__arrow {
+.pf-topology__context-sub-menu__arrow {
   position: absolute;
   right: var(--pf-global--spacer--xs);
   top: 50%;
@@ -468,28 +396,29 @@
   stroke: var(--edge--active--stroke);
 }
 
-.pf-topology__edge.pf-m-selected .pf-topology-connector-arrow {
+.pf-topology__edge.pf-m-selected .pf-topology__connector-arrow {
   stroke: var(--edge--active--stroke);
-  fill: var(--edge--interactive--fill);
+  fill: var(--edge--active--fill);
 }
 
 .pf-topology__edge.pf-m-hover .pf-topology__edge__link,
-.pf-topology__edge.pf-m-hover .pf-topology-connector-arrow {
+.pf-topology__edge.pf-m-hover .pf-topology__connector-arrow {
+  fill: var(--pf-global--Color--100);
   stroke: var(--pf-global--Color--100);
 }
 
 .pf-topology__edge.pf-m-dragging .pf-topology__edge__link,
-.pf-topology__edge.pf-m-dragging .pf-topology-connector-arrow {
+.pf-topology__edge.pf-m-dragging .pf-topology__connector-arrow {
   stroke: var(--edge--interactive--stroke);
   fill: var(--edge--interactive--fill);
 }
 
-.pf-topology__edge .pf-topology-connector-arrow {
+.pf-topology__edge .pf-topology__connector-arrow {
   cursor: var(--edge__arrow--cursor);
   stroke: var(--edge--stroke);
 }
 
-.pf-topology__edge .pf-topology-connector-arrow.pf-m-draggable {
+.pf-topology__edge .pf-topology__connector-arrow.pf-m-draggable {
   cursor: pointer;
 }
 
@@ -524,5 +453,74 @@
 
 .pf-topology__edge__tag.pf-m-danger .pf-topology__edge__tag__background {
   fill: var(--pf-global--danger-color--100);
+}
+
+.pf-topology__connector-arrow {
+  stroke-width: 1;
+  stroke: var(--edge--stroke);
+}
+
+.pf-topology__connector-arrow.pf-m-alt-connector-arrow {
+  fill: var(--pf-global--palette--white);
+}
+
+.pf-topology__connector-cross {
+  stroke-width: 1;
+  stroke: var(--edge--stroke);
+}
+.pf-topology__connector-cross.pf-m-source {
+  fill: var(--edge--stroke);
+}
+
+.pf-topology__connector-square, .pf-topology__connector-circle {
+  stroke-width: 1;
+  stroke: var(--edge--stroke);
+  fill: var(--edge--stroke);
+}
+
+.pf-topology__connector-square.pf-m-source, .pf-topology__connector-circle.pf-m-source {
+  fill: var(--pf-global--palette--white);
+}
+
+.pf-topology__connector-x {
+  stroke-width: 1;
+  stroke: var(--edge--stroke);
+}
+
+.pf-topology__create-connector {
+  cursor: pointer;
+}
+
+.pf-topology__create-connector__line {
+  stroke: var(--pf-topology__create-connector-color);
+  stroke-width: 2px;
+  stroke-dasharray: 3px, 3px;
+}
+
+.pf-topology__create-connector__arrow {
+  fill: var(--pf-global--Color--light-200);
+  stroke: var(--pf-topology__create-connector-color);
+}
+
+.pf-topology__create-connector.pf-m-hover .pf-topology__create-connector__line {
+  stroke: var(--pf-global--Color--100);
+}
+
+.pf-topology__create-connector.pf-m-hover .pf-topology__create-connector__arrow {
+  fill: var(--pf-global--Color--100);
+  stroke: var(--pf-global--Color--100);
+}
+
+.pf-topology__create-connector__create {
+}
+
+.pf-topology__create-connector__create__bg {
+  stroke-width: 10px;
+  stroke: transparent;
+  fill-opacity: 0;
+}
+
+.pf-topology__create-connector__create__cursor {
+  fill: var(--pf-topology__create-connector-color);
 }
 

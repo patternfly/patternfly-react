@@ -146,7 +146,7 @@ type Never<Type> = { [K in keyof Type]?: never };
 type EitherNotBoth<TypeA, TypeB> = (TypeA & Never<TypeB>) | (TypeB & Never<TypeA>);
 
 interface ViewPaddingPixels {
-  padding: number; // Set this to Number.POSITIVE_INFINITY to bypass the checks
+  padding: number;
 }
 interface ViewPaddingPercentage {
   paddingPercentage: number;
