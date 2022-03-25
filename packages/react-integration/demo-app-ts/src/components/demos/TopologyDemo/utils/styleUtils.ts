@@ -125,6 +125,7 @@ export const createNode = (options: {
     height,
     shape,
     status: options.status || NodeStatus.default,
+    labelPosition: options.labelPosition,
     data: {
       dataType: 'Default',
       ...options

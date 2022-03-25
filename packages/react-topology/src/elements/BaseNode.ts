@@ -13,7 +13,8 @@ import {
   GraphElement,
   NODE_COLLAPSE_CHANGE_EVENT,
   NODE_POSITIONED_EVENT,
-  NodeStatus
+  NodeStatus,
+  LabelPosition
 } from '../types';
 import CenterAnchor from '../anchors/CenterAnchor';
 import Rect from '../geom/Rect';
@@ -56,6 +57,9 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
 
   @observable
   private collapsed = false;
+
+  @observable
+  private labelPosition = LabelPosition.bottom;
 
   @observable
   private shape: NodeShape | undefined;
@@ -245,6 +249,14 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
     }
   }
 
+  getLabelPosition(): LabelPosition {
+    return this.labelPosition;
+  }
+
+  setLabelPosition(position: LabelPosition): void {
+    this.labelPosition = position;
+  }
+
   getNodeShape(): NodeShape {
     return this.shape || (this.group ? NodeShape.rect : NodeShape.ellipse);
   }
@@ -314,6 +326,9 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
     if ('group' in model) {
       this.setGroup(!!model.group);
     }
+    if ('labelPosition' in model) {
+      this.labelPosition = model.labelPosition;
+    }
     if ('shape' in model) {
       this.shape = model.shape;
     }
@@ -334,6 +349,7 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
       height: this.isDimensionsInitialized() ? this.getDimensions().height : undefined,
       collapsed: this.isCollapsed(),
       group: this.isGroup(),
+      labelPosition: this.labelPosition,
       shape: this.shape,
       status: this.status
     };

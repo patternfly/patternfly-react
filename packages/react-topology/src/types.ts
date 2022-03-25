@@ -118,6 +118,7 @@ export interface NodeModel extends ElementModel {
   shape?: NodeShape;
   status?: NodeStatus;
   collapsed?: boolean;
+  labelPosition?: LabelPosition;
 }
 
 export interface EdgeModel extends ElementModel {
@@ -218,6 +219,8 @@ export interface Node<E extends NodeModel = NodeModel, D = any> extends GraphEle
   setGroup(group: boolean): void;
   isCollapsed(): boolean;
   setCollapsed(collapsed: boolean): void;
+  getLabelPosition(): LabelPosition;
+  setLabelPosition(position: LabelPosition): void;
   getNodeShape(): NodeShape;
   setNodeShape(shape: NodeShape): void;
   getNodeStatus(): NodeStatus;

@@ -48,7 +48,7 @@ type DefaultNodeProps = {
   label?: string; // Defaults to element.getLabel()
   secondaryLabel?: string;
   showLabel?: boolean; // Defaults to true
-  labelPosition?: LabelPosition; // Defaults to bottom
+  labelPosition?: LabelPosition; // Defaults to element.getLabelPosition()
   truncateLength?: number; // Defaults to 13
   labelIconClass?: string; // Icon to show in label
   labelIcon?: React.ReactNode;
@@ -83,7 +83,7 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
   showLabel = true,
   label,
   secondaryLabel,
-  labelPosition = LabelPosition.bottom,
+  labelPosition,
   truncateLength,
   labelIconClass,
   labelIcon,
@@ -189,6 +189,8 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
     filter = createSvgIdUrl(NODE_SHADOW_FILTER_ID_HOVER);
   }
 
+  const nodeLabelPosition = labelPosition || element.getLabelPosition();
+
   return (
     <g className={groupClassName}>
       <NodeShadows />
@@ -206,9 +208,9 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
         {showLabel && (label || element.getLabel()) && (
           <NodeLabel
             className={css(styles.topologyNodeLabel)}
-            x={labelPosition === LabelPosition.right ? width + 8 : width / 2}
-            y={labelPosition === LabelPosition.right ? height / 2 : height + 6}
-            position={labelPosition}
+            x={nodeLabelPosition === LabelPosition.right ? width + 8 : width / 2}
+            y={nodeLabelPosition === LabelPosition.right ? height / 2 : height + 6}
+            position={nodeLabelPosition}
             paddingX={8}
             paddingY={4}
             secondaryLabel={secondaryLabel}
