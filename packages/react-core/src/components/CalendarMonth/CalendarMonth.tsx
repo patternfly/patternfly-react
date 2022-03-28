@@ -110,7 +110,6 @@ export const CalendarMonth = ({
 }: CalendarProps) => {
   const longMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(monthNum => new Date(1990, monthNum)).map(monthFormat);
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
-  const [selectedDate, setSelectedDate] = React.useState(new Date(dateProp));
   // eslint-disable-next-line prefer-const
   let [focusedDate, setFocusedDate] = React.useState(new Date(dateProp));
   if (!isValidDate(focusedDate)) {
@@ -277,7 +276,7 @@ export const CalendarMonth = ({
               {week.map(({ date, isValid }, index) => {
                 const dayFormatted = dayFormat(date);
                 const isToday = isSameDate(date, today);
-                const isSelected = isValidDate(selectedDate) && isSameDate(date, selectedDate);
+                const isSelected = isValidDate(dateProp) && isSameDate(date, dateProp);
                 const isFocused = isSameDate(date, focusedDate);
                 const isAdjacentMonth = date.getMonth() !== focusedDate.getMonth();
                 let isInRange = false;
@@ -314,11 +313,7 @@ export const CalendarMonth = ({
                         !isValid && styles.modifiers.disabled
                       )}
                       type="button"
-                      onClick={() => {
-                        setSelectedDate(date);
-                        setFocusedDate(date);
-                        onChange(date);
-                      }}
+                      onClick={() => onChange(date)}
                       onMouseOver={() => setHoveredDate(date)}
                       tabIndex={isFocused ? 0 : -1}
                       disabled={!isValid}
