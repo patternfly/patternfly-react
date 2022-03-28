@@ -686,14 +686,16 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           typeaheadCurrIndex !== -1 && // do not allow selection without moving to an initial option
           (typeaheadActiveChild || (this.refCollection[0] && this.refCollection[0][0]))
         ) {
-          if (typeaheadActiveChild && !typeaheadActiveChild.classList.contains('pf-m-load')) {
-            const hasDescriptionElm = typeaheadActiveChild.childElementCount > 1;
-            const typeaheadActiveChildText = hasDescriptionElm
-              ? (typeaheadActiveChild.firstChild as HTMLElement).innerText
-              : typeaheadActiveChild.innerText;
-            this.setState({
-              typeaheadInputValue: typeaheadActiveChildText
-            });
+          if (typeaheadActiveChild) {
+            if (!typeaheadActiveChild.classList.contains('pf-m-load')) {
+              const hasDescriptionElm = typeaheadActiveChild.childElementCount > 1;
+              const typeaheadActiveChildText = hasDescriptionElm
+                ? (typeaheadActiveChild.firstChild as HTMLElement).innerText
+                : typeaheadActiveChild.innerText;
+              this.setState({
+                typeaheadInputValue: typeaheadActiveChildText
+              });
+            }
           } else if (this.refCollection[0] && this.refCollection[0][0]) {
             this.setState({
               typeaheadInputValue: this.refCollection[0][0].innerText
