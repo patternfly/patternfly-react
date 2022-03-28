@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.49.9 (2022-03-28)
+
+
+### Bug Fixes
+
+* **Select:** view more fixes ([#7107](https://github.com/patternfly/patternfly-react/issues/7107)) ([94f24f6](https://github.com/patternfly/patternfly-react/commit/94f24f65b043a2d3f3ae8fe7247aaf55b05987a7))
+
+
+
+
+
 ## 4.49.8 (2022-03-28)
 
 **Note:** Version bump only for package @patternfly/react-topology
