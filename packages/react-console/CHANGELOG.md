@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.53.7 (2022-03-28)
+
+
+### Bug Fixes
+
+* **CalendarMonth:** resolve regression for selecting a date ([#7130](https://github.com/patternfly/patternfly-react/issues/7130)) ([5397e89](https://github.com/patternfly/patternfly-react/commit/5397e895ba52434b98b4206ac47535ed36d1bf00))
+
+
+
+
+
 ## 4.53.6 (2022-03-28)
 
 **Note:** Version bump only for package @patternfly/react-console
