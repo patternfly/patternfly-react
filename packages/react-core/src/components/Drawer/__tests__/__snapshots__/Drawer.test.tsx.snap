@@ -19,6 +19,7 @@ exports[`Drawer expands from bottom 1`] = `
       </div>
       <div
         class="pf-c-drawer__panel"
+        id="pf-drawer-panel-5"
       >
         <div
           class="pf-c-drawer__body"
@@ -95,9 +96,12 @@ exports[`Drawer has resizable callback and id 1`] = `
         id="test-id"
       >
         <div
-          aria-describedby="Press space to begin resizing, and use the arrow keys to grow or shrink the panel. Press enter or escape to finish resizing."
+          aria-controls="test-id"
           aria-label="Resize"
           aria-orientation="vertical"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="0"
           class="pf-c-drawer__splitter pf-m-vertical"
           role="separator"
           tabindex="0"
@@ -183,12 +187,16 @@ exports[`Drawer has resizable css and color variants 1`] = `
       </div>
       <div
         class="pf-c-drawer__panel pf-m-resizable pf-m-light-200"
+        id="pf-drawer-panel-6"
         style="--pf-c-drawer__panel--md--FlexBasis: 300px; --pf-c-drawer__panel--md--FlexBasis--min: 200px; --pf-c-drawer__panel--md--FlexBasis--max: 400px;"
       >
         <div
-          aria-describedby="Press space to begin resizing, and use the arrow keys to grow or shrink the panel. Press enter or escape to finish resizing."
+          aria-controls="pf-drawer-panel-6"
           aria-label="Resize"
           aria-orientation="vertical"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="0"
           class="pf-c-drawer__splitter pf-m-vertical"
           role="separator"
           tabindex="0"
@@ -275,6 +283,7 @@ exports[`Drawer isExpanded = false and isInline = false and isStatic = false 1`]
       <div
         class="pf-c-drawer__panel"
         hidden=""
+        id="pf-drawer-panel-1"
       />
     </div>
   </div>
@@ -301,6 +310,7 @@ exports[`Drawer isExpanded = false and isInline = true and isStatic = false 1`] 
       <div
         class="pf-c-drawer__panel"
         hidden=""
+        id="pf-drawer-panel-3"
       />
     </div>
   </div>
@@ -326,6 +336,7 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = false 1`] 
       </div>
       <div
         class="pf-c-drawer__panel"
+        id="pf-drawer-panel-0"
       >
         <div
           class="pf-c-drawer__body"
@@ -399,6 +410,7 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = true 1`] =
       </div>
       <div
         class="pf-c-drawer__panel"
+        id="pf-drawer-panel-4"
       >
         <div
           class="pf-c-drawer__body"
@@ -472,6 +484,7 @@ exports[`Drawer isExpanded = true and isInline = true and isStatic = false 1`] =
       </div>
       <div
         class="pf-c-drawer__panel"
+        id="pf-drawer-panel-2"
       >
         <div
           class="pf-c-drawer__body"
