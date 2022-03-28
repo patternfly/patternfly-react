@@ -303,7 +303,7 @@ export default class BaseGraph<E extends GraphModel = GraphModel, D = any> exten
     const { x, y, width, height } = element
       .getBounds()
       .clone()
-      .scale(graph.getScale())
+      .scale(this.scale)
       .translate(viewX, viewY);
 
     return x + width > -padding && x < viewWidth + padding && y + height > -padding && y < viewHeight + padding;

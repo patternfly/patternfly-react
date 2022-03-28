@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as _ from 'lodash';
 import { observer } from 'mobx-react';
 import { Edge, EdgeTerminalType, NodeStatus } from '../../types';
 import {
@@ -17,6 +18,7 @@ import DefaultConnectorTerminal from './terminals/DefaultConnectorTerminal';
 import { TOP_LAYER } from '../../const';
 import DefaultConnectorTag from './DefaultConnectorTag';
 import { Point } from '../../geom';
+import { getConnectorStartPoint } from './terminals/terminalUtils';
 
 type BaseEdgeProps = {
   element: Edge;
@@ -26,17 +28,17 @@ type BaseEdgeProps = {
   startTerminalType?: EdgeTerminalType;
   startTerminalClass?: string;
   startTerminalStatus?: NodeStatus;
+  startTerminalSize?: number;
   endTerminalType?: EdgeTerminalType;
   endTerminalClass?: string;
   endTerminalStatus?: NodeStatus;
+  endTerminalSize?: number;
   tag?: string;
   tagClass?: string;
   tagStatus?: NodeStatus;
-} & WithRemoveConnectorProps &
-  WithSourceDragProps &
-  WithTargetDragProps &
-  WithSelectionProps &
-  Partial<WithContextMenuProps>;
+} & Partial<
+  WithRemoveConnectorProps & WithSourceDragProps & WithTargetDragProps & WithSelectionProps & WithContextMenuProps
+>;
 
 const BaseEdge: React.FC<BaseEdgeProps> = ({
   element,
@@ -49,9 +51,11 @@ const BaseEdge: React.FC<BaseEdgeProps> = ({
   startTerminalType = EdgeTerminalType.none,
   startTerminalClass,
   startTerminalStatus,
+  startTerminalSize = 14,
   endTerminalType = EdgeTerminalType.directional,
   endTerminalClass,
   endTerminalStatus,
+  endTerminalSize = 14,
   tag,
   tagClass,
   tagStatus,
@@ -77,9 +81,9 @@ const BaseEdge: React.FC<BaseEdgeProps> = ({
   const groupClassName = css(
     styles.topologyEdge,
     className,
-    hover && 'pf-m-hover',
     dragging && 'pf-m-dragging',
-    selected && 'pf-m-selected'
+    hover && !dragging && 'pf-m-hover',
+    selected && !dragging && 'pf-m-selected'
   );
 
   const edgeAnimationDuration = animationDuration ?? getEdgeAnimationDuration(element.getEdgeAnimationSpeed());
@@ -91,6 +95,18 @@ const BaseEdge: React.FC<BaseEdgeProps> = ({
     endPoint.x
   } ${endPoint.y}`;
 
+  const bgStartPoint =
+    !startTerminalType || startTerminalType === EdgeTerminalType.none
+      ? [startPoint.x, startPoint.y]
+      : getConnectorStartPoint(_.head(bendpoints) || endPoint, startPoint, startTerminalSize);
+  const bgEndPoint =
+    !endTerminalType || endTerminalType === EdgeTerminalType.none
+      ? [endPoint.x, endPoint.y]
+      : getConnectorStartPoint(_.last(bendpoints) || startPoint, endPoint, endTerminalSize);
+  const backgroundPath = `M${bgStartPoint[0]} ${bgStartPoint[1]} ${bendpoints
+    .map((b: Point) => `L${b.x} ${b.y} `)
+    .join('')}L${bgEndPoint[0]} ${bgEndPoint[1]}`;
+
   return (
     <Layer id={dragging || hover ? TOP_LAYER : undefined}>
       <g
@@ -101,10 +117,8 @@ const BaseEdge: React.FC<BaseEdgeProps> = ({
         onContextMenu={onContextMenu}
       >
         <path
-          strokeWidth={10}
-          stroke="transparent"
-          d={d}
-          fill="none"
+          className={css(styles.topologyEdgeBackground)}
+          d={backgroundPath}
           onMouseEnter={onShowRemoveConnector}
           onMouseLeave={onHideRemoveConnector}
         />
@@ -122,6 +136,7 @@ const BaseEdge: React.FC<BaseEdgeProps> = ({
           className={startTerminalClass}
           isTarget={false}
           edge={element}
+          size={startTerminalSize}
           dragRef={sourceDragRef}
           terminalType={startTerminalType}
           status={startTerminalStatus}
@@ -132,6 +147,7 @@ const BaseEdge: React.FC<BaseEdgeProps> = ({
           isTarget
           dragRef={targetDragRef}
           edge={element}
+          size={endTerminalSize}
           terminalType={endTerminalType}
           status={endTerminalStatus}
           highlight={dragging || hover}

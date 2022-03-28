@@ -91,14 +91,10 @@ export const getNodeOptions = (
 
 export const generateNode = (index: number, nodeCreationOptions: GeneratorNodeOptions): NodeModel => {
   const nodeId = `node-${index}`;
-  let width = nodeCreationOptions.smallNodes ? 48 : 75;
+  const width = nodeCreationOptions.smallNodes ? 48 : 75;
   let height = nodeCreationOptions.smallNodes ? 48 : 75;
 
   const nodeOptions = getNodeOptions(index, nodeCreationOptions);
-  if (nodeOptions.shape === NodeShape.rect) {
-    width *= 2;
-    height *= 0.75;
-  }
   if (nodeOptions.shape === NodeShape.stadium) {
     height *= 0.5;
   }

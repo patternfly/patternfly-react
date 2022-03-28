@@ -1,20 +1,24 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import { hullPath } from '../utils/svg-utils';
 import DefaultCreateConnector from '../components/DefaultCreateConnector';
 import Point from '../geom/Point';
 import Layer from '../components/layers/Layer';
 import { ContextMenu, ContextMenuItem } from '../components/contextmenu';
-import { Node, isNode, AnchorEnd, GraphElement, isGraph, Graph } from '../types';
+import { AnchorEnd, Graph, GraphElement, isGraph, isNode, LabelPosition, Node } from '../types';
 import {
-  DragSourceSpec,
-  DragSourceMonitor,
   DragEvent,
   DragObjectWithType,
-  DragSpecOperationType,
-  DragOperationWithType
+  DragOperationWithType,
+  DragSourceMonitor,
+  DragSourceSpec,
+  DragSpecOperationType
 } from './dnd-types';
 import { useDndDrag } from './useDndDrag';
+import { TOP_LAYER } from '../const';
+import { useCombineRefs, useHover } from '../utils';
 
 export const CREATE_CONNECTOR_OPERATION = '#createconnector#';
 export const CREATE_CONNECTOR_DROP_TYPE = '#createConnector#';
@@ -25,6 +29,7 @@ export interface ConnectorChoice {
 
 export interface CreateConnectorOptions {
   handleAngle?: number;
+  handleAngleTop?: number;
   handleLength?: number;
   dragItem?: DragObjectWithType;
   dragOperation?: DragOperationWithType;
@@ -36,6 +41,7 @@ interface ConnectorComponentProps {
   endPoint: Point;
   hints: string[];
   dragging: boolean;
+  hover?: boolean;
 }
 
 type CreateConnectorRenderer = React.ComponentType<ConnectorComponentProps>;
@@ -72,7 +78,8 @@ interface PromptData {
 const isReactElementArray = (choices: ConnectorChoice[] | React.ReactElement[]): choices is React.ReactElement[] =>
   React.isValidElement(choices[0]);
 
-const DEFAULT_HANDLE_ANGLE = 12 * (Math.PI / 180);
+const DEFAULT_HANDLE_ANGLE = Math.PI / 180;
+const DEFAULT_HANDLE_ANGLE_TOP = 1.5 * Math.PI;
 const DEFAULT_HANDLE_LENGTH = 32;
 
 const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(props => {
@@ -82,6 +89,7 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
     onCreate,
     ConnectorComponent,
     handleAngle = DEFAULT_HANDLE_ANGLE,
+    handleAngleTop = DEFAULT_HANDLE_ANGLE_TOP,
     handleLength = DEFAULT_HANDLE_LENGTH,
     contextMenuClass,
     dragItem,
@@ -128,8 +136,10 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
       })
     };
     return dragSourceSpec;
-  }, [setActive, dragItem, dragOperation]);
+  }, [setActive, dragItem, dragOperation, hideConnectorMenu]);
   const [{ dragging, event, hints }, dragRef] = useDndDrag(spec, props);
+  const [hover, hoverRef] = useHover();
+  const refs = useCombineRefs(dragRef, hoverRef);
 
   if (!active && dragging && !event) {
     // another connector is dragging right now
@@ -151,14 +161,14 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
     startPoint = element.getAnchor(AnchorEnd.source).getLocation(endPoint);
   } else {
     const bounds = element.getBounds();
-    const referencePoint = new Point(
-      bounds.right(),
-      Math.tan(handleAngle) * (bounds.width / 2) + bounds.y + bounds.height / 2
-    );
+    const isRightLabel = element.getLabelPosition() === LabelPosition.right;
+    const referencePoint = isRightLabel
+      ? new Point(bounds.x + bounds.width / 2, bounds.y)
+      : new Point(bounds.right(), Math.tan(handleAngle) * (bounds.width / 2) + bounds.y + bounds.height / 2);
     startPoint = element.getAnchor(AnchorEnd.source).getLocation(referencePoint);
     endPoint = new Point(
-      Math.cos(handleAngle) * handleLength + startPoint.x,
-      Math.sin(handleAngle) * handleLength + startPoint.y
+      Math.cos(isRightLabel ? handleAngleTop : handleAngle) * handleLength + startPoint.x,
+      Math.sin(isRightLabel ? handleAngleTop : handleAngle) * handleLength + startPoint.y
     );
   }
 
@@ -168,10 +178,10 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
 
   return (
     <>
-      <Layer id="top">
+      <Layer id={TOP_LAYER}>
         <g
-          className="topology-create-connector"
-          ref={dragRef}
+          className={css(styles.topologyCreateConnector)}
+          ref={refs}
           onMouseEnter={!active ? () => onKeepAlive(true) : undefined}
           onMouseLeave={!active ? () => onKeepAlive(false) : undefined}
         >
@@ -180,19 +190,18 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
             endPoint={endPoint}
             dragging={dragging}
             hints={hintsRef.current || []}
+            hover={hover}
           />
-          {!active && (
-            <path
-              d={hullPath(
-                [
-                  [startPoint.x, startPoint.y],
-                  [endPoint.x, endPoint.y]
-                ],
-                7
-              )}
-              fillOpacity="0"
-            />
-          )}
+          <path
+            d={hullPath(
+              [
+                [startPoint.x, startPoint.y],
+                [endPoint.x, endPoint.y]
+              ],
+              7
+            )}
+            fillOpacity="0"
+          />
         </g>
       </Layer>
       {prompt && (

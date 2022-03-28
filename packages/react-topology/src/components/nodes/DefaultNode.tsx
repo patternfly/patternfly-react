@@ -37,6 +37,7 @@ const getStatusIcon = (status: NodeStatus) => {
 };
 
 type DefaultNodeProps = {
+  className?: string;
   element: Node;
   droppable?: boolean;
   hover?: boolean;
@@ -47,9 +48,10 @@ type DefaultNodeProps = {
   label?: string; // Defaults to element.getLabel()
   secondaryLabel?: string;
   showLabel?: boolean; // Defaults to true
-  labelPosition?: LabelPosition; // Defaults to bottom
+  labelPosition?: LabelPosition; // Defaults to element.getLabelPosition()
   truncateLength?: number; // Defaults to 13
   labelIconClass?: string; // Icon to show in label
+  labelIcon?: React.ReactNode;
   labelIconPadding?: number;
   badge?: string;
   badgeColor?: string;
@@ -63,7 +65,7 @@ type DefaultNodeProps = {
   statusDecoratorTooltip?: React.ReactNode;
   onStatusDecoratorClick?: (event: React.MouseEvent<SVGGElement, MouseEvent>, element: GraphElement) => void;
   getCustomShape?: (node: Node) => React.FC<ShapeProps>;
-  getShapeDecoratorCenter?: (quadrant: TopologyQuadrant, node: Node, radius?: number) => { x: number; y: number };
+  getShapeDecoratorCenter?: (quadrant: TopologyQuadrant, node: Node) => { x: number; y: number };
 } & Partial<
   WithSelectionProps &
     WithDragNodeProps &
@@ -74,15 +76,18 @@ type DefaultNodeProps = {
 >;
 
 const DefaultNode: React.FC<DefaultNodeProps> = ({
+  className,
   element,
   selected,
   hover,
   showLabel = true,
   label,
   secondaryLabel,
-  labelPosition = LabelPosition.bottom,
+  labelPosition,
   truncateLength,
   labelIconClass,
+  labelIcon,
+  labelIconPadding,
   showStatusBackground,
   showStatusDecorator = false,
   statusDecoratorTooltip,
@@ -126,8 +131,8 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
     }
 
     const { x, y } = getShapeDecoratorCenter
-      ? getShapeDecoratorCenter(StatusQuadrant, element, DEFAULT_DECORATOR_RADIUS)
-      : getDefaultShapeDecoratorCenter(StatusQuadrant, element, DEFAULT_DECORATOR_RADIUS);
+      ? getShapeDecoratorCenter(StatusQuadrant, element)
+      : getDefaultShapeDecoratorCenter(StatusQuadrant, element);
 
     const decorator = (
       <Decorator
@@ -163,6 +168,7 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
 
   const groupClassName = css(
     styles.topologyNode,
+    className,
     isHover && 'pf-m-hover',
     (dragging || edgeDragging) && 'pf-m-dragging',
     canDrop && dropTarget && 'pf-m-drop-target',
@@ -183,6 +189,8 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
     filter = createSvgIdUrl(NODE_SHADOW_FILTER_ID_HOVER);
   }
 
+  const nodeLabelPosition = labelPosition || element.getLabelPosition();
+
   return (
     <g className={groupClassName}>
       <NodeShadows />
@@ -200,9 +208,9 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
         {showLabel && (label || element.getLabel()) && (
           <NodeLabel
             className={css(styles.topologyNodeLabel)}
-            x={labelPosition === LabelPosition.right ? width + 8 : width / 2}
-            y={labelPosition === LabelPosition.right ? height / 2 : height + 6}
-            position={labelPosition}
+            x={nodeLabelPosition === LabelPosition.right ? width + 8 : width / 2}
+            y={nodeLabelPosition === LabelPosition.right ? height / 2 : height + 6}
+            position={nodeLabelPosition}
             paddingX={8}
             paddingY={4}
             secondaryLabel={secondaryLabel}
@@ -218,6 +226,8 @@ const DefaultNode: React.FC<DefaultNodeProps> = ({
             contextMenuOpen={contextMenuOpen}
             hover={isHover}
             labelIconClass={labelIconClass}
+            labelIcon={labelIcon}
+            labelIconPadding={labelIconPadding}
           >
             {label || element.getLabel()}
           </NodeLabel>

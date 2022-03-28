@@ -21,7 +21,12 @@ const ConnectorArrowAlt: React.FC<ConnectorArrowAltProps> = ({
   size,
   dragRef
 }) => {
-  const classes = css(className, styles.modifiers.altConnectorArrow);
+  const classes = css(
+    styles.topologyConnectorArrow,
+    styles.modifiers.altConnectorArrow,
+    className,
+    dragRef && 'pf-m-draggable'
+  );
   return (
     <ConnectorArrow startPoint={startPoint} endPoint={endPoint} className={classes} size={size} dragRef={dragRef} />
   );

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useSize } from '../../../utils';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 
@@ -10,28 +9,36 @@ interface LabelIconProps {
   width: number;
   height: number;
   padding?: number;
-  iconClass: string;
+  iconClass?: string;
+  icon?: React.ReactNode;
 }
 
 const LabelIcon = React.forwardRef<SVGCircleElement, LabelIconProps>(
-  ({ className, x, y, width, height, iconClass, padding = 4 }, circleRef) => {
-    const [typedIconSize, typedIconRef] = useSize([width, height, iconClass]);
-
-    const iconWidth = typedIconSize?.width ?? 0;
-    const iconHeight = typedIconSize?.height ?? 0;
+  ({ className, x, y, width, height, iconClass, icon, padding = 4 }, circleRef) => {
+    const radius = width / 2;
+    const cx = x - radius;
+    const cy = y + height / 2;
+    const innerX = x - width + padding + 1;
+    const innerY = y + padding + 1;
+    const innerWidth = width - padding * 2 - 2; // -2 for 1px border on each side
+    const innerHeight = height - padding * 2 - 2; // -2 for 1px border on each side
 
     return (
-      <g className={css(styles.topologyNodeIcon, className)}>
-        <circle
-          className={css(styles.topologyNodeLabelBackground)}
-          ref={circleRef}
-          cx={x - iconWidth / 2}
-          cy={y + iconHeight / 2}
-          r={iconWidth / 2 + padding}
-        />
-        <g ref={typedIconRef}>
-          <image x={x - iconWidth} y={y} width={width} height={height} xlinkHref={iconClass} />
-        </g>
+      <g className={css(styles.topologyNodeLabelIcon, className)}>
+        <circle className={css(styles.topologyNodeLabelIconBackground)} ref={circleRef} cx={cx} cy={cy} r={radius} />
+        {icon ? (
+          <foreignObject
+            className={css(styles.topologyNodeLabelIcon)}
+            x={innerX}
+            y={innerY}
+            width={innerWidth}
+            height={innerHeight}
+          >
+            {icon}
+          </foreignObject>
+        ) : (
+          <image x={innerX} y={innerY} width={innerWidth} height={innerHeight} xlinkHref={iconClass} />
+        )}
       </g>
     );
   }
