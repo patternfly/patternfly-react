@@ -83,13 +83,15 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
     let splitterPos;
     let drawerSize;
 
-    if (isInline) {
-      splitterPos =
-        splitterRef.current.getBoundingClientRect().right - drawerContentRef.current.getBoundingClientRect().left;
+    if (isInline && position === 'right') {
+      splitterPos = panel.current.getBoundingClientRect().right - splitterRef.current.getBoundingClientRect().left;
+      drawerSize = drawerRef.current.getBoundingClientRect().right - drawerRef.current.getBoundingClientRect().left;
+    } else if (isInline && position === 'left') {
+      splitterPos = splitterRef.current.getBoundingClientRect().right - panel.current.getBoundingClientRect().left;
       drawerSize = drawerRef.current.getBoundingClientRect().right - drawerRef.current.getBoundingClientRect().left;
     } else if (position === 'right') {
       splitterPos =
-        splitterRef.current.getBoundingClientRect().left - drawerContentRef.current.getBoundingClientRect().left;
+        drawerContentRef.current.getBoundingClientRect().right - splitterRef.current.getBoundingClientRect().left;
       drawerSize =
         drawerContentRef.current.getBoundingClientRect().right - drawerContentRef.current.getBoundingClientRect().left;
     } else if (position === 'left') {
