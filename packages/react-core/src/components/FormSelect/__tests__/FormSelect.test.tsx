@@ -1,6 +1,10 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { shallow } from 'enzyme';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+
+import { Form } from '../../Form';
 import { FormSelect } from '../FormSelect';
 import { FormSelectOption } from '../FormSelectOption';
 import { FormSelectOptionGroup } from '../FormSelectOptionGroup';
@@ -49,136 +53,141 @@ const groupedProps = {
   value: '2'
 };
 
-test('Simple FormSelect input', () => {
-  const view = render(
-    <FormSelect value={props.value} aria-label="simple FormSelect">
-      {props.options.map((option, index) => (
-        <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
-      ))}
-    </FormSelect>
-  );
-  expect(view.container).toMatchSnapshot();
-});
+describe('FormSelect', () => {
+  test('Simple FormSelect input', () => {
+    render(
+      <FormSelect value={props.value} aria-label="simple FormSelect">
+        {props.options.map((option, index) => (
+          <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
+        ))}
+      </FormSelect>
+    );
+    expect(screen.getByLabelText('simple FormSelect').outerHTML).toMatchSnapshot();
+  });
 
-test('Grouped FormSelect input', () => {
-  const view = render(
-    <FormSelect value={groupedProps.value} aria-label=" grouped FormSelect">
-      {groupedProps.groups.map((group, index) => (
-        <FormSelectOptionGroup isDisabled={group.disabled} key={index} label={group.groupLabel}>
-          {group.options.map((option, i) => (
-            <FormSelectOption isDisabled={option.disabled} key={i} value={option.value} label={option.label} />
-          ))}
-        </FormSelectOptionGroup>
-      ))}
-    </FormSelect>
-  );
-  expect(view.container).toMatchSnapshot();
-});
+  test('Grouped FormSelect input', () => {
+    render(
+      <FormSelect value={groupedProps.value} aria-label="grouped FormSelect">
+        {groupedProps.groups.map((group, index) => (
+          <FormSelectOptionGroup isDisabled={group.disabled} key={index} label={group.groupLabel}>
+            {group.options.map((option, i) => (
+              <FormSelectOption isDisabled={option.disabled} key={i} value={option.value} label={option.label} />
+            ))}
+          </FormSelectOptionGroup>
+        ))}
+      </FormSelect>
+    );
+    expect(screen.getByLabelText('grouped FormSelect').outerHTML).toMatchSnapshot();
+  });
 
-test('Disabled FormSelect input ', () => {
-  const view = render(
-    <FormSelect isDisabled aria-label="disabled  FormSelect">
-      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-    </FormSelect>
-  );
-  expect(view.container).toMatchSnapshot();
-});
+  test('Disabled FormSelect input ', () => {
+    render(
+      <FormSelect isDisabled aria-label="disabled FormSelect">
+        <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+      </FormSelect>
+    );
+    expect(screen.getByLabelText('disabled FormSelect').outerHTML).toMatchSnapshot();
+  });
 
-test('FormSelect input with aria-label does not generate console error', () => {
-  const myMock = jest.fn() as any;
-  global.console = { error: myMock } as any;
-  const view = render(
-    <FormSelect aria-label="FormSelect with aria-label">
-      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-    </FormSelect>
-  );
-  expect(view.container).toMatchSnapshot();
-  expect(myMock).not.toBeCalled();
-});
+  test('FormSelect input with aria-label does not generate console error', () => {
+    const myMock = jest.fn() as any;
+    global.console = { error: myMock } as any;
 
-test('FormSelect input with id does not generate console error', () => {
-  const myMock = jest.fn() as any;
-  global.console = { error: myMock } as any;
-  const view = render(
-    <FormSelect id="id">
-      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-    </FormSelect>
-  );
-  expect(view.container).toMatchSnapshot();
-  expect(myMock).not.toBeCalled();
-});
+    render(
+      <FormSelect aria-label="label">
+        <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+      </FormSelect>
+    );
 
-test('FormSelect input with no aria-label or id generates console error', () => {
-  const myMock = jest.fn() as any;
-  global.console = { error: myMock } as any;
-  const view = render(
-    <FormSelect>
-      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-    </FormSelect>
-  );
-  expect(view.container).toMatchSnapshot();
-  expect(myMock).toBeCalled();
-});
+    expect(screen.getByLabelText('label').outerHTML).toMatchSnapshot();
+    expect(myMock).not.toBeCalled();
+  });
 
-test('invalid FormSelect input', () => {
-  const view = render(
-    <FormSelect validated={'error'} aria-label="invalid FormSelect">
-      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-    </FormSelect>
-  );
-  expect(view.container).toMatchSnapshot();
-});
+  test('FormSelect input with id does not generate console error', () => {
+    const myMock = jest.fn() as any;
+    global.console = { error: myMock } as any;
 
-test('validated success FormSelect input', () => {
-  const view = shallow(
-    <FormSelect validated={ValidatedOptions.success} aria-label="validated FormSelect">
-      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-    </FormSelect>
-  );
-  expect(view.find('.pf-c-form-control.pf-m-success').length).toBe(1);
-  expect(view).toMatchSnapshot();
-});
+    render(
+      <FormSelect id="id" aria-label="label">
+        <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+      </FormSelect>
+    );
 
-test('validated error FormSelect input', () => {
-  const view = render(
-    <FormSelect validated={ValidatedOptions.error} aria-label="validated FormSelect">
-      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-    </FormSelect>
-  );
-  expect(view.container).toMatchSnapshot();
-});
+    expect(screen.getByLabelText('label').outerHTML).toMatchSnapshot();
+    expect(myMock).not.toBeCalled();
+  });
 
-test('validated warning FormSelect input', () => {
-  const view = shallow(
-    <FormSelect validated={ValidatedOptions.warning} aria-label="validated FormSelect">
-      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-    </FormSelect>
-  );
-  expect(view.find('.pf-c-form-control.pf-m-warning').length).toBe(1);
-  expect(view).toMatchSnapshot();
-});
+  test('FormSelect input with no aria-label or id generates console error', () => {
+    const myMock = jest.fn() as any;
+    global.console = { error: myMock } as any;
 
+    render(
+      <FormSelect data-testid="test-id">
+        <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+      </FormSelect>
+    );
 
-test('required FormSelect input', () => {
-  const view = render(
-    <FormSelect required aria-label="required FormSelect">
-      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-    </FormSelect>
-  );
-  expect(view.container).toMatchSnapshot();
-});
+    expect(screen.getByTestId('test-id').outerHTML).toMatchSnapshot();
+    expect(myMock).toBeCalled();
+  });
 
-test('FormSelect passes value and event to onChange handler', () => {
-  const myMock = jest.fn();
-  const newValue = 1;
-  const event = {
-    currentTarget: { value: newValue }
-  };
-  const view = shallow(
-    <FormSelect onChange={myMock} aria-label="onchange FormSelect">
-      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-    </FormSelect>
-  );
-  view.find('select').simulate('change', event);
-  expect(myMock).toBeCalledWith(newValue, event);
+  test('invalid FormSelect input', () => {
+    render(
+      <FormSelect validated="error" aria-label="invalid FormSelect">
+        <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+      </FormSelect>
+    );
+    expect(screen.getByLabelText('invalid FormSelect').outerHTML).toMatchSnapshot();
+  });
+
+  test('validated success FormSelect input', () => {
+    render(
+      <FormSelect validated={ValidatedOptions.success} aria-label="validated FormSelect">
+        <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+      </FormSelect>
+    );
+
+    const formSelect = screen.getByLabelText('validated FormSelect');
+
+    expect(formSelect.className).toContain('pf-m-success');
+    expect(formSelect.outerHTML).toMatchSnapshot();
+  });
+
+  test('validated warning FormSelect input', () => {
+    render(
+      <FormSelect validated={ValidatedOptions.warning} aria-label="validated FormSelect">
+        <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+      </FormSelect>
+    );
+
+    const formSelect = screen.getByLabelText('validated FormSelect');
+
+    expect(formSelect.className).toContain('pf-m-warning');
+    expect(formSelect.outerHTML).toMatchSnapshot();
+  });
+
+  test('required FormSelect input', () => {
+    render(
+      <FormSelect isRequired aria-label="required FormSelect">
+        <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+      </FormSelect>
+    );
+
+    expect(screen.getByLabelText('required FormSelect')).toHaveAttribute('required');
+  });
+
+  test('FormSelect passes value and event to onChange handler', () => {
+    const myMock = jest.fn();
+
+    render(
+      <FormSelect onChange={myMock} aria-label="Some label">
+        <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+      </FormSelect>
+    );
+
+    userEvent.selectOptions(screen.getByLabelText('Some label'), 'Mr');
+
+    expect(myMock).toBeCalled();
+    expect(myMock.mock.calls[0][0]).toEqual('mr');
+  });
 });

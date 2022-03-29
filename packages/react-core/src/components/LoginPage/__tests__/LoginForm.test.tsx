@@ -1,41 +1,48 @@
-import * as React from 'react';
-import { render } from '@testing-library/react';
-import { shallow } from 'enzyme';
-
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { LoginForm } from '../LoginForm';
+import userEvent from '@testing-library/user-event';
 
-test('should render Login form', () => {
-  const view = render(<LoginForm />);
-  expect(view.container).toMatchSnapshot();
-});
+describe('LoginForm', () => {
+  test('should render Login form', () => {
+    render(<LoginForm data-testid="form-test-id" />);
+    expect(screen.getByTestId('form-test-id').outerHTML).toMatchSnapshot();
+  });
 
-test('should call onChangeUsername callback', () => {
-  const mockFn = jest.fn();
-  const view = shallow(<LoginForm onChangeUsername={mockFn} rememberMeLabel="Login Form" />);
-  view.find('#pf-login-username-id').simulate('change');
-  expect(mockFn).toHaveBeenCalled();
-});
+  test('should call onChangeUsername callback', () => {
+    const mockFn = jest.fn();
 
-test('should call onChangePassword callback', () => {
-  const mockFn = jest.fn();
-  const view = shallow(<LoginForm onChangePassword={mockFn} rememberMeLabel="Login Form" />);
-  view.find('#pf-login-password-id').simulate('change');
-  expect(mockFn).toHaveBeenCalled();
-});
+    render(<LoginForm onChangeUsername={mockFn} rememberMeLabel="Remember me" />);
 
-test('should call onChangeRememberMe callback', () => {
-  const mockFn = jest.fn();
-  const view = shallow(<LoginForm onChangeRememberMe={mockFn} rememberMeLabel="Login Form" />);
-  view.find('#pf-login-remember-me-id').simulate('change');
-  expect(mockFn).toHaveBeenCalled();
-});
+    userEvent.type(screen.getByText('Username'), 'updatedUserName');
+    expect(mockFn).toHaveBeenCalled();
+  });
 
-test('LoginForm with rememberMeLabel', () => {
-  const view = render(<LoginForm rememberMeLabel="remember me" />);
-  expect(view.container).toMatchSnapshot();
-});
+  test('should call onChangePassword callback', () => {
+    const mockFn = jest.fn();
 
-test('LoginForm with show password', () => {
-  const view = render(<LoginForm isShowPasswordEnabled />);
-  expect(view.container).toMatchSnapshot();
+    render(<LoginForm onChangePassword={mockFn} rememberMeLabel="Remember me" />);
+
+    userEvent.type(screen.getByText('Password'), 'updatedPassword');
+    expect(mockFn).toHaveBeenCalled();
+  });
+
+  test('should call onChangeRememberMe callback', () => {
+    const mockFn = jest.fn();
+
+    render(<LoginForm onChangeRememberMe={mockFn} rememberMeLabel="Remember me" />);
+
+    userEvent.click(screen.getByLabelText('Remember me'));
+    expect(mockFn).toHaveBeenCalled();
+  });
+
+  test('LoginForm with rememberMeLabel', () => {
+    render(<LoginForm rememberMeLabel="Remember me" data-testid="form-test-id" />);
+    expect(screen.getByTestId('form-test-id').outerHTML).toMatchSnapshot();
+  });
+
+  test('LoginForm with show password', () => {
+    render(<LoginForm isShowPasswordEnabled data-testid="form-test-id" />);
+    expect(screen.getByTestId('form-test-id').outerHTML).toMatchSnapshot();
+  });
 });
