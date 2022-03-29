@@ -158,6 +158,9 @@ const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ useSideba
             </DropdownItem>,
             <DropdownItem key={6} onClick={() => updateLayout('Concentric')}>
               Concentric
+            </DropdownItem>,
+            <DropdownItem key={7} onClick={() => updateLayout('BreadthFirst')}>
+              BreadthFirst
             </DropdownItem>
           ]}
         />
