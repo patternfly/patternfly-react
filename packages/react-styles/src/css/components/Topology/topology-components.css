@@ -391,20 +391,22 @@
   }
 }
 
-.pf-topology__edge.pf-m-selected .pf-topology__edge__link {
-  fill: var(--edge--active--fill);
-  stroke: var(--edge--active--stroke);
-}
-
-.pf-topology__edge.pf-m-selected .pf-topology-connector-arrow {
-  stroke: var(--edge--active--stroke);
-  fill: var(--edge--active--fill);
-}
-
 .pf-topology__edge.pf-m-hover .pf-topology__edge__link,
-.pf-topology__edge.pf-m-hover .pf-topology-connector-arrow {
+.pf-topology__edge.pf-m-hover .pf-topology__connector-arrow {
   fill: var(--pf-global--Color--100);
   stroke: var(--pf-global--Color--100);
+}
+
+.pf-topology__edge.pf-m-selected .pf-topology__edge__link,
+.pf-topology__edge.pf-m-selected .pf-topology-connector-arrow {
+  fill: var(--edge--active--fill);
+  stroke: var(--edge--active--stroke);
+}
+
+.pf-topology__edge.pf-m-selected.pf-m-hover .pf-topology__edge__link,
+.pf-topology__edge.pf-m-selected.pf-m-hover .pf-topology-connector-arrow {
+  fill: var(--edge--active--fill);
+  stroke: var(--edge--active--stroke);
 }
 
 .pf-topology__edge.pf-m-dragging .pf-topology__edge__link,
