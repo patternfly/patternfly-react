@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.71.13 (2022-03-29)
+
+
+### Bug Fixes
+
+* **components:** fix newline interpolation of text input values ([#6935](https://github.com/patternfly/patternfly-react/issues/6935)) ([c667ef0](https://github.com/patternfly/patternfly-react/commit/c667ef048cbf246e920a0111d4e900f1079cc6bc)), closes [#5324](https://github.com/patternfly/patternfly-react/issues/5324)
+
+
+
+
+
 ## 4.71.12 (2022-03-29)
 
 **Note:** Version bump only for package @patternfly/react-table
