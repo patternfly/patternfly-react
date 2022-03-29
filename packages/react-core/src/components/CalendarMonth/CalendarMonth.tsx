@@ -286,9 +286,9 @@ export const CalendarMonth = ({
                 const isRangeStart = isValidDate(rangeStart) && isSameDate(date, rangeStart);
                 let isInRange = false;
                 let isRangeEnd = false;
-                if (isValidDate(rangeStart) && isValidDate(selectedDate)) {
-                  isInRange = date > rangeStart && date < selectedDate;
-                  isRangeEnd = isSameDate(date, selectedDate);
+                if (isValidDate(rangeStart) && isValidDate(dateProp)) {
+                  isInRange = date > rangeStart && date < dateProp;
+                  isRangeEnd = isSameDate(date, dateProp);
                 } else if (isValidDate(rangeStart) && isHoveredDateValid) {
                   if (hoveredDate > rangeStart || isSameDate(hoveredDate, rangeStart)) {
                     isInRange = date > rangeStart && date < hoveredDate;
