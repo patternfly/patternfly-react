@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.164.11 (2022-03-29)
+
+
+### Bug Fixes
+
+* **Drawer:** Updated resizable drawer to make it more accessible ([#7118](https://github.com/patternfly/patternfly-react/issues/7118)) ([0363ae6](https://github.com/patternfly/patternfly-react/commit/0363ae6638aab17e55f26bae5017bcd7f83f8ed5))
+
+
+
+
+
 ## 4.164.10 (2022-03-29)
 
 **Note:** Version bump only for package @patternfly/react-integration
