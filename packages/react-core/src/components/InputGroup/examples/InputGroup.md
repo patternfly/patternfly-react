@@ -22,6 +22,8 @@ import {
   PopoverPosition
 } from '@patternfly/react-core';
 
+An input group includes multiple input types, like a text input and a button, grouped together.
+
 ## Examples
 ### Basic
 ```js

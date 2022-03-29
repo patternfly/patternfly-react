@@ -5,6 +5,8 @@ cssPrefix: pf-c-form-control
 propComponents: ['TextInput']
 ---
 
+A text input is used to gather free-form text from a user.
+
 ## Examples
 
 ### Basic

@@ -9,6 +9,9 @@ beta: true
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
+A text input group wraps controls or elements stylistically so that they appear to be contained within 
+a text input.
+
 ## Examples
 
 ### Basic
