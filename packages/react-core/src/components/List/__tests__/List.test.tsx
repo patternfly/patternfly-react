@@ -1,11 +1,12 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
-import { List, ListVariant, ListComponent, OrderType } from '../List';
-import { ListItem } from '../ListItem';
+
+import { render, screen } from '@testing-library/react';
+
 import BookOpen from '@patternfly/react-icons/dist/esm/icons/book-open-icon';
 import Key from '@patternfly/react-icons/dist/esm/icons/key-icon';
 import Desktop from '@patternfly/react-icons/dist/esm/icons/desktop-icon';
+import { List, ListVariant, ListComponent, OrderType } from '../List';
+import { ListItem } from '../ListItem';
 
 const ListItems = () => (
   <React.Fragment>
@@ -17,104 +18,84 @@ const ListItems = () => (
   </React.Fragment>
 );
 
-describe('list', () => {
+describe('List', () => {
   test('simple list', () => {
-    const view = render(
-      <List>
+    render(
+      <List data-testid="list-test-id">
         <ListItems />
       </List>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(screen.getByTestId('list-test-id').outerHTML).toMatchSnapshot();
   });
 
   test('inline list', () => {
-    const view = render(
-      <List variant={ListVariant.inline}>
+    render(
+      <List variant={ListVariant.inline} data-testid="list-test-id">
         <ListItems />
       </List>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(screen.getByTestId('list-test-id').outerHTML).toMatchSnapshot();
   });
 
   test('ordered list', () => {
-    const view = mount(
+    render(
       <List component={ListComponent.ol}>
         <ListItem>Apple</ListItem>
         <ListItem>Banana</ListItem>
         <ListItem>Orange</ListItem>
       </List>
     );
-    expect(view.find('ol').length).toBe(1);
-  });
-
-  test('ordered list starts with 2nd item', () => {
-    const view = mount(
-      <List component={ListComponent.ol} start={2}>
-        <ListItem>Banana</ListItem>
-        <ListItem>Orange</ListItem>
-      </List>
-    );
-    expect(view.find('ol').prop('start')).toBe(2);
-  });
-
-  test('ordered list items will be numbered with uppercase letters', () => {
-    const view = mount(
-      <List component={ListComponent.ol} type={OrderType.uppercaseLetter}>
-        <ListItem>Banana</ListItem>
-        <ListItem>Orange</ListItem>
-      </List>
-    );
-    expect(view.find('ol').prop('type')).toBe('A');
+    expect(screen.getByRole('list').outerHTML).toMatchSnapshot();
   });
 
   test('inlined ordered list', () => {
-    const view = mount(
+    render(
       <List variant={ListVariant.inline} component={ListComponent.ol}>
         <ListItem>Apple</ListItem>
         <ListItem>Banana</ListItem>
         <ListItem>Orange</ListItem>
       </List>
     );
-    expect(view.find('ol.pf-m-inline').length).toBe(1);
+    expect(screen.getByRole('list').className).toContain('pf-m-inline');
   });
 
   test('bordered list', () => {
-    const view = render(
-      <List isBordered>
+    render(
+      <List isBordered data-testid="list-test-id">
         <ListItems />
       </List>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(screen.getByTestId('list-test-id').className).toContain('pf-m-bordered');
   });
 
   test('plain list', () => {
-    const view = render(
-      <List isPlain>
+    render(
+      <List isPlain data-testid="list-test-id">
         <ListItems />
       </List>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(screen.getByTestId('list-test-id').className).toContain('pf-m-plain');
   });
 
   test('icon list', () => {
-    const view = render(
-      <List isPlain>
+    render(
+      <List isPlain data-testid="list-test-id">
         <ListItem icon={<BookOpen />}>Apple</ListItem>
         <ListItem icon={<Key />}>Banana</ListItem>
         <ListItem icon={<Desktop />}>Orange</ListItem>
       </List>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(screen.getByTestId('list-test-id').outerHTML).toMatchSnapshot();
   });
 
   test('icon large list', () => {
-    const view = render(
-      <List iconSize='large'>
+    render(
+      <List iconSize="large" data-testid="list-test-id">
         <ListItem icon={<BookOpen />}>Apple</ListItem>
         <ListItem icon={<Key />}>Banana</ListItem>
         <ListItem icon={<Desktop />}>Orange</ListItem>
       </List>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(screen.getByTestId('list-test-id').outerHTML).toMatchSnapshot();
   });
 });

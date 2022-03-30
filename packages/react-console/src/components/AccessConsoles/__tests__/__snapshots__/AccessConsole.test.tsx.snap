@@ -53,7 +53,6 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
             "value": null,
           }
         }
-        shouldResetOnSelect={true}
         toggleAriaLabel="Options menu"
         toggleIcon={null}
         toggleId="pf-c-console__type-selector"

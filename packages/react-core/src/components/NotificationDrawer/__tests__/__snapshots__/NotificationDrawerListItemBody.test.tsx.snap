@@ -1,24 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`className is added to the root element 1`] = `undefined`;
+exports[`NotificationDrawerListItemBody className is added to the root element 1`] = `"pf-c-notification-drawer__list-item-description extra-class"`;
 
-exports[`list item body with timestamp property applied  1`] = `
-<div>
-  <div
-    class="pf-c-notification-drawer__list-item-description"
-  />
-  <div
-    class="pf-c-notification-drawer__list-item-timestamp"
-  >
-    5 minutes ago
-  </div>
-</div>
-`;
+exports[`NotificationDrawerListItemBody list item body with timestamp property applied 1`] = `"pf-c-notification-drawer__list-item-description"`;
 
-exports[`renders with PatternFly Core styles 1`] = `
-<div>
-  <div
-    class="pf-c-notification-drawer__list-item-description"
-  />
-</div>
-`;
+exports[`NotificationDrawerListItemBody renders with PatternFly Core styles 1`] = `"<div data-testid=\\"test-id\\" class=\\"pf-c-notification-drawer__list-item-description\\"></div>"`;

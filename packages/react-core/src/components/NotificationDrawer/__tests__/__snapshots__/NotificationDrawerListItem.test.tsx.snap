@@ -1,12 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`className is added to the root element 1`] = `"pf-c-notification-drawer__list-item pf-m-hoverable pf-m-default extra-class"`;
+exports[`NotificationDrawerListItem className is added to the root element 1`] = `"pf-c-notification-drawer__list-item pf-m-hoverable pf-m-default extra-class"`;
 
-exports[`renders with PatternFly Core styles 1`] = `
-<div>
-  <li
-    class="pf-c-notification-drawer__list-item pf-m-hoverable pf-m-default"
-    tabindex="0"
-  />
-</div>
-`;
+exports[`NotificationDrawerListItem renders with PatternFly Core styles 1`] = `"<li class=\\"pf-c-notification-drawer__list-item pf-m-hoverable pf-m-default\\" tabindex=\\"0\\"></li>"`;
