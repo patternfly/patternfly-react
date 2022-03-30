@@ -63,7 +63,6 @@
     "prettier": "^1.18.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "reactabular-resizable": "^8.18.0",
     "surge": "^0.21.3",
     "ts-patch": "^1.4.2",
     "typescript": "^4.0.0"
