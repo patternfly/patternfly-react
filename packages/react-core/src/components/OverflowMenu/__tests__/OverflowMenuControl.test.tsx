@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { OverflowMenuControl } from '../OverflowMenuControl';
@@ -13,11 +14,11 @@ describe('OverflowMenuControl', () => {
         <OverflowMenuControl data-testid="test-id" />
       </OverflowMenuContext.Provider>
     );
-    expect(screen.getByTestId('test-id').className).toContain(styles.overflowMenuControl);
+    expect(screen.getByTestId('test-id')).toHaveClass(styles.overflowMenuControl);
   });
 
   test('Additional Options', () => {
-    render(<OverflowMenuControl hasAdditionalOptions data-testid="test-id" />);
-    expect(screen.getByTestId('test-id').outerHTML).toMatchSnapshot();
+    const { asFragment } = render(<OverflowMenuControl hasAdditionalOptions />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { OverflowMenuGroup } from '../OverflowMenuGroup';
@@ -13,7 +14,7 @@ describe('OverflowMenuGroup', () => {
         <OverflowMenuGroup isPersistent data-testid="test-id" />
       </OverflowMenuContext.Provider>
     );
-    expect(screen.getByTestId('test-id').className).toContain(styles.overflowMenuGroup);
+    expect(screen.getByTestId('test-id')).toHaveClass(styles.overflowMenuGroup);
   });
 
   test('Below breakpoint but not isPersistent should not show', () => {
@@ -31,7 +32,7 @@ describe('OverflowMenuGroup', () => {
         <OverflowMenuGroup groupType="button" data-testid="test-id" />
       </OverflowMenuContext.Provider>
     );
-    expect(screen.getByTestId('test-id').className).toContain(styles.modifiers.buttonGroup);
+    expect(screen.getByTestId('test-id')).toHaveClass(styles.modifiers.buttonGroup);
   });
 
   test('Icon group', () => {
@@ -40,6 +41,6 @@ describe('OverflowMenuGroup', () => {
         <OverflowMenuGroup groupType="icon" data-testid="test-id" />
       </OverflowMenuContext.Provider>
     );
-    expect(screen.getByTestId('test-id').className).toContain(styles.modifiers.iconButtonGroup);
+    expect(screen.getByTestId('test-id')).toHaveClass(styles.modifiers.iconButtonGroup);
   });
 });

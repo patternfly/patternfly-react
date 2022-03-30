@@ -18,17 +18,16 @@ const props = {
   ]
 };
 
-// eslint-disable-next-line no-undef
-beforeEach(() => {
-  window.location.hash = '#link1';
-});
-
 const renderNav = (ui: React.ReactElement<any, string | React.JSXElementConstructor<any>>) =>
   render(<NavContext.Provider value={{ onSelect: jest.fn(), onToggle: jest.fn() }}>{ui}</NavContext.Provider>);
 
 describe('Nav', () => {
+  beforeEach(() => {
+    window.location.hash = '#link1';
+  });
+
   test('Default Nav List', () => {
-    renderNav(
+    const { asFragment } = renderNav(
       <Nav className="test-nav-class">
         <NavList className="test-nav-list-class">
           {props.items.map(item => (
@@ -39,11 +38,11 @@ describe('Nav', () => {
         </NavList>
       </Nav>
     );
-    expect(screen.getByRole('navigation').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Dark Nav List', () => {
-    renderNav(
+    const { asFragment } = renderNav(
       <Nav className="test=nav-class" theme="dark">
         <NavList className="test-nav-list-class">
           {props.items.map(item => (
@@ -54,11 +53,11 @@ describe('Nav', () => {
         </NavList>
       </Nav>
     );
-    expect(screen.getByRole('navigation').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Default Nav List - Trigger item active update', () => {
-    renderNav(
+    const { asFragment } = renderNav(
       <Nav>
         <NavList>
           {props.items.map(item => (
@@ -71,11 +70,11 @@ describe('Nav', () => {
     );
 
     userEvent.click(screen.getByText('Link 2'));
-    expect(screen.getByRole('navigation').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Expandable Nav List', () => {
-    renderNav(
+    const { asFragment } = renderNav(
       <Nav>
         <NavList>
           <NavExpandable id="grp-1" title="Section 1">
@@ -88,7 +87,7 @@ describe('Nav', () => {
         </NavList>
       </Nav>
     );
-    expect(screen.getByRole('navigation').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Expandable Nav verify onExpand', () => {
@@ -114,7 +113,8 @@ describe('Nav', () => {
 
   test('Expandable Nav List - Trigger toggle', () => {
     window.location.hash = '#link2';
-    renderNav(
+
+    const { asFragment } = renderNav(
       <Nav>
         <NavList>
           <NavExpandable id="grp-1" title="Section 1" className="expandable-group" isExpanded>
@@ -129,11 +129,11 @@ describe('Nav', () => {
     );
 
     userEvent.click(screen.getByText('Section 1'));
-    expect(screen.getByRole('navigation').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Expandable Nav List with aria label', () => {
-    renderNav(
+    const { asFragment } = renderNav(
       <Nav aria-label="Test">
         <NavList>
           <NavExpandable id="grp-1" title="Section 1" srText="Section 1 - Example sub-navigation">
@@ -146,11 +146,11 @@ describe('Nav', () => {
         </NavList>
       </Nav>
     );
-    expect(screen.getByRole('navigation').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Nav Grouped List', () => {
-    renderNav(
+    const { asFragment } = renderNav(
       <Nav>
         <NavGroup id="grp-1" title="Section 1">
           <NavList>
@@ -172,11 +172,11 @@ describe('Nav', () => {
         </NavGroup>
       </Nav>
     );
-    expect(screen.getByRole('navigation').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Horizontal Nav List', () => {
-    renderNav(
+    const { asFragment } = renderNav(
       <Nav variant="horizontal">
         <NavList>
           {props.items.map(item => (
@@ -187,11 +187,11 @@ describe('Nav', () => {
         </NavList>
       </Nav>
     );
-    expect(screen.getByRole('navigation').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Horizontal SubNav List', () => {
-    renderNav(
+    const { asFragment } = renderNav(
       <Nav variant="horizontal-subnav">
         <NavList>
           {props.items.map(item => (
@@ -202,11 +202,11 @@ describe('Nav', () => {
         </NavList>
       </Nav>
     );
-    expect(screen.getByRole('navigation').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Tertiary Nav List', () => {
-    renderNav(
+    const { asFragment } = renderNav(
       <Nav variant="tertiary">
         <NavList>
           {props.items.map(item => (
@@ -217,11 +217,11 @@ describe('Nav', () => {
         </NavList>
       </Nav>
     );
-    expect(screen.getByRole('navigation').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Nav List with custom item nodes', () => {
-    renderNav(
+    const { asFragment } = renderNav(
       <Nav variant="tertiary">
         <NavList>
           <NavItem to="/components/nav#link1" className="test-nav-item-class">
@@ -230,6 +230,6 @@ describe('Nav', () => {
         </NavList>
       </Nav>
     );
-    expect(screen.getByRole('navigation').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

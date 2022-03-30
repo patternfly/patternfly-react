@@ -1,15 +1,18 @@
 import React from 'react';
+
 import { render, screen } from '@testing-library/react';
+import "@testing-library/jest-dom";
+
 import { Menu } from '../Menu';
 
 describe('Menu', () => {
   test('should render Menu successfully', () => {
-    render(
+    const { asFragment } = render(
       <Menu activeItemId={0} onSelect={jest.fn()}>
         content
       </Menu>
     );
-    expect(screen.getByText('content').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('with isPlain', () => {
@@ -19,7 +22,7 @@ describe('Menu', () => {
           content
         </Menu>
       );
-      expect(screen.getByText('content').className).toContain('pf-m-plain');
+      expect(screen.getByText('content')).toHaveClass('pf-m-plain');
     });
   });
 
@@ -30,7 +33,7 @@ describe('Menu', () => {
           content
         </Menu>
       );
-      expect(screen.getByText('content').className).toContain('pf-m-scrollable');
+      expect(screen.getByText('content')).toHaveClass('pf-m-scrollable');
     });
   });
 
@@ -41,7 +44,7 @@ describe('Menu', () => {
           content
         </Menu>
       );
-      expect(screen.getByText('content').className).toContain('pf-m-nav');
+      expect(screen.getByText('content')).toHaveClass('pf-m-nav');
     });
   });
 });

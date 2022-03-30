@@ -40,12 +40,12 @@ describe('Modal', () => {
 
   test('modal has body backdropOpen class when open', () => {
     render(<Modal {...props} isOpen />);
-    expect(document.body.className).toContain(css(styles.backdropOpen));
+    expect(document.body).toHaveClass(css(styles.backdropOpen));
   });
 
   test('modal has no body backdropOpen class when not open', () => {
     render(<Modal {...props} />);
-    expect(document.body.className).not.toContain(css(styles.backdropOpen));
+    expect(document.body).not.toHaveClass(css(styles.backdropOpen));
   });
 
   test('modal shows the close button when showClose is true (true by default)', () => {

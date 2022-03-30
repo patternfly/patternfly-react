@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { OverflowMenuItem } from '../OverflowMenuItem';
@@ -13,15 +14,15 @@ describe('OverflowMenuItem', () => {
         <OverflowMenuItem isPersistent>Some item value</OverflowMenuItem>
       </OverflowMenuContext.Provider>
     );
-    expect(screen.getByText('Some item value').className).toContain(styles.overflowMenuItem);
+    expect(screen.getByText('Some item value')).toHaveClass(styles.overflowMenuItem);
   });
 
   test('Below breakpoint and not isPersistent should not show', () => {
-    render(
+    const { asFragment } = render(
       <OverflowMenuContext.Provider value={{ isBelowBreakpoint: false }}>
         <OverflowMenuItem>Some item value</OverflowMenuItem>
       </OverflowMenuContext.Provider>
     );
-    expect(screen.getByText('Some item value').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
