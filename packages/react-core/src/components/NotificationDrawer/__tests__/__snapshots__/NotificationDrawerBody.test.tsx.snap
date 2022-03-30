@@ -1,5 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NotificationDrawerBody className is added to the root element 1`] = `"pf-c-notification-drawer__body extra-class"`;
-
-exports[`NotificationDrawerBody renders with PatternFly Core styles 1`] = `"<div data-testid=\\"test-id\\" class=\\"pf-c-notification-drawer__body\\"></div>"`;
+exports[`NotificationDrawerBody renders with PatternFly Core styles 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-notification-drawer__body"
+  />
+</DocumentFragment>
+`;

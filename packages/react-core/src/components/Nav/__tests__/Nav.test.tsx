@@ -29,7 +29,7 @@ const renderNav = (ui: React.ReactElement<any, string | React.JSXElementConstruc
 describe('Nav', () => {
   test('Default Nav List', () => {
     renderNav(
-      <Nav className="test=nav-class">
+      <Nav className="test-nav-class">
         <NavList className="test-nav-list-class">
           {props.items.map(item => (
             <NavItem to={item.to} key={item.to} className="test-nav-item-class">
@@ -71,21 +71,6 @@ describe('Nav', () => {
     );
 
     userEvent.click(screen.getByText('Link 2'));
-    expect(screen.getByRole('navigation').outerHTML).toMatchSnapshot();
-  });
-
-  test('Simple Nav List', () => {
-    renderNav(
-      <Nav>
-        <NavList>
-          {props.items.map(item => (
-            <NavItem to={item.to} key={item.to}>
-              {item.label}
-            </NavItem>
-          ))}
-        </NavList>
-      </Nav>
-    );
     expect(screen.getByRole('navigation').outerHTML).toMatchSnapshot();
   });
 

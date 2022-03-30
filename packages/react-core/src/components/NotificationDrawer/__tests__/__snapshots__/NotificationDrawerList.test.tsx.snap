@@ -1,7 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NotificationDrawerList className is added to the root element 1`] = `"pf-c-notification-drawer__list extra-class"`;
+exports[`NotificationDrawerList drawer list with hidden applied  1`] = `
+<DocumentFragment>
+  <ul
+    class="pf-c-notification-drawer__list"
+    hidden=""
+  />
+</DocumentFragment>
+`;
 
-exports[`NotificationDrawerList drawer list with hidden applied  1`] = `"<ul class=\\"pf-c-notification-drawer__list\\"></ul>"`;
-
-exports[`NotificationDrawerList renders with PatternFly Core styles 1`] = `"<ul class=\\"pf-c-notification-drawer__list\\"></ul>"`;
+exports[`NotificationDrawerList renders with PatternFly Core styles 1`] = `
+<DocumentFragment>
+  <ul
+    class="pf-c-notification-drawer__list"
+  />
+</DocumentFragment>
+`;

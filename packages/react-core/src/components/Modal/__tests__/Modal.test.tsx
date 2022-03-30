@@ -7,7 +7,7 @@ import '@testing-library/jest-dom';
 import { css } from '../../../../../react-styles/dist/js';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 
-import { Modal, ModalProps } from '../Modal';
+import { Modal } from '../Modal';
 
 jest.spyOn(document, 'createElement');
 jest.spyOn(document.body, 'addEventListener');
@@ -35,6 +35,7 @@ describe('Modal', () => {
   test('modal does not call onClose for esc key if it is not open', () => {
     render(<Modal {...props} />);
     expect(screen.queryByRole('dialog')).toBeNull();
+    expect(props.onClose).not.toBeCalled();
   });
 
   test('modal has body backdropOpen class when open', () => {
