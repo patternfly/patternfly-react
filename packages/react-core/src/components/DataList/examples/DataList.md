@@ -62,7 +62,7 @@ import { css } from '@patternfly/react-styles';
 
 ### Controlling text
 
-```ts file="./DataListControllingtext.tsx"
+```ts file="./DataListControllingText.tsx"
 ```
 
 ### Draggable
