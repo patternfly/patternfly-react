@@ -46,7 +46,7 @@ section: developer-resources
   - Updated examples to show different appends ([#7095](https://github.com/patternfly/patternfly-react/pull/7095))
 - **Flex layout:**
   - Fixed spacing for xl example ([#7081](https://github.com/patternfly/patternfly-react/pull/7081))
-- **FormSelect:**
+- **Form select:**
   - Added isIconSprite prop ([#7052](https://github.com/patternfly/patternfly-react/pull/7052))
 - **Menu:**
   - Removed rogue scrollbar from drilldown menus ([#7070](https://github.com/patternfly/patternfly-react/pull/7070))
