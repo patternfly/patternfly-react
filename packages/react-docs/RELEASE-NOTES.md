@@ -24,7 +24,7 @@ section: developer-resources
   - Made date prop optional ([#7077](https://github.com/patternfly/patternfly-react/pull/7077))
   - Resolved regression for selecting a date ([#7130](https://github.com/patternfly/patternfly-react/pull/7130))
 - **Card:**
- - Documented `CardActions` properties ([#7119](https://github.com/patternfly/patternfly-react/pull/7119))
+  - Documented `CardActions` properties ([#7119](https://github.com/patternfly/patternfly-react/pull/7119))
 - **Checkbox:**
   - Converted examples to TypeScript/functional components ([#7036](https://github.com/patternfly/patternfly-react/pull/7036))
 - **Chip:**
