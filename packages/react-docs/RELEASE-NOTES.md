@@ -24,7 +24,7 @@ section: developer-resources
   - Made date prop optional ([#7077](https://github.com/patternfly/patternfly-react/pull/7077))
   - Resolved regression for selecting a date ([#7130](https://github.com/patternfly/patternfly-react/pull/7130))
 - **Card:**
- - Documented `CardActions` properties ([#7119](https://github.com/patternfly/patternfly-react/pull/7119))
+  - Documented `CardActions` properties ([#7119](https://github.com/patternfly/patternfly-react/pull/7119))
 - **Checkbox:**
   - Converted examples to TypeScript/functional components ([#7036](https://github.com/patternfly/patternfly-react/pull/7036))
 - **Chip:**
@@ -46,11 +46,11 @@ section: developer-resources
   - Updated examples to show different appends ([#7095](https://github.com/patternfly/patternfly-react/pull/7095))
 - **Flex layout:**
   - Fixed spacing for xl example ([#7081](https://github.com/patternfly/patternfly-react/pull/7081))
-- **FormSelect:**
+- **Form select:**
   - Added isIconSprite prop ([#7052](https://github.com/patternfly/patternfly-react/pull/7052))
 - **Menu:**
   - Removed rogue scrollbar from drilldown menus ([#7070](https://github.com/patternfly/patternfly-react/pull/7070))
-- **MenuToggle:**
+- **Menu toggle:**
   - Updated examples to match core ([#7089](https://github.com/patternfly/patternfly-react/pull/7089))
 - **Select:**
   - Added flag to not reset on select, added event to toggle callback ([#7093](https://github.com/patternfly/patternfly-react/pull/7093))
