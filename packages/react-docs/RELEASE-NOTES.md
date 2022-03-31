@@ -50,7 +50,7 @@ section: developer-resources
   - Added isIconSprite prop ([#7052](https://github.com/patternfly/patternfly-react/pull/7052))
 - **Menu:**
   - Removed rogue scrollbar from drilldown menus ([#7070](https://github.com/patternfly/patternfly-react/pull/7070))
-- **MenuToggle:**
+- **Menu toggle:**
   - Updated examples to match core ([#7089](https://github.com/patternfly/patternfly-react/pull/7089))
 - **Select:**
   - Added flag to not reset on select, added event to toggle callback ([#7093](https://github.com/patternfly/patternfly-react/pull/7093))
