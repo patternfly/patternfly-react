@@ -85,6 +85,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
   }
 
   parentRef: React.RefObject<HTMLDivElement> = React.createRef();
+  popperRef: React.RefObject<HTMLDivElement> = React.createRef();
 
   onEnterPressed = (event: any) => {
     if (event.charCode === KEY_CODES.ENTER) {
@@ -154,7 +155,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     const popperContainer = (
       <div
         className={css(styles.contextSelector, isOpen && styles.modifiers.expanded, className)}
-        ref={this.parentRef}
+        ref={this.popperRef}
         {...props}
       >
         {isOpen && menuContainer}
@@ -182,7 +183,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
           isOpen={isOpen}
           toggleText={toggleText}
           id={toggleId}
-          parentRef={this.parentRef.current}
+          parentRef={menuAppendTo === 'inline' ? this.parentRef : this.popperRef}
           aria-labelledby={`${screenReaderLabelId} ${toggleId}`}
           isPlain={isPlain}
           isText={isText}

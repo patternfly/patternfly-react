@@ -57,16 +57,16 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
 
   onDocClick = (event: any) => {
     const { isOpen, parentRef, onToggle } = this.props;
-    if (isOpen && parentRef && !parentRef.contains(event.target)) {
+    if (isOpen && parentRef?.current && !parentRef.current.contains(event.target)) {
       onToggle(null, false);
       this.toggle.current.focus();
     }
   };
 
   onEscPress = (event: any) => {
-    const { isOpen, parentRef, onToggle } = this.props;
+    const { isOpen, onToggle } = this.props;
     const keyCode = event.keyCode || event.which;
-    if (isOpen && keyCode === KEY_CODES.ESCAPE_KEY && parentRef && parentRef.contains(event.target)) {
+    if (isOpen && keyCode === KEY_CODES.ESCAPE_KEY) {
       onToggle(null, false);
       this.toggle.current.focus();
     }
