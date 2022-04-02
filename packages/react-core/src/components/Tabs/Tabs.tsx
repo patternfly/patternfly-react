@@ -79,7 +79,7 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   defaultIsExpanded?: boolean;
   /** Text that appears in the expandable toggle */
   toggleText?: string;
-  /** Aria-label for the left expandable toggle */
+  /** Aria-label for the expandable toggle */
   toggleAriaLabel?: string;
   /** Callback function to toggle the expandable tabs. */
   onToggle?: (isExpanded: boolean) => void;
@@ -400,7 +400,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           >
             <AngleLeftIcon />
           </button>
-          <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
+          <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons} role="tablist">
             {filteredChildren}
           </ul>
           <button

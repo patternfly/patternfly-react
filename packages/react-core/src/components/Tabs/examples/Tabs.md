@@ -2,7 +2,7 @@
 id: Tabs
 section: components
 cssPrefix: pf-c-tabs
-propComponents: ['Tabs', 'TabProps', 'TabContent', 'TabTitleText', 'TabTitleIcon']
+propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', 'TabTitleIcon']
 ouia: true
 ---
 
@@ -874,7 +874,7 @@ class SecondaryTabs extends React.Component {
       <div>
         <Tabs activeKey={activeTabKey1} onSelect={this.handleTabClickFirst} isBox={isBox}>
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
-            <Tabs activeKey={activeTabKey2} isSecondary onSelect={this.handleTabClickSecond}>
+            <Tabs aria-label="secondary tabs for users" activeKey={activeTabKey2} isSecondary onSelect={this.handleTabClickSecond}>
               <Tab eventKey={20} title={<TabTitleText>Secondary tab item 1</TabTitleText>}>
                 Secondary tab item 1 item section
               </Tab>
@@ -1285,13 +1285,13 @@ class SeparateTabContent extends React.Component {
           />
         </Tabs>
         <div>
-          <TabContent eventKey={0} id="refTab1Section" ref={this.contentRef1} aria-label="Tab item 1">
+          <TabContent eventKey={0} id="refTab1Section" ref={this.contentRef1} aria-label="This is content for the first tab">
             Tab 1 section
           </TabContent>
-          <TabContent eventKey={1} id="refTab2Section" ref={this.contentRef2} aria-label="Tab item 2" hidden>
+          <TabContent eventKey={1} id="refTab2Section" ref={this.contentRef2} aria-label="This is content for the second tab" hidden>
             Tab 2 section
           </TabContent>
-          <TabContent eventKey={2} id="refTab3Section" ref={this.contentRef3} aria-label="Tab item 3" hidden>
+          <TabContent eventKey={2} id="refTab3Section" ref={this.contentRef3} aria-label="This is content for the third tab" hidden>
             Tab 3 section
           </TabContent>
         </div>
@@ -1342,13 +1342,13 @@ const TabContentWithBody = () => {
         />
       </Tabs>
       <div>
-        <TabContent eventKey={0} id="refTab1Section" ref={contentRef1} aria-label="Tab item 1">
+        <TabContent eventKey={0} id="refTab1Section" ref={contentRef1} aria-label="This is content for the first tab">
           <TabContentBody hasPadding> Tab 1 section </TabContentBody>
         </TabContent>
-        <TabContent eventKey={1} id="refTab2Section" ref={contentRef2} aria-label="Tab item 2" hidden>
+        <TabContent eventKey={1} id="refTab2Section" ref={contentRef2} aria-label="This is content for the second tab" hidden>
           <TabContentBody hasPadding> Tab 2 section </TabContentBody>
         </TabContent>
-        <TabContent eventKey={2} id="refTab3Section" ref={contentRef3} aria-label="Tab item 3" hidden>
+        <TabContent eventKey={2} id="refTab3Section" ref={contentRef3} aria-label="This is content for the third tab" hidden>
           <TabContentBody hasPadding> Tab 3 section </TabContentBody>
         </TabContent>
       </div>
@@ -1475,15 +1475,15 @@ class ToggledSeparateContent extends React.Component {
           <Tab eventKey={2} title="Tab item 3" tabContentId="refTab3Section" tabContentRef={this.contentRef3} />
         </Tabs>
         <div>
-          <TabContent eventKey={0} id="refTab1Section" ref={this.contentRef1} aria-label="Tab item 1">
+          <TabContent eventKey={0} id="refTab1Section" ref={this.contentRef1} aria-label="This is content for the first tab">
             Tab 1 section
           </TabContent>
           {!isTab2Hidden && (
-            <TabContent eventKey={1} id="refTab2Section" ref={this.contentRef2} aria-label="Tab item 2" hidden>
+            <TabContent eventKey={1} id="refTab2Section" ref={this.contentRef2} aria-label="This is content for the second tab" hidden>
               Tab 2 section
             </TabContent>
           )}
-          <TabContent eventKey={2} id="refTab3Section" ref={this.contentRef3} aria-label="Tab item 3" hidden>
+          <TabContent eventKey={2} id="refTab3Section" ref={this.contentRef3} aria-label="This is content for the third tab" hidden>
             Tab 3 section
           </TabContent>
         </div>

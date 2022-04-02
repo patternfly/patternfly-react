@@ -32,6 +32,7 @@ exports[`Tabs should match snapshot (auto-generated) 1`] = `
     </button>
     <ul
       class="pf-c-tabs__list"
+      role="tablist"
     >
       <div>
         ReactNode

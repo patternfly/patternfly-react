@@ -26,6 +26,9 @@ export interface ProgressStepProps
   popover?: React.ReactNode;
   /** @hide Forwarded reference to title container */
   innerRef?: React.Ref<any>;
+  /** Accessible label for the progress step. Should communicate all information being communicated by the progress
+   * step's icon, including the variant and the completed status. */
+  'aria-label'?: string;
 }
 
 const variantIcons = {
@@ -56,6 +59,7 @@ const ProgressStepBase: React.FunctionComponent<ProgressStepProps> = ({
   titleId,
   popover,
   innerRef,
+  'aria-label': ariaLabel,
   ...props
 }: ProgressStepProps) => {
   const _icon = icon !== undefined ? icon : variantIcons[variant];
@@ -76,6 +80,8 @@ const ProgressStepBase: React.FunctionComponent<ProgressStepProps> = ({
         isCurrent && styles.modifiers.current,
         className
       )}
+      aria-label={ariaLabel}
+      {...(isCurrent && { 'aria-current': 'step' })}
       {...props}
     >
       <div className={css(styles.progressStepperStepConnector)}>
