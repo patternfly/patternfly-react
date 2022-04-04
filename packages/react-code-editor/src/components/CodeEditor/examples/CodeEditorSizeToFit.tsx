@@ -1,7 +1,7 @@
 import React from 'react';
 import { CodeEditor, Language } from '@patternfly/react-code-editor';
 
-export const SizeToFitCodeEditor: React.FunctionComponent = () => {
+export const CodeEditorSizeToFit: React.FunctionComponent = () => {
   const onEditorDidMount = (editor, monaco) => {
     // eslint-disable-next-line no-console
     console.log(editor.getValue());

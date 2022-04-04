@@ -2,7 +2,7 @@ import React from 'react';
 import { CodeEditor, CodeEditorControl } from '@patternfly/react-code-editor';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
-export const CustomControlCodeEditor: React.FunctionComponent = () => {
+export const CodeEditorCustomControl: React.FunctionComponent = () => {
   const [code, setCode] = React.useState('');
 
   const onChange = code => {

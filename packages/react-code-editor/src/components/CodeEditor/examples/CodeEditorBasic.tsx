@@ -2,7 +2,7 @@ import React from 'react';
 import { CodeEditor, Language } from '@patternfly/react-code-editor';
 import { Checkbox } from '@patternfly/react-core';
 
-export const BasicCodeEditor: React.FunctionComponent = () => {
+export const CodeEditorBasic: React.FunctionComponent = () => {
   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
   const [isLineNumbersVisible, setIsLineNumbersVisible] = React.useState(true);
   const [isReadOnly, setIsReadOnly] = React.useState(false);

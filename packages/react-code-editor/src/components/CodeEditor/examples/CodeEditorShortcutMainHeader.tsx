@@ -2,7 +2,7 @@ import React from 'react';
 import { CodeEditor, Language } from '@patternfly/react-code-editor';
 import { Grid, GridItem, Chip } from '@patternfly/react-core';
 
-export const ShortcutMainHeaderCodeEditor: React.FunctionComponent = () => {
+export const CodeEditorShortcutMainHeader: React.FunctionComponent = () => {
   const onEditorDidMount = (editor, monaco) => {
     // eslint-disable-next-line no-console
     console.log(editor.getValue());
