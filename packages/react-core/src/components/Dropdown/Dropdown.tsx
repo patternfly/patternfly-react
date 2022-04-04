@@ -54,6 +54,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   ouiaSafe,
   alignments,
   contextProps,
+  menuAppendTo = 'inline',
   ...props
 }: DropdownProps) => (
   <DropdownContext.Provider
@@ -79,7 +80,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
       ...contextProps
     }}
   >
-    <DropdownWithContext {...props} />
+    <DropdownWithContext menuAppendTo={menuAppendTo} {...props} />
   </DropdownContext.Provider>
 );
 Dropdown.displayName = 'Dropdown';
