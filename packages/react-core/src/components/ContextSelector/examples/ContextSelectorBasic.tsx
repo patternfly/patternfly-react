@@ -1,7 +1,7 @@
 import React from 'react';
 import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
 
-export const SimpleContextSelector: React.FunctionComponent = () => {
+export const ContextSelectorBasic: React.FunctionComponent = () => {
   const items = [
     {
       text: 'Link',

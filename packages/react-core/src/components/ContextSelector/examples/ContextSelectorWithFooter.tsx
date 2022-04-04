@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, ContextSelector, ContextSelectorItem, ContextSelectorFooter } from '@patternfly/react-core';
 
-export const FooterContextSelector: React.FunctionComponent = () => {
+export const ContextSelectorWithFooter: React.FunctionComponent = () => {
   const items = [
     {
       text: 'Link',

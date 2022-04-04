@@ -28,7 +28,7 @@ const items = [
   'Azure 2'
 ];
 
-export const PlainTextContextSelector: React.FunctionComponent = () => {
+export const ContextSelectorPlainText: React.FunctionComponent = () => {
   const firstItemText = typeof items[0] === 'string' ? items[0] : items[0].text;
   const [isOpen, setOpen] = React.useState(false);
   const [selected, setSelected] = React.useState(firstItemText);
