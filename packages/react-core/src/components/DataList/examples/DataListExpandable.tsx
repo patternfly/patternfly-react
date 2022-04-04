@@ -27,13 +27,15 @@ export const DataListExpandable: React.FunctionComponent = () => {
 
   const onToggleAll = () => {
     setAllExpanded(!allExpanded);
+  };
 
+  React.useEffect(() => {
     if (allExpanded) {
       setExpanded(['ex-toggle1', 'ex-toggle2', 'ex-toggle3']);
     } else {
       setExpanded([]);
     }
-  };
+  }, [allExpanded]);
 
   const onToggle1 = isOpen1 => {
     setIsOpen1(isOpen1);

@@ -18,14 +18,14 @@ interface ItemType {
   content: string;
 }
 
-const getItems = count =>
-  Array.from({ length: count }, (v, k) => k).map(k => ({
-    id: `item-${k}`,
-    content: `item ${k} `.repeat(k === 4 ? 20 : 1)
+const getItems = (count: number) =>
+  Array.from({ length: count }, (_, idx) => idx).map(idx => ({
+    id: `item-${idx}`,
+    content: `item ${idx} `.repeat(idx === 4 ? 20 : 1)
   }));
 
-const reorder = (list, startIndex, endIndex) => {
-  const result: ItemType[] = Array.from(list);
+const reorder = (list: ItemType[], startIndex: number, endIndex: number) => {
+  const result = list;
   const [removed] = result.splice(startIndex, 1);
   result.splice(endIndex, 0, removed);
   return result;
