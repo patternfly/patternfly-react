@@ -1,7 +1,7 @@
 import React from 'react';
 import { DatePicker, Weekday } from '@patternfly/react-core';
 
-export const FrenchMinMaxDate: React.FunctionComponent = () => {
+export const DatePickerFrench: React.FunctionComponent = () => {
   const minDate = new Date(2020, 2, 16);
   const maxDate = new Date(2020, 2, 20);
   const rangeValidator = (date: Date) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { DatePicker } from '@patternfly/react-core';
 
-export const BasicDatePicker: React.FunctionComponent = () => (
+export const DatePickerBasic: React.FunctionComponent = () => (
   <DatePicker
     // eslint-disable-next-line no-console
     onBlur={(str, date) => console.log('onBlur', str, date)}

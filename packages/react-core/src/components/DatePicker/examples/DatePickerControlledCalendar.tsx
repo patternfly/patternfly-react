@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, DatePicker } from '@patternfly/react-core';
 
-export const ControllingDatePicker: React.FunctionComponent = () => {
+export const DatePickerControlledCalendar: React.FunctionComponent = () => {
   const dateRef = React.useRef(null);
   const onClick = () => {
     if (dateRef.current) {
