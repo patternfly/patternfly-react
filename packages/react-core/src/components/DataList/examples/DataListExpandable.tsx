@@ -18,7 +18,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
-export const ExpandableDataList: React.FunctionComponent = () => {
+export const DataListExpandable: React.FunctionComponent = () => {
   const [isOpen1, setIsOpen1] = React.useState(false);
   const [isOpen2, setIsOpen2] = React.useState(false);
   const [isOpen3, setIsOpen3] = React.useState(false);

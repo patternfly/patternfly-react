@@ -8,7 +8,7 @@ import {
   DataListWrapModifier
 } from '@patternfly/react-core';
 
-export const ControllingTextDataList: React.FunctionComponent = () => (
+export const DataListControllingText: React.FunctionComponent = () => (
   <DataList aria-label="Simple data list example">
     <DataListItem aria-labelledby="simple-item1">
       <DataListItemRow>

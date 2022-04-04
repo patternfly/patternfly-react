@@ -31,7 +31,7 @@ const reorder = (list, startIndex, endIndex) => {
   return result;
 };
 
-export const DraggableDataList: React.FunctionComponent = () => {
+export const DataListDraggable: React.FunctionComponent = () => {
   const [items, setItems] = React.useState(getItems(10));
   const [liveText, setLiveText] = React.useState('');
 
