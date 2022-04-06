@@ -42,6 +42,7 @@ section: developer-resources
   - Updated to support setting width of term column ([#7061](https://github.com/patternfly/patternfly-react/pull/7061))
 - **Drawer:**
   - Updated resizable drawer to make it more accessible ([#7118](https://github.com/patternfly/patternfly-react/pull/7118))
+  - Fixed drawer regression ([#7179](https://github.com/patternfly/patternfly-react/pull/7179))
 - **Dropdown:**
   - Updated examples to show different appends ([#7095](https://github.com/patternfly/patternfly-react/pull/7095))
 - **Flex layout:**
