@@ -23,6 +23,7 @@ module.exports = (baseSourceMD, sourceProps) => {
     .resolve('@patternfly/react-virtualized-extension/package.json')
     .replace('package.json', 'src');
   const reactTopologyPath = require.resolve('@patternfly/react-topology/package.json').replace('package.json', 'src');
+  const reactDragDropPath = require.resolve('@patternfly/react-drag-drop/package.json').replace('package.json', 'src');
   const reactPropsIgnore = '**/*.test.tsx';
 
   sourceProps(path.join(reactCorePath, '/**/*.tsx'), reactPropsIgnore);
@@ -32,12 +33,14 @@ module.exports = (baseSourceMD, sourceProps) => {
   sourceProps(path.join(reactCatalogViewPath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactVirtualizedPath, '/**/*.tsx'), reactPropsIgnore);
   sourceProps(path.join(reactTopologyPath, '/**/*.tsx'), reactPropsIgnore);
+  sourceProps(path.join(reactDragDropPath, '/**/*.tsx'), reactPropsIgnore);
 
   // React MD
   sourceMD(path.join(reactCorePath, '/components/**/examples/*.md'), 'react');
   sourceMD(path.join(reactCorePath, '/layouts/**/examples/*.md'), 'react');
   sourceMD(path.join(reactCorePath, '/next/components/**/examples/*.md'), 'react-next');
   sourceMD(path.join(reactCorePath, '/**/demos/**/*.md'), 'react-demos');
+  sourceMD(path.join(reactCorePath, '/deprecated/components/**/examples/*.md'), 'react-tech-review');
 
   // React-table MD
   sourceMD(path.join(reactTablePath, '/**/TableComposable/examples/*.md'), 'react');
@@ -61,6 +64,9 @@ module.exports = (baseSourceMD, sourceProps) => {
 
   // Topology MD
   sourceMD(path.join(reactTopologyPath, '/**/examples/*.md'), 'react');
+  
+  // Drag drop MD
+  sourceMD(path.join(reactDragDropPath, '/**/examples/*.md'), 'react');
 
   // Release notes
   sourceMD(require.resolve('@patternfly/react-docs/RELEASE-NOTES.md'), 'react');

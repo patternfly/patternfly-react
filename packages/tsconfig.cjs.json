@@ -11,6 +11,9 @@
       "path": "./react-core/tsconfig.cjs.json"
     },
     {
+      "path": "./react-drag-drop/tsconfig.cjs.json"
+    },
+    {
       "path": "./react-icons/tsconfig.cjs.json"
     },
     {

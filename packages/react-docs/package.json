@@ -27,6 +27,7 @@
     "@patternfly/react-charts": "^6.94.18",
     "@patternfly/react-code-editor": "^4.82.111",
     "@patternfly/react-core": "^4.276.4",
+    "@patternfly/react-drag-drop": "^4.0.0",
     "@patternfly/react-icons": "^4.93.6",
     "@patternfly/react-inline-edit-extension": "^4.86.116",
     "@patternfly/react-styles": "^4.92.6",

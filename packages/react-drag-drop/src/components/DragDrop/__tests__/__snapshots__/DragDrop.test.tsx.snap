@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders some divs 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-droppable pf-m-dragging"
+  >
+    <div
+      aria-describedby="DndDescribedBy-0"
+      aria-roledescription="sortable"
+      class="pf-c-draggable"
+      role="button"
+      tabindex="0"
+    >
+      one
+    </div>
+    <div
+      aria-describedby="DndDescribedBy-0"
+      aria-roledescription="sortable"
+      class="pf-c-draggable"
+      role="button"
+      tabindex="0"
+    >
+      two
+    </div>
+    <div
+      aria-describedby="DndDescribedBy-0"
+      aria-roledescription="sortable"
+      class="pf-c-draggable"
+      role="button"
+      tabindex="0"
+    >
+      three
+    </div>
+  </div>
+</DocumentFragment>
+`;

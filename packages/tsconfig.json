@@ -11,6 +11,9 @@
       "path": "./react-core"
     },
     {
+      "path": "./react-drag-drop"
+    },
+    {
       "path": "./react-icons"
     },
     {

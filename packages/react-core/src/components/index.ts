@@ -82,7 +82,6 @@ export * from './Tooltip';
 export * from './NumberInput';
 export * from './TreeView';
 export * from './Wizard';
-export * from './DragDrop';
 export * from './TextInputGroup';
 export * from './Panel';
 export * from './Truncate';
