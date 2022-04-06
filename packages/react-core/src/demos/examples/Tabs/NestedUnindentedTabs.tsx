@@ -14,7 +14,13 @@ import {
   TabTitleText,
   Title,
   Flex,
-  FlexItem
+  FlexItem,
+  Text,
+  TextContent,
+  Button,
+  Breadcrumb,
+  BreadcrumbItem,
+  Page
 } from '@patternfly/react-core';
 import DashboardWrapper from '../DashboardWrapper';
 
@@ -27,6 +33,17 @@ export const NestedTabs: React.FunctionComponent = () => {
 
   // Toggle currently active nested tab
   const handleNestedTabClick = (tabIndex: number) => setActiveNestedTabKey(tabIndex);
+
+  const PageBreadcrumb = (
+    <Breadcrumb>
+      <BreadcrumbItem>Section home</BreadcrumbItem>
+      <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+      <BreadcrumbItem to="#">Section title</BreadcrumbItem>
+      <BreadcrumbItem to="#" isActive>
+        Section landing
+      </BreadcrumbItem>
+    </Breadcrumb>
+  );
 
   const tabContent = (
     <Grid hasGutter>
@@ -67,27 +84,58 @@ export const NestedTabs: React.FunctionComponent = () => {
                   <TabContentBody>
                     <Grid hasGutter>
                       <GridItem>
-                        {"To perform a standard x86_64 installation using the GUI, you'll need to:"}{' '}
-                        <Card isFullHeight>
-                          <CardHeader>Check system requirements</CardHeader>
-                          <CardBody>Your physical or virtual machine should meet the system requirement.</CardBody>
-                        </Card>
-                        <Card isFullHeight>
-                          <CardHeader>Download an installation ISO image</CardHeader>
-                          <CardBody>Download the binary DVD ISO.</CardBody>
-                        </Card>
-                        <Card isFullHeight>
-                          <CardHeader>Create a bootable installation media</CardHeader>
-                          <CardBody>Create a bootable installation media, for example a USB flash drive.</CardBody>
-                        </Card>
-                        <Card isFullHeight>
-                          <CardHeader>Install and register your system</CardHeader>
-                          <CardBody>
-                            Boot the installation, register your system, attach RHEL subscriptions, and in stall
-                            <a href="#">RHEL</a> from the Red Hat Content Delivery Network (CDN) using the GUI.
-                          </CardBody>
-                        </Card>
+                        <TextContent>
+                          <Text>To perform a standard x86_64 installation using the GUI, you'll need to:</Text>
+                        </TextContent>
                       </GridItem>
+                      <Grid md={6} xl2={3} hasGutter>
+                        <GridItem>
+                          <Card isFullHeight>
+                            <CardHeader>Check system requirements</CardHeader>
+                            <CardBody>
+                              Your physical or virtual machine should meet the{' '}
+                              <Button variant="link" isInline>
+                                system requirement
+                              </Button>
+                              .
+                            </CardBody>
+                          </Card>
+                        </GridItem>
+
+                        <GridItem>
+                          <Card isFullHeight>
+                            <CardHeader>Download an installation ISO image</CardHeader>
+                            <CardBody>
+                              {' '}
+                              <Button variant="link" isInline>
+                                Download
+                              </Button>{' '}
+                              the binary DVD ISO.
+                            </CardBody>
+                          </Card>
+                        </GridItem>
+                        <GridItem>
+                          <Card isFullHeight>
+                            <CardHeader>Create a bootable installation media</CardHeader>
+                            <CardBody>
+                              {' '}
+                              <Button variant="link" isInline>
+                                Create
+                              </Button>{' '}
+                              a bootable installation media, for example a USB flash drive.
+                            </CardBody>
+                          </Card>
+                        </GridItem>
+                        <GridItem>
+                          <Card isFullHeight>
+                            <CardHeader>Install and register your system</CardHeader>
+                            <CardBody>
+                              Boot the installation, register your system, attach RHEL subscriptions, and install RHEL
+                              from the Red Hat Content Delivery Network (CDN) using the GUI.
+                            </CardBody>
+                          </Card>
+                        </GridItem>
+                      </Grid>
                     </Grid>
                   </TabContentBody>
                 </TabContent>
@@ -128,32 +176,42 @@ export const NestedTabs: React.FunctionComponent = () => {
 
   return (
     <DashboardWrapper hasNoBreadcrumb>
-      <PageSection isWidthLimited variant={PageSectionVariants.light}>
-        <Title headingLevel="h1" size="2xl">
-          Red Hat Enterprise Linux
-        </Title>
-      </PageSection>
-      <PageSection type="tabs" isWidthLimited>
-        <Tabs
-          isBox
-          isSecondary
-          activeKey={activeTabKey}
-          onSelect={(_event, tabIndex) => handleTabClick(Number(tabIndex))}
-          usePageInsets
-          id="nested-tabs-example-tabs-list"
-        >
-          <Tab eventKey={0} title={<TabTitleText>What's new</TabTitleText>} tabContentId={`tabContent${0}`} />
-          <Tab eventKey={1} title={<TabTitleText>Get started</TabTitleText>} tabContentId={`tabContent${1}`} />
-          <Tab eventKey={2} title={<TabTitleText>Knowledge</TabTitleText>} tabContentId={`tabContent${2}`} />
-          <Tab eventKey={3} title={<TabTitleText>Support</TabTitleText>} tabContentId={`tabContent${3}`} />
-        </Tabs>
-      </PageSection>
-      <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
-        <TabContentBody>{}</TabContentBody>
-      </TabContent>
-      <TabContent key={1} eventKey={1} id={`tabContent${1}`} activeKey={activeTabKey} hidden={1 !== activeTabKey}>
-        <TabContentBody>{tabContent}</TabContentBody>
-      </TabContent>
+      <Page
+        breadcrumb={PageBreadcrumb}
+        isManagedSidebar
+        isTertiaryNavWidthLimited
+        isBreadcrumbWidthLimited
+        isTertiaryNavGrouped
+        isBreadcrumbGrouped
+      >
+        <PageSection variant={PageSectionVariants.light}>
+          <TextContent>
+            <Text component="h1">Main title</Text>
+            <Text component="p">This is a full page demo.</Text>
+          </TextContent>
+        </PageSection>
+        <PageSection type="tabs" isWidthLimited variant={PageSectionVariants.light}>
+          <Tabs
+            isBox
+            isSecondary
+            activeKey={activeTabKey}
+            onSelect={(_event, tabIndex) => handleTabClick(Number(tabIndex))}
+            usePageInsets
+            id="nested-tabs-example-tabs-list"
+          >
+            <Tab eventKey={0} title={<TabTitleText>What's new</TabTitleText>} tabContentId={`tabContent${0}`} />
+            <Tab eventKey={1} title={<TabTitleText>Get started</TabTitleText>} tabContentId={`tabContent${1}`} />
+            <Tab eventKey={2} title={<TabTitleText>Knowledge</TabTitleText>} tabContentId={`tabContent${2}`} />
+            <Tab eventKey={3} title={<TabTitleText>Support</TabTitleText>} tabContentId={`tabContent${3}`} />
+          </Tabs>
+        </PageSection>
+        <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
+          <TabContentBody>{}</TabContentBody>
+        </TabContent>
+        <TabContent key={1} eventKey={1} id={`tabContent${1}`} activeKey={activeTabKey} hidden={1 !== activeTabKey}>
+          <TabContentBody>{tabContent}</TabContentBody>
+        </TabContent>
+      </Page>
     </DashboardWrapper>
   );
 };
