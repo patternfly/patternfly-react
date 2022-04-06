@@ -37,7 +37,7 @@ export const DrawerContent: React.SFC<DrawerContentProps> = ({
       >
         {children}
       </div>
-      {React.cloneElement(panelContent as React.ReactElement, { drawerContentRef })}
+      {panelContent && React.cloneElement(panelContent as React.ReactElement, { drawerContentRef })}
     </DrawerMain>
   );
 };
