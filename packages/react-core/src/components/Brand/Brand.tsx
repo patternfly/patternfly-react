@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Brand/brand';
 import { setBreakpointCssVars } from '../../helpers';
 export interface BrandProps
   extends React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
-  /** Transforms the Brand into a <picture> element from an <img> element. Container for <source> and <img> child elements. */
+  /** Transforms the Brand into a <picture> element from an <img> element. Container for <source> child elements. */
   children?: React.ReactNode;
   /** Additional classes added to the either type of Brand. */
   className?: string;
