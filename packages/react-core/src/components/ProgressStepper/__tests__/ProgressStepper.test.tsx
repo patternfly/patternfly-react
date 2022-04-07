@@ -87,7 +87,7 @@ describe('ProgressStep', () => {
   });
 
   test('renders help text styling', () => {
-    const view = render(<ProgressStep popover={<div></div>}>Title</ProgressStep>);
+    const view = render(<ProgressStep render={({ stepRef }) => (<div></div>)}>Title</ProgressStep>);
     expect(view.container).toMatchSnapshot();
   });
 
