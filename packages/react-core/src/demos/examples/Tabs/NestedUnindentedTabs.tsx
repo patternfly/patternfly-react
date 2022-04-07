@@ -6,7 +6,6 @@ import {
   Grid,
   GridItem,
   PageSection,
-  PageSectionVariants,
   Tabs,
   Tab,
   TabContent,
@@ -35,7 +34,7 @@ export const NestedTabs: React.FunctionComponent = () => {
   const handleNestedTabClick = (tabIndex: number) => setActiveNestedTabKey(tabIndex);
 
   const PageBreadcrumb = (
-    <Breadcrumb>
+    <Breadcrumb className="bread">
       <BreadcrumbItem>Section home</BreadcrumbItem>
       <BreadcrumbItem to="#">Section title</BreadcrumbItem>
       <BreadcrumbItem to="#">Section title</BreadcrumbItem>
@@ -48,128 +47,124 @@ export const NestedTabs: React.FunctionComponent = () => {
   const tabContent = (
     <Grid hasGutter>
       <GridItem>
-        <Card>
-          <CardHeader>
-            <Title headingLevel="h2">Get started with Red Hat Enterprise Linux</Title>
-          </CardHeader>
-          <CardBody>
-            <Flex direction={{ default: 'column' }}>
-              <FlexItem>
-                <Tabs
-                  activeKey={activeNestedTabKey}
-                  isSecondary
-                  onSelect={(_event, tabIndex) => handleNestedTabClick(Number(tabIndex))}
-                  id="nested-tabs-example-nested-tabs-list"
-                >
-                  <Tab
-                    eventKey={10}
-                    title={<TabTitleText>x86 architecture</TabTitleText>}
-                    tabContentId={`tabContent${10}`}
-                  />
-                  <Tab
-                    eventKey={11}
-                    title={<TabTitleText>Additional Architectures</TabTitleText>}
-                    tabContentId={`tabContent${11}`}
-                  />
-                </Tabs>
-              </FlexItem>
-              <FlexItem>
-                <TabContent
-                  key={10}
-                  eventKey={10}
-                  id={`tabContent${10}`}
-                  activeKey={activeNestedTabKey}
-                  hidden={10 !== activeNestedTabKey}
-                >
-                  <TabContentBody>
-                    <Grid hasGutter>
-                      <GridItem>
-                        <TextContent>
-                          <Text>To perform a standard x86_64 installation using the GUI, you'll need to:</Text>
-                        </TextContent>
-                      </GridItem>
-                      <Grid md={6} xl2={3} hasGutter>
-                        <GridItem>
-                          <Card isFullHeight>
-                            <CardHeader>Check system requirements</CardHeader>
-                            <CardBody>
-                              Your physical or virtual machine should meet the{' '}
-                              <Button variant="link" isInline>
-                                system requirement
-                              </Button>
-                              .
-                            </CardBody>
-                          </Card>
-                        </GridItem>
+        <CardHeader>
+          <Title headingLevel="h2">Get started with Red Hat Enterprise Linux</Title>
+        </CardHeader>
+        <Flex direction={{ default: 'column' }}>
+          <FlexItem>
+            <Tabs
+              activeKey={activeNestedTabKey}
+              isSecondary
+              onSelect={(_event, tabIndex) => handleNestedTabClick(Number(tabIndex))}
+              id="nested-tabs-example-nested-tabs-list"
+            >
+              <Tab
+                eventKey={10}
+                title={<TabTitleText>x86 architecture</TabTitleText>}
+                tabContentId={`tabContent${10}`}
+              />
+              <Tab
+                eventKey={11}
+                title={<TabTitleText>Additional Architectures</TabTitleText>}
+                tabContentId={`tabContent${11}`}
+              />
+            </Tabs>
+          </FlexItem>
+          <FlexItem>
+            <TabContent
+              key={10}
+              eventKey={10}
+              id={`tabContent${10}`}
+              activeKey={activeNestedTabKey}
+              hidden={10 !== activeNestedTabKey}
+            >
+              <TabContentBody>
+                <Grid hasGutter>
+                  <GridItem>
+                    <TextContent>
+                      <Text>To perform a standard x86_64 installation using the GUI, you'll need to:</Text>
+                    </TextContent>
+                  </GridItem>
+                  <Grid md={6} xl2={3} hasGutter>
+                    <GridItem>
+                      <Card isFullHeight>
+                        <CardHeader>Check system requirements</CardHeader>
+                        <CardBody>
+                          Your physical or virtual machine should meet the{' '}
+                          <Button variant="link" isInline>
+                            system requirement
+                          </Button>
+                          .
+                        </CardBody>
+                      </Card>
+                    </GridItem>
 
-                        <GridItem>
-                          <Card isFullHeight>
-                            <CardHeader>Download an installation ISO image</CardHeader>
-                            <CardBody>
-                              {' '}
-                              <Button variant="link" isInline>
-                                Download
-                              </Button>{' '}
-                              the binary DVD ISO.
-                            </CardBody>
-                          </Card>
-                        </GridItem>
-                        <GridItem>
-                          <Card isFullHeight>
-                            <CardHeader>Create a bootable installation media</CardHeader>
-                            <CardBody>
-                              {' '}
-                              <Button variant="link" isInline>
-                                Create
-                              </Button>{' '}
-                              a bootable installation media, for example a USB flash drive.
-                            </CardBody>
-                          </Card>
-                        </GridItem>
-                        <GridItem>
-                          <Card isFullHeight>
-                            <CardHeader>Install and register your system</CardHeader>
-                            <CardBody>
-                              Boot the installation, register your system, attach RHEL subscriptions, and install RHEL
-                              from the Red Hat Content Delivery Network (CDN) using the GUI.
-                            </CardBody>
-                          </Card>
-                        </GridItem>
-                      </Grid>
-                    </Grid>
-                  </TabContentBody>
-                </TabContent>
-                <TabContent
-                  key={11}
-                  eventKey={11}
-                  id={`tabContent${11}`}
-                  activeKey={activeNestedTabKey}
-                  hidden={11 !== activeNestedTabKey}
-                >
-                  <TabContentBody>Control plane panel</TabContentBody>
-                </TabContent>
-                <TabContent
-                  key={12}
-                  eventKey={12}
-                  id={`tabContent${12}`}
-                  activeKey={activeNestedTabKey}
-                  hidden={12 !== activeNestedTabKey}
-                >
-                  <TabContentBody>Operators panel</TabContentBody>
-                </TabContent>
-                <TabContent
-                  key={13}
-                  eventKey={13}
-                  id={`tabContent${13}`}
-                  activeKey={activeNestedTabKey}
-                  hidden={13 !== activeNestedTabKey}
-                >
-                  <TabContentBody>Virtualization panel</TabContentBody>
-                </TabContent>
-              </FlexItem>
-            </Flex>
-          </CardBody>
-        </Card>
+                    <GridItem>
+                      <Card isFullHeight>
+                        <CardHeader>Download an installation ISO image</CardHeader>
+                        <CardBody>
+                          {' '}
+                          <Button variant="link" isInline>
+                            Download
+                          </Button>{' '}
+                          the binary DVD ISO.
+                        </CardBody>
+                      </Card>
+                    </GridItem>
+                    <GridItem>
+                      <Card isFullHeight>
+                        <CardHeader>Create a bootable installation media</CardHeader>
+                        <CardBody>
+                          {' '}
+                          <Button variant="link" isInline>
+                            Create
+                          </Button>{' '}
+                          a bootable installation media, for example a USB flash drive.
+                        </CardBody>
+                      </Card>
+                    </GridItem>
+                    <GridItem>
+                      <Card isFullHeight>
+                        <CardHeader>Install and register your system</CardHeader>
+                        <CardBody>
+                          Boot the installation, register your system, attach RHEL subscriptions, and install RHEL from
+                          the Red Hat Content Delivery Network (CDN) using the GUI.
+                        </CardBody>
+                      </Card>
+                    </GridItem>
+                  </Grid>
+                </Grid>
+              </TabContentBody>
+            </TabContent>
+            <TabContent
+              key={11}
+              eventKey={11}
+              id={`tabContent${11}`}
+              activeKey={activeNestedTabKey}
+              hidden={11 !== activeNestedTabKey}
+            >
+              <TabContentBody>Additional architectures panel</TabContentBody>
+            </TabContent>
+            <TabContent
+              key={12}
+              eventKey={12}
+              id={`tabContent${12}`}
+              activeKey={activeNestedTabKey}
+              hidden={12 !== activeNestedTabKey}
+            >
+              <TabContentBody>Operators panel</TabContentBody>
+            </TabContent>
+            <TabContent
+              key={13}
+              eventKey={13}
+              id={`tabContent${13}`}
+              activeKey={activeNestedTabKey}
+              hidden={13 !== activeNestedTabKey}
+            >
+              <TabContentBody>Virtualization panel</TabContentBody>
+            </TabContent>
+          </FlexItem>
+        </Flex>
       </GridItem>
     </Grid>
   );
@@ -184,13 +179,13 @@ export const NestedTabs: React.FunctionComponent = () => {
         isTertiaryNavGrouped
         isBreadcrumbGrouped
       >
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection variant="light">
           <TextContent>
             <Text component="h1">Main title</Text>
             <Text component="p">This is a full page demo.</Text>
           </TextContent>
         </PageSection>
-        <PageSection type="tabs" isWidthLimited variant={PageSectionVariants.light}>
+        <PageSection type="tabs" isWidthLimited variant="light">
           <Tabs
             isBox
             isSecondary
@@ -205,12 +200,20 @@ export const NestedTabs: React.FunctionComponent = () => {
             <Tab eventKey={3} title={<TabTitleText>Support</TabTitleText>} tabContentId={`tabContent${3}`} />
           </Tabs>
         </PageSection>
-        <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
-          <TabContentBody>{}</TabContentBody>
-        </TabContent>
-        <TabContent key={1} eventKey={1} id={`tabContent${1}`} activeKey={activeTabKey} hidden={1 !== activeTabKey}>
-          <TabContentBody>{tabContent}</TabContentBody>
-        </TabContent>
+        <PageSection variant="light">
+          <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
+            <TabContentBody>What's new panel</TabContentBody>
+          </TabContent>
+          <TabContent key={1} eventKey={1} id={`tabContent${1}`} activeKey={activeTabKey} hidden={1 !== activeTabKey}>
+            <TabContentBody>{tabContent}</TabContentBody>
+          </TabContent>
+          <TabContent key={2} eventKey={2} id={`tabContent${2}`} activeKey={activeTabKey} hidden={2 !== activeTabKey}>
+            <TabContentBody>Knowledge panel</TabContentBody>
+          </TabContent>
+          <TabContent key={3} eventKey={3} id={`tabContent${3}`} activeKey={activeTabKey} hidden={3 !== activeTabKey}>
+            <TabContentBody>Support Panel</TabContentBody>
+          </TabContent>
+        </PageSection>
       </Page>
     </DashboardWrapper>
   );
