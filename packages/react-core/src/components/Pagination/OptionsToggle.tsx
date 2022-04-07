@@ -59,41 +59,37 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   toggleTemplate: ToggleTemplate,
   onEnter = null
 }: OptionsToggleProps) => (
-  <div
-    className={css(
-      styles.optionsMenuToggle,
-      isDisabled && styles.modifiers.disabled,
-      styles.modifiers.plain,
-      styles.modifiers.text
-    )}
-  >
+  <>
     {showToggle && (
-      <React.Fragment>
-        <span className={css(styles.optionsMenuToggleText)}>
-          {typeof ToggleTemplate === 'string' ? (
-            fillTemplate(ToggleTemplate, { firstIndex, lastIndex, ofWord, itemCount, itemsTitle })
-          ) : (
-            <ToggleTemplate
-              firstIndex={firstIndex}
-              lastIndex={lastIndex}
-              ofWord={ofWord}
-              itemCount={itemCount}
-              itemsTitle={itemsTitle}
-            />
-          )}
-        </span>
-        <DropdownToggle
-          onEnter={onEnter}
-          aria-label={optionsToggle}
-          onToggle={onToggle}
-          isDisabled={isDisabled || (itemCount && itemCount <= 0)}
-          isOpen={isOpen}
-          id={`${widgetId}-toggle-${toggleId++}`}
-          className={styles.optionsMenuToggleButton}
-          parentRef={parentRef}
-        ></DropdownToggle>
-      </React.Fragment>
+      <DropdownToggle
+        onEnter={onEnter}
+        aria-label={optionsToggle}
+        onToggle={onToggle}
+        isDisabled={isDisabled || (itemCount && itemCount <= 0)}
+        isOpen={isOpen}
+        id={`${widgetId}-toggle-${toggleId++}`}
+        className={css(
+          styles.optionsMenuToggle,
+          isDisabled && styles.modifiers.disabled,
+          styles.modifiers.plain,
+          styles.modifiers.text
+        )}
+        parentRef={parentRef}
+        aria-haspopup="listbox"
+      >
+        {typeof ToggleTemplate === 'string' ? (
+          fillTemplate(ToggleTemplate, { firstIndex, lastIndex, ofWord, itemCount, itemsTitle })
+        ) : (
+          <ToggleTemplate
+            firstIndex={firstIndex}
+            lastIndex={lastIndex}
+            ofWord={ofWord}
+            itemCount={itemCount}
+            itemsTitle={itemsTitle}
+          />
+        )}
+      </DropdownToggle>
     )}
-  </div>
+  </>
 );
 OptionsToggle.displayName = 'OptionsToggle';
