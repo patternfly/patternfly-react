@@ -8,12 +8,11 @@ import logo from './pf-c-brand--logo.svg';
 import logoBase from './pf-c-brand--logo-base.jpg';
 
 export const BrandBasic: React.FunctionComponent = () => (
-  <Brand widths={{ default: '40px', sm: '60px', md: '220px' }}>
+  <Brand src={logoBase} alt="Fallback patternfly default logo" widths={{ default: '40px', sm: '60px', md: '220px' }}>
     <source media="(min-width: 1200px)" srcSet={logoXl} />
     <source media="(min-width: 992px)" srcSet={logoLg} />
     <source media="(min-width: 768px)" srcSet={logoMd} />
     <source media="(min-width: 576px)" srcSet={logoSm} />
     <source srcSet={logo} />
-    <img src={logoBase} alt="Fallback patternFly default logo" />
   </Brand>
 );

@@ -8,10 +8,10 @@ export interface BrandProps
   children?: React.ReactNode;
   /** Additional classes added to the either type of Brand. */
   className?: string;
-  /** Attribute that specifies the URL of a <img> Brand. */
+  /** Attribute that specifies the URL of a <img> Brand. For a <picture> Brand this specifies the fallback <img> URL. */
   src?: string;
-  /** Attribute that specifies the alt text of a <img> Brand. */
-  alt?: string;
+  /** Attribute that specifies the alt text of a <img> Brand. For a <picture> Brand this specifies the fallback <img> alt text. */
+  alt: string;
   /** Widths are various breakpoints for a <picture> Brand. */
   widths?: {
     default?: string;
@@ -61,6 +61,7 @@ export const Brand: React.FunctionComponent<BrandProps> = ({
     children !== undefined ? (
       <picture className={css(styles.brand, styles.modifiers.picture, className)} style={style} {...props}>
         {children}
+        <img src={src} alt={alt} />
       </picture>
     ) : (
       <img {...props} className={css(styles.brand, className)} src={src} alt={alt} />
