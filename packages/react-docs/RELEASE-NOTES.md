@@ -3,19 +3,19 @@ id: Release notes
 section: developer-resources
 ---
 
-## 2022.04 release notes (2022-04-06)
-- [@patternfly/react-catalog-view-extension@4.53.15](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.53.15)
-- [@patternfly/react-charts@6.55.15](https://www.npmjs.com/package/@patternfly/react-charts/v/6.55.15)
-- [@patternfly/react-code-editor@4.43.15](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.43.15)
-- [@patternfly/react-core@4.202.15](https://www.npmjs.com/package/@patternfly/react-core/v/4.202.15)
-- [@patternfly/react-icons@4.53.15](https://www.npmjs.com/package/@patternfly/react-icons/v/4.53.15)
-- [@patternfly/react-inline-edit-extension@4.47.15](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.47.15)
-- [@patternfly/react-log-viewer@4.47.15](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.47.15)
-- [@patternfly/react-styles@4.52.15](https://www.npmjs.com/package/@patternfly/react-styles/v/4.52.15)
-- [@patternfly/react-table@4.71.15](https://www.npmjs.com/package/@patternfly/react-table/v/4.71.15)
-- [@patternfly/react-tokens@4.54.15](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.54.15)
-- [@patternfly/react-topology@4.49.15](https://www.npmjs.com/package/@patternfly/react-topology/v/4.49.15)
-- [@patternfly/react-virtualized-extension@4.49.15](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.49.15)
+## 2022.04 release notes (2022-04-07)
+- [@patternfly/react-catalog-view-extension@4.53.16](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.53.16)
+- [@patternfly/react-charts@6.55.16](https://www.npmjs.com/package/@patternfly/react-charts/v/6.55.16)
+- [@patternfly/react-code-editor@4.43.16](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.43.16)
+- [@patternfly/react-core@4.202.16](https://www.npmjs.com/package/@patternfly/react-core/v/4.202.16)
+- [@patternfly/react-icons@4.53.16](https://www.npmjs.com/package/@patternfly/react-icons/v/4.53.16)
+- [@patternfly/react-inline-edit-extension@4.47.16](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.47.16)
+- [@patternfly/react-log-viewer@4.47.16](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.47.16)
+- [@patternfly/react-styles@4.52.16](https://www.npmjs.com/package/@patternfly/react-styles/v/4.52.16)
+- [@patternfly/react-table@4.71.16](https://www.npmjs.com/package/@patternfly/react-table/v/4.71.16)
+- [@patternfly/react-tokens@4.54.16](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.54.16)
+- [@patternfly/react-topology@4.49.16](https://www.npmjs.com/package/@patternfly/react-topology/v/4.49.16)
+- [@patternfly/react-virtualized-extension@4.49.16](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.49.16)
 
 ### Components
 - **Avatar:**
@@ -74,6 +74,7 @@ section: developer-resources
 ### Topology
 - Added concentric layout to topology component ([#7053](https://github.com/patternfly/patternfly-react/pull/7053))
 - Made topology updates found necessary for console topology upgrade ([#7028](https://github.com/patternfly/patternfly-react/pull/7028))
+- Reverted topology class name changes ([#7187](https://github.com/patternfly/patternfly-react/pull/7187))
 
 ### Other
 - **Chore:**
