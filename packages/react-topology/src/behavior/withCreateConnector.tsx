@@ -180,7 +180,7 @@ const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(pro
     <>
       <Layer id={TOP_LAYER}>
         <g
-          className={css(styles.topologyCreateConnector)}
+          className={css(styles.topologyDefaultCreateConnector)}
           ref={refs}
           onMouseEnter={!active ? () => onKeepAlive(true) : undefined}
           onMouseLeave={!active ? () => onKeepAlive(false) : undefined}
