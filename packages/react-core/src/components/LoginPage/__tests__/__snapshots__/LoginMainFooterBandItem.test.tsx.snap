@@ -1,23 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginFooterItem  with custom node 1`] = `
-<div>
-  <p
-    class="pf-c-login__main-footer-band-item"
-  >
-    <div>
-      My custom node
-    </div>
-  </p>
-</div>
-`;
-
-exports[`className is added to the root element 1`] = `"pf-c-login__main-footer-band-item extra-class"`;
-
-exports[`renders with PatternFly Core styles 1`] = `
-<div>
+exports[`LoginMainFooterBandItem renders with PatternFly Core styles 1`] = `
+<DocumentFragment>
   <p
     class="pf-c-login__main-footer-band-item"
   />
-</div>
+</DocumentFragment>
 `;

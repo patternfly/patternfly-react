@@ -19,7 +19,7 @@ const ConnectorSquare: React.FC<ConnectorSquareProps> = ({
   endPoint,
   className = '',
   isTarget = true,
-  size = 18,
+  size = 14,
   dragRef
 }) => {
   if (!startPoint || !endPoint) {
@@ -28,7 +28,13 @@ const ConnectorSquare: React.FC<ConnectorSquareProps> = ({
 
   const connectorStartPoint = getConnectorStartPoint(startPoint, endPoint, size);
   const angleDeg = getConnectorRotationAngle(startPoint, endPoint);
-  const classNames = css(styles.topologyConnectorSquare, className, !isTarget && styles.modifiers.source);
+  const classNames = css(
+    styles.topologyConnectorArrow,
+    styles.topologyConnectorSquare,
+    !isTarget && styles.modifiers.source,
+    className,
+    dragRef && 'pf-m-draggable'
+  );
 
   return (
     <g
@@ -36,7 +42,7 @@ const ConnectorSquare: React.FC<ConnectorSquareProps> = ({
       ref={dragRef}
       className={classNames}
     >
-      <rect x={size / 2} y={-size / 4} width={size / 2} height={size / 2} />
+      <rect x={0} y={-size / 2} width={size} height={size} />
     </g>
   );
 };

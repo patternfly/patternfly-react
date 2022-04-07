@@ -1,14 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LabelGroup label group compact 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-label-group"
   >
     <div
       class="pf-c-label-group__main"
     >
-      
       <ul
         aria-label="Label group category"
         class="pf-c-label-group__list"
@@ -69,18 +68,17 @@ exports[`LabelGroup label group compact 1`] = `
       </ul>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`LabelGroup label group default 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-label-group"
   >
     <div
       class="pf-c-label-group__main"
     >
-      
       <ul
         aria-label="Label group category"
         class="pf-c-label-group__list"
@@ -102,11 +100,11 @@ exports[`LabelGroup label group default 1`] = `
       </ul>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`LabelGroup label group with category 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-label-group pf-m-category"
   >
@@ -141,11 +139,11 @@ exports[`LabelGroup label group with category 1`] = `
       </ul>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`LabelGroup label group with category and tooltip 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-label-group pf-m-category"
   >
@@ -180,11 +178,11 @@ exports[`LabelGroup label group with category and tooltip 1`] = `
       </ul>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`LabelGroup label group with closable category 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-label-group pf-m-category"
   >
@@ -248,5 +246,5 @@ exports[`LabelGroup label group with closable category 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

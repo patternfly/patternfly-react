@@ -94,17 +94,13 @@ export const getShapeComponent = (node: Node): React.FC<ShapeProps> => {
   }
 };
 
-export const getDefaultShapeDecoratorCenter = (
-  quadrant: TopologyQuadrant,
-  node: Node,
-  radius: number = DEFAULT_DECORATOR_RADIUS
-): { x: number; y: number } => {
+export const getDefaultShapeDecoratorCenter = (quadrant: TopologyQuadrant, node: Node): { x: number; y: number } => {
   const { width, height } = node.getDimensions();
   const shape = node.getNodeShape();
   const nodeCenterX = width / 2;
   const nodeCenterY = height / 2;
-  let deltaX = width / 2 + radius / 3;
-  let deltaY = height / 2 + radius / 3;
+  let deltaX = width / 2;
+  let deltaY = height / 2;
 
   switch (shape) {
     case NodeShape.circle:
@@ -114,34 +110,23 @@ export const getDefaultShapeDecoratorCenter = (
         y: nodeCenterY + Math.sin(quadrantRadians(quadrant)) * deltaY
       };
     case NodeShape.rect:
-      deltaX = deltaX - 5;
-      deltaY = deltaY - 5;
       break;
     case NodeShape.rhombus:
-      if (quadrant === TopologyQuadrant.upperRight || quadrant === TopologyQuadrant.upperLeft) {
-        deltaX = deltaX - 12;
-        deltaY = deltaY - 12;
-      } else {
-        deltaX = deltaX - 3;
-        deltaY = deltaY - 3;
-      }
+      deltaX = width / 3;
+      deltaY = height / 3;
       break;
     case NodeShape.trapezoid:
       if (quadrant === TopologyQuadrant.upperRight || quadrant === TopologyQuadrant.upperLeft) {
-        deltaX = deltaX - 12;
-        deltaY = deltaY - 12;
-      } else {
-        deltaX = deltaX - 3;
-        deltaY = deltaY - 3;
+        deltaX = deltaX * 0.875 - TRAPEZOID_CORNER_RADIUS;
       }
       break;
     case NodeShape.hexagon:
-      deltaX = deltaX - HEXAGON_CORNER_RADIUS / 2;
-      deltaY = deltaY - height / 4;
+      deltaX = deltaX * 0.75 - HEXAGON_CORNER_RADIUS;
+      deltaY = deltaY * 0.75;
       break;
     case NodeShape.octagon:
-      deltaX = deltaX - OCTAGON_CORNER_RADIUS / 2;
-      deltaY = deltaY - height / 3;
+      deltaX = deltaX - OCTAGON_CORNER_RADIUS;
+      deltaY = deltaY - height / 5;
       break;
     default:
       break;

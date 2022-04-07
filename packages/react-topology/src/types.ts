@@ -118,6 +118,7 @@ export interface NodeModel extends ElementModel {
   shape?: NodeShape;
   status?: NodeStatus;
   collapsed?: boolean;
+  labelPosition?: LabelPosition;
 }
 
 export interface EdgeModel extends ElementModel {
@@ -141,6 +142,18 @@ export interface ScaleDetailsThresholds {
   low: number;
   medium: number;
 }
+
+type Never<Type> = { [K in keyof Type]?: never };
+type EitherNotBoth<TypeA, TypeB> = (TypeA & Never<TypeB>) | (TypeB & Never<TypeA>);
+
+interface ViewPaddingPixels {
+  padding: number;
+}
+interface ViewPaddingPercentage {
+  paddingPercentage: number;
+}
+
+export type ViewPaddingSettings = EitherNotBoth<ViewPaddingPixels, ViewPaddingPercentage>;
 
 export interface GraphModel extends ElementModel {
   layout?: string;
@@ -206,6 +219,8 @@ export interface Node<E extends NodeModel = NodeModel, D = any> extends GraphEle
   setGroup(group: boolean): void;
   isCollapsed(): boolean;
   setCollapsed(collapsed: boolean): void;
+  getLabelPosition(): LabelPosition;
+  setLabelPosition(position: LabelPosition): void;
   getNodeShape(): NodeShape;
   setNodeShape(shape: NodeShape): void;
   getNodeStatus(): NodeStatus;
@@ -311,6 +326,8 @@ export interface Controller extends WithState {
   removeEventListener(type: string, listener: EventListener): Controller;
   fireEvent(type: string, ...args: any): void;
   getElements(): GraphElement[];
+  setRenderConstraint(constrained: boolean, viewPadding?: ViewPaddingSettings): void;
+  shouldRenderNode(node: Node): boolean;
 }
 
 export interface ElementEvent {

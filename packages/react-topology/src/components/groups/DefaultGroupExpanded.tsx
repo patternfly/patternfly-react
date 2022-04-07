@@ -10,10 +10,18 @@ import { Layer } from '../layers';
 import { GROUPS_LAYER } from '../../const';
 import { hullPath, maxPadding, useCombineRefs, useHover } from '../../utils';
 import { BadgeLocation, isGraph, Node, NodeShape, NodeStyle, PointTuple } from '../../types';
-import { useDragNode, useSvgAnchor, WithContextMenuProps, WithDndDropProps, WithSelectionProps } from '../../behavior';
+import {
+  useDragNode,
+  useSvgAnchor,
+  WithContextMenuProps,
+  WithDndDropProps,
+  WithDragNodeProps,
+  WithSelectionProps
+} from '../../behavior';
 import { CollapsibleGroupProps } from './types';
 
 type DefaultGroupExpandedProps = {
+  className?: string;
   element: Node;
   droppable?: boolean;
   canDrop?: boolean;
@@ -30,10 +38,10 @@ type DefaultGroupExpandedProps = {
   badgeBorderColor?: string;
   badgeClassName?: string;
   badgeLocation?: BadgeLocation;
-} & CollapsibleGroupProps &
-  WithSelectionProps &
-  WithDndDropProps &
-  WithContextMenuProps;
+  labelIconClass?: string; // Icon to show in label
+  labelIcon?: string;
+  labelIconPadding?: number;
+} & Partial<CollapsibleGroupProps & WithDragNodeProps & WithSelectionProps & WithDndDropProps & WithContextMenuProps>;
 
 type PointWithSize = [number, number, number];
 
@@ -61,6 +69,7 @@ export function computeLabelLocation(points: PointWithSize[]): PointWithSize {
 }
 
 const DefaultGroupExpanded: React.FC<DefaultGroupExpandedProps> = ({
+  className,
   element,
   collapsible,
   selected,
@@ -68,7 +77,7 @@ const DefaultGroupExpanded: React.FC<DefaultGroupExpandedProps> = ({
   hover,
   label,
   secondaryLabel,
-  showLabel,
+  showLabel = true,
   truncateLength,
   dndDropRef,
   droppable,
@@ -77,18 +86,21 @@ const DefaultGroupExpanded: React.FC<DefaultGroupExpandedProps> = ({
   onContextMenu,
   contextMenuOpen,
   dragging,
+  dragNodeRef,
   badge,
   badgeColor,
   badgeTextColor,
   badgeBorderColor,
   badgeClassName,
   badgeLocation,
+  labelIconClass,
+  labelIcon,
+  labelIconPadding,
   onCollapseChange
 }) => {
   const [hovered, hoverRef] = useHover();
   const [labelHover, labelHoverRef] = useHover();
   const [locations, setLocations] = React.useState<{ labelLocation: PointWithSize; path: string }>();
-  const dragNodeRef = useDragNode()[1];
   const dragLabelRef = useDragNode()[1];
   const refs = useCombineRefs<SVGPathElement>(hoverRef, dragNodeRef);
   const isHover = hover !== undefined ? hover : hovered;
@@ -155,6 +167,7 @@ const DefaultGroupExpanded: React.FC<DefaultGroupExpandedProps> = ({
 
   const groupClassName = css(
     styles.topologyGroup,
+    className,
     altGroup && 'pf-m-alt-group',
     canDrop && 'pf-m-highlight',
     dragging && 'pf-m-dragging',
@@ -162,6 +175,7 @@ const DefaultGroupExpanded: React.FC<DefaultGroupExpandedProps> = ({
   );
   const innerGroupClassName = css(
     styles.topologyGroup,
+    className,
     altGroup && 'pf-m-alt-group',
     canDrop && 'pf-m-highlight',
     dragging && 'pf-m-dragging',
@@ -184,7 +198,7 @@ const DefaultGroupExpanded: React.FC<DefaultGroupExpandedProps> = ({
           y={locations.labelLocation[1] + hullPadding(locations.labelLocation) + 24}
           paddingX={8}
           paddingY={5}
-          dragRef={dragLabelRef}
+          dragRef={dragNodeRef ? dragLabelRef : undefined}
           status={element.getNodeStatus()}
           secondaryLabel={secondaryLabel}
           truncateLength={truncateLength}
@@ -194,6 +208,9 @@ const DefaultGroupExpanded: React.FC<DefaultGroupExpandedProps> = ({
           badgeBorderColor={badgeBorderColor}
           badgeClassName={badgeClassName}
           badgeLocation={badgeLocation}
+          labelIconClass={labelIconClass}
+          labelIcon={labelIcon}
+          labelIconPadding={labelIconPadding}
           onContextMenu={onContextMenu}
           contextMenuOpen={contextMenuOpen}
           hover={isHover || labelHover}

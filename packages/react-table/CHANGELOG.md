@@ -3,6 +3,138 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.71.16 (2022-04-07)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.71.15 (2022-04-06)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.71.14 (2022-03-30)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.71.13 (2022-03-29)
+
+
+### Bug Fixes
+
+* **components:** fix newline interpolation of text input values ([#6935](https://github.com/patternfly/patternfly-react/issues/6935)) ([c667ef0](https://github.com/patternfly/patternfly-react/commit/c667ef048cbf246e920a0111d4e900f1079cc6bc)), closes [#5324](https://github.com/patternfly/patternfly-react/issues/5324)
+
+
+
+
+
+## 4.71.12 (2022-03-29)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.71.11 (2022-03-29)
+
+
+### Bug Fixes
+
+* **Drawer:** Updated resizable drawer to make it more accessible ([#7118](https://github.com/patternfly/patternfly-react/issues/7118)) ([0363ae6](https://github.com/patternfly/patternfly-react/commit/0363ae6638aab17e55f26bae5017bcd7f83f8ed5))
+
+
+
+
+
+## 4.71.10 (2022-03-29)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.71.9 (2022-03-28)
+
+
+### Bug Fixes
+
+* **Select:** view more fixes ([#7107](https://github.com/patternfly/patternfly-react/issues/7107)) ([94f24f6](https://github.com/patternfly/patternfly-react/commit/94f24f65b043a2d3f3ae8fe7247aaf55b05987a7))
+
+
+
+
+
+## 4.71.8 (2022-03-28)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.71.7 (2022-03-28)
+
+
+### Bug Fixes
+
+* **CalendarMonth:** resolve regression for selecting a date ([#7130](https://github.com/patternfly/patternfly-react/issues/7130)) ([5397e89](https://github.com/patternfly/patternfly-react/commit/5397e895ba52434b98b4206ac47535ed36d1bf00))
+
+
+
+
+
+## 4.71.6 (2022-03-28)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.71.5 (2022-03-25)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.71.4 (2022-03-25)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.71.3 (2022-03-25)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## 4.71.2 (2022-03-25)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
 ## 4.71.1 (2022-03-23)
 
 **Note:** Version bump only for package @patternfly/react-table

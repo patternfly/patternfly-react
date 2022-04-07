@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
 import DefaultGroupExpanded from './DefaultGroupExpanded';
-import { WithContextMenuProps, WithDndDropProps, WithSelectionProps } from '../../behavior';
+import { WithContextMenuProps, WithDndDropProps, WithSelectionProps, WithDragNodeProps } from '../../behavior';
 import { BadgeLocation, LabelPosition, Node } from '../../types';
 import DefaultGroupCollapsed from './DefaultGroupCollapsed';
 import { CollapsibleGroupProps } from './types';
 
 type DefaultGroupProps = {
+  className?: string;
   element: Node;
   droppable?: boolean;
   canDrop?: boolean;
@@ -20,6 +21,7 @@ type DefaultGroupProps = {
   labelPosition?: LabelPosition; // Defaults to bottom
   truncateLength?: number; // Defaults to 13
   labelIconClass?: string; // Icon to show in label
+  labelIcon?: string;
   labelIconPadding?: number;
   badge?: string;
   badgeColor?: string;
@@ -27,14 +29,11 @@ type DefaultGroupProps = {
   badgeBorderColor?: string;
   badgeClassName?: string;
   badgeLocation?: BadgeLocation;
-} & CollapsibleGroupProps &
-  WithSelectionProps &
-  WithDndDropProps &
-  WithContextMenuProps;
+} & Partial<CollapsibleGroupProps & WithSelectionProps & WithDndDropProps & WithDragNodeProps & WithContextMenuProps>;
 
-const DefaultGroup: React.FC<DefaultGroupProps> = ({ element, onCollapseChange, ...rest }) => {
+const DefaultGroup: React.FC<DefaultGroupProps> = ({ className, element, onCollapseChange, ...rest }) => {
   const handleCollapse = (group: Node, collapsed: boolean): void => {
-    if (collapsed) {
+    if (collapsed && rest.collapsedWidth !== undefined && rest.collapsedHeight !== undefined) {
       group.setBounds(group.getBounds().setSize(rest.collapsedWidth, rest.collapsedHeight));
     }
     group.setCollapsed(collapsed);
@@ -42,9 +41,11 @@ const DefaultGroup: React.FC<DefaultGroupProps> = ({ element, onCollapseChange, 
   };
 
   if (element.isCollapsed()) {
-    return <DefaultGroupCollapsed element={element} onCollapseChange={handleCollapse} {...rest} />;
+    return (
+      <DefaultGroupCollapsed className={className} element={element} onCollapseChange={handleCollapse} {...rest} />
+    );
   }
-  return <DefaultGroupExpanded element={element} onCollapseChange={handleCollapse} {...rest} />;
+  return <DefaultGroupExpanded className={className} element={element} onCollapseChange={handleCollapse} {...rest} />;
 };
 
 export default observer(DefaultGroup);

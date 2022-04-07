@@ -23,6 +23,7 @@ import {
   NodeContextMenuLabelStyles,
   NodeIconLabelStyles,
   NodeStatusDecoratorStyles,
+  NodeDecoratorStyles,
   NodeSecondaryLabelStyles,
   GroupStyles,
   GroupSelectedStyles,
@@ -112,6 +113,9 @@ export const TopologyDemo: React.FC = () => {
                 </Tab>
                 <Tab eventKey={3} title={<TabTitleText>Status Decorators</TabTitleText>}>
                   <NodeStatusDecoratorStyles />
+                </Tab>
+                <Tab eventKey={4} title={<TabTitleText>Decorators</TabTitleText>}>
+                  <NodeDecoratorStyles />
                 </Tab>
               </Tabs>
             </Tab>

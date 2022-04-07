@@ -13,8 +13,8 @@ import {
 import { DataTypes } from '../components/StyleNode';
 import { logos } from './logos';
 
-export const ROW_HEIGHT = 100;
-export const BOTTOM_LABEL_ROW_HEIGHT = 125;
+export const ROW_HEIGHT = 140;
+export const BOTTOM_LABEL_ROW_HEIGHT = 165;
 export const COLUMN_WIDTH = 100;
 export const RIGHT_LABEL_COLUMN_WIDTH = 200;
 
@@ -125,6 +125,7 @@ export const createNode = (options: {
     height,
     shape,
     status: options.status || NodeStatus.default,
+    labelPosition: options.labelPosition,
     data: {
       dataType: 'Default',
       ...options
@@ -141,7 +142,7 @@ export const createNode = (options: {
       (width - height) / 2 +
       (options.y ??
         (options.row - 1) *
-          (options.label && options.labelPosition === LabelPosition.right ? ROW_HEIGHT : BOTTOM_LABEL_ROW_HEIGHT));
+          (!options.label || options.labelPosition === LabelPosition.right ? ROW_HEIGHT : BOTTOM_LABEL_ROW_HEIGHT));
   }
 
   return nodeModel;
@@ -256,7 +257,7 @@ export const createBadgeNodes = (options: {
       column: 2,
       shape: NodeShape.rect,
       x: columnWidth,
-      y: (options.row - 1) * BOTTOM_LABEL_ROW_HEIGHT,
+      y: (options.row - 1) * ROW_HEIGHT,
       labelIconClass: options.showIconClass ? logos.get('icon-mongodb') : undefined,
       truncateLength: 13,
       ...options
@@ -337,7 +338,7 @@ export const createBadgeNodes = (options: {
       column: 2,
       shape: NodeShape.stadium,
       x: columnWidth * 6,
-      y: (options.row - 1) * BOTTOM_LABEL_ROW_HEIGHT,
+      y: (options.row - 1) * ROW_HEIGHT,
       labelIconClass: options.showIconClass ? logos.get('icon-mongodb') : undefined,
       truncateLength: 13,
       ...options

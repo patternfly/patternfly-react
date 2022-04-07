@@ -32,7 +32,7 @@ const ICON_PADDING = 20;
 type StyleNodeProps = {
   element: Node;
   getCustomShape?: (node: Node) => React.FC<ShapeProps>;
-  getShapeDecoratorCenter?: (quadrant: TopologyQuadrant, node: Node, radius?: number) => { x: number; y: number };
+  getShapeDecoratorCenter?: (quadrant: TopologyQuadrant, node: Node) => { x: number; y: number };
   showLabel?: boolean; // Defaults to true
   showStatusDecorator?: boolean; // Defaults to false
   regrouping?: boolean;
@@ -90,8 +90,7 @@ const renderDecorators = (
   data: { showDecorators?: boolean },
   getShapeDecoratorCenter?: (
     quadrant: TopologyQuadrant,
-    node: Node,
-    radius?: number
+    node: Node
   ) => {
     x: number;
     y: number;

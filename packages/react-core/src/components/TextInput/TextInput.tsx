@@ -206,7 +206,7 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
         )}
         onChange={this.handleChange}
         type={type}
-        value={value}
+        value={this.sanitizeInputValue(value)}
         aria-invalid={props['aria-invalid'] ? props['aria-invalid'] : validated === ValidatedOptions.error}
         required={isRequired}
         disabled={isDisabled}
@@ -217,6 +217,9 @@ export class TextInputBase extends React.Component<TextInputProps, TextInputStat
       />
     );
   }
+
+  private sanitizeInputValue = (value: string | number) =>
+    typeof value === 'string' ? value.replace(/\n/g, ' ') : value;
 }
 
 export const TextInput = React.forwardRef((props: TextInputProps, ref: React.Ref<HTMLInputElement>) => (

@@ -22,19 +22,23 @@ export const DrawerContent: React.SFC<DrawerContentProps> = ({
   panelContent,
   colorVariant = DrawerColorVariant.default,
   ...props
-}: DrawerContentProps) => (
-  <DrawerMain>
-    <div
-      className={css(
-        styles.drawerContent,
-        colorVariant === DrawerColorVariant.light200 && styles.modifiers.light_200,
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-    {panelContent}
-  </DrawerMain>
-);
+}: DrawerContentProps) => {
+  const drawerContentRef = React.useRef<HTMLDivElement>();
+  return (
+    <DrawerMain>
+      <div
+        className={css(
+          styles.drawerContent,
+          colorVariant === DrawerColorVariant.light200 && styles.modifiers.light_200,
+          className
+        )}
+        ref={drawerContentRef}
+        {...props}
+      >
+        {children}
+      </div>
+      {panelContent && React.cloneElement(panelContent as React.ReactElement, { drawerContentRef })}
+    </DrawerMain>
+  );
+};
 DrawerContent.displayName = 'DrawerContent';

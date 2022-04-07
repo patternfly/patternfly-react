@@ -17,7 +17,7 @@ export interface MenuToggleProps
   /** Flag indicating the toggle is full height */
   isFullHeight?: boolean;
   /** Variant styles of the menu toggle */
-  variant?: 'default' | 'plain' | 'primary' | 'plainText';
+  variant?: 'default' | 'plain' | 'primary' | 'plainText' | 'secondary';
   /** Optional icon rendered inside the toggle, before the children content */
   icon?: React.ReactNode;
   /** Optional badge rendered inside the toggle, after the children content */
@@ -71,6 +71,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
           styles.menuToggle,
           isExpanded && styles.modifiers.expanded,
           variant === 'primary' && styles.modifiers.primary,
+          variant === 'secondary' && styles.modifiers.secondary,
           (isPlain || isPlainText) && styles.modifiers.plain,
           isPlainText && styles.modifiers.text,
           isFullHeight && styles.modifiers.fullHeight,

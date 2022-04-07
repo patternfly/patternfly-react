@@ -1,21 +1,15 @@
-import * as React from 'react';
-import { render } from '@testing-library/react';
-import { shallow } from 'enzyme';
-
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { LoginMainFooter } from '../LoginMainFooter';
 
-test('renders with PatternFly Core styles', () => {
-  const view = render(<LoginMainFooter />);
-  expect(view.container).toMatchSnapshot();
-});
+describe('LoginMainFooter', () => {
+  test('renders with PatternFly Core styles', () => {
+    render(<LoginMainFooter data-testid="test-id" />);
+    expect(screen.getByTestId('test-id').outerHTML).toMatchSnapshot();
+  });
 
-test('className is added to the root element', () => {
-  const view = shallow(<LoginMainFooter className="extra-class" />);
-  expect(view.prop('className')).toMatchSnapshot();
-});
-
-test('extra props are spread to the root element', () => {
-  const testId = 'login-body';
-  const view = shallow(<LoginMainFooter data-testid={testId} />);
-  expect(view.prop('data-testid')).toBe(testId);
+  test('className is added to the root element', () => {
+    render(<LoginMainFooter className="extra-class" data-testid="test-id" />);
+    expect(screen.getByTestId('test-id').outerHTML).toMatchSnapshot();
+  });
 });

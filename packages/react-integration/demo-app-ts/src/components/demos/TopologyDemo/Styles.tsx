@@ -107,6 +107,30 @@ export const NodeStatusDecoratorStyles = withTopologySetup(() => {
   return null;
 });
 
+export const NodeDecoratorStyles = withTopologySetup(() => {
+  useComponentFactory(defaultComponentFactory);
+  useComponentFactory(stylesComponentFactory);
+  const nodes: NodeModel[] = createGroupNodes();
+  const nodes2: NodeModel[] = createGroupNodes('2', 600);
+
+  nodes.forEach(n => (n.data.showDecorators = true));
+  nodes.forEach(n => (n.data.labelPosition = LabelPosition.bottom));
+  nodes2.forEach(n => (n.data.showDecorators = true));
+  useModel(
+    React.useMemo(
+      (): Model => ({
+        graph: {
+          id: 'g1',
+          type: 'graph'
+        },
+        nodes: [...nodes, ...nodes2]
+      }),
+      [nodes, nodes2]
+    )
+  );
+  return null;
+});
+
 export const NodeLabelStyles = withTopologySetup(() => {
   useComponentFactory(defaultComponentFactory);
   useComponentFactory(stylesComponentFactory);
@@ -348,6 +372,7 @@ export const GroupStyles = withTopologySetup(() => {
       badgeColor: '#F2F0FC',
       badgeTextColor: '#5752d1',
       badgeBorderColor: '#CBC1FF',
+      labelIconClass: logos.get('icon-java'),
       collapsedWidth: 75,
       collapsedHeight: 75,
       showContextMenu: true
@@ -381,6 +406,7 @@ export const GroupHoverStyles = withTopologySetup(() => {
       badgeColor: '#F2F0FC',
       badgeTextColor: '#5752d1',
       badgeBorderColor: '#CBC1FF',
+      labelIconClass: logos.get('icon-java'),
       collapsedWidth: 75,
       collapsedHeight: 75,
       hover: true
@@ -414,6 +440,7 @@ export const GroupSelectedStyles = withTopologySetup(() => {
       badgeColor: '#F2F0FC',
       badgeTextColor: '#5752d1',
       badgeBorderColor: '#CBC1FF',
+      labelIconClass: logos.get('icon-java'),
       collapsedWidth: 75,
       collapsedHeight: 75,
       selected: true
@@ -447,6 +474,7 @@ export const GroupDropTargetStyles = withTopologySetup(() => {
       badgeColor: '#F2F0FC',
       badgeTextColor: '#5752d1',
       badgeBorderColor: '#CBC1FF',
+      labelIconClass: logos.get('icon-java'),
       collapsedWidth: 75,
       collapsedHeight: 75,
       canDrop: true,
@@ -484,7 +512,8 @@ export const GroupedGroupsStyles = withTopologySetup(() => {
       badgeBorderColor: '#CBC1FF',
       collapsedWidth: 75,
       collapsedHeight: 75,
-      showContextMenu: true
+      showContextMenu: true,
+      labelIconClass: logos.get('icon-java')
     }
   };
 
@@ -506,7 +535,8 @@ export const GroupedGroupsStyles = withTopologySetup(() => {
       collapsedWidth: 75,
       collapsedHeight: 75,
       selected: true,
-      showContextMenu: true
+      showContextMenu: true,
+      labelIconClass: logos.get('icon-jenkins')
     }
   };
 
@@ -545,6 +575,7 @@ export const CollapsibleGroupStyles = withTopologySetup(() => {
       badgeColor: '#F2F0FC',
       badgeTextColor: '#5752d1',
       badgeBorderColor: '#CBC1FF',
+      labelIconClass: logos.get('icon-jenkins'),
       collapsedWidth: 75,
       collapsedHeight: 75,
       showContextMenu: true,
@@ -565,6 +596,7 @@ export const CollapsibleGroupStyles = withTopologySetup(() => {
       badgeColor: '#F2F0FC',
       badgeTextColor: '#5752d1',
       badgeBorderColor: '#CBC1FF',
+      labelIconClass: logos.get('icon-java'),
       collapsedWidth: 75,
       collapsedHeight: 75,
       showContextMenu: true,
