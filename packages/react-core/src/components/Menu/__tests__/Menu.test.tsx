@@ -1,46 +1,50 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
+
+import { render, screen } from '@testing-library/react';
+import "@testing-library/jest-dom";
+
 import { Menu } from '../Menu';
 
-test('should render Menu successfully', () => {
-    const view = render(
-        <Menu activeItemId={0} onSelect={jest.fn()}>
-            content
-        </Menu>
+describe('Menu', () => {
+  test('should render Menu successfully', () => {
+    const { asFragment } = render(
+      <Menu activeItemId={0} onSelect={jest.fn()}>
+        content
+      </Menu>
     );
-    expect(view.container).toMatchSnapshot();
-});
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-describe('with isPlain', () => {
+  describe('with isPlain', () => {
     test('should render Menu with plain styles applied', () => {
-        const view = mount(
-            <Menu activeItemId={0} onSelect={jest.fn()} isPlain>
-                content
-            </Menu>
-        );
-        expect(view.find('div.pf-m-plain')).toMatchSnapshot();
+      render(
+        <Menu activeItemId={0} onSelect={jest.fn()} isPlain>
+          content
+        </Menu>
+      );
+      expect(screen.getByText('content')).toHaveClass('pf-m-plain');
     });
-});
+  });
 
-describe('with isScrollable', () => {
+  describe('with isScrollable', () => {
     test('should render Menu with scrollable styles applied', () => {
-        const view = mount(
-            <Menu activeItemId={0} onSelect={jest.fn()} isScrollable>
-                content
-            </Menu>
-        );
-        expect(view.find('div.pf-m-scrollable')).toMatchSnapshot();
+      render(
+        <Menu activeItemId={0} onSelect={jest.fn()} isScrollable>
+          content
+        </Menu>
+      );
+      expect(screen.getByText('content')).toHaveClass('pf-m-scrollable');
     });
-});
+  });
 
-describe('with isNavFlyout', () => {
+  describe('with isNavFlyout', () => {
     test('should render Menu with nav flyout styles applied', () => {
-        const view = mount(
-            <Menu activeItemId={0} onSelect={jest.fn()} isNavFlyout>
-                content
-            </Menu>
-        );
-        expect(view.find('div.pf-m-nav')).toMatchSnapshot();
+      render(
+        <Menu activeItemId={0} onSelect={jest.fn()} isNavFlyout>
+          content
+        </Menu>
+      );
+      expect(screen.getByText('content')).toHaveClass('pf-m-nav');
     });
+  });
 });

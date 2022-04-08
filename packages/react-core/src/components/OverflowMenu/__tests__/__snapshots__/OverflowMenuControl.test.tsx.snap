@@ -1,23 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OverflowMenuControl Additional Options 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-overflow-menu__control"
   >
-     
-     
+      
   </div>
-</div>
-`;
-
-exports[`OverflowMenuControl basic 1`] = `
-<OverflowMenuControl>
-  <div
-    className="pf-c-overflow-menu__control"
-  >
-     
-     
-  </div>
-</OverflowMenuControl>
+</DocumentFragment>
 `;

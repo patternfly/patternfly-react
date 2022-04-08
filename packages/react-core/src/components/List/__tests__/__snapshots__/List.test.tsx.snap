@@ -1,35 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`list bordered list 1`] = `
-<div>
-  <ul
-    class="pf-c-list pf-m-bordered"
-  >
-    <ul
-      class="pf-c-list"
-    >
-      <li
-        class=""
-      >
-        First
-      </li>
-      <li
-        class=""
-      >
-        Second
-      </li>
-      <li
-        class=""
-      >
-        Third
-      </li>
-    </ul>
-  </ul>
-</div>
-`;
-
-exports[`list icon large list 1`] = `
-<div>
+exports[`List icon large list 1`] = `
+<DocumentFragment>
   <ul
     class="pf-c-list pf-m-icon-lg"
   >
@@ -100,11 +72,11 @@ exports[`list icon large list 1`] = `
       Orange
     </li>
   </ul>
-</div>
+</DocumentFragment>
 `;
 
-exports[`list icon list 1`] = `
-<div>
+exports[`List icon list 1`] = `
+<DocumentFragment>
   <ul
     class="pf-c-list pf-m-plain"
   >
@@ -175,11 +147,11 @@ exports[`list icon list 1`] = `
       Orange
     </li>
   </ul>
-</div>
+</DocumentFragment>
 `;
 
-exports[`list inline list 1`] = `
-<div>
+exports[`List inline list 1`] = `
+<DocumentFragment>
   <ul
     class="pf-c-list pf-m-inline"
   >
@@ -203,39 +175,36 @@ exports[`list inline list 1`] = `
       </li>
     </ul>
   </ul>
-</div>
+</DocumentFragment>
 `;
 
-exports[`list plain list 1`] = `
-<div>
-  <ul
-    class="pf-c-list pf-m-plain"
+exports[`List ordered list 1`] = `
+<DocumentFragment>
+  <ol
+    class="pf-c-list"
+    type="1"
   >
-    <ul
-      class="pf-c-list"
+    <li
+      class=""
     >
-      <li
-        class=""
-      >
-        First
-      </li>
-      <li
-        class=""
-      >
-        Second
-      </li>
-      <li
-        class=""
-      >
-        Third
-      </li>
-    </ul>
-  </ul>
-</div>
+      Apple
+    </li>
+    <li
+      class=""
+    >
+      Banana
+    </li>
+    <li
+      class=""
+    >
+      Orange
+    </li>
+  </ol>
+</DocumentFragment>
 `;
 
-exports[`list simple list 1`] = `
-<div>
+exports[`List simple list 1`] = `
+<DocumentFragment>
   <ul
     class="pf-c-list"
   >
@@ -259,5 +228,5 @@ exports[`list simple list 1`] = `
       </li>
     </ul>
   </ul>
-</div>
+</DocumentFragment>
 `;

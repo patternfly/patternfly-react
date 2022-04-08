@@ -1,23 +1,24 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
+
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { OverflowMenuControl } from '../OverflowMenuControl';
 import { OverflowMenuContext } from '../OverflowMenuContext';
 
 describe('OverflowMenuControl', () => {
   test('basic', () => {
-    const view = mount(
+    render(
       <OverflowMenuContext.Provider value={{ isBelowBreakpoint: true }}>
-        <OverflowMenuControl />
+        <OverflowMenuControl data-testid="test-id" />
       </OverflowMenuContext.Provider>
     );
-    expect(view.find(`.${styles.overflowMenuControl}`).length).toBe(1);
-    expect(view).toMatchSnapshot();
+    expect(screen.getByTestId('test-id')).toHaveClass(styles.overflowMenuControl);
   });
 
   test('Additional Options', () => {
-    const view = render(<OverflowMenuControl hasAdditionalOptions />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<OverflowMenuControl hasAdditionalOptions />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -1,120 +1,120 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
-import { List, ListVariant, ListComponent, OrderType } from '../List';
-import { ListItem } from '../ListItem';
+
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+
 import BookOpen from '@patternfly/react-icons/dist/esm/icons/book-open-icon';
 import Key from '@patternfly/react-icons/dist/esm/icons/key-icon';
 import Desktop from '@patternfly/react-icons/dist/esm/icons/desktop-icon';
+import { List, ListVariant, ListComponent, OrderType } from '../List';
+import { ListItem } from '../ListItem';
 
 const ListItems = () => (
-  <React.Fragment>
-    <List>
-      <ListItem>First</ListItem>
-      <ListItem>Second</ListItem>
-      <ListItem>Third</ListItem>
-    </List>
-  </React.Fragment>
+  <List>
+    <ListItem>First</ListItem>
+    <ListItem>Second</ListItem>
+    <ListItem>Third</ListItem>
+  </List>
 );
 
-describe('list', () => {
+describe('List', () => {
   test('simple list', () => {
-    const view = render(
+    const { asFragment } = render(
       <List>
         <ListItems />
       </List>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('inline list', () => {
-    const view = render(
+    const { asFragment } = render(
       <List variant={ListVariant.inline}>
         <ListItems />
       </List>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('ordered list', () => {
-    const view = mount(
+    const { asFragment } = render(
       <List component={ListComponent.ol}>
         <ListItem>Apple</ListItem>
         <ListItem>Banana</ListItem>
         <ListItem>Orange</ListItem>
       </List>
     );
-    expect(view.find('ol').length).toBe(1);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('ordered list starts with 2nd item', () => {
-    const view = mount(
+    render(
       <List component={ListComponent.ol} start={2}>
         <ListItem>Banana</ListItem>
         <ListItem>Orange</ListItem>
       </List>
     );
-    expect(view.find('ol').prop('start')).toBe(2);
+    expect(screen.getByRole('list')).toHaveAttribute('start', '2');
   });
 
   test('ordered list items will be numbered with uppercase letters', () => {
-    const view = mount(
+    render(
       <List component={ListComponent.ol} type={OrderType.uppercaseLetter}>
         <ListItem>Banana</ListItem>
         <ListItem>Orange</ListItem>
       </List>
     );
-    expect(view.find('ol').prop('type')).toBe('A');
+    expect(screen.getByRole('list')).toHaveAttribute('type', 'A');
   });
 
   test('inlined ordered list', () => {
-    const view = mount(
+    render(
       <List variant={ListVariant.inline} component={ListComponent.ol}>
         <ListItem>Apple</ListItem>
         <ListItem>Banana</ListItem>
         <ListItem>Orange</ListItem>
       </List>
     );
-    expect(view.find('ol.pf-m-inline').length).toBe(1);
+    expect(screen.getByRole('list')).toHaveClass('pf-m-inline');
   });
 
   test('bordered list', () => {
-    const view = render(
+    render(
       <List isBordered>
         <ListItems />
       </List>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(screen.getAllByRole('list')[0]).toHaveClass('pf-m-bordered');
   });
 
   test('plain list', () => {
-    const view = render(
+    render(
       <List isPlain>
         <ListItems />
       </List>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(screen.getAllByRole('list')[0]).toHaveClass('pf-m-plain');
   });
 
   test('icon list', () => {
-    const view = render(
+    const { asFragment } = render(
       <List isPlain>
         <ListItem icon={<BookOpen />}>Apple</ListItem>
         <ListItem icon={<Key />}>Banana</ListItem>
         <ListItem icon={<Desktop />}>Orange</ListItem>
       </List>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('icon large list', () => {
-    const view = render(
-      <List iconSize='large'>
+    const { asFragment } = render(
+      <List iconSize="large">
         <ListItem icon={<BookOpen />}>Apple</ListItem>
         <ListItem icon={<Key />}>Banana</ListItem>
         <ListItem icon={<Desktop />}>Orange</ListItem>
       </List>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
