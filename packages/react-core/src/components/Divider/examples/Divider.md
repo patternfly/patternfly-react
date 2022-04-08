@@ -6,96 +6,43 @@ propComponents: ['Divider']
 ---
 
 ## Examples
-### Using hr
-```js
-import React from 'react';
-import { Divider } from '@patternfly/react-core';
 
-<Divider />
+### Using hr
+
+```ts file='./DividerUsingHr.tsx'
 ```
 
 ### Using li
-```js
-import React from 'react';
-import { Divider } from '@patternfly/react-core/dist';
 
-<ul>
-  <li>List item one</li>
-  <Divider component="li"/>
-  <li>List item two</li>
-</ul>
+```ts file='./DividerUsingLi.tsx'
 ```
 
 ### Using div
-```js
-import React from 'react';
-import { Divider } from '@patternfly/react-core';
 
-<Divider component="div"/>
+```ts file='./DividerUsingDiv.tsx'
 ```
 
 ### Inset medium
-```js
-import React from 'react';
-import { Divider } from '@patternfly/react-core';
 
-<Divider inset={{default: 'insetMd'}}/>
+```ts file='./DividerInsetMedium.tsx'
 ```
 
 ### Inset at various breakpoints
-```js
-import React from 'react';
-import { Divider } from '@patternfly/react-core';
 
-<Divider
-  inset={{
-    default: 'insetMd',
-    md: 'insetNone',
-    lg: 'inset3xl',
-    xl: 'insetLg'
-  }}
-/>
+```ts file='./DividerInsetVariousBreakpoints.tsx'
 ```
 
 ### Vertical in flex layout
-```js
-import React from 'react';
-import { Divider, Flex, FlexItem } from '@patternfly/react-core';
 
-<Flex>
-  <FlexItem>first item</FlexItem>
-  <Divider isVertical/>
-  <FlexItem>second item</FlexItem>
-</Flex>
+```ts file='./DividerVerticalFlex.tsx'
 ```
 
-### Vertical, inset medium in flex layout
-```js
-import React from 'react';
-import { Divider, Flex, FlexItem } from '@patternfly/react-core';
+### Vertical in flex layout, inset medium
 
-<Flex>
-  <FlexItem>first item</FlexItem>
-  <Divider isVertical inset={{default: 'insetMd'}}/>
-  <FlexItem>second item</FlexItem>
-</Flex>
+```ts file='./DividerVerticalFlexInsetMedium.tsx'
 ```
 
-### Vertical, inset at various breakpoints
-```js
-import React from 'react';
-import { Divider, Flex, FlexItem } from '@patternfly/react-core';
+### Vertical in flex layout, inset at various breakpoints
 
-<Flex>
-  <FlexItem>first item</FlexItem>
-  <Divider isVertical
-    inset={{
-      default: 'insetMd',
-      md: 'insetNone',
-      lg: 'insetSm',
-      xl: 'insetXs'
-    }}
-  />
-  <FlexItem>first item</FlexItem>
-</Flex>
+```ts file='./DividerVerticalFlexInsetVariousBreakpoints.tsx'
 ```
