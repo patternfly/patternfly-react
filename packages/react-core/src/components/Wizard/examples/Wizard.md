@@ -12,7 +12,9 @@ import FinishedStep from './FinishedStep';
 import SampleForm from './SampleForm';
 
 ## Examples
+
 ### Basic
+
 ```js
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
@@ -31,19 +33,13 @@ class SimpleWizard extends React.Component {
       { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
     ];
     const title = 'Basic wizard';
-    return (
-      <Wizard
-        navAriaLabel={`${title} steps`}
-        mainAriaLabel={`${title} content`}
-        steps={steps}
-        height={400}
-      />
-    );
+    return <Wizard navAriaLabel={`${title} steps`} mainAriaLabel={`${title} content`} steps={steps} height={400} />;
   }
 }
 ```
 
 ### Anchors for nav items
+
 ```js
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
@@ -58,35 +54,45 @@ class WizardWithNavAnchors extends React.Component {
   render() {
     const steps = [
       {
-        name: <div><ExternalLinkAltIcon /> PF3</div>,
+        name: (
+          <div>
+            <ExternalLinkAltIcon /> PF3
+          </div>
+        ),
         component: <p>Step 1: Read about PF3</p>,
         stepNavItemProps: { navItemComponent: 'a', href: 'https://www.patternfly.org/v3/', target: '_blank' }
       },
       {
-        name: <div><ExternalLinkAltIcon /> PF4</div>,
+        name: (
+          <div>
+            <ExternalLinkAltIcon /> PF4
+          </div>
+        ),
         component: <p>Step 2: Read about PF4</p>,
         stepNavItemProps: { navItemComponent: 'a', href: 'https://www.patternfly.org/v4/', target: '_blank' }
       },
       {
-        name: <div><SlackHashIcon /> Join us on slack</div>,
-        component: <Button variant="link" component="a" target="_blank" href="https://patternfly.slack.com/">Join the conversation</Button>,
+        name: (
+          <div>
+            <SlackHashIcon /> Join us on slack
+          </div>
+        ),
+        component: (
+          <Button variant="link" component="a" target="_blank" href="https://patternfly.slack.com/">
+            Join the conversation
+          </Button>
+        ),
         stepNavItemProps: { navItemComponent: 'a', href: 'https://patternfly.slack.com/', target: '_blank' }
       }
     ];
     const title = 'Anchor link wizard';
-    return (
-      <Wizard
-        navAriaLabel={`${title} steps`}
-        mainAriaLabel={`${title} content`}
-        steps={steps}
-        height={400}
-      />
-    );
+    return <Wizard navAriaLabel={`${title} steps`} mainAriaLabel={`${title} content`} steps={steps} height={400} />;
   }
 }
 ```
 
 ### Incrementally enabled steps
+
 ```js
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
@@ -103,8 +109,8 @@ class IncrementallyEnabledStepsWizard extends React.Component {
       });
     };
     this.closeWizard = () => {
-      console.log("close wizard");
-    }
+      console.log('close wizard');
+    };
   }
 
   render() {
@@ -115,7 +121,13 @@ class IncrementallyEnabledStepsWizard extends React.Component {
       { id: 2, name: 'Second step', component: <p>Step 2 content</p>, canJumpTo: stepIdReached >= 2 },
       { id: 3, name: 'Third step', component: <p>Step 3 content</p>, canJumpTo: stepIdReached >= 3 },
       { id: 4, name: 'Fourth step', component: <p>Step 4 content</p>, canJumpTo: stepIdReached >= 4 },
-      { id: 5, name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish', canJumpTo: stepIdReached >= 5 }
+      {
+        id: 5,
+        name: 'Review',
+        component: <p>Review step content</p>,
+        nextButtonText: 'Finish',
+        canJumpTo: stepIdReached >= 5
+      }
     ];
     const title = 'Incrementally enabled wizard';
     return (
@@ -133,6 +145,7 @@ class IncrementallyEnabledStepsWizard extends React.Component {
 ```
 
 ### Expandable steps
+
 ```js
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
@@ -144,19 +157,19 @@ class SimpleWizard extends React.Component {
 
   render() {
     const steps = [
-      { 
+      {
         name: 'First step',
         steps: [
           { name: 'Substep A', component: <p>Substep A content</p> },
-          { name: 'Substep B', component: <p>Substep B content</p> },
+          { name: 'Substep B', component: <p>Substep B content</p> }
         ]
       },
       { name: 'Second step', component: <p>Step 2 content</p> },
-      { 
-        name: 'Third step', 
+      {
+        name: 'Third step',
         steps: [
           { name: 'Substep C', component: <p>Substep C content</p> },
-          { name: 'Substep D', component: <p>Substep D content</p> },
+          { name: 'Substep D', component: <p>Substep D content</p> }
         ]
       },
       { name: 'Fourth step', component: <p>Step 4 content</p> },
@@ -177,6 +190,7 @@ class SimpleWizard extends React.Component {
 ```
 
 ### Finished
+
 ```js
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
@@ -187,12 +201,11 @@ class FinishedStepWizard extends React.Component {
     super(props);
 
     this.closeWizard = () => {
-      console.log("close wizard");
-    }
+      console.log('close wizard');
+    };
   }
 
   render() {
-
     const steps = [
       { name: 'First step', component: <p>Step 1 content</p> },
       { name: 'Second step', component: <p>Step 2 content</p> },
@@ -216,6 +229,7 @@ class FinishedStepWizard extends React.Component {
 ```
 
 ### Enabled on form validation
+
 ```js
 import React from 'react';
 import { Button, Wizard, Form, FormGroup, TextInput } from '@patternfly/react-core';
@@ -232,8 +246,8 @@ class ValidationWizard extends React.Component {
     };
 
     this.closeWizard = () => {
-      console.log("close wizard");
-    }
+      console.log('close wizard');
+    };
 
     this.onFormChange = (isValid, value) => {
       this.setState(
@@ -287,17 +301,27 @@ class ValidationWizard extends React.Component {
           {
             id: 2,
             name: 'Substep A with validation',
-            component: (
-              <SampleForm formValue={formValue} isFormValid={isFormValid} onChange={this.onFormChange} />
-            ),
+            component: <SampleForm formValue={formValue} isFormValid={isFormValid} onChange={this.onFormChange} />,
             enableNext: isFormValid,
             canJumpTo: stepIdReached >= 2
           },
           { id: 3, name: 'Substep B', component: <p>Substep B</p>, canJumpTo: stepIdReached >= 3 }
         ]
       },
-      { id: 4, name: 'Additional', component: <p>Step 3 content</p>, enableNext: allStepsValid, canJumpTo: stepIdReached >= 4 },
-      { id: 5, name: 'Review', component: <p>Step 4 content</p>, nextButtonText: 'Close', canJumpTo: stepIdReached >= 5 }
+      {
+        id: 4,
+        name: 'Additional',
+        component: <p>Step 3 content</p>,
+        enableNext: allStepsValid,
+        canJumpTo: stepIdReached >= 4
+      },
+      {
+        id: 5,
+        name: 'Review',
+        component: <p>Step 4 content</p>,
+        nextButtonText: 'Close',
+        canJumpTo: stepIdReached >= 5
+      }
     ];
     const title = 'Enabled on form validation wizard';
     return (
@@ -321,7 +345,7 @@ class ValidationWizard extends React.Component {
 
 This example demonstrates how to use the `WizardContextConsumer` to consume the `WizardContext`. `WizardContext` can be used to imperatively move to a specific wizard step.
 
-The definition of the `WizardContext` is as follows: 
+The definition of the `WizardContext` is as follows:
 
 ```
 interface WizardContext {
@@ -348,7 +372,7 @@ class ValidateButtonPressWizard extends React.Component {
     };
 
     this.closeWizard = () => {
-      console.log("close wizard");
+      console.log('close wizard');
     };
 
     this.validateLastStep = onNext => {
@@ -373,7 +397,11 @@ class ValidateButtonPressWizard extends React.Component {
         name: 'Final Step',
         component: (
           <>
-            {stepsValid === 1 && <div style={{padding: '15px 0'}}><Alert variant="warning" title="Validation failed, please try again" /></div>}
+            {stepsValid === 1 && (
+              <div style={{ padding: '15px 0' }}>
+                <Alert variant="warning" title="Validation failed, please try again" />
+              </div>
+            )}
             <SampleForm formValue="Validating on button press" isFormValid={stepsValid !== 1} />
           </>
         )
@@ -391,14 +419,18 @@ class ValidateButtonPressWizard extends React.Component {
                   <Button variant="primary" type="submit" onClick={onNext}>
                     Forward
                   </Button>
-                  <Button variant="secondary" onClick={onBack} className={activeStep.name === 'Step 1' ? 'pf-m-disabled' : ''}>
+                  <Button
+                    variant="secondary"
+                    onClick={onBack}
+                    className={activeStep.name === 'Step 1' ? 'pf-m-disabled' : ''}
+                  >
                     Backward
                   </Button>
                   <Button variant="link" onClick={onClose}>
                     Cancel
                   </Button>
                 </>
-              )
+              );
             }
             // Final step buttons
             return (
@@ -406,7 +438,8 @@ class ValidateButtonPressWizard extends React.Component {
                 <Button onClick={() => this.validateLastStep(onNext)}>Validate</Button>
                 <Button onClick={() => goToStepByName('Step 1')}>Go to Beginning</Button>
               </>
-            )}}
+            );
+          }}
         </WizardContextConsumer>
       </WizardFooter>
     );
@@ -426,6 +459,7 @@ class ValidateButtonPressWizard extends React.Component {
 ```
 
 ### Progressive steps
+
 ```js
 import React from 'react';
 import { Button, Radio, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@patternfly/react-core';
@@ -445,8 +479,8 @@ class ProgressiveWizard extends React.Component {
       updateStepRadio: 'Quick'
     };
     this.closeWizard = () => {
-      console.log("close wizard");
-    }
+      console.log('close wizard');
+    };
     this.onGoToStep = ({ id, name }, { prevId, prevName }) => {
       // Remove steps after the currently clicked step
       if (name === 'Get started') {
@@ -470,66 +504,90 @@ class ProgressiveWizard extends React.Component {
     this.getNextStep = (activeStep, callback) => {
       if (activeStep.name === 'Get started') {
         if (this.state.getStartedStepRadio === 'Create') {
-          this.setState({
-            showCreateStep: true,
-            showUpdateStep: false,
-            showOptionsStep: false,
-            showReviewStep: false
-          }, () => {
-            callback();
-          });
+          this.setState(
+            {
+              showCreateStep: true,
+              showUpdateStep: false,
+              showOptionsStep: false,
+              showReviewStep: false
+            },
+            () => {
+              callback();
+            }
+          );
         } else {
-          this.setState({
-            showCreateStep: false,
-            showUpdateStep: true,
-            showOptionsStep: false,
-            showReviewStep: false
-          }, () => {
-            callback();
-          });
+          this.setState(
+            {
+              showCreateStep: false,
+              showUpdateStep: true,
+              showOptionsStep: false,
+              showReviewStep: false
+            },
+            () => {
+              callback();
+            }
+          );
         }
       } else if (activeStep.name === 'Create options' || activeStep.name === 'Update options') {
-        this.setState({
-          showOptionsStep: true,
-          showReviewStep: false
-        }, () => {
-          callback();
-        });
+        this.setState(
+          {
+            showOptionsStep: true,
+            showReviewStep: false
+          },
+          () => {
+            callback();
+          }
+        );
       } else if (activeStep.name === 'Substep 3') {
-        this.setState({
-          showReviewStep: true
-        }, () => {
-          callback();
-        });
+        this.setState(
+          {
+            showReviewStep: true
+          },
+          () => {
+            callback();
+          }
+        );
       } else {
         callback();
       }
     };
     this.getPreviousStep = (activeStep, callback) => {
       if (activeStep.name === 'Review') {
-        this.setState({
-          showReviewStep: false
-        }, () => {
-          callback();
-        });
+        this.setState(
+          {
+            showReviewStep: false
+          },
+          () => {
+            callback();
+          }
+        );
       } else if (activeStep.name === 'Substep 1') {
-        this.setState({
-          showOptionsStep: false
-        }, () => {
-          callback();
-        });
+        this.setState(
+          {
+            showOptionsStep: false
+          },
+          () => {
+            callback();
+          }
+        );
       } else if (activeStep.name === 'Create options') {
-        this.setState({
-          showCreateStep: false
-        }, () => {
-          callback();
-        });
+        this.setState(
+          {
+            showCreateStep: false
+          },
+          () => {
+            callback();
+          }
+        );
       } else if (activeStep.name === 'Update options') {
-        this.setState({
-          showUpdateStep: false
-        }, () => {
-          callback();
-        });
+        this.setState(
+          {
+            showUpdateStep: false
+          },
+          () => {
+            callback();
+          }
+        );
       } else {
         callback();
       }
@@ -653,7 +711,7 @@ class ProgressiveWizard extends React.Component {
       ...(showCreateStep ? [createStep] : []),
       ...(showUpdateStep ? [updateStep] : []),
       ...(showOptionsStep ? [optionsStep] : []),
-      ...(showReviewStep ? [reviewStep] : []),
+      ...(showReviewStep ? [reviewStep] : [])
     ];
 
     const CustomFooter = (
@@ -665,14 +723,19 @@ class ProgressiveWizard extends React.Component {
                 <Button variant="primary" type="submit" onClick={() => this.getNextStep(activeStep, onNext)}>
                   {activeStep.name === 'Review' ? 'Finish' : 'Next'}
                 </Button>
-                <Button variant="secondary" onClick={() => this.getPreviousStep(activeStep, onBack)} className={activeStep.name === 'Get Started' ? 'pf-m-disabled' : ''}>
+                <Button
+                  variant="secondary"
+                  onClick={() => this.getPreviousStep(activeStep, onBack)}
+                  className={activeStep.name === 'Get Started' ? 'pf-m-disabled' : ''}
+                >
                   Back
                 </Button>
                 <Button variant="link" onClick={onClose}>
                   Cancel
                 </Button>
               </>
-            )}}
+            );
+          }}
         </WizardContextConsumer>
       </WizardFooter>
     );
@@ -693,6 +756,7 @@ class ProgressiveWizard extends React.Component {
 ```
 
 ### Remember last step
+
 ```js
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
@@ -704,18 +768,18 @@ class RememberLastStepWizard extends React.Component {
       step: 1
     };
     this.closeWizard = () => {
-      console.log("close wizard");
-    }
+      console.log('close wizard');
+    };
     this.onMove = (curr, prev) => {
       this.setState({
         step: curr.id
       });
-    }
+    };
     this.onSave = () => {
       this.setState({
-        step: 1,
-      })
-    }
+        step: 1
+      });
+    };
   }
 
   render() {
@@ -748,6 +812,7 @@ class RememberLastStepWizard extends React.Component {
 ```
 
 ### Wizard in modal
+
 ```js
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
@@ -784,6 +849,7 @@ class WizardInModal extends React.Component {
         <Wizard
           title={title}
           description="Simple Wizard Description"
+          descriptionComponent="div"
           steps={steps}
           onClose={this.handleModalToggle}
           isOpen={isOpen}
@@ -793,4 +859,3 @@ class WizardInModal extends React.Component {
   }
 }
 ```
-

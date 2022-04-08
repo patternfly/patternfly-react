@@ -54,6 +54,8 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   descriptionId?: string;
   /** The wizard description */
   description?: React.ReactNode;
+  /** Component type of the description */
+  descriptionComponent?: 'div' | 'p';
   /** Flag indicating whether the close button should be in the header */
   hideClose?: boolean;
   /** Callback function to close the wizard */
@@ -111,6 +113,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
   static defaultProps: PickOptional<WizardProps> = {
     title: null,
     description: '',
+    descriptionComponent: 'p',
     className: '',
     startAtStep: 1,
     nextButtonText: 'Next',
@@ -312,6 +315,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       height,
       title,
       description,
+      descriptionComponent,
       onClose,
       onSave,
       onBack,
@@ -453,6 +457,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
               onClose={onClose}
               title={title}
               description={description}
+              descriptionComponent={descriptionComponent}
               closeButtonAriaLabel={closeButtonAriaLabel}
               hideClose={hideClose}
             />
