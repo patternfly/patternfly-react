@@ -14,7 +14,7 @@ interface ConnectorSquareProps {
   dragRef?: ConnectDragSource;
 }
 
-const ConnectorSquare: React.FC<ConnectorSquareProps> = ({
+const ConnectorSquare: React.FunctionComponent<ConnectorSquareProps> = ({
   startPoint,
   endPoint,
   className = '',

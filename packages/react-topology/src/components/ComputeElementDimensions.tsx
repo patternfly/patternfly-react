@@ -8,7 +8,7 @@ interface ComputeElementDimensionsProps {
   element: Node;
 }
 
-const ComputeElementDimensions: React.FC<ComputeElementDimensionsProps> = ({ element, children }) => {
+const ComputeElementDimensions: React.FunctionComponent<ComputeElementDimensionsProps> = ({ element, children }) => {
   const gRef = React.useRef<SVGGElement>(null);
   React.useEffect(() => {
     if (gRef.current && !element.isDimensionsInitialized()) {

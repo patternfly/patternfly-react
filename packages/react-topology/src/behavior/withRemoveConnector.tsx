@@ -28,7 +28,7 @@ export const withRemoveConnector = <P extends WithRemoveConnectorProps & Element
   onRemove: (edge: Edge) => void,
   renderRemove: RemoveRenderer = defaultRenderRemove
 ) => (WrappedComponent: React.ComponentType<P>) => {
-  const Component: React.FC<Omit<P, keyof WithRemoveConnectorProps>> = props => {
+  const Component: React.FunctionComponent<Omit<P, keyof WithRemoveConnectorProps>> = props => {
     const [show, setShow] = React.useState(false);
     const onShowRemoveConnector = React.useCallback(() => setShow(true), []);
     const onHideRemoveConnector = React.useCallback(() => setShow(false), []);

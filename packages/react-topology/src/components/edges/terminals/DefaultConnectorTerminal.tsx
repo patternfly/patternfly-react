@@ -23,7 +23,7 @@ interface EdgeConnectorArrowProps {
   dragRef?: ConnectDragSource;
 }
 
-const DefaultConnectorTerminal: React.FC<EdgeConnectorArrowProps> = ({
+const DefaultConnectorTerminal: React.FunctionComponent<EdgeConnectorArrowProps> = ({
   className,
   edge,
   isTarget = true,

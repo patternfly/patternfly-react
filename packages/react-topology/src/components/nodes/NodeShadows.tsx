@@ -5,7 +5,7 @@ export const NODE_SHADOW_FILTER_ID = 'NodeShadowsFilterId';
 export const NODE_SHADOW_FILTER_ID_HOVER = 'NodeShadowsFilterId--hover';
 export const NODE_SHADOW_FILTER_ID_DANGER = 'NodeShadowsFilterId--danger';
 
-const NodeShadows: React.FC = () => (
+const NodeShadows: React.FunctionComponent = () => (
   <>
     <SvgDropShadowFilter id={NODE_SHADOW_FILTER_ID} />
     <SvgDropShadowFilter id={NODE_SHADOW_FILTER_ID_HOVER} dx={0} dy={3} stdDeviation={2} floodOpacity={0.2} />

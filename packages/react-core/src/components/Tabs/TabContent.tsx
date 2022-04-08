@@ -28,7 +28,7 @@ const variantStyle = {
   light300: styles.modifiers.light_300
 };
 
-const TabContentBase: React.FC<TabContentProps> = ({
+const TabContentBase: React.FunctionComponent<TabContentProps> = ({
   id,
   activeKey,
   'aria-label': ariaLabel,

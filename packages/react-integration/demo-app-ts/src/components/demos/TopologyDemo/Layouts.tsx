@@ -31,7 +31,7 @@ const getModel = (layout: string): Model => {
   return model;
 };
 
-const layoutStory = (model: Model): React.FC => () => {
+const layoutStory = (model: Model): React.FunctionComponent => () => {
   useLayoutFactory(defaultLayoutFactory);
   useComponentFactory(defaultComponentFactory);
   useComponentFactory(stylesComponentFactory);

@@ -15,7 +15,7 @@ interface DefaultConnectorTagProps {
   paddingY?: number;
 }
 
-const DefaultConnectorTag: React.FC<DefaultConnectorTagProps> = ({
+const DefaultConnectorTag: React.FunctionComponent<DefaultConnectorTagProps> = ({
   className,
   startPoint,
   endPoint,

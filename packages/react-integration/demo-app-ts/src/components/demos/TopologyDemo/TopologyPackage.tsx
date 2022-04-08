@@ -63,7 +63,10 @@ interface TopologyViewComponentProps {
   sideBarResizable?: boolean;
 }
 
-const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ useSidebar, sideBarResizable = false }) => {
+const TopologyViewComponent: React.FunctionComponent<TopologyViewComponentProps> = ({
+  useSidebar,
+  sideBarResizable = false
+}) => {
   const [selectedIds, setSelectedIds] = React.useState<string[]>();
   const [layoutDropdownOpen, setLayoutDropdownOpen] = React.useState(false);
   const [layout, setLayout] = React.useState('ColaNoForce');

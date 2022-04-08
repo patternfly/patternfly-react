@@ -9,7 +9,7 @@ type SidedProps = ShapeProps & {
   cornerRadius?: number;
 };
 
-const SidedShape: React.FC<SidedProps> = ({
+const SidedShape: React.FunctionComponent<SidedProps> = ({
   className = css(styles.topologyNodeBackground),
   width,
   height,

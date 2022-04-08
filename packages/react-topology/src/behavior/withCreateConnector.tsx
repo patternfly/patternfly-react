@@ -82,7 +82,7 @@ const DEFAULT_HANDLE_ANGLE = Math.PI / 180;
 const DEFAULT_HANDLE_ANGLE_TOP = 1.5 * Math.PI;
 const DEFAULT_HANDLE_LENGTH = 32;
 
-const CreateConnectorWidget: React.FC<CreateConnectorWidgetProps> = observer(props => {
+const CreateConnectorWidget: React.FunctionComponent<CreateConnectorWidgetProps> = observer(props => {
   const {
     element,
     onKeepAlive,
@@ -247,7 +247,7 @@ export const withCreateConnector = <P extends WithCreateConnectorProps & Element
   contextMenuClass?: string,
   options?: CreateConnectorOptions
 ) => (WrappedComponent: React.ComponentType<Partial<P>>) => {
-  const Component: React.FC<Omit<P, keyof WithCreateConnectorProps>> = props => {
+  const Component: React.FunctionComponent<Omit<P, keyof WithCreateConnectorProps>> = props => {
     const [show, setShow] = React.useState(false);
     const [alive, setKeepAlive] = React.useState(false);
     const onShowCreateConnector = React.useCallback(() => setShow(true), []);

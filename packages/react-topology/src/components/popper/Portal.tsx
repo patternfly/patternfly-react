@@ -11,7 +11,7 @@ interface PortalProps {
 const getContainer = (container: GetContainer): Element | null | undefined =>
   typeof container === 'function' ? container() : container;
 
-const Portal: React.FC<PortalProps> = ({ children, container }) => {
+const Portal: React.FunctionComponent<PortalProps> = ({ children, container }) => {
   const [containerNode, setContainerNode] = React.useState<Element>();
 
   useIsomorphicLayoutEffect(() => {

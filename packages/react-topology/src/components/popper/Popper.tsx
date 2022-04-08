@@ -78,7 +78,7 @@ interface PopperProps {
 
 const DEFAULT_POPPER_OPTIONS: PopperOptions = {};
 
-const Popper: React.FC<PopperProps> = ({
+const Popper: React.FunctionComponent<PopperProps> = ({
   children,
   container,
   className,

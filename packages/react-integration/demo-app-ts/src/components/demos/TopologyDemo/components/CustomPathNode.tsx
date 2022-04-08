@@ -23,7 +23,7 @@ type CustomPathNodeProps = {
   WithCreateConnectorProps &
   WithContextMenuProps;
 
-const CustomPathNode: React.FC<CustomPathNodeProps> = props => (
+const CustomPathNode: React.FunctionComponent<CustomPathNodeProps> = props => (
   <DemoDefaultNode getCustomShape={() => Path} {...props} />
 );
 
