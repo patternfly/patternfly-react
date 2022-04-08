@@ -1,6 +1,8 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import { TextInputGroup, TextInputGroupContext } from '../TextInputGroup';
 import { TextInputGroupMain } from '../TextInputGroupMain';
 import { TextInputGroupUtilities } from '../TextInputGroupUtilities';
@@ -8,33 +10,33 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 describe('TextInputGroup', () => {
   test('renders content', () => {
-    const view = render(
+    const { asFragment } = render(
       <TextInputGroup>
         <TextInputGroupMain>Foo</TextInputGroupMain>
         <TextInputGroupUtilities />
       </TextInputGroup>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('gets custom class and id', () => {
-    const view = render(
+    const { asFragment } = render(
       <TextInputGroup className="custom-class" id="test-id">
         <TextInputGroupMain>Foo</TextInputGroupMain>
         <TextInputGroupUtilities />
       </TextInputGroup>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders with the proper stying when disabled', () => {
-    const view = render(
+    const { asFragment } = render(
       <TextInputGroup isDisabled>
         <TextInputGroupMain>Foo</TextInputGroupMain>
         <TextInputGroupUtilities />
       </TextInputGroup>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('passes isDisabled=false to children via a context when isDisabled prop is not passed', () => {
@@ -44,12 +46,13 @@ describe('TextInputGroup', () => {
       return <div>{context.isDisabled ? 'is disabled' : 'not disabled'}</div>;
     };
 
-    const view = mount(
+    render(
       <TextInputGroup>
         <TestComponent />
       </TextInputGroup>
     );
-    expect(view.text()).toBe('not disabled');
+
+    expect(screen.queryByText('is disabled')).toBeNull();
   });
 
   test('passes isDisabled=true to children via a context when isDisabled prop is passed', () => {
@@ -59,108 +62,131 @@ describe('TextInputGroup', () => {
       return <div>{context.isDisabled ? 'is disabled' : 'not disabled'}</div>;
     };
 
-    const view = mount(
+    render(
       <TextInputGroup isDisabled>
         <TestComponent />
       </TextInputGroup>
     );
-    expect(view.text()).toBe('is disabled');
+
+    expect(screen.queryByText('not disabled')).toBeNull();
   });
 });
 
 describe('TextInputGroupMain', () => {
   test('renders content', () => {
-    const view = render(<TextInputGroupMain>Foo</TextInputGroupMain>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<TextInputGroupMain>Foo</TextInputGroupMain>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders given input icon props', () => {
-    const view = render(<TextInputGroupMain icon={<SearchIcon />}>Foo</TextInputGroupMain>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<TextInputGroupMain icon={<SearchIcon />}>Foo</TextInputGroupMain>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders the input with custom aria label when given', () => {
-    const view = render(<TextInputGroupMain aria-label="Foo">Foo</TextInputGroupMain>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<TextInputGroupMain aria-label="Foo">Foo</TextInputGroupMain>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('does not call onChange callback when the input does not change', () => {
     const onChangeMock = jest.fn();
 
-    const view = render(<TextInputGroupMain onChange={onChangeMock}>Foo</TextInputGroupMain>);
+    render(<TextInputGroupMain onChange={onChangeMock}>Foo</TextInputGroupMain>);
     expect(onChangeMock).not.toHaveBeenCalled();
   });
 
   test('calls the onChange callback when the input changes', () => {
     const onChangeMock = jest.fn();
 
-    const view = mount(<TextInputGroupMain onChange={onChangeMock}>Foo</TextInputGroupMain>);
-    view.find('input').simulate('change', { target: { value: 'Foo' } });
-    expect(onChangeMock).toHaveBeenCalledTimes(1);
+    render(<TextInputGroupMain onChange={onChangeMock}>Foo</TextInputGroupMain>);
+
+    userEvent.type(screen.getByText('Foo').querySelector('input'), 'Foo');
+    expect(onChangeMock).toHaveBeenCalled();
   });
 
   test('does not call onFocus callback when the input does not get focus', () => {
     const onFocusMock = jest.fn();
 
-    const view = render(<TextInputGroupMain onFocus={onFocusMock}>Foo</TextInputGroupMain>);
+    render(<TextInputGroupMain onFocus={onFocusMock}>Foo</TextInputGroupMain>);
     expect(onFocusMock).not.toHaveBeenCalled();
   });
 
   test('calls the onFocus callback when the input is focused', () => {
     const onFocusMock = jest.fn();
 
-    const view = mount(<TextInputGroupMain onFocus={onFocusMock}>Foo</TextInputGroupMain>);
-    view.find('input').simulate('focus');
+    render(<TextInputGroupMain onFocus={onFocusMock}>Foo</TextInputGroupMain>);
+    userEvent.click(screen.getByText('Foo').querySelector('input'));
     expect(onFocusMock).toHaveBeenCalledTimes(1);
   });
 
   test('does not call onBlur callback when the input does not lose focus', () => {
     const onBlurMock = jest.fn();
 
-    const view = render(<TextInputGroupMain onBlur={onBlurMock}>Foo</TextInputGroupMain>);
+    render(<TextInputGroupMain onBlur={onBlurMock}>Foo</TextInputGroupMain>);
+
+    userEvent.type(screen.getByText('Foo').querySelector('input'), 'Foo');
     expect(onBlurMock).not.toHaveBeenCalled();
   });
 
   test('calls the onFocus callback when the input loses focus', () => {
     const onBlurMock = jest.fn();
 
-    const view = mount(<TextInputGroupMain onBlur={onBlurMock}>Foo</TextInputGroupMain>);
-    view.find('input').simulate('blur');
-    expect(onBlurMock).toHaveBeenCalledTimes(1);
+    render(
+      <>
+        <div>Other element</div>
+        <TextInputGroupMain onBlur={onBlurMock}>Foo</TextInputGroupMain>
+      </>
+    );
+
+    userEvent.type(screen.getByText('Foo').querySelector('input'), 'Foo');
+    userEvent.click(screen.getByText('Other element'));
+
+    expect(onBlurMock).toHaveBeenCalled();
   });
 
   test('input type defaults to text', () => {
-    const view = mount(<TextInputGroupMain>Foo</TextInputGroupMain>);
-    expect(view.find('input').props()['type']).toBe('text');
+    render(<TextInputGroupMain>Foo</TextInputGroupMain>);
+    expect(
+      screen
+        .getByText('Foo')
+        .querySelector('input')
+        .getAttribute('type')
+    ).toEqual('text');
   });
 
   test('input type is updated when a different type is passed', () => {
-    const view = mount(<TextInputGroupMain type="search">Foo</TextInputGroupMain>);
-    expect(view.find('input').props()['type']).toBe('search');
+    render(<TextInputGroupMain type="search">Foo</TextInputGroupMain>);
+    expect(
+      screen
+        .getByText('Foo')
+        .querySelector('input')
+        .getAttribute('type')
+    ).toEqual('search');
   });
 
   test('input is not disabled when TextInputGroupContext isDisabled is false', () => {
-    const view = mount(
+    const { asFragment } = render(
       <TextInputGroupContext.Provider value={{ isDisabled: false }}>
         <TextInputGroupMain />
       </TextInputGroupContext.Provider>
     );
-    expect(view.find('input').props()['disabled']).toBe(false);
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('input is disabled when TextInputGroupContext isDisabled is true', () => {
-    const view = mount(
+    const { asFragment } = render(
       <TextInputGroupContext.Provider value={{ isDisabled: true }}>
         <TextInputGroupMain />
       </TextInputGroupContext.Provider>
     );
-    expect(view.find('input').props()['disabled']).toBe(true);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 describe('TextInputGroupUtilities', () => {
   test('renders the content', () => {
-    const view = render(<TextInputGroupUtilities>{<button>Foo</button>}</TextInputGroupUtilities>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<TextInputGroupUtilities>{<button>Foo</button>}</TextInputGroupUtilities>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
