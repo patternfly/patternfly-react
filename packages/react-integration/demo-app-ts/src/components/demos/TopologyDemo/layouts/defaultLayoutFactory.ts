@@ -6,11 +6,14 @@ import {
   ColaLayout,
   ConcentricLayout,
   DagreLayout,
-  GridLayout
+  GridLayout,
+  BreadthFirstLayout
 } from '@patternfly/react-topology';
 
 const defaultLayoutFactory: LayoutFactory = (type: string, graph: Graph): Layout | undefined => {
   switch (type) {
+    case 'BreadthFirst':
+      return new BreadthFirstLayout(graph);
     case 'Cola':
       return new ColaLayout(graph);
     case 'ColaNoForce':
