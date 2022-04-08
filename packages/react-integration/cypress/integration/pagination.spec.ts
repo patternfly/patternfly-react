@@ -19,9 +19,9 @@ describe('Pagination Demo Test', () => {
     cy.get('.pagination-options-menu-disabled')
       .find('button[data-action="last"]')
       .then(button => expect(button).to.be.disabled);
-    cy.get('.pagination-options-menu-disabled > .pf-c-options-menu > .pf-c-options-menu__toggle')
-      .find('button')
-      .then(button => expect(button).to.be.disabled);
+    cy.get('.pagination-options-menu-disabled')
+      .find('.pf-c-options-menu__toggle')
+      .then(toggleButton => expect(toggleButton).to.be.disabled);
   });
 
   it('should be sticky when flag is present', () => {
@@ -58,7 +58,7 @@ describe('Pagination Demo Test', () => {
 
   it('Verify event handlers fire correctly', () => {
     cy.get('.pagination-options-menu-top')
-      .find('.pf-c-options-menu__toggle button')
+      .find('button.pf-c-options-menu__toggle')
       .then((toggleButton: JQuery<HTMLButtonElement>) => {
         cy.wrap(toggleButton).click();
         cy.get('.pf-c-options-menu.pf-m-expanded').should('exist');
@@ -142,7 +142,7 @@ describe('Pagination Demo Test', () => {
       .then((button: JQuery<HTMLButtonElement>) => {
         cy.wrap(button).click();
         cy.get('.pagination-options-menu-default-fullpage')
-          .find('.pf-c-options-menu__toggle button')
+          .find('button.pf-c-options-menu__toggle')
           .then((toggleButton: JQuery<HTMLButtonElement>) => {
             cy.wrap(toggleButton).click();
             cy.get('.pf-c-options-menu.pf-m-expanded').should('exist');
