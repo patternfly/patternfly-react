@@ -123,6 +123,8 @@ export interface SelectProps
   ) => void;
   /** Callback for toggle button behavior */
   onToggle: (isExpanded: boolean, event: React.MouseEvent | React.ChangeEvent | React.KeyboardEvent | Event) => void;
+  /** Callback for toggle blur */
+  onBlur?: (event?: any) => void;
   /** Callback for typeahead clear button */
   onClear?: (event: React.MouseEvent) => void;
   /** Optional callback for custom filtering */
@@ -917,6 +919,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       direction,
       onSelect,
       onClear,
+      onBlur,
       toggleId,
       isOpen,
       isGrouped,
@@ -1263,6 +1266,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           onToggle={this.onToggle}
           onEnter={this.onEnter}
           onClose={this.onClose}
+          onBlur={onBlur}
           variant={variant}
           aria-labelledby={`${ariaLabelledBy || ''} ${selectToggleId}`}
           aria-label={toggleAriaLabel}

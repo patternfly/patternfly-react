@@ -23,6 +23,8 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   onEnter?: () => void;
   /** Callback for toggle close */
   onClose?: () => void;
+  /** Callback for toggle blur */
+  onBlur?: (event?: any) => void;
   /** @hide Internal callback for toggle keyboard navigation */
   handleTypeaheadKeys?: (position: string, shiftKey?: boolean) => void;
   /** @hide Internal callback to move focus to last menu item */
@@ -244,6 +246,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       onToggle,
       onEnter,
       onClose,
+      onBlur,
       onClickTypeaheadToggleButton,
       handleTypeaheadKeys,
       moveFocusToLastMenuItem,
@@ -289,6 +292,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               className
             )}
             aria-label={ariaLabel}
+            onBlur={onBlur}
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             onClick={event => {
               onToggle(!isOpen, event);
@@ -317,6 +321,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               isTypeahead && styles.modifiers.typeahead,
               className
             )}
+            onBlur={onBlur}
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             onClick={event => {
               if (!isDisabled) {
