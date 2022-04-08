@@ -20,6 +20,8 @@ export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
   onMinus?: (event: React.MouseEvent, name?: string) => void;
   /** Callback for the text input changing */
   onChange?: (event: React.FormEvent<HTMLInputElement>) => void;
+  /** Callback function when text input is blurred (focus leaves) */
+  onBlur?: (event?: any) => void;
   /** Callback for the plus button */
   onPlus?: (event: React.MouseEvent, name?: string) => void;
   /** Adds the given unit to the number input */
@@ -66,6 +68,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   isDisabled = false,
   onMinus = () => {},
   onChange,
+  onBlur,
   onPlus = () => {},
   unit,
   unitPosition = 'after',
@@ -116,6 +119,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
           aria-label={inputAriaLabel}
           {...(isDisabled && { disabled: isDisabled })}
           {...(onChange && { onChange })}
+          {...(onBlur && { onBlur })}
           {...(!onChange && { readOnly: true })}
           {...inputProps}
           onKeyDown={keyDownHandler}

@@ -449,6 +449,13 @@ class CustomStepNumberInput extends React.Component {
     this.onChange = event => {
       const newValue = isNaN(event.target.value) ? 0 : Number(event.target.value);
       this.setState({
+        value: newValue
+      });
+    };
+
+    this.onBlur = event => {
+      const newValue = isNaN(event.target.value) ? 0 : Number(event.target.value);
+      this.setState({
         value: newValue > this.maxValue ? this.maxValue : newValue < this.minValue ? this.minValue : newValue
       });
     };
@@ -463,6 +470,7 @@ class CustomStepNumberInput extends React.Component {
         max={this.maxValue}
         onMinus={this.stepper(-3)}
         onChange={this.onChange}
+        onBlur={this.onBlur}
         onPlus={this.stepper(3)}
         inputName="input"
         inputAriaLabel="number input"
