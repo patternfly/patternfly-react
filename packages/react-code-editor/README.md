@@ -51,3 +51,5 @@ Install peer deps
 "react-dom": "^16.8.0 || ^17.0.0",
 "react-monaco-editor": "^0.41.2"
 ```
+
+To properly install the library `monaco-editor-webpack-plugin` be sure to follow the [plugin instructions](https://github.com/microsoft/monaco-editor/tree/main/webpack-plugin)
