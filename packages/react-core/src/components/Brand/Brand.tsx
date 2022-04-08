@@ -12,7 +12,7 @@ export interface BrandProps
   src?: string;
   /** Attribute that specifies the alt text of a <img> Brand. For a <picture> Brand this specifies the fallback <img> alt text. */
   alt: string;
-  /** Widths are various breakpoints for a <picture> Brand. */
+  /** Widths at various breakpoints for a <picture> Brand. */
   widths?: {
     default?: string;
     sm?: string;
