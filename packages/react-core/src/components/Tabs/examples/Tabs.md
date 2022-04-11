@@ -56,7 +56,7 @@ class SimpleTabs extends React.Component {
 
     return (
       <div>
-        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox}>
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox} aria-label="Tabs in the default example">
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
           </Tab>
@@ -132,7 +132,7 @@ class SimpleTabs extends React.Component {
 
     return (
       <div>
-        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox}>
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox} aria-label="Tabs in the example with a tooltip ref">
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
           </Tab>
@@ -193,7 +193,7 @@ class UncontrolledSimpleTabs extends React.Component {
 
     return (
       <>
-        <Tabs defaultActiveKey={0}>
+        <Tabs defaultActiveKey={0} aria-label="Tabs in the uncontrolled example">
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
           </Tab>
@@ -264,6 +264,7 @@ class SimpleTabs extends React.Component {
           onSelect={this.handleTabClick}
           variant={isTabsLightScheme ? 'light300' : 'default'}
           isBox
+          aria-label="Tabs in the box light variation example"
         >
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
@@ -337,7 +338,7 @@ class ScrollButtonsPrimaryTabs extends React.Component {
     const { activeTabKey, isBox } = this.state;
     return (
       <div>
-        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox}>
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox} aria-label="Tabs in the default overflow example">
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
           </Tab>
@@ -423,7 +424,7 @@ class VerticalTabs extends React.Component {
 
     return (
       <div>
-        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isVertical isBox={isBox}>
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isVertical isBox={isBox} aria-label="Tabs in the vertical example">
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
           </Tab>
@@ -499,6 +500,7 @@ class VerticalExpandableTabs extends React.Component {
         isExpanded={isExpanded}
         onToggle={this.onToggle}
         toggleText="Containers"
+        aria-label="Tabs in the vertical expandable example"
       >
         <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
           Users
@@ -552,6 +554,7 @@ class VerticalExpandableUncontrolledTabs extends React.Component {
         expandable={{ default: 'expandable', md: 'nonExpandable', lg: 'expandable' }}
         defaultIsExpanded={false}
         toggleText="Containers"
+        aria-label="Tabs in the vertical expandable uncontrolled example"
       >
         <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
           Users
@@ -618,6 +621,7 @@ class InsetTabs extends React.Component {
             '2xl': 'insetLg'
           }}
           isBox={isBox}
+          aria-label="Tabs in the inset example"
         >
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
@@ -685,7 +689,7 @@ class PageInsetsTabs extends React.Component {
     const { activeTabKey, isBox } = this.state;
     return (
       <div>
-        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} usePageInsets isBox={isBox}>
+        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} usePageInsets isBox={isBox} aria-label="Tabs in the page insets example">
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
           </Tab>
@@ -749,7 +753,7 @@ class IconAndTextTabs extends React.Component {
 
   render() {
     return (
-      <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
+      <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick} aria-label="Tabs in the icons and text example">
         <Tab
           eventKey={0}
           title={
@@ -872,7 +876,7 @@ class SecondaryTabs extends React.Component {
     const { activeTabKey1, activeTabKey2, isBox } = this.state;
     return (
       <div>
-        <Tabs activeKey={activeTabKey1} onSelect={this.handleTabClickFirst} isBox={isBox}>
+        <Tabs activeKey={activeTabKey1} onSelect={this.handleTabClickFirst} isBox={isBox} aria-label="Tabs in the tabs with subtabs example">
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             <Tabs aria-label="secondary tabs for users" activeKey={activeTabKey2} isSecondary onSelect={this.handleTabClickSecond}>
               <Tab eventKey={20} title={<TabTitleText>Secondary tab item 1</TabTitleText>}>
@@ -979,7 +983,7 @@ class FilledTabs extends React.Component {
     const { activeTabKey, isBox } = this.state;
     return (
       <div>
-        <Tabs isFilled activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox}>
+        <Tabs isFilled activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox} aria-label="Tabs in the filled example">
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
           </Tab>
@@ -1040,7 +1044,7 @@ class FilledTabsWithIcons extends React.Component {
     const { activeTabKey, isBox } = this.state;
     return (
       <div>
-        <Tabs isFilled activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox}>
+        <Tabs isFilled activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox} aria-label="Tabs in the filled with icons example">
           <Tab
             eventKey={0}
             title={
@@ -1125,6 +1129,7 @@ class TabsNav extends React.Component {
         onSelect={this.handleTabClick}
         aria-label="Local"
         component={TabsComponent.nav}
+        aria-label="Tabs in the nav element example"
       >
         <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#users">
           Users
@@ -1186,6 +1191,7 @@ class SecondaryTabsNav extends React.Component {
         onSelect={this.handleTabClickFirst}
         aria-label="Local"
         component={TabsComponent.nav}
+        aria-label="Tabs in the sub tabs with nav element example"
       >
         <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#">
           <Tabs
@@ -1264,7 +1270,7 @@ class SeparateTabContent extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
+        <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick} aria-label="Tabs in the seperate content example">
           <Tab
             eventKey={0}
             title={<TabTitleText>Tab item 1</TabTitleText>}
@@ -1321,7 +1327,7 @@ const TabContentWithBody = () => {
 
   return (
     <React.Fragment>
-      <Tabs activeKey={activeTabKey} onSelect={handleTabClick}>
+      <Tabs activeKey={activeTabKey} onSelect={handleTabClick} aria-label="Tabs in the body and padding example">
         <Tab
           eventKey={0}
           title={<TabTitleText>Tab item 1</TabTitleText>}
@@ -1379,7 +1385,7 @@ class MountingSimpleTabs extends React.Component {
 
   render() {
     return (
-      <Tabs mountOnEnter activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
+      <Tabs mountOnEnter activeKey={this.state.activeTabKey} onSelect={this.handleTabClick} aria-label="Tabs in the children mounting on click example">
         <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>}>
           Tab 1 section
         </Tab>
@@ -1417,7 +1423,7 @@ class UnmountingSimpleTabs extends React.Component {
 
   render() {
     return (
-      <Tabs unmountOnExit activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
+      <Tabs unmountOnExit activeKey={this.state.activeTabKey} onSelect={this.handleTabClick} aria-label="Tabs in the unmounting invisible children example">
         <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>}>
           Tab 1 section
         </Tab>
@@ -1467,7 +1473,7 @@ class ToggledSeparateContent extends React.Component {
           {isTab2Hidden ? 'Show' : 'Hide'} tab 2
         </Button>
         <Divider style={{ paddingTop: '1rem', paddingBottom: '1rem' }} />
-        <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
+        <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick} aria-label="Tabs in the toggled separate content example">
           <Tab eventKey={0} title="Tab item 1" tabContentId="refTab1Section" tabContentRef={this.contentRef1} />
           {!isTab2Hidden && (
             <Tab eventKey={1} title="Tab item 2" tabContentId="refTab2Section" tabContentRef={this.contentRef2} />
