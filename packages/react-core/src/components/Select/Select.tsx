@@ -163,6 +163,14 @@ export interface SelectProps
   shouldResetOnSelect?: boolean;
   /** Content rendered in the footer of the select menu */
   footer?: React.ReactNode;
+  /** The container to append the menu to. Defaults to 'inline'.
+   * If your menu is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * menuAppendTo="parent"
+   * menuAppendTo={() => document.body}
+   * menuAppendTo={document.getElementById('target')}
+   */
+  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
 }
 
 export interface SelectState {

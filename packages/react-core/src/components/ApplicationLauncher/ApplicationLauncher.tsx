@@ -35,6 +35,14 @@ export interface ApplicationLauncherProps extends ToggleMenuBaseProps, React.HTM
   isGrouped?: boolean;
   /** Toggle Icon, optional to override the icon used for the toggle */
   toggleIcon?: React.ReactNode;
+  /** The container to append the menu to. Defaults to 'inline'.
+   * If your menu is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * menuAppendTo="parent"
+   * menuAppendTo={() => document.body}
+   * menuAppendTo={document.getElementById('target')}
+   */
+  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
   /** ID list of favorited ApplicationLauncherItems */
   favorites?: string[];
   /** Enables favorites. Callback called when an ApplicationLauncherItem's favorite button is clicked */
