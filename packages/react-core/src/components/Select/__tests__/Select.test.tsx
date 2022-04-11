@@ -251,23 +251,6 @@ describe('checkbox select', () => {
   test('renders expanded with filtering successfully', () => {
     const { asFragment } = render(
       <Select
-        variant={SelectVariant.checkbox}
-        onSelect={jest.fn()}
-        onToggle={jest.fn()}
-        onClear={jest.fn()}
-        isOpen
-        hasInlineFilter
-        ouiaId="test-id"
-      >
-        {selectOptions}
-      </Select>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('renders expanded with filtering successfully', () => {
-    const { asFragment } = render(
-      <Select
         toggleId="checkbox-select-expanded-filtered"
         variant={SelectVariant.checkbox}
         onSelect={jest.fn()}

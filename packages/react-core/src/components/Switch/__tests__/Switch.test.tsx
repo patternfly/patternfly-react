@@ -66,7 +66,7 @@ describe('Switch', () => {
     render(<Switch id="onChange-switch" {...props} aria-label="Switch label" />);
 
     userEvent.click(screen.getByLabelText('Switch label'));
-    expect(props.onChange.mock.calls[0][0]).toBe(true);
+    expect(props.onChange).toHaveBeenCalledWith(true, expect.any(Object));
   });
 
   test('should throw console error when no aria-label or label is given', () => {

@@ -16,7 +16,7 @@ describe('SelectToggle', () => {
       );
 
       userEvent.click(screen.getByRole('button'));
-      expect(mockToggle.mock.calls[0][0]).toBe(true);
+      expect(mockToggle).toHaveBeenCalledWith(true, expect.any(Object));
     });
 
     test('click on opened', () => {
@@ -33,7 +33,7 @@ describe('SelectToggle', () => {
       );
 
       userEvent.click(screen.getByRole('button'));
-      expect(mockToggle.mock.calls[0][0]).toBe(false);
+      expect(mockToggle).toHaveBeenCalledWith(false, expect.any(MouseEvent));
     });
 
     test('click on document', () => {
@@ -51,25 +51,7 @@ describe('SelectToggle', () => {
       );
 
       userEvent.click(screen.getByText('Select').parentElement);
-      expect(mockToggle.mock.calls[0][0]).toBe(false);
-    });
-
-    test('touch on document', () => {
-      const mockToggle = jest.fn();
-
-      render(
-        <SelectToggle
-          id="Select Toggle"
-          onToggle={mockToggle}
-          isOpen
-          parentRef={{ current: document.createElement('div') }}
-        >
-          Select
-        </SelectToggle>
-      );
-
-      userEvent.click(screen.getByText('Select').parentElement);
-      expect(mockToggle.mock.calls[0][0]).toBe(false);
+      expect(mockToggle).toHaveBeenCalledWith(false, expect.any(MouseEvent));
     });
 
     test('on click outside has been removed', () => {

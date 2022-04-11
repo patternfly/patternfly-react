@@ -45,12 +45,12 @@ describe('TextInput', () => {
     expect(screen.getByLabelText('validated text input')).toHaveClass('pf-m-success');
   });
 
-  test('validated text input success', () => {
+  test('validated text input warning', () => {
     render(<TextInput {...props} required validated={ValidatedOptions.warning} aria-label="validated text input" />);
     expect(screen.getByLabelText('validated text input')).toHaveClass('pf-m-warning');
   });
 
-  test('validated text input', () => {
+  test('validated text input error', () => {
     const { asFragment } = render(<TextInput {...props} required validated={ValidatedOptions.error} aria-label="validated text input" />);
     expect(asFragment()).toMatchSnapshot();
   });

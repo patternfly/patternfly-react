@@ -29,8 +29,8 @@ exports[`ToggleGroup basic selected 1`] = `
   >
     <button
       aria-label="basic selected"
-      aria-pressed="false"
-      class="pf-c-toggle-group__button"
+      aria-pressed="true"
+      class="pf-c-toggle-group__button pf-m-selected"
       id="toggleGroupItem"
       type="button"
     >
@@ -51,8 +51,8 @@ exports[`ToggleGroup icon variant 1`] = `
   >
     <button
       aria-label="icon variant"
-      aria-pressed="false"
-      class="pf-c-toggle-group__button"
+      aria-pressed="true"
+      class="pf-c-toggle-group__button pf-m-selected"
       id="toggleGroupItem"
       type="button"
     >

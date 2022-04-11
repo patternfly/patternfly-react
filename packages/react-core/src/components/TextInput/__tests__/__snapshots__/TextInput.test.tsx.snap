@@ -62,7 +62,7 @@ exports[`TextInput simple text input 1`] = `
 </DocumentFragment>
 `;
 
-exports[`TextInput validated text input 1`] = `
+exports[`TextInput validated text input error 1`] = `
 <DocumentFragment>
   <input
     aria-invalid="true"

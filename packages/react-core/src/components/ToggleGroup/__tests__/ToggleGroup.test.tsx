@@ -13,7 +13,7 @@ const props = {
 
 describe('ToggleGroup', () => {
   test('basic selected', () => {
-    const { asFragment } = render(<ToggleGroupItem text="test" selected buttonId="toggleGroupItem" aria-label="basic selected" />);
+    const { asFragment } = render(<ToggleGroupItem text="test" isSelected buttonId="toggleGroupItem" aria-label="basic selected" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -23,7 +23,7 @@ describe('ToggleGroup', () => {
   });
 
   test('icon variant', () => {
-    const { asFragment } = render(<ToggleGroupItem selected icon="icon" buttonId="toggleGroupItem" aria-label="icon variant" />);
+    const { asFragment } = render(<ToggleGroupItem isSelected icon="icon" buttonId="toggleGroupItem" aria-label="icon variant" />);
     expect(asFragment()).toMatchSnapshot();
   });
 

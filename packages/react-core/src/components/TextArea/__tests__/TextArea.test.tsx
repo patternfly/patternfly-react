@@ -45,11 +45,6 @@ describe('TextArea', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('invalid text area', () => {
-    const { asFragment } = render(<TextArea {...props} required validated={'error'} aria-label="invalid textarea" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   test('validated text area success', () => {
     render(<TextArea {...props} required validated={ValidatedOptions.success} aria-label="validated textarea" />);
     expect(screen.getByLabelText('validated textarea')).toHaveClass('pf-m-success');
