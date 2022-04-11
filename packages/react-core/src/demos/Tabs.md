@@ -445,24 +445,24 @@ TabsOpenWithSecondaryTabsDemo = () => {
 
 ### Nested tabs
 
-```ts isFullscreen file="./examples/Tabs/NestedTabs.tsx"
+```js isFullscreen file="./examples/Tabs/NestedTabs.tsx"
 ```
 
 ### Nested, unindented tabs
 
-```ts isFullscreen file="./examples/Tabs/NestedUnindentedTabs.tsx"
+```js isFullscreen file="./examples/Tabs/NestedUnindentedTabs.tsx"
 ```
 
 ### Tables and tabs
 
-```ts isFullscreen file="./examples/Tabs/TabsAndTable.tsx"
+```js isFullscreen file="./examples/Tabs/TabsAndTable.tsx"
 ```
 
 ### Modal tabs
 
-```ts isFullscreen file="./examples/Tabs/ModalTabs.tsx"
+```js isFullscreen file="./examples/Tabs/ModalTabs.tsx"
 ```
 ### Gray tabs
 
-```ts isFullscreen file="./examples/Tabs/GrayTabs.tsx"
+```js isFullscreen file="./examples/Tabs/GrayTabs.tsx"
 ```
