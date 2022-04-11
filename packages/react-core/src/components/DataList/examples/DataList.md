@@ -73,3 +73,8 @@ Note: Keyboard accessibility and screen reader accessibility for the `DragDrop` 
 
 ```ts isBeta file="./DataListDraggable.tsx"
 ```
+
+### Small grid breakpoint
+
+```ts file="./DataListSmGridBreakpoint.tsx"
+```
