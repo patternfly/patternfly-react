@@ -10,7 +10,6 @@ import { TextInput } from '../TextInput';
 import { InputGroup } from '../InputGroup';
 import { KEY_CODES } from '../../helpers/constants';
 import { FocusTrap } from '../../helpers';
-import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 import { Popper } from '../../helpers/Popper/Popper';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
@@ -18,7 +17,7 @@ import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 let currentId = 0;
 const newId = currentId++;
 
-export interface ContextSelectorProps extends ToggleMenuBaseProps, OUIAProps {
+export interface ContextSelectorProps extends OUIAProps {
   /** content rendered inside the Context Selector */
   children?: React.ReactNode;
   /** Classes applied to root element of Context Selector */
