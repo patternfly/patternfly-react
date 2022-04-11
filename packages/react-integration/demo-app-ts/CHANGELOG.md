@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.162.22 (2022-04-11)
+
+
+### Bug Fixes
+
+* **react-styles:** support esm import and export ([#7084](https://github.com/patternfly/patternfly-react/issues/7084)) ([b66ea14](https://github.com/patternfly/patternfly-react/commit/b66ea14fa0949b0626184455a4df46312b87171a))
+
+
+
+
+
 ## 4.162.21 (2022-04-11)
 
 **Note:** Version bump only for package demo-app-ts
