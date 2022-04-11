@@ -63,12 +63,14 @@ export const treeRow = (
           )}
           {!!onCheckChange && (
             <span className={css(stylesTreeView.tableCheck)} key="table-check">
-              <Checkbox
-                id={checkboxId || `checkbox_${rowIndex}`}
-                aria-label={checkAriaLabel || `Row ${rowIndex} checkbox`}
-                isChecked={isChecked}
-                onChange={onChange}
-              />
+              <label htmlFor={checkboxId || `checkbox_${rowIndex}`}>
+                <Checkbox
+                  id={checkboxId || `checkbox_${rowIndex}`}
+                  aria-label={checkAriaLabel || `Row ${rowIndex} checkbox`}
+                  isChecked={isChecked}
+                  onChange={onChange}
+                />
+              </label>
             </span>
           )}
           {text}
