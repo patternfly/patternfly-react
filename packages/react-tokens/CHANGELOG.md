@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.54.24 (2022-04-11)
+
+
+### Bug Fixes
+
+* **Select:** prevent footer clicks from toggling ([#7193](https://github.com/patternfly/patternfly-react/issues/7193)) ([2cd10c2](https://github.com/patternfly/patternfly-react/commit/2cd10c2a0a11dcd14f85116369fd47dffcb12295))
+
+
+
+
+
 ## 4.54.23 (2022-04-11)
 
 **Note:** Version bump only for package @patternfly/react-tokens
