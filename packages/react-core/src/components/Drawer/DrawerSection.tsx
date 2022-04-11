@@ -12,7 +12,7 @@ export interface DrawerSectionProps extends React.HTMLProps<HTMLDivElement> {
   colorVariant?: DrawerColorVariant | 'light-200' | 'default';
 }
 
-export const DrawerSection: React.SFC<DrawerSectionProps> = ({
+export const DrawerSection: React.FunctionComponent<DrawerSectionProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children,

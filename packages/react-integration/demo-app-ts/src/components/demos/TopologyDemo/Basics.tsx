@@ -187,7 +187,7 @@ export const MultiEdge = withTopologySetup(() => {
   return null;
 });
 
-const groupStory = (groupType: string): React.FC => () => {
+const groupStory = (groupType: string): React.FunctionComponent => () => {
   useComponentFactory(defaultComponentFactory);
   useModel(
     React.useMemo(

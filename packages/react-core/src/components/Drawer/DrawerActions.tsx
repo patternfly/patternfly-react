@@ -9,7 +9,7 @@ export interface DrawerActionsProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
 }
 
-export const DrawerActions: React.SFC<DrawerActionsProps> = ({
+export const DrawerActions: React.FunctionComponent<DrawerActionsProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children,

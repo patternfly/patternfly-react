@@ -36,7 +36,7 @@ export interface WithSvgAnchorProps {
 export const withSvgAnchor = (end?: AnchorEnd, type?: string) => <P extends WithSvgAnchorProps>() => (
   WrappedComponent: React.ComponentType<P>
 ) => {
-  const Component: React.FC<Omit<P, keyof WithSvgAnchorProps>> = props => {
+  const Component: React.FunctionComponent<Omit<P, keyof WithSvgAnchorProps>> = props => {
     const svgAnchorRef = useSvgAnchor(end, type);
     return <WrappedComponent {...(props as any)} svgAnchorRef={svgAnchorRef} />;
   };

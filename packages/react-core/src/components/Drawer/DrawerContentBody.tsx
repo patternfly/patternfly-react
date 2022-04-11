@@ -11,7 +11,7 @@ export interface DrawerContentBodyProps extends React.HTMLProps<HTMLDivElement> 
   hasPadding?: boolean;
 }
 
-export const DrawerContentBody: React.SFC<DrawerContentBodyProps> = ({
+export const DrawerContentBody: React.FunctionComponent<DrawerContentBodyProps> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children,

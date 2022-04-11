@@ -11,7 +11,7 @@ interface ElementWrapperProps {
   element: GraphElement;
 }
 
-const NodeElementComponent: React.FC<{ element: Node }> = observer(({ element }) => {
+const NodeElementComponent: React.FunctionComponent<{ element: Node }> = observer(({ element }) => {
   const dndManager = useDndManager();
   const isDragging = dndManager.isDragging();
   const dragItem = dndManager.getItem();
@@ -24,7 +24,7 @@ const NodeElementComponent: React.FC<{ element: Node }> = observer(({ element })
 });
 
 // in a separate component so that changes to behaviors do not re-render children
-const ElementComponent: React.FC<ElementWrapperProps> = observer(({ element }) => {
+const ElementComponent: React.FunctionComponent<ElementWrapperProps> = observer(({ element }) => {
   const kind = element.getKind();
   const type = element.getType();
   const controller = element.getController();
@@ -38,7 +38,7 @@ const ElementComponent: React.FC<ElementWrapperProps> = observer(({ element }) =
   );
 });
 
-const ElementChildren: React.FC<ElementWrapperProps> = observer(({ element }) => (
+const ElementChildren: React.FunctionComponent<ElementWrapperProps> = observer(({ element }) => (
   <>
     {element
       .getChildren()
@@ -55,7 +55,7 @@ const ElementChildren: React.FC<ElementWrapperProps> = observer(({ element }) =>
   </>
 ));
 
-const ElementWrapper: React.FC<ElementWrapperProps> = observer(({ element }) => {
+const ElementWrapper: React.FunctionComponent<ElementWrapperProps> = observer(({ element }) => {
   if (!element.isVisible()) {
     if (!isNode(element) || element.isDimensionsInitialized()) {
       return null;

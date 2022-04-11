@@ -19,7 +19,7 @@ type DemoDefaultNodeProps = {
   element: Node;
   droppable?: boolean;
   canDrop?: boolean;
-  getCustomShape?: (node: Node) => React.FC<ShapeProps>;
+  getCustomShape?: (node: Node) => React.FunctionComponent<ShapeProps>;
 } & WithSelectionProps &
   WithDragNodeProps &
   WithDndDragProps &
@@ -27,7 +27,7 @@ type DemoDefaultNodeProps = {
   WithCreateConnectorProps &
   WithContextMenuProps;
 
-const DemoDefaultNode: React.FC<DemoDefaultNodeProps> = ({
+const DemoDefaultNode: React.FunctionComponent<DemoDefaultNodeProps> = ({
   element,
   selected,
   onSelect,

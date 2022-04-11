@@ -11,7 +11,12 @@ type ContextMenuProps = Pick<
   'container' | 'className' | 'open' | 'reference' | 'onRequestClose'
 >;
 
-const ContextMenu: React.FC<ContextMenuProps> = ({ children, open = true, onRequestClose, ...other }) => {
+const ContextMenu: React.FunctionComponent<ContextMenuProps> = ({
+  children,
+  open = true,
+  onRequestClose,
+  ...other
+}) => {
   const [isOpen, setOpen] = React.useState(!!open);
   React.useEffect(() => {
     setOpen(open);

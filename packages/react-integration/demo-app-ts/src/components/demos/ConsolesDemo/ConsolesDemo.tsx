@@ -3,7 +3,7 @@ import * as React from 'react';
 import { AccessConsoles, SerialConsole, DesktopViewer, VncConsole } from '@patternfly/react-console';
 import { debounce } from '@patternfly/react-core';
 
-export const ConsolesDemo: React.FC = () => {
+export const ConsolesDemo: React.FunctionComponent = () => {
   const [status, setStatus] = React.useState('disconnected');
   const setConnected = React.useRef(debounce(() => setStatus('connected'), 3000)).current;
   const ref = React.createRef<any>();
@@ -32,7 +32,7 @@ export const ConsolesDemo: React.FC = () => {
 };
 ConsolesDemo.displayName = 'ConsolesDemo';
 
-const SerialConsoleCustom: React.FC<{ type: string; typeText: string }> = () => {
+const SerialConsoleCustom: React.FunctionComponent<{ type: string; typeText: string }> = () => {
   const [status, setStatus] = React.useState('disconnected');
   const setConnected = React.useRef(debounce(() => setStatus('connected'), 3000)).current;
   const ref2 = React.createRef<any>();

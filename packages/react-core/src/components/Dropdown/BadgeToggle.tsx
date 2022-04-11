@@ -52,7 +52,7 @@ export const BadgeToggle: React.FunctionComponent<BadgeToggleProps> = ({
   bubbleEvent = false,
   onToggle = () => undefined as void,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  ref, // Types of Ref are different for React.FC vs React.Component
+  ref, // Types of Ref are different for React.FunctionComponent vs React.Component
   ...props
 }: BadgeToggleProps) => (
   <Toggle

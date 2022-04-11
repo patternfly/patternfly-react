@@ -49,7 +49,7 @@ export interface DropdownProps extends ToggleMenuBaseProps, React.HTMLProps<HTML
 export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   onSelect,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  ref, // Types of Ref are different for React.FC vs React.Component
+  ref, // Types of Ref are different for React.FunctionComponent vs React.Component
   ouiaId,
   ouiaSafe,
   alignments,

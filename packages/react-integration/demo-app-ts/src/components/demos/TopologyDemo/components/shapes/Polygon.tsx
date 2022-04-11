@@ -1,7 +1,7 @@
 import { PointTuple, ShapeProps, usePolygonAnchor } from '@patternfly/react-topology';
 import * as React from 'react';
 
-const Polygon: React.FC<ShapeProps> = ({ className, width, height, filter, dndDropRef }) => {
+const Polygon: React.FunctionComponent<ShapeProps> = ({ className, width, height, filter, dndDropRef }) => {
   const points: PointTuple[] = React.useMemo(
     () => [
       [width / 2, 0],

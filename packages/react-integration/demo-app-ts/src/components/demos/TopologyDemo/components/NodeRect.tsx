@@ -20,7 +20,7 @@ type NodeRectProps = {
   WithDndDragProps &
   WithDndDropProps;
 
-const NodeRect: React.FC<NodeRectProps> = ({
+const NodeRect: React.FunctionComponent<NodeRectProps> = ({
   element,
   selected,
   onSelect,

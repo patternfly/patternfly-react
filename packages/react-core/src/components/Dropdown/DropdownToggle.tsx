@@ -75,7 +75,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   ouiaId,
   ouiaSafe,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  ref, // Types of Ref are different for React.FC vs React.Component
+  ref, // Types of Ref are different for React.FunctionComponent vs React.Component
   ...props
 }: DropdownToggleProps) => {
   const ouiaProps = useOUIAProps(DropdownToggle.displayName, ouiaId, ouiaSafe);

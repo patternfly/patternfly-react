@@ -7,6 +7,6 @@ export interface CollapsibleGroupProps {
   collapsedWidth?: number;
   collapsedHeight?: number;
   onCollapseChange?: (group: Node, collapsed: boolean) => void;
-  getCollapsedShape?: (node: Node) => React.FC<ShapeProps>;
+  getCollapsedShape?: (node: Node) => React.FunctionComponent<ShapeProps>;
   collapsedShadowOffset?: number; // defaults to 10
 }

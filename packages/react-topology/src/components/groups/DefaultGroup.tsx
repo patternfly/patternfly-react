@@ -31,7 +31,12 @@ type DefaultGroupProps = {
   badgeLocation?: BadgeLocation;
 } & Partial<CollapsibleGroupProps & WithSelectionProps & WithDndDropProps & WithDragNodeProps & WithContextMenuProps>;
 
-const DefaultGroup: React.FC<DefaultGroupProps> = ({ className, element, onCollapseChange, ...rest }) => {
+const DefaultGroup: React.FunctionComponent<DefaultGroupProps> = ({
+  className,
+  element,
+  onCollapseChange,
+  ...rest
+}) => {
   const handleCollapse = (group: Node, collapsed: boolean): void => {
     if (collapsed && rest.collapsedWidth !== undefined && rest.collapsedHeight !== undefined) {
       group.setBounds(group.getBounds().setSize(rest.collapsedWidth, rest.collapsedHeight));

@@ -26,13 +26,13 @@ type StyleGroupProps = {
   collapsedWidth?: number;
   collapsedHeight?: number;
   onCollapseChange?: (group: Node, collapsed: boolean) => void;
-  getCollapsedShape?: (node: Node) => React.FC<ShapeProps>;
+  getCollapsedShape?: (node: Node) => React.FunctionComponent<ShapeProps>;
   collapsedShadowOffset?: number; // defaults to 10
 } & WithContextMenuProps &
   WithDragNodeProps &
   WithSelectionProps;
 
-const StyleGroup: React.FC<StyleGroupProps> = ({
+const StyleGroup: React.FunctionComponent<StyleGroupProps> = ({
   element,
   onContextMenu,
   contextMenuOpen,

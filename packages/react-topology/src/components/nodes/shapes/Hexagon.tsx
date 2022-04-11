@@ -6,7 +6,7 @@ type HexagonProps = ShapeProps & {
   cornerRadius?: number;
 };
 
-const Hexagon: React.FC<HexagonProps> = props => (
+const Hexagon: React.FunctionComponent<HexagonProps> = props => (
   <SidedShape cornerRadius={props.cornerRadius ?? HEXAGON_CORNER_RADIUS} {...props} sides={6} />
 );
 

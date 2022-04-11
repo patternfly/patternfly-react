@@ -14,7 +14,7 @@ interface ConnectorCircleProps {
   dragRef?: ConnectDragSource;
 }
 
-const ConnectorCircle: React.FC<ConnectorCircleProps> = ({
+const ConnectorCircle: React.FunctionComponent<ConnectorCircleProps> = ({
   startPoint,
   endPoint,
   className = '',

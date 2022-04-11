@@ -50,7 +50,7 @@ const twoNodeModel: Model = {
   ]
 };
 
-export const UncontrolledSelection: React.FC = withTopologySetup(() => {
+export const UncontrolledSelection: React.FunctionComponent = withTopologySetup(() => {
   useComponentFactory(
     React.useCallback<ComponentFactory>((kind, type) => {
       const widget = defaultComponentFactory(kind, type);
@@ -100,7 +100,7 @@ export const ControlledSelection = withTopologySetup(() => {
   return null;
 });
 
-export const MultiSelect: React.FC = withTopologySetup(() => {
+export const MultiSelect: React.FunctionComponent = withTopologySetup(() => {
   useModel(twoNodeModel);
   useComponentFactory(
     React.useCallback<ComponentFactory>((kind, type) => {
@@ -144,7 +144,7 @@ for (let i = 1; i <= 100; i++) {
   }
 }
 
-export const Performance: React.FC = withTopologySetup(() => {
+export const Performance: React.FunctionComponent = withTopologySetup(() => {
   useModel(perfModel);
   useComponentFactory(
     React.useCallback<ComponentFactory>((kind, type) => {
