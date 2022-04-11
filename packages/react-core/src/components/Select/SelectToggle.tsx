@@ -100,11 +100,14 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   }
 
   onDocClick = (event: Event) => {
-    const { parentRef, menuRef, isOpen, onToggle, onClose } = this.props;
+    const { parentRef, menuRef, footerRef, isOpen, onToggle, onClose } = this.props;
     const clickedOnToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
     const clickedWithinMenu =
       menuRef && menuRef.current && menuRef.current.contains && menuRef.current.contains(event.target as Node);
-    if (isOpen && !(clickedOnToggle || clickedWithinMenu)) {
+    const clickedWithinFooter =
+      footerRef && footerRef.current && footerRef.current.contains && footerRef.current.contains(event.target as Node);
+
+    if (isOpen && !(clickedOnToggle || clickedWithinMenu || clickedWithinFooter)) {
       onToggle(false, event);
       onClose();
     }
