@@ -278,7 +278,7 @@ test('should render box tabs of light variant', () => {
 
 test('should render tabs with no bottom border', () => {
   const view = render(
-    <Tabs id="noBottomBorderTabs" hasNoBorderBottom>
+    <Tabs id="noBottomBorderTabs" hasBorderBottom={false}>
       <Tab id="tab1" eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
         Tab 1 section
       </Tab>

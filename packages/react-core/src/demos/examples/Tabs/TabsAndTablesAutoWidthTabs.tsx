@@ -321,7 +321,7 @@ export const TablesAndTabs = () => {
         <Tabs
           activeKey={secondaryActiveTabKey}
           onSelect={(_event, tabIndex) => handleSecondaryTabClick(Number(tabIndex))}
-          hasNoBorderBottom
+          hasBorderBottom={false}
           inset={{ default: 'insetMd', md: 'insetSm' }}
           id="tabs-tables-secondary-tabs"
         >
