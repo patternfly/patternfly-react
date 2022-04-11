@@ -188,7 +188,6 @@ export const NestedTabs: React.FunctionComponent = () => {
         <PageSection type="tabs" isWidthLimited variant="light">
           <Tabs
             isBox
-            isSecondary
             activeKey={activeTabKey}
             onSelect={(_event, tabIndex) => handleTabClick(Number(tabIndex))}
             usePageInsets
