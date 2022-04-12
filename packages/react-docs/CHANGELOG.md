@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 5.63.28 (2022-04-12)
+
+
+### Bug Fixes
+
+* **demo-app:** reorder css imports to load in dark theme correctly ([#7224](https://github.com/patternfly/patternfly-react/issues/7224)) ([1341c93](https://github.com/patternfly/patternfly-react/commit/1341c9396a25f6850bf4e961e40c9ddd182d9d3b))
+
+
+
+
+
 ## 5.63.27 (2022-04-12)
 
 **Note:** Version bump only for package @patternfly/react-docs
