@@ -100,7 +100,6 @@ const DefaultGroupExpanded: React.FunctionComponent<DefaultGroupExpandedProps> =
 }) => {
   const [hovered, hoverRef] = useHover();
   const [labelHover, labelHoverRef] = useHover();
-  const [locations, setLocations] = React.useState<{ labelLocation: PointWithSize; path: string }>();
   const dragLabelRef = useDragNode()[1];
   const refs = useCombineRefs<SVGPathElement>(hoverRef, dragNodeRef);
   const isHover = hover !== undefined ? hover : hovered;
@@ -121,6 +120,9 @@ const DefaultGroupExpanded: React.FunctionComponent<DefaultGroupExpandedProps> =
   const hullPadding = React.useCallback((point: PointWithSize | PointTuple) => (point[2] || 0) + padding, [padding]);
 
   const points: (PointWithSize | PointTuple)[] = React.useMemo(() => {
+    if (prevPoints.current && droppable) {
+      return prevPoints.current;
+    }
     const newPoints: (PointWithSize | PointTuple)[] = [];
     _.forEach(children, c => {
       if (c.getNodeShape() === NodeShape.ellipse || c.getNodeShape() === NodeShape.circle) {
@@ -143,25 +145,23 @@ const DefaultGroupExpanded: React.FunctionComponent<DefaultGroupExpandedProps> =
       return newPoints;
     }
     return prevPoints.current;
-  }, [children]);
+  }, [children, droppable]);
 
-  React.useEffect(() => {
+  const locations: { labelLocation: PointWithSize; path: string } | undefined = React.useMemo(() => {
     const hullPoints: (PointWithSize | PointTuple)[] =
       points.length > 2 ? polygonHull(points as PointTuple[]) : (points as PointTuple[]);
     if (!hullPoints) {
-      return;
+      return undefined;
     }
 
     // change the box only when not dragging
-    setLocations(prev => ({
+    return {
       labelLocation: computeLabelLocation(hullPoints as PointWithSize[]),
-      path: droppable ? prev.path : hullPath(hullPoints as PointTuple[], hullPadding)
-    }));
-    // Don't update when droppable changes
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+      path: hullPath(hullPoints as PointTuple[], hullPadding)
+    };
   }, [points, hullPadding]);
 
-  if (!children.length || !locations?.path) {
+  if (!children.length || !locations) {
     return null;
   }
 

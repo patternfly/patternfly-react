@@ -92,6 +92,7 @@ const DefaultGroupCollapsed: React.FunctionComponent<DefaultGroupCollapsedProps>
     styles.topologyGroup,
     className,
     canDrop && 'pf-m-highlight',
+    canDrop && dropTarget && 'pf-m-drop-target',
     dragging && 'pf-m-dragging',
     selected && 'pf-m-selected'
   );
