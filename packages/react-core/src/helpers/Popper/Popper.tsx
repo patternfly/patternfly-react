@@ -149,13 +149,11 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   const [popperElement, setPopperElement] = React.useState(null);
   const [ready, setReady] = React.useState(false);
   const refOrTrigger = refElement || triggerElement;
-  const onDocumentClickCallback = React.useCallback(event => onDocumentClick(event, refOrTrigger, popperElement), [
-    isVisible,
-    triggerElement,
-    refElement,
-    popperElement,
-    onDocumentClick
-  ]);
+  const onDocumentClickCallback = React.useCallback(
+    (event: MouseEvent) => onDocumentClick(event, refOrTrigger, popperElement),
+    [isVisible, triggerElement, refElement, popperElement, onDocumentClick]
+  );
+
   React.useEffect(() => {
     setReady(true);
   }, []);
