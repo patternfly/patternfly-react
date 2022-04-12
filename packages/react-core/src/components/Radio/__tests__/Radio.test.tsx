@@ -66,7 +66,7 @@ describe('Radio', () => {
     render(<Radio id="check" {...props} aria-label="check" name="check" />);
 
     userEvent.click(screen.getByRole('radio'));
-    expect(props.onChange).toHaveBeenCalled();
+    expect(props.onChange).toHaveBeenCalledWith(true, expect.any(Object));
   });
 
   test('Radio description', () => {

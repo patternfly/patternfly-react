@@ -14,7 +14,11 @@ const props = {
 describe('Switch', () => {
   test('switch label for attribute equals input id attribute', () => {
     render(<Switch id="foo" aria-label="Switch label" />);
-    expect(screen.getByLabelText('Switch label')).toHaveAttribute('id', 'foo');
+
+    const switchElement = screen.getByLabelText('Switch label');
+
+    expect(switchElement).toHaveAttribute('id', 'foo');
+    expect(switchElement.parentElement).toHaveAttribute('for', 'foo');
   });
 
   test('switch label id is auto generated', () => {

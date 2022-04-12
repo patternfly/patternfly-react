@@ -78,7 +78,6 @@ describe('Pagination', () => {
         <Pagination
           itemCount={40}
           toggleTemplate={'${firstIndex} - ${lastIndex} - ${itemCount} - ${itemsTitle}'}
-          data-testid="test-id"
         />
       );
       expect(asFragment()).toMatchSnapshot();
