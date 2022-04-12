@@ -14,7 +14,9 @@ import {
   TabTitleText,
   Title,
   Flex,
-  FlexItem
+  FlexItem,
+  Text,
+  TextContent
 } from '@patternfly/react-core';
 import DashboardWrapper from '../DashboardWrapper';
 
@@ -126,11 +128,12 @@ export const NestedTabs: React.FunctionComponent = () => {
   );
 
   return (
-    <DashboardWrapper hasNoBreadcrumb>
+    <DashboardWrapper>
       <PageSection isWidthLimited variant={PageSectionVariants.light}>
-        <Title headingLevel="h1" size="2xl">
-          Overview
-        </Title>
+        <TextContent>
+          <Text component="h1">Main title</Text>
+          <Text component="p">This is a full page demo.</Text>
+        </TextContent>
       </PageSection>
       <PageSection type="tabs" isWidthLimited>
         <Tabs
