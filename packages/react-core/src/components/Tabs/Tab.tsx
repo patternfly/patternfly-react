@@ -92,6 +92,8 @@ const TabBase: React.FunctionComponent<TabProps> = ({
       tabContentRef={tabContentRef}
       ouiaId={childOuiaId}
       href={href}
+      role="tab"
+      aria-selected={eventKey === localActiveKey}
       {...props}
     >
       {title}
@@ -99,7 +101,10 @@ const TabBase: React.FunctionComponent<TabProps> = ({
   );
 
   return (
-    <li className={css(styles.tabsItem, eventKey === localActiveKey && styles.modifiers.current, childClassName)}>
+    <li
+      className={css(styles.tabsItem, eventKey === localActiveKey && styles.modifiers.current, childClassName)}
+      role="presentation"
+    >
       {tooltip ? <Tooltip {...tooltip.props}>{tabButton}</Tooltip> : tabButton}
     </li>
   );

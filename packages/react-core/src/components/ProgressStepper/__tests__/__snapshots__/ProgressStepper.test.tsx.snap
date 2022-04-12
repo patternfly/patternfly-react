@@ -28,6 +28,7 @@ exports[`ProgressStep renders content 1`] = `
 exports[`ProgressStep renders current 1`] = `
 <div>
   <li
+    aria-current="step"
     class="pf-c-progress-stepper__step pf-m-current"
   >
     <div
