@@ -151,13 +151,13 @@ export const NestedTabs: React.FunctionComponent = () => {
   );
 
   return (
-    <DashboardWrapper>
-      <PageSection variant="light">
+    <DashboardWrapper hasPageTemplateTitle>
+      {/* <PageSection variant="light">
         <TextContent>
           <Text component="h1">Main title</Text>
           <Text component="p">This is a full page demo.</Text>
         </TextContent>
-      </PageSection>
+      </PageSection> */}
       <PageSection type="tabs" isWidthLimited variant="light">
         <Tabs
           isBox

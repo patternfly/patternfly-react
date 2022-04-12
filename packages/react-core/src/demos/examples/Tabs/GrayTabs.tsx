@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   PageSection,
-  PageSectionVariants,
   Tabs,
   Tab,
   TabContent,
@@ -126,12 +125,7 @@ export const GrayTabsDemo: React.FunctionComponent = () => {
   );
 
   return (
-    <DashboardWrapper hasNoBreadcrumb>
-      <PageSection isWidthLimited variant={PageSectionVariants.light}>
-        <Title headingLevel="h1" size="2xl">
-          Overview
-        </Title>
-      </PageSection>
+    <DashboardWrapper hasPageTemplateTitle>
       <PageSection type="tabs" isWidthLimited>
         <Tabs
           activeKey={activeTabKey}
