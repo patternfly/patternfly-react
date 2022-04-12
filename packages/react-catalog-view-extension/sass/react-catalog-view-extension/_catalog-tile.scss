@@ -1,6 +1,6 @@
 .catalog-tile-pf {
   &.featured {
-    border-top: 2px solid $pf-color-blue-300;
+    border-top: 2px solid var(--pf-global--active-color--100);
   }
 
   &:active,
@@ -27,17 +27,12 @@
   }
 
   .catalog-tile-pf-subtitle {
-    color: $pf-color-black-500;
+    color: var(--pf-global--Color--200);
     font-size: 13px;
     font-weight: initial;
 
-    a {
-      color: $pf-color-blue-300;
-      text-decoration: none;
-    }
-
+    a,
     a:hover {
-      color: $pf-color-blue-200;
       text-decoration: none;
     }
   }
