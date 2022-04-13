@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Nested flex 1`] = `
-<div>
+exports[`Flex Nested flex 1`] = `
+<DocumentFragment>
   <div
     class="pf-l-flex"
   >
@@ -15,11 +15,11 @@ exports[`Nested flex 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`Simple flex with single item 1`] = `
-<div>
+exports[`Flex Simple flex with single item 1`] = `
+<DocumentFragment>
   <div
     class="pf-l-flex"
   >
@@ -29,11 +29,11 @@ exports[`Simple flex with single item 1`] = `
       Test
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`alternative component 1`] = `
-<div>
+exports[`Flex alternative component 1`] = `
+<DocumentFragment>
   <ul
     class="pf-l-flex"
   >
@@ -43,13 +43,5 @@ exports[`alternative component 1`] = `
       Test
     </li>
   </ul>
-</div>
-`;
-
-exports[`className is added to the root element 1`] = `
-<div>
-  <div
-    class="pf-l-flex extra-class"
-  />
-</div>
+</DocumentFragment>
 `;

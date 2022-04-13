@@ -1,201 +1,207 @@
-import * as React from 'react';
-import { render } from '@testing-library/react';
-import { shallow, mount } from 'enzyme';
+import React from 'react';
+
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+
 import { Wizard, WizardStepFunctionType, WizardStep } from '../Wizard';
 
-test('Wizard should match snapshot', () => {
-  const steps: WizardStep[] = [
-    { name: 'A', component: <p>Step 1</p> },
-    {
-      name: 'B',
-      steps: [
-        {
-          name: 'B-1',
-          component: <p>Step 2</p>,
-          enableNext: true
-        },
-        {
-          name: 'B-2',
-          component: <p>Step 3</p>,
-          enableNext: false
-        }
-      ]
-    },
-    { name: 'C', component: <p>Step 4</p> },
-    { name: 'D', component: <p>Step 5</p> }
-  ];
-  const onBack: WizardStepFunctionType = step => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const name = { step };
-  };
+describe('Wizard', () => {
+  test('Wizard should match snapshot', () => {
+    const steps: WizardStep[] = [
+      { name: 'A', component: <p>Step 1</p> },
+      {
+        name: 'B',
+        steps: [
+          {
+            name: 'B-1',
+            component: <p>Step 2</p>,
+            enableNext: true
+          },
+          {
+            name: 'B-2',
+            component: <p>Step 3</p>,
+            enableNext: false
+          }
+        ]
+      },
+      { name: 'C', component: <p>Step 4</p> },
+      { name: 'D', component: <p>Step 5</p> }
+    ];
+    const onBack: WizardStepFunctionType = step => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const name = { step };
+    };
 
-  const view = render(
-    <Wizard title="Wizard title" description="Description here" steps={steps} startAtStep={1} onBack={onBack} />
-  );
+    const { asFragment } = render(
+      <Wizard title="Wizard title" description="Description here" steps={steps} startAtStep={1} onBack={onBack} />
+    );
 
-  expect(view.container).toMatchSnapshot();
-});
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-test('Expandable Nav Wizard should match snapshot', () => {
-  const steps: WizardStep[] = [
-    { name: 'A', component: <p>Step 1</p> },
-    {
-      name: 'B',
-      steps: [
-        {
-          name: 'B-1',
-          component: <p>Step 2</p>,
-          enableNext: true
-        },
-        {
-          name: 'B-2',
-          component: <p>Step 3</p>,
-          enableNext: false
-        }
-      ]
-    },
-    { name: 'C', component: <p>Step 4</p> },
-    { name: 'D', component: <p>Step 5</p> }
-  ];
-  const onBack: WizardStepFunctionType = step => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const name = { step };
-  };
+  test('Expandable Nav Wizard should match snapshot', () => {
+    const steps: WizardStep[] = [
+      { name: 'A', component: <p>Step 1</p> },
+      {
+        name: 'B',
+        steps: [
+          {
+            name: 'B-1',
+            component: <p>Step 2</p>,
+            enableNext: true
+          },
+          {
+            name: 'B-2',
+            component: <p>Step 3</p>,
+            enableNext: false
+          }
+        ]
+      },
+      { name: 'C', component: <p>Step 4</p> },
+      { name: 'D', component: <p>Step 5</p> }
+    ];
+    const onBack: WizardStepFunctionType = step => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const name = { step };
+    };
 
-  const view = render(
-    <Wizard title="Wizard title" description="Description here" steps={steps} startAtStep={1} onBack={onBack} isNavExpandable />
-  );
+    const { asFragment } = render(
+      <Wizard
+        title="Wizard title"
+        description="Description here"
+        steps={steps}
+        startAtStep={1}
+        onBack={onBack}
+        isNavExpandable
+      />
+    );
 
-  expect(view.container).toMatchSnapshot();
-});
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-test('bare wiz ', () => {
-  const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
-  const wiz = (
-    <Wizard
-      description="This wizard uses anchor tags for the nav item elements"
-      id="inPageWizWithAnchorsId"
-      steps={steps}
-    />
-  );
-  const view = mount(wiz);
-  const hasHeader = view.at(0).find('.pf-c-wizard__header').length;
-  const hasTitle = view.at(0).find('.pf-c-wizard__title').length;
-  expect(hasHeader).toBeFalsy();
-  expect(hasTitle).toBeFalsy();
-});
+  test('bare wiz', () => {
+    const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
 
-test('wiz with title ', () => {
-  const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
-  const wiz = <Wizard title="Wizard" description="This wizard has a title" steps={steps} />;
-  const view = mount(wiz).at(0);
-  const hasHeader = view.find('.pf-c-wizard__header').length;
-  const hasTitle = view.find('h2.pf-c-wizard__title').length;
-  const nav = view.find('nav.pf-c-wizard__nav');
-  const main = view.find('div.pf-c-wizard__main');
-  expect(hasHeader).toBe(1);
-  expect(hasTitle).toBe(1);
-  expect(nav.find('[aria-labelledby="pf-wizard-title-3"]').length).toBe(1);
-  expect(main.find('[aria-labelledby="pf-wizard-title-3"]').length).toBe(1);
-});
+    const { asFragment } = render(
+      <Wizard
+        description="This wizard uses anchor tags for the nav item elements"
+        id="inPageWizWithAnchorsId"
+        steps={steps}
+      />
+    );
 
-test('wiz with title and navAriaLabel combination', () => {
-  const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
-  const wiz = <Wizard title="Wizard" navAriaLabel="Some label" description="This wizard has a title" steps={steps} />;
-  const view = mount(wiz).at(0);
-  const nav = view.find('nav.pf-c-wizard__nav');
-  const main = view.find('div.pf-c-wizard__main');
-  expect(nav.find('[aria-labelledby="pf-wizard-title-4"]').length).toBe(1);
-  expect(nav.find('[aria-label="Some label"]').length).toBe(1);
-  expect(main.props()['aria-label']).toBe(null);
-});
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-test('wiz with title, navAriaLabel, and mainAriaLabel combination', () => {
-  const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
-  const wiz = (
-    <Wizard
-      title="Wizard"
-      navAriaLabel="nav aria-label"
-      mainAriaLabel="main aria-label"
-      description="This wizard has a title"
-      steps={steps} />
-  );
-  const view = mount(wiz).at(0);
-  const nav = view.find('nav.pf-c-wizard__nav');
-  const main = view.find('div.pf-c-wizard__main');
-  expect(nav.find('[aria-labelledby="pf-wizard-title-5"]').length).toBe(1);
-  expect(nav.find('[aria-label="nav aria-label"]').length).toBe(1);
-  expect(main.props()['aria-label']).toBe('main aria-label');
-});
+  test('wiz with title', () => {
+    const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
 
-test('wiz with navAriaLabel and mainAriaLabel but without title', () => {
-  const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
-  const wiz = (
-    <Wizard
-      navAriaLabel="nav aria-label"
-      mainAriaLabel="main aria-label"
-      description="This wizard has a title"
-      steps={steps} />
-  );
-  const view = mount(wiz).at(0);
-  const nav = view.find('nav.pf-c-wizard__nav');
-  const main = view.find('div.pf-c-wizard__main');
-  expect(main.props()['aria-label']).toBe('main aria-label');
-  expect(main.props()['aria-labelledby']).toBe(null);
-  expect(nav.find('[aria-label="nav aria-label"]').length).toBe(1);
-  expect(nav.props()['aria-labelledby']).toBe(null);
-});
+    render(<Wizard title="Wizard" description="This wizard has a title" steps={steps} data-testid="wizard-test-id" />);
+    expect(screen.getByRole('heading', { name: 'Wizard' })).toBeInTheDocument();
+  });
 
-test('wiz with navAriaLabel and navAriaLabelledby and without title', () => {
-  const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
-  const wiz = (
-    <Wizard
-      navAriaLabelledBy="nav-aria-labelledby"
-      navAriaLabel="nav aria-label"
-      mainAriaLabel="main aria-label"
-      description="This wizard has a title"
-      steps={steps} />
-  );
-  const view = mount(wiz).at(0);
-  const nav = view.find('nav.pf-c-wizard__nav');
-  const main = view.find('div.pf-c-wizard__main');
-  expect(nav.find('[aria-label="nav aria-label"]').length).toBe(1);
-  expect(nav.props()['aria-labelledby']).toBe('nav-aria-labelledby');
-});
+  test('wiz with title and navAriaLabel combination', () => {
+    const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
 
-test('wiz with navAriaLabel and navAriaLabelledby and without title', () => {
-  const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
-  const wiz = (
-    <Wizard
-      navAriaLabel="nav aria-label"
-      mainAriaLabel="main aria-label"
-      mainAriaLabelledBy="main-aria-labelledby"
-      description="This wizard has a title"
-      steps={steps} />
-  );
-  const view = mount(wiz).at(0);
-  const main = view.find('div.pf-c-wizard__main');
-  expect(main.props()['aria-label']).toBe('main aria-label');
-  expect(main.props()['aria-labelledby']).toBe('main-aria-labelledby');
-});
+    render(<Wizard title="Wizard" navAriaLabel="Some label" description="This wizard has a title" steps={steps} />);
 
-test('wiz with title, navAriaLabelledBy, navAriaLabel, mainAriaLabel, and mainAriaLabelledby', () => {
-  const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
-  const wiz = (
-    <Wizard
-      title="Wiz title"
-      navAriaLabel="nav aria-label"
-      navAriaLabelledBy="nav-aria-labelledby"
-      mainAriaLabel="main aria-label"
-      mainAriaLabelledBy="main-aria-labelledby"
-      description="This wizard has a title"
-      steps={steps} />
-  );
-  const view = mount(wiz).at(0);
-  const nav = view.find('nav.pf-c-wizard__nav');
-  const main = view.find('div.pf-c-wizard__main');
-  expect(nav.find('[aria-label="nav aria-label"]').length).toBe(1);
-  expect(nav.find('[aria-labelledby="nav-aria-labelledby"]').length).toBe(1);
-  expect(main.props()['aria-label']).toBe('main aria-label');
-  expect(main.props()['aria-labelledby']).toBe('main-aria-labelledby');
+    const nav = screen.getByLabelText('Some label');
+
+    expect(screen.getByRole('heading', { name: 'Wizard' })).toBeInTheDocument();
+    expect(nav).toBeInTheDocument();
+    expect(nav).toHaveAttribute('aria-labelledby', 'pf-wizard-title-4');
+  });
+
+  test('wiz with title, navAriaLabel, and mainAriaLabel combination', () => {
+    const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
+    render(
+      <Wizard
+        title="Wizard"
+        navAriaLabel="nav aria-label"
+        mainAriaLabel="main aria-label"
+        description="This wizard has a title"
+        steps={steps}
+      />
+    );
+
+    expect(screen.getByRole('heading', { name: 'Wizard' })).toBeInTheDocument();
+    expect(screen.getByLabelText('nav aria-label')).toBeInTheDocument();
+    expect(screen.getByLabelText('main aria-label')).toBeInTheDocument();
+  });
+
+  test('wiz with navAriaLabel and mainAriaLabel but without title', () => {
+    const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
+
+    render(
+      <Wizard
+        navAriaLabel="nav aria-label"
+        mainAriaLabel="main aria-label"
+        description="This wizard has a title"
+        steps={steps}
+      />
+    );
+
+    expect(screen.getByLabelText('nav aria-label')).toBeInTheDocument();
+    expect(screen.getByLabelText('main aria-label')).toBeInTheDocument();
+  });
+
+  test('wiz with navAriaLabel and navAriaLabelledby and without title', () => {
+    const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
+
+    render(
+      <Wizard
+        navAriaLabelledBy="nav-aria-labelledby"
+        navAriaLabel="nav aria-label"
+        mainAriaLabel="main aria-label"
+        description="This wizard has a title"
+        steps={steps}
+      />
+    );
+
+    const nav = screen.getByLabelText('nav aria-label');
+
+    expect(nav).toBeInTheDocument();
+    expect(nav).toHaveAttribute('aria-labelledby', 'nav-aria-labelledby');
+  });
+
+  test('wiz with navAriaLabel and navAriaLabelledby and without title', () => {
+    const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
+    render(
+      <Wizard
+        navAriaLabel="nav aria-label"
+        mainAriaLabel="main aria-label"
+        mainAriaLabelledBy="main-aria-labelledby"
+        description="This wizard has a title"
+        steps={steps}
+      />
+    );
+
+    const main = screen.getByLabelText('main aria-label');
+
+    expect(main).toBeInTheDocument();
+    expect(main).toHaveAttribute('aria-labelledby', 'main-aria-labelledby');
+  });
+
+  test('wiz with title, navAriaLabelledBy, navAriaLabel, mainAriaLabel, and mainAriaLabelledby', () => {
+    const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
+    render(
+      <Wizard
+        title="Wiz title"
+        navAriaLabel="nav aria-label"
+        navAriaLabelledBy="nav-aria-labelledby"
+        mainAriaLabel="main aria-label"
+        mainAriaLabelledBy="main-aria-labelledby"
+        description="This wizard has a title"
+        steps={steps}
+      />
+    );
+
+    const nav = screen.getByLabelText('nav aria-label');
+    expect(nav).toBeInTheDocument();
+    expect(nav).toHaveAttribute('aria-labelledby', 'nav-aria-labelledby');
+
+    const main = screen.getByLabelText('main aria-label');
+    expect(main).toBeInTheDocument();
+    expect(main).toHaveAttribute('aria-labelledby', 'main-aria-labelledby');
+  });
 });

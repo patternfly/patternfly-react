@@ -1,19 +1,547 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`checkbox select renders checkbox select groups successfully 1`] = `
-<div>
+exports[`Select renders select groups successfully 1`] = `
+<DocumentFragment>
   <div
     class="pf-c-select pf-m-expanded"
-    data-ouia-component-id="OUIA-Generated-Select-checkbox-8"
+    data-ouia-component-id="test-id"
+    data-ouia-component-type="PF4/Select"
+    data-ouia-safe="true"
+  >
+    <button
+      aria-expanded="true"
+      aria-haspopup="listbox"
+      aria-label="Options menu"
+      aria-labelledby=" pf-select-toggle-id-2"
+      class="pf-c-select__toggle"
+      id="pf-select-toggle-id-2"
+      type="button"
+    >
+      <div
+        class="pf-c-select__toggle-wrapper"
+      >
+        <span
+          class="pf-c-select__toggle-text"
+        />
+      </div>
+      <span
+        class="pf-c-select__toggle-arrow"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style="vertical-align: -0.125em;"
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+          />
+        </svg>
+      </span>
+    </button>
+    <div
+      class="pf-c-select__menu"
+    >
+      <div
+        class="pf-c-select__menu-group"
+      >
+        <div
+          aria-hidden="true"
+          class="pf-c-select__menu-group-title"
+          id="group-1"
+        >
+          group 1
+        </div>
+        <ul
+          role="listbox"
+        >
+          <li
+            class="pf-c-select__menu-wrapper"
+            id="option-1"
+            role="presentation"
+          >
+            <button
+              class="pf-c-select__menu-item"
+              role="option"
+              type="button"
+            >
+              Mr
+            </button>
+          </li>
+          <li
+            class="pf-c-select__menu-wrapper"
+            id="option-2"
+            role="presentation"
+          >
+            <button
+              class="pf-c-select__menu-item"
+              role="option"
+              type="button"
+            >
+              Mrs
+            </button>
+          </li>
+          <li
+            class="pf-c-select__menu-wrapper"
+            id="option-3"
+            role="presentation"
+          >
+            <button
+              class="pf-c-select__menu-item"
+              role="option"
+              type="button"
+            >
+              Ms
+            </button>
+          </li>
+          <li
+            class="pf-c-select__menu-wrapper"
+            id="option-4"
+            role="presentation"
+          >
+            <button
+              class="pf-c-select__menu-item"
+              role="option"
+              type="button"
+            >
+              Other
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="pf-c-select__menu-group"
+      >
+        <div
+          aria-hidden="true"
+          class="pf-c-select__menu-group-title"
+          id="group-2"
+        >
+          group 2
+        </div>
+        <ul
+          role="listbox"
+        >
+          <li
+            class="pf-c-select__menu-wrapper"
+            id="option-1"
+            role="presentation"
+          >
+            <button
+              class="pf-c-select__menu-item"
+              role="option"
+              type="button"
+            >
+              Mr
+            </button>
+          </li>
+          <li
+            class="pf-c-select__menu-wrapper"
+            id="option-2"
+            role="presentation"
+          >
+            <button
+              class="pf-c-select__menu-item"
+              role="option"
+              type="button"
+            >
+              Mrs
+            </button>
+          </li>
+          <li
+            class="pf-c-select__menu-wrapper"
+            id="option-3"
+            role="presentation"
+          >
+            <button
+              class="pf-c-select__menu-item"
+              role="option"
+              type="button"
+            >
+              Ms
+            </button>
+          </li>
+          <li
+            class="pf-c-select__menu-wrapper"
+            id="option-4"
+            role="presentation"
+          >
+            <button
+              class="pf-c-select__menu-item"
+              role="option"
+              type="button"
+            >
+              Other
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Select renders up direction successfully 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-select pf-m-top"
+    data-ouia-component-id="test-id"
+    data-ouia-component-type="PF4/Select"
+    data-ouia-safe="true"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Options menu"
+      aria-labelledby=" select-up"
+      class="pf-c-select__toggle"
+      id="select-up"
+      type="button"
+    >
+      <div
+        class="pf-c-select__toggle-wrapper"
+      >
+        <span
+          class="pf-c-select__toggle-text"
+        >
+          Mr
+        </span>
+      </div>
+      <span
+        class="pf-c-select__toggle-arrow"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style="vertical-align: -0.125em;"
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Select single select renders closed successfully 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-select"
+    data-ouia-component-id="test-id"
+    data-ouia-component-type="PF4/Select"
+    data-ouia-safe="true"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Options menu"
+      aria-labelledby=" single-select-closed"
+      class="pf-c-select__toggle"
+      id="single-select-closed"
+      type="button"
+    >
+      <div
+        class="pf-c-select__toggle-wrapper"
+      >
+        <span
+          class="pf-c-select__toggle-text"
+        >
+          Mr
+        </span>
+      </div>
+      <span
+        class="pf-c-select__toggle-arrow"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style="vertical-align: -0.125em;"
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Select single select renders disabled successfully 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-select"
+    data-ouia-component-id="test-id"
+    data-ouia-component-type="PF4/Select"
+    data-ouia-safe="true"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Options menu"
+      aria-labelledby=" single-select-disabled"
+      class="pf-c-select__toggle pf-m-disabled"
+      disabled=""
+      id="single-select-disabled"
+      type="button"
+    >
+      <div
+        class="pf-c-select__toggle-wrapper"
+      >
+        <span
+          class="pf-c-select__toggle-text"
+        >
+          Mr
+        </span>
+      </div>
+      <span
+        class="pf-c-select__toggle-arrow"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style="vertical-align: -0.125em;"
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Select single select renders expanded successfully 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-select pf-m-expanded"
+    data-ouia-component-id="test-id"
+    data-ouia-component-type="PF4/Select"
+    data-ouia-safe="true"
+  >
+    <button
+      aria-expanded="true"
+      aria-haspopup="listbox"
+      aria-label="Options menu"
+      aria-labelledby=" pf-select-toggle-id-0"
+      class="pf-c-select__toggle"
+      id="pf-select-toggle-id-0"
+      type="button"
+    >
+      <div
+        class="pf-c-select__toggle-wrapper"
+      >
+        <span
+          class="pf-c-select__toggle-text"
+        >
+          Mr
+        </span>
+      </div>
+      <span
+        class="pf-c-select__toggle-arrow"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style="vertical-align: -0.125em;"
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+          />
+        </svg>
+      </span>
+    </button>
+    <ul
+      aria-label=""
+      class="pf-c-select__menu"
+      role="listbox"
+    >
+      <li
+        class="pf-c-select__menu-wrapper"
+        id="option-1"
+        role="presentation"
+      >
+        <button
+          class="pf-c-select__menu-item"
+          role="option"
+          type="button"
+        >
+          Mr
+        </button>
+      </li>
+      <li
+        class="pf-c-select__menu-wrapper"
+        id="option-2"
+        role="presentation"
+      >
+        <button
+          class="pf-c-select__menu-item"
+          role="option"
+          type="button"
+        >
+          Mrs
+        </button>
+      </li>
+      <li
+        class="pf-c-select__menu-wrapper"
+        id="option-3"
+        role="presentation"
+      >
+        <button
+          class="pf-c-select__menu-item"
+          role="option"
+          type="button"
+        >
+          Ms
+        </button>
+      </li>
+      <li
+        class="pf-c-select__menu-wrapper"
+        id="option-4"
+        role="presentation"
+      >
+        <button
+          class="pf-c-select__menu-item"
+          role="option"
+          type="button"
+        >
+          Other
+        </button>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Select single select renders expanded successfully with custom objects 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-select pf-m-expanded"
+    data-ouia-component-id="test-id"
+    data-ouia-component-type="PF4/Select"
+    data-ouia-safe="true"
+  >
+    <button
+      aria-expanded="true"
+      aria-haspopup="listbox"
+      aria-label="Options menu"
+      aria-labelledby=" pf-select-toggle-id-1"
+      class="pf-c-select__toggle"
+      id="pf-select-toggle-id-1"
+      type="button"
+    >
+      <div
+        class="pf-c-select__toggle-wrapper"
+      >
+        <span
+          class="pf-c-select__toggle-text"
+        >
+          Mr: User One
+        </span>
+      </div>
+      <span
+        class="pf-c-select__toggle-arrow"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style="vertical-align: -0.125em;"
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+          />
+        </svg>
+      </span>
+    </button>
+    <ul
+      aria-label=""
+      class="pf-c-select__menu"
+      role="listbox"
+    >
+      <li
+        class="pf-c-select__menu-wrapper"
+        id="option-1"
+        role="presentation"
+      >
+        <button
+          class="pf-c-select__menu-item"
+          role="option"
+          type="button"
+        >
+          Mr: User One
+        </button>
+      </li>
+      <li
+        class="pf-c-select__menu-wrapper"
+        id="option-2"
+        role="presentation"
+      >
+        <button
+          class="pf-c-select__menu-item"
+          role="option"
+          type="button"
+        >
+          Mrs: New User
+        </button>
+      </li>
+      <li
+        class="pf-c-select__menu-wrapper"
+        id="option-3"
+        role="presentation"
+      >
+        <button
+          class="pf-c-select__menu-item"
+          role="option"
+          type="button"
+        >
+          Ms: Test Three
+        </button>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`checkbox select renders checkbox select groups successfully 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-select pf-m-expanded"
+    data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
     <button
       aria-expanded="true"
       aria-label="Options menu"
-      aria-labelledby=" pf-select-toggle-id-7"
+      aria-labelledby=" pf-select-toggle-id-6"
       class="pf-c-select__toggle"
-      id="pf-select-toggle-id-7"
+      id="pf-select-toggle-id-6"
       type="button"
     >
       <div
@@ -63,7 +591,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <input
               class="pf-c-check__input"
-              id="pf-random-id-15-Mr"
+              id="pf-random-id-14-Mr"
               type="checkbox"
             />
             <span
@@ -77,7 +605,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <input
               class="pf-c-check__input"
-              id="pf-random-id-15-Mrs"
+              id="pf-random-id-14-Mrs"
               type="checkbox"
             />
             <span
@@ -91,7 +619,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <input
               class="pf-c-check__input"
-              id="pf-random-id-15-Ms"
+              id="pf-random-id-14-Ms"
               type="checkbox"
             />
             <span
@@ -105,7 +633,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <input
               class="pf-c-check__input"
-              id="pf-random-id-15-Other"
+              id="pf-random-id-14-Other"
               type="checkbox"
             />
             <span
@@ -135,7 +663,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <input
               class="pf-c-check__input"
-              id="pf-random-id-15-Mr"
+              id="pf-random-id-14-Mr"
               type="checkbox"
             />
             <span
@@ -149,7 +677,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <input
               class="pf-c-check__input"
-              id="pf-random-id-15-Mrs"
+              id="pf-random-id-14-Mrs"
               type="checkbox"
             />
             <span
@@ -163,7 +691,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <input
               class="pf-c-check__input"
-              id="pf-random-id-15-Ms"
+              id="pf-random-id-14-Ms"
               type="checkbox"
             />
             <span
@@ -177,7 +705,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <input
               class="pf-c-check__input"
-              id="pf-random-id-15-Other"
+              id="pf-random-id-14-Other"
               type="checkbox"
             />
             <span
@@ -190,14 +718,14 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`checkbox select renders checkbox select selections properly 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-select"
-    data-ouia-component-id="OUIA-Generated-Select-checkbox-2"
+    data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
@@ -244,14 +772,14 @@ exports[`checkbox select renders checkbox select selections properly 1`] = `
       </span>
     </button>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`checkbox select renders checkbox select selections properly when isCheckboxSelectionBadgeHidden is true 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-select"
-    data-ouia-component-id="OUIA-Generated-Select-checkbox-3"
+    data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
@@ -289,14 +817,14 @@ exports[`checkbox select renders checkbox select selections properly when isChec
       </span>
     </button>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`checkbox select renders closed successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-select"
-    data-ouia-component-id="OUIA-Generated-Select-checkbox-1"
+    data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
@@ -334,14 +862,14 @@ exports[`checkbox select renders closed successfully 1`] = `
       </span>
     </button>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`checkbox select renders expanded successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-select pf-m-expanded"
-    data-ouia-component-id="OUIA-Generated-Select-checkbox-4"
+    data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
@@ -441,23 +969,23 @@ exports[`checkbox select renders expanded successfully 1`] = `
       </label>
     </ul>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`checkbox select renders expanded successfully with custom objects 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-select pf-m-expanded"
-    data-ouia-component-id="OUIA-Generated-Select-checkbox-7"
+    data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
     <button
       aria-expanded="true"
       aria-label="Options menu"
-      aria-labelledby=" pf-select-toggle-id-6"
+      aria-labelledby=" pf-select-toggle-id-5"
       class="pf-c-select__toggle"
-      id="pf-select-toggle-id-6"
+      id="pf-select-toggle-id-5"
       type="button"
     >
       <div
@@ -495,7 +1023,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
       >
         <input
           class="pf-c-check__input"
-          id="pf-random-id-14-Mr: User One"
+          id="pf-random-id-13-Mr: User One"
           type="checkbox"
         />
         <span
@@ -509,7 +1037,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
       >
         <input
           class="pf-c-check__input"
-          id="pf-random-id-14-Mrs: New User"
+          id="pf-random-id-13-Mrs: New User"
           type="checkbox"
         />
         <span
@@ -523,7 +1051,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
       >
         <input
           class="pf-c-check__input"
-          id="pf-random-id-14-Ms: Test Three"
+          id="pf-random-id-13-Ms: Test Three"
           type="checkbox"
         />
         <span
@@ -534,14 +1062,14 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
       </label>
     </ul>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`checkbox select renders expanded with filtering successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-select pf-m-expanded"
-    data-ouia-component-id="OUIA-Generated-Select-checkbox-5"
+    data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
@@ -558,9 +1086,9 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
       <button
         aria-expanded="true"
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-5"
+        aria-labelledby=" checkbox-select-expanded-filtered"
         class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-        id="pf-select-toggle-id-5"
+        id="checkbox-select-expanded-filtered"
         type="button"
       >
         <svg
@@ -657,137 +1185,14 @@ exports[`checkbox select renders expanded with filtering successfully 1`] = `
       </fieldset>
     </div>
   </div>
-</div>
-`;
-
-exports[`checkbox select renders expanded with filtering successfully 2`] = `
-<div>
-  <div
-    class="pf-c-select pf-m-expanded"
-    data-ouia-component-id="OUIA-Generated-Select-checkbox-6"
-    data-ouia-component-type="PF4/Select"
-    data-ouia-safe="true"
-  >
-    <div
-      class="pf-c-select__toggle pf-m-typeahead"
-    >
-      <div
-        class="pf-c-select__toggle-wrapper"
-      >
-        <span
-          class="pf-c-select__toggle-text"
-        />
-      </div>
-      <button
-        aria-expanded="true"
-        aria-label="Options menu"
-        aria-labelledby=" checkbox-select-expanded-filtered"
-        class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-        id="checkbox-select-expanded-filtered"
-        type="button"
-      >
-        <svg
-          aria-hidden="true"
-          class="pf-c-select__toggle-arrow"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style="vertical-align: -0.125em;"
-          viewBox="0 0 320 512"
-          width="1em"
-        >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-          />
-        </svg>
-      </button>
-    </div>
-    <div
-      class="pf-c-select__menu"
-    >
-      <fieldset
-        aria-label=""
-        class="pf-c-form__fieldset"
-      >
-        <div
-          class="pf-c-select__menu-search"
-        >
-          <input
-            autocomplete="off"
-            class="pf-c-form-control pf-m-search"
-            type="search"
-          />
-        </div>
-        <hr
-          class="pf-c-divider"
-        />
-        <label
-          class="pf-c-check pf-c-select__menu-item"
-        >
-          <input
-            class="pf-c-check__input"
-            id="pf-random-id-13-Mr"
-            type="checkbox"
-          />
-          <span
-            class="pf-c-check__label"
-          >
-            Mr
-          </span>
-        </label>
-        <label
-          class="pf-c-check pf-c-select__menu-item"
-        >
-          <input
-            class="pf-c-check__input"
-            id="pf-random-id-13-Mrs"
-            type="checkbox"
-          />
-          <span
-            class="pf-c-check__label"
-          >
-            Mrs
-          </span>
-        </label>
-        <label
-          class="pf-c-check pf-c-select__menu-item"
-        >
-          <input
-            class="pf-c-check__input"
-            id="pf-random-id-13-Ms"
-            type="checkbox"
-          />
-          <span
-            class="pf-c-check__label"
-          >
-            Ms
-          </span>
-        </label>
-        <label
-          class="pf-c-check pf-c-select__menu-item"
-        >
-          <input
-            class="pf-c-check__input"
-            id="pf-random-id-13-Other"
-            type="checkbox"
-          />
-          <span
-            class="pf-c-check__label"
-          >
-            Other
-          </span>
-        </label>
-      </fieldset>
-    </div>
-  </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`renders select with favorites successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-select pf-m-expanded"
-    data-ouia-component-id="OUIA-Generated-Select-single-7"
+    data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
@@ -1140,1239 +1545,14 @@ exports[`renders select with favorites successfully 1`] = `
       </div>
     </div>
   </div>
-</div>
-`;
-
-exports[`select custom select filter filters properly 1`] = `
-<Select
-  aria-describedby=""
-  aria-invalid={false}
-  aria-label=""
-  aria-labelledby=""
-  chipGroupComponent={null}
-  className=""
-  clearSelectionsAriaLabel="Clear all"
-  createText="Create"
-  customBadgeText={null}
-  customContent={null}
-  direction="down"
-  favorites={Array []}
-  favoritesLabel="Favorites"
-  hasInlineFilter={false}
-  hasPlaceholderStyle={false}
-  inlineFilterPlaceholderText={null}
-  inputAutoComplete="off"
-  inputIdPrefix=""
-  isCreatable={false}
-  isCreateSelectOptionObject={false}
-  isDisabled={false}
-  isGrouped={false}
-  isInputFilterPersisted={false}
-  isInputValuePersisted={false}
-  isOpen={true}
-  isPlain={false}
-  menuAppendTo="inline"
-  noResultsFoundText="No results found"
-  onClear={[Function]}
-  onCreateOption={[Function]}
-  onFilter={[Function]}
-  onSelect={[MockFunction]}
-  onToggle={[MockFunction]}
-  onTypeaheadInputChanged={null}
-  ouiaSafe={true}
-  placeholderText=""
-  position="left"
-  removeSelectionAriaLabel="Remove"
-  selections={Array []}
-  shouldResetOnSelect={true}
-  toggleAriaLabel="Options menu"
-  toggleIcon={null}
-  toggleId="custom-select-filters"
-  typeAheadAriaLabel=""
-  validated="default"
-  variant="typeahead"
-  width=""
->
-  <GenerateId
-    prefix="pf-random-id-"
-  >
-    <div
-      className="pf-c-select pf-m-expanded"
-      data-ouia-component-id="OUIA-Generated-Select-typeahead-1"
-      data-ouia-component-type="PF4/Select"
-      data-ouia-safe={true}
-    >
-      <SelectToggle
-        aria-label="Options menu"
-        aria-labelledby=" custom-select-filters"
-        className=""
-        handleTypeaheadKeys={[Function]}
-        hasClearButton={false}
-        hasFooter={false}
-        hasPlaceholderStyle={false}
-        id="custom-select-filters"
-        isActive={false}
-        isDisabled={false}
-        isOpen={true}
-        isPlain={false}
-        menuRef={
-          Object {
-            "current": <ul
-              aria-label=""
-              class="pf-c-select__menu"
-              role="listbox"
-            >
-              <li
-                class="pf-c-select__menu-wrapper"
-                id="option-1"
-                role="presentation"
-              >
-                <button
-                  class="pf-c-select__menu-item"
-                  role="option"
-                  type="button"
-                >
-                  Mr
-                </button>
-              </li>
-              <li
-                class="pf-c-select__menu-wrapper"
-                id="option-2"
-                role="presentation"
-              >
-                <button
-                  class="pf-c-select__menu-item"
-                  role="option"
-                  type="button"
-                >
-                  Mrs
-                </button>
-              </li>
-              <li
-                class="pf-c-select__menu-wrapper"
-                id="option-4"
-                role="presentation"
-              >
-                <button
-                  class="pf-c-select__menu-item"
-                  role="option"
-                  type="button"
-                >
-                  Other
-                </button>
-              </li>
-            </ul>,
-          }
-        }
-        moveFocusToLastMenuItem={[Function]}
-        onClickTypeaheadToggleButton={[Function]}
-        onClose={[Function]}
-        onEnter={[Function]}
-        onToggle={[Function]}
-        parentRef={
-          Object {
-            "current": <div
-              class="pf-c-select pf-m-expanded"
-              data-ouia-component-id="OUIA-Generated-Select-typeahead-1"
-              data-ouia-component-type="PF4/Select"
-              data-ouia-safe="true"
-            >
-              <div
-                class="pf-c-select__toggle pf-m-typeahead"
-              >
-                <div
-                  class="pf-c-select__toggle-wrapper"
-                >
-                  <input
-                    aria-label=""
-                    autocomplete="off"
-                    class="pf-c-form-control pf-c-select__toggle-typeahead"
-                    id="custom-select-filters-select-typeahead"
-                    placeholder=""
-                    type="text"
-                    value="r"
-                  />
-                </div>
-                <button
-                  aria-expanded="true"
-                  aria-haspopup="listbox"
-                  aria-label="Options menu"
-                  aria-labelledby=" custom-select-filters"
-                  class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                  id="custom-select-filters"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-c-select__toggle-arrow"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 320 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <ul
-                aria-label=""
-                class="pf-c-select__menu"
-                role="listbox"
-              >
-                <li
-                  class="pf-c-select__menu-wrapper"
-                  id="option-1"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item"
-                    role="option"
-                    type="button"
-                  >
-                    Mr
-                  </button>
-                </li>
-                <li
-                  class="pf-c-select__menu-wrapper"
-                  id="option-2"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item"
-                    role="option"
-                    type="button"
-                  >
-                    Mrs
-                  </button>
-                </li>
-                <li
-                  class="pf-c-select__menu-wrapper"
-                  id="option-4"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item"
-                    role="option"
-                    type="button"
-                  >
-                    Other
-                  </button>
-                </li>
-              </ul>
-            </div>,
-          }
-        }
-        type="button"
-        variant="typeahead"
-      >
-        <div
-          className="pf-c-select__toggle pf-m-typeahead"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-        >
-          <div
-            className="pf-c-select__toggle-wrapper"
-          >
-            <input
-              aria-activedescendant={null}
-              aria-label=""
-              autoComplete="off"
-              className="pf-c-form-control pf-c-select__toggle-typeahead"
-              disabled={false}
-              id="custom-select-filters-select-typeahead"
-              onChange={[Function]}
-              onClick={[Function]}
-              placeholder=""
-              type="text"
-              value="r"
-            />
-          </div>
-          <button
-            aria-expanded={true}
-            aria-haspopup="listbox"
-            aria-label="Options menu"
-            aria-labelledby=" custom-select-filters"
-            className="pf-c-button pf-c-select__toggle-button pf-m-plain"
-            disabled={false}
-            id="custom-select-filters"
-            onClick={[Function]}
-            tabIndex={-1}
-            type="button"
-          >
-            <CaretDownIcon
-              className="pf-c-select__toggle-arrow"
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                className="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                />
-              </svg>
-            </CaretDownIcon>
-          </button>
-        </div>
-      </SelectToggle>
-      <ForwardRef
-        aria-label=""
-        aria-labelledby=""
-        footerRef={
-          Object {
-            "current": null,
-          }
-        }
-        isGrouped={false}
-        isLastOptionBeforeFooter={[Function]}
-        keyHandler={[Function]}
-        openedOnEnter={false}
-        position="left"
-        sendRef={[Function]}
-      >
-        <SelectMenu
-          aria-label=""
-          aria-labelledby=""
-          className=""
-          footerRef={
-            Object {
-              "current": null,
-            }
-          }
-          hasInlineFilter={false}
-          innerRef={
-            Object {
-              "current": <ul
-                aria-label=""
-                class="pf-c-select__menu"
-                role="listbox"
-              >
-                <li
-                  class="pf-c-select__menu-wrapper"
-                  id="option-1"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item"
-                    role="option"
-                    type="button"
-                  >
-                    Mr
-                  </button>
-                </li>
-                <li
-                  class="pf-c-select__menu-wrapper"
-                  id="option-2"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item"
-                    role="option"
-                    type="button"
-                  >
-                    Mrs
-                  </button>
-                </li>
-                <li
-                  class="pf-c-select__menu-wrapper"
-                  id="option-4"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item"
-                    role="option"
-                    type="button"
-                  >
-                    Other
-                  </button>
-                </li>
-              </ul>,
-            }
-          }
-          isCustomContent={false}
-          isExpanded={false}
-          isGrouped={false}
-          isLastOptionBeforeFooter={[Function]}
-          keyHandler={[Function]}
-          maxHeight=""
-          openedOnEnter={false}
-          position="left"
-          selected=""
-          sendRef={[Function]}
-        >
-          <ul
-            aria-label=""
-            aria-labelledby={null}
-            className="pf-c-select__menu"
-            role="listbox"
-          >
-            <SelectOption
-              className=""
-              component="button"
-              id="option-1"
-              index={0}
-              inputId="pf-random-id-5-0"
-              isChecked={false}
-              isDisabled={false}
-              isFavorite={null}
-              isFocused={false}
-              isLastOptionBeforeFooter={[Function]}
-              isLoad={false}
-              isLoading={false}
-              isNoResultsOption={false}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$00"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              setViewMoreNextIndex={[Function]}
-              value="Mr"
-            >
-              <li
-                className="pf-c-select__menu-wrapper"
-                id="option-1"
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  Mr
-                </button>
-              </li>
-            </SelectOption>
-            <SelectOption
-              className=""
-              component="button"
-              id="option-2"
-              index={1}
-              inputId="pf-random-id-5-1"
-              isChecked={false}
-              isDisabled={false}
-              isFavorite={null}
-              isFocused={false}
-              isLastOptionBeforeFooter={[Function]}
-              isLoad={false}
-              isLoading={false}
-              isNoResultsOption={false}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$01"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              setViewMoreNextIndex={[Function]}
-              value="Mrs"
-            >
-              <li
-                className="pf-c-select__menu-wrapper"
-                id="option-2"
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  Mrs
-                </button>
-              </li>
-            </SelectOption>
-            <SelectOption
-              className=""
-              component="button"
-              id="option-4"
-              index={2}
-              inputId="pf-random-id-5-2"
-              isChecked={false}
-              isDisabled={false}
-              isFavorite={null}
-              isFocused={false}
-              isLastOptionBeforeFooter={[Function]}
-              isLoad={false}
-              isLoading={false}
-              isNoResultsOption={false}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$03"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              setViewMoreNextIndex={[Function]}
-              value="Other"
-            >
-              <li
-                className="pf-c-select__menu-wrapper"
-                id="option-4"
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  Other
-                </button>
-              </li>
-            </SelectOption>
-          </ul>
-        </SelectMenu>
-      </ForwardRef>
-    </div>
-  </GenerateId>
-</Select>
-`;
-
-exports[`select renders select groups successfully 1`] = `
-<div>
-  <div
-    class="pf-c-select pf-m-expanded"
-    data-ouia-component-id="OUIA-Generated-Select-single-6"
-    data-ouia-component-type="PF4/Select"
-    data-ouia-safe="true"
-  >
-    <button
-      aria-expanded="true"
-      aria-haspopup="listbox"
-      aria-label="Options menu"
-      aria-labelledby=" pf-select-toggle-id-2"
-      class="pf-c-select__toggle"
-      id="pf-select-toggle-id-2"
-      type="button"
-    >
-      <div
-        class="pf-c-select__toggle-wrapper"
-      >
-        <span
-          class="pf-c-select__toggle-text"
-        />
-      </div>
-      <span
-        class="pf-c-select__toggle-arrow"
-      >
-        <svg
-          aria-hidden="true"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style="vertical-align: -0.125em;"
-          viewBox="0 0 320 512"
-          width="1em"
-        >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-          />
-        </svg>
-      </span>
-    </button>
-    <div
-      class="pf-c-select__menu"
-    >
-      <div
-        class="pf-c-select__menu-group"
-      >
-        <div
-          aria-hidden="true"
-          class="pf-c-select__menu-group-title"
-          id="group-1"
-        >
-          group 1
-        </div>
-        <ul
-          role="listbox"
-        >
-          <li
-            class="pf-c-select__menu-wrapper"
-            id="option-1"
-            role="presentation"
-          >
-            <button
-              class="pf-c-select__menu-item"
-              role="option"
-              type="button"
-            >
-              Mr
-            </button>
-          </li>
-          <li
-            class="pf-c-select__menu-wrapper"
-            id="option-2"
-            role="presentation"
-          >
-            <button
-              class="pf-c-select__menu-item"
-              role="option"
-              type="button"
-            >
-              Mrs
-            </button>
-          </li>
-          <li
-            class="pf-c-select__menu-wrapper"
-            id="option-3"
-            role="presentation"
-          >
-            <button
-              class="pf-c-select__menu-item"
-              role="option"
-              type="button"
-            >
-              Ms
-            </button>
-          </li>
-          <li
-            class="pf-c-select__menu-wrapper"
-            id="option-4"
-            role="presentation"
-          >
-            <button
-              class="pf-c-select__menu-item"
-              role="option"
-              type="button"
-            >
-              Other
-            </button>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="pf-c-select__menu-group"
-      >
-        <div
-          aria-hidden="true"
-          class="pf-c-select__menu-group-title"
-          id="group-2"
-        >
-          group 2
-        </div>
-        <ul
-          role="listbox"
-        >
-          <li
-            class="pf-c-select__menu-wrapper"
-            id="option-1"
-            role="presentation"
-          >
-            <button
-              class="pf-c-select__menu-item"
-              role="option"
-              type="button"
-            >
-              Mr
-            </button>
-          </li>
-          <li
-            class="pf-c-select__menu-wrapper"
-            id="option-2"
-            role="presentation"
-          >
-            <button
-              class="pf-c-select__menu-item"
-              role="option"
-              type="button"
-            >
-              Mrs
-            </button>
-          </li>
-          <li
-            class="pf-c-select__menu-wrapper"
-            id="option-3"
-            role="presentation"
-          >
-            <button
-              class="pf-c-select__menu-item"
-              role="option"
-              type="button"
-            >
-              Ms
-            </button>
-          </li>
-          <li
-            class="pf-c-select__menu-wrapper"
-            id="option-4"
-            role="presentation"
-          >
-            <button
-              class="pf-c-select__menu-item"
-              role="option"
-              type="button"
-            >
-              Other
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`select renders up direction successfully 1`] = `
-<div>
-  <div
-    class="pf-c-select pf-m-top"
-    data-ouia-component-id="OUIA-Generated-Select-single-5"
-    data-ouia-component-type="PF4/Select"
-    data-ouia-safe="true"
-  >
-    <button
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-label="Options menu"
-      aria-labelledby=" select-up"
-      class="pf-c-select__toggle"
-      id="select-up"
-      type="button"
-    >
-      <div
-        class="pf-c-select__toggle-wrapper"
-      >
-        <span
-          class="pf-c-select__toggle-text"
-        >
-          Mr
-        </span>
-      </div>
-      <span
-        class="pf-c-select__toggle-arrow"
-      >
-        <svg
-          aria-hidden="true"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style="vertical-align: -0.125em;"
-          viewBox="0 0 320 512"
-          width="1em"
-        >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-          />
-        </svg>
-      </span>
-    </button>
-  </div>
-</div>
-`;
-
-exports[`select single select renders closed successfully 1`] = `
-<div>
-  <div
-    class="pf-c-select"
-    data-ouia-component-id="OUIA-Generated-Select-single-1"
-    data-ouia-component-type="PF4/Select"
-    data-ouia-safe="true"
-  >
-    <button
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-label="Options menu"
-      aria-labelledby=" single-select-closed"
-      class="pf-c-select__toggle"
-      id="single-select-closed"
-      type="button"
-    >
-      <div
-        class="pf-c-select__toggle-wrapper"
-      >
-        <span
-          class="pf-c-select__toggle-text"
-        >
-          Mr
-        </span>
-      </div>
-      <span
-        class="pf-c-select__toggle-arrow"
-      >
-        <svg
-          aria-hidden="true"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style="vertical-align: -0.125em;"
-          viewBox="0 0 320 512"
-          width="1em"
-        >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-          />
-        </svg>
-      </span>
-    </button>
-  </div>
-</div>
-`;
-
-exports[`select single select renders disabled successfully 1`] = `
-<div>
-  <div
-    class="pf-c-select"
-    data-ouia-component-id="OUIA-Generated-Select-single-2"
-    data-ouia-component-type="PF4/Select"
-    data-ouia-safe="true"
-  >
-    <button
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-label="Options menu"
-      aria-labelledby=" single-select-disabled"
-      class="pf-c-select__toggle pf-m-disabled"
-      disabled=""
-      id="single-select-disabled"
-      type="button"
-    >
-      <div
-        class="pf-c-select__toggle-wrapper"
-      >
-        <span
-          class="pf-c-select__toggle-text"
-        >
-          Mr
-        </span>
-      </div>
-      <span
-        class="pf-c-select__toggle-arrow"
-      >
-        <svg
-          aria-hidden="true"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style="vertical-align: -0.125em;"
-          viewBox="0 0 320 512"
-          width="1em"
-        >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-          />
-        </svg>
-      </span>
-    </button>
-  </div>
-</div>
-`;
-
-exports[`select single select renders expanded successfully 1`] = `
-<div>
-  <div
-    class="pf-c-select pf-m-expanded"
-    data-ouia-component-id="OUIA-Generated-Select-single-3"
-    data-ouia-component-type="PF4/Select"
-    data-ouia-safe="true"
-  >
-    <button
-      aria-expanded="true"
-      aria-haspopup="listbox"
-      aria-label="Options menu"
-      aria-labelledby=" pf-select-toggle-id-0"
-      class="pf-c-select__toggle"
-      id="pf-select-toggle-id-0"
-      type="button"
-    >
-      <div
-        class="pf-c-select__toggle-wrapper"
-      >
-        <span
-          class="pf-c-select__toggle-text"
-        >
-          Mr
-        </span>
-      </div>
-      <span
-        class="pf-c-select__toggle-arrow"
-      >
-        <svg
-          aria-hidden="true"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style="vertical-align: -0.125em;"
-          viewBox="0 0 320 512"
-          width="1em"
-        >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-          />
-        </svg>
-      </span>
-    </button>
-    <ul
-      aria-label=""
-      class="pf-c-select__menu"
-      role="listbox"
-    >
-      <li
-        class="pf-c-select__menu-wrapper"
-        id="option-1"
-        role="presentation"
-      >
-        <button
-          class="pf-c-select__menu-item"
-          role="option"
-          type="button"
-        >
-          Mr
-        </button>
-      </li>
-      <li
-        class="pf-c-select__menu-wrapper"
-        id="option-2"
-        role="presentation"
-      >
-        <button
-          class="pf-c-select__menu-item"
-          role="option"
-          type="button"
-        >
-          Mrs
-        </button>
-      </li>
-      <li
-        class="pf-c-select__menu-wrapper"
-        id="option-3"
-        role="presentation"
-      >
-        <button
-          class="pf-c-select__menu-item"
-          role="option"
-          type="button"
-        >
-          Ms
-        </button>
-      </li>
-      <li
-        class="pf-c-select__menu-wrapper"
-        id="option-4"
-        role="presentation"
-      >
-        <button
-          class="pf-c-select__menu-item"
-          role="option"
-          type="button"
-        >
-          Other
-        </button>
-      </li>
-    </ul>
-  </div>
-</div>
-`;
-
-exports[`select single select renders expanded successfully with custom objects 1`] = `
-<div>
-  <div
-    class="pf-c-select pf-m-expanded"
-    data-ouia-component-id="OUIA-Generated-Select-single-4"
-    data-ouia-component-type="PF4/Select"
-    data-ouia-safe="true"
-  >
-    <button
-      aria-expanded="true"
-      aria-haspopup="listbox"
-      aria-label="Options menu"
-      aria-labelledby=" pf-select-toggle-id-1"
-      class="pf-c-select__toggle"
-      id="pf-select-toggle-id-1"
-      type="button"
-    >
-      <div
-        class="pf-c-select__toggle-wrapper"
-      >
-        <span
-          class="pf-c-select__toggle-text"
-        >
-          Mr: User One
-        </span>
-      </div>
-      <span
-        class="pf-c-select__toggle-arrow"
-      >
-        <svg
-          aria-hidden="true"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style="vertical-align: -0.125em;"
-          viewBox="0 0 320 512"
-          width="1em"
-        >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-          />
-        </svg>
-      </span>
-    </button>
-    <ul
-      aria-label=""
-      class="pf-c-select__menu"
-      role="listbox"
-    >
-      <li
-        class="pf-c-select__menu-wrapper"
-        id="option-1"
-        role="presentation"
-      >
-        <button
-          class="pf-c-select__menu-item"
-          role="option"
-          type="button"
-        >
-          Mr: User One
-        </button>
-      </li>
-      <li
-        class="pf-c-select__menu-wrapper"
-        id="option-2"
-        role="presentation"
-      >
-        <button
-          class="pf-c-select__menu-item"
-          role="option"
-          type="button"
-        >
-          Mrs: New User
-        </button>
-      </li>
-      <li
-        class="pf-c-select__menu-wrapper"
-        id="option-3"
-        role="presentation"
-      >
-        <button
-          class="pf-c-select__menu-item"
-          role="option"
-          type="button"
-        >
-          Ms: Test Three
-        </button>
-      </li>
-    </ul>
-  </div>
-</div>
-`;
-
-exports[`select with custom content renders closed successfully 1`] = `
-<div>
-  <div
-    class="pf-c-select"
-    data-ouia-component-id="OUIA-Generated-Select-single-11"
-    data-ouia-component-type="PF4/Select"
-    data-ouia-safe="true"
-  >
-    <button
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-label="Options menu"
-      aria-labelledby=" select-custom-content"
-      class="pf-c-select__toggle"
-      id="select-custom-content"
-      type="button"
-    >
-      <div
-        class="pf-c-select__toggle-wrapper"
-      >
-        <span
-          class="pf-c-select__toggle-text"
-        />
-      </div>
-      <span
-        class="pf-c-select__toggle-arrow"
-      >
-        <svg
-          aria-hidden="true"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style="vertical-align: -0.125em;"
-          viewBox="0 0 320 512"
-          width="1em"
-        >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-          />
-        </svg>
-      </span>
-    </button>
-  </div>
-</div>
-`;
-
-exports[`select with custom content renders expanded successfully 1`] = `
-<div>
-  <div
-    class="pf-c-select pf-m-expanded"
-    data-ouia-component-id="OUIA-Generated-Select-single-12"
-    data-ouia-component-type="PF4/Select"
-    data-ouia-safe="true"
-  >
-    <button
-      aria-expanded="true"
-      aria-haspopup="listbox"
-      aria-label="Options menu"
-      aria-labelledby=" pf-select-toggle-id-17"
-      class="pf-c-select__toggle"
-      id="pf-select-toggle-id-17"
-      type="button"
-    >
-      <div
-        class="pf-c-select__toggle-wrapper"
-      >
-        <span
-          class="pf-c-select__toggle-text"
-        />
-      </div>
-      <span
-        class="pf-c-select__toggle-arrow"
-      >
-        <svg
-          aria-hidden="true"
-          fill="currentColor"
-          height="1em"
-          role="img"
-          style="vertical-align: -0.125em;"
-          viewBox="0 0 320 512"
-          width="1em"
-        >
-          <path
-            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-          />
-        </svg>
-      </span>
-    </button>
-    <div
-      class="pf-c-select__menu"
-    >
-      testing custom
-    </div>
-  </div>
-</div>
-`;
-
-exports[`select with placeholder applies the placeholder class when not selected 1`] = `
-<button
-  aria-expanded={false}
-  aria-haspopup="listbox"
-  aria-label="Options menu"
-  aria-labelledby=" pf-select-toggle-id-18"
-  className="pf-c-select__toggle pf-m-placeholder"
-  disabled={false}
-  id="pf-select-toggle-id-18"
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  type="button"
->
-  <div
-    className="pf-c-select__toggle-wrapper"
-  >
-    <span
-      className="pf-c-select__toggle-text"
-    />
-  </div>
-  <span
-    className="pf-c-select__toggle-arrow"
-  >
-    <CaretDownIcon
-      color="currentColor"
-      noVerticalAlign={false}
-      size="sm"
-    >
-      <svg
-        aria-hidden={true}
-        aria-labelledby={null}
-        fill="currentColor"
-        height="1em"
-        role="img"
-        style={
-          Object {
-            "verticalAlign": "-0.125em",
-          }
-        }
-        viewBox="0 0 320 512"
-        width="1em"
-      >
-        <path
-          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-        />
-      </svg>
-    </CaretDownIcon>
-  </span>
-</button>
-`;
-
-exports[`toggle icon select checkbox 1`] = `
-<span
-  className="pf-c-select__toggle-icon"
->
-  <div>
-    Icon
-  </div>
-</span>
-`;
-
-exports[`toggle icon select single 1`] = `
-<span
-  className="pf-c-select__toggle-icon"
->
-  <div>
-    Icon
-  </div>
-</span>
-`;
-
-exports[`toggle icon typeahead multi select 1`] = `
-<span
-  className="pf-c-select__toggle-icon"
->
-  <div>
-    Icon
-  </div>
-</span>
-`;
-
-exports[`toggle icon typeahead select 1`] = `
-<span
-  className="pf-c-select__toggle-icon"
->
-  <div>
-    Icon
-  </div>
-</span>
+</DocumentFragment>
 `;
 
 exports[`typeahead multi select renders closed successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-select"
-    data-ouia-component-id="OUIA-Generated-Select-typeaheadmulti-1"
+    data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
@@ -2420,14 +1600,14 @@ exports[`typeahead multi select renders closed successfully 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`typeahead multi select renders expanded successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-select pf-m-expanded"
-    data-ouia-component-id="OUIA-Generated-Select-typeaheadmulti-2"
+    data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
@@ -2442,7 +1622,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
           aria-label=""
           autocomplete="off"
           class="pf-c-form-control pf-c-select__toggle-typeahead"
-          id="pf-select-toggle-id-13-select-multi-typeahead-typeahead"
+          id="pf-select-toggle-id-17-select-multi-typeahead-typeahead"
           placeholder=""
           type="text"
           value=""
@@ -2452,9 +1632,9 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         aria-expanded="true"
         aria-haspopup="listbox"
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-13"
+        aria-labelledby=" pf-select-toggle-id-17"
         class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-        id="pf-select-toggle-id-13"
+        id="pf-select-toggle-id-17"
         tabindex="-1"
         type="button"
       >
@@ -2533,14 +1713,14 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       </li>
     </ul>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`typeahead multi select renders selected successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-select pf-m-expanded"
-    data-ouia-component-id="OUIA-Generated-Select-typeaheadmulti-3"
+    data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
@@ -2560,7 +1740,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           <div
             class="pf-c-chip-group__main"
           >
-            
             <ul
               aria-label="Chip group category"
               class="pf-c-chip-group__list"
@@ -2577,19 +1756,19 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 >
                   <span
                     class="pf-c-chip__text"
-                    id="pf-random-id-24"
+                    id="pf-random-id-23"
                   >
                     Mr
                   </span>
                   <button
                     aria-disabled="false"
                     aria-label="Remove"
-                    aria-labelledby="remove_pf-random-id-24 pf-random-id-24"
+                    aria-labelledby="remove_pf-random-id-23 pf-random-id-23"
                     class="pf-c-button pf-m-plain"
                     data-ouia-component-id="Remove"
                     data-ouia-component-type="PF4/Button"
                     data-ouia-safe="true"
-                    id="remove_pf-random-id-24"
+                    id="remove_pf-random-id-23"
                     type="button"
                   >
                     <svg
@@ -2619,19 +1798,19 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 >
                   <span
                     class="pf-c-chip__text"
-                    id="pf-random-id-25"
+                    id="pf-random-id-24"
                   >
                     Mrs
                   </span>
                   <button
                     aria-disabled="false"
                     aria-label="Remove"
-                    aria-labelledby="remove_pf-random-id-25 pf-random-id-25"
+                    aria-labelledby="remove_pf-random-id-24 pf-random-id-24"
                     class="pf-c-button pf-m-plain"
                     data-ouia-component-id="Remove"
                     data-ouia-component-type="PF4/Button"
                     data-ouia-safe="true"
-                    id="remove_pf-random-id-25"
+                    id="remove_pf-random-id-24"
                     type="button"
                   >
                     <svg
@@ -2785,14 +1964,14 @@ exports[`typeahead multi select renders selected successfully 1`] = `
       </li>
     </ul>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`typeahead select renders closed successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-select"
-    data-ouia-component-id="OUIA-Generated-Select-typeahead-2"
+    data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
@@ -2839,14 +2018,14 @@ exports[`typeahead select renders closed successfully 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`typeahead select renders expanded successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-select pf-m-expanded"
-    data-ouia-component-id="OUIA-Generated-Select-typeahead-3"
+    data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
@@ -2860,7 +2039,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
           aria-label=""
           autocomplete="off"
           class="pf-c-form-control pf-c-select__toggle-typeahead"
-          id="pf-select-toggle-id-8-select-typeahead"
+          id="pf-select-toggle-id-7-select-typeahead"
           placeholder=""
           type="text"
           value=""
@@ -2870,9 +2049,9 @@ exports[`typeahead select renders expanded successfully 1`] = `
         aria-expanded="true"
         aria-haspopup="listbox"
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-8"
+        aria-labelledby=" pf-select-toggle-id-7"
         class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-        id="pf-select-toggle-id-8"
+        id="pf-select-toggle-id-7"
         tabindex="-1"
         type="button"
       >
@@ -2951,14 +2130,14 @@ exports[`typeahead select renders expanded successfully 1`] = `
       </li>
     </ul>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`typeahead select renders selected successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-select pf-m-expanded"
-    data-ouia-component-id="OUIA-Generated-Select-typeahead-4"
+    data-ouia-component-id="test-id"
     data-ouia-component-type="PF4/Select"
     data-ouia-safe="true"
   >
@@ -2972,7 +2151,7 @@ exports[`typeahead select renders selected successfully 1`] = `
           aria-label=""
           autocomplete="off"
           class="pf-c-form-control pf-c-select__toggle-typeahead"
-          id="pf-select-toggle-id-9-select-typeahead"
+          id="pf-select-toggle-id-8-select-typeahead"
           placeholder=""
           type="text"
           value="Mr"
@@ -2982,9 +2161,9 @@ exports[`typeahead select renders selected successfully 1`] = `
         aria-expanded="true"
         aria-haspopup="listbox"
         aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-9"
+        aria-labelledby=" pf-select-toggle-id-8"
         class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-        id="pf-select-toggle-id-9"
+        id="pf-select-toggle-id-8"
         tabindex="-1"
         type="button"
       >
@@ -3081,355 +2260,5 @@ exports[`typeahead select renders selected successfully 1`] = `
       </li>
     </ul>
   </div>
-</div>
-`;
-
-exports[`typeahead select test select existing option on a non-creatable select 1`] = `
-<Select
-  aria-describedby=""
-  aria-invalid={false}
-  aria-label=""
-  aria-labelledby=""
-  chipGroupComponent={null}
-  className=""
-  clearSelectionsAriaLabel="Clear all"
-  createText="Create"
-  customBadgeText={null}
-  customContent={null}
-  direction="down"
-  favorites={Array []}
-  favoritesLabel="Favorites"
-  hasInlineFilter={false}
-  hasPlaceholderStyle={false}
-  inlineFilterPlaceholderText={null}
-  inputAutoComplete="off"
-  inputIdPrefix=""
-  isCreatable={false}
-  isCreateSelectOptionObject={false}
-  isDisabled={false}
-  isGrouped={false}
-  isInputFilterPersisted={false}
-  isInputValuePersisted={false}
-  isOpen={true}
-  isPlain={false}
-  menuAppendTo="inline"
-  noResultsFoundText="No results found"
-  onClear={[Function]}
-  onCreateOption={[Function]}
-  onFilter={null}
-  onToggle={[MockFunction]}
-  onTypeaheadInputChanged={null}
-  ouiaSafe={true}
-  placeholderText=""
-  position="left"
-  removeSelectionAriaLabel="Remove"
-  selections={Array []}
-  shouldResetOnSelect={true}
-  toggleAriaLabel="Options menu"
-  toggleIcon={null}
-  toggleId={null}
-  typeAheadAriaLabel=""
-  validated="default"
-  variant="typeahead"
-  width=""
->
-  <GenerateId
-    prefix="pf-random-id-"
-  >
-    <div
-      className="pf-c-select pf-m-expanded"
-      data-ouia-component-id="OUIA-Generated-Select-typeahead-5"
-      data-ouia-component-type="PF4/Select"
-      data-ouia-safe={true}
-    >
-      <SelectToggle
-        aria-label="Options menu"
-        aria-labelledby=" pf-select-toggle-id-12"
-        className=""
-        handleTypeaheadKeys={[Function]}
-        hasClearButton={false}
-        hasFooter={false}
-        hasPlaceholderStyle={false}
-        id="pf-select-toggle-id-12"
-        isActive={false}
-        isDisabled={false}
-        isOpen={true}
-        isPlain={false}
-        menuRef={
-          Object {
-            "current": <ul
-              aria-label=""
-              class="pf-c-select__menu"
-              role="listbox"
-            >
-              <li
-                class="pf-c-select__menu-wrapper"
-                id="option-4"
-                role="presentation"
-              >
-                <button
-                  class="pf-c-select__menu-item"
-                  role="option"
-                  type="button"
-                >
-                  Other
-                </button>
-              </li>
-            </ul>,
-          }
-        }
-        moveFocusToLastMenuItem={[Function]}
-        onClickTypeaheadToggleButton={[Function]}
-        onClose={[Function]}
-        onEnter={[Function]}
-        onToggle={[Function]}
-        parentRef={
-          Object {
-            "current": <div
-              class="pf-c-select pf-m-expanded"
-              data-ouia-component-id="OUIA-Generated-Select-typeahead-5"
-              data-ouia-component-type="PF4/Select"
-              data-ouia-safe="true"
-            >
-              <div
-                class="pf-c-select__toggle pf-m-typeahead"
-              >
-                <div
-                  class="pf-c-select__toggle-wrapper"
-                >
-                  <input
-                    aria-label=""
-                    autocomplete="off"
-                    class="pf-c-form-control pf-c-select__toggle-typeahead"
-                    id="pf-select-toggle-id-12-select-typeahead"
-                    placeholder=""
-                    type="text"
-                    value="Oth"
-                  />
-                </div>
-                <button
-                  aria-expanded="true"
-                  aria-haspopup="listbox"
-                  aria-label="Options menu"
-                  aria-labelledby=" pf-select-toggle-id-12"
-                  class="pf-c-button pf-c-select__toggle-button pf-m-plain"
-                  id="pf-select-toggle-id-12"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="pf-c-select__toggle-arrow"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 320 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <ul
-                aria-label=""
-                class="pf-c-select__menu"
-                role="listbox"
-              >
-                <li
-                  class="pf-c-select__menu-wrapper"
-                  id="option-4"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item"
-                    role="option"
-                    type="button"
-                  >
-                    Other
-                  </button>
-                </li>
-              </ul>
-            </div>,
-          }
-        }
-        type="button"
-        variant="typeahead"
-      >
-        <div
-          className="pf-c-select__toggle pf-m-typeahead"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-        >
-          <div
-            className="pf-c-select__toggle-wrapper"
-          >
-            <input
-              aria-activedescendant={null}
-              aria-label=""
-              autoComplete="off"
-              className="pf-c-form-control pf-c-select__toggle-typeahead"
-              disabled={false}
-              id="pf-select-toggle-id-12-select-typeahead"
-              onChange={[Function]}
-              onClick={[Function]}
-              placeholder=""
-              type="text"
-              value="Oth"
-            />
-          </div>
-          <button
-            aria-expanded={true}
-            aria-haspopup="listbox"
-            aria-label="Options menu"
-            aria-labelledby=" pf-select-toggle-id-12"
-            className="pf-c-button pf-c-select__toggle-button pf-m-plain"
-            disabled={false}
-            id="pf-select-toggle-id-12"
-            onClick={[Function]}
-            tabIndex={-1}
-            type="button"
-          >
-            <CaretDownIcon
-              className="pf-c-select__toggle-arrow"
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                className="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                />
-              </svg>
-            </CaretDownIcon>
-          </button>
-        </div>
-      </SelectToggle>
-      <ForwardRef
-        aria-label=""
-        aria-labelledby=""
-        footerRef={
-          Object {
-            "current": null,
-          }
-        }
-        isGrouped={false}
-        isLastOptionBeforeFooter={[Function]}
-        keyHandler={[Function]}
-        openedOnEnter={false}
-        position="left"
-        sendRef={[Function]}
-      >
-        <SelectMenu
-          aria-label=""
-          aria-labelledby=""
-          className=""
-          footerRef={
-            Object {
-              "current": null,
-            }
-          }
-          hasInlineFilter={false}
-          innerRef={
-            Object {
-              "current": <ul
-                aria-label=""
-                class="pf-c-select__menu"
-                role="listbox"
-              >
-                <li
-                  class="pf-c-select__menu-wrapper"
-                  id="option-4"
-                  role="presentation"
-                >
-                  <button
-                    class="pf-c-select__menu-item"
-                    role="option"
-                    type="button"
-                  >
-                    Other
-                  </button>
-                </li>
-              </ul>,
-            }
-          }
-          isCustomContent={false}
-          isExpanded={false}
-          isGrouped={false}
-          isLastOptionBeforeFooter={[Function]}
-          keyHandler={[Function]}
-          maxHeight=""
-          openedOnEnter={false}
-          position="left"
-          selected=""
-          sendRef={[Function]}
-        >
-          <ul
-            aria-label=""
-            aria-labelledby={null}
-            className="pf-c-select__menu"
-            role="listbox"
-          >
-            <SelectOption
-              className=""
-              component="button"
-              id="option-4"
-              index={0}
-              inputId="pf-random-id-19-0"
-              isChecked={false}
-              isDisabled={false}
-              isFavorite={null}
-              isFocused={false}
-              isLastOptionBeforeFooter={[Function]}
-              isLoad={false}
-              isLoading={false}
-              isNoResultsOption={false}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$.$03"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              setViewMoreNextIndex={[Function]}
-              value="Other"
-            >
-              <li
-                className="pf-c-select__menu-wrapper"
-                id="option-4"
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  Other
-                </button>
-              </li>
-            </SelectOption>
-          </ul>
-        </SelectMenu>
-      </ForwardRef>
-    </div>
-  </GenerateId>
-</Select>
+</DocumentFragment>
 `;

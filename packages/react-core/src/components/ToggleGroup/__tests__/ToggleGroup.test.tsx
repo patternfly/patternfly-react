@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
-import { shallow } from 'enzyme';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import { ToggleGroup } from '../ToggleGroup';
 import { ToggleGroupItem } from '../ToggleGroupItem';
 
@@ -9,41 +11,43 @@ const props = {
   selected: false
 };
 
-test('basic selected', () => {
-  const view = render(<ToggleGroupItem text="test" selected buttonId="toggleGroupItem" aria-label="basic selected" />);
-  expect(view.container).toMatchSnapshot();
-});
+describe('ToggleGroup', () => {
+  test('basic selected', () => {
+    const { asFragment } = render(<ToggleGroupItem text="test" isSelected buttonId="toggleGroupItem" aria-label="basic selected" />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-test('basic not selected', () => {
-  const view = render(<ToggleGroupItem text="test" buttonId="toggleGroupItem" aria-label="basic not selected" />);
-  expect(view.container).toMatchSnapshot();
-});
+  test('basic not selected', () => {
+    const { asFragment } = render(<ToggleGroupItem text="test" buttonId="toggleGroupItem" aria-label="basic not selected" />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-test('icon variant', () => {
-  const view = render(<ToggleGroupItem selected icon="icon" buttonId="toggleGroupItem" aria-label="icon variant" />);
-  expect(view.container).toMatchSnapshot();
-});
+  test('icon variant', () => {
+    const { asFragment } = render(<ToggleGroupItem isSelected icon="icon" buttonId="toggleGroupItem" aria-label="icon variant" />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-test('isDisabled', () => {
-  const view = render(<ToggleGroupItem text="test" isDisabled buttonId="toggleGroupItem" aria-label="isDisabled" />);
-  expect(view.container).toMatchSnapshot();
-});
+  test('isDisabled', () => {
+    const { asFragment } = render(<ToggleGroupItem text="test" isDisabled buttonId="toggleGroupItem" aria-label="isDisabled" />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-test('item passes selection and event to onChange handler', () => {
-  const selected = true;
-  const event = {};
-  const view = shallow(<ToggleGroupItem text="test" buttonId="toggleGroupItem" onChange={props.onChange} aria-label="onChange handler" />);
-  view.find('button').simulate('click', event, selected);
-  expect(props.onChange).toBeCalledWith(selected, event);
-});
+  test('item passes selection and event to onChange handler', () => {
+    render(
+      <ToggleGroupItem text="test" buttonId="toggleGroupItem" onChange={props.onChange} aria-label="onChange handler" />
+    );
 
-test('isCompact', () => {
-  const view = render(
-    <ToggleGroup isCompact>
-      <ToggleGroupItem text="Test" />
-      <ToggleGroupItem text="Test" />
-    </ToggleGroup>
-  );
-  expect(view.container).toMatchSnapshot();
-});
+    userEvent.click(screen.getByRole('button'));
+    expect(props.onChange).toHaveBeenCalledWith(true, expect.any(Object));
+  });
 
+  test('isCompact', () => {
+    const { asFragment } = render(
+      <ToggleGroup isCompact aria-label="Label">
+        <ToggleGroupItem text="Test" />
+        <ToggleGroupItem text="Test" />
+      </ToggleGroup>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+});
