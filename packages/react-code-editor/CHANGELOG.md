@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.43.34 (2022-04-13)
+
+
+### Bug Fixes
+
+* **ContextSelector:** fix listener handling when using popper ([#7165](https://github.com/patternfly/patternfly-react/issues/7165)) ([af89d6a](https://github.com/patternfly/patternfly-react/commit/af89d6a334d0052205473d313ea5be0e64f3847c))
+
+
+
+
+
 ## 4.43.33 (2022-04-13)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
