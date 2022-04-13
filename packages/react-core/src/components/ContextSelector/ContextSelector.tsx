@@ -10,7 +10,6 @@ import { TextInput } from '../TextInput';
 import { InputGroup } from '../InputGroup';
 import { KEY_CODES } from '../../helpers/constants';
 import { FocusTrap } from '../../helpers';
-import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 import { Popper } from '../../helpers/Popper/Popper';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 
@@ -18,7 +17,7 @@ import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
 let currentId = 0;
 const newId = currentId++;
 
-export interface ContextSelectorProps extends ToggleMenuBaseProps, OUIAProps {
+export interface ContextSelectorProps extends OUIAProps {
   /** content rendered inside the Context Selector */
   children?: React.ReactNode;
   /** Classes applied to root element of Context Selector */
@@ -29,6 +28,14 @@ export interface ContextSelectorProps extends ToggleMenuBaseProps, OUIAProps {
   onToggle?: (event: any, value: boolean) => void;
   /** Function callback called when user selects item */
   onSelect?: (event: any, value: React.ReactNode) => void;
+  /** The container to append the menu to. Defaults to 'inline'.
+   * If your menu is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * menuAppendTo="parent"
+   * menuAppendTo={() => document.body}
+   * menuAppendTo={document.getElementById('target')}
+   */
+  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
   /** Flag indicating that the context selector should expand to full height */
   isFullHeight?: boolean;
   /** Labels the Context Selector for Screen Readers */
