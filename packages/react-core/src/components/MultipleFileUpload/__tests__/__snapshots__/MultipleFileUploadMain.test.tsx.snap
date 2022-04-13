@@ -1,219 +1,125 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MultipleFileUploadMain passes props to the info component as expected 1`] = `
-<MultipleFileUploadMain
-  infoText="info text"
->
+<DocumentFragment>
   <div
-    className="pf-c-multiple-file-upload__main"
+    class="pf-c-multiple-file-upload__main"
   >
-    <MultipleFileUploadButton>
-      <div
-        className="pf-c-multiple-file-upload__upload"
+    <div
+      class="pf-c-multiple-file-upload__upload"
+    >
+      <button
+        aria-disabled="false"
+        class="pf-c-button pf-m-secondary"
+        data-ouia-component-id="OUIA-Generated-Button-secondary-4"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
       >
-        <Button
-          onClick={[Function]}
-          variant="secondary"
-        >
-          <ButtonBase
-            innerRef={null}
-            onClick={[Function]}
-            variant="secondary"
-          >
-            <button
-              aria-disabled={false}
-              aria-label={null}
-              className="pf-c-button pf-m-secondary"
-              data-ouia-component-id="OUIA-Generated-Button-secondary-4"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={false}
-              onClick={[Function]}
-              role={null}
-              type="button"
-            >
-              Upload
-            </button>
-          </ButtonBase>
-        </Button>
-      </div>
-    </MultipleFileUploadButton>
-    <MultipleFileUploadInfo>
-      <div
-        className="pf-c-multiple-file-upload__info"
-      >
-        info text
-      </div>
-    </MultipleFileUploadInfo>
+        Upload
+      </button>
+    </div>
+    <div
+      class="pf-c-multiple-file-upload__info"
+    >
+      info text
+    </div>
   </div>
-</MultipleFileUploadMain>
+</DocumentFragment>
 `;
 
 exports[`MultipleFileUploadMain passes props to the title as expected 1`] = `
-<MultipleFileUploadMain
-  titleIcon="icon"
-  titleText="title text"
-  titleTextSeparator="title test separator"
->
+<DocumentFragment>
   <div
-    className="pf-c-multiple-file-upload__main"
+    class="pf-c-multiple-file-upload__main"
   >
-    <MultipleFileUploadTitle
-      icon="icon"
-      text="title text"
-      textSeparator="title test separator"
+    <div
+      class="pf-c-multiple-file-upload__title"
     >
       <div
-        className="pf-c-multiple-file-upload__title"
+        class="pf-c-multiple-file-upload__title-icon"
       >
-        <MultipleFileUploadTitleIcon>
-          <div
-            className="pf-c-multiple-file-upload__title-icon"
-          >
-            icon
-          </div>
-        </MultipleFileUploadTitleIcon>
-        <MultipleFileUploadTitleText>
-          <div
-            className="pf-c-multiple-file-upload__title-text"
-          >
-            title text 
-            <MultipleFileUploadTitleTextSeparator>
-              <div
-                className="pf-c-multiple-file-upload__title-text-separator"
-              >
-                title test separator
-              </div>
-            </MultipleFileUploadTitleTextSeparator>
-          </div>
-        </MultipleFileUploadTitleText>
+        icon
       </div>
-    </MultipleFileUploadTitle>
-    <MultipleFileUploadButton>
       <div
-        className="pf-c-multiple-file-upload__upload"
+        class="pf-c-multiple-file-upload__title-text"
       >
-        <Button
-          onClick={[Function]}
-          variant="secondary"
+        title text 
+        <div
+          class="pf-c-multiple-file-upload__title-text-separator"
         >
-          <ButtonBase
-            innerRef={null}
-            onClick={[Function]}
-            variant="secondary"
-          >
-            <button
-              aria-disabled={false}
-              aria-label={null}
-              className="pf-c-button pf-m-secondary"
-              data-ouia-component-id="OUIA-Generated-Button-secondary-3"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={false}
-              onClick={[Function]}
-              role={null}
-              type="button"
-            >
-              Upload
-            </button>
-          </ButtonBase>
-        </Button>
+          title test separator
+        </div>
       </div>
-    </MultipleFileUploadButton>
+    </div>
+    <div
+      class="pf-c-multiple-file-upload__upload"
+    >
+      <button
+        aria-disabled="false"
+        class="pf-c-button pf-m-secondary"
+        data-ouia-component-id="OUIA-Generated-Button-secondary-3"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        Upload
+      </button>
+    </div>
   </div>
-</MultipleFileUploadMain>
+</DocumentFragment>
 `;
 
 exports[`MultipleFileUploadMain renders custom class names 1`] = `
-<MultipleFileUploadMain
-  className="test"
->
+<DocumentFragment>
   <div
-    className="pf-c-multiple-file-upload__main test"
+    class="pf-c-multiple-file-upload__main test"
   >
-    <MultipleFileUploadButton>
-      <div
-        className="pf-c-multiple-file-upload__upload"
+    <div
+      class="pf-c-multiple-file-upload__upload"
+    >
+      <button
+        aria-disabled="false"
+        class="pf-c-button pf-m-secondary"
+        data-ouia-component-id="OUIA-Generated-Button-secondary-2"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
       >
-        <Button
-          onClick={[Function]}
-          variant="secondary"
-        >
-          <ButtonBase
-            innerRef={null}
-            onClick={[Function]}
-            variant="secondary"
-          >
-            <button
-              aria-disabled={false}
-              aria-label={null}
-              className="pf-c-button pf-m-secondary"
-              data-ouia-component-id="OUIA-Generated-Button-secondary-2"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={false}
-              onClick={[Function]}
-              role={null}
-              type="button"
-            >
-              Upload
-            </button>
-          </ButtonBase>
-        </Button>
-      </div>
-    </MultipleFileUploadButton>
+        Upload
+      </button>
+    </div>
   </div>
-</MultipleFileUploadMain>
+</DocumentFragment>
 `;
 
 exports[`MultipleFileUploadMain renders with expected class names 1`] = `
-<MultipleFileUploadMain>
+<DocumentFragment>
   <div
-    className="pf-c-multiple-file-upload__main"
+    class="pf-c-multiple-file-upload__main"
   >
-    <MultipleFileUploadButton>
-      <div
-        className="pf-c-multiple-file-upload__upload"
+    <div
+      class="pf-c-multiple-file-upload__upload"
+    >
+      <button
+        aria-disabled="false"
+        class="pf-c-button pf-m-secondary"
+        data-ouia-component-id="OUIA-Generated-Button-secondary-1"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
       >
-        <Button
-          onClick={[Function]}
-          variant="secondary"
-        >
-          <ButtonBase
-            innerRef={null}
-            onClick={[Function]}
-            variant="secondary"
-          >
-            <button
-              aria-disabled={false}
-              aria-label={null}
-              className="pf-c-button pf-m-secondary"
-              data-ouia-component-id="OUIA-Generated-Button-secondary-1"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe={true}
-              disabled={false}
-              onClick={[Function]}
-              role={null}
-              type="button"
-            >
-              Upload
-            </button>
-          </ButtonBase>
-        </Button>
-      </div>
-    </MultipleFileUploadButton>
+        Upload
+      </button>
+    </div>
   </div>
-</MultipleFileUploadMain>
+</DocumentFragment>
 `;
 
 exports[`MultipleFileUploadMain renders without the button when expected 1`] = `
-<MultipleFileUploadMain
-  isUploadButtonHidden={true}
->
+<DocumentFragment>
   <div
-    className="pf-c-multiple-file-upload__main"
-  >
-    <Component />
-  </div>
-</MultipleFileUploadMain>
+    class="pf-c-multiple-file-upload__main"
+  />
+</DocumentFragment>
 `;

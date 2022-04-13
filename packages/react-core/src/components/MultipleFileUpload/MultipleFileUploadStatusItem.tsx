@@ -45,6 +45,8 @@ export interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLL
   progressAriaLabel?: string;
   /** Associates the ProgressBar with it's label for accessibility purposes. Required when title not used */
   progressAriaLabelledBy?: string;
+  /** Unique identifier for Progress. Generated if not specified. */
+  progressId?: string;
 }
 
 export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileUploadStatusItemProps> = ({
@@ -63,6 +65,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
   progressVariant,
   progressAriaLabel,
   progressAriaLabelledBy,
+  progressId,
   buttonAriaLabel = 'Remove from list',
   ...props
 }: MultipleFileUploadStatusItemProps) => {
@@ -137,6 +140,7 @@ export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileU
           variant={progressVariant || loadResult}
           aria-label={progressAriaLabel}
           aria-labelledby={progressAriaLabelledBy}
+          id={progressId}
         />
       </div>
       <div className={styles.multipleFileUploadStatusItemClose}>

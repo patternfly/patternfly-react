@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Actions table 1`] = `
-<div>
+exports[`Table Actions table 1`] = `
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-md"
@@ -796,11 +796,11 @@ exports[`Actions table 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</DocumentFragment>
 `;
 
-exports[`Cell header table 1`] = `
-<div>
+exports[`Table Cell header table 1`] = `
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-md"
@@ -1311,11 +1311,11 @@ exports[`Cell header table 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</DocumentFragment>
 `;
 
-exports[`Collapsible nested table 1`] = `
-<div>
+exports[`Table Collapsible nested table 1`] = `
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-md"
@@ -2003,11 +2003,11 @@ exports[`Collapsible nested table 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</DocumentFragment>
 `;
 
-exports[`Collapsible table 1`] = `
-<div>
+exports[`Table Collapsible table 1`] = `
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-md"
@@ -2662,11 +2662,11 @@ exports[`Collapsible table 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</DocumentFragment>
 `;
 
-exports[`Compound Expandable table 1`] = `
-<div>
+exports[`Table Compound Expandable table 1`] = `
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-md"
@@ -2826,11 +2826,11 @@ exports[`Compound Expandable table 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</DocumentFragment>
 `;
 
-exports[`Control text table 1`] = `
-<div>
+exports[`Table Control text table 1`] = `
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-md"
@@ -3338,512 +3338,11 @@ exports[`Control text table 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</DocumentFragment>
 `;
 
-exports[`Editable table 1`] = `
-<div>
-  <form
-    class="pf-c-inline-edit"
-  >
-    <table
-      class="pf-c-table pf-m-grid-md"
-      data-ouia-component-id="OUIA-Generated-Table-8"
-      data-ouia-component-type="PF4/Table"
-      data-ouia-safe="true"
-      role="grid"
-    >
-      <caption>
-        Editable Table
-      </caption>
-      <thead
-        class=""
-      >
-        <tr
-          class=""
-          data-ouia-component-id="OUIA-Generated-TableRow-31"
-          data-ouia-component-type="PF4/TableRow"
-          data-ouia-safe="true"
-        >
-          <th
-            class=""
-            data-key="0"
-            data-label="Text input col 1"
-            scope="col"
-          >
-            Text input col 1
-          </th>
-          <th
-            class=""
-            data-key="1"
-            data-label="Disabled text input col 2"
-            scope="col"
-          >
-            Disabled text input col 2
-          </th>
-          <th
-            class=""
-            data-key="2"
-            data-label="Text input col 3"
-            scope="col"
-          >
-            Text input col 3
-          </th>
-          <th
-            class=""
-            data-key="3"
-            data-label="Text input col 4"
-            scope="col"
-          >
-            Text input col 4
-          </th>
-          <th
-            class=""
-            data-key="4"
-            data-label=""
-          />
-        </tr>
-      </thead>
-      <tbody
-        class=""
-        role="rowgroup"
-      >
-        <tr
-          class="pf-m-inline-editable"
-          data-ouia-component-id="OUIA-Generated-TableRow-32"
-          data-ouia-component-type="PF4/TableRow"
-          data-ouia-safe="true"
-        >
-          <td
-            class=""
-            data-key="0"
-            data-label="Text input col 1"
-          >
-            <div
-              class="pf-c-inline-edit__value"
-            >
-              Row 1 cell 1 content
-            </div>
-            <div
-              class="pf-c-inline-edit__input"
-            >
-              <input
-                aria-invalid="false"
-                aria-label="Row 1 cell 1 content"
-                class="pf-c-form-control"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-1"
-                data-ouia-component-type="PF4/TextInput"
-                data-ouia-safe="true"
-                type="text"
-                value="Row 1 cell 1 content"
-              />
-              <div
-                aria-live="polite"
-                class="pf-c-form__helper-text pf-m-error"
-              />
-            </div>
-          </td>
-          <td
-            class=""
-            data-key="1"
-            data-label="Disabled text input col 2"
-          >
-            <div
-              class="pf-c-inline-edit__value"
-            >
-              Row 1 cell 2, disabled content
-            </div>
-            <div
-              class="pf-c-inline-edit__input"
-            >
-              <input
-                aria-invalid="false"
-                aria-label="Row 1 cell 2 content"
-                class="pf-c-form-control"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-2"
-                data-ouia-component-type="PF4/TextInput"
-                data-ouia-safe="true"
-                disabled=""
-                type="text"
-                value="Row 1 cell 2, disabled content"
-              />
-              <div
-                aria-live="polite"
-                class="pf-c-form__helper-text pf-m-error"
-              />
-            </div>
-          </td>
-          <td
-            class=""
-            data-key="2"
-            data-label="Text input col 3"
-          >
-            <div
-              class="pf-c-inline-edit__value"
-            >
-              Row 1 cell 3 content
-            </div>
-            <div
-              class="pf-c-inline-edit__input"
-            >
-              <input
-                aria-invalid="false"
-                aria-label="Row 1 cell 3 content"
-                class="pf-c-form-control"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-3"
-                data-ouia-component-type="PF4/TextInput"
-                data-ouia-safe="true"
-                type="text"
-                value="Row 1 cell 3 content"
-              />
-              <div
-                aria-live="polite"
-                class="pf-c-form__helper-text pf-m-error"
-              />
-            </div>
-          </td>
-          <td
-            class=""
-            data-key="3"
-            data-label="Text input col 4"
-          >
-            <div
-              class="pf-c-inline-edit__value"
-            >
-              Row 1 cell 4 content
-            </div>
-            <div
-              class="pf-c-inline-edit__input"
-            >
-              <input
-                aria-invalid="false"
-                aria-label="Row 1 cell 4 content"
-                class="pf-c-form-control"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-4"
-                data-ouia-component-type="PF4/TextInput"
-                data-ouia-safe="true"
-                type="text"
-                value="Row 1 cell 4 content"
-              />
-              <div
-                aria-live="polite"
-                class="pf-c-form__helper-text pf-m-error"
-              />
-            </div>
-          </td>
-          <td
-            class="pf-c-table__inline-edit-action"
-            data-key="4"
-          >
-            <div
-              class="pf-c-inline-edit__group pf-m-icon-group pf-m-action-group"
-            >
-              <div
-                class="pf-c-inline-edit__action"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="Save row edits for row 0"
-                  class="pf-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-1"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 512 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div
-                class="pf-c-inline-edit__action"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="Cancel row edits for row 0"
-                  class="pf-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-2"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 352 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div
-              class="pf-c-inline-edit__action pf-m-enable-editable"
-            >
-              <button
-                aria-disabled="false"
-                aria-label="Place row 0 in edit mode"
-                class="pf-c-button pf-m-plain"
-                data-ouia-component-id="OUIA-Generated-Button-plain-3"
-                data-ouia-component-type="PF4/Button"
-                data-ouia-safe="true"
-                type="button"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"
-                  />
-                </svg>
-              </button>
-            </div>
-          </td>
-        </tr>
-        <tr
-          class=""
-          data-ouia-component-id="OUIA-Generated-TableRow-33"
-          data-ouia-component-type="PF4/TableRow"
-          data-ouia-safe="true"
-        >
-          <td
-            class=""
-            data-key="0"
-            data-label="Text input col 1"
-          >
-            <div
-              class="pf-c-inline-edit__value"
-            >
-              Row 2 cell 1 content
-            </div>
-            <div
-              class="pf-c-inline-edit__input"
-            >
-              <input
-                aria-invalid="false"
-                aria-label="Row 1 cell 1 content"
-                class="pf-c-form-control"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-5"
-                data-ouia-component-type="PF4/TextInput"
-                data-ouia-safe="true"
-                type="text"
-                value="Row 2 cell 1 content"
-              />
-              <div
-                aria-live="polite"
-                class="pf-c-form__helper-text pf-m-error"
-              />
-            </div>
-          </td>
-          <td
-            class=""
-            data-key="1"
-            data-label="Disabled text input col 2"
-          >
-            <div
-              class="pf-c-inline-edit__value"
-            >
-              Row 2 cell 2, disabled content
-            </div>
-            <div
-              class="pf-c-inline-edit__input"
-            >
-              <input
-                aria-invalid="false"
-                aria-label="Row 2 cell 2 content"
-                class="pf-c-form-control"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-6"
-                data-ouia-component-type="PF4/TextInput"
-                data-ouia-safe="true"
-                disabled=""
-                type="text"
-                value="Row 2 cell 2, disabled content"
-              />
-              <div
-                aria-live="polite"
-                class="pf-c-form__helper-text pf-m-error"
-              />
-            </div>
-          </td>
-          <td
-            class=""
-            data-key="2"
-            data-label="Text input col 3"
-          >
-            <div
-              class="pf-c-inline-edit__value"
-            >
-              Row 2 cell 3 content
-            </div>
-            <div
-              class="pf-c-inline-edit__input"
-            >
-              <input
-                aria-invalid="false"
-                aria-label="Row 2 cell 3 content"
-                class="pf-c-form-control"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-7"
-                data-ouia-component-type="PF4/TextInput"
-                data-ouia-safe="true"
-                type="text"
-                value="Row 2 cell 3 content"
-              />
-              <div
-                aria-live="polite"
-                class="pf-c-form__helper-text pf-m-error"
-              />
-            </div>
-          </td>
-          <td
-            class=""
-            data-key="3"
-            data-label="Text input col 4"
-          >
-            <div
-              class="pf-c-inline-edit__value"
-            >
-              Row 2 cell 4 content
-            </div>
-            <div
-              class="pf-c-inline-edit__input"
-            >
-              <input
-                aria-invalid="false"
-                aria-label="Row 2 cell 4 content"
-                class="pf-c-form-control"
-                data-ouia-component-id="OUIA-Generated-TextInputBase-8"
-                data-ouia-component-type="PF4/TextInput"
-                data-ouia-safe="true"
-                type="text"
-                value="Row 2 cell 4 content"
-              />
-              <div
-                aria-live="polite"
-                class="pf-c-form__helper-text pf-m-error"
-              />
-            </div>
-          </td>
-          <td
-            class="pf-c-table__inline-edit-action"
-            data-key="4"
-          >
-            <div
-              class="pf-c-inline-edit__group pf-m-icon-group pf-m-action-group"
-            >
-              <div
-                class="pf-c-inline-edit__action"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="Save row edits for row 1"
-                  class="pf-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-4"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 512 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div
-                class="pf-c-inline-edit__action"
-              >
-                <button
-                  aria-disabled="false"
-                  aria-label="Cancel row edits for row 1"
-                  class="pf-c-button pf-m-plain"
-                  data-ouia-component-id="OUIA-Generated-Button-plain-5"
-                  data-ouia-component-type="PF4/Button"
-                  data-ouia-safe="true"
-                  type="button"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style="vertical-align: -0.125em;"
-                    viewBox="0 0 352 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div
-              class="pf-c-inline-edit__action pf-m-enable-editable"
-            >
-              <button
-                aria-disabled="false"
-                aria-label="Place row 1 in edit mode"
-                class="pf-c-button pf-m-plain"
-                data-ouia-component-id="OUIA-Generated-Button-plain-6"
-                data-ouia-component-type="PF4/Button"
-                data-ouia-safe="true"
-                type="button"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 512 512"
-                  width="1em"
-                >
-                  <path
-                    d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"
-                  />
-                </svg>
-              </button>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </form>
-</div>
-`;
-
-exports[`Header width table 1`] = `
-<div>
+exports[`Table Header width table 1`] = `
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-md"
@@ -4351,490 +3850,11 @@ exports[`Header width table 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</DocumentFragment>
 `;
 
-exports[`Row click table 1`] = `
-<div>
-  <table
-    aria-label="Row click table"
-    class="pf-c-table pf-m-grid-md"
-    data-ouia-component-id="OUIA-Generated-Table-12"
-    data-ouia-component-type="PF4/Table"
-    data-ouia-safe="true"
-    role="grid"
-  >
-    <thead
-      class=""
-    >
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-44"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <th
-          aria-sort="none"
-          class="pf-c-table__sort"
-          data-key="0"
-          data-label="Header cell"
-          scope="col"
-        >
-          <button
-            class="pf-c-table__button"
-            type="button"
-          >
-            <div
-              class="pf-c-table__button-content"
-            >
-              <span
-                class="pf-c-table__text"
-              >
-                Header cell
-              </span>
-              <span
-                class="pf-c-table__sort-indicator"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 256 512"
-                  width="1em"
-                >
-                  <path
-                    d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </button>
-        </th>
-        <th
-          class=""
-          data-key="1"
-          data-label="Branches"
-          scope="col"
-        >
-          Branches
-        </th>
-        <th
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-          scope="col"
-        >
-          Pull requests
-        </th>
-        <th
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-          scope="col"
-        >
-          Workspaces
-        </th>
-        <th
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-          scope="col"
-        >
-          Last Commit
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      class=""
-      role="rowgroup"
-    >
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-45"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-46"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-47"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-48"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-49"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-50"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-51"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-52"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-53"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-`;
-
-exports[`Selectable table 1`] = `
-<div>
+exports[`Table Selectable table 1`] = `
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-md"
@@ -4864,7 +3884,6 @@ exports[`Selectable table 1`] = `
               type="checkbox"
             />
           </label>
-          
         </td>
         <th
           aria-sort="none"
@@ -5471,11 +4490,11 @@ exports[`Selectable table 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</DocumentFragment>
 `;
 
-exports[`Selectable table with Radio 1`] = `
-<div>
+exports[`Table Selectable table with Radio 1`] = `
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-md"
@@ -6103,11 +5122,108 @@ exports[`Selectable table with Radio 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</DocumentFragment>
 `;
 
-exports[`Simple Actions table 1`] = `
-<div>
+exports[`Table Selectable table with selected expandable row 1`] = `
+<DocumentFragment>
+  <table
+    aria-label="Aria labeled"
+    class="pf-c-table pf-m-grid-md"
+    data-ouia-component-id="OUIA-Generated-Table-48"
+    data-ouia-component-type="PF4/Table"
+    data-ouia-safe="true"
+    role="grid"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-220"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class="pf-c-table__check"
+          data-key="0"
+          data-label=""
+        >
+          <label>
+            <input
+              aria-label="Select all rows"
+              checked=""
+              name="check-all"
+              type="checkbox"
+            />
+          </label>
+        </td>
+        <th
+          class=""
+          data-key="1"
+          data-label="column"
+          scope="col"
+        >
+          column
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class=""
+      role="rowgroup"
+    >
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-221"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class="pf-c-table__check"
+          data-key="0"
+        >
+          <label>
+            <input
+              aria-label="Select row 0"
+              checked=""
+              name="checkrow0"
+              type="checkbox"
+            />
+          </label>
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="column"
+        >
+          one
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-222"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+        />
+        <td
+          class=""
+          data-key="1"
+          data-label="column"
+        >
+          one
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`Table Simple Actions table 1`] = `
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-md"
@@ -6980,1838 +6096,11 @@ exports[`Simple Actions table 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</DocumentFragment>
 `;
 
-exports[`Simple table aria-label 1`] = `
-<div>
-  <table
-    aria-label="Aria labeled"
-    class="pf-c-table pf-m-grid-md"
-    data-ouia-component-id="OUIA-Generated-Table-6"
-    data-ouia-component-type="PF4/Table"
-    data-ouia-safe="true"
-    role="grid"
-  >
-    <thead
-      class=""
-    >
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-21"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <th
-          class=""
-          data-key="0"
-          data-label="Header cell"
-          scope="col"
-        >
-          Header cell
-        </th>
-        <th
-          class=""
-          data-key="1"
-          data-label="Branches"
-          scope="col"
-        >
-          Branches
-        </th>
-        <th
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-          scope="col"
-        >
-          Pull requests
-        </th>
-        <th
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-          scope="col"
-        >
-          Workspaces
-        </th>
-        <th
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-          scope="col"
-        >
-          Last Commit
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      class=""
-      role="rowgroup"
-    >
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-22"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-23"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-24"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-25"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-26"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-27"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-28"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-29"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-30"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-`;
-
-exports[`Simple table caption 1`] = `
-<div>
-  <table
-    class="pf-c-table pf-m-grid-md"
-    data-ouia-component-id="OUIA-Generated-Table-2"
-    data-ouia-component-type="PF4/Table"
-    data-ouia-safe="true"
-    role="grid"
-  >
-    <caption>
-      Simple Table
-    </caption>
-    <thead
-      class=""
-    >
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-1"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <th
-          class=""
-          data-key="0"
-          data-label="Header cell"
-          scope="col"
-        >
-          Header cell
-        </th>
-        <th
-          class=""
-          data-key="1"
-          data-label="Branches"
-          scope="col"
-        >
-          Branches
-        </th>
-        <th
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-          scope="col"
-        >
-          Pull requests
-        </th>
-        <th
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-          scope="col"
-        >
-          Workspaces
-        </th>
-        <th
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-          scope="col"
-        >
-          Last Commit
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      class=""
-      role="rowgroup"
-    >
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-2"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-3"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-4"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-5"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-6"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-7"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-8"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-9"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-10"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-`;
-
-exports[`Simple table header 1`] = `
-<div>
-  <h4>
-    Header title
-  </h4>
-  <table
-    class="pf-c-table pf-m-grid-md"
-    data-ouia-component-id="OUIA-Generated-Table-4"
-    data-ouia-component-type="PF4/Table"
-    data-ouia-safe="true"
-    role="grid"
-  >
-    <thead
-      class=""
-    >
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-11"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <th
-          class=""
-          data-key="0"
-          data-label="Header cell"
-          scope="col"
-        >
-          Header cell
-        </th>
-        <th
-          class=""
-          data-key="1"
-          data-label="Branches"
-          scope="col"
-        >
-          Branches
-        </th>
-        <th
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-          scope="col"
-        >
-          Pull requests
-        </th>
-        <th
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-          scope="col"
-        >
-          Workspaces
-        </th>
-        <th
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-          scope="col"
-        >
-          Last Commit
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      class=""
-      role="rowgroup"
-    >
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-12"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-13"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-14"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-15"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-16"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-17"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-18"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-19"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-20"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-`;
-
-exports[`Sortable table 1`] = `
-<div>
-  <table
-    aria-label="Aria labeled"
-    class="pf-c-table pf-m-grid-md"
-    data-ouia-component-id="OUIA-Generated-Table-10"
-    data-ouia-component-type="PF4/Table"
-    data-ouia-safe="true"
-    role="grid"
-  >
-    <thead
-      class=""
-    >
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-34"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <th
-          aria-sort="none"
-          class="pf-c-table__sort"
-          data-key="0"
-          data-label="Header cell"
-          scope="col"
-        >
-          <button
-            class="pf-c-table__button"
-            type="button"
-          >
-            <div
-              class="pf-c-table__button-content"
-            >
-              <span
-                class="pf-c-table__text"
-              >
-                Header cell
-              </span>
-              <span
-                class="pf-c-table__sort-indicator"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 256 512"
-                  width="1em"
-                >
-                  <path
-                    d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </button>
-        </th>
-        <th
-          class=""
-          data-key="1"
-          data-label="Branches"
-          scope="col"
-        >
-          Branches
-        </th>
-        <th
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-          scope="col"
-        >
-          Pull requests
-        </th>
-        <th
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-          scope="col"
-        >
-          Workspaces
-        </th>
-        <th
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-          scope="col"
-        >
-          Last Commit
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      class=""
-      role="rowgroup"
-    >
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-35"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-36"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-37"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-38"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-39"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-40"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-41"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-42"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-      <tr
-        class=""
-        data-ouia-component-id="OUIA-Generated-TableRow-43"
-        data-ouia-component-type="PF4/TableRow"
-        data-ouia-safe="true"
-      >
-        <td
-          class=""
-          data-key="0"
-          data-label="Header cell"
-        >
-          one
-        </td>
-        <td
-          class=""
-          data-key="1"
-          data-label="Branches"
-        >
-          two
-        </td>
-        <td
-          class=""
-          data-key="2"
-          data-label="Pull requests"
-        >
-          three
-        </td>
-        <td
-          class=""
-          data-key="3"
-          data-label="Workspaces"
-        >
-          four
-        </td>
-        <td
-          class=""
-          data-key="4"
-          data-label="Last Commit"
-        >
-          five
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-`;
-
-exports[`Table variants Breakpoint -  1`] = `
-<div>
+exports[`Table Table variants Breakpoint -  1`] = `
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table"
@@ -9286,11 +6575,11 @@ exports[`Table variants Breakpoint -  1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</DocumentFragment>
 `;
 
-exports[`Table variants Breakpoint - grid 1`] = `
-<div>
+exports[`Table Table variants Breakpoint - grid 1`] = `
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid"
@@ -9765,11 +7054,11 @@ exports[`Table variants Breakpoint - grid 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</DocumentFragment>
 `;
 
-exports[`Table variants Breakpoint - grid-2xl 1`] = `
-<div>
+exports[`Table Table variants Breakpoint - grid-2xl 1`] = `
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-2xl"
@@ -10244,11 +7533,11 @@ exports[`Table variants Breakpoint - grid-2xl 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</DocumentFragment>
 `;
 
-exports[`Table variants Breakpoint - grid-lg 1`] = `
-<div>
+exports[`Table Table variants Breakpoint - grid-lg 1`] = `
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-lg"
@@ -10723,11 +8012,11 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</DocumentFragment>
 `;
 
-exports[`Table variants Breakpoint - grid-md 1`] = `
-<div>
+exports[`Table Table variants Breakpoint - grid-md 1`] = `
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-md"
@@ -11202,11 +8491,11 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</DocumentFragment>
 `;
 
-exports[`Table variants Breakpoint - grid-xl 1`] = `
-<div>
+exports[`Table Table variants Breakpoint - grid-xl 1`] = `
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-xl"
@@ -11681,11 +8970,11 @@ exports[`Table variants Breakpoint - grid-xl 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</DocumentFragment>
 `;
 
-exports[`Table variants Size - compact 1`] = `
-<div>
+exports[`Table Table variants Size - compact 1`] = `
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-md pf-m-compact"
@@ -12160,5 +9449,2812 @@ exports[`Table variants Size - compact 1`] = `
       </tr>
     </tbody>
   </table>
-</div>
+</DocumentFragment>
+`;
+
+exports[`Table simple Editable table 1`] = `
+<DocumentFragment>
+  <form
+    class="pf-c-inline-edit"
+  >
+    <table
+      class="pf-c-table pf-m-grid-md"
+      data-ouia-component-id="OUIA-Generated-Table-8"
+      data-ouia-component-type="PF4/Table"
+      data-ouia-safe="true"
+      role="grid"
+    >
+      <caption>
+        Editable Table
+      </caption>
+      <thead
+        class=""
+      >
+        <tr
+          class=""
+          data-ouia-component-id="OUIA-Generated-TableRow-31"
+          data-ouia-component-type="PF4/TableRow"
+          data-ouia-safe="true"
+        >
+          <th
+            class=""
+            data-key="0"
+            data-label="Text input col 1"
+            scope="col"
+          >
+            Text input col 1
+          </th>
+          <th
+            class=""
+            data-key="1"
+            data-label="Disabled text input col 2"
+            scope="col"
+          >
+            Disabled text input col 2
+          </th>
+          <th
+            class=""
+            data-key="2"
+            data-label="Text input col 3"
+            scope="col"
+          >
+            Text input col 3
+          </th>
+          <th
+            class=""
+            data-key="3"
+            data-label="Text input col 4"
+            scope="col"
+          >
+            Text input col 4
+          </th>
+          <th
+            class=""
+            data-key="4"
+            data-label=""
+          />
+        </tr>
+      </thead>
+      <tbody
+        class=""
+        role="rowgroup"
+      >
+        <tr
+          class="pf-m-inline-editable"
+          data-ouia-component-id="OUIA-Generated-TableRow-32"
+          data-ouia-component-type="PF4/TableRow"
+          data-ouia-safe="true"
+        >
+          <td
+            class=""
+            data-key="0"
+            data-label="Text input col 1"
+          >
+            <div
+              class="pf-c-inline-edit__value"
+            >
+              Row 1 cell 1 content
+            </div>
+            <div
+              class="pf-c-inline-edit__input"
+            >
+              <input
+                aria-invalid="false"
+                aria-label="Row 1 cell 1 content"
+                class="pf-c-form-control"
+                data-ouia-component-id="OUIA-Generated-TextInputBase-1"
+                data-ouia-component-type="PF4/TextInput"
+                data-ouia-safe="true"
+                type="text"
+                value="Row 1 cell 1 content"
+              />
+              <div
+                aria-live="polite"
+                class="pf-c-form__helper-text pf-m-error"
+              />
+            </div>
+          </td>
+          <td
+            class=""
+            data-key="1"
+            data-label="Disabled text input col 2"
+          >
+            <div
+              class="pf-c-inline-edit__value"
+            >
+              Row 1 cell 2, disabled content
+            </div>
+            <div
+              class="pf-c-inline-edit__input"
+            >
+              <input
+                aria-invalid="false"
+                aria-label="Row 1 cell 2 content"
+                class="pf-c-form-control"
+                data-ouia-component-id="OUIA-Generated-TextInputBase-2"
+                data-ouia-component-type="PF4/TextInput"
+                data-ouia-safe="true"
+                disabled=""
+                type="text"
+                value="Row 1 cell 2, disabled content"
+              />
+              <div
+                aria-live="polite"
+                class="pf-c-form__helper-text pf-m-error"
+              />
+            </div>
+          </td>
+          <td
+            class=""
+            data-key="2"
+            data-label="Text input col 3"
+          >
+            <div
+              class="pf-c-inline-edit__value"
+            >
+              Row 1 cell 3 content
+            </div>
+            <div
+              class="pf-c-inline-edit__input"
+            >
+              <input
+                aria-invalid="false"
+                aria-label="Row 1 cell 3 content"
+                class="pf-c-form-control"
+                data-ouia-component-id="OUIA-Generated-TextInputBase-3"
+                data-ouia-component-type="PF4/TextInput"
+                data-ouia-safe="true"
+                type="text"
+                value="Row 1 cell 3 content"
+              />
+              <div
+                aria-live="polite"
+                class="pf-c-form__helper-text pf-m-error"
+              />
+            </div>
+          </td>
+          <td
+            class=""
+            data-key="3"
+            data-label="Text input col 4"
+          >
+            <div
+              class="pf-c-inline-edit__value"
+            >
+              Row 1 cell 4 content
+            </div>
+            <div
+              class="pf-c-inline-edit__input"
+            >
+              <input
+                aria-invalid="false"
+                aria-label="Row 1 cell 4 content"
+                class="pf-c-form-control"
+                data-ouia-component-id="OUIA-Generated-TextInputBase-4"
+                data-ouia-component-type="PF4/TextInput"
+                data-ouia-safe="true"
+                type="text"
+                value="Row 1 cell 4 content"
+              />
+              <div
+                aria-live="polite"
+                class="pf-c-form__helper-text pf-m-error"
+              />
+            </div>
+          </td>
+          <td
+            class="pf-c-table__inline-edit-action"
+            data-key="4"
+          >
+            <div
+              class="pf-c-inline-edit__group pf-m-icon-group pf-m-action-group"
+            >
+              <div
+                class="pf-c-inline-edit__action"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Save row edits for row 0"
+                  class="pf-c-button pf-m-plain"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-1"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 512 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
+                class="pf-c-inline-edit__action"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Cancel row edits for row 0"
+                  class="pf-c-button pf-m-plain"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-2"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 352 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div
+              class="pf-c-inline-edit__action pf-m-enable-editable"
+            >
+              <button
+                aria-disabled="false"
+                aria-label="Place row 0 in edit mode"
+                class="pf-c-button pf-m-plain"
+                data-ouia-component-id="OUIA-Generated-Button-plain-3"
+                data-ouia-component-type="PF4/Button"
+                data-ouia-safe="true"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 512 512"
+                  width="1em"
+                >
+                  <path
+                    d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class=""
+          data-ouia-component-id="OUIA-Generated-TableRow-33"
+          data-ouia-component-type="PF4/TableRow"
+          data-ouia-safe="true"
+        >
+          <td
+            class=""
+            data-key="0"
+            data-label="Text input col 1"
+          >
+            <div
+              class="pf-c-inline-edit__value"
+            >
+              Row 2 cell 1 content
+            </div>
+            <div
+              class="pf-c-inline-edit__input"
+            >
+              <input
+                aria-invalid="false"
+                aria-label="Row 1 cell 1 content"
+                class="pf-c-form-control"
+                data-ouia-component-id="OUIA-Generated-TextInputBase-5"
+                data-ouia-component-type="PF4/TextInput"
+                data-ouia-safe="true"
+                type="text"
+                value="Row 2 cell 1 content"
+              />
+              <div
+                aria-live="polite"
+                class="pf-c-form__helper-text pf-m-error"
+              />
+            </div>
+          </td>
+          <td
+            class=""
+            data-key="1"
+            data-label="Disabled text input col 2"
+          >
+            <div
+              class="pf-c-inline-edit__value"
+            >
+              Row 2 cell 2, disabled content
+            </div>
+            <div
+              class="pf-c-inline-edit__input"
+            >
+              <input
+                aria-invalid="false"
+                aria-label="Row 2 cell 2 content"
+                class="pf-c-form-control"
+                data-ouia-component-id="OUIA-Generated-TextInputBase-6"
+                data-ouia-component-type="PF4/TextInput"
+                data-ouia-safe="true"
+                disabled=""
+                type="text"
+                value="Row 2 cell 2, disabled content"
+              />
+              <div
+                aria-live="polite"
+                class="pf-c-form__helper-text pf-m-error"
+              />
+            </div>
+          </td>
+          <td
+            class=""
+            data-key="2"
+            data-label="Text input col 3"
+          >
+            <div
+              class="pf-c-inline-edit__value"
+            >
+              Row 2 cell 3 content
+            </div>
+            <div
+              class="pf-c-inline-edit__input"
+            >
+              <input
+                aria-invalid="false"
+                aria-label="Row 2 cell 3 content"
+                class="pf-c-form-control"
+                data-ouia-component-id="OUIA-Generated-TextInputBase-7"
+                data-ouia-component-type="PF4/TextInput"
+                data-ouia-safe="true"
+                type="text"
+                value="Row 2 cell 3 content"
+              />
+              <div
+                aria-live="polite"
+                class="pf-c-form__helper-text pf-m-error"
+              />
+            </div>
+          </td>
+          <td
+            class=""
+            data-key="3"
+            data-label="Text input col 4"
+          >
+            <div
+              class="pf-c-inline-edit__value"
+            >
+              Row 2 cell 4 content
+            </div>
+            <div
+              class="pf-c-inline-edit__input"
+            >
+              <input
+                aria-invalid="false"
+                aria-label="Row 2 cell 4 content"
+                class="pf-c-form-control"
+                data-ouia-component-id="OUIA-Generated-TextInputBase-8"
+                data-ouia-component-type="PF4/TextInput"
+                data-ouia-safe="true"
+                type="text"
+                value="Row 2 cell 4 content"
+              />
+              <div
+                aria-live="polite"
+                class="pf-c-form__helper-text pf-m-error"
+              />
+            </div>
+          </td>
+          <td
+            class="pf-c-table__inline-edit-action"
+            data-key="4"
+          >
+            <div
+              class="pf-c-inline-edit__group pf-m-icon-group pf-m-action-group"
+            >
+              <div
+                class="pf-c-inline-edit__action"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Save row edits for row 1"
+                  class="pf-c-button pf-m-plain"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-4"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 512 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
+                class="pf-c-inline-edit__action"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="Cancel row edits for row 1"
+                  class="pf-c-button pf-m-plain"
+                  data-ouia-component-id="OUIA-Generated-Button-plain-5"
+                  data-ouia-component-type="PF4/Button"
+                  data-ouia-safe="true"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 352 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div
+              class="pf-c-inline-edit__action pf-m-enable-editable"
+            >
+              <button
+                aria-disabled="false"
+                aria-label="Place row 1 in edit mode"
+                class="pf-c-button pf-m-plain"
+                data-ouia-component-id="OUIA-Generated-Button-plain-6"
+                data-ouia-component-type="PF4/Button"
+                data-ouia-safe="true"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 512 512"
+                  width="1em"
+                >
+                  <path
+                    d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`Table simple Row click table 1`] = `
+<DocumentFragment>
+  <table
+    aria-label="Row click table"
+    class="pf-c-table pf-m-grid-md"
+    data-ouia-component-id="OUIA-Generated-Table-12"
+    data-ouia-component-type="PF4/Table"
+    data-ouia-safe="true"
+    role="grid"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-44"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <th
+          aria-sort="none"
+          class="pf-c-table__sort"
+          data-key="0"
+          data-label="Header cell"
+          scope="col"
+        >
+          <button
+            class="pf-c-table__button"
+            type="button"
+          >
+            <div
+              class="pf-c-table__button-content"
+            >
+              <span
+                class="pf-c-table__text"
+              >
+                Header cell
+              </span>
+              <span
+                class="pf-c-table__sort-indicator"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </button>
+        </th>
+        <th
+          class=""
+          data-key="1"
+          data-label="Branches"
+          scope="col"
+        >
+          Branches
+        </th>
+        <th
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+          scope="col"
+        >
+          Pull requests
+        </th>
+        <th
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+          scope="col"
+        >
+          Workspaces
+        </th>
+        <th
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+          scope="col"
+        >
+          Last Commit
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class=""
+      role="rowgroup"
+    >
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-45"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-46"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-47"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-48"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-49"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-50"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-51"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-52"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-53"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`Table simple Sortable table 1`] = `
+<DocumentFragment>
+  <table
+    aria-label="Aria labeled"
+    class="pf-c-table pf-m-grid-md"
+    data-ouia-component-id="OUIA-Generated-Table-10"
+    data-ouia-component-type="PF4/Table"
+    data-ouia-safe="true"
+    role="grid"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-34"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <th
+          aria-sort="none"
+          class="pf-c-table__sort"
+          data-key="0"
+          data-label="Header cell"
+          scope="col"
+        >
+          <button
+            class="pf-c-table__button"
+            type="button"
+          >
+            <div
+              class="pf-c-table__button-content"
+            >
+              <span
+                class="pf-c-table__text"
+              >
+                Header cell
+              </span>
+              <span
+                class="pf-c-table__sort-indicator"
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 256 512"
+                  width="1em"
+                >
+                  <path
+                    d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </button>
+        </th>
+        <th
+          class=""
+          data-key="1"
+          data-label="Branches"
+          scope="col"
+        >
+          Branches
+        </th>
+        <th
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+          scope="col"
+        >
+          Pull requests
+        </th>
+        <th
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+          scope="col"
+        >
+          Workspaces
+        </th>
+        <th
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+          scope="col"
+        >
+          Last Commit
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class=""
+      role="rowgroup"
+    >
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-35"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-36"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-37"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-38"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-39"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-40"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-41"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-42"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-43"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`Table simple aria-label 1`] = `
+<DocumentFragment>
+  <table
+    aria-label="Aria labeled"
+    class="pf-c-table pf-m-grid-md"
+    data-ouia-component-id="OUIA-Generated-Table-6"
+    data-ouia-component-type="PF4/Table"
+    data-ouia-safe="true"
+    role="grid"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-21"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <th
+          class=""
+          data-key="0"
+          data-label="Header cell"
+          scope="col"
+        >
+          Header cell
+        </th>
+        <th
+          class=""
+          data-key="1"
+          data-label="Branches"
+          scope="col"
+        >
+          Branches
+        </th>
+        <th
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+          scope="col"
+        >
+          Pull requests
+        </th>
+        <th
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+          scope="col"
+        >
+          Workspaces
+        </th>
+        <th
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+          scope="col"
+        >
+          Last Commit
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class=""
+      role="rowgroup"
+    >
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-22"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-23"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-24"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-25"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-26"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-27"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-28"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-29"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-30"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`Table simple caption 1`] = `
+<DocumentFragment>
+  <table
+    class="pf-c-table pf-m-grid-md"
+    data-ouia-component-id="OUIA-Generated-Table-2"
+    data-ouia-component-type="PF4/Table"
+    data-ouia-safe="true"
+    role="grid"
+  >
+    <caption>
+      Simple Table
+    </caption>
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-1"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <th
+          class=""
+          data-key="0"
+          data-label="Header cell"
+          scope="col"
+        >
+          Header cell
+        </th>
+        <th
+          class=""
+          data-key="1"
+          data-label="Branches"
+          scope="col"
+        >
+          Branches
+        </th>
+        <th
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+          scope="col"
+        >
+          Pull requests
+        </th>
+        <th
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+          scope="col"
+        >
+          Workspaces
+        </th>
+        <th
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+          scope="col"
+        >
+          Last Commit
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class=""
+      role="rowgroup"
+    >
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-2"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-3"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-4"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-5"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-6"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-7"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-8"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-9"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-10"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`Table simple header 1`] = `
+<DocumentFragment>
+  <h4>
+    Header title
+  </h4>
+  <table
+    class="pf-c-table pf-m-grid-md"
+    data-ouia-component-id="OUIA-Generated-Table-4"
+    data-ouia-component-type="PF4/Table"
+    data-ouia-safe="true"
+    role="grid"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-11"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <th
+          class=""
+          data-key="0"
+          data-label="Header cell"
+          scope="col"
+        >
+          Header cell
+        </th>
+        <th
+          class=""
+          data-key="1"
+          data-label="Branches"
+          scope="col"
+        >
+          Branches
+        </th>
+        <th
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+          scope="col"
+        >
+          Pull requests
+        </th>
+        <th
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+          scope="col"
+        >
+          Workspaces
+        </th>
+        <th
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+          scope="col"
+        >
+          Last Commit
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class=""
+      role="rowgroup"
+    >
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-12"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-13"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-14"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-15"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-16"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-17"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-18"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-19"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+      <tr
+        class=""
+        data-ouia-component-id="OUIA-Generated-TableRow-20"
+        data-ouia-component-type="PF4/TableRow"
+        data-ouia-safe="true"
+      >
+        <td
+          class=""
+          data-key="0"
+          data-label="Header cell"
+        >
+          one
+        </td>
+        <td
+          class=""
+          data-key="1"
+          data-label="Branches"
+        >
+          two
+        </td>
+        <td
+          class=""
+          data-key="2"
+          data-label="Pull requests"
+        >
+          three
+        </td>
+        <td
+          class=""
+          data-key="3"
+          data-label="Workspaces"
+        >
+          four
+        </td>
+        <td
+          class=""
+          data-key="4"
+          data-label="Last Commit"
+        >
+          five
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
 `;

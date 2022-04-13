@@ -1,9 +1,11 @@
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+
 import {
   Visibility,
   selectable,
   sortable,
-  cellActions,
   cellWidth,
   collapsible,
   scopeColTransformer,
@@ -16,65 +18,7 @@ import {
   wrappable,
   textCenter
 } from './';
-import { DropdownDirection, DropdownPosition } from '@patternfly/react-core';
-import {
-  IAction,
-  IActions,
-  IActionsResolver,
-  IAreActionsDisabled,
-  IExtra,
-  IExtraData,
-  IRowData,
-  ISeparator
-} from '../TableTypes';
-
-const testCellActions = ({
-  actions,
-  actionResolver,
-  areActionsDisabled,
-  rowData,
-  extraData,
-  expectDisabled
-}: {
-  actions?: IActions;
-  actionResolver?: IActionsResolver;
-  areActionsDisabled?: IAreActionsDisabled;
-  rowData?: IRowData;
-  extraData?: IExtraData;
-  expectDisabled?: boolean;
-}) => {
-  const returnedData = cellActions(
-    actions,
-    actionResolver,
-    areActionsDisabled
-  )('', {
-    rowIndex: 0,
-    rowData,
-    column: {
-      extraParams: {
-        dropdownPosition: DropdownPosition.right,
-        dropdownDirection: DropdownDirection.down
-      }
-    }
-  });
-
-  if (actionResolver) {
-    actions = actionResolver(rowData, extraData);
-  }
-
-  expect(returnedData).toMatchObject({ className: 'pf-c-table__action' });
-
-  if (!actions || actions.length === 0) {
-    expect(returnedData.children).toBeUndefined();
-  } else {
-    const view = mount(returnedData.children as React.ReactElement<any>);
-    view
-      .find('.pf-c-dropdown button')
-      .first()
-      .simulate('click');
-    expect(view.find('.pf-c-dropdown__menu li button')).toHaveLength(expectDisabled ? 0 : 1);
-  }
-};
+import { IExtra } from '../TableTypes';
 
 describe('Transformer functions', () => {
   describe('selectable', () => {
@@ -85,10 +29,6 @@ describe('Transformer functions', () => {
       };
       const returnedData = selectable('', { column, rowData: {} } as IExtra);
       expect(returnedData).toMatchObject({ className: 'pf-c-table__check' });
-      const view = mount(returnedData.children as React.ReactElement<any>);
-      view.find('input').simulate('change');
-      expect(onSelect.mock.calls).toHaveLength(1);
-      expect(onSelect.mock.results[0].value).toMatchObject({ rowId: -1, selected: false });
     });
 
     test('selected', () => {
@@ -98,10 +38,6 @@ describe('Transformer functions', () => {
       };
       const returnedData = selectable('', { column, rowIndex: 0, rowData: { selected: true } } as IExtra);
       expect(returnedData).toMatchObject({ className: 'pf-c-table__check' });
-      const view = mount(returnedData.children as React.ReactElement<any>);
-      view.find('input').simulate('change');
-      expect(onSelect.mock.calls).toHaveLength(1);
-      expect(onSelect.mock.results[0].value).toMatchObject({ rowId: 0, selected: false });
     });
 
     test('unselected', () => {
@@ -111,10 +47,6 @@ describe('Transformer functions', () => {
       };
       const returnedData = selectable('', { column, rowIndex: 0, rowData: { selected: false } } as IExtra);
       expect(returnedData).toMatchSnapshot();
-      const view = mount(returnedData.children as React.ReactElement<any>);
-      view.find('input').simulate('change');
-      expect(onSelect.mock.calls).toHaveLength(1);
-      expect(onSelect.mock.results[0].value).toMatchObject({ rowId: 0, selected: true });
     });
   });
 
@@ -124,8 +56,9 @@ describe('Transformer functions', () => {
       const column = { extraParams: { sortBy: {}, onSort } };
       const returnedData = sortable('', { column, columnIndex: 0 });
       expect(returnedData).toMatchObject({ className: 'pf-c-table__sort' });
-      const view = mount(returnedData.children as React.ReactElement<any>);
-      view.find('button').simulate('click');
+
+      render(returnedData.children as React.ReactElement<any>);
+      userEvent.click(screen.getByRole('button'));
       expect(onSort.mock.calls).toHaveLength(1);
     });
 
@@ -134,8 +67,9 @@ describe('Transformer functions', () => {
       const column = { extraParams: { sortBy: { index: 0, direction: 'asc' }, onSort } };
       const returnedData = sortable('', { column, columnIndex: 0 } as IExtra);
       expect(returnedData).toMatchSnapshot();
-      const view = mount(returnedData.children as React.ReactElement<any>);
-      view.find('button').simulate('click');
+
+      render(returnedData.children as React.ReactElement<any>);
+      userEvent.click(screen.getByRole('button'));
       expect(onSort.mock.calls).toHaveLength(1);
     });
 
@@ -144,52 +78,11 @@ describe('Transformer functions', () => {
       const column = { extraParams: { sortBy: { index: 0, direction: 'desc' }, onSort } };
       const returnedData = sortable('', { column, columnIndex: 0 } as IExtra);
       expect(returnedData).toMatchObject({ className: 'pf-c-table__sort pf-m-selected' });
-      const view = mount(returnedData.children as React.ReactElement<any>);
-      view.find('button').simulate('click');
+
+      render(returnedData.children as React.ReactElement<any>);
+      userEvent.click(screen.getByRole('button'));
       expect(onSort.mock.calls).toHaveLength(1);
     });
-  });
-
-  test('simpleCellActions', () => {
-    const actions: IActions = [
-      {
-        title: 'Some',
-        onClick: jest.fn()
-      }
-    ];
-
-    const actionConfigs = [
-      {
-        actions: [] as IActions
-      },
-      {
-        actions
-      },
-      {
-        actionResolver: () => null as (IAction | ISeparator)[]
-      },
-      {
-        actionResolver: () => actions as (IAction | ISeparator)[]
-      },
-      {
-        actionResolver: () => actions as (IAction | ISeparator)[],
-        areActionsDisabled: () => false
-      },
-      {
-        actions,
-        rowData: {
-          disableActions: true
-        } as IRowData,
-        expectDisabled: true
-      },
-      {
-        actionResolver: () => actions,
-        areActionsDisabled: () => true,
-        expectDisabled: true
-      }
-    ];
-
-    actionConfigs.forEach(testCellActions);
   });
 
   type widthType = 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 60 | 70 | 80 | 90 | 100;
@@ -213,8 +106,9 @@ describe('Transformer functions', () => {
     };
     const returnedData = collapsible('', { rowIndex: 0, rowData, column });
     expect(returnedData).toMatchObject({ className: 'pf-c-table__toggle' });
-    const view = mount(returnedData.children as React.ReactElement<any>);
-    view.find('button').simulate('click');
+
+    render(returnedData.children as React.ReactElement<any>);
+    userEvent.click(screen.getByRole('button'));
     expect(onCollapse.mock.calls).toHaveLength(1);
   });
 
@@ -237,9 +131,8 @@ describe('Transformer functions', () => {
         rowData: { parent: 1 },
         column: { extraParams: {} }
       } as IExtra);
-      const view = mount(returned as React.ReactElement<any>);
-      expect(view.find('div.pf-c-table__expandable-row-content')).toHaveLength(1);
-      expect(view).toMatchSnapshot();
+      render(returned as React.ReactElement<any>);
+      expect(screen.getByText('test').parentElement).toBeInTheDocument();
     });
 
     test('no parent', () => {
@@ -284,8 +177,9 @@ describe('Transformer functions', () => {
   test('headerCol', () => {
     const returned = headerCol('some-id')('value', { rowIndex: 0 });
     expect(returned).toMatchObject({ component: 'th' });
-    const view = mount(returned.children as React.ReactElement<any>);
-    expect(view.find('#some-id0')).toHaveLength(1);
+
+    render(returned.children as React.ReactElement<any>);
+    expect(screen.getByText('value')).toBeInTheDocument();
   });
 
   test('emptyCol', () => {

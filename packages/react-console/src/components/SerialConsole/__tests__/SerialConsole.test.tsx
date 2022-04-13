@@ -1,51 +1,74 @@
 import React from 'react';
-import { shallow, render } from 'enzyme';
+
+import { render } from '@testing-library/react';
+
 import { SerialConsole } from '../SerialConsole';
 import { constants } from '../../common/constants';
 
 const { CONNECTED, DISCONNECTED, LOADING } = constants;
 
-test('SerialConsole in the LOADING state', () => {
-  const view = shallow(
-    <SerialConsole onConnect={jest.fn()} onDisconnect={jest.fn()} status={LOADING} textLoading="My text for Loading" />
-  );
-  expect(view).toMatchSnapshot();
-});
+describe('SerialConsole', () => {
+  beforeAll(() => {
+    window.HTMLCanvasElement.prototype.getContext = () => ({ canvas: {} } as any);
+  });
 
-test('SerialConsole in the DISCONNECTED state', () => {
-  const view = shallow(
-    <SerialConsole
-      id="myidprefix"
-      onConnect={jest.fn()}
-      onDisconnect={jest.fn()}
-      status={DISCONNECTED}
-      textDisconnectedTitle="My title for Disconnected"
-      textDisconnected="My text for Disconnected"
-      textConnect="My text for Connect"
-    />
-  );
-  expect(view).toMatchSnapshot();
-});
+  test('in the LOADING state', () => {
+    const { asFragment } = render(
+      <SerialConsole
+        onData={jest.fn()}
+        onConnect={jest.fn()}
+        onDisconnect={jest.fn()}
+        status={LOADING}
+        textLoading="My text for Loading"
+      />
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-const connectedState = (
-  <SerialConsole
-    id="myidprefix"
-    cols={33}
-    rows={44}
-    status={CONNECTED}
-    onConnect={jest.fn()}
-    onDisconnect={jest.fn()}
-    textDisconnect="My text for Disconnect"
-    textReconnect="My text for Reconnect"
-  />
-);
+  test('in the DISCONNECTED state', () => {
+    const { asFragment } = render(
+      <SerialConsole
+        onData={jest.fn()}
+        onConnect={jest.fn()}
+        onDisconnect={jest.fn()}
+        status={DISCONNECTED}
+        textDisconnected="My text for Disconnected"
+        textConnect="My text for Connect"
+      />
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-test('SerialConsole in the CONNECTED state', () => {
-  const view = shallow(connectedState);
-  expect(view).toMatchSnapshot();
-});
+  describe('with CONNECTED state', () => {
+    beforeAll(() => {
+      window.HTMLCanvasElement.prototype.getContext = () =>
+        ({ canvas: {}, createLinearGradient: jest.fn(), fillRect: jest.fn() } as any);
+      global.window.matchMedia = () => ({
+        addListener: jest.fn(),
+        removeListener: jest.fn(),
+        matches: true,
+        media: undefined,
+        onchange: jest.fn(),
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+        dispatchEvent: jest.fn()
+      });
+    });
 
-test('Render SerialConsole in the CONNECTED state', () => {
-  const view = render(connectedState);
-  expect(view).toMatchSnapshot();
+    test('renders', () => {
+      const { asFragment } = render(
+        <SerialConsole
+          cols={33}
+          rows={44}
+          status={CONNECTED}
+          onData={jest.fn()}
+          onConnect={jest.fn()}
+          onDisconnect={jest.fn()}
+          textDisconnect="My text for Disconnect"
+        />
+      );
+
+      expect(asFragment()).toMatchSnapshot();
+    });
+  });
 });
