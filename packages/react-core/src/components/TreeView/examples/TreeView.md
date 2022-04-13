@@ -2,7 +2,7 @@
 id: Tree view
 section: components
 cssPrefix: pf-c-treeview
-propComponents: ['TreeView', 'TreeViewDataItem', 'TreeViewSearch']
+propComponents: ['TreeView', 'TreeViewDataItem']
 beta: true
 ---
 
@@ -113,7 +113,7 @@ class DefaultTreeView extends React.Component {
 
 ```js
 import React from 'react';
-import { Toolbar, ToolbarContent, ToolbarItem, TreeView, TreeViewSearch } from '@patternfly/react-core';
+import { Toolbar, ToolbarContent, ToolbarItem, TreeView, SearchInput } from '@patternfly/react-core';
 
 class SearchTreeView extends React.Component {
   constructor(props) {
@@ -185,8 +185,8 @@ class SearchTreeView extends React.Component {
       });
     };
 
-    this.onSearch = evt => {
-      const input = evt.target.value;
+    this.onSearch = (value, evt) => {
+      const input = value;
       if (input === '') {
         this.setState({ filteredItems: this.options, isFiltered: false });
       } else {
@@ -217,8 +217,8 @@ class SearchTreeView extends React.Component {
       <Toolbar style={{ padding: 0 }}>
         <ToolbarContent style={{ padding: 0 }}>
           <ToolbarItem widths={{ default: '100%' }}>
-            <TreeViewSearch
-              onSearch={this.onSearch}
+            <SearchInput
+              onChange={this.onSearch}
               id="input-search"
               name="search-input"
               aria-label="Search input example"
