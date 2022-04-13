@@ -33,7 +33,7 @@ import GlobeIcon from '@patternfly/react-icons/dist/esm/icons/globe-icon';
       label="Certified Level"
       value={
         <span>
-          <OkIcon style={{color: '#3f9c35'}} /> Certified
+          <OkIcon style={{color: 'var(--pf-global--success-color--100)'}} /> Certified
         </span>
       }
     />

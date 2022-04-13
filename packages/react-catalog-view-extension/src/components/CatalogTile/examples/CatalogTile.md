@@ -23,6 +23,7 @@ import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import pfLogo2 from './pfLogo2.svg';
+import '../../../../dist/css/react-catalog-view-extension.css';
 
 <CatalogTile
   id="simple"
@@ -70,7 +71,7 @@ import pfLogo2 from './pfLogo2.svg';
   }
   footer={
     <span>
-      <OutlinedCheckCircleIcon className="example-ok-icon" /> Enabled
+      <OutlinedCheckCircleIcon style={{color: 'var(--pf-global--success-color--100)'}} /> Enabled
     </span>
   }
 />
@@ -120,7 +121,7 @@ import pfLogo2 from './pfLogo2.svg';
       <CogIcon />
     </CatalogTileBadge>,
     <CatalogTileBadge title="USDA Approved">
-      <OutlinedCheckCircleIcon className="example-ok-icon" />
+      <OutlinedCheckCircleIcon style={{color: 'var(--pf-global--success-color--100)'}} />
     </CatalogTileBadge>
   ]}
   title="Patternfly-React"
