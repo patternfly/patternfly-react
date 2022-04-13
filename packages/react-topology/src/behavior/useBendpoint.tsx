@@ -56,7 +56,7 @@ export const useBendpoint = <DropResult, CollectedProps, Props = {}>(
   );
 
   // argh react events don't play nice with d3 pan zoom double click event
-  const ref = React.useCallback(
+  const ref = React.useCallback<ConnectDragSource>(
     node => {
       d3.select(node).on(
         'click',

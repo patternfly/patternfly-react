@@ -192,7 +192,7 @@ const Popper: React.FunctionComponent<PopperProps> = ({
     onClickOutside
   ]);
 
-  const nodeRefCallback = React.useCallback(
+  const nodeRefCallback = React.useCallback<React.RefCallback<HTMLDivElement>>(
     node => {
       nodeRef.current = node;
       initialize();
