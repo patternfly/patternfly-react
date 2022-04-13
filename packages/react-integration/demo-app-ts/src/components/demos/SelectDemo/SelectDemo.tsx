@@ -25,6 +25,8 @@ interface TypeAheadOption {
 export interface SelectDemoState {
   singleisOpen: boolean;
   singleSelected: string;
+  singleAppendisOpen: boolean;
+  singleAppendSelected: boolean;
   singleDescisOpen: boolean;
   singleDescSelected: string;
   disabledSingleisOpen: boolean;
@@ -64,6 +66,8 @@ export class SelectDemo extends Component<SelectDemoState> {
   state = {
     singleisOpen: false,
     singleSelected: '',
+    singleAppendisOpen: false,
+    singleAppendSelected: '',
     singleDescisOpen: false,
     singleDescSelected: '',
     disabledSingleisOpen: false,
@@ -190,6 +194,12 @@ export class SelectDemo extends Component<SelectDemoState> {
     });
   };
 
+  singleAppendOnToggle = (singleAppendisOpen: boolean) => {
+    this.setState({
+      singleAppendisOpen
+    });
+  };
+
   singleDescOnToggle = (singleDescisOpen: boolean) => {
     this.setState({
       singleDescisOpen
@@ -283,6 +293,22 @@ export class SelectDemo extends Component<SelectDemoState> {
       this.setState({
         singleSelected: selection,
         singleisOpen: false
+      });
+      console.log('selected:', selection.toString());
+    }
+  };
+
+  singleAppendOnSelect = (
+    event: React.MouseEvent | React.ChangeEvent,
+    selection: string | SelectOptionObject,
+    isPlaceholder?: boolean
+  ) => {
+    if (isPlaceholder) {
+      this.clearSelection();
+    } else {
+      this.setState({
+        singleAppendSelected: selection,
+        singleAppendisOpen: false
       });
       console.log('selected:', selection.toString());
     }
@@ -596,6 +622,51 @@ export class SelectDemo extends Component<SelectDemoState> {
           id="toggle-direction"
           name="toggle-direction"
         />
+      </StackItem>
+    );
+  }
+
+  renderSingleSelectMenuAppendTo() {
+    const { singleAppendisOpen, singleAppendSelected } = this.state;
+    const titleId = 'title-id';
+    return (
+      <StackItem isFilled={false}>
+        <Title headingLevel="h2" size="2xl">
+          Single Select - menu append to
+        </Title>
+        <div>
+          <span id={titleId} hidden>
+            Title
+          </span>
+          <Select
+            id="menuappend-select-component"
+            toggleId="menuappend-toggle"
+            variant={SelectVariant.single}
+            aria-label="Select Input"
+            onToggle={this.singleAppendOnToggle}
+            onSelect={this.singleAppendOnSelect}
+            selections={singleAppendSelected}
+            isOpen={singleAppendisOpen}
+            aria-labelledby={titleId}
+            maxHeight={200}
+            menuAppendTo={() => document.body}
+            footer={
+              <Button tabIndex={1} variant="link" isInline id="footer-btn">
+                Action
+              </Button>
+            }
+          >
+            {this.singleOptions.map((option, index) => (
+              <SelectOption
+                id={option.value}
+                isDisabled={option.disabled}
+                key={index}
+                value={option.value}
+                isPlaceholder={option.isPlaceholder}
+              />
+            ))}
+          </Select>
+        </div>
       </StackItem>
     );
   }
@@ -1226,6 +1297,7 @@ export class SelectDemo extends Component<SelectDemoState> {
         {this.renderDescriptionSelect()}
         {this.renderSelectWithDivider()}
         {this.renderLabelTypeaheadSelect()}
+        {this.renderSingleSelectMenuAppendTo()}
       </Stack>
     );
   }

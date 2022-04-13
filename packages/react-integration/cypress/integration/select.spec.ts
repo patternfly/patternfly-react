@@ -263,4 +263,14 @@ describe('Select Test', () => {
     cy.get('#select-document-body-toggle').click();
     cy.get('.pf-c-select__menu').should('not.exist');
   });
+
+  it('Verify click on footer with menuAppendTo will not close select', () => {
+    cy.get('#menuappend-toggle').click();
+    cy.get('#footer-btn').click();
+    cy.get('#Miss > .pf-c-select__menu-item').should('exist');
+    cy.get('#Miss > .pf-c-select__menu-item').click();
+    cy.get('#menuappend-toggle')
+      .contains('Miss')
+      .should('exist');
+  });
 });
