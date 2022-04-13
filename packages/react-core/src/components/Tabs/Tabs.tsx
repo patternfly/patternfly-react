@@ -41,6 +41,8 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   isBox?: boolean;
   /** Enables vertical tab styling */
   isVertical?: boolean;
+  /** Enables no border bottom tab styling */
+  hasBorderBottom?: boolean;
   /** Aria-label for the left scroll button */
   leftScrollAriaLabel?: string;
   /** Aria-label for the right scroll button */
@@ -135,6 +137,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     isSecondary: false,
     isVertical: false,
     isBox: false,
+    hasBorderBottom: true,
     leftScrollAriaLabel: 'Scroll left',
     rightScrollAriaLabel: 'Scroll right',
     component: TabsComponent.div,
@@ -288,6 +291,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       isSecondary,
       isVertical,
       isBox,
+      hasBorderBottom,
       leftScrollAriaLabel,
       rightScrollAriaLabel,
       'aria-label': ariaLabel,
@@ -356,6 +360,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             isBox && styles.modifiers.box,
             showScrollButtons && !isVertical && styles.modifiers.scrollable,
             usePageInsets && styles.modifiers.pageInsets,
+            !hasBorderBottom && styles.modifiers.noBorderBottom,
             formatBreakpointMods(inset, styles),
             variantStyle[variant],
             className
