@@ -10,9 +10,48 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclam
 
 ## Demos
 
+### Static variant with static text
+
+In this demo, the static variant of the Helper Text component (the default) is used, and the text itself will always be visible to users and will never change.
+
+The `aria-describedby` attribute is passed into the Text Input component and is linked to the `id` of the Helper Text component. This notifies assistive technologies of the helper text when the input receives focus, which can be helpful if a user navigates away from and then back to the input so that they are reminded of the helper text.
+
+Note that this demo does not validate the Text Input component. When it would need to be validated, there are other steps that would need to be taken to make it accessible, such as passing in `aria-invalid` and `aria-live` attributes.
+
+```ts
+import React from 'react';
+import { Form, FormGroup, TextInput, HelperText, HelperTextItem } from '@patternfly/react-core';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+
+const HelperTextStaticVariantDynamicText: React.FunctionComponent = () => {
+  const [value, setValue] = React.useState('');
+
+  const handleInputChange = inputValue => {
+    setValue(inputValue);
+  };
+
+  return (
+    <Form>
+      <FormGroup label="Middle Name" fieldId="login-input-helper-text1">
+        <TextInput
+          type="text"
+          id="login-input-helper-text1"
+          name="login-input-helper-text1"
+          onChange={handleInputChange}
+          aria-describedby="helper-text1"
+        />
+      </FormGroup>
+      <HelperText id="helper-text1">
+        <HelperTextItem variant={'default'}>Enter your middle name or your middle initial</HelperTextItem>
+      </HelperText>
+    </Form>
+  );
+};
+```
+
 ### Static variant with dynamic text
 
-In this demo, the static variant of the Helper Text component (the default) is used with the `hasIcon` prop passed in when there is an error, and the text itself dynamically updates based on the input value. When the input has a value of `johndoe` an error is rendered, while an empty input renders other helper text.
+In this demo, the static variant of the Helper Text component (the default) is used with the `hasIcon` prop passed in when there is an error, and the text itself dynamically updates based on the input value. When the input has a value of `johndoe` an error is rendered to simulate a username already being taken, while an empty input renders other helper text. When the input is valid, no helper text is rendered.
 
 The `aria-describedby` attribute is passed into the Text Input component and is linked to the `id` of the Helper Text component. This notifies assistive technologies of the helper text when the input receives focus, which can be helpful if a user navigates away from and then back to the input so that they are reminded of the helper text.
 
@@ -45,20 +84,20 @@ const HelperTextStaticVariantDynamicText: React.FunctionComponent = () => {
 
   return (
     <Form>
-      <FormGroup label="Username" isRequired fieldId="login-input-helper-text1">
+      <FormGroup label="Username" isRequired fieldId="login-input-helper-text2">
         <TextInput
           isRequired
           type="text"
-          id="login-input-helper-text1"
-          name="login-input-helper-text1"
+          id="login-input-helper-text2"
+          name="login-input-helper-text2"
           onChange={handleInputChange}
-          aria-describedby="helper-text1"
+          aria-describedby="helper-text2"
           aria-invalid={inputValidation === 'error'}
         />
       </FormGroup>
-      <HelperText id="helper-text1" aria-live="polite">
+      <HelperText id="helper-text2" aria-live="polite">
         {inputValidation !== 'success' && (
-          <HelperTextItem variant={inputValidation as any} hasIcon={inputValidation === 'invalid'}>
+          <HelperTextItem variant={inputValidation as any} hasIcon={inputValidation === 'error'}>
             {inputValidation === 'default' ? 'Please enter a username' : 'Username already exists'}
           </HelperTextItem>
         )}
