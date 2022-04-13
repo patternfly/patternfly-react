@@ -22,7 +22,7 @@ export interface PopoverHeaderProps extends Omit<React.HTMLProps<HTMLHeadingElem
   alertSeverityScreenReaderText?: string;
 }
 
-export const PopoverHeader: React.FunctionComponent<PopoverHeaderProps> = ({
+export const PopoverHeader: React.FunctionComponent<React.PropsWithChildren<PopoverHeaderProps>> = ({
   children,
   icon,
   className,

@@ -9,7 +9,7 @@ export interface PageHeaderToolsProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const PageHeaderTools: React.FunctionComponent<PageHeaderToolsProps> = ({
+export const PageHeaderTools: React.FunctionComponent<React.PropsWithChildren<PageHeaderToolsProps>> = ({
   children,
   className,
   ...props

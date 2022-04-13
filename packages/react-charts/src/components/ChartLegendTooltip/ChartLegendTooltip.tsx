@@ -319,7 +319,7 @@ interface FlyoutProps {
   width: number; // legend width
 }
 
-export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps> = ({
+export const ChartLegendTooltip: React.FunctionComponent<React.PropsWithChildren<ChartLegendTooltipProps>> = ({
   activePoints,
   datum,
   center = { x: 0, y: 0 },

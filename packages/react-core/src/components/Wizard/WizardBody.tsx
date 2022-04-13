@@ -15,7 +15,7 @@ export interface WizardBodyProps {
   mainComponent?: React.ElementType;
 }
 
-export const WizardBody: React.FunctionComponent<WizardBodyProps> = ({
+export const WizardBody: React.FunctionComponent<React.PropsWithChildren<WizardBodyProps>> = ({
   children,
   hasNoBodyPadding = false,
   'aria-label': ariaLabel,

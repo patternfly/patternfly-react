@@ -11,7 +11,7 @@ export interface CardTitleProps extends React.HTMLProps<HTMLDivElement> {
   component?: keyof JSX.IntrinsicElements;
 }
 
-export const CardTitle: React.FunctionComponent<CardTitleProps> = ({
+export const CardTitle: React.FunctionComponent<React.PropsWithChildren<CardTitleProps>> = ({
   children = null,
   className = '',
   component = 'div',

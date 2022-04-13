@@ -22,7 +22,9 @@ export interface DualListSelectorControlProps extends Omit<React.HTMLProps<HTMLD
   tooltipProps?: any;
 }
 
-export const DualListSelectorControlBase: React.FunctionComponent<DualListSelectorControlProps> = ({
+export const DualListSelectorControlBase: React.FunctionComponent<React.PropsWithChildren<
+  DualListSelectorControlProps
+>> = ({
   innerRef,
   children = null,
   className,

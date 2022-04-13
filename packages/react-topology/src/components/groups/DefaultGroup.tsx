@@ -31,7 +31,7 @@ type DefaultGroupProps = {
   badgeLocation?: BadgeLocation;
 } & Partial<CollapsibleGroupProps & WithSelectionProps & WithDndDropProps & WithDragNodeProps & WithContextMenuProps>;
 
-const DefaultGroup: React.FunctionComponent<DefaultGroupProps> = ({
+const DefaultGroup: React.FunctionComponent<React.PropsWithChildren<DefaultGroupProps>> = ({
   className,
   element,
   onCollapseChange,

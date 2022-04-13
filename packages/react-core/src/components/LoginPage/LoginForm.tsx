@@ -55,7 +55,7 @@ export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
   onChangeRememberMe?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
 }
 
-export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
+export const LoginForm: React.FunctionComponent<React.PropsWithChildren<LoginFormProps>> = ({
   noAutoFocus = false,
   className = '',
   showHelperText = false,

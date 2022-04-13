@@ -16,7 +16,7 @@ import { Link } from '@reach/router';
 import ThIcon from '@patternfly/react-icons/dist/js/icons/th-icon';
 import pfIcon from 'pf-logo-small.svg';
 
-export const ComposableApplicationLauncher: React.FunctionComponent = () => {
+export const ComposableApplicationLauncher: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [refFullOptions, setRefFullOptions] = React.useState<Element[]>();
   const [favorites, setFavorites] = React.useState<string[]>([]);

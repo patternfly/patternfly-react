@@ -24,7 +24,7 @@ export interface PageHeaderToolsItemProps extends React.HTMLProps<HTMLDivElement
   isSelected?: boolean;
 }
 
-export const PageHeaderToolsItem: React.FunctionComponent<PageHeaderToolsItemProps> = ({
+export const PageHeaderToolsItem: React.FunctionComponent<React.PropsWithChildren<PageHeaderToolsItemProps>> = ({
   children,
   id,
   className,

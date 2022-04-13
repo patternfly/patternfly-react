@@ -10,7 +10,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const LegacyTableFavoritable: React.FunctionComponent = () => {
+export const LegacyTableFavoritable: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'a', workspaces: 'four', lastCommit: 'five' },

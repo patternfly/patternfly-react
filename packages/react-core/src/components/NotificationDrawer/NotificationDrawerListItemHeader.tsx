@@ -54,7 +54,9 @@ export interface NotificationDrawerListItemHeaderProps extends React.HTMLProps<H
     | 'right-end';
 }
 
-export const NotificationDrawerListItemHeader: React.FunctionComponent<NotificationDrawerListItemHeaderProps> = ({
+export const NotificationDrawerListItemHeader: React.FunctionComponent<React.PropsWithChildren<
+  NotificationDrawerListItemHeaderProps
+>> = ({
   children,
   className = '',
   icon = null,

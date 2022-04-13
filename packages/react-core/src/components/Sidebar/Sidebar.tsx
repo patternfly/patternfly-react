@@ -14,7 +14,7 @@ export interface SidebarProps extends React.HTMLProps<HTMLDivElement> {
   hasNoBackground?: boolean;
 }
 
-export const Sidebar: React.FunctionComponent<SidebarProps> = ({
+export const Sidebar: React.FunctionComponent<React.PropsWithChildren<SidebarProps>> = ({
   className,
   children,
   orientation,

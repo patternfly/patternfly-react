@@ -18,7 +18,7 @@ interface DefaultCreateConnectorProps {
   tipContents?: React.ReactNode;
 }
 
-const DefaultCreateConnector: React.FunctionComponent<DefaultCreateConnectorProps> = ({
+const DefaultCreateConnector: React.FunctionComponent<React.PropsWithChildren<DefaultCreateConnectorProps>> = ({
   startPoint,
   endPoint,
   hints,

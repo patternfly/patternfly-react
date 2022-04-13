@@ -10,11 +10,9 @@ export interface NotificationDrawerGroupListProps extends React.HTMLProps<HTMLDi
   className?: string;
 }
 
-export const NotificationDrawerGroupList: React.FunctionComponent<NotificationDrawerGroupListProps> = ({
-  children,
-  className = '',
-  ...props
-}: NotificationDrawerGroupListProps) => (
+export const NotificationDrawerGroupList: React.FunctionComponent<React.PropsWithChildren<
+  NotificationDrawerGroupListProps
+>> = ({ children, className = '', ...props }: NotificationDrawerGroupListProps) => (
   <div {...props} className={css(styles.notificationDrawerGroupList, className)}>
     {children}
   </div>

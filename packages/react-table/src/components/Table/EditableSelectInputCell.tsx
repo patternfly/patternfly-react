@@ -34,7 +34,7 @@ export interface IEditableSelectInputCell extends Omit<React.HTMLProps<HTMLEleme
   clearSelection?: (rowIndex: number, cellIndex: number, event?: React.MouseEvent) => void;
 }
 
-export const EditableSelectInputCell: React.FunctionComponent<IEditableSelectInputCell> = ({
+export const EditableSelectInputCell: React.FunctionComponent<React.PropsWithChildren<IEditableSelectInputCell>> = ({
   value,
   rowIndex,
   cellIndex,

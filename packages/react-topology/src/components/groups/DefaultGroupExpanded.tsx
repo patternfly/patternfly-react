@@ -68,7 +68,7 @@ export function computeLabelLocation(points: PointWithSize[]): PointWithSize {
   ];
 }
 
-const DefaultGroupExpanded: React.FunctionComponent<DefaultGroupExpandedProps> = ({
+const DefaultGroupExpanded: React.FunctionComponent<React.PropsWithChildren<DefaultGroupExpandedProps>> = ({
   className,
   element,
   collapsible,

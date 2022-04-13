@@ -13,7 +13,7 @@ export interface BannerProps extends React.HTMLProps<HTMLDivElement> {
   isSticky?: boolean;
 }
 
-export const Banner: React.FunctionComponent<BannerProps> = ({
+export const Banner: React.FunctionComponent<React.PropsWithChildren<BannerProps>> = ({
   children,
   className,
   variant = 'default',

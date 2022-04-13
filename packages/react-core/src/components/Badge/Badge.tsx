@@ -11,7 +11,7 @@ export interface BadgeProps extends React.HTMLProps<HTMLSpanElement> {
   className?: string;
 }
 
-export const Badge: React.FunctionComponent<BadgeProps> = ({
+export const Badge: React.FunctionComponent<React.PropsWithChildren<BadgeProps>> = ({
   isRead = false,
   className = '',
   children = '',

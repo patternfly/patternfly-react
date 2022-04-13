@@ -16,7 +16,7 @@ export interface WizardFooterInternalProps {
   cancelButtonText: React.ReactNode;
 }
 
-export const WizardFooterInternal: React.FunctionComponent<WizardFooterInternalProps> = ({
+export const WizardFooterInternal: React.FunctionComponent<React.PropsWithChildren<WizardFooterInternalProps>> = ({
   onNext,
   onBack,
   onClose,

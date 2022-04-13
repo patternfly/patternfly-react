@@ -21,10 +21,10 @@ export interface VerticalTabsTabProps extends Omit<React.HTMLProps<HTMLLIElement
   /** HREF location */
   href?: string;
   /** Sets the base component to render. defaults to a */
-  component?: React.ElementType<any> | React.ComponentType<any>;
+  component?: React.ElementType<any> | React.ComponentType<React.PropsWithChildren<any>>;
 }
 
-export const VerticalTabsTab: React.FunctionComponent<VerticalTabsTabProps> = ({
+export const VerticalTabsTab: React.FunctionComponent<React.PropsWithChildren<VerticalTabsTabProps>> = ({
   children = null,
   className = '',
   title = null,

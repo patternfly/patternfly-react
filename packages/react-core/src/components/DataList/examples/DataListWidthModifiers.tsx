@@ -18,7 +18,7 @@ import {
   TextContent
 } from '@patternfly/react-core';
 
-export const DataListWidthModifiers: React.FunctionComponent = () => {
+export const DataListWidthModifiers: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [show, setShow] = React.useState(true);
   const [isOpen1, setIsOpen1] = React.useState(false);
   const [isOpen2, setIsOpen2] = React.useState(false);

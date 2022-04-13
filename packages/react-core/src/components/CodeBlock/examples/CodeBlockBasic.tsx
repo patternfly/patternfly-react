@@ -2,7 +2,7 @@ import React from 'react';
 import { CodeBlock, CodeBlockAction, CodeBlockCode, ClipboardCopyButton, Button } from '@patternfly/react-core';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
-export const BasicCodeBlock: React.FunctionComponent = () => {
+export const BasicCodeBlock: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [copied, setCopied] = React.useState(false);
 
   const clipboardCopyFunc = (event, text) => {

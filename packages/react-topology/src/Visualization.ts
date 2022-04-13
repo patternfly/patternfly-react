@@ -221,7 +221,7 @@ export class Visualization extends Stateful implements Controller {
     return undefined;
   }
 
-  getComponent(kind: ModelKind, type: string): ComponentType<{ element: GraphElement }> {
+  getComponent(kind: ModelKind, type: string): ComponentType<React.PropsWithChildren<{ element: GraphElement }>> {
     for (const factory of this.componentFactories) {
       const component = factory(kind, type);
       if (component) {

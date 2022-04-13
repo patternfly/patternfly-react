@@ -9,7 +9,7 @@ export const PopoverPosition = {
   right: 'right'
 };
 
-export const PopoverDialog: React.FunctionComponent<PopoverDialogProps> = ({
+export const PopoverDialog: React.FunctionComponent<React.PropsWithChildren<PopoverDialogProps>> = ({
   position = 'top',
   children = null,
   className = null,

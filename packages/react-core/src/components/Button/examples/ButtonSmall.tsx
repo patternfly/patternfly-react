@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 
-export const ButtonSmall: React.FunctionComponent = () => (
+export const ButtonSmall: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <React.Fragment>
     <Button variant="primary" isSmall>
       Primary

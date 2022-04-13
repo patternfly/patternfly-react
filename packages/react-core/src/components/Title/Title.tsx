@@ -34,7 +34,7 @@ export interface TitleProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 's
   headingLevel: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
-export const Title: React.FunctionComponent<TitleProps> = ({
+export const Title: React.FunctionComponent<React.PropsWithChildren<TitleProps>> = ({
   className = '',
   children = '',
   headingLevel: HeadingLevel,

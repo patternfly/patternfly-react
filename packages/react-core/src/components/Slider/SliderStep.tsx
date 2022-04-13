@@ -17,7 +17,7 @@ export interface SliderStepProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   isActive?: boolean;
 }
 
-export const SliderStep: React.FunctionComponent<SliderStepProps> = ({
+export const SliderStep: React.FunctionComponent<React.PropsWithChildren<SliderStepProps>> = ({
   className,
   label,
   value,

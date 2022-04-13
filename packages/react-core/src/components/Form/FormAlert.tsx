@@ -8,7 +8,7 @@ export interface FormAlertProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const FormAlert: React.FunctionComponent<FormAlertProps> = ({
+export const FormAlert: React.FunctionComponent<React.PropsWithChildren<FormAlertProps>> = ({
   children = null,
   className = '',
   ...props

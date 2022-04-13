@@ -9,7 +9,7 @@ export interface InnerScrollContainerProps extends React.HTMLProps<HTMLDivElemen
   className?: string;
 }
 
-export const InnerScrollContainer: React.FunctionComponent<InnerScrollContainerProps> = ({
+export const InnerScrollContainer: React.FunctionComponent<React.PropsWithChildren<InnerScrollContainerProps>> = ({
   children,
   className,
   ...props

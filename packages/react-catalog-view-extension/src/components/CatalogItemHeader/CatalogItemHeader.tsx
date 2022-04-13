@@ -14,7 +14,7 @@ export interface CatalogItemHeaderProps extends Omit<React.HTMLProps<HTMLElement
   vendor?: string | React.ReactNode;
 }
 
-export const CatalogItemHeader: React.FunctionComponent<CatalogItemHeaderProps> = ({
+export const CatalogItemHeader: React.FunctionComponent<React.PropsWithChildren<CatalogItemHeaderProps>> = ({
   className = '',
   iconImg = null,
   iconClass = null,

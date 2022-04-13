@@ -1,7 +1,7 @@
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
-export const CheckboxControlled: React.FunctionComponent = () => {
+export const CheckboxControlled: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isChecked1, setIsChecked1] = React.useState<boolean>(false);
   const [isChecked2, setIsChecked2] = React.useState<boolean>(false);
   const [isChecked3, setIsChecked3] = React.useState<boolean>(false);

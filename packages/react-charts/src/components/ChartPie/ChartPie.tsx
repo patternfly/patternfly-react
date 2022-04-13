@@ -461,7 +461,7 @@ export interface ChartPieProps extends VictoryPieProps {
   y?: DataGetterPropType;
 }
 
-export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
+export const ChartPie: React.FunctionComponent<React.PropsWithChildren<ChartPieProps>> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,

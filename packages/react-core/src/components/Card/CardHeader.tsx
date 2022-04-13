@@ -20,7 +20,7 @@ export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
   isToggleRightAligned?: boolean;
 }
 
-export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({
+export const CardHeader: React.FunctionComponent<React.PropsWithChildren<CardHeaderProps>> = ({
   children = null,
   className = '',
   id,

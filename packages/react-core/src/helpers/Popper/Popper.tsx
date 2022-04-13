@@ -119,7 +119,7 @@ export interface PopperProps {
       )[];
 }
 
-export const Popper: React.FunctionComponent<PopperProps> = ({
+export const Popper: React.FunctionComponent<React.PropsWithChildren<PopperProps>> = ({
   trigger,
   popper,
   popperMatchesTriggerWidth = true,

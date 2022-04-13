@@ -29,7 +29,9 @@ export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIEle
   isDisabled?: boolean;
 }
 
-export const DualListSelectorListItemBase: React.FunctionComponent<DualListSelectorListItemProps> = ({
+export const DualListSelectorListItemBase: React.FunctionComponent<React.PropsWithChildren<
+  DualListSelectorListItemProps
+>> = ({
   onOptionSelect,
   orderIndex,
   children,

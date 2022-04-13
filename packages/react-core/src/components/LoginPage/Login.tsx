@@ -13,7 +13,7 @@ export interface LoginProps extends React.HTMLProps<HTMLDivElement> {
   header?: React.ReactNode;
 }
 
-export const Login: React.FunctionComponent<LoginProps> = ({
+export const Login: React.FunctionComponent<React.PropsWithChildren<LoginProps>> = ({
   className = '',
   children = null,
   footer = null,

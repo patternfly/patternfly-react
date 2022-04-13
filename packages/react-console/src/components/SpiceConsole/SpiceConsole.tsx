@@ -34,7 +34,7 @@ export interface SpiceConsoleProps extends React.HTMLProps<HTMLDivElement> {
   textCtrlAltDel?: string;
 }
 
-export const SpiceConsole: React.FunctionComponent<SpiceConsoleProps> = ({
+export const SpiceConsole: React.FunctionComponent<React.PropsWithChildren<SpiceConsoleProps>> = ({
   children = null,
   host = '',
   port = '80',

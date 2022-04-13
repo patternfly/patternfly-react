@@ -61,7 +61,7 @@ const variantToIcon = {
   warning: ExclamationTriangleIcon
 };
 
-export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> = ({
+export const ProgressContainer: React.FunctionComponent<React.PropsWithChildren<ProgressContainerProps>> = ({
   progressBarAriaProps,
   value,
   title = '',

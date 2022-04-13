@@ -27,7 +27,7 @@ export interface IEditableTextCell extends React.HTMLProps<HTMLDivElement> {
   isDisabled?: boolean;
 }
 
-export const EditableTextCell: React.FunctionComponent<IEditableTextCell> = ({
+export const EditableTextCell: React.FunctionComponent<React.PropsWithChildren<IEditableTextCell>> = ({
   value,
   rowIndex,
   cellIndex,

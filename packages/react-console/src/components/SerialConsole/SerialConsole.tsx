@@ -45,7 +45,7 @@ export interface SerialConsoleProps extends XTermProps {
   innerRef?: React.RefObject<any>;
 }
 
-const SerialConsoleBase: React.FunctionComponent<SerialConsoleProps> = ({
+const SerialConsoleBase: React.FunctionComponent<React.PropsWithChildren<SerialConsoleProps>> = ({
   onConnect,
   onDisconnect,
   onTitleChanged = () => {},

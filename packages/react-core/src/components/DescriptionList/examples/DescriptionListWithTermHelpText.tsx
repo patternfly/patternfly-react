@@ -10,7 +10,7 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-export const DescriptionListWithTermHelpText: React.FunctionComponent = () => (
+export const DescriptionListWithTermHelpText: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <DescriptionList>
     <DescriptionListGroup>
       <DescriptionListTermHelpText>

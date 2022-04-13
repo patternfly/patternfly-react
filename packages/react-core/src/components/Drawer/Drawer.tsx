@@ -42,7 +42,7 @@ export const DrawerContext = React.createContext<Partial<DrawerContextProps>>({
   isInline: false
 });
 
-export const Drawer: React.FunctionComponent<DrawerProps> = ({
+export const Drawer: React.FunctionComponent<React.PropsWithChildren<DrawerProps>> = ({
   className = '',
   children,
   isExpanded = false,

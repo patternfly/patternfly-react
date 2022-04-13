@@ -16,7 +16,7 @@ export interface ToggleGroupProps extends React.HTMLProps<HTMLDivElement> {
   'aria-label'?: string;
 }
 
-export const ToggleGroup: React.FunctionComponent<ToggleGroupProps> = ({
+export const ToggleGroup: React.FunctionComponent<React.PropsWithChildren<ToggleGroupProps>> = ({
   className,
   children,
   isCompact = false,

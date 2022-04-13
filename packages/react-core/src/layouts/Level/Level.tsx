@@ -11,7 +11,7 @@ export interface LevelProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
 }
 
-export const Level: React.FunctionComponent<LevelProps> = ({
+export const Level: React.FunctionComponent<React.PropsWithChildren<LevelProps>> = ({
   hasGutter,
   className = '',
   children = null,

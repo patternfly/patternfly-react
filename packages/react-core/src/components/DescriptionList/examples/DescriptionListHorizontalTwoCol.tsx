@@ -8,7 +8,7 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-export const DescriptionListHorizontalTwoCol: React.FunctionComponent = () => (
+export const DescriptionListHorizontalTwoCol: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <DescriptionList isHorizontal columnModifier={{ default: '2Col' }}>
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>

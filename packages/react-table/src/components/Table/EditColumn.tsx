@@ -18,7 +18,7 @@ export interface EditColumnProps {
   editAriaLabel: string;
 }
 
-export const EditColumn: React.FunctionComponent<EditColumnProps> = ({
+export const EditColumn: React.FunctionComponent<React.PropsWithChildren<EditColumnProps>> = ({
   onClick = null,
   /* eslint-disable @typescript-eslint/no-unused-vars */
   className = '',

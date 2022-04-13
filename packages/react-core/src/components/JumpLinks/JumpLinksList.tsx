@@ -9,7 +9,7 @@ export interface JumpLinksListProps extends React.HTMLProps<HTMLUListElement> {
   className?: string;
 }
 
-export const JumpLinksList: React.FunctionComponent<JumpLinksListProps> = ({
+export const JumpLinksList: React.FunctionComponent<React.PropsWithChildren<JumpLinksListProps>> = ({
   children,
   className,
   ...props

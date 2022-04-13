@@ -9,7 +9,7 @@ export interface PopoverHeaderIconProps extends React.HTMLProps<HTMLSpanElement>
   className?: string;
 }
 
-export const PopoverHeaderIcon: React.FunctionComponent<PopoverHeaderIconProps> = ({
+export const PopoverHeaderIcon: React.FunctionComponent<React.PropsWithChildren<PopoverHeaderIconProps>> = ({
   children,
   className,
   ...props

@@ -11,7 +11,12 @@ export interface HintProps {
   actions?: React.ReactNode;
 }
 
-export const Hint: React.FunctionComponent<HintProps> = ({ children, className, actions, ...props }: HintProps) => (
+export const Hint: React.FunctionComponent<React.PropsWithChildren<HintProps>> = ({
+  children,
+  className,
+  actions,
+  ...props
+}: HintProps) => (
   <div className={css(styles.hint, className)} {...props}>
     <div className={css(styles.hintActions)}>{actions}</div>
     {children}

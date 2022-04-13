@@ -9,7 +9,7 @@ export interface BackdropProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const Backdrop: React.FunctionComponent<BackdropProps> = ({
+export const Backdrop: React.FunctionComponent<React.PropsWithChildren<BackdropProps>> = ({
   children = null,
   className = '',
   ...props

@@ -9,7 +9,7 @@ export interface HintFooterProps {
   className?: string;
 }
 
-export const HintFooter: React.FunctionComponent<HintFooterProps> = ({
+export const HintFooter: React.FunctionComponent<React.PropsWithChildren<HintFooterProps>> = ({
   children,
   className,
   ...props

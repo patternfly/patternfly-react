@@ -9,11 +9,9 @@ export interface DescriptionListTermHelpTextButtonProps extends React.HTMLProps<
   className?: string;
 }
 
-export const DescriptionListTermHelpTextButton: React.FunctionComponent<DescriptionListTermHelpTextButtonProps> = ({
-  children,
-  className,
-  ...props
-}: DescriptionListTermHelpTextButtonProps) => (
+export const DescriptionListTermHelpTextButton: React.FunctionComponent<React.PropsWithChildren<
+  DescriptionListTermHelpTextButtonProps
+>> = ({ children, className, ...props }: DescriptionListTermHelpTextButtonProps) => (
   <span
     className={css(className, styles.descriptionListText, styles.modifiers.helpText)}
     role="button"

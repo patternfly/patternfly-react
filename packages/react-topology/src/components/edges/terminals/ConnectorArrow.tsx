@@ -18,7 +18,7 @@ interface ConnectorArrowProps {
 const pointsStringFromPoints = (points: [number, number][]): string =>
   _.reduce(points, (result: string, nextPoint: [number, number]) => `${result} ${nextPoint[0]},${nextPoint[1]}`, '');
 
-const ConnectorArrow: React.FunctionComponent<ConnectorArrowProps> = ({
+const ConnectorArrow: React.FunctionComponent<React.PropsWithChildren<ConnectorArrowProps>> = ({
   startPoint,
   endPoint,
   className = '',

@@ -218,12 +218,15 @@ export type transformType = (value: string | object, extra: ExtraParamsType) => 
 export type transformsType = transformType[];
 
 // Renderers Types
-export type createElementType = string | React.ComponentClass<any, any> | React.FunctionComponent<any>;
+export type createElementType =
+  | string
+  | React.ComponentClass<any, any>
+  | React.FunctionComponent<React.PropsWithChildren<any>>;
 export type rendererType =
   | string
   | Function
   | React.ComponentClass<any, any>
-  | React.FunctionComponent<any>
+  | React.FunctionComponent<React.PropsWithChildren<any>>
   | React.Component<any, {}, any>;
 export interface RendererType {
   wrapper?: rendererType;

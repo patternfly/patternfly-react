@@ -15,7 +15,7 @@ export interface MenuGroupProps extends React.HTMLProps<HTMLElement> {
   innerRef?: React.Ref<any>;
 }
 
-const MenuGroupBase: React.FunctionComponent<MenuGroupProps> = ({
+const MenuGroupBase: React.FunctionComponent<React.PropsWithChildren<MenuGroupProps>> = ({
   children,
   className = '',
   label = '',

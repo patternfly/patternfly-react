@@ -3,7 +3,9 @@ import React from 'react';
 export interface MoreInformationDefaultRDPContentProps {
   textMoreRDPInfoContent?: string | React.ReactNode;
 }
-export const MoreInformationDefaultRDPContent: React.FunctionComponent<MoreInformationDefaultRDPContentProps> = ({
+export const MoreInformationDefaultRDPContent: React.FunctionComponent<React.PropsWithChildren<
+  MoreInformationDefaultRDPContentProps
+>> = ({
   textMoreRDPInfoContent = (
     <>
       <p>

@@ -15,7 +15,7 @@ export interface SelectGroupProps extends React.HTMLProps<HTMLDivElement> {
   titleId?: string;
 }
 
-export const SelectGroup: React.FunctionComponent<SelectGroupProps> = ({
+export const SelectGroup: React.FunctionComponent<React.PropsWithChildren<SelectGroupProps>> = ({
   children = [],
   className = '',
   label = '',

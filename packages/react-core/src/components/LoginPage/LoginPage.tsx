@@ -43,7 +43,7 @@ export interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
   socialMediaLoginContent?: React.ReactNode;
 }
 
-export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
+export const LoginPage: React.FunctionComponent<React.PropsWithChildren<LoginPageProps>> = ({
   children = null,
   className = '',
   brandImgSrc = '',

@@ -14,7 +14,10 @@ export interface ToggleGroupItemElementProps {
   variant?: ToggleGroupItemVariant | 'icon' | 'text';
 }
 
-export const ToggleGroupItemElement: React.FunctionComponent<ToggleGroupItemElementProps> = ({ variant, children }) => (
+export const ToggleGroupItemElement: React.FunctionComponent<React.PropsWithChildren<ToggleGroupItemElementProps>> = ({
+  variant,
+  children
+}) => (
   <span className={css(variant === 'icon' && styles.toggleGroupIcon, variant === 'text' && styles.toggleGroupText)}>
     {children}
   </span>

@@ -134,7 +134,7 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
 // id for associating trigger with the content aria-describedby or aria-labelledby
 let pfTooltipIdCounter = 1;
 
-export const Tooltip: React.FunctionComponent<TooltipProps> = ({
+export const Tooltip: React.FunctionComponent<React.PropsWithChildren<TooltipProps>> = ({
   content: bodyContent,
   position = 'top',
   trigger = 'mouseenter focus',

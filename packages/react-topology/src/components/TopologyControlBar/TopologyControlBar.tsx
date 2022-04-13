@@ -246,7 +246,7 @@ export interface TopologyControlBarProps extends React.HTMLProps<HTMLDivElement>
   onButtonClick?: (id: any) => void;
 }
 
-export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps> = ({
+export const TopologyControlBar: React.FunctionComponent<React.PropsWithChildren<TopologyControlBarProps>> = ({
   className = null,
   children = null,
   controlButtons = [],

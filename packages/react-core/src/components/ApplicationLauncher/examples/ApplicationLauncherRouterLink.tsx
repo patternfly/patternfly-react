@@ -40,7 +40,7 @@ const appLauncherItems: React.ReactElement[] = [
   </ApplicationLauncherItem>
 ];
 
-export const ApplicationLauncherRouterLink: React.FunctionComponent = () => {
+export const ApplicationLauncherRouterLink: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const onToggle = (isOpen: boolean) => setIsOpen(isOpen);

@@ -10,7 +10,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const LegacyTableHoverable: React.FunctionComponent = () => {
+export const LegacyTableHoverable: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     {

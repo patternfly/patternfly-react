@@ -8,7 +8,7 @@ interface MultiEdgeProps {
 }
 
 // TODO create utiles to support this
-const MultiEdge: React.FunctionComponent<MultiEdgeProps> = ({ element }) => {
+const MultiEdge: React.FunctionComponent<React.PropsWithChildren<MultiEdgeProps>> = ({ element }) => {
   let idx = 0;
   let sum = 0;
   element
@@ -41,4 +41,4 @@ const MultiEdge: React.FunctionComponent<MultiEdgeProps> = ({ element }) => {
   return <path strokeWidth={2} stroke="#8d8d8d" d={d} fill="none" />;
 };
 
-export default observer(MultiEdge) as React.FunctionComponent<MultiEdgeProps>;
+export default observer(MultiEdge) as React.FunctionComponent<React.PropsWithChildren<MultiEdgeProps>>;

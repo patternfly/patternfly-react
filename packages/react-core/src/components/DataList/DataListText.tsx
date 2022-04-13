@@ -19,7 +19,7 @@ export interface DataListTextProps extends React.HTMLProps<HTMLDivElement> {
   onMouseEnter?: (event: any) => void;
 }
 
-export const DataListText: React.FunctionComponent<DataListTextProps> = ({
+export const DataListText: React.FunctionComponent<React.PropsWithChildren<DataListTextProps>> = ({
   children = null,
   className = '',
   component = 'span',

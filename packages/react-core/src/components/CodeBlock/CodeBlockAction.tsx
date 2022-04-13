@@ -8,7 +8,7 @@ export interface CodeBlockActionProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const CodeBlockAction: React.FunctionComponent<CodeBlockActionProps> = ({
+export const CodeBlockAction: React.FunctionComponent<React.PropsWithChildren<CodeBlockActionProps>> = ({
   children = null,
   className,
   ...props

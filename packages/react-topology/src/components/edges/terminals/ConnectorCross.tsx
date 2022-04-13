@@ -14,7 +14,7 @@ interface ConnectorCrossProps {
   dragRef?: ConnectDragSource;
 }
 
-const ConnectorCross: React.FunctionComponent<ConnectorCrossProps> = ({
+const ConnectorCross: React.FunctionComponent<React.PropsWithChildren<ConnectorCrossProps>> = ({
   startPoint,
   endPoint,
   className = '',

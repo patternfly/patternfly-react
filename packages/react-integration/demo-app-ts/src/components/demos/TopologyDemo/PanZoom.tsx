@@ -47,7 +47,7 @@ const model: Model = {
   ]
 };
 
-export const PanZoom: React.FunctionComponent = withTopologySetup(() => {
+export const PanZoom: React.FunctionComponent<React.PropsWithChildren<unknown>> = withTopologySetup(() => {
   useComponentFactory(defaultComponentFactory);
   useComponentFactory(
     React.useCallback<ComponentFactory>(kind => {

@@ -7,7 +7,7 @@ export interface TooltipArrowProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const TooltipArrow: React.FunctionComponent<TooltipArrowProps> = ({
+export const TooltipArrow: React.FunctionComponent<React.PropsWithChildren<TooltipArrowProps>> = ({
   className,
   ...props
 }: TooltipArrowProps) => <div className={css(styles.tooltipArrow, className)} {...props} />;

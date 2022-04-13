@@ -29,9 +29,9 @@ export const withPolygonAnchor = <P extends {} = {}>(
   getPoints: (element: Node) => PointTuple[],
   end?: AnchorEnd,
   type?: string
-) => (WrappedComponent: React.ComponentType<P>) => {
+) => (WrappedComponent: React.ComponentType<React.PropsWithChildren<P>>) => {
   const element = React.useContext(ElementContext);
-  const Component: React.FunctionComponent<P> = props => {
+  const Component: React.FunctionComponent<React.PropsWithChildren<P>> = props => {
     usePolygonAnchor(getPoints(element as Node), end, type);
     return <WrappedComponent {...props} />;
   };

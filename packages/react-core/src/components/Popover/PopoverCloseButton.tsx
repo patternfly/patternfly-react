@@ -3,7 +3,7 @@ import { Button } from '../Button';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { FindRefWrapper } from '../../helpers/Popper/FindRefWrapper';
 
-export const PopoverCloseButton: React.FunctionComponent<PopoverCloseButtonProps> = ({
+export const PopoverCloseButton: React.FunctionComponent<React.PropsWithChildren<PopoverCloseButtonProps>> = ({
   onClose = () => undefined as void,
   ...props
 }: PopoverCloseButtonProps) => {

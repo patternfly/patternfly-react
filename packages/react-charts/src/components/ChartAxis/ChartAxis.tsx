@@ -442,7 +442,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
   width?: number;
 }
 
-export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
+export const ChartAxis: React.FunctionComponent<React.PropsWithChildren<ChartAxisProps>> = ({
   containerComponent = <ChartContainer />,
   showGrid = false,
   themeColor,

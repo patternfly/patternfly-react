@@ -1,7 +1,7 @@
 import React from 'react';
 import { Accordion, AccordionItem, AccordionContent, AccordionToggle } from '@patternfly/react-core';
 
-export const AccordionSingleExpandBehavior: React.FunctionComponent = () => {
+export const AccordionSingleExpandBehavior: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [expanded, setExpanded] = React.useState('ex-toggle2');
 
   const onToggle = (id: string) => {

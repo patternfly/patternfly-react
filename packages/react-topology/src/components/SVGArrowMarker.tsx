@@ -15,7 +15,12 @@ interface SVGArrowMarkerProps {
   className?: string;
 }
 
-const SVGArrowMarker: React.FunctionComponent<SVGArrowMarkerProps> = ({ id, nodeSize, markerSize, className }) => (
+const SVGArrowMarker: React.FunctionComponent<React.PropsWithChildren<SVGArrowMarkerProps>> = ({
+  id,
+  nodeSize,
+  markerSize,
+  className
+}) => (
   <SVGDefs id={id}>
     <marker
       id={id}

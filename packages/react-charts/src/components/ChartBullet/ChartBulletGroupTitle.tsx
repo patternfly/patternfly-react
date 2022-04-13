@@ -117,7 +117,7 @@ export interface ChartBulletGroupTitleProps {
   width?: number;
 }
 
-export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitleProps> = ({
+export const ChartBulletGroupTitle: React.FunctionComponent<React.PropsWithChildren<ChartBulletGroupTitleProps>> = ({
   ariaDesc,
   ariaTitle,
   capHeight = 1.1,

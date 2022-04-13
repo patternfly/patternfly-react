@@ -12,7 +12,7 @@ const columnNames = {
   nowrap: 'No wrap'
 };
 
-export const ComposableTableControllingText: React.FunctionComponent = () => (
+export const ComposableTableControllingText: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <TableComposable aria-label="Controlling text">
     <Thead>
       <Tr>

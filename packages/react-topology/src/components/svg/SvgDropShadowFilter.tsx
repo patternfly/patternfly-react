@@ -14,7 +14,7 @@ interface SvgDropShadowFilterProps {
   floodColor?: string;
 }
 
-const SvgDropShadowFilter: React.FunctionComponent<SvgDropShadowFilterProps> = ({
+const SvgDropShadowFilter: React.FunctionComponent<React.PropsWithChildren<SvgDropShadowFilterProps>> = ({
   id,
   dx = 0,
   dy = 1,

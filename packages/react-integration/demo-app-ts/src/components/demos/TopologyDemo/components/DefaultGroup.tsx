@@ -23,7 +23,7 @@ type GroupProps = {
   WithDndDragProps &
   WithDndDropProps;
 
-const DefaultGroup: React.FunctionComponent<GroupProps> = ({
+const DefaultGroup: React.FunctionComponent<React.PropsWithChildren<GroupProps>> = ({
   element,
   children,
   selected,

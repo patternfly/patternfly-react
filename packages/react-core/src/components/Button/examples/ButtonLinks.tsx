@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 
-export const ButtonLinks: React.FunctionComponent = () => (
+export const ButtonLinks: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <React.Fragment>
     <Button component="a" href="https://pf4.patternfly.org/" target="_blank" variant="primary">
       Link to core docs

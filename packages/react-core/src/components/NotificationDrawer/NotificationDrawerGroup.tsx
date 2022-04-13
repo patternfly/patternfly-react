@@ -43,7 +43,9 @@ export interface NotificationDrawerGroupProps extends Omit<React.HTMLProps<HTMLD
     | 'right-end';
 }
 
-export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawerGroupProps> = ({
+export const NotificationDrawerGroup: React.FunctionComponent<React.PropsWithChildren<
+  NotificationDrawerGroupProps
+>> = ({
   children,
   className = '',
   count,

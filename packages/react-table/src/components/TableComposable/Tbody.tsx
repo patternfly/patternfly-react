@@ -17,7 +17,7 @@ export interface TbodyProps extends React.HTMLProps<HTMLTableSectionElement> {
   isEvenStriped?: boolean;
 }
 
-const TbodyBase: React.FunctionComponent<TbodyProps> = ({
+const TbodyBase: React.FunctionComponent<React.PropsWithChildren<TbodyProps>> = ({
   children,
   className,
   isExpanded,

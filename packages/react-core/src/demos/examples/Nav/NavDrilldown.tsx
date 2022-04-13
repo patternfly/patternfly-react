@@ -63,7 +63,7 @@ const subMenuOne: JSX.Element = (
   </DrilldownMenu>
 );
 
-export const NavDrilldown: React.FunctionComponent = () => {
+export const NavDrilldown: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
   const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
   const [menuHeights, setMenuHeights] = React.useState<MenuHeights>({});

@@ -8,7 +8,7 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-export const DescriptionListDefaultAutoColumn: React.FunctionComponent = () => (
+export const DescriptionListDefaultAutoColumn: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <DescriptionList isAutoColumnWidths columnModifier={{ default: '3Col' }}>
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>

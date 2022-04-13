@@ -11,7 +11,7 @@ export interface DropdownGroupProps extends Omit<React.HTMLProps<HTMLDivElement>
   label?: React.ReactNode;
 }
 
-export const DropdownGroup: React.FunctionComponent<DropdownGroupProps> = ({
+export const DropdownGroup: React.FunctionComponent<React.PropsWithChildren<DropdownGroupProps>> = ({
   children = null,
   className = '',
   label = '',

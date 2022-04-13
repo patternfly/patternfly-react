@@ -11,7 +11,11 @@ interface ContextSubMenuItemProps {
   children: React.ReactNode[];
 }
 
-const ContextSubMenuItem: React.FunctionComponent<ContextSubMenuItemProps> = ({ label, children, ...other }) => {
+const ContextSubMenuItem: React.FunctionComponent<React.PropsWithChildren<ContextSubMenuItemProps>> = ({
+  label,
+  children,
+  ...other
+}) => {
   const nodeRef = React.useRef<HTMLButtonElement>(null);
   const subMenuRef = React.useRef<HTMLDivElement>(null);
   const [open, setOpen] = React.useState(false);

@@ -7,7 +7,7 @@ const text = [
   'Click that arrow on the left side and check out the resulting expansion.'
 ];
 
-export const ClipboardCopyExpandedWithArray: React.FunctionComponent = () => (
+export const ClipboardCopyExpandedWithArray: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <ClipboardCopy hoverTip="Copy" clickTip="Copied" variant={ClipboardCopyVariant.expansion}>
     {text.join(' ')}
   </ClipboardCopy>

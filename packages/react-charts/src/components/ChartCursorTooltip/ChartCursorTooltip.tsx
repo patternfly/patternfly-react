@@ -270,7 +270,7 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
   y?: number;
 }
 
-export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps> = ({
+export const ChartCursorTooltip: React.FunctionComponent<React.PropsWithChildren<ChartCursorTooltipProps>> = ({
   constrainToVisibleArea = true,
   flyoutComponent = <ChartCursorFlyout />,
   labelComponent = <ChartLabel />,

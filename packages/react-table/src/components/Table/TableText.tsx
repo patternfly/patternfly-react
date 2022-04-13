@@ -33,7 +33,7 @@ export interface TableTextProps extends React.HTMLProps<HTMLDivElement> {
   onMouseEnter?: (event: any) => void;
 }
 
-export const TableText: React.FunctionComponent<TableTextProps> = ({
+export const TableText: React.FunctionComponent<React.PropsWithChildren<TableTextProps>> = ({
   children = null,
   className = '',
   variant = 'span',

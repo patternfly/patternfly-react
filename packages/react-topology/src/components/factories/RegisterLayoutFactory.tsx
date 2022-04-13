@@ -6,7 +6,7 @@ interface Props {
   factory: LayoutFactory;
 }
 
-const RegisterLayoutFactory: React.FunctionComponent<Props> = ({ factory }) => {
+const RegisterLayoutFactory: React.FunctionComponent<React.PropsWithChildren<Props>> = ({ factory }) => {
   useLayoutFactory(factory);
   return null;
 };

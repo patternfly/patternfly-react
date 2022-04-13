@@ -11,7 +11,7 @@ export interface AboutModalBoxBrandProps extends React.HTMLProps<HTMLDivElement>
   alt: string;
 }
 
-export const AboutModalBoxBrand: React.FunctionComponent<AboutModalBoxBrandProps> = ({
+export const AboutModalBoxBrand: React.FunctionComponent<React.PropsWithChildren<AboutModalBoxBrandProps>> = ({
   className = '',
   src = '',
   alt,

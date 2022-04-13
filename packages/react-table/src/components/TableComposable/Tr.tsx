@@ -29,7 +29,7 @@ export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps
   resetOffset?: boolean;
 }
 
-const TrBase: React.FunctionComponent<TrProps> = ({
+const TrBase: React.FunctionComponent<React.PropsWithChildren<TrProps>> = ({
   children,
   className,
   isExpanded,

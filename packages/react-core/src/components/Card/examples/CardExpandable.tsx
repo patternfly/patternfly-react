@@ -14,7 +14,7 @@ import {
   KebabToggle
 } from '@patternfly/react-core';
 
-export const CardExpandable: React.FunctionComponent = () => {
+export const CardExpandable: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [isChecked, setIsChecked] = React.useState<boolean>(false);
   const [isExpanded, setIsExpanded] = React.useState<boolean>(false);

@@ -75,7 +75,7 @@ export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'actio
   toggleAriaLabel?: string;
 }
 
-export const Alert: React.FunctionComponent<AlertProps> = ({
+export const Alert: React.FunctionComponent<React.PropsWithChildren<AlertProps>> = ({
   variant = AlertVariant.default,
   isInline = false,
   isPlain = false,

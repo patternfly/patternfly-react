@@ -9,11 +9,9 @@ export interface TextInputGroupUtilitiesProps extends React.HTMLProps<HTMLDivEle
   className?: string;
 }
 
-export const TextInputGroupUtilities: React.FunctionComponent<TextInputGroupUtilitiesProps> = ({
-  children,
-  className,
-  ...props
-}: TextInputGroupUtilitiesProps) => (
+export const TextInputGroupUtilities: React.FunctionComponent<React.PropsWithChildren<
+  TextInputGroupUtilitiesProps
+>> = ({ children, className, ...props }: TextInputGroupUtilitiesProps) => (
   <div className={css(styles.textInputGroupUtilities, className)} {...props}>
     {children}
   </div>

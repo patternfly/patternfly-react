@@ -14,7 +14,7 @@ export interface LoginMainHeaderProps extends React.HTMLProps<HTMLDivElement> {
   subtitle?: string;
 }
 
-export const LoginMainHeader: React.FunctionComponent<LoginMainHeaderProps> = ({
+export const LoginMainHeader: React.FunctionComponent<React.PropsWithChildren<LoginMainHeaderProps>> = ({
   children = null,
   className = '',
   title = '',

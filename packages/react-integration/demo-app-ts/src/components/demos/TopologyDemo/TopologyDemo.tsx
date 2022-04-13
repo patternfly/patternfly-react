@@ -53,7 +53,7 @@ const TOPOLOGY_PACKAGE = 9;
 const COMPLEX_GROUP = 10;
 const COLLAPSIBLE_GROUPS = 11;
 
-export const TopologyDemo: React.FunctionComponent = () => {
+export const TopologyDemo: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [activeKey, setActiveKey] = React.useState<number>(STYLES);
   const [activeSecondaryKey, setActiveSecondaryKey] = React.useState<number>(0);
   const [activeTertiaryKey, setActiveTertiaryKey] = React.useState<number>(0);

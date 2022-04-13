@@ -22,7 +22,7 @@ export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   'aria-describedby': string;
 }
 
-export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
+export const ModalBox: React.FunctionComponent<React.PropsWithChildren<ModalBoxProps>> = ({
   children,
   className = '',
   variant = 'default',

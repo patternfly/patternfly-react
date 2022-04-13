@@ -69,7 +69,7 @@ const variantStyle = {
   [PageSectionVariants.darker]: styles.modifiers.dark_100
 };
 
-export const PageSection: React.FunctionComponent<PageSectionProps> = ({
+export const PageSection: React.FunctionComponent<React.PropsWithChildren<PageSectionProps>> = ({
   className = '',
   children,
   variant = 'default',

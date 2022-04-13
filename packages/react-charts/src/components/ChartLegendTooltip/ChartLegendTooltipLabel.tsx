@@ -220,7 +220,7 @@ export interface ChartLegendLabelProps extends VictoryLabelProps {
   y?: number;
 }
 
-export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendLabelProps> = ({
+export const ChartLegendTooltipLabel: React.FunctionComponent<React.PropsWithChildren<ChartLegendLabelProps>> = ({
   dx = 0,
   index = 0,
   legendData,

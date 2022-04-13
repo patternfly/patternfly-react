@@ -23,7 +23,7 @@ export interface AccordionContentProps extends React.HTMLProps<HTMLDivElement> {
   isCustomContent?: React.ReactNode;
 }
 
-export const AccordionContent: React.FunctionComponent<AccordionContentProps> = ({
+export const AccordionContent: React.FunctionComponent<React.PropsWithChildren<AccordionContentProps>> = ({
   className = '',
   children = null,
   id = '',

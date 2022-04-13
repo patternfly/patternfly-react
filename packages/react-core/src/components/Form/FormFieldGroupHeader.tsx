@@ -23,7 +23,7 @@ export interface FormFieldGroupHeaderProps extends React.HTMLProps<HTMLDivElemen
   actions?: React.ReactNode;
 }
 
-export const FormFieldGroupHeader: React.FunctionComponent<FormFieldGroupHeaderProps> = ({
+export const FormFieldGroupHeader: React.FunctionComponent<React.PropsWithChildren<FormFieldGroupHeaderProps>> = ({
   className,
   titleText,
   titleDescription,

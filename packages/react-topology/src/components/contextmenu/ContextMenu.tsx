@@ -11,7 +11,7 @@ type ContextMenuProps = Pick<
   'container' | 'className' | 'open' | 'reference' | 'onRequestClose'
 >;
 
-const ContextMenu: React.FunctionComponent<ContextMenuProps> = ({
+const ContextMenu: React.FunctionComponent<React.PropsWithChildren<ContextMenuProps>> = ({
   children,
   open = true,
   onRequestClose,

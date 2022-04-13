@@ -27,7 +27,7 @@ export interface DataListActionProps extends Omit<React.HTMLProps<HTMLDivElement
   isPlainButtonAction?: boolean;
 }
 
-export const DataListAction: React.FunctionComponent<DataListActionProps> = ({
+export const DataListAction: React.FunctionComponent<React.PropsWithChildren<DataListActionProps>> = ({
   children,
   className,
   visibility,

@@ -49,7 +49,7 @@ const variantStyle = {
   danger: styles.modifiers.danger
 };
 
-const ProgressStepBase: React.FunctionComponent<ProgressStepProps> = ({
+const ProgressStepBase: React.FunctionComponent<React.PropsWithChildren<ProgressStepProps>> = ({
   children,
   className,
   variant,

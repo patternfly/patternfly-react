@@ -9,7 +9,7 @@ export interface ListItemProps extends React.HTMLProps<HTMLLIElement> {
   children: React.ReactNode;
 }
 
-export const ListItem: React.FunctionComponent<ListItemProps> = ({
+export const ListItem: React.FunctionComponent<React.PropsWithChildren<ListItemProps>> = ({
   icon = null,
   children = null,
   ...props

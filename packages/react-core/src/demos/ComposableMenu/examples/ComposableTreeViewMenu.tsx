@@ -10,7 +10,7 @@ import {
   TreeViewDataItem
 } from '@patternfly/react-core';
 
-export const ComposableTreeViewMenu: React.FunctionComponent = () => {
+export const ComposableTreeViewMenu: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [checkedItems, setCheckedItems] = React.useState<TreeViewDataItem[]>([]);
   const toggleRef = React.useRef<HTMLButtonElement>();

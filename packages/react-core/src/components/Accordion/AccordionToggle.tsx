@@ -18,7 +18,7 @@ export interface AccordionToggleProps
   component?: React.ElementType;
 }
 
-export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
+export const AccordionToggle: React.FunctionComponent<React.PropsWithChildren<AccordionToggleProps>> = ({
   className = '',
   id,
   isExpanded = false,

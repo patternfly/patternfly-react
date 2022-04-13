@@ -12,7 +12,7 @@ export interface InputGroupProps extends React.HTMLProps<HTMLDivElement> {
   children: React.ReactNode;
 }
 
-export const InputGroup: React.FunctionComponent<InputGroupProps> = ({
+export const InputGroup: React.FunctionComponent<React.PropsWithChildren<InputGroupProps>> = ({
   className = '',
   children,
   ...props

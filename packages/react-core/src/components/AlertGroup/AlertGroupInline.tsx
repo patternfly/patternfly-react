@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AlertGroup/alert-group';
 import { AlertGroupProps } from './AlertGroup';
 
-export const AlertGroupInline: React.FunctionComponent<AlertGroupProps> = ({
+export const AlertGroupInline: React.FunctionComponent<React.PropsWithChildren<AlertGroupProps>> = ({
   className,
   children,
   isToast,

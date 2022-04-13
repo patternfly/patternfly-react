@@ -6,7 +6,7 @@ interface ExpandableRowContentProps {
   children?: React.ReactNode;
 }
 
-export const ExpandableRowContent: React.FunctionComponent<ExpandableRowContentProps> = ({
+export const ExpandableRowContent: React.FunctionComponent<React.PropsWithChildren<ExpandableRowContentProps>> = ({
   children = null as React.ReactNode,
   ...props
 }: ExpandableRowContentProps) => (

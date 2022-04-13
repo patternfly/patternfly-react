@@ -11,7 +11,7 @@ export interface SeparatorProps extends React.HTMLProps<HTMLAnchorElement>, OUIA
   onClick?: (event: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent | MouseEvent) => void;
 }
 
-export const DropdownSeparator: React.FunctionComponent<SeparatorProps> = ({
+export const DropdownSeparator: React.FunctionComponent<React.PropsWithChildren<SeparatorProps>> = ({
   className = '',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref, // Types of Ref are different for React.FunctionComponent vs React.Component

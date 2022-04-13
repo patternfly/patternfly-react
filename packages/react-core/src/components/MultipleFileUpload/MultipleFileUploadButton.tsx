@@ -11,11 +11,9 @@ export interface MultipleFileUploadButtonProps extends React.HTMLProps<HTMLDivEl
   'aria-label'?: string;
 }
 
-export const MultipleFileUploadButton: React.FunctionComponent<MultipleFileUploadButtonProps> = ({
-  className,
-  'aria-label': ariaLabel,
-  ...props
-}: MultipleFileUploadButtonProps) => {
+export const MultipleFileUploadButton: React.FunctionComponent<React.PropsWithChildren<
+  MultipleFileUploadButtonProps
+>> = ({ className, 'aria-label': ariaLabel, ...props }: MultipleFileUploadButtonProps) => {
   const { open } = React.useContext(MultipleFileUploadContext);
 
   return (

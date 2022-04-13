@@ -63,7 +63,9 @@ export interface ConnectWithRemoteViewerProps extends React.HTMLProps<HTMLDivEle
   textMoreRDPInfoContent?: string | React.ReactNode;
 }
 
-export const ConnectWithRemoteViewer: React.FunctionComponent<ConnectWithRemoteViewerProps> = ({
+export const ConnectWithRemoteViewer: React.FunctionComponent<React.PropsWithChildren<
+  ConnectWithRemoteViewerProps
+>> = ({
   onGenerate = generateDescriptorFile,
   onDownload = downloadFile,
   spice = null,

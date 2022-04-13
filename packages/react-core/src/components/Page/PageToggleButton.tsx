@@ -12,7 +12,7 @@ export interface PageToggleButtonProps extends ButtonProps {
   onNavToggle?: () => void;
 }
 
-export const PageToggleButton: React.FunctionComponent<PageToggleButtonProps> = ({
+export const PageToggleButton: React.FunctionComponent<React.PropsWithChildren<PageToggleButtonProps>> = ({
   children,
   isNavOpen = true,
   onNavToggle = () => undefined as any,

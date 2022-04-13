@@ -17,7 +17,9 @@ export interface LoginMainFooterLinksItemProps extends React.HTMLProps<HTMLLIEle
   linkComponentProps?: any;
 }
 
-export const LoginMainFooterLinksItem: React.FunctionComponent<LoginMainFooterLinksItemProps> = ({
+export const LoginMainFooterLinksItem: React.FunctionComponent<React.PropsWithChildren<
+  LoginMainFooterLinksItemProps
+>> = ({
   children = null,
   href = '',
   target = '',

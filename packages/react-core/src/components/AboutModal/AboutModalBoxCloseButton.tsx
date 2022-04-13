@@ -13,7 +13,9 @@ export interface AboutModalBoxCloseButtonProps extends React.HTMLProps<HTMLDivEl
   'aria-label'?: string;
 }
 
-export const AboutModalBoxCloseButton: React.FunctionComponent<AboutModalBoxCloseButtonProps> = ({
+export const AboutModalBoxCloseButton: React.FunctionComponent<React.PropsWithChildren<
+  AboutModalBoxCloseButtonProps
+>> = ({
   className = '',
   onClose = () => undefined as any,
   'aria-label': ariaLabel = 'Close Dialog',

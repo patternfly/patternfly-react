@@ -15,7 +15,7 @@ export interface DrilldownMenuProps extends Omit<React.HTMLAttributes<HTMLDivEle
   getHeight?: (height: string) => void;
 }
 
-export const DrilldownMenu: React.FunctionComponent<DrilldownMenuProps> = ({
+export const DrilldownMenu: React.FunctionComponent<React.PropsWithChildren<DrilldownMenuProps>> = ({
   children,
   id,
   isMenuDrilledIn = false,

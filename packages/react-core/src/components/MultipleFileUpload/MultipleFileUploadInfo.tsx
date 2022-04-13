@@ -9,7 +9,7 @@ export interface MultipleFileUploadInfoProps extends React.HTMLProps<HTMLDivElem
   className?: string;
 }
 
-export const MultipleFileUploadInfo: React.FunctionComponent<MultipleFileUploadInfoProps> = ({
+export const MultipleFileUploadInfo: React.FunctionComponent<React.PropsWithChildren<MultipleFileUploadInfoProps>> = ({
   className,
   children,
   ...props

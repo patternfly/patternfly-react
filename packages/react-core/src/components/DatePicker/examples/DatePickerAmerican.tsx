@@ -1,7 +1,7 @@
 import React from 'react';
 import { DatePicker } from '@patternfly/react-core';
 
-export const DatePickerAmerican: React.FunctionComponent = () => {
+export const DatePickerAmerican: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const dateFormat = (date: Date) =>
     date.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '-');
   const dateParse = (date: string) => {

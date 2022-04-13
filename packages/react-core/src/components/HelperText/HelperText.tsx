@@ -11,7 +11,7 @@ export interface HelperTextProps extends React.HTMLProps<HTMLDivElement | HTMLUL
   component?: 'div' | 'ul';
 }
 
-export const HelperText: React.FunctionComponent<HelperTextProps> = ({
+export const HelperText: React.FunctionComponent<React.PropsWithChildren<HelperTextProps>> = ({
   children,
   className,
   component = 'div',

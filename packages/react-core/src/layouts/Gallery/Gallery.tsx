@@ -28,9 +28,9 @@ export interface GalleryProps extends React.HTMLProps<HTMLDivElement> {
     '2xl'?: string;
   };
   /** Sets the base component to render. defaults to div */
-  component?: React.ElementType<any> | React.ComponentType<any>;
+  component?: React.ElementType<any> | React.ComponentType<React.PropsWithChildren<any>>;
 }
-export const Gallery: React.FunctionComponent<GalleryProps> = ({
+export const Gallery: React.FunctionComponent<React.PropsWithChildren<GalleryProps>> = ({
   children = null,
   className = '',
   component = 'div',

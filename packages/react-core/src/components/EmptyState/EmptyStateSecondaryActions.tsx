@@ -8,11 +8,9 @@ export interface EmptyStateSecondaryActionsProps extends React.HTMLProps<HTMLDiv
   /** Additional classes added to the EmptyState */
   className?: string;
 }
-export const EmptyStateSecondaryActions: React.FunctionComponent<EmptyStateSecondaryActionsProps> = ({
-  children = null,
-  className = '',
-  ...props
-}: EmptyStateSecondaryActionsProps) => (
+export const EmptyStateSecondaryActions: React.FunctionComponent<React.PropsWithChildren<
+  EmptyStateSecondaryActionsProps
+>> = ({ children = null, className = '', ...props }: EmptyStateSecondaryActionsProps) => (
   <div className={css(styles.emptyStateSecondary, className)} {...props}>
     {children}
   </div>

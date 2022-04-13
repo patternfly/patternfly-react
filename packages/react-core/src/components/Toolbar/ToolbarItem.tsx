@@ -80,7 +80,7 @@ export interface ToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
 }
 
-export const ToolbarItem: React.FunctionComponent<ToolbarItemProps> = ({
+export const ToolbarItem: React.FunctionComponent<React.PropsWithChildren<ToolbarItemProps>> = ({
   className,
   variant,
   visibility,

@@ -7,7 +7,11 @@ export interface CaptionProps {
   className?: string;
 }
 
-export const Caption: React.FunctionComponent<CaptionProps> = ({ children, className, ...props }: CaptionProps) => (
+export const Caption: React.FunctionComponent<React.PropsWithChildren<CaptionProps>> = ({
+  children,
+  className,
+  ...props
+}: CaptionProps) => (
   <caption className={className} {...props}>
     {children}
   </caption>

@@ -195,7 +195,9 @@ export interface ChartBulletPrimarySegmentedMeasureProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBulletPrimarySegmentedMeasureProps> = ({
+export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<React.PropsWithChildren<
+  ChartBulletPrimarySegmentedMeasureProps
+>> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,

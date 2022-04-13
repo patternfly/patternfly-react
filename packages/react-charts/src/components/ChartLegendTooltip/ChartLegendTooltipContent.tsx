@@ -180,7 +180,9 @@ export interface ChartLegendTooltipContentProps {
   width?: number;
 }
 
-export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendTooltipContentProps> = ({
+export const ChartLegendTooltipContent: React.FunctionComponent<React.PropsWithChildren<
+  ChartLegendTooltipContentProps
+>> = ({
   activePoints,
   center,
   datum,

@@ -1,4 +1,4 @@
 import React from 'react';
 import { Backdrop } from '@patternfly/react-core';
 
-export const BackdropBasic: React.FunctionComponent = () => <Backdrop />;
+export const BackdropBasic: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => <Backdrop />;

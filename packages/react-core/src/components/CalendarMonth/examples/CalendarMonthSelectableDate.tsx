@@ -1,7 +1,7 @@
 import React from 'react';
 import { CalendarMonth } from '@patternfly/react-core';
 
-export const CalendarMonthSelectableDate: React.FunctionComponent = () => {
+export const CalendarMonthSelectableDate: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [date, setDate] = React.useState(new Date(2020, 10, 24));
 
   return (

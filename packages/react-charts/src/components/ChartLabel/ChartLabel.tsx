@@ -212,7 +212,7 @@ export interface ChartLabelProps extends VictoryLabelProps {
   y?: number;
 }
 
-export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
+export const ChartLabel: React.FunctionComponent<React.PropsWithChildren<ChartLabelProps>> = ({
   style,
   textAnchor,
   ...rest

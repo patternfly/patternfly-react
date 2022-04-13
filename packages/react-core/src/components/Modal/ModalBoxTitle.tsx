@@ -20,7 +20,13 @@ export interface ModalBoxTitleProps {
   /** Optional alert icon (or other) to show before the title of the Modal Header
    * When the predefined alert types are used the default styling
    * will be automatically applied */
-  titleIconVariant?: 'success' | 'danger' | 'warning' | 'info' | 'default' | React.ComponentType<any>;
+  titleIconVariant?:
+    | 'success'
+    | 'danger'
+    | 'warning'
+    | 'info'
+    | 'default'
+    | React.ComponentType<React.PropsWithChildren<any>>;
   /** Optional title label text for screen readers */
   titleLabel?: string;
   /** Additional classes added to the modal box header title. */
@@ -29,7 +35,7 @@ export interface ModalBoxTitleProps {
   id: string;
 }
 
-export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
+export const ModalBoxTitle: React.FunctionComponent<React.PropsWithChildren<ModalBoxTitleProps>> = ({
   className = '',
   id,
   title,

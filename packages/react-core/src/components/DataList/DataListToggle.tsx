@@ -21,7 +21,7 @@ export interface DataListToggleProps extends React.HTMLProps<HTMLDivElement> {
   'aria-controls'?: string;
 }
 
-export const DataListToggle: React.FunctionComponent<DataListToggleProps> = ({
+export const DataListToggle: React.FunctionComponent<React.PropsWithChildren<DataListToggleProps>> = ({
   className = '',
   isExpanded = false,
   'aria-controls': ariaControls = '',

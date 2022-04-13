@@ -20,7 +20,7 @@ export interface SidebarPanelProps extends Omit<React.HTMLProps<HTMLDivElement>,
   };
 }
 
-export const SidebarPanel: React.FunctionComponent<SidebarPanelProps> = ({
+export const SidebarPanel: React.FunctionComponent<React.PropsWithChildren<SidebarPanelProps>> = ({
   className,
   children,
   variant = 'default',

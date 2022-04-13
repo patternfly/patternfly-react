@@ -15,7 +15,7 @@ export interface SplitProps extends React.HTMLProps<HTMLDivElement> {
   component?: React.ReactNode;
 }
 
-export const Split: React.FunctionComponent<SplitProps> = ({
+export const Split: React.FunctionComponent<React.PropsWithChildren<SplitProps>> = ({
   hasGutter = false,
   isWrappable = false,
   className = '',

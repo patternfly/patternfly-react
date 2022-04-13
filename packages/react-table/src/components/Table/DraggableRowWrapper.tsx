@@ -5,7 +5,7 @@ import stylesTreeView from '@patternfly/react-styles/css/components/Table/table-
 import { RowWrapperProps } from './RowWrapper';
 import { Tr } from '../TableComposable';
 
-export const DraggableRowWrapper: React.FunctionComponent<RowWrapperProps> = ({
+export const DraggableRowWrapper: React.FunctionComponent<React.PropsWithChildren<RowWrapperProps>> = ({
   className,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   rowProps,

@@ -380,7 +380,7 @@ export interface ChartStackProps extends VictoryStackProps {
   xOffset?: number;
 }
 
-export const ChartStack: React.FunctionComponent<ChartStackProps> = ({
+export const ChartStack: React.FunctionComponent<React.PropsWithChildren<ChartStackProps>> = ({
   ariaDesc,
   ariaTitle,
   children,

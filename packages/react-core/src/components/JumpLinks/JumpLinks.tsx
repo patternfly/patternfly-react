@@ -80,7 +80,7 @@ function isResponsive(jumpLinks: HTMLElement) {
   );
 }
 
-export const JumpLinks: React.FunctionComponent<JumpLinksProps> = ({
+export const JumpLinks: React.FunctionComponent<React.PropsWithChildren<JumpLinksProps>> = ({
   isCentered,
   isVertical,
   children,

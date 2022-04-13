@@ -23,7 +23,7 @@ type CustomPolygonNodeProps = {
   WithCreateConnectorProps &
   WithContextMenuProps;
 
-const CustomPolygonNode: React.FunctionComponent<CustomPolygonNodeProps> = props => (
+const CustomPolygonNode: React.FunctionComponent<React.PropsWithChildren<CustomPolygonNodeProps>> = props => (
   <DemoDefaultNode getCustomShape={() => Polygon} {...props} />
 );
 

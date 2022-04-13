@@ -60,7 +60,7 @@ export interface DualListSelectorPaneProps {
   onFilterUpdate?: (newFilteredOptions: React.ReactNode[], paneType: string, isSearchReset: boolean) => void;
 }
 
-export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneProps> = ({
+export const DualListSelectorPane: React.FunctionComponent<React.PropsWithChildren<DualListSelectorPaneProps>> = ({
   isChosen = false,
   className = '',
   status = '',

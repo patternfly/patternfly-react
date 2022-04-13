@@ -72,7 +72,7 @@ export const getPathForSides = (numSides: number, size: number, padding = 0): st
   return getHullPath(points, padding);
 };
 
-export const getShapeComponent = (node: Node): React.FunctionComponent<ShapeProps> => {
+export const getShapeComponent = (node: Node): React.FunctionComponent<React.PropsWithChildren<ShapeProps>> => {
   switch (node.getNodeShape()) {
     case NodeShape.circle:
     case NodeShape.ellipse:

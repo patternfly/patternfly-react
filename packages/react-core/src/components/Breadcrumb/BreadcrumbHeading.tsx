@@ -18,7 +18,7 @@ export interface BreadcrumbHeadingProps extends React.HTMLProps<HTMLLIElement> {
   showDivider?: boolean;
 }
 
-export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> = ({
+export const BreadcrumbHeading: React.FunctionComponent<React.PropsWithChildren<BreadcrumbHeadingProps>> = ({
   children = null,
   className = '',
   to = undefined,

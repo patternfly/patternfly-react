@@ -9,7 +9,7 @@ export interface PanelMainBodyProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const PanelMainBody: React.FunctionComponent<PanelMainBodyProps> = ({
+export const PanelMainBody: React.FunctionComponent<React.PropsWithChildren<PanelMainBodyProps>> = ({
   className,
   children,
   ...props

@@ -61,7 +61,7 @@ export interface TableComposableProps extends React.HTMLProps<HTMLTableElement>,
   nestedHeaderColumnSpans?: number[];
 }
 
-const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
+const TableComposableBase: React.FunctionComponent<React.PropsWithChildren<TableComposableProps>> = ({
   children,
   className,
   variant,

@@ -2,7 +2,7 @@ import React from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './brandImg.svg';
 
-export const AboutModalBasic: React.FunctionComponent = () => {
+export const AboutModalBasic: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   const toggleModal = () => {

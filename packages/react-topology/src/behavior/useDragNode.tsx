@@ -167,8 +167,10 @@ export const withDragNode = <
   > & {
     item?: DragObject;
   }
-) => <P extends WithDragNodeProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<P>) => {
-  const Component: React.FunctionComponent<Omit<P, keyof WithDragNodeProps>> = props => {
+) => <P extends WithDragNodeProps & CollectedProps & Props>(
+  WrappedComponent: React.ComponentType<React.PropsWithChildren<P>>
+) => {
+  const Component: React.FunctionComponent<React.PropsWithChildren<Omit<P, keyof WithDragNodeProps>>> = props => {
     // TODO fix cast to any
     const [dragNodeProps, dragNodeRef] = useDragNode(spec, props as any);
     return <WrappedComponent {...(props as any)} dragNodeRef={dragNodeRef} {...dragNodeProps} />;

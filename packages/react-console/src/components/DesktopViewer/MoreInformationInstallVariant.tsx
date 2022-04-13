@@ -8,11 +8,9 @@ export interface MoreInformationInstallVariantProps {
   content?: string | React.ReactNode;
 }
 
-export const MoreInformationInstallVariant: React.FunctionComponent<MoreInformationInstallVariantProps> = ({
-  os = '',
-  content = null as string | React.ReactNode,
-  children = null
-}: MoreInformationInstallVariantProps) => (
+export const MoreInformationInstallVariant: React.FunctionComponent<React.PropsWithChildren<
+  MoreInformationInstallVariantProps
+>> = ({ os = '', content = null as string | React.ReactNode, children = null }: MoreInformationInstallVariantProps) => (
   <DescriptionListGroup>
     <DescriptionListTerm>{os}</DescriptionListTerm>
     <DescriptionListDescription>{content || children}</DescriptionListDescription>

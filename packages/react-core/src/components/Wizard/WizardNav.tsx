@@ -15,7 +15,7 @@ export interface WizardNavProps {
   returnList?: boolean;
 }
 
-export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
+export const WizardNav: React.FunctionComponent<React.PropsWithChildren<WizardNavProps>> = ({
   children,
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledBy,

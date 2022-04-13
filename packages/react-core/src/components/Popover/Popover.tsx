@@ -213,7 +213,7 @@ const alertStyle = {
   danger: styles.modifiers.danger
 };
 
-export const Popover: React.FunctionComponent<PopoverProps> = ({
+export const Popover: React.FunctionComponent<React.PropsWithChildren<PopoverProps>> = ({
   children,
   position = 'top',
   enableFlip = true,

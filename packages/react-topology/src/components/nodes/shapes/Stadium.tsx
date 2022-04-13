@@ -13,7 +13,7 @@ const getStadiumPoints = (width: number, radius: number): PointTuple[] => [
   [radius, radius]
 ];
 
-const Stadium: React.FunctionComponent<ShapeProps> = ({
+const Stadium: React.FunctionComponent<React.PropsWithChildren<ShapeProps>> = ({
   className = css(styles.topologyNodeBackground),
   width,
   height,

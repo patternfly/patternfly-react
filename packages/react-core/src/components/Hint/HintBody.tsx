@@ -9,7 +9,11 @@ export interface HintBodyProps {
   className?: string;
 }
 
-export const HintBody: React.FunctionComponent<HintBodyProps> = ({ children, className, ...props }: HintBodyProps) => (
+export const HintBody: React.FunctionComponent<React.PropsWithChildren<HintBodyProps>> = ({
+  children,
+  className,
+  ...props
+}: HintBodyProps) => (
   <div className={css(styles.hintBody, className)} {...props}>
     {children}
   </div>

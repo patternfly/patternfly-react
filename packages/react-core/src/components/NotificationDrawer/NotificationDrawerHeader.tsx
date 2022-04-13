@@ -26,7 +26,9 @@ export interface NotificationDrawerHeaderProps extends React.HTMLProps<HTMLDivEl
   unreadText?: string;
 }
 
-export const NotificationDrawerHeader: React.FunctionComponent<NotificationDrawerHeaderProps> = ({
+export const NotificationDrawerHeader: React.FunctionComponent<React.PropsWithChildren<
+  NotificationDrawerHeaderProps
+>> = ({
   children,
   className = '',
   count,

@@ -58,10 +58,10 @@ export interface GridItemProps extends React.HTMLProps<HTMLDivElement> {
     '2xl'?: string;
   };
   /** Sets the base component to render. defaults to div */
-  component?: React.ElementType<any> | React.ComponentType<any>;
+  component?: React.ElementType<any> | React.ComponentType<React.PropsWithChildren<any>>;
 }
 
-export const GridItem: React.FunctionComponent<GridItemProps> = ({
+export const GridItem: React.FunctionComponent<React.PropsWithChildren<GridItemProps>> = ({
   children = null,
   className = '',
   component = 'div',

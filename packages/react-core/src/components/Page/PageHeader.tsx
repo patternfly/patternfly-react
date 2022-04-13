@@ -33,7 +33,7 @@ export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
   'aria-label'?: string;
 }
 
-export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
+export const PageHeader: React.FunctionComponent<React.PropsWithChildren<PageHeaderProps>> = ({
   className = '',
   logo = null as React.ReactNode,
   logoProps = null as object,

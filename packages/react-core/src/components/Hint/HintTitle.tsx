@@ -9,7 +9,7 @@ export interface HintTitleProps {
   className?: string;
 }
 
-export const HintTitle: React.FunctionComponent<HintTitleProps> = ({
+export const HintTitle: React.FunctionComponent<React.PropsWithChildren<HintTitleProps>> = ({
   children,
   className,
   ...props

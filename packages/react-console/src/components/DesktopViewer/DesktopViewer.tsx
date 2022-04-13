@@ -44,7 +44,7 @@ export interface DesktopViewerProps extends ConnectWithRemoteViewerProps {
   textMoreRDPInfoContent?: string | React.ReactNode;
 }
 
-export const DesktopViewer: React.FunctionComponent<DesktopViewerProps> = ({
+export const DesktopViewer: React.FunctionComponent<React.PropsWithChildren<DesktopViewerProps>> = ({
   children = null,
   spice = null,
   vnc = null,

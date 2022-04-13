@@ -14,7 +14,7 @@ import {
   KebabToggle
 } from '@patternfly/react-core';
 
-export const DataListCheckboxes: React.FunctionComponent = () => {
+export const DataListCheckboxes: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen1, setIsOpen1] = React.useState(false);
   const [isOpen2, setIsOpen2] = React.useState(false);
   const [isOpen3, setIsOpen3] = React.useState(false);

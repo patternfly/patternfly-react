@@ -15,7 +15,7 @@ export interface RowProps {
 
 export interface ListProps {
   estimatedItemSize?: number;
-  children: React.FunctionComponent<RowProps>;
+  children: React.FunctionComponent<React.PropsWithChildren<RowProps>>;
   [key: string]: any;
 }
 

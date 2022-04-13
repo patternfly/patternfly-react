@@ -20,7 +20,7 @@ export const MultipleFileUploadContext = React.createContext({
   open: () => {}
 });
 
-export const MultipleFileUpload: React.FunctionComponent<MultipleFileUploadProps> = ({
+export const MultipleFileUpload: React.FunctionComponent<React.PropsWithChildren<MultipleFileUploadProps>> = ({
   className,
   children,
   dropzoneProps = {},

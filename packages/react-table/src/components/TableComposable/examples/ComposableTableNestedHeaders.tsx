@@ -18,7 +18,7 @@ interface PodConnection {
   packets: number;
 }
 
-export const ComposableTableNestedHeaders: React.FunctionComponent = () => {
+export const ComposableTableNestedHeaders: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   // In real usage, this data would come from some external source like an API via props.
   const connections: PodConnection[] = [
     {

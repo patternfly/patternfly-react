@@ -11,7 +11,7 @@ export interface PopoverBodyProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const PopoverBody: React.FunctionComponent<PopoverBodyProps> = ({
+export const PopoverBody: React.FunctionComponent<React.PropsWithChildren<PopoverBodyProps>> = ({
   children,
   id,
   className,

@@ -11,7 +11,7 @@ export interface TreeViewListProps extends React.HTMLProps<HTMLUListElement> {
   children: React.ReactNode;
 }
 
-export const TreeViewList: React.FunctionComponent<TreeViewListProps> = ({
+export const TreeViewList: React.FunctionComponent<React.PropsWithChildren<TreeViewListProps>> = ({
   isNested = false,
   toolbar,
   children,

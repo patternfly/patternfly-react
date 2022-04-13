@@ -7,7 +7,7 @@ interface AlertInfo {
   key: number;
 }
 
-export const AsyncLiveRegionAlert: React.FunctionComponent = () => {
+export const AsyncLiveRegionAlert: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [alerts, setAlerts] = React.useState<AlertInfo[]>([]);
   const [isActive, setIsActive] = React.useState(false);
   const getUniqueId: () => number = () => new Date().getTime();

@@ -233,10 +233,10 @@ export interface VirtualGridProps {
   width: number;
 
   /** Scroll Container element to render */
-  scrollContainerComponent?: string | React.ComponentType<any>;
+  scrollContainerComponent?: string | React.ComponentType<React.PropsWithChildren<any>>;
 
   /** Inner Scroll Container element to render */
-  innerScrollContainerComponent?: string | React.ComponentType<any>;
+  innerScrollContainerComponent?: string | React.ComponentType<React.PropsWithChildren<any>>;
 }
 
 interface InstanceProps {

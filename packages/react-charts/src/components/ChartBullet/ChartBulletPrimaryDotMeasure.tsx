@@ -179,7 +179,9 @@ export interface ChartBulletPrimaryDotMeasureProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPrimaryDotMeasureProps> = ({
+export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<React.PropsWithChildren<
+  ChartBulletPrimaryDotMeasureProps
+>> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,

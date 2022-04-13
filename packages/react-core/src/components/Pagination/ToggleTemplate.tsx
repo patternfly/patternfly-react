@@ -13,7 +13,7 @@ export interface ToggleTemplateProps {
   ofWord?: React.ReactNode;
 }
 
-export const ToggleTemplate: React.FunctionComponent<ToggleTemplateProps> = ({
+export const ToggleTemplate: React.FunctionComponent<React.PropsWithChildren<ToggleTemplateProps>> = ({
   firstIndex = 0,
   lastIndex = 0,
   itemCount = 0,

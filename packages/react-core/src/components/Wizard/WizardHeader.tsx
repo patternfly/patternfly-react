@@ -22,7 +22,7 @@ export interface WizardHeaderProps {
   descriptionId?: string;
 }
 
-export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
+export const WizardHeader: React.FunctionComponent<React.PropsWithChildren<WizardHeaderProps>> = ({
   onClose = () => undefined,
   title,
   description,

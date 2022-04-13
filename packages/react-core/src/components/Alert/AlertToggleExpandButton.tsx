@@ -16,7 +16,9 @@ export interface AlertToggleExpandButtonProps extends ButtonProps {
   variantLabel?: string;
 }
 
-export const AlertToggleExpandButton: React.FunctionComponent<AlertToggleExpandButtonProps> = ({
+export const AlertToggleExpandButton: React.FunctionComponent<React.PropsWithChildren<
+  AlertToggleExpandButtonProps
+>> = ({
   'aria-label': ariaLabel,
   variantLabel,
   onToggleExpand,

@@ -12,9 +12,9 @@ export interface ApplicationLauncherContentProps {
   children: React.ReactNode;
 }
 
-export const ApplicationLauncherContent: React.FunctionComponent<ApplicationLauncherContentProps> = ({
-  children
-}: ApplicationLauncherContentProps) => (
+export const ApplicationLauncherContent: React.FunctionComponent<React.PropsWithChildren<
+  ApplicationLauncherContentProps
+>> = ({ children }: ApplicationLauncherContentProps) => (
   <ApplicationLauncherItemContext.Consumer>
     {({ isExternal, icon }) => (
       <>

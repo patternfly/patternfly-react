@@ -5,7 +5,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
-export const MenuDrilldownSubmenuFunctions: React.FunctionComponent = () => {
+export const MenuDrilldownSubmenuFunctions: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
   const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
   const [menuHeights, setMenuHeights] = React.useState<any>({});

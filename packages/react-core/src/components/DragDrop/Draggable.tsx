@@ -75,7 +75,7 @@ function overlaps(ev: MouseEvent, rect: DOMRect) {
   );
 }
 
-export const Draggable: React.FunctionComponent<DraggableProps> = ({
+export const Draggable: React.FunctionComponent<React.PropsWithChildren<DraggableProps>> = ({
   className,
   children,
   style: styleProp = {},

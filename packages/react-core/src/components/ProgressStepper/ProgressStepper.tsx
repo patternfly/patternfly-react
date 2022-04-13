@@ -16,7 +16,7 @@ export interface ProgressStepperProps
   isCompact?: boolean;
 }
 
-export const ProgressStepper: React.FunctionComponent<ProgressStepperProps> = ({
+export const ProgressStepper: React.FunctionComponent<React.PropsWithChildren<ProgressStepperProps>> = ({
   children,
   className,
   isCenterAligned,

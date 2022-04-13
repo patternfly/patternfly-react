@@ -9,7 +9,10 @@ interface FlyoutMenuProps {
   depth: number;
 }
 
-const FlyoutMenu: React.FunctionComponent<FlyoutMenuProps> = ({ depth, children }: FlyoutMenuProps) => (
+const FlyoutMenu: React.FunctionComponent<React.PropsWithChildren<FlyoutMenuProps>> = ({
+  depth,
+  children
+}: FlyoutMenuProps) => (
   <Menu key={depth} containsFlyout id={`menu-${depth}`} onSelect={onSelect}>
     <MenuContent>
       <MenuList>
@@ -29,7 +32,7 @@ const FlyoutMenu: React.FunctionComponent<FlyoutMenuProps> = ({ depth, children 
   </Menu>
 );
 
-export const ComposableFlyout: React.FunctionComponent = () => {
+export const ComposableFlyout: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const menuRef = React.useRef<HTMLDivElement>();
   const toggleRef = React.useRef<HTMLButtonElement>();

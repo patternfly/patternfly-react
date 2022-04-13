@@ -7,7 +7,7 @@ export interface CodeBlockCodeProps extends React.HTMLProps<HTMLPreElement> {
   children?: React.ReactNode;
 }
 
-export const CodeBlockCode: React.FunctionComponent<CodeBlockCodeProps> = ({
+export const CodeBlockCode: React.FunctionComponent<React.PropsWithChildren<CodeBlockCodeProps>> = ({
   children = null,
   ...props
 }: CodeBlockCodeProps) => (

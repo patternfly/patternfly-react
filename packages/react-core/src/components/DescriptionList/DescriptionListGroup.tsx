@@ -9,7 +9,7 @@ export interface DescriptionListGroupProps extends React.HTMLProps<HTMLDivElemen
   className?: string;
 }
 
-export const DescriptionListGroup: React.FunctionComponent<DescriptionListGroupProps> = ({
+export const DescriptionListGroup: React.FunctionComponent<React.PropsWithChildren<DescriptionListGroupProps>> = ({
   className,
   children,
   ...props

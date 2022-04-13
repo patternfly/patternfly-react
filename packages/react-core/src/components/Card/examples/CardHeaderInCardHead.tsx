@@ -13,7 +13,7 @@ import {
   KebabToggle
 } from '@patternfly/react-core';
 
-export const CardTitleInHeader: React.FunctionComponent = () => {
+export const CardTitleInHeader: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [isChecked, setIsChecked] = React.useState<boolean>(false);
 

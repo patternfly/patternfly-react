@@ -37,7 +37,7 @@ export interface ListProps extends Omit<React.HTMLProps<HTMLUListElement | HTMLO
   component?: 'ol' | 'ul';
 }
 
-export const List: React.FunctionComponent<ListProps> = ({
+export const List: React.FunctionComponent<React.PropsWithChildren<ListProps>> = ({
   className = '',
   children = null,
   variant = null,

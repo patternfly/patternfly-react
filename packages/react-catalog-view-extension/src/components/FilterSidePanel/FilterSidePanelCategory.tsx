@@ -26,7 +26,9 @@ export interface FilterSidePanelCategoryProps extends Omit<React.HTMLProps<HTMLF
   hideText?: string;
 }
 
-export const FilterSidePanelCategory: React.FunctionComponent<FilterSidePanelCategoryProps> = ({
+export const FilterSidePanelCategory: React.FunctionComponent<React.PropsWithChildren<
+  FilterSidePanelCategoryProps
+>> = ({
   children = null,
   className = '',
   title = null,

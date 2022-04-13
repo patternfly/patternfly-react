@@ -474,7 +474,7 @@ export interface ChartBulletProps {
   width?: number;
 }
 
-export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
+export const ChartBullet: React.FunctionComponent<React.PropsWithChildren<ChartBulletProps>> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,

@@ -14,7 +14,7 @@ export interface HeaderCellProps {
   children: React.ReactNode;
 }
 
-export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
+export const HeaderCell: React.FunctionComponent<React.PropsWithChildren<HeaderCellProps>> = ({
   className = '',
   component = 'th',
   scope = '',

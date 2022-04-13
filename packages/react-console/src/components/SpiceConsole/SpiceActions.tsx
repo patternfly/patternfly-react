@@ -9,7 +9,7 @@ export interface SpiceActionsProps extends React.HTMLProps<HTMLDivElement> {
   /** Text for the Dropdown toggle button */
   textSendShortcut?: string;
 }
-export const SpiceActions: React.FunctionComponent<SpiceActionsProps> = ({
+export const SpiceActions: React.FunctionComponent<React.PropsWithChildren<SpiceActionsProps>> = ({
   textSendShortcut = 'Send Key',
   textCtrlAltDel = 'Ctrl+Alt+Del',
   onCtrlAltDel

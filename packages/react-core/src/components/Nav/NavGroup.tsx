@@ -14,7 +14,7 @@ export interface NavGroupProps extends React.HTMLProps<HTMLDivElement> {
   id?: string;
 }
 
-export const NavGroup: React.FunctionComponent<NavGroupProps> = ({
+export const NavGroup: React.FunctionComponent<React.PropsWithChildren<NavGroupProps>> = ({
   title,
   children = null,
   className = '',

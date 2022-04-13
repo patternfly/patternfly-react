@@ -568,7 +568,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
   y?: DataGetterPropType;
 }
 
-export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizationProps> = ({
+export const ChartDonutUtilization: React.FunctionComponent<React.PropsWithChildren<ChartDonutUtilizationProps>> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,

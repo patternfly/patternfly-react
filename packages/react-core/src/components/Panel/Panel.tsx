@@ -13,7 +13,7 @@ export interface PanelProps extends React.HTMLProps<HTMLDivElement> {
   isScrollable?: boolean;
 }
 
-export const Panel: React.FunctionComponent<PanelProps> = ({
+export const Panel: React.FunctionComponent<React.PropsWithChildren<PanelProps>> = ({
   className,
   children,
   variant,

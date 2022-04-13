@@ -9,11 +9,9 @@ export interface MultipleFileUploadTitleTextProps extends React.HTMLProps<HTMLDi
   className?: string;
 }
 
-export const MultipleFileUploadTitleText: React.FunctionComponent<MultipleFileUploadTitleTextProps> = ({
-  className,
-  children,
-  ...props
-}: MultipleFileUploadTitleTextProps) => (
+export const MultipleFileUploadTitleText: React.FunctionComponent<React.PropsWithChildren<
+  MultipleFileUploadTitleTextProps
+>> = ({ className, children, ...props }: MultipleFileUploadTitleTextProps) => (
   <div className={css(styles.multipleFileUploadTitleText, className)} {...props}>
     {children}
   </div>

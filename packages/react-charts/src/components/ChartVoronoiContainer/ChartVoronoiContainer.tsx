@@ -230,7 +230,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
   width?: number;
 }
 
-export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContainerProps> = ({
+export const ChartVoronoiContainer: React.FunctionComponent<React.PropsWithChildren<ChartVoronoiContainerProps>> = ({
   className,
   constrainToVisibleArea = false,
   themeColor,

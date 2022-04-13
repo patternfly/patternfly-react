@@ -6,7 +6,9 @@ import { DescriptionList } from '@patternfly/react-core';
 export interface MoreInformationDefaultContentProps {
   textMoreInfoContent?: string | React.ReactNode;
 }
-export const MoreInformationDefaultContent: React.FunctionComponent<MoreInformationDefaultContentProps> = ({
+export const MoreInformationDefaultContent: React.FunctionComponent<React.PropsWithChildren<
+  MoreInformationDefaultContentProps
+>> = ({
   textMoreInfoContent = (
     <>
       <p>

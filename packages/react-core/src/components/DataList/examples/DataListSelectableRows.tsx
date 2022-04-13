@@ -12,7 +12,7 @@ import {
   DataListAction
 } from '@patternfly/react-core';
 
-export const DataListSelectableRows: React.FunctionComponent = () => {
+export const DataListSelectableRows: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen1, setIsOpen1] = React.useState(false);
   const [isOpen2, setIsOpen2] = React.useState(false);
   const [selectedDataListItemId, setSelectedDataListItemId] = React.useState('');

@@ -17,7 +17,7 @@ export interface FormHelperTextProps extends React.HTMLProps<HTMLDivElement> {
   component?: 'p' | 'div';
 }
 
-export const FormHelperText: React.FunctionComponent<FormHelperTextProps> = ({
+export const FormHelperText: React.FunctionComponent<React.PropsWithChildren<FormHelperTextProps>> = ({
   children = null,
   isError = false,
   isHidden = true,

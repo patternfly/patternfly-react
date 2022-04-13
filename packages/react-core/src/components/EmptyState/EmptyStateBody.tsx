@@ -9,7 +9,7 @@ export interface EmptyStateBodyProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const EmptyStateBody: React.FunctionComponent<EmptyStateBodyProps> = ({
+export const EmptyStateBody: React.FunctionComponent<React.PropsWithChildren<EmptyStateBodyProps>> = ({
   children,
   className = '',
   ...props

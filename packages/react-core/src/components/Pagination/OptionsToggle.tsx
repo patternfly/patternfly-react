@@ -40,7 +40,7 @@ export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 let toggleId = 0;
-export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
+export const OptionsToggle: React.FunctionComponent<React.PropsWithChildren<OptionsToggleProps>> = ({
   itemsTitle = 'items',
   optionsToggle = 'Items per page',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

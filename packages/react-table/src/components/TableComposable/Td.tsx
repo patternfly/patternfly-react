@@ -49,7 +49,7 @@ export interface TdProps extends BaseCellProps, Omit<React.HTMLProps<HTMLTableDa
   isActionCell?: boolean;
 }
 
-const TdBase: React.FunctionComponent<TdProps> = ({
+const TdBase: React.FunctionComponent<React.PropsWithChildren<TdProps>> = ({
   children,
   className,
   isActionCell = false,

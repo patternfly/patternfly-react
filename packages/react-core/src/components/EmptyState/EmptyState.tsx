@@ -21,7 +21,7 @@ export interface EmptyStateProps extends React.HTMLProps<HTMLDivElement> {
   isFullHeight?: boolean;
 }
 
-export const EmptyState: React.FunctionComponent<EmptyStateProps> = ({
+export const EmptyState: React.FunctionComponent<React.PropsWithChildren<EmptyStateProps>> = ({
   children,
   className = '',
   variant = EmptyStateVariant.full,

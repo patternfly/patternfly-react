@@ -3,7 +3,7 @@ import { Button } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-export const ButtonDisabled: React.FunctionComponent = () => (
+export const ButtonDisabled: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <React.Fragment>
     <Button isDisabled>Primary disabled</Button> <Button isDisabled>Secondary disabled</Button>{' '}
     <Button variant="secondary" isDanger isDisabled>

@@ -12,4 +12,6 @@ const images = {
   lg: '/assets/images/pfbg_1200.jpg'
 };
 
-export const BackgroundImageBasic: React.FunctionComponent = () => <BackgroundImage src={images} />;
+export const BackgroundImageBasic: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
+  <BackgroundImage src={images} />
+);

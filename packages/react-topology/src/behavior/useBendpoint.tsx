@@ -87,8 +87,12 @@ export const withBendpoint = <DropResult, CollectedProps, Props = {}>(
     DragSourceSpec<DragObjectWithType, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps, Props>,
     'type'
   >
-) => <P extends WithBendpointProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<P>) => {
-  const Component: React.FunctionComponent<Omit<P, keyof WithBendpointProps> & HocProps> = props => {
+) => <P extends WithBendpointProps & CollectedProps & Props>(
+  WrappedComponent: React.ComponentType<React.PropsWithChildren<P>>
+) => {
+  const Component: React.FunctionComponent<React.PropsWithChildren<
+    Omit<P, keyof WithBendpointProps> & HocProps
+  >> = props => {
     const [dragProps, bendpointRef] = useBendpoint(props.point, spec as any, props);
     return <WrappedComponent {...(props as any)} bendpointRef={bendpointRef} {...dragProps} />;
   };

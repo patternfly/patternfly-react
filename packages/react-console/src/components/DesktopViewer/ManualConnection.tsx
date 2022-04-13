@@ -13,7 +13,7 @@ export interface DetailProps extends React.HTMLProps<HTMLDivElement> {
   title?: string;
   value: string | number;
 }
-const Detail: React.FunctionComponent<DetailProps> = ({ title, value }: DetailProps) => (
+const Detail: React.FunctionComponent<React.PropsWithChildren<DetailProps>> = ({ title, value }: DetailProps) => (
   <DescriptionListGroup>
     <DescriptionListTerm>{title}</DescriptionListTerm>
     <DescriptionListDescription>{value}</DescriptionListDescription>
@@ -39,7 +39,7 @@ export interface ManualConnectionProps extends React.HTMLProps<HTMLDivElement> {
   textRDPPort: string;
   textRdpAddress: string;
 }
-export const ManualConnection: React.FunctionComponent<ManualConnectionProps> = ({
+export const ManualConnection: React.FunctionComponent<React.PropsWithChildren<ManualConnectionProps>> = ({
   spice = null,
   vnc = null,
   rdp = null,

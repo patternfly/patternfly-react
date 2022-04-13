@@ -9,7 +9,7 @@ export interface LoginMainBodyProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const LoginMainBody: React.FunctionComponent<LoginMainBodyProps> = ({
+export const LoginMainBody: React.FunctionComponent<React.PropsWithChildren<LoginMainBodyProps>> = ({
   children = null,
   className = '',
   ...props

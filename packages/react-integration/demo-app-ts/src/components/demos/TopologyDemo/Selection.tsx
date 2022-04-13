@@ -50,27 +50,29 @@ const twoNodeModel: Model = {
   ]
 };
 
-export const UncontrolledSelection: React.FunctionComponent = withTopologySetup(() => {
-  useComponentFactory(
-    React.useCallback<ComponentFactory>((kind, type) => {
-      const widget = defaultComponentFactory(kind, type);
-      if (kind === ModelKind.node || kind === ModelKind.graph) {
-        // TODO fix any type
-        return withSelection({ multiSelect: false, controlled: false })(widget as any);
-      }
-      return widget;
-    }, [])
-  );
-  useEventListener(
-    SELECTION_EVENT,
-    React.useCallback<SelectionEventListener>(([id]) => {
-      // eslint-disable-next-line no-console
-      console.log(`Selection event`, id);
-    }, [])
-  );
-  useModel(twoNodeModel);
-  return null;
-});
+export const UncontrolledSelection: React.FunctionComponent<React.PropsWithChildren<unknown>> = withTopologySetup(
+  () => {
+    useComponentFactory(
+      React.useCallback<ComponentFactory>((kind, type) => {
+        const widget = defaultComponentFactory(kind, type);
+        if (kind === ModelKind.node || kind === ModelKind.graph) {
+          // TODO fix any type
+          return withSelection({ multiSelect: false, controlled: false })(widget as any);
+        }
+        return widget;
+      }, [])
+    );
+    useEventListener(
+      SELECTION_EVENT,
+      React.useCallback<SelectionEventListener>(([id]) => {
+        // eslint-disable-next-line no-console
+        console.log(`Selection event`, id);
+      }, [])
+    );
+    useModel(twoNodeModel);
+    return null;
+  }
+);
 UncontrolledSelection.displayName = 'UncontrolledSelection';
 
 export const ControlledSelection = withTopologySetup(() => {
@@ -100,7 +102,7 @@ export const ControlledSelection = withTopologySetup(() => {
   return null;
 });
 
-export const MultiSelect: React.FunctionComponent = withTopologySetup(() => {
+export const MultiSelect: React.FunctionComponent<React.PropsWithChildren<unknown>> = withTopologySetup(() => {
   useModel(twoNodeModel);
   useComponentFactory(
     React.useCallback<ComponentFactory>((kind, type) => {
@@ -144,7 +146,7 @@ for (let i = 1; i <= 100; i++) {
   }
 }
 
-export const Performance: React.FunctionComponent = withTopologySetup(() => {
+export const Performance: React.FunctionComponent<React.PropsWithChildren<unknown>> = withTopologySetup(() => {
   useModel(perfModel);
   useComponentFactory(
     React.useCallback<ComponentFactory>((kind, type) => {

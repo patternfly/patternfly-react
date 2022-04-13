@@ -13,7 +13,7 @@ export interface FormSectionProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   titleElement?: 'div' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
-export const FormSection: React.FunctionComponent<FormSectionProps> = ({
+export const FormSection: React.FunctionComponent<React.PropsWithChildren<FormSectionProps>> = ({
   className = '',
   children,
   title = '',

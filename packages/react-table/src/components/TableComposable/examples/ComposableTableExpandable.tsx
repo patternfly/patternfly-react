@@ -17,7 +17,7 @@ interface Repository {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const ComposableTableExpandable: React.FunctionComponent = () => {
+export const ComposableTableExpandable: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'one', branches: 'two', prs: 'a', workspaces: 'four', lastCommit: 'five' },

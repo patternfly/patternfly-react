@@ -35,7 +35,9 @@ export interface ApplicationLauncherItemProps {
   enterTriggersArrowDown?: boolean;
 }
 
-export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLauncherItemProps & DropdownItemProps> = ({
+export const ApplicationLauncherItem: React.FunctionComponent<React.PropsWithChildren<
+  ApplicationLauncherItemProps & DropdownItemProps
+>> = ({
   className = '',
   id,
   children,

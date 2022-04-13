@@ -24,7 +24,7 @@ export interface WizardNavItemProps {
   isExpandable?: boolean;
 }
 
-export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
+export const WizardNavItem: React.FunctionComponent<React.PropsWithChildren<WizardNavItemProps>> = ({
   children = null,
   content = '',
   isCurrent = false,

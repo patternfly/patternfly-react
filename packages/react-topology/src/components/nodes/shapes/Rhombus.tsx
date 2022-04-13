@@ -17,7 +17,7 @@ const getRhombusPoints = (width: number, height: number, padding: number): Point
   [-padding, height / 2]
 ];
 
-const Rhombus: React.FunctionComponent<RhombusProps> = ({
+const Rhombus: React.FunctionComponent<React.PropsWithChildren<RhombusProps>> = ({
   className = css(styles.topologyNodeBackground),
   width,
   height,

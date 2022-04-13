@@ -25,7 +25,7 @@ export interface BodyCellProps {
   onMouseEnter?: (event: any) => void;
   children: React.ReactNode;
 }
-export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
+export const BodyCell: React.FunctionComponent<React.PropsWithChildren<BodyCellProps>> = ({
   'data-label': dataLabel = '',
   className = '',
   colSpan,

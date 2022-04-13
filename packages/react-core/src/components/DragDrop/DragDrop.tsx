@@ -24,7 +24,7 @@ interface DragDropProps {
   onDrop?: (source: DraggableItemPosition, dest?: DraggableItemPosition) => boolean;
 }
 
-export const DragDrop: React.FunctionComponent<DragDropProps> = ({
+export const DragDrop: React.FunctionComponent<React.PropsWithChildren<DragDropProps>> = ({
   children,
   onDrag = () => true,
   onDragMove = () => {},

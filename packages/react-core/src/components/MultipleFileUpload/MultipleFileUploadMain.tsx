@@ -20,7 +20,7 @@ export interface MultipleFileUploadMainProps extends React.HTMLProps<HTMLDivElem
   isUploadButtonHidden?: boolean;
 }
 
-export const MultipleFileUploadMain: React.FunctionComponent<MultipleFileUploadMainProps> = ({
+export const MultipleFileUploadMain: React.FunctionComponent<React.PropsWithChildren<MultipleFileUploadMainProps>> = ({
   className,
   titleIcon,
   titleText,

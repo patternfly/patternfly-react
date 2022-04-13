@@ -16,7 +16,7 @@ export interface OptionsMenuItemGroupProps extends React.HTMLProps<HTMLElement> 
   hasSeparator?: boolean;
 }
 
-export const OptionsMenuItemGroup: React.FunctionComponent<OptionsMenuItemGroupProps> = ({
+export const OptionsMenuItemGroup: React.FunctionComponent<React.PropsWithChildren<OptionsMenuItemGroupProps>> = ({
   className = '',
   'aria-label': ariaLabel = '',
   groupTitle = '',

@@ -16,7 +16,7 @@ export interface TextListProps extends React.HTMLProps<HTMLElement> {
   component?: 'ul' | 'ol' | 'dl';
 }
 
-export const TextList: React.FunctionComponent<TextListProps> = ({
+export const TextList: React.FunctionComponent<React.PropsWithChildren<TextListProps>> = ({
   children = null,
   className = '',
   component = TextListVariants.ul,

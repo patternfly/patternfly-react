@@ -18,7 +18,9 @@ export interface ExpandableSectionToggleProps extends React.HTMLProps<HTMLDivEle
   direction?: 'up' | 'down';
 }
 
-export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionToggleProps> = ({
+export const ExpandableSectionToggle: React.FunctionComponent<React.PropsWithChildren<
+  ExpandableSectionToggleProps
+>> = ({
   children,
   className = '',
   isExpanded = false,

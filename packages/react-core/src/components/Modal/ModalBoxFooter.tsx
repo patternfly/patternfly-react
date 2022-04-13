@@ -9,7 +9,7 @@ export interface ModalBoxFooterProps {
   className?: string;
 }
 
-export const ModalBoxFooter: React.FunctionComponent<ModalBoxFooterProps> = ({
+export const ModalBoxFooter: React.FunctionComponent<React.PropsWithChildren<ModalBoxFooterProps>> = ({
   children = null,
   className = '',
   ...props

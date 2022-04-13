@@ -15,7 +15,7 @@ export const TextInputGroupContext = React.createContext<Partial<TextInputGroupP
   isDisabled: false
 });
 
-export const TextInputGroup: React.FunctionComponent<TextInputGroupProps> = ({
+export const TextInputGroup: React.FunctionComponent<React.PropsWithChildren<TextInputGroupProps>> = ({
   children,
   className,
   isDisabled,

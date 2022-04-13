@@ -45,7 +45,7 @@ interface TruncateProps extends React.HTMLProps<HTMLSpanElement> {
 
 const sliceContent = (str: string, slice: number) => [str.slice(0, str.length - slice), str.slice(-slice)];
 
-export const Truncate: React.FunctionComponent<TruncateProps> = ({
+export const Truncate: React.FunctionComponent<React.PropsWithChildren<TruncateProps>> = ({
   className,
   position = 'end',
   tooltipPosition = 'top',

@@ -5,7 +5,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
-export const MenuDrilldownInitialState: React.FunctionComponent = () => {
+export const MenuDrilldownInitialState: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>(['rootMenu', 'drilldownMenuStart']);
   const [drilldownPath, setDrilldownPath] = React.useState<string[]>(['group:start_rollout', 'group:app_grouping']);
   const [menuHeights, setMenuHeights] = React.useState<any>({ rootMenu: 216 }); // The root menu height must be defined when starting from a drilled in state

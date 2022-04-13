@@ -61,7 +61,7 @@ const defaultKeyDownHandler = (args: DefaultKeyDownHandlerArgs) => (event: React
   }
 };
 
-export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
+export const NumberInput: React.FunctionComponent<React.PropsWithChildren<NumberInputProps>> = ({
   value = 0,
   className,
   widthChars,

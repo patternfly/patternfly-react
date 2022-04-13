@@ -5,7 +5,7 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-i
 import ExternalLinkSquareAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-square-alt-icon';
 import CopyIcon from '@patternfly/react-icons/dist/esm/icons/copy-icon';
 
-export const ButtonVariations: React.FunctionComponent = () => (
+export const ButtonVariations: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <React.Fragment>
     <Button variant="primary">Primary</Button> <Button variant="secondary">Secondary</Button>{' '}
     <Button variant="secondary" isDanger>

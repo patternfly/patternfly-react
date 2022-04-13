@@ -27,7 +27,7 @@ export interface OptionsMenuToggleProps extends React.HTMLProps<HTMLButtonElemen
   toggleTemplate?: React.ReactNode;
 }
 
-export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> = ({
+export const OptionsMenuToggle: React.FunctionComponent<React.PropsWithChildren<OptionsMenuToggleProps>> = ({
   isPlain = false,
   isDisabled = false,
   isOpen = false,

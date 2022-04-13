@@ -9,7 +9,7 @@ export interface DataListControlProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const DataListControl: React.FunctionComponent<DataListControlProps> = ({
+export const DataListControl: React.FunctionComponent<React.PropsWithChildren<DataListControlProps>> = ({
   children,
   className = '',
   ...props

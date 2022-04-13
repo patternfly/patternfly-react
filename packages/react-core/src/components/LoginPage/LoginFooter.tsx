@@ -9,7 +9,7 @@ export interface LoginFooterProps extends React.HTMLProps<HTMLElement> {
   className?: string;
 }
 
-export const LoginFooter: React.FunctionComponent<LoginFooterProps> = ({
+export const LoginFooter: React.FunctionComponent<React.PropsWithChildren<LoginFooterProps>> = ({
   className = '',
   children = null,
   ...props

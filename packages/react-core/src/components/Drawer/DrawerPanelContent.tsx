@@ -43,7 +43,7 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
 let isResizing: boolean = null;
 let newSize: number = 0;
 
-export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps> = ({
+export const DrawerPanelContent: React.FunctionComponent<React.PropsWithChildren<DrawerPanelContentProps>> = ({
   className = '',
   id,
   children,

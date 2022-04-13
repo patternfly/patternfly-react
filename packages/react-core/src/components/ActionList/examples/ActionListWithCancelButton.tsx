@@ -1,7 +1,7 @@
 import React from 'react';
 import { ActionList, ActionListGroup, ActionListItem, Button } from '@patternfly/react-core';
 
-export const ActionListWithCancelButton: React.FunctionComponent = () => (
+export const ActionListWithCancelButton: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <React.Fragment>
     In modals, forms, data lists
     <ActionList>

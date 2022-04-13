@@ -449,7 +449,7 @@ export interface ChartScatterProps extends VictoryScatterProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartScatter: React.FunctionComponent<ChartScatterProps> = ({
+export const ChartScatter: React.FunctionComponent<React.PropsWithChildren<ChartScatterProps>> = ({
   containerComponent = <ChartContainer />,
   themeColor,
   themeVariant,

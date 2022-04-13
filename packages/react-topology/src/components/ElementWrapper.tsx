@@ -11,92 +11,106 @@ interface ElementWrapperProps {
   element: GraphElement;
 }
 
-const NodeElementComponent: React.FunctionComponent<{ element: Node }> = observer(({ element }) => {
-  const dndManager = useDndManager();
-  const isDragging = dndManager.isDragging();
-  const dragItem = dndManager.getItem();
-  const controller = element.getController();
-  const isVisible = React.useMemo(() => computed(() => controller.shouldRenderNode(element)), [element, controller]);
-  if (isVisible.get() || (isDragging && dragItem === element)) {
-    return <ElementComponent element={element} />;
+const NodeElementComponent: React.FunctionComponent<React.PropsWithChildren<{ element: Node }>> = observer(
+  ({ element }) => {
+    const dndManager = useDndManager();
+    const isDragging = dndManager.isDragging();
+    const dragItem = dndManager.getItem();
+    const controller = element.getController();
+    const isVisible = React.useMemo(() => computed(() => controller.shouldRenderNode(element)), [element, controller]);
+    if (isVisible.get() || (isDragging && dragItem === element)) {
+      return <ElementComponent element={element} />;
+    }
+    return null;
   }
-  return null;
-});
+);
 
 // in a separate component so that changes to behaviors do not re-render children
-const ElementComponent: React.FunctionComponent<ElementWrapperProps> = observer(({ element }) => {
-  const kind = element.getKind();
-  const type = element.getType();
-  const controller = element.getController();
+const ElementComponent: React.FunctionComponent<React.PropsWithChildren<ElementWrapperProps>> = observer(
+  ({ element }) => {
+    const kind = element.getKind();
+    const type = element.getType();
+    const controller = element.getController();
 
-  const Component = React.useMemo(() => controller.getComponent(kind, type), [controller, kind, type]);
+    const Component = React.useMemo(() => controller.getComponent(kind, type), [controller, kind, type]);
 
-  return (
-    <ElementContext.Provider value={element}>
-      <Component {...element.getState()} element={element} />
-    </ElementContext.Provider>
-  );
-});
-
-const ElementChildren: React.FunctionComponent<ElementWrapperProps> = observer(({ element }) => (
-  <>
-    {element
-      .getChildren()
-      .filter(isEdge)
-      .map(e => (
-        <ElementWrapper key={e.getId()} element={e} />
-      ))}
-    {element
-      .getChildren()
-      .filter(isNode)
-      .map(e => (
-        <ElementWrapper key={e.getId()} element={e} />
-      ))}
-  </>
-));
-
-const ElementWrapper: React.FunctionComponent<ElementWrapperProps> = observer(({ element }) => {
-  if (!element.isVisible()) {
-    if (!isNode(element) || element.isDimensionsInitialized()) {
-      return null;
-    }
-  }
-
-  if (isEdge(element)) {
-    const source = element.getSourceAnchorNode();
-    const target = element.getTargetAnchorNode();
-    if ((source && !source.isVisible()) || (target && !target.isVisible())) {
-      return null;
-    }
-  }
-
-  const commonAttrs = {
-    [ATTR_DATA_ID]: element.getId(),
-    [ATTR_DATA_KIND]: element.getKind(),
-    [ATTR_DATA_TYPE]: element.getType()
-  };
-
-  if (isGraph(element)) {
     return (
-      <g {...commonAttrs}>
-        <ElementComponent element={element} />
-      </g>
+      <ElementContext.Provider value={element}>
+        <Component {...element.getState()} element={element} />
+      </ElementContext.Provider>
     );
   }
+);
 
-  if (isNode(element)) {
-    if (!element.isDimensionsInitialized()) {
+const ElementChildren: React.FunctionComponent<React.PropsWithChildren<ElementWrapperProps>> = observer(
+  ({ element }) => (
+    <>
+      {element
+        .getChildren()
+        .filter(isEdge)
+        .map(e => (
+          <ElementWrapper key={e.getId()} element={e} />
+        ))}
+      {element
+        .getChildren()
+        .filter(isNode)
+        .map(e => (
+          <ElementWrapper key={e.getId()} element={e} />
+        ))}
+    </>
+  )
+);
+
+const ElementWrapper: React.FunctionComponent<React.PropsWithChildren<ElementWrapperProps>> = observer(
+  ({ element }) => {
+    if (!element.isVisible()) {
+      if (!isNode(element) || element.isDimensionsInitialized()) {
+        return null;
+      }
+    }
+
+    if (isEdge(element)) {
+      const source = element.getSourceAnchorNode();
+      const target = element.getTargetAnchorNode();
+      if ((source && !source.isVisible()) || (target && !target.isVisible())) {
+        return null;
+      }
+    }
+
+    const commonAttrs = {
+      [ATTR_DATA_ID]: element.getId(),
+      [ATTR_DATA_KIND]: element.getKind(),
+      [ATTR_DATA_TYPE]: element.getType()
+    };
+
+    if (isGraph(element)) {
       return (
-        <ComputeElementDimensions element={element}>
+        <g {...commonAttrs}>
           <ElementComponent element={element} />
-          <ElementChildren element={element} />
-        </ComputeElementDimensions>
+        </g>
       );
     }
-    if (!element.isGroup() || element.isCollapsed()) {
-      const { x, y } = element.getPosition();
+
+    if (isNode(element)) {
+      if (!element.isDimensionsInitialized()) {
+        return (
+          <ComputeElementDimensions element={element}>
+            <ElementComponent element={element} />
+            <ElementChildren element={element} />
+          </ComputeElementDimensions>
+        );
+      }
+      if (!element.isGroup() || element.isCollapsed()) {
+        const { x, y } = element.getPosition();
+        return (
+          <g {...commonAttrs} transform={`translate(${x}, ${y})`}>
+            <NodeElementComponent element={element} />
+            <ElementChildren element={element} />
+          </g>
+        );
+      }
       return (
-        <g {...commonAttrs} transform={`translate(${x}, ${y})`}>
+        <g {...commonAttrs}>
           <NodeElementComponent element={element} />
           <ElementChildren element={element} />
         </g>
@@ -104,17 +118,11 @@ const ElementWrapper: React.FunctionComponent<ElementWrapperProps> = observer(({
     }
     return (
       <g {...commonAttrs}>
-        <NodeElementComponent element={element} />
+        <ElementComponent element={element} />
         <ElementChildren element={element} />
       </g>
     );
   }
-  return (
-    <g {...commonAttrs}>
-      <ElementComponent element={element} />
-      <ElementChildren element={element} />
-    </g>
-  );
-});
+);
 
 export default ElementWrapper;

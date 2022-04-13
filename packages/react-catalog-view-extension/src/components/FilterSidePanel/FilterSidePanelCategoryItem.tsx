@@ -21,7 +21,9 @@ export interface FilterSidePanelCategoryItemProps extends React.HTMLProps<HTMLDi
   title?: string;
 }
 
-export const FilterSidePanelCategoryItem: React.FunctionComponent<FilterSidePanelCategoryItemProps> = ({
+export const FilterSidePanelCategoryItem: React.FunctionComponent<React.PropsWithChildren<
+  FilterSidePanelCategoryItemProps
+>> = ({
   children = null,
   className = '',
   icon = null,

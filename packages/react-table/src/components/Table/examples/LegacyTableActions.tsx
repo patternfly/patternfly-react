@@ -35,7 +35,7 @@ interface Repository {
 
 type ExampleType = 'actions' | 'actionResolver';
 
-export const LegacyTableActions: React.FunctionComponent = () => {
+export const LegacyTableActions: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'a', branches: 'two', prs: '1', workspaces: 'four', lastCommit: 'five', singleAction: 'Start' },

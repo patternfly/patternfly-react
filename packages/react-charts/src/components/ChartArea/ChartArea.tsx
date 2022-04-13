@@ -431,7 +431,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartArea: React.FunctionComponent<ChartAreaProps> = ({
+export const ChartArea: React.FunctionComponent<React.PropsWithChildren<ChartAreaProps>> = ({
   containerComponent = <ChartContainer />,
   themeColor,
   themeVariant,

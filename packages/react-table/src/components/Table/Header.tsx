@@ -9,7 +9,7 @@ interface ContextHeaderProps {
   headerRows?: IHeaderRow[];
 }
 
-const ContextHeader: React.FunctionComponent<ContextHeaderProps> = ({
+const ContextHeader: React.FunctionComponent<React.PropsWithChildren<ContextHeaderProps>> = ({
   className = '',
   headerRows = undefined as IHeaderRow[],
   ...props
@@ -20,7 +20,9 @@ export interface HeaderProps extends React.HTMLProps<HTMLTableRowElement> {
   className?: string;
 }
 
-export const TableHeader: React.FunctionComponent<HeaderProps> = ({ ...props }: HeaderProps) => (
+export const TableHeader: React.FunctionComponent<React.PropsWithChildren<HeaderProps>> = ({
+  ...props
+}: HeaderProps) => (
   <TableContext.Consumer>
     {({ headerRows }) => <ContextHeader {...props} headerRows={headerRows} />}
   </TableContext.Consumer>

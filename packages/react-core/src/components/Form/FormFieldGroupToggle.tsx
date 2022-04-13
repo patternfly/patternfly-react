@@ -19,7 +19,7 @@ export interface FormFieldGroupToggleProps extends React.HTMLProps<HTMLDivElemen
   toggleId?: string;
 }
 
-export const FormFieldGroupToggle: React.FunctionComponent<FormFieldGroupToggleProps> = ({
+export const FormFieldGroupToggle: React.FunctionComponent<React.PropsWithChildren<FormFieldGroupToggleProps>> = ({
   className,
   onToggle,
   isExpanded,

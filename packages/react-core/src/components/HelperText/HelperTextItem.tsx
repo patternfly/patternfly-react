@@ -31,7 +31,7 @@ const variantStyle = {
   error: styles.modifiers.error
 };
 
-export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
+export const HelperTextItem: React.FunctionComponent<React.PropsWithChildren<HelperTextItemProps>> = ({
   children,
   className,
   component = 'div',

@@ -20,7 +20,7 @@ export interface XTermProps {
   innerRef?: React.RefObject<any>;
 }
 
-export const XTerm: React.FunctionComponent<XTermProps> = ({
+export const XTerm: React.FunctionComponent<React.PropsWithChildren<XTermProps>> = ({
   cols = 80,
   rows = 25,
   fontFamily,

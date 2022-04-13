@@ -66,7 +66,7 @@ export interface VncConsoleProps extends React.HTMLProps<HTMLDivElement> {
   textCtrlAltDel?: string;
 }
 
-export const VncConsole: React.FunctionComponent<VncConsoleProps> = ({
+export const VncConsole: React.FunctionComponent<React.PropsWithChildren<VncConsoleProps>> = ({
   children,
   host,
   port = '80',

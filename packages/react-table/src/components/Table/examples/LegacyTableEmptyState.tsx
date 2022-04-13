@@ -14,7 +14,7 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 // This example has been simplified to focus on the empty state. In real usage,
 // you may want to derive your rows from typed underlying data and minimal state. See other examples.
 
-export const LegacyTableEmptyState: React.FunctionComponent = () => {
+export const LegacyTableEmptyState: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const columns: TableProps['cells'] = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
   const rows: TableProps['rows'] = [
     {

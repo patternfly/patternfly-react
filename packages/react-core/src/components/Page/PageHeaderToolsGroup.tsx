@@ -20,7 +20,7 @@ export interface PageHeaderToolsGroupProps extends React.HTMLProps<HTMLDivElemen
   };
 }
 
-export const PageHeaderToolsGroup: React.FunctionComponent<PageHeaderToolsGroupProps> = ({
+export const PageHeaderToolsGroup: React.FunctionComponent<React.PropsWithChildren<PageHeaderToolsGroupProps>> = ({
   children,
   className,
   visibility,

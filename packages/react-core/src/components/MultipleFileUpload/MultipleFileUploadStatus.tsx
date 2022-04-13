@@ -17,13 +17,9 @@ export interface MultipleFileUploadStatusProps extends React.HTMLProps<HTMLDivEl
   statusToggleIcon?: 'danger' | 'success' | 'inProgress' | React.ReactNode;
 }
 
-export const MultipleFileUploadStatus: React.FunctionComponent<MultipleFileUploadStatusProps> = ({
-  children,
-  className,
-  statusToggleText,
-  statusToggleIcon,
-  ...props
-}: MultipleFileUploadStatusProps) => {
+export const MultipleFileUploadStatus: React.FunctionComponent<React.PropsWithChildren<
+  MultipleFileUploadStatusProps
+>> = ({ children, className, statusToggleText, statusToggleIcon, ...props }: MultipleFileUploadStatusProps) => {
   const [icon, setIcon] = React.useState<React.ReactNode>();
   const [isOpen, setIsOpen] = React.useState(true);
 

@@ -39,7 +39,7 @@ export interface CodeEditorControlProps extends Omit<ButtonProps, 'onClick'> {
   isVisible?: boolean;
 }
 
-export const CodeEditorControl: React.FunctionComponent<CodeEditorControlProps> = ({
+export const CodeEditorControl: React.FunctionComponent<React.PropsWithChildren<CodeEditorControlProps>> = ({
   icon,
   className,
   'aria-label': ariaLabel,

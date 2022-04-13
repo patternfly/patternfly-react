@@ -81,7 +81,7 @@ const colorStyles = {
   grey: ''
 };
 
-export const Label: React.FunctionComponent<LabelProps> = ({
+export const Label: React.FunctionComponent<React.PropsWithChildren<LabelProps>> = ({
   children,
   className = '',
   color = 'grey',

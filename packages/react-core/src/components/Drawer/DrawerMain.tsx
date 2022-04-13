@@ -9,7 +9,7 @@ export interface DrawerMainProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
 }
 
-export const DrawerMain: React.FunctionComponent<DrawerMainProps> = ({
+export const DrawerMain: React.FunctionComponent<React.PropsWithChildren<DrawerMainProps>> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children,

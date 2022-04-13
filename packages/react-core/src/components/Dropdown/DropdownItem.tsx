@@ -49,7 +49,7 @@ export interface DropdownItemProps extends InternalDropdownItemProps, OUIAProps 
   description?: React.ReactNode;
 }
 
-export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
+export const DropdownItem: React.FunctionComponent<React.PropsWithChildren<DropdownItemProps>> = ({
   children,
   className,
   component = 'a',

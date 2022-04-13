@@ -40,7 +40,7 @@ export interface DualListSelectorTreeItemProps extends React.HTMLProps<HTMLLIEle
   useMemo?: boolean;
 }
 
-const DualListSelectorTreeItemBase: React.FunctionComponent<DualListSelectorTreeItemProps> = ({
+const DualListSelectorTreeItemBase: React.FunctionComponent<React.PropsWithChildren<DualListSelectorTreeItemProps>> = ({
   onOptionCheck,
   children,
   className,

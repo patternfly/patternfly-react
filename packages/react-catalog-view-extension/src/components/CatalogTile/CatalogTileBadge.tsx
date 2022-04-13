@@ -13,7 +13,7 @@ export interface CatalogTileBadgeProps extends Omit<React.HTMLProps<HTMLElement>
   title?: string;
 }
 
-export const CatalogTileBadge: React.FunctionComponent<CatalogTileBadgeProps> = ({
+export const CatalogTileBadge: React.FunctionComponent<React.PropsWithChildren<CatalogTileBadgeProps>> = ({
   children = null,
   className = '',
   id = null,

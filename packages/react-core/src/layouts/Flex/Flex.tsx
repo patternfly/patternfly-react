@@ -335,10 +335,10 @@ export interface FlexProps extends React.HTMLProps<HTMLDivElement> {
     '2xl'?: string;
   };
   /** Sets the base component to render. defaults to div */
-  component?: React.ElementType<any> | React.ComponentType<any>;
+  component?: React.ElementType<any> | React.ComponentType<React.PropsWithChildren<any>>;
 }
 
-export const Flex: React.FunctionComponent<FlexProps> = ({
+export const Flex: React.FunctionComponent<React.PropsWithChildren<FlexProps>> = ({
   children = null,
   className = '',
   component = 'div',

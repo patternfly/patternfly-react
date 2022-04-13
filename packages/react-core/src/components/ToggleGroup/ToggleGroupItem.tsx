@@ -22,7 +22,7 @@ export interface ToggleGroupItemProps extends Omit<React.HTMLProps<HTMLDivElemen
   onChange?: (selected: boolean, event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => void;
 }
 
-export const ToggleGroupItem: React.FunctionComponent<ToggleGroupItemProps> = ({
+export const ToggleGroupItem: React.FunctionComponent<React.PropsWithChildren<ToggleGroupItemProps>> = ({
   text,
   icon,
   className,

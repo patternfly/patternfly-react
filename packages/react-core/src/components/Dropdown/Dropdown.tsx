@@ -46,7 +46,7 @@ export interface DropdownProps extends ToggleMenuBaseProps, React.HTMLProps<HTML
   contextProps?: typeof DropdownContext;
 }
 
-export const Dropdown: React.FunctionComponent<DropdownProps> = ({
+export const Dropdown: React.FunctionComponent<React.PropsWithChildren<DropdownProps>> = ({
   onSelect,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ref, // Types of Ref are different for React.FunctionComponent vs React.Component

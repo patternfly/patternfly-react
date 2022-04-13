@@ -27,7 +27,7 @@ export const pageSidebarContextDefaults: PageSidebarContextProps = {
 };
 export const PageSidebarContext = React.createContext<Partial<PageSidebarContextProps>>(pageSidebarContextDefaults);
 
-export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
+export const PageSidebar: React.FunctionComponent<React.PropsWithChildren<PageSidebarProps>> = ({
   className = '',
   nav,
   isNavOpen = true,

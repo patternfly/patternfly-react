@@ -14,7 +14,7 @@ export interface DataListItemRowProps extends Omit<React.HTMLProps<HTMLDivElemen
   wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
 }
 
-export const DataListItemRow: React.FunctionComponent<DataListItemRowProps> = ({
+export const DataListItemRow: React.FunctionComponent<React.PropsWithChildren<DataListItemRowProps>> = ({
   children,
   className = '',
   rowid = '',

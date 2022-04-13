@@ -19,7 +19,7 @@ export interface SortColumnProps extends React.ButtonHTMLAttributes<HTMLButtonEl
   sortDirection?: string;
 }
 
-export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
+export const SortColumn: React.FunctionComponent<React.PropsWithChildren<SortColumnProps>> = ({
   children = null,
   className = '',
   isSortedBy = false,

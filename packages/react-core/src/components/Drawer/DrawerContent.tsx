@@ -15,7 +15,7 @@ export interface DrawerContentProps extends React.HTMLProps<HTMLDivElement> {
   colorVariant?: DrawerColorVariant | 'light-200' | 'default';
 }
 
-export const DrawerContent: React.FunctionComponent<DrawerContentProps> = ({
+export const DrawerContent: React.FunctionComponent<React.PropsWithChildren<DrawerContentProps>> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   children,

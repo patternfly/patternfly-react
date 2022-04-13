@@ -17,7 +17,7 @@ export interface SkeletonProps extends React.HTMLProps<HTMLDivElement> {
   screenreaderText?: string;
 }
 
-export const Skeleton: React.FunctionComponent<SkeletonProps> = ({
+export const Skeleton: React.FunctionComponent<React.PropsWithChildren<SkeletonProps>> = ({
   className,
   width,
   height,

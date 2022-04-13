@@ -15,7 +15,7 @@ export interface LoginMainFooterProps extends React.HTMLProps<HTMLDivElement> {
   forgotCredentials?: React.ReactNode;
 }
 
-export const LoginMainFooter: React.FunctionComponent<LoginMainFooterProps> = ({
+export const LoginMainFooter: React.FunctionComponent<React.PropsWithChildren<LoginMainFooterProps>> = ({
   children = null,
   socialMediaLoginContent = null,
   signUpForAccountMessage = null,

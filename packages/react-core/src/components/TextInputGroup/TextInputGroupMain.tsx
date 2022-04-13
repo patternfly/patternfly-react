@@ -39,7 +39,7 @@ export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivEle
   placeholder?: string;
 }
 
-export const TextInputGroupMain: React.FunctionComponent<TextInputGroupMainProps> = ({
+export const TextInputGroupMain: React.FunctionComponent<React.PropsWithChildren<TextInputGroupMainProps>> = ({
   children,
   className,
   icon,

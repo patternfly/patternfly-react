@@ -26,7 +26,7 @@ export interface SpinnerProps extends Omit<React.HTMLProps<HTMLSpanElement>, 'si
   'aria-labelledBy'?: string;
 }
 
-export const Spinner: React.FunctionComponent<SpinnerProps> = ({
+export const Spinner: React.FunctionComponent<React.PropsWithChildren<SpinnerProps>> = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className = '',
   size = 'xl',

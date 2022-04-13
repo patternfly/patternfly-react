@@ -28,7 +28,7 @@ interface NestedRepository {
   lastCommit: string | null;
 }
 
-const NestedReposTable: React.FunctionComponent = () => {
+const NestedReposTable: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   // In real usage, this data would come from some external source like an API via props.
   const prs: NestedRepository[] = [
     { name: 'Repository 1', branches: '25', prs: '25', workspaces: '5', lastCommit: '2 days ago' },
@@ -71,7 +71,7 @@ const NestedReposTable: React.FunctionComponent = () => {
   );
 };
 
-export const ComposableTableExpandable: React.FunctionComponent = () => {
+export const ComposableTableExpandable: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'Node 1', branches: '10', prs: '2', nestedComponent: <NestedReposTable />, link: <a>Link 1</a> },

@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal, ModalVariant, Button, Form, FormGroup, Popover, TextInput } from '@patternfly/react-core';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
-export const ModalWithForm: React.FunctionComponent = () => {
+export const ModalWithForm: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isModalOpen, setModalOpen] = React.useState(false);
   const [nameValue, setNameValue] = React.useState('');
   const [emailValue, setEmailValue] = React.useState('');

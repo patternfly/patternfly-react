@@ -11,7 +11,7 @@ import {
   KebabToggle
 } from '@patternfly/react-core';
 
-export const CardLegacySelectable: React.FunctionComponent = () => {
+export const CardLegacySelectable: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [selected, setSelected] = React.useState<string>('');
   const [isKebabOpen, setIsKebabOpen] = React.useState<boolean>(false);
 

@@ -51,7 +51,7 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement>,
   onEnter?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
+export const DropdownToggle: React.FunctionComponent<React.PropsWithChildren<DropdownToggleProps>> = ({
   id = '',
   children = null,
   className = '',

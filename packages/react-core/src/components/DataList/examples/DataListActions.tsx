@@ -13,7 +13,7 @@ import {
   DataListAction
 } from '@patternfly/react-core';
 
-export const DataListActions: React.FunctionComponent = () => {
+export const DataListActions: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isDeleted, setIsDeleted] = React.useState(false);
 

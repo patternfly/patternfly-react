@@ -11,7 +11,7 @@ export interface TextContentProps extends React.HTMLProps<HTMLDivElement> {
   isVisited?: boolean;
 }
 
-export const TextContent: React.FunctionComponent<TextContentProps> = ({
+export const TextContent: React.FunctionComponent<React.PropsWithChildren<TextContentProps>> = ({
   children = null,
   className = '',
   isVisited = false,

@@ -9,7 +9,7 @@ export interface ModalBoxBodyProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const ModalBoxBody: React.FunctionComponent<ModalBoxBodyProps> = ({
+export const ModalBoxBody: React.FunctionComponent<React.PropsWithChildren<ModalBoxBodyProps>> = ({
   children = null,
   className = '',
   ...props

@@ -316,7 +316,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
   y?: number;
 }
 
-export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
+export const ChartLegend: React.FunctionComponent<React.PropsWithChildren<ChartLegendProps>> = ({
   containerComponent = <ChartContainer />,
   dataComponent = <ChartPoint />,
   labelComponent = <ChartLabel />,

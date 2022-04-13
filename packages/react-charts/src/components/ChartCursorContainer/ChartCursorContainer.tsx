@@ -199,7 +199,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
   width?: number;
 }
 
-export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerProps> = ({
+export const ChartCursorContainer: React.FunctionComponent<React.PropsWithChildren<ChartCursorContainerProps>> = ({
   className,
   themeColor,
   themeVariant,

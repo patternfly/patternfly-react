@@ -11,7 +11,7 @@ export interface NotificationDrawerListProps extends React.HTMLProps<HTMLUListEl
   isHidden?: boolean;
 }
 
-export const NotificationDrawerList: React.FunctionComponent<NotificationDrawerListProps> = ({
+export const NotificationDrawerList: React.FunctionComponent<React.PropsWithChildren<NotificationDrawerListProps>> = ({
   children,
   className = '',
   isHidden = false,

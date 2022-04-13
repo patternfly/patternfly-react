@@ -12,7 +12,7 @@ export interface PropertyItemProps extends Omit<React.HTMLProps<HTMLDivElement>,
   value: string | React.ReactNode;
 }
 
-export const PropertyItem: React.FunctionComponent<PropertyItemProps> = ({
+export const PropertyItem: React.FunctionComponent<React.PropsWithChildren<PropertyItemProps>> = ({
   className = '',
   label,
   value = null,

@@ -11,7 +11,7 @@ export interface StackItemProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const StackItem: React.FunctionComponent<StackItemProps> = ({
+export const StackItem: React.FunctionComponent<React.PropsWithChildren<StackItemProps>> = ({
   isFilled = false,
   className = '',
   children = null,

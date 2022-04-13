@@ -9,10 +9,10 @@ export interface MastheadBrandProps
   /** Additional classes added to the masthead brand. */
   className?: string;
   /** Component type of the masthead brand. */
-  component?: React.ElementType<any> | React.ComponentType<any>;
+  component?: React.ElementType<any> | React.ComponentType<React.PropsWithChildren<any>>;
 }
 
-export const MastheadBrand: React.FunctionComponent<MastheadBrandProps> = ({
+export const MastheadBrand: React.FunctionComponent<React.PropsWithChildren<MastheadBrandProps>> = ({
   children,
   className,
   component = 'a',

@@ -10,7 +10,7 @@ export interface FavoritesCellProps {
   rowIndex?: number;
 }
 
-export const FavoritesCell: React.FunctionComponent<FavoritesCellProps> = ({
+export const FavoritesCell: React.FunctionComponent<React.PropsWithChildren<FavoritesCellProps>> = ({
   className = '' as string,
   onFavorite,
   isFavorited,

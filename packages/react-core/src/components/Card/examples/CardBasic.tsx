@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardTitle, CardBody, CardFooter } from '@patternfly/react-core';
 
-export const CardBasic: React.FunctionComponent = () => (
+export const CardBasic: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <Card>
     <CardTitle>Header</CardTitle>
     <CardBody>Body</CardBody>

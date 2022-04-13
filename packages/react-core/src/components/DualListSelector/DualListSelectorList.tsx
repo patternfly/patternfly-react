@@ -8,7 +8,7 @@ export interface DualListSelectorListProps extends React.HTMLProps<HTMLUListElem
   children?: React.ReactNode;
 }
 
-export const DualListSelectorList: React.FunctionComponent<DualListSelectorListProps> = ({
+export const DualListSelectorList: React.FunctionComponent<React.PropsWithChildren<DualListSelectorListProps>> = ({
   children,
   ...props
 }: DualListSelectorListProps) => {

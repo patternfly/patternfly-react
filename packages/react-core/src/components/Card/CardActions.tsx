@@ -11,7 +11,7 @@ export interface CardActionsProps extends React.HTMLProps<HTMLDivElement> {
   hasNoOffset?: boolean;
 }
 
-export const CardActions: React.FunctionComponent<CardActionsProps> = ({
+export const CardActions: React.FunctionComponent<React.PropsWithChildren<CardActionsProps>> = ({
   children = null,
   className = '',
   hasNoOffset = false,

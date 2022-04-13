@@ -5,7 +5,7 @@ export interface AccordionItemProps {
   children?: React.ReactNode;
 }
 
-export const AccordionItem: React.FunctionComponent<AccordionItemProps> = ({ children = null }: AccordionItemProps) => (
-  <React.Fragment>{children}</React.Fragment>
-);
+export const AccordionItem: React.FunctionComponent<React.PropsWithChildren<AccordionItemProps>> = ({
+  children = null
+}: AccordionItemProps) => <React.Fragment>{children}</React.Fragment>;
 AccordionItem.displayName = 'AccordionItem';

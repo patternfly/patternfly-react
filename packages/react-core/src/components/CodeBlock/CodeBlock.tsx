@@ -11,7 +11,7 @@ export interface CodeBlockProps extends React.HTMLProps<HTMLDivElement> {
   actions?: React.ReactNode;
 }
 
-export const CodeBlock: React.FunctionComponent<CodeBlockProps> = ({
+export const CodeBlock: React.FunctionComponent<React.PropsWithChildren<CodeBlockProps>> = ({
   children = null,
   className,
   actions = null,

@@ -9,7 +9,7 @@ export interface ActionListGroupProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const ActionListGroup: React.FunctionComponent<ActionListGroupProps> = ({
+export const ActionListGroup: React.FunctionComponent<React.PropsWithChildren<ActionListGroupProps>> = ({
   children,
   className = '',
   ...props

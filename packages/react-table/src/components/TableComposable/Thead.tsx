@@ -15,7 +15,7 @@ export interface TheadProps extends React.HTMLProps<HTMLTableSectionElement> {
   hasNestedHeader?: boolean;
 }
 
-const TheadBase: React.FunctionComponent<TheadProps> = ({
+const TheadBase: React.FunctionComponent<React.PropsWithChildren<TheadProps>> = ({
   children,
   className,
   noWrap = false,

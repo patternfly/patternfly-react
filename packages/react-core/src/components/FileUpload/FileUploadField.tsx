@@ -80,7 +80,7 @@ export interface FileUploadFieldProps extends Omit<React.HTMLProps<HTMLDivElemen
   onTextChange?: (text: string) => void;
 }
 
-export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
+export const FileUploadField: React.FunctionComponent<React.PropsWithChildren<FileUploadFieldProps>> = ({
   id,
   type,
   value = '',

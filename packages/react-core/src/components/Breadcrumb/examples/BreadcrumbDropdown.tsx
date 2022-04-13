@@ -21,7 +21,7 @@ const dropdownItems: JSX.Element[] = [
   </DropdownItem>
 ];
 
-export const BreadcrumbDropdown: React.FunctionComponent = () => {
+export const BreadcrumbDropdown: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const badgeToggleRef = React.useRef<HTMLButtonElement>();
 

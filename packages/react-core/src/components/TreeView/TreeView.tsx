@@ -73,7 +73,7 @@ export interface TreeViewProps {
   useMemo?: boolean;
 }
 
-export const TreeView: React.FunctionComponent<TreeViewProps> = ({
+export const TreeView: React.FunctionComponent<React.PropsWithChildren<TreeViewProps>> = ({
   data,
   isNested = false,
   hasChecks = false,

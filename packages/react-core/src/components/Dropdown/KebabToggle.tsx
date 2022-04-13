@@ -32,7 +32,7 @@ export interface KebabToggleProps extends DropdownToggleProps {
   bubbleEvent?: boolean;
 }
 
-export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
+export const KebabToggle: React.FunctionComponent<React.PropsWithChildren<KebabToggleProps>> = ({
   id = '',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   children = null,

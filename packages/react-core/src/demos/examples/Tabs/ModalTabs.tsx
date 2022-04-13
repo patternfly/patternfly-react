@@ -46,7 +46,7 @@ const products: Product[] = [
   }
 ];
 
-export const ModalTabs: React.FunctionComponent = () => {
+export const ModalTabs: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [selectedProduct, setSelectedProduct] = React.useState<Product>();
   const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);

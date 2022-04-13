@@ -9,7 +9,7 @@ interface LoadingPropsType {
   isLoading: boolean;
 }
 
-export const ButtonProgress: React.FunctionComponent = () => {
+export const ButtonProgress: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isPrimaryLoading, setIsPrimaryLoading] = React.useState<boolean>(true);
   const [isSecondaryLoading, setIsSecondaryLoading] = React.useState<boolean>(true);
   const [isUploading, setIsUploading] = React.useState<boolean>(false);

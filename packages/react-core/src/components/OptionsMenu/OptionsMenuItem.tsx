@@ -20,7 +20,7 @@ export interface OptionsMenuItemProps
   id?: string;
 }
 
-export const OptionsMenuItem: React.FunctionComponent<OptionsMenuItemProps> = ({
+export const OptionsMenuItem: React.FunctionComponent<React.PropsWithChildren<OptionsMenuItemProps>> = ({
   children = null as React.ReactNode,
   isSelected = false,
   onSelect = () => null as any,

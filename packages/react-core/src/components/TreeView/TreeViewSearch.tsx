@@ -16,7 +16,7 @@ export interface TreeViewSearchProps extends React.HTMLProps<HTMLInputElement> {
   className?: string;
 }
 
-export const TreeViewSearch: React.FunctionComponent<TreeViewSearchProps> = ({
+export const TreeViewSearch: React.FunctionComponent<React.PropsWithChildren<TreeViewSearchProps>> = ({
   className,
   onSearch,
   id,

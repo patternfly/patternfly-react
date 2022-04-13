@@ -8,11 +8,9 @@ export interface MultipleFileUploadTitleIconProps extends React.HTMLProps<HTMLDi
   className?: string;
 }
 
-export const MultipleFileUploadTitleIcon: React.FunctionComponent<MultipleFileUploadTitleIconProps> = ({
-  children,
-  className,
-  ...props
-}: MultipleFileUploadTitleIconProps) => (
+export const MultipleFileUploadTitleIcon: React.FunctionComponent<React.PropsWithChildren<
+  MultipleFileUploadTitleIconProps
+>> = ({ children, className, ...props }: MultipleFileUploadTitleIconProps) => (
   <div className={css(styles.multipleFileUploadTitleIcon, className)} {...props}>
     {children}
   </div>

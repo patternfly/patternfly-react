@@ -76,7 +76,7 @@ const setBreakpointModifiers = (prefix: string, modifiers: BreakpointModifiers) 
   );
 };
 
-export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
+export const DescriptionList: React.FunctionComponent<React.PropsWithChildren<DescriptionListProps>> = ({
   className = '',
   children = null,
   isHorizontal = false,

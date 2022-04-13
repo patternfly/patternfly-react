@@ -29,7 +29,7 @@ export interface BreadcrumbItemProps extends React.HTMLProps<HTMLLIElement> {
   render?: (props: BreadcrumbItemRenderArgs) => React.ReactNode;
 }
 
-export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
+export const BreadcrumbItem: React.FunctionComponent<React.PropsWithChildren<BreadcrumbItemProps>> = ({
   children = null,
   className: classNameProp = '',
   to = undefined,

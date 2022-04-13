@@ -15,7 +15,9 @@ export interface FormFieldGroupExpandableProps extends React.HTMLProps<HTMLDivEl
   toggleAriaLabel?: string;
 }
 
-export const FormFieldGroupExpandable: React.FunctionComponent<FormFieldGroupExpandableProps> = ({
+export const FormFieldGroupExpandable: React.FunctionComponent<React.PropsWithChildren<
+  FormFieldGroupExpandableProps
+>> = ({
   children,
   className,
   header,

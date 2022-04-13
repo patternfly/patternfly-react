@@ -9,7 +9,7 @@ export interface ClipboardCopyActionProps extends React.HTMLProps<HTMLLIElement>
   className?: string;
 }
 
-export const ClipboardCopyAction: React.FunctionComponent<ClipboardCopyActionProps> = ({
+export const ClipboardCopyAction: React.FunctionComponent<React.PropsWithChildren<ClipboardCopyActionProps>> = ({
   children = null,
   className = '',
   ...props

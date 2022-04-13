@@ -2,7 +2,7 @@ import React from 'react';
 import { Brand, Card, CardBody, CardFooter, CardHeader, CardHeaderMain, CardTitle } from '@patternfly/react-core';
 import pfLogo from './pfLogo.svg';
 
-export const CardOnlyImageInCardHead: React.FunctionComponent = () => (
+export const CardOnlyImageInCardHead: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <Card>
     <CardHeader>
       <CardHeaderMain>

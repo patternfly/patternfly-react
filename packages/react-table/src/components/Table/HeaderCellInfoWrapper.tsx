@@ -36,7 +36,7 @@ export interface ColumnHelpWrapperProps {
   ariaLabel?: string;
 }
 
-export const HeaderCellInfoWrapper: React.FunctionComponent<ColumnHelpWrapperProps> = ({
+export const HeaderCellInfoWrapper: React.FunctionComponent<React.PropsWithChildren<ColumnHelpWrapperProps>> = ({
   children,
   info,
   className,

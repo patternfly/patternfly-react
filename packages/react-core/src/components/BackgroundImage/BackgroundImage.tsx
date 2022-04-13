@@ -39,7 +39,7 @@ export interface BackgroundImageProps extends Omit<React.HTMLProps<HTMLDivElemen
 
 let filterCounter = 0;
 
-export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
+export const BackgroundImage: React.FunctionComponent<React.PropsWithChildren<BackgroundImageProps>> = ({
   className,
   src,
   filter = defaultFilter,

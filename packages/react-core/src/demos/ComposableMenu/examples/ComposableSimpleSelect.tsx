@@ -2,7 +2,7 @@ import React from 'react';
 import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper } from '@patternfly/react-core';
 import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 
-export const ComposableSimpleSelect: React.FunctionComponent = () => {
+export const ComposableSimpleSelect: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [selected, setSelected] = React.useState<string>('Select a value');
   const toggleRef = React.useRef<HTMLButtonElement>();

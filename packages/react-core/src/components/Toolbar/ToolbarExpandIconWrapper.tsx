@@ -9,11 +9,9 @@ export interface ToolbarExpandIconWrapperProps extends React.HTMLProps<HTMLSpanE
   className?: string;
 }
 
-export const ToolbarExpandIconWrapper: React.FunctionComponent<ToolbarExpandIconWrapperProps> = ({
-  children,
-  className,
-  ...props
-}: ToolbarExpandIconWrapperProps) => (
+export const ToolbarExpandIconWrapper: React.FunctionComponent<React.PropsWithChildren<
+  ToolbarExpandIconWrapperProps
+>> = ({ children, className, ...props }: ToolbarExpandIconWrapperProps) => (
   <span {...props} className={css(styles.toolbarExpandAllIcon, className)}>
     {children}
   </span>

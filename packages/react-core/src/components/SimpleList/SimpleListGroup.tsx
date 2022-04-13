@@ -15,7 +15,7 @@ export interface SimpleListGroupProps extends Omit<React.HTMLProps<HTMLTableSect
   id?: string;
 }
 
-export const SimpleListGroup: React.FunctionComponent<SimpleListGroupProps> = ({
+export const SimpleListGroup: React.FunctionComponent<React.PropsWithChildren<SimpleListGroupProps>> = ({
   children = null,
   className = '',
   title = '',

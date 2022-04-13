@@ -16,7 +16,7 @@ interface readFile {
   loadError?: DOMException;
 }
 
-export const MultipleFileUploadBasic: React.FunctionComponent = () => {
+export const MultipleFileUploadBasic: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isHorizontal, setIsHorizontal] = React.useState(false);
   const [currentFiles, setCurrentFiles] = React.useState<File[]>([]);
   const [readFileData, setReadFileData] = React.useState<readFile[]>([]);

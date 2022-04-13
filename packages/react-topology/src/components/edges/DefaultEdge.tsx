@@ -40,7 +40,7 @@ type BaseEdgeProps = {
   WithRemoveConnectorProps & WithSourceDragProps & WithTargetDragProps & WithSelectionProps & WithContextMenuProps
 >;
 
-const BaseEdge: React.FunctionComponent<BaseEdgeProps> = ({
+const BaseEdge: React.FunctionComponent<React.PropsWithChildren<BaseEdgeProps>> = ({
   element,
   dragging,
   sourceDragRef,

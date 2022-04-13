@@ -138,7 +138,7 @@ const getPath = (props: ChartPointProps) => {
   return symbolFunction(x, y, size);
 };
 
-export const ChartPoint: React.FunctionComponent<ChartPointProps> = ({
+export const ChartPoint: React.FunctionComponent<React.PropsWithChildren<ChartPointProps>> = ({
   active,
   className,
   clipPath,

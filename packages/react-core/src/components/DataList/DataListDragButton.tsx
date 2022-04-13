@@ -13,7 +13,7 @@ export interface DataListDragButtonProps extends React.HTMLProps<HTMLButtonEleme
   isDisabled?: boolean;
 }
 
-export const DataListDragButton: React.FunctionComponent<DataListDragButtonProps> = ({
+export const DataListDragButton: React.FunctionComponent<React.PropsWithChildren<DataListDragButtonProps>> = ({
   className = '',
   isDisabled = false,
   ...props

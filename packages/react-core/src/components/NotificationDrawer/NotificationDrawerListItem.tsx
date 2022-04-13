@@ -19,7 +19,9 @@ export interface NotificationDrawerListItemProps extends React.HTMLProps<HTMLLIE
   variant?: 'default' | 'success' | 'danger' | 'warning' | 'info';
 }
 
-export const NotificationDrawerListItem: React.FunctionComponent<NotificationDrawerListItemProps> = ({
+export const NotificationDrawerListItem: React.FunctionComponent<React.PropsWithChildren<
+  NotificationDrawerListItemProps
+>> = ({
   children = null,
   className = '',
   isHoverable = true,

@@ -10,7 +10,7 @@ import {
 } from '@patternfly/react-core';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
-export const ExpandableCodeBlock: React.FunctionComponent = () => {
+export const ExpandableCodeBlock: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Badge } from '@patternfly/react-core';
 
-export const BadgeRead: React.FunctionComponent = () => (
+export const BadgeRead: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <React.Fragment>
     <Badge key={1} isRead>
       7

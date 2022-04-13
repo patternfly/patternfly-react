@@ -9,7 +9,7 @@ export interface MastheadContentProps extends React.DetailedHTMLProps<React.HTML
   className?: string;
 }
 
-export const MastheadContent: React.FunctionComponent<MastheadContentProps> = ({
+export const MastheadContent: React.FunctionComponent<React.PropsWithChildren<MastheadContentProps>> = ({
   children,
   className,
   ...props

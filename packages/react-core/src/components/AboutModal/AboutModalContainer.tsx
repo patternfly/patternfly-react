@@ -40,7 +40,7 @@ export interface AboutModalContainerProps extends React.HTMLProps<HTMLDivElement
   disableFocusTrap?: boolean;
 }
 
-export const AboutModalContainer: React.FunctionComponent<AboutModalContainerProps> = ({
+export const AboutModalContainer: React.FunctionComponent<React.PropsWithChildren<AboutModalContainerProps>> = ({
   children,
   className = '',
   isOpen = false,

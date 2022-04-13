@@ -35,7 +35,7 @@ const appLauncherItems: React.ReactElement[] = [
   </ApplicationLauncherGroup>
 ];
 
-export const ApplicationLauncherSectionsAndIcons: React.FunctionComponent = () => {
+export const ApplicationLauncherSectionsAndIcons: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const onToggle = (isOpen: boolean) => setIsOpen(isOpen);

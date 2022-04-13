@@ -35,7 +35,7 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
   tooltip?: React.ReactElement<any>;
 }
 
-const TabBase: React.FunctionComponent<TabProps> = ({
+const TabBase: React.FunctionComponent<React.PropsWithChildren<TabProps>> = ({
   title,
   eventKey,
   tabContentRef,

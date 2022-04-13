@@ -11,7 +11,7 @@ export interface TabContentBodyProps extends React.HTMLProps<HTMLDivElement> {
   hasPadding?: boolean;
 }
 
-export const TabContentBody: React.FunctionComponent<TabContentBodyProps> = ({
+export const TabContentBody: React.FunctionComponent<React.PropsWithChildren<TabContentBodyProps>> = ({
   children,
   className,
   hasPadding,

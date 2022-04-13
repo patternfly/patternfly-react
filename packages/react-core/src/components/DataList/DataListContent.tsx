@@ -19,7 +19,7 @@ export interface DataListContentProps extends React.HTMLProps<HTMLElement> {
   'aria-label': string;
 }
 
-export const DataListContent: React.FunctionComponent<DataListContentProps> = ({
+export const DataListContent: React.FunctionComponent<React.PropsWithChildren<DataListContentProps>> = ({
   className = '',
   children = null,
   id = '',

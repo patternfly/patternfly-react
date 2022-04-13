@@ -13,7 +13,7 @@ export interface CollapseColumnProps {
   'aria-label'?: string;
 }
 
-export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
+export const CollapseColumn: React.FunctionComponent<React.PropsWithChildren<CollapseColumnProps>> = ({
   className = '' as string,
   children = null as React.ReactNode,
   isOpen,

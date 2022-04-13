@@ -11,7 +11,7 @@ export interface BullseyeProps extends React.HTMLProps<HTMLDivElement> {
   component?: keyof JSX.IntrinsicElements;
 }
 
-export const Bullseye: React.FunctionComponent<BullseyeProps> = ({
+export const Bullseye: React.FunctionComponent<React.PropsWithChildren<BullseyeProps>> = ({
   children = null,
   className = '',
   component = 'div',

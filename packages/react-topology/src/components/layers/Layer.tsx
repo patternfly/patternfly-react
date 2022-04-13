@@ -38,45 +38,47 @@ const compare = (a: ChildNode, b: ChildNode): number => {
   return ao.length === bo.length ? 0 : ao.length - bo.length;
 };
 
-const LayerDelegate: React.FunctionComponent<LayerDelegateProps> = observer(({ id, children, orderKey }) => {
-  const getLayerNode = React.useContext(LayersContext);
-  const layerNode = getLayerNode(id);
+const LayerDelegate: React.FunctionComponent<React.PropsWithChildren<LayerDelegateProps>> = observer(
+  ({ id, children, orderKey }) => {
+    const getLayerNode = React.useContext(LayersContext);
+    const layerNode = getLayerNode(id);
 
-  const element = React.useContext(ElementContext);
-  const nodeRef = React.useRef<SVGGElement | null>(null);
-  let order: unknown;
-  if (id && orderKey == null) {
-    order = element.getOrderKey();
-  } else if (id) {
-    order = orderKey;
-  }
+    const element = React.useContext(ElementContext);
+    const nodeRef = React.useRef<SVGGElement | null>(null);
+    let order: unknown;
+    if (id && orderKey == null) {
+      order = element.getOrderKey();
+    } else if (id) {
+      order = orderKey;
+    }
 
-  React.useEffect(() => {
-    // TODO use bisection search
-    if (nodeRef.current && layerNode != null) {
-      nodeRef.current[ORDER_KEY] = order;
-      const { childNodes } = layerNode;
-      // childNodes is not an array, disable false positive
-      // eslint-disable-next-line @typescript-eslint/prefer-for-of
-      for (let i = 0; i < childNodes.length; i++) {
-        const result = compare(nodeRef.current, childNodes[i]);
-        if (result < 0) {
-          if (i > 0 && childNodes[i - 1] !== nodeRef.current) {
-            layerNode.insertBefore(nodeRef.current, childNodes[i]);
+    React.useEffect(() => {
+      // TODO use bisection search
+      if (nodeRef.current && layerNode != null) {
+        nodeRef.current[ORDER_KEY] = order;
+        const { childNodes } = layerNode;
+        // childNodes is not an array, disable false positive
+        // eslint-disable-next-line @typescript-eslint/prefer-for-of
+        for (let i = 0; i < childNodes.length; i++) {
+          const result = compare(nodeRef.current, childNodes[i]);
+          if (result < 0) {
+            if (i > 0 && childNodes[i - 1] !== nodeRef.current) {
+              layerNode.insertBefore(nodeRef.current, childNodes[i]);
+            }
+            return;
           }
-          return;
+        }
+        if (childNodes[childNodes.length - 1] !== nodeRef.current) {
+          layerNode.appendChild(nodeRef.current);
         }
       }
-      if (childNodes[childNodes.length - 1] !== nodeRef.current) {
-        layerNode.appendChild(nodeRef.current);
-      }
-    }
-  }, [order, layerNode]);
+    }, [order, layerNode]);
 
-  return createPortal(<LayerContainer ref={nodeRef}>{children}</LayerContainer>, layerNode);
-});
+    return createPortal(<LayerContainer ref={nodeRef}>{children}</LayerContainer>, layerNode);
+  }
+);
 
-const Layer: React.FunctionComponent<LayerProps> = ({ id, children, orderKey }) =>
+const Layer: React.FunctionComponent<React.PropsWithChildren<LayerProps>> = ({ id, children, orderKey }) =>
   id ? (
     <LayerDelegate id={id} orderKey={orderKey}>
       {children}

@@ -13,7 +13,7 @@ export interface FormSelectOptionProps extends Omit<React.HTMLProps<HTMLOptionEl
   isPlaceholder?: boolean;
 }
 
-export const FormSelectOption: React.FunctionComponent<FormSelectOptionProps> = ({
+export const FormSelectOption: React.FunctionComponent<React.PropsWithChildren<FormSelectOptionProps>> = ({
   className = '',
   value = '',
   isDisabled = false,

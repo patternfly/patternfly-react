@@ -435,7 +435,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
   y?: DataGetterPropType;
 }
 
-export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdProps> = ({
+export const ChartDonutThreshold: React.FunctionComponent<React.PropsWithChildren<ChartDonutThresholdProps>> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,

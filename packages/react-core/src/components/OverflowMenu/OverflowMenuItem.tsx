@@ -12,7 +12,7 @@ export interface OverflowMenuItemProps extends React.HTMLProps<HTMLDivElement> {
   isPersistent?: boolean;
 }
 
-export const OverflowMenuItem: React.FunctionComponent<OverflowMenuItemProps> = ({
+export const OverflowMenuItem: React.FunctionComponent<React.PropsWithChildren<OverflowMenuItemProps>> = ({
   className,
   children,
   isPersistent = false

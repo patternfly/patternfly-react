@@ -37,7 +37,7 @@ export interface BadgeToggleProps extends DropdownToggleProps {
   bubbleEvent?: boolean;
 }
 
-export const BadgeToggle: React.FunctionComponent<BadgeToggleProps> = ({
+export const BadgeToggle: React.FunctionComponent<React.PropsWithChildren<BadgeToggleProps>> = ({
   id = '',
   children = null,
   badgeProps = { isRead: true },

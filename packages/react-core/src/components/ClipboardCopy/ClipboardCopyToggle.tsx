@@ -13,7 +13,7 @@ export interface ClipboardCopyToggleProps
   className?: string;
 }
 
-export const ClipboardCopyToggle: React.FunctionComponent<ClipboardCopyToggleProps> = ({
+export const ClipboardCopyToggle: React.FunctionComponent<React.PropsWithChildren<ClipboardCopyToggleProps>> = ({
   onClick,
   id,
   textId,

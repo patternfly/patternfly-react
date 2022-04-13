@@ -1,7 +1,7 @@
 import React from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';
 
-export const ClipboardCopyInlineCompactInSentence: React.FunctionComponent = () => (
+export const ClipboardCopyInlineCompactInSentence: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <React.Fragment>
     <b>Basic</b>
     <br />

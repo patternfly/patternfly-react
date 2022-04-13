@@ -12,7 +12,7 @@ const handleKeydown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
   }
 };
 
-export const ButtonInlineSpanLink: React.FunctionComponent = () => (
+export const ButtonInlineSpanLink: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <React.Fragment>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.

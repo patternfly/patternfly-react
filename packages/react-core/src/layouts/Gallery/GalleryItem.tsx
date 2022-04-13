@@ -4,10 +4,10 @@ export interface GalleryItemProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the Gallery Item */
   children?: React.ReactNode;
   /** Sets the base component to render. defaults to div */
-  component?: React.ElementType<any> | React.ComponentType<any>;
+  component?: React.ElementType<any> | React.ComponentType<React.PropsWithChildren<any>>;
 }
 
-export const GalleryItem: React.FunctionComponent<GalleryItemProps> = ({
+export const GalleryItem: React.FunctionComponent<React.PropsWithChildren<GalleryItemProps>> = ({
   children = null,
   component = 'div',
   ...props

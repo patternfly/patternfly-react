@@ -14,7 +14,9 @@ export interface DualListSelectorControlsWrapperProps extends React.HTMLProps<HT
   'aria-label'?: string;
 }
 
-export const DualListSelectorControlsWrapperBase: React.FunctionComponent<DualListSelectorControlsWrapperProps> = ({
+export const DualListSelectorControlsWrapperBase: React.FunctionComponent<React.PropsWithChildren<
+  DualListSelectorControlsWrapperProps
+>> = ({
   innerRef,
   children = null,
   className,

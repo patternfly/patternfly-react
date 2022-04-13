@@ -13,7 +13,7 @@ export interface StackProps extends React.HTMLProps<HTMLDivElement> {
   component?: React.ReactNode;
 }
 
-export const Stack: React.FunctionComponent<StackProps> = ({
+export const Stack: React.FunctionComponent<React.PropsWithChildren<StackProps>> = ({
   hasGutter = false,
   className = '',
   children = null,

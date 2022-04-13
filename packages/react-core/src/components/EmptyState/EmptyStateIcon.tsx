@@ -13,14 +13,14 @@ export interface EmptyStateIconProps extends IconProps {
   /** Icon component to be rendered inside the EmptyState on icon variant
    * Usually a CheckCircleIcon, ExclamationCircleIcon, LockIcon, PlusCircleIcon, RocketIcon
    * SearchIcon, or WrenchIcon */
-  icon?: React.ComponentType<any>;
+  icon?: React.ComponentType<React.PropsWithChildren<any>>;
   /** Component to be rendered inside the EmptyState on container variant */
-  component?: React.ComponentType<any>;
+  component?: React.ComponentType<React.PropsWithChildren<any>>;
   /** Adds empty state icon variant styles  */
   variant?: 'icon' | 'container';
 }
 
-export const EmptyStateIcon: React.FunctionComponent<EmptyStateIconProps> = ({
+export const EmptyStateIcon: React.FunctionComponent<React.PropsWithChildren<EmptyStateIconProps>> = ({
   className = '',
   icon: IconComponent,
   component: AnyComponent,

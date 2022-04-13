@@ -9,7 +9,7 @@ export interface PopoverHeaderTextProps extends React.HTMLProps<HTMLDivElement> 
   className?: string;
 }
 
-export const PopoverHeaderText: React.FunctionComponent<PopoverHeaderTextProps> = ({
+export const PopoverHeaderText: React.FunctionComponent<React.PropsWithChildren<PopoverHeaderTextProps>> = ({
   children,
   className,
   ...props

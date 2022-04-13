@@ -8,7 +8,7 @@ export interface AlertActionLinkProps extends ButtonProps {
   className?: string;
 }
 
-export const AlertActionLink: React.FunctionComponent<AlertActionLinkProps> = ({
+export const AlertActionLink: React.FunctionComponent<React.PropsWithChildren<AlertActionLinkProps>> = ({
   className = '',
   children,
   ...props

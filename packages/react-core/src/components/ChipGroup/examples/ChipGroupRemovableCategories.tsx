@@ -1,7 +1,7 @@
 import React from 'react';
 import { Chip, ChipGroup } from '@patternfly/react-core';
 
-export const ChipGroupRemovableCategories: React.FunctionComponent = () => {
+export const ChipGroupRemovableCategories: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [chipGroup1, setChipGroup1] = React.useState(['Chip one', 'Chip two', 'Chip three']);
   const [chipGroup2, setChipGroup2] = React.useState(['Chip one', 'Chip two', 'Chip three', 'Chip four']);
 

@@ -16,7 +16,7 @@ interface DroppableProps extends React.HTMLProps<HTMLDivElement> {
   hasNoWrapper?: boolean;
 }
 
-export const Droppable: React.FunctionComponent<DroppableProps> = ({
+export const Droppable: React.FunctionComponent<React.PropsWithChildren<DroppableProps>> = ({
   className,
   children,
   zone = 'defaultZone',

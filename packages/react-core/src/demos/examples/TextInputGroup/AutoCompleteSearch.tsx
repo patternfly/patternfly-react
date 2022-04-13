@@ -16,7 +16,7 @@ import {
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export const AutoCompleteSearch: React.FunctionComponent = () => {
+export const AutoCompleteSearch: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [inputValue, setInputValue] = React.useState('');
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
   const [currentChips, setCurrentChips] = React.useState<string[]>([]);

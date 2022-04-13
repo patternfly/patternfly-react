@@ -43,7 +43,7 @@ export interface ClipboardCopyButtonProps
   variant?: 'control' | 'plain';
 }
 
-export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonProps> = ({
+export const ClipboardCopyButton: React.FunctionComponent<React.PropsWithChildren<ClipboardCopyButtonProps>> = ({
   onClick,
   exitDelay = 0,
   entryDelay = 300,

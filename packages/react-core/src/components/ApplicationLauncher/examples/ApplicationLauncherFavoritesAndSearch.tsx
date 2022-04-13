@@ -35,7 +35,7 @@ const appLauncherItems: React.ReactElement[] = [
   </ApplicationLauncherGroup>
 ];
 
-export const ApplicationLauncherFavoritesAndSearch: React.FunctionComponent = () => {
+export const ApplicationLauncherFavoritesAndSearch: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [favorites, setFavorites] = React.useState<string[]>([]);
   const [filteredItems, setFilteredItems] = React.useState<React.ReactNode[]>(null);

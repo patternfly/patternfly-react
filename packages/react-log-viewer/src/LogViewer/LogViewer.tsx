@@ -68,7 +68,7 @@ const getCharNums = (windowWidth: number, font: string) => {
   return Math.floor(windowWidth / oneChar.width);
 };
 
-const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
+const LogViewerBase: React.FunctionComponent<React.PropsWithChildren<LogViewerProps>> = memo(
   ({
     data = '',
     hasLineNumbers = true,

@@ -15,13 +15,9 @@ export interface MultipleFileUploadTitleProps extends React.HTMLProps<HTMLDivEle
   textSeparator?: React.ReactNode;
 }
 
-export const MultipleFileUploadTitle: React.FunctionComponent<MultipleFileUploadTitleProps> = ({
-  className,
-  icon,
-  text = '',
-  textSeparator = '',
-  ...props
-}: MultipleFileUploadTitleProps) => (
+export const MultipleFileUploadTitle: React.FunctionComponent<React.PropsWithChildren<
+  MultipleFileUploadTitleProps
+>> = ({ className, icon, text = '', textSeparator = '', ...props }: MultipleFileUploadTitleProps) => (
   <div className={css(styles.multipleFileUploadTitle, className)} {...props}>
     {icon && <MultipleFileUploadTitleIcon>{icon}</MultipleFileUploadTitleIcon>}
     {text && (

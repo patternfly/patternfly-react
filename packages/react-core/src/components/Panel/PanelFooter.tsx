@@ -9,7 +9,7 @@ export interface PanelFooterProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const PanelFooter: React.FunctionComponent<PanelFooterProps> = ({
+export const PanelFooter: React.FunctionComponent<React.PropsWithChildren<PanelFooterProps>> = ({
   className,
   children,
   ...props

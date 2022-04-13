@@ -125,7 +125,7 @@ export interface ChartBulletTitleProps {
   width?: number;
 }
 
-export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = ({
+export const ChartBulletTitle: React.FunctionComponent<React.PropsWithChildren<ChartBulletTitleProps>> = ({
   ariaDesc,
   ariaTitle,
   capHeight = 1.1,

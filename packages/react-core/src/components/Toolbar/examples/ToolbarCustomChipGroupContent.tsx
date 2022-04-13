@@ -16,7 +16,7 @@ import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 
-export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
+export const ToolbarCustomChipGroupContent: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [statusIsExpanded, setStatusIsExpanded] = React.useState<boolean>(false);
   const [riskIsExpanded, setRiskIsExpanded] = React.useState<boolean>(false);
   const [filters, setFilters] = React.useState({

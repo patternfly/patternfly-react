@@ -23,7 +23,7 @@ interface BendpointProps {
   point: Point;
 }
 
-const Bendpoint: React.FunctionComponent<BendpointProps> = observer(({ point }) => {
+const Bendpoint: React.FunctionComponent<React.PropsWithChildren<BendpointProps>> = observer(({ point }) => {
   const [hover, setHover] = React.useState(false);
   const [, ref] = useBendpoint(point);
   return (
@@ -40,7 +40,7 @@ const Bendpoint: React.FunctionComponent<BendpointProps> = observer(({ point }) 
   );
 });
 
-const DefaultEdge: React.FunctionComponent<EdgeProps> = ({
+const DefaultEdge: React.FunctionComponent<React.PropsWithChildren<EdgeProps>> = ({
   element,
   sourceDragRef,
   targetDragRef,

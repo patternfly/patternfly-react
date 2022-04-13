@@ -15,7 +15,7 @@ export interface VncActionProps {
   /** VNC console additional action elements */
   additionalButtons?: React.ReactNode[];
 }
-export const VncActions: React.FunctionComponent<VncActionProps> = ({
+export const VncActions: React.FunctionComponent<React.PropsWithChildren<VncActionProps>> = ({
   textSendShortcut = 'Send Key',
   textCtrlAltDel = 'Ctrl+Alt+Del',
   textDisconnect = 'Disconnect',

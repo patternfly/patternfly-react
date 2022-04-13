@@ -20,7 +20,7 @@ interface DecoratorTypes {
 
 const HOVER_FILTER_ID = 'DecoratorDropShadowHoverFilterId';
 
-const Decorator: React.FunctionComponent<DecoratorTypes> = ({
+const Decorator: React.FunctionComponent<React.PropsWithChildren<DecoratorTypes>> = ({
   className,
   x,
   y,

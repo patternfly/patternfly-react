@@ -2,7 +2,7 @@ import React from 'react';
 import { TableComposable, Thead, Tbody, Tr, Th, Td, TbodyProps, TrProps } from '@patternfly/react-table';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
-export const ComposableTableDraggable: React.FunctionComponent = () => {
+export const ComposableTableDraggable: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [draggedItemId, setDraggedItemId] = React.useState<string | null>(null);
   const [draggingToItemIndex, setDraggingToItemIndex] = React.useState<number | null>(null);
   const [isDragging, setIsDragging] = React.useState(false);

@@ -185,7 +185,9 @@ export interface ChartBulletQualitativeRangeProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQualitativeRangeProps> = ({
+export const ChartBulletQualitativeRange: React.FunctionComponent<React.PropsWithChildren<
+  ChartBulletQualitativeRangeProps
+>> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,

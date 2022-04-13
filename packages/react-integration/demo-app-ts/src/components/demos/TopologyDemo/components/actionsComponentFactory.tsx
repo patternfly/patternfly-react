@@ -56,7 +56,7 @@ const defaultMenu = createContextMenuItems(
 const actionsComponentFactory: ComponentFactory = (
   kind: ModelKind,
   type: string
-): React.ComponentType<{ element: GraphElement }> | undefined => {
+): React.ComponentType<React.PropsWithChildren<{ element: GraphElement }>> | undefined => {
   if (kind === ModelKind.graph) {
     return withPanZoom()(GraphComponent);
   }

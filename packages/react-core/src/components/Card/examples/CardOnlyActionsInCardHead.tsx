@@ -11,7 +11,7 @@ import {
   CardBody
 } from '@patternfly/react-core';
 
-export const CardOnlyActionsInCardHead: React.FunctionComponent = () => {
+export const CardOnlyActionsInCardHead: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [isChecked, setIsChecked] = React.useState<boolean>(false);
 

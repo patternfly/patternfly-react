@@ -38,7 +38,9 @@ export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivE
   getMenuRef?: () => HTMLElement;
 }
 
-export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggleWithTextProps> = ({
+export const OptionsMenuToggleWithText: React.FunctionComponent<React.PropsWithChildren<
+  OptionsMenuToggleWithTextProps
+>> = ({
   parentId = '',
   toggleText,
   toggleTextClassName = '',

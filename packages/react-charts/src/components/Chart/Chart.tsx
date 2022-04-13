@@ -419,7 +419,7 @@ export interface ChartProps extends VictoryChartProps {
   width?: number;
 }
 
-export const Chart: React.FunctionComponent<ChartProps> = ({
+export const Chart: React.FunctionComponent<React.PropsWithChildren<ChartProps>> = ({
   ariaDesc,
   ariaTitle,
   children,

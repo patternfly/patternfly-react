@@ -16,7 +16,7 @@ export interface AvatarProps
   size?: 'sm' | 'md' | 'lg' | 'xl';
 }
 
-export const Avatar: React.FunctionComponent<AvatarProps> = ({
+export const Avatar: React.FunctionComponent<React.PropsWithChildren<AvatarProps>> = ({
   className = '',
   src = '',
   alt,

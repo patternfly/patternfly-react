@@ -3,7 +3,7 @@ import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities, Button } f
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export const TextInputGroupUtilitiesAndIcon: React.FunctionComponent = () => {
+export const TextInputGroupUtilitiesAndIcon: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [inputValue, setInputValue] = React.useState('');
 
   /** callback for updating the inputValue state in this component so that the input can be controlled */

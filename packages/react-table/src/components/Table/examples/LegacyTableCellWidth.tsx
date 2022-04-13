@@ -9,7 +9,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const LegacyTableCellWidth: React.FunctionComponent = () => {
+export const LegacyTableCellWidth: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     {

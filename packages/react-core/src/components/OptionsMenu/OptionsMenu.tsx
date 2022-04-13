@@ -38,7 +38,7 @@ export interface OptionsMenuProps extends ToggleMenuBaseProps, React.HTMLProps<H
   direction?: 'up' | 'down';
 }
 
-export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
+export const OptionsMenu: React.FunctionComponent<React.PropsWithChildren<OptionsMenuProps>> = ({
   className = '',
   menuItems,
   toggle,

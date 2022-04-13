@@ -9,7 +9,7 @@ export interface EmptyStatePrimaryProps extends React.HTMLProps<HTMLDivElement> 
   children: React.ReactNode;
 }
 
-export const EmptyStatePrimary: React.FunctionComponent<EmptyStatePrimaryProps> = ({
+export const EmptyStatePrimary: React.FunctionComponent<React.PropsWithChildren<EmptyStatePrimaryProps>> = ({
   children,
   className = '',
   ...props

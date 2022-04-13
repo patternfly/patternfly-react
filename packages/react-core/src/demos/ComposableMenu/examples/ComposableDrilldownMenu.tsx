@@ -18,7 +18,7 @@ interface MenuHeightsType {
   [id: string]: number;
 }
 
-export const ComposableDrilldownMenu: React.FunctionComponent = () => {
+export const ComposableDrilldownMenu: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [activeMenu, setActiveMenu] = React.useState<string>('rootMenu');
   const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);

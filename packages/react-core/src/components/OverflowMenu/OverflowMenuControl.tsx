@@ -12,7 +12,7 @@ export interface OverflowMenuControlProps extends React.HTMLProps<HTMLDivElement
   hasAdditionalOptions?: boolean;
 }
 
-export const OverflowMenuControl: React.FunctionComponent<OverflowMenuControlProps> = ({
+export const OverflowMenuControl: React.FunctionComponent<React.PropsWithChildren<OverflowMenuControlProps>> = ({
   className,
   children,
   hasAdditionalOptions,

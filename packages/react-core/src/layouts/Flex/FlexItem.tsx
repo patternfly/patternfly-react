@@ -136,10 +136,10 @@ export interface FlexItemProps extends React.HTMLProps<HTMLDivElement> {
     '2xl'?: string;
   };
   /** Sets the base component to render. defaults to div */
-  component?: React.ElementType<any> | React.ComponentType<any>;
+  component?: React.ElementType<any> | React.ComponentType<React.PropsWithChildren<any>>;
 }
 
-export const FlexItem: React.FunctionComponent<FlexItemProps> = ({
+export const FlexItem: React.FunctionComponent<React.PropsWithChildren<FlexItemProps>> = ({
   children = null,
   className = '',
   component = 'div',

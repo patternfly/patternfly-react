@@ -9,7 +9,7 @@ export interface OuterScrollContainerProps extends React.HTMLProps<HTMLDivElemen
   className?: string;
 }
 
-export const OuterScrollContainer: React.FunctionComponent<OuterScrollContainerProps> = ({
+export const OuterScrollContainer: React.FunctionComponent<React.PropsWithChildren<OuterScrollContainerProps>> = ({
   children,
   className,
   ...props

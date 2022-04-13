@@ -9,11 +9,9 @@ export interface DescriptionListTermHelpTextProps extends React.HTMLProps<HTMLEl
   className?: string;
 }
 
-export const DescriptionListTermHelpText: React.FunctionComponent<DescriptionListTermHelpTextProps> = ({
-  children,
-  className,
-  ...props
-}: DescriptionListTermHelpTextProps) => (
+export const DescriptionListTermHelpText: React.FunctionComponent<React.PropsWithChildren<
+  DescriptionListTermHelpTextProps
+>> = ({ children, className, ...props }: DescriptionListTermHelpTextProps) => (
   <dt className={css(styles.descriptionListTerm, className)} {...props}>
     {children}
   </dt>

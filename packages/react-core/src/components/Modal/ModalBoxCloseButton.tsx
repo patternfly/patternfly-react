@@ -10,7 +10,7 @@ export interface ModalBoxCloseButtonProps extends OUIAProps {
   onClose?: () => void;
 }
 
-export const ModalBoxCloseButton: React.FunctionComponent<ModalBoxCloseButtonProps> = ({
+export const ModalBoxCloseButton: React.FunctionComponent<React.PropsWithChildren<ModalBoxCloseButtonProps>> = ({
   className = '',
   onClose = () => undefined as any,
   ouiaId,

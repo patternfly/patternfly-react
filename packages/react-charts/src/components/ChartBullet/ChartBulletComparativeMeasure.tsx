@@ -172,7 +172,9 @@ export interface ChartBulletComparativeMeasureProps {
   y?: DataGetterPropType;
 }
 
-export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletComparativeMeasureProps> = ({
+export const ChartBulletComparativeMeasure: React.FunctionComponent<React.PropsWithChildren<
+  ChartBulletComparativeMeasureProps
+>> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,

@@ -18,7 +18,7 @@ interface BackToTopProps extends React.DetailedHTMLProps<React.HTMLProps<HTMLDiv
   isAlwaysVisible?: boolean;
 }
 
-const BackToTopBase: React.FunctionComponent<BackToTopProps> = ({
+const BackToTopBase: React.FunctionComponent<React.PropsWithChildren<BackToTopProps>> = ({
   className,
   title = 'Back to top',
   innerRef,

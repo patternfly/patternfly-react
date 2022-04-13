@@ -8,7 +8,9 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-export const DescriptionListHorizontalResponsiveColumns: React.FunctionComponent = () => (
+export const DescriptionListHorizontalResponsiveColumns: React.FunctionComponent<React.PropsWithChildren<
+  unknown
+>> = () => (
   <DescriptionList isHorizontal columnModifier={{ lg: '2Col', xl: '3Col' }}>
     <DescriptionListGroup>
       <DescriptionListTerm>Name</DescriptionListTerm>

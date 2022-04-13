@@ -7,7 +7,7 @@ interface AlertInfo {
   key: number;
 }
 
-export const DynamicLiveRegionAlert: React.FunctionComponent = () => {
+export const DynamicLiveRegionAlert: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [alerts, setAlerts] = React.useState<AlertInfo[]>([]);
   const getUniqueId: () => number = () => new Date().getTime();
   const btnClasses = ['pf-c-button', 'pf-m-secondary'].join(' ');

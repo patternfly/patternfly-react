@@ -48,7 +48,7 @@ export const CardContext = React.createContext<Partial<CardContextProps>>({
   isExpanded: false
 });
 
-export const Card: React.FunctionComponent<CardProps> = ({
+export const Card: React.FunctionComponent<React.PropsWithChildren<CardProps>> = ({
   children = null,
   id = '',
   className = '',

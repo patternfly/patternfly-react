@@ -467,7 +467,7 @@ export interface ChartBarProps extends VictoryBarProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
+export const ChartBar: React.FunctionComponent<React.PropsWithChildren<ChartBarProps>> = ({
   containerComponent = <ChartContainer />,
   themeColor,
   themeVariant,

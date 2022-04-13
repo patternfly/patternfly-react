@@ -9,7 +9,7 @@ export interface PopoverFooterProps extends React.HTMLProps<HTMLDivElement> {
   children: React.ReactNode;
 }
 
-export const PopoverFooter: React.FunctionComponent<PopoverFooterProps> = ({
+export const PopoverFooter: React.FunctionComponent<React.PropsWithChildren<PopoverFooterProps>> = ({
   children,
   className = '',
   ...props

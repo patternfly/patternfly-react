@@ -63,7 +63,7 @@ interface TopologyViewComponentProps {
   sideBarResizable?: boolean;
 }
 
-const TopologyViewComponent: React.FunctionComponent<TopologyViewComponentProps> = ({
+const TopologyViewComponent: React.FunctionComponent<React.PropsWithChildren<TopologyViewComponentProps>> = ({
   useSidebar,
   sideBarResizable = false
 }) => {

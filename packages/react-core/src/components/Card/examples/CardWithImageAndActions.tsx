@@ -16,7 +16,7 @@ import {
 } from '@patternfly/react-core';
 import pfLogo from './pfLogo.svg';
 
-export const CardWithImageAndActions: React.FunctionComponent = () => {
+export const CardWithImageAndActions: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [isChecked, setIsChecked] = React.useState<boolean>(false);
   const [hasNoOffset, setHasNoOffset] = React.useState<boolean>(false);

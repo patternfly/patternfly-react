@@ -22,7 +22,7 @@ export interface ProgressBarProps extends React.HTMLProps<HTMLDivElement> {
   progressBarAriaProps?: AriaProps;
 }
 
-export const ProgressBar: React.FunctionComponent<ProgressBarProps> = ({
+export const ProgressBar: React.FunctionComponent<React.PropsWithChildren<ProgressBarProps>> = ({
   progressBarAriaProps,
   className = '',
   children = null,

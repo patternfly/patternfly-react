@@ -11,7 +11,7 @@ export interface SerialConsoleActionsProps extends React.HTMLProps<HTMLDivElemen
   textReset?: string;
 }
 
-export const SerialConsoleActions: React.FunctionComponent<SerialConsoleActionsProps> = ({
+export const SerialConsoleActions: React.FunctionComponent<React.PropsWithChildren<SerialConsoleActionsProps>> = ({
   textDisconnect = 'Disconnect',
   textReset = 'Reset',
   ...props

@@ -1,7 +1,7 @@
 import React from 'react';
 import { DataList, DataListItem, DataListItemRow, DataListItemCells, DataListCell } from '@patternfly/react-core';
 
-export const DataListBasic: React.FunctionComponent = () => (
+export const DataListBasic: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <DataList aria-label="Simple data list example">
     <DataListItem aria-labelledby="simple-item1">
       <DataListItemRow>

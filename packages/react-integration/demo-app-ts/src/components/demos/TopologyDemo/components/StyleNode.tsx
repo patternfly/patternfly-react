@@ -31,7 +31,7 @@ const ICON_PADDING = 20;
 
 type StyleNodeProps = {
   element: Node;
-  getCustomShape?: (node: Node) => React.FunctionComponent<ShapeProps>;
+  getCustomShape?: (node: Node) => React.FunctionComponent<React.PropsWithChildren<ShapeProps>>;
   getShapeDecoratorCenter?: (quadrant: TopologyQuadrant, node: Node) => { x: number; y: number };
   showLabel?: boolean; // Defaults to true
   showStatusDecorator?: boolean; // Defaults to false
@@ -112,7 +112,7 @@ const renderDecorators = (
   );
 };
 
-const StyleNode: React.FunctionComponent<StyleNodeProps> = ({
+const StyleNode: React.FunctionComponent<React.PropsWithChildren<StyleNodeProps>> = ({
   element,
   onContextMenu,
   contextMenuOpen,

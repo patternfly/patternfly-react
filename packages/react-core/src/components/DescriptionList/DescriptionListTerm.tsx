@@ -11,7 +11,7 @@ export interface DescriptionListTermProps extends React.HTMLProps<HTMLElement> {
   className?: string;
 }
 
-export const DescriptionListTerm: React.FunctionComponent<DescriptionListTermProps> = ({
+export const DescriptionListTerm: React.FunctionComponent<React.PropsWithChildren<DescriptionListTermProps>> = ({
   children,
   className,
   icon,

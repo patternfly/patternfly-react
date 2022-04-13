@@ -11,7 +11,7 @@ export interface LoginFooterItemProps extends React.HTMLProps<HTMLAnchorElement>
   target?: string;
 }
 
-export const LoginFooterItem: React.FunctionComponent<LoginFooterItemProps> = ({
+export const LoginFooterItem: React.FunctionComponent<React.PropsWithChildren<LoginFooterItemProps>> = ({
   children = null,
   href = '#',
   target = '_blank',

@@ -18,7 +18,7 @@ export interface BodyWrapperProps {
   headerRows?: IHeaderRow[];
 }
 
-export const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
+export const BodyWrapper: React.FunctionComponent<React.PropsWithChildren<BodyWrapperProps>> = ({
   mappedRows,
   tbodyRef,
   /* eslint-disable @typescript-eslint/no-unused-vars */

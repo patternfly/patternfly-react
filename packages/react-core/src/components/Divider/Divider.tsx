@@ -27,7 +27,7 @@ export interface DividerProps extends React.HTMLProps<HTMLElement> {
   };
 }
 
-export const Divider: React.FunctionComponent<DividerProps> = ({
+export const Divider: React.FunctionComponent<React.PropsWithChildren<DividerProps>> = ({
   className,
   component = DividerVariant.hr,
   isVertical = false,

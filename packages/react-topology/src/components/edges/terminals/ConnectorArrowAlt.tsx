@@ -14,7 +14,7 @@ interface ConnectorArrowAltProps {
   dragRef?: ConnectDragSource;
 }
 
-const ConnectorArrowAlt: React.FunctionComponent<ConnectorArrowAltProps> = ({
+const ConnectorArrowAlt: React.FunctionComponent<React.PropsWithChildren<ConnectorArrowAltProps>> = ({
   startPoint,
   endPoint,
   className = '',

@@ -20,7 +20,7 @@ export interface DataListCellProps extends Omit<React.HTMLProps<HTMLDivElement>,
   wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
 }
 
-export const DataListCell: React.FunctionComponent<DataListCellProps> = ({
+export const DataListCell: React.FunctionComponent<React.PropsWithChildren<DataListCellProps>> = ({
   children = null,
   className = '',
   width = 1,

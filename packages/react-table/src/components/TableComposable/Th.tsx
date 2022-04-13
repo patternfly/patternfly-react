@@ -54,7 +54,7 @@ export interface ThProps
   isSubheader?: boolean;
 }
 
-const ThBase: React.FunctionComponent<ThProps> = ({
+const ThBase: React.FunctionComponent<React.PropsWithChildren<ThProps>> = ({
   children,
   className,
   component = 'th',

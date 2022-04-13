@@ -25,7 +25,7 @@ export interface DataListCheckProps extends Omit<React.HTMLProps<HTMLInputElemen
   otherControls?: boolean;
 }
 
-export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
+export const DataListCheck: React.FunctionComponent<React.PropsWithChildren<DataListCheckProps>> = ({
   className = '',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onChange = (checked: boolean, event: React.FormEvent<HTMLInputElement>) => {},

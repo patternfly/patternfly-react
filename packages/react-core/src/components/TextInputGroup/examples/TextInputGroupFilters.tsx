@@ -4,7 +4,7 @@ import { Chip, ChipGroup } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export const TextInputGroupFilters: React.FunctionComponent = () => {
+export const TextInputGroupFilters: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [inputValue, setInputValue] = React.useState('');
   const [currentChips, setCurrentChips] = React.useState([
     'chip one',

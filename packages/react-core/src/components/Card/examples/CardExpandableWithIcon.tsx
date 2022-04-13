@@ -14,7 +14,7 @@ import {
 } from '@patternfly/react-core';
 import pfLogoSmall from './pf-logo-small.svg';
 
-export const CardExpandableWithIcon: React.FunctionComponent = () => {
+export const CardExpandableWithIcon: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [isChecked, setIsChecked] = React.useState<boolean>(false);
   const [isExpanded, setIsExpanded] = React.useState<boolean>(false);

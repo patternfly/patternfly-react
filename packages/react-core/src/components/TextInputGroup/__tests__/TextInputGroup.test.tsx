@@ -40,7 +40,7 @@ describe('TextInputGroup', () => {
   });
 
   test('passes isDisabled=false to children via a context when isDisabled prop is not passed', () => {
-    const TestComponent: React.FunctionComponent = () => {
+    const TestComponent: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
       const context = React.useContext(TextInputGroupContext);
 
       return <div>{context.isDisabled ? 'is disabled' : 'not disabled'}</div>;
@@ -56,7 +56,7 @@ describe('TextInputGroup', () => {
   });
 
   test('passes isDisabled=true to children via a context when isDisabled prop is passed', () => {
-    const TestComponent: React.FunctionComponent = () => {
+    const TestComponent: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
       const context = React.useContext(TextInputGroupContext);
 
       return <div>{context.isDisabled ? 'is disabled' : 'not disabled'}</div>;

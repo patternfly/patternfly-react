@@ -28,7 +28,7 @@ export interface TextProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isVisitedLink?: boolean;
 }
 
-export const Text: React.FunctionComponent<TextProps> = ({
+export const Text: React.FunctionComponent<React.PropsWithChildren<TextProps>> = ({
   children = null,
   className = '',
   component = TextVariants.p,

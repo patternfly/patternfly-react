@@ -9,7 +9,7 @@ export interface ContextSelectorFooterProps extends React.HTMLProps<HTMLDivEleme
   className?: string;
 }
 
-export const ContextSelectorFooter: React.FunctionComponent<ContextSelectorFooterProps> = ({
+export const ContextSelectorFooter: React.FunctionComponent<React.PropsWithChildren<ContextSelectorFooterProps>> = ({
   children = null,
   className = '',
   ...props

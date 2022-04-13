@@ -11,7 +11,7 @@ export interface PanelMainProps extends React.HTMLProps<HTMLDivElement> {
   maxHeight?: string;
 }
 
-export const PanelMain: React.FunctionComponent<PanelMainProps> = ({
+export const PanelMain: React.FunctionComponent<React.PropsWithChildren<PanelMainProps>> = ({
   className,
   children,
   maxHeight,

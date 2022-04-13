@@ -10,7 +10,7 @@ import {
 } from '@patternfly/react-core';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 
-export const AccordionBordered: React.FunctionComponent = () => {
+export const AccordionBordered: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [expanded, setExpanded] = React.useState('ex-toggle4');
   const [isDisplayLarge, setIsDisplayLarge] = React.useState(false);
 

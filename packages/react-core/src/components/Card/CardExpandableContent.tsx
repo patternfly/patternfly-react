@@ -10,7 +10,7 @@ export interface CardExpandableContentProps extends React.HTMLProps<HTMLDivEleme
   className?: string;
 }
 
-export const CardExpandableContent: React.FunctionComponent<CardExpandableContentProps> = ({
+export const CardExpandableContent: React.FunctionComponent<React.PropsWithChildren<CardExpandableContentProps>> = ({
   children = null,
   className = '',
   ...props

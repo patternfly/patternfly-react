@@ -64,7 +64,7 @@ type DefaultNodeProps = {
   showStatusDecorator?: boolean;
   statusDecoratorTooltip?: React.ReactNode;
   onStatusDecoratorClick?: (event: React.MouseEvent<SVGGElement, MouseEvent>, element: GraphElement) => void;
-  getCustomShape?: (node: Node) => React.FunctionComponent<ShapeProps>;
+  getCustomShape?: (node: Node) => React.FunctionComponent<React.PropsWithChildren<ShapeProps>>;
   getShapeDecoratorCenter?: (quadrant: TopologyQuadrant, node: Node) => { x: number; y: number };
 } & Partial<
   WithSelectionProps &
@@ -75,7 +75,7 @@ type DefaultNodeProps = {
     WithContextMenuProps
 >;
 
-const DefaultNode: React.FunctionComponent<DefaultNodeProps> = ({
+const DefaultNode: React.FunctionComponent<React.PropsWithChildren<DefaultNodeProps>> = ({
   className,
   element,
   selected,

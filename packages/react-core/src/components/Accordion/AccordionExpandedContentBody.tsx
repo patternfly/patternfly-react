@@ -7,7 +7,9 @@ export interface AccordionExpandedContentBodyProps {
   children?: React.ReactNode;
 }
 
-export const AccordionExpandedContentBody: React.FunctionComponent<AccordionExpandedContentBodyProps> = ({
-  children = null
-}: AccordionExpandedContentBodyProps) => <div className={css(styles.accordionExpandedContentBody)}>{children}</div>;
+export const AccordionExpandedContentBody: React.FunctionComponent<React.PropsWithChildren<
+  AccordionExpandedContentBodyProps
+>> = ({ children = null }: AccordionExpandedContentBodyProps) => (
+  <div className={css(styles.accordionExpandedContentBody)}>{children}</div>
+);
 AccordionExpandedContentBody.displayName = 'AccordionExpandedContentBody';

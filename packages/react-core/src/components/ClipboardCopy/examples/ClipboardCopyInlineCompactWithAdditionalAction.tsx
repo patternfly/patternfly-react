@@ -2,7 +2,9 @@ import React from 'react';
 import { ClipboardCopy, ClipboardCopyAction, Button } from '@patternfly/react-core';
 import PlayIcon from '@patternfly/react-icons/dist/esm/icons/play-icon';
 
-export const ClipboardCopyInlineCompactWithAdditionalAction: React.FunctionComponent = () => (
+export const ClipboardCopyInlineCompactWithAdditionalAction: React.FunctionComponent<React.PropsWithChildren<
+  unknown
+>> = () => (
   <ClipboardCopy
     hoverTip="Copy"
     clickTip="Copied"

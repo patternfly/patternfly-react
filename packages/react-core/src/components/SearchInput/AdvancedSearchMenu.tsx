@@ -45,7 +45,7 @@ export interface AdvancedSearchMenuProps extends Omit<React.HTMLProps<HTMLDivEle
   advancedSearchDelimiter?: string;
 }
 
-export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps> = ({
+export const AdvancedSearchMenu: React.FunctionComponent<React.PropsWithChildren<AdvancedSearchMenuProps>> = ({
   parentRef,
   parentInputRef,
   value = '',

@@ -12,7 +12,7 @@ export interface VerticalTabsProps extends React.HTMLProps<HTMLUListElement> {
   activeTab?: boolean;
 }
 
-export const VerticalTabs: React.FunctionComponent<VerticalTabsProps> = ({
+export const VerticalTabs: React.FunctionComponent<React.PropsWithChildren<VerticalTabsProps>> = ({
   children = null,
   className = '',
   restrictTabs = false,

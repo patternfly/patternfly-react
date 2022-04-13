@@ -7,7 +7,7 @@ import CustomPolygonNode from './CustomPolygonNode';
 const shapesComponentFactory: ComponentFactory = (
   kind: ModelKind,
   type: string
-): ComponentType<{ element: GraphElement }> | undefined => {
+): ComponentType<React.PropsWithChildren<{ element: GraphElement }>> | undefined => {
   switch (type) {
     case 'node':
       return DemoDefaultNode;

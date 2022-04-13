@@ -89,7 +89,7 @@ export interface FileUploadProps
   onDataChange?: (data: string) => void;
 }
 
-export const FileUpload: React.FunctionComponent<FileUploadProps> = ({
+export const FileUpload: React.FunctionComponent<React.PropsWithChildren<FileUploadProps>> = ({
   id,
   type,
   value = type === fileReaderType.text || type === fileReaderType.dataURL ? '' : null,

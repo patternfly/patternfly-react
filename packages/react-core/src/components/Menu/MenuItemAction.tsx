@@ -23,7 +23,7 @@ export interface MenuItemActionProps extends Omit<React.HTMLProps<HTMLButtonElem
   innerRef?: React.Ref<any>;
 }
 
-const MenuItemActionBase: React.FunctionComponent<MenuItemActionProps> = ({
+const MenuItemActionBase: React.FunctionComponent<React.PropsWithChildren<MenuItemActionProps>> = ({
   className = '',
   icon,
   onClick,

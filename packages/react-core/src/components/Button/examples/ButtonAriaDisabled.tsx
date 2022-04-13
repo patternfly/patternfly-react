@@ -3,7 +3,7 @@ import { Button } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-export const ButtonAriaDisabled: React.FunctionComponent = () => (
+export const ButtonAriaDisabled: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <React.Fragment>
     <Button isAriaDisabled>Primary aria disabled</Button> <Button isAriaDisabled>Secondary aria disabled</Button>{' '}
     <Button variant="secondary" isDanger isAriaDisabled>

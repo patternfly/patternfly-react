@@ -1,7 +1,7 @@
 import React from 'react';
 import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper } from '@patternfly/react-core';
 
-export const ComposableSimpleDropdown: React.FunctionComponent = () => {
+export const ComposableSimpleDropdown: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleRef = React.useRef<HTMLButtonElement>();
   const menuRef = React.useRef<HTMLDivElement>();

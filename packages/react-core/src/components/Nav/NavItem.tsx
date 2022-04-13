@@ -34,7 +34,7 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, '
   onShowFlyout?: () => void;
 }
 
-export const NavItem: React.FunctionComponent<NavItemProps> = ({
+export const NavItem: React.FunctionComponent<React.PropsWithChildren<NavItemProps>> = ({
   children,
   styleChildren = true,
   className,

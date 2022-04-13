@@ -552,7 +552,7 @@ interface ChartDonutTitleInterface {
   titles?: string | string[];
 }
 
-export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
+export const ChartDonut: React.FunctionComponent<React.PropsWithChildren<ChartDonutProps>> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,

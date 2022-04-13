@@ -45,7 +45,7 @@ type NodeLabelProps = {
 /**
  * Renders a `<text>` component with a `<rect>` box behind.
  */
-const NodeLabel: React.FunctionComponent<NodeLabelProps> = ({
+const NodeLabel: React.FunctionComponent<React.PropsWithChildren<NodeLabelProps>> = ({
   children,
   className,
   paddingX = 0,

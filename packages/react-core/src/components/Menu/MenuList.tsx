@@ -9,7 +9,7 @@ export interface MenuListProps extends React.HTMLProps<HTMLUListElement> {
   className?: string;
 }
 
-export const MenuList: React.FunctionComponent<MenuListProps> = ({
+export const MenuList: React.FunctionComponent<React.PropsWithChildren<MenuListProps>> = ({
   children = null,
   className,
   ...props

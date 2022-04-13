@@ -13,7 +13,7 @@ const appLauncherItems: React.ReactElement[] = [
   </ApplicationLauncherItem>
 ];
 
-export const ApplicationLauncherAlignRight: React.FunctionComponent = () => {
+export const ApplicationLauncherAlignRight: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const onToggle = (isOpen: boolean) => setIsOpen(isOpen);

@@ -10,7 +10,7 @@ export interface FormFieldGroupProps extends Omit<React.HTMLProps<HTMLDivElement
   header?: React.ReactNode;
 }
 
-export const FormFieldGroup: React.FunctionComponent<FormFieldGroupProps> = ({
+export const FormFieldGroup: React.FunctionComponent<React.PropsWithChildren<FormFieldGroupProps>> = ({
   children,
   className,
   header,

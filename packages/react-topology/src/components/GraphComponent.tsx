@@ -19,7 +19,7 @@ type GraphComponentProps = ElementProps &
   WithContextMenuProps;
 
 // This inner Component will prevent the re-rendering of all children when the transform changes
-const ElementChildren: React.FunctionComponent<ElementProps> = observer(({ element }) => (
+const ElementChildren: React.FunctionComponent<React.PropsWithChildren<ElementProps>> = observer(({ element }) => (
   <>
     {element.getEdges().map(e => (
       <ElementWrapper key={e.getId()} element={e} />
@@ -31,7 +31,7 @@ const ElementChildren: React.FunctionComponent<ElementProps> = observer(({ eleme
 ));
 
 // This inner Component will prevent re-rendering layers when the transform changes
-const Inner: React.FunctionComponent<ElementProps> = React.memo(
+const Inner: React.FunctionComponent<React.PropsWithChildren<ElementProps>> = React.memo(
   observer(({ element }) => (
     <LayersProvider layers={element.getLayers()}>
       <ElementChildren element={element} />
@@ -39,7 +39,7 @@ const Inner: React.FunctionComponent<ElementProps> = React.memo(
   ))
 );
 
-const GraphComponent: React.FunctionComponent<GraphComponentProps> = ({
+const GraphComponent: React.FunctionComponent<React.PropsWithChildren<GraphComponentProps>> = ({
   element,
   panZoomRef,
   dndDropRef,

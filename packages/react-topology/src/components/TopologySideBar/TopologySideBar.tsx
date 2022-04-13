@@ -20,7 +20,7 @@ export interface TopologySideBarProps {
   header?: React.ReactNode;
 }
 
-export const TopologySideBar: React.FunctionComponent<TopologySideBarProps> = ({
+export const TopologySideBar: React.FunctionComponent<React.PropsWithChildren<TopologySideBarProps>> = ({
   className = '',
   resizable = false,
   show,

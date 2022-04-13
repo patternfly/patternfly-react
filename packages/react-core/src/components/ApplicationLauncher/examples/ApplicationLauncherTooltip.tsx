@@ -25,7 +25,7 @@ const appLauncherItems: React.ReactElement[] = [
   </ApplicationLauncherItem>
 ];
 
-export const ApplicationLauncherTooltip: React.FunctionComponent = () => {
+export const ApplicationLauncherTooltip: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const onToggle = (isOpen: boolean) => setIsOpen(isOpen);

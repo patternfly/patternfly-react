@@ -428,7 +428,7 @@ export interface ChartThresholdProps extends VictoryLineProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartThreshold: React.FunctionComponent<ChartThresholdProps> = ({
+export const ChartThreshold: React.FunctionComponent<React.PropsWithChildren<ChartThresholdProps>> = ({
   style = {},
   themeColor,
   themeVariant,

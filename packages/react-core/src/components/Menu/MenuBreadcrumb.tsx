@@ -7,7 +7,7 @@ export interface MenuBreadcrumbProps extends Omit<React.HTMLAttributes<HTMLDivEl
   children?: React.ReactNode;
 }
 
-export const MenuBreadcrumb: React.FunctionComponent<MenuBreadcrumbProps> = ({
+export const MenuBreadcrumb: React.FunctionComponent<React.PropsWithChildren<MenuBreadcrumbProps>> = ({
   children,
   ...props
 }: MenuBreadcrumbProps) => (

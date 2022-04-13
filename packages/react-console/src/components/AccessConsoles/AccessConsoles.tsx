@@ -40,7 +40,7 @@ export interface AccessConsolesProps {
   preselectedType?: string; // NONE_TYPE | SERIAL_CONSOLE_TYPE | VNC_CONSOLE_TYPE | DESKTOP_VIEWER_CONSOLE_TYPE;
 }
 
-export const AccessConsoles: React.FunctionComponent<AccessConsolesProps> = ({
+export const AccessConsoles: React.FunctionComponent<React.PropsWithChildren<AccessConsolesProps>> = ({
   children,
   textSelectConsoleType = 'Select console type',
   textSerialConsole = 'Serial console',

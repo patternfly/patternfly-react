@@ -28,7 +28,9 @@ export interface DualListSelectorListWrapperProps extends React.HTMLProps<HTMLDi
   isDisabled?: boolean;
 }
 
-export const DualListSelectorListWrapperBase: React.FunctionComponent<DualListSelectorListWrapperProps> = ({
+export const DualListSelectorListWrapperBase: React.FunctionComponent<React.PropsWithChildren<
+  DualListSelectorListWrapperProps
+>> = ({
   className,
   children,
   'aria-labelledby': ariaLabelledBy,

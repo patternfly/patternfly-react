@@ -31,7 +31,7 @@ export interface WizardToggleProps {
   isInPage?: boolean;
 }
 
-export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
+export const WizardToggle: React.FunctionComponent<React.PropsWithChildren<WizardToggleProps>> = ({
   isNavOpen,
   onNavToggle,
   nav,

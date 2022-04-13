@@ -24,7 +24,7 @@ describe('Bullseye', () => {
   });
 
   test('allows passing in a React Component as the component', () => {
-    const Component: React.FunctionComponent = () => <div>Some text</div>;
+    const Component: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => <div>Some text</div>;
 
     render(<Bullseye component={(Component as unknown) as keyof JSX.IntrinsicElements} />);
     expect(screen.getByText('Some text')).toBeInTheDocument();

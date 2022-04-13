@@ -13,7 +13,7 @@ export interface FormProps extends React.HTMLProps<HTMLFormElement> {
   isWidthLimited?: boolean;
 }
 
-export const Form: React.FunctionComponent<FormProps> = ({
+export const Form: React.FunctionComponent<React.PropsWithChildren<FormProps>> = ({
   children = null,
   className = '',
   isHorizontal = false,

@@ -13,7 +13,7 @@ export interface SelectColumnProps {
   selectVariant?: RowSelectVariant;
 }
 
-export const SelectColumn: React.FunctionComponent<SelectColumnProps> = ({
+export const SelectColumn: React.FunctionComponent<React.PropsWithChildren<SelectColumnProps>> = ({
   children = null as React.ReactNode,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className,

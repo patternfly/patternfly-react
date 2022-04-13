@@ -18,7 +18,7 @@ import {
 } from '@patternfly/react-core';
 import DashboardWrapper from '../../examples/DashboardWrapper';
 
-export const GrayTabsDemo: React.FunctionComponent = () => {
+export const GrayTabsDemo: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
   const [activeNestedTabKey, setActiveNestedTabKey] = React.useState<string | number>(0);
 

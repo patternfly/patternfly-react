@@ -65,7 +65,7 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
 
 const getPercentage = (current: number, max: number) => (100 * current) / max;
 
-export const Slider: React.FunctionComponent<SliderProps> = ({
+export const Slider: React.FunctionComponent<React.PropsWithChildren<SliderProps>> = ({
   className,
   value = 0,
   customSteps,

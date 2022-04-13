@@ -1,7 +1,7 @@
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
-export const CheckboxWithDescription: React.FunctionComponent = () => (
+export const CheckboxWithDescription: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <Checkbox
     id="description-check-1"
     label="Checkbox with description"

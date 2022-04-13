@@ -8,7 +8,7 @@ import {
 } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-export const DescriptionListResponsiveHoriVertGroup: React.FunctionComponent = () => (
+export const DescriptionListResponsiveHoriVertGroup: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <DescriptionList
     isHorizontal
     orientation={{

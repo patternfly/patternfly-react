@@ -445,7 +445,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
+export const ChartGroup: React.FunctionComponent<React.PropsWithChildren<ChartGroupProps>> = ({
   ariaDesc,
   ariaTitle,
   children,

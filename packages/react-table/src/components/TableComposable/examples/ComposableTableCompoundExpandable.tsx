@@ -13,7 +13,7 @@ interface Repository {
   lastCommit: string;
 }
 
-export const ComposableTableCompoundExpandable: React.FunctionComponent = () => {
+export const ComposableTableCompoundExpandable: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   // In real usage, this data would come from some external source like an API via props.
   const repositories: Repository[] = [
     { name: 'siemur/test-space', branches: 10, prs: 4, workspaces: 4, lastCommit: '20 minutes' },

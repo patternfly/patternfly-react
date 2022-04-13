@@ -11,7 +11,7 @@ export interface ModalBoxHeaderProps {
   help?: React.ReactNode;
 }
 
-export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
+export const ModalBoxHeader: React.FunctionComponent<React.PropsWithChildren<ModalBoxHeaderProps>> = ({
   children = null,
   className = '',
   help = null,

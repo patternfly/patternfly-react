@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, DatePicker } from '@patternfly/react-core';
 
-export const DatePickerControlled: React.FunctionComponent = () => {
+export const DatePickerControlled: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const initialValue = '2020-03-17';
   const [value, setValue] = React.useState(initialValue);
   return (

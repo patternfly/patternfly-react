@@ -9,7 +9,7 @@ export interface MenuFooterProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const MenuFooter: React.FunctionComponent<MenuFooterProps> = ({
+export const MenuFooter: React.FunctionComponent<React.PropsWithChildren<MenuFooterProps>> = ({
   children,
   className = '',
   ...props

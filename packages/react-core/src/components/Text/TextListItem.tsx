@@ -16,7 +16,7 @@ export interface TextListItemProps extends React.HTMLProps<HTMLElement> {
   component?: 'li' | 'dt' | 'dd';
 }
 
-export const TextListItem: React.FunctionComponent<TextListItemProps> = ({
+export const TextListItem: React.FunctionComponent<React.PropsWithChildren<TextListItemProps>> = ({
   children = null,
   className = '',
   component = TextListItemVariants.li,

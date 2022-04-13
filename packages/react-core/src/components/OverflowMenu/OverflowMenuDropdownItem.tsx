@@ -9,12 +9,9 @@ export interface OverflowMenuDropdownItemProps extends DropdownItemProps {
   index?: number;
 }
 
-export const OverflowMenuDropdownItem: React.FunctionComponent<OverflowMenuDropdownItemProps> = ({
-  children,
-  isShared = false,
-  index,
-  ...additionalProps
-}: OverflowMenuDropdownItemProps) => (
+export const OverflowMenuDropdownItem: React.FunctionComponent<React.PropsWithChildren<
+  OverflowMenuDropdownItemProps
+>> = ({ children, isShared = false, index, ...additionalProps }: OverflowMenuDropdownItemProps) => (
   <OverflowMenuContext.Consumer>
     {value =>
       (!isShared || value.isBelowBreakpoint) && (

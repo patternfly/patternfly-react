@@ -1,7 +1,7 @@
 import React from 'react';
 import { Chip, ChipGroup } from '@patternfly/react-core';
 
-export const ChipGroupInline: React.FunctionComponent = () => {
+export const ChipGroupInline: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [chips, setChips] = React.useState([
     'Chip one',
     'Really long chip that goes on and on',

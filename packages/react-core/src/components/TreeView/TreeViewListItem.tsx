@@ -57,7 +57,7 @@ export interface TreeViewListItemProps {
   useMemo?: boolean;
 }
 
-const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
+const TreeViewListItemBase: React.FunctionComponent<React.PropsWithChildren<TreeViewListItemProps>> = ({
   name,
   title,
   id,

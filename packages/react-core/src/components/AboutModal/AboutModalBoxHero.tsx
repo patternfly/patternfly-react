@@ -11,7 +11,7 @@ export interface AboutModalBoxHeroProps extends React.HTMLProps<HTMLDivElement> 
   backgroundImageSrc?: string;
 }
 
-export const AboutModalBoxHero: React.FunctionComponent<AboutModalBoxHeroProps> = ({
+export const AboutModalBoxHero: React.FunctionComponent<React.PropsWithChildren<AboutModalBoxHeroProps>> = ({
   className,
   backgroundImageSrc,
   ...props

@@ -17,7 +17,7 @@ export interface LogViewerSearchProps extends SearchInputProps {
   minSearchChars: number;
 }
 
-export const LogViewerSearch: React.FunctionComponent<LogViewerSearchProps> = ({
+export const LogViewerSearch: React.FunctionComponent<React.PropsWithChildren<LogViewerSearchProps>> = ({
   placeholder = 'Search',
   minSearchChars = 1,
   ...props

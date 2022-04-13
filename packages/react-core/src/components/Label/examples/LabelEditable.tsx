@@ -1,7 +1,7 @@
 import React from 'react';
 import { Label } from '@patternfly/react-core';
 
-export const LabelEditable: React.FunctionComponent = () => {
+export const LabelEditable: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [labelText, setLabelText] = React.useState('Editable label');
   const [compactLabelText, setCompactLabelText] = React.useState('Compact editable label');
 

@@ -8,7 +8,7 @@ export interface PropertySidePanelProps extends React.HTMLProps<HTMLDivElement> 
   children?: React.ReactNode;
 }
 
-export const PropertiesSidePanel: React.FunctionComponent<PropertySidePanelProps> = ({
+export const PropertiesSidePanel: React.FunctionComponent<React.PropsWithChildren<PropertySidePanelProps>> = ({
   className = '',
   children = null,
   ...props

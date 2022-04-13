@@ -21,7 +21,7 @@ export interface InternalFormFieldGroupProps extends Omit<React.HTMLProps<HTMLDi
   toggleAriaLabel?: string;
 }
 
-export const InternalFormFieldGroup: React.FunctionComponent<InternalFormFieldGroupProps> = ({
+export const InternalFormFieldGroup: React.FunctionComponent<React.PropsWithChildren<InternalFormFieldGroupProps>> = ({
   children,
   className,
   header,

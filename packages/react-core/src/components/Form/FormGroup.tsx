@@ -43,7 +43,7 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   fieldId: string;
 }
 
-export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
+export const FormGroup: React.FunctionComponent<React.PropsWithChildren<FormGroupProps>> = ({
   children = null,
   className = '',
   label,

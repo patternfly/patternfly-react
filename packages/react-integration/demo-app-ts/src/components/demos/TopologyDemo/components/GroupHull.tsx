@@ -31,7 +31,7 @@ type GroupHullProps = {
 
 type PointWithSize = PointTuple | [number, number, number];
 
-const GroupHull: React.FunctionComponent<GroupHullProps> = ({
+const GroupHull: React.FunctionComponent<React.PropsWithChildren<GroupHullProps>> = ({
   element,
   children,
   selected,

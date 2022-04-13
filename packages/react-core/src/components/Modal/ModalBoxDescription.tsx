@@ -11,7 +11,7 @@ export interface ModalBoxDescriptionProps {
   id?: string;
 }
 
-export const ModalBoxDescription: React.FunctionComponent<ModalBoxDescriptionProps> = ({
+export const ModalBoxDescription: React.FunctionComponent<React.PropsWithChildren<ModalBoxDescriptionProps>> = ({
   children = null,
   className = '',
   id = '',

@@ -11,7 +11,7 @@ export interface LoginHeaderProps extends React.HTMLProps<HTMLDivElement> {
   headerBrand?: React.ReactNode;
 }
 
-export const LoginHeader: React.FunctionComponent<LoginHeaderProps> = ({
+export const LoginHeader: React.FunctionComponent<React.PropsWithChildren<LoginHeaderProps>> = ({
   className = '',
   children = null,
   headerBrand = null,

@@ -12,7 +12,7 @@ export interface NotificationDrawerProps extends React.HTMLProps<HTMLDivElement>
   innerRef?: React.Ref<any>;
 }
 
-const NotificationDrawerBase: React.FunctionComponent<NotificationDrawerProps> = ({
+const NotificationDrawerBase: React.FunctionComponent<React.PropsWithChildren<NotificationDrawerProps>> = ({
   children,
   className = '',
   innerRef,

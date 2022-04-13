@@ -44,7 +44,7 @@ export interface TopologyViewProps extends React.HTMLProps<HTMLDivElement> {
   onSideBarResize?: (width: number, id: string) => void;
 }
 
-export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
+export const TopologyView: React.FunctionComponent<React.PropsWithChildren<TopologyViewProps>> = ({
   className = '',
   contextToolbar = null,
   viewToolbar = null,

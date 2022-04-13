@@ -47,7 +47,9 @@ export interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLL
   progressAriaLabelledBy?: string;
 }
 
-export const MultipleFileUploadStatusItem: React.FunctionComponent<MultipleFileUploadStatusItemProps> = ({
+export const MultipleFileUploadStatusItem: React.FunctionComponent<React.PropsWithChildren<
+  MultipleFileUploadStatusItemProps
+>> = ({
   className,
   file,
   fileIcon,

@@ -11,7 +11,7 @@ export interface ActionListProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-export const ActionList: React.FunctionComponent<ActionListProps> = ({
+export const ActionList: React.FunctionComponent<React.PropsWithChildren<ActionListProps>> = ({
   children,
   isIconList,
   className = '',

@@ -8,7 +8,7 @@ import GroupHull from './GroupHull';
 const defaultComponentFactory: ComponentFactory = (
   kind: ModelKind,
   type: string
-): ComponentType<{ element: GraphElement }> => {
+): ComponentType<React.PropsWithChildren<{ element: GraphElement }>> => {
   switch (type) {
     case 'multi-edge':
       return MultiEdge;

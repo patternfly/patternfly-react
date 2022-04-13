@@ -77,7 +77,7 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   advancedSearchDelimiter?: string;
 }
 
-const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
+const SearchInputBase: React.FunctionComponent<React.PropsWithChildren<SearchInputProps>> = ({
   className,
   value = '',
   attributes = [] as string[],

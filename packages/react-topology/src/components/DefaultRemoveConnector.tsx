@@ -25,7 +25,7 @@ function computeTooltipPosition(startPoint: Point, endPoint: Point): TooltipPosi
   return TooltipPosition.top;
 }
 
-const DefaultRemoveConnector: React.FunctionComponent<DefaultRemoveConnectorProps> = ({
+const DefaultRemoveConnector: React.FunctionComponent<React.PropsWithChildren<DefaultRemoveConnectorProps>> = ({
   startPoint,
   endPoint,
   onRemove,

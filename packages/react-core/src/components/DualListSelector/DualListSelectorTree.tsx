@@ -55,7 +55,7 @@ export interface DualListSelectorTreeProps {
   ) => void;
 }
 
-export const DualListSelectorTree: React.FunctionComponent<DualListSelectorTreeProps> = ({
+export const DualListSelectorTree: React.FunctionComponent<React.PropsWithChildren<DualListSelectorTreeProps>> = ({
   data,
   hasBadges = false,
   isNested = false,

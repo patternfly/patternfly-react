@@ -21,7 +21,7 @@ export interface TileProps extends React.HTMLProps<HTMLDivElement> {
   isDisplayLarge?: boolean;
 }
 
-export const Tile: React.FunctionComponent<TileProps> = ({
+export const Tile: React.FunctionComponent<React.PropsWithChildren<TileProps>> = ({
   children,
   title,
   icon,

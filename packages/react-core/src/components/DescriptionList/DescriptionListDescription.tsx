@@ -9,11 +9,9 @@ export interface DescriptionListDescriptionProps extends React.HTMLProps<HTMLEle
   className?: string;
 }
 
-export const DescriptionListDescription: React.FunctionComponent<DescriptionListDescriptionProps> = ({
-  children = null,
-  className,
-  ...props
-}: DescriptionListDescriptionProps) => (
+export const DescriptionListDescription: React.FunctionComponent<React.PropsWithChildren<
+  DescriptionListDescriptionProps
+>> = ({ children = null, className, ...props }: DescriptionListDescriptionProps) => (
   <dd className={css(styles.descriptionListDescription, className)} {...props}>
     <div className={'pf-c-description-list__text'}>{children}</div>
   </dd>

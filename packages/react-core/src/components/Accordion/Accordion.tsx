@@ -20,7 +20,7 @@ export interface AccordionProps extends React.HTMLProps<HTMLDListElement> {
   displaySize?: 'default' | 'large';
 }
 
-export const Accordion: React.FunctionComponent<AccordionProps> = ({
+export const Accordion: React.FunctionComponent<React.PropsWithChildren<AccordionProps>> = ({
   children = null,
   className = '',
   'aria-label': ariaLabel = '',

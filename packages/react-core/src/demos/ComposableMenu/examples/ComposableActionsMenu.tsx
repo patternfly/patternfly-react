@@ -5,7 +5,7 @@ import ClipboardIcon from '@patternfly/react-icons/dist/esm/icons/clipboard-icon
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 
-export const ComposableActionsMenu: React.FunctionComponent = () => {
+export const ComposableActionsMenu: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [selectedItems, setSelectedItems] = React.useState<number[]>([]);
   const toggleRef = React.useRef<HTMLButtonElement>();

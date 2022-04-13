@@ -9,7 +9,7 @@ import {
   KebabToggle
 } from '@patternfly/react-core';
 
-export const ActionListSingleGroup: React.FunctionComponent = () => {
+export const ActionListSingleGroup: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const onToggle = (

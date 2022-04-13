@@ -1,7 +1,7 @@
 import React from 'react';
 import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, MenuGroup, Popper, Divider } from '@patternfly/react-core';
 
-export const ComposableOptionsMenuVariants: React.FunctionComponent = () => {
+export const ComposableOptionsMenuVariants: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [selected, setSelected] = React.useState<string>('');
   const menuRef = React.useRef<HTMLDivElement>();

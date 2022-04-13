@@ -432,7 +432,7 @@ export interface ChartLineProps extends VictoryLineProps {
   y0?: DataGetterPropType;
 }
 
-export const ChartLine: React.FunctionComponent<ChartLineProps> = ({
+export const ChartLine: React.FunctionComponent<React.PropsWithChildren<ChartLineProps>> = ({
   containerComponent = <ChartContainer />,
   themeColor,
   themeVariant,

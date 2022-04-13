@@ -24,7 +24,7 @@ interface ItemData {
 
 type ItemArrayType = (ItemData | string)[];
 
-export const ComposableContextSelector: React.FunctionComponent = () => {
+export const ComposableContextSelector: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const items: ItemArrayType = [
     {
       text: 'Action'

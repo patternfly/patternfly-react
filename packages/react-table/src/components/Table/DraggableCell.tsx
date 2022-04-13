@@ -9,7 +9,7 @@ export interface DraggableCellProps {
   'aria-label'?: string;
 }
 
-export const DraggableCell: React.FunctionComponent<DraggableCellProps> = ({
+export const DraggableCell: React.FunctionComponent<React.PropsWithChildren<DraggableCellProps>> = ({
   className,
   onClick,
   'aria-label': ariaLabel,

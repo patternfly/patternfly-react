@@ -33,7 +33,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   /** Callback for item click */
   onClick?: (event?: any) => void;
   /** Component used to render the menu item */
-  component?: React.ElementType<any> | React.ComponentType<any>;
+  component?: React.ElementType<any> | React.ComponentType<React.PropsWithChildren<any>>;
   /** Render item as disabled option */
   isDisabled?: boolean;
   /** Render item with icon */
@@ -66,7 +66,7 @@ const FlyoutContext = React.createContext({
   direction: 'right' as 'left' | 'right'
 });
 
-const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
+const MenuItemBase: React.FunctionComponent<React.PropsWithChildren<MenuItemProps>> = ({
   children,
   className,
   itemId = null,

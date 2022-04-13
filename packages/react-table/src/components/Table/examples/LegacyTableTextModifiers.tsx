@@ -4,7 +4,7 @@ import { Table, TableHeader, TableBody, cellWidth, TableText, TableProps } from 
 // This example has been simplified to focus on the text modifier props. In real usage,
 // you may want to derive your rows from typed underlying data and minimal state. See other examples.
 
-export const LegacyTableTextModifiers: React.FunctionComponent = () => {
+export const LegacyTableTextModifiers: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const columns: TableProps['cells'] = [
     { title: 'Truncating text', transforms: [cellWidth(30)] },
     { title: 'Wrapping table header text. This th text will wrap instead of truncate.' }

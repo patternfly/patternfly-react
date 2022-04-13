@@ -1,7 +1,7 @@
 import React from 'react';
 import { Banner } from '@patternfly/react-core';
 
-export const BannerBasic: React.FunctionComponent = () => (
+export const BannerBasic: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => (
   <React.Fragment>
     <Banner>Default banner</Banner>
     <br />

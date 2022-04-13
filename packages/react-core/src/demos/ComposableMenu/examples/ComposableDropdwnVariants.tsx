@@ -18,7 +18,7 @@ import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-ico
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import avatarImg from 'avatarImg.svg';
 
-export const ComposableDropdwnVariants: React.FunctionComponent = () => {
+export const ComposableDropdwnVariants: React.FunctionComponent<React.PropsWithChildren<unknown>> = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [toggleSelected, setToggleSelected] = React.useState<string>('basic');
   const menuRef = React.useRef<HTMLDivElement>();
