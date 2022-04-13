@@ -1677,7 +1677,6 @@ class ColumnManagementAction extends React.Component {
 import React from 'react';
 import {
   Button,
-  ButtonVariant,
   Bullseye,
   Toolbar,
   ToolbarItem,
@@ -1689,7 +1688,6 @@ import {
   DropdownItem,
   DropdownPosition,
   DropdownToggle,
-  InputGroup,
   Title,
   Select,
   SelectOption,
