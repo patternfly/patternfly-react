@@ -1574,16 +1574,20 @@ exports[`should render tabs with no bottom border 1`] = `
     </button>
     <ul
       class="pf-c-tabs__list"
+      role="tablist"
     >
       <li
         class="pf-c-tabs__item pf-m-current"
+        role="presentation"
       >
         <button
           aria-controls="pf-tab-section-0-tab1"
+          aria-selected="true"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
           id="pf-tab-0-tab1"
+          role="tab"
         >
           <span
             class="pf-c-tabs__item-text"
@@ -1594,13 +1598,16 @@ exports[`should render tabs with no bottom border 1`] = `
       </li>
       <li
         class="pf-c-tabs__item"
+        role="presentation"
       >
         <button
           aria-controls="pf-tab-section-1-tab2"
+          aria-selected="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
           id="pf-tab-1-tab2"
+          role="tab"
         >
           <span
             class="pf-c-tabs__item-text"
@@ -1611,13 +1618,16 @@ exports[`should render tabs with no bottom border 1`] = `
       </li>
       <li
         class="pf-c-tabs__item"
+        role="presentation"
       >
         <button
           aria-controls="pf-tab-section-2-tab3"
+          aria-selected="false"
           class="pf-c-tabs__link"
           data-ouia-component-type="PF4/TabButton"
           data-ouia-safe="true"
           id="pf-tab-2-tab3"
+          role="tab"
         >
           <span
             class="pf-c-tabs__item-text"
