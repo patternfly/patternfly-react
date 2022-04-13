@@ -105,7 +105,7 @@ class NoLabelSwitch extends React.Component {
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
-class NoLabelSwitch extends React.Component {
+class CheckedWithLabelSwitch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
