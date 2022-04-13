@@ -186,7 +186,7 @@ import { MenuToggle } from '@patternfly/react-core';
 
 const fullWidth: React.FunctionComponent = () => {
   return (
-    <MenuToggle isFullWidth aria-label = "Full width menu toggle" >
+    <MenuToggle isFullWidth aria-label="Full width menu toggle" >
       Full width 
     </MenuToggle>
   );
