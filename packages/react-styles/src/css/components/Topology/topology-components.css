@@ -1,13 +1,135 @@
 :root {
+  /* TODO fix connector color variable */
+
+  --pf-topology-visualization-surface--BackgroundColor: transparent;
+
+  --pf-topology__node--Color: #393f44;
+
   --pf-topology-create-connector-color: var(--pf-global--secondary-color--100);
+  --pf-topology__create-connector-color: var(--pf-global--secondary-color--100);
+  --pf-topology__node__background--Fill: var(--pf-global--BackgroundColor--100);
+  --pf-topology__node__background--Stroke: var(--pf-global--BorderColor--100);
+
+  --pf-topology__node--m-hover--background--Stroke: unset;
+  --pf-topology__node--m-hover--label__background--Stroke: unset;
+
+  --pf-topology__node--m-disabled--Background: var(--pf-global--BackgroundColor--200);
+  --pf-topology__node--m-info--Background: var(--pf-global--primary-color--light-100);
+  --pf-topology__node--m-success--Background: var(--pf-global--success-color--100);
+  --pf-topology__node--m-warning--Background: var(--pf-global--warning-color--100);
+  --pf-topology__node--m-danger--Background: var(--pf-global--danger-color--100);
+  --pf-topology__node--m-selected--Background: var(--pf-global--active-color--100);
+
+  --pf-topology__node--m-selected--node__background--Stroke: var(--pf-global--active-color--100);
+  --pf-topology__node--m-info--node__background--Stroke: var(--pf-global--primary-color--light-100);
+  --pf-topology__node--m-success--node__background--Stroke: var(--pf-global--success-color--100);
+  --pf-topology__node--m-warning--node__background--Stroke: var(--pf-global--warning-color--100);
+  --pf-topology__node--m-danger--node__background--Stroke: var(--pf-global--danger-color--100);
+
+  --pf-topology__node_decorator--Color: var(--pf-global--Color--200);
+  --pf-topology__node__decorator__bg--Fill: var(--pf-global--BackgroundColor--light-100);
+  --pf-topology__node__decorator__bg--Stroke: var(--pf-global--BorderColor--100);
+
+  --pf-topology__node__decorator__status--m-info--Color: var(--pf-global--primary-color--light-100);
+  --pf-topology__node__decorator__status--m-danger--Color: var(--pf-global--danger-color--100);
+  --pf-topology__node__decorator__status--m-warning--Color: var(--pf-global--warning-color--100);
+  --pf-topology__node__decorator__status--m-success--Color: var(--pf-global--success-color--100);
+
+  --pf-topology__node__label__text--Fill: var(--pf-global--palette--black-1000);
+  --pf-topology__node__label__text--m-secondary--Fill: var(--pf-global--secondary-color--100);
+
+  --pf-topology__node--m-selected--node__label__text--Fill: var(--pf-global--Color--light-100);
+
+  --pf-topology__node__label__background--Fill: var(--pf-global--BackgroundColor--100);
+
+  --pf-topology__node__label__background--Stroke: var(--pf-global--BorderColor--100);
+  --pf-topology__node--m-selected--node__label__background--Stroke: var(--pf-global--active-color--100);
+  --pf-topology__node--m-info--node__label__background--Stroke: var(--pf-global--primary-color--light-100);
+  --pf-topology__node--m-success--node__label__background--Stroke: var(--pf-global--success-color--100);
+  --pf-topology__node--m-warning--node__label__background--Stroke: var(--pf-global--warning-color--100);
+  --pf-topology__node--m-danger--node__label__background--Stroke: var(--pf-global--danger-color--100);
+
+  --pf-topology__node--m-selected--node__label__background--Fill: var(--pf-global--active-color--100);
+  --pf-topology__node--m-selected--m-info--node__label__background--Fill: var(--pf-global--primary-color--light-100);
+  --pf-topology__node--m-selected--m-danger--node__label__background--Fill: var(--pf-global--danger-color--100);
+  --pf-topology__node--m-selected--m-warning--node__label__background--Fill: var(--pf-global--warning-color--100);
+  --pf-topology__node--m-selected--m-success--node__label__background--Fill: var(--pf-global--success-color--100);
+
+  --pf-topology__node__label__icon__background--Fill: var(--pf-global--palette--white);
+  --pf-topology__node__label__icon__background--Stroke: var(--pf-global--palette--black-300);
+
+  --pf-topology__node--m-selected--label__icon__background--Stroke: var(--pf-global--active-color--100);
+  --pf-topology__node--m-info--label__icon__background--Stroke: var(--pf-global--primary-color--light-100);
+  --pf-topology__node--m-success--label__icon__background--Stroke: var(--pf-global--success-color--100);
+  --pf-topology__node--m-warning--label__icon__background--Stroke: var(--pf-global--warning-color--100);
+  --pf-topology__node--m-danger--label__icon__background--Stroke: var(--pf-global--danger-color--100);
+
+
+  --pf-topology__node__separator--Stroke: var(--pf-global--palette--black-300);
+
+  --pf-topology__node__action-icon__icon--Color: var(--pf-global--palette--black-1000);
+
+  --pf-topology__group--m-selected--topology__node__action-icon__icon--Color: var(--pf-global--palette--white);
+
+  --pf-topology__group__background--Fill: var(--pf-global--BackgroundColor--light-300);
+  --pf-topology__group__background--Stroke: var(--pf-global--palette--white);
+
+  --pf-topology__group--m-alt-group--topology__group__background--Fill: var(--pf-global--palette--white);
+
+  --pf-topology__group--m-selected--topology__group__background--Fill: var(--pf-global--palette--blue-50);
+  --pf-topology__group--m-selected--topology__group__background--Stroke: var(--pf-global--active-color--100);
+
+  --pf-topology__group--m-hover--topology__group__background--Stroke: var(--pf-global--BackgroundColor--dark-400);
+
+  --pf-topology__group--m-drop-target--topology__group__background--Fill: var(--pf-global--palette--blue-50);
+  --pf-topology__group--m-drop-target--topology__group__background--Stroke: var(--pf-global--active-color--100);
+
+  --pf-topology__group__collapsed-badge__node__label__badge__rect--Fill: var(--pf-global--palette--white);
+  --pf-topology__group__collapsed-badge__node__label__badge__rect--Stroke: var(--pf-global--palette--black-300);
+
+  --pf-topology__group__collapsed-badge__node__label__badge__text--Fill: var(--pf-global--palette--black-800);
+
+  --pf-topology__group__label__node__label__background--Fill: var(--pf-global--BackgroundColor--dark-300);
+
+  --pf-topology__group__label__text--Fill: var(--pf-global--palette--white); 
+
+  --pf-topology__group__label__node__action-icon__icon--Color: var(--pf-global--palette--white);
+
+  --pf-topology__group--m-selected--group__label__node__label__background--Fill: var(--pf-global--active-color--100);
+}
+
+/* DARK THEME OVERRIDES */
+:root:where(.pf-theme-dark) {
+  --pf-topology-visualization-surface--BackgroundColor: var(--pf-global--BackgroundColor--200);
+
+  --pf-topology__node--Color: var(--pf-global--Color--100); 
+  --pf-topology__node__background--Fill: var(--pf-global--BackgroundColor--300);
+  --pf-topology__node__background--Stroke:  var(--pf-global--palette--black-300);
+  /* TODO Hover state - uses filter for shadow but needs different stroke */
+  --pf-topology__node--m-hover--background--Stroke: var(--pf-global--palette--black-100);
+  --pf-topology__node--m-hover--label__background--Stroke: var(--pf-global--palette--black-100);
+
+  /* TODO Selected default and selected info look the same in dark */
+
+  --pf-topology__node__label__background--Stroke: var(--pf-global--BorderColor--300);
+  --pf-topology__node__label__text--Fill: var(--pf-global--Color--100);
+
+  /* make text dark when selected but TODO not on the default, only the statuses */
+  --pf-topology__node--m-selected--node__label__text--Fill: var(--pf-global--palette--black-900);
+  
+  /* TODO not done yet */
+  --pf-topology__group__background--Fill: var(--pf-global--BackgroundColor--100);
+  --pf-topology__group__background--Stroke: var(--pf-global--BorderColor--300);
+
 }
 
 .pf-topology-visualization-surface {
+  background-color: var(--pf-topology-visualization-surface--BackgroundColor);
   height: 100%;
   flex-grow: 1;
   flex-shrink: 1;
   overflow: hidden;
-  position: relative;
+  position: relative; 
 }
 
 .pf-topology-visualization-surface__svg {
@@ -36,38 +158,50 @@
   transform: translateY(-50%);
 }
 
+/* ******* NODE ********* */
 .pf-topology__node {
   outline: none;
+  color: var(--pf-topology__node--Color);
+}
+
+/* Color is defined in the svg but fill will override it */
+.pf-topology__node svg {
+  fill: var(--pf-topology__node--Color);
+}
+
+.pf-topology__node.pf-m-hover {
+  --pf-topology__node__background--Stroke: var(--pf-topology__node--m-hover--background--Stroke);
+  --pf-topology__node__label__background--Stroke: var(--pf-topology__node--m-hover--label__background--Stroke);
 }
 
 .pf-topology__node__background {
-  fill: var(--pf-global--palette--white);
+  fill: var(--pf-topology__node__background--Fill);
   stroke-width: 1px;
-  stroke: var(--pf-global--palette--black-300);
+  stroke: var(--pf-topology__node__background--Stroke);
 }
 
 .pf-topology__node__background.pf-m-disabled {
-  fill: var(--pf-global--BackgroundColor--200);
+  --pf-topology__node__background--Fill: var(--pf-topology__node--m-disabled--Background);
 }
 
 .pf-topology__node__background.pf-m-info {
-  fill: var(--pf-global--primary-color--light-100);
+  --pf-topology__node__background--Fill: var(--pf-topology__node--m-info--Background);
 }
 
 .pf-topology__node__background.pf-m-success {
-  fill: var(--pf-global--success-color--100);
+  --pf-topology__node__background--Fill: var(--pf-topology__node--m-success--Background);
 }
 
 .pf-topology__node__background.pf-m-warning {
-  fill: var(--pf-global--warning-color--100);
+  --pf-topology__node__background--Fill: var(--pf-topology__node--m-warning--Background);
 }
 
 .pf-topology__node__background.pf-m-danger {
-  fill: var(--pf-global--danger-color--100);
+  --pf-topology__node__background--Fill: var(--pf-topology__node--m-danger--Background);
 }
 
 .pf-topology__node__background.pf-m-selected {
-  fill: var(--pf-global--active-color--100);
+  --pf-topology__node__background--Fill: var(--pf-topology__node--m-selected--Background);
 }
 
 .pf-topology__node.pf-m-dragging .pf-topology__node__background {
@@ -76,119 +210,137 @@
 
 .pf-topology__node.pf-m-selected .pf-topology__node__background {
   stroke-width: 2px;
-  stroke: var(--pf-global--active-color--100);
+  stroke: var(--pf-topology__node--m-selected--node__background--Stroke);
 }
 
 .pf-topology__node.pf-m-info .pf-topology__node__background {
-  stroke: var(--pf-global--primary-color--light-100);
+  stroke: var(--pf-topology__node--m-info--node__background--Stroke);
 }
 
 .pf-topology__node.pf-m-success .pf-topology__node__background {
-  stroke: var(--pf-global--success-color--100);
+  stroke: var(--pf-topology__node--m-success--node__background--Stroke);
 }
 
 .pf-topology__node.pf-m-warning .pf-topology__node__background {
-  stroke: var(--pf-global--warning-color--100);
+  stroke: var(--pf-topology__node--m-warning--node__background--Stroke);
 }
 
 .pf-topology__node.pf-m-danger .pf-topology__node__background {
-  stroke: var(--pf-global--danger-color--100);
+  stroke: var(--pf-topology__node--m-danger--node__background--Stroke);
 }
 
 .pf-topology__node.pf-m-drop-target .pf-topology__node__background {
 }
 
+/* ******** DECORATOR ******** */
 .pf-topology__node__decorator {
-  color: var(--pf-global--Color--200);
+  --pf-topology__node--Color: var(--pf-topology__node_decorator--Color);
   transition: color 0.2s ease;
   outline: none;
 }
 
+.pf-topology__node__decorator svg {
+ fill: var(--pf-topology__node_decorator--Color);
+}
+
 .pf-topology__node__decorator__bg {
-  fill: var(--pf-global--BackgroundColor--light-100);
-  stroke: var(--pf-global--palette--black-300);
+  fill: var(--pf-topology__node__decorator__bg--Fill);
+  stroke: var(--pf-topology__node__decorator__bg--Stroke);
   stroke-width: 1px;
 }
 
 .pf-topology__node__decorator__icon {
   font-size: var(--pf-global--icon--FontSize--sm);
+  color: var(--pf-topology__node_decorator--Color);
+}
+
+.pf-topology__node__decorator__status {
+  color: var(--pf-topology__node_decorator--Color);
 }
 
 .pf-topology__node__decorator__status .pf-m-info {
-  color: var(--pf-global--primary-color--light-100);
+  --pf-topology__node_decorator--Color: var(--pf-topology__node__decorator__status--m-info--Color);
 }
 .pf-topology__node__decorator__status .pf-m-danger {
-  color: var(--pf-global--danger-color--100);
+  --pf-topology__node_decorator--Color: var(--pf-topology__node__decorator__status--m-danger--Color);
 }
 .pf-topology__node__decorator__status .pf-m-warning {
-  color: var(--pf-global--warning-color--100);
+  --pf-topology__node_decorator--Color: var(--pf-topology__node__decorator__status--m-warning--Color);
 }
 .pf-topology__node__decorator__status .pf-m-success {
-  color: var(--pf-global--success-color--100);
+  --pf-topology__node_decorator--Color: var(--pf-topology__node__decorator__status--m-success--Color);
 }
 
+/* ************* NODE LABEL ************** */
 .pf-topology__node__label > text {
-  fill: var(--pf-global--palette--black-1000);
+  fill: var(--pf-topology__node__label__text--Fill);
   font-size: var(--pf-global--FontSize--sm);
   pointer-events: none;
 }
 
 .pf-topology__node__label > text.pf-m-secondary {
-  fill: var(--pf-global--secondary-color--100);
+  fill: var(--pf-topology__node__label__text--m-secondary--Fill);
   font-size: var(--pf-global--FontSize--xs);
 }
 
 .pf-topology__node.pf-m-selected .pf-topology__node__label > text {
-  fill: var(--pf-global--palette--white);
+  fill: var(--pf-topology__node--m-selected--node__label__text--Fill);
 }
 
 .pf-topology__node__label__background {
-  fill: var(--pf-global--palette--white);
+  fill: var(--pf-topology__node__label__background--Fill);
   stroke-width: 1px;
-  stroke: var(--pf-global--palette--black-300);
+  stroke: var(--pf-topology__node__label__background--Stroke);
 }
 
 .pf-topology__node.pf-m-selected .pf-topology__node__label__background {
   stroke-width: 2px;
-  stroke: var(--pf-global--active-color--100);
-}
-
-.pf-topology__node.pf-m-info .pf-topology__node__label__background {
-  stroke: var(--pf-global--primary-color--light-100);
-}
-
-.pf-topology__node.pf-m-success .pf-topology__node__label__background {
-  stroke: var(--pf-global--success-color--100);
-}
-
-.pf-topology__node.pf-m-warning .pf-topology__node__label__background {
-  stroke: var(--pf-global--warning-color--100);
-}
-
-.pf-topology__node.pf-m-danger .pf-topology__node__label__background {
-  stroke: var(--pf-global--danger-color--100);
+  stroke: var(--pf-topology__node--m-selected--node__label__background--Stroke);
 }
 
 .pf-topology__node.pf-m-selected .pf-topology__node__label__background {
-  fill: var(--pf-global--active-color--100);
+  fill: var(--pf-topology__node--m-selected--node__label__background--Fill);
+}
+
+.pf-topology__node.pf-m-info .pf-topology__node__label__background {
+  stroke: var(--pf-topology__node--m-info--node__label__background--Stroke);
+}
+
+.pf-topology__node.pf-m-success .pf-topology__node__label__background {
+  stroke: var(--pf-topology__node--m-success--node__label__background--Stroke);
+}
+
+.pf-topology__node.pf-m-warning .pf-topology__node__label__background {
+  stroke: var(--pf-topology__node--m-warning--node__label__background--Stroke);
+}
+
+.pf-topology__node.pf-m-danger .pf-topology__node__label__background {
+  stroke: var(--pf-topology__node--m-danger--node__label__background--Stroke);
+  fill: var(--pf-topology__node--m-selected--m-danger--node__label__background--Fill);
 }
 
 .pf-topology__node.pf-m-selected.pf-m-info .pf-topology__node__label__background {
-  fill: var(--pf-global--primary-color--light-100);
+  fill: var(--pf-topology__node--m-selected--m-info--node__label__background--Fill);
+  --pf-topology__node--m-selected--node__label__text--Fill: yellow;
+
 }
 
-.pf-topology__node.pf-m-selected.pf-m-danger .pf-topology__node__label__background {
-  fill: var(--pf-global--danger-color--100);
+.pf-topology__node.pf-m-selected.pf-m-danger  {
+  fill: var(--pf-topology__node--m-selected--m-danger--node__label__background--Fill);
+  --pf-topology__node--m-selected--node__label__text--Fill: yellow;
 }
 
 .pf-topology__node.pf-m-selected.pf-m-warning .pf-topology__node__label__background {
-  fill: var(--pf-global--warning-color--100);
+  fill: var(--pf-topology__node--m-selected--m-warning--node__label__background--Fill);
+  --pf-topology__node--m-selected--node__label__text--Fill: yellow;
 }
 
 .pf-topology__node.pf-m-selected.pf-m-success .pf-topology__node__label__background {
-  fill: var(--pf-global--success-color--100);
+  fill: var(--pf-topology__node--m-selected--m-success--node__label__background--Fill);
+  --pf-topology__node--m-selected--node__label__text--Fill: yellow;
 }
 
+/* *********** NODE LABEL BADGE ********* */
 .pf-topology__node__label__badge > rect {
   stroke-width: 1px;
 }
@@ -201,37 +353,38 @@
 .pf-topology__node__label__icon > svg {
   height: 100%;
   width: 100%;
+  fill: currentColor;
 }
 
 .pf-topology__node__label__icon__background {
-  fill: var(--pf-global--palette--white);
+  fill: var(--pf-topology__node__label__icon__background--Fill);
   stroke-width: 1px;
-  stroke: var(--pf-global--palette--black-300);
+  stroke: var(--pf-topology__node__label__icon__background--Stroke);
 }
 
 .pf-topology__node.pf-m-selected .pf-topology__node__label__icon__background {
   stroke-width: 2px;
-  stroke: var(--pf-global--active-color--100);
+  stroke: var(--pf-topology__node--m-selected--label__icon__background--Stroke);
 }
 
 .pf-topology__node.pf-m-info .pf-topology__node__label__icon__background {
-  stroke: var(--pf-global--primary-color--light-100);
+  stroke: var(--pf-topology__node--m-info--label__icon__background--Stroke);
 }
 
 .pf-topology__node.pf-m-success .pf-topology__node__label__icon__background {
-  stroke: var(--pf-global--success-color--100);
+  stroke: var(--pf-topology__node--m-success--label__icon__background--Stroke);
 }
 
 .pf-topology__node.pf-m-warning .pf-topology__node__label__icon__background {
-  stroke: var(--pf-global--warning-color--100);
+  stroke: var(--pf-topology__node--m-warning--label__icon__background--Stroke);
 }
 
 .pf-topology__node.pf-m-danger .pf-topology__node__label__icon__background {
-  stroke: var(--pf-global--danger-color--100);
+  stroke: var(--pf-topology__node--m-danger--label__icon__background--Stroke);
 }
 
 .pf-topology__node__separator {
-  stroke: var(--pf-global--palette--black-300);
+  stroke: var(--pf-topology__node__separator--Stroke);
   stroke-width: 1;
 }
 
@@ -245,11 +398,11 @@
 }
 
 .pf-topology__node__action-icon__icon {
-  color: var(--pf-global--palette--black-1000);
+  color: var(--pf-topology__node__action-icon__icon--Color);
 }
 
 .pf-topology__group.pf-m-selected .pf-topology__node__action-icon__icon {
-  color: var(--pf-global--palette--white);
+  color: var(--pf-topology__group--m-selected--topology__node__action-icon__icon--Color);
 }
 
 .pf-topology__group {
@@ -257,57 +410,57 @@
 }
 
 .pf-topology__group__background {
-  fill: var(--pf-global--BackgroundColor--light-300);
-  stroke: var(--pf-global--palette--white);
+  fill: var(--pf-topology__group__background--Fill);
+  stroke: var(--pf-topology__group__background--Stroke);
   stroke-width: 5px;
 }
 
 .pf-topology__group.pf-m-alt-group .pf-topology__group__background {
-  fill: var(--pf-global--palette--white);
+  fill: var(--pf-topology__group--m-alt-group--topology__group__background--Fill);
 }
 
 .pf-topology__group.pf-m-selected .pf-topology__group__background {
-  fill: var(--pf-global--palette--blue-50);
-  stroke: var(--pf-global--active-color--100);
+  fill: var(--pf-topology__group--m-selected--topology__group__background--Fill);
+  stroke: var(--pf-topology__group--m-selected--topology__group__background--Stroke);
 }
 
 .pf-topology__group.pf-m-hover .pf-topology__group__background {
-  stroke: var(--pf-global--BackgroundColor--dark-400);
+  stroke: var(--pf-topology__group--m-hover--topology__group__background--Stroke);
 }
 
 .pf-topology__group.pf-m-drop-target .pf-topology__group__background {
-  fill: var(--pf-global--palette--blue-50);
-  stroke: var(--pf-global--active-color--100);
+  fill: var(--pf-topology__group--m-drop-target--topology__group__background--Fill);
+  stroke: var(--pf-topology__group--m-drop-target--topology__group__background--Stroke);
   stroke-dasharray: 12;
 }
 
 .pf-topology__group__collapsed-badge.pf-topology__node__label__badge > rect {
-  fill: var(--pf-global--palette--white);
-  stroke: var(--pf-global--palette--black-300);
+  fill: var(--pf-topology__group__collapsed-badge__node__label__badge__rect--Fill);
+  stroke: var(--pf-topology__group__collapsed-badge__node__label__badge__rect--Stroke);
 }
 
 .pf-topology__group__collapsed-badge.pf-topology__node__label__badge > text {
   font-size: var(--pf-global--FontSize--xs);
   pointer-events: none;
-  fill: var(--pf-global--palette--black-800);
+  fill: var(--pf-topology__group__collapsed-badge__node__label__badge__text--Fill);
 }
 
 .pf-topology__group__label .pf-topology__node__label__background {
-  fill: var(--pf-global--BackgroundColor--dark-300);
+  fill: var(--pf-topology__group__label__node__label__background--Fill);
 }
 
 .pf-topology__group__label > text {
-  fill: var(--pf-global--palette--white);
+  fill: var(--pf-topology__group__label__text--Fill);
   font-size: var(--pf-global--FontSize--sm);
   pointer-events: none;
 }
 
 .pf-topology__group__label .pf-topology__node__action-icon__icon {
-  color: var(--pf-global--palette--white);
+  color: var(--pf-topology__group__label__node__action-icon__icon--Color);
 }
 
 .pf-topology__group.pf-m-selected .pf-topology__group__label .pf-topology__node__label__background {
-  fill: var(--pf-global--active-color--100);
+  fill: var(--pf-topology__group--m-selected--group__label__node__label__background--Fill);
 }
 
 .pf-topology__edge {
@@ -529,3 +682,30 @@
   fill: var(--pf-topology-create-connector-color);
 }
 
+
+
+.pf-theme-dark .pfext-catalog-item-icon__img--large {
+    /* Not perfect, but gives a better result for colors than just inverting
+    by inverts to switch b/w, then rotates to get colors approximately back */
+    filter: brightness(1.5) invert(1) hue-rotate(180deg) saturate(4);
+  }
+
+
+/* .pf-theme-dark .pf-topology__node__background {
+  fill: var(--pf-global--BackgroundColor--300);
+  stroke: var(--pf-global--palette--black-400);
+} */
+
+/* .pf-theme-dark .pf-topology__node__background.pf-m-disabled {
+  fill: var(--pf-global--BackgroundColor--50);
+} */
+
+/* TODO check state colors */
+/* TODO decorators */
+
+
+/* .pf-theme-dark {
+  --pf-topology__node__background--Fill: var(--pf-global--BackgroundColor--300);
+  --pf-topology__node__background--Stroke: var(--pf-global--BorderColor--300);
+} */
+  /* TODO hover gets border 400 */
