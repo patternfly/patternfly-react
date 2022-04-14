@@ -1,27 +1,28 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
+
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { OverflowMenuItem } from '../OverflowMenuItem';
 import { OverflowMenuContext } from '../OverflowMenuContext';
 
 describe('OverflowMenuItem', () => {
   test('isPersistent and below breakpoint should still show', () => {
-    const view = mount(
+    render(
       <OverflowMenuContext.Provider value={{ isBelowBreakpoint: false }}>
-        <OverflowMenuItem isPersistent />
+        <OverflowMenuItem isPersistent>Some item value</OverflowMenuItem>
       </OverflowMenuContext.Provider>
     );
-    expect(view.find(`.${styles.overflowMenuItem}`).length).toBe(1);
-    expect(view).toMatchSnapshot();
+    expect(screen.getByText('Some item value')).toHaveClass(styles.overflowMenuItem);
   });
 
   test('Below breakpoint and not isPersistent should not show', () => {
-    const view = render(
+    const { asFragment } = render(
       <OverflowMenuContext.Provider value={{ isBelowBreakpoint: false }}>
-        <OverflowMenuItem />
+        <OverflowMenuItem>Some item value</OverflowMenuItem>
       </OverflowMenuContext.Provider>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

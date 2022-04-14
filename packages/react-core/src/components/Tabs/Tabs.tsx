@@ -41,6 +41,8 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   isBox?: boolean;
   /** Enables vertical tab styling */
   isVertical?: boolean;
+  /** Enables no border bottom tab styling */
+  hasBorderBottom?: boolean;
   /** Aria-label for the left scroll button */
   leftScrollAriaLabel?: string;
   /** Aria-label for the right scroll button */
@@ -79,7 +81,7 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   defaultIsExpanded?: boolean;
   /** Text that appears in the expandable toggle */
   toggleText?: string;
-  /** Aria-label for the left expandable toggle */
+  /** Aria-label for the expandable toggle */
   toggleAriaLabel?: string;
   /** Callback function to toggle the expandable tabs. */
   onToggle?: (isExpanded: boolean) => void;
@@ -135,6 +137,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     isSecondary: false,
     isVertical: false,
     isBox: false,
+    hasBorderBottom: true,
     leftScrollAriaLabel: 'Scroll left',
     rightScrollAriaLabel: 'Scroll right',
     component: TabsComponent.div,
@@ -288,6 +291,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       isSecondary,
       isVertical,
       isBox,
+      hasBorderBottom,
       leftScrollAriaLabel,
       rightScrollAriaLabel,
       'aria-label': ariaLabel,
@@ -356,6 +360,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             isBox && styles.modifiers.box,
             showScrollButtons && !isVertical && styles.modifiers.scrollable,
             usePageInsets && styles.modifiers.pageInsets,
+            !hasBorderBottom && styles.modifiers.noBorderBottom,
             formatBreakpointMods(inset, styles),
             variantStyle[variant],
             className
@@ -400,7 +405,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           >
             <AngleLeftIcon />
           </button>
-          <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
+          <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons} role="tablist">
             {filteredChildren}
           </ul>
           <button

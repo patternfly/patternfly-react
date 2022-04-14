@@ -25,12 +25,12 @@ type CustomRectNodeProps = {
   WithCreateConnectorProps &
   WithContextMenuProps;
 
-const CustomRect: React.FC<ShapeProps> = observer(({ className }) => {
+const CustomRect: React.FunctionComponent<ShapeProps> = observer(({ className }) => {
   useAnchor(RectAnchor);
   return <rect className={className} x={0} y={0} width={100} height={20} />;
 });
 
-const CustomRectNode: React.FC<CustomRectNodeProps> = props => (
+const CustomRectNode: React.FunctionComponent<CustomRectNodeProps> = props => (
   <DemoDefaultNode getCustomShape={() => CustomRect} {...props} />
 );
 

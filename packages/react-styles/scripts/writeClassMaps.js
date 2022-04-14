@@ -15,6 +15,15 @@ exports.default = ${JSON.stringify(classMap, null, 2)};
 `.trim()
   );
 
+const writeESMExport = (file, classMap) =>
+  outputFileSync(
+    join(outDir, file.replace(/.css$/, '.mjs')),
+    `
+import('./${basename(file, '.css.js')}');
+export default ${JSON.stringify(classMap, null, 2)};
+`.trim()
+  );
+
 const writeDTSExport = (file, classMap) =>
   outputFileSync(
     join(outDir, file.replace(/.css$/, '.d.ts')),
@@ -36,6 +45,7 @@ function writeClassMaps(classMaps) {
 
     writeCJSExport(outPath, classMap);
     writeDTSExport(outPath, classMap);
+    writeESMExport(outPath, classMap);
     copyFileSync(file, join(outDir, outPath));
   });
 

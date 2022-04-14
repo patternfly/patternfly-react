@@ -7,7 +7,7 @@ import { ShapeProps } from './shapeUtils';
 
 type EllipseProps = ShapeProps;
 
-const Ellipse: React.FC<EllipseProps> = ({
+const Ellipse: React.FunctionComponent<EllipseProps> = ({
   className = css(styles.topologyNodeBackground),
   width,
   height,

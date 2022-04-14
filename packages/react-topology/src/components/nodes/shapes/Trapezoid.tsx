@@ -24,7 +24,7 @@ type TrapezoidProps = ShapeProps & {
   cornerRadius?: number;
 };
 
-const Trapezoid: React.FC<TrapezoidProps> = ({
+const Trapezoid: React.FunctionComponent<TrapezoidProps> = ({
   className = css(styles.topologyNodeBackground),
   width,
   height,

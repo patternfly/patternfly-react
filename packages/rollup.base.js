@@ -23,6 +23,7 @@ module.exports = ({ packageName, name }) => ({
   output: {
     file: `dist/umd/${packageName}${isProduction ? '.min' : ''}.js`,
     format: 'umd',
+    inlineDynamicImports: true,
     name,
     globals: {
       react: 'React',

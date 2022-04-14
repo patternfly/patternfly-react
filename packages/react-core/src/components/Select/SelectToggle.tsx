@@ -23,6 +23,8 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   onEnter?: () => void;
   /** Callback for toggle close */
   onClose?: () => void;
+  /** Callback for toggle blur */
+  onBlur?: (event?: any) => void;
   /** @hide Internal callback for toggle keyboard navigation */
   handleTypeaheadKeys?: (position: string, shiftKey?: boolean) => void;
   /** @hide Internal callback to move focus to last menu item */
@@ -100,11 +102,14 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   }
 
   onDocClick = (event: Event) => {
-    const { parentRef, menuRef, isOpen, onToggle, onClose } = this.props;
+    const { parentRef, menuRef, footerRef, isOpen, onToggle, onClose } = this.props;
     const clickedOnToggle = parentRef && parentRef.current && parentRef.current.contains(event.target as Node);
     const clickedWithinMenu =
       menuRef && menuRef.current && menuRef.current.contains && menuRef.current.contains(event.target as Node);
-    if (isOpen && !(clickedOnToggle || clickedWithinMenu)) {
+    const clickedWithinFooter =
+      footerRef && footerRef.current && footerRef.current.contains && footerRef.current.contains(event.target as Node);
+
+    if (isOpen && !(clickedOnToggle || clickedWithinMenu || clickedWithinFooter)) {
       onToggle(false, event);
       onClose();
     }
@@ -244,6 +249,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       onToggle,
       onEnter,
       onClose,
+      onBlur,
       onClickTypeaheadToggleButton,
       handleTypeaheadKeys,
       moveFocusToLastMenuItem,
@@ -289,6 +295,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               className
             )}
             aria-label={ariaLabel}
+            onBlur={onBlur}
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             onClick={event => {
               onToggle(!isOpen, event);
@@ -317,6 +324,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               isTypeahead && styles.modifiers.typeahead,
               className
             )}
+            onBlur={onBlur}
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             onClick={event => {
               if (!isDisabled) {

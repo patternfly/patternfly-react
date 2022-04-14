@@ -14,7 +14,7 @@ export interface SeparatorProps extends React.HTMLProps<HTMLAnchorElement>, OUIA
 export const DropdownSeparator: React.FunctionComponent<SeparatorProps> = ({
   className = '',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  ref, // Types of Ref are different for React.FC vs React.Component
+  ref, // Types of Ref are different for React.FunctionComponent vs React.Component
   ouiaId,
   ouiaSafe,
   ...props

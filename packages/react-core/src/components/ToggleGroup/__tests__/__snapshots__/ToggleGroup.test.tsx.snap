@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`basic not selected 1`] = `
-<div>
+exports[`ToggleGroup basic not selected 1`] = `
+<DocumentFragment>
   <div
     class="pf-c-toggle-group__item"
   >
@@ -19,18 +19,18 @@ exports[`basic not selected 1`] = `
       </span>
     </button>
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`basic selected 1`] = `
-<div>
+exports[`ToggleGroup basic selected 1`] = `
+<DocumentFragment>
   <div
     class="pf-c-toggle-group__item"
   >
     <button
       aria-label="basic selected"
-      aria-pressed="false"
-      class="pf-c-toggle-group__button"
+      aria-pressed="true"
+      class="pf-c-toggle-group__button pf-m-selected"
       id="toggleGroupItem"
       type="button"
     >
@@ -41,18 +41,18 @@ exports[`basic selected 1`] = `
       </span>
     </button>
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`icon variant 1`] = `
-<div>
+exports[`ToggleGroup icon variant 1`] = `
+<DocumentFragment>
   <div
     class="pf-c-toggle-group__item"
   >
     <button
       aria-label="icon variant"
-      aria-pressed="false"
-      class="pf-c-toggle-group__button"
+      aria-pressed="true"
+      class="pf-c-toggle-group__button pf-m-selected"
       id="toggleGroupItem"
       type="button"
     >
@@ -63,12 +63,13 @@ exports[`icon variant 1`] = `
       </span>
     </button>
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`isCompact 1`] = `
-<div>
+exports[`ToggleGroup isCompact 1`] = `
+<DocumentFragment>
   <div
+    aria-label="Label"
     class="pf-c-toggle-group pf-m-compact"
     role="group"
   >
@@ -103,11 +104,11 @@ exports[`isCompact 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`isDisabled 1`] = `
-<div>
+exports[`ToggleGroup isDisabled 1`] = `
+<DocumentFragment>
   <div
     class="pf-c-toggle-group__item"
   >
@@ -126,5 +127,5 @@ exports[`isDisabled 1`] = `
       </span>
     </button>
   </div>
-</div>
+</DocumentFragment>
 `;

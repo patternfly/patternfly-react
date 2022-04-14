@@ -31,7 +31,7 @@ export const withPolygonAnchor = <P extends {} = {}>(
   type?: string
 ) => (WrappedComponent: React.ComponentType<P>) => {
   const element = React.useContext(ElementContext);
-  const Component: React.FC<P> = props => {
+  const Component: React.FunctionComponent<P> = props => {
     usePolygonAnchor(getPoints(element as Node), end, type);
     return <WrappedComponent {...props} />;
   };

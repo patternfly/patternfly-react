@@ -6,7 +6,7 @@ type OctagonProps = ShapeProps & {
   cornerRadius?: number;
 };
 
-const Octagon: React.FC<OctagonProps> = props => (
+const Octagon: React.FunctionComponent<OctagonProps> = props => (
   <SidedShape cornerRadius={props.cornerRadius ?? OCTAGON_CORNER_RADIUS} {...props} sides={8} />
 );
 

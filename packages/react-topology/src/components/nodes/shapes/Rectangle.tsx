@@ -9,7 +9,7 @@ type RectangleProps = ShapeProps & {
   cornerRadius?: number;
 };
 
-const Rectangle: React.FC<RectangleProps> = ({
+const Rectangle: React.FunctionComponent<RectangleProps> = ({
   className = css(styles.topologyNodeBackground),
   width,
   height,

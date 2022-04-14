@@ -1,35 +1,28 @@
 import React from 'react';
+
+import { render, screen } from '@testing-library/react';
+import "@testing-library/jest-dom";
+
 import { NotificationDrawerListItem } from '../NotificationDrawerListItem';
-import { render } from '@testing-library/react';
-import { shallow } from 'enzyme';
 
-test('renders with PatternFly Core styles', () => {
-  const view = render(<NotificationDrawerListItem />);
-  expect(view.container).toMatchSnapshot();
-});
+describe('NotificationDrawerListItem', () => {
+  test('renders with PatternFly Core styles', () => {
+    const { asFragment } = render(<NotificationDrawerListItem />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-test('className is added to the root element', () => {
-  const view = shallow(<NotificationDrawerListItem className="extra-class" />);
-  expect(view.prop('className')).toMatchSnapshot();
-});
+  test('className is added to the root element', () => {
+    render(<NotificationDrawerListItem className="extra-class" />);
+    expect(screen.getByRole('listitem')).toHaveClass('extra-class');
+  });
 
-test('extra props are spread to the root element', () => {
-  const testId = 'notification-drawer';
-  const view = shallow(<NotificationDrawerListItem data-testid={testId} />);
-  expect(view.prop('data-testid')).toBe(testId);
-});
+  test('drawer list item with isHoverable applied', () => {
+    render(<NotificationDrawerListItem isHoverable />);
+    expect(screen.getByRole('listitem')).toHaveClass('pf-m-hoverable');
+  });
 
-test('drawer list item with isHoverable applied ', () => {
-  const view = shallow(<NotificationDrawerListItem isHoverable />);
-  expect(view.prop('className')).toMatch(/hoverable/);
-});
-
-test('drawer list item with isRead applied ', () => {
-  const view = shallow(<NotificationDrawerListItem isRead />);
-  expect(view.prop('className')).toMatch(/read/);
-});
-
-test('drawer list item with tabIndex value applied ', () => {
-  const view = shallow(<NotificationDrawerListItem tabIndex={4} />);
-  expect(view.prop('tabIndex')).toBe(4);
+  test('drawer list item with isRead applied', () => {
+    render(<NotificationDrawerListItem isRead />);
+    expect(screen.getByRole('listitem')).toHaveClass('pf-m-read');
+  });
 });

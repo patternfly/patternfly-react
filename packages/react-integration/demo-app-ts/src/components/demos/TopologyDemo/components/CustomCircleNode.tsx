@@ -27,7 +27,7 @@ type CustomCircleNodeProps = {
   WithCreateConnectorProps &
   WithContextMenuProps;
 
-const CustomCircle: React.FC<ShapeProps> = ({ element, className }) => {
+const CustomCircle: React.FunctionComponent<ShapeProps> = ({ element, className }) => {
   useAnchor(EllipseAnchor);
   React.useEffect(() => {
     // init height
@@ -48,7 +48,7 @@ const CustomCircle: React.FC<ShapeProps> = ({ element, className }) => {
   );
 };
 
-const CustomCircleNode: React.FC<CustomCircleNodeProps> = props => (
+const CustomCircleNode: React.FunctionComponent<CustomCircleNodeProps> = props => (
   <DemoDefaultNode getCustomShape={() => CustomCircle} {...props} />
 );
 

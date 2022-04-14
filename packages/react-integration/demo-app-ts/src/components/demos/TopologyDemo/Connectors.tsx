@@ -278,7 +278,7 @@ export const CreateConnector = withTopologySetup(() => {
   return null;
 });
 
-const NodeWithPointAnchor: React.FC<{ element: Node } & WithDragNodeProps> = props => {
+const NodeWithPointAnchor: React.FunctionComponent<{ element: Node } & WithDragNodeProps> = props => {
   const nodeRef = useSvgAnchor();
   const targetRef = useSvgAnchor(AnchorEnd.target, 'edge-point');
   const { width, height } = props.element.getDimensions();

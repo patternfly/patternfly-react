@@ -17,7 +17,7 @@ export const withContextMenu = <E extends TopologyElement>(
   className?: string,
   atPoint: boolean = true
 ) => <P extends WithContextMenuProps>(WrappedComponent: React.ComponentType<Partial<P>>) => {
-  const Component: React.FC<Omit<P, keyof WithContextMenuProps>> = props => {
+  const Component: React.FunctionComponent<Omit<P, keyof WithContextMenuProps>> = props => {
     const element = React.useContext(ElementContext);
     const [reference, setReference] = React.useState<Reference | null>(null);
     const onContextMenu = React.useCallback((e: React.MouseEvent) => {

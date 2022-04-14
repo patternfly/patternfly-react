@@ -118,7 +118,7 @@ interface TopologyViewComponentProps {
   vis: Visualization;
 }
 
-const TopologyViewComponent: React.FC<TopologyViewComponentProps> = ({ vis }) => {
+const TopologyViewComponent: React.FunctionComponent<TopologyViewComponentProps> = ({ vis }) => {
   const [selectedIds, setSelectedIds] = React.useState<string[]>();
   const [collapseBlue, setCollapseBlue] = React.useState<boolean>(false);
   const [collapseLightBlue, setCollapseLightBlue] = React.useState<boolean>(false);

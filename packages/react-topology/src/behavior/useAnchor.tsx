@@ -28,7 +28,7 @@ export const useAnchor = (
 export const withAnchor = <P extends {} = {}>(anchor: Anchor, end?: AnchorEnd, type?: string) => (
   WrappedComponent: React.ComponentType<P>
 ) => {
-  const Component: React.FC<P> = props => {
+  const Component: React.FunctionComponent<P> = props => {
     useAnchor(
       React.useCallback(() => anchor, []),
       end,

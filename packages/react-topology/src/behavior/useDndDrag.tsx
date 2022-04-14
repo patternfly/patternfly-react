@@ -314,7 +314,7 @@ export const withDndDrag = <
 >(
   spec: DragSourceSpec<DragObject, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps, Props>
 ) => <P extends WithDndDragProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<Partial<P>>) => {
-  const Component: React.FC<Omit<P, keyof WithDndDragProps & CollectedProps>> = props => {
+  const Component: React.FunctionComponent<Omit<P, keyof WithDndDragProps & CollectedProps>> = props => {
     // TODO fix cast to any
     const [dndDragProps, dndDragRef] = useDndDrag(spec, props as any);
     return <WrappedComponent {...(props as any)} {...dndDragProps} dndDragRef={dndDragRef} />;

@@ -25,7 +25,7 @@ const stopEvent = (e: React.MouseEvent): void => {
   e.stopPropagation();
 };
 
-const VisualizationSurface: React.FC<VisualizationSurfaceProps> = ({ state }) => {
+const VisualizationSurface: React.FunctionComponent<VisualizationSurfaceProps> = ({ state }) => {
   const controller = useVisualizationController();
 
   React.useEffect(() => {

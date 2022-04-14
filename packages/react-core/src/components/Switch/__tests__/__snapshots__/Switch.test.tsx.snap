@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`no label switch is checked 1`] = `
-<div>
+exports[`Switch no label switch is checked 1`] = `
+<DocumentFragment>
   <label
     class="pf-c-switch"
     data-ouia-component-id="OUIA-Generated-Switch-7"
@@ -10,8 +10,7 @@ exports[`no label switch is checked 1`] = `
     for="no-label-switch-is-checked"
   >
     <input
-      aria-label=""
-      aria-labelledby="no-label-switch-is-checked-on"
+      aria-label="Switch label"
       checked=""
       class="pf-c-switch__input"
       id="no-label-switch-is-checked"
@@ -39,11 +38,11 @@ exports[`no label switch is checked 1`] = `
       </div>
     </span>
   </label>
-</div>
+</DocumentFragment>
 `;
 
-exports[`no label switch is not checked 1`] = `
-<div>
+exports[`Switch no label switch is not checked 1`] = `
+<DocumentFragment>
   <label
     class="pf-c-switch"
     data-ouia-component-id="OUIA-Generated-Switch-8"
@@ -52,8 +51,7 @@ exports[`no label switch is not checked 1`] = `
     for="no-label-switch-is-not-checked"
   >
     <input
-      aria-label=""
-      aria-labelledby="no-label-switch-is-not-checked-on"
+      aria-label="Switch label"
       class="pf-c-switch__input"
       id="no-label-switch-is-not-checked"
       type="checkbox"
@@ -80,11 +78,11 @@ exports[`no label switch is not checked 1`] = `
       </div>
     </span>
   </label>
-</div>
+</DocumentFragment>
 `;
 
-exports[`switch is checked 1`] = `
-<div>
+exports[`Switch switch is checked 1`] = `
+<DocumentFragment>
   <label
     class="pf-c-switch"
     data-ouia-component-id="OUIA-Generated-Switch-3"
@@ -93,8 +91,7 @@ exports[`switch is checked 1`] = `
     for="switch-is-checked"
   >
     <input
-      aria-label=""
-      aria-labelledby="switch-is-checked-on"
+      aria-label="Switch label"
       checked=""
       class="pf-c-switch__input"
       id="switch-is-checked"
@@ -106,23 +103,21 @@ exports[`switch is checked 1`] = `
     <span
       aria-hidden="true"
       class="pf-c-switch__label pf-m-on"
-      id="switch-is-checked-on"
     >
       On
     </span>
     <span
       aria-hidden="true"
       class="pf-c-switch__label pf-m-off"
-      id="switch-is-checked-off"
     >
       Off
     </span>
   </label>
-</div>
+</DocumentFragment>
 `;
 
-exports[`switch is checked and disabled 1`] = `
-<div>
+exports[`Switch switch is checked and disabled 1`] = `
+<DocumentFragment>
   <label
     class="pf-c-switch"
     data-ouia-component-id="OUIA-Generated-Switch-9"
@@ -131,8 +126,7 @@ exports[`switch is checked and disabled 1`] = `
     for="switch-is-checked-and-disabled"
   >
     <input
-      aria-label=""
-      aria-labelledby="switch-is-checked-and-disabled-on"
+      aria-label="Switch label"
       checked=""
       class="pf-c-switch__input"
       disabled=""
@@ -161,11 +155,11 @@ exports[`switch is checked and disabled 1`] = `
       </div>
     </span>
   </label>
-</div>
+</DocumentFragment>
 `;
 
-exports[`switch is not checked 1`] = `
-<div>
+exports[`Switch switch is not checked 1`] = `
+<DocumentFragment>
   <label
     class="pf-c-switch"
     data-ouia-component-id="OUIA-Generated-Switch-4"
@@ -174,8 +168,7 @@ exports[`switch is not checked 1`] = `
     for="switch-is-not-checked"
   >
     <input
-      aria-label=""
-      aria-labelledby="switch-is-not-checked-on"
+      aria-label="Switch label"
       class="pf-c-switch__input"
       id="switch-is-not-checked"
       type="checkbox"
@@ -186,23 +179,21 @@ exports[`switch is not checked 1`] = `
     <span
       aria-hidden="true"
       class="pf-c-switch__label pf-m-on"
-      id="switch-is-not-checked-on"
     >
       On
     </span>
     <span
       aria-hidden="true"
       class="pf-c-switch__label pf-m-off"
-      id="switch-is-not-checked-off"
     >
       Off
     </span>
   </label>
-</div>
+</DocumentFragment>
 `;
 
-exports[`switch is not checked and disabled 1`] = `
-<div>
+exports[`Switch switch is not checked and disabled 1`] = `
+<DocumentFragment>
   <label
     class="pf-c-switch"
     data-ouia-component-id="OUIA-Generated-Switch-10"
@@ -211,8 +202,7 @@ exports[`switch is not checked and disabled 1`] = `
     for="switch-is-not-checked-and-disabled"
   >
     <input
-      aria-label=""
-      aria-labelledby="switch-is-not-checked-and-disabled-on"
+      aria-label="Switch label"
       class="pf-c-switch__input"
       disabled=""
       id="switch-is-not-checked-and-disabled"
@@ -240,11 +230,11 @@ exports[`switch is not checked and disabled 1`] = `
       </div>
     </span>
   </label>
-</div>
+</DocumentFragment>
 `;
 
-exports[`switch with only label is checked 1`] = `
-<div>
+exports[`Switch switch with only label is checked 1`] = `
+<DocumentFragment>
   <label
     class="pf-c-switch"
     data-ouia-component-id="OUIA-Generated-Switch-5"
@@ -278,11 +268,11 @@ exports[`switch with only label is checked 1`] = `
       On
     </span>
   </label>
-</div>
+</DocumentFragment>
 `;
 
-exports[`switch with only label is not checked 1`] = `
-<div>
+exports[`Switch switch with only label is not checked 1`] = `
+<DocumentFragment>
   <label
     class="pf-c-switch"
     data-ouia-component-id="OUIA-Generated-Switch-6"
@@ -315,5 +305,5 @@ exports[`switch with only label is not checked 1`] = `
       Off
     </span>
   </label>
-</div>
+</DocumentFragment>
 `;

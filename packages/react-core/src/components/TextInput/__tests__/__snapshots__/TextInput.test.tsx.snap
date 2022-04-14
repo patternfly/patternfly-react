@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`disabled text input 1`] = `
-<div>
+exports[`TextInput disabled text input 1`] = `
+<DocumentFragment>
   <input
     aria-invalid="false"
     aria-label="disabled text input"
@@ -13,11 +13,11 @@ exports[`disabled text input 1`] = `
     type="text"
     value=""
   />
-</div>
+</DocumentFragment>
 `;
 
-exports[`invalid text input 1`] = `
-<div>
+exports[`TextInput invalid text input 1`] = `
+<DocumentFragment>
   <input
     aria-invalid="true"
     aria-label="invalid text input"
@@ -28,11 +28,11 @@ exports[`invalid text input 1`] = `
     type="text"
     value="test input"
   />
-</div>
+</DocumentFragment>
 `;
 
-exports[`readonly text input 1`] = `
-<div>
+exports[`TextInput readonly text input 1`] = `
+<DocumentFragment>
   <input
     aria-invalid="false"
     aria-label="readonly text input"
@@ -44,11 +44,11 @@ exports[`readonly text input 1`] = `
     type="text"
     value="read only"
   />
-</div>
+</DocumentFragment>
 `;
 
-exports[`simple text input 1`] = `
-<div>
+exports[`TextInput simple text input 1`] = `
+<DocumentFragment>
   <input
     aria-invalid="false"
     aria-label="simple text input"
@@ -59,11 +59,11 @@ exports[`simple text input 1`] = `
     type="text"
     value="test input"
   />
-</div>
+</DocumentFragment>
 `;
 
-exports[`validated text input 1`] = `
-<div>
+exports[`TextInput validated text input error 1`] = `
+<DocumentFragment>
   <input
     aria-invalid="true"
     aria-label="validated text input"
@@ -74,93 +74,5 @@ exports[`validated text input 1`] = `
     type="text"
     value="test input"
   />
-</div>
-`;
-
-exports[`validated text input success 1`] = `
-<TextInput
-  aria-label="validated text input"
-  onChange={[MockFunction]}
-  required={true}
-  validated="success"
-  value="test input"
->
-  <TextInputBase
-    aria-label="validated text input"
-    className=""
-    innerRef={null}
-    isDisabled={false}
-    isIconSprite={false}
-    isLeftTruncated={false}
-    isReadOnly={false}
-    isRequired={false}
-    onChange={[MockFunction]}
-    ouiaSafe={true}
-    required={true}
-    type="text"
-    validated="success"
-    value="test input"
-  >
-    <input
-      aria-invalid={false}
-      aria-label="validated text input"
-      className="pf-c-form-control pf-m-success"
-      data-ouia-component-id="OUIA-Generated-TextInputBase-6"
-      data-ouia-component-type="PF4/TextInput"
-      data-ouia-safe={true}
-      disabled={false}
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      readOnly={false}
-      required={false}
-      type="text"
-      value="test input"
-    />
-  </TextInputBase>
-</TextInput>
-`;
-
-exports[`validated text input success 2`] = `
-<TextInput
-  aria-label="validated text input"
-  onChange={[MockFunction]}
-  required={true}
-  validated="warning"
-  value="test input"
->
-  <TextInputBase
-    aria-label="validated text input"
-    className=""
-    innerRef={null}
-    isDisabled={false}
-    isIconSprite={false}
-    isLeftTruncated={false}
-    isReadOnly={false}
-    isRequired={false}
-    onChange={[MockFunction]}
-    ouiaSafe={true}
-    required={true}
-    type="text"
-    validated="warning"
-    value="test input"
-  >
-    <input
-      aria-invalid={false}
-      aria-label="validated text input"
-      className="pf-c-form-control pf-m-warning"
-      data-ouia-component-id="OUIA-Generated-TextInputBase-7"
-      data-ouia-component-type="PF4/TextInput"
-      data-ouia-safe={true}
-      disabled={false}
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      readOnly={false}
-      required={false}
-      type="text"
-      value="test input"
-    />
-  </TextInputBase>
-</TextInput>
+</DocumentFragment>
 `;

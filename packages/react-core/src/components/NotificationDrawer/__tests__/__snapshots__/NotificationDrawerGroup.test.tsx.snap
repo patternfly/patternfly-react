@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`className is added to the root element 1`] = `"pf-c-notification-drawer__group extra-class"`;
-
-exports[`drawer group with isExpanded applied  1`] = `
-<div>
+exports[`NotificationDrawerGroup drawer group with isExpanded applied  1`] = `
+<DocumentFragment>
   <section
     class="pf-c-notification-drawer__group pf-m-expanded"
   >
@@ -46,11 +44,11 @@ exports[`drawer group with isExpanded applied  1`] = `
       </button>
     </h1>
   </section>
-</div>
+</DocumentFragment>
 `;
 
-exports[`drawer group with isRead applied  1`] = `
-<div>
+exports[`NotificationDrawerGroup drawer group with isRead applied  1`] = `
+<DocumentFragment>
   <section
     class="pf-c-notification-drawer__group"
   >
@@ -93,11 +91,11 @@ exports[`drawer group with isRead applied  1`] = `
       </button>
     </h1>
   </section>
-</div>
+</DocumentFragment>
 `;
 
-exports[`renders with PatternFly Core styles 1`] = `
-<div>
+exports[`NotificationDrawerGroup renders with PatternFly Core styles 1`] = `
+<DocumentFragment>
   <section
     class="pf-c-notification-drawer__group"
   >
@@ -140,5 +138,5 @@ exports[`renders with PatternFly Core styles 1`] = `
       </button>
     </h1>
   </section>
-</div>
+</DocumentFragment>
 `;

@@ -453,6 +453,11 @@ TabsOpenWithSecondaryTabsDemo = () => {
 ```js isFullscreen file="./examples/Tabs/TabsAndTable.tsx"
 ```
 
+### Tables and tabs, auto width tabs
+
+```js isFullscreen file="./examples/Tabs/TabsAndTablesAutoWidthTabs.tsx"
+```
+
 ### Modal tabs
 
 ```js isFullscreen file="./examples/Tabs/ModalTabs.tsx"

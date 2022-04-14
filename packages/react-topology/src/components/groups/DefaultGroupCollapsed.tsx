@@ -44,7 +44,7 @@ type DefaultGroupCollapsedProps = {
   badgeLocation?: BadgeLocation;
 } & Partial<CollapsibleGroupProps & WithDragNodeProps & WithSelectionProps & WithDndDropProps & WithContextMenuProps>;
 
-const DefaultGroupCollapsed: React.FC<DefaultGroupCollapsedProps> = ({
+const DefaultGroupCollapsed: React.FunctionComponent<DefaultGroupCollapsedProps> = ({
   className,
   element,
   collapsible,
@@ -92,6 +92,7 @@ const DefaultGroupCollapsed: React.FC<DefaultGroupCollapsedProps> = ({
     styles.topologyGroup,
     className,
     canDrop && 'pf-m-highlight',
+    canDrop && dropTarget && 'pf-m-drop-target',
     dragging && 'pf-m-dragging',
     selected && 'pf-m-selected'
   );

@@ -14,7 +14,7 @@ export interface OverflowMenuGroupProps extends React.HTMLProps<HTMLDivElement> 
   groupType?: 'button' | 'icon';
 }
 
-export const OverflowMenuGroup: React.FC<OverflowMenuGroupProps> = ({
+export const OverflowMenuGroup: React.FunctionComponent<OverflowMenuGroupProps> = ({
   className,
   children,
   isPersistent = false,

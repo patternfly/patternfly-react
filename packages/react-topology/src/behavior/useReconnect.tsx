@@ -21,7 +21,7 @@ export const withSourceDrag = <
 >(
   spec: DragSourceSpec<DragObject, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps, Props>
 ) => <P extends WithSourceDragProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<P>) => {
-  const Component: React.FC<Omit<P, keyof WithSourceDragProps & CollectedProps>> = props => {
+  const Component: React.FunctionComponent<Omit<P, keyof WithSourceDragProps & CollectedProps>> = props => {
     // TODO fix cast to any
     const [dndDragProps, dndDragRef] = useDndDrag(spec, props as any);
     return <WrappedComponent {...(props as any)} sourceDragRef={dndDragRef} {...dndDragProps} />;
@@ -42,7 +42,7 @@ export const withTargetDrag = <
 >(
   spec: DragSourceSpec<DragObject, DragSpecOperationType<DragOperationWithType>, DropResult, CollectedProps, Props>
 ) => <P extends WithSourceDragProps & CollectedProps & Props>(WrappedComponent: React.ComponentType<P>) => {
-  const Component: React.FC<Omit<P, keyof WithSourceDragProps & CollectedProps>> = props => {
+  const Component: React.FunctionComponent<Omit<P, keyof WithSourceDragProps & CollectedProps>> = props => {
     // TODO fix cast to any
     const [dndDragProps, dndDragRef] = useDndDrag(spec, props as any);
     return <WrappedComponent {...(props as any)} targetDragRef={dndDragRef} {...dndDragProps} />;

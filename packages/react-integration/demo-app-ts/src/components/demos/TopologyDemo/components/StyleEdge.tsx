@@ -7,7 +7,7 @@ type StyleEdgeProps = {
 } & WithContextMenuProps &
   WithSelectionProps;
 
-const StyleEdge: React.FC<StyleEdgeProps> = ({ element, onContextMenu, contextMenuOpen, ...rest }) => {
+const StyleEdge: React.FunctionComponent<StyleEdgeProps> = ({ element, onContextMenu, contextMenuOpen, ...rest }) => {
   const data = element.getData();
 
   const passedData = React.useMemo(() => {

@@ -78,7 +78,7 @@ interface PopperProps {
 
 const DEFAULT_POPPER_OPTIONS: PopperOptions = {};
 
-const Popper: React.FC<PopperProps> = ({
+const Popper: React.FunctionComponent<PopperProps> = ({
   children,
   container,
   className,
@@ -192,7 +192,7 @@ const Popper: React.FC<PopperProps> = ({
     onClickOutside
   ]);
 
-  const nodeRefCallback = React.useCallback(
+  const nodeRefCallback = React.useCallback<React.RefCallback<HTMLDivElement>>(
     node => {
       nodeRef.current = node;
       initialize();

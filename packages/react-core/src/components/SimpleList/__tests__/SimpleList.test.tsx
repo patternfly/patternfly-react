@@ -1,6 +1,9 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+
 import { SimpleList } from '../SimpleList';
 import { SimpleListGroup } from '../SimpleListGroup';
 import { SimpleListItem } from '../SimpleListItem';
@@ -25,64 +28,58 @@ const anchors = [
 
 describe('SimpleList', () => {
   test('renders content', () => {
-    const view = render(<SimpleList>{items}</SimpleList>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<SimpleList>{items}</SimpleList>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders grouped content', () => {
-    const view = render(
+    const { asFragment } = render(
       <SimpleList>
         <SimpleListGroup title="Group 1">{items}</SimpleListGroup>
       </SimpleList>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('onSelect is called when item is selected', () => {
-    const selectSpy = jest.fn();
-    const view = mount(<SimpleList onSelect={selectSpy}>{items}</SimpleList>);
-    view
-      .find('button')
-      .first()
-      .simulate('click', { target: { value: 'r' } });
-    view.update();
-    expect(selectSpy).toBeCalled();
-    expect(view).toMatchSnapshot();
+    const onSelect = jest.fn();
+
+    render(<SimpleList onSelect={onSelect}>{items}</SimpleList>);
+
+    userEvent.click(screen.getByText('Item 1'));
+    expect(onSelect).toBeCalled();
   });
 
   test('renders anchor content', () => {
-    const view = render(<SimpleList>{anchors}</SimpleList>);
-    expect(view.container).toMatchSnapshot();
+    render(<SimpleList>{anchors}</SimpleList>);
+    expect(screen.getAllByRole('link').length).toEqual(3);
   });
 
   test('onSelect is called when anchor item is selected', () => {
-    const selectSpy = jest.fn();
-    const view = mount(<SimpleList onSelect={selectSpy}>{anchors}</SimpleList>);
-    view
-      .find('a')
-      .first()
-      .simulate('click', { target: { value: 'r' } });
-    view.update();
-    expect(selectSpy).toBeCalled();
-    expect(view).toMatchSnapshot();
+    const onSelect = jest.fn();
+
+    render(<SimpleList onSelect={onSelect}>{anchors}</SimpleList>);
+
+    userEvent.click(screen.getByText('Item 1'));
+    expect(onSelect).toBeCalled();
   });
 });
 
 describe('SimpleListGroup', () => {
   test('renders content', () => {
-    const view = render(<SimpleListGroup title="Group 1">{items}</SimpleListGroup>);
-    expect(view.container).toMatchSnapshot();
+    render(<SimpleListGroup title="Group 1">{items}</SimpleListGroup>);
+    expect(screen.getByText('Group 1')).toBeInTheDocument();
   });
 });
 
 describe('SimpleListItem', () => {
   test('renders content', () => {
-    const view = render(<SimpleListItem>Item 1</SimpleListItem>);
-    expect(view.container).toMatchSnapshot();
+    render(<SimpleListItem>Item 1</SimpleListItem>);
+    expect(screen.getByText('Item 1')).toBeInTheDocument();
   });
 
   test('renders anchor', () => {
-    const view = render(<SimpleListItem component="a">Item 1</SimpleListItem>);
-    expect(view.container).toMatchSnapshot();
+    render(<SimpleListItem component="a">Item 1</SimpleListItem>);
+    expect(screen.getByText('Item 1')).toBeInTheDocument();
   });
 });

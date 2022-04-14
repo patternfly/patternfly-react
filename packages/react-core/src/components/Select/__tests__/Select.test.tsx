@@ -1,6 +1,9 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
-import { mount } from 'enzyme';
+
+import { configure, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+
 import { Select } from '../Select';
 import { SelectOption, SelectOptionObject } from '../SelectOption';
 import { SelectGroup } from '../SelectGroup';
@@ -34,54 +37,74 @@ const selectOptionsCustom = [
   <SelectOption id="option-3" value={new User('Ms', 'Test', 'Three')} key="2" />
 ];
 
-describe('select', () => {
+// Update testId accessor since data-testid is not passed to the parent component of Select
+configure({ testIdAttribute: 'data-ouia-component-id' });
+
+describe('Select', () => {
   describe('single select', () => {
     test('renders closed successfully', () => {
-      const view = render(
-        <Select toggleId="single-select-closed" variant={SelectVariant.single} onSelect={jest.fn()}
-                onToggle={jest.fn()}>
+      const { asFragment } = render(
+        <Select
+          toggleId="single-select-closed"
+          variant={SelectVariant.single}
+          onSelect={jest.fn()}
+          onToggle={jest.fn()}
+          ouiaId="test-id"
+        >
           {selectOptions}
         </Select>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
 
     test('renders disabled successfully', () => {
-      const view = render(
-        <Select toggleId="single-select-disabled" variant={SelectVariant.single}
-                onSelect={jest.fn()} onToggle={jest.fn()} isDisabled>
+      const { asFragment } = render(
+        <Select
+          toggleId="single-select-disabled"
+          variant={SelectVariant.single}
+          onSelect={jest.fn()}
+          onToggle={jest.fn()}
+          isDisabled
+          ouiaId="test-id"
+        >
           {selectOptions}
         </Select>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
 
     test('renders expanded successfully', () => {
-      const view = render(
-        <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
+      const { asFragment } = render(
+        <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isOpen ouiaId="test-id">
           {selectOptions}
         </Select>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
     test('renders expanded successfully with custom objects', () => {
-      const view = render(
-        <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
+      const { asFragment } = render(
+        <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isOpen ouiaId="test-id">
           {selectOptionsCustom}
         </Select>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 
   test('renders up direction successfully', () => {
-    const view = render(
-      <Select toggleId="select-up" variant={SelectVariant.single} direction={SelectDirection.up}
-              onSelect={jest.fn()} onToggle={jest.fn()}>
+    const { asFragment } = render(
+      <Select
+        toggleId="select-up"
+        variant={SelectVariant.single}
+        direction={SelectDirection.up}
+        onSelect={jest.fn()}
+        onToggle={jest.fn()}
+        ouiaId="test-id"
+      >
         {selectOptions}
       </Select>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('custom select filter', () => {
@@ -99,7 +122,7 @@ describe('select', () => {
             : selectOptions;
         return typeaheadFilteredChildren;
       };
-      const view = mount(
+      render(
         <Select
           toggleId="custom-select-filters"
           variant={SelectVariant.typeahead}
@@ -107,25 +130,36 @@ describe('select', () => {
           onToggle={jest.fn()}
           onFilter={customFilter}
           isOpen
+          ouiaId="test-id"
+          aria-label="Some label"
         >
           {selectOptions}
         </Select>
       );
-      view.find('input').simulate('change', { target: { value: 'r' } });
-      view.update();
-      expect((view.find('Select').state('typeaheadFilteredChildren') as []).length).toBe(3);
-      expect(view).toMatchSnapshot();
+
+      userEvent.type(screen.getByTestId('test-id').querySelector('input'), 'r');
+
+      expect(screen.getByText('Mr')).toBeInTheDocument();
+      expect(screen.getByText('Mrs')).toBeInTheDocument();
+      expect(screen.getByText('Other')).toBeInTheDocument();
     });
   });
 
   test('renders select groups successfully', () => {
-    const view = render(
-      <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isOpen isGrouped>
+    const { asFragment } = render(
+      <Select
+        variant={SelectVariant.single}
+        onSelect={jest.fn()}
+        onToggle={jest.fn()}
+        isOpen
+        isGrouped
+        ouiaId="test-id"
+      >
         <SelectGroup label="group 1">{selectOptions}</SelectGroup>
         <SelectGroup label="group 2">{selectOptions}</SelectGroup>
       </Select>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
@@ -134,73 +168,88 @@ test('renders select with favorites successfully', () => {
     <SelectOption id="option-1" value="Mr" key="00" />,
     <SelectOption id="option-2" value="Mrs" key="01" />,
     <SelectOption id="option-2" value="Ms" key="02" />,
-    <SelectOption id="option-4"  value="Other" key="03" />
+    <SelectOption id="option-4" value="Other" key="03" />
   ];
-  const view = render(
-    <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isOpen isGrouped onFavorite={jest.fn()}
-    favorites={["option-1"]}>
-      <SelectGroup key="group-1" label="group 1">{selectOptionsFavorites}</SelectGroup>
-      <SelectGroup key="group-2" label="group 2">{selectOptionsFavorites}</SelectGroup>
+  const { asFragment } = render(
+    <Select
+      variant={SelectVariant.single}
+      onSelect={jest.fn()}
+      onToggle={jest.fn()}
+      isOpen
+      isGrouped
+      onFavorite={jest.fn()}
+      favorites={['option-1']}
+      ouiaId="test-id"
+    >
+      <SelectGroup key="group-1" label="group 1">
+        {selectOptionsFavorites}
+      </SelectGroup>
+      <SelectGroup key="group-2" label="group 2">
+        {selectOptionsFavorites}
+      </SelectGroup>
     </Select>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 describe('checkbox select', () => {
   test('renders closed successfully', () => {
-    const view = render(
-      <Select toggleId="checkbox-select-closed" variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()}>
-        {selectOptions}
-      </Select>
-    );
-    expect(view.container).toMatchSnapshot();
-  });
-
-  test('renders checkbox select selections properly', () => {
-    const view = render(
-      <Select toggleId="checkbox-select-selections" variant={SelectVariant.checkbox} onToggle={jest.fn()} selections={[selectOptions[0]]}>
-        {selectOptions}
-      </Select>
-    );
-    expect(view.container).toMatchSnapshot();
-  });
-
-  test('renders checkbox select selections properly when isCheckboxSelectionBadgeHidden is true', () => {
-    const view = render(
-      <Select toggleId="checkbox-select-hidden-badge" variant={SelectVariant.checkbox} onToggle={jest.fn()} isCheckboxSelectionBadgeHidden selections={[selectOptions[0]]}>
-        {selectOptions}
-      </Select>
-    );
-    expect(view.container).toMatchSnapshot();
-  });
-
-  test('renders expanded successfully', () => {
-    const view = render(
-      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
-        {selectOptions}
-      </Select>
-    );
-    expect(view.container).toMatchSnapshot();
-  });
-
-  test('renders expanded with filtering successfully', () => {
-    const view = render(
+    const { asFragment } = render(
       <Select
+        toggleId="checkbox-select-closed"
         variant={SelectVariant.checkbox}
         onSelect={jest.fn()}
         onToggle={jest.fn()}
-        onClear={jest.fn()}
-        isOpen
-        hasInlineFilter
+        ouiaId="test-id"
       >
         {selectOptions}
       </Select>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('renders checkbox select selections properly', () => {
+    const { asFragment } = render(
+      <Select
+        toggleId="checkbox-select-selections"
+        variant={SelectVariant.checkbox}
+        onToggle={jest.fn()}
+        selections={[selectOptions[0]]}
+        ouiaId="test-id"
+      >
+        {selectOptions}
+      </Select>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('renders checkbox select selections properly when isCheckboxSelectionBadgeHidden is true', () => {
+    const { asFragment } = render(
+      <Select
+        toggleId="checkbox-select-hidden-badge"
+        variant={SelectVariant.checkbox}
+        onToggle={jest.fn()}
+        isCheckboxSelectionBadgeHidden
+        selections={[selectOptions[0]]}
+        ouiaId="test-id"
+      >
+        {selectOptions}
+      </Select>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('renders expanded successfully', () => {
+    const { asFragment } = render(
+      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isOpen ouiaId="test-id">
+        {selectOptions}
+      </Select>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders expanded with filtering successfully', () => {
-    const view = render(
+    const { asFragment } = render(
       <Select
         toggleId="checkbox-select-expanded-filtered"
         variant={SelectVariant.checkbox}
@@ -209,153 +258,124 @@ describe('checkbox select', () => {
         onClear={jest.fn()}
         isOpen
         hasInlineFilter
+        ouiaId="test-id"
       >
         {selectOptions}
       </Select>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders expanded successfully with custom objects', () => {
-    const view = render(
-      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
+    const { asFragment } = render(
+      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isOpen ouiaId="test-id">
         {selectOptionsCustom}
       </Select>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders checkbox select groups successfully', () => {
-    const view = render(
-      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isOpen isGrouped>
+    const { asFragment } = render(
+      <Select
+        variant={SelectVariant.checkbox}
+        onSelect={jest.fn()}
+        onToggle={jest.fn()}
+        isOpen
+        isGrouped
+        ouiaId="test-id"
+      >
         <SelectGroup label="group 1">{selectOptions}</SelectGroup>
         <SelectGroup label="group 2">{selectOptions}</SelectGroup>
       </Select>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 describe('typeahead select', () => {
   test('renders closed successfully', () => {
-    const view = render(
-      <Select toggleId="typeahead-select-closed" variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()}>
+    const { asFragment } = render(
+      <Select
+        toggleId="typeahead-select-closed"
+        variant={SelectVariant.typeahead}
+        onSelect={jest.fn()}
+        onToggle={jest.fn()}
+        ouiaId="test-id"
+      >
         {selectOptions}
       </Select>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders expanded successfully', () => {
-    const view = render(
-      <Select variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
+    const { asFragment } = render(
+      <Select variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()} isOpen ouiaId="test-id">
         {selectOptions}
       </Select>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders selected successfully', () => {
-    const view = render(
-      <Select variant={SelectVariant.typeahead} selections="Mr" onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
+    const { asFragment } = render(
+      <Select
+        variant={SelectVariant.typeahead}
+        selections="Mr"
+        onSelect={jest.fn()}
+        onToggle={jest.fn()}
+        isOpen
+        ouiaId="test-id"
+      >
         {selectOptions}
       </Select>
     );
-    expect(view.container).toMatchSnapshot();
-  });
-
-  xtest('test onChange', () => {
-    const mockEvent = { target: { value: 'test' } } as React.ChangeEvent<HTMLInputElement>;
-    const view = mount(
-      <Select variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()} onClear={jest.fn()} isOpen>
-        {selectOptions}
-      </Select>
-    );
-    const inst = view.find('Select').instance() as any;
-    inst.onChange(mockEvent);
-    view.update();
-    expect(view).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('test select existing option on a non-creatable select', () => {
-    const mockEvent = { target: { value: 'Oth' } } as React.ChangeEvent<HTMLInputElement>;
-    const view = mount(
-      <Select variant={SelectVariant.typeahead} onToggle={jest.fn()} isOpen>
+    render(
+      <Select variant={SelectVariant.typeahead} onToggle={jest.fn()} isOpen ouiaId="test-id">
         {selectOptions}
       </Select>
     );
-    const inst = view.find('Select').instance() as any;
-    inst.onChange(mockEvent);
-    inst.handleTypeaheadKeys('enter');
-    view.update();
-    expect(view).toMatchSnapshot();
-  });
 
-  // the way we generate random select option ids, and options update as the user types means
-  // that the snapshots for typeahead select don't match the views after options update.
-  xtest('test isInputValuePersisted', () => {
-    const mockEvent = { target: { value: 'zzz' } } as React.ChangeEvent<HTMLInputElement>;
-    const view = mount(
-      <Select variant={SelectVariant.typeahead} onToggle={jest.fn()} isOpen isInputValuePersisted>
-        {selectOptions}
-      </Select>
-    );
-    const inst = view.find('Select').instance() as any;
-    inst.onChange(mockEvent);
-    inst.handleTypeaheadKeys('tab');
-    view.update();
-    expect(view).toMatchSnapshot();
-  });
+    const input = screen.getByTestId('test-id').querySelector('input');
+    userEvent.type(input, 'Other');
+    userEvent.type(input, '{enter}');
 
-  xtest('test select non-existing option on a non-creatable select', () => {
-    const mockEvent = { target: { value: 'NonExistingOption' } } as React.ChangeEvent<HTMLInputElement>;
-    const view = mount(
-      <Select variant={SelectVariant.typeahead} onToggle={jest.fn()} isOpen>
-        {selectOptions}
-      </Select>
-    );
-    const inst = view.find('Select').instance() as any;
-    inst.onChange(mockEvent);
-    inst.handleTypeaheadKeys('enter');
-    view.update();
-    expect(view).toMatchSnapshot();
-  });
-
-  xtest('test creatable option', () => {
-    const mockEvent = { target: { value: 'test' } } as React.ChangeEvent<HTMLInputElement>;
-    const view = mount(
-      <Select variant={SelectVariant.typeahead} onToggle={jest.fn()} isOpen isCreatable>
-        {selectOptions}
-      </Select>
-    );
-    const inst = view.find('Select').instance() as any;
-    inst.onChange(mockEvent);
-    view.update();
-    expect(view).toMatchSnapshot();
+    expect(screen.getByText('Other')).toBeVisible();
   });
 });
 
 describe('typeahead multi select', () => {
   test('renders closed successfully', () => {
-    const view = render(
-      <Select toggleId="typeahead-multi-select-closed" variant={SelectVariant.typeaheadMulti} onSelect={jest.fn()} onToggle={jest.fn()}>
+    const { asFragment } = render(
+      <Select
+        toggleId="typeahead-multi-select-closed"
+        variant={SelectVariant.typeaheadMulti}
+        onSelect={jest.fn()}
+        onToggle={jest.fn()}
+        ouiaId="test-id"
+      >
         {selectOptions}
       </Select>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders expanded successfully', () => {
-    const view = render(
-      <Select variant={SelectVariant.typeaheadMulti} onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
+    const { asFragment } = render(
+      <Select variant={SelectVariant.typeaheadMulti} onSelect={jest.fn()} onToggle={jest.fn()} isOpen ouiaId="test-id">
         {selectOptions}
       </Select>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders selected successfully', () => {
-    const view = render(
+    const { asFragment } = render(
       <Select
         toggleId="typeahead-multi-select-selected"
         variant={SelectVariant.typeaheadMulti}
@@ -363,24 +383,12 @@ describe('typeahead multi select', () => {
         onSelect={jest.fn()}
         onToggle={jest.fn()}
         isOpen
+        ouiaId="test-id"
       >
         {selectOptions}
       </Select>
     );
-    expect(view.container).toMatchSnapshot();
-  });
-
-  xtest('test onChange', () => {
-    const mockEvent = { target: { value: 'test' } } as React.ChangeEvent<HTMLInputElement>;
-    const view = mount(
-      <Select variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()} onClear={jest.fn()} isOpen>
-        {selectOptions}
-      </Select>
-    );
-    const inst = view.find('Select').instance() as any;
-    inst.onChange(mockEvent);
-    view.update();
-    expect(view).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
@@ -388,89 +396,124 @@ describe('API', () => {
   test('click on item', () => {
     const mockToggle = jest.fn();
     const mockSelect = jest.fn();
-    const view = mount(
-      <Select variant="single" onToggle={mockToggle} onSelect={mockSelect} isOpen>
+
+    render(
+      <Select variant="single" onToggle={mockToggle} onSelect={mockSelect} isOpen ouiaId="test-id">
         {selectOptions}
       </Select>
     );
-    view
-      .find('button')
-      .at(1)
-      .simulate('click');
-    expect(mockToggle.mock.calls).toHaveLength(0);
-    expect(mockSelect.mock.calls).toHaveLength(1);
+
+    userEvent.click(screen.getByRole('option', { name: 'Mr' }));
+
+    expect(mockToggle).not.toHaveBeenCalled();
+    expect(mockSelect).toHaveBeenCalled();
   });
 
   test('children only, no console error', () => {
     const myMock = jest.fn();
     global.console = { ...global.console, error: myMock };
-    mount(
+
+    render(
       <Select variant="single" onSelect={jest.fn()} onToggle={jest.fn()} isOpen>
         {selectOptions}
       </Select>
     );
+
     expect(myMock).not.toBeCalled();
   });
 });
 
-
 describe('toggle icon', () => {
   const ToggleIcon = <div>Icon</div>;
+
   test('select single', () => {
-    const view = mount(
-      <Select toggleId="select-toggle-icon-single" toggleIcon={ToggleIcon} variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()}>
+    render(
+      <Select
+        toggleId="select-toggle-icon-single"
+        toggleIcon={ToggleIcon}
+        variant={SelectVariant.single}
+        onSelect={jest.fn()}
+        onToggle={jest.fn()}
+      >
         {selectOptions}
       </Select>
     );
-    expect(view.find('span.pf-c-select__toggle-icon')).toMatchSnapshot();
+    expect(screen.getByText('Icon')).toBeInTheDocument();
   });
 
   test('select checkbox', () => {
-    const view = mount(
-      <Select toggleId="checkbox-select-toggle-icon" toggleIcon={ToggleIcon} variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()}>
+    render(
+      <Select
+        toggleId="checkbox-select-toggle-icon"
+        toggleIcon={ToggleIcon}
+        variant={SelectVariant.checkbox}
+        onSelect={jest.fn()}
+        onToggle={jest.fn()}
+      >
         {selectOptions}
       </Select>
     );
-    expect(view.find('span.pf-c-select__toggle-icon')).toMatchSnapshot();
+    expect(screen.getByText('Icon')).toBeInTheDocument();
   });
 
   test('typeahead select', () => {
-    const view = mount(
-      <Select toggleId="typeahead-select-toggle-icon" toggleIcon={ToggleIcon} variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()}>
+    render(
+      <Select
+        toggleId="typeahead-select-toggle-icon"
+        toggleIcon={ToggleIcon}
+        variant={SelectVariant.typeahead}
+        onSelect={jest.fn()}
+        onToggle={jest.fn()}
+      >
         {selectOptions}
       </Select>
     );
-    expect(view.find('span.pf-c-select__toggle-icon')).toMatchSnapshot();
+    expect(screen.getByText('Icon')).toBeInTheDocument();
   });
 
   test('typeahead multi select', () => {
-    const view = mount(
-      <Select toggleId="multi-typeahead-select-toggle-icon" toggleIcon={ToggleIcon} variant={SelectVariant.typeaheadMulti} onSelect={jest.fn()} onToggle={jest.fn()}>
+    render(
+      <Select
+        toggleId="multi-typeahead-select-toggle-icon"
+        toggleIcon={ToggleIcon}
+        variant={SelectVariant.typeaheadMulti}
+        onSelect={jest.fn()}
+        onToggle={jest.fn()}
+      >
         {selectOptions}
       </Select>
     );
-    expect(view.find('span.pf-c-select__toggle-icon')).toMatchSnapshot();
+    expect(screen.getByText('Icon')).toBeInTheDocument();
   });
 });
 
 describe('select with custom content', () => {
   test('renders closed successfully', () => {
-    const view = render(<Select toggleId="select-custom-content" customContent="testing custom" onToggle={jest.fn()} />);
-    expect(view.container).toMatchSnapshot();
+    render(<Select toggleId="select-custom-content" customContent="testing custom" onToggle={jest.fn()} />);
+    expect(screen.queryByText('testing custom')).toBeNull();
   });
+
   test('renders expanded successfully', () => {
-    const view = render(<Select customContent="testing custom" onToggle={jest.fn()} isOpen />);
-    expect(view.container).toMatchSnapshot();
+    render(<Select customContent="testing custom" onToggle={jest.fn()} isOpen />);
+    expect(screen.getByText('testing custom')).toBeInTheDocument();
   });
 });
 
 describe('select with placeholder', () => {
   test('applies the placeholder class when not selected', () => {
-    const view = mount(<Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} hasPlaceholderStyle />);
-    expect(view.find('button.pf-m-placeholder')).toMatchSnapshot();
+    render(<Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} hasPlaceholderStyle />);
+    expect(screen.getByRole('button', { name: 'Options menu' })).toHaveClass('pf-m-placeholder');
   });
   test('does not apply the placeholder class when selected', () => {
-    const view = mount(<Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} hasPlaceholderStyle selections={['selected option']} />);
-    expect(view.find('button.pf-m-placeholder').length).toBeFalsy();
+    render(
+      <Select
+        variant={SelectVariant.single}
+        onSelect={jest.fn()}
+        onToggle={jest.fn()}
+        hasPlaceholderStyle
+        selections={['selected option']}
+      />
+    );
+    expect(screen.getByRole('button', { name: 'Options menu' })).not.toHaveClass('pf-m-placeholder');
   });
 });

@@ -19,7 +19,7 @@ import DemoDefaultNode from './components/DemoDefaultNode';
 import defaultLayoutFactory from './layouts/defaultLayoutFactory';
 import withTopologySetup from './utils/withTopologySetup';
 
-const GroupWithDecorator: React.FC<{ element: Node } & WithDragNodeProps> = observer(props => {
+const GroupWithDecorator: React.FunctionComponent<{ element: Node } & WithDragNodeProps> = observer(props => {
   const trafficSourceRef = useSvgAnchor(AnchorEnd.source, 'traffic');
   const b = props.element.getBounds();
   return (

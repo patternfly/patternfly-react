@@ -1,4 +1,5 @@
 export * from './BaseLayout';
+export * from './BreadthFirstLayout';
 export * from './ColaLayout';
 export * from './ConcentricLayout';
 export * from './DagreLayout';

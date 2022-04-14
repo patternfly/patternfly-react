@@ -1,32 +1,32 @@
-import * as React from 'react';
+import React from 'react';
+
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+
 import { Bullseye } from '../Bullseye';
-import { render } from '@testing-library/react';
-import { shallow } from 'enzyme';
 
-test('renders with PatternFly Core styles', () => {
-  const view = render(<Bullseye />);
-  expect(view.container).toMatchSnapshot();
-});
+describe('Bullseye', () => {
+  test('renders with PatternFly Core styles', () => {
+    const { asFragment } = render(<Bullseye />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-test('className is added to the root element', () => {
-  const view = shallow(<Bullseye className="extra-class" />);
-  expect(view.prop('className')).toMatchSnapshot();
-});
+  test('className is added to the root element', () => {
+    render(<Bullseye className="extra-class" data-testid='test-id' />);
+    expect(screen.getByTestId('test-id')).toHaveClass('extra-class');
+  });
 
-test('extra props are spread to the root element', () => {
-  const testId = 'bullseye';
-  const view = shallow(<Bullseye data-testid={testId} />);
-  expect(view.prop('data-testid')).toBe(testId);
-});
+  test('allows passing in a string as the component', () => {
+    const component = 'button';
 
-test('allows passing in a string as the component', () => {
-  const component = 'div';
-  const view = shallow(<Bullseye component={component} />);
-  expect(view.type()).toBe(component);
-});
+    render(<Bullseye component={component} />);
+    expect(screen.getByRole('button')).toBeInTheDocument();
+  });
 
-test('allows passing in a React Component as the component', () => {
-  const Component: React.FunctionComponent = () => null;
-  const view = shallow(<Bullseye component={Component as unknown as (keyof JSX.IntrinsicElements)} />);
-  expect(view.type()).toBe(Component);
+  test('allows passing in a React Component as the component', () => {
+    const Component: React.FunctionComponent = () => <div>Some text</div>;
+
+    render(<Bullseye component={(Component as unknown) as keyof JSX.IntrinsicElements} />);
+    expect(screen.getByText('Some text')).toBeInTheDocument();
+  });
 });

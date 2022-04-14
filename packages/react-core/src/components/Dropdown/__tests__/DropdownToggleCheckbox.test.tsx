@@ -54,6 +54,6 @@ describe('DropdownToggleCheckbox', () => {
     render(<DropdownToggleCheckbox id="check" {...props} aria-label="check" />);
 
     userEvent.click(screen.getByRole('checkbox'));
-    expect(props.onChange.mock.calls[0][0]).toBe(true);
+    expect(props.onChange).toHaveBeenCalledWith(true, expect.any(Object));
   });
 });

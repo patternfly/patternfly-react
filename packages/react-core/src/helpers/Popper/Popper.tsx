@@ -14,17 +14,6 @@ const getOppositePlacement = (placement: Placement): any =>
     (matched: string) => hash[matched as 'left' | 'right' | 'bottom' | 'top'] as BasePlacement
   );
 
-export interface ToggleMenuBaseProps {
-  /** The container to append the menu to. Defaults to 'inline'
-   * If your menu is being cut off you can append it to an element higher up the DOM tree.
-   * Some examples:
-   * menuAppendTo="parent"
-   * menuAppendTo={() => document.body}
-   * menuAppendTo={document.getElementById('target')}
-   */
-  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'parent' | 'inline';
-}
-
 export const getOpacityTransition = (animationDuration: number) =>
   `opacity ${animationDuration}ms cubic-bezier(.54, 1.5, .38, 1.11)`;
 
@@ -149,13 +138,11 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   const [popperElement, setPopperElement] = React.useState(null);
   const [ready, setReady] = React.useState(false);
   const refOrTrigger = refElement || triggerElement;
-  const onDocumentClickCallback = React.useCallback(event => onDocumentClick(event, refOrTrigger, popperElement), [
-    isVisible,
-    triggerElement,
-    refElement,
-    popperElement,
-    onDocumentClick
-  ]);
+  const onDocumentClickCallback = React.useCallback(
+    (event: MouseEvent) => onDocumentClick(event, refOrTrigger, popperElement),
+    [isVisible, triggerElement, refElement, popperElement, onDocumentClick]
+  );
+
   React.useEffect(() => {
     setReady(true);
   }, []);

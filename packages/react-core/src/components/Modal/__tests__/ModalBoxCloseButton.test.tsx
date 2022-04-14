@@ -1,14 +1,17 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import { ModalBoxCloseButton } from '../ModalBoxCloseButton';
 
-test('ModalBoxCloseButton Test', () => {
-  const mockfn = jest.fn();
-  const view = shallow(<ModalBoxCloseButton className="test-box-close-button-class" onClose={mockfn} />);
-  expect(view).toMatchSnapshot();
-  view
-    .find('.test-box-close-button-class')
-    .at(0)
-    .simulate('click');
-  expect(mockfn.mock.calls).toHaveLength(1);
+describe('ModalBoxCloseButton', () => {
+  test('onClose called when clicked', () => {
+    const onClose = jest.fn();
+
+    render(<ModalBoxCloseButton className="test-box-close-button-class" onClose={onClose} />);
+
+    userEvent.click(screen.getByRole('button'));
+    expect(onClose).toHaveBeenCalledTimes(1);
+  });
 });

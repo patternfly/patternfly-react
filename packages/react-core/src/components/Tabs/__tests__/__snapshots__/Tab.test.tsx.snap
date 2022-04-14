@@ -4,13 +4,16 @@ exports[`should not render anything 1`] = `
 <div>
   <li
     class="pf-c-tabs__item"
+    role="presentation"
   >
     <button
       aria-controls="pf-tab-section-0-"
+      aria-selected="false"
       class="pf-c-tabs__link"
       data-ouia-component-type="PF4/TabButton"
       data-ouia-safe="true"
       id="pf-tab-0-"
+      role="tab"
     >
       <span
         class="pf-c-tabs__item-text"

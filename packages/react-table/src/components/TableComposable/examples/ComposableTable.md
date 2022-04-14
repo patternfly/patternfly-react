@@ -34,6 +34,7 @@ propComponents:
   ]
 ouia: true
 ---
+import { Link } from '@reach/router';
 
 # Table Composable
 
@@ -43,7 +44,7 @@ PatternFly has two implementations of a React table.
 
 The first is the newer `TableComposable` component. It takes a more explicit and declarative approach, and its implementation more closely mirrors that of an HTML table. Generally, updates and new feature requests are implemented in the `TableComposable`.
 
-The second is the original `Table` component. It is configuration based and takes a less declarative and more implicit approach about laying out the table structure, such as the rows and cells within it. Its documentation can be found <a href="/components/table/react-legacy">here</a>.
+The second is the original `Table` component. It is configuration based and takes a less declarative and more implicit approach about laying out the table structure, such as the rows and cells within it. The documentation for the older table implementation can be found under the <Link to="/components/table/react-legacy">React legacy</Link> tab.
 
 **For most common use cases, we recommend using `TableComposable`. Both implementations are supported and fully maintained.**
 

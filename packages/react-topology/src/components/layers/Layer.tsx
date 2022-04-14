@@ -38,7 +38,7 @@ const compare = (a: ChildNode, b: ChildNode): number => {
   return ao.length === bo.length ? 0 : ao.length - bo.length;
 };
 
-const LayerDelegate: React.FC<LayerDelegateProps> = observer(({ id, children, orderKey }) => {
+const LayerDelegate: React.FunctionComponent<LayerDelegateProps> = observer(({ id, children, orderKey }) => {
   const getLayerNode = React.useContext(LayersContext);
   const layerNode = getLayerNode(id);
 
@@ -76,7 +76,7 @@ const LayerDelegate: React.FC<LayerDelegateProps> = observer(({ id, children, or
   return createPortal(<LayerContainer ref={nodeRef}>{children}</LayerContainer>, layerNode);
 });
 
-const Layer: React.FC<LayerProps> = ({ id, children, orderKey }) =>
+const Layer: React.FunctionComponent<LayerProps> = ({ id, children, orderKey }) =>
   id ? (
     <LayerDelegate id={id} orderKey={orderKey}>
       {children}

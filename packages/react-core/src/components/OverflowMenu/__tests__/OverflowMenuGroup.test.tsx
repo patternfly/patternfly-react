@@ -1,47 +1,46 @@
-import * as React from 'react';
-import { mount } from 'enzyme';
+import React from 'react';
+
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { OverflowMenuGroup } from '../OverflowMenuGroup';
 import { OverflowMenuContext } from '../OverflowMenuContext';
 
 describe('OverflowMenuGroup', () => {
   test('isPersistent and below breakpoint should still show', () => {
-    const view = mount(
+    render(
       <OverflowMenuContext.Provider value={{ isBelowBreakpoint: true }}>
-        <OverflowMenuGroup isPersistent />
+        <OverflowMenuGroup isPersistent data-testid="test-id" />
       </OverflowMenuContext.Provider>
     );
-    expect(view.find(`.${styles.overflowMenuGroup}`).length).toBe(1);
-    expect(view).toMatchSnapshot();
+    expect(screen.getByTestId('test-id')).toHaveClass(styles.overflowMenuGroup);
   });
 
   test('Below breakpoint but not isPersistent should not show', () => {
-    const view = mount(
+    render(
       <OverflowMenuContext.Provider value={{ isBelowBreakpoint: true }}>
-        <OverflowMenuGroup />
+        <OverflowMenuGroup data-testid="test-id" />
       </OverflowMenuContext.Provider>
     );
-    expect(view.find(`.${styles.overflowMenuGroup}`).length).toBe(0);
-    expect(view).toMatchSnapshot();
+    expect(screen.queryByTestId('test-id')).toBeNull();
   });
 
   test('Button group', () => {
-    const view = mount(
+    render(
       <OverflowMenuContext.Provider value={{ isBelowBreakpoint: false }}>
-        <OverflowMenuGroup groupType="button" />
+        <OverflowMenuGroup groupType="button" data-testid="test-id" />
       </OverflowMenuContext.Provider>
     );
-    expect(view.find(`.${styles.modifiers.buttonGroup}`).length).toBe(1);
-    expect(view).toMatchSnapshot();
+    expect(screen.getByTestId('test-id')).toHaveClass(styles.modifiers.buttonGroup);
   });
 
   test('Icon group', () => {
-    const view = mount(
+    render(
       <OverflowMenuContext.Provider value={{ isBelowBreakpoint: false }}>
-        <OverflowMenuGroup groupType="icon" />
+        <OverflowMenuGroup groupType="icon" data-testid="test-id" />
       </OverflowMenuContext.Provider>
     );
-    expect(view.find(`.${styles.modifiers.iconButtonGroup}`).length).toBe(1);
-    expect(view).toMatchSnapshot();
+    expect(screen.getByTestId('test-id')).toHaveClass(styles.modifiers.iconButtonGroup);
   });
 });

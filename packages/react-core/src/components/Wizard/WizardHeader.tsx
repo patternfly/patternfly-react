@@ -12,6 +12,8 @@ export interface WizardHeaderProps {
   title: string;
   /** Description of the wizard */
   description?: React.ReactNode;
+  /** Component type of the description */
+  descriptionComponent?: 'div' | 'p';
   /** Flag indicating whether the close button should be in the header */
   hideClose?: boolean;
   /** Aria-label applied to the X (Close) button */
@@ -29,6 +31,7 @@ export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
   hideClose,
   closeButtonAriaLabel,
   titleId,
+  descriptionComponent: Component = 'p',
   descriptionId
 }: WizardHeaderProps) => (
   <div className={css(styles.wizardHeader)}>
@@ -41,9 +44,9 @@ export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
       {title || <>&nbsp;</>}
     </Title>
     {description && (
-      <p className={css(styles.wizardDescription)} id={descriptionId}>
+      <Component className={css(styles.wizardDescription)} id={descriptionId}>
         {description}
-      </p>
+      </Component>
     )}
   </div>
 );

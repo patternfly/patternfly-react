@@ -159,7 +159,7 @@ export const ComposableTableTree: React.FunctionComponent = () => {
         'aria-posinset': posinset,
         'aria-setsize': node.children ? node.children.length : 0,
         isChecked,
-        checkboxId: `checkbox_id_${node.name.replace(/\s+/g, '')}`,
+        checkboxId: `checkbox_id_${node.name.toLowerCase().replace(/\s+/g, '_')}`,
         icon
       }
     };

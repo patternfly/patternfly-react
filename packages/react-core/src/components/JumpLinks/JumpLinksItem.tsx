@@ -33,7 +33,11 @@ export const JumpLinksItem: React.FunctionComponent<JumpLinksItemProps> = ({
   children = childrenArr.filter(child => child.type !== JumpLinksList);
 
   return (
-    <li className={css(styles.jumpLinksItem, isActive && styles.modifiers.current, className)} {...props}>
+    <li
+      className={css(styles.jumpLinksItem, isActive && styles.modifiers.current, className)}
+      {...(isActive && { 'aria-current': 'location' })}
+      {...props}
+    >
       <a className={styles.jumpLinksLink} href={href} onClick={onClick}>
         <span className={styles.jumpLinksLinkText}>{children}</span>
       </a>

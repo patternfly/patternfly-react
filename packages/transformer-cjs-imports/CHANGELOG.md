@@ -3,6 +3,189 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.40.37 (2022-04-14)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
+
+
+
+
+## 4.40.36 (2022-04-14)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
+
+
+
+
+## 4.40.35 (2022-04-13)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
+
+
+
+
+## 4.40.34 (2022-04-13)
+
+
+### Bug Fixes
+
+* **ContextSelector:** fix listener handling when using popper ([#7165](https://github.com/patternfly/patternfly-react/issues/7165)) ([af89d6a](https://github.com/patternfly/patternfly-react/commit/af89d6a334d0052205473d313ea5be0e64f3847c))
+
+
+
+
+
+## 4.40.33 (2022-04-13)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
+
+
+
+
+## 4.40.32 (2022-04-13)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
+
+
+
+
+## 4.40.31 (2022-04-13)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
+
+
+
+
+## 4.40.30 (2022-04-13)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
+
+
+
+
+## 4.40.29 (2022-04-12)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
+
+
+
+
+## 4.40.28 (2022-04-12)
+
+
+### Bug Fixes
+
+* **demo-app:** reorder css imports to load in dark theme correctly ([#7224](https://github.com/patternfly/patternfly-react/issues/7224)) ([1341c93](https://github.com/patternfly/patternfly-react/commit/1341c9396a25f6850bf4e961e40c9ddd182d9d3b))
+
+
+
+
+
+## 4.40.27 (2022-04-12)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
+
+
+
+
+## 4.40.26 (2022-04-12)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
+
+
+
+
+## 4.40.25 (2022-04-11)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
+
+
+
+
+## 4.40.24 (2022-04-11)
+
+
+### Bug Fixes
+
+* **Select:** prevent footer clicks from toggling ([#7193](https://github.com/patternfly/patternfly-react/issues/7193)) ([2cd10c2](https://github.com/patternfly/patternfly-react/commit/2cd10c2a0a11dcd14f85116369fd47dffcb12295))
+
+
+
+
+
+## 4.40.23 (2022-04-11)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
+
+
+
+
+## 4.40.22 (2022-04-11)
+
+
+### Bug Fixes
+
+* **react-styles:** support esm import and export ([#7084](https://github.com/patternfly/patternfly-react/issues/7084)) ([b66ea14](https://github.com/patternfly/patternfly-react/commit/b66ea14fa0949b0626184455a4df46312b87171a))
+
+
+
+
+
+## 4.40.21 (2022-04-11)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
+
+
+
+
+## 4.40.20 (2022-04-08)
+
+
+### Bug Fixes
+
+* **NumberInput:** Custom increment/decrement and thresholds ([#7159](https://github.com/patternfly/patternfly-react/issues/7159)) ([28853de](https://github.com/patternfly/patternfly-react/commit/28853de1d02a4d46d81100da895d5e73a3ec05cf))
+
+
+
+
+
+## 4.40.19 (2022-04-08)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
+
+
+
+
+## 4.40.18 (2022-04-08)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
+
+
+
+
+## 4.40.17 (2022-04-08)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
+
+
+
+
 ## 4.40.16 (2022-04-07)
 
 **Note:** Version bump only for package transformer-cjs-imports

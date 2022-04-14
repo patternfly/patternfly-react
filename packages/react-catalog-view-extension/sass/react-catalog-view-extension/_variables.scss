@@ -1,2 +1,7 @@
-$vertical-tab-pf-color:                 initial;
-$vertical-tab-pf-active-color:          $pf-color-blue-400;
+$vertical-tab-pf-color: var(--pf-global--Color--100) !default;
+$vertical-tab-pf-active-color: var(--pf-global--active-color--100) !default;
+
+:root {
+  --vertical-tab-pf-color: #{$vertical-tab-pf-color};
+  --vertical-tab-pf-active-color: #{$vertical-tab-pf-active-color};
+}
