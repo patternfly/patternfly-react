@@ -14,7 +14,7 @@ export class ProgressStepperDemo extends Component {
           id="popover-step1"
           titleId="popover-step1-title"
           aria-label="completed step with popover, step with success"
-          popoverRender={({ stepRef }) => (
+          popoverRender={({ stepRef }: { stepRef: React.RefObject<any> }) => (
             <Popover
               aria-label="First step help"
               headerContent={<div>First step popover</div>}
@@ -31,7 +31,7 @@ export class ProgressStepperDemo extends Component {
           id="popover-step2"
           titleId="popover-step2-title"
           aria-label="completed step with popover, step with danger"
-          popoveRender={({ stepRef }) => (
+          popoverRender={({ stepRef }: { stepRef: React.RefObject<any> }) => (
             <Popover
               aria-label="Second step help"
               headerContent={<div>Second step popover</div>}
@@ -48,7 +48,7 @@ export class ProgressStepperDemo extends Component {
           id="popover-step3"
           titleId="popover-step3-title"
           aria-label="current step with popover"
-          popoverRender={({ stepRef }) => (
+          popoverRender={({ stepRef }: { stepRef: React.RefObject<any> }) => (
             <Popover
               aria-label="Third step help"
               headerContent={<div>Third step popover</div>}

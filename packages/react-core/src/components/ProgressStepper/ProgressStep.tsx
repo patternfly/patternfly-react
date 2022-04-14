@@ -26,7 +26,7 @@ export interface ProgressStepProps
    * step's icon, including the variant and the completed status. */
   'aria-label'?: string;
   /** Forwards the step ref to rendered function.  Use this prop to add a popover to the step.*/
-  popoverRender?: ({ stepRef }: { stepRef: React.Ref<any> }) => React.ReactNode;
+  popoverRender?: ({ stepRef }: { stepRef: React.RefObject<any> }) => React.ReactNode;
 }
 
 const variantIcons = {
