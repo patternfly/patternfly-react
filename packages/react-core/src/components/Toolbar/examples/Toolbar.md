@@ -640,7 +640,7 @@ import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup 
 import { Select, SelectOption, SelectVariant, SearchInput } from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
-class ToolbarConsumerMangedToggleGroup extends React.Component {
+class ToolbarConsumerManagedToggleGroup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
