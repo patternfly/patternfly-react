@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.54.0 (2022-04-14)
+
+
+### Features
+
+* **MenuToggle:** Add full width modifier ([#7232](https://github.com/patternfly/patternfly-react/issues/7232)) ([789a8a3](https://github.com/patternfly/patternfly-react/commit/789a8a3f1cb1f1d90565f8d0e6c0dbe984c0c66b))
+
+
+
+
+
 ## 4.53.37 (2022-04-14)
 
 **Note:** Version bump only for package @patternfly/react-icons
