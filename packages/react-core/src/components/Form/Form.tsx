@@ -11,7 +11,7 @@ export interface FormProps extends React.HTMLProps<HTMLFormElement> {
   isHorizontal?: boolean;
   /** Limits the max-width of the form. */
   isWidthLimited?: boolean;
-  /** Sets a custom max-width when using isWidthLimited. */
+  /** Sets a custom max-width for the form. */
   maxWidth?: string;
 }
 
@@ -35,8 +35,7 @@ export const Form: React.FunctionComponent<FormProps> = ({
     className={css(
       styles.form,
       isHorizontal && styles.modifiers.horizontal,
-      isWidthLimited && styles.modifiers.limitWidth,
-      maxWidth && styles.modifiers.limitWidth,
+      (isWidthLimited || maxWidth) && styles.modifiers.limitWidth,
       className
     )}
   >
