@@ -171,6 +171,7 @@ const DefaultNode: React.FunctionComponent<DefaultNodeProps> = ({
     className,
     isHover && 'pf-m-hover',
     (dragging || edgeDragging) && 'pf-m-dragging',
+    canDrop && 'pf-m-highlight',
     canDrop && dropTarget && 'pf-m-drop-target',
     selected && 'pf-m-selected',
     StatusModifier[status]
