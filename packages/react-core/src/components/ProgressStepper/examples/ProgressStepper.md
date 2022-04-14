@@ -379,7 +379,7 @@ PopoverProgressStep = () => {
         id="popover-step3"
         titleId="popover-step3-title"
         aria-label="step with popover"
-        render={({ stepRef }) => (
+        popoverRender={({ stepRef }) => (
           <Popover
             aria-label="Third step help"
             headerContent={<div>Third step popover</div>}

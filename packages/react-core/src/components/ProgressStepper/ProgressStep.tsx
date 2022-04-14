@@ -25,8 +25,8 @@ export interface ProgressStepProps
   /** Accessible label for the progress step. Should communicate all information being communicated by the progress
    * step's icon, including the variant and the completed status. */
   'aria-label'?: string;
-  /** Forwards the stepRef to rendered function.  Use this prop to add a popover to the step.*/
-  render?: ({ stepRef }: { stepRef: React.RefObject<any> }) => React.ReactNode;
+  /** Forwards the step ref to rendered function.  Use this prop to add a popover to the step.*/
+  popoverRender?: ({ stepRef }: { stepRef: React.Ref<any> }) => React.ReactNode;
 }
 
 const variantIcons = {
@@ -56,11 +56,11 @@ export const ProgressStep: React.FunctionComponent<ProgressStepProps> = ({
   icon,
   titleId,
   'aria-label': ariaLabel,
-  render,
+  popoverRender,
   ...props
 }: ProgressStepProps) => {
   const _icon = icon !== undefined ? icon : variantIcons[variant];
-  const Component = render !== undefined ? 'span' : 'div';
+  const Component = popoverRender !== undefined ? 'span' : 'div';
   const stepRef = React.useRef();
 
   if (props.id === undefined || titleId === undefined) {
@@ -87,14 +87,14 @@ export const ProgressStep: React.FunctionComponent<ProgressStepProps> = ({
       </div>
       <div className={css(styles.progressStepperStepMain)}>
         <Component
-          className={css(styles.progressStepperStepTitle, render && styles.modifiers.helpText)}
+          className={css(styles.progressStepperStepTitle, popoverRender && styles.modifiers.helpText)}
           id={titleId}
           ref={stepRef}
-          {...(render && { tabIndex: 0, role: 'button', type: 'button' })}
+          {...(popoverRender && { tabIndex: 0, role: 'button', type: 'button' })}
           {...(props.id !== undefined && titleId !== undefined && { 'aria-labelledby': `${props.id} ${titleId}` })}
         >
           {children}
-          {render && render({ stepRef })}
+          {popoverRender && popoverRender({ stepRef })}
         </Component>
         {description && <div className={css(styles.progressStepperStepDescription)}>{description}</div>}
       </div>
