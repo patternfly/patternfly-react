@@ -63,7 +63,7 @@ export class PaginationButtonVariantDemo extends React.Component<
         </Title>
         <React.Fragment>
           <Pagination
-            component="button"
+            perPageComponent="button"
             itemCount={523}
             perPage={this.state.perPage}
             page={this.state.topPage}
@@ -73,7 +73,7 @@ export class PaginationButtonVariantDemo extends React.Component<
             onPerPageSelect={this.onPerPageSelect}
           />
           <Pagination
-            component="button"
+            perPageComponent="button"
             itemCount={523}
             widgetId="pagination-options-menu-bottom"
             className="pagination-options-menu-bottom"
@@ -84,7 +84,7 @@ export class PaginationButtonVariantDemo extends React.Component<
             onPerPageSelect={this.onPerPageSelect}
           />
           <Pagination
-            component="button"
+            perPageComponent="button"
             itemCount={523}
             widgetId="pagination-options-menu-default-fullpage"
             className="pagination-options-menu-default-fullpage"
@@ -108,7 +108,7 @@ export class PaginationButtonVariantDemo extends React.Component<
         </Title>
         <React.Fragment>
           <Pagination
-            component="button"
+            perPageComponent="button"
             itemCount={523}
             perPage={this.state.perPage}
             page={this.state.topPage}
@@ -131,7 +131,7 @@ export class PaginationButtonVariantDemo extends React.Component<
         </Title>
         <React.Fragment>
           <Pagination
-            component="button"
+            perPageComponent="button"
             isSticky
             itemCount={523}
             perPage={this.state.perPage}

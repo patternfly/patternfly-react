@@ -9,9 +9,9 @@ import { DropdownToggle } from '../Dropdown';
 export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
   /** The type or title of the items being paginated */
   itemsTitle?: string;
-  /** Accessible label for the Options Toggle */
+  /** Accessible label for the options toggle */
   optionsToggle?: string;
-  /** The Title of the Pagination Options Menu */
+  /** The title of the pagination options menu */
   itemsPerPageTitle?: string;
   /** The first index of the items being paginated */
   firstIndex?: number;
@@ -19,15 +19,15 @@ export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
   lastIndex?: number;
   /** The total number of items being paginated */
   itemCount?: number;
-  /** Id added to the title of the Pagination Options Menu */
+  /** Id added to the title of the pagination options menu */
   widgetId?: string;
   /** showToggle */
   showToggle?: boolean;
-  /** Event function that fires when user clicks the Options Menu toggle */
+  /** Event function that fires when user clicks the options menu toggle */
   onToggle?: (isOpen: boolean) => void;
-  /** Flag indicating if the Options Menu dropdown is open or not */
+  /** Flag indicating if the options menu dropdown is open or not */
   isOpen?: boolean;
-  /** Flag indicating if the Options Menu is disabled */
+  /** Flag indicating if the options menu is disabled */
   isDisabled?: boolean;
   /** */
   parentRef?: HTMLElement;
@@ -37,8 +37,10 @@ export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
   onEnter?: () => void;
   /** Label for the English word "of" */
   ofWord?: string;
-  /** Component to be used for wrapping the toggle contents. */
-  component?: 'div' | 'button';
+  /** Component to be used for wrapping the toggle contents. Use 'button' when you want
+   * all of the toggle text to be clickable.
+   */
+  perPageComponent?: 'div' | 'button';
 }
 
 let toggleId = 0;
@@ -60,9 +62,9 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   parentRef = null,
   toggleTemplate: ToggleTemplate,
   onEnter = null,
-  component = 'div'
+  perPageComponent = 'div'
 }: OptionsToggleProps) => {
-  const isDiv = component === 'div';
+  const isDiv = perPageComponent === 'div';
   const toggleClasses = css(
     styles.optionsMenuToggle,
     isDisabled && styles.modifiers.disabled,

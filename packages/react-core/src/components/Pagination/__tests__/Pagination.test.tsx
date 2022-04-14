@@ -109,7 +109,7 @@ describe('Pagination', () => {
     });
 
     test('should render correctly button variant', () => {
-      const { asFragment } = render(<Pagination component="button" itemCount={20} />);
+      const { asFragment } = render(<Pagination perPageComponent="button" itemCount={20} />);
       expect(asFragment()).toMatchSnapshot();
     });
   });
