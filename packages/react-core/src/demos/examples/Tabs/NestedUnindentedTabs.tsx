@@ -19,7 +19,7 @@ import {
 } from '@patternfly/react-core';
 import DashboardWrapper from '../DashboardWrapper';
 
-export const NestedTabs: React.FunctionComponent = () => {
+export const NestedUnindentedTabs: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(1);
   const [activeNestedTabKey, setActiveNestedTabKey] = React.useState(10);
 
