@@ -17,7 +17,10 @@ export interface HelperTextItemProps extends React.HTMLProps<HTMLDivElement | HT
   variant?: 'default' | 'indeterminate' | 'warning' | 'success' | 'error';
   /** Custom icon prefixing the helper text. This property will override the default icon paired with each helper text variant. */
   icon?: React.ReactNode;
-  /** Flag indicating the helper text item is dynamic. */
+  /** Flag indicating the helper text item is dynamic. This prop should be used when the
+   * text content of the helper text item will never change, but the icon and styling will
+   * be dynamically updated via the `variant` prop.
+   */
   isDynamic?: boolean;
   /** Flag indicating the helper text should have an icon. Dynamic helper texts include icons by default while static helper texts do not. */
   hasIcon?: boolean;
