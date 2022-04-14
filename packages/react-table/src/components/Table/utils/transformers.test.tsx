@@ -16,9 +16,65 @@ import {
   expandable,
   expandedRow,
   wrappable,
-  textCenter
+  textCenter,
+  cellActions
 } from './';
-import { IExtra } from '../TableTypes';
+import { DropdownPosition, DropdownDirection } from '@patternfly/react-core';
+import {
+  IAction,
+  IActions,
+  IActionsResolver,
+  IAreActionsDisabled,
+  IExtra,
+  IExtraData,
+  IRowData,
+  ISeparator
+} from '../TableTypes';
+
+const testCellActions = ({
+  actions,
+  actionResolver,
+  areActionsDisabled,
+  rowData,
+  extraData,
+  expectDisabled
+}: {
+  actions?: IActions;
+  actionResolver?: IActionsResolver;
+  areActionsDisabled?: IAreActionsDisabled;
+  rowData?: IRowData;
+  extraData?: IExtraData;
+  expectDisabled?: boolean;
+}) => {
+  const returnedData = cellActions(
+    actions,
+    actionResolver,
+    areActionsDisabled
+  )('', {
+    rowIndex: 0,
+    rowData,
+    column: {
+      extraParams: {
+        dropdownPosition: DropdownPosition.right,
+        dropdownDirection: DropdownDirection.down
+      }
+    }
+  });
+
+  if (actionResolver) {
+    actions = actionResolver(rowData, extraData);
+  }
+
+  expect(returnedData).toMatchObject({ className: 'pf-c-table__action' });
+
+  if (!actions || actions.length === 0) {
+    expect(returnedData.children).toBeUndefined();
+  } else {
+    const { container } = render(returnedData.children as React.ReactElement<any>);
+    userEvent.click(container.querySelectorAll('.pf-c-dropdown button')[0]);
+    expect(container.querySelectorAll('.pf-c-dropdown__menu li button')).toHaveLength(expectDisabled ? 0 : 1);
+  }
+};
 
 describe('Transformer functions', () => {
   describe('selectable', () => {
@@ -29,6 +85,12 @@ describe('Transformer functions', () => {
       };
       const returnedData = selectable('', { column, rowData: {} } as IExtra);
       expect(returnedData).toMatchObject({ className: 'pf-c-table__check' });
+
+      render(returnedData.children as React.ReactElement<any>);
+
+      userEvent.type(screen.getByRole('textbox'), 'a');
+      expect(onSelect).toHaveBeenCalledTimes(1);
+      expect(onSelect.mock.results[0].value).toMatchObject({ rowId: -1, selected: false });
     });
 
     test('selected', () => {
@@ -38,6 +100,12 @@ describe('Transformer functions', () => {
       };
       const returnedData = selectable('', { column, rowIndex: 0, rowData: { selected: true } } as IExtra);
       expect(returnedData).toMatchObject({ className: 'pf-c-table__check' });
+
+      render(returnedData.children as React.ReactElement<any>);
+
+      userEvent.type(screen.getByRole('textbox'), 'a');
+      expect(onSelect).toHaveBeenCalledTimes(1);
+      expect(onSelect.mock.results[0].value).toMatchObject({ rowId: 0, selected: false });
     });
 
     test('unselected', () => {
@@ -83,6 +151,48 @@ describe('Transformer functions', () => {
       userEvent.click(screen.getByRole('button'));
       expect(onSort.mock.calls).toHaveLength(1);
     });
+  });
+
+  test('simpleCellActions', () => {
+    const actions: IActions = [
+      {
+        title: 'Some',
+        onClick: jest.fn()
+      }
+    ];
+
+    const actionConfigs = [
+      {
+        actions: [] as IActions
+      },
+      {
+        actions
+      },
+      {
+        actionResolver: () => null as (IAction | ISeparator)[]
+      },
+      {
+        actionResolver: () => actions as (IAction | ISeparator)[]
+      },
+      {
+        actionResolver: () => actions as (IAction | ISeparator)[],
+        areActionsDisabled: () => false
+      },
+      {
+        actions,
+        rowData: {
+          disableActions: true
+        } as IRowData,
+        expectDisabled: true
+      },
+      {
+        actionResolver: () => actions,
+        areActionsDisabled: () => true,
+        expectDisabled: true
+      }
+    ];
+
+    actionConfigs.forEach(testCellActions);
   });
 
   type widthType = 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 60 | 70 | 80 | 90 | 100;

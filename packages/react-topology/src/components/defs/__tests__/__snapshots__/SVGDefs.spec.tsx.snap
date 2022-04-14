@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`SVGDefs should get #addDef and #removeDef from context 1`] = `<DocumentFragment />`;
