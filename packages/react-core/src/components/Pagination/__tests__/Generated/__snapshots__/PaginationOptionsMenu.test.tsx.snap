@@ -6,6 +6,10 @@ exports[`PaginationOptionsMenu should match snapshot (auto-generated) 1`] = `
     class="pf-c-options-menu pf-m-top"
     data-ouia-component-type="PF4/PaginationOptionsMenu"
     data-ouia-safe="true"
-  />
+  >
+    <div
+      class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+    />
+  </div>
 </div>
 `;

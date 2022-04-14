@@ -26,7 +26,7 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   perPageSuffix?: string;
   /** The type or title of the items being paginated */
   itemsTitle?: string;
-  /** The text to be displayed on the Options Toggle */
+  /** Accessible label for the Options Toggle */
   optionsToggle?: string;
   /** The total number of items being paginated */
   itemCount?: number;
@@ -46,6 +46,8 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   onPerPageSelect?: OnPerPageSelect;
   /** Label for the English word "of" */
   ofWord?: string;
+  /** Component to be used for wrapping the toggle contents. */
+  component?: 'div' | 'button';
 }
 
 interface PaginationOptionsMenuState {
@@ -63,7 +65,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
     perPageOptions: [] as PerPageOptions[],
     itemsPerPageTitle: 'Items per page',
     perPageSuffix: 'per page',
-    optionsToggle: 'Items per page',
+    optionsToggle: '',
     ofWord: 'of',
     perPage: 0,
     firstIndex: 0,
@@ -71,7 +73,8 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
     defaultToFullPage: false,
     itemsTitle: 'items',
     toggleTemplate: ToggleTemplate,
-    onPerPageSelect: () => null as any
+    onPerPageSelect: () => null as any,
+    component: 'div'
   };
 
   constructor(props: PaginationOptionsMenuProps) {
@@ -144,7 +147,8 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
       lastIndex,
       itemCount,
       itemsTitle,
-      ofWord
+      ofWord,
+      component
     } = this.props;
     const { isOpen } = this.state;
 
@@ -153,7 +157,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
         value={{
           id: widgetId,
           onSelect: this.onSelect,
-          toggleIndicatorClass: styles.optionsMenuToggleButtonIcon,
+          toggleIndicatorClass: component === 'div' ? styles.optionsMenuToggleButtonIcon : styles.optionsMenuToggleIcon,
           toggleTextClass: styles.optionsMenuToggleText,
           menuClass: styles.optionsMenuMenu,
           itemClass: styles.optionsMenuMenuItem,
@@ -184,6 +188,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
               toggleTemplate={toggleTemplate}
               parentRef={this.parentRef.current}
               isDisabled={isDisabled}
+              component={component}
             />
           }
           dropdownItems={this.renderItems()}

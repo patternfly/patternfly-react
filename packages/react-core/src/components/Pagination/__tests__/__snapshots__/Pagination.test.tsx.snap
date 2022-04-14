@@ -20,40 +20,44 @@ exports[`Pagination component render custom pagination toggle 1`] = `
       data-ouia-component-type="PF4/PaginationOptionsMenu"
       data-ouia-safe="true"
     >
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-label="Items per page"
-        class="  pf-c-options-menu__toggle pf-m-plain pf-m-text"
-        data-ouia-component-id="OUIA-Generated-DropdownToggle-14"
-        data-ouia-component-type="PF4/DropdownToggle"
-        data-ouia-safe="true"
-        id="pagination-options-menu-toggle-13"
-        type="button"
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
       >
         <span
           class="pf-c-options-menu__toggle-text"
         >
           -9 - 10 - 40 - 
         </span>
-        <span
-          class="pf-c-options-menu__toggle-button-icon"
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-13"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          id="pagination-options-menu-toggle-12"
+          type="button"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style="vertical-align: -0.125em;"
-            viewBox="0 0 320 512"
-            width="1em"
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </span>
-      </button>
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
     <nav
       aria-label="Pagination"
@@ -222,16 +226,8 @@ exports[`Pagination component render custom perPageOptions 1`] = `
       data-ouia-component-type="PF4/PaginationOptionsMenu"
       data-ouia-safe="true"
     >
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-label="Items per page"
-        class="  pf-c-options-menu__toggle pf-m-plain pf-m-text"
-        data-ouia-component-id="OUIA-Generated-DropdownToggle-10"
-        data-ouia-component-type="PF4/DropdownToggle"
-        data-ouia-safe="true"
-        id="pagination-options-menu-toggle-9"
-        type="button"
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
       >
         <span
           class="pf-c-options-menu__toggle-text"
@@ -245,24 +241,36 @@ exports[`Pagination component render custom perPageOptions 1`] = `
           </b>
            
         </span>
-        <span
-          class="pf-c-options-menu__toggle-button-icon"
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-10"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          id="pagination-options-menu-toggle-9"
+          type="button"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style="vertical-align: -0.125em;"
-            viewBox="0 0 320 512"
-            width="1em"
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </span>
-      </button>
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
     <nav
       aria-label="Pagination"
@@ -431,16 +439,8 @@ exports[`Pagination component render custom start end 1`] = `
       data-ouia-component-type="PF4/PaginationOptionsMenu"
       data-ouia-safe="true"
     >
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-label="Items per page"
-        class="  pf-c-options-menu__toggle pf-m-plain pf-m-text"
-        data-ouia-component-id="OUIA-Generated-DropdownToggle-12"
-        data-ouia-component-type="PF4/DropdownToggle"
-        data-ouia-safe="true"
-        id="pagination-options-menu-toggle-11"
-        type="button"
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
       >
         <span
           class="pf-c-options-menu__toggle-text"
@@ -454,24 +454,36 @@ exports[`Pagination component render custom start end 1`] = `
           </b>
            
         </span>
-        <span
-          class="pf-c-options-menu__toggle-button-icon"
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-11"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          id="pagination-options-menu-toggle-10"
+          type="button"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style="vertical-align: -0.125em;"
-            viewBox="0 0 320 512"
-            width="1em"
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </span>
-      </button>
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
     <nav
       aria-label="Pagination"
@@ -637,7 +649,11 @@ exports[`Pagination component render empty per page options 1`] = `
       class="pf-c-options-menu"
       data-ouia-component-type="PF4/PaginationOptionsMenu"
       data-ouia-safe="true"
-    />
+    >
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+      />
+    </div>
     <nav
       aria-label="Pagination"
       class="pf-c-pagination__nav"
@@ -805,16 +821,8 @@ exports[`Pagination component render last page 1`] = `
       data-ouia-component-type="PF4/PaginationOptionsMenu"
       data-ouia-safe="true"
     >
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-label="Items per page"
-        class="  pf-c-options-menu__toggle pf-m-plain pf-m-text"
-        data-ouia-component-id="OUIA-Generated-DropdownToggle-9"
-        data-ouia-component-type="PF4/DropdownToggle"
-        data-ouia-safe="true"
-        id="pagination-options-menu-toggle-8"
-        type="button"
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
       >
         <span
           class="pf-c-options-menu__toggle-text"
@@ -828,24 +836,36 @@ exports[`Pagination component render last page 1`] = `
           </b>
            
         </span>
-        <span
-          class="pf-c-options-menu__toggle-button-icon"
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-9"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          id="pagination-options-menu-toggle-8"
+          type="button"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style="vertical-align: -0.125em;"
-            viewBox="0 0 320 512"
-            width="1em"
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </span>
-      </button>
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
     <nav
       aria-label="Pagination"
@@ -1014,16 +1034,8 @@ exports[`Pagination component render limited number of pages 1`] = `
       data-ouia-component-type="PF4/PaginationOptionsMenu"
       data-ouia-safe="true"
     >
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-label="Items per page"
-        class="  pf-c-options-menu__toggle pf-m-plain pf-m-text"
-        data-ouia-component-id="OUIA-Generated-DropdownToggle-7"
-        data-ouia-component-type="PF4/DropdownToggle"
-        data-ouia-safe="true"
-        id="pagination-options-menu-toggle-6"
-        type="button"
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
       >
         <span
           class="pf-c-options-menu__toggle-text"
@@ -1037,24 +1049,36 @@ exports[`Pagination component render limited number of pages 1`] = `
           </b>
            
         </span>
-        <span
-          class="pf-c-options-menu__toggle-button-icon"
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-7"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          id="pagination-options-menu-toggle-6"
+          type="button"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style="vertical-align: -0.125em;"
-            viewBox="0 0 320 512"
-            width="1em"
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </span>
-      </button>
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
     <nav
       aria-label="Pagination"
@@ -1214,16 +1238,8 @@ exports[`Pagination component render should render correctly bottom 1`] = `
       data-ouia-component-type="PF4/PaginationOptionsMenu"
       data-ouia-safe="true"
     >
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-label="Items per page"
-        class="  pf-c-options-menu__toggle pf-m-plain pf-m-text"
-        data-ouia-component-id="OUIA-Generated-DropdownToggle-2"
-        data-ouia-component-type="PF4/DropdownToggle"
-        data-ouia-safe="true"
-        id="pagination-options-menu-toggle-1"
-        type="button"
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
       >
         <span
           class="pf-c-options-menu__toggle-text"
@@ -1237,24 +1253,36 @@ exports[`Pagination component render should render correctly bottom 1`] = `
           </b>
            
         </span>
-        <span
-          class="pf-c-options-menu__toggle-button-icon"
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-2"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          id="pagination-options-menu-toggle-1"
+          type="button"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style="vertical-align: -0.125em;"
-            viewBox="0 0 320 512"
-            width="1em"
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </span>
-      </button>
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
     <nav
       aria-label="Pagination"
@@ -1411,16 +1439,8 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
       data-ouia-component-type="PF4/PaginationOptionsMenu"
       data-ouia-safe="true"
     >
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-label="Items per page"
-        class="  pf-c-options-menu__toggle pf-m-plain pf-m-text"
-        data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
-        data-ouia-component-type="PF4/DropdownToggle"
-        data-ouia-safe="true"
-        id="pagination-options-menu-toggle-4"
-        type="button"
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
       >
         <span
           class="pf-c-options-menu__toggle-text"
@@ -1434,24 +1454,36 @@ exports[`Pagination component render should render correctly bottom sticky 1`] =
           </b>
            
         </span>
-        <span
-          class="pf-c-options-menu__toggle-button-icon"
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-5"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          id="pagination-options-menu-toggle-4"
+          type="button"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style="vertical-align: -0.125em;"
-            viewBox="0 0 320 512"
-            width="1em"
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </span>
-      </button>
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
     <nav
       aria-label="Pagination"
@@ -1620,16 +1652,8 @@ exports[`Pagination component render should render correctly compact 1`] = `
       data-ouia-component-type="PF4/PaginationOptionsMenu"
       data-ouia-safe="true"
     >
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-label="Items per page"
-        class="  pf-c-options-menu__toggle pf-m-plain pf-m-text"
-        data-ouia-component-id="OUIA-Generated-DropdownToggle-3"
-        data-ouia-component-type="PF4/DropdownToggle"
-        data-ouia-safe="true"
-        id="pagination-options-menu-toggle-2"
-        type="button"
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
       >
         <span
           class="pf-c-options-menu__toggle-text"
@@ -1643,24 +1667,36 @@ exports[`Pagination component render should render correctly compact 1`] = `
           </b>
            
         </span>
-        <span
-          class="pf-c-options-menu__toggle-button-icon"
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-3"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          id="pagination-options-menu-toggle-2"
+          type="button"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style="vertical-align: -0.125em;"
-            viewBox="0 0 320 512"
-            width="1em"
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </span>
-      </button>
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
     <nav
       aria-label="Pagination"
@@ -1755,17 +1791,8 @@ exports[`Pagination component render should render correctly disabled 1`] = `
       data-ouia-component-type="PF4/PaginationOptionsMenu"
       data-ouia-safe="true"
     >
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-label="Items per page"
-        class="  pf-c-options-menu__toggle pf-m-disabled pf-m-plain pf-m-text"
-        data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
-        data-ouia-component-type="PF4/DropdownToggle"
-        data-ouia-safe="true"
-        disabled=""
-        id="pagination-options-menu-toggle-5"
-        type="button"
+      <div
+        class="pf-c-options-menu__toggle pf-m-disabled pf-m-plain pf-m-text"
       >
         <span
           class="pf-c-options-menu__toggle-text"
@@ -1779,24 +1806,37 @@ exports[`Pagination component render should render correctly disabled 1`] = `
           </b>
            
         </span>
-        <span
-          class="pf-c-options-menu__toggle-button-icon"
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-6"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          disabled=""
+          id="pagination-options-menu-toggle-5"
+          type="button"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style="vertical-align: -0.125em;"
-            viewBox="0 0 320 512"
-            width="1em"
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </span>
-      </button>
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
     <nav
       aria-label="Pagination"
@@ -1968,16 +2008,8 @@ exports[`Pagination component render should render correctly sticky 1`] = `
       data-ouia-component-type="PF4/PaginationOptionsMenu"
       data-ouia-safe="true"
     >
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-label="Items per page"
-        class="  pf-c-options-menu__toggle pf-m-plain pf-m-text"
-        data-ouia-component-id="OUIA-Generated-DropdownToggle-4"
-        data-ouia-component-type="PF4/DropdownToggle"
-        data-ouia-safe="true"
-        id="pagination-options-menu-toggle-3"
-        type="button"
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
       >
         <span
           class="pf-c-options-menu__toggle-text"
@@ -1991,24 +2023,36 @@ exports[`Pagination component render should render correctly sticky 1`] = `
           </b>
            
         </span>
-        <span
-          class="pf-c-options-menu__toggle-button-icon"
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-4"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          id="pagination-options-menu-toggle-3"
+          type="button"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style="vertical-align: -0.125em;"
-            viewBox="0 0 320 512"
-            width="1em"
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </span>
-      </button>
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
     <nav
       aria-label="Pagination"
@@ -2177,16 +2221,8 @@ exports[`Pagination component render should render correctly top 1`] = `
       data-ouia-component-type="PF4/PaginationOptionsMenu"
       data-ouia-safe="true"
     >
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-label="Items per page"
-        class="  pf-c-options-menu__toggle pf-m-plain pf-m-text"
-        data-ouia-component-id="OUIA-Generated-DropdownToggle-1"
-        data-ouia-component-type="PF4/DropdownToggle"
-        data-ouia-safe="true"
-        id="pagination-options-menu-toggle-0"
-        type="button"
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
       >
         <span
           class="pf-c-options-menu__toggle-text"
@@ -2200,24 +2236,36 @@ exports[`Pagination component render should render correctly top 1`] = `
           </b>
            
         </span>
-        <span
-          class="pf-c-options-menu__toggle-button-icon"
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-1"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          id="pagination-options-menu-toggle-0"
+          type="button"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style="vertical-align: -0.125em;"
-            viewBox="0 0 320 512"
-            width="1em"
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </span>
-      </button>
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
     <nav
       aria-label="Pagination"
@@ -2386,16 +2434,8 @@ exports[`Pagination component render titles 1`] = `
       data-ouia-component-type="PF4/PaginationOptionsMenu"
       data-ouia-safe="true"
     >
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-label="Items per page"
-        class="  pf-c-options-menu__toggle pf-m-plain pf-m-text"
-        data-ouia-component-id="OUIA-Generated-DropdownToggle-13"
-        data-ouia-component-type="PF4/DropdownToggle"
-        data-ouia-safe="true"
-        id="pagination-options-menu-toggle-12"
-        type="button"
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
       >
         <span
           class="pf-c-options-menu__toggle-text"
@@ -2409,24 +2449,36 @@ exports[`Pagination component render titles 1`] = `
           </b>
            values
         </span>
-        <span
-          class="pf-c-options-menu__toggle-button-icon"
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-12"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          id="pagination-options-menu-toggle-11"
+          type="button"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style="vertical-align: -0.125em;"
-            viewBox="0 0 320 512"
-            width="1em"
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </span>
-      </button>
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
     <nav
       aria-label="Pagination"
@@ -2595,16 +2647,8 @@ exports[`Pagination component render up drop direction 1`] = `
       data-ouia-component-type="PF4/PaginationOptionsMenu"
       data-ouia-safe="true"
     >
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-label="Items per page"
-        class="  pf-c-options-menu__toggle pf-m-plain pf-m-text"
-        data-ouia-component-id="OUIA-Generated-DropdownToggle-15"
-        data-ouia-component-type="PF4/DropdownToggle"
-        data-ouia-safe="true"
-        id="pagination-options-menu-toggle-14"
-        type="button"
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
       >
         <span
           class="pf-c-options-menu__toggle-text"
@@ -2618,24 +2662,36 @@ exports[`Pagination component render up drop direction 1`] = `
           </b>
            
         </span>
-        <span
-          class="pf-c-options-menu__toggle-button-icon"
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-14"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          id="pagination-options-menu-toggle-13"
+          type="button"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style="vertical-align: -0.125em;"
-            viewBox="0 0 320 512"
-            width="1em"
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </span>
-      </button>
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
     <nav
       aria-label="Pagination"
@@ -2804,16 +2860,8 @@ exports[`Pagination component render zero results 1`] = `
       data-ouia-component-type="PF4/PaginationOptionsMenu"
       data-ouia-safe="true"
     >
-      <button
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-label="Items per page"
-        class="  pf-c-options-menu__toggle pf-m-plain pf-m-text"
-        data-ouia-component-id="OUIA-Generated-DropdownToggle-8"
-        data-ouia-component-type="PF4/DropdownToggle"
-        data-ouia-safe="true"
-        id="pagination-options-menu-toggle-7"
-        type="button"
+      <div
+        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
       >
         <span
           class="pf-c-options-menu__toggle-text"
@@ -2827,24 +2875,36 @@ exports[`Pagination component render zero results 1`] = `
           </b>
            
         </span>
-        <span
-          class="pf-c-options-menu__toggle-button-icon"
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-label="Items per page"
+          class="  pf-c-options-menu__toggle-button"
+          data-ouia-component-id="OUIA-Generated-DropdownToggle-8"
+          data-ouia-component-type="PF4/DropdownToggle"
+          data-ouia-safe="true"
+          id="pagination-options-menu-toggle-7"
+          type="button"
         >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style="vertical-align: -0.125em;"
-            viewBox="0 0 320 512"
-            width="1em"
+          <span
+            class="pf-c-options-menu__toggle-button-icon"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-            />
-          </svg>
-        </span>
-      </button>
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
     </div>
     <nav
       aria-label="Pagination"

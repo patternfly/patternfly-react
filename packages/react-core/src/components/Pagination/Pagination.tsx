@@ -141,6 +141,8 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   onPageInput?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user selects number of items per page. */
   onPerPageSelect?: OnPerPageSelect;
+  /** Component to be used for wrapping the toggle contents. */
+  component?: 'div' | 'button';
 }
 
 const handleInputWidth = (lastPage: number, node: HTMLDivElement) => {
@@ -177,7 +179,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
       toPreviousPage: 'Go to previous page',
       toLastPage: 'Go to last page',
       toNextPage: 'Go to next page',
-      optionsToggle: 'Items per page',
+      optionsToggle: '',
       currPage: 'Current page',
       paginationTitle: 'Pagination',
       ofWord: 'of'
@@ -197,7 +199,8 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
     onNextClick: () => undefined,
     onPageInput: () => undefined,
     onLastClick: () => undefined,
-    ouiaSafe: true
+    ouiaSafe: true,
+    component: 'div'
   };
 
   state = {
@@ -252,6 +255,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
       onLastClick,
       ouiaId,
       ouiaSafe,
+      component,
       ...props
     } = this.props;
     const dropDirection = dropDirectionProp || (variant === 'bottom' && !isStatic ? 'up' : 'down');
@@ -335,6 +339,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
           widgetId={widgetId}
           toggleTemplate={toggleTemplate}
           isDisabled={isDisabled}
+          component={component}
         />
         <Navigation
           pagesTitle={titles.page}
