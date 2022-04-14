@@ -16,7 +16,7 @@ export interface MenuToggleProps
   isDisabled?: boolean;
   /** Flag indicating the toggle is full height */
   isFullHeight?: boolean;
-  /** Flag indicating the toggle is takes up the full width of its parent */
+  /** Flag indicating the toggle takes up the full width of its parent */
   isFullWidth?: boolean;
   /** Variant styles of the menu toggle */
   variant?: 'default' | 'plain' | 'primary' | 'plainText' | 'secondary';
