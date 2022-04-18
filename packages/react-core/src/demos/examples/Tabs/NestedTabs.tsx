@@ -6,7 +6,6 @@ import {
   Grid,
   GridItem,
   PageSection,
-  PageSectionVariants,
   Tabs,
   Tab,
   TabContent,
@@ -16,17 +15,17 @@ import {
   Flex,
   FlexItem
 } from '@patternfly/react-core';
-import DashboardWrapper from '../examples/DashboardWrapper';
+import DashboardWrapper from '../DashboardWrapper';
 
-export const NestedTabsDemo = () => {
+export const NestedTabs: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = React.useState(0);
   const [activeNestedTabKey, setActiveNestedTabKey] = React.useState(10);
 
   // Toggle currently active tab
-  const handleTabClick = (_, tabIndex) => setActiveTabKey(tabIndex);
+  const handleTabClick = (tabIndex: number) => setActiveTabKey(tabIndex);
 
   // Toggle currently active nested tab
-  const handleNestedTabClick = (_, tabIndex) => setActiveNestedTabKey(tabIndex);
+  const handleNestedTabClick = (tabIndex: number) => setActiveNestedTabKey(tabIndex);
 
   const tabContent = (
     <Grid hasGutter>
@@ -41,7 +40,7 @@ export const NestedTabsDemo = () => {
                 <Tabs
                   activeKey={activeNestedTabKey}
                   isSecondary
-                  onSelect={handleNestedTabClick}
+                  onSelect={(_event, tabIndex) => handleNestedTabClick(Number(tabIndex))}
                   id="nested-tabs-example-nested-tabs-list"
                 >
                   <Tab eventKey={10} title={<TabTitleText>Cluster</TabTitleText>} tabContentId={`tabContent${10}`} />
@@ -126,14 +125,14 @@ export const NestedTabsDemo = () => {
   );
 
   return (
-    <DashboardWrapper hasNoBreadcrumb>
-      <PageSection isWidthLimited variant={PageSectionVariants.light}>
-        <Title headingLevel="h1" size="2xl">
-          Overview
-        </Title>
-      </PageSection>
+    <DashboardWrapper hasPageTemplateTitle>
       <PageSection type="tabs" isWidthLimited>
-        <Tabs activeKey={activeTabKey} onSelect={handleTabClick} usePageInsets id="nested-tabs-example-tabs-list">
+        <Tabs
+          activeKey={activeTabKey}
+          onSelect={(_event, tabIndex) => handleTabClick(Number(tabIndex))}
+          usePageInsets
+          id="nested-tabs-example-tabs-list"
+        >
           <Tab eventKey={0} title={<TabTitleText>Cluster 1</TabTitleText>} tabContentId={`tabContent${0}`} />
           <Tab eventKey={1} title={<TabTitleText>Cluster 2</TabTitleText>} tabContentId={`tabContent${1}`} />
         </Tabs>

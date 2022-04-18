@@ -400,7 +400,7 @@ export const TablesAndTabs = () => {
   );
 
   return (
-    <DashboardWrapper hasNoBreadcrumb>
+    <DashboardWrapper>
       <React.Fragment>
         <PageSection variant={PageSectionVariants.light}>
           <Title headingLevel="h1" size="2xl">

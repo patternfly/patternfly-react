@@ -445,7 +445,12 @@ TabsOpenWithSecondaryTabsDemo = () => {
 
 ### Nested tabs
 
-```js isFullscreen file="./Tabs/NestedTabsDemo.js"
+```js isFullscreen file="./examples/Tabs/NestedTabs.tsx"
+```
+
+### Nested, unindented tabs
+
+```js isFullscreen file="./examples/Tabs/NestedUnindentedTabs.tsx"
 ```
 
 ### Tables and tabs

@@ -81,7 +81,7 @@ export const ModalTabs: React.FunctionComponent = () => {
 
   return (
     <React.Fragment>
-      <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
+      <DashboardWrapper mainContainerId="main-content-card-view-default-nav">
         <PageSection variant={PageSectionVariants.light}>
           <TextContent>
             <Text component="h1">Projects</Text>
