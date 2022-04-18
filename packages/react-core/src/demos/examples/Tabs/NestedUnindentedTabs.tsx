@@ -14,7 +14,6 @@ import {
   Title,
   Text,
   TextContent,
-  Button,
   TitleSizes
 } from '@patternfly/react-core';
 import DashboardWrapper from '../DashboardWrapper';
@@ -73,11 +72,7 @@ export const NestedUnindentedTabs: React.FunctionComponent = () => {
                   <Card isFullHeight>
                     <CardHeader>Check system requirements</CardHeader>
                     <CardBody>
-                      Your physical or virtual machine should meet the{' '}
-                      <a href="#">
-                        system requirement
-                      </a>
-                      .
+                      Your physical or virtual machine should meet the <a href="#">system requirement</a>.
                     </CardBody>
                   </Card>
                 </GridItem>
@@ -87,10 +82,7 @@ export const NestedUnindentedTabs: React.FunctionComponent = () => {
                     <CardHeader>Download an installation ISO image</CardHeader>
                     <CardBody>
                       {' '}
-                      <a href="#">
-                        Download
-                      </a>{' '}
-                      the binary DVD ISO.
+                      <a href="#">Download</a> the binary DVD ISO.
                     </CardBody>
                   </Card>
                 </GridItem>
@@ -99,10 +91,7 @@ export const NestedUnindentedTabs: React.FunctionComponent = () => {
                     <CardHeader>Create a bootable installation media</CardHeader>
                     <CardBody>
                       {' '}
-                      <a href="#">
-                        Create
-                      </a>{' '}
-                      a bootable installation media, for example a USB flash drive.
+                      <a href="#">Create</a> a bootable installation media, for example a USB flash drive.
                     </CardBody>
                   </Card>
                 </GridItem>
