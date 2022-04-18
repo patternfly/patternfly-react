@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`DesktopViewer default MoreInformationContent 1`] = `"<p>Clicking \\"Launch Remote Viewer\\" will download a .vv file and launch <i>Remote Viewer</i></p>"`;
+
 exports[`DesktopViewer empty 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-console__desktop-viewer"
   >
@@ -43,11 +45,11 @@ exports[`DesktopViewer empty 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`DesktopViewer with Spice and VNC 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-console__desktop-viewer"
   >
@@ -104,7 +106,6 @@ exports[`DesktopViewer with Spice and VNC 1`] = `
           hidden=""
           id=""
         >
-          
           <dl
             class="pf-c-description-list pf-m-horizontal"
           >
@@ -193,8 +194,7 @@ exports[`DesktopViewer with Spice and VNC 1`] = `
                   class="pf-c-description-list__text"
                 >
                   <div>
-                    Download the MSI from
-                     
+                    Download the MSI from 
                     <a
                       href="https://virt-manager.org/download/"
                       rel="noopener noreferrer"
@@ -340,11 +340,11 @@ exports[`DesktopViewer with Spice and VNC 1`] = `
       </dl>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`DesktopViewer with Spice, VNC and RDP (different hostname) 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-console__desktop-viewer"
   >
@@ -411,7 +411,6 @@ exports[`DesktopViewer with Spice, VNC and RDP (different hostname) 1`] = `
           hidden=""
           id=""
         >
-          
           <dl
             class="pf-c-description-list pf-m-horizontal"
           >
@@ -500,8 +499,7 @@ exports[`DesktopViewer with Spice, VNC and RDP (different hostname) 1`] = `
                   class="pf-c-description-list__text"
                 >
                   <div>
-                    Download the MSI from
-                     
+                    Download the MSI from 
                     <a
                       href="https://virt-manager.org/download/"
                       rel="noopener noreferrer"
@@ -551,9 +549,7 @@ exports[`DesktopViewer with Spice, VNC and RDP (different hostname) 1`] = `
           class="pf-c-expandable-section__content"
           hidden=""
           id=""
-        >
-          
-        </div>
+        />
       </div>
     </div>
     <div
@@ -730,11 +726,11 @@ exports[`DesktopViewer with Spice, VNC and RDP (different hostname) 1`] = `
       </dl>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`DesktopViewer with Spice, VNC and RDP 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-console__desktop-viewer"
   >
@@ -801,7 +797,6 @@ exports[`DesktopViewer with Spice, VNC and RDP 1`] = `
           hidden=""
           id=""
         >
-          
           <dl
             class="pf-c-description-list pf-m-horizontal"
           >
@@ -890,8 +885,7 @@ exports[`DesktopViewer with Spice, VNC and RDP 1`] = `
                   class="pf-c-description-list__text"
                 >
                   <div>
-                    Download the MSI from
-                     
+                    Download the MSI from 
                     <a
                       href="https://virt-manager.org/download/"
                       rel="noopener noreferrer"
@@ -941,9 +935,7 @@ exports[`DesktopViewer with Spice, VNC and RDP 1`] = `
           class="pf-c-expandable-section__content"
           hidden=""
           id=""
-        >
-          
-        </div>
+        />
       </div>
     </div>
     <div
@@ -1098,629 +1090,5 @@ exports[`DesktopViewer with Spice, VNC and RDP 1`] = `
       </dl>
     </div>
   </div>
-</div>
-`;
-
-exports[`DesktopViewer with custom more-info content 1`] = `
-<DesktopViewer
-  spice={
-    Object {
-      "address": "my.host.com",
-      "port": 5900,
-      "tlsPort": "5901",
-    }
-  }
-  vnc={
-    Object {
-      "address": "my.host.com",
-      "port": 5902,
-      "tlsPort": "5903",
-    }
-  }
->
-  <div
-    className="pf-c-console__desktop-viewer"
-  >
-    <ConnectWithRemoteViewer
-      rdp={null}
-      spice={
-        Object {
-          "address": "my.host.com",
-          "port": 5900,
-          "tlsPort": "5901",
-        }
-      }
-      vnc={
-        Object {
-          "address": "my.host.com",
-          "port": 5902,
-          "tlsPort": "5903",
-        }
-      }
-    >
-      <div
-        className="pf-c-console__remote-viewer"
-      >
-        <div
-          className="pf-c-console__remote-viewer-launch"
-        >
-          <Button
-            className="pf-c-console__remote-viewer-launch-vv"
-            isDisabled={false}
-            onClick={[Function]}
-          >
-            <ButtonBase
-              className="pf-c-console__remote-viewer-launch-vv"
-              innerRef={null}
-              isDisabled={false}
-              onClick={[Function]}
-            >
-              <button
-                aria-disabled={false}
-                aria-label={null}
-                className="pf-c-button pf-m-primary pf-c-console__remote-viewer-launch-vv"
-                data-ouia-component-id="OUIA-Generated-Button-primary-10"
-                data-ouia-component-type="PF4/Button"
-                data-ouia-safe={true}
-                disabled={false}
-                onClick={[Function]}
-                role={null}
-                type="button"
-              >
-                Launch Remote Viewer
-              </button>
-            </ButtonBase>
-          </Button>
-        </div>
-        <ExpandableSection
-          className=""
-          contentId=""
-          displaySize="default"
-          isActive={false}
-          isDetached={false}
-          isExpanded={false}
-          isIndented={false}
-          isWidthLimited={false}
-          onToggle={[Function]}
-          toggleText="Remote Viewer Details"
-          toggleTextCollapsed=""
-          toggleTextExpanded=""
-        >
-          <div
-            className="pf-c-expandable-section"
-          >
-            <button
-              aria-expanded={false}
-              className="pf-c-expandable-section__toggle"
-              onClick={[Function]}
-              type="button"
-            >
-              <span
-                className="pf-c-expandable-section__toggle-icon"
-              >
-                <AngleRightIcon
-                  aria-hidden={true}
-                  color="currentColor"
-                  noVerticalAlign={false}
-                  size="sm"
-                >
-                  <svg
-                    aria-hidden={true}
-                    aria-labelledby={null}
-                    fill="currentColor"
-                    height="1em"
-                    role="img"
-                    style={
-                      Object {
-                        "verticalAlign": "-0.125em",
-                      }
-                    }
-                    viewBox="0 0 256 512"
-                    width="1em"
-                  >
-                    <path
-                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                    />
-                  </svg>
-                </AngleRightIcon>
-              </span>
-              <span
-                className="pf-c-expandable-section__toggle-text"
-              >
-                Remote Viewer Details
-              </span>
-            </button>
-            <div
-              className="pf-c-expandable-section__content"
-              hidden={true}
-              id=""
-            >
-              <MoreInformationDefaultContent
-                textMoreInfoContent=""
-              >
-                <DescriptionList
-                  isHorizontal={true}
-                >
-                  <dl
-                    className="pf-c-description-list pf-m-horizontal"
-                  >
-                    <MoreInformationInstallVariant
-                      content="sudo yum install virt-viewer"
-                      os="RHEL, CentOS"
-                    >
-                      <DescriptionListGroup>
-                        <div
-                          className="pf-c-description-list__group"
-                        >
-                          <DescriptionListTerm>
-                            <dt
-                              className="pf-c-description-list__term"
-                            >
-                              <span
-                                className="pf-c-description-list__text"
-                              >
-                                RHEL, CentOS
-                              </span>
-                            </dt>
-                          </DescriptionListTerm>
-                          <DescriptionListDescription>
-                            <dd
-                              className="pf-c-description-list__description"
-                            >
-                              <div
-                                className="pf-c-description-list__text"
-                              >
-                                sudo yum install virt-viewer
-                              </div>
-                            </dd>
-                          </DescriptionListDescription>
-                        </div>
-                      </DescriptionListGroup>
-                    </MoreInformationInstallVariant>
-                    <MoreInformationInstallVariant
-                      content="sudo dnf install virt-viewer"
-                      os="Fedora"
-                    >
-                      <DescriptionListGroup>
-                        <div
-                          className="pf-c-description-list__group"
-                        >
-                          <DescriptionListTerm>
-                            <dt
-                              className="pf-c-description-list__term"
-                            >
-                              <span
-                                className="pf-c-description-list__text"
-                              >
-                                Fedora
-                              </span>
-                            </dt>
-                          </DescriptionListTerm>
-                          <DescriptionListDescription>
-                            <dd
-                              className="pf-c-description-list__description"
-                            >
-                              <div
-                                className="pf-c-description-list__text"
-                              >
-                                sudo dnf install virt-viewer
-                              </div>
-                            </dd>
-                          </DescriptionListDescription>
-                        </div>
-                      </DescriptionListGroup>
-                    </MoreInformationInstallVariant>
-                    <MoreInformationInstallVariant
-                      content="sudo apt-get install virt-viewer"
-                      os="Ubuntu, Debian"
-                    >
-                      <DescriptionListGroup>
-                        <div
-                          className="pf-c-description-list__group"
-                        >
-                          <DescriptionListTerm>
-                            <dt
-                              className="pf-c-description-list__term"
-                            >
-                              <span
-                                className="pf-c-description-list__text"
-                              >
-                                Ubuntu, Debian
-                              </span>
-                            </dt>
-                          </DescriptionListTerm>
-                          <DescriptionListDescription>
-                            <dd
-                              className="pf-c-description-list__description"
-                            >
-                              <div
-                                className="pf-c-description-list__text"
-                              >
-                                sudo apt-get install virt-viewer
-                              </div>
-                            </dd>
-                          </DescriptionListDescription>
-                        </div>
-                      </DescriptionListGroup>
-                    </MoreInformationInstallVariant>
-                    <MoreInformationInstallVariant
-                      os="Windows"
-                    >
-                      <DescriptionListGroup>
-                        <div
-                          className="pf-c-description-list__group"
-                        >
-                          <DescriptionListTerm>
-                            <dt
-                              className="pf-c-description-list__term"
-                            >
-                              <span
-                                className="pf-c-description-list__text"
-                              >
-                                Windows
-                              </span>
-                            </dt>
-                          </DescriptionListTerm>
-                          <DescriptionListDescription>
-                            <dd
-                              className="pf-c-description-list__description"
-                            >
-                              <div
-                                className="pf-c-description-list__text"
-                              >
-                                <div>
-                                  Download the MSI from
-                                   
-                                  <a
-                                    href="https://virt-manager.org/download/"
-                                    rel="noopener noreferrer"
-                                    target="_blank"
-                                  >
-                                    virt-manager.org
-                                  </a>
-                                </div>
-                              </div>
-                            </dd>
-                          </DescriptionListDescription>
-                        </div>
-                      </DescriptionListGroup>
-                    </MoreInformationInstallVariant>
-                  </dl>
-                </DescriptionList>
-              </MoreInformationDefaultContent>
-            </div>
-          </div>
-        </ExpandableSection>
-      </div>
-    </ConnectWithRemoteViewer>
-    <ManualConnection
-      rdp={null}
-      spice={
-        Object {
-          "address": "my.host.com",
-          "port": 5900,
-          "tlsPort": "5901",
-        }
-      }
-      vnc={
-        Object {
-          "address": "my.host.com",
-          "port": 5902,
-          "tlsPort": "5903",
-        }
-      }
-    >
-      <div
-        className="pf-c-console__manual-connection"
-      >
-        <Title
-          headingLevel="h2"
-          size="3xl"
-        >
-          <h2
-            className="pf-c-title pf-m-3xl"
-            data-ouia-component-id="OUIA-Generated-Title-7"
-            data-ouia-component-type="PF4/Title"
-            data-ouia-safe={true}
-          >
-            Manual Connection
-          </h2>
-        </Title>
-        <p>
-          Connect with any viewer application for following protocols
-        </p>
-        <DescriptionList>
-          <dl
-            className="pf-c-description-list"
-          >
-            <Detail
-              title="Address"
-              value="my.host.com"
-            >
-              <DescriptionListGroup>
-                <div
-                  className="pf-c-description-list__group"
-                >
-                  <DescriptionListTerm>
-                    <dt
-                      className="pf-c-description-list__term"
-                    >
-                      <span
-                        className="pf-c-description-list__text"
-                      >
-                        Address
-                      </span>
-                    </dt>
-                  </DescriptionListTerm>
-                  <DescriptionListDescription>
-                    <dd
-                      className="pf-c-description-list__description"
-                    >
-                      <div
-                        className="pf-c-description-list__text"
-                      >
-                        my.host.com
-                      </div>
-                    </dd>
-                  </DescriptionListDescription>
-                </div>
-              </DescriptionListGroup>
-            </Detail>
-            <Detail
-              title="SPICE Port"
-              value={5900}
-            >
-              <DescriptionListGroup>
-                <div
-                  className="pf-c-description-list__group"
-                >
-                  <DescriptionListTerm>
-                    <dt
-                      className="pf-c-description-list__term"
-                    >
-                      <span
-                        className="pf-c-description-list__text"
-                      >
-                        SPICE Port
-                      </span>
-                    </dt>
-                  </DescriptionListTerm>
-                  <DescriptionListDescription>
-                    <dd
-                      className="pf-c-description-list__description"
-                    >
-                      <div
-                        className="pf-c-description-list__text"
-                      >
-                        5900
-                      </div>
-                    </dd>
-                  </DescriptionListDescription>
-                </div>
-              </DescriptionListGroup>
-            </Detail>
-            <Detail
-              title="SPICE TLS Port"
-              value="5901"
-            >
-              <DescriptionListGroup>
-                <div
-                  className="pf-c-description-list__group"
-                >
-                  <DescriptionListTerm>
-                    <dt
-                      className="pf-c-description-list__term"
-                    >
-                      <span
-                        className="pf-c-description-list__text"
-                      >
-                        SPICE TLS Port
-                      </span>
-                    </dt>
-                  </DescriptionListTerm>
-                  <DescriptionListDescription>
-                    <dd
-                      className="pf-c-description-list__description"
-                    >
-                      <div
-                        className="pf-c-description-list__text"
-                      >
-                        5901
-                      </div>
-                    </dd>
-                  </DescriptionListDescription>
-                </div>
-              </DescriptionListGroup>
-            </Detail>
-            <Detail
-              title="VNC Port"
-              value={5902}
-            >
-              <DescriptionListGroup>
-                <div
-                  className="pf-c-description-list__group"
-                >
-                  <DescriptionListTerm>
-                    <dt
-                      className="pf-c-description-list__term"
-                    >
-                      <span
-                        className="pf-c-description-list__text"
-                      >
-                        VNC Port
-                      </span>
-                    </dt>
-                  </DescriptionListTerm>
-                  <DescriptionListDescription>
-                    <dd
-                      className="pf-c-description-list__description"
-                    >
-                      <div
-                        className="pf-c-description-list__text"
-                      >
-                        5902
-                      </div>
-                    </dd>
-                  </DescriptionListDescription>
-                </div>
-              </DescriptionListGroup>
-            </Detail>
-            <Detail
-              title="VNC TLS Port"
-              value="5903"
-            >
-              <DescriptionListGroup>
-                <div
-                  className="pf-c-description-list__group"
-                >
-                  <DescriptionListTerm>
-                    <dt
-                      className="pf-c-description-list__term"
-                    >
-                      <span
-                        className="pf-c-description-list__text"
-                      >
-                        VNC TLS Port
-                      </span>
-                    </dt>
-                  </DescriptionListTerm>
-                  <DescriptionListDescription>
-                    <dd
-                      className="pf-c-description-list__description"
-                    >
-                      <div
-                        className="pf-c-description-list__text"
-                      >
-                        5903
-                      </div>
-                    </dd>
-                  </DescriptionListDescription>
-                </div>
-              </DescriptionListGroup>
-            </Detail>
-          </dl>
-        </DescriptionList>
-      </div>
-    </ManualConnection>
-  </div>
-</DesktopViewer>
-`;
-
-exports[`default MoreInformationContent 1`] = `
-<div>
-  <p>
-    Clicking "Launch Remote Viewer" will download a .vv file and launch 
-    <i>
-      Remote Viewer
-    </i>
-  </p>
-  <p>
-    <i>
-      Remote Viewer
-    </i>
-     is available for most operating systems. To install it, search for it in GNOME Software or run the following:
-  </p>
-  <dl
-    class="pf-c-description-list pf-m-horizontal"
-  >
-    <div
-      class="pf-c-description-list__group"
-    >
-      <dt
-        class="pf-c-description-list__term"
-      >
-        <span
-          class="pf-c-description-list__text"
-        >
-          RHEL, CentOS
-        </span>
-      </dt>
-      <dd
-        class="pf-c-description-list__description"
-      >
-        <div
-          class="pf-c-description-list__text"
-        >
-          sudo yum install virt-viewer
-        </div>
-      </dd>
-    </div>
-    <div
-      class="pf-c-description-list__group"
-    >
-      <dt
-        class="pf-c-description-list__term"
-      >
-        <span
-          class="pf-c-description-list__text"
-        >
-          Fedora
-        </span>
-      </dt>
-      <dd
-        class="pf-c-description-list__description"
-      >
-        <div
-          class="pf-c-description-list__text"
-        >
-          sudo dnf install virt-viewer
-        </div>
-      </dd>
-    </div>
-    <div
-      class="pf-c-description-list__group"
-    >
-      <dt
-        class="pf-c-description-list__term"
-      >
-        <span
-          class="pf-c-description-list__text"
-        >
-          Ubuntu, Debian
-        </span>
-      </dt>
-      <dd
-        class="pf-c-description-list__description"
-      >
-        <div
-          class="pf-c-description-list__text"
-        >
-          sudo apt-get install virt-viewer
-        </div>
-      </dd>
-    </div>
-    <div
-      class="pf-c-description-list__group"
-    >
-      <dt
-        class="pf-c-description-list__term"
-      >
-        <span
-          class="pf-c-description-list__text"
-        >
-          Windows
-        </span>
-      </dt>
-      <dd
-        class="pf-c-description-list__description"
-      >
-        <div
-          class="pf-c-description-list__text"
-        >
-          <div>
-            Download the MSI from
-             
-            <a
-              href="https://virt-manager.org/download/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              virt-manager.org
-            </a>
-          </div>
-        </div>
-      </dd>
-    </div>
-  </dl>
-</div>
+</DocumentFragment>
 `;

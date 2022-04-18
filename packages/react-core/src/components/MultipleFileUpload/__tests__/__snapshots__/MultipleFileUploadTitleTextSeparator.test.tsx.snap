@@ -1,23 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MultipleFileUploadTitleTextSeparator renders custom class names 1`] = `
-<MultipleFileUploadTitleTextSeparator
-  className="test"
->
+<DocumentFragment>
   <div
-    className="pf-c-multiple-file-upload__title-text-separator test"
+    class="pf-c-multiple-file-upload__title-text-separator test"
   >
     Foo
   </div>
-</MultipleFileUploadTitleTextSeparator>
+</DocumentFragment>
 `;
 
 exports[`MultipleFileUploadTitleTextSeparator renders with expected class names 1`] = `
-<MultipleFileUploadTitleTextSeparator>
+<DocumentFragment>
   <div
-    className="pf-c-multiple-file-upload__title-text-separator"
+    class="pf-c-multiple-file-upload__title-text-separator"
   >
     Foo
   </div>
-</MultipleFileUploadTitleTextSeparator>
+</DocumentFragment>
 `;

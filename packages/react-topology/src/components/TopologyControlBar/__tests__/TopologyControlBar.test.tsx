@@ -1,37 +1,33 @@
 import * as React from 'react';
-import { mount } from 'enzyme';
-import {
-  TopologyControlBar,
-  createTopologyControlButtons,
-  defaultControlButtonsOptions,
-  ZOOM_IN
-} from './TopologyControlBar';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
+import { TopologyControlBar, createTopologyControlButtons, defaultControlButtonsOptions } from '../TopologyControlBar';
 
 describe('TopologyControlBar', () => {
   test('should display the default controls correctly', () => {
     const controlButtons = createTopologyControlButtons();
-    const mockfn = jest.fn();
-    const view = mount(
+    const onButtonClick = jest.fn();
+    const { asFragment } = render(
       <TopologyControlBar
         className="default-test-class"
         id="default-test-id"
         controlButtons={controlButtons}
-        onButtonClick={mockfn}
+        onButtonClick={onButtonClick}
       />
     );
-    expect(view).toMatchSnapshot();
-    view
-      .find(`#${ZOOM_IN}`)
-      .at(0)
-      .simulate('click');
-    expect(mockfn.mock.calls).toHaveLength(1);
+
+    userEvent.click(screen.getByText('Zoom In'));
+    expect(onButtonClick).toHaveBeenCalledTimes(1);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should accept button options correctly', () => {
-    const mockfn = jest.fn();
+    const zoomInCallback = jest.fn();
     const controlButtons = createTopologyControlButtons({
       ...defaultControlButtonsOptions,
-      zoomInCallback: mockfn,
+      zoomInCallback,
       zoomInAriaLabel: 'test-zoom-in-aria-label',
       zoomInIcon: <span>test zoom in</span>,
       zoomInTip: 'test zoom in tooltip',
@@ -39,14 +35,12 @@ describe('TopologyControlBar', () => {
       resetViewDisabled: true,
       legend: false
     });
-    const view = mount(
+    const { asFragment } = render(
       <TopologyControlBar className="default-test-class" id="default-test-id" controlButtons={controlButtons} />
     );
-    expect(view).toMatchSnapshot();
-    view
-      .find(`#${ZOOM_IN}`)
-      .at(0)
-      .simulate('click');
-    expect(mockfn.mock.calls).toHaveLength(1);
+
+    userEvent.click(screen.getByText('test zoom in'));
+    expect(zoomInCallback).toHaveBeenCalledTimes(1);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

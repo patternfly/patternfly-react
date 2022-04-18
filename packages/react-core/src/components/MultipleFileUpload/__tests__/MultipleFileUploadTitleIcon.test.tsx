@@ -1,15 +1,15 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import { MultipleFileUploadTitleIcon } from '../MultipleFileUploadTitleIcon';
 
 describe('MultipleFileUploadTitleIcon', () => {
   test('renders with expected class names', () => {
-    const view = mount(<MultipleFileUploadTitleIcon>Foo</MultipleFileUploadTitleIcon>);
-    expect(view).toMatchSnapshot();
+    const { asFragment } = render(<MultipleFileUploadTitleIcon data-testid="test-id" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders custom class names', () => {
-    const view = mount(<MultipleFileUploadTitleIcon className="test" />);
-    expect(view).toMatchSnapshot();
+    const { asFragment } = render(<MultipleFileUploadTitleIcon className="test" data-testid="test-id" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
