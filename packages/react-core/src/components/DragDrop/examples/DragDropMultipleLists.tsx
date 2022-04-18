@@ -13,7 +13,7 @@ interface SourceType {
 
 interface DestinationType extends SourceType {}
 
-const getItems = (count: number, startIndex?: number) =>
+const getItems = (count: number, startIndex: number) =>
   Array.from({ length: count }, (_, idx) => idx + startIndex).map(idx => ({
     id: `item-${idx}`,
     content: `item ${idx} `.repeat(idx === 4 ? 20 : 1)
@@ -36,7 +36,7 @@ const move = (source: ItemType[], destination: ItemType[], sourceIndex: number, 
 
 export const DragDropMultipleLists: React.FunctionComponent = () => {
   const [items, setItems] = React.useState({
-    items1: getItems(10),
+    items1: getItems(10, 0),
     items2: getItems(5, 10)
   });
 
