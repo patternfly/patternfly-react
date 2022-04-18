@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.57.0 (2022-04-18)
+
+
+### Features
+
+* **Progress stepper:** Updated to use render prop for popover ([#7190](https://github.com/patternfly/patternfly-react/issues/7190)) ([5eb8243](https://github.com/patternfly/patternfly-react/commit/5eb8243d63d1168d9b425a5322c08e04659ed843))
+
+
+
+
+
 ## 6.56.2 (2022-04-18)
 
 **Note:** Version bump only for package @patternfly/react-charts
