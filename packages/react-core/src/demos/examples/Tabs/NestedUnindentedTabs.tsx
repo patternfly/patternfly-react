@@ -74,9 +74,9 @@ export const NestedUnindentedTabs: React.FunctionComponent = () => {
                     <CardHeader>Check system requirements</CardHeader>
                     <CardBody>
                       Your physical or virtual machine should meet the{' '}
-                      <Button variant="link" isInline>
+                      <a href="#">
                         system requirement
-                      </Button>
+                      </a>
                       .
                     </CardBody>
                   </Card>
@@ -87,9 +87,9 @@ export const NestedUnindentedTabs: React.FunctionComponent = () => {
                     <CardHeader>Download an installation ISO image</CardHeader>
                     <CardBody>
                       {' '}
-                      <Button variant="link" isInline>
+                      <a href="#">
                         Download
-                      </Button>{' '}
+                      </a>{' '}
                       the binary DVD ISO.
                     </CardBody>
                   </Card>
@@ -99,9 +99,9 @@ export const NestedUnindentedTabs: React.FunctionComponent = () => {
                     <CardHeader>Create a bootable installation media</CardHeader>
                     <CardBody>
                       {' '}
-                      <Button variant="link" isInline>
+                      <a href="#">
                         Create
-                      </Button>{' '}
+                      </a>{' '}
                       a bootable installation media, for example a USB flash drive.
                     </CardBody>
                   </Card>
