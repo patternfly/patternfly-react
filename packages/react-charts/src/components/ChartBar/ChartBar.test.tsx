@@ -6,13 +6,13 @@ import { ChartGroup } from '../ChartGroup';
 
 Object.values([true, false]).forEach(() => {
   test('ChartBar', () => {
-    const view = render(<ChartBar />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartBar />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = render(
+  const { asFragment } = render(
     <Chart domainPadding={{ x: [30, 25] }} height={200} width={300}>
       <ChartGroup offset={11}>
         <ChartBar
@@ -50,5 +50,5 @@ test('renders component data', () => {
       </ChartGroup>
     </Chart>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

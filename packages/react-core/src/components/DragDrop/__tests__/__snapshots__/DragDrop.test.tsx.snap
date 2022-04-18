@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders some divs 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-droppable"
     data-pf-droppable="defaultZone"
@@ -11,7 +11,7 @@ exports[`renders some divs 1`] = `
       class="pf-c-draggable"
       data-pf-draggable-zone="defaultZone"
       draggable="true"
-      draggableid="draggable1"
+      id="draggable1"
     >
       item 1
     </div>
@@ -19,10 +19,10 @@ exports[`renders some divs 1`] = `
       class="pf-c-draggable"
       data-pf-draggable-zone="defaultZone"
       draggable="true"
-      draggableid="draggable2"
+      id="draggable2"
     >
       item 2
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

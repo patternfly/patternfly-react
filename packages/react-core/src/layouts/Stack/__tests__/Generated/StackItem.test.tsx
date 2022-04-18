@@ -8,6 +8,6 @@ import { StackItem } from '../../StackItem';
 import {} from '../..';
 
 it('StackItem should match snapshot (auto-generated)', () => {
-  const view = render(<StackItem isFilled={false} children={<>ReactNode</>} className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<StackItem isFilled={false} children={<>ReactNode</>} className={"''"} />);
+  expect(asFragment()).toMatchSnapshot();
 });

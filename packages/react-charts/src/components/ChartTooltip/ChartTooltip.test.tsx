@@ -7,15 +7,15 @@ import { ChartTooltip } from './ChartTooltip';
 
 Object.values([true, false]).forEach(() => {
   test('ChartTooltip', () => {
-    const view = render(<ChartTooltip text="This is a tooltip" />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartTooltip text="This is a tooltip" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('allows tooltip via container component', () => {
-  const view = render(
+  const { asFragment } = render(
     <ChartGroup
-      containerComponent={<ChartVoronoiContainer labels={point => 'y: ' + point.y} />}
+      containerComponent={<ChartVoronoiContainer labels={(point: { y: number }) => 'y: ' + point.y} />}
       height={200}
       width={200}
     >
@@ -38,5 +38,5 @@ test('allows tooltip via container component', () => {
       />
     </ChartGroup>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

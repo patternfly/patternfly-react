@@ -1,19 +1,16 @@
 import React from 'react';
-
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-
 import { CardFooter } from '../CardFooter';
 
 describe('CardFooter', () => {
   test('renders with PatternFly Core styles', () => {
-    const view = render(<CardFooter />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<CardFooter />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('className is added to the root element', () => {
     render(<CardFooter className="extra-class">text</CardFooter>);
-    expect(screen.getByText('text').className).toContain('extra-class');
+    expect(screen.getByText('text')).toHaveClass('extra-class');
   });
 
   test('extra props are spread to the root element', () => {

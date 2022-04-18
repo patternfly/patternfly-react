@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`numberInput disables lower threshold 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-number-input"
   >
@@ -72,11 +72,11 @@ exports[`numberInput disables lower threshold 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`numberInput disables upper threshold 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-number-input"
   >
@@ -147,11 +147,11 @@ exports[`numberInput disables upper threshold 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`numberInput passes button props successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-number-input"
   >
@@ -223,11 +223,11 @@ exports[`numberInput passes button props successfully 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`numberInput passes input props successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-number-input"
   >
@@ -297,11 +297,11 @@ exports[`numberInput passes input props successfully 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`numberInput renders custom width 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-number-input"
     style="--pf-c-number-input--c-form-control--width-chars: 10;"
@@ -372,11 +372,11 @@ exports[`numberInput renders custom width 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`numberInput renders defaults & extra props 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-number-input custom"
     id="numberInput1"
@@ -447,11 +447,11 @@ exports[`numberInput renders defaults & extra props 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`numberInput renders disabled 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-number-input"
   >
@@ -524,11 +524,11 @@ exports[`numberInput renders disabled 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`numberInput renders unit & position 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-number-input"
   >
@@ -603,11 +603,11 @@ exports[`numberInput renders unit & position 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`numberInput renders unit 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-number-input"
   >
@@ -682,11 +682,11 @@ exports[`numberInput renders unit 1`] = `
       %
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`numberInput renders value 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-number-input"
   >
@@ -756,5 +756,5 @@ exports[`numberInput renders value 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

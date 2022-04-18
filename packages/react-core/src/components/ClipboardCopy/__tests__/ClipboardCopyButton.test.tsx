@@ -1,8 +1,9 @@
 import React from 'react';
+
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
 import { ClipboardCopyButton } from '../ClipboardCopyButton';
-import { Button } from '../../Button';
 
 const props = {
   id: 'my-id',
@@ -17,8 +18,8 @@ const props = {
 };
 
 test('copy button render', () => {
-  const view = render(<ClipboardCopyButton {...props}>Copy Me</ClipboardCopyButton>);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<ClipboardCopyButton {...props}>Copy Me</ClipboardCopyButton>);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('copy button onClick', () => {
@@ -30,5 +31,5 @@ test('copy button onClick', () => {
   );
 
   userEvent.click(screen.getByRole('button'));
-  expect(onclick).toBeCalled();
+  expect(onclick).toHaveBeenCalled();
 });

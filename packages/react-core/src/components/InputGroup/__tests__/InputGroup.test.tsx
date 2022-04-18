@@ -18,6 +18,6 @@ describe('InputGroup', () => {
         </Button>
       </InputGroup>
     );
-    expect(screen.getByLabelText('some text').getAttribute('aria-describedby')).toEqual('button-id');
+    expect(screen.getByLabelText('some text')).toHaveAttribute('aria-describedby', 'button-id');
   });
 });

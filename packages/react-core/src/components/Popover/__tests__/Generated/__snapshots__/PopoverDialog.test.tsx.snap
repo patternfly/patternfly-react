@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PopoverDialog should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-modal="true"
     class="pf-c-popover pf-m-top null"
@@ -9,5 +9,5 @@ exports[`PopoverDialog should match snapshot (auto-generated) 1`] = `
   >
     ReactNode
   </div>
-</div>
+</DocumentFragment>
 `;

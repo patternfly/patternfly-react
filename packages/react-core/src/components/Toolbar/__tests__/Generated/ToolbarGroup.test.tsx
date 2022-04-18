@@ -8,7 +8,7 @@ import { ToolbarGroup } from '../../ToolbarGroup';
 import {} from '../..';
 
 it('ToolbarGroup should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <ToolbarGroup
       className={'string'}
       variant={'filter-group'}
@@ -16,5 +16,5 @@ it('ToolbarGroup should match snapshot (auto-generated)', () => {
       innerRef={{ current: document.createElement('div') }}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

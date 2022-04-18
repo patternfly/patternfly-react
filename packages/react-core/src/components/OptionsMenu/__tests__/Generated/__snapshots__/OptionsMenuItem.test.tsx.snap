@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OptionsMenuItem should match snapshot 1`] = `
-<div>
+<DocumentFragment>
   <li
     id="''"
     role="menuitem"
@@ -19,5 +19,5 @@ exports[`OptionsMenuItem should match snapshot 1`] = `
     </button>
   </li>
    
-</div>
+</DocumentFragment>
 `;

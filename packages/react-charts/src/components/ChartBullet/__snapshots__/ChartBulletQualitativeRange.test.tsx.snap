@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChartBulletQualitativeRange 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
@@ -24,11 +24,11 @@ exports[`ChartBulletQualitativeRange 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ChartBulletQualitativeRange 2`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
@@ -51,11 +51,11 @@ exports[`ChartBulletQualitativeRange 2`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`renders component data 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
@@ -136,5 +136,5 @@ A 0 0 0 0 1, 399.9999999993, 104.8
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

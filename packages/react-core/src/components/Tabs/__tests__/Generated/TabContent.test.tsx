@@ -8,7 +8,7 @@ import { TabContent } from '../../TabContent';
 import {} from '../..';
 
 it('TabContent should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <TabContent
       children={'any'}
       child={<p>ReactElement</p>}
@@ -20,5 +20,5 @@ it('TabContent should match snapshot (auto-generated)', () => {
       aria-label={'string'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

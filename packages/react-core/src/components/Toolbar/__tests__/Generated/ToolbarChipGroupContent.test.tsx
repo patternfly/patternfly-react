@@ -8,7 +8,7 @@ import { ToolbarChipGroupContent } from '../../ToolbarChipGroupContent';
 import {} from '../..';
 
 it('ToolbarChipGroupContent should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <ToolbarChipGroupContent
       className={'string'}
       isExpanded={true}
@@ -20,5 +20,5 @@ it('ToolbarChipGroupContent should match snapshot (auto-generated)', () => {
       collapseListedFiltersBreakpoint={'lg'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

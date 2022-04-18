@@ -8,6 +8,6 @@ import { PopoverArrow } from '../../PopoverArrow';
 import {} from '../..';
 
 it('PopoverArrow should match snapshot (auto-generated)', () => {
-  const view = render(<PopoverArrow className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<PopoverArrow className={"''"} />);
+  expect(asFragment()).toMatchSnapshot();
 });

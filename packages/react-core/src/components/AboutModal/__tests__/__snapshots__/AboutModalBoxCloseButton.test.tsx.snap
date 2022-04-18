@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AboutModalBoxCloseButton Test 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-about-modal-box__close"
   >
@@ -29,11 +29,11 @@ exports[`AboutModalBoxCloseButton Test 1`] = `
       </svg>
     </button>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`AboutModalBoxCloseButton Test close button aria label 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-about-modal-box__close"
   >
@@ -61,11 +61,11 @@ exports[`AboutModalBoxCloseButton Test close button aria label 1`] = `
       </svg>
     </button>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`AboutModalBoxCloseButton Test onclose 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-about-modal-box__close"
   >
@@ -93,5 +93,5 @@ exports[`AboutModalBoxCloseButton Test onclose 1`] = `
       </svg>
     </button>
   </div>
-</div>
+</DocumentFragment>
 `;

@@ -3,17 +3,13 @@ import { render } from '@testing-library/react';
 import { DragDrop, Draggable, Droppable } from '../';
 
 test('renders some divs', () => {
-  const view = render(
+  const { asFragment } = render(
     <DragDrop>
       <Droppable droppableId="dropzone">
-        <Draggable draggableId="draggable1">
-          item 1
-        </Draggable>
-        <Draggable draggableId="draggable2">
-          item 2
-        </Draggable>
+        <Draggable id="draggable1">item 1</Draggable>
+        <Draggable id="draggable2">item 2</Draggable>
       </Droppable>
     </DragDrop>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -4,15 +4,15 @@ import { GridItem } from '../GridItem';
 import { render } from '@testing-library/react';
 
 test('gutter', () => {
-  const view = render(<Grid hasGutter />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<Grid hasGutter />);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('alternative component', () => {
-  const view = render(
-    <Grid component='ul'>
-      <GridItem component='li'>Test</GridItem>
+  const { asFragment } = render(
+    <Grid component="ul">
+      <GridItem component="li">Test</GridItem>
     </Grid>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

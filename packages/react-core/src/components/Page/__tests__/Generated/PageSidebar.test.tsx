@@ -8,8 +8,8 @@ import { PageSidebar } from '../../PageSidebar';
 import {} from '../..';
 
 it('PageSidebar should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <PageSidebar className={"''"} nav={<div>ReactNode</div>} isManagedSidebar={true} isNavOpen={true} theme={'dark'} />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

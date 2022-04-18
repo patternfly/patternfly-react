@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`simple catalog item header 1`] = `
-<div>
+<DocumentFragment>
   <header
     class="catalog-item-header-pf"
   >
@@ -27,5 +27,5 @@ exports[`simple catalog item header 1`] = `
       </h5>
     </div>
   </header>
-</div>
+</DocumentFragment>
 `;

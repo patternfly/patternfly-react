@@ -3,26 +3,26 @@ import { render } from '@testing-library/react';
 import { Spinner } from '../Spinner';
 
 test('simple spinner', () => {
-  const view = render(<Spinner />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<Spinner />);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('small spinner', () => {
-  const view = render(<Spinner size="sm" />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<Spinner size="sm" />);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('medium spinner', () => {
-  const view = render(<Spinner size="md" />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<Spinner size="md" />);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('large spinner', () => {
-  const view = render(<Spinner size="lg" />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<Spinner size="lg" />);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('extra large spinner', () => {
-  const view = render(<Spinner size="xl" />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<Spinner size="xl" />);
+  expect(asFragment()).toMatchSnapshot();
 });

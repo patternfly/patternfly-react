@@ -8,14 +8,14 @@ import { OptionsMenuItemGroup } from '../../OptionsMenuItemGroup';
 import {} from '../..';
 
 it('OptionsMenuItemGroup should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <OptionsMenuItemGroup
       children={<>ReactNode</>}
       className={"''"}
-      ariaLabel={"''"}
+      aria-label={"''"}
       groupTitle={''}
       hasSeparator={false}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

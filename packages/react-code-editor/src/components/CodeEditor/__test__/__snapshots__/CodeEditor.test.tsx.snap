@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CodeEditor matches snapshot with all props 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-code-editor pf-m-read-only"
   >
@@ -342,11 +342,11 @@ exports[`CodeEditor matches snapshot with all props 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`CodeEditor matches snapshot without props 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-code-editor"
   >
@@ -574,5 +574,5 @@ exports[`CodeEditor matches snapshot without props 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

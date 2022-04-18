@@ -8,6 +8,6 @@ import { TextList } from '../../TextList';
 import {} from '../..';
 
 it('TextList should match snapshot (auto-generated)', () => {
-  const view = render(<TextList children={<>ReactNode</>} className={"''"} component={'ul'} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<TextList children={<>ReactNode</>} className={"''"} component={'ul'} />);
+  expect(asFragment()).toMatchSnapshot();
 });

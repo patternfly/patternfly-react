@@ -1,8 +1,5 @@
 import React from 'react';
-
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-
 import { Wizard, WizardStepFunctionType, WizardStep } from '../Wizard';
 
 describe('Wizard', () => {

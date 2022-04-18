@@ -20,6 +20,6 @@ describe('ToolbarToggleGroup', () => {
       </ToolbarContentContext.Provider>
     );
 
-    expect(myMock).toBeCalled();
+    expect(myMock).toHaveBeenCalled();
   });
 });

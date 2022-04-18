@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BackToTop verify always show 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-back-to-top"
   >
@@ -33,11 +33,11 @@ exports[`BackToTop verify always show 1`] = `
       </span>
     </button>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BackToTop verify basic 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-back-to-top pf-m-hidden"
   >
@@ -69,11 +69,11 @@ exports[`BackToTop verify basic 1`] = `
       </span>
     </button>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`BackToTop verify custom class 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-back-to-top pf-m-hidden custom-css"
   >
@@ -105,5 +105,5 @@ exports[`BackToTop verify custom class 1`] = `
       </span>
     </button>
   </div>
-</div>
+</DocumentFragment>
 `;

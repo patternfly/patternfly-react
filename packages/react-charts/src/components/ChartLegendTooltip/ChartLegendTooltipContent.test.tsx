@@ -4,8 +4,8 @@ import { ChartLegendTooltipContent } from './ChartLegendTooltipContent';
 
 Object.values([true, false]).forEach(() => {
   test('ChartLegendTooltipContent', () => {
-    const view = render(<ChartLegendTooltipContent />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartLegendTooltipContent />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
@@ -16,6 +16,6 @@ test('renders component text', () => {
     { name: 'Birds' },
     { name: 'Mice' }
   ];
-  const view = render(<ChartLegendTooltipContent data={legendData} text={['1, 2, 3, 4']} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<ChartLegendTooltipContent legendData={legendData} text={['1, 2, 3, 4']} />);
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -8,6 +8,6 @@ import { AlertGroupInline } from '../../AlertGroupInline';
 import {} from '../..';
 
 it('AlertGroupInline should match snapshot (auto-generated)', () => {
-  const view = render(<AlertGroupInline />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<AlertGroupInline />);
+  expect(asFragment()).toMatchSnapshot();
 });

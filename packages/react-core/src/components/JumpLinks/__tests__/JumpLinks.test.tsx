@@ -5,51 +5,51 @@ import { JumpLinksItem } from '../JumpLinksItem';
 import { JumpLinksList } from '../JumpLinksList';
 
 test('simple jumplinks', () => {
-  const view = render(
+  const { asFragment } = render(
     <JumpLinks>
       <JumpLinksItem>Inactive section</JumpLinksItem>
       <JumpLinksItem isActive>Active section</JumpLinksItem>
       <JumpLinksItem>Inactive section</JumpLinksItem>
     </JumpLinks>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('jumplinks centered', () => {
-  const view = render(
+  const { asFragment } = render(
     <JumpLinks isCentered>
       <JumpLinksItem>Inactive section</JumpLinksItem>
       <JumpLinksItem isActive>Active section</JumpLinksItem>
       <JumpLinksItem>Inactive section</JumpLinksItem>
     </JumpLinks>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('jumplinks with label', () => {
-  const view = render(
+  const { asFragment } = render(
     <JumpLinks isCentered label="Jump to section">
       <JumpLinksItem>Inactive section</JumpLinksItem>
       <JumpLinksItem isActive>Active section</JumpLinksItem>
       <JumpLinksItem>Inactive section</JumpLinksItem>
     </JumpLinks>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('vertical with label', () => {
-  const view = render(
+  const { asFragment } = render(
     <JumpLinks isVertical alwaysShowLabel label="Jump to section">
       <JumpLinksItem>Inactive section</JumpLinksItem>
       <JumpLinksItem isActive>Active section</JumpLinksItem>
       <JumpLinksItem>Inactive section</JumpLinksItem>
     </JumpLinks>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('expandable vertical with subsection', () => {
-  const view = render(
+  const { asFragment } = render(
     <JumpLinks isVertical label="Jump to section" expandable={{ default: 'expandable' }}>
       <JumpLinksItem>Inactive section</JumpLinksItem>
       <JumpLinksItem>
@@ -64,5 +64,5 @@ test('expandable vertical with subsection', () => {
       <JumpLinksItem>Inactive section</JumpLinksItem>
     </JumpLinks>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

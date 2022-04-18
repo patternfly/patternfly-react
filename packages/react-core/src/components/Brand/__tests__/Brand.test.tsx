@@ -5,12 +5,13 @@ import '@testing-library/jest-dom';
 
 describe('Brand', () => {
   test('simple brand', () => {
-    const view = render(<Brand alt="brand" />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<Brand alt="brand" />);
+    expect(asFragment()).toMatchSnapshot();
   });
+
   test('passing children creates picture brand', () => {
-    const view = render(
-      <Brand>
+    render(
+      <Brand alt="brand">
         <div>test</div>
       </Brand>
     );

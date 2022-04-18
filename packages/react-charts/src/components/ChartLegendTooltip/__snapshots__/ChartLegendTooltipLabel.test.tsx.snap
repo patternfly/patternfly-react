@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ChartLegendTooltipLabel 1`] = `<div />`;
+exports[`ChartLegendTooltipLabel 1`] = `<DocumentFragment />`;
 
-exports[`ChartLegendTooltipLabel 2`] = `<div />`;
+exports[`ChartLegendTooltipLabel 2`] = `<DocumentFragment />`;
 
 exports[`renders component text 1`] = `
-<div>
+<DocumentFragment>
   <text
     direction="inherit"
     dx="0"
@@ -38,5 +38,5 @@ exports[`renders component text 1`] = `
       1, 2, 3, 4
     </tspan>
   </text>
-</div>
+</DocumentFragment>
 `;

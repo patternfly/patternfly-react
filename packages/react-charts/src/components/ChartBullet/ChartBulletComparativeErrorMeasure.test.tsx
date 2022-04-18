@@ -4,12 +4,14 @@ import { ChartBulletComparativeErrorMeasure } from './ChartBulletComparativeErro
 
 Object.values([true, false]).forEach(() => {
   test('ChartBulletComparativeErrorMeasure', () => {
-    const view = render(<ChartBulletComparativeErrorMeasure />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartBulletComparativeErrorMeasure />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = render(<ChartBulletComparativeErrorMeasure data={[{ y: 88 }]} domain={{ x: [0, 200] }} width={450} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(
+    <ChartBulletComparativeErrorMeasure data={[{ y: 88 }]} domain={{ x: [0, 200] }} width={450} />
+  );
+  expect(asFragment()).toMatchSnapshot();
 });

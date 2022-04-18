@@ -30,7 +30,7 @@ const getConfirmButtons = () => (
 
 describe('ConfirmButtons', () => {
   test('renders correctly', () => {
-    const view = render(getConfirmButtons());
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(getConfirmButtons());
+    expect(asFragment()).toMatchSnapshot();
   });
 });

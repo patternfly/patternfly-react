@@ -8,6 +8,6 @@ import { TooltipArrow } from '../../TooltipArrow';
 import {} from '../..';
 
 it('TooltipArrow should match snapshot (auto-generated)', () => {
-  const view = render(<TooltipArrow className={'string'} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<TooltipArrow className={'string'} />);
+  expect(asFragment()).toMatchSnapshot();
 });

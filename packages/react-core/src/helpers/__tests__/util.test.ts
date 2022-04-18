@@ -11,7 +11,7 @@ import {
 import { SIDE } from '../constants';
 import styles from '@patternfly/react-styles/css/layouts/Flex/flex';
 
-const createMockHtmlElement = bounds =>
+const createMockHtmlElement = (bounds: Partial<DOMRect>) =>
   ({
     getBoundingClientRect: () => bounds
   } as HTMLElement);
@@ -43,7 +43,7 @@ test('debounce', () => {
     debouncedFunction();
   }
 
-  expect(callback).toBeCalledTimes(10);
+  expect(callback).toHaveBeenCalledTimes(10);
 });
 
 test('isElementInView should be true when partial out of view and with partial true', () => {

@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 import {
   Table,
@@ -353,6 +352,6 @@ describe('Table', () => {
       </Table>
     );
 
-    expect(screen.getByText('Empty State Component').parentElement.getAttribute('colspan')).toEqual('8');
+    expect(screen.getByText('Empty State Component').parentElement).toHaveAttribute('colspan', '8');
   });
 });

@@ -4,34 +4,34 @@ import { Split } from '../Split';
 import { SplitItem } from '../SplitItem';
 
 test('isFilled', () => {
-  const view = render(
+  const { asFragment } = render(
     <Split>
       <SplitItem isFilled>Main content</SplitItem>
     </Split>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('isFilled defaults to false', () => {
-  const view = render(
+  const { asFragment } = render(
     <Split>
       <SplitItem>Basic content</SplitItem>
     </Split>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('Gutter', () => {
-  const view = render(
+  const { asFragment } = render(
     <Split hasGutter>
       <SplitItem>Basic Content</SplitItem>
     </Split>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('Wrappable', () => {
-  const view = render(
+  const { asFragment } = render(
     <Split isWrappable>
       <SplitItem>Basic Content</SplitItem>
       <SplitItem>Basic Content</SplitItem>
@@ -49,5 +49,5 @@ test('Wrappable', () => {
       <SplitItem>Basic Content</SplitItem>
     </Split>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

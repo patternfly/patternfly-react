@@ -14,7 +14,6 @@ describe('ComputeElementDimensions', () => {
       screen
         .getByTestId('wrapper-test-id')
         .querySelector('g')
-        .getAttribute('style')
-    ).toContain('hidden');
+    ).toHaveAttribute('style', 'visibility: hidden;');
   });
 });

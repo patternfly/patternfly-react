@@ -8,18 +8,18 @@ import { WizardFooterInternal } from '../../WizardFooterInternal';
 import {} from '../..';
 
 it('WizardFooterInternal should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <WizardFooterInternal
       onNext={'any'}
       onBack={'any'}
       onClose={'any'}
       isValid={true}
       firstStep={true}
-      activeStep={{} /*unrecognizedType WizardStep undefined*/}
+      activeStep={{ name: 'some step' }}
       nextButtonText={<div>ReactNode</div>}
       backButtonText={<div>ReactNode</div>}
       cancelButtonText={<div>ReactNode</div>}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

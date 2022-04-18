@@ -8,6 +8,6 @@ import { AccordionItem } from '../../AccordionItem';
 import {} from '../..';
 
 it('AccordionItem should match snapshot (auto-generated)', () => {
-  const view = render(<AccordionItem children={<>ReactNode</>} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<AccordionItem children={<>ReactNode</>} />);
+  expect(asFragment()).toMatchSnapshot();
 });

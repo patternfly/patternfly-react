@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
 
 import { Alert } from '../../Alert';
 import { AlertGroup } from '../../AlertGroup';
@@ -10,18 +9,18 @@ import { AlertActionCloseButton } from '../../../components/Alert/AlertActionClo
 
 describe('AlertGroup', () => {
   test('Alert Group renders without children', () => {
-    const view = render(<AlertGroup />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<AlertGroup />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Alert Group works with n children', () => {
-    const view = render(
+    const { asFragment } = render(
       <AlertGroup>
         <Alert variant="success" title="alert title" />
         <Alert variant="warning" title="another alert title" />
       </AlertGroup>
     );
-    expect(view).toBeTruthy();
+    expect(asFragment()).toBeTruthy();
   });
 
   test('Alert group overflow shows up', () => {
@@ -40,7 +39,7 @@ describe('AlertGroup', () => {
     expect(overflowButton).toBeInTheDocument();
 
     userEvent.click(overflowButton);
-    expect(onOverflowClick).toBeCalled();
+    expect(onOverflowClick).toHaveBeenCalled();
   });
 
   test('Standard Alert Group is not a toast alert group', () => {
@@ -77,6 +76,6 @@ describe('AlertGroup', () => {
     );
 
     userEvent.click(screen.getByLabelText('Close'));
-    expect(onClose).toBeCalled();
+    expect(onClose).toHaveBeenCalled();
   });
 });

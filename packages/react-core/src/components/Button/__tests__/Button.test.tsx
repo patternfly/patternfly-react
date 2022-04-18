@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 import CartArrowDownIcon from '@patternfly/react-icons/dist/esm/icons/cart-arrow-down-icon';
 import { Button, ButtonVariant } from '../Button';
@@ -9,12 +8,12 @@ import { Button, ButtonVariant } from '../Button';
 describe('Button', () => {
   Object.values(ButtonVariant).forEach(variant => {
     test(`${variant} button`, () => {
-      const view = render(
+      const { asFragment } = render(
         <Button variant={variant} aria-label={variant}>
           {variant} Button
         </Button>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 
@@ -26,82 +25,82 @@ describe('Button', () => {
   });
 
   test('link with icon', () => {
-    const view = render(
+    const { asFragment } = render(
       <Button variant={ButtonVariant.link} icon={<CartArrowDownIcon />}>
         Block Button
       </Button>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('isBlock', () => {
-    const view = render(<Button isBlock>Block Button</Button>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<Button isBlock>Block Button</Button>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('isDisabled', () => {
-    const view = render(<Button isDisabled>Disabled Button</Button>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<Button isDisabled>Disabled Button</Button>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('isDanger secondary', () => {
-    const view = render(
+    const { asFragment } = render(
       <Button variant="secondary" isDanger>
         Disabled Button
       </Button>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('isDanger link', () => {
-    const view = render(
+    const { asFragment } = render(
       <Button variant="link" isDanger>
         Disabled Button
       </Button>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('isAriaDisabled button', () => {
-    const view = render(<Button isAriaDisabled>Disabled yet focusable button</Button>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<Button isAriaDisabled>Disabled yet focusable button</Button>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('isAriaDisabled link button', () => {
-    const view = render(
+    const { asFragment } = render(
       <Button isAriaDisabled component="a">
         Disabled yet focusable button
       </Button>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('isInline', () => {
-    const view = render(
+    const { asFragment } = render(
       <Button variant={ButtonVariant.link} isInline>
         Hovered Button
       </Button>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('isSmall', () => {
-    const view = render(<Button isSmall>Small Button</Button>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<Button isSmall>Small Button</Button>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('isLarge', () => {
-    const view = render(<Button isLarge>Large Button</Button>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<Button isLarge>Large Button</Button>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('isLoading', () => {
-    const view = render(
+    const { asFragment } = render(
       <Button isLoading spinnerAriaValueText="Loading">
         Loading Button
       </Button>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('allows passing in a string as the component', () => {
@@ -119,23 +118,23 @@ describe('Button', () => {
   });
 
   test('aria-disabled is set to true and tabIndex to -1 if component is not a button and is disabled', () => {
-    const view = render(
+    const { asFragment } = render(
       <Button component="a" isDisabled>
         Disabled Anchor Button
       </Button>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('setting tab index through props', () => {
     render(<Button tabIndex={0}>TabIndex 0 Button</Button>);
-    expect(screen.getByRole('button').getAttribute('tabindex')).toEqual('0');
+    expect(screen.getByRole('button')).toHaveAttribute('tabindex', '0');
   });
 
   test('isLoading icon only', () => {
-    const view = render(
+    const { asFragment } = render(
       <Button variant="plain" isLoading aria-label="Upload" spinnerAriaValueText="Loading" icon={<div>ICON</div>} />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

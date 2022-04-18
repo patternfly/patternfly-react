@@ -1,72 +1,72 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Description List 1 col on all breakpoints 1`] = `
-<div>
+<DocumentFragment>
   <dl
     class="pf-c-description-list pf-m-1-col pf-m-1-col-on-md pf-m-1-col-on-lg pf-m-1-col-on-xl pf-m-1-col-on-2xl"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Description List 2 col on all breakpoints 1`] = `
-<div>
+<DocumentFragment>
   <dl
     class="pf-c-description-list pf-m-2-col pf-m-2-col-on-md pf-m-2-col-on-lg pf-m-2-col-on-xl pf-m-2-col-on-2xl"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Description List 3 col on all breakpoints 1`] = `
-<div>
+<DocumentFragment>
   <dl
     class="pf-c-description-list pf-m-3-col pf-m-3-col-on-md pf-m-3-col-on-lg pf-m-3-col-on-xl pf-m-3-col-on-2xl"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Description List Auto Column Widths Description List 1`] = `
-<div>
+<DocumentFragment>
   <dl
     class="pf-c-description-list pf-m-auto-column-widths"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Description List Auto fit Description List 1`] = `
-<div>
+<DocumentFragment>
   <dl
     class="pf-c-description-list pf-m-auto-fit"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Description List Auto fit with responsive grid Description List 1`] = `
-<div>
+<DocumentFragment>
   <dl
     class="pf-c-description-list pf-m-auto-fit"
     style="--pf-c-description-list--GridTemplateColumns--min-on-md: 100px; --pf-c-description-list--GridTemplateColumns--min-on-lg: 150px; --pf-c-description-list--GridTemplateColumns--min-on-xl: 200px; --pf-c-description-list--GridTemplateColumns--min-on-2xl: 300px;"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Description List Compact Description List 1`] = `
-<div>
+<DocumentFragment>
   <dl
     class="pf-c-description-list pf-m-compact"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Description List Compact Horizontal Description List 1`] = `
-<div>
+<DocumentFragment>
   <dl
     class="pf-c-description-list pf-m-horizontal pf-m-compact"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Description List Description 1`] = `
-<div>
+<DocumentFragment>
   <dd
     aria-labelledby="description-1"
     class="pf-c-description-list__description custom-description-list-description"
@@ -77,46 +77,46 @@ exports[`Description List Description 1`] = `
       test
     </div>
   </dd>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Description List Fluid Horizontal Description List 1`] = `
-<div>
+<DocumentFragment>
   <dl
     class="pf-c-description-list pf-m-horizontal pf-m-fluid"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Description List Group 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-labelledby="group-1"
     class="pf-c-description-list__group custom-description-list-group"
   >
     test
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Description List Horizontal Description List 1`] = `
-<div>
+<DocumentFragment>
   <dl
     class="pf-c-description-list pf-m-horizontal"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Description List Inline Grid Description List 1`] = `
-<div>
+<DocumentFragment>
   <dl
     class="pf-c-description-list pf-m-inline-grid"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Description List Term default 1`] = `
-<div>
+<DocumentFragment>
   <dt
     aria-labelledby="term-1"
     class="pf-c-description-list__term"
@@ -127,11 +127,11 @@ exports[`Description List Term default 1`] = `
       test
     </span>
   </dt>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Description List Term helper text 1`] = `
-<div>
+<DocumentFragment>
   <dt
     aria-labelledby="term-1"
     class="pf-c-description-list__term"
@@ -145,21 +145,21 @@ exports[`Description List Term helper text 1`] = `
       test
     </span>
   </dt>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Description List alignment breakpoints 1`] = `
-<div>
+<DocumentFragment>
   <dl
     class="pf-c-description-list pf-m-horizontal pf-m-horizontal-on-sm pf-m-vertical-on-md pf-m-horizontal-on-lg pf-m-vertical-on-xl pf-m-horizontal-on-2xl"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Description List default 1`] = `
-<div>
+<DocumentFragment>
   <dl
     class="pf-c-description-list"
   />
-</div>
+</DocumentFragment>
 `;

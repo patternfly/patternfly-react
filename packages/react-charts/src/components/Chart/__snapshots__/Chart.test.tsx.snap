@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Chart 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-chart"
     style="height: 100%; width: 100%; user-select: none; pointer-events: none; position: relative;"
@@ -363,11 +363,11 @@ exports[`Chart 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Chart 2`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-chart"
     style="height: 100%; width: 100%; user-select: none; pointer-events: none; position: relative;"
@@ -729,11 +729,11 @@ exports[`Chart 2`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`renders axis and component children 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-chart"
     style="height: 100%; width: 100%; user-select: none; pointer-events: none; position: relative;"
@@ -1224,5 +1224,5 @@ exports[`renders axis and component children 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

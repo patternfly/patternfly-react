@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal Content Test description 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-backdrop"
   >
@@ -48,7 +48,6 @@ exports[`Modal Content Test description 1`] = `
             class="pf-c-modal-box__title"
             id="labelId"
           >
-            
             <span
               class="pf-c-modal-box__title-text"
             >
@@ -70,11 +69,11 @@ exports[`Modal Content Test description 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Modal Content Test isOpen 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-backdrop"
   >
@@ -121,7 +120,6 @@ exports[`Modal Content Test isOpen 1`] = `
             class="pf-c-modal-box__title"
             id="labelId"
           >
-            
             <span
               class="pf-c-modal-box__title-text"
             >
@@ -138,11 +136,11 @@ exports[`Modal Content Test isOpen 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Modal Content Test only body 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-backdrop"
   >
@@ -189,7 +187,6 @@ exports[`Modal Content Test only body 1`] = `
             class="pf-c-modal-box__title"
             id="labelId"
           >
-            
             <span
               class="pf-c-modal-box__title-text"
             >
@@ -206,11 +203,11 @@ exports[`Modal Content Test only body 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Modal Content Test with footer 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-backdrop"
   >
@@ -257,7 +254,6 @@ exports[`Modal Content Test with footer 1`] = `
             class="pf-c-modal-box__title"
             id="labelId"
           >
-            
             <span
               class="pf-c-modal-box__title-text"
             >
@@ -279,11 +275,11 @@ exports[`Modal Content Test with footer 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Modal Content Test with onclose 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-backdrop"
   >
@@ -330,7 +326,6 @@ exports[`Modal Content Test with onclose 1`] = `
             class="pf-c-modal-box__title"
             id="labelId"
           >
-            
             <span
               class="pf-c-modal-box__title-text"
             >
@@ -352,11 +347,11 @@ exports[`Modal Content Test with onclose 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Modal Content test without footer 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-backdrop"
   >
@@ -403,7 +398,6 @@ exports[`Modal Content test without footer 1`] = `
             class="pf-c-modal-box__title"
             id="labelId"
           >
-            
             <span
               class="pf-c-modal-box__title-text"
             >
@@ -420,11 +414,11 @@ exports[`Modal Content test without footer 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Modal Test with custom footer 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-backdrop"
   >
@@ -471,7 +465,6 @@ exports[`Modal Test with custom footer 1`] = `
             class="pf-c-modal-box__title"
             id="labelId"
           >
-            
             <span
               class="pf-c-modal-box__title-text"
             >
@@ -497,11 +490,11 @@ exports[`Modal Test with custom footer 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Modal Test with custom header 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-backdrop"
   >
@@ -564,5 +557,5 @@ exports[`Modal Test with custom header 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

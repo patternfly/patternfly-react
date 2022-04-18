@@ -2,7 +2,6 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
 
 import { DesktopViewer } from '../DesktopViewer';
 import { MoreInformationDefaultContent } from '../MoreInformationDefaultContent';
@@ -90,8 +89,8 @@ describe('DesktopViewer', () => {
   });
 
   test('default MoreInformationContent', () => {
-    render(<MoreInformationDefaultContent />);
-    expect(screen.getByText(/Launch Remote Viewer/).outerHTML).toMatchSnapshot();
+    const { asFragment } = render(<MoreInformationDefaultContent />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('default implementation of generateVVFile()', () => {

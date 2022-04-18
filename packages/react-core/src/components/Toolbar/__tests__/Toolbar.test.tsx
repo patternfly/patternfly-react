@@ -22,7 +22,7 @@ describe('Toolbar', () => {
       </React.Fragment>
     );
 
-    render(
+    const { asFragment } = render(
       <Toolbar
         id="toolbar"
         inset={{
@@ -37,7 +37,7 @@ describe('Toolbar', () => {
       </Toolbar>
     );
 
-    expect(screen.getByTestId('toolbar-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render with page inset flag', () => {
@@ -50,13 +50,13 @@ describe('Toolbar', () => {
       </React.Fragment>
     );
 
-    render(
+    const { asFragment } = render(
       <Toolbar id="toolbar" usePageInsets data-testid="toolbar-test-id">
         <ToolbarContent>{items}</ToolbarContent>
       </Toolbar>
     );
 
-    expect(screen.getByTestId('toolbar-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render with custom chip content', () => {
@@ -109,7 +109,7 @@ describe('Toolbar', () => {
       </React.Fragment>
     );
 
-    render(
+    const { asFragment } = render(
       <Toolbar
         id="toolbar-with-filter"
         className="pf-m-toggle-group-container"
@@ -124,6 +124,6 @@ describe('Toolbar', () => {
     // Expecting 2 matches for text because the buttons also exist in hidden expandable content for mobile view
     expect(screen.getAllByRole('button', { name: 'Save filters' }).length).toBe(2);
     expect(screen.getAllByRole('button', { name: 'Clear all filters' }).length).toBe(2);
-    expect(screen.getByTestId('toolbar-test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

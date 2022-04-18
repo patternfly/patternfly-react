@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`alternative component 1`] = `
-<div>
+<DocumentFragment>
   <ul
     class="pf-l-grid"
   >
@@ -11,13 +11,13 @@ exports[`alternative component 1`] = `
       Test
     </li>
   </ul>
-</div>
+</DocumentFragment>
 `;
 
 exports[`gutter 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid pf-m-gutter"
   />
-</div>
+</DocumentFragment>
 `;

@@ -1,8 +1,5 @@
 import React from 'react';
-
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-
 import { Bullseye } from '../Bullseye';
 
 describe('Bullseye', () => {
@@ -12,7 +9,7 @@ describe('Bullseye', () => {
   });
 
   test('className is added to the root element', () => {
-    render(<Bullseye className="extra-class" data-testid='test-id' />);
+    render(<Bullseye className="extra-class" data-testid="test-id" />);
     expect(screen.getByTestId('test-id')).toHaveClass('extra-class');
   });
 

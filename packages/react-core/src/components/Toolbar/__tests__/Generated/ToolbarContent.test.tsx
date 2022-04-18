@@ -8,7 +8,7 @@ import { ToolbarContent } from '../../ToolbarContent';
 import {} from '../..';
 
 it('ToolbarContent should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <ToolbarContent
       className={'string'}
       children={<div>ReactNode</div>}
@@ -19,5 +19,5 @@ it('ToolbarContent should match snapshot (auto-generated)', () => {
       toolbarId={'string'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

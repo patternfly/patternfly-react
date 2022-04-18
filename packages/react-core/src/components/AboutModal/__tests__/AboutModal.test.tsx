@@ -19,7 +19,7 @@ describe('AboutModal', () => {
     render(<AboutModal {...props} isOpen />);
 
     userEvent.type(screen.getByRole('dialog'), '{esc}');
-    expect(props.onClose).toBeCalled();
+    expect(props.onClose).toHaveBeenCalled();
   });
 
   test('does not render the modal when isOpen is not specified', () => {
@@ -48,6 +48,6 @@ describe('AboutModal', () => {
     global.console = { error: myMock } as any;
 
     render(<AboutModal {...noImgAltrops}>Test About Modal</AboutModal>);
-    expect(myMock).toBeCalled();
+    expect(myMock).toHaveBeenCalled();
   });
 });

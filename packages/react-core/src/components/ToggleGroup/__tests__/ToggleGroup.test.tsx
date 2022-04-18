@@ -13,22 +13,30 @@ const props = {
 
 describe('ToggleGroup', () => {
   test('basic selected', () => {
-    const { asFragment } = render(<ToggleGroupItem text="test" isSelected buttonId="toggleGroupItem" aria-label="basic selected" />);
+    const { asFragment } = render(
+      <ToggleGroupItem text="test" isSelected buttonId="toggleGroupItem" aria-label="basic selected" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('basic not selected', () => {
-    const { asFragment } = render(<ToggleGroupItem text="test" buttonId="toggleGroupItem" aria-label="basic not selected" />);
+    const { asFragment } = render(
+      <ToggleGroupItem text="test" buttonId="toggleGroupItem" aria-label="basic not selected" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('icon variant', () => {
-    const { asFragment } = render(<ToggleGroupItem isSelected icon="icon" buttonId="toggleGroupItem" aria-label="icon variant" />);
+    const { asFragment } = render(
+      <ToggleGroupItem isSelected icon="icon" buttonId="toggleGroupItem" aria-label="icon variant" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('isDisabled', () => {
-    const { asFragment } = render(<ToggleGroupItem text="test" isDisabled buttonId="toggleGroupItem" aria-label="isDisabled" />);
+    const { asFragment } = render(
+      <ToggleGroupItem text="test" isDisabled buttonId="toggleGroupItem" aria-label="isDisabled" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 

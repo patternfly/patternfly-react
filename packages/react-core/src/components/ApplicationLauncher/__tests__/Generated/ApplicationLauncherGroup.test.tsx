@@ -8,6 +8,6 @@ import { ApplicationLauncherGroup } from '../../ApplicationLauncherGroup';
 import {} from '../..';
 
 it('ApplicationLauncherGroup should match snapshot (auto-generated)', () => {
-  const view = render(<ApplicationLauncherGroup />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<ApplicationLauncherGroup />);
+  expect(asFragment()).toMatchSnapshot();
 });

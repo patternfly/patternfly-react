@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChartDonutThreshold 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
@@ -34,11 +34,11 @@ exports[`ChartDonutThreshold 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ChartDonutThreshold 2`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
@@ -71,11 +71,11 @@ exports[`ChartDonutThreshold 2`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`renders component data 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
@@ -129,5 +129,5 @@ exports[`renders component data 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

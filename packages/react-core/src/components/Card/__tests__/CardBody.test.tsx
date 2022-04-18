@@ -1,19 +1,16 @@
 import React from 'react';
-
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-
 import { CardBody } from '../CardBody';
 
 describe('CardBody', () => {
   test('renders with PatternFly Core styles', () => {
-    const view = render(<CardBody />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<CardBody />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('className is added to the root element', () => {
     render(<CardBody className="extra-class" data-testid="test-id" />);
-    expect(screen.getByTestId('test-id').className).toContain('extra-class');
+    expect(screen.getByTestId('test-id')).toHaveClass('extra-class');
   });
 
   test('extra props are spread to the root element', () => {
@@ -38,7 +35,7 @@ describe('CardBody', () => {
   });
 
   test('body with no-fill applied', () => {
-    const view = render(<CardBody isFilled={false} />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<CardBody isFilled={false} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -27,40 +27,36 @@ const dropdownItems = [
 
 describe('ApplicationLauncher', () => {
   test('regular', () => {
-    const view = render(<ApplicationLauncher items={dropdownItems} />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ApplicationLauncher items={dropdownItems} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('right aligned', () => {
-    const view = render(<ApplicationLauncher items={dropdownItems} position={DropdownPosition.right} />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ApplicationLauncher items={dropdownItems} position={DropdownPosition.right} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('dropup', () => {
-    const view = render(<ApplicationLauncher items={dropdownItems} direction={DropdownDirection.up} />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ApplicationLauncher items={dropdownItems} direction={DropdownDirection.up} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('dropup + right aligned', () => {
-    const view = render(
-      <ApplicationLauncher
-        items={dropdownItems}
-        direction={DropdownDirection.up}
-        position={DropdownPosition.right}
-      />
+    const { asFragment } = render(
+      <ApplicationLauncher items={dropdownItems} direction={DropdownDirection.up} position={DropdownPosition.right} />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('expanded', () => {
-    const view = render(<ApplicationLauncher items={dropdownItems} isOpen />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ApplicationLauncher items={dropdownItems} isOpen />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('custom icon', () => {
-    const view = render(
+    const { asFragment } = render(
       <ApplicationLauncher items={dropdownItems} isOpen toggleIcon={<HelpIcon id="test-icon" />} />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

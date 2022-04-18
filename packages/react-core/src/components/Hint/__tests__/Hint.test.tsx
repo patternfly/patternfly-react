@@ -6,12 +6,12 @@ import { HintTitle } from '../HintTitle';
 import { HintFooter } from '../HintFooter';
 
 test('simple hint', () => {
-  const view = render(
+  const { asFragment } = render(
     <Hint>
       <HintTitle>Title</HintTitle>
       <HintBody>Body</HintBody>
       <HintFooter>Footer</HintFooter>
     </Hint>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
