@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormGroup, TextInput, HelperText, HelperTextItem } from '@patternfly/react-core';
+import { Form, FormGroup, FormHelperText, TextInput, HelperText, HelperTextItem } from '@patternfly/react-core';
 
 export const HelperTextDynamicVariantDynamicText: React.FunctionComponent = () => {
   const [value, setValue] = React.useState('');
@@ -55,15 +55,17 @@ export const HelperTextDynamicVariantDynamicText: React.FunctionComponent = () =
           aria-invalid={ruleCharacterTypes === 'error' || ruleLength === 'error'}
           value={value}
         />
+        <FormHelperText isHidden={false} component="div">
+          <HelperText component="ul">
+            <HelperTextItem component="li" id="ruleLength" isDynamic variant={ruleLength as any}>
+              Must be at least 5 characters in length
+            </HelperTextItem>
+            <HelperTextItem component="li" id="ruleCharacterTypes" isDynamic variant={ruleCharacterTypes as any}>
+              Must include at least 1 number
+            </HelperTextItem>
+          </HelperText>
+        </FormHelperText>
       </FormGroup>
-      <HelperText component="ul">
-        <HelperTextItem component="li" id="ruleLength" isDynamic variant={ruleLength as any}>
-          Must be at least 5 characters in length
-        </HelperTextItem>
-        <HelperTextItem component="li" id="ruleCharacterTypes" isDynamic variant={ruleCharacterTypes as any}>
-          Must include at least 1 number
-        </HelperTextItem>
-      </HelperText>
     </Form>
   );
 };

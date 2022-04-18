@@ -44,5 +44,5 @@ The `aria-describedby` attribute is passed into the text input component and is 
 
 Similar to the static variant with dynamic text example, the `aria-invalid` attribute is passed in, allowing assistive technologies to announce to users when at least 1 item is causing the input to be invalid.
 
-```ts file='./examples/HelperText/HelperTextDynamicVariantDynamicText.tsx'
+```ts file='./examples/HelperText/HelperTextDynamicVariantStaticText.tsx'
 ```

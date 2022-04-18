@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormGroup, TextInput, HelperText, HelperTextItem } from '@patternfly/react-core';
+import { Form, FormGroup, FormHelperText, TextInput, HelperText, HelperTextItem } from '@patternfly/react-core';
 
 export const HelperTextStaticVariantStaticText: React.FunctionComponent = () => {
   const [value, setValue] = React.useState('');
@@ -19,10 +19,12 @@ export const HelperTextStaticVariantStaticText: React.FunctionComponent = () => 
           aria-describedby="helper-text1"
           value={value}
         />
+        <FormHelperText isHidden={false} component="div">
+          <HelperText id="helper-text1">
+            <HelperTextItem variant={'default'}>Enter your middle name or your middle initial</HelperTextItem>
+          </HelperText>
+        </FormHelperText>
       </FormGroup>
-      <HelperText id="helper-text1">
-        <HelperTextItem variant={'default'}>Enter your middle name or your middle initial</HelperTextItem>
-      </HelperText>
     </Form>
   );
 };
