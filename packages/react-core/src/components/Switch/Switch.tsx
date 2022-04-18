@@ -10,21 +10,21 @@ export interface SwitchProps
     OUIAProps {
   /** id for the label. */
   id?: string;
-  /** Additional classes added to the Switch */
+  /** Additional classes added to the switch */
   className?: string;
   /** Text value for the label when on */
   label?: React.ReactNode;
   /** Text value for the label when off */
   labelOff?: React.ReactNode;
-  /** Flag to show if the Switch is checked. */
+  /** Flag to show if the switch is checked. */
   isChecked?: boolean;
-  /** Flag to show if the Switch has a check icon. */
+  /** Flag to show if the switch has a check icon. */
   hasCheckIcon?: boolean;
-  /** Flag to show if the Switch is disabled. */
+  /** Flag to show if the switch is disabled. */
   isDisabled?: boolean;
-  /** A callback for when the Switch selection changes. (isChecked, event) => {} */
+  /** A callback for when the switch selection changes. (isChecked, event) => {} */
   onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
-  /** Adds accessible text to the Switch, and should describe the isChecked="true" state. When label is defined, aria-label should be set to the text string that is visible when isChecked is true. */
+  /** Adds accessible text to the switch, and should describe the isChecked="true" state. When label is defined, aria-label should be set to the text string that is visible when isChecked is true. */
   'aria-label'?: string;
   /** Flag to reverse the layout of toggle and label (toggle on right). */
   isReversed?: boolean;
