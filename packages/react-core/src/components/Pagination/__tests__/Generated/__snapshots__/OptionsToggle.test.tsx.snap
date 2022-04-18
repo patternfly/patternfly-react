@@ -10,6 +10,7 @@ exports[`OptionsToggle should match snapshot (auto-generated) 1`] = `
     />
     <button
       aria-expanded="false"
+      aria-haspopup="listbox"
       aria-label="'Select'"
       class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
       data-ouia-component-id="OUIA-Generated-DropdownToggle-1"

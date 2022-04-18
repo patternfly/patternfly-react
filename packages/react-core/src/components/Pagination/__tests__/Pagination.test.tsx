@@ -75,10 +75,7 @@ describe('Pagination', () => {
 
     test('custom pagination toggle', () => {
       const { asFragment } = render(
-        <Pagination
-          itemCount={40}
-          toggleTemplate={'${firstIndex} - ${lastIndex} - ${itemCount} - ${itemsTitle}'}
-        />
+        <Pagination itemCount={40} toggleTemplate={'${firstIndex} - ${lastIndex} - ${itemCount} - ${itemsTitle}'} />
       );
       expect(asFragment()).toMatchSnapshot();
     });
@@ -109,6 +106,11 @@ describe('Pagination', () => {
     test('toggleTemplate toggle text with string', () => {
       render(<Pagination toggleTemplate={'I am a string'} />);
       expect(screen.getAllByText('I am a string')[0]).toBeInTheDocument();
+    });
+
+    test('should render correctly button variant', () => {
+      const { asFragment } = render(<Pagination perPageComponent="button" itemCount={20} />);
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 

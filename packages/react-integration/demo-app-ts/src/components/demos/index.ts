@@ -55,6 +55,7 @@ export * from './OptionsMenuDemo/OptionsMenuDemo';
 export * from './OverflowMenuDemo/OverflowMenuDemo';
 export * from './PageDemo/PageDemo';
 export * from './PageDemo/PageManagedSidebarClosedDemo';
+export * from './PaginationDemo/PaginationButtonVariantDemo';
 export * from './PaginationDemo/PaginationDemo';
 export * from './PopoverDemo/PopoverDemo';
 export * from './RadioDemo/RadioDemo';
