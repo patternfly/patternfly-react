@@ -331,17 +331,13 @@ import PendingIcon from '@patternfly/react-icons/dist/esm/icons/pending-icon';
 
 ### With help popover
 
-To add a popover to a progress step, set the `popover` and `ref` properties on the `ProgressStep` component and the `reference` property on the `Popover` component.
+To add a popover to a progress step, set the `popoverRender` properties on the `ProgressStep` component.
 
 ```js
 import React from 'react';
 import { ProgressStepper, ProgressStep, Popover } from '@patternfly/react-core';
 
 PopoverProgressStep = () => {
-  const firstStepRef = React.useRef();
-  const secondStepRef = React.useRef();
-  const thirdStepRef = React.useRef();
-
   return (
     <ProgressStepper>
       <ProgressStep
@@ -349,55 +345,52 @@ PopoverProgressStep = () => {
         id="popover-step1"
         titleId="popover-step1-title"
         aria-label="completed step with popover, step with success"
-        popover={
+        popoverRender={( stepRef ) => (
           <Popover
             aria-label="First step help"
             headerContent={<div>First step popover</div>}
             bodyContent={<div>Additional info or help text content.</div>}
-            reference={firstStepRef}
+            reference={stepRef}
             position="right"
           />
-        }
-        ref={firstStepRef}
+           )}
       >
-        First Step
+        First step
       </ProgressStep>
       <ProgressStep
         variant="danger"
         id="popover-step2"
         titleId="popover-step2-title"
         aria-label="completed step with popover, step with danger"
-        popover={
+        popoverRender={( stepRef ) => (
           <Popover
             aria-label="Second step help"
             headerContent={<div>Second step popover</div>}
             bodyContent={<div>Additional info or help text content.</div>}
-            reference={secondStepRef}
+            reference={stepRef}
             position="right"
           />
-        }
-        ref={secondStepRef}
+        )}
       >
-        Second Step
+        Second step
       </ProgressStep>
       <ProgressStep
         variant="info"
         id="popover-step3"
         titleId="popover-step3-title"
         aria-label="step with popover"
-        popover={
+        popoverRender={(stepRef) => (
           <Popover
             aria-label="Third step help"
             headerContent={<div>Third step popover</div>}
             bodyContent={<div>Additional info or help text content.</div>}
-            reference={thirdStepRef}
+            reference={stepRef}
             position="right"
           />
-        }
+        )}
         isCurrent
-        ref={thirdStepRef}
       >
-        Third Step
+        Third step
       </ProgressStep>
       <ProgressStep variant="pending" id="popover-step4" titleId="popover-step4-title" aria-label="pending step">
         Fourth step

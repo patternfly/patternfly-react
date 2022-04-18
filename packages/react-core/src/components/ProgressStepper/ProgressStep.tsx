@@ -22,13 +22,11 @@ export interface ProgressStepProps
   description?: string;
   /** ID of the title of the progress step. */
   titleId?: string;
-  /** Popover for a progress step. */
-  popover?: React.ReactNode;
-  /** @hide Forwarded reference to title container */
-  innerRef?: React.Ref<any>;
   /** Accessible label for the progress step. Should communicate all information being communicated by the progress
    * step's icon, including the variant and the completed status. */
   'aria-label'?: string;
+  /** Forwards the step ref to rendered function.  Use this prop to add a popover to the step.*/
+  popoverRender?: (stepRef: React.RefObject<any>) => React.ReactNode;
 }
 
 const variantIcons = {
@@ -49,7 +47,7 @@ const variantStyle = {
   danger: styles.modifiers.danger
 };
 
-const ProgressStepBase: React.FunctionComponent<ProgressStepProps> = ({
+export const ProgressStep: React.FunctionComponent<ProgressStepProps> = ({
   children,
   className,
   variant,
@@ -57,13 +55,13 @@ const ProgressStepBase: React.FunctionComponent<ProgressStepProps> = ({
   description,
   icon,
   titleId,
-  popover,
-  innerRef,
   'aria-label': ariaLabel,
+  popoverRender,
   ...props
 }: ProgressStepProps) => {
   const _icon = icon !== undefined ? icon : variantIcons[variant];
-  const Component = popover !== undefined ? 'span' : 'div';
+  const Component = popoverRender !== undefined ? 'span' : 'div';
+  const stepRef = React.useRef();
 
   if (props.id === undefined || titleId === undefined) {
     /* eslint-disable no-console */
@@ -89,14 +87,14 @@ const ProgressStepBase: React.FunctionComponent<ProgressStepProps> = ({
       </div>
       <div className={css(styles.progressStepperStepMain)}>
         <Component
-          className={css(styles.progressStepperStepTitle, popover && styles.modifiers.helpText)}
+          className={css(styles.progressStepperStepTitle, popoverRender && styles.modifiers.helpText)}
           id={titleId}
-          ref={innerRef}
-          {...(popover && { tabIndex: 0, role: 'button', type: 'button' })}
+          ref={stepRef}
+          {...(popoverRender && { tabIndex: 0, role: 'button', type: 'button' })}
           {...(props.id !== undefined && titleId !== undefined && { 'aria-labelledby': `${props.id} ${titleId}` })}
         >
           {children}
-          {popover}
+          {popoverRender && popoverRender(stepRef)}
         </Component>
         {description && <div className={css(styles.progressStepperStepDescription)}>{description}</div>}
       </div>
@@ -104,7 +102,4 @@ const ProgressStepBase: React.FunctionComponent<ProgressStepProps> = ({
   );
 };
 
-export const ProgressStep = React.forwardRef((props: ProgressStepProps, ref: React.Ref<HTMLSpanElement>) => (
-  <ProgressStepBase innerRef={ref} {...props} />
-));
 ProgressStep.displayName = 'ProgressStep';
