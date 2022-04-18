@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.58.0 (2022-04-18)
+
+
+### Features
+
+* **Tabs:** Add nested, unindented demo ([#7194](https://github.com/patternfly/patternfly-react/issues/7194)) ([81bd759](https://github.com/patternfly/patternfly-react/commit/81bd759189379bc558871acc791a1a34dcc2ed1a))
+
+
+
+
+
 # 6.57.0 (2022-04-18)
 
 
