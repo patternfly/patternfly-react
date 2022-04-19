@@ -17,10 +17,18 @@ export interface HelperTextItemProps extends React.HTMLProps<HTMLDivElement | HT
   variant?: 'default' | 'indeterminate' | 'warning' | 'success' | 'error';
   /** Custom icon prefixing the helper text. This property will override the default icon paired with each helper text variant. */
   icon?: React.ReactNode;
-  /** Flag indicating the helper text item is dynamic. */
+  /** Flag indicating the helper text item is dynamic. This prop should be used when the
+   * text content of the helper text item will never change, but the icon and styling will
+   * be dynamically updated via the `variant` prop.
+   */
   isDynamic?: boolean;
   /** Flag indicating the helper text should have an icon. Dynamic helper texts include icons by default while static helper texts do not. */
   hasIcon?: boolean;
+  /** ID for the helper text item. The value of this prop can be passed into a form component's
+   * aria-describedby prop when you intend for only specific helper text items to be announced to
+   * assistive technologies.
+   */
+  id?: string;
 }
 
 const variantStyle = {
@@ -39,12 +47,14 @@ export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
   icon,
   isDynamic = false,
   hasIcon = isDynamic,
+  id,
   ...props
 }: HelperTextItemProps) => {
   const Component = component as any;
   return (
     <Component
       className={css(styles.helperTextItem, variantStyle[variant], isDynamic && styles.modifiers.dynamic, className)}
+      id={id}
       {...props}
     >
       {icon && (
