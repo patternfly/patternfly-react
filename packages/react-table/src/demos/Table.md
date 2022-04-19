@@ -3043,7 +3043,7 @@ class LoadingStateDemo extends React.Component {
             props: { colSpan: 8 },
             title: (
               <Bullseye>
-                <Spinner size="xl" aria-labelledby="loading-table-demo" />
+                <Spinner size="xl" aria-labelledby="loading-table-demo"/>
               </Bullseye>
             )
           }
