@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.44.0 (2022-04-19)
+
+
+### Features
+
+* **HelperText:** add react demos ([#7250](https://github.com/patternfly/patternfly-react/issues/7250)) ([bf68976](https://github.com/patternfly/patternfly-react/commit/bf68976bebd683c935f587795a868c32ea8c5616))
+
+
+
+
+
 ## 4.43.1 (2022-04-19)
 
 **Note:** Version bump only for package transformer-cjs-imports
