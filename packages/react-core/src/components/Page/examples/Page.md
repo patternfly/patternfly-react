@@ -264,11 +264,10 @@ class FillPage extends React.Component {
     return (
       <Page header={Header} sidebar={Sidebar}>
         <PageSection>A default page section</PageSection>
-        <PageSection isFilled={true}>
-          This section fills the available space.
-        </PageSection>
+        <PageSection isFilled={true}>This section fills the available space.</PageSection>
         <PageSection isFilled={false}>
-          This section is set to not fill the available space, since the last page section is set to fill the available space by default.
+          This section is set to not fill the available space, since the last page section is set to fill the available
+          space by default.
         </PageSection>
       </Page>
     );
@@ -590,7 +589,7 @@ class VerticalPage extends React.Component {
 }
 ```
 
-### Centered content
+### Centered section
 
 ```js
 import React from 'react';
@@ -607,7 +606,9 @@ import {
   PageToggleButton,
   Toolbar,
   ToolbarContent,
-  ToolbarItem
+  ToolbarItem,
+  Card,
+  CardBody
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
@@ -639,7 +640,16 @@ CenterAlignedPageSection = () => {
   return (
     <Page header={Header}>
       <PageSection isWidthLimited isCenterAligned>
-        Page section width limited, centered.
+        <Card>
+          <CardBody>
+            When a width limited page section is wider than the value of
+            <code>--pf-c-page--section--m-limit-width--MaxWidth</code>, the section will be centered in the main section.
+            <br />
+            <br />
+            The content in this example is placed in a card to better illustrate how the section behaves when it is
+            centered. A card is not required to center a page section.
+          </CardBody>
+        </Card>
       </PageSection>
     </Page>
   );
