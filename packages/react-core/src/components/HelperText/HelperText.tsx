@@ -33,7 +33,7 @@ export const HelperText: React.FunctionComponent<HelperTextProps> = ({
     <Component
       id={id}
       className={css(styles.helperText, className)}
-      aria-live={isLiveRegion ? 'polite' : null}
+      {...(isLiveRegion && { 'aria-live': 'polite' })}
       {...props}
     >
       {children}
