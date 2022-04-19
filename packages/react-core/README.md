@@ -48,7 +48,6 @@ All component documentation is available on [PatternFly.org](https://www.pattern
 
 #### Advanced usage
 1. [Applying Overpass font](../../ADVANCED-USAGE-README.md#Applying-Overpass-font)
-2. [Tree shaking](../../ADVANCED-USAGE-README.md#Tree-shaking)
 
 ### Contribution guidelines
 All React contributors must first be [PatternFly community contributors](https://www.patternfly.org/v4/contribute/about). If you are already a PatternFly community contributor, check out the [React contribution guidelines](https://github.com/patternfly/patternfly-react/tree/main/CONTRIBUTING.md) to make React contributions.
