@@ -25,7 +25,7 @@ import DashboardWrapper from '@patternfly/react-core/src/demos/examples/Dashboar
 
 ### Bulk select
 
-```js isFullscreen
+```js
 import React from 'react';
 import {
   Dropdown,
@@ -33,16 +33,13 @@ import {
   DropdownPosition,
   DropdownToggle,
   DropdownToggleCheckbox,
-  PageSection,
   Pagination,
   Title,
   Toolbar,
-  ToolbarContent,
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class BulkSelectTableDemo extends React.Component {
   constructor(props) {
@@ -222,12 +219,10 @@ class BulkSelectTableDemo extends React.Component {
     return (
       <React.Fragment>
         <Toolbar>
-          <ToolbarContent>
-            <ToolbarGroup>
-              <ToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</ToolbarItem>
-            </ToolbarGroup>
+          <ToolbarGroup>
+            <ToolbarItem variant="bulk-select">{this.buildSelectDropdown()}</ToolbarItem>
             <ToolbarItem variant="pagination">{this.renderPagination('top')}</ToolbarItem>
-          </ToolbarContent>
+          </ToolbarGroup>
         </Toolbar>
       </React.Fragment>
     );
@@ -241,32 +236,29 @@ class BulkSelectTableDemo extends React.Component {
     }));
 
     return (
-      <DashboardWrapper hasPageTemplateTitle>
-        <PageSection isWidthLimited>
-          {this.renderToolbar()}
-          {!loading && (
-            <Table
-              aria-label="Bulk Select Table Demo"
-              cells={['Title', 'Body']}
-              rows={rows}
-              onSelect={this.onSelect}
-              canSelectAll={false}
-            >
-              <TableHeader />
-              <TableBody />
-            </Table>
-          )}
-
-          {loading && (
-            <div className="pf-l-bullseye">
-              <Title headingLevel="h2" size="3xl">
-                Please wait while loading data
-              </Title>
-            </div>
-          )}
-          {this.renderPagination('bottom')}
-        </PageSection>
-      </DashboardWrapper>
+      <React.Fragment>
+        {this.renderToolbar()}
+        {!loading && (
+          <Table
+            aria-label="Bulk Select Table Demo"
+            cells={['Title', 'Body']}
+            rows={rows}
+            onSelect={this.onSelect}
+            canSelectAll={false}
+          >
+            <TableHeader />
+            <TableBody />
+          </Table>
+        )}
+        {loading && (
+          <div className="pf-l-bullseye">
+            <Title headingLevel="h2" size="3xl">
+              Please wait while loading data
+            </Title>
+          </div>
+        )}
+        {this.renderPagination('bottom')}
+      </React.Fragment>
     );
   }
 }
@@ -3043,7 +3035,7 @@ class LoadingStateDemo extends React.Component {
             props: { colSpan: 8 },
             title: (
               <Bullseye>
-                <Spinner size="xl" aria-labelledby="loading-table-demo"/>
+                <Spinner size="xl" aria-labelledby="loading-table-demo" />
               </Bullseye>
             )
           }
