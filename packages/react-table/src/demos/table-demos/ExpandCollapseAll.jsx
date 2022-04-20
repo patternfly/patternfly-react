@@ -14,7 +14,7 @@ class ExpandCollapseAllTableDemo extends React.Component {
       collapseAllAriaLabel: 'Expand all',
       columns: [
         {
-          title: 'Header cell1',
+          title: 'Repositories',
           cellFormatters: [expandable]
         },
         'Branches',
