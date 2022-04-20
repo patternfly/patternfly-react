@@ -46,3 +46,9 @@ propComponents: ['Divider']
 
 ```ts file='./DividerVerticalFlexInsetVariousBreakpoints.tsx'
 ```
+
+### Switch orientation at various breakpoints
+
+```ts file='./DividerOrientationVariousBreakpoints.tsx'
+```
+
