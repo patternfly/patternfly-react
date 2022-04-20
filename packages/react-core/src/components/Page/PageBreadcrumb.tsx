@@ -40,6 +40,7 @@ export const PageBreadcrumb = ({
       hasOverflowScroll && styles.modifiers.overflowScroll,
       className
     )}
+    {...(hasOverflowScroll && { tabIndex: 0 })}
     {...props}
   >
     {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}
