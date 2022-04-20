@@ -5,6 +5,8 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import { WizardStep } from './Wizard';
 import { WizardBody } from './WizardBody';
+import { WizardDrawerWrapper } from './WizardDrawerWrapper';
+import { Drawer, DrawerContent } from '../Drawer';
 
 export interface WizardToggleProps {
   /** Function that returns the WizardNav component */
@@ -29,6 +31,8 @@ export interface WizardToggleProps {
   mainAriaLabel?: string;
   /** If the wizard is in-page */
   isInPage?: boolean;
+  /** Flag indicating the wizard has a drawer for at least one of the wizard steps */
+  hasDrawer?: boolean;
 }
 
 export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
@@ -42,7 +46,8 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   'aria-label': ariaLabel = 'Wizard Toggle',
   mainAriaLabelledBy = null,
   mainAriaLabel = null,
-  isInPage = true
+  isInPage = true,
+  hasDrawer
 }: WizardToggleProps) => {
   let activeStepIndex;
   let activeStepName;
@@ -83,20 +88,29 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
           <CaretDownIcon aria-hidden="true" />
         </span>
       </button>
-      <div className={css(styles.wizardOuterWrap)}>
-        <div className={css(styles.wizardInnerWrap)}>
-          {nav(isNavOpen)}
-          <WizardBody
-            mainComponent={isInPage ? 'div' : 'main'}
-            aria-label={mainAriaLabel}
-            aria-labelledby={mainAriaLabelledBy}
-            hasNoBodyPadding={hasNoBodyPadding}
-          >
-            {activeStep.component}
-          </WizardBody>
+      <WizardDrawerWrapper
+        hasDrawer={hasDrawer && activeStep.drawerPanelContent}
+        wrapper={(children: React.ReactNode) => (
+          <Drawer isInline isExpanded>
+            <DrawerContent panelContent={activeStep.drawerPanelContent}>{children}</DrawerContent>
+          </Drawer>
+        )}
+      >
+        <div className={css(styles.wizardOuterWrap)}>
+          <div className={css(styles.wizardInnerWrap)}>
+            <WizardBody
+              mainComponent={isInPage ? 'div' : 'main'}
+              aria-label={mainAriaLabel}
+              aria-labelledby={mainAriaLabelledBy}
+              hasNoBodyPadding={hasNoBodyPadding}
+            >
+              {activeStep.component}
+              {nav(isNavOpen)}
+            </WizardBody>
+          </div>
+          {children}
         </div>
-        {children}
-      </div>
+      </WizardDrawerWrapper>
     </React.Fragment>
   );
 };
