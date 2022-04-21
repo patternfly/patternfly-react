@@ -9,10 +9,15 @@ export interface DataListCheckProps extends Omit<React.HTMLProps<HTMLInputElemen
   isValid?: boolean;
   /** Flag to show if the DataList checkbox is disabled */
   isDisabled?: boolean;
-  /** Flag to show if the DataList checkbox is checked when it is controlled by React state. Both isChecked and checked are valid.
+  /** Flag to show if the DataList checkbox is checked when it is controlled by React state. Both isChecked and checked are valid,
+   * but only use one.
    * To make the DataList checkbox uncontrolled, instead use the defaultChecked prop, but do not use both.
    */
   isChecked?: boolean;
+  /** Flag to show if the DataList checkbox is checked when it is controlled by React state. Both isChecked and checked are valid,
+   * but only use one.
+   * To make the DataList checkbox uncontrolled, instead use the defaultChecked prop, but do not use both.
+   */
   checked?: boolean;
   /** Flag to set default value of DataList checkbox when it is uncontrolled by React state.
    * To make the DataList checkbox controlled, instead use the isChecked prop, but do not use both.
