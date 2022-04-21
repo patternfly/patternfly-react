@@ -28,7 +28,8 @@ export interface ToolbarExpandableContentProps extends React.HTMLProps<HTMLDivEl
 
 export class ToolbarExpandableContent extends React.Component<ToolbarExpandableContentProps> {
   static displayName = 'ToolbarExpandableContent';
-  static contextType: any = ToolbarContext;
+  static contextType = ToolbarContext;
+  context!: React.ContextType<typeof ToolbarContext>;
   static defaultProps: PickOptional<ToolbarExpandableContentProps> = {
     isExpanded: false,
     clearFiltersButtonText: 'Clear all filters'
