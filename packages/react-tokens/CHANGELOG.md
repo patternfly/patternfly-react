@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.58.2 (2022-04-21)
+
+
+### Bug Fixes
+
+* **DataListCheck:** revert checked prop ([#7284](https://github.com/patternfly/patternfly-react/issues/7284)) ([d9889fc](https://github.com/patternfly/patternfly-react/commit/d9889fc86f224533f81457f384954e6a299c5677))
+
+
+
+
+
 ## 4.58.1 (2022-04-20)
 
 **Note:** Version bump only for package @patternfly/react-tokens
