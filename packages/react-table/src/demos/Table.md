@@ -2113,6 +2113,9 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
 ComposableTableSortable = () => {
   const [navActiveItem, setNavActiveItem] = React.useState(0);
@@ -2121,12 +2124,16 @@ ComposableTableSortable = () => {
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
   const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
 
-  const columns = ['Column 1', 'Column 2', 'Column 3', 'Column 4', 'Column 5'];
+  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
+
   const [rows, setRows] = React.useState([
-    ['one', 'two', 'a', 'four', 'five'],
-    ['a', 'two', 'k', 'four', 'five'],
-    ['p', 'two', 'b', 'four', 'five']
+    ['Node 1', 10, 25, 5, 2],
+    ['Node 2', 8, 30, 2, 2],
+    ['Node 3', 12, 48, 13, 30],
+    ['Node 4', 10, 25, 5, 8],
+    ['Node 5', 34, 21, 26, 2]
   ]);
+
   // index of the currently active column
   const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
   // sort direction of the currently active column
@@ -2419,16 +2426,8 @@ ComposableTableSortable = () => {
                       columnIndex
                     }
                   };
-                  const infoParams =
-                    columnIndex === 2
-                      ? {
-                          info: {
-                            tooltip: 'More information'
-                          }
-                        }
-                      : {};
                   return (
-                    <Th key={columnIndex} {...sortParams} {...infoParams}>
+                    <Th key={columnIndex} {...sortParams}>
                       {column}
                     </Th>
                   );
@@ -2438,11 +2437,34 @@ ComposableTableSortable = () => {
             <Tbody>
               {rows.map((row, rowIndex) => (
                 <Tr key={rowIndex}>
-                  {row.map((cell, cellIndex) => (
-                    <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
-                      {cell}
+                  <>
+                    <Td key={`${rowIndex}`} dataLabel={columns[0]}>
+                      <div>
+                        <div>{row[0]}</div>
+                        <a href="#">siemur/test-space</a>
+                      </div>
                     </Td>
-                  ))}
+                    <Td key={`${rowIndex}`} dataLabel={columns[1]}>
+                      <CodeBranchIcon key="icon" />{' '}{row[1]}
+                    </Td>
+                    <Td key={`${rowIndex}`} dataLabel={columns[2]}>
+                      <CodeIcon key="icon" />
+                      {' '}
+                      {row[2]}
+                    </Td>
+                    <Td key={`${rowIndex}`} dataLabel={columns[3]}>
+                      <CubeIcon key="icon" />{' '}{row[3]}
+                    </Td>
+                    <Td key={`${rowIndex}`} dataLabel={columns[4]}>
+                      {row[4]} days ago
+                    </Td>
+                    <Td key={`${rowIndex}`} dataLabel={"Action"}>
+                    <a href="#">Action link</a>
+                    </Td>
+                    <Td key={`${rowIndex}`}>
+                    <Dropdown href="#">Action link</Dropdown>
+                    </Td>
+                  </>
                 </Tr>
               ))}
             </Tbody>
