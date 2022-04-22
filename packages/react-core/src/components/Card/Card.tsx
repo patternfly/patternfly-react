@@ -96,46 +96,6 @@ export const Card: React.FunctionComponent<CardProps> = ({
     return '';
   };
 
-  const CardComponent = (
-    <Component
-      id={id}
-      className={css(
-        styles.card,
-        isCompact && styles.modifiers.compact,
-        isExpanded && styles.modifiers.expanded,
-        isFlat && styles.modifiers.flat,
-        isRounded && styles.modifiers.rounded,
-        isLarge && styles.modifiers.displayLg,
-        isFullHeight && styles.modifiers.fullHeight,
-        isPlain && styles.modifiers.plain,
-        getSelectableModifiers(),
-        className
-      )}
-      tabIndex={isSelectable || isSelectableRaised ? '0' : undefined}
-      {...props}
-      {...ouiaProps}
-    >
-      {children}
-    </Component>
-  );
-
-  const inputId = `${id}-input`;
-
-  const CardWithHiddenInput = (
-    <label htmlFor={inputId}>
-      <input
-        className="pf-screen-reader"
-        id={inputId}
-        type="checkbox"
-        checked={isSelected}
-        onChange={event => onHiddenInputChange(id, event)}
-        aria-labelledby={id}
-        disabled={isDisabledRaised}
-      />
-      {CardComponent}
-    </label>
-  );
-
   return (
     <CardContext.Provider
       value={{
@@ -143,7 +103,38 @@ export const Card: React.FunctionComponent<CardProps> = ({
         isExpanded
       }}
     >
-      {hasHiddenInput ? CardWithHiddenInput : CardComponent}
+      {hasHiddenInput && (
+        <input
+          className="pf-screen-reader"
+          id={`${id}-input`}
+          type="checkbox"
+          checked={isSelected}
+          onChange={event => onHiddenInputChange(id, event)}
+          aria-labelledby={id}
+          disabled={isDisabledRaised}
+          tabIndex={-1}
+        />
+      )}
+      <Component
+        id={id}
+        className={css(
+          styles.card,
+          isCompact && styles.modifiers.compact,
+          isExpanded && styles.modifiers.expanded,
+          isFlat && styles.modifiers.flat,
+          isRounded && styles.modifiers.rounded,
+          isLarge && styles.modifiers.displayLg,
+          isFullHeight && styles.modifiers.fullHeight,
+          isPlain && styles.modifiers.plain,
+          getSelectableModifiers(),
+          className
+        )}
+        tabIndex={isSelectable || isSelectableRaised ? '0' : undefined}
+        {...props}
+        {...ouiaProps}
+      >
+        {children}
+      </Component>
     </CardContext.Provider>
   );
 };
