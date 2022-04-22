@@ -77,7 +77,7 @@ section: developer-resources
 - Updated colors to use dark theme friendly css vars ([#7215](https://github.com/patternfly/patternfly-react/pull/7215))
 
 ### React styles 
-- Added Support esm import and export ([#7084](https://github.com/patternfly/patternfly-react/pull/7084))
+- Added support for esm import and export ([#7084](https://github.com/patternfly/patternfly-react/pull/7084))
 
 ### Table
 - Cleaned up unused imports for input group ([#7249](https://github.com/patternfly/patternfly-react/pull/7249))
