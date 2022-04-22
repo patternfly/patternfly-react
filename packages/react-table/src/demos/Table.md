@@ -2104,7 +2104,7 @@ import {
   SkipToContent,
   PageSection
 } from '@patternfly/react-core';
-import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { ActionsColumn, TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
@@ -2144,7 +2144,6 @@ ComposableTableSortable = () => {
   const onSort = (event, index, direction) => {
     setActiveSortIndex(index);
     setActiveSortDirection(direction);
-    console.log('i; ', index, direction);
     // sorts the rows
     const updatedRows = rows.sort((a, b) => {
       if (typeof a[index] === 'number') {
@@ -2193,6 +2192,17 @@ ComposableTableSortable = () => {
     <DropdownItem key="kebab-2">
       <HelpIcon /> Help
     </DropdownItem>
+  ];
+
+    const defaultActions = () => [
+    {
+      title: 'Settings',
+      onClick: () => console.log(`clicked on Settings`)
+    },
+    {
+      title: 'Help',
+      onClick: () => console.log(`clicked on Help`)
+    }
   ];
   const userDropdownItems = [
     <DropdownGroup key="group 2">
@@ -2438,32 +2448,32 @@ ComposableTableSortable = () => {
               {rows.map((row, rowIndex) => (
                 <Tr key={rowIndex}>
                   <>
-                    <Td key={`${rowIndex}`} dataLabel={columns[0]}>
+                    <Td dataLabel={columns[0]}>
                       <div>
                         <div>{row[0]}</div>
                         <a href="#">siemur/test-space</a>
                       </div>
                     </Td>
-                    <Td key={`${rowIndex}`} dataLabel={columns[1]}>
+                    <Td dataLabel={columns[1]}>
                       <CodeBranchIcon key="icon" />{' '}{row[1]}
                     </Td>
-                    <Td key={`${rowIndex}`} dataLabel={columns[2]}>
+                    <Td dataLabel={columns[2]}>
                       <CodeIcon key="icon" />
                       {' '}
                       {row[2]}
                     </Td>
-                    <Td key={`${rowIndex}`} dataLabel={columns[3]}>
+                    <Td dataLabel={columns[3]}>
                       <CubeIcon key="icon" />{' '}{row[3]}
                     </Td>
-                    <Td key={`${rowIndex}`} dataLabel={columns[4]}>
+                    <Td dataLabel={columns[4]}>
                       {row[4]} days ago
                     </Td>
-                    <Td key={`${rowIndex}`} dataLabel={"Action"}>
+                    <Td dataLabel={"Action"}>
                     <a href="#">Action link</a>
                     </Td>
-                    <Td key={`${rowIndex}`}>
-                    <Dropdown href="#">Action link</Dropdown>
-                    </Td>
+                    <Td isActionCell>
+                     <ActionsColumn items={defaultActions()} />              
+                     </Td>
                   </>
                 </Tr>
               ))}
