@@ -282,7 +282,6 @@
 
 .pf-topology__node__background {
   fill: var(--pf-topology__node__background--Fill);
-  stroke-width: 1px;
   stroke-width: var(--pf-topology__node__background--StrokeWidth);
   stroke: var(--pf-topology__node__background--Stroke);
 }
