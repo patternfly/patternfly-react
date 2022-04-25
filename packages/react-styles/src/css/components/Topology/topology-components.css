@@ -789,6 +789,9 @@
   stroke: var(--pf-topology-default-create-connector--m-hover--arrow--Stroke);
 }
 
+.pf-topology-default-create-connector__create {
+}
+
 .pf-topology-default-create-connector__create__bg {
   stroke-width: 10px;
   stroke: transparent;
