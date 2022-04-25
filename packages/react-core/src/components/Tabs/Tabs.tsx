@@ -5,6 +5,7 @@ import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
+import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import { getUniqueId, isElementInView, formatBreakpointMods } from '../../helpers/util';
 import { TabContent } from './TabContent';
 import { TabProps } from './Tab';
@@ -31,6 +32,12 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   defaultActiveKey?: number | string;
   /** Callback to handle tab selection */
   onSelect?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
+  /** Callback to handle tab closing */
+  onClose?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
+  /** Callback for the add button. Passing this property inserts the add button */
+  onAdd?: () => void;
+  /** Aria-label for the add button */
+  addAriaLabel?: string;
   /** Uniquely identifies the tabs */
   id?: string;
   /** Enables the filled tab list layout */
@@ -311,7 +318,10 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       defaultIsExpanded,
       toggleText,
       toggleAriaLabel,
+      addAriaLabel,
       onToggle,
+      onClose,
+      onAdd,
       ...props
     } = this.props;
     const {
@@ -348,7 +358,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           unmountOnExit,
           localActiveKey,
           uniqueId,
-          handleTabClick: (...args) => this.handleTabClick(...args)
+          handleTabClick: (...args) => this.handleTabClick(...args),
+          handleTabClose: onClose
         }}
       >
         <Component
@@ -421,6 +432,18 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           >
             <AngleRightIcon />
           </button>
+          {onAdd !== undefined && (
+            <span className={css(styles.tabsAdd)}>
+              <button
+                className={css(buttonStyles.button, buttonStyles.modifiers.plain)}
+                type="button"
+                aria-label={addAriaLabel}
+                onClick={onAdd}
+              >
+                <PlusIcon />
+              </button>
+            </span>
+          )}
         </Component>
         {filteredChildren
           .filter(

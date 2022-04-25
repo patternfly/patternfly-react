@@ -11,6 +11,11 @@ export interface TabsContextProps {
     eventKey: number | string,
     tabContentRef: React.RefObject<any>
   ) => void;
+  handleTabClose: (
+    event: React.MouseEvent<HTMLElement, MouseEvent>,
+    eventKey: number | string,
+    tabContentRef?: React.RefObject<any>
+  ) => void;
 }
 
 export const TabsContext = React.createContext<TabsContextProps>({
@@ -19,7 +24,8 @@ export const TabsContext = React.createContext<TabsContextProps>({
   unmountOnExit: false,
   localActiveKey: '',
   uniqueId: '',
-  handleTabClick: () => null
+  handleTabClick: () => null,
+  handleTabClose: undefined
 });
 
 export const TabsContextProvider = TabsContext.Provider;

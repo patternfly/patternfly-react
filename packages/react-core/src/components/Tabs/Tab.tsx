@@ -1,10 +1,12 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
+import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { OUIAProps } from '../../helpers';
 import { TabButton } from './TabButton';
 import { TabsContext } from './TabsContext';
 import { css } from '@patternfly/react-styles';
 import { Tooltip } from '../Tooltip';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
 export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLButtonElement>, 'title'>, OUIAProps {
   /** content rendered inside the Tab content area. */
@@ -33,6 +35,8 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
   innerRef?: React.Ref<any>;
   /** Optional Tooltip rendered to a Tab. Should be <Tooltip> with appropriate props for proper rendering. */
   tooltip?: React.ReactElement<any>;
+  /** Aria-label for the close button added by passing the onClose property to Tabs. */
+  closeAriaLabel?: string;
 }
 
 const TabBase: React.FunctionComponent<TabProps> = ({
@@ -49,6 +53,7 @@ const TabBase: React.FunctionComponent<TabProps> = ({
   href,
   innerRef,
   tooltip,
+  closeAriaLabel,
   ...props
 }: TabProps) => {
   const preventedEvents = inoperableEvents.reduce(
@@ -60,7 +65,9 @@ const TabBase: React.FunctionComponent<TabProps> = ({
     }),
     {}
   );
-  const { mountOnEnter, localActiveKey, unmountOnExit, uniqueId, handleTabClick } = React.useContext(TabsContext);
+  const { mountOnEnter, localActiveKey, unmountOnExit, uniqueId, handleTabClick, handleTabClose } = React.useContext(
+    TabsContext
+  );
   let ariaControls = tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`;
   if ((mountOnEnter || unmountOnExit) && eventKey !== localActiveKey) {
     ariaControls = undefined;
@@ -102,10 +109,29 @@ const TabBase: React.FunctionComponent<TabProps> = ({
 
   return (
     <li
-      className={css(styles.tabsItem, eventKey === localActiveKey && styles.modifiers.current, childClassName)}
+      className={css(
+        styles.tabsItem,
+        eventKey === localActiveKey && styles.modifiers.current,
+        handleTabClose && styles.modifiers.action,
+        childClassName
+      )}
       role="presentation"
     >
       {tooltip ? <Tooltip {...tooltip.props}>{tabButton}</Tooltip> : tabButton}
+      {handleTabClose !== undefined && (
+        <span className={css(styles.tabsItemClose)}>
+          <button
+            className={css(buttonStyles.button, buttonStyles.modifiers.plain)}
+            type="button"
+            aria-label={closeAriaLabel}
+            onClick={(event: any) => handleTabClose(event, eventKey, tabContentRef)}
+          >
+            <span className={css(styles.tabsItemCloseIcon)}>
+              <TimesIcon />
+            </span>
+          </button>
+        </span>
+      )}
     </li>
   );
 };
