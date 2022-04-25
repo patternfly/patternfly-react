@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.166.4 (2022-04-25)
+
+
+### Bug Fixes
+
+* **DateTimePicker:** update date placeholder ([#7266](https://github.com/patternfly/patternfly-react/issues/7266)) ([4e9a73e](https://github.com/patternfly/patternfly-react/commit/4e9a73e8f7645b7a885d15754f99b9e078449806))
+
+
+
+
+
 ## 4.166.3 (2022-04-23)
 
 **Note:** Version bump only for package demo-app-ts
