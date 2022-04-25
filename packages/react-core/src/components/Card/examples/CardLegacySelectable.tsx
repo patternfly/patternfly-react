@@ -87,7 +87,7 @@ export const CardLegacySelectable: React.FunctionComponent = () => {
             />
           </CardActions>
         </CardHeader>
-        <CardTitle>First card</CardTitle>
+        <CardTitle>First legacy selectable card</CardTitle>
         <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
       </Card>
       <br />
@@ -100,7 +100,7 @@ export const CardLegacySelectable: React.FunctionComponent = () => {
         isSelected={selected === 'legacy-second-card'}
         hasHiddenInput
       >
-        <CardTitle>Second card</CardTitle>
+        <CardTitle>Second legacy selectable card</CardTitle>
         <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
       </Card>
     </>

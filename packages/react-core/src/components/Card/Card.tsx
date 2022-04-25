@@ -38,17 +38,21 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isExpanded?: boolean;
   /** Flag indicating that the card should render a hidden input for a11y reasons */
   hasHiddenInput?: boolean;
+  /** Aria label to apply to the hidden input if one is rendered */
+  hiddenInputAriaLabel?: string;
   /** Callback that executes when the hidden input is changed */
   onHiddenInputChange?: (labelledBy: string, event: React.FormEvent<HTMLInputElement>) => void;
 }
 
 interface CardContextProps {
   cardId: string;
+  registerTitleId: (id: string) => void;
   isExpanded: boolean;
 }
 
 export const CardContext = React.createContext<Partial<CardContextProps>>({
   cardId: '',
+  registerTitleId: () => {},
   isExpanded: false
 });
 
@@ -72,11 +76,14 @@ export const Card: React.FunctionComponent<CardProps> = ({
   ouiaId,
   ouiaSafe = true,
   hasHiddenInput = false,
+  hiddenInputAriaLabel,
   onHiddenInputChange = () => {},
   ...props
 }: CardProps) => {
   const Component = component as any;
   const ouiaProps = useOUIAProps(Card.displayName, ouiaId, ouiaSafe);
+  const [titleId, setTitleId] = React.useState('');
+
   if (isCompact && isLarge) {
     // eslint-disable-next-line no-console
     console.warn('Card: Cannot use isCompact with isLarge. Defaulting to isCompact');
@@ -96,10 +103,32 @@ export const Card: React.FunctionComponent<CardProps> = ({
     return '';
   };
 
+  const registerTitleId = (id: string) => {
+    setTitleId(id);
+  };
+
+  const getAriaProps = () => {
+    if (!hasHiddenInput) {
+      return;
+    }
+
+    if (hiddenInputAriaLabel) {
+      return { 'aria-label': hiddenInputAriaLabel };
+    }
+
+    if (titleId) {
+      return { 'aria-labelledby': titleId };
+    }
+
+    // eslint-disable-next-line no-console
+    console.warn('If no CardTitle component is passed as a child of Card the hiddenInputAriaLabel prop must be passed');
+  };
+
   return (
     <CardContext.Provider
       value={{
         cardId: id,
+        registerTitleId,
         isExpanded
       }}
     >
@@ -107,10 +136,10 @@ export const Card: React.FunctionComponent<CardProps> = ({
         <input
           className="pf-screen-reader"
           id={`${id}-input`}
+          {...getAriaProps()}
           type="checkbox"
           checked={isSelected}
           onChange={event => onHiddenInputChange(id, event)}
-          aria-labelledby={id}
           disabled={isDisabledRaised}
           tabIndex={-1}
         />
