@@ -13,6 +13,7 @@ exports[`CatalogTile href renders properly 1`] = `
   >
     <div
       class="pf-c-card__title catalog-tile-pf-header"
+      id="test-href-title"
     >
       <div
         class="catalog-tile-pf-title"
@@ -111,6 +112,7 @@ exports[`CatalogTile renders properly 1`] = `
       </div>
       <div
         class="pf-c-card__title catalog-tile-pf-header"
+        id="single-badge-test-title"
       >
         <div
           class="catalog-tile-pf-title"
@@ -215,6 +217,7 @@ exports[`CatalogTile renders properly 1`] = `
       </div>
       <div
         class="pf-c-card__title catalog-tile-pf-header"
+        id="multi-badge-test-title"
       >
         <div
           class="catalog-tile-pf-title"
@@ -291,6 +294,7 @@ exports[`CatalogTile renders properly 1`] = `
       </div>
       <div
         class="pf-c-card__title catalog-tile-pf-header"
+        id="test-iconClass-title"
       >
         <div
           class="catalog-tile-pf-title"
@@ -364,6 +368,7 @@ exports[`CatalogTile renders properly 1`] = `
       </div>
       <div
         class="pf-c-card__title catalog-tile-pf-header"
+        id="tile-footer-test-title"
       >
         <div
           class="catalog-tile-pf-title"
@@ -442,6 +447,7 @@ exports[`CatalogTile renders properly 1`] = `
       </div>
       <div
         class="pf-c-card__title catalog-tile-pf-header"
+        id="custom-icon-svg-test-title"
       >
         <div
           class="catalog-tile-pf-title"
