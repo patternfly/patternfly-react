@@ -4,7 +4,6 @@ exports[`SelectGroup renders with children successfully 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-select__menu-group"
-    data-testid="test-id"
   >
     <div
       aria-hidden="true"

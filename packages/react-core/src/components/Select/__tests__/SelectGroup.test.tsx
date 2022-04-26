@@ -18,7 +18,7 @@ describe('SelectGroup', () => {
           shouldResetOnSelect: true
         }}
       >
-        <SelectGroup label="test" data-testid="test-id">
+        <SelectGroup label="test">
           <div>child</div>
         </SelectGroup>
       </SelectProvider>

@@ -7,7 +7,6 @@ exports[`Toolbar should render inset 1`] = `
     data-ouia-component-id="OUIA-Generated-Toolbar-1"
     data-ouia-component-type="PF4/Toolbar"
     data-ouia-safe="true"
-    data-testid="toolbar-test-id"
     id="toolbar"
   >
     <div
@@ -63,7 +62,6 @@ exports[`Toolbar should render with custom chip content 1`] = `
     data-ouia-component-id="OUIA-Generated-Toolbar-3"
     data-ouia-component-type="PF4/Toolbar"
     data-ouia-safe="true"
-    data-testid="toolbar-test-id"
     id="toolbar-with-filter"
   >
     <div
@@ -458,7 +456,6 @@ exports[`Toolbar should render with page inset flag 1`] = `
     data-ouia-component-id="OUIA-Generated-Toolbar-2"
     data-ouia-component-type="PF4/Toolbar"
     data-ouia-safe="true"
-    data-testid="toolbar-test-id"
     id="toolbar"
   >
     <div

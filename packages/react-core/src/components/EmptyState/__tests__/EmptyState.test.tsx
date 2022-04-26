@@ -14,7 +14,7 @@ import { Title, TitleSizes } from '../../Title';
 describe('EmptyState', () => {
   test('Main', () => {
     const { asFragment } = render(
-      <EmptyState data-testid="empty-state-test-id">
+      <EmptyState>
         <Title headingLevel="h5" size="lg">
           HTTP Proxies
         </Title>
@@ -34,7 +34,7 @@ describe('EmptyState', () => {
 
   test('Main variant large', () => {
     const { asFragment } = render(
-      <EmptyState variant={EmptyStateVariant.large} data-testid="empty-state-test-id">
+      <EmptyState variant={EmptyStateVariant.large}>
         <Title headingLevel="h3" size={TitleSizes.md}>
           EmptyState large
         </Title>
@@ -45,7 +45,7 @@ describe('EmptyState', () => {
 
   test('Main variant small', () => {
     const { asFragment } = render(
-      <EmptyState variant={EmptyStateVariant.small} data-testid="empty-state-test-id">
+      <EmptyState variant={EmptyStateVariant.small}>
         <Title headingLevel="h3" size={TitleSizes.md}>
           EmptyState small
         </Title>
@@ -56,7 +56,7 @@ describe('EmptyState', () => {
 
   test('Main variant xs', () => {
     const { asFragment } = render(
-      <EmptyState variant={EmptyStateVariant.xs} data-testid="empty-state-test-id">
+      <EmptyState variant={EmptyStateVariant.xs}>
         <Title headingLevel="h3" size={TitleSizes.md}>
           EmptyState small
         </Title>
@@ -107,7 +107,7 @@ describe('EmptyState', () => {
 
   test('Full height', () => {
     const { asFragment } = render(
-      <EmptyState isFullHeight variant={EmptyStateVariant.large} data-testid="empty-state-test-id">
+      <EmptyState isFullHeight variant={EmptyStateVariant.large}>
         <Title headingLevel="h3" size={TitleSizes.md}>
           EmptyState large
         </Title>

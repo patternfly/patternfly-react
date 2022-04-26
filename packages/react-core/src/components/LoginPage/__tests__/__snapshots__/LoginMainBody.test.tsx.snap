@@ -4,7 +4,6 @@ exports[`LoginMainBody className is added to the root element 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-login__main-body extra-class"
-    data-testid="test-id"
   />
 </DocumentFragment>
 `;
@@ -13,7 +12,6 @@ exports[`LoginMainBody renders with PatternFly Core styles 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-login__main-body"
-    data-testid="test-id"
   />
 </DocumentFragment>
 `;

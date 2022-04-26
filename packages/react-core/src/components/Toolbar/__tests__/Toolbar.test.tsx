@@ -31,7 +31,6 @@ describe('Toolbar', () => {
           xl: 'inset2xl',
           '2xl': 'insetLg'
         }}
-        data-testid="toolbar-test-id"
       >
         <ToolbarContent>{items}</ToolbarContent>
       </Toolbar>
@@ -51,7 +50,7 @@ describe('Toolbar', () => {
     );
 
     const { asFragment } = render(
-      <Toolbar id="toolbar" usePageInsets data-testid="toolbar-test-id">
+      <Toolbar id="toolbar" usePageInsets>
         <ToolbarContent>{items}</ToolbarContent>
       </Toolbar>
     );
@@ -115,7 +114,6 @@ describe('Toolbar', () => {
         className="pf-m-toggle-group-container"
         collapseListedFiltersBreakpoint="xl"
         customChipGroupContent={customChipGroupContent}
-        data-testid="toolbar-test-id"
       >
         <ToolbarContent>{items}</ToolbarContent>
       </Toolbar>

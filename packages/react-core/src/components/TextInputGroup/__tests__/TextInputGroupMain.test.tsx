@@ -9,11 +9,11 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 describe('TextInputGroupMain', () => {
   it('renders without children', () => {
-    render(<TextInputGroupMain data-testid='TextInputGroupMain'/>);
-    
+    render(<TextInputGroupMain data-testid="TextInputGroupMain" />);
+
     expect(screen.getByTestId('TextInputGroupMain')).toBeVisible();
   });
-  
+
   it('renders children', () => {
     render(<TextInputGroupMain>Test</TextInputGroupMain>);
 

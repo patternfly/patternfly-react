@@ -4,7 +4,6 @@ exports[`Label editable label 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-editable"
-    data-testid="label-test-id"
   >
     <button
       class="pf-c-label__content"
@@ -42,7 +41,6 @@ exports[`Label editable label 2`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-editable pf-m-editable-active"
-    data-testid="label-test-id"
   >
     <input
       class="pf-c-label__content"
@@ -58,7 +56,6 @@ exports[`Label label with additional class name 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label klass1"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -74,7 +71,6 @@ exports[`Label label with additional class name and props 1`] = `
   <span
     class="pf-c-label class-1"
     data-label-name="something"
-    data-testid="label-test-id"
     id="label-1"
   >
     <span
@@ -90,7 +86,6 @@ exports[`Label label with blue color 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-blue"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -105,7 +100,6 @@ exports[`Label label with blue color with outline variant 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-blue pf-m-outline"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -120,7 +114,6 @@ exports[`Label label with close button 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -158,7 +151,6 @@ exports[`Label label with close button and outline variant 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-outline"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -196,7 +188,6 @@ exports[`Label label with cyan color 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-cyan"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -211,7 +202,6 @@ exports[`Label label with cyan color with outline variant 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-cyan pf-m-outline"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -226,7 +216,6 @@ exports[`Label label with green color 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-green"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -241,7 +230,6 @@ exports[`Label label with green color with outline variant 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-green pf-m-outline"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -256,7 +244,6 @@ exports[`Label label with grey color 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -271,7 +258,6 @@ exports[`Label label with grey color with outline variant 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-outline"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -286,7 +272,6 @@ exports[`Label label with href 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label"
-    data-testid="label-test-id"
   >
     <a
       class="pf-c-label__content"
@@ -302,7 +287,6 @@ exports[`Label label with href with outline variant 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-outline"
-    data-testid="label-test-id"
   >
     <a
       class="pf-c-label__content"
@@ -318,7 +302,6 @@ exports[`Label label with orange color 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-orange"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -333,7 +316,6 @@ exports[`Label label with orange color with outline variant 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-orange pf-m-outline"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -348,7 +330,6 @@ exports[`Label label with purple color 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-purple"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -363,7 +344,6 @@ exports[`Label label with purple color with outline variant 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-purple pf-m-outline"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -378,7 +358,6 @@ exports[`Label label with red color 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-red"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -393,7 +372,6 @@ exports[`Label label with red color with outline variant 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-red pf-m-outline"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -408,7 +386,6 @@ exports[`Label label with truncation 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -427,7 +404,6 @@ exports[`Label renders 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -442,7 +418,6 @@ exports[`Label renders with isCompact 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-compact"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"
@@ -457,7 +432,6 @@ exports[`Label renders with outline variant 1`] = `
 <DocumentFragment>
   <span
     class="pf-c-label pf-m-outline"
-    data-testid="label-test-id"
   >
     <span
       class="pf-c-label__content"

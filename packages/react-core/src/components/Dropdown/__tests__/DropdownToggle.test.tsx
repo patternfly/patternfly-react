@@ -6,7 +6,7 @@ import userEvent from '@testing-library/user-event';
 import { DropdownToggle } from '../DropdownToggle';
 import { DropdownContext } from '../dropdownConstants';
 
-describe('DropdownToggleCheckbox', () => {
+describe('DropdownToggle', () => {
   describe('API', () => {
     test('click on closed', () => {
       const mockToggle = jest.fn();
@@ -155,7 +155,6 @@ describe('DropdownToggleCheckbox', () => {
           splitButtonItems={[<div key="1">test</div>]}
           splitButtonVariant="action"
           parentRef={document.createElement('div')}
-          data-testid="test-id"
         >
           Dropdown
         </DropdownToggle>
@@ -174,7 +173,6 @@ describe('DropdownToggleCheckbox', () => {
           toggleVariant="primary"
           splitButtonItems={[<div key="0">test</div>]}
           parentRef={document.createElement('div')}
-          data-testid="test-id"
         >
           Dropdown
         </DropdownToggle>

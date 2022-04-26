@@ -4,7 +4,6 @@ exports[`LoginForm LoginForm with rememberMeLabel 1`] = `
 <DocumentFragment>
   <form
     class="pf-c-form"
-    data-testid="form-test-id"
     novalidate=""
   >
     <p
@@ -149,7 +148,6 @@ exports[`LoginForm LoginForm with show password 1`] = `
 <DocumentFragment>
   <form
     class="pf-c-form"
-    data-testid="form-test-id"
     novalidate=""
   >
     <p
@@ -294,7 +292,6 @@ exports[`LoginForm should render Login form 1`] = `
 <DocumentFragment>
   <form
     class="pf-c-form"
-    data-testid="form-test-id"
     novalidate=""
   >
     <p

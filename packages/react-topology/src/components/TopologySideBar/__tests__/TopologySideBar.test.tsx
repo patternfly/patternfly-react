@@ -19,7 +19,7 @@ describe('TopologySideBar', () => {
     const mockClose = jest.fn();
 
     render(
-      <TopologySideBar className="my-test-class" show onClose={mockClose} data-testid="test-id">
+      <TopologySideBar className="my-test-class" show onClose={mockClose}>
         <div id="test-canvas" />
       </TopologySideBar>
     );

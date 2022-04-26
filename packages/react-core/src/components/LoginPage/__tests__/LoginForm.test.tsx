@@ -7,7 +7,7 @@ import { LoginForm } from '../LoginForm';
 
 describe('LoginForm', () => {
   test('should render Login form', () => {
-    const { asFragment } = render(<LoginForm data-testid="form-test-id" />);
+    const { asFragment } = render(<LoginForm />);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -39,12 +39,12 @@ describe('LoginForm', () => {
   });
 
   test('LoginForm with rememberMeLabel', () => {
-    const { asFragment } = render(<LoginForm rememberMeLabel="Remember me" data-testid="form-test-id" />);
+    const { asFragment } = render(<LoginForm rememberMeLabel="Remember me" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('LoginForm with show password', () => {
-    const { asFragment } = render(<LoginForm isShowPasswordEnabled data-testid="form-test-id" />);
+    const { asFragment } = render(<LoginForm isShowPasswordEnabled />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -120,7 +120,7 @@ describe('FormSelect', () => {
     global.console = { error: myMock } as any;
 
     const { asFragment } = render(
-      <FormSelect data-testid="test-id">
+      <FormSelect>
         <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
       </FormSelect>
     );
