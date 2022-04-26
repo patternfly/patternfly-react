@@ -409,6 +409,9 @@
   stroke: var(--edge--active--stroke);
 }
 
+.pf-topology__edge.pf-m-dragging {
+  pointer-events: none;
+}
 .pf-topology__edge.pf-m-dragging .pf-topology__edge__link,
 .pf-topology__edge.pf-m-dragging .pf-topology-connector-arrow {
   stroke: var(--edge--interactive--stroke);
