@@ -97,7 +97,7 @@ export const ModalTabs: React.FunctionComponent = () => {
                 hasHiddenInput
                 isCompact
                 key={product.id}
-                id={product.name}
+                id={product.name.replace(/ /g, '-')}
                 onClick={onCardClick(product)}
                 onHiddenInputChange={() => onCardClick(product)()}
                 onKeyPress={onCardKeyPress(product)}

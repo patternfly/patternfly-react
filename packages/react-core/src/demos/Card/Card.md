@@ -561,8 +561,7 @@ class CardViewBasic extends React.Component {
           <PageSection isFilled>
             <Gallery hasGutter>
               <Card 
-                isSelectable 
-                selectableVariant="raised" 
+                isSelectableRaised
                 isCompact
               >
                 <Bullseye>
@@ -579,12 +578,11 @@ class CardViewBasic extends React.Component {
               </Card>
               {filtered.map((product, key) => (
                 <Card 
-                  isSelectable 
-                  selectableVariant="raised" 
+                  isSelectableRaised 
                   hasHiddenInput
                   isCompact 
                   key={product.name}
-                  id={product.name}
+                  id={product.name.replace(/ /g, '-')}
                   onKeyDown={(e) => this.onKeyDown(e, product.id)}
                   onClick={() => this.onClick(product.id)}
                   onHiddenInputChange={() => this.onClick(product.id)}
