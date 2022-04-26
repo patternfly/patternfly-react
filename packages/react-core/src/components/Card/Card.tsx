@@ -50,6 +50,11 @@ interface CardContextProps {
   isExpanded: boolean;
 }
 
+interface AriaProps {
+  'aria-label'?: string;
+  'aria-labelledby'?: string;
+}
+
 export const CardContext = React.createContext<Partial<CardContextProps>>({
   cardId: '',
   registerTitleId: () => {},
@@ -83,6 +88,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
   const Component = component as any;
   const ouiaProps = useOUIAProps(Card.displayName, ouiaId, ouiaSafe);
   const [titleId, setTitleId] = React.useState('');
+  const [ariaProps, setAriaProps] = React.useState<AriaProps>();
 
   if (isCompact && isLarge) {
     // eslint-disable-next-line no-console
@@ -107,22 +113,18 @@ export const Card: React.FunctionComponent<CardProps> = ({
     setTitleId(id);
   };
 
-  const getAriaProps = () => {
-    if (!hasHiddenInput) {
-      return;
-    }
-
+  React.useEffect(() => {
     if (hiddenInputAriaLabel) {
-      return { 'aria-label': hiddenInputAriaLabel };
+      setAriaProps({ 'aria-label': hiddenInputAriaLabel });
+    } else if (titleId) {
+      setAriaProps({ 'aria-labelledby': titleId });
+    } else if (hasHiddenInput) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'If no CardTitle component is passed as a child of Card the hiddenInputAriaLabel prop must be passed'
+      );
     }
-
-    if (titleId) {
-      return { 'aria-labelledby': titleId };
-    }
-
-    // eslint-disable-next-line no-console
-    console.warn('If no CardTitle component is passed as a child of Card the hiddenInputAriaLabel prop must be passed');
-  };
+  }, [hasHiddenInput, hiddenInputAriaLabel, titleId]);
 
   return (
     <CardContext.Provider
@@ -136,7 +138,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
         <input
           className="pf-screen-reader"
           id={`${id}-input`}
-          {...getAriaProps()}
+          {...ariaProps}
           type="checkbox"
           checked={isSelected}
           onChange={event => onHiddenInputChange(id, event)}
