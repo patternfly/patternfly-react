@@ -29,7 +29,7 @@ export const CardTitle: React.FunctionComponent<CardTitleProps> = ({
   }, [registerTitleId, titleId]);
 
   return (
-    <Component className={css(styles.cardTitle, className)} id={titleId} {...props}>
+    <Component className={css(styles.cardTitle, className)} id={titleId || undefined} {...props}>
       {children}
     </Component>
   );
