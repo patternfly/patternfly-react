@@ -5,7 +5,7 @@ propComponents: [DragDrop, Draggable, Droppable, DraggableItemPosition]
 beta: true
 ---
 
-You can use `DragDrop` to move items in or between lists. `DragDrop`s should contain `Droppable`s which contain `Draggable`s.
+You can use the `DragDrop` component to move items in or between lists. The `DragDrop` component should contain `Droppable` components  which contain `Draggable` components.
 
 ```ts noLive
 import React from 'react';
