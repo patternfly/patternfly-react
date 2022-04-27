@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`isDisabled 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="true"
     aria-label="action"
@@ -9,25 +9,25 @@ exports[`isDisabled 1`] = `
     disabled=""
     id="action"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`passing class 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-label="action"
     class="pf-c-dropdown__toggle-button abc"
     id="action"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`renders with text 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-label="action"
     class="pf-c-dropdown__toggle-button"
     id="action"
   />
-</div>
+</DocumentFragment>
 `;

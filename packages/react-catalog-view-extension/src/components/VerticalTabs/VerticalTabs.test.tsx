@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -90,7 +91,7 @@ test('Vertical Tabs Tab onActivate is called correctly', () => {
   userEvent.click(screen.getByText('Click Me'));
 
   expect(component.container).toMatchSnapshot();
-  expect(onActivateMock).toBeCalled();
+  expect(onActivateMock).toHaveBeenCalled();
 });
 
 test('Vertical Tabs Tab wrap styling is set correctly', () => {

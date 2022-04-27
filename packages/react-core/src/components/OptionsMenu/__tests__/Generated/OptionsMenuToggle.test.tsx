@@ -8,14 +8,12 @@ import { OptionsMenuToggle } from '../../OptionsMenuToggle';
 import {} from '../..';
 
 it('OptionsMenuToggle should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <OptionsMenuToggle
       parentId={"''"}
       onToggle={(isOpen: boolean) => undefined as void}
       isOpen={false}
       isPlain={false}
-      isFocused={false}
-      isHovered={false}
       isSplitButton={false}
       isActive={false}
       isDisabled={false}
@@ -26,5 +24,5 @@ it('OptionsMenuToggle should match snapshot (auto-generated)', () => {
       toggleTemplate={<div>ReactNode</div>}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

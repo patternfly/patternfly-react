@@ -8,7 +8,7 @@ import { NavExpandable } from '../../NavExpandable';
 import {} from '../..';
 
 it('NavExpandable should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <NavExpandable
       title={'string'}
       srText={"''"}
@@ -18,8 +18,8 @@ it('NavExpandable should match snapshot (auto-generated)', () => {
       groupId={null}
       isActive={false}
       id={"''"}
-      onExpand={(e: React.MouseEvent<HTMLLIElement, MouseEvent>, val: boolean) => undefined as void}
+      onExpand={() => undefined}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

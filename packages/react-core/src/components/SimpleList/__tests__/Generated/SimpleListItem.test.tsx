@@ -8,7 +8,7 @@ import { SimpleListItem } from '../../SimpleListItem';
 import {} from '../..';
 
 it('SimpleListItem should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <SimpleListItem
       children={<>ReactNode</>}
       className={"''"}
@@ -21,5 +21,5 @@ it('SimpleListItem should match snapshot (auto-generated)', () => {
       href={"''"}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

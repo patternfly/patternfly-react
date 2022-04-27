@@ -8,7 +8,7 @@ import { DataListCheck } from '../../DataListCheck';
 import {} from '../..';
 
 it('DataListCheck should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <DataListCheck
       className={"''"}
       isValid={true}
@@ -19,5 +19,5 @@ it('DataListCheck should match snapshot (auto-generated)', () => {
       aria-labelledby={'string'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

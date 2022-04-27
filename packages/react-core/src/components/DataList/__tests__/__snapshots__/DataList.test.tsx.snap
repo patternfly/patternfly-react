@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataList Cell default 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-data-list__cell"
   >
     Secondary
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`DataList Cells 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-data-list__item-content"
   >
@@ -28,74 +28,74 @@ exports[`DataList Cells 1`] = `
       Primary Id 2
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`DataList DataList variants Breakpoint - 2xl 1`] = `
-<div>
+<DocumentFragment>
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid-2xl"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`DataList DataList variants Breakpoint - always 1`] = `
-<div>
+<DocumentFragment>
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`DataList DataList variants Breakpoint - lg 1`] = `
-<div>
+<DocumentFragment>
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid-lg"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`DataList DataList variants Breakpoint - md 1`] = `
-<div>
+<DocumentFragment>
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid-md"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`DataList DataList variants Breakpoint - none 1`] = `
-<div>
+<DocumentFragment>
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid-none"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`DataList DataList variants Breakpoint - sm 1`] = `
-<div>
+<DocumentFragment>
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid-sm"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`DataList DataList variants Breakpoint - xl 1`] = `
-<div>
+<DocumentFragment>
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid-xl"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`DataList DataListAction button 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-data-list__item-action"
   >
@@ -111,11 +111,11 @@ exports[`DataList DataListAction button 1`] = `
       Delete
     </button>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`DataList DataListAction dropdown 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-data-list__item-action"
   >
@@ -153,11 +153,11 @@ exports[`DataList DataListAction dropdown 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`DataList DataListContent 1`] = `
-<div>
+<DocumentFragment>
   <section
     aria-label="Primary Content Details"
     class="pf-c-data-list__expandable-content"
@@ -169,11 +169,11 @@ exports[`DataList DataListContent 1`] = `
        test
     </div>
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`DataList DataListContent hasNoPadding 1`] = `
-<div>
+<DocumentFragment>
   <section
     aria-label="Primary Content Details"
     class="pf-c-data-list__expandable-content"
@@ -186,61 +186,69 @@ exports[`DataList DataListContent hasNoPadding 1`] = `
       test
     </div>
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`DataList Item 1`] = `
-<div>
+<DocumentFragment>
   <li
     aria-labelledby="item-1"
     class="pf-c-data-list__item data-list-item-custom"
     id=""
   />
-</div>
+</DocumentFragment>
 `;
 
-exports[`DataList Item default 1`] = `"<li id=\\"\\" class=\\"pf-c-data-list__item\\" aria-labelledby=\\"item-1\\"></li>"`;
+exports[`DataList Item default 1`] = `
+<DocumentFragment>
+  <li
+    aria-labelledby="item-1"
+    class="pf-c-data-list__item"
+    id=""
+  />
+</DocumentFragment>
+`;
 
 exports[`DataList List 1`] = `
-<div>
+<DocumentFragment>
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid-md data-list-custom"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`DataList List compact 1`] = `
-<div>
+<DocumentFragment>
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-compact pf-m-grid-md"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`DataList List default 1`] = `
-<div>
+<DocumentFragment>
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-grid-md"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`DataList List draggable 1`] = `
-<div>
+<DocumentFragment>
   <ul
     aria-label="this is a simple list"
     class="pf-c-data-list pf-m-compact pf-m-grid-md"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`DataList item row default 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-data-list__item-row"
   />
-</div>
+</DocumentFragment>
 `;

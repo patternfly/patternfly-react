@@ -8,6 +8,6 @@ import { PopoverFooter } from '../../PopoverFooter';
 import {} from '../..';
 
 it('PopoverFooter should match snapshot (auto-generated)', () => {
-  const view = render(<PopoverFooter className={"''"} children={<div>ReactNode</div>} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<PopoverFooter className={"''"} children={<div>ReactNode</div>} />);
+  expect(asFragment()).toMatchSnapshot();
 });

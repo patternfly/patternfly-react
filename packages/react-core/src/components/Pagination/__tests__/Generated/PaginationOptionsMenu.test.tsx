@@ -8,7 +8,7 @@ import { PaginationOptionsMenu } from '../../PaginationOptionsMenu';
 import { ToggleTemplateProps } from '../..';
 
 it('PaginationOptionsMenu should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <PaginationOptionsMenu
       className={"''"}
       widgetId={"''"}
@@ -37,5 +37,5 @@ it('PaginationOptionsMenu should match snapshot (auto-generated)', () => {
       onPerPageSelect={() => null as any}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

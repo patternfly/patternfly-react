@@ -8,7 +8,7 @@ import { OptionsToggle } from '../../OptionsToggle';
 import {} from '../..';
 
 it('OptionsToggle should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <OptionsToggle
       itemsTitle={"'items'"}
       optionsToggle={"'Select'"}
@@ -26,5 +26,5 @@ it('OptionsToggle should match snapshot (auto-generated)', () => {
       onEnter={null}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

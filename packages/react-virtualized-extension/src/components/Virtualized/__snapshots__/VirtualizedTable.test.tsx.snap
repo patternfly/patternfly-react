@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Actions virtualized table 1`] = `
-<div>
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-md"
@@ -98,11 +98,11 @@ exports[`Actions virtualized table 1`] = `
       </tr>
     </thead>
   </table>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Selectable virtualized table 1`] = `
-<div>
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-md"
@@ -132,7 +132,6 @@ exports[`Selectable virtualized table 1`] = `
               type="checkbox"
             />
           </label>
-          
         </td>
         <th
           aria-sort="none"
@@ -208,11 +207,11 @@ exports[`Selectable virtualized table 1`] = `
       </tr>
     </thead>
   </table>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Simple Actions table 1`] = `
-<div>
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-md"
@@ -309,11 +308,11 @@ exports[`Simple Actions table 1`] = `
       </tr>
     </thead>
   </table>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Simple virtualized table aria-label 1`] = `
-<div>
+<DocumentFragment>
   <table
     aria-label="Virtual Table Test"
     class="pf-c-table pf-m-grid-md"
@@ -374,11 +373,11 @@ exports[`Simple virtualized table aria-label 1`] = `
       </tr>
     </thead>
   </table>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Simple virtualized table className 1`] = `
-<div>
+<DocumentFragment>
   <table
     aria-label="Virtual Table Test"
     class="pf-c-table pf-m-grid-md"
@@ -439,11 +438,11 @@ exports[`Simple virtualized table className 1`] = `
       </tr>
     </thead>
   </table>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Sortable Virtualized Table 1`] = `
-<div>
+<DocumentFragment>
   <table
     aria-label="Aria labeled"
     class="pf-c-table pf-m-grid-md"
@@ -535,5 +534,5 @@ exports[`Sortable Virtualized Table 1`] = `
       </tr>
     </thead>
   </table>
-</div>
+</DocumentFragment>
 `;

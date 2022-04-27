@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataListItemRow should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-data-list__item-row ''"
   >
@@ -11,5 +11,5 @@ exports[`DataListItemRow should match snapshot (auto-generated) 1`] = `
       ReactNode
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

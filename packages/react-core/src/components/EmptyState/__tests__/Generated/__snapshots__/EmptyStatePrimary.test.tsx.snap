@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EmptyStatePrimary should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-empty-state__primary ''"
   >
@@ -9,5 +9,5 @@ exports[`EmptyStatePrimary should match snapshot (auto-generated) 1`] = `
       ReactNode
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

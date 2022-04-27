@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DualListSelector basic 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-dual-list-selector"
     id="firstTest"
@@ -257,11 +257,11 @@ exports[`DualListSelector basic 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`DualListSelector basic with disabled controls 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-dual-list-selector"
     id="disabledTest"
@@ -520,11 +520,11 @@ exports[`DualListSelector basic with disabled controls 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`DualListSelector with actions 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-dual-list-selector"
     id="fourthTest"
@@ -852,11 +852,11 @@ exports[`DualListSelector with actions 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`DualListSelector with custom status 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-dual-list-selector"
     id="thirdTest"
@@ -1112,11 +1112,11 @@ exports[`DualListSelector with custom status 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`DualListSelector with search inputs 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-dual-list-selector"
     id="secondTest"
@@ -1398,11 +1398,11 @@ exports[`DualListSelector with search inputs 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`DualListSelector with tree 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-dual-list-selector"
     id="tree-test"
@@ -1735,5 +1735,5 @@ exports[`DualListSelector with tree 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

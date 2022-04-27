@@ -6,13 +6,13 @@ import { ChartVoronoiContainer } from './ChartVoronoiContainer';
 
 Object.values([true, false]).forEach(() => {
   test('ChartVoronoiContainer', () => {
-    const view = render(<ChartVoronoiContainer />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartVoronoiContainer />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders container via ChartGroup', () => {
-  const view = render(
+  const { asFragment } = render(
     <ChartGroup containerComponent={<ChartVoronoiContainer />} height={200} width={200}>
       <ChartArea
         data={[
@@ -33,5 +33,5 @@ test('renders container via ChartGroup', () => {
       />
     </ChartGroup>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

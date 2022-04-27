@@ -1,35 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`popover can close from content (uncontrolled) 1`] = `
-<div>
+<DocumentFragment>
   <button
     id="uncontrolled-toggle"
   >
     Toggle Popover
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`popover can have a custom minimum width 1`] = `
-<div>
+<DocumentFragment>
   <div>
     Toggle Popover
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`popover can specify position as object value 1`] = `
-<div>
+<DocumentFragment>
   <div>
     Toggle Popover
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`popover renders close-button, header and body 1`] = `
-<div>
+<DocumentFragment>
   <div>
     Toggle Popover
   </div>
-</div>
+</DocumentFragment>
 `;

@@ -4,14 +4,14 @@ import { ChartBulletPrimaryDotMeasure } from './ChartBulletPrimaryDotMeasure';
 
 Object.values([true, false]).forEach(() => {
   test('ChartBulletPrimaryDotMeasure', () => {
-    const view = render(<ChartBulletPrimaryDotMeasure />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartBulletPrimaryDotMeasure />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = render(
+  const { asFragment } = render(
     <ChartBulletPrimaryDotMeasure data={[{ y: 50 }, { y: 85 }, { y: 150 }]} domain={{ x: [0, 200] }} />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dropdown toggle 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-expanded="false"
     class="pf-c-dropdown__toggle"
@@ -34,11 +34,11 @@ exports[`Dropdown toggle 1`] = `
       </svg>
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Kebab toggle 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-expanded="false"
     aria-label="Actions"
@@ -60,5 +60,5 @@ exports[`Kebab toggle 1`] = `
       />
     </svg>
   </button>
-</div>
+</DocumentFragment>
 `;

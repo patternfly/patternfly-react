@@ -7,7 +7,7 @@ test('simple fileupload', () => {
   const readStartedHandler = jest.fn();
   const readFinishedHandler = jest.fn();
 
-  const view = render(
+  const { asFragment } = render(
     <FileUpload
       id="simple-text-file"
       type="text"
@@ -19,5 +19,5 @@ test('simple fileupload', () => {
       isLoading={false}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

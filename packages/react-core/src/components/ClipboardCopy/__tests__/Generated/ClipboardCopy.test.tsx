@@ -8,7 +8,7 @@ import { ClipboardCopy } from '../../ClipboardCopy';
 import {} from '../..';
 
 it('ClipboardCopy should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <ClipboardCopy
       className={'string'}
       hoverTip={"'Copy to clipboard'"}
@@ -37,5 +37,5 @@ it('ClipboardCopy should match snapshot (auto-generated)', () => {
       children={<div>ReactNode</div>}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -6,13 +6,13 @@ import { ChartStack } from './ChartStack';
 
 Object.values([true, false]).forEach(() => {
   test('ChartStack', () => {
-    const view = render(<ChartStack />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartStack />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = render(
+  const { asFragment } = render(
     <Chart domainPadding={{ x: [30, 25] }} height={200} width={300}>
       <ChartStack>
         <ChartBar
@@ -50,5 +50,5 @@ test('renders component data', () => {
       </ChartStack>
     </Chart>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

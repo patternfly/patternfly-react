@@ -2,7 +2,6 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
 
 import { FormSelect } from '../FormSelect';
 import { FormSelectOption } from '../FormSelectOption';
@@ -54,18 +53,18 @@ const groupedProps = {
 
 describe('FormSelect', () => {
   test('Simple FormSelect input', () => {
-    render(
+    const { asFragment } = render(
       <FormSelect value={props.value} aria-label="simple FormSelect">
         {props.options.map((option, index) => (
           <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
         ))}
       </FormSelect>
     );
-    expect(screen.getByLabelText('simple FormSelect').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Grouped FormSelect input', () => {
-    render(
+    const { asFragment } = render(
       <FormSelect value={groupedProps.value} aria-label="grouped FormSelect">
         {groupedProps.groups.map((group, index) => (
           <FormSelectOptionGroup isDisabled={group.disabled} key={index} label={group.groupLabel}>
@@ -76,71 +75,71 @@ describe('FormSelect', () => {
         ))}
       </FormSelect>
     );
-    expect(screen.getByLabelText('grouped FormSelect').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Disabled FormSelect input ', () => {
-    render(
+    const { asFragment } = render(
       <FormSelect isDisabled aria-label="disabled FormSelect">
         <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
       </FormSelect>
     );
-    expect(screen.getByLabelText('disabled FormSelect').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('FormSelect input with aria-label does not generate console error', () => {
     const myMock = jest.fn() as any;
     global.console = { error: myMock } as any;
 
-    render(
+    const { asFragment } = render(
       <FormSelect aria-label="label">
         <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
       </FormSelect>
     );
 
-    expect(screen.getByLabelText('label').outerHTML).toMatchSnapshot();
-    expect(myMock).not.toBeCalled();
+    expect(asFragment()).toMatchSnapshot();
+    expect(myMock).not.toHaveBeenCalled();
   });
 
   test('FormSelect input with id does not generate console error', () => {
     const myMock = jest.fn() as any;
     global.console = { error: myMock } as any;
 
-    render(
+    const { asFragment } = render(
       <FormSelect id="id" aria-label="label">
         <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
       </FormSelect>
     );
 
-    expect(screen.getByLabelText('label').outerHTML).toMatchSnapshot();
-    expect(myMock).not.toBeCalled();
+    expect(asFragment()).toMatchSnapshot();
+    expect(myMock).not.toHaveBeenCalled();
   });
 
   test('FormSelect input with no aria-label or id generates console error', () => {
     const myMock = jest.fn() as any;
     global.console = { error: myMock } as any;
 
-    render(
-      <FormSelect data-testid="test-id">
+    const { asFragment } = render(
+      <FormSelect>
         <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
       </FormSelect>
     );
 
-    expect(screen.getByTestId('test-id').outerHTML).toMatchSnapshot();
-    expect(myMock).toBeCalled();
+    expect(asFragment()).toMatchSnapshot();
+    expect(myMock).toHaveBeenCalled();
   });
 
   test('invalid FormSelect input', () => {
-    render(
+    const { asFragment } = render(
       <FormSelect validated="error" aria-label="invalid FormSelect">
         <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
       </FormSelect>
     );
-    expect(screen.getByLabelText('invalid FormSelect').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('validated success FormSelect input', () => {
-    render(
+    const { asFragment } = render(
       <FormSelect validated={ValidatedOptions.success} aria-label="validated FormSelect">
         <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
       </FormSelect>
@@ -148,12 +147,12 @@ describe('FormSelect', () => {
 
     const formSelect = screen.getByLabelText('validated FormSelect');
 
-    expect(formSelect.className).toContain('pf-m-success');
-    expect(formSelect.outerHTML).toMatchSnapshot();
+    expect(formSelect).toHaveClass('pf-m-success');
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('validated warning FormSelect input', () => {
-    render(
+    const { asFragment } = render(
       <FormSelect validated={ValidatedOptions.warning} aria-label="validated FormSelect">
         <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
       </FormSelect>
@@ -161,8 +160,8 @@ describe('FormSelect', () => {
 
     const formSelect = screen.getByLabelText('validated FormSelect');
 
-    expect(formSelect.className).toContain('pf-m-warning');
-    expect(formSelect.outerHTML).toMatchSnapshot();
+    expect(formSelect).toHaveClass('pf-m-warning');
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('required FormSelect input', () => {
@@ -186,7 +185,7 @@ describe('FormSelect', () => {
 
     userEvent.selectOptions(screen.getByLabelText('Some label'), 'Mr');
 
-    expect(myMock).toBeCalled();
+    expect(myMock).toHaveBeenCalled();
     expect(myMock.mock.calls[0][0]).toEqual('mr');
   });
 });

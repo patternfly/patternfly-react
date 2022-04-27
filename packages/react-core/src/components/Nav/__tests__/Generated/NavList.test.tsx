@@ -12,7 +12,7 @@ describe('NavList', () => {
   });
 
   it('should match snapshot', () => {
-    const view = render(
+    const { asFragment } = render(
       <NavContext.Provider
         value={{
           onSelect: jest.fn(),
@@ -26,6 +26,6 @@ describe('NavList', () => {
         <NavList children={<>ReactNode</>} className="" ariaLeftScroll="Scroll left" ariaRightScroll="Scroll right" />
       </NavContext.Provider>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

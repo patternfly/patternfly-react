@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`simple fileuploadfield 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-file-upload"
   >
@@ -64,5 +64,5 @@ exports[`simple fileuploadfield 1`] = `
       A custom preview of the uploaded file can be passed as children
     </p>
   </div>
-</div>
+</DocumentFragment>
 `;

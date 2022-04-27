@@ -8,9 +8,8 @@ import { ProgressContainer } from '../../ProgressContainer';
 import {} from '../..';
 
 it('ProgressContainer should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <ProgressContainer
-      ariaProps={undefined}
       parentId={'string'}
       title={"''"}
       label={null}
@@ -19,5 +18,5 @@ it('ProgressContainer should match snapshot (auto-generated)', () => {
       value={42}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

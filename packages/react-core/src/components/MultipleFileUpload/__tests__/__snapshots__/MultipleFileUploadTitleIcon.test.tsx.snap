@@ -4,7 +4,6 @@ exports[`MultipleFileUploadTitleIcon renders custom class names 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-multiple-file-upload__title-icon test"
-    data-testid="test-id"
   />
 </DocumentFragment>
 `;
@@ -13,7 +12,6 @@ exports[`MultipleFileUploadTitleIcon renders with expected class names 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-multiple-file-upload__title-icon"
-    data-testid="test-id"
   />
 </DocumentFragment>
 `;

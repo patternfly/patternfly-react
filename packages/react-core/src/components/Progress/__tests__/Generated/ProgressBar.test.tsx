@@ -8,6 +8,6 @@ import { ProgressBar } from '../../ProgressBar';
 import {} from '../..';
 
 it('ProgressBar should match snapshot (auto-generated)', () => {
-  const view = render(<ProgressBar children={<>ReactNode</>} className={"''"} value={42} ariaProps={undefined} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<ProgressBar children={<>ReactNode</>} className={"''"} value={42} />);
+  expect(asFragment()).toMatchSnapshot();
 });

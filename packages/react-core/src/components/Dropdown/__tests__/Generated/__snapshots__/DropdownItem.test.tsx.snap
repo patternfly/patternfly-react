@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DropdownItem should match snapshot 1`] = `
-<div>
+<DocumentFragment>
   <div>
     ReactNode
   </div>
-</div>
+</DocumentFragment>
 `;

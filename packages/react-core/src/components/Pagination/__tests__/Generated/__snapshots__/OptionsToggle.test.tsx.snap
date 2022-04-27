@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OptionsToggle should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
   >
@@ -38,5 +38,5 @@ exports[`OptionsToggle should match snapshot (auto-generated) 1`] = `
       </span>
     </button>
   </div>
-</div>
+</DocumentFragment>
 `;

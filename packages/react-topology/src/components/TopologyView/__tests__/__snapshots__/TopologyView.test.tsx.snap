@@ -4,7 +4,6 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
 <DocumentFragment>
   <div
     class="pf-l-stack my-test-class"
-    data-testid="test-id"
     id="simple-test-id"
   >
     <div
@@ -22,7 +21,6 @@ exports[`TopologyView should display topology correctly 1`] = `
 <DocumentFragment>
   <div
     class="pf-l-stack my-test-class"
-    data-testid="test-id"
     id="simple-test-id"
   >
     <div

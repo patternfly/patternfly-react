@@ -15,7 +15,7 @@ describe('Simple virtualized table', () => {
   const rowRenderer = () => {};
 
   test('className', () => {
-    const view = render(
+    const { asFragment } = render(
       <Table aria-label="Virtual Table Test" cells={columns} rows={rows}>
         <TableHeader />
         {({ width }: { width: number }) => (
@@ -32,11 +32,11 @@ describe('Simple virtualized table', () => {
         )}
       </Table>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('aria-label', () => {
-    const view = render(
+    const { asFragment } = render(
       <Table aria-label="Virtual Table Test" cells={columns} rows={rows}>
         <TableHeader />
         {({ width }: { width: number }) => (
@@ -52,7 +52,7 @@ describe('Simple virtualized table', () => {
         )}
       </Table>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
@@ -61,7 +61,7 @@ test('Sortable Virtualized Table', () => {
 
   const onSortCall = () => undefined as any;
   columns[0] = { ...(columns[0] as any), transforms: [sortable] };
-  const view = render(
+  const { asFragment } = render(
     <Table aria-label="Aria labeled" onSort={onSortCall} sortBy={{}} cells={columns} rows={rows}>
       <TableHeader />
       {({ width }: { width: number }) => (
@@ -76,7 +76,7 @@ test('Sortable Virtualized Table', () => {
       )}
     </Table>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('Simple Actions table', () => {
@@ -90,7 +90,7 @@ test('Simple Actions table', () => {
     }
   ];
 
-  const view = render(
+  const { asFragment } = render(
     <Table aria-label="Aria labeled" actions={actions} cells={columns} rows={rowsWithDisabledAction}>
       <TableHeader />
       {({ width }: { width: number }) => (
@@ -107,13 +107,13 @@ test('Simple Actions table', () => {
       )}
     </Table>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('Actions virtualized table', () => {
   const rowRenderer = () => {};
 
-  const view = render(
+  const { asFragment } = render(
     <Table
       aria-label="Aria labeled"
       actionResolver={() => actions}
@@ -136,14 +136,14 @@ test('Actions virtualized table', () => {
       )}
     </Table>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('Selectable virtualized table', () => {
   const rowRenderer = () => {};
 
   const onSelect = () => undefined as any;
-  const view = render(
+  const { asFragment } = render(
     <Table aria-label="Aria labeled" onSelect={onSelect} cells={columns} rows={rows}>
       <TableHeader />
       {(width: number) => (
@@ -158,5 +158,5 @@ test('Selectable virtualized table', () => {
       )}
     </Table>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

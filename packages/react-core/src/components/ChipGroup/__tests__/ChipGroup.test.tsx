@@ -2,38 +2,37 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
 
 import { ChipGroup } from '../index';
 import { Chip } from '../../Chip';
 
 describe('ChipGroup', () => {
   test('chip group default', () => {
-    const view = render(
+    const { asFragment } = render(
       <ChipGroup>
         <Chip>1.1</Chip>
       </ChipGroup>
     );
 
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('chip group with category', () => {
-    const view = render(
+    const { asFragment } = render(
       <ChipGroup categoryName="category">
         <Chip>1.1</Chip>
       </ChipGroup>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('chip group with closable category', () => {
-    const view = render(
+    const { asFragment } = render(
       <ChipGroup categoryName="category" isClosable>
         <Chip>1.1</Chip>
       </ChipGroup>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('chip group expanded', () => {
@@ -59,11 +58,11 @@ describe('ChipGroup', () => {
   });
 
   test('chip group with category and tooltip', () => {
-    const view = render(
+    const { asFragment } = render(
       <ChipGroup categoryName="A very long category name">
         <Chip>1.1</Chip>
       </ChipGroup>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

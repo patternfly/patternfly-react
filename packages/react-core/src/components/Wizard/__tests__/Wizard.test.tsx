@@ -1,8 +1,5 @@
 import React from 'react';
-
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-
 import { Wizard, WizardStepFunctionType, WizardStep } from '../Wizard';
 
 describe('Wizard', () => {
@@ -96,7 +93,7 @@ describe('Wizard', () => {
   test('wiz with title', () => {
     const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
 
-    render(<Wizard title="Wizard" description="This wizard has a title" steps={steps} data-testid="wizard-test-id" />);
+    render(<Wizard title="Wizard" description="This wizard has a title" steps={steps} />);
     expect(screen.getByRole('heading', { name: 'Wizard' })).toBeInTheDocument();
   });
 

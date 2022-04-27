@@ -1,6 +1,122 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DesktopViewer default MoreInformationContent 1`] = `"<p>Clicking \\"Launch Remote Viewer\\" will download a .vv file and launch <i>Remote Viewer</i></p>"`;
+exports[`DesktopViewer default MoreInformationContent 1`] = `
+<DocumentFragment>
+  <p>
+    Clicking "Launch Remote Viewer" will download a .vv file and launch 
+    <i>
+      Remote Viewer
+    </i>
+  </p>
+  <p>
+    <i>
+      Remote Viewer
+    </i>
+     is available for most operating systems. To install it, search for it in GNOME Software or run the following:
+  </p>
+  <dl
+    class="pf-c-description-list pf-m-horizontal"
+  >
+    <div
+      class="pf-c-description-list__group"
+    >
+      <dt
+        class="pf-c-description-list__term"
+      >
+        <span
+          class="pf-c-description-list__text"
+        >
+          RHEL, CentOS
+        </span>
+      </dt>
+      <dd
+        class="pf-c-description-list__description"
+      >
+        <div
+          class="pf-c-description-list__text"
+        >
+          sudo yum install virt-viewer
+        </div>
+      </dd>
+    </div>
+    <div
+      class="pf-c-description-list__group"
+    >
+      <dt
+        class="pf-c-description-list__term"
+      >
+        <span
+          class="pf-c-description-list__text"
+        >
+          Fedora
+        </span>
+      </dt>
+      <dd
+        class="pf-c-description-list__description"
+      >
+        <div
+          class="pf-c-description-list__text"
+        >
+          sudo dnf install virt-viewer
+        </div>
+      </dd>
+    </div>
+    <div
+      class="pf-c-description-list__group"
+    >
+      <dt
+        class="pf-c-description-list__term"
+      >
+        <span
+          class="pf-c-description-list__text"
+        >
+          Ubuntu, Debian
+        </span>
+      </dt>
+      <dd
+        class="pf-c-description-list__description"
+      >
+        <div
+          class="pf-c-description-list__text"
+        >
+          sudo apt-get install virt-viewer
+        </div>
+      </dd>
+    </div>
+    <div
+      class="pf-c-description-list__group"
+    >
+      <dt
+        class="pf-c-description-list__term"
+      >
+        <span
+          class="pf-c-description-list__text"
+        >
+          Windows
+        </span>
+      </dt>
+      <dd
+        class="pf-c-description-list__description"
+      >
+        <div
+          class="pf-c-description-list__text"
+        >
+          <div>
+            Download the MSI from 
+            <a
+              href="https://virt-manager.org/download/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              virt-manager.org
+            </a>
+          </div>
+        </div>
+      </dd>
+    </div>
+  </dl>
+</DocumentFragment>
+`;
 
 exports[`DesktopViewer empty 1`] = `
 <DocumentFragment>

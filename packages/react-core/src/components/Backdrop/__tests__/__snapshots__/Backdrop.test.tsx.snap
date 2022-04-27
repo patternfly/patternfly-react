@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Backdrop Test 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-backdrop"
   >
     Backdrop
   </div>
-</div>
+</DocumentFragment>
 `;

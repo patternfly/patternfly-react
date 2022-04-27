@@ -4,13 +4,13 @@ import { ChartDonut } from './ChartDonut';
 
 Object.values([true, false]).forEach(() => {
   test('ChartDonut', () => {
-    const view = render(<ChartDonut />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartDonut />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = render(
+  const { asFragment } = render(
     <ChartDonut
       data={[
         { x: 'Cats', y: 35 },
@@ -21,5 +21,5 @@ test('renders component data', () => {
       width={200}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

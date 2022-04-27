@@ -2,7 +2,6 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
 
 import { TextInput, TextInputBase } from '../TextInput';
 import { ValidatedOptions } from '../../../helpers/constants';
@@ -14,7 +13,7 @@ const props = {
 
 describe('TextInput', () => {
   test('input passes value and event to onChange handler', () => {
-    render(<TextInputBase {...props} value='' aria-label="test input" />);
+    render(<TextInputBase {...props} value="" aria-label="test input" />);
 
     userEvent.type(screen.getByLabelText('test input'), 'a');
     expect(props.onChange).toHaveBeenCalledWith('a', expect.any(Object));
@@ -36,7 +35,9 @@ describe('TextInput', () => {
   });
 
   test('invalid text input', () => {
-    const { asFragment } = render(<TextInput {...props} required validated={'error'} aria-label="invalid text input" />);
+    const { asFragment } = render(
+      <TextInput {...props} required validated={'error'} aria-label="invalid text input" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -51,7 +52,9 @@ describe('TextInput', () => {
   });
 
   test('validated text input error', () => {
-    const { asFragment } = render(<TextInput {...props} required validated={ValidatedOptions.error} aria-label="validated text input" />);
+    const { asFragment } = render(
+      <TextInput {...props} required validated={ValidatedOptions.error} aria-label="validated text input" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -61,7 +64,7 @@ describe('TextInput', () => {
 
     render(<TextInput {...props} />);
 
-    expect(myMock).toBeCalled();
+    expect(myMock).toHaveBeenCalled();
   });
 
   test('should not throw console error when id is given but no aria-label or aria-labelledby', () => {
@@ -70,7 +73,7 @@ describe('TextInput', () => {
 
     render(<TextInput {...props} id="5" />);
 
-    expect(myMock).not.toBeCalled();
+    expect(myMock).not.toHaveBeenCalled();
   });
 
   test('should not throw console error when aria-label is given but no id or aria-labelledby', () => {
@@ -79,7 +82,7 @@ describe('TextInput', () => {
 
     render(<TextInput {...props} aria-label="test input" />);
 
-    expect(myMock).not.toBeCalled();
+    expect(myMock).not.toHaveBeenCalled();
   });
 
   test('should not throw console error when aria-labelledby is given but no id or aria-label', () => {
@@ -88,6 +91,6 @@ describe('TextInput', () => {
 
     render(<TextInput {...props} aria-labelledby="test input" />);
 
-    expect(myMock).not.toBeCalled();
+    expect(myMock).not.toHaveBeenCalled();
   });
 });

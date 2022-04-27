@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 test('simple catalog item header', () => {
-  const view = render(
+  const { asFragment } = render(
     <CatalogItemHeader
       title="PatternFly"
       vendor={
@@ -13,5 +13,5 @@ test('simple catalog item header', () => {
       }
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

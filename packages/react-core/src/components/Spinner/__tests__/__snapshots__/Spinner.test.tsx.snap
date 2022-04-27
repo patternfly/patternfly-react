@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`extra large spinner 1`] = `
-<div>
+<DocumentFragment>
   <span
     aria-label="Contents"
     aria-valuetext="Loading..."
@@ -18,11 +18,11 @@ exports[`extra large spinner 1`] = `
       class="pf-c-spinner__tail-ball"
     />
   </span>
-</div>
+</DocumentFragment>
 `;
 
 exports[`large spinner 1`] = `
-<div>
+<DocumentFragment>
   <span
     aria-label="Contents"
     aria-valuetext="Loading..."
@@ -39,11 +39,11 @@ exports[`large spinner 1`] = `
       class="pf-c-spinner__tail-ball"
     />
   </span>
-</div>
+</DocumentFragment>
 `;
 
 exports[`medium spinner 1`] = `
-<div>
+<DocumentFragment>
   <span
     aria-label="Contents"
     aria-valuetext="Loading..."
@@ -60,11 +60,11 @@ exports[`medium spinner 1`] = `
       class="pf-c-spinner__tail-ball"
     />
   </span>
-</div>
+</DocumentFragment>
 `;
 
 exports[`simple spinner 1`] = `
-<div>
+<DocumentFragment>
   <span
     aria-label="Contents"
     aria-valuetext="Loading..."
@@ -81,11 +81,11 @@ exports[`simple spinner 1`] = `
       class="pf-c-spinner__tail-ball"
     />
   </span>
-</div>
+</DocumentFragment>
 `;
 
 exports[`small spinner 1`] = `
-<div>
+<DocumentFragment>
   <span
     aria-label="Contents"
     aria-valuetext="Loading..."
@@ -102,5 +102,5 @@ exports[`small spinner 1`] = `
       class="pf-c-spinner__tail-ball"
     />
   </span>
-</div>
+</DocumentFragment>
 `;

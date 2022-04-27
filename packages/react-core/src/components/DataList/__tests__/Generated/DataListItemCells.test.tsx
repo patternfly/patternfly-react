@@ -8,6 +8,8 @@ import { DataListItemCells } from '../../DataListItemCells';
 import {} from '../..';
 
 it('DataListItemCells should match snapshot (auto-generated)', () => {
-  const view = render(<DataListItemCells className={"''"} dataListCells={<div>ReactNode</div>} rowid={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(
+    <DataListItemCells className={"''"} dataListCells={<div>ReactNode</div>} rowid={"''"} />
+  );
+  expect(asFragment()).toMatchSnapshot();
 });

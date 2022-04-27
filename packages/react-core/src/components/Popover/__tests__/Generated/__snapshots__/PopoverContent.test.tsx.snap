@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PopoverContent should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-popover__content null"
   >
@@ -9,5 +9,5 @@ exports[`PopoverContent should match snapshot (auto-generated) 1`] = `
       ReactNode
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

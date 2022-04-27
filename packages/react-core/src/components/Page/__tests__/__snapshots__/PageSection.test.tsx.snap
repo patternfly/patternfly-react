@@ -1,39 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Check page main breadcrumb section against snapshot 1`] = `
-<div>
+<DocumentFragment>
   <section
     class="pf-c-page__main-breadcrumb"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Check page main nav section against snapshot 1`] = `
-<div>
+<DocumentFragment>
   <section
     class="pf-c-page__main-nav"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Check page main subnav section against snapshot 1`] = `
-<div>
+<DocumentFragment>
   <section
     class="pf-c-page__main-subnav"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Check page main tabs section against snapshot 1`] = `
-<div>
+<DocumentFragment>
   <section
     class="pf-c-page__main-tabs"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Check page section with center alignment 1`] = `
-<div>
+<DocumentFragment>
   <section
     class="pf-c-page__main-section pf-m-limit-width pf-m-align-center"
   >
@@ -41,27 +41,27 @@ exports[`Check page section with center alignment 1`] = `
       class="pf-c-page__main-body"
     />
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Check page section with fill and no padding example against snapshot 1`] = `
-<div>
+<DocumentFragment>
   <section
     class="pf-c-page__main-section pf-m-no-padding pf-m-fill"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Check page section with fill example against snapshot 1`] = `
-<div>
+<DocumentFragment>
   <section
     class="pf-c-page__main-section pf-m-fill"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Check page section with limited width 1`] = `
-<div>
+<DocumentFragment>
   <section
     class="pf-c-page__main-section pf-m-limit-width"
   >
@@ -69,71 +69,71 @@ exports[`Check page section with limited width 1`] = `
       class="pf-c-page__main-body"
     />
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Check page section with no fill example against snapshot 1`] = `
-<div>
+<DocumentFragment>
   <section
     class="pf-c-page__main-section pf-m-no-fill"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Check page section with no padding example against snapshot 1`] = `
-<div>
+<DocumentFragment>
   <section
     class="pf-c-page__main-section pf-m-no-padding"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Verify page section bottom shadow 1`] = `
-<div>
+<DocumentFragment>
   <section
     class="pf-c-page__main-section pf-m-shadow-bottom"
   >
     test
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Verify page section bottom sticky 1`] = `
-<div>
+<DocumentFragment>
   <section
     class="pf-c-page__main-section pf-m-sticky-bottom"
   >
     test
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Verify page section overflow scroll 1`] = `
-<div>
+<DocumentFragment>
   <section
     class="pf-c-page__main-section pf-m-overflow-scroll"
   >
     test
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Verify page section top shadow 1`] = `
-<div>
+<DocumentFragment>
   <section
     class="pf-c-page__main-section pf-m-shadow-top"
   >
     test
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Verify page section top sticky 1`] = `
-<div>
+<DocumentFragment>
   <section
     class="pf-c-page__main-section pf-m-sticky-top"
   >
     test
   </section>
-</div>
+</DocumentFragment>
 `;

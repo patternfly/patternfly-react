@@ -4,7 +4,7 @@ import { ActionListItem } from '../ActionListItem';
 
 describe('action list item', () => {
   test('renders successfully', () => {
-    const view = render(<ActionListItem>test</ActionListItem>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ActionListItem>test</ActionListItem>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

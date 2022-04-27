@@ -8,7 +8,7 @@ import { KebabToggle } from '../../KebabToggle';
 import {} from '../..';
 
 it('KebabToggle should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <KebabToggle
       id={"''"}
       children={<>ReactNode</>}
@@ -24,5 +24,5 @@ it('KebabToggle should match snapshot (auto-generated)', () => {
       bubbleEvent={false}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

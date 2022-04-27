@@ -8,6 +8,6 @@ import { ListItem } from '../../ListItem';
 import {} from '../..';
 
 it('ListItem should match snapshot (auto-generated)', () => {
-  const view = render(<ListItem children={<>ReactNode</>} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<ListItem children={<>ReactNode</>} />);
+  expect(asFragment()).toMatchSnapshot();
 });

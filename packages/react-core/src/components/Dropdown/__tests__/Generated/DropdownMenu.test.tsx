@@ -8,7 +8,7 @@ import { DropdownMenu } from '../../DropdownMenu';
 import {} from '../..';
 
 it('DropdownMenu should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <DropdownMenu
       children={<div>ReactNode</div>}
       className={"''"}
@@ -19,5 +19,5 @@ it('DropdownMenu should match snapshot (auto-generated)', () => {
       isGrouped={false}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

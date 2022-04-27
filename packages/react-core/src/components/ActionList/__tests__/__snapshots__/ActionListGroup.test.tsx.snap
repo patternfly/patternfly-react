@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`action list group renders successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-action-list__group"
   >
     test
   </div>
-</div>
+</DocumentFragment>
 `;

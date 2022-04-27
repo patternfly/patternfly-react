@@ -4,13 +4,13 @@ import { ChartArea } from '../ChartArea';
 
 Object.values([true, false]).forEach(() => {
   test('ChartArea', () => {
-    const view = render(<ChartArea />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartArea />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = render(
+  const { asFragment } = render(
     <ChartArea
       data={[
         { name: 'Cats', x: 1, y: 1 },
@@ -20,5 +20,5 @@ test('renders component data', () => {
       ]}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

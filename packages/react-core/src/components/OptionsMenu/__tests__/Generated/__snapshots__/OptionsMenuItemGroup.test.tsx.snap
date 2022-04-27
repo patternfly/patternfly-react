@@ -1,18 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OptionsMenuItemGroup should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <section
-    arialabel="''"
     class="pf-c-options-menu__group"
   >
-    
     <ul
-      aria-label=""
+      aria-label="''"
       class="''"
     >
       ReactNode
     </ul>
   </section>
-</div>
+</DocumentFragment>
 `;

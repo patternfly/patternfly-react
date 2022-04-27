@@ -8,6 +8,8 @@ import { TooltipContent } from '../../TooltipContent';
 import {} from '../..';
 
 it('TooltipContent should match snapshot (auto-generated)', () => {
-  const view = render(<TooltipContent className={'string'} children={<div>ReactNode</div>} isLeftAligned={true} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(
+    <TooltipContent className={'string'} children={<div>ReactNode</div>} isLeftAligned={true} />
+  );
+  expect(asFragment()).toMatchSnapshot();
 });

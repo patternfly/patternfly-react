@@ -1,22 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HelperText default helper text variant applies successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-helper-text__item"
   >
     <span
       class="pf-c-helper-text__item-text"
     >
-      default
-       help test text
+      default help test text
     </span>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`HelperText dynamic helper text renders successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-helper-text"
   >
@@ -48,11 +47,11 @@ exports[`HelperText dynamic helper text renders successfully 1`] = `
       </span>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`HelperText helper text block renders successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-helper-text"
   >
@@ -84,11 +83,11 @@ exports[`HelperText helper text block renders successfully 1`] = `
       </span>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`HelperText icon helper text renders properly 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-helper-text"
   >
@@ -120,41 +119,39 @@ exports[`HelperText icon helper text renders properly 1`] = `
       </span>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`HelperText indeterminate helper text variant applies successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-helper-text__item pf-m-indeterminate"
   >
     <span
       class="pf-c-helper-text__item-text"
     >
-      indeterminate
-       help test text
+      indeterminate help test text
     </span>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`HelperText invalid helper text variant applies successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-helper-text__item"
   >
     <span
       class="pf-c-helper-text__item-text"
     >
-      invalid
-       help test text
+      invalid help test text
     </span>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`HelperText simple helper text renders successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-helper-text"
   >
@@ -168,26 +165,25 @@ exports[`HelperText simple helper text renders successfully 1`] = `
       </span>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`HelperText success helper text variant applies successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-helper-text__item pf-m-success"
   >
     <span
       class="pf-c-helper-text__item-text"
     >
-      success
-       help test text
+      success help test text
     </span>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`HelperText variant comonent helper text renders properly 1`] = `
-<div>
+<DocumentFragment>
   <ul
     class="pf-c-helper-text"
   >
@@ -210,20 +206,19 @@ exports[`HelperText variant comonent helper text renders properly 1`] = `
       </span>
     </li>
   </ul>
-</div>
+</DocumentFragment>
 `;
 
 exports[`HelperText warning helper text variant applies successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-helper-text__item pf-m-warning"
   >
     <span
       class="pf-c-helper-text__item-text"
     >
-      warning
-       help test text
+      warning help test text
     </span>
   </div>
-</div>
+</DocumentFragment>
 `;

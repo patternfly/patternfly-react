@@ -1,21 +1,168 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InternalDropdownItem dropdown items a 1`] = `"<a class=\\"\\">Something</a>"`;
+exports[`InternalDropdownItem dropdown items a 1`] = `
+<DocumentFragment>
+  <li
+    role="none"
+  >
+    <a
+      class=""
+    >
+      Something
+    </a>
+  </li>
+</DocumentFragment>
+`;
 
-exports[`InternalDropdownItem dropdown items aria-disabled a 1`] = `"<a aria-disabled=\\"true\\" class=\\"pf-m-aria-disabled\\">Something</a>"`;
+exports[`InternalDropdownItem dropdown items aria-disabled a 1`] = `
+<DocumentFragment>
+  <li
+    role="none"
+  >
+    <a
+      aria-disabled="true"
+      class="pf-m-aria-disabled"
+    >
+      Something
+    </a>
+  </li>
+</DocumentFragment>
+`;
 
-exports[`InternalDropdownItem dropdown items aria-disabled button 1`] = `"<button aria-disabled=\\"true\\" type=\\"button\\" class=\\"pf-m-aria-disabled\\">Something</button>"`;
+exports[`InternalDropdownItem dropdown items aria-disabled button 1`] = `
+<DocumentFragment>
+  <li
+    role="none"
+  >
+    <button
+      aria-disabled="true"
+      class="pf-m-aria-disabled"
+      type="button"
+    >
+      Something
+    </button>
+  </li>
+</DocumentFragment>
+`;
 
-exports[`InternalDropdownItem dropdown items button 1`] = `"<button type=\\"button\\" class=\\"\\">Something</button>"`;
+exports[`InternalDropdownItem dropdown items button 1`] = `
+<DocumentFragment>
+  <li
+    role="none"
+  >
+    <button
+      class=""
+      type="button"
+    >
+      Something
+    </button>
+  </li>
+</DocumentFragment>
+`;
 
-exports[`InternalDropdownItem dropdown items description a 1`] = `"<div class=\\"pf-c-dropdown__menu-item-description\\">Something's link description</div>"`;
+exports[`InternalDropdownItem dropdown items description a 1`] = `
+<DocumentFragment>
+  <li
+    role="none"
+  >
+    <a
+      class="pf-m-description"
+    >
+      <div
+        class="pf-c-dropdown__menu-item-main"
+      >
+        Something
+      </div>
+      <div
+        class="pf-c-dropdown__menu-item-description"
+      >
+        Something's link description
+      </div>
+    </a>
+  </li>
+</DocumentFragment>
+`;
 
-exports[`InternalDropdownItem dropdown items description button 1`] = `"<div class=\\"pf-c-dropdown__menu-item-description\\">Something's button description</div>"`;
+exports[`InternalDropdownItem dropdown items description button 1`] = `
+<DocumentFragment>
+  <li
+    role="none"
+  >
+    <button
+      class="pf-m-description"
+      type="button"
+    >
+      <div
+        class="pf-c-dropdown__menu-item-main"
+      >
+        Something
+      </div>
+      <div
+        class="pf-c-dropdown__menu-item-description"
+      >
+        Something's button description
+      </div>
+    </button>
+  </li>
+</DocumentFragment>
+`;
 
-exports[`InternalDropdownItem dropdown items disabled a 1`] = `"<a aria-disabled=\\"true\\" class=\\"\\">Something</a>"`;
+exports[`InternalDropdownItem dropdown items disabled a 1`] = `
+<DocumentFragment>
+  <li
+    role="none"
+  >
+    <a
+      aria-disabled="true"
+      class=""
+    >
+      Something
+    </a>
+  </li>
+</DocumentFragment>
+`;
 
-exports[`InternalDropdownItem dropdown items disabled button 1`] = `"<button aria-disabled=\\"true\\" type=\\"button\\" class=\\"\\">Something</button>"`;
+exports[`InternalDropdownItem dropdown items disabled button 1`] = `
+<DocumentFragment>
+  <li
+    role="none"
+  >
+    <button
+      aria-disabled="true"
+      class=""
+      type="button"
+    >
+      Something
+    </button>
+  </li>
+</DocumentFragment>
+`;
 
-exports[`InternalDropdownItem dropdown items hover a 1`] = `"<a class=\\"\\">Something</a>"`;
+exports[`InternalDropdownItem dropdown items hover a 1`] = `
+<DocumentFragment>
+  <li
+    role="none"
+  >
+    <a
+      class=""
+    >
+      Something
+    </a>
+  </li>
+</DocumentFragment>
+`;
 
-exports[`InternalDropdownItem dropdown items hover button 1`] = `"<button type=\\"button\\" class=\\"\\">Something</button>"`;
+exports[`InternalDropdownItem dropdown items hover button 1`] = `
+<DocumentFragment>
+  <li
+    role="none"
+  >
+    <button
+      class=""
+      type="button"
+    >
+      Something
+    </button>
+  </li>
+</DocumentFragment>
+`;

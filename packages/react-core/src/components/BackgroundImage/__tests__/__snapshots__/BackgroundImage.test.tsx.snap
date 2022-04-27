@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BackgroundImage 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-background-image"
     style="--pf-c-background-image--BackgroundImage: url(/assets/images/pfbg_576.jpg); --pf-c-background-image--BackgroundImage-2x: url(/assets/images/pfbg_576@2x.jpg); --pf-c-background-image--BackgroundImage--sm: url(/assets/images/pfbg_768.jpg); --pf-c-background-image--BackgroundImage--sm-2x: url(/assets/images/pfbg_768@2x.jpg); --pf-c-background-image--BackgroundImage--lg: url(/assets/images/pfbg_1200.jpg); --pf-c-background-image--Filter: url(#patternfly-background-image-filter-overlay0);"
@@ -43,11 +43,11 @@ exports[`BackgroundImage 1`] = `
       </filter>
     </svg>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`allows passing in a single string as the image src 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-background-image"
     style="--pf-c-background-image--BackgroundImage: url(/assets/images/pfbg_1200.jpg); --pf-c-background-image--BackgroundImage-2x: url(/assets/images/pfbg_1200.jpg); --pf-c-background-image--BackgroundImage--sm: url(/assets/images/pfbg_1200.jpg); --pf-c-background-image--BackgroundImage--sm-2x: url(/assets/images/pfbg_1200.jpg); --pf-c-background-image--BackgroundImage--lg: url(/assets/images/pfbg_1200.jpg); --pf-c-background-image--Filter: url(#patternfly-background-image-filter-overlay1);"
@@ -89,5 +89,5 @@ exports[`allows passing in a single string as the image src 1`] = `
       </filter>
     </svg>
   </div>
-</div>
+</DocumentFragment>
 `;

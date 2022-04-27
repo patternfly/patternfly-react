@@ -6,6 +6,6 @@ import { render } from '@testing-library/react';
 import { FindRefWrapper } from '../../FindRefWrapper';
 
 it('FindRefWrapper should match snapshot (auto-generated)', () => {
-  const view = render(<FindRefWrapper children={<div>ReactNode</div>} onFoundRef={(foundRef: any) => {}} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<FindRefWrapper children={<div>ReactNode</div>} onFoundRef={(foundRef: any) => {}} />);
+  expect(asFragment()).toMatchSnapshot();
 });

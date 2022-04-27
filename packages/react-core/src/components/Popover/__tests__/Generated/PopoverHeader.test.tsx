@@ -8,6 +8,6 @@ import { PopoverHeader } from '../../PopoverHeader';
 import {} from '../..';
 
 it('PopoverHeader should match snapshot (auto-generated)', () => {
-  const view = render(<PopoverHeader id={'string'} children={<div>ReactNode</div>} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<PopoverHeader id={'string'} children={<div>ReactNode</div>} />);
+  expect(asFragment()).toMatchSnapshot();
 });

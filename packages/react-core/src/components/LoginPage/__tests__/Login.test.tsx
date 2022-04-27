@@ -7,10 +7,10 @@ import { LoginHeader } from '../LoginHeader';
 test('Check login layout example against snapshot', () => {
   const Header = <LoginHeader headerBrand="HeaderBrand">Header Text</LoginHeader>;
   const Footer = <LoginFooter>Footer</LoginFooter>;
-  const view = render(
+  const { asFragment } = render(
     <Login footer={Footer} header={Header}>
       Main
     </Login>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

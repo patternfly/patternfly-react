@@ -4,7 +4,7 @@ import { TopologyView } from '../index';
 
 describe('TopologyView', () => {
   test('should display an empty topology correctly', () => {
-    const { asFragment } = render(<TopologyView className="my-test-class" id="simple-test-id" data-testid="test-id" />);
+    const { asFragment } = render(<TopologyView className="my-test-class" id="simple-test-id" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -16,7 +16,6 @@ describe('TopologyView', () => {
         contextToolbar={<div id="test-context-bar" />}
         viewToolbar={<div id="test-view-bar" />}
         controlBar={<div id="test-control-bar" />}
-        data-testid="test-id"
       >
         <div id="test-canvas" />
       </TopologyView>
