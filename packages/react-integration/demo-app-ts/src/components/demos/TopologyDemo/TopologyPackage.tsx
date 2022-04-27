@@ -81,6 +81,7 @@ const TopologyViewComponent: React.FunctionComponent<TopologyViewComponentProps>
   const [numNodes, setNumNodes] = React.useState<number | undefined>(6);
   const [numEdges, setNumEdges] = React.useState<number | undefined>(2);
   const [numGroups, setNumGroups] = React.useState<number | undefined>(1);
+  const [nestedLevel, setNestedLevel] = React.useState<number | undefined>(0);
   const [medScale, setMedScale] = React.useState<number | undefined>(0.5);
   const [lowScale, setLowScale] = React.useState<number | undefined>(0.3);
   const [creationCounts, setCreationCounts] = React.useState<{ numNodes: number; numEdges: number; numGroups: number }>(
@@ -93,6 +94,7 @@ const TopologyViewComponent: React.FunctionComponent<TopologyViewComponentProps>
       creationCounts.numNodes,
       creationCounts.numGroups,
       creationCounts.numEdges,
+      nestedLevel,
       nodeOptions,
       edgeOptions
     );
@@ -152,6 +154,9 @@ const TopologyViewComponent: React.FunctionComponent<TopologyViewComponentProps>
             </DropdownItem>,
             <DropdownItem key={3} onClick={() => updateLayout('Cola')}>
               Cola
+            </DropdownItem>,
+            <DropdownItem key={8} onClick={() => updateLayout('ColaGroups')}>
+              ColaGroups
             </DropdownItem>,
             <DropdownItem key={4} onClick={() => updateLayout('ColaNoForce')}>
               ColaNoForce
@@ -462,21 +467,28 @@ const TopologyViewComponent: React.FunctionComponent<TopologyViewComponentProps>
             aria-label="nodes"
             type="number"
             value={numNodes || ''}
-            onChange={(val: string) => (val ? updateValue(parseInt(val), 0, 9999, setNumNodes) : setNumNodes(0))}
+            onChange={(val: string) => (val ? updateValue(parseInt(val), 0, 9999, setNumNodes) : setNumNodes(null))}
           />
           <span>Edges:</span>
           <TextInput
             aria-label="edges"
             type="number"
-            value={numEdges}
-            onChange={(val: string) => (val ? updateValue(parseInt(val), 0, 200, setNumEdges) : setNumEdges(0))}
+            value={numEdges === null ? '' : numEdges}
+            onChange={(val: string) => (val ? updateValue(parseInt(val), 0, 200, setNumEdges) : setNumEdges(null))}
           />
           <span>Groups:</span>
           <TextInput
             aria-label="groups"
             type="number"
-            value={numGroups}
-            onChange={(val: string) => (val ? updateValue(parseInt(val), 0, 100, setNumGroups) : setNumGroups(0))}
+            value={numGroups === null ? '' : numGroups}
+            onChange={(val: string) => (val ? updateValue(parseInt(val), 0, 100, setNumGroups) : setNumGroups(null))}
+          />
+          <span>Nesting Depth:</span>
+          <TextInput
+            aria-label="nesting depth"
+            type="number"
+            value={nestedLevel === null ? '' : nestedLevel}
+            onChange={(val: string) => (val ? updateValue(parseInt(val), 0, 5, setNestedLevel) : setNestedLevel(null))}
           />
           <Button
             variant="link"
