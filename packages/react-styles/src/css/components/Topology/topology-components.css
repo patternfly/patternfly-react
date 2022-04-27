@@ -70,6 +70,8 @@
   --pf-topology__node--m-selected--m-success--node__label__background--Fill: var(--pf-global--success-color--100);
 
   /* node label icon */
+  --pf-topology__node__label__icon--Color: var(--pf-global--Color--200);
+
   --pf-topology__node__label__icon__background--Fill: var(--pf-global--palette--white);
   --pf-topology__node__label__icon__background--Stroke: var(--pf-global--palette--black-300);
 
@@ -191,6 +193,8 @@
   --pf-topology__node--m-selected--m-warning--node__label__text--Fill: var(--pf-global--palette--black-900);
   --pf-topology__node--m-selected--m-success--node__label__text--Fill: var(--pf-global--palette--black-900);
   
+  --pf-topology__node__label__icon--Color: var(--pf-global--palette--black-600);
+
   /* dark group */
   --pf-topology__group__background--Fill: var(--pf-global--BackgroundColor--300);
   --pf-topology__group__background--Stroke: var(--pf-global--palette--black-300);
@@ -453,6 +457,10 @@
 .pf-topology__node__label__badge > text {
   font-size: var(--pf-global--FontSize--xs);
   pointer-events: none;
+}
+
+.pf-topology__node__label__icon {
+  color: var(--pf-topology__node__label__icon--Color);
 }
 
 .pf-topology__node__label__icon > svg {
