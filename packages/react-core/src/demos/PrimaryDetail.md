@@ -1274,7 +1274,7 @@ class PrimaryDetailCardView extends React.Component {
     };
 
     const drawerContent = (
-      <Gallery hasGutter>
+      <Gallery hasGutter aria-label="Selectable card container">
         {filtered.map((product, key) => (
           <React.Fragment>
             <Card

@@ -89,7 +89,7 @@ export const ModalTabs: React.FunctionComponent = () => {
           </TextContent>
         </PageSection>
         <PageSection isFilled>
-          <Gallery hasGutter>
+          <Gallery hasGutter aria-label="Selectable card container">
             {products.map(product => (
               <Card
                 isSelectable
