@@ -6,6 +6,7 @@ export const DividerOrientationVariousBreakpoints: React.FunctionComponent = () 
     <FlexItem>first item</FlexItem>
     <Divider
       orientation={{
+        default: 'vertical',
         sm: 'vertical',
         md: 'horizontal',
         lg: 'vertical',

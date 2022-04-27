@@ -5,7 +5,9 @@ export const DividerVerticalFlexInsetVariousBreakpoints: React.FunctionComponent
   <Flex>
     <FlexItem>first item</FlexItem>
     <Divider
-      isVertical
+      orientation={{
+        default: 'vertical'
+      }}
       inset={{
         default: 'insetMd',
         md: 'insetNone',
