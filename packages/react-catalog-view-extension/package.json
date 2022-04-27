@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react/blob/main/packages/react-catalog-view-extension/README.md",
   "scripts": {
-    "generate": "concurrently \"yarn build:sass\" \"yarn copy:sass\"",
+    "generate": "yarn build:sass && yarn copy:sass",
     "build:sass": "node buildSass.js",
     "copy:sass": "shx mkdir -p dist/sass && shx cp -r sass/react-catalog-view-extension/* dist/sass",
     "clean": "rimraf dist"
@@ -40,7 +40,6 @@
     "@patternfly/react-styles": "^4.56.5"
   },
   "devDependencies": {
-    "concurrently": "^5.3.0",
     "rimraf": "^2.6.2",
     "sass": "^1.42.1",
     "shx": "^0.3.2",
