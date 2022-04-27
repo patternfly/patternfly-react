@@ -109,8 +109,11 @@ export const Card: React.FunctionComponent<CardProps> = ({
     return '';
   };
 
+  const containsCardTitleChildRef = React.useRef(false);
+
   const registerTitleId = (id: string) => {
     setTitleId(id);
+    containsCardTitleChildRef.current = !!id;
   };
 
   React.useEffect(() => {
@@ -118,7 +121,8 @@ export const Card: React.FunctionComponent<CardProps> = ({
       setAriaProps({ 'aria-label': hiddenInputAriaLabel });
     } else if (titleId) {
       setAriaProps({ 'aria-labelledby': titleId });
-    } else if (hasHiddenInput) {
+    } else if (hasHiddenInput && !containsCardTitleChildRef.current) {
+      setAriaProps({});
       // eslint-disable-next-line no-console
       console.warn(
         'If no CardTitle component is passed as a child of Card the hiddenInputAriaLabel prop must be passed'
