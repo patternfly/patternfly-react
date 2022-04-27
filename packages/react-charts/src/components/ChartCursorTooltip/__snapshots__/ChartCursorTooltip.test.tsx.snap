@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ChartCursorTooltip 1`] = `<div />`;
+exports[`ChartCursorTooltip 1`] = `<DocumentFragment />`;
 
-exports[`ChartCursorTooltip 2`] = `<div />`;
+exports[`ChartCursorTooltip 2`] = `<DocumentFragment />`;
 
 exports[`allows tooltip via container component 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-chart"
     style="height: 100%; width: 100%; pointer-events: none; position: relative;"
@@ -77,5 +77,5 @@ exports[`allows tooltip via container component 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

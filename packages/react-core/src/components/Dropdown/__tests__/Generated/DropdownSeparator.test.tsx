@@ -7,11 +7,11 @@ import { DropdownArrowContext } from '../../dropdownConstants';
 
 describe('DropdownSeparator', () => {
   it('should match snapshot', () => {
-    const view = render(
+    const { asFragment } = render(
       <DropdownArrowContext.Provider value={{ sendRef: jest.fn(), keyHandler: undefined }}>
         <DropdownSeparator className={"''"} onClick={() => console.log('clicked')} />
       </DropdownArrowContext.Provider>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

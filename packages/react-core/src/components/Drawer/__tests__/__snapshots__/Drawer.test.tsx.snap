@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Drawer expands from bottom 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-drawer pf-m-expanded pf-m-panel-bottom"
   >
@@ -71,11 +71,11 @@ exports[`Drawer expands from bottom 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Drawer has resizable callback and id 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-drawer pf-m-expanded pf-m-panel-left"
   >
@@ -165,11 +165,11 @@ exports[`Drawer has resizable callback and id 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Drawer has resizable css and color variants 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-drawer pf-m-expanded pf-m-panel-left"
   >
@@ -260,11 +260,11 @@ exports[`Drawer has resizable css and color variants 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Drawer isExpanded = false and isInline = false and isStatic = false 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-drawer"
   >
@@ -287,11 +287,11 @@ exports[`Drawer isExpanded = false and isInline = false and isStatic = false 1`]
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Drawer isExpanded = false and isInline = true and isStatic = false 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-drawer"
   >
@@ -314,11 +314,11 @@ exports[`Drawer isExpanded = false and isInline = true and isStatic = false 1`] 
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Drawer isExpanded = true and isInline = false and isStatic = false 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-drawer pf-m-expanded"
   >
@@ -388,11 +388,11 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = false 1`] 
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Drawer isExpanded = true and isInline = false and isStatic = true 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-drawer pf-m-expanded"
   >
@@ -462,11 +462,11 @@ exports[`Drawer isExpanded = true and isInline = false and isStatic = true 1`] =
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Drawer isExpanded = true and isInline = true and isStatic = false 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-drawer pf-m-expanded"
   >
@@ -536,5 +536,5 @@ exports[`Drawer isExpanded = true and isInline = true and isStatic = false 1`] =
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

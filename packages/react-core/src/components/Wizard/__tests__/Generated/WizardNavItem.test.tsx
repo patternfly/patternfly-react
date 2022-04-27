@@ -8,7 +8,7 @@ import { WizardNavItem } from '../../WizardNavItem';
 import {} from '../..';
 
 it('WizardNavItem should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <WizardNavItem
       children={<>ReactNode</>}
       content={''}
@@ -20,5 +20,5 @@ it('WizardNavItem should match snapshot (auto-generated)', () => {
       href={'null'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

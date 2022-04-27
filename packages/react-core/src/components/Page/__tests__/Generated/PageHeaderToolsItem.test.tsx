@@ -8,8 +8,8 @@ import { PageHeaderToolsItem } from '../../PageHeaderToolsItem';
 import {} from '../..';
 
 it('PageHeaderToolsItem should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <PageHeaderToolsItem children={<div>ReactNode</div>} className={'string'} isSelected={true} />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

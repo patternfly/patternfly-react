@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { Tooltip } from '../Tooltip';
 
 test('tooltip renders', () => {
-  const view = render(
+  const { asFragment } = render(
     <Tooltip
       position="top"
       content={
@@ -15,5 +15,5 @@ test('tooltip renders', () => {
       <div>Toggle tooltip</div>
     </Tooltip>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

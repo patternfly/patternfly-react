@@ -1,17 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Check form section example against snapshot 1`] = `
-<div>
+<DocumentFragment>
   <section
     class="pf-c-form__section"
-  >
-    
-  </section>
-</div>
+  />
+</DocumentFragment>
 `;
 
 exports[`Check form section example with title 1`] = `
-<div>
+<DocumentFragment>
   <section
     class="pf-c-form__section"
   >
@@ -21,5 +19,5 @@ exports[`Check form section example with title 1`] = `
       Title
     </h4>
   </section>
-</div>
+</DocumentFragment>
 `;

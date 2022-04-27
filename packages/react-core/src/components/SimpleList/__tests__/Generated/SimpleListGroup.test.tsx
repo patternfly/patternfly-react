@@ -8,8 +8,8 @@ import { SimpleListGroup } from '../../SimpleListGroup';
 import {} from '../..';
 
 it('SimpleListGroup should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <SimpleListGroup children={<>ReactNode</>} className={"''"} titleClassName={"''"} title={''} id={"''"} />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

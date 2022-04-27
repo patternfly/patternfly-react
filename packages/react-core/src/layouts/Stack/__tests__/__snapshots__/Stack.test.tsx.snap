@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`gutter 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-stack pf-m-gutter"
   >
@@ -11,11 +11,11 @@ exports[`gutter 1`] = `
       Basic content
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`isMain defaults to false 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-stack"
   >
@@ -25,11 +25,11 @@ exports[`isMain defaults to false 1`] = `
       Basic content
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`isMain set to true 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-stack"
   >
@@ -39,5 +39,5 @@ exports[`isMain set to true 1`] = `
       Filled content
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

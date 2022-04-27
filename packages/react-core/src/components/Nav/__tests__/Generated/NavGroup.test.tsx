@@ -8,6 +8,6 @@ import { NavGroup } from '../../NavGroup';
 import {} from '../..';
 
 it('NavGroup should match snapshot (auto-generated)', () => {
-  const view = render(<NavGroup title={'string'} children={<>ReactNode</>} className={"''"} id={'string'} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<NavGroup title={'string'} children={<>ReactNode</>} className={"''"} id={'string'} />);
+  expect(asFragment()).toMatchSnapshot();
 });

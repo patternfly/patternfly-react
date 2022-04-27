@@ -13,28 +13,24 @@ describe('VncActions', () => {
 
   test('VncActions renders correctly component hierarchy', () => {
     const { asFragment } = render(
-      <div data-testid="test-id">
-        <VncActions
-          textSendShortcut="My Send Shortcut description"
-          textCtrlAltDel="foobar"
-          onCtrlAltDel={jest.fn()}
-          onDisconnect={jest.fn()}
-        />
-      </div>
+      <VncActions
+        textSendShortcut="My Send Shortcut description"
+        textCtrlAltDel="foobar"
+        onCtrlAltDel={jest.fn()}
+        onDisconnect={jest.fn()}
+      />
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('VncActions renders correctly html', () => {
     const { asFragment } = render(
-      <div data-testid="test-id">
-        <VncActions
-          textSendShortcut="My Send Shortcut description"
-          textCtrlAltDel="foobar"
-          onCtrlAltDel={jest.fn()}
-          onDisconnect={jest.fn()}
-        />
-      </div>
+      <VncActions
+        textSendShortcut="My Send Shortcut description"
+        textCtrlAltDel="foobar"
+        onCtrlAltDel={jest.fn()}
+        onDisconnect={jest.fn()}
+      />
     );
     expect(asFragment()).toMatchSnapshot();
   });

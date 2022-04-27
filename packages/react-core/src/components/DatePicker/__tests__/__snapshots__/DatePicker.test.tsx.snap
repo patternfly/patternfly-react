@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`disabled date picker 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-date-picker"
     style="--pf-c-date-picker__input--c-form-control--width-chars: 10;"
@@ -46,7 +46,6 @@ exports[`disabled date picker 1`] = `
         </button>
       </div>
     </div>
-    
   </div>
-</div>
+</DocumentFragment>
 `;

@@ -8,7 +8,7 @@ import { DataListToggle } from '../../DataListToggle';
 import {} from '../..';
 
 it('DataListToggle should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <DataListToggle
       className={"''"}
       isExpanded={false}
@@ -19,5 +19,5 @@ it('DataListToggle should match snapshot (auto-generated)', () => {
       aria-controls={"''"}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

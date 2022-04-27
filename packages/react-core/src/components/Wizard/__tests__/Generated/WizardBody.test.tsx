@@ -8,7 +8,7 @@ import { WizardBody } from '../../WizardBody';
 import {} from '../..';
 
 it('WizardBody should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <WizardBody
       children={'any'}
       hasNoBodyPadding={false}
@@ -17,5 +17,5 @@ it('WizardBody should match snapshot (auto-generated)', () => {
       mainComponent={'div'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -8,6 +8,6 @@ import { EmptyStateBody } from '../../EmptyStateBody';
 import {} from '../..';
 
 it('EmptyStateBody should match snapshot (auto-generated)', () => {
-  const view = render(<EmptyStateBody children={<div>ReactNode</div>} className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<EmptyStateBody children={<div>ReactNode</div>} className={"''"} />);
+  expect(asFragment()).toMatchSnapshot();
 });

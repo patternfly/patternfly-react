@@ -8,6 +8,6 @@ import { PopoverDialog } from '../../PopoverDialog';
 import {} from '../..';
 
 it('PopoverDialog should match snapshot (auto-generated)', () => {
-  const view = render(<PopoverDialog position={'top'} className={'null'} children={<>ReactNode</>} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<PopoverDialog position={'top'} className={'null'} children={<>ReactNode</>} />);
+  expect(asFragment()).toMatchSnapshot();
 });

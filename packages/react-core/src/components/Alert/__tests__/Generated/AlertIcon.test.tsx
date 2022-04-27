@@ -8,6 +8,6 @@ import { AlertIcon } from '../../AlertIcon';
 import {} from '../..';
 
 it('AlertIcon should match snapshot (auto-generated)', () => {
-  const view = render(<AlertIcon variant={'success'} className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<AlertIcon variant={'success'} className={"''"} />);
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -3,12 +3,12 @@
  */
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import { UserIcon } from '@patternfly/react-icons'
+import { UserIcon } from '@patternfly/react-icons';
 import { EmptyStateIcon } from '../../EmptyStateIcon';
 // any missing imports can usually be resolved by adding them here
 import {} from '../..';
 it('EmptyStateIcon should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <EmptyStateIcon
       color={'string'}
       title={'string'}
@@ -18,11 +18,11 @@ it('EmptyStateIcon should match snapshot (auto-generated)', () => {
       variant={'icon'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 it('EmptyStateIcon should match snapshot for variant container', () => {
-  const view = render(
+  const { asFragment } = render(
     <EmptyStateIcon
       color={'string'}
       title={'string'}
@@ -32,5 +32,5 @@ it('EmptyStateIcon should match snapshot for variant container', () => {
       variant={'container'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

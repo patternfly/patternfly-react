@@ -8,8 +8,8 @@ import { WizardNav } from '../../WizardNav';
 import {} from '../..';
 
 it('WizardNav should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <WizardNav children={'any'} aria-label={'string'} aria-labelledby={'string'} isOpen={false} returnList={false} />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -8,7 +8,7 @@ import { Navigation } from '../../Navigation';
 import {} from '../..';
 
 it('Navigation should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <Navigation
       className={"''"}
       isDisabled={false}
@@ -32,5 +32,5 @@ it('Navigation should match snapshot (auto-generated)', () => {
       onPageInput={() => undefined as any}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -12,42 +12,46 @@ const props = {
 
 describe('DropdownToggleCheckbox', () => {
   test('controlled', () => {
-    render(<DropdownToggleCheckbox isChecked id="check" aria-label="check" />);
-    expect(screen.getByRole('checkbox').outerHTML).toMatchSnapshot();
+    const { asFragment } = render(<DropdownToggleCheckbox isChecked id="check" aria-label="check" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('uncontrolled', () => {
-    render(<DropdownToggleCheckbox id="check" aria-label="check" />);
-    expect(screen.getByRole('checkbox').outerHTML).toMatchSnapshot();
+    const { asFragment } = render(<DropdownToggleCheckbox id="check" aria-label="check" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('with text', () => {
-    render(
+    const { asFragment } = render(
       <DropdownToggleCheckbox id="check" isDisabled aria-label="check">
         Some text
       </DropdownToggleCheckbox>
     );
-    expect(screen.getByRole('checkbox').parentElement.outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('isDisabled', () => {
-    render(<DropdownToggleCheckbox id="check" isDisabled aria-label="check" />);
-    expect(screen.getByRole('checkbox').outerHTML).toMatchSnapshot();
+    const { asFragment } = render(<DropdownToggleCheckbox id="check" isDisabled aria-label="check" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('3rd state', () => {
-    render(<DropdownToggleCheckbox id="check" isChecked={null} aria-label="check" />);
-    expect(screen.getByRole('checkbox').outerHTML).toMatchSnapshot();
+    const { asFragment } = render(<DropdownToggleCheckbox id="check" isChecked={null} aria-label="check" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('passing class', () => {
-    render(<DropdownToggleCheckbox label="label" className="class-123" id="check" isChecked aria-label="check" />);
-    expect(screen.getByRole('checkbox').outerHTML).toMatchSnapshot();
+    const { asFragment } = render(
+      <DropdownToggleCheckbox label="label" className="class-123" id="check" isChecked aria-label="check" />
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('passing HTML attribute', () => {
-    render(<DropdownToggleCheckbox label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" />);
-    expect(screen.getByRole('checkbox').outerHTML).toMatchSnapshot();
+    const { asFragment } = render(
+      <DropdownToggleCheckbox label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" />
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('checkbox passes value and event to onChange handler', () => {

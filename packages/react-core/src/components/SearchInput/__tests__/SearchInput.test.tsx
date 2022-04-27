@@ -2,7 +2,6 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
 
 import { SearchInput } from '../SearchInput';
 import { FormGroup } from '../../Form';
@@ -42,13 +41,13 @@ describe('SearchInput', () => {
     expect(input.querySelector('.pf-c-badge')).toBeInTheDocument();
 
     userEvent.click(screen.getByRole('button', { name: 'Previous' }));
-    expect(props.onPreviousClick).toBeCalled();
+    expect(props.onPreviousClick).toHaveBeenCalled();
 
     userEvent.click(screen.getByRole('button', { name: 'Next' }));
-    expect(props.onNextClick).toBeCalled();
+    expect(props.onNextClick).toHaveBeenCalled();
 
     userEvent.click(screen.getByRole('button', { name: 'Reset' }));
-    expect(props.onClear).toBeCalled();
+    expect(props.onClear).toHaveBeenCalled();
   });
 
   test('hide clear button', () => {
@@ -75,7 +74,7 @@ describe('SearchInput', () => {
 
     userEvent.click(screen.getByRole('button', { name: 'Search' }));
 
-    expect(props.onSearch).toBeCalled();
+    expect(props.onSearch).toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -103,7 +102,7 @@ describe('SearchInput', () => {
 
     userEvent.click(screen.getByRole('button', { name: 'Search' }));
 
-    expect(props.onSearch).toBeCalled();
+    expect(props.onSearch).toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -7,13 +7,13 @@ import { ChartLine } from '../ChartLine';
 
 Object.values([true, false]).forEach(() => {
   test('ChartAxis', () => {
-    const view = render(<ChartAxis />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartAxis />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = render(
+  const { asFragment } = render(
     <Chart domainPadding={{ x: [30, 25] }} height={200} width={300}>
       <ChartGroup>
         <ChartLine
@@ -53,5 +53,5 @@ test('renders component data', () => {
       <ChartAxis dependentAxis tickValues={[2, 5, 8]} />
     </Chart>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

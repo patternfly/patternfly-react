@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button aria-disabled is set to true and tabIndex to -1 if component is not a button and is disabled 1`] = `
-<div>
+<DocumentFragment>
   <a
     aria-disabled="true"
     class="pf-c-button pf-m-primary pf-m-disabled"
@@ -12,11 +12,11 @@ exports[`Button aria-disabled is set to true and tabIndex to -1 if component is 
   >
     Disabled Anchor Button
   </a>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button control button 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     aria-label="control"
@@ -26,14 +26,13 @@ exports[`Button control button 1`] = `
     data-ouia-safe="true"
     type="button"
   >
-    control
-     Button
+    control Button
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button danger button 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     aria-label="danger"
@@ -43,14 +42,13 @@ exports[`Button danger button 1`] = `
     data-ouia-safe="true"
     type="button"
   >
-    danger
-     Button
+    danger Button
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button isAriaDisabled button 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="true"
     class="pf-c-button pf-m-primary pf-m-aria-disabled"
@@ -61,11 +59,11 @@ exports[`Button isAriaDisabled button 1`] = `
   >
     Disabled yet focusable button
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button isAriaDisabled link button 1`] = `
-<div>
+<DocumentFragment>
   <a
     aria-disabled="true"
     class="pf-c-button pf-m-primary pf-m-aria-disabled"
@@ -75,11 +73,11 @@ exports[`Button isAriaDisabled link button 1`] = `
   >
     Disabled yet focusable button
   </a>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button isBlock 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     class="pf-c-button pf-m-primary pf-m-block"
@@ -90,11 +88,11 @@ exports[`Button isBlock 1`] = `
   >
     Block Button
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button isDanger link 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     class="pf-c-button pf-m-link pf-m-danger"
@@ -105,11 +103,11 @@ exports[`Button isDanger link 1`] = `
   >
     Disabled Button
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button isDanger secondary 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     class="pf-c-button pf-m-secondary pf-m-danger"
@@ -120,11 +118,11 @@ exports[`Button isDanger secondary 1`] = `
   >
     Disabled Button
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button isDisabled 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="true"
     class="pf-c-button pf-m-primary pf-m-disabled"
@@ -136,11 +134,11 @@ exports[`Button isDisabled 1`] = `
   >
     Disabled Button
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button isInline 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     class="pf-c-button pf-m-link pf-m-inline"
@@ -151,11 +149,11 @@ exports[`Button isInline 1`] = `
   >
     Hovered Button
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button isLarge 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     class="pf-c-button pf-m-primary pf-m-display-lg"
@@ -166,11 +164,11 @@ exports[`Button isLarge 1`] = `
   >
     Large Button
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button isLoading 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     class="pf-c-button pf-m-primary pf-m-progress pf-m-in-progress"
@@ -201,11 +199,11 @@ exports[`Button isLoading 1`] = `
     </span>
     Loading Button
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button isLoading icon only 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     aria-label="Upload"
@@ -239,11 +237,11 @@ exports[`Button isLoading icon only 1`] = `
       ICON
     </div>
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button isSmall 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     class="pf-c-button pf-m-primary pf-m-small"
@@ -254,11 +252,11 @@ exports[`Button isSmall 1`] = `
   >
     Small Button
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button link button 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     aria-label="link"
@@ -268,14 +266,13 @@ exports[`Button link button 1`] = `
     data-ouia-safe="true"
     type="button"
   >
-    link
-     Button
+    link Button
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button link with icon 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     class="pf-c-button pf-m-link"
@@ -303,11 +300,11 @@ exports[`Button link with icon 1`] = `
     </span>
     Block Button
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button plain button 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     aria-label="plain"
@@ -317,14 +314,13 @@ exports[`Button plain button 1`] = `
     data-ouia-safe="true"
     type="button"
   >
-    plain
-     Button
+    plain Button
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button primary button 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     aria-label="primary"
@@ -334,14 +330,13 @@ exports[`Button primary button 1`] = `
     data-ouia-safe="true"
     type="button"
   >
-    primary
-     Button
+    primary Button
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button secondary button 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     aria-label="secondary"
@@ -351,14 +346,13 @@ exports[`Button secondary button 1`] = `
     data-ouia-safe="true"
     type="button"
   >
-    secondary
-     Button
+    secondary Button
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button tertiary button 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     aria-label="tertiary"
@@ -368,14 +362,13 @@ exports[`Button tertiary button 1`] = `
     data-ouia-safe="true"
     type="button"
   >
-    tertiary
-     Button
+    tertiary Button
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Button warning button 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     aria-label="warning"
@@ -385,8 +378,7 @@ exports[`Button warning button 1`] = `
     data-ouia-safe="true"
     type="button"
   >
-    warning
-     Button
+    warning Button
   </button>
-</div>
+</DocumentFragment>
 `;

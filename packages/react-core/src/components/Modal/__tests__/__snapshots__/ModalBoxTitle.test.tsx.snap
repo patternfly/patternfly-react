@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalBoxTitle alert variant 1`] = `
-<div>
+<DocumentFragment>
   <h1
     class="pf-c-modal-box__title pf-m-icon"
     id="boxId"
@@ -34,11 +34,11 @@ exports[`ModalBoxTitle alert variant 1`] = `
       Test Modal Box warning
     </span>
   </h1>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ModalBoxTitle custom icon variant 1`] = `
-<div>
+<DocumentFragment>
   <h1
     class="pf-c-modal-box__title pf-m-icon"
     id="boxId"
@@ -60,18 +60,17 @@ exports[`ModalBoxTitle custom icon variant 1`] = `
         />
       </svg>
     </span>
-    
     <span
       class="pf-c-modal-box__title-text"
     >
       Test Modal Box custom
     </span>
   </h1>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ModalBoxTitle danger variant 1`] = `
-<div>
+<DocumentFragment>
   <h1
     class="pf-c-modal-box__title pf-m-icon"
     id="boxId"
@@ -104,11 +103,11 @@ exports[`ModalBoxTitle danger variant 1`] = `
       Test Modal Box danger
     </span>
   </h1>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ModalBoxTitle default variant 1`] = `
-<div>
+<DocumentFragment>
   <h1
     class="pf-c-modal-box__title pf-m-icon"
     id="boxId"
@@ -141,11 +140,11 @@ exports[`ModalBoxTitle default variant 1`] = `
       Test Modal Box warning
     </span>
   </h1>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ModalBoxTitle info variant 1`] = `
-<div>
+<DocumentFragment>
   <h1
     class="pf-c-modal-box__title pf-m-icon"
     id="boxId"
@@ -178,11 +177,11 @@ exports[`ModalBoxTitle info variant 1`] = `
       Test Modal Box info
     </span>
   </h1>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ModalBoxTitle success variant 1`] = `
-<div>
+<DocumentFragment>
   <h1
     class="pf-c-modal-box__title pf-m-icon"
     id="boxId"
@@ -215,5 +214,5 @@ exports[`ModalBoxTitle success variant 1`] = `
       Test Modal Box success
     </span>
   </h1>
-</div>
+</DocumentFragment>
 `;

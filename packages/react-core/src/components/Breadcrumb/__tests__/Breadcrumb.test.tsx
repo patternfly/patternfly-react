@@ -5,26 +5,26 @@ import { render } from '@testing-library/react';
 
 describe('Breadcrumb component', () => {
   test('should render default breadcrumb', () => {
-    const view = render(<Breadcrumb />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<Breadcrumb />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render breadcrumb with className', () => {
-    const view = render(<Breadcrumb className="className" />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<Breadcrumb className="className" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render breadcrumb with aria-label', () => {
-    const view = render(<Breadcrumb aria-label="custom label" />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<Breadcrumb aria-label="custom label" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render breadcrumb with children', () => {
-    const view = render(
+    const { asFragment } = render(
       <Breadcrumb>
         <BreadcrumbItem to="#">Item 1</BreadcrumbItem> <BreadcrumbItem to="#">Item 1</BreadcrumbItem>
       </Breadcrumb>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

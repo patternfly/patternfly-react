@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ClipboardCopy should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-clipboard-copy string"
   >
@@ -46,5 +46,5 @@ exports[`ClipboardCopy should match snapshot (auto-generated) 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

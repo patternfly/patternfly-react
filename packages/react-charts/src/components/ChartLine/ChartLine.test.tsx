@@ -6,13 +6,13 @@ import { ChartLine } from './ChartLine';
 
 Object.values([true, false]).forEach(() => {
   test('ChartLine', () => {
-    const view = render(<ChartLine />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartLine />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = render(
+  const { asFragment } = render(
     <Chart minDomain={{ y: 0 }} height={200} width={200}>
       <ChartGroup>
         <ChartLine
@@ -50,5 +50,5 @@ test('renders component data', () => {
       </ChartGroup>
     </Chart>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

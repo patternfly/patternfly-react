@@ -8,7 +8,7 @@ import { WizardHeader } from '../../WizardHeader';
 import {} from '../..';
 
 it('WizardHeader should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <WizardHeader
       onClose={() => undefined}
       title={'string'}
@@ -19,5 +19,5 @@ it('WizardHeader should match snapshot (auto-generated)', () => {
       descriptionId={'string'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

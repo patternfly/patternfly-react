@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WizardFooter should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <footer
     class="pf-c-wizard__footer"
   >
     any
   </footer>
-</div>
+</DocumentFragment>
 `;

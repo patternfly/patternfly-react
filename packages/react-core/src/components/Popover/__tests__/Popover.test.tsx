@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { Popover, PopoverPosition } from '../Popover';
 
 test('popover renders close-button, header and body', () => {
-  const view = render(
+  const { asFragment } = render(
     <Popover
       id="test"
       position="top"
@@ -19,11 +19,11 @@ test('popover renders close-button, header and body', () => {
       <div>Toggle Popover</div>
     </Popover>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('popover can have a custom minimum width', () => {
-  const view = render(
+  const { asFragment } = render(
     <Popover
       id="test"
       position="top"
@@ -40,11 +40,11 @@ test('popover can have a custom minimum width', () => {
       <div>Toggle Popover</div>
     </Popover>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('popover can specify position as object value', () => {
-  const view = render(
+  const { asFragment } = render(
     <Popover
       id="test"
       position={PopoverPosition.right}
@@ -60,11 +60,11 @@ test('popover can specify position as object value', () => {
       <div>Toggle Popover</div>
     </Popover>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('popover can close from content (uncontrolled)', () => {
-  const view = render(
+  const { asFragment } = render(
     <Popover
       id="test"
       aria-label="Popover with button in the body that can close it"
@@ -88,5 +88,5 @@ test('popover can close from content (uncontrolled)', () => {
       <button id="uncontrolled-toggle">Toggle Popover</button>
     </Popover>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

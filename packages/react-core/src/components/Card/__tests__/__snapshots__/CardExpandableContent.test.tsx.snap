@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-card__expandable-content"
   />
-</div>
+</DocumentFragment>
 `;

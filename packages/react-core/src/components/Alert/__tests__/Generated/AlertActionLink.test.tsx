@@ -8,6 +8,6 @@ import { AlertActionLink } from '../../AlertActionLink';
 import {} from '../..';
 
 it('AlertActionLink should match snapshot (auto-generated)', () => {
-  const view = render(<AlertActionLink children={'string'} className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<AlertActionLink children={'string'} className={"''"} />);
+  expect(asFragment()).toMatchSnapshot();
 });

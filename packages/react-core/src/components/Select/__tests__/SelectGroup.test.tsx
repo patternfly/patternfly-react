@@ -1,21 +1,28 @@
 import React from 'react';
 
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { SelectGroup } from '../SelectGroup';
 import { SelectProvider } from '../selectConstants';
 
 describe('SelectGroup', () => {
   test('renders with children successfully', () => {
-    render(
+    const { asFragment } = render(
       <SelectProvider
-        value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+        value={{
+          onSelect: () => {},
+          onFavorite: () => {},
+          onClose: () => {},
+          variant: 'single',
+          inputIdPrefix: '',
+          shouldResetOnSelect: true
+        }}
       >
-        <SelectGroup label="test" data-testid="test-id">
+        <SelectGroup label="test">
           <div>child</div>
         </SelectGroup>
       </SelectProvider>
     );
-    expect(screen.getByTestId('test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

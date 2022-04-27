@@ -8,16 +8,16 @@ const props = {
 };
 
 test('expanded content render', () => {
-  const view = render(<ClipboardCopyExpanded {...props}>This is my text</ClipboardCopyExpanded>);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<ClipboardCopyExpanded {...props}>This is my text</ClipboardCopyExpanded>);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('expanded code content render', () => {
-  const view = render(
+  const { asFragment } = render(
     <ClipboardCopyExpanded isCode {...props}>{`{
     "name": "@patternfly/react-core",
     "version": "1.33.2"
   }`}</ClipboardCopyExpanded>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

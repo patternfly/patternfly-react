@@ -21,20 +21,34 @@ class User implements SelectOptionObject {
 
 describe('SelectOption', () => {
   test('renders with value parameter successfully', () => {
-    render(
+    const { asFragment } = render(
       <SelectProvider
-        value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+        value={{
+          onSelect: () => {},
+          onFavorite: () => {},
+          onClose: () => {},
+          variant: 'single',
+          inputIdPrefix: '',
+          shouldResetOnSelect: true
+        }}
       >
         <SelectOption id="option-1" value="test" sendRef={jest.fn()} data-testid="test-id" />
       </SelectProvider>
     );
-    expect(screen.getByTestId('test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders with description successfully', () => {
-    render(
+    const { asFragment } = render(
       <SelectProvider
-        value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+        value={{
+          onSelect: () => {},
+          onFavorite: () => {},
+          onClose: () => {},
+          variant: 'single',
+          inputIdPrefix: '',
+          shouldResetOnSelect: true
+        }}
       >
         <SelectOption
           id="option-1"
@@ -45,108 +59,164 @@ describe('SelectOption', () => {
         />
       </SelectProvider>
     );
-    expect(screen.getByTestId('test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders with item count successfully', () => {
-    render(
+    const { asFragment } = render(
       <SelectProvider
-        value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+        value={{
+          onSelect: () => {},
+          onFavorite: () => {},
+          onClose: () => {},
+          variant: 'single',
+          inputIdPrefix: '',
+          shouldResetOnSelect: true
+        }}
       >
         <SelectOption id="option-1" value="test" itemCount={3} sendRef={jest.fn()} data-testid="test-id" />
       </SelectProvider>
     );
-    expect(screen.getByTestId('test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders with custom display successfully', () => {
-    render(
+    const { asFragment } = render(
       <SelectProvider
-        value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+        value={{
+          onSelect: () => {},
+          onFavorite: () => {},
+          onClose: () => {},
+          variant: 'single',
+          inputIdPrefix: '',
+          shouldResetOnSelect: true
+        }}
       >
         <SelectOption id="option-1" value="test" sendRef={jest.fn()}>
           <div>test display</div>
         </SelectOption>
       </SelectProvider>
     );
-    expect(screen.getByText('test display').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders with custom user object successfully', () => {
-    render(
+    const { asFragment } = render(
       <SelectProvider
-        value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+        value={{
+          onSelect: () => {},
+          onFavorite: () => {},
+          onClose: () => {},
+          variant: 'single',
+          inputIdPrefix: '',
+          shouldResetOnSelect: true
+        }}
       >
         <SelectOption id="option-1" value={new User('Mr.', 'Test', 'User')} sendRef={jest.fn()} data-testid="test-id" />
       </SelectProvider>
     );
-    expect(screen.getByTestId('test-id').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders with custom display and custom user object successfully', () => {
-    render(
+    const { asFragment } = render(
       <SelectProvider
-        value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+        value={{
+          onSelect: () => {},
+          onFavorite: () => {},
+          onClose: () => {},
+          variant: 'single',
+          inputIdPrefix: '',
+          shouldResetOnSelect: true
+        }}
       >
         <SelectOption id="option-1" value={new User('Mr.', 'Test', 'User')} sendRef={jest.fn()}>
           <div>test display</div>
         </SelectOption>
       </SelectProvider>
     );
-    expect(screen.getByText('test display').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders custom component', () => {
-    render(
+    const { asFragment } = render(
       <SelectProvider
-        value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+        value={{
+          onSelect: () => {},
+          onFavorite: () => {},
+          onClose: () => {},
+          variant: 'single',
+          inputIdPrefix: '',
+          shouldResetOnSelect: true
+        }}
       >
         <SelectOption id="option-1" value={new User('Mr.', 'Test', 'User')} sendRef={jest.fn()} component="div">
           <div>test display</div>
         </SelectOption>
       </SelectProvider>
     );
-    expect(screen.getByText('test display').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('disabled', () => {
     test('renders disabled successfully', () => {
-      render(
+      const { asFragment } = render(
         <SelectProvider
-          value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+          value={{
+            onSelect: () => {},
+            onFavorite: () => {},
+            onClose: () => {},
+            variant: 'single',
+            inputIdPrefix: '',
+            shouldResetOnSelect: true
+          }}
         >
           <SelectOption id="option-1" isDisabled value="test" sendRef={jest.fn()} data-testid="test-id" />
         </SelectProvider>
       );
 
-      expect(screen.getByText('test').className).toContain('pf-m-disabled');
-      expect(screen.getByTestId('test-id').outerHTML).toMatchSnapshot();
+      expect(screen.getByText('test')).toHaveClass('pf-m-disabled');
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 
   describe('is selected', () => {
     test('renders selected successfully', () => {
-      render(
+      const { asFragment } = render(
         <SelectProvider
-          value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+          value={{
+            onSelect: () => {},
+            onFavorite: () => {},
+            onClose: () => {},
+            variant: 'single',
+            inputIdPrefix: '',
+            shouldResetOnSelect: true
+          }}
         >
           <SelectOption id="option-1" isSelected value="test" sendRef={jest.fn()} data-testid="test-id" />
         </SelectProvider>
       );
-      expect(screen.getByTestId('test-id').outerHTML).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 
   describe('checked', () => {
     test('renders with checked successfully', () => {
-      render(
+      const { asFragment } = render(
         <SelectProvider
-          value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+          value={{
+            onSelect: () => {},
+            onFavorite: () => {},
+            onClose: () => {},
+            variant: 'single',
+            inputIdPrefix: '',
+            shouldResetOnSelect: true
+          }}
         >
           <SelectOption id="option-1" isChecked value="test" sendRef={jest.fn()} data-testid="test-id" />
         </SelectProvider>
       );
-      expect(screen.getByTestId('test-id').outerHTML).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 
@@ -157,13 +227,20 @@ describe('SelectOption', () => {
 
       render(
         <SelectProvider
-          value={{ onSelect: () => {}, onFavorite: () => {}, onClose: () => {}, variant: 'single', inputIdPrefix: '' }}
+          value={{
+            onSelect: () => {},
+            onFavorite: () => {},
+            onClose: () => {},
+            variant: 'single',
+            inputIdPrefix: '',
+            shouldResetOnSelect: true
+          }}
         >
           <SelectOption isFavorite value="test" sendRef={jest.fn()} />
         </SelectProvider>
       );
 
-      expect(myMock).toBeCalled();
+      expect(myMock).toHaveBeenCalled();
     });
   });
 });

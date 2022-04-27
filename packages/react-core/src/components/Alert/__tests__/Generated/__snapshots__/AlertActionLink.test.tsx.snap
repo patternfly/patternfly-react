@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AlertActionLink should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     class="pf-c-button pf-m-link pf-m-inline ''"
@@ -12,5 +12,5 @@ exports[`AlertActionLink should match snapshot (auto-generated) 1`] = `
   >
     string
   </button>
-</div>
+</DocumentFragment>
 `;

@@ -2,18 +2,23 @@ import * as React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
 
-import { TimePicker } from '../TimePicker';
+import { TimePicker, TimePickerProps } from '../TimePicker';
 
 describe('TimePicker', () => {
   describe('test timepicker onChange method with valid values', () => {
-    const testOnChange = ({ inputProps, expects }) => {
+    const testOnChange = ({
+      inputProps,
+      expects
+    }: {
+      inputProps: TimePickerProps;
+      expects: { hour: number; minutes: number; seconds: number };
+    }) => {
       const onChange = jest.fn();
       render(<TimePicker onChange={onChange} {...inputProps} aria-label="time picker" />);
 
-      userEvent.type(screen.getByLabelText('time picker'), inputProps.value);
-      expect(onChange).toBeCalledWith(inputProps.value, expects.hour, expects.minutes, expects.seconds, true);
+      userEvent.type(screen.getByLabelText('time picker'), String(inputProps.value));
+      expect(onChange).toHaveBeenCalledWith(inputProps.value, expects.hour, expects.minutes, expects.seconds, true);
     };
 
     test('should return the correct value using the AM/PM pattern - midnight', () => {

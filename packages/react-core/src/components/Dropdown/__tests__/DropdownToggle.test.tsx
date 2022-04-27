@@ -2,12 +2,11 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
 
 import { DropdownToggle } from '../DropdownToggle';
 import { DropdownContext } from '../dropdownConstants';
 
-describe('DropdownToggleCheckbox', () => {
+describe('DropdownToggle', () => {
   describe('API', () => {
     test('click on closed', () => {
       const mockToggle = jest.fn();
@@ -46,12 +45,12 @@ describe('DropdownToggleCheckbox', () => {
         }
       });
       const mockToggle = jest.fn();
-      const view = render(
+      const { unmount } = render(
         <DropdownToggle id="Dropdown Toggle" onToggle={mockToggle} isOpen parentRef={document.createElement('div')}>
           Dropdown
         </DropdownToggle>
       );
-      view.unmount();
+      unmount();
       mousedown({ target: document } as any);
       expect(mockToggle.mock.calls).toHaveLength(0);
       expect(document.removeEventListener).toHaveBeenCalledWith('click', expect.any(Function));
@@ -68,12 +67,12 @@ describe('DropdownToggleCheckbox', () => {
         }
       });
       const mockToggle = jest.fn();
-      const view = render(
+      const { unmount } = render(
         <DropdownToggle id="Dropdown Toggle" onToggle={mockToggle} isOpen parentRef={document.createElement('div')}>
           Dropdown
         </DropdownToggle>
       );
-      view.unmount();
+      unmount();
       touchstart({ target: document } as any);
       expect(mockToggle.mock.calls).toHaveLength(0);
       expect(document.removeEventListener).toHaveBeenCalledWith('touchstart', expect.any(Function));
@@ -82,34 +81,34 @@ describe('DropdownToggleCheckbox', () => {
 
   describe('state', () => {
     test('hover', () => {
-      const view = render(
+      const { asFragment } = render(
         <DropdownToggle id="Dropdown Toggle" parentRef={document.createElement('div')}>
           Dropdown
         </DropdownToggle>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
 
     test('active', () => {
-      const view = render(
+      const { asFragment } = render(
         <DropdownToggle id="Dropdown Toggle" isActive parentRef={document.createElement('div')}>
           Dropdown
         </DropdownToggle>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
 
     test('focus', () => {
-      const view = render(
+      const { asFragment } = render(
         <DropdownToggle id="Dropdown Toggle" parentRef={document.createElement('div')}>
           Dropdown
         </DropdownToggle>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
 
     test('button variant - primary', () => {
-      render(
+      const { asFragment } = render(
         <DropdownToggle id="Dropdown Toggle" toggleVariant="primary" parentRef={document.createElement('div')}>
           Dropdown
         </DropdownToggle>
@@ -117,12 +116,12 @@ describe('DropdownToggleCheckbox', () => {
 
       const button = screen.getByRole('button');
 
-      expect(button.className).toContain('primary');
-      expect(button.outerHTML).toMatchSnapshot();
+      expect(button).toHaveClass('pf-m-primary');
+      expect(asFragment()).toMatchSnapshot();
     });
 
     test('button variant - secondary', () => {
-      render(
+      const { asFragment } = render(
         <DropdownToggle id="Dropdown Toggle" toggleVariant="secondary" parentRef={document.createElement('div')}>
           Dropdown
         </DropdownToggle>
@@ -130,12 +129,12 @@ describe('DropdownToggleCheckbox', () => {
 
       const button = screen.getByRole('button');
 
-      expect(button.className).toContain('secondary');
-      expect(button.outerHTML).toMatchSnapshot();
+      expect(button).toHaveClass('pf-m-secondary');
+      expect(asFragment()).toMatchSnapshot();
     });
 
     test('button variant - plain with text', () => {
-      render(
+      const { asFragment } = render(
         <DropdownToggle id="Dropdown Toggle" isText isPlain parentRef={document.createElement('div')}>
           Dropdown
         </DropdownToggle>
@@ -143,20 +142,19 @@ describe('DropdownToggleCheckbox', () => {
 
       const button = screen.getByRole('button');
 
-      expect(button.className).toContain('text');
-      expect(button.className).toContain('plain');
-      expect(button.outerHTML).toMatchSnapshot();
+      expect(button).toHaveClass('pf-m-text');
+      expect(button).toHaveClass('pf-m-plain');
+      expect(asFragment()).toMatchSnapshot();
     });
 
     test('action split button - renders primary variant', () => {
-      render(
+      const { asFragment } = render(
         <DropdownToggle
           id="Dropdown Toggle"
           toggleVariant="primary"
           splitButtonItems={[<div key="1">test</div>]}
           splitButtonVariant="action"
           parentRef={document.createElement('div')}
-          data-testid="test-id"
         >
           Dropdown
         </DropdownToggle>
@@ -165,17 +163,16 @@ describe('DropdownToggleCheckbox', () => {
       const dropdownToggle = screen.getByRole('button').parentElement;
 
       expect(dropdownToggle).toHaveClass('pf-m-primary');
-      expect(dropdownToggle.outerHTML).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
 
     test('split button - does not render primary variant', () => {
-      render(
+      const { asFragment } = render(
         <DropdownToggle
           id="Dropdown Toggle"
           toggleVariant="primary"
           splitButtonItems={[<div key="0">test</div>]}
           parentRef={document.createElement('div')}
-          data-testid="test-id"
         >
           Dropdown
         </DropdownToggle>
@@ -184,11 +181,11 @@ describe('DropdownToggleCheckbox', () => {
       const dropdownToggle = screen.getByRole('button').parentElement;
 
       expect(dropdownToggle).not.toHaveClass('pf-m-primary');
-      expect(dropdownToggle.outerHTML).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
 
     test('class changes', () => {
-      const view = render(
+      const { asFragment } = render(
         <DropdownContext.Provider
           value={{
             toggleTextClass: 'some-test-class',
@@ -200,7 +197,7 @@ describe('DropdownToggleCheckbox', () => {
           </DropdownToggle>
         </DropdownContext.Provider>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 });

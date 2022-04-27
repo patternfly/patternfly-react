@@ -4,14 +4,14 @@ import { ChartBulletComparativeWarningMeasure } from './ChartBulletComparativeWa
 
 Object.values([true, false]).forEach(() => {
   test('ChartBulletComparativeZeroMeasure', () => {
-    const view = render(<ChartBulletComparativeWarningMeasure />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartBulletComparativeWarningMeasure />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = render(
+  const { asFragment } = render(
     <ChartBulletComparativeWarningMeasure data={[{ y: 100 }]} domain={{ x: [0, 200] }} width={450} />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

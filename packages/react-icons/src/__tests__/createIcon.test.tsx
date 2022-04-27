@@ -1,8 +1,5 @@
 import React from 'react';
-
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-
 import { createIcon, IconSize } from '../createIcon';
 
 const iconDef = {
@@ -16,7 +13,8 @@ const SVGIcon = createIcon(iconDef);
 
 test('sets correct viewBox', () => {
   render(<SVGIcon />);
-  expect(screen.getByRole('img', { hidden: true }).getAttribute('viewBox')).toEqual(
+  expect(screen.getByRole('img', { hidden: true })).toHaveAttribute(
+    'viewBox',
     `0 0 ${iconDef.width} ${iconDef.height}`
   );
 });
@@ -27,21 +25,20 @@ test('sets correct svgPath', () => {
     screen
       .getByRole('img', { hidden: true })
       .querySelector('path')
-      .getAttribute('d')
-  ).toEqual(iconDef.svgPath);
+  ).toHaveAttribute('d', iconDef.svgPath);
 });
 
 test('height and width are set from size', () => {
   render(<SVGIcon size={IconSize.sm} />);
 
   const svg = screen.getByRole('img', { hidden: true });
-  expect(svg.getAttribute('width')).toEqual('1em');
-  expect(svg.getAttribute('height')).toEqual('1em');
+  expect(svg).toHaveAttribute('width', '1em');
+  expect(svg).toHaveAttribute('height', '1em');
 });
 
 test('aria-hidden is true if no title is specified', () => {
   render(<SVGIcon />);
-  expect(screen.getByRole('img', { hidden: true }).getAttribute('aria-hidden')).toEqual('true');
+  expect(screen.getByRole('img', { hidden: true })).toHaveAttribute('aria-hidden', 'true');
 });
 
 test('title is not renderd if a title is not passed', () => {

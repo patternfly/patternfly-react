@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import { configure, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
 
 import { Select } from '../Select';
 import { SelectOption, SelectOptionObject } from '../SelectOption';
@@ -419,7 +418,7 @@ describe('API', () => {
       </Select>
     );
 
-    expect(myMock).not.toBeCalled();
+    expect(myMock).not.toHaveBeenCalled();
   });
 });
 

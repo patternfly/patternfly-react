@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 import BookOpen from '@patternfly/react-icons/dist/esm/icons/book-open-icon';
 import Key from '@patternfly/react-icons/dist/esm/icons/key-icon';
