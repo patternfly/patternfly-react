@@ -434,14 +434,9 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           </button>
           {onAdd !== undefined && (
             <span className={css(styles.tabsAdd)}>
-              <button
-                className={css(buttonStyles.button, buttonStyles.modifiers.plain)}
-                type="button"
-                aria-label={addAriaLabel}
-                onClick={onAdd}
-              >
+              <Button variant="plain" aria-label={addAriaLabel || `Tabs add button`} onClick={onAdd}>
                 <PlusIcon />
-              </button>
+              </Button>
             </span>
           )}
         </Component>
