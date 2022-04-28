@@ -4,6 +4,8 @@ import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
 export const TabsDynamic: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = React.useState<number>(0);
   const [tabs, setTabs] = React.useState<string[]>(['Terminal 1', 'Terminal 2', 'Terminal 3']);
+  const tabComponentRef = React.useRef<any>();
+  const firstMount = React.useRef(true);
 
   const onClose = (event: any, tabIndex: string | number) => {
     const tabIndexNum = tabIndex as number;
@@ -24,6 +26,15 @@ export const TabsDynamic: React.FunctionComponent = () => {
     setActiveTabKey(tabs.length);
   };
 
+  React.useEffect(() => {
+    if (firstMount.current) {
+      firstMount.current = false;
+      return;
+    } else {
+      tabComponentRef.current.tabList.current.childNodes[activeTabKey].firstChild.focus();
+    }
+  }, [tabs]);
+
   return (
     <Tabs
       activeKey={activeTabKey}
@@ -32,6 +43,7 @@ export const TabsDynamic: React.FunctionComponent = () => {
       onAdd={onAdd}
       aria-label="Tabs in the addable/closeable example"
       addAriaLabel="Add tab"
+      ref={tabComponentRef}
     >
       {tabs.map((tab, index) => (
         <Tab key={index} eventKey={index} title={<TabTitleText>{tab}</TabTitleText>} closeAriaLabel={`Close ${tab}`}>
