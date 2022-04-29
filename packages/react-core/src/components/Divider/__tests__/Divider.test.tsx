@@ -1,5 +1,5 @@
 import { Divider } from '../Divider';
-import { Flex, FlexItem} from '../../../layouts/Flex';
+import { Flex, FlexItem } from '../../../layouts/Flex';
 import * as React from 'react';
 import { render } from '@testing-library/react';
 
@@ -22,7 +22,11 @@ test('vertical divider', () => {
   const view = render(
     <Flex>
       <FlexItem>first item</FlexItem>
-      <Divider isVertical/>
+      <Divider
+        orientation={{
+          default: 'vertical'
+        }}
+      />
       <FlexItem>second item</FlexItem>
     </Flex>
   );
