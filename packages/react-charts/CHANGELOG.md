@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.60.0 (2022-04-28)
+
+
+### Features
+
+* **CodeBlock:** add class to code component ([#7281](https://github.com/patternfly/patternfly-react/issues/7281)) ([844e162](https://github.com/patternfly/patternfly-react/commit/844e1621bc695c97f911f5cc64998c5d36911a4d))
+
+
+
+
+
 ## 6.59.6 (2022-04-27)
 
 **Note:** Version bump only for package @patternfly/react-charts
