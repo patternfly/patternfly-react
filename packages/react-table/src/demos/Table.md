@@ -4,6 +4,7 @@ section: components
 ---
 
 import { Checkbox, ToolbarExpandIconWrapper, ToolbarContent } from '@patternfly/react-core';
+import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
@@ -21,6 +22,7 @@ import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-ico
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 ### Bulk select
 
@@ -266,6 +268,11 @@ class BulkSelectTableDemo extends React.Component {
 ### Expand/collapse all
 
 ```js file="table-demos/ExpandCollapseAll.jsx"
+```
+
+### Compact
+
+```js isFullscreen file="table-demos/Compact.jsx"
 ```
 
 ### Column management
