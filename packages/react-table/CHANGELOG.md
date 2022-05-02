@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.77.0 (2022-05-02)
+
+
+### Features
+
+* **divider:** add support for switching orientation at various breakpoints ([#7285](https://github.com/patternfly/patternfly-react/issues/7285)) ([6e47917](https://github.com/patternfly/patternfly-react/commit/6e47917a59fdbd0f9f647998d79d024a691a49e2))
+
+
+
+
+
 # 4.76.0 (2022-04-28)
 
 
