@@ -105,7 +105,6 @@ export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaState
             >
               {label}
             </span>
-
             <span
               className={css(styles.switchLabel, styles.modifiers.off)}
               id={isAriaLabelledBy ? `${this.id}-off` : null}
