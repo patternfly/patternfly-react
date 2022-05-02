@@ -41,7 +41,6 @@ export const Divider: React.FunctionComponent<DividerProps> = ({
   component = DividerVariant.hr,
   isVertical = false,
   inset,
-  orientation,
   ...props
 }: DividerProps) => {
   const Component: any = component;
@@ -52,7 +51,6 @@ export const Divider: React.FunctionComponent<DividerProps> = ({
         styles.divider,
         isVertical && styles.modifiers.vertical,
         formatBreakpointMods(inset, styles),
-        formatBreakpointMods(orientation, styles),
         className
       )}
       {...(component !== 'hr' && { role: 'separator' })}
