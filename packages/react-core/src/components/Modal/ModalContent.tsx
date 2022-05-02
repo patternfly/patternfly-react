@@ -47,6 +47,10 @@ export interface ModalContentProps extends OUIAProps {
   'aria-label'?: string;
   /** Id of Modal Box description */
   'aria-describedby'?: string;
+  /** Accessible label applied to the modal box body */
+  bodyAriaLabel?: string;
+  /** Accessible role applied to the modal box body */
+  bodyAriaRole?: string;
   /** Flag to show the close button in the header area of the modal */
   showClose?: boolean;
   /** Default width of the content. */
@@ -82,6 +86,8 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   'aria-label': ariaLabel = '',
   'aria-describedby': ariaDescribedby,
   'aria-labelledby': ariaLabelledby,
+  bodyAriaLabel,
+  bodyAriaRole,
   showClose = true,
   footer = null,
   actions = [],
@@ -120,10 +126,17 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     actions.length > 0 && <ModalBoxFooter>{actions}</ModalBoxFooter>
   );
 
+  const defaultModalBodyAriaRole = bodyAriaLabel ? 'region' : undefined;
+
   const modalBody = hasNoBodyWrapper ? (
     children
   ) : (
-    <ModalBoxBody {...props} {...(!description && !ariaDescribedby && { id: descriptorId })}>
+    <ModalBoxBody
+      aria-label={bodyAriaLabel}
+      role={bodyAriaRole || defaultModalBodyAriaRole}
+      {...props}
+      {...(!description && !ariaDescribedby && { id: descriptorId })}
+    >
       {children}
     </ModalBoxBody>
   );

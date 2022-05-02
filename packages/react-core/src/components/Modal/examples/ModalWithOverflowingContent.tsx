@@ -14,6 +14,7 @@ export const ModalWithOverflowingContent: React.FunctionComponent = () => {
         Show modal
       </Button>
       <Modal
+        bodyAriaLabel="Scrollable modal content"
         tabIndex={0}
         variant={ModalVariant.small}
         title="Modal with overflowing content"
