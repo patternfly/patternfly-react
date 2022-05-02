@@ -22,7 +22,11 @@ test('vertical divider', () => {
   const { asFragment } = render(
     <Flex>
       <FlexItem>first item</FlexItem>
-      <Divider isVertical />
+      <Divider
+        orientation={{
+          default: 'vertical'
+        }}
+      />
       <FlexItem>second item</FlexItem>
     </Flex>
   );
