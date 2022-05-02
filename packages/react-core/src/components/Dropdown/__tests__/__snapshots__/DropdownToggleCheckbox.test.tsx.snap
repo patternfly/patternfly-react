@@ -1,15 +1,149 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DropdownToggleCheckbox 3rd state 1`] = `"<input id=\\"check\\" aria-label=\\"check\\" type=\\"checkbox\\" aria-invalid=\\"false\\" data-ouia-component-type=\\"PF4/DropdownToggleCheckbox\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-DropdownToggleCheckbox-5\\">"`;
+exports[`DropdownToggleCheckbox 3rd state 1`] = `
+<DocumentFragment>
+  <label
+    class="pf-c-dropdown__toggle-check"
+    for="check"
+  >
+    <input
+      aria-invalid="false"
+      aria-label="check"
+      data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-5"
+      data-ouia-component-type="PF4/DropdownToggleCheckbox"
+      data-ouia-safe="true"
+      id="check"
+      type="checkbox"
+    />
+  </label>
+</DocumentFragment>
+`;
 
-exports[`DropdownToggleCheckbox controlled 1`] = `"<input id=\\"check\\" aria-label=\\"check\\" type=\\"checkbox\\" aria-invalid=\\"false\\" data-ouia-component-type=\\"PF4/DropdownToggleCheckbox\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-DropdownToggleCheckbox-1\\" checked=\\"\\">"`;
+exports[`DropdownToggleCheckbox controlled 1`] = `
+<DocumentFragment>
+  <label
+    class="pf-c-dropdown__toggle-check"
+    for="check"
+  >
+    <input
+      aria-invalid="false"
+      aria-label="check"
+      checked=""
+      data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-1"
+      data-ouia-component-type="PF4/DropdownToggleCheckbox"
+      data-ouia-safe="true"
+      id="check"
+      type="checkbox"
+    />
+  </label>
+</DocumentFragment>
+`;
 
-exports[`DropdownToggleCheckbox isDisabled 1`] = `"<input id=\\"check\\" aria-label=\\"check\\" type=\\"checkbox\\" aria-invalid=\\"false\\" disabled=\\"\\" data-ouia-component-type=\\"PF4/DropdownToggleCheckbox\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-DropdownToggleCheckbox-4\\">"`;
+exports[`DropdownToggleCheckbox isDisabled 1`] = `
+<DocumentFragment>
+  <label
+    class="pf-c-dropdown__toggle-check"
+    for="check"
+  >
+    <input
+      aria-invalid="false"
+      aria-label="check"
+      data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-4"
+      data-ouia-component-type="PF4/DropdownToggleCheckbox"
+      data-ouia-safe="true"
+      disabled=""
+      id="check"
+      type="checkbox"
+    />
+  </label>
+</DocumentFragment>
+`;
 
-exports[`DropdownToggleCheckbox passing HTML attribute 1`] = `"<input label=\\"label\\" aria-labelledby=\\"labelId\\" id=\\"check\\" aria-label=\\"check\\" type=\\"checkbox\\" aria-invalid=\\"false\\" data-ouia-component-type=\\"PF4/DropdownToggleCheckbox\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-DropdownToggleCheckbox-7\\" checked=\\"\\">"`;
+exports[`DropdownToggleCheckbox passing HTML attribute 1`] = `
+<DocumentFragment>
+  <label
+    class="pf-c-dropdown__toggle-check"
+    for="check"
+  >
+    <input
+      aria-invalid="false"
+      aria-label="check"
+      aria-labelledby="labelId"
+      checked=""
+      data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-7"
+      data-ouia-component-type="PF4/DropdownToggleCheckbox"
+      data-ouia-safe="true"
+      id="check"
+      label="label"
+      type="checkbox"
+    />
+  </label>
+</DocumentFragment>
+`;
 
-exports[`DropdownToggleCheckbox passing class 1`] = `"<input label=\\"label\\" id=\\"check\\" aria-label=\\"check\\" type=\\"checkbox\\" aria-invalid=\\"false\\" data-ouia-component-type=\\"PF4/DropdownToggleCheckbox\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-DropdownToggleCheckbox-6\\" checked=\\"\\">"`;
+exports[`DropdownToggleCheckbox passing class 1`] = `
+<DocumentFragment>
+  <label
+    class="pf-c-dropdown__toggle-check class-123"
+    for="check"
+  >
+    <input
+      aria-invalid="false"
+      aria-label="check"
+      checked=""
+      data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-6"
+      data-ouia-component-type="PF4/DropdownToggleCheckbox"
+      data-ouia-safe="true"
+      id="check"
+      label="label"
+      type="checkbox"
+    />
+  </label>
+</DocumentFragment>
+`;
 
-exports[`DropdownToggleCheckbox uncontrolled 1`] = `"<input id=\\"check\\" aria-label=\\"check\\" type=\\"checkbox\\" aria-invalid=\\"false\\" data-ouia-component-type=\\"PF4/DropdownToggleCheckbox\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-DropdownToggleCheckbox-2\\">"`;
+exports[`DropdownToggleCheckbox uncontrolled 1`] = `
+<DocumentFragment>
+  <label
+    class="pf-c-dropdown__toggle-check"
+    for="check"
+  >
+    <input
+      aria-invalid="false"
+      aria-label="check"
+      data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-2"
+      data-ouia-component-type="PF4/DropdownToggleCheckbox"
+      data-ouia-safe="true"
+      id="check"
+      type="checkbox"
+    />
+  </label>
+</DocumentFragment>
+`;
 
-exports[`DropdownToggleCheckbox with text 1`] = `"<label class=\\"pf-c-dropdown__toggle-check\\" for=\\"check\\"><input id=\\"check\\" aria-label=\\"check\\" type=\\"checkbox\\" aria-invalid=\\"false\\" disabled=\\"\\" data-ouia-component-type=\\"PF4/DropdownToggleCheckbox\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-DropdownToggleCheckbox-3\\"><span class=\\"pf-c-dropdown__toggle-text\\" aria-hidden=\\"true\\" id=\\"check-text\\">Some text</span></label>"`;
+exports[`DropdownToggleCheckbox with text 1`] = `
+<DocumentFragment>
+  <label
+    class="pf-c-dropdown__toggle-check"
+    for="check"
+  >
+    <input
+      aria-invalid="false"
+      aria-label="check"
+      data-ouia-component-id="OUIA-Generated-DropdownToggleCheckbox-3"
+      data-ouia-component-type="PF4/DropdownToggleCheckbox"
+      data-ouia-safe="true"
+      disabled=""
+      id="check"
+      type="checkbox"
+    />
+    <span
+      aria-hidden="true"
+      class="pf-c-dropdown__toggle-text"
+      id="check-text"
+    >
+      Some text
+    </span>
+  </label>
+</DocumentFragment>
+`;

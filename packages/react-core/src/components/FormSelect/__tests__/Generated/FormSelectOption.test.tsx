@@ -8,6 +8,6 @@ import { FormSelectOption } from '../../FormSelectOption';
 import {} from '../..';
 
 it('FormSelectOption should match snapshot (auto-generated)', () => {
-  const view = render(<FormSelectOption className={"''"} value={''} label={'string'} isDisabled={false} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<FormSelectOption className={"''"} value={''} label={'string'} isDisabled={false} />);
+  expect(asFragment()).toMatchSnapshot();
 });

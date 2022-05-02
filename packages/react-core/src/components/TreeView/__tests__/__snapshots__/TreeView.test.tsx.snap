@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders compact no background successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tree-view pf-m-compact pf-m-no-background"
   >
@@ -323,11 +323,11 @@ exports[`renders compact no background successfully 1`] = `
       </li>
     </ul>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`renders compact successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tree-view pf-m-compact"
   >
@@ -649,11 +649,11 @@ exports[`renders compact successfully 1`] = `
       </li>
     </ul>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`renders guides successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tree-view pf-m-guides"
   >
@@ -951,11 +951,11 @@ exports[`renders guides successfully 1`] = `
       </li>
     </ul>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`tree view renders active successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tree-view"
   >
@@ -1253,11 +1253,11 @@ exports[`tree view renders active successfully 1`] = `
       </li>
     </ul>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`tree view renders badges successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tree-view"
   >
@@ -1609,11 +1609,11 @@ exports[`tree view renders badges successfully 1`] = `
       </li>
     </ul>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`tree view renders basic successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tree-view"
   >
@@ -1911,11 +1911,11 @@ exports[`tree view renders basic successfully 1`] = `
       </li>
     </ul>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`tree view renders checkboxes successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tree-view"
   >
@@ -2285,11 +2285,11 @@ exports[`tree view renders checkboxes successfully 1`] = `
       </li>
     </ul>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`tree view renders icons successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tree-view"
   >
@@ -2689,11 +2689,11 @@ exports[`tree view renders icons successfully 1`] = `
       </li>
     </ul>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`tree view renders individual flag options successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tree-view"
   >
@@ -3065,11 +3065,11 @@ exports[`tree view renders individual flag options successfully 1`] = `
       </li>
     </ul>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`tree view renders search successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tree-view__search"
   >
@@ -3081,11 +3081,11 @@ exports[`tree view renders search successfully 1`] = `
       type="search"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`tree view renders toolbar successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tree-view"
   >
@@ -3389,5 +3389,5 @@ exports[`tree view renders toolbar successfully 1`] = `
       </li>
     </ul>
   </div>
-</div>
+</DocumentFragment>
 `;

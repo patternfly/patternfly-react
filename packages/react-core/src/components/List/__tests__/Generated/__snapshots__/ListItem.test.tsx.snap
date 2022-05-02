@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ListItem should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <li
     class=""
   >
     ReactNode
   </li>
-</div>
+</DocumentFragment>
 `;

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`expanded code content render 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-clipboard-copy__expandable-content class-1"
     contenteditable="true"
@@ -14,11 +14,11 @@ exports[`expanded code content render 1`] = `
   }
     </pre>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`expanded content render 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-clipboard-copy__expandable-content class-1"
     contenteditable="true"
@@ -26,5 +26,5 @@ exports[`expanded content render 1`] = `
   >
     This is my text
   </div>
-</div>
+</DocumentFragment>
 `;

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`placeholder render test 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-console__vnc"
   >
@@ -42,5 +42,5 @@ exports[`placeholder render test 1`] = `
       <div />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

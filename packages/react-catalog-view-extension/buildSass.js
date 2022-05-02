@@ -26,7 +26,7 @@ const res = sass.renderSync({
   importer
 });
 if (!fs.existsSync(outDir)) {
-  fs.mkdirSync(outDir);
+  fs.mkdirSync(outDir, { recursive: true });
 }
 
 fs.writeFileSync(path.join(outDir, 'react-catalog-view-extension.css'), res.css);

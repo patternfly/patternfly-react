@@ -16,17 +16,13 @@ const items = [
 
 describe('ContextSelector', () => {
   test('Renders ContextSelector', () => {
-    render(<ContextSelector data-testid="context-test-id">{items}</ContextSelector>);
-    expect(screen.getByTestId('context-test-id').outerHTML).toMatchSnapshot();
+    const { asFragment } = render(<ContextSelector>{items}</ContextSelector>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Renders ContextSelector open', () => {
-    render(
-      <ContextSelector isOpen data-testid="context-test-id">
-        {items}
-      </ContextSelector>
-    );
-    expect(screen.getByTestId('context-test-id').outerHTML).toMatchSnapshot();
+    const { asFragment } = render(<ContextSelector isOpen>{items}</ContextSelector>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Verify onToggle is called ', () => {

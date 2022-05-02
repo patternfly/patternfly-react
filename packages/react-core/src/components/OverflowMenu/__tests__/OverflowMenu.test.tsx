@@ -1,14 +1,13 @@
 import * as React from 'react';
 
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { OverflowMenu } from '../OverflowMenu';
 
 describe('OverflowMenu', () => {
   test('md', () => {
-    render(<OverflowMenu breakpoint="md" data-testid='test-id' />);
+    render(<OverflowMenu breakpoint="md" data-testid="test-id" />);
     expect(screen.getByTestId('test-id')).toHaveClass(styles.overflowMenu);
   });
 
@@ -41,6 +40,6 @@ describe('OverflowMenu', () => {
       </OverflowMenu>
     );
 
-    expect(myMock).toBeCalled();
+    expect(myMock).toHaveBeenCalled();
   });
 });

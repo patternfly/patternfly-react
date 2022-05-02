@@ -8,6 +8,6 @@ import { ToggleTemplate } from '../../ToggleTemplate';
 import {} from '../..';
 
 it('ToggleTemplate should match snapshot (auto-generated)', () => {
-  const view = render(<ToggleTemplate firstIndex={0} lastIndex={0} itemCount={0} itemsTitle={"'items'"} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<ToggleTemplate firstIndex={0} lastIndex={0} itemCount={0} itemsTitle={"'items'"} />);
+  expect(asFragment()).toMatchSnapshot();
 });

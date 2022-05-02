@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -10,45 +11,45 @@ import { UsersIcon } from '@patternfly/react-icons';
 describe('Alert', () => {
   test('default Alert variant is default', () => {
     render(<Alert title="this is a test">Alert testing</Alert>);
-    expect(screen.getByText('this is a test').className).toContain('pf-c-alert');
+    expect(screen.getByText('this is a test')).toHaveClass('pf-c-alert__title');
   });
 
   Object.values(AlertVariant).forEach(variant => {
     describe(`Alert - ${variant}`, () => {
       test('Description', () => {
-        const view = render(
+        const { asFragment } = render(
           <Alert variant={variant} title="">
             Some alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
       });
 
       test('Title', () => {
-        const view = render(
+        const { asFragment } = render(
           <Alert variant={variant} title="Some title">
             Some alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
       });
 
       test('Heading level', () => {
-        const view = render(
+        const { asFragment } = render(
           <Alert variant={variant} title="Some title" titleHeadingLevel="h1">
             Some alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
       });
 
       test('Action Link', () => {
-        const view = render(
+        const { asFragment } = render(
           <Alert variant={variant} actionLinks={[<AlertActionLink key={'action-1'}>test</AlertActionLink>]} title="">
             Some alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
       });
 
       test('Action Close Button', () => {
@@ -69,7 +70,7 @@ describe('Alert', () => {
       });
 
       test('Action and Title', () => {
-        const view = render(
+        const { asFragment } = render(
           <Alert
             variant={variant}
             actionLinks={[<AlertActionLink key={'action-1'}>test</AlertActionLink>]}
@@ -78,11 +79,11 @@ describe('Alert', () => {
             Some alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
       });
 
       test('Custom aria label', () => {
-        const view = render(
+        const { asFragment } = render(
           <Alert
             variant={variant}
             aria-label={`Custom aria label for ${variant}`}
@@ -92,25 +93,25 @@ describe('Alert', () => {
             Some alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
       });
 
       test('inline variation', () => {
-        const view = render(
+        const { asFragment } = render(
           <Alert variant={variant} isInline title="Some title">
             Some alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
       });
 
       test('expandable variation', () => {
-        const view = render(
+        const { asFragment } = render(
           <Alert variant={variant} title="Some title" isExpandable>
             <p>Success alert description. This should tell the user more information about the alert.</p>
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
       });
 
       test('expandable variation description hidden', () => {
@@ -126,12 +127,12 @@ describe('Alert', () => {
       });
 
       test('Toast alerts match snapsnot', () => {
-        const view = render(
+        const { asFragment } = render(
           <Alert isLiveRegion={true} variant={variant} aria-label={`${variant} toast alert`} title="Some title">
             Some toast alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
       });
 
       test('Toast alerts contain default live region', () => {
@@ -143,7 +144,7 @@ describe('Alert', () => {
           </Alert>
         );
 
-        expect(screen.getByLabelText(ariaLabel).getAttribute('aria-live')).toEqual('polite');
+        expect(screen.getByLabelText(ariaLabel)).toHaveAttribute('aria-live', 'polite');
       });
 
       test('Toast alert live regions are not atomic', () => {
@@ -155,7 +156,7 @@ describe('Alert', () => {
           </Alert>
         );
 
-        expect(screen.getByLabelText(ariaLabel).getAttribute('aria-atomic')).toEqual('false');
+        expect(screen.getByLabelText(ariaLabel)).toHaveAttribute('aria-atomic', 'false');
       });
 
       test('Non-toast alerts can have custom live region settings', () => {
@@ -175,13 +176,13 @@ describe('Alert', () => {
         );
         const alert = screen.getByLabelText(ariaLabel);
 
-        expect(alert.getAttribute('aria-live')).toEqual('assertive');
-        expect(alert.getAttribute('aria-relevant')).toEqual('all');
-        expect(alert.getAttribute('aria-atomic')).toEqual('true');
+        expect(alert).toHaveAttribute('aria-live', 'assertive');
+        expect(alert).toHaveAttribute('aria-relevant', 'all');
+        expect(alert).toHaveAttribute('aria-atomic', 'true');
       });
 
       test('Custom icon', () => {
-        const view = render(
+        const { asFragment } = render(
           <Alert
             customIcon={<UsersIcon />}
             variant={variant}
@@ -191,7 +192,7 @@ describe('Alert', () => {
             Some noisy alert
           </Alert>
         );
-        expect(view.container).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
       });
     });
   });
@@ -203,6 +204,6 @@ describe('Alert', () => {
       </Alert>
     );
 
-    expect(screen.getByText('this is a test').className).toContain('pf-m-truncate');
+    expect(screen.getByText('this is a test')).toHaveClass('pf-m-truncate');
   });
 });

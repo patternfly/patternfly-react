@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 import { ValidatedOptions } from '../../../helpers/constants';
 import { FormGroup } from '../FormGroup';
@@ -144,12 +143,7 @@ describe('FormGroup', () => {
 
   test('should render form group invalid variant', () => {
     const { asFragment } = render(
-      <FormGroup
-        label="label"
-        fieldId="label-id"
-        validated={'error'}
-        helperTextInvalid="Invalid FormGroup"
-      >
+      <FormGroup label="label" fieldId="label-id" validated={'error'} helperTextInvalid="Invalid FormGroup">
         <input id="id" />
       </FormGroup>
     );
@@ -175,12 +169,7 @@ describe('FormGroup', () => {
 
   test('should render form group validated error variant', () => {
     const { asFragment } = render(
-      <FormGroup
-        label="label"
-        fieldId="label-id"
-        validated={ValidatedOptions.error}
-        helperText="Validated FormGroup"
-      >
+      <FormGroup label="label" fieldId="label-id" validated={ValidatedOptions.error} helperText="Validated FormGroup">
         <input id="id" />
       </FormGroup>
     );

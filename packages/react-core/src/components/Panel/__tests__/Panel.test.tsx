@@ -8,55 +8,55 @@ import { PanelFooter } from '../PanelFooter';
 
 describe('Panel', () => {
   test('renders content', () => {
-    const view = render(<Panel>Foo</Panel>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<Panel>Foo</Panel>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders content with raised styling', () => {
-    const view = render(<Panel variant='raised'>Foo</Panel>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<Panel variant="raised">Foo</Panel>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders content with bordered styling', () => {
-    const view = render(<Panel variant='bordered'>Foo</Panel>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<Panel variant="bordered">Foo</Panel>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders content with scrollable styling', () => {
-    const view = render(<Panel isScrollable>Foo</Panel>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<Panel isScrollable>Foo</Panel>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 describe('PanelMain', () => {
   test('renders content', () => {
-    const view = render(<PanelMain>Foo</PanelMain>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<PanelMain>Foo</PanelMain>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('renders content with the set maximum height', () => {
-    const view = render(<PanelMain maxHeight={'80px'}>Foo</PanelMain>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<PanelMain maxHeight={'80px'}>Foo</PanelMain>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 describe('PanelMainBody', () => {
   test('renders content', () => {
-    const view = render(<PanelMainBody>Foo</PanelMainBody>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<PanelMainBody>Foo</PanelMainBody>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 describe('PanelHeader', () => {
   test('renders content', () => {
-    const view = render(<PanelHeader>Foo</PanelHeader>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<PanelHeader>Foo</PanelHeader>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 describe('PanelFooter', () => {
   test('renders content', () => {
-    const view = render(<PanelFooter>Foo</PanelFooter>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<PanelFooter>Foo</PanelFooter>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

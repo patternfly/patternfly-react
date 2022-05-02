@@ -8,11 +8,11 @@ import { WizardToggle } from '../../WizardToggle';
 import {} from '../..';
 
 it('WizardToggle should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <WizardToggle
-      nav={(isWizardNavOpen: boolean) => undefined as React.ReactElement}
+      nav={(_isWizardNavOpen: boolean) => undefined as React.ReactElement}
       steps={[]}
-      activeStep={{} /*unrecognizedType WizardStep undefined*/}
+      activeStep={{ name: 'some step' }}
       children={<div>ReactNode</div>}
       hasNoBodyPadding={false}
       isNavOpen={true}
@@ -23,5 +23,5 @@ it('WizardToggle should match snapshot (auto-generated)', () => {
       isInPage={true}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

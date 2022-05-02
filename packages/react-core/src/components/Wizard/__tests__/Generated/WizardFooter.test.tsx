@@ -8,6 +8,6 @@ import { WizardFooter } from '../../WizardFooter';
 import {} from '../..';
 
 it('WizardFooter should match snapshot (auto-generated)', () => {
-  const view = render(<WizardFooter children={'any'} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<WizardFooter children={'any'} />);
+  expect(asFragment()).toMatchSnapshot();
 });

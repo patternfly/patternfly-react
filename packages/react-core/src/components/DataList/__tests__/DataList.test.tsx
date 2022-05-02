@@ -15,41 +15,45 @@ import { DropdownItem, Dropdown, KebabToggle, DropdownPosition } from '../../Dro
 
 describe('DataList', () => {
   test('List default', () => {
-    const view = render(<DataList aria-label="this is a simple list" />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<DataList aria-label="this is a simple list" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('List compact', () => {
-    const view = render(<DataList aria-label="this is a simple list" isCompact />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<DataList aria-label="this is a simple list" isCompact />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   describe('DataList variants', () => {
     ['none', 'always', 'sm', 'md', 'lg', 'xl', '2xl'].forEach(oneBreakpoint => {
       test(`Breakpoint - ${oneBreakpoint}`, () => {
-        const view = render(<DataList aria-label="this is a simple list" gridBreakpoint={oneBreakpoint as any} />);
-        expect(view.container).toMatchSnapshot();
+        const { asFragment } = render(
+          <DataList aria-label="this is a simple list" gridBreakpoint={oneBreakpoint as any} />
+        );
+        expect(asFragment()).toMatchSnapshot();
       });
     });
   });
 
   test('List draggable', () => {
-    const view = render(<DataList aria-label="this is a simple list" isCompact onDragFinish={jest.fn()} />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<DataList aria-label="this is a simple list" isCompact onDragFinish={jest.fn()} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('List', () => {
-    const view = render(<DataList key="list-id-1" className="data-list-custom" aria-label="this is a simple list" />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(
+      <DataList key="list-id-1" className="data-list-custom" aria-label="this is a simple list" />
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Item default', () => {
-    render(
+    const { asFragment } = render(
       <DataListItem key="item-id-1" aria-labelledby="item-1">
         test
       </DataListItem>
     );
-    expect(screen.getByRole('listitem').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Item expanded', () => {
@@ -58,30 +62,30 @@ describe('DataList', () => {
         test
       </DataListItem>
     );
-    expect(screen.getByRole('listitem').className).toBe('pf-c-data-list__item pf-m-expanded');
+    expect(screen.getByRole('listitem')).toHaveClass('pf-c-data-list__item pf-m-expanded');
   });
 
   test('Item', () => {
-    const view = render(
+    const { asFragment } = render(
       <DataListItem className="data-list-item-custom" aria-labelledby="item-1">
         test
       </DataListItem>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('item row default', () => {
-    const view = render(<DataListItemRow>test</DataListItemRow>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<DataListItemRow>test</DataListItemRow>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Cell default', () => {
-    const view = render(<DataListCell>Secondary</DataListCell>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<DataListCell>Secondary</DataListCell>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Cells', () => {
-    const view = render(
+    const { asFragment } = render(
       <DataListItemCells
         dataListCells={[
           <DataListCell key="list-id-1" id="primary-item" className="data-list-custom">
@@ -93,7 +97,7 @@ describe('DataList', () => {
         ]}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('Cell with width modifier', () => {
@@ -115,8 +119,8 @@ describe('DataList', () => {
       const dataListCell = screen.getByTestId(testId);
 
       testCase.class === ''
-        ? expect(dataListCell.className).toBe('pf-c-data-list__cell')
-        : expect(dataListCell.className).toBe(`pf-c-data-list__cell ${testCase.class}`);
+        ? expect(dataListCell).toHaveClass('pf-c-data-list__cell')
+        : expect(dataListCell).toHaveClass(`pf-c-data-list__cell ${testCase.class}`);
     });
   });
 
@@ -138,26 +142,26 @@ describe('DataList', () => {
       const dataListCell = screen.getByTestId(testId);
 
       testCase.class === ''
-        ? expect(dataListCell.className).toBe('pf-c-data-list__cell')
-        : expect(dataListCell.className).toBe(`pf-c-data-list__cell ${testCase.class}`);
+        ? expect(dataListCell).toHaveClass('pf-c-data-list__cell')
+        : expect(dataListCell).toHaveClass(`pf-c-data-list__cell ${testCase.class}`);
     });
   });
 
   test('Toggle default with aria label', () => {
     render(<DataListToggle aria-label="Toggle details for" id="ex-toggle2" />);
 
-    expect(screen.getByRole('button').getAttribute('aria-labelledby')).toEqual(null);
-    expect(screen.getByRole('button').getAttribute('aria-label')).toEqual('Toggle details for');
-    expect(screen.getByRole('button').getAttribute('aria-expanded')).toEqual('false');
+    expect(screen.getByRole('button')).not.toHaveAttribute('aria-labelledby');
+    expect(screen.getByRole('button')).toHaveAttribute('aria-label', 'Toggle details for');
+    expect(screen.getByRole('button')).toHaveAttribute('aria-expanded', 'false');
   });
 
   test('Toggle expanded', () => {
     render(<DataListToggle aria-label="Toggle details for" id="ex-toggle2" isExpanded />);
-    expect(screen.getByRole('button').getAttribute('aria-expanded')).toEqual('true');
+    expect(screen.getByRole('button')).toHaveAttribute('aria-expanded', 'true');
   });
 
   test('DataListAction dropdown', () => {
-    const view = render(
+    const { asFragment } = render(
       <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action" isPlainButtonAction>
         <Dropdown
           isPlain
@@ -174,16 +178,16 @@ describe('DataList', () => {
         />
       </DataListAction>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('DataListAction button', () => {
-    const view = render(
+    const { asFragment } = render(
       <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action">
         <Button id="delete-item-1">Delete</Button>
       </DataListAction>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('DataListAction visibility - show button when lg', () => {
@@ -198,8 +202,8 @@ describe('DataList', () => {
       </DataListAction>
     );
 
-    expect(screen.getByRole('button').parentElement.className).toContain('pf-m-hidden');
-    expect(screen.getByRole('button').parentElement.className).toContain('pf-m-visible-on-lg');
+    expect(screen.getByRole('button').parentElement).toHaveClass('pf-m-hidden');
+    expect(screen.getByRole('button').parentElement).toHaveClass('pf-m-visible-on-lg');
   });
 
   test('DataListAction visibility - hide button on 2xl', () => {
@@ -214,20 +218,20 @@ describe('DataList', () => {
       </DataListAction>
     );
 
-    expect(screen.getByRole('button').parentElement.className).toContain('pf-m-hidden-on-2xl');
+    expect(screen.getByRole('button').parentElement).toHaveClass('pf-m-hidden-on-2xl');
   });
 
   test('DataListContent', () => {
-    const view = render(<DataListContent aria-label="Primary Content Details"> test</DataListContent>);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<DataListContent aria-label="Primary Content Details"> test</DataListContent>);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('DataListContent hasNoPadding', () => {
-    const view = render(
+    const { asFragment } = render(
       <DataListContent aria-label="Primary Content Details" hidden hasNoPadding>
         test
       </DataListContent>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

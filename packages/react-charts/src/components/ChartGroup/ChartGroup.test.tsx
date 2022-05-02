@@ -5,13 +5,13 @@ import { ChartGroup } from './ChartGroup';
 
 Object.values([true, false]).forEach(() => {
   test('ChartGroup', () => {
-    const view = render(<ChartGroup />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartGroup />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders container children', () => {
-  const view = render(
+  const { asFragment } = render(
     <ChartGroup height={200} width={200}>
       <ChartArea
         data={[
@@ -32,5 +32,5 @@ test('renders container children', () => {
       />
     </ChartGroup>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

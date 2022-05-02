@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CatalogTile href renders properly 1`] = `
-<div>
+<DocumentFragment>
   <a
     class="pf-c-card pf-m-selectable catalog-tile-pf featured"
     data-ouia-component-id="OUIA-Generated-Card-6"
@@ -39,7 +39,7 @@ exports[`CatalogTile href renders properly 1`] = `
       </div>
     </div>
   </a>
-</div>
+</DocumentFragment>
 `;
 
 exports[`CatalogTile renders properly 1`] = `

@@ -1,9 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DropdownToggleCheckbox state action split button - renders primary variant 1`] = `"<div class=\\"pf-c-dropdown__toggle pf-m-split-button pf-m-action pf-m-primary\\"><div>test</div><button data-testid=\\"test-id\\" data-ouia-component-type=\\"PF4/DropdownToggle\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-DropdownToggle-11\\" aria-label=\\"Select\\" id=\\"Dropdown Toggle\\" class=\\"pf-c-dropdown__toggle-button pf-m-primary\\" type=\\"button\\" aria-expanded=\\"false\\"><span class=\\"\\">Dropdown</span><span class=\\"\\"><svg style=\\"vertical-align: -0.125em;\\" fill=\\"currentColor\\" height=\\"1em\\" width=\\"1em\\" viewBox=\\"0 0 320 512\\" aria-hidden=\\"true\\" role=\\"img\\"><path d=\\"M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z\\"></path></svg></span></button></div>"`;
+exports[`DropdownToggle state action split button - renders primary variant 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-dropdown__toggle pf-m-split-button pf-m-action pf-m-primary"
+  >
+    <div>
+      test
+    </div>
+    <button
+      aria-expanded="false"
+      aria-label="Select"
+      class="pf-c-dropdown__toggle-button pf-m-primary"
+      data-ouia-component-id="OUIA-Generated-DropdownToggle-11"
+      data-ouia-component-type="PF4/DropdownToggle"
+      data-ouia-safe="true"
+      id="Dropdown Toggle"
+      type="button"
+    >
+      <span
+        class=""
+      >
+        Dropdown
+      </span>
+      <span
+        class=""
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style="vertical-align: -0.125em;"
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
 
-exports[`DropdownToggleCheckbox state active 1`] = `
-<div>
+exports[`DropdownToggle state active 1`] = `
+<DocumentFragment>
   <button
     aria-expanded="false"
     class="pf-c-dropdown__toggle pf-m-active"
@@ -36,17 +79,122 @@ exports[`DropdownToggleCheckbox state active 1`] = `
       </svg>
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;
 
-exports[`DropdownToggleCheckbox state button variant - plain with text 1`] = `"<button data-ouia-component-type=\\"PF4/DropdownToggle\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-DropdownToggle-10\\" id=\\"Dropdown Toggle\\" class=\\"pf-c-dropdown__toggle pf-m-plain pf-m-text\\" type=\\"button\\" aria-expanded=\\"false\\"><span class=\\"\\">Dropdown</span><span class=\\"\\"><svg style=\\"vertical-align: -0.125em;\\" fill=\\"currentColor\\" height=\\"1em\\" width=\\"1em\\" viewBox=\\"0 0 320 512\\" aria-hidden=\\"true\\" role=\\"img\\"><path d=\\"M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z\\"></path></svg></span></button>"`;
+exports[`DropdownToggle state button variant - plain with text 1`] = `
+<DocumentFragment>
+  <button
+    aria-expanded="false"
+    class="pf-c-dropdown__toggle pf-m-plain pf-m-text"
+    data-ouia-component-id="OUIA-Generated-DropdownToggle-10"
+    data-ouia-component-type="PF4/DropdownToggle"
+    data-ouia-safe="true"
+    id="Dropdown Toggle"
+    type="button"
+  >
+    <span
+      class=""
+    >
+      Dropdown
+    </span>
+    <span
+      class=""
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align: -0.125em;"
+        viewBox="0 0 320 512"
+        width="1em"
+      >
+        <path
+          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
 
-exports[`DropdownToggleCheckbox state button variant - primary 1`] = `"<button data-ouia-component-type=\\"PF4/DropdownToggle\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-DropdownToggle-8\\" id=\\"Dropdown Toggle\\" class=\\"pf-c-dropdown__toggle pf-m-primary\\" type=\\"button\\" aria-expanded=\\"false\\"><span class=\\"\\">Dropdown</span><span class=\\"\\"><svg style=\\"vertical-align: -0.125em;\\" fill=\\"currentColor\\" height=\\"1em\\" width=\\"1em\\" viewBox=\\"0 0 320 512\\" aria-hidden=\\"true\\" role=\\"img\\"><path d=\\"M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z\\"></path></svg></span></button>"`;
+exports[`DropdownToggle state button variant - primary 1`] = `
+<DocumentFragment>
+  <button
+    aria-expanded="false"
+    class="pf-c-dropdown__toggle pf-m-primary"
+    data-ouia-component-id="OUIA-Generated-DropdownToggle-8"
+    data-ouia-component-type="PF4/DropdownToggle"
+    data-ouia-safe="true"
+    id="Dropdown Toggle"
+    type="button"
+  >
+    <span
+      class=""
+    >
+      Dropdown
+    </span>
+    <span
+      class=""
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align: -0.125em;"
+        viewBox="0 0 320 512"
+        width="1em"
+      >
+        <path
+          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
 
-exports[`DropdownToggleCheckbox state button variant - secondary 1`] = `"<button data-ouia-component-type=\\"PF4/DropdownToggle\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-DropdownToggle-9\\" id=\\"Dropdown Toggle\\" class=\\"pf-c-dropdown__toggle pf-m-secondary\\" type=\\"button\\" aria-expanded=\\"false\\"><span class=\\"\\">Dropdown</span><span class=\\"\\"><svg style=\\"vertical-align: -0.125em;\\" fill=\\"currentColor\\" height=\\"1em\\" width=\\"1em\\" viewBox=\\"0 0 320 512\\" aria-hidden=\\"true\\" role=\\"img\\"><path d=\\"M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z\\"></path></svg></span></button>"`;
+exports[`DropdownToggle state button variant - secondary 1`] = `
+<DocumentFragment>
+  <button
+    aria-expanded="false"
+    class="pf-c-dropdown__toggle pf-m-secondary"
+    data-ouia-component-id="OUIA-Generated-DropdownToggle-9"
+    data-ouia-component-type="PF4/DropdownToggle"
+    data-ouia-safe="true"
+    id="Dropdown Toggle"
+    type="button"
+  >
+    <span
+      class=""
+    >
+      Dropdown
+    </span>
+    <span
+      class=""
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align: -0.125em;"
+        viewBox="0 0 320 512"
+        width="1em"
+      >
+        <path
+          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+        />
+      </svg>
+    </span>
+  </button>
+</DocumentFragment>
+`;
 
-exports[`DropdownToggleCheckbox state class changes 1`] = `
-<div>
+exports[`DropdownToggle state class changes 1`] = `
+<DocumentFragment>
   <button
     aria-expanded="false"
     class="pf-c-dropdown__toggle"
@@ -79,11 +227,11 @@ exports[`DropdownToggleCheckbox state class changes 1`] = `
       </svg>
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;
 
-exports[`DropdownToggleCheckbox state focus 1`] = `
-<div>
+exports[`DropdownToggle state focus 1`] = `
+<DocumentFragment>
   <button
     aria-expanded="false"
     class="pf-c-dropdown__toggle"
@@ -116,11 +264,11 @@ exports[`DropdownToggleCheckbox state focus 1`] = `
       </svg>
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;
 
-exports[`DropdownToggleCheckbox state hover 1`] = `
-<div>
+exports[`DropdownToggle state hover 1`] = `
+<DocumentFragment>
   <button
     aria-expanded="false"
     class="pf-c-dropdown__toggle"
@@ -153,7 +301,50 @@ exports[`DropdownToggleCheckbox state hover 1`] = `
       </svg>
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;
 
-exports[`DropdownToggleCheckbox state split button - does not render primary variant 1`] = `"<div class=\\"pf-c-dropdown__toggle pf-m-split-button\\"><div>test</div><button data-testid=\\"test-id\\" data-ouia-component-type=\\"PF4/DropdownToggle\\" data-ouia-safe=\\"true\\" data-ouia-component-id=\\"OUIA-Generated-DropdownToggle-12\\" aria-label=\\"Select\\" id=\\"Dropdown Toggle\\" class=\\"pf-c-dropdown__toggle-button pf-m-primary\\" type=\\"button\\" aria-expanded=\\"false\\"><span class=\\"\\">Dropdown</span><span class=\\"\\"><svg style=\\"vertical-align: -0.125em;\\" fill=\\"currentColor\\" height=\\"1em\\" width=\\"1em\\" viewBox=\\"0 0 320 512\\" aria-hidden=\\"true\\" role=\\"img\\"><path d=\\"M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z\\"></path></svg></span></button></div>"`;
+exports[`DropdownToggle state split button - does not render primary variant 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-dropdown__toggle pf-m-split-button"
+  >
+    <div>
+      test
+    </div>
+    <button
+      aria-expanded="false"
+      aria-label="Select"
+      class="pf-c-dropdown__toggle-button pf-m-primary"
+      data-ouia-component-id="OUIA-Generated-DropdownToggle-12"
+      data-ouia-component-type="PF4/DropdownToggle"
+      data-ouia-safe="true"
+      id="Dropdown Toggle"
+      type="button"
+    >
+      <span
+        class=""
+      >
+        Dropdown
+      </span>
+      <span
+        class=""
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style="vertical-align: -0.125em;"
+          viewBox="0 0 320 512"
+          width="1em"
+        >
+          <path
+            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;

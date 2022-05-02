@@ -1,13 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OverflowMenuControl should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-overflow-menu__control string"
   >
-     
-    any
-     
+     any 
   </div>
-</div>
+</DocumentFragment>
 `;

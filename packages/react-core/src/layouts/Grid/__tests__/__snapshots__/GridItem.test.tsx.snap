@@ -1,145 +1,145 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`adds lg offset classes 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-offset-1-col-on-lg"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`adds lg row classes 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-1-row-on-lg"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`adds lg span class 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-4-col-on-lg"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`adds md offset classes 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-offset-1-col-on-md"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`adds md row classes 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-1-row-on-md"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`adds md span class 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-4-col-on-md"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`adds offset class 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-offset-4-col"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`adds row class 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-4-row"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`adds sm offset classes 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-offset-1-col-on-sm"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`adds sm row classes 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-1-row-on-sm"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`adds sm span class 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-4-col-on-sm"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`adds span class 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-4-col"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`adds xl offset classes 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-offset-1-col-on-xl"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`adds xl row classes 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-1-row-on-xl"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`adds xl span class 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-4-col-on-xl"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`adds xl2 offset classes 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-offset-1-col-on-2xl"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`adds xl2 row classes 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-1-row-on-2xl"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`adds xl2 span class 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-grid__item pf-m-4-col-on-2xl"
   />
-</div>
+</DocumentFragment>
 `;

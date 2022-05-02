@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render accessible tabs 1`] = `
-<div>
+<DocumentFragment>
   <nav
     aria-label="accessible Tabs example"
     class="pf-c-tabs"
@@ -154,11 +154,11 @@ exports[`should render accessible tabs 1`] = `
   >
     Tab 3 section
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`should render box tabs 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tabs pf-m-box"
     data-ouia-component-id="OUIA-Generated-Tabs-6"
@@ -276,7 +276,7 @@ exports[`should render box tabs 1`] = `
           >
             Users
           </span>
-            
+           
         </button>
       </li>
     </ul>
@@ -348,11 +348,11 @@ exports[`should render box tabs 1`] = `
   >
     Tab 4 section
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`should render box tabs of light variant 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tabs pf-m-box pf-m-color-scheme--light-300"
     data-ouia-component-id="OUIA-Generated-Tabs-13"
@@ -501,11 +501,11 @@ exports[`should render box tabs of light variant 1`] = `
   >
     Tab 3 section
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`should render expandable vertical tabs 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tabs pf-m-vertical pf-m-expandable"
     data-ouia-component-id="OUIA-Generated-Tabs-4"
@@ -666,7 +666,7 @@ exports[`should render expandable vertical tabs 1`] = `
           >
             Users
           </span>
-            
+           
         </button>
       </li>
     </ul>
@@ -738,11 +738,11 @@ exports[`should render expandable vertical tabs 1`] = `
   >
     Tab 4 section
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`should render filled tabs 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tabs pf-m-fill"
     data-ouia-component-id="OUIA-Generated-Tabs-8"
@@ -891,11 +891,11 @@ exports[`should render filled tabs 1`] = `
   >
     Tab 3 section
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`should render secondary tabs 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tabs"
     data-ouia-component-id="OUIA-Generated-Tabs-9"
@@ -1192,11 +1192,11 @@ exports[`should render secondary tabs 1`] = `
   >
     Tab 3 section
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`should render simple tabs 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tabs"
     data-ouia-component-id="OUIA-Generated-Tabs-1"
@@ -1314,7 +1314,7 @@ exports[`should render simple tabs 1`] = `
           >
             Users
           </span>
-            
+           
         </button>
       </li>
     </ul>
@@ -1386,11 +1386,11 @@ exports[`should render simple tabs 1`] = `
   >
     Tab 4 section
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`should render tabs with eventKey Strings 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tabs"
     data-ouia-component-id="OUIA-Generated-Tabs-11"
@@ -1540,11 +1540,11 @@ exports[`should render tabs with eventKey Strings 1`] = `
   >
     Tab 3 section
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`should render tabs with no bottom border 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tabs pf-m-no-border-bottom"
     data-ouia-component-id="OUIA-Generated-Tabs-14"
@@ -1693,11 +1693,11 @@ exports[`should render tabs with no bottom border 1`] = `
   >
     Tab 3 section
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`should render tabs with separate content 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tabs"
     data-ouia-component-id="OUIA-Generated-Tabs-12"
@@ -1856,11 +1856,11 @@ exports[`should render tabs with separate content 1`] = `
       </div>
     </section>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`should render uncontrolled tabs 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tabs"
     data-ouia-component-id="OUIA-Generated-Tabs-2"
@@ -1977,7 +1977,7 @@ exports[`should render uncontrolled tabs 1`] = `
           >
             Users
           </span>
-            
+           
         </button>
       </li>
     </ul>
@@ -2049,11 +2049,11 @@ exports[`should render uncontrolled tabs 1`] = `
   >
     Tab 4 section
   </section>
-</div>
+</DocumentFragment>
 `;
 
 exports[`should render vertical tabs 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tabs pf-m-vertical"
     data-ouia-component-id="OUIA-Generated-Tabs-3"
@@ -2171,7 +2171,7 @@ exports[`should render vertical tabs 1`] = `
           >
             Users
           </span>
-            
+           
         </button>
       </li>
     </ul>
@@ -2243,5 +2243,5 @@ exports[`should render vertical tabs 1`] = `
   >
     Tab 4 section
   </section>
-</div>
+</DocumentFragment>
 `;

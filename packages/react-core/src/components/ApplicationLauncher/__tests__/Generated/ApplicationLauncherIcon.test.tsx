@@ -8,6 +8,6 @@ import { ApplicationLauncherIcon } from '../../ApplicationLauncherIcon';
 import {} from '../..';
 
 it('ApplicationLauncherIcon should match snapshot (auto-generated)', () => {
-  const view = render(<ApplicationLauncherIcon children={<div>ReactNode</div>} className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<ApplicationLauncherIcon children={<div>ReactNode</div>} className={"''"} />);
+  expect(asFragment()).toMatchSnapshot();
 });

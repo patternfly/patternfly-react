@@ -10,8 +10,8 @@ import { ChartLegendTooltip } from './ChartLegendTooltip';
 
 Object.values([true, false]).forEach(() => {
   test('ChartLegendTooltip', () => {
-    const view = render(<ChartLegendTooltip text="This is a tooltip" />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartLegendTooltip text="This is a tooltip" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
@@ -23,14 +23,16 @@ test('allows tooltip via container component', () => {
     { name: 'Birds' },
     { name: 'Mice' }
   ];
-  const view = render(
+  const { asFragment } = render(
     <Chart
       ariaDesc="Average number of pets"
       containerComponent={
         <CursorVoronoiContainer
           cursorDimension="x"
-          labels={({ datum }) => `${datum.y !== null ? datum.y : 'no data'}`}
-          labelComponent={<ChartLegendTooltip legendData={legendData} title={datum => datum.x} />}
+          labels={({ datum }: { datum: { y: number } }) => `${datum.y !== null ? datum.y : 'no data'}`}
+          labelComponent={
+            <ChartLegendTooltip legendData={legendData} title={({ datum }: { datum: { x: number } }) => datum.x} />
+          }
           mouseFollowTooltips
           voronoiDimension="x"
           voronoiPadding={50}
@@ -93,5 +95,5 @@ test('allows tooltip via container component', () => {
       </ChartGroup>
     </Chart>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

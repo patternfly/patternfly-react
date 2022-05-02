@@ -5,13 +5,13 @@ import { ChartLegend } from '../ChartLegend';
 
 Object.values([true, false]).forEach(() => {
   test('ChartContainer', () => {
-    const view = render(<ChartContainer />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartContainer />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders container via ChartLegend', () => {
-  const view = render(
+  const { asFragment } = render(
     <ChartContainer>
       <ChartLegend
         data={[{ name: 'Cats' }, { name: 'Dogs' }]}
@@ -22,5 +22,5 @@ test('renders container via ChartLegend', () => {
       />
     </ChartContainer>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CodeBlock renders successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-code-block"
   >
@@ -18,11 +18,11 @@ exports[`CodeBlock renders successfully 1`] = `
       test text
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`CodeBlock with components renders successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-code-block"
   >
@@ -54,21 +54,21 @@ exports[`CodeBlock with components renders successfully 1`] = `
       test outer text
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`CodeBlockAction renders successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-code-block__actions-item"
   >
     action
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`CodeBlockCode renders successfully 1`] = `
-<div>
+<DocumentFragment>
   <pre
     class="pf-c-code-block__pre"
   >
@@ -78,5 +78,5 @@ exports[`CodeBlockCode renders successfully 1`] = `
       action
     </code>
   </pre>
-</div>
+</DocumentFragment>
 `;

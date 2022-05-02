@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Alert Alert - danger Action Link 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Danger Alert"
     class="pf-c-alert pf-m-danger"
@@ -34,7 +34,6 @@ exports[`Alert Alert - danger Action Link 1`] = `
       >
         Danger alert:
       </span>
-      
     </h4>
     <div
       class="pf-c-alert__description"
@@ -56,11 +55,11 @@ exports[`Alert Alert - danger Action Link 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - danger Action and Title 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Danger Alert"
     class="pf-c-alert pf-m-danger"
@@ -115,11 +114,11 @@ exports[`Alert Alert - danger Action and Title 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - danger Custom aria label 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Custom aria label for danger"
     class="pf-c-alert pf-m-danger"
@@ -174,11 +173,11 @@ exports[`Alert Alert - danger Custom aria label 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - danger Custom icon 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="danger custom icon alert"
     class="pf-c-alert pf-m-danger"
@@ -219,11 +218,11 @@ exports[`Alert Alert - danger Custom icon 1`] = `
       Some noisy alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - danger Description 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Danger Alert"
     class="pf-c-alert pf-m-danger"
@@ -256,7 +255,6 @@ exports[`Alert Alert - danger Description 1`] = `
       >
         Danger alert:
       </span>
-      
     </h4>
     <div
       class="pf-c-alert__description"
@@ -264,11 +262,11 @@ exports[`Alert Alert - danger Description 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - danger Heading level 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Danger Alert"
     class="pf-c-alert pf-m-danger"
@@ -309,11 +307,11 @@ exports[`Alert Alert - danger Heading level 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - danger Title 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Danger Alert"
     class="pf-c-alert pf-m-danger"
@@ -354,11 +352,11 @@ exports[`Alert Alert - danger Title 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - danger Toast alerts match snapsnot 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-atomic="false"
     aria-label="danger toast alert"
@@ -401,11 +399,11 @@ exports[`Alert Alert - danger Toast alerts match snapsnot 1`] = `
       Some toast alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - danger expandable variation 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Danger Alert"
     class="pf-c-alert pf-m-expandable pf-m-danger"
@@ -473,11 +471,11 @@ exports[`Alert Alert - danger expandable variation 1`] = `
       Some title
     </h4>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - danger inline variation 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Danger Alert"
     class="pf-c-alert pf-m-inline pf-m-danger"
@@ -518,11 +516,11 @@ exports[`Alert Alert - danger inline variation 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - default Action Link 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Default Alert"
     class="pf-c-alert"
@@ -555,7 +553,6 @@ exports[`Alert Alert - default Action Link 1`] = `
       >
         Default alert:
       </span>
-      
     </h4>
     <div
       class="pf-c-alert__description"
@@ -577,11 +574,11 @@ exports[`Alert Alert - default Action Link 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - default Action and Title 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Default Alert"
     class="pf-c-alert"
@@ -636,11 +633,11 @@ exports[`Alert Alert - default Action and Title 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - default Custom aria label 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Custom aria label for default"
     class="pf-c-alert"
@@ -695,11 +692,11 @@ exports[`Alert Alert - default Custom aria label 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - default Custom icon 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="default custom icon alert"
     class="pf-c-alert"
@@ -740,11 +737,11 @@ exports[`Alert Alert - default Custom icon 1`] = `
       Some noisy alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - default Description 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Default Alert"
     class="pf-c-alert"
@@ -777,7 +774,6 @@ exports[`Alert Alert - default Description 1`] = `
       >
         Default alert:
       </span>
-      
     </h4>
     <div
       class="pf-c-alert__description"
@@ -785,11 +781,11 @@ exports[`Alert Alert - default Description 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - default Heading level 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Default Alert"
     class="pf-c-alert"
@@ -830,11 +826,11 @@ exports[`Alert Alert - default Heading level 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - default Title 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Default Alert"
     class="pf-c-alert"
@@ -875,11 +871,11 @@ exports[`Alert Alert - default Title 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - default Toast alerts match snapsnot 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-atomic="false"
     aria-label="default toast alert"
@@ -922,11 +918,11 @@ exports[`Alert Alert - default Toast alerts match snapsnot 1`] = `
       Some toast alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - default expandable variation 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Default Alert"
     class="pf-c-alert pf-m-expandable"
@@ -994,11 +990,11 @@ exports[`Alert Alert - default expandable variation 1`] = `
       Some title
     </h4>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - default inline variation 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Default Alert"
     class="pf-c-alert pf-m-inline"
@@ -1039,11 +1035,11 @@ exports[`Alert Alert - default inline variation 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - info Action Link 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Info Alert"
     class="pf-c-alert pf-m-info"
@@ -1076,7 +1072,6 @@ exports[`Alert Alert - info Action Link 1`] = `
       >
         Info alert:
       </span>
-      
     </h4>
     <div
       class="pf-c-alert__description"
@@ -1098,11 +1093,11 @@ exports[`Alert Alert - info Action Link 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - info Action and Title 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Info Alert"
     class="pf-c-alert pf-m-info"
@@ -1157,11 +1152,11 @@ exports[`Alert Alert - info Action and Title 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - info Custom aria label 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Custom aria label for info"
     class="pf-c-alert pf-m-info"
@@ -1216,11 +1211,11 @@ exports[`Alert Alert - info Custom aria label 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - info Custom icon 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="info custom icon alert"
     class="pf-c-alert pf-m-info"
@@ -1261,11 +1256,11 @@ exports[`Alert Alert - info Custom icon 1`] = `
       Some noisy alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - info Description 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Info Alert"
     class="pf-c-alert pf-m-info"
@@ -1298,7 +1293,6 @@ exports[`Alert Alert - info Description 1`] = `
       >
         Info alert:
       </span>
-      
     </h4>
     <div
       class="pf-c-alert__description"
@@ -1306,11 +1300,11 @@ exports[`Alert Alert - info Description 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - info Heading level 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Info Alert"
     class="pf-c-alert pf-m-info"
@@ -1351,11 +1345,11 @@ exports[`Alert Alert - info Heading level 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - info Title 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Info Alert"
     class="pf-c-alert pf-m-info"
@@ -1396,11 +1390,11 @@ exports[`Alert Alert - info Title 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - info Toast alerts match snapsnot 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-atomic="false"
     aria-label="info toast alert"
@@ -1443,11 +1437,11 @@ exports[`Alert Alert - info Toast alerts match snapsnot 1`] = `
       Some toast alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - info expandable variation 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Info Alert"
     class="pf-c-alert pf-m-expandable pf-m-info"
@@ -1515,11 +1509,11 @@ exports[`Alert Alert - info expandable variation 1`] = `
       Some title
     </h4>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - info inline variation 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Info Alert"
     class="pf-c-alert pf-m-inline pf-m-info"
@@ -1560,11 +1554,11 @@ exports[`Alert Alert - info inline variation 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - success Action Link 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Success Alert"
     class="pf-c-alert pf-m-success"
@@ -1597,7 +1591,6 @@ exports[`Alert Alert - success Action Link 1`] = `
       >
         Success alert:
       </span>
-      
     </h4>
     <div
       class="pf-c-alert__description"
@@ -1619,11 +1612,11 @@ exports[`Alert Alert - success Action Link 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - success Action and Title 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Success Alert"
     class="pf-c-alert pf-m-success"
@@ -1678,11 +1671,11 @@ exports[`Alert Alert - success Action and Title 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - success Custom aria label 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Custom aria label for success"
     class="pf-c-alert pf-m-success"
@@ -1737,11 +1730,11 @@ exports[`Alert Alert - success Custom aria label 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - success Custom icon 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="success custom icon alert"
     class="pf-c-alert pf-m-success"
@@ -1782,11 +1775,11 @@ exports[`Alert Alert - success Custom icon 1`] = `
       Some noisy alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - success Description 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Success Alert"
     class="pf-c-alert pf-m-success"
@@ -1819,7 +1812,6 @@ exports[`Alert Alert - success Description 1`] = `
       >
         Success alert:
       </span>
-      
     </h4>
     <div
       class="pf-c-alert__description"
@@ -1827,11 +1819,11 @@ exports[`Alert Alert - success Description 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - success Heading level 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Success Alert"
     class="pf-c-alert pf-m-success"
@@ -1872,11 +1864,11 @@ exports[`Alert Alert - success Heading level 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - success Title 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Success Alert"
     class="pf-c-alert pf-m-success"
@@ -1917,11 +1909,11 @@ exports[`Alert Alert - success Title 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - success Toast alerts match snapsnot 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-atomic="false"
     aria-label="success toast alert"
@@ -1964,11 +1956,11 @@ exports[`Alert Alert - success Toast alerts match snapsnot 1`] = `
       Some toast alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - success expandable variation 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Success Alert"
     class="pf-c-alert pf-m-expandable pf-m-success"
@@ -2036,11 +2028,11 @@ exports[`Alert Alert - success expandable variation 1`] = `
       Some title
     </h4>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - success inline variation 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Success Alert"
     class="pf-c-alert pf-m-inline pf-m-success"
@@ -2081,11 +2073,11 @@ exports[`Alert Alert - success inline variation 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - warning Action Link 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Warning Alert"
     class="pf-c-alert pf-m-warning"
@@ -2118,7 +2110,6 @@ exports[`Alert Alert - warning Action Link 1`] = `
       >
         Warning alert:
       </span>
-      
     </h4>
     <div
       class="pf-c-alert__description"
@@ -2140,11 +2131,11 @@ exports[`Alert Alert - warning Action Link 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - warning Action and Title 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Warning Alert"
     class="pf-c-alert pf-m-warning"
@@ -2199,11 +2190,11 @@ exports[`Alert Alert - warning Action and Title 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - warning Custom aria label 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Custom aria label for warning"
     class="pf-c-alert pf-m-warning"
@@ -2258,11 +2249,11 @@ exports[`Alert Alert - warning Custom aria label 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - warning Custom icon 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="warning custom icon alert"
     class="pf-c-alert pf-m-warning"
@@ -2303,11 +2294,11 @@ exports[`Alert Alert - warning Custom icon 1`] = `
       Some noisy alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - warning Description 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Warning Alert"
     class="pf-c-alert pf-m-warning"
@@ -2340,7 +2331,6 @@ exports[`Alert Alert - warning Description 1`] = `
       >
         Warning alert:
       </span>
-      
     </h4>
     <div
       class="pf-c-alert__description"
@@ -2348,11 +2338,11 @@ exports[`Alert Alert - warning Description 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - warning Heading level 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Warning Alert"
     class="pf-c-alert pf-m-warning"
@@ -2393,11 +2383,11 @@ exports[`Alert Alert - warning Heading level 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - warning Title 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Warning Alert"
     class="pf-c-alert pf-m-warning"
@@ -2438,11 +2428,11 @@ exports[`Alert Alert - warning Title 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - warning Toast alerts match snapsnot 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-atomic="false"
     aria-label="warning toast alert"
@@ -2485,11 +2475,11 @@ exports[`Alert Alert - warning Toast alerts match snapsnot 1`] = `
       Some toast alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - warning expandable variation 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Warning Alert"
     class="pf-c-alert pf-m-expandable pf-m-warning"
@@ -2557,11 +2547,11 @@ exports[`Alert Alert - warning expandable variation 1`] = `
       Some title
     </h4>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Alert Alert - warning inline variation 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="Warning Alert"
     class="pf-c-alert pf-m-inline pf-m-warning"
@@ -2602,5 +2592,5 @@ exports[`Alert Alert - warning inline variation 1`] = `
       Some alert
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

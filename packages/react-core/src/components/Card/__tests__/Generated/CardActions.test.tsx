@@ -8,6 +8,6 @@ import { CardActions } from '../../CardActions';
 import {} from '../..';
 
 it('CardActions should match snapshot (auto-generated)', () => {
-  const view = render(<CardActions children={<>ReactNode</>} className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<CardActions children={<>ReactNode</>} className={"''"} />);
+  expect(asFragment()).toMatchSnapshot();
 });

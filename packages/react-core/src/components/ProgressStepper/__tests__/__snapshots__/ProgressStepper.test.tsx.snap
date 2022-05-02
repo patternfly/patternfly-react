@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProgressStep renders content 1`] = `
-<div>
+<DocumentFragment>
   <li
     class="pf-c-progress-stepper__step"
   >
@@ -22,11 +22,11 @@ exports[`ProgressStep renders content 1`] = `
       </div>
     </div>
   </li>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ProgressStep renders current 1`] = `
-<div>
+<DocumentFragment>
   <li
     aria-current="step"
     class="pf-c-progress-stepper__step pf-m-current"
@@ -48,11 +48,11 @@ exports[`ProgressStep renders current 1`] = `
       </div>
     </div>
   </li>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ProgressStep renders custom icon 1`] = `
-<div>
+<DocumentFragment>
   <li
     class="pf-c-progress-stepper__step"
   >
@@ -87,11 +87,11 @@ exports[`ProgressStep renders custom icon 1`] = `
       </div>
     </div>
   </li>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ProgressStep renders custom null icon - removing default from variant 1`] = `
-<div>
+<DocumentFragment>
   <li
     class="pf-c-progress-stepper__step pf-m-success"
   >
@@ -112,11 +112,11 @@ exports[`ProgressStep renders custom null icon - removing default from variant 1
       </div>
     </div>
   </li>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ProgressStep renders danger variant 1`] = `
-<div>
+<DocumentFragment>
   <li
     aria-label="danger"
     class="pf-c-progress-stepper__step pf-m-danger"
@@ -148,16 +148,15 @@ exports[`ProgressStep renders danger variant 1`] = `
       <div
         class="pf-c-progress-stepper__step-title"
       >
-        danger
-         step
+        danger step
       </div>
     </div>
   </li>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ProgressStep renders default variant 1`] = `
-<div>
+<DocumentFragment>
   <li
     aria-label="default"
     class="pf-c-progress-stepper__step"
@@ -175,16 +174,15 @@ exports[`ProgressStep renders default variant 1`] = `
       <div
         class="pf-c-progress-stepper__step-title"
       >
-        default
-         step
+        default step
       </div>
     </div>
   </li>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ProgressStep renders description 1`] = `
-<div>
+<DocumentFragment>
   <li
     class="pf-c-progress-stepper__step"
   >
@@ -210,11 +208,11 @@ exports[`ProgressStep renders description 1`] = `
       </div>
     </div>
   </li>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ProgressStep renders help text styling 1`] = `
-<div>
+<DocumentFragment>
   <li
     class="pf-c-progress-stepper__step"
   >
@@ -239,11 +237,11 @@ exports[`ProgressStep renders help text styling 1`] = `
       </span>
     </div>
   </li>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ProgressStep renders info variant 1`] = `
-<div>
+<DocumentFragment>
   <li
     aria-label="info"
     class="pf-c-progress-stepper__step pf-m-info"
@@ -275,16 +273,15 @@ exports[`ProgressStep renders info variant 1`] = `
       <div
         class="pf-c-progress-stepper__step-title"
       >
-        info
-         step
+        info step
       </div>
     </div>
   </li>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ProgressStep renders pending variant 1`] = `
-<div>
+<DocumentFragment>
   <li
     aria-label="pending"
     class="pf-c-progress-stepper__step pf-m-pending"
@@ -302,16 +299,15 @@ exports[`ProgressStep renders pending variant 1`] = `
       <div
         class="pf-c-progress-stepper__step-title"
       >
-        pending
-         step
+        pending step
       </div>
     </div>
   </li>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ProgressStep renders success variant 1`] = `
-<div>
+<DocumentFragment>
   <li
     aria-label="success"
     class="pf-c-progress-stepper__step pf-m-success"
@@ -343,16 +339,15 @@ exports[`ProgressStep renders success variant 1`] = `
       <div
         class="pf-c-progress-stepper__step-title"
       >
-        success
-         step
+        success step
       </div>
     </div>
   </li>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ProgressStep renders warning variant 1`] = `
-<div>
+<DocumentFragment>
   <li
     aria-label="warning"
     class="pf-c-progress-stepper__step pf-m-warning"
@@ -384,16 +379,15 @@ exports[`ProgressStep renders warning variant 1`] = `
       <div
         class="pf-c-progress-stepper__step-title"
       >
-        warning
-         step
+        warning step
       </div>
     </div>
   </li>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ProgressStepper gets custom class and id 1`] = `
-<div>
+<DocumentFragment>
   <ol
     class="pf-c-progress-stepper custom-class"
     id="test-id"
@@ -459,11 +453,11 @@ exports[`ProgressStepper gets custom class and id 1`] = `
       </div>
     </li>
   </ol>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ProgressStepper renders center aligned 1`] = `
-<div>
+<DocumentFragment>
   <ol
     class="pf-c-progress-stepper pf-m-center"
   >
@@ -528,11 +522,11 @@ exports[`ProgressStepper renders center aligned 1`] = `
       </div>
     </li>
   </ol>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ProgressStepper renders compact 1`] = `
-<div>
+<DocumentFragment>
   <ol
     class="pf-c-progress-stepper pf-m-compact"
   >
@@ -597,11 +591,11 @@ exports[`ProgressStepper renders compact 1`] = `
       </div>
     </li>
   </ol>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ProgressStepper renders content 1`] = `
-<div>
+<DocumentFragment>
   <ol
     class="pf-c-progress-stepper"
   >
@@ -666,11 +660,11 @@ exports[`ProgressStepper renders content 1`] = `
       </div>
     </li>
   </ol>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ProgressStepper renders vertically 1`] = `
-<div>
+<DocumentFragment>
   <ol
     class="pf-c-progress-stepper pf-m-vertical"
   >
@@ -735,5 +729,5 @@ exports[`ProgressStepper renders vertically 1`] = `
       </div>
     </li>
   </ol>
-</div>
+</DocumentFragment>
 `;

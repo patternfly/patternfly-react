@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`focused table text input 1`] = `
-<div>
+<DocumentFragment>
   <input
     aria-invalid="false"
     aria-label="focused text input"
@@ -12,11 +12,11 @@ exports[`focused table text input 1`] = `
     type="text"
     value="test"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`simple table text input 1`] = `
-<div>
+<DocumentFragment>
   <input
     aria-invalid="false"
     aria-label="simple text input"
@@ -27,5 +27,5 @@ exports[`simple table text input 1`] = `
     type="text"
     value=""
   />
-</div>
+</DocumentFragment>
 `;

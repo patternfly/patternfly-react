@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Brand simple brand 1`] = `
-<div>
+<DocumentFragment>
   <img
     alt="brand"
     class="pf-c-brand"
     src=""
   />
-</div>
+</DocumentFragment>
 `;

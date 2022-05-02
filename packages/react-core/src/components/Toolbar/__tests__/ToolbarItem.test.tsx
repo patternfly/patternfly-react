@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { ToolbarItem } from '../ToolbarItem';
 
 describe('ToolbarItem', () => {
@@ -13,7 +13,7 @@ describe('ToolbarItem', () => {
       '2xl': '300px'
     };
 
-    render(<ToolbarItem widths={widths}>Test</ToolbarItem>);
-    expect(screen.getByText('Test').outerHTML).toMatchSnapshot();
+    const { asFragment } = render(<ToolbarItem widths={widths}>Test</ToolbarItem>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

@@ -3,6 +3,63 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.46.0 (2022-04-28)
+
+
+### Features
+
+* **CodeBlock:** add class to code component ([#7281](https://github.com/patternfly/patternfly-react/issues/7281)) ([844e162](https://github.com/patternfly/patternfly-react/commit/844e1621bc695c97f911f5cc64998c5d36911a4d))
+
+
+
+
+
+## 4.45.6 (2022-04-27)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+
+
+
+
+## 4.45.5 (2022-04-26)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+
+
+
+
+## 4.45.4 (2022-04-25)
+
+
+### Bug Fixes
+
+* **DateTimePicker:** update date placeholder ([#7266](https://github.com/patternfly/patternfly-react/issues/7266)) ([4e9a73e](https://github.com/patternfly/patternfly-react/commit/4e9a73e8f7645b7a885d15754f99b9e078449806))
+
+
+
+
+
+## 4.45.3 (2022-04-23)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+
+
+
+
+## 4.45.2 (2022-04-21)
+
+
+### Bug Fixes
+
+* **DataListCheck:** revert checked prop ([#7284](https://github.com/patternfly/patternfly-react/issues/7284)) ([d9889fc](https://github.com/patternfly/patternfly-react/commit/d9889fc86f224533f81457f384954e6a299c5677))
+
+
+
+
+
 ## 4.45.1 (2022-04-20)
 
 **Note:** Version bump only for package eslint-plugin-patternfly-react

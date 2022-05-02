@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CardHeader onExpand adds the toggle button 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-card__header"
   >
@@ -36,5 +36,5 @@ exports[`CardHeader onExpand adds the toggle button 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

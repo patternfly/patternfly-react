@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Gutter 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-level pf-m-gutter"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`item 1`] = `
-<div>
+<DocumentFragment>
   <div>
     Level Item
   </div>
-</div>
+</DocumentFragment>
 `;

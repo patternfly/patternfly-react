@@ -4,17 +4,17 @@ import { Form } from '../Form';
 
 describe('Form component', () => {
   test('should render default form variant', () => {
-    const view = render(<Form />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<Form />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render horizontal form variant', () => {
-    const view = render(<Form isHorizontal />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<Form isHorizontal />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render form with limited width', () => {
-    const view = render(<Form isWidthLimited />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<Form isWidthLimited />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

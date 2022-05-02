@@ -1,72 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`danger banner 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="danger"
     class="pf-c-banner pf-m-danger"
   >
-    danger
-     Banner
+    danger Banner
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`default banner 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="default"
     class="pf-c-banner"
   >
-    default
-     Banner
+    default Banner
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`info banner 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="info"
     class="pf-c-banner pf-m-info"
   >
-    info
-     Banner
+    info Banner
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`sticky banner 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="sticky"
     class="pf-c-banner pf-m-sticky"
   >
     Sticky Banner
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`success banner 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="success"
     class="pf-c-banner pf-m-success"
   >
-    success
-     Banner
+    success Banner
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`warning banner 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label="warning"
     class="pf-c-banner pf-m-warning"
   >
-    warning
-     Banner
+    warning Banner
   </div>
-</div>
+</DocumentFragment>
 `;

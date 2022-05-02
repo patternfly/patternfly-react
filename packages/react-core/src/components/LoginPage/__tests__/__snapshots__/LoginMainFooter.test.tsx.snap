@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginMainFooter className is added to the root element 1`] = `"<div class=\\"pf-c-login__main-footer extra-class\\" data-testid=\\"test-id\\"></div>"`;
+exports[`LoginMainFooter className is added to the root element 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-login__main-footer extra-class"
+  />
+</DocumentFragment>
+`;
 
-exports[`LoginMainFooter renders with PatternFly Core styles 1`] = `"<div class=\\"pf-c-login__main-footer\\" data-testid=\\"test-id\\"></div>"`;
+exports[`LoginMainFooter renders with PatternFly Core styles 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-login__main-footer"
+  />
+</DocumentFragment>
+`;

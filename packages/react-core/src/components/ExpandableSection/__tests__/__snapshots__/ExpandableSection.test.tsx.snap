@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Detached ExpandableSection renders successfully 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-expandable-section pf-m-expanded pf-m-detached"
   >
@@ -45,11 +45,11 @@ exports[`Detached ExpandableSection renders successfully 1`] = `
       </span>
     </button>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Disclosure ExpandableSection 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-expandable-section pf-m-display-lg pf-m-limit-width"
   >
@@ -86,11 +86,11 @@ exports[`Disclosure ExpandableSection 1`] = `
       test 
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ExpandableSection 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-expandable-section"
   >
@@ -127,11 +127,11 @@ exports[`ExpandableSection 1`] = `
       test 
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Renders ExpandableSection expanded 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-expandable-section pf-m-expanded"
   >
@@ -168,11 +168,11 @@ exports[`Renders ExpandableSection expanded 1`] = `
        test 
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Renders ExpandableSection indented 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-expandable-section pf-m-expanded pf-m-indented"
   >
@@ -209,11 +209,11 @@ exports[`Renders ExpandableSection indented 1`] = `
        test 
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Renders Uncontrolled ExpandableSection 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-expandable-section"
   >
@@ -252,5 +252,5 @@ exports[`Renders Uncontrolled ExpandableSection 1`] = `
        test 
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

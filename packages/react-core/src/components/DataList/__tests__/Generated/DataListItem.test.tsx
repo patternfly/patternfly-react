@@ -8,7 +8,7 @@ import { DataListItem } from '../../DataListItem';
 import {} from '../..';
 
 it('DataListItem should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <DataListItem
       isExpanded={false}
       children={<div>ReactNode</div>}
@@ -17,5 +17,5 @@ it('DataListItem should match snapshot (auto-generated)', () => {
       id={"''"}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

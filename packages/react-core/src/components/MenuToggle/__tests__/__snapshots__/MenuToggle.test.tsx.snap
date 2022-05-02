@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`menu toggle passes additional classes 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-expanded="false"
     class="pf-c-menu-toggle test-class"
@@ -34,11 +34,11 @@ exports[`menu toggle passes additional classes 1`] = `
       </span>
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`menu toggle renders successfully 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-expanded="false"
     class="pf-c-menu-toggle"
@@ -71,11 +71,11 @@ exports[`menu toggle renders successfully 1`] = `
       </span>
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`menu toggle shows badge 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-expanded="false"
     class="pf-c-menu-toggle"
@@ -117,11 +117,11 @@ exports[`menu toggle shows badge 1`] = `
       </span>
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`menu toggle shows icon 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-expanded="false"
     class="pf-c-menu-toggle"
@@ -171,11 +171,11 @@ exports[`menu toggle shows icon 1`] = `
       </span>
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`menu toggle shows isDisabled 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-expanded="false"
     class="pf-c-menu-toggle"
@@ -209,11 +209,11 @@ exports[`menu toggle shows isDisabled 1`] = `
       </span>
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`menu toggle shows isExpanded 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-expanded="true"
     class="pf-c-menu-toggle pf-m-expanded"
@@ -246,11 +246,11 @@ exports[`menu toggle shows isExpanded 1`] = `
       </span>
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`menu toggle shows isPlain 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-expanded="false"
     class="pf-c-menu-toggle pf-m-plain"
@@ -270,11 +270,11 @@ exports[`menu toggle shows isPlain 1`] = `
       />
     </svg>
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`menu toggle shows isPrimary 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-expanded="false"
     class="pf-c-menu-toggle pf-m-primary"
@@ -307,11 +307,11 @@ exports[`menu toggle shows isPrimary 1`] = `
       </span>
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`menu toggle shows plain text 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-expanded="false"
     class="pf-c-menu-toggle pf-m-plain pf-m-text"
@@ -344,5 +344,5 @@ exports[`menu toggle shows plain text 1`] = `
       </span>
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;

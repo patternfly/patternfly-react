@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChartVoronoiContainer 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
@@ -20,11 +20,11 @@ exports[`ChartVoronoiContainer 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ChartVoronoiContainer 2`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
@@ -43,11 +43,11 @@ exports[`ChartVoronoiContainer 2`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`renders container via ChartGroup 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-chart"
     style="height: 100%; width: 100%; pointer-events: none; position: relative;"
@@ -119,5 +119,5 @@ exports[`renders container via ChartGroup 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

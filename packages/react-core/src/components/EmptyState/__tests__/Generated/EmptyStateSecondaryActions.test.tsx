@@ -8,6 +8,6 @@ import { EmptyStateSecondaryActions } from '../../EmptyStateSecondaryActions';
 import {} from '../..';
 
 it('EmptyStateSecondaryActions should match snapshot (auto-generated)', () => {
-  const view = render(<EmptyStateSecondaryActions children={<>ReactNode</>} className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<EmptyStateSecondaryActions children={<>ReactNode</>} className={"''"} />);
+  expect(asFragment()).toMatchSnapshot();
 });

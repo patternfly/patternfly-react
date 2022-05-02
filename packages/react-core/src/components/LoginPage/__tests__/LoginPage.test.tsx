@@ -11,7 +11,7 @@ const needAccountMesseage = (
 );
 
 test('check loginpage example against snapshot', () => {
-  const view = render(
+  const { asFragment } = render(
     <LoginPage
       footerListVariants={ListVariant.inline}
       brandImgSrc="Brand src"
@@ -25,5 +25,5 @@ test('check loginpage example against snapshot', () => {
       socialMediaLoginContent="Footer"
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

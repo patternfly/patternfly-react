@@ -25,14 +25,14 @@ const menuItems = [
 
 describe('optionsMenu', () => {
   test('regular', () => {
-    const view = render(
+    const { asFragment } = render(
       <OptionsMenu id="regular" menuItems={menuItems} toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>} />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('right aligned', () => {
-    const view = render(
+    const { asFragment } = render(
       <OptionsMenu
         id="rightAligned"
         menuItems={menuItems}
@@ -40,11 +40,11 @@ describe('optionsMenu', () => {
         toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('open up', () => {
-    const view = render(
+    const { asFragment } = render(
       <OptionsMenu
         id="openUp"
         menuItems={menuItems}
@@ -52,11 +52,11 @@ describe('optionsMenu', () => {
         toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('right aligned + open up', () => {
-    const view = render(
+    const { asFragment } = render(
       <OptionsMenu
         id="rightAlignedOpenUp"
         menuItems={menuItems}
@@ -65,11 +65,11 @@ describe('optionsMenu', () => {
         toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('expanded', () => {
-    const view = render(
+    const { asFragment } = render(
       <OptionsMenu
         id="expanded"
         menuItems={menuItems}
@@ -77,11 +77,11 @@ describe('optionsMenu', () => {
         toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('plain', () => {
-    const view = render(
+    const { asFragment } = render(
       <OptionsMenu
         id="plain"
         menuItems={menuItems}
@@ -89,11 +89,11 @@ describe('optionsMenu', () => {
         toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('text', () => {
-    const view = render(
+    const { asFragment } = render(
       <OptionsMenu
         id="text"
         menuItems={menuItems}
@@ -102,17 +102,17 @@ describe('optionsMenu', () => {
         }
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('isDisabled', () => {
-    const view = render(
+    const { asFragment } = render(
       <OptionsMenu
         id="disabled"
         menuItems={menuItems}
         toggle={<OptionsMenuToggle isDisabled>Options Menu</OptionsMenuToggle>}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

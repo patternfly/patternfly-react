@@ -1,14 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ApplicationLauncherGroup should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <section
     class=""
   >
-    
     <ul
       role="none"
     />
   </section>
-</div>
+</DocumentFragment>
 `;

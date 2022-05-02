@@ -7,11 +7,11 @@ import { DropdownArrowContext } from '../../../Dropdown';
 
 describe('OverflowMenuDropdownItem', () => {
   it('should match snapshot', () => {
-    const view = render(
+    const { asFragment } = render(
       <DropdownArrowContext.Provider value={{ sendRef: jest.fn(), keyHandler: undefined }}>
         <OverflowMenuDropdownItem children={'any'} isShared={false} />
       </DropdownArrowContext.Provider>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

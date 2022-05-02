@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ToolbarExpandableContent should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-toolbar__expandable-content string"
   >
@@ -9,5 +9,5 @@ exports[`ToolbarExpandableContent should match snapshot (auto-generated) 1`] = `
       class="pf-c-toolbar__group"
     />
   </div>
-</div>
+</DocumentFragment>
 `;

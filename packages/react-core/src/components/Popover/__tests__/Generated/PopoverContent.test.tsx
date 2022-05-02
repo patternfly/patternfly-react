@@ -8,6 +8,6 @@ import { PopoverContent } from '../../PopoverContent';
 import {} from '../..';
 
 it('PopoverContent should match snapshot (auto-generated)', () => {
-  const view = render(<PopoverContent className={'null'} children={<div>ReactNode</div>} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<PopoverContent className={'null'} children={<div>ReactNode</div>} />);
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -4,13 +4,13 @@ import { ChartBullet } from './ChartBullet';
 
 Object.values([true, false]).forEach(() => {
   test('ChartBulletQualitativeRange', () => {
-    const view = render(<ChartBullet />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartBullet />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = render(
+  const { asFragment } = render(
     <ChartBullet
       ariaDesc="Storage capacity"
       ariaTitle="Bullet chart example"
@@ -25,5 +25,5 @@ test('renders component data', () => {
       width={450}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

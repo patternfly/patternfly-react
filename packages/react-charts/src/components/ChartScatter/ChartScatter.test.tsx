@@ -6,13 +6,13 @@ import { ChartScatter } from './ChartScatter';
 
 Object.values([true, false]).forEach(() => {
   test('ChartScatter', () => {
-    const view = render(<ChartScatter />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartScatter />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = render(
+  const { asFragment } = render(
     <Chart minDomain={{ y: 0 }} height={200} width={200}>
       <ChartGroup>
         <ChartScatter
@@ -50,5 +50,5 @@ test('renders component data', () => {
       </ChartGroup>
     </Chart>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

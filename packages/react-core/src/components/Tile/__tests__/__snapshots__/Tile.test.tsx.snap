@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tile basic 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tile"
     role="option"
@@ -17,11 +17,11 @@ exports[`Tile basic 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Tile renders disabled 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-disabled="true"
     class="pf-c-tile pf-m-disabled"
@@ -38,11 +38,11 @@ exports[`Tile renders disabled 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Tile renders selected 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-selected="true"
     class="pf-c-tile pf-m-selected"
@@ -59,11 +59,11 @@ exports[`Tile renders selected 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Tile renders with icon 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tile"
     role="option"
@@ -96,11 +96,11 @@ exports[`Tile renders with icon 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Tile renders with stacked icon 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tile"
     role="option"
@@ -133,11 +133,11 @@ exports[`Tile renders with stacked icon 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Tile renders with stacked large icon 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tile pf-m-display-lg"
     role="option"
@@ -170,11 +170,11 @@ exports[`Tile renders with stacked large icon 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Tile renders with subtext 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-tile"
     role="option"
@@ -195,5 +195,5 @@ exports[`Tile renders with subtext 1`] = `
       test subtext
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

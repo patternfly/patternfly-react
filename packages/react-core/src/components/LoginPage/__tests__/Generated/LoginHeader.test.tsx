@@ -8,6 +8,6 @@ import { LoginHeader } from '../../LoginHeader';
 import {} from '../..';
 
 it('LoginHeader should match snapshot (auto-generated)', () => {
-  const view = render(<LoginHeader children={<>ReactNode</>} className={"''"} headerBrand={null} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<LoginHeader children={<>ReactNode</>} className={"''"} headerBrand={null} />);
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ApplicationLauncher custom icon 1`] = `
-<div>
+<DocumentFragment>
   <nav
     aria-label="Application launcher"
     class="pf-c-app-launcher pf-m-expanded"
@@ -138,11 +138,11 @@ exports[`ApplicationLauncher custom icon 1`] = `
       </li>
     </ul>
   </nav>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ApplicationLauncher dropup + right aligned 1`] = `
-<div>
+<DocumentFragment>
   <nav
     aria-label="Application launcher"
     class="pf-c-app-launcher pf-m-top pf-m-align-right"
@@ -177,11 +177,11 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
       </span>
     </button>
   </nav>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ApplicationLauncher dropup 1`] = `
-<div>
+<DocumentFragment>
   <nav
     aria-label="Application launcher"
     class="pf-c-app-launcher pf-m-top"
@@ -216,11 +216,11 @@ exports[`ApplicationLauncher dropup 1`] = `
       </span>
     </button>
   </nav>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ApplicationLauncher expanded 1`] = `
-<div>
+<DocumentFragment>
   <nav
     aria-label="Application launcher"
     class="pf-c-app-launcher pf-m-expanded"
@@ -356,11 +356,11 @@ exports[`ApplicationLauncher expanded 1`] = `
       </li>
     </ul>
   </nav>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ApplicationLauncher regular 1`] = `
-<div>
+<DocumentFragment>
   <nav
     aria-label="Application launcher"
     class="pf-c-app-launcher"
@@ -395,11 +395,11 @@ exports[`ApplicationLauncher regular 1`] = `
       </span>
     </button>
   </nav>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ApplicationLauncher right aligned 1`] = `
-<div>
+<DocumentFragment>
   <nav
     aria-label="Application launcher"
     class="pf-c-app-launcher pf-m-align-right"
@@ -434,5 +434,5 @@ exports[`ApplicationLauncher right aligned 1`] = `
       </span>
     </button>
   </nav>
-</div>
+</DocumentFragment>
 `;

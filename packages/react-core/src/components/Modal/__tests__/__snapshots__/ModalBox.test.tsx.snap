@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalBox Test 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-describedby="Test Modal Box"
     aria-modal="true"
@@ -11,11 +11,11 @@ exports[`ModalBox Test 1`] = `
   >
     This is a ModalBox
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ModalBox Test large 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-describedby="Test Modal Box"
     aria-modal="true"
@@ -25,11 +25,11 @@ exports[`ModalBox Test large 1`] = `
   >
     This is a ModalBox
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ModalBox Test medium 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-describedby="Test Modal Box"
     aria-modal="true"
@@ -39,11 +39,11 @@ exports[`ModalBox Test medium 1`] = `
   >
     This is a ModalBox
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ModalBox Test small 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-describedby="Test Modal Box"
     aria-modal="true"
@@ -53,11 +53,11 @@ exports[`ModalBox Test small 1`] = `
   >
     This is a ModalBox
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ModalBox Test top aligned 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-describedby="Test Modal Box"
     aria-modal="true"
@@ -67,11 +67,11 @@ exports[`ModalBox Test top aligned 1`] = `
   >
     This is a ModalBox
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ModalBox Test top aligned distance 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-describedby="Test Modal Box"
     aria-modal="true"
@@ -82,5 +82,5 @@ exports[`ModalBox Test top aligned distance 1`] = `
   >
     This is a ModalBox
   </div>
-</div>
+</DocumentFragment>
 `;

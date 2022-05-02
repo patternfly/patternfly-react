@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`slider renders continuous slider 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-slider"
     style="--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 2;"
@@ -68,11 +68,11 @@ exports[`slider renders continuous slider 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`slider renders continuous slider with custom steps 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-slider"
     style="--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 1;"
@@ -131,11 +131,11 @@ exports[`slider renders continuous slider with custom steps 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`slider renders disabled slider 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-slider pf-m-disabled"
     style="--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 1;"
@@ -188,11 +188,11 @@ exports[`slider renders disabled slider 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`slider renders discrete slider 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-slider"
     style="--pf-c-slider--value: 40%; --pf-c-slider__value--c-form-control--width-chars: 2;"
@@ -259,11 +259,11 @@ exports[`slider renders discrete slider 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`slider renders discrete slider with custom steps 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-slider"
     style="--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 1;"
@@ -351,11 +351,11 @@ exports[`slider renders discrete slider with custom steps 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`slider renders slider with input 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-slider"
     style="--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 2;"
@@ -426,17 +426,16 @@ exports[`slider renders slider with input 1`] = `
         <span
           class="pf-c-input-group__text pf-m-plain"
         >
-           
-          %
+           %
         </span>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`slider renders slider with input above thumb 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-slider"
     style="--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 2;"
@@ -506,18 +505,17 @@ exports[`slider renders slider with input above thumb 1`] = `
           <span
             class="pf-c-input-group__text pf-m-plain"
           >
-             
-            %
+             %
           </span>
         </div>
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`slider renders slider with input actions 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-slider"
     style="--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 1;"
@@ -596,11 +594,11 @@ exports[`slider renders slider with input actions 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`slider renders slider with tooltip on thumb 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-slider"
     style="--pf-c-slider--value: 50%; --pf-c-slider__value--c-form-control--width-chars: 1;"
@@ -653,5 +651,5 @@ exports[`slider renders slider with tooltip on thumb 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

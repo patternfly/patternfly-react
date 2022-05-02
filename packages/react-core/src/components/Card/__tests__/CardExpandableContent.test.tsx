@@ -4,10 +4,10 @@ import { CardExpandableContent } from '../CardExpandableContent';
 import { render } from '@testing-library/react';
 
 test('renders successfully', () => {
-  const view = render(
+  const { asFragment } = render(
     <CardContext.Provider value={{ isExpanded: true }}>
       <CardExpandableContent />
     </CardContext.Provider>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 import { Page } from '../Page';
 import { PageHeader } from '../PageHeader';

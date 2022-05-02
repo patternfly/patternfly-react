@@ -6,7 +6,7 @@ import { render } from '@testing-library/react';
 import { FocusTrap } from '../../FocusTrap';
 
 it('FocusTrap should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <FocusTrap
       children={<div>ReactNode</div>}
       className={'string'}
@@ -15,5 +15,5 @@ it('FocusTrap should match snapshot (auto-generated)', () => {
       focusTrapOptions={undefined}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

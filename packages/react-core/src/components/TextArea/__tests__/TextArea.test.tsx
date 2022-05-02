@@ -2,7 +2,6 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
 
 import { TextArea, TextAreaBase } from '../TextArea';
 import { ValidatedOptions } from '../../../helpers/constants';
@@ -14,7 +13,7 @@ const props = {
 
 describe('TextArea', () => {
   test('textarea input passes value and event to onChange handler', () => {
-    render(<TextAreaBase {...props} value='' aria-label="test textarea" />);
+    render(<TextAreaBase {...props} value="" aria-label="test textarea" />);
 
     userEvent.type(screen.getByLabelText('test textarea'), 'a');
     expect(props.onChange).toHaveBeenCalledWith('a', expect.any(Object));
@@ -56,12 +55,16 @@ describe('TextArea', () => {
   });
 
   test('validated text area error', () => {
-    const { asFragment } = render(<TextArea {...props} required validated={ValidatedOptions.error} aria-label="validated textarea" />);
+    const { asFragment } = render(
+      <TextArea {...props} required validated={ValidatedOptions.error} aria-label="validated textarea" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('vertically resizable text area', () => {
-    const { asFragment } = render(<TextArea resizeOrientation="vertical" {...props} aria-label="vertical resize textarea" />);
+    const { asFragment } = render(
+      <TextArea resizeOrientation="vertical" {...props} aria-label="vertical resize textarea" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -84,7 +87,7 @@ describe('TextArea', () => {
 
     render(<TextArea {...props} />);
 
-    expect(myMock).toBeCalled();
+    expect(myMock).toHaveBeenCalled();
   });
 
   test('should not throw console error when id is given but no aria-label', () => {
@@ -93,7 +96,7 @@ describe('TextArea', () => {
 
     render(<TextArea {...props} id="5" />);
 
-    expect(myMock).not.toBeCalled();
+    expect(myMock).not.toHaveBeenCalled();
   });
 
   test('should not throw console error when aria-label is given but no id', () => {
@@ -102,6 +105,6 @@ describe('TextArea', () => {
 
     render(<TextArea {...props} aria-label="test textarea" />);
 
-    expect(myMock).not.toBeCalled();
+    expect(myMock).not.toHaveBeenCalled();
   });
 });
