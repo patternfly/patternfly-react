@@ -168,7 +168,7 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
       return;
     }
     if (menuRef.current.contains(event.target as Node) || toggleRef.current.contains(event.target as Node)) {
-      if (event.key === 'Escape' || event.key === 'Tab') {
+      if (event.key === 'Escape') {
         setIsOpen(!isOpen);
         toggleRef.current.focus();
       }
@@ -194,7 +194,7 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
       if (menuRef.current) {
-        const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+        const firstElement = menuRef.current.querySelector('li button:not(:disabled)');
         firstElement && (firstElement as HTMLElement).focus();
       }
     }, 0);
@@ -211,13 +211,18 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
   const menu = (
     <Menu
       ref={menuRef}
-      // eslint-disable-next-line no-console
-      onSelect={(_ev, itemId) => console.log('selected', itemId)}
       style={
         {
           '--pf-c-menu--Width': '300px'
         } as React.CSSProperties
       }
+      customKeyboardHandler={{
+        isActiveElement: (element: Element) => document.activeElement.closest('li') === element,
+        getFocusableElement: (navigableElement: Element) =>
+          navigableElement.querySelectorAll('button, input')[0] as Element,
+        validSiblingTags: ['button', 'input'],
+        onlyTraverseSiblings: false
+      }}
     >
       <MenuContent>
         <MenuList>
