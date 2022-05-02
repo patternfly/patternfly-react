@@ -25,14 +25,6 @@ export interface DividerProps extends React.HTMLProps<HTMLElement> {
     xl?: 'insetNone' | 'insetXs' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl' | 'inset3xl';
     '2xl'?: 'insetNone' | 'insetXs' | 'insetSm' | 'insetMd' | 'insetLg' | 'insetXl' | 'inset2xl' | 'inset3xl';
   };
-  /** Indicates how the divider will display at various breakpoints. */
-  orientation?: {
-    sm?: 'vertical' | 'horizontal';
-    md?: 'vertical' | 'horizontal';
-    lg?: 'vertical' | 'horizontal';
-    xl?: 'vertical' | 'horizontal';
-    '2xl'?: 'vertical' | 'horizontal';
-  };
 }
 
 export const Divider: React.FunctionComponent<DividerProps> = ({
@@ -40,7 +32,6 @@ export const Divider: React.FunctionComponent<DividerProps> = ({
   component = DividerVariant.hr,
   isVertical = false,
   inset,
-  orientation,
   ...props
 }: DividerProps) => {
   const Component: any = component;
@@ -51,7 +42,6 @@ export const Divider: React.FunctionComponent<DividerProps> = ({
         styles.divider,
         isVertical && styles.modifiers.vertical,
         formatBreakpointMods(inset, styles),
-        formatBreakpointMods(orientation, styles),
         className
       )}
       {...(component !== 'hr' && { role: 'separator' })}
