@@ -13,6 +13,6 @@ export const DividerVerticalFlexInsetVariousBreakpoints: React.FunctionComponent
         xl: 'insetXs'
       }}
     />
-    <FlexItem>second item</FlexItem>
+    <FlexItem>first item</FlexItem>
   </Flex>
 );
