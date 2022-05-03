@@ -126,7 +126,7 @@ const TabBase: React.FunctionComponent<TabProps> = ({
         <span className={css(styles.tabsItemClose)}>
           <Button
             variant="plain"
-            aria-label={closeAriaLabel || `${title} close button`}
+            aria-label={closeAriaLabel || 'Close tab'}
             onClick={(event: any) => handleTabClose(event, eventKey, tabContentRef)}
             isDisabled={isCloseDisabled}
           >
