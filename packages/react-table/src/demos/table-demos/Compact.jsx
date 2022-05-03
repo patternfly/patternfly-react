@@ -10,8 +10,6 @@ import {
   Select,
   SelectVariant,
   SelectOption,
-  Page,
-  SkipToContent,
   PageSection
 } from '@patternfly/react-core';
 import { TableComposable, Thead, Tr, Th, Tbody, Td, ActionsColumn } from '@patternfly/react-table';
@@ -89,48 +87,42 @@ export const ComposableTable = () => {
 
   return (
     <React.Fragment>
-      <Page
-        isManagedSidebar
-        skipToContent={<SkipToContent href={'#main-content-page-layout-default-nav'}>Skip to content</SkipToContent>}
-        mainContainerId={'main-content-page-layout-default-nav'}
-      >
-        <DashboardWrapper hasPageTemplateTitle>
-          <PageSection isFilled>
-            {tableToolbar}
-            <TableComposable variant="compact" aria-label="Sortable Table">
-              <Thead>
-                <Tr>
-                  {columns.map((column, columnIndex) => (
-                    <Th key={columnIndex}>{column}</Th>
-                  ))}
-                </Tr>
-              </Thead>
-              <Tbody>
-                {rows.map((row, rowIndex) => (
-                  <Tr key={rowIndex}>
-                    <>
-                      <Td dataLabel={columns[0]}>{row[0]}</Td>
-                      <Td dataLabel={columns[1]}>{row[1]}</Td>
-                      <Td dataLabel={columns[2]}>{row[2]}</Td>
-                      <Td dataLabel={columns[3]}>{row[3]}</Td>
-                      <Td dataLabel={columns[4]}>{row[4]}</Td>
-                      <Td dataLabel={columns[5]}>
-                        <CheckIcon key="icon" />
-                      </Td>
-                      <Td dataLabel={'Action'}>
-                        <a href="#">Action link</a>
-                      </Td>
-                      <Td isActionCell>
-                        <ActionsColumn items={defaultActions()} />
-                      </Td>
-                    </>
-                  </Tr>
+      <DashboardWrapper hasPageTemplateTitle>
+        <PageSection isFilled>
+          {tableToolbar}
+          <TableComposable variant="compact" aria-label="Sortable Table">
+            <Thead>
+              <Tr>
+                {columns.map((column, columnIndex) => (
+                  <Th key={columnIndex}>{column}</Th>
                 ))}
-              </Tbody>
-            </TableComposable>
-          </PageSection>
-        </DashboardWrapper>
-      </Page>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {rows.map((row, rowIndex) => (
+                <Tr key={rowIndex}>
+                  <>
+                    <Td dataLabel={columns[0]}>{row[0]}</Td>
+                    <Td dataLabel={columns[1]}>{row[1]}</Td>
+                    <Td dataLabel={columns[2]}>{row[2]}</Td>
+                    <Td dataLabel={columns[3]}>{row[3]}</Td>
+                    <Td dataLabel={columns[4]}>{row[4]}</Td>
+                    <Td dataLabel={columns[5]}>
+                      <CheckIcon key="icon" />
+                    </Td>
+                    <Td dataLabel={'Action'}>
+                      <a href="#">Action link</a>
+                    </Td>
+                    <Td isActionCell>
+                      <ActionsColumn items={defaultActions()} />
+                    </Td>
+                  </>
+                </Tr>
+              ))}
+            </Tbody>
+          </TableComposable>
+        </PageSection>
+      </DashboardWrapper>
     </React.Fragment>
   );
 };
