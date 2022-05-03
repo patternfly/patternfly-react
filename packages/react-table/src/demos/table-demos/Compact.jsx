@@ -45,7 +45,7 @@ export const ComposableTable = () => {
   ];
 
   const tableToolbar = (
-    <Toolbar id="sortable-toolbar">
+    <Toolbar id="compact-toolbar">
       <ToolbarContent>
         <ToolbarItem>
           <Select
