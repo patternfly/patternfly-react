@@ -1,10 +1,10 @@
 import React from 'react';
 import {
   MenuToggle,
-  Menu,
-  MenuContent,
-  MenuGroup,
-  MenuList,
+  Panel,
+  PanelMain,
+  PanelMainBody,
+  Title,
   Popper,
   TreeView,
   TreeViewDataItem
@@ -14,6 +14,7 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [checkedItems, setCheckedItems] = React.useState<TreeViewDataItem[]>([]);
   const toggleRef = React.useRef<HTMLButtonElement>();
+  const containerRef = React.useRef<HTMLDivElement>();
   const menuRef = React.useRef<HTMLDivElement>();
 
   const statusOptions: TreeViewDataItem[] = [
@@ -172,6 +173,15 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
         setIsOpen(!isOpen);
         toggleRef.current.focus();
       }
+
+      if (event.key === 'Tab' && !event.shiftKey) {
+        const treeList = menuRef.current.querySelectorAll('.pf-c-tree-view');
+        if (treeList[treeList.length - 1].contains(event.target as Node)) {
+          event.preventDefault();
+          setIsOpen(!isOpen);
+          toggleRef.current.focus();
+        }
+      }
     }
   };
 
@@ -202,44 +212,58 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
-      {isOpen ? 'Expanded' : 'Collapsed'}
-    </MenuToggle>
+    <div ref={containerRef}>
+      <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+        {isOpen ? 'Expanded' : 'Collapsed'}
+      </MenuToggle>
+    </div>
   );
   const statusMapped = statusOptions.map(mapTree);
   const roleMapped = roleOptions.map(mapTree);
   const menu = (
-    <Menu
+    <Panel
       ref={menuRef}
-      style={
-        {
-          '--pf-c-menu--Width': '300px'
-        } as React.CSSProperties
-      }
-      customKeyboardHandler={{
-        isActiveElement: (element: Element) => document.activeElement.closest('li') === element,
-        getFocusableElement: (navigableElement: Element) =>
-          navigableElement.querySelectorAll('button, input')[0] as Element,
-        validSiblingTags: ['button', 'input'],
-        onlyTraverseSiblings: false
+      variant="raised"
+      style={{
+        width: '300px'
       }}
     >
-      <MenuContent>
-        <MenuList>
-          <MenuGroup label="Status">
+      <PanelMain>
+        <section>
+          <PanelMainBody style={{ paddingBottom: 0 }}>
+            <Title headingLevel="h1" size={'md'}>
+              Status
+            </Title>
+          </PanelMainBody>
+          <PanelMainBody style={{ padding: 0 }}>
             <TreeView
               data={statusMapped}
               hasBadges
               hasChecks
               onCheck={(event, item) => onCheck(event, item, 'status')}
             />
-          </MenuGroup>
-          <MenuGroup label="Role">
+          </PanelMainBody>
+        </section>
+        <section>
+          <PanelMainBody style={{ paddingBottom: 0, paddingTop: 0 }}>
+            <Title headingLevel="h1" size={'md'}>
+              Roles
+            </Title>
+          </PanelMainBody>
+          <PanelMainBody style={{ padding: 0 }}>
             <TreeView data={roleMapped} hasBadges hasChecks onCheck={(event, item) => onCheck(event, item, 'role')} />
-          </MenuGroup>
-        </MenuList>
-      </MenuContent>
-    </Menu>
+          </PanelMainBody>
+        </section>
+      </PanelMain>
+    </Panel>
   );
-  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
+  return (
+    <Popper
+      trigger={toggle}
+      popper={menu}
+      isVisible={isOpen}
+      appendTo={containerRef.current}
+      popperMatchesTriggerWidth={false}
+    />
+  );
 };
