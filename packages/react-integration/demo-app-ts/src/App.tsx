@@ -13,9 +13,8 @@ import {
   PageHeader,
   PageHeaderTools,
   PageHeaderToolsItem,
-  SelectOption,
-  Select,
-  SelectVariant
+  PageHeaderToolsGroup,
+  Radio
 } from '@patternfly/react-core';
 import imgBrand from './assets/images/imgBrand.svg';
 import imgAvatar from './assets/images/imgAvatar.svg';
@@ -25,42 +24,31 @@ import './App.css';
 interface AppState {
   activeItem: number | string;
   isNavOpen: boolean;
-  isThemesOpen: boolean;
-  theme: string;
+  isDarkTheme: boolean;
 }
 
 class App extends React.Component<{}, AppState> {
   state: AppState = {
     activeItem: '',
     isNavOpen: true,
-    isThemesOpen: false,
-    theme: 'Light theme'
+    isDarkTheme: false
   };
 
   private onNavSelect = (selectedItem: { itemId: number | string }) => {
     this.setState({ activeItem: selectedItem.itemId });
   };
 
-  private onThemeSelect = (event: React.MouseEvent<Element, MouseEvent>, selectedItem: string) => {
-    this.setState({ theme: selectedItem, isThemesOpen: false });
+  private onThemeSelect = (isDarkTheme: boolean) => {
+    this.setState({ isDarkTheme });
     const htmlElement = document.getElementsByTagName('html')[0];
     if (htmlElement) {
-      if (selectedItem === 'Dark theme') {
+      if (isDarkTheme) {
         htmlElement.classList.add('pf-theme-dark');
       } else {
         htmlElement.classList.remove('pf-theme-dark');
       }
     }
   };
-
-  private onThemeToggle = () => {
-    this.setState({ isThemesOpen: !this.state.isThemesOpen });
-  };
-
-  private themeSelectItems = [
-    <SelectOption key="light" value="Light theme" />,
-    <SelectOption key="dark" value="Dark theme" />
-  ];
 
   private getPages = () => (
     <React.Fragment>
@@ -82,23 +70,32 @@ class App extends React.Component<{}, AppState> {
   private getSkipToContentLink = () => <SkipToContent href={`#${this.pageId}`}>Skip to Content</SkipToContent>;
 
   render() {
-    const { isNavOpen, activeItem, isThemesOpen, theme } = this.state;
+    const { isNavOpen, activeItem, isDarkTheme } = this.state;
 
     const AppToolbar = (
       <PageHeaderTools>
-        <PageHeaderToolsItem>
-          <Select
-            toggleId="select-theme-toggle"
-            variant={SelectVariant.single}
-            position="right"
-            onToggle={this.onThemeToggle}
-            onSelect={this.onThemeSelect}
-            selections={theme}
-            isOpen={isThemesOpen}
-          >
-            {this.themeSelectItems}
-          </Select>
-        </PageHeaderToolsItem>
+        <PageHeaderToolsGroup>
+          <PageHeaderToolsItem style={{ marginRight: '10px' }}>
+            <Radio
+              id="light-theme"
+              aria-label="Light theme"
+              label={`Light theme`}
+              name="light-theme"
+              isChecked={!isDarkTheme}
+              onChange={checked => checked && this.onThemeSelect(false)}
+            />
+          </PageHeaderToolsItem>
+          <PageHeaderToolsItem>
+            <Radio
+              id="dark-theme"
+              label="Dark theme"
+              aria-label="Dark theme"
+              name="dark-theme"
+              isChecked={isDarkTheme}
+              onChange={checked => checked && this.onThemeSelect(true)}
+            />
+          </PageHeaderToolsItem>
+        </PageHeaderToolsGroup>
         <Avatar src={imgAvatar} alt="Avatar image" />
       </PageHeaderTools>
     );

@@ -22,6 +22,7 @@ import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon
 import PauseCircle from '@patternfly/react-icons/dist/esm/icons/pause-circle-icon';
 import Thumbtack from '@patternfly/react-icons/dist/esm/icons/thumbtack-icon';
 import useDetailsLevel from '@patternfly/react-topology/dist/esm/hooks/useDetailsLevel';
+import { SVGIconProps } from '@patternfly/react-icons/dist/esm/createIcon';
 
 export enum DataTypes {
   Default,
@@ -34,6 +35,7 @@ type StyleNodeProps = {
   getCustomShape?: (node: Node) => React.FunctionComponent<ShapeProps>;
   getShapeDecoratorCenter?: (quadrant: TopologyQuadrant, node: Node) => { x: number; y: number };
   showLabel?: boolean; // Defaults to true
+  labelIcon?: React.ComponentClass<SVGIconProps>;
   showStatusDecorator?: boolean; // Defaults to false
   regrouping?: boolean;
   dragging?: boolean;
@@ -134,6 +136,7 @@ const StyleNode: React.FunctionComponent<StyleNodeProps> = ({
     return newData;
   }, [data]);
 
+  const LabelIcon = passedData.labelIcon;
   return (
     <DefaultNode
       element={element}
@@ -146,6 +149,7 @@ const StyleNode: React.FunctionComponent<StyleNodeProps> = ({
       showStatusDecorator={detailsLevel === ScaleDetailsLevel.high && passedData.showStatusDecorator}
       onContextMenu={data.showContextMenu ? onContextMenu : undefined}
       contextMenuOpen={contextMenuOpen}
+      labelIcon={LabelIcon && <LabelIcon noVerticalAlign />}
       attachments={
         detailsLevel === ScaleDetailsLevel.high && renderDecorators(element, passedData, rest.getShapeDecoratorCenter)
       }

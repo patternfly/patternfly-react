@@ -589,7 +589,7 @@ const TopologyViewComponent: React.FunctionComponent<TopologyViewComponentProps>
   );
 };
 
-export const Topology = () => {
+export const Topology = React.memo(() => {
   const controller = new Visualization();
   controller.registerLayoutFactory(defaultLayoutFactory);
   controller.registerComponentFactory(defaultComponentFactory);
@@ -600,9 +600,9 @@ export const Topology = () => {
       <TopologyViewComponent useSidebar={false} />
     </VisualizationProvider>
   );
-};
+});
 
-export const WithSideBar = () => {
+export const WithSideBar = React.memo(() => {
   const controller = new Visualization();
   controller.registerLayoutFactory(defaultLayoutFactory);
   controller.registerComponentFactory(defaultComponentFactory);
@@ -613,9 +613,9 @@ export const WithSideBar = () => {
       <TopologyViewComponent useSidebar />
     </VisualizationProvider>
   );
-};
+});
 
-export const WithResizableSideBar = () => {
+export const WithResizableSideBar = React.memo(() => {
   const controller = new Visualization();
   controller.registerLayoutFactory(defaultLayoutFactory);
   controller.registerComponentFactory(defaultComponentFactory);
@@ -625,4 +625,4 @@ export const WithResizableSideBar = () => {
       <TopologyViewComponent useSidebar sideBarResizable />
     </VisualizationProvider>
   );
-};
+});
