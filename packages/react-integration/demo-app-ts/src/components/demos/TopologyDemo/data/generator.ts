@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   EdgeAnimationSpeed,
   EdgeModel,
@@ -8,8 +9,10 @@ import {
   NodeShape,
   NodeStatus
 } from '@patternfly/react-topology';
+import SignOutAltIcon from '@patternfly/react-icons/dist/esm/icons/skull-icon';
 import { createEdge, createNode } from '../utils/styleUtils';
 import { logos } from '../utils/logos';
+import { SVGIconProps } from '@patternfly/react-icons/dist/esm/createIcon';
 
 const getRandomNode = (numNodes: number, notNode = -1): number => {
   let node = Math.floor(Math.random() * numNodes);
@@ -74,8 +77,11 @@ export const getNodeOptions = (
   showDecorators?: boolean;
   showContextMenu?: boolean;
   labelIconClass?: string;
+  labelIcon?: React.ComponentClass<SVGIconProps>;
 } => {
   const shapeEnumIndex = Math.round(Math.random() * (nodeCreationOptions.shapes.length - 1));
+  const labelIconClass = index % 2 === 0 && nodeCreationOptions.nodeIcons ? logos.get('icon-java') : undefined;
+  const labelIcon = index % 2 === 1 && nodeCreationOptions.nodeIcons ? SignOutAltIcon : undefined;
   return {
     status: nodeCreationOptions.statuses[index % nodeCreationOptions.statuses.length],
     shape: nodeCreationOptions.shapes[shapeEnumIndex],
@@ -85,7 +91,8 @@ export const getNodeOptions = (
     showStatusDecorator: nodeCreationOptions.statusDecorators,
     showDecorators: nodeCreationOptions.showDecorators,
     showContextMenu: nodeCreationOptions.contextMenus,
-    labelIconClass: nodeCreationOptions.nodeIcons ? logos.get('icon-java') : undefined
+    labelIconClass,
+    labelIcon
   };
 };
 
