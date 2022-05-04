@@ -4,6 +4,7 @@ import { Tabs, Tab, TabTitleText } from '@patternfly/react-core';
 export const TabsDynamic: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = React.useState<number>(0);
   const [tabs, setTabs] = React.useState<string[]>(['Terminal 1', 'Terminal 2', 'Terminal 3']);
+  const [newTabNumber, setNewTabNumber] = React.useState<number>(4);
   const tabComponentRef = React.useRef<any>();
   const firstMount = React.useRef(true);
 
@@ -22,8 +23,9 @@ export const TabsDynamic: React.FunctionComponent = () => {
   };
 
   const onAdd = () => {
-    setTabs([...tabs, `Terminal ${tabs.length + 1}`]);
+    setTabs([...tabs, `Terminal ${newTabNumber}`]);
     setActiveTabKey(tabs.length);
+    setNewTabNumber(newTabNumber + 1);
   };
 
   React.useEffect(() => {
