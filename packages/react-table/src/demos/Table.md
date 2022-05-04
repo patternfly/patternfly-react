@@ -266,7 +266,7 @@ class BulkSelectTableDemo extends React.Component {
 
 ### Expand/collapse all
 
-```js file="table-demos/ExpandCollapseAll.jsx"
+```js isFullscreen file="table-demos/ExpandCollapseAll.jsx"
 ```
 
 ### Column management
