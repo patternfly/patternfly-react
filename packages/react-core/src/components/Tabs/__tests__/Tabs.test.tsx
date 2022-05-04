@@ -352,7 +352,7 @@ test('should render tabs with no bottom border', () => {
 
 test('should not render tabs with secondary border bottom when not passed hasSecondaryBorderBottom', () => {
   render(
-    <Tabs id="noBottomBorderTabs" aria-label="secondary bottom border">
+    <Tabs id="noBottomBorderTabs" aria-label="Secondary bottom border">
       <Tab id="tab1" eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
         Tab 1 section
       </Tab>
@@ -365,14 +365,14 @@ test('should not render tabs with secondary border bottom when not passed hasSec
     </Tabs>
   );
 
-  const tabsContainer = screen.queryByLabelText('secondary bottom border');
+  const tabsContainer = screen.queryByLabelText('Secondary bottom border');
 
   expect(tabsContainer).not.toHaveClass('pf-m-border-bottom');
 });
 
 test('should render tabs with secondary border bottom when passed hasSecondaryBorderBottom', () => {
   render(
-    <Tabs id="noBottomBorderTabs" aria-label="secondary bottom border" hasSecondaryBorderBottom>
+    <Tabs id="noBottomBorderTabs" aria-label="Secondary bottom border" hasSecondaryBorderBottom>
       <Tab id="tab1" eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
         Tab 1 section
       </Tab>
@@ -385,7 +385,7 @@ test('should render tabs with secondary border bottom when passed hasSecondaryBo
     </Tabs>
   );
 
-  const tabsContainer = screen.queryByLabelText('secondary bottom border');
+  const tabsContainer = screen.queryByLabelText('Secondary bottom border');
 
   expect(tabsContainer).toHaveClass('pf-m-border-bottom');
 });
