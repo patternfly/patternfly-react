@@ -10,7 +10,7 @@ import {
   Button
 } from '@patternfly/react-core';
 
-export const BasicDrawer: React.FunctionComponent = () => {
+export const DrawerInlinePanelLeft: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const drawerRef = React.useRef<HTMLDivElement>();
 
@@ -47,7 +47,7 @@ export const BasicDrawer: React.FunctionComponent = () => {
       <Button aria-expanded={isExpanded} onClick={onClick}>
         Toggle drawer
       </Button>
-      <Drawer isExpanded={isExpanded} onExpand={onExpand}>
+      <Drawer isExpanded={isExpanded} isInline position="left" onExpand={onExpand}>
         <DrawerContent panelContent={panelContent}>
           <DrawerContentBody>{drawerContent}</DrawerContentBody>
         </DrawerContent>

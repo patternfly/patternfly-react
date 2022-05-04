@@ -2,15 +2,15 @@ import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
+  DrawerContent,
+  DrawerContentBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
-  Button,
-  DrawerContent,
-  DrawerContentBody
+  Button
 } from '@patternfly/react-core';
 
-export const ResizableOnBottomDrawer: React.FunctionComponent = () => {
+export const DrawerBasicInline: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const drawerRef = React.useRef<HTMLDivElement>();
 
@@ -25,8 +25,9 @@ export const ResizableOnBottomDrawer: React.FunctionComponent = () => {
   const onCloseClick = () => {
     setIsExpanded(false);
   };
+
   const panelContent = (
-    <DrawerPanelContent isResizable defaultSize={'200px'} minSize={'100px'}>
+    <DrawerPanelContent>
       <DrawerHead>
         <span tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
           drawer-panel
@@ -46,13 +47,11 @@ export const ResizableOnBottomDrawer: React.FunctionComponent = () => {
       <Button aria-expanded={isExpanded} onClick={onClick}>
         Toggle drawer
       </Button>
-      <div style={{ height: '400px' }}>
-        <Drawer isExpanded={isExpanded} onExpand={onExpand} position="bottom">
-          <DrawerContent panelContent={panelContent}>
-            <DrawerContentBody>{drawerContent}</DrawerContentBody>
-          </DrawerContent>
-        </Drawer>
-      </div>
+      <Drawer isExpanded={isExpanded} isInline onExpand={onExpand}>
+        <DrawerContent panelContent={panelContent}>
+          <DrawerContentBody>{drawerContent}</DrawerContentBody>
+        </DrawerContent>
+      </Drawer>
     </React.Fragment>
   );
 };

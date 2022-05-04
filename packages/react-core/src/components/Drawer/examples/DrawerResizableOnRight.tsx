@@ -7,11 +7,10 @@ import {
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
-  DrawerSection,
   Button
 } from '@patternfly/react-core';
 
-export const AdditionalSectionAboveContentDrawer: React.FunctionComponent = () => {
+export const DrawerResizableOnRight: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const drawerRef = React.useRef<HTMLDivElement>();
 
@@ -27,8 +26,13 @@ export const AdditionalSectionAboveContentDrawer: React.FunctionComponent = () =
     setIsExpanded(false);
   };
 
+  const onResize = (newWidth: number, id: string) => {
+    // eslint-disable-next-line no-console
+    console.log(`${id} has new width of: ${newWidth}`);
+  };
+
   const panelContent = (
-    <DrawerPanelContent>
+    <DrawerPanelContent isResizable onResize={onResize} id="right-resize-panel" defaultSize={'500px'} minSize={'150px'}>
       <DrawerHead>
         <span tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
           drawer-panel
@@ -48,8 +52,7 @@ export const AdditionalSectionAboveContentDrawer: React.FunctionComponent = () =
       <Button aria-expanded={isExpanded} onClick={onClick}>
         Toggle drawer
       </Button>
-      <Drawer isExpanded={isExpanded} onExpand={onExpand}>
-        <DrawerSection>drawer-section</DrawerSection>
+      <Drawer isExpanded={isExpanded} onExpand={onExpand} position="right">
         <DrawerContent panelContent={panelContent}>
           <DrawerContentBody>{drawerContent}</DrawerContentBody>
         </DrawerContent>

@@ -7,10 +7,11 @@ import {
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
+  DrawerSection,
   Button
 } from '@patternfly/react-core';
 
-export const PanelLeftDrawer: React.FunctionComponent = () => {
+export const DrawerAdditionalSectionAboveContent: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const drawerRef = React.useRef<HTMLDivElement>();
 
@@ -47,7 +48,8 @@ export const PanelLeftDrawer: React.FunctionComponent = () => {
       <Button aria-expanded={isExpanded} onClick={onClick}>
         Toggle drawer
       </Button>
-      <Drawer isExpanded={isExpanded} position="left" onExpand={onExpand}>
+      <Drawer isExpanded={isExpanded} onExpand={onExpand}>
+        <DrawerSection>drawer-section</DrawerSection>
         <DrawerContent panelContent={panelContent}>
           <DrawerContentBody>{drawerContent}</DrawerContentBody>
         </DrawerContent>

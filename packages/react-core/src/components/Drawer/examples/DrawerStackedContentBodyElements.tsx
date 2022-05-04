@@ -7,10 +7,11 @@ import {
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
+  DrawerPanelBody,
   Button
 } from '@patternfly/react-core';
 
-export const ModifiedContentPaddingDrawer: React.FunctionComponent = () => {
+export const DrawerStackedContentBodyElements: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const drawerRef = React.useRef<HTMLDivElement>();
 
@@ -29,18 +30,18 @@ export const ModifiedContentPaddingDrawer: React.FunctionComponent = () => {
   const panelContent = (
     <DrawerPanelContent>
       <DrawerHead>
-        <span tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
-          drawer-panel
-        </span>
+        <h3 className="pf-c-title pf-m-2xl" tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
+          drawer title{' '}
+        </h3>
         <DrawerActions>
           <DrawerCloseButton onClick={onCloseClick} />
         </DrawerActions>
+        drawer-panel
       </DrawerHead>
+      <DrawerPanelBody hasNoPadding>drawer-panel with no padding</DrawerPanelBody>
+      <DrawerPanelBody>drawer-panel</DrawerPanelBody>
     </DrawerPanelContent>
   );
-
-  const drawerContent =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium est a porttitor vehicula. Quisque vel commodo urna. Morbi mattis rutrum ante, id vehicula ex accumsan ut. Morbi viverra, eros vel porttitor facilisis, eros purus aliquet erat,nec lobortis felis elit pulvinar sem. Vivamus vulputate, risus eget commodo eleifend, eros nibh porta quam, vitae lacinia leo libero at magna. Maecenas aliquam sagittis orci, et posuere nisi ultrices sit amet. Aliquam ex odio, malesuada sed posuere quis, pellentesque at mauris. Phasellus venenatis massa ex, eget pulvinar libero auctor pretium. Aliquam erat volutpat. Duis euismod justo in quam ullamcorper, in commodo massa vulputate.';
 
   return (
     <React.Fragment>
@@ -49,9 +50,9 @@ export const ModifiedContentPaddingDrawer: React.FunctionComponent = () => {
       </Button>
       <Drawer isExpanded={isExpanded} onExpand={onExpand}>
         <DrawerContent panelContent={panelContent}>
-          <DrawerContentBody hasPadding>
-            <b>Drawer content padding.</b> {drawerContent}
-          </DrawerContentBody>
+          <DrawerContentBody>content-body</DrawerContentBody>
+          <DrawerContentBody hasPadding>content-body with padding</DrawerContentBody>
+          <DrawerContentBody>content-body</DrawerContentBody>
         </DrawerContent>
       </Drawer>
     </React.Fragment>

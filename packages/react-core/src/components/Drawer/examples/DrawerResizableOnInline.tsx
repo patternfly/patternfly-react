@@ -2,15 +2,15 @@ import React from 'react';
 import {
   Drawer,
   DrawerPanelContent,
-  DrawerContent,
-  DrawerContentBody,
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
-  Button
+  Button,
+  DrawerContent,
+  DrawerContentBody
 } from '@patternfly/react-core';
 
-export const ModifiedPanelPaddingDrawer: React.FunctionComponent = () => {
+export const DrawerResizableOnInline: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const drawerRef = React.useRef<HTMLDivElement>();
 
@@ -25,10 +25,9 @@ export const ModifiedPanelPaddingDrawer: React.FunctionComponent = () => {
   const onCloseClick = () => {
     setIsExpanded(false);
   };
-
   const panelContent = (
-    <DrawerPanelContent>
-      <DrawerHead hasNoPadding>
+    <DrawerPanelContent isResizable defaultSize={'500px'} minSize={'150px'}>
+      <DrawerHead>
         <span tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
           drawer-panel
         </span>
@@ -47,7 +46,7 @@ export const ModifiedPanelPaddingDrawer: React.FunctionComponent = () => {
       <Button aria-expanded={isExpanded} onClick={onClick}>
         Toggle drawer
       </Button>
-      <Drawer isExpanded={isExpanded} onExpand={onExpand}>
+      <Drawer isExpanded={isExpanded} onExpand={onExpand} isInline>
         <DrawerContent panelContent={panelContent}>
           <DrawerContentBody>{drawerContent}</DrawerContentBody>
         </DrawerContent>

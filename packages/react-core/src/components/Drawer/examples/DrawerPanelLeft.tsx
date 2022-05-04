@@ -10,7 +10,7 @@ import {
   Button
 } from '@patternfly/react-core';
 
-export const StaticDrawer: React.FunctionComponent = () => {
+export const DrawerPanelLeft: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const drawerRef = React.useRef<HTMLDivElement>();
 
@@ -44,10 +44,10 @@ export const StaticDrawer: React.FunctionComponent = () => {
 
   return (
     <React.Fragment>
-      <Button className="pf-u-hidden-on-md" aria-expanded={isExpanded} onClick={onClick}>
+      <Button aria-expanded={isExpanded} onClick={onClick}>
         Toggle drawer
       </Button>
-      <Drawer isStatic isExpanded={isExpanded} onExpand={onExpand}>
+      <Drawer isExpanded={isExpanded} position="left" onExpand={onExpand}>
         <DrawerContent panelContent={panelContent}>
           <DrawerContentBody>{drawerContent}</DrawerContentBody>
         </DrawerContent>

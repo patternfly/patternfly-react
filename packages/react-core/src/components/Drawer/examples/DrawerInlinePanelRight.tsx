@@ -10,7 +10,7 @@ import {
   Button
 } from '@patternfly/react-core';
 
-export const BreakpointDrawer: React.FunctionComponent = () => {
+export const DrawerInlinePanelRight: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const drawerRef = React.useRef<HTMLDivElement>();
 
@@ -27,7 +27,7 @@ export const BreakpointDrawer: React.FunctionComponent = () => {
   };
 
   const panelContent = (
-    <DrawerPanelContent widths={{ default: 'width_33' }}>
+    <DrawerPanelContent>
       <DrawerHead>
         <span tabIndex={isExpanded ? 0 : -1} ref={drawerRef}>
           drawer-panel
@@ -47,7 +47,7 @@ export const BreakpointDrawer: React.FunctionComponent = () => {
       <Button aria-expanded={isExpanded} onClick={onClick}>
         Toggle drawer
       </Button>
-      <Drawer isExpanded={isExpanded} onExpand={onExpand}>
+      <Drawer isExpanded={isExpanded} isInline onExpand={onExpand}>
         <DrawerContent panelContent={panelContent}>
           <DrawerContentBody>{drawerContent}</DrawerContentBody>
         </DrawerContent>
