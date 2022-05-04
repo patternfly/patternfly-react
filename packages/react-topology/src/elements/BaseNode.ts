@@ -40,6 +40,8 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
 
   private positioned = false;
 
+  private uncollapsedCenter: Point = null;
+
   @observable.ref
   private position = new Point();
 
@@ -158,10 +160,31 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
   }
 
   getPosition(): Point {
+    if (this.isGroup() && !this.collapsed) {
+      return this.getBounds().getCenter();
+    }
     return this.position;
   }
 
+  updateChildrenPositions(point: Point, prevLocation: Point): void {
+    const xOffset = point.x - prevLocation.x;
+    const yOffset = point.y - prevLocation.y;
+    this.getChildren().forEach(child => {
+      if (isNode(child)) {
+        const node = child as Node;
+        const position = node.getPosition();
+        const newPosition = new Point(position.x + xOffset, position.y + yOffset);
+        node.setPosition(newPosition);
+      }
+    });
+  }
+
   setPosition(point: Point): void {
+    if (this.isGroup() && !this.collapsed) {
+      const prevLocation = this.getBounds().getCenter();
+      this.updateChildrenPositions(point, prevLocation);
+      return;
+    }
     this.position = point;
     this.positioned = true;
     try {
@@ -243,8 +266,15 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
       // keeping the nodes ln place so the layout doesn't start fresh (putting the new nodes at 0,0
       // TODO: Update to better position the nodes at a point location rather than relying on the setCenter updating the nodes.
       const prevCenter = this.getBounds().getCenter();
-      this.collapsed = collapsed;
-      this.setBounds(this.getBounds().setCenter(prevCenter.x, prevCenter.y));
+      if (!collapsed && this.uncollapsedCenter) {
+        this.updateChildrenPositions(prevCenter, this.uncollapsedCenter);
+        this.uncollapsedCenter = null;
+        this.collapsed = collapsed;
+      } else {
+        this.uncollapsedCenter = collapsed ? prevCenter : null;
+        this.collapsed = collapsed;
+        this.setBounds(this.getBounds().setCenter(prevCenter.x, prevCenter.y));
+      }
       this.getController().fireEvent(NODE_COLLAPSE_CHANGE_EVENT, { node: this });
     }
   }

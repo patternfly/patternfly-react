@@ -32,7 +32,7 @@ export class GridLayout extends BaseLayout implements Layout {
     return new GridGroup(node, padding, index);
   }
 
-  protected startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean): void {
+  public startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean): void {
     if (initialRun || addingNodes) {
       this.nodes.sort((a, b) => a.id.localeCompare(b.id));
       const totalNodes = this.nodes.length;
