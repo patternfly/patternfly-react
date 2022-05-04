@@ -5,7 +5,7 @@ import globalBreakpointLg from '@patternfly/react-tokens/dist/esm/global_breakpo
 import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/global_breakpoint_xl';
 import globalBreakpoint2xl from '@patternfly/react-tokens/dist/esm/global_breakpoint_2xl';
 
-interface ToolbarContextProps {
+export interface ToolbarContextProps {
   isExpanded: boolean;
   toggleIsExpanded: () => void;
   chipGroupContentRef: RefObject<HTMLDivElement>;
