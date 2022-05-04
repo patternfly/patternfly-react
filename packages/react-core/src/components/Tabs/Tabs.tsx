@@ -41,7 +41,7 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   isBox?: boolean;
   /** Enables vertical tab styling */
   isVertical?: boolean;
-  /** Enables no border bottom tab styling */
+  /** Enables border bottom tab styling on tabs. Defaults to true. To remove the bottom border, set this prop to false. */
   hasBorderBottom?: boolean;
   /** Enables border bottom styling for secondary tabs */
   hasSecondaryBorderBottom?: boolean;
