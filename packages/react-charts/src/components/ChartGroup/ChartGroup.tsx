@@ -21,7 +21,15 @@ import {
 import { VictoryGroup, VictoryGroupProps, VictoryGroupTTargetType } from 'victory-group';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { getClassName, getTheme } from '../ChartUtils';
+import {
+  getClassName,
+  getDefaultColorScale,
+  getDefaultPatternScale,
+  getPatternId,
+  getPatternDefs,
+  getTheme,
+  renderChildrenWithPatterns
+} from '../ChartUtils';
 
 export enum ChartGroupSortOrder {
   ascending = 'ascending',
@@ -286,6 +294,24 @@ export interface ChartGroupProps extends VictoryGroupProps {
    */
   padding?: PaddingProps;
   /**
+   * The optional ID to prefix pattern defs
+   *
+   * @example patternId="pattern"
+   */
+  patternId?: string;
+  /**
+   * The patternScale prop is an optional prop that defines a pattern to be applied to the children, where applicable.
+   * This prop should be given as an array of CSS colors, or as a string corresponding to a URL. Patterns will be
+   * assigned to children by index, unless they are explicitly specified in styles. Patterns will repeat when there are
+   * more children than patterns in the provided patternScale. Functionality may be overridden via the `style.data.fill`
+   * property.
+   *
+   * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
+   *
+   * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
+   */
+  patternScale?: string[];
+  /**
    * Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart.
    */
   polar?: boolean;
@@ -404,6 +430,10 @@ export interface ChartGroupProps extends VictoryGroupProps {
    */
   themeVariant?: string;
   /**
+   * Generate default pattern defs and populate patternScale
+   */
+  usePatternDefs?: boolean;
+  /**
    * The width props specifies the width of the svg viewBox of the chart container
    * This value should be given as a number of pixels
    */
@@ -449,14 +479,17 @@ export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
   ariaDesc,
   ariaTitle,
   children,
+  colorScale,
   containerComponent = <ChartContainer />,
+  patternId = getPatternId(),
+  patternScale,
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
+  usePatternDefs = false,
 
   // destructure last
   theme = getTheme(themeColor),
-
   ...rest
 }: ChartGroupProps) => {
   // Clone so users can override container props
@@ -468,10 +501,23 @@ export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
     className: getClassName({ className: containerComponent.props.className }) // Override VictoryContainer class name
   });
 
+  const defaultColorScale = getDefaultColorScale(colorScale, theme.group.colorScale as string[]);
+  const defaultPatternScale = getDefaultPatternScale({
+    colorScale: defaultColorScale,
+    patternScale,
+    patternId,
+    usePatternDefs
+  });
+
   // Note: containerComponent is required for theme
   return (
-    <VictoryGroup containerComponent={container} theme={theme} {...rest}>
-      {children}
+    <VictoryGroup colorScale={colorScale} containerComponent={container} theme={theme} {...rest}>
+      {renderChildrenWithPatterns({
+        children,
+        patternId,
+        patternScale: defaultPatternScale
+      })}
+      {usePatternDefs && getPatternDefs({ patternId, patternScale: defaultColorScale })}
     </VictoryGroup>
   );
 };

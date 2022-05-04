@@ -357,6 +357,24 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   padAngle?: NumberOrCallback;
   /**
+   * The optional ID to prefix pattern defs
+   *
+   * @example patternId="pattern"
+   */
+  patternId?: string;
+  /**
+   * The patternScale prop is an optional prop that defines a pattern to be applied to the children, where applicable.
+   * This prop should be given as an array of CSS colors, or as a string corresponding to a URL. Patterns will be
+   * assigned to children by index, unless they are explicitly specified in styles. Patterns will repeat when there are
+   * more children than patterns in the provided patternScale. Functionality may be overridden via the `style.data.fill`
+   * property.
+   *
+   * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
+   *
+   * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
+   */
+  patternScale?: string[];
+  /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
@@ -504,6 +522,10 @@ export interface ChartDonutProps extends ChartPieProps {
    * Note: Default label properties may be applied
    */
   titleComponent?: React.ReactElement<any>;
+  /**
+   * Generate default pattern defs and populate patternScale
+   */
+  usePatternDefs?: boolean;
   /**
    * Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels.
    *

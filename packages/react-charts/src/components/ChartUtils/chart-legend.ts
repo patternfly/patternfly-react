@@ -9,12 +9,14 @@ import * as React from 'react';
 interface ChartLegendInterface {
   allowWrap?: boolean; // Allow legend items to wrap to the next line
   chartType?: string; // The type of chart (e.g., pie) to lookup for props
+  colorScale?: any; // The color scale that will be applied to the chart
   dx?: number; // Horizontal shift from the x coordinate
   dy?: number; // Vertical shift from the x coordinate
   height: number; // Overall height of SVG
   legendComponent: React.ReactElement<any>; // The base legend component to render
   orientation?: 'horizontal' | 'vertical'; // Orientation of legend
   padding: PaddingProps; // Chart padding
+  patternScale?: string[]; // Legend symbol patterns
   position: 'bottom' | 'bottom-left' | 'right'; // The legend position
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
   width: number; // Overall width of SVG
@@ -53,11 +55,13 @@ interface ChartLegendTextMaxSizeInterface {
 export const getComputedLegend = ({
   allowWrap = true,
   chartType = 'chart',
+  colorScale,
   dx = 0,
   dy = 0,
   height,
   legendComponent,
   padding,
+  patternScale,
   position = ChartCommonStyles.legend.position as ChartLegendPosition,
   theme,
   width,
@@ -115,8 +119,10 @@ export const getComputedLegend = ({
 
   // Clone legend with updated props
   const legendProps = defaults({}, legendComponent.props, {
+    colorScale,
     itemsPerRow: legendItemsPerRow,
     orientation,
+    patternScale,
     standalone: false,
     theme,
     x: legendX > 0 ? legendX : 0,

@@ -27,7 +27,15 @@ import { ChartContainer } from '../ChartContainer';
 import { ChartLegend, ChartLegendOrientation } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
-import { getComputedLegend, getPaddingForSide, getTheme } from '../ChartUtils';
+import {
+  getComputedLegend,
+  getPaddingForSide,
+  getPatternId,
+  getPatternDefs,
+  getTheme,
+  getDefaultColorScale,
+  getDefaultPatternScale
+} from '../ChartUtils';
 
 export enum ChartPieLabelPosition {
   centroid = 'centroid',
@@ -351,6 +359,24 @@ export interface ChartPieProps extends VictoryPieProps {
    */
   padding?: PaddingProps;
   /**
+   * The optional ID to prefix pattern defs
+   *
+   * @example patternId="pattern"
+   */
+  patternId?: string;
+  /**
+   * The patternScale prop is an optional prop that defines a pattern to be applied to the children, where applicable.
+   * This prop should be given as an array of CSS colors, or as a string corresponding to a URL. Patterns will be
+   * assigned to children by index, unless they are explicitly specified in styles. Patterns will repeat when there are
+   * more children than patterns in the provided patternScale. Functionality may be overridden via the `style.data.fill`
+   * property.
+   *
+   * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
+   *
+   * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
+   */
+  patternScale?: string[];
+  /**
    * Specifies the radius of the chart. If this property is not provided it is computed
    * from width, height, and padding props
    *
@@ -425,6 +451,10 @@ export interface ChartPieProps extends VictoryPieProps {
    */
   themeVariant?: string;
   /**
+   * Generate default pattern defs and populate patternScale
+   */
+  usePatternDefs?: boolean;
+  /**
    * Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels.
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
@@ -465,19 +495,23 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
+  colorScale,
   constrainToVisibleArea = false,
   containerComponent = <ChartContainer />,
-  labels,
   legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
+  patternId = getPatternId(),
+  patternScale,
   padding,
   radius,
   standalone = true,
+  style,
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
+  usePatternDefs = false,
 
   // destructure last
   theme = getTheme(themeColor),
@@ -508,15 +542,40 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   };
   const chartRadius = radius ? radius : getDefaultRadius();
 
+  const defaultColorScale = getDefaultColorScale(colorScale, theme.pie.colorScale as string[]);
+  const defaultPatternScale = getDefaultPatternScale({
+    colorScale: defaultColorScale,
+    patternScale,
+    patternId,
+    usePatternDefs
+  });
+
+  // Merge pattern IDs with `style.data.fill` property
+  const getDefaultStyle = () => {
+    if (!defaultPatternScale) {
+      return style;
+    }
+    const _style = style ? { ...style } : {};
+    _style.data = {
+      fill: ({ slice }: any) => {
+        const pattern = defaultPatternScale[slice.index % defaultPatternScale.length];
+        return pattern && pattern !== null ? pattern : defaultColorScale[slice.index % defaultColorScale.length];
+      },
+      ..._style.data
+    };
+    return _style;
+  };
+
   const chart = (
     <VictoryPie
+      colorScale={colorScale}
       height={height}
       key="pf-chart-pie"
-      labels={labels}
       labelComponent={labelComponent}
       padding={padding}
       radius={chartRadius}
       standalone={false}
+      style={getDefaultStyle()}
       theme={theme}
       width={width}
       {...rest}
@@ -524,6 +583,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   );
 
   const legend = React.cloneElement(legendComponent, {
+    colorScale,
     data: legendData,
     key: 'pf-chart-pie-legend',
     orientation: legendOrientation,
@@ -542,6 +602,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
       height,
       legendComponent: legend,
       padding: defaultPadding,
+      ...(defaultPatternScale && { patternScale: defaultPatternScale }),
       position: legendPosition,
       theme,
       width
@@ -549,18 +610,20 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   };
 
   // Clone so users can override container props
-  const container = React.cloneElement(
-    containerComponent,
-    {
-      desc: ariaDesc,
-      height,
-      title: ariaTitle,
-      width,
-      theme,
-      ...containerComponent.props
-    },
-    [chart, getLegend()]
-  );
+  const container = standalone
+    ? React.cloneElement(
+        containerComponent,
+        {
+          desc: ariaDesc,
+          height,
+          title: ariaTitle,
+          width,
+          theme,
+          ...containerComponent.props
+        },
+        [chart, getLegend(), usePatternDefs && getPatternDefs({ patternId, patternScale: defaultColorScale })]
+      )
+    : null;
 
   return standalone ? (
     <React.Fragment>{container}</React.Fragment>
@@ -568,6 +631,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     <React.Fragment>
       {chart}
       {getLegend()}
+      {usePatternDefs && getPatternDefs({ patternId, patternScale: defaultColorScale })}
     </React.Fragment>
   );
 };

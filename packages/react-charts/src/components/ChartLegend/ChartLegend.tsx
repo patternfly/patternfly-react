@@ -202,6 +202,18 @@ export interface ChartLegendProps extends VictoryLegendProps {
    */
   padding?: PaddingProps;
   /**
+   * The patternScale prop is an optional prop that defines a pattern to be applied to the children, where applicable.
+   * This prop should be given as an array of CSS colors, or as a string corresponding to a URL. Patterns will be
+   * assigned to children by index, unless they are explicitly specified in styles. Patterns will repeat when there are
+   * more children than patterns in the provided patternScale. Functionality may be overridden via the `data.symbol.fill`
+   * property.
+   *
+   * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
+   *
+   * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
+   */
+  patternScale?: string[];
+  /**
    * The responsive prop specifies whether the rendered container should be a responsive container with a viewBox
    * attribute, or a static container with absolute width and height.
    *
@@ -314,13 +326,20 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * The x and y props define the base position of the legend element.
    */
   y?: number;
+  /**
+   * Generate default pattern defs and populate patternScale
+   */
+  usePatternDefs?: boolean;
 }
 
 export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
+  colorScale,
   containerComponent = <ChartContainer />,
   dataComponent = <ChartPoint />,
   labelComponent = <ChartLabel />,
+  patternScale,
   responsive = true,
+  style,
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
@@ -330,6 +349,29 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
   theme = getTheme(themeColor),
   ...rest
 }: ChartLegendProps) => {
+  // Merge pattern IDs with `style.data.fill` property
+  const getDefaultStyle = () => {
+    if (!patternScale) {
+      return style;
+    }
+
+    // Note: ChartLegendTooltipContent overrides patterns via `data.symbol.fill` property
+    const _style = style ? { ...style } : {};
+    _style.data = {
+      fill: ({ index }: any) => {
+        const themeColor =
+          theme && theme.legend && theme.legend.colorScale
+            ? theme.legend.colorScale[index % theme.legend.colorScale.length]
+            : undefined;
+        const pattern = patternScale[index % patternScale.length];
+        const color = colorScale ? colorScale[index % colorScale.length] : themeColor; // Sync color scale
+        return pattern && pattern !== null ? pattern : color;
+      },
+      ..._style.data
+    };
+    return _style;
+  };
+
   // Clone so users can override container props
   const container = React.cloneElement(containerComponent, {
     responsive,
@@ -340,9 +382,11 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
   // Note: containerComponent is required for theme
   return (
     <VictoryLegend
+      colorScale={colorScale}
       containerComponent={container}
       dataComponent={dataComponent}
       labelComponent={labelComponent}
+      style={getDefaultStyle()}
       theme={theme}
       titleComponent={titleComponent}
       {...rest}
