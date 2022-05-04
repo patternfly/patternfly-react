@@ -43,7 +43,7 @@ export const LAYOUT_DEFAULTS: LayoutOptions = {
   layoutOnDrag: true
 };
 export class BaseLayout implements Layout {
-  private readonly graph: Graph;
+  protected readonly graph: Graph;
 
   protected forceSimulation: ForceSimulation;
 
@@ -233,8 +233,11 @@ export class BaseLayout implements Layout {
     if (!this.scheduleHandle) {
       this.scheduleHandle = window.requestAnimationFrame(() => {
         delete this.scheduleHandle;
-        this.runLayout(false, this.scheduleRestart);
-        this.scheduleRestart = false;
+        try {
+          this.runLayout(false, this.scheduleRestart);
+          this.scheduleRestart = false;
+          // eslint-disable-next-line no-empty
+        } catch (e) {}
       });
     }
   };
@@ -397,7 +400,7 @@ export class BaseLayout implements Layout {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  protected startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean): void {}
+  public startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean, onEnd?: () => void): void {}
 
   protected updateLayout(): void {
     this.forceSimulation.useForceSimulation(this.nodes, this.edges, this.getFixedNodeDistance);

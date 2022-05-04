@@ -52,7 +52,7 @@ export class DagreLayout extends BaseLayout implements Layout {
     return [];
   }
 
-  protected startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean): void {
+  public startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean): void {
     if (initialRun || addingNodes) {
       const dagreGraph = new dagre.graphlib.Graph({ compound: true });
       dagreGraph.setGraph(_.omit(this.dagreOptions, Object.keys(LAYOUT_DEFAULTS)));

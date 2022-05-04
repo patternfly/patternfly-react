@@ -3,6 +3,62 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.60.8 (2022-05-04)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.60.7 (2022-05-04)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.60.6 (2022-05-03)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.60.5 (2022-05-03)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.60.4 (2022-05-03)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.60.3 (2022-05-03)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 4.60.2 (2022-05-03)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
 ## 4.60.1 (2022-05-03)
 
 **Note:** Version bump only for package @patternfly/react-tokens

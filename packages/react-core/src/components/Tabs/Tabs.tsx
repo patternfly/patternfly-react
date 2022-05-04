@@ -425,9 +425,9 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               !(unmountOnExit && child.props.eventKey !== localActiveKey) &&
               !(mountOnEnter && shownKeys.indexOf(child.props.eventKey) === -1)
           )
-          .map((child, index) => (
+          .map(child => (
             <TabContent
-              key={index}
+              key={child.props.eventKey}
               activeKey={localActiveKey}
               child={child}
               id={child.props.id || uniqueId}

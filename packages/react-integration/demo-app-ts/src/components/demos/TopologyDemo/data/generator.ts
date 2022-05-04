@@ -48,7 +48,7 @@ export const DefaultNodeOptions: GeneratorNodeOptions = {
   statuses: [NodeStatus.default],
   statusDecorators: false,
   showDecorators: false,
-  nodeLabels: false,
+  nodeLabels: true,
   nodeSecondaryLabels: false,
   nodeBadges: false,
   nodeIcons: false,
@@ -133,6 +133,7 @@ export const generateDataModel = (
   numNodes: number,
   numGroups: number,
   numEdges: number,
+  groupDepth: number = 0,
   nodeOptions: GeneratorNodeOptions = {},
   edgeOptions: GeneratorEdgeOptions = {}
 ): Model => {
@@ -143,13 +144,20 @@ export const generateDataModel = (
   const nodes: NodeModel[] = [];
   const edges: EdgeModel[] = [];
 
-  for (let i = 1; i <= numGroups; i++) {
-    groups.push({
-      id: `Group-${i}`,
+  const createGroup = (
+    childNodes: NodeModel[],
+    baseId: string = 'Group',
+    index: number,
+    level: number = 0
+  ): NodeModel => {
+    const id = `${baseId}-${index}`;
+    const group: NodeModel = {
+      id,
       children: [],
       type: 'group',
       group: true,
-      label: `Group-${i}`,
+      label: id,
+      style: { padding: 15 },
       data: {
         badge: nodeCreationOptions.nodeBadges ? 'GN' : undefined,
         badgeColor: '#F2F0FC',
@@ -160,16 +168,33 @@ export const generateDataModel = (
         showContextMenu: nodeCreationOptions.contextMenus,
         collapsible: true
       }
-    });
-  }
+    };
+    if (level === groupDepth) {
+      group.children = childNodes.map(n => n.id);
+    } else {
+      const nodesPerChildGroup = Math.floor(childNodes.length / 2);
+      if (nodesPerChildGroup < 1) {
+        const g1 = createGroup(childNodes, id, 1, level + 1);
+        group.children = [g1.id];
+      } else {
+        const g1 = createGroup(childNodes.slice(0, nodesPerChildGroup), id, 1, level + 1);
+        const g2 = createGroup(childNodes.slice(nodesPerChildGroup), id, 2, level + 1);
+        group.children = [g1.id, g2.id];
+      }
+    }
+
+    groups.push(group);
+    return group;
+  };
+
   for (let i = 0; i < numNodes; i++) {
     const node = generateNode(i, nodeCreationOptions);
     nodes.push(node);
+  }
 
-    const group = i % (numGroups + 1);
-    if (group > 0) {
-      groups[group - 1].children.push(node.id);
-    }
+  const nodesPerGroup = Math.floor((numNodes - 2) / numGroups);
+  for (let i = 0; i < numGroups; i++) {
+    createGroup(nodes.slice(i * nodesPerGroup, (i + 1) * nodesPerGroup), 'Group', i + 1);
   }
 
   for (let i = 0; i < numEdges; i++) {
