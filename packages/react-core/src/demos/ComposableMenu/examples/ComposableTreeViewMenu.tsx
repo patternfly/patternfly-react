@@ -86,7 +86,7 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
       customBadgeContent: 0
     }
   ];
-  // Helper functions
+  // Helper functions for tree
   const isChecked = (dataItem: TreeViewDataItem) => checkedItems.some(item => item.id === dataItem.id);
   const areAllDescendantsChecked = (dataItem: TreeViewDataItem) =>
     dataItem.children ? dataItem.children.every(child => areAllDescendantsChecked(child)) : isChecked(dataItem);
@@ -164,16 +164,20 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
     );
   };
 
+  // Controls keys that should open/close the menu
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (!isOpen) {
       return;
     }
     if (menuRef.current.contains(event.target as Node) || toggleRef.current.contains(event.target as Node)) {
+      // The escape key when pressed while inside the menu should close the menu and refocus the toggle
       if (event.key === 'Escape') {
         setIsOpen(!isOpen);
         toggleRef.current.focus();
       }
 
+      // The tab key when pressed while inside the menu and on the contained last tree view should close the menu and refocus the toggle
+      // Shift tab should keep the default behavior to return to a previous tree view
       if (event.key === 'Tab' && !event.shiftKey) {
         const treeList = menuRef.current.querySelectorAll('.pf-c-tree-view');
         if (treeList[treeList.length - 1].contains(event.target as Node)) {
@@ -185,6 +189,7 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
     }
   };
 
+  // Controls that a click outside the menu while the menu is open should close the menu
   const handleClickOutside = (event: MouseEvent) => {
     if (isOpen && !menuRef.current.contains(event.target as Node)) {
       setIsOpen(false);

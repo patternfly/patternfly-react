@@ -59,8 +59,6 @@ export interface MenuProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'r
   isPlain?: boolean;
   /** Indicates if the menu should be srollable */
   isScrollable?: boolean;
-  /** Props spread to keyboard handler component for custom menu structures  */
-  customKeyboardHandler?: any;
 }
 
 export interface MenuState {
@@ -240,7 +238,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       onGetMenuHeight,
       parentMenu = null,
       activeItemId = null,
-      customKeyboardHandler,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       innerRef,
       isRootMenu,
@@ -285,7 +282,6 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             }
             noEnterHandling
             noSpaceHandling
-            {...customKeyboardHandler}
           />
         )}
         <div
