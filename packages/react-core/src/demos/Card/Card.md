@@ -3,7 +3,6 @@ id: Card view
 section: demos
 ---
 
-import '../../components/Card/examples/Card.css';
 import DashboardWrapper from '../examples/DashboardWrapper';
 
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';

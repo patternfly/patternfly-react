@@ -6,7 +6,6 @@ propComponents: ['Card', 'CardActions', 'CardHeader', 'CardHeaderMain', 'CardTit
 ouia: true
 ---
 
-import './Card.css';
 import pfLogo from './pfLogo.svg';
 import pfLogoSmall from './pf-logo-small.svg';
 
