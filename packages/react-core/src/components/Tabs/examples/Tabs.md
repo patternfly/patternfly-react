@@ -56,7 +56,12 @@ class SimpleTabs extends React.Component {
 
     return (
       <div>
-        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox} aria-label="Tabs in the default example">
+        <Tabs
+          activeKey={activeTabKey}
+          onSelect={this.handleTabClick}
+          isBox={isBox}
+          aria-label="Tabs in the default example"
+        >
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
           </Tab>
@@ -99,7 +104,7 @@ class SimpleTabs extends React.Component {
 
 ### With tooltip react ref
 
-When using a React ref to link a Tooltip to a Tab component via the `reference` prop, you should avoid manually passing in a value of off to the `aria-live` prop. Doing so may lead to the tooltip becoming less accessible to assistive technologies.
+When using a React ref to link a Tooltip to a Tab component via the `reference` prop, you should avoid manually passing in a value of "off" to the `aria-live` prop. Doing so may lead to the tooltip becoming less accessible to assistive technologies.
 
 ```js
 import React from 'react';
@@ -132,7 +137,12 @@ class SimpleTabs extends React.Component {
 
     return (
       <div>
-        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox} aria-label="Tabs in the example with a tooltip ref">
+        <Tabs
+          activeKey={activeTabKey}
+          onSelect={this.handleTabClick}
+          isBox={isBox}
+          aria-label="Tabs in the example with a tooltip ref"
+        >
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
           </Tab>
@@ -336,7 +346,12 @@ class ScrollButtonsPrimaryTabs extends React.Component {
     const { activeTabKey, isBox } = this.state;
     return (
       <div>
-        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox} aria-label="Tabs in the default overflow example">
+        <Tabs
+          activeKey={activeTabKey}
+          onSelect={this.handleTabClick}
+          isBox={isBox}
+          aria-label="Tabs in the default overflow example"
+        >
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
           </Tab>
@@ -422,7 +437,13 @@ class VerticalTabs extends React.Component {
 
     return (
       <div>
-        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} isVertical isBox={isBox} aria-label="Tabs in the vertical example">
+        <Tabs
+          activeKey={activeTabKey}
+          onSelect={this.handleTabClick}
+          isVertical
+          isBox={isBox}
+          aria-label="Tabs in the vertical example"
+        >
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
           </Tab>
@@ -687,7 +708,13 @@ class PageInsetsTabs extends React.Component {
     const { activeTabKey, isBox } = this.state;
     return (
       <div>
-        <Tabs activeKey={activeTabKey} onSelect={this.handleTabClick} usePageInsets isBox={isBox} aria-label="Tabs in the page insets example">
+        <Tabs
+          activeKey={activeTabKey}
+          onSelect={this.handleTabClick}
+          usePageInsets
+          isBox={isBox}
+          aria-label="Tabs in the page insets example"
+        >
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
           </Tab>
@@ -751,7 +778,11 @@ class IconAndTextTabs extends React.Component {
 
   render() {
     return (
-      <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick} aria-label="Tabs in the icons and text example">
+      <Tabs
+        activeKey={this.state.activeTabKey}
+        onSelect={this.handleTabClick}
+        aria-label="Tabs in the icons and text example"
+      >
         <Tab
           eventKey={0}
           title={
@@ -874,9 +905,19 @@ class SecondaryTabs extends React.Component {
     const { activeTabKey1, activeTabKey2, isBox } = this.state;
     return (
       <div>
-        <Tabs activeKey={activeTabKey1} onSelect={this.handleTabClickFirst} isBox={isBox} aria-label="Tabs in the tabs with subtabs example">
+        <Tabs
+          activeKey={activeTabKey1}
+          onSelect={this.handleTabClickFirst}
+          isBox={isBox}
+          aria-label="Tabs in the tabs with subtabs example"
+        >
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
-            <Tabs aria-label="secondary tabs for users" activeKey={activeTabKey2} isSecondary onSelect={this.handleTabClickSecond}>
+            <Tabs
+              aria-label="secondary tabs for users"
+              activeKey={activeTabKey2}
+              isSecondary
+              onSelect={this.handleTabClickSecond}
+            >
               <Tab eventKey={20} title={<TabTitleText>Secondary tab item 1</TabTitleText>}>
                 Secondary tab item 1 item section
               </Tab>
@@ -981,7 +1022,13 @@ class FilledTabs extends React.Component {
     const { activeTabKey, isBox } = this.state;
     return (
       <div>
-        <Tabs isFilled activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox} aria-label="Tabs in the filled example">
+        <Tabs
+          isFilled
+          activeKey={activeTabKey}
+          onSelect={this.handleTabClick}
+          isBox={isBox}
+          aria-label="Tabs in the filled example"
+        >
           <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>}>
             Users
           </Tab>
@@ -1042,7 +1089,13 @@ class FilledTabsWithIcons extends React.Component {
     const { activeTabKey, isBox } = this.state;
     return (
       <div>
-        <Tabs isFilled activeKey={activeTabKey} onSelect={this.handleTabClick} isBox={isBox} aria-label="Tabs in the filled with icons example">
+        <Tabs
+          isFilled
+          activeKey={activeTabKey}
+          onSelect={this.handleTabClick}
+          isBox={isBox}
+          aria-label="Tabs in the filled with icons example"
+        >
           <Tab
             eventKey={0}
             title={
@@ -1268,7 +1321,11 @@ class SeparateTabContent extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick} aria-label="Tabs in the seperate content example">
+        <Tabs
+          activeKey={this.state.activeTabKey}
+          onSelect={this.handleTabClick}
+          aria-label="Tabs in the seperate content example"
+        >
           <Tab
             eventKey={0}
             title={<TabTitleText>Tab item 1</TabTitleText>}
@@ -1289,13 +1346,30 @@ class SeparateTabContent extends React.Component {
           />
         </Tabs>
         <div>
-          <TabContent eventKey={0} id="refTab1Section" ref={this.contentRef1} aria-label="This is content for the first tab">
+          <TabContent
+            eventKey={0}
+            id="refTab1Section"
+            ref={this.contentRef1}
+            aria-label="This is content for the first tab"
+          >
             Tab 1 section
           </TabContent>
-          <TabContent eventKey={1} id="refTab2Section" ref={this.contentRef2} aria-label="This is content for the second tab" hidden>
+          <TabContent
+            eventKey={1}
+            id="refTab2Section"
+            ref={this.contentRef2}
+            aria-label="This is content for the second tab"
+            hidden
+          >
             Tab 2 section
           </TabContent>
-          <TabContent eventKey={2} id="refTab3Section" ref={this.contentRef3} aria-label="This is content for the third tab" hidden>
+          <TabContent
+            eventKey={2}
+            id="refTab3Section"
+            ref={this.contentRef3}
+            aria-label="This is content for the third tab"
+            hidden
+          >
             Tab 3 section
           </TabContent>
         </div>
@@ -1349,10 +1423,22 @@ const TabContentWithBody = () => {
         <TabContent eventKey={0} id="refTab1Section" ref={contentRef1} aria-label="This is content for the first tab">
           <TabContentBody hasPadding> Tab 1 section </TabContentBody>
         </TabContent>
-        <TabContent eventKey={1} id="refTab2Section" ref={contentRef2} aria-label="This is content for the second tab" hidden>
+        <TabContent
+          eventKey={1}
+          id="refTab2Section"
+          ref={contentRef2}
+          aria-label="This is content for the second tab"
+          hidden
+        >
           <TabContentBody hasPadding> Tab 2 section </TabContentBody>
         </TabContent>
-        <TabContent eventKey={2} id="refTab3Section" ref={contentRef3} aria-label="This is content for the third tab" hidden>
+        <TabContent
+          eventKey={2}
+          id="refTab3Section"
+          ref={contentRef3}
+          aria-label="This is content for the third tab"
+          hidden
+        >
           <TabContentBody hasPadding> Tab 3 section </TabContentBody>
         </TabContent>
       </div>
@@ -1383,7 +1469,12 @@ class MountingSimpleTabs extends React.Component {
 
   render() {
     return (
-      <Tabs mountOnEnter activeKey={this.state.activeTabKey} onSelect={this.handleTabClick} aria-label="Tabs in the children mounting on click example">
+      <Tabs
+        mountOnEnter
+        activeKey={this.state.activeTabKey}
+        onSelect={this.handleTabClick}
+        aria-label="Tabs in the children mounting on click example"
+      >
         <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>}>
           Tab 1 section
         </Tab>
@@ -1421,7 +1512,12 @@ class UnmountingSimpleTabs extends React.Component {
 
   render() {
     return (
-      <Tabs unmountOnExit activeKey={this.state.activeTabKey} onSelect={this.handleTabClick} aria-label="Tabs in the unmounting invisible children example">
+      <Tabs
+        unmountOnExit
+        activeKey={this.state.activeTabKey}
+        onSelect={this.handleTabClick}
+        aria-label="Tabs in the unmounting invisible children example"
+      >
         <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>}>
           Tab 1 section
         </Tab>
@@ -1471,7 +1567,11 @@ class ToggledSeparateContent extends React.Component {
           {isTab2Hidden ? 'Show' : 'Hide'} tab 2
         </Button>
         <Divider style={{ paddingTop: '1rem', paddingBottom: '1rem' }} />
-        <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick} aria-label="Tabs in the toggled separate content example">
+        <Tabs
+          activeKey={this.state.activeTabKey}
+          onSelect={this.handleTabClick}
+          aria-label="Tabs in the toggled separate content example"
+        >
           <Tab eventKey={0} title="Tab item 1" tabContentId="refTab1Section" tabContentRef={this.contentRef1} />
           {!isTab2Hidden && (
             <Tab eventKey={1} title="Tab item 2" tabContentId="refTab2Section" tabContentRef={this.contentRef2} />
@@ -1479,15 +1579,32 @@ class ToggledSeparateContent extends React.Component {
           <Tab eventKey={2} title="Tab item 3" tabContentId="refTab3Section" tabContentRef={this.contentRef3} />
         </Tabs>
         <div>
-          <TabContent eventKey={0} id="refTab1Section" ref={this.contentRef1} aria-label="This is content for the first tab">
+          <TabContent
+            eventKey={0}
+            id="refTab1Section"
+            ref={this.contentRef1}
+            aria-label="This is content for the first tab"
+          >
             Tab 1 section
           </TabContent>
           {!isTab2Hidden && (
-            <TabContent eventKey={1} id="refTab2Section" ref={this.contentRef2} aria-label="This is content for the second tab" hidden>
+            <TabContent
+              eventKey={1}
+              id="refTab2Section"
+              ref={this.contentRef2}
+              aria-label="This is content for the second tab"
+              hidden
+            >
               Tab 2 section
             </TabContent>
           )}
-          <TabContent eventKey={2} id="refTab3Section" ref={this.contentRef3} aria-label="This is content for the third tab" hidden>
+          <TabContent
+            eventKey={2}
+            id="refTab3Section"
+            ref={this.contentRef3}
+            aria-label="This is content for the third tab"
+            hidden
+          >
             Tab 3 section
           </TabContent>
         </div>
