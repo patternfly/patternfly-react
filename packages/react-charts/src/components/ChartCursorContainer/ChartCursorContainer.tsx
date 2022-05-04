@@ -1,6 +1,9 @@
+/* eslint-disable camelcase */
+import chart_global_label_Fill from '@patternfly/react-tokens/dist/esm/chart_global_label_Fill';
+
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { CallbackArgs, CoordinatesPropType, OriginType } from 'victory-core';
+import { CallbackArgs, CoordinatesPropType, LineSegment, OriginType } from 'victory-core';
 import {
   CursorCoordinatesPropType,
   VictoryCursorContainer,
@@ -201,6 +204,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
 
 export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerProps> = ({
   className,
+  cursorComponent = <LineSegment />,
   themeColor,
   themeVariant,
 
@@ -215,11 +219,20 @@ export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerP
     ...cursorLabelComponent.props
   });
 
+  // Clone so users can override cursor container props
+  const cursor = React.cloneElement(cursorComponent, {
+    style: {
+      strokeColor: chart_global_label_Fill.value
+    },
+    ...cursorComponent.props
+  });
+
   // Note: theme is required by voronoiContainerMixin
   return (
     // Note: className is valid, but Victory is missing a type
     <VictoryCursorContainer
       className={chartClassName}
+      cursorComponent={cursor}
       cursorLabelComponent={chartCursorLabelComponent}
       theme={theme}
       {...rest}
