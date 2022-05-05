@@ -5,6 +5,7 @@ import { useIsomorphicLayoutEffect } from '@patternfly/react-core';
 type GetContainer = Element | null | undefined | (() => Element);
 
 interface PortalProps {
+  children?: React.ReactNode;
   container?: GetContainer;
 }
 

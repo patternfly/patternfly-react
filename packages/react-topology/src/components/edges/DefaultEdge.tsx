@@ -21,6 +21,7 @@ import { Point } from '../../geom';
 import { getConnectorStartPoint } from './terminals/terminalUtils';
 
 type BaseEdgeProps = {
+  children?: React.ReactNode;
   element: Edge;
   dragging?: boolean;
   className?: string;

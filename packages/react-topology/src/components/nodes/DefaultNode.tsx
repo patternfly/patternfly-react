@@ -37,6 +37,7 @@ const getStatusIcon = (status: NodeStatus) => {
 };
 
 type DefaultNodeProps = {
+  children?: React.ReactNode;
   className?: string;
   element: Node;
   droppable?: boolean;
