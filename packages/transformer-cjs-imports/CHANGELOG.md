@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.48.0 (2022-05-05)
+
+
+### Features
+
+* **charts:** Deprecate themeVariant prop for light / dark themes ([#7372](https://github.com/patternfly/patternfly-react/issues/7372)) ([362902a](https://github.com/patternfly/patternfly-react/commit/362902a72eb2b18e634423c86dea1bef89bf00e9))
+
+
+
+
+
 # 4.47.0 (2022-05-05)
 
 
