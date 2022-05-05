@@ -70,10 +70,10 @@ export const CardLegacySelectable: React.FunctionComponent = () => {
         id="legacy-first-card"
         onKeyDown={onKeyDown}
         onClick={onClick}
-        onHiddenInputChange={onChange}
+        onSelectableInputChange={onChange}
         isSelectable
         isSelected={selected === 'legacy-first-card'}
-        hasHiddenInput
+        hasSelectableInput
       >
         <CardHeader>
           <CardActions>
@@ -95,10 +95,10 @@ export const CardLegacySelectable: React.FunctionComponent = () => {
         id="legacy-second-card"
         onKeyDown={onKeyDown}
         onClick={onClick}
-        onHiddenInputChange={onChange}
+        onSelectableInputChange={onChange}
         isSelectable
         isSelected={selected === 'legacy-second-card'}
-        hasHiddenInput
+        hasSelectableInput
       >
         <CardTitle>Second legacy selectable card</CardTitle>
         <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>

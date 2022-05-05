@@ -1283,10 +1283,10 @@ class PrimaryDetailCardView extends React.Component {
               id={'card-view-' + key}
               onKeyDown={this.onKeyDown}
               onClick={this.onCardClick}
-              onHiddenInputChange={this.onChange}
+              onSelectableInputChange={this.onChange}
               isSelectable
               isSelected={activeCard === 'card-view-' + key}
-              hasHiddenInput
+              hasSelectableInput
             >
               <CardHeader>
                 <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />

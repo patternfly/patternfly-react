@@ -37,11 +37,11 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   /** Flag indicating if a card is expanded. Modifies the card to be expandable. */
   isExpanded?: boolean;
   /** Flag indicating that the card should render a hidden input to make it selectable */
-  hasHiddenInput?: boolean;
-  /** Aria label to apply to the hidden input if one is rendered */
-  hiddenInputAriaLabel?: string;
-  /** Callback that executes when the hidden input is changed */
-  onHiddenInputChange?: (labelledBy: string, event: React.FormEvent<HTMLInputElement>) => void;
+  hasSelectableInput?: boolean;
+  /** Aria label to apply to the selectable input if one is rendered */
+  selectableInputAriaLabel?: string;
+  /** Callback that executes when the selectable input is changed */
+  onSelectableInputChange?: (labelledBy: string, event: React.FormEvent<HTMLInputElement>) => void;
 }
 
 interface CardContextProps {
@@ -80,9 +80,9 @@ export const Card: React.FunctionComponent<CardProps> = ({
   isPlain = false,
   ouiaId,
   ouiaSafe = true,
-  hasHiddenInput = false,
-  hiddenInputAriaLabel,
-  onHiddenInputChange = () => {},
+  hasSelectableInput = false,
+  selectableInputAriaLabel,
+  onSelectableInputChange = () => {},
   ...props
 }: CardProps) => {
   const Component = component as any;
@@ -117,18 +117,18 @@ export const Card: React.FunctionComponent<CardProps> = ({
   };
 
   React.useEffect(() => {
-    if (hiddenInputAriaLabel) {
-      setAriaProps({ 'aria-label': hiddenInputAriaLabel });
+    if (selectableInputAriaLabel) {
+      setAriaProps({ 'aria-label': selectableInputAriaLabel });
     } else if (titleId) {
       setAriaProps({ 'aria-labelledby': titleId });
-    } else if (hasHiddenInput && !containsCardTitleChildRef.current) {
+    } else if (hasSelectableInput && !containsCardTitleChildRef.current) {
       setAriaProps({});
       // eslint-disable-next-line no-console
       console.warn(
-        'If no CardTitle component is passed as a child of Card the hiddenInputAriaLabel prop must be passed'
+        'If no CardTitle component is passed as a child of Card the selectableInputAriaLabel prop must be passed'
       );
     }
-  }, [hasHiddenInput, hiddenInputAriaLabel, titleId]);
+  }, [hasSelectableInput, selectableInputAriaLabel, titleId]);
 
   return (
     <CardContext.Provider
@@ -138,14 +138,14 @@ export const Card: React.FunctionComponent<CardProps> = ({
         isExpanded
       }}
     >
-      {hasHiddenInput && (
+      {hasSelectableInput && (
         <input
           className="pf-screen-reader"
           id={`${id}-input`}
           {...ariaProps}
           type="checkbox"
           checked={isSelected}
-          onChange={event => onHiddenInputChange(id, event)}
+          onChange={event => onSelectableInputChange(id, event)}
           disabled={isDisabledRaised}
           tabIndex={-1}
         />

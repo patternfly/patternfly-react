@@ -73,8 +73,8 @@ export const CardSelectable: React.FunctionComponent = () => {
         id="selectable-first-card"
         onKeyDown={onKeyDown}
         onClick={onClick}
-        hasHiddenInput
-        onHiddenInputChange={onChange}
+        hasSelectableInput
+        onSelectableInputChange={onChange}
         isSelectableRaised
         isSelected={selected === 'selectable-first-card'}
       >
@@ -98,8 +98,8 @@ export const CardSelectable: React.FunctionComponent = () => {
         id="selectable-second-card"
         onKeyDown={onKeyDown}
         onClick={onClick}
-        hasHiddenInput
-        onHiddenInputChange={onChange}
+        hasSelectableInput
+        onSelectableInputChange={onChange}
         isSelectableRaised
         isSelected={selected === 'selectable-second-card'}
       >
@@ -107,7 +107,7 @@ export const CardSelectable: React.FunctionComponent = () => {
         <CardBody>This is a selectable card. Click me to select me. Click again to deselect me.</CardBody>
       </Card>
       <br />
-      <Card id="selectable-third-card" isSelectableRaised isDisabledRaised hasHiddenInput>
+      <Card id="selectable-third-card" isSelectableRaised isDisabledRaised hasSelectableInput>
         <CardTitle>Third card</CardTitle>
         <CardBody>This is a raised but disabled card.</CardBody>
       </Card>

@@ -578,13 +578,13 @@ class CardViewBasic extends React.Component {
               {filtered.map((product, key) => (
                 <Card
                   isSelectableRaised
-                  hasHiddenInput
+                  hasSelectableInput
                   isCompact
                   key={product.name}
                   id={product.name.replace(/ /g, '-')}
                   onKeyDown={e => this.onKeyDown(e, product.id)}
                   onClick={() => this.onClick(product.id)}
-                  onHiddenInputChange={() => this.onClick(product.id)}
+                  onSelectableInputChange={() => this.onClick(product.id)}
                   isSelected={selectedItems.includes(product.id)}
                 >
                   <CardHeader>
