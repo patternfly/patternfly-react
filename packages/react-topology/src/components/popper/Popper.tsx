@@ -50,6 +50,7 @@ const getReference = (reference: Reference): PopperJSReference =>
   'getBoundingClientRect' in reference ? reference : new VirtualReference(reference);
 
 interface PopperProps {
+  children?: React.ReactNode;
   closeOnEsc?: boolean;
   closeOnOutsideClick?: boolean;
   container?: React.ComponentProps<typeof Portal>['container'];

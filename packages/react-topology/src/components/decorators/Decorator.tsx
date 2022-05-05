@@ -6,6 +6,7 @@ import { createSvgIdUrl, useHover } from '../../utils';
 import { DEFAULT_DECORATOR_PADDING } from '../nodes';
 
 interface DecoratorTypes {
+  children?: React.ReactNode;
   className?: string;
   x: number;
   y: number;
