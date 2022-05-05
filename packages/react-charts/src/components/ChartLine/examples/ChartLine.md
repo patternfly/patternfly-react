@@ -11,7 +11,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartLegendTooltip, ChartThemeVariant, ChartVoronoiContainer, createContainer, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartLegendTooltip, ChartVoronoiContainer, createContainer, getResizeObserver } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory-zoom-container';
 
 ## Introduction

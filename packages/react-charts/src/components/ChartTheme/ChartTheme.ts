@@ -34,6 +34,11 @@ interface ChartThemeColorInterface {
   purple: string;
 }
 
+/**
+ * Chart theme variant interface
+ *
+ * @deprecated Use PatternFly's pf-theme-dark CSS selector
+ */
 interface ChartThemeVariantInterface {
   dark: string;
   default: string;
@@ -82,6 +87,8 @@ export const ChartThemeColor: ChartThemeColorInterface = {
  * The variant to be applied to a theme.
  *
  * Note: Only the light variant is currently supported
+ *
+ * @deprecated Use PatternFly's pf-theme-dark CSS selector
  */
 export const ChartThemeVariant: ChartThemeVariantInterface = {
   dark: 'dark',

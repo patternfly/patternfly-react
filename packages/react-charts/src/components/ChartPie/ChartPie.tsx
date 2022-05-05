@@ -421,7 +421,7 @@ export interface ChartPieProps extends VictoryPieProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -476,10 +476,11 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   radius,
   standalone = true,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
 
   // destructure last
-  theme = getTheme(themeColor, themeVariant),
+  theme = getTheme(themeColor),
   labelComponent = allowTooltip ? (
     <ChartTooltip constrainToVisibleArea={constrainToVisibleArea} theme={theme} />
   ) : (

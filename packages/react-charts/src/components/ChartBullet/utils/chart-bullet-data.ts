@@ -24,10 +24,9 @@ interface ChartBulletDataInterface {
 export const getComparativeMeasureData = ({
   data,
   themeColor,
-  themeVariant,
 
   // destructure last
-  theme = getBulletComparativeMeasureTheme(themeColor, themeVariant),
+  theme = getBulletComparativeMeasureTheme(themeColor),
   y
 }: ChartBulletDataInterface) => {
   const datum: any[] = [];
@@ -53,34 +52,30 @@ export const getComparativeMeasureData = ({
 export const getComparativeErrorMeasureData = ({
   data,
   themeColor,
-  themeVariant,
 
   // destructure last
-  theme = getBulletComparativeErrorMeasureTheme(themeColor, themeVariant),
+  theme = getBulletComparativeErrorMeasureTheme(themeColor),
   y
 }: ChartBulletDataInterface) =>
   getComparativeMeasureData({
     data,
     theme,
     themeColor,
-    themeVariant,
     y
   });
 
 export const getComparativeWarningMeasureData = ({
   data,
   themeColor,
-  themeVariant,
 
   // destructure last
-  theme = getBulletComparativeWarningMeasureTheme(themeColor, themeVariant),
+  theme = getBulletComparativeWarningMeasureTheme(themeColor),
   y
 }: ChartBulletDataInterface) =>
   getComparativeMeasureData({
     data,
     theme,
     themeColor,
-    themeVariant,
     y
   });
 
@@ -88,10 +83,9 @@ export const getPrimaryDotMeasureData = ({
   data,
   invert,
   themeColor,
-  themeVariant,
 
   // destructure last
-  theme = getBulletPrimaryDotMeasureTheme(themeColor, themeVariant),
+  theme = getBulletPrimaryDotMeasureTheme(themeColor),
   y,
   y0
 }: ChartBulletDataInterface) =>
@@ -100,7 +94,6 @@ export const getPrimaryDotMeasureData = ({
     invert,
     theme,
     themeColor,
-    themeVariant,
     y,
     y0
   });
@@ -109,11 +102,10 @@ export const getPrimarySegmentedMeasureData = ({
   data,
   invert,
   themeColor,
-  themeVariant,
 
   // destructure last
-  theme = getBulletPrimarySegmentedMeasureTheme(themeColor, themeVariant),
-  negativeMeasureTheme = getBulletPrimaryNegativeMeasureTheme(themeColor, themeVariant),
+  theme = getBulletPrimarySegmentedMeasureTheme(themeColor),
+  negativeMeasureTheme = getBulletPrimaryNegativeMeasureTheme(themeColor),
   y,
   y0
 }: ChartBulletDataInterface) => {
@@ -173,10 +165,9 @@ export const getQualitativeRangeData = ({
   data,
   invert,
   themeColor,
-  themeVariant,
 
   // destructure last
-  theme = getBulletQualitativeRangeTheme(themeColor, themeVariant),
+  theme = getBulletQualitativeRangeTheme(themeColor),
   y,
   y0
 }: ChartBulletDataInterface) => {

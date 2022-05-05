@@ -21,7 +21,6 @@ interface ChartBulletThemeInterface {
   qualitativeRangeData?: any[];
   qualitativeRangeLegendData?: any[];
   themeColor?: string;
-  themeVariant?: string;
 }
 
 const getLegendColorScale = (computedData: any, legendData: any) => {
@@ -48,8 +47,7 @@ export const getColorScale = ({
   primarySegmentedMeasureLegendData,
   qualitativeRangeData,
   qualitativeRangeLegendData,
-  themeColor,
-  themeVariant
+  themeColor
 }: ChartBulletThemeInterface): any[] => {
   const colorScale: any[] = [];
   if (primaryDotMeasureLegendData && primaryDotMeasureLegendData.length) {
@@ -63,8 +61,7 @@ export const getColorScale = ({
     const computedData = getPrimarySegmentedMeasureData({
       data: primarySegmentedMeasureData,
       invert,
-      themeColor,
-      themeVariant
+      themeColor
     });
     colorScale.push(...getLegendColorScale(computedData, primarySegmentedMeasureLegendData));
   }
@@ -72,8 +69,7 @@ export const getColorScale = ({
     const computedData = getComparativeWarningMeasureData({
       data: comparativeWarningMeasureData,
       invert,
-      themeColor,
-      themeVariant
+      themeColor
     });
     colorScale.push(...getLegendColorScale(computedData, comparativeWarningMeasureLegendData));
   }
@@ -81,8 +77,7 @@ export const getColorScale = ({
     const computedData = getComparativeErrorMeasureData({
       data: comparativeErrorMeasureData,
       invert,
-      themeColor,
-      themeVariant
+      themeColor
     });
     colorScale.push(...getLegendColorScale(computedData, comparativeErrorMeasureLegendData));
   }
@@ -109,8 +104,7 @@ export const getBulletThemeWithLegendColorScale = ({
   primarySegmentedMeasureLegendData,
   qualitativeRangeData,
   qualitativeRangeLegendData,
-  themeColor,
-  themeVariant
+  themeColor
 }: ChartBulletThemeInterface): ChartThemeDefinition => {
   const colorScale = getColorScale({
     comparativeErrorMeasureData,
@@ -124,11 +118,10 @@ export const getBulletThemeWithLegendColorScale = ({
     primarySegmentedMeasureLegendData,
     qualitativeRangeData,
     qualitativeRangeLegendData,
-    themeColor,
-    themeVariant
+    themeColor
   });
 
-  const theme = getBulletTheme(themeColor, themeVariant);
+  const theme = getBulletTheme(themeColor);
   theme.legend.colorScale = [...colorScale];
   return theme;
 };

@@ -153,7 +153,7 @@ export interface ChartBulletQualitativeRangeProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -200,12 +200,13 @@ export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQua
   padding,
   standalone = true,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
   y,
   y0,
 
   // destructure last
-  theme = getBulletQualitativeRangeTheme(themeColor, themeVariant),
+  theme = getBulletQualitativeRangeTheme(themeColor),
   height = theme.group.height,
   width = theme.group.width,
   labelComponent = <ChartTooltip />
