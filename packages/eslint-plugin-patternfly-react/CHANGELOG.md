@@ -3,6 +3,108 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.47.11 (2022-05-05)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+
+
+
+
+## 4.47.10 (2022-05-05)
+
+
+### Bug Fixes
+
+* **charts:** Add style for tooltip cursor ([#7361](https://github.com/patternfly/patternfly-react/issues/7361)) ([1b3f67c](https://github.com/patternfly/patternfly-react/commit/1b3f67c3712a194bef672fe888f6a446f4bd8bc6))
+
+
+
+
+
+## 4.47.9 (2022-05-04)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+
+
+
+
+## 4.47.8 (2022-05-04)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+
+
+
+
+## 4.47.7 (2022-05-04)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+
+
+
+
+## 4.47.6 (2022-05-03)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+
+
+
+
+## 4.47.5 (2022-05-03)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+
+
+
+
+## 4.47.4 (2022-05-03)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+
+
+
+
+## 4.47.3 (2022-05-03)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+
+
+
+
+## 4.47.2 (2022-05-03)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+
+
+
+
+## 4.47.1 (2022-05-03)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+
+
+
+
+# 4.47.0 (2022-05-02)
+
+
+### Features
+
+* **divider:** add support for switching orientation at various breakpoints ([#7285](https://github.com/patternfly/patternfly-react/issues/7285)) ([6e47917](https://github.com/patternfly/patternfly-react/commit/6e47917a59fdbd0f9f647998d79d024a691a49e2))
+
+
+
+
+
 # 4.46.0 (2022-04-28)
 
 

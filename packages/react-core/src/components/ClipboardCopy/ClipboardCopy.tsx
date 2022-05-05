@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipbo
 import { css } from '@patternfly/react-styles';
 import { PickOptional } from '../../helpers/typeUtils';
 import { PopoverPosition } from '../Popover';
+import { TooltipPosition } from '../Tooltip';
 import { TextInput } from '../TextInput';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 import { ClipboardCopyButton } from './ClipboardCopyButton';
@@ -55,6 +56,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   /** Copy button popover position. */
   position?:
     | PopoverPosition
+    | TooltipPosition
     | 'auto'
     | 'top'
     | 'bottom'

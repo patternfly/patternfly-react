@@ -32,7 +32,7 @@ export class BreadthFirstLayout extends BaseLayout implements Layout {
     return new BreadthFirstGroup(node, padding, index);
   }
 
-  protected startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean): void {
+  public startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean): void {
     if (initialRun || addingNodes) {
       // Breath First algorithm
 
