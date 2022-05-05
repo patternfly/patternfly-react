@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.47.13 (2022-05-05)
+
+
+### Bug Fixes
+
+* **Wixard:** Fixed id not being applied to wizard step ([#7349](https://github.com/patternfly/patternfly-react/issues/7349)) ([de6b557](https://github.com/patternfly/patternfly-react/commit/de6b557331460dd387faa1ac4c5c033757412340))
+
+
+
+
+
 ## 4.47.12 (2022-05-05)
 
 **Note:** Version bump only for package eslint-plugin-patternfly-react
