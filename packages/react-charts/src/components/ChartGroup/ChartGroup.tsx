@@ -400,7 +400,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -451,10 +451,11 @@ export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
   children,
   containerComponent = <ChartContainer />,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
 
   // destructure last
-  theme = getTheme(themeColor, themeVariant),
+  theme = getTheme(themeColor),
 
   ...rest
 }: ChartGroupProps) => {

@@ -461,7 +461,7 @@ export interface ChartDonutProps extends ChartPieProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -569,12 +569,13 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   subTitleComponent,
   subTitlePosition = ChartDonutStyles.label.subTitlePosition,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
   title,
   titleComponent = <ChartLabel />,
 
   // destructure last
-  theme = getDonutTheme(themeColor, themeVariant),
+  theme = getDonutTheme(themeColor),
   height = theme.pie.height,
   width = theme.pie.width,
   ...rest

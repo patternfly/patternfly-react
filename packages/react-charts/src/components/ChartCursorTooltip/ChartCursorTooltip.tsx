@@ -247,7 +247,7 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -278,10 +278,11 @@ export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps
   showPointer = true,
   style,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
 
   // destructure last
-  theme = getTheme(themeColor, themeVariant),
+  theme = getTheme(themeColor),
   centerOffset = getCursorTooltipCenterOffset({ offsetCursorDimensionX: true, theme }),
   pointerOrientation = getCursorTooltipPoniterOrientation({ horizontal: true, theme }),
   pointerLength = showPointer && theme && theme.tooltip ? theme.tooltip.pointerLength : 0,

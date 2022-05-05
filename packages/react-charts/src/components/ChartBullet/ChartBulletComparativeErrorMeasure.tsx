@@ -147,7 +147,7 @@ export interface ChartBulletComparativeErrorMeasureProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -185,11 +185,12 @@ export const ChartBulletComparativeErrorMeasure: React.FunctionComponent<ChartBu
   padding,
   standalone = true,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
   y,
 
   // destructure last
-  theme = getBulletComparativeErrorMeasureTheme(themeColor, themeVariant),
+  theme = getBulletComparativeErrorMeasureTheme(themeColor),
   height = theme.bar.height,
   width = theme.bar.width
 }: ChartBulletComparativeErrorMeasureProps) => {

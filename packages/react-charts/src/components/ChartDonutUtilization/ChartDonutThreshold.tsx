@@ -391,7 +391,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -450,12 +450,13 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   standalone = true,
   subTitlePosition = ChartDonutStyles.label.subTitlePosition as ChartDonutThresholdSubTitlePosition,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
   x,
   y,
 
   // destructure last
-  theme = getDonutThresholdStaticTheme(themeColor, themeVariant, invert),
+  theme = getDonutThresholdStaticTheme(themeColor, invert),
   height = theme.pie.height,
   width = theme.pie.width,
   ...rest
@@ -508,9 +509,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
       if (React.isValidElement(child)) {
         const { data: childData, ...childProps } = child.props;
         const datum = Data.formatData([childData], childProps, ['x', 'y']); // Format child data independently of this component's props
-        const dynamicTheme =
-          childProps.theme ||
-          getDonutThresholdDynamicTheme(childProps.themeColor || themeColor, childProps.themeVariant || themeVariant);
+        const dynamicTheme = childProps.theme || getDonutThresholdDynamicTheme(childProps.themeColor || themeColor);
 
         return React.cloneElement(child, {
           constrainToVisibleArea,

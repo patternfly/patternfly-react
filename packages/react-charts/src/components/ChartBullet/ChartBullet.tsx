@@ -445,7 +445,7 @@ export interface ChartBulletProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -518,6 +518,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   standalone = true,
   subTitle,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
   title,
   titleComponent = <ChartBulletTitle />,
@@ -536,8 +537,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     primarySegmentedMeasureLegendData,
     qualitativeRangeData,
     qualitativeRangeLegendData,
-    themeColor,
-    themeVariant
+    themeColor
   }),
   domain = getBulletDomain({
     comparativeErrorMeasureComponent,
@@ -676,7 +676,6 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     size: getPrimaryDotMeasureSize({ height: chartSize.height, horizontal, width: chartSize.width }),
     standalone: false,
     themeColor,
-    themeVariant,
     width: chartSize.width,
     y: primaryDotMeasureDataY,
     ...primaryDotMeasureComponent.props
@@ -697,7 +696,6 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     padding,
     standalone: false,
     themeColor,
-    themeVariant,
     width: chartSize.width,
     y: primarySegmentedMeasureDataY,
     ...primarySegmentedMeasureComponent.props

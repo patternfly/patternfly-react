@@ -19,7 +19,6 @@ import {
   ChartLegend,
   ChartThreshold,
   ChartThemeColor,
-  ChartThemeVariant,
   ChartVoronoiContainer,
   getResizeObserver
 } from '@patternfly/react-charts';

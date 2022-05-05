@@ -15,11 +15,10 @@ import {
   ChartLine,
   ChartStack,
   ChartThemeColor,
-  ChartThemeVariant,
   ChartThreshold,
   ChartTooltip,
   ChartVoronoiContainer,
-  getCustomTheme
+  mergeTheme
 } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
@@ -111,7 +110,7 @@ This demonstrates how to apply theme colors for ordered charts like bar, donut, 
 
 ```js
 import React from 'react';
-import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
   <ChartDonut
@@ -389,7 +388,7 @@ This demonstrates custom theme properties, which may be applied across multiple 
 
 ```js
 import React from 'react';
-import { Chart, ChartBar, ChartAxis, ChartGroup, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer, mergeTheme } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
 import chart_color_cyan_300 from '@patternfly/react-tokens/dist/esm/chart_color_cyan_300';
@@ -437,9 +436,8 @@ class MultiColorChart extends React.Component {
     };
 
     // Applies theme color and variant to base theme
-    this.myCustomTheme = getCustomTheme(
+    this.myCustomTheme = mergeTheme(
       ChartThemeColor.default,
-      ChartThemeVariant.default,
       this.themeProps
     );
   }

@@ -238,7 +238,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -266,10 +266,11 @@ export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
   labelComponent = <ChartLabel />, // Note that Victory provides its own label component here
   labelTextAnchor,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
 
   // destructure last
-  theme = getTheme(themeColor, themeVariant),
+  theme = getTheme(themeColor),
   ...rest
 }: ChartTooltipProps) => {
   const chartLabelComponent = React.cloneElement(labelComponent, {

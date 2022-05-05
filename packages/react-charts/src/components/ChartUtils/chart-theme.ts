@@ -1,14 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import cloneDeep from 'lodash/cloneDeep';
 import merge from 'lodash/merge';
-import { DarkBlueColorTheme } from '../ChartTheme/themes/dark/blue-color-theme';
-import { DarkCyanColorTheme } from '../ChartTheme/themes/dark/cyan-color-theme';
-import { DarkGoldColorTheme } from '../ChartTheme/themes/dark/gold-color-theme';
-import { DarkGrayColorTheme } from '../ChartTheme/themes/dark/gray-color-theme';
-import { DarkGreenColorTheme } from '../ChartTheme/themes/dark/green-color-theme';
-import { DarkMultiColorOrderedTheme } from '../ChartTheme/themes/dark/multi-color-ordered-theme';
-import { DarkMultiColorUnorderedTheme } from '../ChartTheme/themes/dark/multi-color-unordered-theme';
-import { DarkOrangeColorTheme } from '../ChartTheme/themes/dark/orange-color-theme';
-import { DarkPurpleColorTheme } from '../ChartTheme/themes/dark/purple-color-theme';
 import { LightBlueColorTheme } from '../ChartTheme/themes/light/blue-color-theme';
 import { LightCyanColorTheme } from '../ChartTheme/themes/light/cyan-color-theme';
 import { LightGoldColorTheme } from '../ChartTheme/themes/light/gold-color-theme';
@@ -37,62 +29,65 @@ import {
   ChartDonutThresholdStaticTheme,
   ChartThemeDefinition,
   ChartThemeColor,
-  ChartThemeVariant,
   ChartThresholdTheme
 } from '../ChartTheme/ChartTheme';
 
-// Apply custom properties to base and color themes
+/**
+ * Apply custom properties to base and color themes
+ *
+ * @deprecated Use mergeTheme
+ */
 export const getCustomTheme = (
   themeColor: string,
   themeVariant: string,
   customTheme: ChartThemeDefinition
-): ChartThemeDefinition => merge(getTheme(themeColor, themeVariant), customTheme);
+): ChartThemeDefinition => mergeTheme(themeColor, customTheme);
+
+// Merge custom properties with base and color themes
+export const mergeTheme = (themeColor: string, customTheme: ChartThemeDefinition): ChartThemeDefinition =>
+  merge(getTheme(themeColor), customTheme);
 
 // Returns axis theme
-export const getAxisTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, themeVariant, ChartAxisTheme);
+export const getAxisTheme = (themeColor: string): ChartThemeDefinition => mergeTheme(themeColor, ChartAxisTheme);
 
 // Returns bullet chart theme
-export const getBulletTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, themeVariant, ChartBulletTheme);
+export const getBulletTheme = (themeColor: string): ChartThemeDefinition => mergeTheme(themeColor, ChartBulletTheme);
 
 // Returns comparative error measure theme for bullet chart
-export const getBulletComparativeErrorMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, themeVariant, ChartBulletComparativeErrorMeasureTheme);
+export const getBulletComparativeErrorMeasureTheme = (themeColor: string): ChartThemeDefinition =>
+  mergeTheme(themeColor, ChartBulletComparativeErrorMeasureTheme);
 
 // Returns comparative measure theme for bullet chart
-export const getBulletComparativeMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, themeVariant, ChartBulletComparativeMeasureTheme);
+export const getBulletComparativeMeasureTheme = (themeColor: string): ChartThemeDefinition =>
+  mergeTheme(themeColor, ChartBulletComparativeMeasureTheme);
 
 // Returns comparative warning measure theme for bullet chart
-export const getBulletComparativeWarningMeasureTheme = (
-  themeColor: string,
-  themeVariant: string
-): ChartThemeDefinition => getCustomTheme(themeColor, themeVariant, ChartBulletComparativeWarningMeasureTheme);
+export const getBulletComparativeWarningMeasureTheme = (themeColor: string): ChartThemeDefinition =>
+  mergeTheme(themeColor, ChartBulletComparativeWarningMeasureTheme);
 
 // Returns group title theme for bullet chart
-export const getBulletGroupTitleTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, themeVariant, ChartBulletGroupTitleTheme);
+export const getBulletGroupTitleTheme = (themeColor: string): ChartThemeDefinition =>
+  mergeTheme(themeColor, ChartBulletGroupTitleTheme);
 
 // Returns primary dot measure theme for bullet chart
-export const getBulletPrimaryDotMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, themeVariant, ChartBulletPrimaryDotMeasureTheme);
+export const getBulletPrimaryDotMeasureTheme = (themeColor: string): ChartThemeDefinition =>
+  mergeTheme(themeColor, ChartBulletPrimaryDotMeasureTheme);
 
 // Returns primary negative measure theme for bullet chart
-export const getBulletPrimaryNegativeMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, themeVariant, ChartBulletPrimaryNegativeMeasureTheme);
+export const getBulletPrimaryNegativeMeasureTheme = (themeColor: string): ChartThemeDefinition =>
+  mergeTheme(themeColor, ChartBulletPrimaryNegativeMeasureTheme);
 
 // Returns primary segmented measure theme for bullet chart
-export const getBulletPrimarySegmentedMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, themeVariant, ChartBulletPrimarySegmentedMeasureTheme);
+export const getBulletPrimarySegmentedMeasureTheme = (themeColor: string): ChartThemeDefinition =>
+  mergeTheme(themeColor, ChartBulletPrimarySegmentedMeasureTheme);
 
 // Returns qualitative range theme for bullet chart
-export const getBulletQualitativeRangeTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, themeVariant, ChartBulletQualitativeRangeTheme);
+export const getBulletQualitativeRangeTheme = (themeColor: string): ChartThemeDefinition =>
+  mergeTheme(themeColor, ChartBulletQualitativeRangeTheme);
 
 // Returns theme for Chart component
-export const getChartTheme = (themeColor: string, themeVariant: string, showAxis: boolean): ChartThemeDefinition => {
-  const theme = getTheme(themeColor, themeVariant);
+export const getChartTheme = (themeColor: string, showAxis: boolean): ChartThemeDefinition => {
+  const theme = getTheme(themeColor);
 
   if (!showAxis) {
     theme.axis.padding = 0;
@@ -108,12 +103,11 @@ export const getChartTheme = (themeColor: string, themeVariant: string, showAxis
 };
 
 // Returns donut theme
-export const getDonutTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, themeVariant, ChartDonutTheme);
+export const getDonutTheme = (themeColor: string): ChartThemeDefinition => mergeTheme(themeColor, ChartDonutTheme);
 
 // Returns dynamic donut threshold theme
-export const getDonutThresholdDynamicTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition => {
-  const theme = getCustomTheme(themeColor, themeVariant, ChartDonutThresholdDynamicTheme);
+export const getDonutThresholdDynamicTheme = (themeColor: string): ChartThemeDefinition => {
+  const theme = mergeTheme(themeColor, ChartDonutThresholdDynamicTheme);
 
   // Merge just the first color of dynamic (blue, green, etc.) with static (grey) for expected colorScale
   theme.legend.colorScale = [theme.pie.colorScale[0], ...ChartDonutThresholdDynamicTheme.legend.colorScale];
@@ -124,21 +118,17 @@ export const getDonutThresholdDynamicTheme = (themeColor: string, themeVariant: 
 };
 
 // Returns static donut threshold theme
-export const getDonutThresholdStaticTheme = (
-  themeColor: string,
-  themeVariant: string,
-  invert?: boolean
-): ChartThemeDefinition => {
+export const getDonutThresholdStaticTheme = (themeColor: string, invert?: boolean): ChartThemeDefinition => {
   const staticTheme = cloneDeep(ChartDonutThresholdStaticTheme);
   if (invert && staticTheme.pie.colorScale instanceof Array) {
     staticTheme.pie.colorScale = staticTheme.pie.colorScale.reverse();
   }
-  return getCustomTheme(themeColor, themeVariant, staticTheme);
+  return mergeTheme(themeColor, staticTheme);
 };
 
 // Returns donut utilization theme
-export const getDonutUtilizationTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition => {
-  const theme = getCustomTheme(themeColor, themeVariant, ChartDonutUtilizationDynamicTheme);
+export const getDonutUtilizationTheme = (themeColor: string): ChartThemeDefinition => {
+  const theme = mergeTheme(themeColor, ChartDonutUtilizationDynamicTheme);
 
   // Merge just the first color of dynamic (blue, green, etc.) with static (grey) for expected colorScale
   theme.pie.colorScale = [theme.pie.colorScale[0], ...ChartDonutUtilizationStaticTheme.pie.colorScale];
@@ -146,35 +136,8 @@ export const getDonutUtilizationTheme = (themeColor: string, themeVariant: strin
   return theme;
 };
 
-// Returns dark theme colors
-export const getDarkThemeColors = (themeColor: string) => {
-  switch (themeColor) {
-    case ChartThemeColor.blue:
-      return DarkBlueColorTheme;
-    case ChartThemeColor.cyan:
-      return DarkCyanColorTheme;
-    case ChartThemeColor.gold:
-      return DarkGoldColorTheme;
-    case ChartThemeColor.gray:
-      return DarkGrayColorTheme;
-    case ChartThemeColor.green:
-      return DarkGreenColorTheme;
-    case ChartThemeColor.multi:
-    case ChartThemeColor.multiOrdered:
-      return DarkMultiColorOrderedTheme;
-    case ChartThemeColor.multiUnordered:
-      return DarkMultiColorUnorderedTheme;
-    case ChartThemeColor.orange:
-      return DarkOrangeColorTheme;
-    case ChartThemeColor.purple:
-      return DarkPurpleColorTheme;
-    default:
-      return DarkBlueColorTheme;
-  }
-};
-
-// Returns light theme colors
-export const getLightThemeColors = (themeColor: string) => {
+// Returns theme colors
+export const getThemeColors = (themeColor: string) => {
   switch (themeColor) {
     case ChartThemeColor.blue:
       return LightBlueColorTheme;
@@ -201,21 +164,14 @@ export const getLightThemeColors = (themeColor: string) => {
 };
 
 // Applies theme color and variant to base theme
-export const getTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition => {
+export const getTheme = (themeColor: string): ChartThemeDefinition => {
   // Deep clone
   const baseTheme = {
     ...JSON.parse(JSON.stringify(ChartBaseTheme))
   };
-  switch (themeVariant) {
-    case ChartThemeVariant.dark:
-      return merge(baseTheme, getDarkThemeColors(themeColor));
-    case ChartThemeVariant.light:
-      return merge(baseTheme, getLightThemeColors(themeColor));
-    default:
-      return merge(baseTheme, getLightThemeColors(themeColor));
-  }
+  return merge(baseTheme, getThemeColors(themeColor));
 };
 
 // Returns threshold theme
-export const getThresholdTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, themeVariant, ChartThresholdTheme);
+export const getThresholdTheme = (themeColor: string): ChartThemeDefinition =>
+  mergeTheme(themeColor, ChartThresholdTheme);
