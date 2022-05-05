@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.54.0 (2022-05-05)
+
+
+### Features
+
+* **drawer:** convert examples to TS ([#7329](https://github.com/patternfly/patternfly-react/issues/7329)) ([e3c6dfa](https://github.com/patternfly/patternfly-react/commit/e3c6dfa735a01c2be5a62eed8e37ad7a29b113de))
+
+
+
+
+
 ## 4.53.13 (2022-05-05)
 
 
