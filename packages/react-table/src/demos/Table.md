@@ -3048,7 +3048,7 @@ class LoadingStateDemo extends React.Component {
                   <Title size="lg" headingLevel="h4">
                     Loading
                   </Title>
-                </EmptyState>{' '}
+                </EmptyState>
               </Bullseye>
             )
           }
