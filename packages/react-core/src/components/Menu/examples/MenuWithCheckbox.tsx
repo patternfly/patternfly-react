@@ -2,25 +2,29 @@ import React from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
 
 export const MenuCheckboxList: React.FunctionComponent = () => {
-  const [activeItem, setActiveItem] = React.useState(0);
+  const [selectedItems, setSelectedItems] = React.useState<number[]>([]);
 
-  const onSelect = (event, itemId) => {
-    // eslint-disable-next-line no-console
-    console.log(`clicked ${itemId}`);
-    setActiveItem(itemId);
+  /* eslint no-unused-vars: ["error", {"args": "after-used"}] */
+  const onSelect = (event: React.MouseEvent<Element, MouseEvent>, itemId: number | string) => {
+    const item = itemId as number;
+    if (selectedItems.includes(item)) {
+      setSelectedItems(selectedItems.filter(id => id !== item));
+    } else {
+      setSelectedItems([...selectedItems, item]);
+    }
   };
 
   return (
-    <Menu activeItemId={activeItem} onSelect={onSelect}>
+    <Menu onSelect={onSelect} selected={selectedItems}>
       <MenuContent>
         <MenuList>
-          <MenuItem isCheck itemId={0}>
+          <MenuItem isCheck itemId={0} isSelected={selectedItems.includes(0)}>
             Checkbox 1
           </MenuItem>
-          <MenuItem isCheck itemId={1}>
+          <MenuItem isCheck itemId={1} isSelected={selectedItems.includes(1)}>
             Checkbox 2
           </MenuItem>
-          <MenuItem isCheck isDisabled>
+          <MenuItem isCheck itemId={2} isDisabled>
             Checkbox 3
           </MenuItem>
         </MenuList>
