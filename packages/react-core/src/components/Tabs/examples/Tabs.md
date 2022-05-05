@@ -106,6 +106,8 @@ class SimpleTabs extends React.Component {
 
 When using a React ref to link a Tooltip to a Tab component via the `reference` prop, you should avoid manually passing in a value of "off" to the `aria-live` prop. Doing so may lead to the tooltip becoming less accessible to assistive technologies.
 
+The tooltip should also have the `id` prop passed in. The value given to this prop should then be passed into the tab's `aria-describedby` prop. This ensures a tooltip used with a React ref will be announced by the JAWS and NVDA screen readers.
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabTitleText, Checkbox, Tooltip } from '@patternfly/react-core';
@@ -163,11 +165,13 @@ class SimpleTabs extends React.Component {
             title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>}
             isAriaDisabled
             ref={tooltipRef}
+            aria-describedby="tooltip-ref1"
           >
             ARIA Disabled (Tooltip)
           </Tab>
         </Tabs>
         <Tooltip
+          id="tooltip-ref1"
           content="Aria-disabled tabs are like disabled tabs, but focusable. Allows for tooltip support."
           reference={tooltipRef}
         />

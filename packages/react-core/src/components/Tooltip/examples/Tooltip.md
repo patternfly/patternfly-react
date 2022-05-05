@@ -40,8 +40,11 @@ TooltipReactRef = () => {
   const tooltipRef = React.useRef();
   return (
     <div style={{ margin: '100px' }}>
-      <button ref={tooltipRef}>Tooltip attached via react ref</button>
+      <button aria-describedby="tooltip-ref1" ref={tooltipRef}>
+        Tooltip attached via react ref
+      </button>
       <Tooltip
+        id="tooltip-ref1"
         content={
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
@@ -61,8 +64,11 @@ import React from 'react';
 import { Tooltip } from '@patternfly/react-core';
 
 <div style={{ margin: '100px' }}>
-  <button id="tooltip-selector">Tooltip attached via selector ref</button>
+  <button aria-describedby="tooltip-ref2" id="tooltip-selector">
+    Tooltip attached via selector ref
+  </button>
   <Tooltip
+    id="tooltip-ref2"
     content={
       <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
     }
@@ -73,7 +79,7 @@ import { Tooltip } from '@patternfly/react-core';
 
 ### On icon with dynamic content
 
-When the tooltip is used as a wrapper and its content will dynamically update, the `aria` prop should have a value of "off" passed in. This prevents assistive technologies from announcing the tooltip contents more than once. Additionally, the `aria-live` prop should have a value of "polite" passed in, in order for assistive technologies to announce when the tooltip contents gets updated.
+When the tooltip is used as a wrapper and its content will dynamically update, the `aria` prop should have a value of "none" passed in. This prevents assistive technologies from announcing the tooltip contents more than once. Additionally, the `aria-live` prop should have a value of "polite" passed in, in order for assistive technologies to announce when the tooltip contents gets updated.
 
 When using a React or selector ref with a tooltip that has dynamic content, the `aria` and `aria-live` props do not need to be manually passed in.
 
