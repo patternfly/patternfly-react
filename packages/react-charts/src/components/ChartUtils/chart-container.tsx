@@ -1,7 +1,11 @@
+/* eslint-disable camelcase */
+import chart_global_label_Fill from '@patternfly/react-tokens/dist/esm/chart_global_label_Fill';
+
 import * as React from 'react';
 import { ContainerType, createContainer as victoryCreateContainer } from 'victory-create-container';
 import { ChartCursorTooltip } from '../ChartCursorTooltip';
 import { ChartLabel } from '../ChartLabel';
+import { LineSegment } from 'victory-core';
 
 /**
  * Makes a container component with multiple behaviors. It allows you to effectively combine any two
@@ -27,6 +31,13 @@ export const createContainer = (behaviorA: ContainerType, behaviorB: ContainerTy
 
   if (isCursor) {
     container.defaultProps.cursorLabelComponent = <ChartLabel textAnchor="start" />;
+    container.defaultProps.cursorComponent = (
+      <LineSegment
+        style={{
+          stroke: chart_global_label_Fill.value
+        }}
+      />
+    );
   }
   if (isVoronoi) {
     container.defaultProps.labelComponent = <ChartCursorTooltip />;
