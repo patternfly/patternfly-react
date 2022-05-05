@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Card } from '../Card';
+import { CardTitle } from '../CardTitle';
 
 describe('Card', () => {
   test('renders with PatternFly Core styles', () => {
@@ -117,5 +118,65 @@ describe('Card', () => {
 
     render(<Card isLarge isCompact />);
     expect(consoleWarnMock).toHaveBeenCalled();
+  });
+
+  test('card renders with a hidden input to improve a11y when hasSelectableInput is passed', () => {
+    render(<Card isSelectable hasSelectableInput />);
+
+    const selectableInput = screen.getByRole('checkbox', { hidden: true });
+
+    expect(selectableInput).toBeInTheDocument();
+  });
+
+  test('card does not render the hidden input when hasSelectableInput is not passed', () => {
+    render(<Card isSelectable />);
+
+    const selectableInput = screen.queryByRole('checkbox', { hidden: true });
+
+    expect(selectableInput).not.toBeInTheDocument();
+  });
+
+  test('card warns when hasSelectableInput is passed without selectableInputAriaLabel or a card title', () => {
+    const consoleWarnMock = jest.fn();
+    global.console = { warn: consoleWarnMock } as any;
+
+    render(<Card isSelectable hasSelectableInput />);
+
+    const selectableInput = screen.getByRole('checkbox', { hidden: true });
+
+    expect(consoleWarnMock).toBeCalled();
+    expect(selectableInput).toHaveAccessibleName('');
+  });
+
+  test('card applies selectableInputAriaLabel to the hidden input', () => {
+    render(<Card isSelectable hasSelectableInput selectableInputAriaLabel="Input label test" />);
+
+    const selectableInput = screen.getByRole('checkbox', { hidden: true });
+
+    expect(selectableInput).toHaveAccessibleName('Input label test');
+  });
+
+  test('card applies the supplied card title as the aria label of the hidden input', () => {
+    render(
+      <Card id="card" isSelectable hasSelectableInput>
+        <CardTitle>Card title from title component</CardTitle>
+      </Card>
+    );
+
+    const selectableInput = screen.getByRole('checkbox', { hidden: true });
+
+    expect(selectableInput).toHaveAccessibleName('Card title from title component');
+  });
+
+  test('card prioritizes selectableInputAriaLabel over card title labelling via card title', () => {
+    render(
+      <Card id="card" isSelectable hasSelectableInput selectableInputAriaLabel="Input label test">
+        <CardTitle>Card title from title component</CardTitle>
+      </Card>
+    );
+
+    const selectableInput = screen.getByRole('checkbox', { hidden: true });
+
+    expect(selectableInput).toHaveAccessibleName('Input label test');
   });
 });
