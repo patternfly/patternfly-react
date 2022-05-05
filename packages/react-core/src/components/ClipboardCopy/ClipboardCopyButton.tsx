@@ -64,6 +64,8 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
     entryDelay={entryDelay}
     maxWidth={maxWidth}
     position={position}
+    aria-live="polite"
+    aria="none"
     content={<div>{children}</div>}
   >
     <Button
