@@ -3020,20 +3020,20 @@ class EmptyStateDemo extends React.Component {
 
 ### Loading
 
-```js
+```js isFullscreen
 import React from 'react';
-import { Bullseye, Spinner } from '@patternfly/react-core';
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { Bullseye, EmptyState, EmptyStateIcon, Spinner, Title } from '@patternfly/react-core';
+import { PageSection, Table, TableHeader, TableBody } from '@patternfly/react-table';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class LoadingStateDemo extends React.Component {
   render() {
     const columns = [
-      { title: 'Servers' },
-      { title: 'Threads' },
-      { title: 'Applications' },
+      { title: 'Repositories' },
+      { title: 'Branches' },
+      { title: 'Pull requests' },
       { title: 'Workspaces' },
-      { title: 'Status' },
-      { title: 'Location' }
+      { title: 'Last commit' }
     ];
     const rows = [
       {
@@ -3043,7 +3043,12 @@ class LoadingStateDemo extends React.Component {
             props: { colSpan: 8 },
             title: (
               <Bullseye>
-                <Spinner size="xl" aria-labelledby="loading-table-demo"/>
+                <EmptyState>
+                  <EmptyStateIcon variant="container" component={Spinner} />
+                  <Title size="lg" headingLevel="h4">
+                    Loading
+                  </Title>
+                </EmptyState>{' '}
               </Bullseye>
             )
           }
@@ -3052,10 +3057,14 @@ class LoadingStateDemo extends React.Component {
     ];
 
     return (
-      <Table cells={columns} rows={rows} id="loading-table-demo" aria-label="Loading Table Demo">
-        <TableHeader />
-        <TableBody />
-      </Table>
+      <DashboardWrapper hasPageTemplateTitle>
+        <PageSection isFilled>
+          <Table cells={columns} rows={rows} id="loading-table-demo" aria-label="Loading Table Demo">
+            <TableHeader />
+            <TableBody />
+          </Table>
+        </PageSection>
+      </DashboardWrapper>
     );
   }
 }
