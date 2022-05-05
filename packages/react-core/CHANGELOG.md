@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.208.10 (2022-05-05)
+
+
+### Bug Fixes
+
+* **charts:** Add style for tooltip cursor ([#7361](https://github.com/patternfly/patternfly-react/issues/7361)) ([1b3f67c](https://github.com/patternfly/patternfly-react/commit/1b3f67c3712a194bef672fe888f6a446f4bd8bc6))
+
+
+
+
+
 ## 4.208.9 (2022-05-04)
 
 **Note:** Version bump only for package @patternfly/react-core
