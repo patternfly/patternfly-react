@@ -41,8 +41,10 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   isBox?: boolean;
   /** Enables vertical tab styling */
   isVertical?: boolean;
-  /** Enables no border bottom tab styling */
+  /** Enables border bottom tab styling on tabs. Defaults to true. To remove the bottom border, set this prop to false. */
   hasBorderBottom?: boolean;
+  /** Enables border bottom styling for secondary tabs */
+  hasSecondaryBorderBottom?: boolean;
   /** Aria-label for the left scroll button */
   leftScrollAriaLabel?: string;
   /** Aria-label for the right scroll button */
@@ -292,6 +294,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       isVertical,
       isBox,
       hasBorderBottom,
+      hasSecondaryBorderBottom,
       leftScrollAriaLabel,
       rightScrollAriaLabel,
       'aria-label': ariaLabel,
@@ -361,6 +364,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             showScrollButtons && !isVertical && styles.modifiers.scrollable,
             usePageInsets && styles.modifiers.pageInsets,
             !hasBorderBottom && styles.modifiers.noBorderBottom,
+            hasSecondaryBorderBottom && styles.modifiers.borderBottom,
             formatBreakpointMods(inset, styles),
             variantStyle[variant],
             className

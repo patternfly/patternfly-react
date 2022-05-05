@@ -378,65 +378,60 @@ TabsOpenWithSecondaryTabsDemo = () => {
           <Tab eventKey={4} title={<TabTitleText>Terminal</TabTitleText>} tabContentId={`tabContent${4}`} />
         </Tabs>
       </PageSection>
-      <PageSection isWidthLimited variant={PageSectionVariants.light}>
-        <Flex direction={{ default: 'column' }}>
-          <FlexItem>
-            <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
-              <TabContentBody>
-                <Tabs
-                  isSecondary
-                  activeKey={activeTabKeySecondary}
-                  onSelect={handleTabClickSecondary}
-                  inset={{ default: 'insetNone' }}
-                  id="open-with-secondary-tabs-example-tabs-list-secondary"
-                >
-                  <Tab
-                    eventKey={10}
-                    title={<TabTitleText>Pod information</TabTitleText>}
-                    tabContentId={`tabContent${10}`}
-                  />
-                  <Tab
-                    eventKey={11}
-                    title={<TabTitleText>Editable aspects</TabTitleText>}
-                    tabContentId={`tabContent${11}`}
-                  />
-                </Tabs>
-                <TabContent
-                  key={10}
-                  eventKey={10}
-                  id={`tabContent${10}`}
-                  activeKey={activeTabKeySecondary}
-                  hidden={10 !== activeTabKeySecondary}
-                >
-                  <TabContentBody>{tabContent}</TabContentBody>
-                </TabContent>
-                <TabContent
-                  key={11}
-                  eventKey={11}
-                  id={`tabContent${11}`}
-                  activeKey={activeTabKeySecondary}
-                  hidden={11 !== activeTabKeySecondary}
-                >
-                  <TabContentBody>Editable aspects</TabContentBody>
-                </TabContent>
-              </TabContentBody>
+      <PageSection isWidthLimited variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
+        <TabContent key={0} eventKey={0} id={`tabContent${0}`} activeKey={activeTabKey} hidden={0 !== activeTabKey}>
+          <TabContentBody>
+            <Tabs
+              isSecondary
+              hasSecondaryBorderBottom
+              activeKey={activeTabKeySecondary}
+              onSelect={handleTabClickSecondary}
+              usePageInsets
+              id="open-with-secondary-tabs-example-tabs-list-secondary"
+            >
+              <Tab
+                eventKey={10}
+                title={<TabTitleText>Pod information</TabTitleText>}
+                tabContentId={`tabContent${10}`}
+              />
+              <Tab
+                eventKey={11}
+                title={<TabTitleText>Editable aspects</TabTitleText>}
+                tabContentId={`tabContent${11}`}
+              />
+            </Tabs>
+            <TabContent
+              key={10}
+              eventKey={10}
+              id={`tabContent${10}`}
+              activeKey={activeTabKeySecondary}
+              hidden={10 !== activeTabKeySecondary}
+            >
+              <TabContentBody hasPadding>{tabContent}</TabContentBody>
             </TabContent>
-          </FlexItem>
-          <FlexItem>
-            <TabContent key={1} eventKey={1} id={`tabContent${1}`} activeKey={activeTabKey} hidden={1 !== activeTabKey}>
-              <TabContentBody>YAML panel</TabContentBody>
+            <TabContent
+              key={11}
+              eventKey={11}
+              id={`tabContent${11}`}
+              activeKey={activeTabKeySecondary}
+              hidden={11 !== activeTabKeySecondary}
+            >
+              <TabContentBody>Editable aspects</TabContentBody>
             </TabContent>
-            <TabContent key={2} eventKey={2} id={`tabContent${2}`} activeKey={activeTabKey} hidden={2 !== activeTabKey}>
-              <TabContentBody>Environment panel</TabContentBody>
-            </TabContent>
-            <TabContent key={3} eventKey={3} id={`tabContent${3}`} activeKey={activeTabKey} hidden={3 !== activeTabKey}>
-              <TabContentBody>Events panel</TabContentBody>
-            </TabContent>
-            <TabContent key={4} eventKey={4} id={`tabContent${4}`} activeKey={activeTabKey} hidden={4 !== activeTabKey}>
-              <TabContentBody>Terminal panel</TabContentBody>
-            </TabContent>
-          </FlexItem>
-        </Flex>
+          </TabContentBody>
+        </TabContent>
+        <TabContent key={1} eventKey={1} id={`tabContent${1}`} activeKey={activeTabKey} hidden={1 !== activeTabKey}>
+          <TabContentBody>YAML panel</TabContentBody>
+        </TabContent>
+        <TabContent key={2} eventKey={2} id={`tabContent${2}`} activeKey={activeTabKey} hidden={2 !== activeTabKey}>
+          <TabContentBody>Environment panel</TabContentBody>
+        </TabContent>
+        <TabContent key={3} eventKey={3} id={`tabContent${3}`} activeKey={activeTabKey} hidden={3 !== activeTabKey}>
+          <TabContentBody>Events panel</TabContentBody>
+        </TabContent>
+        <TabContent key={4} eventKey={4} id={`tabContent${4}`} activeKey={activeTabKey} hidden={4 !== activeTabKey}>
+          <TabContentBody>Terminal panel</TabContentBody>
+        </TabContent>
       </PageSection>
     </DashboardWrapper>
   );
@@ -467,6 +462,7 @@ TabsOpenWithSecondaryTabsDemo = () => {
 
 ```js isFullscreen file="./examples/Tabs/ModalTabs.tsx"
 ```
+
 ### Gray tabs
 
 ```js isFullscreen file="./examples/Tabs/GrayTabs.tsx"
