@@ -30,6 +30,7 @@ import {
   createContainer,
   mergeTheme
 } from '@patternfly/react-charts';
+import '@patternfly/patternfly/patternfly-charts-theme-dark.css';
 import './chart-tooltip.css';
 
 ## Introduction

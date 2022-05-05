@@ -24,6 +24,7 @@ import {
   createContainer,
   getResizeObserver
 } from '@patternfly/react-charts';
+import '@patternfly/patternfly/patternfly-charts-theme-dark.css';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!

@@ -5,6 +5,7 @@ import chart_global_FontSize_sm from '@patternfly/react-tokens/dist/esm/chart_gl
 import chart_global_label_Padding from '@patternfly/react-tokens/dist/esm/chart_global_label_Padding';
 import chart_global_label_stroke from '@patternfly/react-tokens/dist/esm/chart_global_label_stroke';
 import chart_global_label_text_anchor from '@patternfly/react-tokens/dist/esm/chart_global_label_text_anchor';
+import chart_global_label_Fill from '@patternfly/react-tokens/dist/esm/chart_global_label_Fill';
 import chart_global_layout_Padding from '@patternfly/react-tokens/dist/esm/chart_global_layout_Padding';
 import chart_global_layout_Height from '@patternfly/react-tokens/dist/esm/chart_global_layout_Height';
 import chart_global_layout_Width from '@patternfly/react-tokens/dist/esm/chart_global_layout_Width';
@@ -112,7 +113,8 @@ const LABEL_PROPS = {
   fontSize: TYPOGRAPHY_FONT_SIZE,
   letterSpacing: TYPOGRAPHY_LETTER_SPACING,
   padding: chart_global_label_Padding.value,
-  stroke: chart_global_label_stroke.value
+  stroke: chart_global_label_stroke.var,
+  fill: chart_global_label_Fill.var
 };
 const LABEL_CENTERED_PROPS = {
   ...LABEL_PROPS,
@@ -137,7 +139,7 @@ export const BaseTheme = {
     style: {
       data: {
         fill: chart_area_data_Fill.var,
-        fillOpacity: chart_area_Opacity.var,
+        fillOpacity: chart_area_Opacity.value,
         // Omit stroke to add a line border from color scale
         // stroke: chart_global_label_stroke.value,
         strokeWidth: chart_area_stroke_Width.value
@@ -231,8 +233,8 @@ export const BaseTheme = {
   candlestick: {
     ...LAYOUT_PROPS,
     candleColors: {
-      positive: chart_candelstick_candle_positive_Color.value,
-      negative: chart_candelstick_candle_negative_Color.value
+      positive: chart_candelstick_candle_positive_Color.var,
+      negative: chart_candelstick_candle_negative_Color.var
     },
     style: {
       data: {
@@ -331,7 +333,7 @@ export const BaseTheme = {
     flyoutStyle: {
       cornerRadius: chart_tooltip_flyoutStyle_corner_radius.value,
       fill: chart_tooltip_flyoutStyle_Fill.var, // background
-      pointerEvents: chart_tooltip_flyoutStyle_PointerEvents.value,
+      pointerEvents: chart_tooltip_flyoutStyle_PointerEvents.var,
       stroke: chart_tooltip_flyoutStyle_stroke_Color.var, // border
       strokeWidth: chart_tooltip_flyoutStyle_stroke_Width.value
     },
@@ -339,7 +341,7 @@ export const BaseTheme = {
     pointerWidth: chart_tooltip_pointer_Width.value,
     style: {
       fill: chart_tooltip_Fill.var, // text
-      pointerEvents: chart_tooltip_PointerEvents.value
+      pointerEvents: chart_tooltip_PointerEvents.var
     }
   },
   voronoi: {
@@ -359,7 +361,7 @@ export const BaseTheme = {
       // Note: These properties override tooltip
       flyout: {
         fill: chart_voronoi_flyout_stroke_Fill.var, // background
-        pointerEvents: chart_voronoi_flyout_PointerEvents.value,
+        pointerEvents: chart_voronoi_flyout_PointerEvents.var,
         stroke: chart_voronoi_flyout_stroke_Color.var, // border
         strokeWidth: chart_voronoi_flyout_stroke_Width.value
       }
