@@ -36,7 +36,7 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isPlain?: boolean;
   /** Flag indicating if a card is expanded. Modifies the card to be expandable. */
   isExpanded?: boolean;
-  /** Flag indicating that the card should render a hidden input for a11y reasons */
+  /** Flag indicating that the card should render a hidden input to make it selectable */
   hasHiddenInput?: boolean;
   /** Aria label to apply to the hidden input if one is rendered */
   hiddenInputAriaLabel?: string;
