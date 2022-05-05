@@ -1,7 +1,9 @@
 import React from 'react';
+
 import { render, screen } from '@testing-library/react';
-import { Card } from '../Card';
-import { CardTitle } from '../CardTitle';
+import '@testing-library/jest-dom';
+
+import { Card, CardContext } from '../Card';
 
 describe('Card', () => {
   test('renders with PatternFly Core styles', () => {
@@ -157,9 +159,22 @@ describe('Card', () => {
   });
 
   test('card applies the supplied card title as the aria label of the hidden input', () => {
+
+    // this component is used to mock the CardTitle's title registry behavior to keep this a pure unit test
+    const MockCardTitle = ({ children }) => {
+      const { registerTitleId } = React.useContext(CardContext);
+      const id = 'card-title-id';
+
+      React.useEffect(() => {
+        registerTitleId(id);
+      });
+
+      return <div id={id}>{children}</div>;
+    };
+
     render(
       <Card id="card" isSelectable hasSelectableInput>
-        <CardTitle>Card title from title component</CardTitle>
+        <MockCardTitle>Card title from title component</MockCardTitle>
       </Card>
     );
 
@@ -169,9 +184,22 @@ describe('Card', () => {
   });
 
   test('card prioritizes selectableInputAriaLabel over card title labelling via card title', () => {
+
+    // this component is used to mock the CardTitle's title registry behavior to keep this a pure unit test
+    const MockCardTitle = ({ children }) => {
+      const { registerTitleId } = React.useContext(CardContext);
+      const id = 'card-title-id';
+
+      React.useEffect(() => {
+        registerTitleId(id);
+      });
+
+      return <div id={id}>{children}</div>;
+    };
+
     render(
       <Card id="card" isSelectable hasSelectableInput selectableInputAriaLabel="Input label test">
-        <CardTitle>Card title from title component</CardTitle>
+        <MockCardTitle>Card title from title component</MockCardTitle>
       </Card>
     );
 
