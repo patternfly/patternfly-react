@@ -10,13 +10,13 @@ export const DonutStyles = {
   label: {
     subTitle: {
       // Victory props only
-      fill: chart_donut_label_subtitle_Fill.var,
+      fill: chart_donut_label_subtitle_Fill.var2,
       fontSize: chart_global_FontSize_sm.value
     },
     subTitlePosition: chart_donut_label_subtitle_position.value,
     title: {
       // Victory props only
-      fill: chart_donut_label_title_Fill.var,
+      fill: chart_donut_label_title_Fill.var2,
       fontSize: chart_global_FontSize_2xl.value
     }
   }

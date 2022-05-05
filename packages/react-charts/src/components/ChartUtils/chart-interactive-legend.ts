@@ -57,10 +57,10 @@ export const getInteractiveLegendItemStyles = (hidden = false) =>
     ? {}
     : {
         labels: {
-          fill: chart_global_label_Fill.var
+          fill: chart_global_label_Fill.var2
         },
         symbol: {
-          fill: chart_global_label_Fill.var,
+          fill: chart_global_label_Fill.var2,
           type: 'eyeSlash'
         }
       };

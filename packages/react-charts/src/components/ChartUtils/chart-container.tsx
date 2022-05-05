@@ -34,7 +34,7 @@ export const createContainer = (behaviorA: ContainerType, behaviorB: ContainerTy
     container.defaultProps.cursorComponent = (
       <LineSegment
         style={{
-          stroke: chart_container_cursor_line_Fill.var
+          stroke: chart_container_cursor_line_Fill.var2
         }}
       />
     );

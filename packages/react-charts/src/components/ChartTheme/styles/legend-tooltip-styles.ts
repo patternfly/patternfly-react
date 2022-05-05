@@ -8,7 +8,7 @@ export const LegendTooltipStyles = {
     padding: 40
   },
   label: {
-    fill: chart_voronoi_labels_Fill.var,
+    fill: chart_voronoi_labels_Fill.var2,
     fontWeight: global_FontWeight_bold.value
   } as any
 };

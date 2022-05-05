@@ -22,17 +22,17 @@ export const BulletStyles = {
   label: {
     groupTitle: {
       // Victory props only
-      fill: chart_bullet_label_grouptitle_Fill.var,
+      fill: chart_bullet_label_grouptitle_Fill.var2,
       fontSize: chart_global_FontSize_2xl.value
     },
     subTitle: {
       // Victory props only
-      fill: chart_bullet_label_subtitle_Fill.var,
+      fill: chart_bullet_label_subtitle_Fill.var2,
       fontSize: chart_global_FontSize_sm.value
     },
     title: {
       // Victory props only
-      fill: chart_bullet_label_title_Fill.var,
+      fill: chart_bullet_label_title_Fill.var2,
       fontSize: chart_global_FontSize_lg.value
     }
   },

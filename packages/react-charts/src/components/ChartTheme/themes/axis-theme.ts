@@ -7,10 +7,10 @@ export const AxisTheme = {
   axis: {
     style: {
       grid: {
-        stroke: chart_axis_grid_stroke_Color.var
+        stroke: chart_axis_grid_stroke_Color.var2
       },
       ticks: {
-        stroke: chart_axis_tick_stroke_Color.var
+        stroke: chart_axis_tick_stroke_Color.var2
       }
     }
   }

@@ -8,8 +8,8 @@ import chart_legend_Margin from '@patternfly/react-tokens/dist/esm/chart_legend_
 import chart_legend_position from '@patternfly/react-tokens/dist/esm/chart_legend_position';
 
 // Typography
-const TYPOGRAPHY_FONT_FAMILY = chart_global_FontFamily.var;
-const TYPOGRAPHY_LETTER_SPACING = chart_global_letter_spacing.var;
+const TYPOGRAPHY_FONT_FAMILY = chart_global_FontFamily.var2;
+const TYPOGRAPHY_LETTER_SPACING = chart_global_letter_spacing.value;
 const TYPOGRAPHY_FONT_SIZE = chart_global_FontSize_sm.value;
 
 export const CommonStyles = {
@@ -18,7 +18,7 @@ export const CommonStyles = {
     fontSize: TYPOGRAPHY_FONT_SIZE,
     letterSpacing: TYPOGRAPHY_LETTER_SPACING,
     margin: chart_global_label_Margin.value,
-    fill: chart_global_label_Fill.var
+    fill: chart_global_label_Fill.var2
   },
   legend: {
     margin: chart_legend_Margin.value,

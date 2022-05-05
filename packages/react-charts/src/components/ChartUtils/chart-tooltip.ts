@@ -216,7 +216,7 @@ export const getLegendTooltipVisibleData = ({
       const activePoint = activePoints ? activePoints.find(item => item.childName === data.childName) : '';
       if (
         !activePoint ||
-        (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.var)
+        (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.var2)
       ) {
         continue; // Skip hidden data
       }
@@ -253,7 +253,7 @@ export const getLegendTooltipVisibleText = ({
       const activePoint = activePoints ? activePoints.find(item => item.childName === data.childName) : '';
       if (
         !activePoint ||
-        (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.var)
+        (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.var2)
       ) {
         continue; // Skip hidden data
       }
