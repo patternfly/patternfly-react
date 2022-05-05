@@ -2959,28 +2959,30 @@ These examples demonstrate the use of an [Empty State component](/components/emp
 
 ### Empty
 
-```js
+```js isFullscreen
 import React from 'react';
 import {
+  Bullseye,
   Button,
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
   EmptyStateSecondaryActions,
+  PageSection,
   Title
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class EmptyStateDemo extends React.Component {
   render() {
     const columns = [
-      { title: 'Servers' },
-      { title: 'Threads' },
-      { title: 'Applications' },
+      { title: 'Repositories' },
+      { title: 'Branches' },
+      { title: 'Pull requests' },
       { title: 'Workspaces' },
-      { title: 'Status' },
-      { title: 'Location' }
+      { title: 'Last commit' }
     ];
 
     const rows = [
@@ -2990,18 +2992,22 @@ class EmptyStateDemo extends React.Component {
           {
             props: { colSpan: 8 },
             title: (
-              <EmptyState>
-                <EmptyStateIcon icon={SearchIcon} />
-                <Title headingLevel="h5" size="lg">
-                  No results found
-                </Title>
-                <EmptyStateBody>No results match this filter criteria. Clear all filters and try again.</EmptyStateBody>
-                <EmptyStateSecondaryActions>
-                  <Button variant="link" onClick={() => {}}>
-                    Clear all filters
-                  </Button>
-                </EmptyStateSecondaryActions>
-              </EmptyState>
+              <Bullseye>
+                <EmptyState>
+                  <EmptyStateIcon icon={SearchIcon} />
+                  <Title headingLevel="h5" size="lg">
+                    No results found
+                  </Title>
+                  <EmptyStateBody>
+                    No results match this filter criteria. Clear all filters and try again.
+                  </EmptyStateBody>
+                  <EmptyStateSecondaryActions>
+                    <Button variant="link" onClick={() => {}}>
+                      Clear all filters
+                    </Button>
+                  </EmptyStateSecondaryActions>
+                </EmptyState>
+              </Bullseye>
             )
           }
         ]
@@ -3009,10 +3015,14 @@ class EmptyStateDemo extends React.Component {
     ];
 
     return (
-      <Table cells={columns} rows={rows} aria-label="Empty state demo">
-        <TableHeader />
-        <TableBody />
-      </Table>
+      <DashboardWrapper hasPageTemplateTitle>
+        <PageSection isFilled>
+          <Table cells={columns} rows={rows} aria-label="Empty state demo">
+            <TableHeader />
+            <TableBody />
+          </Table>
+        </PageSection>
+      </DashboardWrapper>
     );
   }
 }
@@ -3043,7 +3053,7 @@ class LoadingStateDemo extends React.Component {
             props: { colSpan: 8 },
             title: (
               <Bullseye>
-                <Spinner size="xl" aria-labelledby="loading-table-demo"/>
+                <Spinner size="xl" aria-labelledby="loading-table-demo" />
               </Bullseye>
             )
           }
