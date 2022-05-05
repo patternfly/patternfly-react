@@ -304,7 +304,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             tabIndex={-1}
             className={css(styles.menuItem, getIsSelected() && !isCheck && styles.modifiers.selected, className)}
             aria-current={getAriaCurrent()}
-            disabled={isDisabled}
+            {...(!isCheck && { disabled: isDisabled })}
             role="menuitem"
             ref={innerRef}
             {...(!isCheck && {
@@ -329,6 +329,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
                     id={randomId}
                     isChecked={isSelected || false}
                     onChange={event => onItemSelect(event, onSelect)}
+                    isDisabled={isDisabled}
                   />
                 </span>
               )}
