@@ -3,7 +3,7 @@ id: Table
 section: components
 ---
 
-import { Checkbox, ToolbarExpandIconWrapper, ToolbarContent } from '@patternfly/react-core';
+import { Checkbox, PageSection, ToolbarExpandIconWrapper, ToolbarContent } from '@patternfly/react-core';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
