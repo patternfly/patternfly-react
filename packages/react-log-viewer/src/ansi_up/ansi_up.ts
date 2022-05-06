@@ -78,16 +78,7 @@ export default class AnsiUp {
   constructor() {
     // All construction occurs here
     this.setup_palettes();
-    this._use_classes = false;
-
-    this.bold = false;
-    this.italic = false;
-    this.underline = false;
-    this.fg = this.bg = null;
-
-    this._buffer = '';
-
-    this._url_whitelist = { http: 1, https: 1 };
+    this.resetStyles();
   }
 
   set use_classes(arg: boolean) {
@@ -510,6 +501,19 @@ export default class AnsiUp {
     }
 
     return blocks.join('');
+  }
+
+  resetStyles() {
+    this._use_classes = false;
+
+    this.bold = false;
+    this.italic = false;
+    this.underline = false;
+    this.fg = this.bg = null;
+
+    this._buffer = '';
+
+    this._url_whitelist = { http: 1, https: 1 };
   }
 
   private with_state(pkt: TextPacket): TextWithAttr {

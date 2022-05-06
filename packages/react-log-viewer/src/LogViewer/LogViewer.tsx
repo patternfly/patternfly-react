@@ -5,6 +5,7 @@ import { LogViewerRow } from './LogViewerRow';
 import { parseConsoleOutput, searchedKeyWordType, stripAnsi } from './utils/utils';
 import { VariableSizeList as List, areEqual } from '../react-window';
 import styles from '@patternfly/react-styles/css/components/LogViewer/log-viewer';
+import AnsiUp from '../ansi_up/ansi_up';
 
 interface LogViewerProps {
   /** String or String Array data being sent by the consumer*/
@@ -97,6 +98,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
     const [resizing, setResizing] = useState(false);
     const [loading, setLoading] = useState(true);
     const [listKey, setListKey] = useState(1);
+    const ansiUp = new AnsiUp();
 
     const logViewerRef = innerRef || React.useRef<any>();
     const containerRef = React.useRef<any>();
@@ -107,6 +109,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
         window.addEventListener('resize', callbackResize);
         setLoading(false);
         createDummyElements();
+        ansiUp.resetStyles();
       }
       return () => window.removeEventListener('resize', callbackResize);
     }, [containerRef.current]);
@@ -232,6 +235,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
         onScroll={onScroll}
         isTextWrapped={isTextWrapped}
         hasLineNumbers={hasLineNumbers}
+        ansiUp={ansiUp}
       >
         {LogViewerRow}
       </List>
