@@ -22,8 +22,6 @@ import {
   ChartVoronoiContainer,
   getResizeObserver
 } from '@patternfly/react-charts';
-
-
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 
