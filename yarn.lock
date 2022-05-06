@@ -3202,10 +3202,10 @@
     puppeteer-cluster "^0.22.0"
     xmldoc "^1.1.2"
 
-"@patternfly/patternfly@4.193.0":
-  version "4.193.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.193.0.tgz#797d3023315141864f250994e1b051d5f8e3ea00"
-  integrity sha512-mUnk5iA7qS6/9W4oeQ3uJM2WN6lCS+296tZ1iFii9ZM6bDKmP51yxFYhFSrduIp4NrynDlZq2Ni1JAomVOLsqQ==
+"@patternfly/patternfly@4.194.0":
+  version "4.194.0"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-4.194.0.tgz#d30ee6295cfed88ef92470114d4b6887989a1f5f"
+  integrity sha512-c/hvQhOcXb/R9ta82BzlG0kKEqttjvIGsDp+9aSGurmKAgzFQhqqfBRDs25tPZAMRTcn3r4BGMOclCOksbFPwQ==
 
 "@reach/router@^1.3.4":
   version "1.3.4"
