@@ -270,9 +270,9 @@ class BulkSelectTableDemo extends React.Component {
 ```js file="table-demos/ExpandCollapseAll.jsx"
 ```
 
-### Compound expandable
+### Compound expansion
 
-```js isFullscreen file="table-demos/CompoundExpandable.jsx"
+```js isFullscreen file="table-demos/CompoundExpansion.jsx"
 ```
 
 ### Column management

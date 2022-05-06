@@ -16,7 +16,6 @@ import {
   ToolbarGroup,
   ToolbarItem,
   Pagination,
-  PaginationVariant,
   Select,
   SelectVariant,
   SelectOption,
@@ -74,6 +73,19 @@ export const CompoundExpandable = () => {
     );
   };
 
+  const renderPagination = (variant, isCompact) => (
+    <Pagination
+      isCompact={isCompact}
+      itemCount={36}
+      page={1}
+      perPage={10}
+      variant={variant}
+      titles={{
+        paginationTitle: `${variant} pagination`
+      }}
+    />
+  );
+
   const tableToolbar = (
     <Toolbar id="compact-toolbar">
       <ToolbarContent>
@@ -104,15 +116,7 @@ export const CompoundExpandable = () => {
             <Button variant="primary">Action</Button>
           </ToolbarItem>
         </ToolbarGroup>
-        <ToolbarItem variant="pagination">
-          <Pagination
-            itemCount={37}
-            widgetId="pagination-options-menu-bottom"
-            page={1}
-            variant={PaginationVariant.top}
-            isCompact
-          />
-        </ToolbarItem>
+        <ToolbarItem variant="pagination">{renderPagination('top', true)}</ToolbarItem>
       </ToolbarContent>
     </Toolbar>
   );
@@ -229,6 +233,7 @@ export const CompoundExpandable = () => {
             );
           })}
         </TableComposable>
+        {renderPagination('bottom', false)}
       </PageSection>
     </DashboardWrapper>
   );
