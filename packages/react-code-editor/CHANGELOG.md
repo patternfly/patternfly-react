@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.52.2 (2022-05-06)
+
+
+### Bug Fixes
+
+* **Page:** add tabindex to components with hasOverflowScroll ([#7274](https://github.com/patternfly/patternfly-react/issues/7274)) ([6be2fa8](https://github.com/patternfly/patternfly-react/commit/6be2fa870aba78b833c7346ffe029f96cfc1c37d))
+
+
+
+
+
 ## 4.52.1 (2022-05-06)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
