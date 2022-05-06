@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.49.1 (2022-05-06)
+
+**Note:** Version bump only for package transformer-cjs-imports
+
+
+
+
+
 # 4.49.0 (2022-05-06)
 
 
