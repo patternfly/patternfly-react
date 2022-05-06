@@ -165,6 +165,10 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       element.removeEventListener(event, listener);
     }
   };
+
+  // Obeserver added to address https://github.com/patternfly/patternfly-react/issues/7162
+  // and trigger a Popper update when content changes.
+  // Also accounts for https://github.com/patternfly/patternfly-react/issues/5620
   const observer = new MutationObserver(() => {
     update && update();
   });
