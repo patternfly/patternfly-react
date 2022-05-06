@@ -2156,7 +2156,7 @@ ComposableTableSortable = () => {
   const isNodeSelected = node => selectedNodeNames.includes(node[0]);
 
   // To allow shift+click to select/deselect multiple rows
-  const [recentSelectedRowIndex, setRecentSelectedRowIndex] = (React.useState < number) | (null > null);
+  const [recentSelectedRowIndex, setRecentSelectedRowIndex] = React.useState(null);
   const [shifting, setShifting] = React.useState(false);
 
   const onSelectNode = (node, rowIndex, isSelecting) => {
