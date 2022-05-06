@@ -165,6 +165,10 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       element.removeEventListener(event, listener);
     }
   };
+  const observer = new MutationObserver(() => {
+    update && update();
+  });
+
   React.useEffect(() => {
     addEventListener(onMouseEnter, refOrTrigger, 'mouseenter');
     addEventListener(onMouseLeave, refOrTrigger, 'mouseleave');
@@ -175,6 +179,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     addEventListener(onPopperClick, popperElement, 'click');
     onDocumentClick && addEventListener(onDocumentClickCallback, document, 'click');
     addEventListener(onDocumentKeyDown, document, 'keydown');
+    popperElement && observer.observe(popperElement, { attributes: true, childList: true, subtree: true });
     return () => {
       removeEventListener(onMouseEnter, refOrTrigger, 'mouseenter');
       removeEventListener(onMouseLeave, refOrTrigger, 'mouseleave');
@@ -185,6 +190,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       removeEventListener(onPopperClick, popperElement, 'click');
       onDocumentClick && removeEventListener(onDocumentClickCallback, document, 'click');
       removeEventListener(onDocumentKeyDown, document, 'keydown');
+      observer.disconnect();
     };
   }, [
     triggerElement,
@@ -233,7 +239,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     [popperMatchesTriggerWidth]
   );
 
-  const { styles: popperStyles, attributes, forceUpdate } = usePopper(refOrTrigger, popperElement, {
+  const { styles: popperStyles, attributes, update } = usePopper(refOrTrigger, popperElement, {
     placement: getPlacementMemo,
     modifiers: [
       {
@@ -261,12 +267,6 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       sameWidthMod
     ]
   });
-
-  // force update when content changes
-  // https://github.com/patternfly/patternfly-react/issues/5620
-  React.useEffect(() => {
-    forceUpdate && forceUpdate();
-  }, [popper]);
 
   // Returns the CSS modifier class in order to place the Popper's arrow properly
   // Depends on the position of the Popper relative to the reference element
