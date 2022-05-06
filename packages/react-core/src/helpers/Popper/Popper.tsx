@@ -166,13 +166,6 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     }
   };
 
-  // Obeserver added to address https://github.com/patternfly/patternfly-react/issues/7162
-  // and trigger a Popper update when content changes.
-  // Also accounts for https://github.com/patternfly/patternfly-react/issues/5620
-  const observer = new MutationObserver(() => {
-    update && update();
-  });
-
   React.useEffect(() => {
     addEventListener(onMouseEnter, refOrTrigger, 'mouseenter');
     addEventListener(onMouseLeave, refOrTrigger, 'mouseleave');
@@ -183,7 +176,15 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     addEventListener(onPopperClick, popperElement, 'click');
     onDocumentClick && addEventListener(onDocumentClickCallback, document, 'click');
     addEventListener(onDocumentKeyDown, document, 'keydown');
+
+    // Obeserver added to address https://github.com/patternfly/patternfly-react/issues/7162
+    // and trigger a Popper update when content changes.
+    // Also accounts for https://github.com/patternfly/patternfly-react/issues/5620
+    const observer = new MutationObserver(() => {
+      update && update();
+    });
     popperElement && observer.observe(popperElement, { attributes: true, childList: true, subtree: true });
+
     return () => {
       removeEventListener(onMouseEnter, refOrTrigger, 'mouseenter');
       removeEventListener(onMouseLeave, refOrTrigger, 'mouseleave');
