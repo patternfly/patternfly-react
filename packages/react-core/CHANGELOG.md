@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.211.3 (2022-05-06)
+
+
+### Bug Fixes
+
+* **LogViewer:** clear ANSI cache when resetting the log window ([#7355](https://github.com/patternfly/patternfly-react/issues/7355)) ([b3354b5](https://github.com/patternfly/patternfly-react/commit/b3354b5000c5d7397c479888140b0381367cbd2c))
+
+
+
+
+
 ## 4.211.2 (2022-05-06)
 
 
