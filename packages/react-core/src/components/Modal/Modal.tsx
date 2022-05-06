@@ -31,9 +31,9 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
   'aria-label'?: string;
   /** Id to use for Modal Box descriptor */
   'aria-describedby'?: string;
-  /** Accessible label applied to the modal box body */
+  /** Accessible label applied to the modal box body. This should be used to communicate important information about the modal box body div if needed, such as that it is scrollable */
   bodyAriaLabel?: string;
-  /** Accessible role applied to the modal box body */
+  /** Accessible role applied to the modal box body. This will default to region if a body aria label is applied. Set to a more appropriate role as applicable based on the modal content and context */
   bodyAriaRole?: string;
   /** Flag to show the close button in the header area of the modal */
   showClose?: boolean;
