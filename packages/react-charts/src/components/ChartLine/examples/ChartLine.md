@@ -14,7 +14,6 @@ hideDarkMode: true
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartLegendTooltip, ChartVoronoiContainer, createContainer, getResizeObserver } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory-zoom-container';
 
-
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 

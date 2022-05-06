@@ -9,7 +9,7 @@ import chart_legend_position from '@patternfly/react-tokens/dist/esm/chart_legen
 
 // Typography
 const TYPOGRAPHY_FONT_FAMILY = chart_global_FontFamily.var2;
-const TYPOGRAPHY_LETTER_SPACING = chart_global_letter_spacing.value;
+const TYPOGRAPHY_LETTER_SPACING = chart_global_letter_spacing.var2;
 const TYPOGRAPHY_FONT_SIZE = chart_global_FontSize_sm.value;
 
 export const CommonStyles = {
