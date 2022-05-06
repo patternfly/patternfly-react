@@ -2116,6 +2116,7 @@ import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 ComposableTableSortable = () => {
   const [navActiveItem, setNavActiveItem] = React.useState(0);
@@ -2140,6 +2141,38 @@ ComposableTableSortable = () => {
   const [activeSortDirection, setActiveSortDirection] = React.useState('none');
   // sort dropdown expansion
   const [isSortDropdownOpen, setIsSortDropdownOpen] = React.useState(false);
+
+  const [selectedNodeNames, setSelectedNodeNames] = React.useState([]);
+  const setNodeSelected = (node, isSelecting = true) => {
+    if (!selectedNodeNames.includes(node)) {
+      setSelectedNodeNames([...selectedNodeNames, node]);
+    } else {
+      setSelectedNodeNames(selectedNodeNames.filter(n => n !== node));
+    }
+  };
+
+  const selectAllNodes = (isSelecting = true) => setSelectedNodeNames(isSelecting ? rows.map(r => r[0]) : []);
+  const areAllReposSelected = selectedNodeNames.length === rows.length;
+  const isNodeSelected = node => selectedNodeNames.includes(node[0]);
+
+  // To allow shift+click to select/deselect multiple rows
+  const [recentSelectedRowIndex, setRecentSelectedRowIndex] = (React.useState < number) | (null > null);
+  const [shifting, setShifting] = React.useState(false);
+
+  const onSelectNode = (node, rowIndex, isSelecting) => {
+    // If the user is shift + selecting the checkboxes, then all intermediate checkboxes should be selected
+    if (shifting && recentSelectedRowIndex !== null) {
+      const numberSelected = rowIndex - recentSelectedRowIndex;
+      const intermediateIndexes =
+        numberSelected > 0
+          ? Array.from(new Array(numberSelected + 1), (_x, i) => i + recentSelectedRowIndex)
+          : Array.from(new Array(Math.abs(numberSelected) + 1), (_x, i) => i + rowIndex);
+      intermediateIndexes.forEach(index => setNodeSelected(rows[index], isSelecting));
+    } else {
+      setNodeSelected(node[0], isSelecting);
+    }
+    setRecentSelectedRowIndex(rowIndex);
+  };
 
   const onSort = (event, index, direction) => {
     setActiveSortIndex(index);
@@ -2194,7 +2227,7 @@ ComposableTableSortable = () => {
     </DropdownItem>
   ];
 
-    const defaultActions = () => [
+  const defaultActions = () => [
     {
       title: 'Settings',
       onClick: () => console.log(`clicked on Settings`)
@@ -2204,6 +2237,20 @@ ComposableTableSortable = () => {
       onClick: () => console.log(`clicked on Help`)
     }
   ];
+
+  const renderPagination = (variant, isCompact) => (
+    <Pagination
+      isCompact={isCompact}
+      itemCount={36}
+      page={1}
+      perPage={10}
+      variant={variant}
+      titles={{
+        paginationTitle: `${variant} pagination`
+      }}
+    />
+  );
+
   const userDropdownItems = [
     <DropdownGroup key="group 2">
       <DropdownItem key="group 2 profile">My profile</DropdownItem>
@@ -2379,38 +2426,14 @@ ComposableTableSortable = () => {
             <Button variant="primary">Responsive hidden action on small</Button>
           </ToolbarItem>
         </ToolbarGroup>
-        <ToolbarItem variant="pagination">
-          <Pagination
-            itemCount={37}
-            widgetId="pagination-options-menu-bottom"
-            page={1}
-            variant={PaginationVariant.top}
-            isCompact
-          />
-        </ToolbarItem>
+        <ToolbarItem variant="pagination">{renderPagination('top', true)}</ToolbarItem>
       </ToolbarContent>
     </Toolbar>
   );
 
   return (
     <React.Fragment>
-      <Page
-        header={
-          <Masthead>
-            <MastheadToggle>
-              <PageToggleButton variant="plain" aria-label="Global navigation">
-                <BarsIcon />
-              </PageToggleButton>
-            </MastheadToggle>
-            <MastheadMain></MastheadMain>
-            <MastheadContent>{headerToolbar}</MastheadContent>
-          </Masthead>
-        }
-        sidebar={<PageSidebar nav={PageNav} />}
-        isManagedSidebar
-        skipToContent={<SkipToContent href={'#main-content-page-layout-default-nav'}>Skip to content</SkipToContent>}
-        mainContainerId={'main-content-page-layout-default-nav'}
-      >
+      <DashboardWrapper>
         <PageSection variant={PageSectionVariants.light}>
           <TextContent>
             <Text component="h1">Table demos</Text>
@@ -2425,6 +2448,7 @@ ComposableTableSortable = () => {
           <TableComposable aria-label="Sortable Table">
             <Thead>
               <Tr>
+                <Th />
                 {columns.map((column, columnIndex) => {
                   const sortParams = {
                     sort: {
@@ -2448,39 +2472,41 @@ ComposableTableSortable = () => {
               {rows.map((row, rowIndex) => (
                 <Tr key={rowIndex}>
                   <>
+                    <Td
+                      select={{
+                        rowIndex,
+                        onSelect: (_event, isSelecting) => onSelectNode(row, rowIndex, isSelecting),
+                        isSelected: isNodeSelected(row)
+                      }}
+                    />
                     <Td dataLabel={columns[0]}>
-                      <div>
-                        <div>{row[0]}</div>
-                        <a href="#">siemur/test-space</a>
-                      </div>
+                      <div>{row[0]}</div>
+                      <a href="#">siemur/test-space</a>
                     </Td>
                     <Td dataLabel={columns[1]}>
-                      <CodeBranchIcon key="icon" />{' '}{row[1]}
+                      <CodeBranchIcon key="icon" /> {row[1]}
                     </Td>
                     <Td dataLabel={columns[2]}>
-                      <CodeIcon key="icon" />
-                      {' '}
-                      {row[2]}
+                      <CodeIcon key="icon" /> {row[2]}
                     </Td>
                     <Td dataLabel={columns[3]}>
-                      <CubeIcon key="icon" />{' '}{row[3]}
+                      <CubeIcon key="icon" /> {row[3]}
                     </Td>
-                    <Td dataLabel={columns[4]}>
-                      {row[4]} days ago
-                    </Td>
-                    <Td dataLabel={"Action"}>
-                    <a href="#">Action link</a>
+                    <Td dataLabel={columns[4]}>{row[4]} days ago</Td>
+                    <Td dataLabel={'Action'}>
+                      <a href="#">Action link</a>
                     </Td>
                     <Td isActionCell>
-                     <ActionsColumn items={defaultActions()} />              
-                     </Td>
+                      <ActionsColumn items={defaultActions()} />
+                    </Td>
                   </>
                 </Tr>
               ))}
             </Tbody>
           </TableComposable>
+          {renderPagination('bottom', false)}
         </PageSection>
-      </Page>
+      </DashboardWrapper>
     </React.Fragment>
   );
 };
