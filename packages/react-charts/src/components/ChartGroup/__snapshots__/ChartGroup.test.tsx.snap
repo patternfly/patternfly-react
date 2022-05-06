@@ -88,7 +88,7 @@ exports[`renders container children 1`] = `
           d="M50,121.42857142857142L75,92.85714285714286L100,58.57142857142856L125,50L125,150L100,150L75,150L50,150Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-color-blue-300, #06c); width: 6px; fill-opacity: var(--pf-chart-area--Opacity, 0.3); stroke-width: 2; stroke: var(--pf-chart-color-blue-300, #06c);"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); width: 6px; fill-opacity: 0.3; stroke-width: 2; stroke: var(--pf-chart-theme--blue--ColorScale--100, #06c);"
         />
       </g>
       <g
@@ -112,7 +112,7 @@ exports[`renders container children 1`] = `
           d="M50,135.71428571428572L75,121.42857142857142L100,92.85714285714286L125,78.57142857142857L150,78.57142857142857L150,150L125,150L100,150L75,150L50,150Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-color-blue-100, #8bc1f7); width: 6px; fill-opacity: var(--pf-chart-area--Opacity, 0.3); stroke-width: 2; stroke: var(--pf-chart-color-blue-100, #8bc1f7);"
+          style="fill: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7); width: 6px; fill-opacity: 0.3; stroke-width: 2; stroke: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7);"
         />
       </g>
     </svg>
