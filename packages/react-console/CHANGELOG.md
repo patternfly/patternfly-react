@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.62.0 (2022-05-06)
+
+
+### Features
+
+* **tokens:** Variables now include a fallback value for charts ([#7374](https://github.com/patternfly/patternfly-react/issues/7374)) ([6832688](https://github.com/patternfly/patternfly-react/commit/6832688d904159eee64510656dc4df6ed1ecb841))
+
+
+
+
+
 # 4.61.0 (2022-05-05)
 
 
