@@ -40,19 +40,12 @@ export const ComposableTable = () => {
       onClick: () => console.log(`clicked on Help`)
     }
   ];
-
   const renderPagination = (variant, isCompact) => (
     <Pagination
       isCompact={isCompact}
       itemCount={36}
       page={1}
       perPage={10}
-      onSetPage={(_evt, value) => {
-        this.fetch(value, 10);
-      }}
-      onPerPageSelect={(_evt, value) => {
-        this.fetch(1, value);
-      }}
       variant={variant}
       titles={{
         paginationTitle: `${variant} pagination`
