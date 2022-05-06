@@ -54,6 +54,7 @@ export const TabsDynamic: React.FunctionComponent = () => {
           eventKey={index}
           title={<TabTitleText>{tab}</TabTitleText>}
           closeButtonAriaLabel={`Close ${tab}`}
+          isCloseDisabled={tabs.length === 1}
         >
           {tab}
         </Tab>
