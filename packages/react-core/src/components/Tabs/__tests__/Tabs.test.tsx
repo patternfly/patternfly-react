@@ -41,7 +41,7 @@ test('should render simple tabs', () => {
 test('should render closeable tabs', () => {
   const view = render(
     <Tabs onClose={jest.fn()}>
-      <Tab eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>} closeAriaLabel="close-label">
+      <Tab eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>} closeButtonAriaLabel="close-label">
         Tab 1 section
       </Tab>
     </Tabs>
@@ -51,8 +51,8 @@ test('should render closeable tabs', () => {
 
 test('should render add button', () => {
   const view = render(
-    <Tabs onAdd={jest.fn()} addAriaLabel="add-label">
-      <Tab eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>} closeAriaLabel="close-label">
+    <Tabs onAdd={jest.fn()} addButtonAriaLabel="add-label">
+      <Tab eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>} closeButtonAriaLabel="close-label">
         Tab 1 section
       </Tab>
     </Tabs>
