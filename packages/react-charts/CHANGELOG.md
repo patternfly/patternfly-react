@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.64.3 (2022-05-06)
+
+
+### Bug Fixes
+
+* **Tooltip:** make ref variant announced by assistive tech ([#7332](https://github.com/patternfly/patternfly-react/issues/7332)) ([e841fc5](https://github.com/patternfly/patternfly-react/commit/e841fc5844c8ca7b2d66e2bbdaf55838a778c357))
+
+
+
+
+
 ## 6.64.2 (2022-05-06)
 
 
