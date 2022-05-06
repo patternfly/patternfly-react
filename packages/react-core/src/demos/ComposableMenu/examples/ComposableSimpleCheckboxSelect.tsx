@@ -1,5 +1,5 @@
 import React from 'react';
-import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper } from '@patternfly/react-core';
+import { MenuToggle, Menu, MenuContent, MenuList, MenuItem, Popper, Badge } from '@patternfly/react-core';
 
 export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
@@ -62,11 +62,12 @@ export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
   const toggle = (
     <MenuToggle
       ref={toggleRef}
+      {...(selectedItems.length > 0 && { badge: <Badge isRead>{selectedItems.length}</Badge> })}
       onClick={onToggleClick}
       isExpanded={isOpen}
       style={
         {
-          width: '200px'
+          width: '220px'
         } as React.CSSProperties
       }
     >
