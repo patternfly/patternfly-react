@@ -100,11 +100,11 @@ class MultiColorChart extends React.Component {
                   { name: 'Birds' },
                   {
                     name: 'Cats Threshold',
-                    symbol: { fill: chart_color_blue_300.var2, type: 'threshold' }
+                    symbol: { fill: chart_color_blue_300.var, type: 'threshold' }
                   },
                   {
                     name: 'Birds Threshold',
-                    symbol: { fill: chart_color_orange_300.var2, type: 'threshold' }
+                    symbol: { fill: chart_color_orange_300.var, type: 'threshold' }
                   }
                 ]}
                 itemsPerRow={itemsPerRow}
@@ -153,7 +153,7 @@ class MultiColorChart extends React.Component {
               ]}
               style={{
                 data: {
-                  stroke: chart_color_blue_300.var2
+                  stroke: chart_color_blue_300.var
                 }
               }}
             />
@@ -166,7 +166,7 @@ class MultiColorChart extends React.Component {
               ]}
               style={{
                 data: {
-                  stroke: chart_color_orange_300.var2
+                  stroke: chart_color_orange_300.var
                 }
               }}
             />
