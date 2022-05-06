@@ -16,7 +16,7 @@ exports[`ChartAxis 1`] = `
       <line
         role="presentation"
         shape-rendering="auto"
-        style="stroke: #d2d2d2; fill: transparent; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
+        style="stroke: var(--pf-chart-axis--axis--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
         vector-effect="non-scaling-stroke"
         x1="50"
         x2="400"
@@ -29,7 +29,7 @@ exports[`ChartAxis 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+          style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="50"
           x2="50"
@@ -46,7 +46,7 @@ exports[`ChartAxis 1`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
             text-anchor="middle"
             x="50"
           >
@@ -60,7 +60,7 @@ exports[`ChartAxis 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+          style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="120"
           x2="120"
@@ -77,7 +77,7 @@ exports[`ChartAxis 1`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
             text-anchor="middle"
             x="120"
           >
@@ -91,7 +91,7 @@ exports[`ChartAxis 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+          style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="190"
           x2="190"
@@ -108,7 +108,7 @@ exports[`ChartAxis 1`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
             text-anchor="middle"
             x="190"
           >
@@ -122,7 +122,7 @@ exports[`ChartAxis 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+          style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="260"
           x2="260"
@@ -139,7 +139,7 @@ exports[`ChartAxis 1`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
             text-anchor="middle"
             x="260"
           >
@@ -153,7 +153,7 @@ exports[`ChartAxis 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+          style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="330"
           x2="330"
@@ -170,7 +170,7 @@ exports[`ChartAxis 1`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
             text-anchor="middle"
             x="330"
           >
@@ -184,7 +184,7 @@ exports[`ChartAxis 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+          style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="400"
           x2="400"
@@ -201,7 +201,7 @@ exports[`ChartAxis 1`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
             text-anchor="middle"
             x="400"
           >
@@ -240,7 +240,7 @@ exports[`ChartAxis 2`] = `
       <line
         role="presentation"
         shape-rendering="auto"
-        style="stroke: #d2d2d2; fill: transparent; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
+        style="stroke: var(--pf-chart-axis--axis--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
         vector-effect="non-scaling-stroke"
         x1="50"
         x2="400"
@@ -253,7 +253,7 @@ exports[`ChartAxis 2`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+          style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="50"
           x2="50"
@@ -270,7 +270,7 @@ exports[`ChartAxis 2`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
             text-anchor="middle"
             x="50"
           >
@@ -284,7 +284,7 @@ exports[`ChartAxis 2`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+          style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="120"
           x2="120"
@@ -301,7 +301,7 @@ exports[`ChartAxis 2`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
             text-anchor="middle"
             x="120"
           >
@@ -315,7 +315,7 @@ exports[`ChartAxis 2`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+          style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="190"
           x2="190"
@@ -332,7 +332,7 @@ exports[`ChartAxis 2`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
             text-anchor="middle"
             x="190"
           >
@@ -346,7 +346,7 @@ exports[`ChartAxis 2`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+          style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="260"
           x2="260"
@@ -363,7 +363,7 @@ exports[`ChartAxis 2`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
             text-anchor="middle"
             x="260"
           >
@@ -377,7 +377,7 @@ exports[`ChartAxis 2`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+          style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="330"
           x2="330"
@@ -394,7 +394,7 @@ exports[`ChartAxis 2`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
             text-anchor="middle"
             x="330"
           >
@@ -408,7 +408,7 @@ exports[`ChartAxis 2`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+          style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
           vector-effect="non-scaling-stroke"
           x1="400"
           x2="400"
@@ -425,7 +425,7 @@ exports[`ChartAxis 2`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
             text-anchor="middle"
             x="400"
           >
@@ -483,7 +483,7 @@ exports[`renders component data 1`] = `
             d="M80,150L128.33333333333331,137.5L176.66666666666666,100L224.99999999999997,125"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: #06c; width: 6px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-chart-color-blue-300, #06c); width: 6px; opacity: 1; stroke-width: 2;"
           />
         </g>
         <g
@@ -507,7 +507,7 @@ exports[`renders component data 1`] = `
             d="M80,137.5L128.33333333333331,150L176.66666666666666,75L224.99999999999997,112.5"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: #8bc1f7; width: 6px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-chart-color-blue-100, #8bc1f7); width: 6px; opacity: 1; stroke-width: 2;"
           />
         </g>
         <g
@@ -531,7 +531,7 @@ exports[`renders component data 1`] = `
             d="M80,125L128.33333333333331,112.5L176.66666666666666,50L224.99999999999997,100"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: #002f5d; width: 6px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-chart-color-blue-500, #002f5d); width: 6px; opacity: 1; stroke-width: 2;"
           />
         </g>
         <g
@@ -555,7 +555,7 @@ exports[`renders component data 1`] = `
             d="M80,125L128.33333333333331,125L176.66666666666666,62.5L224.99999999999997,75"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: #519de9; width: 6px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-chart-color-blue-200, #519de9); width: 6px; opacity: 1; stroke-width: 2;"
           />
         </g>
       </g>
@@ -565,7 +565,7 @@ exports[`renders component data 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
+          style="stroke: var(--pf-chart-axis--axis--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
           vector-effect="non-scaling-stroke"
           x1="50"
           x2="250"
@@ -578,7 +578,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="128.33333333333331"
             x2="128.33333333333331"
@@ -595,7 +595,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="128.33333333333331"
             >
@@ -609,7 +609,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="176.66666666666666"
             x2="176.66666666666666"
@@ -626,7 +626,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="176.66666666666666"
             >
@@ -640,7 +640,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="224.99999999999997"
             x2="224.99999999999997"
@@ -657,7 +657,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="224.99999999999997"
             >
@@ -672,7 +672,7 @@ exports[`renders component data 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
+          style="stroke: var(--pf-chart-axis--axis--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
           vector-effect="non-scaling-stroke"
           x1="50"
           x2="50"
@@ -685,7 +685,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -702,7 +702,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -716,7 +716,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -733,7 +733,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -747,7 +747,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -764,7 +764,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >

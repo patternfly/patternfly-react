@@ -9,11 +9,11 @@ import { ColorTheme } from '../color-theme';
 // Color scale
 // See https://docs.google.com/document/d/1cw10pJFXWruB1SA8TQwituxn5Ss6KpxYPCOYGrH8qAY/edit
 const COLOR_SCALE = [
-  chart_color_gold_300.value,
-  chart_color_gold_100.value,
-  chart_color_gold_500.value,
-  chart_color_gold_200.value,
-  chart_color_gold_400.value
+  chart_color_gold_300.var,
+  chart_color_gold_100.var,
+  chart_color_gold_500.var,
+  chart_color_gold_200.var,
+  chart_color_gold_400.var
 ];
 
 export const LightGoldColorTheme = ColorTheme({

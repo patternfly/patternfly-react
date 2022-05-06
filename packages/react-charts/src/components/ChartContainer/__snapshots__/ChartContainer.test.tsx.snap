@@ -76,7 +76,7 @@ exports[`renders container via ChartLegend 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #06c;"
+          style="fill: var(--pf-chart-color-blue-300, #06c);"
         />
         <path
           d="M 77.90925, 39.777
@@ -86,7 +86,7 @@ exports[`renders container via ChartLegend 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #8bc1f7;"
+          style="fill: var(--pf-chart-color-blue-100, #8bc1f7);"
         />
         <text
           direction="inherit"

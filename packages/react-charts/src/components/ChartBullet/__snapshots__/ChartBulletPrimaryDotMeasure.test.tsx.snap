@@ -75,7 +75,7 @@ exports[`renders component data 1`] = `
       a 6, 6 0 1,0 -12,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-color-blue-300, #06c); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
       </g>
       <g>
@@ -86,7 +86,7 @@ exports[`renders component data 1`] = `
       a 6, 6 0 1,0 -12,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-color-blue-300, #06c); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
       </g>
       <g>
@@ -97,7 +97,7 @@ exports[`renders component data 1`] = `
       a 6, 6 0 1,0 -12,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-color-blue-300, #06c); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
       </g>
     </svg>

@@ -83,7 +83,7 @@ A 0 0 0 0 1, 399.99999999976666, 104.8
           index="0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #b8bbbe; stroke: none; padding: 8px; stroke-width: 0;"
+          style="fill: var(--pf-chart-color-black-300, #b8bbbe); stroke: var(--pf-chart-bar--data--stroke, none); padding: 8px; stroke-width: 0;"
         />
       </g>
       <g
@@ -102,7 +102,7 @@ A 0 0 0 0 1, 399.9999999995882, 104.8
           index="0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #d2d2d2; stroke: none; padding: 8px; stroke-width: 0;"
+          style="fill: var(--pf-chart-color-black-200, #d2d2d2); stroke: var(--pf-chart-bar--data--stroke, none); padding: 8px; stroke-width: 0;"
         />
       </g>
       <g
@@ -121,7 +121,7 @@ A 0 0 0 0 1, 399.9999999993, 104.8
           index="0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #f0f0f0; stroke: none; padding: 8px; stroke-width: 0;"
+          style="fill: var(--pf-chart-color-black-100, #f0f0f0); stroke: var(--pf-chart-bar--data--stroke, none); padding: 8px; stroke-width: 0;"
         />
       </g>
     </svg>

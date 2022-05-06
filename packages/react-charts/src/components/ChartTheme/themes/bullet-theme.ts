@@ -40,8 +40,8 @@ export const BulletComparativeErrorMeasureTheme = {
     height: chart_bullet_Height.value,
     style: {
       data: {
-        fill: chart_bullet_comparative_measure_error_Fill_Color.value,
-        stroke: chart_bullet_comparative_measure_error_stroke_Color.value,
+        fill: chart_bullet_comparative_measure_error_Fill_Color.var,
+        stroke: chart_bullet_comparative_measure_error_stroke_Color.var,
         strokeWidth: chart_bullet_comparative_measure_error_stroke_Width.value
       }
     }
@@ -54,8 +54,8 @@ export const BulletComparativeMeasureTheme = {
     height: chart_bullet_Height.value,
     style: {
       data: {
-        fill: chart_bullet_comparative_measure_Fill_Color.value,
-        stroke: chart_bullet_comparative_measure_stroke_Color.value,
+        fill: chart_bullet_comparative_measure_Fill_Color.var,
+        stroke: chart_bullet_comparative_measure_stroke_Color.var,
         strokeWidth: chart_bullet_comparative_measure_stroke_Width.value
       }
     }
@@ -68,8 +68,8 @@ export const BulletComparativeWarningMeasureTheme = {
     height: chart_bullet_Height.value,
     style: {
       data: {
-        fill: chart_bullet_comparative_measure_warning_Fill_Color.value,
-        stroke: chart_bullet_comparative_measure_warning_stroke_Color.value,
+        fill: chart_bullet_comparative_measure_warning_Fill_Color.var,
+        stroke: chart_bullet_comparative_measure_warning_stroke_Color.var,
         strokeWidth: chart_bullet_comparative_measure_warning_stroke_Width.value
       }
     }
@@ -89,8 +89,8 @@ export const BulletGroupTitleTheme = {
   line: {
     style: {
       data: {
-        fill: chart_bullet_group_title_divider_Fill_Color.value,
-        stroke: chart_bullet_group_title_divider_stroke_Color.value,
+        fill: chart_bullet_group_title_divider_Fill_Color.var,
+        stroke: chart_bullet_group_title_divider_stroke_Color.var,
         strokeWidth: chart_bullet_group_title_divider_stroke_Width.value
       }
     }
@@ -108,11 +108,11 @@ export const BulletPrimaryDotMeasureTheme = {
 export const BulletPrimaryNegativeMeasureTheme = {
   group: {
     colorScale: [
-      chart_color_red_100.value,
-      chart_color_red_200.value,
-      chart_color_red_300.value,
-      chart_color_red_400.value,
-      chart_color_red_500.value
+      chart_color_red_100.var,
+      chart_color_red_200.var,
+      chart_color_red_300.var,
+      chart_color_red_400.var,
+      chart_color_red_500.var
     ],
     height: chart_bullet_Height.value
   }
@@ -129,11 +129,11 @@ export const BulletPrimarySegmentedMeasureTheme = {
 export const BulletQualitativeRangeTheme = {
   group: {
     colorScale: [
-      chart_color_black_100.value,
-      chart_color_black_200.value,
-      chart_color_black_300.value,
-      chart_color_black_400.value,
-      chart_color_black_500.value
+      chart_color_black_100.var,
+      chart_color_black_200.var,
+      chart_color_black_300.var,
+      chart_color_black_400.var,
+      chart_color_black_500.var
     ],
     height: chart_bullet_Height.value
   }

@@ -136,8 +136,8 @@ export const BaseTheme = {
     ...LAYOUT_PROPS,
     style: {
       data: {
-        fill: chart_area_data_Fill.value,
-        fillOpacity: chart_area_Opacity.value,
+        fill: chart_area_data_Fill.var,
+        fillOpacity: chart_area_Opacity.var,
         // Omit stroke to add a line border from color scale
         // stroke: chart_global_label_stroke.value,
         strokeWidth: chart_area_stroke_Width.value
@@ -149,35 +149,35 @@ export const BaseTheme = {
     ...LAYOUT_PROPS,
     style: {
       axis: {
-        fill: chart_axis_axis_Fill.value,
+        fill: chart_axis_axis_Fill.var,
         strokeWidth: chart_axis_axis_stroke_Width.value,
-        stroke: chart_axis_axis_stroke_Color.value,
+        stroke: chart_axis_axis_stroke_Color.var,
         strokeLinecap: STROKE_LINE_CAP,
         strokeLinejoin: STROKE_LINE_JOIN
       },
       axisLabel: {
         ...LABEL_CENTERED_PROPS,
         padding: chart_axis_axis_label_Padding.value,
-        stroke: chart_axis_axis_label_stroke_Color.value
+        stroke: chart_axis_axis_label_stroke_Color.var
       },
       grid: {
-        fill: chart_axis_grid_Fill.value,
+        fill: chart_axis_grid_Fill.var,
         stroke: 'none',
         pointerEvents: chart_axis_grid_PointerEvents.value,
         strokeLinecap: STROKE_LINE_CAP,
         strokeLinejoin: STROKE_LINE_JOIN
       },
       ticks: {
-        fill: chart_axis_tick_Fill.value,
+        fill: chart_axis_tick_Fill.var,
         size: chart_axis_tick_Size.value,
-        stroke: chart_axis_tick_stroke_Color.value,
+        stroke: chart_axis_tick_stroke_Color.var,
         strokeLinecap: STROKE_LINE_CAP,
         strokeLinejoin: STROKE_LINE_JOIN,
         strokeWidth: chart_axis_tick_Width.value
       },
       tickLabels: {
         ...LABEL_PROPS,
-        fill: chart_axis_tick_label_Fill.value
+        fill: chart_axis_tick_label_Fill.var
       }
     }
   },
@@ -186,9 +186,9 @@ export const BaseTheme = {
     barWidth: chart_bar_Width.value,
     style: {
       data: {
-        fill: chart_bar_data_Fill.value,
+        fill: chart_bar_data_Fill.var,
         padding: chart_bar_data_Padding.value,
-        stroke: chart_bar_data_stroke.value,
+        stroke: chart_bar_data_stroke.var,
         strokeWidth: chart_bar_data_stroke_Width.value
       },
       labels: LABEL_PROPS
@@ -199,29 +199,29 @@ export const BaseTheme = {
     style: {
       max: {
         padding: chart_boxplot_max_Padding.value,
-        stroke: chart_boxplot_max_stroke_Color.value,
+        stroke: chart_boxplot_max_stroke_Color.var,
         strokeWidth: chart_boxplot_max_stroke_Width.value
       },
       maxLabels: LABEL_PROPS,
       median: {
         padding: chart_boxplot_median_Padding.value,
-        stroke: chart_boxplot_median_stroke_Color.value,
+        stroke: chart_boxplot_median_stroke_Color.var,
         strokeWidth: chart_boxplot_median_stroke_Width.value
       },
       medianLabels: LABEL_PROPS,
       min: {
         padding: chart_boxplot_min_Padding.value,
-        stroke: chart_boxplot_min_stroke_Color.value,
+        stroke: chart_boxplot_min_stroke_Color.var,
         strokeWidth: chart_boxplot_min_stroke_Width.value
       },
       minLabels: LABEL_PROPS,
       q1: {
-        fill: chart_boxplot_lower_quartile_Fill.value,
+        fill: chart_boxplot_lower_quartile_Fill.var,
         padding: chart_boxplot_lower_quartile_Padding.value
       },
       q1Labels: LABEL_PROPS,
       q3: {
-        fill: chart_boxplot_upper_quartile_Fill.value,
+        fill: chart_boxplot_upper_quartile_Fill.var,
         padding: chart_boxplot_upper_quartile_Padding.value
       },
       q3Labels: LABEL_PROPS
@@ -236,7 +236,7 @@ export const BaseTheme = {
     },
     style: {
       data: {
-        stroke: chart_candelstick_data_stroke_Color.value,
+        stroke: chart_candelstick_data_stroke_Color.var,
         strokeWidth: chart_candelstick_data_stroke_Width.value
       },
       labels: LABEL_CENTERED_PROPS
@@ -250,9 +250,9 @@ export const BaseTheme = {
     borderWidth: chart_errorbar_BorderWidth.value,
     style: {
       data: {
-        fill: chart_errorbar_data_Fill.value,
+        fill: chart_errorbar_data_Fill.var,
         opacity: chart_errorbar_data_Opacity.value,
-        stroke: chart_errorbar_data_stroke_Color.value,
+        stroke: chart_errorbar_data_stroke_Color.var,
         strokeWidth: chart_errorbar_data_stroke_Width.value
       },
       labels: LABEL_CENTERED_PROPS
@@ -281,9 +281,9 @@ export const BaseTheme = {
     ...LAYOUT_PROPS,
     style: {
       data: {
-        fill: chart_line_data_Fill.value,
+        fill: chart_line_data_Fill.var,
         opacity: chart_line_data_Opacity.value,
-        stroke: chart_line_data_stroke_Color.value,
+        stroke: chart_line_data_stroke_Color.var,
         strokeWidth: chart_line_data_stroke_Width.value
       },
       labels: LABEL_CENTERED_PROPS
@@ -294,7 +294,7 @@ export const BaseTheme = {
     style: {
       data: {
         padding: chart_pie_data_Padding.value,
-        stroke: chart_pie_data_stroke_Color.value,
+        stroke: chart_pie_data_stroke_Color.var,
         strokeWidth: chart_pie_data_stroke_Width.value
       },
       labels: {
@@ -309,9 +309,9 @@ export const BaseTheme = {
     ...LAYOUT_PROPS,
     style: {
       data: {
-        fill: chart_scatter_data_Fill.value,
+        fill: chart_scatter_data_Fill.var,
         opacity: chart_scatter_data_Opacity.value,
-        stroke: chart_scatter_data_stroke_Color.value,
+        stroke: chart_scatter_data_stroke_Color.var,
         strokeWidth: chart_scatter_data_stroke_Width.value
       },
       labels: LABEL_CENTERED_PROPS
@@ -330,15 +330,15 @@ export const BaseTheme = {
     flyoutPadding: chart_tooltip_Padding.value,
     flyoutStyle: {
       cornerRadius: chart_tooltip_flyoutStyle_corner_radius.value,
-      fill: chart_tooltip_flyoutStyle_Fill.value, // background
+      fill: chart_tooltip_flyoutStyle_Fill.var, // background
       pointerEvents: chart_tooltip_flyoutStyle_PointerEvents.value,
-      stroke: chart_tooltip_flyoutStyle_stroke_Color.value, // border
+      stroke: chart_tooltip_flyoutStyle_stroke_Color.var, // border
       strokeWidth: chart_tooltip_flyoutStyle_stroke_Width.value
     },
     pointerLength: chart_tooltip_pointer_length.value,
     pointerWidth: chart_tooltip_pointer_Width.value,
     style: {
-      fill: chart_tooltip_Fill.value, // text
+      fill: chart_tooltip_Fill.var, // text
       pointerEvents: chart_tooltip_PointerEvents.value
     }
   },
@@ -346,21 +346,21 @@ export const BaseTheme = {
     ...LAYOUT_PROPS,
     style: {
       data: {
-        fill: chart_voronoi_data_Fill.value,
-        stroke: chart_voronoi_data_stroke_Color.value,
+        fill: chart_voronoi_data_Fill.var,
+        stroke: chart_voronoi_data_stroke_Color.var,
         strokeWidth: chart_voronoi_data_stroke_Width.value
       },
       labels: {
         ...LABEL_CENTERED_PROPS,
-        fill: chart_voronoi_labels_Fill.value, // text
+        fill: chart_voronoi_labels_Fill.var, // text
         padding: chart_voronoi_labels_Padding.value,
         pointerEvents: chart_voronoi_labels_PointerEvents.value
       },
       // Note: These properties override tooltip
       flyout: {
-        fill: chart_voronoi_flyout_stroke_Fill.value, // background
+        fill: chart_voronoi_flyout_stroke_Fill.var, // background
         pointerEvents: chart_voronoi_flyout_PointerEvents.value,
-        stroke: chart_voronoi_flyout_stroke_Color.value, // border
+        stroke: chart_voronoi_flyout_stroke_Color.var, // border
         strokeWidth: chart_voronoi_flyout_stroke_Width.value
       }
     }
