@@ -11,12 +11,15 @@ export interface BannerProps extends React.HTMLProps<HTMLDivElement> {
   variant?: 'default' | 'info' | 'danger' | 'success' | 'warning';
   /** If set to true, the banner sticks to the top of its container */
   isSticky?: boolean;
+  /** Text announced by screen reader when variant is set to indicate the type of banner*/
+  screenReaderText?: string;
 }
 
 export const Banner: React.FunctionComponent<BannerProps> = ({
   children,
   className,
   variant = 'default',
+  screenReaderText,
   isSticky = false,
   ...props
 }: BannerProps) => (
@@ -30,6 +33,7 @@ export const Banner: React.FunctionComponent<BannerProps> = ({
     {...props}
   >
     {children}
+    <span className="pf-u-screen-reader">{screenReaderText || `${variant} banner`}</span>
   </div>
 );
 Banner.displayName = 'Banner';
