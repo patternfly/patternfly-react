@@ -33,7 +33,8 @@ export const TabsDynamic: React.FunctionComponent = () => {
       firstMount.current = false;
       return;
     } else {
-      tabComponentRef.current.tabList.current.childNodes[activeTabKey].firstChild.focus();
+      const first = tabComponentRef.current.tabList.current.childNodes[activeTabKey];
+      first && first.firstChild.focus();
     }
   }, [tabs]);
 
@@ -44,11 +45,16 @@ export const TabsDynamic: React.FunctionComponent = () => {
       onClose={onClose}
       onAdd={onAdd}
       aria-label="Tabs in the addable/closeable example"
-      addAriaLabel="Add tab"
+      addButtonAriaLabel="Add tab"
       ref={tabComponentRef}
     >
       {tabs.map((tab, index) => (
-        <Tab key={index} eventKey={index} title={<TabTitleText>{tab}</TabTitleText>} closeAriaLabel={`Close ${tab}`}>
+        <Tab
+          key={index}
+          eventKey={index}
+          title={<TabTitleText>{tab}</TabTitleText>}
+          closeButtonAriaLabel={`Close ${tab}`}
+        >
           {tab}
         </Tab>
       ))}

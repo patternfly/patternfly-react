@@ -36,7 +36,7 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
   /** Optional Tooltip rendered to a Tab. Should be <Tooltip> with appropriate props for proper rendering. */
   tooltip?: React.ReactElement<any>;
   /** Aria-label for the close button added by passing the onClose property to Tabs. */
-  closeAriaLabel?: string;
+  closeButtonAriaLabel?: string;
   /** Flag indicating the close button should be disabled */
   isCloseDisabled?: boolean;
 }
@@ -55,7 +55,7 @@ const TabBase: React.FunctionComponent<TabProps> = ({
   href,
   innerRef,
   tooltip,
-  closeAriaLabel,
+  closeButtonAriaLabel,
   isCloseDisabled = false,
   ...props
 }: TabProps) => {
@@ -126,7 +126,7 @@ const TabBase: React.FunctionComponent<TabProps> = ({
         <span className={css(styles.tabsItemClose)}>
           <Button
             variant="plain"
-            aria-label={closeAriaLabel || 'Close tab'}
+            aria-label={closeButtonAriaLabel || 'Close tab'}
             onClick={(event: any) => handleTabClose(event, eventKey, tabContentRef)}
             isDisabled={isCloseDisabled}
           >

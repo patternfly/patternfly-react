@@ -37,7 +37,7 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   /** Callback for the add button. Passing this property inserts the add button */
   onAdd?: () => void;
   /** Aria-label for the add button */
-  addAriaLabel?: string;
+  addButtonAriaLabel?: string;
   /** Uniquely identifies the tabs */
   id?: string;
   /** Enables the filled tab list layout */
@@ -318,7 +318,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       defaultIsExpanded,
       toggleText,
       toggleAriaLabel,
-      addAriaLabel,
+      addButtonAriaLabel,
       onToggle,
       onClose,
       onAdd,
@@ -434,7 +434,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           </button>
           {onAdd !== undefined && (
             <span className={css(styles.tabsAdd)}>
-              <Button variant="plain" aria-label={addAriaLabel || 'Add tab'} onClick={onAdd}>
+              <Button variant="plain" aria-label={addButtonAriaLabel || 'Add tab'} onClick={onAdd}>
                 <PlusIcon />
               </Button>
             </span>
