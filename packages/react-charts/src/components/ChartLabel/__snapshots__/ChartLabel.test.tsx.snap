@@ -15,7 +15,7 @@ exports[`renders component text 1`] = `
     <tspan
       dx="0"
       dy="0"
-      style="font-family: var(--pf-chart-global--FontFamily); font-size: 14px; letter-spacing: var(--pf-chart-global--letter-spacing); fill: #252525; stroke: transparent;"
+      style="font-family: var(--pf-chart-global--FontFamily, \\"RedHatText\\", \\"Overpass\\", overpass, helvetica, arial, sans-serif); font-size: 14px; letter-spacing: var(--pf-chart-global--letter-spacing, normal); fill: #252525; stroke: transparent;"
       text-anchor="start"
       x="0"
     >

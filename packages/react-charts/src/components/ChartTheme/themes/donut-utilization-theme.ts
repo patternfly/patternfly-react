@@ -22,9 +22,9 @@ export const DonutUtilizationDynamicTheme = {
 export const DonutUtilizationStaticTheme = {
   legend: {
     colorScale: [
-      chart_donut_threshold_first_Color.value,
-      chart_donut_threshold_second_Color.value,
-      chart_donut_threshold_third_Color.value
+      chart_donut_threshold_first_Color.var,
+      chart_donut_threshold_second_Color.var,
+      chart_donut_threshold_third_Color.var
     ]
   },
   pie: {

@@ -18,14 +18,14 @@ exports[`ChartDonutUtilization 1`] = `
           d="M5.8170722959499274e-15,-95L5.2659812363336185e-15,-86Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #06c; padding: 8px; stroke: transparent; stroke-width: 1;"
+          style="fill: var(--pf-chart-color-blue-300, #06c); padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
         <path
           d="M5.8170722959499274e-15,-95A95,95,0,1,1,-5.8170722959499274e-15,95A95,95,0,1,1,5.8170722959499274e-15,-95M6.058540038520991e-14,-86A86,86,0,1,0,-6.058540038520991e-14,86A86,86,0,1,0,6.058540038520991e-14,-86Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #f0f0f0; padding: 8px; stroke: transparent; stroke-width: 1;"
+          style="fill: #f0f0f0; padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
       </g>
@@ -62,14 +62,14 @@ exports[`ChartDonutUtilization 2`] = `
           d="M5.8170722959499274e-15,-95L5.2659812363336185e-15,-86Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #06c; padding: 8px; stroke: transparent; stroke-width: 1;"
+          style="fill: var(--pf-chart-color-blue-300, #06c); padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
         <path
           d="M5.8170722959499274e-15,-95A95,95,0,1,1,-5.8170722959499274e-15,95A95,95,0,1,1,5.8170722959499274e-15,-95M6.058540038520991e-14,-86A86,86,0,1,0,-6.058540038520991e-14,86A86,86,0,1,0,6.058540038520991e-14,-86Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #f0f0f0; padding: 8px; stroke: transparent; stroke-width: 1;"
+          style="fill: #f0f0f0; padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(115, 115)"
         />
       </g>
@@ -106,14 +106,14 @@ exports[`renders component data 1`] = `
           d="M0.9334130156923648,-79.99455444055012A80,80,0,0,1,65.26560040477878,46.26447237139683L57.983888959835994,40.97399932998254A71,71,0,0,0,0.9334130156923663,-70.99386410206263Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #06c; padding: 8px; stroke: transparent; stroke-width: 1;"
+          style="fill: var(--pf-chart-color-blue-300, #06c); padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(100, 100)"
         />
         <path
           d="M64.16830759493514,47.77476635632862A80,80,0,1,1,-0.9334130156924101,-79.99455444055012L-0.9334130156923751,-70.99386410206263A71,71,0,1,0,56.88659614999237,42.48429331491432Z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #f0f0f0; padding: 8px; stroke: transparent; stroke-width: 1;"
+          style="fill: #f0f0f0; padding: 8px; stroke: var(--pf-chart-pie--data--stroke--Color, transparent); stroke-width: 1;"
           transform="translate(100, 100)"
         />
       </g>

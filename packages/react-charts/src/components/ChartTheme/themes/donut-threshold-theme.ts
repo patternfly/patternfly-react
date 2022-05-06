@@ -13,7 +13,7 @@ import chart_donut_threshold_static_pie_Width from '@patternfly/react-tokens/dis
 // Donut threshold dynamic theme
 export const DonutThresholdDynamicTheme = {
   legend: {
-    colorScale: [chart_donut_threshold_second_Color.value, chart_donut_threshold_third_Color.value]
+    colorScale: [chart_donut_threshold_second_Color.var, chart_donut_threshold_third_Color.var]
   },
   pie: {
     height: chart_donut_threshold_dynamic_pie_Height.value,
@@ -26,9 +26,9 @@ export const DonutThresholdDynamicTheme = {
 export const DonutThresholdStaticTheme = {
   pie: {
     colorScale: [
-      chart_donut_threshold_first_Color.value,
-      chart_donut_threshold_second_Color.value,
-      chart_donut_threshold_third_Color.value
+      chart_donut_threshold_first_Color.var,
+      chart_donut_threshold_second_Color.var,
+      chart_donut_threshold_third_Color.var
     ],
     height: chart_donut_threshold_static_pie_Height.value,
     padAngle: chart_donut_threshold_static_pie_angle_Padding.value,

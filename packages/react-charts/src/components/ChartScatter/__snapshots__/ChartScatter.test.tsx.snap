@@ -21,7 +21,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 57, 246
@@ -30,7 +30,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 64, 242
@@ -39,7 +39,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 71, 238
@@ -48,7 +48,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 78, 234
@@ -57,7 +57,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 85, 230
@@ -66,7 +66,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 92, 226
@@ -75,7 +75,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 99, 222
@@ -84,7 +84,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 106, 218
@@ -93,7 +93,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 113, 214.00000000000003
@@ -102,7 +102,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 120, 210
@@ -111,7 +111,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 126.99999999999999, 206
@@ -120,7 +120,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 134, 202
@@ -129,7 +129,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 141, 198
@@ -138,7 +138,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 148, 194
@@ -147,7 +147,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 155, 190
@@ -156,7 +156,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 162, 185.99999999999997
@@ -165,7 +165,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 169, 181.99999999999997
@@ -174,7 +174,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 176.00000000000003, 177.99999999999997
@@ -183,7 +183,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 183.00000000000003, 173.99999999999997
@@ -192,7 +192,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 190.00000000000003, 169.99999999999997
@@ -201,7 +201,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 197.00000000000003, 165.99999999999997
@@ -210,7 +210,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 204.00000000000006, 161.99999999999997
@@ -219,7 +219,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 211.00000000000006, 157.99999999999994
@@ -228,7 +228,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 218.00000000000006, 153.99999999999994
@@ -237,7 +237,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 225.00000000000006, 149.99999999999997
@@ -246,7 +246,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 232.00000000000006, 145.99999999999997
@@ -255,7 +255,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 239.00000000000006, 141.99999999999997
@@ -264,7 +264,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 246.00000000000006, 137.99999999999997
@@ -273,7 +273,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 253.00000000000009, 133.99999999999997
@@ -282,7 +282,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 260.00000000000006, 129.99999999999994
@@ -291,7 +291,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 267.00000000000006, 125.99999999999996
@@ -300,7 +300,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 274.0000000000001, 121.99999999999996
@@ -309,7 +309,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 281.0000000000001, 117.99999999999996
@@ -318,7 +318,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 288.0000000000001, 113.99999999999994
@@ -327,7 +327,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 295.0000000000001, 109.99999999999994
@@ -336,7 +336,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 302.0000000000001, 105.99999999999994
@@ -345,7 +345,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 309.0000000000001, 101.99999999999993
@@ -354,7 +354,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 316.0000000000001, 97.99999999999993
@@ -363,7 +363,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 323.00000000000017, 93.99999999999993
@@ -372,7 +372,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 330.00000000000017, 89.99999999999993
@@ -381,7 +381,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 337.00000000000017, 85.99999999999991
@@ -390,7 +390,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 344.00000000000017, 81.99999999999991
@@ -399,7 +399,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 351.00000000000017, 77.99999999999991
@@ -408,7 +408,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 358.00000000000017, 73.99999999999991
@@ -417,7 +417,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 365.00000000000017, 69.9999999999999
@@ -426,7 +426,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 372.00000000000017, 65.9999999999999
@@ -435,7 +435,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 379.0000000000002, 61.9999999999999
@@ -444,7 +444,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 386.0000000000002, 57.9999999999999
@@ -453,7 +453,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 393.0000000000002, 53.99999999999989
@@ -462,7 +462,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 400, 50
@@ -471,7 +471,7 @@ exports[`ChartScatter 1`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
       </g>
     </svg>
@@ -510,7 +510,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 57, 246
@@ -519,7 +519,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 64, 242
@@ -528,7 +528,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 71, 238
@@ -537,7 +537,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 78, 234
@@ -546,7 +546,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 85, 230
@@ -555,7 +555,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 92, 226
@@ -564,7 +564,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 99, 222
@@ -573,7 +573,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 106, 218
@@ -582,7 +582,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 113, 214.00000000000003
@@ -591,7 +591,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 120, 210
@@ -600,7 +600,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 126.99999999999999, 206
@@ -609,7 +609,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 134, 202
@@ -618,7 +618,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 141, 198
@@ -627,7 +627,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 148, 194
@@ -636,7 +636,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 155, 190
@@ -645,7 +645,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 162, 185.99999999999997
@@ -654,7 +654,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 169, 181.99999999999997
@@ -663,7 +663,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 176.00000000000003, 177.99999999999997
@@ -672,7 +672,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 183.00000000000003, 173.99999999999997
@@ -681,7 +681,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 190.00000000000003, 169.99999999999997
@@ -690,7 +690,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 197.00000000000003, 165.99999999999997
@@ -699,7 +699,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 204.00000000000006, 161.99999999999997
@@ -708,7 +708,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 211.00000000000006, 157.99999999999994
@@ -717,7 +717,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 218.00000000000006, 153.99999999999994
@@ -726,7 +726,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 225.00000000000006, 149.99999999999997
@@ -735,7 +735,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 232.00000000000006, 145.99999999999997
@@ -744,7 +744,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 239.00000000000006, 141.99999999999997
@@ -753,7 +753,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 246.00000000000006, 137.99999999999997
@@ -762,7 +762,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 253.00000000000009, 133.99999999999997
@@ -771,7 +771,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 260.00000000000006, 129.99999999999994
@@ -780,7 +780,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 267.00000000000006, 125.99999999999996
@@ -789,7 +789,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 274.0000000000001, 121.99999999999996
@@ -798,7 +798,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 281.0000000000001, 117.99999999999996
@@ -807,7 +807,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 288.0000000000001, 113.99999999999994
@@ -816,7 +816,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 295.0000000000001, 109.99999999999994
@@ -825,7 +825,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 302.0000000000001, 105.99999999999994
@@ -834,7 +834,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 309.0000000000001, 101.99999999999993
@@ -843,7 +843,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 316.0000000000001, 97.99999999999993
@@ -852,7 +852,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 323.00000000000017, 93.99999999999993
@@ -861,7 +861,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 330.00000000000017, 89.99999999999993
@@ -870,7 +870,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 337.00000000000017, 85.99999999999991
@@ -879,7 +879,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 344.00000000000017, 81.99999999999991
@@ -888,7 +888,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 351.00000000000017, 77.99999999999991
@@ -897,7 +897,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 358.00000000000017, 73.99999999999991
@@ -906,7 +906,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 365.00000000000017, 69.9999999999999
@@ -915,7 +915,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 372.00000000000017, 65.9999999999999
@@ -924,7 +924,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 379.0000000000002, 61.9999999999999
@@ -933,7 +933,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 386.0000000000002, 57.9999999999999
@@ -942,7 +942,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 393.0000000000002, 53.99999999999989
@@ -951,7 +951,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
         <path
           d="M 400, 50
@@ -960,7 +960,7 @@ exports[`ChartScatter 2`] = `
       a 3, 3 0 1,0 -6,0"
           role="presentation"
           shape-rendering="auto"
-          style="fill: #151515; opacity: 1; stroke: transparent; stroke-width: 0;"
+          style="fill: var(--pf-chart-scatter--data--Fill, #151515); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
         />
       </g>
     </svg>
@@ -1000,7 +1000,7 @@ exports[`renders component data 1`] = `
       a 3, 3 0 1,0 -6,0"
             role="presentation"
             shape-rendering="auto"
-            style="width: 3px; fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;"
+            style="width: 3px; fill: var(--pf-chart-color-blue-300, #06c); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
           />
           <path
             d="M 66.66666666666667, 121.42857142857142
@@ -1009,7 +1009,7 @@ exports[`renders component data 1`] = `
       a 3, 3 0 1,0 -6,0"
             role="presentation"
             shape-rendering="auto"
-            style="width: 3px; fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;"
+            style="width: 3px; fill: var(--pf-chart-color-blue-300, #06c); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
           />
           <path
             d="M 83.33333333333334, 107.14285714285714
@@ -1018,7 +1018,7 @@ exports[`renders component data 1`] = `
       a 3, 3 0 1,0 -6,0"
             role="presentation"
             shape-rendering="auto"
-            style="width: 3px; fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;"
+            style="width: 3px; fill: var(--pf-chart-color-blue-300, #06c); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
           />
           <path
             d="M 100, 92.85714285714286
@@ -1027,7 +1027,7 @@ exports[`renders component data 1`] = `
       a 3, 3 0 1,0 -6,0"
             role="presentation"
             shape-rendering="auto"
-            style="width: 3px; fill: #06c; opacity: 1; stroke: transparent; stroke-width: 0;"
+            style="width: 3px; fill: var(--pf-chart-color-blue-300, #06c); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
           />
         </g>
         <g>
@@ -1038,7 +1038,7 @@ exports[`renders component data 1`] = `
       a 3, 3 0 1,0 -6,0"
             role="presentation"
             shape-rendering="auto"
-            style="width: 3px; fill: #8bc1f7; opacity: 1; stroke: transparent; stroke-width: 0;"
+            style="width: 3px; fill: var(--pf-chart-color-blue-100, #8bc1f7); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
           />
           <path
             d="M 83.33333333333334, 107.14285714285714
@@ -1047,7 +1047,7 @@ exports[`renders component data 1`] = `
       a 3, 3 0 1,0 -6,0"
             role="presentation"
             shape-rendering="auto"
-            style="width: 3px; fill: #8bc1f7; opacity: 1; stroke: transparent; stroke-width: 0;"
+            style="width: 3px; fill: var(--pf-chart-color-blue-100, #8bc1f7); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
           />
           <path
             d="M 100, 92.85714285714286
@@ -1056,7 +1056,7 @@ exports[`renders component data 1`] = `
       a 3, 3 0 1,0 -6,0"
             role="presentation"
             shape-rendering="auto"
-            style="width: 3px; fill: #8bc1f7; opacity: 1; stroke: transparent; stroke-width: 0;"
+            style="width: 3px; fill: var(--pf-chart-color-blue-100, #8bc1f7); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
           />
           <path
             d="M 116.66666666666667, 78.57142857142857
@@ -1065,7 +1065,7 @@ exports[`renders component data 1`] = `
       a 3, 3 0 1,0 -6,0"
             role="presentation"
             shape-rendering="auto"
-            style="width: 3px; fill: #8bc1f7; opacity: 1; stroke: transparent; stroke-width: 0;"
+            style="width: 3px; fill: var(--pf-chart-color-blue-100, #8bc1f7); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
           />
         </g>
         <g>
@@ -1076,7 +1076,7 @@ exports[`renders component data 1`] = `
       a 3, 3 0 1,0 -6,0"
             role="presentation"
             shape-rendering="auto"
-            style="width: 3px; fill: #002f5d; opacity: 1; stroke: transparent; stroke-width: 0;"
+            style="width: 3px; fill: var(--pf-chart-color-blue-500, #002f5d); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
           />
           <path
             d="M 100, 92.85714285714286
@@ -1085,7 +1085,7 @@ exports[`renders component data 1`] = `
       a 3, 3 0 1,0 -6,0"
             role="presentation"
             shape-rendering="auto"
-            style="width: 3px; fill: #002f5d; opacity: 1; stroke: transparent; stroke-width: 0;"
+            style="width: 3px; fill: var(--pf-chart-color-blue-500, #002f5d); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
           />
           <path
             d="M 116.66666666666667, 78.57142857142857
@@ -1094,7 +1094,7 @@ exports[`renders component data 1`] = `
       a 3, 3 0 1,0 -6,0"
             role="presentation"
             shape-rendering="auto"
-            style="width: 3px; fill: #002f5d; opacity: 1; stroke: transparent; stroke-width: 0;"
+            style="width: 3px; fill: var(--pf-chart-color-blue-500, #002f5d); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
           />
           <path
             d="M 133.33333333333334, 64.28571428571429
@@ -1103,7 +1103,7 @@ exports[`renders component data 1`] = `
       a 3, 3 0 1,0 -6,0"
             role="presentation"
             shape-rendering="auto"
-            style="width: 3px; fill: #002f5d; opacity: 1; stroke: transparent; stroke-width: 0;"
+            style="width: 3px; fill: var(--pf-chart-color-blue-500, #002f5d); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
           />
         </g>
         <g>
@@ -1114,7 +1114,7 @@ exports[`renders component data 1`] = `
       a 3, 3 0 1,0 -6,0"
             role="presentation"
             shape-rendering="auto"
-            style="width: 3px; fill: #519de9; opacity: 1; stroke: transparent; stroke-width: 0;"
+            style="width: 3px; fill: var(--pf-chart-color-blue-200, #519de9); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
           />
           <path
             d="M 116.66666666666667, 78.57142857142857
@@ -1123,7 +1123,7 @@ exports[`renders component data 1`] = `
       a 3, 3 0 1,0 -6,0"
             role="presentation"
             shape-rendering="auto"
-            style="width: 3px; fill: #519de9; opacity: 1; stroke: transparent; stroke-width: 0;"
+            style="width: 3px; fill: var(--pf-chart-color-blue-200, #519de9); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
           />
           <path
             d="M 133.33333333333334, 64.28571428571429
@@ -1132,7 +1132,7 @@ exports[`renders component data 1`] = `
       a 3, 3 0 1,0 -6,0"
             role="presentation"
             shape-rendering="auto"
-            style="width: 3px; fill: #519de9; opacity: 1; stroke: transparent; stroke-width: 0;"
+            style="width: 3px; fill: var(--pf-chart-color-blue-200, #519de9); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
           />
           <path
             d="M 150, 50
@@ -1141,7 +1141,7 @@ exports[`renders component data 1`] = `
       a 3, 3 0 1,0 -6,0"
             role="presentation"
             shape-rendering="auto"
-            style="width: 3px; fill: #519de9; opacity: 1; stroke: transparent; stroke-width: 0;"
+            style="width: 3px; fill: var(--pf-chart-color-blue-200, #519de9); opacity: 1; stroke: var(--pf-chart-scatter--data--stroke--Color, transparent); stroke-width: 0;"
           />
         </g>
       </g>
@@ -1151,7 +1151,7 @@ exports[`renders component data 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
+          style="stroke: var(--pf-chart-axis--axis--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
           vector-effect="non-scaling-stroke"
           x1="50"
           x2="150"
@@ -1164,7 +1164,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="50"
@@ -1181,7 +1181,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="50"
             >
@@ -1195,7 +1195,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="66.66666666666667"
             x2="66.66666666666667"
@@ -1212,7 +1212,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="66.66666666666667"
             >
@@ -1226,7 +1226,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="83.33333333333334"
             x2="83.33333333333334"
@@ -1243,7 +1243,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="83.33333333333334"
             >
@@ -1257,7 +1257,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="100"
             x2="100"
@@ -1274,7 +1274,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="100"
             >
@@ -1288,7 +1288,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="116.66666666666667"
             x2="116.66666666666667"
@@ -1305,7 +1305,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="116.66666666666667"
             >
@@ -1319,7 +1319,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="133.33333333333334"
             x2="133.33333333333334"
@@ -1336,7 +1336,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="133.33333333333334"
             >
@@ -1350,7 +1350,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="150"
             x2="150"
@@ -1367,7 +1367,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="150"
             >
@@ -1382,7 +1382,7 @@ exports[`renders component data 1`] = `
         <line
           role="presentation"
           shape-rendering="auto"
-          style="stroke: #d2d2d2; fill: transparent; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
+          style="stroke: var(--pf-chart-axis--axis--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--axis--Fill, transparent); stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;"
           vector-effect="non-scaling-stroke"
           x1="50"
           x2="50"
@@ -1395,7 +1395,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -1412,7 +1412,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -1426,7 +1426,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -1443,7 +1443,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -1457,7 +1457,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -1474,7 +1474,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -1488,7 +1488,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -1505,7 +1505,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -1519,7 +1519,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -1536,7 +1536,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -1550,7 +1550,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -1567,7 +1567,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -1581,7 +1581,7 @@ exports[`renders component data 1`] = `
           <line
             role="presentation"
             shape-rendering="auto"
-            style="stroke: #d2d2d2; fill: transparent; size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
+            style="stroke: var(--pf-chart-axis--tick--stroke--Color, #d2d2d2); fill: var(--pf-chart-axis--tick--Fill, transparent); size: 5px; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1;"
             vector-effect="non-scaling-stroke"
             x1="50"
             x2="45"
@@ -1598,7 +1598,7 @@ exports[`renders component data 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #4f5255;"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
