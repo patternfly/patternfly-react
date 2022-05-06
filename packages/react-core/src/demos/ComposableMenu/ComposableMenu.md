@@ -47,6 +47,8 @@ Composable menus currently require consumer keyboard handling and use of our und
 
 ### Composable tree view menu
 
+When rendering a menu-like element that does not contain MenuItem components, [Panel](/components/panel) allows more flexible control and customization.
+
 ```ts file="./examples/ComposableTreeViewMenu.tsx"
 ```
 
