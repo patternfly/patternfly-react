@@ -221,21 +221,21 @@ import chart_color_purple_300 from '@patternfly/react-tokens/dist/esm/chart_colo
     legendComponent={
       <ChartLegend
         data={[
-          { 
+          {
             name: 'Cats',
-            symbol: { fill: chart_color_blue_300.value }
+            symbol: { fill: chart_color_blue_300.var }
           },
-          { 
+          {
             name: 'Dogs',
-            symbol: { fill: chart_color_gold_300.value }
+            symbol: { fill: chart_color_gold_300.var }
           },
           {
             name: 'Birds',
-            symbol: { fill: chart_color_green_300.value }
+            symbol: { fill: chart_color_green_300.var }
           },
           {
             name: 'Mice',
-            symbol: { fill: chart_color_purple_300.value }
+            symbol: { fill: chart_color_purple_300.var }
           }
         ]}
       />
@@ -245,7 +245,7 @@ import chart_color_purple_300 from '@patternfly/react-tokens/dist/esm/chart_colo
     padding={{
       bottom: 75, // Adjusted to accommodate legend
       left: 50,
-      right: 50, 
+      right: 50,
       top: 50
     }}
     themeColor={ChartThemeColor.multiOrdered}
@@ -253,47 +253,47 @@ import chart_color_purple_300 from '@patternfly/react-tokens/dist/esm/chart_colo
   >
     <ChartAxis />
     <ChartAxis dependentAxis showGrid />
-    <ChartStack 
+    <ChartStack
       horizontal
       colorScale={[
-        chart_color_blue_300.value,
-        chart_color_gold_300.value,
-        chart_color_green_300.value,
-        chart_color_purple_300.value
+        chart_color_blue_300.var,
+        chart_color_gold_300.var,
+        chart_color_green_300.var,
+        chart_color_purple_300.var
       ]}
     >
-      <ChartBar 
+      <ChartBar
         data={[
-          { name: 'Cats', x: '2015', y: 1, label: 'Cats: 1' }, 
-          { name: 'Cats', x: '2016', y: 2, label: 'Cats: 2' }, 
-          { name: 'Cats', x: '2017', y: 5, label: 'Cats: 5' }, 
+          { name: 'Cats', x: '2015', y: 1, label: 'Cats: 1' },
+          { name: 'Cats', x: '2016', y: 2, label: 'Cats: 2' },
+          { name: 'Cats', x: '2017', y: 5, label: 'Cats: 5' },
           { name: 'Cats', x: '2018', y: 3, label: 'Cats: 3' }
-        ]} 
+        ]}
         labelComponent={<ChartTooltip constrainToVisibleArea />}
       />
-      <ChartBar 
+      <ChartBar
         data={[
-          { name: 'Dogs', x: '2015', y: 2, label: 'Dogs: 2' }, 
-          { name: 'Dogs', x: '2016', y: 1, label: 'Dogs: 1' }, 
-          { name: 'Dogs', x: '2017', y: 7, label: 'Dogs: 7' }, 
+          { name: 'Dogs', x: '2015', y: 2, label: 'Dogs: 2' },
+          { name: 'Dogs', x: '2016', y: 1, label: 'Dogs: 1' },
+          { name: 'Dogs', x: '2017', y: 7, label: 'Dogs: 7' },
           { name: 'Dogs', x: '2018', y: 4, label: 'Dogs: 4' }
         ]}
         labelComponent={<ChartTooltip constrainToVisibleArea />}
       />
-      <ChartBar 
+      <ChartBar
         data={[
-          { name: 'Birds', x: '2015', y: 4, label: 'Birds: 4' }, 
-          { name: 'Birds', x: '2016', y: 4, label: 'Birds: 4' }, 
-          { name: 'Birds', x: '2017', y: 9, label: 'Birds: 9' }, 
+          { name: 'Birds', x: '2015', y: 4, label: 'Birds: 4' },
+          { name: 'Birds', x: '2016', y: 4, label: 'Birds: 4' },
+          { name: 'Birds', x: '2017', y: 9, label: 'Birds: 9' },
           { name: 'Birds', x: '2018', y: 7, label: 'Birds: 7' }
         ]}
         labelComponent={<ChartTooltip constrainToVisibleArea />}
       />
-      <ChartBar 
+      <ChartBar
         data={[
-          { name: 'Mice', x: '2015', y: 3, label: 'Mice: 3' }, 
-          { name: 'Mice', x: '2016', y: 3, label: 'Mice: 3' }, 
-          { name: 'Mice', x: '2017', y: 8, label: 'Mice: 8' }, 
+          { name: 'Mice', x: '2015', y: 3, label: 'Mice: 3' },
+          { name: 'Mice', x: '2016', y: 3, label: 'Mice: 3' },
+          { name: 'Mice', x: '2017', y: 8, label: 'Mice: 8' },
           { name: 'Mice', x: '2018', y: 5, label: 'Mice: 5' }
         ]}
         labelComponent={<ChartTooltip constrainToVisibleArea />}
@@ -321,7 +321,7 @@ import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_
       { name: 'Cats' },
       { name: 'Birds' },
       { name: 'Mice' },
-      { name: 'Cats Threshold', symbol: { fill: chart_color_blue_300.value, type: 'threshold' }}
+      { name: 'Cats Threshold', symbol: { fill: chart_color_blue_300.var, type: 'threshold' }}
     ]}
     legendPosition="bottom"
     height={275}
@@ -373,7 +373,7 @@ import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_
         ]}
         style={{
           data: {
-            stroke: chart_color_blue_300.value,
+            stroke: chart_color_blue_300.var,
           }
         }}
       />
@@ -400,10 +400,10 @@ class MultiColorChart extends React.Component {
 
     // Colors
     this.colorScale = [
-      chart_color_blue_300.value,
-      chart_color_green_300.value,
-      chart_color_cyan_300.value,
-      chart_color_gold_300.value
+      chart_color_blue_300.var,
+      chart_color_green_300.var,
+      chart_color_cyan_300.var,
+      chart_color_gold_300.var
     ];
 
     // Layout
@@ -481,7 +481,6 @@ class MultiColorChart extends React.Component {
 - Use `ChartGroup` to apply theme color scales and other properties to multiple components
 
 ### Note
-Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
-components used in the examples above, Victory pass-thru props are also documented here:
+Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the components used in the examples above, Victory pass-thru props are also documented here:
 
- - For theme props, see [VictoryTheme](https://formidable.com/open-source/victory/docs/victory-theme)
+- For theme props, see [VictoryTheme](https://formidable.com/open-source/victory/docs/victory-theme)
