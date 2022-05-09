@@ -29,7 +29,6 @@ exports[`ChipGroup chip group default 1`] = `
             <span
               class="pf-c-chip__text"
               id="pf-random-id-1"
-              style="max-width: auto;"
             >
               1.1
             </span>
@@ -101,7 +100,6 @@ exports[`ChipGroup chip group with category 1`] = `
             <span
               class="pf-c-chip__text"
               id="pf-random-id-3"
-              style="max-width: auto;"
             >
               1.1
             </span>
@@ -173,7 +171,6 @@ exports[`ChipGroup chip group with category and tooltip 1`] = `
             <span
               class="pf-c-chip__text"
               id="pf-random-id-13"
-              style="max-width: auto;"
             >
               1.1
             </span>
@@ -245,7 +242,6 @@ exports[`ChipGroup chip group with closable category 1`] = `
             <span
               class="pf-c-chip__text"
               id="pf-random-id-5"
-              style="max-width: auto;"
             >
               1.1
             </span>

@@ -41,7 +41,7 @@ describe('Chip', () => {
 
   test('custom max-width text', () => {
     const { asFragment } = render(
-      <Chip className="my-chp-cls" maxWidthText="100px">
+      <Chip className="my-chp-cls" textMaxWidth="100px">
         4 more
       </Chip>
     );

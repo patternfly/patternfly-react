@@ -1757,7 +1757,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   <span
                     class="pf-c-chip__text"
                     id="pf-random-id-23"
-                    style="max-width: auto;"
                   >
                     Mr
                   </span>
@@ -1800,7 +1799,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   <span
                     class="pf-c-chip__text"
                     id="pf-random-id-24"
-                    style="max-width: auto;"
                   >
                     Mrs
                   </span>

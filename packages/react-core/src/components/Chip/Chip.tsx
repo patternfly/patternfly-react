@@ -39,8 +39,8 @@ export interface ChipProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
     | 'right-start'
     | 'right-end';
 
-  /** Css property expressed in percentage or every css unit that override the default value of the max-width  */
-  maxWidthText?: string;
+  /** Css property expressed in percentage or any css unit that overrides the default value of the max-width of the chip's text */
+  textMaxWidth?: string;
 }
 
 interface ChipState {
@@ -76,7 +76,9 @@ export class Chip extends React.Component<ChipProps, ChipState> {
     });
   }
 
-  setMaxWidthText = () => this.props.maxWidthText || 'auto';
+  setChipStyle = () => ({
+    '--pf-c-chip__text--MaxWidth': this.props.textMaxWidth
+  });
 
   renderOverflowChip = () => {
     const { children, className, onClick, ouiaId } = this.props;
@@ -84,13 +86,15 @@ export class Chip extends React.Component<ChipProps, ChipState> {
     return (
       <Component
         onClick={onClick}
+        {...(this.props.textMaxWidth && {
+          style: this.setChipStyle(),
+          ...this.props.style
+        })}
         className={css(styles.chip, styles.modifiers.overflow, className)}
         {...(this.props.component === 'button' ? { type: 'button' } : {})}
         {...getOUIAProps('OverflowChip', ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
       >
-        <span style={{ maxWidth: this.setMaxWidthText() }} className={css(styles.chipText)}>
-          {children}
-        </span>
+        <span className={css(styles.chipText)}>{children}</span>
       </Component>
     );
   };
@@ -100,11 +104,14 @@ export class Chip extends React.Component<ChipProps, ChipState> {
     const Component = component as any;
     return (
       <Component
+        {...(this.props.textMaxWidth && {
+          style: this.setChipStyle()
+        })}
         className={css(styles.chip, className)}
         {...(this.state.isTooltipVisible && { tabIndex: 0 })}
         {...getOUIAProps(Chip.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
       >
-        <span ref={this.span} style={{ maxWidth: this.setMaxWidthText() }} className={css(styles.chipText)} id={id}>
+        <span ref={this.span} className={css(styles.chipText)} id={id}>
           {children}
         </span>
         {!isReadOnly && (

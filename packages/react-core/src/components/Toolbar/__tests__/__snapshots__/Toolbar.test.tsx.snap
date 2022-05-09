@@ -301,7 +301,6 @@ exports[`Toolbar should render with custom chip content 1`] = `
                     <span
                       class="pf-c-chip__text"
                       id="pf-random-id-3"
-                      style="max-width: auto;"
                     >
                       New
                     </span>
@@ -344,7 +343,6 @@ exports[`Toolbar should render with custom chip content 1`] = `
                     <span
                       class="pf-c-chip__text"
                       id="pf-random-id-4"
-                      style="max-width: auto;"
                     >
                       Pending
                     </span>

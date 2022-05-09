@@ -11,7 +11,6 @@ exports[`Chip closable 1`] = `
     <span
       class="pf-c-chip__text"
       id="chip_one"
-      style="max-width: auto;"
     >
       Chip
     </span>
@@ -55,7 +54,6 @@ exports[`Chip closable with tooltip 1`] = `
     <span
       class="pf-c-chip__text"
       id="chip_one"
-      style="max-width: auto;"
     >
       1234567890123456789
     </span>
@@ -95,11 +93,11 @@ exports[`Chip custom max-width text 1`] = `
     data-ouia-component-id="OUIA-Generated-Chip-5"
     data-ouia-component-type="PF4/Chip"
     data-ouia-safe="true"
+    style="--pf-c-chip__text--MaxWidth: 100px;"
   >
     <span
       class="pf-c-chip__text"
       id="pf-random-id-4"
-      style="max-width: 100px;"
     >
       4 more
     </span>
@@ -142,7 +140,6 @@ exports[`Chip overflow 1`] = `
   >
     <span
       class="pf-c-chip__text"
-      style="max-width: auto;"
     >
       4 more
     </span>
@@ -161,7 +158,6 @@ exports[`Chip readonly 1`] = `
     <span
       class="pf-c-chip__text"
       id="pf-random-id-3"
-      style="max-width: auto;"
     >
       4 more
     </span>
