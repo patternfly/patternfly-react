@@ -22,7 +22,6 @@ import {
   ChartVoronoiContainer,
   getResizeObserver
 } from '@patternfly/react-charts';
-import '@patternfly/patternfly/patternfly-charts.css';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_orange_300 from '@patternfly/react-tokens/dist/esm/chart_color_orange_300';
 
@@ -99,11 +98,11 @@ class MultiColorChart extends React.Component {
                   { name: 'Birds' },
                   {
                     name: 'Cats Threshold',
-                    symbol: { fill: chart_color_blue_300.value, type: 'threshold' }
+                    symbol: { fill: chart_color_blue_300.var, type: 'threshold' }
                   },
                   {
                     name: 'Birds Threshold',
-                    symbol: { fill: chart_color_orange_300.value, type: 'threshold' }
+                    symbol: { fill: chart_color_orange_300.var, type: 'threshold' }
                   }
                 ]}
                 itemsPerRow={itemsPerRow}
@@ -152,8 +151,8 @@ class MultiColorChart extends React.Component {
               ]}
               style={{
                 data: {
-                  stroke: chart_color_blue_300.value
-                }                
+                  stroke: chart_color_blue_300.var
+                }
               }}
             />
             <ChartThreshold
@@ -165,8 +164,8 @@ class MultiColorChart extends React.Component {
               ]}
               style={{
                 data: {
-                  stroke: chart_color_orange_300.value
-                }             
+                  stroke: chart_color_orange_300.var
+                }
               }}
             />
           </Chart>

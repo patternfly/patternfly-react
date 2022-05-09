@@ -223,7 +223,7 @@ export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerP
   // Clone so users can override cursor container props
   const cursor = React.cloneElement(cursorComponent, {
     style: {
-      strokeColor: chart_global_label_Fill.value
+      strokeColor: chart_global_label_Fill.var
     },
     ...cursorComponent.props
   });

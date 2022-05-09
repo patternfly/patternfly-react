@@ -28,7 +28,7 @@ export const DonutUtilizationStaticTheme = {
     ]
   },
   pie: {
-    colorScale: [chart_donut_threshold_first_Color.value],
+    colorScale: [chart_donut_threshold_first_Color.var],
     padding: chart_donut_utilization_static_pie_Padding.value
   }
 };

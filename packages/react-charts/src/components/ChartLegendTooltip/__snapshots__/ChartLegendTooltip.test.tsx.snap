@@ -59,7 +59,7 @@ exports[`allows tooltip via container component 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="50"
             >
@@ -90,7 +90,7 @@ exports[`allows tooltip via container component 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="166.66666666666666"
             >
@@ -121,7 +121,7 @@ exports[`allows tooltip via container component 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="283.3333333333333"
             >
@@ -152,7 +152,7 @@ exports[`allows tooltip via container component 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="400"
             >
@@ -207,7 +207,7 @@ exports[`allows tooltip via container component 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -248,7 +248,7 @@ exports[`allows tooltip via container component 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -289,7 +289,7 @@ exports[`allows tooltip via container component 1`] = `
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -320,7 +320,7 @@ exports[`allows tooltip via container component 1`] = `
             d="M50,185L166.66666666666666,170L283.3333333333333,125L400,155"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-chart-color-green-300, #4cb140); width: 11px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-chart-theme--green--ColorScale--100, #4cb140); width: 11px; opacity: 1; stroke-width: 2;"
           />
         </g>
         <g
@@ -344,7 +344,7 @@ exports[`allows tooltip via container component 1`] = `
             d="M50,170L166.66666666666666,185L283.3333333333333,95L400,140"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-chart-color-green-100, #bde2b9); stroke-dasharray: 3,3; width: 11px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-chart-theme--green--ColorScale--200, #bde2b9); stroke-dasharray: 3,3; width: 11px; opacity: 1; stroke-width: 2;"
           />
         </g>
         <g
@@ -368,7 +368,7 @@ exports[`allows tooltip via container component 1`] = `
             d="M50,155L166.66666666666666,140L283.3333333333333,65L400,125"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-chart-color-green-500, #23511e); width: 11px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-chart-theme--green--ColorScale--300, #23511e); width: 11px; opacity: 1; stroke-width: 2;"
           />
         </g>
         <g
@@ -392,7 +392,7 @@ exports[`allows tooltip via container component 1`] = `
             d="M50,155ZM283.3333333333333,80L400,95"
             role="presentation"
             shape-rendering="auto"
-            style="fill: none; stroke: var(--pf-chart-color-green-200, #7cc674); width: 11px; opacity: 1; stroke-width: 2;"
+            style="fill: none; stroke: var(--pf-chart-theme--green--ColorScale--400, #7cc674); width: 11px; opacity: 1; stroke-width: 2;"
           />
         </g>
       </g>
@@ -415,7 +415,7 @@ exports[`allows tooltip via container component 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-color-green-300, #4cb140);"
+          style="fill: var(--pf-chart-theme--green--ColorScale--100, #4cb140);"
         />
         <path
           d="M 160.62125, 248.156
@@ -435,7 +435,7 @@ exports[`allows tooltip via container component 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-color-green-100, #bde2b9);"
+          style="fill: var(--pf-chart-theme--green--ColorScale--200, #bde2b9);"
         />
         <path
           d="M 234.34362500000003, 250.872
@@ -445,7 +445,7 @@ exports[`allows tooltip via container component 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-color-green-500, #23511e);"
+          style="fill: var(--pf-chart-theme--green--ColorScale--300, #23511e);"
         />
         <path
           d="M 305.903, 250.872
@@ -455,7 +455,7 @@ exports[`allows tooltip via container component 1`] = `
       z"
           role="presentation"
           shape-rendering="auto"
-          style="fill: var(--pf-chart-color-green-200, #7cc674);"
+          style="fill: var(--pf-chart-theme--green--ColorScale--400, #7cc674);"
         />
         <text
           direction="inherit"
@@ -467,7 +467,7 @@ exports[`allows tooltip via container component 1`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;"
+            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
             text-anchor="start"
             x="114.8"
           >
@@ -484,7 +484,7 @@ exports[`allows tooltip via container component 1`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;"
+            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
             text-anchor="start"
             x="183.58125"
           >
@@ -501,7 +501,7 @@ exports[`allows tooltip via container component 1`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;"
+            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
             text-anchor="start"
             x="256.015625"
           >
@@ -518,7 +518,7 @@ exports[`allows tooltip via container component 1`] = `
           <tspan
             dx="0"
             dy="0"
-            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;"
+            style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
             text-anchor="start"
             x="327.57500000000005"
           >

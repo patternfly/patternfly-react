@@ -31,7 +31,7 @@ exports[`ChartLegend 1`] = `
       z"
         role="presentation"
         shape-rendering="auto"
-        style="fill: var(--pf-chart-color-blue-300, #06c);"
+        style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c);"
       />
       <path
         d="M 95.05925, 18.872
@@ -41,7 +41,7 @@ exports[`ChartLegend 1`] = `
       z"
         role="presentation"
         shape-rendering="auto"
-        style="fill: var(--pf-chart-color-blue-100, #8bc1f7);"
+        style="fill: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7);"
       />
       <text
         direction="inherit"
@@ -53,7 +53,7 @@ exports[`ChartLegend 1`] = `
         <tspan
           dx="0"
           dy="0"
-          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;"
+          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
           text-anchor="start"
           x="30.8"
         >
@@ -70,7 +70,7 @@ exports[`ChartLegend 1`] = `
         <tspan
           dx="0"
           dy="0"
-          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;"
+          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
           text-anchor="start"
           x="116.73125"
         >
@@ -123,7 +123,7 @@ exports[`ChartLegend 2`] = `
       z"
         role="presentation"
         shape-rendering="auto"
-        style="fill: var(--pf-chart-color-blue-300, #06c);"
+        style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c);"
       />
       <path
         d="M 95.05925, 18.872
@@ -133,7 +133,7 @@ exports[`ChartLegend 2`] = `
       z"
         role="presentation"
         shape-rendering="auto"
-        style="fill: var(--pf-chart-color-blue-100, #8bc1f7);"
+        style="fill: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7);"
       />
       <text
         direction="inherit"
@@ -145,7 +145,7 @@ exports[`ChartLegend 2`] = `
         <tspan
           dx="0"
           dy="0"
-          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;"
+          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
           text-anchor="start"
           x="30.8"
         >
@@ -162,7 +162,7 @@ exports[`ChartLegend 2`] = `
         <tspan
           dx="0"
           dy="0"
-          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;"
+          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
           text-anchor="start"
           x="116.73125"
         >
@@ -215,7 +215,7 @@ exports[`renders component data 1`] = `
       z"
         role="presentation"
         shape-rendering="auto"
-        style="fill: var(--pf-chart-color-blue-300, #06c);"
+        style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c);"
       />
       <path
         d="M 77.90925, 39.777
@@ -225,7 +225,7 @@ exports[`renders component data 1`] = `
       z"
         role="presentation"
         shape-rendering="auto"
-        style="fill: var(--pf-chart-color-blue-100, #8bc1f7);"
+        style="fill: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7);"
       />
       <text
         direction="inherit"
@@ -237,7 +237,7 @@ exports[`renders component data 1`] = `
         <tspan
           dx="0"
           dy="0"
-          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 2px; stroke: transparent; fill: #252525;"
+          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 2px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
           text-anchor="start"
           x="2"
         >
@@ -254,7 +254,7 @@ exports[`renders component data 1`] = `
         <tspan
           dx="0"
           dy="0"
-          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;"
+          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
           text-anchor="start"
           x="30.8"
         >
@@ -271,7 +271,7 @@ exports[`renders component data 1`] = `
         <tspan
           dx="0"
           dy="0"
-          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: #252525;"
+          style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-global--label--Fill, #151515);"
           text-anchor="start"
           x="99.58125"
         >

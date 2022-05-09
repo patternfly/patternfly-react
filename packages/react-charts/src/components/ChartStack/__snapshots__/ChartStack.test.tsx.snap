@@ -84,7 +84,7 @@ A 0 0 0 0 1, 85, 125.86206896551724
             index="0"
             role="presentation"
             shape-rendering="auto"
-            style="fill: var(--pf-chart-color-blue-200, #519de9); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
+            style="fill: var(--pf-chart-theme--blue--ColorScale--400, #519de9); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
           />
           <path
             d="M 123.33333333333331, 125.86206896551724 
@@ -99,7 +99,7 @@ A 0 0 0 0 1, 133.33333333333331, 125.86206896551724
             index="1"
             role="presentation"
             shape-rendering="auto"
-            style="fill: var(--pf-chart-color-blue-200, #519de9); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
+            style="fill: var(--pf-chart-theme--blue--ColorScale--400, #519de9); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
           />
           <path
             d="M 171.66666666666666, 77.58620689655172 
@@ -114,7 +114,7 @@ A 0 0 0 0 1, 181.66666666666666, 77.58620689655172
             index="2"
             role="presentation"
             shape-rendering="auto"
-            style="fill: var(--pf-chart-color-blue-200, #519de9); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
+            style="fill: var(--pf-chart-theme--blue--ColorScale--400, #519de9); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
           />
           <path
             d="M 219.99999999999997, 101.72413793103448 
@@ -129,7 +129,7 @@ A 0 0 0 0 1, 229.99999999999997, 101.72413793103448
             index="3"
             role="presentation"
             shape-rendering="auto"
-            style="fill: var(--pf-chart-color-blue-200, #519de9); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
+            style="fill: var(--pf-chart-theme--blue--ColorScale--400, #519de9); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
           />
         </g>
         <g
@@ -148,7 +148,7 @@ A 0 0 0 0 1, 85, 139.6551724137931
             index="0"
             role="presentation"
             shape-rendering="auto"
-            style="fill: var(--pf-chart-color-blue-500, #002f5d); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
+            style="fill: var(--pf-chart-theme--blue--ColorScale--300, #002f5d); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
           />
           <path
             d="M 123.33333333333331, 139.6551724137931 
@@ -163,7 +163,7 @@ A 0 0 0 0 1, 133.33333333333331, 139.6551724137931
             index="1"
             role="presentation"
             shape-rendering="auto"
-            style="fill: var(--pf-chart-color-blue-500, #002f5d); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
+            style="fill: var(--pf-chart-theme--blue--ColorScale--300, #002f5d); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
           />
           <path
             d="M 171.66666666666666, 108.62068965517243 
@@ -178,7 +178,7 @@ A 0 0 0 0 1, 181.66666666666666, 108.62068965517243
             index="2"
             role="presentation"
             shape-rendering="auto"
-            style="fill: var(--pf-chart-color-blue-500, #002f5d); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
+            style="fill: var(--pf-chart-theme--blue--ColorScale--300, #002f5d); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
           />
           <path
             d="M 219.99999999999997, 125.86206896551724 
@@ -193,7 +193,7 @@ A 0 0 0 0 1, 229.99999999999997, 125.86206896551724
             index="3"
             role="presentation"
             shape-rendering="auto"
-            style="fill: var(--pf-chart-color-blue-500, #002f5d); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
+            style="fill: var(--pf-chart-theme--blue--ColorScale--300, #002f5d); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
           />
         </g>
         <g
@@ -212,7 +212,7 @@ A 0 0 0 0 1, 85, 146.55172413793105
             index="0"
             role="presentation"
             shape-rendering="auto"
-            style="fill: var(--pf-chart-color-blue-100, #8bc1f7); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
+            style="fill: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
           />
           <path
             d="M 123.33333333333331, 143.10344827586206 
@@ -227,7 +227,7 @@ A 0 0 0 0 1, 133.33333333333331, 143.10344827586206
             index="1"
             role="presentation"
             shape-rendering="auto"
-            style="fill: var(--pf-chart-color-blue-100, #8bc1f7); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
+            style="fill: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
           />
           <path
             d="M 171.66666666666666, 132.75862068965517 
@@ -242,7 +242,7 @@ A 0 0 0 0 1, 181.66666666666666, 132.75862068965517
             index="2"
             role="presentation"
             shape-rendering="auto"
-            style="fill: var(--pf-chart-color-blue-100, #8bc1f7); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
+            style="fill: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
           />
           <path
             d="M 219.99999999999997, 139.6551724137931 
@@ -257,7 +257,7 @@ A 0 0 0 0 1, 229.99999999999997, 139.6551724137931
             index="3"
             role="presentation"
             shape-rendering="auto"
-            style="fill: var(--pf-chart-color-blue-100, #8bc1f7); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
+            style="fill: var(--pf-chart-theme--blue--ColorScale--200, #8bc1f7); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
           />
         </g>
         <g
@@ -276,7 +276,7 @@ A 0 0 0 0 1, 85, 150
             index="0"
             role="presentation"
             shape-rendering="auto"
-            style="fill: var(--pf-chart-color-blue-300, #06c); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
+            style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
           />
           <path
             d="M 123.33333333333331, 150 
@@ -291,7 +291,7 @@ A 0 0 0 0 1, 133.33333333333331, 150
             index="1"
             role="presentation"
             shape-rendering="auto"
-            style="fill: var(--pf-chart-color-blue-300, #06c); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
+            style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
           />
           <path
             d="M 171.66666666666666, 150 
@@ -306,7 +306,7 @@ A 0 0 0 0 1, 181.66666666666666, 150
             index="2"
             role="presentation"
             shape-rendering="auto"
-            style="fill: var(--pf-chart-color-blue-300, #06c); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
+            style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
           />
           <path
             d="M 219.99999999999997, 150 
@@ -321,7 +321,7 @@ A 0 0 0 0 1, 229.99999999999997, 150
             index="3"
             role="presentation"
             shape-rendering="auto"
-            style="fill: var(--pf-chart-color-blue-300, #06c); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
+            style="fill: var(--pf-chart-theme--blue--ColorScale--100, #06c); stroke: var(--pf-chart-bar--data--stroke, none); stroke-width: 1; padding: 8px;"
           />
         </g>
       </g>
@@ -361,7 +361,7 @@ A 0 0 0 0 1, 229.99999999999997, 150
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="80"
             >
@@ -392,7 +392,7 @@ A 0 0 0 0 1, 229.99999999999997, 150
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="128.33333333333331"
             >
@@ -423,7 +423,7 @@ A 0 0 0 0 1, 229.99999999999997, 150
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="176.66666666666666"
             >
@@ -454,7 +454,7 @@ A 0 0 0 0 1, 229.99999999999997, 150
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="middle"
               x="224.99999999999997"
             >
@@ -499,7 +499,7 @@ A 0 0 0 0 1, 229.99999999999997, 150
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -530,7 +530,7 @@ A 0 0 0 0 1, 229.99999999999997, 150
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -561,7 +561,7 @@ A 0 0 0 0 1, 229.99999999999997, 150
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -592,7 +592,7 @@ A 0 0 0 0 1, 229.99999999999997, 150
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >
@@ -623,7 +623,7 @@ A 0 0 0 0 1, 229.99999999999997, 150
             <tspan
               dx="0"
               dy="0"
-              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: transparent; fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
+              style="font-family: \\"RedHatText\\",\\"Overpass\\",overpass,helvetica,arial,sans-serif; font-size: 14px; letter-spacing: normal; padding: 10px; stroke: var(--pf-chart-global--label--stroke, transparent); fill: var(--pf-chart-axis--tick-label--Fill, #4f5255);"
               text-anchor="end"
               x="35"
             >

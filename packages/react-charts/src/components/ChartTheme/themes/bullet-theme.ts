@@ -12,16 +12,16 @@ import chart_bullet_comparative_measure_warning_stroke_Width from '@patternfly/r
 import chart_bullet_group_title_divider_Fill_Color from '@patternfly/react-tokens/dist/esm/chart_bullet_group_title_divider_Fill_Color';
 import chart_bullet_group_title_divider_stroke_Color from '@patternfly/react-tokens/dist/esm/chart_bullet_group_title_divider_stroke_Color';
 import chart_bullet_group_title_divider_stroke_Width from '@patternfly/react-tokens/dist/esm/chart_bullet_group_title_divider_stroke_Width';
-import chart_color_black_100 from '@patternfly/react-tokens/dist/esm/chart_color_black_100';
-import chart_color_black_200 from '@patternfly/react-tokens/dist/esm/chart_color_black_200';
-import chart_color_black_300 from '@patternfly/react-tokens/dist/esm/chart_color_black_300';
-import chart_color_black_400 from '@patternfly/react-tokens/dist/esm/chart_color_black_400';
-import chart_color_black_500 from '@patternfly/react-tokens/dist/esm/chart_color_black_500';
-import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_red_100';
-import chart_color_red_200 from '@patternfly/react-tokens/dist/esm/chart_color_red_200';
-import chart_color_red_300 from '@patternfly/react-tokens/dist/esm/chart_color_red_300';
-import chart_color_red_400 from '@patternfly/react-tokens/dist/esm/chart_color_red_400';
-import chart_color_red_500 from '@patternfly/react-tokens/dist/esm/chart_color_red_500';
+import chart_bullet_qualitative_range_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_bullet_qualitative_range_ColorScale_100';
+import chart_bullet_qualitative_range_ColorScale_200 from '@patternfly/react-tokens/dist/esm/chart_bullet_qualitative_range_ColorScale_200';
+import chart_bullet_qualitative_range_ColorScale_300 from '@patternfly/react-tokens/dist/esm/chart_bullet_qualitative_range_ColorScale_300';
+import chart_bullet_qualitative_range_ColorScale_400 from '@patternfly/react-tokens/dist/esm/chart_bullet_qualitative_range_ColorScale_400';
+import chart_bullet_qualitative_range_ColorScale_500 from '@patternfly/react-tokens/dist/esm/chart_bullet_qualitative_range_ColorScale_500';
+import chart_bullet_negative_measure_ColorScale_100 from '@patternfly/react-tokens/dist/esm/chart_bullet_negative_measure_ColorScale_100';
+import chart_bullet_negative_measure_ColorScale_200 from '@patternfly/react-tokens/dist/esm/chart_bullet_negative_measure_ColorScale_200';
+import chart_bullet_negative_measure_ColorScale_300 from '@patternfly/react-tokens/dist/esm/chart_bullet_negative_measure_ColorScale_300';
+import chart_bullet_negative_measure_ColorScale_400 from '@patternfly/react-tokens/dist/esm/chart_bullet_negative_measure_ColorScale_400';
+import chart_bullet_negative_measure_ColorScale_500 from '@patternfly/react-tokens/dist/esm/chart_bullet_negative_measure_ColorScale_500';
 import chart_global_layout_Padding from '@patternfly/react-tokens/dist/esm/chart_global_layout_Padding';
 
 // See https://docs.google.com/document/d/1cw10pJFXWruB1SA8TQwituxn5Ss6KpxYPCOYGrH8qAY/edit#
@@ -108,11 +108,11 @@ export const BulletPrimaryDotMeasureTheme = {
 export const BulletPrimaryNegativeMeasureTheme = {
   group: {
     colorScale: [
-      chart_color_red_100.var,
-      chart_color_red_200.var,
-      chart_color_red_300.var,
-      chart_color_red_400.var,
-      chart_color_red_500.var
+      chart_bullet_negative_measure_ColorScale_100.var,
+      chart_bullet_negative_measure_ColorScale_200.var,
+      chart_bullet_negative_measure_ColorScale_300.var,
+      chart_bullet_negative_measure_ColorScale_400.var,
+      chart_bullet_negative_measure_ColorScale_500.var
     ],
     height: chart_bullet_Height.value
   }
@@ -129,11 +129,11 @@ export const BulletPrimarySegmentedMeasureTheme = {
 export const BulletQualitativeRangeTheme = {
   group: {
     colorScale: [
-      chart_color_black_100.var,
-      chart_color_black_200.var,
-      chart_color_black_300.var,
-      chart_color_black_400.var,
-      chart_color_black_500.var
+      chart_bullet_qualitative_range_ColorScale_100.var,
+      chart_bullet_qualitative_range_ColorScale_200.var,
+      chart_bullet_qualitative_range_ColorScale_300.var,
+      chart_bullet_qualitative_range_ColorScale_400.var,
+      chart_bullet_qualitative_range_ColorScale_500.var
     ],
     height: chart_bullet_Height.value
   }
