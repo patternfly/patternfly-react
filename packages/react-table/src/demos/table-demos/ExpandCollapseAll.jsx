@@ -1,5 +1,15 @@
 import React from 'react';
-import { PageSection, Table, TableHeader, TableBody, expandable } from '@patternfly/react-table';
+import {
+  PageSection,
+  Pagination,
+  Table,
+  TableHeader,
+  TableBody,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem,
+  expandable
+} from '@patternfly/react-table';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -116,26 +126,51 @@ class ExpandCollapseAllTableDemo extends React.Component {
     });
   }
 
+  renderPagination(variant, isCompact) {
+    return (
+      <Pagination
+        isCompact={isCompact}
+        itemCount={36}
+        page={1}
+        perPage={10}
+        variant={variant}
+        titles={{
+          paginationTitle: `${variant} pagination`
+        }}
+      />
+    );
+  }
+
   render() {
     const { columns, rows, collapseAllAriaLabel } = this.state;
+
+    const tableToolbar = (
+      <Toolbar id="compact-toolbar">
+        <ToolbarContent>
+          <ToolbarItem variant="pagination">{this.renderPagination('top', true)}</ToolbarItem>
+        </ToolbarContent>
+      </Toolbar>
+    );
 
     return (
       <React.Fragment>
         <DashboardWrapper hasPageTemplateTitle>
           <PageSection isWidthLimited>
+            {tableToolbar}
             <Table
               aria-label="Collapsible table"
               onSelect={this.onSelect}
               onCollapse={this.onCollapse}
               rows={rows}
               cells={columns}
-              canSelectAll={true}
+              canSelectAll={false}
               canCollapseAll={true}
               collapseAllAriaLabel={collapseAllAriaLabel}
             >
               <TableHeader />
               <TableBody />
             </Table>
+            {this.renderPagination('bottom', false)}
           </PageSection>
         </DashboardWrapper>
       </React.Fragment>
