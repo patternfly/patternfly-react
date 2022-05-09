@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.62.5 (2022-05-09)
+
+
+### Bug Fixes
+
+* **Popper:** update Popper modifiers when child DOM changes ([#7385](https://github.com/patternfly/patternfly-react/issues/7385)) ([28d0b74](https://github.com/patternfly/patternfly-react/commit/28d0b74107ae76acae535c37ea73cec3a4cf49d5))
+
+
+
+
+
 ## 4.62.4 (2022-05-09)
 
 **Note:** Version bump only for package @patternfly/react-icons
