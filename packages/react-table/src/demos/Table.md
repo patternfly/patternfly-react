@@ -5,12 +5,15 @@ section: components
 
 import { Checkbox, PageSection, ToolbarExpandIconWrapper, ToolbarContent } from '@patternfly/react-core';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
+import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
@@ -2075,7 +2078,6 @@ import {
   OptionsMenu,
   OptionsMenuToggle,
   Pagination,
-  PaginationVariant,
   Text,
   TextContent,
   Select,
@@ -2094,23 +2096,23 @@ import {
   OptionsMenuItem,
   OptionsMenuSeparator,
   OptionsMenuItemGroup,
-  Page,
-  PageSidebar,
-  Masthead,
-  MastheadToggle,
-  PageToggleButton,
-  MastheadMain,
-  MastheadContent,
-  SkipToContent,
+  OverflowMenu,
+  OverflowMenuContent,
+  OverflowMenuControl,
+  OverflowMenuDropdownItem,
+  OverflowMenuGroup,
+  OverflowMenuItem,
   PageSection
 } from '@patternfly/react-core';
 import { ActionsColumn, TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -2218,14 +2220,7 @@ ComposableTableSortable = () => {
     </Nav>
   );
 
-  const kebabDropdownItems = [
-    <DropdownItem key="kebab-1">
-      <CogIcon /> Settings
-    </DropdownItem>,
-    <DropdownItem key="kebab-2">
-      <HelpIcon /> Help
-    </DropdownItem>
-  ];
+  const kebabDropdownItems = [<OverflowMenuDropdownItem key="kebab-1">Some action</OverflowMenuDropdownItem>];
 
   const defaultActions = () => [
     {
@@ -2418,12 +2413,36 @@ ComposableTableSortable = () => {
             isGrouped
           />
         </ToolbarItem>
-        <ToolbarGroup>
+        <OverflowMenu>
+          <OverflowMenuContent>
+            <OverflowMenuGroup groupType="button">
+              <OverflowMenuItem visibility={{ default: 'visible', sm: 'hidden', md: 'visible' }}>
+                <Button variant="primary">Responsive hidden action on small</Button>
+              </OverflowMenuItem>
+              <OverflowMenuItem>
+                <Button variant="secondary">Action</Button>
+              </OverflowMenuItem>
+            </OverflowMenuGroup>
+          </OverflowMenuContent>
+          <OverflowMenuControl hasAdditionalOptions>
+            <Dropdown
+              isPlain
+              onSelect={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)}
+              toggle={<KebabToggle onToggle={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)} />}
+              isOpen={isKebabDropdownOpen}
+              dropdownItems={kebabDropdownItems}
+            />
+          </OverflowMenuControl>
+        </OverflowMenu>
+        <ToolbarGroup variant="icon-button-group">
           <ToolbarItem>
-            <Button variant="primary">Action</Button>
+            <Button aria-label="Edit" variant="plain" icon={<EditIcon />} />
           </ToolbarItem>
-          <ToolbarItem visibility={{ default: 'visible', sm: 'hidden', md: 'visible' }}>
-            <Button variant="primary">Responsive hidden action on small</Button>
+          <ToolbarItem>
+            <Button aria-label="Clone" variant="plain" icon={<CloneIcon />} />
+          </ToolbarItem>
+          <ToolbarItem>
+            <Button aria-label="Sync" variant="plain" icon={<SyncIcon />} />
           </ToolbarItem>
         </ToolbarGroup>
         <ToolbarItem variant="pagination">{renderPagination('top', true)}</ToolbarItem>
