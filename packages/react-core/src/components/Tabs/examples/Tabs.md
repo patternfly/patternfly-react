@@ -1622,5 +1622,5 @@ class ToggledSeparateContent extends React.Component {
 
 To enable closeable tabs, pass the `onClose` property to `Tabs`, and to enable the add button, pass the `onAdd` property to `Tabs`. Aria labels may be controlled manually by passing `closeButtonAriaLabel` to `Tab` and `addButtonAriaLabel` to `Tabs`.
 
-```ts file="./TabsDynamic.tsx"
+```ts file="./TabsDynamic.tsx" isBeta
 ```

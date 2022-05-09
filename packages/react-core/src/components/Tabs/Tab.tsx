@@ -35,9 +35,9 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
   innerRef?: React.Ref<any>;
   /** Optional Tooltip rendered to a Tab. Should be <Tooltip> with appropriate props for proper rendering. */
   tooltip?: React.ReactElement<any>;
-  /** Aria-label for the close button added by passing the onClose property to Tabs. */
+  /** @beta Aria-label for the close button added by passing the onClose property to Tabs. */
   closeButtonAriaLabel?: string;
-  /** Flag indicating the close button should be disabled */
+  /** @beta Flag indicating the close button should be disabled */
   isCloseDisabled?: boolean;
 }
 
