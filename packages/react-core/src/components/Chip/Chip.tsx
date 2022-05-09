@@ -38,6 +38,9 @@ export interface ChipProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
     | 'left-end'
     | 'right-start'
     | 'right-end';
+
+  /** Css property expressed in percentage or every css unit that override the default value of the max-width  */
+  maxWidthText?: string;
 }
 
 interface ChipState {
@@ -73,6 +76,8 @@ export class Chip extends React.Component<ChipProps, ChipState> {
     });
   }
 
+  setMaxWidthText = () => this.props.maxWidthText || 'auto';
+
   renderOverflowChip = () => {
     const { children, className, onClick, ouiaId } = this.props;
     const Component = this.props.component as any;
@@ -83,7 +88,9 @@ export class Chip extends React.Component<ChipProps, ChipState> {
         {...(this.props.component === 'button' ? { type: 'button' } : {})}
         {...getOUIAProps('OverflowChip', ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
       >
-        <span className={css(styles.chipText)}>{children}</span>
+        <span style={{ maxWidth: this.setMaxWidthText() }} className={css(styles.chipText)}>
+          {children}
+        </span>
       </Component>
     );
   };
@@ -97,7 +104,7 @@ export class Chip extends React.Component<ChipProps, ChipState> {
         {...(this.state.isTooltipVisible && { tabIndex: 0 })}
         {...getOUIAProps(Chip.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
       >
-        <span ref={this.span} className={css(styles.chipText)} id={id}>
+        <span ref={this.span} style={{ maxWidth: this.setMaxWidthText() }} className={css(styles.chipText)} id={id}>
           {children}
         </span>
         {!isReadOnly && (
