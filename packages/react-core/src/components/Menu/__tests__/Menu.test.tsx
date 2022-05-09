@@ -52,13 +52,13 @@ describe('Menu', () => {
     });
   });
 
-  describe('with isCheck', () => {
+  describe('with hasCheck', () => {
     test('should render Menu with checkbox items', () => {
       const { asFragment } = render(
         <Menu>
           <MenuContent>
             <MenuList>
-              <MenuItem isCheck itemId={0}>
+              <MenuItem hasCheck itemId={0}>
                 Checkbox 1
               </MenuItem>
             </MenuList>

@@ -25,7 +25,7 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   /** Target navigation link */
   to?: string;
   /** @beta Flag indicating the item has a checkbox */
-  isCheck?: boolean;
+  hasCheck?: boolean;
   /** Flag indicating whether the item is active */
   isActive?: boolean;
   /** Flag indicating if the item is favorited */
@@ -75,7 +75,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   className,
   itemId = null,
   to,
-  isCheck = false,
+  hasCheck = false,
   isActive = null,
   isFavorited = null,
   isLoadButton = false,
@@ -111,7 +111,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     disableHover
   } = React.useContext(MenuContext);
   let Component = (to ? 'a' : component) as any;
-  if (isCheck && !to) {
+  if (hasCheck && !to) {
     Component = 'label' as any;
   }
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
@@ -302,18 +302,18 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
         {randomId => (
           <Component
             tabIndex={-1}
-            className={css(styles.menuItem, getIsSelected() && !isCheck && styles.modifiers.selected, className)}
+            className={css(styles.menuItem, getIsSelected() && !hasCheck && styles.modifiers.selected, className)}
             aria-current={getAriaCurrent()}
-            {...(!isCheck && { disabled: isDisabled })}
+            {...(!hasCheck && { disabled: isDisabled })}
             role="menuitem"
             ref={innerRef}
-            {...(!isCheck && {
+            {...(!hasCheck && {
               onClick: (event: any) => {
                 onItemSelect(event, onSelect);
                 _drill && _drill();
               }
             })}
-            {...(isCheck && { htmlFor: randomId })}
+            {...(hasCheck && { htmlFor: randomId })}
             {...additionalProps}
           >
             <span className={css(styles.menuItemMain)}>
@@ -323,7 +323,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
                 </span>
               )}
               {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
-              {isCheck && (
+              {hasCheck && (
                 <span className={css('pf-c-menu__item-check')}>
                   <Checkbox
                     id={randomId}
