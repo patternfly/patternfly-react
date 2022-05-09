@@ -2413,13 +2413,13 @@ ComposableTableSortable = () => {
             isGrouped
           />
         </ToolbarItem>
-        <OverflowMenu>
-          <OverflowMenuContent>
-            <OverflowMenuGroup groupType="button">
-              <OverflowMenuItem visibility={{ default: 'visible', sm: 'hidden', md: 'visible' }}>
+        <OverflowMenu breakpoint="md">
+          <OverflowMenuContent isPersistent>
+            <OverflowMenuGroup isPersistent groupType="button">
+              <OverflowMenuItem>
                 <Button variant="primary">Responsive hidden action on small</Button>
               </OverflowMenuItem>
-              <OverflowMenuItem>
+              <OverflowMenuItem isPersistent>
                 <Button variant="secondary">Action</Button>
               </OverflowMenuItem>
             </OverflowMenuGroup>
