@@ -45,7 +45,7 @@ export const TabsDynamic: React.FunctionComponent = () => {
       onClose={onClose}
       onAdd={onAdd}
       aria-label="Tabs in the addable/closeable example"
-      addButtonAriaLabel="Add tab"
+      addButtonAriaLabel="Add new tab"
       ref={tabComponentRef}
     >
       {tabs.map((tab, index) => (
