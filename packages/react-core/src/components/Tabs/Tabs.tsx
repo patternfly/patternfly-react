@@ -280,12 +280,20 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
   }
 
   componentDidUpdate(prevProps: TabsProps) {
-    const { activeKey, mountOnEnter } = this.props;
+    const { activeKey, mountOnEnter, children } = this.props;
     const { shownKeys } = this.state;
     if (prevProps.activeKey !== activeKey && mountOnEnter && shownKeys.indexOf(activeKey) < 0) {
       this.setState({
         shownKeys: shownKeys.concat(activeKey)
       });
+    }
+
+    if (
+      prevProps.children &&
+      children &&
+      React.Children.toArray(prevProps.children).length !== React.Children.toArray(children).length
+    ) {
+      this.handleScrollButtons();
     }
   }
 
