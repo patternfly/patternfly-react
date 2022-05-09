@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.172.0 (2022-05-09)
+
+
+### Features
+
+* **charts:** added PF dark theme support ([#7310](https://github.com/patternfly/patternfly-react/issues/7310)) ([549c041](https://github.com/patternfly/patternfly-react/commit/549c041525b22d910b71a1c4f64e2cb0ba11ca8f))
+
+
+
+
+
 ## 4.171.6 (2022-05-09)
 
 **Note:** Version bump only for package demo-app-ts
