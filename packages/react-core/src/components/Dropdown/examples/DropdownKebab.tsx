@@ -1,7 +1,7 @@
 import React from 'react';
-import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownDirection } from '@patternfly/react-core';
+import { Dropdown, DropdownItem, DropdownSeparator, KebabToggle } from '@patternfly/react-core';
 
-export const DropdownDirectionUp: React.FunctionComponent = () => {
+export const DropdownKebab: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const onToggle = (isOpen: boolean) => {
@@ -9,7 +9,7 @@ export const DropdownDirectionUp: React.FunctionComponent = () => {
   };
 
   const onFocus = () => {
-    const element = document.getElementById('toggle-direction-up');
+    const element = document.getElementById('toggle-kebab');
     element.focus();
   };
 
@@ -45,13 +45,9 @@ export const DropdownDirectionUp: React.FunctionComponent = () => {
   return (
     <Dropdown
       onSelect={onSelect}
-      direction={DropdownDirection.up}
-      toggle={
-        <DropdownToggle id="toggle-direction-up" onToggle={onToggle}>
-          Dropdown
-        </DropdownToggle>
-      }
+      toggle={<KebabToggle id="toggle-kebab" onToggle={onToggle} />}
       isOpen={isOpen}
+      isPlain
       dropdownItems={dropdownItems}
     />
   );

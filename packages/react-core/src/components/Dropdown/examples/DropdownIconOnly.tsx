@@ -1,7 +1,8 @@
 import React from 'react';
-import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownDirection } from '@patternfly/react-core';
+import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
+import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 
-export const DropdownDirectionUp: React.FunctionComponent = () => {
+export const DropdownIconOnly: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const onToggle = (isOpen: boolean) => {
@@ -9,7 +10,7 @@ export const DropdownDirectionUp: React.FunctionComponent = () => {
   };
 
   const onFocus = () => {
-    const element = document.getElementById('toggle-direction-up');
+    const element = document.getElementById('toggle-icon-only');
     element.focus();
   };
 
@@ -45,13 +46,13 @@ export const DropdownDirectionUp: React.FunctionComponent = () => {
   return (
     <Dropdown
       onSelect={onSelect}
-      direction={DropdownDirection.up}
       toggle={
-        <DropdownToggle id="toggle-direction-up" onToggle={onToggle}>
-          Dropdown
+        <DropdownToggle toggleIndicator={null} onToggle={onToggle} aria-label="Applications" id="toggle-icon-only">
+          <ThIcon />
         </DropdownToggle>
       }
       isOpen={isOpen}
+      isPlain
       dropdownItems={dropdownItems}
     />
   );
