@@ -24,6 +24,7 @@ import {
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import imgBrand from './pfColorLogo.svg';
@@ -127,6 +128,11 @@ export default class DashboardHeader extends React.Component {
                 <AttentionBellIcon />
               </Button>
             </ToolbarItem>
+            <ToolbarItem>
+              <Button aria-label="Notifications" variant={ButtonVariant.plain}>
+                <ThIcon />
+              </Button>
+            </ToolbarItem>
             <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
               <ToolbarItem>
                 <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
@@ -163,11 +169,12 @@ export default class DashboardHeader extends React.Component {
           <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
             <Dropdown
               position="right"
+              isFullHeight
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
               toggle={
                 <DropdownToggle icon={<Avatar src={imgAvatar} alt="Avatar" />} onToggle={this.onDropdownToggle}>
-                  John Smith
+                  Ned Username
                 </DropdownToggle>
               }
               dropdownItems={userDropdownItems}
