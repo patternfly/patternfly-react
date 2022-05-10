@@ -11,7 +11,7 @@ export interface BannerProps extends React.HTMLProps<HTMLDivElement> {
   variant?: 'default' | 'info' | 'danger' | 'success' | 'warning';
   /** If set to true, the banner sticks to the top of its container */
   isSticky?: boolean;
-  /** Text announced by screen reader when variant is set to indicate the type of banner*/
+  /** Text announced by screen readers to indicate the type of banner. Defaults to "${variant} banner" if this prop is not passed in */
   screenReaderText?: string;
 }
 
