@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.175.3 (2022-05-10)
+
+
+### Bug Fixes
+
+* **Card:** indicate card selectivity and status if using a screen reader ([#7144](https://github.com/patternfly/patternfly-react/issues/7144)) ([56fab43](https://github.com/patternfly/patternfly-react/commit/56fab43f801390d995ae9d0c3bdec3aa0f0d2cfb))
+
+
+
+
+
 ## 4.175.2 (2022-05-10)
 
 
