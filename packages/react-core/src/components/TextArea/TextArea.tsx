@@ -125,7 +125,7 @@ export class TextAreaBase extends React.Component<TextAreaProps> {
   }
 }
 
-export const TextArea = React.forwardRef((props: TextAreaProps, ref: React.Ref<HTMLInputElement>) => (
+export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>((props, ref) => (
   <TextAreaBase {...props} innerRef={ref as React.MutableRefObject<any>} />
 ));
 TextArea.displayName = 'TextArea';
