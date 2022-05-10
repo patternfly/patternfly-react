@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.66.2 (2022-05-10)
+
+
+### Reverts
+
+* Revert "docs(Dropdown): expose menuAppendTo in Dropdown prop docs (#7173)" (#7395) ([9e80f18](https://github.com/patternfly/patternfly-react/commit/9e80f1812773e269782cdb26928778e558ec5354)), closes [#7173](https://github.com/patternfly/patternfly-react/issues/7173) [#7395](https://github.com/patternfly/patternfly-react/issues/7395)
+
+
+
+
+
 ## 6.66.1 (2022-05-10)
 
 **Note:** Version bump only for package @patternfly/react-charts
