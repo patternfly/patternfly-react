@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.65.0 (2022-05-10)
+
+
+### Features
+
+* **Tabs:** allow dynamic close/add ([#7297](https://github.com/patternfly/patternfly-react/issues/7297)) ([51dd66c](https://github.com/patternfly/patternfly-react/commit/51dd66c59d25f96686c57de9fffe590f1c8cbe83))
+
+
+
+
+
 # 4.64.0 (2022-05-09)
 
 
