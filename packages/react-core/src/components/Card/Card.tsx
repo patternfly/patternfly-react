@@ -36,15 +36,28 @@ export interface CardProps extends React.HTMLProps<HTMLElement>, OUIAProps {
   isPlain?: boolean;
   /** Flag indicating if a card is expanded. Modifies the card to be expandable. */
   isExpanded?: boolean;
+  /** Flag indicating that the card should render a hidden input to make it selectable */
+  hasSelectableInput?: boolean;
+  /** Aria label to apply to the selectable input if one is rendered */
+  selectableInputAriaLabel?: string;
+  /** Callback that executes when the selectable input is changed */
+  onSelectableInputChange?: (labelledBy: string, event: React.FormEvent<HTMLInputElement>) => void;
 }
 
 interface CardContextProps {
   cardId: string;
+  registerTitleId: (id: string) => void;
   isExpanded: boolean;
+}
+
+interface AriaProps {
+  'aria-label'?: string;
+  'aria-labelledby'?: string;
 }
 
 export const CardContext = React.createContext<Partial<CardContextProps>>({
   cardId: '',
+  registerTitleId: () => {},
   isExpanded: false
 });
 
@@ -67,10 +80,16 @@ export const Card: React.FunctionComponent<CardProps> = ({
   isPlain = false,
   ouiaId,
   ouiaSafe = true,
+  hasSelectableInput = false,
+  selectableInputAriaLabel,
+  onSelectableInputChange = () => {},
   ...props
 }: CardProps) => {
   const Component = component as any;
   const ouiaProps = useOUIAProps(Card.displayName, ouiaId, ouiaSafe);
+  const [titleId, setTitleId] = React.useState('');
+  const [ariaProps, setAriaProps] = React.useState<AriaProps>();
+
   if (isCompact && isLarge) {
     // eslint-disable-next-line no-console
     console.warn('Card: Cannot use isCompact with isLarge. Defaulting to isCompact');
@@ -90,13 +109,47 @@ export const Card: React.FunctionComponent<CardProps> = ({
     return '';
   };
 
+  const containsCardTitleChildRef = React.useRef(false);
+
+  const registerTitleId = (id: string) => {
+    setTitleId(id);
+    containsCardTitleChildRef.current = !!id;
+  };
+
+  React.useEffect(() => {
+    if (selectableInputAriaLabel) {
+      setAriaProps({ 'aria-label': selectableInputAriaLabel });
+    } else if (titleId) {
+      setAriaProps({ 'aria-labelledby': titleId });
+    } else if (hasSelectableInput && !containsCardTitleChildRef.current) {
+      setAriaProps({});
+      // eslint-disable-next-line no-console
+      console.warn(
+        'If no CardTitle component is passed as a child of Card the selectableInputAriaLabel prop must be passed'
+      );
+    }
+  }, [hasSelectableInput, selectableInputAriaLabel, titleId]);
+
   return (
     <CardContext.Provider
       value={{
         cardId: id,
+        registerTitleId,
         isExpanded
       }}
     >
+      {hasSelectableInput && (
+        <input
+          className="pf-screen-reader"
+          id={`${id}-input`}
+          {...ariaProps}
+          type="checkbox"
+          checked={isSelected}
+          onChange={event => onSelectableInputChange(id, event)}
+          disabled={isDisabledRaised}
+          tabIndex={-1}
+        />
+      )}
       <Component
         id={id}
         className={css(
