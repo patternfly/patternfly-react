@@ -2065,16 +2065,19 @@ class FilterTableDemo extends React.Component {
 
 ### Sortable - responsive
 
-This is an example of a responive sortable table. When the screen size is small, the table will change to a compact format and a new toolbar item will be displayed to control sorting.
+This is an example of a responsive sortable table. When the screen size is small, the table will change to a compact format and a new toolbar item will be displayed to control sorting.
 
 ```js isFullscreen
 import React from 'react';
 import {
   Button,
+  Card,
+  InputGroup,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
   ToolbarItem,
+  ToolbarToggleGroup,
   OptionsMenu,
   OptionsMenuToggle,
   Pagination,
@@ -2342,27 +2345,30 @@ ComposableTableSortable = () => {
   const tableToolbar = (
     <Toolbar id="sortable-toolbar">
       <ToolbarContent>
-        <ToolbarItem>
-          <Select
-            id="select-example"
-            variant={SelectVariant.single}
-            aria-label="Select Input"
-            placeholderText={
-              <>
-                <FilterIcon /> Status
-              </>
-            }
-            isOpen={isSelectOpen}
-            onToggle={() => setIsSelectOpen(!isSelectOpen)}
-            onSelect={() => setIsSelectOpen(!isSelectOpen)}
-          >
-            {[
-              <SelectOption key={0} value="Debug" />,
-              <SelectOption key={1} value="Info" />,
-              <SelectOption key={2} value="Warn" />,
-              <SelectOption key={3} value="Error" />
-            ]}
-          </Select>
+        <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl"></ToolbarToggleGroup>
+        <ToolbarItem visibility={{ default: 'hidden', xl: 'visible' }} variant="search-filter">
+          <InputGroup>
+            <Select
+              id="select-example"
+              variant={SelectVariant.single}
+              aria-label="Select Input"
+              placeholderText={
+                <>
+                  <FilterIcon /> Status
+                </>
+              }
+              isOpen={isSelectOpen}
+              onToggle={() => setIsSelectOpen(!isSelectOpen)}
+              onSelect={() => setIsSelectOpen(!isSelectOpen)}
+            >
+              {[
+                <SelectOption key={0} value="Debug" />,
+                <SelectOption key={1} value="Info" />,
+                <SelectOption key={2} value="Warn" />,
+                <SelectOption key={3} value="Error" />
+              ]}
+            </Select>
+          </InputGroup>
         </ToolbarItem>
         <ToolbarItem visibility={{ default: 'hidden', sm: 'visible', md: 'hidden' }}>
           <OptionsMenu
@@ -2419,7 +2425,7 @@ ComposableTableSortable = () => {
               <OverflowMenuItem>
                 <Button variant="primary">Responsive hidden action on small</Button>
               </OverflowMenuItem>
-              <OverflowMenuItem isPersistent>
+              <OverflowMenuItem>
                 <Button variant="secondary">Action</Button>
               </OverflowMenuItem>
             </OverflowMenuGroup>
@@ -2453,7 +2459,7 @@ ComposableTableSortable = () => {
   return (
     <React.Fragment>
       <DashboardWrapper>
-        <PageSection variant={PageSectionVariants.light}>
+        <PageSection isWidthLimited variant={PageSectionVariants.light}>
           <TextContent>
             <Text component="h1">Table demos</Text>
             <Text component="p">
@@ -2462,68 +2468,75 @@ ComposableTableSortable = () => {
             </Text>
           </TextContent>
         </PageSection>
-        <PageSection isFilled>
-          {tableToolbar}
-          <TableComposable aria-label="Sortable Table">
-            <Thead>
-              <Tr>
-                <Th />
-                {columns.map((column, columnIndex) => {
-                  const sortParams = {
-                    sort: {
-                      sortBy: {
-                        index: activeSortIndex,
-                        direction: activeSortDirection
-                      },
-                      onSort,
-                      columnIndex
-                    }
-                  };
-                  return (
-                    <Th key={columnIndex} {...sortParams}>
-                      {column}
-                    </Th>
-                  );
-                })}
-              </Tr>
-            </Thead>
-            <Tbody>
-              {rows.map((row, rowIndex) => (
-                <Tr key={rowIndex}>
-                  <>
-                    <Td
-                      select={{
-                        rowIndex,
-                        onSelect: (_event, isSelecting) => onSelectNode(row, rowIndex, isSelecting),
-                        isSelected: isNodeSelected(row)
-                      }}
-                    />
-                    <Td dataLabel={columns[0]}>
-                      <div>{row[0]}</div>
-                      <a href="#">siemur/test-space</a>
-                    </Td>
-                    <Td dataLabel={columns[1]}>
-                      <CodeBranchIcon key="icon" /> {row[1]}
-                    </Td>
-                    <Td dataLabel={columns[2]}>
-                      <CodeIcon key="icon" /> {row[2]}
-                    </Td>
-                    <Td dataLabel={columns[3]}>
-                      <CubeIcon key="icon" /> {row[3]}
-                    </Td>
-                    <Td dataLabel={columns[4]}>{row[4]} days ago</Td>
-                    <Td dataLabel={'Action'}>
-                      <a href="#">Action link</a>
-                    </Td>
-                    <Td isActionCell>
-                      <ActionsColumn items={defaultActions()} />
-                    </Td>
-                  </>
+        <PageSection
+          padding={{
+            default: 'noPadding',
+            xl: 'padding'
+          }}
+        >
+          <Card component="div">
+            {tableToolbar}
+            <TableComposable aria-label="Sortable Table">
+              <Thead>
+                <Tr>
+                  <Th />
+                  {columns.map((column, columnIndex) => {
+                    const sortParams = {
+                      sort: {
+                        sortBy: {
+                          index: activeSortIndex,
+                          direction: activeSortDirection
+                        },
+                        onSort,
+                        columnIndex
+                      }
+                    };
+                    return (
+                      <Th key={columnIndex} {...sortParams}>
+                        {column}
+                      </Th>
+                    );
+                  })}
                 </Tr>
-              ))}
-            </Tbody>
-          </TableComposable>
-          {renderPagination('bottom', false)}
+              </Thead>
+              <Tbody>
+                {rows.map((row, rowIndex) => (
+                  <Tr key={rowIndex}>
+                    <>
+                      <Td
+                        select={{
+                          rowIndex,
+                          onSelect: (_event, isSelecting) => onSelectNode(row, rowIndex, isSelecting),
+                          isSelected: isNodeSelected(row)
+                        }}
+                      />
+                      <Td dataLabel={columns[0]}>
+                        <div>{row[0]}</div>
+                        <a href="#">siemur/test-space</a>
+                      </Td>
+                      <Td dataLabel={columns[1]}>
+                        <CodeBranchIcon key="icon" /> {row[1]}
+                      </Td>
+                      <Td dataLabel={columns[2]}>
+                        <CodeIcon key="icon" /> {row[2]}
+                      </Td>
+                      <Td dataLabel={columns[3]}>
+                        <CubeIcon key="icon" /> {row[3]}
+                      </Td>
+                      <Td dataLabel={columns[4]}>{row[4]} days ago</Td>
+                      <Td dataLabel={'Action'}>
+                        <a href="#">Action link</a>
+                      </Td>
+                      <Td isActionCell>
+                        <ActionsColumn items={defaultActions()} />
+                      </Td>
+                    </>
+                  </Tr>
+                ))}
+              </Tbody>
+            </TableComposable>
+            {renderPagination('bottom', false)}
+          </Card>
         </PageSection>
       </DashboardWrapper>
     </React.Fragment>
