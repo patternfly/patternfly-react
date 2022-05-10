@@ -91,105 +91,6 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
       <div
         class="pf-c-wizard__inner-wrap"
       >
-        <nav
-          aria-labelledby="pf-wizard-title-1"
-          class="pf-c-wizard__nav"
-        >
-          <ol
-            class="pf-c-wizard__nav-list"
-          >
-            <li
-              class="pf-c-wizard__nav-item"
-            >
-              <button
-                aria-current="step"
-                class="pf-c-wizard__nav-link pf-m-current"
-              >
-                A
-              </button>
-            </li>
-            <li
-              class="pf-c-wizard__nav-item pf-m-expandable"
-            >
-              <button
-                aria-current="false"
-                aria-expanded="false"
-                class="pf-c-wizard__nav-link"
-              >
-                <span
-                  class="pf-c-wizard__nav-link-text"
-                >
-                  B
-                </span>
-                <span
-                  class="pf-c-wizard__nav-link-toggle"
-                >
-                  <span
-                    class="pf-c-wizard__nav-link-toggle-icon"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      fill="currentColor"
-                      height="1em"
-                      role="img"
-                      style="vertical-align: -0.125em;"
-                      viewBox="0 0 256 512"
-                      width="1em"
-                    >
-                      <path
-                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                      />
-                    </svg>
-                  </span>
-                </span>
-              </button>
-              <ol
-                class="pf-c-wizard__nav-list"
-              >
-                <li
-                  class="pf-c-wizard__nav-item"
-                >
-                  <button
-                    aria-current="false"
-                    class="pf-c-wizard__nav-link"
-                  >
-                    B-1
-                  </button>
-                </li>
-                <li
-                  class="pf-c-wizard__nav-item"
-                >
-                  <button
-                    aria-current="false"
-                    class="pf-c-wizard__nav-link"
-                  >
-                    B-2
-                  </button>
-                </li>
-              </ol>
-            </li>
-            <li
-              class="pf-c-wizard__nav-item"
-            >
-              <button
-                aria-current="false"
-                class="pf-c-wizard__nav-link"
-              >
-                C
-              </button>
-            </li>
-            <li
-              class="pf-c-wizard__nav-item"
-            >
-              <button
-                aria-current="false"
-                class="pf-c-wizard__nav-link"
-              >
-                D
-              </button>
-            </li>
-          </ol>
-        </nav>
         <div
           aria-labelledby="pf-wizard-title-1"
           class="pf-c-wizard__main"
@@ -200,6 +101,105 @@ exports[`Wizard Expandable Nav Wizard should match snapshot 1`] = `
             <p>
               Step 1
             </p>
+            <nav
+              aria-labelledby="pf-wizard-title-1"
+              class="pf-c-wizard__nav"
+            >
+              <ol
+                class="pf-c-wizard__nav-list"
+              >
+                <li
+                  class="pf-c-wizard__nav-item"
+                >
+                  <button
+                    aria-current="step"
+                    class="pf-c-wizard__nav-link pf-m-current"
+                  >
+                    A
+                  </button>
+                </li>
+                <li
+                  class="pf-c-wizard__nav-item pf-m-expandable"
+                >
+                  <button
+                    aria-current="false"
+                    aria-expanded="false"
+                    class="pf-c-wizard__nav-link"
+                  >
+                    <span
+                      class="pf-c-wizard__nav-link-text"
+                    >
+                      B
+                    </span>
+                    <span
+                      class="pf-c-wizard__nav-link-toggle"
+                    >
+                      <span
+                        class="pf-c-wizard__nav-link-toggle-icon"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 256 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </button>
+                  <ol
+                    class="pf-c-wizard__nav-list"
+                  >
+                    <li
+                      class="pf-c-wizard__nav-item"
+                    >
+                      <button
+                        aria-current="false"
+                        class="pf-c-wizard__nav-link"
+                      >
+                        B-1
+                      </button>
+                    </li>
+                    <li
+                      class="pf-c-wizard__nav-item"
+                    >
+                      <button
+                        aria-current="false"
+                        class="pf-c-wizard__nav-link"
+                      >
+                        B-2
+                      </button>
+                    </li>
+                  </ol>
+                </li>
+                <li
+                  class="pf-c-wizard__nav-item"
+                >
+                  <button
+                    aria-current="false"
+                    class="pf-c-wizard__nav-link"
+                  >
+                    C
+                  </button>
+                </li>
+                <li
+                  class="pf-c-wizard__nav-item"
+                >
+                  <button
+                    aria-current="false"
+                    class="pf-c-wizard__nav-link"
+                  >
+                    D
+                  </button>
+                </li>
+              </ol>
+            </nav>
           </div>
         </div>
       </div>
@@ -338,85 +338,6 @@ exports[`Wizard Wizard should match snapshot 1`] = `
       <div
         class="pf-c-wizard__inner-wrap"
       >
-        <nav
-          aria-labelledby="pf-wizard-title-0"
-          class="pf-c-wizard__nav"
-        >
-          <ol
-            class="pf-c-wizard__nav-list"
-          >
-            <li
-              class="pf-c-wizard__nav-item"
-            >
-              <button
-                aria-current="step"
-                class="pf-c-wizard__nav-link pf-m-current"
-                id="step-A"
-              >
-                A
-              </button>
-            </li>
-            <li
-              class="pf-c-wizard__nav-item"
-            >
-              <button
-                aria-current="false"
-                class="pf-c-wizard__nav-link"
-                id="step-B"
-              >
-                B
-              </button>
-              <ol
-                class="pf-c-wizard__nav-list"
-              >
-                <li
-                  class="pf-c-wizard__nav-item"
-                >
-                  <button
-                    aria-current="false"
-                    class="pf-c-wizard__nav-link"
-                    id="step-B-1"
-                  >
-                    B-1
-                  </button>
-                </li>
-                <li
-                  class="pf-c-wizard__nav-item"
-                >
-                  <button
-                    aria-current="false"
-                    class="pf-c-wizard__nav-link"
-                    id="step-B-2"
-                  >
-                    B-2
-                  </button>
-                </li>
-              </ol>
-            </li>
-            <li
-              class="pf-c-wizard__nav-item"
-            >
-              <button
-                aria-current="false"
-                class="pf-c-wizard__nav-link"
-                id="step-C"
-              >
-                C
-              </button>
-            </li>
-            <li
-              class="pf-c-wizard__nav-item"
-            >
-              <button
-                aria-current="false"
-                class="pf-c-wizard__nav-link"
-                id="step-D"
-              >
-                D
-              </button>
-            </li>
-          </ol>
-        </nav>
         <div
           aria-labelledby="pf-wizard-title-0"
           class="pf-c-wizard__main"
@@ -427,6 +348,85 @@ exports[`Wizard Wizard should match snapshot 1`] = `
             <p>
               Step 1
             </p>
+            <nav
+              aria-labelledby="pf-wizard-title-0"
+              class="pf-c-wizard__nav"
+            >
+              <ol
+                class="pf-c-wizard__nav-list"
+              >
+                <li
+                  class="pf-c-wizard__nav-item"
+                >
+                  <button
+                    aria-current="step"
+                    class="pf-c-wizard__nav-link pf-m-current"
+                    id="step-A"
+                  >
+                    A
+                  </button>
+                </li>
+                <li
+                  class="pf-c-wizard__nav-item"
+                >
+                  <button
+                    aria-current="false"
+                    class="pf-c-wizard__nav-link"
+                    id="step-B"
+                  >
+                    B
+                  </button>
+                  <ol
+                    class="pf-c-wizard__nav-list"
+                  >
+                    <li
+                      class="pf-c-wizard__nav-item"
+                    >
+                      <button
+                        aria-current="false"
+                        class="pf-c-wizard__nav-link"
+                        id="step-B-1"
+                      >
+                        B-1
+                      </button>
+                    </li>
+                    <li
+                      class="pf-c-wizard__nav-item"
+                    >
+                      <button
+                        aria-current="false"
+                        class="pf-c-wizard__nav-link"
+                        id="step-B-2"
+                      >
+                        B-2
+                      </button>
+                    </li>
+                  </ol>
+                </li>
+                <li
+                  class="pf-c-wizard__nav-item"
+                >
+                  <button
+                    aria-current="false"
+                    class="pf-c-wizard__nav-link"
+                    id="step-C"
+                  >
+                    C
+                  </button>
+                </li>
+                <li
+                  class="pf-c-wizard__nav-item"
+                >
+                  <button
+                    aria-current="false"
+                    class="pf-c-wizard__nav-link"
+                    id="step-D"
+                  >
+                    D
+                  </button>
+                </li>
+              </ol>
+            </nav>
           </div>
         </div>
       </div>
@@ -523,24 +523,6 @@ exports[`Wizard bare wiz 1`] = `
       <div
         class="pf-c-wizard__inner-wrap"
       >
-        <nav
-          class="pf-c-wizard__nav"
-        >
-          <ol
-            class="pf-c-wizard__nav-list"
-          >
-            <li
-              class="pf-c-wizard__nav-item"
-            >
-              <button
-                aria-current="step"
-                class="pf-c-wizard__nav-link pf-m-current"
-              >
-                A
-              </button>
-            </li>
-          </ol>
-        </nav>
         <div
           class="pf-c-wizard__main"
         >
@@ -550,6 +532,24 @@ exports[`Wizard bare wiz 1`] = `
             <p>
               Step 1
             </p>
+            <nav
+              class="pf-c-wizard__nav"
+            >
+              <ol
+                class="pf-c-wizard__nav-list"
+              >
+                <li
+                  class="pf-c-wizard__nav-item"
+                >
+                  <button
+                    aria-current="step"
+                    class="pf-c-wizard__nav-link pf-m-current"
+                  >
+                    A
+                  </button>
+                </li>
+              </ol>
+            </nav>
           </div>
         </div>
       </div>
