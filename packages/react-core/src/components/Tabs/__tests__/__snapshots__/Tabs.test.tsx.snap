@@ -5,7 +5,7 @@ exports[`should render accessible tabs 1`] = `
   <nav
     aria-label="accessible Tabs example"
     class="pf-c-tabs"
-    data-ouia-component-id="OUIA-Generated-Tabs-7"
+    data-ouia-component-id="OUIA-Generated-Tabs-9"
     data-ouia-component-type="PF4/Tabs"
     data-ouia-safe="true"
     id="accessibleTabs"
@@ -161,7 +161,7 @@ exports[`should render box tabs 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-tabs pf-m-box"
-    data-ouia-component-id="OUIA-Generated-Tabs-6"
+    data-ouia-component-id="OUIA-Generated-Tabs-8"
     data-ouia-component-type="PF4/Tabs"
     data-ouia-safe="true"
     id="boxTabs"
@@ -355,7 +355,7 @@ exports[`should render box tabs of light variant 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-tabs pf-m-box pf-m-color-scheme--light-300"
-    data-ouia-component-id="OUIA-Generated-Tabs-13"
+    data-ouia-component-id="OUIA-Generated-Tabs-15"
     data-ouia-component-type="PF4/Tabs"
     data-ouia-safe="true"
     id="boxLightVariantTabs"
@@ -508,7 +508,7 @@ exports[`should render expandable vertical tabs 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-tabs pf-m-vertical pf-m-expandable"
-    data-ouia-component-id="OUIA-Generated-Tabs-4"
+    data-ouia-component-id="OUIA-Generated-Tabs-6"
     data-ouia-component-type="PF4/Tabs"
     data-ouia-safe="true"
     id="verticalTabs"
@@ -523,7 +523,7 @@ exports[`should render expandable vertical tabs 1`] = `
           aria-disabled="false"
           aria-labelledby="pf-random-id-0-text pf-random-id-0-button"
           class="pf-c-button pf-m-plain"
-          data-ouia-component-id="OUIA-Generated-Button-plain-1"
+          data-ouia-component-id="OUIA-Generated-Button-plain-3"
           data-ouia-component-type="PF4/Button"
           data-ouia-safe="true"
           id="pf-random-id-0-button"
@@ -745,7 +745,7 @@ exports[`should render filled tabs 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-tabs pf-m-fill"
-    data-ouia-component-id="OUIA-Generated-Tabs-8"
+    data-ouia-component-id="OUIA-Generated-Tabs-10"
     data-ouia-component-type="PF4/Tabs"
     data-ouia-safe="true"
     id="filledTabs"
@@ -898,7 +898,7 @@ exports[`should render secondary tabs 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-tabs"
-    data-ouia-component-id="OUIA-Generated-Tabs-9"
+    data-ouia-component-id="OUIA-Generated-Tabs-11"
     data-ouia-component-type="PF4/Tabs"
     data-ouia-safe="true"
     id="primarieTabs"
@@ -1020,7 +1020,7 @@ exports[`should render secondary tabs 1`] = `
   >
     <div
       class="pf-c-tabs pf-m-secondary"
-      data-ouia-component-id="OUIA-Generated-Tabs-10"
+      data-ouia-component-id="OUIA-Generated-Tabs-12"
       data-ouia-component-type="PF4/Tabs"
       data-ouia-safe="true"
       id="secondaryTabs"
@@ -1393,7 +1393,7 @@ exports[`should render tabs with eventKey Strings 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-tabs"
-    data-ouia-component-id="OUIA-Generated-Tabs-11"
+    data-ouia-component-id="OUIA-Generated-Tabs-13"
     data-ouia-component-type="PF4/Tabs"
     data-ouia-safe="true"
     id="eventKeyTabs"
@@ -1547,7 +1547,7 @@ exports[`should render tabs with no bottom border 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-tabs pf-m-no-border-bottom"
-    data-ouia-component-id="OUIA-Generated-Tabs-14"
+    data-ouia-component-id="OUIA-Generated-Tabs-16"
     data-ouia-component-type="PF4/Tabs"
     data-ouia-safe="true"
     id="noBottomBorderTabs"
@@ -1700,7 +1700,7 @@ exports[`should render tabs with separate content 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-tabs"
-    data-ouia-component-id="OUIA-Generated-Tabs-12"
+    data-ouia-component-id="OUIA-Generated-Tabs-14"
     data-ouia-component-type="PF4/Tabs"
     data-ouia-safe="true"
     id="separateTabs"
@@ -1863,7 +1863,7 @@ exports[`should render uncontrolled tabs 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-tabs"
-    data-ouia-component-id="OUIA-Generated-Tabs-2"
+    data-ouia-component-id="OUIA-Generated-Tabs-4"
     data-ouia-component-type="PF4/Tabs"
     data-ouia-safe="true"
   >
@@ -2056,7 +2056,7 @@ exports[`should render vertical tabs 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-tabs pf-m-vertical"
-    data-ouia-component-id="OUIA-Generated-Tabs-3"
+    data-ouia-component-id="OUIA-Generated-Tabs-5"
     data-ouia-component-type="PF4/Tabs"
     data-ouia-safe="true"
     id="verticalTabs"

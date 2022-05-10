@@ -38,6 +38,28 @@ test('should render simple tabs', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
+test('should render closeable tabs', () => {
+  const view = render(
+    <Tabs onClose={jest.fn()}>
+      <Tab eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>} closeButtonAriaLabel="close-label">
+        Tab 1 section
+      </Tab>
+    </Tabs>
+  );
+  expect(screen.getByLabelText('close-label')).toBeTruthy();
+});
+
+test('should render add button', () => {
+  const view = render(
+    <Tabs onAdd={jest.fn()} addButtonAriaLabel="add-label">
+      <Tab eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>} closeButtonAriaLabel="close-label">
+        Tab 1 section
+      </Tab>
+    </Tabs>
+  );
+  expect(screen.getByLabelText('add-label')).toBeTruthy();
+});
+
 test('should render uncontrolled tabs', () => {
   const { asFragment } = render(
     <Tabs defaultActiveKey={0}>
