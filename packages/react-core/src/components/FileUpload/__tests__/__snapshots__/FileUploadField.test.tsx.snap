@@ -58,6 +58,7 @@ exports[`simple fileuploadfield 1`] = `
         class="pf-c-form-control pf-m-resize-vertical"
         id="custom-file-upload"
         name="custom-file-upload"
+        placeholder=""
       />
     </div>
     <p>
