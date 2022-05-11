@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Card,
   PageSection,
   Pagination,
   Table,
@@ -155,22 +156,29 @@ class ExpandCollapseAllTableDemo extends React.Component {
     return (
       <React.Fragment>
         <DashboardWrapper hasPageTemplateTitle>
-          <PageSection isWidthLimited>
-            {tableToolbar}
-            <Table
-              aria-label="Collapsible table"
-              onSelect={this.onSelect}
-              onCollapse={this.onCollapse}
-              rows={rows}
-              cells={columns}
-              canSelectAll={false}
-              canCollapseAll={true}
-              collapseAllAriaLabel={collapseAllAriaLabel}
-            >
-              <TableHeader />
-              <TableBody />
-            </Table>
-            {this.renderPagination('bottom', false)}
+          <PageSection
+            padding={{
+              default: 'noPadding',
+              xl: 'padding'
+            }}
+          >
+            <Card component="div">
+              {tableToolbar}
+              <Table
+                aria-label="Collapsible table"
+                onSelect={this.onSelect}
+                onCollapse={this.onCollapse}
+                rows={rows}
+                cells={columns}
+                canSelectAll={false}
+                canCollapseAll={true}
+                collapseAllAriaLabel={collapseAllAriaLabel}
+              >
+                <TableHeader />
+                <TableBody />
+              </Table>
+              {this.renderPagination('bottom', false)}
+            </Card>
           </PageSection>
         </DashboardWrapper>
       </React.Fragment>
