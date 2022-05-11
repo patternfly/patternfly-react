@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.52.4 (2022-05-11)
+
+
+### Bug Fixes
+
+* **topology:** fix variables ([#7364](https://github.com/patternfly/patternfly-react/issues/7364)) ([2dec22e](https://github.com/patternfly/patternfly-react/commit/2dec22eec0f2fb8a634108e6995f747f61fa7d93))
+
+
+
+
+
 ## 4.52.3 (2022-05-10)
 
 
