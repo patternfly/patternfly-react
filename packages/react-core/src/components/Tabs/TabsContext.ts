@@ -11,7 +11,7 @@ export interface TabsContextProps {
     eventKey: number | string,
     tabContentRef: React.RefObject<any>
   ) => void;
-  handleTabClose: (
+  handleTabClose?: (
     event: React.MouseEvent<HTMLElement, MouseEvent>,
     eventKey: number | string,
     tabContentRef?: React.RefObject<any>
