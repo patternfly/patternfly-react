@@ -335,7 +335,7 @@ export const BaseTheme = {
       fill: chart_tooltip_flyoutStyle_Fill.var, // background
       pointerEvents: chart_tooltip_flyoutStyle_PointerEvents.var,
       stroke: chart_tooltip_flyoutStyle_stroke_Color.var, // border
-      strokeWidth: chart_tooltip_flyoutStyle_stroke_Width.value
+      strokeWidth: chart_tooltip_flyoutStyle_stroke_Width.var
     },
     pointerLength: chart_tooltip_pointer_length.value,
     pointerWidth: chart_tooltip_pointer_Width.value,
@@ -363,7 +363,7 @@ export const BaseTheme = {
         fill: chart_voronoi_flyout_stroke_Fill.var, // background
         pointerEvents: chart_voronoi_flyout_PointerEvents.var,
         stroke: chart_voronoi_flyout_stroke_Color.var, // border
-        strokeWidth: chart_voronoi_flyout_stroke_Width.value
+        strokeWidth: chart_voronoi_flyout_stroke_Width.var
       }
     }
   }
