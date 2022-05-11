@@ -58,14 +58,18 @@ export const collapsible: IFormatter = (
         id={expandId + rowId}
         {...customProps}
       >
-        {value}
+        {value as React.ReactNode}
       </CollapseColumn>
     )
   };
 };
 
 export const expandable: IFormatter = (value: IFormatterValueType, { rowData }: IExtra) =>
-  rowData && rowData.hasOwnProperty('parent') ? <ExpandableRowContent>{value}</ExpandableRowContent> : value;
+  rowData && rowData.hasOwnProperty('parent') ? (
+    <ExpandableRowContent>{value as React.ReactNode}</ExpandableRowContent>
+  ) : (
+    value
+  );
 
 export const expandedRow = (colSpan?: number) => {
   const expandedRowFormatter = (

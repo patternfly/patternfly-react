@@ -70,7 +70,7 @@ export const selectable: ITransform = (
         onSelect={selectClick}
         name={selectName}
       >
-        {label}
+        {label as React.ReactNode}
       </SelectColumn>
     )
   };

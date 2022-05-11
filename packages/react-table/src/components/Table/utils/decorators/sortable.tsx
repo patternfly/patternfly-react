@@ -57,7 +57,7 @@ export const sortable: ITransform = (
         onSort={sortClicked}
         aria-label={ariaLabel}
       >
-        {label}
+        {label as React.ReactNode}
       </SortColumn>
     )
   };

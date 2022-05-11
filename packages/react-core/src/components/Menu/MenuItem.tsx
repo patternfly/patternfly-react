@@ -216,7 +216,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
         onDrillIn(
           menuId,
           typeof drilldownMenu === 'function'
-            ? drilldownMenu().props.id
+            ? (drilldownMenu() as any).props.id
             : (drilldownMenu as React.ReactElement).props.id,
           itemId
         );

@@ -243,6 +243,6 @@ export class Modal extends React.Component<ModalProps, ModalState> {
         ouiaSafe={ouiaSafe}
       />,
       container
-    );
+    ) as React.ReactElement;
   }
 }
