@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.51.5 (2022-05-11)
+
+
+### Bug Fixes
+
+* **charts:** support customizing tooltip border for dark theme ([#7393](https://github.com/patternfly/patternfly-react/issues/7393)) ([7168a1d](https://github.com/patternfly/patternfly-react/commit/7168a1dc7f3a1302d719a32bcd32dcdb9ad8fb86))
+
+
+
+
+
 ## 4.51.4 (2022-05-11)
 
 
