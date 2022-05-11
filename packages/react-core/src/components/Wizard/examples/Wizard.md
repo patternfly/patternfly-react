@@ -2,7 +2,8 @@
 id: Wizard
 section: components
 cssPrefix: pf-c-wizard
-propComponents: ['Wizard', 'WizardNav', 'WizardNavItem', 'WizardHeader', 'WizardBody', 'WizardFooter', 'WizardToggle', 'WizardStep']
+propComponents:
+  ['Wizard', 'WizardNav', 'WizardNavItem', 'WizardHeader', 'WizardBody', 'WizardFooter', 'WizardToggle', 'WizardStep']
 ---
 
 import { Button, Drawer, DrawerActions, DrawerCloseButton, DrawerColorVariant,
@@ -961,7 +962,7 @@ class WizardWithDrawer extends React.Component {
 
     return (
       <React.Fragment>
-        <Wizard hasDrawer navAriaLabel={`${title} steps`} mainAriaLabel={`${title} content`} steps={steps} />
+        <Wizard hasDrawer drawerPanelWidths={{ default: 'width_25' }} navAriaLabel={`${title} steps`} steps={steps} />
       </React.Fragment>
     );
   }
