@@ -2065,8 +2065,6 @@ class FilterTableDemo extends React.Component {
 
 ### Sortable - responsive
 
-This is an example of a responsive sortable table. When the screen size is small, the table will change to a compact format and a new toolbar item will be displayed to control sorting.
-
 ```js isFullscreen
 import React from 'react';
 import {
@@ -2276,72 +2274,6 @@ ComposableTableSortable = () => {
     </DropdownItem>
   ];
 
-  const headerToolbar = (
-    <Toolbar id="toolbar" isFullHeight isStatic>
-      <ToolbarContent>
-        <ToolbarGroup
-          variant="icon-button-group"
-          alignment={{ default: 'alignRight' }}
-          spacer={{ default: 'spacerNone', md: 'spacerMd' }}
-        >
-          <ToolbarItem>
-            <Button aria-label="Notifications" variant={ButtonVariant.plain}>
-              <AttentionBellIcon />
-            </Button>
-          </ToolbarItem>
-          <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
-            <ToolbarItem>
-              <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
-                <CogIcon />
-              </Button>
-            </ToolbarItem>
-            <ToolbarItem>
-              <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-                <QuestionCircleIcon />
-              </Button>
-            </ToolbarItem>
-          </ToolbarGroup>
-        </ToolbarGroup>
-        <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
-          <Dropdown
-            isPlain
-            position="right"
-            onSelect={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)}
-            toggle={<KebabToggle onToggle={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)} />}
-            isOpen={isKebabDropdownOpen}
-            dropdownItems={kebabDropdownItems}
-          />
-        </ToolbarItem>
-        <ToolbarItem visibility={{ default: 'visible', md: 'hidden', lg: 'hidden', xl: 'hidden', '2xl': 'hidden' }}>
-          <Dropdown
-            isPlain
-            position="right"
-            onSelect={() => setIsFullKebabDropdownOpen(!isFullKebabDropdownOpen)}
-            toggle={<KebabToggle onToggle={() => setIsFullKebabDropdownOpen(!isFullKebabDropdownOpen)} />}
-            isOpen={isFullKebabDropdownOpen}
-            dropdownItems={fullKebabItems}
-          />
-        </ToolbarItem>
-        <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
-          <Dropdown
-            position="right"
-            onSelect={() => setIsDropdownOpen(!isDropdownOpen)}
-            isOpen={isDropdownOpen}
-            toggle={
-              <DropdownToggle
-                icon={<Avatar src={imgAvatar} alt="Avatar" />}
-                onToggle={() => setIsDropdownOpen(!isDropdownOpen)}
-              >
-                John Smith
-              </DropdownToggle>
-            }
-            dropdownItems={userDropdownItems}
-          />
-        </ToolbarItem>
-      </ToolbarContent>
-    </Toolbar>
-  );
-
   const tableToolbar = (
     <Toolbar id="sortable-toolbar">
       <ToolbarContent>
@@ -2370,7 +2302,7 @@ ComposableTableSortable = () => {
             </Select>
           </InputGroup>
         </ToolbarItem>
-        <ToolbarItem visibility={{ default: 'hidden', sm: 'visible', md: 'hidden' }}>
+        <ToolbarItem visibility={{ default: 'visible', xl: 'hidden' }}>
           <OptionsMenu
             id="options-menu-multiple-options-example"
             menuItems={[
@@ -2419,11 +2351,11 @@ ComposableTableSortable = () => {
             isGrouped
           />
         </ToolbarItem>
-        <OverflowMenu breakpoint="md">
+        <OverflowMenu breakpoint="lg">
           <OverflowMenuContent isPersistent>
             <OverflowMenuGroup isPersistent groupType="button">
               <OverflowMenuItem>
-                <Button variant="primary">Responsive hidden action on small</Button>
+                <Button variant="primary">Create instance</Button>
               </OverflowMenuItem>
               <OverflowMenuItem>
                 <Button variant="secondary">Action</Button>
