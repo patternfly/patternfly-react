@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.176.1 (2022-05-12)
+
+
+### Bug Fixes
+
+* **Tabs:** make close handler optional ([#7405](https://github.com/patternfly/patternfly-react/issues/7405)) ([a84bb2a](https://github.com/patternfly/patternfly-react/commit/a84bb2aadefd7f811745b9512a26eda85241361d))
+
+
+
+
+
 # 4.176.0 (2022-05-12)
 
 
