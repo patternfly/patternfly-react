@@ -5,7 +5,15 @@ import { Button } from '../../Button';
 
 describe('slider', () => {
   test('renders continuous slider', () => {
-    const { asFragment } = render(<Slider value={50} isInputVisible inputValue={50} />);
+    const { asFragment } = render(
+      <Slider
+        value={50}
+        isInputVisible
+        inputValue={50}
+        aria-labelledby="slider aria-labelledby"
+        aria-describedby="slider aria-describedby"
+      />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
