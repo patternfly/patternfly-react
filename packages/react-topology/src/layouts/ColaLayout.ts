@@ -186,7 +186,7 @@ class ColaLayout extends BaseLayout implements Layout {
     );
   }
 
-  public startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean, onEnd?: () => void): void {
+  protected startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean, onEnd?: () => void): void {
     this.onEnd = onEnd;
     if (!this.simulationStopped) {
       this.startColaLayout(initialRun, addingNodes);

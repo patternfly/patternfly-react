@@ -400,7 +400,12 @@ export class BaseLayout implements Layout {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  public startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean, onEnd?: () => void): void {}
+  protected startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean, onEnd?: () => void): void {}
+
+  // Interim, remove and update startLayout to public in next breaking change build
+  public doStartLayout(graph: Graph, initialRun: boolean, addingNodes: boolean, onEnd?: () => void): void {
+    return this.startLayout(graph, initialRun, addingNodes, onEnd);
+  }
 
   protected updateLayout(): void {
     this.forceSimulation.useForceSimulation(this.nodes, this.edges, this.getFixedNodeDistance);
