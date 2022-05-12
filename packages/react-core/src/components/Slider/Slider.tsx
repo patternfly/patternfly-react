@@ -61,9 +61,9 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   leftActions?: React.ReactNode;
   /** Actions placed to the right of the slider */
   rightActions?: React.ReactNode;
-  /** Id to use for Slider descriptor */
+  /** One or more id's to use for the slider thumb description */
   'aria-describedby'?: string;
-  /** Id to use for Slider label */
+  /** One or more id's to use for the slider thumb label */
   'aria-labelledby'?: string;
 }
 

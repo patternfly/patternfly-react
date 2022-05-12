@@ -5,15 +5,7 @@ import { Button } from '../../Button';
 
 describe('slider', () => {
   test('renders continuous slider', () => {
-    const { asFragment } = render(
-      <Slider
-        value={50}
-        isInputVisible
-        inputValue={50}
-        aria-labelledby="slider aria-labelledby"
-        aria-describedby="slider aria-describedby"
-      />
-    );
+    const { asFragment } = render(<Slider value={50} isInputVisible inputValue={50} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -86,4 +78,14 @@ describe('slider', () => {
     const { asFragment } = render(<Slider value={50} hasTooltipOverThumb />);
     expect(asFragment()).toMatchSnapshot();
   });
+});
+
+test('renders slider with aria-labelledby', () => {
+  const { asFragment } = render(<Slider value={50} aria-labelledby="slider aria-labelledby" />);
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('renders slider with aria-describedby', () => {
+  const { asFragment } = render(<Slider value={50} aria-describedby="slider aria-describedby" />);
+  expect(asFragment()).toMatchSnapshot();
 });
