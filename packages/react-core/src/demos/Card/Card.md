@@ -4,7 +4,7 @@ section: demos
 ---
 
 import DashboardWrapper from '../examples/DashboardWrapper';
-
+import { Label, LabelGroup } from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
@@ -21,9 +21,31 @@ import restIcon from './FuseConnector_Icons_REST.png';
 
 ## Demos
 
-This demonstrates how you can assemble a full page view that contains a grid of equal sized cards that includes a toolbar for managing card grid contents.
+This page contains demo(s) that utilize multiple Patternfly components to showcase various use cases not covered under a single component, as well as how components may be used together to achieve a specific purpose in application-style content.
 
 ### Card view
+
+This full page demo view contains a grid of equal sized cards with a toolbar for managing the card grid compnenents. It contains the following components:
+
+<LabelGroup categoryName="Components">
+<Label variant="outline">[Button](/components/button)</Label>
+<Label variant="outline">[Card](/components/card)</Label>
+<Label variant="outline">[Checkbox](/components/checkbox)</Label>
+<Label variant="outline">[Dropdown](/components/dropdown)</Label>
+<Label variant="outline">[EmptyState](/components/empty-state)</Label>
+<Label variant="outline">[OverflowMenu](/components/overflow-menu)</Label>
+<Label variant="outline">[Page](/components/page)</Label>
+<Label variant="outline">[Pagination](/components/pagination)</Label>
+<Label variant="outline">[Select](/components/select)</Label>
+<Label variant="outline">[Text](/components/text)</Label>
+<Label variant="outline">[Title](/components/title)</Label>
+<Label variant="outline">[Toolbar](/components/toolbar)</Label>
+</LabelGroup>
+<br/>
+<LabelGroup categoryName="Layouts">
+<Label variant="outline">[Bullseye](/layouts/bullseye)</Label>
+<Label variant="outline">[Gallery](/layouts/gallery)</Label>
+</LabelGroup>
 
 ```js isFullscreen
 import React from 'react';
