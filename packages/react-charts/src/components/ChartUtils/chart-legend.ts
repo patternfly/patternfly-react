@@ -46,7 +46,10 @@ interface ChartLegendTextMaxSizeInterface {
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
 }
 
-// Returns a legend which has been positioned per the given chart properties
+/**
+ * Returns a legend which has been positioned per the given chart properties
+ * @private
+ */
 export const getComputedLegend = ({
   allowWrap = true,
   chartType = 'chart',
@@ -122,7 +125,10 @@ export const getComputedLegend = ({
   return React.cloneElement(legendComponent, legendProps);
 };
 
-// Returns legend dimensions
+/**
+ * Returns legend dimensions
+ * @private
+ */
 export const getLegendDimensions = ({
   legendData,
   legendOrientation,
@@ -140,7 +146,10 @@ export const getLegendDimensions = ({
   return {};
 };
 
-// Returns true if the legend is smaller than its container
+/**
+ * Returns true if the legend is smaller than its container
+ * @private
+ */
 export const doesLegendFit = ({
   dx = 0,
   height,
@@ -179,7 +188,10 @@ export const doesLegendFit = ({
   return width - occupiedWidth > legendDimensions.width;
 };
 
-// Returns the number of legend items per row
+/**
+ * Returns the number of legend items per row
+ * @private
+ */
 export const getLegendItemsPerRow = ({
   dx,
   height,
@@ -215,11 +227,17 @@ export const getLegendItemsPerRow = ({
   return itemsPerRow;
 };
 
-// Returns x coordinate for legend
+/**
+ * Returns x coordinate for legend
+ * @private
+ */
 export const getLegendX = ({ chartType, ...rest }: ChartLegendPositionInterface) =>
   chartType === 'pie' ? getPieLegendX(rest) : getChartLegendX(rest);
 
-// Returns y coordinate for legend
+/**
+ * Returns y coordinate for legend
+ * @private
+ */
 export const getLegendY = ({ chartType, ...rest }: ChartLegendPositionInterface) => {
   switch (chartType) {
     case 'pie':
@@ -231,7 +249,10 @@ export const getLegendY = ({ chartType, ...rest }: ChartLegendPositionInterface)
   }
 };
 
-// Returns y coordinate for bullet legends
+/**
+ * Returns y coordinate for bullet legends
+ * @private
+ */
 export const getBulletLegendY = ({
   dy = 0,
   height,
@@ -269,7 +290,10 @@ export const getBulletLegendY = ({
   }
 };
 
-// Returns x coordinate for chart legends
+/**
+ * Returns x coordinate for chart legends
+ * @private
+ */
 export const getChartLegendX = ({
   dx = 0,
   height,
@@ -305,7 +329,10 @@ export const getChartLegendX = ({
   }
 };
 
-// Returns y coordinate for chart legends
+/**
+ * Returns y coordinate for chart legends
+ * @private
+ */
 export const getChartLegendY = ({
   dy = 0,
   height,
@@ -344,7 +371,10 @@ export const getChartLegendY = ({
   }
 };
 
-// Returns x coordinate for pie legends
+/**
+ * Returns x coordinate for pie legends
+ * @private
+ */
 export const getPieLegendX = ({
   dx = 0,
   height,
@@ -375,7 +405,10 @@ export const getPieLegendX = ({
   }
 };
 
-// Returns y coordinate for pie legends
+/**
+ * Returns y coordinate for pie legends
+ * @private
+ */
 export const getPieLegendY = ({
   dy = 0,
   height,
@@ -409,7 +442,10 @@ export const getPieLegendY = ({
   }
 };
 
-// Returns an approximation of longest text width based on legend styles
+/**
+ * Returns an approximation of longest text width based on legend styles
+ * @private
+ */
 export const getMaxLegendTextSize = ({ legendData, theme }: ChartLegendTextMaxSizeInterface) => {
   const style: any = theme && theme.legend && theme.legend.style ? theme.legend.style.labels : undefined;
   if (!(legendData && legendData.length)) {

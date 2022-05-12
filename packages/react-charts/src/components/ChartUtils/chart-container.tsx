@@ -23,6 +23,7 @@ import { LineSegment } from 'victory-core';
  *
  * @param {string} behaviorA 'brush', 'cursor', 'selection', 'voronoi', or 'zoom'
  * @param {string} behaviorB 'brush', 'cursor', 'selection', 'voronoi', or 'zoom'
+ * @public
  */
 export const createContainer = (behaviorA: ContainerType, behaviorB: ContainerType) => {
   const container: any = victoryCreateContainer(behaviorA, behaviorB);

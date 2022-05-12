@@ -29,11 +29,17 @@ interface ChartLabelTextSizeInterface {
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
 }
 
-// Returns x coordinate for bullet labels
+/**
+ * Returns x coordinate for bullet labels
+ * @private
+ */
 export const getBulletLabelX = ({ chartWidth, dx = 0, labelPosition }: ChartBulletLabelInterface) =>
   labelPosition === 'top' && chartWidth ? Math.round(chartWidth / 2) : dx;
 
-// Returns y coordinate for bullet labels
+/**
+ * Returns y coordinate for bullet labels
+ * @private
+ */
 export const getBulletLabelY = ({ chartHeight, dy = 0, labelPosition }: ChartBulletLabelInterface) => {
   switch (labelPosition) {
     case 'bottom':
@@ -45,7 +51,10 @@ export const getBulletLabelY = ({ chartHeight, dy = 0, labelPosition }: ChartBul
   }
 };
 
-// Returns x coordinate for pie labels
+/**
+ * Returns x coordinate for pie labels
+ * @private
+ */
 export const getPieLabelX = ({
   dx = 0,
   height,
@@ -75,7 +84,10 @@ export const getPieLabelX = ({
   }
 };
 
-// Returns x coordinate for pie labels
+/**
+ * Returns x coordinate for pie labels
+ * @private
+ */
 export const getPieLabelY = ({ dy = 0, height, labelPosition, padding, width }: ChartPieLabelInterface) => {
   const origin = getPieOrigin({ height, padding, width });
   const radius = Helpers.getRadius({ height, width, padding });
@@ -91,7 +103,10 @@ export const getPieLabelY = ({ dy = 0, height, labelPosition, padding, width }: 
   }
 };
 
-// Returns an approximate size for the give text
+/**
+ * Returns an approximate size for the give text
+ * @private
+ */
 export const getLabelTextSize = ({ text, theme }: ChartLabelTextSizeInterface): { height: number; width: number } => {
   const style: any = theme.legend.style.labels;
 

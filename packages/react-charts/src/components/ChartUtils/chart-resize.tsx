@@ -59,6 +59,7 @@ import { canUseDOM } from './chart-helpers';
  * @param {Element} containerRefElement The container reference to observe
  * @param {Function} handleResize The function to call for resize events
  * @return {Function} The function used to unobserve resize events
+ * @private
  */
 export const getResizeObserver = (containerRefElement: Element, handleResize: () => void) => {
   let unobserve: any;
