@@ -28,7 +28,7 @@ export class ForceLayout extends BaseLayout implements Layout {
     return distance;
   };
 
-  public startLayout(graph: Graph): void {
+  protected startLayout(graph: Graph): void {
     const { width, height } = graph.getBounds();
     const cx = width / 2;
     const cy = height / 2;
