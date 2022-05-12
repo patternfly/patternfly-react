@@ -274,7 +274,7 @@ class BulkSelectTableDemo extends React.Component {
 
 ### Expand/collapse all
 
-```js file="table-demos/ExpandCollapseAll.jsx"
+```js isFullscreen file="table-demos/ExpandCollapseAll.jsx"
 ```
 
 ### Column management
@@ -3043,7 +3043,7 @@ class LoadingStateDemo extends React.Component {
             props: { colSpan: 8 },
             title: (
               <Bullseye>
-                <Spinner size="xl" aria-labelledby="loading-table-demo"/>
+                <Spinner size="xl" aria-labelledby="loading-table-demo" />
               </Bullseye>
             )
           }
