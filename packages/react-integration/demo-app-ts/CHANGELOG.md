@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.174.0 (2022-05-12)
+
+
+### Features
+
+* **table:** expandable table demo ([#7277](https://github.com/patternfly/patternfly-react/issues/7277)) ([c081a61](https://github.com/patternfly/patternfly-react/commit/c081a61f11ceeb92688798106962e3604c243606))
+
+
+
+
+
 ## 4.173.6 (2022-05-11)
 
 **Note:** Version bump only for package demo-app-ts
