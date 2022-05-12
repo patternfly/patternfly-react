@@ -511,6 +511,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TopologyDemo
   },
   {
+    id: 'topology-pipelines-demo',
+    name: 'Topology Pipelines Demo',
+    componentType: Examples.TopologyPipelineDemo
+  },
+  {
     id: 'treeview-demo',
     name: 'Tree View Demo',
     componentType: Examples.TreeViewDemo
