@@ -124,25 +124,17 @@ export default class DashboardHeader extends React.Component {
             spacer={{ default: 'spacerNone', md: 'spacerMd' }}
           >
             <ToolbarItem>
-              <Button aria-label="Notifications" variant={ButtonVariant.plain}>
-                <AttentionBellIcon />
-              </Button>
+              <Button aria-label="Notifications" variant={ButtonVariant.plain} icon={<AttentionBellIcon />} />
             </ToolbarItem>
             <ToolbarItem>
-              <Button aria-label="Notifications" variant={ButtonVariant.plain}>
-                <ThIcon />
-              </Button>
+              <Button aria-label="App launcher" variant={ButtonVariant.plain} icon={<ThIcon />} />
             </ToolbarItem>
             <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
               <ToolbarItem>
-                <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
-                  <CogIcon />
-                </Button>
+                <Button aria-label="Settings actions" variant={ButtonVariant.plain} icon={<CogIcon />} />
               </ToolbarItem>
               <ToolbarItem>
-                <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-                  <QuestionCircleIcon />
-                </Button>
+                <Button aria-label="Help actions" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
               </ToolbarItem>
             </ToolbarGroup>
           </ToolbarGroup>

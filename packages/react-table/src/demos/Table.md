@@ -2070,6 +2070,8 @@ import React from 'react';
 import {
   Button,
   Card,
+  Flex,
+  FlexItem,
   InputGroup,
   Toolbar,
   ToolbarContent,
@@ -2139,9 +2141,9 @@ ComposableTableSortable = () => {
   ]);
 
   // index of the currently active column
-  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
+  const [activeSortIndex, setActiveSortIndex] = React.useState(0);
   // sort direction of the currently active column
-  const [activeSortDirection, setActiveSortDirection] = React.useState('none');
+  const [activeSortDirection, setActiveSortDirection] = React.useState('asc');
   // sort dropdown expansion
   const [isSortDropdownOpen, setIsSortDropdownOpen] = React.useState(false);
 
@@ -2422,13 +2424,28 @@ ComposableTableSortable = () => {
                         <a href="#">siemur/test-space</a>
                       </Td>
                       <Td dataLabel={columns[1]}>
-                        <CodeBranchIcon key="icon" /> {row[1]}
+                        <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                          <FlexItem>
+                            <CodeBranchIcon key="icon" />
+                          </FlexItem>
+                          <FlexItem>{row[1]}</FlexItem>
+                        </Flex>
                       </Td>
                       <Td dataLabel={columns[2]}>
-                        <CodeIcon key="icon" /> {row[2]}
+                        <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                          <FlexItem>
+                            <CodeIcon key="icon" />
+                          </FlexItem>
+                          <FlexItem>{row[2]}</FlexItem>
+                        </Flex>
                       </Td>
                       <Td dataLabel={columns[3]}>
-                        <CubeIcon key="icon" /> {row[3]}
+                        <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                          <FlexItem>
+                            <CubeIcon key="icon" />
+                          </FlexItem>
+                          <FlexItem>{row[3]}</FlexItem>
+                        </Flex>
                       </Td>
                       <Td dataLabel={columns[4]}>{row[4]} days ago</Td>
                       <Td dataLabel={'Action'}>
