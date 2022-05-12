@@ -2277,32 +2277,7 @@ ComposableTableSortable = () => {
   const tableToolbar = (
     <Toolbar id="sortable-toolbar">
       <ToolbarContent>
-        <ToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl"></ToolbarToggleGroup>
-        <ToolbarItem visibility={{ default: 'hidden', xl: 'visible' }} variant="search-filter">
-          <InputGroup>
-            <Select
-              id="select-example"
-              variant={SelectVariant.single}
-              aria-label="Select Input"
-              placeholderText={
-                <>
-                  <FilterIcon /> Status
-                </>
-              }
-              isOpen={isSelectOpen}
-              onToggle={() => setIsSelectOpen(!isSelectOpen)}
-              onSelect={() => setIsSelectOpen(!isSelectOpen)}
-            >
-              {[
-                <SelectOption key={0} value="Debug" />,
-                <SelectOption key={1} value="Info" />,
-                <SelectOption key={2} value="Warn" />,
-                <SelectOption key={3} value="Error" />
-              ]}
-            </Select>
-          </InputGroup>
-        </ToolbarItem>
-        <ToolbarItem visibility={{ default: 'visible', xl: 'hidden' }}>
+        <ToolbarItem visibility={{ default: 'hidden', sm: 'visible', md: 'hidden' }}>
           <OptionsMenu
             id="options-menu-multiple-options-example"
             menuItems={[
