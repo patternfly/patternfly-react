@@ -11,6 +11,9 @@ import {
 } from '@patternfly/react-table';
 import {
   Button,
+  Card,
+  Flex,
+  FlexItem,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
@@ -48,7 +51,7 @@ export const CompoundExpandable = () => {
     };
 
     return (
-      <TableComposable borders={false} aria-label="Simple table" variant="compact">
+      <TableComposable borders={false} aria-label="Nested table" variant="compact">
         <Thead>
           <Tr>
             <Th>{columnNames.description}</Th>
@@ -87,7 +90,7 @@ export const CompoundExpandable = () => {
   );
 
   const tableToolbar = (
-    <Toolbar id="compact-toolbar">
+    <Toolbar id="compact-toolbar" usePageInsets>
       <ToolbarContent>
         <ToolbarItem>
           <Select
@@ -175,65 +178,82 @@ export const CompoundExpandable = () => {
 
   return (
     <DashboardWrapper hasPageTemplateTitle>
-      <PageSection isFilled>
-        {tableToolbar}
-        <TableComposable aria-label="Compound expandable table">
-          <Thead>
-            <Tr>
-              <Th>{columnNames.name}</Th>
-              <Th>{columnNames.branches}</Th>
-              <Th>{columnNames.prs}</Th>
-              <Th>{columnNames.workspaces}</Th>
-              <Th>{columnNames.lastCommit}</Th>
-              <Th />
-            </Tr>
-          </Thead>
-          {repositories.map(repo => {
-            const expandedCellKey = expandedCells[repo.name];
-            const isRowExpanded = !!expandedCellKey;
-            return (
-              <Tbody key={repo.name} isExpanded={isRowExpanded}>
-                <Tr>
-                  <Td dataLabel={columnNames.name} component="th">
-                    <a href="#">{repo.name}</a>
-                  </Td>
-                  <Td dataLabel={columnNames.branches} compoundExpand={compoundExpandParams(repo, 'branches')}>
-                    <CodeBranchIcon key="icon" /> {repo.branches}
-                  </Td>
-                  <Td dataLabel={columnNames.prs} compoundExpand={compoundExpandParams(repo, 'prs')}>
-                    <CodeIcon key="icon" /> {repo.prs}
-                  </Td>
-                  <Td dataLabel={columnNames.workspaces} compoundExpand={compoundExpandParams(repo, 'workspaces')}>
-                    <CubeIcon key="icon" /> {repo.workspaces}
-                  </Td>
-                  <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
-                  <Td>
-                    <a href="#">Open in GitHub</a>
-                  </Td>
-                  <Td isActionCell>
-                    <ActionsColumn items={defaultActions()} />
-                  </Td>
-                </Tr>
-                {isRowExpanded ? (
-                  <Tr isExpanded={isRowExpanded}>
-                    <Td dataLabel={columnNames[expandedCellKey]} noPadding colSpan={7}>
-                      {expandedCellKey === 'branches' && repo.name === 'siemur/test-space' ? (
-                        <NestedItemsTable />
-                      ) : (
-                        <ExpandableRowContent>
-                          <div className="pf-u-m-md">
-                            Expanded content for {repo.name}: {expandedCellKey} goes here!
-                          </div>
-                        </ExpandableRowContent>
-                      )}
+      <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
+        <Card>
+          {tableToolbar}
+          <TableComposable aria-label="Compound expandable table">
+            <Thead>
+              <Tr>
+                <Th>{columnNames.name}</Th>
+                <Th>{columnNames.branches}</Th>
+                <Th>{columnNames.prs}</Th>
+                <Th>{columnNames.workspaces}</Th>
+                <Th>{columnNames.lastCommit}</Th>
+                <Th />
+              </Tr>
+            </Thead>
+            {repositories.map(repo => {
+              const expandedCellKey = expandedCells[repo.name];
+              const isRowExpanded = !!expandedCellKey;
+              return (
+                <Tbody key={repo.name} isExpanded={isRowExpanded}>
+                  <Tr>
+                    <Td dataLabel={columnNames.name} component="th">
+                      <a href="#">{repo.name}</a>
+                    </Td>
+                    <Td dataLabel={columnNames.branches} compoundExpand={compoundExpandParams(repo, 'branches')}>
+                      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                        <FlexItem>
+                          <CodeBranchIcon key="icon" />
+                        </FlexItem>
+                        <FlexItem>{repo.branches}</FlexItem>
+                      </Flex>
+                    </Td>
+                    <Td dataLabel={columnNames.prs} compoundExpand={compoundExpandParams(repo, 'prs')}>
+                      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                        <FlexItem>
+                          <CodeIcon key="icon" />
+                        </FlexItem>
+                        <FlexItem>{repo.prs}</FlexItem>
+                      </Flex>{' '}
+                    </Td>
+                    <Td dataLabel={columnNames.workspaces} compoundExpand={compoundExpandParams(repo, 'workspaces')}>
+                      <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                        <FlexItem>
+                          <CubeIcon key="icon" />
+                        </FlexItem>
+                        <FlexItem>{repo.workspaces}</FlexItem>
+                      </Flex>
+                    </Td>
+                    <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
+                    <Td>
+                      <a href="#">Open in GitHub</a>
+                    </Td>
+                    <Td isActionCell>
+                      <ActionsColumn items={defaultActions()} />
                     </Td>
                   </Tr>
-                ) : null}
-              </Tbody>
-            );
-          })}
-        </TableComposable>
-        {renderPagination('bottom', false)}
+                  {isRowExpanded ? (
+                    <Tr isExpanded={isRowExpanded}>
+                      <Td dataLabel={columnNames[expandedCellKey]} noPadding colSpan={7}>
+                        {expandedCellKey === 'branches' && repo.name === 'siemur/test-space' ? (
+                          <NestedItemsTable />
+                        ) : (
+                          <ExpandableRowContent>
+                            <div className="pf-u-m-md">
+                              Expanded content for {repo.name}: {expandedCellKey} goes here!
+                            </div>
+                          </ExpandableRowContent>
+                        )}
+                      </Td>
+                    </Tr>
+                  ) : null}
+                </Tbody>
+              );
+            })}
+          </TableComposable>
+          {renderPagination('bottom', false)}
+        </Card>
       </PageSection>
     </DashboardWrapper>
   );
