@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Button,
+  Card,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
@@ -54,7 +55,7 @@ export const ComposableTable = () => {
   );
 
   const tableToolbar = (
-    <Toolbar id="compact-toolbar">
+    <Toolbar usePageInsets id="compact-toolbar">
       <ToolbarContent>
         <ToolbarItem>
           <Select
@@ -92,39 +93,41 @@ export const ComposableTable = () => {
     <React.Fragment>
       <DashboardWrapper hasPageTemplateTitle>
         <PageSection isFilled>
-          {tableToolbar}
-          <TableComposable variant="compact" aria-label="Sortable Table">
-            <Thead>
-              <Tr>
-                {columns.map((column, columnIndex) => (
-                  <Th key={columnIndex}>{column}</Th>
-                ))}
-              </Tr>
-            </Thead>
-            <Tbody>
-              {rows.map((row, rowIndex) => (
-                <Tr key={rowIndex}>
-                  <>
-                    <Td dataLabel={columns[0]}>{row[0]}</Td>
-                    <Td dataLabel={columns[1]}>{row[1]}</Td>
-                    <Td dataLabel={columns[2]}>{row[2]}</Td>
-                    <Td dataLabel={columns[3]}>{row[3]}</Td>
-                    <Td dataLabel={columns[4]}>{row[4]}</Td>
-                    <Td dataLabel={columns[5]}>
-                      <CheckIcon key="icon" />
-                    </Td>
-                    <Td dataLabel={'Action'}>
-                      <a href="#">Action link</a>
-                    </Td>
-                    <Td isActionCell>
-                      <ActionsColumn items={defaultActions()} />
-                    </Td>
-                  </>
+          <Card>
+            {tableToolbar}
+            <TableComposable variant="compact" aria-label="Sortable Table">
+              <Thead>
+                <Tr>
+                  {columns.map((column, columnIndex) => (
+                    <Th key={columnIndex}>{column}</Th>
+                  ))}
                 </Tr>
-              ))}
-            </Tbody>
-          </TableComposable>
-          {renderPagination('bottom', false)}
+              </Thead>
+              <Tbody>
+                {rows.map((row, rowIndex) => (
+                  <Tr key={rowIndex}>
+                    <>
+                      <Td dataLabel={columns[0]}>{row[0]}</Td>
+                      <Td dataLabel={columns[1]}>{row[1]}</Td>
+                      <Td dataLabel={columns[2]}>{row[2]}</Td>
+                      <Td dataLabel={columns[3]}>{row[3]}</Td>
+                      <Td dataLabel={columns[4]}>{row[4]}</Td>
+                      <Td dataLabel={columns[5]}>
+                        <CheckIcon key="icon" />
+                      </Td>
+                      <Td dataLabel={'Action'}>
+                        <a href="#">Action link</a>
+                      </Td>
+                      <Td isActionCell>
+                        <ActionsColumn items={defaultActions()} />
+                      </Td>
+                    </>
+                  </Tr>
+                ))}
+              </Tbody>
+            </TableComposable>
+            {renderPagination('bottom', false)}
+          </Card>
         </PageSection>
       </DashboardWrapper>
     </React.Fragment>
