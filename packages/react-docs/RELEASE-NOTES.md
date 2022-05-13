@@ -52,7 +52,7 @@ section: developer-resources
 - **Tabs:**
   - Added secondary border-bottom variation, updated demos ([#7311](https://github.com/patternfly/patternfly-react/pull/7311))
   - Added support to allow dynamic close and add ([#7297](https://github.com/patternfly/patternfly-react/pull/7297))
- - Made close handler optional ([#7405](https://github.com/patternfly/patternfly-react/pull/7405))
+  - Made close handler optional ([#7405](https://github.com/patternfly/patternfly-react/pull/7405))
   - Updated key to not use index ([#7276](https://github.com/patternfly/patternfly-react/pull/7276))
 - **Tooltip:**
   - Made ref variant announced by assistive technology ([#7332](https://github.com/patternfly/patternfly-react/pull/7332))
@@ -63,7 +63,7 @@ section: developer-resources
 ### Catalog extension
 - Added a little bit of spacing between title and items ([#7060](https://github.com/patternfly/patternfly-react/pull/7060))
 
-### Charts:*
+### Charts
 - Added style for tooltip cursor ([#7361](https://github.com/patternfly/patternfly-react/pull/7361))
 - Added PatternFly dark theme support ([#7310](https://github.com/patternfly/patternfly-react/pull/7310))
 - Added support for customizing tooltip border for dark theme ([#7393](https://github.com/patternfly/patternfly-react/pull/7393))
