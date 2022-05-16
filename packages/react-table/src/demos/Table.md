@@ -2964,6 +2964,7 @@ import React from 'react';
 import {
   Bullseye,
   Button,
+  Card,
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
@@ -3016,12 +3017,14 @@ class EmptyStateDemo extends React.Component {
 
     return (
       <DashboardWrapper hasPageTemplateTitle>
-        <PageSection isFilled>
-          <Table cells={columns} rows={rows} aria-label="Empty state demo">
-            <TableHeader />
-            <TableBody />
-          </Table>
-        </PageSection>
+        <Card>
+          <PageSection isFilled>
+            <Table cells={columns} rows={rows} aria-label="Empty state demo">
+              <TableHeader />
+              <TableBody />
+            </Table>
+          </PageSection>
+        </Card>
       </DashboardWrapper>
     );
   }
