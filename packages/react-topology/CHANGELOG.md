@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.61.3 (2022-05-16)
+
+
+### Bug Fixes
+
+* **Chip:** add custom maxWidth prop ([#7387](https://github.com/patternfly/patternfly-react/issues/7387)) ([7cfb1a2](https://github.com/patternfly/patternfly-react/commit/7cfb1a202c2f1405c454b2e10716d9a500d4508f))
+
+
+
+
+
 ## 4.61.2 (2022-05-13)
 
 **Note:** Version bump only for package @patternfly/react-topology
