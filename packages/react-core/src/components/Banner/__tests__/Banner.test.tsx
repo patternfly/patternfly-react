@@ -5,7 +5,11 @@ import { render } from '@testing-library/react';
 ['default', 'info', 'success', 'warning', 'danger'].forEach((variant: string) => {
   test(`${variant} banner`, () => {
     const { asFragment } = render(
-      <Banner variant={variant as 'default' | 'info' | 'success' | 'warning' | 'danger'} aria-label={variant}>
+      <Banner
+        variant={variant as 'default' | 'info' | 'success' | 'warning' | 'danger'}
+        aria-label={variant}
+        screenReaderText={`${variant} banner`}
+      >
         {variant} Banner
       </Banner>
     );
