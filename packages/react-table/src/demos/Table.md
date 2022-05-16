@@ -4,6 +4,7 @@ section: components
 ---
 
 import { Checkbox, PageSection, ToolbarExpandIconWrapper, ToolbarContent } from '@patternfly/react-core';
+import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
@@ -275,6 +276,11 @@ class BulkSelectTableDemo extends React.Component {
 ### Expand/collapse all
 
 ```js isFullscreen file="table-demos/ExpandCollapseAll.jsx"
+```
+
+### Compact
+
+```js isFullscreen file="table-demos/Compact.jsx"
 ```
 
 ### Column management
