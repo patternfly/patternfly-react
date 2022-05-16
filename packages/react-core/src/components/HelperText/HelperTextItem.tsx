@@ -70,7 +70,11 @@ export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
           {variant === 'error' && <ExclamationCircleIcon />}
         </span>
       )}
-      <span className={css(styles.helperTextItemText)}>{children}</span>
+
+      <span className={css(styles.helperTextItemText)}>
+        {children}
+        {isDynamic && <span className="pf-u-screen-reader">: {variant} status;</span>}
+      </span>
     </Component>
   );
 };
