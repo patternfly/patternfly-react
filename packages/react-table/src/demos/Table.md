@@ -3022,7 +3022,7 @@ class EmptyStateDemo extends React.Component {
 
 ```js isFullscreen
 import React from 'react';
-import { Bullseye, EmptyState, EmptyStateIcon, Spinner, Title } from '@patternfly/react-core';
+import { Bullseye, Card, EmptyState, EmptyStateIcon, Spinner, Title } from '@patternfly/react-core';
 import { PageSection, Table, TableHeader, TableBody } from '@patternfly/react-table';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
@@ -3059,10 +3059,12 @@ class LoadingStateDemo extends React.Component {
     return (
       <DashboardWrapper hasPageTemplateTitle>
         <PageSection isFilled>
-          <Table cells={columns} rows={rows} id="loading-table-demo" aria-label="Loading Table Demo">
-            <TableHeader />
-            <TableBody />
-          </Table>
+          <Card>
+            <Table cells={columns} rows={rows} id="loading-table-demo" aria-label="Loading Table Demo">
+              <TableHeader />
+              <TableBody />
+            </Table>
+          </Card>
         </PageSection>
       </DashboardWrapper>
     );
