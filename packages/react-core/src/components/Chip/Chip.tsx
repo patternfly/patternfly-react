@@ -38,6 +38,9 @@ export interface ChipProps extends React.HTMLProps<HTMLDivElement>, OUIAProps {
     | 'left-end'
     | 'right-start'
     | 'right-end';
+
+  /** Css property expressed in percentage or any css unit that overrides the default value of the max-width of the chip's text */
+  textMaxWidth?: string;
 }
 
 interface ChipState {
@@ -73,12 +76,20 @@ export class Chip extends React.Component<ChipProps, ChipState> {
     });
   }
 
+  setChipStyle = () => ({
+    '--pf-c-chip__text--MaxWidth': this.props.textMaxWidth
+  });
+
   renderOverflowChip = () => {
     const { children, className, onClick, ouiaId } = this.props;
     const Component = this.props.component as any;
     return (
       <Component
         onClick={onClick}
+        {...(this.props.textMaxWidth && {
+          style: this.setChipStyle(),
+          ...this.props.style
+        })}
         className={css(styles.chip, styles.modifiers.overflow, className)}
         {...(this.props.component === 'button' ? { type: 'button' } : {})}
         {...getOUIAProps('OverflowChip', ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
@@ -93,6 +104,9 @@ export class Chip extends React.Component<ChipProps, ChipState> {
     const Component = component as any;
     return (
       <Component
+        {...(this.props.textMaxWidth && {
+          style: this.setChipStyle()
+        })}
         className={css(styles.chip, className)}
         {...(this.state.isTooltipVisible && { tabIndex: 0 })}
         {...getOUIAProps(Chip.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId)}
