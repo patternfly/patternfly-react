@@ -46,9 +46,12 @@ type DefaultNodeProps = {
   dragging?: boolean;
   edgeDragging?: boolean;
   dropTarget?: boolean;
+  scaleNode?: boolean; // Whether or not to scale the node, best on hover of node at lowest scale level
   label?: string; // Defaults to element.getLabel()
   secondaryLabel?: string;
   showLabel?: boolean; // Defaults to true
+  labelClassName?: string;
+  scaleLabel?: boolean; // Whether or not to scale the label, best at lower scale levels
   labelPosition?: LabelPosition; // Defaults to element.getLabelPosition()
   truncateLength?: number; // Defaults to 13
   labelIconClass?: string; // Icon to show in label
@@ -61,6 +64,7 @@ type DefaultNodeProps = {
   badgeClassName?: string;
   badgeLocation?: BadgeLocation;
   attachments?: React.ReactNode; // ie. decorators
+  nodeStatus?: NodeStatus; // Defaults to element.getNodeStatus()
   showStatusBackground?: boolean;
   showStatusDecorator?: boolean;
   statusDecoratorTooltip?: React.ReactNode;
@@ -76,19 +80,25 @@ type DefaultNodeProps = {
     WithContextMenuProps
 >;
 
+const SCALE_UP_TIME = 200;
+
 const DefaultNode: React.FunctionComponent<DefaultNodeProps> = ({
   className,
   element,
   selected,
   hover,
+  scaleNode,
   showLabel = true,
   label,
   secondaryLabel,
+  labelClassName,
   labelPosition,
+  scaleLabel,
   truncateLength,
   labelIconClass,
   labelIcon,
   labelIconPadding,
+  nodeStatus,
   showStatusBackground,
   showStatusDecorator = false,
   statusDecoratorTooltip,
@@ -116,10 +126,11 @@ const DefaultNode: React.FunctionComponent<DefaultNodeProps> = ({
   contextMenuOpen
 }) => {
   const [hovered, hoverRef] = useHover();
-  const status = element.getNodeStatus();
+  const status = nodeStatus || element.getNodeStatus();
   const refs = useCombineRefs<SVGEllipseElement>(hoverRef, dragNodeRef);
   const { width, height } = element.getDimensions();
   const isHover = hover !== undefined ? hover : hovered;
+  const [nodeScale, setNodeScale] = React.useState<number>(1);
 
   const statusDecorator = React.useMemo(() => {
     if (!status || !showStatusDecorator) {
@@ -192,9 +203,70 @@ const DefaultNode: React.FunctionComponent<DefaultNodeProps> = ({
   }
 
   const nodeLabelPosition = labelPosition || element.getLabelPosition();
+  const scale = element.getGraph().getScale();
+
+  const animationRef = React.useRef<number>();
+  const scaleGoal = React.useRef<number>(1);
+  const nodeScaled = React.useRef<boolean>(false);
+
+  React.useEffect(() => {
+    if (!scaleNode || scale >= 1) {
+      setNodeScale(1);
+      nodeScaled.current = false;
+      if (animationRef.current) {
+        window.cancelAnimationFrame(animationRef.current);
+        animationRef.current = 0;
+      }
+    } else {
+      scaleGoal.current = 1 / scale;
+      const scaleDelta = scaleGoal.current - scale;
+      const initTime = performance.now();
+
+      const bumpScale = (bumpTime: number) => {
+        const scalePercent = (bumpTime - initTime) / SCALE_UP_TIME;
+        const nextScale = Math.min(scale + scaleDelta * scalePercent, scaleGoal.current);
+        setNodeScale(nextScale);
+        if (nextScale < scaleGoal.current) {
+          animationRef.current = window.requestAnimationFrame(bumpScale);
+        } else {
+          nodeScaled.current = true;
+          animationRef.current = 0;
+        }
+      };
+
+      if (nodeScaled.current) {
+        setNodeScale(scaleGoal.current);
+      } else if (!animationRef.current) {
+        animationRef.current = window.requestAnimationFrame(bumpScale);
+      }
+    }
+    return () => {
+      if (animationRef.current) {
+        window.cancelAnimationFrame(animationRef.current);
+        animationRef.current = 0;
+      }
+    };
+  }, [scale, scaleNode]);
+
+  const labelScale = scaleLabel && !scaleNode ? Math.max(1, 1 / scale) : 1;
+  const labelPositionScale = scaleLabel && !scaleNode ? Math.min(1, scale) : 1;
+
+  const { translateX, translateY } = React.useMemo(() => {
+    if (!scaleNode) {
+      return { translateX: 0, translateY: 0 };
+    }
+    const bounds = element.getBounds();
+    const translateX = bounds.width / 2 - (bounds.width / 2) * nodeScale;
+    const translateY = bounds.height / 2 - (bounds.height / 2) * nodeScale;
+
+    return { translateX, translateY };
+  }, [element, nodeScale, scaleNode]);
 
   return (
-    <g className={groupClassName}>
+    <g
+      className={groupClassName}
+      transform={`${scaleNode ? `translate(${translateX}, ${translateY})` : ''} scale(${nodeScale})`}
+    >
       <NodeShadows />
       <g ref={refs} onClick={onSelect} onContextMenu={onContextMenu}>
         {ShapeComponent && (
@@ -208,31 +280,33 @@ const DefaultNode: React.FunctionComponent<DefaultNodeProps> = ({
           />
         )}
         {showLabel && (label || element.getLabel()) && (
-          <NodeLabel
-            className={css(styles.topologyNodeLabel)}
-            x={nodeLabelPosition === LabelPosition.right ? width + 8 : width / 2}
-            y={nodeLabelPosition === LabelPosition.right ? height / 2 : height + 6}
-            position={nodeLabelPosition}
-            paddingX={8}
-            paddingY={4}
-            secondaryLabel={secondaryLabel}
-            truncateLength={truncateLength}
-            status={status}
-            badge={badge}
-            badgeColor={badgeColor}
-            badgeTextColor={badgeTextColor}
-            badgeBorderColor={badgeBorderColor}
-            badgeClassName={badgeClassName}
-            badgeLocation={badgeLocation}
-            onContextMenu={onContextMenu}
-            contextMenuOpen={contextMenuOpen}
-            hover={isHover}
-            labelIconClass={labelIconClass}
-            labelIcon={labelIcon}
-            labelIconPadding={labelIconPadding}
-          >
-            {label || element.getLabel()}
-          </NodeLabel>
+          <g transform={`scale(${labelScale})`}>
+            <NodeLabel
+              className={css(styles.topologyNodeLabel, labelClassName)}
+              x={(nodeLabelPosition === LabelPosition.right ? width + 8 : width / 2) * labelPositionScale}
+              y={(nodeLabelPosition === LabelPosition.right ? height / 2 : height + 6) * labelPositionScale}
+              position={nodeLabelPosition}
+              paddingX={8}
+              paddingY={4}
+              secondaryLabel={secondaryLabel}
+              truncateLength={truncateLength}
+              status={status}
+              badge={badge}
+              badgeColor={badgeColor}
+              badgeTextColor={badgeTextColor}
+              badgeBorderColor={badgeBorderColor}
+              badgeClassName={badgeClassName}
+              badgeLocation={badgeLocation}
+              onContextMenu={onContextMenu}
+              contextMenuOpen={contextMenuOpen}
+              hover={isHover}
+              labelIconClass={labelIconClass}
+              labelIcon={labelIcon}
+              labelIconPadding={labelIconPadding}
+            >
+              {label || element.getLabel()}
+            </NodeLabel>
+          </g>
         )}
         {children}
       </g>
