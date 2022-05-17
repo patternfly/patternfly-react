@@ -55,6 +55,11 @@ export interface DropdownProps
   autoFocus?: boolean;
   /** Props for extreme customization of dropdown */
   contextProps?: typeof DropdownContext;
+  /** Flag for indicating that the dropdown menu should automatically flip vertically when
+   * it reaches the boundary. This prop can only be used when the dropdown component is not
+   * appended inline, e.g. `menuAppendTo="parent"`
+   */
+  isFlippable?: boolean;
 }
 
 export const Dropdown: React.FunctionComponent<DropdownProps> = ({
@@ -66,6 +71,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   alignments,
   contextProps,
   menuAppendTo = 'inline',
+  isFlippable = false,
   ...props
 }: DropdownProps) => (
   <DropdownContext.Provider
@@ -91,7 +97,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
       ...contextProps
     }}
   >
-    <DropdownWithContext menuAppendTo={menuAppendTo} {...props} />
+    <DropdownWithContext menuAppendTo={menuAppendTo} isFlippable={isFlippable} {...props} />
   </DropdownContext.Provider>
 );
 Dropdown.displayName = 'Dropdown';
