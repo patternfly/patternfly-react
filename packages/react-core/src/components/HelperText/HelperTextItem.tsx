@@ -29,6 +29,10 @@ export interface HelperTextItemProps extends React.HTMLProps<HTMLDivElement | HT
    * assistive technologies.
    */
   id?: string;
+  /** Text that is only accessible to screen readers in order to announce the status of a helper text item.
+   * This prop can only be used when the isDynamic prop is also passed in.
+   */
+  screenReaderText?: string;
 }
 
 const variantStyle = {
@@ -48,6 +52,7 @@ export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
   isDynamic = false,
   hasIcon = isDynamic,
   id,
+  screenReaderText = `${variant} status`,
   ...props
 }: HelperTextItemProps) => {
   const Component = component as any;
@@ -73,7 +78,7 @@ export const HelperTextItem: React.FunctionComponent<HelperTextItemProps> = ({
 
       <span className={css(styles.helperTextItemText)}>
         {children}
-        {isDynamic && <span className="pf-u-screen-reader">: {variant} status;</span>}
+        {isDynamic && <span className="pf-u-screen-reader">: {screenReaderText};</span>}
       </span>
     </Component>
   );
