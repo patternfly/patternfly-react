@@ -28,6 +28,8 @@ export interface CheckboxProps
   description?: React.ReactNode;
   /** Body text of the checkbox */
   body?: React.ReactNode;
+  /** Sets the input wrapper component to render. Defaults to <div> */
+  component?: React.ElementType;
 }
 
 // tslint:disable-next-line:no-empty
@@ -45,7 +47,8 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
     isDisabled: false,
     isChecked: false,
     onChange: defaultOnChange,
-    ouiaSafe: true
+    ouiaSafe: true,
+    component: 'div'
   };
 
   constructor(props: any) {
@@ -74,6 +77,7 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
       body,
       ouiaId,
       ouiaSafe,
+      component: Component,
       ...props
     } = this.props;
     if (!props.id) {
@@ -93,7 +97,7 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
 
     checkedProps.checked = checkedProps.checked === null ? false : checkedProps.checked;
     return (
-      <div className={css(styles.check, !label && styles.modifiers.standalone, className)}>
+      <Component className={css(styles.check, !label && styles.modifiers.standalone, className)}>
         <input
           {...props}
           className={css(styles.checkInput)}
@@ -113,7 +117,7 @@ export class Checkbox extends React.Component<CheckboxProps, CheckboxState> {
         )}
         {description && <span className={css(styles.checkDescription)}>{description}</span>}
         {body && <span className={css(styles.checkBody)}>{body}</span>}
-      </div>
+      </Component>
     );
   }
 }

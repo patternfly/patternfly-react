@@ -305,7 +305,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             className={css(styles.menuItem, getIsSelected() && !hasCheck && styles.modifiers.selected, className)}
             aria-current={getAriaCurrent()}
             {...(!hasCheck && { disabled: isDisabled })}
-            role="menuitem"
+            role={hasCheck ? 'none' : 'menuitem'}
             ref={innerRef}
             {...(!hasCheck && {
               onClick: (event: any) => {
@@ -327,6 +327,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
                 <span className={css('pf-c-menu__item-check')}>
                   <Checkbox
                     id={randomId}
+                    component="span"
                     isChecked={isSelected || false}
                     onChange={event => onItemSelect(event, onSelect)}
                     isDisabled={isDisabled}
