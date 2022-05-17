@@ -2279,7 +2279,7 @@ ComposableTableSortable = () => {
   const tableToolbar = (
     <Toolbar id="sortable-toolbar">
       <ToolbarContent>
-        <ToolbarItem visibility={{ default: 'hidden', sm: 'visible', md: 'hidden' }}>
+        <ToolbarItem visibility={{ md: 'hidden' }}>
           <OptionsMenu
             id="options-menu-multiple-options-example"
             menuItems={[
