@@ -61,6 +61,10 @@ export interface SliderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onCh
   leftActions?: React.ReactNode;
   /** Actions placed to the right of the slider */
   rightActions?: React.ReactNode;
+  /** One or more id's to use for the slider thumb description */
+  'aria-describedby'?: string;
+  /** One or more id's to use for the slider thumb label */
+  'aria-labelledby'?: string;
 }
 
 const getPercentage = (current: number, max: number) => (100 * current) / max;
@@ -86,6 +90,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
   max = 100,
   showTicks = false,
   showBoundaries = true,
+  'aria-describedby': ariaDescribedby,
+  'aria-labelledby': ariaLabelledby,
   ...props
 }: SliderProps) => {
   const sliderRailRef = React.useRef<HTMLDivElement>();
@@ -362,6 +368,8 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
       aria-valuetext={findAriaTextValue()}
       aria-label={thumbAriaLabel}
       aria-disabled={isDisabled}
+      aria-describedby={ariaDescribedby}
+      aria-labelledby={ariaLabelledby}
       onMouseDown={!isDisabled ? handleMouseDown : null}
       onTouchStart={!isDisabled ? handleTouchStart : null}
       onKeyDown={!isDisabled ? handleThumbKeys : null}
