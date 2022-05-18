@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.65.4 (2022-05-18)
+
+
+### Bug Fixes
+
+* **Table:** Removed duplicate import from md file ([#7442](https://github.com/patternfly/patternfly-react/issues/7442)) ([00438a7](https://github.com/patternfly/patternfly-react/commit/00438a73c7b2548c4f0ad00ed09f9c60f99978d9))
+
+
+
+
+
 ## 4.65.3 (2022-05-16)
 
 
