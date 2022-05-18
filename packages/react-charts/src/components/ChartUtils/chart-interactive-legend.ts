@@ -19,7 +19,10 @@ interface ChartInteractiveLegendExtInterface extends ChartInteractiveLegendInter
   target?: 'data' | 'labels'; // Event target
 }
 
-// Returns child names for each series, except given ID index
+/**
+ * Returns child names for each series, except given ID index
+ * @private
+ */
 const getChildNames = ({ chartNames, omitIndex }: ChartInteractiveLegendExtInterface) => {
   const result = [] as any;
   chartNames.map((chartName: any, index: number) => {
@@ -34,7 +37,12 @@ const getChildNames = ({ chartNames, omitIndex }: ChartInteractiveLegendExtInter
   return result;
 };
 
-// Returns events for an interactive legend
+/**
+ * Returns events for an interactive legend
+ *
+ * @param props See ChartInteractiveLegendInterface
+ * @public
+ */
 export const getInteractiveLegendEvents = (props: ChartInteractiveLegendInterface) => [
   ...getInteractiveLegendTargetEvents({ ...props, target: 'data' }),
   ...getInteractiveLegendTargetEvents({ ...props, target: 'labels' })
@@ -51,7 +59,10 @@ const getInteractiveLegendItems = ({ chartNames, omitIndex }: ChartInteractiveLe
   return result;
 };
 
-// Returns styles for interactive legend items
+/**
+ * Returns styles for interactive legend items
+ * @private
+ */
 export const getInteractiveLegendItemStyles = (hidden = false) =>
   !hidden
     ? {}

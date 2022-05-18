@@ -36,6 +36,7 @@ import {
  * Apply custom properties to base and color themes
  *
  * @deprecated Use mergeTheme
+ * @public
  */
 export const getCustomTheme = (
   themeColor: string,
@@ -43,49 +44,87 @@ export const getCustomTheme = (
   customTheme: ChartThemeDefinition
 ): ChartThemeDefinition => mergeTheme(themeColor, customTheme);
 
-// Merge custom properties with base and color themes
+/**
+ * Merge custom properties with base and color themes
+ * @param themeColor The theme color to merge with custom theme
+ * @param customTheme The custom theme to merge
+ * @public
+ */
 export const mergeTheme = (themeColor: string, customTheme: ChartThemeDefinition): ChartThemeDefinition =>
   merge(getTheme(themeColor), customTheme);
 
-// Returns axis theme
+/**
+ * Returns axis theme
+ * @private
+ */
 export const getAxisTheme = (themeColor: string): ChartThemeDefinition => mergeTheme(themeColor, ChartAxisTheme);
 
-// Returns bullet chart theme
+/**
+ * Returns bullet chart theme
+ * @private
+ */
 export const getBulletTheme = (themeColor: string): ChartThemeDefinition => mergeTheme(themeColor, ChartBulletTheme);
 
-// Returns comparative error measure theme for bullet chart
+/**
+ * Returns comparative error measure theme for bullet chart
+ * @private
+ */
 export const getBulletComparativeErrorMeasureTheme = (themeColor: string): ChartThemeDefinition =>
   mergeTheme(themeColor, ChartBulletComparativeErrorMeasureTheme);
 
-// Returns comparative measure theme for bullet chart
+/**
+ * Returns comparative measure theme for bullet chart
+ * @private
+ */
 export const getBulletComparativeMeasureTheme = (themeColor: string): ChartThemeDefinition =>
   mergeTheme(themeColor, ChartBulletComparativeMeasureTheme);
 
-// Returns comparative warning measure theme for bullet chart
+/**
+ * Returns comparative warning measure theme for bullet chart
+ * @private
+ */
 export const getBulletComparativeWarningMeasureTheme = (themeColor: string): ChartThemeDefinition =>
   mergeTheme(themeColor, ChartBulletComparativeWarningMeasureTheme);
 
-// Returns group title theme for bullet chart
+/**
+ * Returns group title theme for bullet chart
+ * @private
+ */
 export const getBulletGroupTitleTheme = (themeColor: string): ChartThemeDefinition =>
   mergeTheme(themeColor, ChartBulletGroupTitleTheme);
 
-// Returns primary dot measure theme for bullet chart
+/**
+ * Returns primary dot measure theme for bullet chart
+ * @private
+ */
 export const getBulletPrimaryDotMeasureTheme = (themeColor: string): ChartThemeDefinition =>
   mergeTheme(themeColor, ChartBulletPrimaryDotMeasureTheme);
 
-// Returns primary negative measure theme for bullet chart
+/**
+ * Returns primary negative measure theme for bullet chart
+ * @private
+ */
 export const getBulletPrimaryNegativeMeasureTheme = (themeColor: string): ChartThemeDefinition =>
   mergeTheme(themeColor, ChartBulletPrimaryNegativeMeasureTheme);
 
-// Returns primary segmented measure theme for bullet chart
+/**
+ * Returns primary segmented measure theme for bullet chart
+ * @private
+ */
 export const getBulletPrimarySegmentedMeasureTheme = (themeColor: string): ChartThemeDefinition =>
   mergeTheme(themeColor, ChartBulletPrimarySegmentedMeasureTheme);
 
-// Returns qualitative range theme for bullet chart
+/**
+ * Returns qualitative range theme for bullet chart
+ * @private
+ */
 export const getBulletQualitativeRangeTheme = (themeColor: string): ChartThemeDefinition =>
   mergeTheme(themeColor, ChartBulletQualitativeRangeTheme);
 
-// Returns theme for Chart component
+/**
+ * Returns theme for Chart component
+ * @private
+ */
 export const getChartTheme = (themeColor: string, showAxis: boolean): ChartThemeDefinition => {
   const theme = getTheme(themeColor);
 
@@ -103,9 +142,17 @@ export const getChartTheme = (themeColor: string, showAxis: boolean): ChartTheme
 };
 
 // Returns donut theme
+/**
+ *
+ * @private
+ */
 export const getDonutTheme = (themeColor: string): ChartThemeDefinition => mergeTheme(themeColor, ChartDonutTheme);
 
 // Returns dynamic donut threshold theme
+/**
+ *
+ * @private
+ */
 export const getDonutThresholdDynamicTheme = (themeColor: string): ChartThemeDefinition => {
   const theme = mergeTheme(themeColor, ChartDonutThresholdDynamicTheme);
 
@@ -117,7 +164,10 @@ export const getDonutThresholdDynamicTheme = (themeColor: string): ChartThemeDef
   return theme;
 };
 
-// Returns static donut threshold theme
+/**
+ * Returns static donut threshold theme
+ * @private
+ */
 export const getDonutThresholdStaticTheme = (themeColor: string, invert?: boolean): ChartThemeDefinition => {
   const staticTheme = cloneDeep(ChartDonutThresholdStaticTheme);
   if (invert && staticTheme.pie.colorScale instanceof Array) {
@@ -126,7 +176,10 @@ export const getDonutThresholdStaticTheme = (themeColor: string, invert?: boolea
   return mergeTheme(themeColor, staticTheme);
 };
 
-// Returns donut utilization theme
+/**
+ * Returns donut utilization theme
+ * @private
+ */
 export const getDonutUtilizationTheme = (themeColor: string): ChartThemeDefinition => {
   const theme = mergeTheme(themeColor, ChartDonutUtilizationDynamicTheme);
 
@@ -136,7 +189,10 @@ export const getDonutUtilizationTheme = (themeColor: string): ChartThemeDefiniti
   return theme;
 };
 
-// Returns theme colors
+/**
+ * Returns theme colors
+ * @private
+ */
 export const getThemeColors = (themeColor: string) => {
   switch (themeColor) {
     case ChartThemeColor.blue:
@@ -163,7 +219,10 @@ export const getThemeColors = (themeColor: string) => {
   }
 };
 
-// Applies theme color and variant to base theme
+/**
+ * Applies theme color to base theme
+ * @private
+ */
 export const getTheme = (themeColor: string): ChartThemeDefinition => {
   // Deep clone
   const baseTheme = {
@@ -172,6 +231,9 @@ export const getTheme = (themeColor: string): ChartThemeDefinition => {
   return merge(baseTheme, getThemeColors(themeColor));
 };
 
-// Returns threshold theme
+/**
+ * Returns threshold theme
+ * @private
+ */
 export const getThresholdTheme = (themeColor: string): ChartThemeDefinition =>
   mergeTheme(themeColor, ChartThresholdTheme);
