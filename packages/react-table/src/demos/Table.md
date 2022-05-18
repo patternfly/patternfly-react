@@ -3017,14 +3017,14 @@ class EmptyStateDemo extends React.Component {
 
     return (
       <DashboardWrapper hasPageTemplateTitle>
-        <Card>
-          <PageSection isFilled>
+        <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
+          <Card component="div">
             <Table cells={columns} rows={rows} aria-label="Empty state demo">
               <TableHeader />
               <TableBody />
             </Table>
-          </PageSection>
-        </Card>
+          </Card>
+        </PageSection>
       </DashboardWrapper>
     );
   }

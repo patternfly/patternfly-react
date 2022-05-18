@@ -176,8 +176,7 @@ import { Switch } from '@patternfly/react-core';
     aria-label="Message when on"
     label="Message when on"
     labelOff="Message when off"
-    isChecked={null}
-    defaultChecked
+    isChecked
   />
   <br />
   <Switch
@@ -185,11 +184,11 @@ import { Switch } from '@patternfly/react-core';
     aria-label="Message when on"
     label="Message when on"
     labelOff="Message when off"
-    isChecked={null}
+    isChecked={false}
   />
   <br />
-  <Switch id="uncontrolled-no-label-switch-on" aria-label="Message when on" isChecked={null} defaultChecked />
+  <Switch id="uncontrolled-no-label-switch-on" aria-label="Message when on" isChecked />
   <br />
-  <Switch id="uncontrolled-no-label-switch-off" aria-label="Message when on" isChecked={null} />
+  <Switch id="uncontrolled-no-label-switch-off" aria-label="Message when on" isChecked={false} />
 </React.Fragment>;
 ```
