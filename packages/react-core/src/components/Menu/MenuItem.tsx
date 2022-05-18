@@ -295,7 +295,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       onMouseOver={onMouseOver}
       {...(flyoutMenu && { onKeyDown: handleFlyout })}
       ref={ref}
-      role="none"
+      role={!hasCheck ? 'none' : 'menuitem'}
       {...props}
     >
       <GenerateId>
@@ -305,7 +305,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             className={css(styles.menuItem, getIsSelected() && !hasCheck && styles.modifiers.selected, className)}
             aria-current={getAriaCurrent()}
             {...(!hasCheck && { disabled: isDisabled })}
-            role={!hasCheck ? 'none' : 'menuitem'}
+            {...(!hasCheck && { role: 'menuitem' })}
             ref={innerRef}
             {...(!hasCheck && {
               onClick: (event: any) => {
