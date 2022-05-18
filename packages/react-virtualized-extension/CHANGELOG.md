@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.61.5 (2022-05-18)
+
+
+### Bug Fixes
+
+* **Slider:** add support for aria-labelledby ad aria-describedby ([#7408](https://github.com/patternfly/patternfly-react/issues/7408)) ([7c8617a](https://github.com/patternfly/patternfly-react/commit/7c8617a1268a03061d51454b298c79ae5f7a59b0))
+
+
+
+
+
 ## 4.61.4 (2022-05-18)
 
 
