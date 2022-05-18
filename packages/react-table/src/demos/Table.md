@@ -24,8 +24,6 @@ import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
-import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
-
 ### Bulk select
 
 ```js isFullscreen
