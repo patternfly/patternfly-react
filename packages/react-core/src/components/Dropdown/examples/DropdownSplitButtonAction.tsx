@@ -82,7 +82,7 @@ export const DropdownSplitButtonAction: React.FunctionComponent = () => {
         }
         isOpen={isActionOpen}
         dropdownItems={dropdownItems}
-      />
+      />{' '}
       <Dropdown
         onSelect={onCogSelect}
         toggle={
