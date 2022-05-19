@@ -128,6 +128,11 @@ class MenuIconsList extends React.Component {
 }
 ```
 
+### With checkbox
+
+```ts file="./MenuWithCheckbox.tsx" isBeta
+```
+
 ### Filtering with text input
 
 ```js

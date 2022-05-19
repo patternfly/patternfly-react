@@ -40,6 +40,11 @@ Composable menus currently require consumer keyboard handling and use of our und
 ```ts file="./examples/ComposableSimpleSelect.tsx"
 ```
 
+### Composable simple checkbox select
+
+```ts isBeta file="./examples/ComposableSimpleCheckboxSelect.tsx"
+```
+
 ### Composable drilldown menu
 
 ```ts isBeta file="./examples/ComposableDrilldownMenu.tsx"
