@@ -70,6 +70,28 @@ exports[`DesktopViewer default MoreInformationContent 1`] = `
         <span
           class="pf-c-description-list__text"
         >
+          SLE, openSUSE
+        </span>
+      </dt>
+      <dd
+        class="pf-c-description-list__description"
+      >
+        <div
+          class="pf-c-description-list__text"
+        >
+          sudo zypper install virt-viewer
+        </div>
+      </dd>
+    </div>
+    <div
+      class="pf-c-description-list__group"
+    >
+      <dt
+        class="pf-c-description-list__term"
+      >
+        <span
+          class="pf-c-description-list__text"
+        >
           Ubuntu, Debian
         </span>
       </dt>
@@ -266,6 +288,28 @@ exports[`DesktopViewer with Spice and VNC 1`] = `
                   class="pf-c-description-list__text"
                 >
                   sudo dnf install virt-viewer
+                </div>
+              </dd>
+            </div>
+            <div
+              class="pf-c-description-list__group"
+            >
+              <dt
+                class="pf-c-description-list__term"
+              >
+                <span
+                  class="pf-c-description-list__text"
+                >
+                  SLE, openSUSE
+                </span>
+              </dt>
+              <dd
+                class="pf-c-description-list__description"
+              >
+                <div
+                  class="pf-c-description-list__text"
+                >
+                  sudo zypper install virt-viewer
                 </div>
               </dd>
             </div>
@@ -571,6 +615,28 @@ exports[`DesktopViewer with Spice, VNC and RDP (different hostname) 1`] = `
                   class="pf-c-description-list__text"
                 >
                   sudo dnf install virt-viewer
+                </div>
+              </dd>
+            </div>
+            <div
+              class="pf-c-description-list__group"
+            >
+              <dt
+                class="pf-c-description-list__term"
+              >
+                <span
+                  class="pf-c-description-list__text"
+                >
+                  SLE, openSUSE
+                </span>
+              </dt>
+              <dd
+                class="pf-c-description-list__description"
+              >
+                <div
+                  class="pf-c-description-list__text"
+                >
+                  sudo zypper install virt-viewer
                 </div>
               </dd>
             </div>
@@ -957,6 +1023,28 @@ exports[`DesktopViewer with Spice, VNC and RDP 1`] = `
                   class="pf-c-description-list__text"
                 >
                   sudo dnf install virt-viewer
+                </div>
+              </dd>
+            </div>
+            <div
+              class="pf-c-description-list__group"
+            >
+              <dt
+                class="pf-c-description-list__term"
+              >
+                <span
+                  class="pf-c-description-list__text"
+                >
+                  SLE, openSUSE
+                </span>
+              </dt>
+              <dd
+                class="pf-c-description-list__description"
+              >
+                <div
+                  class="pf-c-description-list__text"
+                >
+                  sudo zypper install virt-viewer
                 </div>
               </dd>
             </div>
