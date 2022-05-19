@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.68.0 (2022-05-19)
+
+
+### Features
+
+* **Menu:** Added support for checkbox menu ([#7368](https://github.com/patternfly/patternfly-react/issues/7368)) ([8c2d1dc](https://github.com/patternfly/patternfly-react/commit/8c2d1dc23dbe5c28a8c1ecf79eb34ea911da386f))
+
+
+
+
+
 ## 6.67.5 (2022-05-18)
 
 
