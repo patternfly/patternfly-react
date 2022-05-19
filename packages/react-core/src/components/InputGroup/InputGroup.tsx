@@ -10,19 +10,25 @@ export interface InputGroupProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Content rendered inside the input group. */
   children: React.ReactNode;
+  /** @hide A reference object to attach to the input box */
+  innerRef?: React.RefObject<any>;
 }
 
 export const InputGroup: React.FunctionComponent<InputGroupProps> = ({
   className = '',
   children,
+  innerRef,
   ...props
 }: InputGroupProps) => {
   const formCtrls = [FormSelect, TextArea, TextInput].map(comp => comp.displayName);
   const idItem = React.Children.toArray(children).find(
     (child: any) => !formCtrls.includes(child.type.displayName) && child.props.id
   ) as React.ReactElement<{ id: string }>;
+
+  const inputGroupRef = innerRef || React.useRef(null);
+
   return (
-    <div className={css(styles.inputGroup, className)} {...props}>
+    <div ref={inputGroupRef} className={css(styles.inputGroup, className)} {...props}>
       {idItem
         ? React.Children.map(children, (child: any) =>
             formCtrls.includes(child.type.displayName)

@@ -56,7 +56,10 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   isAdvancedSearchOpen?: boolean;
   /** Label for the button which opens the advanced search form menu */
   openMenuButtonAriaLabel?: string;
-
+  /** Label for the button to navigate to previous result  */
+  previousNavigationButtonAriaLabel?: string;
+  /** Label for the button to navigate to next result */
+  nextNavigationButtonAriaLabel?: string;
   /** Function called when user clicks to navigate to next result */
   onNextClick?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
   /** Function called when user clicks to navigate to previous result */
@@ -98,6 +101,8 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   'aria-label': ariaLabel = 'Search input',
   resetButtonLabel = 'Reset',
   openMenuButtonAriaLabel = 'Open advanced search',
+  previousNavigationButtonAriaLabel = 'Previous',
+  nextNavigationButtonAriaLabel = 'Next',
   submitSearchButtonLabel = 'Search',
   isDisabled = false,
   ...props
@@ -197,13 +202,18 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             <div className="pf-c-text-input-group__group">
               <Button
                 variant={ButtonVariant.plain}
-                aria-label="Previous"
+                aria-label={previousNavigationButtonAriaLabel}
                 isDisabled={isDisabled}
                 onClick={onPreviousClick}
               >
                 <AngleUpIcon />
               </Button>
-              <Button variant={ButtonVariant.plain} aria-label="Next" isDisabled={isDisabled} onClick={onNextClick}>
+              <Button
+                variant={ButtonVariant.plain}
+                aria-label={nextNavigationButtonAriaLabel}
+                isDisabled={isDisabled}
+                onClick={onNextClick}
+              >
                 <AngleDownIcon />
               </Button>
             </div>
@@ -223,62 +233,70 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     </TextInputGroup>
   );
 
-  const buildSearchTextInputGroupWithOptions = ({ ...searchInputProps } = {}) => (
-    <div {...searchInputProps}>
-      <InputGroup>
-        {buildSearchTextInputGroup()}
-        {(attributes.length > 0 || onToggleAdvancedSearch) && (
-          <Button
-            className={isSearchMenuOpen && 'pf-m-expanded'}
-            variant={ButtonVariant.control}
-            aria-label={openMenuButtonAriaLabel}
-            onClick={onToggle}
-            isDisabled={isDisabled}
-            aria-expanded={isSearchMenuOpen}
-          >
-            <CaretDownIcon />
-          </Button>
-        )}
-        {!!onSearch && (
-          <Button
-            type="submit"
-            variant={ButtonVariant.control}
-            aria-label={submitSearchButtonLabel}
-            onClick={onSearchHandler}
-            isDisabled={isDisabled}
-          >
-            <ArrowRightIcon />
-          </Button>
-        )}
-      </InputGroup>
-
-      {attributes.length > 0 && (
-        <AdvancedSearchMenu
-          value={value}
-          parentRef={searchInputRef}
-          parentInputRef={searchInputInputRef}
-          onSearch={onSearch}
-          onClear={onClear}
-          onChange={onChange}
-          onToggleAdvancedMenu={onToggle}
-          resetButtonLabel={resetButtonLabel}
-          submitSearchButtonLabel={submitSearchButtonLabel}
-          attributes={attributes}
-          formAdditionalItems={formAdditionalItems}
-          hasWordsAttrLabel={hasWordsAttrLabel}
-          advancedSearchDelimiter={advancedSearchDelimiter}
-          getAttrValueMap={getAttrValueMap}
-          isSearchMenuOpen={isSearchMenuOpen}
-        />
+  const buildSearchTextInputGroupWithExtraButtons = ({ ...searchInputProps } = {}) => (
+    <InputGroup {...searchInputProps}>
+      {buildSearchTextInputGroup()}
+      {(attributes.length > 0 || onToggleAdvancedSearch) && (
+        <Button
+          className={isSearchMenuOpen && 'pf-m-expanded'}
+          variant={ButtonVariant.control}
+          aria-label={openMenuButtonAriaLabel}
+          onClick={onToggle}
+          isDisabled={isDisabled}
+          aria-expanded={isSearchMenuOpen}
+        >
+          <CaretDownIcon />
+        </Button>
       )}
-    </div>
+      {!!onSearch && (
+        <Button
+          type="submit"
+          variant={ButtonVariant.control}
+          aria-label={submitSearchButtonLabel}
+          onClick={onSearchHandler}
+          isDisabled={isDisabled}
+        >
+          <ArrowRightIcon />
+        </Button>
+      )}
+    </InputGroup>
   );
 
-  const searchInputProps = { ...props, className: className && css(className), ref: searchInputRef };
+  const searchInputProps = {
+    ...props,
+    className: className && css(className),
+    innerRef: searchInputRef
+  };
 
-  return !!onSearch || attributes.length > 0 || !!onToggleAdvancedSearch
-    ? buildSearchTextInputGroupWithOptions(searchInputProps)
-    : buildSearchTextInputGroup(searchInputProps);
+  if (!!onSearch || attributes.length > 0 || !!onToggleAdvancedSearch) {
+    if (attributes.length > 0) {
+      return (
+        <div className={className && css(className)} ref={searchInputRef} {...props}>
+          {buildSearchTextInputGroupWithExtraButtons()}
+          <AdvancedSearchMenu
+            value={value}
+            parentRef={searchInputRef}
+            parentInputRef={searchInputInputRef}
+            onSearch={onSearch}
+            onClear={onClear}
+            onChange={onChange}
+            onToggleAdvancedMenu={onToggle}
+            resetButtonLabel={resetButtonLabel}
+            submitSearchButtonLabel={submitSearchButtonLabel}
+            attributes={attributes}
+            formAdditionalItems={formAdditionalItems}
+            hasWordsAttrLabel={hasWordsAttrLabel}
+            advancedSearchDelimiter={advancedSearchDelimiter}
+            getAttrValueMap={getAttrValueMap}
+            isSearchMenuOpen={isSearchMenuOpen}
+          />
+        </div>
+      );
+    }
+
+    return buildSearchTextInputGroupWithExtraButtons({ ...searchInputProps });
+  }
+  return buildSearchTextInputGroup(searchInputProps);
 };
 SearchInputBase.displayName = 'SearchInputBase';
 
