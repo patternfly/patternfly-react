@@ -25,6 +25,8 @@ export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps
   isStriped?: boolean;
   /** An event handler for the row */
   onRowClick?: (event?: React.KeyboardEvent | React.MouseEvent) => void;
+  /** Flag indicating that the row is selectable */
+  isSelectable?: boolean;
   /** Flag indicating the spacing offset of the first cell should be reset */
   resetOffset?: boolean;
 }
@@ -43,9 +45,12 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   ouiaSafe = true,
   resetOffset = false,
   onRowClick,
+  isSelectable,
+  'aria-label': ariaLabel,
   ...props
 }: TrProps) => {
   const ouiaProps = useOUIAProps('TableRow', ouiaId, ouiaSafe);
+  const [currentAriaLabel, setComputedAriaLabel] = React.useState('');
 
   let onKeyDown = null;
   if (onRowClick) {
@@ -57,27 +62,42 @@ const TrBase: React.FunctionComponent<TrProps> = ({
     };
   }
 
+  React.useEffect(() => {
+    if (isSelectable) {
+      setComputedAriaLabel(`${isRowSelected ? 'Selected' : 'Unselected'}, selectable row.`);
+    } else {
+      setComputedAriaLabel('');
+    }
+  }, [isRowSelected, isSelectable]);
+
+  const rowIsHidden = isHidden || (isExpanded !== undefined && !isExpanded);
+  const rowAriaLabel = rowIsHidden ? '' : ariaLabel || currentAriaLabel; // I plan to clean up this logic before final PR
+
   return (
-    <tr
-      className={css(
-        className,
-        isExpanded !== undefined && styles.tableExpandableRow,
-        isExpanded && styles.modifiers.expanded,
-        isEditable && inlineStyles.modifiers.inlineEditable,
-        isHoverable && styles.modifiers.hoverable,
-        isRowSelected && styles.modifiers.selected,
-        isStriped && styles.modifiers.striped,
-        resetOffset && styles.modifiers.firstCellOffsetReset
-      )}
-      hidden={isHidden || (isExpanded !== undefined && !isExpanded)}
-      {...(isHoverable && { tabIndex: 0 })}
-      ref={innerRef}
-      {...(onRowClick && { onClick: onRowClick, onKeyDown })}
-      {...ouiaProps}
-      {...props}
-    >
-      {children}
-    </tr>
+    <>
+      {isSelectable && <output className="pf-screen-reader">{rowAriaLabel}</output>}
+      <tr
+        className={css(
+          className,
+          isExpanded !== undefined && styles.tableExpandableRow,
+          isExpanded && styles.modifiers.expanded,
+          isEditable && inlineStyles.modifiers.inlineEditable,
+          isHoverable && styles.modifiers.hoverable,
+          isRowSelected && styles.modifiers.selected,
+          isStriped && styles.modifiers.striped,
+          resetOffset && styles.modifiers.firstCellOffsetReset
+        )}
+        hidden={rowIsHidden}
+        {...(isHoverable && { tabIndex: 0 })}
+        aria-label={rowAriaLabel}
+        ref={innerRef}
+        {...(onRowClick && { onClick: onRowClick, onKeyDown })}
+        {...ouiaProps}
+        {...props}
+      >
+        {children}
+      </tr>
+    </>
   );
 };
 

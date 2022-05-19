@@ -51,6 +51,7 @@ export const ComposableTableHoverable: React.FunctionComponent = () => {
           <Tr
             key={repo.name}
             onRowClick={() => setRepoSelected(repo, !isRepoSelected(repo))}
+            isSelectable
             isHoverable
             isRowSelected={isRepoSelected(repo)}
           >
