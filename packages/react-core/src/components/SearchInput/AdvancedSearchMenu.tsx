@@ -1,10 +1,10 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/SearchInput/search-input';
 import { Button } from '../Button';
 import { ActionGroup, Form, FormGroup } from '../Form';
 import { TextInput } from '../TextInput';
 import { GenerateId, KEY_CODES } from '../../helpers';
 import { SearchAttribute } from './SearchInput';
+import { Panel, PanelMain, PanelMainBody } from '../Panel';
 
 export interface AdvancedSearchMenuProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
   /** Value of the search input */
@@ -200,24 +200,26 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
   };
 
   return isSearchMenuOpen ? (
-    <div className={styles.searchInputMenu}>
-      <div className={styles.searchInputMenuBody}>
-        <Form>
-          {buildFormGroups()}
-          {formAdditionalItems ? formAdditionalItems : null}
-          <ActionGroup>
-            <Button variant="primary" type="submit" onClick={onSearchHandler}>
-              {submitSearchButtonLabel}
-            </Button>
-            {!!onClear && (
-              <Button variant="link" type="reset" onClick={onClear}>
-                {resetButtonLabel}
+    <Panel variant="raised">
+      <PanelMain>
+        <PanelMainBody>
+          <Form>
+            {buildFormGroups()}
+            {formAdditionalItems ? formAdditionalItems : null}
+            <ActionGroup>
+              <Button variant="primary" type="submit" onClick={onSearchHandler}>
+                {submitSearchButtonLabel}
               </Button>
-            )}
-          </ActionGroup>
-        </Form>
-      </div>
-    </div>
+              {!!onClear && (
+                <Button variant="link" type="reset" onClick={onClear}>
+                  {resetButtonLabel}
+                </Button>
+              )}
+            </ActionGroup>
+          </Form>
+        </PanelMainBody>
+      </PanelMain>
+    </Panel>
   ) : null;
 };
 AdvancedSearchMenu.displayName = 'SearchInput';

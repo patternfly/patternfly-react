@@ -1,5 +1,4 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/SearchInput/search-input';
 import { css } from '@patternfly/react-styles';
 import { Button, ButtonVariant } from '../Button';
 import { Badge } from '../Badge';
@@ -9,8 +8,9 @@ import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
-import { InputGroup } from '../InputGroup';
 import { AdvancedSearchMenu } from './AdvancedSearchMenu';
+import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '../TextInputGroup';
+import { InputGroup } from '../InputGroup';
 
 export interface SearchAttribute {
   /** The search attribute's value to be provided in the search input's query string.
@@ -124,11 +124,11 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     setIsSearchMenuOpen(isAdvancedSearchOpen);
   }, [isAdvancedSearchOpen]);
 
-  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeHandler = (value: string, event: React.FormEvent<HTMLInputElement>) => {
     if (onChange) {
-      onChange(event.currentTarget.value, event);
+      onChange(value, event);
     }
-    setSearchValue(event.currentTarget.value);
+    setSearchValue(value);
   };
 
   const onToggle = (e: React.SyntheticEvent<HTMLButtonElement>) => {
@@ -178,71 +178,55 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
     }
   };
 
-  return (
-    <div className={css(className, styles.searchInput)} ref={searchInputRef} {...props}>
-      <InputGroup>
-        <div className={css(styles.searchInputBar)}>
-          <span className={css(styles.searchInputText)}>
-            <span className={css(styles.searchInputIcon)}>
-              <SearchIcon />
-            </span>
-            {hint && (
-              <input
-                className={css(styles.searchInputTextInput, styles.modifiers.hint)}
-                type="text"
-                disabled
-                aria-hidden="true"
-                value={hint}
-              />
-            )}
-            <input
-              ref={searchInputInputRef}
-              className={css(styles.searchInputTextInput)}
-              value={searchValue}
-              placeholder={placeholder}
-              aria-label={ariaLabel}
-              onKeyDown={onEnter}
-              onChange={onChangeHandler}
-              disabled={isDisabled}
-            />
-          </span>
-          {value && (
-            <span className={css(styles.searchInputUtilities)}>
-              {resultsCount && (
-                <span className={css(styles.searchInputCount)}>
-                  <Badge isRead>{resultsCount}</Badge>
-                </span>
-              )}
-              {!!onNextClick && !!onPreviousClick && (
-                <span className={css(styles.searchInputNav)}>
-                  <Button
-                    variant={ButtonVariant.plain}
-                    aria-label="Previous"
-                    isDisabled={isDisabled}
-                    onClick={onPreviousClick}
-                  >
-                    <AngleUpIcon />
-                  </Button>
-                  <Button variant={ButtonVariant.plain} aria-label="Next" isDisabled={isDisabled} onClick={onNextClick}>
-                    <AngleDownIcon />
-                  </Button>
-                </span>
-              )}
-              {!!onClear && (
-                <span className="pf-c-search-input__clear">
-                  <Button
-                    variant={ButtonVariant.plain}
-                    isDisabled={isDisabled}
-                    aria-label={resetButtonLabel}
-                    onClick={onClearInput}
-                  >
-                    <TimesIcon />
-                  </Button>
-                </span>
-              )}
-            </span>
+  const buildSearchTextInputGroup = ({ ...searchInputProps } = {}) => (
+    <TextInputGroup isDisabled={isDisabled} {...searchInputProps}>
+      <TextInputGroupMain
+        hint={hint}
+        icon={<SearchIcon />}
+        innerRef={searchInputInputRef}
+        value={searchValue}
+        placeholder={placeholder}
+        aria-label={ariaLabel}
+        onKeyDown={onEnter}
+        onChange={onChangeHandler}
+      />
+      {value && (
+        <TextInputGroupUtilities>
+          {resultsCount && <Badge isRead>{resultsCount}</Badge>}
+          {!!onNextClick && !!onPreviousClick && (
+            <div className="pf-c-text-input-group__group">
+              <Button
+                variant={ButtonVariant.plain}
+                aria-label="Previous"
+                isDisabled={isDisabled}
+                onClick={onPreviousClick}
+              >
+                <AngleUpIcon />
+              </Button>
+              <Button variant={ButtonVariant.plain} aria-label="Next" isDisabled={isDisabled} onClick={onNextClick}>
+                <AngleDownIcon />
+              </Button>
+            </div>
           )}
-        </div>
+          {!!onClear && (
+            <Button
+              variant={ButtonVariant.plain}
+              isDisabled={isDisabled}
+              aria-label={resetButtonLabel}
+              onClick={onClearInput}
+            >
+              <TimesIcon />
+            </Button>
+          )}
+        </TextInputGroupUtilities>
+      )}
+    </TextInputGroup>
+  );
+
+  const buildSearchTextInputGroupWithOptions = ({ ...searchInputProps } = {}) => (
+    <div {...searchInputProps}>
+      <InputGroup>
+        {buildSearchTextInputGroup()}
         {(attributes.length > 0 || onToggleAdvancedSearch) && (
           <Button
             className={isSearchMenuOpen && 'pf-m-expanded'}
@@ -267,6 +251,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
           </Button>
         )}
       </InputGroup>
+
       {attributes.length > 0 && (
         <AdvancedSearchMenu
           value={value}
@@ -288,6 +273,12 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
       )}
     </div>
   );
+
+  const searchInputProps = { ...props, className: className && css(className), ref: searchInputRef };
+
+  return !!onSearch || attributes.length > 0 || !!onToggleAdvancedSearch
+    ? buildSearchTextInputGroupWithOptions(searchInputProps)
+    : buildSearchTextInputGroup(searchInputProps);
 };
 SearchInputBase.displayName = 'SearchInputBase';
 

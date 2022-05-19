@@ -37,7 +37,7 @@ describe('SearchInput', () => {
     render(<SearchInput {...props} resultsCount="3 / 7" aria-label="simple text input" data-testid="test-id" />);
 
     const input = screen.getByTestId('test-id');
-    expect(input.querySelector('.pf-c-search-input__nav')).toBeInTheDocument();
+    expect(input.querySelector('.pf-c-text-input-group__group')).toBeInTheDocument();
     expect(input.querySelector('.pf-c-badge')).toBeInTheDocument();
 
     userEvent.click(screen.getByRole('button', { name: 'Previous' }));

@@ -2,55 +2,21 @@
 
 exports[`SearchInput advanced search 1`] = `
 <DocumentFragment>
-  <div
-    class="pf-c-search-input"
-  >
+  <div>
     <div
       class="pf-c-input-group"
     >
       <div
-        class="pf-c-search-input__bar"
+        class="pf-c-text-input-group"
       >
-        <span
-          class="pf-c-search-input__text"
+        <div
+          class="pf-c-text-input-group__main pf-m-icon"
         >
           <span
-            class="pf-c-search-input__icon"
+            class="pf-c-text-input-group__text"
           >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style="vertical-align: -0.125em;"
-              viewBox="0 0 512 512"
-              width="1em"
-            >
-              <path
-                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-              />
-            </svg>
-          </span>
-          <input
-            aria-label="Search input"
-            class="pf-c-search-input__text-input"
-            value="username:player firstname:john"
-          />
-        </span>
-        <span
-          class="pf-c-search-input__utilities"
-        >
-          <span
-            class="pf-c-search-input__clear"
-          >
-            <button
-              aria-disabled="false"
-              aria-label="Reset"
-              class="pf-c-button pf-m-plain"
-              data-ouia-component-id="OUIA-Generated-Button-plain-15"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe="true"
-              type="button"
+            <span
+              class="pf-c-text-input-group__icon"
             >
               <svg
                 aria-hidden="true"
@@ -58,16 +24,49 @@ exports[`SearchInput advanced search 1`] = `
                 height="1em"
                 role="img"
                 style="vertical-align: -0.125em;"
-                viewBox="0 0 352 512"
+                viewBox="0 0 512 512"
                 width="1em"
               >
                 <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
                 />
               </svg>
-            </button>
+            </span>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              type="text"
+              value="username:player firstname:john"
+            />
           </span>
-        </span>
+        </div>
+        <div
+          class="pf-c-text-input-group__utilities"
+        >
+          <button
+            aria-disabled="false"
+            aria-label="Reset"
+            class="pf-c-button pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-Button-plain-15"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe="true"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 352 512"
+              width="1em"
+            >
+              <path
+                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
       <button
         aria-disabled="false"
@@ -123,55 +122,21 @@ exports[`SearchInput advanced search 1`] = `
 
 exports[`SearchInput advanced search with custom attributes 1`] = `
 <DocumentFragment>
-  <div
-    class="pf-c-search-input"
-  >
+  <div>
     <div
       class="pf-c-input-group"
     >
       <div
-        class="pf-c-search-input__bar"
+        class="pf-c-text-input-group"
       >
-        <span
-          class="pf-c-search-input__text"
+        <div
+          class="pf-c-text-input-group__main pf-m-icon"
         >
           <span
-            class="pf-c-search-input__icon"
+            class="pf-c-text-input-group__text"
           >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style="vertical-align: -0.125em;"
-              viewBox="0 0 512 512"
-              width="1em"
-            >
-              <path
-                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-              />
-            </svg>
-          </span>
-          <input
-            aria-label="Search input"
-            class="pf-c-search-input__text-input"
-            value="username:player firstname:john"
-          />
-        </span>
-        <span
-          class="pf-c-search-input__utilities"
-        >
-          <span
-            class="pf-c-search-input__clear"
-          >
-            <button
-              aria-disabled="false"
-              aria-label="Reset"
-              class="pf-c-button pf-m-plain"
-              data-ouia-component-id="OUIA-Generated-Button-plain-16"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe="true"
-              type="button"
+            <span
+              class="pf-c-text-input-group__icon"
             >
               <svg
                 aria-hidden="true"
@@ -179,16 +144,49 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
                 height="1em"
                 role="img"
                 style="vertical-align: -0.125em;"
-                viewBox="0 0 352 512"
+                viewBox="0 0 512 512"
                 width="1em"
               >
                 <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
                 />
               </svg>
-            </button>
+            </span>
+            <input
+              aria-label="Search input"
+              class="pf-c-text-input-group__text-input"
+              type="text"
+              value="username:player firstname:john"
+            />
           </span>
-        </span>
+        </div>
+        <div
+          class="pf-c-text-input-group__utilities"
+        >
+          <button
+            aria-disabled="false"
+            aria-label="Reset"
+            class="pf-c-button pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-Button-plain-16"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe="true"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 352 512"
+              width="1em"
+            >
+              <path
+                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
       <button
         aria-disabled="false"
@@ -244,53 +242,56 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
 
 exports[`SearchInput search input with hint 1`] = `
 <DocumentFragment>
-  <div
-    class="pf-c-search-input"
-  >
+  <div>
     <div
       class="pf-c-input-group"
     >
       <div
-        class="pf-c-search-input__bar"
+        class="pf-c-text-input-group"
       >
-        <span
-          class="pf-c-search-input__text"
+        <div
+          class="pf-c-text-input-group__main pf-m-icon"
         >
           <span
-            class="pf-c-search-input__icon"
+            class="pf-c-text-input-group__text"
           >
-            <svg
+            <input
               aria-hidden="true"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style="vertical-align: -0.125em;"
-              viewBox="0 0 512 512"
-              width="1em"
+              class="pf-c-text-input-group__text-input pf-m-hint"
+              disabled=""
+              type="text"
+              value="test hint"
+            />
+            <span
+              class="pf-c-text-input-group__icon"
             >
-              <path
-                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
+              >
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
+            </span>
+            <input
+              aria-label="simple text input"
+              class="pf-c-text-input-group__text-input"
+              type="text"
+              value="test input"
+            />
           </span>
-          <input
-            aria-hidden="true"
-            class="pf-c-search-input__text-input pf-m-hint"
-            disabled=""
-            type="text"
-            value="test hint"
-          />
-          <input
-            aria-label="simple text input"
-            class="pf-c-search-input__text-input"
-            value="test input"
-          />
-        </span>
-        <span
-          class="pf-c-search-input__utilities"
+        </div>
+        <div
+          class="pf-c-text-input-group__utilities"
         >
-          <span
-            class="pf-c-search-input__nav"
+          <div
+            class="pf-c-text-input-group__group"
           >
             <button
               aria-disabled="false"
@@ -338,35 +339,31 @@ exports[`SearchInput search input with hint 1`] = `
                 />
               </svg>
             </button>
-          </span>
-          <span
-            class="pf-c-search-input__clear"
+          </div>
+          <button
+            aria-disabled="false"
+            aria-label="Reset"
+            class="pf-c-button pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-Button-plain-6"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe="true"
+            type="button"
           >
-            <button
-              aria-disabled="false"
-              aria-label="Reset"
-              class="pf-c-button pf-m-plain"
-              data-ouia-component-id="OUIA-Generated-Button-plain-6"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe="true"
-              type="button"
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 352 512"
+              width="1em"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 352 512"
-                width="1em"
-              >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                />
-              </svg>
-            </button>
-          </span>
-        </span>
+              <path
+                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
       <button
         aria-disabled="false"
@@ -398,46 +395,49 @@ exports[`SearchInput search input with hint 1`] = `
 
 exports[`SearchInput simple search input 1`] = `
 <DocumentFragment>
-  <div
-    class="pf-c-search-input"
-  >
+  <div>
     <div
       class="pf-c-input-group"
     >
       <div
-        class="pf-c-search-input__bar"
+        class="pf-c-text-input-group"
       >
-        <span
-          class="pf-c-search-input__text"
+        <div
+          class="pf-c-text-input-group__main pf-m-icon"
         >
           <span
-            class="pf-c-search-input__icon"
+            class="pf-c-text-input-group__text"
           >
-            <svg
-              aria-hidden="true"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style="vertical-align: -0.125em;"
-              viewBox="0 0 512 512"
-              width="1em"
+            <span
+              class="pf-c-text-input-group__icon"
             >
-              <path
-                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-              />
-            </svg>
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
+              >
+                <path
+                  d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                />
+              </svg>
+            </span>
+            <input
+              aria-label="simple text input"
+              class="pf-c-text-input-group__text-input"
+              type="text"
+              value="test input"
+            />
           </span>
-          <input
-            aria-label="simple text input"
-            class="pf-c-search-input__text-input"
-            value="test input"
-          />
-        </span>
-        <span
-          class="pf-c-search-input__utilities"
+        </div>
+        <div
+          class="pf-c-text-input-group__utilities"
         >
-          <span
-            class="pf-c-search-input__nav"
+          <div
+            class="pf-c-text-input-group__group"
           >
             <button
               aria-disabled="false"
@@ -485,35 +485,31 @@ exports[`SearchInput simple search input 1`] = `
                 />
               </svg>
             </button>
-          </span>
-          <span
-            class="pf-c-search-input__clear"
+          </div>
+          <button
+            aria-disabled="false"
+            aria-label="Reset"
+            class="pf-c-button pf-m-plain"
+            data-ouia-component-id="OUIA-Generated-Button-plain-3"
+            data-ouia-component-type="PF4/Button"
+            data-ouia-safe="true"
+            type="button"
           >
-            <button
-              aria-disabled="false"
-              aria-label="Reset"
-              class="pf-c-button pf-m-plain"
-              data-ouia-component-id="OUIA-Generated-Button-plain-3"
-              data-ouia-component-type="PF4/Button"
-              data-ouia-safe="true"
-              type="button"
+            <svg
+              aria-hidden="true"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style="vertical-align: -0.125em;"
+              viewBox="0 0 352 512"
+              width="1em"
             >
-              <svg
-                aria-hidden="true"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 352 512"
-                width="1em"
-              >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                />
-              </svg>
-            </button>
-          </span>
-        </span>
+              <path
+                d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
       <button
         aria-disabled="false"
