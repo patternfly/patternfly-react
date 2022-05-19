@@ -679,13 +679,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   };
 
   handleTypeaheadKeys = (position: string, shiftKey: boolean = false) => {
-    const { isOpen, onFavorite } = this.props;
+    const { isOpen, onFavorite, isCreatable } = this.props;
     const { typeaheadCurrIndex, tabbedIntoFavoritesMenu } = this.state;
     const typeaheadActiveChild = this.getTypeaheadActiveChild(typeaheadCurrIndex);
     if (isOpen) {
       if (position === 'enter') {
         if (
-          typeaheadCurrIndex !== -1 && // do not allow selection without moving to an initial option
+          (typeaheadCurrIndex !== -1 || (isCreatable && this.refCollection.length === 1)) && // do not allow selection without moving to an initial option unless it is a single create option
           (typeaheadActiveChild || (this.refCollection[0] && this.refCollection[0][0]))
         ) {
           if (typeaheadActiveChild) {
