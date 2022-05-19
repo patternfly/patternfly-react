@@ -37,7 +37,7 @@
     "@patternfly/react-icons": "^4.68.2",
     "@patternfly/react-styles": "^4.67.2",
     "@patternfly/react-tokens": "^4.69.2",
-    "focus-trap": "6.2.2",
+    "focus-trap": "6.9.2",
     "react-dropzone": "9.0.0",
     "tippy.js": "5.1.2",
     "tslib": "^2.0.0"

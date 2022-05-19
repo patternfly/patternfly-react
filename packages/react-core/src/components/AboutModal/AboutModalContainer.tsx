@@ -63,7 +63,7 @@ export const AboutModalContainer: React.FunctionComponent<AboutModalContainerPro
     <Backdrop>
       <FocusTrap
         active={!disableFocusTrap}
-        focusTrapOptions={{ clickOutsideDeactivates: true }}
+        focusTrapOptions={{ clickOutsideDeactivates: true, tabbableOptions: { displayCheck: 'none' } }}
         className={css(styles.bullseye)}
       >
         <AboutModalBox
