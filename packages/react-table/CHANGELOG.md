@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.85.0 (2022-05-19)
+
+
+### Features
+
+* **table:** update sortable demo to align with core ([#7292](https://github.com/patternfly/patternfly-react/issues/7292)) ([6891764](https://github.com/patternfly/patternfly-react/commit/6891764f2507c775005878f6e74cc5c8e44a6c68))
+
+
+
+
+
 # 4.84.0 (2022-05-19)
 
 
