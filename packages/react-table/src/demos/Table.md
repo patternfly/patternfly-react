@@ -293,10 +293,11 @@ class BulkSelectTableDemo extends React.Component {
 
 ### Column management
 
-```js
+```js isFullscreen
 import React from 'react';
 import {
   Button,
+  Card,
   DataList,
   DataListCheck,
   DataListItem,
@@ -312,6 +313,7 @@ import {
   OverflowMenuItem,
   OptionsMenu,
   OptionsMenuToggle,
+  PageSection,
   Pagination,
   PaginationVariant,
   Text,
@@ -325,6 +327,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class ColumnManagementAction extends React.Component {
   constructor(props) {
@@ -898,24 +901,30 @@ class ColumnManagementAction extends React.Component {
 
     return (
       <React.Fragment>
-        <Table
-          gridBreakPoint="grid-xl"
-          header={
-            <React.Fragment>
-              <Toolbar id="page-layout-table-column-management-action-toolbar-top">{toolbarItems}</Toolbar>
-            </React.Fragment>
-          }
-          aria-label="This is a table with checkboxes"
-          id="page-layout-table-column-management-action-table"
-          onSelect={this.onSelect}
-          cells={columns}
-          rows={rows}
-          actions={this.actions}
-          canSelectAll={canSelectAll}
-        >
-          <TableHeader />
-          <TableBody />
-        </Table>
+        <DashboardWrapper hasPageTemplateTitle>
+          <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
+            <Card component="div">
+              <Table
+                gridBreakPoint="grid-xl"
+                header={
+                  <React.Fragment>
+                    <Toolbar id="page-layout-table-column-management-action-toolbar-top">{toolbarItems}</Toolbar>
+                  </React.Fragment>
+                }
+                aria-label="This is a table with checkboxes"
+                id="page-layout-table-column-management-action-table"
+                onSelect={this.onSelect}
+                cells={columns}
+                rows={rows}
+                actions={this.actions}
+                canSelectAll={canSelectAll}
+              >
+                <TableHeader />
+                <TableBody />
+              </Table>
+            </Card>
+          </PageSection>
+        </DashboardWrapper>
         <Pagination
           isCompact
           id="page-layout-table-column-management-action-toolbar-bottom"
@@ -933,10 +942,11 @@ class ColumnManagementAction extends React.Component {
 
 ### Column management with draggable
 
-```js
+```js isFullscreen
 import React from 'react';
 import {
   Button,
+  Card,
   DataList,
   DataListCheck,
   DataListControl,
@@ -954,6 +964,7 @@ import {
   OverflowMenuItem,
   OptionsMenu,
   OptionsMenuToggle,
+  PageSection,
   Pagination,
   PaginationVariant,
   Text,
@@ -967,6 +978,7 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class ColumnManagementAction extends React.Component {
   constructor(props) {
@@ -1661,24 +1673,30 @@ class ColumnManagementAction extends React.Component {
 
     return (
       <React.Fragment>
-        <Table
-          gridBreakPoint="grid-xl"
-          header={
-            <React.Fragment>
-              <Toolbar id="page-layout-table-column-management-action-toolbar-top">{toolbarItems}</Toolbar>
-            </React.Fragment>
-          }
-          aria-label="This is a table with checkboxes"
-          id="page-layout-table-column-management-action-table"
-          onSelect={this.onSelect}
-          cells={columns}
-          rows={rows}
-          actions={this.actions}
-          canSelectAll={canSelectAll}
-        >
-          <TableHeader />
-          <TableBody />
-        </Table>
+        <DashboardWrapper hasPageTemplateTitle>
+          <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
+            <Card component="div">
+              <Table
+                gridBreakPoint="grid-xl"
+                header={
+                  <React.Fragment>
+                    <Toolbar id="page-layout-table-column-management-action-toolbar-top">{toolbarItems}</Toolbar>
+                  </React.Fragment>
+                }
+                aria-label="This is a table with checkboxes"
+                id="page-layout-table-column-management-action-table"
+                onSelect={this.onSelect}
+                cells={columns}
+                rows={rows}
+                actions={this.actions}
+                canSelectAll={canSelectAll}
+              >
+                <TableHeader />
+                <TableBody />
+              </Table>
+            </Card>
+          </PageSection>
+        </DashboardWrapper>
         <Pagination
           isCompact
           id="page-layout-table-column-management-action-toolbar-bottom"
