@@ -5,12 +5,15 @@ section: components
 
 import { Checkbox, PageSection, ToolbarExpandIconWrapper, ToolbarContent } from '@patternfly/react-core';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
+import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
+import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
@@ -2067,20 +2070,22 @@ class FilterTableDemo extends React.Component {
 
 ### Sortable - responsive
 
-This is an example of a responive sortable table. When the screen size is small, the table will change to a compact format and a new toolbar item will be displayed to control sorting.
-
 ```js isFullscreen
 import React from 'react';
 import {
   Button,
+  Card,
+  Flex,
+  FlexItem,
+  InputGroup,
   Toolbar,
   ToolbarContent,
   ToolbarGroup,
   ToolbarItem,
+  ToolbarToggleGroup,
   OptionsMenu,
   OptionsMenuToggle,
   Pagination,
-  PaginationVariant,
   Text,
   TextContent,
   Select,
@@ -2099,25 +2104,29 @@ import {
   OptionsMenuItem,
   OptionsMenuSeparator,
   OptionsMenuItemGroup,
-  Page,
-  PageSidebar,
-  Masthead,
-  MastheadToggle,
-  PageToggleButton,
-  MastheadMain,
-  MastheadContent,
-  SkipToContent,
+  OverflowMenu,
+  OverflowMenuContent,
+  OverflowMenuControl,
+  OverflowMenuDropdownItem,
+  OverflowMenuGroup,
+  OverflowMenuItem,
   PageSection
 } from '@patternfly/react-core';
-import { TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
+import { ActionsColumn, TableComposable, Thead, Tr, Th, Tbody, Td } from '@patternfly/react-table';
 
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amount-down-icon';
-import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
+import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
+import EditIcon from '@patternfly/react-icons/dist/esm/icons/edit-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
+import SyncIcon from '@patternfly/react-icons/dist/esm/icons/sync-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
+import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
+import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 ComposableTableSortable = () => {
   const [navActiveItem, setNavActiveItem] = React.useState(0);
@@ -2126,23 +2135,58 @@ ComposableTableSortable = () => {
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
   const [isFullKebabDropdownOpen, setIsFullKebabDropdownOpen] = React.useState(false);
 
-  const columns = ['Column 1', 'Column 2', 'Column 3', 'Column 4', 'Column 5'];
+  const columns = ['Repositories', 'Branches', 'Pull requests', 'Workspaces', 'Last commit'];
+
   const [rows, setRows] = React.useState([
-    ['one', 'two', 'a', 'four', 'five'],
-    ['a', 'two', 'k', 'four', 'five'],
-    ['p', 'two', 'b', 'four', 'five']
+    ['Node 1', 10, 25, 5, 2],
+    ['Node 2', 8, 30, 2, 2],
+    ['Node 3', 12, 48, 13, 30],
+    ['Node 4', 10, 25, 5, 8],
+    ['Node 5', 34, 21, 26, 2]
   ]);
+
   // index of the currently active column
-  const [activeSortIndex, setActiveSortIndex] = React.useState(-1);
+  const [activeSortIndex, setActiveSortIndex] = React.useState(0);
   // sort direction of the currently active column
-  const [activeSortDirection, setActiveSortDirection] = React.useState('none');
+  const [activeSortDirection, setActiveSortDirection] = React.useState('asc');
   // sort dropdown expansion
   const [isSortDropdownOpen, setIsSortDropdownOpen] = React.useState(false);
+
+  const [selectedNodeNames, setSelectedNodeNames] = React.useState([]);
+  const setNodeSelected = (node, isSelecting = true) => {
+    if (!selectedNodeNames.includes(node)) {
+      setSelectedNodeNames([...selectedNodeNames, node]);
+    } else {
+      setSelectedNodeNames(selectedNodeNames.filter(n => n !== node));
+    }
+  };
+
+  const selectAllNodes = (isSelecting = true) => setSelectedNodeNames(isSelecting ? rows.map(r => r[0]) : []);
+  const areAllReposSelected = selectedNodeNames.length === rows.length;
+  const isNodeSelected = node => selectedNodeNames.includes(node[0]);
+
+  // To allow shift+click to select/deselect multiple rows
+  const [recentSelectedRowIndex, setRecentSelectedRowIndex] = React.useState(null);
+  const [shifting, setShifting] = React.useState(false);
+
+  const onSelectNode = (node, rowIndex, isSelecting) => {
+    // If the user is shift + selecting the checkboxes, then all intermediate checkboxes should be selected
+    if (shifting && recentSelectedRowIndex !== null) {
+      const numberSelected = rowIndex - recentSelectedRowIndex;
+      const intermediateIndexes =
+        numberSelected > 0
+          ? Array.from(new Array(numberSelected + 1), (_x, i) => i + recentSelectedRowIndex)
+          : Array.from(new Array(Math.abs(numberSelected) + 1), (_x, i) => i + rowIndex);
+      intermediateIndexes.forEach(index => setNodeSelected(rows[index], isSelecting));
+    } else {
+      setNodeSelected(node[0], isSelecting);
+    }
+    setRecentSelectedRowIndex(rowIndex);
+  };
 
   const onSort = (event, index, direction) => {
     setActiveSortIndex(index);
     setActiveSortDirection(direction);
-    console.log('i; ', index, direction);
     // sorts the rows
     const updatedRows = rows.sort((a, b) => {
       if (typeof a[index] === 'number') {
@@ -2184,14 +2228,32 @@ ComposableTableSortable = () => {
     </Nav>
   );
 
-  const kebabDropdownItems = [
-    <DropdownItem key="kebab-1">
-      <CogIcon /> Settings
-    </DropdownItem>,
-    <DropdownItem key="kebab-2">
-      <HelpIcon /> Help
-    </DropdownItem>
+  const kebabDropdownItems = [<OverflowMenuDropdownItem key="kebab-1">Some action</OverflowMenuDropdownItem>];
+
+  const defaultActions = () => [
+    {
+      title: 'Settings',
+      onClick: () => console.log(`clicked on Settings`)
+    },
+    {
+      title: 'Help',
+      onClick: () => console.log(`clicked on Help`)
+    }
   ];
+
+  const renderPagination = (variant, isCompact) => (
+    <Pagination
+      isCompact={isCompact}
+      itemCount={36}
+      page={1}
+      perPage={10}
+      variant={variant}
+      titles={{
+        paginationTitle: `${variant} pagination`
+      }}
+    />
+  );
+
   const userDropdownItems = [
     <DropdownGroup key="group 2">
       <DropdownItem key="group 2 profile">My profile</DropdownItem>
@@ -2219,98 +2281,10 @@ ComposableTableSortable = () => {
     </DropdownItem>
   ];
 
-  const headerToolbar = (
-    <Toolbar id="toolbar" isFullHeight isStatic>
-      <ToolbarContent>
-        <ToolbarGroup
-          variant="icon-button-group"
-          alignment={{ default: 'alignRight' }}
-          spacer={{ default: 'spacerNone', md: 'spacerMd' }}
-        >
-          <ToolbarItem>
-            <Button aria-label="Notifications" variant={ButtonVariant.plain}>
-              <AttentionBellIcon />
-            </Button>
-          </ToolbarItem>
-          <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
-            <ToolbarItem>
-              <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
-                <CogIcon />
-              </Button>
-            </ToolbarItem>
-            <ToolbarItem>
-              <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-                <QuestionCircleIcon />
-              </Button>
-            </ToolbarItem>
-          </ToolbarGroup>
-        </ToolbarGroup>
-        <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
-          <Dropdown
-            isPlain
-            position="right"
-            onSelect={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)}
-            toggle={<KebabToggle onToggle={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)} />}
-            isOpen={isKebabDropdownOpen}
-            dropdownItems={kebabDropdownItems}
-          />
-        </ToolbarItem>
-        <ToolbarItem visibility={{ default: 'visible', md: 'hidden', lg: 'hidden', xl: 'hidden', '2xl': 'hidden' }}>
-          <Dropdown
-            isPlain
-            position="right"
-            onSelect={() => setIsFullKebabDropdownOpen(!isFullKebabDropdownOpen)}
-            toggle={<KebabToggle onToggle={() => setIsFullKebabDropdownOpen(!isFullKebabDropdownOpen)} />}
-            isOpen={isFullKebabDropdownOpen}
-            dropdownItems={fullKebabItems}
-          />
-        </ToolbarItem>
-        <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
-          <Dropdown
-            position="right"
-            onSelect={() => setIsDropdownOpen(!isDropdownOpen)}
-            isOpen={isDropdownOpen}
-            toggle={
-              <DropdownToggle
-                icon={<Avatar src={imgAvatar} alt="Avatar" />}
-                onToggle={() => setIsDropdownOpen(!isDropdownOpen)}
-              >
-                John Smith
-              </DropdownToggle>
-            }
-            dropdownItems={userDropdownItems}
-          />
-        </ToolbarItem>
-      </ToolbarContent>
-    </Toolbar>
-  );
-
   const tableToolbar = (
     <Toolbar id="sortable-toolbar">
       <ToolbarContent>
-        <ToolbarItem>
-          <Select
-            id="select-example"
-            variant={SelectVariant.single}
-            aria-label="Select Input"
-            placeholderText={
-              <>
-                <FilterIcon /> Status
-              </>
-            }
-            isOpen={isSelectOpen}
-            onToggle={() => setIsSelectOpen(!isSelectOpen)}
-            onSelect={() => setIsSelectOpen(!isSelectOpen)}
-          >
-            {[
-              <SelectOption key={0} value="Debug" />,
-              <SelectOption key={1} value="Info" />,
-              <SelectOption key={2} value="Warn" />,
-              <SelectOption key={3} value="Error" />
-            ]}
-          </Select>
-        </ToolbarItem>
-        <ToolbarItem visibility={{ default: 'hidden', sm: 'visible', md: 'hidden' }}>
+        <ToolbarItem visibility={{ md: 'hidden' }}>
           <OptionsMenu
             id="options-menu-multiple-options-example"
             menuItems={[
@@ -2359,47 +2333,47 @@ ComposableTableSortable = () => {
             isGrouped
           />
         </ToolbarItem>
-        <ToolbarGroup>
+        <OverflowMenu breakpoint="lg">
+          <OverflowMenuContent isPersistent>
+            <OverflowMenuGroup isPersistent groupType="button">
+              <OverflowMenuItem>
+                <Button variant="primary">Create instance</Button>
+              </OverflowMenuItem>
+              <OverflowMenuItem>
+                <Button variant="secondary">Action</Button>
+              </OverflowMenuItem>
+            </OverflowMenuGroup>
+          </OverflowMenuContent>
+          <OverflowMenuControl hasAdditionalOptions>
+            <Dropdown
+              isPlain
+              onSelect={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)}
+              toggle={<KebabToggle onToggle={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)} />}
+              isOpen={isKebabDropdownOpen}
+              dropdownItems={kebabDropdownItems}
+            />
+          </OverflowMenuControl>
+        </OverflowMenu>
+        <ToolbarGroup variant="icon-button-group">
           <ToolbarItem>
-            <Button variant="primary">Action</Button>
+            <Button aria-label="Edit" variant="plain" icon={<EditIcon />} />
           </ToolbarItem>
-          <ToolbarItem visibility={{ default: 'visible', sm: 'hidden', md: 'visible' }}>
-            <Button variant="primary">Responsive hidden action on small</Button>
+          <ToolbarItem>
+            <Button aria-label="Clone" variant="plain" icon={<CloneIcon />} />
+          </ToolbarItem>
+          <ToolbarItem>
+            <Button aria-label="Sync" variant="plain" icon={<SyncIcon />} />
           </ToolbarItem>
         </ToolbarGroup>
-        <ToolbarItem variant="pagination">
-          <Pagination
-            itemCount={37}
-            widgetId="pagination-options-menu-bottom"
-            page={1}
-            variant={PaginationVariant.top}
-            isCompact
-          />
-        </ToolbarItem>
+        <ToolbarItem variant="pagination">{renderPagination('top', true)}</ToolbarItem>
       </ToolbarContent>
     </Toolbar>
   );
 
   return (
     <React.Fragment>
-      <Page
-        header={
-          <Masthead>
-            <MastheadToggle>
-              <PageToggleButton variant="plain" aria-label="Global navigation">
-                <BarsIcon />
-              </PageToggleButton>
-            </MastheadToggle>
-            <MastheadMain></MastheadMain>
-            <MastheadContent>{headerToolbar}</MastheadContent>
-          </Masthead>
-        }
-        sidebar={<PageSidebar nav={PageNav} />}
-        isManagedSidebar
-        skipToContent={<SkipToContent href={'#main-content-page-layout-default-nav'}>Skip to content</SkipToContent>}
-        mainContainerId={'main-content-page-layout-default-nav'}
-      >
-        <PageSection variant={PageSectionVariants.light}>
+      <DashboardWrapper>
+        <PageSection isWidthLimited variant={PageSectionVariants.light}>
           <TextContent>
             <Text component="h1">Table demos</Text>
             <Text component="p">
@@ -2408,52 +2382,92 @@ ComposableTableSortable = () => {
             </Text>
           </TextContent>
         </PageSection>
-        <PageSection isFilled>
-          {tableToolbar}
-          <TableComposable aria-label="Sortable Table">
-            <Thead>
-              <Tr>
-                {columns.map((column, columnIndex) => {
-                  const sortParams = {
-                    sort: {
-                      sortBy: {
-                        index: activeSortIndex,
-                        direction: activeSortDirection
-                      },
-                      onSort,
-                      columnIndex
-                    }
-                  };
-                  const infoParams =
-                    columnIndex === 2
-                      ? {
-                          info: {
-                            tooltip: 'More information'
-                          }
-                        }
-                      : {};
-                  return (
-                    <Th key={columnIndex} {...sortParams} {...infoParams}>
-                      {column}
-                    </Th>
-                  );
-                })}
-              </Tr>
-            </Thead>
-            <Tbody>
-              {rows.map((row, rowIndex) => (
-                <Tr key={rowIndex}>
-                  {row.map((cell, cellIndex) => (
-                    <Td key={`${rowIndex}_${cellIndex}`} dataLabel={columns[cellIndex]}>
-                      {cell}
-                    </Td>
-                  ))}
+        <PageSection
+          padding={{
+            default: 'noPadding',
+            xl: 'padding'
+          }}
+        >
+          <Card component="div">
+            {tableToolbar}
+            <TableComposable aria-label="Sortable Table">
+              <Thead>
+                <Tr>
+                  <Th />
+                  {columns.map((column, columnIndex) => {
+                    const sortParams = {
+                      sort: {
+                        sortBy: {
+                          index: activeSortIndex,
+                          direction: activeSortDirection
+                        },
+                        onSort,
+                        columnIndex
+                      }
+                    };
+                    return (
+                      <Th key={columnIndex} {...sortParams}>
+                        {column}
+                      </Th>
+                    );
+                  })}
                 </Tr>
-              ))}
-            </Tbody>
-          </TableComposable>
+              </Thead>
+              <Tbody>
+                {rows.map((row, rowIndex) => (
+                  <Tr key={rowIndex}>
+                    <>
+                      <Td
+                        select={{
+                          rowIndex,
+                          onSelect: (_event, isSelecting) => onSelectNode(row, rowIndex, isSelecting),
+                          isSelected: isNodeSelected(row)
+                        }}
+                      />
+                      <Td dataLabel={columns[0]}>
+                        <div>{row[0]}</div>
+                        <a href="#">siemur/test-space</a>
+                      </Td>
+                      <Td dataLabel={columns[1]}>
+                        <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                          <FlexItem>
+                            <CodeBranchIcon key="icon" />
+                          </FlexItem>
+                          <FlexItem>{row[1]}</FlexItem>
+                        </Flex>
+                      </Td>
+                      <Td dataLabel={columns[2]}>
+                        <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                          <FlexItem>
+                            <CodeIcon key="icon" />
+                          </FlexItem>
+                          <FlexItem>{row[2]}</FlexItem>
+                        </Flex>
+                      </Td>
+                      <Td dataLabel={columns[3]}>
+                        <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+                          <FlexItem>
+                            <CubeIcon key="icon" />
+                          </FlexItem>
+                          <FlexItem>{row[3]}</FlexItem>
+                        </Flex>
+                      </Td>
+                      <Td dataLabel={columns[4]}>{row[4]} days ago</Td>
+                      <Td dataLabel={'Action'}>
+                        <a href="#">Action link</a>
+                      </Td>
+                      <Td isActionCell>
+                        <ActionsColumn items={defaultActions()} />
+                      </Td>
+                    </>
+                  </Tr>
+                ))}
+              </Tbody>
+            </TableComposable>
+            {renderPagination('bottom', false)}
+          </Card>
         </PageSection>
-      </Page>
+      </DashboardWrapper>
     </React.Fragment>
   );
 };
