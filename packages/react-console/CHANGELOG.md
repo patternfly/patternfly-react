@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.67.1 (2022-05-23)
+
+
+### Bug Fixes
+
+* **Select:** allow enter to create when there is a single option ([#7444](https://github.com/patternfly/patternfly-react/issues/7444)) ([e1ae6a9](https://github.com/patternfly/patternfly-react/commit/e1ae6a9aa7dee0f8107905ec1d47463fce950ff3))
+
+
+
+
+
 # 4.67.0 (2022-05-19)
 
 
