@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { mount } from 'enzyme';
-import SVGDefs from '../SVGDefs';
-import { SVGDefsSetter } from '../SVGDefsSetter';
-import SVGDefsContext, { SVGDefsContextProps } from '../SVGDefsContext';
 
-type SVGDefsSetterProps = React.ComponentProps<typeof SVGDefsSetter>;
+import { render } from '@testing-library/react';
+
+import SVGDefs, { SVGDefsSetterProps } from '../SVGDefs';
+import SVGDefsContext, { SVGDefsContextProps } from '../SVGDefsContext';
+import { SVGDefsSetter } from '../SVGDefsSetter';
 
 describe('SVGDefs', () => {
   it('should get #addDef and #removeDef from context', () => {
@@ -16,40 +16,42 @@ describe('SVGDefs', () => {
       id: 'foo',
       children: <span />
     };
-    const wrapper = mount(
+    const { unmount } = render(
       <SVGDefsContext.Provider value={contextProps}>
         <SVGDefs {...props} />
       </SVGDefsContext.Provider>
     );
-    const innerWrapper = wrapper.find(SVGDefsSetter).first();
-    expect(innerWrapper.props()).toEqual({
-      ...contextProps,
-      ...props
-    });
+
+    // addDef called on mount and removeDef on unmount being called
+    // signifies the context props were passed into SVGDefs (and therefore SVGDefsSetter).
+    expect(contextProps.addDef).toHaveBeenCalledWith("foo", <span />);
+
+    unmount();
+    expect(contextProps.removeDef).toHaveBeenLastCalledWith("foo");
   });
-});
 
-describe('SVGDefsSetter', () => {
-  it('should callback #addDef and #removeDef on update', () => {
-    const props: SVGDefsSetterProps = {
-      id: 'foo',
-      addDef: jest.fn(),
-      removeDef: jest.fn(),
-      children: <span />
-    };
+  describe('SVGDefsSetter', () => {
+    it('should callback #addDef and #removeDef on update', () => {
+      const props: SVGDefsSetterProps = {
+        id: 'foo',
+        addDef: jest.fn(),
+        removeDef: jest.fn(),
+        children: <span />,
+      };
 
-    const wrapper = mount(<SVGDefsSetter {...props} />);
-    expect(props.addDef).toHaveBeenCalledWith(props.id, props.children);
+      const { unmount, rerender } = render(<SVGDefsSetter {...props} />);
+      expect(props.addDef).toHaveBeenCalledWith(props.id, props.children);
 
-    // test update
-    const newChild = <span />;
-    wrapper.setProps({ children: newChild });
-    expect(props.addDef).toHaveBeenCalledTimes(2);
-    expect(props.addDef).toHaveBeenLastCalledWith(props.id, newChild);
+      // test update
+      const newChild = <span />;
+      rerender(<SVGDefsSetter {...props}>{newChild}</SVGDefsSetter>)
+      expect(props.addDef).toHaveBeenCalledTimes(2);
+      expect(props.addDef).toHaveBeenLastCalledWith(props.id, newChild);
 
-    // test unmount
-    wrapper.unmount();
-    expect(props.removeDef).toHaveBeenCalledTimes(1);
-    expect(props.removeDef).toHaveBeenLastCalledWith(props.id);
+      // test unmount
+      unmount();
+      expect(props.removeDef).toHaveBeenCalledTimes(1);
+      expect(props.removeDef).toHaveBeenLastCalledWith(props.id);
+    });
   });
 });

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`skeleton circle skeleton 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton pf-m-circle"
   >
@@ -9,11 +9,11 @@ exports[`skeleton circle skeleton 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton default 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton"
   >
@@ -21,11 +21,11 @@ exports[`skeleton default 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with 2xl font size 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton pf-m-text-2xl"
   >
@@ -33,11 +33,11 @@ exports[`skeleton skeleton with 2xl font size 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with 3xl font size 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton pf-m-text-3xl"
   >
@@ -45,11 +45,11 @@ exports[`skeleton skeleton with 3xl font size 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with 4xl font size 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton pf-m-text-4xl"
   >
@@ -57,11 +57,11 @@ exports[`skeleton skeleton with 4xl font size 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with 25% height 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton"
     style="--pf-c-skeleton--Height: 25%;"
@@ -70,11 +70,11 @@ exports[`skeleton skeleton with 25% height 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with 25% width 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton"
     style="--pf-c-skeleton--Width: 25%;"
@@ -83,11 +83,11 @@ exports[`skeleton skeleton with 25% width 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with 33% height 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton"
     style="--pf-c-skeleton--Height: 33%;"
@@ -96,11 +96,11 @@ exports[`skeleton skeleton with 33% height 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with 33% width 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton"
     style="--pf-c-skeleton--Width: 33%;"
@@ -109,11 +109,11 @@ exports[`skeleton skeleton with 33% width 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with 50% height 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton"
     style="--pf-c-skeleton--Height: 50%;"
@@ -122,11 +122,11 @@ exports[`skeleton skeleton with 50% height 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with 50% width 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton"
     style="--pf-c-skeleton--Width: 50%;"
@@ -135,11 +135,11 @@ exports[`skeleton skeleton with 50% width 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with 66% height 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton"
     style="--pf-c-skeleton--Height: 66%;"
@@ -148,11 +148,11 @@ exports[`skeleton skeleton with 66% height 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with 66% width 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton"
     style="--pf-c-skeleton--Width: 66%;"
@@ -161,11 +161,11 @@ exports[`skeleton skeleton with 66% width 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with 75% height 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton"
     style="--pf-c-skeleton--Height: 75%;"
@@ -174,11 +174,11 @@ exports[`skeleton skeleton with 75% height 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with 75% width 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton"
     style="--pf-c-skeleton--Width: 75%;"
@@ -187,11 +187,11 @@ exports[`skeleton skeleton with 75% width 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with 100% height 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton"
     style="--pf-c-skeleton--Height: 100%;"
@@ -200,11 +200,11 @@ exports[`skeleton skeleton with 100% height 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with lg font size 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton pf-m-text-lg"
   >
@@ -212,11 +212,11 @@ exports[`skeleton skeleton with lg font size 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with md font size 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton pf-m-text-md"
   >
@@ -224,11 +224,11 @@ exports[`skeleton skeleton with md font size 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with sm font size 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton pf-m-text-sm"
   >
@@ -236,11 +236,11 @@ exports[`skeleton skeleton with sm font size 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton skeleton with xl font size 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton pf-m-text-xl"
   >
@@ -248,11 +248,11 @@ exports[`skeleton skeleton with xl font size 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`skeleton square skeleton 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-skeleton pf-m-square"
   >
@@ -260,5 +260,5 @@ exports[`skeleton square skeleton 1`] = `
       class="pf-u-screen-reader"
     />
   </div>
-</div>
+</DocumentFragment>
 `;

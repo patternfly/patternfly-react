@@ -4,12 +4,12 @@ import { GalleryItem } from '../GalleryItem';
 import { render } from '@testing-library/react';
 
 test('gutter', () => {
-  const view = render(<Gallery hasGutter />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<Gallery hasGutter />);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('gutter breakpoints', () => {
-  const view = render(
+  const { asFragment } = render(
     <Gallery
       hasGutter
       minWidths={{
@@ -23,14 +23,14 @@ test('gutter breakpoints', () => {
       }}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('alternative component', () => {
-  const view = render(
-    <Gallery component='ul'>
-      <GalleryItem component='li'>Test</GalleryItem>
+  const { asFragment } = render(
+    <Gallery component="ul">
+      <GalleryItem component="li">Test</GalleryItem>
     </Gallery>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

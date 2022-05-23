@@ -5,20 +5,20 @@ import { Form } from '../Form';
 
 describe('ActionGroup component', () => {
   test('should render default action group variant', () => {
-    const view = render(
+    const { asFragment } = render(
       <ActionGroup>
         <div>Hello</div>
       </ActionGroup>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should render horizontal form ActionGroup variant', () => {
-    const view = render(
+    const { asFragment } = render(
       <Form isHorizontal>
         <ActionGroup />
       </Form>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

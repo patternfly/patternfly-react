@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Accordion Accordion bordered 1`] = `
-<div>
+<DocumentFragment>
   <dl
     aria-label=""
     class="pf-c-accordion pf-m-bordered"
@@ -49,11 +49,11 @@ exports[`Accordion Accordion bordered 1`] = `
       </div>
     </dd>
   </dl>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Accordion Accordion custom content 1`] = `
-<div>
+<DocumentFragment>
   <dl
     aria-label=""
     class="pf-c-accordion"
@@ -106,20 +106,20 @@ exports[`Accordion Accordion custom content 1`] = `
       </div>
     </dd>
   </dl>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Accordion Accordion default 1`] = `
-<div>
+<DocumentFragment>
   <dl
     aria-label="this is a simple accordion"
     class="pf-c-accordion"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`Accordion Accordion display large 1`] = `
-<div>
+<DocumentFragment>
   <dl
     aria-label=""
     class="pf-c-accordion pf-m-display-lg"
@@ -167,11 +167,11 @@ exports[`Accordion Accordion display large 1`] = `
       </div>
     </dd>
   </dl>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Accordion Accordion with non-default headingLevel 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-label=""
     class="pf-c-accordion"
@@ -219,5 +219,5 @@ exports[`Accordion Accordion with non-default headingLevel 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

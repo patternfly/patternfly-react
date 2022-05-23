@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { Dropdown } from '../Dropdown';
 import { DropdownPosition, DropdownDirection } from '../dropdownConstants';
@@ -8,7 +9,6 @@ import { InternalDropdownItem } from '../InternalDropdownItem';
 import { DropdownSeparator } from '../DropdownSeparator';
 import { DropdownToggle } from '../DropdownToggle';
 import { KebabToggle } from '../KebabToggle';
-import userEvent from '@testing-library/user-event';
 
 const dropdownItems = [
   <InternalDropdownItem key="link">Link</InternalDropdownItem>,
@@ -30,25 +30,25 @@ const dropdownItems = [
 
 describe('Dropdown', () => {
   test('regular', () => {
-    render(
+    const { asFragment } = render(
       <Dropdown dropdownItems={dropdownItems} toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>} />
     );
-    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('right aligned', () => {
-    render(
+    const { asFragment } = render(
       <Dropdown
         dropdownItems={dropdownItems}
         position={DropdownPosition.right}
         toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
       />
     );
-    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('alignment breakpoints', () => {
-    render(
+    const { asFragment } = render(
       <Dropdown
         dropdownItems={dropdownItems}
         alignments={{
@@ -63,22 +63,22 @@ describe('Dropdown', () => {
         isOpen
       />
     );
-    expect(screen.getByLabelText('Dropdown button').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('dropup', () => {
-    render(
+    const { asFragment } = render(
       <Dropdown
         dropdownItems={dropdownItems}
         direction={DropdownDirection.up}
         toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
       />
     );
-    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('dropup + right aligned', () => {
-    render(
+    const { asFragment } = render(
       <Dropdown
         dropdownItems={dropdownItems}
         direction={DropdownDirection.up}
@@ -86,11 +86,11 @@ describe('Dropdown', () => {
         toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
       />
     );
-    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('expanded', () => {
-    render(
+    const { asFragment } = render(
       <Dropdown
         dropdownItems={dropdownItems}
         isOpen
@@ -98,11 +98,11 @@ describe('Dropdown', () => {
         toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
       />
     );
-    expect(screen.getByLabelText('Dropdown button').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('primary', () => {
-    render(
+    const { asFragment } = render(
       <Dropdown
         dropdownItems={dropdownItems}
         toggle={
@@ -112,55 +112,55 @@ describe('Dropdown', () => {
         }
       />
     );
-    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('basic', () => {
-    render(
+    const { asFragment } = render(
       <Dropdown isOpen toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}>
         <div>BASIC</div>
       </Dropdown>
     );
-    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 describe('KebabToggle', () => {
   test('regular', () => {
-    render(
+    const { asFragment } = render(
       <Dropdown
         aria-label="Dropdown button"
         dropdownItems={dropdownItems}
         toggle={<KebabToggle id="Dropdown Toggle" />}
       />
     );
-    expect(screen.getByLabelText('Dropdown button').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('right aligned', () => {
-    render(
+    const { asFragment } = render(
       <Dropdown
         dropdownItems={dropdownItems}
         position={DropdownPosition.right}
         toggle={<KebabToggle id="Dropdown Toggle" />}
       />
     );
-    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('dropup', () => {
-    render(
+    const { asFragment } = render(
       <Dropdown
         dropdownItems={dropdownItems}
         direction={DropdownDirection.up}
         toggle={<KebabToggle id="Dropdown Toggle" />}
       />
     );
-    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('dropup + right aligned', () => {
-    render(
+    const { asFragment } = render(
       <Dropdown
         dropdownItems={dropdownItems}
         direction={DropdownDirection.up}
@@ -168,11 +168,11 @@ describe('KebabToggle', () => {
         toggle={<KebabToggle id="Dropdown Toggle" />}
       />
     );
-    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('expanded', () => {
-    render(
+    const { asFragment } = render(
       <Dropdown
         aria-label="Dropdown button"
         dropdownItems={dropdownItems}
@@ -180,21 +180,23 @@ describe('KebabToggle', () => {
         toggle={<KebabToggle id="Dropdown Toggle" />}
       />
     );
-    expect(screen.getByLabelText('Dropdown button').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('plain', () => {
-    render(<Dropdown dropdownItems={dropdownItems} isPlain toggle={<KebabToggle id="Dropdown Toggle" />} />);
-    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
+    const { asFragment } = render(
+      <Dropdown dropdownItems={dropdownItems} isPlain toggle={<KebabToggle id="Dropdown Toggle" />} />
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('basic', () => {
-    render(
+    const { asFragment } = render(
       <Dropdown isOpen toggle={<KebabToggle id="Dropdown Toggle" />}>
         <div>BASIC</div>
       </Dropdown>
     );
-    expect(screen.getByRole('button').outerHTML).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
@@ -229,7 +231,7 @@ describe('API', () => {
         <div>Children items</div>
       </Dropdown>
     );
-    expect(myMock).toBeCalledWith(
+    expect(myMock).toHaveBeenCalledWith(
       'Children and dropdownItems props have been provided. Only the dropdownItems prop items will be rendered'
     );
   });
@@ -244,7 +246,7 @@ describe('API', () => {
         toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
       />
     );
-    expect(myMock).not.toBeCalled();
+    expect(myMock).not.toHaveBeenCalled();
   });
 
   test('children only, no console ', () => {
@@ -255,6 +257,6 @@ describe('API', () => {
         <div>Children items</div>
       </Dropdown>
     );
-    expect(myMock).not.toBeCalled();
+    expect(myMock).not.toHaveBeenCalled();
   });
 });

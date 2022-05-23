@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`KebabToggle should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-expanded="false"
     aria-label="'Actions'"
@@ -23,5 +23,5 @@ exports[`KebabToggle should match snapshot (auto-generated) 1`] = `
       />
     </svg>
   </button>
-</div>
+</DocumentFragment>
 `;

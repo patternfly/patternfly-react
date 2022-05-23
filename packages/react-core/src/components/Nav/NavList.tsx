@@ -23,7 +23,7 @@ export interface NavListProps
 export class NavList extends React.Component<NavListProps> {
   static displayName = 'NavList';
   static contextType = NavContext;
-
+  context!: React.ContextType<typeof NavContext>;
   static defaultProps: NavListProps = {
     ariaLeftScroll: 'Scroll left',
     ariaRightScroll: 'Scroll right'

@@ -108,7 +108,7 @@ describe('Nav', () => {
     );
 
     userEvent.click(screen.getByRole('button'));
-    expect(onExpand).toBeCalled();
+    expect(onExpand).toHaveBeenCalled();
   });
 
   test('Expandable Nav List - Trigger toggle', () => {

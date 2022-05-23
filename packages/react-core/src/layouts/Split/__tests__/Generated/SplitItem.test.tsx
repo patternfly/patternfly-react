@@ -8,6 +8,6 @@ import { SplitItem } from '../../SplitItem';
 import {} from '../..';
 
 it('SplitItem should match snapshot (auto-generated)', () => {
-  const view = render(<SplitItem isFilled={false} children={<>ReactNode</>} className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<SplitItem isFilled={false} children={<>ReactNode</>} className={"''"} />);
+  expect(asFragment()).toMatchSnapshot();
 });

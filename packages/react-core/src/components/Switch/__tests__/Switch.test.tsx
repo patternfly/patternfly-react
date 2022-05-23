@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
 
 import { Switch } from '../Switch';
 
@@ -27,12 +26,16 @@ describe('Switch', () => {
   });
 
   test('switch is checked', () => {
-    const { asFragment } = render(<Switch id="switch-is-checked" label="On" labelOff="Off" isChecked aria-label="Switch label" />);
+    const { asFragment } = render(
+      <Switch id="switch-is-checked" label="On" labelOff="Off" isChecked aria-label="Switch label" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('switch is not checked', () => {
-    const { asFragment } = render(<Switch id="switch-is-not-checked" label="On" labelOff="Off" isChecked={false} aria-label="Switch label" />);
+    const { asFragment } = render(
+      <Switch id="switch-is-not-checked" label="On" labelOff="Off" isChecked={false} aria-label="Switch label" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -52,17 +55,23 @@ describe('Switch', () => {
   });
 
   test('no label switch is not checked', () => {
-    const { asFragment } = render(<Switch id="no-label-switch-is-not-checked" isChecked={false} aria-label="Switch label" />);
+    const { asFragment } = render(
+      <Switch id="no-label-switch-is-not-checked" isChecked={false} aria-label="Switch label" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('switch is checked and disabled', () => {
-    const { asFragment } = render(<Switch id="switch-is-checked-and-disabled" isChecked isDisabled aria-label="Switch label" />);
+    const { asFragment } = render(
+      <Switch id="switch-is-checked-and-disabled" isChecked isDisabled aria-label="Switch label" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('switch is not checked and disabled', () => {
-    const { asFragment } = render(<Switch id="switch-is-not-checked-and-disabled" isChecked={false} isDisabled aria-label="Switch label" />);
+    const { asFragment } = render(
+      <Switch id="switch-is-not-checked-and-disabled" isChecked={false} isDisabled aria-label="Switch label" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -79,7 +88,7 @@ describe('Switch', () => {
     global.console = { ...global.console, error: myMock };
 
     render(<Switch {...props} />);
-    expect(myMock).toBeCalled();
+    expect(myMock).toHaveBeenCalled();
   });
 
   test('should not throw console error when label is given but no aria-label', () => {
@@ -88,7 +97,7 @@ describe('Switch', () => {
 
     render(<Switch {...props} label="test switch" />);
 
-    expect(myMock).not.toBeCalled();
+    expect(myMock).not.toHaveBeenCalled();
   });
 
   test('should not throw console error when aria-label is given but no label', () => {
@@ -97,7 +106,7 @@ describe('Switch', () => {
 
     render(<Switch {...props} aria-label="test switch" />);
 
-    expect(myMock).not.toBeCalled();
+    expect(myMock).not.toHaveBeenCalled();
   });
 
   test('should apply reversed modifier', () => {

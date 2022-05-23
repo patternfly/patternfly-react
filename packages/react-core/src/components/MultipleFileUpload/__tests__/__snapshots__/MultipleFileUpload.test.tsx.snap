@@ -1,137 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MultipleFileUpload renders custom class names 1`] = `
-<MultipleFileUpload
-  className="test"
->
-  <t
-    disabled={false}
-    getDataTransferItems={[Function]}
-    maxSize={Infinity}
-    minSize={0}
-    multiple={true}
-    onDropAccepted={[Function]}
-    onDropRejected={[Function]}
-    preventDropOnDocument={true}
+<DocumentFragment>
+  <div
+    class="pf-c-multiple-file-upload test"
+    tabindex="0"
   >
-    <div
-      className="pf-c-multiple-file-upload test"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onDragEnter={[Function]}
-      onDragLeave={[Function]}
-      onDragOver={[Function]}
-      onDragStart={[Function]}
-      onDrop={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      tabIndex={0}
-    >
-      <input
-        autoComplete="off"
-        multiple={true}
-        onChange={[Function]}
-        onClick={[Function]}
-        style={
-          Object {
-            "display": "none",
-          }
-        }
-        tabIndex={-1}
-        type="file"
-      />
-      Foo
-    </div>
-  </t>
-</MultipleFileUpload>
+    <input
+      autocomplete="off"
+      multiple=""
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+    Foo
+  </div>
+</DocumentFragment>
 `;
 
 exports[`MultipleFileUpload renders with expected class names when horizontal 1`] = `
-<MultipleFileUpload
-  isHorizontal={true}
->
-  <t
-    disabled={false}
-    getDataTransferItems={[Function]}
-    maxSize={Infinity}
-    minSize={0}
-    multiple={true}
-    onDropAccepted={[Function]}
-    onDropRejected={[Function]}
-    preventDropOnDocument={true}
+<DocumentFragment>
+  <div
+    class="pf-c-multiple-file-upload pf-m-horizontal"
+    tabindex="0"
   >
-    <div
-      className="pf-c-multiple-file-upload pf-m-horizontal"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onDragEnter={[Function]}
-      onDragLeave={[Function]}
-      onDragOver={[Function]}
-      onDragStart={[Function]}
-      onDrop={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      tabIndex={0}
-    >
-      <input
-        autoComplete="off"
-        multiple={true}
-        onChange={[Function]}
-        onClick={[Function]}
-        style={
-          Object {
-            "display": "none",
-          }
-        }
-        tabIndex={-1}
-        type="file"
-      />
-      Foo
-    </div>
-  </t>
-</MultipleFileUpload>
+    <input
+      autocomplete="off"
+      multiple=""
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+    Foo
+  </div>
+</DocumentFragment>
 `;
 
 exports[`MultipleFileUpload renders with expected class names when not horizontal 1`] = `
-<MultipleFileUpload>
-  <t
-    disabled={false}
-    getDataTransferItems={[Function]}
-    maxSize={Infinity}
-    minSize={0}
-    multiple={true}
-    onDropAccepted={[Function]}
-    onDropRejected={[Function]}
-    preventDropOnDocument={true}
+<DocumentFragment>
+  <div
+    class="pf-c-multiple-file-upload"
+    tabindex="0"
   >
-    <div
-      className="pf-c-multiple-file-upload"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onDragEnter={[Function]}
-      onDragLeave={[Function]}
-      onDragOver={[Function]}
-      onDragStart={[Function]}
-      onDrop={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      tabIndex={0}
-    >
-      <input
-        autoComplete="off"
-        multiple={true}
-        onChange={[Function]}
-        onClick={[Function]}
-        style={
-          Object {
-            "display": "none",
-          }
-        }
-        tabIndex={-1}
-        type="file"
-      />
-      Foo
-    </div>
-  </t>
-</MultipleFileUpload>
+    <input
+      autocomplete="off"
+      multiple=""
+      style="display: none;"
+      tabindex="-1"
+      type="file"
+    />
+    Foo
+  </div>
+</DocumentFragment>
 `;

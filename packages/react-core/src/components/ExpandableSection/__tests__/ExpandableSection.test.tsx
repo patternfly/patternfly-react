@@ -1,19 +1,21 @@
 import * as React from 'react';
+
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
 import { ExpandableSection } from '../ExpandableSection';
 import { ExpandableSectionToggle } from '../ExpandableSectionToggle';
 
 const props = {};
 
 test('ExpandableSection', () => {
-  const view = render(<ExpandableSection {...props}>test </ExpandableSection>);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<ExpandableSection {...props}>test </ExpandableSection>);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('Renders ExpandableSection expanded', () => {
-  const view = render(<ExpandableSection isExpanded> test </ExpandableSection>);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<ExpandableSection isExpanded> test </ExpandableSection>);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('ExpandableSection onToggle called', () => {
@@ -26,12 +28,12 @@ test('ExpandableSection onToggle called', () => {
 });
 
 test('Renders Uncontrolled ExpandableSection', () => {
-  const view = render(<ExpandableSection toggleText="Show More"> test </ExpandableSection>);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<ExpandableSection toggleText="Show More"> test </ExpandableSection>);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('Detached ExpandableSection renders successfully', () => {
-  const view = render(
+  const { asFragment } = render(
     <React.Fragment>
       <ExpandableSection {...props} isExpanded isDetached contentId="test">
         test
@@ -41,15 +43,24 @@ test('Detached ExpandableSection renders successfully', () => {
       </ExpandableSectionToggle>
     </React.Fragment>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('Disclosure ExpandableSection', () => {
-  const view = render(<ExpandableSection {...props} displaySize="large" isWidthLimited>test </ExpandableSection>);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(
+    <ExpandableSection {...props} displaySize="large" isWidthLimited>
+      test{' '}
+    </ExpandableSection>
+  );
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('Renders ExpandableSection indented', () => {
-  const view = render(<ExpandableSection isExpanded isIndented> test </ExpandableSection>);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(
+    <ExpandableSection isExpanded isIndented>
+      {' '}
+      test{' '}
+    </ExpandableSection>
+  );
+  expect(asFragment()).toMatchSnapshot();
 });

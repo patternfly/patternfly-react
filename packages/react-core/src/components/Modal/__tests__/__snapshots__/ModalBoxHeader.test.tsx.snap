@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalBoxHeader Test 1`] = `
-<div>
+<DocumentFragment>
   <header
     class="pf-c-modal-box__header"
   >
     This is a ModalBox header
   </header>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ModalBoxHeader help renders 1`] = `
-<div>
+<DocumentFragment>
   <header
     class="pf-c-modal-box__header pf-m-help"
   >
@@ -28,5 +28,5 @@ exports[`ModalBoxHeader help renders 1`] = `
       </div>
     </div>
   </header>
-</div>
+</DocumentFragment>
 `;

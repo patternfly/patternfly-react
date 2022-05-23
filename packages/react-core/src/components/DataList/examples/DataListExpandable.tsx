@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Button,
   DataList,
   DataListItem,
   DataListItemRow,
@@ -15,27 +14,12 @@ import {
   KebabToggle
 } from '@patternfly/react-core';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
-import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
-import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
 export const DataListExpandable: React.FunctionComponent = () => {
   const [isOpen1, setIsOpen1] = React.useState(false);
   const [isOpen2, setIsOpen2] = React.useState(false);
   const [isOpen3, setIsOpen3] = React.useState(false);
-  const [allExpanded, setAllExpanded] = React.useState(false);
   const [expanded, setExpanded] = React.useState(['ex-toggle1', 'ex-toggle3']);
-
-  const onToggleAll = () => {
-    setAllExpanded(!allExpanded);
-  };
-
-  React.useEffect(() => {
-    if (allExpanded) {
-      setExpanded(['ex-toggle1', 'ex-toggle2', 'ex-toggle3']);
-    } else {
-      setExpanded([]);
-    }
-  }, [allExpanded]);
 
   const onToggle1 = isOpen1 => {
     setIsOpen1(isOpen1);
@@ -68,13 +52,6 @@ export const DataListExpandable: React.FunctionComponent = () => {
   };
   return (
     <React.Fragment>
-      <Button onClick={onToggleAll}>
-        {allExpanded && <AngleDownIcon />}
-        {!allExpanded && <AngleRightIcon />}
-        Expand/Collapse All
-      </Button>
-      <br />
-      <br />
       <DataList aria-label="Expandable data list example">
         <DataListItem aria-labelledby="ex-item1" isExpanded={expanded.includes('ex-toggle1')}>
           <DataListItemRow>

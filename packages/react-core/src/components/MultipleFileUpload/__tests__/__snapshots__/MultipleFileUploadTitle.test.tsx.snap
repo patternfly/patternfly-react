@@ -1,81 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MultipleFileUploadTitle renders custom class names 1`] = `
-<MultipleFileUploadTitle
-  className="test"
->
+<DocumentFragment>
   <div
-    className="pf-c-multiple-file-upload__title test"
+    class="pf-c-multiple-file-upload__title test"
   />
-</MultipleFileUploadTitle>
+</DocumentFragment>
 `;
 
 exports[`MultipleFileUploadTitle renders with expected class names 1`] = `
-<MultipleFileUploadTitle>
+<DocumentFragment>
   <div
-    className="pf-c-multiple-file-upload__title"
+    class="pf-c-multiple-file-upload__title"
   />
-</MultipleFileUploadTitle>
+</DocumentFragment>
 `;
 
 exports[`MultipleFileUploadTitle renders with title icon 1`] = `
-<MultipleFileUploadTitle
-  icon="icon"
->
+<DocumentFragment>
   <div
-    className="pf-c-multiple-file-upload__title"
+    class="pf-c-multiple-file-upload__title"
   >
-    <MultipleFileUploadTitleIcon>
-      <div
-        className="pf-c-multiple-file-upload__title-icon"
-      >
-        icon
-      </div>
-    </MultipleFileUploadTitleIcon>
+    <div
+      class="pf-c-multiple-file-upload__title-icon"
+    >
+      icon
+    </div>
   </div>
-</MultipleFileUploadTitle>
+</DocumentFragment>
 `;
 
 exports[`MultipleFileUploadTitle renders with title text 1`] = `
-<MultipleFileUploadTitle
-  text="text"
->
+<DocumentFragment>
   <div
-    className="pf-c-multiple-file-upload__title"
+    class="pf-c-multiple-file-upload__title"
   >
-    <MultipleFileUploadTitleText>
-      <div
-        className="pf-c-multiple-file-upload__title-text"
-      >
-        text 
-      </div>
-    </MultipleFileUploadTitleText>
+    <div
+      class="pf-c-multiple-file-upload__title-text"
+    >
+      text 
+    </div>
   </div>
-</MultipleFileUploadTitle>
+</DocumentFragment>
 `;
 
 exports[`MultipleFileUploadTitle renders with title text separator 1`] = `
-<MultipleFileUploadTitle
-  text="text"
-  textSeparator="text separator"
->
+<DocumentFragment>
   <div
-    className="pf-c-multiple-file-upload__title"
+    class="pf-c-multiple-file-upload__title"
   >
-    <MultipleFileUploadTitleText>
+    <div
+      class="pf-c-multiple-file-upload__title-text"
+    >
+      text 
       <div
-        className="pf-c-multiple-file-upload__title-text"
+        class="pf-c-multiple-file-upload__title-text-separator"
       >
-        text 
-        <MultipleFileUploadTitleTextSeparator>
-          <div
-            className="pf-c-multiple-file-upload__title-text-separator"
-          >
-            text separator
-          </div>
-        </MultipleFileUploadTitleTextSeparator>
+        text separator
       </div>
-    </MultipleFileUploadTitleText>
+    </div>
   </div>
-</MultipleFileUploadTitle>
+</DocumentFragment>
 `;

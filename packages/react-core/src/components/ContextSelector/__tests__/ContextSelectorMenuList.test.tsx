@@ -12,11 +12,11 @@ const items = [
 ];
 
 test('Renders ContextSelectorMenuList open', () => {
-  const view = render(<ContextSelectorMenuList isOpen={false}>{items}</ContextSelectorMenuList>);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<ContextSelectorMenuList isOpen={false}>{items}</ContextSelectorMenuList>);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('Renders ContextSelectorMenuList closed', () => {
-  const view = render(<ContextSelectorMenuList isOpen={false}>{items}</ContextSelectorMenuList>);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<ContextSelectorMenuList isOpen={false}>{items}</ContextSelectorMenuList>);
+  expect(asFragment()).toMatchSnapshot();
 });

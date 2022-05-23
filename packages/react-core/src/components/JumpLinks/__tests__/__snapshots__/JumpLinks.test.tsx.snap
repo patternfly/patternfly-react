@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`expandable vertical with subsection 1`] = `
-<div>
+<DocumentFragment>
   <nav
     aria-label="Jump to section"
     class="pf-c-jump-links pf-m-vertical pf-m-expandable"
@@ -45,9 +45,7 @@ exports[`expandable vertical with subsection 1`] = `
             <span
               class="pf-c-jump-links__toggle-text"
             >
-               
-              Jump to section
-               
+               Jump to section 
             </span>
           </button>
         </div>
@@ -159,11 +157,11 @@ exports[`expandable vertical with subsection 1`] = `
       </ul>
     </div>
   </nav>
-</div>
+</DocumentFragment>
 `;
 
 exports[`jumplinks centered 1`] = `
-<div>
+<DocumentFragment>
   <nav
     class="pf-c-jump-links pf-m-center"
   >
@@ -219,11 +217,11 @@ exports[`jumplinks centered 1`] = `
       </ul>
     </div>
   </nav>
-</div>
+</DocumentFragment>
 `;
 
 exports[`jumplinks with label 1`] = `
-<div>
+<DocumentFragment>
   <nav
     aria-label="Jump to section"
     class="pf-c-jump-links pf-m-center"
@@ -286,11 +284,11 @@ exports[`jumplinks with label 1`] = `
       </ul>
     </div>
   </nav>
-</div>
+</DocumentFragment>
 `;
 
 exports[`simple jumplinks 1`] = `
-<div>
+<DocumentFragment>
   <nav
     class="pf-c-jump-links"
   >
@@ -346,11 +344,11 @@ exports[`simple jumplinks 1`] = `
       </ul>
     </div>
   </nav>
-</div>
+</DocumentFragment>
 `;
 
 exports[`vertical with label 1`] = `
-<div>
+<DocumentFragment>
   <nav
     aria-label="Jump to section"
     class="pf-c-jump-links pf-m-vertical"
@@ -413,5 +411,5 @@ exports[`vertical with label 1`] = `
       </ul>
     </div>
   </nav>
-</div>
+</DocumentFragment>
 `;

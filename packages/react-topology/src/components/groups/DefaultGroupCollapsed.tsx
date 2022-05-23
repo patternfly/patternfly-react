@@ -21,6 +21,7 @@ import LabelBadge from '../nodes/labels/LabelBadge';
 import { CollapsibleGroupProps } from './types';
 
 type DefaultGroupCollapsedProps = {
+  children?: React.ReactNode;
   className?: string;
   element: Node;
   droppable?: boolean;

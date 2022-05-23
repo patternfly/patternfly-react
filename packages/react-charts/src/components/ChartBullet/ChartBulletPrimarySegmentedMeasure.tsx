@@ -163,7 +163,7 @@ export interface ChartBulletPrimarySegmentedMeasureProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -210,13 +210,14 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
   padding,
   standalone = true,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
   y,
   y0,
 
   // destructure last
-  theme = getBulletPrimarySegmentedMeasureTheme(themeColor, themeVariant),
-  negativeMeasureTheme = getBulletPrimaryNegativeMeasureTheme(themeColor, themeVariant),
+  theme = getBulletPrimarySegmentedMeasureTheme(themeColor),
+  negativeMeasureTheme = getBulletPrimaryNegativeMeasureTheme(themeColor),
   height = theme.group.height,
   width = theme.group.width,
   labelComponent = <ChartTooltip />

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NavGroup should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <section
     aria-labelledby="string"
     class="pf-c-nav__section ''"
@@ -18,5 +18,5 @@ exports[`NavGroup should match snapshot (auto-generated) 1`] = `
       ReactNode
     </ul>
   </section>
-</div>
+</DocumentFragment>
 `;

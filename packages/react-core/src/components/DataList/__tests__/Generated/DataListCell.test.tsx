@@ -8,7 +8,7 @@ import { DataListCell } from '../../DataListCell';
 import {} from '../..';
 
 it('DataListCell should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <DataListCell
       children={<>ReactNode</>}
       className={"''"}
@@ -18,5 +18,5 @@ it('DataListCell should match snapshot (auto-generated)', () => {
       isIcon={false}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -8,7 +8,7 @@ import { AccordionToggle } from '../../AccordionToggle';
 import {} from '../..';
 
 it('AccordionToggle should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <AccordionToggle
       children={<>ReactNode</>}
       className={"''"}
@@ -17,5 +17,5 @@ it('AccordionToggle should match snapshot (auto-generated)', () => {
       component={() => <div />}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

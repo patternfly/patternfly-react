@@ -8,7 +8,7 @@ import { AccordionContent } from '../../AccordionContent';
 import {} from '../..';
 
 it('AccordionContent should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <AccordionContent
       children={<>ReactNode</>}
       className={"''"}
@@ -19,5 +19,5 @@ it('AccordionContent should match snapshot (auto-generated)', () => {
       component={() => <div />}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

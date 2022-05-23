@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ConfirmButtons renders correctly 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-table__inline-edit-buttons pf-m-top pf-m-bold"
     style="bottom: 398px; right: 470px;"
@@ -53,5 +53,5 @@ exports[`ConfirmButtons renders correctly 1`] = `
       </svg>
     </button>
   </div>
-</div>
+</DocumentFragment>
 `;

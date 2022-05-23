@@ -48,9 +48,9 @@ export interface PaginationTitles {
   pages?: string;
   /** The type or title of the items being paginated */
   items?: string;
-  /** The Title of the Pagination Options Menu */
+  /** The title of the pagination options menu */
   itemsPerPage?: string;
-  /** The suffix to be displayed after each option on the Options Menu dropdown */
+  /** The suffix to be displayed after each option on the options menu dropdown */
   perPageSuffix?: string;
   /** Accessible label for the button which moves to the first page */
   toFirstPage?: string;
@@ -60,7 +60,7 @@ export interface PaginationTitles {
   toLastPage?: string;
   /** Accessible label for the button which moves to the next page */
   toNextPage?: string;
-  /** Accessible label for the Options Toggle */
+  /** Accessible label for the options toggle */
   optionsToggle?: string;
   /** Accessible label for the input displaying the current page */
   currPage?: string;
@@ -141,6 +141,10 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement>, OUIAPr
   onPageInput?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user selects number of items per page. */
   onPerPageSelect?: OnPerPageSelect;
+  /** Component to be used for wrapping the toggle contents. Use 'button' when you want
+   * all of the toggle text to be clickable.
+   */
+  perPageComponent?: 'div' | 'button';
 }
 
 const handleInputWidth = (lastPage: number, node: HTMLDivElement) => {
@@ -177,7 +181,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
       toPreviousPage: 'Go to previous page',
       toLastPage: 'Go to last page',
       toNextPage: 'Go to next page',
-      optionsToggle: 'Items per page',
+      optionsToggle: '',
       currPage: 'Current page',
       paginationTitle: 'Pagination',
       ofWord: 'of'
@@ -197,7 +201,8 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
     onNextClick: () => undefined,
     onPageInput: () => undefined,
     onLastClick: () => undefined,
-    ouiaSafe: true
+    ouiaSafe: true,
+    perPageComponent: 'div'
   };
 
   state = {
@@ -252,6 +257,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
       onLastClick,
       ouiaId,
       ouiaSafe,
+      perPageComponent,
       ...props
     } = this.props;
     const dropDirection = dropDirectionProp || (variant === 'bottom' && !isStatic ? 'up' : 'down');
@@ -335,6 +341,7 @@ export class Pagination extends React.Component<PaginationProps, { ouiaStateId: 
           widgetId={widgetId}
           toggleTemplate={toggleTemplate}
           isDisabled={isDisabled}
+          perPageComponent={perPageComponent}
         />
         <Navigation
           pagesTitle={titles.page}

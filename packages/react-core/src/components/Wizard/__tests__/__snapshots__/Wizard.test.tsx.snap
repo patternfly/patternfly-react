@@ -351,6 +351,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
               <button
                 aria-current="step"
                 class="pf-c-wizard__nav-link pf-m-current"
+                id="step-A"
               >
                 A
               </button>
@@ -361,6 +362,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
               <button
                 aria-current="false"
                 class="pf-c-wizard__nav-link"
+                id="step-B"
               >
                 B
               </button>
@@ -373,6 +375,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
                   <button
                     aria-current="false"
                     class="pf-c-wizard__nav-link"
+                    id="step-B-1"
                   >
                     B-1
                   </button>
@@ -383,6 +386,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
                   <button
                     aria-current="false"
                     class="pf-c-wizard__nav-link"
+                    id="step-B-2"
                   >
                     B-2
                   </button>
@@ -395,6 +399,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
               <button
                 aria-current="false"
                 class="pf-c-wizard__nav-link"
+                id="step-C"
               >
                 C
               </button>
@@ -405,6 +410,7 @@ exports[`Wizard Wizard should match snapshot 1`] = `
               <button
                 aria-current="false"
                 class="pf-c-wizard__nav-link"
+                id="step-D"
               >
                 D
               </button>

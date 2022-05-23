@@ -147,7 +147,7 @@ export interface ChartBulletPrimaryDotMeasureProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -194,12 +194,13 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
   size = ChartBulletStyles.primaryDotMeasureSize,
   standalone = true,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
   y,
   y0,
 
   // destructure last
-  theme = getBulletPrimaryDotMeasureTheme(themeColor, themeVariant),
+  theme = getBulletPrimaryDotMeasureTheme(themeColor),
   labelComponent = <ChartTooltip />,
   height = theme.group.height,
   width = theme.group.width

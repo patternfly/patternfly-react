@@ -224,6 +224,7 @@ export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
         textAnchor // textAnchor prop must override given theme styles
       },
       {
+        fill: ChartCommonStyles.label.fill,
         fontFamily: ChartCommonStyles.label.fontFamily,
         fontSize: ChartCommonStyles.label.fontSize,
         letterSpacing: ChartCommonStyles.label.letterSpacing

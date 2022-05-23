@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CardBody body with no-fill applied 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-card__body pf-m-no-fill"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`CardBody renders with PatternFly Core styles 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-card__body"
   />
-</div>
+</DocumentFragment>
 `;

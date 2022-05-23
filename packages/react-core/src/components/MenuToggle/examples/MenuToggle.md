@@ -177,3 +177,19 @@ import { MenuToggle } from '@patternfly/react-core';
   </MenuToggle>
 </div>
 ```
+
+### Full width
+
+```ts
+import React from 'react';
+import { MenuToggle } from '@patternfly/react-core';
+
+const fullWidth: React.FunctionComponent = () => {
+  return (
+    <MenuToggle isFullWidth aria-label="Full width menu toggle" >
+      Full width 
+    </MenuToggle>
+  );
+}
+    
+```

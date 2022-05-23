@@ -7,7 +7,7 @@ import { DropdownArrowContext } from '../../../Dropdown';
 
 describe('OptionsMenuItem', () => {
   it('should match snapshot', () => {
-    const view = render(
+    const { asFragment } = render(
       <DropdownArrowContext.Provider value={{ sendRef: jest.fn(), keyHandler: undefined }}>
         <OptionsMenuItem
           children={<>ReactNode</>}
@@ -19,6 +19,6 @@ describe('OptionsMenuItem', () => {
         />{' '}
       </DropdownArrowContext.Provider>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

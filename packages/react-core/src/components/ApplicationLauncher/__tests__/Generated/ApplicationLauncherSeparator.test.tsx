@@ -6,11 +6,11 @@ import { DropdownArrowContext } from '../../../Dropdown/dropdownConstants';
 
 describe('ApplicationLauncherSeparator', () => {
   it('should match snapshot', () => {
-    const view = render(
+    const { asFragment } = render(
       <DropdownArrowContext.Provider value={{ sendRef: jest.fn(), keyHandler: undefined }}>
         <ApplicationLauncherSeparator />
       </DropdownArrowContext.Provider>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

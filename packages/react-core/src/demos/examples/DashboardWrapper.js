@@ -6,8 +6,11 @@ import {
   NavItem,
   NavList,
   Page,
+  PageSection,
   PageSidebar,
-  SkipToContent
+  SkipToContent,
+  Text,
+  TextContent
 } from '@patternfly/react-core';
 import DashboardHeader from './DashboardHeader';
 
@@ -20,6 +23,15 @@ export const DashboardBreadcrumb = (
       Section landing
     </BreadcrumbItem>
   </Breadcrumb>
+);
+
+export const PageTemplateTitle = (
+  <PageSection variant="light">
+    <TextContent>
+      <Text component="h1">Main title</Text>
+      <Text component="p">This is a full page demo.</Text>
+    </TextContent>
+  </PageSection>
 );
 export default class DashboardWrapper extends React.Component {
   constructor(props) {
@@ -45,7 +57,8 @@ export default class DashboardWrapper extends React.Component {
       sidebar,
       sidebarNavOpen,
       onPageResize,
-      hasNoBreadcrumb
+      hasNoBreadcrumb,
+      hasPageTemplateTitle
     } = this.props;
 
     let renderedBreadcrumb;
@@ -92,6 +105,7 @@ export default class DashboardWrapper extends React.Component {
         mainContainerId={mainContainerId ? mainContainerId : 'main-content-page-layout-default-nav'}
         onPageResize={onPageResize}
       >
+        {hasPageTemplateTitle && PageTemplateTitle}
         {children}
       </Page>
     );

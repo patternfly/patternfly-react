@@ -1,12 +1,14 @@
 import React from 'react';
+
 import { render, screen } from '@testing-library/react';
-import { LoginForm } from '../LoginForm';
 import userEvent from '@testing-library/user-event';
+
+import { LoginForm } from '../LoginForm';
 
 describe('LoginForm', () => {
   test('should render Login form', () => {
-    render(<LoginForm data-testid="form-test-id" />);
-    expect(screen.getByTestId('form-test-id').outerHTML).toMatchSnapshot();
+    const { asFragment } = render(<LoginForm />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('should call onChangeUsername callback', () => {
@@ -37,12 +39,12 @@ describe('LoginForm', () => {
   });
 
   test('LoginForm with rememberMeLabel', () => {
-    render(<LoginForm rememberMeLabel="Remember me" data-testid="form-test-id" />);
-    expect(screen.getByTestId('form-test-id').outerHTML).toMatchSnapshot();
+    const { asFragment } = render(<LoginForm rememberMeLabel="Remember me" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('LoginForm with show password', () => {
-    render(<LoginForm isShowPasswordEnabled data-testid="form-test-id" />);
-    expect(screen.getByTestId('form-test-id').outerHTML).toMatchSnapshot();
+    const { asFragment } = render(<LoginForm isShowPasswordEnabled />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

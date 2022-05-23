@@ -6,7 +6,7 @@ import { TextList, TextListVariants } from '../TextList';
 import { TextListItem, TextListItemVariants } from '../TextListItem';
 
 test('Text example should match snapshot', () => {
-  const view = render(
+  const { asFragment } = render(
     <TextContent>
       <Text component={TextVariants.h1}>Hello World</Text>
       <Text component={TextVariants.p}>
@@ -108,5 +108,5 @@ test('Text example should match snapshot', () => {
       </Text>
     </TextContent>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

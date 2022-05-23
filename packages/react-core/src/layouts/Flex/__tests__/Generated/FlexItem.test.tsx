@@ -8,6 +8,6 @@ import { FlexItem } from '../../FlexItem';
 import {} from '../..';
 
 it('FlexItem should match snapshot (auto-generated)', () => {
-  const view = render(<FlexItem children={<>ReactNode</>} className={"''"} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<FlexItem children={<>ReactNode</>} className={"''"} />);
+  expect(asFragment()).toMatchSnapshot();
 });

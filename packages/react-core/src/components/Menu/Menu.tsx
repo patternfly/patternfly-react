@@ -72,6 +72,7 @@ export interface MenuState {
 class MenuBase extends React.Component<MenuProps, MenuState> {
   static displayName = 'Menu';
   static contextType = MenuContext;
+  context!: React.ContextType<typeof MenuContext>;
   private menuRef = React.createRef<HTMLDivElement>();
   private activeMenu = null as Element;
   static defaultProps: MenuProps = {
@@ -209,7 +210,7 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
       ? Array.from(this.activeMenu.getElementsByTagName('UL')[0].children).filter(
           el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
         )
-      : Array.from(this.activeMenu.getElementsByTagName('LI')).filter(
+      : Array.from(this.menuRef.current.getElementsByTagName('LI')).filter(
           el => !(el.classList.contains('pf-m-disabled') || el.classList.contains('pf-c-divider'))
         );
   };

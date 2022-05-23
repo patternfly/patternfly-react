@@ -9,6 +9,7 @@ import {
   GridLayout,
   BreadthFirstLayout
 } from '@patternfly/react-topology';
+import { ColaGroupsLayout } from '@patternfly/react-topology/dist/esm/layouts/ColaGroupsLayout';
 
 const defaultLayoutFactory: LayoutFactory = (type: string, graph: Graph): Layout | undefined => {
   switch (type) {
@@ -26,6 +27,8 @@ const defaultLayoutFactory: LayoutFactory = (type: string, graph: Graph): Layout
       return new ForceLayout(graph);
     case 'Grid':
       return new GridLayout(graph);
+    case 'ColaGroups':
+      return new ColaGroupsLayout(graph, { layoutOnDrag: false });
     default:
       return new ColaLayout(graph, { layoutOnDrag: false });
   }

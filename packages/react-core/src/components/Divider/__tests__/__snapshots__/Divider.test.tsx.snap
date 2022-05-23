@@ -1,33 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`divider using div 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-divider"
     role="separator"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`divider using hr 1`] = `
-<div>
+<DocumentFragment>
   <hr
     class="pf-c-divider"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`divider using li 1`] = `
-<div>
+<DocumentFragment>
   <li
     class="pf-c-divider"
     role="separator"
   />
-</div>
+</DocumentFragment>
 `;
 
 exports[`vertical divider 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-l-flex"
   >
@@ -45,5 +45,5 @@ exports[`vertical divider 1`] = `
       second item
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

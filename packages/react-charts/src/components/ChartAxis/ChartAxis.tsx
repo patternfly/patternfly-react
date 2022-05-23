@@ -385,7 +385,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -446,10 +446,11 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   containerComponent = <ChartContainer />,
   showGrid = false,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
 
   // destructure last
-  theme = getTheme(themeColor, themeVariant),
+  theme = getTheme(themeColor),
   ...rest
 }: ChartAxisProps) => {
   // Clone so users can override container props
@@ -459,13 +460,7 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   });
 
   // Note: containerComponent is required for theme
-  return (
-    <VictoryAxis
-      containerComponent={container}
-      theme={showGrid ? getAxisTheme(themeColor, themeVariant) : theme}
-      {...rest}
-    />
-  );
+  return <VictoryAxis containerComponent={container} theme={showGrid ? getAxisTheme(themeColor) : theme} {...rest} />;
 };
 ChartAxis.displayName = 'ChartAxis';
 

@@ -4,10 +4,16 @@ interface ChartClassNameInterface {
   className?: string;
 }
 
-// Copied from exenv
+/**
+ * Copied from exenv
+ * @private
+ */
 export const canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 
-// Returns the class name that will be applied to the outer-most div rendered by the chart's container
+/**
+ * Returns the class name that will be applied to the outer-most div rendered by the chart's container
+ * @private
+ */
 export const getClassName = ({ className }: ChartClassNameInterface) => {
   let cleanClassName;
 

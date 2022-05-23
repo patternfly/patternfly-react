@@ -8,6 +8,6 @@ import { LevelItem } from '../../LevelItem';
 import {} from '../..';
 
 it('LevelItem should match snapshot (auto-generated)', () => {
-  const view = render(<LevelItem children={<>ReactNode</>} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<LevelItem children={<>ReactNode</>} />);
+  expect(asFragment()).toMatchSnapshot();
 });

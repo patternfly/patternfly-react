@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChartBulletGroupTitle 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
@@ -24,11 +24,11 @@ exports[`ChartBulletGroupTitle 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`ChartBulletGroupTitle 2`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
@@ -51,11 +51,11 @@ exports[`ChartBulletGroupTitle 2`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`renders component data 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-chart"
     style="pointer-events: none; position: relative; width: 100%; height: 100%;"
@@ -76,7 +76,7 @@ exports[`renders component data 1`] = `
         <tspan
           dx="0"
           dy="0"
-          style="font-size: 24px; text-anchor: middle; font-family: var(--pf-chart-global--FontFamily); letter-spacing: var(--pf-chart-global--letter-spacing); fill: #252525; stroke: transparent;"
+          style="fill: var(--pf-chart-bullet--label--grouptitle--Fill, #151515); font-size: 24px; text-anchor: middle; font-family: var(--pf-chart-global--FontFamily, \\"RedHatText\\", \\"Overpass\\", overpass, helvetica, arial, sans-serif); letter-spacing: var(--pf-chart-global--letter-spacing, normal); stroke: transparent;"
           text-anchor="middle"
           x="225"
         >
@@ -85,7 +85,7 @@ exports[`renders component data 1`] = `
         <tspan
           dx="0"
           dy="13.5"
-          style="fill: #b8bbbe; font-size: 14px; text-anchor: middle; font-family: var(--pf-chart-global--FontFamily); letter-spacing: var(--pf-chart-global--letter-spacing); stroke: transparent;"
+          style="fill: var(--pf-chart-bullet--label--subtitle--Fill, #b8bbbe); font-size: 14px; text-anchor: middle; font-family: var(--pf-chart-global--FontFamily, \\"RedHatText\\", \\"Overpass\\", overpass, helvetica, arial, sans-serif); letter-spacing: var(--pf-chart-global--letter-spacing, normal); stroke: transparent;"
           text-anchor="middle"
           x="225"
         >
@@ -93,7 +93,7 @@ exports[`renders component data 1`] = `
         </tspan>
       </text>
       <line
-        style="fill: #f0f0f0; opacity: 1; stroke: #f0f0f0; stroke-width: 2;"
+        style="fill: var(--pf-chart-bullet--group-title--divider--Fill--Color, #f0f0f0); opacity: 1; stroke: var(--pf-chart-bullet--group-title--divider--stroke--Color, #f0f0f0); stroke-width: 2;"
         vector-effect="non-scaling-stroke"
         x1="0"
         x2="450"
@@ -112,5 +112,5 @@ exports[`renders component data 1`] = `
       />
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

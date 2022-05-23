@@ -5,13 +5,13 @@ import { ChartPoint } from './ChartPoint';
 
 Object.values([true, false]).forEach(() => {
   test('ChartPoint', () => {
-    const view = render(<ChartLegend dataComponent={<ChartPoint />} />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartLegend dataComponent={<ChartPoint />} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = render(
+  const { asFragment } = render(
     <ChartLegend
       data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }]}
       title="Average number of pets"
@@ -19,5 +19,5 @@ test('renders component data', () => {
       width={200}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -1,3 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SelectGroup renders with children successfully 1`] = `"<div data-testid=\\"test-id\\" class=\\"pf-c-select__menu-group\\"><div class=\\"pf-c-select__menu-group-title\\" id=\\"\\" aria-hidden=\\"true\\">test</div><ul role=\\"listbox\\"><div>child</div></ul></div>"`;
+exports[`SelectGroup renders with children successfully 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-select__menu-group"
+  >
+    <div
+      aria-hidden="true"
+      class="pf-c-select__menu-group-title"
+      id=""
+    >
+      test
+    </div>
+    <ul
+      role="listbox"
+    >
+      <div>
+        child
+      </div>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

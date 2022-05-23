@@ -8,8 +8,8 @@ import { AlertGroup } from '../../AlertGroup';
 import {} from '../..';
 
 it('AlertGroup should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <AlertGroup className={'string'} children={<div>ReactNode</div>} isToast={true} appendTo={undefined} />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

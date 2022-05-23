@@ -4,12 +4,12 @@ import { ChartLabel } from './ChartLabel';
 
 Object.values([true, false]).forEach(() => {
   test('ChartLabel', () => {
-    const view = render(<ChartLabel />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartLabel />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders component text', () => {
-  const view = render(<ChartLabel text="This is a test" />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<ChartLabel text="This is a test" />);
+  expect(asFragment()).toMatchSnapshot();
 });

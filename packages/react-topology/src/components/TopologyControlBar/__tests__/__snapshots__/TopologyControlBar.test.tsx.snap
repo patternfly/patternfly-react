@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopologyControlBar should accept button options correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-toolbar default-test-class"
+    data-ouia-component-id="OUIA-Generated-Toolbar-2"
+    data-ouia-component-type="PF4/Toolbar"
+    data-ouia-safe="true"
+    id="pf-topology-control-bar-1"
+    style="background-color: transparent; padding: 0px;"
+  >
+    <div
+      class="pf-c-toolbar__content"
+    >
+      <div
+        class="pf-c-toolbar__content-section"
+      >
+        <div
+          class="pf-c-toolbar__group pf-m-space-items-none"
+        >
+          <div
+            class="pf-c-toolbar__item"
+          >
+            <button
+              aria-disabled="false"
+              class="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+              data-ouia-component-id="OUIA-Generated-Button-tertiary-6"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe="true"
+              id="zoom-in"
+              type="button"
+            >
+              <span>
+                test zoom in
+              </span>
+              <span
+                class="pf-u-screen-reader"
+              >
+                test-zoom-in-aria-label
+              </span>
+            </button>
+          </div>
+          <div
+            class="pf-c-toolbar__item"
+          >
+            <button
+              aria-disabled="false"
+              class="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+              data-ouia-component-id="OUIA-Generated-Button-tertiary-7"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe="true"
+              id="zoom-out"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
+              >
+                <path
+                  d="M304 192v32c0 6.6-5.4 12-12 12H124c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
+                />
+              </svg>
+              <span
+                class="pf-u-screen-reader"
+              >
+                Zoom Out
+              </span>
+            </button>
+          </div>
+          <div
+            class="pf-c-toolbar__item"
+          >
+            <button
+              aria-disabled="false"
+              class="pf-c-button pf-m-tertiary pf-topology-control-bar__button pf-m-disabled"
+              data-ouia-component-id="OUIA-Generated-Button-tertiary-8"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe="true"
+              id="reset-view"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M0 180V56c0-13.3 10.7-24 24-24h124c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H64v84c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12zM288 44v40c0 6.6 5.4 12 12 12h84v84c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12V56c0-13.3-10.7-24-24-24H300c-6.6 0-12 5.4-12 12zm148 276h-40c-6.6 0-12 5.4-12 12v84h-84c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h124c13.3 0 24-10.7 24-24V332c0-6.6-5.4-12-12-12zM160 468v-40c0-6.6-5.4-12-12-12H64v-84c0-6.6-5.4-12-12-12H12c-6.6 0-12 5.4-12 12v124c0 13.3 10.7 24 24 24h124c6.6 0 12-5.4 12-12z"
+                />
+              </svg>
+              <span
+                class="pf-u-screen-reader"
+              >
+                Reset View
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="pf-c-toolbar__expandable-content"
+        id="pf-topology-control-bar-1-expandable-content-1"
+      >
+        <div
+          class="pf-c-toolbar__group"
+        />
+      </div>
+    </div>
+    <div
+      class="pf-c-toolbar__content pf-m-hidden"
+      hidden=""
+    >
+      <div
+        class="pf-c-toolbar__group"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`TopologyControlBar should display the default controls correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-toolbar default-test-class"
+    data-ouia-component-id="OUIA-Generated-Toolbar-1"
+    data-ouia-component-type="PF4/Toolbar"
+    data-ouia-safe="true"
+    id="pf-topology-control-bar-0"
+    style="background-color: transparent; padding: 0px;"
+  >
+    <div
+      class="pf-c-toolbar__content"
+    >
+      <div
+        class="pf-c-toolbar__content-section"
+      >
+        <div
+          class="pf-c-toolbar__group pf-m-space-items-none"
+        >
+          <div
+            class="pf-c-toolbar__item"
+          >
+            <button
+              aria-disabled="false"
+              class="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+              data-ouia-component-id="OUIA-Generated-Button-tertiary-1"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe="true"
+              id="zoom-in"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
+              >
+                <path
+                  d="M304 192v32c0 6.6-5.4 12-12 12h-56v56c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-56h-56c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h56v-56c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v56h56c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
+                />
+              </svg>
+              <span
+                class="pf-u-screen-reader"
+              >
+                Zoom In
+              </span>
+            </button>
+          </div>
+          <div
+            class="pf-c-toolbar__item"
+          >
+            <button
+              aria-disabled="false"
+              class="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+              data-ouia-component-id="OUIA-Generated-Button-tertiary-2"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe="true"
+              id="zoom-out"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 512 512"
+                width="1em"
+              >
+                <path
+                  d="M304 192v32c0 6.6-5.4 12-12 12H124c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
+                />
+              </svg>
+              <span
+                class="pf-u-screen-reader"
+              >
+                Zoom Out
+              </span>
+            </button>
+          </div>
+          <div
+            class="pf-c-toolbar__item"
+          >
+            <button
+              aria-disabled="false"
+              class="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+              data-ouia-component-id="OUIA-Generated-Button-tertiary-3"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe="true"
+              id="fit-to-screen"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M448 344v112a23.94 23.94 0 0 1-24 24H312c-21.39 0-32.09-25.9-17-41l36.2-36.2L224 295.6 116.77 402.9 153 439c15.09 15.1 4.39 41-17 41H24a23.94 23.94 0 0 1-24-24V344c0-21.4 25.89-32.1 41-17l36.19 36.2L184.46 256 77.18 148.7 41 185c-15.1 15.1-41 4.4-41-17V56a23.94 23.94 0 0 1 24-24h112c21.39 0 32.09 25.9 17 41l-36.2 36.2L224 216.4l107.23-107.3L295 73c-15.09-15.1-4.39-41 17-41h112a23.94 23.94 0 0 1 24 24v112c0 21.4-25.89 32.1-41 17l-36.19-36.2L263.54 256l107.28 107.3L407 327.1c15.1-15.2 41-4.5 41 16.9z"
+                />
+              </svg>
+              <span
+                class="pf-u-screen-reader"
+              >
+                Fit to Screen
+              </span>
+            </button>
+          </div>
+          <div
+            class="pf-c-toolbar__item"
+          >
+            <button
+              aria-disabled="false"
+              class="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+              data-ouia-component-id="OUIA-Generated-Button-tertiary-4"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe="true"
+              id="reset-view"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M0 180V56c0-13.3 10.7-24 24-24h124c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H64v84c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12zM288 44v40c0 6.6 5.4 12 12 12h84v84c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12V56c0-13.3-10.7-24-24-24H300c-6.6 0-12 5.4-12 12zm148 276h-40c-6.6 0-12 5.4-12 12v84h-84c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h124c13.3 0 24-10.7 24-24V332c0-6.6-5.4-12-12-12zM160 468v-40c0-6.6-5.4-12-12-12H64v-84c0-6.6-5.4-12-12-12H12c-6.6 0-12 5.4-12 12v124c0 13.3 10.7 24 24 24h124c6.6 0 12-5.4 12-12z"
+                />
+              </svg>
+              <span
+                class="pf-u-screen-reader"
+              >
+                Reset View
+              </span>
+            </button>
+          </div>
+          <div
+            class="pf-c-toolbar__item"
+          >
+            <button
+              aria-disabled="false"
+              class="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+              data-ouia-component-id="OUIA-Generated-Button-tertiary-5"
+              data-ouia-component-type="PF4/Button"
+              data-ouia-safe="true"
+              id="legend"
+              type="button"
+            >
+              Legend
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="pf-c-toolbar__expandable-content"
+        id="pf-topology-control-bar-0-expandable-content-0"
+      >
+        <div
+          class="pf-c-toolbar__group"
+        />
+      </div>
+    </div>
+    <div
+      class="pf-c-toolbar__content pf-m-hidden"
+      hidden=""
+    >
+      <div
+        class="pf-c-toolbar__group"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

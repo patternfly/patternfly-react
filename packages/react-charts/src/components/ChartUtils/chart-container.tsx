@@ -1,7 +1,11 @@
+/* eslint-disable camelcase */
+import chart_container_cursor_line_Fill from '@patternfly/react-tokens/dist/esm/chart_container_cursor_line_Fill';
+
 import * as React from 'react';
 import { ContainerType, createContainer as victoryCreateContainer } from 'victory-create-container';
 import { ChartCursorTooltip } from '../ChartCursorTooltip';
 import { ChartLabel } from '../ChartLabel';
+import { LineSegment } from 'victory-core';
 
 /**
  * Makes a container component with multiple behaviors. It allows you to effectively combine any two
@@ -19,6 +23,7 @@ import { ChartLabel } from '../ChartLabel';
  *
  * @param {string} behaviorA 'brush', 'cursor', 'selection', 'voronoi', or 'zoom'
  * @param {string} behaviorB 'brush', 'cursor', 'selection', 'voronoi', or 'zoom'
+ * @public
  */
 export const createContainer = (behaviorA: ContainerType, behaviorB: ContainerType) => {
   const container: any = victoryCreateContainer(behaviorA, behaviorB);
@@ -27,6 +32,13 @@ export const createContainer = (behaviorA: ContainerType, behaviorB: ContainerTy
 
   if (isCursor) {
     container.defaultProps.cursorLabelComponent = <ChartLabel textAnchor="start" />;
+    container.defaultProps.cursorComponent = (
+      <LineSegment
+        style={{
+          stroke: chart_container_cursor_line_Fill.var
+        }}
+      />
+    );
   }
   if (isVoronoi) {
     container.defaultProps.labelComponent = <ChartCursorTooltip />;

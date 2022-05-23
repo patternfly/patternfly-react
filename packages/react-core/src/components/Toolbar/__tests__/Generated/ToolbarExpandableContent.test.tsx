@@ -8,7 +8,7 @@ import { ToolbarExpandableContent } from '../../ToolbarExpandableContent';
 import {} from '../..';
 
 it('ToolbarExpandableContent should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <ToolbarExpandableContent
       className={'string'}
       isExpanded={false}
@@ -19,5 +19,5 @@ it('ToolbarExpandableContent should match snapshot (auto-generated)', () => {
       showClearFiltersButton={true}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -11,13 +11,13 @@ describe('InputGroup', () => {
     // In this test, TextInput is a form-control component and Button is not.
     // If Button has an id props, this should be used in aria-describedby.
     render(
-      <InputGroup data-testid="input-group-test-id">
+      <InputGroup>
         <TextInput value="some data" aria-label="some text" />
         <Button variant="primary" id="button-id">
           hello
         </Button>
       </InputGroup>
     );
-    expect(screen.getByLabelText('some text').getAttribute('aria-describedby')).toEqual('button-id');
+    expect(screen.getByLabelText('some text')).toHaveAttribute('aria-describedby', 'button-id');
   });
 });

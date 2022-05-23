@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NotificationBadge count 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     class="pf-c-button pf-m-plain"
@@ -33,11 +33,11 @@ exports[`NotificationBadge count 1`] = `
       </span>
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`false NotificationBadge 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     class="pf-c-button pf-m-plain"
@@ -64,11 +64,11 @@ exports[`false NotificationBadge 1`] = `
       </svg>
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`false NotificationBadge needs attention 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     class="pf-c-button pf-m-plain"
@@ -80,15 +80,14 @@ exports[`false NotificationBadge needs attention 1`] = `
     <span
       class="pf-c-notification-badge pf-m-attention"
     >
-      does not need attention
-       Badge
+      does not need attention Badge
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`true NotificationBadge 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     class="pf-c-button pf-m-plain"
@@ -115,11 +114,11 @@ exports[`true NotificationBadge 1`] = `
       </svg>
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;
 
 exports[`true NotificationBadge needs attention 1`] = `
-<div>
+<DocumentFragment>
   <button
     aria-disabled="false"
     class="pf-c-button pf-m-plain"
@@ -131,9 +130,8 @@ exports[`true NotificationBadge needs attention 1`] = `
     <span
       class="pf-c-notification-badge pf-m-attention"
     >
-      needs attention
-       Badge
+      needs attention Badge
     </span>
   </button>
-</div>
+</DocumentFragment>
 `;

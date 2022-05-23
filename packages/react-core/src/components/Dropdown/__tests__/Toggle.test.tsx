@@ -4,10 +4,10 @@ import { DropdownToggle } from '../DropdownToggle';
 import { KebabToggle } from '../KebabToggle';
 
 test('Dropdown toggle', () => {
-  const view = render(<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>);
+  expect(asFragment()).toMatchSnapshot();
 });
 test('Kebab toggle', () => {
-  const view = render(<KebabToggle id="Dropdown Toggle" />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<KebabToggle id="Dropdown Toggle" />);
+  expect(asFragment()).toMatchSnapshot();
 });

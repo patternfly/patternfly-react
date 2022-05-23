@@ -4,13 +4,13 @@ import { Masthead, MastheadBrand, MastheadContent, MastheadMain, MastheadToggle 
 
 describe('Masthead', () => {
   test('verify basic', () => {
-    const view = render(<Masthead>test</Masthead>);
+    const { asFragment } = render(<Masthead>test</Masthead>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('verify full structure', () => {
-    const view = render(
+    const { asFragment } = render(
       <Masthead>
         <MastheadToggle>Toggle</MastheadToggle>
         <MastheadMain>
@@ -22,17 +22,17 @@ describe('Masthead', () => {
       </Masthead>
     );
 
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('verify custom class', () => {
-    const view = render(<Masthead className="custom-css">test</Masthead>);
+    const { asFragment } = render(<Masthead className="custom-css">test</Masthead>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('verify inline display breakpoints', () => {
-    const view = render(
+    const { asFragment } = render(
       <Masthead
         display={{ default: 'inline', sm: 'inline', md: 'inline', lg: 'inline', xl: 'inline', '2xl': 'inline' }}
       >
@@ -40,17 +40,17 @@ describe('Masthead', () => {
       </Masthead>
     );
 
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('verify stack display breakpoints', () => {
-    const view = render(
+    const { asFragment } = render(
       <Masthead display={{ default: 'stack', sm: 'stack', md: 'stack', lg: 'stack', xl: 'stack', '2xl': 'stack' }}>
         test
       </Masthead>
     );
 
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   Object.values(['insetNone', 'insetXs', 'insetSm', 'insetMd', 'insetLg', 'insetXl', 'inset2xl', 'inset3xl'] as [
@@ -64,72 +64,72 @@ describe('Masthead', () => {
     'inset3xl'
   ]).forEach(inset => {
     test(`verify ${inset} inset breakpoints`, () => {
-      const view = render(
+      const { asFragment } = render(
         <Masthead inset={{ default: inset, sm: inset, md: inset, lg: inset, xl: inset, '2xl': inset }}>test</Masthead>
       );
-      expect(view.container).toMatchSnapshot();
+      expect(asFragment()).toMatchSnapshot();
     });
   });
 });
 
 describe('MastheadBrand', () => {
   test('verify basic', () => {
-    const view = render(<MastheadBrand>test</MastheadBrand>);
+    const { asFragment } = render(<MastheadBrand>test</MastheadBrand>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('verify custom class', () => {
-    const view = render(<MastheadBrand className="custom-css">test</MastheadBrand>);
+    const { asFragment } = render(<MastheadBrand className="custom-css">test</MastheadBrand>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('verify custom component', () => {
-    const view = render(<MastheadBrand component="div">test</MastheadBrand>);
+    const { asFragment } = render(<MastheadBrand component="div">test</MastheadBrand>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 describe('MastheadContent', () => {
   test('verify basic', () => {
-    const view = render(<MastheadContent>test</MastheadContent>);
+    const { asFragment } = render(<MastheadContent>test</MastheadContent>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('verify custom class', () => {
-    const view = render(<MastheadContent className="custom-css">test</MastheadContent>);
+    const { asFragment } = render(<MastheadContent className="custom-css">test</MastheadContent>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 describe('MastheadMain', () => {
   test('verify basic', () => {
-    const view = render(<MastheadMain>test</MastheadMain>);
+    const { asFragment } = render(<MastheadMain>test</MastheadMain>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('verify custom class', () => {
-    const view = render(<MastheadMain className="custom-css">test</MastheadMain>);
+    const { asFragment } = render(<MastheadMain className="custom-css">test</MastheadMain>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 describe('MastheadToggle', () => {
   test('verify basic', () => {
-    const view = render(<MastheadToggle>test</MastheadToggle>);
+    const { asFragment } = render(<MastheadToggle>test</MastheadToggle>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('verify custom class', () => {
-    const view = render(<MastheadToggle className="custom-css">test</MastheadToggle>);
+    const { asFragment } = render(<MastheadToggle className="custom-css">test</MastheadToggle>);
 
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

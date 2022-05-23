@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Progress measure location inside 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-inside pf-m-lg pf-m-singleline"
     id="inside-progress"
@@ -34,11 +34,11 @@ exports[`Progress measure location inside 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Progress measure location inside and small should render large 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-inside pf-m-lg pf-m-singleline"
     id="large-progress"
@@ -71,11 +71,11 @@ exports[`Progress measure location inside and small should render large 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Progress measure location none 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-singleline"
     id="none-progress"
@@ -106,11 +106,11 @@ exports[`Progress measure location none 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Progress measure location outside 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-outside pf-m-singleline"
     id="outside-progress"
@@ -147,11 +147,11 @@ exports[`Progress measure location outside 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Progress measure location top 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-singleline"
     id="top-progress"
@@ -188,11 +188,11 @@ exports[`Progress measure location top 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Progress size lg 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-lg pf-m-singleline"
     id="lg-progress"
@@ -229,11 +229,11 @@ exports[`Progress size lg 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Progress size md 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-singleline"
     id="md-progress"
@@ -270,11 +270,11 @@ exports[`Progress size md 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Progress size sm 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-sm pf-m-singleline"
     id="sm-progress"
@@ -311,11 +311,11 @@ exports[`Progress size sm 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Progress variant danger 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-danger pf-m-singleline"
     id="danger-progress"
@@ -369,11 +369,11 @@ exports[`Progress variant danger 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Progress variant success 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-success pf-m-singleline"
     id="success-progress"
@@ -427,11 +427,11 @@ exports[`Progress variant success 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Progress variant warning 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-warning pf-m-singleline"
     id="warning-progress"
@@ -485,11 +485,11 @@ exports[`Progress variant warning 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Progress with aria-valuetext 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-singleline"
     id="progress-aria-valuetext"
@@ -527,11 +527,11 @@ exports[`Progress with aria-valuetext 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`Simple progress 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-singleline"
     id="progress-simple-example"
@@ -568,11 +568,11 @@ exports[`Simple progress 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`additional label 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-singleline"
     id="additional-label"
@@ -609,11 +609,11 @@ exports[`additional label 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`no value specified 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-singleline"
     id="no-value"
@@ -650,11 +650,11 @@ exports[`no value specified 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`value higher than maxValue 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-singleline"
     id="higher-max-value"
@@ -691,11 +691,11 @@ exports[`value higher than maxValue 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`value lower than minValue 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-singleline"
     id="lower-min-value"
@@ -732,11 +732,11 @@ exports[`value lower than minValue 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`value scaled between minValue and maxValue 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-singleline"
     id="scaled-range-value"
@@ -773,11 +773,11 @@ exports[`value scaled between minValue and maxValue 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`value scaled with maxValue 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-singleline"
     id="scaled-max-value"
@@ -814,11 +814,11 @@ exports[`value scaled with maxValue 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`value scaled with minValue 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-progress pf-m-singleline"
     id="scaled-min-value"
@@ -855,5 +855,5 @@ exports[`value scaled with minValue 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

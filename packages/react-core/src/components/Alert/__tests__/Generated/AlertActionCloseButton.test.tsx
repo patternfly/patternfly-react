@@ -7,7 +7,7 @@ import { AlertContext } from '../../AlertContext';
 
 describe('AlertActionCloseButton', () => {
   it('should match snapshot', () => {
-    const view = render(
+    const { asFragment } = render(
       <AlertContext.Provider value={{ title: 'test title', variantLabel: 'some label' }}>
         <AlertActionCloseButton
           className=""
@@ -17,6 +17,6 @@ describe('AlertActionCloseButton', () => {
         />
       </AlertContext.Provider>
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

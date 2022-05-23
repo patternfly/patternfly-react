@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataListToggle should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <div
     aria-labelledby="''"
     class="pf-c-data-list__item-control ''"
@@ -41,5 +41,5 @@ exports[`DataListToggle should match snapshot (auto-generated) 1`] = `
       </button>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;

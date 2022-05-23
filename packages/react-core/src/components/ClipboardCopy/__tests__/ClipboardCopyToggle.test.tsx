@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
 import { ClipboardCopyToggle, ClipboardCopyToggleProps } from '../ClipboardCopyToggle';
 
 const props: ClipboardCopyToggleProps = {
@@ -15,9 +17,9 @@ const props: ClipboardCopyToggleProps = {
 describe('ClipboardCopyToggle', () => {
   test('toggle button render', () => {
     const desc = 'toggle content';
-    const view = render(<ClipboardCopyToggle {...props} aria-label={desc} />);
+    const { asFragment } = render(<ClipboardCopyToggle {...props} aria-label={desc} />);
 
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('toggle button onClick', () => {
@@ -25,20 +27,20 @@ describe('ClipboardCopyToggle', () => {
     render(<ClipboardCopyToggle {...props} onClick={onclick} />);
 
     userEvent.click(screen.getByRole('button'));
-    expect(onclick).toBeCalled();
+    expect(onclick).toHaveBeenCalled();
   });
 
   test('has aria-expanded set to true when isExpanded is true', () => {
     render(<ClipboardCopyToggle {...props} isExpanded />);
 
     const toggleButton = screen.getByRole('button');
-    expect(toggleButton.getAttribute('aria-expanded')).toEqual('true');
+    expect(toggleButton).toHaveAttribute('aria-expanded', 'true');
   });
 
   test('has aria-expanded set to false when isExpanded is false', () => {
     render(<ClipboardCopyToggle {...props} />);
 
     const toggleButton = screen.getByRole('button');
-    expect(toggleButton.getAttribute('aria-expanded')).toEqual('false');
+    expect(toggleButton).toHaveAttribute('aria-expanded', 'false');
   });
 });

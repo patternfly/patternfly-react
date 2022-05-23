@@ -81,7 +81,7 @@ export const ModalTabs: React.FunctionComponent = () => {
 
   return (
     <React.Fragment>
-      <DashboardWrapper mainContainerId="main-content-card-view-default-nav" breadcrumb={null}>
+      <DashboardWrapper mainContainerId="main-content-card-view-default-nav">
         <PageSection variant={PageSectionVariants.light}>
           <TextContent>
             <Text component="h1">Projects</Text>
@@ -89,14 +89,17 @@ export const ModalTabs: React.FunctionComponent = () => {
           </TextContent>
         </PageSection>
         <PageSection isFilled>
-          <Gallery hasGutter>
+          <Gallery hasGutter aria-label="Selectable card container">
             {products.map(product => (
               <Card
                 isSelectable
                 isSelectableRaised
+                hasSelectableInput
                 isCompact
                 key={product.id}
+                id={product.name.replace(/ /g, '-')}
                 onClick={onCardClick(product)}
+                onSelectableInputChange={() => onCardClick(product)()}
                 onKeyPress={onCardKeyPress(product)}
               >
                 <CardTitle>{product.name}</CardTitle>

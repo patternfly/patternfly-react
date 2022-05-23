@@ -2,7 +2,6 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
 
 import { Radio } from '../Radio';
 
@@ -27,12 +26,16 @@ describe('Radio', () => {
   });
 
   test('isLabelBeforeButton', () => {
-    const { asFragment } = render(<Radio id="check" isLabelBeforeButton label="Radio label" aria-label="check" name="check" />);
+    const { asFragment } = render(
+      <Radio id="check" isLabelBeforeButton label="Radio label" aria-label="check" name="check" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('isLabelWrapped', () => {
-    const { asFragment } = render(<Radio id="check" isLabelWrapped label="Radio label" aria-label="check" name="check" />);
+    const { asFragment } = render(
+      <Radio id="check" isLabelWrapped label="Radio label" aria-label="check" name="check" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -43,22 +46,30 @@ describe('Radio', () => {
 
   test('label is function', () => {
     const functionLabel = () => <h1>Header</h1>;
-    const { asFragment } = render(<Radio label={functionLabel()} id="check" isChecked aria-label="check" name="check" />);
+    const { asFragment } = render(
+      <Radio label={functionLabel()} id="check" isChecked aria-label="check" name="check" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('label is node', () => {
-    const { asFragment } = render(<Radio label={<h1>Header</h1>} id="check" isChecked aria-label="check" name="check" />);
+    const { asFragment } = render(
+      <Radio label={<h1>Header</h1>} id="check" isChecked aria-label="check" name="check" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('passing class', () => {
-    const { asFragment } = render(<Radio label="label" className="class-123" id="check" isChecked aria-label="check" name="check" />);
+    const { asFragment } = render(
+      <Radio label="label" className="class-123" id="check" isChecked aria-label="check" name="check" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('passing HTML attribute', () => {
-    const { asFragment } = render(<Radio label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" name="check" />);
+    const { asFragment } = render(
+      <Radio label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" name="check" />
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -85,6 +96,6 @@ describe('Radio', () => {
 
     render(<Radio id={undefined} name="check" aria-label="check" description="Text description..." />);
 
-    expect(myMock).toBeCalled();
+    expect(myMock).toHaveBeenCalled();
   });
 });

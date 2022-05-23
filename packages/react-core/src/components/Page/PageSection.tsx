@@ -101,6 +101,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
       hasOverflowScroll && styles.modifiers.overflowScroll,
       className
     )}
+    {...(hasOverflowScroll && { tabIndex: 0 })}
   >
     {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}
     {!isWidthLimited && children}

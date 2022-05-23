@@ -75,10 +75,11 @@ function writeTokens(tokens) {
       .map(values => Object.entries(values))
       .reduce((acc, val) => acc.concat(val), []) // flatten
       .forEach(([oldTokenName, { name, value }]) => {
+        const isChart = oldTokenName.includes('chart');
         const oldToken = {
           name,
-          value: oldTokenName.includes('chart') && !isNaN(+value) ? +value : value,
-          var: `var(${name})`
+          value: isChart && !isNaN(+value) ? +value : value,
+          var: isChart ? `var(${name}, ${value})` : `var(${name})` // Include fallback value for chart vars
         };
         const oldTokenString = JSON.stringify(oldToken, null, 2);
         writeESMExport(oldTokenName, oldTokenString);

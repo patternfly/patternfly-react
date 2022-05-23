@@ -7,17 +7,20 @@ import { createContainer } from '../ChartUtils';
 
 Object.values([true, false]).forEach(() => {
   test('ChartCursorTooltip', () => {
-    const view = render(<ChartCursorTooltip text="This is a tooltip" />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartCursorTooltip text="This is a tooltip" />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('allows tooltip via container component', () => {
   const CursorVoronoiContainer = createContainer('cursor', 'voronoi');
-  const view = render(
+  const { asFragment } = render(
     <ChartGroup
       containerComponent={
-        <CursorVoronoiContainer labels={point => 'y: ' + point.y} labelComponent={<ChartCursorTooltip />} />
+        <CursorVoronoiContainer
+          labels={(point: { y: number }) => 'y: ' + point.y}
+          labelComponent={<ChartCursorTooltip />}
+        />
       }
       height={200}
       width={200}
@@ -41,5 +44,5 @@ test('allows tooltip via container component', () => {
       />
     </ChartGroup>
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

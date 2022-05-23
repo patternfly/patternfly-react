@@ -286,6 +286,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.PageManagedSidebarClosedDemo
   },
   {
+    id: 'pagination-button-variant-demo',
+    name: 'Pagination Button Variant Demo',
+    componentType: Examples.PaginationButtonVariantDemo
+  },
+  {
     id: 'pagination-demo',
     name: 'Pagination Demo',
     componentType: Examples.PaginationDemo
@@ -294,6 +299,11 @@ export const Demos: DemoInterface[] = [
     id: 'popover-demo',
     name: 'Popover Demo',
     componentType: Examples.PopoverDemo
+  },
+  {
+    id: 'progress-stepper-demo',
+    name: 'Progress Stepper Demo',
+    componentType: Examples.ProgressStepperDemo
   },
   {
     id: 'radio-demo',

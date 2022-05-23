@@ -97,7 +97,7 @@ export interface ChartBulletGroupTitleProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -126,12 +126,13 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
   standalone = true,
   subTitle,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
   title,
   titleComponent = <ChartLabel />,
 
   // destructure last
-  theme = getBulletGroupTitleTheme(themeColor, themeVariant),
+  theme = getBulletGroupTitleTheme(themeColor),
   height = theme.chart.height,
   width = theme.chart.width
 }: ChartBulletGroupTitleProps) => {

@@ -4,13 +4,13 @@ import { ChartDonutThreshold } from './ChartDonutThreshold';
 
 Object.values([true, false]).forEach(() => {
   test('ChartDonutThreshold', () => {
-    const view = render(<ChartDonutThreshold />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartDonutThreshold />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = render(
+  const { asFragment } = render(
     <ChartDonutThreshold
       data={[
         { x: 'Cats', y: 35 },
@@ -21,5 +21,5 @@ test('renders component data', () => {
       width={200}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

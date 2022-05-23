@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test About Modal Brand 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-about-modal-box__brand"
   >
@@ -11,5 +11,5 @@ exports[`test About Modal Brand 1`] = `
       src="testimage.."
     />
   </div>
-</div>
+</DocumentFragment>
 `;

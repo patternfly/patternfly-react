@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginMainBody className is added to the root element 1`] = `"<div class=\\"pf-c-login__main-body extra-class\\" data-testid=\\"test-id\\"></div>"`;
+exports[`LoginMainBody className is added to the root element 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-login__main-body extra-class"
+  />
+</DocumentFragment>
+`;
 
-exports[`LoginMainBody renders with PatternFly Core styles 1`] = `"<div class=\\"pf-c-login__main-body\\" data-testid=\\"test-id\\"></div>"`;
+exports[`LoginMainBody renders with PatternFly Core styles 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-login__main-body"
+  />
+</DocumentFragment>
+`;

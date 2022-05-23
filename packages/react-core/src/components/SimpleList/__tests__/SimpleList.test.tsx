@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom';
 
 import { SimpleList } from '../SimpleList';
 import { SimpleListGroup } from '../SimpleListGroup';
@@ -47,7 +46,7 @@ describe('SimpleList', () => {
     render(<SimpleList onSelect={onSelect}>{items}</SimpleList>);
 
     userEvent.click(screen.getByText('Item 1'));
-    expect(onSelect).toBeCalled();
+    expect(onSelect).toHaveBeenCalled();
   });
 
   test('renders anchor content', () => {
@@ -61,7 +60,7 @@ describe('SimpleList', () => {
     render(<SimpleList onSelect={onSelect}>{anchors}</SimpleList>);
 
     userEvent.click(screen.getByText('Item 1'));
-    expect(onSelect).toBeCalled();
+    expect(onSelect).toHaveBeenCalled();
   });
 });
 

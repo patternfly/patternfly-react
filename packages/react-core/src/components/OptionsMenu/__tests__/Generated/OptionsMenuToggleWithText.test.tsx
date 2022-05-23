@@ -8,7 +8,7 @@ import { OptionsMenuToggleWithText } from '../../OptionsMenuToggleWithText';
 import {} from '../..';
 
 it('OptionsMenuToggleWithText should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <OptionsMenuToggleWithText
       parentId={"''"}
       toggleText={<div>ReactNode</div>}
@@ -16,17 +16,13 @@ it('OptionsMenuToggleWithText should match snapshot (auto-generated)', () => {
       toggleButtonContents={<div>ReactNode</div>}
       toggleButtonContentsClassName={"''"}
       onToggle={() => null as any}
-      onEnter={(event: React.MouseEvent<HTMLButtonElement>) => undefined as void}
       isOpen={false}
       isPlain={false}
-      isFocused={false}
-      isHovered={false}
       isActive={false}
       isDisabled={false}
-      parentRef={document.body}
       aria-haspopup={true}
       aria-label={"'Options menu'"}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

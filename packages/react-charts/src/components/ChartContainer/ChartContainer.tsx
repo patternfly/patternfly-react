@@ -128,7 +128,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -150,10 +150,11 @@ export interface ChartContainerProps extends VictoryContainerProps {
 export const ChartContainer: React.FunctionComponent<ChartContainerProps> = ({
   className,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
 
   // destructure last
-  theme = getTheme(themeColor, themeVariant),
+  theme = getTheme(themeColor),
   ...rest
 }: ChartContainerProps) => {
   const chartClassName = getClassName({ className });

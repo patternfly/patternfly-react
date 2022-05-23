@@ -8,7 +8,7 @@ import { NavItem } from '../../NavItem';
 import {} from '../..';
 
 it('NavItem should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <NavItem
       children={<>ReactNode</>}
       className={"''"}
@@ -21,5 +21,5 @@ it('NavItem should match snapshot (auto-generated)', () => {
       component={'a'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

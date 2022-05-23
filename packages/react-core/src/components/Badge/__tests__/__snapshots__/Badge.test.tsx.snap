@@ -1,23 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`false Badge 1`] = `
-<div>
+<DocumentFragment>
   <span
     class="pf-c-badge pf-m-unread"
   >
-    unread
-     Badge
+    unread Badge
   </span>
-</div>
+</DocumentFragment>
 `;
 
 exports[`true Badge 1`] = `
-<div>
+<DocumentFragment>
   <span
     class="pf-c-badge pf-m-read"
   >
-    read
-     Badge
+    read Badge
   </span>
-</div>
+</DocumentFragment>
 `;

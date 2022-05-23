@@ -1,10 +1,10 @@
 import React from 'react';
 import {
   MenuToggle,
-  Menu,
-  MenuContent,
-  MenuGroup,
-  MenuList,
+  Panel,
+  PanelMain,
+  PanelMainBody,
+  Title,
   Popper,
   TreeView,
   TreeViewDataItem
@@ -14,6 +14,7 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [checkedItems, setCheckedItems] = React.useState<TreeViewDataItem[]>([]);
   const toggleRef = React.useRef<HTMLButtonElement>();
+  const containerRef = React.useRef<HTMLDivElement>();
   const menuRef = React.useRef<HTMLDivElement>();
 
   const statusOptions: TreeViewDataItem[] = [
@@ -85,7 +86,7 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
       customBadgeContent: 0
     }
   ];
-  // Helper functions
+  // Helper functions for tree
   const isChecked = (dataItem: TreeViewDataItem) => checkedItems.some(item => item.id === dataItem.id);
   const areAllDescendantsChecked = (dataItem: TreeViewDataItem) =>
     dataItem.children ? dataItem.children.every(child => areAllDescendantsChecked(child)) : isChecked(dataItem);
@@ -163,18 +164,32 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
     );
   };
 
+  // Controls keys that should open/close the menu
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (!isOpen) {
       return;
     }
     if (menuRef.current.contains(event.target as Node) || toggleRef.current.contains(event.target as Node)) {
-      if (event.key === 'Escape' || event.key === 'Tab') {
+      // The escape key when pressed while inside the menu should close the menu and refocus the toggle
+      if (event.key === 'Escape') {
         setIsOpen(!isOpen);
         toggleRef.current.focus();
+      }
+
+      // The tab key when pressed while inside the menu and on the contained last tree view should close the menu and refocus the toggle
+      // Shift tab should keep the default behavior to return to a previous tree view
+      if (event.key === 'Tab' && !event.shiftKey) {
+        const treeList = menuRef.current.querySelectorAll('.pf-c-tree-view');
+        if (treeList[treeList.length - 1].contains(event.target as Node)) {
+          event.preventDefault();
+          setIsOpen(!isOpen);
+          toggleRef.current.focus();
+        }
       }
     }
   };
 
+  // Controls that a click outside the menu while the menu is open should close the menu
   const handleClickOutside = (event: MouseEvent) => {
     if (isOpen && !menuRef.current.contains(event.target as Node)) {
       setIsOpen(false);
@@ -194,7 +209,7 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
       if (menuRef.current) {
-        const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+        const firstElement = menuRef.current.querySelector('li button:not(:disabled)');
         firstElement && (firstElement as HTMLElement).focus();
       }
     }, 0);
@@ -202,39 +217,58 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
-      {isOpen ? 'Expanded' : 'Collapsed'}
-    </MenuToggle>
+    <div ref={containerRef}>
+      <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+        {isOpen ? 'Expanded' : 'Collapsed'}
+      </MenuToggle>
+    </div>
   );
   const statusMapped = statusOptions.map(mapTree);
   const roleMapped = roleOptions.map(mapTree);
   const menu = (
-    <Menu
+    <Panel
       ref={menuRef}
-      // eslint-disable-next-line no-console
-      onSelect={(_ev, itemId) => console.log('selected', itemId)}
-      style={
-        {
-          '--pf-c-menu--Width': '300px'
-        } as React.CSSProperties
-      }
+      variant="raised"
+      style={{
+        width: '300px'
+      }}
     >
-      <MenuContent>
-        <MenuList>
-          <MenuGroup label="Status">
+      <PanelMain>
+        <section>
+          <PanelMainBody style={{ paddingBottom: 0 }}>
+            <Title headingLevel="h1" size={'md'}>
+              Status
+            </Title>
+          </PanelMainBody>
+          <PanelMainBody style={{ padding: 0 }}>
             <TreeView
               data={statusMapped}
               hasBadges
               hasChecks
               onCheck={(event, item) => onCheck(event, item, 'status')}
             />
-          </MenuGroup>
-          <MenuGroup label="Role">
+          </PanelMainBody>
+        </section>
+        <section>
+          <PanelMainBody style={{ paddingBottom: 0, paddingTop: 0 }}>
+            <Title headingLevel="h1" size={'md'}>
+              Roles
+            </Title>
+          </PanelMainBody>
+          <PanelMainBody style={{ padding: 0 }}>
             <TreeView data={roleMapped} hasBadges hasChecks onCheck={(event, item) => onCheck(event, item, 'role')} />
-          </MenuGroup>
-        </MenuList>
-      </MenuContent>
-    </Menu>
+          </PanelMainBody>
+        </section>
+      </PanelMain>
+    </Panel>
   );
-  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
+  return (
+    <Popper
+      trigger={toggle}
+      popper={menu}
+      isVisible={isOpen}
+      appendTo={containerRef.current}
+      popperMatchesTriggerWidth={false}
+    />
+  );
 };

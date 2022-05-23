@@ -6,8 +6,11 @@ interface ChartPieOriginInterface {
   width: number; // Chart width
 }
 
-// Returns the origin for pie based charts. For example, something with a radius such as pie, donut, donut utilization,
-// and donut threshold.
+/**
+ * Returns the origin for pie based charts. For example, something with a radius such as pie, donut, donut utilization,
+ * and donut threshold.
+ * @private
+ */
 export const getPieOrigin = ({ height, padding, width }: ChartPieOriginInterface) => {
   const { top, bottom, left, right } = Helpers.getPadding({ padding });
   const radius = Helpers.getRadius({ height, width, padding });

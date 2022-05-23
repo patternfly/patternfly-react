@@ -20,7 +20,7 @@ Toolbar items are individual components that can be placed inside of a toolbar. 
 ```js
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent } from '@patternfly/react-core';
-import { Button, ButtonVariant, InputGroup, SearchInput } from '@patternfly/react-core';
+import { Button, SearchInput } from '@patternfly/react-core';
 
 class ToolbarItems extends React.Component {
   constructor(props) {
@@ -133,7 +133,7 @@ class ToolbarSpacers extends React.Component {
 
 ```js
 import React from 'react';
-import { Toolbar, ToolbarItem, ToolbarGroup, ToolbarContent } from '@patternfly/react-core';
+import { Toolbar, ToolbarItem, ToolbarContent } from '@patternfly/react-core';
 import { Button } from '@patternfly/react-core';
 
 class ToolbarWidths extends React.Component {
@@ -237,16 +237,7 @@ class ToolbarSpacers extends React.Component {
 
 ```js
 import React from 'react';
-import {
-  Toolbar,
-  ToolbarItem,
-  ToolbarContent,
-  Button,
-  ButtonVariant,
-  InputGroup,
-  TextInput,
-  Checkbox
-} from '@patternfly/react-core';
+import { Toolbar, ToolbarItem, ToolbarContent, SearchInput, Checkbox } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 const ToolbarItems = () => {
@@ -261,12 +252,7 @@ const ToolbarItems = () => {
         <Toolbar id="toolbar-spacers" inset={{ default: 'insetNone' }} isSticky={isSticky}>
           <ToolbarContent>
             <ToolbarItem>
-              <InputGroup>
-                <TextInput name="textInput1" id="textInput1" type="search" aria-label="search input example" />
-                <Button variant={ButtonVariant.control} aria-label="search button for search input">
-                  <SearchIcon />
-                </Button>
-              </InputGroup>
+              <SearchInput aria-label="search input example" />
             </ToolbarItem>
             <ToolbarItem>
               <Checkbox
@@ -500,15 +486,7 @@ A toggle group can be used when you want to collapse a set of items into an over
 ```js
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
-import {
-  Button,
-  ButtonVariant,
-  InputGroup,
-  Select,
-  SelectOption,
-  SelectVariant,
-  SearchInput
-} from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SearchInput } from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
 class ToolbarComponentMangedToggleGroup extends React.Component {
@@ -659,18 +637,10 @@ If the consumer would prefer to manage the expanded state of the toggle group fo
 ```js
 import React from 'react';
 import { Toolbar, ToolbarItem, ToolbarContent, ToolbarToggleGroup, ToolbarGroup } from '@patternfly/react-core';
-import {
-  Button,
-  ButtonVariant,
-  InputGroup,
-  Select,
-  SelectOption,
-  SelectVariant,
-  SearchInput
-} from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SearchInput } from '@patternfly/react-core';
 import FilterIcon from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 
-class ToolbarConsumerMangedToggleGroup extends React.Component {
+class ToolbarConsumerManagedToggleGroup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -835,8 +805,6 @@ import {
 } from '@patternfly/react-core';
 import {
   Button,
-  ButtonVariant,
-  InputGroup,
   Select,
   SelectOption,
   SelectVariant,

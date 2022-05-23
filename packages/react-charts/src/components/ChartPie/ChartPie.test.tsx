@@ -4,13 +4,13 @@ import { ChartPie } from './ChartPie';
 
 Object.values([true, false]).forEach(() => {
   test('ChartPie', () => {
-    const view = render(<ChartPie />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<ChartPie />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
 
 test('renders component data', () => {
-  const view = render(
+  const { asFragment } = render(
     <ChartPie
       data={[
         { x: 'Cats', y: 35 },
@@ -21,5 +21,5 @@ test('renders component data', () => {
       width={200}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

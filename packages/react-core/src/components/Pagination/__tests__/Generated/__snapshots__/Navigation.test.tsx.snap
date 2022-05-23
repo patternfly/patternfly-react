@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navigation should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <nav
     aria-label="'Pagination'"
     class="pf-c-pagination__nav ''"
@@ -131,5 +131,5 @@ exports[`Navigation should match snapshot (auto-generated) 1`] = `
       </button>
     </div>
   </nav>
-</div>
+</DocumentFragment>
 `;

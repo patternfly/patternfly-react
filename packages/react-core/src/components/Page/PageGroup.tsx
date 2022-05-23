@@ -37,6 +37,7 @@ export const PageGroup = ({
       hasOverflowScroll && styles.modifiers.overflowScroll,
       className
     )}
+    {...(hasOverflowScroll && { tabIndex: 0 })}
   >
     {children}
   </div>

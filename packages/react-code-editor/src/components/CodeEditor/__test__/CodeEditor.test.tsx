@@ -8,12 +8,12 @@ describe('CodeEditor', () => {
   });
 
   test('matches snapshot without props', () => {
-    const view = render(<CodeEditor />);
-    expect(view.container).toMatchSnapshot();
+    const { asFragment } = render(<CodeEditor />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('matches snapshot with all props', () => {
-    const view = render(
+    const { asFragment } = render(
       <CodeEditor
         isReadOnly
         isDarkTheme
@@ -27,6 +27,6 @@ describe('CodeEditor', () => {
         language={Language.javascript}
       />
     );
-    expect(view.container).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

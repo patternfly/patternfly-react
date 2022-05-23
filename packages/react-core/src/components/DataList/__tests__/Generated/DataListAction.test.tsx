@@ -8,7 +8,7 @@ import { DataListAction } from '../../DataListAction';
 import {} from '../..';
 
 it('DataListAction should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <DataListAction
       children={<div>ReactNode</div>}
       className={"''"}
@@ -17,5 +17,5 @@ it('DataListAction should match snapshot (auto-generated)', () => {
       aria-label={'string'}
     />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

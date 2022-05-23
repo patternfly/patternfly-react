@@ -1,6 +1,9 @@
+/* eslint-disable camelcase */
+import chart_global_label_Fill from '@patternfly/react-tokens/dist/esm/chart_global_label_Fill';
+
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { CallbackArgs, CoordinatesPropType, OriginType } from 'victory-core';
+import { CallbackArgs, CoordinatesPropType, LineSegment, OriginType } from 'victory-core';
 import {
   CursorCoordinatesPropType,
   VictoryCursorContainer,
@@ -188,7 +191,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -201,11 +204,13 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
 
 export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerProps> = ({
   className,
+  cursorComponent = <LineSegment />,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
 
   // destructure last
-  theme = getTheme(themeColor, themeVariant),
+  theme = getTheme(themeColor),
   cursorLabelComponent = <ChartLabel />, // Note that Victory provides its own label component here
   ...rest
 }: ChartCursorContainerProps) => {
@@ -215,11 +220,20 @@ export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerP
     ...cursorLabelComponent.props
   });
 
+  // Clone so users can override cursor container props
+  const cursor = React.cloneElement(cursorComponent, {
+    style: {
+      strokeColor: chart_global_label_Fill.var
+    },
+    ...cursorComponent.props
+  });
+
   // Note: theme is required by voronoiContainerMixin
   return (
     // Note: className is valid, but Victory is missing a type
     <VictoryCursorContainer
       className={chartClassName}
+      cursorComponent={cursor}
       cursorLabelComponent={chartCursorLabelComponent}
       theme={theme}
       {...rest}

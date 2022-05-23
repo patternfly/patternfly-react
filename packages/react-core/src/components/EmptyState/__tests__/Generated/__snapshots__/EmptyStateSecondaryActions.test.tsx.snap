@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EmptyStateSecondaryActions should match snapshot (auto-generated) 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="pf-c-empty-state__secondary ''"
   >
     ReactNode
   </div>
-</div>
+</DocumentFragment>
 `;

@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopologyView should display an empty topology correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-l-stack my-test-class"
+    id="simple-test-id"
+  >
+    <div
+      class="pf-l-stack__item pf-m-fill pf-topology-container"
+    >
+      <div
+        class="pf-topology-content"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`TopologyView should display topology correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-l-stack my-test-class"
+    id="simple-test-id"
+  >
+    <div
+      class="pf-l-stack__item"
+    >
+      <div
+        class="pf-c-toolbar"
+        data-ouia-component-id="OUIA-Generated-Toolbar-1"
+        data-ouia-component-type="PF4/Toolbar"
+        data-ouia-safe="true"
+        id="pf-topology-view-0"
+      >
+        <div
+          class="pf-c-toolbar__content"
+        >
+          <div
+            class="pf-c-toolbar__content-section"
+          >
+            <div
+              class="pf-c-toolbar__group pf-topology-view__project-toolbar"
+            >
+              <div
+                id="test-context-bar"
+              />
+            </div>
+          </div>
+          <div
+            class="pf-c-toolbar__expandable-content"
+            id="pf-topology-view-0-expandable-content-0"
+          >
+            <div
+              class="pf-c-toolbar__group"
+            />
+          </div>
+        </div>
+        <div
+          class="pf-c-toolbar__content"
+        >
+          <div
+            class="pf-c-toolbar__content-section"
+          >
+            <div
+              class="pf-c-toolbar__group pf-topology-view__view-toolbar"
+            >
+              <div
+                id="test-view-bar"
+              />
+            </div>
+          </div>
+          <div
+            class="pf-c-toolbar__expandable-content"
+            id="pf-topology-view-0-expandable-content-1"
+          >
+            <div
+              class="pf-c-toolbar__group"
+            />
+          </div>
+        </div>
+        <hr
+          class="pf-c-divider"
+        />
+        <div
+          class="pf-c-toolbar__content pf-m-hidden"
+          hidden=""
+        >
+          <div
+            class="pf-c-toolbar__group"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="pf-l-stack__item pf-m-fill pf-topology-container"
+    >
+      <div
+        class="pf-topology-content"
+      >
+        <div
+          id="test-canvas"
+        />
+        <span
+          class="pf-topology-control-bar"
+        >
+          <div
+            id="test-control-bar"
+          />
+        </span>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

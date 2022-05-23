@@ -7,7 +7,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -68,7 +68,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 ### Multi-color (ordered) with right aligned legend
 ```js
 import React from 'react';
-import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
   <ChartDonut

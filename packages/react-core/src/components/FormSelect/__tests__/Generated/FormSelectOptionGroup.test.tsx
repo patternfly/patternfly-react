@@ -8,8 +8,8 @@ import { FormSelectOptionGroup } from '../../FormSelectOptionGroup';
 import {} from '../..';
 
 it('FormSelectOptionGroup should match snapshot (auto-generated)', () => {
-  const view = render(
+  const { asFragment } = render(
     <FormSelectOptionGroup children={<>ReactNode</>} className={"''"} label={'string'} isDisabled={false} />
   );
-  expect(view.container).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });

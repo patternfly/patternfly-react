@@ -381,6 +381,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
               return (
                 <WizardNavItem
                   key={index}
+                  id={step.id}
                   content={step.name}
                   isExpandable={isNavExpandable}
                   isCurrent={hasActiveChild}
@@ -399,6 +400,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
                       return (
                         <WizardNavItem
                           key={`child_${indexChild}`}
+                          id={childStep.id}
                           content={childStep.name}
                           isCurrent={activeStep.name === childStep.name}
                           isDisabled={!enabled}
@@ -417,6 +419,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
               <WizardNavItem
                 {...step.stepNavItemProps}
                 key={index}
+                id={step.id}
                 content={step.name}
                 isCurrent={activeStep.name === step.name}
                 isDisabled={!enabled}

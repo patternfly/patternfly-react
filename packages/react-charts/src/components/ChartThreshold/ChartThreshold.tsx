@@ -383,7 +383,7 @@ export interface ChartThresholdProps extends VictoryLineProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -431,10 +431,11 @@ export interface ChartThresholdProps extends VictoryLineProps {
 export const ChartThreshold: React.FunctionComponent<ChartThresholdProps> = ({
   style = {},
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
 
   // destructure last
-  theme = getThresholdTheme(themeColor, themeVariant),
+  theme = getThresholdTheme(themeColor),
   ...rest
 }: ChartThresholdProps) => {
   // Returned style prop takes precedence over default theme
@@ -442,13 +443,13 @@ export const ChartThreshold: React.FunctionComponent<ChartThresholdProps> = ({
     if (style && style.data && style.data.strokeDasharray) {
       return style.data.strokeDasharray;
     }
-    return getThresholdTheme(themeColor, themeVariant).line.style.data.strokeDasharray;
+    return getThresholdTheme(themeColor).line.style.data.strokeDasharray;
   };
   const getStrokeWidth = () => {
     if (style && style.data && style.data.strokeWidth) {
       return style.data.strokeWidth;
     }
-    return getThresholdTheme(themeColor, themeVariant).line.style.data.strokeWidth;
+    return getThresholdTheme(themeColor).line.style.data.strokeWidth;
   };
 
   // Clone style and apply strokeDasharray prop

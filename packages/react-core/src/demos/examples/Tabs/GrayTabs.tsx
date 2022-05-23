@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   PageSection,
-  PageSectionVariants,
   Tabs,
   Tab,
   TabContent,
@@ -16,7 +15,7 @@ import {
   CardBody,
   CardHeader
 } from '@patternfly/react-core';
-import DashboardWrapper from '../../examples/DashboardWrapper';
+import DashboardWrapper from '../DashboardWrapper';
 
 export const GrayTabsDemo: React.FunctionComponent = () => {
   const [activeTabKey, setActiveTabKey] = React.useState<string | number>(0);
@@ -126,12 +125,7 @@ export const GrayTabsDemo: React.FunctionComponent = () => {
   );
 
   return (
-    <DashboardWrapper hasNoBreadcrumb>
-      <PageSection isWidthLimited variant={PageSectionVariants.light}>
-        <Title headingLevel="h1" size="2xl">
-          Overview
-        </Title>
-      </PageSection>
+    <DashboardWrapper hasPageTemplateTitle>
       <PageSection type="tabs" isWidthLimited>
         <Tabs
           activeKey={activeTabKey}

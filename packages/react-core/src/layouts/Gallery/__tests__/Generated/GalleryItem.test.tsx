@@ -8,6 +8,6 @@ import { GalleryItem } from '../../GalleryItem';
 import {} from '../..';
 
 it('GalleryItem should match snapshot (auto-generated)', () => {
-  const view = render(<GalleryItem children={<>ReactNode</>} />);
-  expect(view.container).toMatchSnapshot();
+  const { asFragment } = render(<GalleryItem children={<>ReactNode</>} />);
+  expect(asFragment()).toMatchSnapshot();
 });

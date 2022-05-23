@@ -38,6 +38,7 @@ class PaginationTop extends React.Component {
   render() {
     return (
       <Pagination
+        perPageComponent="button"
         itemCount={523}
         perPage={this.state.perPage}
         page={this.state.page}
@@ -77,6 +78,7 @@ class PaginationBottom extends React.Component {
   render() {
     return (
       <Pagination
+        perPageComponent="button"
         itemCount={333}
         widgetId="pagination-options-menu-bottom"
         perPage={this.state.perPage}
@@ -89,6 +91,7 @@ class PaginationBottom extends React.Component {
   }
 }
 ```
+
 ### Indeterminate
 
 By not passing `itemCount` and passing `toggleTemplate` you can customize the toggle with text.
@@ -106,6 +109,7 @@ PaginationIndeterminate = () => {
 
   return (
     <Pagination
+      perPageComponent="button"
       toggleTemplate={({ firstIndex, lastIndex }) => (
         <React.Fragment>
           <b>
@@ -122,7 +126,7 @@ PaginationIndeterminate = () => {
       onPerPageSelect={onPerPageSelect}
     />
   );
-}
+};
 ```
 
 ### Disabled
@@ -155,6 +159,7 @@ class PaginationDisabled extends React.Component {
   render() {
     return (
       <Pagination
+        perPageComponent="button"
         itemCount={523}
         perPage={this.state.perPage}
         page={this.state.page}
@@ -198,6 +203,7 @@ class PaginationTop extends React.Component {
   render() {
     return (
       <Pagination
+        perPageComponent="button"
         itemCount={0}
         perPage={this.state.perPage}
         page={this.state.page}
@@ -240,6 +246,7 @@ class PaginationTop extends React.Component {
   render() {
     return (
       <Pagination
+        perPageComponent="button"
         itemCount={15}
         perPage={this.state.perPage}
         page={this.state.page}
@@ -282,6 +289,7 @@ class PaginationTop extends React.Component {
   render() {
     return (
       <Pagination
+        perPageComponent="button"
         itemCount={523}
         perPage={this.state.perPage}
         page={this.state.page}
@@ -335,6 +343,7 @@ class PaginationSticky extends React.Component {
         {this.state.isTopSticky && (
           <React.Fragment>
             <Pagination
+              perPageComponent="button"
               itemCount={523}
               perPage={this.state.perPage}
               page={this.state.page}
@@ -368,6 +377,7 @@ class PaginationSticky extends React.Component {
               ))}
             </Gallery>
             <Pagination
+              perPageComponent="button"
               itemCount={523}
               perPage={this.state.perPage}
               page={this.state.page}
