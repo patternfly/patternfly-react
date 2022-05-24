@@ -2996,7 +2996,7 @@ class EmptyStateDemo extends React.Component {
               <Bullseye>
                 <EmptyState>
                   <EmptyStateIcon icon={SearchIcon} />
-                  <Title headingLevel="h5" size="lg">
+                  <Title headingLevel="h2" size="lg">
                     No results found
                   </Title>
                   <EmptyStateBody>
