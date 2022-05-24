@@ -3060,7 +3060,7 @@ class LoadingStateDemo extends React.Component {
       <DashboardWrapper hasPageTemplateTitle>
         <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
           <Card component="div">
-            <Table cells={columns} rows={rows} id="loading-table-demo" aria-label="Loading Table Demo">
+            <Table cells={columns} rows={rows} aria-label="Loading table demo">
               <TableHeader />
               <TableBody />
             </Table>
