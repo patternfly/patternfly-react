@@ -3045,7 +3045,7 @@ class LoadingStateDemo extends React.Component {
               <Bullseye>
                 <EmptyState>
                   <EmptyStateIcon variant="container" component={Spinner} />
-                  <Title size="lg" headingLevel="h4">
+                  <Title size="lg" headingLevel="h2">
                     Loading
                   </Title>
                 </EmptyState>
