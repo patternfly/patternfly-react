@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.78.0 (2022-05-24)
+
+
+### Features
+
+* **table:** add fullscreen loading state demo ([#7370](https://github.com/patternfly/patternfly-react/issues/7370)) ([285b5b7](https://github.com/patternfly/patternfly-react/commit/285b5b76cb6bb64d5fd4bd66cfb26f709457b3bc))
+
+
+
+
+
+## 5.77.1 (2022-05-23)
+
+
+### Bug Fixes
+
+* **Select:** allow enter to create when there is a single option ([#7444](https://github.com/patternfly/patternfly-react/issues/7444)) ([e1ae6a9](https://github.com/patternfly/patternfly-react/commit/e1ae6a9aa7dee0f8107905ec1d47463fce950ff3))
+
+
+
+
+
 # 5.77.0 (2022-05-19)
 
 
