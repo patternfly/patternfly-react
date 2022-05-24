@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Slider } from '../Slider';
 import { Button } from '../../Button';
 
@@ -78,4 +78,30 @@ describe('slider', () => {
     const { asFragment } = render(<Slider value={50} hasTooltipOverThumb />);
     expect(asFragment()).toMatchSnapshot();
   });
+});
+
+test('renders slider with aria-labelledby', () => {
+  render(
+    <>
+      <p id="test">label text</p>
+      <Slider value={50} aria-labelledby="test" />
+    </>
+  );
+
+  const slider = screen.getByRole('slider', { name: 'label text' });
+
+  expect(slider).toBeVisible();
+});
+
+test('renders slider with aria-describedby', () => {
+  render(
+    <>
+      <p id="test">descriptive text about the slider</p>
+      <Slider value={50} aria-describedby="test" />
+    </>
+  );
+
+  const slider = screen.getByRole('slider', { description: 'descriptive text about the slider' });
+
+  expect(slider).toBeVisible();
 });

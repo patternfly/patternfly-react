@@ -34,7 +34,7 @@ export class ConcentricLayout extends BaseLayout implements Layout {
     return new ConcentricGroup(node, padding, index);
   }
 
-  public startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean): void {
+  protected startLayout(graph: Graph, initialRun: boolean, addingNodes: boolean): void {
     if (initialRun || addingNodes) {
       const weights = {};
       this.nodes.forEach(node => {

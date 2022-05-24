@@ -8,7 +8,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -158,7 +158,7 @@ class InvertedDonutUtilizationChart extends React.Component {
 ### Right aligned vertical legend
 ```js
 import React from 'react';
-import { ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts';
 
 class VerticalLegendUtilizationChart extends React.Component {
   constructor(props) {
@@ -536,7 +536,7 @@ class InvertedThresholdChart extends React.Component {
 ### Static thresholds with custom legend
 ```js
 import React from 'react';
-import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts';
 
 class CustomLegendThresholdChart extends React.Component {
   constructor(props) {

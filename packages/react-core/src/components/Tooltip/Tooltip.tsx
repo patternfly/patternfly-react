@@ -36,6 +36,12 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
    */
   aria?: 'describedby' | 'labelledby' | 'none';
   /**
+   * Determines whether the tooltip is an aria-live region. If the reference prop is passed in the
+   * default behavior is 'polite' in order to ensure the tooltip contents is announced to
+   * assistive technologies. Otherwise the default behavior is 'off'.
+   */
+  'aria-live'?: 'off' | 'polite';
+  /**
    * The reference element to which the Tooltip is relatively placed to.
    * If you cannot wrap the reference with the Tooltip, you can use the reference prop instead.
    * Usage: <Tooltip><Button>Reference</Button></Tooltip>
@@ -155,6 +161,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   children,
   animationDuration = 300,
   reference,
+  'aria-live': ariaLive = reference ? 'polite' : 'off',
   boundary,
   isAppLauncher,
   tippyProps,
@@ -251,6 +258,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   const hasCustomMaxWidth = maxWidth !== tooltipMaxWidth.value;
   const content = (
     <div
+      aria-live={ariaLive}
       className={css(styles.tooltip, className)}
       role="tooltip"
       id={id}

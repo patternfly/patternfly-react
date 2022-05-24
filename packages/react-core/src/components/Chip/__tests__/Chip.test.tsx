@@ -38,4 +38,13 @@ describe('Chip', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('custom max-width text', () => {
+    const { asFragment } = render(
+      <Chip className="my-chp-cls" textMaxWidth="100px">
+        4 more
+      </Chip>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

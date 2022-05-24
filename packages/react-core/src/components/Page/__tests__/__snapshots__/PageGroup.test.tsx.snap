@@ -34,6 +34,7 @@ exports[`page group Verify overflow scroll 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-page__main-group pf-m-overflow-scroll"
+    tabindex="0"
   >
     test
   </div>

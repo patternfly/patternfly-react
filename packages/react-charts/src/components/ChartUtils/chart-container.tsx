@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import chart_global_label_Fill from '@patternfly/react-tokens/dist/esm/chart_global_label_Fill';
+import chart_container_cursor_line_Fill from '@patternfly/react-tokens/dist/esm/chart_container_cursor_line_Fill';
 
 import * as React from 'react';
 import { ContainerType, createContainer as victoryCreateContainer } from 'victory-create-container';
@@ -23,6 +23,7 @@ import { LineSegment } from 'victory-core';
  *
  * @param {string} behaviorA 'brush', 'cursor', 'selection', 'voronoi', or 'zoom'
  * @param {string} behaviorB 'brush', 'cursor', 'selection', 'voronoi', or 'zoom'
+ * @public
  */
 export const createContainer = (behaviorA: ContainerType, behaviorB: ContainerType) => {
   const container: any = victoryCreateContainer(behaviorA, behaviorB);
@@ -34,7 +35,7 @@ export const createContainer = (behaviorA: ContainerType, behaviorB: ContainerTy
     container.defaultProps.cursorComponent = (
       <LineSegment
         style={{
-          stroke: chart_global_label_Fill.value
+          stroke: chart_container_cursor_line_Fill.var
         }}
       />
     );

@@ -33,7 +33,7 @@ import {
 } from '../../helpers';
 import { KeyTypes } from '../../helpers/constants';
 import { Divider } from '../Divider';
-import { Popper } from '../../helpers/Popper/Popper';
+import { ToggleMenuBaseProps, Popper } from '../../helpers/Popper/Popper';
 import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/favorites';
 import { ValidatedOptions } from '../../helpers/constants';
 import { findTabbableElements } from '../../helpers/util';
@@ -48,7 +48,8 @@ export interface SelectViewMoreObject {
   onClick: (event: React.MouseEvent | React.ChangeEvent) => void;
 }
 export interface SelectProps
-  extends Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'>,
+  extends ToggleMenuBaseProps,
+    Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'>,
     OUIAProps {
   /** Content rendered inside the Select. Must be React.ReactElement<SelectGroupProps>[] */
   children?: React.ReactElement[];
@@ -164,14 +165,6 @@ export interface SelectProps
   shouldResetOnSelect?: boolean;
   /** Content rendered in the footer of the select menu */
   footer?: React.ReactNode;
-  /** The container to append the menu to. Defaults to 'inline'.
-   * If your menu is being cut off you can append it to an element higher up the DOM tree.
-   * Some examples:
-   * menuAppendTo="parent"
-   * menuAppendTo={() => document.body}
-   * menuAppendTo={document.getElementById('target')}
-   */
-  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
 }
 
 export interface SelectState {
@@ -686,13 +679,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   };
 
   handleTypeaheadKeys = (position: string, shiftKey: boolean = false) => {
-    const { isOpen, onFavorite } = this.props;
+    const { isOpen, onFavorite, isCreatable } = this.props;
     const { typeaheadCurrIndex, tabbedIntoFavoritesMenu } = this.state;
     const typeaheadActiveChild = this.getTypeaheadActiveChild(typeaheadCurrIndex);
     if (isOpen) {
       if (position === 'enter') {
         if (
-          typeaheadCurrIndex !== -1 && // do not allow selection without moving to an initial option
+          (typeaheadCurrIndex !== -1 || (isCreatable && this.refCollection.length === 1)) && // do not allow selection without moving to an initial option unless it is a single create option
           (typeaheadActiveChild || (this.refCollection[0] && this.refCollection[0][0]))
         ) {
           if (typeaheadActiveChild) {

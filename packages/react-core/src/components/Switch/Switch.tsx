@@ -91,7 +91,13 @@ export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaState
         />
         {label !== undefined ? (
           <React.Fragment>
-            <span className={css(styles.switchToggle)} />
+            <span className={css(styles.switchToggle)}>
+              {hasCheckIcon && (
+                <span className={css(styles.switchToggleIcon)} aria-hidden="true">
+                  <CheckIcon noVerticalAlign />
+                </span>
+              )}
+            </span>
             <span
               className={css(styles.switchLabel, styles.modifiers.on)}
               id={isAriaLabelledBy ? `${this.id}-on` : null}
@@ -99,11 +105,6 @@ export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaState
             >
               {label}
             </span>
-            {hasCheckIcon && (
-              <div className={css(styles.switchToggleIcon)} aria-hidden="true">
-                <CheckIcon noVerticalAlign />
-              </div>
-            )}
             <span
               className={css(styles.switchLabel, styles.modifiers.off)}
               id={isAriaLabelledBy ? `${this.id}-off` : null}

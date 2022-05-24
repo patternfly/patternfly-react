@@ -3,7 +3,9 @@ import chart_bullet_axis_tick_count from '@patternfly/react-tokens/dist/esm/char
 import chart_bullet_comparative_measure_Width from '@patternfly/react-tokens/dist/esm/chart_bullet_comparative_measure_Width';
 import chart_bullet_comparative_measure_error_Width from '@patternfly/react-tokens/dist/esm/chart_bullet_comparative_measure_error_Width';
 import chart_bullet_comparative_measure_warning_Width from '@patternfly/react-tokens/dist/esm/chart_bullet_comparative_measure_warning_Width';
+import chart_bullet_label_grouptitle_Fill from '@patternfly/react-tokens/dist/esm/chart_bullet_label_grouptitle_Fill';
 import chart_bullet_label_subtitle_Fill from '@patternfly/react-tokens/dist/esm/chart_bullet_label_subtitle_Fill';
+import chart_bullet_label_title_Fill from '@patternfly/react-tokens/dist/esm/chart_bullet_label_title_Fill';
 import chart_bullet_primary_measure_dot_size from '@patternfly/react-tokens/dist/esm/chart_bullet_primary_measure_dot_size';
 import chart_bullet_primary_measure_segmented_Width from '@patternfly/react-tokens/dist/esm/chart_bullet_primary_measure_segmented_Width';
 import chart_bullet_qualitative_range_Width from '@patternfly/react-tokens/dist/esm/chart_bullet_qualitative_range_Width';
@@ -20,15 +22,17 @@ export const BulletStyles = {
   label: {
     groupTitle: {
       // Victory props only
+      fill: chart_bullet_label_grouptitle_Fill.var,
       fontSize: chart_global_FontSize_2xl.value
     },
     subTitle: {
       // Victory props only
-      fill: chart_bullet_label_subtitle_Fill.value,
+      fill: chart_bullet_label_subtitle_Fill.var,
       fontSize: chart_global_FontSize_sm.value
     },
     title: {
       // Victory props only
+      fill: chart_bullet_label_title_Fill.var,
       fontSize: chart_global_FontSize_lg.value
     }
   },

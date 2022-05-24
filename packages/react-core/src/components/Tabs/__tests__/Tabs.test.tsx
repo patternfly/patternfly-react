@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Tabs } from '../Tabs';
 import { Tab } from '../Tab';
 import { TabTitleText } from '../TabTitleText';
@@ -36,6 +36,28 @@ test('should render simple tabs', () => {
     </Tabs>
   );
   expect(asFragment()).toMatchSnapshot();
+});
+
+test('should render closeable tabs', () => {
+  const view = render(
+    <Tabs onClose={jest.fn()}>
+      <Tab eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>} closeButtonAriaLabel="close-label">
+        Tab 1 section
+      </Tab>
+    </Tabs>
+  );
+  expect(screen.getByLabelText('close-label')).toBeTruthy();
+});
+
+test('should render add button', () => {
+  const view = render(
+    <Tabs onAdd={jest.fn()} addButtonAriaLabel="add-label">
+      <Tab eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>} closeButtonAriaLabel="close-label">
+        Tab 1 section
+      </Tab>
+    </Tabs>
+  );
+  expect(screen.getByLabelText('add-label')).toBeTruthy();
 });
 
 test('should render uncontrolled tabs', () => {
@@ -350,3 +372,42 @@ test('should render tabs with no bottom border', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
+test('should not render tabs with secondary border bottom when not passed hasSecondaryBorderBottom', () => {
+  render(
+    <Tabs id="noBottomBorderTabs" aria-label="Secondary bottom border">
+      <Tab id="tab1" eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
+        Tab 1 section
+      </Tab>
+      <Tab id="tab2" eventKey={1} title={<TabTitleText>"Tab item 2"</TabTitleText>}>
+        Tab 2 section
+      </Tab>
+      <Tab id="tab3" eventKey={2} title={<TabTitleText>"Tab item 3"</TabTitleText>}>
+        Tab 3 section
+      </Tab>
+    </Tabs>
+  );
+
+  const tabsContainer = screen.queryByLabelText('Secondary bottom border');
+
+  expect(tabsContainer).not.toHaveClass('pf-m-border-bottom');
+});
+
+test('should render tabs with secondary border bottom when passed hasSecondaryBorderBottom', () => {
+  render(
+    <Tabs id="noBottomBorderTabs" aria-label="Secondary bottom border" hasSecondaryBorderBottom>
+      <Tab id="tab1" eventKey={0} title={<TabTitleText>"Tab item 1"</TabTitleText>}>
+        Tab 1 section
+      </Tab>
+      <Tab id="tab2" eventKey={1} title={<TabTitleText>"Tab item 2"</TabTitleText>}>
+        Tab 2 section
+      </Tab>
+      <Tab id="tab3" eventKey={2} title={<TabTitleText>"Tab item 3"</TabTitleText>}>
+        Tab 3 section
+      </Tab>
+    </Tabs>
+  );
+
+  const tabsContainer = screen.queryByLabelText('Secondary bottom border');
+
+  expect(tabsContainer).toHaveClass('pf-m-border-bottom');
+});

@@ -869,3 +869,10 @@ class HelpModal extends React.Component {
 ```ts file="ModalWithForm.tsx"
 
 ```
+
+### With overflowing content
+
+If the content that you're passing to the modal is likely to overflow the modal content area, pass tabIndex={0} to the modal to enable keyboard accessible scrolling.
+
+```ts file="ModalWithOverflowingContent.tsx"
+```

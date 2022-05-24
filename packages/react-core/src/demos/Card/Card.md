@@ -197,7 +197,7 @@ class CardViewBasic extends React.Component {
         });
       }
     };
-    
+
     this.onKeyDown = (event, productId) => {
       console.log(productId);
       if (event.target !== event.currentTarget) {
@@ -206,28 +206,30 @@ class CardViewBasic extends React.Component {
       if ([' ', 'Enter'].includes(event.key)) {
         event.preventDefault();
         this.setState(prevState => {
-          return prevState.selectedItems.includes(productId*1) ? 
-          {
-            selectedItems: [...prevState.selectedItems.filter(id => productId * 1 != id)],
-            areAllSelected: false
-          } : {
-            selectedItems: [...prevState.selectedItems, productId * 1],
-            areAllSelected: prevState.totalItemCount === prevState.selectedItems.length + 1
-          };
+          return prevState.selectedItems.includes(productId * 1)
+            ? {
+                selectedItems: [...prevState.selectedItems.filter(id => productId * 1 != id)],
+                areAllSelected: false
+              }
+            : {
+                selectedItems: [...prevState.selectedItems, productId * 1],
+                areAllSelected: prevState.totalItemCount === prevState.selectedItems.length + 1
+              };
         });
       }
     };
-    
+
     this.onClick = productId => {
       this.setState(prevState => {
-        return prevState.selectedItems.includes(productId*1) ? 
-        {
-          selectedItems: [...prevState.selectedItems.filter(id => productId * 1 != id)],
-          areAllSelected: false
-        } : {
-          selectedItems: [...prevState.selectedItems, productId * 1],
-          areAllSelected: prevState.totalItemCount === prevState.selectedItems.length + 1
-        };
+        return prevState.selectedItems.includes(productId * 1)
+          ? {
+              selectedItems: [...prevState.selectedItems.filter(id => productId * 1 != id)],
+              areAllSelected: false
+            }
+          : {
+              selectedItems: [...prevState.selectedItems, productId * 1],
+              areAllSelected: prevState.totalItemCount === prevState.selectedItems.length + 1
+            };
       });
     };
   }
@@ -559,12 +561,8 @@ class CardViewBasic extends React.Component {
             </Toolbar>
           </PageSection>
           <PageSection isFilled>
-            <Gallery hasGutter>
-              <Card 
-                isSelectable 
-                selectableVariant="raised" 
-                isCompact
-              >
+            <Gallery hasGutter aria-label="Selectable card container">
+              <Card isSelectableRaised isCompact>
                 <Bullseye>
                   <EmptyState variant={EmptyStateVariant.xs}>
                     <EmptyStateIcon icon={PlusCircleIcon} />
@@ -578,13 +576,15 @@ class CardViewBasic extends React.Component {
                 </Bullseye>
               </Card>
               {filtered.map((product, key) => (
-                <Card 
-                  isSelectable 
-                  selectableVariant="raised" 
-                  isCompact 
+                <Card
+                  isSelectableRaised
+                  hasSelectableInput
+                  isCompact
                   key={product.name}
-                  onKeyDown={(e) => this.onKeyDown(e, product.id)}
+                  id={product.name.replace(/ /g, '-')}
+                  onKeyDown={e => this.onKeyDown(e, product.id)}
                   onClick={() => this.onClick(product.id)}
+                  onSelectableInputChange={() => this.onClick(product.id)}
                   isSelected={selectedItems.includes(product.id)}
                 >
                   <CardHeader>

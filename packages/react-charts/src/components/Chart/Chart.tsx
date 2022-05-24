@@ -404,7 +404,7 @@ export interface ChartProps extends VictoryChartProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -430,10 +430,11 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   padding,
   showAxis = true,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
 
   // destructure last
-  theme = getChartTheme(themeColor, themeVariant, showAxis),
+  theme = getChartTheme(themeColor, showAxis),
   containerComponent = <ChartContainer />,
   legendOrientation = theme.legend.orientation as ChartLegendOrientation,
   height = theme.chart.height,

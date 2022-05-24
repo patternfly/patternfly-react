@@ -22,6 +22,8 @@ export interface WizardNavItemProps {
   href?: string;
   /** Flag indicating that this NavItem has child steps and is expandable */
   isExpandable?: boolean;
+  /** The id for the nav item */
+  id?: string | number;
 }
 
 export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
@@ -34,6 +36,7 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
   navItemComponent = 'button',
   href = null,
   isExpandable = false,
+  id,
   ...rest
 }: WizardNavItemProps) => {
   const NavItemComponent = navItemComponent;
@@ -69,6 +72,7 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
       <NavItemComponent
         {...rest}
         {...(navItemComponent === 'a' ? { ...linkProps } : { ...btnProps })}
+        {...(id && { id: id.toString() })}
         onClick={() => (isExpandable ? setIsExpanded(!isExpanded || isCurrent) : onNavItemClick(step))}
         className={css(
           styles.wizardNavLink,

@@ -15,11 +15,10 @@ interface LogViewerRowProps {
     rowInFocus: searchedKeyWordType;
     searchedWordIndexes: searchedKeyWordType[];
   };
+  ansiUp: AnsiUp;
 }
 
-const ansiUp = new AnsiUp();
-
-export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ index, style, data }) => {
+export const LogViewerRow: React.FunctionComponent<LogViewerRowProps> = memo(({ index, style, data, ansiUp }) => {
   const { parsedData, searchedWordIndexes, rowInFocus } = data;
   const context = useContext(LogViewerContext);
 

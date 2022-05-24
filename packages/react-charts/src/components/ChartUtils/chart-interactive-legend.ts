@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import chart_area_Opacity from '@patternfly/react-tokens/dist/esm/chart_area_Opacity';
-import chart_color_black_500 from '@patternfly/react-tokens/dist/esm/chart_color_black_500';
+import chart_global_label_Fill from '@patternfly/react-tokens/dist/esm/chart_global_label_Fill';
 
 interface ChartInteractiveLegendInterface {
   // The names or groups of names associated with each data series
@@ -19,7 +19,10 @@ interface ChartInteractiveLegendExtInterface extends ChartInteractiveLegendInter
   target?: 'data' | 'labels'; // Event target
 }
 
-// Returns child names for each series, except given ID index
+/**
+ * Returns child names for each series, except given ID index
+ * @private
+ */
 const getChildNames = ({ chartNames, omitIndex }: ChartInteractiveLegendExtInterface) => {
   const result = [] as any;
   chartNames.map((chartName: any, index: number) => {
@@ -34,7 +37,12 @@ const getChildNames = ({ chartNames, omitIndex }: ChartInteractiveLegendExtInter
   return result;
 };
 
-// Returns events for an interactive legend
+/**
+ * Returns events for an interactive legend
+ *
+ * @param props See ChartInteractiveLegendInterface
+ * @public
+ */
 export const getInteractiveLegendEvents = (props: ChartInteractiveLegendInterface) => [
   ...getInteractiveLegendTargetEvents({ ...props, target: 'data' }),
   ...getInteractiveLegendTargetEvents({ ...props, target: 'labels' })
@@ -51,16 +59,19 @@ const getInteractiveLegendItems = ({ chartNames, omitIndex }: ChartInteractiveLe
   return result;
 };
 
-// Returns styles for interactive legend items
+/**
+ * Returns styles for interactive legend items
+ * @private
+ */
 export const getInteractiveLegendItemStyles = (hidden = false) =>
   !hidden
     ? {}
     : {
         labels: {
-          fill: chart_color_black_500.value
+          fill: chart_global_label_Fill.var
         },
         symbol: {
-          fill: chart_color_black_500.value,
+          fill: chart_global_label_Fill.var,
           type: 'eyeSlash'
         }
       };

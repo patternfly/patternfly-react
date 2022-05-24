@@ -5,6 +5,7 @@ import Dimensions from '../geom/Dimensions';
 import { Node } from '../types';
 
 interface ComputeElementDimensionsProps {
+  children?: React.ReactNode;
   element: Node;
 }
 

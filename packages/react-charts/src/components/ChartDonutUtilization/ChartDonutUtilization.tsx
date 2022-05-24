@@ -481,7 +481,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -580,13 +580,14 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   showStatic = true,
   standalone = true,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
   thresholds,
   x,
   y,
 
   // destructure last
-  theme = getDonutUtilizationTheme(themeColor, themeVariant),
+  theme = getDonutUtilizationTheme(themeColor),
   height = theme.pie.height,
   width = theme.pie.width,
   ...rest

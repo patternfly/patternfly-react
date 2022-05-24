@@ -191,7 +191,7 @@ export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -206,10 +206,11 @@ export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerP
   className,
   cursorComponent = <LineSegment />,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
 
   // destructure last
-  theme = getTheme(themeColor, themeVariant),
+  theme = getTheme(themeColor),
   cursorLabelComponent = <ChartLabel />, // Note that Victory provides its own label component here
   ...rest
 }: ChartCursorContainerProps) => {
@@ -222,7 +223,7 @@ export const ChartCursorContainer: React.FunctionComponent<ChartCursorContainerP
   // Clone so users can override cursor container props
   const cursor = React.cloneElement(cursorComponent, {
     style: {
-      strokeColor: chart_global_label_Fill.value
+      strokeColor: chart_global_label_Fill.var
     },
     ...cursorComponent.props
   });

@@ -5,24 +5,27 @@ import { Wizard, WizardStepFunctionType, WizardStep } from '../Wizard';
 describe('Wizard', () => {
   test('Wizard should match snapshot', () => {
     const steps: WizardStep[] = [
-      { name: 'A', component: <p>Step 1</p> },
+      { name: 'A', id: "step-A", component: <p>Step 1</p> },
       {
         name: 'B',
+        id: "step-B",
         steps: [
           {
             name: 'B-1',
+            id: "step-B-1",
             component: <p>Step 2</p>,
             enableNext: true
           },
           {
             name: 'B-2',
+            id: "step-B-2",
             component: <p>Step 3</p>,
             enableNext: false
           }
         ]
       },
-      { name: 'C', component: <p>Step 4</p> },
-      { name: 'D', component: <p>Step 5</p> }
+      { name: 'C', id: "step-C", component: <p>Step 4</p> },
+      { name: 'D', id: "step-D", component: <p>Step 5</p> }
     ];
     const onBack: WizardStepFunctionType = step => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -11,13 +11,16 @@ export interface PanelProps extends React.HTMLProps<HTMLDivElement> {
   variant?: 'raised' | 'bordered';
   /** Flag to add scrollable styling to the panel */
   isScrollable?: boolean;
+  /** @hide Forwarded ref */
+  innerRef?: React.Ref<any>;
 }
 
-export const Panel: React.FunctionComponent<PanelProps> = ({
+const PanelBase: React.FunctionComponent<PanelProps> = ({
   className,
   children,
   variant,
   isScrollable,
+  innerRef,
   ...props
 }: PanelProps) => (
   <div
@@ -28,10 +31,14 @@ export const Panel: React.FunctionComponent<PanelProps> = ({
       isScrollable && styles.modifiers.scrollable,
       className
     )}
+    ref={innerRef}
     {...props}
   >
     {children}
   </div>
 );
 
+export const Panel = React.forwardRef((props: PanelProps, ref: React.Ref<any>) => (
+  <PanelBase innerRef={ref} {...props} />
+));
 Panel.displayName = 'Panel';
