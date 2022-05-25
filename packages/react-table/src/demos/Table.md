@@ -2987,7 +2987,6 @@ These examples demonstrate the use of an [Empty State component](/components/emp
 ```js isFullscreen
 import React from 'react';
 import {
-  Bullseye,
   Button,
   Card,
   EmptyState,
@@ -3018,22 +3017,18 @@ class EmptyStateDemo extends React.Component {
           {
             props: { colSpan: 8 },
             title: (
-              <Bullseye>
-                <EmptyState>
-                  <EmptyStateIcon icon={SearchIcon} />
-                  <Title headingLevel="h2" size="lg">
-                    No results found
-                  </Title>
-                  <EmptyStateBody>
-                    No results match this filter criteria. Clear all filters and try again.
-                  </EmptyStateBody>
-                  <EmptyStateSecondaryActions>
-                    <Button variant="link" onClick={() => {}}>
-                      Clear all filters
-                    </Button>
-                  </EmptyStateSecondaryActions>
-                </EmptyState>
-              </Bullseye>
+              <EmptyState>
+                <EmptyStateIcon icon={SearchIcon} />
+                <Title headingLevel="h2" size="lg">
+                  No results found
+                </Title>
+                <EmptyStateBody>No results match this filter criteria. Clear all filters and try again.</EmptyStateBody>
+                <EmptyStateSecondaryActions>
+                  <Button variant="link" onClick={() => {}}>
+                    Clear all filters
+                  </Button>
+                </EmptyStateSecondaryActions>
+              </EmptyState>
             )
           }
         ]
