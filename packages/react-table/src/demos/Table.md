@@ -3110,9 +3110,9 @@ class LoadingStateDemo extends React.Component {
 ```js isFullscreen
 import React from 'react';
 import {
-  Bullseye,
   Card,
   EmptyState,
+  EmptyStateIcon,
   EmptyStateBody,
   EmptyStateVariant,
   PageSection,
@@ -3120,6 +3120,7 @@ import {
 } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 class ErrorStateDemo extends React.Component {
   render() {
@@ -3137,16 +3138,15 @@ class ErrorStateDemo extends React.Component {
           {
             props: { colSpan: 8 },
             title: (
-              <Bullseye>
-                <EmptyState variant={EmptyStateVariant.small}>
-                  <Title headingLevel="h2" size="lg">
-                    Unable to connect
-                  </Title>
-                  <EmptyStateBody>
-                    There was an error retrieving data. Check your connection and reload the page.
-                  </EmptyStateBody>
-                </EmptyState>
-              </Bullseye>
+              <EmptyState variant={EmptyStateVariant.small}>
+                <EmptyStateIcon icon={ExclamationCircleIcon} color={globalDangerColor200.value} />
+                <Title headingLevel="h2" size="lg">
+                  Unable to connect
+                </Title>
+                <EmptyStateBody>
+                  There was an error retrieving data. Check your connection and reload the page.
+                </EmptyStateBody>
+              </EmptyState>
             )
           }
         ]
