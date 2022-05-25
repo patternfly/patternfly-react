@@ -12,7 +12,9 @@ import { ApplicationLauncherContext } from './ApplicationLauncherContext';
 import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 import { createRenderableFavorites, extendItemsWithFavorite } from '../../helpers/favorites';
 
-export interface ApplicationLauncherProps extends ToggleMenuBaseProps, React.HTMLProps<HTMLDivElement> {
+export interface ApplicationLauncherProps
+  extends Omit<ToggleMenuBaseProps, 'menuAppendTo'>,
+    React.HTMLProps<HTMLDivElement> {
   /** Additional element css classes */
   className?: string;
   /** Display menu above or below dropdown toggle */
@@ -35,6 +37,14 @@ export interface ApplicationLauncherProps extends ToggleMenuBaseProps, React.HTM
   isGrouped?: boolean;
   /** Toggle Icon, optional to override the icon used for the toggle */
   toggleIcon?: React.ReactNode;
+  /** The container to append the menu to. Defaults to 'inline'.
+   * If your menu is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * menuAppendTo="parent"
+   * menuAppendTo={() => document.body}
+   * menuAppendTo={document.getElementById('target')}
+   */
+  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
   /** ID list of favorited ApplicationLauncherItems */
   favorites?: string[];
   /** Enables favorites. Callback called when an ApplicationLauncherItem's favorite button is clicked */

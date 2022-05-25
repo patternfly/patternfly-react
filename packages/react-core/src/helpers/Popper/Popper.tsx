@@ -14,6 +14,7 @@ const getOppositePlacement = (placement: Placement): any =>
     (matched: string) => hash[matched as 'left' | 'right' | 'bottom' | 'top'] as BasePlacement
   );
 
+/** @deprecated Please use the menuAppendTo prop directly from within the PF component which uses it. */
 export interface ToggleMenuBaseProps {
   /** The container to append the menu to. Defaults to 'inline'
    * If your menu is being cut off you can append it to an element higher up the DOM tree.
