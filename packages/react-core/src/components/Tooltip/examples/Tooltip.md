@@ -12,6 +12,7 @@ import './TooltipExamples.css';
 ## Examples
 
 ### Basic
+
 ```js
 import React from 'react';
 import { Tooltip } from '@patternfly/react-core';
@@ -22,12 +23,15 @@ import { Tooltip } from '@patternfly/react-core';
       <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
     }
   >
-    <span tabIndex="0" style={{ border: '1px dashed' }}>I have a tooltip!</span>
+    <span tabIndex="0" style={{ border: '1px dashed' }}>
+      I have a tooltip!
+    </span>
   </Tooltip>
-</div>
+</div>;
 ```
 
 ### Tooltip react ref
+
 ```js
 import React from 'react';
 import { Tooltip } from '@patternfly/react-core';
@@ -36,35 +40,49 @@ TooltipReactRef = () => {
   const tooltipRef = React.useRef();
   return (
     <div style={{ margin: '100px' }}>
-      <button ref={tooltipRef}>Tooltip attached via react ref</button>
+      <button aria-describedby="tooltip-ref1" ref={tooltipRef}>
+        Tooltip attached via react ref
+      </button>
       <Tooltip
+        id="tooltip-ref1"
         content={
-          <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+          </div>
         }
         reference={tooltipRef}
       />
     </div>
   );
-}
+};
 ```
 
 ### Tooltip selector ref
+
 ```js
 import React from 'react';
 import { Tooltip } from '@patternfly/react-core';
 
 <div style={{ margin: '100px' }}>
-  <button id="tooltip-selector">Tooltip attached via selector ref</button>
+  <button aria-describedby="tooltip-ref2" id="tooltip-selector">
+    Tooltip attached via selector ref
+  </button>
   <Tooltip
+    id="tooltip-ref2"
     content={
       <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
     }
     reference={() => document.getElementById('tooltip-selector')}
   />
-</div>
+</div>;
 ```
 
-### On icon
+### On icon with dynamic content
+
+When the tooltip is used as a wrapper and its content will dynamically update, the `aria` prop should have a value of "none" passed in. This prevents assistive technologies from announcing the tooltip contents more than once. Additionally, the `aria-live` prop should have a value of "polite" passed in, in order for assistive technologies to announce when the tooltip contents gets updated.
+
+When using a React or selector ref with a tooltip that has dynamic content, the `aria` and `aria-live` props do not need to be manually passed in.
+
 ```js
 import React from 'react';
 import { Tooltip, Button } from '@patternfly/react-core';
@@ -77,8 +95,13 @@ IconExample = () => {
   const [content, setContent] = React.useState(copyText);
   return (
     <div style={{ margin: '100px' }}>
-      <Tooltip content={showSuccessContent ? doneCopyText : copyText}>
-        <Button variant="plain" aria-label="Icon with tooltip attached" id="tt-ref" onClick={() => setShowSuccessContent(!showSuccessContent)}>
+      <Tooltip aria="none" aria-live="polite" content={showSuccessContent ? doneCopyText : copyText}>
+        <Button
+          aria-label="Clipboard"
+          variant="plain"
+          id="tt-ref"
+          onClick={() => setShowSuccessContent(!showSuccessContent)}
+        >
           <CopyIcon />
         </Button>
       </Tooltip>
@@ -88,6 +111,7 @@ IconExample = () => {
 ```
 
 ### Options
+
 ```js
 import React from 'react';
 import { Button, Tooltip, Checkbox, Select, SelectOption, TextInput } from '@patternfly/react-core';
@@ -105,26 +129,26 @@ OptionsTooltip = () => {
   const [exitDelayInput, setExitDelayInput] = React.useState(0);
   const [animationDuration, setAnimationDuration] = React.useState(300);
   const tipBoxRef = React.useRef(null);
-  
+
   const scrollToRef = ref => {
     if (ref && ref.current) {
       ref.current.scrollTop = 400;
       ref.current.scrollLeft = 300;
     }
-  }
-  
+  };
+
   React.useEffect(() => {
     scrollToRef(tipBoxRef);
   }, []);
-  
+
   return (
     <>
       <div>
-        <div style={{ border: '1px solid'}}>
+        <div style={{ border: '1px solid' }}>
           <Checkbox
             label="trigger: mouseenter"
             isChecked={trigger.includes('mouseenter')}
-            onChange={(checked) => {
+            onChange={checked => {
               let updatedTrigger;
               checked && (updatedTrigger = trigger.concat('mouseenter'));
               !checked && (updatedTrigger = trigger.filter(t => t !== 'mouseenter'));
@@ -137,7 +161,7 @@ OptionsTooltip = () => {
           <Checkbox
             label="trigger: focus"
             isChecked={trigger.includes('focus')}
-            onChange={(checked) => {
+            onChange={checked => {
               let updatedTrigger;
               checked && (updatedTrigger = trigger.concat('focus'));
               !checked && (updatedTrigger = trigger.filter(t => t !== 'focus'));
@@ -150,7 +174,7 @@ OptionsTooltip = () => {
           <Checkbox
             label="trigger: click"
             isChecked={trigger.includes('click')}
-            onChange={(checked) => {
+            onChange={checked => {
               let updatedTrigger;
               checked && (updatedTrigger = trigger.concat('click'));
               !checked && (updatedTrigger = trigger.filter(t => t !== 'click'));
@@ -163,36 +187,36 @@ OptionsTooltip = () => {
           <Checkbox
             label="trigger: manual"
             isChecked={trigger.includes('manual')}
-            onChange={(checked) => {
+            onChange={checked => {
               let updatedTrigger;
               checked && (updatedTrigger = trigger.concat('manual'));
               !checked && (updatedTrigger = trigger.filter(t => t !== 'manual'));
               setIsVisible(false);
               setTrigger(updatedTrigger);
             }}
-            aria-label="trigger: manual"   
-            id="trigger_manual"         
+            aria-label="trigger: manual"
+            id="trigger_manual"
           />
         </div>
-        <div style={{ border: '1px solid'}}>
+        <div style={{ border: '1px solid' }}>
           <Checkbox
             label="content left-aligned"
             isChecked={contentLeftAligned}
-            onChange={(checked) => setContentLeftAligned(checked)}
+            onChange={checked => setContentLeftAligned(checked)}
             aria-label="content left-aligned"
-            id="content_left_aligned"          
+            id="content_left_aligned"
           />
         </div>
-        <div style={{ border: '1px solid'}}>
+        <div style={{ border: '1px solid' }}>
           <Checkbox
             label="enableFlip"
             isChecked={enableFlip}
-            onChange={(checked) => setEnableFlip(checked)}
-            aria-label="enableFlip"    
-            id="enable_flip"    
+            onChange={checked => setEnableFlip(checked)}
+            aria-label="enableFlip"
+            id="enable_flip"
           />
         </div>
-        <div style={{ border: '1px solid'}}>
+        <div style={{ border: '1px solid' }}>
           position (will flip if enableFlip is true). The 'auto' position requires enableFlip to be set to true.
           <Select
             onToggle={() => setPositionSelectOpen(!positionSelectOpen)}
@@ -219,22 +243,41 @@ OptionsTooltip = () => {
             <SelectOption value="right-end" />
           </Select>
         </div>
-        <div style={{ border: '1px solid'}}>
+        <div style={{ border: '1px solid' }}>
           <Checkbox
             label="isVisible (also set trigger to only manual to programmatically control it)"
             isChecked={isVisible}
-            onChange={(checked) => setIsVisible(checked)}
-            aria-label="isVisible" 
-            id="is_visible"       
+            onChange={checked => setIsVisible(checked)}
+            aria-label="isVisible"
+            id="is_visible"
           />
         </div>
-        <div style={{ border: '1px solid'}}>
-          Entry delay (ms) <TextInput value={entryDelayInput} type="number" onChange={val => setEntryDelayInput(val)} aria-label="entry delay" />
-          Exit delay (ms) <TextInput value={exitDelayInput} type="number" onChange={val => setExitDelayInput(val)} aria-label="exit delay" />
-          Animation duration (ms) <TextInput value={animationDuration} type="number" onChange={val => setAnimationDuration(val)} aria-label="animation duration" />
+        <div style={{ border: '1px solid' }}>
+          Entry delay (ms){' '}
+          <TextInput
+            value={entryDelayInput}
+            type="number"
+            onChange={val => setEntryDelayInput(val)}
+            aria-label="entry delay"
+          />
+          Exit delay (ms) <TextInput
+            value={exitDelayInput}
+            type="number"
+            onChange={val => setExitDelayInput(val)}
+            aria-label="exit delay"
+          />
+          Animation duration (ms){' '}
+          <TextInput
+            value={animationDuration}
+            type="number"
+            onChange={val => setAnimationDuration(val)}
+            aria-label="animation duration"
+          />
         </div>
-        <div style={{ border: '1px solid'}}>
-          flip behavior examples (enableFlip has to be true). "flip" will try to flip the tooltip to the opposite of the starting position. The second option ensures that there are 3 escape positions for every possible starting position (default). This setting is ignored if position prop is set to 'auto'.
+        <div style={{ border: '1px solid' }}>
+          flip behavior examples (enableFlip has to be true). "flip" will try to flip the tooltip to the opposite of the
+          starting position. The second option ensures that there are 3 escape positions for every possible starting
+          position (default). This setting is ignored if position prop is set to 'auto'.
           <Select
             onToggle={() => setFlipSelectOpen(!flipSelectOpen)}
             onSelect={(event, selection) => {
@@ -254,7 +297,9 @@ OptionsTooltip = () => {
       <div id="tooltip-boundary" className="tooltip-box" ref={tipBoxRef}>
         <Tooltip
           content={
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+            </div>
           }
           trigger={trigger.join(' ')}
           enableFlip={enableFlip}
@@ -272,5 +317,5 @@ OptionsTooltip = () => {
       </div>
     </>
   );
-}
+};
 ```

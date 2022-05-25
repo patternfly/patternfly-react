@@ -18,6 +18,8 @@ export interface KeyboardHandlerProps {
   validSiblingTags?: string[];
   /** Flag indicating that the tabIndex of the currently focused element and next focused element should be updated, in the case of using a roving tabIndex */
   updateTabIndex?: boolean;
+  /** Flag indicating that next focusable element of a horizontal movement will be this element's sibling */
+  onlyTraverseSiblings?: boolean;
   /** Flag indicating that the included vertical arrow key handling should be ignored */
   noVerticalArrowHandling?: boolean;
   /** Flag indicating that the included horizontal arrow key handling should be ignored */
@@ -176,6 +178,7 @@ export class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
     isActiveElement: (navigableElement: Element) => document.activeElement === navigableElement,
     getFocusableElement: (navigableElement: Element) => navigableElement,
     validSiblingTags: ['BUTTON', 'A'],
+    onlyTraverseSiblings: true,
     updateTabIndex: true,
     noHorizontalArrowHandling: false,
     noVerticalArrowHandling: false,
@@ -212,7 +215,8 @@ export class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
       updateTabIndex,
       validSiblingTags,
       additionalKeyHandler,
-      createNavigableElements
+      createNavigableElements,
+      onlyTraverseSiblings
     } = this.props;
 
     // Pass the event off to be handled by any custom handler
@@ -256,7 +260,8 @@ export class KeyboardHandler extends React.Component<KeyboardHandlerProps> {
       validSiblingTags,
       noVerticalArrowHandling,
       noHorizontalArrowHandling,
-      updateTabIndex
+      updateTabIndex,
+      onlyTraverseSiblings
     );
   };
 

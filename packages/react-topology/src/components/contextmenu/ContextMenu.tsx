@@ -8,7 +8,7 @@ import Popper from '../popper/Popper';
 
 type ContextMenuProps = Pick<
   React.ComponentProps<typeof Popper>,
-  'container' | 'className' | 'open' | 'reference' | 'onRequestClose'
+  'children' | 'container' | 'className' | 'open' | 'reference' | 'onRequestClose'
 >;
 
 const ContextMenu: React.FunctionComponent<ContextMenuProps> = ({

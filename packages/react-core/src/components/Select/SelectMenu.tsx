@@ -268,7 +268,7 @@ class SelectMenuWithRef extends React.Component<SelectMenuProps> {
   }
 }
 
-export const SelectMenu = React.forwardRef((props, ref) => (
+export const SelectMenu = React.forwardRef<unknown, React.PropsWithChildren<unknown>>((props, ref) => (
   <SelectMenuWithRef innerRef={ref} {...props}>
     {props.children}
   </SelectMenuWithRef>

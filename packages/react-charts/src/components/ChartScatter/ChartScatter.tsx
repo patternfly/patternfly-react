@@ -404,7 +404,7 @@ export interface ChartScatterProps extends VictoryScatterProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -452,10 +452,11 @@ export interface ChartScatterProps extends VictoryScatterProps {
 export const ChartScatter: React.FunctionComponent<ChartScatterProps> = ({
   containerComponent = <ChartContainer />,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
 
   // destructure last
-  theme = getTheme(themeColor, themeVariant),
+  theme = getTheme(themeColor),
   size = ({ active }) => (active ? ChartScatterStyles.activeSize : ChartScatterStyles.size),
   ...rest
 }: ChartScatterProps) => {

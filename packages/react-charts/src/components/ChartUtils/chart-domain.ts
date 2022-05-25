@@ -23,7 +23,10 @@ export interface ChartDomain {
   y: [number, number];
 }
 
-// Returns the min and max domain for given data
+/**
+ * Returns the min and max domain for given data
+ * @private
+ */
 export const getDomain = ({ data, maxDomain, minDomain, x, y }: DomainInterface): ChartDomain => {
   // x-domain
   let xLow = 0;
@@ -92,6 +95,10 @@ export const getDomain = ({ data, maxDomain, minDomain, x, y }: DomainInterface)
   return { x: [xLow, xHigh], y: [yLow, yHigh] };
 };
 
+/**
+ * Returns the domain for given min and max properties
+ * @private
+ */
 export const getDomains = ({ maxDomain, minDomain, sources }: SourcesInterface): ChartDomain => {
   const domains: ChartDomain[] = [];
   sources.forEach(source => {

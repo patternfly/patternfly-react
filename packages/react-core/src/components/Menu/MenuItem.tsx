@@ -8,10 +8,12 @@ import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
+import { Checkbox } from '../Checkbox';
 import { MenuContext, MenuItemContext } from './MenuContext';
 import { MenuItemAction } from './MenuItemAction';
 import { canUseDOM } from '../../helpers/util';
 import { useIsomorphicLayoutEffect } from '../../helpers/useIsomorphicLayout';
+import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
 export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onClick'> {
   /** Content rendered inside the menu list item. */
@@ -22,6 +24,8 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   itemId?: any;
   /** Target navigation link */
   to?: string;
+  /** @beta Flag indicating the item has a checkbox */
+  hasCheck?: boolean;
   /** Flag indicating whether the item is active */
   isActive?: boolean;
   /** Flag indicating if the item is favorited */
@@ -71,6 +75,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   className,
   itemId = null,
   to,
+  hasCheck = false,
   isActive = null,
   isFavorited = null,
   isLoadButton = false,
@@ -105,7 +110,10 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     setFlyoutRef,
     disableHover
   } = React.useContext(MenuContext);
-  const Component = (to ? 'a' : component) as any;
+  let Component = (to ? 'a' : component) as any;
+  if (hasCheck && !to) {
+    Component = 'label' as any;
+  }
   const [flyoutTarget, setFlyoutTarget] = React.useState(null);
   const flyoutContext = React.useContext(FlyoutContext);
   const [flyoutXDirection, setFlyoutXDirection] = React.useState(flyoutContext.direction);
@@ -287,52 +295,70 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
       onMouseOver={onMouseOver}
       {...(flyoutMenu && { onKeyDown: handleFlyout })}
       ref={ref}
-      role="none"
+      role={!hasCheck ? 'none' : 'menuitem'}
       {...props}
     >
-      <Component
-        tabIndex={-1}
-        className={css(styles.menuItem, getIsSelected() && styles.modifiers.selected, className)}
-        aria-current={getAriaCurrent()}
-        disabled={isDisabled}
-        role="menuitem"
-        ref={innerRef}
-        onClick={(event: any) => {
-          onItemSelect(event, onSelect);
-          _drill && _drill();
-        }}
-        {...additionalProps}
-      >
-        <span className={css(styles.menuItemMain)}>
-          {direction === 'up' && (
-            <span className={css(styles.menuItemToggleIcon)}>
-              <AngleLeftIcon aria-hidden />
+      <GenerateId>
+        {randomId => (
+          <Component
+            tabIndex={-1}
+            className={css(styles.menuItem, getIsSelected() && !hasCheck && styles.modifiers.selected, className)}
+            aria-current={getAriaCurrent()}
+            {...(!hasCheck && { disabled: isDisabled })}
+            {...(!hasCheck && { role: 'menuitem' })}
+            ref={innerRef}
+            {...(!hasCheck && {
+              onClick: (event: any) => {
+                onItemSelect(event, onSelect);
+                _drill && _drill();
+              }
+            })}
+            {...(hasCheck && { htmlFor: randomId })}
+            {...additionalProps}
+          >
+            <span className={css(styles.menuItemMain)}>
+              {direction === 'up' && (
+                <span className={css(styles.menuItemToggleIcon)}>
+                  <AngleLeftIcon aria-hidden />
+                </span>
+              )}
+              {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
+              {hasCheck && (
+                <span className={css('pf-c-menu__item-check')}>
+                  <Checkbox
+                    id={randomId}
+                    component="span"
+                    isChecked={isSelected || false}
+                    onChange={event => onItemSelect(event, onSelect)}
+                    isDisabled={isDisabled}
+                  />
+                </span>
+              )}
+              <span className={css(styles.menuItemText)}>{children}</span>
+              {isExternalLink && (
+                <span className={css(styles.menuItemExternalIcon)}>
+                  <ExternalLinkAltIcon aria-hidden />
+                </span>
+              )}
+              {(flyoutMenu || direction === 'down') && (
+                <span className={css(styles.menuItemToggleIcon)}>
+                  <AngleRightIcon aria-hidden />
+                </span>
+              )}
+              {getIsSelected() && (
+                <span className={css(styles.menuItemSelectIcon)}>
+                  <CheckIcon aria-hidden />
+                </span>
+              )}
             </span>
-          )}
-          {icon && <span className={css(styles.menuItemIcon)}>{icon}</span>}
-          <span className={css(styles.menuItemText)}>{children}</span>
-          {isExternalLink && (
-            <span className={css(styles.menuItemExternalIcon)}>
-              <ExternalLinkAltIcon aria-hidden />
-            </span>
-          )}
-          {(flyoutMenu || direction === 'down') && (
-            <span className={css(styles.menuItemToggleIcon)}>
-              <AngleRightIcon aria-hidden />
-            </span>
-          )}
-          {getIsSelected() && (
-            <span className={css(styles.menuItemSelectIcon)}>
-              <CheckIcon aria-hidden />
-            </span>
-          )}
-        </span>
-        {description && direction !== 'up' && (
-          <span className={css(styles.menuItemDescription)}>
-            <span>{description}</span>
-          </span>
+            {description && direction !== 'up' && (
+              <span className={css(styles.menuItemDescription)}>
+                <span>{description}</span>
+              </span>
+            )}
+          </Component>
         )}
-      </Component>
+      </GenerateId>
       {flyoutVisible && (
         <MenuContext.Provider value={{ disableHover }}>
           <FlyoutContext.Provider value={{ direction: flyoutXDirection }}>{flyoutMenu}</FlyoutContext.Provider>

@@ -1,5 +1,7 @@
 import React from 'react';
 import {
+  ApplicationLauncher,
+  ApplicationLauncherItem,
   Avatar,
   Brand,
   Button,
@@ -18,14 +20,13 @@ import {
   ToolbarContent,
   ToolbarGroup,
   ToolbarItem,
-  PageToggleButton,
-  Divider
+  PageToggleButton
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
-import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
+import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 import imgBrand from './pfColorLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
@@ -36,6 +37,7 @@ export default class DashboardHeader extends React.Component {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
       isFullKebabDropdownOpen: false,
+      isAppLauncherOpen: false,
       activeItem: 0
     };
 
@@ -74,10 +76,22 @@ export default class DashboardHeader extends React.Component {
         isFullKebabDropdownOpen: !this.state.isFullKebabDropdownOpen
       });
     };
+
+    this.onAppLauncherToggle = isAppLauncherOpen => {
+      this.setState({
+        isAppLauncherOpen
+      });
+    };
+
+    this.onAppLauncherSelect = () => {
+      this.setState({
+        isAppLauncherOpen: !this.state.isAppLauncherOpen
+      });
+    };
   }
 
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, isFullKebabDropdownOpen } = this.state;
+    const { isDropdownOpen, isKebabDropdownOpen, isAppLauncherOpen } = this.state;
 
     const kebabDropdownItems = [
       <DropdownItem key="kebab-1">
@@ -97,21 +111,13 @@ export default class DashboardHeader extends React.Component {
       </DropdownGroup>
     ];
 
-    const fullKebabItems = [
-      <DropdownGroup key="group 2">
-        <DropdownItem key="group 2 profile">My profile</DropdownItem>
-        <DropdownItem key="group 2 user" component="button">
-          User management
-        </DropdownItem>
-        <DropdownItem key="group 2 logout">Logout</DropdownItem>
-      </DropdownGroup>,
-      <Divider key="divider" />,
-      <DropdownItem key="kebab-1">
-        <CogIcon /> Settings
-      </DropdownItem>,
-      <DropdownItem key="kebab-2">
-        <HelpIcon /> Help
-      </DropdownItem>
+    const appLauncherItems = [
+      <ApplicationLauncherItem key="application_1a" href="#">
+        Application 1 (anchor link)
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem key="application_2a" component="button" onClick={() => alert('Clicked item 2')}>
+        Application 2 (button with onClick)
+      </ApplicationLauncherItem>
     ];
 
     const headerToolbar = (
@@ -123,51 +129,45 @@ export default class DashboardHeader extends React.Component {
             spacer={{ default: 'spacerNone', md: 'spacerMd' }}
           >
             <ToolbarItem>
-              <Button aria-label="Notifications" variant={ButtonVariant.plain}>
-                <AttentionBellIcon />
-              </Button>
+              <Button aria-label="Notifications" variant={ButtonVariant.plain} icon={<BellIcon />} />
             </ToolbarItem>
             <ToolbarGroup variant="icon-button-group" visibility={{ default: 'hidden', lg: 'visible' }}>
-              <ToolbarItem>
-                <Button aria-label="Settings actions" variant={ButtonVariant.plain}>
-                  <CogIcon />
-                </Button>
+              <ToolbarItem visibility={{ default: 'hidden', sm: 'hidden', lg: 'visible' }}>
+                <ApplicationLauncher
+                  onSelect={this.onAppLauncherSelect}
+                  onToggle={this.onAppLauncherToggle}
+                  isOpen={isAppLauncherOpen}
+                  items={appLauncherItems}
+                />
               </ToolbarItem>
               <ToolbarItem>
-                <Button aria-label="Help actions" variant={ButtonVariant.plain}>
-                  <QuestionCircleIcon />
-                </Button>
+                <Button aria-label="Settings" variant={ButtonVariant.plain} icon={<CogIcon />} />
+              </ToolbarItem>
+              <ToolbarItem>
+                <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
               </ToolbarItem>
             </ToolbarGroup>
+            <ToolbarItem visibility={{ default: 'hidden', sm: 'visible', md: 'visible', lg: 'hidden' }}>
+              <Dropdown
+                isPlain
+                position="right"
+                onSelect={this.onKebabDropdownSelect}
+                toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
+                isOpen={isKebabDropdownOpen}
+                dropdownItems={kebabDropdownItems}
+              />
+            </ToolbarItem>
           </ToolbarGroup>
-          <ToolbarItem visibility={{ default: 'hidden', md: 'visible', lg: 'hidden' }}>
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onKebabDropdownSelect}
-              toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
-              isOpen={isKebabDropdownOpen}
-              dropdownItems={kebabDropdownItems}
-            />
-          </ToolbarItem>
-          <ToolbarItem visibility={{ default: 'visible', md: 'hidden', lg: 'hidden', xl: 'hidden', '2xl': 'hidden' }}>
-            <Dropdown
-              isPlain
-              position="right"
-              onSelect={this.onFullKebabSelect}
-              toggle={<KebabToggle onToggle={this.onFullKebabToggle} />}
-              isOpen={isFullKebabDropdownOpen}
-              dropdownItems={fullKebabItems}
-            />
-          </ToolbarItem>
-          <ToolbarItem visibility={{ default: 'hidden', md: 'visible' }}>
+
+          <ToolbarItem visibility={{ default: 'hidden', sm: 'visible' }}>
             <Dropdown
               position="right"
+              isFullHeight
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
               toggle={
                 <DropdownToggle icon={<Avatar src={imgAvatar} alt="Avatar" />} onToggle={this.onDropdownToggle}>
-                  John Smith
+                  Ned Username
                 </DropdownToggle>
               }
               dropdownItems={userDropdownItems}

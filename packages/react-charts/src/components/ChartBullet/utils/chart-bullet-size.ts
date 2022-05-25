@@ -62,11 +62,10 @@ export const getComparativeMeasureErrorWidth = ({
   height,
   horizontal,
   themeColor,
-  themeVariant,
   width,
 
   // destructure last
-  theme = getBulletComparativeErrorMeasureTheme(themeColor, themeVariant)
+  theme = getBulletComparativeErrorMeasureTheme(themeColor)
 }: ChartBulletSizeInterface) =>
   scaleBarWidth({
     defaultSize: theme.bar.height,
@@ -80,11 +79,10 @@ export const getComparativeMeasureWidth = ({
   height,
   horizontal,
   themeColor,
-  themeVariant,
   width,
 
   // destructure last
-  theme = getBulletComparativeMeasureTheme(themeColor, themeVariant)
+  theme = getBulletComparativeMeasureTheme(themeColor)
 }: ChartBulletSizeInterface) =>
   scaleBarWidth({
     defaultSize: theme.bar.height,
@@ -98,11 +96,10 @@ export const getComparativeMeasureWarningWidth = ({
   height,
   horizontal,
   themeColor,
-  themeVariant,
   width,
 
   // destructure last
-  theme = getBulletComparativeWarningMeasureTheme(themeColor, themeVariant)
+  theme = getBulletComparativeWarningMeasureTheme(themeColor)
 }: ChartBulletSizeInterface) =>
   scaleBarWidth({
     defaultSize: theme.bar.height,
@@ -116,11 +113,10 @@ export const getPrimaryDotMeasureSize = ({
   height,
   horizontal,
   themeColor,
-  themeVariant,
   width,
 
   // destructure last
-  theme = getBulletPrimaryDotMeasureTheme(themeColor, themeVariant)
+  theme = getBulletPrimaryDotMeasureTheme(themeColor)
 }: ChartBulletSizeInterface) =>
   scaleSize({
     defaultSize: theme.group.height,
@@ -134,11 +130,10 @@ export const getPrimarySegmentedMeasureWidth = ({
   height,
   horizontal,
   themeColor,
-  themeVariant,
   width,
 
   // destructure last
-  theme = getBulletPrimarySegmentedMeasureTheme(themeColor, themeVariant)
+  theme = getBulletPrimarySegmentedMeasureTheme(themeColor)
 }: ChartBulletSizeInterface) =>
   scaleBarWidth({
     defaultSize: theme.group.height,
@@ -153,11 +148,10 @@ export const getQualitativeRangeBarWidth = ({
   height,
   horizontal,
   themeColor,
-  themeVariant,
   width,
 
   // destructure last
-  theme = getBulletQualitativeRangeTheme(themeColor, themeVariant)
+  theme = getBulletQualitativeRangeTheme(themeColor)
 }: ChartBulletSizeInterface) =>
   scaleBarWidth({
     defaultSize: theme.group.height,

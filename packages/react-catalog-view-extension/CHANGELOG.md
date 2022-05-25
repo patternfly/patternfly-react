@@ -3,6 +3,312 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.68.1 (2022-05-24)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+# 4.68.0 (2022-05-24)
+
+
+### Features
+
+* **table:** add fullscreen loading state demo ([#7370](https://github.com/patternfly/patternfly-react/issues/7370)) ([285b5b7](https://github.com/patternfly/patternfly-react/commit/285b5b76cb6bb64d5fd4bd66cfb26f709457b3bc))
+
+
+
+
+
+## 4.67.1 (2022-05-23)
+
+
+### Bug Fixes
+
+* **Select:** allow enter to create when there is a single option ([#7444](https://github.com/patternfly/patternfly-react/issues/7444)) ([e1ae6a9](https://github.com/patternfly/patternfly-react/commit/e1ae6a9aa7dee0f8107905ec1d47463fce950ff3))
+
+
+
+
+
+# 4.67.0 (2022-05-19)
+
+
+### Features
+
+* **table:** update sortable demo to align with core ([#7292](https://github.com/patternfly/patternfly-react/issues/7292)) ([6891764](https://github.com/patternfly/patternfly-react/commit/6891764f2507c775005878f6e74cc5c8e44a6c68))
+
+
+
+
+
+# 4.66.0 (2022-05-19)
+
+
+### Features
+
+* **Menu:** Added support for checkbox menu ([#7368](https://github.com/patternfly/patternfly-react/issues/7368)) ([8c2d1dc](https://github.com/patternfly/patternfly-react/commit/8c2d1dc23dbe5c28a8c1ecf79eb34ea911da386f))
+
+
+
+
+
+## 4.65.5 (2022-05-18)
+
+
+### Bug Fixes
+
+* **Slider:** add support for aria-labelledby ad aria-describedby ([#7408](https://github.com/patternfly/patternfly-react/issues/7408)) ([7c8617a](https://github.com/patternfly/patternfly-react/commit/7c8617a1268a03061d51454b298c79ae5f7a59b0))
+
+
+
+
+
+## 4.65.4 (2022-05-18)
+
+
+### Bug Fixes
+
+* **Table:** Removed duplicate import from md file ([#7442](https://github.com/patternfly/patternfly-react/issues/7442)) ([00438a7](https://github.com/patternfly/patternfly-react/commit/00438a73c7b2548c4f0ad00ed09f9c60f99978d9))
+
+
+
+
+
+## 4.65.3 (2022-05-16)
+
+
+### Bug Fixes
+
+* **Chip:** add custom maxWidth prop ([#7387](https://github.com/patternfly/patternfly-react/issues/7387)) ([7cfb1a2](https://github.com/patternfly/patternfly-react/commit/7cfb1a202c2f1405c454b2e10716d9a500d4508f))
+
+
+
+
+
+## 4.65.2 (2022-05-13)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## 4.65.1 (2022-05-12)
+
+
+### Bug Fixes
+
+* **Tabs:** make close handler optional ([#7405](https://github.com/patternfly/patternfly-react/issues/7405)) ([a84bb2a](https://github.com/patternfly/patternfly-react/commit/a84bb2aadefd7f811745b9512a26eda85241361d))
+
+
+
+
+
+# 4.65.0 (2022-05-12)
+
+
+### Features
+
+* **table:** expandable table demo ([#7277](https://github.com/patternfly/patternfly-react/issues/7277)) ([c081a61](https://github.com/patternfly/patternfly-react/commit/c081a61f11ceeb92688798106962e3604c243606))
+
+
+
+
+
+## 4.64.6 (2022-05-11)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## 4.64.5 (2022-05-11)
+
+
+### Bug Fixes
+
+* **charts:** support customizing tooltip border for dark theme ([#7393](https://github.com/patternfly/patternfly-react/issues/7393)) ([7168a1d](https://github.com/patternfly/patternfly-react/commit/7168a1dc7f3a1302d719a32bcd32dcdb9ad8fb86))
+
+
+
+
+
+## 4.64.4 (2022-05-11)
+
+
+### Bug Fixes
+
+* **topology:** fix variables ([#7364](https://github.com/patternfly/patternfly-react/issues/7364)) ([2dec22e](https://github.com/patternfly/patternfly-react/commit/2dec22eec0f2fb8a634108e6995f747f61fa7d93))
+
+
+
+
+
+## 4.64.3 (2022-05-10)
+
+
+### Bug Fixes
+
+* **Card:** indicate card selectivity and status if using a screen reader ([#7144](https://github.com/patternfly/patternfly-react/issues/7144)) ([56fab43](https://github.com/patternfly/patternfly-react/commit/56fab43f801390d995ae9d0c3bdec3aa0f0d2cfb))
+
+
+
+
+
+## 4.64.2 (2022-05-10)
+
+
+### Reverts
+
+* Revert "docs(Dropdown): expose menuAppendTo in Dropdown prop docs (#7173)" (#7395) ([9e80f18](https://github.com/patternfly/patternfly-react/commit/9e80f1812773e269782cdb26928778e558ec5354)), closes [#7173](https://github.com/patternfly/patternfly-react/issues/7173) [#7395](https://github.com/patternfly/patternfly-react/issues/7395)
+
+
+
+
+
+## 4.64.1 (2022-05-10)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+# 4.64.0 (2022-05-10)
+
+
+### Features
+
+* **Tabs:** allow dynamic close/add ([#7297](https://github.com/patternfly/patternfly-react/issues/7297)) ([51dd66c](https://github.com/patternfly/patternfly-react/commit/51dd66c59d25f96686c57de9fffe590f1c8cbe83))
+
+
+
+
+
+# 4.63.0 (2022-05-09)
+
+
+### Features
+
+* **charts:** added PF dark theme support ([#7310](https://github.com/patternfly/patternfly-react/issues/7310)) ([549c041](https://github.com/patternfly/patternfly-react/commit/549c041525b22d910b71a1c4f64e2cb0ba11ca8f))
+
+
+
+
+
+## 4.62.6 (2022-05-09)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## 4.62.5 (2022-05-09)
+
+
+### Bug Fixes
+
+* **Popper:** update Popper modifiers when child DOM changes ([#7385](https://github.com/patternfly/patternfly-react/issues/7385)) ([28d0b74](https://github.com/patternfly/patternfly-react/commit/28d0b74107ae76acae535c37ea73cec3a4cf49d5))
+
+
+
+
+
+## 4.62.4 (2022-05-09)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+## 4.62.3 (2022-05-06)
+
+
+### Bug Fixes
+
+* **LogViewer:** clear ANSI cache when resetting the log window ([#7355](https://github.com/patternfly/patternfly-react/issues/7355)) ([b3354b5](https://github.com/patternfly/patternfly-react/commit/b3354b5000c5d7397c479888140b0381367cbd2c))
+
+
+
+
+
+## 4.62.2 (2022-05-06)
+
+
+### Bug Fixes
+
+* **Page:** add tabindex to components with hasOverflowScroll ([#7274](https://github.com/patternfly/patternfly-react/issues/7274)) ([6be2fa8](https://github.com/patternfly/patternfly-react/commit/6be2fa870aba78b833c7346ffe029f96cfc1c37d))
+
+
+
+
+
+## 4.62.1 (2022-05-06)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
+# 4.62.0 (2022-05-06)
+
+
+### Features
+
+* **tokens:** Variables now include a fallback value for charts ([#7374](https://github.com/patternfly/patternfly-react/issues/7374)) ([6832688](https://github.com/patternfly/patternfly-react/commit/6832688d904159eee64510656dc4df6ed1ecb841))
+
+
+
+
+
+# 4.61.0 (2022-05-05)
+
+
+### Features
+
+* **charts:** Deprecate themeVariant prop for light / dark themes ([#7372](https://github.com/patternfly/patternfly-react/issues/7372)) ([362902a](https://github.com/patternfly/patternfly-react/commit/362902a72eb2b18e634423c86dea1bef89bf00e9))
+
+
+
+
+
+# 4.60.0 (2022-05-05)
+
+
+### Features
+
+* **drawer:** convert examples to TS ([#7329](https://github.com/patternfly/patternfly-react/issues/7329)) ([e3c6dfa](https://github.com/patternfly/patternfly-react/commit/e3c6dfa735a01c2be5a62eed8e37ad7a29b113de))
+
+
+
+
+
+## 4.59.13 (2022-05-05)
+
+
+### Bug Fixes
+
+* **Wixard:** Fixed id not being applied to wizard step ([#7349](https://github.com/patternfly/patternfly-react/issues/7349)) ([de6b557](https://github.com/patternfly/patternfly-react/commit/de6b557331460dd387faa1ac4c5c033757412340))
+
+
+
+
+
+## 4.59.12 (2022-05-05)
+
+**Note:** Version bump only for package @patternfly/react-catalog-view-extension
+
+
+
+
+
 ## 4.59.11 (2022-05-05)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension

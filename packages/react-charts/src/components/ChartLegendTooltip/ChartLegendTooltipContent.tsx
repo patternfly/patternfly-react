@@ -147,7 +147,7 @@ export interface ChartLegendTooltipContentProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -194,13 +194,14 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
   legendData,
   text,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
   title,
   titleComponent = <ChartLabel />,
   width,
 
   // destructure last
-  theme = getTheme(themeColor, themeVariant),
+  theme = getTheme(themeColor),
   ...rest
 }: ChartLegendTooltipContentProps) => {
   const pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength) : 10;

@@ -25,11 +25,10 @@ import {
   ChartPoint,
   ChartStack,
   ChartThemeColor,
-  ChartThemeVariant,
   ChartTooltip,
   ChartVoronoiContainer,
   createContainer,
-  getCustomTheme
+  mergeTheme
 } from '@patternfly/react-charts';
 import './chart-tooltip.css';
 
@@ -556,7 +555,7 @@ This demonstrates how to customize tooltip label alignment using theme propertie
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiContainer, mergeTheme } from '@patternfly/react-charts';
 
 class TooltipThemeChart extends React.Component {
   constructor(props) {
@@ -574,9 +573,8 @@ class TooltipThemeChart extends React.Component {
     };
 
     // Applies theme color and variant to base theme
-    this.myCustomTheme = getCustomTheme(
+    this.myCustomTheme = mergeTheme(
       ChartThemeColor.default,
-      ChartThemeVariant.default,
       this.themeProps
     );
   }

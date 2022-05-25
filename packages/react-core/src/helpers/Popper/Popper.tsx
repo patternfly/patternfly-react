@@ -14,6 +14,17 @@ const getOppositePlacement = (placement: Placement): any =>
     (matched: string) => hash[matched as 'left' | 'right' | 'bottom' | 'top'] as BasePlacement
   );
 
+export interface ToggleMenuBaseProps {
+  /** The container to append the menu to. Defaults to 'inline'
+   * If your menu is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * menuAppendTo="parent"
+   * menuAppendTo={() => document.body}
+   * menuAppendTo={document.getElementById('target')}
+   */
+  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'parent' | 'inline';
+}
+
 export const getOpacityTransition = (animationDuration: number) =>
   `opacity ${animationDuration}ms cubic-bezier(.54, 1.5, .38, 1.11)`;
 
@@ -165,6 +176,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       element.removeEventListener(event, listener);
     }
   };
+
   React.useEffect(() => {
     addEventListener(onMouseEnter, refOrTrigger, 'mouseenter');
     addEventListener(onMouseLeave, refOrTrigger, 'mouseleave');
@@ -175,6 +187,13 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     addEventListener(onPopperClick, popperElement, 'click');
     onDocumentClick && addEventListener(onDocumentClickCallback, document, 'click');
     addEventListener(onDocumentKeyDown, document, 'keydown');
+
+    // Trigger a Popper update when content changes.
+    const observer = new MutationObserver(() => {
+      update && update();
+    });
+    popperElement && observer.observe(popperElement, { attributes: true, childList: true, subtree: true });
+
     return () => {
       removeEventListener(onMouseEnter, refOrTrigger, 'mouseenter');
       removeEventListener(onMouseLeave, refOrTrigger, 'mouseleave');
@@ -185,6 +204,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       removeEventListener(onPopperClick, popperElement, 'click');
       onDocumentClick && removeEventListener(onDocumentClickCallback, document, 'click');
       removeEventListener(onDocumentKeyDown, document, 'keydown');
+      observer.disconnect();
     };
   }, [
     triggerElement,
@@ -233,7 +253,7 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     [popperMatchesTriggerWidth]
   );
 
-  const { styles: popperStyles, attributes, forceUpdate } = usePopper(refOrTrigger, popperElement, {
+  const { styles: popperStyles, attributes, update } = usePopper(refOrTrigger, popperElement, {
     placement: getPlacementMemo,
     modifiers: [
       {
@@ -261,12 +281,6 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       sameWidthMod
     ]
   });
-
-  // force update when content changes
-  // https://github.com/patternfly/patternfly-react/issues/5620
-  React.useEffect(() => {
-    forceUpdate && forceUpdate();
-  }, [popper]);
 
   // Returns the CSS modifier class in order to place the Popper's arrow properly
   // Depends on the position of the Popper relative to the reference element

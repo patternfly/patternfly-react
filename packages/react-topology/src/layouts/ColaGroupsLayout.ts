@@ -179,7 +179,7 @@ class ColaGroupsLayout extends ColaLayout implements Layout {
     addingNodes: boolean
   ): Promise<void> {
     return new Promise<void>(resolve => {
-      childLayout.startLayout(graph, initialRun, addingNodes, () => {
+      childLayout.doStartLayout(graph, initialRun, addingNodes, () => {
         resolve();
       });
     });

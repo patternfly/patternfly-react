@@ -40,12 +40,19 @@ Composable menus currently require consumer keyboard handling and use of our und
 ```ts file="./examples/ComposableSimpleSelect.tsx"
 ```
 
+### Composable simple checkbox select
+
+```ts isBeta file="./examples/ComposableSimpleCheckboxSelect.tsx"
+```
+
 ### Composable drilldown menu
 
 ```ts isBeta file="./examples/ComposableDrilldownMenu.tsx"
 ```
 
 ### Composable tree view menu
+
+When rendering a menu-like element that does not contain MenuItem components, [Panel](/components/panel) allows more flexible control and customization.
 
 ```ts file="./examples/ComposableTreeViewMenu.tsx"
 ```

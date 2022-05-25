@@ -1,5 +1,6 @@
 import React from 'react';
-import { Table, TableHeader, TableBody, expandable } from '@patternfly/react-table';
+import { Card, PageSection, Table, TableHeader, TableBody, expandable } from '@patternfly/react-table';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 class ExpandCollapseAllTableDemo extends React.Component {
@@ -13,7 +14,7 @@ class ExpandCollapseAllTableDemo extends React.Component {
       collapseAllAriaLabel: 'Expand all',
       columns: [
         {
-          title: 'Header cell1',
+          title: 'Repositories',
           cellFormatters: [expandable]
         },
         'Branches',
@@ -120,19 +121,30 @@ class ExpandCollapseAllTableDemo extends React.Component {
 
     return (
       <React.Fragment>
-        <Table
-          aria-label="Collapsible table"
-          onSelect={this.onSelect}
-          onCollapse={this.onCollapse}
-          rows={rows}
-          cells={columns}
-          canSelectAll={true}
-          canCollapseAll={true}
-          collapseAllAriaLabel={collapseAllAriaLabel}
-        >
-          <TableHeader />
-          <TableBody />
-        </Table>
+        <DashboardWrapper hasPageTemplateTitle>
+          <PageSection
+            padding={{
+              default: 'noPadding',
+              xl: 'padding'
+            }}
+          >
+            <Card component="div">
+              <Table
+                aria-label="Collapsible table"
+                onSelect={this.onSelect}
+                onCollapse={this.onCollapse}
+                rows={rows}
+                cells={columns}
+                canSelectAll={false}
+                canCollapseAll={true}
+                collapseAllAriaLabel={collapseAllAriaLabel}
+              >
+                <TableHeader />
+                <TableBody />
+              </Table>
+            </Card>
+          </PageSection>
+        </DashboardWrapper>
       </React.Fragment>
     );
   }

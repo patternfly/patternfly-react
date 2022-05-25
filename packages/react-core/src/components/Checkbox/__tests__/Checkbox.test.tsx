@@ -82,4 +82,13 @@ describe('Checkbox', () => {
     render(<Checkbox id={undefined} />);
     expect(myMock).toHaveBeenCalled();
   });
+
+  test('renders component wrapper as span', () => {
+    const { container } = render(
+      <Checkbox component="span" label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" />
+    );
+    const span = container.querySelector('span');
+    expect(span).toHaveClass('pf-c-check');
+   
+  });
 });

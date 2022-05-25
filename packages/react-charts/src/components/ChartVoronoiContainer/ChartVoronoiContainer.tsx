@@ -199,7 +199,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -234,10 +234,11 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
   className,
   constrainToVisibleArea = false,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
 
   // destructure last
-  theme = getTheme(themeColor, themeVariant),
+  theme = getTheme(themeColor),
   labelComponent = <ChartTooltip />, // Note that Victory provides its own tooltip component here
   ...rest
 }: ChartVoronoiContainerProps) => {

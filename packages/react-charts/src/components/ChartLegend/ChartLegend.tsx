@@ -271,7 +271,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    *
    * Note: Not compatible with theme prop
    *
-   * @example themeVariant={ChartThemeVariant.light}
+   * @deprecated Use PatternFly's pf-theme-dark CSS selector
    */
   themeVariant?: string;
   /**
@@ -322,11 +322,12 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
   labelComponent = <ChartLabel />,
   responsive = true,
   themeColor,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
   titleComponent = <ChartLabel />,
 
   // destructure last
-  theme = getTheme(themeColor, themeVariant),
+  theme = getTheme(themeColor),
   ...rest
 }: ChartLegendProps) => {
   // Clone so users can override container props
@@ -354,7 +355,7 @@ ChartLegend.displayName = 'ChartLegend';
 hoistNonReactStatics(ChartLegend, VictoryLegend, { getBaseProps: true });
 
 (ChartLegend as any).getBaseProps = (props: any) => {
-  const theme = getTheme(null, null);
+  const theme = getTheme(null);
   return (VictoryLegend as any).getBaseProps(
     {
       titleComponent: <ChartLabel />, // Workaround for getBaseProps error

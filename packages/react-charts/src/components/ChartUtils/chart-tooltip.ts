@@ -43,6 +43,7 @@ interface ChartLegendTooltipVisibleTextInterface {
  * When using a cursor container, the tooltip can be offset from the cursor point. If offsetCursorDimensionX is true,
  * the tooltip will appear to the right the vertical cursor. If offsetCursorDimensionY is true, the tooltip will appear
  * above the vertical cursor.
+ * @private
  */
 export const getCursorTooltipCenterOffset = ({
   offsetCursorDimensionX = false,
@@ -68,6 +69,7 @@ export const getCursorTooltipCenterOffset = ({
  * When using a cursor container, the tooltip pointer orientation can be adjusted as the cursor approaches the edge of
  * the chart. If horizontal is true, the tooltip pointer will either be 'left' or 'right'. If horizontal is true, the
  * tooltip pointer will either be 'top' or 'bottom'.
+ * @private
  */
 export const getCursorTooltipPoniterOrientation = ({
   horizontal = true,
@@ -81,7 +83,10 @@ export const getCursorTooltipPoniterOrientation = ({
   return horizontal ? orientationX : orientationY;
 };
 
-// Returns props associated with legend data
+/**
+ * Returns props associated with legend data
+ * @private
+ */
 export const getLegendTooltipDataProps = (defaultProps: ChartLegendProps) => ({
   borderPadding: 0,
   gutter: 0,
@@ -102,7 +107,10 @@ export const getLegendTooltipDataProps = (defaultProps: ChartLegendProps) => ({
   ...defaultProps
 });
 
-// Returns the legend height and width
+/**
+ * Returns the legend height and width
+ * @private
+ */
 export const getLegendTooltipSize = ({
   legendData,
   legendOrientation = 'vertical',
@@ -194,8 +202,11 @@ export const getLegendTooltipSize = ({
   };
 };
 
-// Returns visible legend data, while syncing color scale. If textAsLegendData is true, the text prop is used as
-// legend data so y values can be passed individually to the label component
+/**
+ * Returns visible legend data, while syncing color scale. If textAsLegendData is true, the text prop is used as
+ * legend data so y values can be passed individually to the label component
+ * @private
+ */
 export const getLegendTooltipVisibleData = ({
   activePoints,
   colorScale,
@@ -216,7 +227,7 @@ export const getLegendTooltipVisibleData = ({
       const activePoint = activePoints ? activePoints.find(item => item.childName === data.childName) : '';
       if (
         !activePoint ||
-        (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.value)
+        (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.var)
       ) {
         continue; // Skip hidden data
       }
@@ -238,7 +249,10 @@ export const getLegendTooltipVisibleData = ({
   return result;
 };
 
-// Returns visible text for interactive legends
+/**
+ * Returns visible text for interactive legends
+ * @private
+ */
 export const getLegendTooltipVisibleText = ({
   activePoints,
   legendData,
@@ -253,7 +267,7 @@ export const getLegendTooltipVisibleText = ({
       const activePoint = activePoints ? activePoints.find(item => item.childName === data.childName) : '';
       if (
         !activePoint ||
-        (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.value)
+        (data.symbol && data.symbol.type === 'eyeSlash' && data.symbol.fill === chart_color_black_500.var)
       ) {
         continue; // Skip hidden data
       }

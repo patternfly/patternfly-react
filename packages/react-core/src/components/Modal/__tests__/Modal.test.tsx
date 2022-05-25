@@ -85,4 +85,60 @@ describe('Modal', () => {
 
     expect(consoleErrorMock).toHaveBeenCalled();
   });
+
+  test('The modalBoxBody has no aria-label when bodyAriaLabel is not passed', () => {
+    const props = {
+      isOpen: true
+    };
+
+    render(<Modal {...props}>This is a ModalBox</Modal>);
+
+    const modalBoxBody = screen.getByText('This is a ModalBox');
+    expect(modalBoxBody).not.toHaveAccessibleName('modal box body aria label');
+  });
+
+  test('The modalBoxBody has the expected aria-label when bodyAriaLabel is passed', () => {
+    const props = {
+      isOpen: true
+    };
+
+    render(
+      <Modal bodyAriaLabel="modal box body aria label" {...props}>
+        This is a ModalBox
+      </Modal>
+    );
+
+    const modalBoxBody = screen.getByText('This is a ModalBox');
+    expect(modalBoxBody).toHaveAccessibleName('modal box body aria label');
+  });
+
+  test('The modalBoxBody has the expected aria role when bodyAriaLabel is passed and bodyAriaRole is not', () => {
+    const props = {
+      isOpen: true
+    };
+
+    render(
+      <Modal bodyAriaLabel="modal box body aria label" {...props}>
+        This is a ModalBox
+      </Modal>
+    );
+
+    const modalBoxBody = screen.getByRole('region', { name: 'modal box body aria label' });
+    expect(modalBoxBody).toBeInTheDocument();
+  });
+
+  test('The modalBoxBody has the expected aria role when bodyAriaRole is passed', () => {
+    const props = {
+      isOpen: true
+    };
+
+    render(
+      <Modal bodyAriaLabel="modal box body aria label" bodyAriaRole="article" {...props}>
+        This is a ModalBox
+      </Modal>
+    );
+
+    const modalBoxBody = screen.getByRole('article', { name: 'modal box body aria label' });
+    expect(modalBoxBody).toBeInTheDocument();
+  });
 });

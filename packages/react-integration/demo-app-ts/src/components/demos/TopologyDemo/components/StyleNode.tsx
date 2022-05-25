@@ -2,16 +2,21 @@ import * as React from 'react';
 import {
   Decorator,
   DEFAULT_DECORATOR_RADIUS,
+  DEFAULT_LAYER,
   DefaultNode,
   getDefaultShapeDecoratorCenter,
+  Layer,
   Node,
   NodeShape,
   NodeStatus,
   observer,
   ScaleDetailsLevel,
   ShapeProps,
+  TOP_LAYER,
   TopologyQuadrant,
+  useHover,
   WithContextMenuProps,
+  WithCreateConnectorProps,
   WithDragNodeProps,
   WithSelectionProps
 } from '@patternfly/react-topology';
@@ -40,6 +45,7 @@ type StyleNodeProps = {
   regrouping?: boolean;
   dragging?: boolean;
 } & WithContextMenuProps &
+  WithCreateConnectorProps &
   WithDragNodeProps &
   WithSelectionProps;
 
@@ -121,10 +127,13 @@ const StyleNode: React.FunctionComponent<StyleNodeProps> = ({
   showLabel,
   dragging,
   regrouping,
+  onShowCreateConnector,
+  onHideCreateConnector,
   ...rest
 }) => {
   const data = element.getData();
   const detailsLevel = useDetailsLevel();
+  const [hover, hoverRef] = useHover();
 
   const passedData = React.useMemo(() => {
     const newData = { ...data };
@@ -136,26 +145,41 @@ const StyleNode: React.FunctionComponent<StyleNodeProps> = ({
     return newData;
   }, [data]);
 
+  React.useEffect(() => {
+    if (detailsLevel === ScaleDetailsLevel.low) {
+      onHideCreateConnector && onHideCreateConnector();
+    }
+  }, [detailsLevel, onHideCreateConnector]);
+
   const LabelIcon = passedData.labelIcon;
   return (
-    <DefaultNode
-      element={element}
-      {...rest}
-      {...passedData}
-      dragging={dragging}
-      regrouping={regrouping}
-      showLabel={detailsLevel === ScaleDetailsLevel.high && showLabel}
-      showStatusBackground={detailsLevel === ScaleDetailsLevel.low}
-      showStatusDecorator={detailsLevel === ScaleDetailsLevel.high && passedData.showStatusDecorator}
-      onContextMenu={data.showContextMenu ? onContextMenu : undefined}
-      contextMenuOpen={contextMenuOpen}
-      labelIcon={LabelIcon && <LabelIcon noVerticalAlign />}
-      attachments={
-        detailsLevel === ScaleDetailsLevel.high && renderDecorators(element, passedData, rest.getShapeDecoratorCenter)
-      }
-    >
-      {detailsLevel !== ScaleDetailsLevel.low && renderIcon(passedData, element)}
-    </DefaultNode>
+    <Layer id={hover ? TOP_LAYER : DEFAULT_LAYER}>
+      <g ref={hoverRef}>
+        <DefaultNode
+          element={element}
+          scaleLabel={detailsLevel !== ScaleDetailsLevel.high}
+          scaleNode={hover && detailsLevel === ScaleDetailsLevel.low}
+          {...rest}
+          {...passedData}
+          dragging={dragging}
+          regrouping={regrouping}
+          showLabel={hover || (detailsLevel === ScaleDetailsLevel.high && showLabel)}
+          showStatusBackground={!hover && detailsLevel === ScaleDetailsLevel.low}
+          showStatusDecorator={detailsLevel === ScaleDetailsLevel.high && passedData.showStatusDecorator}
+          onContextMenu={data.showContextMenu ? onContextMenu : undefined}
+          contextMenuOpen={contextMenuOpen}
+          onShowCreateConnector={detailsLevel !== ScaleDetailsLevel.low ? onShowCreateConnector : undefined}
+          onHideCreateConnector={onHideCreateConnector}
+          labelIcon={LabelIcon && <LabelIcon noVerticalAlign />}
+          attachments={
+            (hover || detailsLevel === ScaleDetailsLevel.high) &&
+            renderDecorators(element, passedData, rest.getShapeDecoratorCenter)
+          }
+        >
+          {(hover || detailsLevel !== ScaleDetailsLevel.low) && renderIcon(passedData, element)}
+        </DefaultNode>
+      </g>
+    </Layer>
   );
 };
 

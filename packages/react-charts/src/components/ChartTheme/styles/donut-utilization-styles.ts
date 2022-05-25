@@ -5,6 +5,6 @@ import chart_donut_threshold_danger_Color from '@patternfly/react-tokens/dist/es
 // Donut utilization styles
 export const DonutUtilizationStyles = {
   thresholds: {
-    colorScale: [chart_donut_threshold_warning_Color.value, chart_donut_threshold_danger_Color.value]
+    colorScale: [chart_donut_threshold_warning_Color.var, chart_donut_threshold_danger_Color.var]
   }
 };

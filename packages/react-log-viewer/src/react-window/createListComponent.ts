@@ -11,6 +11,7 @@ export interface RowProps {
   index: number;
   isScrolling?: boolean;
   style: React.CSSProperties;
+  ansiUp: any;
 }
 
 export interface ListProps {
@@ -247,7 +248,8 @@ export default function createListComponent({
         useIsScrolling,
         width,
         isTextWrapped,
-        hasLineNumbers
+        hasLineNumbers,
+        ansiUp
       } = this.props;
       const { isScrolling } = this.state;
 
@@ -264,7 +266,8 @@ export default function createListComponent({
               key: itemKey(index, itemData),
               index,
               isScrolling: useIsScrolling ? isScrolling : undefined,
-              style: this._getItemStyle(index)
+              style: this._getItemStyle(index),
+              ansiUp
             })
           );
         }

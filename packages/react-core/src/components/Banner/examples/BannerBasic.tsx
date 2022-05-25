@@ -3,9 +3,11 @@ import { Banner } from '@patternfly/react-core';
 
 export const BannerBasic: React.FunctionComponent = () => (
   <React.Fragment>
-    <Banner>Default banner</Banner>
+    <Banner screenReaderText="This is a default Banner">Default banner</Banner>
     <br />
-    <Banner variant="info">Info banner</Banner>
+    <Banner variant="info" screenReaderText="This is an info Banner">
+      Info banner
+    </Banner>
     <br />
     <Banner variant="danger">Danger banner</Banner>
     <br />
