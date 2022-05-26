@@ -207,7 +207,7 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
             {buildFormGroups()}
             {formAdditionalItems ? formAdditionalItems : null}
             <ActionGroup>
-              <Button variant="primary" type="submit" onClick={onSearchHandler}>
+              <Button variant="primary" type="submit" onClick={onSearchHandler} isDisabled={!value}>
                 {submitSearchButtonLabel}
               </Button>
               {!!onClear && (

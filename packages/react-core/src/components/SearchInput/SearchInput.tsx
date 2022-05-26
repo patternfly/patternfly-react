@@ -58,8 +58,12 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   openMenuButtonAriaLabel?: string;
   /** Label for the button to navigate to previous result  */
   previousNavigationButtonAriaLabel?: string;
+  /** Flag indicating if the previous navigation button is disabled */
+  isPreviousNavigationButtonDisabled?: boolean;
   /** Label for the button to navigate to next result */
   nextNavigationButtonAriaLabel?: string;
+  /** Flag indicating if the next navigation button is disabled */
+  isNextNavigationButtonDisabled?: boolean;
   /** Function called when user clicks to navigate to next result */
   onNextClick?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
   /** Function called when user clicks to navigate to previous result */
@@ -102,6 +106,8 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   resetButtonLabel = 'Reset',
   openMenuButtonAriaLabel = 'Open advanced search',
   previousNavigationButtonAriaLabel = 'Previous',
+  isPreviousNavigationButtonDisabled = false,
+  isNextNavigationButtonDisabled = false,
   nextNavigationButtonAriaLabel = 'Next',
   submitSearchButtonLabel = 'Search',
   isDisabled = false,
@@ -203,7 +209,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
               <Button
                 variant={ButtonVariant.plain}
                 aria-label={previousNavigationButtonAriaLabel}
-                isDisabled={isDisabled}
+                isDisabled={isDisabled || isPreviousNavigationButtonDisabled}
                 onClick={onPreviousClick}
               >
                 <AngleUpIcon />
@@ -211,7 +217,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
               <Button
                 variant={ButtonVariant.plain}
                 aria-label={nextNavigationButtonAriaLabel}
-                isDisabled={isDisabled}
+                isDisabled={isDisabled || isNextNavigationButtonDisabled}
                 onClick={onNextClick}
               >
                 <AngleDownIcon />
@@ -254,7 +260,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
           variant={ButtonVariant.control}
           aria-label={submitSearchButtonLabel}
           onClick={onSearchHandler}
-          isDisabled={isDisabled}
+          isDisabled={isDisabled || !searchValue}
         >
           <ArrowRightIcon />
         </Button>
