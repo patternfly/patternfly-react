@@ -61,11 +61,11 @@ export interface TableComposableProps extends React.HTMLProps<HTMLTableElement>,
   nestedHeaderColumnSpans?: number[];
 }
 
-interface TableContextProps {
+interface TableComposableContextProps {
   registerSelectableRow?: () => void;
 }
 
-export const TableContext = React.createContext<TableContextProps>({
+export const TableComposableContext = React.createContext<TableComposableContextProps>({
   registerSelectableRow: () => {}
 });
 
@@ -162,7 +162,7 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   };
 
   return (
-    <TableContext.Provider value={{ registerSelectableRow }}>
+    <TableComposableContext.Provider value={{ registerSelectableRow }}>
       <table
         aria-label={ariaLabel}
         role={role}
@@ -191,7 +191,7 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
         )}
         {children}
       </table>
-    </TableContext.Provider>
+    </TableComposableContext.Provider>
   );
 };
 

@@ -3,7 +3,7 @@ import { useOUIAProps, OUIAProps } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
-import { TableContext } from './TableComposable';
+import { TableComposableContext } from './TableComposable';
 
 export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps {
   /** Content rendered inside the <tr> row */
@@ -65,7 +65,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
 
   const rowIsHidden = isHidden || (isExpanded !== undefined && !isExpanded);
 
-  const { registerSelectableRow } = React.useContext(TableContext);
+  const { registerSelectableRow } = React.useContext(TableComposableContext);
 
   React.useEffect(() => {
     if (isSelectable && !rowIsHidden) {
