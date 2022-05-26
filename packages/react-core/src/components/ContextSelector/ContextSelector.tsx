@@ -61,6 +61,11 @@ export interface ContextSelectorProps extends Omit<ToggleMenuBaseProps, 'menuApp
   isText?: boolean;
   /** Flag to disable focus trap */
   disableFocusTrap?: boolean;
+  /** Flag for indicating that the context selector menu should automatically flip vertically when
+   * it reaches the boundary. This prop can only be used when the context selector component is not
+   * appended inline, e.g. `menuAppendTo="parent"`
+   */
+  isFlipEnabled?: boolean;
 }
 
 export class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateId: string }> {
@@ -83,7 +88,8 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     disableFocusTrap: false,
     footer: null as React.ReactNode,
     isPlain: false,
-    isText: false
+    isText: false,
+    isFlipEnabled: false
   };
   constructor(props: ContextSelectorProps) {
     super(props);
@@ -126,10 +132,16 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
       isText,
       footer,
       disableFocusTrap,
+      isFlipEnabled,
       ...props
     } = this.props;
     const menuContainer = (
-      <div className={css(styles.contextSelectorMenu)}>
+      <div
+        className={css(styles.contextSelectorMenu)}
+        // This removes the `position: absolute`styling from the `.pf-c-context-selector__menu`
+        // allowing the menu to flip correctly
+        {...(isFlipEnabled && { style: { position: 'revert' } })}
+      >
         {isOpen && (
           <FocusTrap active={!disableFocusTrap} focusTrapOptions={{ clickOutsideDeactivates: true }}>
             <div className={css(styles.contextSelectorMenuSearch)}>
