@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.87.0 (2022-05-26)
+
+
+### Features
+
+* **table:** add fullscreen empty state demo ([#7371](https://github.com/patternfly/patternfly-react/issues/7371)) ([54f3052](https://github.com/patternfly/patternfly-react/commit/54f30520d9d808ffe15c962b37af91cef4c21dcb))
+
+
+
+
+
 ## 4.86.4 (2022-05-26)
 
 **Note:** Version bump only for package @patternfly/react-table
