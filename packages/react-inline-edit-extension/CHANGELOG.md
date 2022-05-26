@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.62.3 (2022-05-26)
+
+
+### Bug Fixes
+
+* **Select:** popper menu flips correctly ([#7434](https://github.com/patternfly/patternfly-react/issues/7434)) ([cc1eb21](https://github.com/patternfly/patternfly-react/commit/cc1eb2152246d03600a9fbbf678fd8b39f703347))
+
+
+
+
+
 ## 4.62.2 (2022-05-25)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension
