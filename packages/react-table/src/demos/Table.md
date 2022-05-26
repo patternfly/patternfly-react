@@ -2984,28 +2984,30 @@ These examples demonstrate the use of an [Empty State component](/components/emp
 
 ### Empty
 
-```js
+```js isFullscreen
 import React from 'react';
 import {
   Button,
+  Card,
   EmptyState,
   EmptyStateIcon,
   EmptyStateBody,
   EmptyStateSecondaryActions,
+  PageSection,
   Title
 } from '@patternfly/react-core';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
 class EmptyStateDemo extends React.Component {
   render() {
     const columns = [
-      { title: 'Servers' },
-      { title: 'Threads' },
-      { title: 'Applications' },
+      { title: 'Repositories' },
+      { title: 'Branches' },
+      { title: 'Pull requests' },
       { title: 'Workspaces' },
-      { title: 'Status' },
-      { title: 'Location' }
+      { title: 'Last commit' }
     ];
 
     const rows = [
@@ -3017,7 +3019,7 @@ class EmptyStateDemo extends React.Component {
             title: (
               <EmptyState>
                 <EmptyStateIcon icon={SearchIcon} />
-                <Title headingLevel="h5" size="lg">
+                <Title headingLevel="h2" size="lg">
                   No results found
                 </Title>
                 <EmptyStateBody>No results match this filter criteria. Clear all filters and try again.</EmptyStateBody>
@@ -3034,10 +3036,16 @@ class EmptyStateDemo extends React.Component {
     ];
 
     return (
-      <Table cells={columns} rows={rows} aria-label="Empty state demo">
-        <TableHeader />
-        <TableBody />
-      </Table>
+      <DashboardWrapper hasPageTemplateTitle>
+        <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
+          <Card component="div">
+            <Table cells={columns} rows={rows} aria-label="Empty state demo">
+              <TableHeader />
+              <TableBody />
+            </Table>
+          </Card>
+        </PageSection>
+      </DashboardWrapper>
     );
   }
 }

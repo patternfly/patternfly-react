@@ -78,6 +78,10 @@ export interface FileUploadFieldProps extends Omit<React.HTMLProps<HTMLDivElemen
   containerRef?: React.Ref<HTMLDivElement>;
   /** Text area text changed */
   onTextChange?: (text: string) => void;
+  /** Callback for when focus is lost on the text area field */
+  onTextAreaBlur?: (event?: any) => void;
+  /** Placeholder string to display in the empty text area field */
+  textAreaPlaceholder?: string;
 }
 
 export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
@@ -90,6 +94,8 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
   onClearButtonClick = () => {},
   onTextAreaClick,
   onTextChange,
+  onTextAreaBlur,
+  textAreaPlaceholder = '',
   className = '',
   isDisabled = false,
   isReadOnly = false,
@@ -169,6 +175,8 @@ export const FileUploadField: React.FunctionComponent<FileUploadFieldProps> = ({
             value={value as string}
             onChange={onTextAreaChange}
             onClick={onTextAreaClick}
+            onBlur={onTextAreaBlur}
+            placeholder={textAreaPlaceholder}
           />
         )}
         {isLoading && (

@@ -12,12 +12,18 @@ export interface SwitchProps
   id?: string;
   /** Additional classes added to the switch */
   className?: string;
-  /** Text value for the label when on */
+  /** Text value for the visible label when on */
   label?: React.ReactNode;
-  /** Text value for the label when off */
+  /** Text value for the visible label when off */
   labelOff?: React.ReactNode;
-  /** Flag to show if the switch is checked. */
+  /** Flag to show if the switch is checked when it is controlled by React state.
+   * To make the switch uncontrolled instead use the defaultChecked prop, but do not use both.
+   */
   isChecked?: boolean;
+  /** Flag to set the default checked value of the switch when it is uncontrolled by React state.
+   * To make the switch controlled instead use the isChecked prop, but do not use both.
+   */
+  defaultChecked?: boolean;
   /** Flag to show if the switch has a check icon. */
   hasCheckIcon?: boolean;
   /** Flag to show if the switch is disabled. */
@@ -63,6 +69,7 @@ export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaState
       label,
       labelOff,
       isChecked,
+      defaultChecked,
       hasCheckIcon,
       isDisabled,
       onChange,
@@ -84,7 +91,8 @@ export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaState
           className={css(styles.switchInput)}
           type="checkbox"
           onChange={event => onChange(event.target.checked, event)}
-          checked={isChecked}
+          {...([true, false].includes(defaultChecked) && { defaultChecked })}
+          {...(![true, false].includes(defaultChecked) && { checked: isChecked })}
           disabled={isDisabled}
           aria-labelledby={isAriaLabelledBy ? `${this.id}-on` : null}
           {...props}

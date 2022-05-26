@@ -173,6 +173,11 @@ export interface SelectProps
    * menuAppendTo={document.getElementById('target')}
    */
   menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
+  /** Flag for indicating that the select menu should automatically flip vertically when
+   * it reaches the boundary. This prop can only be used when the select component is not
+   * appended inline, e.g. `menuAppendTo="parent"`
+   */
+  isFlipEnabled?: boolean;
 }
 
 export interface SelectState {
@@ -245,7 +250,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     isInputValuePersisted: false,
     isInputFilterPersisted: false,
     isCreateSelectOptionObject: false,
-    shouldResetOnSelect: true
+    shouldResetOnSelect: true,
+    isFlipEnabled: false
   };
 
   state: SelectState = {
@@ -978,6 +984,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       loadingVariant,
       isCreateSelectOptionObject,
       shouldResetOnSelect,
+      isFlipEnabled,
       ...props
     } = this.props;
     const {
@@ -1204,6 +1211,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
     const innerMenu = (
       <SelectMenu
+        // This removes the `position: absolute` styling from the `.pf-c-select__menu`
+        // allowing the menu to flip correctly
+        {...(isFlipEnabled && { style: { position: 'revert' } })}
         {...props}
         isGrouped={isGrouped}
         selected={selections}
