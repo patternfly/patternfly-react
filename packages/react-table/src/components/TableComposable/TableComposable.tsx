@@ -59,6 +59,10 @@ export interface TableComposableProps extends React.HTMLProps<HTMLTableElement>,
   isExpandable?: boolean;
   /** Collection of column spans for nested headers. Deprecated: see https://github.com/patternfly/patternfly/issues/4584 */
   nestedHeaderColumnSpans?: number[];
+  /** Flag to apply a caption element that improves a11y for tables with selectable rows */
+  hasSelectableRowCaption?: boolean;
+  /** Visible text to add into the table selectable row a11y caption */
+  selectableRowCaptionText?: string;
 }
 
 interface TableComposableContextProps {
@@ -87,11 +91,14 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   isExpandable = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   nestedHeaderColumnSpans,
+  hasSelectableRowCaption,
+  selectableRowCaptionText,
   ...props
 }: TableComposableProps) => {
   const tableRef = innerRef || React.useRef(null);
 
   const [hasSelectableRows, setHasSelectableRows] = React.useState(false);
+  const [tableCaption, setTableCaption] = React.useState<JSX.Element | undefined>();
 
   React.useEffect(() => {
     document.addEventListener('keydown', handleKeys);
@@ -106,6 +113,27 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
       document.removeEventListener('keydown', handleKeys);
     };
   }, [tableRef, tableRef.current]);
+
+  React.useEffect(() => {
+    if (selectableRowCaptionText) {
+      setTableCaption(
+        <caption>
+          {selectableRowCaptionText}
+          <div className="pf-screen-reader">
+            This table has selectable rows. It can be navigated by row using tab, and each row can be selected using
+            space or enter.
+          </div>
+        </caption>
+      );
+    } else {
+      setTableCaption(
+        <caption className="pf-screen-reader">
+          This table has selectable rows. It can be navigated by row using tab, and each row can be selected using space
+          or enter.
+        </caption>
+      );
+    }
+  }, [selectableRowCaptionText]);
 
   const ouiaProps = useOUIAProps('Table', ouiaId, ouiaSafe);
   const grid =
@@ -183,12 +211,7 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
         {...ouiaProps}
         {...props}
       >
-        {hasSelectableRows && (
-          <caption className="pf-screen-reader">
-            This table has selectable rows. It can be navigated by row using tab, and each row can be selected using
-            space or enter.
-          </caption>
-        )}
+        {hasSelectableRowCaption && hasSelectableRows && tableCaption}
         {children}
       </table>
     </TableComposableContext.Provider>

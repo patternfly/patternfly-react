@@ -36,7 +36,7 @@ export const ComposableTableHoverable: React.FunctionComponent = () => {
   const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
 
   return (
-    <TableComposable aria-label="Hoverable table">
+    <TableComposable aria-label="Hoverable table" hasSelectableRowCaption>
       <Thead>
         <Tr>
           <Th>{columnNames.name}</Th>
