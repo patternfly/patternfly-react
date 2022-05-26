@@ -61,6 +61,14 @@ export interface TableComposableProps extends React.HTMLProps<HTMLTableElement>,
   nestedHeaderColumnSpans?: number[];
 }
 
+interface TableContextProps {
+  registerSelectableRow?: () => void;
+}
+
+export const TableContext = React.createContext<TableContextProps>({
+  registerSelectableRow: () => {}
+});
+
 const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   children,
   className,
@@ -82,6 +90,8 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   ...props
 }: TableComposableProps) => {
   const tableRef = innerRef || React.useRef(null);
+
+  const [hasSelectableRows, setHasSelectableRows] = React.useState(false);
 
   React.useEffect(() => {
     document.addEventListener('keydown', handleKeys);
@@ -147,29 +157,41 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
     );
   };
 
+  const registerSelectableRow = () => {
+    !hasSelectableRows && setHasSelectableRows(true);
+  };
+
   return (
-    <table
-      aria-label={ariaLabel}
-      role={role}
-      className={css(
-        className,
-        styles.table,
-        isTreeTable ? treeGrid : grid,
-        styles.modifiers[variant],
-        !borders && styles.modifiers.noBorderRows,
-        isStickyHeader && styles.modifiers.stickyHeader,
-        isTreeTable && stylesTreeView.modifiers.treeView,
-        isStriped && styles.modifiers.striped,
-        isExpandable && styles.modifiers.expandable,
-        isNested && 'pf-m-nested'
-      )}
-      ref={tableRef}
-      {...(isTreeTable && { role: 'treegrid' })}
-      {...ouiaProps}
-      {...props}
-    >
-      {children}
-    </table>
+    <TableContext.Provider value={{ registerSelectableRow }}>
+      <table
+        aria-label={ariaLabel}
+        role={role}
+        className={css(
+          className,
+          styles.table,
+          isTreeTable ? treeGrid : grid,
+          styles.modifiers[variant],
+          !borders && styles.modifiers.noBorderRows,
+          isStickyHeader && styles.modifiers.stickyHeader,
+          isTreeTable && stylesTreeView.modifiers.treeView,
+          isStriped && styles.modifiers.striped,
+          isExpandable && styles.modifiers.expandable,
+          isNested && 'pf-m-nested'
+        )}
+        ref={tableRef}
+        {...(isTreeTable && { role: 'treegrid' })}
+        {...ouiaProps}
+        {...props}
+      >
+        {hasSelectableRows && (
+          <caption className="pf-screen-reader">
+            This table has selectable rows. It can be navigated by row using tab, and each row can be selected using
+            space or enter.
+          </caption>
+        )}
+        {children}
+      </table>
+    </TableContext.Provider>
   );
 };
 

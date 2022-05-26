@@ -3,6 +3,7 @@ import { useOUIAProps, OUIAProps } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import inlineStyles from '@patternfly/react-styles/css/components/InlineEdit/inline-edit';
 import { css } from '@patternfly/react-styles';
+import { TableContext } from './TableComposable';
 
 export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps {
   /** Content rendered inside the <tr> row */
@@ -46,11 +47,11 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   resetOffset = false,
   onRowClick,
   isSelectable,
-  'aria-label': ariaLabel,
+  'aria-label': passedAriaLabel,
   ...props
 }: TrProps) => {
   const ouiaProps = useOUIAProps('TableRow', ouiaId, ouiaSafe);
-  const [currentAriaLabel, setComputedAriaLabel] = React.useState('');
+  const [computedAriaLabel, setComputedAriaLabel] = React.useState<string | undefined>('');
 
   let onKeyDown = null;
   if (onRowClick) {
@@ -62,20 +63,24 @@ const TrBase: React.FunctionComponent<TrProps> = ({
     };
   }
 
-  React.useEffect(() => {
-    if (isSelectable) {
-      setComputedAriaLabel(`${isRowSelected ? 'Selected' : 'Unselected'}, selectable row.`);
-    } else {
-      setComputedAriaLabel('');
-    }
-  }, [isRowSelected, isSelectable]);
-
   const rowIsHidden = isHidden || (isExpanded !== undefined && !isExpanded);
-  const rowAriaLabel = rowIsHidden ? '' : ariaLabel || currentAriaLabel; // I plan to clean up this logic before final PR
+
+  const { registerSelectableRow } = React.useContext(TableContext);
+
+  React.useEffect(() => {
+    if (isSelectable && !rowIsHidden) {
+      setComputedAriaLabel(`${isRowSelected ? 'Selected' : 'Unselected'}, selectable row.`);
+      registerSelectableRow();
+    } else {
+      setComputedAriaLabel(undefined);
+    }
+  }, [isRowSelected, isSelectable, registerSelectableRow, rowIsHidden]);
+
+  const ariaLabel = passedAriaLabel || computedAriaLabel;
 
   return (
     <>
-      {isSelectable && <output className="pf-screen-reader">{rowAriaLabel}</output>}
+      {isSelectable && <output className="pf-screen-reader">{ariaLabel}</output>}
       <tr
         className={css(
           className,
@@ -89,7 +94,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
         )}
         hidden={rowIsHidden}
         {...(isHoverable && { tabIndex: 0 })}
-        aria-label={rowAriaLabel}
+        aria-label={ariaLabel}
         ref={innerRef}
         {...(onRowClick && { onClick: onRowClick, onKeyDown })}
         {...ouiaProps}
