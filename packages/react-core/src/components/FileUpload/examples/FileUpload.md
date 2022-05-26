@@ -268,7 +268,8 @@ class CustomFileUpload extends React.Component {
       isLoading: false,
       isDragActive: false,
       hideDefaultPreview: false,
-      children: false
+      children: false,
+      hasPlaceholderText: false
     };
     this.handleTextAreaChange = value => {
       this.setState({ value });
@@ -283,11 +284,12 @@ class CustomFileUpload extends React.Component {
       isLoading,
       isDragActive,
       hideDefaultPreview,
-      children
+      children,
+      hasPlaceholderText
     } = this.state;
     return (
       <div>
-        {['filename', 'isClearButtonDisabled', 'isDragActive', 'isLoading', 'hideDefaultPreview', 'children'].map(
+        {['filename', 'isClearButtonDisabled', 'isDragActive', 'isLoading', 'hideDefaultPreview', 'children', 'hasPlaceholderText'].map(
           stateKey => (
             <Checkbox
               key={stateKey}
@@ -321,6 +323,7 @@ class CustomFileUpload extends React.Component {
           isDragActive={isDragActive}
           hideDefaultPreview={hideDefaultPreview}
           browseButtonText="Upload"
+          textAreaPlaceholder={hasPlaceholderText ? "File preview" : ''}
         >
           {children && (
             <div className="pf-u-m-md">(A custom preview of the uploaded file can be passed as children)</div>
