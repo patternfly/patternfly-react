@@ -19,7 +19,12 @@ const getRegexMatches = (string, regex) => {
 
 const getDeclarations = cssAst =>
   cssAst.stylesheet.rules
-    .filter(node => node.type === 'rule' && !node.selectors.includes('.pf-t-dark'))
+    .filter(
+      node =>
+        node.type === 'rule' &&
+        !node.selectors.includes('.pf-t-dark') &&
+        (!node.selectors || !node.selectors.some(item => item.includes('.pf-theme-dark')))
+    )
     .map(node => node.declarations.filter(decl => decl.type === 'declaration'))
     .reduce((acc, val) => acc.concat(val), []); // flatten
 
