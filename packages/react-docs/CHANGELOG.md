@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 5.80.0 (2022-05-26)
+
+
+### Features
+
+* **Popper:** add mouse events for popper content ([#7399](https://github.com/patternfly/patternfly-react/issues/7399)) ([47f8d12](https://github.com/patternfly/patternfly-react/commit/47f8d12e348397336287c7e7efc79665bce61ae2))
+
+
+
+
+
 # 5.79.0 (2022-05-26)
 
 
