@@ -65,7 +65,7 @@ export interface ContextSelectorProps extends Omit<ToggleMenuBaseProps, 'menuApp
    * it reaches the boundary. This prop can only be used when the context selector component is not
    * appended inline, e.g. `menuAppendTo="parent"`
    */
-  isFlippable?: boolean;
+  isFlipEnabled?: boolean;
 }
 
 export class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateId: string }> {
@@ -89,7 +89,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     footer: null as React.ReactNode,
     isPlain: false,
     isText: false,
-    isFlippable: false
+    isFlipEnabled: false
   };
   constructor(props: ContextSelectorProps) {
     super(props);
@@ -132,16 +132,15 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
       isText,
       footer,
       disableFocusTrap,
-      isFlippable,
+      isFlipEnabled,
       ...props
     } = this.props;
     const menuContainer = (
       <div
         className={css(styles.contextSelectorMenu)}
-        // This removes the `position: absolute` styling from the `.pf-c-context-selector__menu` element,
-        // which was causing incorrect positioning of the popper and making it seem like the
-        // menu wasn't flipping.
-        {...(isFlippable && { style: { position: 'revert' } })}
+        // This removes the `position: absolute`styling from the `.pf-c-context-selector__menu`
+        // allowing the menu to flip correctly
+        {...(isFlipEnabled && { style: { position: 'revert' } })}
       >
         {isOpen && (
           <FocusTrap active={!disableFocusTrap} focusTrapOptions={{ clickOutsideDeactivates: true }}>

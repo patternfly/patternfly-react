@@ -59,7 +59,7 @@ export interface DropdownProps
    * it reaches the boundary. This prop can only be used when the dropdown component is not
    * appended inline, e.g. `menuAppendTo="parent"`
    */
-  isFlippable?: boolean;
+  isFlipEnabled?: boolean;
 }
 
 export const Dropdown: React.FunctionComponent<DropdownProps> = ({
@@ -71,7 +71,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   alignments,
   contextProps,
   menuAppendTo = 'inline',
-  isFlippable = false,
+  isFlipEnabled = false,
   ...props
 }: DropdownProps) => (
   <DropdownContext.Provider
@@ -97,7 +97,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
       ...contextProps
     }}
   >
-    <DropdownWithContext menuAppendTo={menuAppendTo} isFlippable={isFlippable} {...props} />
+    <DropdownWithContext menuAppendTo={menuAppendTo} isFlipEnabled={isFlipEnabled} {...props} />
   </DropdownContext.Provider>
 );
 Dropdown.displayName = 'Dropdown';

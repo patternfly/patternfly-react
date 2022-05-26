@@ -177,7 +177,7 @@ export interface SelectProps
    * it reaches the boundary. This prop can only be used when the select component is not
    * appended inline, e.g. `menuAppendTo="parent"`
    */
-  isFlippable?: boolean;
+  isFlipEnabled?: boolean;
 }
 
 export interface SelectState {
@@ -251,7 +251,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     isInputFilterPersisted: false,
     isCreateSelectOptionObject: false,
     shouldResetOnSelect: true,
-    isFlippable: false
+    isFlipEnabled: false
   };
 
   state: SelectState = {
@@ -984,7 +984,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       loadingVariant,
       isCreateSelectOptionObject,
       shouldResetOnSelect,
-      isFlippable,
+      isFlipEnabled,
       ...props
     } = this.props;
     const {
@@ -1211,10 +1211,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
     const innerMenu = (
       <SelectMenu
-        // This removes the `position: absolute` styling from the `.pf-c-select__menu` element,
-        // which was causing incorrect positioning of the popper and making it seem like the
-        // menu wasn't flipping.
-        {...(isFlippable && { style: { position: 'revert' } })}
+        // This removes the `position: absolute` styling from the `.pf-c-select__menu`
+        // allowing the menu to flip correctly
+        {...(isFlipEnabled && { style: { position: 'revert' } })}
         {...props}
         isGrouped={isGrouped}
         selected={selections}

@@ -30,7 +30,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
     onSelect: (): void => undefined,
     autoFocus: true,
     menuAppendTo: 'inline',
-    isFlippable: false
+    isFlipEnabled: false
   };
 
   constructor(props: DropdownProps & OUIAProps) {
@@ -76,7 +76,7 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
       toggle,
       autoFocus,
       menuAppendTo,
-      isFlippable,
+      isFlipEnabled,
       ...props
     } = this.props;
     const id = toggle.props.id || `pf-dropdown-toggle-id-${DropdownWithContext.currentId++}`;
@@ -98,10 +98,9 @@ export class DropdownWithContext extends React.Component<DropdownProps & OUIAPro
           const BaseComponent = baseComponent as any;
           const menuContainer = (
             <DropdownMenu
-              // This removes the `position: absolute` styling from the `.pf-c-dropdown__menu` element,
-              // which was causing incorrect positioning of the popper and making it seem like the
-              // menu wasn't flipping.
-              {...(isFlippable && { style: { position: 'revert', minWidth: 'min-content' } })}
+              // This removes the `position: absolute` styling from the `.pf-c-dropdown__menu`
+              // allowing the menu to flip correctly
+              {...(isFlipEnabled && { style: { position: 'revert', minWidth: 'min-content' } })}
               setMenuComponentRef={this.setMenuComponentRef}
               component={component}
               isOpen={isOpen}
