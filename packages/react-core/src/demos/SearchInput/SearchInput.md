@@ -196,8 +196,6 @@ import React from 'react';
 import { 
   ActionGroup,
   Button, 
-  Card, 
-  CardBody,  
   DatePicker,
   Form, 
   FormGroup,
@@ -209,6 +207,9 @@ import {
   MenuItem,
   MenuList,
   MenuToggle,
+  Panel,
+  PanelMain,
+  PanelMainBody,
   Popper, 
   SearchInput, 
   TextInput,
@@ -425,48 +426,50 @@ AdvancedComposableSearchInput = () => {
   
   const advancedForm = (
     <div ref={advancedSearchPaneRef} role="dialog" aria-label="Advanced search form">
-      <Card>
-        <CardBody>
-          <Form>
-            <FormGroup label='Has the words' fieldId='has-words' key='has-words'>
-              <TextInput
-                type='text'
-                id='has-words'
-                value={hasWords}
-                onChange={value => {
-                  setHasWords(value);
-                  setValue(value);
-                }}
-                ref={firstAttrRef}
-              />
-            </FormGroup>
-            <Grid hasGutter md={6}>
-              <GridItem>
-                <FormGroup label='Date within' fieldId='date-within' key='date-within'>
-                  <Popper trigger={dateWithinToggle} popper={dateWithinOptions} isVisible={isDateWithinOpen} />
-                </FormGroup>
-              </GridItem>
-              <GridItem>
-                <FormGroup label='Of date' fieldId='date' key='date'>
-                  <DatePicker 
-                    id="datePicker" 
-                    style={{width: "100%"}} 
-                    value={date} 
-                    onChange={setDate} 
-                    appendTo={() => document.querySelector("#datePicker")}
-                  />
-                </FormGroup>
-              </GridItem>
-            </Grid>
-            <ActionGroup>
-              <Button variant="primary" type="submit" onClick={(e) => onSubmit(null, e)}>Submit</Button>
-              {!!onClear && (
-                <Button variant="link" type="reset" onClick={onClear}>Reset</Button>
-              )}
-            </ActionGroup>
-          </Form>
-        </CardBody>
-      </Card>
+      <Panel variant='raised'>
+        <PanelMain>
+          <PanelMainBody>
+            <Form>
+              <FormGroup label='Has the words' fieldId='has-words' key='has-words'>
+                <TextInput
+                  type='text'
+                  id='has-words'
+                  value={hasWords}
+                  onChange={value => {
+                    setHasWords(value);
+                    setValue(value);
+                  }}
+                  ref={firstAttrRef}
+                />
+              </FormGroup>
+              <Grid hasGutter md={6}>
+                <GridItem>
+                  <FormGroup label='Date within' fieldId='date-within' key='date-within'>
+                    <Popper trigger={dateWithinToggle} popper={dateWithinOptions} isVisible={isDateWithinOpen} />
+                  </FormGroup>
+                </GridItem>
+                <GridItem>
+                  <FormGroup label='Of date' fieldId='date' key='date'>
+                    <DatePicker 
+                      id="datePicker" 
+                      style={{width: "100%"}} 
+                      value={date} 
+                      onChange={setDate} 
+                      appendTo={() => document.querySelector("#datePicker")}
+                    />
+                  </FormGroup>
+                </GridItem>
+              </Grid>
+              <ActionGroup>
+                <Button variant="primary" type="submit" onClick={(e) => onSubmit(null, e)}>Submit</Button>
+                {!!onClear && (
+                  <Button variant="link" type="reset" onClick={onClear}>Reset</Button>
+                )}
+              </ActionGroup>
+            </Form>
+          </PanelMainBody>
+        </PanelMain>
+      </Panel>
     </div>
   );
 
