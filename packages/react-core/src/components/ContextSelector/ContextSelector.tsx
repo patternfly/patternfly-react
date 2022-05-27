@@ -143,7 +143,10 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
         {...(isFlipEnabled && { style: { position: 'revert' } })}
       >
         {isOpen && (
-          <FocusTrap active={!disableFocusTrap} focusTrapOptions={{ clickOutsideDeactivates: true }}>
+          <FocusTrap
+            active={!disableFocusTrap}
+            focusTrapOptions={{ clickOutsideDeactivates: true, tabbableOptions: { displayCheck: 'none' } }}
+          >
             <div className={css(styles.contextSelectorMenuSearch)}>
               <InputGroup>
                 <TextInput
