@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.179.2 (2022-05-27)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## 4.179.1 (2022-05-27)
 
 **Note:** Version bump only for package demo-app-ts
