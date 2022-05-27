@@ -26,6 +26,7 @@ export const ComposableDrilldownMenu: React.FunctionComponent = () => {
   const [menuHeights, setMenuHeights] = React.useState<MenuHeightsType>({});
   const toggleRef = React.useRef<HTMLButtonElement>();
   const menuRef = React.useRef<HTMLDivElement>();
+  const containerRef = React.useRef<HTMLDivElement>();
 
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (isOpen && menuRef.current.contains(event.target as Node)) {
@@ -242,5 +243,15 @@ export const ComposableDrilldownMenu: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
+  return (
+    <div ref={containerRef}>
+      <Popper
+        trigger={toggle}
+        popper={menu}
+        appendTo={containerRef.current}
+        isVisible={isOpen}
+        popperMatchesTriggerWidth={false}
+      />
+    </div>
+  );
 };

@@ -7,6 +7,7 @@ export const ComposableSimpleSelect: React.FunctionComponent = () => {
   const [selected, setSelected] = React.useState<string>('Select a value');
   const toggleRef = React.useRef<HTMLButtonElement>();
   const menuRef = React.useRef<HTMLDivElement>();
+  const containerRef = React.useRef<HTMLDivElement>();
 
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (isOpen && menuRef.current.contains(event.target as Node)) {
@@ -70,5 +71,9 @@ export const ComposableSimpleSelect: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
+  return (
+    <div ref={containerRef}>
+      <Popper trigger={toggle} popper={menu} appendTo={containerRef.current} isVisible={isOpen} />
+    </div>
+  );
 };

@@ -217,11 +217,9 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
   };
 
   const toggle = (
-    <div ref={containerRef}>
-      <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
-        {isOpen ? 'Expanded' : 'Collapsed'}
-      </MenuToggle>
-    </div>
+    <MenuToggle ref={toggleRef} onClick={onToggleClick} isExpanded={isOpen}>
+      {isOpen ? 'Expanded' : 'Collapsed'}
+    </MenuToggle>
   );
   const statusMapped = statusOptions.map(mapTree);
   const roleMapped = roleOptions.map(mapTree);
@@ -263,12 +261,14 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
     </Panel>
   );
   return (
-    <Popper
-      trigger={toggle}
-      popper={menu}
-      isVisible={isOpen}
-      appendTo={containerRef.current}
-      popperMatchesTriggerWidth={false}
-    />
+    <div ref={containerRef}>
+      <Popper
+        trigger={toggle}
+        popper={menu}
+        isVisible={isOpen}
+        appendTo={containerRef.current}
+        popperMatchesTriggerWidth={false}
+      />
+    </div>
   );
 };
