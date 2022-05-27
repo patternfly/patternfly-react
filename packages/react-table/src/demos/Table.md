@@ -1878,8 +1878,8 @@ class FilterTableDemo extends React.Component {
           onSelect={this.onCategorySelect}
           position={DropdownPosition.left}
           toggle={
-            <DropdownToggle onToggle={this.onCategoryToggle} style={{ width: '100%' }}>
-              <FilterIcon /> {currentCategory}
+            <DropdownToggle onToggle={this.onCategoryToggle} style={{ width: '100%' }} icon={<FilterIcon /> }>
+              {currentCategory}
             </DropdownToggle>
           }
           isOpen={isCategoryDropdownOpen}
