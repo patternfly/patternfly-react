@@ -18,6 +18,7 @@ export class SliderDemo extends Component<SliderDemoState> {
 
   state = {
     valueDiscrete: 62.5,
+    valueDiscreteNoLinearMinMax: 25,
     valuePercent: 50,
     inputValuePercent: 50,
     valueContinuous: 50,
@@ -36,6 +37,15 @@ export class SliderDemo extends Component<SliderDemoState> {
     { value: 100, label: '8' }
   ];
 
+  stepsDiscreteNoLinearWithMaxMin = [
+    { value: 12, label: '12' },
+    { value: 15, label: '15' },
+    { value: 25, label: '25' },
+    { value: 54, label: '54' },
+    { value: 67, label: '67' },
+    { value: 86, label: '86' }
+  ];
+
   stepsPercent = [
     { value: 0, label: '0%' },
     { value: 25, label: '25%', isLabelHidden: true },
@@ -43,6 +53,10 @@ export class SliderDemo extends Component<SliderDemoState> {
     { value: 75, label: '75%', isLabelHidden: true },
     { value: 100, label: '100%' }
   ];
+
+  onChangeDiscreteNoLInearMinMax = (value: number) => {
+    this.setState({ valueDiscreteMinMax: value });
+  };
 
   onChangeDiscrete = (value: number, inputValue: number) => {
     let newValue;
@@ -137,6 +151,15 @@ export class SliderDemo extends Component<SliderDemoState> {
           value={this.state.valueDiscrete}
           customSteps={this.stepsDiscrete}
           onChange={this.onChangeDiscrete}
+        />
+        <br />
+        <Slider
+          value={this.state.valueDiscreteNoLinearMinMax}
+          showTicks
+          customSteps={this.stepsDiscreteNoLinearWithMaxMin}
+          onChange={this.onChangeDiscreteNoLInearMinMax}
+          min={12}
+          max={86}
         />
         <br />
         <Slider
