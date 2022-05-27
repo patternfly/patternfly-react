@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.66.1 (2022-05-27)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
+# 4.66.0 (2022-05-26)
+
+
+### Features
+
+* **Popper:** add mouse events for popper content ([#7399](https://github.com/patternfly/patternfly-react/issues/7399)) ([47f8d12](https://github.com/patternfly/patternfly-react/commit/47f8d12e348397336287c7e7efc79665bce61ae2))
+
+
+
+
+
+# 4.65.0 (2022-05-26)
+
+
+### Features
+
+* **table:** add fullscreen empty state demo ([#7371](https://github.com/patternfly/patternfly-react/issues/7371)) ([54f3052](https://github.com/patternfly/patternfly-react/commit/54f30520d9d808ffe15c962b37af91cef4c21dcb))
+
+
+
+
+
 ## 4.64.4 (2022-05-26)
 
 **Note:** Version bump only for package @patternfly/react-virtualized-extension

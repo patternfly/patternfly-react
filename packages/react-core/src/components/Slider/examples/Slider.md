@@ -29,7 +29,8 @@ class DiscreteInput extends React.Component {
       value3: 25,
       value4: 50,
       value5: 50,
-      value6: 3
+      value6: 3,
+      value7: 25
     };
 
     this.steps = [
@@ -52,6 +53,15 @@ class DiscreteInput extends React.Component {
       { value: 4, label: "E" },
       { value: 5, label: "F" }
     ];
+
+    this.stepsDiscreteNoLinearWithMaxMin = [
+      { value: 12, label: '12' },
+      { value: 15, label: '15' },
+      { value: 25, label: '25' },
+      { value: 54, label: '54' },
+      { value: 67, label: '67' },
+      { value: 86, label: '86' }
+  ];
 
     this.onChange = value => {
         this.setState({
@@ -86,6 +96,12 @@ class DiscreteInput extends React.Component {
     this.onChange6 = value => {
         this.setState({
           value6: value
+        });
+    };
+
+      this.onChange7 = value => {
+        this.setState({
+          value7: value
         });
     };
   }
@@ -123,7 +139,18 @@ class DiscreteInput extends React.Component {
             customSteps={this.stepsDiscreteWithMax}
             onChange={this.onChange6}
           />
-          <br />
+        <br />
+        <Text component={TextVariants.h3}>Slider value is: {Math.floor(this.state.value7)}</Text>
+        <Text component={TextVariants.small}>(min = 12, max = 86, custom steps with non linear data) </Text>
+        <Slider
+            value={this.state.value7}
+            showTicks
+            customSteps={this.stepsDiscreteNoLinearWithMaxMin}
+            onChange={this.onChange7}
+            min={12}
+            max={86}
+          />
+        <br />
       </>
     );
   }
