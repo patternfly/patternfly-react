@@ -47,6 +47,8 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
   wrapModifier?: DataListWrapModifier | 'nowrap' | 'truncate' | 'breakWord';
   /** @deprecated Order of items in a draggable DataList */
   itemOrder?: string[];
+  /** Flag indicating that the data list should render a hidden input to make it selectable */
+  hasSelectableInput?: boolean;
 }
 
 interface DataListState {
@@ -60,6 +62,7 @@ interface DataListContextProps {
   isSelectable: boolean;
   selectedDataListItemId: string;
   updateSelectedDataListItem: (id: string) => void;
+  hasSelectableInput?: boolean;
   isDraggable: boolean;
   dragStart: (e: React.DragEvent) => void;
   dragEnd: (e: React.DragEvent) => void;
@@ -308,6 +311,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
       onDragFinish,
       gridBreakpoint,
       itemOrder,
+      hasSelectableInput,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
@@ -330,6 +334,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
           isSelectable,
           selectedDataListItemId,
           updateSelectedDataListItem,
+          hasSelectableInput,
           isDraggable: this.html5DragDrop,
           dragStart: this.dragStart,
           dragEnd: this.dragEnd,

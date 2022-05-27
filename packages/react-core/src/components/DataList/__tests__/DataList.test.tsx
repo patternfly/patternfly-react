@@ -47,6 +47,82 @@ describe('DataList', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('List renders with a hidden input to improve a11y when hasSelectableInput is passed', () => {
+    render(
+      <DataList aria-label="this is a simple list" hasSelectableInput>
+        <DataListItem>
+          <DataListItemRow aria-labelledby="test-id">
+            <p id="test-id">Test</p>
+          </DataListItemRow>
+        </DataListItem>
+      </DataList>
+    );
+
+    const selectableInput = screen.getByRole('checkbox', { hidden: true });
+
+    expect(selectableInput).toBeInTheDocument();
+  });
+
+  test('List does not render with a hidden input to improve a11y when hasSelectableInput is not passed', () => {
+    render(
+      <DataList aria-label="this is a simple list">
+        <DataListItem>
+          <DataListItemRow aria-labelledby="test-id">
+            <p id="test-id">Test</p>
+          </DataListItemRow>
+        </DataListItem>
+      </DataList>
+    );
+
+    const selectableInput = screen.queryByRole('checkbox', { hidden: true });
+
+    expect(selectableInput).not.toBeInTheDocument();
+  });
+
+  test('Item applies selectableInputAriaLabel to the hidden input', () => {
+    render(
+      <DataList aria-label="this is a simple list" hasSelectableInput>
+        <DataListItem selectableInputAriaLabel="Data list item label test">
+          <DataListItemRow aria-labelledby="test-id">
+            <p id="test-id">Test</p>
+          </DataListItemRow>
+        </DataListItem>
+      </DataList>
+    );
+
+    const selectableInput = screen.getByRole('checkbox', { hidden: true });
+
+    expect(selectableInput).toHaveAccessibleName('Data list item label test');
+  });
+
+  test('Item defaults to labelling its input using its aria-labelledby prop', () => {
+    render(
+      <DataList aria-label="this is a simple list" hasSelectableInput>
+        <DataListItem aria-labelledby="test-id">
+          <p id="test-id">Test cell content</p>
+        </DataListItem>
+      </DataList>
+    );
+
+    const selectableInput = screen.getByRole('checkbox', { hidden: true });
+
+    expect(selectableInput).toHaveAccessibleName('Test cell content');
+  });
+
+  test('Item prioritizes selectableInputAriaLabel over aria-labelledby prop', () => {
+    render(
+      <DataList aria-label="this is a simple list" hasSelectableInput>
+        <DataListItem aria-labelledby="test-id" selectableInputAriaLabel="Data list item label test">
+          <p id="test-id">Test cell content</p>
+        </DataListItem>
+      </DataList>
+    );
+
+    const selectableInput = screen.getByRole('checkbox', { hidden: true });
+
+    expect(selectableInput).toHaveAccessibleName('Data list item label test');
+  });
+
   test('Item default', () => {
     const { asFragment } = render(
       <DataListItem key="item-id-1" aria-labelledby="item-1">

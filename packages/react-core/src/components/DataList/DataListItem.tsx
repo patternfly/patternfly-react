@@ -16,6 +16,8 @@ export interface DataListItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 
   'aria-labelledby': string;
   /** Unique id for the DataList item */
   id?: string;
+  /** Aria label to apply to the selectable input if one is rendered */
+  selectableInputAriaLabel?: string;
 }
 
 export interface DataListItemChildProps {
@@ -52,13 +54,22 @@ export class DataListItem extends React.Component<DataListItemProps> {
     'aria-labelledby': ''
   };
   render() {
-    const { children, isExpanded, className, id, 'aria-labelledby': ariaLabelledBy, ...props } = this.props;
+    const {
+      children,
+      isExpanded,
+      className,
+      id,
+      'aria-labelledby': ariaLabelledBy,
+      selectableInputAriaLabel,
+      ...props
+    } = this.props;
     return (
       <DataListContext.Consumer>
         {({
           isSelectable,
           selectedDataListItemId,
           updateSelectedDataListItem,
+          hasSelectableInput,
           isDraggable,
           dragStart,
           dragEnd,
@@ -98,31 +109,54 @@ export class DataListItem extends React.Component<DataListItemProps> {
             onDragStart: dragStart
           };
 
+          const isSelected = selectedDataListItemId === id;
+
+          const handleInputChange = () => {
+            const name = isSelected ? '' : id;
+            updateSelectedDataListItem(name);
+          };
+
+          const selectableInputAriaProps = selectableInputAriaLabel
+            ? { 'aria-label': selectableInputAriaLabel }
+            : { 'aria-labelledby': ariaLabelledBy };
+
           return (
-            <li
-              id={id}
-              className={css(
-                styles.dataListItem,
-                isExpanded && styles.modifiers.expanded,
-                isSelectable && styles.modifiers.selectable,
-                selectedDataListItemId && selectedDataListItemId === id && styles.modifiers.selected,
-                className
+            <>
+              {hasSelectableInput && (
+                <input
+                  className="pf-screen-reader"
+                  type="checkbox"
+                  checked={isSelected}
+                  onChange={handleInputChange}
+                  tabIndex={-1}
+                  {...selectableInputAriaProps}
+                />
               )}
-              aria-labelledby={ariaLabelledBy}
-              {...(isSelectable && { tabIndex: 0, onClick: selectDataListItem, onKeyDown })}
-              {...(isSelectable && selectedDataListItemId === id && { 'aria-selected': true })}
-              {...props}
-              {...dragProps}
-            >
-              {React.Children.map(
-                children,
-                child =>
-                  React.isValidElement(child) &&
-                  React.cloneElement(child as React.ReactElement<any>, {
-                    rowid: ariaLabelledBy
-                  })
-              )}
-            </li>
+              <li
+                id={id}
+                className={css(
+                  styles.dataListItem,
+                  isExpanded && styles.modifiers.expanded,
+                  isSelectable && styles.modifiers.selectable,
+                  selectedDataListItemId && isSelected && styles.modifiers.selected,
+                  className
+                )}
+                aria-labelledby={ariaLabelledBy}
+                {...(isSelectable && { tabIndex: 0, onClick: selectDataListItem, onKeyDown })}
+                {...(isSelectable && isSelected && { 'aria-selected': true })}
+                {...props}
+                {...dragProps}
+              >
+                {React.Children.map(
+                  children,
+                  child =>
+                    React.isValidElement(child) &&
+                    React.cloneElement(child as React.ReactElement<any>, {
+                      rowid: ariaLabelledBy
+                    })
+                )}
+              </li>
+            </>
           );
         }}
       </DataListContext.Consumer>
