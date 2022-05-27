@@ -37,7 +37,7 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
   titleLabel = '',
   ...props
 }: ModalBoxTitleProps) => {
-  const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
+  const [hasTooltip, setHasTooltip] = React.useState(false);
   const h1 = React.useRef<HTMLHeadingElement>();
   const label = titleLabel || (isVariantIcon(titleIconVariant) ? `${capitalize(titleIconVariant)} alert:` : titleLabel);
   const variantIcons = {
@@ -50,7 +50,7 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
   const CustomIcon = !isVariantIcon(titleIconVariant) && titleIconVariant;
 
   useIsomorphicLayoutEffect(() => {
-    setIsTooltipVisible(h1.current && h1.current.offsetWidth < h1.current.scrollWidth);
+    setHasTooltip(h1.current && h1.current.offsetWidth < h1.current.scrollWidth);
   }, []);
 
   const content = (
@@ -70,12 +70,6 @@ export const ModalBoxTitle: React.FunctionComponent<ModalBoxTitleProps> = ({
     </h1>
   );
 
-  return isTooltipVisible ? (
-    <Tooltip content={title} isVisible>
-      {content}
-    </Tooltip>
-  ) : (
-    content
-  );
+  return hasTooltip ? <Tooltip content={title}>{content}</Tooltip> : content;
 };
 ModalBoxTitle.displayName = 'ModalBoxTitle';
