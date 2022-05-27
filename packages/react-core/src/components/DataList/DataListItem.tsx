@@ -121,7 +121,21 @@ export class DataListItem extends React.Component<DataListItemProps> {
             : { 'aria-labelledby': ariaLabelledBy };
 
           return (
-            <>
+            <li
+              id={id}
+              className={css(
+                styles.dataListItem,
+                isExpanded && styles.modifiers.expanded,
+                isSelectable && styles.modifiers.selectable,
+                selectedDataListItemId && isSelected && styles.modifiers.selected,
+                className
+              )}
+              aria-labelledby={ariaLabelledBy}
+              {...(isSelectable && { tabIndex: 0, onClick: selectDataListItem, onKeyDown })}
+              {...(isSelectable && isSelected && { 'aria-selected': true })}
+              {...props}
+              {...dragProps}
+            >
               {hasSelectableInput && (
                 <input
                   className="pf-screen-reader"
@@ -132,31 +146,15 @@ export class DataListItem extends React.Component<DataListItemProps> {
                   {...selectableInputAriaProps}
                 />
               )}
-              <li
-                id={id}
-                className={css(
-                  styles.dataListItem,
-                  isExpanded && styles.modifiers.expanded,
-                  isSelectable && styles.modifiers.selectable,
-                  selectedDataListItemId && isSelected && styles.modifiers.selected,
-                  className
-                )}
-                aria-labelledby={ariaLabelledBy}
-                {...(isSelectable && { tabIndex: 0, onClick: selectDataListItem, onKeyDown })}
-                {...(isSelectable && isSelected && { 'aria-selected': true })}
-                {...props}
-                {...dragProps}
-              >
-                {React.Children.map(
-                  children,
-                  child =>
-                    React.isValidElement(child) &&
-                    React.cloneElement(child as React.ReactElement<any>, {
-                      rowid: ariaLabelledBy
-                    })
-                )}
-              </li>
-            </>
+              {React.Children.map(
+                children,
+                child =>
+                  React.isValidElement(child) &&
+                  React.cloneElement(child as React.ReactElement<any>, {
+                    rowid: ariaLabelledBy
+                  })
+              )}
+            </li>
           );
         }}
       </DataListContext.Consumer>
