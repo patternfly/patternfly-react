@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.67.0 (2022-05-31)
+
+
+### Features
+
+* **table:** add fullscreen demo for error state ([#7443](https://github.com/patternfly/patternfly-react/issues/7443)) ([eeab219](https://github.com/patternfly/patternfly-react/commit/eeab2197765589262ee7c328e57dbf1606da6d7f))
+
+
+
+
+
 ## 4.66.2 (2022-05-27)
 
 **Note:** Version bump only for package @patternfly/react-topology
