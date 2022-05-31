@@ -23,7 +23,7 @@ const getDeclarations = cssAst =>
       node =>
         node.type === 'rule' &&
         !node.selectors.includes('.pf-t-dark') &&
-        (!node.selectors || !node.selectors.some(item => item.includes('.pf-theme-dark')))
+        (!node.selectors || !node.selectors.some(item => item.includes('.pf-theme-dark'))) // exclude dark theme blocks since dark theme variable values override default token values
     )
     .map(node => node.declarations.filter(decl => decl.type === 'declaration'))
     .reduce((acc, val) => acc.concat(val), []); // flatten
