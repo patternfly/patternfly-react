@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/SearchInput/search-input';
 import { Button, ButtonVariant } from '../Button';
 import { Badge } from '../Badge';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
@@ -277,9 +278,10 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   if (!!onSearch || attributes.length > 0 || !!onToggleAdvancedSearch) {
     if (attributes.length > 0) {
       return (
-        <div className={className && css(className)} ref={searchInputRef} {...props}>
+        <div className={css(className, styles.searchInput)} ref={searchInputRef} {...props}>
           {buildSearchTextInputGroupWithExtraButtons()}
           <AdvancedSearchMenu
+            className={styles.searchInputMenu}
             value={value}
             parentRef={searchInputRef}
             parentInputRef={searchInputInputRef}
