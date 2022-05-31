@@ -3107,20 +3107,29 @@ class LoadingStateDemo extends React.Component {
 
 ### Error
 
-```js
+```js isFullscreen
 import React from 'react';
-import { EmptyState, EmptyStateBody, EmptyStateVariant, Title } from '@patternfly/react-core';
+import {
+  Card,
+  EmptyState,
+  EmptyStateIcon,
+  EmptyStateBody,
+  EmptyStateVariant,
+  PageSection,
+  Title
+} from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 class ErrorStateDemo extends React.Component {
   render() {
     const columns = [
-      { title: 'Servers' },
-      { title: 'Threads' },
-      { title: 'Applications' },
+      { title: 'Repositories' },
+      { title: 'Branches' },
+      { title: 'Pull requests' },
       { title: 'Workspaces' },
-      { title: 'Status' },
-      { title: 'Location' }
+      { title: 'Last commit' }
     ];
     const rows = [
       {
@@ -3130,6 +3139,7 @@ class ErrorStateDemo extends React.Component {
             props: { colSpan: 8 },
             title: (
               <EmptyState variant={EmptyStateVariant.small}>
+                <EmptyStateIcon icon={ExclamationCircleIcon} color={globalDangerColor200.value} />
                 <Title headingLevel="h2" size="lg">
                   Unable to connect
                 </Title>
@@ -3144,10 +3154,16 @@ class ErrorStateDemo extends React.Component {
     ];
 
     return (
-      <Table cells={columns} rows={rows} aria-label="Error Table Demo">
-        <TableHeader />
-        <TableBody />
-      </Table>
+      <DashboardWrapper hasPageTemplateTitle>
+        <PageSection padding={{ default: 'noPadding', xl: 'padding' }}>
+          <Card component="div">
+            <Table cells={columns} rows={rows} aria-label="Error table demo">
+              <TableHeader />
+              <TableBody />
+            </Table>
+          </Card>
+        </PageSection>
+      </DashboardWrapper>
     );
   }
 }
