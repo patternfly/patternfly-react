@@ -332,8 +332,6 @@ export class DataList extends React.Component<DataListProps, DataListState> {
       onSelectDataListItem(id);
     };
 
-    const isRadioGroup = selectableInputType === 'radio';
-
     const dragProps = this.html5DragDrop && {
       onDragOver: this.dragOver,
       onDrop: this.dragOver,
@@ -369,7 +367,6 @@ export class DataList extends React.Component<DataListProps, DataListState> {
           {...props}
           {...dragProps}
           ref={this.ref}
-          role={isRadioGroup ? 'radiogroup' : undefined}
         >
           {children}
         </ul>
