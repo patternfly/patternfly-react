@@ -47,9 +47,7 @@ export const DataListSelectableRows: React.FunctionComponent = () => {
         aria-label="selectable data list example"
         selectedDataListItemId={selectedDataListItemId}
         onSelectDataListItem={onSelectDataListItem}
-        hasSelectableInput
-        selectableInputType="radio"
-        onSelectableInputChange={handleInputChange}
+        selectableInput={{ type: 'radio', onChange: handleInputChange }}
       >
         <DataListItem aria-labelledby="selectable-action-item1" id="item1">
           <DataListItemRow>

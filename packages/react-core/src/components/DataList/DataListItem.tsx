@@ -16,7 +16,7 @@ export interface DataListItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 
   'aria-labelledby': string;
   /** Unique id for the DataList item */
   id?: string;
-  /** Aria label to apply to the selectable input if one is rendered */
+  /** @beta Aria label to apply to the selectable input if one is rendered */
   selectableInputAriaLabel?: string;
 }
 
@@ -69,9 +69,7 @@ export class DataListItem extends React.Component<DataListItemProps> {
           isSelectable,
           selectedDataListItemId,
           updateSelectedDataListItem,
-          hasSelectableInput,
-          selectableInputType,
-          onSelectableInputChange,
+          selectableInput,
           isDraggable,
           dragStart,
           dragEnd,
@@ -133,12 +131,12 @@ export class DataListItem extends React.Component<DataListItemProps> {
               {...props}
               {...dragProps}
             >
-              {hasSelectableInput && (
+              {selectableInput && (
                 <input
                   className="pf-screen-reader"
-                  type={selectableInputType}
+                  type={selectableInput.type}
                   checked={isSelected}
-                  onChange={event => onSelectableInputChange(id, event)}
+                  onChange={event => selectableInput.onChange(id, event)}
                   tabIndex={-1}
                   {...selectableInputAriaProps}
                 />

@@ -48,9 +48,9 @@ describe('DataList', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('List renders with a hidden input to improve a11y when hasSelectableInput is passed', () => {
+  test('List renders with a hidden input to improve a11y when selectableInput is passed', () => {
     render(
-      <DataList aria-label="this is a simple list" hasSelectableInput>
+      <DataList aria-label="this is a simple list" selectableInput={{ type: 'checkbox', onChange: () => {} }}>
         <DataListItem>
           <DataListItemRow aria-labelledby="test-id">
             <p id="test-id">Test</p>
@@ -64,7 +64,7 @@ describe('DataList', () => {
     expect(selectableInput).toBeInTheDocument();
   });
 
-  test('List does not render with a hidden input to improve a11y when hasSelectableInput is not passed', () => {
+  test('List does not render with a hidden input to improve a11y when selectableInput is not passed', () => {
     render(
       <DataList aria-label="this is a simple list">
         <DataListItem>
@@ -80,9 +80,9 @@ describe('DataList', () => {
     expect(selectableInput).not.toBeInTheDocument();
   });
 
-  test('List hidden input renders as a radio when selectableInputType is radio', () => {
+  test('List hidden input renders as a radio when selectableInput.type is radio', () => {
     render(
-      <DataList aria-label="this is a simple list" hasSelectableInput selectableInputType='radio'>
+      <DataList aria-label="this is a simple list" selectableInput={{ type: 'radio', onChange: () => {} }}>
         <DataListItem>
           <DataListItemRow aria-labelledby="test-id">
             <p id="test-id">Test</p>
@@ -98,11 +98,11 @@ describe('DataList', () => {
     expect(selectableCheckboxInput).not.toBeInTheDocument();
   });
 
-  test('List calls onSelectableInputChange when the selectable input changes', () => {
+  test('List calls selectableInput.onChange when the selectable input changes', () => {
     const mock = jest.fn();
 
     render(
-      <DataList aria-label="this is a simple list" hasSelectableInput onSelectableInputChange={mock}>
+      <DataList aria-label="this is a simple list" selectableInput={{ type: 'checkbox', onChange: mock }}>
         <DataListItem>
           <DataListItemRow aria-labelledby="test-id">
             <p id="test-id">Test</p>
@@ -121,7 +121,7 @@ describe('DataList', () => {
     const mock = jest.fn();
 
     render(
-      <DataList aria-label="this is a simple list" hasSelectableInput onSelectableInputChange={mock}>
+      <DataList aria-label="this is a simple list" selectableInput={{ type: 'checkbox', onChange: mock }}>
         <DataListItem>
           <DataListItemRow aria-labelledby="test-id">
             <p id="test-id">Test</p>
@@ -135,7 +135,7 @@ describe('DataList', () => {
 
   test('Item applies selectableInputAriaLabel to the hidden input', () => {
     render(
-      <DataList aria-label="this is a simple list" hasSelectableInput>
+      <DataList aria-label="this is a simple list" selectableInput={{ type: 'checkbox', onChange: () => {} }}>
         <DataListItem selectableInputAriaLabel="Data list item label test">
           <DataListItemRow aria-labelledby="test-id">
             <p id="test-id">Test</p>
@@ -151,7 +151,7 @@ describe('DataList', () => {
 
   test('Item defaults to labelling its input using its aria-labelledby prop', () => {
     render(
-      <DataList aria-label="this is a simple list" hasSelectableInput>
+      <DataList aria-label="this is a simple list" selectableInput={{ type: 'checkbox', onChange: () => {} }}>
         <DataListItem aria-labelledby="test-id">
           <p id="test-id">Test cell content</p>
         </DataListItem>
@@ -165,7 +165,7 @@ describe('DataList', () => {
 
   test('Item prioritizes selectableInputAriaLabel over aria-labelledby prop', () => {
     render(
-      <DataList aria-label="this is a simple list" hasSelectableInput>
+      <DataList aria-label="this is a simple list" selectableInput={{ type: 'checkbox', onChange: () => {} }}>
         <DataListItem aria-labelledby="test-id" selectableInputAriaLabel="Data list item label test">
           <p id="test-id">Test cell content</p>
         </DataListItem>
