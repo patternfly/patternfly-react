@@ -119,7 +119,7 @@ export const StickyFirstColumn = () => {
             <TableComposable aria-label="Sticky column table" gridBreakPoint="">
               <Thead>
                 <Tr>
-                  <Th isStickyColumn hasRightBorder modifier="truncate" sort={getSortParams(0)}>
+                  <Th isStickyColumn stickyMinWidth="100px" hasRightBorder modifier="truncate" sort={getSortParams(0)}>
                     {columnNames.name}
                   </Th>
                   <Th modifier="truncate" sort={getSortParams(1)}>
