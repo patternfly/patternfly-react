@@ -17,7 +17,14 @@ export const StickyFirstColumn = () => {
       detail4: `Test cell ${index + 1}-6`,
       detail5: `Test cell ${index + 1}-7`,
       detail6: `Test cell ${index + 1}-8`,
-      detail7: `Test cell ${index + 1}-9`
+      detail7: `Test cell ${index + 1}-9`,
+      detail8: `Test cell ${index + 1}-10`,
+      detail9: `Test cell ${index + 1}-11`,
+      detail10: `Test cell ${index + 1}-12`,
+      detail11: `Test cell ${index + 1}-13`,
+      detail12: `Test cell ${index + 1}-14`,
+      detail13: `Test cell ${index + 1}-15`,
+      detail14: `Test cell ${index + 1}-16`
     })
   );
   const columnNames = {
@@ -29,13 +36,54 @@ export const StickyFirstColumn = () => {
     header6: 'Header 6',
     header7: 'Header 7',
     header8: 'Header 8',
-    header9: 'Header 9'
+    header9: 'Header 9',
+    header10: 'Header 10',
+    header11: 'Header 11',
+    header12: 'Header 12',
+    header13: 'Header 13',
+    header14: 'Header 14',
+    header15: 'Header 15',
+    header16: 'Header 16'
   };
   const [activeSortIndex, setActiveSortIndex] = React.useState(null);
   const [activeSortDirection, setActiveSortDirection] = React.useState(null);
   const getSortableRowValues = fact => {
-    const { name, state, detail1, detail2, detail3, detail4, detail5, detail6, detail7 } = fact;
-    return [name, state, detail1, detail2, detail3, detail4, detail5, detail6, detail7];
+    const {
+      name,
+      state,
+      detail1,
+      detail2,
+      detail3,
+      detail4,
+      detail5,
+      detail6,
+      detail7,
+      detail8,
+      detail9,
+      detail10,
+      detail11,
+      detail12,
+      detail13,
+      detail14
+    } = fact;
+    return [
+      name,
+      state,
+      detail1,
+      detail2,
+      detail3,
+      detail4,
+      detail5,
+      detail6,
+      detail7,
+      detail8,
+      detail9,
+      detail10,
+      detail11,
+      detail12,
+      detail13,
+      detail14
+    ];
   };
   let sortedFacts = facts;
   if (activeSortIndex !== null) {
@@ -84,6 +132,13 @@ export const StickyFirstColumn = () => {
                   <Th modifier="truncate">{columnNames.header7}</Th>
                   <Th modifier="truncate">{columnNames.header8}</Th>
                   <Th modifier="truncate">{columnNames.header9}</Th>
+                  <Th modifier="truncate">{columnNames.header10}</Th>
+                  <Th modifier="truncate">{columnNames.header11}</Th>
+                  <Th modifier="truncate">{columnNames.header12}</Th>
+                  <Th modifier="truncate">{columnNames.header13}</Th>
+                  <Th modifier="truncate">{columnNames.header14}</Th>
+                  <Th modifier="truncate">{columnNames.header15}</Th>
+                  <Th modifier="truncate">{columnNames.header16}</Th>
                 </Tr>
               </Thead>
               <Tbody>
@@ -115,6 +170,27 @@ export const StickyFirstColumn = () => {
                     </Td>
                     <Td modifier="nowrap" dataLabel={columnNames.header9}>
                       {fact.detail7}
+                    </Td>
+                    <Td modifier="nowrap" dataLabel={columnNames.header10}>
+                      {fact.detail8}
+                    </Td>
+                    <Td modifier="nowrap" dataLabel={columnNames.header11}>
+                      {fact.detail9}
+                    </Td>
+                    <Td modifier="nowrap" dataLabel={columnNames.header12}>
+                      {fact.detail10}
+                    </Td>
+                    <Td modifier="nowrap" dataLabel={columnNames.header13}>
+                      {fact.detail11}
+                    </Td>
+                    <Td modifier="nowrap" dataLabel={columnNames.header14}>
+                      {fact.detail12}
+                    </Td>
+                    <Td modifier="nowrap" dataLabel={columnNames.header15}>
+                      {fact.detail13}
+                    </Td>
+                    <Td modifier="nowrap" dataLabel={columnNames.header16}>
+                      {fact.detail14}
                     </Td>
                   </Tr>
                 ))}
