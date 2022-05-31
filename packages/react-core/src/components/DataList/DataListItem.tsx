@@ -70,6 +70,8 @@ export class DataListItem extends React.Component<DataListItemProps> {
           selectedDataListItemId,
           updateSelectedDataListItem,
           hasSelectableInput,
+          selectableInputType,
+          onSelectableInputChange,
           isDraggable,
           dragStart,
           dragEnd,
@@ -111,11 +113,6 @@ export class DataListItem extends React.Component<DataListItemProps> {
 
           const isSelected = selectedDataListItemId === id;
 
-          const handleInputChange = () => {
-            const name = isSelected ? '' : id;
-            updateSelectedDataListItem(name);
-          };
-
           const selectableInputAriaProps = selectableInputAriaLabel
             ? { 'aria-label': selectableInputAriaLabel }
             : { 'aria-labelledby': ariaLabelledBy };
@@ -139,9 +136,9 @@ export class DataListItem extends React.Component<DataListItemProps> {
               {hasSelectableInput && (
                 <input
                   className="pf-screen-reader"
-                  type="checkbox"
+                  type={selectableInputType}
                   checked={isSelected}
-                  onChange={handleInputChange}
+                  onChange={event => onSelectableInputChange(id, event)}
                   tabIndex={-1}
                   {...selectableInputAriaProps}
                 />

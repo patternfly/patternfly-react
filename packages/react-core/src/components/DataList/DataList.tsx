@@ -49,6 +49,10 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
   itemOrder?: string[];
   /** Flag indicating that the data list should render a hidden input to make it selectable */
   hasSelectableInput?: boolean;
+  /** Specifies the type for the selectable input */
+  selectableInputType?: 'checkbox' | 'radio';
+  /** Callback that executes when the selectable input is changed */
+  onSelectableInputChange?: (id: string, event: React.FormEvent<HTMLInputElement>) => void;
 }
 
 interface DataListState {
@@ -63,6 +67,8 @@ interface DataListContextProps {
   selectedDataListItemId: string;
   updateSelectedDataListItem: (id: string) => void;
   hasSelectableInput?: boolean;
+  selectableInputType?: 'checkbox' | 'radio';
+  onSelectableInputChange?: (id: string, event: React.FormEvent<HTMLInputElement>) => void;
   isDraggable: boolean;
   dragStart: (e: React.DragEvent) => void;
   dragEnd: (e: React.DragEvent) => void;
@@ -93,7 +99,9 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     selectedDataListItemId: '',
     isCompact: false,
     gridBreakpoint: 'md',
-    wrapModifier: null
+    wrapModifier: null,
+    selectableInputType: 'checkbox',
+    onSelectableInputChange: () => {}
   };
   dragFinished: boolean = false;
   html5DragDrop: boolean = false;
@@ -312,6 +320,8 @@ export class DataList extends React.Component<DataListProps, DataListState> {
       gridBreakpoint,
       itemOrder,
       hasSelectableInput,
+      selectableInputType,
+      onSelectableInputChange,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
@@ -321,6 +331,8 @@ export class DataList extends React.Component<DataListProps, DataListState> {
     const updateSelectedDataListItem = (id: string) => {
       onSelectDataListItem(id);
     };
+
+    const isRadioGroup = selectableInputType === 'radio';
 
     const dragProps = this.html5DragDrop && {
       onDragOver: this.dragOver,
@@ -335,6 +347,8 @@ export class DataList extends React.Component<DataListProps, DataListState> {
           selectedDataListItemId,
           updateSelectedDataListItem,
           hasSelectableInput,
+          selectableInputType,
+          onSelectableInputChange,
           isDraggable: this.html5DragDrop,
           dragStart: this.dragStart,
           dragEnd: this.dragEnd,
@@ -355,6 +369,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
           {...props}
           {...dragProps}
           ref={this.ref}
+          role={isRadioGroup ? 'radiogroup' : undefined}
         >
           {children}
         </ul>

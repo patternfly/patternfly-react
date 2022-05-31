@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { DataList } from '../DataList';
 import { DataListItem } from '../DataListItem';
@@ -77,6 +78,59 @@ describe('DataList', () => {
     const selectableInput = screen.queryByRole('checkbox', { hidden: true });
 
     expect(selectableInput).not.toBeInTheDocument();
+  });
+
+  test('List hidden input renders as a radio when selectableInputType is radio', () => {
+    render(
+      <DataList aria-label="this is a simple list" hasSelectableInput selectableInputType='radio'>
+        <DataListItem>
+          <DataListItemRow aria-labelledby="test-id">
+            <p id="test-id">Test</p>
+          </DataListItemRow>
+        </DataListItem>
+      </DataList>
+    );
+
+    const selectableRadioInput = screen.getByRole('radio', { hidden: true });
+    const selectableCheckboxInput = screen.queryByRole('checkbox', { hidden: true });
+
+    expect(selectableRadioInput).toBeInTheDocument();
+    expect(selectableCheckboxInput).not.toBeInTheDocument();
+  });
+
+  test('List calls onSelectableInputChange when the selectable input changes', () => {
+    const mock = jest.fn();
+
+    render(
+      <DataList aria-label="this is a simple list" hasSelectableInput onSelectableInputChange={mock}>
+        <DataListItem>
+          <DataListItemRow aria-labelledby="test-id">
+            <p id="test-id">Test</p>
+          </DataListItemRow>
+        </DataListItem>
+      </DataList>
+    );
+
+    const selectableInput = screen.getByRole('checkbox', { hidden: true });
+    userEvent.click(selectableInput);
+
+    expect(mock).toHaveBeenCalled();
+  });
+
+  test('List does not call onSelectableInputChange when the selectable input is not changed', () => {
+    const mock = jest.fn();
+
+    render(
+      <DataList aria-label="this is a simple list" hasSelectableInput onSelectableInputChange={mock}>
+        <DataListItem>
+          <DataListItemRow aria-labelledby="test-id">
+            <p id="test-id">Test</p>
+          </DataListItemRow>
+        </DataListItem>
+      </DataList>
+    );
+
+    expect(mock).not.toHaveBeenCalled();
   });
 
   test('Item applies selectableInputAriaLabel to the hidden input', () => {
