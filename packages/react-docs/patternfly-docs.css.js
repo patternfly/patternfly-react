@@ -24,5 +24,4 @@ import '@patternfly/patternfly/patternfly-addons.css';
 import '@patternfly/patternfly/patternfly-charts.css';
 
 // Dark theme
-import '@patternfly/patternfly/patternfly-theme-dark.css';
 import '@patternfly/patternfly/patternfly-charts-theme-dark.css';
