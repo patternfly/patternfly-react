@@ -59,9 +59,9 @@ export interface TableComposableProps extends React.HTMLProps<HTMLTableElement>,
   isExpandable?: boolean;
   /** Collection of column spans for nested headers. Deprecated: see https://github.com/patternfly/patternfly/issues/4584 */
   nestedHeaderColumnSpans?: number[];
-  /** Flag to apply a caption element that improves a11y for tables with selectable rows */
+  /** Flag to apply a caption element with visually hidden instructions that improves a11y for tables with selectable rows. If this prop is set to true other caption elements should not be passed as children of this table, and you should instead use the selectableRowCaptionText prop. */
   hasSelectableRowCaption?: boolean;
-  /** Visible text to add into the table selectable row a11y caption */
+  /** Visible text to add alongside the hidden a11y caption for tables with selectable rows. This prop must be used to add custom caption content to the table when the hasSelectableRowCaption prop is set to true. */
   selectableRowCaptionText?: string;
 }
 
