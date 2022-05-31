@@ -640,8 +640,8 @@ class InsetTabs extends React.Component {
           inset={{
             default: 'insetNone',
             md: 'insetSm',
-            xl: 'inset2xl',
-            '2xl': 'insetLg'
+            xl: 'insetLg',
+            '2xl': 'inset2xl'
           }}
           isBox={isBox}
           aria-label="Tabs in the inset example"
