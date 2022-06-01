@@ -55,8 +55,13 @@ export interface DatePickerProps
 export interface DatePickerRef {
   /** Sets the calendar open status */
   setCalendarOpen: (isOpen: boolean) => void;
-  /** Toggles the calendar open status */
-  toggleCalendar: () => void;
+  /** Toggles the calendar open status. If no parameters are passed, the calendar will simply toggle its open status.
+   * If the isOpen parameter is passed, that will set the calendar open status to the value of the isOpen parameter.
+   * If the eventKey parameter is set to 'Escape', that will invoke the date pickers onEscapePress event to toggle the
+   * correct control appropriately. */
+  toggleCalendar: (isOpen?: boolean, eventKey?: string) => void;
+  /** Current calendar open status */
+  isCalendarOpen: boolean;
 }
 
 export const yyyyMMddFormat = (date: Date) =>
@@ -104,7 +109,7 @@ const DatePickerBase = (
   const widthChars = React.useMemo(() => Math.max(dateFormat(new Date()).length, placeholder.length), [dateFormat]);
   const style = { '--pf-c-date-picker__input--c-form-control--width-chars': widthChars, ...styleProps };
   const buttonRef = React.useRef<HTMLButtonElement>();
-  const datePickerRef = React.useRef<HTMLDivElement>();
+  const datePickerWrapperRef = React.useRef<HTMLDivElement>();
 
   React.useEffect(() => {
     setValue(valueProp);
@@ -166,15 +171,21 @@ const DatePickerBase = (
     ref,
     () => ({
       setCalendarOpen: (isOpen: boolean) => setPopoverOpen(isOpen),
-      toggleCalendar: (setOpen?: boolean) => setPopoverOpen(prev => (setOpen !== undefined ? setOpen : !prev))
+      toggleCalendar: (setOpen?: boolean, eventKey?: string) => {
+        if (eventKey === KeyTypes.Escape && popoverOpen && !selectOpen) {
+          setPopoverOpen(prev => (setOpen !== undefined ? setOpen : !prev));
+        }
+      },
+      isCalendarOpen: popoverOpen
     }),
-    [setPopoverOpen]
+    [setPopoverOpen, popoverOpen, selectOpen]
   );
 
-  const getParentElement = () => (datePickerRef && datePickerRef.current ? datePickerRef.current : null);
+  const getParentElement = () =>
+    datePickerWrapperRef && datePickerWrapperRef.current ? datePickerWrapperRef.current : null;
 
   return (
-    <div className={css(styles.datePicker, className)} ref={datePickerRef} style={style} {...props}>
+    <div className={css(styles.datePicker, className)} ref={datePickerWrapperRef} style={style} {...props}>
       <Popover
         position="bottom"
         bodyContent={
@@ -191,6 +202,7 @@ const DatePickerBase = (
             dayFormat={dayFormat}
             weekStart={weekStart}
             rangeStart={rangeStart}
+            isDateFocused
           />
         }
         showClose={false}

@@ -197,6 +197,9 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       onToggle(false, event);
       onClose();
       this.toggle.current.focus();
+      if (escFromWithinMenu && event.key === KeyTypes.Escape) {
+        event.stopPropagation();
+      }
     }
   };
 
