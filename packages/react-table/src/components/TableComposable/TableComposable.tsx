@@ -59,7 +59,19 @@ export interface TableComposableProps extends React.HTMLProps<HTMLTableElement>,
   isExpandable?: boolean;
   /** Collection of column spans for nested headers. Deprecated: see https://github.com/patternfly/patternfly/issues/4584 */
   nestedHeaderColumnSpans?: number[];
+  /** Flag to apply a caption element with visually hidden instructions that improves a11y for tables with selectable rows. If this prop is set to true other caption elements should not be passed as children of this table, and you should instead use the selectableRowCaptionText prop. */
+  hasSelectableRowCaption?: boolean;
+  /** Visible text to add alongside the hidden a11y caption for tables with selectable rows. This prop must be used to add custom caption content to the table when the hasSelectableRowCaption prop is set to true. */
+  selectableRowCaptionText?: string;
 }
+
+interface TableComposableContextProps {
+  registerSelectableRow?: () => void;
+}
+
+export const TableComposableContext = React.createContext<TableComposableContextProps>({
+  registerSelectableRow: () => {}
+});
 
 const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   children,
@@ -79,9 +91,14 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
   isExpandable = false,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   nestedHeaderColumnSpans,
+  hasSelectableRowCaption,
+  selectableRowCaptionText,
   ...props
 }: TableComposableProps) => {
   const tableRef = innerRef || React.useRef(null);
+
+  const [hasSelectableRows, setHasSelectableRows] = React.useState(false);
+  const [tableCaption, setTableCaption] = React.useState<JSX.Element | undefined>();
 
   React.useEffect(() => {
     document.addEventListener('keydown', handleKeys);
@@ -96,6 +113,27 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
       document.removeEventListener('keydown', handleKeys);
     };
   }, [tableRef, tableRef.current]);
+
+  React.useEffect(() => {
+    if (selectableRowCaptionText) {
+      setTableCaption(
+        <caption>
+          {selectableRowCaptionText}
+          <div className="pf-screen-reader">
+            This table has selectable rows. It can be navigated by row using tab, and each row can be selected using
+            space or enter.
+          </div>
+        </caption>
+      );
+    } else {
+      setTableCaption(
+        <caption className="pf-screen-reader">
+          This table has selectable rows. It can be navigated by row using tab, and each row can be selected using space
+          or enter.
+        </caption>
+      );
+    }
+  }, [selectableRowCaptionText]);
 
   const ouiaProps = useOUIAProps('Table', ouiaId, ouiaSafe);
   const grid =
@@ -147,29 +185,36 @@ const TableComposableBase: React.FunctionComponent<TableComposableProps> = ({
     );
   };
 
+  const registerSelectableRow = () => {
+    !hasSelectableRows && setHasSelectableRows(true);
+  };
+
   return (
-    <table
-      aria-label={ariaLabel}
-      role={role}
-      className={css(
-        className,
-        styles.table,
-        isTreeTable ? treeGrid : grid,
-        styles.modifiers[variant],
-        !borders && styles.modifiers.noBorderRows,
-        isStickyHeader && styles.modifiers.stickyHeader,
-        isTreeTable && stylesTreeView.modifiers.treeView,
-        isStriped && styles.modifiers.striped,
-        isExpandable && styles.modifiers.expandable,
-        isNested && 'pf-m-nested'
-      )}
-      ref={tableRef}
-      {...(isTreeTable && { role: 'treegrid' })}
-      {...ouiaProps}
-      {...props}
-    >
-      {children}
-    </table>
+    <TableComposableContext.Provider value={{ registerSelectableRow }}>
+      <table
+        aria-label={ariaLabel}
+        role={role}
+        className={css(
+          className,
+          styles.table,
+          isTreeTable ? treeGrid : grid,
+          styles.modifiers[variant],
+          !borders && styles.modifiers.noBorderRows,
+          isStickyHeader && styles.modifiers.stickyHeader,
+          isTreeTable && stylesTreeView.modifiers.treeView,
+          isStriped && styles.modifiers.striped,
+          isExpandable && styles.modifiers.expandable,
+          isNested && 'pf-m-nested'
+        )}
+        ref={tableRef}
+        {...(isTreeTable && { role: 'treegrid' })}
+        {...ouiaProps}
+        {...props}
+      >
+        {hasSelectableRowCaption && hasSelectableRows && tableCaption}
+        {children}
+      </table>
+    </TableComposableContext.Provider>
   );
 };
 
