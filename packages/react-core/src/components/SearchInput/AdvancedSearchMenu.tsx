@@ -1,12 +1,15 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/SearchInput/search-input';
 import { Button } from '../Button';
 import { ActionGroup, Form, FormGroup } from '../Form';
 import { TextInput } from '../TextInput';
 import { GenerateId, KEY_CODES } from '../../helpers';
 import { SearchAttribute } from './SearchInput';
+import { Panel, PanelMain, PanelMainBody } from '../Panel';
+import { css } from '@patternfly/react-styles';
 
 export interface AdvancedSearchMenuProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
+  /** Additional classes added to the Advanced search menu */
+  className?: string;
   /** Value of the search input */
   value?: string;
   /** Ref of the div wrapping the whole search input **/
@@ -46,6 +49,7 @@ export interface AdvancedSearchMenuProps extends Omit<React.HTMLProps<HTMLDivEle
 }
 
 export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps> = ({
+  className,
   parentRef,
   parentInputRef,
   value = '',
@@ -200,24 +204,26 @@ export const AdvancedSearchMenu: React.FunctionComponent<AdvancedSearchMenuProps
   };
 
   return isSearchMenuOpen ? (
-    <div className={styles.searchInputMenu}>
-      <div className={styles.searchInputMenuBody}>
-        <Form>
-          {buildFormGroups()}
-          {formAdditionalItems ? formAdditionalItems : null}
-          <ActionGroup>
-            <Button variant="primary" type="submit" onClick={onSearchHandler}>
-              {submitSearchButtonLabel}
-            </Button>
-            {!!onClear && (
-              <Button variant="link" type="reset" onClick={onClear}>
-                {resetButtonLabel}
+    <Panel variant="raised" className={css(className)}>
+      <PanelMain>
+        <PanelMainBody>
+          <Form>
+            {buildFormGroups()}
+            {formAdditionalItems ? formAdditionalItems : null}
+            <ActionGroup>
+              <Button variant="primary" type="submit" onClick={onSearchHandler} isDisabled={!value}>
+                {submitSearchButtonLabel}
               </Button>
-            )}
-          </ActionGroup>
-        </Form>
-      </div>
-    </div>
+              {!!onClear && (
+                <Button variant="link" type="reset" onClick={onClear}>
+                  {resetButtonLabel}
+                </Button>
+              )}
+            </ActionGroup>
+          </Form>
+        </PanelMainBody>
+      </PanelMain>
+    </Panel>
   ) : null;
 };
 AdvancedSearchMenu.displayName = 'SearchInput';
