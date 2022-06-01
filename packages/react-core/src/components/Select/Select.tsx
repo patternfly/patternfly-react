@@ -103,6 +103,8 @@ export interface SelectProps
   'aria-invalid'?: boolean;
   /** Label for input field of type ahead select variants */
   typeAheadAriaLabel?: string;
+  /** Id of div for input field of type ahead select variants */
+  typeAheadAriaDescribedby?: string;
   /** Label for clear selection button of type ahead select variants */
   clearSelectionsAriaLabel?: string;
   /** Label for toggle of type ahead select variants */
@@ -222,6 +224,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     'aria-describedby': '',
     'aria-invalid': false,
     typeAheadAriaLabel: '',
+    typeAheadAriaDescribedby: '',
     clearSelectionsAriaLabel: 'Clear all',
     toggleAriaLabel: 'Options menu',
     removeSelectionAriaLabel: 'Remove',
@@ -943,6 +946,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       validated,
       selections: selectionsProp,
       typeAheadAriaLabel,
+      typeAheadAriaDescribedby,
       clearSelectionsAriaLabel,
       toggleAriaLabel,
       removeSelectionAriaLabel,
@@ -1247,7 +1251,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           className
         )}
         {...(width && { style: { width } })}
-        {...(validated !== ValidatedOptions.default && { 'aria-describedby': ariaDescribedby })}
+        {...(ariaDescribedby && { 'aria-describedby': ariaDescribedby })}
         {...(validated !== ValidatedOptions.default && { 'aria-invalid': ariaInvalid })}
       >
         {isOpen && menuContainer}
@@ -1268,7 +1272,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         ref={this.parentRef}
         {...getOUIAProps(Select.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         {...(width && { style: { width } })}
-        {...(validated !== ValidatedOptions.default && { 'aria-describedby': ariaDescribedby })}
+        {...(ariaDescribedby && { 'aria-describedby': ariaDescribedby })}
         {...(validated !== ValidatedOptions.default && { 'aria-invalid': ariaInvalid })}
       >
         <SelectToggle
@@ -1337,6 +1341,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
                   id={`${selectToggleId}-select-typeahead`}
                   aria-label={typeAheadAriaLabel}
+                  {...(typeAheadAriaDescribedby && { 'aria-describedby': typeAheadAriaDescribedby })}
                   placeholder={placeholderText as string}
                   value={
                     typeaheadInputValue !== null
@@ -1365,6 +1370,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   id={`${selectToggleId}-select-multi-typeahead-typeahead`}
                   aria-label={typeAheadAriaLabel}
                   aria-invalid={validated === ValidatedOptions.error}
+                  {...(typeAheadAriaDescribedby && { 'aria-describedby': typeAheadAriaDescribedby })}
                   placeholder={placeholderText as string}
                   value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
                   type="text"
