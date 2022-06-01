@@ -6,7 +6,7 @@ import ExclamationIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export const StaticWithCustomIcon: React.FunctionComponent = () => (
+export const HelperTextStaticWithCustomIcon: React.FunctionComponent = () => (
   <React.Fragment>
     <HelperText>
       <HelperTextItem icon={<InfoIcon />}>This is default helper text</HelperTextItem>

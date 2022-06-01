@@ -2,7 +2,7 @@ import React from 'react';
 import { HelperText, HelperTextItem } from '@patternfly/react-core';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 
-export const Dynamic: React.FunctionComponent = () => (
+export const HelperTextDynamic: React.FunctionComponent = () => (
   <React.Fragment>
     <HelperText>
       <HelperTextItem isDynamic>This is default helper text</HelperTextItem>

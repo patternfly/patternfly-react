@@ -15,30 +15,30 @@ import ExclamationIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-
 
 ### Static
 
-```ts file="HelperStatic.tsx"
+```ts file="HelperTextStatic.tsx"
 ```
 
 ### Static with default icons
 
-```ts file="HelperStaticWithDefaultIcon.tsx"
+```ts file="HelperTextStaticWithDefaultIcon.tsx"
 ```
 
 ### Static with custom icons
 
-```ts file="HelperStaticWithCustomIcon.tsx"
+```ts file="HelperTextStaticWithCustomIcon.tsx"
 ```
 
 ### Multiple static
 
-```ts file="HelperMultipleStatic.tsx"
+```ts file="HelperTextMultipleStatic.tsx"
 ```
 
 ### Dynamic
 
-```ts file="HelperDynamic.tsx"
+```ts file="HelperTextDynamic.tsx"
 ```
 
 ### Dynamic list
 
-```ts file="HelperDynamicList.tsx"
+```ts file="HelperTextDynamicList.tsx"
 ```

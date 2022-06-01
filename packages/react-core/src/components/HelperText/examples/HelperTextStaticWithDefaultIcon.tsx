@@ -1,7 +1,7 @@
 import React from 'react';
 import { HelperText, HelperTextItem } from '@patternfly/react-core';
 
-export const StaticWithDefaultIcon: React.FunctionComponent = () => (
+export const HelperTextStaticWithDefaultIcon: React.FunctionComponent = () => (
   <React.Fragment>
     <HelperText>
       <HelperTextItem hasIcon>This is default helper text</HelperTextItem>
