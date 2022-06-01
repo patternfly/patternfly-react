@@ -2978,6 +2978,11 @@ class PageLayoutDefaultNav extends React.Component {
 }
 ```
 
+### Sticky first column
+
+```js isFullscreen file="table-demos/StickyFirstColumn.jsx"
+```
+
 ## Empty states
 
 These examples demonstrate the use of an [Empty State component](/components/empty-state) inside of a [Table](/components/table). Empty states are useful in a table when a filter returns no results, while data is loading, or when any type of error or exception condition occurs.
