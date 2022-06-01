@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.72.0 (2022-06-01)
+
+
+### Features
+
+* **table:** full screen demo for sticky first column ([#7451](https://github.com/patternfly/patternfly-react/issues/7451)) ([f610dd4](https://github.com/patternfly/patternfly-react/commit/f610dd4726b16d73a166f7a57da0fa3588b8201d))
+
+
+
+
+
 ## 4.71.2 (2022-05-31)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension
