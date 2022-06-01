@@ -10,7 +10,7 @@ import {
   KebabToggle
 } from '@patternfly/react-core';
 
-export const BasicHint: React.FunctionComponent = () => {
+export const HintBasicWithoutTitle: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
   const onToggle = (isOpen: boolean) => {
