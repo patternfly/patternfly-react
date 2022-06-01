@@ -69,7 +69,7 @@ export class DataListItem extends React.Component<DataListItemProps> {
           isSelectable,
           selectedDataListItemId,
           updateSelectedDataListItem,
-          selectableInput,
+          selectableRow,
           isDraggable,
           dragStart,
           dragEnd,
@@ -115,6 +115,8 @@ export class DataListItem extends React.Component<DataListItemProps> {
             ? { 'aria-label': selectableInputAriaLabel }
             : { 'aria-labelledby': ariaLabelledBy };
 
+          const selectableInputType = selectableRow?.type === 'multiple' ? 'checkbox' : 'radio';
+
           return (
             <li
               id={id}
@@ -131,12 +133,12 @@ export class DataListItem extends React.Component<DataListItemProps> {
               {...props}
               {...dragProps}
             >
-              {selectableInput && (
+              {selectableRow && (
                 <input
                   className="pf-screen-reader"
-                  type={selectableInput.type}
+                  type={selectableInputType}
                   checked={isSelected}
-                  onChange={event => selectableInput.onChange(id, event)}
+                  onChange={event => selectableRow.onChange(id, event)}
                   tabIndex={-1}
                   {...selectableInputAriaProps}
                 />

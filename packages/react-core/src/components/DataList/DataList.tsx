@@ -20,6 +20,13 @@ export enum DataListWrapModifier {
   breakWord = 'breakWord'
 }
 
+export interface SelectableRowObject {
+  /** Determines if only one of the selectable rows should be selectable at a time */
+  type: 'multiple' | 'single';
+  /** Callback that executes when the screen reader accessible element receives a change event */
+  onChange: (id: string, event: React.FormEvent<HTMLInputElement>) => void;
+}
+
 export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, 'onDragStart' | 'ref'> {
   /** Content rendered inside the DataList list */
   children?: React.ReactNode;
@@ -48,10 +55,7 @@ export interface DataListProps extends Omit<React.HTMLProps<HTMLUListElement>, '
   /** @deprecated Order of items in a draggable DataList */
   itemOrder?: string[];
   /** @beta Object that causes the data list to render hidden inputs which improve selectable item a11y */
-  selectableInput?: {
-    type: 'checkbox' | 'radio';
-    onChange: (id: string, event: React.FormEvent<HTMLInputElement>) => void;
-  };
+  selectableRow?: SelectableRowObject;
 }
 
 interface DataListState {
@@ -65,10 +69,7 @@ interface DataListContextProps {
   isSelectable: boolean;
   selectedDataListItemId: string;
   updateSelectedDataListItem: (id: string) => void;
-  selectableInput?: {
-    type: 'checkbox' | 'radio';
-    onChange: (id: string, event: React.FormEvent<HTMLInputElement>) => void;
-  };
+  selectableRow?: SelectableRowObject;
   isDraggable: boolean;
   dragStart: (e: React.DragEvent) => void;
   dragEnd: (e: React.DragEvent) => void;
@@ -317,7 +318,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
       onDragFinish,
       gridBreakpoint,
       itemOrder,
-      selectableInput,
+      selectableRow,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
@@ -340,7 +341,7 @@ export class DataList extends React.Component<DataListProps, DataListState> {
           isSelectable,
           selectedDataListItemId,
           updateSelectedDataListItem,
-          selectableInput,
+          selectableRow,
           isDraggable: this.html5DragDrop,
           dragStart: this.dragStart,
           dragEnd: this.dragEnd,
