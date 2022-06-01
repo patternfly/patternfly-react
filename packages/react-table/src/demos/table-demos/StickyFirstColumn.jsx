@@ -119,26 +119,32 @@ export const StickyFirstColumn = () => {
             <TableComposable aria-label="Sticky column table" gridBreakPoint="">
               <Thead>
                 <Tr>
-                  <Th isStickyColumn stickyMinWidth="100px" hasRightBorder modifier="truncate" sort={getSortParams(0)}>
+                  <Th
+                    isStickyColumn
+                    stickyMinWidth="100px"
+                    hasRightBorder
+                    modifier="fitContent"
+                    sort={getSortParams(0)}
+                  >
                     {columnNames.name}
                   </Th>
-                  <Th modifier="truncate" sort={getSortParams(1)}>
+                  <Th modifier="fitContent" sort={getSortParams(1)}>
                     {columnNames.state}
                   </Th>
-                  <Th modifier="truncate">{columnNames.header3}</Th>
-                  <Th modifier="truncate">{columnNames.header4}</Th>
-                  <Th modifier="truncate">{columnNames.header5}</Th>
-                  <Th modifier="truncate">{columnNames.header6}</Th>
-                  <Th modifier="truncate">{columnNames.header7}</Th>
-                  <Th modifier="truncate">{columnNames.header8}</Th>
-                  <Th modifier="truncate">{columnNames.header9}</Th>
-                  <Th modifier="truncate">{columnNames.header10}</Th>
-                  <Th modifier="truncate">{columnNames.header11}</Th>
-                  <Th modifier="truncate">{columnNames.header12}</Th>
-                  <Th modifier="truncate">{columnNames.header13}</Th>
-                  <Th modifier="truncate">{columnNames.header14}</Th>
-                  <Th modifier="truncate">{columnNames.header15}</Th>
-                  <Th modifier="truncate">{columnNames.header16}</Th>
+                  <Th>{columnNames.header3}</Th>
+                  <Th>{columnNames.header4}</Th>
+                  <Th>{columnNames.header5}</Th>
+                  <Th>{columnNames.header6}</Th>
+                  <Th>{columnNames.header7}</Th>
+                  <Th>{columnNames.header8}</Th>
+                  <Th>{columnNames.header9}</Th>
+                  <Th>{columnNames.header10}</Th>
+                  <Th>{columnNames.header11}</Th>
+                  <Th>{columnNames.header12}</Th>
+                  <Th>{columnNames.header13}</Th>
+                  <Th>{columnNames.header14}</Th>
+                  <Th>{columnNames.header15}</Th>
+                  <Th>{columnNames.header16}</Th>
                 </Tr>
               </Thead>
               <Tbody>
