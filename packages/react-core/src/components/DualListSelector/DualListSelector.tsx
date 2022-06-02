@@ -190,10 +190,22 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
     };
   }
 
+  /** In dev environment, prevents circular structure during JSON stringification when
+   * options passed in to the dual list selector include HTML elements.
+   */
+  replacer = (key: string, value: any) => {
+    if (key[0] === '_') {
+      return undefined;
+    }
+    return value;
+  };
+
   componentDidUpdate() {
     if (
-      JSON.stringify(this.props.availableOptions) !== JSON.stringify(this.state.availableOptions) ||
-      JSON.stringify(this.props.chosenOptions) !== JSON.stringify(this.state.chosenOptions)
+      JSON.stringify(this.props.availableOptions, this.replacer) !==
+        JSON.stringify(this.state.availableOptions, this.replacer) ||
+      JSON.stringify(this.props.chosenOptions, this.replacer) !==
+        JSON.stringify(this.state.chosenOptions, this.replacer)
     ) {
       this.setState({
         availableOptions: [...this.props.availableOptions],
