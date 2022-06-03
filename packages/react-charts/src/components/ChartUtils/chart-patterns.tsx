@@ -1,6 +1,20 @@
 import * as React from 'react';
 import uniqueId from 'lodash/uniqueId';
 
+interface PatternPropsInterface {
+  children?: any;
+  colorScale?: any;
+  offset?: number;
+  patternId?: string;
+  patternScale?: string[];
+  usePatternDefs?: boolean;
+}
+
+/**
+ * Patterns were pulled from v3.0.3 of the script below, which uses the MIT license.
+ * See https://github.com/highcharts/pattern-fill/blob/master/pattern-fill-v2.js
+ * @private
+ */
 const patterns: any = [
   // Set 1
   {
@@ -196,26 +210,27 @@ const patterns: any = [
   }
 ];
 
-interface PatternPropsInterface {
-  children?: any;
-  colorScale?: any;
-  offset?: number;
-  patternId?: string;
-  patternScale?: string[];
-  usePatternDefs?: boolean;
-}
-
+/**
+ * Helper function to return a pattern ID
+ * @private
+ */
 export const getPatternId = () => uniqueId('pf-pattern');
 
+/**
+ * Helper function to return pattern defs ID
+ * @private
+ */
 export const getPatternDefsId = (prefix: string, index: number) => {
   const id = `${prefix}:${index}`;
   return id;
 };
 
-// Returns pattern defs
-//
-// Note that this is wrapped in an empty tag so Victory does not apply child props to defs
+/**
+ * Helper function to return pattern defs
+ * @private
+ */
 export const getPatternDefs = ({ offset = 0, patternId, patternScale }: PatternPropsInterface) => {
+  // This is wrapped in an empty tag so Victory does not apply child props to defs
   const defs = (
     <React.Fragment key={`defs`}>
       <defs>
@@ -234,15 +249,24 @@ export const getPatternDefs = ({ offset = 0, patternId, patternScale }: PatternP
   return defs;
 };
 
-// Return pattern IDs to use as color scale
+/**
+ * Helper function to return pattern IDs to use as color scale
+ * @private
+ */
 export const getPatternScale = (patternId: string, colorScale: string[]) =>
   colorScale.map((c: any, index: number) => `url(#${getPatternDefsId(patternId, index)})`);
 
-// Return color scale
+/**
+ * Helper function to return default color scale
+ * @private
+ */
 export const getDefaultColorScale = (colorScale: string[], themeColorScale: string[]) =>
   colorScale ? colorScale : themeColorScale;
 
-// Return pattern scale
+/**
+ * Helper function to return default pattern scale
+ * @private
+ */
 export const getDefaultPatternScale = ({
   colorScale,
   patternScale,
@@ -258,7 +282,10 @@ export const getDefaultPatternScale = ({
   return undefined;
 };
 
-// Merge pattern IDs with `data.fill` property, used by interactive pie chart legend
+/**
+ * Merge pattern IDs with `data.fill` property, used by interactive pie chart legend
+ * @private
+ */
 export const getDefaultData = (data: any, patternScale: string[]) => {
   if (!patternScale) {
     return data;
@@ -272,7 +299,10 @@ export const getDefaultData = (data: any, patternScale: string[]) => {
   });
 };
 
-// Render children
+/**
+ * Helper function to render children with patterns
+ * @private
+ */
 export const renderChildrenWithPatterns = ({ children, patternId, patternScale }: PatternPropsInterface) =>
   React.Children.toArray(children).map((child, index) => {
     if (React.isValidElement(child)) {
