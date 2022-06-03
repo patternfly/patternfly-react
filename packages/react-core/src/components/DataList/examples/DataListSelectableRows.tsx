@@ -37,12 +37,17 @@ export const DataListSelectableRows: React.FunctionComponent = () => {
     setSelectedDataListItemId(id);
   };
 
+  const handleInputChange = (id: string, _event: React.FormEvent<HTMLInputElement>) => {
+    setSelectedDataListItemId(id);
+  };
+
   return (
     <React.Fragment>
       <DataList
         aria-label="selectable data list example"
         selectedDataListItemId={selectedDataListItemId}
         onSelectDataListItem={onSelectDataListItem}
+        selectableRow={{ type: 'single', onChange: handleInputChange }}
       >
         <DataListItem aria-labelledby="selectable-action-item1" id="item1">
           <DataListItemRow>

@@ -16,6 +16,8 @@ export interface DataListItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 
   'aria-labelledby': string;
   /** Unique id for the DataList item */
   id?: string;
+  /** @beta Aria label to apply to the selectable input if one is rendered */
+  selectableInputAriaLabel?: string;
 }
 
 export interface DataListItemChildProps {
@@ -52,13 +54,22 @@ export class DataListItem extends React.Component<DataListItemProps> {
     'aria-labelledby': ''
   };
   render() {
-    const { children, isExpanded, className, id, 'aria-labelledby': ariaLabelledBy, ...props } = this.props;
+    const {
+      children,
+      isExpanded,
+      className,
+      id,
+      'aria-labelledby': ariaLabelledBy,
+      selectableInputAriaLabel,
+      ...props
+    } = this.props;
     return (
       <DataListContext.Consumer>
         {({
           isSelectable,
           selectedDataListItemId,
           updateSelectedDataListItem,
+          selectableRow,
           isDraggable,
           dragStart,
           dragEnd,
@@ -98,6 +109,14 @@ export class DataListItem extends React.Component<DataListItemProps> {
             onDragStart: dragStart
           };
 
+          const isSelected = selectedDataListItemId === id;
+
+          const selectableInputAriaProps = selectableInputAriaLabel
+            ? { 'aria-label': selectableInputAriaLabel }
+            : { 'aria-labelledby': ariaLabelledBy };
+
+          const selectableInputType = selectableRow?.type === 'multiple' ? 'checkbox' : 'radio';
+
           return (
             <li
               id={id}
@@ -105,15 +124,25 @@ export class DataListItem extends React.Component<DataListItemProps> {
                 styles.dataListItem,
                 isExpanded && styles.modifiers.expanded,
                 isSelectable && styles.modifiers.selectable,
-                selectedDataListItemId && selectedDataListItemId === id && styles.modifiers.selected,
+                selectedDataListItemId && isSelected && styles.modifiers.selected,
                 className
               )}
               aria-labelledby={ariaLabelledBy}
               {...(isSelectable && { tabIndex: 0, onClick: selectDataListItem, onKeyDown })}
-              {...(isSelectable && selectedDataListItemId === id && { 'aria-selected': true })}
+              {...(isSelectable && isSelected && { 'aria-selected': true })}
               {...props}
               {...dragProps}
             >
+              {selectableRow && (
+                <input
+                  className="pf-screen-reader"
+                  type={selectableInputType}
+                  checked={isSelected}
+                  onChange={event => selectableRow.onChange(id, event)}
+                  tabIndex={-1}
+                  {...selectableInputAriaProps}
+                />
+              )}
               {React.Children.map(
                 children,
                 child =>

@@ -62,6 +62,7 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
   const menuRef = React.useRef<HTMLDivElement>();
   const toggleRef = React.useRef<HTMLButtonElement>();
   const menuFooterBtnRef = React.useRef<HTMLButtonElement>();
+  const containerRef = React.useRef<HTMLDivElement>();
 
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (!isOpen) {
@@ -198,5 +199,15 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
       </MenuFooter>
     </Menu>
   );
-  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} popperMatchesTriggerWidth={false} />;
+  return (
+    <div ref={containerRef}>
+      <Popper
+        trigger={toggle}
+        popper={menu}
+        appendTo={containerRef.current}
+        isVisible={isOpen}
+        popperMatchesTriggerWidth={false}
+      />
+    </div>
+  );
 };

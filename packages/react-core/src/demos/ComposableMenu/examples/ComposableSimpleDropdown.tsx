@@ -5,6 +5,7 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleRef = React.useRef<HTMLButtonElement>();
   const menuRef = React.useRef<HTMLDivElement>();
+  const containerRef = React.useRef<HTMLDivElement>();
 
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (!isOpen) {
@@ -66,5 +67,9 @@ export const ComposableSimpleDropdown: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
+  return (
+    <div ref={containerRef}>
+      <Popper trigger={toggle} popper={menu} appendTo={containerRef.current} isVisible={isOpen} />
+    </div>
+  );
 };

@@ -15,7 +15,10 @@ export enum OptionsMenuDirection {
   down = 'down'
 }
 
-export interface OptionsMenuProps extends ToggleMenuBaseProps, React.HTMLProps<HTMLDivElement>, OUIAProps {
+export interface OptionsMenuProps
+  extends Omit<ToggleMenuBaseProps, 'menuAppendTo'>,
+    React.HTMLProps<HTMLDivElement>,
+    OUIAProps {
   /** Classes applied to root element of the options menu */
   className?: string;
   /** Id of the root element of the options menu */
@@ -36,6 +39,14 @@ export interface OptionsMenuProps extends ToggleMenuBaseProps, React.HTMLProps<H
   position?: 'right' | 'left';
   /** Menu will open up or open down from the options menu toggle */
   direction?: 'up' | 'down';
+  /** The container to append the menu to. Defaults to 'inline'.
+   * If your menu is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * menuAppendTo="parent"
+   * menuAppendTo={() => document.body}
+   * menuAppendTo={document.getElementById('target')}
+   */
+  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
 }
 
 export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({

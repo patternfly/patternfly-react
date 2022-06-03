@@ -59,6 +59,7 @@ exports[`simple fileupload 1`] = `
         class="pf-c-form-control pf-m-resize-vertical"
         id="simple-text-file"
         name="simple-text-file"
+        placeholder=""
       />
     </div>
     <input

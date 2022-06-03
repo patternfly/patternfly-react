@@ -48,7 +48,7 @@ export interface SelectViewMoreObject {
   onClick: (event: React.MouseEvent | React.ChangeEvent) => void;
 }
 export interface SelectProps
-  extends ToggleMenuBaseProps,
+  extends Omit<ToggleMenuBaseProps, 'menuAppendTo'>,
     Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'>,
     OUIAProps {
   /** Content rendered inside the Select. Must be React.ReactElement<SelectGroupProps>[] */
@@ -103,6 +103,8 @@ export interface SelectProps
   'aria-invalid'?: boolean;
   /** Label for input field of type ahead select variants */
   typeAheadAriaLabel?: string;
+  /** Id of div for input field of type ahead select variants */
+  typeAheadAriaDescribedby?: string;
   /** Label for clear selection button of type ahead select variants */
   clearSelectionsAriaLabel?: string;
   /** Label for toggle of type ahead select variants */
@@ -165,6 +167,19 @@ export interface SelectProps
   shouldResetOnSelect?: boolean;
   /** Content rendered in the footer of the select menu */
   footer?: React.ReactNode;
+  /** The container to append the menu to. Defaults to 'inline'.
+   * If your menu is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * menuAppendTo="parent"
+   * menuAppendTo={() => document.body}
+   * menuAppendTo={document.getElementById('target')}
+   */
+  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
+  /** Flag for indicating that the select menu should automatically flip vertically when
+   * it reaches the boundary. This prop can only be used when the select component is not
+   * appended inline, e.g. `menuAppendTo="parent"`
+   */
+  isFlipEnabled?: boolean;
 }
 
 export interface SelectState {
@@ -209,6 +224,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     'aria-describedby': '',
     'aria-invalid': false,
     typeAheadAriaLabel: '',
+    typeAheadAriaDescribedby: '',
     clearSelectionsAriaLabel: 'Clear all',
     toggleAriaLabel: 'Options menu',
     removeSelectionAriaLabel: 'Remove',
@@ -237,7 +253,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     isInputValuePersisted: false,
     isInputFilterPersisted: false,
     isCreateSelectOptionObject: false,
-    shouldResetOnSelect: true
+    shouldResetOnSelect: true,
+    isFlipEnabled: false
   };
 
   state: SelectState = {
@@ -929,6 +946,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       validated,
       selections: selectionsProp,
       typeAheadAriaLabel,
+      typeAheadAriaDescribedby,
       clearSelectionsAriaLabel,
       toggleAriaLabel,
       removeSelectionAriaLabel,
@@ -970,6 +988,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       loadingVariant,
       isCreateSelectOptionObject,
       shouldResetOnSelect,
+      isFlipEnabled,
       ...props
     } = this.props;
     const {
@@ -1196,6 +1215,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
 
     const innerMenu = (
       <SelectMenu
+        // This removes the `position: absolute` styling from the `.pf-c-select__menu`
+        // allowing the menu to flip correctly
+        {...(isFlipEnabled && { style: { position: 'revert' } })}
         {...props}
         isGrouped={isGrouped}
         selected={selections}
@@ -1229,7 +1251,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           className
         )}
         {...(width && { style: { width } })}
-        {...(validated !== ValidatedOptions.default && { 'aria-describedby': ariaDescribedby })}
+        {...(ariaDescribedby && { 'aria-describedby': ariaDescribedby })}
         {...(validated !== ValidatedOptions.default && { 'aria-invalid': ariaInvalid })}
       >
         {isOpen && menuContainer}
@@ -1250,7 +1272,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         ref={this.parentRef}
         {...getOUIAProps(Select.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         {...(width && { style: { width } })}
-        {...(validated !== ValidatedOptions.default && { 'aria-describedby': ariaDescribedby })}
+        {...(ariaDescribedby && { 'aria-describedby': ariaDescribedby })}
         {...(validated !== ValidatedOptions.default && { 'aria-invalid': ariaInvalid })}
       >
         <SelectToggle
@@ -1319,6 +1341,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
                   id={`${selectToggleId}-select-typeahead`}
                   aria-label={typeAheadAriaLabel}
+                  {...(typeAheadAriaDescribedby && { 'aria-describedby': typeAheadAriaDescribedby })}
                   placeholder={placeholderText as string}
                   value={
                     typeaheadInputValue !== null
@@ -1347,6 +1370,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                   id={`${selectToggleId}-select-multi-typeahead-typeahead`}
                   aria-label={typeAheadAriaLabel}
                   aria-invalid={validated === ValidatedOptions.error}
+                  {...(typeAheadAriaDescribedby && { 'aria-describedby': typeAheadAriaDescribedby })}
                   placeholder={placeholderText as string}
                   value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
                   type="text"

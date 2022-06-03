@@ -235,9 +235,7 @@ export const Slider: React.FunctionComponent<SliderProps> = ({
     if (!areCustomStepsContinuous && customSteps) {
       let percentage = newPercentage;
       if (customSteps[customSteps.length - 1].value !== 100) {
-        const numSteps = customSteps.length - 1;
-        const percentagePerStep = 100 / numSteps;
-        percentage = newPercentage / percentagePerStep;
+        percentage = (newPercentage * (max - min)) / 100 + min;
       }
       const stepIndex = customSteps.findIndex(stepObj => stepObj.value >= percentage);
       if (customSteps[stepIndex].value === percentage) {

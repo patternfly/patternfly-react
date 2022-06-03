@@ -387,6 +387,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       focusTrapOptions={{
         returnFocusOnDeactivate: true,
         clickOutsideDeactivates: true,
+        tabbableOptions: { displayCheck: 'none' },
         fallbackFocus: () => {
           // If the popover's trigger is focused but scrolled out of view,
           // FocusTrap will throw an error when the Enter button is used on the trigger.

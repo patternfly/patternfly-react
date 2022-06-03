@@ -185,7 +185,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     <Backdrop>
       <FocusTrap
         active={!disableFocusTrap}
-        focusTrapOptions={{ clickOutsideDeactivates: true }}
+        focusTrapOptions={{ clickOutsideDeactivates: true, tabbableOptions: { displayCheck: 'none' } }}
         className={css(bullsEyeStyles.bullseye)}
       >
         {modalBox}

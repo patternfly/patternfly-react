@@ -14,6 +14,7 @@ const getOppositePlacement = (placement: Placement): any =>
     (matched: string) => hash[matched as 'left' | 'right' | 'bottom' | 'top'] as BasePlacement
   );
 
+/** @deprecated Please use the menuAppendTo prop directly from within the PF component which uses it. */
 export interface ToggleMenuBaseProps {
   /** The container to append the menu to. Defaults to 'inline'
    * If your menu is being cut off you can append it to an element higher up the DOM tree.
@@ -94,6 +95,10 @@ export interface PopperProps {
   onTriggerEnter?: (event?: KeyboardEvent) => void;
   /** Callback function when popper is clicked */
   onPopperClick?: (event?: MouseEvent) => void;
+  /** Callback function when mouse enters popper content */
+  onPopperMouseEnter?: (event?: MouseEvent) => void;
+  /** Callback function when mouse leaves popper content */
+  onPopperMouseLeave?: (event?: MouseEvent) => void;
   /** Callback function when document is clicked */
   onDocumentClick?: (event?: MouseEvent, triggerElement?: HTMLElement, popperElement?: HTMLElement) => void;
   /** Callback function when keydown event occurs on document */
@@ -139,6 +144,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
   onTriggerClick,
   onTriggerEnter,
   onPopperClick,
+  onPopperMouseEnter,
+  onPopperMouseLeave,
   onDocumentKeyDown,
   enableFlip = true,
   flipBehavior = 'flip',
@@ -185,6 +192,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     addEventListener(onTriggerClick, refOrTrigger, 'click');
     addEventListener(onTriggerEnter, refOrTrigger, 'keydown');
     addEventListener(onPopperClick, popperElement, 'click');
+    addEventListener(onPopperMouseEnter, popperElement, 'mouseenter');
+    addEventListener(onPopperMouseLeave, popperElement, 'mouseleave');
     onDocumentClick && addEventListener(onDocumentClickCallback, document, 'click');
     addEventListener(onDocumentKeyDown, document, 'keydown');
 
@@ -202,6 +211,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
       removeEventListener(onTriggerClick, refOrTrigger, 'click');
       removeEventListener(onTriggerEnter, refOrTrigger, 'keydown');
       removeEventListener(onPopperClick, popperElement, 'click');
+      removeEventListener(onPopperMouseEnter, popperElement, 'mouseenter');
+      removeEventListener(onPopperMouseLeave, popperElement, 'mouseleave');
       onDocumentClick && removeEventListener(onDocumentClickCallback, document, 'click');
       removeEventListener(onDocumentKeyDown, document, 'keydown');
       observer.disconnect();
@@ -216,6 +227,8 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
     onTriggerClick,
     onTriggerEnter,
     onPopperClick,
+    onPopperMouseEnter,
+    onPopperMouseLeave,
     onDocumentClick,
     onDocumentKeyDown,
     refElement

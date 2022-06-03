@@ -99,7 +99,9 @@ class SearchInputWithNavigableOptions extends React.Component {
     this.state = {
       value: '',
       resultsCount: 0,
-      currentResult: 1
+      currentResult: 1,
+      isPreviousNavigationButtonDisabled: false,
+      isNextNavigationButtonDisabled: false
     };
 
     this.onChange = (value, event) => {
@@ -135,7 +137,6 @@ class SearchInputWithNavigableOptions extends React.Component {
       });
     };
   }
-
   render() {
     return (
       <SearchInput
@@ -143,6 +144,8 @@ class SearchInputWithNavigableOptions extends React.Component {
         value={this.state.value}
         onChange={this.onChange}
         onClear={this.onClear}
+        isNextNavigationButtonDisabled={this.state.currentResult === 3}
+        isPreviousNavigationButtonDisabled={this.state.currentResult === 1}
         resultsCount={`${this.state.currentResult} / ${this.state.resultsCount}`}
         onNextClick={this.onNext}
         onPreviousClick={this.onPrevious}

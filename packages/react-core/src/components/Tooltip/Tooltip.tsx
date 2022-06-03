@@ -63,7 +63,10 @@ export interface TooltipProps extends Omit<React.HTMLProps<HTMLDivElement>, 'con
   enableFlip?: boolean;
   /** Delay in ms before the tooltip appears */
   entryDelay?: number;
-  /** Delay in ms before the tooltip disappears */
+  /** Delay in ms before the tooltip disappears, Avoid passing in a value of "0", as users should
+   * be given ample time to move their mouse from the trigger to the tooltip content without the content
+   * being hidden.
+   */
   exitDelay?: number;
   /**
    * The desired position to flip the tooltip to if the initial position is not possible.
@@ -149,7 +152,7 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
   enableFlip = true,
   className = '',
   entryDelay = 300,
-  exitDelay = 0,
+  exitDelay = 300,
   appendTo = () => document.body,
   zIndex = 9999,
   maxWidth = tooltipMaxWidth.value,
@@ -318,6 +321,8 @@ export const Tooltip: React.FunctionComponent<TooltipProps> = ({
       placement={position}
       onMouseEnter={triggerOnMouseenter && show}
       onMouseLeave={triggerOnMouseenter && hide}
+      onPopperMouseEnter={triggerOnMouseenter && show}
+      onPopperMouseLeave={triggerOnMouseenter && hide}
       onFocus={triggerOnFocus && show}
       onBlur={triggerOnFocus && hide}
       onDocumentClick={triggerOnClick && onDocumentClick}

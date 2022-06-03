@@ -5,7 +5,10 @@ import { DropdownWithContext } from './DropdownWithContext';
 import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 import { OUIAProps, useOUIAId } from '../../helpers';
 
-export interface DropdownProps extends ToggleMenuBaseProps, React.HTMLProps<HTMLDivElement>, OUIAProps {
+export interface DropdownProps
+  extends Omit<ToggleMenuBaseProps, 'menuAppendTo'>,
+    React.HTMLProps<HTMLDivElement>,
+    OUIAProps {
   /** Anything which can be rendered in a dropdown */
   children?: React.ReactNode;
   /** Classes applied to root element of dropdown */
@@ -32,6 +35,14 @@ export interface DropdownProps extends ToggleMenuBaseProps, React.HTMLProps<HTML
   };
   /** Display menu above or below dropdown toggle */
   direction?: DropdownDirection | 'up' | 'down';
+  /** The container to append the menu to. Defaults to 'inline'.
+   * If your menu is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * menuAppendTo="parent"
+   * menuAppendTo={() => document.body}
+   * menuAppendTo={document.getElementById('target')}
+   */
+  menuAppendTo?: HTMLElement | (() => HTMLElement) | 'inline' | 'parent';
   /** Flag to indicate if dropdown has groups */
   isGrouped?: boolean;
   /** Toggle for the dropdown, examples: <DropdownToggle> or <DropdownToggleCheckbox> */
@@ -44,6 +55,11 @@ export interface DropdownProps extends ToggleMenuBaseProps, React.HTMLProps<HTML
   autoFocus?: boolean;
   /** Props for extreme customization of dropdown */
   contextProps?: typeof DropdownContext;
+  /** Flag for indicating that the dropdown menu should automatically flip vertically when
+   * it reaches the boundary. This prop can only be used when the dropdown component is not
+   * appended inline, e.g. `menuAppendTo="parent"`
+   */
+  isFlipEnabled?: boolean;
 }
 
 export const Dropdown: React.FunctionComponent<DropdownProps> = ({
@@ -54,6 +70,8 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   ouiaSafe,
   alignments,
   contextProps,
+  menuAppendTo = 'inline',
+  isFlipEnabled = false,
   ...props
 }: DropdownProps) => (
   <DropdownContext.Provider
@@ -79,7 +97,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
       ...contextProps
     }}
   >
-    <DropdownWithContext {...props} />
+    <DropdownWithContext menuAppendTo={menuAppendTo} isFlipEnabled={isFlipEnabled} {...props} />
   </DropdownContext.Provider>
 );
 Dropdown.displayName = 'Dropdown';

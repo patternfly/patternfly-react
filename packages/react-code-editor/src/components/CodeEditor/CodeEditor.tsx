@@ -127,6 +127,8 @@ export interface CodeEditorProps extends Omit<React.HTMLProps<HTMLDivElement>, '
   /** Height of code editor. Defaults to 100%. 'sizeToFit' will automatically change the height to the height of the content. */
   height?: string | 'sizeToFit';
   /** Function which fires each time the code changes in the code editor */
+  onCodeChange?: (value: string) => void;
+  /** Function which fires each time the content of the code editor is manually changed. Does not fire when a file is uploaded. */
   onChange?: ChangeHandler;
   /** The loading screen before the editor will be loaded. Defaults 'loading...' */
   loading?: React.ReactNode;
@@ -272,7 +274,8 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
     },
     showEditor: true,
     options: {},
-    overrideServices: {}
+    overrideServices: {},
+    onCodeChange: () => {}
   };
 
   static getExtensionFromLanguage(language: Language) {
@@ -327,6 +330,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       this.props.onChange(value, event);
     }
     this.setState({ value });
+    this.props.onCodeChange(value);
   };
 
   // this function is only called when the props change
@@ -387,6 +391,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, CodeEditorState
       value,
       filename
     });
+    this.props.onCodeChange(value);
   };
 
   handleFileReadStarted = () => this.setState({ isLoading: true });

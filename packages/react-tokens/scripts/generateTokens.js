@@ -1,6 +1,6 @@
 const glob = require('glob');
 const { dirname, basename, sep } = require('path');
-const { parse } = require('css');
+const { parse, stringify } = require('css');
 const { readFileSync } = require('fs');
 
 const pfStylesDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
@@ -19,7 +19,12 @@ const getRegexMatches = (string, regex) => {
 
 const getDeclarations = cssAst =>
   cssAst.stylesheet.rules
-    .filter(node => node.type === 'rule' && !node.selectors.includes('.pf-t-dark'))
+    .filter(
+      node =>
+        node.type === 'rule' &&
+        !node.selectors.includes('.pf-t-dark') &&
+        (!node.selectors || !node.selectors.some(item => item.includes('.pf-theme-dark'))) // exclude dark theme blocks since dark theme variable values override default token values
+    )
     .map(node => node.declarations.filter(decl => decl.type === 'declaration'))
     .reduce((acc, val) => acc.concat(val), []); // flatten
 
@@ -100,11 +105,15 @@ function generateTokens() {
   const scssColorsMap = getRegexMatches(scssColorVariables, /(\$.*):\s*([^\s]+)\s*(?:!default);/g);
 
   // contains default values and mappings to colors.scss for color values
-  const cssGlobalVariables = readFileSync(
-    require.resolve('@patternfly/patternfly/base/patternfly-variables.css'),
-    'utf8'
+  const cssGlobalVariablesAst = parse(
+    readFileSync(require.resolve('@patternfly/patternfly/base/patternfly-variables.css'), 'utf8')
   );
-  const cssGlobalVariablesMap = getRegexMatches(cssGlobalVariables, /(--pf-[\w-]*):\s*([\w -_]+);/g);
+
+  cssGlobalVariablesAst.stylesheet.rules = cssGlobalVariablesAst.stylesheet.rules.filter(
+    node => !node.selectors || !node.selectors.some(item => item.includes('.pf-theme-dark'))
+  );
+
+  const cssGlobalVariablesMap = getRegexMatches(stringify(cssGlobalVariablesAst), /(--pf-[\w-]*):\s*([\w -_]+);/g);
 
   const combinedScssVarsColorsMap = {
     ...scssVarsMap,
