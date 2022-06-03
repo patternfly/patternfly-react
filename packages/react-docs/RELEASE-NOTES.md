@@ -23,7 +23,7 @@ section: developer-resources
 - **Banner:**
   - Added screen reader text ([#7377](https://github.com/patternfly/patternfly-react/pull/7377))
 - **Chip:**
-  - Added custom maxWidth prop ([#7387](https://github.com/patternfly/patternfly-react/pull/7387))
+  - Added custom `maxWidth` prop ([#7387](https://github.com/patternfly/patternfly-react/pull/7387))
 - **Code editor:**
   - Enabled external updating of editor value on file upload ([#7450](https://github.com/patternfly/patternfly-react/pull/7450))
 - **Context selector:**
@@ -51,7 +51,7 @@ section: developer-resources
   - Added mouse events for popper content ([#7399](https://github.com/patternfly/patternfly-react/pull/7399))
 - **Search input:**
   - Updated to use panel instead of card in composable advanced search demo ([#7431](https://github.com/patternfly/patternfly-react/pull/7431))
-  - Updated tp use text input group instead native HTML elements ([#7414](https://github.com/patternfly/patternfly-react/pull/7414))
+  - Updated to use text input group instead native HTML elements ([#7414](https://github.com/patternfly/patternfly-react/pull/7414))
 - **Select:**
   - Updated to allow enter to create when there is a single option ([#7444](https://github.com/patternfly/patternfly-react/pull/7444))
   - Fixed so aria-describedby is added properly ([#7456](https://github.com/patternfly/patternfly-react/pull/7456))
