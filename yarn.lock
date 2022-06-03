@@ -3188,10 +3188,10 @@
     acorn-static-class-features "^1.0.0"
     astring "^1.7.5"
 
-"@patternfly/patternfly-a11y@4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-a11y/-/patternfly-a11y-4.3.0.tgz#ea45b4ce23d295dd4b18457fe5cafd42f062a08d"
-  integrity sha512-OjlaBfv6fjLZNSJXVqWiColt7mPxI3nzzuzWEvt/0LuAIfRhOeA6aKEQppTqR3nTAiuQYruhUii8utYE6oY2qQ==
+"@patternfly/patternfly-a11y@4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-a11y/-/patternfly-a11y-4.3.1.tgz#09f050d3a899a60471519f552d64ecaaeb5fec2f"
+  integrity sha512-WBdiCJsfEo+cLgtLPDyvOtvRewzWqUvymLOx+Hj/jFoMI7hbotoZSBl4GUZDtFDOHXN4/vfu16eZy9DQHTY/Ew==
   dependencies:
     axe-core "^4.4.1"
     chromedriver "^101.0.0"
