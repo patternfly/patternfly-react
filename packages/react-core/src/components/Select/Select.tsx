@@ -294,6 +294,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       this.props.variant !== 'typeaheadmulti'
     ) {
       this.refCollection[this.state.viewMoreNextIndex][0].focus();
+      this.setState({ viewMoreNextIndex: -1 });
     }
 
     const hasUpdatedChildren =
