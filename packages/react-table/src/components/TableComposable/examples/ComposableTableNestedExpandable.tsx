@@ -74,13 +74,15 @@ export const ComposableTableNestedExpandable: React.FunctionComponent = () => {
         <Thead hasNestedHeader>
           <Tr>
             <Th rowSpan={2} />
-            <Th rowSpan={2} hasRightBorder>
+            <Th width={35} rowSpan={2} hasRightBorder>
               {columnNames.team}
             </Th>
             <Th colSpan={3} hasRightBorder>
               {columnNames.members}
             </Th>
-            <Th rowSpan={2}>{columnNames.contact}</Th>
+            <Th width={25} rowSpan={2}>
+              {columnNames.contact}
+            </Th>
           </Tr>
           <Tr resetOffset>
             <Th isSubheader>{columnNames.lead}</Th>
