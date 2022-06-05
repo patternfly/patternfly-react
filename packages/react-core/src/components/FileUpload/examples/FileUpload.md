@@ -18,42 +18,7 @@ Pressing _Clear_ button triggers `onClearClick` event.
 
 ### Simple text file
 
-```js
-import React from 'react';
-import { FileUpload } from '@patternfly/react-core';
-
-class SimpleTextFileUpload extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: '', filename: '', isLoading: false };
-    this.handleFileInputChange = (event, file) => this.setState({ filename: file.name });
-    this.handleTextOrDataChange = value => this.setState({ value });
-    this.handleClear = event => this.setState({ filename: '', value: '' });
-    this.handleFileReadStarted = fileHandle => this.setState({ isLoading: true });
-    this.handleFileReadFinished = fileHandle => this.setState({ isLoading: false });
-  }
-
-  render() {
-    const { value, filename, isLoading } = this.state;
-    return (
-      <FileUpload
-        id="simple-text-file"
-        type="text"
-        value={value}
-        filename={filename}
-        filenamePlaceholder="Drag and drop a file or upload one"
-        onFileInputChange={this.handleFileInputChange}
-        onDataChange={this.handleTextOrDataChange}
-        onTextChange={this.handleTextOrDataChange}
-        onReadStarted={this.handleFileReadStarted}
-        onReadFinished={this.handleFileReadFinished}
-        onClearClick={this.handleClear}
-        isLoading={isLoading}
-        browseButtonText="Upload"
-      />
-    );
-  }
-}
+```ts file="./FileUploadSimpleText.tsx"
 ```
 
 A user can always type instead of selecting a file, but by default, once a user selects a text file from their disk they are not allowed to edit it (to prevent unintended changes to a format-sensitive file). This behavior can be changed with the `allowEditingUploadedText` prop.
@@ -61,43 +26,7 @@ Typing/pasting text in the box will call `onTextChange` with a string, and a str
 
 ### Text file with edits allowed
 
-```js
-import React from 'react';
-import { FileUpload } from '@patternfly/react-core';
-
-class TextFileWithEditsAllowed extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: '', filename: '', isLoading: false };
-    this.handleFileInputChange = (event, file) => this.setState({ filename: file.name });
-    this.handleTextOrDataChange = value => this.setState({ value });
-    this.handleClear = event => this.setState({ filename: '', value: '' });
-    this.handleFileReadStarted = fileHandle => this.setState({ isLoading: true });
-    this.handleFileReadFinished = fileHandle => this.setState({ isLoading: false });
-  }
-
-  render() {
-    const { value, filename, isLoading } = this.state;
-    return (
-      <FileUpload
-        id="text-file-with-edits-allowed"
-        type="text"
-        value={value}
-        filename={filename}
-        filenamePlaceholder="Drag and drop a file or upload one"
-        onFileInputChange={this.handleFileInputChange}
-        onDataChange={this.handleTextOrDataChange}
-        onClearClick={this.handleClear}
-        onTextChange={this.handleTextOrDataChange}
-        onReadStarted={this.handleFileReadStarted}
-        onReadFinished={this.handleFileReadFinished}
-        isLoading={isLoading}
-        allowEditingUploadedText
-        browseButtonText="Upload"
-      />
-    );
-  }
-}
+```ts file="./FileUploadTextWithEdits.tsx"
 ```
 
 ### Restricting file size and type
@@ -110,58 +39,7 @@ Restricting file sizes and types in this way is for user convenience only, and i
 
 ### Text file with restrictions
 
-```js
-import React from 'react';
-import { FileUpload, Form, FormGroup } from '@patternfly/react-core';
-
-class TextFileUploadWithRestrictions extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: '', filename: '', isLoading: false, isRejected: false };
-    this.handleFileInputChange = (event, file) => this.setState({ filename: file.name });
-    this.handleTextOrDataChange = value => this.setState({ value });
-    this.handleClear = event => this.setState({ filename: '', value: '', isRejected: false });
-    this.handleFileRejected = (rejectedFiles, event) => this.setState({ isRejected: true });
-    this.handleFileReadStarted = fileHandle => this.setState({ isLoading: true });
-    this.handleFileReadFinished = fileHandle => this.setState({ isLoading: false });
-  }
-
-  render() {
-    const { value, filename, isLoading, isRejected } = this.state;
-    return (
-      <Form>
-        <FormGroup
-          fieldId="text-file-with-restrictions"
-          helperText="Upload a CSV file"
-          helperTextInvalid="Must be a CSV file no larger than 1 KB"
-          validated={isRejected ? 'error' : 'default'}
-        >
-          <FileUpload
-            id="text-file-with-restrictions"
-            type="text"
-            value={value}
-            filename={filename}
-            filenamePlaceholder="Drag and drop a file or upload one"
-            onFileInputChange={this.handleFileInputChange}
-            onDataChange={this.handleTextOrDataChange}
-            onTextChange={this.handleTextOrDataChange}
-            onClearClick={this.handleClear}
-            onReadStarted={this.handleFileReadStarted}
-            onReadFinished={this.handleFileReadFinished}
-            isLoading={isLoading}
-            dropzoneProps={{
-              accept: '.csv',
-              maxSize: 1024,
-              onDropRejected: this.handleFileRejected
-            }}
-            validated={isRejected ? 'error' : 'default'}
-            browseButtonText="Upload"
-          />
-        </FormGroup>
-      </Form>
-    );
-  }
-}
+```ts file="./FileUploadTextWithRestrictions.tsx"
 ```
 
 ### Other file types
@@ -170,35 +48,7 @@ If no `type` prop is specified, the component will not read files directly. When
 
 ### Simple file of any format
 
-```js
-import React from 'react';
-import { FileUpload } from '@patternfly/react-core';
-
-class SimpleFileUpload extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: null, filename: '' };
-    this.handleFileInputChange = (event, file) => {
-      this.setState({ filename: file.name });
-    };
-    this.handleClear = event => this.setState({ filename: '', value: '' });
-  }
-
-  render() {
-    const { value, filename } = this.state;
-    return (
-      <FileUpload
-        id="simple-file"
-        value={value}
-        filename={filename}
-        filenamePlaceholder="Drag and drop a file or upload one"
-        browseButtonText="Upload"
-        onFileInputChange={this.handleFileInputChange}
-        onClearClick={this.handleClear}
-      />
-    );
-  }
-}
+```ts file="./FileUploadSimpleFile.tsx"
 ```
 
 ### Customizing the file preview
@@ -207,43 +57,7 @@ Regardless of `type`, the preview area (the TextArea, or any future implementati
 
 ### Custom file preview
 
-```js
-import React from 'react';
-import { FileUpload } from '@patternfly/react-core';
-import FileUploadIcon from '@patternfly/react-icons/dist/esm/icons/file-upload-icon';
-
-class CustomPreviewFileUpload extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: null, filename: '' };
-    this.handleFileInputChange = (event, file) => {
-      this.setState({ value: file, filename: file.name });
-    };
-    this.handleClear = event => this.setState({ filename: '', value: '' });
-  }
-
-  render() {
-    const { value, filename, isLoading } = this.state;
-    return (
-      <FileUpload
-        id="customized-preview-file"
-        value={value}
-        filename={filename}
-        filenamePlaceholder="Drag and drop a file or upload one"
-        onFileInputChange={this.handleFileInputChange}
-        onClearClick={this.handleClear}
-        hideDefaultPreview
-        browseButtonText="Upload"
-      >
-        {value && (
-          <div className="pf-u-m-md">
-            <FileUploadIcon size="lg" /> Custom preview here for your {value.size}-byte file named {value.name}
-          </div>
-        )}
-      </FileUpload>
-    );
-  }
-}
+```ts file="./FileUploadCustomPreview.tsx"
 ```
 
 ### Bringing your own file browse logic
@@ -254,83 +68,5 @@ Note that the `isLoading` prop is styled to position the spinner dead center abo
 
 ### Custom file upload
 
-```js
-import React from 'react';
-import { FileUploadField, Checkbox } from '@patternfly/react-core';
-
-class CustomFileUpload extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: '',
-      filename: false,
-      isClearButtonDisabled: true,
-      isLoading: false,
-      isDragActive: false,
-      hideDefaultPreview: false,
-      children: false,
-      hasPlaceholderText: false
-    };
-    this.handleTextAreaChange = value => {
-      this.setState({ value });
-    };
-  }
-
-  render() {
-    const {
-      value,
-      filename,
-      isClearButtonDisabled,
-      isLoading,
-      isDragActive,
-      hideDefaultPreview,
-      children,
-      hasPlaceholderText
-    } = this.state;
-    return (
-      <div>
-        {['filename', 'isClearButtonDisabled', 'isDragActive', 'isLoading', 'hideDefaultPreview', 'children', 'hasPlaceholderText'].map(
-          stateKey => (
-            <Checkbox
-              key={stateKey}
-              id={stateKey}
-              label={stateKey}
-              aria-label={stateKey}
-              isChecked={this.state[stateKey]}
-              onChange={checked =>
-                this.setState({
-                  [stateKey]: checked,
-                  // See notes above this example
-                  ...(stateKey === 'isLoading' && checked && { hideDefaultPreview: false }),
-                  ...(stateKey === 'hideDefaultPreview' && checked && { isLoading: false })
-                })
-              }
-            />
-          )
-        )}
-        <br />
-        <FileUploadField
-          id="custom-file-upload"
-          type="text"
-          value={value}
-          filename={filename ? 'example-filename.txt' : ''}
-          onTextChange={this.handleTextAreaChange}
-          filenamePlaceholder="Do something custom with this!"
-          onBrowseButtonClick={() => alert('Browse button clicked!')}
-          onClearButtonClick={() => alert('Clear button clicked!')}
-          isClearButtonDisabled={isClearButtonDisabled}
-          isLoading={isLoading}
-          isDragActive={isDragActive}
-          hideDefaultPreview={hideDefaultPreview}
-          browseButtonText="Upload"
-          textAreaPlaceholder={hasPlaceholderText ? "File preview" : ''}
-        >
-          {children && (
-            <div className="pf-u-m-md">(A custom preview of the uploaded file can be passed as children)</div>
-          )}
-        </FileUploadField>
-      </div>
-    );
-  }
-}
+```ts file="./FileUploadCustomUpload.tsx"
 ```
