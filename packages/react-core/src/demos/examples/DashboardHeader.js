@@ -120,7 +120,7 @@ export default class DashboardHeader extends React.Component {
     ];
 
     const headerToolbar = (
-      <Toolbar id="toolbar" inset={{ default: 'insetMd' }} isFullHeight isStatic>
+      <Toolbar id="toolbar" isFullHeight isStatic>
         <ToolbarContent>
           <ToolbarGroup
             variant="icon-button-group"
