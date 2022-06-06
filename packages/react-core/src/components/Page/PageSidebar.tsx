@@ -51,7 +51,7 @@ export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
           aria-hidden={!navOpen}
           {...props}
         >
-          <div className="pf-topology-side-bar__body">
+          <div className={styles.pageSidebarBody}>
             <PageSidebarContext.Provider value={{ isNavOpen: navOpen }}>{nav}</PageSidebarContext.Provider>
           </div>
         </div>

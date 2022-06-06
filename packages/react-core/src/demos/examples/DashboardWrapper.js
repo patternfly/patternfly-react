@@ -37,7 +37,7 @@ export default class DashboardWrapper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeItem: 0
+      activeItem: 1
     };
 
     this.onNavSelect = result => {
@@ -70,7 +70,7 @@ export default class DashboardWrapper extends React.Component {
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
           <NavItem itemId={0} isActive={activeItem === 0} to="#system-panel">
-            System Panel
+            System panel
           </NavItem>
           <NavItem itemId={1} isActive={activeItem === 1} to="#policy">
             Policy
@@ -79,7 +79,7 @@ export default class DashboardWrapper extends React.Component {
             Authentication
           </NavItem>
           <NavItem itemId={3} isActive={activeItem === 3} to="#network">
-            Network Services
+            Network services
           </NavItem>
           <NavItem itemId={4} isActive={activeItem === 4} to="#server">
             Server
