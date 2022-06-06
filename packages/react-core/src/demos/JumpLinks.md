@@ -130,3 +130,11 @@ ScrollspyH2 = () => {
   );
 };
 ```
+
+
+### With drawer
+
+This demo shows how jump links can be used in combination with a drawer.
+
+```js isFullscreen file="./examples/JumpLinks/JumpLinksWithDrawer.js"
+```
