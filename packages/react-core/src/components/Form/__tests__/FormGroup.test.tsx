@@ -203,4 +203,34 @@ describe('FormGroup', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('should render with group role', () => {
+    const { asFragment } = render(
+      <FormGroup
+        label="label"
+        fieldId="group-role"
+        data-testid="form-group-test-id"
+        multipleInputs={{ isRadioGroup: false }}
+      >
+        <input />
+        <input />
+      </FormGroup>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should render with radiogroup role', () => {
+    const { asFragment } = render(
+      <FormGroup
+        label="label"
+        fieldId="radiogroup-role"
+        data-testid="form-group-test-id"
+        multipleInputs={{ isRadioGroup: true }}
+      >
+        <input />
+        <input />
+      </FormGroup>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
