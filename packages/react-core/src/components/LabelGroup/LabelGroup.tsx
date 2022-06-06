@@ -58,6 +58,8 @@ export interface LabelGroupProps extends React.HTMLProps<HTMLUListElement> {
   hasEditableTextArea?: boolean;
   /** @beta Additional props passed to the editable textarea. */
   editableTextAreaProps?: any;
+  /** @beta Control for adding new labels */
+  addLabel?: React.ReactNode;
 }
 
 interface LabelGroupState {
@@ -149,6 +151,7 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
       isEditable,
       hasEditableTextArea,
       editableTextAreaProps,
+      addLabel,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...rest
     } = this.props;
@@ -189,6 +192,7 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
                 </Label>
               </li>
             )}
+            {addLabel && <li className={css(styles.labelGroupListItem)}>{addLabel}</li>}
             {isEditable && hasEditableTextArea && (
               <li className={css(styles.labelGroupListItem, styles.modifiers.textarea)}>
                 <textarea className={css(styles.labelGroupTextarea)} rows={1} tabIndex={0} {...editableTextAreaProps} />
