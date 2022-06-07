@@ -136,5 +136,7 @@ ScrollspyH2 = () => {
 
 This demo shows how jump links can be used in combination with a drawer.
 
+The scrollable selector passed to the jump links component is an id that was placed on the drawer content component.
+
 ```js isFullscreen file="./examples/JumpLinks/JumpLinksWithDrawer.js"
 ```
