@@ -61,7 +61,6 @@ export const JumpLinksWithDrawer = () => {
         <DrawerContent panelContent={panelContent} id="jump-links-drawer-drawer-scrollable-container">
           <DrawerContentBody>
             <DrawerContentBody hasPadding>
-              <Button onClick={onToggleClick}>Toggle drawer</Button>
               <Sidebar>
                 <SidebarPanel variant="sticky">
                   <JumpLinks
@@ -80,6 +79,7 @@ export const JumpLinksWithDrawer = () => {
                   </JumpLinks>
                 </SidebarPanel>
                 <SidebarContent>
+                  <Button onClick={onToggleClick}>Toggle drawer</Button>
                   <TextContent>
                     {headings.map(heading => (
                       <div key={heading}>
