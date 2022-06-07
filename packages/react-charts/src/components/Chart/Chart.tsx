@@ -219,6 +219,10 @@ export interface ChartProps extends VictoryChartProps {
    */
   innerRadius?: number;
   /**
+   * Generate default pattern defs and populate patternScale
+   */
+  isPatternDefs?: boolean;
+  /**
    * Allows legend items to wrap. A value of true allows the legend to wrap onto the next line
    * if its container is not wide enough.
    *
@@ -437,10 +441,6 @@ export interface ChartProps extends VictoryChartProps {
    */
   themeVariant?: string;
   /**
-   * Generate default pattern defs and populate patternScale
-   */
-  usePatternDefs?: boolean;
-  /**
    * Specifies the width of the svg viewBox of the chart container. This value should be given as a
    * number of pixels.
    *
@@ -468,7 +468,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   themeVariant,
   patternId = getPatternId(),
   patternScale,
-  usePatternDefs = false,
+  isPatternDefs = false,
 
   // destructure last
   theme = getChartTheme(themeColor, showAxis),
@@ -490,7 +490,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     colorScale: defaultColorScale,
     patternScale,
     patternId,
-    usePatternDefs
+    isPatternDefs
   });
 
   // Add pattern props for legend tooltip
@@ -602,7 +602,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     >
       {renderChildren()}
       {getLegend()}
-      {usePatternDefs && getPatternDefs({ patternId, patternScale: defaultColorScale })}
+      {isPatternDefs && getPatternDefs({ patternId, patternScale: defaultColorScale })}
     </VictoryChart>
   );
 };

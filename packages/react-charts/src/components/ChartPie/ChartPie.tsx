@@ -249,6 +249,10 @@ export interface ChartPieProps extends VictoryPieProps {
    */
   innerRadius?: NumberOrCallback;
   /**
+   * Generate default pattern defs and populate patternScale
+   */
+  isPatternDefs?: boolean;
+  /**
    * The labelComponent prop takes in an entire label component which will be used
    * to create a label for the area. The new element created from the passed labelComponent
    * will be supplied with the following properties: x, y, index, data, verticalAnchor,
@@ -451,10 +455,6 @@ export interface ChartPieProps extends VictoryPieProps {
    */
   themeVariant?: string;
   /**
-   * Generate default pattern defs and populate patternScale
-   */
-  usePatternDefs?: boolean;
-  /**
    * Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels.
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
@@ -511,7 +511,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
-  usePatternDefs = false,
+  isPatternDefs = false,
 
   // destructure last
   theme = getTheme(themeColor),
@@ -547,7 +547,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     colorScale: defaultColorScale,
     patternScale,
     patternId,
-    usePatternDefs
+    isPatternDefs
   });
 
   // Merge pattern IDs with `style.data.fill` property
@@ -621,7 +621,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
           theme,
           ...containerComponent.props
         },
-        [chart, getLegend(), usePatternDefs && getPatternDefs({ patternId, patternScale: defaultColorScale })]
+        [chart, getLegend(), isPatternDefs && getPatternDefs({ patternId, patternScale: defaultColorScale })]
       )
     : null;
 
@@ -631,7 +631,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     <React.Fragment>
       {chart}
       {getLegend()}
-      {usePatternDefs && getPatternDefs({ patternId, patternScale: defaultColorScale })}
+      {isPatternDefs && getPatternDefs({ patternId, patternScale: defaultColorScale })}
     </React.Fragment>
   );
 };

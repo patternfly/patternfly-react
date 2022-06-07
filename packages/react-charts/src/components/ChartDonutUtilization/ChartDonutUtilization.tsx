@@ -244,6 +244,13 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   groupComponent?: React.ReactElement<any>;
   /**
+   * Flag indicating parent isPatternDefs prop is in use
+   * Do not use
+   * @hide
+   * @private
+   */
+  hasPatternDefs?: boolean;
+  /**
    * Specifies the height the svg viewBox of the chart container. This value should be given as a
    * number of pixels.
    *
@@ -267,6 +274,10 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * below 60% and an error below 20%
    */
   invert?: boolean;
+  /**
+   * Generate default pattern defs and populate patternScale
+   */
+  isPatternDefs?: boolean;
   /**
    * Allows legend items to wrap. A value of true allows the legend to wrap onto the next line
    * if its container is not wide enough.
@@ -556,16 +567,6 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   thresholds?: any[];
   /**
-   * Generate default pattern defs and populate patternScale
-   */
-  usePatternDefs?: boolean;
-  /**
-   * Flag indicating parent usePatternDefs prop is in use
-   *
-   * @hide
-   */
-  _usePatternDefs?: boolean;
-  /**
    * Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels.
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
@@ -609,6 +610,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   colorScale,
   containerComponent = <ChartContainer />,
   data,
+  hasPatternDefs,
   invert = false,
   legendPosition = ChartCommonStyles.legend.position as ChartDonutUtilizationLegendPosition,
   padding,
@@ -621,8 +623,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
   thresholds,
-  usePatternDefs = false,
-  _usePatternDefs,
+  isPatternDefs = false,
   x,
   y,
 
@@ -637,12 +638,12 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
     colorScale: defaultColorScale,
     patternScale,
     patternId,
-    usePatternDefs
+    isPatternDefs
   });
 
-  // Hide static pattern and handle edge case where parent does not use usePatternDefs
+  // Hide static pattern and handle edge case where parent does not use isPatternDefs
   const hideStaticPattern = showStatic && !showStaticPattern;
-  const hideThresholdPatterns = !patternScale && _usePatternDefs === false;
+  const hideThresholdPatterns = !patternScale && hasPatternDefs === false;
   if (defaultPatternScale && (hideStaticPattern || hideThresholdPatterns)) {
     for (let i = 0; i < defaultPatternScale.length; i++) {
       if (i !== 0) {
@@ -734,7 +735,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
       patternScale={defaultPatternScale ? defaultPatternScale : undefined}
       standalone={false}
       theme={getThresholdTheme()}
-      usePatternDefs={usePatternDefs}
+      isPatternDefs={isPatternDefs}
       width={width}
       {...rest}
     />

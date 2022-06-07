@@ -45,7 +45,7 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ### Basic pie chart
 ```js
 import React from 'react';
-import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartPie } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
   <ChartPie
@@ -64,7 +64,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
       right: 140, // Adjusted to accommodate legend
       top: 20
     }}
-    usePatternDefs
+    isPatternDefs
     width={350}
   />
 </div>
@@ -91,7 +91,7 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiCo
       top: 50
     }}
     themeColor={ChartThemeColor.purple}
-    usePatternDefs
+    isPatternDefs
     width={450}
   >
     <ChartAxis />
@@ -128,7 +128,7 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@
       top: 50
     }}
     themeColor={ChartThemeColor.green}
-    usePatternDefs
+    isPatternDefs
     width={600}
   >
     <ChartAxis />
@@ -167,7 +167,7 @@ import { ChartDonut } from '@patternfly/react-charts';
     subTitle="Pets"
     title="100"
     themeColor={ChartThemeColor.gold}
-    usePatternDefs
+    isPatternDefs
     width={350}
   />
 </div>
@@ -202,7 +202,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
     title="45%"
     themeColor={ChartThemeColor.green}
     thresholds={[{ value: 60 }, { value: 90 }]}
-    usePatternDefs
+    isPatternDefs
     width={300}
   />
 </div>
@@ -231,7 +231,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
       top: 20
     }}
     width={675}
-    usePatternDefs
+    isPatternDefs
   >
     <ChartDonutUtilization
       data={{ x: 'Storage capacity', y: 45 }}
@@ -241,7 +241,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
       subTitle="of 100 GBps"
       title="45%"
       themeColor={ChartThemeColor.orange}
-      usePatternDefs
+      isPatternDefs
     />
   </ChartDonutThreshold>
 </div>
@@ -356,7 +356,7 @@ class InteractivePieLegendChart extends React.Component {
           patternId="pattern_a" // Required for interactive legend functionality
           showAxis={false}
           themeColor={ChartThemeColor.multiUnordered}
-          usePatternDefs
+          isPatternDefs
           width={500}
         >
           <ChartPie
@@ -386,7 +386,6 @@ import {
   ChartLegendTooltip,
   ChartScatter, 
   ChartThemeColor,
-  ChartVoronoiContainer,
   createContainer, 
   getInteractiveLegendEvents, 
   getInteractiveLegendItemStyles,
@@ -546,7 +545,7 @@ class InteractiveLegendChart extends React.Component {
             }}
             maxDomain={{y: 9}}
             themeColor={ChartThemeColor.multiUnordered}
-            usePatternDefs
+            isPatternDefs
             width={width}
           >
             <ChartAxis tickValues={['2015', '2016', '2017', '2018']} />
@@ -638,7 +637,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
       top: 20
     }}
     themeColor={ChartThemeColor.multiOrdered}
-    usePatternDefs
+    isPatternDefs
     width={600}
   />
 </div>
@@ -648,7 +647,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
 This demonstrates how to omit patterns from pie chart segments.
 
-The approach uses `usePatternDefs` to generate default pattern defs using the given `patternId` prefix. The `patternScale` property is then used to apply indexed pattern IDs to each pie chart segment. If you want to omit a particular pattern from a pie segment, simply provide `null` instead.
+The approach uses `isPatternDefs` to generate default pattern defs using the given `patternId` prefix. The `patternScale` property is then used to apply indexed pattern IDs to each pie chart segment. If you want to omit a particular pattern from a pie segment, simply provide `null` instead.
 
 ```js
 import React from 'react';
@@ -674,7 +673,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
     patternId="pattern_b"
     patternScale={['url("#pattern_b:0")', 'url("#pattern_b:1")', null, null, null]}
     themeColor={ChartThemeColor.multiUnordered}
-    usePatternDefs
+    isPatternDefs
     width={350}
   />
 </div>
@@ -684,7 +683,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
 This demonstrates how to apply a custom color scale.
 
-The approach uses `usePatternDefs` to generate default pattern defs using the given `patternId` prefix and custom `colorScale`. The `patternScale` property is then used to apply indexed pattern IDs to each pie chart segment. If you want to omit a particular pattern from a pie segment, simply provide `null` instead.
+The approach uses `isPatternDefs` to generate default pattern defs using the given `patternId` prefix and custom `colorScale`. The `patternScale` property is then used to apply indexed pattern IDs to each pie chart segment. If you want to omit a particular pattern from a pie segment, simply provide `null` instead.
 
 ```js
 import React from 'react';
@@ -713,7 +712,7 @@ import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color
     }}
     patternId="pattern_c"
     patternScale={['url("#pattern_c:0")', 'url("#pattern_c:1")', null]}
-    usePatternDefs
+    isPatternDefs
     width={350}
   />
 </div>
@@ -725,7 +724,7 @@ This demonstrates how to create custom patterns.
 
 The approach uses custom pattern defs. The `patternScale` property is used to apply pattern IDs to each pie chart segment. If you want to omit a particular pattern from a pie segment, simply provide `null` instead.
 
-Note that `usePatternDefs` and `patternId` are not used here.
+Note that `isPatternDefs` and `patternId` are not used here.
 
 ```js
 import React from 'react';

@@ -257,6 +257,10 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   innerRadius?: NumberOrCallback;
   /**
+   * Generate default pattern defs and populate patternScale
+   */
+  isPatternDefs?: boolean;
+  /**
    * The labelComponent prop takes in an entire label component which will be used
    * to create a label for the area. The new element created from the passed labelComponent
    * will be supplied with the following properties: x, y, index, data, verticalAnchor,
@@ -522,10 +526,6 @@ export interface ChartDonutProps extends ChartPieProps {
    * Note: Default label properties may be applied
    */
   titleComponent?: React.ReactElement<any>;
-  /**
-   * Generate default pattern defs and populate patternScale
-   */
-  usePatternDefs?: boolean;
   /**
    * Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels.
    *

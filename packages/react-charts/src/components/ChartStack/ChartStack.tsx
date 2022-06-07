@@ -200,6 +200,10 @@ export interface ChartStackProps extends VictoryStackProps {
    */
   horizontal?: boolean;
   /**
+   * Generate default pattern defs and populate patternScale
+   */
+  isPatternDefs?: boolean;
+  /**
    * The labelComponent prop takes in an entire label component which will be used
    * to create a label for the area. The new element created from the passed labelComponent
    * will be supplied with the following properties: x, y, index, data, verticalAnchor,
@@ -394,10 +398,6 @@ export interface ChartStackProps extends VictoryStackProps {
    */
   themeVariant?: string;
   /**
-   * Generate default pattern defs and populate patternScale
-   */
-  usePatternDefs?: boolean;
-  /**
    * The width props specifies the width of the svg viewBox of the chart container
    * This value should be given as a number of pixels
    */
@@ -420,7 +420,7 @@ export const ChartStack: React.FunctionComponent<ChartStackProps> = ({
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
-  usePatternDefs = false,
+  isPatternDefs = false,
 
   // destructure last
   theme = getTheme(themeColor),
@@ -440,7 +440,7 @@ export const ChartStack: React.FunctionComponent<ChartStackProps> = ({
     colorScale: defaultColorScale,
     patternScale,
     patternId,
-    usePatternDefs
+    isPatternDefs
   });
 
   // Note: containerComponent is required for theme

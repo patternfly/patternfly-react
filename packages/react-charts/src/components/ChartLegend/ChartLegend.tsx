@@ -171,6 +171,10 @@ export interface ChartLegendProps extends VictoryLegendProps {
    */
   itemsPerRow?: number;
   /**
+   * Generate default pattern defs and populate patternScale
+   */
+  isPatternDefs?: boolean;
+  /**
    * The labelComponent prop takes a component instance which will be used
    * to render each legend label. The new element created from the passed
    * labelComponent will be supplied with the following properties: x, y,
@@ -326,10 +330,6 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * The x and y props define the base position of the legend element.
    */
   y?: number;
-  /**
-   * Generate default pattern defs and populate patternScale
-   */
-  usePatternDefs?: boolean;
 }
 
 export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({

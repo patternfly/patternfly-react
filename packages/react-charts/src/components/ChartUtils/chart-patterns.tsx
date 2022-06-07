@@ -7,7 +7,7 @@ interface PatternPropsInterface {
   offset?: number;
   patternId?: string;
   patternScale?: string[];
-  usePatternDefs?: boolean;
+  isPatternDefs?: boolean;
 }
 
 /**
@@ -271,12 +271,12 @@ export const getDefaultPatternScale = ({
   colorScale,
   patternScale,
   patternId,
-  usePatternDefs
+  isPatternDefs
 }: PatternPropsInterface) => {
   if (patternScale) {
     return patternScale;
   }
-  if (usePatternDefs) {
+  if (isPatternDefs) {
     return getPatternScale(patternId, colorScale);
   }
   return undefined;

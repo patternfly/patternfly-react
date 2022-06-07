@@ -271,6 +271,10 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   invert?: boolean;
   /**
+   * Generate default pattern defs and populate patternScale
+   */
+  isPatternDefs?: boolean;
+  /**
    * The labelRadius prop defines the radius of the arc that will be used for positioning each slice label.
    * If this prop is not set, the label radius will default to the radius of the pie + label padding.
    *
@@ -425,10 +429,6 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   title?: string;
   /**
-   * Generate default pattern defs and populate patternScale
-   */
-  usePatternDefs?: boolean;
-  /**
    * Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels.
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
@@ -485,7 +485,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
-  usePatternDefs = false,
+  isPatternDefs = false,
   x,
   y,
 
@@ -514,7 +514,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
     colorScale: defaultColorScale,
     patternScale,
     patternId,
-    usePatternDefs
+    isPatternDefs
   });
 
   // Returns computed data representing pie chart slices
@@ -562,13 +562,13 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
           invert,
           key: `pf-chart-donut-threshold-child-${index}`,
           padding: defaultPadding,
-          ...(!childProps.usePatternDefs && defaultPatternScale && { patternScale: [null, ...defaultPatternScale] }),
+          ...(!childProps.isPatternDefs && defaultPatternScale && { patternScale: [null, ...defaultPatternScale] }),
           radius: chartRadius - 14, // Donut utilization radius is threshold radius minus 14px spacing
           showStatic: false,
           standalone: false,
           subTitlePosition: childProps.subTitlePosition || subTitlePosition,
           theme: dynamicTheme,
-          _usePatternDefs: usePatternDefs,
+          hasPatternDefs: isPatternDefs,
           width,
           ...childProps
         });
@@ -610,7 +610,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
     [
       chart,
       renderChildren(),
-      usePatternDefs && getPatternDefs({ offset: 1, patternId, patternScale: defaultColorScale })
+      isPatternDefs && getPatternDefs({ offset: 1, patternId, patternScale: defaultColorScale })
     ]
   );
 
@@ -620,7 +620,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
     <React.Fragment>
       {chart}
       {renderChildren()}
-      {usePatternDefs && getPatternDefs({ offset: 1, patternId, patternScale: defaultColorScale })}
+      {isPatternDefs && getPatternDefs({ offset: 1, patternId, patternScale: defaultColorScale })}
     </React.Fragment>
   );
 };
