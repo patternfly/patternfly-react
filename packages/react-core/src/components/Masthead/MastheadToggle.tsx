@@ -14,8 +14,8 @@ export const MastheadToggle: React.FunctionComponent<MastheadToggleProps> = ({
   className,
   ...props
 }: MastheadToggleProps) => (
-  <div className={css(styles.mastheadToggle, className)} {...props}>
+  <span className={css(styles.mastheadToggle, className)} {...props}>
     {children}
-  </div>
+  </span>
 );
 MastheadToggle.displayName = 'MastheadToggle';
