@@ -40,7 +40,7 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   /** Icon displayed to the left of the helper text when the field is invalid. */
   helperTextInvalidIcon?: React.ReactNode;
   /** ID of the included field. It has to be the same for proper working. */
-  fieldId: string;
+  fieldId?: string;
   /** Sets the role of the form group. Pass in "radiogroup" when the form group contains multiple
    * radio inputs, or pass in "group" when the form group contains multiple of any other input type.
    */
