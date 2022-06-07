@@ -199,7 +199,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     }
     const renderWithTooltip = (childNode: React.ReactNode) =>
       tooltip ? (
-        <Tooltip content={tooltip} {...tooltipProps}>
+        <Tooltip content={tooltip} {...tooltipProps} aria-live="polite">
           {childNode}
         </Tooltip>
       ) : (
