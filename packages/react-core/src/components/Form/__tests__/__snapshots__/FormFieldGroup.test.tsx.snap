@@ -3,7 +3,9 @@
 exports[`Check expandable form field group example against snapshot 1`] = `
 <DocumentFragment>
   <div
+    aria-labelledby="title-text-id2"
     class="pf-c-form__field-group pf-m-expanded"
+    role="group"
   >
     <div
       class="pf-c-form__field-group-toggle"
@@ -88,7 +90,9 @@ exports[`Check expandable form field group example against snapshot 1`] = `
 exports[`Check form field group example against snapshot 1`] = `
 <DocumentFragment>
   <div
+    aria-labelledby="title-text-id1"
     class="pf-c-form__field-group"
+    role="group"
   >
     <div
       class="pf-c-form__field-group-header"
