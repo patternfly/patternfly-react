@@ -204,33 +204,51 @@ describe('FormGroup', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('should render with group role', () => {
-    const { asFragment } = render(
-      <FormGroup
-        label="label"
-        fieldId="group-role"
-        data-testid="form-group-test-id"
-        multipleInputs={{ isRadioGroup: false }}
-      >
-        <input />
-        <input />
-      </FormGroup>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+  describe('With multiple inputs per group', () => {
+    test('should render with group role when multipleInputs.isRadioGroup is false', () => {
+      render(
+        <FormGroup label="label" fieldId="group-role" multipleInputs={{ isRadioGroup: false }}>
+          <input />
+          <input />
+        </FormGroup>
+      );
 
-  test('should render with radiogroup role', () => {
-    const { asFragment } = render(
-      <FormGroup
-        label="label"
-        fieldId="radiogroup-role"
-        data-testid="form-group-test-id"
-        multipleInputs={{ isRadioGroup: true }}
-      >
-        <input />
-        <input />
-      </FormGroup>
-    );
-    expect(asFragment()).toMatchSnapshot();
+      expect(screen.getByRole('group')).toBeInTheDocument();
+    });
+
+    test('should render with radiogroup role when multipleInputs.isRadioGroup is true', () => {
+      render(
+        <FormGroup label="label" fieldId="radiogroup-role" multipleInputs={{ isRadioGroup: true }}>
+          <input />
+          <input />
+        </FormGroup>
+      );
+
+      expect(screen.getByRole('radiogroup')).toBeInTheDocument();
+    });
+
+    test('should have accessible name when multipleInputs is passed in', () => {
+      render(
+        <FormGroup label="label" fieldId="accessible-name" multipleInputs={{ isRadioGroup: false }}>
+          <input />
+          <input />
+        </FormGroup>
+      );
+
+      expect(screen.getByRole('group')).toHaveAccessibleName('label');
+    });
+
+    test('should have correct element for group label when multipleInputs is passed in', () => {
+      render(
+        <FormGroup label="label" fieldId="correct-label-element" multipleInputs={{ isRadioGroup: false }}>
+          <input />
+          <input />
+        </FormGroup>
+      );
+
+      const labelElement = screen.getByRole('group').querySelector('.pf-c-form__label');
+
+      expect(labelElement.tagName).toBe('SPAN');
+    });
   });
 });
