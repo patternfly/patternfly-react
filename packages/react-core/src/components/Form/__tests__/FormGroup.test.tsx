@@ -207,13 +207,13 @@ describe('FormGroup', () => {
 
   test('input should receive focus when clicking label', () => {
     render(
-      <FormGroup data-testId="form-group-test-id" label="label" fieldId="native-label-element">
+      <FormGroup label="label" fieldId="native-label-element">
         <input id="native-label-element" />
       </FormGroup>
     );
 
-    const labelElement = screen.getByTestId('form-group-test-id').querySelector('.pf-c-form__label');
-    const input = screen.getByTestId('form-group-test-id').querySelector('input');
+    const labelElement = screen.getByText('label');
+    const input = screen.getByRole('textbox');
 
     userEvent.click(labelElement);
     expect(input).toHaveFocus();
@@ -228,8 +228,8 @@ describe('FormGroup', () => {
         </FormGroup>
       );
 
-      const labelElement = screen.getByRole('group').querySelector('.pf-c-form__label');
-      const inputs = screen.getByRole('group').querySelectorAll('input');
+      const labelElement = screen.getByText('label');
+      const inputs = screen.getAllByRole('textbox');
 
       userEvent.click(labelElement);
       inputs.forEach(input => {
