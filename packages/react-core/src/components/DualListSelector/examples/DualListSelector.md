@@ -51,17 +51,7 @@ import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pfic
 
 For more flexibility, a dual list selector can be built using sub components. When doing so, the intended component relationships are arranged as follows:
 
-```js noLive
-import React from 'react';
-import {
-  DualListSelector,
-  DualListSelectorPane,
-  DualListSelectorList,
-  DualListSelectorListItem,
-  DualListSelectorControlsWrapper,
-  DualListSelectorControl
-} from '@patternfly/react-core';
-
+```noLive
 <DualListSelector>
   <DualListSelectorPane>
     <DualListSelectorList>
@@ -70,7 +60,7 @@ import {
   </DualListSelectorPane>
 
   <DualListSelectorControlsWrapper>
-    <DualListSelectorControl /> {/* The standard Dual list selector has 4 controls */}
+    <DualListSelectorControl /> /* The standard Dual list selector has 4 controls */
   </DualListSelectorControlsWrapper>
 
   <DualListSelectorPane isChosen>
@@ -78,7 +68,7 @@ import {
       <DualListSelectorListItem />
     </DualListSelectorList>
   </DualListSelectorPane>
-</DualListSelector>;
+</DualListSelector>
 ```
 
 ```ts file="./DualListSelectorComposable.tsx"
