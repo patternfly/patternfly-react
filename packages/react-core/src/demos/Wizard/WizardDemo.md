@@ -5,6 +5,7 @@ section: components
 
 import imgBrand from './imgBrand.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import DashboardWrapper from '../examples/DashboardWrapper';
 
 ## Demos
 
@@ -29,7 +30,6 @@ import {
   PageSectionVariants,
   PageSidebar,
   Progress,
-  SkipToContent,
   Text,
   TextContent,
   Title,
@@ -43,6 +43,7 @@ import {
   ModalVariant
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import DashboardWrapper from '../examples/DashboardWrapper';
 
 class BasicWizardDemo extends React.Component {
   constructor(props) {
@@ -80,33 +81,6 @@ class BasicWizardDemo extends React.Component {
         </NavList>
       </Nav>
     );
-    const Header = (
-      <Masthead id="basic">
-        <MastheadToggle>
-          <PageToggleButton variant="plain" aria-label="Global navigation">
-            <BarsIcon />
-          </PageToggleButton>
-        </MastheadToggle>
-        <MastheadMain>
-          <MastheadBrand>
-            <Brand src={imgBrand} alt="Patternfly logo" />
-          </MastheadBrand>
-        </MastheadMain>
-      </Masthead>
-    );
-    const Sidebar = <PageSidebar nav={PageNav} />;
-    const pageId = 'main-content-page-layout-default-nav';
-    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
-    const PageBreadcrumb = (
-      <Breadcrumb>
-        <BreadcrumbItem>Section home</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-        <BreadcrumbItem to="#" isActive>
-          Section landing
-        </BreadcrumbItem>
-      </Breadcrumb>
-    );
 
     const steps = [
       { id: 0, name: 'Information', component: <p>Step 1 content</p> },
@@ -133,20 +107,7 @@ class BasicWizardDemo extends React.Component {
     const title = 'Basic wizard';
     return (
       <React.Fragment>
-        <Page
-          header={Header}
-          sidebar={Sidebar}
-          isManagedSidebar
-          skipToContent={PageSkipToContent}
-          breadcrumb={PageBreadcrumb}
-          mainContainerId={pageId}
-        >
-          <PageSection variant={PageSectionVariants.light}>
-            <TextContent>
-              <Text component="h1">Main title</Text>
-              <Text component="p">A demo of a wizard modal in a page.</Text>
-            </TextContent>
-          </PageSection>
+        <DashboardWrapper hasPageTemplateTitle>
           <PageSection isWidthLimited>
             <Gallery hasGutter>
               {Array.apply(0, Array(10)).map((x, i) => (
@@ -158,28 +119,26 @@ class BasicWizardDemo extends React.Component {
               ))}
             </Gallery>
           </PageSection>
-          <PageSection type={PageSectionTypes.wizard} variant={PageSectionVariants.light}>
-            <Modal
-              isOpen
-              variant={ModalVariant.large}
-              showClose={false}
-              hasNoBodyWrapper
-              aria-describedby="wiz-modal-demo-description"
-              aria-labelledby="wiz-modal-demo-title"
-            >
-              <Wizard
-                navAriaLabel={`${title} steps`}
-                mainAriaLabel={`${title} content`}
-                titleId="wiz-modal-demo-title"
-                descriptionId="wiz-modal-demo-description"
-                title="Simple wizard in modal"
-                description="Simple wizard description"
-                steps={steps}
-                height={400}
-              />
-            </Modal>{' '}
-          </PageSection>
-        </Page>
+        </DashboardWrapper>
+        <Modal
+          isOpen
+          variant={ModalVariant.large}
+          showClose={false}
+          hasNoBodyWrapper
+          aria-describedby="wiz-modal-demo-description"
+          aria-labelledby="wiz-modal-demo-title"
+        >
+          <Wizard
+            navAriaLabel={`${title} steps`}
+            mainAriaLabel={`${title} content`}
+            titleId="wiz-modal-demo-title"
+            descriptionId="wiz-modal-demo-description"
+            title="Simple wizard in modal"
+            description="Simple wizard description"
+            steps={steps}
+            height={400}
+          />
+        </Modal>
       </React.Fragment>
     );
   }
@@ -203,7 +162,6 @@ import {
   PageSectionVariants,
   PageSidebar,
   Progress,
-  SkipToContent,
   Text,
   TextContent,
   Title,
@@ -216,6 +174,7 @@ import {
 } from '@patternfly/react-core';
 import imgBrand from './imgBrand.svg';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import DashboardWrapper from '../examples/DashboardWrapper';
 
 class FullPageWizard extends React.Component {
   constructor(props) {
@@ -252,33 +211,6 @@ class FullPageWizard extends React.Component {
         </NavList>
       </Nav>
     );
-    const Header = (
-      <Masthead id="basic">
-        <MastheadToggle>
-          <PageToggleButton variant="plain" aria-label="Global navigation">
-            <BarsIcon />
-          </PageToggleButton>
-        </MastheadToggle>
-        <MastheadMain>
-          <MastheadBrand>
-            <Brand src={imgBrand} alt="Patternfly logo" />
-          </MastheadBrand>
-        </MastheadMain>
-      </Masthead>
-    );
-    const Sidebar = <PageSidebar nav={PageNav} />;
-    const pageId = 'main-content-page-layout-default-nav';
-    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to content</SkipToContent>;
-    const PageBreadcrumb = (
-      <Breadcrumb>
-        <BreadcrumbItem>Section home</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-        <BreadcrumbItem to="#">Section title</BreadcrumbItem>
-        <BreadcrumbItem to="#" isActive>
-          Section landing
-        </BreadcrumbItem>
-      </Breadcrumb>
-    );
 
     const steps = [
       { id: 0, name: 'Information', component: <p>Step 1 content</p> },
@@ -306,24 +238,11 @@ class FullPageWizard extends React.Component {
 
     return (
       <React.Fragment>
-        <Page
-          header={Header}
-          sidebar={Sidebar}
-          isManagedSidebar
-          skipToContent={PageSkipToContent}
-          breadcrumb={PageBreadcrumb}
-          mainContainerId={pageId}
-        >
-          <PageSection variant={PageSectionVariants.light}>
-            <TextContent>
-              <Text component="h1">Main title</Text>
-              <Text component="p">A demo of a wizard in a page.</Text>
-            </TextContent>
-          </PageSection>
+        <DashboardWrapper hasPageTemplateTitle>
           <PageSection type={PageSectionTypes.wizard} variant={PageSectionVariants.light}>
             <Wizard navAriaLabel={`${title} steps`} mainAriaLabel={`${title} content`} steps={steps} />
           </PageSection>
-        </Page>
+        </DashboardWrapper>
       </React.Fragment>
     );
   }
