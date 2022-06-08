@@ -22,7 +22,7 @@ export const LabelGroupEditableAdd: React.FunctionComponent = () => {
 
   const onEdit = (nextText: string, index: number) => {
     const copy = [...labels];
-    copy[index] = { name: nextText, props: labels[index].editableProps };
+    copy[index] = { name: nextText, props: labels[index].props };
     setLabels(copy);
   };
 
@@ -46,15 +46,15 @@ export const LabelGroupEditableAdd: React.FunctionComponent = () => {
       categoryName="Label group 1"
       numLabels={5}
       isEditable
-      addLabel={
+      addLabelControl={
         <Label color="blue" variant="outline" isOverflowLabel onClick={onAdd}>
-          Add Label
+          Add label
         </Label>
       }
     >
       {labels.map((label, index) => (
         <Label
-          key={index}
+          key={`${label.name}-${index}`}
           id={`${label.name}-${index}`}
           color="blue"
           onClose={() => onClose(label.name)}

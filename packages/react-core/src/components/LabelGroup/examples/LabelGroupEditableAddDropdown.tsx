@@ -12,7 +12,7 @@ export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
     { name: 'Label 2' },
     {
       name: 'Label 3',
-      editableProps: {
+      props: {
         isEditable: true,
         editableProps: {
           'aria-label': 'label editable text'
@@ -27,20 +27,14 @@ export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
 
   const onEdit = (nextText: string, index: number) => {
     const copy = [...labels];
-    copy[index] = { name: nextText, editableProps: labels[index].editableProps };
+    copy[index] = { name: nextText, props: labels[index].props };
     setLabels(copy);
   };
 
-  const onAdd = labelText => {
+  const onAdd = (labelText: string) => {
     setLabels([
       {
-        name: labelText,
-        editableProps: {
-          isEditable: true,
-          editableProps: {
-            'aria-label': 'label editable text'
-          }
-        }
+        name: labelText
       },
       ...labels
     ]);
@@ -98,7 +92,7 @@ export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
   const toggle = (
     <div ref={toggleRef}>
       <Label color="blue" variant="outline" isOverflowLabel onClick={onToggleClick}>
-        Add Label
+        Add label
       </Label>
     </div>
   );
@@ -109,7 +103,7 @@ export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
         categoryName="Label group 1"
         numLabels={5}
         isEditable
-        addLabel={
+        addLabelControl={
           <Popper
             trigger={toggle}
             popper={menu}
@@ -121,13 +115,13 @@ export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
       >
         {labels.map((label, index) => (
           <Label
-            key={index}
+            key={`${label.name}-${index}`}
             id={`${label.name}-${index}`}
             color="blue"
             onClose={() => onClose(label.name)}
             onEditCancel={prevText => onEdit(prevText, index)}
             onEditComplete={newText => onEdit(newText, index)}
-            {...label.editableProps}
+            {...label.props}
           >
             {label.name}
           </Label>

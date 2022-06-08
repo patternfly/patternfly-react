@@ -209,15 +209,7 @@ class EditableLabelGroup extends React.Component {
 
 ### Editable labels with add button
 
+For additional documentation that showcases adding a new label, see [label group demos](/components/label-group/react-demos).
+
 ```ts file="LabelGroupEditableAdd.tsx"
-```
-
-### Editable labels with add dropdown
-
-```ts file="LabelGroupEditableAddDropdown.tsx"
-```
-
-### Editable labels with add modal
-
-```ts file="LabelGroupEditableAddModal.tsx"
 ```

@@ -59,7 +59,7 @@ export interface LabelGroupProps extends React.HTMLProps<HTMLUListElement> {
   /** @beta Additional props passed to the editable textarea. */
   editableTextAreaProps?: any;
   /** @beta Control for adding new labels */
-  addLabel?: React.ReactNode;
+  addLabelControl?: React.ReactNode;
 }
 
 interface LabelGroupState {
@@ -151,7 +151,7 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
       isEditable,
       hasEditableTextArea,
       editableTextAreaProps,
-      addLabel,
+      addLabelControl,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...rest
     } = this.props;
@@ -192,7 +192,7 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
                 </Label>
               </li>
             )}
-            {addLabel && <li className={css(styles.labelGroupListItem)}>{addLabel}</li>}
+            {addLabelControl && <li className={css(styles.labelGroupListItem)}>{addLabelControl}</li>}
             {isEditable && hasEditableTextArea && (
               <li className={css(styles.labelGroupListItem, styles.modifiers.textarea)}>
                 <textarea className={css(styles.labelGroupTextarea)} rows={1} tabIndex={0} {...editableTextAreaProps} />
@@ -232,7 +232,7 @@ export class LabelGroup extends React.Component<LabelGroupProps, LabelGroupState
       );
     };
 
-    return numChildren === 0 ? null : (
+    return numChildren === 0 && addLabelControl === undefined ? null : (
       <GenerateId>{randomId => renderLabelGroup(this.props.id || randomId)}</GenerateId>
     );
   }
