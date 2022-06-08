@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.60.8 (2022-06-08)
+
+**Note:** Version bump only for package eslint-plugin-patternfly-react
+
+
+
+
+
 ## 4.60.7 (2022-06-07)
 
 **Note:** Version bump only for package eslint-plugin-patternfly-react
