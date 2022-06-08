@@ -43,5 +43,5 @@ import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle
 
 By using the `toggleContent` prop, you can pass in content other than a simple string such as an icon or a badge. When passing in custom content in this way, you should not pass in any interactive element such as a button.
 
-```ts file="ExpandableSectionCustom.tsx"
+```ts file="ExpandableSectionCustomToggle.tsx"
 ```

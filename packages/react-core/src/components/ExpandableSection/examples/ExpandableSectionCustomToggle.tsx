@@ -2,7 +2,7 @@ import React from 'react';
 import { ExpandableSection, Badge } from '@patternfly/react-core';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 
-export const ExpandableSectionCustom: React.FunctionComponent = () => {
+export const ExpandableSectionCustomToggle: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   const onToggle = (isExpanded: boolean) => {
