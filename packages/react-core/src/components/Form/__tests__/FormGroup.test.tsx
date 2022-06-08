@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { ValidatedOptions } from '../../../helpers/constants';
 import { FormGroup } from '../FormGroup';
@@ -204,7 +205,38 @@ describe('FormGroup', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('input should receive focus when clicking label', () => {
+    render(
+      <FormGroup data-testId="form-group-test-id" label="label" fieldId="native-label-element">
+        <input id="native-label-element" />
+      </FormGroup>
+    );
+
+    const labelElement = screen.getByTestId('form-group-test-id').querySelector('.pf-c-form__label');
+    const input = screen.getByTestId('form-group-test-id').querySelector('input');
+
+    userEvent.click(labelElement);
+    expect(input).toHaveFocus();
+  });
+
   describe('With multiple inputs per group', () => {
+    test('inputs should not receive focus when clicking label with multipleInputs passed in', () => {
+      render(
+        <FormGroup label="label" fieldId="span-label-element" multipleInputs={{ isRadioGroup: false }}>
+          <input id="span-label-element" />
+          <input />
+        </FormGroup>
+      );
+
+      const labelElement = screen.getByRole('group').querySelector('.pf-c-form__label');
+      const inputs = screen.getByRole('group').querySelectorAll('input');
+
+      userEvent.click(labelElement);
+      inputs.forEach(input => {
+        expect(input).not.toHaveFocus();
+      });
+    });
+
     test('should render with group role when multipleInputs.isRadioGroup is false', () => {
       render(
         <FormGroup label="label" fieldId="group-role" multipleInputs={{ isRadioGroup: false }}>
@@ -236,19 +268,6 @@ describe('FormGroup', () => {
       );
 
       expect(screen.getByRole('group')).toHaveAccessibleName('label');
-    });
-
-    test('should have correct element for group label when multipleInputs is passed in', () => {
-      render(
-        <FormGroup label="label" fieldId="correct-label-element" multipleInputs={{ isRadioGroup: false }}>
-          <input />
-          <input />
-        </FormGroup>
-      );
-
-      const labelElement = screen.getByRole('group').querySelector('.pf-c-form__label');
-
-      expect(labelElement.tagName).toBe('SPAN');
     });
   });
 });
