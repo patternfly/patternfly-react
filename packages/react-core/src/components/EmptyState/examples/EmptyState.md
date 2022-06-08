@@ -9,222 +9,36 @@ import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
 ## Examples
 ### Basic
-```js
-import React from 'react';
-import {
-  Title,
-  Button,
-  EmptyState,
-  EmptyStateIcon,
-  EmptyStateBody,
-  EmptyStateSecondaryActions
-} from '@patternfly/react-core';
-import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
-<EmptyState>
-  <EmptyStateIcon icon={CubesIcon} />
-  <Title headingLevel="h4" size="lg">
-    Empty state
-  </Title>
-  <EmptyStateBody>
-    This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
-    enough to meet a variety of needs.
-  </EmptyStateBody>
-  <Button variant="primary">Primary action</Button>
-  <EmptyStateSecondaryActions>
-    <Button variant="link">Multiple</Button>
-    <Button variant="link">Action Buttons</Button>
-    <Button variant="link">Can</Button>
-    <Button variant="link">Go here</Button>
-    <Button variant="link">In the secondary</Button>
-    <Button variant="link">Action area</Button>
-  </EmptyStateSecondaryActions>
-</EmptyState>
+```ts file="EmptyStateBasic.tsx"
 ```
 
 ### Extra small
-```js
-import React from 'react';
-import {
-  Title,
-  Button,
-  EmptyState,
-  EmptyStateVariant,
-  EmptyStateBody,
-  EmptyStateSecondaryActions
-} from '@patternfly/react-core';
 
-<EmptyState variant={EmptyStateVariant.xs}>
-  <Title headingLevel="h4" size="md">
-    Empty state
-  </Title>
-  <EmptyStateBody>
-    This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
-    enough to meet a variety of needs.
-  </EmptyStateBody>
-  <EmptyStateSecondaryActions>
-    <Button variant="link">Multiple</Button>
-    <Button variant="link">Action Buttons</Button>
-    <Button variant="link">Can</Button>
-    <Button variant="link">Go here</Button>
-    <Button variant="link">In the secondary</Button>
-    <Button variant="link">Action area</Button>
-  </EmptyStateSecondaryActions>
-</EmptyState>
+```ts file="EmptyStateExtraSmall.tsx"
 ```
 
 ### Small
-```js
-import React from 'react';
-import {
-  Title,
-  Button,
-  EmptyState,
-  EmptyStateVariant,
-  EmptyStateIcon,
-  EmptyStateBody,
-  EmptyStateSecondaryActions
-} from '@patternfly/react-core';
-import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
-<EmptyState variant={EmptyStateVariant.small}>
-  <EmptyStateIcon icon={CubesIcon} />
-  <Title headingLevel="h4" size="lg">
-    Empty state
-  </Title>
-  <EmptyStateBody>
-    This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
-    enough to meet a variety of needs.
-  </EmptyStateBody>
-  <Button variant="primary">Primary action</Button>
-  <EmptyStateSecondaryActions>
-    <Button variant="link">Multiple</Button>
-    <Button variant="link">Action Buttons</Button>
-    <Button variant="link">Can</Button>
-    <Button variant="link">Go here</Button>
-    <Button variant="link">In the secondary</Button>
-    <Button variant="link">Action area</Button>
-  </EmptyStateSecondaryActions>
-</EmptyState>
+```ts file="EmptyStateSmall.tsx"
 ```
 
 ### Large
-```js
-import React from 'react';
-import {
-  Title,
-  Button,
-  EmptyState,
-  EmptyStateVariant,
-  EmptyStateIcon,
-  EmptyStateBody,
-  EmptyStateSecondaryActions
-} from '@patternfly/react-core';
-import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
-<EmptyState variant={EmptyStateVariant.large}>
-  <EmptyStateIcon icon={CubesIcon} />
-  <Title headingLevel="h4" size="lg">
-    Empty state
-  </Title>
-  <EmptyStateBody>
-    This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
-    enough to meet a variety of needs.
-  </EmptyStateBody>
-  <Button variant="primary">Primary action</Button>
-  <EmptyStateSecondaryActions>
-    <Button variant="link">Multiple</Button>
-    <Button variant="link">Action Buttons</Button>
-    <Button variant="link">Can</Button>
-    <Button variant="link">Go here</Button>
-    <Button variant="link">In the secondary</Button>
-    <Button variant="link">Action area</Button>
-  </EmptyStateSecondaryActions>
-</EmptyState>
+```ts file="EmptyStateLarge.tsx"
 ```
 
 ### Extra large
-```js
-import React from 'react';
-import {
-  Title,
-  Button,
-  EmptyState,
-  EmptyStateVariant,
-  EmptyStateIcon,
-  EmptyStateBody,
-  EmptyStateSecondaryActions
-} from '@patternfly/react-core';
-import CubesIcon from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 
-<EmptyState variant={EmptyStateVariant.xl}>
-  <EmptyStateIcon icon={CubesIcon} />
-  <Title headingLevel="h5" size="4xl">
-    Empty state
-  </Title>
-  <EmptyStateBody>
-    This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
-    enough to meet a variety of needs.
-  </EmptyStateBody>
-  <Button variant="primary">Primary action</Button>
-  <EmptyStateSecondaryActions>
-    <Button variant="link">Multiple</Button>
-    <Button variant="link">Action Buttons</Button>
-    <Button variant="link">Can</Button>
-    <Button variant="link">Go here</Button>
-    <Button variant="link">In the secondary</Button>
-    <Button variant="link">Action area</Button>
-  </EmptyStateSecondaryActions>
-</EmptyState>
+```ts file="EmptyStateExtraLarge.tsx"
 ```
 
 ### Spinner
-```js
-import React from 'react';
-import {
-  Title,
-  EmptyState,
-  EmptyStateIcon,
-  Spinner
-} from '@patternfly/react-core';
 
-
-EmptyStateSpinner = () => {
-  return (
-    <EmptyState>
-      <EmptyStateIcon variant="container" component={Spinner} />
-      <Title size="lg" headingLevel="h4">
-        Loading
-      </Title>
-    </EmptyState>
-  );
-}
+```ts file="EmptyStateSpinner.tsx"
 ```
 
 ### No match found
-```js
-import React from 'react';
-import {
-  Title,
-  Button,
-  EmptyState,
-  EmptyStatePrimary,
-  EmptyStateIcon,
-  EmptyStateBody
-} from '@patternfly/react-core';
-import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 
-
-<EmptyState>
-  <EmptyStateIcon icon={SearchIcon} />
-  <Title size="lg" headingLevel="h4">
-    No results found
-  </Title>
-  <EmptyStateBody>
-    No results match the filter criteria. Clear all filters and try again.
-  </EmptyStateBody>
-  <EmptyStatePrimary>
-    <Button variant="link">Clear all filters</Button>
-  </EmptyStatePrimary>
-</EmptyState>
+```ts file="EmptyStateNoMatchFound.tsx"
 ```
