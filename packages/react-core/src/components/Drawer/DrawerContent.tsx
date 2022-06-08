@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Drawer/drawer';
 import { css } from '@patternfly/react-styles';
 import { DrawerMain } from './DrawerMain';
-import { DrawerColorVariant } from './Drawer';
+import { DrawerColorVariant, DrawerContext } from './Drawer';
 
 export interface DrawerContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Drawer. */
@@ -23,7 +23,8 @@ export const DrawerContent: React.FunctionComponent<DrawerContentProps> = ({
   colorVariant = DrawerColorVariant.default,
   ...props
 }: DrawerContentProps) => {
-  const drawerContentRef = React.useRef<HTMLDivElement>();
+  const { drawerContentRef } = React.useContext(DrawerContext);
+
   return (
     <DrawerMain>
       <div
@@ -37,7 +38,7 @@ export const DrawerContent: React.FunctionComponent<DrawerContentProps> = ({
       >
         {children}
       </div>
-      {panelContent && React.cloneElement(panelContent as React.ReactElement, { drawerContentRef })}
+      {panelContent}
     </DrawerMain>
   );
 };

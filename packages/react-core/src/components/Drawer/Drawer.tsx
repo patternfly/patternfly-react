@@ -30,6 +30,7 @@ export interface DrawerContextProps {
   onExpand?: () => void;
   position?: string;
   drawerRef?: React.RefObject<HTMLDivElement>;
+  drawerContentRef?: React.RefObject<HTMLDivElement>;
   isInline: boolean;
 }
 
@@ -39,6 +40,7 @@ export const DrawerContext = React.createContext<Partial<DrawerContextProps>>({
   onExpand: () => {},
   position: 'right',
   drawerRef: null,
+  drawerContentRef: null,
   isInline: false
 });
 
@@ -53,8 +55,10 @@ export const Drawer: React.FunctionComponent<DrawerProps> = ({
   ...props
 }: DrawerProps) => {
   const drawerRef = React.useRef<HTMLDivElement>();
+  const drawerContentRef = React.useRef<HTMLDivElement>();
+
   return (
-    <DrawerContext.Provider value={{ isExpanded, isStatic, onExpand, position, drawerRef, isInline }}>
+    <DrawerContext.Provider value={{ isExpanded, isStatic, onExpand, position, drawerRef, drawerContentRef, isInline }}>
       <div
         className={css(
           styles.drawer,
