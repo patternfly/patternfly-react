@@ -866,7 +866,7 @@ class WizardInModal extends React.Component {
 
 ```js isBeta
 import React from 'react';
-import { DrawerHead, DrawerPanelContent, Wizard } from '@patternfly/react-core';
+import { DrawerActions, DrawerCloseButton, DrawerHead, DrawerPanelContent, Wizard } from '@patternfly/react-core';
 
 class WizardWithDrawer extends React.Component {
   constructor(props) {
@@ -909,6 +909,9 @@ class WizardWithDrawer extends React.Component {
             drawer-panel-1 content
           </span>
         </DrawerHead>
+        <DrawerActions>
+          <DrawerCloseButton onClick={this.onCloseClick} />
+        </DrawerActions>
       </DrawerPanelContent>
     );
 
