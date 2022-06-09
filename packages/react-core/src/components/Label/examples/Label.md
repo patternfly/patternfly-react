@@ -156,6 +156,27 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-i
   <Label color="cyan" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
     Cyan label with icon that overflows
   </Label>
+  <br />
+  <br />
+  <Label color="gold">Gold</Label>{' '}
+  <Label color="gold" icon={<InfoCircleIcon />}>
+    Gold icon
+  </Label>{' '}
+  <Label color="gold" onClose={Function.prototype}>
+    Gold removable
+  </Label>{' '}
+  <Label color="gold" icon={<InfoCircleIcon />} onClose={Function.prototype}>
+    Gold icon removable
+  </Label>{' '}
+  <Label color="gold" href="#filled">
+    Gold link
+  </Label>{' '}
+  <Label color="gold" href="#filled" onClose={Function.prototype}>
+    Gold link removable
+  </Label>
+  <Label color="gold" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
+    Gold label with icon that overflows
+  </Label>
 </React.Fragment>;
 ```
 
@@ -323,6 +344,29 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-i
   </Label>
   <Label variant="outline" color="cyan" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
     Cyan label with icon that overflows
+  </Label>
+  <br />
+  <br />
+  <Label variant="outline" color="gold">
+    Gold
+  </Label>{' '}
+  <Label variant="outline" color="gold" icon={<InfoCircleIcon />}>
+    Gold icon
+  </Label>{' '}
+  <Label variant="outline" color="gold" onClose={Function.prototype}>
+    Gold removable
+  </Label>{' '}
+  <Label variant="outline" color="gold" icon={<InfoCircleIcon />} onClose={Function.prototype}>
+    Gold icon removable
+  </Label>{' '}
+  <Label variant="outline" color="gold" href="#outline">
+    Gold link
+  </Label>{' '}
+  <Label variant="outline" color="gold" href="#outline" onClose={Function.prototype}>
+    Gold link removable
+  </Label>
+  <Label variant="outline" color="gold" icon={<InfoCircleIcon />} onClose={Function.prototype} isTruncated>
+    Gold label with icon that overflows
   </Label>
 </React.Fragment>;
 ```
