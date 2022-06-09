@@ -42,7 +42,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
       role="menu"
     >
       <li
-        role="menuitem"
+        role="none"
       >
         <a
           aria-disabled="false"
@@ -50,13 +50,14 @@ exports[`ApplicationLauncher custom icon 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownItem-7"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
+          role="menuitem"
           tabindex="-1"
         >
           Link
         </a>
       </li>
       <li
-        role="menuitem"
+        role="none"
       >
         <button
           aria-disabled="false"
@@ -64,6 +65,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownItem-8"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
+          role="menuitem"
           tabindex="-1"
           type="button"
         >
@@ -71,7 +73,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
         </button>
       </li>
       <li
-        role="menuitem"
+        role="none"
       >
         <a
           aria-disabled="true"
@@ -79,13 +81,14 @@ exports[`ApplicationLauncher custom icon 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownItem-9"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
+          role="menuitem"
           tabindex="-1"
         >
           Disabled Link
         </a>
       </li>
       <li
-        role="menuitem"
+        role="none"
       >
         <button
           aria-disabled="true"
@@ -93,6 +96,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownItem-10"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
+          role="menuitem"
           tabindex="-1"
           type="button"
         >
@@ -100,7 +104,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
         </button>
       </li>
       <li
-        role="separator"
+        role="none"
       >
         <div
           class="pf-c-divider"
@@ -108,7 +112,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
         />
       </li>
       <li
-        role="menuitem"
+        role="none"
       >
         <a
           aria-disabled="false"
@@ -116,13 +120,14 @@ exports[`ApplicationLauncher custom icon 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownItem-11"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
+          role="menuitem"
           tabindex="-1"
         >
           Separated Link
         </a>
       </li>
       <li
-        role="menuitem"
+        role="none"
       >
         <button
           aria-disabled="false"
@@ -130,6 +135,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownItem-12"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
+          role="menuitem"
           tabindex="-1"
           type="button"
         >
@@ -260,7 +266,7 @@ exports[`ApplicationLauncher expanded 1`] = `
       role="menu"
     >
       <li
-        role="menuitem"
+        role="none"
       >
         <a
           aria-disabled="false"
@@ -268,13 +274,14 @@ exports[`ApplicationLauncher expanded 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownItem-1"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
+          role="menuitem"
           tabindex="-1"
         >
           Link
         </a>
       </li>
       <li
-        role="menuitem"
+        role="none"
       >
         <button
           aria-disabled="false"
@@ -282,6 +289,7 @@ exports[`ApplicationLauncher expanded 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownItem-2"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
+          role="menuitem"
           tabindex="-1"
           type="button"
         >
@@ -289,7 +297,7 @@ exports[`ApplicationLauncher expanded 1`] = `
         </button>
       </li>
       <li
-        role="menuitem"
+        role="none"
       >
         <a
           aria-disabled="true"
@@ -297,13 +305,14 @@ exports[`ApplicationLauncher expanded 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownItem-3"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
+          role="menuitem"
           tabindex="-1"
         >
           Disabled Link
         </a>
       </li>
       <li
-        role="menuitem"
+        role="none"
       >
         <button
           aria-disabled="true"
@@ -311,6 +320,7 @@ exports[`ApplicationLauncher expanded 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownItem-4"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
+          role="menuitem"
           tabindex="-1"
           type="button"
         >
@@ -318,7 +328,7 @@ exports[`ApplicationLauncher expanded 1`] = `
         </button>
       </li>
       <li
-        role="separator"
+        role="none"
       >
         <div
           class="pf-c-divider"
@@ -326,7 +336,7 @@ exports[`ApplicationLauncher expanded 1`] = `
         />
       </li>
       <li
-        role="menuitem"
+        role="none"
       >
         <a
           aria-disabled="false"
@@ -334,13 +344,14 @@ exports[`ApplicationLauncher expanded 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownItem-5"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
+          role="menuitem"
           tabindex="-1"
         >
           Separated Link
         </a>
       </li>
       <li
-        role="menuitem"
+        role="none"
       >
         <button
           aria-disabled="false"
@@ -348,6 +359,7 @@ exports[`ApplicationLauncher expanded 1`] = `
           data-ouia-component-id="OUIA-Generated-DropdownItem-6"
           data-ouia-component-type="PF4/DropdownItem"
           data-ouia-safe="true"
+          role="menuitem"
           tabindex="-1"
           type="button"
         >
