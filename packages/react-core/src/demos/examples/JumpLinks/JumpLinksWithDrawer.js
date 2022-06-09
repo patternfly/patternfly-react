@@ -11,6 +11,7 @@ import {
   JumpLinks,
   JumpLinksItem,
   JumpLinksList,
+  PageSection,
   Sidebar,
   SidebarContent,
   SidebarPanel,
@@ -79,7 +80,9 @@ export const JumpLinksWithDrawer = () => {
                   </JumpLinks>
                 </SidebarPanel>
                 <SidebarContent>
-                  <Button onClick={onToggleClick}>Toggle drawer</Button>
+                  <PageSection sticky="top" variant="light">
+                    <Button onClick={onToggleClick}>Toggle drawer</Button>
+                  </PageSection>
                   <TextContent>
                     {headings.map(heading => (
                       <div key={heading} style={{ maxWidth: '800px', marginBottom: '32px' }}>
