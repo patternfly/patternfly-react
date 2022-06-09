@@ -82,7 +82,7 @@ export const JumpLinksWithDrawer = () => {
                   <Button onClick={onToggleClick}>Toggle drawer</Button>
                   <TextContent>
                     {headings.map(heading => (
-                      <div key={heading}>
+                      <div key={heading} style={{ maxWidth: '800px', marginBottom: '32px' }}>
                         <h2 id={`jump-links-drawer-jump-links-${heading.toLowerCase()}`} tabIndex={-1}>
                           {`${heading} section`}
                         </h2>
