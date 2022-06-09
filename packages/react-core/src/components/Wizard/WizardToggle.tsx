@@ -33,6 +33,8 @@ export interface WizardToggleProps {
   isInPage?: boolean;
   /** Flag indicating the wizard has a drawer for at least one of the wizard steps */
   hasDrawer?: boolean;
+  /** Flag indicating the wizard drawer is expanded */
+  isDrawerExpanded?: boolean;
 }
 
 export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
@@ -47,7 +49,8 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   mainAriaLabelledBy = null,
   mainAriaLabel = null,
   isInPage = true,
-  hasDrawer
+  hasDrawer,
+  isDrawerExpanded
 }: WizardToggleProps) => {
   let activeStepIndex;
   let activeStepName;
@@ -91,7 +94,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
       <WizardDrawerWrapper
         hasDrawer={hasDrawer && activeStep.drawerPanelContent}
         wrapper={(children: React.ReactNode) => (
-          <Drawer isInline isExpanded>
+          <Drawer isInline isExpanded={isDrawerExpanded}>
             <DrawerContent panelContent={activeStep.drawerPanelContent}>{children}</DrawerContent>
           </Drawer>
         )}

@@ -112,6 +112,8 @@ class BasicWizardDemo extends React.Component {
 import React from 'react';
 import {
   Button,
+  DrawerActions,
+  DrawerCloseButton,
   DrawerPanelContent,
   DrawerHead,
   Modal,
@@ -123,7 +125,7 @@ class WizardModalWithDrawerDemo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isExpanded: true
+      isDrawerExpanded: true
     };
 
     this.drawerRef = React.createRef();
@@ -133,25 +135,30 @@ class WizardModalWithDrawerDemo extends React.Component {
     };
 
     this.onClick = () => {
-      const isExpanded = !this.state.isExpanded;
+      const isDrawerExpanded = !this.state.isDrawerExpanded;
       this.setState({
-        isExpanded
+        isDrawerExpanded
       });
     };
 
     this.onCloseClick = () => {
       this.setState({
-        isExpanded: false
+        isDrawerExpanded: false
       });
     };
   }
   render() {
+    const { isDrawerExpanded } = this.state;
+
     const informationPanelContent = (
       <DrawerPanelContent colorVariant={DrawerColorVariant.light200}>
         <DrawerHead>
           <span tabIndex={0} ref={this.drawerRef}>
             Information panel content
           </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
         </DrawerHead>
       </DrawerPanelContent>
     );
@@ -162,6 +169,9 @@ class WizardModalWithDrawerDemo extends React.Component {
           <span tabIndex={0} ref={this.drawerRef}>
             Configuration substep A content
           </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
         </DrawerHead>
       </DrawerPanelContent>
     );
@@ -172,6 +182,9 @@ class WizardModalWithDrawerDemo extends React.Component {
           <span tabIndex={0} ref={this.drawerRef}>
             Configuration substep B content
           </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
         </DrawerHead>
       </DrawerPanelContent>
     );
@@ -182,6 +195,9 @@ class WizardModalWithDrawerDemo extends React.Component {
           <span tabIndex={0} ref={this.drawerRef}>
             Additional panel content
           </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
         </DrawerHead>
       </DrawerPanelContent>
     );
@@ -192,6 +208,9 @@ class WizardModalWithDrawerDemo extends React.Component {
           <span tabIndex={0} ref={this.drawerRef}>
             Review panel content
           </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
         </DrawerHead>
       </DrawerPanelContent>
     );
@@ -254,6 +273,7 @@ class WizardModalWithDrawerDemo extends React.Component {
         <Wizard
           navAriaLabel={`${title} steps`}
           hasDrawer
+          isDrawerExpanded={isDrawerExpanded}
           mainAriaLabel={`${title} content`}
           titleId="wiz-modal-demo-title"
           descriptionId="wiz-modal-demo-description"
@@ -345,6 +365,8 @@ import {
   Brand,
   Breadcrumb,
   BreadcrumbItem,
+  DrawerActions,
+  DrawerCloseButton,
   DrawerHead,
   DrawerPanelContent,
   Nav,
@@ -374,7 +396,27 @@ class FullPageWizard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isDrawerExpanded: true,
       activeItem: 0
+    };
+
+    this.drawerRef = React.createRef();
+
+    this.onExpand = () => {
+      this.drawerRef.current && this.drawerRef.current.focus();
+    };
+
+    this.onClick = () => {
+      const isDrawerExpanded = !this.state.isDrawerExpanded;
+      this.setState({
+        isDrawerExpanded
+      });
+    };
+
+    this.onCloseClick = () => {
+      this.setState({
+        isDrawerExpanded: false
+      });
     };
     this.onNavSelect = result => {
       this.setState({
@@ -383,7 +425,7 @@ class FullPageWizard extends React.Component {
     };
   }
   render() {
-    const { activeItem } = this.state;
+    const { activeItem, isDrawerExpanded } = this.state;
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList>
@@ -439,6 +481,9 @@ class FullPageWizard extends React.Component {
           <span tabIndex={0} ref={this.drawerRef}>
             Information panel content
           </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
         </DrawerHead>
       </DrawerPanelContent>
     );
@@ -449,6 +494,9 @@ class FullPageWizard extends React.Component {
           <span tabIndex={0} ref={this.drawerRef}>
             Configuration substep A content
           </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
         </DrawerHead>
       </DrawerPanelContent>
     );
@@ -459,6 +507,9 @@ class FullPageWizard extends React.Component {
           <span tabIndex={0} ref={this.drawerRef}>
             Configuration substep B content
           </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
         </DrawerHead>
       </DrawerPanelContent>
     );
@@ -469,6 +520,9 @@ class FullPageWizard extends React.Component {
           <span tabIndex={0} ref={this.drawerRef}>
             Additional panel content
           </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
         </DrawerHead>
       </DrawerPanelContent>
     );
@@ -479,6 +533,9 @@ class FullPageWizard extends React.Component {
           <span tabIndex={0} ref={this.drawerRef}>
             Review panel content
           </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
         </DrawerHead>
       </DrawerPanelContent>
     );
@@ -531,7 +588,13 @@ class FullPageWizard extends React.Component {
             </TextContent>
           </PageSection>
           <PageSection type={PageSectionTypes.wizard} variant={PageSectionVariants.light}>
-            <Wizard hasDrawer navAriaLabel={`${title} steps`} mainAriaLabel={`${title} content`} steps={steps} />
+            <Wizard
+              hasDrawer
+              isDrawerExpanded={isDrawerExpanded}
+              navAriaLabel={`${title} steps`}
+              mainAriaLabel={`${title} content`}
+              steps={steps}
+            />
           </PageSection>
         </Page>
       </React.Fragment>

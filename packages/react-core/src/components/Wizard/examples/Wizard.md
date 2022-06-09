@@ -873,7 +873,7 @@ class WizardWithDrawer extends React.Component {
     super(props);
     this.state = {
       isOpen: false,
-      isExpanded: true,
+      isDrawerExpanded: true,
       sectionGray: false,
       panelGray: true,
       contentGray: false
@@ -886,32 +886,32 @@ class WizardWithDrawer extends React.Component {
     };
 
     this.onClick = () => {
-      const isExpanded = !this.state.isExpanded;
+      const isDrawerExpanded = !this.state.isDrawerExpanded;
       this.setState({
-        isExpanded
+        isDrawerExpanded
       });
     };
 
     this.onCloseClick = () => {
       this.setState({
-        isExpanded: false
+        isDrawerExpanded: false
       });
     };
   }
 
   render() {
-    const { isExpanded } = this.state;
+    const { isDrawerExpanded } = this.state;
 
     const panel1Content = (
       <DrawerPanelContent widths={{ default: 'width_25' }} colorVariant={DrawerColorVariant.light200}>
         <DrawerHead>
-          <span tabIndex={isExpanded ? 0 : -1} ref={this.drawerRef}>
+          <span tabIndex={isDrawerExpanded ? 0 : -1} ref={this.drawerRef}>
             drawer-panel-1 content
           </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
         </DrawerHead>
-        <DrawerActions>
-          <DrawerCloseButton onClick={this.onCloseClick} />
-        </DrawerActions>
       </DrawerPanelContent>
     );
 
@@ -921,6 +921,9 @@ class WizardWithDrawer extends React.Component {
           <span tabIndex={0} ref={this.drawerRef}>
             drawer-panel-2 content
           </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
         </DrawerHead>
       </DrawerPanelContent>
     );
@@ -931,6 +934,9 @@ class WizardWithDrawer extends React.Component {
           <span tabIndex={0} ref={this.drawerRef}>
             drawer-panel-3 content
           </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
         </DrawerHead>
       </DrawerPanelContent>
     );
@@ -965,7 +971,13 @@ class WizardWithDrawer extends React.Component {
 
     return (
       <React.Fragment>
-        <Wizard hasDrawer drawerPanelWidths={{ default: 'width_25' }} navAriaLabel={`${title} steps`} steps={steps} />
+        <Wizard
+          isDrawerExpanded={isDrawerExpanded}
+          hasDrawer
+          drawerPanelWidths={{ default: 'width_25' }}
+          navAriaLabel={`${title} steps`}
+          steps={steps}
+        />
       </React.Fragment>
     );
   }
