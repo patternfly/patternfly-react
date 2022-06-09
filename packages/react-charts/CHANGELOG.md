@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.74.10 (2022-06-09)
+
+
+### Bug Fixes
+
+* **Select:** retain focus on correct checkbox after view more ([#7505](https://github.com/patternfly/patternfly-react/issues/7505)) ([c9de16b](https://github.com/patternfly/patternfly-react/commit/c9de16b00a3573f74847b3953c7b408cf000fb85))
+
+
+
+
+
 ## 6.74.9 (2022-06-09)
 
 **Note:** Version bump only for package @patternfly/react-charts
