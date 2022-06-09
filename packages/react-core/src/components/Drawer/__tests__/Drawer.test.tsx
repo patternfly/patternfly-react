@@ -10,7 +10,8 @@ import {
   DrawerPanelContent
 } from '../';
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 Object.values([
   { isExpanded: true, isInline: false, isStatic: false },
@@ -124,3 +125,39 @@ test(`Drawer has resizable callback and id`, () => {
   );
   expect(asFragment()).toMatchSnapshot();
 });
+
+test('Resizeable DrawerPanelContent can be wrapped in a context without causing an error', () => {
+  const TestContext = React.createContext({});
+
+  const consoleError = jest.spyOn(console, 'error').mockImplementation();
+
+  const panelContent = (
+    <TestContext.Provider value={{}}>
+      <DrawerPanelContent
+        isResizable
+      >
+        <DrawerHead>
+          <span>
+            drawer-panel
+          </span>
+          <DrawerActions>
+            <DrawerCloseButton />
+          </DrawerActions>
+        </DrawerHead>
+      </DrawerPanelContent>
+    </TestContext.Provider>
+  );
+
+  render(
+    <Drawer isExpanded={true} position="left">
+      <DrawerContent panelContent={panelContent}>
+        <DrawerContentBody>Drawer content text</DrawerContentBody>
+      </DrawerContent>
+    </Drawer>
+  );
+
+  userEvent.tab();
+  userEvent.keyboard('{arrowleft}');
+
+  expect(consoleError).not.toHaveBeenCalled();
+})
