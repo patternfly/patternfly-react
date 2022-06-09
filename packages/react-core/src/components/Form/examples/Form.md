@@ -147,15 +147,15 @@ class SimpleForm extends React.Component {
             onChange={this.handleTextInputChange3}
           />
         </FormGroup>
-        <FormGroup role="group" isInline fieldId="basic-form-checkbox-group" label="How can we contact you?" isRequired>
+        <FormGroup role="group" isInline fieldId="basic-form-checkbox-group" label="How can we contact you?">
           <Checkbox label="Email" aria-label="Email" id="inlinecheck01" />
           <Checkbox label="Phone" aria-label="Phone" id="inlinecheck02" />
-          <Checkbox label="Please don't contact me." aria-label="Please don't contact me." id="inlinecheck03" />
+          <Checkbox label="Mail" aria-label="Mail" id="inlinecheck03" />
         </FormGroup>
         <FormGroup role="radiogroup" isInline fieldId="simple-form-radio-group" label="Time zone">
-          <Radio label="Eastern" id="basic-inline-radio-01" />
-          <Radio label="Central" id="basic-inline-radio-02" />
-          <Radio label="Pacific" id="basic-inline-radio-03" />
+          <Radio name="basic-inline-radio" label="Eastern" id="basic-inline-radio-01" />
+          <Radio name="basic-inline-radio" label="Central" id="basic-inline-radio-02" />
+          <Radio name="basic-inline-radio" label="Pacific" id="basic-inline-radio-03" />
         </FormGroup>
         <FormGroup label="Additional note" fieldId="simple-form-note-01">
           <TextInput isDisabled type="text" id="simple-form-note-01" name="simple-form-number" value="disabled" />
@@ -281,7 +281,6 @@ class HorizontalForm extends React.Component {
         </FormGroup>
         <FormGroup
           label="How can we contact you?"
-          isRequired
           isStack
           hasNoPaddingTop
           role="group"
@@ -289,12 +288,12 @@ class HorizontalForm extends React.Component {
         >
           <Checkbox label="Email" id="alt-form-checkbox-1" name="alt-form-checkbox-1" />
           <Checkbox label="Phone" id="alt-form-checkbox-2" name="alt-form-checkbox-2" />
-          <Checkbox label="Please don't contact me." id="alt-form-checkbox-3" name="alt-form-checkbox-3" />
+          <Checkbox label="Mail" id="alt-form-checkbox-3" name="alt-form-checkbox-3" />
         </FormGroup>
         <FormGroup role="radiogroup" isStack hasNoPaddingTop fieldId="horizontal-form-radio-group" label="Time zone">
-          <Radio label="Eastern" id="horizontal-inline-radio-01" />
-          <Radio label="Central" id="horizontal-inline-radio-02" />
-          <Radio label="Pacific" id="horizontal-inline-radio-03" />
+          <Radio name="horizontal-inline-radio" label="Eastern" id="horizontal-inline-radio-01" />
+          <Radio name="horizontal-inline-radio" label="Central" id="horizontal-inline-radio-02" />
+          <Radio name="horizontal-inline-radio" label="Pacific" id="horizontal-inline-radio-03" />
         </FormGroup>
         <ActionGroup>
           <Button variant="primary">Submit</Button>
@@ -413,21 +412,15 @@ class SimpleForm extends React.Component {
             onChange={this.handleTextInputChange3}
           />
         </FormGroup>
-        <FormGroup
-          fieldId="limit-width-form-checkbox-group"
-          role="group"
-          isInline
-          label="How can we contact you?"
-          isRequired
-        >
+        <FormGroup fieldId="limit-width-form-checkbox-group" role="group" isInline label="How can we contact you?">
           <Checkbox label="Email" aria-label="Email" id="inlinecheck04" />
           <Checkbox label="Phone" aria-label="Phone" id="inlinecheck05" />
-          <Checkbox label="Please don't contact me." aria-label="Please don't contact me." id="inlinecheck06" />
+          <Checkbox label="Mail" aria-label="Mail" id="inlinecheck06" />
         </FormGroup>
         <FormGroup role="radiogroup" isInline fieldId="limit-width-form-radio-group" label="Time zone">
-          <Radio label="Eastern" id="limit-width-inline-radio-01" />
-          <Radio label="Central" id="limit-width-inline-radio-02" />
-          <Radio label="Pacific" id="limit-width-inline-radio-03" />
+          <Radio name="limit-width-radio" label="Eastern" id="limit-width-inline-radio-01" />
+          <Radio name="limit-width-radio" label="Central" id="limit-width-inline-radio-02" />
+          <Radio name="limit-width-radio" label="Pacific" id="limit-width-inline-radio-03" />
         </FormGroup>
         <FormGroup label="Additional note" fieldId="simple-form-note-02">
           <TextInput isDisabled type="text" id="simple-form-note-02" name="simple-form-number" value="disabled" />
