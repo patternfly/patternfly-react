@@ -29,9 +29,10 @@ export const JumpLinksWithDrawer = () => {
 
   React.useEffect(() => {
     const masthead = document.getElementsByClassName('pf-c-masthead')[0];
+    const drawerToggleSection = document.getElementsByClassName('pf-c-page__main-section')[0];
 
     getResizeObserver(masthead, () => {
-      setOffsetHeight(masthead.offsetHeight);
+      setOffsetHeight(masthead.offsetHeight + drawerToggleSection.offsetHeight);
     });
   }, []);
 
