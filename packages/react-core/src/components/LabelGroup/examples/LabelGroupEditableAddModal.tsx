@@ -20,12 +20,13 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-i
 
 export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
   const [isModalOpen, setModalOpen] = React.useState<boolean>(false);
+  const [idIndex, setIdIndex] = React.useState<number>(3);
   const [labelText, setLabelText] = React.useState<string>('');
   const [color, setColor] = React.useState<string>();
   const [icon, setIcon] = React.useState<any>();
-  const [labelType, setLabelType] = React.useState<string>();
-  const [isClosable, setIsCloseable] = React.useState<boolean>();
-  const [isEditable, setIsEditable] = React.useState<boolean>();
+  const [labelType, setLabelType] = React.useState<string>('filled');
+  const [isClosable, setIsCloseable] = React.useState<boolean>(false);
+  const [isEditable, setIsEditable] = React.useState<boolean>(false);
   const labelInputRef = React.useRef();
 
   const [isColorOpen, setIsColorOpen] = React.useState<boolean>(false);
@@ -39,8 +40,8 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
   const iconToggleRef = React.useRef<HTMLButtonElement>();
 
   const [labels, setLabels] = React.useState<any>([
-    { name: 'Label 1' },
-    { name: 'Label 2' },
+    { name: 'Label 1', id: 0 },
+    { name: 'Label 2', id: 1 },
     {
       name: 'Label 3',
       props: {
@@ -48,12 +49,13 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
         editableProps: {
           'aria-label': 'label editable text'
         }
-      }
+      },
+      id: 2
     }
   ]);
 
-  const onClose = (label: string) => {
-    setLabels(labels.filter(l => l.name !== label));
+  const onClose = (labelId: string) => {
+    setLabels(labels.filter((l: any) => l.id !== labelId));
   };
 
   const onEdit = (nextText: string, index: number) => {
@@ -82,17 +84,19 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
               'aria-label': 'label editable text'
             }
           })
-        }
+        },
+        id: idIndex
       },
       ...labels
     ]);
     setModalOpen(!isModalOpen);
+    setIdIndex(idIndex + 1);
     setLabelText('');
     setColor(null);
     setIcon(null);
-    setLabelType(null);
-    setIsCloseable(null);
-    setIsEditable(null);
+    setLabelType('filled');
+    setIsCloseable(false);
+    setIsEditable(false);
   };
 
   const handleModalToggle = () => {
@@ -235,7 +239,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
             key={`${label.name}-${index}`}
             id={`${label.name}-${index}`}
             color="blue"
-            onClose={() => onClose(label.name)}
+            onClose={() => onClose(label.id)}
             onEditCancel={prevText => onEdit(prevText, index)}
             onEditComplete={newText => onEdit(newText, index)}
             {...label.props}

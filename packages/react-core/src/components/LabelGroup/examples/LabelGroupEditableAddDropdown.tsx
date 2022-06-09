@@ -6,10 +6,11 @@ export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
   const menuRef = React.useRef<HTMLDivElement>();
   const containerRef = React.useRef<HTMLDivElement>();
 
+  const [idIndex, setIdIndex] = React.useState<number>(3);
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [labels, setLabels] = React.useState<any>([
-    { name: 'Label 1' },
-    { name: 'Label 2' },
+    { name: 'Label 1', id: 0 },
+    { name: 'Label 2', id: 1 },
     {
       name: 'Label 3',
       props: {
@@ -17,12 +18,13 @@ export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
         editableProps: {
           'aria-label': 'label editable text'
         }
-      }
+      },
+      id: 2
     }
   ]);
 
-  const onClose = (label: string) => {
-    setLabels(labels.filter(l => l.name !== label));
+  const onClose = (labelId: string) => {
+    setLabels(labels.filter((l: any) => l.id !== labelId));
   };
 
   const onEdit = (nextText: string, index: number) => {
@@ -34,10 +36,12 @@ export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
   const onAdd = (labelText: string) => {
     setLabels([
       {
-        name: labelText
+        name: labelText,
+        id: idIndex
       },
       ...labels
     ]);
+    setIdIndex(idIndex + 1);
     setIsOpen(!isOpen);
   };
 
@@ -51,7 +55,10 @@ export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current.contains(event.target as Node)) {
+    if (
+      isOpen &&
+      !(menuRef.current.contains(event.target as Node) || toggleRef.current.contains(event.target as Node))
+    ) {
       setIsOpen(false);
     }
   };
@@ -65,8 +72,7 @@ export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
     };
   }, [isOpen, menuRef]);
 
-  const onToggleClick = (ev: React.MouseEvent) => {
-    ev.stopPropagation(); // Stop handleClickOutside from handling
+  const onToggleClick = () => {
     setTimeout(() => {
       if (menuRef.current) {
         const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
@@ -118,7 +124,7 @@ export const LabelGroupEditableAddDropdown: React.FunctionComponent = () => {
             key={`${label.name}-${index}`}
             id={`${label.name}-${index}`}
             color="blue"
-            onClose={() => onClose(label.name)}
+            onClose={() => onClose(label.id)}
             onEditCancel={prevText => onEdit(prevText, index)}
             onEditComplete={newText => onEdit(newText, index)}
             {...label.props}

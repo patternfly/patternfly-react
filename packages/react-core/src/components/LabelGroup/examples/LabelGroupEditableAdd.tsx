@@ -2,9 +2,10 @@ import React from 'react';
 import { LabelGroup, Label } from '@patternfly/react-core';
 
 export const LabelGroupEditableAdd: React.FunctionComponent = () => {
+  const [idIndex, setIdIndex] = React.useState<number>(3);
   const [labels, setLabels] = React.useState<any>([
-    { name: 'Label 1' },
-    { name: 'Label 2' },
+    { name: 'Label 1', id: 0 },
+    { name: 'Label 2', id: 1 },
     {
       name: 'Label 3',
       props: {
@@ -12,12 +13,13 @@ export const LabelGroupEditableAdd: React.FunctionComponent = () => {
         editableProps: {
           'aria-label': 'label editable text'
         }
-      }
+      },
+      id: 2
     }
   ]);
 
-  const onClose = (label: string) => {
-    setLabels(labels.filter(l => l.name !== label));
+  const onClose = (labelId: string) => {
+    setLabels(labels.filter((l: any) => l.id !== labelId));
   };
 
   const onEdit = (nextText: string, index: number) => {
@@ -35,10 +37,12 @@ export const LabelGroupEditableAdd: React.FunctionComponent = () => {
           editableProps: {
             'aria-label': 'label editable text'
           }
-        }
+        },
+        id: idIndex
       },
       ...labels
     ]);
+    setIdIndex(idIndex + 1);
   };
 
   return (
@@ -57,7 +61,7 @@ export const LabelGroupEditableAdd: React.FunctionComponent = () => {
           key={`${label.name}-${index}`}
           id={`${label.name}-${index}`}
           color="blue"
-          onClose={() => onClose(label.name)}
+          onClose={() => onClose(label.id)}
           onEditCancel={prevText => onEdit(prevText, index)}
           onEditComplete={newText => onEdit(newText, index)}
           {...label.props}
