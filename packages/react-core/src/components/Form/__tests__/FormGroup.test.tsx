@@ -205,7 +205,18 @@ describe('FormGroup', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('input should receive focus when clicking label', () => {
+  test('should render without group or radiogroup role when role is not passed in', () => {
+    render(
+      <FormGroup label="label" fieldId="no-group-role">
+        <input />
+      </FormGroup>
+    );
+
+    expect(screen.queryByRole('group')).not.toBeInTheDocument();
+    expect(screen.queryByRole('radiogroup')).not.toBeInTheDocument();
+  });
+
+  test('input should receive focus when clicking text label', () => {
     render(
       <FormGroup label="label" fieldId="native-label-element">
         <input id="native-label-element" />
@@ -220,9 +231,9 @@ describe('FormGroup', () => {
   });
 
   describe('With multiple inputs per group', () => {
-    test('inputs should not receive focus when clicking label with multipleInputs passed in', () => {
+    test('inputs should not receive focus when clicking text label', () => {
       render(
-        <FormGroup label="label" fieldId="span-label-element" multipleInputs={{ isRadioGroup: false }}>
+        <FormGroup label="label" fieldId="span-label-element" role="group">
           <input id="span-label-element" />
           <input />
         </FormGroup>
@@ -237,9 +248,9 @@ describe('FormGroup', () => {
       });
     });
 
-    test('should render with group role when multipleInputs.isRadioGroup is false', () => {
+    test('should render with group role', () => {
       render(
-        <FormGroup label="label" fieldId="group-role" multipleInputs={{ isRadioGroup: false }}>
+        <FormGroup label="label" fieldId="group-role" role="group">
           <input />
           <input />
         </FormGroup>
@@ -248,9 +259,9 @@ describe('FormGroup', () => {
       expect(screen.getByRole('group')).toBeInTheDocument();
     });
 
-    test('should render with radiogroup role when multipleInputs.isRadioGroup is true', () => {
+    test('should render with radiogroup role', () => {
       render(
-        <FormGroup label="label" fieldId="radiogroup-role" multipleInputs={{ isRadioGroup: true }}>
+        <FormGroup label="label" fieldId="radiogroup-role" role="radiogroup">
           <input />
           <input />
         </FormGroup>
@@ -259,9 +270,9 @@ describe('FormGroup', () => {
       expect(screen.getByRole('radiogroup')).toBeInTheDocument();
     });
 
-    test('should have accessible name when multipleInputs is passed in', () => {
+    test('should have accessible name when role is passed in', () => {
       render(
-        <FormGroup label="label" fieldId="accessible-name" multipleInputs={{ isRadioGroup: false }}>
+        <FormGroup label="label" fieldId="accessible-name" role="group">
           <input />
           <input />
         </FormGroup>

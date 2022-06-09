@@ -7,7 +7,6 @@ propComponents:
     'ActionGroup',
     'Form',
     'FormGroup',
-    'MultipleInputsObject',
     'FormSection',
     'FormHelperText',
     'FormFieldGroup',
@@ -148,18 +147,12 @@ class SimpleForm extends React.Component {
             onChange={this.handleTextInputChange3}
           />
         </FormGroup>
-        <FormGroup
-          multipleInputs
-          isInline
-          fieldId="basic-form-checkbox-group"
-          label="How can we contact you?"
-          isRequired
-        >
+        <FormGroup role="group" isInline fieldId="basic-form-checkbox-group" label="How can we contact you?" isRequired>
           <Checkbox label="Email" aria-label="Email" id="inlinecheck01" />
           <Checkbox label="Phone" aria-label="Phone" id="inlinecheck02" />
           <Checkbox label="Please don't contact me." aria-label="Please don't contact me." id="inlinecheck03" />
         </FormGroup>
-        <FormGroup multipleInputs={{ isRadioGroup: true }} isInline fieldId="simple-form-radio-group" label="Time zone">
+        <FormGroup role="radiogroup" isInline fieldId="simple-form-radio-group" label="Time zone">
           <Radio label="Eastern" id="basic-inline-radio-01" />
           <Radio label="Central" id="basic-inline-radio-02" />
           <Radio label="Pacific" id="basic-inline-radio-03" />
@@ -286,18 +279,19 @@ class HorizontalForm extends React.Component {
             id="horizontal-form-exp"
           />
         </FormGroup>
-        <FormGroup label="How can we contact you?" isRequired isStack hasNoPaddingTop multipleInputs>
+        <FormGroup
+          label="How can we contact you?"
+          isRequired
+          isStack
+          hasNoPaddingTop
+          role="group"
+          fieldId="horizontal-form-checkbox-group"
+        >
           <Checkbox label="Email" id="alt-form-checkbox-1" name="alt-form-checkbox-1" />
           <Checkbox label="Phone" id="alt-form-checkbox-2" name="alt-form-checkbox-2" />
           <Checkbox label="Please don't contact me." id="alt-form-checkbox-3" name="alt-form-checkbox-3" />
         </FormGroup>
-        <FormGroup
-          multipleInputs={{ isRadioGroup: true }}
-          isStack
-          hasNoPaddingTop
-          fieldId="horizontal-form-radio-group"
-          label="Time zone"
-        >
+        <FormGroup role="radiogroup" isStack hasNoPaddingTop fieldId="horizontal-form-radio-group" label="Time zone">
           <Radio label="Eastern" id="horizontal-inline-radio-01" />
           <Radio label="Central" id="horizontal-inline-radio-02" />
           <Radio label="Pacific" id="horizontal-inline-radio-03" />
@@ -419,17 +413,18 @@ class SimpleForm extends React.Component {
             onChange={this.handleTextInputChange3}
           />
         </FormGroup>
-        <FormGroup multipleInputs isInline label="How can we contact you?" isRequired>
+        <FormGroup
+          fieldId="limit-width-form-checkbox-group"
+          role="group"
+          isInline
+          label="How can we contact you?"
+          isRequired
+        >
           <Checkbox label="Email" aria-label="Email" id="inlinecheck04" />
           <Checkbox label="Phone" aria-label="Phone" id="inlinecheck05" />
           <Checkbox label="Please don't contact me." aria-label="Please don't contact me." id="inlinecheck06" />
         </FormGroup>
-        <FormGroup
-          multipleInputs={{ isRadioGroup: true }}
-          isInline
-          fieldId="limit-width-form-radio-group"
-          label="Time zone"
-        >
+        <FormGroup role="radiogroup" isInline fieldId="limit-width-form-radio-group" label="Time zone">
           <Radio label="Eastern" id="limit-width-inline-radio-01" />
           <Radio label="Central" id="limit-width-inline-radio-02" />
           <Radio label="Pacific" id="limit-width-inline-radio-03" />
@@ -644,7 +639,7 @@ class HorizontalForm extends React.Component {
   render() {
     return (
       <Form isHorizontal>
-        <FormGroup multipleInputs label="Label" hasNoPaddingTop fieldId="options" isStack>
+        <FormGroup role="group" label="Label" hasNoPaddingTop fieldId="options" isStack>
           <Checkbox label="option 1" id="option-01" />
           <Checkbox label="option 2" id="option-02" />
         </FormGroup>
@@ -678,7 +673,7 @@ class HorizontalFormHelperTextOnTop extends React.Component {
           hasNoPaddingTop
           fieldId="options"
           isStack
-          multipleInputs
+          role="group"
         >
           <Checkbox label="Option 1" id="option-03" />
           <Checkbox label="Option 2" id="option-04" />

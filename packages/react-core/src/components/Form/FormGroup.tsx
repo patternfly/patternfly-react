@@ -4,12 +4,6 @@ import { ASTERISK } from '../../helpers/htmlConstants';
 import { css } from '@patternfly/react-styles';
 import { ValidatedOptions } from '../../helpers/constants';
 
-export interface MultipleInputsObject {
-  /** Applies a role of "radiogroup" to the form group when set to "true", or
-   * a role of "group" when set to "false"/not passed in.
-   */
-  isRadioGroup?: boolean;
-}
 export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
   /** Anything that can be rendered as FormGroup content. */
   children?: React.ReactNode;
@@ -47,9 +41,10 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   helperTextInvalidIcon?: React.ReactNode;
   /** ID of the included field. It has to be the same for proper working. */
   fieldId: string;
-  /** Object for identifying whether the form group has multiple inputs for a single label, and
-   * whether the multiple inputs are radio inputs or not. */
-  multipleInputs?: MultipleInputsObject;
+  /** Sets the role of the form group if multiple inputs are being passed in. If multiple radio inputs
+   * are passed in use "radiogroup", otherwise use "group" when passing in multiple of any other input.
+   */
+  role?: 'group' | 'radiogroup';
 }
 
 export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
@@ -69,7 +64,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   helperTextIcon,
   helperTextInvalidIcon,
   fieldId,
-  multipleInputs,
+  role,
   ...props
 }: FormGroupProps) => {
   const validHelperText =
@@ -106,11 +101,11 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   const helperTextToDisplay =
     validated === ValidatedOptions.error && helperTextInvalid ? inValidHelperText : showValidHelperTxt(validated);
 
-  const LabelComponent = multipleInputs ? 'span' : 'label';
+  const LabelComponent = role ? 'span' : 'label';
 
   const labelContent = (
     <React.Fragment>
-      <LabelComponent className={css(styles.formLabel)} {...(!multipleInputs && { htmlFor: fieldId })}>
+      <LabelComponent className={css(styles.formLabel)} {...(!role && { htmlFor: fieldId })}>
         <span className={css(styles.formLabelText)}>{label}</span>
         {isRequired && (
           <span className={css(styles.formLabelRequired)} aria-hidden="true">
@@ -123,13 +118,11 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
     </React.Fragment>
   );
 
-  const groupType = multipleInputs?.isRadioGroup ? 'radiogroup' : 'group';
-
   return (
     <div
       {...props}
       className={css(styles.formGroup, className)}
-      {...(multipleInputs && { 'aria-labelledby': `${fieldId}-legend`, role: groupType })}
+      {...(role && { 'aria-labelledby': `${fieldId}-legend`, role })}
     >
       {label && (
         <div
@@ -138,7 +131,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
             labelInfo && styles.modifiers.info,
             hasNoPaddingTop && styles.modifiers.noPaddingTop
           )}
-          {...(multipleInputs && { id: `${fieldId}-legend` })}
+          {...(role && { id: `${fieldId}-legend` })}
         >
           {labelInfo && (
             <React.Fragment>
