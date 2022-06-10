@@ -6,27 +6,27 @@ import { DrawerPanelContent, DrawerColorVariant, DrawerHead } from '../../Drawer
 describe('Wizard', () => {
   test('Wizard should match snapshot', () => {
     const steps: WizardStep[] = [
-      { name: 'A', id: "step-A", component: <p>Step 1</p> },
+      { name: 'A', id: 'step-A', component: <p>Step 1</p> },
       {
         name: 'B',
-        id: "step-B",
+        id: 'step-B',
         steps: [
           {
             name: 'B-1',
-            id: "step-B-1",
+            id: 'step-B-1',
             component: <p>Step 2</p>,
             enableNext: true
           },
           {
             name: 'B-2',
-            id: "step-B-2",
+            id: 'step-B-2',
             component: <p>Step 3</p>,
             enableNext: false
           }
         ]
       },
-      { name: 'C', id: "step-C", component: <p>Step 4</p> },
-      { name: 'D', id: "step-D", component: <p>Step 5</p> }
+      { name: 'C', id: 'step-C', component: <p>Step 4</p> },
+      { name: 'D', id: 'step-D', component: <p>Step 5</p> }
     ];
     const onBack: WizardStepFunctionType = step => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -112,7 +112,7 @@ describe('Wizard', () => {
 
     const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p>, drawerPanelContent: wizDrawerPanelContent }];
 
-    render(<Wizard title="Wizard with drawer" hasDrawer steps={steps} />);
+    render(<Wizard title="Wizard with drawer" hasDrawer isDrawerExpanded steps={steps} />);
     expect(screen.getByRole('heading', { name: 'Wizard with drawer' })).toBeInTheDocument();
     expect(screen.getByText('This wizard has a drawer with drawer panel content')).toBeInTheDocument();
   });
