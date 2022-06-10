@@ -1,5 +1,5 @@
 ---
-id: Tooltip chart
+id: Tooltips
 section: charts
 propComponents: ['ChartTooltip']
 hideDarkMode: true

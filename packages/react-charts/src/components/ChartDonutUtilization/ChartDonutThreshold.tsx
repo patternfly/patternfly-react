@@ -21,7 +21,15 @@ import hoistNonReactStatics from 'hoist-non-react-statics';
 import { ChartContainer } from '../ChartContainer';
 import { ChartDonut, ChartDonutProps } from '../ChartDonut';
 import { ChartDonutStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getDonutThresholdDynamicTheme, getDonutThresholdStaticTheme, getPaddingForSide } from '../ChartUtils';
+import {
+  getDefaultColorScale,
+  getDefaultPatternScale,
+  getDonutThresholdDynamicTheme,
+  getDonutThresholdStaticTheme,
+  getPaddingForSide,
+  getPatternDefs,
+  getPatternId
+} from '../ChartUtils';
 
 export enum ChartDonutThresholdDonutOrientation {
   left = 'left',
@@ -263,6 +271,11 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   invert?: boolean;
   /**
+   * Generate default pattern defs and populate patternScale
+   * @beta
+   */
+  isPatternDefs?: boolean;
+  /**
    * The labelRadius prop defines the radius of the arc that will be used for positioning each slice label.
    * If this prop is not set, the label radius will default to the radius of the pie + label padding.
    *
@@ -307,6 +320,26 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    * @propType number | { top: number, bottom: number, left: number, right: number }
    */
   padding?: PaddingProps;
+  /**
+   * The optional ID to prefix pattern defs
+   *
+   * @example patternId="pattern"
+   * @beta
+   */
+  patternId?: string;
+  /**
+   * The patternScale prop is an optional prop that defines a pattern to be applied to the children, where applicable.
+   * This prop should be given as an array of CSS colors, or as a string corresponding to a URL. Patterns will be
+   * assigned to children by index, unless they are explicitly specified in styles. Patterns will repeat when there are
+   * more children than patterns in the provided patternScale. Functionality may be overridden via the `style.data.fill`
+   * property.
+   *
+   * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
+   *
+   * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
+   * @beta
+   */
+  patternScale?: string[];
   /**
    * Specifies the radius of the chart. If this property is not provided it is computed
    * from width, height, and padding props
@@ -440,18 +473,22 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   ariaDesc,
   ariaTitle,
   children,
+  colorScale,
   constrainToVisibleArea = false,
   containerComponent = <ChartContainer />,
   data = [],
   invert = false,
   labels = [], // Don't show any tooltip labels by default, let consumer override if needed
   padding,
+  patternId = getPatternId(),
+  patternScale,
   radius,
   standalone = true,
   subTitlePosition = ChartDonutStyles.label.subTitlePosition as ChartDonutThresholdSubTitlePosition,
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
+  isPatternDefs = false,
   x,
   y,
 
@@ -474,6 +511,14 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
       width,
       padding: defaultPadding
     });
+
+  const defaultColorScale = getDefaultColorScale(colorScale, theme.pie.colorScale as string[]);
+  const defaultPatternScale = getDefaultPatternScale({
+    colorScale: defaultColorScale,
+    patternScale,
+    patternId,
+    isPatternDefs
+  });
 
   // Returns computed data representing pie chart slices
   const getComputedData = () => {
@@ -513,17 +558,20 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
 
         return React.cloneElement(child, {
           constrainToVisibleArea,
+          colorScale,
           data: childData,
           endAngle: 360 * (datum[0]._y ? datum[0]._y / 100 : 0),
           height,
           invert,
           key: `pf-chart-donut-threshold-child-${index}`,
           padding: defaultPadding,
+          ...(!childProps.isPatternDefs && defaultPatternScale && { patternScale: [null, ...defaultPatternScale] }),
           radius: chartRadius - 14, // Donut utilization radius is threshold radius minus 14px spacing
           showStatic: false,
           standalone: false,
           subTitlePosition: childProps.subTitlePosition || subTitlePosition,
           theme: dynamicTheme,
+          hasPatternDefs: isPatternDefs,
           width,
           ...childProps
         });
@@ -535,12 +583,15 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   const chart = (
     <ChartDonut
       allowTooltip={allowTooltip}
+      colorScale={colorScale}
       constrainToVisibleArea={constrainToVisibleArea}
       data={getComputedData()}
       height={height}
       key="pf-chart-donut-threshold"
       labels={labels}
       padding={defaultPadding}
+      patternId={patternId}
+      patternScale={defaultPatternScale ? defaultPatternScale : undefined}
       standalone={false}
       theme={theme}
       width={width}
@@ -559,7 +610,11 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
       theme,
       ...containerComponent.props
     },
-    [chart, renderChildren()]
+    [
+      chart,
+      renderChildren(),
+      isPatternDefs && getPatternDefs({ offset: 1, patternId, patternScale: defaultColorScale })
+    ]
   );
 
   return standalone ? (
@@ -568,6 +623,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
     <React.Fragment>
       {chart}
       {renderChildren()}
+      {isPatternDefs && getPatternDefs({ offset: 1, patternId, patternScale: defaultColorScale })}
     </React.Fragment>
   );
 };

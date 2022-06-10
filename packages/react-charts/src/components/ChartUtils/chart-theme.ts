@@ -34,7 +34,6 @@ import {
 
 /**
  * Apply custom properties to base and color themes
- *
  * @deprecated Use mergeTheme
  * @public
  */
@@ -141,16 +140,14 @@ export const getChartTheme = (themeColor: string, showAxis: boolean): ChartTheme
   return theme;
 };
 
-// Returns donut theme
 /**
- *
+ * Returns donut theme
  * @private
  */
 export const getDonutTheme = (themeColor: string): ChartThemeDefinition => mergeTheme(themeColor, ChartDonutTheme);
 
-// Returns dynamic donut threshold theme
 /**
- *
+ * Returns dynamic donut threshold theme
  * @private
  */
 export const getDonutThresholdDynamicTheme = (themeColor: string): ChartThemeDefinition => {

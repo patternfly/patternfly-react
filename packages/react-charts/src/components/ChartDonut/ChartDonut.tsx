@@ -257,6 +257,11 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   innerRadius?: NumberOrCallback;
   /**
+   * Generate default pattern defs and populate patternScale
+   * @beta
+   */
+  isPatternDefs?: boolean;
+  /**
    * The labelComponent prop takes in an entire label component which will be used
    * to create a label for the area. The new element created from the passed labelComponent
    * will be supplied with the following properties: x, y, index, data, verticalAnchor,
@@ -356,6 +361,26 @@ export interface ChartDonutProps extends ChartPieProps {
    * @propType number | Function
    */
   padAngle?: NumberOrCallback;
+  /**
+   * The optional ID to prefix pattern defs
+   *
+   * @example patternId="pattern"
+   * @beta
+   */
+  patternId?: string;
+  /**
+   * The patternScale prop is an optional prop that defines a pattern to be applied to the children, where applicable.
+   * This prop should be given as an array of CSS colors, or as a string corresponding to a URL. Patterns will be
+   * assigned to children by index, unless they are explicitly specified in styles. Patterns will repeat when there are
+   * more children than patterns in the provided patternScale. Functionality may be overridden via the `style.data.fill`
+   * property.
+   *
+   * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
+   *
+   * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
+   * @beta
+   */
+  patternScale?: string[];
   /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given

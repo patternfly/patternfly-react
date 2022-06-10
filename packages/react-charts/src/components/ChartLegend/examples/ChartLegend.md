@@ -1,5 +1,5 @@
 ---
-id: Legend chart
+id: Legends
 section: charts
 propComponents: [
   'ChartLegend'

@@ -28,6 +28,7 @@ interface ChartLegendTooltipVisibleDataInterface {
   activePoints?: any[];
   colorScale?: string[];
   legendData: any;
+  patternScale?: string[]; // Legend symbol patterns
   text?: StringOrNumberOrCallback | string[] | number[];
   textAsLegendData?: boolean;
   theme: ChartThemeDefinition;
@@ -211,6 +212,7 @@ export const getLegendTooltipVisibleData = ({
   activePoints,
   colorScale,
   legendData,
+  patternScale,
   text,
   textAsLegendData = false,
   theme
@@ -236,10 +238,12 @@ export const getLegendTooltipVisibleData = ({
           theme && theme.legend && theme.legend.colorScale
             ? theme.legend.colorScale[i % theme.legend.colorScale.length]
             : undefined;
+        const pattern = patternScale ? patternScale[i % patternScale.length] : undefined;
+        const color = colorScale ? colorScale[i % colorScale.length] : themeColor; // Sync color scale
         result.push({
           name: textAsLegendData ? _text[index] : data.name,
           symbol: {
-            fill: colorScale ? colorScale[i % colorScale.length] : themeColor, // Sync color scale
+            fill: pattern && pattern !== null ? pattern : color,
             ...data.symbol
           }
         });

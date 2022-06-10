@@ -226,6 +226,19 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    */
   orientation?: OrientationOrCallback;
   /**
+   * The patternScale prop is an optional prop that defines a pattern to be applied to the children, where applicable.
+   * This prop should be given as an array of CSS colors, or as a string corresponding to a URL. Patterns will be
+   * assigned to children by index, unless they are explicitly specified in styles. Patterns will repeat when there are
+   * more children than patterns in the provided patternScale. Functionality may be overridden via the `style.data.fill`
+   * property.
+   *
+   * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
+   *
+   * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
+   * @beta
+   */
+  patternScale?: string[];
+  /**
    * The pointerLength prop determines the length of the triangular pointer extending from the flyout. This prop may be
    * given as a positive number or a function of datum.
    *
@@ -329,6 +342,7 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
   isCursorTooltip = true,
   labelComponent = <ChartLegendTooltipContent />,
   legendData,
+  patternScale,
   text,
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -365,6 +379,7 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
       flyoutWidth: flyoutWidth || getFlyoutWidth(props),
       height,
       legendData,
+      patternScale,
       title,
       width,
       ...labelComponent.props

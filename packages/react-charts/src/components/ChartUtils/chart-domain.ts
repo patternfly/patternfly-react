@@ -18,6 +18,10 @@ interface SourcesInterface {
   }[];
 }
 
+/**
+ * Chart domain interface
+ * @private
+ */
 export interface ChartDomain {
   x: [number, number];
   y: [number, number];

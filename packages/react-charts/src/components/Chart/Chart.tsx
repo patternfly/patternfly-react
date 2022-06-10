@@ -23,7 +23,18 @@ import { AxesType, VictoryChart, VictoryChartProps } from 'victory-chart';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getChartTheme, getClassName, getComputedLegend, getLabelTextSize, getPaddingForSide } from '../ChartUtils';
+import {
+  getChartTheme,
+  getClassName,
+  getComputedLegend,
+  getLabelTextSize,
+  getPaddingForSide,
+  getPatternId,
+  getPatternDefs,
+  getDefaultColorScale,
+  getDefaultData,
+  getDefaultPatternScale
+} from '../ChartUtils';
 
 /**
  * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
@@ -208,6 +219,11 @@ export interface ChartProps extends VictoryChartProps {
    */
   innerRadius?: number;
   /**
+   * Generate default pattern defs and populate patternScale
+   * @beta
+   */
+  isPatternDefs?: boolean;
+  /**
    * Allows legend items to wrap. A value of true allows the legend to wrap onto the next line
    * if its container is not wide enough.
    *
@@ -291,6 +307,26 @@ export interface ChartProps extends VictoryChartProps {
    * @propType number | { top: number, bottom: number, left: number, right: number }
    */
   padding?: PaddingProps;
+  /**
+   * The optional ID to prefix pattern defs
+   *
+   * @example patternId="pattern"
+   * @beta
+   */
+  patternId?: string;
+  /**
+   * The patternScale prop is an optional prop that defines a pattern to be applied to the children, where applicable.
+   * This prop should be given as an array of CSS colors, or as a string corresponding to a URL. Patterns will be
+   * assigned to children by index, unless they are explicitly specified in styles. Patterns will repeat when there are
+   * more children than patterns in the provided patternScale. Functionality may be overridden via the `style.data.fill`
+   * property.
+   *
+   * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
+   *
+   * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
+   * @beta
+   */
+  patternScale?: string[];
   /**
    * Note: This prop should not be set manually.
    *
@@ -423,6 +459,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   ariaDesc,
   ariaTitle,
   children,
+  colorScale,
   legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendData,
@@ -432,6 +469,9 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
+  patternId = getPatternId(),
+  patternScale,
+  isPatternDefs = false,
 
   // destructure last
   theme = getChartTheme(themeColor, showAxis),
@@ -448,13 +488,36 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     top: getPaddingForSide('top', padding, theme.chart.padding)
   };
 
+  const defaultColorScale = getDefaultColorScale(colorScale as any, theme.chart.colorScale as string[]);
+  const defaultPatternScale = getDefaultPatternScale({
+    colorScale: defaultColorScale,
+    patternScale,
+    patternId,
+    isPatternDefs
+  });
+
+  // Add pattern props for legend tooltip
+  let labelComponent;
+  if (
+    containerComponent.props.labelComponent &&
+    containerComponent.props.labelComponent.type.displayName === 'ChartLegendTooltip'
+  ) {
+    labelComponent = React.cloneElement(containerComponent.props.labelComponent, {
+      patternId,
+      theme,
+      ...(defaultPatternScale && { patternScale: defaultPatternScale }),
+      ...containerComponent.props.labelComponent.props
+    });
+  }
+
   // Clone so users can override container props
   const container = React.cloneElement(containerComponent, {
     desc: ariaDesc,
     title: ariaTitle,
     theme,
     ...containerComponent.props,
-    className: getClassName({ className: containerComponent.props.className }) // Override VictoryContainer class name
+    className: getClassName({ className: containerComponent.props.className }), // Override VictoryContainer class name
+    ...(labelComponent && { labelComponent }) // Override label component props
   });
 
   const legend = React.cloneElement(legendComponent, {
@@ -497,20 +560,42 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     return getComputedLegend({
       allowWrap: legendAllowWrap,
       chartType: 'chart',
+      colorScale,
       dx,
       dy,
       height,
       legendComponent: legend,
       padding: defaultPadding,
+      ...(defaultPatternScale && { patternScale: defaultPatternScale }),
       position: legendPosition,
       theme,
       width
     });
   };
 
+  // Render children
+  const renderChildren = () =>
+    React.Children.toArray(children).map(child => {
+      if (React.isValidElement(child)) {
+        const { ...childProps } = child.props;
+        return React.cloneElement(child, {
+          colorScale,
+          patternId,
+          theme,
+          ...(defaultPatternScale && { patternScale: defaultPatternScale }),
+          ...childProps,
+          ...((child as any).type.displayName === 'ChartPie' && {
+            data: getDefaultData(childProps.data, defaultPatternScale)
+          }) // Override child props
+        });
+      }
+      return child;
+    });
+
   // Note: containerComponent is required for theme
   return (
     <VictoryChart
+      colorScale={colorScale}
       containerComponent={container}
       height={height}
       padding={defaultPadding}
@@ -518,8 +603,9 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       width={width}
       {...rest}
     >
-      {children}
+      {renderChildren()}
       {getLegend()}
+      {isPatternDefs && getPatternDefs({ patternId, patternScale: defaultColorScale })}
     </VictoryChart>
   );
 };
