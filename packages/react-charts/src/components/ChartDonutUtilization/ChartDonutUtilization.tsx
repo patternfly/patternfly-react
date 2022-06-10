@@ -276,6 +276,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
   invert?: boolean;
   /**
    * Generate default pattern defs and populate patternScale
+   * @beta
    */
   isPatternDefs?: boolean;
   /**
@@ -392,6 +393,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * The optional ID to prefix pattern defs
    *
    * @example patternId="pattern"
+   * @beta
    */
   patternId?: string;
   /**
@@ -404,6 +406,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
    *
    * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
+   * @beta
    */
   patternScale?: string[];
   /**

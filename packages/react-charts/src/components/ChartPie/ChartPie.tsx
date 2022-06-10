@@ -250,6 +250,7 @@ export interface ChartPieProps extends VictoryPieProps {
   innerRadius?: NumberOrCallback;
   /**
    * Generate default pattern defs and populate patternScale
+   * @beta
    */
   isPatternDefs?: boolean;
   /**
@@ -366,6 +367,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * The optional ID to prefix pattern defs
    *
    * @example patternId="pattern"
+   * @beta
    */
   patternId?: string;
   /**
@@ -378,6 +380,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
    *
    * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
+   * @beta
    */
   patternScale?: string[];
   /**

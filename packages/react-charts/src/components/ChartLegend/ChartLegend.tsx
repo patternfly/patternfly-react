@@ -171,10 +171,6 @@ export interface ChartLegendProps extends VictoryLegendProps {
    */
   itemsPerRow?: number;
   /**
-   * Generate default pattern defs and populate patternScale
-   */
-  isPatternDefs?: boolean;
-  /**
    * The labelComponent prop takes a component instance which will be used
    * to render each legend label. The new element created from the passed
    * labelComponent will be supplied with the following properties: x, y,
@@ -215,6 +211,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
    *
    * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
+   * @beta
    */
   patternScale?: string[];
   /**

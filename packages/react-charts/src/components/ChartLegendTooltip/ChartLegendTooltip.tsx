@@ -235,6 +235,7 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
    *
    * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
+   * @beta
    */
   patternScale?: string[];
   /**

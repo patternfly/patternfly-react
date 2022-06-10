@@ -2,9 +2,24 @@
 id: Patterns
 section: charts
 propComponents: [
-  'ChartLegend'
+  'Chart',
+  'ChartArea',
+  'ChartAxis',
+  'ChartBar',
+  'ChartDonut',
+  'ChartDonutThreshold',
+  'ChartDonutUtilization',
+  'ChartGroup',
+  'ChartLegend',
+  'ChartLegendTooltip',
+  'ChartPie',
+  'ChartScatter',
+  'ChartStack',
+  'ChartThemeColor',
+  'ChartVoronoiContainer',
 ]
 hideDarkMode: true
+beta: true
 ---
 
 import { 
@@ -782,8 +797,8 @@ components used in the examples above, Victory pass-thru props are also document
 - For `ChartDonut` props, see [VictoryPie](https://formidable.com/open-source/victory/docs/victory-pie)
 - For `ChartDonutThreshold` props, see [VictoryPie](https://formidable.com/open-source/victory/docs/victory-pie)
 - For `ChartDonutUtilization` props, see [VictoryPie](https://formidable.com/open-source/victory/docs/victory-pie)
-- For `ChartLegend` props, see [VictoryLegend](https://formidable.com/open-source/victory/docs/victory-legend)
 - For `ChartGroup` props, see [VictoryGroup](https://formidable.com/open-source/victory/docs/victory-group)
+- For `ChartLegend` props, see [VictoryLegend](https://formidable.com/open-source/victory/docs/victory-legend)
 - For `ChartPie` props, see [VictoryPie](https://formidable.com/open-source/victory/docs/victory-pie)
 - For `ChartScatter` props, see [VictoryScatter](https://formidable.com/open-source/victory/docs/victory-scatter)
 - For `ChartStack` props, see [VictoryStack](https://formidable.com/open-source/victory/docs/victory-stack)
