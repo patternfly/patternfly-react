@@ -64,7 +64,7 @@ const buildCalendar = (year: number, month: number, weekStart: number, validator
   const defaultDate = new Date(year, month);
   const firstDayOfWeek = new Date(defaultDate);
   firstDayOfWeek.setDate(firstDayOfWeek.getDate() - firstDayOfWeek.getDay() + weekStart);
-  // We will always show 6 weeks like google calendar
+  // We will show a maximum of 6 weeks like Google calendar
   // Assume we just want the numbers for now...
   const calendarWeeks = [];
   for (let i = 0; i < 6; i++) {
@@ -78,6 +78,9 @@ const buildCalendar = (year: number, month: number, weekStart: number, validator
       firstDayOfWeek.setDate(firstDayOfWeek.getDate() + 1);
     }
     calendarWeeks.push(week);
+    if (firstDayOfWeek.getMonth() !== defaultDate.getMonth()) {
+      break;
+    }
   }
 
   return calendarWeeks;
