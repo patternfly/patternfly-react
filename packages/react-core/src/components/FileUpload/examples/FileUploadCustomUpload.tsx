@@ -30,7 +30,7 @@ export const CustomPreviewFileUpload: React.FunctionComponent = () => {
     hasPlaceholderText
   ]);
 
-  const handleTextAreaChange = value => {
+  const handleTextAreaChange = (value: string) => {
     setValue(value);
   };
 

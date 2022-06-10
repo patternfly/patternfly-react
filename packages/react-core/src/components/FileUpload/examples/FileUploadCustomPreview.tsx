@@ -6,12 +6,15 @@ export const CustomPreviewFileUpload: React.FunctionComponent = () => {
   const [value, setValue] = React.useState(null);
   const [filename, setFilename] = React.useState('');
 
-  const handleFileInputChange = (_event, file) => {
+  const handleFileInputChange = (
+    _event: React.ChangeEvent<HTMLInputElement> | React.DragEvent<HTMLElement>,
+    file: File
+  ) => {
     setValue(file);
     setFilename(file.name);
   };
 
-  const handleClear = _event => {
+  const handleClear = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     setFilename('');
     setValue('');
   };

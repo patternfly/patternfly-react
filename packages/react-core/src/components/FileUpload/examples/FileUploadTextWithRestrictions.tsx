@@ -7,29 +7,32 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
   const [isLoading, setIsLoading] = React.useState(false);
   const [isRejected, setIsRejected] = React.useState(false);
 
-  const handleFileInputChange = (_event, file) => {
+  const handleFileInputChange = (
+    _event: React.ChangeEvent<HTMLInputElement> | React.DragEvent<HTMLElement>,
+    file: File
+  ) => {
     setFilename(file.name);
   };
 
-  const handleTextOrDataChange = value => {
+  const handleTextOrDataChange = (value: string) => {
     setValue(value);
   };
 
-  const handleClear = _event => {
+  const handleClear = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     setFilename('');
     setValue('');
     setIsRejected(false);
   };
 
-  const handleFileRejected = (_rejectedFiles, _event) => {
+  const handleFileRejected = (_rejectedFiles: File[], _event: React.DragEvent<HTMLElement>) => {
     setIsRejected(true);
   };
 
-  const handleFileReadStarted = _fileHandle => {
+  const handleFileReadStarted = (_fileHandle: File) => {
     setIsLoading(true);
   };
 
-  const handleFileReadFinished = _fileHandle => {
+  const handleFileReadFinished = (_fileHandle: File) => {
     setIsLoading(false);
   };
 

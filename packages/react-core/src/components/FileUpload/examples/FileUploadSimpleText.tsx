@@ -6,24 +6,27 @@ export const SimpleTextFileUpload: React.FunctionComponent = () => {
   const [filename, setFilename] = React.useState('');
   const [isLoading, setIsLoading] = React.useState(false);
 
-  const handleFileInputChange = (_event, file) => {
+  const handleFileInputChange = (
+    _event: React.ChangeEvent<HTMLInputElement> | React.DragEvent<HTMLElement>,
+    file: File
+  ) => {
     setFilename(file.name);
   };
 
-  const handleTextOrDataChange = value => {
+  const handleTextOrDataChange = (value: string) => {
     setValue(value);
   };
 
-  const handleClear = _event => {
+  const handleClear = (_event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     setFilename('');
     setValue('');
   };
 
-  const handleFileReadStarted = _fileHandle => {
+  const handleFileReadStarted = (_fileHandle: File) => {
     setIsLoading(true);
   };
 
-  const handleFileReadFinished = _fileHandle => {
+  const handleFileReadFinished = (_fileHandle: File) => {
     setIsLoading(false);
   };
 
