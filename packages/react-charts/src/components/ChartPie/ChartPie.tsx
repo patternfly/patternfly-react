@@ -29,12 +29,11 @@ import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
 import {
   getComputedLegend,
+  getDefaultPatternProps,
   getPaddingForSide,
-  getPatternId,
   getPatternDefs,
   getTheme,
-  getDefaultColorScale,
-  getDefaultPatternScale
+  PatternScaleInterface
 } from '../ChartUtils';
 
 export enum ChartPieLabelPosition {
@@ -364,13 +363,6 @@ export interface ChartPieProps extends VictoryPieProps {
    */
   padding?: PaddingProps;
   /**
-   * The optional ID to prefix pattern defs
-   *
-   * @example patternId="pattern"
-   * @beta
-   */
-  patternId?: string;
-  /**
    * The patternScale prop is an optional prop that defines a pattern to be applied to the children, where applicable.
    * This prop should be given as an array of CSS colors, or as a string corresponding to a URL. Patterns will be
    * assigned to children by index, unless they are explicitly specified in styles. Patterns will repeat when there are
@@ -382,7 +374,16 @@ export interface ChartPieProps extends VictoryPieProps {
    * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
    * @beta
    */
-  patternScale?: string[];
+  patternScale?: PatternScaleInterface[];
+  /**
+   * Moves the given pattern index to top of scale, used to sync patterns with ChartDonutThreshold
+   *
+   * Note: This prop should not be set manually.
+   *
+   * @private
+   * @hide
+   */
+  patternUnshiftIndex?: number;
   /**
    * Specifies the radius of the chart. If this property is not provided it is computed
    * from width, height, and padding props
@@ -395,6 +396,7 @@ export interface ChartPieProps extends VictoryPieProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };
@@ -501,12 +503,13 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   colorScale,
   constrainToVisibleArea = false,
   containerComponent = <ChartContainer />,
+  isPatternDefs = false,
   legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
-  patternId = getPatternId(),
   patternScale,
+  patternUnshiftIndex,
   padding,
   radius,
   standalone = true,
@@ -514,7 +517,6 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
-  isPatternDefs = false,
 
   // destructure last
   theme = getTheme(themeColor),
@@ -534,6 +536,14 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     right: getPaddingForSide('right', padding, theme.pie.padding),
     top: getPaddingForSide('top', padding, theme.pie.padding)
   };
+
+  const { defaultColorScale, defaultPatternScale, patternId } = getDefaultPatternProps({
+    colorScale,
+    isPatternDefs,
+    patternScale,
+    themeColorScale: theme.pie.colorScale as string[]
+  });
+
   // Ensure non-negative value is returned
   const getDefaultRadius = () => {
     const result = Helpers.getRadius({
@@ -545,14 +555,6 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   };
   const chartRadius = radius ? radius : getDefaultRadius();
 
-  const defaultColorScale = getDefaultColorScale(colorScale, theme.pie.colorScale as string[]);
-  const defaultPatternScale = getDefaultPatternScale({
-    colorScale: defaultColorScale,
-    patternScale,
-    patternId,
-    isPatternDefs
-  });
-
   // Merge pattern IDs with `style.data.fill` property
   const getDefaultStyle = () => {
     if (!defaultPatternScale) {
@@ -562,7 +564,9 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     _style.data = {
       fill: ({ slice }: any) => {
         const pattern = defaultPatternScale[slice.index % defaultPatternScale.length];
-        return pattern && pattern !== null ? pattern : defaultColorScale[slice.index % defaultColorScale.length];
+        return pattern && pattern.isVisible !== false
+          ? pattern.value
+          : defaultColorScale[slice.index % defaultColorScale.length].value;
       },
       ..._style.data
     };
@@ -624,7 +628,11 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
           theme,
           ...containerComponent.props
         },
-        [chart, getLegend(), isPatternDefs && getPatternDefs({ patternId, patternScale: defaultColorScale })]
+        [
+          chart,
+          getLegend(),
+          isPatternDefs && getPatternDefs({ patternId, colorScale: defaultColorScale, patternUnshiftIndex })
+        ]
       )
     : null;
 
@@ -634,7 +642,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     <React.Fragment>
       {chart}
       {getLegend()}
-      {isPatternDefs && getPatternDefs({ patternId, patternScale: defaultColorScale })}
+      {isPatternDefs && getPatternDefs({ patternId, colorScale: defaultColorScale, patternUnshiftIndex })}
     </React.Fragment>
   );
 };

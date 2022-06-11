@@ -18,7 +18,8 @@ import {
   getLegendTooltipSize,
   getLegendTooltipVisibleData,
   getLegendTooltipVisibleText,
-  getTheme
+  getTheme,
+  PatternScaleInterface
 } from '../ChartUtils';
 
 /**
@@ -42,6 +43,7 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   activePoints?: any[];
@@ -159,6 +161,7 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   height?: number;
@@ -237,7 +240,7 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
    * @beta
    */
-  patternScale?: string[];
+  patternScale?: PatternScaleInterface[];
   /**
    * The pointerLength prop determines the length of the triangular pointer extending from the flyout. This prop may be
    * given as a positive number or a function of datum.
@@ -314,6 +317,7 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   width?: number;

@@ -22,7 +22,7 @@ import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
 import { ChartPie, ChartPieLegendPosition, ChartPieProps } from '../ChartPie';
 import { ChartCommonStyles, ChartDonutStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getPieLabelX, getPieLabelY, getPaddingForSide } from '../ChartUtils';
+import { getPieLabelX, getPieLabelY, getPaddingForSide, PatternScaleInterface } from '../ChartUtils';
 
 interface ChartDonutSubTitleInterface {
   dy?: number;
@@ -362,13 +362,6 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   padAngle?: NumberOrCallback;
   /**
-   * The optional ID to prefix pattern defs
-   *
-   * @example patternId="pattern"
-   * @beta
-   */
-  patternId?: string;
-  /**
    * The patternScale prop is an optional prop that defines a pattern to be applied to the children, where applicable.
    * This prop should be given as an array of CSS colors, or as a string corresponding to a URL. Patterns will be
    * assigned to children by index, unless they are explicitly specified in styles. Patterns will repeat when there are
@@ -380,7 +373,7 @@ export interface ChartDonutProps extends ChartPieProps {
    * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
    * @beta
    */
-  patternScale?: string[];
+  patternScale?: PatternScaleInterface[];
   /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
@@ -402,6 +395,7 @@ export interface ChartDonutProps extends ChartPieProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };

@@ -1,14 +1,23 @@
 import * as React from 'react';
+import merge from 'lodash/merge';
 import uniqueId from 'lodash/uniqueId';
+
+// @beta
+export interface PatternScaleInterface {
+  value?: string; // This value is output as "fill" for component styles and as "stroke" for pattern defs
+  isVisible?: boolean;
+}
 
 // @beta
 interface PatternPropsInterface {
   children?: any;
   colorScale?: any;
+  isPatternDefs?: boolean;
   offset?: number;
   patternId?: string;
-  patternScale?: string[];
-  isPatternDefs?: boolean;
+  patternScale?: PatternScaleInterface[];
+  patternUnshiftIndex?: number;
+  themeColorScale?: string[];
 }
 
 /**
@@ -230,13 +239,27 @@ export const getPatternDefsId = (prefix: string, index: number) => {
  * Helper function to return pattern defs
  * @private
  */
-export const getPatternDefs = ({ offset = 0, patternId, patternScale }: PatternPropsInterface) => {
+export const getPatternDefs = ({
+  colorScale,
+  offset = 0,
+  patternId,
+  patternUnshiftIndex = 0
+}: PatternPropsInterface) => {
+  const defaultPatterns = [...patterns];
+
+  // Move the given pattern index to top of scale, used to sync patterns with ChartDonutThreshold
+  if (patternUnshiftIndex > 0 && patternUnshiftIndex < defaultPatterns.length) {
+    defaultPatterns.unshift(defaultPatterns.splice(patternUnshiftIndex, 1)[0]);
+  }
+
   // This is wrapped in an empty tag so Victory does not apply child props to defs
   const defs = (
     <React.Fragment key={`defs`}>
       <defs>
-        {patternScale.map((c: string, index: number) => {
-          const { d, fill, stroke = c, strokeWidth, ...rest } = patterns[(index + offset) % patterns.length];
+        {colorScale.map((color: PatternScaleInterface, index: number) => {
+          const { d, fill, stroke = color.value, strokeWidth, ...rest } = defaultPatterns[
+            (index + offset) % defaultPatterns.length
+          ];
           const id = getPatternDefsId(patternId, index);
           return (
             <pattern id={id} key={id} {...rest}>
@@ -254,15 +277,41 @@ export const getPatternDefs = ({ offset = 0, patternId, patternScale }: PatternP
  * Helper function to return pattern IDs to use as color scale
  * @private
  */
-export const getPatternScale = (patternId: string, colorScale: string[]) =>
-  colorScale.map((c: any, index: number) => `url(#${getPatternDefsId(patternId, index)})`);
+export const getPatternScale = (colorScale: string[], patternId: string) =>
+  colorScale.map((val: any, index: number) => `url(#${getPatternDefsId(patternId, index)})`);
 
 /**
  * Helper function to return default color scale
  * @private
  */
-export const getDefaultColorScale = (colorScale: string[], themeColorScale: string[]) =>
-  colorScale ? colorScale : themeColorScale;
+export const getDefaultColorScale = (colorScale: string[], themeColorScale: string[]) => {
+  const result: PatternScaleInterface[] = [];
+  const colors = colorScale ? colorScale : themeColorScale;
+
+  colors.forEach(val =>
+    result.push({
+      value: val
+    })
+  );
+  return result;
+};
+
+/**
+ * Merge pattern IDs with `data.fill` property, used by interactive pie chart legend
+ * @private
+ */
+export const getDefaultData = (data: any, patternScale: PatternScaleInterface[]) => {
+  if (!patternScale) {
+    return data;
+  }
+  return data.map((datum: any, index: number) => {
+    const pattern = patternScale[index % patternScale.length];
+    return {
+      ...(pattern && pattern.isVisible !== false && { _fill: pattern.value }),
+      ...datum
+    };
+  });
+};
 
 /**
  * Helper function to return default pattern scale
@@ -270,41 +319,58 @@ export const getDefaultColorScale = (colorScale: string[], themeColorScale: stri
  */
 export const getDefaultPatternScale = ({
   colorScale,
-  patternScale,
+  isPatternDefs,
   patternId,
-  isPatternDefs
+  patternScale
 }: PatternPropsInterface) => {
-  if (patternScale) {
-    return patternScale;
-  }
+  const result: PatternScaleInterface[] = [];
+
   if (isPatternDefs) {
-    return getPatternScale(patternId, colorScale);
+    const defaultPatterns = getPatternScale(colorScale, patternId);
+    defaultPatterns.forEach(p =>
+      result.push({
+        value: p,
+        isVisible: true
+      })
+    );
   }
-  return undefined;
+  if (patternScale) {
+    merge(result, patternScale);
+  }
+  return result.length > 0 ? result : undefined;
 };
 
 /**
- * Merge pattern IDs with `data.fill` property, used by interactive pie chart legend
+ * Helper function to return default pattern props
  * @private
  */
-export const getDefaultData = (data: any, patternScale: string[]) => {
-  if (!patternScale) {
-    return data;
+export const getDefaultPatternProps = ({
+  colorScale,
+  isPatternDefs,
+  patternScale,
+  themeColorScale
+}: PatternPropsInterface) => {
+  const defaultColorScale = getDefaultColorScale(colorScale, themeColorScale);
+  let defaultPatternScale = patternScale;
+  let patternId;
+
+  if (isPatternDefs) {
+    patternId = React.useMemo(() => getPatternId(), []);
+    defaultPatternScale = getDefaultPatternScale({
+      colorScale: defaultColorScale,
+      isPatternDefs,
+      patternId,
+      patternScale
+    });
   }
-  return data.map((datum: any, index: number) => {
-    const pattern = patternScale[index % patternScale.length];
-    return {
-      ...(pattern && pattern !== null && { _fill: pattern }),
-      ...datum
-    };
-  });
+  return { defaultColorScale, defaultPatternScale, patternId };
 };
 
 /**
  * Helper function to render children with patterns
  * @private
  */
-export const renderChildrenWithPatterns = ({ children, patternId, patternScale }: PatternPropsInterface) =>
+export const renderChildrenWithPatterns = ({ children, patternScale }: PatternPropsInterface) =>
   React.Children.toArray(children).map((child, index) => {
     if (React.isValidElement(child)) {
       const { ...childProps } = child.props;
@@ -312,14 +378,13 @@ export const renderChildrenWithPatterns = ({ children, patternId, patternScale }
 
       // Merge pattern IDs with `style.data.fill` property
       if (patternScale) {
-        const fill = patternScale[index % patternScale.length];
+        const pattern = patternScale[index % patternScale.length];
         style.data = {
-          ...(fill && fill !== null && { fill }),
+          ...(pattern && pattern.isVisible !== false && { fill: pattern.value }),
           ...style.data
         };
       }
       const _child = React.cloneElement(child, {
-        patternId,
         ...(patternScale && { patternScale }),
         ...childProps,
         style // Override child props

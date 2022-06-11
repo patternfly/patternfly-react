@@ -15,7 +15,6 @@ propComponents: [
   'ChartPie',
   'ChartScatter',
   'ChartStack',
-  'ChartThemeColor',
   'ChartVoronoiContainer',
 ]
 hideDarkMode: true
@@ -124,7 +123,7 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiCo
 ### Stack chart
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '250px', width: '600px' }}>
   <Chart
@@ -161,7 +160,7 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@
 ### Donut chart
 ```js
 import React from 'react';
-import { ChartDonut } from '@patternfly/react-charts';
+import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
   <ChartDonut
@@ -190,11 +189,11 @@ import { ChartDonut } from '@patternfly/react-charts';
 
 ### Donut utilization chart
 
-This demonstrates how to apply a pattern to the static, unused portion of the donut utilization chart.
+This demonstrates how to hide a pattern for the static, unused portion of the donut utilization chart.
 
 ```js
 import React from 'react';
-import { ChartDonutUtilization } from '@patternfly/react-charts';
+import { ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '300px' }}>
   <ChartDonutUtilization 
@@ -212,7 +211,10 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
       right: 20,
       top: 20
     }}
-    showStaticPattern
+    patternScale={[
+      { isVisible: true },
+      { isVisible: false }
+    ]}
     subTitle="of 100 GBps"
     title="45%"
     themeColor={ChartThemeColor.green}
@@ -229,7 +231,7 @@ This demonstrates how to apply patterns to thresholds.
 
 ```js
 import React from 'react';
-import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
+import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '675px' }}>
   <ChartDonutThreshold
@@ -256,7 +258,6 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
       subTitle="of 100 GBps"
       title="45%"
       themeColor={ChartThemeColor.orange}
-      isPatternDefs
     />
   </ChartDonutThreshold>
 </div>
@@ -337,11 +338,6 @@ class InteractivePieLegendChart extends React.Component {
       const { hiddenSeries } = this.state; // Skip if already hidden                
       return hiddenSeries.has(index);
     };
-
-    this.isDataAvailable = () => {
-      const { hiddenSeries } = this.state;
-      return hiddenSeries.size !== this.series.length;
-    };
   };
 
   render() {
@@ -349,9 +345,9 @@ class InteractivePieLegendChart extends React.Component {
 
     const data = [];
     this.series.map((s, index) => {
-      data.push(!hiddenSeries.has(index) ? s.datapoints : [{ y: null}]);
+      data.push(!hiddenSeries.has(index) ? s.datapoints : { y: null });
     });
-
+    
     return (
       <div style={{ height: '275px', width: '500px' }}>
         <Chart
@@ -359,7 +355,6 @@ class InteractivePieLegendChart extends React.Component {
           ariaTitle="Pie chart example"
           events={this.getEvents()}
           height={275}
-          labels={({ datum }) => `${datum.x}: ${datum.y}`}
           legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} />}
           legendPosition="bottom"
           padding={{
@@ -368,7 +363,6 @@ class InteractivePieLegendChart extends React.Component {
             right: 20,
             top: 20
           }}
-          patternId="pattern_a" // Required for interactive legend functionality
           showAxis={false}
           themeColor={ChartThemeColor.multiUnordered}
           isPatternDefs
@@ -377,6 +371,7 @@ class InteractivePieLegendChart extends React.Component {
           <ChartPie
             constrainToVisibleArea={true}
             data={data}
+            labels={({ datum }) => `${datum.x}: ${datum.y}`}
             name="pie"
           />
         </Chart>
@@ -685,8 +680,13 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
       right: 140, // Adjusted to accommodate legend
       top: 20
     }}
-    patternId="pattern_b"
-    patternScale={['url("#pattern_b:0")', 'url("#pattern_b:1")', null, null, null]}
+    patternScale={[
+      { isVisible: true },
+      { isVisible: true },
+      { isVisible: false },
+      { isVisible: false },
+      { isVisible: false }
+    ]}
     themeColor={ChartThemeColor.multiUnordered}
     isPatternDefs
     width={350}
@@ -702,7 +702,7 @@ The approach uses `isPatternDefs` to generate default pattern defs using the giv
 
 ```js
 import React from 'react';
-import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartPie } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
 import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
@@ -711,7 +711,7 @@ import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color
   <ChartPie
     ariaDesc="Average number of pets"
     ariaTitle="Pie chart example"
-    colorScale={[chart_color_blue_300.value, chart_color_gold_300.var, chart_color_green_300.value]}
+    colorScale={[chart_color_blue_300.var, chart_color_gold_300.var, chart_color_green_300.var]}
     constrainToVisibleArea={true}
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={230}
@@ -725,8 +725,11 @@ import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color
       right: 140, // Adjusted to accommodate legend
       top: 20
     }}
-    patternId="pattern_c"
-    patternScale={['url("#pattern_c:0")', 'url("#pattern_c:1")', null]}
+    patternScale={[
+      { isVisible: true },
+      { isVisible: true },
+      { isVisible: false }
+    ]}
     isPatternDefs
     width={350}
   />
@@ -750,10 +753,10 @@ import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color
 <div style={{ height: '230px', width: '350px' }}>
   <svg aria-hidden={true} height="0" width="0" style={{display: 'block'}}>
     <defs>
-      <pattern id="pattern_d:0" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse" width="10" height="10" x="0" y="0">
+      <pattern id="pattern:0" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse" width="10" height="10" x="0" y="0">
         <path d="M 0 0 L 5 10 L 10 0" stroke={chart_color_blue_300.value} strokeWidth="2" fill="none"></path>
       </pattern>
-      <pattern id="pattern_d:1" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse" width="10" height="10" x="0" y="0">
+      <pattern id="pattern:1" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse" width="10" height="10" x="0" y="0">
         <path d="M 0 3 L 5 3 L 5 0 M 5 10 L 5 7 L 10 7" stroke={chart_color_green_300.value} strokeWidth="2" fill="none"></path>
       </pattern>
     </defs>
@@ -774,7 +777,11 @@ import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color
       right: 140, // Adjusted to accommodate legend
       top: 20
     }}
-    patternScale={['url("#pattern_d:0")', 'url("#pattern_d:1")', null]}
+    patternScale={[
+      { isVisible: true, value: 'url("#pattern:0")' },
+      { isVisible: true, value: 'url("#pattern:1")' },
+      { isVisible: false }
+    ]}
     themeColor={ChartThemeColor.multiUnordered}
     width={350}
   />

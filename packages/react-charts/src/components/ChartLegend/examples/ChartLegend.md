@@ -532,11 +532,6 @@ class InteractivePieLegendChart extends React.Component {
       const { hiddenSeries } = this.state; // Skip if already hidden                
       return hiddenSeries.has(index);
     };
-
-    this.isDataAvailable = () => {
-      const { hiddenSeries } = this.state;
-      return hiddenSeries.size !== this.series.length;
-    };
   };
 
   render() {
@@ -544,7 +539,7 @@ class InteractivePieLegendChart extends React.Component {
 
     const data = [];
     this.series.map((s, index) => {
-      data.push(!hiddenSeries.has(index) ? s.datapoints : [{ y: null}]);
+      data.push(!hiddenSeries.has(index) ? s.datapoints : { y: null });
     });
 
     return (
@@ -554,7 +549,6 @@ class InteractivePieLegendChart extends React.Component {
           ariaTitle="Pie chart example"
           events={this.getEvents()}
           height={275}
-          labels={({ datum }) => `${datum.x}: ${datum.y}`}
           legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} />}
           legendPosition="bottom"
           padding={{
@@ -570,6 +564,7 @@ class InteractivePieLegendChart extends React.Component {
           <ChartPie
             constrainToVisibleArea={true}
             data={data}
+            labels={({ datum }) => `${datum.x}: ${datum.y}`}
             name="pie"
           />
         </Chart>

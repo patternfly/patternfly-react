@@ -11,7 +11,8 @@ import {
   getLegendTooltipSize,
   getLegendTooltipVisibleData,
   getLegendTooltipVisibleText,
-  getTheme
+  getTheme,
+  PatternScaleInterface
 } from '../ChartUtils';
 
 /**
@@ -24,6 +25,7 @@ export interface ChartLegendTooltipContentProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   activePoints?: any[];
@@ -128,7 +130,7 @@ export interface ChartLegendTooltipContentProps {
    * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
    * @beta
    */
-  patternScale?: string[];
+  patternScale?: PatternScaleInterface[];
   /**
    * The text prop defines the text ChartTooltip will render. The text prop may be given as a string, number, or
    * function of datum. When ChartLabel is used as the labelComponent, strings may include newline characters, which

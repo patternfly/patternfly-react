@@ -312,6 +312,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };

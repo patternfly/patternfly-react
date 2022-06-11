@@ -29,12 +29,11 @@ import {
   getComputedLegend,
   getLabelTextSize,
   getPaddingForSide,
-  getPatternId,
   getPatternDefs,
-  getDefaultColorScale,
   getDefaultData,
-  getDefaultPatternScale
+  getDefaultPatternProps
 } from '../ChartUtils';
+import { PatternScaleInterface } from '../ChartUtils/chart-patterns';
 
 /**
  * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
@@ -94,12 +93,14 @@ export interface ChartProps extends VictoryChartProps {
   /**
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   defaultAxes?: AxesType;
   /**
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   defaultPolarAxes?: AxesType;
@@ -308,13 +309,6 @@ export interface ChartProps extends VictoryChartProps {
    */
   padding?: PaddingProps;
   /**
-   * The optional ID to prefix pattern defs
-   *
-   * @example patternId="pattern"
-   * @beta
-   */
-  patternId?: string;
-  /**
    * The patternScale prop is an optional prop that defines a pattern to be applied to the children, where applicable.
    * This prop should be given as an array of CSS colors, or as a string corresponding to a URL. Patterns will be
    * assigned to children by index, unless they are explicitly specified in styles. Patterns will repeat when there are
@@ -326,10 +320,11 @@ export interface ChartProps extends VictoryChartProps {
    * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
    * @beta
    */
-  patternScale?: string[];
+  patternScale?: PatternScaleInterface[];
   /**
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   prependDefaultAxes?: boolean;
@@ -372,6 +367,7 @@ export interface ChartProps extends VictoryChartProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };
@@ -460,18 +456,17 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   ariaTitle,
   children,
   colorScale,
+  isPatternDefs = false,
   legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
   padding,
+  patternScale,
   showAxis = true,
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
-  patternId = getPatternId(),
-  patternScale,
-  isPatternDefs = false,
 
   // destructure last
   theme = getChartTheme(themeColor, showAxis),
@@ -488,12 +483,11 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     top: getPaddingForSide('top', padding, theme.chart.padding)
   };
 
-  const defaultColorScale = getDefaultColorScale(colorScale as any, theme.chart.colorScale as string[]);
-  const defaultPatternScale = getDefaultPatternScale({
-    colorScale: defaultColorScale,
+  const { defaultColorScale, defaultPatternScale, patternId } = getDefaultPatternProps({
+    colorScale,
+    isPatternDefs,
     patternScale,
-    patternId,
-    isPatternDefs
+    themeColorScale: theme.chart.colorScale as string[]
   });
 
   // Add pattern props for legend tooltip
@@ -503,7 +497,6 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     containerComponent.props.labelComponent.type.displayName === 'ChartLegendTooltip'
   ) {
     labelComponent = React.cloneElement(containerComponent.props.labelComponent, {
-      patternId,
       theme,
       ...(defaultPatternScale && { patternScale: defaultPatternScale }),
       ...containerComponent.props.labelComponent.props
@@ -580,7 +573,6 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
         const { ...childProps } = child.props;
         return React.cloneElement(child, {
           colorScale,
-          patternId,
           theme,
           ...(defaultPatternScale && { patternScale: defaultPatternScale }),
           ...childProps,
@@ -605,7 +597,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     >
       {renderChildren()}
       {getLegend()}
-      {isPatternDefs && getPatternDefs({ patternId, patternScale: defaultColorScale })}
+      {isPatternDefs && getPatternDefs({ patternId, colorScale: defaultColorScale })}
     </VictoryChart>
   );
 };

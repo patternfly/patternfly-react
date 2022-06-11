@@ -272,6 +272,7 @@ export interface ChartLineProps extends VictoryLineProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   polar?: boolean;
@@ -315,6 +316,7 @@ export interface ChartLineProps extends VictoryLineProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };

@@ -296,6 +296,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };

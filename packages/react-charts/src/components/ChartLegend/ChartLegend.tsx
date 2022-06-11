@@ -21,7 +21,7 @@ import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
 import { ChartPoint } from '../ChartPoint';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
+import { getTheme, PatternScaleInterface } from '../ChartUtils';
 
 export enum ChartLegendOrientation {
   horizontal = 'horizontal',
@@ -213,7 +213,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
    * @beta
    */
-  patternScale?: string[];
+  patternScale?: PatternScaleInterface[];
   /**
    * The responsive prop specifies whether the rendered container should be a responsive container with a viewBox
    * attribute, or a static container with absolute width and height.
@@ -238,6 +238,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };
@@ -362,7 +363,7 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
             : undefined;
         const pattern = patternScale[index % patternScale.length];
         const color = colorScale ? colorScale[index % colorScale.length] : themeColor; // Sync color scale
-        return pattern && pattern !== null ? pattern : color;
+        return pattern && pattern.isVisible !== false ? pattern.value : color;
       },
       ..._style.data
     };
