@@ -4,7 +4,6 @@ import { Helpers, OrientationTypes, StringOrNumberOrCallback } from 'victory-cor
 import { ChartLegendProps } from '../ChartLegend';
 import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getLegendDimensions } from './chart-legend';
-import { PatternScaleInterface } from './chart-patterns';
 
 interface ChartCursorTooltipCenterOffsetInterface {
   offsetCursorDimensionX?: boolean; // Adjust the tooltip to appear to the right of the vertical cursor
@@ -29,7 +28,7 @@ interface ChartLegendTooltipVisibleDataInterface {
   activePoints?: any[];
   colorScale?: string[];
   legendData: any;
-  patternScale?: PatternScaleInterface[]; // Legend symbol patterns
+  patternScale?: string[]; // Legend symbol patterns
   text?: StringOrNumberOrCallback | string[] | number[];
   textAsLegendData?: boolean;
   theme: ChartThemeDefinition;
@@ -239,12 +238,12 @@ export const getLegendTooltipVisibleData = ({
           theme && theme.legend && theme.legend.colorScale
             ? theme.legend.colorScale[i % theme.legend.colorScale.length]
             : undefined;
-        const pattern = patternScale ? patternScale[i % patternScale.length] : undefined;
         const color = colorScale ? colorScale[i % colorScale.length] : themeColor; // Sync color scale
+        const pattern = patternScale ? patternScale[i % patternScale.length] : undefined;
         result.push({
           name: textAsLegendData ? _text[index] : data.name,
           symbol: {
-            fill: pattern && pattern.isVisible !== false ? pattern.value : color,
+            fill: pattern ? pattern : color,
             ...data.symbol
           }
         });

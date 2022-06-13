@@ -26,7 +26,7 @@ import { ChartPie } from '@patternfly/react-charts';
   <ChartPie
     ariaDesc="Average number of pets"
     ariaTitle="Pie chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={230}
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
@@ -53,7 +53,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
   <ChartPie
     ariaDesc="Average number of pets"
     ariaTitle="Pie chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={230}
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
@@ -81,7 +81,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
   <ChartPie
     ariaDesc="Average number of pets"
     ariaTitle="Pie chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={275}
     labels={({ datum }) => `${datum.x}: ${datum.y}`}

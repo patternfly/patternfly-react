@@ -1,21 +1,15 @@
 import * as React from 'react';
-import merge from 'lodash/merge';
 import uniqueId from 'lodash/uniqueId';
-
-// @beta
-export interface PatternScaleInterface {
-  value?: string; // This value is output as "fill" for component styles and as "stroke" for pattern defs
-  isVisible?: boolean;
-}
 
 // @beta
 interface PatternPropsInterface {
   children?: any;
   colorScale?: any;
+  hasPatterns?: boolean | boolean[];
   isPatternDefs?: boolean;
   offset?: number;
   patternId?: string;
-  patternScale?: PatternScaleInterface[];
+  patternScale?: string[];
   patternUnshiftIndex?: number;
   themeColorScale?: string[];
 }
@@ -256,8 +250,8 @@ export const getPatternDefs = ({
   const defs = (
     <React.Fragment key={`defs`}>
       <defs>
-        {colorScale.map((color: PatternScaleInterface, index: number) => {
-          const { d, fill, stroke = color.value, strokeWidth, ...rest } = defaultPatterns[
+        {colorScale.map((color: string, index: number) => {
+          const { d, fill, stroke = color, strokeWidth, ...rest } = defaultPatterns[
             (index + offset) % defaultPatterns.length
           ];
           const id = getPatternDefsId(patternId, index);
@@ -285,14 +279,10 @@ export const getPatternScale = (colorScale: string[], patternId: string) =>
  * @private
  */
 export const getDefaultColorScale = (colorScale: string[], themeColorScale: string[]) => {
-  const result: PatternScaleInterface[] = [];
+  const result: string[] = [];
   const colors = colorScale ? colorScale : themeColorScale;
 
-  colors.forEach(val =>
-    result.push({
-      value: val
-    })
-  );
+  colors.forEach(val => result.push(val));
   return result;
 };
 
@@ -300,14 +290,14 @@ export const getDefaultColorScale = (colorScale: string[], themeColorScale: stri
  * Merge pattern IDs with `data.fill` property, used by interactive pie chart legend
  * @private
  */
-export const getDefaultData = (data: any, patternScale: PatternScaleInterface[]) => {
+export const getDefaultData = (data: any, patternScale: string[]) => {
   if (!patternScale) {
     return data;
   }
   return data.map((datum: any, index: number) => {
     const pattern = patternScale[index % patternScale.length];
     return {
-      ...(pattern && pattern.isVisible !== false && { _fill: pattern.value }),
+      ...(pattern && { _fill: pattern }),
       ...datum
     };
   });
@@ -317,27 +307,12 @@ export const getDefaultData = (data: any, patternScale: PatternScaleInterface[])
  * Helper function to return default pattern scale
  * @private
  */
-export const getDefaultPatternScale = ({
-  colorScale,
-  isPatternDefs,
-  patternId,
-  patternScale
-}: PatternPropsInterface) => {
-  const result: PatternScaleInterface[] = [];
-
-  if (isPatternDefs) {
-    const defaultPatterns = getPatternScale(colorScale, patternId);
-    defaultPatterns.forEach(p =>
-      result.push({
-        value: p,
-        isVisible: true
-      })
-    );
-  }
+export const getDefaultPatternScale = ({ colorScale, patternId, patternScale }: PatternPropsInterface) => {
   if (patternScale) {
-    merge(result, patternScale);
+    return patternScale;
   }
-  return result.length > 0 ? result : undefined;
+  const defaultPatternScale = getPatternScale(colorScale, patternId);
+  return defaultPatternScale && defaultPatternScale.length > 0 ? defaultPatternScale : undefined;
 };
 
 /**
@@ -346,24 +321,36 @@ export const getDefaultPatternScale = ({
  */
 export const getDefaultPatternProps = ({
   colorScale,
-  isPatternDefs,
+  hasPatterns,
   patternScale,
   themeColorScale
 }: PatternPropsInterface) => {
   const defaultColorScale = getDefaultColorScale(colorScale, themeColorScale);
   let defaultPatternScale = patternScale;
+  let isPatternDefs = !patternScale && hasPatterns !== undefined;
   let patternId;
 
   if (isPatternDefs) {
     patternId = React.useMemo(() => getPatternId(), []);
     defaultPatternScale = getDefaultPatternScale({
       colorScale: defaultColorScale,
-      isPatternDefs,
       patternId,
       patternScale
     });
   }
-  return { defaultColorScale, defaultPatternScale, patternId };
+
+  // Initialize pattern visibility
+  if (Array.isArray(hasPatterns)) {
+    for (let i = 0; i < defaultPatternScale.length; i++) {
+      if (!(i < hasPatterns.length && hasPatterns[i])) {
+        defaultPatternScale[i] = null;
+      }
+    }
+  } else if (hasPatterns === false) {
+    defaultPatternScale = undefined;
+    isPatternDefs = false;
+  }
+  return { defaultColorScale, defaultPatternScale, isPatternDefs, patternId };
 };
 
 /**
@@ -380,7 +367,7 @@ export const renderChildrenWithPatterns = ({ children, patternScale }: PatternPr
       if (patternScale) {
         const pattern = patternScale[index % patternScale.length];
         style.data = {
-          ...(pattern && pattern.isVisible !== false && { fill: pattern.value }),
+          ...(pattern && { fill: pattern }),
           ...style.data
         };
       }

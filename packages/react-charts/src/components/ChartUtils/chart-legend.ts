@@ -5,7 +5,6 @@ import { ChartLegendOrientation, ChartLegendPosition, ChartLegendProps } from '.
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getPieOrigin } from './chart-origin';
 import * as React from 'react';
-import { PatternScaleInterface } from './chart-patterns';
 
 interface ChartLegendInterface {
   allowWrap?: boolean; // Allow legend items to wrap to the next line
@@ -17,7 +16,7 @@ interface ChartLegendInterface {
   legendComponent: React.ReactElement<any>; // The base legend component to render
   orientation?: 'horizontal' | 'vertical'; // Orientation of legend
   padding: PaddingProps; // Chart padding
-  patternScale?: PatternScaleInterface[]; // Legend symbol patterns
+  patternScale?: string[]; // Legend symbol patterns
   position: 'bottom' | 'bottom-left' | 'right'; // The legend position
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
   width: number; // Overall width of SVG
