@@ -270,7 +270,7 @@ describe('FormGroup', () => {
       expect(screen.getByRole('radiogroup')).toBeInTheDocument();
     });
 
-    test('should have accessible name when role is passed in', () => {
+    test('should have accessible name when group role is passed in', () => {
       render(
         <FormGroup label="label" fieldId="accessible-name" role="group">
           <input />
@@ -279,6 +279,17 @@ describe('FormGroup', () => {
       );
 
       expect(screen.getByRole('group')).toHaveAccessibleName('label');
+    });
+
+    test('should have accessible name when radiogroup role is passed in', () => {
+      render(
+        <FormGroup label="label" fieldId="accessible-name" role="radiogroup">
+          <input />
+          <input />
+        </FormGroup>
+      );
+
+      expect(screen.getByRole('radiogroup')).toHaveAccessibleName('label');
     });
   });
 });

@@ -41,10 +41,10 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   helperTextInvalidIcon?: React.ReactNode;
   /** ID of the included field. It has to be the same for proper working. */
   fieldId: string;
-  /** Sets the role of the form group if multiple inputs are being passed in. If multiple radio inputs
-   * are passed in use "radiogroup", otherwise use "group" when passing in multiple of any other input.
+  /** Sets the role of the form group. Pass in "radiogroup" when the form group contains multiple
+   * radio inputs, or pass in "group" when the form group contains multiple of any other input type.
    */
-  role?: 'group' | 'radiogroup';
+  role?: string;
 }
 
 export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
@@ -101,11 +101,12 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   const helperTextToDisplay =
     validated === ValidatedOptions.error && helperTextInvalid ? inValidHelperText : showValidHelperTxt(validated);
 
-  const LabelComponent = role ? 'span' : 'label';
+  const isGroupOrRadioGroup = role === 'group' || role === 'radiogroup';
+  const LabelComponent = isGroupOrRadioGroup ? 'span' : 'label';
 
   const labelContent = (
     <React.Fragment>
-      <LabelComponent className={css(styles.formLabel)} {...(!role && { htmlFor: fieldId })}>
+      <LabelComponent className={css(styles.formLabel)} {...(!isGroupOrRadioGroup && { htmlFor: fieldId })}>
         <span className={css(styles.formLabelText)}>{label}</span>
         {isRequired && (
           <span className={css(styles.formLabelRequired)} aria-hidden="true">
@@ -120,9 +121,10 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
 
   return (
     <div
-      {...props}
       className={css(styles.formGroup, className)}
-      {...(role && { 'aria-labelledby': `${fieldId}-legend`, role })}
+      {...(role && { role })}
+      {...(isGroupOrRadioGroup && { 'aria-labelledby': `${fieldId}-legend` })}
+      {...props}
     >
       {label && (
         <div
@@ -131,7 +133,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
             labelInfo && styles.modifiers.info,
             hasNoPaddingTop && styles.modifiers.noPaddingTop
           )}
-          {...(role && { id: `${fieldId}-legend` })}
+          {...(isGroupOrRadioGroup && { id: `${fieldId}-legend` })}
         >
           {labelInfo && (
             <React.Fragment>
