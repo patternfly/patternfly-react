@@ -24,7 +24,7 @@ interface ExampleProps {
   data: FoodNode[];
 }
 
-export const ComposableDualListSelectorTree: React.FunctionComponent<ExampleProps> = ({ data }: ExampleProps) => {
+export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProps> = ({ data }: ExampleProps) => {
   const [checkedLeafIds, setCheckedLeafIds] = React.useState<string[]>([]);
   const [chosenLeafIds, setChosenLeafIds] = React.useState<string[]>(['beans', 'beef', 'chicken', 'tofu']);
   const [chosenFilter, setChosenFilter] = React.useState<string>('');
@@ -290,8 +290,8 @@ export const ComposableDualListSelectorTree: React.FunctionComponent<ExampleProp
   );
 };
 
-export const ComposableDualListSelectorTreeExample: React.FunctionComponent = () => (
-  <ComposableDualListSelectorTree
+export const DualListSelectorComposableTreeExample: React.FunctionComponent = () => (
+  <DualListSelectorComposableTree
     data={[
       {
         id: 'fruits',
