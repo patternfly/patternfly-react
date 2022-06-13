@@ -320,7 +320,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       (this.props.isGrouped &&
         prevProps.children.some(
           (prevChild, index) =>
-            prevChild.type === 'SelectGroup' &&
+            prevChild.type === SelectGroup &&
             prevChild.props.children &&
             this.props.children[index].props.children &&
             (prevChild.props.children.length !== this.props.children[index].props.children.length ||
