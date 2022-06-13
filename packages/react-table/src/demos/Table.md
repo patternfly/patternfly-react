@@ -2331,6 +2331,8 @@ ComposableTableSortable = () => {
             }
             isPlain
             isGrouped
+            menuAppendTo='parent'
+            isFlipEnabled
           />
         </ToolbarItem>
         <OverflowMenu breakpoint="lg">
@@ -2351,6 +2353,8 @@ ComposableTableSortable = () => {
               toggle={<KebabToggle onToggle={() => setIsKebabDropdownOpen(!isKebabDropdownOpen)} />}
               isOpen={isKebabDropdownOpen}
               dropdownItems={kebabDropdownItems}
+              isFlipEnabled
+              menuAppendTo="parent"
             />
           </OverflowMenuControl>
         </OverflowMenu>

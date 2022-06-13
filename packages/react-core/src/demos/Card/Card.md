@@ -518,6 +518,8 @@ class CardViewBasic extends React.Component {
                 isOpen={isLowerToolbarKebabDropdownOpen}
                 isPlain
                 dropdownItems={toolbarKebabDropdownItems}
+                isFlipEnabled
+                menuAppendTo="parent"
               />
             </OverflowMenuControl>
           </OverflowMenu>
