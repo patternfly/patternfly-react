@@ -37,6 +37,10 @@ class BasicNumberInput extends React.Component {
         value: this.state.value + 1
       });
     };
+
+    this.onBlur = (e) => {
+      e.target.value = Number(e.target.value).toString();
+    }
   }
 
   render() {
@@ -47,6 +51,7 @@ class BasicNumberInput extends React.Component {
         onMinus={this.onMinus}
         onChange={this.onChange}
         onPlus={this.onPlus}
+        onBlur={this.onBlur}
         inputName="input"
         inputAriaLabel="number input"
         minusBtnAriaLabel="minus"
@@ -107,6 +112,10 @@ class UnitNumberInput extends React.Component {
         value2: (Number(this.state.value2) + 0.01).toFixed(2)
       });
     };
+
+    this.onBlur = (e) => {
+      e.target.value = Number(e.target.value).toString();
+    }
   }
 
   render() {
@@ -118,6 +127,7 @@ class UnitNumberInput extends React.Component {
           onMinus={this.onMinus1}
           onChange={this.onChange1}
           onPlus={this.onPlus1}
+          onBlur={this.onBlur}
           inputName="input 1"
           inputAriaLabel="number input 1"
           minusBtnAriaLabel="minus 1"
@@ -188,6 +198,10 @@ class UnitThresholdNumberInput extends React.Component {
         value: this.normalizeBetween(this.state.value + 1, this.minValue, this.maxValue)
       });
     };
+
+    this.onBlur = (e) => {
+      e.target.value = Number(e.target.value).toString();
+    }
   }
 
   render() {
@@ -204,6 +218,7 @@ class UnitThresholdNumberInput extends React.Component {
           onMinus={this.onMinus}
           onChange={this.onChange}
           onPlus={this.onPlus}
+          onBlur={this.onBlur}
           inputName="input"
           inputAriaLabel="number input"
           minusBtnAriaLabel="minus"
@@ -246,6 +261,10 @@ class DisabledNumberInput extends React.Component {
         value: this.state.value + 1
       });
     };
+
+    this.onBlur = (e) => {
+      e.target.value = Number(e.target.value).toString();
+    }
   }
 
   render() {
@@ -261,6 +280,7 @@ class DisabledNumberInput extends React.Component {
         onMinus={this.onMinus}
         onChange={this.onChange}
         onPlus={this.onPlus}
+        onBlur={this.onBlur}
         inputName="input"
         inputAriaLabel="number input"
         minusBtnAriaLabel="minus"
@@ -306,6 +326,10 @@ class NumberInputSizes extends React.Component {
         [`${inputName}Value`]: this.state[`${inputName}Value`] + 1
       });
     };
+
+    this.onBlur = (e) => {
+      e.target.value = Number(e.target.value).toString();
+    }
   }
 
   render() {
@@ -318,6 +342,7 @@ class NumberInputSizes extends React.Component {
           onMinus={this.onMinus}
           onChange={this.onChange}
           onPlus={this.onPlus}
+          onBlur={this.onBlur}
           inputName="input1"
           inputAriaLabel="number input 1"
           minusBtnAriaLabel="input 2 minus"
@@ -331,6 +356,7 @@ class NumberInputSizes extends React.Component {
           onMinus={this.onMinus}
           onChange={this.onChange}
           onPlus={this.onPlus}
+          onBlur={this.onBlur}
           inputName="input2"
           inputAriaLabel="number input 2"
           minusBtnAriaLabel="input 2 minus"
@@ -344,6 +370,7 @@ class NumberInputSizes extends React.Component {
           onMinus={this.onMinus}
           onChange={this.onChange}
           onPlus={this.onPlus}
+          onBlur={this.onBlur}
           inputName="input3"
           inputAriaLabel="number input 3"
           minusBtnAriaLabel="input 3 minus"
@@ -357,6 +384,7 @@ class NumberInputSizes extends React.Component {
           onMinus={this.onMinus}
           onChange={this.onChange}
           onPlus={this.onPlus}
+          onBlur={this.onBlur}
           inputName="input4"
           inputAriaLabel="number input 4"
           minusBtnAriaLabel="input 4 minus"
@@ -392,6 +420,10 @@ class CustomStepNumberInput extends React.Component {
         value: Number(event.target.value)
       });
     };
+
+    this.onBlur = (e) => {
+      e.target.value = Number(e.target.value).toString();
+    }
   }
 
   render() {
@@ -402,6 +434,7 @@ class CustomStepNumberInput extends React.Component {
         onMinus={this.stepper(-3)}
         onChange={this.onChange}
         onPlus={this.stepper(3)}
+        onBlur={this.onBlur}
         inputName="input"
         inputAriaLabel="number input"
         minusBtnAriaLabel="minus"
@@ -455,6 +488,7 @@ class CustomStepNumberInput extends React.Component {
 
     this.onBlur = event => {
       const newValue = isNaN(event.target.value) ? 0 : Number(event.target.value);
+      event.target.value = Number(event.target.value).toString();
       this.setState({
         value: newValue > this.maxValue ? this.maxValue : newValue < this.minValue ? this.minValue : newValue
       });
