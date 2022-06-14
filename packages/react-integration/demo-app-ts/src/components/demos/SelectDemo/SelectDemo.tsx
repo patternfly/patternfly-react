@@ -10,7 +10,8 @@ import {
   Checkbox,
   SelectDirection,
   Form,
-  Divider
+  Divider,
+  SelectGroup
 } from '@patternfly/react-core';
 import React, { Component } from 'react';
 import CartArrowDownIcon from '@patternfly/react-icons/dist/esm/icons/cart-arrow-down-icon';
@@ -951,16 +952,21 @@ export class SelectDemo extends Component<SelectDemoState> {
             isInputValuePersisted={typeaheadInputValuePersisted}
             createText="Create item"
             noResultsFoundText="Item not found"
+            isGrouped
           >
-            {typeaheadOptions.map((option, index) => (
-              <SelectOption
-                isDisabled={index === 0 ? this.state.optionisDisabled : option.disabled}
-                key={index}
-                value={option.value}
-                id={option.value}
-                itemCount={option.itemCount}
-              />
-            ))}
+            {[
+              <SelectGroup key={0}>
+                {typeaheadOptions.map((option, index) => (
+                  <SelectOption
+                    isDisabled={index === 0 ? this.state.optionisDisabled : option.disabled}
+                    key={index}
+                    value={option.value}
+                    id={option.value}
+                    itemCount={option.itemCount}
+                  />
+                ))}
+              </SelectGroup>
+            ]}
           </Select>
         </div>
         <Checkbox
