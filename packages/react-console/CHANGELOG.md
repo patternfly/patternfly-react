@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.72.17 (2022-06-14)
+
+**Note:** Version bump only for package @patternfly/react-console
+
+
+
+
+
 ## 4.72.16 (2022-06-13)
 
 **Note:** Version bump only for package @patternfly/react-console
