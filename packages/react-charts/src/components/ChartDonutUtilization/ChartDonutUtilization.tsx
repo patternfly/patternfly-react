@@ -21,7 +21,7 @@ import { SliceProps, VictoryPie, VictorySliceLabelPositionType } from 'victory-p
 import { ChartContainer } from '../ChartContainer';
 import { ChartDonut, ChartDonutProps } from '../ChartDonut';
 import { ChartCommonStyles, ChartThemeDefinition, ChartDonutUtilizationStyles } from '../ChartTheme';
-import { getDefaultColorScale, getDefaultPatternScale, getDonutUtilizationTheme, getPatternId } from '../ChartUtils';
+import { getDonutUtilizationTheme } from '../ChartUtils';
 
 export enum ChartDonutUtilizationLabelPosition {
   centroid = 'centroid',
@@ -244,12 +244,19 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   groupComponent?: React.ReactElement<any>;
   /**
-   * Flag indicating parent isPatternDefs prop is in use
-   * Do not use
-   * @hide
-   * @private
+   * The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart.
+   * SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected
+   * color theme or custom color scale. Those generated patterns are applied in a specific order (via a URL), similar
+   * to the color theme ordering defined by PatternFly. If the multi-color theme was in use; for example, colorized
+   * patterns would be displayed in that same order. Create custom patterns via the patternScale prop.
+   *
+   * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
+   *
+   * @example hasPatterns={ true }
+   * @example hasPatterns={[ true, true, false ]}
+   * @beta
    */
-  hasPatternDefs?: boolean;
+  hasPatterns?: boolean | boolean[];
   /**
    * Specifies the height the svg viewBox of the chart container. This value should be given as a
    * number of pixels.
@@ -275,10 +282,14 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   invert?: boolean;
   /**
-   * Generate default pattern defs and populate patternScale
-   * @beta
+   * This will show the static, unused portion of the donut utilization chart.
+   *
+   * Note: This prop should not be set manually.
+   *
+   * @private
+   * @hide
    */
-  isPatternDefs?: boolean;
+  isStatic?: boolean;
   /**
    * Allows legend items to wrap. A value of true allows the legend to wrap onto the next line
    * if its container is not wide enough.
@@ -390,25 +401,25 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   padding?: PaddingProps;
   /**
-   * The optional ID to prefix pattern defs
-   *
-   * @example patternId="pattern"
-   * @beta
-   */
-  patternId?: string;
-  /**
-   * The patternScale prop is an optional prop that defines a pattern to be applied to the children, where applicable.
-   * This prop should be given as an array of CSS colors, or as a string corresponding to a URL. Patterns will be
-   * assigned to children by index, unless they are explicitly specified in styles. Patterns will repeat when there are
-   * more children than patterns in the provided patternScale. Functionality may be overridden via the `style.data.fill`
-   * property.
+   * The patternScale prop is an optional prop that defines patterns to apply, where applicable. This prop should be
+   * given as a string array of pattern URLs. Patterns will be assigned to children by index and will repeat when there
+   * are more children than patterns in the provided patternScale. Use null to omit the pattern for a given index.
    *
    * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
    *
-   * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
+   * @example patternScale={[ 'url("#pattern1")', 'url("#pattern2")', null ]}
    * @beta
    */
   patternScale?: string[];
+  /**
+   * Moves the given pattern index to top of scale, used to sync patterns with ChartDonutThreshold
+   *
+   * Note: This prop should not be set manually.
+   *
+   * @private
+   * @hide
+   */
+  patternUnshiftIndex?: number;
   /**
    * Specifies the radius of the chart. If this property is not provided it is computed
    * from width, height, and padding props
@@ -421,23 +432,10 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };
-  /**
-   * This will show the static, unused portion of the donut utilization chart.
-   *
-   * Note: This prop should not be set manually.
-   *
-   * @hide
-   */
-  showStatic?: boolean;
-  /**
-   * This will apply patterns for the static, unused portion of the donut utilization chart.
-   *
-   * @hide
-   */
-  showStaticPattern?: boolean;
   /**
    * Use the sortKey prop to indicate how data should be sorted. This prop
    * is given directly to the lodash sortBy function to be executed on the
@@ -613,20 +611,15 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   colorScale,
   containerComponent = <ChartContainer />,
   data,
-  hasPatternDefs,
   invert = false,
+  isStatic = true,
   legendPosition = ChartCommonStyles.legend.position as ChartDonutUtilizationLegendPosition,
   padding,
-  patternId = getPatternId(),
-  patternScale,
-  showStatic = true,
-  showStaticPattern = false,
   standalone = true,
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
   thresholds,
-  isPatternDefs = false,
   x,
   y,
 
@@ -636,30 +629,11 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   width = theme.pie.width,
   ...rest
 }: ChartDonutUtilizationProps) => {
-  const defaultColorScale = getDefaultColorScale(colorScale, theme.pie.colorScale as string[]);
-  const defaultPatternScale = getDefaultPatternScale({
-    colorScale: defaultColorScale,
-    patternScale,
-    patternId,
-    isPatternDefs
-  });
-
-  // Hide static pattern and handle edge case where parent does not use isPatternDefs
-  const hideStaticPattern = showStatic && !showStaticPattern;
-  const hideThresholdPatterns = !patternScale && hasPatternDefs === false;
-  if (defaultPatternScale && (hideStaticPattern || hideThresholdPatterns)) {
-    for (let i = 0; i < defaultPatternScale.length; i++) {
-      if (i !== 0) {
-        defaultPatternScale[i] = null;
-      }
-    }
-  }
-
   // Returns computed data representing pie chart slices
   const getComputedData = () => {
     const datum = getData();
     const computedData: [{ x?: any; y: any }] = [{ x: datum[0]._x, y: datum[0]._y || 0 }];
-    if (showStatic) {
+    if (isStatic) {
       computedData.push({ y: datum[0]._x ? Math.abs(100 - datum[0]._y) : 100 });
     }
     return computedData;
@@ -692,9 +666,8 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   // Returns theme based on threshold and current value
   const getThresholdTheme = () => {
     const newTheme = { ...theme };
-
-    if (data) {
-      const datum = getData();
+    const datum = getData();
+    if (datum) {
       const donutThresholds = getDonutThresholds();
       const mergeThemeProps = (i: number) => {
         // Merge just the first color of dynamic (blue, green, etc.) with static (gray) for expected colorScale
@@ -734,11 +707,8 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
       key="pf-chart-donut-utilization"
       legendPosition={legendPosition}
       padding={padding}
-      patternId={patternId}
-      patternScale={defaultPatternScale ? defaultPatternScale : undefined}
       standalone={false}
       theme={getThresholdTheme()}
-      isPatternDefs={isPatternDefs}
       width={width}
       {...rest}
     />

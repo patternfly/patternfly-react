@@ -118,7 +118,7 @@ class BulletChart extends React.Component {
           constrainToVisibleArea
           height={250}
           labels={({ datum }) => `${datum.name}: ${datum.y}`}
-          legendAllowWrap={true}
+          legendAllowWrap
           legendPosition="bottom-left"
           maxDomain={{y: 100}}
           padding={{

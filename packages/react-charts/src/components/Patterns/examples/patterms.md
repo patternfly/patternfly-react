@@ -15,8 +15,7 @@ propComponents: [
   'ChartPie',
   'ChartScatter',
   'ChartStack',
-  'ChartThemeColor',
-  'ChartVoronoiContainer',
+  'ChartVoronoiContainer'
 ]
 hideDarkMode: true
 beta: true
@@ -66,8 +65,9 @@ import { ChartPie } from '@patternfly/react-charts';
   <ChartPie
     ariaDesc="Average number of pets"
     ariaTitle="Pie chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+    hasPatterns
     height={230}
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
@@ -79,7 +79,6 @@ import { ChartPie } from '@patternfly/react-charts';
       right: 140, // Adjusted to accommodate legend
       top: 20
     }}
-    isPatternDefs
     width={350}
   />
 </div>
@@ -98,6 +97,7 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiCo
     domainPadding={{ x: [30, 25] }}
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
     legendPosition="bottom"
+    hasPatterns
     height={275}
     padding={{
       bottom: 75, // Adjusted to accommodate legend
@@ -106,7 +106,6 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiCo
       top: 50
     }}
     themeColor={ChartThemeColor.purple}
-    isPatternDefs
     width={450}
   >
     <ChartAxis />
@@ -124,7 +123,7 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiCo
 ### Stack chart
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '250px', width: '600px' }}>
   <Chart
@@ -135,6 +134,7 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
     legendOrientation="vertical"
     legendPosition="right"
+    hasPatterns
     height={250}
     padding={{
       bottom: 50,
@@ -143,7 +143,6 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@
       top: 50
     }}
     themeColor={ChartThemeColor.green}
-    isPatternDefs
     width={600}
   >
     <ChartAxis />
@@ -161,14 +160,15 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@
 ### Donut chart
 ```js
 import React from 'react';
-import { ChartDonut } from '@patternfly/react-charts';
+import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
   <ChartDonut
     ariaDesc="Average number of pets"
     ariaTitle="Donut chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+    hasPatterns
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
@@ -182,7 +182,6 @@ import { ChartDonut } from '@patternfly/react-charts';
     subTitle="Pets"
     title="100"
     themeColor={ChartThemeColor.gold}
-    isPatternDefs
     width={350}
   />
 </div>
@@ -190,18 +189,19 @@ import { ChartDonut } from '@patternfly/react-charts';
 
 ### Donut utilization chart
 
-This demonstrates how to apply a pattern to the static, unused portion of the donut utilization chart.
+This demonstrates how to hide a pattern for the static, unused portion of the donut utilization chart.
 
 ```js
 import React from 'react';
-import { ChartDonutUtilization } from '@patternfly/react-charts';
+import { ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '300px' }}>
   <ChartDonutUtilization 
     ariaDesc="Storage capacity"
     ariaTitle="Donut utilization chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={{ x: 'Storage capacity', y: 45 }}
+    hasPatterns
     height={275}
     labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
     legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
@@ -212,12 +212,10 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
       right: 20,
       top: 20
     }}
-    showStaticPattern
     subTitle="of 100 GBps"
     title="45%"
     themeColor={ChartThemeColor.green}
     thresholds={[{ value: 60 }, { value: 90 }]}
-    isPatternDefs
     width={300}
   />
 </div>
@@ -229,14 +227,15 @@ This demonstrates how to apply patterns to thresholds.
 
 ```js
 import React from 'react';
-import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
+import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '675px' }}>
   <ChartDonutThreshold
     ariaDesc="Storage capacity"
     ariaTitle="Donut utilization chart with static threshold example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
+    hasPatterns
     height={275}
     labels={({ datum }) => datum.x ? datum.x : null}
     padding={{
@@ -246,7 +245,6 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
       top: 20
     }}
     width={675}
-    isPatternDefs
   >
     <ChartDonutUtilization
       data={{ x: 'Storage capacity', y: 45 }}
@@ -256,7 +254,6 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
       subTitle="of 100 GBps"
       title="45%"
       themeColor={ChartThemeColor.orange}
-      isPatternDefs
     />
   </ChartDonutThreshold>
 </div>
@@ -337,11 +334,6 @@ class InteractivePieLegendChart extends React.Component {
       const { hiddenSeries } = this.state; // Skip if already hidden                
       return hiddenSeries.has(index);
     };
-
-    this.isDataAvailable = () => {
-      const { hiddenSeries } = this.state;
-      return hiddenSeries.size !== this.series.length;
-    };
   };
 
   render() {
@@ -349,17 +341,17 @@ class InteractivePieLegendChart extends React.Component {
 
     const data = [];
     this.series.map((s, index) => {
-      data.push(!hiddenSeries.has(index) ? s.datapoints : [{ y: null}]);
+      data.push(!hiddenSeries.has(index) ? s.datapoints : { y: null });
     });
-
+    
     return (
       <div style={{ height: '275px', width: '500px' }}>
         <Chart
           ariaDesc="Average number of pets"
           ariaTitle="Pie chart example"
           events={this.getEvents()}
+          hasPatterns
           height={275}
-          labels={({ datum }) => `${datum.x}: ${datum.y}`}
           legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} />}
           legendPosition="bottom"
           padding={{
@@ -368,15 +360,14 @@ class InteractivePieLegendChart extends React.Component {
             right: 20,
             top: 20
           }}
-          patternId="pattern_a" // Required for interactive legend functionality
           showAxis={false}
           themeColor={ChartThemeColor.multiUnordered}
-          isPatternDefs
           width={500}
         >
           <ChartPie
-            constrainToVisibleArea={true}
+            constrainToVisibleArea
             data={data}
+            labels={({ datum }) => `${datum.x}: ${datum.y}`}
             name="pie"
           />
         </Chart>
@@ -549,6 +540,7 @@ class InteractiveLegendChart extends React.Component {
             ariaTitle="Area chart example"
             containerComponent={container}
             events={this.getEvents()}
+            hasPatterns
             height={225}
             legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} />}
             legendPosition="bottom-left"
@@ -560,7 +552,6 @@ class InteractiveLegendChart extends React.Component {
             }}
             maxDomain={{y: 9}}
             themeColor={ChartThemeColor.multiUnordered}
-            isPatternDefs
             width={width}
           >
             <ChartAxis tickValues={['2015', '2016', '2017', '2018']} />
@@ -597,6 +588,117 @@ class InteractiveLegendChart extends React.Component {
 }
 ```
 
+### Custom pattern visibility
+
+This demonstrates how to omit patterns from pie chart segments.
+
+```js
+import React from 'react';
+import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+
+<div style={{ height: '230px', width: '350px' }}>
+  <ChartPie
+    ariaDesc="Average number of pets"
+    ariaTitle="Pie chart example"
+    constrainToVisibleArea
+    data={[{ x: 'Cats', y: 15 }, { x: 'Dogs', y: 15 }, { x: 'Birds', y: 15 }, { x: 'Fish', y: 25 }, { x: 'Rabbits', y: 30 }]}
+    hasPatterns={[ true, true, false, false, false ]}
+    height={230}
+    labels={({ datum }) => `${datum.x}: ${datum.y}`}
+    legendData={[{ name: 'Cats: 15' }, { name: 'Dogs: 15' }, { name: 'Birds: 15' }, { name: 'Fish: 25' }, { name: 'Rabbits: 30' }]}
+    legendOrientation="vertical"
+    legendPosition="right"
+    padding={{
+      bottom: 20,
+      left: 20,
+      right: 140, // Adjusted to accommodate legend
+      top: 20
+    }}
+    themeColor={ChartThemeColor.multiUnordered}
+    width={350}
+  />
+</div>
+```
+
+### Custom color scale
+
+This demonstrates how to apply a custom color scale to patterns.
+
+```js
+import React from 'react';
+import { ChartPie } from '@patternfly/react-charts';
+import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
+import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
+import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
+
+<div style={{ height: '230px', width: '350px' }}>
+  <ChartPie
+    ariaDesc="Average number of pets"
+    ariaTitle="Pie chart example"
+    colorScale={[chart_color_blue_300.var, chart_color_gold_300.var, chart_color_green_300.var]}
+    constrainToVisibleArea
+    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+    hasPatterns={[ true, true, false ]}
+    height={230}
+    labels={({ datum }) => `${datum.x}: ${datum.y}`}
+    legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
+    legendOrientation="vertical"
+    legendPosition="right"
+    padding={{
+      bottom: 20,
+      left: 20,
+      right: 140, // Adjusted to accommodate legend
+      top: 20
+    }}
+    width={350}
+  />
+</div>
+```
+
+### Custom pattern defs
+
+This demonstrates how to create custom patterns.
+
+```js
+import React from 'react';
+import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
+import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
+
+<div style={{ height: '230px', width: '350px' }}>
+  <svg aria-hidden height="0" width="0" style={{display: 'block'}}>
+    <defs>
+      <pattern id="pattern1" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse" width="10" height="10" x="0" y="0">
+        <path d="M 0 0 L 5 10 L 10 0" stroke={chart_color_blue_300.value} strokeWidth="2" fill="none"></path>
+      </pattern>
+      <pattern id="pattern2" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse" width="10" height="10" x="0" y="0">
+        <path d="M 0 3 L 5 3 L 5 0 M 5 10 L 5 7 L 10 7" stroke={chart_color_green_300.value} strokeWidth="2" fill="none"></path>
+      </pattern>
+    </defs>
+  </svg>
+  <ChartPie
+    ariaDesc="Average number of pets"
+    ariaTitle="Pie chart example"
+    constrainToVisibleArea
+    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+    height={230}
+    labels={({ datum }) => `${datum.x}: ${datum.y}`}
+    legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
+    legendOrientation="vertical"
+    legendPosition="right"
+    padding={{
+      bottom: 20,
+      left: 20,
+      right: 140, // Adjusted to accommodate legend
+      top: 20
+    }}
+    patternScale={[ 'url("#pattern1")', 'url("#pattern2")', null ]}
+    themeColor={ChartThemeColor.multiUnordered}
+    width={350}
+  />
+</div>
+```
+
 ### All patterns
 ```js
 import React from 'react';
@@ -606,7 +708,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
   <ChartPie
     ariaDesc="Average number of pets"
     ariaTitle="Pie chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[
       { x: 'Cats', y: 6 },
       { x: 'Dogs', y: 6 },
@@ -624,6 +726,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
       { x: 'Deer', y: 6 },
       { x: 'Bears', y: 10 }
     ]}
+    hasPatterns
     height={325}
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
     legendData={[
@@ -652,131 +755,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
       top: 20
     }}
     themeColor={ChartThemeColor.multiOrdered}
-    isPatternDefs
     width={600}
-  />
-</div>
-```
-
-### Custom pattern IDs
-
-This demonstrates how to omit patterns from pie chart segments.
-
-The approach uses `isPatternDefs` to generate default pattern defs using the given `patternId` prefix. The `patternScale` property is then used to apply indexed pattern IDs to each pie chart segment. If you want to omit a particular pattern from a pie segment, simply provide `null` instead.
-
-```js
-import React from 'react';
-import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
-
-<div style={{ height: '230px', width: '350px' }}>
-  <ChartPie
-    ariaDesc="Average number of pets"
-    ariaTitle="Pie chart example"
-    constrainToVisibleArea={true}
-    data={[{ x: 'Cats', y: 15 }, { x: 'Dogs', y: 15 }, { x: 'Birds', y: 15 }, { x: 'Fish', y: 25 }, { x: 'Rabbits', y: 30 }]}
-    height={230}
-    labels={({ datum }) => `${datum.x}: ${datum.y}`}
-    legendData={[{ name: 'Cats: 15' }, { name: 'Dogs: 15' }, { name: 'Birds: 15' }, { name: 'Fish: 25' }, { name: 'Rabbits: 30' }]}
-    legendOrientation="vertical"
-    legendPosition="right"
-    padding={{
-      bottom: 20,
-      left: 20,
-      right: 140, // Adjusted to accommodate legend
-      top: 20
-    }}
-    patternId="pattern_b"
-    patternScale={['url("#pattern_b:0")', 'url("#pattern_b:1")', null, null, null]}
-    themeColor={ChartThemeColor.multiUnordered}
-    isPatternDefs
-    width={350}
-  />
-</div>
-```
-
-### Custom color scale
-
-This demonstrates how to apply a custom color scale.
-
-The approach uses `isPatternDefs` to generate default pattern defs using the given `patternId` prefix and custom `colorScale`. The `patternScale` property is then used to apply indexed pattern IDs to each pie chart segment. If you want to omit a particular pattern from a pie segment, simply provide `null` instead.
-
-```js
-import React from 'react';
-import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
-import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
-import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
-import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
-
-<div style={{ height: '230px', width: '350px' }}>
-  <ChartPie
-    ariaDesc="Average number of pets"
-    ariaTitle="Pie chart example"
-    colorScale={[chart_color_blue_300.value, chart_color_gold_300.var, chart_color_green_300.value]}
-    constrainToVisibleArea={true}
-    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-    height={230}
-    labels={({ datum }) => `${datum.x}: ${datum.y}`}
-    legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
-    legendOrientation="vertical"
-    legendPosition="right"
-    padding={{
-      bottom: 20,
-      left: 20,
-      right: 140, // Adjusted to accommodate legend
-      top: 20
-    }}
-    patternId="pattern_c"
-    patternScale={['url("#pattern_c:0")', 'url("#pattern_c:1")', null]}
-    isPatternDefs
-    width={350}
-  />
-</div>
-```
-
-### Custom pattern defs
-
-This demonstrates how to create custom patterns.
-
-The approach uses custom pattern defs. The `patternScale` property is used to apply pattern IDs to each pie chart segment. If you want to omit a particular pattern from a pie segment, simply provide `null` instead.
-
-Note that `isPatternDefs` and `patternId` are not used here.
-
-```js
-import React from 'react';
-import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
-import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
-import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
-
-<div style={{ height: '230px', width: '350px' }}>
-  <svg aria-hidden={true} height="0" width="0" style={{display: 'block'}}>
-    <defs>
-      <pattern id="pattern_d:0" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse" width="10" height="10" x="0" y="0">
-        <path d="M 0 0 L 5 10 L 10 0" stroke={chart_color_blue_300.value} strokeWidth="2" fill="none"></path>
-      </pattern>
-      <pattern id="pattern_d:1" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse" width="10" height="10" x="0" y="0">
-        <path d="M 0 3 L 5 3 L 5 0 M 5 10 L 5 7 L 10 7" stroke={chart_color_green_300.value} strokeWidth="2" fill="none"></path>
-      </pattern>
-    </defs>
-  </svg>
-  <ChartPie
-    ariaDesc="Average number of pets"
-    ariaTitle="Pie chart example"
-    constrainToVisibleArea={true}
-    data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-    height={230}
-    labels={({ datum }) => `${datum.x}: ${datum.y}`}
-    legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
-    legendOrientation="vertical"
-    legendPosition="right"
-    padding={{
-      bottom: 20,
-      left: 20,
-      right: 140, // Adjusted to accommodate legend
-      top: 20
-    }}
-    patternScale={['url("#pattern_d:0")', 'url("#pattern_d:1")', null]}
-    themeColor={ChartThemeColor.multiUnordered}
-    width={350}
   />
 </div>
 ```

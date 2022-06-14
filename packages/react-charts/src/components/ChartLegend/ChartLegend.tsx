@@ -155,15 +155,6 @@ export interface ChartLegendProps extends VictoryLegendProps {
    */
   gutter?: number | { left: number; right: number };
   /**
-   * Specifies the height the svg viewBox of the chart container. This value should be given as a
-   * number of pixels.
-   *
-   * Because Victory renders responsive containers, the width and height props do not determine the width and
-   * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
-   * pixels will depend on the size of the container the chart is rendered into.
-   */
-  height?: number;
-  /**
    * The itemsPerRow prop determines how many items to render in each row
    * of a horizontal legend, or in each column of a vertical legend. This
    * prop should be given as an integer. When this prop is not given,
@@ -202,15 +193,13 @@ export interface ChartLegendProps extends VictoryLegendProps {
    */
   padding?: PaddingProps;
   /**
-   * The patternScale prop is an optional prop that defines a pattern to be applied to the children, where applicable.
-   * This prop should be given as an array of CSS colors, or as a string corresponding to a URL. Patterns will be
-   * assigned to children by index, unless they are explicitly specified in styles. Patterns will repeat when there are
-   * more children than patterns in the provided patternScale. Functionality may be overridden via the `data.symbol.fill`
-   * property.
+   * The patternScale prop is an optional prop that defines patterns to apply, where applicable. This prop should be
+   * given as a string array of pattern URLs. Patterns will be assigned to children by index and will repeat when there
+   * are more children than patterns in the provided patternScale. Use null to omit the pattern for a given index.
    *
    * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
    *
-   * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
+   * @example patternScale={[ 'url("#pattern1")', 'url("#pattern2")', null ]}
    * @beta
    */
   patternScale?: string[];
@@ -238,6 +227,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };
@@ -360,9 +350,9 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
           theme && theme.legend && theme.legend.colorScale
             ? theme.legend.colorScale[index % theme.legend.colorScale.length]
             : undefined;
-        const pattern = patternScale[index % patternScale.length];
         const color = colorScale ? colorScale[index % colorScale.length] : themeColor; // Sync color scale
-        return pattern && pattern !== null ? pattern : color;
+        const pattern = patternScale[index % patternScale.length];
+        return pattern ? pattern : color;
       },
       ..._style.data
     };

@@ -47,7 +47,7 @@ import { ChartDonut } from '@patternfly/react-charts';
   <ChartDonut
     ariaDesc="Average number of pets"
     ariaTitle="Donut chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
@@ -146,7 +146,7 @@ class BulletChart extends React.Component {
             constrainToVisibleArea
             height={250}
             labels={({ datum }) => `${datum.name}: ${datum.y}`}
-            legendAllowWrap={true}
+            legendAllowWrap
             legendPosition="bottom-left"
             maxDomain={{y: 100}}
             padding={{
@@ -532,11 +532,6 @@ class InteractivePieLegendChart extends React.Component {
       const { hiddenSeries } = this.state; // Skip if already hidden                
       return hiddenSeries.has(index);
     };
-
-    this.isDataAvailable = () => {
-      const { hiddenSeries } = this.state;
-      return hiddenSeries.size !== this.series.length;
-    };
   };
 
   render() {
@@ -544,7 +539,7 @@ class InteractivePieLegendChart extends React.Component {
 
     const data = [];
     this.series.map((s, index) => {
-      data.push(!hiddenSeries.has(index) ? s.datapoints : [{ y: null}]);
+      data.push(!hiddenSeries.has(index) ? s.datapoints : { y: null });
     });
 
     return (
@@ -554,7 +549,6 @@ class InteractivePieLegendChart extends React.Component {
           ariaTitle="Pie chart example"
           events={this.getEvents()}
           height={275}
-          labels={({ datum }) => `${datum.x}: ${datum.y}`}
           legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} />}
           legendPosition="bottom"
           padding={{
@@ -568,8 +562,9 @@ class InteractivePieLegendChart extends React.Component {
           width={300}
         >
           <ChartPie
-            constrainToVisibleArea={true}
+            constrainToVisibleArea
             data={data}
+            labels={({ datum }) => `${datum.x}: ${datum.y}`}
             name="pie"
           />
         </Chart>
@@ -614,7 +609,7 @@ class TooltipPieChart extends React.Component {
         <ChartPie
           ariaDesc="Average number of pets"
           ariaTitle="Pie chart example"
-          constrainToVisibleArea={true}
+          constrainToVisibleArea
           data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
           height={275}
           labels={({ datum }) => `${datum.x}: ${datum.y}`}
@@ -782,7 +777,7 @@ class LegendLayoutPieChart extends React.Component {
         <ChartDonut
           ariaDesc="Average number of pets"
           ariaTitle="Pie chart example"
-          constrainToVisibleArea={true}
+          constrainToVisibleArea
           data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
           height={230}
           labels={({ datum }) => `${datum.x}: ${datum.y}`}

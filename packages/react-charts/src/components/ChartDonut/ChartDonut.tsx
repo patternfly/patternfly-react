@@ -233,6 +233,20 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   groupComponent?: React.ReactElement<any>;
   /**
+   * The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart.
+   * SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected
+   * color theme or custom color scale. Those generated patterns are applied in a specific order (via a URL), similar
+   * to the color theme ordering defined by PatternFly. If the multi-color theme was in use; for example, colorized
+   * patterns would be displayed in that same order. Create custom patterns via the patternScale prop.
+   *
+   * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
+   *
+   * @example hasPatterns={ true }
+   * @example hasPatterns={[ true, true, false ]}
+   * @beta
+   */
+  hasPatterns?: boolean | boolean[];
+  /**
    * Specifies the height the svg viewBox of the chart container. This value should be given as a
    * number of pixels.
    *
@@ -256,11 +270,6 @@ export interface ChartDonutProps extends ChartPieProps {
    * @propType number | Function
    */
   innerRadius?: NumberOrCallback;
-  /**
-   * Generate default pattern defs and populate patternScale
-   * @beta
-   */
-  isPatternDefs?: boolean;
   /**
    * The labelComponent prop takes in an entire label component which will be used
    * to create a label for the area. The new element created from the passed labelComponent
@@ -362,22 +371,13 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   padAngle?: NumberOrCallback;
   /**
-   * The optional ID to prefix pattern defs
-   *
-   * @example patternId="pattern"
-   * @beta
-   */
-  patternId?: string;
-  /**
-   * The patternScale prop is an optional prop that defines a pattern to be applied to the children, where applicable.
-   * This prop should be given as an array of CSS colors, or as a string corresponding to a URL. Patterns will be
-   * assigned to children by index, unless they are explicitly specified in styles. Patterns will repeat when there are
-   * more children than patterns in the provided patternScale. Functionality may be overridden via the `style.data.fill`
-   * property.
+   * The patternScale prop is an optional prop that defines patterns to apply, where applicable. This prop should be
+   * given as a string array of pattern URLs. Patterns will be assigned to children by index and will repeat when there
+   * are more children than patterns in the provided patternScale. Use null to omit the pattern for a given index.
    *
    * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
    *
-   * @example patternScale={['url("#pattern:0")', 'url("#pattern:1")', 'url("#pattern:2")']}
+   * @example patternScale={[ 'url("#pattern1")', 'url("#pattern2")', null ]}
    * @beta
    */
   patternScale?: string[];
@@ -402,6 +402,7 @@ export interface ChartDonutProps extends ChartPieProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };

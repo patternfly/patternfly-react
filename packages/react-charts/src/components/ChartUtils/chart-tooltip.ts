@@ -238,12 +238,12 @@ export const getLegendTooltipVisibleData = ({
           theme && theme.legend && theme.legend.colorScale
             ? theme.legend.colorScale[i % theme.legend.colorScale.length]
             : undefined;
-        const pattern = patternScale ? patternScale[i % patternScale.length] : undefined;
         const color = colorScale ? colorScale[i % colorScale.length] : themeColor; // Sync color scale
+        const pattern = patternScale ? patternScale[i % patternScale.length] : undefined;
         result.push({
           name: textAsLegendData ? _text[index] : data.name,
           symbol: {
-            fill: pattern && pattern !== null ? pattern : color,
+            fill: pattern ? pattern : color,
             ...data.symbol
           }
         });

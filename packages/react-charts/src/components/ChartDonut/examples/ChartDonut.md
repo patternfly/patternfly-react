@@ -28,7 +28,7 @@ import { ChartDonut } from '@patternfly/react-charts';
   <ChartDonut
     ariaDesc="Average number of pets"
     ariaTitle="Donut chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
     subTitle="Pets"
@@ -46,7 +46,7 @@ import { ChartDonut } from '@patternfly/react-charts';
   <ChartDonut
     ariaDesc="Average number of pets"
     ariaTitle="Donut chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
@@ -74,7 +74,7 @@ import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
   <ChartDonut
     ariaDesc="Average number of pets"
     ariaTitle="Donut chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
@@ -103,7 +103,7 @@ import { ChartDonut } from '@patternfly/react-charts';
   <ChartDonut
     ariaDesc="Average number of pets"
     ariaTitle="Donut chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     donutOrientation="top"
     height={275}
@@ -133,7 +133,7 @@ import { ChartDonut } from '@patternfly/react-charts';
   <ChartDonut
     ariaDesc="Average number of pets"
     ariaTitle="Donut chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={150}
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
@@ -153,7 +153,7 @@ import { ChartDonut } from '@patternfly/react-charts';
   <ChartDonut
     ariaDesc="Average number of pets"
     ariaTitle="Donut chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={150}
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
@@ -182,7 +182,7 @@ import { ChartDonut } from '@patternfly/react-charts';
   <ChartDonut
     ariaDesc="Average number of pets"
     ariaTitle="Donut chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={165}
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
@@ -212,7 +212,7 @@ import { ChartDonut } from '@patternfly/react-charts';
   <ChartDonut
     ariaDesc="Average number of pets"
     ariaTitle="Donut chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={200}
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
