@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { TextInput } from '../TextInput/TextInput';
 import { Button } from '../Button/Button';
 import { Select, SelectOption } from '../Select';
-import ArrowLeftIcon from '@patternfly/react-icons/dist/esm/icons/arrow-left-icon';
-import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
+import { InputGroup } from '../InputGroup';
+import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CalendarMonth/calendar-month';
 import { getUniqueId } from '../../helpers/util';
@@ -63,7 +64,7 @@ const buildCalendar = (year: number, month: number, weekStart: number, validator
   const defaultDate = new Date(year, month);
   const firstDayOfWeek = new Date(defaultDate);
   firstDayOfWeek.setDate(firstDayOfWeek.getDate() - firstDayOfWeek.getDay() + weekStart);
-  // We will always show 6 weeks like google calendar
+  // We will show a maximum of 6 weeks like Google calendar
   // Assume we just want the numbers for now...
   const calendarWeeks = [];
   for (let i = 0; i < 6; i++) {
@@ -77,6 +78,9 @@ const buildCalendar = (year: number, month: number, weekStart: number, validator
       firstDayOfWeek.setDate(firstDayOfWeek.getDate() + 1);
     }
     calendarWeeks.push(week);
+    if (firstDayOfWeek.getMonth() !== defaultDate.getMonth()) {
+      break;
+    }
   }
 
   return calendarWeeks;
@@ -204,62 +208,64 @@ export const CalendarMonth = ({
       <div className={styles.calendarMonthHeader}>
         <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.prevMonth)}>
           <Button variant="plain" aria-label={prevMonthAriaLabel} onClick={() => onMonthClick(prevMonth)}>
-            <ArrowLeftIcon aria-hidden={true} />
+            <AngleLeftIcon aria-hidden={true} />
           </Button>
         </div>
-        <div className={styles.calendarMonthHeaderMonth}>
-          <span id={hiddenMonthId} hidden>
-            Month
-          </span>
-          <Select
-            // Max width with "September"
-            width="140px"
-            aria-labelledby={hiddenMonthId}
-            isOpen={isSelectOpen}
-            onToggle={() => {
-              setIsSelectOpen(!isSelectOpen);
-              onSelectToggle(!isSelectOpen);
-            }}
-            onSelect={(_ev, monthNum) => {
-              // When we put CalendarMonth in a Popover we want the Popover's onDocumentClick
-              // to see the SelectOption as a child so it doesn't close the Popover.
-              setTimeout(() => {
-                setIsSelectOpen(false);
-                onSelectToggle(false);
+        <InputGroup>
+          <div className={styles.calendarMonthHeaderMonth}>
+            <span id={hiddenMonthId} hidden>
+              Month
+            </span>
+            <Select
+              // Max width with "September"
+              width="140px"
+              aria-labelledby={hiddenMonthId}
+              isOpen={isSelectOpen}
+              onToggle={() => {
+                setIsSelectOpen(!isSelectOpen);
+                onSelectToggle(!isSelectOpen);
+              }}
+              onSelect={(_ev, monthNum) => {
+                // When we put CalendarMonth in a Popover we want the Popover's onDocumentClick
+                // to see the SelectOption as a child so it doesn't close the Popover.
+                setTimeout(() => {
+                  setIsSelectOpen(false);
+                  onSelectToggle(false);
+                  const newDate = new Date(focusedDate);
+                  newDate.setMonth(Number(monthNum as string));
+                  setFocusedDate(newDate);
+                  setHoveredDate(newDate);
+                  setShouldFocus(false);
+                }, 0);
+              }}
+              variant="single"
+              selections={monthFormatted}
+            >
+              {longMonths.map((longMonth, index) => (
+                <SelectOption key={index} value={index} isSelected={longMonth === monthFormatted}>
+                  {longMonth}
+                </SelectOption>
+              ))}
+            </Select>
+          </div>
+          <div className={styles.calendarMonthHeaderYear}>
+            <TextInput
+              aria-label={yearInputAriaLabel}
+              type="number"
+              value={yearFormatted}
+              onChange={year => {
                 const newDate = new Date(focusedDate);
-                newDate.setMonth(Number(monthNum as string));
+                newDate.setFullYear(+year);
                 setFocusedDate(newDate);
                 setHoveredDate(newDate);
                 setShouldFocus(false);
-              }, 0);
-            }}
-            variant="single"
-            selections={monthFormatted}
-          >
-            {longMonths.map((longMonth, index) => (
-              <SelectOption key={index} value={index} isSelected={longMonth === monthFormatted}>
-                {longMonth}
-              </SelectOption>
-            ))}
-          </Select>
-        </div>
-        <div className={styles.calendarMonthHeaderYear}>
-          <TextInput
-            aria-label={yearInputAriaLabel}
-            type="number"
-            value={yearFormatted}
-            onChange={year => {
-              const newDate = new Date(focusedDate);
-              newDate.setFullYear(+year);
-              setFocusedDate(newDate);
-              setHoveredDate(newDate);
-              setShouldFocus(false);
-            }}
-          />
-        </div>
+              }}
+            />
+          </div>
+        </InputGroup>
         <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.nextMonth)}>
           <Button variant="plain" aria-label={nextMonthAriaLabel} onClick={() => onMonthClick(nextMonth)}>
-            <ArrowRightIcon aria-hidden={true} />
+            <AngleRightIcon aria-hidden={true} />
           </Button>
         </div>
       </div>
