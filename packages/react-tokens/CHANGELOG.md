@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.74.0 (2022-06-14)
+
+
+### Features
+
+* **Form:** add functionality for form group roles ([#7516](https://github.com/patternfly/patternfly-react/issues/7516)) ([4ff2f54](https://github.com/patternfly/patternfly-react/commit/4ff2f54ce21363e9c40c47517f20b8fc5e0cb401))
+
+
+
+
+
 ## 4.73.17 (2022-06-14)
 
 **Note:** Version bump only for package @patternfly/react-tokens
