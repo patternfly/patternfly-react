@@ -113,8 +113,12 @@ class UnitNumberInput extends React.Component {
       });
     };
 
-    this.onBlur = (e) => {
+    this.onBlur1 = (e) => {
       e.target.value = Number(e.target.value).toString();
+    }
+
+    this.onBlur2 = (e) => {
+      e.target.value = Number(e.target.value).toFixed(2).toString();
     }
   }
 
@@ -127,7 +131,7 @@ class UnitNumberInput extends React.Component {
           onMinus={this.onMinus1}
           onChange={this.onChange1}
           onPlus={this.onPlus1}
-          onBlur={this.onBlur}
+          onBlur={this.onBlur1}
           inputName="input 1"
           inputAriaLabel="number input 1"
           minusBtnAriaLabel="minus 1"
@@ -141,6 +145,7 @@ class UnitNumberInput extends React.Component {
           onMinus={this.onMinus2}
           onChange={this.onChange2}
           onPlus={this.onPlus2}
+          onBlur={this.onBlur2}
           inputName="input 2"
           inputAriaLabel="number input 2"
           minusBtnAriaLabel="minus 0.01"
