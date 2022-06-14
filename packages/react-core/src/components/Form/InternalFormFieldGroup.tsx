@@ -42,6 +42,8 @@ export const InternalFormFieldGroup: React.FunctionComponent<InternalFormFieldGr
   return (
     <div
       className={css(styles.formFieldGroup, isExpanded && isExpandable && styles.modifiers.expanded, className)}
+      role="group"
+      {...(headerTitleText && { 'aria-labelledby': `${header.props.titleText.id}` })}
       {...props}
     >
       {isExpandable && (

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { ValidatedOptions } from '../../../helpers/constants';
 import { FormGroup } from '../FormGroup';
@@ -202,5 +203,93 @@ describe('FormGroup', () => {
       </FormGroup>
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should render without group or radiogroup role when role is not passed in', () => {
+    render(
+      <FormGroup label="label" fieldId="no-group-role">
+        <input />
+      </FormGroup>
+    );
+
+    expect(screen.queryByRole('group')).not.toBeInTheDocument();
+    expect(screen.queryByRole('radiogroup')).not.toBeInTheDocument();
+  });
+
+  test('input should receive focus when clicking text label', () => {
+    render(
+      <FormGroup label="label" fieldId="native-label-element">
+        <input id="native-label-element" />
+      </FormGroup>
+    );
+
+    const labelElement = screen.getByText('label');
+    const input = screen.getByRole('textbox');
+
+    userEvent.click(labelElement);
+    expect(input).toHaveFocus();
+  });
+
+  describe('With multiple inputs per group', () => {
+    test('inputs should not receive focus when clicking text label', () => {
+      render(
+        <FormGroup label="label" fieldId="span-label-element" role="group">
+          <input id="span-label-element" />
+          <input />
+        </FormGroup>
+      );
+
+      const labelElement = screen.getByText('label');
+      const inputs = screen.getAllByRole('textbox');
+
+      userEvent.click(labelElement);
+      inputs.forEach(input => {
+        expect(input).not.toHaveFocus();
+      });
+    });
+
+    test('should render with group role', () => {
+      render(
+        <FormGroup label="label" fieldId="group-role" role="group">
+          <input />
+          <input />
+        </FormGroup>
+      );
+
+      expect(screen.getByRole('group')).toBeInTheDocument();
+    });
+
+    test('should render with radiogroup role', () => {
+      render(
+        <FormGroup label="label" fieldId="radiogroup-role" role="radiogroup">
+          <input />
+          <input />
+        </FormGroup>
+      );
+
+      expect(screen.getByRole('radiogroup')).toBeInTheDocument();
+    });
+
+    test('should have accessible name when group role is passed in', () => {
+      render(
+        <FormGroup label="label" fieldId="accessible-name" role="group">
+          <input />
+          <input />
+        </FormGroup>
+      );
+
+      expect(screen.getByRole('group')).toHaveAccessibleName('label');
+    });
+
+    test('should have accessible name when radiogroup role is passed in', () => {
+      render(
+        <FormGroup label="label" fieldId="accessible-name" role="radiogroup">
+          <input />
+          <input />
+        </FormGroup>
+      );
+
+      expect(screen.getByRole('radiogroup')).toHaveAccessibleName('label');
+    });
   });
 });

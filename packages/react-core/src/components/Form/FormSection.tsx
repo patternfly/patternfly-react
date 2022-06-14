@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
+import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
 export interface FormSectionProps extends Omit<React.HTMLProps<HTMLDivElement>, 'title'> {
   /** Content rendered inside the section */
@@ -20,9 +21,22 @@ export const FormSection: React.FunctionComponent<FormSectionProps> = ({
   titleElement: TitleElement = 'div',
   ...props
 }: FormSectionProps) => (
-  <section {...props} className={css(styles.formSection, className)}>
-    {title && <TitleElement className={css(styles.formSectionTitle, className)}>{title}</TitleElement>}
-    {children}
-  </section>
+  <GenerateId prefix="pf-form-section-title">
+    {sectionId => (
+      <section
+        className={css(styles.formSection, className)}
+        role="group"
+        {...(title && { 'aria-labelledby': sectionId })}
+        {...props}
+      >
+        {title && (
+          <TitleElement id={sectionId} className={css(styles.formSectionTitle, className)}>
+            {title}
+          </TitleElement>
+        )}
+        {children}
+      </section>
+    )}
+  </GenerateId>
 );
 FormSection.displayName = 'FormSection';

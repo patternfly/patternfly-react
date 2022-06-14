@@ -44,7 +44,7 @@ import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 
 ```js
 import React from 'react';
-import { Form, FormGroup, TextInput, Checkbox, Popover, ActionGroup, Button } from '@patternfly/react-core';
+import { Form, FormGroup, TextInput, Checkbox, Popover, ActionGroup, Button, Radio } from '@patternfly/react-core';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 class SimpleForm extends React.Component {
@@ -147,10 +147,15 @@ class SimpleForm extends React.Component {
             onChange={this.handleTextInputChange3}
           />
         </FormGroup>
-        <FormGroup isInline fieldId="simple-form-checkbox-group" label="How can we contact you?" isRequired>
+        <FormGroup role="group" isInline fieldId="basic-form-checkbox-group" label="How can we contact you?">
           <Checkbox label="Email" aria-label="Email" id="inlinecheck01" />
           <Checkbox label="Phone" aria-label="Phone" id="inlinecheck02" />
-          <Checkbox label="Please don't contact me." aria-label="Please don't contact me." id="inlinecheck03" />
+          <Checkbox label="Mail" aria-label="Mail" id="inlinecheck03" />
+        </FormGroup>
+        <FormGroup role="radiogroup" isInline fieldId="simple-form-radio-group" label="Time zone">
+          <Radio name="basic-inline-radio" label="Eastern" id="basic-inline-radio-01" />
+          <Radio name="basic-inline-radio" label="Central" id="basic-inline-radio-02" />
+          <Radio name="basic-inline-radio" label="Pacific" id="basic-inline-radio-03" />
         </FormGroup>
         <FormGroup label="Additional note" fieldId="simple-form-note-01">
           <TextInput isDisabled type="text" id="simple-form-note-01" name="simple-form-number" value="disabled" />
@@ -186,7 +191,8 @@ import {
   FormSelectOption,
   Checkbox,
   ActionGroup,
-  Button
+  Button,
+  Radio
 } from '@patternfly/react-core';
 
 class HorizontalForm extends React.Component {
@@ -226,7 +232,12 @@ class HorizontalForm extends React.Component {
 
     return (
       <Form isHorizontal>
-        <FormGroup label="Full name" isRequired fieldId="horizontal-form-name" helperText="Include your middle name if you have one.">
+        <FormGroup
+          label="Full name"
+          isRequired
+          fieldId="horizontal-form-name"
+          helperText="Include your middle name if you have one."
+        >
           <TextInput
             value={value1}
             isRequired
@@ -268,10 +279,21 @@ class HorizontalForm extends React.Component {
             id="horizontal-form-exp"
           />
         </FormGroup>
-        <FormGroup label="How can we contact you?" isRequired isStack hasNoPaddingTop>
+        <FormGroup
+          label="How can we contact you?"
+          isStack
+          hasNoPaddingTop
+          role="group"
+          fieldId="horizontal-form-checkbox-group"
+        >
           <Checkbox label="Email" id="alt-form-checkbox-1" name="alt-form-checkbox-1" />
           <Checkbox label="Phone" id="alt-form-checkbox-2" name="alt-form-checkbox-2" />
-          <Checkbox label="Please don't contact me." id="alt-form-checkbox-3" name="alt-form-checkbox-3" />
+          <Checkbox label="Mail" id="alt-form-checkbox-3" name="alt-form-checkbox-3" />
+        </FormGroup>
+        <FormGroup role="radiogroup" isStack hasNoPaddingTop fieldId="horizontal-form-radio-group" label="Time zone">
+          <Radio name="horizontal-inline-radio" label="Eastern" id="horizontal-inline-radio-01" />
+          <Radio name="horizontal-inline-radio" label="Central" id="horizontal-inline-radio-02" />
+          <Radio name="horizontal-inline-radio" label="Pacific" id="horizontal-inline-radio-03" />
         </FormGroup>
         <ActionGroup>
           <Button variant="primary">Submit</Button>
@@ -287,7 +309,7 @@ class HorizontalForm extends React.Component {
 
 ```js
 import React from 'react';
-import { Form, FormGroup, TextInput, Checkbox, Popover, ActionGroup, Button } from '@patternfly/react-core';
+import { Form, FormGroup, TextInput, Checkbox, Popover, ActionGroup, Button, Radio } from '@patternfly/react-core';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 class SimpleForm extends React.Component {
@@ -390,10 +412,15 @@ class SimpleForm extends React.Component {
             onChange={this.handleTextInputChange3}
           />
         </FormGroup>
-        <FormGroup isInline label="How can we contact you?" isRequired>
+        <FormGroup fieldId="limit-width-form-checkbox-group" role="group" isInline label="How can we contact you?">
           <Checkbox label="Email" aria-label="Email" id="inlinecheck04" />
           <Checkbox label="Phone" aria-label="Phone" id="inlinecheck05" />
-          <Checkbox label="Please don't contact me." aria-label="Please don't contact me." id="inlinecheck06" />
+          <Checkbox label="Mail" aria-label="Mail" id="inlinecheck06" />
+        </FormGroup>
+        <FormGroup role="radiogroup" isInline fieldId="limit-width-form-radio-group" label="Time zone">
+          <Radio name="limit-width-radio" label="Eastern" id="limit-width-inline-radio-01" />
+          <Radio name="limit-width-radio" label="Central" id="limit-width-inline-radio-02" />
+          <Radio name="limit-width-radio" label="Pacific" id="limit-width-inline-radio-03" />
         </FormGroup>
         <FormGroup label="Additional note" fieldId="simple-form-note-02">
           <TextInput isDisabled type="text" id="simple-form-note-02" name="simple-form-number" value="disabled" />
@@ -605,7 +632,7 @@ class HorizontalForm extends React.Component {
   render() {
     return (
       <Form isHorizontal>
-        <FormGroup label="Label" hasNoPaddingTop fieldId="options" isStack>
+        <FormGroup role="group" label="Label" hasNoPaddingTop fieldId="options" isStack>
           <Checkbox label="option 1" id="option-01" />
           <Checkbox label="option 2" id="option-02" />
         </FormGroup>
@@ -639,6 +666,7 @@ class HorizontalFormHelperTextOnTop extends React.Component {
           hasNoPaddingTop
           fieldId="options"
           isStack
+          role="group"
         >
           <Checkbox label="Option 1" id="option-03" />
           <Checkbox label="Option 2" id="option-04" />
@@ -823,7 +851,12 @@ class SimpleForm extends React.Component {
       <Form>
         <Grid hasGutter md={6}>
           <GridItem span={12}>
-            <FormGroup label="Full name" isRequired fieldId="grid-form-name-01" helperText="Include your middle name if you have one.">
+            <FormGroup
+              label="Full name"
+              isRequired
+              fieldId="grid-form-name-01"
+              helperText="Include your middle name if you have one."
+            >
               <TextInput
                 isRequired
                 type="text"
