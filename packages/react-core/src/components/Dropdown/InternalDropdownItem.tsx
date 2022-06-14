@@ -211,7 +211,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
         ...(styleChildren && {
           className: css(element.props.className, classes)
         }),
-        ...(this.props.role !== 'separator' && { role } && { ref: this.componentRef })
+        ...(this.props.role !== 'separator' && { role, ref: this.componentRef })
       });
 
     const renderDefaultComponent = (tag: string) => {
