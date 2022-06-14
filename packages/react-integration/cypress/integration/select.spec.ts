@@ -79,6 +79,20 @@ describe('Select Test', () => {
     find('#typeahead-select-select-typeahead').should('have.value', '');
   });
 
+  it('Verify Typeahead Select updates after disabled state change', () => {
+    const find = (selector: string) =>
+      cy
+        .get('#typeahead-select-id')
+        .parent()
+        .find(selector);
+    find('button.pf-c-select__toggle-button').click();
+    find('#Alabama button').should('not.be.disabled');
+    find('button.pf-c-select__toggle-button').click();
+    cy.get('#disabled-toggle-btn').click();
+    find('button.pf-c-select__toggle-button').click();
+    find('#Alabama button').should('have.class', 'pf-m-disabled');
+  });
+
   it('Verify Non-Creatable Typeahead selection', () => {
     const find = (selector: string) =>
       cy
