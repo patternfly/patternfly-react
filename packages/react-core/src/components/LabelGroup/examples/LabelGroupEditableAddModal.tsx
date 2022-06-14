@@ -60,7 +60,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
 
   const onEdit = (nextText: string, index: number) => {
     const copy = [...labels];
-    copy[index] = { name: nextText, props: labels[index].props };
+    copy[index] = { name: nextText, props: labels[index].props, id: labels[index].id };
     setLabels(copy);
   };
 
