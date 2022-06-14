@@ -148,62 +148,10 @@ DateTimeRangePicker = () => {
 
 
 ### Date and time pickers in modal
-Modals trap focus and watch a few document level events. In order to place a date picker in a modal the following steps 
+Modals trap focus and watch a few document level events. In order to place a date picker in a modal the following steps
 must be taken:
- - To avoid the modal's escape press event handler from overruling the date picker's escape press handlers, use the `DatePickerRef` to close the calendar when it is open and the escape key is pressed.
- - Append the calendar to the modal to keep it as close to the date picker in the DOM while maintaining correct layouts visually
-In order to place a time picker in the modal, its menu must be appended to the time picker's parent.
-```js
-import React from "react";
-import { DatePicker, Modal, ModalVariant, Button, TimePicker } from "@patternfly/react-core";
-
-const SimpleModal = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const dateRef = React.useRef(null);
-  const handleModalToggle = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-  const onEscapePress = (event) => {
-    if (dateRef && dateRef.current && dateRef.current.isCalendarOpen) {
-      dateRef.current.toggleCalendar(false, event.key);
-    } else {
-      handleModalToggle();
-    }
-  };
-
-  return (
-      <React.Fragment>
-        <Button variant="primary" onClick={handleModalToggle}>
-          Launch modal
-        </Button>
-        <Modal
-          id="date-time-picker-modal"
-          variant={ModalVariant.small}
-          title="Generic modal header"
-          isOpen={isModalOpen}
-          onEscapePress={onEscapePress}
-          onClose={handleModalToggle}
-          actions={[
-            <Button
-              key="confirm"
-              variant="primary"
-              onClick={handleModalToggle}
-            >
-              Confirm
-            </Button>,
-            <Button
-              key="cancel"
-              variant="link"
-              onClick={handleModalToggle}
-            >
-              Cancel
-            </Button>
-          ]}
-        >
-          <DatePicker ref={ dateRef } appendTo={() => document.getElementById('date-time-picker-modal')}/>
-          <TimePicker menuAppendTo="parent"/>
-        </Modal>
-      </React.Fragment>
-    );
-}
+- To avoid the modal's escape press event handler from overruling the date picker's escape press handlers, use the `DatePickerRef` to close the calendar when it is open and the escape key is pressed.
+- Append the calendar to the modal to keep it as close to the date picker in the DOM while maintaining correct layouts visually
+  In order to place a time picker in the modal, its menu must be appended to the time picker's parent.
+```ts file="./examples/DateTimePickerInModal.tsx"
 ```

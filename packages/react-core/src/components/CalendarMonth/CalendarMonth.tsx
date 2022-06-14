@@ -55,7 +55,7 @@ export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTML
   className?: string;
   /** @hide Internal prop to allow pressing escape in select menu to not close popover */
   onSelectToggle?: (open: boolean) => void;
-  /** Flag to set browser focus on the passed Date **/
+  /** Flag to set browser focus on the passed date **/
   isDateFocused?: boolean;
 }
 
