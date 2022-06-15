@@ -297,11 +297,10 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       this.setState({ viewMoreNextIndex: -1 });
     }
 
-    const hasUpdatedChildren =
-      prevProps.children.length !== this.props.children.length ||
-      prevProps.children.some((prevChild: React.ReactElement, index: number) => {
+    const checkUpdatedChildren = (prevChildren: React.ReactElement[], currChildren: React.ReactElement[]) =>
+      prevChildren.some((prevChild: React.ReactElement, index: number) => {
         const prevChildProps = prevChild.props;
-        const currChild = this.props.children[index];
+        const currChild = currChildren[index];
         const { props: currChildProps } = currChild;
 
         if (prevChildProps && currChildProps) {
@@ -315,6 +314,19 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           return prevChild !== currChild;
         }
       });
+
+    const hasUpdatedChildren =
+      prevProps.children.length !== this.props.children.length ||
+      checkUpdatedChildren(prevProps.children, this.props.children) ||
+      (this.props.isGrouped &&
+        prevProps.children.some(
+          (prevChild: React.ReactElement, index: number) =>
+            prevChild.type === SelectGroup &&
+            prevChild.props.children &&
+            this.props.children[index].props.children &&
+            (prevChild.props.children.length !== this.props.children[index].props.children.length ||
+              checkUpdatedChildren(prevChild.props.children, this.props.children[index].props.children))
+        ));
 
     if (hasUpdatedChildren) {
       this.updateTypeAheadFilteredChildren(prevState.typeaheadInputValue || '', null);
