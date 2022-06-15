@@ -19,8 +19,10 @@ export const DropdownBasic: React.FunctionComponent = () => {
   };
 
   const dropdownItems = [
-    <DropdownItem key="link">Link</DropdownItem>,
-    <DropdownItem key="action" component="button">
+    <DropdownItem key="link" tooltip="Tooltip for enabled link">
+      Link
+    </DropdownItem>,
+    <DropdownItem key="action" component="button" tooltip="Tooltip for enabled button">
       Action
     </DropdownItem>,
     <DropdownItem key="disabled link" isDisabled href="www.google.com">
