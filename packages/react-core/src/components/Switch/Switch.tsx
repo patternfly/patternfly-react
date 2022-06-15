@@ -91,8 +91,7 @@ export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaState
           className={css(styles.switchInput)}
           type="checkbox"
           onChange={event => onChange(event.target.checked, event)}
-          {...([true, false].includes(defaultChecked) && { defaultChecked })}
-          {...(![true, false].includes(defaultChecked) && { checked: isChecked })}
+          {...(defaultChecked !== undefined ? { defaultChecked } : { checked: isChecked })}
           disabled={isDisabled}
           aria-labelledby={
             !isAriaLabelledBy ? null : `${this.id}-${isChecked === true && defaultChecked !== false ? 'on' : 'off'}`
