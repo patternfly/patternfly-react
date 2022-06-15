@@ -106,6 +106,13 @@ class CardViewBasic extends React.Component {
       totalItemCount: 10
     };
 
+    this.checkAllSelected = (selected, total) => {
+      if (selected && selected < total) {
+        return null;
+      }
+      return selected === total;
+    };
+
     this.onToolbarDropdownToggle = isLowerToolbarDropdownOpen => {
       this.setState(prevState => ({
         isLowerToolbarDropdownOpen
@@ -209,11 +216,11 @@ class CardViewBasic extends React.Component {
           return prevState.selectedItems.includes(productId * 1)
             ? {
                 selectedItems: [...prevState.selectedItems.filter(id => productId * 1 != id)],
-                areAllSelected: false
+                areAllSelected: this.checkAllSelected(prevState.selectedItems.length - 1, prevState.totalItemCount)
               }
             : {
                 selectedItems: [...prevState.selectedItems, productId * 1],
-                areAllSelected: prevState.totalItemCount === prevState.selectedItems.length + 1
+                areAllSelected: this.checkAllSelected(prevState.selectedItems.length + 1, prevState.totalItemCount)
               };
         });
       }
@@ -224,11 +231,11 @@ class CardViewBasic extends React.Component {
         return prevState.selectedItems.includes(productId * 1)
           ? {
               selectedItems: [...prevState.selectedItems.filter(id => productId * 1 != id)],
-              areAllSelected: false
+              areAllSelected: this.checkAllSelected(prevState.selectedItems.length - 1, prevState.totalItemCount)
             }
           : {
               selectedItems: [...prevState.selectedItems, productId * 1],
-              areAllSelected: prevState.totalItemCount === prevState.selectedItems.length + 1
+              areAllSelected: this.checkAllSelected(prevState.selectedItems.length + 1, prevState.totalItemCount)
             };
       });
     };
@@ -562,7 +569,7 @@ class CardViewBasic extends React.Component {
           </PageSection>
           <PageSection isFilled>
             <Gallery hasGutter aria-label="Selectable card container">
-              <Card isSelectableRaised isCompact>
+              <Card isCompact>
                 <Bullseye>
                   <EmptyState variant={EmptyStateVariant.xs}>
                     <EmptyStateIcon icon={PlusCircleIcon} />
@@ -577,7 +584,6 @@ class CardViewBasic extends React.Component {
               </Card>
               {filtered.map((product, key) => (
                 <Card
-                  isSelectableRaised
                   hasSelectableInput
                   isCompact
                   key={product.name}
