@@ -33,12 +33,12 @@ export const treeRow = (
         </span>
       )}
       <span className="pf-c-table__text" key="table-text">
-        {content}
+        {content as React.ReactNode}
       </span>
     </div>
   );
   const onChange = (isChecked: boolean, event: React.FormEvent<HTMLInputElement>) => {
-    onCheckChange(event, isChecked, rowIndex, content, rowData);
+    onCheckChange(event, isChecked, rowIndex, content as React.ReactNode, rowData);
   };
   return {
     component: 'th',
@@ -50,7 +50,7 @@ export const treeRow = (
             <span className={css(stylesTreeView.tableToggle)} key="table-toggle">
               <Button
                 variant="plain"
-                onClick={event => onCollapse && onCollapse(event, rowIndex, content, rowData)}
+                onClick={event => onCollapse && onCollapse(event, rowIndex, content as React.ReactNode, rowData)}
                 className={css(isExpanded && styles.modifiers.expanded)}
                 aria-expanded={isExpanded}
                 aria-label={toggleAriaLabel || `${isExpanded ? 'Collapse' : 'Expand'} row ${rowIndex}`}
@@ -80,7 +80,9 @@ export const treeRow = (
                 variant="plain"
                 aria-expanded={isDetailsExpanded}
                 aria-label={showDetailsAriaLabel || 'Show row details'}
-                onClick={event => onToggleRowDetails && onToggleRowDetails(event, rowIndex, content, rowData)}
+                onClick={event =>
+                  onToggleRowDetails && onToggleRowDetails(event, rowIndex, content as React.ReactNode, rowData)
+                }
               >
                 <span className="pf-c-table__details-toggle-icon">
                   <EllipsisHIcon aria-hidden />

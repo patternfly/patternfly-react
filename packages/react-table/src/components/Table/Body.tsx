@@ -121,7 +121,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
             }
             const mappedCell: IMappedCell = {
               [headerData[cellIndex + additionalColsIndexShift].property]: {
-                title: mappedCellTitle,
+                title: mappedCellTitle as React.ReactNode,
                 formatters,
                 props: {
                   isVisible: true,

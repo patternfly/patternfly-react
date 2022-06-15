@@ -61,7 +61,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
       <React.Fragment>
         {icon && <span className={css(styles.menuToggleIcon)}>{icon}</span>}
         <span className="pf-c-menu-toggle__text">{children}</span>
-        {badge && <span className={css(styles.menuToggleCount)}>{badge}</span>}
+        {badge && <span className={css(styles.menuToggleCount)}>{badge as React.ReactNode}</span>}
         <span className={css(styles.menuToggleControls)}>
           <span className={css(styles.menuToggleToggleIcon)}>
             <CaretDownIcon aria-hidden />

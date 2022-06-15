@@ -447,7 +447,10 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         typeaheadFilteredChildren =
           typeaheadInputValue.toString() !== ''
             ? React.Children.map(children, group => {
-                if (React.isValidElement(group) && group.type === SelectGroup) {
+                if (
+                  React.isValidElement<React.ComponentProps<typeof SelectGroup>>(group) &&
+                  group.type === SelectGroup
+                ) {
                   const filteredGroupChildren = (React.Children.toArray(group.props.children) as React.ReactElement<
                     SelectGroupProps
                   >[]).filter(childFilter);
@@ -635,8 +638,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     optionContainerRef: React.ReactNode,
     index: number
   ) => {
-    this.refCollection[index] = [optionRef as HTMLElement, favoriteRef as HTMLElement];
-    this.optionContainerRefCollection[index] = optionContainerRef as HTMLElement;
+    this.refCollection[index] = [(optionRef as unknown) as HTMLElement, (favoriteRef as unknown) as HTMLElement];
+    this.optionContainerRefCollection[index] = (optionContainerRef as unknown) as HTMLElement;
   };
 
   handleMenuKeys = (index: number, innerIndex: number, position: string) => {

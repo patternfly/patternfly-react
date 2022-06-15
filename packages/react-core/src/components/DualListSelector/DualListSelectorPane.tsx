@@ -70,7 +70,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
   onOptionSelect,
   onOptionCheck,
   title = '',
-  options = [] as React.ReactNode[],
+  options = [],
   selectedOptions = [],
   isSearchable = false,
   searchInputAriaLabel = '',
@@ -87,11 +87,11 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
   // only called when search input is dynamically built
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
-    let filtered;
+    let filtered: React.ReactNode[];
     if (isTree) {
-      filtered = (options as DualListSelectorTreeItemData[])
+      filtered = options
         .map(opt => Object.assign({}, opt))
-        .filter(item => filterInput(item as DualListSelectorTreeItemData, newValue));
+        .filter(item => filterInput((item as unknown) as DualListSelectorTreeItemData, newValue));
     } else {
       filtered = options.filter(option => {
         if (displayOption(option)) {
@@ -110,7 +110,7 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
   // only called when options are passed via options prop and isTree === true
   const filterInput = (item: DualListSelectorTreeItemData, input: string): boolean => {
     if (filterOption) {
-      return filterOption(item, input);
+      return filterOption((item as unknown) as React.ReactNode, input);
     } else {
       if (item.text.toLowerCase().includes(input.toLowerCase()) || input === '') {
         return true;
@@ -200,10 +200,12 @@ export const DualListSelectorPane: React.FunctionComponent<DualListSelectorPaneP
                 <DualListSelectorTree
                   data={
                     isSearchable
-                      ? (options as DualListSelectorTreeItemData[])
+                      ? ((options
                           .map(opt => Object.assign({}, opt))
-                          .filter(item => filterInput(item as DualListSelectorTreeItemData, input))
-                      : (options as DualListSelectorTreeItemData[])
+                          .filter(item =>
+                            filterInput((item as unknown) as DualListSelectorTreeItemData, input)
+                          ) as unknown) as DualListSelectorTreeItemData[])
+                      : ((options as unknown) as DualListSelectorTreeItemData[])
                   }
                   onOptionCheck={onOptionCheck}
                   id={`${id}-tree`}

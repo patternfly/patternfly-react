@@ -15,7 +15,7 @@ export const info = ({ tooltip, tooltipProps, popover, popoverProps, className, 
         ariaLabel={ariaLabel}
         className={className}
       >
-        {value}
+        {value as React.ReactNode}
       </HeaderCellInfoWrapper>
     ) : (
       <HeaderCellInfoWrapper
@@ -25,7 +25,7 @@ export const info = ({ tooltip, tooltipProps, popover, popoverProps, className, 
         ariaLabel={ariaLabel}
         className={className}
       >
-        {value}
+        {value as React.ReactNode}
       </HeaderCellInfoWrapper>
     )
   });
