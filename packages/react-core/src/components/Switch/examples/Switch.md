@@ -170,9 +170,29 @@ import { Switch } from '@patternfly/react-core';
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
-<React.Fragment>
-  <Switch id="uncontrolled-switch-on" label="Message when on" labelOff="Message when off" defaultChecked={false} />
-  <br />
-  <Switch id="uncontrolled-no-label-switch-on" aria-label="Message when on" defaultChecked={true} />
-</React.Fragment>;
+class UncontrolledSwitch extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      checked: true
+    };
+    this.handleChange = checked => {
+      this.setState({
+        checked
+      });
+    };
+  }
+  render() {
+    const { defaultChecked } = this.state;
+    return (
+      <Switch 
+        id="uncontrolled-switch"
+        label="Message when on"
+        labelOff="Message when off"
+        defaultChecked={this.state.checked}
+        onChange={this.handleChange}  
+      />
+    )
+  }
+}
 ```

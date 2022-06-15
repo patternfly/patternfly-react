@@ -94,7 +94,9 @@ export class Switch extends React.Component<SwitchProps & OUIAProps, { ouiaState
           {...([true, false].includes(defaultChecked) && { defaultChecked })}
           {...(![true, false].includes(defaultChecked) && { checked: isChecked })}
           disabled={isDisabled}
-          aria-labelledby={isAriaLabelledBy ? `${this.id}-on` : null}
+          aria-labelledby={
+            !isAriaLabelledBy ? null : `${this.id}-${isChecked === true && defaultChecked !== false ? 'on' : 'off'}`
+          }
           {...props}
         />
         {label !== undefined ? (
