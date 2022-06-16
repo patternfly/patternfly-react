@@ -15,496 +15,47 @@ import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
 ### Basic
 
-```js
-import React from 'react';
-import { Modal, Button } from '@patternfly/react-core';
-
-class SimpleModal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isModalOpen: false
-    };
-    this.handleModalToggle = () => {
-      this.setState(({ isModalOpen }) => ({
-        isModalOpen: !isModalOpen
-      }));
-    };
-  }
-
-  render() {
-    const { isModalOpen } = this.state;
-
-    return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.handleModalToggle}>
-          Show modal
-        </Button>
-        <Modal
-          title="Simple modal header"
-          isOpen={isModalOpen}
-          onClose={this.handleModalToggle}
-          actions={[
-            <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
-              Confirm
-            </Button>,
-            <Button key="cancel" variant="link" onClick={this.handleModalToggle}>
-              Cancel
-            </Button>
-          ]}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-        </Modal>
-      </React.Fragment>
-    );
-  }
-}
+```ts file="./ModalBasic.tsx"
 ```
 
 ### With description
 
-```js
-import React from 'react';
-import { Modal, Button } from '@patternfly/react-core';
-
-class SimpleModal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isModalOpen: false
-    };
-    this.handleModalToggle = () => {
-      this.setState(({ isModalOpen }) => ({
-        isModalOpen: !isModalOpen
-      }));
-    };
-  }
-
-  render() {
-    const { isModalOpen } = this.state;
-
-    return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.handleModalToggle}>
-          Show modal
-        </Button>
-        <Modal
-          aria-label="My modal context"
-          title="Modal header with description"
-          isOpen={isModalOpen}
-          onClose={this.handleModalToggle}
-          description="A description is used when you want to provide more info about the modal than the title is able to describe. The content in the description is static and will not scroll with the rest of the modal body."
-          actions={[
-            <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
-              Confirm
-            </Button>,
-            <Button key="cancel" variant="link" onClick={this.handleModalToggle}>
-              Cancel
-            </Button>
-          ]}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-        </Modal>
-      </React.Fragment>
-    );
-  }
-}
+```ts file="./ModalWithDescription.tsx"
 ```
 
 ### Top aligned
 
-```js
-import React from 'react';
-import { Modal, ModalVariant, Button } from '@patternfly/react-core';
-
-class TopModal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isModalOpen: false
-    };
-    this.handleModalToggle = () => {
-      this.setState(({ isModalOpen }) => ({
-        isModalOpen: !isModalOpen
-      }));
-    };
-  }
-
-  render() {
-    const { isModalOpen } = this.state;
-
-    return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.handleModalToggle}>
-          Show top aligned modal
-        </Button>
-        <Modal
-          position="top"
-          title="Top modal header"
-          isOpen={isModalOpen}
-          onClose={this.handleModalToggle}
-          actions={[
-            <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
-              Confirm
-            </Button>,
-            <Button key="cancel" variant="link" onClick={this.handleModalToggle}>
-              Cancel
-            </Button>
-          ]}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-        </Modal>
-      </React.Fragment>
-    );
-  }
-}
+```ts file="./ModalTopAligned.tsx"
 ```
 
 ### Small
 
-```js
-import React from 'react';
-import { Modal, ModalVariant, Button } from '@patternfly/react-core';
-
-class SmallModal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isModalOpen: false
-    };
-    this.handleModalToggle = () => {
-      this.setState(({ isModalOpen }) => ({
-        isModalOpen: !isModalOpen
-      }));
-    };
-  }
-
-  render() {
-    const { isModalOpen } = this.state;
-
-    return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.handleModalToggle}>
-          Show small modal
-        </Button>
-        <Modal
-          variant={ModalVariant.small}
-          title="Small modal header"
-          isOpen={isModalOpen}
-          onClose={this.handleModalToggle}
-          actions={[
-            <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
-              Confirm
-            </Button>,
-            <Button key="cancel" variant="link" onClick={this.handleModalToggle}>
-              Cancel
-            </Button>
-          ]}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-        </Modal>
-      </React.Fragment>
-    );
-  }
-}
+```ts file="./ModalSmall.tsx"
 ```
 
 ### Medium
 
-```js
-import React from 'react';
-import { Modal, ModalVariant, Button } from '@patternfly/react-core';
-
-class MediumModal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isModalOpen: false
-    };
-    this.handleModalToggle = () => {
-      this.setState(({ isModalOpen }) => ({
-        isModalOpen: !isModalOpen
-      }));
-    };
-  }
-
-  render() {
-    const { isModalOpen } = this.state;
-
-    return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.handleModalToggle}>
-          Show medium modal
-        </Button>
-        <Modal
-          variant={ModalVariant.medium}
-          title="Medium modal header"
-          isOpen={isModalOpen}
-          onClose={this.handleModalToggle}
-          actions={[
-            <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
-              Confirm
-            </Button>,
-            <Button key="cancel" variant="link" onClick={this.handleModalToggle}>
-              Cancel
-            </Button>
-          ]}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-        </Modal>
-      </React.Fragment>
-    );
-  }
-}
+```ts file="./ModalMedium.tsx"
 ```
 
 ### Large
 
-```js
-import React from 'react';
-import { Modal, ModalVariant, Button } from '@patternfly/react-core';
-
-class LargeModal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isModalOpen: false
-    };
-    this.handleModalToggle = () => {
-      this.setState(({ isModalOpen }) => ({
-        isModalOpen: !isModalOpen
-      }));
-    };
-  }
-
-  render() {
-    const { isModalOpen } = this.state;
-
-    return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.handleModalToggle}>
-          Show large modal
-        </Button>
-        <Modal
-          variant={ModalVariant.large}
-          title="Large modal header"
-          isOpen={isModalOpen}
-          onClose={this.handleModalToggle}
-          actions={[
-            <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
-              Confirm
-            </Button>,
-            <Button key="cancel" variant="link" onClick={this.handleModalToggle}>
-              Cancel
-            </Button>
-          ]}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-        </Modal>
-      </React.Fragment>
-    );
-  }
-}
+```ts file="./ModalLarge.tsx"
 ```
 
-### Width
+### Custom width
 
-```js
-import React from 'react';
-import { Modal, Button } from '@patternfly/react-core';
-
-class WidthModal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isModalOpen: false
-    };
-    this.handleModalToggle = () => {
-      this.setState(({ isModalOpen }) => ({
-        isModalOpen: !isModalOpen
-      }));
-    };
-  }
-
-  render() {
-    const { isModalOpen } = this.state;
-
-    return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.handleModalToggle}>
-          Show 50% width modal
-        </Button>
-        <Modal
-          width={'50%'}
-          title="Modal header for set width example"
-          isOpen={isModalOpen}
-          onClose={this.handleModalToggle}
-          actions={[
-            <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
-              Confirm
-            </Button>,
-            <Button key="cancel" variant="link" onClick={this.handleModalToggle}>
-              Cancel
-            </Button>
-          ]}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-        </Modal>
-      </React.Fragment>
-    );
-  }
-}
+```ts file="./ModalCustomWidth.tsx"
 ```
 
 ### Custom header and footer
 
-```js
-import React from 'react';
-import { Modal, ModalVariant, Button, Title, TitleSizes } from '@patternfly/react-core';
-import WarningTriangleIcon from '@patternfly/react-icons/dist/esm/icons/warning-triangle-icon';
-
-class CustomHeaderFooter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isModalOpen: false
-    };
-    this.handleModalToggle = () => {
-      this.setState(({ isModalOpen }) => ({
-        isModalOpen: !isModalOpen
-      }));
-    };
-  }
-
-  render() {
-    const { isModalOpen } = this.state;
-
-    const header = (
-      <React.Fragment>
-        <Title id="custom-header-label" headingLevel="h1" size={TitleSizes['2xl']}>
-          With custom modal header/footer
-        </Title>
-        <p className="pf-u-pt-sm">Allows for custom content in the header and/or footer by passing components.</p>
-      </React.Fragment>
-    );
-
-    const footer = (
-      <Title headingLevel="h4" size={TitleSizes.md}>
-        <WarningTriangleIcon />
-        <span className="pf-u-pl-sm">Custom modal footer.</span>
-      </Title>
-    );
-
-    return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.handleModalToggle}>
-          Show custom header/footer modal
-        </Button>
-        <Modal
-          variant={ModalVariant.large}
-          isOpen={isModalOpen}
-          header={header}
-          aria-label="My dialog"
-          aria-labelledby="custom-header-label"
-          aria-describedby="custom-header-description"
-          onClose={this.handleModalToggle}
-          footer={footer}
-        >
-          <span id="custom-header-description">
-            When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
-            aria-describedby value.
-          </span>
-          <br />
-          <br />
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </Modal>
-      </React.Fragment>
-    );
-  }
-}
+```ts file="./ModalCustomHeaderFooter.tsx"
 ```
 
 ### No header
 
-```js
-import React from 'react';
-import { Modal, ModalVariant, Button } from '@patternfly/react-core';
-
-class NoHeader extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isModalOpen: false
-    };
-    this.handleModalToggle = () => {
-      this.setState(({ isModalOpen }) => ({
-        isModalOpen: !isModalOpen
-      }));
-    };
-  }
-
-  render() {
-    const { isModalOpen } = this.state;
-    const footer = <React.Fragment>Modal Footer</React.Fragment>;
-
-    return (
-      <React.Fragment>
-        <Button variant="primary" onClick={this.handleModalToggle}>
-          Show no header modal
-        </Button>
-        <Modal
-          variant={ModalVariant.large}
-          isOpen={isModalOpen}
-          aria-label="No header example"
-          showClose={true}
-          aria-describedby="no-header-example"
-          onClose={this.handleModalToggle}
-          footer={footer}
-        >
-          <span id="no-header-example">
-            When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
-            aria-describedby value.
-          </span>
-          <br />
-          <br />
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </Modal>
-      </React.Fragment>
-    );
-  }
-}
+```ts file="./ModalNoHeader.tsx"
 ```
 
 ### Custom Icon
@@ -867,12 +418,11 @@ class HelpModal extends React.Component {
 ### With form
 
 ```ts file="ModalWithForm.tsx"
-
 ```
 
 ### With overflowing content
 
-If the content that you're passing to the modal is likely to overflow the modal content area, pass tabIndex={0} to the modal to enable keyboard accessible scrolling.
+If the content that you're passing to the modal is likely to overflow the modal content area, pass `tabIndex={0}` to the modal to enable keyboard accessible scrolling.
 
 ```ts file="ModalWithOverflowingContent.tsx"
 ```
