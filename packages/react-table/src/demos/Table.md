@@ -1872,24 +1872,25 @@ class FilterTableDemo extends React.Component {
   buildCategoryDropdown() {
     const { isCategoryDropdownOpen, currentCategory } = this.state;
 
+    const categoryMenuItems = [
+      <SelectOption key="cat1" value="Location" />,
+      <SelectOption key="cat2" value="Name" />,
+      <SelectOption key="cat3" value="Status" />,
+    ];
+
     return (
       <ToolbarItem>
-        <Dropdown
+        <Select
           onSelect={this.onCategorySelect}
+          selections={currentCategory}
           position={DropdownPosition.left}
-          toggle={
-            <DropdownToggle onToggle={this.onCategoryToggle} style={{ width: '100%' }}>
-              <FilterIcon /> {currentCategory}
-            </DropdownToggle>
-          }
+          onToggle={this.onCategoryToggle}
           isOpen={isCategoryDropdownOpen}
-          dropdownItems={[
-            <DropdownItem key="cat1">Location</DropdownItem>,
-            <DropdownItem key="cat2">Name</DropdownItem>,
-            <DropdownItem key="cat3">Status</DropdownItem>
-          ]}
+          toggleIcon={<FilterIcon />}
           style={{ width: '100%' }}
-        ></Dropdown>
+        >
+          {categoryMenuItems}
+        </Select>
       </ToolbarItem>
     );
   }
