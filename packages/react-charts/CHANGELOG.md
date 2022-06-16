@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.75.8 (2022-06-16)
+
+
+### Bug Fixes
+
+* **Table:** filterable table demo icon text spacing fix ([#7477](https://github.com/patternfly/patternfly-react/issues/7477)) ([e35387f](https://github.com/patternfly/patternfly-react/commit/e35387f42b355000ff66a79e1031eb6e9a7bb8c3))
+
+
+
+
+
 ## 6.75.7 (2022-06-16)
 
 
