@@ -34,6 +34,8 @@ export interface WizardStep {
   hideCancelButton?: boolean;
   /** (Unused if footer is controlled) True to hide the Back button */
   hideBackButton?: boolean;
+  /** Force to disable the step in the navigation.*/
+  isDisabled?: boolean;
 }
 
 export type WizardStepFunctionType = (
@@ -174,7 +176,15 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       }
       return onClose();
     } else {
-      const newStep = currentStep + 1;
+      let newStep = currentStep;
+
+      for (let nextStep = currentStep; nextStep <= maxSteps; nextStep++) {
+        if (!flattenedSteps[nextStep].isDisabled) {
+          newStep = nextStep + 1;
+          break;
+        }
+      }
+
       this.setState({
         currentStep: newStep
       });
@@ -195,7 +205,15 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
         currentStep: adjustedStep
       });
     } else {
-      const newStep = currentStep - 1 <= 0 ? 0 : currentStep - 1;
+      let newStep = currentStep;
+
+      for (let prevStep = currentStep; prevStep >= 0; prevStep--) {
+        if (!flattenedSteps[prevStep - 2].isDisabled) {
+          newStep = prevStep - 1 <= 1 ? 1 : prevStep - 1;
+          break;
+        }
+      }
+
       this.setState({
         currentStep: newStep
       });
@@ -396,7 +414,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
                         return;
                       }
                       navItemStep = this.getFlattenedStepsIndex(flattenedSteps, childStep.name);
-                      enabled = childStep.canJumpTo;
+                      enabled = childStep.canJumpTo && !childStep.isDisabled;
                       return (
                         <WizardNavItem
                           key={`child_${indexChild}`}
@@ -414,7 +432,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
               );
             }
             navItemStep = this.getFlattenedStepsIndex(flattenedSteps, step.name);
-            enabled = step.canJumpTo;
+            enabled = step.canJumpTo && !step.isDisabled;
+
             return (
               <WizardNavItem
                 {...step.stepNavItemProps}
