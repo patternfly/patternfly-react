@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.73.10 (2022-06-16)
+
+
+### Bug Fixes
+
+* **Topology:** Fix for group position when it has no children ([#7573](https://github.com/patternfly/patternfly-react/issues/7573)) ([04e435e](https://github.com/patternfly/patternfly-react/commit/04e435ebc87ad7d1c687db95ee8ef8beffae514d))
+
+
+
+
+
 ## 4.73.9 (2022-06-16)
 
 **Note:** Version bump only for package @patternfly/react-icons
