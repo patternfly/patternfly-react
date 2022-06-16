@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.73.7 (2022-06-16)
+
+
+### Bug Fixes
+
+* **console:** add SUSE instruction for virt-viewer ([#7445](https://github.com/patternfly/patternfly-react/issues/7445)) ([2ac5adb](https://github.com/patternfly/patternfly-react/commit/2ac5adb581d673e0687f438baeb7859125bd30d4)), closes [#7519](https://github.com/patternfly/patternfly-react/issues/7519)
+
+
+
+
+
 ## 4.73.6 (2022-06-16)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension
