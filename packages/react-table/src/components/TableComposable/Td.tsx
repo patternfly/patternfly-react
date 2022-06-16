@@ -134,7 +134,8 @@ const TdBase: React.FunctionComponent<TdProps> = ({
           },
           column: {
             extraParams: {
-              onCollapse: expand?.onToggle
+              onCollapse: expand?.onToggle,
+              expandId: expand?.expandId
             }
           }
         })

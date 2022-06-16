@@ -46,7 +46,8 @@ export const ComposableTableCompoundExpandable: React.FunctionComponent = () => 
   };
   const compoundExpandParams = (repo: Repository, columnKey: ColumnKey): TdProps['compoundExpand'] => ({
     isExpanded: expandedCells[repo.name] === columnKey,
-    onToggle: () => setCellExpanded(repo, columnKey, expandedCells[repo.name] !== columnKey)
+    onToggle: () => setCellExpanded(repo, columnKey, expandedCells[repo.name] !== columnKey),
+    expandId: 'composable-compound-expandable-example'
   });
 
   return (

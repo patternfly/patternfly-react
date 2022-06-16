@@ -99,7 +99,8 @@ export const ComposableTableNestedExpandable: React.FunctionComponent = () => {
                 expand={{
                   rowIndex,
                   isExpanded: isTeamExpanded(team),
-                  onToggle: () => setTeamExpanded(team, !isTeamExpanded(team))
+                  onToggle: () => setTeamExpanded(team, !isTeamExpanded(team)),
+                  expandId: 'composable-nested-expandable-example'
                 }}
               />
               <Td dataLabel={columnNames.team}>{team.name}</Td>
