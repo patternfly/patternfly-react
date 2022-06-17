@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.69.12 (2022-06-17)
+
+
+### Bug Fixes
+
+* **Table:** account for added columns with expandable ([#7529](https://github.com/patternfly/patternfly-react/issues/7529)) ([dcde7c9](https://github.com/patternfly/patternfly-react/commit/dcde7c95eb7200b706da4d41a46f3f57b5129e40))
+
+
+
+
+
 ## 4.69.11 (2022-06-17)
 
 
