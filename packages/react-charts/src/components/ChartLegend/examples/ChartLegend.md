@@ -28,7 +28,6 @@ import {
   getInteractiveLegendItemStyles,
   getResizeObserver
 } from '@patternfly/react-charts';
-import chart_area_Opacity from '@patternfly/react-tokens/dist/esm/chart_area_Opacity';
 import chart_color_black_500 from '@patternfly/react-tokens/dist/esm/chart_color_black_500';
 import '@patternfly/patternfly/patternfly-charts.css';
 
