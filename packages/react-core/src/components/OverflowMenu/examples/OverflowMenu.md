@@ -61,6 +61,8 @@ class SimpleOverflowMenu extends React.Component {
             isOpen={isOpen}
             isPlain
             dropdownItems={dropdownItems}
+            isFlipEnabled
+            menuAppendTo="parent"
           />
         </OverflowMenuControl>
       </OverflowMenu>
@@ -153,6 +155,8 @@ class OverflowMenuGroupTypes extends React.Component {
             isOpen={isOpen}
             isPlain
             dropdownItems={dropdownItems}
+            isFlipEnabled
+            menuAppendTo="parent"
           />
         </OverflowMenuControl>
       </OverflowMenu>
@@ -239,6 +243,8 @@ class OverflowMenuAdditionalOptions extends React.Component {
             isOpen={isOpen}
             isPlain
             dropdownItems={dropdownItems}
+            isFlipEnabled
+            menuAppendTo="parent"
           />
         </OverflowMenuControl>
       </OverflowMenu>
@@ -301,6 +307,8 @@ class OverflowMenuPersist extends React.Component {
             isOpen={isOpen}
             isPlain
             dropdownItems={dropdownItems}
+            isFlipEnabled
+            menuAppendTo="parent"
           />
         </OverflowMenuControl>
       </OverflowMenu>
