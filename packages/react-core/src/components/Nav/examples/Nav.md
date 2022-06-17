@@ -12,98 +12,14 @@ import './nav.css';
 
 ### Default
 
-```js
-import React from 'react';
-import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
-
-class NavDefaultList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeItem: 0
-    };
-    this.onSelect = result => {
-      this.setState({
-        activeItem: result.itemId
-      });
-    };
-  }
-
-  render() {
-    const { activeItem } = this.state;
-    return (
-      <Nav onSelect={this.onSelect} aria-label="Default global nav">
-        <NavList>
-          <NavItem id="default-link1" to="#default-link1" itemId={0} isActive={activeItem === 0}>
-            Default Link 1
-          </NavItem>
-          <NavItem id="default-link2" to="#default-link2" itemId={1} isActive={activeItem === 1}>
-            Default Link 2
-          </NavItem>
-          <NavItem id="default-link3" to="#default-link3" itemId={2} isActive={activeItem === 2}>
-            Default Link 3
-          </NavItem>
-          <NavItem id="default-link4" to="#default-link4" itemId={3} isActive={activeItem === 3}>
-            Default Link 4
-          </NavItem>
-        </NavList>
-      </Nav>
-    );
-  }
-}
+```ts file="./NavDefault.tsx"
 ```
 
 ### Grouped
 
-Note: to keep nav groups accessible an `aria-label` should be supplied if the `title` prop is not passed.
+The following example shows two navigation groups, each with a `title` prop passed into the nav group component. To keep nav groups accessible an `aria-label` must be passed in if the `title` prop is not passed in.
 
-```js
-import React from 'react';
-import { Nav, NavExpandable, NavItem, NavItemSeparator, NavList, NavGroup } from '@patternfly/react-core';
-
-class NavGroupedList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeItem: 'grp-1_itm-1'
-    };
-    this.onSelect = result => {
-      this.setState({
-        activeItem: result.itemId
-      });
-    };
-  }
-
-  render() {
-    const { activeItem } = this.state;
-    return (
-      <Nav onSelect={this.onSelect} aria-label="Grouped global nav">
-        <NavGroup title="Section title 1">
-          <NavItem preventDefault to="#grouped-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
-            Group 1 Link 1
-          </NavItem>
-          <NavItem preventDefault to="#grouped-2" itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'}>
-            Group 1 Link 2
-          </NavItem>
-          <NavItem preventDefault to="#grouped-3" itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'}>
-            Group 1 Link 3
-          </NavItem>
-        </NavGroup>
-        <NavGroup title="Section title 2">
-          <NavItem preventDefault to="#grouped-4" itemId="grp-2_itm-1" isActive={activeItem === 'grp-2_itm-1'}>
-            Group 2 Link 1
-          </NavItem>
-          <NavItem preventDefault to="#grouped-5" itemId="grp-2_itm-2" isActive={activeItem === 'grp-2_itm-2'}>
-            Group 2 Link 2
-          </NavItem>
-          <NavItem preventDefault to="#grouped-6" itemId="grp-2_itm-3" isActive={activeItem === 'grp-2_itm-3'}>
-            Group 2 Link 3
-          </NavItem>
-        </NavGroup>
-      </Nav>
-    );
-  }
-}
+```ts file="./NavGrouped.tsx"
 ```
 
 ### Expandable
@@ -229,7 +145,13 @@ class NavExpandableTitlesList extends React.Component {
     return (
       <Nav onSelect={this.onSelect} aria-label="Expandable with subnav global nav">
         <NavList>
-          <NavExpandable title="Expandable with subnav group 1" srText="SR Link" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
+          <NavExpandable
+            title="Expandable with subnav group 1"
+            srText="SR Link"
+            groupId="grp-1"
+            isActive={activeGroup === 'grp-1'}
+            isExpanded
+          >
             <NavItem
               preventDefault
               to="#sr-expandable-1"
@@ -258,7 +180,12 @@ class NavExpandableTitlesList extends React.Component {
               Expandable 1 link 3
             </NavItem>
           </NavExpandable>
-          <NavExpandable title="Expandable with subnav group 2" srText="SR Link 2" groupId="grp-2" isActive={activeGroup === 'grp-2'}>
+          <NavExpandable
+            title="Expandable with subnav group 2"
+            srText="SR Link 2"
+            groupId="grp-2"
+            isActive={activeGroup === 'grp-2'}
+          >
             <NavItem
               preventDefault
               to="#sr-expandable-4"
