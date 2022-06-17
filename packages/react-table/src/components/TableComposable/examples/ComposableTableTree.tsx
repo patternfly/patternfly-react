@@ -187,7 +187,7 @@ export const ComposableTableTree: React.FunctionComponent = () => {
     <TableComposable isTreeTable aria-label="Tree table">
       <Thead>
         <Tr>
-          <Th>{columnNames.name}</Th>
+          <Th width={40}>{columnNames.name}</Th>
           <Th>{columnNames.branches}</Th>
           <Th>{columnNames.prs}</Th>
           <Th>{columnNames.workspaces}</Th>

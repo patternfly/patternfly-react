@@ -67,20 +67,26 @@ export const ComposableTableCompoundExpandable: React.FunctionComponent = () => 
         return (
           <Tbody key={repo.name} isExpanded={isRowExpanded}>
             <Tr>
-              <Td dataLabel={columnNames.name} component="th">
+              <Td width={25} dataLabel={columnNames.name} component="th">
                 <a href="#">{repo.name}</a>
               </Td>
-              <Td dataLabel={columnNames.branches} compoundExpand={compoundExpandParams(repo, 'branches')}>
+              <Td width={10} dataLabel={columnNames.branches} compoundExpand={compoundExpandParams(repo, 'branches')}>
                 <CodeBranchIcon key="icon" /> {repo.branches}
               </Td>
-              <Td dataLabel={columnNames.prs} compoundExpand={compoundExpandParams(repo, 'prs')}>
+              <Td width={10} dataLabel={columnNames.prs} compoundExpand={compoundExpandParams(repo, 'prs')}>
                 <CodeIcon key="icon" /> {repo.prs}
               </Td>
-              <Td dataLabel={columnNames.workspaces} compoundExpand={compoundExpandParams(repo, 'workspaces')}>
+              <Td
+                width={10}
+                dataLabel={columnNames.workspaces}
+                compoundExpand={compoundExpandParams(repo, 'workspaces')}
+              >
                 <CubeIcon key="icon" /> {repo.workspaces}
               </Td>
-              <Td dataLabel={columnNames.lastCommit}>{repo.lastCommit}</Td>
-              <Td>
+              <Td width={15} dataLabel={columnNames.lastCommit}>
+                {repo.lastCommit}
+              </Td>
+              <Td width={30}>
                 <a href="#">Open in GitHub</a>
               </Td>
             </Tr>
@@ -89,7 +95,14 @@ export const ComposableTableCompoundExpandable: React.FunctionComponent = () => 
                 <Td dataLabel={columnNames[expandedCellKey]} noPadding colSpan={6}>
                   <ExpandableRowContent>
                     <div className="pf-u-m-md">
-                      Expanded content for {repo.name}: {expandedCellKey} goes here!
+                      Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem
+                      ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum
+                      sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit
+                      dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor.
+                      Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem
+                      ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum
+                      sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit
+                      dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor.
                     </div>
                   </ExpandableRowContent>
                 </Td>

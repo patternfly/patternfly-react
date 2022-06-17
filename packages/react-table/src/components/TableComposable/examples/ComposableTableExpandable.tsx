@@ -36,7 +36,11 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
       prs: 'b',
       workspaces: 'four',
       lastCommit: 'five',
-      details: { detailFormat: 1, detail1: 'single cell - fullWidth' }
+      details: {
+        detailFormat: 1,
+        detail1:
+          'Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. '
+      }
     },
     {
       name: 'parent 3',
@@ -117,11 +121,11 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
         <Thead>
           <Tr>
             <Th />
-            <Th>{columnNames.name}</Th>
-            <Th>{columnNames.branches}</Th>
-            <Th>{columnNames.prs}</Th>
-            <Th>{columnNames.workspaces}</Th>
-            <Th>{columnNames.lastCommit}</Th>
+            <Th width={25}>{columnNames.name}</Th>
+            <Th width={10}>{columnNames.branches}</Th>
+            <Th width={15}>{columnNames.prs}</Th>
+            <Th width={30}>{columnNames.workspaces}</Th>
+            <Th width={10}>{columnNames.lastCommit}</Th>
           </Tr>
         </Thead>
         {repositories.map((repo, rowIndex) => {

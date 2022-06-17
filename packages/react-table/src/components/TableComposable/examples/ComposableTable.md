@@ -194,6 +194,8 @@ type OnCollapse = (
 ) => void;
 ```
 
+Note: Table column widths will respond automatically when toggling expanded rows. To retain column widths between expanded and collapsed states, column header and/or data cell widths must be set.
+
 ```ts file="ComposableTableExpandable.tsx"
 ```
 

@@ -14,7 +14,9 @@ export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps
   innerRef?: React.Ref<any>;
   /** Flag indicating the Tr is hidden */
   isHidden?: boolean;
-  /** Only applicable to Tr within the Tbody: Makes the row expandable and determines if it's expanded or not */
+  /** Only applicable to Tr within the Tbody: Makes the row expandable and determines if it's expanded or not.
+   * To prevent column widths from responding automatically when expandable rows are toggled, the width prop must also be passed into either the th or td component
+   */
   isExpanded?: boolean;
   /** Only applicable to Tr within the Tbody: Whether the row is editable */
   isEditable?: boolean;
