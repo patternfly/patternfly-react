@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.74.11 (2022-06-17)
+
+
+### Bug Fixes
+
+* **Table:** update expandable examples to set column widths ([#7513](https://github.com/patternfly/patternfly-react/issues/7513)) ([c2e1e61](https://github.com/patternfly/patternfly-react/commit/c2e1e618a6924bdbb2b1e8e7ad94553615196fb2))
+
+
+
+
+
 ## 4.74.10 (2022-06-16)
 
 
