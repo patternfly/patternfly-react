@@ -173,7 +173,8 @@ export const CompoundExpandable = () => {
   };
   const compoundExpandParams = (repo, columnKey) => ({
     isExpanded: expandedCells[repo.name] === columnKey,
-    onToggle: () => setCellExpanded(repo, columnKey, expandedCells[repo.name] !== columnKey)
+    onToggle: () => setCellExpanded(repo, columnKey, expandedCells[repo.name] !== columnKey),
+    expandId: 'compound-expandable-demo'
   });
 
   return (
