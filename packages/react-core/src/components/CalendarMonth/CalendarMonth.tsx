@@ -138,7 +138,7 @@ export const CalendarMonth = ({
   const isValidated = (date: Date) => validators.every(validator => validator(date));
   const focusedDateValidated = isValidated(focusedDate);
   useEffect(() => {
-    if (isValidDate(dateProp) && isSameDate(focusedDate, dateProp)) {
+    if (isValidDate(dateProp) && !isSameDate(focusedDate, dateProp)) {
       setFocusedDate(dateProp);
     } else if (!dateProp) {
       setFocusedDate(today);
