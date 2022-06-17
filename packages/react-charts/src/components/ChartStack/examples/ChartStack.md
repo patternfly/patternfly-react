@@ -422,9 +422,9 @@ class MultiColorChart extends React.Component {
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
- - For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)
- - For `ChartArea` props, see [VictoryArea](https://formidable.com/open-source/victory/docs/victory-area)
- - For `ChartAxis` props, see [VictoryAxis](https://formidable.com/open-source/victory/docs/victory-axis)
- - For `ChartBar` props, see [VictoryBar](https://formidable.com/open-source/victory/docs/victory-bar)
- - For `ChartStack` props, see [VictoryStack](https://formidable.com/open-source/victory/docs/victory-stack)
- - For `ChartTooltip` props, see [VictoryTooltip](https://formidable.com/open-source/victory/docs/victory-tooltip)
+- For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)
+- For `ChartArea` props, see [VictoryArea](https://formidable.com/open-source/victory/docs/victory-area)
+- For `ChartAxis` props, see [VictoryAxis](https://formidable.com/open-source/victory/docs/victory-axis)
+- For `ChartBar` props, see [VictoryBar](https://formidable.com/open-source/victory/docs/victory-bar)
+- For `ChartStack` props, see [VictoryStack](https://formidable.com/open-source/victory/docs/victory-stack)
+- For `ChartTooltip` props, see [VictoryTooltip](https://formidable.com/open-source/victory/docs/victory-tooltip)

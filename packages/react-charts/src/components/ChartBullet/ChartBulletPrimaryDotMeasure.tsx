@@ -10,8 +10,9 @@ import { ChartTooltip } from '../ChartTooltip';
 import { getBulletPrimaryDotMeasureTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-scatter/src/index.d.ts
+ * ChartBulletPrimaryDotMeasure renders a dataset as the primary dot measure.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-scatter/src/index.d.ts
  */
 export interface ChartBulletPrimaryDotMeasureProps {
   /**

@@ -15,8 +15,9 @@ import {
 } from '../ChartUtils';
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-legend/src/index.d.ts
+ * ChartLegendTooltipContent renders a legend tooltip component.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-legend/src/index.d.ts
  */
 export interface ChartLegendTooltipContentProps {
   /**

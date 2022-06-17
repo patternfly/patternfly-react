@@ -10,8 +10,9 @@ import { ChartTooltip } from '../ChartTooltip';
 import { getBulletComparativeMeasureTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-bar/src/index.d.ts
+ * ChartBulletComparativeMeasure renders a dataset as a comparative measure.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-bar/src/index.d.ts
  */
 export interface ChartBulletComparativeMeasureProps {
   /**

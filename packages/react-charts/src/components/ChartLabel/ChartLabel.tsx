@@ -25,7 +25,9 @@ export enum ChartLabelPlacement {
 }
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * ChartLabel renders the label components that are used across all Victory based components.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-core/src/victory-label/victory-label.tsx
  */
 export interface ChartLabelProps extends VictoryLabelProps {
   /**

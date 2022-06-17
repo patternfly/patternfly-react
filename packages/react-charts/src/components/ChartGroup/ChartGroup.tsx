@@ -35,8 +35,14 @@ export enum ChartGroupSortOrder {
 }
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-group/src/index.d.ts
+ * ChartGroup is a wrapper component that renders a given set of children with some shared props. ChartGroup reconciles
+ * the domain and layout for all its children, and coordinates animations and shared events. ChartGroup may also be used
+ * to supply common data and styles to all its children. This is especially useful when adding markers to a line, or
+ * adding voronoi tooltips to data. ChartGroup may also be used to apply an offset to a group of children, as with
+ * grouped bar charts, or may be used to stack several components on the same level, e.g., stacked area charts with
+ * data markers.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-group/src/index.d.ts
  */
 export interface ChartGroupProps extends VictoryGroupProps {
   /**

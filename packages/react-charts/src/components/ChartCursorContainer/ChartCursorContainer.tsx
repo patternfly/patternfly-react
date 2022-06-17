@@ -14,8 +14,11 @@ import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-cursor-container/src/index.d.ts
+ * ChartCursorContainer adds a cursor to a chart to inspect coordinates. The cursor moves with the mouse along the
+ * visible domain of the chart. ChartCursorContainer may be used with any Victory component that works with an x-y
+ * coordinate system, and should be added as the containerComponent of the top-level component.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-cursor-container/src/index.d.ts
  */
 export interface ChartCursorContainerProps extends VictoryCursorContainerProps {
   /**
