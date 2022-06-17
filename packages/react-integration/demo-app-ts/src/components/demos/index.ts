@@ -66,6 +66,7 @@ export * from './SelectDemo/FilteringSelectLiveUpdateDemo';
 export * from './SelectDemo/SelectDemo';
 export * from './SelectDemo/SelectFavoritesDemo';
 export * from './SelectDemo/SelectFooterFilteringDemo';
+export * from './SelectDemo/SelectInModal';
 export * from './SelectDemo/SelectTypeaheadFooterDemo';
 export * from './SelectDemo/SelectValidatedDemo';
 export * from './SelectDemo/SelectViewMoreDemo';

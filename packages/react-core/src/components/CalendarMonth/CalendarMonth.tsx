@@ -55,6 +55,8 @@ export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTML
   className?: string;
   /** @hide Internal prop to allow pressing escape in select menu to not close popover */
   onSelectToggle?: (open: boolean) => void;
+  /** Flag to set browser focus on the passed date **/
+  isDateFocused?: boolean;
 }
 
 // Must be numeric given current header design
@@ -110,19 +112,24 @@ export const CalendarMonth = ({
   nextMonthAriaLabel = 'Next month',
   yearInputAriaLabel = 'Select year',
   cellAriaLabel,
+  isDateFocused = false,
   ...props
 }: CalendarProps) => {
   const longMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(monthNum => new Date(1990, monthNum)).map(monthFormat);
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
   // eslint-disable-next-line prefer-const
-  let [focusedDate, setFocusedDate] = React.useState(new Date(dateProp));
-  if (!isValidDate(focusedDate)) {
-    if (isValidDate(rangeStart)) {
-      focusedDate = rangeStart;
+  const [focusedDate, setFocusedDate] = React.useState(() => {
+    const initDate = new Date(dateProp);
+    if (isValidDate(initDate)) {
+      return initDate;
     } else {
-      focusedDate = today;
+      if (isValidDate(rangeStart)) {
+        return rangeStart;
+      } else {
+        return today;
+      }
     }
-  }
+  });
   const [hoveredDate, setHoveredDate] = React.useState(new Date(focusedDate));
   const focusRef = React.useRef<HTMLButtonElement>();
   const [hiddenMonthId] = React.useState(getUniqueId('hidden-month-span'));
@@ -131,21 +138,22 @@ export const CalendarMonth = ({
   const isValidated = (date: Date) => validators.every(validator => validator(date));
   const focusedDateValidated = isValidated(focusedDate);
   useEffect(() => {
-    if (!(isValidDate(dateProp) && isSameDate(focusedDate, dateProp))) {
+    if (isValidDate(dateProp) && !isSameDate(focusedDate, dateProp)) {
       setFocusedDate(dateProp);
+    } else if (!dateProp) {
+      setFocusedDate(today);
     }
   }, [dateProp]);
 
   useEffect(() => {
-    // When using header controls don't move focus
-    if (shouldFocus) {
-      if (focusRef.current && focusedDateValidated) {
-        focusRef.current.focus();
-      }
+    // Calendar month should not be focused on page load
+    // Datepicker should place focus in calendar month when opened
+    if ((shouldFocus || isDateFocused) && focusedDateValidated && focusRef.current) {
+      focusRef.current.focus();
     } else {
       setShouldFocus(true);
     }
-  }, [focusedDate]);
+  }, [focusedDate, isDateFocused, focusedDateValidated, focusRef]);
 
   const onMonthClick = (newDate: Date) => {
     setFocusedDate(newDate);

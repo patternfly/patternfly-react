@@ -8,6 +8,7 @@ import { InputGroup } from '../InputGroup/InputGroup';
 import OutlinedCalendarAltIcon from '@patternfly/react-icons/dist/esm/icons/outlined-calendar-alt-icon';
 import { CalendarMonth, CalendarFormat, isValidDate } from '../CalendarMonth';
 import { useImperativeHandle } from 'react';
+import { KeyTypes } from '../../helpers';
 
 export interface DatePickerProps
   extends CalendarFormat,
@@ -36,8 +37,13 @@ export interface DatePickerProps
   helperText?: React.ReactNode;
   /** Aria label for the button to open the date picker */
   buttonAriaLabel?: string;
-  /** The element to append the popover to */
-  appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement);
+  /** The container to append the menu to. Defaults to 'parent'.
+   * If your menu is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * menuAppendTo={() => document.body}
+   * menuAppendTo={document.getElementById('target')}
+   */
+  appendTo?: HTMLElement | ((ref?: HTMLElement) => HTMLElement) | 'parent';
   /** Props to pass to the Popover */
   popoverProps?: Omit<PopoverProps, 'appendTo'>;
   /** Functions that returns an error message if a date is invalid */
@@ -49,8 +55,13 @@ export interface DatePickerProps
 export interface DatePickerRef {
   /** Sets the calendar open status */
   setCalendarOpen: (isOpen: boolean) => void;
-  /** Toggles the calendar open status */
-  toggleCalendar: () => void;
+  /** Toggles the calendar open status. If no parameters are passed, the calendar will simply toggle its open status.
+   * If the isOpen parameter is passed, that will set the calendar open status to the value of the isOpen parameter.
+   * If the eventKey parameter is set to 'Escape', that will invoke the date pickers onEscapePress event to toggle the
+   * correct control appropriately. */
+  toggleCalendar: (isOpen?: boolean, eventKey?: string) => void;
+  /** Current calendar open status */
+  isCalendarOpen: boolean;
 }
 
 export const yyyyMMddFormat = (date: Date) =>
@@ -74,7 +85,7 @@ const DatePickerBase = (
     onBlur = (): any => undefined,
     invalidFormatText = 'Invalid date',
     helperText,
-    appendTo,
+    appendTo = 'parent',
     popoverProps,
     monthFormat,
     weekdayFormat,
@@ -98,6 +109,7 @@ const DatePickerBase = (
   const widthChars = React.useMemo(() => Math.max(dateFormat(new Date()).length, placeholder.length), [dateFormat]);
   const style = { '--pf-c-date-picker__input--c-form-control--width-chars': widthChars, ...styleProps };
   const buttonRef = React.useRef<HTMLButtonElement>();
+  const datePickerWrapperRef = React.useRef<HTMLDivElement>();
 
   React.useEffect(() => {
     setValue(valueProp);
@@ -159,13 +171,21 @@ const DatePickerBase = (
     ref,
     () => ({
       setCalendarOpen: (isOpen: boolean) => setPopoverOpen(isOpen),
-      toggleCalendar: () => setPopoverOpen(prev => !prev)
+      toggleCalendar: (setOpen?: boolean, eventKey?: string) => {
+        if (eventKey === KeyTypes.Escape && popoverOpen && !selectOpen) {
+          setPopoverOpen(prev => (setOpen !== undefined ? setOpen : !prev));
+        }
+      },
+      isCalendarOpen: popoverOpen
     }),
-    [setPopoverOpen]
+    [setPopoverOpen, popoverOpen, selectOpen]
   );
 
+  const getParentElement = () =>
+    datePickerWrapperRef && datePickerWrapperRef.current ? datePickerWrapperRef.current : null;
+
   return (
-    <div className={css(styles.datePicker, className)} style={style} {...props}>
+    <div className={css(styles.datePicker, className)} ref={datePickerWrapperRef} style={style} {...props}>
       <Popover
         position="bottom"
         bodyContent={
@@ -182,14 +202,16 @@ const DatePickerBase = (
             dayFormat={dayFormat}
             weekStart={weekStart}
             rangeStart={rangeStart}
+            isDateFocused
           />
         }
         showClose={false}
         isVisible={popoverOpen}
         shouldClose={(_1, _2, event) => {
           event = event as KeyboardEvent;
-          // Let the select menu close
-          if (event.keyCode && event.keyCode === 27 && selectOpen) {
+          if (event.key === KeyTypes.Escape && selectOpen) {
+            event.stopPropagation();
+            setSelectOpen(false);
             return false;
           }
           // Let our button handle toggling
@@ -197,12 +219,15 @@ const DatePickerBase = (
             return false;
           }
           setPopoverOpen(false);
+          if (event.key === KeyTypes.Escape && popoverOpen) {
+            event.stopPropagation();
+          }
           return true;
         }}
         withFocusTrap
         hasNoPadding
         hasAutoWidth
-        appendTo={appendTo}
+        appendTo={appendTo === 'parent' ? getParentElement() : appendTo}
         {...popoverProps}
       >
         <div className={styles.datePickerInput}>
