@@ -110,15 +110,15 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   const editableInputRef = React.useRef<HTMLInputElement>();
 
   React.useEffect(() => {
-    document.addEventListener('click', onDocClick);
+    document.addEventListener('mousedown', onDocMouseDown);
     document.addEventListener('keydown', onKeyDown);
     return () => {
-      document.removeEventListener('click', onDocClick);
+      document.removeEventListener('mousedown', onDocMouseDown);
       document.removeEventListener('keydown', onKeyDown);
     };
   });
 
-  const onDocClick = (event: MouseEvent) => {
+  const onDocMouseDown = (event: MouseEvent) => {
     if (
       isEditableActive &&
       editableInputRef &&

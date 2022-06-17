@@ -40,3 +40,10 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-i
 
 ```ts file="LabelGroupEditableLabels.tsx" isBeta
 ```
+
+### Editable labels with add button
+
+For additional documentation that showcases adding a new label, see [label group demos](/components/label-group/react-demos).
+
+```ts file="LabelGroupEditableAdd.tsx"
+```
