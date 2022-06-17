@@ -218,7 +218,7 @@ class ToolbarSpacers extends React.Component {
 
     return (
       <Toolbar
-        id="toolbar-spacers"
+        id="toolbar-insets"
         inset={{
           default: 'insetNone',
           md: 'insetSm',
@@ -249,7 +249,7 @@ const ToolbarItems = () => {
   return (
     <React.Fragment>
       <div style={{ overflowY: 'scroll', height: '200px' }}>
-        <Toolbar id="toolbar-spacers" inset={{ default: 'insetNone' }} isSticky={isSticky}>
+        <Toolbar id="toolbar-sticky" inset={{ default: 'insetNone' }} isSticky={isSticky}>
           <ToolbarContent>
             <ToolbarItem>
               <SearchInput aria-label="search input example" />

@@ -138,7 +138,7 @@ class BasicMasthead extends React.Component {
     ];
 
     return (
-      <Masthead id="basic">
+      <Masthead id="basic-demo">
         <MastheadToggle>
           <Button variant="plain" onClick={() => {}} aria-label="Global navigation">
             <BarsIcon />

@@ -52,6 +52,8 @@ export interface NotificationDrawerListItemHeaderProps extends React.HTMLProps<H
     | 'left-end'
     | 'right-start'
     | 'right-end';
+  /** Sets the heading level to use for the list item header title. Default is h2. */
+  headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 export const NotificationDrawerListItemHeader: React.FunctionComponent<NotificationDrawerListItemHeaderProps> = ({
@@ -63,6 +65,7 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
   variant = 'default',
   truncateTitle = 0,
   tooltipPosition,
+  headingLevel: HeadingLevel = 'h2',
   ...props
 }: NotificationDrawerListItemHeaderProps) => {
   const titleRef = React.useRef(null);
@@ -79,14 +82,14 @@ export const NotificationDrawerListItemHeader: React.FunctionComponent<Notificat
   }, [titleRef, truncateTitle, isTooltipVisible]);
   const Icon = variantIcons[variant];
   const Title = (
-    <h2
+    <HeadingLevel
       {...(isTooltipVisible && { tabIndex: 0 })}
       ref={titleRef}
       className={css(styles.notificationDrawerListItemHeaderTitle, truncateTitle && styles.modifiers.truncate)}
     >
       {srTitle && <span className={css(a11yStyles.screenReader)}>{srTitle}</span>}
       {title}
-    </h2>
+    </HeadingLevel>
   );
 
   return (

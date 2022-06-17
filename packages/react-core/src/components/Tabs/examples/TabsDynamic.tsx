@@ -52,6 +52,7 @@ export const TabsDynamic: React.FunctionComponent = () => {
         <Tab
           key={index}
           eventKey={index}
+          aria-label={`Dynamic ${tab}`}
           title={<TabTitleText>{tab}</TabTitleText>}
           closeButtonAriaLabel={`Close ${tab}`}
           isCloseDisabled={tabs.length === 1}
