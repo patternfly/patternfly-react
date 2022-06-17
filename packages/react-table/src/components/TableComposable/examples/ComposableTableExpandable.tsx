@@ -141,14 +141,14 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
             childIsFullWidth = [1, 3].includes(detailFormat);
             childHasNoPadding = [2, 3].includes(detailFormat);
             if (detail1 && !detail2 && !detail3) {
-              detail1Colspan = childIsFullWidth ? numColumns : numColumns + 1; // Account for toggle column
+              detail1Colspan = !childIsFullWidth ? numColumns : numColumns + 1; // Account for toggle column
             } else if (detail1 && detail2 && !detail3) {
               detail1Colspan = 2;
-              detail2Colspan = childIsFullWidth ? 3 : 4;
+              detail2Colspan = !childIsFullWidth ? 3 : 4;
             } else if (detail1 && detail2 && detail3) {
               detail1Colspan = 2;
               detail2Colspan = 2;
-              detail3Colspan = childIsFullWidth ? 1 : 2;
+              detail3Colspan = !childIsFullWidth ? 1 : 2;
             }
           }
           return (
