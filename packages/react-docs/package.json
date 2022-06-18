@@ -22,7 +22,7 @@
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config"
   },
   "dependencies": {
-    "@patternfly/patternfly": "4.198.2",
+    "@patternfly/patternfly": "4.200.0",
     "@patternfly/react-catalog-view-extension": "^4.73.14",
     "@patternfly/react-charts": "^6.75.14",
     "@patternfly/react-code-editor": "^4.63.14",
