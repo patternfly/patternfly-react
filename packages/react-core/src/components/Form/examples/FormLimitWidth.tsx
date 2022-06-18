@@ -97,12 +97,12 @@ export const SimpleForm: React.FunctionComponent = () => {
           onChange={handlePhoneChange}
         />
       </FormGroup>
-      <FormGroup role="group" isInline label="How can we contact you?">
+      <FormGroup role="group" isInline fieldId="limit-width-form-checkbox-group" label="How can we contact you?">
         <Checkbox label="Email" aria-label="Email" id="inlinecheck04" />
         <Checkbox label="Phone" aria-label="Phone" id="inlinecheck05" />
         <Checkbox label="Mail" aria-label="Mail" id="inlinecheck06" />
       </FormGroup>
-      <FormGroup role="radiogroup" isInline label="Time zone">
+      <FormGroup role="radiogroup" isInline fieldId="limit-width-form-radio-group" label="Time zone">
         <Radio name="limit-width-radio" label="Eastern" id="limit-width-inline-radio-01" />
         <Radio name="limit-width-radio" label="Central" id="limit-width-inline-radio-02" />
         <Radio name="limit-width-radio" label="Pacific" id="limit-width-inline-radio-03" />

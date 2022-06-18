@@ -93,12 +93,18 @@ export const HorizontalForm: React.FunctionComponent = () => {
           name="horizontal-form-exp"
         />
       </FormGroup>
-      <FormGroup label="How can we contact you?" isStack hasNoPaddingTop role="group">
+      <FormGroup
+        label="How can we contact you?"
+        isStack
+        fieldId="horizontal-form-checkbox-group"
+        hasNoPaddingTop
+        role="group"
+      >
         <Checkbox label="Email" id="alt-form-checkbox-1" name="alt-form-checkbox-1" />
         <Checkbox label="Phone" id="alt-form-checkbox-2" name="alt-form-checkbox-2" />
         <Checkbox label="Mail" id="alt-form-checkbox-3" name="alt-form-checkbox-3" />
       </FormGroup>
-      <FormGroup role="radiogroup" isStack hasNoPaddingTop label="Time zone">
+      <FormGroup role="radiogroup" isStack fieldId="horizontal-form-radio-group" hasNoPaddingTop label="Time zone">
         <Radio name="horizontal-inline-radio" label="Eastern" id="horizontal-inline-radio-01" />
         <Radio name="horizontal-inline-radio" label="Central" id="horizontal-inline-radio-02" />
         <Radio name="horizontal-inline-radio" label="Pacific" id="horizontal-inline-radio-03" />
