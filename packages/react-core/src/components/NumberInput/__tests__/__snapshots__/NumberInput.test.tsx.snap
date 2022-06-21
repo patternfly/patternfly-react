@@ -375,6 +375,80 @@ exports[`numberInput renders custom width 1`] = `
 </DocumentFragment>
 `;
 
+exports[`numberInput renders decimal value 2 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-number-input"
+  >
+    <div
+      class="pf-c-input-group"
+    >
+      <button
+        aria-disabled="false"
+        aria-label="Minus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-27"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+      <input
+        aria-label="Input"
+        class="pf-c-form-control"
+        readonly=""
+        type="number"
+        value="5.2"
+      />
+      <button
+        aria-disabled="false"
+        aria-label="Plus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-28"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`numberInput renders defaults & extra props 1`] = `
 <DocumentFragment>
   <div
@@ -527,6 +601,154 @@ exports[`numberInput renders disabled 1`] = `
 </DocumentFragment>
 `;
 
+exports[`numberInput renders negative decimal value 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-number-input"
+  >
+    <div
+      class="pf-c-input-group"
+    >
+      <button
+        aria-disabled="false"
+        aria-label="Minus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-29"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+      <input
+        aria-label="Input"
+        class="pf-c-form-control"
+        readonly=""
+        type="number"
+        value="-5"
+      />
+      <button
+        aria-disabled="false"
+        aria-label="Plus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-30"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`numberInput renders negative value 2 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-number-input"
+  >
+    <div
+      class="pf-c-input-group"
+    >
+      <button
+        aria-disabled="false"
+        aria-label="Minus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-23"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+      <input
+        aria-label="Input"
+        class="pf-c-form-control"
+        readonly=""
+        type="number"
+        value="-5"
+      />
+      <button
+        aria-disabled="false"
+        aria-label="Plus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-24"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`numberInput renders unit & position 1`] = `
 <DocumentFragment>
   <div
@@ -606,6 +828,243 @@ exports[`numberInput renders unit & position 1`] = `
 </DocumentFragment>
 `;
 
+exports[`numberInput renders unit & position with decimal number 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-number-input"
+  >
+    <div
+      class="pf-c-number-input__unit"
+    >
+      $
+    </div>
+    <div
+      class="pf-c-input-group"
+    >
+      <button
+        aria-disabled="false"
+        aria-label="Minus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-33"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+      <input
+        aria-label="Input"
+        class="pf-c-form-control"
+        readonly=""
+        type="number"
+        value="0.64"
+      />
+      <button
+        aria-disabled="false"
+        aria-label="Plus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-34"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`numberInput renders unit & position with negative decimal number 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-number-input"
+  >
+    <div
+      class="pf-c-number-input__unit"
+    >
+      $
+    </div>
+    <div
+      class="pf-c-input-group"
+    >
+      <button
+        aria-disabled="false"
+        aria-label="Minus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-37"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+      <input
+        aria-label="Input"
+        class="pf-c-form-control"
+        readonly=""
+        type="number"
+        value="-12.4"
+      />
+      <button
+        aria-disabled="false"
+        aria-label="Plus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-38"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`numberInput renders unit & position with negative number 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-number-input"
+  >
+    <div
+      class="pf-c-number-input__unit"
+    >
+      $
+    </div>
+    <div
+      class="pf-c-input-group"
+    >
+      <button
+        aria-disabled="false"
+        aria-label="Minus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-29"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+      <input
+        aria-label="Input"
+        class="pf-c-form-control"
+        readonly=""
+        type="number"
+        value="-8"
+      />
+      <button
+        aria-disabled="false"
+        aria-label="Plus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-30"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`numberInput renders unit 1`] = `
 <DocumentFragment>
   <div
@@ -653,6 +1112,243 @@ exports[`numberInput renders unit 1`] = `
         aria-label="Plus"
         class="pf-c-button pf-m-control"
         data-ouia-component-id="OUIA-Generated-Button-control-12"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div
+      class="pf-c-number-input__unit"
+    >
+      %
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`numberInput renders unit with decimal number 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-number-input"
+  >
+    <div
+      class="pf-c-input-group"
+    >
+      <button
+        aria-disabled="false"
+        aria-label="Minus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-31"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+      <input
+        aria-label="Input"
+        class="pf-c-form-control"
+        readonly=""
+        type="number"
+        value="0.64"
+      />
+      <button
+        aria-disabled="false"
+        aria-label="Plus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-32"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div
+      class="pf-c-number-input__unit"
+    >
+      %
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`numberInput renders unit with negative decimal number 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-number-input"
+  >
+    <div
+      class="pf-c-input-group"
+    >
+      <button
+        aria-disabled="false"
+        aria-label="Minus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-35"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+      <input
+        aria-label="Input"
+        class="pf-c-form-control"
+        readonly=""
+        type="number"
+        value="-12.4"
+      />
+      <button
+        aria-disabled="false"
+        aria-label="Plus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-36"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div
+      class="pf-c-number-input__unit"
+    >
+      %
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`numberInput renders unit with negative number 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-number-input"
+  >
+    <div
+      class="pf-c-input-group"
+    >
+      <button
+        aria-disabled="false"
+        aria-label="Minus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-27"
+        data-ouia-component-type="PF4/Button"
+        data-ouia-safe="true"
+        type="button"
+      >
+        <span
+          class="pf-c-number-input__icon"
+        >
+          <svg
+            aria-hidden="true"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style="vertical-align: -0.125em;"
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </span>
+      </button>
+      <input
+        aria-label="Input"
+        class="pf-c-form-control"
+        readonly=""
+        type="number"
+        value="-8"
+      />
+      <button
+        aria-disabled="false"
+        aria-label="Plus"
+        class="pf-c-button pf-m-control"
+        data-ouia-component-id="OUIA-Generated-Button-control-28"
         data-ouia-component-type="PF4/Button"
         data-ouia-safe="true"
         type="button"
