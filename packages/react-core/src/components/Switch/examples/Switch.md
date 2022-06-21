@@ -170,29 +170,13 @@ import { Switch } from '@patternfly/react-core';
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
-class UncontrolledSwitch extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      checked: true
-    };
-    this.handleChange = checked => {
-      this.setState({
-        checked
-      });
-    };
-  }
-  render() {
-    const { defaultChecked } = this.state;
-    return (
-      <Switch 
-        id="uncontrolled-switch"
-        label="Message when on"
-        labelOff="Message when off"
-        defaultChecked={this.state.checked}
-        onChange={this.handleChange}  
-      />
-    )
-  }
-}
+<React.Fragment>
+  <Switch
+    id="uncontrolled-switch-on"
+    aria-label="Uncontrolled switch"
+    label="Message when on"
+    labelOff="Message when off"
+    defaultChecked={false}
+  />
+</React.Fragment>;
 ```
