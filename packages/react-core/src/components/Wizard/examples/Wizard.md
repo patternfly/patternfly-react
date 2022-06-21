@@ -764,7 +764,14 @@ import { Button, Wizard } from '@patternfly/react-core';
 class GetCurrentStepWizard extends React.Component {
   constructor(props) {
     super(props);
-    this.currentStep = React.createRef();
+    this.state = {
+      step: 1
+    };
+    this.onCurrentStepChanged = ({ id }) => {
+        this.setState({
+            step: id
+        });
+    }
     this.closeWizard = () => {
       console.log('close wizard');
     };
@@ -787,7 +794,7 @@ class GetCurrentStepWizard extends React.Component {
         description="Simple Wizard Description"
         steps={steps}
         height={400}
-        currentStepRef={this.currentStep}
+        onCurrentStepChanged={this.onCurrentStepChanged}
       />
     );
   }

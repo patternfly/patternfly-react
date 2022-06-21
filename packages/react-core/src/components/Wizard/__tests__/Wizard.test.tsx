@@ -206,29 +206,31 @@ describe('Wizard', () => {
     expect(main).toHaveAttribute('aria-labelledby', 'main-aria-labelledby');
   });
 
-  test('wiz with currentStepRef', () => {
-    const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }, { name: 'B', component: <p>Step 2</p> }, { name: 'C', component: <p>Step 3</p> }];
-    const currentStepRef: React.MutableRefObject<WizardStep> = {
-      current: undefined
-    };
+  test('wiz with onCurrentStepChanged setter', () => {
+    const stepA = { name: 'A', component: <p>Step 1</p> };
+    const stepB = { name: 'B', component: <p>Step 2</p> };
+    const stepC = { name: 'C', component: <p>Step 3</p> };
+
+    const steps: WizardStep[] = [ stepA, stepB, stepC ];
+    const setter = jest.fn();
 
     render(
         <Wizard
             title="Wiz title"
-            currentStepRef={ currentStepRef }
+            onCurrentStepChanged={ setter }
             steps={steps}
         />
     );
-    expect(currentStepRef.current.name).toBe('A');
+    expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepA));
     userEvent.click(screen.getByText(/next/i));
-    expect(currentStepRef.current.name).toBe('B');
+    expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepB));
     userEvent.click(screen.getByText(/next/i));
-    expect(currentStepRef.current.name).toBe('C');
+    expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepC));
     userEvent.click(screen.getByText('A'));
-    expect(currentStepRef.current.name).toBe('A');
+    expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepA));
     userEvent.click(screen.getByText(/next/i));
-    expect(currentStepRef.current.name).toBe('B');
+    expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepB));
     userEvent.click(screen.getByText(/back/i));
-    expect(currentStepRef.current.name).toBe('A');
+    expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepA));
   });
 });

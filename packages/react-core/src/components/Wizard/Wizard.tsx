@@ -101,7 +101,7 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   /** Flag indicating nav items with sub steps are expandable */
   isNavExpandable?: boolean;
   /** Ref where the current step will be placed */
-  currentStepRef?: React.MutableRefObject<WizardStep>;
+  onCurrentStepChanged?: (step: WizardStep) => void;
 }
 
 interface WizardState {
@@ -153,10 +153,11 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       isNavOpen: false
     };
 
-    if (props.currentStepRef) {
+    if (props.onCurrentStepChanged) {
       const flattenedSteps = this.getFlattenedSteps();
       if (flattenedSteps.length >= this.state.currentStep) {
-        props.currentStepRef.current = flattenedSteps[this.state.currentStep - 1];
+        const currentStep = flattenedSteps[this.state.currentStep - 1];
+        props.onCurrentStepChanged(currentStep);
       }
     }
   }
@@ -303,8 +304,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       currentStep
     });
 
-    if (this.props.currentStepRef) {
-      this.props.currentStepRef.current = currentStepObject;
+    if (this.props.onCurrentStepChanged) {
+      this.props.onCurrentStepChanged(currentStepObject);
     }
   }
 
@@ -354,7 +355,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       titleId,
       descriptionId,
       isNavExpandable,
-      currentStepRef,
+      onCurrentStepChanged,
       ...rest
       /* eslint-enable @typescript-eslint/no-unused-vars */
     } = this.props;
