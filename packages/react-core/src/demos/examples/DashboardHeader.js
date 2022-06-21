@@ -146,7 +146,7 @@ export default class DashboardHeader extends React.Component {
                 <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
               </ToolbarItem>
             </ToolbarGroup>
-            <ToolbarItem visibility={{ default: 'visible', sm: 'visible', md: 'visible', lg: 'hidden', xl: 'hidden' }}>
+            <ToolbarItem visibility={{ lg: 'hidden' }}>
               <Dropdown
                 isPlain
                 position="right"
