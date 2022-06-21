@@ -175,7 +175,7 @@ export default class DashboardHeader extends React.Component {
     );
 
     const masthead = (
-      <Masthead inset={{ default: 'insetLg' }}>
+      <Masthead>
         <MastheadToggle>
           <PageToggleButton variant="plain" aria-label="Global navigation">
             <BarsIcon />
