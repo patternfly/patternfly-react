@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Wizard, WizardStepFunctionType, WizardStep } from '../Wizard';
 
 describe('Wizard', () => {
@@ -203,5 +204,31 @@ describe('Wizard', () => {
     const main = screen.getByLabelText('main aria-label');
     expect(main).toBeInTheDocument();
     expect(main).toHaveAttribute('aria-labelledby', 'main-aria-labelledby');
+  });
+
+  test('wiz with currentStepRef', () => {
+    const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }, { name: 'B', component: <p>Step 2</p> }, { name: 'C', component: <p>Step 3</p> }];
+    const currentStepRef: React.MutableRefObject<WizardStep> = {
+      current: undefined
+    };
+
+    render(
+        <Wizard
+            title="Wiz title"
+            currentStepRef={ currentStepRef }
+            steps={steps}
+        />
+    );
+    expect(currentStepRef.current.name).toBe('A');
+    userEvent.click(screen.getByText(/next/i));
+    expect(currentStepRef.current.name).toBe('B');
+    userEvent.click(screen.getByText(/next/i));
+    expect(currentStepRef.current.name).toBe('C');
+    userEvent.click(screen.getByText('A'));
+    expect(currentStepRef.current.name).toBe('A');
+    userEvent.click(screen.getByText(/next/i));
+    expect(currentStepRef.current.name).toBe('B');
+    userEvent.click(screen.getByText(/back/i));
+    expect(currentStepRef.current.name).toBe('A');
   });
 });
