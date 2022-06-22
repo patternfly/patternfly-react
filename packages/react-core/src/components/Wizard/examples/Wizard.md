@@ -953,13 +953,29 @@ class WizardWithDrawer extends React.Component {
           {
             name: 'Substep A',
             component: <p>Substep A content</p>,
-            drawerPanelContent: panel2Content
+            drawerPanelContent: panel2Content,
+            hasOpenDrawerButton: true
           },
-          { name: 'Substep B', component: <p>Substep B content</p>, drawerPanelContent: panel2Content },
-          { name: 'Substep C', component: <p>Substep C content</p>, drawerPanelContent: panel2Content }
+          {
+            name: 'Substep B',
+            component: <p>Substep B content</p>,
+            drawerPanelContent: panel2Content,
+            hasOpenDrawerButton: true
+          },
+          {
+            name: 'Substep C',
+            component: <p>Substep C content</p>,
+            drawerPanelContent: panel2Content,
+            hasOpenDrawerButton: true
+          }
         ]
       },
-      { name: 'Additional', component: <p>Additional step content</p>, drawerPanelContent: panel3Content },
+      {
+        name: 'Additional',
+        component: <p>Additional step content</p>,
+        drawerPanelContent: panel3Content,
+        hasOpenDrawerButton: true
+      },
       {
         name: 'Review',
         component: <p>Review step content</p>,

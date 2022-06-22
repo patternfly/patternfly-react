@@ -230,22 +230,31 @@ class WizardModalWithDrawerDemo extends React.Component {
             id: 2,
             name: 'Substep A',
             component: <p>Configuration substep A</p>,
-            drawerPanelContent: configSubstepAPanelContent
+            drawerPanelContent: configSubstepAPanelContent,
+            hasOpenDrawerButton: true
           },
           {
             id: 3,
             name: 'Substep B',
             component: <p>Configuration substep B</p>,
-            drawerPanelContent: configSubstepBPanelContent
+            drawerPanelContent: configSubstepBPanelContent,
+            hasOpenDrawerButton: true
           }
         ]
       },
-      { id: 4, name: 'Additional', component: <p>Step 3 content</p>, drawerPanelContent: additionalPanelContent },
+      {
+        id: 4,
+        name: 'Additional',
+        component: <p>Step 3 content</p>,
+        drawerPanelContent: additionalPanelContent,
+        hasOpenDrawerButton: true
+      },
       {
         id: 5,
         name: 'Review',
         component: <p>Review step content</p>,
         drawerPanelContent: reviewPanelContent,
+        hasOpenDrawerButton: true,
         nextButtonText: 'Finish'
       }
     ];
@@ -556,23 +565,32 @@ class FullPageWizard extends React.Component {
             id: 2,
             name: 'Substep A',
             component: <p>Configuration substep A</p>,
-            drawerPanelContent: configSubstepAPanelContent
+            drawerPanelContent: configSubstepAPanelContent,
+            hasOpenDrawerButton: true
           },
           {
             id: 3,
             name: 'Substep B',
             component: <p>Configuration substep B</p>,
-            drawerPanelContent: configSubstepBPanelContent
+            drawerPanelContent: configSubstepBPanelContent,
+            hasOpenDrawerButton: true
           }
         ]
       },
-      { id: 4, name: 'Additional', component: <p>Step 3 content</p>, drawerPanelContent: additionalPanelContent },
+      {
+        id: 4,
+        name: 'Additional',
+        component: <p>Step 3 content</p>,
+        drawerPanelContent: additionalPanelContent,
+        hasOpenDrawerButton: true
+      },
       {
         id: 5,
         name: 'Review',
         component: <p>Review step content</p>,
         nextButtonText: 'Finish',
-        drawerPanelContent: reviewPanelContent
+        drawerPanelContent: reviewPanelContent,
+        hasOpenDrawerButton: true
       }
     ];
     const title = 'Basic wizard';
