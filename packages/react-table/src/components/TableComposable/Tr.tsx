@@ -26,7 +26,7 @@ export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps
   isRowSelected?: boolean;
   /** Flag indicating the row is striped */
   isStriped?: boolean;
-  /** Flag indicating the row is a bordered row */
+  /** Flag indicating the row will act as a border. This is typically used for a table with a nested and sticky header. */
   isBorderRow?: boolean;
   /** An event handler for the row */
   onRowClick?: (event?: React.KeyboardEvent | React.MouseEvent) => void;
