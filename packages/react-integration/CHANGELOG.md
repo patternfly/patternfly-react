@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.185.0 (2022-06-22)
+
+
+### Features
+
+* **Table:** add nested sticky header support ([#7595](https://github.com/patternfly/patternfly-react/issues/7595)) ([3888a0b](https://github.com/patternfly/patternfly-react/commit/3888a0bdf5e4e964d2d8d936c5d81f7813d8ec0c))
+
+
+
+
+
 ## 4.184.17 (2022-06-22)
 
 **Note:** Version bump only for package @patternfly/react-integration
