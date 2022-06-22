@@ -77,36 +77,6 @@ describe('numberInput', () => {
     expect(screen.getByDisplayValue('-5.2')).toBeInTheDocument();
   });
 
-  test('renders unit with negative number', () => {
-    const { asFragment } = render(<NumberInput value={-8} unit="%" unitPosition="after" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('renders unit & position with negative number', () => {
-    const { asFragment } = render(<NumberInput value={-8} unit="$" unitPosition="before" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('renders unit with decimal number', () => {
-    const { asFragment } = render(<NumberInput value={0.64} unit="%" unitPosition="after" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('renders unit & position with decimal number', () => {
-    const { asFragment } = render(<NumberInput value={0.64} unit="$" unitPosition="before" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('renders unit with negative decimal number', () => {
-    const { asFragment } = render(<NumberInput value={-12.4} unit="%" unitPosition="after" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('renders unit & position with negative decimal number', () => {
-    const { asFragment } = render(<NumberInput value={-12.4} unit="$" unitPosition="before" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   test('does not call onChange callback when the input does not change', () => {
     const onChangeMock = jest.fn();
 
