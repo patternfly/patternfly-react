@@ -125,7 +125,7 @@ class WizardModalWithDrawerDemo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isDrawerExpanded: true
+      isDrawerExpanded: false
     };
 
     this.drawerRef = React.createRef();
@@ -397,7 +397,7 @@ class FullPageWizard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isDrawerExpanded: true,
+      isDrawerExpanded: false,
       activeItem: 0
     };
 
