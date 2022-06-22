@@ -8,7 +8,7 @@ exports[`PageSidebar should match snapshot (auto-generated) 1`] = `
     id="page-sidebar"
   >
     <div
-      class="pf-topology-side-bar__body"
+      class="pf-c-page__sidebar-body"
     >
       <div>
         ReactNode

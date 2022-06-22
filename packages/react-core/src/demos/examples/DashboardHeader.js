@@ -27,7 +27,6 @@ import CogIcon from '@patternfly/react-icons/dist/esm/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 import QuestionCircleIcon from '@patternfly/react-icons/dist/esm/icons/question-circle-icon';
 import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
-import imgBrand from './pfColorLogo.svg';
 import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 export default class DashboardHeader extends React.Component {
@@ -147,7 +146,7 @@ export default class DashboardHeader extends React.Component {
                 <Button aria-label="Help" variant={ButtonVariant.plain} icon={<QuestionCircleIcon />} />
               </ToolbarItem>
             </ToolbarGroup>
-            <ToolbarItem visibility={{ default: 'hidden', sm: 'visible', md: 'visible', lg: 'hidden' }}>
+            <ToolbarItem visibility={{ lg: 'hidden' }}>
               <Dropdown
                 isPlain
                 position="right"
@@ -158,10 +157,8 @@ export default class DashboardHeader extends React.Component {
               />
             </ToolbarItem>
           </ToolbarGroup>
-
           <ToolbarItem visibility={{ default: 'hidden', sm: 'visible' }}>
             <Dropdown
-              position="right"
               isFullHeight
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
@@ -186,7 +183,14 @@ export default class DashboardHeader extends React.Component {
         </MastheadToggle>
         <MastheadMain>
           <MastheadBrand>
-            <Brand src={imgBrand} alt="Patternfly logo" />
+            <Brand
+              widths={{ default: '180px', md: '180px', '2xl': '220px' }}
+              src="/assets/images/logo__pf--reverse--base.png"
+              alt="Fallback patternFly default logo"
+            >
+              <source media="(min-width: 768px)" srcSet="/assets/images/logo__pf--reverse-on-md.svg" />
+              <source srcSet="/assets/images/logo__pf--reverse--base.svg" />
+            </Brand>
           </MastheadBrand>
         </MastheadMain>
         <MastheadContent>{headerToolbar}</MastheadContent>
