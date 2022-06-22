@@ -17,7 +17,6 @@ exports[`ProgressStep renders content 1`] = `
     >
       <div
         class="pf-c-progress-stepper__step-title"
-        style="border: 0px;"
       >
         Title
       </div>
@@ -44,7 +43,6 @@ exports[`ProgressStep renders current 1`] = `
     >
       <div
         class="pf-c-progress-stepper__step-title"
-        style="border: 0px;"
       >
         Title
       </div>
@@ -84,7 +82,6 @@ exports[`ProgressStep renders custom icon 1`] = `
     >
       <div
         class="pf-c-progress-stepper__step-title"
-        style="border: 0px;"
       >
         Title
       </div>
@@ -110,7 +107,6 @@ exports[`ProgressStep renders custom null icon - removing default from variant 1
     >
       <div
         class="pf-c-progress-stepper__step-title"
-        style="border: 0px;"
       >
         Title
       </div>
@@ -151,7 +147,6 @@ exports[`ProgressStep renders danger variant 1`] = `
     >
       <div
         class="pf-c-progress-stepper__step-title"
-        style="border: 0px;"
       >
         danger step
       </div>
@@ -178,7 +173,6 @@ exports[`ProgressStep renders default variant 1`] = `
     >
       <div
         class="pf-c-progress-stepper__step-title"
-        style="border: 0px;"
       >
         default step
       </div>
@@ -204,7 +198,6 @@ exports[`ProgressStep renders description 1`] = `
     >
       <div
         class="pf-c-progress-stepper__step-title"
-        style="border: 0px;"
       >
         Title
       </div>
@@ -236,7 +229,6 @@ exports[`ProgressStep renders help text styling 1`] = `
       <button
         class="pf-c-progress-stepper__step-title pf-m-help-text"
         role="button"
-        style="border: 0px;"
         tabindex="0"
         type="button"
       >
@@ -280,7 +272,6 @@ exports[`ProgressStep renders info variant 1`] = `
     >
       <div
         class="pf-c-progress-stepper__step-title"
-        style="border: 0px;"
       >
         info step
       </div>
@@ -307,7 +298,6 @@ exports[`ProgressStep renders pending variant 1`] = `
     >
       <div
         class="pf-c-progress-stepper__step-title"
-        style="border: 0px;"
       >
         pending step
       </div>
@@ -348,7 +338,6 @@ exports[`ProgressStep renders success variant 1`] = `
     >
       <div
         class="pf-c-progress-stepper__step-title"
-        style="border: 0px;"
       >
         success step
       </div>
@@ -389,7 +378,6 @@ exports[`ProgressStep renders warning variant 1`] = `
     >
       <div
         class="pf-c-progress-stepper__step-title"
-        style="border: 0px;"
       >
         warning step
       </div>
@@ -419,7 +407,6 @@ exports[`ProgressStepper gets custom class and id 1`] = `
       >
         <div
           class="pf-c-progress-stepper__step-title"
-          style="border: 0px;"
         >
           First
         </div>
@@ -440,7 +427,6 @@ exports[`ProgressStepper gets custom class and id 1`] = `
       >
         <div
           class="pf-c-progress-stepper__step-title"
-          style="border: 0px;"
         >
           Second
         </div>
@@ -461,7 +447,6 @@ exports[`ProgressStepper gets custom class and id 1`] = `
       >
         <div
           class="pf-c-progress-stepper__step-title"
-          style="border: 0px;"
         >
           Third
         </div>
@@ -491,7 +476,6 @@ exports[`ProgressStepper renders center aligned 1`] = `
       >
         <div
           class="pf-c-progress-stepper__step-title"
-          style="border: 0px;"
         >
           First
         </div>
@@ -512,7 +496,6 @@ exports[`ProgressStepper renders center aligned 1`] = `
       >
         <div
           class="pf-c-progress-stepper__step-title"
-          style="border: 0px;"
         >
           Second
         </div>
@@ -533,7 +516,6 @@ exports[`ProgressStepper renders center aligned 1`] = `
       >
         <div
           class="pf-c-progress-stepper__step-title"
-          style="border: 0px;"
         >
           Third
         </div>
@@ -563,7 +545,6 @@ exports[`ProgressStepper renders compact 1`] = `
       >
         <div
           class="pf-c-progress-stepper__step-title"
-          style="border: 0px;"
         >
           First
         </div>
@@ -584,7 +565,6 @@ exports[`ProgressStepper renders compact 1`] = `
       >
         <div
           class="pf-c-progress-stepper__step-title"
-          style="border: 0px;"
         >
           Second
         </div>
@@ -605,7 +585,6 @@ exports[`ProgressStepper renders compact 1`] = `
       >
         <div
           class="pf-c-progress-stepper__step-title"
-          style="border: 0px;"
         >
           Third
         </div>
@@ -635,7 +614,6 @@ exports[`ProgressStepper renders content 1`] = `
       >
         <div
           class="pf-c-progress-stepper__step-title"
-          style="border: 0px;"
         >
           First
         </div>
@@ -656,7 +634,6 @@ exports[`ProgressStepper renders content 1`] = `
       >
         <div
           class="pf-c-progress-stepper__step-title"
-          style="border: 0px;"
         >
           Second
         </div>
@@ -677,7 +654,6 @@ exports[`ProgressStepper renders content 1`] = `
       >
         <div
           class="pf-c-progress-stepper__step-title"
-          style="border: 0px;"
         >
           Third
         </div>
@@ -707,7 +683,6 @@ exports[`ProgressStepper renders vertically 1`] = `
       >
         <div
           class="pf-c-progress-stepper__step-title"
-          style="border: 0px;"
         >
           First
         </div>
@@ -728,7 +703,6 @@ exports[`ProgressStepper renders vertically 1`] = `
       >
         <div
           class="pf-c-progress-stepper__step-title"
-          style="border: 0px;"
         >
           Second
         </div>
@@ -749,7 +723,6 @@ exports[`ProgressStepper renders vertically 1`] = `
       >
         <div
           class="pf-c-progress-stepper__step-title"
-          style="border: 0px;"
         >
           Third
         </div>

@@ -92,7 +92,6 @@ export const ProgressStep: React.FunctionComponent<ProgressStepProps> = ({
           ref={stepRef}
           {...(popoverRender && { tabIndex: 0, role: 'button', type: 'button' })}
           {...(props.id !== undefined && titleId !== undefined && { 'aria-labelledby': `${props.id} ${titleId}` })}
-          style={{ border: 0 }}
         >
           {children}
           {popoverRender && popoverRender(stepRef)}
