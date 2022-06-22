@@ -20,6 +20,8 @@ export interface WizardStep {
   component?: any;
   /** The content to render in the drawer panel (use when hasDrawer prop is set on the wizard).   */
   drawerPanelContent?: any;
+  /** Button which toggles the drawer button open */
+  hasOpenDrawerButton?: boolean;
   /** Setting to true hides the side nav and footer */
   isFinishedStep?: boolean;
   /** Enables or disables the step in the navigation. Enabled by default. */
@@ -106,6 +108,8 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   hasDrawer?: boolean;
   /** Flag indicating the wizard drawer is expanded */
   isDrawerExpanded?: boolean;
+  /** Callback function to toggle the wizard drawer */
+  onDrawerToggle?: () => void;
 }
 
 interface WizardState {
@@ -353,6 +357,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       isNavExpandable,
       hasDrawer,
       isDrawerExpanded,
+      onDrawerToggle,
       ...rest
       /* eslint-enable @typescript-eslint/no-unused-vars */
     } = this.props;
@@ -488,6 +493,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
             mainAriaLabelledBy={(title || mainAriaLabelledBy) && (mainAriaLabelledBy || this.titleId)}
             isNavOpen={this.state.isNavOpen}
             onNavToggle={isNavOpen => this.setState({ isNavOpen })}
+            onDrawerToggle={onDrawerToggle}
             nav={nav}
             steps={steps}
             activeStep={activeStep}

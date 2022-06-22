@@ -873,7 +873,7 @@ class WizardWithDrawer extends React.Component {
     super(props);
     this.state = {
       isOpen: false,
-      isDrawerExpanded: true,
+      isDrawerExpanded: false,
       sectionGray: false,
       panelGray: true,
       contentGray: false
@@ -885,10 +885,9 @@ class WizardWithDrawer extends React.Component {
       this.drawerRef.current && this.drawerRef.current.focus();
     };
 
-    this.onClick = () => {
-      const isDrawerExpanded = !this.state.isDrawerExpanded;
+    this.onOpenClick = () => {
       this.setState({
-        isDrawerExpanded
+        isDrawerExpanded: true
       });
     };
 
@@ -945,7 +944,8 @@ class WizardWithDrawer extends React.Component {
       {
         name: 'Information',
         component: <p>Information step content</p>,
-        drawerPanelContent: panel1Content
+        drawerPanelContent: panel1Content,
+        hasOpenDrawerButton: true
       },
       {
         name: 'Configuration',
@@ -973,6 +973,7 @@ class WizardWithDrawer extends React.Component {
       <React.Fragment>
         <Wizard
           isDrawerExpanded={isDrawerExpanded}
+          onDrawerToggle={this.onOpenClick}
           hasDrawer
           drawerPanelWidths={{ default: 'width_25' }}
           navAriaLabel={`${title} steps`}

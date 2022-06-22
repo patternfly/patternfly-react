@@ -7,6 +7,7 @@ import { WizardStep } from './Wizard';
 import { WizardBody } from './WizardBody';
 import { WizardDrawerWrapper } from './WizardDrawerWrapper';
 import { Drawer, DrawerContent } from '../Drawer';
+import { Button } from '../Button';
 
 export interface WizardToggleProps {
   /** Function that returns the WizardNav component */
@@ -35,6 +36,8 @@ export interface WizardToggleProps {
   hasDrawer?: boolean;
   /** Flag indicating the wizard drawer is expanded */
   isDrawerExpanded?: boolean;
+  /** Callback function for when the drawer is toggled */
+  onDrawerToggle: (isOpen: boolean) => void;
 }
 
 export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
@@ -50,7 +53,8 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   mainAriaLabel = null,
   isInPage = true,
   hasDrawer,
-  isDrawerExpanded
+  isDrawerExpanded,
+  onDrawerToggle
 }: WizardToggleProps) => {
   let activeStepIndex;
   let activeStepName;
@@ -107,6 +111,16 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
               aria-labelledby={mainAriaLabelledBy}
               hasNoBodyPadding={hasNoBodyPadding}
             >
+              {activeStep.hasOpenDrawerButton && (
+                <Button
+                  className="pf-u-float-right pf-u-ml-md"
+                  isInline
+                  variant="link"
+                  onClick={() => onDrawerToggle(!isDrawerExpanded)}
+                >
+                  Open Drawer
+                </Button>
+              )}
               {activeStep.component}
               {nav(isNavOpen)}
             </WizardBody>
