@@ -372,6 +372,11 @@ The second `Tr` represents the second level of sub columns. The `Th` in this row
 ```ts file="ComposableTableNestedTableExpandable.tsx"
 ```
 
+### Composable: Nested sticky header
+
+```ts file="ComposableTableNestedStickyHeader.tsx"
+```
+
 ## Striped
 
 ### Composable: Striped
