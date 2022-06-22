@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { TextInput } from '../TextInput/TextInput';
 import { Button } from '../Button/Button';
 import { Select, SelectOption } from '../Select';
-import ArrowLeftIcon from '@patternfly/react-icons/dist/esm/icons/arrow-left-icon';
-import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
+import { InputGroup } from '../InputGroup';
+import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
+import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/CalendarMonth/calendar-month';
 import { getUniqueId } from '../../helpers/util';
@@ -54,6 +55,8 @@ export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTML
   className?: string;
   /** @hide Internal prop to allow pressing escape in select menu to not close popover */
   onSelectToggle?: (open: boolean) => void;
+  /** Flag to set browser focus on the passed date **/
+  isDateFocused?: boolean;
 }
 
 // Must be numeric given current header design
@@ -63,7 +66,7 @@ const buildCalendar = (year: number, month: number, weekStart: number, validator
   const defaultDate = new Date(year, month);
   const firstDayOfWeek = new Date(defaultDate);
   firstDayOfWeek.setDate(firstDayOfWeek.getDate() - firstDayOfWeek.getDay() + weekStart);
-  // We will always show 6 weeks like google calendar
+  // We will show a maximum of 6 weeks like Google calendar
   // Assume we just want the numbers for now...
   const calendarWeeks = [];
   for (let i = 0; i < 6; i++) {
@@ -77,6 +80,9 @@ const buildCalendar = (year: number, month: number, weekStart: number, validator
       firstDayOfWeek.setDate(firstDayOfWeek.getDate() + 1);
     }
     calendarWeeks.push(week);
+    if (firstDayOfWeek.getMonth() !== defaultDate.getMonth()) {
+      break;
+    }
   }
 
   return calendarWeeks;
@@ -106,19 +112,24 @@ export const CalendarMonth = ({
   nextMonthAriaLabel = 'Next month',
   yearInputAriaLabel = 'Select year',
   cellAriaLabel,
+  isDateFocused = false,
   ...props
 }: CalendarProps) => {
   const longMonths = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(monthNum => new Date(1990, monthNum)).map(monthFormat);
   const [isSelectOpen, setIsSelectOpen] = React.useState(false);
   // eslint-disable-next-line prefer-const
-  let [focusedDate, setFocusedDate] = React.useState(new Date(dateProp));
-  if (!isValidDate(focusedDate)) {
-    if (isValidDate(rangeStart)) {
-      focusedDate = rangeStart;
+  const [focusedDate, setFocusedDate] = React.useState(() => {
+    const initDate = new Date(dateProp);
+    if (isValidDate(initDate)) {
+      return initDate;
     } else {
-      focusedDate = today;
+      if (isValidDate(rangeStart)) {
+        return rangeStart;
+      } else {
+        return today;
+      }
     }
-  }
+  });
   const [hoveredDate, setHoveredDate] = React.useState(new Date(focusedDate));
   const focusRef = React.useRef<HTMLButtonElement>();
   const [hiddenMonthId] = React.useState(getUniqueId('hidden-month-span'));
@@ -127,21 +138,22 @@ export const CalendarMonth = ({
   const isValidated = (date: Date) => validators.every(validator => validator(date));
   const focusedDateValidated = isValidated(focusedDate);
   useEffect(() => {
-    if (!(isValidDate(dateProp) && isSameDate(focusedDate, dateProp))) {
+    if (isValidDate(dateProp) && !isSameDate(focusedDate, dateProp)) {
       setFocusedDate(dateProp);
+    } else if (!dateProp) {
+      setFocusedDate(today);
     }
   }, [dateProp]);
 
   useEffect(() => {
-    // When using header controls don't move focus
-    if (shouldFocus) {
-      if (focusRef.current && focusedDateValidated) {
-        focusRef.current.focus();
-      }
+    // Calendar month should not be focused on page load
+    // Datepicker should place focus in calendar month when opened
+    if ((shouldFocus || isDateFocused) && focusedDateValidated && focusRef.current) {
+      focusRef.current.focus();
     } else {
       setShouldFocus(true);
     }
-  }, [focusedDate]);
+  }, [focusedDate, isDateFocused, focusedDateValidated, focusRef]);
 
   const onMonthClick = (newDate: Date) => {
     setFocusedDate(newDate);
@@ -204,62 +216,64 @@ export const CalendarMonth = ({
       <div className={styles.calendarMonthHeader}>
         <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.prevMonth)}>
           <Button variant="plain" aria-label={prevMonthAriaLabel} onClick={() => onMonthClick(prevMonth)}>
-            <ArrowLeftIcon aria-hidden={true} />
+            <AngleLeftIcon aria-hidden={true} />
           </Button>
         </div>
-        <div className={styles.calendarMonthHeaderMonth}>
-          <span id={hiddenMonthId} hidden>
-            Month
-          </span>
-          <Select
-            // Max width with "September"
-            width="140px"
-            aria-labelledby={hiddenMonthId}
-            isOpen={isSelectOpen}
-            onToggle={() => {
-              setIsSelectOpen(!isSelectOpen);
-              onSelectToggle(!isSelectOpen);
-            }}
-            onSelect={(_ev, monthNum) => {
-              // When we put CalendarMonth in a Popover we want the Popover's onDocumentClick
-              // to see the SelectOption as a child so it doesn't close the Popover.
-              setTimeout(() => {
-                setIsSelectOpen(false);
-                onSelectToggle(false);
+        <InputGroup>
+          <div className={styles.calendarMonthHeaderMonth}>
+            <span id={hiddenMonthId} hidden>
+              Month
+            </span>
+            <Select
+              // Max width with "September"
+              width="140px"
+              aria-labelledby={hiddenMonthId}
+              isOpen={isSelectOpen}
+              onToggle={() => {
+                setIsSelectOpen(!isSelectOpen);
+                onSelectToggle(!isSelectOpen);
+              }}
+              onSelect={(_ev, monthNum) => {
+                // When we put CalendarMonth in a Popover we want the Popover's onDocumentClick
+                // to see the SelectOption as a child so it doesn't close the Popover.
+                setTimeout(() => {
+                  setIsSelectOpen(false);
+                  onSelectToggle(false);
+                  const newDate = new Date(focusedDate);
+                  newDate.setMonth(Number(monthNum as string));
+                  setFocusedDate(newDate);
+                  setHoveredDate(newDate);
+                  setShouldFocus(false);
+                }, 0);
+              }}
+              variant="single"
+              selections={monthFormatted}
+            >
+              {longMonths.map((longMonth, index) => (
+                <SelectOption key={index} value={index} isSelected={longMonth === monthFormatted}>
+                  {longMonth}
+                </SelectOption>
+              ))}
+            </Select>
+          </div>
+          <div className={styles.calendarMonthHeaderYear}>
+            <TextInput
+              aria-label={yearInputAriaLabel}
+              type="number"
+              value={yearFormatted}
+              onChange={year => {
                 const newDate = new Date(focusedDate);
-                newDate.setMonth(Number(monthNum as string));
+                newDate.setFullYear(+year);
                 setFocusedDate(newDate);
                 setHoveredDate(newDate);
                 setShouldFocus(false);
-              }, 0);
-            }}
-            variant="single"
-            selections={monthFormatted}
-          >
-            {longMonths.map((longMonth, index) => (
-              <SelectOption key={index} value={index} isSelected={longMonth === monthFormatted}>
-                {longMonth}
-              </SelectOption>
-            ))}
-          </Select>
-        </div>
-        <div className={styles.calendarMonthHeaderYear}>
-          <TextInput
-            aria-label={yearInputAriaLabel}
-            type="number"
-            value={yearFormatted}
-            onChange={year => {
-              const newDate = new Date(focusedDate);
-              newDate.setFullYear(+year);
-              setFocusedDate(newDate);
-              setHoveredDate(newDate);
-              setShouldFocus(false);
-            }}
-          />
-        </div>
+              }}
+            />
+          </div>
+        </InputGroup>
         <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.nextMonth)}>
           <Button variant="plain" aria-label={nextMonthAriaLabel} onClick={() => onMonthClick(nextMonth)}>
-            <ArrowRightIcon aria-hidden={true} />
+            <AngleRightIcon aria-hidden={true} />
           </Button>
         </div>
       </div>

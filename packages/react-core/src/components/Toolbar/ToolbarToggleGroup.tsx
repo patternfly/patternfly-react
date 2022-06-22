@@ -144,7 +144,10 @@ export class ToolbarToggleGroup extends React.Component<ToolbarToggleGroupProps>
                         </Button>
                       </div>
                       {isExpanded
-                        ? ReactDOM.createPortal(children, expandableContentRef.current.firstElementChild)
+                        ? (ReactDOM.createPortal(
+                            children,
+                            expandableContentRef.current.firstElementChild
+                          ) as React.ReactElement)
                         : children}
                     </div>
                   );

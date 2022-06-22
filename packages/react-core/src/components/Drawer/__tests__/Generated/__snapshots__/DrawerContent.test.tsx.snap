@@ -12,9 +12,7 @@ exports[`DrawerContent should match snapshot (auto-generated) 1`] = `
         ReactNode
       </div>
     </div>
-    <div
-      drawercontentref="[object Object]"
-    >
+    <div>
       test
     </div>
   </div>

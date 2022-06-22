@@ -37,8 +37,6 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
   };
   /** Color variant of the background of the drawer panel */
   colorVariant?: DrawerColorVariant | 'light-200' | 'default';
-  /** @hide Internal ref to drawer content */
-  drawerContentRef?: React.RefObject<HTMLDivElement>;
 }
 let isResizing: boolean = null;
 let newSize: number = 0;
@@ -57,13 +55,14 @@ export const DrawerPanelContent: React.FunctionComponent<DrawerPanelContentProps
   resizeAriaLabel = 'Resize',
   widths,
   colorVariant = DrawerColorVariant.default,
-  drawerContentRef,
   ...props
 }: DrawerPanelContentProps) => {
   const panel = React.useRef<HTMLDivElement>();
   const splitterRef = React.useRef<HTMLDivElement>();
   const [separatorValue, setSeparatorValue] = React.useState(0);
-  const { position, isExpanded, isStatic, onExpand, drawerRef, isInline } = React.useContext(DrawerContext);
+  const { position, isExpanded, isStatic, onExpand, drawerRef, drawerContentRef, isInline } = React.useContext(
+    DrawerContext
+  );
   const hidden = isStatic ? false : !isExpanded;
   const [isExpandedInternal, setIsExpandedInternal] = React.useState(!hidden);
   let currWidth: number = 0;

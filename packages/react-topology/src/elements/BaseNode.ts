@@ -160,7 +160,7 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
   }
 
   getPosition(): Point {
-    if (this.isGroup() && !this.collapsed) {
+    if (this.isGroup() && this.getChildren().length && !this.collapsed) {
       return this.getBounds().getCenter();
     }
     return this.position;
@@ -180,7 +180,7 @@ export default class BaseNode<E extends NodeModel = NodeModel, D = any> extends 
   }
 
   setPosition(point: Point): void {
-    if (this.isGroup() && !this.collapsed) {
+    if (this.isGroup() && this.getChildren().length && !this.collapsed) {
       const prevLocation = this.getBounds().getCenter();
       this.updateChildrenPositions(point, prevLocation);
       return;

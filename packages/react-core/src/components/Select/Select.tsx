@@ -294,13 +294,13 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       this.props.variant !== 'typeaheadmulti'
     ) {
       this.refCollection[this.state.viewMoreNextIndex][0].focus();
+      this.setState({ viewMoreNextIndex: -1 });
     }
 
-    const hasUpdatedChildren =
-      prevProps.children.length !== this.props.children.length ||
-      prevProps.children.some((prevChild: React.ReactElement, index: number) => {
+    const checkUpdatedChildren = (prevChildren: React.ReactElement[], currChildren: React.ReactElement[]) =>
+      prevChildren.some((prevChild: React.ReactElement, index: number) => {
         const prevChildProps = prevChild.props;
-        const currChild = this.props.children[index];
+        const currChild = currChildren[index];
         const { props: currChildProps } = currChild;
 
         if (prevChildProps && currChildProps) {
@@ -314,6 +314,19 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           return prevChild !== currChild;
         }
       });
+
+    const hasUpdatedChildren =
+      prevProps.children.length !== this.props.children.length ||
+      checkUpdatedChildren(prevProps.children, this.props.children) ||
+      (this.props.isGrouped &&
+        prevProps.children.some(
+          (prevChild: React.ReactElement, index: number) =>
+            prevChild.type === SelectGroup &&
+            prevChild.props.children &&
+            this.props.children[index].props.children &&
+            (prevChild.props.children.length !== this.props.children[index].props.children.length ||
+              checkUpdatedChildren(prevChild.props.children, this.props.children[index].props.children))
+        ));
 
     if (hasUpdatedChildren) {
       this.updateTypeAheadFilteredChildren(prevState.typeaheadInputValue || '', null);
@@ -434,7 +447,10 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         typeaheadFilteredChildren =
           typeaheadInputValue.toString() !== ''
             ? React.Children.map(children, group => {
-                if (React.isValidElement(group) && group.type === SelectGroup) {
+                if (
+                  React.isValidElement<React.ComponentProps<typeof SelectGroup>>(group) &&
+                  group.type === SelectGroup
+                ) {
                   const filteredGroupChildren = (React.Children.toArray(group.props.children) as React.ReactElement<
                     SelectGroupProps
                   >[]).filter(childFilter);
@@ -622,8 +638,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     optionContainerRef: React.ReactNode,
     index: number
   ) => {
-    this.refCollection[index] = [optionRef as HTMLElement, favoriteRef as HTMLElement];
-    this.optionContainerRefCollection[index] = optionContainerRef as HTMLElement;
+    this.refCollection[index] = [(optionRef as unknown) as HTMLElement, (favoriteRef as unknown) as HTMLElement];
+    this.optionContainerRefCollection[index] = (optionContainerRef as unknown) as HTMLElement;
   };
 
   handleMenuKeys = (index: number, innerIndex: number, position: string) => {

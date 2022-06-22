@@ -54,6 +54,8 @@ export interface ChartLabelProps extends VictoryLabelProps {
    * Note: This prop should not be set manually.
    *
    * @propType number | string | Function
+   *
+   * @private
    * @hide
    */
   children?: StringOrNumberOrCallback;
@@ -103,6 +105,7 @@ export interface ChartLabelProps extends VictoryLabelProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   index?: string | number;
@@ -144,6 +147,7 @@ export interface ChartLabelProps extends VictoryLabelProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   polar?: boolean;
@@ -158,6 +162,7 @@ export interface ChartLabelProps extends VictoryLabelProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   scale?: { x?: any; y?: any };
@@ -199,6 +204,7 @@ export interface ChartLabelProps extends VictoryLabelProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   width?: number;

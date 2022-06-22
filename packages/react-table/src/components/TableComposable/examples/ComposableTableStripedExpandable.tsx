@@ -121,11 +121,11 @@ export const ComposableTableStripedExpandable: React.FunctionComponent = () => {
         <Thead>
           <Tr>
             <Th />
-            <Th>{columnNames.name}</Th>
-            <Th>{columnNames.branches}</Th>
-            <Th>{columnNames.prs}</Th>
-            <Th>{columnNames.workspaces}</Th>
-            <Th>{columnNames.lastCommit}</Th>
+            <Th width={25}>{columnNames.name}</Th>
+            <Th width={10}>{columnNames.branches}</Th>
+            <Th width={15}>{columnNames.prs}</Th>
+            <Th width={30}>{columnNames.workspaces}</Th>
+            <Th width={10}>{columnNames.lastCommit}</Th>
           </Tr>
         </Thead>
         {repositories.map((repo, rowIndex) => {

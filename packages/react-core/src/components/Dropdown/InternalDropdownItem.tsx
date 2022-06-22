@@ -211,7 +211,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
         ...(styleChildren && {
           className: css(element.props.className, classes)
         }),
-        ...(this.props.role !== 'separator' && { ref: this.componentRef })
+        ...(this.props.role !== 'separator' && { role, ref: this.componentRef })
       });
 
     const renderDefaultComponent = (tag: string) => {
@@ -240,6 +240,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
           ref={this.ref}
           className={classes}
           id={componentID}
+          role={role}
         >
           {componentContent}
         </Component>
@@ -268,7 +269,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
           return (
             <li
               className={listItemClassName || null}
-              role={role}
+              role="none"
               onKeyDown={this.onKeyDown}
               onClick={(event: any) => {
                 if (!isDisabled && !isAriaDisabled) {

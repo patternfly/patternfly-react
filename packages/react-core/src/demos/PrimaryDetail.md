@@ -1246,6 +1246,8 @@ class PrimaryDetailCardView extends React.Component {
                 isOpen={isLowerToolbarKebabDropdownOpen}
                 isPlain
                 dropdownItems={toolbarKebabDropdownItems}
+                isFlipEnabled
+                menuAppendTo="parent"
               />
             </OverflowMenuControl>
           </OverflowMenu>
@@ -1338,13 +1340,13 @@ class PrimaryDetailCardView extends React.Component {
           </TextContent>
         </PageSection>
         <PageSection isFilled padding={{ default: 'noPadding' }}>
+          <Toolbar id="card-view-data-toolbar-group-types" usePageInsets clearAllFilters={this.onDelete}>
+            <ToolbarContent>{toolbarItems}</ToolbarContent>
+          </Toolbar>
+          <Divider component="div" />
+        </PageSection>
+        <PageSection isFilled padding={{ default: 'noPadding' }}>
           <Drawer isExpanded={isDrawerExpanded} className={'pf-m-inline-on-2xl'}>
-            <DrawerSection>
-              <Toolbar id="card-view-data-toolbar-group-types" usePageInsets clearAllFilters={this.onDelete}>
-                <ToolbarContent>{toolbarItems}</ToolbarContent>
-              </Toolbar>
-              <Divider component="div" />
-            </DrawerSection>
             <DrawerContent panelContent={panelContent} className={'pf-m-no-background'}>
               <DrawerContentBody hasPadding>{drawerContent}</DrawerContentBody>
             </DrawerContent>
@@ -1663,6 +1665,8 @@ class PrimaryDetailDataListInCard extends React.Component {
                 }
                 isOpen={isDropdownOpen}
                 dropdownItems={dropdownItems}
+                isFlipEnabled
+                menuAppendTo="parent"
               />
             </ToolbarItem>
           </ToolbarContent>

@@ -14,7 +14,9 @@ export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps
   innerRef?: React.Ref<any>;
   /** Flag indicating the Tr is hidden */
   isHidden?: boolean;
-  /** Only applicable to Tr within the Tbody: Makes the row expandable and determines if it's expanded or not */
+  /** Only applicable to Tr within the Tbody: Makes the row expandable and determines if it's expanded or not.
+   * To prevent column widths from responding automatically when expandable rows are toggled, the width prop must also be passed into either the th or td component
+   */
   isExpanded?: boolean;
   /** Only applicable to Tr within the Tbody: Whether the row is editable */
   isEditable?: boolean;
@@ -24,6 +26,8 @@ export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps
   isRowSelected?: boolean;
   /** Flag indicating the row is striped */
   isStriped?: boolean;
+  /** Flag indicating the row will act as a border. This is typically used for a table with a nested and sticky header. */
+  isBorderRow?: boolean;
   /** An event handler for the row */
   onRowClick?: (event?: React.KeyboardEvent | React.MouseEvent) => void;
   /** Flag indicating that the row is selectable */
@@ -41,6 +45,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   isHoverable = false,
   isRowSelected = false,
   isStriped = false,
+  isBorderRow = false,
   innerRef,
   ouiaId,
   ouiaSafe = true,
@@ -90,6 +95,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
           isHoverable && styles.modifiers.hoverable,
           isRowSelected && styles.modifiers.selected,
           isStriped && styles.modifiers.striped,
+          isBorderRow && styles.modifiers.borderRow,
           resetOffset && styles.modifiers.firstCellOffsetReset
         )}
         hidden={rowIsHidden}

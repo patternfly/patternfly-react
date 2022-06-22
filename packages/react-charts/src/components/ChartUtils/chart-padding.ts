@@ -14,6 +14,5 @@ export const getPaddingForSide = (
   } else if (typeof padding == 'object' && Object.keys(padding).length > 0) {
     return padding[side] || 0;
   }
-
   return getPaddingForSide(side, fallback, 0);
 };

@@ -29,7 +29,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
   <ChartDonutUtilization
     ariaDesc="Storage capacity"
     ariaTitle="Donut utilization chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={{ x: 'GBps capacity', y: 75 }}
     labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
     subTitle="of 100 GBps"
@@ -74,7 +74,7 @@ class DonutUtilizationChart extends React.Component {
         <ChartDonutUtilization
           ariaDesc="Storage capacity"
           ariaTitle="Donut utilization chart example"
-          constrainToVisibleArea={true}
+          constrainToVisibleArea
           data={{ x: 'GBps capacity', y: used }}
           labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
           legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
@@ -132,7 +132,7 @@ class InvertedDonutUtilizationChart extends React.Component {
         <ChartDonutUtilization
           ariaDesc="Storage capacity"
           ariaTitle="Donut utilization chart example"
-          constrainToVisibleArea={true}
+          constrainToVisibleArea
           data={{ x: 'GBps capacity', y: used }}
           invert
           labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
@@ -191,7 +191,7 @@ class VerticalLegendUtilizationChart extends React.Component {
         <ChartDonutUtilization
           ariaDesc="Storage capacity"
           ariaTitle="Donut utilization chart example"
-          constrainToVisibleArea={true}
+          constrainToVisibleArea
           data={{ x: 'Storage capacity', y: used }}
           height={300}
           labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
@@ -225,7 +225,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
   <ChartDonutUtilization
     ariaDesc="Storage capacity"
     ariaTitle="Donut utilization chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={{ x: 'Storage capacity', y: 45 }}
     height={275}
     labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
@@ -254,7 +254,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
   <ChartDonutUtilization
     ariaDesc="Storage capacity"
     ariaTitle="Donut utilization chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={{ x: 'Storage capacity', y: 75 }}
     height={175}
     labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
@@ -301,7 +301,7 @@ class UtilizationChart extends React.Component {
         <ChartDonutUtilization
           ariaDesc="Storage capacity"
           ariaTitle="Donut utilization chart example"
-          constrainToVisibleArea={true}
+          constrainToVisibleArea
           data={{ x: 'Storage capacity', y: used }}
           height={175}
           labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
@@ -336,7 +336,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
   <ChartDonutUtilization
     ariaDesc="Storage capacity"
     ariaTitle="Donut utilization chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={{ x: 'Storage capacity', y: 45 }}
     height={185}
     labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
@@ -366,7 +366,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
   <ChartDonutUtilization
     ariaDesc="Storage capacity"
     ariaTitle="Donut utilization chart example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={{ x: 'Storage capacity', y: 45 }}
     height={200}
     labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
@@ -397,7 +397,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
   <ChartDonutThreshold
     ariaDesc="Storage capacity"
     ariaTitle="Donut utilization chart with static threshold example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
     labels={({ datum }) => datum.x ? datum.x : null}
   >
@@ -442,7 +442,7 @@ class ThresholdChart extends React.Component {
         <ChartDonutThreshold
           ariaDesc="Storage capacity"
           ariaTitle="Donut utilization chart with static threshold example"
-          constrainToVisibleArea={true}
+          constrainToVisibleArea
           data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
           labels={({ datum }) => datum.x ? datum.x : null}
           padding={{
@@ -505,7 +505,7 @@ class InvertedThresholdChart extends React.Component {
         <ChartDonutThreshold
           ariaDesc="Storage capacity"
           ariaTitle="Donut utilization chart with static threshold example"
-          constrainToVisibleArea={true}
+          constrainToVisibleArea
           data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 20%', y: 20 }]}
           invert
           labels={({ datum }) => datum.x ? datum.x : null}
@@ -564,7 +564,7 @@ class CustomLegendThresholdChart extends React.Component {
         <ChartDonutThreshold
           ariaDesc="Storage capacity"
           ariaTitle="Donut utilization chart with static threshold example"
-          constrainToVisibleArea={true}
+          constrainToVisibleArea
           data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
           height={350}
           labels={({ datum }) => datum.x ? datum.x : null}
@@ -603,7 +603,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
   <ChartDonutThreshold
     ariaDesc="Storage capacity"
     ariaTitle="Donut utilization chart with static threshold example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
     height={275}
     labels={({ datum }) => datum.x ? datum.x : null}
@@ -636,7 +636,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
   <ChartDonutThreshold
     ariaDesc="Storage capacity"
     ariaTitle="Donut utilization chart with static threshold example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
     height={185}
     labels={({ datum }) => datum.x ? datum.x : null}
@@ -683,7 +683,7 @@ class ThresholdChart extends React.Component {
         <ChartDonutThreshold
           ariaDesc="Storage capacity"
           ariaTitle="Donut utilization chart with static threshold example"
-          constrainToVisibleArea={true}
+          constrainToVisibleArea
           data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
           height={185}
           labels={({ datum }) => datum.x ? datum.x : null}
@@ -723,7 +723,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
   <ChartDonutThreshold
     ariaDesc="Storage capacity"
     ariaTitle="Donut utilization chart with static threshold example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
     height={200}
     labels={({ datum }) => datum.x ? datum.x : null}
@@ -758,7 +758,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
   <ChartDonutThreshold
     ariaDesc="Storage capacity"
     ariaTitle="Donut utilization chart with static threshold example"
-    constrainToVisibleArea={true}
+    constrainToVisibleArea
     data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
     height={225}
     labels={({ datum }) => datum.x ? datum.x : null}

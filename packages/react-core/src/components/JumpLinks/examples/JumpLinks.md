@@ -9,89 +9,26 @@ propComponents: ['JumpLinks', 'JumpLinksItem']
 These examples are static because they have no element to scroll spy on that makes sense. Check out the [React demos](./react-demos) to see scroll spying in action!
 
 ### Basic
-```js
-import React from 'react';
-import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
-
-<JumpLinks>
-  <JumpLinksItem>Inactive section</JumpLinksItem>
-  <JumpLinksItem isActive>Active section</JumpLinksItem>
-  <JumpLinksItem>Inactive section</JumpLinksItem>
-</JumpLinks>
+```ts file='./JumpLinksBasic.tsx'
 ```
 
 ### With centered list
-```js
-import React from 'react';
-import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
-
-<JumpLinks isCentered>
-  <JumpLinksItem>Inactive section</JumpLinksItem>
-  <JumpLinksItem isActive>Active section</JumpLinksItem>
-  <JumpLinksItem>Inactive section</JumpLinksItem>
-</JumpLinks>
+```ts file='./JumpLinksWithCenteredList.tsx'
 ```
 
 ### With label
-```js
-import React from 'react';
-import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
-
-<React.Fragment>
-  <JumpLinks label="Jump to section">
-    <JumpLinksItem>Inactive section</JumpLinksItem>
-    <JumpLinksItem isActive>Active section</JumpLinksItem>
-    <JumpLinksItem>Inactive section</JumpLinksItem>
-  </JumpLinks>
-  <JumpLinks isCentered label="Jump to section">
-    <JumpLinksItem>Inactive section</JumpLinksItem>
-    <JumpLinksItem isActive>Active section</JumpLinksItem>
-    <JumpLinksItem>Inactive section</JumpLinksItem>
-  </JumpLinks>
-</React.Fragment>
+```ts file='./JumpLinksWithLabel.tsx'
 ```
 
 ### Vertical
-```js
-import React from 'react';
-import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
-
-<JumpLinks isVertical>
-  <JumpLinksItem>Inactive section</JumpLinksItem>
-  <JumpLinksItem isActive>Active section</JumpLinksItem>
-  <JumpLinksItem>Inactive section</JumpLinksItem>
-</JumpLinks>
+```ts file='./JumpLinksVertical.tsx'
 ```
 
 ### Vertical with label
-```js
-import React from 'react';
-import { JumpLinks, JumpLinksItem } from '@patternfly/react-core';
-
-<JumpLinks isVertical label="Jump to section">
-  <JumpLinksItem>Inactive section</JumpLinksItem>
-  <JumpLinksItem isActive>Active section</JumpLinksItem>
-  <JumpLinksItem>Inactive section</JumpLinksItem>
-</JumpLinks>
+```ts file='./JumpLinksVerticalWithLabel.tsx'
 ```
 
 ### Expandable vertical with subsection
-```js
-import React from 'react';
-import { JumpLinks, JumpLinksItem, JumpLinksList } from '@patternfly/react-core';
-
-<JumpLinks isVertical label="Jump to section" expandable={{ default: 'expandable' }}>
-  <JumpLinksItem>Inactive section</JumpLinksItem>
-  <JumpLinksItem>
-    Section with active subsection
-    <JumpLinksList>
-      <JumpLinksItem isActive>Active subsection</JumpLinksItem>
-      <JumpLinksItem>Inactive subsection</JumpLinksItem>
-      <JumpLinksItem>Inactive subsection</JumpLinksItem>
-    </JumpLinksList>
-  </JumpLinksItem>
-  <JumpLinksItem>Inactive section</JumpLinksItem>
-  <JumpLinksItem>Inactive section</JumpLinksItem>
-</JumpLinks>
+```ts file='./JumpLinksExpandableVerticalWithSubsection.tsx'
 ```
 

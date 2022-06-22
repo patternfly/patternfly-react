@@ -336,6 +336,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.SelectFavoritesDemo
   },
   {
+    id: 'select-in-modal-demo',
+    name: 'Select in modal demo',
+    componentType: Examples.SelectInModal
+  },
+  {
     id: 'select-typeahead-footer-filtering-demo',
     name: 'Select Footer filtering Demo',
     componentType: Examples.SelectFooterFilteringDemo

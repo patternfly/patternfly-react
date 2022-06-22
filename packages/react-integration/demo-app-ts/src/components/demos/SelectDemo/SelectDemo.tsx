@@ -10,7 +10,8 @@ import {
   Checkbox,
   SelectDirection,
   Form,
-  Divider
+  Divider,
+  SelectGroup
 } from '@patternfly/react-core';
 import React, { Component } from 'react';
 import CartArrowDownIcon from '@patternfly/react-icons/dist/esm/icons/cart-arrow-down-icon';
@@ -23,6 +24,7 @@ interface TypeAheadOption {
 }
 
 export interface SelectDemoState {
+  optionisDisabled?: boolean;
   singleisOpen: boolean;
   singleSelected: string;
   singleAppendisOpen: boolean;
@@ -64,6 +66,7 @@ export interface SelectDemoState {
 
 export class SelectDemo extends Component<SelectDemoState> {
   state = {
+    optionisDisabled: false,
     singleisOpen: false,
     singleSelected: '',
     singleAppendisOpen: false,
@@ -157,6 +160,10 @@ export class SelectDemo extends Component<SelectDemoState> {
     <SelectOption key={10} value={new State('New York', 'NY', 'Albany', 1788)} />,
     <SelectOption key={11} value={new State('North Carolina', 'NC', 'Raleigh', 1789)} />
   ];
+
+  toggleDisabled = () => {
+    this.setState({ optionisDisabled: !this.state.optionisDisabled });
+  };
 
   toggleDirection = () => {
     if (this.state.direction === SelectDirection.up) {
@@ -945,16 +952,21 @@ export class SelectDemo extends Component<SelectDemoState> {
             isInputValuePersisted={typeaheadInputValuePersisted}
             createText="Create item"
             noResultsFoundText="Item not found"
+            isGrouped
           >
-            {typeaheadOptions.map((option, index) => (
-              <SelectOption
-                isDisabled={option.disabled}
-                key={index}
-                value={option.value}
-                id={option.value}
-                itemCount={option.itemCount}
-              />
-            ))}
+            {[
+              <SelectGroup key={0}>
+                {typeaheadOptions.map((option, index) => (
+                  <SelectOption
+                    isDisabled={index === 0 ? this.state.optionisDisabled : option.disabled}
+                    key={index}
+                    value={option.value}
+                    id={option.value}
+                    itemCount={option.itemCount}
+                  />
+                ))}
+              </SelectGroup>
+            ]}
           </Select>
         </div>
         <Checkbox
@@ -981,6 +993,9 @@ export class SelectDemo extends Component<SelectDemoState> {
           id="toggle-input-value-persisted"
           name="toggle-input-value-persisted"
         />
+        <Button tabIndex={1} isInline id="disabled-toggle-btn" onClick={this.toggleDisabled}>
+          Toggle disabled state
+        </Button>
       </StackItem>
     );
   }

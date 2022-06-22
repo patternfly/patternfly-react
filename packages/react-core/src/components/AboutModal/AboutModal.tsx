@@ -144,6 +144,6 @@ export class AboutModal extends React.Component<AboutModalProps, ModalState> {
         {...props}
       />,
       container
-    );
+    ) as React.ReactElement;
   }
 }

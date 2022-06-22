@@ -25,11 +25,11 @@ exports[`Masthead verify full structure 1`] = `
   <header
     class="pf-c-masthead pf-m-display-inline-on-md"
   >
-    <div
+    <span
       class="pf-c-masthead__toggle"
     >
       Toggle
-    </div>
+    </span>
     <div
       class="pf-c-masthead__main"
     >
@@ -226,20 +226,20 @@ exports[`MastheadMain verify custom class 1`] = `
 
 exports[`MastheadToggle verify basic 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-c-masthead__toggle"
   >
     test
-  </div>
+  </span>
 </DocumentFragment>
 `;
 
 exports[`MastheadToggle verify custom class 1`] = `
 <DocumentFragment>
-  <div
+  <span
     class="pf-c-masthead__toggle custom-css"
   >
     test
-  </div>
+  </span>
 </DocumentFragment>
 `;

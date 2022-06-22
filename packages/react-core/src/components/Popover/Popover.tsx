@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import * as React from 'react';
-import { KEY_CODES } from '../../helpers/constants';
+import { KeyTypes } from '../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import { css } from '@patternfly/react-styles';
 import { PopoverContext } from './PopoverContext';
@@ -330,7 +330,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
   const hasCustomMinWidth = minWidth !== popoverMinWidth.value;
   const hasCustomMaxWidth = maxWidth !== popoverMaxWidth.value;
   const onDocumentKeyDown = (event: KeyboardEvent) => {
-    if (event.keyCode === KEY_CODES.ESCAPE_KEY && visible) {
+    if (event.key === KeyTypes.Escape && visible) {
       if (triggerManually) {
         shouldClose(null, hide, event);
       } else {

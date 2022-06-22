@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import chart_area_Opacity from '@patternfly/react-tokens/dist/esm/chart_area_Opacity';
 import chart_global_label_Fill from '@patternfly/react-tokens/dist/esm/chart_global_label_Fill';
+import { Helpers } from 'victory-core';
 
 interface ChartInteractiveLegendInterface {
   // The names or groups of names associated with each data series
@@ -16,7 +17,7 @@ interface ChartInteractiveLegendInterface {
 
 interface ChartInteractiveLegendExtInterface extends ChartInteractiveLegendInterface {
   omitIndex?: number; // Used to omit child names when attaching events
-  target?: 'data' | 'labels'; // Event target
+  target?: 'data' | 'labels' | 'parent'; // Event target
 }
 
 /**
@@ -25,7 +26,7 @@ interface ChartInteractiveLegendExtInterface extends ChartInteractiveLegendInter
  */
 const getChildNames = ({ chartNames, omitIndex }: ChartInteractiveLegendExtInterface) => {
   const result = [] as any;
-  chartNames.map((chartName: any, index: number) => {
+  chartNames.forEach((chartName: any, index: number) => {
     if (index !== omitIndex) {
       if (Array.isArray(chartName)) {
         chartName.forEach(name => result.push(name));
@@ -44,8 +45,8 @@ const getChildNames = ({ chartNames, omitIndex }: ChartInteractiveLegendExtInter
  * @public
  */
 export const getInteractiveLegendEvents = (props: ChartInteractiveLegendInterface) => [
-  ...getInteractiveLegendTargetEvents({ ...props, target: 'data' }),
-  ...getInteractiveLegendTargetEvents({ ...props, target: 'labels' })
+  ...getInteractiveLegendTargetEvents({ ...props, target: 'data' }), // Legend symbols
+  ...getInteractiveLegendTargetEvents({ ...props, target: 'labels' }) // Legend labels
 ];
 
 // Returns legend items, except given ID index
@@ -128,13 +129,16 @@ const getInteractiveLegendTargetEvents = ({
                       : ({
                           // Skip if hidden
                           style:
-                            props.padAngle !== undefined // Support for pie chart
+                            props.slice !== undefined // Support for pie chart
                               ? {
-                                  ...props.style,
-                                  ...(index !== props.index && { opacity: chart_area_Opacity.value })
+                                  ...Helpers.evaluateStyle(props.style, props),
+                                  ...(index !== props.slice.index && { opacity: chart_area_Opacity.value }),
+                                  ...(props.data[props.slice.index]._fill && {
+                                    fill: props.data[props.slice.index]._fill
+                                  })
                                 }
                               : {
-                                  ...props.style,
+                                  ...Helpers.evaluateStyle(props.style, props),
                                   opacity: chart_area_Opacity.value
                                 }
                         } as any)
@@ -150,7 +154,7 @@ const getInteractiveLegendTargetEvents = ({
                       : {
                           // Skip if hidden
                           style: {
-                            ...props.style,
+                            ...Helpers.evaluateStyle(props.style, props),
                             opacity: chart_area_Opacity.value
                           }
                         }
@@ -167,7 +171,7 @@ const getInteractiveLegendTargetEvents = ({
                       : {
                           // Skip if hidden
                           style: {
-                            ...props.style,
+                            ...Helpers.evaluateStyle(props.style, props),
                             opacity: chart_area_Opacity.value
                           }
                         };

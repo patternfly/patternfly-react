@@ -811,6 +811,7 @@ import {
   Dropdown,
   DropdownItem,
   DropdownSeparator,
+  DropdownPosition,
   KebabToggle,
   SearchInput
 } from '@patternfly/react-core';
@@ -1036,6 +1037,7 @@ class ToolbarWithFilterExample extends React.Component {
             isOpen={kebabIsOpen}
             isPlain
             dropdownItems={dropdownItems}
+            position={DropdownPosition.right}
           />
         </ToolbarItem>
       </React.Fragment>
@@ -1080,6 +1082,7 @@ import {
   DropdownToggle,
   DropdownToggleCheckbox,
   DropdownItem,
+  DropdownPosition,
   Divider,
   OverflowMenu,
   OverflowMenuContent,
@@ -1293,6 +1296,7 @@ class ToolbarStacked extends React.Component {
                     isOpen={kebabIsOpen}
                     isPlain
                     dropdownItems={dropdownItems}
+                    position={DropdownPosition.right}
                   />
                 </OverflowMenuControl>
               </OverflowMenu>

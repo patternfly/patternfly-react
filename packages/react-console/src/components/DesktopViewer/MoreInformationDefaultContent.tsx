@@ -24,6 +24,7 @@ export const MoreInformationDefaultContent: React.FunctionComponent<MoreInformat
     <DescriptionList isHorizontal>
       <MoreInformationInstallVariant os="RHEL, CentOS" content="sudo yum install virt-viewer" />
       <MoreInformationInstallVariant os="Fedora" content="sudo dnf install virt-viewer" />
+      <MoreInformationInstallVariant os="SLE, openSUSE" content="sudo zypper install virt-viewer" />
       <MoreInformationInstallVariant os="Ubuntu, Debian" content="sudo apt-get install virt-viewer" />
       <MoreInformationInstallVariant os="Windows">
         <div>

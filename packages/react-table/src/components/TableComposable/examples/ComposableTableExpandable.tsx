@@ -36,7 +36,11 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
       prs: 'b',
       workspaces: 'four',
       lastCommit: 'five',
-      details: { detailFormat: 1, detail1: 'single cell - fullWidth' }
+      details: {
+        detailFormat: 1,
+        detail1:
+          'Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. Lorem ipsum sit dolor. '
+      }
     },
     {
       name: 'parent 3',
@@ -117,11 +121,11 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
         <Thead>
           <Tr>
             <Th />
-            <Th>{columnNames.name}</Th>
-            <Th>{columnNames.branches}</Th>
-            <Th>{columnNames.prs}</Th>
-            <Th>{columnNames.workspaces}</Th>
-            <Th>{columnNames.lastCommit}</Th>
+            <Th width={25}>{columnNames.name}</Th>
+            <Th width={10}>{columnNames.branches}</Th>
+            <Th width={15}>{columnNames.prs}</Th>
+            <Th width={30}>{columnNames.workspaces}</Th>
+            <Th width={10}>{columnNames.lastCommit}</Th>
           </Tr>
         </Thead>
         {repositories.map((repo, rowIndex) => {
@@ -137,14 +141,14 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
             childIsFullWidth = [1, 3].includes(detailFormat);
             childHasNoPadding = [2, 3].includes(detailFormat);
             if (detail1 && !detail2 && !detail3) {
-              detail1Colspan = childIsFullWidth ? numColumns : numColumns + 1; // Account for toggle column
+              detail1Colspan = !childIsFullWidth ? numColumns : numColumns + 1; // Account for toggle column
             } else if (detail1 && detail2 && !detail3) {
               detail1Colspan = 2;
-              detail2Colspan = childIsFullWidth ? 3 : 4;
+              detail2Colspan = !childIsFullWidth ? 3 : 4;
             } else if (detail1 && detail2 && detail3) {
               detail1Colspan = 2;
               detail2Colspan = 2;
-              detail3Colspan = childIsFullWidth ? 1 : 2;
+              detail3Colspan = !childIsFullWidth ? 1 : 2;
             }
           }
           return (

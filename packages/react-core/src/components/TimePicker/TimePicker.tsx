@@ -67,11 +67,15 @@ export interface TimePickerProps
   maxTime?: string | Date;
   /** Includes number of seconds with the chosen time and allows users to manually edit the seconds value. */
   includeSeconds?: boolean;
+  /** Flag to control the opened state of the time picker menu */
+  isOpen?: boolean;
+  /** Handler invoked each time the open state of time picker updates */
+  setIsOpen?: (isOpen?: boolean) => void;
 }
 
 interface TimePickerState {
   isInvalid: boolean;
-  isOpen: boolean;
+  isTimeOptionsOpen: boolean;
   timeState: string;
   focusedIndex: number;
   scrollIndex: number;
@@ -102,12 +106,13 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     stepMinutes: 30,
     inputProps: {},
     minTime: '',
-    maxTime: ''
+    maxTime: '',
+    setIsOpen: () => {}
   };
 
   constructor(props: TimePickerProps) {
     super(props);
-    const { is24Hour, delimiter, time, includeSeconds } = this.props;
+    const { is24Hour, delimiter, time, includeSeconds, isOpen } = this.props;
     let { minTime, maxTime } = this.props;
     if (minTime === '') {
       const minSeconds = includeSeconds ? `${delimiter}00` : '';
@@ -120,7 +125,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
     const timeRegex = this.getRegExp();
     this.state = {
       isInvalid: false,
-      isOpen: false,
+      isTimeOptionsOpen: isOpen,
       timeState: parseTime(time, timeRegex, delimiter, !is24Hour, includeSeconds),
       focusedIndex: null,
       scrollIndex: 0,
@@ -145,18 +150,18 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   onDocClick = (event: MouseEvent | TouchEvent) => {
     const clickedOnToggle = this.toggleRef?.current?.contains(event.target as Node);
     const clickedWithinMenu = this.menuRef?.current?.contains(event.target as Node);
-    if (this.state.isOpen && !(clickedOnToggle || clickedWithinMenu)) {
+    if (this.state.isTimeOptionsOpen && !(clickedOnToggle || clickedWithinMenu)) {
       this.onToggle(false);
     }
   };
 
   handleGlobalKeys = (event: KeyboardEvent) => {
-    const { isOpen, focusedIndex, scrollIndex } = this.state;
+    const { isTimeOptionsOpen, focusedIndex, scrollIndex } = this.state;
     // keyboard pressed while focus on toggle
     if (this.inputRef?.current?.contains(event.target as Node)) {
-      if (!isOpen && event.key !== KeyTypes.Tab) {
+      if (!isTimeOptionsOpen && event.key !== KeyTypes.Tab && event.key !== KeyTypes.Escape) {
         this.onToggle(true);
-      } else if (isOpen) {
+      } else if (isTimeOptionsOpen) {
         if (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab) {
           this.onToggle(false);
         } else if (event.key === KeyTypes.Enter) {
@@ -188,9 +193,13 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
   };
 
   componentDidUpdate(prevProps: TimePickerProps, prevState: TimePickerState) {
-    const { timeState, isOpen, isInvalid, timeRegex } = this.state;
-    const { time, is24Hour, delimiter, includeSeconds } = this.props;
-    if (isOpen && !prevState.isOpen && timeState && !isInvalid) {
+    const { timeState, isTimeOptionsOpen, isInvalid, timeRegex } = this.state;
+    const { time, is24Hour, delimiter, includeSeconds, isOpen } = this.props;
+    if (prevProps.isOpen !== isOpen) {
+      this.onToggle(isOpen);
+    }
+
+    if (isTimeOptionsOpen && !prevState.isTimeOptionsOpen && timeState && !isInvalid) {
       this.scrollToSelection(timeState);
     }
     if (delimiter !== prevProps.delimiter) {
@@ -340,18 +349,21 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       const { timeRegex, isInvalid } = prevState;
       const { delimiter, is24Hour, includeSeconds } = this.props;
       const time = parseTime(prevState.timeState, timeRegex, delimiter, !is24Hour, includeSeconds);
-
       return {
-        isOpen,
+        isTimeOptionsOpen: isOpen,
         timeState: time,
         isInvalid: isOpen ? isInvalid : !this.isValid(time)
       };
     });
+    this.props.setIsOpen(isOpen);
+    if (!isOpen) {
+      this.inputRef.current.focus();
+    }
   };
 
   onSelect = (e: any) => {
     const { timeRegex, timeState } = this.state;
-    const { delimiter, is24Hour, includeSeconds } = this.props;
+    const { delimiter, is24Hour, includeSeconds, setIsOpen } = this.props;
     const time = parseTime(e.target.textContent, timeRegex, delimiter, !is24Hour, includeSeconds);
     if (time !== timeState) {
       this.onInputChange(time);
@@ -359,13 +371,14 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
 
     this.inputRef.current.focus();
     this.setState({
-      isOpen: false,
+      isTimeOptionsOpen: false,
       isInvalid: false
     });
+    setIsOpen(false);
   };
 
   onInputClick = (e: any) => {
-    if (!this.state.isOpen) {
+    if (!this.state.isTimeOptionsOpen) {
       this.onToggle(true);
     }
     e.stopPropagation();
@@ -417,6 +430,10 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       inputProps,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       onChange,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      setIsOpen,
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      isOpen,
       time,
       validateTime,
       minTime,
@@ -425,7 +442,7 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
-    const { timeState, isOpen, isInvalid, minTimeState, maxTimeState } = this.state;
+    const { timeState, isTimeOptionsOpen, isInvalid, minTimeState, maxTimeState } = this.state;
     const style = { '--pf-c-date-picker__input--c-form-control--Width': width } as React.CSSProperties;
     const options = makeTimeOptions(stepMinutes, !is24Hour, delimiter, minTimeState, maxTimeState, includeSeconds);
     const isValidFormat = this.isValidFormat(timeState);
@@ -484,13 +501,13 @@ export class TimePicker extends React.Component<TimePickerProps, TimePickerState
                     appendTo={menuAppendTo === 'parent' ? getParentElement() : menuAppendTo}
                     trigger={textInput}
                     popper={menuContainer}
-                    isVisible={isOpen}
+                    isVisible={isTimeOptionsOpen}
                   />
                 ) : (
                   textInput
                 )}
               </div>
-              {isOpen && menuAppendTo === 'inline' && menuContainer}
+              {isTimeOptionsOpen && menuAppendTo === 'inline' && menuContainer}
             </div>
           </InputGroup>
           {isInvalid && (

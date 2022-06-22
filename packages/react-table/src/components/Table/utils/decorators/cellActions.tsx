@@ -65,7 +65,7 @@ export const cellActions = (
               extraData={extraData}
               actionsToggle={actionsToggle}
             >
-              {label}
+              {label as React.ReactNode}
             </ActionsColumn>
           )
         }

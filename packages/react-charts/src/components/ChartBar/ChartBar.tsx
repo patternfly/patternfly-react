@@ -254,7 +254,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
    * prop is set in addition to maximumDomain, domain will be used.
    *
-   * note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the
+   * Note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the
    * dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to
    * the y axis.
    *
@@ -269,7 +269,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * domain of a chart is static, while the maximum value depends on data or other variable information. If the domain
    * prop is set in addition to minimumDomain, domain will be used.
    *
-   * note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the
+   * Note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the
    * dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to
    * the y axis.
    *
@@ -305,6 +305,7 @@ export interface ChartBarProps extends VictoryBarProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   polar?: boolean;
@@ -348,6 +349,7 @@ export interface ChartBarProps extends VictoryBarProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };
@@ -359,7 +361,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * specified for "x" and/or "y". When this prop is false (or false for a given dimension), padding will be applied
    * without regard to quadrant. If this prop is not specified, domainPadding will be coerced to existing quadrants.
    *
-   * note: The x value supplied to the singleQuadrantDomainPadding prop refers to the independent variable, and the y
+   * Note: The x value supplied to the singleQuadrantDomainPadding prop refers to the independent variable, and the y
    * value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable
    * will corresponds to the y axis.
    *

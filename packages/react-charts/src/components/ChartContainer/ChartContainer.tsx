@@ -73,6 +73,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   polar?: boolean;

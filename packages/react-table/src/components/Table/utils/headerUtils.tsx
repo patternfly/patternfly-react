@@ -211,6 +211,8 @@ const actionsTransforms = ({
 export interface ICollapseTranform {
   onCollapse: OnCollapse;
   canCollapseAll: boolean;
+  // Account for additional added columns for full width
+  firstUserColumnIndex: number;
 }
 
 /**
@@ -220,13 +222,16 @@ export interface ICollapseTranform {
  * @param {*}  extraObject with onCollapse callback.
  * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
  */
-const collapsibleTransforms = (header: (ICell | string)[], { onCollapse, canCollapseAll }: ICollapseTranform) => [
+const collapsibleTransforms = (
+  header: (ICell | string)[],
+  { onCollapse, canCollapseAll, firstUserColumnIndex }: ICollapseTranform
+) => [
   ...(onCollapse
     ? [
         {
           title: '',
           transforms: (canCollapseAll && [collapsible]) || null,
-          cellTransforms: [collapsible, expandedRow(header.length)]
+          cellTransforms: [collapsible, expandedRow(header.length, firstUserColumnIndex)]
         }
       ]
     : [])

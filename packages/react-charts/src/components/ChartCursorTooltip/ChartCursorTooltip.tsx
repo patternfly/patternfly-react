@@ -144,6 +144,7 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   height?: number;
@@ -257,6 +258,7 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   width?: number;

@@ -142,7 +142,7 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
       <Thead>
         <Tr>
           <Td />
-          <Th>{columnNames.name}</Th>
+          <Th width={20}>{columnNames.name}</Th>
           <Th>{columnNames.branches}</Th>
           <Th>{columnNames.prs}</Th>
           <Th>{columnNames.link}</Th>

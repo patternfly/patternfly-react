@@ -42,6 +42,7 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   activePoints?: any[];
@@ -159,6 +160,7 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   height?: number;
@@ -225,6 +227,17 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    * @propType string | Function
    */
   orientation?: OrientationOrCallback;
+  /**
+   * The patternScale prop is an optional prop that defines patterns to apply, where applicable. This prop should be
+   * given as a string array of pattern URLs. Patterns will be assigned to children by index and will repeat when there
+   * are more children than patterns in the provided patternScale. Use null to omit the pattern for a given index.
+   *
+   * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
+   *
+   * @example patternScale={[ 'url("#pattern1")', 'url("#pattern2")', null ]}
+   * @beta
+   */
+  patternScale?: string[];
   /**
    * The pointerLength prop determines the length of the triangular pointer extending from the flyout. This prop may be
    * given as a positive number or a function of datum.
@@ -301,6 +314,7 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   width?: number;
@@ -329,6 +343,7 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
   isCursorTooltip = true,
   labelComponent = <ChartLegendTooltipContent />,
   legendData,
+  patternScale,
   text,
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -365,6 +380,7 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
       flyoutWidth: flyoutWidth || getFlyoutWidth(props),
       height,
       legendData,
+      patternScale,
       title,
       width,
       ...labelComponent.props

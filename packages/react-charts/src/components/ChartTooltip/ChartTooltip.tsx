@@ -140,6 +140,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   height?: number;
@@ -248,6 +249,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   width?: number;

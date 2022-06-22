@@ -111,13 +111,13 @@ class VirtualizedExample extends React.Component {
     };
 
     return (
-      <div aria-label="Scrollable Table" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
+      <div aria-label="Scrollable Table" className="pf-c-scrollablegrid">
         <Table
           caption="Simple Table"
           cells={columns}
           rows={rows}
           gridBreakPoint={TableGridBreakpoint.none}
-          role="presentation"
+          aria-rowcount={rows.length}
         >
           <TableHeader />
         </Table>
@@ -194,8 +194,8 @@ ComposableTableVirtualized = () => {
  );
 
   return (
-    <div aria-label="Scrollable Table" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
-      <TableComposable gridBreakPoint={TableGridBreakpoint.none} role="presentation">
+    <div aria-label="Scrollable Table" className="pf-c-scrollablegrid" >
+      <TableComposable gridBreakPoint={TableGridBreakpoint.none} aria-rowcount={rows.length}>
         <Caption>Virtualized table with composable table components</Caption>
         <Thead>
           <Tr>
@@ -346,7 +346,7 @@ class SortableExample extends React.Component {
     };
 
     return (
-      <div aria-label="Scrollable Table" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
+      <div aria-label="Scrollable Table" className="pf-c-scrollablegrid">
         <Table
           caption="Sortable Virtualized Table"
           cells={columns}
@@ -355,6 +355,7 @@ class SortableExample extends React.Component {
           sortBy={sortBy}
           onSort={this.onSort}
           role="grid"
+          aria-rowcount={rows.length}
         >
           <TableHeader />
         </Table>
@@ -504,14 +505,14 @@ class SelectableExample extends React.Component {
     };
 
     return (
-      <div aria-label="Scrollable Table" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
+      <div aria-label="Scrollable Table" className="pf-c-scrollablegrid">
         <Table
           caption="Selectable Virtualized Table"
           cells={columns}
           rows={rows}
           gridBreakPoint={TableGridBreakpoint.none}
           onSelect={this.onSelect}
-          role="presentation"
+          aria-rowcount={rows.length}
         >
           <TableHeader />
         </Table>
@@ -657,13 +658,13 @@ class ActionsExample extends React.Component {
     };
 
     return (
-      <div aria-label="Scrollable Table" className="pf-c-scrollablegrid" aria-rowcount={rows.length}>
+      <div aria-label="Scrollable Table" className="pf-c-scrollablegrid">
         <Table
           caption="Actions Virtualized Table"
           cells={columns}
           rows={rows}
           gridBreakPoint={TableGridBreakpoint.none}
-          role="presentation"
+          aria-rowcount={rows.length}
         >
           <TableHeader />
         </Table>
@@ -1070,13 +1071,13 @@ class FilterExample extends React.Component {
     const filteredRows =
       filters.name.length > 0 || filters.location.length > 0 || filters.status.length > 0
         ? rows.filter(row => {
-            return (
-              (filters.name.length === 0 ||
-                filters.name.some(name => row.cells[0].toLowerCase().includes(name.toLowerCase()))) &&
-              (filters.location.length === 0 || filters.location.includes(row.cells[4])) &&
-              (filters.status.length === 0 || filters.status.includes(row.cells[3]))
-            );
-          })
+          return (
+            (filters.name.length === 0 ||
+              filters.name.some(name => row.cells[0].toLowerCase().includes(name.toLowerCase()))) &&
+            (filters.location.length === 0 || filters.location.includes(row.cells[4])) &&
+            (filters.status.length === 0 || filters.status.includes(row.cells[3]))
+          );
+        })
         : rows;
     const measurementCache = new CellMeasurerCache({
       fixedWidth: true,
@@ -1116,7 +1117,6 @@ class FilterExample extends React.Component {
           id="content-scrollable-1"
           aria-label="Scrollable Table"
           className="pf-c-scrollablegrid"
-          aria-rowcount={rows.length}
           style={{
             height: 500 /* important note: the scrollable container should have some sort of fixed height, or it should be wrapped in container that is smaller than ReactVirtualized__VirtualGrid container and has overflow visible if using the Window Scroller. See WindowScroller.example.css */,
             overflowX: 'auto',
@@ -1131,9 +1131,9 @@ class FilterExample extends React.Component {
               <div
                 aria-label="Scrollable Table"
                 className="pf-c-scrollablegrid"
-                aria-rowcount={rows.length}
               >
-                <Table cells={columns} rows={filteredRows} actions={actions} aria-label="Filterable Table Demo">
+                <Table cells={columns} rows={filteredRows} actions={actions} aria-label="Filterable Table Demo"
+                       aria-rowcount={rows.length}>
                   <TableHeader />
                 </Table>
                 <WindowScroller scrollElement={scollableElement}>

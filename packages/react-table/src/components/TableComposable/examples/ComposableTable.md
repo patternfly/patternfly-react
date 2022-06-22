@@ -194,6 +194,8 @@ type OnCollapse = (
 ) => void;
 ```
 
+Note: Table column widths will respond automatically when toggling expanded rows. To retain column widths between expanded and collapsed states, column header and/or data cell widths must be set.
+
 ```ts file="ComposableTableExpandable.tsx"
 ```
 
@@ -368,6 +370,11 @@ The second `Tr` represents the second level of sub columns. The `Th` in this row
 ### Composable: Expandable with nested table
 
 ```ts file="ComposableTableNestedTableExpandable.tsx"
+```
+
+### Composable: Nested sticky header
+
+```ts file="ComposableTableNestedStickyHeader.tsx"
 ```
 
 ## Striped

@@ -23,7 +23,16 @@ import { AxesType, VictoryChart, VictoryChartProps } from 'victory-chart';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getChartTheme, getClassName, getComputedLegend, getLabelTextSize, getPaddingForSide } from '../ChartUtils';
+import {
+  getChartTheme,
+  getClassName,
+  getComputedLegend,
+  getLabelTextSize,
+  getPaddingForSide,
+  getPatternDefs,
+  getDefaultData,
+  getDefaultPatternProps
+} from '../ChartUtils';
 
 /**
  * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
@@ -83,12 +92,14 @@ export interface ChartProps extends VictoryChartProps {
   /**
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   defaultAxes?: AxesType;
   /**
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   defaultPolarAxes?: AxesType;
@@ -187,6 +198,20 @@ export interface ChartProps extends VictoryChartProps {
    */
   groupComponent?: React.ReactElement<any>;
   /**
+   * The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart.
+   * SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected
+   * color theme or custom color scale. Those generated patterns are applied in a specific order (via a URL), similar
+   * to the color theme ordering defined by PatternFly. If the multi-color theme was in use; for example, colorized
+   * patterns would be displayed in that same order. Create custom patterns via the patternScale prop.
+   *
+   * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
+   *
+   * @example hasPatterns={ true }
+   * @example hasPatterns={[ true, true, false ]}
+   * @beta
+   */
+  hasPatterns?: boolean | boolean[];
+  /**
    * Specifies the height the svg viewBox of the chart container. This value should be given as a
    * number of pixels.
    *
@@ -257,7 +282,7 @@ export interface ChartProps extends VictoryChartProps {
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
    * prop is set in addition to maximumDomain, domain will be used.
    *
-   * note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the
+   * Note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the
    * dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to
    * the y axis.
    *
@@ -272,7 +297,7 @@ export interface ChartProps extends VictoryChartProps {
    * domain of a chart is static, while the maximum value depends on data or other variable information. If the domain
    * prop is set in addition to minimumDomain, domain will be used.
    *
-   * note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the
+   * Note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the
    * dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to
    * the y axis.
    *
@@ -292,8 +317,20 @@ export interface ChartProps extends VictoryChartProps {
    */
   padding?: PaddingProps;
   /**
+   * The patternScale prop is an optional prop that defines patterns to apply, where applicable. This prop should be
+   * given as a string array of pattern URLs. Patterns will be assigned to children by index and will repeat when there
+   * are more children than patterns in the provided patternScale. Use null to omit the pattern for a given index.
+   *
+   * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
+   *
+   * @example patternScale={[ 'url("#pattern1")', 'url("#pattern2")', null ]}
+   * @beta
+   */
+  patternScale?: string[];
+  /**
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   prependDefaultAxes?: boolean;
@@ -336,6 +373,7 @@ export interface ChartProps extends VictoryChartProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };
@@ -352,7 +390,7 @@ export interface ChartProps extends VictoryChartProps {
    * specified for "x" and/or "y". When this prop is false (or false for a given dimension), padding will be applied
    * without regard to quadrant. If this prop is not specified, domainPadding will be coerced to existing quadrants.
    *
-   * note: The x value supplied to the singleQuadrantDomainPadding prop refers to the independent variable, and the y
+   * Note: The x value supplied to the singleQuadrantDomainPadding prop refers to the independent variable, and the y
    * value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable
    * will corresponds to the y axis.
    *
@@ -423,11 +461,14 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   ariaDesc,
   ariaTitle,
   children,
+  colorScale,
+  hasPatterns,
   legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
   padding,
+  patternScale,
   showAxis = true,
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -448,13 +489,34 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     top: getPaddingForSide('top', padding, theme.chart.padding)
   };
 
+  const { defaultColorScale, defaultPatternScale, isPatternDefs, patternId } = getDefaultPatternProps({
+    colorScale,
+    patternScale,
+    hasPatterns,
+    themeColorScale: theme.chart.colorScale as string[]
+  });
+
+  // Add pattern props for legend tooltip
+  let labelComponent;
+  if (
+    containerComponent.props.labelComponent &&
+    containerComponent.props.labelComponent.type.displayName === 'ChartLegendTooltip'
+  ) {
+    labelComponent = React.cloneElement(containerComponent.props.labelComponent, {
+      theme,
+      ...(defaultPatternScale && { patternScale: defaultPatternScale }),
+      ...containerComponent.props.labelComponent.props
+    });
+  }
+
   // Clone so users can override container props
   const container = React.cloneElement(containerComponent, {
     desc: ariaDesc,
     title: ariaTitle,
     theme,
     ...containerComponent.props,
-    className: getClassName({ className: containerComponent.props.className }) // Override VictoryContainer class name
+    className: getClassName({ className: containerComponent.props.className }), // Override VictoryContainer class name
+    ...(labelComponent && { labelComponent }) // Override label component props
   });
 
   const legend = React.cloneElement(legendComponent, {
@@ -497,6 +559,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     return getComputedLegend({
       allowWrap: legendAllowWrap,
       chartType: 'chart',
+      colorScale,
       dx,
       dy,
       height,
@@ -504,13 +567,33 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       padding: defaultPadding,
       position: legendPosition,
       theme,
-      width
+      width,
+      ...(defaultPatternScale && { patternScale: defaultPatternScale })
     });
   };
+
+  // Render children
+  const renderChildren = () =>
+    React.Children.toArray(children).map(child => {
+      if (React.isValidElement(child)) {
+        const { ...childProps } = child.props;
+        return React.cloneElement(child, {
+          colorScale,
+          theme,
+          ...(defaultPatternScale && { patternScale: defaultPatternScale }),
+          ...childProps,
+          ...((child as any).type.displayName === 'ChartPie' && {
+            data: getDefaultData(childProps.data, defaultPatternScale)
+          }) // Override child props
+        });
+      }
+      return child;
+    });
 
   // Note: containerComponent is required for theme
   return (
     <VictoryChart
+      colorScale={colorScale}
       containerComponent={container}
       height={height}
       padding={defaultPadding}
@@ -518,8 +601,9 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       width={width}
       {...rest}
     >
-      {children}
+      {renderChildren()}
       {getLegend()}
+      {isPatternDefs && getPatternDefs({ patternId, colorScale: defaultColorScale })}
     </VictoryChart>
   );
 };

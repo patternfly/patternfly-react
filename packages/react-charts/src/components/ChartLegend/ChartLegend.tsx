@@ -155,15 +155,6 @@ export interface ChartLegendProps extends VictoryLegendProps {
    */
   gutter?: number | { left: number; right: number };
   /**
-   * Specifies the height the svg viewBox of the chart container. This value should be given as a
-   * number of pixels.
-   *
-   * Because Victory renders responsive containers, the width and height props do not determine the width and
-   * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
-   * pixels will depend on the size of the container the chart is rendered into.
-   */
-  height?: number;
-  /**
    * The itemsPerRow prop determines how many items to render in each row
    * of a horizontal legend, or in each column of a vertical legend. This
    * prop should be given as an integer. When this prop is not given,
@@ -202,6 +193,17 @@ export interface ChartLegendProps extends VictoryLegendProps {
    */
   padding?: PaddingProps;
   /**
+   * The patternScale prop is an optional prop that defines patterns to apply, where applicable. This prop should be
+   * given as a string array of pattern URLs. Patterns will be assigned to children by index and will repeat when there
+   * are more children than patterns in the provided patternScale. Use null to omit the pattern for a given index.
+   *
+   * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
+   *
+   * @example patternScale={[ 'url("#pattern1")', 'url("#pattern2")', null ]}
+   * @beta
+   */
+  patternScale?: string[];
+  /**
    * The responsive prop specifies whether the rendered container should be a responsive container with a viewBox
    * attribute, or a static container with absolute width and height.
    *
@@ -225,6 +227,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   sharedEvents?: { events: any[]; getEventState: Function };
@@ -317,10 +320,13 @@ export interface ChartLegendProps extends VictoryLegendProps {
 }
 
 export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
+  colorScale,
   containerComponent = <ChartContainer />,
   dataComponent = <ChartPoint />,
   labelComponent = <ChartLabel />,
+  patternScale,
   responsive = true,
+  style,
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
@@ -330,6 +336,29 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
   theme = getTheme(themeColor),
   ...rest
 }: ChartLegendProps) => {
+  // Merge pattern IDs with `style.data.fill` property
+  const getDefaultStyle = () => {
+    if (!patternScale) {
+      return style;
+    }
+
+    // Note: ChartLegendTooltipContent overrides patterns via `data.symbol.fill` property
+    const _style = style ? { ...style } : {};
+    _style.data = {
+      fill: ({ index }: any) => {
+        const themeColor =
+          theme && theme.legend && theme.legend.colorScale
+            ? theme.legend.colorScale[index % theme.legend.colorScale.length]
+            : undefined;
+        const color = colorScale ? colorScale[index % colorScale.length] : themeColor; // Sync color scale
+        const pattern = patternScale[index % patternScale.length];
+        return pattern ? pattern : color;
+      },
+      ..._style.data
+    };
+    return _style;
+  };
+
   // Clone so users can override container props
   const container = React.cloneElement(containerComponent, {
     responsive,
@@ -340,9 +369,11 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
   // Note: containerComponent is required for theme
   return (
     <VictoryLegend
+      colorScale={colorScale}
       containerComponent={container}
       dataComponent={dataComponent}
       labelComponent={labelComponent}
+      style={getDefaultStyle()}
       theme={theme}
       titleComponent={titleComponent}
       {...rest}

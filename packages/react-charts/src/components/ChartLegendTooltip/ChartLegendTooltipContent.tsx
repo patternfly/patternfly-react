@@ -24,6 +24,7 @@ export interface ChartLegendTooltipContentProps {
    *
    * Note: This prop should not be set manually.
    *
+   * @private
    * @hide
    */
   activePoints?: any[];
@@ -117,6 +118,17 @@ export interface ChartLegendTooltipContentProps {
     };
   }[];
   /**
+   * The patternScale prop is an optional prop that defines patterns to apply, where applicable. This prop should be
+   * given as a string array of pattern URLs. Patterns will be assigned to children by index and will repeat when there
+   * are more children than patterns in the provided patternScale. Use null to omit the pattern for a given index.
+   *
+   * Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc.
+   *
+   * @example patternScale={[ 'url("#pattern1")', 'url("#pattern2")', null ]}
+   * @beta
+   */
+  patternScale?: string[];
+  /**
    * The text prop defines the text ChartTooltip will render. The text prop may be given as a string, number, or
    * function of datum. When ChartLabel is used as the labelComponent, strings may include newline characters, which
    * ChartLabel will split in to separate <tspan/> elements.
@@ -192,6 +204,7 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
   labelComponent = <ChartLegendTooltipLabel />,
   legendComponent = <ChartLegend />,
   legendData,
+  patternScale,
   text,
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -297,11 +310,13 @@ export const ChartLegendTooltipContent: React.FunctionComponent<ChartLegendToolt
         activePoints,
         colorScale: legendProps.colorScale,
         legendData,
+        patternScale,
         text,
         textAsLegendData: true,
         theme
       }),
       labelComponent: getLabelComponent(),
+      patternScale,
       standalone: false,
       theme,
       x: getX() + legendOffsetX + Helpers.evaluateProp(dx),
