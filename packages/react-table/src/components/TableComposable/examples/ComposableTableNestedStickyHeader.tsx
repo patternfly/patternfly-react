@@ -153,7 +153,7 @@ export const ComposableTableNestedHeaders: React.FunctionComponent = () => {
               {columnNames.destination}
             </Th>
           </Tr>
-          <Tr isBorderRow>
+          <Tr isBorderRow aria-hidden="true">
             <Td colSpan={9}></Td>
           </Tr>
         </Thead>
