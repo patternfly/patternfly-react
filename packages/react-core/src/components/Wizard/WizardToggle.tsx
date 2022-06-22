@@ -17,7 +17,7 @@ export interface WizardToggleProps {
   /** The currently active WizardStep */
   activeStep: WizardStep;
   /** The WizardFooter */
-  children: React.ReactNode;
+  children?: React.ReactNode;
   /** Set to true to remove body padding */
   hasNoBodyPadding: boolean;
   /** If the nav is open */
@@ -125,9 +125,10 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
               {nav(isNavOpen)}
             </WizardBody>
           </div>
-          {children}
+          {!hasDrawer && children}
         </div>
       </WizardDrawerWrapper>
+      {hasDrawer && children}
     </React.Fragment>
   );
 };

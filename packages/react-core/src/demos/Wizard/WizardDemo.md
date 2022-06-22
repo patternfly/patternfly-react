@@ -134,10 +134,9 @@ class WizardModalWithDrawerDemo extends React.Component {
       this.drawerRef.current && this.drawerRef.current.focus();
     };
 
-    this.onClick = () => {
-      const isDrawerExpanded = !this.state.isDrawerExpanded;
+    this.onOpenClick = () => {
       this.setState({
-        isDrawerExpanded
+        isDrawerExpanded: true
       });
     };
 
@@ -220,7 +219,8 @@ class WizardModalWithDrawerDemo extends React.Component {
         id: 0,
         name: 'Information',
         component: <p>Step 1 content</p>,
-        drawerPanelContent: informationPanelContent
+        drawerPanelContent: informationPanelContent,
+        hasOpenDrawerButton: true
       },
       {
         id: 1,
@@ -274,6 +274,7 @@ class WizardModalWithDrawerDemo extends React.Component {
           navAriaLabel={`${title} steps`}
           hasDrawer
           isDrawerExpanded={isDrawerExpanded}
+          onDrawerToggle={this.onOpenClick}
           mainAriaLabel={`${title} content`}
           titleId="wiz-modal-demo-title"
           descriptionId="wiz-modal-demo-description"
@@ -406,10 +407,9 @@ class FullPageWizard extends React.Component {
       this.drawerRef.current && this.drawerRef.current.focus();
     };
 
-    this.onClick = () => {
-      const isDrawerExpanded = !this.state.isDrawerExpanded;
+    this.onOpenClick = () => {
       this.setState({
-        isDrawerExpanded
+        isDrawerExpanded: true
       });
     };
 
@@ -541,7 +541,13 @@ class FullPageWizard extends React.Component {
     );
 
     const steps = [
-      { id: 0, name: 'Information', component: <p>Step 1 content</p>, drawerPanelContent: informationPanelContent },
+      {
+        id: 0,
+        name: 'Information',
+        component: <p>Step 1 content</p>,
+        drawerPanelContent: informationPanelContent,
+        hasOpenDrawerButton: true
+      },
       {
         id: 1,
         name: 'Configuration',
@@ -590,6 +596,7 @@ class FullPageWizard extends React.Component {
           <PageSection type={PageSectionTypes.wizard} variant={PageSectionVariants.light}>
             <Wizard
               hasDrawer
+              onDrawerToggle={this.onOpenClick}
               isDrawerExpanded={isDrawerExpanded}
               navAriaLabel={`${title} steps`}
               mainAriaLabel={`${title} content`}
