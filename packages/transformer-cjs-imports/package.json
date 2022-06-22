@@ -1,7 +1,7 @@
 {
   "name": "transformer-cjs-imports",
   "private": true,
-  "version": "4.60.15",
+  "version": "4.60.16",
   "description": "Transform CJS imports to ESM in typescript depending on module target.",
   "main": "index.js",
   "author": "Red Hat",
