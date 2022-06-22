@@ -111,7 +111,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
               aria-labelledby={mainAriaLabelledBy}
               hasNoBodyPadding={hasNoBodyPadding}
             >
-              {activeStep.hasOpenDrawerButton && (
+              {activeStep.hasOpenDrawerButton && !isDrawerExpanded && (
                 <Button
                   className="pf-u-float-right pf-u-ml-md"
                   isInline
