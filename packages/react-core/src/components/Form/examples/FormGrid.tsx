@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, FormGroup, TextInput, Grid, GridItem } from '@patternfly/react-core';
 
-export const SimpleForm: React.FunctionComponent = () => {
+export const FormGrid: React.FunctionComponent = () => {
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [phone, setPhone] = React.useState('');

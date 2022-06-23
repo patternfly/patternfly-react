@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, FormGroup, TextInput } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
-export const InvalidForm: React.FunctionComponent = () => {
+export const FormValidated: React.FunctionComponent = () => {
   type validate = 'success' | 'warning' | 'error' | 'default';
 
   const [age, setAge] = React.useState('Five');

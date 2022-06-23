@@ -12,7 +12,7 @@ import {
   Radio
 } from '@patternfly/react-core';
 
-export const HorizontalForm: React.FunctionComponent = () => {
+export const FormHorizontal: React.FunctionComponent = () => {
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [experience, setExperience] = React.useState('');

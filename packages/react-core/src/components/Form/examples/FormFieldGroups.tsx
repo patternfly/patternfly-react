@@ -10,7 +10,7 @@ import {
 } from '@patternfly/react-core';
 import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 
-export const FieldGroups: React.FunctionComponent = () => {
+export const FormFieldGroups: React.FunctionComponent = () => {
   const initialValues = {
     '0-label1': '',
     '0-label2': '',

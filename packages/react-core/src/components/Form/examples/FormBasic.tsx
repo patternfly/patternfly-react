@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, FormGroup, TextInput, Checkbox, Popover, ActionGroup, Button, Radio } from '@patternfly/react-core';
 import HelpIcon from '@patternfly/react-icons/dist/esm/icons/help-icon';
 
-export const SimpleForm: React.FunctionComponent = () => {
+export const FormBasic: React.FunctionComponent = () => {
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [phone, setPhone] = React.useState('');
