@@ -990,8 +990,8 @@ class WizardWithDrawer extends React.Component {
         <Wizard
           isDrawerExpanded={isDrawerExpanded}
           onDrawerToggle={this.onOpenClick}
+          drawerToggleButtonText="Open Drawer"
           hasDrawer
-          drawerPanelWidths={{ default: 'width_33' }}
           navAriaLabel={`${title} steps`}
           steps={steps}
         />

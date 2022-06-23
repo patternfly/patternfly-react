@@ -110,6 +110,8 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   isDrawerExpanded?: boolean;
   /** @beta Callback function to toggle the wizard drawer */
   onDrawerToggle?: () => void;
+  /** @beta Custom text for the drawer toggle button */
+  drawerToggleButtonText?: string;
 }
 
 interface WizardState {
@@ -358,6 +360,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       hasDrawer,
       isDrawerExpanded,
       onDrawerToggle,
+      drawerToggleButtonText,
       ...rest
       /* eslint-enable @typescript-eslint/no-unused-vars */
     } = this.props;
@@ -494,6 +497,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
             isNavOpen={this.state.isNavOpen}
             onNavToggle={isNavOpen => this.setState({ isNavOpen })}
             onDrawerToggle={onDrawerToggle}
+            drawerToggleButtonText={drawerToggleButtonText}
             nav={nav}
             steps={steps}
             activeStep={activeStep}

@@ -36,6 +36,8 @@ export interface WizardToggleProps {
   isDrawerExpanded?: boolean;
   /** @beta Callback function for when the drawer is toggled */
   onDrawerToggle: (isOpen: boolean) => void;
+  /** @beta Custom text for the drawer toggle button */
+  drawerToggleButtonText?: string;
 }
 
 export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
@@ -52,7 +54,8 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   isInPage = true,
   hasDrawer,
   isDrawerExpanded,
-  onDrawerToggle
+  onDrawerToggle,
+  drawerToggleButtonText
 }: WizardToggleProps) => {
   let activeStepIndex;
   let activeStepName;
@@ -112,7 +115,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
                 variant="link"
                 onClick={() => onDrawerToggle(!isDrawerExpanded)}
               >
-                Open Drawer
+                {drawerToggleButtonText}
               </Button>
             )}
             {activeStep.component}
