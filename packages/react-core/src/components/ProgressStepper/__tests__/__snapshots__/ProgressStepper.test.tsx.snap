@@ -226,15 +226,13 @@ exports[`ProgressStep renders help text styling 1`] = `
     <div
       class="pf-c-progress-stepper__step-main"
     >
-      <span
+      <button
         class="pf-c-progress-stepper__step-title pf-m-help-text"
-        role="button"
-        tabindex="0"
         type="button"
       >
         Title
         <div />
-      </span>
+      </button>
     </div>
   </li>
 </DocumentFragment>
