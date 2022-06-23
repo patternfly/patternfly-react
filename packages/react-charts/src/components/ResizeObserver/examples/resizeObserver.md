@@ -50,7 +50,7 @@ the parent container may be set to the same height and/or width.
 ## Examples
 ### Responsive bullet chart with wrapping legend
 
-This demonstrates a responsive legend which wraps when items are wider than its container.
+This demonstrates how to use a `ResizeObserver` to update the chart's width, while its height remains fixed. The `legendAllowWrap` prop is used to automatically wrap legend items.
 
 ```js
 import React from 'react';
@@ -117,6 +117,9 @@ class BulletChart extends React.Component {
 ```
 
 ### Responsive threshold chart with wrapping legend
+
+This demonstrates how to use a `ResizeObserver` to update the chart's width, while its height remains fixed. In this example, `itemsPerRow` is used to wrap legend items manually.
+
 ```js
 import React from 'react';
 import {
@@ -260,6 +263,9 @@ class MultiColorChart extends React.Component {
 ```
 
 ### Responsive stack chart with reducible axis tick labels
+
+This demonstrates how to use a `ResizeObserver` to update the chart's width, while its height remains fixed. In this example, `fixLabelOverlap` is used to dynamically adjust the number of axis tick labels.
+
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip, getResizeObserver } from '@patternfly/react-charts';
