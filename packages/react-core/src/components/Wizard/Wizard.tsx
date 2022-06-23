@@ -21,7 +21,7 @@ export interface WizardStep {
   /** @beta The content to render in the drawer panel (use when hasDrawer prop is set on the wizard).   */
   drawerPanelContent?: any;
   /** @beta Custom drawer toggle button that opens the drawer. */
-  drawerToggleButton?: string;
+  drawerToggleButton?: React.ReactNode;
   /** Setting to true hides the side nav and footer */
   isFinishedStep?: boolean;
   /** Enables or disables the step in the navigation. Enabled by default. */
