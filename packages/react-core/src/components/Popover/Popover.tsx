@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import * as React from 'react';
-import { KeyTypes, KEY_CODES } from '../../helpers/constants';
+import { KeyTypes } from '../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import { css } from '@patternfly/react-styles';
 import { PopoverContext } from './PopoverContext';
@@ -368,24 +368,6 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
       }
     }
   };
-  const onTriggerEnter = (event: KeyboardEvent) => {
-    if (event.keyCode === KEY_CODES.ENTER || event.keyCode === KEY_CODES.SPACE) {
-      event.preventDefault();
-      if (triggerManually) {
-        if (visible) {
-          shouldClose(null, hide, event);
-        } else {
-          shouldOpen(show, event);
-        }
-      } else {
-        if (visible) {
-          hide();
-        } else {
-          show(true);
-        }
-      }
-    }
-  };
   const onContentMouseDown = () => {
     if (focusTrapActive) {
       setFocusTrapActive(false);
@@ -479,7 +461,6 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         distance={distance}
         placement={position}
         onTriggerClick={onTriggerClick}
-        onTriggerEnter={onTriggerEnter}
         onDocumentClick={onDocumentClick}
         onDocumentKeyDown={onDocumentKeyDown}
         enableFlip={enableFlip}
