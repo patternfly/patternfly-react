@@ -30,7 +30,7 @@ export interface NavProps
     isExpanded: boolean;
     event: React.MouseEvent<HTMLButtonElement>;
   }) => void;
-  /** Accessibility label */
+  /** Accessible label for the nav when there are multiple navs on the page */
   'aria-label'?: string;
   /** Indicates which theme color to use */
   theme?: 'dark' | 'light';

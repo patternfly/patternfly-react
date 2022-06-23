@@ -10,12 +10,15 @@ export interface PageToggleButtonProps extends ButtonProps {
   isNavOpen?: boolean;
   /** Callback function to handle the side nav toggle button, managed by the Page component if the Page isManagedSidebar prop is set to true */
   onNavToggle?: () => void;
+  /** Button id */
+  id?: string;
 }
 
 export const PageToggleButton: React.FunctionComponent<PageToggleButtonProps> = ({
   children,
   isNavOpen = true,
   onNavToggle = () => undefined as any,
+  id = 'nav-toggle',
   ...props
 }: PageToggleButtonProps) => (
   <PageContextConsumer>
@@ -25,7 +28,7 @@ export const PageToggleButton: React.FunctionComponent<PageToggleButtonProps> = 
 
       return (
         <Button
-          id="nav-toggle"
+          id={id}
           onClick={navToggle}
           aria-label="Side navigation toggle"
           aria-expanded={navOpen ? 'true' : 'false'}

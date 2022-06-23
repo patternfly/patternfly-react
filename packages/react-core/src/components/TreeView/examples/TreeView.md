@@ -1,7 +1,7 @@
 ---
 id: Tree view
 section: components
-cssPrefix: pf-c-treeview
+cssPrefix: pf-c-tree-view
 propComponents: ['TreeView', 'TreeViewDataItem', 'TreeViewSearch']
 beta: true
 ---
@@ -42,28 +42,28 @@ class DefaultTreeView extends React.Component {
     const options = [
       {
         name: 'Application launcher',
-        id: 'AppLaunch',
+        id: 'example1-AppLaunch',
         children: [
           {
             name: 'Application 1',
-            id: 'App1',
+            id: 'example1-App1',
             children: [
-              { name: 'Settings', id: 'App1Settings' },
-              { name: 'Current', id: 'App1Current' }
+              { name: 'Settings', id: 'example1-App1Settings' },
+              { name: 'Current', id: 'example1-App1Current' }
             ]
           },
           {
             name: 'Application 2',
-            id: 'App2',
+            id: 'example1-App2',
             children: [
-              { name: 'Settings', id: 'App2Settings' },
+              { name: 'Settings', id: 'example1-App2Settings' },
               {
                 name: 'Loader',
-                id: 'App2Loader',
+                id: 'example1-App2Loader',
                 children: [
-                  { name: 'Loading App 1', id: 'LoadApp1' },
-                  { name: 'Loading App 2', id: 'LoadApp2' },
-                  { name: 'Loading App 3', id: 'LoadApp3' }
+                  { name: 'Loading App 1', id: 'example1-LoadApp1' },
+                  { name: 'Loading App 2', id: 'example1-LoadApp2' },
+                  { name: 'Loading App 3', id: 'example1-LoadApp3' }
                 ]
               }
             ]
@@ -73,27 +73,27 @@ class DefaultTreeView extends React.Component {
       },
       {
         name: 'Cost management',
-        id: 'Cost',
+        id: 'example1-Cost',
         children: [
           {
             name: 'Application 3',
-            id: 'App3',
+            id: 'example1-App3',
             children: [
-              { name: 'Settings', id: 'App3Settings' },
-              { name: 'Current', id: 'App3Current' }
+              { name: 'Settings', id: 'example1-App3Settings' },
+              { name: 'Current', id: 'example1-App3Current' }
             ]
           }
         ]
       },
       {
         name: 'Sources',
-        id: 'Sources',
-        children: [{ name: 'Application 4', id: 'App4', children: [{ name: 'Settings', id: 'App4Settings' }] }]
+        id: 'example1-Sources',
+        children: [{ name: 'Application 4', id: 'example1-App4', children: [{ name: 'Settings', id: 'example1-App4Settings' }] }]
       },
       {
         name: 'Really really really long folder name that overflows the container it is in',
-        id: 'Long',
-        children: [{ name: 'Application 5', id: 'App5' }]
+        id: 'example1-Long',
+        children: [{ name: 'Application 5', id: 'example1-App5' }]
       }
     ];
     return (
@@ -122,28 +122,28 @@ class SearchTreeView extends React.Component {
     this.options = [
       {
         name: 'Application launcher',
-        id: 'AppLaunch',
+        id: 'example2-AppLaunch',
         children: [
           {
             name: 'Application 1',
-            id: 'App1',
+            id: 'example2-App1',
             children: [
-              { name: 'Settings', id: 'App1Settings' },
-              { name: 'Current', id: 'App1Current' }
+              { name: 'Settings', id: 'example2-App1Settings' },
+              { name: 'Current', id: 'example2-App1Current' }
             ]
           },
           {
             name: 'Application 2',
-            id: 'App2',
+            id: 'example2-App2',
             children: [
-              { name: 'Settings', id: 'App2Settings' },
+              { name: 'Settings', id: 'example2-App2Settings' },
               {
                 name: 'Loader',
-                id: 'App2Loader',
+                id: 'example2-App2Loader',
                 children: [
-                  { name: 'Loading App 1', id: 'LoadApp1' },
-                  { name: 'Loading App 2', id: 'LoadApp2' },
-                  { name: 'Loading App 3', id: 'LoadApp3' }
+                  { name: 'Loading App 1', id: 'example2-LoadApp1' },
+                  { name: 'Loading App 2', id: 'example2-LoadApp2' },
+                  { name: 'Loading App 3', id: 'example2-LoadApp3' }
                 ]
               }
             ]
@@ -153,27 +153,27 @@ class SearchTreeView extends React.Component {
       },
       {
         name: 'Cost management',
-        id: 'Cost',
+        id: 'example2-Cost',
         children: [
           {
             name: 'Application 3',
-            id: 'App3',
+            id: 'example2-App3',
             children: [
-              { name: 'Settings', id: 'App3Settings' },
-              { name: 'Current', id: 'App3Current' }
+              { name: 'Settings', id: 'example2-App3Settings' },
+              { name: 'Current', id: 'example2-App3Current' }
             ]
           }
         ]
       },
       {
         name: 'Sources',
-        id: 'Sources',
-        children: [{ name: 'Application 4', id: 'App4', children: [{ name: 'Settings', id: 'App4Settings' }] }]
+        id: 'example2-Sources',
+        children: [{ name: 'Application 4', id: 'example2-App4', children: [{ name: 'Settingexample2-s', id: 'example2-App4Settings' }] }]
       },
       {
         name: 'Really really really long folder name that overflows the container it is in',
-        id: 'Long',
-        children: [{ name: 'Application 5', id: 'App5' }]
+        id: 'example2-Long',
+        children: [{ name: 'Application 5', id: 'example2-App5' }]
       }
     ];
 
@@ -253,54 +253,54 @@ class CheckboxTreeView extends React.Component {
     this.options = [
       {
         name: 'Application launcher',
-        id: 'AppLaunch',
+        id: 'example3-AppLaunch',
         checkProps: { 'aria-label': 'app-launcher-check', checked: false },
         children: [
           {
             name: 'Application 1',
-            id: 'App1',
+            id: 'example3-App1',
             checkProps: { checked: false },
             children: [
               {
                 name: 'Settings',
-                id: 'App1Settings',
+                id: 'example3-App1Settings',
                 checkProps: { checked: false }
               },
               {
                 name: 'Current',
-                id: 'App1Current',
+                id: 'example3-App1Current',
                 checkProps: { checked: false }
               }
             ]
           },
           {
             name: 'Application 2',
-            id: 'App2',
+            id: 'example3-App2',
             checkProps: { checked: false },
             children: [
               {
                 name: 'Settings',
-                id: 'App2Settings',
+                id: 'example3-App2Settings',
                 checkProps: { checked: false }
               },
               {
                 name: 'Loader',
-                id: 'App2Loader',
+                id: 'example3-App2Loader',
                 checkProps: { checked: false },
                 children: [
                   {
                     name: 'Loading App 1',
-                    id: 'LoadApp1',
+                    id: 'example3-LoadApp1',
                     checkProps: { checked: false }
                   },
                   {
                     name: 'Loading App 2',
-                    id: 'LoadApp2',
+                    id: 'example3-LoadApp2',
                     checkProps: { checked: false }
                   },
                   {
                     name: 'Loading App 3',
-                    id: 'LoadApp3',
+                    id: 'example3-LoadApp3',
                     checkProps: { checked: false }
                   }
                 ]
@@ -312,22 +312,22 @@ class CheckboxTreeView extends React.Component {
       },
       {
         name: 'Cost management',
-        id: 'Cost',
+        id: 'example3-Cost',
         checkProps: { 'aria-label': 'cost-check', checked: false },
         children: [
           {
             name: 'Application 3',
-            id: 'App3',
+            id: 'example3-App3',
             checkProps: { 'aria-label': 'app-3-check', checked: false },
             children: [
               {
                 name: 'Settings',
-                id: 'App3Settings',
+                id: 'example3-App3Settings',
                 checkProps: { 'aria-label': 'app-3-settings-check', checked: false }
               },
               {
                 name: 'Current',
-                id: 'App3Current',
+                id: 'example3-App3Current',
                 checkProps: { 'aria-label': 'app-3-current-check', checked: false }
               }
             ]
@@ -336,17 +336,17 @@ class CheckboxTreeView extends React.Component {
       },
       {
         name: 'Sources',
-        id: 'Sources',
+        id: 'example3-Sources',
         checkProps: { 'aria-label': 'sources-check', checked: false },
         children: [
           {
             name: 'Application 4',
-            id: 'App4',
+            id: 'example3-App4',
             checkProps: { 'aria-label': 'app-4-check', checked: false },
             children: [
               {
                 name: 'Settings',
-                id: 'App4Settings',
+                id: 'example3-App4Settings',
                 checkProps: { 'aria-label': 'app-4-settings-check', checked: false }
               }
             ]
@@ -355,9 +355,9 @@ class CheckboxTreeView extends React.Component {
       },
       {
         name: 'Really really really long folder name that overflows the container it is in',
-        id: 'Long',
+        id: 'example3-Long',
         checkProps: { 'aria-label': 'long-check', checked: false },
-        children: [{ name: 'Application 5', id: 'App5', checkProps: { 'aria-label': 'app-5-check', checked: false } }]
+        children: [{ name: 'Application 5', id: 'example3-App5', checkProps: { 'aria-label': 'app-5-check', checked: false } }]
       }
     ];
 
@@ -476,28 +476,28 @@ class IconTreeView extends React.Component {
     const options = [
       {
         name: 'Application launcher',
-        id: 'AppLaunch',
+        id: 'example4-AppLaunch',
         children: [
           {
             name: 'Application 1',
-            id: 'App1',
+            id: 'example4-App1',
             children: [
-              { name: 'Settings', id: 'App1Settings' },
-              { name: 'Current', id: 'App1Current' }
+              { name: 'Settings', id: 'example4-App1Settings' },
+              { name: 'Current', id: 'example4-App1Current' }
             ]
           },
           {
             name: 'Application 2',
-            id: 'App2',
+            id: 'example4-App2',
             children: [
-              { name: 'Settings', id: 'App2Settings' },
+              { name: 'Settings', id: 'example4-App2Settings' },
               {
                 name: 'Loader',
-                id: 'App2Loader',
+                id: 'example4-App2Loader',
                 children: [
-                  { name: 'Loading App 1', id: 'LoadApp1' },
-                  { name: 'Loading App 2', id: 'LoadApp2' },
-                  { name: 'Loading App 3', id: 'LoadApp3' }
+                  { name: 'Loading App 1', id: 'example4-LoadApp1' },
+                  { name: 'Loading App 2', id: 'example4-LoadApp2' },
+                  { name: 'Loading App 3', id: 'example4-LoadApp3' }
                 ]
               }
             ]
@@ -507,27 +507,27 @@ class IconTreeView extends React.Component {
       },
       {
         name: 'Cost management',
-        id: 'Cost',
+        id: 'example4-Cost',
         children: [
           {
             name: 'Application 3',
-            id: 'App3',
+            id: 'example4-App3',
             children: [
-              { name: 'Settings', id: 'App3Settings' },
-              { name: 'Current', id: 'App3Current' }
+              { name: 'Settings', id: 'example4-App3Settings' },
+              { name: 'Current', id: 'example4-App3Current' }
             ]
           }
         ]
       },
       {
         name: 'Sources',
-        id: 'Sources',
-        children: [{ name: 'Application 4', id: 'App4', children: [{ name: 'Settings', id: 'App4Settings' }] }]
+        id: 'example4-Sources',
+        children: [{ name: 'Application 4', id: 'example4-App4', children: [{ name: 'Settings', id: 'example4-App4Settings' }] }]
       },
       {
         name: 'Really really really long folder name that overflows the container it is in',
-        id: 'Long',
-        children: [{ name: 'Application 5', id: 'App5' }]
+        id: 'example4-Long',
+        children: [{ name: 'Application 5', id: 'example4-App5' }]
       }
     ];
     return (
@@ -567,28 +567,28 @@ class BadgesTreeView extends React.Component {
     const options = [
       {
         name: 'Application launcher',
-        id: 'AppLaunch',
+        id: 'example5-AppLaunch',
         children: [
           {
             name: 'Application 1',
-            id: 'App1',
+            id: 'example5-App1',
             children: [
-              { name: 'Settings', id: 'App1Settings' },
-              { name: 'Current', id: 'App1Current' }
+              { name: 'Settings', id: 'example5-App1Settings' },
+              { name: 'Current', id: 'example5-App1Current' }
             ]
           },
           {
             name: 'Application 2',
-            id: 'App2',
+            id: 'example5-App2',
             children: [
-              { name: 'Settings', id: 'App2Settings' },
+              { name: 'Settings', id: 'example5-App2Settings' },
               {
                 name: 'Loader',
-                id: 'App2Loader',
+                id: 'example5-App2Loader',
                 children: [
-                  { name: 'Loading App 1', id: 'LoadApp1' },
-                  { name: 'Loading App 2', id: 'LoadApp2' },
-                  { name: 'Loading App 3', id: 'LoadApp3' }
+                  { name: 'Loading App 1', id: 'example5-LoadApp1' },
+                  { name: 'Loading App 2', id: 'example5-LoadApp2' },
+                  { name: 'Loading App 3', id: 'example5-LoadApp3' }
                 ]
               }
             ]
@@ -598,27 +598,27 @@ class BadgesTreeView extends React.Component {
       },
       {
         name: 'Cost management',
-        id: 'Cost',
+        id: 'example5-Cost',
         children: [
           {
             name: 'Application 3',
-            id: 'App3',
+            id: 'example5-App3',
             children: [
-              { name: 'Settings', id: 'App3Settings' },
-              { name: 'Current', id: 'App3Current' }
+              { name: 'Settings', id: 'example5-App3Settings' },
+              { name: 'Current', id: 'example5-App3Current' }
             ]
           }
         ]
       },
       {
         name: 'Sources',
-        id: 'Sources',
-        children: [{ name: 'Application 4', id: 'App4', children: [{ name: 'Settings', id: 'App4Settings' }] }]
+        id: 'example5-Sources',
+        children: [{ name: 'Application 4', id: 'example5-App4', children: [{ name: 'Settings', id: 'example5-App4Settings' }] }]
       },
       {
         name: 'Really really really long folder name that overflows the container it is in',
-        id: 'Long',
-        children: [{ name: 'Application 5', id: 'App5' }]
+        id: 'example5-Long',
+        children: [{ name: 'Application 5', id: 'example5-App5' }]
       }
     ];
     return <TreeView data={options} activeItems={activeItems} onSelect={this.onSelect} hasBadges />;
@@ -650,32 +650,32 @@ class CustomBadgesTreeView extends React.Component {
     const options = [
       {
         name: 'Application launcher',
-        id: 'AppLaunch',
+        id: 'example6-AppLaunch',
         customBadgeContent: '2 applications',
         children: [
           {
             name: 'Application 1',
-            id: 'App1',
+            id: 'example6-App1',
             customBadgeContent: '2 children',
             children: [
-              { name: 'Settings', id: 'App1Settings' },
-              { name: 'Current', id: 'App1Current' }
+              { name: 'Settings', id: 'example6-App1Settings' },
+              { name: 'Current', id: 'example6-App1Current' }
             ]
           },
           {
             name: 'Application 2',
-            id: 'App2',
+            id: 'example6-App2',
             customBadgeContent: '2 children',
             children: [
-              { name: 'Settings', id: 'App2Settings' },
+              { name: 'Settings', id: 'example6-App2Settings' },
               {
                 name: 'Loader',
-                id: 'App2Loader',
+                id: 'example6-App2Loader',
                 customBadgeContent: '3 loading apps',
                 children: [
-                  { name: 'Loading app 1', id: 'LoadApp1' },
-                  { name: 'Loading app 2', id: 'LoadApp2' },
-                  { name: 'Loading app 3', id: 'LoadApp3' }
+                  { name: 'Loading app 1', id: 'example6-LoadApp1' },
+                  { name: 'Loading app 2', id: 'example6-LoadApp2' },
+                  { name: 'Loading app 3', id: 'example6-LoadApp3' }
                 ]
               }
             ]
@@ -685,38 +685,38 @@ class CustomBadgesTreeView extends React.Component {
       },
       {
         name: 'Cost management',
-        id: 'Cost',
+        id: 'example6-Cost',
         customBadgeContent: '1 applications',
         children: [
           {
             name: 'Application 3',
-            id: 'App3',
+            id: 'example6-App3',
             customBadgeContent: '2 children',
             children: [
-              { name: 'Settings', id: 'App3Settings' },
-              { name: 'Current', id: 'App3Current' }
+              { name: 'Settings', id: 'example6-App3Settings' },
+              { name: 'Current', id: 'example6-App3Current' }
             ]
           }
         ]
       },
       {
         name: 'Sources',
-        id: 'Sources',
+        id: 'example6-Sources',
         customBadgeContent: '1 source',
         children: [
           {
             name: 'Application 4',
-            id: 'App4',
+            id: 'example6-App4',
             customBadgeContent: '1 child',
-            children: [{ name: 'Settings', id: 'App4Settings' }]
+            children: [{ name: 'Settings', id: 'example6-App4Settings' }]
           }
         ]
       },
       {
         name: 'Really really really long folder name that overflows the container it is in',
-        id: 'Long',
+        id: 'example6-Long',
         customBadgeContent: '1 application',
-        children: [{ name: 'Application 5', id: 'App5' }]
+        children: [{ name: 'Application 5', id: 'example6-App5' }]
       }
     ];
     return <TreeView data={options} activeItems={activeItems} onSelect={this.onSelect} hasBadges />;
@@ -774,7 +774,7 @@ class IconTreeView extends React.Component {
     const options = [
       {
         name: 'Application launcher',
-        id: 'AppLaunch',
+        id: 'example7-AppLaunch',
         action: (
           <Dropdown
             onSelect={this.onAppLaunchSelect}
@@ -787,7 +787,7 @@ class IconTreeView extends React.Component {
         children: [
           {
             name: 'Application 1',
-            id: 'App1',
+            id: 'example7-App1',
             action: (
               <Button variant="plain" aria-label="Launch app 1">
                 <ClipboardIcon />
@@ -797,27 +797,27 @@ class IconTreeView extends React.Component {
               'aria-label': 'Launch app 1'
             },
             children: [
-              { name: 'Settings', id: 'App1Settings' },
-              { name: 'Current', id: 'App1Current' }
+              { name: 'Settings', id: 'example7-App1Settings' },
+              { name: 'Current', id: 'example7-App1Current' }
             ]
           },
           {
             name: 'Application 2',
-            id: 'App2',
+            id: 'example7-App2',
             action: (
               <Button variant="plain" aria-label="Launch app 1">
                 <HamburgerIcon />
               </Button>
             ),
             children: [
-              { name: 'Settings', id: 'App2Settings' },
+              { name: 'Settings', id: 'example7-App2Settings' },
               {
                 name: 'Loader',
-                id: 'App2Loader',
+                id: 'example7-App2Loader',
                 children: [
-                  { name: 'Loading App 1', id: 'LoadApp1' },
-                  { name: 'Loading App 2', id: 'LoadApp2' },
-                  { name: 'Loading App 3', id: 'LoadApp3' }
+                  { name: 'Loading App 1', id: 'example7-LoadApp1' },
+                  { name: 'Loading App 2', id: 'example7-LoadApp2' },
+                  { name: 'Loading App 3', id: 'example7-LoadApp3' }
                 ]
               }
             ]
@@ -827,27 +827,27 @@ class IconTreeView extends React.Component {
       },
       {
         name: 'Cost management',
-        id: 'Cost',
+        id: 'example7-Cost',
         children: [
           {
             name: 'Application 3',
-            id: 'App3',
+            id: 'example7-App3',
             children: [
-              { name: 'Settings', id: 'App3Settings' },
-              { name: 'Current', id: 'App3Current' }
+              { name: 'Settings', id: 'example7-App3Settings' },
+              { name: 'Current', id: 'example7-App3Current' }
             ]
           }
         ]
       },
       {
         name: 'Sources',
-        id: 'Sources',
-        children: [{ name: 'Application 4', id: 'App4', children: [{ name: 'Settings', id: 'App4Settings' }] }]
+        id: 'example7-Sources',
+        children: [{ name: 'Application 4', id: 'example7-App4', children: [{ name: 'Settings', id: 'example7-App4Settings' }] }]
       },
       {
         name: 'Really really really long folder name that overflows the container it is in',
-        id: 'Long',
-        children: [{ name: 'Application 5', id: 'App5' }]
+        id: 'example7-Long',
+        children: [{ name: 'Application 5', id: 'example7-App5' }]
       }
     ];
     return <TreeView data={options} activeItems={activeItems} onSelect={this.onSelect} />;
@@ -865,28 +865,28 @@ const GuidesTreeView: React.FunctionComponent = () => {
   const options: TreeViewDataItem[] = [
     {
       name: 'Application launcher',
-      id: 'AppLaunch',
+      id: 'example8-AppLaunch',
       children: [
         {
           name: 'Application 1',
-          id: 'App1',
+          id: 'example8-App1',
           children: [
-            { name: 'Settings', id: 'App1Settings' },
-            { name: 'Current', id: 'App1Current' }
+            { name: 'Settings', id: 'example8-App1Settings' },
+            { name: 'Current', id: 'example8-App1Current' }
           ]
         },
         {
           name: 'Application 2',
-          id: 'App2',
+          id: 'example8-App2',
           children: [
-            { name: 'Settings', id: 'App2Settings' },
+            { name: 'Settings', id: 'example8-App2Settings' },
             {
               name: 'Loader',
-              id: 'App2Loader',
+              id: 'example8-App2Loader',
               children: [
-                { name: 'Loading App 1', id: 'LoadApp1' },
-                { name: 'Loading App 2', id: 'LoadApp2' },
-                { name: 'Loading App 3', id: 'LoadApp3' }
+                { name: 'Loading App 1', id: 'example8-LoadApp1' },
+                { name: 'Loading App 2', id: 'example8-LoadApp2' },
+                { name: 'Loading App 3', id: 'example8-LoadApp3' }
               ]
             }
           ]
@@ -896,27 +896,27 @@ const GuidesTreeView: React.FunctionComponent = () => {
     },
     {
       name: 'Cost management',
-      id: 'Cost',
+      id: 'example8-Cost',
       children: [
         {
           name: 'Application 3',
-          id: 'App3',
+          id: 'example8-App3',
           children: [
-            { name: 'Settings', id: 'App3Settings' },
-            { name: 'Current', id: 'App3Current' }
+            { name: 'Settings', id: 'example8-App3Settings' },
+            { name: 'Current', id: 'example8-App3Current' }
           ]
         }
       ]
     },
     {
       name: 'Sources',
-      id: 'Sources',
-      children: [{ name: 'Application 4', id: 'App4', children: [{ name: 'Settings', id: 'App4Settings' }] }]
+      id: 'example8-Sources',
+      children: [{ name: 'Application 4', id: 'example8-App4', children: [{ name: 'Settings', id: 'example8-App4Settings' }] }]
     },
     {
       name: 'Really really really long folder name that overflows the container it is in',
-      id: 'Long',
-      children: [{ name: 'Application 5', id: 'App5' }]
+      id: 'example8-Long',
+      children: [{ name: 'Application 5', id: 'example8-App5' }]
     }
   ];
   return <TreeView data={options} hasGuides={true} />;
@@ -935,52 +935,52 @@ const CompactTreeView: React.FunctionComponent = () => {
       name:
         'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value and may reject unrecognized values.',
       title: 'apiVersion',
-      id: 'apiVersion'
+      id: 'example9-apiVersion'
     },
     {
       name:
         'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated is CamelCase. More info:',
       title: 'kind',
-      id: 'kind'
+      id: 'example9-kind'
     },
     {
       name: 'Standard metadata object',
       title: 'metadata',
-      id: 'metadata'
+      id: 'example9-metadata'
     },
     {
       name: 'Standard metadata object',
       title: 'spec',
-      id: 'spec',
+      id: 'example9-spec',
       children: [
         {
           name:
             'Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Default to 0 (pod will be considered available as soon as it is ready).',
           title: 'minReadySeconds',
-          id: 'minReadySeconds'
+          id: 'example9-minReadySeconds'
         },
         {
           name: 'Indicates that the deployment is paused',
           title: 'paused',
-          id: 'paused'
+          id: 'example9-paused'
         },
         {
           name:
             'The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that the progress will not de estimated during the time a deployment is paused. Defaults to 600s.',
           title: 'progressDeadlineSeconds',
-          id: 'progressDeadlineSeconds',
+          id: 'example9-progressDeadlineSeconds',
           children: [
             {
               name:
                 'The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10.',
               title: 'revisionHistoryLimit',
-              id: 'revisionHistoryLimit',
+              id: 'example9-revisionHistoryLimit',
               children: [
                 {
                   name:
                     'Map of {key.value} pairs. A single {key.value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In" and the values array contains only "value". The requirements are ANDed.',
                   title: 'matchLabels',
-                  id: 'matchLabels'
+                  id: 'example9-matchLabels'
                 }
               ]
             }
@@ -1005,52 +1005,52 @@ const CompactNoBackgroundTreeView: React.FunctionComponent = () => {
       name:
         'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value and may reject unrecognized values.',
       title: 'apiVersion',
-      id: 'apiVersion'
+      id: 'example10-apiVersion'
     },
     {
       name:
         'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated is CamelCase. More info:',
       title: 'kind',
-      id: 'kind'
+      id: 'example10-kind'
     },
     {
       name: 'Standard metadata object',
       title: 'metadata',
-      id: 'metadata'
+      id: 'example10-metadata'
     },
     {
       name: 'Standard metadata object',
       title: 'spec',
-      id: 'spec',
+      id: 'example10-spec',
       children: [
         {
           name:
             'Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Default to 0 (pod will be considered available as soon as it is ready).',
           title: 'minReadySeconds',
-          id: 'minReadySeconds'
+          id: 'example10-minReadySeconds'
         },
         {
           name: 'Indicates that the deployment is paused',
           title: 'paused',
-          id: 'paused'
+          id: 'example10-paused'
         },
         {
           name:
             'The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that the progress will not de estimated during the time a deployment is paused. Defaults to 600s.',
           title: 'progressDeadlineSeconds',
-          id: 'progressDeadlineSeconds',
+          id: 'example10-progressDeadlineSeconds',
           children: [
             {
               name:
                 'The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10.',
               title: 'revisionHistoryLimit',
-              id: 'revisionHistoryLimit',
+              id: 'example10-revisionHistoryLimit',
               children: [
                 {
                   name:
                     'Map of {key.value} pairs. A single {key.value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In" and the values array contains only "value". The requirements are ANDed.',
                   title: 'matchLabels',
-                  id: 'matchLabels'
+                  id: 'example10-matchLabels'
                 }
               ]
             }

@@ -61,26 +61,26 @@ class SimpleTabs extends React.Component {
           onSelect={this.handleTabClick}
           isBox={isBox}
           aria-label="Tabs in the default example"
+          role="region"
         >
-          <Tab eventKey={0} aria-label="default user tab" title={<TabTitleText>Users</TabTitleText>}>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Default content - users">
             Users
           </Tab>
-          <Tab eventKey={1} aria-label="default container tab" title={<TabTitleText>Containers</TabTitleText>}>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
             Containers
           </Tab>
-          <Tab eventKey={2} aria-label="default database tab" title={<TabTitleText>Database</TabTitleText>}>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
             Database
           </Tab>
-          <Tab eventKey={3} aria-label="default disabled tab" itle={<TabTitleText>Disabled</TabTitleText>} isDisabled>
+          <Tab eventKey={3} title={<TabTitleText>Disabled</TabTitleText>} isDisabled>
             Disabled
           </Tab>
-          <Tab eventKey={4} aria-label="default aria disabled tab" title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
+          <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
             ARIA Disabled
           </Tab>
           <Tab
             tooltip={tooltip}
             eventKey={5}
-            aria-label="default aria disabled with tooltip tab"
             title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>}
             isAriaDisabled
           >
@@ -93,8 +93,8 @@ class SimpleTabs extends React.Component {
             isChecked={isBox}
             onChange={this.toggleBox}
             aria-label="show box variation checkbox"
-            id="toggle-simple-box"
-            name="toggle-simple-box"
+            id="toggle-box-default"
+            name="toggle-box-default"
           />
         </div>
       </div>
@@ -145,25 +145,25 @@ class SimpleTabs extends React.Component {
           onSelect={this.handleTabClick}
           isBox={isBox}
           aria-label="Tabs in the example with a tooltip ref"
+          role="region"
         >
-          <Tab eventKey={0} aria-label="Tooltip labelled users" title={<TabTitleText>Users</TabTitleText>}>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Tooltip ref content - users">
             Users
           </Tab>
-          <Tab eventKey={1} aria-label="Tooltip labelled containers" title={<TabTitleText>Containers</TabTitleText>}>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
             Containers
           </Tab>
-          <Tab eventKey={2} aria-label="Tooltip labelled database" title={<TabTitleText>Database</TabTitleText>}>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
             Database
           </Tab>
-          <Tab eventKey={3} aria-label="Tooltip labelled disabled" title={<TabTitleText>Disabled</TabTitleText>} isDisabled>
+          <Tab eventKey={3} title={<TabTitleText>Disabled</TabTitleText>} isDisabled>
             Disabled
           </Tab>
-          <Tab eventKey={4} aria-label="Tooltip labelled aria disabled" title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
+          <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
             ARIA Disabled
           </Tab>
           <Tab
             eventKey={5}
-            aria-label="Tooltip labelled aria disabled tooltip"
             title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>}
             isAriaDisabled
             ref={tooltipRef}
@@ -183,8 +183,8 @@ class SimpleTabs extends React.Component {
             isChecked={isBox}
             onChange={this.toggleBox}
             aria-label="show box variation checkbox"
-            id="toggle-box-with-tooltip"
-            name="toggle-box-with-tooltip"
+            id="toggle-box-tooltip-ref"
+            name="toggle-box-tooltip-ref"
           />
         </div>
       </div>
@@ -207,25 +207,24 @@ class UncontrolledSimpleTabs extends React.Component {
 
     return (
       <>
-        <Tabs defaultActiveKey={0} aria-label="Tabs in the uncontrolled example">
-          <Tab eventKey={0} aria-label="Uncontrolled users" title={<TabTitleText>Users</TabTitleText>}>
+        <Tabs defaultActiveKey={0} aria-label="Tabs in the uncontrolled example" role="region">
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Uncontrolled ref content - users">
             Users
           </Tab>
-          <Tab eventKey={1} aria-label="Uncontrolled containers" title={<TabTitleText>Containers</TabTitleText>}>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
             Containers
           </Tab>
-          <Tab eventKey={2} aria-label="Uncontrolled database" title={<TabTitleText>Database</TabTitleText>}>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
             Database
           </Tab>
-          <Tab eventKey={3} aria-label="Uncontrolled disabled" title={<TabTitleText>Disabled</TabTitleText>} isDisabled>
+          <Tab eventKey={3} title={<TabTitleText>Disabled</TabTitleText>} isDisabled>
             Disabled
           </Tab>
-          <Tab eventKey={4} aria-label="Uncontrolled aria disabled" title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
+          <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
             ARIA Disabled
           </Tab>
           <Tab
             eventKey={5}
-            aria-label="Uncontrolled aria disabled with tooltip"
             title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>}
             isAriaDisabled
             tooltip={tooltip}
@@ -280,25 +279,25 @@ class SimpleTabs extends React.Component {
           variant={isTabsLightScheme ? 'light300' : 'default'}
           isBox
           aria-label="Tabs in the box light variation example"
+          role="region"
         >
-          <Tab eventKey={0} aria-label="Lightbox users" title={<TabTitleText>Users</TabTitleText>}>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Box light variation content - users">
             Users
           </Tab>
-          <Tab eventKey={1} aria-label="Lightbox containers" title={<TabTitleText>Containers</TabTitleText>}>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
             Containers
           </Tab>
-          <Tab eventKey={2} aria-label="Lightbox database" title={<TabTitleText>Database</TabTitleText>}>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
             Database
           </Tab>
-          <Tab eventKey={3} aria-label="Lightbox disabled" title={<TabTitleText>Disabled</TabTitleText>} isDisabled>
+          <Tab eventKey={3} title={<TabTitleText>Disabled</TabTitleText>} isDisabled>
             Disabled
           </Tab>
-          <Tab eventKey={4} aria-label="Lightbox aria disabled" title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
+          <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
             ARIA Disabled
           </Tab>
           <Tab
             eventKey={5}
-            aria-label="Lightbox aria disabled with tooltip"
             title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>}
             isAriaDisabled
             tooltip={tooltip}
@@ -359,38 +358,39 @@ class ScrollButtonsPrimaryTabs extends React.Component {
           onSelect={this.handleTabClick}
           isBox={isBox}
           aria-label="Tabs in the default overflow example"
+          role="region"
         >
-          <Tab eventKey={0} aria-label="Default overflow users" title={<TabTitleText>Users</TabTitleText>}>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Default overflow content users">
             Users
           </Tab>
-          <Tab eventKey={1} aria-label="Default overflow containers" title={<TabTitleText>Containers</TabTitleText>}>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
             Containers
           </Tab>
-          <Tab eventKey={2} aria-label="Default overflow database" title={<TabTitleText>Database</TabTitleText>}>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
             Database
           </Tab>
-          <Tab eventKey={3} aria-label="Default overflow server" title={<TabTitleText>Server</TabTitleText>}>
+          <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
             Server
           </Tab>
-          <Tab eventKey={4} aria-label="Default overflow system" title={<TabTitleText>System</TabTitleText>}>
+          <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
             System
           </Tab>
-          <Tab eventKey={6} aria-label="Default overflow network" title={<TabTitleText>Network</TabTitleText>}>
+          <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
             Network
           </Tab>
-          <Tab eventKey={7} aria-label="Default overflow tab 7" title={<TabTitleText>Tab item 7</TabTitleText>}>
+          <Tab eventKey={7} title={<TabTitleText>Tab item 7</TabTitleText>}>
             Tab 7 section
           </Tab>
-          <Tab eventKey={8} aria-label="Default overflow tab 8" title={<TabTitleText>Tab item 8</TabTitleText>}>
+          <Tab eventKey={8} title={<TabTitleText>Tab item 8</TabTitleText>}>
             Tab 8 section
           </Tab>
-          <Tab eventKey={9} aria-label="Default overflow tab 9" title={<TabTitleText>Tab item 9</TabTitleText>}>
+          <Tab eventKey={9} title={<TabTitleText>Tab item 9</TabTitleText>}>
             Tab 9 section
           </Tab>
-          <Tab eventKey={10} aria-label="Default overflow tab 10" title={<TabTitleText>Tab item 10</TabTitleText>}>
+          <Tab eventKey={10} title={<TabTitleText>Tab item 10</TabTitleText>}>
             Tab 10 section
           </Tab>
-          <Tab eventKey={11} aria-label="Default overflow tab 11" title={<TabTitleText>Tab item 11</TabTitleText>}>
+          <Tab eventKey={11} title={<TabTitleText>Tab item 11</TabTitleText>}>
             Tab 11 section
           </Tab>
         </Tabs>
@@ -451,25 +451,25 @@ class VerticalTabs extends React.Component {
           isVertical
           isBox={isBox}
           aria-label="Tabs in the vertical example"
+          role="region"
         >
-          <Tab eventKey={0} aria-label="Vertical users" title={<TabTitleText>Users</TabTitleText>}>
+          <Tab eventKey={0} title={<TabTitleText aria-label="vertical" role="region">Users</TabTitleText>} aria-label="Vertical example content users">
             Users
           </Tab>
-          <Tab eventKey={1} aria-label="Vertical containers" title={<TabTitleText>Containers</TabTitleText>}>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
             Containers
           </Tab>
-          <Tab eventKey={2} aria-label="Vertical database" title={<TabTitleText>Database</TabTitleText>}>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
             Database
           </Tab>
-          <Tab eventKey={3} aria-label="Vertical disabled" title={<TabTitleText>Disabled</TabTitleText>} isDisabled>
+          <Tab eventKey={3} title={<TabTitleText>Disabled</TabTitleText>} isDisabled>
             Disabled
           </Tab>
-          <Tab eventKey={4} aria-label="Vertical aria disabled" title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
+          <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled>
             ARIA Disabled
           </Tab>
           <Tab
             eventKey={5}
-            aria-label="Vertical aria disabled with tooltip"
             title={<TabTitleText>ARIA Disabled (Tooltip)</TabTitleText>}
             isAriaDisabled
             tooltip={tooltip}
@@ -529,23 +529,24 @@ class VerticalExpandableTabs extends React.Component {
         onToggle={this.onToggle}
         toggleText="Containers"
         aria-label="Tabs in the vertical expandable example"
+        role="region"
       >
-        <Tab eventKey={0} aria-label="Vertical expandable users" title={<TabTitleText>Users</TabTitleText>}>
+        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Vertical expandable content users">
           Users
         </Tab>
-        <Tab eventKey={1} aria-label="Vertical expandable containers" title={<TabTitleText>Containers</TabTitleText>}>
+        <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
           Containers
         </Tab>
-        <Tab eventKey={2} aria-label="Vertical expandable database" title={<TabTitleText>Database</TabTitleText>}>
+        <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
           Database
         </Tab>
-        <Tab eventKey={3} aria-label="Vertical expandable server" title={<TabTitleText>Server</TabTitleText>}>
+        <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
           Server
         </Tab>
-        <Tab eventKey={4} aria-label="Vertical expandable system" title={<TabTitleText>System</TabTitleText>}>
+        <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
           System
         </Tab>
-        <Tab eventKey={6} aria-label="Vertical expandable network" title={<TabTitleText>Network</TabTitleText>}>
+        <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
           Network
         </Tab>
       </Tabs>
@@ -583,23 +584,24 @@ class VerticalExpandableUncontrolledTabs extends React.Component {
         defaultIsExpanded={false}
         toggleText="Containers"
         aria-label="Tabs in the vertical expandable uncontrolled example"
+        role="region"
       >
-        <Tab eventKey={0} aria-label="Vertical expandable uncontrolled users" title={<TabTitleText>Users</TabTitleText>}>
+        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Vertical expandable uncontrolled content users">
           Users
         </Tab>
-        <Tab eventKey={1} aria-label="Vertical expandable uncontrolled containers" title={<TabTitleText>Containers</TabTitleText>}>
+        <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
           Containers
         </Tab>
-        <Tab eventKey={2} aria-label="Vertical expandable uncontrolled database" title={<TabTitleText>Database</TabTitleText>}>
+        <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
           Database
         </Tab>
-        <Tab eventKey={3} aria-label="Vertical expandable uncontrolled server" title={<TabTitleText>Server</TabTitleText>}>
+        <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
           Server
         </Tab>
-        <Tab eventKey={4} aria-label="Vertical expandable uncontrolled system" title={<TabTitleText>System</TabTitleText>}>
+        <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
           System
         </Tab>
-        <Tab eventKey={6} aria-label="Vertical expandable uncontrolled network" title={<TabTitleText>Network</TabTitleText>}>
+        <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
           Network
         </Tab>
       </Tabs>
@@ -650,23 +652,24 @@ class InsetTabs extends React.Component {
           }}
           isBox={isBox}
           aria-label="Tabs in the inset example"
+          role="region"
         >
-          <Tab eventKey={0} aria-label="Inset users" title={<TabTitleText>Users</TabTitleText>}>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Inset example content users">
             Users
           </Tab>
-          <Tab eventKey={1} aria-label="Inset containers" title={<TabTitleText>Containers</TabTitleText>}>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
             Containers
           </Tab>
-          <Tab eventKey={2} aria-label="Inset database" title={<TabTitleText>Database</TabTitleText>}>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
             Database
           </Tab>
-          <Tab eventKey={3} aria-label="Inset server" title={<TabTitleText>Server</TabTitleText>}>
+          <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
             Server
           </Tab>
-          <Tab eventKey={4} aria-label="Inset system" title={<TabTitleText>System</TabTitleText>}>
+          <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
             System
           </Tab>
-          <Tab eventKey={6} aria-label="Inset network" title={<TabTitleText>Network</TabTitleText>}>
+          <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
             Network
           </Tab>
         </Tabs>
@@ -723,23 +726,24 @@ class PageInsetsTabs extends React.Component {
           usePageInsets
           isBox={isBox}
           aria-label="Tabs in the page insets example"
+          role="region"
         >
-          <Tab eventKey={0} aria-label="Page inset users" title={<TabTitleText>Users</TabTitleText>}>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Page insets example content users">
             Users
           </Tab>
-          <Tab eventKey={1} aria-label="Page inset constainers" title={<TabTitleText>Containers</TabTitleText>}>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
             Containers
           </Tab>
-          <Tab eventKey={2} aria-label="Page inset database" title={<TabTitleText>Database</TabTitleText>}>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
             Database
           </Tab>
-          <Tab eventKey={3} aria-label="Page inset server" title={<TabTitleText>Server</TabTitleText>}>
+          <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
             Server
           </Tab>
-          <Tab eventKey={4} aria-label="Page inset system" title={<TabTitleText>System</TabTitleText>}>
+          <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
             System
           </Tab>
-          <Tab eventKey={6} aria-label="Page inset network" title={<TabTitleText>Network</TabTitleText>}>
+          <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
             Network
           </Tab>
         </Tabs>
@@ -791,10 +795,10 @@ class IconAndTextTabs extends React.Component {
         activeKey={this.state.activeTabKey}
         onSelect={this.handleTabClick}
         aria-label="Tabs in the icons and text example"
+        role="region"
       >
         <Tab
           eventKey={0}
-          aria-label="Icons and text users"
           title={
             <>
               <TabTitleIcon>
@@ -803,12 +807,12 @@ class IconAndTextTabs extends React.Component {
               <TabTitleText>Users</TabTitleText>{' '}
             </>
           }
+          aria-label="icons and text content"
         >
           Users
         </Tab>
         <Tab
           eventKey={1}
-          aria-label="Icons and text containers"
           title={
             <>
               <TabTitleIcon>
@@ -822,7 +826,6 @@ class IconAndTextTabs extends React.Component {
         </Tab>
         <Tab
           eventKey={2}
-          aria-label="Icons and text database"
           title={
             <>
               <TabTitleIcon>
@@ -836,7 +839,6 @@ class IconAndTextTabs extends React.Component {
         </Tab>
         <Tab
           eventKey={3}
-          aria-label="Icons and text server"
           title={
             <>
               <TabTitleIcon>
@@ -850,7 +852,6 @@ class IconAndTextTabs extends React.Component {
         </Tab>
         <Tab
           eventKey={4}
-          aria-label="Icons and text system"
           title={
             <>
               <TabTitleIcon>
@@ -864,7 +865,6 @@ class IconAndTextTabs extends React.Component {
         </Tab>
         <Tab
           eventKey={6}
-          aria-label="Icons and text network"
           title={
             <>
               <TabTitleIcon>
@@ -925,10 +925,12 @@ class SecondaryTabs extends React.Component {
           onSelect={this.handleTabClickFirst}
           isBox={isBox}
           aria-label="Tabs in the tabs with subtabs example"
+          role="region"
         >
-          <Tab eventKey={0} aria-label="with subtabs users" title={<TabTitleText>Users</TabTitleText>}>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Tabs with subtabs content users">
             <Tabs
               aria-label="secondary tabs for users"
+              role="region"
               activeKey={activeTabKey2}
               isSecondary
               onSelect={this.handleTabClickSecond}
@@ -959,34 +961,34 @@ class SecondaryTabs extends React.Component {
               </Tab>
             </Tabs>
           </Tab>
-          <Tab eventKey={1} aria-label="with subtabs containers" title={<TabTitleText>Containers</TabTitleText>}>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
             Containers
           </Tab>
-          <Tab eventKey={2} aria-label="with subtabs database" title={<TabTitleText>Database</TabTitleText>}>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
             Database
           </Tab>
-          <Tab eventKey={3} aria-label="with subtabs server" title={<TabTitleText>Server</TabTitleText>}>
+          <Tab eventKey={3} title={<TabTitleText>Server</TabTitleText>}>
             Server
           </Tab>
-          <Tab eventKey={4} aria-label="with subtabs system" title={<TabTitleText>System</TabTitleText>}>
+          <Tab eventKey={4} title={<TabTitleText>System</TabTitleText>}>
             System
           </Tab>
-          <Tab eventKey={6} aria-label="with subtabs network" title={<TabTitleText>Network</TabTitleText>}>
+          <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>}>
             Network
           </Tab>
-          <Tab eventKey={7} aria-label="with subtabs item 7" title={<TabTitleText>Tab item 7</TabTitleText>}>
+          <Tab eventKey={7} title={<TabTitleText>Tab item 7</TabTitleText>}>
             Tab 7 section
           </Tab>
-          <Tab eventKey={8} aria-label="with subtabs item 8" title={<TabTitleText>Tab item 8</TabTitleText>}>
+          <Tab eventKey={8} title={<TabTitleText>Tab item 8</TabTitleText>}>
             Tab 8 section
           </Tab>
-          <Tab eventKey={9} aria-label="with subtabs item 9" title={<TabTitleText>Tab item 9</TabTitleText>}>
+          <Tab eventKey={9} title={<TabTitleText>Tab item 9</TabTitleText>}>
             Tab 9 section
           </Tab>
-          <Tab eventKey={10} aria-label="with subtabs item 10" title={<TabTitleText>Tab item 10</TabTitleText>}>
+          <Tab eventKey={10} title={<TabTitleText>Tab item 10</TabTitleText>}>
             Tab 10 section
           </Tab>
-          <Tab eventKey={11} aria-label="with subtabs item 11" title={<TabTitleText>Tab item 11</TabTitleText>}>
+          <Tab eventKey={11} title={<TabTitleText>Tab item 11</TabTitleText>}>
             Tab 11 section
           </Tab>
         </Tabs>
@@ -1043,14 +1045,15 @@ class FilledTabs extends React.Component {
           onSelect={this.handleTabClick}
           isBox={isBox}
           aria-label="Tabs in the filled example"
+          role="region"
         >
-          <Tab eventKey={0} aria-label="Filled users" title={<TabTitleText>Users</TabTitleText>}>
+          <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Tabs filled example content users">
             Users
           </Tab>
-          <Tab eventKey={1} aria-label="Filled containers" title={<TabTitleText>Containers</TabTitleText>}>
+          <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
             Containers
           </Tab>
-          <Tab eventKey={2} aria-label="Filled database" title={<TabTitleText>Database</TabTitleText>}>
+          <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>}>
             Database
           </Tab>
         </Tabs>
@@ -1110,10 +1113,10 @@ class FilledTabsWithIcons extends React.Component {
           onSelect={this.handleTabClick}
           isBox={isBox}
           aria-label="Tabs in the filled with icons example"
+          role="region"
         >
           <Tab
             eventKey={0}
-            aria-label="Filled with icons users"
             title={
               <>
                 <TabTitleIcon>
@@ -1122,12 +1125,12 @@ class FilledTabsWithIcons extends React.Component {
                 <TabTitleText>Users</TabTitleText>{' '}
               </>
             }
+            aria-label="filled tabs with icons content users"
           >
             Users
           </Tab>
           <Tab
             eventKey={1}
-            aria-label="Filled with icons containers"
             title={
               <>
                 <TabTitleIcon>
@@ -1141,7 +1144,6 @@ class FilledTabsWithIcons extends React.Component {
           </Tab>
           <Tab
             eventKey={2}
-            aria-label="Filled with icons database"
             title={
               <>
                 <TabTitleIcon>
@@ -1196,26 +1198,25 @@ class TabsNav extends React.Component {
       <Tabs
         activeKey={this.state.activeTabKey}
         onSelect={this.handleTabClick}
-        aria-label="Local"
         component={TabsComponent.nav}
         aria-label="Tabs in the nav element example"
       >
-        <Tab eventKey={0} aria-label="Nav element users" title={<TabTitleText>Users</TabTitleText>} href="#users">
+        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#users"  aria-label="Nav element content users">
           Users
         </Tab>
-        <Tab eventKey={1} aria-label="Nav element containers" title={<TabTitleText>Containers</TabTitleText>} href="#containers">
+        <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>} href="#containers">
           Containers
         </Tab>
-        <Tab eventKey={2} aria-label="Nav element database" title={<TabTitleText>Database</TabTitleText>} href="#database">
+        <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>} href="#database">
           Database
         </Tab>
-        <Tab eventKey={3} aria-label="Nav element disabled" title={<TabTitleText>Disabled</TabTitleText>} isDisabled href="#disabled">
+        <Tab eventKey={3} title={<TabTitleText>Disabled</TabTitleText>} isDisabled href="#disabled">
           Disabled
         </Tab>
-        <Tab eventKey={4} aria-label="Nav element aria disabled" title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled href="#aria-disabled">
+        <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled href="#aria-disabled">
           ARIA Disabled
         </Tab>
-        <Tab eventKey={6} aria-label="Nav element network" title={<TabTitleText>Network</TabTitleText>} href="#network">
+        <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>} href="#network">
           Network
         </Tab>
       </Tabs>
@@ -1258,11 +1259,10 @@ class SecondaryTabsNav extends React.Component {
       <Tabs
         activeKey={this.state.activeTabKey1}
         onSelect={this.handleTabClickFirst}
-        aria-label="Local"
         component={TabsComponent.nav}
         aria-label="Tabs in the sub tabs with nav element example"
       >
-        <Tab eventKey={0} aria-label="Nav element with subnav users" title={<TabTitleText>Users</TabTitleText>} href="#">
+        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} href="#" aria-label="Subtabs with nav content users">
           <Tabs
             activeKey={this.state.activeTabKey2}
             isSecondary
@@ -1290,19 +1290,19 @@ class SecondaryTabsNav extends React.Component {
             </Tab>
           </Tabs>
         </Tab>
-        <Tab eventKey={1} aria-label="Nav element with subnav containers" title={<TabTitleText>Containers</TabTitleText>} href="#">
+        <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>} href="#">
           Containers
         </Tab>
-        <Tab eventKey={2} aria-label="Nav element with subnav database" title={<TabTitleText>Database</TabTitleText>} href="#">
+        <Tab eventKey={2} title={<TabTitleText>Database</TabTitleText>} href="#">
           Database
         </Tab>
-        <Tab eventKey={3} aria-label="Nav element with subnav disabled" title={<TabTitleText>Disabled</TabTitleText>} isDisabled href="#">
+        <Tab eventKey={3} title={<TabTitleText>Disabled</TabTitleText>} isDisabled href="#">
           Disabled
         </Tab>
-        <Tab eventKey={4} aria-label="Nav element with subnav aria disabled" title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled href="#">
+        <Tab eventKey={4} title={<TabTitleText>ARIA Disabled</TabTitleText>} isAriaDisabled href="#">
           ARIA Disabled
         </Tab>
-        <Tab eventKey={6} aria-label="Nav element with subnav network" title={<TabTitleText>Network</TabTitleText>} href="#">
+        <Tab eventKey={6} title={<TabTitleText>Network</TabTitleText>} href="#">
           Network
         </Tab>
       </Tabs>
@@ -1343,24 +1343,22 @@ class SeparateTabContent extends React.Component {
           activeKey={this.state.activeTabKey}
           onSelect={this.handleTabClick}
           aria-label="Tabs in the seperate content example"
+          role="region"
         >
           <Tab
             eventKey={0}
-            aria-label="Separate content item 1"
             title={<TabTitleText>Tab item 1</TabTitleText>}
             tabContentId="refTab1Section"
             tabContentRef={this.contentRef1}
           />
           <Tab
             eventKey={1}
-            aria-label="Separate content item 2"
             title={<TabTitleText>Tab item 2</TabTitleText>}
             tabContentId="refTab2Section"
             tabContentRef={this.contentRef2}
           />
           <Tab
             eventKey={2}
-            aria-label="Separate content item 3"
             title={<TabTitleText>Tab item 3</TabTitleText>}
             tabContentId="refTab3Section"
             tabContentRef={this.contentRef3}
@@ -1371,7 +1369,7 @@ class SeparateTabContent extends React.Component {
             eventKey={0}
             id="refTab1Section"
             ref={this.contentRef1}
-            aria-label="This is content for the first tab"
+            aria-label="This is content for the first separate content tab"
           >
             Tab 1 section
           </TabContent>
@@ -1379,7 +1377,7 @@ class SeparateTabContent extends React.Component {
             eventKey={1}
             id="refTab2Section"
             ref={this.contentRef2}
-            aria-label="This is content for the second tab"
+            aria-label="This is content for the second separate content tab"
             hidden
           >
             Tab 2 section
@@ -1388,7 +1386,7 @@ class SeparateTabContent extends React.Component {
             eventKey={2}
             id="refTab3Section"
             ref={this.contentRef3}
-            aria-label="This is content for the third tab"
+            aria-label="This is content for the third separate content tab"
             hidden
           >
             Tab 3 section
@@ -1420,50 +1418,45 @@ const TabContentWithBody = () => {
 
   return (
     <React.Fragment>
-      <Tabs activeKey={activeTabKey} onSelect={handleTabClick} aria-label="Tabs in the body and padding example">
+      <Tabs activeKey={activeTabKey} onSelect={handleTabClick} aria-label="Tabs in the body and padding example" role="region">
         <Tab
           eventKey={0}
-          aria-label="Content body padding item 1"
           title={<TabTitleText>Tab item 1</TabTitleText>}
-          tabContentId="tab1WithBodyPaddingSection"
+          tabContentId="tab1SectionBodyPadding"
           tabContentRef={contentRef1}
         />
         <Tab
           eventKey={1}
-          aria-label="Content body padding item 2"
           title={<TabTitleText>Tab item 2</TabTitleText>}
-          tabContentId="tab2WithBodyPaddingSection"
+          tabContentId="tab2SectionBodyPadding"
           tabContentRef={contentRef2}
         />
         <Tab
           eventKey={2}
-          aria-label="Content body padding item 3"
           title={<TabTitleText>Tab item 3</TabTitleText>}
-          tabContentId="tab3WithBodyPaddingSection"
+          tabContentId="tab3SectionBodyPadding"
           tabContentRef={contentRef3}
         />
       </Tabs>
       <div>
-        <TabContent eventKey={0} id="tab1WithBodyPaddingSection" ref={contentRef1} aria-label="This is content for the first tab with body and padding">
-          <TabContentBody hasPadding> Tab 1 section </TabContentBody>
+        <TabContent eventKey={0} id="tab1SectionBodyPadding" ref={contentRef1}>
+          <TabContentBody hasPadding> Tab 1 section with body and padding </TabContentBody>
         </TabContent>
         <TabContent
           eventKey={1}
-          id="tab2WithBodyPaddingSection"
+          id="tab2SectionBodyPadding"
           ref={contentRef2}
-          aria-label="This is content for the second tab"
           hidden
         >
-          <TabContentBody hasPadding> Tab 2 section </TabContentBody>
+          <TabContentBody hasPadding> Tab 2 section with body and padding </TabContentBody>
         </TabContent>
         <TabContent
           eventKey={2}
-          id="tab3WithBodyPaddingSection"
+          id="tab3SectionBodyPadding"
           ref={contentRef3}
-          aria-label="This is content for the third tab"
           hidden
         >
-          <TabContentBody hasPadding> Tab 3 section </TabContentBody>
+          <TabContentBody hasPadding> Tab 3 section with body and padding </TabContentBody>
         </TabContent>
       </div>
     </React.Fragment>
@@ -1498,14 +1491,15 @@ class MountingSimpleTabs extends React.Component {
         activeKey={this.state.activeTabKey}
         onSelect={this.handleTabClick}
         aria-label="Tabs in the children mounting on click example"
+        role="region"
       >
-        <Tab eventKey={0} aria-label="Item 1 mount on click" title={<TabTitleText>Tab item 1</TabTitleText>}>
+        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} aria-label="Tab 1">
           Tab 1 section
         </Tab>
-        <Tab eventKey={1} aria-label="Item 2 mount on click" title={<TabTitleText>Tab item 2</TabTitleText>}>
+        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>} aria-label="Tab 2">
           Tab 2 section
         </Tab>
-        <Tab eventKey={2} aria-label="Item 3 mount on click" title={<TabTitleText>Tab item 3</TabTitleText>}>
+        <Tab eventKey={2} title={<TabTitleText>Tab item 3</TabTitleText>} aria-label="Tab 3">
           Tab 3 section
         </Tab>
       </Tabs>
@@ -1541,14 +1535,15 @@ class UnmountingSimpleTabs extends React.Component {
         activeKey={this.state.activeTabKey}
         onSelect={this.handleTabClick}
         aria-label="Tabs in the unmounting invisible children example"
+        role="region"
       >
-        <Tab eventKey={0} aria-label="Item 1 invisible children" title={<TabTitleText>Tab item 1</TabTitleText>}>
+        <Tab eventKey={0} title={<TabTitleText>Tab item 1</TabTitleText>} aria-label="Invisible children tab 1">
           Tab 1 section
         </Tab>
-        <Tab eventKey={1} aria-label="Item 2 invisible children" title={<TabTitleText>Tab item 2</TabTitleText>}>
+        <Tab eventKey={1} title={<TabTitleText>Tab item 2</TabTitleText>} aria-label="Invisible children tab 2">
           Tab 2 section
         </Tab>
-        <Tab eventKey={2} aria-label="Item 3 invisible children" title={<TabTitleText>Tab item 3</TabTitleText>}>
+        <Tab eventKey={2} title={<TabTitleText>Tab item 3</TabTitleText>} aria-label="Invisible children tab 3">
           Tab 3 section
         </Tab>
       </Tabs>
@@ -1595,28 +1590,29 @@ class ToggledSeparateContent extends React.Component {
           activeKey={this.state.activeTabKey}
           onSelect={this.handleTabClick}
           aria-label="Tabs in the toggled separate content example"
+          role="region"
         >
-          <Tab eventKey={0} aria-label="Item 1 toggle separate content" title="Tab item 1" tabContentId="tab1SeparateSection" tabContentRef={this.contentRef1} />
+          <Tab eventKey={0} title="Tab item 1" tabContentId="tab1SectionSeparateContent" tabContentRef={this.contentRef1} />
           {!isTab2Hidden && (
-            <Tab eventKey={1} aria-label="Item 2 toggle separate content" title="Tab item 2" tabContentId="tab2SeparateSection" tabContentRef={this.contentRef2} />
+            <Tab eventKey={1} title="Tab item 2" tabContentId="tab2SectionSeparateContent" tabContentRef={this.contentRef2} />
           )}
-          <Tab eventKey={2} aria-label="Item 3 toggle separate content" title="Tab item 3" tabContentId="tab3SeparateSection" tabContentRef={this.contentRef3} />
+          <Tab eventKey={2} title="Tab item 3" tabContentId="tab3SectionSeparateContent" tabContentRef={this.contentRef3} />
         </Tabs>
         <div>
           <TabContent
             eventKey={0}
-            id="tab1SeparateSection"
+            id="tab1SectionSeparateContent"
             ref={this.contentRef1}
-            aria-label="This is content for the separate first tab"
+            aria-label="This is content for the first toggled separate content tab"
           >
             Tab 1 section
           </TabContent>
           {!isTab2Hidden && (
             <TabContent
               eventKey={1}
-              id="tab2SeparateSection"
+              id="tab2SectionSeparateContent"
               ref={this.contentRef2}
-              aria-label="This is content for the second tab"
+              aria-label="This is content for the second toggled separate content tab"
               hidden
             >
               Tab 2 section
@@ -1624,9 +1620,9 @@ class ToggledSeparateContent extends React.Component {
           )}
           <TabContent
             eventKey={2}
-            id="tab3SeparateSection"
+            id="tab3SectionSeparateContent"
             ref={this.contentRef3}
-            aria-label="This is content for the third tab"
+            aria-label="This is content for the third toggled separate content tab"
             hidden
           >
             Tab 3 section

@@ -81,7 +81,6 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   isPlain = false,
   isLiveRegion = false,
   variantLabel = `${capitalize(variant)} alert:`,
-  'aria-label': ariaLabel = `${capitalize(variant)} Alert`,
   actionClose,
   actionLinks,
   title,
@@ -203,7 +202,6 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
         styles.modifiers[variant as 'success' | 'danger' | 'warning' | 'info'],
         className
       )}
-      aria-label={ariaLabel}
       {...ouiaProps}
       {...(isLiveRegion && {
         'aria-live': 'polite',

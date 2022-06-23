@@ -35,6 +35,7 @@ const TabContentBase: React.FunctionComponent<TabContentProps> = ({
   child,
   children,
   className,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   eventKey,
   innerRef,
   ouiaId,
@@ -46,7 +47,7 @@ const TabContentBase: React.FunctionComponent<TabContentProps> = ({
     if (ariaLabel) {
       labelledBy = null;
     } else {
-      labelledBy = children ? `pf-tab-${eventKey}-${id}` : `pf-tab-${child.props.eventKey}-${id}`;
+      labelledBy = children ? `${id}` : `pf-tab-${child.props.eventKey}-${id}`;
     }
 
     return (
