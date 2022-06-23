@@ -30,11 +30,11 @@ export interface WizardToggleProps {
   mainAriaLabel?: string;
   /** If the wizard is in-page */
   isInPage?: boolean;
-  /** Flag indicating the wizard has a drawer for at least one of the wizard steps */
+  /** @beta Flag indicating the wizard has a drawer for at least one of the wizard steps */
   hasDrawer?: boolean;
-  /** Flag indicating the wizard drawer is expanded */
+  /** @beta Flag indicating the wizard drawer is expanded */
   isDrawerExpanded?: boolean;
-  /** Callback function for when the drawer is toggled */
+  /** @beta Callback function for when the drawer is toggled */
   onDrawerToggle: (isOpen: boolean) => void;
 }
 
