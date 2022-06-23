@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Form/form';
 import { ASTERISK } from '../../helpers/htmlConstants';
 import { css } from '@patternfly/react-styles';
 import { ValidatedOptions } from '../../helpers/constants';
+import { GenerateId } from '../../helpers/GenerateId/GenerateId';
 
 export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
   /** Anything that can be rendered as FormGroup content. */
@@ -39,8 +40,10 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   helperTextIcon?: React.ReactNode;
   /** Icon displayed to the left of the helper text when the field is invalid. */
   helperTextInvalidIcon?: React.ReactNode;
-  /** ID of the included field. It has to be the same for proper working. */
-  fieldId: string;
+  /** ID of an individual field or a group of multiple fields. Required when a role of "group" or "radiogroup" is passed in.
+   * If only one field is included, its ID attribute and this prop must be the same.
+   */
+  fieldId?: string;
   /** Sets the role of the form group. Pass in "radiogroup" when the form group contains multiple
    * radio inputs, or pass in "group" when the form group contains multiple of any other input type.
    */
@@ -120,38 +123,46 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   );
 
   return (
-    <div
-      className={css(styles.formGroup, className)}
-      {...(role && { role })}
-      {...(isGroupOrRadioGroup && { 'aria-labelledby': `${fieldId}-legend` })}
-      {...props}
-    >
-      {label && (
+    <GenerateId>
+      {randomId => (
         <div
-          className={css(
-            styles.formGroupLabel,
-            labelInfo && styles.modifiers.info,
-            hasNoPaddingTop && styles.modifiers.noPaddingTop
-          )}
-          {...(isGroupOrRadioGroup && { id: `${fieldId}-legend` })}
+          className={css(styles.formGroup, className)}
+          {...(role && { role })}
+          {...(isGroupOrRadioGroup && { 'aria-labelledby': `${fieldId || randomId}-legend` })}
+          {...props}
         >
-          {labelInfo && (
-            <React.Fragment>
-              <div className={css(styles.formGroupLabelMain)}>{labelContent}</div>
-              <div className={css(styles.formGroupLabelInfo)}>{labelInfo}</div>
-            </React.Fragment>
+          {label && (
+            <div
+              className={css(
+                styles.formGroupLabel,
+                labelInfo && styles.modifiers.info,
+                hasNoPaddingTop && styles.modifiers.noPaddingTop
+              )}
+              {...(isGroupOrRadioGroup && { id: `${fieldId || randomId}-legend` })}
+            >
+              {labelInfo && (
+                <React.Fragment>
+                  <div className={css(styles.formGroupLabelMain)}>{labelContent}</div>
+                  <div className={css(styles.formGroupLabelInfo)}>{labelInfo}</div>
+                </React.Fragment>
+              )}
+              {!labelInfo && labelContent}
+            </div>
           )}
-          {!labelInfo && labelContent}
+          <div
+            className={css(
+              styles.formGroupControl,
+              isInline && styles.modifiers.inline,
+              isStack && styles.modifiers.stack
+            )}
+          >
+            {isHelperTextBeforeField && helperTextToDisplay}
+            {children}
+            {!isHelperTextBeforeField && helperTextToDisplay}
+          </div>
         </div>
       )}
-      <div
-        className={css(styles.formGroupControl, isInline && styles.modifiers.inline, isStack && styles.modifiers.stack)}
-      >
-        {isHelperTextBeforeField && helperTextToDisplay}
-        {children}
-        {!isHelperTextBeforeField && helperTextToDisplay}
-      </div>
-    </div>
+    </GenerateId>
   );
 };
 FormGroup.displayName = 'FormGroup';
