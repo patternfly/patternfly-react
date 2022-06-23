@@ -5,8 +5,6 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 import { WizardStep } from './Wizard';
 import { WizardBody } from './WizardBody';
-import { WizardDrawerWrapper } from './WizardDrawerWrapper';
-import { Drawer, DrawerContent } from '../Drawer';
 import { Button } from '../Button';
 
 export interface WizardToggleProps {
@@ -95,40 +93,33 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
           <CaretDownIcon aria-hidden="true" />
         </span>
       </button>
-      <WizardDrawerWrapper
-        hasDrawer={hasDrawer && activeStep.drawerPanelContent}
-        wrapper={(children: React.ReactNode) => (
-          <Drawer isInline isExpanded={isDrawerExpanded}>
-            <DrawerContent panelContent={activeStep.drawerPanelContent}>{children}</DrawerContent>
-          </Drawer>
-        )}
-      >
-        <div className={css(styles.wizardOuterWrap)}>
-          <div className={css(styles.wizardInnerWrap)}>
-            <WizardBody
-              mainComponent={isInPage ? 'div' : 'main'}
-              aria-label={mainAriaLabel}
-              aria-labelledby={mainAriaLabelledBy}
-              hasNoBodyPadding={hasNoBodyPadding}
-            >
-              {activeStep.hasOpenDrawerButton && !isDrawerExpanded && (
-                <Button
-                  className="pf-u-float-right pf-u-ml-md"
-                  isInline
-                  variant="link"
-                  onClick={() => onDrawerToggle(!isDrawerExpanded)}
-                >
-                  Open Drawer
-                </Button>
-              )}
-              {activeStep.component}
-              {nav(isNavOpen)}
-            </WizardBody>
-          </div>
-          {!hasDrawer && children}
+      <div className={css(styles.wizardOuterWrap)}>
+        <div className={css(styles.wizardInnerWrap)}>
+          {nav(isNavOpen)}
+          <WizardBody
+            mainComponent={isInPage ? 'div' : 'main'}
+            aria-label={mainAriaLabel}
+            aria-labelledby={mainAriaLabelledBy}
+            hasNoBodyPadding={hasNoBodyPadding}
+            activeStep={activeStep}
+            isDrawerExpanded={isDrawerExpanded}
+            hasDrawer={hasDrawer}
+          >
+            {activeStep.hasOpenDrawerButton && !isDrawerExpanded && (
+              <Button
+                className="pf-u-float-right pf-u-ml-md"
+                isInline
+                variant="link"
+                onClick={() => onDrawerToggle(!isDrawerExpanded)}
+              >
+                Open Drawer
+              </Button>
+            )}
+            {activeStep.component}
+          </WizardBody>
         </div>
-      </WizardDrawerWrapper>
-      {hasDrawer && children}
+        {children}
+      </div>
     </React.Fragment>
   );
 };
