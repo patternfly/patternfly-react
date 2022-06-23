@@ -214,13 +214,19 @@ class WizardModalWithDrawerDemo extends React.Component {
       </DrawerPanelContent>
     );
 
+    const drawerToggleButton = (
+      <Button className="pf-u-float-right pf-u-ml-md" isInline variant="link" onClick={this.onOpenClick}>
+        Open Drawer
+      </Button>
+    );
+
     const steps = [
       {
         id: 0,
         name: 'Information',
         component: <p>Step 1 content</p>,
         drawerPanelContent: informationPanelContent,
-        hasOpenDrawerButton: true
+        drawerToggleButton: drawerToggleButton
       },
       {
         id: 1,
@@ -231,14 +237,14 @@ class WizardModalWithDrawerDemo extends React.Component {
             name: 'Substep A',
             component: <p>Configuration substep A</p>,
             drawerPanelContent: configSubstepAPanelContent,
-            hasOpenDrawerButton: true
+            drawerToggleButton: drawerToggleButton
           },
           {
             id: 3,
             name: 'Substep B',
             component: <p>Configuration substep B</p>,
             drawerPanelContent: configSubstepBPanelContent,
-            hasOpenDrawerButton: true
+            drawerToggleButton: drawerToggleButton
           }
         ]
       },
@@ -247,14 +253,14 @@ class WizardModalWithDrawerDemo extends React.Component {
         name: 'Additional',
         component: <p>Step 3 content</p>,
         drawerPanelContent: additionalPanelContent,
-        hasOpenDrawerButton: true
+        drawerToggleButton: drawerToggleButton
       },
       {
         id: 5,
         name: 'Review',
         component: <p>Review step content</p>,
         drawerPanelContent: reviewPanelContent,
-        hasOpenDrawerButton: true,
+        drawerToggleButton: drawerToggleButton,
         nextButtonText: 'Finish'
       }
     ];
@@ -376,6 +382,7 @@ import {
   Brand,
   Breadcrumb,
   BreadcrumbItem,
+  Button,
   DrawerActions,
   DrawerCloseButton,
   DrawerHead,
@@ -550,13 +557,19 @@ class FullPageWizard extends React.Component {
       </DrawerPanelContent>
     );
 
+    const drawerToggleButton = (
+      <Button className="pf-u-float-right pf-u-ml-md" isInline variant="link" onClick={this.onOpenClick}>
+        Open Drawer
+      </Button>
+    );
+
     const steps = [
       {
         id: 0,
         name: 'Information',
         component: <p>Step 1 content</p>,
         drawerPanelContent: informationPanelContent,
-        hasOpenDrawerButton: true
+        drawerToggleButton: drawerToggleButton
       },
       {
         id: 1,
@@ -567,14 +580,14 @@ class FullPageWizard extends React.Component {
             name: 'Substep A',
             component: <p>Configuration substep A</p>,
             drawerPanelContent: configSubstepAPanelContent,
-            hasOpenDrawerButton: true
+            drawerToggleButton: drawerToggleButton
           },
           {
             id: 3,
             name: 'Substep B',
             component: <p>Configuration substep B</p>,
             drawerPanelContent: configSubstepBPanelContent,
-            hasOpenDrawerButton: true
+            drawerToggleButton: drawerToggleButton
           }
         ]
       },
@@ -583,7 +596,7 @@ class FullPageWizard extends React.Component {
         name: 'Additional',
         component: <p>Step 3 content</p>,
         drawerPanelContent: additionalPanelContent,
-        hasOpenDrawerButton: true
+        drawerToggleButton: drawerToggleButton
       },
       {
         id: 5,
@@ -591,7 +604,7 @@ class FullPageWizard extends React.Component {
         component: <p>Review step content</p>,
         nextButtonText: 'Finish',
         drawerPanelContent: reviewPanelContent,
-        hasOpenDrawerButton: true
+        drawerToggleButton: drawerToggleButton
       }
     ];
     const title = 'Basic wizard';

@@ -866,7 +866,7 @@ class WizardInModal extends React.Component {
 
 ```js isBeta
 import React from 'react';
-import { DrawerActions, DrawerCloseButton, DrawerHead, DrawerPanelContent, Wizard } from '@patternfly/react-core';
+import { Button, DrawerActions, DrawerCloseButton, DrawerHead, DrawerPanelContent, Wizard } from '@patternfly/react-core';
 
 class WizardWithDrawer extends React.Component {
   constructor(props) {
@@ -940,12 +940,18 @@ class WizardWithDrawer extends React.Component {
       </DrawerPanelContent>
     );
 
+    const drawerToggleButton = (
+      <Button className="pf-u-float-right pf-u-ml-md" isInline variant="link" onClick={this.onOpenClick}>
+        Open Drawer
+      </Button>
+    );
+
     const steps = [
       {
         name: 'Information',
         component: <p>Information step content</p>,
         drawerPanelContent: panel1Content,
-        hasOpenDrawerButton: true
+        drawerToggleButton: drawerToggleButton
       },
       {
         name: 'Configuration',
@@ -954,19 +960,19 @@ class WizardWithDrawer extends React.Component {
             name: 'Substep A',
             component: <p>Substep A content</p>,
             drawerPanelContent: panel2Content,
-            hasOpenDrawerButton: true
+            drawerToggleButton: drawerToggleButton
           },
           {
             name: 'Substep B',
             component: <p>Substep B content</p>,
             drawerPanelContent: panel2Content,
-            hasOpenDrawerButton: true
+            drawerToggleButton: drawerToggleButton
           },
           {
             name: 'Substep C',
             component: <p>Substep C content</p>,
             drawerPanelContent: panel2Content,
-            hasOpenDrawerButton: true
+            drawerToggleButton: drawerToggleButton
           }
         ]
       },
@@ -974,7 +980,7 @@ class WizardWithDrawer extends React.Component {
         name: 'Additional',
         component: <p>Additional step content</p>,
         drawerPanelContent: panel3Content,
-        hasOpenDrawerButton: true
+        drawerToggleButton: drawerToggleButton
       },
       {
         name: 'Review',
@@ -987,14 +993,7 @@ class WizardWithDrawer extends React.Component {
 
     return (
       <React.Fragment>
-        <Wizard
-          isDrawerExpanded={isDrawerExpanded}
-          onDrawerToggle={this.onOpenClick}
-          drawerToggleButtonText="Open Drawer"
-          hasDrawer
-          navAriaLabel={`${title} steps`}
-          steps={steps}
-        />
+        <Wizard isDrawerExpanded={isDrawerExpanded} hasDrawer navAriaLabel={`${title} steps`} steps={steps} />
       </React.Fragment>
     );
   }
