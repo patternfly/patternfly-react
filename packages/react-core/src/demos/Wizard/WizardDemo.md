@@ -150,7 +150,7 @@ class WizardModalWithDrawerDemo extends React.Component {
     const { isDrawerExpanded } = this.state;
 
     const informationPanelContent = (
-      <DrawerPanelContent colorVariant={DrawerColorVariant.light200}>
+      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
         <DrawerHead>
           <span tabIndex={0} ref={this.drawerRef}>
             Information panel content
@@ -163,7 +163,7 @@ class WizardModalWithDrawerDemo extends React.Component {
     );
 
     const configSubstepAPanelContent = (
-      <DrawerPanelContent colorVariant={DrawerColorVariant.light200}>
+      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
         <DrawerHead>
           <span tabIndex={0} ref={this.drawerRef}>
             Configuration substep A content
@@ -176,7 +176,7 @@ class WizardModalWithDrawerDemo extends React.Component {
     );
 
     const configSubstepBPanelContent = (
-      <DrawerPanelContent colorVariant={DrawerColorVariant.light200}>
+      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
         <DrawerHead>
           <span tabIndex={0} ref={this.drawerRef}>
             Configuration substep B content
@@ -189,7 +189,7 @@ class WizardModalWithDrawerDemo extends React.Component {
     );
 
     const additionalPanelContent = (
-      <DrawerPanelContent colorVariant={DrawerColorVariant.light200}>
+      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
         <DrawerHead>
           <span tabIndex={0} ref={this.drawerRef}>
             Additional panel content
@@ -202,7 +202,7 @@ class WizardModalWithDrawerDemo extends React.Component {
     );
 
     const reviewPanelContent = (
-      <DrawerPanelContent colorVariant={DrawerColorVariant.light200}>
+      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
         <DrawerHead>
           <span tabIndex={0} ref={this.drawerRef}>
             Review panel content
@@ -261,7 +261,7 @@ class WizardModalWithDrawerDemo extends React.Component {
     const title = 'Wizard modal with Drawer';
 
     const panelContent = (
-      <DrawerPanelContent colorVariant={DrawerColorVariant.light200}>
+      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
         <DrawerHead>
           <span tabIndex={0} ref={this.drawerRef}>
             drawer-panel
@@ -485,7 +485,7 @@ class FullPageWizard extends React.Component {
     );
 
     const informationPanelContent = (
-      <DrawerPanelContent colorVariant={DrawerColorVariant.light200}>
+      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
         <DrawerHead>
           <span tabIndex={0} ref={this.drawerRef}>
             Information panel content
@@ -498,7 +498,7 @@ class FullPageWizard extends React.Component {
     );
 
     const configSubstepAPanelContent = (
-      <DrawerPanelContent colorVariant={DrawerColorVariant.light200}>
+      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
         <DrawerHead>
           <span tabIndex={0} ref={this.drawerRef}>
             Configuration substep A content
@@ -511,7 +511,7 @@ class FullPageWizard extends React.Component {
     );
 
     const configSubstepBPanelContent = (
-      <DrawerPanelContent colorVariant={DrawerColorVariant.light200}>
+      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
         <DrawerHead>
           <span tabIndex={0} ref={this.drawerRef}>
             Configuration substep B content
@@ -524,7 +524,7 @@ class FullPageWizard extends React.Component {
     );
 
     const additionalPanelContent = (
-      <DrawerPanelContent colorVariant={DrawerColorVariant.light200}>
+      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
         <DrawerHead>
           <span tabIndex={0} ref={this.drawerRef}>
             Additional panel content
@@ -537,7 +537,7 @@ class FullPageWizard extends React.Component {
     );
 
     const reviewPanelContent = (
-      <DrawerPanelContent colorVariant={DrawerColorVariant.light200}>
+      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
         <DrawerHead>
           <span tabIndex={0} ref={this.drawerRef}>
             Review panel content

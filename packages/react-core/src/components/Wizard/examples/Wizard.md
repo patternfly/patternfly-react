@@ -902,7 +902,7 @@ class WizardWithDrawer extends React.Component {
     const { isDrawerExpanded } = this.state;
 
     const panel1Content = (
-      <DrawerPanelContent widths={{ default: 'width_25' }} colorVariant={DrawerColorVariant.light200}>
+      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
         <DrawerHead>
           <span tabIndex={isDrawerExpanded ? 0 : -1} ref={this.drawerRef}>
             drawer-panel-1 content
@@ -915,7 +915,7 @@ class WizardWithDrawer extends React.Component {
     );
 
     const panel2Content = (
-      <DrawerPanelContent widths={{ default: 'width_25' }} colorVariant={DrawerColorVariant.light200}>
+      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
         <DrawerHead>
           <span tabIndex={0} ref={this.drawerRef}>
             drawer-panel-2 content
@@ -928,7 +928,7 @@ class WizardWithDrawer extends React.Component {
     );
 
     const panel3Content = (
-      <DrawerPanelContent widths={{ default: 'width_25' }} colorVariant={DrawerColorVariant.light200}>
+      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
         <DrawerHead>
           <span tabIndex={0} ref={this.drawerRef}>
             drawer-panel-3 content
@@ -991,7 +991,7 @@ class WizardWithDrawer extends React.Component {
           isDrawerExpanded={isDrawerExpanded}
           onDrawerToggle={this.onOpenClick}
           hasDrawer
-          drawerPanelWidths={{ default: 'width_25' }}
+          drawerPanelWidths={{ default: 'width_33' }}
           navAriaLabel={`${title} steps`}
           steps={steps}
         />
