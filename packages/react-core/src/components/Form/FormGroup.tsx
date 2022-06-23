@@ -128,8 +128,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
         <div
           className={css(styles.formGroup, className)}
           {...(role && { role })}
-          {...(isGroupOrRadioGroup && { 'aria-labelledby': `${fieldId}-legend` })}
-          {...(!fieldId && { 'aria-labelledby': `${randomId}-legend` })}
+          {...(isGroupOrRadioGroup && { 'aria-labelledby': `${fieldId || randomId}-legend` })}
           {...props}
         >
           {label && (
@@ -139,8 +138,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
                 labelInfo && styles.modifiers.info,
                 hasNoPaddingTop && styles.modifiers.noPaddingTop
               )}
-              {...(isGroupOrRadioGroup && { id: `${fieldId}-legend` })}
-              {...(!fieldId && { id: `${randomId}-legend` })}
+              {...(isGroupOrRadioGroup && { id: `${fieldId || randomId}-legend` })}
             >
               {labelInfo && (
                 <React.Fragment>

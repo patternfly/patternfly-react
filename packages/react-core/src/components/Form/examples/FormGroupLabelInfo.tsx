@@ -54,6 +54,7 @@ export const FormGroupLabelInfo: React.FunctionComponent = () => {
           </Popover>
         }
         isRequired
+        fieldId="form-group-label-info"
         helperText="Include your middle name if you have one."
       >
         <TextInput
