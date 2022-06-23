@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.92.2 (2022-06-23)
+
+
+### Bug Fixes
+
+* **ProgressStepper:** added onTriggerEnter prop to Popover ([#7532](https://github.com/patternfly/patternfly-react/issues/7532)) ([1208390](https://github.com/patternfly/patternfly-react/commit/12083908a7043c017a5b7a97f84623add10bfe75))
+
+
+
+
+
 ## 4.92.1 (2022-06-23)
 
 **Note:** Version bump only for package @patternfly/react-table
