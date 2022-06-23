@@ -289,8 +289,6 @@ class WizardModalWithDrawerDemo extends React.Component {
           navAriaLabel={`${title} steps`}
           hasDrawer
           isDrawerExpanded={isDrawerExpanded}
-          onDrawerToggle={this.onOpenClick}
-          drawerToggleButtonText="Open Drawer"
           mainAriaLabel={`${title} content`}
           titleId="wiz-modal-demo-title"
           descriptionId="wiz-modal-demo-description"
@@ -628,8 +626,6 @@ class FullPageWizard extends React.Component {
           <PageSection type={PageSectionTypes.wizard} variant={PageSectionVariants.light}>
             <Wizard
               hasDrawer
-              onDrawerToggle={this.onOpenClick}
-              drawerToggleButtonText="Open Drawer"
               isDrawerExpanded={isDrawerExpanded}
               navAriaLabel={`${title} steps`}
               mainAriaLabel={`${title} content`}
