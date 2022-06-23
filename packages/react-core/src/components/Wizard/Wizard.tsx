@@ -192,6 +192,10 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       let newStep = currentStep;
 
       for (let nextStep = currentStep; nextStep <= maxSteps; nextStep++) {
+        if (!flattenedSteps[nextStep]) {
+          return;
+        }
+
         if (!flattenedSteps[nextStep].isDisabled) {
           newStep = nextStep + 1;
           break;
@@ -221,6 +225,10 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       let newStep = currentStep;
 
       for (let prevStep = currentStep; prevStep >= 0; prevStep--) {
+        if (!flattenedSteps[prevStep - 2]) {
+          return;
+        }
+
         if (!flattenedSteps[prevStep - 2].isDisabled) {
           newStep = prevStep - 1 <= 1 ? 1 : prevStep - 1;
           break;
@@ -239,7 +247,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
   private goToStep = (step: number): void => {
     const flattenedSteps = this.getFlattenedSteps();
 
-    if (flattenedSteps[step].isDisabled) {
+    if (flattenedSteps[step - 1].isDisabled) {
       return;
     }
 
