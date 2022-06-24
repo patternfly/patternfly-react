@@ -216,7 +216,7 @@ class WizardModalWithDrawerDemo extends React.Component {
 
     const drawerToggleButton = (
       <Button className="pf-u-float-right pf-u-ml-md" isInline variant="link" onClick={this.onOpenClick}>
-        Open Drawer
+        Open drawer
       </Button>
     );
 
@@ -415,7 +415,7 @@ class WizardModalWithDrawerDemo extends React.Component {
 
     const drawerToggleButton = (
       <Button className="pf-u-float-right pf-u-ml-md" isInline variant="link" onClick={this.onOpenClick}>
-        Open Drawer
+        Open drawer
       </Button>
     );
 
@@ -807,7 +807,7 @@ class FullPageWizard extends React.Component {
 
     const drawerToggleButton = (
       <Button className="pf-u-float-right pf-u-ml-md" isInline variant="link" onClick={this.onOpenClick}>
-        Open Drawer
+        Open drawer
       </Button>
     );
 
@@ -1074,7 +1074,7 @@ class FullPageWizard extends React.Component {
 
     const drawerToggleButton = (
       <Button className="pf-u-float-right pf-u-ml-md" isInline variant="link" onClick={this.onOpenClick}>
-        Open Drawer
+        Open drawer
       </Button>
     );
 
