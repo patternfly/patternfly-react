@@ -101,7 +101,7 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
             isDrawerExpanded={isDrawerExpanded}
             hasDrawer={hasDrawer}
           >
-            {!isDrawerExpanded && activeStep.drawerToggleButton}
+            {hasDrawer && !isDrawerExpanded && activeStep.drawerToggleButton}
             {activeStep.component}
           </WizardBody>
         </div>
