@@ -9,14 +9,10 @@ import { Button, ButtonVariant } from '../Button';
 import { TextInput } from '../TextInput';
 import { InputGroup } from '../InputGroup';
 import { KEY_CODES } from '../../helpers/constants';
-import { FocusTrap } from '../../helpers';
+import { FocusTrap, getUniqueId } from '../../helpers';
 import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 import { Popper } from '../../helpers/Popper/Popper';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
-
-// seed for the aria-labelledby ID
-let currentId = 0;
-const newId = currentId++;
 
 export interface ContextSelectorProps extends Omit<ToggleMenuBaseProps, 'menuAppendTo'>, OUIAProps {
   /** content rendered inside the Context Selector */
@@ -108,9 +104,9 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
   };
 
   render() {
+    const newId = getUniqueId();
     const toggleId = `pf-context-selector-toggle-id-${newId}`;
     const screenReaderLabelId = `pf-context-selector-label-id-${newId}`;
-    const searchButtonId = `pf-context-selector-search-button-id-${newId}`;
     const {
       children,
       className,
@@ -155,12 +151,11 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
                   placeholder={searchInputPlaceholder}
                   onChange={onSearchInputChange}
                   onKeyPress={this.onEnterPressed}
-                  aria-labelledby={searchButtonId}
+                  aria-label={searchButtonAriaLabel}
                 />
                 <Button
                   variant={ButtonVariant.control}
                   aria-label={searchButtonAriaLabel}
-                  id={searchButtonId}
                   onClick={onSearchButtonClick}
                 >
                   <SearchIcon aria-hidden="true" />

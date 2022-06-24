@@ -94,7 +94,7 @@ export const CustomPreviewFileUpload: React.FunctionComponent = () => {
       ))}
       <br />
       <FileUploadField
-        id="custom-file-upload"
+        id="custom-file-upload-example"
         type="text"
         value={value}
         filename={filename ? 'example-filename.txt' : ''}

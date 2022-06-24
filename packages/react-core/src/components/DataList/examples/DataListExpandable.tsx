@@ -104,7 +104,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
             </DataListAction>
           </DataListItemRow>
           <DataListContent
-            aria-label="Primary Content Details"
+            aria-label="First expandable content details"
             id="ex-expand1"
             isHidden={!expanded.includes('ex-toggle1')}
           >
@@ -164,7 +164,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
             </DataListAction>
           </DataListItemRow>
           <DataListContent
-            aria-label="Primary Content Details"
+            aria-label="Second expandable content details"
             id="ex-expand2"
             isHidden={!expanded.includes('ex-toggle2')}
           >
@@ -224,7 +224,7 @@ export const DataListExpandable: React.FunctionComponent = () => {
             </DataListAction>
           </DataListItemRow>
           <DataListContent
-            aria-label="Primary Content Details"
+            aria-label="Third expandable content details"
             id="ex-expand3"
             isHidden={!expanded.includes('ex-toggle3')}
             hasNoPadding

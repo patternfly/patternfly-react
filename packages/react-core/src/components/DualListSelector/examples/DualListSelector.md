@@ -8,6 +8,8 @@ propComponents:
     'DualListSelectorPane',
     'DualListSelectorControl',
     'DualListSelectorControlsWrapper',
+    'DualListSelectorList',
+    'DualListSelectorListItem',
     'DualListSelectorTree',
     'DualListSelectorTreeItemData',
   ]

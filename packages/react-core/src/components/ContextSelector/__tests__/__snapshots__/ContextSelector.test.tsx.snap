@@ -10,9 +10,9 @@ exports[`ContextSelector Renders ContextSelector 1`] = `
   >
     <button
       aria-expanded="false"
-      aria-labelledby="pf-context-selector-label-id-0 pf-context-selector-toggle-id-0"
+      aria-labelledby="pf-context-selector-label-id-pf-1656358540398c91arxuhow pf-context-selector-toggle-id-pf-1656358540398c91arxuhow"
       class="pf-c-context-selector__toggle"
-      id="pf-context-selector-toggle-id-0"
+      id="pf-context-selector-toggle-id-pf-1656358540398c91arxuhow"
       type="button"
     >
       <span
@@ -50,9 +50,9 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
   >
     <button
       aria-expanded="true"
-      aria-labelledby="pf-context-selector-label-id-0 pf-context-selector-toggle-id-0"
+      aria-labelledby="pf-context-selector-label-id-pf-1656358540423uq2ltw89gts pf-context-selector-toggle-id-pf-1656358540423uq2ltw89gts"
       class="pf-c-context-selector__toggle"
-      id="pf-context-selector-toggle-id-0"
+      id="pf-context-selector-toggle-id-pf-1656358540423uq2ltw89gts"
       type="button"
     >
       <span
@@ -87,9 +87,8 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
             class="pf-c-input-group"
           >
             <input
-              aria-describedby="pf-context-selector-search-button-id-0"
               aria-invalid="false"
-              aria-labelledby="pf-context-selector-search-button-id-0"
+              aria-label="Search menu items"
               class="pf-c-form-control"
               data-ouia-component-id="OUIA-Generated-TextInputBase-1"
               data-ouia-component-type="PF4/TextInput"
@@ -105,7 +104,6 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
               data-ouia-component-id="OUIA-Generated-Button-control-1"
               data-ouia-component-type="PF4/Button"
               data-ouia-safe="true"
-              id="pf-context-selector-search-button-id-0"
               type="button"
             >
               <svg
@@ -133,6 +131,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
           >
             <button
               class="pf-c-context-selector__menu-list-item"
+              role="menuitem"
             >
               My Project
             </button>
@@ -142,6 +141,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
           >
             <button
               class="pf-c-context-selector__menu-list-item"
+              role="menuitem"
             >
               OpenShift Cluster
             </button>
@@ -151,6 +151,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
           >
             <button
               class="pf-c-context-selector__menu-list-item"
+              role="menuitem"
             >
               Production Ansible
             </button>
@@ -160,6 +161,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
           >
             <button
               class="pf-c-context-selector__menu-list-item"
+              role="menuitem"
             >
               AWS
             </button>
@@ -169,6 +171,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
           >
             <button
               class="pf-c-context-selector__menu-list-item"
+              role="menuitem"
             >
               Azure
             </button>

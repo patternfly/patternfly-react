@@ -28,13 +28,13 @@ export const CardSelectableA11yHighlight: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <Card
-        id="selectable-first-card"
+        id="a11y-selectable-first-card"
         onKeyDown={onKeyDown}
         onClick={onClick}
         hasSelectableInput
         onSelectableInputChange={onChange}
         isSelectableRaised
-        isSelected={selected === 'selectable-first-card'}
+        isSelected={selected === 'a11y-selectable-first-card'}
       >
         <CardTitle>Selectable card with proper accessibility considerations</CardTitle>
         <CardBody>
@@ -44,11 +44,11 @@ export const CardSelectableA11yHighlight: React.FunctionComponent = () => {
       </Card>
       <br />
       <Card
-        id="selectable-second-card"
+        id="a11y-selectable-second-card"
         onKeyDown={onKeyDown}
         onClick={onClick}
         isSelectableRaised
-        isSelected={selected === 'selectable-second-card'}
+        isSelected={selected === 'a11y-selectable-second-card'}
       >
         <CardTitle>Selectable card without proper accessibility considerations</CardTitle>
         <CardBody>

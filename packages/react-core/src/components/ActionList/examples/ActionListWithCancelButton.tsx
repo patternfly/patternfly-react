@@ -6,12 +6,12 @@ export const ActionListWithCancelButton: React.FunctionComponent = () => (
     In modals, forms, data lists
     <ActionList>
       <ActionListItem>
-        <Button variant="primary" id="save-button">
+        <Button variant="primary" id="with-cancel-save-button">
           Save
         </Button>
       </ActionListItem>
       <ActionListItem>
-        <Button variant="link" id="cancel-button">
+        <Button variant="link" id="with-cancel-cancel-button">
           Cancel
         </Button>
       </ActionListItem>
@@ -21,19 +21,19 @@ export const ActionListWithCancelButton: React.FunctionComponent = () => (
     <ActionList>
       <ActionListGroup>
         <ActionListItem>
-          <Button variant="primary" id="next-button">
+          <Button variant="primary" id="with-cancel-next-button">
             Next
           </Button>
         </ActionListItem>
         <ActionListItem>
-          <Button variant="secondary" id="back-button">
+          <Button variant="secondary" id="with-cancel-back-button">
             Back
           </Button>
         </ActionListItem>
       </ActionListGroup>
       <ActionListGroup>
         <ActionListItem>
-          <Button variant="link" id="cancel-button2">
+          <Button variant="link" id="with-cancel-cancel-button2">
             Cancel
           </Button>
         </ActionListItem>

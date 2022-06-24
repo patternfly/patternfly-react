@@ -35,7 +35,7 @@ export interface DualListSelectorTreeItemData {
   isDisabled?: boolean;
 }
 
-export interface DualListSelectorTreeProps {
+export interface DualListSelectorTreeProps extends Omit<React.HTMLProps<HTMLUListElement>, 'data'> {
   /** Data of the tree view */
   data: DualListSelectorTreeItemData[] | (() => DualListSelectorTreeItemData[]);
   /** ID of the tree view */
@@ -46,8 +46,9 @@ export interface DualListSelectorTreeProps {
   hasBadges?: boolean;
   /** Sets the default expanded behavior */
   defaultAllExpanded?: boolean;
-  /** Callback fired when an option is checked */
+  /** Flag indicating if the dual list selector tree is in the disabled state */
   isDisabled?: boolean;
+  /** Callback fired when an option is checked */
   onOptionCheck?: (
     event: React.MouseEvent | React.ChangeEvent<HTMLInputElement> | React.KeyboardEvent,
     isChecked: boolean,

@@ -53,7 +53,7 @@ url: https://raw.githubusercontent.com/Azure-Samples/helm-charts/master/docs`;
     <React.Fragment>
       <CodeBlockAction>
         <ClipboardCopyButton
-          id="copy-button"
+          id="expandable-copy-button"
           textId="code-content"
           aria-label="Copy to clipboard"
           onClick={e => onClick(e, copyBlock)}

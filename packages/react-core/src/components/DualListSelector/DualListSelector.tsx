@@ -6,7 +6,7 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-ico
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { DualListSelectorPane } from './DualListSelectorPane';
-import { getUniqueId, PickOptional } from '../../helpers';
+import { GenerateId, PickOptional } from '../../helpers';
 import { DualListSelectorTreeItemData } from './DualListSelectorTree';
 import {
   flattenTree,
@@ -140,7 +140,6 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
     chosenOptions: [],
     chosenOptionsTitle: 'Chosen options',
     chosenOptionsSearchAriaLabel: 'Chosen search input',
-    id: getUniqueId('dual-list-selector'),
     controlsAriaLabel: 'Selector controls',
     addAllAriaLabel: 'Add all',
     addSelectedAriaLabel: 'Add selected',
@@ -678,94 +677,99 @@ export class DualListSelector extends React.Component<DualListSelectorProps, Dua
 
     return (
       <DualListSelectorContext.Provider value={{ isTree }}>
-        <div className={css(styles.dualListSelector, className)} id={id} {...props}>
-          {children === '' ? (
-            <>
-              <DualListSelectorPane
-                isSearchable={isSearchable}
-                onFilterUpdate={this.onFilterUpdate}
-                searchInputAriaLabel={availableOptionsSearchAriaLabel}
-                filterOption={filterOption}
-                onSearchInputChanged={onAvailableOptionsSearchInputChanged}
-                status={availableOptionsStatusToDisplay}
-                title={availableOptionsTitle}
-                options={available}
-                selectedOptions={isTree ? availableTreeOptionsChecked : availableOptionsSelected}
-                onOptionSelect={this.onOptionSelect}
-                onOptionCheck={(e, isChecked, itemData) => this.onTreeOptionCheck(e, isChecked, itemData, false)}
-                actions={availableOptionsActions}
-                id={`${id}-available-pane`}
-                isDisabled={isDisabled}
-              />
-              <DualListSelectorControlsWrapper aria-label={controlsAriaLabel}>
-                <DualListSelectorControl
-                  isDisabled={
-                    (isTree ? availableTreeOptionsChecked.length === 0 : availableOptionsSelected.length === 0) ||
-                    isDisabled
-                  }
-                  onClick={isTree ? this.addTreeSelected : this.addSelected}
-                  ref={this.addSelectedButtonRef}
-                  aria-label={addSelectedAriaLabel}
-                  tooltipContent={addSelectedTooltip}
-                  tooltipProps={addSelectedTooltipProps}
-                >
-                  <AngleRightIcon />
-                </DualListSelectorControl>
-                <DualListSelectorControl
-                  isDisabled={availableOptions.length === 0 || isDisabled}
-                  onClick={isTree ? this.addAllTreeVisible : this.addAllVisible}
-                  ref={this.addAllButtonRef}
-                  aria-label={addAllAriaLabel}
-                  tooltipContent={addAllTooltip}
-                  tooltipProps={addAllTooltipProps}
-                >
-                  <AngleDoubleRightIcon />
-                </DualListSelectorControl>
-                <DualListSelectorControl
-                  isDisabled={chosenOptions.length === 0 || isDisabled}
-                  onClick={isTree ? this.removeAllTreeVisible : this.removeAllVisible}
-                  aria-label={removeAllAriaLabel}
-                  ref={this.removeAllButtonRef}
-                  tooltipContent={removeAllTooltip}
-                  tooltipProps={removeAllTooltipProps}
-                >
-                  <AngleDoubleLeftIcon />
-                </DualListSelectorControl>
-                <DualListSelectorControl
-                  onClick={isTree ? this.removeTreeSelected : this.removeSelected}
-                  isDisabled={
-                    (isTree ? chosenTreeOptionsChecked.length === 0 : chosenOptionsSelected.length === 0) || isDisabled
-                  }
-                  ref={this.removeSelectedButtonRef}
-                  aria-label={removeSelectedAriaLabel}
-                  tooltipContent={removeSelectedTooltip}
-                  tooltipProps={removeSelectedTooltipProps}
-                >
-                  <AngleLeftIcon />
-                </DualListSelectorControl>
-              </DualListSelectorControlsWrapper>
-              <DualListSelectorPane
-                isChosen
-                isSearchable={isSearchable}
-                onFilterUpdate={this.onFilterUpdate}
-                searchInputAriaLabel={chosenOptionsSearchAriaLabel}
-                filterOption={filterOption}
-                onSearchInputChanged={onChosenOptionsSearchInputChanged}
-                title={chosenOptionsTitle}
-                status={chosenOptionsStatusToDisplay}
-                options={chosen}
-                selectedOptions={isTree ? chosenTreeOptionsChecked : chosenOptionsSelected}
-                onOptionSelect={this.onOptionSelect}
-                onOptionCheck={(e, isChecked, itemData) => this.onTreeOptionCheck(e, isChecked, itemData, true)}
-                actions={chosenOptionsActions}
-                id={`${id}-chosen-pane`}
-                isDisabled={isDisabled}
-              />
-            </>
-          ) : (
-            children
+        <GenerateId>
+          {randomId => (
+            <div className={css(styles.dualListSelector, className)} id={id || randomId} {...props}>
+              {children === '' ? (
+                <>
+                  <DualListSelectorPane
+                    isSearchable={isSearchable}
+                    onFilterUpdate={this.onFilterUpdate}
+                    searchInputAriaLabel={availableOptionsSearchAriaLabel}
+                    filterOption={filterOption}
+                    onSearchInputChanged={onAvailableOptionsSearchInputChanged}
+                    status={availableOptionsStatusToDisplay}
+                    title={availableOptionsTitle}
+                    options={available}
+                    selectedOptions={isTree ? availableTreeOptionsChecked : availableOptionsSelected}
+                    onOptionSelect={this.onOptionSelect}
+                    onOptionCheck={(e, isChecked, itemData) => this.onTreeOptionCheck(e, isChecked, itemData, false)}
+                    actions={availableOptionsActions}
+                    id={`${id || randomId}-available-pane`}
+                    isDisabled={isDisabled}
+                  />
+                  <DualListSelectorControlsWrapper aria-label={controlsAriaLabel}>
+                    <DualListSelectorControl
+                      isDisabled={
+                        (isTree ? availableTreeOptionsChecked.length === 0 : availableOptionsSelected.length === 0) ||
+                        isDisabled
+                      }
+                      onClick={isTree ? this.addTreeSelected : this.addSelected}
+                      ref={this.addSelectedButtonRef}
+                      aria-label={addSelectedAriaLabel}
+                      tooltipContent={addSelectedTooltip}
+                      tooltipProps={addSelectedTooltipProps}
+                    >
+                      <AngleRightIcon />
+                    </DualListSelectorControl>
+                    <DualListSelectorControl
+                      isDisabled={availableOptions.length === 0 || isDisabled}
+                      onClick={isTree ? this.addAllTreeVisible : this.addAllVisible}
+                      ref={this.addAllButtonRef}
+                      aria-label={addAllAriaLabel}
+                      tooltipContent={addAllTooltip}
+                      tooltipProps={addAllTooltipProps}
+                    >
+                      <AngleDoubleRightIcon />
+                    </DualListSelectorControl>
+                    <DualListSelectorControl
+                      isDisabled={chosenOptions.length === 0 || isDisabled}
+                      onClick={isTree ? this.removeAllTreeVisible : this.removeAllVisible}
+                      aria-label={removeAllAriaLabel}
+                      ref={this.removeAllButtonRef}
+                      tooltipContent={removeAllTooltip}
+                      tooltipProps={removeAllTooltipProps}
+                    >
+                      <AngleDoubleLeftIcon />
+                    </DualListSelectorControl>
+                    <DualListSelectorControl
+                      onClick={isTree ? this.removeTreeSelected : this.removeSelected}
+                      isDisabled={
+                        (isTree ? chosenTreeOptionsChecked.length === 0 : chosenOptionsSelected.length === 0) ||
+                        isDisabled
+                      }
+                      ref={this.removeSelectedButtonRef}
+                      aria-label={removeSelectedAriaLabel}
+                      tooltipContent={removeSelectedTooltip}
+                      tooltipProps={removeSelectedTooltipProps}
+                    >
+                      <AngleLeftIcon />
+                    </DualListSelectorControl>
+                  </DualListSelectorControlsWrapper>
+                  <DualListSelectorPane
+                    isChosen
+                    isSearchable={isSearchable}
+                    onFilterUpdate={this.onFilterUpdate}
+                    searchInputAriaLabel={chosenOptionsSearchAriaLabel}
+                    filterOption={filterOption}
+                    onSearchInputChanged={onChosenOptionsSearchInputChanged}
+                    title={chosenOptionsTitle}
+                    status={chosenOptionsStatusToDisplay}
+                    options={chosen}
+                    selectedOptions={isTree ? chosenTreeOptionsChecked : chosenOptionsSelected}
+                    onOptionSelect={this.onOptionSelect}
+                    onOptionCheck={(e, isChecked, itemData) => this.onTreeOptionCheck(e, isChecked, itemData, true)}
+                    actions={chosenOptionsActions}
+                    id={`${id || randomId}-chosen-pane`}
+                    isDisabled={isDisabled}
+                  />
+                </>
+              ) : (
+                children
+              )}
+            </div>
           )}
-        </div>
+        </GenerateId>
       </DualListSelectorContext.Provider>
     );
   }
