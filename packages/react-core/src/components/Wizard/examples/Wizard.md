@@ -949,90 +949,51 @@ class WizardWithDrawer extends React.Component {
       </DrawerPanelContent>
     );
 
+    const drawerToggleButton = (
+      <Button isInline variant="link" onClick={this.onOpenClick}>
+        Open Drawer
+      </Button>
+    );
+
     const steps = [
       {
-        id: 0,
         name: 'Information',
-        component: (
-          <TextContent>
-            <Text component={TextVariants.h1}>Information step content</Text>
-            <p>
-              Wizard description goes here. If you need more assistance,{' '}
-              <Button isInline variant="link" onClick={this.onOpenClick}>
-                see more information
-              </Button>{' '}
-              in the side drawer.{' '}
-            </p>
-          </TextContent>
-        ),
-        drawerPanelContent: panel1Content
+        component: <p>Information step content</p>,
+        drawerPanelContent: panel1Content,
+        drawerToggleButton: drawerToggleButton
       },
       {
-        id: 1,
         name: 'Configuration',
         steps: [
           {
-            id: 2,
             name: 'Substep A',
-            component: (
-              <TextContent>
-                <Text component={TextVariants.h1}>Configuration substep A content</Text>
-                <p>
-                  Wizard description goes here. If you need more assistance,
-                  <Button isInline variant="link" onClick={this.onOpenClick}>
-                    see more information
-                  </Button>
-                  in the side drawer.
-                </p>
-              </TextContent>
-            ),
-            drawerPanelContent: panel2Content
+            component: <p>Substep A content</p>,
+            drawerPanelContent: panel2Content,
+            drawerToggleButton: drawerToggleButton
           },
           {
-            id: 3,
             name: 'Substep B',
-            component: (
-              <TextContent>
-                <Text component={TextVariants.h1}>Configuration substep B content</Text>
-                <p>
-                  Wizard description goes here. If you need more assistance,
-                  <Button isInline variant="link" onClick={this.onOpenClick}>
-                    see more information
-                  </Button>
-                  in the side drawer.
-                </p>
-              </TextContent>
-            ),
-            drawerPanelContent: panel2Content
+            component: <p>Substep B content</p>,
+            drawerPanelContent: panel2Content,
+            drawerToggleButton: drawerToggleButton
+          },
+          {
+            name: 'Substep C',
+            component: <p>Substep C content</p>,
+            drawerPanelContent: panel2Content,
+            drawerToggleButton: drawerToggleButton
           }
         ]
       },
       {
-        id: 4,
         name: 'Additional',
-        component: (
-          <TextContent>
-            <Text component={TextVariants.h1}>Additional step content</Text>
-            <p>
-              Wizard description goes here. If you need more assistance,
-              <Button isInline variant="link" onClick={this.onOpenClick}>
-                see more information
-              </Button>
-              in the side drawer.
-            </p>
-          </TextContent>
-        ),
-        drawerPanelContent: panel3Content
+        component: <p>Additional step content</p>,
+        drawerPanelContent: panel3Content,
+        drawerToggleButton: drawerToggleButton
       },
       {
-        id: 5,
         name: 'Review',
-        component: (
-          <TextContent>
-            <Text component={TextVariants.h1}>Review step content</Text>
-            <p>Wizard description goes here.</p>
-          </TextContent>
-        ),
+        component: <p>Review step content</p>,
         nextButtonText: 'Finish'
       }
     ];
@@ -1041,7 +1002,13 @@ class WizardWithDrawer extends React.Component {
 
     return (
       <React.Fragment>
-        <Wizard height={400} isDrawerExpanded={isDrawerExpanded} hasDrawer navAriaLabel={`${title} steps`} steps={steps} />
+        <Wizard
+          height={400}
+          isDrawerExpanded={isDrawerExpanded}
+          hasDrawer
+          navAriaLabel={`${title} steps`}
+          steps={steps}
+        />
       </React.Fragment>
     );
   }
