@@ -109,7 +109,7 @@ export const ComposableTableNestedExpandable: React.FunctionComponent = () => {
               <Td dataLabel={columnNames.visual}>{team.members.visual}</Td>
               <Td dataLabel={columnNames.contact}>
                 <Button variant="link" component="a" href={`mailto:${team.email}`} isInline>
-                  Message us!
+                  Email team {rowIndex}
                 </Button>
               </Td>
             </Tr>
