@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.224.0 (2022-06-27)
+
+
+### Features
+
+* **wizard:** add support for additional information panel (drawer) ([#7323](https://github.com/patternfly/patternfly-react/issues/7323)) ([6702504](https://github.com/patternfly/patternfly-react/commit/67025047d7bb644497f4477b77dbbdebe8ce97da))
+
+
+
+
+
 ## 4.223.3 (2022-06-23)
 
 **Note:** Version bump only for package @patternfly/react-core
