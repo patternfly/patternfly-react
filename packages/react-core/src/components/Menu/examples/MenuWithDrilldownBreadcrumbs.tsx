@@ -21,7 +21,7 @@ import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-i
 import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
-export const MenuDrilldownBreadcrumbs: React.FunctionComponent = () => {
+export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
   const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
   const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
   const [menuHeights, setMenuHeights] = React.useState<any>({});
