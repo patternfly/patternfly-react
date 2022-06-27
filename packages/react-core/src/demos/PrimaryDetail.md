@@ -5,6 +5,7 @@ section: demos
 
 import DashboardWrapper from './examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
@@ -954,11 +955,15 @@ import React from 'react';
 import {
   Button,
   Card,
+  CardActions,
   CardHeader,
   CardBody,
   CardTitle,
+  Checkbox,
   Divider,
   Dropdown,
+  DropdownToggle,
+  DropdownToggleCheckbox,
   DropdownItem,
   DropdownSeparator,
   Drawer,
@@ -994,6 +999,7 @@ import {
   ToolbarToggleGroup
 } from '@patternfly/react-core';
 import DashboardWrapper from './examples/DashboardWrapper';
+import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';
@@ -1012,7 +1018,12 @@ class PrimaryDetailCardView extends React.Component {
     this.state = {
       page: 1,
       perPage: 10,
+      totalItemCount: 10,
       isDrawerExpanded: false,
+      isChecked: false,
+      selectedItems: [],
+      areAllSelected: false,
+      splitButtonDropdownIsOpen: false,
       activeCard: null,
       filters: {
         products: []
@@ -1140,6 +1151,104 @@ class PrimaryDetailCardView extends React.Component {
     this.onSetPage = (_evt, page) => {
       this.setState({ page });
     };
+
+    this.selectPage = e => {
+      const { checked } = e.target;
+      const { isChecked, totalItemCount, perPage } = this.state;
+      let collection = [];
+
+      collection = this.getAllItems();
+
+      console.log(totalItemCount, perPage);
+
+      this.setState(
+        {
+          selectedItems: collection,
+          isChecked: checked,
+          areAllSelected: totalItemCount === perPage ? true : false
+        },
+        this.updateSelected
+      );
+    };
+
+    this.selectAll = () => {
+      const { isChecked } = this.state;
+
+      let collection = [];
+      for (var i = 0; i <= 9; i++) collection = [...collection, i];
+
+      this.setState(
+        {
+          selectedItems: collection,
+          isChecked: true,
+          areAllSelected: true
+        },
+        this.updateSelected
+      );
+    };
+
+    this.selectNone = () => {
+      const { isChecked, selectedItems } = this.state;
+      this.setState(
+        {
+          selectedItems: [],
+          isChecked: false,
+          areAllSelected: false
+        },
+        this.updateSelected
+      );
+    };
+
+    this.splitCheckboxSelectAll = e => {
+      const { checked } = e.target;
+      const { isChecked, res } = this.state;
+      let collection = [];
+
+      if (checked) {
+        for (var i = 0; i <= 9; i++) collection = [...collection, i];
+      }
+
+      this.setState(
+        {
+          selectedItems: collection,
+          isChecked: isChecked,
+          areAllSelected: checked
+        },
+        this.updateSelected
+      );
+    };
+
+    this.onSplitButtonSelect = event => {
+      this.setState((prevState, props) => {
+        return { splitButtonDropdownIsOpen: !prevState.splitButtonDropdownIsOpen };
+      });
+    };
+
+    this.onSplitButtonToggle = isOpen => {
+      this.setState({
+        splitButtonDropdownIsOpen: isOpen
+      });
+    };
+
+    this.onCardKebabDropdownToggle = (key, isCardKebabDropdownOpen) => {
+      this.setState({
+        [key]: isCardKebabDropdownOpen
+      });
+    };
+
+    this.onCardKebabDropdownSelect = (key, event) => {
+      this.setState({
+        [key]: !this.state[key]
+      });
+    };
+
+    this.deleteItem = item => event => {
+      const filter = getter => val => getter(val) !== item.id;
+      this.setState({
+        res: this.state.res.filter(filter(({ id }) => id)),
+        selectedItems: this.state.selectedItems.filter(filter(id => id))
+      });
+    };
   }
 
   getAllItems() {
@@ -1197,9 +1306,58 @@ class PrimaryDetailCardView extends React.Component {
     );
   }
 
+  buildSelectDropdown() {
+    const { splitButtonDropdownIsOpen, selectedItems, areAllSelected } = this.state;
+    const numSelected = selectedItems.length;
+    const allSelected = areAllSelected;
+    const anySelected = numSelected > 0;
+    const someChecked = anySelected ? null : false;
+    const isChecked = allSelected ? true : someChecked;
+    const splitButtonDropdownItems = [
+      <DropdownItem key="item-1" onClick={this.selectNone}>
+        Select none (0 items)
+      </DropdownItem>,
+      <DropdownItem key="item-2" onClick={this.selectPage}>
+        Select page ({this.state.perPage} items)
+      </DropdownItem>,
+      <DropdownItem key="item-3" onClick={this.selectAll}>
+        Select all ({this.state.totalItemCount} items)
+      </DropdownItem>
+    ];
+
+    return (
+      <Dropdown
+        position={DropdownPosition.left}
+        onSelect={this.onSplitButtonSelect}
+        toggle={
+          <DropdownToggle
+            splitButtonItems={[
+              <DropdownToggleCheckbox
+                id="example-checkbox-2"
+                key="split-checkbox"
+                aria-label={anySelected ? 'Deselect all' : 'Select all'}
+                isChecked={areAllSelected}
+                onClick={this.splitCheckboxSelectAll}
+              ></DropdownToggleCheckbox>
+            ]}
+            onToggle={this.onSplitButtonToggle}
+          >
+            {numSelected !== 0 && <React.Fragment>{numSelected} selected</React.Fragment>}
+          </DropdownToggle>
+        }
+        isOpen={splitButtonDropdownIsOpen}
+        dropdownItems={splitButtonDropdownItems}
+      />
+    );
+  }
+
   render() {
     const {
       isDrawerExpanded,
+      isChecked,
+      selectedItems,
+      areAllSelected,
+      splitButtonDropdownIsOpen,
       activeCard,
       isUpperToolbarDropdownOpen,
       isLowerToolbarDropdownOpen,
@@ -1233,6 +1391,7 @@ class PrimaryDetailCardView extends React.Component {
       <React.Fragment>
         <ToolbarItem variant="overflow-menu">
           <OverflowMenu breakpoint="xl">
+            <OverflowMenuItem isPersistent>{this.buildSelectDropdown()}</OverflowMenuItem>
             <OverflowMenuItem isPersistent>{this.buildFilterDropdown()}</OverflowMenuItem>
             <OverflowMenuItem isPersistent>
               <Button variant="primary">Create a Project</Button>
@@ -1276,7 +1435,7 @@ class PrimaryDetailCardView extends React.Component {
     };
 
     const drawerContent = (
-      <Gallery hasGutter role='region' aria-label="Selectable card container">
+      <Gallery hasGutter role="region" aria-label="Selectable card container">
         {filtered.map((product, key) => (
           <React.Fragment>
             <Card
@@ -1286,12 +1445,40 @@ class PrimaryDetailCardView extends React.Component {
               onKeyDown={this.onKeyDown}
               onClick={this.onCardClick}
               onSelectableInputChange={this.onChange}
-              isSelectable
+              isSelectableRaised
               isSelected={activeCard === 'card-view-' + key}
               hasSelectableInput
             >
               <CardHeader>
                 <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
+                <CardActions>
+                  <Dropdown
+                    isPlain
+                    position="right"
+                    onSelect={e => this.onCardKebabDropdownSelect(key, e)}
+                    toggle={
+                      <KebabToggle
+                        onToggle={isCardKebabDropdownOpen =>
+                          this.onCardKebabDropdownToggle(key, isCardKebabDropdownOpen)
+                        }
+                      />
+                    }
+                    isOpen={this.state[key]}
+                    dropdownItems={[
+                      <DropdownItem key="trash" onClick={this.deleteItem(product)} position="right">
+                        <TrashIcon />
+                        Delete
+                      </DropdownItem>
+                    ]}
+                  />
+                  <Checkbox
+                    checked={isChecked}
+                    value={product.id}
+                    isChecked={selectedItems.includes(product.id)}
+                    aria-label="card checkbox example"
+                    id={`check-${product.id}`}
+                  />
+                </CardActions>
               </CardHeader>
               <CardTitle>{product.name}</CardTitle>
               <CardBody>{product.description}</CardBody>
