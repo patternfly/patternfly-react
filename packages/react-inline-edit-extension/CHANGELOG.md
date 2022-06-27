@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.69.0 (2022-06-27)
+
+
+### Features
+
+* **wizard:** add support for additional information panel (drawer) ([#7323](https://github.com/patternfly/patternfly-react/issues/7323)) ([6702504](https://github.com/patternfly/patternfly-react/commit/67025047d7bb644497f4477b77dbbdebe8ce97da))
+
+
+
+
+
+## 4.68.3 (2022-06-23)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## 4.68.2 (2022-06-23)
+
+
+### Bug Fixes
+
+* **ProgressStepper:** added onTriggerEnter prop to Popover ([#7532](https://github.com/patternfly/patternfly-react/issues/7532)) ([1208390](https://github.com/patternfly/patternfly-react/commit/12083908a7043c017a5b7a97f84623add10bfe75))
+
+
+
+
+
+## 4.68.1 (2022-06-23)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
 # 4.68.0 (2022-06-22)
 
 
