@@ -14,7 +14,7 @@ export interface WizardToggleProps {
   /** The currently active WizardStep */
   activeStep: WizardStep;
   /** The WizardFooter */
-  children: React.ReactNode;
+  children?: React.ReactNode;
   /** Set to true to remove body padding */
   hasNoBodyPadding: boolean;
   /** If the nav is open */
@@ -29,6 +29,10 @@ export interface WizardToggleProps {
   mainAriaLabel?: string;
   /** If the wizard is in-page */
   isInPage?: boolean;
+  /** @beta Flag indicating the wizard has a drawer for at least one of the wizard steps */
+  hasDrawer?: boolean;
+  /** @beta Flag indicating the wizard drawer is expanded */
+  isDrawerExpanded?: boolean;
 }
 
 export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
@@ -42,7 +46,9 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   'aria-label': ariaLabel = 'Wizard Toggle',
   mainAriaLabelledBy = null,
   mainAriaLabel = null,
-  isInPage = true
+  isInPage = true,
+  hasDrawer,
+  isDrawerExpanded
 }: WizardToggleProps) => {
   let activeStepIndex;
   let activeStepName;
@@ -91,7 +97,11 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
             aria-label={mainAriaLabel}
             aria-labelledby={mainAriaLabelledBy}
             hasNoBodyPadding={hasNoBodyPadding}
+            activeStep={activeStep}
+            isDrawerExpanded={isDrawerExpanded}
+            hasDrawer={hasDrawer}
           >
+            {hasDrawer && !isDrawerExpanded && activeStep.drawerToggleButton}
             {activeStep.component}
           </WizardBody>
         </div>

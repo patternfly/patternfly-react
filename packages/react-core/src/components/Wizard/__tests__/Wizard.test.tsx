@@ -1,31 +1,32 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Wizard, WizardStepFunctionType, WizardStep } from '../Wizard';
+import { DrawerPanelContent, DrawerColorVariant, DrawerHead } from '../../Drawer';
 
 describe('Wizard', () => {
   test('Wizard should match snapshot', () => {
     const steps: WizardStep[] = [
-      { name: 'A', id: "step-A", component: <p>Step 1</p> },
+      { name: 'A', id: 'step-A', component: <p>Step 1</p> },
       {
         name: 'B',
-        id: "step-B",
+        id: 'step-B',
         steps: [
           {
             name: 'B-1',
-            id: "step-B-1",
+            id: 'step-B-1',
             component: <p>Step 2</p>,
             enableNext: true
           },
           {
             name: 'B-2',
-            id: "step-B-2",
+            id: 'step-B-2',
             component: <p>Step 3</p>,
             enableNext: false
           }
         ]
       },
-      { name: 'C', id: "step-C", component: <p>Step 4</p> },
-      { name: 'D', id: "step-D", component: <p>Step 5</p> }
+      { name: 'C', id: 'step-C', component: <p>Step 4</p> },
+      { name: 'D', id: 'step-D', component: <p>Step 5</p> }
     ];
     const onBack: WizardStepFunctionType = step => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -100,6 +101,22 @@ describe('Wizard', () => {
     expect(screen.getByRole('heading', { name: 'Wizard' })).toBeInTheDocument();
   });
 
+  test('wiz with drawer', () => {
+    const wizDrawerPanelContent = (
+      <DrawerPanelContent colorVariant={DrawerColorVariant.light200}>
+        <DrawerHead>
+          <span>This wizard has a drawer with drawer panel content</span>
+        </DrawerHead>
+      </DrawerPanelContent>
+    );
+
+    const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p>, drawerPanelContent: wizDrawerPanelContent }];
+
+    render(<Wizard title="Wizard with drawer" hasDrawer isDrawerExpanded steps={steps} />);
+    expect(screen.getByRole('heading', { name: 'Wizard with drawer' })).toBeInTheDocument();
+    expect(screen.getByText('This wizard has a drawer with drawer panel content')).toBeInTheDocument();
+  });
+
   test('wiz with title and navAriaLabel combination', () => {
     const steps: WizardStep[] = [{ name: 'A', component: <p>Step 1</p> }];
 
@@ -109,7 +126,7 @@ describe('Wizard', () => {
 
     expect(screen.getByRole('heading', { name: 'Wizard' })).toBeInTheDocument();
     expect(nav).toBeInTheDocument();
-    expect(nav).toHaveAttribute('aria-labelledby', 'pf-wizard-title-4');
+    expect(nav).toHaveAttribute('aria-labelledby', 'pf-wizard-title-5');
   });
 
   test('wiz with title, navAriaLabel, and mainAriaLabel combination', () => {

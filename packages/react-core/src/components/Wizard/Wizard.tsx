@@ -18,6 +18,10 @@ export interface WizardStep {
   name: React.ReactNode;
   /** The component to render in the main body */
   component?: any;
+  /** @beta The content to render in the drawer panel (use when hasDrawer prop is set on the wizard).   */
+  drawerPanelContent?: any;
+  /** @beta Custom drawer toggle button that opens the drawer. */
+  drawerToggleButton?: React.ReactNode;
   /** Setting to true hides the side nav and footer */
   isFinishedStep?: boolean;
   /** Enables or disables the step in the navigation. Enabled by default. */
@@ -100,6 +104,10 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   isOpen?: boolean;
   /** Flag indicating nav items with sub steps are expandable */
   isNavExpandable?: boolean;
+  /** @beta Flag indicating the wizard has a drawer for at least one of the wizard steps */
+  hasDrawer?: boolean;
+  /** @beta Flag indicating the wizard drawer is expanded */
+  isDrawerExpanded?: boolean;
 }
 
 interface WizardState {
@@ -135,10 +143,13 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     onClose: () => undefined as any,
     appendTo: null as HTMLElement,
     isOpen: undefined,
-    isNavExpandable: false
+    isNavExpandable: false,
+    hasDrawer: false,
+    isDrawerExpanded: false
   };
   private titleId: string;
   private descriptionId: string;
+  private drawerRef: React.RefObject<any>;
 
   constructor(props: WizardProps) {
     super(props);
@@ -150,6 +161,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       currentStep: this.props.startAtStep && Number.isInteger(this.props.startAtStep) ? this.props.startAtStep : 1,
       isNavOpen: false
     };
+
+    this.drawerRef = React.createRef();
   }
 
   private handleKeyClicks = (event: KeyboardEvent): void => {
@@ -340,6 +353,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       titleId,
       descriptionId,
       isNavExpandable,
+      hasDrawer,
+      isDrawerExpanded,
       ...rest
       /* eslint-enable @typescript-eslint/no-unused-vars */
     } = this.props;
@@ -350,12 +365,14 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     const computedSteps: WizardStep[] = this.initSteps(steps);
     const firstStep = activeStep === flattenedSteps[0];
     const isValid = activeStep && activeStep.enableNext !== undefined ? activeStep.enableNext : true;
+
     const nav = (isWizardNavOpen: boolean) => {
       const wizNavAProps = {
         isOpen: isWizardNavOpen,
         'aria-label': navAriaLabel,
         'aria-labelledby': (title || navAriaLabelledBy) && (navAriaLabelledBy || this.titleId)
       };
+
       return (
         <WizardNav {...wizNavAProps}>
           {computedSteps.map((step, index) => {
@@ -466,6 +483,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
             />
           )}
           <WizardToggle
+            hasDrawer={hasDrawer}
+            isDrawerExpanded={isDrawerExpanded}
             mainAriaLabel={mainAriaLabel}
             isInPage={isOpen === undefined}
             mainAriaLabelledBy={(title || mainAriaLabelledBy) && (mainAriaLabelledBy || this.titleId)}
@@ -509,6 +528,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
         </Modal>
       );
     }
+
     return wizard;
   }
 }
