@@ -3,10 +3,11 @@
 exports[`SearchInput advanced search 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-search-input"
+    class=""
   >
     <div
       class="pf-c-input-group"
+      id="custom-advanced-search"
     >
       <div
         class="pf-c-text-input-group"
@@ -125,10 +126,11 @@ exports[`SearchInput advanced search 1`] = `
 exports[`SearchInput advanced search with custom attributes 1`] = `
 <DocumentFragment>
   <div
-    class="pf-c-search-input"
+    class=""
   >
     <div
       class="pf-c-input-group"
+      id="custom-advanced-search"
     >
       <div
         class="pf-c-text-input-group"

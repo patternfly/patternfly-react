@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/SearchInput/search-input';
 import { Button, ButtonVariant } from '../Button';
 import { Badge } from '../Badge';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
@@ -12,6 +11,7 @@ import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-i
 import { AdvancedSearchMenu } from './AdvancedSearchMenu';
 import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '../TextInputGroup';
 import { InputGroup } from '../InputGroup';
+import { Popper } from '../../helpers';
 
 export interface SearchAttribute {
   /** The search attribute's value to be provided in the search input's query string.
@@ -277,11 +277,9 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
 
   if (!!onSearch || attributes.length > 0 || !!onToggleAdvancedSearch) {
     if (attributes.length > 0) {
-      return (
-        <div className={css(className, styles.searchInput)} ref={searchInputRef} {...props}>
-          {buildSearchTextInputGroupWithExtraButtons()}
+      const advancedSearch = (
+        <span>
           <AdvancedSearchMenu
-            className={styles.searchInputMenu}
             value={value}
             parentRef={searchInputRef}
             parentInputRef={searchInputInputRef}
@@ -297,6 +295,18 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             advancedSearchDelimiter={advancedSearchDelimiter}
             getAttrValueMap={getAttrValueMap}
             isSearchMenuOpen={isSearchMenuOpen}
+          />
+        </span>
+      );
+
+      return (
+        <div className={css(className)} ref={searchInputRef} {...props}>
+          <Popper
+            trigger={buildSearchTextInputGroupWithExtraButtons({ id: 'custom-advanced-search' })}
+            popper={advancedSearch}
+            isVisible={isSearchMenuOpen}
+            enableFlip={false}
+            appendTo={() => document.querySelector('#custom-advanced-search')}
           />
         </div>
       );
