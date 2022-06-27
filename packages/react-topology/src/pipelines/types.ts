@@ -4,7 +4,7 @@ export enum RunStatus {
   Succeeded = 'Succeeded',
   Failed = 'Failed',
   Running = 'Running',
-  'In Progress' = 'In Progress',
+  InProgress = 'InProgress',
   FailedToStart = 'FailedToStart',
   Skipped = 'Skipped',
   Cancelled = 'Cancelled',
@@ -14,7 +14,9 @@ export enum RunStatus {
 
 export enum WhenStatus {
   Met = 'Met',
-  Unmet = 'Unmet'
+  Unmet = 'Unmet',
+  Pending = 'Pending',
+  InProgress = 'InProgress'
 }
 
 export type PipelineNodeModel = NodeModel & {

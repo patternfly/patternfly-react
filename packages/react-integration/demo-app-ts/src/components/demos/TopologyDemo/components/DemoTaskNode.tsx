@@ -1,12 +1,18 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
-import { Node, TaskNode, WhenDecorator } from '@patternfly/react-topology';
+import { Node, TaskNode, WhenDecorator, WithContextMenuProps, WithSelectionProps } from '@patternfly/react-topology';
 
-interface DemoTaskNodeProps {
+type DemoTaskNodeProps = {
   element: Node;
-}
+} & WithContextMenuProps &
+  WithSelectionProps;
 
-const DemoTaskNode: React.FunctionComponent<DemoTaskNodeProps> = ({ element }) => {
+const DemoTaskNode: React.FunctionComponent<DemoTaskNodeProps> = ({
+  element,
+  onContextMenu,
+  contextMenuOpen,
+  ...rest
+}) => {
   const data = element.getData();
 
   const passedData = React.useMemo(() => {
@@ -22,7 +28,13 @@ const DemoTaskNode: React.FunctionComponent<DemoTaskNodeProps> = ({ element }) =
   const whenDecorator = data.whenStatus ? <WhenDecorator element={element} status={data.whenStatus} /> : null;
 
   return (
-    <TaskNode element={element} {...passedData}>
+    <TaskNode
+      element={element}
+      onContextMenu={data.showContextMenu ? onContextMenu : undefined}
+      contextMenuOpen={contextMenuOpen}
+      {...passedData}
+      {...rest}
+    >
       {whenDecorator}
     </TaskNode>
   );

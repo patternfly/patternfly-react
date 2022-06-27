@@ -10,9 +10,30 @@ import {
   DEFAULT_SPACER_NODE_TYPE,
   DEFAULT_EDGE_TYPE,
   DEFAULT_FINALLY_NODE_TYPE,
-  FinallyNode
+  FinallyNode,
+  ContextMenuSeparator,
+  ContextMenuItem,
+  withContextMenu,
+  withSelection
 } from '@patternfly/react-topology';
 import DemoTaskNode from './DemoTaskNode';
+import * as React from 'react';
+
+const contextMenuItem = (label: string, i: number): React.ReactElement => {
+  if (label === '-') {
+    return <ContextMenuSeparator key={`separator:${i.toString()}`} />;
+  }
+  return (
+    // eslint-disable-next-line no-alert
+    <ContextMenuItem key={label} onClick={() => alert(`Selected: ${label}`)}>
+      {label}
+    </ContextMenuItem>
+  );
+};
+
+const createContextMenuItems = (...labels: string[]): React.ReactElement[] => labels.map(contextMenuItem);
+
+const defaultMenu = createContextMenuItems('First', 'Second', 'Third', '-', 'Fourth');
 
 const shapesComponentFactory: ComponentFactory = (
   kind: ModelKind,
@@ -20,9 +41,9 @@ const shapesComponentFactory: ComponentFactory = (
 ): ComponentType<{ element: GraphElement }> | undefined => {
   switch (type) {
     case DEFAULT_TASK_NODE_TYPE:
-      return DemoTaskNode;
+      return withContextMenu(() => defaultMenu)(withSelection()(DemoTaskNode));
     case DEFAULT_FINALLY_NODE_TYPE:
-      return FinallyNode;
+      return withContextMenu(() => defaultMenu)(withSelection()(FinallyNode));
     case 'finally-group':
       return DefaultTaskGroup;
     case DEFAULT_SPACER_NODE_TYPE:

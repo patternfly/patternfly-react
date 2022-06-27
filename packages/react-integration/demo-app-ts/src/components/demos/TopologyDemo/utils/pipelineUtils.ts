@@ -11,16 +11,16 @@ import {
 export const ROW_HEIGHT = 80;
 export const COLUMN_WIDTH = 250;
 
-export const DEFAULT_TASK_WIDTH = 200;
+export const DEFAULT_TASK_WIDTH = 180;
 export const FINALLY_TASK_WIDTH = DEFAULT_TASK_WIDTH - DEFAULT_WHEN_OFFSET - DEFAULT_WHEN_SIZE;
-export const DEFAULT_TASK_HEIGHT = 40;
+export const DEFAULT_TASK_HEIGHT = 32;
 
 export const TASK_STATUSES = [
   undefined,
   RunStatus.Succeeded,
   RunStatus.Failed,
   RunStatus.Running,
-  RunStatus['In Progress'],
+  RunStatus.InProgress,
   RunStatus.FailedToStart,
   RunStatus.Skipped,
   RunStatus.Cancelled,
@@ -42,6 +42,7 @@ export const createTask = (options: {
   marginX?: number;
   marginY?: number;
   noLocation?: boolean;
+  showContextMenu?: boolean;
 }): PipelineNodeModel => {
   const width = options.width || DEFAULT_TASK_WIDTH;
   const height = options.height || DEFAULT_TASK_HEIGHT;
@@ -79,7 +80,8 @@ export const createStatusTasks = (
       row: Math.ceil((index + 1) / statusPerRow) - 1,
       column: index % statusPerRow,
       selected,
-      noLocation
+      noLocation,
+      showContextMenu: true
     })
   );
 

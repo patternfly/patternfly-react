@@ -1,11 +1,12 @@
 import * as React from 'react';
 import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-double-right-icon';
-import BanIcon from '@patternfly/react-icons/dist/esm/icons/ban-icon';
+import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import CircleIcon from '@patternfly/react-icons/dist/esm/icons/circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 import HourglassHalfIcon from '@patternfly/react-icons/dist/esm/icons/hourglass-half-icon';
 import SyncAltIcon from '@patternfly/react-icons/dist/esm/icons/sync-alt-icon';
+import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
 import { RunStatus } from '../types';
 
 interface StatusIconProps {
@@ -17,7 +18,9 @@ interface StatusIconProps {
 
 const StatusIcon: React.FC<StatusIconProps> = ({ status, ...props }) => {
   switch (status) {
-    case RunStatus['In Progress']:
+    case RunStatus.InProgress:
+      return <InProgressIcon {...props} />;
+
     case RunStatus.Running:
       return <SyncAltIcon {...props} />;
 
@@ -33,7 +36,7 @@ const StatusIcon: React.FC<StatusIconProps> = ({ status, ...props }) => {
       return <HourglassHalfIcon {...props} />;
 
     case RunStatus.Cancelled:
-      return <BanIcon {...props} />;
+      return <ExclamationTriangleIcon {...props} />;
 
     case RunStatus.Skipped:
       return <AngleDoubleRightIcon {...props} />;

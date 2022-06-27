@@ -3,7 +3,6 @@ import { Tooltip } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-pipelines';
 import topologyStyles from '@patternfly/react-styles/css/components/Topology/topology-components';
-
 import { observer } from '../../mobx-exports';
 import { Node } from '../../types';
 import { WhenStatus } from '../types';
@@ -50,7 +49,7 @@ export const WhenDecorator: React.FC<WhenDecoratorProps> = ({
         y2={taskHeight / 2 - height / 2}
       />
       <line
-        className={css(topologyStyles.topologyEdge)}
+        className={css(topologyStyles.topologyEdge, styles.topologyPipelinesWhenExpressionEdge)}
         x1={-leftOffset}
         y1={taskHeight / 2}
         x2={0}

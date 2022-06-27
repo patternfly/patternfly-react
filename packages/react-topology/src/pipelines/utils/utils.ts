@@ -1,23 +1,40 @@
-import { PipelineNodeModel, RunStatus } from '../types';
+import styles from '@patternfly/react-styles/css/components/Topology/topology-pipelines';
+import { PipelineNodeModel, RunStatus, WhenStatus } from '../types';
 import { EdgeModel } from '../../types';
 import { DEFAULT_EDGE_TYPE, DEFAULT_FINALLY_NODE_TYPE, DEFAULT_SPACER_NODE_TYPE } from '../const';
 
 export const getRunStatusModifier = (status: RunStatus): string => {
   switch (status) {
     case RunStatus.Succeeded:
-      return 'pf-m-success';
+      return styles.modifiers.success;
+    case RunStatus.Cancelled:
+      return styles.modifiers.warning;
     case RunStatus.Failed:
     case RunStatus.FailedToStart:
-      return 'pf-m-danger';
+      return styles.modifiers.danger;
     case RunStatus.Running:
-      return 'pf-m-running';
+    case RunStatus.InProgress:
+      return styles.modifiers.running;
     case RunStatus.Skipped:
-      return 'pf-m-skipped';
-    case RunStatus.Cancelled:
-      return 'pf-m-canceled';
+      return styles.modifiers.skipped;
     case RunStatus.Pending:
     case RunStatus.Idle:
-      return 'pf-m-pending';
+      return styles.modifiers.pending;
+    default:
+      return '';
+  }
+};
+
+export const geWhenStatusModifier = (status: WhenStatus): string => {
+  switch (status) {
+    case WhenStatus.Met:
+      return styles.modifiers.success;
+    case WhenStatus.Unmet:
+      return styles.modifiers.unmet;
+    case WhenStatus.InProgress:
+      return styles.modifiers.inProgress;
+    case WhenStatus.Pending:
+      return styles.modifiers.pending;
     default:
       return '';
   }
