@@ -127,4 +127,16 @@ describe('numberInput', () => {
     render(<NumberInput value={120.0100} />);
     expect(screen.getByDisplayValue('120.01')).toBeInTheDocument();
   });
+
+  test('removes leading zero', () => {
+    render(<NumberInput value={10} onChange={() => {}} />);
+  
+    const input = screen.getByRole('spinbutton');
+    userEvent.type(input, '{arrowleft}{arrowleft}0');
+    expect(input).toHaveDisplayValue('010');
+  
+    userEvent.click(document.body)
+  
+    expect(input).toHaveDisplayValue('10');
+  });
 });
