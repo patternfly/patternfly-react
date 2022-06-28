@@ -80,24 +80,24 @@ import AngleLeftIcon from '@patternfly/react-icons/dist/esm/icons/angle-left-ico
 
 ### With drilldown
 
-```ts file="./MenuDrilldown.tsx" isBeta
+```ts file="./MenuWithDrilldown.tsx" isBeta
 ```
 
 ### With drilldown - initial drill in state
 
 To render an initially drilled in menu, the `menuDrilledIn`, `drilldownPath`, and `activeMenu` states must be set to an initial state. The `menuHeights` state must also be set, defining the height of the root menu. The `setHeight` function passed into the `onGetMenuHeight` property must also account for updating heights, other than the root menu, as menus drill in and out of view.
 
-```ts file="./MenuDrilldownInitialState.tsx" isBeta
+```ts file="./MenuWithDrilldownInitialState.tsx" isBeta
 ```
 
 ### With drilldown - submenu functions
 
-```ts file="./MenuDrilldownSubmenuFunctions.tsx" isBeta
+```ts file="./MenuWithDrilldownSubmenuFunctions.tsx" isBeta
 ```
 
 ### With drilldown breadcrumbs
 
-```ts file="MenuDrilldownBreadcrumbs.tsx" isBeta
+```ts file="MenuWithDrilldownBreadcrumbs.tsx" isBeta
 ```
 
 ### Scrollable
