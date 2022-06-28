@@ -1,7 +1,7 @@
 import React from 'react';
 import { DualListSelector } from '@patternfly/react-core';
 
-export const DualListSelectorTree: React.FunctionComponent = () => {
+export const DualListSelectorTreeExample: React.FunctionComponent = () => {
   const [availableOptions, setAvailableOptions] = React.useState<React.ReactNode[]>([
     {
       id: 'F1',

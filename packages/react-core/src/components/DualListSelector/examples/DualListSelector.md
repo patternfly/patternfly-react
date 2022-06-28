@@ -46,7 +46,7 @@ import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pfic
 
 ### With tree
 
-```ts file="./DualListSelectorTree.tsx"
+```ts file="./DualListSelectorTreeExample.tsx"
 ```
 
 ### Composable dual list selector
