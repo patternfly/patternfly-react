@@ -62,6 +62,8 @@ export interface ContextSelectorProps extends Omit<ToggleMenuBaseProps, 'menuApp
    * appended inline, e.g. `menuAppendTo="parent"`
    */
   isFlipEnabled?: boolean;
+  /** Id of the context selector */
+  id?: string;
 }
 
 export class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateId: string }> {
@@ -104,9 +106,6 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
   };
 
   render() {
-    const newId = getUniqueId();
-    const toggleId = `pf-context-selector-toggle-id-${newId}`;
-    const screenReaderLabelId = `pf-context-selector-label-id-${newId}`;
     const {
       children,
       className,
@@ -129,14 +128,21 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
       footer,
       disableFocusTrap,
       isFlipEnabled,
+      id,
       ...props
     } = this.props;
+
+    const uniqueId = id || getUniqueId();
+    const toggleId = `pf-context-selector-toggle-id-${uniqueId}`;
+    const screenReaderLabelId = `pf-context-selector-label-id-${uniqueId}`;
+
     const menuContainer = (
       <div
         className={css(styles.contextSelectorMenu)}
         // This removes the `position: absolute`styling from the `.pf-c-context-selector__menu`
         // allowing the menu to flip correctly
         {...(isFlipEnabled && { style: { position: 'revert' } })}
+        id={uniqueId}
       >
         {isOpen && (
           <FocusTrap

@@ -10,9 +10,9 @@ exports[`ContextSelector Renders ContextSelector 1`] = `
   >
     <button
       aria-expanded="false"
-      aria-labelledby="pf-context-selector-label-id-pf-1656359990828zeg91exmb9 pf-context-selector-toggle-id-pf-1656359990828zeg91exmb9"
+      aria-labelledby="pf-context-selector-label-id-render pf-context-selector-toggle-id-render"
       class="pf-c-context-selector__toggle"
-      id="pf-context-selector-toggle-id-pf-1656359990828zeg91exmb9"
+      id="pf-context-selector-toggle-id-render"
       type="button"
     >
       <span
@@ -50,9 +50,9 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
   >
     <button
       aria-expanded="true"
-      aria-labelledby="pf-context-selector-label-id-pf-1656359990915lw8vliqgaij pf-context-selector-toggle-id-pf-1656359990915lw8vliqgaij"
+      aria-labelledby="pf-context-selector-label-id-render-open pf-context-selector-toggle-id-render-open"
       class="pf-c-context-selector__toggle"
-      id="pf-context-selector-toggle-id-pf-1656359990915lw8vliqgaij"
+      id="pf-context-selector-toggle-id-render-open"
       type="button"
     >
       <span
@@ -78,6 +78,7 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
     </button>
     <div
       class="pf-c-context-selector__menu"
+      id="render-open"
     >
       <div>
         <div
