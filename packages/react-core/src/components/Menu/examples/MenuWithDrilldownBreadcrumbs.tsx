@@ -54,33 +54,16 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
     setMenuDrilledIn(menuDrilledInSansLast);
     setDrilldownPath(pathSansLast);
     setActiveMenu(toMenuId);
-    // this.setState({
-    //   menuDrilledIn: menuDrilledInSansLast,
-    //   drilldownPath: pathSansLast,
-    //   activeMenu: toMenuId,
-    //   breadcrumb
-    // });
   };
   const setHeight = (menuId: string, height: number) => {
     if (menuHeights[menuId]) {
       setMenuHeights({ ...menuHeights, [menuId]: height });
-      // this.setState({
-      //   menuHeights: {
-      //     ...this.state.menuHeights,
-      //     [menuId]: height
-      //   }
-      // });
     }
   };
   const drillIn = (fromMenuId: string, toMenuId: string, pathId: string) => {
     setMenuDrilledIn([...menuDrilledIn, fromMenuId]);
     setDrilldownPath([...drilldownPath, pathId]);
     setActiveMenu(toMenuId);
-    // this.setState({
-    //   menuDrilledIn: [...this.state.menuDrilledIn, fromMenuId],
-    //   drilldownPath: [...this.state.drilldownPath, pathId],
-    //   activeMenu: toMenuId
-    // });
   };
 
   const startRolloutBreadcrumb = (
