@@ -10,9 +10,9 @@ exports[`ContextSelector Renders ContextSelector 1`] = `
   >
     <button
       aria-expanded="false"
-      aria-labelledby="pf-context-selector-label-id-pf-1656358540398c91arxuhow pf-context-selector-toggle-id-pf-1656358540398c91arxuhow"
+      aria-labelledby="pf-context-selector-label-id-pf-1656359990828zeg91exmb9 pf-context-selector-toggle-id-pf-1656359990828zeg91exmb9"
       class="pf-c-context-selector__toggle"
-      id="pf-context-selector-toggle-id-pf-1656358540398c91arxuhow"
+      id="pf-context-selector-toggle-id-pf-1656359990828zeg91exmb9"
       type="button"
     >
       <span
@@ -50,9 +50,9 @@ exports[`ContextSelector Renders ContextSelector open 1`] = `
   >
     <button
       aria-expanded="true"
-      aria-labelledby="pf-context-selector-label-id-pf-1656358540423uq2ltw89gts pf-context-selector-toggle-id-pf-1656358540423uq2ltw89gts"
+      aria-labelledby="pf-context-selector-label-id-pf-1656359990915lw8vliqgaij pf-context-selector-toggle-id-pf-1656359990915lw8vliqgaij"
       class="pf-c-context-selector__toggle"
-      id="pf-context-selector-toggle-id-pf-1656358540423uq2ltw89gts"
+      id="pf-context-selector-toggle-id-pf-1656359990915lw8vliqgaij"
       type="button"
     >
       <span
