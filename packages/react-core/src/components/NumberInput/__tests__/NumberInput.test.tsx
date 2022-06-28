@@ -117,4 +117,14 @@ describe('numberInput', () => {
 
     expect(onBlurMock).toHaveBeenCalledTimes(1);
   });
+
+  test('removes trailing zero', () => {
+    render(<NumberInput value={120.0} />);
+    expect(screen.getByDisplayValue('120')).toBeInTheDocument();
+  });
+
+  test('removes many trailing zeroes', () => {
+    render(<NumberInput value={120.0100} />);
+    expect(screen.getByDisplayValue('120.01')).toBeInTheDocument();
+  });
 });
