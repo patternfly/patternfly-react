@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches the snapshot 1`] = `
+<DocumentFragment>
+  <h3>
+    <button
+      aria-expanded="false"
+      class="pf-c-accordion__toggle"
+      id="accordion-toggle"
+      type="button"
+    >
+      <span
+        class="pf-c-accordion__toggle-text"
+      >
+        Test
+      </span>
+      <span
+        class="pf-c-accordion__toggle-icon"
+      >
+        Icon mock
+      </span>
+    </button>
+  </h3>
+</DocumentFragment>
+`;
