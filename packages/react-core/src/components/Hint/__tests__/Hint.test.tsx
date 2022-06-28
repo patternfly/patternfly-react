@@ -34,21 +34,21 @@ describe('Hint', () => {
     expect(hint).toHaveClass('custom-classname');
   });
 
-  // it('does not render actions options when not passed', () => {
-  //   render(<Hint>Test</Hint>);
+  it('does not render actions options when not passed', () => {
+    render(<Hint>Test</Hint>);
 
-  //   const hint = screen.getByText("Test");
+    const actions = screen.queryByText('actions');
 
-  //   expect(hint.firstChild).not.toHaveClass('pf-c-hint__actions');
-  // });
+    expect(actions).not.toBeInTheDocument();
+  });
 
-  // it('renders actions options', () => {
-  //   render(<Hint actions="actions">Test</Hint>);
+  it('renders actions options', () => {
+    render(<Hint actions="actions">Test</Hint>);
 
-  //   const hint = screen.getByText("Test");
+    const actions = screen.getByText("actions");
 
-  //   expect(hint.firstChild).toHaveClass('pf-c-hint__actions');
-  // });
+    expect(actions).toBeVisible();
+  });
 
   it('renders hint with body, title, and footer', () => {
     const { asFragment } = render(
