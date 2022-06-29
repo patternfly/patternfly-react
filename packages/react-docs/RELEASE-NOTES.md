@@ -3,7 +3,7 @@ id: Release notes
 section: developer-resources
 ---
 
-## 2022.08 release notes (2022-06-28)
+## 2022.08 release notes (2022-06-29)
 - [@patternfly/react-catalog-view-extension@4.75.0](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.75.0)
 - [@patternfly/react-charts@6.77.0](https://www.npmjs.com/package/@patternfly/react-charts/v/6.77.0)
 - [@patternfly/react-code-editor@4.65.0](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.65.0)
@@ -63,6 +63,7 @@ section: developer-resources
 - **Select:**
   - Added check for updates in grouped select options ([#7530](https://github.com/patternfly/patternfly-react/pull/7530))
   - Updated to retain focus on correct checkbox after view more clicked ([#7505](https://github.com/patternfly/patternfly-react/pull/7505))
+  - Updated logic for checking for updated children to only apply to typeahead variants ([#7632](https://github.com/patternfly/patternfly-react/pull/7632))
 - **Tabs:**
   - Updated insets example to make more sense ([#7480](https://github.com/patternfly/patternfly-react/pull/7480))
 - **Wizard:**
