@@ -298,7 +298,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
     }
 
     const checkUpdatedChildren = (prevChildren: React.ReactElement[], currChildren: React.ReactElement[]) =>
-      prevChildren.some((prevChild: React.ReactElement, index: number) => {
+      Array.from(prevChildren).some((prevChild: React.ReactElement, index: number) => {
         const prevChildProps = prevChild.props;
         const currChild = currChildren[index];
         const { props: currChildProps } = currChild;
@@ -319,7 +319,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       prevProps.children.length !== this.props.children.length ||
       checkUpdatedChildren(prevProps.children, this.props.children) ||
       (this.props.isGrouped &&
-        prevProps.children.some(
+        Array.from(prevProps.children).some(
           (prevChild: React.ReactElement, index: number) =>
             prevChild.type === SelectGroup &&
             prevChild.props.children &&
