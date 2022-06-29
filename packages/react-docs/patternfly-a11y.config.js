@@ -1,4 +1,4 @@
-const { fullscreenRoutes } = require('theme-patternfly-org/routes');
+const { fullscreenRoutes } = require('@breakaway/documentation-framework/routes');
 
 /**
  * Wait for a selector before running axe
