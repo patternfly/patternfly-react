@@ -20,3 +20,4 @@ it('does not throw a "A component is changing an uncontrolled input of type chec
   
     expect(consoleSpy).not.toHaveBeenCalled();
   })
+  
