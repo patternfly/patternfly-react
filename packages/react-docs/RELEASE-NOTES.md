@@ -4,18 +4,19 @@ section: developer-resources
 ---
 
 ## 2022.08 release notes (2022-06-29)
-- [@patternfly/react-catalog-view-extension@4.75.0](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.75.0)
-- [@patternfly/react-charts@6.77.0](https://www.npmjs.com/package/@patternfly/react-charts/v/6.77.0)
-- [@patternfly/react-code-editor@4.65.0](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.65.0)
-- [@patternfly/react-core@4.224.0](https://www.npmjs.com/package/@patternfly/react-core/v/4.224.0)
-- [@patternfly/react-icons@4.75.0](https://www.npmjs.com/package/@patternfly/react-icons/v/4.75.0)
-- [@patternfly/react-inline-edit-extension@4.69.0](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.69.0)
-- [@patternfly/react-log-viewer@4.69.0](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.69.0)
-- [@patternfly/react-styles@4.74.0](https://www.npmjs.com/package/@patternfly/react-styles/v/4.74.0)
-- [@patternfly/react-table@4.93.0](https://www.npmjs.com/package/@patternfly/react-table/v/4.93.0)
-- [@patternfly/react-tokens@4.76.0](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.76.0)
-- [@patternfly/react-topology@4.71.0](https://www.npmjs.com/package/@patternfly/react-topology/v/4.71.0)
-- [@patternfly/react-virtualized-extension@4.71.0](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.71.0)
+- [@patternfly/react-catalog-view-extension@4.75.1](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.75.1)
+- [@patternfly/react-charts@6.77.1](https://www.npmjs.com/package/@patternfly/react-charts/v/6.77.1)
+- [@patternfly/react-code-editor@4.65.1](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.65.1)
+- [@patternfly/react-core@4.224.1](https://www.npmjs.com/package/@patternfly/react-core/v/4.224.1)
+- [@patternfly/react-icons@4.75.1](https://www.npmjs.com/package/@patternfly/react-icons/v/4.75.1)
+- [@patternfly/react-inline-edit-extension@4.69.1](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.69.1)
+- [@patternfly/react-log-viewer@4.69.1](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.69.1)
+- [@patternfly/react-styles@4.74.1](https://www.npmjs.com/package/@patternfly/react-styles/v/4.74.1)
+- [@patternfly/react-table@4.93.1](https://www.npmjs.com/package/@patternfly/react-table/v/4.93.1)
+- [@patternfly/react-tokens@4.76.1](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.76.1)
+- [@patternfly/react-topology@4.71.1](https://www.npmjs.com/package/@patternfly/react-topology/v/4.71.1)
+- [@patternfly/react-virtualized-extension@4.71.1](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.71.1)
+
 
 ### Components
 - **Calendar month:**
