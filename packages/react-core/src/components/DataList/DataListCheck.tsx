@@ -37,7 +37,7 @@ export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
   onChange = (checked: boolean, event: React.FormEvent<HTMLInputElement>) => {},
   isValid = true,
   isDisabled = false,
-  isChecked = null,
+  isChecked = false,
   checked = false,
   defaultChecked,
   otherControls = false,
