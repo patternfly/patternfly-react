@@ -38,7 +38,7 @@ export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
   isValid = true,
   isDisabled = false,
   isChecked = null,
-  checked = null,
+  checked = false,
   defaultChecked,
   otherControls = false,
   ...props
