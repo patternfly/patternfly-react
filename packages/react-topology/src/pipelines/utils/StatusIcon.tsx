@@ -4,6 +4,7 @@ import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/excl
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 import CircleIcon from '@patternfly/react-icons/dist/esm/icons/circle-icon';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
+import NotStartedIcon from '@patternfly/react-icons/dist/esm/icons/not-started-icon';
 import HourglassHalfIcon from '@patternfly/react-icons/dist/esm/icons/hourglass-half-icon';
 import SyncAltIcon from '@patternfly/react-icons/dist/esm/icons/sync-alt-icon';
 import InProgressIcon from '@patternfly/react-icons/dist/esm/icons/in-progress-icon';
@@ -32,6 +33,8 @@ const StatusIcon: React.FC<StatusIconProps> = ({ status, ...props }) => {
       return <ExclamationCircleIcon {...props} />;
 
     case RunStatus.Idle:
+      return <NotStartedIcon {...props} />;
+
     case RunStatus.Pending:
       return <HourglassHalfIcon {...props} />;
 

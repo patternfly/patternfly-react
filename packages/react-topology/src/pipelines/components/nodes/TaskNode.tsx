@@ -9,13 +9,16 @@ import { RunStatus } from '../../types';
 import { useAnchor, WithContextMenuProps, WithSelectionProps } from '../../../behavior';
 import { truncateMiddle } from '../../../utils/truncate-middle';
 import { createSvgIdUrl, useHover, useSize } from '../../../utils';
-import { getRunStatusModifier } from '../../utils';
+import { getRunStatusModifier, nonShadowModifiers } from '../../utils';
 import StatusIcon from '../../utils/StatusIcon';
 import { TaskNodeSourceAnchor, TaskNodeTargetAnchor } from '../anchors';
 import { DEFAULT_WHEN_OFFSET, DEFAULT_WHEN_SIZE } from '../../decorators/WhenDecorator';
 import LabelActionIcon from '../../../components/nodes/labels/LabelActionIcon';
 import LabelContextMenu from '../../../components/nodes/labels/LabelContextMenu';
-import NodeShadows, { NODE_SHADOW_FILTER_ID_DANGER } from '../../../components/nodes/NodeShadows';
+import NodeShadows, {
+  NODE_SHADOW_FILTER_ID_DANGER,
+  NODE_SHADOW_FILTER_ID_HOVER
+} from '../../../components/nodes/NodeShadows';
 
 const STATUS_WIDTH = 24;
 const STATUS_ICON_SIZE = 16;
@@ -133,18 +136,21 @@ const TaskNode: React.FC<TaskNodeProps> = ({
     </text>
   );
 
+  const runStatusModifier = getRunStatusModifier(status);
   const pillClasses = css(
     styles.topologyPipelinesPill,
     className,
     isHover && styles.modifiers.hover,
-    getRunStatusModifier(status),
+    runStatusModifier,
     selected && styles.modifiers.selected,
     onSelect && styles.modifiers.selectable
   );
 
   let filter;
-  if (getRunStatusModifier(status) === styles.modifiers.danger) {
+  if (runStatusModifier === styles.modifiers.danger) {
     filter = createSvgIdUrl(NODE_SHADOW_FILTER_ID_DANGER);
+  } else if (isHover && !nonShadowModifiers.includes(runStatusModifier)) {
+    filter = createSvgIdUrl(NODE_SHADOW_FILTER_ID_HOVER);
   }
 
   const taskPill = (
@@ -177,7 +183,7 @@ const TaskNode: React.FC<TaskNodeProps> = ({
           <g
             className={css(
               styles.topologyPipelinesPillStatus,
-              getRunStatusModifier(status),
+              runStatusModifier,
               selected && 'pf-m-selected',
               (status === RunStatus.Running || status === RunStatus.InProgress) && styles.modifiers.spin
             )}

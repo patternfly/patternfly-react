@@ -3,23 +3,31 @@ import { PipelineNodeModel, RunStatus, WhenStatus } from '../types';
 import { EdgeModel } from '../../types';
 import { DEFAULT_EDGE_TYPE, DEFAULT_FINALLY_NODE_TYPE, DEFAULT_SPACER_NODE_TYPE } from '../const';
 
+export const nonShadowModifiers: string[] = [
+  styles.modifiers.danger,
+  styles.modifiers.warning,
+  styles.modifiers.success,
+  styles.modifiers.inProgress
+];
+
 export const getRunStatusModifier = (status: RunStatus): string => {
   switch (status) {
-    case RunStatus.Succeeded:
-      return styles.modifiers.success;
-    case RunStatus.Cancelled:
-      return styles.modifiers.warning;
     case RunStatus.Failed:
     case RunStatus.FailedToStart:
       return styles.modifiers.danger;
-    case RunStatus.Running:
-    case RunStatus.InProgress:
-      return styles.modifiers.running;
+    case RunStatus.Succeeded:
+      return styles.modifiers.success;
+    case RunStatus.Cancelled:
     case RunStatus.Skipped:
-      return styles.modifiers.skipped;
+      return styles.modifiers.warning;
+    case RunStatus.Running:
+      return styles.modifiers.running;
+    case RunStatus.InProgress:
+      return styles.modifiers.inProgress;
     case RunStatus.Pending:
-    case RunStatus.Idle:
       return styles.modifiers.pending;
+    case RunStatus.Idle:
+      return styles.modifiers.idle;
     default:
       return '';
   }
@@ -32,9 +40,8 @@ export const geWhenStatusModifier = (status: WhenStatus): string => {
     case WhenStatus.Unmet:
       return styles.modifiers.unmet;
     case WhenStatus.InProgress:
-      return styles.modifiers.inProgress;
     case WhenStatus.Pending:
-      return styles.modifiers.pending;
+      return styles.modifiers.inProgress;
     default:
       return '';
   }
