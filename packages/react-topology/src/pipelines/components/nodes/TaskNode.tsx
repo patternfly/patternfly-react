@@ -15,10 +15,7 @@ import { TaskNodeSourceAnchor, TaskNodeTargetAnchor } from '../anchors';
 import { DEFAULT_WHEN_OFFSET, DEFAULT_WHEN_SIZE } from '../../decorators/WhenDecorator';
 import LabelActionIcon from '../../../components/nodes/labels/LabelActionIcon';
 import LabelContextMenu from '../../../components/nodes/labels/LabelContextMenu';
-import NodeShadows, {
-  NODE_SHADOW_FILTER_ID_DANGER,
-  NODE_SHADOW_FILTER_ID_HOVER
-} from '../../../components/nodes/NodeShadows';
+import NodeShadows, { NODE_SHADOW_FILTER_ID_DANGER } from '../../../components/nodes/NodeShadows';
 
 const STATUS_WIDTH = 24;
 const STATUS_ICON_SIZE = 16;
@@ -32,7 +29,6 @@ export type TaskNodeProps = {
   statusIconSize?: number;
   statusWidth?: number;
   showStatusState?: boolean;
-  showStatusBackground?: boolean;
   hover?: boolean;
   truncateLength?: number;
   disableTooltip?: boolean;
@@ -54,7 +50,6 @@ const TaskNode: React.FC<TaskNodeProps> = ({
   statusWidth = STATUS_WIDTH,
   statusIconSize = STATUS_ICON_SIZE,
   showStatusState = true,
-  showStatusBackground,
   hover,
   truncateLength = 14,
   toolTip,
@@ -141,17 +136,15 @@ const TaskNode: React.FC<TaskNodeProps> = ({
   const pillClasses = css(
     styles.topologyPipelinesPill,
     className,
-    isHover && 'pf-m-hover',
-    showStatusBackground && 'pf-m-status-bg',
+    isHover && styles.modifiers.hover,
     getRunStatusModifier(status),
-    selected && 'pf-m-selected'
+    selected && styles.modifiers.selected,
+    onSelect && styles.modifiers.selectable
   );
 
   let filter;
-  if (getRunStatusModifier(status) === 'pf-m-danger') {
+  if (getRunStatusModifier(status) === styles.modifiers.danger) {
     filter = createSvgIdUrl(NODE_SHADOW_FILTER_ID_DANGER);
-  } else if (isHover) {
-    filter = createSvgIdUrl(NODE_SHADOW_FILTER_ID_HOVER);
   }
 
   const taskPill = (
