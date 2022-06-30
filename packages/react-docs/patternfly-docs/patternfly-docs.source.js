@@ -5,7 +5,7 @@ module.exports = (baseSourceMD, sourceProps) => {
 
   // Theme pages
   const themePagesPath = require
-    .resolve('@breakaway/documentation-framework/package.json')
+    .resolve('@patternfly/documentation-framework/package.json')
     .replace('package.json', 'pages');
   sourceMD(path.join(themePagesPath, '*.md'), 'pages-overview');
 

@@ -40,7 +40,7 @@
     "@patternfly/patternfly-a11y": "4.3.1",
     "rimraf": "^2.6.3",
     "shx": "^0.3.2",
-    "@breakaway/documentation-framework": "1.0.12"
+    "@patternfly/documentation-framework": "^1.0.0"
   },
   "keywords": [
     "gatsby"

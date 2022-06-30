@@ -26,5 +26,5 @@ static/base.css
 # Old build files
 **/ts-output.json
 
-# Files from @breakaway/documentation-framework
+# Files from @patternfly/documentation-framework
 patternfly-docs/generated/**/*.js

@@ -10,7 +10,7 @@ module.exports = {
     title: 'Icons'
   },
   '/404': {
-    SyncComponent: isClient && require('@breakaway/documentation-framework/pages/404').default,
+    SyncComponent: isClient && require('@patternfly/documentation-framework/pages/404').default,
     title: '404 Error'
   }
 };
