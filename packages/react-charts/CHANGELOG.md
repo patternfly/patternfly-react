@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 6.77.1 (2022-06-29)
+
+
+### Bug Fixes
+
+* **Select:** update logic should only apply to typeahead ([#7632](https://github.com/patternfly/patternfly-react/issues/7632)) ([0b9148e](https://github.com/patternfly/patternfly-react/commit/0b9148e67030236e61423895c6632b20dac4617f))
+
+
+
+
+
 # 6.77.0 (2022-06-27)
 
 
