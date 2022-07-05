@@ -135,8 +135,54 @@ describe('numberInput', () => {
     userEvent.type(input, '{arrowleft}{arrowleft}0');
     expect(input).toHaveDisplayValue('010');
   
-    userEvent.click(document.body)
+    userEvent.click(document.body);
   
     expect(input).toHaveDisplayValue('10');
+  });
+
+  test('removes a trailing zero from a negative number', () => {
+    render(<NumberInput value={-40.0} />);
+    expect(screen.getByDisplayValue('-40')).toBeInTheDocument();
+  });
+
+  test('removes trailing zeroes from a negative number', () => {
+    render(<NumberInput value={-40.0100} />);
+    expect(screen.getByDisplayValue('-40.01')).toBeInTheDocument();
+  });
+
+  test('removes leading zero from a negative number', () => {
+    render(<NumberInput value={-18} onChange={() => {}} />);
+  
+    const input = screen.getByRole('spinbutton');
+    userEvent.type(input, '{arrowleft}{arrowleft}0');
+    expect(input).toHaveDisplayValue('-018');
+  
+    userEvent.click(document.body);
+  
+    expect(input).toHaveDisplayValue('-18');
+  });
+
+  test('removes leading and trailing zeroes from a positive number', () => {
+    render(<NumberInput value={47.0} onChange={() => {}} />);
+  
+    const input = screen.getByRole('spinbutton');
+    userEvent.type(input, '{arrowleft}{arrowleft}0');
+    expect(input).toHaveDisplayValue('047');
+  
+    userEvent.click(document.body);
+  
+    expect(input).toHaveDisplayValue('47');
+  });
+
+  test('removes leading and trailing zeroes from a negative number', () => {
+    render(<NumberInput value={-55.0} onChange={() => {}} />);
+  
+    const input = screen.getByRole('spinbutton');
+    userEvent.type(input, '{arrowleft}{arrowleft}0');
+    expect(input).toHaveDisplayValue('-055');
+  
+    userEvent.click(document.body)
+  
+    expect(input).toHaveDisplayValue('-55');
   });
 });
