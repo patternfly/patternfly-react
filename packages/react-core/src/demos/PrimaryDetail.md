@@ -1069,6 +1069,13 @@ class PrimaryDetailCardView extends React.Component {
       });
     };
 
+    this.checkAllSelected = (selected, total) => {
+      if (selected && selected < total) {
+        return null;
+      }
+      return selected === total;
+    };
+
     this.onNameSelect = (event, selection) => {
       const checked = event.target.checked;
       this.setState(prevState => {
@@ -1120,6 +1127,22 @@ class PrimaryDetailCardView extends React.Component {
       }
     };
 
+    this.onCheckboxClick = productId => {
+      this.setState(prevState => {
+        return prevState.selectedItems.includes(productId * 1) || this.state.selectedItems.includes(productId * 1)
+          ? {
+              selectedItems: [...this.state.selectedItems.filter(id => productId * 1 != id)],
+              areAllSelected: this.checkAllSelected(prevState.selectedItems.length - 1, prevState.totalItemCount),
+              isDrawerExpanded: true
+            }
+          : {
+              selectedItems: [...prevState.selectedItems, productId * 1],
+              areAllSelected: this.checkAllSelected(prevState.selectedItems.length + 1, prevState.totalItemCount),
+              isDrawerExpanded: true
+            };
+      });
+    };
+
     this.onCardClick = event => {
       if (event.currentTarget.id === this.state.activeCard) {
         return;
@@ -1159,12 +1182,9 @@ class PrimaryDetailCardView extends React.Component {
 
       collection = this.getAllItems();
 
-      console.log(totalItemCount, perPage);
-
       this.setState(
         {
           selectedItems: collection,
-          isChecked: checked,
           areAllSelected: totalItemCount === perPage ? true : false
         },
         this.updateSelected
@@ -1193,7 +1213,9 @@ class PrimaryDetailCardView extends React.Component {
         {
           selectedItems: [],
           isChecked: false,
-          areAllSelected: false
+          areAllSelected: false,
+          isDrawerExpanded: false,
+          activeCard: null
         },
         this.updateSelected
       );
@@ -1201,7 +1223,7 @@ class PrimaryDetailCardView extends React.Component {
 
     this.splitCheckboxSelectAll = e => {
       const { checked } = e.target;
-      const { isChecked, res } = this.state;
+      const { isChecked, res, selectedItems } = this.state;
       let collection = [];
 
       if (checked) {
@@ -1212,7 +1234,9 @@ class PrimaryDetailCardView extends React.Component {
         {
           selectedItems: collection,
           isChecked: isChecked,
-          areAllSelected: checked
+          areAllSelected: checked,
+          isDrawerExpanded: false,
+          activeCard: null
         },
         this.updateSelected
       );
@@ -1220,7 +1244,11 @@ class PrimaryDetailCardView extends React.Component {
 
     this.onSplitButtonSelect = event => {
       this.setState((prevState, props) => {
-        return { splitButtonDropdownIsOpen: !prevState.splitButtonDropdownIsOpen };
+        return {
+          splitButtonDropdownIsOpen: !prevState.splitButtonDropdownIsOpen,
+          isDrawerExpanded: false,
+          activeCard: null
+        };
       });
     };
 
@@ -1440,7 +1468,7 @@ class PrimaryDetailCardView extends React.Component {
           <React.Fragment>
             <Card
               isHoverable
-              key={key}
+              key={product.name}
               id={'card-view-' + key}
               onKeyDown={this.onKeyDown}
               onClick={this.onCardClick}
@@ -1473,6 +1501,7 @@ class PrimaryDetailCardView extends React.Component {
                   />
                   <Checkbox
                     checked={isChecked}
+                    onChange={() => this.onCheckboxClick(product.id)}
                     value={product.id}
                     isChecked={selectedItems.includes(product.id)}
                     aria-label="card checkbox example"
@@ -1508,10 +1537,10 @@ class PrimaryDetailCardView extends React.Component {
               </p>
             </FlexItem>
             <FlexItem>
-              <Progress value={activeCard * 10} title="Title" />
+              <Progress value={activeCard && activeCard.charAt(activeCard.length - 1) * 10} title="Title" />
             </FlexItem>
             <FlexItem>
-              <Progress value={activeCard * 5} title="Title" />
+              <Progress value={activeCard && activeCard.charAt(activeCard.length - 1) * 5} title="Title" />
             </FlexItem>
           </Flex>
         </DrawerPanelBody>
