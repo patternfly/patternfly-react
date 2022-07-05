@@ -33,7 +33,7 @@ export const getRunStatusModifier = (status: RunStatus): string => {
   }
 };
 
-export const geWhenStatusModifier = (status: WhenStatus): string => {
+export const getWhenStatusModifier = (status: WhenStatus): string => {
   switch (status) {
     case WhenStatus.Met:
       return styles.modifiers.success;

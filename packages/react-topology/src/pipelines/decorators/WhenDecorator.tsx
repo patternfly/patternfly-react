@@ -7,6 +7,7 @@ import { observer } from '../../mobx-exports';
 import { Node } from '../../types';
 import { WhenStatus } from '../types';
 import { WithSelectionProps } from '../../behavior';
+import { getWhenStatusModifier } from '../utils';
 
 export const DEFAULT_WHEN_SIZE = 12;
 export const DEFAULT_WHEN_OFFSET = 12;
@@ -57,10 +58,7 @@ export const WhenDecorator: React.FC<WhenDecoratorProps> = ({
       />
       <polygon
         data-test="diamond-decorator"
-        className={css(
-          styles.topologyPipelinesWhenExpressionBackground,
-          status === WhenStatus.Met && styles.modifiers.success
-        )}
+        className={css(styles.topologyPipelinesWhenExpressionBackground, getWhenStatusModifier(status))}
         points={points}
       />
     </g>
