@@ -2,7 +2,20 @@
 id: Legends
 section: charts
 propComponents: [
-  'ChartLegend'
+  'Chart',
+  'ChartArea',
+  'ChartAxis',
+  'ChartBar',
+  'ChartBullet',
+  'ChartDonut',
+  'ChartGroup',
+  'ChartLabel',
+  'ChartLegend',
+  'ChartLegendTooltip',
+  'ChartLine',
+  'ChartPie',
+  'ChartScatter',
+  'ChartVoronoiContainer'
 ]
 hideDarkMode: true
 ---
@@ -813,4 +826,16 @@ class LegendLayoutPieChart extends React.Component {
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
- - For `ChartLegend` props, see [VictoryLegend](https://formidable.com/open-source/victory/docs/victory-legend)
+- For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)
+- For `ChartArea` props, see [VictoryArea](https://formidable.com/open-source/victory/docs/victory-area)
+- For `ChartAxis` props, see [VictoryAxis](https://formidable.com/open-source/victory/docs/victory-axis)
+- For `ChartBar` props, see [VictoryBar](https://formidable.com/open-source/victory/docs/victory-bar)
+- For `ChartBullet` props, see [VictoryBar](https://formidable.com/open-source/victory/docs/victory-bar)
+- For `ChartDonut` props, see [VictoryPie](https://formidable.com/open-source/victory/docs/victory-pie)
+- For `ChartGroup` props, see [VictoryGroup](https://formidable.com/open-source/victory/docs/victory-group)
+- For `ChartLabel` props, see [VictoryLabel](https://formidable.com/open-source/victory/docs/victory-label)
+- For `ChartLegend` props, see [VictoryLegend](https://formidable.com/open-source/victory/docs/victory-legend)
+- For `ChartLine` props, see [VictoryLine](https://formidable.com/open-source/victory/docs/victory-line)
+- For `ChartPie` props, see [VictoryPie](https://formidable.com/open-source/victory/docs/victory-pie)
+- For `ChartScatter` props, see [VictoryScatter](https://formidable.com/open-source/victory/docs/victory-scatter)
+- For `ChartVoronoiContainer` props, see [VictoryVoronoiContainer](https://formidable.com/open-source/victory/docs/victory-voronoi-container)

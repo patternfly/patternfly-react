@@ -35,8 +35,10 @@ import {
 } from '../ChartUtils';
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-chart/src/index.d.ts
+ * Chart is a wrapper component that reconciles the domain for all its children, controls the layout of the chart,
+ * and coordinates animations and shared events.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-chart/src/victory-chart.tsx
  */
 export interface ChartProps extends VictoryChartProps {
   /**

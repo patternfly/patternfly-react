@@ -5,9 +5,10 @@ import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * ChartContainer provides a top-level <svg> element for other Victory based components to render within. By default,
+ * ChartContainer renders responsive SVGs.
  *
- * Note: VictoryContainer may support other props (e.g., children), but they're undocumented and not typed
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-core/src/victory-container/victory-container.tsx
  */
 export interface ChartContainerProps extends VictoryContainerProps {
   /**

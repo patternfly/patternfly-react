@@ -18,8 +18,7 @@ import { ChartCursorFlyout } from './ChartCursorFlyout';
 /**
  * This tooltip has default values intended for use with a cursor container.
  *
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-tooltip/src/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-tooltip/src/index.d.ts
  */
 export interface ChartCursorTooltipProps extends ChartTooltipProps {
   /**

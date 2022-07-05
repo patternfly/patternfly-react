@@ -12,8 +12,13 @@ export enum ChartVoronoiDimension {
 }
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-voronoi-container/src/index.d.ts
+ * ChartVoronoiContainer adds the ability to associate a mouse position with the data point(s) closest to it. When this
+ * container is added to a chart, changes in mouse position will add the active prop to data and label components
+ * closest to the current mouse position. The closeness of data points to a given position is determined by calculating
+ * a voronoi diagram based on the data of every child VictoryVoronoiContainer renders. This container is useful for
+ * adding hover interactions, like tooltips, to small data points, or charts with dense or overlapping data.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-voronoi-container/src/index.d.ts
  */
 export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps {
   /**

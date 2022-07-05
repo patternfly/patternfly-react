@@ -53,8 +53,9 @@ export enum ChartDonutSubTitlePosition {
 }
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-pie/src/index.d.ts
+ * ChartDonut renders a dataset as a donut chart.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-pie/src/index.d.ts
  */
 export interface ChartDonutProps extends ChartPieProps {
   /**
