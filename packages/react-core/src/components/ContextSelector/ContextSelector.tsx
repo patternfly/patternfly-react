@@ -37,8 +37,8 @@ export interface ContextSelectorProps extends Omit<ToggleMenuBaseProps, 'menuApp
   isFullHeight?: boolean;
   /** Labels the Context Selector for Screen Readers */
   screenReaderLabel?: string;
-  /** Text that appears in the Context Selector Toggle */
-  toggleText?: string;
+  /** Component that will be used in the Context Selector Toggle */
+  toggleText?: React.ReactNode;
   /** Aria-label for the Context Selector Search Button */
   searchButtonAriaLabel?: string;
   /** Value in the Search field */
@@ -75,7 +75,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     onToggle: () => undefined as any,
     onSelect: () => undefined as any,
     screenReaderLabel: '',
-    toggleText: '',
+    toggleText: null as React.ReactNode,
     searchButtonAriaLabel: 'Search menu items',
     searchInputValue: '',
     onSearchInputChange: () => undefined as any,

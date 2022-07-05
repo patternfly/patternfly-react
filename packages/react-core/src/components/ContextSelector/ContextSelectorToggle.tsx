@@ -10,8 +10,8 @@ export interface ContextSelectorToggleProps {
   id: string;
   /** Classes applied to root element of toggle */
   className?: string;
-  /** Text that appears in the Context Selector Toggle */
-  toggleText?: string;
+  /** Component that will be used in the Context Selector Toggle */
+  toggleText?: React.ReactNode;
   /** Flag to indicate if menu is opened */
   isOpen?: boolean;
   /** Callback called when toggle is clicked */
@@ -32,7 +32,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
   static displayName = 'ContextSelectorToggle';
   static defaultProps: PickOptional<ContextSelectorToggleProps> = {
     className: '',
-    toggleText: '',
+    toggleText: null as React.ReactNode,
     isOpen: false,
     onEnter: () => undefined as any,
     parentRef: null as any,
