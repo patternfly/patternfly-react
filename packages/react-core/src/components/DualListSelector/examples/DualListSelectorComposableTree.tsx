@@ -255,7 +255,7 @@ export const DualListSelectorComposableTree: React.FunctionComponent<ExampleProp
   return (
     <DualListSelector isTree>
       {buildPane(false)}
-      <DualListSelectorControlsWrapper aria-label="Selector controls">
+      <DualListSelectorControlsWrapper>
         <DualListSelectorControl
           isDisabled={!checkedLeafIds.filter(x => !chosenLeafIds.includes(x)).length}
           onClick={() => moveChecked(true)}
