@@ -9,12 +9,12 @@ export const NotificationBadgeWithCount: React.FunctionComponent = () => {
 
   const onFirstClick = (value: NotificationBadgeVariant) => {
     setFirstVariant(value);
-    setFirstVariantCount(90);
+    setFirstVariantCount(10);
   };
 
   const onSecondClick = (value: NotificationBadgeVariant) => {
     setSecondVariant(value);
-    setSecondVariantCount(90);
+    setSecondVariantCount(10);
   };
 
   return (
