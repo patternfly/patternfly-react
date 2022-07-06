@@ -38,7 +38,7 @@ export interface WizardStep {
   hideCancelButton?: boolean;
   /** (Unused if footer is controlled) True to hide the Back button */
   hideBackButton?: boolean;
-  /** Force to disable the step in the navigation.*/
+  /** Flag to disable the step in the navigation */
   isDisabled?: boolean;
 }
 
