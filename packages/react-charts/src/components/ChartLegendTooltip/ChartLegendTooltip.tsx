@@ -25,8 +25,7 @@ import {
  * The ChartLegendTooltip is based on ChartCursorTooltip, which is intended to be used with a voronoi cursor
  * container. This works best with charts such as area and line, for example.
  *
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-tooltip/src/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-tooltip/src/index.d.ts
  */
 export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
   /**

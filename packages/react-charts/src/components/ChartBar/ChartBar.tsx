@@ -25,8 +25,9 @@ import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-bar/src/index.d.ts
+ * ChartBar renders a dataset as series of bars. ChartBar can be composed with Chart to create bar charts.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-bar/src/index.d.ts
  */
 export interface ChartBarProps extends VictoryBarProps {
   /**

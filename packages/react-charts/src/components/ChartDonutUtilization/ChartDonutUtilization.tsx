@@ -51,8 +51,9 @@ export enum ChartDonutUtilizationSubTitlePosition {
 }
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-pie/src/index.d.ts
+ * ChartDonutUtilization renders a dataset as a donut utilization chart.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-pie/src/index.d.ts
  */
 export interface ChartDonutUtilizationProps extends ChartDonutProps {
   /**

@@ -30,8 +30,9 @@ export enum ChartScatterSortOrder {
 }
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-scatter/src/index.d.ts
+ * ChartScatter renders a dataset as a series of points. ChartScatter can be composed with Chart to create scatter plots.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-scatter/src/index.d.ts
  */
 export interface ChartScatterProps extends VictoryScatterProps {
   /**

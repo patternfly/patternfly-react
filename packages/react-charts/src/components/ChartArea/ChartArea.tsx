@@ -30,8 +30,12 @@ export enum ChartAreaSortOrder {
 }
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-area/src/index.d.ts
+ * ChartArea renders a dataset as a single area path. Since ChartArea renders only a single element to represent a
+ * dataset rather than individual elements for each data point, some of its behavior is different from other Victory
+ * based components. Pay special attention to style and events props, and take advantage of ChartVoronoiContainer to
+ * enable tooltips. ChartArea can be composed with Chart to create area charts.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-area/src/victory-area.tsx
  */
 export interface ChartAreaProps extends VictoryAreaProps {
   /**

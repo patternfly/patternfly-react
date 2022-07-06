@@ -52,8 +52,9 @@ export enum ChartDonutThresholdSubTitlePosition {
 }
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-pie/src/index.d.ts
+ * ChartDonutThreshold renders a dataset as a donut threshold chart.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-pie/src/index.d.ts
  */
 export interface ChartDonutThresholdProps extends ChartDonutProps {
   /**

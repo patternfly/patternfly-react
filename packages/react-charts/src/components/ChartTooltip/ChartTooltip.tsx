@@ -14,8 +14,15 @@ import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-tooltip/src/index.d.ts
+ * ChartTooltip renders a tooltip component with a set of default events. When ChartTooltip is used as a label component
+ * for any Victory based component that renders data, it will attach events to rendered data components that will
+ * activate the tooltip when hovered or focused. ChartTooltipTooltip renders text as well as a configurable Flyout
+ * container.
+ *
+ * Note: When providing tooltips for ChartLine or ChartArea, it is necessary to use ChartVoronoiContainer, as these
+ * components only render a single element for the entire dataset.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-tooltip/src/index.d.ts
  */
 export interface ChartTooltipProps extends VictoryTooltipProps {
   /**
