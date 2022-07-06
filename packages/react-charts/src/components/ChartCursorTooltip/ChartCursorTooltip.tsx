@@ -9,7 +9,6 @@ import {
   VictoryStyleObject
 } from 'victory-core';
 import { VictoryTooltip } from 'victory-tooltip';
-import { ChartLabel } from '../ChartLabel';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip, ChartTooltipProps } from '../ChartTooltip';
 import { getTheme, getCursorTooltipCenterOffset, getCursorTooltipPoniterOrientation } from '../ChartUtils';
@@ -274,7 +273,6 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
 export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps> = ({
   constrainToVisibleArea = true,
   flyoutComponent = <ChartCursorFlyout />,
-  labelComponent = <ChartLabel />,
   labelTextAnchor = 'start',
   showPointer = true,
   style,
@@ -314,7 +312,6 @@ export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps
       centerOffset={centerOffset}
       constrainToVisibleArea={constrainToVisibleArea}
       flyoutComponent={getFlyoutComponent()}
-      labelComponent={labelComponent}
       labelTextAnchor={labelTextAnchor}
       pointerOrientation={pointerOrientation}
       style={newStyle}
