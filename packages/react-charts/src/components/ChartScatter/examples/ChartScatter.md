@@ -34,7 +34,7 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ### Basic
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartScatter, ChartVoronoiContainer, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartScatter, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '450px' }}>
   <Chart

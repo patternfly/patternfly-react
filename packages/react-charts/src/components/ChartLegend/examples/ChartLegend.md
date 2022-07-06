@@ -273,7 +273,6 @@ import {
   ChartLegendTooltip,
   ChartScatter, 
   ChartThemeColor,
-  ChartVoronoiContainer,
   createContainer, 
   getInteractiveLegendEvents, 
   getInteractiveLegendItemStyles,
@@ -652,7 +651,7 @@ This demonstrates an approach for applying links to a legend using a custom labe
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartVoronoiContainer } from '@patternfly/react-charts';
 import { Tooltip } from '@patternfly/react-core';
 
 class LegendLinkPieChart extends React.Component {
