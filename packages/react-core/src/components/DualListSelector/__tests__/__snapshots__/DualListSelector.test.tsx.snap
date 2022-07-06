@@ -99,7 +99,7 @@ exports[`DualListSelector basic 1`] = `
     <div
       aria-label="Selector controls"
       class="pf-c-dual-list-selector__controls"
-      role="region"
+      role="group"
       tabindex="0"
     >
       <div
@@ -357,7 +357,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
     <div
       aria-label="Selector controls"
       class="pf-c-dual-list-selector__controls"
-      role="region"
+      role="group"
       tabindex="0"
     >
       <div
@@ -627,7 +627,7 @@ exports[`DualListSelector with actions 1`] = `
     <div
       aria-label="Selector controls"
       class="pf-c-dual-list-selector__controls"
-      role="region"
+      role="group"
       tabindex="0"
     >
       <div
@@ -949,7 +949,7 @@ exports[`DualListSelector with custom status 1`] = `
     <div
       aria-label="Selector controls"
       class="pf-c-dual-list-selector__controls"
-      role="region"
+      role="group"
       tabindex="0"
     >
       <div
@@ -1219,7 +1219,7 @@ exports[`DualListSelector with search inputs 1`] = `
     <div
       aria-label="Selector controls"
       class="pf-c-dual-list-selector__controls"
-      role="region"
+      role="group"
       tabindex="0"
     >
       <div
@@ -1566,7 +1566,7 @@ exports[`DualListSelector with tree 1`] = `
     <div
       aria-label="Selector controls"
       class="pf-c-dual-list-selector__controls"
-      role="region"
+      role="group"
       tabindex="0"
     >
       <div
