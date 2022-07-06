@@ -4,7 +4,9 @@ module.exports = (baseSourceMD, sourceProps) => {
   const sourceMD = (basePath, ...props) => baseSourceMD(basePath.split(path.sep).join(path.posix.sep), ...props);
 
   // Theme pages
-  const themePagesPath = require.resolve('theme-patternfly-org/package.json').replace('package.json', 'pages');
+  const themePagesPath = require
+    .resolve('@patternfly/documentation-framework/package.json')
+    .replace('package.json', 'pages');
   sourceMD(path.join(themePagesPath, '*.md'), 'pages-overview');
 
   // React props

@@ -12,7 +12,7 @@ import '@patternfly/react-styles/src/css/components/Consoles/SerialConsole.css';
 import '@patternfly/react-styles/src/css/components/Consoles/VncConsole.css';
 
 // Global theme CSS
-import 'theme-patternfly-org/global.css';
+import '@patternfly/documentation-framework/global.css';
 
 // Patternfly
 import '@patternfly/patternfly/patternfly.css';

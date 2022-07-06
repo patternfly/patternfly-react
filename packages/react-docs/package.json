@@ -14,11 +14,11 @@
   "license": "MIT",
   "scripts": {
     "analyze": "yarn build:docs --analyze",
-    "build:docs": "yarn theme-patternfly-org build all",
+    "build:docs": "pf-docs-framework build all",
     "clean": "rimraf .cache public static/assets static/base.css src/generated/**/*.js",
-    "develop": "theme-patternfly-org start",
-    "serve": "theme-patternfly-org serve public",
-    "screenshots": "theme-patternfly-org screenshots --urlPrefix http://localhost:5000",
+    "develop": "pf-docs-framework start",
+    "serve": "pf-docs-framework serve public",
+    "screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5000",
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config"
   },
   "dependencies": {
@@ -40,7 +40,7 @@
     "@patternfly/patternfly-a11y": "4.3.1",
     "rimraf": "^2.6.3",
     "shx": "^0.3.2",
-    "theme-patternfly-org": "0.12.0"
+    "@patternfly/documentation-framework": "^1.0.4"
   },
   "keywords": [
     "gatsby"
