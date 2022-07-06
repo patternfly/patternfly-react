@@ -16,7 +16,7 @@ import { Link } from '@reach/router';
 
 ## Variants
 
-PatternFly supports several button styling variants to be used in different scenarios as needed. 
+PatternFly supports several button styling variants to be used in different scenarios as needed. The following button variants can be assigned using the `variant` prop.
 
 ```ts file="./ButtonVariations.tsx"
 ```
@@ -25,8 +25,8 @@ PatternFly supports several button styling variants to be used in different scen
 | --- | ---|
 | Primary | Primary buttons are the most visually prominent variant. Use for the most important call to action.|
 | Secondary | Secondary buttons are less visually prominant than primary buttons. Use for general actions on a page that require less emphasis than primary buttons. |
-| Tertiary | Tertiary buttons are the least visually prominent variant. Use to retain a classic button format with less emphasis than primary or or secondary buttons.  |
-| Danger | Danger buttons may be used for actions that are potentially destructive or difficult/impossible to undo. Danger an independent variant, but all button variants may use the the `isDanger` prop to apply similar styling. |
+| Tertiary | Tertiary buttons are the least visually prominent variant. Use to retain a classic button format with less emphasis than primary or secondary buttons.  |
+| Danger | Danger buttons may be used for actions that are potentially destructive or difficult/impossible to undo. Danger is an independent variant, but all button variants may use the the `isDanger` prop to apply similar styling. |
 | Warning | Warning buttons may be used for actions that change an important setting or behavior, but not in a destructive or irreversible way. |
 | Link | Links are labeled, but have no background or border. Use for actions that require less emphasis, actions that navigate users to another page within the same window, and/or actions that navigate to external pages in a new window. Links may be placed inline with text using the `isInline` prop.|
 | Plain | Plain buttons have no styling and are intended to be labeled with icons. |
@@ -67,25 +67,18 @@ Block level buttons span the full width of the parent element and can be enabled
 ```ts file="./ButtonBlock.tsx"
 ```
 
-### React button types
-
-React button types can be changed from default as needed. 
-
-```ts file="./ButtonTypes.tsx"
-```
-
 ## Links 
 
 ### Links as buttons
 
-Buttons that link to another resource may take the form of primary, secondary, tertiary, or link variants.
+Buttons that link to another resource may take the form of primary, secondary, tertiary, or link variants. Use `component="a"` and an `href` prop to designate the button's target link.
 
 ```ts file="./ButtonLinks.tsx"
 ```
 
 ### Inline link as span
 
-Inline links should be a span so that it wraps inline with surrounding text.
+Inline links should use `component="span"` and the `isInline` prop to wrap inline with surrounding text.
 
 ```ts file="./ButtonInlineSpanLink.tsx"
 ```
@@ -97,12 +90,13 @@ Router links can be used for in-app linking in React environments to prevent pag
 ```ts file="./ButtonRouterLink.tsx"
 ```
 
-
 ## Aria buttons
+
+Accessible Rich Internet Applications (ARIA) is a set of roles and attributes specified by the [World Wide Web Consortium](https://www.w3.org/WAI/standards-guidelines/aria/). ARIA defines ways to make web content and web applications more accessible to people with disabilities.
 
 ### Aria disabled buttons
 
-Buttons that are `aria-disabled` are similar to normal disabled buttons, except they can receive focus. Every button variant can be aria disabled using the `isAriaDisabled` prop.
+Buttons that are aria disabled are similar to normal disabled buttons, except they can receive focus. Every button variant can be aria disabled using the `isAriaDisabled` prop.
 
 ```ts file="./ButtonAriaDisabled.tsx"
 ```
