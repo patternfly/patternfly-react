@@ -7,7 +7,6 @@ exports[`SearchInput advanced search 1`] = `
   >
     <div
       class="pf-c-input-group"
-      id="custom-advanced-search"
     >
       <div
         class="pf-c-text-input-group"
@@ -130,7 +129,6 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
   >
     <div
       class="pf-c-input-group"
-      id="custom-advanced-search"
     >
       <div
         class="pf-c-text-input-group"
