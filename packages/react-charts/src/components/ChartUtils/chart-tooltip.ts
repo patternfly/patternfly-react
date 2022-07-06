@@ -5,6 +5,8 @@ import { ChartLegendProps } from '../ChartLegend';
 import { ChartLegendTooltipStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getLegendDimensions } from './chart-legend';
 
+import merge from 'lodash/merge';
+
 interface ChartCursorTooltipCenterOffsetInterface {
   offsetCursorDimensionX?: boolean; // Adjust the tooltip to appear to the right of the vertical cursor
   offsetCursorDimensionY?: boolean; // Adjust the tooltip to appear above the horizontal cursor
@@ -88,25 +90,28 @@ export const getCursorTooltipPoniterOrientation = ({
  * Returns props associated with legend data
  * @private
  */
-export const getLegendTooltipDataProps = (defaultProps: ChartLegendProps) => ({
-  borderPadding: 0,
-  gutter: 0,
-  orientation: 'vertical',
-  padding: 0,
-  rowGutter: 0,
-  style: {
-    labels: {
-      fill: ChartLegendTooltipStyles.label.fill,
-      lineHeight: 0.275,
-      padding: 0
+export const getLegendTooltipDataProps = (defaultProps: ChartLegendProps) =>
+  merge(
+    {
+      borderPadding: 0,
+      gutter: 0,
+      orientation: 'vertical',
+      padding: 0,
+      rowGutter: 0,
+      style: {
+        labels: {
+          fill: ChartLegendTooltipStyles.label.fill,
+          lineHeight: 0.275,
+          padding: 0
+        },
+        title: {
+          fill: ChartLegendTooltipStyles.label.fill,
+          padding: 0
+        }
+      }
     },
-    title: {
-      fill: ChartLegendTooltipStyles.label.fill,
-      padding: 0
-    }
-  },
-  ...defaultProps
-});
+    { ...defaultProps }
+  );
 
 /**
  * Returns the legend height and width

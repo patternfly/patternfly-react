@@ -280,6 +280,8 @@ export interface ChartLegendTooltipProps extends ChartCursorTooltipProps {
    * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
    * props defined in theme may be overwritten by props specified on the component instance.
    *
+   * Note: Theme may be overridden when flyout is rendered
+   *
    * @propType object
    */
   theme?: ChartThemeDefinition;
@@ -357,7 +359,9 @@ export const ChartLegendTooltip: React.FunctionComponent<ChartLegendTooltipProps
   const pointerLength = theme && theme.tooltip ? Helpers.evaluateProp(theme.tooltip.pointerLength) : 10;
   const legendTooltipProps = () => ({
     legendData: getLegendTooltipVisibleData({ activePoints, legendData, text, theme }),
-    legendProps: getLegendTooltipDataProps(labelComponent.props.legendComponent),
+    legendProps: getLegendTooltipDataProps(
+      labelComponent.props.legendComponent ? labelComponent.props.legendComponent.props : undefined
+    ),
     text: getLegendTooltipVisibleText({ activePoints, legendData, text }),
     theme
   });
