@@ -92,6 +92,10 @@ export interface TdCompoundExpandType {
   onToggle?: OnExpand;
   /** Id prefix for expandable cells **/
   expandId?: string;
+  /** The row index */
+  rowIndex?: number;
+  /** The column index */
+  columnIndex?: number;
 }
 
 export interface TdFavoritesType {

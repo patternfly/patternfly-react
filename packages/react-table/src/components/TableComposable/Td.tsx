@@ -150,9 +150,12 @@ const TdBase: React.FunctionComponent<TdProps> = ({
             }
           } as IFormatterValueType,
           {
+            rowIndex: compoundExpandProp?.rowIndex,
+            columnIndex: compoundExpandProp?.columnIndex,
             column: {
               extraParams: {
-                onExpand: compoundExpandProp?.onToggle
+                onExpand: compoundExpandProp?.onToggle,
+                expandId: compoundExpandProp?.expandId
               }
             }
           }
