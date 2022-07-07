@@ -54,7 +54,7 @@
     "rollup": "^2.58.0",
     "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-terser": "^7.0.0",
-    "typescript": "^4.0.0"
+    "typescript": "^4.7.4"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0",
