@@ -76,7 +76,7 @@ DualListSelectorControlsWrapperBase.displayName = 'DualListSelectorControlsWrapp
 
 export const DualListSelectorControlsWrapper = React.forwardRef(
   (props: DualListSelectorControlsWrapperProps, ref: React.Ref<HTMLDivElement>) => (
-    <DualListSelectorControlsWrapperBase innerRef={ref as React.MutableRefObject<any>} {...props} role="group" />
+    <DualListSelectorControlsWrapperBase innerRef={ref as React.MutableRefObject<any>} role="group" {...props} />
   )
 );
 
