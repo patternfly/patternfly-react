@@ -59,7 +59,6 @@ export const MenuWithFavorites: React.FunctionComponent = () => {
             <MenuGroup label="Favorites">
               <MenuList>
                 {items
-                  // map the items into the favorites group that have been favorited
                   .filter(item => favorites.includes(item.itemId))
                   .map(item => {
                     const { text, description, itemId, action, actionId } = item;
