@@ -6,6 +6,11 @@ import { Button } from '../Button';
 import FileIcon from '@patternfly/react-icons/dist/esm/icons/file-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 
+/** Renders a progress bar for each individual file that has been attempted to be uploaded,
+ * including the file name, file type, file size, and upload status. Each status item also
+ * has a "remove" button to remove individual items from the status list.
+ */
+
 export interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Class to add to outer div */
   className?: string;

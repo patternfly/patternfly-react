@@ -3,6 +3,10 @@ import Dropzone, { DropzoneProps, DropFileEventHandler } from 'react-dropzone';
 import styles from '@patternfly/react-styles/css/components/MultipleFileUpload/multiple-file-upload';
 import { css } from '@patternfly/react-styles';
 
+/** Acts as a container for all other MultipleFileUpload sub-components.
+ * Logic for the callback that gets called when a file is uploaded can also
+ * be passed into this sub-component.
+ */
 export interface MultipleFileUploadProps extends Omit<React.HTMLProps<HTMLDivElement>, 'value'> {
   /** Content rendered inside the multi upload field */
   children?: React.ReactNode;

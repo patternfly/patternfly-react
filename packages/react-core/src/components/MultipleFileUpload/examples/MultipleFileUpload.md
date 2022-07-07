@@ -26,9 +26,9 @@ As with singular file upload, any [props accepted by react-dropzone's Dropzone c
 
 Restricting file sizes and types in this way is for user convenience only, and it cannot prevent a malicious user from submitting anything to your server. As with any user input, your application should also validate, sanitize and/or reject restricted files on the server side.
 
-## Composable structure and purpose
+## Composable structure
 
-File upload - multiple is designed in a composable manner to maximize flexibility. Each individual sub-component that makes up the file upload - multiple component has an intended structure and purpose, which are outlined below.
+File upload - multiple is designed in a composable manner to make customization easier. The standard sub-component relationships are arranged as follows:
 
 ```noLive
 <MultipleFileUpload>
@@ -38,11 +38,6 @@ File upload - multiple is designed in a composable manner to maximize flexibilit
   </MultipleFileUploadStatus>
 </MultipleFileUpload>
 ```
-
-- **MultipleFileUpload**: Acts as a container for all other `MultipleFileUpload` components. Logic for the callback that gets called when a file is uploaded can also be passed into this sub-component. **Required**.
-- **MultipleFileUploadMain**: Creates the visual upload interface, including the area to drag and drop files, an optional upload button, and descriptive instructions. **Required**.
-- **MultipleFileUploadStatus**: Acts as an expandable container for all uploaded file statuses. An optional text and/or icon can also be passed into this sub-component. **Required**, but this sub-component can be conditionally rendered when at least 1 file has been attempted to be uploaded.
-- **MultipleFileUploadStatusItem**: Renders a progress bar for each individual file that has been attempted to be uploaded, including the file name, file type, file size, and upload status. Each status item also has a "remove" button to remove individual items from the status list. **Required** when at least one item has been attempted to be uploaded.
 
 ## Examples
 

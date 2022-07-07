@@ -5,6 +5,9 @@ import { MultipleFileUploadTitle } from './MultipleFileUploadTitle';
 import { MultipleFileUploadButton } from './MultipleFileUploadButton';
 import { MultipleFileUploadInfo } from './MultipleFileUploadInfo';
 
+/** Creates the visual upload interface, including the area to drag and drop files,
+ * an optional upload button, and descriptive instructions.
+ */
 export interface MultipleFileUploadMainProps extends React.HTMLProps<HTMLDivElement> {
   /** Class to add to outer div */
   className?: string;
