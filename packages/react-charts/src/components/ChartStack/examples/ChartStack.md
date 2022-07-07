@@ -297,7 +297,7 @@ This demonstrates monthly data with a bottom aligned legend and responsiveness f
 
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartStack, ChartLegendTooltip, ChartThemeColor, ChartVoronoiContainer, createContainer, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartStack, ChartLegendTooltip, ChartThemeColor, createContainer, getResizeObserver } from '@patternfly/react-charts';
 
 class MultiColorChart extends React.Component {
   constructor(props) {
