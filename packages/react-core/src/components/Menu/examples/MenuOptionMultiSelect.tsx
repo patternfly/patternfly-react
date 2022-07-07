@@ -5,11 +5,12 @@ import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 export const MenuOptionMultiSelect: React.FunctionComponent = () => {
   const [selectedItems, setSelectedItems] = React.useState<number[]>([]);
 
-  const onSelect = (_event, itemId) => {
-    if (selectedItems.indexOf(itemId) !== -1) {
-      setSelectedItems(selectedItems.filter(id => id !== itemId));
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
+    const item = itemId as number;
+    if (selectedItems.indexOf(item) !== -1) {
+      setSelectedItems(selectedItems.filter(id => id !== item));
     } else {
-      setSelectedItems([...selectedItems, itemId]);
+      setSelectedItems([...selectedItems, item]);
     }
   };
 

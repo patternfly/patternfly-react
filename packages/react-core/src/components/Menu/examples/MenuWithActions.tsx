@@ -8,11 +8,12 @@ import BellIcon from '@patternfly/react-icons/dist/esm/icons/bell-icon';
 export const MenuWithActions: React.FunctionComponent = () => {
   const [selectedItems, setSelectedItems] = React.useState<number[]>([0, 2, 3]);
 
-  const onSelect = (_event, itemId) => {
-    if (selectedItems.indexOf(itemId) !== -1) {
-      setSelectedItems(selectedItems.filter(id => id !== itemId));
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
+    const item = itemId as number;
+    if (selectedItems.indexOf(item) !== -1) {
+      setSelectedItems(selectedItems.filter(id => id !== item));
     } else {
-      setSelectedItems([...selectedItems, itemId]);
+      setSelectedItems([...selectedItems, item]);
     }
   };
 

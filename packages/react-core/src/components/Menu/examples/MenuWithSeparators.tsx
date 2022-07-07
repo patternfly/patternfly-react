@@ -4,10 +4,11 @@ import { Divider, Menu, MenuContent, MenuList, MenuItem } from '@patternfly/reac
 export const MenuWithSeparators: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState(0);
 
-  const onSelect = (_event, itemId) => {
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
+    const item = itemId as number;
     // eslint-disable-next-line no-console
-    console.log(`clicked ${itemId}`);
-    setActiveItem(itemId);
+    console.log(`clicked ${item}`);
+    setActiveItem(item);
   };
 
   return (

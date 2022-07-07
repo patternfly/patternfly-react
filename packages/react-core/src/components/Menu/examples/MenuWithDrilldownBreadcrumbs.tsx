@@ -56,7 +56,7 @@ export const MenuWithDrilldownBreadcrumbs: React.FunctionComponent = () => {
     setActiveMenu(toMenuId);
   };
   const setHeight = (menuId: string, height: number) => {
-    if (menuHeights[menuId]) {
+    if (!menuHeights[menuId]) {
       setMenuHeights({ ...menuHeights, [menuId]: height });
     }
   };

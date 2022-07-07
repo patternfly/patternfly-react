@@ -5,10 +5,10 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 export const MenuWithDescription: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState(0);
 
-  const onSelect = (_event, itemId) => {
-    // eslint-disable-next-line no-console
-    console.log(`clicked ${itemId}`);
-    setActiveItem(itemId);
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
+    const item = itemId as number; // eslint-disable-next-line no-console
+    console.log(`clicked ${item}`);
+    setActiveItem(item);
   };
 
   return (

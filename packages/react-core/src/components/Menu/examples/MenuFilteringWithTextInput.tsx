@@ -5,10 +5,10 @@ export const MenuFilteringWithTextInput: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState(0);
   const [input, setInput] = React.useState('');
 
-  const onSelect = (_event, itemId) => {
-    // eslint-disable-next-line no-console
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
+    const item = itemId as number; // eslint-disable-next-line no-console
     console.log(`clicked ${itemId}`);
-    setActiveItem(itemId);
+    setActiveItem(item);
   };
 
   const handleTextInputChange = (value: string) => {

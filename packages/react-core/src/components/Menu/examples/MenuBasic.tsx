@@ -5,10 +5,10 @@ export const MenuBasic: React.FunctionComponent = () => {
   const [activeItem, setActiveItem] = React.useState(0);
   const [isPlain, setIsPlain] = React.useState(false);
 
-  const onSelect = (event, itemId) => {
-    // eslint-disable-next-line no-console
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
+    const item = itemId as number; // eslint-disable-next-line no-console
     console.log(`clicked ${itemId}`);
-    setActiveItem(itemId);
+    setActiveItem(item);
   };
 
   const togglePlain = (checked: boolean) => {
