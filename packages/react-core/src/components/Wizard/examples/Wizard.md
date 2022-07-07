@@ -119,12 +119,12 @@ class IncrementallyEnabledStepsWizard extends React.Component {
     const { stepIdReached } = this.state;
 
     const steps = [
-      { id: 1, name: 'First step', component: <p>Step 1 content</p> },
-      { id: 2, name: 'Second step', component: <p>Step 2 content</p>, canJumpTo: stepIdReached >= 2 },
-      { id: 3, name: 'Third step', component: <p>Step 3 content</p>, canJumpTo: stepIdReached >= 3 },
-      { id: 4, name: 'Fourth step', component: <p>Step 4 content</p>, canJumpTo: stepIdReached >= 4 },
+      { id: 'incrementally-enabled-1', name: 'First step', component: <p>Step 1 content</p> },
+      { id: 'incrementally-enabled-2', name: 'Second step', component: <p>Step 2 content</p>, canJumpTo: stepIdReached >= 2 },
+      { id: 'incrementally-enabled-3', name: 'Third step', component: <p>Step 3 content</p>, canJumpTo: stepIdReached >= 3 },
+      { id: 'incrementally-enabled-4', name: 'Fourth step', component: <p>Step 4 content</p>, canJumpTo: stepIdReached >= 4 },
       {
-        id: 5,
+        id: 'incrementally-enabled-5',
         name: 'Review',
         component: <p>Review step content</p>,
         nextButtonText: 'Finish',
@@ -177,7 +177,7 @@ class SimpleWizard extends React.Component {
       { name: 'Fourth step', component: <p>Step 4 content</p> },
       { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
     ];
-    const title = 'Basic wizard';
+    const title = 'Expandable wizard';
     return (
       <Wizard
         navAriaLabel={`${title} steps`}
@@ -296,29 +296,29 @@ class ValidationWizard extends React.Component {
     const { isFormValid, formValue, allStepsValid, stepIdReached } = this.state;
 
     const steps = [
-      { id: 1, name: 'Information', component: <p>Step 1 content</p> },
+      { id: 'validated-1', name: 'Information', component: <p>Step 1 content</p> },
       {
         name: 'Configuration',
         steps: [
           {
-            id: 2,
+            id: 'validated-2',
             name: 'Substep A with validation',
             component: <SampleForm formValue={formValue} isFormValid={isFormValid} onChange={this.onFormChange} />,
             enableNext: isFormValid,
             canJumpTo: stepIdReached >= 2
           },
-          { id: 3, name: 'Substep B', component: <p>Substep B</p>, canJumpTo: stepIdReached >= 3 }
+          { id: 'validated-3', name: 'Substep B', component: <p>Substep B</p>, canJumpTo: stepIdReached >= 3 }
         ]
       },
       {
-        id: 4,
+        id: 'validated-4',
         name: 'Additional',
         component: <p>Step 3 content</p>,
         enableNext: allStepsValid,
         canJumpTo: stepIdReached >= 4
       },
       {
-        id: 5,
+        id: 'validated-5',
         name: 'Review',
         component: <p>Step 4 content</p>,
         nextButtonText: 'Close',

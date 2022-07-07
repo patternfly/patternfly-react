@@ -320,7 +320,7 @@ CardDetailsDemo = () => {
     <Gallery hasGutter style={{ '--pf-l-gallery--GridTemplateColumns--min': '260px' }}>
       <Card>
         <CardTitle>
-          <Title headingLevel="h2" size="xl">
+          <Title headingLevel="h4" size="xl">
             Details
           </Title>
         </CardTitle>
@@ -357,7 +357,7 @@ CardDetailsDemo = () => {
       </Card>
       <Card>
         <CardTitle>
-          <Title headingLevel="h2" size="xl">
+          <Title headingLevel="h4" size="xl">
             Details
           </Title>
         </CardTitle>
@@ -668,7 +668,7 @@ const StatusPlain: React.FunctionComponent = () => {
 
   const header = (
     <CardHeader>
-      <Title headingLevel="h2" size="lg">
+      <Title headingLevel="h4" size="lg">
         Status
       </Title>
     </CardHeader>
@@ -794,7 +794,7 @@ const StatusPlain: React.FunctionComponent = () => {
                 <a href="#">Operators</a>
               </FlexItem>
               <FlexItem>
-                <span style={{ color: 'var(--pf-global--Color--400)' }}>1 degraded</span>
+                <span style={{ color: 'var(--pf-global--Color--200)' }}>1 degraded</span>
               </FlexItem>
             </Flex>
           </Flex>
@@ -809,7 +809,7 @@ const StatusPlain: React.FunctionComponent = () => {
                 <a href="#">Image Vulnerabilities</a>
               </FlexItem>
               <FlexItem>
-                <span style={{ color: '#8a8d90' }}>0 vulnerabilities</span>
+                <span style={{ color: 'var(--pf-global--Color--200)' }}>0 vulnerabilities</span>
               </FlexItem>
             </Flex>
           </Flex>
@@ -849,16 +849,17 @@ const StatusPlain: React.FunctionComponent = () => {
           onExpand={handleDrawerToggleClick}
           isExpanded={drawerExpanded}
           title={drawerTitle}
+          headingLevel="h4"
         >
           <NotificationDrawerList isHidden={!drawerExpanded}>
             <NotificationDrawerListItem variant="danger">
-              <NotificationDrawerListItemHeader variant="danger" title="Critical alert regarding control plane" />
+              <NotificationDrawerListItemHeader variant="danger" headingLevel="h5" title="Critical alert regarding control plane" />
               <NotificationDrawerListItemBody>
                 This is a long description to show how the title will wrap if it is long and wraps to multiple lines.
               </NotificationDrawerListItemBody>
             </NotificationDrawerListItem>
             <NotificationDrawerListItem variant="warning">
-              <NotificationDrawerListItemHeader variant="warning" title="Warning alert" />
+              <NotificationDrawerListItemHeader variant="warning" headingLevel="h5" title="Warning alert" />
               <NotificationDrawerListItemBody>
                 This is a warning notification description.
               </NotificationDrawerListItemBody>
@@ -947,7 +948,7 @@ const Status: React.FunctionComponent = () => {
             <Flex>
               <FlexItem>{icon}</FlexItem>
               <FlexItem>
-                <Title headingLevel="h3" size="md">
+                <Title headingLevel="h4" size="md">
                   {status}
                 </Title>
               </FlexItem>
@@ -966,7 +967,7 @@ const Status: React.FunctionComponent = () => {
     <>
       <Card>
         <CardHeader>
-          <Title headingLevel="h2" size="lg">
+          <Title headingLevel="h4" size="lg">
             Status
           </Title>
         </CardHeader>
@@ -1023,9 +1024,9 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContaine
 
 <Gallery hasGutter minWidths={{ default: '360px' }}>
   <GalleryItem>
-    <Card id="utilization-card-1" component="div">
+    <Card id="utilization-card-1-card" component="div">
       <CardTitle>
-        <Title headingLevel="h2" size="lg">
+        <Title headingLevel="h4" size="lg">
           Top Utilized Clusters
         </Title>
       </CardTitle>
@@ -1136,9 +1137,9 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContaine
 
 <Gallery hasGutter minWidths={{ default: '360px' }}>
   <GalleryItem>
-    <Card id="utilization-card-2" component="div">
+    <Card id="utilization-card-2-card" component="div">
       <CardTitle>
-        <Title headingLevel="h2" size="lg">
+        <Title headingLevel="h4" size="lg">
           Top Utilized Clusters
         </Title>
       </CardTitle>
@@ -1268,10 +1269,10 @@ const UtilizationCard3: React.FunctionComponent = () => {
       <br />
       <Gallery hasGutter minWidths={{ default: '360px' }}>
         <GalleryItem>
-          <Card id="utilization-card-1" component="div">
+          <Card id="utilization-card-3-card" component="div">
             <CardHeader className="pf-u-align-items-flex-start">
               <CardTitle>
-                <Title headingLevel="h2" size="lg" style={{ paddingTop: '3px' }}>
+                <Title headingLevel="h4" size="lg" style={{ paddingTop: '3px' }}>
                   Recommendations
                 </Title>
               </CardTitle>
@@ -1397,9 +1398,9 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 
 <Gallery hasGutter minWidths={{ default: '360px' }}>
   <GalleryItem>
-    <Card id="utilization-card-1" component="div">
+    <Card id="utilization-card-4-card" component="div">
       <CardTitle>
-        <Title headingLevel="h2" size="lg">
+        <Title headingLevel="h4" size="lg">
           CPU Usage
         </Title>
       </CardTitle>
@@ -1478,10 +1479,10 @@ CardNestedDemo = () => {
           onChange={checked => onCheckClick(!isToggleOnRight)}
         />
       </div>
-      <Card id="nested-cards">
+      <Card id="nested-cards-card">
         <CardHeader>
           <CardTitle id="nested-cards-toggle-title">
-            <Title headingLevel="h2" size="lg">
+            <Title headingLevel="h4" size="lg">
               {' '}
               Hardware Monitor{' '}
             </Title>
@@ -2005,7 +2006,7 @@ const AccordionCard: React.FunctionComponent = () => {
     <Card>
       <CardHeader>
         <CardTitle>
-          <Title headingLevel="h2" size="lg">
+          <Title headingLevel="h4" size="lg">
             Hardware Monitor
           </Title>
         </CardTitle>
@@ -2531,12 +2532,12 @@ const TrendCard1: React.FunctionComponent = () => {
       <br />
       <Gallery hasGutter minWidths={{ default: '360px' }}>
         <GalleryItem>
-          <Card id="trend-card-1" component="div">
+          <Card id="trend-card-1-card" component="div">
             <CardHeader>
               <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
                 <FlexItem>
                   <CardTitle>
-                    <Title headingLevel="h1">1,050,765 IOPS</Title>
+                    <Title headingLevel="h4" size="lg">1,050,765 IOPS</Title>
                   </CardTitle>
                 </FlexItem>
                 <FlexItem>
@@ -2608,14 +2609,14 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContaine
 
 <Gallery hasGutter minWidths={{ default: '360px' }}>
   <GalleryItem>
-    <Card id="trend-card-2" component="div">
+    <Card id="trend-card-2-card" component="div">
       <CardHeader>
         <Flex alignItems={{ default: 'alignItemsCenter' }}>
           <FlexItem flex={{ default: 'flexNone' }}>
             <Flex direction={{ default: 'column' }} spaceItems={{ default: 'spaceItemsNone' }}>
               <FlexItem>
                 <CardTitle>
-                  <Title headingLevel="h1" size="2xl">
+                  <Title headingLevel="h4" size="2xl">
                     842 TB
                   </Title>
                 </CardTitle>
@@ -2729,7 +2730,7 @@ CardLogViewDemo = () => {
               </Select>
             </CardActions>
             <CardTitle>
-              <Title headingLevel="h2" size="xl" style={{ paddingTop: '3px' }}>
+              <Title headingLevel="h4" size="xl" style={{ paddingTop: '3px' }}>
                 Activity
               </Title>
             </CardTitle>
@@ -2848,7 +2849,7 @@ CardEventViewDemo = () => {
               </Select>
             </CardActions>
             <CardTitle>
-              <Title headingLevel="h2" size="xl" style={{ paddingTop: '3px' }}>
+              <Title headingLevel="h4" size="xl" style={{ paddingTop: '3px' }}>
                 Events
               </Title>
             </CardTitle>

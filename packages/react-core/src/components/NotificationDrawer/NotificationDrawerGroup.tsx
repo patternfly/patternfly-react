@@ -41,6 +41,8 @@ export interface NotificationDrawerGroupProps extends Omit<React.HTMLProps<HTMLD
     | 'left-end'
     | 'right-start'
     | 'right-end';
+  /** Sets the heading level to use for the group title. Default is h1. */
+  headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawerGroupProps> = ({
@@ -54,6 +56,7 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
   title,
   truncateTitle = 0,
   tooltipPosition,
+  headingLevel: HeadingLevel = 'h1',
   ...props
 }: NotificationDrawerGroupProps) => {
   const titleRef = React.useRef(null);
@@ -85,7 +88,7 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
       {...props}
       className={css(styles.notificationDrawerGroup, isExpanded && styles.modifiers.expanded, className)}
     >
-      <h1>
+      <HeadingLevel>
         <button
           className={css(styles.notificationDrawerGroupToggle)}
           aria-expanded={isExpanded}
@@ -112,7 +115,7 @@ export const NotificationDrawerGroup: React.FunctionComponent<NotificationDrawer
             <AngleRightIcon />
           </span>
         </button>
-      </h1>
+      </HeadingLevel>
       {children}
     </section>
   );

@@ -155,7 +155,7 @@ export const ToolbarCustomChipGroupContent: React.FunctionComponent = () => {
 
   return (
     <Toolbar
-      id="toolbar-with-filter"
+      id="toolbar-with-custom-chip-group"
       className="pf-m-toggle-group-container"
       collapseListedFiltersBreakpoint="xl"
       customChipGroupContent={customChipGroupContent}
