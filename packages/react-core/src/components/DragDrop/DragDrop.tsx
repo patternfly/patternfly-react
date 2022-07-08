@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-interface DraggableItemPosition {
+export interface DraggableItemPosition {
   /** Parent droppableId */
   droppableId: string;
   /** Index of item in parent Droppable */
