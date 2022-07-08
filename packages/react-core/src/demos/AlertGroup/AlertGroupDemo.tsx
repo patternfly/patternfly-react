@@ -545,4 +545,3 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
     </React.Fragment>
   );
 };
-BasicNotificationDrawer.displayName = 'BasicNotificationDrawer';
