@@ -9,12 +9,7 @@ propComponents:
     'DualListSelectorList',
     'DualListSelectorListItem',
     'DualListSelectorControlsWrapper',
-<<<<<<< HEAD
-    'DualListSelectorList',
-    'DualListSelectorListItem',
-=======
     'DualListSelectorControl',
->>>>>>> 64a9949c7 (Add composable structure info to dual list selector)
     'DualListSelectorTree',
     'DualListSelectorTreeItemData',
   ]
