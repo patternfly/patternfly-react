@@ -2,7 +2,6 @@ import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import cloneDeep from 'lodash/cloneDeep';
 import {
-  AnimatePropTypeInterface,
   CategoryPropType,
   D3Scale,
   DataGetterPropType,
@@ -36,11 +35,11 @@ export interface ChartThresholdProps extends VictoryLineProps {
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
    *
-   * @propType boolean | object
+   * @propType boolean
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
-  animate?: boolean | AnimatePropTypeInterface;
+  animate?: boolean;
   /**
    * The categories prop specifies how categorical data for a chart should be ordered.
    * This prop should be given as an array of string values, or an object with
@@ -339,8 +338,10 @@ export interface ChartThresholdProps extends VictoryLineProps {
    * Use the sortKey prop to indicate how data should be sorted. This prop
    * is given directly to the lodash sortBy function to be executed on the
    * final dataset.
+   *
+   * @propType string | string[] | number | number[]
    */
-  sortKey?: string | string[] | Function;
+  sortKey?: DataGetterPropType;
   /**
    * The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order.
    *
