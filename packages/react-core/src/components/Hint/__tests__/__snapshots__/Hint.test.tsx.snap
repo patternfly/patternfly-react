@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders hint with body, title, and footer 1`] = `
+exports[`matches hint snapshot 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-hint"

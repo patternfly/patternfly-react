@@ -62,7 +62,7 @@ test('renders with inherited element props spread to the component', () => {
   expect(screen.getByText('Test')).toHaveAccessibleName('labelling-id');
 });
 
-test('renders hint with body, title, and footer', () => {
+test('matches hint snapshot', () => {
   const { asFragment } = render(
     <Hint />
   );
