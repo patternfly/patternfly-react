@@ -4,38 +4,44 @@ import '@testing-library/jest-dom';
 
 import { HintFooter } from "../HintFooter";
 
-describe('HintFooter', () => {
-  it('renders without children', () => {
-    render(<HintFooter data-testid="HintFooter"></HintFooter>);
-    
-    expect(screen.getByTestId('HintFooter')).toBeVisible();
-  });
+test('renders without children', () => {
+  render(<HintFooter data-testid="HintFooter"></HintFooter>);
+  
+  expect(screen.getByTestId('HintFooter')).toBeVisible();
+});
 
-  it('renders children', () => {
-    render(<HintFooter>{<button>Test Me</button>}</HintFooter>);
+test('renders children', () => {
+  render(<HintFooter>{<button>Test Me</button>}</HintFooter>);
 
-    expect(screen.getByRole('button', { name: 'Test Me' })).toBeVisible();
-  });
+  expect(screen.getByRole('button', { name: 'Test Me' })).toBeVisible();
+});
 
-  it('renders with class pf-c-hint__footer', () => {
-    render(<HintFooter>Hint Body Test</HintFooter>);
+test('renders with class pf-c-hint__footer', () => {
+  render(<HintFooter>Hint Body Test</HintFooter>);
 
-    const body = screen.getByText('Hint Body Test');
+  const body = screen.getByText('Hint Body Test');
 
-    expect(body).toHaveClass('pf-c-hint__footer');
-  });
+  expect(body).toHaveClass('pf-c-hint__footer');
+});
 
-  it('renders with custom class names provided via prop', () => {
-    render(<HintFooter className="custom-classname">Hint Body Test</HintFooter>);
+test('renders with custom class names provided via prop', () => {
+  render(<HintFooter className="custom-classname">Hint Body Test</HintFooter>);
 
-    const body = screen.getByText('Hint Body Test');
+  const body = screen.getByText('Hint Body Test');
 
-    expect(body).toHaveClass('custom-classname');
-  });
+  expect(body).toHaveClass('custom-classname');
+});
 
-  it('matches snapshot', () => {
-    const { asFragment } = render(<HintFooter>{<button>Test</button>}</HintFooter>);
+test('renders with inherited element props spread to the component', () => {
+  render(
+    <HintFooter aria-label="labelling-id">Test</HintFooter>
+  );
 
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByText('Test')).toHaveAccessibleName('labelling-id');
+});
+
+test('matches snapshot', () => {
+  const { asFragment } = render(<HintFooter>{<button>Test</button>}</HintFooter>);
+
+  expect(asFragment()).toMatchSnapshot();
 });

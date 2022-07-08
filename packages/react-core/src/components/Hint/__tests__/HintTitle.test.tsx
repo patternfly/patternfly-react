@@ -4,38 +4,44 @@ import '@testing-library/jest-dom';
 
 import { HintTitle } from "../HintTitle";
 
-describe('HintTitle', () => {
-  it('renders without children', () => {
-    render(<HintTitle data-testid="HintTitle"></HintTitle>);
-    
-    expect(screen.getByTestId('HintTitle')).toBeVisible();
-  });
+test('renders without children', () => {
+  render(<HintTitle data-testid="HintTitle"></HintTitle>);
+  
+  expect(screen.getByTestId('HintTitle')).toBeVisible();
+});
 
-  it('renders children', () => {
-    render(<HintTitle>{<button>Test Me</button>}</HintTitle>);
+test('renders children', () => {
+  render(<HintTitle>{<button>Test Me</button>}</HintTitle>);
 
-    expect(screen.getByRole('button', { name: 'Test Me' })).toBeVisible();
-  });
+  expect(screen.getByRole('button', { name: 'Test Me' })).toBeVisible();
+});
 
-  it('renders with class pf-c-hint__title', () => {
-    render(<HintTitle>Hint Body Test</HintTitle>);
+test('renders with class pf-c-hint__title', () => {
+  render(<HintTitle>Hint Body Test</HintTitle>);
 
-    const body = screen.getByText('Hint Body Test');
+  const body = screen.getByText('Hint Body Test');
 
-    expect(body).toHaveClass('pf-c-hint__title');
-  });
+  expect(body).toHaveClass('pf-c-hint__title');
+});
 
-  it('renders with custom class names provided via prop', () => {
-    render(<HintTitle className="custom-classname">Hint Body Test</HintTitle>);
+test('renders with custom class names provided via prop', () => {
+  render(<HintTitle className="custom-classname">Hint Body Test</HintTitle>);
 
-    const body = screen.getByText('Hint Body Test');
+  const body = screen.getByText('Hint Body Test');
 
-    expect(body).toHaveClass('custom-classname');
-  });
+  expect(body).toHaveClass('custom-classname');
+});
 
-  it('matches snapshot', () => {
-    const { asFragment } = render(<HintTitle>{<button>Test</button>}</HintTitle>);
+test('renders with inherited element props spread to the component', () => {
+  render(
+    <HintTitle aria-label="labelling-id">Test</HintTitle>
+  );
 
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByText('Test')).toHaveAccessibleName('labelling-id');
+});
+
+test('matches snapshot', () => {
+  const { asFragment } = render(<HintTitle>{<button>Test</button>}</HintTitle>);
+
+  expect(asFragment()).toMatchSnapshot();
 });
