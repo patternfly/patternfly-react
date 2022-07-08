@@ -28,15 +28,13 @@ export const ToolbarContext = React.createContext<ToolbarContextProps>({
 });
 
 interface ToolbarContentContextProps {
-  expandableContentRef: RefObject<HTMLDivElement>;
-  expandableContentId: string;
   chipContainerRef: RefObject<any>;
+  contentRef: RefObject<any>;
 }
 
 export const ToolbarContentContext = React.createContext<ToolbarContentContextProps>({
-  expandableContentRef: null,
-  expandableContentId: '',
-  chipContainerRef: null
+  chipContainerRef: null,
+  contentRef: null
 });
 
 export const globalBreakpoints = {

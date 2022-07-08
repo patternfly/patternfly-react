@@ -39,6 +39,7 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
   static displayName = 'ToolbarContent';
   private expandableContentRef = React.createRef<HTMLDivElement>();
   private chipContainerRef = React.createRef<HTMLDivElement>();
+  private contentRef = React.createRef<HTMLDivElement>();
   private static currentId = 0;
 
   static defaultProps: ToolbarContentProps = {
@@ -70,13 +71,11 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
               formatBreakpointMods(visibility, styles, '', getBreakpoint(width)),
               className
             )}
+            ref={this.contentRef}
             {...props}
           >
             <ToolbarContext.Consumer>
               {({
-                clearAllFilters: clearAllFiltersContext,
-                clearFiltersButtonText: clearFiltersButtonContext,
-                showClearFiltersButton: showClearFiltersButtonContext,
                 toolbarId: toolbarIdContext
               }) => {
                 const expandableContentId = `${
@@ -85,9 +84,8 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
                 return (
                   <ToolbarContentContext.Provider
                     value={{
-                      expandableContentRef: this.expandableContentRef,
-                      expandableContentId,
-                      chipContainerRef: this.chipContainerRef
+                      chipContainerRef: this.chipContainerRef,
+                      contentRef: this.contentRef
                     }}
                   >
                     <div
@@ -103,15 +101,6 @@ export class ToolbarContent extends React.Component<ToolbarContentProps> {
                     >
                       {children}
                     </div>
-                    <ToolbarExpandableContent
-                      id={expandableContentId}
-                      isExpanded={isExpanded}
-                      expandableContentRef={this.expandableContentRef}
-                      chipContainerRef={this.chipContainerRef}
-                      clearAllFilters={clearAllFilters || clearAllFiltersContext}
-                      showClearFiltersButton={showClearFiltersButton || showClearFiltersButtonContext}
-                      clearFiltersButtonText={clearFiltersButtonText || clearFiltersButtonContext}
-                    />
                   </ToolbarContentContext.Provider>
                 );
               }}

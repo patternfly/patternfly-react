@@ -10,6 +10,8 @@ import { ToolbarContext } from './ToolbarUtils';
 import { PickOptional } from '../../helpers/typeUtils';
 
 export interface ToolbarExpandableContentProps extends React.HTMLProps<HTMLDivElement> {
+  /** Content displayed in the expandable content */
+  children?: React.ReactNode;
   /** Classes added to the root element of the data toolbar expandable content */
   className?: string;
   /** Flag indicating the expandable content is expanded */
@@ -37,6 +39,7 @@ export class ToolbarExpandableContent extends React.Component<ToolbarExpandableC
 
   render() {
     const {
+      children,
       className,
       expandableContentRef,
       chipContainerRef,
@@ -54,8 +57,8 @@ export class ToolbarExpandableContent extends React.Component<ToolbarExpandableC
     };
 
     return (
-      <div className={css(styles.toolbarExpandableContent, className)} ref={expandableContentRef} {...props}>
-        <ToolbarGroup />
+      <div className={css(styles.toolbarExpandableContent, styles.modifiers.expanded, className)} ref={expandableContentRef} {...props}>
+        <ToolbarGroup>{children}</ToolbarGroup>
         {numberOfFilters > 0 && (
           <ToolbarGroup className={styles.modifiers.chipContainer}>
             <ToolbarGroup ref={chipContainerRef} />
