@@ -5,6 +5,7 @@ import * as React from 'react';
 import { DualListSelectorListContext } from './DualListSelectorContext';
 
 export interface DualListSelectorListProps extends React.HTMLProps<HTMLUListElement> {
+  /** Content rendered inside the dual list selector list */
   children?: React.ReactNode;
 }
 
@@ -31,13 +32,18 @@ export const DualListSelectorList: React.FunctionComponent<DualListSelectorListP
     onOptionSelect(e, index, id);
   };
 
+  const hasOptions = () =>
+    options.length !== 0 || (children !== undefined && (children as React.ReactNode[]).length !== 0);
+
   return (
     <ul
       className={css(styles.dualListSelectorList)}
-      role={isTree ? 'tree' : 'listbox'}
-      aria-multiselectable="true"
-      aria-labelledby={ariaLabelledBy}
-      aria-activedescendant={focusedOption}
+      {...(hasOptions() && {
+        role: isTree ? 'tree' : 'listbox',
+        'aria-multiselectable': true,
+        'aria-labelledby': ariaLabelledBy,
+        'aria-activedescendant': focusedOption
+      })}
       aria-disabled={isDisabled ? 'true' : undefined}
       {...props}
     >

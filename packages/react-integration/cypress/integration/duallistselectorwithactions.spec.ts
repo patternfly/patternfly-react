@@ -51,11 +51,7 @@ describe('Dual List Selector With Actions Demo Test', () => {
       'aria-label',
       'Demo chosen options search'
     );
-    cy.get('.pf-m-chosen .pf-c-dual-list-selector__list').should(
-      'have.attr',
-      'aria-labelledby',
-      'dual-list-selector-demo-chosen-pane-status'
-    );
+    cy.get('.pf-m-chosen .pf-c-dual-list-selector__list').should('not.have.attr', 'aria-labelledby');
   });
 
   it('Verify selecting options', () => {

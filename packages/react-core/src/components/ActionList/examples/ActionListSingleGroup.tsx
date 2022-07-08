@@ -47,12 +47,12 @@ export const ActionListSingleGroup: React.FunctionComponent = () => {
     <React.Fragment>
       <ActionList>
         <ActionListItem>
-          <Button variant="primary" id="next-button">
+          <Button variant="primary" id="single-group-next-button">
             Next
           </Button>
         </ActionListItem>
         <ActionListItem>
-          <Button variant="secondary" id="back-button">
+          <Button variant="secondary" id="single-group-back-button">
             Back
           </Button>
         </ActionListItem>
@@ -61,12 +61,12 @@ export const ActionListSingleGroup: React.FunctionComponent = () => {
       With kebab
       <ActionList>
         <ActionListItem>
-          <Button variant="primary" id="next-button2">
+          <Button variant="primary" id="single-group-next-button2">
             Next
           </Button>
         </ActionListItem>
         <ActionListItem>
-          <Button variant="secondary" id="back-button2">
+          <Button variant="secondary" id="single-group-back-button2">
             Back
           </Button>
         </ActionListItem>

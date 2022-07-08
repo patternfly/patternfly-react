@@ -17,7 +17,7 @@ export const InputGroupWithSiblings: React.FunctionComponent = () => (
         Button
       </Button>
       <Button variant="control">Button</Button>
-      <TextArea name="textarea3" id="textarea3" aria-label="textarea with 3 buttons" />
+      <TextArea name="textarea2" id="textarea2" aria-label="textarea with 3 buttons" />
       <Button variant="control">Button</Button>
     </InputGroup>
     <br />
@@ -25,7 +25,12 @@ export const InputGroupWithSiblings: React.FunctionComponent = () => (
       <InputGroupText>
         <DollarSignIcon />
       </InputGroupText>
-      <TextInput id="textInput5" type="number" aria-label="Dollar amount input example" />
+      <TextInput
+        id="textInput-with-siblings"
+        name="textInput-with-siblings"
+        type="number"
+        aria-label="Dollar amount input example"
+      />
       <InputGroupText>.00</InputGroupText>
     </InputGroup>
   </React.Fragment>

@@ -29,7 +29,8 @@ export class ContextSelectorMenuList extends React.Component<ContextSelectorMenu
     return React.Children.map(this.props.children, (child, index) =>
       React.cloneElement(child as React.ReactElement<any>, {
         sendRef: this.sendRef,
-        index
+        index,
+        role: 'menuitem'
       })
     );
   }

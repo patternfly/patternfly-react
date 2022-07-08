@@ -5,7 +5,12 @@ import { Button, InputGroup, TextInput, Popover, PopoverPosition } from '@patter
 export const InputGroupWithPopover: React.FunctionComponent = () => (
   <React.Fragment>
     <InputGroup>
-      <TextInput name="textInput10" id="textInput10" type="text" aria-label="input example with popover" />
+      <TextInput
+        name="textInput-with-popover-1"
+        id="textInput-with-popover-1"
+        type="text"
+        aria-label="first input example with popover"
+      />
       <Popover
         aria-label="popover example"
         position={PopoverPosition.top}
@@ -18,7 +23,12 @@ export const InputGroupWithPopover: React.FunctionComponent = () => (
     </InputGroup>
     <br />
     <InputGroup>
-      <TextInput name="textInput12" id="textInput12" type="text" aria-label="input example with popover" />
+      <TextInput
+        name="textInput-with-popover-2"
+        id="textInput-with-popover-2"
+        type="text"
+        aria-label="second input example with popover"
+      />
       <Popover
         aria-label="popover example"
         position={PopoverPosition.top}

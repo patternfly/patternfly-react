@@ -5,7 +5,7 @@ import { InputGroup, InputGroupText, InputGroupTextVariant, TextInput, Validated
 export const InputGroupBasic: React.FunctionComponent = () => (
   <React.Fragment>
     <InputGroup>
-      <TextInput id="textInput6" type="email" aria-label="email input field" />
+      <TextInput id="textInput-basic-1" type="email" aria-label="email input field" />
       <InputGroupText id="email-example">@example.com</InputGroupText>
     </InputGroup>
     <br />
@@ -15,14 +15,14 @@ export const InputGroupBasic: React.FunctionComponent = () => (
       </InputGroupText>
       <TextInput
         validated={ValidatedOptions.error}
-        id="textInput7"
+        id="textInput-basic-2"
         type="email"
         aria-label="Error state username example"
       />
     </InputGroup>
     <br />
     <InputGroup>
-      <TextInput name="textIndex12" id="textInput12" type="text" aria-label="percentage" />
+      <TextInput name="textInput-basic-3" id="textInput-basic-3" type="text" aria-label="percentage" />
       <InputGroupText id="plain-example" variant={InputGroupTextVariant.plain}>
         %
       </InputGroupText>
