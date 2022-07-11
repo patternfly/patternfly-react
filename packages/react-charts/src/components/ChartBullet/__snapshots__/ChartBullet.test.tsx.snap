@@ -42,7 +42,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="axis-tickLabels-0"
+            id="chart-axis-tickLabels-1657567306911uma9gzqs55k"
             x="50"
             y="111.97"
           >
@@ -127,7 +127,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
           <text
             direction="inherit"
             dx="0"
-            id="axis-tickLabels-0"
+            id="chart-axis-tickLabels-1657567307055mqe7gz74p7n"
             x="50"
             y="111.97"
           >
@@ -224,7 +224,7 @@ exports[`renders component data 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="axis-tickLabels-0"
+            id="chart-axis-tickLabels-1657567307148esbje5181ic"
             x="50"
             y="111.97"
           >
@@ -255,7 +255,7 @@ exports[`renders component data 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="axis-tickLabels-1"
+            id="chart-axis-tickLabels-16575673071958goejmsq9bg"
             x="400"
             y="111.97"
           >
@@ -286,7 +286,7 @@ exports[`renders component data 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="axis-tickLabels-2"
+            id="chart-axis-tickLabels-1657567307198xtavp03vtco"
             x="137.5"
             y="111.97"
           >
@@ -317,7 +317,7 @@ exports[`renders component data 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="axis-tickLabels-3"
+            id="chart-axis-tickLabels-1657567307232sp9i5gebswj"
             x="225"
             y="111.97"
           >
@@ -348,7 +348,7 @@ exports[`renders component data 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="axis-tickLabels-4"
+            id="chart-axis-tickLabels-1657567307234oc5j7natgpg"
             x="312.5"
             y="111.97"
           >

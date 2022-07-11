@@ -50,7 +50,7 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContaine
       />
     </ChartGroup>
   </div>
-  <ChartContainer>
+  <ChartContainer title="CPU utilization">
     <ChartLabel text="CPU utilization" dy={15}/>
   </ChartContainer>
 </div>
@@ -86,7 +86,7 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, Cha
       />
     </ChartGroup>
   </div>
-  <ChartContainer>
+  <ChartContainer title="CPU utilization">
     <ChartLabel text="CPU utilization" dy={15}/>
   </ChartContainer>
 </div>

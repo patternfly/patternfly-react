@@ -749,7 +749,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 </div>
 ```
 
-### Small with right aligned subtitle
+### Small with thresholds and right aligned subtitle
 ```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';

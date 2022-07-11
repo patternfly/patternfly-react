@@ -9,6 +9,7 @@ exports[`renders component text 1`] = `
   <text
     direction="inherit"
     dx="0"
+    id="chart-legend-label-1657567310361f99ojtbci5m"
     x="0"
     y="4.97"
   >

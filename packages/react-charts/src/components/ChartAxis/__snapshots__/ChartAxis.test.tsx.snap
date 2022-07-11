@@ -39,7 +39,7 @@ exports[`ChartAxis 1`] = `
         <text
           direction="inherit"
           dx="0"
-          id="axis-tickLabels-0"
+          id="chart-axis-tickLabels-16575673051903j45w87qdl7"
           x="50"
           y="276.97"
         >
@@ -70,7 +70,7 @@ exports[`ChartAxis 1`] = `
         <text
           direction="inherit"
           dx="0"
-          id="axis-tickLabels-1"
+          id="chart-axis-tickLabels-16575673051982gnohpxjjws"
           x="120"
           y="276.97"
         >
@@ -101,7 +101,7 @@ exports[`ChartAxis 1`] = `
         <text
           direction="inherit"
           dx="0"
-          id="axis-tickLabels-2"
+          id="chart-axis-tickLabels-1657567305201avi34hn6335"
           x="190"
           y="276.97"
         >
@@ -132,7 +132,7 @@ exports[`ChartAxis 1`] = `
         <text
           direction="inherit"
           dx="0"
-          id="axis-tickLabels-3"
+          id="chart-axis-tickLabels-16575673052719gxhz0cra5g"
           x="260"
           y="276.97"
         >
@@ -163,7 +163,7 @@ exports[`ChartAxis 1`] = `
         <text
           direction="inherit"
           dx="0"
-          id="axis-tickLabels-4"
+          id="chart-axis-tickLabels-1657567305276nzlbnz6m21"
           x="330"
           y="276.97"
         >
@@ -194,7 +194,7 @@ exports[`ChartAxis 1`] = `
         <text
           direction="inherit"
           dx="0"
-          id="axis-tickLabels-5"
+          id="chart-axis-tickLabels-1657567305279z0s74w17vxi"
           x="400"
           y="276.97"
         >
@@ -263,7 +263,7 @@ exports[`ChartAxis 2`] = `
         <text
           direction="inherit"
           dx="0"
-          id="axis-tickLabels-0"
+          id="chart-axis-tickLabels-16575673054261gv7qwv0avk"
           x="50"
           y="276.97"
         >
@@ -294,7 +294,7 @@ exports[`ChartAxis 2`] = `
         <text
           direction="inherit"
           dx="0"
-          id="axis-tickLabels-1"
+          id="chart-axis-tickLabels-16575673054301rq6jva18xn"
           x="120"
           y="276.97"
         >
@@ -325,7 +325,7 @@ exports[`ChartAxis 2`] = `
         <text
           direction="inherit"
           dx="0"
-          id="axis-tickLabels-2"
+          id="chart-axis-tickLabels-16575673054794r0d78iezqi"
           x="190"
           y="276.97"
         >
@@ -356,7 +356,7 @@ exports[`ChartAxis 2`] = `
         <text
           direction="inherit"
           dx="0"
-          id="axis-tickLabels-3"
+          id="chart-axis-tickLabels-1657567305481vhpnyx1val"
           x="260"
           y="276.97"
         >
@@ -387,7 +387,7 @@ exports[`ChartAxis 2`] = `
         <text
           direction="inherit"
           dx="0"
-          id="axis-tickLabels-4"
+          id="chart-axis-tickLabels-1657567305484ph2xs6mlel"
           x="330"
           y="276.97"
         >
@@ -418,7 +418,7 @@ exports[`ChartAxis 2`] = `
         <text
           direction="inherit"
           dx="0"
-          id="axis-tickLabels-5"
+          id="chart-axis-tickLabels-1657567305486ybarlg6hw7o"
           x="400"
           y="276.97"
         >
@@ -588,7 +588,7 @@ exports[`renders component data 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="chart-axis-1-tickLabels-0"
+            id="chart-axis-tickLabels-1657567305644ehf4lt7zpsn"
             x="128.33333333333331"
             y="176.97"
           >
@@ -619,7 +619,7 @@ exports[`renders component data 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="chart-axis-1-tickLabels-1"
+            id="chart-axis-tickLabels-16575673056463etifr2tfxl"
             x="176.66666666666666"
             y="176.97"
           >
@@ -650,7 +650,7 @@ exports[`renders component data 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="chart-axis-1-tickLabels-2"
+            id="chart-axis-tickLabels-1657567305647sg4squwxb9r"
             x="224.99999999999997"
             y="176.97"
           >
@@ -695,7 +695,7 @@ exports[`renders component data 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="chart-axis-2-tickLabels-0"
+            id="chart-axis-tickLabels-16575673056788kyyf2a25k8"
             x="35"
             y="142.47"
           >
@@ -726,7 +726,7 @@ exports[`renders component data 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="chart-axis-2-tickLabels-1"
+            id="chart-axis-tickLabels-1657567305682xqdyxahqndj"
             x="35"
             y="104.97"
           >
@@ -757,7 +757,7 @@ exports[`renders component data 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="chart-axis-2-tickLabels-2"
+            id="chart-axis-tickLabels-1657567305698qq1eq3l4by"
             x="35"
             y="67.47"
           >

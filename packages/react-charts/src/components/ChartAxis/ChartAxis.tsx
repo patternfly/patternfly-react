@@ -12,12 +12,14 @@ import {
   RangePropType,
   ScalePropType,
   StringOrNumberOrList,
-  LabelProps
+  LabelProps,
+  VictoryLabel
 } from 'victory-core';
 import { VictoryAxis, VictoryAxisProps, VictoryAxisTTargetType } from 'victory-axis';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getAxisTheme, getTheme } from '../ChartUtils';
+import { getUniqueId } from '@patternfly/react-core';
 
 /**
  * ChartAxis renders a single axis which can be used on its own or composed with Chart.
@@ -462,7 +464,14 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   });
 
   // Note: containerComponent is required for theme
-  return <VictoryAxis containerComponent={container} theme={showGrid ? getAxisTheme(themeColor) : theme} {...rest} />;
+  return (
+    <VictoryAxis
+      containerComponent={container}
+      theme={showGrid ? getAxisTheme(themeColor) : theme}
+      tickLabelComponent={<VictoryLabel id={() => getUniqueId('chart-axis-tickLabels')} />}
+      {...rest}
+    />
+  );
 };
 ChartAxis.displayName = 'ChartAxis';
 
