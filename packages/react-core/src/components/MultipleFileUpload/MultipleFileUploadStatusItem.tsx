@@ -6,9 +6,9 @@ import { Button } from '../Button';
 import FileIcon from '@patternfly/react-icons/dist/esm/icons/file-icon';
 import TimesCircleIcon from '@patternfly/react-icons/dist/esm/icons/times-circle-icon';
 
-/** Renders a progress bar for each individual file that has been attempted to be uploaded,
- * including the file name, file type, file size, and upload status. Each status item also
- * has a "remove" button to remove individual items from the status list.
+/** Automatically reads an uploaded file to render a visual representation of it, including
+ * its name, size, and read status. This sub-component also allows custom reading of files
+ * via various callbacks which will override the automatic reading behavior.
  */
 
 export interface MultipleFileUploadStatusItemProps extends React.HTMLProps<HTMLLIElement> {
