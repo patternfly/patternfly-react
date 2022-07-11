@@ -143,7 +143,7 @@ const LogViewerBase: React.FunctionComponent<LogViewerProps> = memo(
 
     /* Parse data every time it changes */
     useEffect(() => {
-      setParsedData(Array.isArray(data) ? data : parseConsoleOutput(data));
+      setParsedData(parseConsoleOutput(data));
     }, [data]);
 
     useEffect(() => {
