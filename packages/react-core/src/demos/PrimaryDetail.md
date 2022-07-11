@@ -1057,14 +1057,6 @@ class PrimaryDetailCardView extends React.Component {
       });
     };
 
-    this.deleteItem = item => _event => {
-      const filter = getter => val => getter(val) !== item.id;
-      this.setState({
-        res: this.state.res.filter(filter(({ id }) => id)),
-        selectedItems: this.state.selectedItems.filter(filter(id => id))
-      });
-    };
-
     this.checkAllSelected = (selected, total) => {
       if (selected && selected < total) {
         return null;
@@ -1266,9 +1258,11 @@ class PrimaryDetailCardView extends React.Component {
 
     this.deleteItem = item => _event => {
       const filter = getter => val => getter(val) !== item.id;
+      const filteredCards = this.state.res.filter(filter(({ id }) => id));
       this.setState({
-        res: this.state.res.filter(filter(({ id }) => id)),
-        selectedItems: this.state.selectedItems.filter(filter(id => id))
+        res: filteredCards,
+        selectedItems: this.state.selectedItems.filter(filter(id => id)),
+        totalItemCount: this.state.totalItemCount - 1
       });
     };
   }
@@ -1340,7 +1334,7 @@ class PrimaryDetailCardView extends React.Component {
         Select none (0 items)
       </DropdownItem>,
       <DropdownItem key="item-2" onClick={this.selectPage}>
-        Select page ({this.state.perPage} items)
+        Select page ({this.state.res.length} items)
       </DropdownItem>,
       <DropdownItem key="item-3" onClick={this.selectAll}>
         Select all ({this.state.totalItemCount} items)
@@ -1364,7 +1358,9 @@ class PrimaryDetailCardView extends React.Component {
             ]}
             onToggle={this.onSplitButtonToggle}
           >
-            {numSelected !== 0 && <React.Fragment>{numSelected} selected</React.Fragment>}
+            {numSelected !== 0 && (
+              <React.Fragment>{allSelected ? this.state.totalItemCount : numSelected} selected</React.Fragment>
+            )}
           </DropdownToggle>
         }
         isOpen={splitButtonDropdownIsOpen}
