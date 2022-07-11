@@ -57,6 +57,10 @@ export interface ChartAxisProps extends VictoryAxisProps {
    */
   axisLabelComponent?: React.ReactElement<any>;
   /**
+   * The id prop specifies a HTML ID that will be applied to the rendered text element in the label axis.
+   */
+  axisLabelId?: StringOrNumberOrCallback;
+  /**
    * The axisValue prop may be used instead of axisAngle to position the dependent axis. Ths prop is useful when
    * dependent axes should line up with values on the independent axis.
    */
@@ -188,7 +192,6 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * pixels will depend on the size of the container the chart is rendered into.
    */
   height?: number;
-  axisLabelId?: StringOrNumberOrCallback;
   /**
    * If true, this value will flip the domain of a given axis.
    */

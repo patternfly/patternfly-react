@@ -103,6 +103,9 @@ export interface ChartLabelProps extends VictoryLabelProps {
    * Event handlers are currently only called with their corresponding events.
    */
   events?: React.DOMAttributes<any>;
+  /**
+   * The id prop specifies a HTML ID that will be applied to the rendered text element.
+   */
   id?: StringOrNumberOrCallback;
   /**
    * The index prop represents the index of the datum in the data array.

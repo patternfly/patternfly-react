@@ -26,7 +26,7 @@ exports[`renders component text 1`] = `
   <text
     direction="inherit"
     dx="0"
-    id="chart-legend-label-1657570012648lw36vli8e1"
+    id="test3"
     x="NaN"
     y="4.97"
   >

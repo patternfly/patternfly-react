@@ -22,6 +22,7 @@ test('renders component text', () => {
       legendData={legendData}
       text={['1, 2, 3, 4']}
       legendLabelComponent={<ChartLabel id="test2" />}
+      valueLabelId="test3"
     />
   );
   expect(asFragment()).toMatchSnapshot();

@@ -202,6 +202,10 @@ export interface ChartLegendLabelProps extends VictoryLabelProps {
    */
   transform?: string | {} | (() => string | {});
   /**
+   * The id prop specifies a HTML ID that will be applied to the rendered text element of the value label.
+   */
+  valueLabelId?: StringOrNumberOrCallback;
+  /**
    * The verticalAnchor prop defines how the text is vertically positioned relative to the given `x` and `y`
    * coordinates. Options are "start", "middle" and "end".
    *
@@ -236,6 +240,7 @@ export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendLabelPr
   style,
   text,
   textAnchor = 'end',
+  valueLabelId,
   x,
   y,
 
@@ -269,7 +274,17 @@ export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendLabelPr
 
   const getValueLabelComponent = () => {
     const _x = x + Helpers.evaluateProp(dx);
-    return <ChartLabel style={getStyle(style)} text={text} textAnchor={textAnchor} x={_x} y={y} {...rest} />;
+    return (
+      <ChartLabel
+        style={getStyle(style)}
+        text={text}
+        textAnchor={textAnchor}
+        x={_x}
+        y={y}
+        {...rest}
+        {...(valueLabelId && { id: valueLabelId })}
+      />
+    );
   };
 
   const legendLabel = getLegendLabelComponent();
