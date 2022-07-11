@@ -103,6 +103,7 @@ export interface ChartLabelProps extends VictoryLabelProps {
    * Event handlers are currently only called with their corresponding events.
    */
   events?: React.DOMAttributes<any>;
+  id?: StringOrNumberOrCallback;
   /**
    * The index prop represents the index of the datum in the data array.
    *
@@ -224,6 +225,7 @@ export interface ChartLabelProps extends VictoryLabelProps {
 export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
   style,
   textAnchor,
+  id = () => getUniqueId('chart-legend-label'),
   ...rest
 }: ChartLabelProps) => {
   const applyDefaultStyle = (customStyle: React.CSSProperties) =>
@@ -241,14 +243,7 @@ export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
     );
   const newStyle = Array.isArray(style) ? style.map(applyDefaultStyle) : applyDefaultStyle(style);
 
-  return (
-    <VictoryLabel
-      style={newStyle as any}
-      textAnchor={textAnchor}
-      {...rest}
-      id={() => getUniqueId('chart-legend-label')}
-    />
-  );
+  return <VictoryLabel style={newStyle as any} textAnchor={textAnchor} {...rest} id={id} />;
 };
 ChartLabel.displayName = 'ChartLabel';
 

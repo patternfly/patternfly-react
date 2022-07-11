@@ -52,7 +52,7 @@ exports[`allows tooltip via container component 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="chart-axis-tickLabels-1657567306070m9r7pzvwt0f"
+            id="test"
             x="50"
             y="226.97"
           >
@@ -83,7 +83,7 @@ exports[`allows tooltip via container component 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="chart-axis-tickLabels-1657567306076obuy4si2898"
+            id="test"
             x="166.66666666666666"
             y="226.97"
           >
@@ -114,7 +114,7 @@ exports[`allows tooltip via container component 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="chart-axis-tickLabels-16575673062002am4dxzmzes"
+            id="test"
             x="283.3333333333333"
             y="226.97"
           >
@@ -145,7 +145,7 @@ exports[`allows tooltip via container component 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="chart-axis-tickLabels-1657567306206z361gmqrqlo"
+            id="test"
             x="400"
             y="226.97"
           >
@@ -200,7 +200,7 @@ exports[`allows tooltip via container component 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="chart-axis-tickLabels-165756730625143we6i6yt2n"
+            id="test2"
             x="35"
             y="174.97"
           >
@@ -241,7 +241,7 @@ exports[`allows tooltip via container component 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="chart-axis-tickLabels-1657567306263wpnymx69q3j"
+            id="test2"
             x="35"
             y="129.97"
           >
@@ -282,7 +282,7 @@ exports[`allows tooltip via container component 1`] = `
           <text
             direction="inherit"
             dx="0"
-            id="chart-axis-tickLabels-1657567306266azuarce1ish"
+            id="test2"
             x="35"
             y="84.97"
           >
@@ -460,7 +460,7 @@ exports[`allows tooltip via container component 1`] = `
         <text
           direction="inherit"
           dx="0"
-          id="chart-legend-label-1657567306361l1kt0h3pk"
+          id="chart-legend-3-labels-0"
           x="114.8"
           y="250.97"
         >
@@ -477,7 +477,7 @@ exports[`allows tooltip via container component 1`] = `
         <text
           direction="inherit"
           dx="0"
-          id="chart-legend-label-1657567306362dy176i6bfrt"
+          id="chart-legend-3-labels-1"
           x="183.58125"
           y="250.97"
         >
@@ -494,7 +494,7 @@ exports[`allows tooltip via container component 1`] = `
         <text
           direction="inherit"
           dx="0"
-          id="chart-legend-label-1657567306363ermq83yudpv"
+          id="chart-legend-3-labels-2"
           x="256.015625"
           y="250.97"
         >
@@ -511,7 +511,7 @@ exports[`allows tooltip via container component 1`] = `
         <text
           direction="inherit"
           dx="0"
-          id="chart-legend-label-1657567306364h8r0983n20t"
+          id="chart-legend-3-labels-3"
           x="327.57500000000005"
           y="250.97"
         >

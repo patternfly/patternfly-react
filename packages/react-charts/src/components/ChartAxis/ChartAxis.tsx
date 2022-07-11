@@ -13,7 +13,8 @@ import {
   ScalePropType,
   StringOrNumberOrList,
   LabelProps,
-  VictoryLabel
+  VictoryLabel,
+  StringOrNumberOrCallback
 } from 'victory-core';
 import { VictoryAxis, VictoryAxisProps, VictoryAxisTTargetType } from 'victory-axis';
 import { ChartContainer } from '../ChartContainer';
@@ -187,6 +188,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * pixels will depend on the size of the container the chart is rendered into.
    */
   height?: number;
+  axisLabelId?: StringOrNumberOrCallback;
   /**
    * If true, this value will flip the domain of a given axis.
    */
@@ -449,6 +451,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
 export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   containerComponent = <ChartContainer />,
   showGrid = false,
+  axisLabelId = () => getUniqueId('chart-axis-tickLabels'),
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
@@ -468,7 +471,7 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
     <VictoryAxis
       containerComponent={container}
       theme={showGrid ? getAxisTheme(themeColor) : theme}
-      tickLabelComponent={<VictoryLabel id={() => getUniqueId('chart-axis-tickLabels')} />}
+      tickLabelComponent={<VictoryLabel id={axisLabelId} />}
       {...rest}
     />
   );

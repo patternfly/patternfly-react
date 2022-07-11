@@ -46,7 +46,7 @@ exports[`ChartPoint 1`] = `
       <text
         direction="inherit"
         dx="0"
-        id="chart-legend-label-1657567309744anu9zomm5bp"
+        id="legend-labels-0"
         x="30.8"
         y="18.97"
       >
@@ -63,7 +63,7 @@ exports[`ChartPoint 1`] = `
       <text
         direction="inherit"
         dx="0"
-        id="chart-legend-label-1657567309747as9bng1166b"
+        id="legend-labels-1"
         x="116.73125"
         y="18.97"
       >
@@ -138,7 +138,7 @@ exports[`ChartPoint 2`] = `
       <text
         direction="inherit"
         dx="0"
-        id="chart-legend-label-1657567309777hrf6k009nwt"
+        id="legend-labels-0"
         x="30.8"
         y="18.97"
       >
@@ -155,7 +155,7 @@ exports[`ChartPoint 2`] = `
       <text
         direction="inherit"
         dx="0"
-        id="chart-legend-label-1657567309778d248o52tj3i"
+        id="legend-labels-1"
         x="116.73125"
         y="18.97"
       >
@@ -240,7 +240,7 @@ exports[`renders component data 1`] = `
       <text
         direction="inherit"
         dx="0"
-        id="chart-legend-label-1657567309825x5dhjolz0af"
+        id="legend-title-all"
         x="2"
         y="13.969999999999999"
       >
@@ -257,7 +257,7 @@ exports[`renders component data 1`] = `
       <text
         direction="inherit"
         dx="0"
-        id="chart-legend-label-1657567309826cclso1omp3a"
+        id="legend-labels-0"
         x="30.8"
         y="39.875"
       >
@@ -274,7 +274,7 @@ exports[`renders component data 1`] = `
       <text
         direction="inherit"
         dx="0"
-        id="chart-legend-label-16575673098283xz8uyq051n"
+        id="legend-labels-1"
         x="99.58125"
         y="39.875"
       >

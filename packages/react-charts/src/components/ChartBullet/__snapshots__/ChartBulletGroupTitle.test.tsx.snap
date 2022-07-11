@@ -70,7 +70,7 @@ exports[`renders component data 1`] = `
       <text
         direction="inherit"
         dx="0"
-        id="chart-legend-label-1657567310592ssa8n4bme1e"
+        id="test2"
         x="225"
         y="48.675000000000004"
       >

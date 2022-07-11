@@ -9,7 +9,7 @@ exports[`renders component text 1`] = `
   <text
     direction="inherit"
     dx="0"
-    id="chart-legend-label-1657567309962czxp7sn92xa"
+    id="test2"
     x="0"
     y="4.97"
   >
@@ -26,7 +26,7 @@ exports[`renders component text 1`] = `
   <text
     direction="inherit"
     dx="0"
-    id="chart-legend-label-16575673100112z6ciqonm8v"
+    id="chart-legend-label-1657570012648lw36vli8e1"
     x="NaN"
     y="4.97"
   >

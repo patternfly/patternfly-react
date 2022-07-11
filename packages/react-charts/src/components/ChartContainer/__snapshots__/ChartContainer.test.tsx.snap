@@ -91,7 +91,7 @@ exports[`renders container via ChartLegend 1`] = `
         <text
           direction="inherit"
           dx="0"
-          id="chart-legend-label-16575673098257x0ymdesatx"
+          id="legend-title-all"
           x="2"
           y="13.969999999999999"
         >
@@ -108,7 +108,7 @@ exports[`renders container via ChartLegend 1`] = `
         <text
           direction="inherit"
           dx="0"
-          id="chart-legend-label-1657567309827vyreni56m2p"
+          id="legend-labels-0"
           x="30.8"
           y="39.875"
         >
@@ -125,7 +125,7 @@ exports[`renders container via ChartLegend 1`] = `
         <text
           direction="inherit"
           dx="0"
-          id="chart-legend-label-165756730982835uk6d0zrd3"
+          id="legend-labels-1"
           x="99.58125"
           y="39.875"
         >

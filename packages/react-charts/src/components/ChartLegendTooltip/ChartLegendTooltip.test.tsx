@@ -52,8 +52,8 @@ test('allows tooltip via container component', () => {
       themeColor={ChartThemeColor.green}
       width={450}
     >
-      <ChartAxis tickValues={[2, 3, 4]} />
-      <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+      <ChartAxis tickValues={[2, 3, 4]} axisLabelId="test" />
+      <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} axisLabelId="test2" />
       <ChartGroup>
         <ChartLine
           data={[

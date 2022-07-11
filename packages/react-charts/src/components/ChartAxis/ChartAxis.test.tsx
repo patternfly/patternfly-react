@@ -7,7 +7,7 @@ import { ChartLine } from '../ChartLine';
 
 Object.values([true, false]).forEach(() => {
   test('ChartAxis', () => {
-    const { asFragment } = render(<ChartAxis />);
+    const { asFragment } = render(<ChartAxis axisLabelId="test" />);
     expect(asFragment()).toMatchSnapshot();
   });
 });
@@ -49,8 +49,8 @@ test('renders component data', () => {
           ]}
         />
       </ChartGroup>
-      <ChartAxis tickValues={[2, 3, 4]} />
-      <ChartAxis dependentAxis tickValues={[2, 5, 8]} />
+      <ChartAxis tickValues={[2, 3, 4]} axisLabelId="test" />
+      <ChartAxis dependentAxis tickValues={[2, 5, 8]} axisLabelId="test2" />
     </Chart>
   );
   expect(asFragment()).toMatchSnapshot();
