@@ -23,7 +23,7 @@ import { createFinallyTasks, createParallelTasks, createStatusTasks, setWhenStat
 export const LAYOUT_TITLE = 'Layout';
 
 const getModel = (layout: string): Model => {
-  const tasks: PipelineNodeModel[] = createStatusTasks('task', 4, undefined, false, true);
+  const tasks: PipelineNodeModel[] = createStatusTasks('task', 4, undefined, false, true, true, true);
 
   const whenTasks = tasks.reduce((acc, task, index) => {
     if (index % (Math.floor(tasks.length / 3) + 1) !== 0) {
@@ -46,7 +46,7 @@ const getModel = (layout: string): Model => {
     i++;
   }
 
-  const parallelTasks = createParallelTasks('parallelTasks', tasks[9].id);
+  const parallelTasks = createParallelTasks('parallelTasks', tasks[9].id, 3, 2, true, true);
   tasks.push(...parallelTasks);
 
   const finallyNodes = createFinallyTasks('finally', 2, tasks, true);

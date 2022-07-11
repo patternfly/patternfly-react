@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import {
   Page,
   Nav,
@@ -50,21 +50,35 @@ class App extends React.Component<{}, AppState> {
     }
   };
 
-  private getPages = () => (
-    <React.Fragment>
-      {Demos.map(demo => (
-        <Route
-          path={`/${demo.id}-nav-link`}
-          render={() => (
-            <PageSection style={{ zIndex: 2 }} id={`/${demo.id}-page-section`}>
-              {React.createElement(demo.componentType)}
-            </PageSection>
-          )}
-          key={demo.id}
-        />
-      ))}
-    </React.Fragment>
-  );
+  private getPages = () => {
+    const defaultDemo = Demos.find(demo => demo.isDefault);
+    return (
+      <Switch>
+        {Demos.map(demo => (
+          <Route
+            path={`/${demo.id}-nav-link`}
+            render={() => (
+              <PageSection style={{ zIndex: 2 }} id={`/${demo.id}-page-section`}>
+                {React.createElement(demo.componentType)}
+              </PageSection>
+            )}
+            key={demo.id}
+          />
+        ))}
+        {defaultDemo ? (
+          <Route
+            path="/"
+            render={() => (
+              <PageSection style={{ zIndex: 2 }} id={`/${defaultDemo.id}-page-section`}>
+                {React.createElement(defaultDemo.componentType)}
+              </PageSection>
+            )}
+            key={defaultDemo.id}
+          />
+        ) : null}
+      </Switch>
+    );
+  };
 
   private pageId = 'ts-demo-app-page-id';
   private getSkipToContentLink = () => <SkipToContent href={`#${this.pageId}`}>Skip to Content</SkipToContent>;

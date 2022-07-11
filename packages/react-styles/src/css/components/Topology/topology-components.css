@@ -211,7 +211,6 @@
   --pf-topology__group--m-alt-group--topology__group__background--Stroke: var(--pf-global--BorderColor--100);
   --pf-topology__group--m-selected--topology__group__background--Fill: var(--pf-global--primary-color--300);
   --pf-topology__group--m-selected--topology__group__background--Stroke: var(--pf-global--active-color--300);
-  --pf-topology__group--m-hover--topology__group__background--Stroke: var(--pf-global--palette--black-800);
   --pf-topology__group--m-hover--topology__group__background--Stroke: var(--pf-global--palette--black-100);
   --pf-topology__group--m-drop-target--topology__group__background--Stroke: var(--pf-global--palette--blue-300);
 

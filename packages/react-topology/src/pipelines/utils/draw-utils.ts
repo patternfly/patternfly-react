@@ -2,7 +2,7 @@ import { Point } from '../../geom';
 import { DrawDesign, NODE_SEPARATION_HORIZONTAL } from '../const';
 
 type SingleDraw = (p: Point) => string;
-type DoubleDraw = (p1: Point, p2: Point) => string;
+type DoubleDraw = (p1: Point, p2: Point, startIndentX?: number) => string;
 type TripleDraw = (p1: Point, p2: Point, p3: Point) => string;
 type DetermineDirection = (p1: Point, p2: Point) => boolean;
 
@@ -59,7 +59,7 @@ const curve: TripleDraw = (fromPoint, cornerPoint, toPoint) => {
 
 export const straightPath: DoubleDraw = (start, finish) => join(moveTo(start), lineTo(finish));
 
-export const integralShapePath: DoubleDraw = (start, finish) => {
+export const integralShapePath: DoubleDraw = (start, finish, startIndentX = 0) => {
   // Integral shape: ∫
   let firstCurve: string = null;
   let secondCurve: string = null;
@@ -73,7 +73,8 @@ export const integralShapePath: DoubleDraw = (start, finish) => {
     secondCurve = curve(firstCorner, secondCorner, finish);
   }
 
-  return join(moveTo(start), firstCurve, secondCurve, lineTo(finish));
+  const indentedStart = new Point(start.x - startIndentX, start.y);
+  return join(moveTo(indentedStart), firstCurve, secondCurve, lineTo(finish));
 };
 
 export const path = (start: Point, finish: Point, drawDesign?: DrawDesign) => {

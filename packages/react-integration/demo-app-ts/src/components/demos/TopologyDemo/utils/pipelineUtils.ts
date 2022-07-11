@@ -7,11 +7,12 @@ import {
   DEFAULT_WHEN_OFFSET,
   DEFAULT_WHEN_SIZE
 } from '@patternfly/react-topology';
+import { logos } from './logos';
 
 export const ROW_HEIGHT = 80;
 export const COLUMN_WIDTH = 250;
 
-export const DEFAULT_TASK_WIDTH = 180;
+export const DEFAULT_TASK_WIDTH = 170;
 export const FINALLY_TASK_WIDTH = DEFAULT_TASK_WIDTH - DEFAULT_WHEN_OFFSET - DEFAULT_WHEN_SIZE;
 export const DEFAULT_TASK_HEIGHT = 32;
 
@@ -43,11 +44,21 @@ export const createTask = (options: {
   marginY?: number;
   noLocation?: boolean;
   showContextMenu?: boolean;
+  showBadge?: boolean;
+  showIcon?: boolean;
 }): PipelineNodeModel => {
   const width = options.width || DEFAULT_TASK_WIDTH;
   const height = options.height || DEFAULT_TASK_HEIGHT;
-  const x = options.x !== undefined ? options.x : (options.marginX ?? 40) + (options.column ?? 0) * COLUMN_WIDTH;
+  const columnWidth = COLUMN_WIDTH + (options.showIcon ? 28 : 0);
+  const x =
+    options.x !== undefined
+      ? options.x
+      : (options.marginX ?? +(options.showIcon ? 28 : 0)) + (options.column ?? 0) * columnWidth;
   const y = options.y !== undefined ? options.y : (options.marginY ?? 40) + (options.row ?? 0) * ROW_HEIGHT;
+  const taskIconOptions = {
+    taskIconClass: options.showIcon ? logos.get('icon-java') : undefined,
+    taskIconTooltip: options.showIcon ? 'Environment' : undefined
+  };
   return {
     id: options.id,
     type: DEFAULT_TASK_NODE_TYPE,
@@ -60,6 +71,8 @@ export const createTask = (options: {
     runAfterTasks: [],
     data: {
       status,
+      badge: options.showBadge ? '3/4' : undefined,
+      ...taskIconOptions,
       ...options
     }
   };
@@ -70,7 +83,10 @@ export const createStatusTasks = (
   statusPerRow = 1,
   label: string = '',
   selected?: boolean,
-  noLocation?: boolean
+  noLocation?: boolean,
+  showContextMenu?: boolean,
+  showBadge?: boolean,
+  showIcon?: boolean
 ): PipelineNodeModel[] =>
   TASK_STATUSES.map((status, index) =>
     createTask({
@@ -81,7 +97,10 @@ export const createStatusTasks = (
       column: index % statusPerRow,
       selected,
       noLocation,
-      showContextMenu: true
+      showContextMenu,
+      showBadge,
+      showIcon,
+      width: DEFAULT_TASK_WIDTH + (showContextMenu ? 10 : 0) + (showBadge ? 40 : 0)
     })
   );
 
@@ -150,7 +169,9 @@ export const createParallelTasks = (
   baseId: string,
   runAfterId: string,
   taskCount = 3,
-  taskDepth = 2
+  taskDepth = 2,
+  showContextMenu?: boolean,
+  showBadge?: boolean
 ): PipelineNodeModel[] => {
   const nodes: PipelineNodeModel[] = [];
 
@@ -160,7 +181,8 @@ export const createParallelTasks = (
         id: `${baseId}-task-${i}`,
         status: RunStatus.Pending,
         label: `${baseId} Sub-Task ${i}`,
-        noLocation: true
+        noLocation: true,
+        width: DEFAULT_TASK_WIDTH + (showContextMenu ? 10 : 0) + (showBadge ? 40 : 0)
       })
     );
   }

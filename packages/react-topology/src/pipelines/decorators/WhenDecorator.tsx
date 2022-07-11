@@ -16,6 +16,7 @@ type WhenDecoratorProps = {
   element: Node;
   className?: string;
   leftOffset?: number;
+  edgeLength?: number;
   width?: number;
   height?: number;
   nameLabelClass?: string;
@@ -32,6 +33,7 @@ export const WhenDecorator: React.FC<WhenDecoratorProps> = ({
   className,
   status,
   leftOffset = DEFAULT_WHEN_OFFSET,
+  edgeLength = DEFAULT_WHEN_OFFSET,
   toolTip,
   disableTooltip = false
 }) => {
@@ -46,14 +48,14 @@ export const WhenDecorator: React.FC<WhenDecoratorProps> = ({
         className={css(topologyStyles.topologyEdgeBackground)}
         x1={-leftOffset}
         y1={taskHeight / 2 - height / 2}
-        x2={0}
+        x2={-leftOffset + edgeLength}
         y2={taskHeight / 2 - height / 2}
       />
       <line
         className={css(topologyStyles.topologyEdge, styles.topologyPipelinesWhenExpressionEdge)}
         x1={-leftOffset}
         y1={taskHeight / 2}
-        x2={0}
+        x2={-leftOffset + edgeLength}
         y2={taskHeight / 2}
       />
       <polygon
