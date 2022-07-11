@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-accordion__expanded-content-body"
+  >
+    Test
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Renders without children 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-accordion__expanded-content-body"
+  />
+</DocumentFragment>
+`;

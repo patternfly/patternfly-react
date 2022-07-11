@@ -1,5 +1,4 @@
 export * from './AboutModal/AboutModalDemo';
-export * from './AccordionDemo/AccordionDemo';
 export * from './AlertDemo/AlertDemo';
 export * from './AlertDemo/AlertTimeoutCloseButtonDemo';
 export * from './AlertGroupDemo/AlertGroupDemo';
