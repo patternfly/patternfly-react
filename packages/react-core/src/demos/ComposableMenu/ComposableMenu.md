@@ -19,6 +19,7 @@ import ThIcon from '@patternfly/react-icons/dist/esm/icons/th-icon';
 import pfIcon from './examples/pf-logo-small.svg';
 import SearchIcon from '@patternfly/react-icons/dist/esm/icons/search-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import avatarImg from './examples/avatarImg.svg';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
 import { css } from '@patternfly/react-styles';
@@ -51,6 +52,11 @@ Composable menus currently require consumer keyboard handling and use of our und
 ### Composable typeahead select
 
 ```ts file="./examples/ComposableTypeaheadSelect.tsx"
+```
+
+### Composable multiple typeahead select
+
+```ts isBeta file="./examples/ComposableMultipleTypeaheadSelect.tsx"
 ```
 
 ### Composable drilldown menu
