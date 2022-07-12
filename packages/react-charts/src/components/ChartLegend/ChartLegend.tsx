@@ -388,6 +388,7 @@ hoistNonReactStatics(ChartLegend, VictoryLegend, { getBaseProps: true });
 
 (ChartLegend as any).getBaseProps = (props: any) => {
   const theme = getTheme(null);
+
   return (VictoryLegend as any).getBaseProps(
     {
       titleComponent: <ChartLabel />, // Workaround for getBaseProps error

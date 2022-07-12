@@ -131,7 +131,7 @@ export interface ChartLegendLabelProps extends VictoryLabelProps {
     };
   }[];
   /**
-   * The valueLabelComponent prop takes a component instance which will be used to render each legend tooltip.
+   * The legendLabelComponent prop takes a component instance which will be used to render each legend tooltip.
    */
   legendLabelComponent?: React.ReactElement<any>;
   /**
@@ -202,9 +202,9 @@ export interface ChartLegendLabelProps extends VictoryLabelProps {
    */
   transform?: string | {} | (() => string | {});
   /**
-   * The id prop specifies a HTML ID that will be applied to the rendered text element of the value label.
+   * The valueLabelComponent prop takes a component instance which will be used to render each legend tooltip.
    */
-  valueLabelId?: StringOrNumberOrCallback;
+  valueLabelComponent?: React.ReactElement<any>;
   /**
    * The verticalAnchor prop defines how the text is vertically positioned relative to the given `x` and `y`
    * coordinates. Options are "start", "middle" and "end".
@@ -240,7 +240,7 @@ export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendLabelPr
   style,
   text,
   textAnchor = 'end',
-  valueLabelId,
+  valueLabelComponent = <ChartLabel />,
   x,
   y,
 
@@ -274,17 +274,15 @@ export const ChartLegendTooltipLabel: React.FunctionComponent<ChartLegendLabelPr
 
   const getValueLabelComponent = () => {
     const _x = x + Helpers.evaluateProp(dx);
-    return (
-      <ChartLabel
-        style={getStyle(style)}
-        text={text}
-        textAnchor={textAnchor}
-        x={_x}
-        y={y}
-        {...rest}
-        {...(valueLabelId && { id: valueLabelId })}
-      />
-    );
+
+    return React.cloneElement(valueLabelComponent, {
+      style: getStyle(style),
+      text,
+      textAnchor,
+      x: _x,
+      y,
+      ...rest
+    });
   };
 
   const legendLabel = getLegendLabelComponent();

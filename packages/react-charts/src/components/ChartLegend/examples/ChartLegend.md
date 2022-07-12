@@ -652,7 +652,7 @@ This demonstrates an approach for applying links to a legend using a custom labe
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartContainer, ChartGroup, ChartLabel, ChartLegend, ChartLine } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 class LegendLinkPieChart extends React.Component {
   constructor(props) {
@@ -680,7 +680,7 @@ class LegendLinkPieChart extends React.Component {
         <Chart
           ariaDesc="Average number of pets"
           ariaTitle="Line chart example"
-          containerComponent={<ChartContainer role="group" labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+          containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
           legendComponent={this.getLegend([
             { name: 'Cats' }, 
             { name: 'Dogs' }, 

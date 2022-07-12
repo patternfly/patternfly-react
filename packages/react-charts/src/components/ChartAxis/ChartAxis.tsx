@@ -12,15 +12,14 @@ import {
   RangePropType,
   ScalePropType,
   StringOrNumberOrList,
-  LabelProps,
-  VictoryLabel,
-  StringOrNumberOrCallback
+  LabelProps
 } from 'victory-core';
 import { VictoryAxis, VictoryAxisProps, VictoryAxisTTargetType } from 'victory-axis';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getAxisTheme, getTheme } from '../ChartUtils';
 import { getUniqueId } from '@patternfly/react-core';
+import { ChartLabel } from '../ChartLabel';
 
 /**
  * ChartAxis renders a single axis which can be used on its own or composed with Chart.
@@ -56,10 +55,6 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * ChartLabel will be created with props described above
    */
   axisLabelComponent?: React.ReactElement<any>;
-  /**
-   * The id prop specifies a HTML ID that will be applied to the rendered text element in the label axis.
-   */
-  axisLabelId?: StringOrNumberOrCallback;
   /**
    * The axisValue prop may be used instead of axisAngle to position the dependent axis. Ths prop is useful when
    * dependent axes should line up with values on the independent axis.
@@ -454,11 +449,10 @@ export interface ChartAxisProps extends VictoryAxisProps {
 export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   containerComponent = <ChartContainer />,
   showGrid = false,
-  axisLabelId = () => getUniqueId('chart-axis-tickLabels'),
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
-
+  tickLabelComponent = <ChartLabel />,
   // destructure last
   theme = getTheme(themeColor),
   ...rest
@@ -469,12 +463,18 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
     ...containerComponent.props
   });
 
+  const getTickLabelComponent = () =>
+    React.cloneElement(tickLabelComponent, {
+      id: () => getUniqueId('chart-axis-tickLabels'),
+      ...tickLabelComponent.props
+    });
+
   // Note: containerComponent is required for theme
   return (
     <VictoryAxis
       containerComponent={container}
       theme={showGrid ? getAxisTheme(themeColor) : theme}
-      tickLabelComponent={<VictoryLabel id={axisLabelId} />}
+      tickLabelComponent={getTickLabelComponent()}
       {...rest}
     />
   );
