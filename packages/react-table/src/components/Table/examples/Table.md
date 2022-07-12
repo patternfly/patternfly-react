@@ -6,7 +6,7 @@ propComponents: ['Table', 'TableHeader', 'TableBody', 'ISortBy']
 ouia: true
 ---
 
-# Table
+# Legacy Table
 
 Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
 
@@ -30,7 +30,7 @@ import SortAmountDownIcon from '@patternfly/react-icons/dist/esm/icons/sort-amou
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
-### Table Columns
+## Table Columns
 
 Array items for columns provided to the `Table`'s `cells` prop, can be simple strings or objects.
 
@@ -88,7 +88,7 @@ columns: [
 
 Many of the subsequent examples demonstrate how to apply different transformations to enable `Table` features.
 
-### Table Rows
+## Table Rows
 
 Array items for rows provided to the `Table`'s `rows` prop, can be simple strings or objects.
 

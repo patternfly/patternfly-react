@@ -68,7 +68,7 @@ export const LegacyTableActions: React.FunctionComponent = () => {
   );
 
   const columns: TableProps['cells'] = [
-    { title: 'Repositories', cellTransforms: [headerCol()] },
+    { title: 'Repositories', cellTransforms: [headerCol('actions')] },
     'Branches',
     'Pull requests',
     'Workspaces',

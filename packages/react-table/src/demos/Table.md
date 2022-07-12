@@ -27,6 +27,8 @@ import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
 
+## Demos
+
 ### Bulk select
 
 ```js isFullscreen
@@ -886,10 +888,13 @@ class ColumnManagementAction extends React.Component {
           <ToolbarItem variant="pagination">
             <Pagination
               itemCount={37}
-              widgetId="pagination-options-menu-bottom"
+              widgetId="pagination-options-menu"
               page={1}
               variant={PaginationVariant.top}
               isCompact
+              titles={{
+                paginationTitle: `Column management top pagination`
+              }}
             />
           </ToolbarItem>
         </ToolbarContent>
@@ -923,6 +928,9 @@ class ColumnManagementAction extends React.Component {
           widgetId="pagination-options-menu-bottom"
           page={1}
           variant={PaginationVariant.bottom}
+          titles={{
+            paginationTitle: `Column management bottom pagination`
+          }}
         />
         {this.renderModal()}
       </React.Fragment>
@@ -1601,7 +1609,7 @@ class ColumnManagementAction extends React.Component {
 
     const toolbarItems = (
       <React.Fragment>
-        <span id="page-layout-table-column-management-action-toolbar-top-select-checkbox-label" hidden>
+        <span id="page-layout-table-draggable-column-management-action-toolbar-top-select-checkbox-label" hidden>
           Choose one
         </span>
         <ToolbarContent>
@@ -1609,10 +1617,10 @@ class ColumnManagementAction extends React.Component {
             <OverflowMenu breakpoint="md">
               <OverflowMenuItem isPersistent>
                 <Select
-                  id="page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
+                  id="page-layout-table-draggable-column-management-action-toolbar-top-select-checkbox-toggle"
                   variant={SelectVariant.single}
                   aria-label="Select Input"
-                  aria-labelledby="page-layout-table-column-management-action-toolbar-top-select-checkbox-label page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
+                  aria-labelledby="page-layout-table-draggable-column-management-action-toolbar-top-select-checkbox-label page-layout-table-column-management-action-toolbar-top-select-checkbox-toggle"
                   placeholderText={
                     <>
                       <FilterIcon /> Name
@@ -1622,7 +1630,7 @@ class ColumnManagementAction extends React.Component {
               </OverflowMenuItem>
               <OverflowMenuItem>
                 <OptionsMenu
-                  id="page-layout-table-column-management-action-toolbar-top-options-menu-toggle"
+                  id="page-layout-table-draggable-column-management-action-toolbar-top-options-menu-toggle"
                   isPlain
                   menuItems={[]}
                   toggle={
@@ -1649,10 +1657,13 @@ class ColumnManagementAction extends React.Component {
           <ToolbarItem variant="pagination">
             <Pagination
               itemCount={37}
-              widgetId="pagination-options-menu-bottom"
+              widgetId="pagination-options-menu"
               page={1}
               variant={PaginationVariant.top}
               isCompact
+              titles={{
+                paginationTitle: `Draggable column management top pagination`
+              }}
             />
           </ToolbarItem>
         </ToolbarContent>
@@ -1665,11 +1676,11 @@ class ColumnManagementAction extends React.Component {
           gridBreakPoint="grid-xl"
           header={
             <React.Fragment>
-              <Toolbar id="page-layout-table-column-management-action-toolbar-top">{toolbarItems}</Toolbar>
+              <Toolbar id="page-layout-table-draggable-column-management-action-toolbar-top">{toolbarItems}</Toolbar>
             </React.Fragment>
           }
           aria-label="This is a table with checkboxes"
-          id="page-layout-table-column-management-action-table"
+          id="page-layout-table-draggable-column-management-action-table"
           onSelect={this.onSelect}
           cells={columns}
           rows={rows}
@@ -1681,11 +1692,14 @@ class ColumnManagementAction extends React.Component {
         </Table>
         <Pagination
           isCompact
-          id="page-layout-table-column-management-action-toolbar-bottom"
+          id="page-layout-table-draggable-column-management-action-toolbar-bottom"
           itemCount={37}
           widgetId="pagination-options-menu-bottom"
           page={1}
           variant={PaginationVariant.bottom}
+          titles={{
+            paginationTitle: `Draggable column management bottom pagination`
+          }}
         />
         {this.renderModal()}
       </React.Fragment>
@@ -2641,7 +2655,7 @@ class ComplexPaginationTableDemo extends React.Component {
         onPerPageSelect={(_evt, value) => this.fetch(1, value)}
         variant={variant}
         titles={{
-          paginationTitle: `${variant} pagination`
+          paginationTitle: `Pagination demo ${variant} pagination`
         }}
       />
     );

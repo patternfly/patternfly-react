@@ -13,7 +13,7 @@ export const compoundExpand: ITransform = (
   }
   const { title, props } = value;
   const {
-    extraParams: { onExpand }
+    extraParams: { onExpand, expandId = 'expand-toggle' }
   } = column;
   const extraData = {
     rowIndex,
@@ -21,7 +21,6 @@ export const compoundExpand: ITransform = (
     column,
     property
   };
-
   /**
    * @param {React.MouseEvent} event - Mouse event
    */
@@ -38,6 +37,7 @@ export const compoundExpand: ITransform = (
         onClick={onToggle}
         aria-expanded={props.isOpen}
         aria-controls={props.ariaControls}
+        id={`${expandId}-${rowIndex}-${columnIndex}`}
       >
         <TableText>{title}</TableText>
       </button>
