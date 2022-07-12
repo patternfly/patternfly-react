@@ -259,13 +259,7 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
   // Note: theme is required by voronoiContainerMixin
   return (
     // Note: className is valid, but Victory is missing a type
-    <VictoryVoronoiContainer
-      className={chartClassName}
-      labelComponent={chartLabelComponent}
-      theme={theme}
-      role="group"
-      {...rest}
-    />
+    <VictoryVoronoiContainer className={chartClassName} labelComponent={chartLabelComponent} theme={theme} {...rest} />
   );
 };
 ChartVoronoiContainer.displayName = 'ChartVoronoiContainer';

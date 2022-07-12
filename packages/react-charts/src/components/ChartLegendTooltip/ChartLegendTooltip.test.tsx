@@ -8,6 +8,7 @@ import { ChartThemeColor } from '../ChartTheme';
 import { createContainer } from '../ChartUtils';
 import { ChartLegendTooltip } from './ChartLegendTooltip';
 import { ChartLabel } from '../ChartLabel';
+import { ChartLegend } from '../ChartLegend';
 
 Object.values([true, false]).forEach(() => {
   test('ChartLegendTooltip', () => {
@@ -41,6 +42,7 @@ test('allows tooltip via container component', () => {
       }
       legendData={legendData}
       legendPosition="bottom"
+      legendComponent={<ChartLegend labelComponent={<ChartLabel id="test" />} />}
       height={275}
       maxDomain={{ y: 10 }}
       minDomain={{ y: 0 }}

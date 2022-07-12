@@ -680,7 +680,7 @@ class LegendLinkPieChart extends React.Component {
         <Chart
           ariaDesc="Average number of pets"
           ariaTitle="Line chart example"
-          containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+          containerComponent={<ChartVoronoiContainer role="figure" labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
           legendComponent={this.getLegend([
             { name: 'Cats' }, 
             { name: 'Dogs' }, 
