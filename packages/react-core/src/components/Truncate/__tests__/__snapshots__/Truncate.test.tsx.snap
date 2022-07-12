@@ -2,47 +2,75 @@
 
 exports[`renders default truncation 1`] = `
 <DocumentFragment>
-  <span
-    class="pf-c-truncate"
+  <div
+    position="top"
   >
     <span
-      class="pf-c-truncate__start"
+      class="pf-c-truncate"
     >
-      Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
+      <span
+        class="pf-c-truncate__start"
+      >
+        Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
+      </span>
     </span>
-  </span>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`renders middle truncation 1`] = `
 <DocumentFragment>
-  <span
-    class="pf-c-truncate"
+  <div
+    position="top"
   >
     <span
-      class="pf-c-truncate__start"
+      class="pf-c-truncate"
     >
-      Vestibulum interdum risus et enim faucibus, sit amet molestie est ac
+      <span
+        class="pf-c-truncate__start"
+      >
+        Vestibulum interdum risus et enim faucibus, sit amet molestie est ac
+      </span>
+      <span
+        class="pf-c-truncate__end"
+      >
+        cumsan.
+      </span>
     </span>
-    <span
-      class="pf-c-truncate__end"
-    >
-      cumsan.
-    </span>
-  </span>
+  </div>
 </DocumentFragment>
 `;
 
-exports[`renders start truncation 1`] = `
+exports[`renders start truncation with &lrm; at end 1`] = `
 <DocumentFragment>
-  <span
-    class="pf-c-truncate"
+  <div
+    position="top"
   >
     <span
-      class="pf-c-truncate__end"
+      class="pf-c-truncate"
     >
-      Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.‎
+      <span
+        class="pf-c-truncate__end"
+      >
+        Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.‎
+      </span>
     </span>
-  </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renders tooltip placement 1`] = `
+<DocumentFragment>
+  <div
+    position="auto"
+  >
+    <span
+      class="pf-c-truncate"
+    >
+      <span
+        class="pf-c-truncate__start"
+      />
+    </span>
+  </div>
 </DocumentFragment>
 `;
