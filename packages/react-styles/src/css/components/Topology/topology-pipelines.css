@@ -39,6 +39,8 @@
   --pf-topology-pipelines__pill-background--m-selected--m-running--Fill: var(--pf-global--active-color--100);
   --pf-topology-pipelines__pill-background--m-selected--m-idle--Fill: var(--pf-global--active-color--100);
 
+  --pf-topology-pipelines__pill-text--Color: var(--pf-topology-pipelines__pill--Color);
+
   --pf-topology-pipelines__pill-text--m-selected--Color: var(--pf-global--Color--light-100);
   --pf-topology-pipelines__pill-text--m-selected--m-danger--Color: var(--pf-global--Color--light-100);
   --pf-topology-pipelines__pill-text--m-selected--m-success--Color: var(--pf-global--Color--light-100);
@@ -69,8 +71,8 @@
   --pf-topology-pipelines__pill-status--m-selected--m-idle--color: var(--pf-global--Color--light-100);
 
   /* when expression */
-  --pf-topology-pipelines__when-expression--background--Stroke: var(--pf-global--BorderColor--200);
-  --pf-topology-pipelines__when-expression--background--Fill: var(--pf-global--BorderColor--200);
+  --pf-topology-pipelines__when-expression-background--Stroke: var(--pf-global--BorderColor--200);
+  --pf-topology-pipelines__when-expression-background--Fill: var(--pf-global--BorderColor--200);
   --pf-topology-pipelines__when-expression--connector--Stroke: var(--pf-global--BorderColor--100);
 
   /* when expression with status */
@@ -205,7 +207,7 @@
 .pf-topology-pipelines__pill-text {
   font-size: var(--pf-topology-pipelines__pill-text--FontSize);
   font-family: var(--pf-topology-pipelines__pill-text--FontFamily);
-  fill: var(--pf-topology-pipelines__pill--Color);
+  fill: var(--pf-topology-pipelines__pill-text--Color);
 }
 
 .pf-topology-pipelines__pill.pf-m-selected .pf-topology-pipelines__pill-text {
@@ -337,26 +339,26 @@
   color: var(--pf-topology-pipelines__pill-text--m-selected--m-idle--Color);
 }
 
-.pf-topology-pipelines__when-expression--background {
-  stroke: var(--pf-topology-pipelines__when-expression--background--Stroke);
-  fill: var(--pf-topology-pipelines__when-expression--background--Fill);
+.pf-topology-pipelines__when-expression-background {
+  stroke: var(--pf-topology-pipelines__when-expression-background--Stroke);
+  fill: var(--pf-topology-pipelines__when-expression-background--Fill);
 }
-.pf-topology-pipelines__pill.pf-m-selected .pf-topology-pipelines__when-expression--background {
-  stroke: var(--pf-topology-pipelines__when-expression--m-selected--color);
+.pf-topology-pipelines__pill.pf-m-selected .pf-topology-pipelines__when-expression-background {
+  --pf-topology-pipelines__when-expression-background--Stroke: var(--pf-topology-pipelines__when-expression--m-selected--color);
 }
-.pf-topology-pipelines__when-expression--background.pf-m-success {
-  stroke: var(--pf-topology-pipelines__when-expression--m-success--color);
-  fill: var(--pf-topology-pipelines__when-expression--m-success--color);
+.pf-topology-pipelines__when-expression-background.pf-m-success {
+  --pf-topology-pipelines__when-expression-background--Stroke: var(--pf-topology-pipelines__when-expression--m-success--color);
+  --pf-topology-pipelines__when-expression-background--Fill: var(--pf-topology-pipelines__when-expression--m-success--color);
 }
-.pf-topology-pipelines__when-expression--background.pf-m-unmet {
-   stroke: var(--pf-topology-pipelines__when-expression--background--Fill);
-   fill: var(--pf-topology-pipelines__when-expression--background--Fill);
+.pf-topology-pipelines__when-expression-background.pf-m-unmet {
+  --pf-topology-pipelines__when-expression-background--Stroke: var(--pf-topology-pipelines__when-expression--m-warning--color);
+  --pf-topology-pipelines__when-expression-background--Fill: var(--pf-topology-pipelines__when-expression--m-warning--color);
  }
-.pf-topology-pipelines__when-expression--background.pf-m-in-progress {
-  stroke: var(--pf-topology-pipelines__when-expression--m-in-progress--color);
-  fill: var(--pf-topology-pipelines__when-expression--m-in-progress--color);
+.pf-topology-pipelines__when-expression-background.pf-m-in-progress {
+  --pf-topology-pipelines__when-expression-background--Stroke: var(--pf-topology-pipelines__when-expression--m-in-progress--color);
+  --pf-topology-pipelines__when-expression-background--Fill: var(--pf-topology-pipelines__when-expression--m-in-progress--color);
 }
 
-.pf-topology-pipelines__pill.pf-m-selected .pf-topology-pipelines__when-expression--edge {
+.pf-topology-pipelines__pill.pf-m-selected .pf-topology-pipelines__when-expression-edge {
   stroke: var(--pf-topology-pipelines__when-expression--m-selected--color);
 }
