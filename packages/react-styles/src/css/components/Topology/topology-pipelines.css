@@ -211,35 +211,35 @@
 }
 
 .pf-topology-pipelines__pill.pf-m-selected .pf-topology-pipelines__pill-text {
-  fill: var(--pf-topology-pipelines__pill-text--m-selected--Color);
+  --pf-topology-pipelines__pill-text--Color: var(--pf-topology-pipelines__pill-text--m-selected--Color);
 }
 
 .pf-topology-pipelines__pill.pf-m-selected.pf-m-danger .pf-topology-pipelines__pill-text {
-  fill: var(--pf-topology-pipelines__pill-text--m-selected--m-danger--Color);
+  --pf-topology-pipelines__pill-text--Color: var(--pf-topology-pipelines__pill-text--m-selected--m-danger--Color);
 }
 
 .pf-topology-pipelines__pill.pf-m-selected.pf-m-success .pf-topology-pipelines__pill-text {
-  fill: var(--pf-topology-pipelines__pill-text--m-selected--m-success--Color);
+  --pf-topology-pipelines__pill-text--Color: var(--pf-topology-pipelines__pill-text--m-selected--m-success--Color);
 }
 
 .pf-topology-pipelines__pill.pf-m-selected.pf-m-warning .pf-topology-pipelines__pill-text {
-  fill: var(--pf-topology-pipelines__pill-text--m-selected--m-warning--Color);
+  --pf-topology-pipelines__pill-text--Color: var(--pf-topology-pipelines__pill-text--m-selected--m-warning--Color);
 }
 
 .pf-topology-pipelines__pill.pf-m-selected.pf-m-in-progress .pf-topology-pipelines__pill-text {
-  fill: var(--pf-topology-pipelines__pill-text--m-selected--m-in-progress--Color);
+  --pf-topology-pipelines__pill-text--Color: var(--pf-topology-pipelines__pill-text--m-selected--m-in-progress--Color);
 }
 
 .pf-topology-pipelines__pill.pf-m-selected.pf-m-pending .pf-topology-pipelines__pill-text {
-  fill: var(--pf-topology-pipelines__pill-text--m-selected--m-pending--Color);
+  --pf-topology-pipelines__pill-text--Color: var(--pf-topology-pipelines__pill-text--m-selected--m-pending--Color);
 }
 
 .pf-topology-pipelines__pill.pf-m-selected.pf-m-running .pf-topology-pipelines__pill-text {
-  fill: var(--pf-topology-pipelines__pill-text--m-selected--m-running--Color);
+  --pf-topology-pipelines__pill-text--Color: var(--pf-topology-pipelines__pill-text--m-selected--m-running--Color);
 }
 
 .pf-topology-pipelines__pill.pf-m-selected.pf-m-idle .pf-topology-pipelines__pill-text {
-  fill: var(--pf-topology-pipelines__pill-text--m-selected--m-idle--Color);
+  --pf-topology-pipelines__pill-text--Color: var(--pf-topology-pipelines__pill-text--m-selected--m-idle--Color);
 }
 
 .pf-topology-pipelines__pill-status {
@@ -315,28 +315,28 @@
   cursor: pointer;
 }
 .pf-topology-pipelines__pill.pf-m-selected .pf-topology__node__action-icon__icon {
-  color: var(--pf-topology-pipelines__pill-text--m-selected--Color);
+  --pf-topology__node__action-icon__icon--Color: var(--pf-topology-pipelines__pill-text--m-selected--Color);
 }
 .pf-topology-pipelines__pill.pf-m-selected.pf-m-danger .pf-topology__node__action-icon__icon {
-  color: var(--pf-topology-pipelines__pill-text--m-selected--m-danger--Color);
+  --pf-topology__node__action-icon__icon--Color: var(--pf-topology-pipelines__pill-text--m-selected--m-danger--Color);
 }
 .pf-topology-pipelines__pill.pf-m-selected.pf-m-success .pf-topology__node__action-icon__icon {
-  color: var(--pf-topology-pipelines__pill-text--m-selected--m-success--Color);
+  --pf-topology__node__action-icon__icon--Color: var(--pf-topology-pipelines__pill-text--m-selected--m-success--Color);
 }
 .pf-topology-pipelines__pill.pf-m-selected.pf-m-warning .pf-topology__node__action-icon__icon {
-  color: var(--pf-topology-pipelines__pill-text--m-selected--m-warning--Color);
+  --pf-topology__node__action-icon__icon--Color: var(--pf-topology-pipelines__pill-text--m-selected--m-warning--Color);
 }
 .pf-topology-pipelines__pill.pf-m-selected.pf-m-in-progress .pf-topology__node__action-icon__icon {
-  color: var(--pf-topology-pipelines__pill-text--m-selected--m-in-progress--Color);
+  --pf-topology__node__action-icon__icon--Color: var(--pf-topology-pipelines__pill-text--m-selected--m-in-progress--Color);
 }
 .pf-topology-pipelines__pill.pf-m-selected.pf-m-pending .pf-topology__node__action-icon__icon {
-  color: var(--pf-topology-pipelines__pill-text--m-selected--m-pending--Color);
+  --pf-topology__node__action-icon__icon--Color: var(--pf-topology-pipelines__pill-text--m-selected--m-pending--Color);
 }
 .pf-topology-pipelines__pill.pf-m-selected.pf-m-running .pf-topology__node__action-icon__icon {
-  color: var(--pf-topology-pipelines__pill-text--m-selected--m-running--Color);
+  --pf-topology__node__action-icon__icon--Color: var(--pf-topology-pipelines__pill-text--m-selected--m-running--Color);
 }
 .pf-topology-pipelines__pill.pf-m-selected.pf-m-idle .pf-topology__node__action-icon__icon {
-  color: var(--pf-topology-pipelines__pill-text--m-selected--m-idle--Color);
+  --pf-topology__node__action-icon__icon--Color: var(--pf-topology-pipelines__pill-text--m-selected--m-idle--Color);
 }
 
 .pf-topology-pipelines__when-expression-background {
