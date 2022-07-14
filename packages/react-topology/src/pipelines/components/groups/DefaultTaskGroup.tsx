@@ -1,26 +1,23 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
-import { polygonHull } from 'd3-polygon';
-import * as _ from 'lodash';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-components';
 import CollapseIcon from '@patternfly/react-icons/dist/esm/icons/compress-alt-icon';
-import NodeLabel from '../nodes/labels/NodeLabel';
-import { Layer } from '../layers';
-import { GROUPS_LAYER } from '../../const';
-import { hullPath, maxPadding, useCombineRefs, useHover } from '../../utils';
-import { BadgeLocation, isGraph, Node, NodeShape, NodeStyle, PointTuple } from '../../types';
+import NodeLabel from '../../../components/nodes/labels/NodeLabel';
+import { Layer } from '../../../components/layers';
+import { GROUPS_LAYER } from '../../../const';
+import { maxPadding, useCombineRefs, useHover } from '../../../utils';
+import { BadgeLocation, isGraph, Node, NodeStyle } from '../../../types';
 import {
   useDragNode,
-  useSvgAnchor,
   WithContextMenuProps,
   WithDndDropProps,
   WithDragNodeProps,
   WithSelectionProps
-} from '../../behavior';
-import { CollapsibleGroupProps } from './types';
+} from '../../../behavior';
+import { CollapsibleGroupProps } from '../../../components';
 
-type DefaultGroupExpandedProps = {
+type DefaultTaskGroupProps = {
   className?: string;
   element: Node;
   droppable?: boolean;
@@ -43,32 +40,7 @@ type DefaultGroupExpandedProps = {
   labelIconPadding?: number;
 } & Partial<CollapsibleGroupProps & WithDragNodeProps & WithSelectionProps & WithDndDropProps & WithContextMenuProps>;
 
-type PointWithSize = [number, number, number];
-
-// Return the point whose Y is the largest value.
-// If multiple points are found, compute the center X between them
-// export for testing only
-export function computeLabelLocation(points: PointWithSize[]): PointWithSize {
-  let lowPoints: PointWithSize[];
-  const threshold = 5;
-
-  _.forEach(points, p => {
-    const delta = !lowPoints ? Infinity : Math.round(p[1]) - Math.round(lowPoints[0][1]);
-    if (delta > threshold) {
-      lowPoints = [p];
-    } else if (Math.abs(delta) <= threshold) {
-      lowPoints.push(p);
-    }
-  });
-  return [
-    (_.minBy(lowPoints, p => p[0])[0] + _.maxBy(lowPoints, p => p[0])[0]) / 2,
-    lowPoints[0][1],
-    // use the max size value
-    _.maxBy(lowPoints, p => p[2])[2]
-  ];
-}
-
-const DefaultGroupExpanded: React.FunctionComponent<DefaultGroupExpandedProps> = ({
+const DefaultTaskGroup: React.FunctionComponent<DefaultTaskGroupProps> = ({
   className,
   element,
   collapsible,
@@ -79,8 +51,6 @@ const DefaultGroupExpanded: React.FunctionComponent<DefaultGroupExpandedProps> =
   secondaryLabel,
   showLabel = true,
   truncateLength,
-  dndDropRef,
-  droppable,
   canDrop,
   dropTarget,
   onContextMenu,
@@ -103,10 +73,6 @@ const DefaultGroupExpanded: React.FunctionComponent<DefaultGroupExpandedProps> =
   const dragLabelRef = useDragNode()[1];
   const refs = useCombineRefs<SVGPathElement>(hoverRef, dragNodeRef);
   const isHover = hover !== undefined ? hover : hovered;
-  const anchorRef = useSvgAnchor();
-  const outlineRef = useCombineRefs(dndDropRef, anchorRef);
-  const labelLocation = React.useRef<PointWithSize>();
-  const pathRef = React.useRef<string>();
 
   let parent = element.getParent();
   let altGroup = false;
@@ -117,42 +83,23 @@ const DefaultGroupExpanded: React.FunctionComponent<DefaultGroupExpandedProps> =
 
   // cast to number and coerce
   const padding = maxPadding(element.getStyle<NodeStyle>().padding ?? 17);
-  const hullPadding = (point: PointWithSize | PointTuple) => (point[2] || 0) + padding;
 
-  if (!droppable || !pathRef.current || !labelLocation.current) {
-    const children = element.getNodes().filter(c => c.isVisible());
-    if (children.length === 0) {
-      return null;
-    }
-    const points: (PointWithSize | PointTuple)[] = [];
-    _.forEach(children, c => {
-      if (c.getNodeShape() === NodeShape.circle) {
-        const bounds = c.getBounds();
-        const { width, height } = bounds;
-        const { x, y } = bounds.getCenter();
-        const radius = Math.max(width, height) / 2;
-        points.push([x, y, radius] as PointWithSize);
-      } else {
-        // add all 4 corners
-        const { width, height, x, y } = c.getBounds();
-        points.push([x, y, 0] as PointWithSize);
-        points.push([x + width, y, 0] as PointWithSize);
-        points.push([x, y + height, 0] as PointWithSize);
-        points.push([x + width, y + height, 0] as PointWithSize);
-      }
-    });
-    const hullPoints: (PointWithSize | PointTuple)[] =
-      points.length > 2 ? polygonHull(points as PointTuple[]) : (points as PointTuple[]);
-    if (!hullPoints) {
-      return null;
-    }
-
-    // change the box only when not dragging
-    pathRef.current = hullPath(hullPoints as PointTuple[], hullPadding);
-
-    // Compute the location of the group label.
-    labelLocation.current = computeLabelLocation(hullPoints as PointWithSize[]);
+  const children = element.getNodes().filter(c => c.isVisible());
+  if (children.length === 0) {
+    return null;
   }
+  const { minX, minY, maxX, maxY } = children.reduce(
+    (acc, child) => {
+      const bounds = child.getBounds();
+      return {
+        minX: Math.min(acc.minX, bounds.x - padding),
+        minY: Math.min(acc.minY, bounds.y - padding),
+        maxX: Math.max(acc.maxX, bounds.x + bounds.width + padding),
+        maxY: Math.max(acc.maxY, bounds.y + bounds.height + padding)
+      };
+    },
+    { minX: Infinity, minY: Infinity, maxX: 0, maxY: 0 }
+  );
 
   const groupClassName = css(
     styles.topologyGroup,
@@ -177,14 +124,14 @@ const DefaultGroupExpanded: React.FunctionComponent<DefaultGroupExpandedProps> =
     <g ref={labelHoverRef} onContextMenu={onContextMenu} onClick={onSelect} className={groupClassName}>
       <Layer id={GROUPS_LAYER}>
         <g ref={refs} onContextMenu={onContextMenu} onClick={onSelect} className={innerGroupClassName}>
-          <path ref={outlineRef} className={styles.topologyGroupBackground} d={pathRef.current} />
+          <rect x={minX} y={minY} width={maxX - minX} height={maxY - minY} className={styles.topologyGroupBackground} />
         </g>
       </Layer>
       {showLabel && (label || element.getLabel()) && (
         <NodeLabel
           className={styles.topologyGroupLabel}
-          x={labelLocation.current[0]}
-          y={labelLocation.current[1] + hullPadding(labelLocation.current) + 24}
+          x={(maxX - minX) / 2}
+          y={maxY + 17}
           paddingX={8}
           paddingY={5}
           dragRef={dragNodeRef ? dragLabelRef : undefined}
@@ -213,4 +160,4 @@ const DefaultGroupExpanded: React.FunctionComponent<DefaultGroupExpandedProps> =
   );
 };
 
-export default observer(DefaultGroupExpanded);
+export default observer(DefaultTaskGroup);
