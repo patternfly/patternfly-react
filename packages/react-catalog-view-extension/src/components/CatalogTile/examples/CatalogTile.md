@@ -1,5 +1,6 @@
 ---
-id: Catalog view tile
+id: Catalog view
+source: tile
 section: extensions
 propComponents: ['CatalogTile']
 ---

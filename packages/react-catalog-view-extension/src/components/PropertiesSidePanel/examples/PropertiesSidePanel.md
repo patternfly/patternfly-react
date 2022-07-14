@@ -1,5 +1,6 @@
 ---
-id: Catalog view properties side panel
+id: Catalog view
+source: properties-side-panel
 section: extensions
 propComponents: ['PropertiesSidePanel', 'PropertyItem']
 ---

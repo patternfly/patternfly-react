@@ -1,5 +1,6 @@
 ---
-id: Catalog view item header
+id: Catalog view
+source: item-header
 section: extensions
 propComponents: ['CatalogItemHeader']
 ---

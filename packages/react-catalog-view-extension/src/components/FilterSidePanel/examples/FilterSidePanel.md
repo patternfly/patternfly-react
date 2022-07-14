@@ -1,5 +1,6 @@
 ---
-id: Catalog view filter side panel
+id: Catalog view
+source: filter-side-panel
 section: extensions
 propComponents: ['FilterSidePanel', 'FilterSidePanelCategory', 'FilterSidePanelCategoryItem']
 ---
