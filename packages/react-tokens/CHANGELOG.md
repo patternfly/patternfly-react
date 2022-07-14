@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.77.0 (2022-07-14)
+
+
+### Features
+
+* **Topology:** Add Topology pipeline support ([#7609](https://github.com/patternfly/patternfly-react/issues/7609)) ([4fb563f](https://github.com/patternfly/patternfly-react/commit/4fb563fb8651c0386f7cc59fd9c736af6fb683ec))
+
+
+
+
+
 ## 4.76.15 (2022-07-12)
 
 **Note:** Version bump only for package @patternfly/react-tokens
