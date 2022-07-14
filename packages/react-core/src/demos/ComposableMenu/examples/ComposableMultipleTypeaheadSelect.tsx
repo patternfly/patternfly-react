@@ -19,7 +19,7 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [selected, setSelected] = React.useState<string[]>([]);
   const [inputValue, setInputValue] = React.useState<string>('');
-  const toggleRef = React.useRef<HTMLButtonElement>();
+  const toggleRef = React.useRef<HTMLDivElement>();
   const inputRef = React.useRef<HTMLInputElement>();
   const menuRef = React.useRef<HTMLDivElement>();
   const containerRef = React.useRef<HTMLDivElement>();
@@ -44,12 +44,10 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
   const visibleOptions = options.filter(opt => opt.props.itemId.toLowerCase().includes(inputValue.toLowerCase()));
 
   const handleMenuKeys = (event: KeyboardEvent) => {
-    const firstElement = menuRef?.current?.querySelector('li > button:not(:disabled)');
-
     // If the menu is open and Escape or Tab is pressed from within the menu or toggle input
     if (
       isOpen &&
-      menuRef?.current?.contains((event.target as Node) || toggleRef?.current?.contains(event.target as Node))
+      (menuRef?.current?.contains(event.target as Node) || toggleRef?.current?.contains(event.target as Node))
     ) {
       if (event.key === 'Tab') {
         setIsOpen(false);
@@ -70,6 +68,7 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
     // If the menu is open and ArrowDown is pressed from within the toggle input
     if (isOpen && toggleRef?.current?.contains(event.target as Node)) {
       if (event.key === 'ArrowDown') {
+        const firstElement = menuRef?.current?.querySelector('li > button:not(:disabled)') as HTMLElement;
         firstElement && (firstElement as HTMLElement).focus();
       }
     }
@@ -109,7 +108,7 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
 
   const textInputToggle = (
     <div
-      ref={toggleRef}
+      ref={toggleRef as React.Ref<HTMLDivElement>}
       style={
         {
           width: '500px'
@@ -148,7 +147,7 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
 
   const menu = (
     <Menu
-      ref={menuRef}
+      ref={menuRef as React.Ref<HTMLDivElement>}
       id="select-menu"
       onSelect={(_ev, itemId) => onSelect(itemId?.toString() as string)}
       selected={selected}
@@ -159,7 +158,7 @@ export const ComposableMultipleTypeaheadSelect: React.FunctionComponent = () => 
     </Menu>
   );
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef as React.Ref<HTMLDivElement>}>
       <Popper trigger={textInputToggle} popper={menu} appendTo={containerRef.current} isVisible={isOpen} />
     </div>
   );
