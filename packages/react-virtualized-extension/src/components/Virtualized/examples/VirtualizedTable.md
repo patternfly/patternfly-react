@@ -1,5 +1,6 @@
 ---
-id: Virtual scroll table
+id: Virtualized
+source: virtual-scroll-table
 section: extensions
 ---
 

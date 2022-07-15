@@ -1,5 +1,6 @@
 ---
-id: Virtual scroll window scroller
+id: Virtualized
+source: virtual-scroll-window-scroller
 section: extensions
 ---
 
