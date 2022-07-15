@@ -49,8 +49,6 @@ import BellIcon from '@patternfly/react-icons/dist/js/icons/bell-icon';
 import CogIcon from '@patternfly/react-icons/dist/js/icons/cog-icon';
 import HelpIcon from '@patternfly/react-icons/dist/js/icons/help-icon';
 import SearchIcon from '@patternfly/react-icons/dist/js/icons/search-icon';
-import imgBrand from '@patternfly/react-core/src/components/Brand/examples/pfLogo.svg';
-import imgAvatar from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
 
 interface NotificationProps {
   title: string;
@@ -59,26 +57,28 @@ interface NotificationProps {
   key: React.Key;
   timestamp: string;
   description: string;
-  isAlertDisabled: boolean;
   isNotificationRead: boolean;
 }
 
-export const BasicNotificationDrawer: React.FunctionComponent = () => {
+export const AlertGroupDemo: React.FunctionComponent = () => {
+  const maxDisplayedAlerts = 3;
+  const minAlerts = 0;
+  const maxAlerts = 100;
+  const alertTimeout = 4000;
+
   const [isDropdownOpen, setDropdownOpen] = React.useState(false);
   const [isKebabDropdownOpen, setKebabDropdownOpen] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(0);
   const [isDrawerExpanded, setDrawerExpanded] = React.useState(false);
   const [openDropdownKey, setOpenDropdownKey] = React.useState<React.Key | null>(null);
   const [overflowMessage, setOverflowMessage] = React.useState<string>('');
-  const [maxDisplayed, setMaxDisplayed] = React.useState(3);
+  const [maxDisplayed, setMaxDisplayed] = React.useState(maxDisplayedAlerts);
+  const [alerts, setAlerts] = React.useState<any[]>([]);
   const [notifications, setNotifications] = React.useState<NotificationProps[]>([]);
-
-  const minAlerts = 0;
-  const maxAlerts = 100;
 
   useEffect(() => {
     setOverflowMessage(getOverflowMessageCount());
-  }, [maxDisplayed, notifications]);
+  }, [maxDisplayed, notifications, alerts]);
 
   const addNotification = (
     title: string,
@@ -86,17 +86,34 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
     variant: NotificationProps['variant'],
     key: React.Key,
     timestamp: string,
-    description: string,
-    isAlertDisabled: boolean
+    description: string
   ) => {
     setNotifications([
-      { title, srTitle, variant, key, timestamp, description, isAlertDisabled, isNotificationRead: false },
+      { title, srTitle, variant, key, timestamp, description, isNotificationRead: false },
       ...notifications
     ]);
+
+    if (!isDrawerExpanded) {
+      setAlerts([
+        <Alert
+          variant={variant}
+          title={title}
+          timeout={alertTimeout}
+          onTimeout={() => removeAlert(key)}
+          actionClose={
+            <AlertActionCloseButton title={title} variantLabel={`${variant} alert`} onClose={() => removeAlert(key)} />
+          }
+          key={key}
+        >
+          <p>{description}</p>
+        </Alert>,
+        ...alerts
+      ]);
+    }
   };
 
   const removeNotification = (key: React.Key) => {
-    setNotifications([...notifications.filter(alert => alert.key !== key)]);
+    setNotifications([...notifications.filter(notification => notification.key !== key)]);
   };
 
   const removeAllNotifications = () => {
@@ -104,13 +121,11 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
   };
 
   const removeAlert = (key: React.Key) => {
-    setNotifications([
-      ...notifications.map(alert => (alert.key === key ? { ...alert, isAlertDisabled: true } : alert))
-    ]);
+    setAlerts([...alerts.filter(alert => alert.key !== key)]);
   };
 
   const removeAllAlerts = () => {
-    setNotifications([...notifications.map(alert => ({ ...alert, isAlertDisabled: true }))]);
+    setAlerts([]);
   };
 
   const onPageNavSelect = (result: any) => {
@@ -140,7 +155,9 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
 
   const markNotificationAsRead = (key: React.Key) => {
     setNotifications([
-      ...notifications.map(alert => (alert.key === key ? { ...alert, isNotificationRead: true } : alert))
+      ...notifications.map(notification =>
+        notification.key === key ? { ...notification, isNotificationRead: true } : notification
+      )
     ]);
   };
 
@@ -148,12 +165,11 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
     notifications.filter(notification => notification.isNotificationRead === false).length;
 
   const markAllNotificationsRead = () => {
-    setNotifications([...notifications.map(alert => ({ ...alert, isNotificationRead: true }))]);
+    setNotifications([...notifications.map(notification => ({ ...notification, isNotificationRead: true }))]);
   };
 
   const getOverflowMessageCount = () => {
-    const numberOfAlerts = notifications.filter(notification => notification.isAlertDisabled === false).length;
-    const overflow = numberOfAlerts - maxDisplayed;
+    const overflow = alerts.length - maxDisplayed;
     if (overflow > 0 && maxDisplayed > 0) {
       return `View ${overflow} more notifications in notification drawer`;
     }
@@ -184,8 +200,7 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
       'success',
       getUniqueId(),
       getTimeCreated(),
-      'Success alert notification description',
-      isDrawerExpanded
+      'Success alert notification description'
     );
   };
 
@@ -196,8 +211,7 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
       'danger',
       getUniqueId(),
       getTimeCreated(),
-      'Danger alert notification description',
-      isDrawerExpanded
+      'Danger alert notification description'
     );
   };
 
@@ -208,8 +222,7 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
       'info',
       getUniqueId(),
       getTimeCreated(),
-      'Info alert notification description',
-      isDrawerExpanded
+      'Info alert notification description'
     );
   };
 
@@ -220,8 +233,7 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
       'warning',
       getUniqueId(),
       getTimeCreated(),
-      'Warning alert notification description',
-      isDrawerExpanded
+      'Warning alert notification description'
     );
   };
 
@@ -232,8 +244,7 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
       'default',
       getUniqueId(),
       getTimeCreated(),
-      'Default alert notification description',
-      isDrawerExpanded
+      'Default alert notification description'
     );
   };
 
@@ -356,12 +367,16 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
           />
         </PageHeaderToolsItem>
       </PageHeaderToolsGroup>
-      <Avatar src={imgAvatar} alt="Avatar image" />
+      <Avatar src="/assets/images/img_avatar.svg" alt="Avatar image" />
     </PageHeaderTools>
   );
 
   const header = (
-    <PageHeader logo={<Brand src={imgBrand} alt="Patternfly Logo" />} headerTools={headerTools} showNavToggle />
+    <PageHeader
+      logo={<Brand src={'/assets/images/logo__pf--reverse-on-md.svg'} alt="Patternfly Logo" />}
+      headerTools={headerTools}
+      showNavToggle
+    />
   );
 
   const sidebar = <PageSidebar nav={pageNav} />;
@@ -449,22 +464,6 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
     </NotificationDrawer>
   );
 
-  const toastAlerts = notifications
-    .filter(notification => notification.isAlertDisabled === false)
-    .slice(0, maxDisplayed)
-    .map(({ key, variant, title, description }) => (
-      <Alert
-        variant={variant}
-        title={title}
-        actionClose={
-          <AlertActionCloseButton title={title} variantLabel={`${variant} alert`} onClose={() => removeAlert(key)} />
-        }
-        key={key}
-      >
-        <p>{description}</p>
-      </Alert>
-    ));
-
   return (
     <React.Fragment>
       <Page
@@ -538,7 +537,7 @@ export const BasicNotificationDrawer: React.FunctionComponent = () => {
             onOverflowClick={onAlertGroupOverflowClick}
             overflowMessage={overflowMessage}
           >
-            {toastAlerts}
+            {alerts.slice(0, maxDisplayed)}
           </AlertGroup>
         </PageSection>
       </Page>
