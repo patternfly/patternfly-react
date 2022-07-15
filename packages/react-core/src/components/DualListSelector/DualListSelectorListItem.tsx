@@ -6,6 +6,10 @@ import GripVerticalIcon from '@patternfly/react-icons/dist/esm/icons/grip-vertic
 import { Button, ButtonVariant } from '../Button';
 import { DualListSelectorListContext } from './DualListSelectorContext';
 
+/** Creates an individual option that can be selected and moved between the
+ * dual list selector panes. This is contained within the DualListSelectorList sub-component.
+ */
+
 export interface DualListSelectorListItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Content rendered inside the dual list selector. */
   children?: React.ReactNode;

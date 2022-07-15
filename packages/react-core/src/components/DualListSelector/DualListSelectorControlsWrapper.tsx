@@ -3,6 +3,8 @@ import styles from '@patternfly/react-styles/css/components/DualListSelector/dua
 import { css } from '@patternfly/react-styles';
 import { handleArrows } from '../../helpers';
 
+/** Acts as the container for the DualListSelectorControl sub-components. */
+
 export interface DualListSelectorControlsWrapperProps extends React.HTMLProps<HTMLDivElement> {
   /** Anything that can be rendered inside of the wrapper. */
   children?: React.ReactNode;

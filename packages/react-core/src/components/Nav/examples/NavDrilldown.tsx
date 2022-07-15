@@ -65,7 +65,7 @@ export const NavLevelThreeDrill: React.FunctionComponent = () => {
   };
 
   return (
-    <Nav>
+    <Nav aria-label="Drilldown global nav">
       <Menu
         id="rootMenu"
         containsDrilldown

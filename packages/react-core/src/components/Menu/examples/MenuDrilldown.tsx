@@ -9,7 +9,7 @@ export const MenuDrilldown: React.FunctionComponent = () => {
   const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
   const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
   const [menuHeights, setMenuHeights] = React.useState<any>({});
-  const [activeMenu, setActiveMenu] = React.useState<string>('rootMenu');
+  const [activeMenu, setActiveMenu] = React.useState<string>('drilldown-rootMenu');
 
   const drillIn = (fromMenuId: string, toMenuId: string, pathId: string) => {
     setMenuDrilledIn([...menuDrilledIn, fromMenuId]);
@@ -33,7 +33,7 @@ export const MenuDrilldown: React.FunctionComponent = () => {
 
   return (
     <Menu
-      id="rootMenu"
+      id="drilldown-rootMenu"
       containsDrilldown
       drilldownItemPath={drilldownPath}
       drilledInMenus={menuDrilledIn}
@@ -48,7 +48,7 @@ export const MenuDrilldown: React.FunctionComponent = () => {
             itemId="group:start_rollout"
             direction="down"
             drilldownMenu={
-              <DrilldownMenu id="drilldownMenuStart">
+              <DrilldownMenu id="drilldown-drilldownMenuStart">
                 <MenuItem itemId="group:start_rollout_breadcrumb" direction="up">
                   Start rollout
                 </MenuItem>
@@ -58,7 +58,7 @@ export const MenuDrilldown: React.FunctionComponent = () => {
                   description="Groups A-C"
                   direction="down"
                   drilldownMenu={
-                    <DrilldownMenu id="drilldownMenuStartGrouping">
+                    <DrilldownMenu id="drilldown-drilldownMenuStartGrouping">
                       <MenuItem itemId="group:app_grouping_breadcrumb" direction="up">
                         Application grouping
                       </MenuItem>
@@ -76,7 +76,7 @@ export const MenuDrilldown: React.FunctionComponent = () => {
                   itemId="group:labels"
                   direction="down"
                   drilldownMenu={
-                    <DrilldownMenu id="drilldownMenuStartLabels">
+                    <DrilldownMenu id="drilldown-drilldownMenuStartLabels">
                       <MenuItem itemId="group:labels_breadcrumb" direction="up">
                         Labels
                       </MenuItem>
@@ -99,7 +99,7 @@ export const MenuDrilldown: React.FunctionComponent = () => {
             itemId="group:pause_rollout"
             direction="down"
             drilldownMenu={
-              <DrilldownMenu id="drilldownMenuPause">
+              <DrilldownMenu id="drilldown-drilldownMenuPause">
                 <MenuItem itemId="group:pause_rollout_breadcrumb" direction="up">
                   Pause rollouts
                 </MenuItem>
@@ -109,7 +109,7 @@ export const MenuDrilldown: React.FunctionComponent = () => {
                   description="Groups A-C"
                   direction="down"
                   drilldownMenu={
-                    <DrilldownMenu id="drilldownMenuGrouping">
+                    <DrilldownMenu id="drilldown-drilldownMenuGrouping">
                       <MenuItem itemId="group:app_grouping_breadcrumb" direction="up">
                         Application grouping
                       </MenuItem>
@@ -127,7 +127,7 @@ export const MenuDrilldown: React.FunctionComponent = () => {
                   itemId="group:labels"
                   direction="down"
                   drilldownMenu={
-                    <DrilldownMenu id="drilldownMenuLabels">
+                    <DrilldownMenu id="drilldown-drilldownMenuLabels">
                       <MenuItem itemId="group:labels_breadcrumb" direction="up">
                         Labels
                       </MenuItem>
@@ -151,7 +151,7 @@ export const MenuDrilldown: React.FunctionComponent = () => {
             icon={<StorageDomainIcon aria-hidden />}
             direction="down"
             drilldownMenu={
-              <DrilldownMenu id="drilldownMenuStorage">
+              <DrilldownMenu id="drilldown-drilldownMenuStorage">
                 <MenuItem itemId="group:storage_breadcrumb" icon={<StorageDomainIcon aria-hidden />} direction="up">
                   Add storage
                 </MenuItem>

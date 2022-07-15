@@ -49,6 +49,7 @@ exports[`optionsMenu expanded 1`] = `
       <section
         class="pf-c-options-menu__group"
         index="0"
+        role="none"
       >
         <h1
           class="pf-c-options-menu__group-title"
@@ -58,6 +59,7 @@ exports[`optionsMenu expanded 1`] = `
         <ul
           aria-label=""
           class=""
+          role="group"
         >
           <li
             id=""
@@ -137,6 +139,7 @@ exports[`optionsMenu expanded 1`] = `
       <section
         class="pf-c-options-menu__group"
         index="2"
+        role="none"
       >
         <h1
           class="pf-c-options-menu__group-title"
@@ -146,6 +149,7 @@ exports[`optionsMenu expanded 1`] = `
         <ul
           aria-label=""
           class=""
+          role="group"
         >
           <li
             id=""
@@ -467,7 +471,7 @@ exports[`optionsMenu text 1`] = `
         aria-haspopup="listbox"
         aria-label="Options menu"
         class="pf-c-options-menu__toggle-button"
-        id="-toggle"
+        id="text-toggle"
       >
         <span
           class="pf-c-options-menu__toggle-button-icon"

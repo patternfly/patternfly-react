@@ -13,6 +13,8 @@ export interface MenuGroupProps extends React.HTMLProps<HTMLElement> {
   titleId?: string;
   /** Forwarded ref */
   innerRef?: React.Ref<any>;
+  /** Group label heading level. Default is h1. */
+  labelHeadingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 const MenuGroupBase: React.FunctionComponent<MenuGroupProps> = ({
@@ -21,13 +23,14 @@ const MenuGroupBase: React.FunctionComponent<MenuGroupProps> = ({
   label = '',
   titleId = '',
   innerRef,
+  labelHeadingLevel: HeadingLevel = 'h1',
   ...props
 }: MenuGroupProps) => (
   <section {...props} className={css('pf-c-menu__group', className)} ref={innerRef}>
     {label && (
-      <h1 className={css(styles.menuGroupTitle)} id={titleId}>
+      <HeadingLevel className={css(styles.menuGroupTitle)} id={titleId}>
         {label}
-      </h1>
+      </HeadingLevel>
     )}
     {children}
   </section>

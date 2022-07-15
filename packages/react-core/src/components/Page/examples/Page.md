@@ -19,6 +19,7 @@ propComponents:
 ---
 
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
+import './page.css';
 
 ## Examples
 
@@ -60,7 +61,7 @@ class VerticalPage extends React.Component {
     const { isNavOpen } = this.state;
 
     const headerToolbar = (
-      <Toolbar id="toolbar">
+      <Toolbar id="vertical-toolbar">
         <ToolbarContent>
           <ToolbarItem>header-tools</ToolbarItem>
         </ToolbarContent>
@@ -75,6 +76,7 @@ class VerticalPage extends React.Component {
             aria-label="Global navigation"
             isNavOpen={isNavOpen}
             onNavToggle={this.onNavToggle}
+            id="vertical-nav-toggle"
           >
             <BarsIcon />
           </PageToggleButton>
@@ -87,7 +89,7 @@ class VerticalPage extends React.Component {
         <MastheadContent>{headerToolbar}</MastheadContent>
       </Masthead>
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="vertical-sidebar"/>;
 
     return (
       <Page header={Header} sidebar={Sidebar}>
@@ -119,7 +121,7 @@ import {
 
 HorizontalPage = () => {
   const headerToolbar = (
-    <Toolbar id="toolbar">
+    <Toolbar id="horizontal-toolbar">
       <ToolbarContent>
         <ToolbarItem>Navigation</ToolbarItem>
         <ToolbarItem>header-tools</ToolbarItem>
@@ -167,7 +169,7 @@ import {
 
 TertiaryPage = () => {
   const headerToolbar = (
-    <Toolbar id="toolbar">
+    <Toolbar id="tertiary-toolbar">
       <ToolbarContent>
         <ToolbarItem>header-tools</ToolbarItem>
       </ToolbarContent>
@@ -232,7 +234,7 @@ class FillPage extends React.Component {
     const { isNavOpen } = this.state;
 
     const headerToolbar = (
-      <Toolbar id="toolbar">
+      <Toolbar id="fill-toolbar">
         <ToolbarContent>
           <ToolbarItem>header-tools</ToolbarItem>
         </ToolbarContent>
@@ -247,6 +249,7 @@ class FillPage extends React.Component {
             aria-label="Global navigation"
             isNavOpen={isNavOpen}
             onNavToggle={this.onNavToggle}
+            id="fill-nav-toggle"
           >
             <BarsIcon />
           </PageToggleButton>
@@ -259,7 +262,7 @@ class FillPage extends React.Component {
         <MastheadContent>{headerToolbar}</MastheadContent>
       </Masthead>
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="fill-sidebar"/>;
 
     return (
       <Page header={Header} sidebar={Sidebar}>
@@ -313,7 +316,7 @@ class VerticalPage extends React.Component {
     const { isNavOpen } = this.state;
 
     const headerToolbar = (
-      <Toolbar id="toolbar">
+      <Toolbar id="main-padding-toolbar">
         <ToolbarContent>
           <ToolbarItem>header-tools</ToolbarItem>
         </ToolbarContent>
@@ -328,6 +331,7 @@ class VerticalPage extends React.Component {
             aria-label="Global navigation"
             isNavOpen={isNavOpen}
             onNavToggle={this.onNavToggle}
+            id="main-padding-nav-toggle"
           >
             <BarsIcon />
           </PageToggleButton>
@@ -340,7 +344,7 @@ class VerticalPage extends React.Component {
         <MastheadContent>{headerToolbar}</MastheadContent>
       </Masthead>
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="main-padding-sidebar"/>;
 
     return (
       <Page header={Header} sidebar={Sidebar}>
@@ -384,7 +388,7 @@ import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 class UncontrolledNavPage extends React.Component {
   render() {
     const headerToolbar = (
-      <Toolbar id="toolbar">
+      <Toolbar id="uncontrolled-toolbar">
         <ToolbarContent>
           <ToolbarItem>header-tools</ToolbarItem>
         </ToolbarContent>
@@ -394,7 +398,7 @@ class UncontrolledNavPage extends React.Component {
     const Header = (
       <Masthead>
         <MastheadToggle>
-          <PageToggleButton variant="plain" aria-label="Global navigation">
+          <PageToggleButton variant="plain" aria-label="Global navigation" id="uncontrolled-nav-toggle">
             <BarsIcon />
           </PageToggleButton>
         </MastheadToggle>
@@ -406,7 +410,7 @@ class UncontrolledNavPage extends React.Component {
         <MastheadContent>{headerToolbar}</MastheadContent>
       </Masthead>
     );
-    const Sidebar = <PageSidebar nav="Navigation" />;
+    const Sidebar = <PageSidebar nav="Navigation" id="uncontrolled-sidebar"/>;
 
     return (
       <Page isManagedSidebar header={Header} sidebar={Sidebar}>
@@ -465,7 +469,7 @@ class GroupPage extends React.Component {
     const { isNavOpen } = this.state;
 
     const headerToolbar = (
-      <Toolbar id="toolbar">
+      <Toolbar id="group-section-toolbar">
         <ToolbarContent>
           <ToolbarItem>header-tools</ToolbarItem>
         </ToolbarContent>
@@ -480,6 +484,7 @@ class GroupPage extends React.Component {
             aria-label="Global navigation"
             isNavOpen={isNavOpen}
             onNavToggle={this.onNavToggle}
+            id="group-section-nav-toggle"
           >
             <BarsIcon />
           </PageToggleButton>
@@ -492,13 +497,13 @@ class GroupPage extends React.Component {
         <MastheadContent>{headerToolbar}</MastheadContent>
       </Masthead>
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="group-section-sidebar"/>;
 
     return (
       <Page header={Header} sidebar={Sidebar}>
         <PageGroup>
           <PageNavigation>
-            <Nav aria-label="Nav" variant="tertiary">
+            <Nav aria-label="Group section navigation" variant="tertiary">
               <NavList>
                 <NavItem itemId={0} isActive>
                   System panel
@@ -574,9 +579,10 @@ class VerticalPage extends React.Component {
         showNavToggle
         isNavOpen={isNavOpen}
         onNavToggle={this.onNavToggle}
+        navToggleId="vertical-pageheader-toggle"
       />
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="vertical-pageheader-sidebar"/>;
 
     return (
       <Page header={Header} sidebar={Sidebar}>
@@ -614,7 +620,7 @@ import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
 CenterAlignedPageSection = () => {
   const headerToolbar = (
-    <Toolbar id="toolbar">
+    <Toolbar id="centered-toolbar">
       <ToolbarContent>
         <ToolbarItem>header-tools</ToolbarItem>
       </ToolbarContent>
@@ -624,7 +630,7 @@ CenterAlignedPageSection = () => {
   const Header = (
     <Masthead>
       <MastheadToggle>
-        <PageToggleButton variant="plain" aria-label="Global navigation" onNavToggle={this.onNavToggle}>
+        <PageToggleButton variant="plain" aria-label="Global navigation" onNavToggle={this.onNavToggle} id="centered-nav-toggle">
           <BarsIcon />
         </PageToggleButton>
       </MastheadToggle>

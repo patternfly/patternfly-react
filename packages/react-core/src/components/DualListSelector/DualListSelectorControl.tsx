@@ -3,6 +3,10 @@ import { css } from '@patternfly/react-styles';
 import { Button, ButtonVariant } from '../Button';
 import { Tooltip } from '../Tooltip';
 
+/** Renders an individual control button for moving selected options between each
+ * dual list selector pane.
+ */
+
 export interface DualListSelectorControlProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onClick'> {
   /** Content to be rendered in the dual list selector control. */
   children?: React.ReactNode;

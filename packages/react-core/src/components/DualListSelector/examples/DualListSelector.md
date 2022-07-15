@@ -6,10 +6,10 @@ propComponents:
   [
     'DualListSelector',
     'DualListSelectorPane',
-    'DualListSelectorControl',
-    'DualListSelectorControlsWrapper',
     'DualListSelectorList',
     'DualListSelectorListItem',
+    'DualListSelectorControlsWrapper',
+    'DualListSelectorControl',
     'DualListSelectorTree',
     'DualListSelectorTreeItemData',
   ]
@@ -49,9 +49,9 @@ import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pfic
 ```ts file="./DualListSelectorTreeExample.tsx"
 ```
 
-### Composable dual list selector
+## Composable structure
 
-For more flexibility, a dual list selector can be built using sub components. When doing so, the intended component relationships are arranged as follows:
+The dual list selector can also be built in a composable manner to make customization easier. The standard sub-component relationships are arranged as follows:
 
 ```noLive
 <DualListSelector>
@@ -62,7 +62,7 @@ For more flexibility, a dual list selector can be built using sub components. Wh
   </DualListSelectorPane>
 
   <DualListSelectorControlsWrapper>
-    <DualListSelectorControl /> /* The standard Dual list selector has 4 controls */
+    <DualListSelectorControl /> /* A standard Dual list selector has 4 controls */
   </DualListSelectorControlsWrapper>
 
   <DualListSelectorPane isChosen>
@@ -73,10 +73,12 @@ For more flexibility, a dual list selector can be built using sub components. Wh
 </DualListSelector>
 ```
 
+### Composable dual list selector
+
 ```ts file="./DualListSelectorComposable.tsx"
 ```
 
-### Composable dual list selector with drag and drop
+### Composable with drag and drop
 
 This example only allows reordering the contents of the "chosen" pane with drag and drop. To make a pane able to be reordered:
 
@@ -95,7 +97,7 @@ Note: Keyboard accessibility and screen reader accessibility for the `DragDrop` 
 ```ts file="DualListSelectorComposableDragDrop.tsx"
 ```
 
-### Composable dual list selector with tree
+### Composable with tree
 
 ```ts file="DualListSelectorComposableTree.tsx"
 ```
