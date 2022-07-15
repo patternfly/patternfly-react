@@ -8,6 +8,11 @@ import { DualListSelectorListWrapper } from './DualListSelectorListWrapper';
 import { DualListSelectorContext, DualListSelectorPaneContext } from './DualListSelectorContext';
 import { DualListSelectorList } from './DualListSelectorList';
 
+/** Acts as the container for a list of options that are either available or chosen,
+ * depending on the pane type (available or chosen). A search input and other actions,
+ * such as sorting, can also be passed into this sub-component.
+ */
+
 export interface DualListSelectorPaneProps {
   /** Additional classes applied to the dual list selector pane. */
   className?: string;

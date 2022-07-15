@@ -3,12 +3,7 @@ id: File upload - multiple
 section: components
 cssPrefix: pf-c-multiple-file-upload
 propComponents:
-  [
-    'MultipleFileUpload',
-    'MultipleFileUploadMain',
-    'MultipleFileUploadStatus',
-    'MultipleFileUploadStatusItem',
-  ]
+  ['MultipleFileUpload', 'MultipleFileUploadMain', 'MultipleFileUploadStatus', 'MultipleFileUploadStatusItem']
 beta: true
 ---
 
@@ -30,6 +25,19 @@ As with singular file upload, any [props accepted by react-dropzone's Dropzone c
 #### IMPORTANT: A note about security
 
 Restricting file sizes and types in this way is for user convenience only, and it cannot prevent a malicious user from submitting anything to your server. As with any user input, your application should also validate, sanitize and/or reject restricted files on the server side.
+
+## Composable structure
+
+File upload - multiple is designed in a composable manner to make customization easier. The standard sub-component relationships are arranged as follows:
+
+```noLive
+<MultipleFileUpload>
+  <MultipleFileUploadMain />
+  <MultipleFileUploadStatus>
+    <MultipleFileUploadStatusItem />
+  </MultipleFileUploadStatus>
+</MultipleFileUpload>
+```
 
 ## Examples
 

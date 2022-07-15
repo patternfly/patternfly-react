@@ -20,6 +20,10 @@ import { DualListSelectorControlsWrapper } from './DualListSelectorControlsWrapp
 import { DualListSelectorControl } from './DualListSelectorControl';
 import { DualListSelectorContext } from './DualListSelectorContext';
 
+/** Acts as a container for all other DualListSelector sub-components when using a
+ * composable dual list selector.
+ */
+
 export interface DualListSelectorProps {
   /** Additional classes applied to the dual list selector. */
   className?: string;

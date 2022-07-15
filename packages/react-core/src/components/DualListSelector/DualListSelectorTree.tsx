@@ -35,6 +35,10 @@ export interface DualListSelectorTreeItemData {
   isDisabled?: boolean;
 }
 
+/** Used in place of the DualListSelectorListItem sub-component when building a
+ * composable dual list selector with a tree.
+ */
+
 export interface DualListSelectorTreeProps extends Omit<React.HTMLProps<HTMLUListElement>, 'data'> {
   /** Data of the tree view */
   data: DualListSelectorTreeItemData[] | (() => DualListSelectorTreeItemData[]);
