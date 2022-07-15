@@ -163,6 +163,8 @@ export const LegacyTableExpandable: React.FunctionComponent = () => {
         }}
         rows={rows}
         cells={columns}
+        expandId="expandable-table-toggle"
+        contentId="expandable-table-content"
       >
         <TableHeader />
         <TableBody />

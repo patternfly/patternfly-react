@@ -16,12 +16,12 @@ const items = [
 
 describe('ContextSelector', () => {
   test('Renders ContextSelector', () => {
-    const { asFragment } = render(<ContextSelector>{items}</ContextSelector>);
+    const { asFragment } = render(<ContextSelector id="render">{items}</ContextSelector>);
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('Renders ContextSelector open', () => {
-    const { asFragment } = render(<ContextSelector isOpen>{items}</ContextSelector>);
+    const { asFragment } = render(<ContextSelector isOpen id="render-open">{items}</ContextSelector>);
     expect(asFragment()).toMatchSnapshot();
   });
 

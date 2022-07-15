@@ -28,8 +28,9 @@ import { ChartTooltip } from '../ChartTooltip';
 import { getComputedLegend, getPaddingForSide } from '../ChartUtils';
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-chart/src/index.d.ts
+ * ChartBullet renders a dataset as a bullet chart.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-chart/src/victory-chart.tsx
  */
 export interface ChartBulletProps {
   /**

@@ -16,11 +16,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AboutModalDemo
   },
   {
-    id: 'accordion-demo',
-    name: 'Accordion Demo',
-    componentType: Examples.AccordionDemo
-  },
-  {
     id: 'alert-timeout-close-button-demo',
     name: 'Alert Timeout Close Button Demo',
     componentType: Examples.AlertTimeoutCloseButtonDemo
@@ -509,6 +504,11 @@ export const Demos: DemoInterface[] = [
     id: 'topology-demo',
     name: 'Topology Demo',
     componentType: Examples.TopologyDemo
+  },
+  {
+    id: 'topology-pipelines-demo',
+    name: 'Topology Pipelines Demo',
+    componentType: Examples.TopologyPipelineDemo
   },
   {
     id: 'treeview-demo',

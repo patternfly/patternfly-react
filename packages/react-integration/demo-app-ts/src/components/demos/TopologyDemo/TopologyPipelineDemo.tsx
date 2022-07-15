@@ -1,0 +1,31 @@
+import React from 'react';
+import { Tab, Tabs, TabTitleText } from '@patternfly/react-core';
+import { PipelineTasks, TASKS_TITLE } from './PipelineTasks';
+
+import './TopologyDemo.css';
+import { LAYOUT_TITLE, PipelineLayout } from './PipelineLayout';
+
+const TASKS = 0;
+const LAYOUT = 1;
+
+export const TopologyPipelineDemo: React.FunctionComponent = () => {
+  const [activeKey, setActiveKey] = React.useState<number>(TASKS);
+
+  const handleTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: number) => {
+    setActiveKey(tabIndex);
+  };
+
+  return (
+    <div className="pf-ri__topology-demo">
+      <Tabs unmountOnExit activeKey={activeKey} onSelect={handleTabClick}>
+        <Tab eventKey={TASKS} title={<TabTitleText>{TASKS_TITLE}</TabTitleText>}>
+          <PipelineTasks />
+        </Tab>
+        <Tab eventKey={LAYOUT} title={<TabTitleText>{LAYOUT_TITLE}</TabTitleText>}>
+          <PipelineLayout />
+        </Tab>
+      </Tabs>
+    </div>
+  );
+};
+TopologyPipelineDemo.displayName = 'TopologyPipelineDemo';

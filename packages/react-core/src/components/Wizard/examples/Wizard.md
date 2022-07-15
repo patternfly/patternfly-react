@@ -2,10 +2,12 @@
 id: Wizard
 section: components
 cssPrefix: pf-c-wizard
-propComponents: ['Wizard', 'WizardNav', 'WizardNavItem', 'WizardHeader', 'WizardBody', 'WizardFooter', 'WizardToggle', 'WizardStep']
+propComponents:
+  ['Wizard', 'WizardNav', 'WizardNavItem', 'WizardHeader', 'WizardBody', 'WizardFooter', 'WizardToggle', 'WizardStep']
 ---
 
-import { Button, Wizard, WizardFooter, WizardContextConsumer, ModalVariant, Alert, EmptyState, EmptyStateIcon, EmptyStateBody, EmptyStateSecondaryActions, Title, Progress } from '@patternfly/react-core';
+import { Button, Drawer, DrawerActions, DrawerCloseButton, DrawerColorVariant,
+DrawerContent, DrawerContentBody, DrawerHead, DrawerPanelContent, DrawerSection, Wizard, WizardFooter, WizardContextConsumer, ModalVariant, Alert, EmptyState, EmptyStateIcon, EmptyStateBody, EmptyStateSecondaryActions, Title, Progress } from '@patternfly/react-core';
 import ExternalLinkAltIcon from '@patternfly/react-icons/dist/esm/icons/external-link-alt-icon';
 import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-icon';
 import FinishedStep from './FinishedStep';
@@ -30,6 +32,31 @@ class SimpleWizard extends React.Component {
       { name: 'Second step', component: <p>Step 2 content</p> },
       { name: 'Third step', component: <p>Step 3 content</p> },
       { name: 'Fourth step', component: <p>Step 4 content</p> },
+      { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
+    ];
+    const title = 'Basic wizard';
+    return <Wizard navAriaLabel={`${title} steps`} mainAriaLabel={`${title} content`} steps={steps} height={400} />;
+  }
+}
+```
+
+### Basic with disabled steps
+
+```js
+import React from 'react';
+import { Button, Wizard } from '@patternfly/react-core';
+
+class SimpleWizard extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const steps = [
+      { name: 'First step', component: <p>Step 1 content</p> },
+      { name: 'Second step', component: <p>Step 2 content</p>, isDisabled: true},
+      { name: 'Third step', component: <p>Step 3 content</p> },
+      { name: 'Fourth step', component: <p>Step 4 content</p>, isDisabled: true },
       { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
     ];
     const title = 'Basic wizard';
@@ -117,12 +144,12 @@ class IncrementallyEnabledStepsWizard extends React.Component {
     const { stepIdReached } = this.state;
 
     const steps = [
-      { id: 1, name: 'First step', component: <p>Step 1 content</p> },
-      { id: 2, name: 'Second step', component: <p>Step 2 content</p>, canJumpTo: stepIdReached >= 2 },
-      { id: 3, name: 'Third step', component: <p>Step 3 content</p>, canJumpTo: stepIdReached >= 3 },
-      { id: 4, name: 'Fourth step', component: <p>Step 4 content</p>, canJumpTo: stepIdReached >= 4 },
+      { id: 'incrementally-enabled-1', name: 'First step', component: <p>Step 1 content</p> },
+      { id: 'incrementally-enabled-2', name: 'Second step', component: <p>Step 2 content</p>, canJumpTo: stepIdReached >= 2 },
+      { id: 'incrementally-enabled-3', name: 'Third step', component: <p>Step 3 content</p>, canJumpTo: stepIdReached >= 3 },
+      { id: 'incrementally-enabled-4', name: 'Fourth step', component: <p>Step 4 content</p>, canJumpTo: stepIdReached >= 4 },
       {
-        id: 5,
+        id: 'incrementally-enabled-5',
         name: 'Review',
         component: <p>Review step content</p>,
         nextButtonText: 'Finish',
@@ -175,7 +202,7 @@ class SimpleWizard extends React.Component {
       { name: 'Fourth step', component: <p>Step 4 content</p> },
       { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
     ];
-    const title = 'Basic wizard';
+    const title = 'Expandable wizard';
     return (
       <Wizard
         navAriaLabel={`${title} steps`}
@@ -294,29 +321,29 @@ class ValidationWizard extends React.Component {
     const { isFormValid, formValue, allStepsValid, stepIdReached } = this.state;
 
     const steps = [
-      { id: 1, name: 'Information', component: <p>Step 1 content</p> },
+      { id: 'validated-1', name: 'Information', component: <p>Step 1 content</p> },
       {
         name: 'Configuration',
         steps: [
           {
-            id: 2,
+            id: 'validated-2',
             name: 'Substep A with validation',
             component: <SampleForm formValue={formValue} isFormValid={isFormValid} onChange={this.onFormChange} />,
             enableNext: isFormValid,
             canJumpTo: stepIdReached >= 2
           },
-          { id: 3, name: 'Substep B', component: <p>Substep B</p>, canJumpTo: stepIdReached >= 3 }
+          { id: 'validated-3', name: 'Substep B', component: <p>Substep B</p>, canJumpTo: stepIdReached >= 3 }
         ]
       },
       {
-        id: 4,
+        id: 'validated-4',
         name: 'Additional',
         component: <p>Step 3 content</p>,
         enableNext: allStepsValid,
         canJumpTo: stepIdReached >= 4
       },
       {
-        id: 5,
+        id: 'validated-5',
         name: 'Review',
         component: <p>Step 4 content</p>,
         nextButtonText: 'Close',
@@ -843,6 +870,159 @@ class WizardInModal extends React.Component {
           steps={steps}
           onClose={this.handleModalToggle}
           isOpen={isOpen}
+        />
+      </React.Fragment>
+    );
+  }
+}
+```
+
+### Wizard with drawer
+
+```js isBeta
+import React from 'react';
+import {
+  Button,
+  DrawerActions,
+  DrawerCloseButton,
+  DrawerHead,
+  DrawerPanelContent,
+  Text,
+  TextContent,
+  Wizard
+} from '@patternfly/react-core';
+
+class WizardWithDrawer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      isDrawerExpanded: false,
+      sectionGray: false,
+      panelGray: true,
+      contentGray: false
+    };
+
+    this.drawerRef = React.createRef();
+
+    this.onExpand = () => {
+      this.drawerRef.current && this.drawerRef.current.focus();
+    };
+
+    this.onOpenClick = () => {
+      this.setState({
+        isDrawerExpanded: true
+      });
+    };
+
+    this.onCloseClick = () => {
+      this.setState({
+        isDrawerExpanded: false
+      });
+    };
+  }
+
+  render() {
+    const { isDrawerExpanded } = this.state;
+
+    const panel1Content = (
+      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
+        <DrawerHead>
+          <span tabIndex={isDrawerExpanded ? 0 : -1} ref={this.drawerRef}>
+            drawer-panel-1 content
+          </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
+        </DrawerHead>
+      </DrawerPanelContent>
+    );
+
+    const panel2Content = (
+      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
+        <DrawerHead>
+          <span tabIndex={0} ref={this.drawerRef}>
+            drawer-panel-2 content
+          </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
+        </DrawerHead>
+      </DrawerPanelContent>
+    );
+
+    const panel3Content = (
+      <DrawerPanelContent widths={{ default: 'width_33' }} colorVariant={DrawerColorVariant.light200}>
+        <DrawerHead>
+          <span tabIndex={0} ref={this.drawerRef}>
+            drawer-panel-3 content
+          </span>
+          <DrawerActions>
+            <DrawerCloseButton onClick={this.onCloseClick} />
+          </DrawerActions>
+        </DrawerHead>
+      </DrawerPanelContent>
+    );
+
+    const drawerToggleButton = (
+      <Button isInline variant="link" onClick={this.onOpenClick}>
+        Open Drawer
+      </Button>
+    );
+
+    const steps = [
+      {
+        name: 'Information',
+        component: <p>Information step content</p>,
+        drawerPanelContent: panel1Content,
+        drawerToggleButton: drawerToggleButton
+      },
+      {
+        name: 'Configuration',
+        steps: [
+          {
+            name: 'Substep A',
+            component: <p>Substep A content</p>,
+            drawerPanelContent: panel2Content,
+            drawerToggleButton: drawerToggleButton
+          },
+          {
+            name: 'Substep B',
+            component: <p>Substep B content</p>,
+            drawerPanelContent: panel2Content,
+            drawerToggleButton: drawerToggleButton
+          },
+          {
+            name: 'Substep C',
+            component: <p>Substep C content</p>,
+            drawerPanelContent: panel2Content,
+            drawerToggleButton: drawerToggleButton
+          }
+        ]
+      },
+      {
+        name: 'Additional',
+        component: <p>Additional step content</p>,
+        drawerPanelContent: panel3Content,
+        drawerToggleButton: drawerToggleButton
+      },
+      {
+        name: 'Review',
+        component: <p>Review step content</p>,
+        nextButtonText: 'Finish'
+      }
+    ];
+
+    const title = 'Wizard with drawer';
+
+    return (
+      <React.Fragment>
+        <Wizard
+          height={400}
+          isDrawerExpanded={isDrawerExpanded}
+          hasDrawer
+          navAriaLabel={`${title} steps`}
+          steps={steps}
         />
       </React.Fragment>
     );

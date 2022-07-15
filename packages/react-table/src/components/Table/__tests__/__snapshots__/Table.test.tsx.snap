@@ -2720,6 +2720,7 @@ exports[`Table Compound Expandable table 1`] = `
           <button
             aria-expanded="true"
             class="pf-c-table__button"
+            id="expandable-toggle-0-0"
             type="button"
           >
             <span
@@ -2737,6 +2738,7 @@ exports[`Table Compound Expandable table 1`] = `
           <button
             aria-expanded="false"
             class="pf-c-table__button"
+            id="expandable-toggle-0-1"
             type="button"
           >
             <span
@@ -2781,6 +2783,7 @@ exports[`Table Compound Expandable table 1`] = `
           <button
             aria-expanded="false"
             class="pf-c-table__button"
+            id="expandable-toggle-2-0"
             type="button"
           >
             <span
@@ -2798,6 +2801,7 @@ exports[`Table Compound Expandable table 1`] = `
           <button
             aria-expanded="false"
             class="pf-c-table__button"
+            id="expandable-toggle-2-1"
             type="button"
           >
             <span

@@ -1,6 +1,9 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { css } from '@patternfly/react-styles';
+import { WizardDrawerWrapper } from './WizardDrawerWrapper';
+import { Drawer, DrawerContent } from '../Drawer';
+import { WizardStep } from './Wizard';
 
 export interface WizardBodyProps {
   /** Anything that can be rendered in the Wizard body */
@@ -13,6 +16,12 @@ export interface WizardBodyProps {
   'aria-labelledby': string;
   /** Component used as the primary content container */
   mainComponent?: React.ElementType;
+  /** The currently active WizardStep */
+  activeStep: WizardStep;
+  hasDrawer?: boolean;
+  /** Flag indicating the wizard drawer is expanded */
+  isDrawerExpanded?: boolean;
+  /** Callback function for when the drawer is toggled */
 }
 
 export const WizardBody: React.FunctionComponent<WizardBodyProps> = ({
@@ -20,12 +29,24 @@ export const WizardBody: React.FunctionComponent<WizardBodyProps> = ({
   hasNoBodyPadding = false,
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledBy,
-  mainComponent = 'div'
+  mainComponent = 'div',
+  hasDrawer,
+  isDrawerExpanded,
+  activeStep
 }: WizardBodyProps) => {
   const MainComponent = mainComponent;
   return (
     <MainComponent aria-label={ariaLabel} aria-labelledby={ariaLabelledBy} className={css(styles.wizardMain)}>
-      <div className={css(styles.wizardMainBody, hasNoBodyPadding && styles.modifiers.noPadding)}>{children}</div>
+      <WizardDrawerWrapper
+        hasDrawer={hasDrawer && activeStep.drawerPanelContent}
+        wrapper={(children: React.ReactNode) => (
+          <Drawer isInline isExpanded={isDrawerExpanded}>
+            <DrawerContent panelContent={activeStep.drawerPanelContent}>{children}</DrawerContent>
+          </Drawer>
+        )}
+      >
+        <div className={css(styles.wizardMainBody, hasNoBodyPadding && styles.modifiers.noPadding)}>{children}</div>
+      </WizardDrawerWrapper>
     </MainComponent>
   );
 };

@@ -46,8 +46,9 @@ export enum ChartPieSortOrder {
 }
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-pie/src/index.d.ts
+ * ChartPie renders a dataset as a pie chart.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-pie/src/index.d.ts
  */
 export interface ChartPieProps extends VictoryPieProps {
   /**

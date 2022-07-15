@@ -4,10 +4,12 @@ exports[`OptionsMenuItemGroup should match snapshot (auto-generated) 1`] = `
 <DocumentFragment>
   <section
     class="pf-c-options-menu__group"
+    role="none"
   >
     <ul
       aria-label="''"
       class="''"
+      role="group"
     >
       ReactNode
     </ul>

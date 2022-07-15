@@ -15,7 +15,9 @@ import { ChartLabel } from '../ChartLabel';
 import { ChartLegendTooltipStyles } from '../ChartTheme';
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * ChartLegendLabel renders a legend tooltip label
+ *
+ * See https://github.com/FormidableLabs/victory/tree/main/packages/victory-core/src/victory-label
  */
 export interface ChartLegendLabelProps extends VictoryLabelProps {
   /**

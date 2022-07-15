@@ -81,6 +81,8 @@ export interface TdExpandType {
   columnIndex?: number;
   /** On toggling the expansion */
   onToggle?: OnCollapse;
+  /** Id prefix for expandable rows **/
+  expandId?: string;
 }
 
 export interface TdCompoundExpandType {
@@ -88,6 +90,12 @@ export interface TdCompoundExpandType {
   isExpanded: boolean;
   /** Callback on toggling of the expansion */
   onToggle?: OnExpand;
+  /** Id prefix for expandable cells **/
+  expandId?: string;
+  /** The row index */
+  rowIndex?: number;
+  /** The column index */
+  columnIndex?: number;
 }
 
 export interface TdFavoritesType {

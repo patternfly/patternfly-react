@@ -87,6 +87,16 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   const keyDownHandler =
     inputProps && inputProps.onKeyDown ? inputProps.onKeyDown : defaultKeyDownHandler({ inputName, onMinus, onPlus });
 
+  const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+    event.target.value = Number(event.target.value).toString();
+    if (onChange) {
+      onChange(event);
+    }
+    if (onBlur) {
+      onBlur(event);
+    }
+  };
+
   return (
     <div
       className={css(styles.numberInput, className)}
@@ -119,7 +129,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
           aria-label={inputAriaLabel}
           {...(isDisabled && { disabled: isDisabled })}
           {...(onChange && { onChange })}
-          {...(onBlur && { onBlur })}
+          onBlur={handleBlur}
           {...(!onChange && { readOnly: true })}
           {...inputProps}
           onKeyDown={keyDownHandler}

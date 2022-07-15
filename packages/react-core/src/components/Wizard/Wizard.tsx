@@ -18,6 +18,10 @@ export interface WizardStep {
   name: React.ReactNode;
   /** The component to render in the main body */
   component?: any;
+  /** @beta The content to render in the drawer panel (use when hasDrawer prop is set on the wizard).   */
+  drawerPanelContent?: any;
+  /** @beta Custom drawer toggle button that opens the drawer. */
+  drawerToggleButton?: React.ReactNode;
   /** Setting to true hides the side nav and footer */
   isFinishedStep?: boolean;
   /** Enables or disables the step in the navigation. Enabled by default. */
@@ -34,6 +38,8 @@ export interface WizardStep {
   hideCancelButton?: boolean;
   /** (Unused if footer is controlled) True to hide the Back button */
   hideBackButton?: boolean;
+  /** Flag to disable the step in the navigation */
+  isDisabled?: boolean;
 }
 
 export type WizardStepFunctionType = (
@@ -100,8 +106,12 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   isOpen?: boolean;
   /** Flag indicating nav items with sub steps are expandable */
   isNavExpandable?: boolean;
-  /** Ref where the current step will be placed */
+  /** Callback function to signal the current step in the wizard */
   onCurrentStepChanged?: (step: WizardStep) => void;
+  /** @beta Flag indicating the wizard has a drawer for at least one of the wizard steps */
+  hasDrawer?: boolean;
+  /** @beta Flag indicating the wizard drawer is expanded */
+  isDrawerExpanded?: boolean;
 }
 
 interface WizardState {
@@ -137,10 +147,13 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     onClose: () => undefined as any,
     appendTo: null as HTMLElement,
     isOpen: undefined,
-    isNavExpandable: false
+    isNavExpandable: false,
+    hasDrawer: false,
+    isDrawerExpanded: false
   };
   private titleId: string;
   private descriptionId: string;
+  private drawerRef: React.RefObject<any>;
 
   constructor(props: WizardProps) {
     super(props);
@@ -160,6 +173,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
         props.onCurrentStepChanged(currentStep);
       }
     }
+
+    this.drawerRef = React.createRef();
   }
 
   private handleKeyClicks = (event: KeyboardEvent): void => {
@@ -184,7 +199,19 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       }
       return onClose();
     } else {
-      const newStep = currentStep + 1;
+      let newStep = currentStep;
+
+      for (let nextStep = currentStep; nextStep <= maxSteps; nextStep++) {
+        if (!flattenedSteps[nextStep]) {
+          return;
+        }
+
+        if (!flattenedSteps[nextStep].isDisabled) {
+          newStep = nextStep + 1;
+          break;
+        }
+      }
+
       this.setCurrentStep(newStep, flattenedSteps[newStep - 1]);
       const { id: prevId, name: prevName } = flattenedSteps[currentStep - 1];
       const { id, name } = flattenedSteps[newStep - 1];
@@ -201,7 +228,19 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       const adjustedStep = flattenedSteps.length;
       this.setCurrentStep(adjustedStep, flattenedSteps[adjustedStep - 1]);
     } else {
-      const newStep = currentStep - 1 <= 0 ? 0 : currentStep - 1;
+      let newStep = currentStep;
+
+      for (let prevStep = currentStep; prevStep >= 0; prevStep--) {
+        if (!flattenedSteps[prevStep - 2]) {
+          return;
+        }
+
+        if (!flattenedSteps[prevStep - 2].isDisabled) {
+          newStep = prevStep - 1 <= 1 ? 1 : prevStep - 1;
+          break;
+        }
+      }
+
       this.setCurrentStep(newStep, flattenedSteps[newStep - 1]);
       const { id: prevId, name: prevName } = flattenedSteps[newStep];
       const { id, name } = flattenedSteps[newStep - 1];
@@ -210,9 +249,14 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
   };
 
   private goToStep = (step: number): void => {
+    const flattenedSteps = this.getFlattenedSteps();
+
+    if (flattenedSteps[step - 1].isDisabled) {
+      return;
+    }
+
     const { onGoToStep } = this.props;
     const { currentStep } = this.state;
-    const flattenedSteps = this.getFlattenedSteps();
     const maxSteps = flattenedSteps.length;
     if (step < 1) {
       step = 1;
@@ -356,6 +400,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       descriptionId,
       isNavExpandable,
       onCurrentStepChanged,
+      hasDrawer,
+      isDrawerExpanded,
       ...rest
       /* eslint-enable @typescript-eslint/no-unused-vars */
     } = this.props;
@@ -366,12 +412,14 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     const computedSteps: WizardStep[] = this.initSteps(steps);
     const firstStep = activeStep === flattenedSteps[0];
     const isValid = activeStep && activeStep.enableNext !== undefined ? activeStep.enableNext : true;
+
     const nav = (isWizardNavOpen: boolean) => {
       const wizNavAProps = {
         isOpen: isWizardNavOpen,
         'aria-label': navAriaLabel,
         'aria-labelledby': (title || navAriaLabelledBy) && (navAriaLabelledBy || this.titleId)
       };
+
       return (
         <WizardNav {...wizNavAProps}>
           {computedSteps.map((step, index) => {
@@ -412,7 +460,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
                         return;
                       }
                       navItemStep = this.getFlattenedStepsIndex(flattenedSteps, childStep.name);
-                      enabled = childStep.canJumpTo;
+                      enabled = childStep.canJumpTo && !childStep.isDisabled;
                       return (
                         <WizardNavItem
                           key={`child_${indexChild}`}
@@ -430,7 +478,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
               );
             }
             navItemStep = this.getFlattenedStepsIndex(flattenedSteps, step.name);
-            enabled = step.canJumpTo;
+            enabled = step.canJumpTo && !step.isDisabled;
+
             return (
               <WizardNavItem
                 {...step.stepNavItemProps}
@@ -482,6 +531,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
             />
           )}
           <WizardToggle
+            hasDrawer={hasDrawer}
+            isDrawerExpanded={isDrawerExpanded}
             mainAriaLabel={mainAriaLabel}
             isInPage={isOpen === undefined}
             mainAriaLabelledBy={(title || mainAriaLabelledBy) && (mainAriaLabelledBy || this.titleId)}
@@ -525,6 +576,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
         </Modal>
       );
     }
+
     return wizard;
   }
 }

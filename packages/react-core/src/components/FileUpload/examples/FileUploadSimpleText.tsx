@@ -32,7 +32,7 @@ export const SimpleTextFileUpload: React.FunctionComponent = () => {
 
   return (
     <FileUpload
-      id="text-file-with-edits-allowed"
+      id="text-file-simple"
       type="text"
       value={value}
       filename={filename}

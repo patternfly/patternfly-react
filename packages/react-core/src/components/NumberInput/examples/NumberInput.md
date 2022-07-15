@@ -96,7 +96,6 @@ class UnitNumberInput extends React.Component {
     };
 
     this.onChange2 = event => {
-      console.log(event.target.value);
       this.setState({
         value2: event.target.value
       });

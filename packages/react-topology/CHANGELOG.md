@@ -3,6 +3,248 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.72.4 (2022-07-15)
+
+
+### Bug Fixes
+
+* **LogViewer:** render correctly when there is '\n' in the string array ([#7681](https://github.com/patternfly/patternfly-react/issues/7681)) ([12222c7](https://github.com/patternfly/patternfly-react/commit/12222c76d47396d8df5134c607a9ff689d6d93c9))
+
+
+
+
+
+## 4.72.3 (2022-07-15)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.72.2 (2022-07-15)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.72.1 (2022-07-15)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+# 4.72.0 (2022-07-14)
+
+
+### Features
+
+* **Topology:** Add Topology pipeline support ([#7609](https://github.com/patternfly/patternfly-react/issues/7609)) ([4fb563f](https://github.com/patternfly/patternfly-react/commit/4fb563fb8651c0386f7cc59fd9c736af6fb683ec))
+
+
+
+
+
+## 4.71.15 (2022-07-12)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.71.14 (2022-07-11)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.71.13 (2022-07-11)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.71.12 (2022-07-08)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.71.11 (2022-07-08)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.71.10 (2022-07-08)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.71.9 (2022-07-07)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.71.8 (2022-07-07)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.71.7 (2022-07-07)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.71.6 (2022-07-06)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.71.5 (2022-07-06)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.71.4 (2022-07-05)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.71.3 (2022-07-05)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.71.2 (2022-06-30)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.71.1 (2022-06-29)
+
+
+### Bug Fixes
+
+* **Select:** update logic should only apply to typeahead ([#7632](https://github.com/patternfly/patternfly-react/issues/7632)) ([0b9148e](https://github.com/patternfly/patternfly-react/commit/0b9148e67030236e61423895c6632b20dac4617f))
+
+
+
+
+
+# 4.71.0 (2022-06-27)
+
+
+### Features
+
+* **wizard:** add support for additional information panel (drawer) ([#7323](https://github.com/patternfly/patternfly-react/issues/7323)) ([6702504](https://github.com/patternfly/patternfly-react/commit/67025047d7bb644497f4477b77dbbdebe8ce97da))
+
+
+
+
+
+## 4.70.3 (2022-06-23)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.70.2 (2022-06-23)
+
+
+### Bug Fixes
+
+* **ProgressStepper:** added onTriggerEnter prop to Popover ([#7532](https://github.com/patternfly/patternfly-react/issues/7532)) ([1208390](https://github.com/patternfly/patternfly-react/commit/12083908a7043c017a5b7a97f84623add10bfe75))
+
+
+
+
+
+## 4.70.1 (2022-06-23)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+# 4.70.0 (2022-06-22)
+
+
+### Features
+
+* **Table:** add nested sticky header support ([#7595](https://github.com/patternfly/patternfly-react/issues/7595)) ([3888a0b](https://github.com/patternfly/patternfly-react/commit/3888a0bdf5e4e964d2d8d936c5d81f7813d8ec0c))
+
+
+
+
+
+## 4.69.17 (2022-06-22)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.69.16 (2022-06-22)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+## 4.69.15 (2022-06-21)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
 ## 4.69.14 (2022-06-17)
 
 **Note:** Version bump only for package @patternfly/react-topology

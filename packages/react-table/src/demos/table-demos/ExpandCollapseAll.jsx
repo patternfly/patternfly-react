@@ -138,6 +138,7 @@ class ExpandCollapseAllTableDemo extends React.Component {
                 canSelectAll={false}
                 canCollapseAll={true}
                 collapseAllAriaLabel={collapseAllAriaLabel}
+                expandId="expand-collapse-all-demo"
               >
                 <TableHeader />
                 <TableBody />

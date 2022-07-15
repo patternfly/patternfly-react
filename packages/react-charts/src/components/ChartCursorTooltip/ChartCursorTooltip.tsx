@@ -9,7 +9,6 @@ import {
   VictoryStyleObject
 } from 'victory-core';
 import { VictoryTooltip } from 'victory-tooltip';
-import { ChartLabel } from '../ChartLabel';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip, ChartTooltipProps } from '../ChartTooltip';
 import { getTheme, getCursorTooltipCenterOffset, getCursorTooltipPoniterOrientation } from '../ChartUtils';
@@ -18,8 +17,7 @@ import { ChartCursorFlyout } from './ChartCursorFlyout';
 /**
  * This tooltip has default values intended for use with a cursor container.
  *
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-tooltip/src/index.d.ts
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-tooltip/src/index.d.ts
  */
 export interface ChartCursorTooltipProps extends ChartTooltipProps {
   /**
@@ -275,7 +273,6 @@ export interface ChartCursorTooltipProps extends ChartTooltipProps {
 export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps> = ({
   constrainToVisibleArea = true,
   flyoutComponent = <ChartCursorFlyout />,
-  labelComponent = <ChartLabel />,
   labelTextAnchor = 'start',
   showPointer = true,
   style,
@@ -315,7 +312,6 @@ export const ChartCursorTooltip: React.FunctionComponent<ChartCursorTooltipProps
       centerOffset={centerOffset}
       constrainToVisibleArea={constrainToVisibleArea}
       flyoutComponent={getFlyoutComponent()}
-      labelComponent={labelComponent}
       labelTextAnchor={labelTextAnchor}
       pointerOrientation={pointerOrientation}
       style={newStyle}

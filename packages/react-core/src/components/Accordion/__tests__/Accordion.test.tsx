@@ -3,108 +3,138 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import { Accordion } from '../Accordion';
-import { AccordionToggle } from '../AccordionToggle';
-import { AccordionContent } from '../AccordionContent';
-import { AccordionItem } from '../AccordionItem';
-import { AccordionExpandedContentBody } from '../AccordionExpandedContentBody';
+import { AccordionContext } from '../AccordionContext';
 
-describe('Accordion', () => {
-  test('Accordion default', () => {
-    const { asFragment } = render(<Accordion aria-label="this is a simple accordion" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders without children', () => {
+  render(<Accordion data-testid="accordion" />);
 
-  test('Accordion with non-default headingLevel', () => {
-    const { asFragment } = render(
-      <Accordion asDefinitionList={false} headingLevel="h2">
-        <AccordionItem>
-          <AccordionToggle id="item-1">Item One</AccordionToggle>
-          <AccordionContent>Item One Content</AccordionContent>
-        </AccordionItem>
-      </Accordion>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByTestId('accordion')).toBeVisible();
+});
 
-  test('It should pass optional aria props', () => {
-    render(
-      <Accordion asDefinitionList>
-        <AccordionToggle aria-label="Toggle details for" aria-labelledby="ex-toggle2 ex-item2" id="ex-toggle2" />
-      </Accordion>
-    );
-    const button = screen.getByRole('button');
+test('Renders children', () => {
+  render(<Accordion>Test</Accordion>);
 
-    expect(button).toHaveAttribute('aria-label', 'Toggle details for');
-    expect(button).toHaveAttribute('aria-labelledby', 'ex-toggle2 ex-item2');
-    expect(button).toHaveAttribute('aria-expanded', 'false');
-  });
+  expect(screen.getByText('Test')).toBeVisible();
+});
 
-  test('Toggle expanded', () => {
-    render(
-      <Accordion asDefinitionList>
-        <AccordionToggle aria-label="Toggle details for" id="ex-toggle2" isExpanded />
-      </Accordion>
-    );
-    const button = screen.getByRole('button');
+test('Renders with the passed aria label', () => {
+  render(<Accordion aria-label="Accordion test">Test</Accordion>);
 
-    expect(button).toHaveAttribute('aria-expanded', 'true');
-    expect(button).toHaveClass('pf-m-expanded');
-  });
+  expect(screen.getByText('Test')).toHaveAccessibleName('Accordion test');
+});
 
-  test('renders content with custom Toggle and Content containers', () => {
-    const container = 'a';
+test('Renders with inherited element props spread to the component', () => {
+  render(
+    <>
+      <Accordion aria-labelledby="labelling-id">Test</Accordion>
+      <p id="labelling-id">Label</p>
+    </>
+  );
 
-    const { asFragment } = render(
-      <Accordion headingLevel="h2">
-        <AccordionItem>
-          <AccordionToggle id="item-1" component={container}>
-            Item One
-          </AccordionToggle>
-          <AccordionContent component={container}>Item One Content</AccordionContent>
-        </AccordionItem>
-      </Accordion>
-    );
+  expect(screen.getByText('Test')).toHaveAccessibleName('Label');
+});
 
-    expect(screen.getByText('Item One')).toBeInTheDocument();
-    expect(screen.getByText('Item One Content')).toBeInTheDocument();
-  });
+test('Renders with class name pf-c-accordion', () => {
+  render(<Accordion>Test</Accordion>);
 
-  test('Accordion bordered', () => {
-    const { asFragment } = render(
-      <Accordion isBordered>
-        <AccordionItem>
-          <AccordionToggle id="item-1">Item One</AccordionToggle>
-          <AccordionContent>Item One Content</AccordionContent>
-        </AccordionItem>
-      </Accordion>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByText('Test')).toHaveClass('pf-c-accordion');
+});
 
-  test('Accordion display large', () => {
-    const { asFragment } = render(
-      <Accordion displaySize="large">
-        <AccordionItem>
-          <AccordionToggle id="item-1">Item One</AccordionToggle>
-          <AccordionContent>Item One Content</AccordionContent>
-        </AccordionItem>
-      </Accordion>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+test('Renders with custom class names provided via prop', () => {
+  render(<Accordion className="test-class">Test</Accordion>);
 
-  test('Accordion custom content', () => {
-    const { asFragment } = render(
-      <Accordion>
-        <AccordionItem>
-          <AccordionToggle id="item-1">Item One</AccordionToggle>
-          <AccordionContent isCustomContent>
-            <AccordionExpandedContentBody>Item one content body 1</AccordionExpandedContentBody>
-            <AccordionExpandedContentBody>Item one Content body 2</AccordionExpandedContentBody>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
-    );
-    expect(asFragment()).toMatchSnapshot();
-  });
+  expect(screen.getByText('Test')).toHaveClass('test-class');
+});
+
+test('Renders Accordion as a "dl" by default', () => {
+  render(<Accordion>Test</Accordion>);
+
+  /* these tests asserting a nodeName property aren't my favorite, but dl and div elements don't have implicit aria
+  roles for us to select/assert against with something more directly meaningful to user experience */
+  expect(screen.getByText('Test')).toHaveProperty('nodeName', 'DL');
+});
+
+test('Renders Accordion as a "div" when asDefinitionList is false', () => {
+  render(<Accordion asDefinitionList={false}>Test</Accordion>);
+
+  expect(screen.getByText('Test')).toHaveProperty('nodeName', 'DIV');
+});
+
+test('Provides a ContentContainer of "dd" in a context by default', () => {
+  render(
+    <Accordion>
+      <AccordionContext.Consumer>{({ ContentContainer }) => ContentContainer}</AccordionContext.Consumer>
+    </Accordion>
+  );
+
+  expect(screen.getByText('dd')).toBeVisible();
+});
+
+test('Provides a ContentContainer of "div" in a context when asDefinitionList is false', () => {
+  render(
+    <Accordion asDefinitionList={false}>
+      <AccordionContext.Consumer>{({ ContentContainer }) => ContentContainer}</AccordionContext.Consumer>
+    </Accordion>
+  );
+
+  expect(screen.getByText('div')).toBeVisible();
+});
+
+test('Provides a ToggleContainer of "dt" in a context by default', () => {
+  render(
+    <Accordion>
+      <AccordionContext.Consumer>{({ ToggleContainer }) => ToggleContainer}</AccordionContext.Consumer>
+    </Accordion>
+  );
+
+  expect(screen.getByText('dt')).toBeVisible();
+});
+
+test('Provides a ToggleContainer of "h3" in a context when asDefinitionList is false', () => {
+  render(
+    <Accordion asDefinitionList={false}>
+      <AccordionContext.Consumer>{({ ToggleContainer }) => ToggleContainer}</AccordionContext.Consumer>
+    </Accordion>
+  );
+
+  expect(screen.getByText('h3')).toBeVisible();
+});
+
+test('Provides a ToggleContainer of "h2" in a context when asDefinitionList is false and headingLevel is "h2"', () => {
+  render(
+    <Accordion asDefinitionList={false} headingLevel="h2">
+      <AccordionContext.Consumer>{({ ToggleContainer }) => ToggleContainer}</AccordionContext.Consumer>
+    </Accordion>
+  );
+
+  expect(screen.getByText('h2')).toBeVisible();
+});
+
+test('Renders without pf-m-bordered by default', () => {
+  render(<Accordion>Test</Accordion>);
+
+  expect(screen.getByText('Test')).not.toHaveClass('pf-m-bordered');
+});
+
+test('Renders with pf-m-bordered when isBordered=true', () => {
+  render(<Accordion isBordered>Test</Accordion>);
+
+  expect(screen.getByText('Test')).toHaveClass('pf-m-bordered');
+});
+
+test('Renders without pf-m-display-lg by default', () => {
+  render(<Accordion>Test</Accordion>);
+
+  expect(screen.getByText('Test')).not.toHaveClass('pf-m-display-lg');
+});
+
+test('Renders with pf-m-display-lg when displaySize=large', () => {
+  render(<Accordion displaySize="large">Test</Accordion>);
+
+  expect(screen.getByText('Test')).toHaveClass('pf-m-display-lg');
+});
+
+test('Matches the snapshot', () => {
+  const { asFragment } = render(<Accordion aria-label="this is a simple accordion" />);
+  expect(asFragment()).toMatchSnapshot();
 });

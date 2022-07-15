@@ -24,7 +24,7 @@ export const LegacyTableSelectableRadio: React.FunctionComponent = () => {
   const [selectedRepoName, setSelectedRepoName] = React.useState<string | null>(null);
 
   const columns: TableProps['cells'] = [
-    { title: 'Repositories', cellTransforms: [headerCol()] },
+    { title: 'Repositories', cellTransforms: [headerCol('selectable-radio')] },
     'Branches',
     { title: 'Pull requests' },
     'Workspaces',

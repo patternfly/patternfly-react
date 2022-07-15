@@ -602,7 +602,7 @@ class CheckboxSelectInputNoBadge extends React.Component {
 
   render() {
     const { isOpen, selected } = this.state;
-    const titleId = 'checkbox-select-id';
+    const titleId = 'checkbox-no-badge-select-id';
     return (
       <div>
         <span id={titleId} hidden>
@@ -928,7 +928,7 @@ class FilteringCheckboxSelectInput extends React.Component {
 
   render() {
     const { isOpen, selected, filteredOptions } = this.state;
-    const titleId = 'checkbox-filtering-select-id';
+    const titleId = 'grouped-checkbox-filtering-select-id';
     return (
       <div>
         <span id={titleId} hidden>
@@ -1033,7 +1033,7 @@ class FilteringCheckboxSelectInputWithPlaceholder extends React.Component {
 
   render() {
     const { isOpen, selected, filteredOptions } = this.state;
-    const titleId = 'checkbox-filtering-select-id';
+    const titleId = 'checkbox-filtering-with-placeholder-select-id';
     return (
       <div>
         <span id={titleId} hidden>
@@ -1157,7 +1157,7 @@ class FilteringCheckboxSelectInputWithBadging extends React.Component {
 
   render() {
     const { isOpen, selected, filteredOptions, customBadgeText } = this.state;
-    const titleId = 'checkbox-filtering-select-id';
+    const titleId = 'checkbox-filtering-custom-badging-select-id';
     return (
       <div>
         <span id={titleId} hidden>
@@ -1494,16 +1494,16 @@ class GroupedTypeaheadSelectInput extends React.Component {
           isChecked={this.state.isCreatable}
           onChange={this.toggleCreatable}
           aria-label="toggle creatable checkbox"
-          id="toggle-creatable-typeahead"
-          name="toggle-creatable-typeahead"
+          id="toggle-creatable-grouped-typeahead"
+          name="toggle-creatable-grouped-typeahead"
         />
         <Checkbox
           label="onCreateOption"
           isChecked={this.state.hasOnCreateOption}
           onChange={this.toggleCreateNew}
           aria-label="toggle new checkbox"
-          id="toggle-new-typeahead"
-          name="toggle-new-typeahead"
+          id="toggle-new-grouped-typeahead"
+          name="toggle-new-grouped-typeahead"
         />
       </div>
     );
@@ -1912,7 +1912,7 @@ class MultiTypeaheadSelectInputWithChipGroupProps extends React.Component {
 
   render() {
     const { isOpen, selected, isCreatable, hasOnCreateOption } = this.state;
-    const titleId = 'multi-typeahead-custom-chip-group-props-id-1';
+    const titleId = 'multi-typeahead-render-chip-group-props-id-1';
 
     return (
       <div>
@@ -2129,7 +2129,7 @@ class PlainSelectInput extends React.Component {
 }
 ```
 
-### Panel
+### Panel as a menu
 
 ```js
 import React from 'react';

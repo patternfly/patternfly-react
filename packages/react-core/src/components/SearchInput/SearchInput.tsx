@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/SearchInput/search-input';
 import { Button, ButtonVariant } from '../Button';
 import { Badge } from '../Badge';
 import AngleDownIcon from '@patternfly/react-icons/dist/esm/icons/angle-down-icon';
@@ -12,6 +11,7 @@ import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-i
 import { AdvancedSearchMenu } from './AdvancedSearchMenu';
 import { TextInputGroup, TextInputGroupMain, TextInputGroupUtilities } from '../TextInputGroup';
 import { InputGroup } from '../InputGroup';
+import { Popper } from '../../helpers';
 
 export interface SearchAttribute {
   /** The search attribute's value to be provided in the search input's query string.
@@ -83,6 +83,13 @@ export interface SearchInputProps extends Omit<React.HTMLProps<HTMLDivElement>, 
   /** Delimiter in the query string for pairing attributes with search values.
    * Required whenever attributes are passed as props */
   advancedSearchDelimiter?: string;
+  /** The container to append the menu to.
+   * If your menu is being cut off you can append it to an element higher up the DOM tree.
+   * Some examples:
+   * appendTo={() => document.body}
+   * appendTo={document.getElementById('target')}
+   */
+  appendTo?: HTMLElement | (() => HTMLElement) | 'inline';
 }
 
 const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
@@ -112,6 +119,7 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
   nextNavigationButtonAriaLabel = 'Next',
   submitSearchButtonLabel = 'Search',
   isDisabled = false,
+  appendTo,
   ...props
 }: SearchInputProps) => {
   const [isSearchMenuOpen, setIsSearchMenuOpen] = React.useState(false);
@@ -277,11 +285,9 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
 
   if (!!onSearch || attributes.length > 0 || !!onToggleAdvancedSearch) {
     if (attributes.length > 0) {
-      return (
-        <div className={css(className, styles.searchInput)} ref={searchInputRef} {...props}>
-          {buildSearchTextInputGroupWithExtraButtons()}
+      const AdvancedSearch = (
+        <span>
           <AdvancedSearchMenu
-            className={styles.searchInputMenu}
             value={value}
             parentRef={searchInputRef}
             parentInputRef={searchInputInputRef}
@@ -298,8 +304,29 @@ const SearchInputBase: React.FunctionComponent<SearchInputProps> = ({
             getAttrValueMap={getAttrValueMap}
             isSearchMenuOpen={isSearchMenuOpen}
           />
+        </span>
+      );
+
+      const AdvancedSearchWithPopper = (
+        <div className={css(className)} ref={searchInputRef} {...props}>
+          <Popper
+            trigger={buildSearchTextInputGroupWithExtraButtons()}
+            popper={AdvancedSearch}
+            isVisible={isSearchMenuOpen}
+            enableFlip={true}
+            appendTo={() => appendTo || searchInputRef.current}
+          />
         </div>
       );
+
+      const AdvancedSearchInline = (
+        <div className={css(className)} ref={searchInputRef} {...props}>
+          {buildSearchTextInputGroupWithExtraButtons()}
+          {AdvancedSearch}
+        </div>
+      );
+
+      return appendTo !== 'inline' ? AdvancedSearchWithPopper : AdvancedSearchInline;
     }
 
     return buildSearchTextInputGroupWithExtraButtons({ ...searchInputProps });

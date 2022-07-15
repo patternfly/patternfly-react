@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`simple hint 1`] = `
+exports[`matches hint snapshot 1`] = `
 <DocumentFragment>
   <div
     class="pf-c-hint"
@@ -8,21 +8,6 @@ exports[`simple hint 1`] = `
     <div
       class="pf-c-hint__actions"
     />
-    <div
-      class="pf-c-hint__title"
-    >
-      Title
-    </div>
-    <div
-      class="pf-c-hint__body"
-    >
-      Body
-    </div>
-    <div
-      class="pf-c-hint__footer"
-    >
-      Footer
-    </div>
   </div>
 </DocumentFragment>
 `;

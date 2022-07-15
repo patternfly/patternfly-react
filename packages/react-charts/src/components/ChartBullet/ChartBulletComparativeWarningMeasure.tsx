@@ -8,8 +8,9 @@ import { getBulletComparativeWarningMeasureTheme } from '../ChartUtils';
 import { ChartBulletComparativeMeasure } from './ChartBulletComparativeMeasure';
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-bar/src/index.d.ts
+ * ChartBulletComparativeWarningMeasure renders a dataset as a comparative warning measure.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-bar/src/index.d.ts
  */
 export interface ChartBulletComparativeWarningMeasureProps {
   /**

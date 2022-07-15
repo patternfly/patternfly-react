@@ -9,7 +9,7 @@
       "excludePackagePatterns": [
         "@patternfly/patternfly",
         "@patternfly/patternfly-a11y",
-        "theme-patternfly-org"
+        "@patternfly/documentation-framework"
       ],
       "enabled": false
     },
@@ -17,7 +17,7 @@
       "datasources": ["npm"],
       "packageNames": [
         "@patternfly/patternfly-a11y",
-        "theme-patternfly-org"
+        "@patternfly/documentation-framework"
       ]
     },
     {

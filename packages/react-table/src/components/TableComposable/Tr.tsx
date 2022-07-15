@@ -26,6 +26,8 @@ export interface TrProps extends React.HTMLProps<HTMLTableRowElement>, OUIAProps
   isRowSelected?: boolean;
   /** Flag indicating the row is striped */
   isStriped?: boolean;
+  /** Flag indicating the row will act as a border. This is typically used for a table with a nested and sticky header. */
+  isBorderRow?: boolean;
   /** An event handler for the row */
   onRowClick?: (event?: React.KeyboardEvent | React.MouseEvent) => void;
   /** Flag indicating that the row is selectable */
@@ -43,6 +45,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
   isHoverable = false,
   isRowSelected = false,
   isStriped = false,
+  isBorderRow = false,
   innerRef,
   ouiaId,
   ouiaSafe = true,
@@ -92,6 +95,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
           isHoverable && styles.modifiers.hoverable,
           isRowSelected && styles.modifiers.selected,
           isStriped && styles.modifiers.striped,
+          isBorderRow && styles.modifiers.borderRow,
           resetOffset && styles.modifiers.firstCellOffsetReset
         )}
         hidden={rowIsHidden}

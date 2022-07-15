@@ -160,7 +160,8 @@ export const ComposableTableExpandable: React.FunctionComponent = () => {
                       ? {
                           rowIndex,
                           isExpanded: isRepoExpanded(repo),
-                          onToggle: () => setRepoExpanded(repo, !isRepoExpanded(repo))
+                          onToggle: () => setRepoExpanded(repo, !isRepoExpanded(repo)),
+                          expandId: 'composable-expandable-example'
                         }
                       : undefined
                   }

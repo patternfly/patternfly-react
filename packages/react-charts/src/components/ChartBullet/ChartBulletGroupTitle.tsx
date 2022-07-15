@@ -12,7 +12,7 @@ import {
 } from '../ChartUtils';
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * ChartBulletGroupTitle renders a group title.
  */
 export interface ChartBulletGroupTitleProps {
   /**

@@ -99,6 +99,7 @@ exports[`DualListSelector basic 1`] = `
     <div
       aria-label="Selector controls"
       class="pf-c-dual-list-selector__controls"
+      role="group"
       tabindex="0"
     >
       <div
@@ -248,11 +249,7 @@ exports[`DualListSelector basic 1`] = `
         tabindex="0"
       >
         <ul
-          aria-activedescendant=""
-          aria-labelledby="firstTest-chosen-pane-status"
-          aria-multiselectable="true"
           class="pf-c-dual-list-selector__list"
-          role="listbox"
         />
       </div>
     </div>
@@ -360,6 +357,7 @@ exports[`DualListSelector basic with disabled controls 1`] = `
     <div
       aria-label="Selector controls"
       class="pf-c-dual-list-selector__controls"
+      role="group"
       tabindex="0"
     >
       <div
@@ -510,12 +508,8 @@ exports[`DualListSelector basic with disabled controls 1`] = `
         tabindex="0"
       >
         <ul
-          aria-activedescendant=""
           aria-disabled="true"
-          aria-labelledby="disabledTest-chosen-pane-status"
-          aria-multiselectable="true"
           class="pf-c-dual-list-selector__list"
-          role="listbox"
         />
       </div>
     </div>
@@ -633,6 +627,7 @@ exports[`DualListSelector with actions 1`] = `
     <div
       aria-label="Selector controls"
       class="pf-c-dual-list-selector__controls"
+      role="group"
       tabindex="0"
     >
       <div
@@ -954,6 +949,7 @@ exports[`DualListSelector with custom status 1`] = `
     <div
       aria-label="Selector controls"
       class="pf-c-dual-list-selector__controls"
+      role="group"
       tabindex="0"
     >
       <div
@@ -1103,11 +1099,7 @@ exports[`DualListSelector with custom status 1`] = `
         tabindex="0"
       >
         <ul
-          aria-activedescendant=""
-          aria-labelledby="thirdTest-chosen-pane-status"
-          aria-multiselectable="true"
           class="pf-c-dual-list-selector__list"
-          role="listbox"
         />
       </div>
     </div>
@@ -1227,6 +1219,7 @@ exports[`DualListSelector with search inputs 1`] = `
     <div
       aria-label="Selector controls"
       class="pf-c-dual-list-selector__controls"
+      role="group"
       tabindex="0"
     >
       <div
@@ -1389,11 +1382,7 @@ exports[`DualListSelector with search inputs 1`] = `
         tabindex="0"
       >
         <ul
-          aria-activedescendant=""
-          aria-labelledby="secondTest-chosen-pane-status"
-          aria-multiselectable="true"
           class="pf-c-dual-list-selector__list"
-          role="listbox"
         />
       </div>
     </div>
@@ -1577,6 +1566,7 @@ exports[`DualListSelector with tree 1`] = `
     <div
       aria-label="Selector controls"
       class="pf-c-dual-list-selector__controls"
+      role="group"
       tabindex="0"
     >
       <div
@@ -1726,11 +1716,7 @@ exports[`DualListSelector with tree 1`] = `
         tabindex="0"
       >
         <ul
-          aria-activedescendant=""
-          aria-labelledby="tree-test-chosen-pane-status"
-          aria-multiselectable="true"
           class="pf-c-dual-list-selector__list"
-          role="tree"
         />
       </div>
     </div>

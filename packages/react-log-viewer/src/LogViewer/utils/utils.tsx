@@ -38,9 +38,10 @@ export const searchForKeyword = (searchedInput: string, parsedData: string[], it
   }
 };
 
-export const parseConsoleOutput = (data: string) => {
+export const parseConsoleOutput = (data: string[] | string) => {
   const stringToSplitWith = '\n';
-  const stringSplitting = data.toString();
+  const parsedData = Array.isArray(data) ? data.join(stringToSplitWith) : data;
+  const stringSplitting = parsedData.toString();
   const cleanString = stringSplitting.split(stringToSplitWith);
 
   return cleanString;

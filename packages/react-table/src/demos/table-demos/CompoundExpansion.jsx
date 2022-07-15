@@ -171,9 +171,12 @@ export const CompoundExpandable = () => {
     }
     setExpandedCells(newExpandedCells);
   };
-  const compoundExpandParams = (repo, columnKey) => ({
+  const compoundExpandParams = (repo, columnKey, rowIndex, columnIndex) => ({
     isExpanded: expandedCells[repo.name] === columnKey,
-    onToggle: () => setCellExpanded(repo, columnKey, expandedCells[repo.name] !== columnKey)
+    onToggle: () => setCellExpanded(repo, columnKey, expandedCells[repo.name] !== columnKey),
+    expandId: 'compound-expandable-demo',
+    rowIndex,
+    columnIndex
   });
 
   return (
@@ -192,7 +195,7 @@ export const CompoundExpandable = () => {
                 <Th />
               </Tr>
             </Thead>
-            {repositories.map(repo => {
+            {repositories.map((repo, rowIndex) => {
               const expandedCellKey = expandedCells[repo.name];
               const isRowExpanded = !!expandedCellKey;
               return (
@@ -201,7 +204,10 @@ export const CompoundExpandable = () => {
                     <Td dataLabel={columnNames.name} component="th">
                       <a href="#">{repo.name}</a>
                     </Td>
-                    <Td dataLabel={columnNames.branches} compoundExpand={compoundExpandParams(repo, 'branches')}>
+                    <Td
+                      dataLabel={columnNames.branches}
+                      compoundExpand={compoundExpandParams(repo, 'branches', rowIndex, 1)}
+                    >
                       <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                         <FlexItem>
                           <CodeBranchIcon key="icon" />
@@ -209,7 +215,7 @@ export const CompoundExpandable = () => {
                         <FlexItem>{repo.branches}</FlexItem>
                       </Flex>
                     </Td>
-                    <Td dataLabel={columnNames.prs} compoundExpand={compoundExpandParams(repo, 'prs')}>
+                    <Td dataLabel={columnNames.prs} compoundExpand={compoundExpandParams(repo, 'prs', rowIndex, 2)}>
                       <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                         <FlexItem>
                           <CodeIcon key="icon" />
@@ -217,7 +223,10 @@ export const CompoundExpandable = () => {
                         <FlexItem>{repo.prs}</FlexItem>
                       </Flex>{' '}
                     </Td>
-                    <Td dataLabel={columnNames.workspaces} compoundExpand={compoundExpandParams(repo, 'workspaces')}>
+                    <Td
+                      dataLabel={columnNames.workspaces}
+                      compoundExpand={compoundExpandParams(repo, 'workspaces', rowIndex, 3)}
+                    >
                       <Flex spaceItems={{ default: 'spaceItemsSm' }}>
                         <FlexItem>
                           <CubeIcon key="icon" />

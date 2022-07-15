@@ -151,7 +151,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
           )}
         </DualListSelectorList>
       </DualListSelectorPane>
-      <DualListSelectorControlsWrapper aria-label="Selector controls">
+      <DualListSelectorControlsWrapper>
         <DualListSelectorControl
           isDisabled={!availableOptions.some(option => option.selected)}
           onClick={() => moveSelected(true)}
