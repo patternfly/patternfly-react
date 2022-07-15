@@ -8,11 +8,6 @@ beta: true
 
 ## Examples
 
-### Default
-
-```ts file="./CalendarMonthDefault.tsx"
-```
-
 ### Selectable date
 
 ```ts file="./CalendarMonthSelectableDate.tsx"
