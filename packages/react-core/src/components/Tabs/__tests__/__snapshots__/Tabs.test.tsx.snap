@@ -119,6 +119,7 @@ exports[`should render accessible tabs 1`] = `
       </svg>
     </button>
   </nav>
+  <div />
   <section
     aria-labelledby="pf-tab-0-tab1"
     class="pf-c-tab-content"
@@ -301,6 +302,7 @@ exports[`should render box tabs 1`] = `
       </svg>
     </button>
   </div>
+  <div />
   <section
     aria-labelledby="pf-tab-0-tab1"
     class="pf-c-tab-content"
@@ -466,6 +468,7 @@ exports[`should render box tabs of light variant 1`] = `
       </svg>
     </button>
   </div>
+  <div />
   <section
     aria-labelledby="pf-tab-0-tab1"
     class="pf-c-tab-content pf-m-light-300"
@@ -691,6 +694,7 @@ exports[`should render expandable vertical tabs 1`] = `
       </svg>
     </button>
   </div>
+  <div />
   <section
     aria-labelledby="pf-tab-0-tab1"
     class="pf-c-tab-content"
@@ -856,6 +860,7 @@ exports[`should render filled tabs 1`] = `
       </svg>
     </button>
   </div>
+  <div />
   <section
     aria-labelledby="pf-tab-0-tab1"
     class="pf-c-tab-content"
@@ -1009,6 +1014,7 @@ exports[`should render secondary tabs 1`] = `
       </svg>
     </button>
   </div>
+  <div />
   <section
     aria-labelledby="pf-tab-0-primarieTabs"
     class="pf-c-tab-content"
@@ -1131,6 +1137,7 @@ exports[`should render secondary tabs 1`] = `
         </svg>
       </button>
     </div>
+    <div />
     <section
       aria-labelledby="pf-tab-10-secondary tab1"
       class="pf-c-tab-content"
@@ -1339,6 +1346,7 @@ exports[`should render simple tabs 1`] = `
       </svg>
     </button>
   </div>
+  <div />
   <section
     aria-labelledby="pf-tab-0-tab1"
     class="pf-c-tab-content"
@@ -1504,6 +1512,7 @@ exports[`should render tabs with eventKey Strings 1`] = `
       </svg>
     </button>
   </div>
+  <div />
   <section
     aria-labelledby="pf-tab-one-tab1"
     class="pf-c-tab-content"
@@ -1658,6 +1667,7 @@ exports[`should render tabs with no bottom border 1`] = `
       </svg>
     </button>
   </div>
+  <div />
   <section
     aria-labelledby="pf-tab-0-tab1"
     class="pf-c-tab-content"
@@ -1811,6 +1821,7 @@ exports[`should render tabs with separate content 1`] = `
       </svg>
     </button>
   </div>
+  <div />
   <div>
     <section
       aria-label="Tab item 1"
@@ -2002,6 +2013,7 @@ exports[`should render uncontrolled tabs 1`] = `
       </svg>
     </button>
   </div>
+  <div />
   <section
     aria-labelledby="pf-tab-0-tab1"
     class="pf-c-tab-content"
@@ -2196,6 +2208,7 @@ exports[`should render vertical tabs 1`] = `
       </svg>
     </button>
   </div>
+  <div />
   <section
     aria-labelledby="pf-tab-0-tab1"
     class="pf-c-tab-content"

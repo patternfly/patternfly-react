@@ -5,3 +5,4 @@ export * from './TabContentBody';
 export * from './TabsContext';
 export * from './TabTitleText';
 export * from './TabTitleIcon';
+export * from './OverflowTab';

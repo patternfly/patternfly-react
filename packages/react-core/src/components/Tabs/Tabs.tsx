@@ -10,6 +10,7 @@ import { getUniqueId, isElementInView, formatBreakpointMods } from '../../helper
 import { TabContent } from './TabContent';
 import { TabProps } from './Tab';
 import { TabsContextProvider } from './TabsContext';
+import { OverflowTab } from './OverflowTab';
 import { Button } from '../Button';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId, canUseDOM } from '../../helpers';
 import { GenerateId } from '../../helpers/GenerateId/GenerateId';
@@ -94,6 +95,8 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   toggleAriaLabel?: string;
   /** Callback function to toggle the expandable tabs. */
   onToggle?: (isExpanded: boolean) => void;
+  /** @beta Flag which places overflowing tabs into a menu controlled by a tab labelled "more". Additionally an object can be passed with an option to display the count of overflowing tabs. */
+  isHorizontalOverflow?: boolean | { showTabCount: boolean };
 }
 
 const variantStyle = {
@@ -109,11 +112,13 @@ interface TabsState {
   uncontrolledActiveKey: number | string;
   uncontrolledIsExpandedLocal: boolean;
   ouiaStateId: string;
+  overflowingTabCount: number;
 }
 
 export class Tabs extends React.Component<TabsProps, TabsState> {
   static displayName = 'Tabs';
   tabList = React.createRef<HTMLUListElement>();
+  tabOverflowMenuRef: React.RefObject<HTMLDivElement>;
   constructor(props: TabsProps) {
     super(props);
     this.state = {
@@ -123,7 +128,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       shownKeys: this.props.defaultActiveKey !== undefined ? [this.props.defaultActiveKey] : [this.props.activeKey], // only for mountOnEnter case
       uncontrolledActiveKey: this.props.defaultActiveKey,
       uncontrolledIsExpandedLocal: this.props.defaultIsExpanded,
-      ouiaStateId: getDefaultOUIAId(Tabs.displayName)
+      ouiaStateId: getDefaultOUIAId(Tabs.displayName),
+      overflowingTabCount: 0
     };
 
     if (this.props.isVertical && this.props.expandable !== undefined) {
@@ -135,6 +141,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
         );
       }
     }
+
+    this.tabOverflowMenuRef = React.createRef();
   }
 
   scrollTimeout: NodeJS.Timeout = null;
@@ -192,7 +200,13 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     }
   }
 
+  countOverflowingElements = (container: HTMLUListElement) => {
+    const elements = Array.from(container.children);
+    return elements.filter(element => !isElementInView(container, element as HTMLElement, false)).length;
+  };
+
   handleScrollButtons = () => {
+    const { isHorizontalOverflow } = this.props;
     // add debounce to the scroll event
     clearTimeout(this.scrollTimeout);
     this.scrollTimeout = setTimeout(() => {
@@ -200,8 +214,9 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       let disableLeftScrollButton = true;
       let disableRightScrollButton = true;
       let showScrollButtons = false;
+      let overflowingTabCount = 0;
 
-      if (container && !this.props.isVertical) {
+      if (container && !this.props.isVertical && !isHorizontalOverflow) {
         // get first element and check if it is in view
         const overflowOnLeft = !isElementInView(container, container.firstChild as HTMLElement, false);
 
@@ -213,10 +228,16 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
         disableLeftScrollButton = !overflowOnLeft;
         disableRightScrollButton = !overflowOnRight;
       }
+
+      if (isHorizontalOverflow) {
+        overflowingTabCount = this.countOverflowingElements(container);
+      }
+
       this.setState({
         showScrollButtons,
         disableLeftScrollButton,
-        disableRightScrollButton
+        disableRightScrollButton,
+        overflowingTabCount
       });
     }, 100);
   };
@@ -280,8 +301,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
   }
 
   componentDidUpdate(prevProps: TabsProps) {
-    const { activeKey, mountOnEnter, children } = this.props;
-    const { shownKeys } = this.state;
+    const { activeKey, mountOnEnter, isHorizontalOverflow, children } = this.props;
+    const { shownKeys, overflowingTabCount } = this.state;
     if (prevProps.activeKey !== activeKey && mountOnEnter && shownKeys.indexOf(activeKey) < 0) {
       this.setState({
         shownKeys: shownKeys.concat(activeKey)
@@ -294,6 +315,11 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       React.Children.toArray(prevProps.children).length !== React.Children.toArray(children).length
     ) {
       this.handleScrollButtons();
+    }
+
+    const currentOverflowingTabCount = this.countOverflowingElements(this.tabList.current);
+    if (isHorizontalOverflow && currentOverflowingTabCount) {
+      this.setState({ overflowingTabCount: currentOverflowingTabCount + overflowingTabCount });
     }
   }
 
@@ -330,6 +356,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       onToggle,
       onClose,
       onAdd,
+      isHorizontalOverflow,
       ...props
     } = this.props;
     const {
@@ -338,11 +365,16 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       disableRightScrollButton,
       shownKeys,
       uncontrolledActiveKey,
-      uncontrolledIsExpandedLocal
+      uncontrolledIsExpandedLocal,
+      overflowingTabCount
     } = this.state;
     const filteredChildren = (React.Children.toArray(children) as React.ReactElement<TabProps>[])
       .filter(Boolean)
       .filter(child => !child.props.isHidden);
+
+    const filteredChildrenWithoutOverflow = filteredChildren.slice(0, filteredChildren.length - overflowingTabCount);
+    const filteredChildrenOverflowing = filteredChildren.slice(filteredChildren.length - overflowingTabCount);
+    const overflowingTabProps = filteredChildrenOverflowing.map((child: React.ReactElement<TabProps>) => child.props);
 
     const uniqueId = id || getUniqueId();
     const Component: any = component === TabsComponent.nav ? 'nav' : 'div';
@@ -429,8 +461,15 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             <AngleLeftIcon />
           </button>
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons} role="tablist">
-            {filteredChildren}
+            {isHorizontalOverflow ? filteredChildrenWithoutOverflow : filteredChildren}
           </ul>
+          {isHorizontalOverflow && overflowingTabCount > 0 && (
+            <OverflowTab
+              menuAppendTo={this.tabOverflowMenuRef.current}
+              overflowingTabs={overflowingTabProps}
+              showTabCount={typeof isHorizontalOverflow === 'boolean' ? false : isHorizontalOverflow.showTabCount}
+            />
+          )}
           <button
             className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
             aria-label={rightScrollAriaLabel}
@@ -448,6 +487,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             </span>
           )}
         </Component>
+        <div ref={this.tabOverflowMenuRef} />
         {filteredChildren
           .filter(
             child =>
