@@ -26,7 +26,7 @@ export interface TreeViewListItemProps {
   /** Callback for item selection. Note: calling event.preventDefault() will prevent the node from toggling. */
   onSelect?: (event: React.MouseEvent, item: TreeViewDataItem, parent: TreeViewDataItem) => void;
   /** Callback for item checkbox selection */
-  onCheck?: (event: React.ChangeEvent, item: TreeViewDataItem, parent: TreeViewDataItem) => void;
+  onCheck?: (event: React.ChangeEvent<HTMLInputElement>, item: TreeViewDataItem, parent: TreeViewDataItem) => void;
   /** Flag indicating if a tree view item has a checkbox */
   hasCheck?: boolean;
   /** Additional properties of the tree view item checkbox */
@@ -115,8 +115,8 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
     <span className={css(styles.treeViewNodeCheck)}>
       <input
         type="checkbox"
-        onChange={(evt: React.ChangeEvent) => onCheck && onCheck(evt, itemData, parentItem)}
-        onClick={(evt: React.MouseEvent) => evt.stopPropagation()}
+        onChange={evt => onCheck && onCheck(evt, itemData, parentItem)}
+        onClick={evt => evt.stopPropagation()}
         ref={elem => elem && (elem.indeterminate = checkProps.checked === null)}
         {...checkProps}
         checked={checkProps.checked === null ? false : checkProps.checked}
