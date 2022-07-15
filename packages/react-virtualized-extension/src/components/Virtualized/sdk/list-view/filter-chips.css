@@ -1,0 +1,11 @@
+.pf-c-chip-group.dps-filter-chips__chip-group.pf-m-category {
+  margin-bottom: var(--pf-global--spacer--sm);
+  margin-top: var(--pf-global--spacer--sm);
+  margin-right: var(--pf-global--spacer--sm);
+}
+
+.pf-c-button.pf-m-link.dps-filter-chips__clear-filters {
+  margin-left: var(--pf-global--spacer--xs);
+  padding-bottom: var(--pf-global--spacer--sm);
+  padding-top: var(--pf-global--spacer--sm);
+}

@@ -1,0 +1,11 @@
+.pf-c-search-input.dps-list-view__search {
+  margin-right: var(--pf-global--spacer--sm);
+}
+
+.pf-c-toolbar__item.dps-list-view__top-pagination {
+  margin-left: auto;
+}
+
+.pf-c-toolbar__content.dps-list-view__filters {
+  margin-top: calc(-1 * var(--pf-global--spacer--lg));
+}
