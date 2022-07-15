@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.70.4 (2022-07-15)
+
+
+### Bug Fixes
+
+* **LogViewer:** render correctly when there is '\n' in the string array ([#7681](https://github.com/patternfly/patternfly-react/issues/7681)) ([12222c7](https://github.com/patternfly/patternfly-react/commit/12222c76d47396d8df5134c607a9ff689d6d93c9))
+
+
+
+
+
 ## 4.70.3 (2022-07-15)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension
