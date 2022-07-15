@@ -49,7 +49,7 @@ class SingleOption extends React.Component {
 
     return (
       <OptionsMenu 
-        id="options-menu-single-option-example" 
+        id="single-option-example" 
         menuItems={menuItems} 
         isOpen={isOpen} 
         toggle={toggle}/>
@@ -85,7 +85,7 @@ class DisabledOptionsMenu extends React.Component {
 
     return (
       <OptionsMenu 
-        id="options-menu-single-disabled-example-toggle" 
+        id="single-disabled-example" 
         isOpen={isOpen} 
         menuItems={menuItems}
         toggle={toggle}/>
@@ -149,7 +149,7 @@ class MultipleOptions extends React.Component {
 
     return (
       <OptionsMenu 
-        id="options-menu-multiple-options-example" 
+        id="multiple-options-example" 
         menuItems={menuItems} 
         isOpen={isOpen}
         toggle={toggle}
@@ -220,12 +220,12 @@ class Plain extends React.Component {
 
     return (
       <React.Fragment>
-        <OptionsMenu id="options-menu-plain-disabled-example" 
+        <OptionsMenu id="plain-disabled-example" 
           isPlain
           menuItems={disabledMenuItems}  
           isOpen={isDisabledOpen}
           toggle={disabledToggle}/>
-        <OptionsMenu id="options-menu-plain-example" 
+        <OptionsMenu id="plain-example" 
           isPlain
           menuItems={menuItems}  
           isOpen={isOpen}
@@ -277,7 +277,7 @@ class Top extends React.Component {
 
     return (
       <OptionsMenu 
-        id="options-menu-top-example" 
+        id="top-example" 
         direction={OptionsMenuDirection.up} 
         menuItems={menuItems} 
         toggle={toggle} 
@@ -328,7 +328,7 @@ class AlignRight extends React.Component {
 
     return (
       <OptionsMenu 
-        id="options-menu-align-right-example" 
+        id="align-right-example" 
         position={OptionsMenuPosition.right} 
         menuItems={menuItems} 
         toggle={toggle} 
@@ -387,7 +387,7 @@ class PlainWithText extends React.Component {
 
     return (
       <OptionsMenu 
-        id="options-menu-plain-with-text-example" 
+        id="plain-with-text-example" 
         menuItems={menuItems} 
         isOpen={isOpen} 
         isPlain
@@ -447,7 +447,7 @@ class PlainWithText extends React.Component {
 
     return (
       <OptionsMenu 
-        id="options-menu-plain-with-text-example" 
+        id="plain-with-text-disabled-example" 
         menuItems={menuItems} 
         isOpen={isOpen} 
         isPlain
@@ -507,7 +507,7 @@ class GroupedItems extends React.Component {
     
     return (
       <OptionsMenu 
-        id="options-menu-align-right-example" 
+        id="grouped-items-example" 
         position={OptionsMenuPosition.right} 
         menuItems={menuGroups} 
         toggle={toggle} 
@@ -559,7 +559,7 @@ class SingleOption extends React.Component {
 
     return (
       <OptionsMenu 
-        id="options-menu-single-option-example" 
+        id="document-body-example" 
         menuItems={menuItems} 
         isOpen={isOpen} 
         toggle={toggle}

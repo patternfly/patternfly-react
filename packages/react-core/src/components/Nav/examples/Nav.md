@@ -32,19 +32,19 @@ class NavDefaultList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect}>
+      <Nav onSelect={this.onSelect} aria-label="Default global nav">
         <NavList>
           <NavItem id="default-link1" to="#default-link1" itemId={0} isActive={activeItem === 0}>
-            Link 1
+            Default Link 1
           </NavItem>
           <NavItem id="default-link2" to="#default-link2" itemId={1} isActive={activeItem === 1}>
-            Link 2
+            Default Link 2
           </NavItem>
           <NavItem id="default-link3" to="#default-link3" itemId={2} isActive={activeItem === 2}>
-            Link 3
+            Default Link 3
           </NavItem>
           <NavItem id="default-link4" to="#default-link4" itemId={3} isActive={activeItem === 3}>
-            Link 4
+            Default Link 4
           </NavItem>
         </NavList>
       </Nav>
@@ -77,27 +77,27 @@ class NavGroupedList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect}>
+      <Nav onSelect={this.onSelect} aria-label="Grouped global nav">
         <NavGroup title="Section title 1">
           <NavItem preventDefault to="#grouped-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
-            Link 1
+            Group 1 Link 1
           </NavItem>
           <NavItem preventDefault to="#grouped-2" itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'}>
-            Link 2
+            Group 1 Link 2
           </NavItem>
           <NavItem preventDefault to="#grouped-3" itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'}>
-            Link 3
+            Group 1 Link 3
           </NavItem>
         </NavGroup>
         <NavGroup title="Section title 2">
           <NavItem preventDefault to="#grouped-4" itemId="grp-2_itm-1" isActive={activeItem === 'grp-2_itm-1'}>
-            Link 1
+            Group 2 Link 1
           </NavItem>
           <NavItem preventDefault to="#grouped-5" itemId="grp-2_itm-2" isActive={activeItem === 'grp-2_itm-2'}>
-            Link 2
+            Group 2 Link 2
           </NavItem>
           <NavItem preventDefault to="#grouped-6" itemId="grp-2_itm-3" isActive={activeItem === 'grp-2_itm-3'}>
-            Link 3
+            Group 2 Link 3
           </NavItem>
         </NavGroup>
       </Nav>
@@ -138,9 +138,9 @@ class NavExpandableList extends React.Component {
   render() {
     const { activeGroup, activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} onToggle={this.onToggle}>
+      <Nav onSelect={this.onSelect} onToggle={this.onToggle} aria-label="Expandable global nav">
         <NavList>
-          <NavExpandable title="Link 1" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
+          <NavExpandable title="Expandable Group 1" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
             <NavItem
               preventDefault
               to="#expandable-1"
@@ -148,17 +148,17 @@ class NavExpandableList extends React.Component {
               itemId="grp-1_itm-1"
               isActive={activeItem === 'grp-1_itm-1'}
             >
-              Subnav Link 1
+              Subnav 1 Link 1
             </NavItem>
             <NavItemSeparator />
             <NavItem preventDefault groupId="grp-1" itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'}>
-              Subnav Link 2
+              Subnav 1 Link 2
             </NavItem>
             <NavItem to="#expandable-3" groupId="grp-1" itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'}>
-              Subnav Link 3
+              Subnav 1 Link 3
             </NavItem>
           </NavExpandable>
-          <NavExpandable title="Link 2" groupId="grp-2" isActive={activeGroup === 'grp-2'} isExpanded>
+          <NavExpandable title="Expandable Group 2" groupId="grp-2" isActive={activeGroup === 'grp-2'} isExpanded>
             <NavItem
               preventDefault
               onClick={this.handleItemOnclick}
@@ -175,7 +175,7 @@ class NavExpandableList extends React.Component {
               itemId="grp-2_itm-1"
               isActive={activeItem === 'grp-2_itm-1'}
             >
-              Subnav Link 1
+              Subnav 2 Link 1
             </NavItem>
             <NavItem
               preventDefault
@@ -184,7 +184,7 @@ class NavExpandableList extends React.Component {
               itemId="grp-2_itm-2"
               isActive={activeItem === 'grp-2_itm-2'}
             >
-              Subnav Link 2
+              Subnav 2 Link 2
             </NavItem>
             <NavItem
               preventDefault
@@ -193,7 +193,7 @@ class NavExpandableList extends React.Component {
               itemId="grp-2_itm-3"
               isActive={activeItem === 'grp-2_itm-3'}
             >
-              Subnav Link 3
+              Subnav 2 Link 3
             </NavItem>
           </NavExpandable>
         </NavList>
@@ -227,9 +227,9 @@ class NavExpandableTitlesList extends React.Component {
   render() {
     const { activeGroup, activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect}>
+      <Nav onSelect={this.onSelect} aria-label="Expandable with subnav global nav">
         <NavList>
-          <NavExpandable title="Link 1" srText="SR Link" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
+          <NavExpandable title="Expandable with subnav group 1" srText="SR Link" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
             <NavItem
               preventDefault
               to="#sr-expandable-1"
@@ -237,7 +237,7 @@ class NavExpandableTitlesList extends React.Component {
               itemId="grp-1_itm-1"
               isActive={activeItem === 'grp-1_itm-1'}
             >
-              Subnav Link 1
+              Expandable 1 link 1
             </NavItem>
             <NavItem
               preventDefault
@@ -246,7 +246,7 @@ class NavExpandableTitlesList extends React.Component {
               itemId="grp-1_itm-2"
               isActive={activeItem === 'grp-1_itm-2'}
             >
-              Subnav Link 2
+              Expandable 1 link 2
             </NavItem>
             <NavItem
               preventDefault
@@ -255,10 +255,10 @@ class NavExpandableTitlesList extends React.Component {
               itemId="grp-1_itm-3"
               isActive={activeItem === 'grp-1_itm-3'}
             >
-              Subnav Link 3
+              Expandable 1 link 3
             </NavItem>
           </NavExpandable>
-          <NavExpandable title="Link 2" srText="SR Link 2" groupId="grp-2" isActive={activeGroup === 'grp-2'}>
+          <NavExpandable title="Expandable with subnav group 2" srText="SR Link 2" groupId="grp-2" isActive={activeGroup === 'grp-2'}>
             <NavItem
               preventDefault
               to="#sr-expandable-4"
@@ -266,7 +266,7 @@ class NavExpandableTitlesList extends React.Component {
               itemId="grp-2_itm-1"
               isActive={activeItem === 'grp-2_itm-1'}
             >
-              Subnav Link 1
+              Expandable 2 Link 1
             </NavItem>
             <NavItem
               preventDefault
@@ -275,7 +275,7 @@ class NavExpandableTitlesList extends React.Component {
               itemId="grp-2_itm-2"
               isActive={activeItem === 'grp-2_itm-2'}
             >
-              Subnav Link 2
+              Expandable 2 Link 2
             </NavItem>
             <NavItem
               preventDefault
@@ -284,7 +284,7 @@ class NavExpandableTitlesList extends React.Component {
               itemId="grp-2_itm-3"
               isActive={activeItem === 'grp-2_itm-3'}
             >
-              Subnav Link 3
+              Expandable 2 Link 3
             </NavItem>
           </NavExpandable>
         </NavList>
@@ -315,9 +315,9 @@ NavExpandableThirdLevelList = () => {
   };
 
   return (
-    <Nav onSelect={onSelect} onToggle={onToggle}>
+    <Nav onSelect={onSelect} onToggle={onToggle} aria-label="Expandable third level global nav">
       <NavList>
-        <NavExpandable title="Link 1" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
+        <NavExpandable title="Third level group 1" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
           <NavItem
             preventDefault
             to="#expandable-1"
@@ -325,7 +325,7 @@ NavExpandableThirdLevelList = () => {
             itemId="grp-1_itm-1"
             isActive={activeItem === 'grp-1_itm-1'}
           >
-            Subnav Link 1
+            With 3rd 1 Link 1
           </NavItem>
           <NavItem
             preventDefault
@@ -334,7 +334,7 @@ NavExpandableThirdLevelList = () => {
             itemId="grp-1_itm-2"
             isActive={activeItem === 'grp-1_itm-2'}
           >
-            Subnav Link 2
+            With 3rd 1 Link 2
           </NavItem>
           <NavItem
             preventDefault
@@ -343,10 +343,10 @@ NavExpandableThirdLevelList = () => {
             itemId="grp-1_itm-3"
             isActive={activeItem === 'grp-1_itm-3'}
           >
-            Subnav Link 3
+            With 3rd 1 Link 3
           </NavItem>
         </NavExpandable>
-        <NavExpandable title="Link 2" groupId="grp-2" isActive={activeGroup === 'grp-2'} isExpanded>
+        <NavExpandable title="Third level group 2" groupId="grp-2" isActive={activeGroup === 'grp-2'} isExpanded>
           <NavItem
             preventDefault
             to="#expandable-4"
@@ -354,7 +354,7 @@ NavExpandableThirdLevelList = () => {
             itemId="grp-2_itm-1"
             isActive={activeItem === 'grp-2_itm-1'}
           >
-            Subnav Link 1
+            With 3rd 2 Link 1
           </NavItem>
           <NavExpandable title="Third Level" groupId="grp-3" isActive={activeGroup === 'grp-3'} isExpanded>
             <NavItem
@@ -383,7 +383,7 @@ NavExpandableThirdLevelList = () => {
             itemId="grp-2_itm-2"
             isActive={activeItem === 'grp-2_itm-3'}
           >
-            Subnav Link 3
+            With 3rd 2 Link 3
           </NavItem>
         </NavExpandable>
       </NavList>
@@ -416,7 +416,7 @@ class NavMixedList extends React.Component {
   render() {
     const { activeGroup, activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect}>
+      <Nav onSelect={this.onSelect} aria-label="Mixed global nav">
         <NavList>
           <NavItem preventDefault to="#mixed-1" itemId="itm-1" isActive={activeItem === 'itm-1'}>
             Link 1 (not expandable)
@@ -429,7 +429,7 @@ class NavMixedList extends React.Component {
               itemId="grp-1_itm-1"
               isActive={activeItem === 'grp-1_itm-1'}
             >
-              Link 1
+              Mixed Link 1
             </NavItem>
             <NavItem
               preventDefault
@@ -438,7 +438,7 @@ class NavMixedList extends React.Component {
               itemId="grp-1_itm-2"
               isActive={activeItem === 'grp-1_itm-2'}
             >
-              Link 2
+              Mixed Link 2
             </NavItem>
             <NavItem
               preventDefault
@@ -447,7 +447,7 @@ class NavMixedList extends React.Component {
               itemId="grp-1_itm-3"
               isActive={activeItem === 'grp-1_itm-3'}
             >
-              Link 3
+              Mixed Link 3
             </NavItem>
           </NavExpandable>
           <NavExpandable title="Link 3 - expandable" groupId="grp-2" isActive={activeGroup === 'grp-2'}>
@@ -458,7 +458,7 @@ class NavMixedList extends React.Component {
               itemId="grp-2_itm-1"
               isActive={activeItem === 'grp-2_itm-1'}
             >
-              Link 1
+              Mixed 2 Link 1
             </NavItem>
             <NavItem
               preventDefault
@@ -467,7 +467,7 @@ class NavMixedList extends React.Component {
               itemId="grp-2_itm-2"
               isActive={activeItem === 'grp-2_itm-2'}
             >
-              Link 2
+              Mixed 2 Link 2
             </NavItem>
             <NavItem
               preventDefault
@@ -476,7 +476,7 @@ class NavMixedList extends React.Component {
               itemId="grp-2_itm-3"
               isActive={activeItem === 'grp-2_itm-3'}
             >
-              Link 3
+              Mixed 2 Link 3
             </NavItem>
           </NavExpandable>
         </NavList>
@@ -508,7 +508,7 @@ class NavHorizontalList extends React.Component {
   render() {
     const { activeItem } = this.state;
     const nav = (
-      <Nav onSelect={this.onSelect} variant="horizontal">
+      <Nav onSelect={this.onSelect} variant="horizontal" aria-label="Horizontal global nav">
         <NavList>
           {Array.apply(0, Array(10)).map(function(x, i) {
             const num = i + 1;
@@ -548,7 +548,7 @@ class HorizontalSubNav extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} variant="horizontal-subnav">
+      <Nav onSelect={this.onSelect} variant="horizontal-subnav" aria-label="Horizontal subnav global nav">
         <NavList>
           {Array.apply(0, Array(10)).map(function(x, i) {
             const num = i + 1;
@@ -587,7 +587,7 @@ class NavTertiaryList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} variant="tertiary">
+      <Nav onSelect={this.onSelect} variant="tertiary" aria-label="Tertiary global nav">
         <NavList>
           {Array.apply(0, Array(10)).map(function(x, i) {
             const num = i + 1;
@@ -655,19 +655,19 @@ NavWithFlyout = () => {
   }
 
   return (
-    <Nav onSelect={onSelect}>
+    <Nav onSelect={onSelect} aria-label="Flyout global nav">
       <NavList>
-        <NavItem id="default-link1" to="#default-link1" itemId={0} isActive={activeItem === 0}>
-          Link 1
+        <NavItem id="flyout-link1" to="#flyout-link1" itemId={0} isActive={activeItem === 0}>
+          Flyout Link 1
         </NavItem>
-        <NavItem id="default-link2" to="#default-link2" itemId={1} isActive={activeItem === 1}>
-          Link 2
+        <NavItem id="flyout-link2" to="#flyout-link2" itemId={1} isActive={activeItem === 1}>
+          Flyout Link 2
         </NavItem>
-        <NavItem flyout={curFlyout} id="default-link3" to="#default-link3" itemId={2} isActive={activeItem === 2}>
-          Link 3
+        <NavItem flyout={curFlyout} id="flyout-link3" to="#flyout-link3" itemId={2} isActive={activeItem === 2}>
+          Flyout Link 3
         </NavItem>
-        <NavItem id="default-link4" to="#default-link4" itemId={3} isActive={activeItem === 3}>
-          Link 4
+        <NavItem id="flyout-link4" to="#flyout-link4" itemId={3} isActive={activeItem === 3}>
+          Flyout Link 4
         </NavItem>
       </NavList>
     </Nav>

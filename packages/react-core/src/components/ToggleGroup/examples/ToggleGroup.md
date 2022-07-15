@@ -109,9 +109,9 @@ class IconToggleGroupExample extends React.Component {
     super(props);
     this.state = {
       isSelected: {
-        third: false,
-        fourth: false,
-        fifth: true
+        "icons-1": false,
+        "icons-2": false,
+        "icons-3": true
       }
     };
     this.handleItemClick = (isSelected, event) => {
@@ -129,9 +129,9 @@ class IconToggleGroupExample extends React.Component {
     const { isSelected } = this.state;
     return (
       <ToggleGroup aria-label="Icon variant toggle group">
-        <ToggleGroupItem icon={<CopyIcon />} aria-label="copy icon button" buttonId="third" isSelected={isSelected.third} onChange={this.handleItemClick} />
-        <ToggleGroupItem icon={<UndoIcon />} aria-label="undo icon button" buttonId="fourth" isSelected={isSelected.fourth} onChange={this.handleItemClick} />
-        <ToggleGroupItem icon={<ShareSquareIcon />} aria-label="share square icon button" buttonId="fifth" isSelected={isSelected.fifth} onChange={this.handleItemClick} />
+        <ToggleGroupItem icon={<CopyIcon />} aria-label="copy icon button" buttonId="icons-1" isSelected={isSelected["icons-1"]} onChange={this.handleItemClick} />
+        <ToggleGroupItem icon={<UndoIcon />} aria-label="undo icon button" buttonId="icons-2" isSelected={isSelected["icons-2"]} onChange={this.handleItemClick} />
+        <ToggleGroupItem icon={<ShareSquareIcon />} aria-label="share square icon button" buttonId="icons-3" isSelected={isSelected["icons-3"]} onChange={this.handleItemClick} />
       </ToggleGroup>
     );
   }
@@ -151,9 +151,9 @@ class TextIconToggleGroupExample extends React.Component {
     super(props);
     this.state = {
       isSelected: {
-        third: false,
-        fourth: false,
-        fifth: true
+        "text-icons-1": false,
+        "text-icons-2": false,
+        "text-icons-3": true
       }
     };
     this.handleItemClick = (isSelected, event) => {
@@ -171,9 +171,9 @@ class TextIconToggleGroupExample extends React.Component {
     const { isSelected } = this.state;
     return (
       <ToggleGroup aria-label="Icon variant toggle group">
-        <ToggleGroupItem icon={<CopyIcon />} text="Copy" aria-label="copy icon button" buttonId="third" isSelected={isSelected.third} onChange={this.handleItemClick} />
-        <ToggleGroupItem icon={<UndoIcon />} text="Undo" aria-label="undo icon button" buttonId="fourth" isSelected={isSelected.fourth} onChange={this.handleItemClick} />
-        <ToggleGroupItem icon={<ShareSquareIcon />} text="Share" aria-label="share square icon button" buttonId="fifth" isSelected={isSelected.fifth} onChange={this.handleItemClick} />
+        <ToggleGroupItem icon={<CopyIcon />} text="Copy" aria-label="copy icon button" buttonId="text-icons-1" isSelected={isSelected["text-icons-1"]} onChange={this.handleItemClick} />
+        <ToggleGroupItem icon={<UndoIcon />} text="Undo" aria-label="undo icon button" buttonId="text-icons-2" isSelected={isSelected["text-icons-2"]} onChange={this.handleItemClick} />
+        <ToggleGroupItem icon={<ShareSquareIcon />} text="Share" aria-label="share square icon button" buttonId="text-icons-3" isSelected={isSelected["text-icons-3"]} onChange={this.handleItemClick} />
       </ToggleGroup>
     );
   }
@@ -190,8 +190,8 @@ constructor(props) {
     super(props);
     this.state = {
       isSelected: {
-        sixth: false,
-        seventh: false
+        "compact-1": false,
+        "compact-2": false
       }
     };
     this.handleItemClick = (isSelected, event) => {
@@ -210,8 +210,8 @@ constructor(props) {
 
     return (
       <ToggleGroup isCompact aria-label="Compact variant toggle group">
-        <ToggleGroupItem text="Option 1" buttonId="sixth" isSelected={isSelected.sixth} onChange={this.handleItemClick} />
-        <ToggleGroupItem text="Option 2" buttonId="seventh" isSelected={isSelected.seventh} onChange={this.handleItemClick} />
+        <ToggleGroupItem text="Option 1" buttonId="compact-1" isSelected={isSelected["compact-1"]} onChange={this.handleItemClick} />
+        <ToggleGroupItem text="Option 2" buttonId="compact-2" isSelected={isSelected["compact-2"]} onChange={this.handleItemClick} />
         <ToggleGroupItem text="Option 3" isDisabled />
       </ToggleGroup>
     );

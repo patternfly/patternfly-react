@@ -23,7 +23,7 @@ import React from 'react';
 import { Masthead, MastheadToggle, MastheadMain, MastheadBrand, MastheadContent, Button } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
-<Masthead id="basic">
+<Masthead id="basic-example">
   <MastheadToggle>
     <Button variant="plain" onClick={() => {}} aria-label="Global navigation">
       <BarsIcon />
@@ -126,7 +126,7 @@ import React from 'react';
 import { Masthead, MastheadToggle, MastheadMain, MastheadBrand, MastheadContent, Button } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 
-<Masthead id="stack-masthead" display={{ default: 'inline', lg: 'stack', '2xl': 'inline' }}>
+<Masthead id="stack-inline-masthead" display={{ default: 'inline', lg: 'stack', '2xl': 'inline' }}>
   <MastheadToggle>
     <Button variant="plain" onClick={() => {}} aria-label="Global navigation">
       <BarsIcon />
@@ -216,7 +216,7 @@ import BarsIcon from '@patternfly/react-icons/dist/js/icons/bars-icon';
 import { Link } from '@reach/router';
 import pfIcon from './pf-logo-small.svg';
 
-<Masthead id="basic">
+<Masthead id="icon-router-link">
   <MastheadToggle>
     <Button variant="plain" onClick={() => {}} aria-label="Global navigation">
       <BarsIcon />
