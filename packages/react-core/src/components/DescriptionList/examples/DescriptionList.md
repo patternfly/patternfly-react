@@ -120,6 +120,40 @@ import FlagIcon from '@patternfly/react-icons/dist/esm/icons/flag-icon';
 ```ts file='./DescriptionListDefaultInlineGrid.tsx'
 ```
 
+### Display variant
+
+```ts file='./DescriptionListDisplay.tsx'
+```
+
+## Card variants
+
+Cards can be used as description list group wrappers. Using cards in this way applies the card body padding directly to the card and enables the use of card modifiers within description list groups.
+
+### Description list group wrapper as card
+
+```ts file='./DescriptionListGroupWrapperAsCard.tsx'
+```
+
+### Display lg and card variant
+
+```ts file='./DescriptionListDisplayLgAndCard.tsx'
+```
+
+### Display 2xl and card variant
+
+```ts file='./DescriptionListDisplay2xlAndCard.tsx'
+```
+
+### Display and card variant, three column on lg breakpoint
+
+```ts file='./DescriptionListDisplayLgAndCardThreeColumn.tsx'
+```
+
+### Display and card variant, horizontal, modified term width
+
+```ts file='./DescriptionListDisplayLgAndCardHorizontalTermWidth.tsx'
+```
+
 ## Auto fit
 
 ### Auto-fit basic

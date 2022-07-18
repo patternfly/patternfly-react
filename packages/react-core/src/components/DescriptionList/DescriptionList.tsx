@@ -30,6 +30,8 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
   isFluid?: boolean;
   /** Sets the the default placement of description list groups to fill from top to bottom. */
   isFillColumns?: boolean;
+  /** Sets the description list to Display variant.*/
+  display?: 'lg' | '2xl';
   /** Sets the number of columns on the description list at various breakpoints */
   columnModifier?: {
     default?: '1Col' | '2Col' | '3Col';
@@ -49,6 +51,15 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
   };
   /** Sets the minimum column size for the auto-fit (isAutoFit) layout at various breakpoints. */
   autoFitMinModifier?: {
+    default?: string;
+    sm?: string;
+    md?: string;
+    lg?: string;
+    xl?: string;
+    '2xl'?: string;
+  };
+  /** Sets the description list's term column width at various breakpoints.*/
+  termWidthModifier?: {
     default?: string;
     sm?: string;
     md?: string;
@@ -86,8 +97,10 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   isCompact,
   isFluid,
   isFillColumns,
+  display,
   columnModifier,
   autoFitMinModifier,
+  termWidthModifier,
   horizontalTermWidthModifier,
   orientation,
   style,
@@ -97,6 +110,12 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
     style = {
       ...style,
       ...setBreakpointModifiers('--pf-c-description-list--GridTemplateColumns--min', autoFitMinModifier)
+    };
+  }
+  if (termWidthModifier) {
+    style = {
+      ...style,
+      ...setBreakpointModifiers('--pf-c-description-list__term--width', termWidthModifier)
     };
   }
   if (isHorizontal && horizontalTermWidthModifier) {
@@ -119,6 +138,8 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
         isCompact && styles.modifiers.compact,
         isFluid && styles.modifiers.fluid,
         isFillColumns && styles.modifiers.fillColumns,
+        display === 'lg' && styles.modifiers.displayLg,
+        display === '2xl' && styles.modifiers.display_2xl,
         className
       )}
       style={style}

@@ -7,14 +7,24 @@ export interface DescriptionListGroupProps extends React.HTMLProps<HTMLDivElemen
   children?: any;
   /** Additional classes added to the DescriptionListGroup */
   className?: string;
+  /** Use Card component as a wrapper of DescriptionListGroup*/
+  isCard?: boolean;
 }
 
 export const DescriptionListGroup: React.FunctionComponent<DescriptionListGroupProps> = ({
   className,
   children,
+  isCard,
   ...props
 }: DescriptionListGroupProps) => (
-  <div className={css(styles.descriptionListGroup, className)} {...props}>
+  <div
+    className={css(
+      isCard && styles.card,
+      isCard ? 'pf-m-description-list__group' : styles.descriptionListGroup,
+      className
+    )}
+    {...props}
+  >
     {children}
   </div>
 );
