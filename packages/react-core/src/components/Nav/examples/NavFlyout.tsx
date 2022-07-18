@@ -57,7 +57,7 @@ export const NavFlyout: React.FunctionComponent = () => {
   }
 
   return (
-    <Nav onSelect={onSelect}>
+    <Nav onSelect={onSelect} aria-label="Flyout global nav">
       <NavList>
         <NavItem
           preventDefault
@@ -66,7 +66,7 @@ export const NavFlyout: React.FunctionComponent = () => {
           itemId="nav-flyout-default-link-1"
           isActive={activeItem === 'nav-flyout-default-link-1'}
         >
-          Link 1
+          Flyout Link 1
         </NavItem>
         <NavItem
           preventDefault
@@ -75,7 +75,7 @@ export const NavFlyout: React.FunctionComponent = () => {
           itemId="nav-flyout-default-link-2"
           isActive={activeItem === 'nav-flyout-default-link-2'}
         >
-          Link 2
+          Flyout Link 2
         </NavItem>
         <NavItem
           preventDefault
@@ -85,7 +85,7 @@ export const NavFlyout: React.FunctionComponent = () => {
           itemId="nav-flyout-default-link-3"
           isActive={activeItem === 'nav-flyout-default-link-3'}
         >
-          Link 3
+          Flyout Link 3
         </NavItem>
         <NavItem
           preventDefault
@@ -94,7 +94,7 @@ export const NavFlyout: React.FunctionComponent = () => {
           itemId="nav-flyout-default-link-4"
           isActive={activeItem === 'nav-flyout-default-link-4'}
         >
-          Link 4
+          Flyout Link 4
         </NavItem>
       </NavList>
     </Nav>

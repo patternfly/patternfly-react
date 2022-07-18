@@ -9,7 +9,7 @@ export const NavGrouped: React.FunctionComponent = () => {
   };
 
   return (
-    <Nav onSelect={onSelect}>
+    <Nav onSelect={onSelect} aria-label="Grouped global nav">
       <NavGroup title="Section title 1">
         <NavItem
           preventDefault
@@ -17,7 +17,7 @@ export const NavGrouped: React.FunctionComponent = () => {
           itemId="group-1_item-1"
           isActive={activeItem === 'group-1_item-1'}
         >
-          Link 1
+          Group 1 Link 1
         </NavItem>
         <NavItem
           preventDefault
@@ -25,7 +25,7 @@ export const NavGrouped: React.FunctionComponent = () => {
           itemId="group-1_item-2"
           isActive={activeItem === 'group-1_item-2'}
         >
-          Link 2
+          Group 1 Link 2
         </NavItem>
         <NavItem
           preventDefault
@@ -33,7 +33,7 @@ export const NavGrouped: React.FunctionComponent = () => {
           itemId="group-1_item-3"
           isActive={activeItem === 'group-1_item-3'}
         >
-          Link 3
+          Group 1 Link 3
         </NavItem>
       </NavGroup>
       <NavGroup title="Section title 2">
@@ -43,7 +43,7 @@ export const NavGrouped: React.FunctionComponent = () => {
           itemId="group-2_item-1"
           isActive={activeItem === 'group-2_item-1'}
         >
-          Link 1
+          Group 2 Link 1
         </NavItem>
         <NavItem
           preventDefault
@@ -51,7 +51,7 @@ export const NavGrouped: React.FunctionComponent = () => {
           itemId="group-2_item-2"
           isActive={activeItem === 'group-2_item-2'}
         >
-          Link 2
+          Group 2 Link 2
         </NavItem>
         <NavItem
           preventDefault
@@ -59,7 +59,7 @@ export const NavGrouped: React.FunctionComponent = () => {
           itemId="group-2_item-3"
           isActive={activeItem === 'group-2_item-3'}
         >
-          Link 3
+          Group 2 Link 3
         </NavItem>
       </NavGroup>
     </Nav>

@@ -16,7 +16,7 @@ export const NavExpandableThirdLevel: React.FunctionComponent = () => {
   };
 
   return (
-    <Nav onSelect={onSelect} onToggle={onToggle}>
+    <Nav onSelect={onSelect} onToggle={onToggle} aria-label="Expandable third level global nav">
       <NavList>
         <NavExpandable
           title="Expandable section title 1"
@@ -32,7 +32,7 @@ export const NavExpandableThirdLevel: React.FunctionComponent = () => {
             itemId="nav-expand3rd-group-1_item-1"
             isActive={activeItem === 'nav-expand3rd-group-1_item-1'}
           >
-            Link 1
+            With 3rd 1 Link 1
           </NavItem>
           <NavItem
             preventDefault
@@ -42,7 +42,7 @@ export const NavExpandableThirdLevel: React.FunctionComponent = () => {
             itemId="nav-expand3rd-group-1_item-2"
             isActive={activeItem === 'nav-expand3rd-group-1_item-2'}
           >
-            Link 2
+            With 3rd 1 Link 2
           </NavItem>
           <NavItem
             preventDefault
@@ -52,7 +52,7 @@ export const NavExpandableThirdLevel: React.FunctionComponent = () => {
             itemId="nav-expand3rd-group-1_item-3"
             isActive={activeItem === 'nav-expand3rd-group-1_item-3'}
           >
-            Link 3
+            With 3rd 1 Link 3
           </NavItem>
         </NavExpandable>
         <NavExpandable
@@ -69,7 +69,7 @@ export const NavExpandableThirdLevel: React.FunctionComponent = () => {
             itemId="nav-expand3rd-group-2_item-1"
             isActive={activeItem === 'nav-expand3rd-group-2_item-1'}
           >
-            Link 1
+            With 3rd 2 Link 1
           </NavItem>
           <NavExpandable
             title="Expandable third level"
@@ -106,7 +106,7 @@ export const NavExpandableThirdLevel: React.FunctionComponent = () => {
             itemId="nav-expand3rd-group-2_item-2"
             isActive={activeItem === 'nav-expand3rd-group-2_item-2'}
           >
-            Link 2
+            With 3rd 2 Link 2
           </NavItem>
         </NavExpandable>
       </NavList>

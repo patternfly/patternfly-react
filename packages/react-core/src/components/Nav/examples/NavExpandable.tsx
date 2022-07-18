@@ -25,10 +25,10 @@ export const NavExpandableExample: React.FunctionComponent = () => {
   };
 
   return (
-    <Nav onSelect={onSelect} onToggle={onToggle}>
+    <Nav onSelect={onSelect} onToggle={onToggle} aria-label="Expandable global nav">
       <NavList>
         <NavExpandable
-          title="Expandable section title 1"
+          title="Expandable Group 1"
           groupId="nav-expandable-group-1"
           isActive={activeGroup === 'nav-expandable-group-1'}
           isExpanded
@@ -41,7 +41,7 @@ export const NavExpandableExample: React.FunctionComponent = () => {
             itemId="nav-expandable-group-1_item-1"
             isActive={activeItem === 'nav-expandable-group-1_item-1'}
           >
-            Link 1
+            Subnav 1 Link 1
           </NavItem>
           <NavItemSeparator />
           <NavItem
@@ -52,7 +52,7 @@ export const NavExpandableExample: React.FunctionComponent = () => {
             itemId="nav-expandable-group-1_item-2"
             isActive={activeItem === 'nav-expandable-group-1_item-2'}
           >
-            Link 2
+            Subnav 1 Link 2
           </NavItem>
           <NavItem
             preventDefault
@@ -62,11 +62,11 @@ export const NavExpandableExample: React.FunctionComponent = () => {
             itemId="nav-expandable-group-1_item-3"
             isActive={activeItem === 'nav-expandable-group-1_item-3'}
           >
-            Link 3
+            Subnav 1 Link 3
           </NavItem>
         </NavExpandable>
         <NavExpandable
-          title="Expandable section title 2"
+          title="Expandable Group 2"
           groupId="nav-expandable-group-2"
           isActive={activeGroup === 'nav-expandable-group-2'}
           isExpanded
@@ -90,7 +90,7 @@ export const NavExpandableExample: React.FunctionComponent = () => {
             itemId="nav-expandable-group-2_item-1"
             isActive={activeItem === 'nav-expandable-group-2_item-1'}
           >
-            Link 1
+            Subnav 2 Link 1
           </NavItem>
           <NavItem
             preventDefault
@@ -100,7 +100,7 @@ export const NavExpandableExample: React.FunctionComponent = () => {
             itemId="nav-expandable-group-2_item-2"
             isActive={activeItem === 'nav-expandable-group-2_item-2'}
           >
-            Link 2
+            Subnav 2 Link 2
           </NavItem>
           <NavItem
             preventDefault
@@ -110,7 +110,7 @@ export const NavExpandableExample: React.FunctionComponent = () => {
             itemId="nav-expandable-group-2_item-3"
             isActive={activeItem === 'nav-expandable-group-2_item-3'}
           >
-            Link 3
+            Subnav 2 Link 3
           </NavItem>
         </NavExpandable>
       </NavList>

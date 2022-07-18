@@ -9,7 +9,7 @@ export const NavLegacyTertiary: React.FunctionComponent = () => {
   };
 
   return (
-    <Nav onSelect={onSelect} variant="tertiary">
+    <Nav onSelect={onSelect} variant="tertiary" aria-label="Tertiary global nav">
       <NavList>
         {Array.apply(0, Array(10)).map(function(_item, index: number) {
           const num = index + 1;
@@ -22,7 +22,7 @@ export const NavLegacyTertiary: React.FunctionComponent = () => {
               id={`legacy-tertiary-${num}`}
               to={`#legacy-tertiary-${num}`}
             >
-              Horizontal nav item {num}
+              Tertiary nav item {num}
             </NavItem>
           );
         })}

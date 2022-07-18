@@ -11,7 +11,7 @@ export const NavMixed: React.FunctionComponent = () => {
   };
 
   return (
-    <Nav onSelect={onSelect}>
+    <Nav onSelect={onSelect} aria-label="Mixed global nav">
       <NavList>
         <NavItem
           preventDefault
@@ -35,7 +35,7 @@ export const NavMixed: React.FunctionComponent = () => {
             itemId="nav-mixed-group-1_item-1"
             isActive={activeItem === 'nav-mixed-group-1_item-1'}
           >
-            Link 1
+            Mixed Link 1
           </NavItem>
           <NavItemSeparator />
           <NavItem
@@ -46,7 +46,7 @@ export const NavMixed: React.FunctionComponent = () => {
             itemId="nav-mixed-group-1_item-2"
             isActive={activeItem === 'nav-mixed-group-1_item-2'}
           >
-            Link 2
+            Mixed Link 2
           </NavItem>
           <NavItem
             preventDefault
@@ -56,7 +56,7 @@ export const NavMixed: React.FunctionComponent = () => {
             itemId="nav-mixed-group-1_item-3"
             isActive={activeItem === 'nav-mixed-group-1_item-3'}
           >
-            Link 3
+            Mixed Link 3
           </NavItem>
         </NavExpandable>
         <NavExpandable
@@ -72,7 +72,7 @@ export const NavMixed: React.FunctionComponent = () => {
             itemId="nav-mixed-group-2_item-1"
             isActive={activeItem === 'nav-mixed-group-2_item-1'}
           >
-            Link 1
+            Mixed 2 Link 1
           </NavItem>
           <NavItem
             preventDefault
@@ -82,7 +82,7 @@ export const NavMixed: React.FunctionComponent = () => {
             itemId="nav-mixed-group-2_item-2"
             isActive={activeItem === 'nav-mixed-group-2_item-2'}
           >
-            Link 2
+            Mixed 2 Link 2
           </NavItem>
           <NavItem
             preventDefault
@@ -92,7 +92,7 @@ export const NavMixed: React.FunctionComponent = () => {
             itemId="nav-mixed-group-2_item-3"
             isActive={activeItem === 'nav-mixed-group-2_item-3'}
           >
-            Link 3
+            Mixed 2 Link 3
           </NavItem>
         </NavExpandable>
       </NavList>

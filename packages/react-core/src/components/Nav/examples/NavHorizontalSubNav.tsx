@@ -9,7 +9,7 @@ export const NavHorizontalSubNav: React.FunctionComponent = () => {
   };
 
   return (
-    <Nav onSelect={onSelect} variant="horizontal-subnav">
+    <Nav onSelect={onSelect} variant="horizontal-subnav" aria-label="Horizontal subnav global nav">
       <NavList>
         {Array.apply(0, Array(10)).map(function(_item, index: number) {
           const num = index + 1;
@@ -22,7 +22,7 @@ export const NavHorizontalSubNav: React.FunctionComponent = () => {
               id={`horizontal-subnav-${num}`}
               to={`#horizontal-subnav-${num}`}
             >
-              Horizontal nav item {num}
+              Horizontal subnav item {num}
             </NavItem>
           );
         })}
