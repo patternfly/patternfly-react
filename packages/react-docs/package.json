@@ -37,7 +37,7 @@
     "@patternfly/react-virtualized-extension": "^4.72.4"
   },
   "devDependencies": {
-    "@patternfly/documentation-framework": "1.0.6",
+    "@patternfly/documentation-framework": "1.1.6",
     "@patternfly/patternfly-a11y": "4.3.1",
     "rimraf": "^2.6.3",
     "shx": "^0.3.2"
