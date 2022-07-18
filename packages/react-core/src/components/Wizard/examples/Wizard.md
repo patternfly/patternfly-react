@@ -13,6 +13,8 @@ import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-ico
 import FinishedStep from './FinishedStep';
 import SampleForm from './SampleForm';
 
+If you seek a Wizard solution that allows for more composition, see the [React composition](/components/wizard/react-composition) tab.
+
 ## Examples
 
 ### Basic
