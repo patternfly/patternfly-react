@@ -21,8 +21,5 @@ module.exports = {
     'bypass',
     'nested-interactive'
   ].join(','),
-  ignoreIncomplete: true,
-  // tree-table examples are skipped because aria-level, aria-posinset, aria-setsize are intentionally
-  // being used slightly unconventionally in those examples
-  skip: /^\/charts\//
+  ignoreIncomplete: true
 };

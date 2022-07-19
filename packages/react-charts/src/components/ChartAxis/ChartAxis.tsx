@@ -18,6 +18,8 @@ import { VictoryAxis, VictoryAxisProps, VictoryAxisTTargetType } from 'victory-a
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getAxisTheme, getTheme } from '../ChartUtils';
+import { getUniqueId } from '@patternfly/react-core';
+import { ChartLabel } from '../ChartLabel';
 
 /**
  * ChartAxis renders a single axis which can be used on its own or composed with Chart.
@@ -450,7 +452,7 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   themeVariant,
-
+  tickLabelComponent = <ChartLabel />,
   // destructure last
   theme = getTheme(themeColor),
   ...rest
@@ -461,8 +463,21 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
     ...containerComponent.props
   });
 
+  const getTickLabelComponent = () =>
+    React.cloneElement(tickLabelComponent, {
+      id: () => getUniqueId('chart-axis-tickLabels'),
+      ...tickLabelComponent.props
+    });
+
   // Note: containerComponent is required for theme
-  return <VictoryAxis containerComponent={container} theme={showGrid ? getAxisTheme(themeColor) : theme} {...rest} />;
+  return (
+    <VictoryAxis
+      containerComponent={container}
+      theme={showGrid ? getAxisTheme(themeColor) : theme}
+      tickLabelComponent={getTickLabelComponent()}
+      {...rest}
+    />
+  );
 };
 ChartAxis.displayName = 'ChartAxis';
 

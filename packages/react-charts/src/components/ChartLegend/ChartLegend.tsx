@@ -22,6 +22,7 @@ import { ChartLabel } from '../ChartLabel';
 import { ChartPoint } from '../ChartPoint';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
+import { getUniqueId } from '@patternfly/react-core';
 
 export enum ChartLegendOrientation {
   horizontal = 'horizontal',
@@ -367,16 +368,28 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
     ...containerComponent.props
   });
 
+  const getLabelComponent = () =>
+    React.cloneElement(labelComponent, {
+      id: () => getUniqueId('chart-legendLabels'),
+      ...labelComponent.props
+    });
+
+  const getTitleComponent = () =>
+    React.cloneElement(titleComponent, {
+      id: () => getUniqueId('chart-titleLabels'),
+      ...titleComponent.props
+    });
+
   // Note: containerComponent is required for theme
   return (
     <VictoryLegend
       colorScale={colorScale}
       containerComponent={container}
       dataComponent={dataComponent}
-      labelComponent={labelComponent}
+      labelComponent={getLabelComponent()}
       style={getDefaultStyle()}
       theme={theme}
-      titleComponent={titleComponent}
+      titleComponent={getTitleComponent()}
       {...rest}
     />
   );
@@ -388,6 +401,7 @@ hoistNonReactStatics(ChartLegend, VictoryLegend, { getBaseProps: true });
 
 (ChartLegend as any).getBaseProps = (props: any) => {
   const theme = getTheme(null);
+
   return (VictoryLegend as any).getBaseProps(
     {
       titleComponent: <ChartLabel />, // Workaround for getBaseProps error

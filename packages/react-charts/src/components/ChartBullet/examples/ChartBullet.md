@@ -509,8 +509,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '500px', width: '600px' }}>
   <ChartContainer 
-      ariaDesc="Storage capacity"
-      ariaTitle="Bullet chart example"
+      title="Bullet chart example"
       height={500}
       width={600}
     >
@@ -604,8 +603,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '600px', width: '500px' }}>
   <ChartContainer 
-      ariaDesc="Storage capacity"
-      ariaTitle="Bullet chart example"
+      title="Bullet chart example"
       height={600}
       width={500}
     >
@@ -703,8 +701,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '600px', width: '600px' }}>
   <ChartContainer 
-      ariaDesc="Storage capacity"
-      ariaTitle="Bullet chart example"
+      title="Bullet chart example"
       height={600}
       width={600}
     >
@@ -800,8 +797,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '600px', width: '500px' }}>
   <ChartContainer 
-      ariaDesc="Storage capacity"
-      ariaTitle="Bullet chart example"
+      title="Bullet chart example"
       height={600}
       width={500}
     >

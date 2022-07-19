@@ -4,10 +4,11 @@ import { Chart } from '../Chart';
 import { ChartAxis } from './ChartAxis';
 import { ChartGroup } from '../ChartGroup';
 import { ChartLine } from '../ChartLine';
+import { ChartLabel } from '../ChartLabel';
 
 Object.values([true, false]).forEach(() => {
   test('ChartAxis', () => {
-    const { asFragment } = render(<ChartAxis />);
+    const { asFragment } = render(<ChartAxis tickLabelComponent={<ChartLabel id="test" />} />);
     expect(asFragment()).toMatchSnapshot();
   });
 });
@@ -49,8 +50,8 @@ test('renders component data', () => {
           ]}
         />
       </ChartGroup>
-      <ChartAxis tickValues={[2, 3, 4]} />
-      <ChartAxis dependentAxis tickValues={[2, 5, 8]} />
+      <ChartAxis tickValues={[2, 3, 4]} tickLabelComponent={<ChartLabel id="test" />} />
+      <ChartAxis dependentAxis tickValues={[2, 5, 8]} tickLabelComponent={<ChartLabel id="test2" />} />
     </Chart>
   );
   expect(asFragment()).toMatchSnapshot();

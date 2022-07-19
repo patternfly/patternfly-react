@@ -7,6 +7,8 @@ import { ChartLine } from '../ChartLine';
 import { ChartThemeColor } from '../ChartTheme';
 import { createContainer } from '../ChartUtils';
 import { ChartLegendTooltip } from './ChartLegendTooltip';
+import { ChartLabel } from '../ChartLabel';
+import { ChartLegend } from '../ChartLegend';
 
 Object.values([true, false]).forEach(() => {
   test('ChartLegendTooltip', () => {
@@ -40,6 +42,7 @@ test('allows tooltip via container component', () => {
       }
       legendData={legendData}
       legendPosition="bottom"
+      legendComponent={<ChartLegend labelComponent={<ChartLabel id="test" />} />}
       height={275}
       maxDomain={{ y: 10 }}
       minDomain={{ y: 0 }}
@@ -52,8 +55,8 @@ test('allows tooltip via container component', () => {
       themeColor={ChartThemeColor.green}
       width={450}
     >
-      <ChartAxis tickValues={[2, 3, 4]} />
-      <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+      <ChartAxis tickValues={[2, 3, 4]} tickLabelComponent={<ChartLabel id="test" />} />
+      <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} tickLabelComponent={<ChartLabel id="test2" />} />
       <ChartGroup>
         <ChartLine
           data={[
