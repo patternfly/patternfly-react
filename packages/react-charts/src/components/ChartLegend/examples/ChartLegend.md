@@ -676,7 +676,7 @@ class LegendLinkPieChart extends React.Component {
 
   render() {
     return (
-      <div aria-describedby="withLinks-desc" aria-labelledby="withLinks-title" style={{ height: '275px', width: '450px' }}>
+      <div role="article" aria-describedby="withLinks-desc" aria-labelledby="withLinks-title" style={{ height: '275px', width: '450px' }}>
         <Chart
           ariaDesc="Average number of pets per year"
           ariaTitle="Line chart example"
