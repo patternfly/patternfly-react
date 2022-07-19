@@ -88,7 +88,9 @@ class DefaultTreeView extends React.Component {
       {
         name: 'Sources',
         id: 'example1-Sources',
-        children: [{ name: 'Application 4', id: 'example1-App4', children: [{ name: 'Settings', id: 'example1-App4Settings' }] }]
+        children: [
+          { name: 'Application 4', id: 'example1-App4', children: [{ name: 'Settings', id: 'example1-App4Settings' }] }
+        ]
       },
       {
         name: 'Really really really long folder name that overflows the container it is in',
@@ -103,6 +105,115 @@ class DefaultTreeView extends React.Component {
           {!allExpanded && 'Expand all'}
         </Button>
         <TreeView data={options} activeItems={activeItems} onSelect={this.onSelect} allExpanded={allExpanded} />
+      </React.Fragment>
+    );
+  }
+}
+```
+
+### With separate selection and expansion
+
+The `hasSelectableNodes` modifier will separate the expansion and selection behaviors, allowing a parent node to be selected or deselected with toggling its expansion.
+
+```js
+import React from 'react';
+import { TreeView, Button } from '@patternfly/react-core';
+
+class DefaultTreeView extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { activeItems: {}, allExpanded: null };
+
+    this.onSelect = (evt, treeViewItem) => {
+      this.setState({
+        activeItems: [treeViewItem]
+      });
+    };
+
+    this.onToggle = evt => {
+      const { allExpanded } = this.state;
+      this.setState({
+        allExpanded: allExpanded !== undefined ? !allExpanded : true
+      });
+    };
+  }
+
+  render() {
+    const { activeItems, allExpanded } = this.state;
+
+    const options = [
+      {
+        name: 'Application launcher',
+        id: 'example1-AppLaunch',
+        children: [
+          {
+            name: 'Application 1',
+            id: 'example1-App1',
+            children: [
+              { name: 'Settings', id: 'example1-App1Settings' },
+              { name: 'Current', id: 'example1-App1Current' }
+            ]
+          },
+          {
+            name: 'Application 2',
+            id: 'example1-App2',
+            children: [
+              { name: 'Settings', id: 'example1-App2Settings' },
+              {
+                name: 'Loader',
+                id: 'example1-App2Loader',
+                children: [
+                  { name: 'Loading App 1', id: 'example1-LoadApp1' },
+                  { name: 'Loading App 2', id: 'example1-LoadApp2' },
+                  { name: 'Loading App 3', id: 'example1-LoadApp3' }
+                ]
+              }
+            ]
+          }
+        ],
+        defaultExpanded: true
+      },
+      {
+        name: 'Cost management',
+        id: 'example1-Cost',
+        children: [
+          {
+            name: 'Application 3',
+            id: 'example1-App3',
+            children: [
+              { name: 'Settings', id: 'example1-App3Settings' },
+              { name: 'Current', id: 'example1-App3Current' }
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Sources',
+        id: 'example1-Sources',
+        children: [
+          { name: 'Application 4', id: 'example1-App4', children: [{ name: 'Settings', id: 'example1-App4Settings' }] }
+        ]
+      },
+      {
+        name: 'Really really really long folder name that overflows the container it is in',
+        id: 'example1-Long',
+        children: [{ name: 'Application 5', id: 'example1-App5' }]
+      }
+    ];
+    return (
+      <React.Fragment>
+        <Button variant="link" onClick={this.onToggle}>
+          {allExpanded && 'Collapse all'}
+          {!allExpanded && 'Expand all'}
+        </Button>
+        <TreeView
+          hasSelectableNodes
+          data={options}
+          activeItems={activeItems}
+          onSelect={this.onSelect}
+          allExpanded={allExpanded}
+        />
       </React.Fragment>
     );
   }
@@ -168,7 +279,13 @@ class SearchTreeView extends React.Component {
       {
         name: 'Sources',
         id: 'example2-Sources',
-        children: [{ name: 'Application 4', id: 'example2-App4', children: [{ name: 'Settingexample2-s', id: 'example2-App4Settings' }] }]
+        children: [
+          {
+            name: 'Application 4',
+            id: 'example2-App4',
+            children: [{ name: 'Settingexample2-s', id: 'example2-App4Settings' }]
+          }
+        ]
       },
       {
         name: 'Really really really long folder name that overflows the container it is in',
@@ -357,7 +474,9 @@ class CheckboxTreeView extends React.Component {
         name: 'Really really really long folder name that overflows the container it is in',
         id: 'example3-Long',
         checkProps: { 'aria-label': 'long-check', checked: false },
-        children: [{ name: 'Application 5', id: 'example3-App5', checkProps: { 'aria-label': 'app-5-check', checked: false } }]
+        children: [
+          { name: 'Application 5', id: 'example3-App5', checkProps: { 'aria-label': 'app-5-check', checked: false } }
+        ]
       }
     ];
 
@@ -522,7 +641,9 @@ class IconTreeView extends React.Component {
       {
         name: 'Sources',
         id: 'example4-Sources',
-        children: [{ name: 'Application 4', id: 'example4-App4', children: [{ name: 'Settings', id: 'example4-App4Settings' }] }]
+        children: [
+          { name: 'Application 4', id: 'example4-App4', children: [{ name: 'Settings', id: 'example4-App4Settings' }] }
+        ]
       },
       {
         name: 'Really really really long folder name that overflows the container it is in',
@@ -613,7 +734,9 @@ class BadgesTreeView extends React.Component {
       {
         name: 'Sources',
         id: 'example5-Sources',
-        children: [{ name: 'Application 4', id: 'example5-App4', children: [{ name: 'Settings', id: 'example5-App4Settings' }] }]
+        children: [
+          { name: 'Application 4', id: 'example5-App4', children: [{ name: 'Settings', id: 'example5-App4Settings' }] }
+        ]
       },
       {
         name: 'Really really really long folder name that overflows the container it is in',
@@ -842,7 +965,9 @@ class IconTreeView extends React.Component {
       {
         name: 'Sources',
         id: 'example7-Sources',
-        children: [{ name: 'Application 4', id: 'example7-App4', children: [{ name: 'Settings', id: 'example7-App4Settings' }] }]
+        children: [
+          { name: 'Application 4', id: 'example7-App4', children: [{ name: 'Settings', id: 'example7-App4Settings' }] }
+        ]
       },
       {
         name: 'Really really really long folder name that overflows the container it is in',
@@ -911,7 +1036,9 @@ const GuidesTreeView: React.FunctionComponent = () => {
     {
       name: 'Sources',
       id: 'example8-Sources',
-      children: [{ name: 'Application 4', id: 'example8-App4', children: [{ name: 'Settings', id: 'example8-App4Settings' }] }]
+      children: [
+        { name: 'Application 4', id: 'example8-App4', children: [{ name: 'Settings', id: 'example8-App4Settings' }] }
+      ]
     },
     {
       name: 'Really really really long folder name that overflows the container it is in',

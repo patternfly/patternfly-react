@@ -33,6 +33,8 @@ export interface TreeViewListItemProps {
   checkProps?: TreeViewCheckProps;
   /** Flag indicating if a tree view item has a badge */
   hasBadge?: boolean;
+  /** Flag indicating that tree nodes should be independently selectable, even when having children */
+  hasSelectableNodes?: boolean;
   /** Optional prop for custom badge */
   customBadgeContent?: React.ReactNode;
   /** Additional properties of the tree view item badge */
@@ -73,6 +75,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
   hasBadge = false,
   customBadgeContent,
   badgeProps = { isRead: true },
+  hasSelectableNodes = false,
   isCompact,
   activeItems = [],
   itemData,
@@ -93,14 +96,17 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
     }
   }, [isExpanded, defaultExpanded]);
 
-  const Component = hasCheck ? 'div' : 'button';
-  const ToggleComponent = hasCheck ? 'button' : 'div';
+  const Component = hasCheck || hasSelectableNodes ? 'div' : 'button';
+  const ToggleComponent = hasCheck || hasSelectableNodes ? 'button' : 'div';
   const renderToggle = (randomId: string) => (
     <ToggleComponent
       className={css(styles.treeViewNodeToggle)}
-      onClick={() => {
-        if (hasCheck) {
+      onClick={(evt: React.MouseEvent) => {
+        if (hasSelectableNodes || hasCheck) {
           setIsExpanded(!internalIsExpanded);
+        }
+        if (hasSelectableNodes) {
+          evt.stopPropagation();
         }
       }}
       {...(hasCheck && { 'aria-labelledby': `label-${randomId}` })}
@@ -176,7 +182,8 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
             <Component
               className={css(
                 styles.treeViewNode,
-                !children &&
+                hasSelectableNodes && styles.modifiers.selectable,
+                (!children || hasSelectableNodes) &&
                   activeItems &&
                   activeItems.length > 0 &&
                   activeItems.some(item => compareItems && item && compareItems(item, itemData))
@@ -186,7 +193,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
               onClick={(evt: React.MouseEvent) => {
                 if (!hasCheck) {
                   onSelect && onSelect(evt, itemData, parentItem);
-                  if (children && evt.isDefaultPrevented() !== true) {
+                  if (!hasSelectableNodes && children && evt.isDefaultPrevented() !== true) {
                     setIsExpanded(!internalIsExpanded);
                   }
                 }
