@@ -15,23 +15,19 @@ export const ButtonProgress: React.FunctionComponent = () => {
   const [isUploading, setIsUploading] = React.useState<boolean>(false);
 
   const primaryLoadingProps = {} as LoadingPropsType;
-  if (isPrimaryLoading) {
-    primaryLoadingProps.spinnerAriaValueText = 'Loading';
-    primaryLoadingProps.spinnerAriaLabelledBy = 'primary-loading-button';
-    primaryLoadingProps.isLoading = true;
-  }
+  primaryLoadingProps.spinnerAriaValueText = 'Loading';
+  primaryLoadingProps.spinnerAriaLabelledBy = 'primary-loading-button';
+  primaryLoadingProps.isLoading = isPrimaryLoading;
+
   const secondaryLoadingProps = {} as LoadingPropsType;
-  if (isSecondaryLoading) {
-    secondaryLoadingProps.spinnerAriaValueText = 'Loading';
-    secondaryLoadingProps.spinnerAriaLabel = 'Content being loaded';
-    secondaryLoadingProps.isLoading = true;
-  }
+  secondaryLoadingProps.spinnerAriaValueText = 'Loading';
+  secondaryLoadingProps.spinnerAriaLabel = 'Content being loaded';
+  secondaryLoadingProps.isLoading = isSecondaryLoading;
+
   const uploadingProps = {} as LoadingPropsType;
-  if (isUploading) {
-    uploadingProps.spinnerAriaValueText = 'Loading';
-    uploadingProps.isLoading = true;
-    uploadingProps.spinnerAriaLabel = 'Uploading data';
-  }
+  uploadingProps.spinnerAriaValueText = 'Loading';
+  uploadingProps.spinnerAriaLabel = 'Uploading data';
+  uploadingProps.isLoading = isUploading;
 
   return (
     <React.Fragment>
@@ -53,8 +49,6 @@ export const ButtonProgress: React.FunctionComponent = () => {
         icon={<UploadIcon />}
         {...uploadingProps}
       />
-      <br />
-      <br />
     </React.Fragment>
   );
 };
