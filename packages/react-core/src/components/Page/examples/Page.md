@@ -89,7 +89,7 @@ class VerticalPage extends React.Component {
         <MastheadContent>{headerToolbar}</MastheadContent>
       </Masthead>
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="vertical-sidebar"/>;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="vertical-sidebar" />;
 
     return (
       <Page header={Header} sidebar={Sidebar}>
@@ -262,7 +262,7 @@ class FillPage extends React.Component {
         <MastheadContent>{headerToolbar}</MastheadContent>
       </Masthead>
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="fill-sidebar"/>;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="fill-sidebar" />;
 
     return (
       <Page header={Header} sidebar={Sidebar}>
@@ -344,7 +344,7 @@ class VerticalPage extends React.Component {
         <MastheadContent>{headerToolbar}</MastheadContent>
       </Masthead>
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="main-padding-sidebar"/>;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="main-padding-sidebar" />;
 
     return (
       <Page header={Header} sidebar={Sidebar}>
@@ -410,7 +410,7 @@ class UncontrolledNavPage extends React.Component {
         <MastheadContent>{headerToolbar}</MastheadContent>
       </Masthead>
     );
-    const Sidebar = <PageSidebar nav="Navigation" id="uncontrolled-sidebar"/>;
+    const Sidebar = <PageSidebar nav="Navigation" id="uncontrolled-sidebar" />;
 
     return (
       <Page isManagedSidebar header={Header} sidebar={Sidebar}>
@@ -497,7 +497,7 @@ class GroupPage extends React.Component {
         <MastheadContent>{headerToolbar}</MastheadContent>
       </Masthead>
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="group-section-sidebar"/>;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="group-section-sidebar" />;
 
     return (
       <Page header={Header} sidebar={Sidebar}>
@@ -505,13 +505,21 @@ class GroupPage extends React.Component {
           <PageNavigation>
             <Nav aria-label="Group section navigation" variant="tertiary">
               <NavList>
-                <NavItem itemId={0} isActive>
+                <NavItem href="#" itemId={0} isActive>
                   System panel
                 </NavItem>
-                <NavItem itemId={1}>Policy</NavItem>
-                <NavItem itemId={2}>Authentication</NavItem>
-                <NavItem itemId={3}>Network services</NavItem>
-                <NavItem itemId={4}>Server</NavItem>
+                <NavItem href="#" itemId={1}>
+                  Policy
+                </NavItem>
+                <NavItem href="#" itemId={2}>
+                  Authentication
+                </NavItem>
+                <NavItem href="#" itemId={3}>
+                  Network services
+                </NavItem>
+                <NavItem href="#" itemId={4}>
+                  Server
+                </NavItem>
               </NavList>
             </Nav>
           </PageNavigation>
@@ -582,7 +590,7 @@ class VerticalPage extends React.Component {
         navToggleId="vertical-pageheader-toggle"
       />
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="vertical-pageheader-sidebar"/>;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="vertical-pageheader-sidebar" />;
 
     return (
       <Page header={Header} sidebar={Sidebar}>
@@ -630,7 +638,12 @@ CenterAlignedPageSection = () => {
   const Header = (
     <Masthead>
       <MastheadToggle>
-        <PageToggleButton variant="plain" aria-label="Global navigation" onNavToggle={this.onNavToggle} id="centered-nav-toggle">
+        <PageToggleButton
+          variant="plain"
+          aria-label="Global navigation"
+          onNavToggle={this.onNavToggle}
+          id="centered-nav-toggle"
+        >
           <BarsIcon />
         </PageToggleButton>
       </MastheadToggle>
