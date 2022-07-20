@@ -58,7 +58,7 @@ export interface TreeViewProps {
   /** Callback for item selection */
   onSelect?: (event: React.MouseEvent, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
   /** Callback for item checkbox selection */
-  onCheck?: (event: React.ChangeEvent, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
+  onCheck?: (event: React.ChangeEvent<HTMLInputElement>, item: TreeViewDataItem, parentItem: TreeViewDataItem) => void;
   /** Active items of tree view */
   activeItems?: TreeViewDataItem[];
   /** Internal. Parent item of a TreeViewListItem */
