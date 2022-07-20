@@ -3,10 +3,11 @@ import { render, screen } from '@testing-library/react';
 import { Truncate } from '../Truncate';
 
 jest.mock('../../Tooltip', () => ({
-  Tooltip: ({ content, tooltipPosition, children, ...props }) => (
-    <>
-      <div {...props}>{children}</div>
-    </>
+  Tooltip: ({ content, position, children, ...props }) => (
+    <div data-testid="Tooltip-mock" {...props}>
+      <p>{`position: ${position}`}</p>
+      {children}
+    </div>
   )
 }));
 
@@ -63,45 +64,17 @@ test('renders truncate with content', () => {
   expect(test).toHaveTextContent('Test');
 });
 
-test('renders pf-c-truncate__start when trailingNumChars prop passed', () => {
+test('only renders pf-c-truncate__start with default position', () => {
   render(
     <Truncate
       content={'Testing truncate content'}
-      trailingNumChars={3}
-      position='middle'
-    />
-  );
-
-  const start = screen.getByText('Testing truncate cont');
-
-  expect(start).toHaveClass('pf-c-truncate__start');
-});
-
-test('renders pf-c-truncate__end when trailingNumChars prop passed', () => {
-  render(
-    <Truncate
-      content={'Testing truncate content'}
-      trailingNumChars={3}
-      position='middle'
-    />
-  );
-
-  const end = screen.getByText('ent');
-
-  expect(end).toHaveClass('pf-c-truncate__end');
-});
-
-test('only renders pf-c-truncate__start if truncate position is the end', () => {
-  render(
-    <Truncate
-      content={'Testing truncate content'}
-      position='end'
     />
   );
 
   const start = screen.getByText('Testing truncate content');
 
   expect(start).toHaveClass('pf-c-truncate__start');
+  expect(start).not.toHaveClass('pf-c-truncate__end');
 });
 
 test('renders default truncation', () => {
@@ -122,24 +95,64 @@ test('renders start truncation with &lrm; at end', () => {
 });
 
 test('renders middle truncation', () => {
-  const { asFragment } = render(
+  render(
     <Truncate
       content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
       position={'middle'}
     />
   );
-  expect(asFragment()).toMatchSnapshot();
+
+  const start = screen.getByText('Vestibulum interdum risus et enim faucibus, sit amet molestie est ac');
+
+  expect(start).toHaveClass('pf-c-truncate__start');
+
+  const end = screen.getByText('cumsan.');
+
+  expect(end).toHaveClass('pf-c-truncate__end');
 });
 
-test('renders tooltip placement', () => {
-  const { asFragment } = render(
+test('renders different content when trailingNumChars is passed with middle truncate', () => {
+  render(
     <Truncate
-      content={''}
-      tooltipPosition='auto'
+      content={'Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.'}
+      trailingNumChars={3}
+      position='middle'
     />
   );
 
-  expect(asFragment()).toMatchSnapshot();
+  const start = screen.getByText('Vestibulum interdum risus et enim faucibus, sit amet molestie est accums');
+
+  expect(start).toHaveClass('pf-c-truncate__start');
+
+  const end = screen.getByText('an.');
+
+  expect(end).toHaveClass('pf-c-truncate__end');
+});
+
+test('renders tooltip position', () => {
+  render(
+    <Truncate
+      content={''}
+      tooltipPosition='top'
+    />
+  );
+
+  const input = screen.getByText('position: top');
+  
+  expect(input).toBeVisible();
+});
+
+test('renders tooltip content', () => {
+  render(
+    <Truncate
+      content={''}
+      tooltipPosition='top'
+    />
+  );
+
+  const input = screen.getByTestId('Tooltip-mock');
+
+  expect(input).toBeVisible();
 });
 
 test('renders with inherited element props spread to the component', () => {

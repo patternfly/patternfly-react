@@ -3,8 +3,11 @@
 exports[`renders default truncation 1`] = `
 <DocumentFragment>
   <div
-    position="top"
+    data-testid="Tooltip-mock"
   >
+    <p>
+      position: top
+    </p>
     <span
       class="pf-c-truncate"
     >
@@ -18,34 +21,14 @@ exports[`renders default truncation 1`] = `
 </DocumentFragment>
 `;
 
-exports[`renders middle truncation 1`] = `
-<DocumentFragment>
-  <div
-    position="top"
-  >
-    <span
-      class="pf-c-truncate"
-    >
-      <span
-        class="pf-c-truncate__start"
-      >
-        Vestibulum interdum risus et enim faucibus, sit amet molestie est ac
-      </span>
-      <span
-        class="pf-c-truncate__end"
-      >
-        cumsan.
-      </span>
-    </span>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`renders start truncation with &lrm; at end 1`] = `
 <DocumentFragment>
   <div
-    position="top"
+    data-testid="Tooltip-mock"
   >
+    <p>
+      position: top
+    </p>
     <span
       class="pf-c-truncate"
     >
@@ -54,22 +37,6 @@ exports[`renders start truncation with &lrm; at end 1`] = `
       >
         Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.‎
       </span>
-    </span>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`renders tooltip placement 1`] = `
-<DocumentFragment>
-  <div
-    position="auto"
-  >
-    <span
-      class="pf-c-truncate"
-    >
-      <span
-        class="pf-c-truncate__start"
-      />
     </span>
   </div>
 </DocumentFragment>
