@@ -31,6 +31,7 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
   const [inputValue, setInputValue] = React.useState<string>('');
   const [menuItems, setMenuItems] = React.useState<MenuItemProps[]>(intitalMenuItems);
   const [focusedItemIndex, setFocusedItemIndex] = React.useState<number | null>(null);
+  const [isSelected, setIsSelected] = React.useState(false);
 
   const menuToggleRef = React.useRef<MenuToggleElement>({} as MenuToggleElement);
   const textInputRef = React.useRef<HTMLInputElement>();
@@ -58,7 +59,11 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
   const focusOnInput = () => menuToggleRef.current?.querySelector('input')?.focus();
 
   const onMenuSelect = (_event: React.MouseEvent<Element, MouseEvent>, itemId: string | number) => {
-    itemId && setInputValue(itemId.toString());
+    if (itemId) {
+      setInputValue(itemId.toString());
+      setIsSelected(true);
+    }
+
     setIsMenuOpen(false);
     setFocusedItemIndex(null);
     focusOnInput();
@@ -98,7 +103,11 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
     switch (event.key) {
       // Select the first available option
       case 'Enter':
-        isMenuOpen && setInputValue(String(focusedItem.children));
+        if (isMenuOpen) {
+          setInputValue(String(focusedItem.children));
+          setIsSelected(true);
+        }
+
         setIsMenuOpen(prevIsOpen => !prevIsOpen);
         setFocusedItemIndex(null);
         focusOnInput();
@@ -129,6 +138,11 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
     textInputRef.current?.focus();
   };
 
+  const onTextInputChange = (value: string) => {
+    setInputValue(value);
+    setIsSelected(false);
+  };
+
   return (
     <Popper
       trigger={
@@ -137,7 +151,7 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
             <TextInputGroupMain
               value={inputValue}
               onClick={toggleMenuOpen}
-              onChange={value => setInputValue(value)}
+              onChange={onTextInputChange}
               onKeyDown={onInputKeyDown}
               id="typeahead-select-input"
               autoComplete="off"
@@ -158,13 +172,14 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
         </MenuToggle>
       }
       popper={
-        <Menu id="select-menu" onSelect={onMenuSelect} selected={inputValue}>
+        <Menu id="select-menu" onSelect={onMenuSelect} selected={isSelected && inputValue}>
           <MenuContent>
             <MenuList>
               {menuItems.map((itemProps, index) => (
                 <MenuItem
                   key={itemProps.itemId || itemProps.children}
                   className={css(focusedItemIndex === index && styles.modifiers.focus, itemProps.className)}
+                  onClick={() => setIsSelected(true)}
                   {...itemProps}
                   ref={null}
                 />
