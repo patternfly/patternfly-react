@@ -25,8 +25,6 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   isAriaDisabled?: boolean;
   /** Render dropdown item as a non-interactive item */
   isPlainText?: boolean;
-  /** Forces display of the hover state of the element */
-  isHovered?: boolean;
   /** Default hyperlink location */
   href?: string;
   /** Tooltip to display when hovered over the item */
@@ -67,7 +65,6 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
 
   static defaultProps: InternalDropdownItemProps = {
     className: '',
-    isHovered: false,
     component: 'a',
     role: 'none',
     isDisabled: false,
@@ -163,7 +160,6 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     const {
       className,
       children,
-      isHovered,
       context,
       onClick,
       component,
