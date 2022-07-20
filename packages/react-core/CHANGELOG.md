@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.225.7 (2022-07-20)
+
+
+### Bug Fixes
+
+* **Switch:** aria labelledby to update with change ([#7557](https://github.com/patternfly/patternfly-react/issues/7557)) ([9647a0c](https://github.com/patternfly/patternfly-react/commit/9647a0c7f7eb2174f006774b4406408bd065fddc))
+
+
+
+
+
 ## 4.225.6 (2022-07-20)
 
 **Note:** Version bump only for package @patternfly/react-core
