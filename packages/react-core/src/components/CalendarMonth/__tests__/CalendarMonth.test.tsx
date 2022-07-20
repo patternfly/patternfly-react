@@ -4,15 +4,26 @@ import { render, screen } from '@testing-library/react';
 
 import { CalendarMonth } from '../CalendarMonth';
 
-import * as utils from '../../../helpers/util';
+test('Renders the first date in a month when a custom weekStart is passed', () => {
+  // custom aria label generation function because of bug with default aria label generation
+  // can be removed once the bug is fixed
+  const formatAria = (date: Date) =>
+    `${date.getDate()} ${date.toLocaleDateString(undefined, { month: 'long' })} ${date.getFullYear()}`;
 
-test('all weeks displayed', () => {
-  //mock function used to get same id every run
-  const mockId = jest.spyOn(utils, 'getUniqueId');
-  mockId.mockImplementation((prefix?: string) => `${prefix}-1658218546049tkg6d00n4f`);
+  render(<CalendarMonth cellAriaLabel={formatAria} weekStart={1} date={new Date(2023, 0)} />);
 
-  const { asFragment } = render(<CalendarMonth weekStart={1} date={new Date(2023, 0)} />);
-  expect(asFragment()).toMatchSnapshot();
+  const firstDate = screen.queryByRole('button', { name: '1 January 2023' });
+  expect(firstDate).toBeVisible();
+});
 
-  mockId.mockRestore();
+test('Renders the last date in a month when a custom weekStart is passed', () => {
+  // custom aria label generation function because of bug with default aria labels
+  // can be removed once the bug is fixed
+  const formatAria = (date: Date) =>
+    `${date.getDate()} ${date.toLocaleDateString(undefined, { month: 'long' })} ${date.getFullYear()}`;
+
+  render(<CalendarMonth cellAriaLabel={formatAria} weekStart={1} date={new Date(2023, 0)} />);
+
+  const lastDate = screen.queryByRole('button', { name: '31 January 2023' });
+  expect(lastDate).toBeVisible();
 });
