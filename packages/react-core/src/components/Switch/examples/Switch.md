@@ -171,8 +171,16 @@ import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
 <React.Fragment>
-  <Switch id="uncontrolled-switch-on" label="Message when on" labelOff="Message when off" defaultChecked={false} />
+  <Switch
+    id="uncontrolled-switch-no-label"
+    aria-label="An uncontrolled switch with no label"
+    defaultChecked={false}
+  />
   <br />
-  <Switch id="uncontrolled-no-label-switch-on" aria-label="Message when on" defaultChecked={true} />
+  <Switch
+    id="uncontrolled-switch-with-label"
+    label="An uncontrolled switch"
+    defaultChecked={false}
+  />
 </React.Fragment>;
 ```

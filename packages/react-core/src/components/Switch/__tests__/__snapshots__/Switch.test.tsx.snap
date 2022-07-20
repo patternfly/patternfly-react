@@ -282,7 +282,7 @@ exports[`Switch switch with only label is not checked 1`] = `
   >
     <input
       aria-label=""
-      aria-labelledby="switch-is-not-checked-on"
+      aria-labelledby="switch-is-not-checked-off"
       class="pf-c-switch__input"
       id="switch-is-not-checked"
       type="checkbox"
