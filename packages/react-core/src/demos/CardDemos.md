@@ -18,6 +18,8 @@ import chart_color_red_100 from '@patternfly/react-tokens/dist/esm/chart_color_r
 
 ### Horizontal card grid
 
+The following demo shows how you may use a `<Grid>` within a card for scenarios that require multiple subsections. 
+
 ```js
 import React from 'react';
 import {
@@ -262,6 +264,8 @@ class CardGridDemo extends React.Component {
 ```
 
 ### Horizontal split
+
+The following demo shows how you may utilize `<Grid>` to split a card into two halves, one with an image, and one with text content.
 
 ```js
 import React from 'react';
