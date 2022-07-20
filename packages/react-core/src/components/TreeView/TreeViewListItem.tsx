@@ -96,8 +96,14 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
     }
   }, [isExpanded, defaultExpanded]);
 
-  const Component = hasCheck || hasSelectableNodes ? 'div' : 'button';
-  const ToggleComponent = hasCheck || hasSelectableNodes ? 'button' : 'div';
+  const Component = hasCheck ? 'div' : 'button';
+  let ToggleComponent: 'div' | 'span' | 'button' = 'div';
+  if (hasSelectableNodes) {
+    ToggleComponent = 'span';
+  }
+  if (hasCheck) {
+    ToggleComponent = 'button';
+  }
   const renderToggle = (randomId: string) => (
     <ToggleComponent
       className={css(styles.treeViewNodeToggle)}

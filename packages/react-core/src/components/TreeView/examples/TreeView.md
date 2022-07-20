@@ -119,22 +119,15 @@ The `hasSelectableNodes` modifier will separate the expansion and selection beha
 import React from 'react';
 import { TreeView, Button } from '@patternfly/react-core';
 
-class DefaultTreeView extends React.Component {
+class SelectableNodesTreeView extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { activeItems: {}, allExpanded: null };
+    this.state = { activeItems: {} };
 
     this.onSelect = (evt, treeViewItem) => {
       this.setState({
         activeItems: [treeViewItem]
-      });
-    };
-
-    this.onToggle = evt => {
-      const { allExpanded } = this.state;
-      this.setState({
-        allExpanded: allExpanded !== undefined ? !allExpanded : true
       });
     };
   }
@@ -202,19 +195,13 @@ class DefaultTreeView extends React.Component {
       }
     ];
     return (
-      <React.Fragment>
-        <Button variant="link" onClick={this.onToggle}>
-          {allExpanded && 'Collapse all'}
-          {!allExpanded && 'Expand all'}
-        </Button>
-        <TreeView
-          hasSelectableNodes
-          data={options}
-          activeItems={activeItems}
-          onSelect={this.onSelect}
-          allExpanded={allExpanded}
-        />
-      </React.Fragment>
+      <TreeView
+        hasSelectableNodes
+        data={options}
+        activeItems={activeItems}
+        onSelect={this.onSelect}
+        allExpanded={allExpanded}
+      />
     );
   }
 }
