@@ -37,7 +37,7 @@ export interface TextInputGroupMainProps extends Omit<React.HTMLProps<HTMLDivEle
   value?: string | number;
   /** Placeholder value for the input */
   placeholder?: string;
-  /** @hide A reference object to attach to the input box */
+  /** A reference object to attach to the input box */
   innerRef?: React.RefObject<any>;
 }
 
