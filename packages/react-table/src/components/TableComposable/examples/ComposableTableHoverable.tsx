@@ -27,13 +27,7 @@ export const ComposableTableHoverable: React.FunctionComponent = () => {
 
   // In this example, selected rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
-  const [selectedRepoNames, setSelectedRepoNames] = React.useState<string[]>([]);
-  const setRepoSelected = (repo: Repository, isSelecting = true) =>
-    setSelectedRepoNames(prevSelected => {
-      const otherSelectedRepoNames = prevSelected.filter(r => r !== repo.name);
-      return isSelecting ? [...otherSelectedRepoNames, repo.name] : otherSelectedRepoNames;
-    });
-  const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
+  const [selectedRepoName, setSelectedRepoName] = React.useState('');
 
   return (
     <TableComposable aria-label="Hoverable table" hasSelectableRowCaption>
@@ -50,10 +44,10 @@ export const ComposableTableHoverable: React.FunctionComponent = () => {
         {repositories.map(repo => (
           <Tr
             key={repo.name}
-            onRowClick={() => setRepoSelected(repo, !isRepoSelected(repo))}
+            onRowClick={() => setSelectedRepoName(repo.name)}
             isSelectable
             isHoverable
-            isRowSelected={isRepoSelected(repo)}
+            isRowSelected={selectedRepoName === repo.name}
           >
             <Td dataLabel={columnNames.name}>{repo.name}</Td>
             <Td dataLabel={columnNames.branches}>{repo.branches}</Td>
