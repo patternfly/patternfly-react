@@ -6,7 +6,7 @@ import { debounce, canUseDOM } from '../../helpers/util';
 import { Drawer, DrawerContent, DrawerContentBody, DrawerPanelContent } from '../Drawer';
 import { PageGroup, PageGroupProps } from './PageGroup';
 import { getResizeObserver } from '../../helpers/resizeObserver';
-import { getBreakpoint } from '../../helpers/util';
+import { getBreakpoint, getVerticalBreakpoint } from '../../helpers/util';
 
 export enum PageLayouts {
   vertical = 'vertical',
@@ -18,14 +18,19 @@ export interface PageContextProps {
   onNavToggle: () => void;
   isNavOpen: boolean;
   width: number;
+  height: number;
   getBreakpoint: (width: number | null) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  getVerticalBreakpoint: (height: number | null) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 }
+
 export const pageContextDefaults: PageContextProps = {
   isManagedSidebar: false,
   isNavOpen: false,
   onNavToggle: () => null,
   width: null,
-  getBreakpoint
+  height: null,
+  getBreakpoint,
+  getVerticalBreakpoint
 };
 export const PageContext = React.createContext<PageContextProps>(pageContextDefaults);
 
@@ -80,6 +85,13 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    * https://github.com/patternfly/patternfly-react/blob/main/packages/react-core/src/helpers/util.ts
    */
   getBreakpoint?: (width: number | null) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  /**
+   * The page resize observer uses the breakpoints returned from this function when adding the pf-m-breakpoint-[default|sm|md|lg|xl|2xl] class
+   * You can override the default getBreakpoint function to return breakpoints at different sizes than the default
+   * You can view the default getBreakpoint function here:
+   * https://github.com/patternfly/patternfly-react/blob/main/packages/react-core/src/helpers/util.ts
+   */
+  getVerticalBreakpoint?: (height: number | null) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   /** Breadcrumb component for the page */
   breadcrumb?: React.ReactNode;
   /** Tertiary nav component for the page */
@@ -101,6 +113,7 @@ export interface PageState {
   mobileIsNavOpen: boolean;
   mobileView: boolean;
   width: number;
+  height: number;
 }
 
 export class Page extends React.Component<PageProps, PageState> {
@@ -113,7 +126,8 @@ export class Page extends React.Component<PageProps, PageState> {
     mainTabIndex: -1,
     isNotificationDrawerExpanded: false,
     onNotificationDrawerExpand: () => null,
-    getBreakpoint
+    getBreakpoint,
+    getVerticalBreakpoint
   };
   mainRef = React.createRef<HTMLDivElement>();
   pageRef = React.createRef<HTMLDivElement>();
@@ -128,7 +142,8 @@ export class Page extends React.Component<PageProps, PageState> {
       desktopIsNavOpen: managedSidebarOpen,
       mobileIsNavOpen: false,
       mobileView: false,
-      width: null
+      width: null,
+      height: null
     };
   }
 
@@ -179,7 +194,8 @@ export class Page extends React.Component<PageProps, PageState> {
     if (mobileView !== this.state.mobileView) {
       this.setState({ mobileView });
     }
-    this.pageRef.current && this.setState({ width: this.pageRef.current.clientWidth });
+    this.pageRef.current &&
+      this.setState({ width: this.pageRef.current.clientWidth, height: this.pageRef.current.clientHeight });
   };
 
   handleResize = debounce(this.resize, 250);
@@ -223,6 +239,7 @@ export class Page extends React.Component<PageProps, PageState> {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onPageResize,
       getBreakpoint,
+      getVerticalBreakpoint,
       mainAriaLabel,
       mainTabIndex,
       tertiaryNav,
@@ -232,14 +249,16 @@ export class Page extends React.Component<PageProps, PageState> {
       groupProps,
       ...rest
     } = this.props;
-    const { mobileView, mobileIsNavOpen, desktopIsNavOpen, width } = this.state;
+    const { mobileView, mobileIsNavOpen, desktopIsNavOpen, width, height } = this.state;
 
     const context = {
       isManagedSidebar,
       onNavToggle: mobileView ? this.onNavToggleMobile : this.onNavToggleDesktop,
       isNavOpen: mobileView ? mobileIsNavOpen : desktopIsNavOpen,
       width,
-      getBreakpoint
+      height,
+      getBreakpoint,
+      getVerticalBreakpoint
     };
 
     let nav = null;
@@ -301,6 +320,8 @@ export class Page extends React.Component<PageProps, PageState> {
             styles.page,
             width !== null && 'pf-m-resize-observer',
             width !== null && `pf-m-breakpoint-${getBreakpoint(width)}`,
+            height !== null && 'pf-m-resize-observer',
+            height !== null && `pf-m-breakpoint-${getVerticalBreakpoint(height)}`,
             className
           )}
         >

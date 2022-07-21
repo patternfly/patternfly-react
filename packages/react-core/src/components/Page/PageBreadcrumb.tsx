@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Page/page';
+import { formatBreakpointMods } from '../../helpers/util';
+import { PageContext } from '../Page/Page';
 
 export interface PageBreadcrumbProps extends React.HTMLProps<HTMLElement> {
   /** Additional classes to apply to the PageBreadcrumb */
@@ -9,8 +11,17 @@ export interface PageBreadcrumbProps extends React.HTMLProps<HTMLElement> {
   children?: React.ReactNode;
   /** Limits the width of the breadcrumb */
   isWidthLimited?: boolean;
-  /** Modifier indicating if the PageBreadcrumb is sticky to the top or bottom */
+  /**  @deprecated Use the stickyOnBreakpoint prop instead - Modifier indicating if the PageBreadcrumb is sticky to the top or bottom */
   sticky?: 'top' | 'bottom';
+  /** Modifier indicating if the PageBreadcrumb is sticky to the top or bottom at various breakpoints */
+  stickyOnBreakpoint?: {
+    default?: 'top' | 'bottom';
+    sm?: 'top' | 'bottom';
+    md?: 'top' | 'bottom';
+    lg?: 'top' | 'bottom';
+    xl?: 'top' | 'bottom';
+    '2xl'?: 'top' | 'bottom';
+  };
   /** Flag indicating if PageBreadcrumb should have a shadow at the top */
   hasShadowTop?: boolean;
   /** Flag indicating if PageBreadcrumb should have a shadow at the bottom */
@@ -24,27 +35,33 @@ export const PageBreadcrumb = ({
   children,
   isWidthLimited,
   sticky,
+  stickyOnBreakpoint,
   hasShadowTop = false,
   hasShadowBottom = false,
   hasOverflowScroll = false,
   ...props
-}: PageBreadcrumbProps) => (
-  <section
-    className={css(
-      styles.pageMainBreadcrumb,
-      isWidthLimited && styles.modifiers.limitWidth,
-      sticky === 'top' && styles.modifiers.stickyTop,
-      sticky === 'bottom' && styles.modifiers.stickyBottom,
-      hasShadowTop && styles.modifiers.shadowTop,
-      hasShadowBottom && styles.modifiers.shadowBottom,
-      hasOverflowScroll && styles.modifiers.overflowScroll,
-      className
-    )}
-    {...(hasOverflowScroll && { tabIndex: 0 })}
-    {...props}
-  >
-    {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}
-    {!isWidthLimited && children}
-  </section>
-);
+}: PageBreadcrumbProps) => {
+  const { height, getVerticalBreakpoint } = React.useContext(PageContext);
+
+  return (
+    <section
+      className={css(
+        styles.pageMainBreadcrumb,
+        formatBreakpointMods(stickyOnBreakpoint, styles, 'sticky-', getVerticalBreakpoint(height), true),
+        isWidthLimited && styles.modifiers.limitWidth,
+        sticky === 'top' && styles.modifiers.stickyTop,
+        sticky === 'bottom' && styles.modifiers.stickyBottom,
+        hasShadowTop && styles.modifiers.shadowTop,
+        hasShadowBottom && styles.modifiers.shadowBottom,
+        hasOverflowScroll && styles.modifiers.overflowScroll,
+        className
+      )}
+      {...(hasOverflowScroll && { tabIndex: 0 })}
+      {...props}
+    >
+      {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}
+      {!isWidthLimited && children}
+    </section>
+  );
+};
 PageBreadcrumb.displayName = 'PageBreadcrumb';

@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import { formatBreakpointMods } from '../../helpers/util';
+import { PageContext } from '../Page/Page';
 
 export enum PageSectionVariants {
   default = 'default',
@@ -43,8 +44,17 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
     xl?: 'padding' | 'noPadding';
     '2xl'?: 'padding' | 'noPadding';
   };
-  /** Modifier indicating if PageSection is sticky to the top or bottom */
+  /**  @deprecated Use the stickyOnBreakpoint prop instead - Modifier indicating if the PageBreadcrumb is sticky to the top or bottom */
   sticky?: 'top' | 'bottom';
+  /** Modifier indicating if the PageBreadcrumb is sticky to the top or bottom at various breakpoints */
+  stickyOnBreakpoint?: {
+    default?: 'top' | 'bottom';
+    sm?: 'top' | 'bottom';
+    md?: 'top' | 'bottom';
+    lg?: 'top' | 'bottom';
+    xl?: 'top' | 'bottom';
+    '2xl'?: 'top' | 'bottom';
+  };
   /** Modifier indicating if PageSection should have a shadow at the top */
   hasShadowTop?: boolean;
   /** Modifier indicating if PageSection should have a shadow at the bottom */
@@ -79,32 +89,38 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   isWidthLimited = false,
   isCenterAligned = false,
   sticky,
+  stickyOnBreakpoint,
   hasShadowTop = false,
   hasShadowBottom = false,
   hasOverflowScroll = false,
   ...props
-}: PageSectionProps) => (
-  <section
-    {...props}
-    className={css(
-      variantType[type],
-      formatBreakpointMods(padding, styles),
-      variantStyle[variant],
-      isFilled === false && styles.modifiers.noFill,
-      isFilled === true && styles.modifiers.fill,
-      isWidthLimited && styles.modifiers.limitWidth,
-      isWidthLimited && isCenterAligned && type !== PageSectionTypes.subNav && styles.modifiers.alignCenter,
-      sticky === 'top' && styles.modifiers.stickyTop,
-      sticky === 'bottom' && styles.modifiers.stickyBottom,
-      hasShadowTop && styles.modifiers.shadowTop,
-      hasShadowBottom && styles.modifiers.shadowBottom,
-      hasOverflowScroll && styles.modifiers.overflowScroll,
-      className
-    )}
-    {...(hasOverflowScroll && { tabIndex: 0 })}
-  >
-    {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}
-    {!isWidthLimited && children}
-  </section>
-);
+}: PageSectionProps) => {
+  const { height, getVerticalBreakpoint } = React.useContext(PageContext);
+
+  return (
+    <section
+      {...props}
+      className={css(
+        variantType[type],
+        formatBreakpointMods(padding, styles),
+        formatBreakpointMods(stickyOnBreakpoint, styles, 'sticky-', getVerticalBreakpoint(height), true),
+        variantStyle[variant],
+        isFilled === false && styles.modifiers.noFill,
+        isFilled === true && styles.modifiers.fill,
+        isWidthLimited && styles.modifiers.limitWidth,
+        isWidthLimited && isCenterAligned && type !== PageSectionTypes.subNav && styles.modifiers.alignCenter,
+        sticky === 'top' && styles.modifiers.stickyTop,
+        sticky === 'bottom' && styles.modifiers.stickyBottom,
+        hasShadowTop && styles.modifiers.shadowTop,
+        hasShadowBottom && styles.modifiers.shadowBottom,
+        hasOverflowScroll && styles.modifiers.overflowScroll,
+        className
+      )}
+      {...(hasOverflowScroll && { tabIndex: 0 })}
+    >
+      {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}
+      {!isWidthLimited && children}
+    </section>
+  );
+};
 PageSection.displayName = 'PageSection';

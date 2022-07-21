@@ -295,13 +295,19 @@ export const formatBreakpointMods = (
   mods: Mods,
   styles: any,
   stylePrefix: string = '',
-  breakpoint?: 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
+  breakpoint?: 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl',
+  vertical?: boolean
 ) => {
   if (!mods) {
     return '';
   }
   if (breakpoint) {
+    // eslint-disable-next-line no-console
+    // if (vertical) {
+    //   console.log('what is this', toCamel(`${stylePrefix}${mods[breakpoint as keyof Mods]}`));
+    // }
     if (breakpoint in mods) {
+      // console.log('do we get here');
       return styles.modifiers[toCamel(`${stylePrefix}${mods[breakpoint as keyof Mods]}`)];
     }
     // the current breakpoint is not specified in mods, so we try to find the next nearest
@@ -309,18 +315,69 @@ export const formatBreakpointMods = (
     const breakpointsIndex = breakpointsOrder.indexOf(breakpoint);
     for (let i = breakpointsIndex; i < breakpointsOrder.length; i++) {
       if (breakpointsOrder[i] in mods) {
+        // eslint-disable-next-line no-console
+        // if (vertical) {
+        //   console.log('???', styles.modifiers[toCamel(`${stylePrefix}${mods[breakpointsOrder[i] as keyof Mods]}`)]);
+        // }
+        // console.log('here');
         return styles.modifiers[toCamel(`${stylePrefix}${mods[breakpointsOrder[i] as keyof Mods]}`)];
       }
     }
     return '';
   }
+
+  // eslint-disable-next-line no-console
+  console.log(
+    'THIS IS IT',
+    Object.entries(mods || {})
+      .map(
+        ([breakpoint, mod]) =>
+          `${stylePrefix}${mod}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}${vertical ? '-height' : ''}`
+      )
+      .map(toCamel)
+      .map(mod => mod.replace(/-?(\dxl)/gi, (_res, group) => `_${group}`))
+      .map(modifierKey => styles.modifiers[modifierKey])
+      .filter(Boolean)
+      .join(' ')
+  );
   return Object.entries(mods || {})
-    .map(([breakpoint, mod]) => `${stylePrefix}${mod}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`)
+    .map(
+      ([breakpoint, mod]) =>
+        `${stylePrefix}${mod}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}${vertical ? '-height' : ''}`
+    )
     .map(toCamel)
     .map(mod => mod.replace(/-?(\dxl)/gi, (_res, group) => `_${group}`))
     .map(modifierKey => styles.modifiers[modifierKey])
     .filter(Boolean)
     .join(' ');
+};
+
+/**
+ * Return the breakpoint for the given height
+ *
+ * @param {number | null} height The height to check
+ * @returns {'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'} The breakpoint
+ */
+export const getVerticalBreakpoint = (height: number): 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' => {
+  if (height === null) {
+    return null;
+  }
+  if (height >= 1280) {
+    return '2xl';
+  }
+  if (height >= 960) {
+    return 'xl';
+  }
+  if (height >= 768) {
+    return 'lg';
+  }
+  if (height >= 640) {
+    return 'md';
+  }
+  if (height >= 0) {
+    return 'sm';
+  }
+  return 'default';
 };
 
 /**
