@@ -1101,38 +1101,26 @@ class PrimaryDetailCardView extends React.Component {
       });
     };
 
-    this.onKeyDown = event => {
-      if (event.target !== event.currentTarget || event.currentTarget.id === this.state.activeCard) {
-        return;
-      }
-      if ([13, 32].includes(event.keyCode)) {
-        event.preventDefault();
-        const newSelected = event.currentTarget.id;
-        this.setState({
-          activeCard: newSelected,
-          isDrawerExpanded: true
-        });
-      }
-    };
-
-    this.onCheckboxClick = productId => {
+    this.onCheckboxClick = (event, productId) => {
+      event.stopPropagation();
       this.setState(prevState =>
         prevState.selectedItems.includes(productId * 1) || this.state.selectedItems.includes(productId * 1)
           ? {
               selectedItems: [...this.state.selectedItems.filter(id => productId * 1 !== id)],
-              areAllSelected: this.checkAllSelected(prevState.selectedItems.length - 1, prevState.totalItemCount),
-              isDrawerExpanded: true
+              areAllSelected: this.checkAllSelected(prevState.selectedItems.length - 1, prevState.totalItemCount)
             }
           : {
               selectedItems: [...prevState.selectedItems, productId * 1],
-              areAllSelected: this.checkAllSelected(prevState.selectedItems.length + 1, prevState.totalItemCount),
-              isDrawerExpanded: true
+              areAllSelected: this.checkAllSelected(prevState.selectedItems.length + 1, prevState.totalItemCount)
             }
       );
     };
 
     this.onCardClick = event => {
       if (event.currentTarget.id === this.state.activeCard) {
+        this.setState({
+          isDrawerExpanded: !this.state.isDrawerExpanded
+        });
         return;
       }
 
@@ -1244,7 +1232,8 @@ class PrimaryDetailCardView extends React.Component {
       });
     };
 
-    this.onCardKebabDropdownToggle = (key, isCardKebabDropdownOpen) => {
+    this.onCardKebabDropdownToggle = (event, key, isCardKebabDropdownOpen) => {
+      event.stopPropagation();
       this.setState({
         [key]: isCardKebabDropdownOpen
       });
@@ -1262,8 +1251,30 @@ class PrimaryDetailCardView extends React.Component {
       this.setState({
         res: filteredCards,
         selectedItems: this.state.selectedItems.filter(filter(id => id)),
-        totalItemCount: this.state.totalItemCount - 1
+        totalItemCount: this.state.totalItemCount - 1,
+        isDrawerExpanded: false
       });
+    };
+
+    this.onKeyDown = event => {
+      if (event.target !== event.currentTarget) {
+        return;
+      }
+
+      if ([13, 32].includes(event.keyCode)) {
+        if (event.currentTarget.id === this.state.activeCard) {
+          this.setState({
+            isDrawerExpanded: !this.state.isDrawerExpanded
+          });
+          return;
+        }
+        event.preventDefault();
+        const newSelected = event.currentTarget.id;
+        this.setState({
+          activeCard: newSelected,
+          isDrawerExpanded: true
+        });
+      }
     };
   }
 
@@ -1462,7 +1473,9 @@ class PrimaryDetailCardView extends React.Component {
                   onSelect={e => this.onCardKebabDropdownSelect(key, e)}
                   toggle={
                     <KebabToggle
-                      onToggle={isCardKebabDropdownOpen => this.onCardKebabDropdownToggle(key, isCardKebabDropdownOpen)}
+                      onToggle={(isCardKebabDropdownOpen, event) =>
+                        this.onCardKebabDropdownToggle(event, key, isCardKebabDropdownOpen)
+                      }
                     />
                   }
                   isOpen={this.state[key]}
@@ -1475,7 +1488,7 @@ class PrimaryDetailCardView extends React.Component {
                 />
                 <Checkbox
                   checked={isChecked}
-                  onChange={() => this.onCheckboxClick(product.id)}
+                  onClick={event => this.onCheckboxClick(event, product.id)}
                   value={product.id}
                   isChecked={selectedItems.includes(product.id)}
                   aria-label="card checkbox example"
