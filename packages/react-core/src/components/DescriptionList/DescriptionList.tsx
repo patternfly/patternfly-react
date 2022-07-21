@@ -58,15 +58,8 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
     xl?: string;
     '2xl'?: string;
   };
-  /** Sets the description list's term column width at various breakpoints.*/
-  termWidthModifier?: {
-    default?: string;
-    sm?: string;
-    md?: string;
-    lg?: string;
-    xl?: string;
-    '2xl'?: string;
-  };
+  /** Sets the description list's term column width.*/
+  termWidth?: string;
   /** Sets the horizontal description list's term column width at various breakpoints. */
   horizontalTermWidthModifier?: {
     default?: string;
@@ -100,7 +93,7 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   display,
   columnModifier,
   autoFitMinModifier,
-  termWidthModifier,
+  termWidth,
   horizontalTermWidthModifier,
   orientation,
   style,
@@ -112,10 +105,10 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
       ...setBreakpointModifiers('--pf-c-description-list--GridTemplateColumns--min', autoFitMinModifier)
     };
   }
-  if (termWidthModifier) {
+  if (termWidth) {
     style = {
       ...style,
-      ...setBreakpointModifiers('--pf-c-description-list__term--width', termWidthModifier)
+      ...{ '--pf-c-description-list__term--width': termWidth }
     };
   }
   if (isHorizontal && horizontalTermWidthModifier) {
