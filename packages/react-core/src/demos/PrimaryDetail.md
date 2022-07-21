@@ -1119,7 +1119,8 @@ class PrimaryDetailCardView extends React.Component {
     this.onCardClick = event => {
       if (event.currentTarget.id === this.state.activeCard) {
         this.setState({
-          isDrawerExpanded: !this.state.isDrawerExpanded
+          isDrawerExpanded: !this.state.isDrawerExpanded,
+          activeCard: null
         });
         return;
       }
@@ -1245,14 +1246,16 @@ class PrimaryDetailCardView extends React.Component {
       });
     };
 
-    this.deleteItem = item => _event => {
+    this.deleteItem = (event, item) => {
+      event.stopPropagation();
       const filter = getter => val => getter(val) !== item.id;
       const filteredCards = this.state.res.filter(filter(({ id }) => id));
       this.setState({
         res: filteredCards,
         selectedItems: this.state.selectedItems.filter(filter(id => id)),
         totalItemCount: this.state.totalItemCount - 1,
-        isDrawerExpanded: false
+        isDrawerExpanded: false,
+        activeCard: null
       });
     };
 
@@ -1264,7 +1267,8 @@ class PrimaryDetailCardView extends React.Component {
       if ([13, 32].includes(event.keyCode)) {
         if (event.currentTarget.id === this.state.activeCard) {
           this.setState({
-            isDrawerExpanded: !this.state.isDrawerExpanded
+            isDrawerExpanded: !this.state.isDrawerExpanded,
+            activeCard: null
           });
           return;
         }
@@ -1480,7 +1484,7 @@ class PrimaryDetailCardView extends React.Component {
                   }
                   isOpen={this.state[key]}
                   dropdownItems={[
-                    <DropdownItem key="trash" onClick={this.deleteItem(product)} position="right">
+                    <DropdownItem key="trash" onClick={e => this.deleteItem(e, product)} position="right">
                       <TrashIcon />
                       Delete
                     </DropdownItem>
