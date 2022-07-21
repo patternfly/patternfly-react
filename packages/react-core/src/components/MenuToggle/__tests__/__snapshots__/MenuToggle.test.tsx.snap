@@ -178,7 +178,7 @@ exports[`menu toggle shows isDisabled 1`] = `
 <DocumentFragment>
   <button
     aria-expanded="false"
-    class="pf-c-menu-toggle"
+    class="pf-c-menu-toggle pf-m-disabled"
     disabled=""
     type="button"
   >

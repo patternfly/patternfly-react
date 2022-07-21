@@ -20,6 +20,10 @@ export interface MenuToggleProps
   isFullHeight?: boolean;
   /** Flag indicating the toggle takes up the full width of its parent */
   isFullWidth?: boolean;
+  /** Elements to display before the toggle button. When included, renders the menu toggle as a split button. */
+  splitButtonItems?: React.ReactNode[];
+  /** Variant of split button toggle */
+  splitButtonVariant?: 'action' | 'checkbox';
   /** Variant styles of the menu toggle */
   variant?: 'default' | 'plain' | 'primary' | 'plainText' | 'secondary' | 'typeahead';
   /** Optional icon rendered inside the toggle, before the children content */
@@ -38,7 +42,8 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
     isDisabled: false,
     isFullWidth: false,
     isFullHeight: false,
-    variant: 'default'
+    variant: 'default',
+    splitButtonVariant: 'checkbox'
   };
 
   render() {
@@ -51,6 +56,8 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
       isDisabled,
       isFullHeight,
       isFullWidth,
+      splitButtonItems,
+      splitButtonVariant,
       variant,
       innerRef,
       onClick,
@@ -71,7 +78,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
     const content = (
       <>
         {icon && <span className={css(styles.menuToggleIcon)}>{icon}</span>}
-        {isTypeahead ? children : <span className="pf-c-menu-toggle__text">{children}</span>}
+        {isTypeahead ? children : <span className={css(styles.menuToggleText)}>{children}</span>}
         {badge && <span className={css(styles.menuToggleCount)}>{badge}</span>}
         {isTypeahead ? (
           <button
@@ -89,46 +96,62 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
       </>
     );
 
+    const commonStyles = css(
+      styles.menuToggle,
+      isExpanded && styles.modifiers.expanded,
+      variant === 'primary' && styles.modifiers.primary,
+      variant === 'secondary' && styles.modifiers.secondary,
+      (isPlain || isPlainText) && styles.modifiers.plain,
+      isPlainText && styles.modifiers.text,
+      isFullHeight && styles.modifiers.fullHeight,
+      isFullWidth && styles.modifiers.fullWidth,
+      isDisabled && styles.modifiers.disabled,
+      className
+    );
+
     const componentProps = {
-      className: css(
-        styles.menuToggle,
-        isExpanded && styles.modifiers.expanded,
-        variant === 'primary' && styles.modifiers.primary,
-        (isPlain || isPlainText) && styles.modifiers.plain,
-        isPlainText && styles.modifiers.text,
-        isFullHeight && styles.modifiers.fullHeight,
-        isTypeahead && styles.modifiers.typeahead,
-        isFullWidth && styles.modifiers.fullWidth,
-        className
-      ),
       children: isPlain ? children : content,
       ...(isDisabled && { disabled: true }),
       ...otherProps
     };
 
     if (isTypeahead) {
-      return <div ref={innerRef as React.Ref<HTMLDivElement>} {...componentProps} />;
+      return <div ref={innerRef as React.Ref<HTMLDivElement>} className={css(commonStyles)} {...componentProps} />;
+    }
+
+    if (splitButtonItems) {
+      return (
+        <div
+          className={css(
+            commonStyles,
+            styles.modifiers.splitButton,
+            splitButtonVariant === 'action' && styles.modifiers.action
+          )}
+        >
+          {splitButtonItems}
+          <button
+            className={css(styles.menuToggleButton)}
+            type="button"
+            aria-expanded={isExpanded}
+            disabled={isDisabled}
+            {...otherProps}
+          >
+            {toggleControls}
+          </button>
+        </div>
+      );
     }
 
     return (
       <button
-        className={css(
-          styles.menuToggle,
-          isExpanded && styles.modifiers.expanded,
-          variant === 'primary' && styles.modifiers.primary,
-          variant === 'secondary' && styles.modifiers.secondary,
-          (isPlain || isPlainText) && styles.modifiers.plain,
-          isPlainText && styles.modifiers.text,
-          isFullHeight && styles.modifiers.fullHeight,
-          isFullWidth && styles.modifiers.fullWidth,
-          className
-        )}
-        ref={innerRef as React.Ref<HTMLButtonElement>}
+        className={css(commonStyles)}
         type="button"
         aria-label={ariaLabel}
         aria-expanded={isExpanded}
+        ref={innerRef as React.Ref<HTMLButtonElement>}
+        disabled={isDisabled}
         onClick={onClick}
-        {...componentProps}
+        {...otherProps}
       />
     );
   }
