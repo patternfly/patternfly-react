@@ -96,14 +96,9 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
     }
   }, [isExpanded, defaultExpanded]);
 
-  const Component = hasCheck ? 'div' : 'button';
-  let ToggleComponent: 'div' | 'span' | 'button' = 'div';
-  if (hasSelectableNodes) {
-    ToggleComponent = 'span';
-  }
-  if (hasCheck) {
-    ToggleComponent = 'button';
-  }
+  const Component = hasCheck ? 'label' : 'button';
+  const ToggleComponent = hasCheck ? 'button' : 'span';
+
   const renderToggle = (randomId: string) => (
     <ToggleComponent
       className={css(styles.treeViewNodeToggle)}
@@ -143,20 +138,18 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       {internalIsExpanded && (expandedIcon || icon)}
     </span>
   );
-  const renderNodeContent = (randomId: string) => {
+  const renderNodeContent = () => {
     const content = (
       <>
         {isCompact && title && <span className={css(styles.treeViewNodeTitle)}>{title}</span>}
         {hasCheck ? (
-          <label className={css(styles.treeViewNodeText)} htmlFor={randomId} id={`label-${randomId}`}>
-            {name}
-          </label>
+          <span className={css(styles.treeViewNodeText)}>{name}</span>
         ) : (
           <span className={css(styles.treeViewNodeText)}>{name}</span>
         )}
       </>
     );
-    return isCompact ? <div className={css(styles.treeViewNodeContent)}>{content}</div> : content;
+    return isCompact ? <span className={css(styles.treeViewNodeContent)}>{content}</span> : content;
   };
   const badgeRendered = (
     <>
@@ -188,7 +181,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
             <Component
               className={css(
                 styles.treeViewNode,
-                hasSelectableNodes && styles.modifiers.selectable,
+                children && (hasSelectableNodes || hasCheck) && styles.modifiers.selectable,
                 (!children || hasSelectableNodes) &&
                   activeItems &&
                   activeItems.length > 0 &&
@@ -205,14 +198,15 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
                 }
               }}
               tabIndex={-1}
+              {...(hasCheck && { htmlFor: randomId, id: `label-${randomId}` })}
             >
-              <div className={css(styles.treeViewNodeContainer)}>
+              <span className={css(styles.treeViewNodeContainer)}>
                 {children && renderToggle(randomId)}
                 {hasCheck && renderCheck(randomId)}
                 {icon && iconRendered}
-                {renderNodeContent(randomId)}
+                {renderNodeContent()}
                 {badgeRendered}
-              </div>
+              </span>
             </Component>
           )}
         </GenerateId>
