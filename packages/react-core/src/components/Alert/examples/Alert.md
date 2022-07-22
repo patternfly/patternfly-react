@@ -13,10 +13,6 @@ import DatabaseIcon from '@patternfly/react-icons/dist/esm/icons/database-icon';
 import ServerIcon from '@patternfly/react-icons/dist/esm/icons/server-icon';
 import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
 
-## Component overview
-
-[`Alert`](/components/alert#alert) can be paired with the following components to allow for additional functionality and customization: [`AlertActionCloseButton`](/components/alert#alertactionclosebutton) and [`AlertActionLink`](/components/alert#alertactionlink).
-
 ## Examples 
 
 ### Variants
@@ -97,12 +93,49 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
   <Alert variant="success" title="h6 Success alert title" titleHeadingLevel="h6" />
   </React.Fragment>
 ```
+#### Alert timeout
+
+Use the `timeout` property to automatically dismiss an alert after a period of time. If set to `true`, the `timeout` will be 8000 milliseconds. Provide a number to dismiss the alert after a specific number of milliseconds.
+
+```ts
+import React from 'react';
+import { Alert, AlertActionLink, AlertGroup, Button } from '@patternfly/react-core';
+
+const AlertTimeout: React.FunctionComponent = () => {
+  const [alerts, setAlerts] = React.useState<React.ReactNode[]>([]);
+  const onClick = () => {
+    const timeout = 8000;
+    setAlerts(prevAlerts => {
+      return [...prevAlerts,
+        <Alert title="Default timeout Alert" timeout={timeout} actionLinks={
+          <React.Fragment>
+            <AlertActionLink>View details</AlertActionLink>
+            <AlertActionLink>Ignore</AlertActionLink>
+          </React.Fragment>
+        }>
+          This alert will dismiss after {`${timeout / 1000} seconds`}
+        </Alert>
+      ]
+    });
+  }
+
+  return (
+    <React.Fragment>
+      <Button variant="secondary" onClick={onClick}>Add alert</Button>
+      <Button variant="secondary" onClick={() => setAlerts([])}>Remove all alerts</Button>
+      <AlertGroup isLiveRegion>
+        {alerts}
+      </AlertGroup>
+    </React.Fragment>
+  );
+};
+```
 
 #### Expandable alerts
 
-An alert can contain additional, hidden information that is made visible by clicking a chevron icon. This information can be expanded and collapsed each time the icon is clicked.
+An alert can contain additional, hidden information that is made visible by clicking a caret icon. This information can be expanded and collapsed each time the icon is clicked.
 
-It is not recommended to use an expandable alert within a toast [alert group](/components/alert#alert) because the alert could timeout before users have time to interact with and view the entire alert.
+It is not recommended to use an expandable alert using `timeout` within a toast [alert group](/components/alert#alert) because the alert could timeout before users have time to interact with and view the entire alert. See [alert accessibility considerations](https://www.patternfly.org/v4/components/alert/design-guidelines#accessibility-considerations) to understand the accessibility risks associated with using expandable alerts in toast alert groups. 
 
 ```ts
 import React from 'react';
@@ -161,44 +194,6 @@ import { Alert } from '@patternfly/react-core';
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque cursus enim fringilla tincidunt. Proin lobortis aliquam dictum. Nam vel ullamcorper nulla, nec blandit dolor. Vivamus pellentesque neque justo, nec accumsan nulla rhoncus id. Suspendisse mollis, tortor quis faucibus volutpat, sem leo fringilla turpis, ac lacinia augue metus in nulla. Cras vestibulum lacinia orci. Pellentesque sodales consequat interdum. Sed porttitor tincidunt metus nec iaculis. Pellentesque non commodo justo. Morbi feugiat rhoncus neque, vitae facilisis diam aliquam nec. Sed dapibus vitae quam at tristique. Nunc vel commodo mi. Mauris et rhoncus leo.
   `} />
 </React.Fragment>
-```
-
-#### Alert timeout
-
-Use the `timeout` property to automatically dismiss an alert after a period of time. If set to `true`, the `timeout` will be 8000 milliseconds. Provide a number to dismiss the alert after a specific number of milliseconds.
-
-```ts
-import React from 'react';
-import { Alert, AlertActionLink, AlertGroup, Button } from '@patternfly/react-core';
-
-const AlertTimeout: React.FunctionComponent = () => {
-  const [alerts, setAlerts] = React.useState<React.ReactNode[]>([]);
-  const onClick = () => {
-    const timeout = 8000;
-    setAlerts(prevAlerts => {
-      return [...prevAlerts,
-        <Alert title="Default timeout Alert" timeout={timeout} actionLinks={
-          <React.Fragment>
-            <AlertActionLink>View details</AlertActionLink>
-            <AlertActionLink>Ignore</AlertActionLink>
-          </React.Fragment>
-        }>
-          This alert will dismiss after {`${timeout / 1000} seconds`}
-        </Alert>
-      ]
-    });
-  }
-
-  return (
-    <React.Fragment>
-      <Button variant="secondary" onClick={onClick}>Add alert</Button>
-      <Button variant="secondary" onClick={() => setAlerts([])}>Remove all alerts</Button>
-      <AlertGroup isLiveRegion>
-        {alerts}
-      </AlertGroup>
-    </React.Fragment>
-  );
-};
 ```
 
 #### Custom icons
