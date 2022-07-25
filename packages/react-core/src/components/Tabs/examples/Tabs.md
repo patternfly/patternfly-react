@@ -2,7 +2,7 @@
 id: Tabs
 section: components
 cssPrefix: pf-c-tabs
-propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', 'TabTitleIcon', 'OverflowTab']
+propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', 'TabTitleIcon']
 ouia: true
 ---
 
