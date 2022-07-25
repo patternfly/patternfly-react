@@ -1945,6 +1945,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
               <button
                 aria-labelledby="label-checkbox-id18"
                 class="pf-c-tree-view__node-toggle"
+                id="checkbox-id18-toggle-button"
                 tabindex="0"
               >
                 <span
@@ -2007,6 +2008,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                   <button
                     aria-labelledby="label-checkbox-id19"
                     class="pf-c-tree-view__node-toggle"
+                    id="checkbox-id19-toggle-button"
                     tabindex="-1"
                   >
                     <span
@@ -2066,6 +2068,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
                   <button
                     aria-labelledby="label-checkbox-id20"
                     class="pf-c-tree-view__node-toggle"
+                    id="checkbox-id20-toggle-button"
                     tabindex="-1"
                   >
                     <span
@@ -2127,6 +2130,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
               <button
                 aria-labelledby="label-checkbox-id21"
                 class="pf-c-tree-view__node-toggle"
+                id="checkbox-id21-toggle-button"
                 tabindex="-1"
               >
                 <span
@@ -2186,6 +2190,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
               <button
                 aria-labelledby="label-checkbox-id22"
                 class="pf-c-tree-view__node-toggle"
+                id="checkbox-id22-toggle-button"
                 tabindex="-1"
               >
                 <span
@@ -2245,6 +2250,7 @@ exports[`tree view renders checkboxes successfully 1`] = `
               <button
                 aria-labelledby="label-checkbox-id23"
                 class="pf-c-tree-view__node-toggle"
+                id="checkbox-id23-toggle-button"
                 tabindex="-1"
               >
                 <span
@@ -2723,6 +2729,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
               <button
                 aria-labelledby="label-checkbox-id36"
                 class="pf-c-tree-view__node-toggle"
+                id="checkbox-id36-toggle-button"
                 tabindex="-1"
               >
                 <span

@@ -117,7 +117,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
         }
       }}
       {...(hasCheck && { 'aria-labelledby': `label-${randomId}` })}
-      id={`${randomId}-button`}
+      {...((hasCheck || hasSelectableNodes) && { id: `${randomId}-toggle-button` })}
       tabIndex={-1}
     >
       <span className={css(styles.treeViewNodeToggleIcon)}>
