@@ -12,7 +12,7 @@ test('Renders the first date in a month when a custom weekStart is passed', () =
 
   render(<CalendarMonth cellAriaLabel={formatAria} weekStart={1} date={new Date(2023, 0)} />);
 
-  const firstDate = screen.queryByRole('button', { name: '1 January 2023' });
+  const firstDate = screen.getByRole('button', { name: '1 January 2023' });
   expect(firstDate).toBeVisible();
 });
 
@@ -24,6 +24,34 @@ test('Renders the last date in a month when a custom weekStart is passed', () =>
 
   render(<CalendarMonth cellAriaLabel={formatAria} weekStart={1} date={new Date(2023, 0)} />);
 
-  const lastDate = screen.queryByRole('button', { name: '31 January 2023' });
+  const lastDate = screen.getByRole('button', { name: '31 January 2023' });
   expect(lastDate).toBeVisible();
+});
+
+test('Previous month dates have correct month in aria label', () => {
+  render(<CalendarMonth date={new Date(2024, 5)} />);
+
+  const previousMonthDate = screen.getByRole('button', { name: '31 May 2024' });
+  expect(previousMonthDate).toBeVisible();
+});
+
+test('Next month dates have correct month in aria label', () => {
+  render(<CalendarMonth date={new Date(2024, 6)} />);
+
+  const nextMonthDate = screen.getByRole('button', { name: '1 August 2024' });
+  expect(nextMonthDate).toBeVisible();
+});
+
+test('Previous year dates have correct year in aria label', () => {
+  render(<CalendarMonth date={new Date(2024, 0)} />);
+
+  const previousYearDate = screen.getByRole('button', { name: '31 December 2023' });
+  expect(previousYearDate).toBeVisible();
+});
+
+test('Next year dates have correct year in aria label', () => {
+  render(<CalendarMonth date={new Date(2024, 11)} />);
+
+  const nextYearDate = screen.getByRole('button', { name: '1 January 2025' });
+  expect(nextYearDate).toBeVisible();
 });
