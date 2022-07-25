@@ -1169,9 +1169,9 @@ class ToolbarStacked extends React.Component {
       });
     };
 
-    this.onPerPageSelect = (_event, perPage) => {
+    this.onPerPageSelect = (_event, perPage, page) => {
       this.setState({
-        perPage
+        page, perPage
       });
     };
 
