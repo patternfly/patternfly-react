@@ -4,9 +4,9 @@ import { Radio } from '@patternfly/react-core';
 export const RadioControlled: React.FunctionComponent = () => {
   const [check1, setCheck1] = React.useState(false);
 
-  function handleChange(_: boolean) {
+  const handleChange = () => {
     setCheck1(true);
-  }
+  };
   return (
     <React.Fragment>
       <Radio
