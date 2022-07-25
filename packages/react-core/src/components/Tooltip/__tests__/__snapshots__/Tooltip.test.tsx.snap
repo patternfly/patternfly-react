@@ -1,5 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`tooltip arrow renders 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-tooltip__arrow"
+  />
+</DocumentFragment>
+`;
+
+exports[`tooltip content renders 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-c-tooltip__content"
+  >
+    <div>
+      Test
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`tooltip renders 1`] = `
 <DocumentFragment>
   <div>
