@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.70.11 (2022-07-25)
+
+
+### Bug Fixes
+
+* **Select:** remove variant check from update logic ([#7741](https://github.com/patternfly/patternfly-react/issues/7741)) ([2204cb6](https://github.com/patternfly/patternfly-react/commit/2204cb62e30b4a37b82731f1380e79a3085828ef))
+
+
+
+
+
 ## 4.70.10 (2022-07-25)
 
 **Note:** Version bump only for package @patternfly/react-log-viewer
