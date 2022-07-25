@@ -709,8 +709,8 @@ class PageLayoutGrouped extends React.Component {
                   </TextContent>
                 </PageSection>
               }
-              groupProps={{
-                stickyOnBreakpoint: { default: 'top', sm: 'bottom', md: 'top', lg: 'bottom', '2xl': 'top' }
+              breadcrumbProps={{
+                stickyOnBreakpoint: { md: 'top' }
               }}
             >
               <PageSection>
