@@ -48,11 +48,11 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
       <NotificationDrawerHeader count={3} onClose={onDrawerClose}>
         <Dropdown
           onSelect={onSelect}
-          toggle={<KebabToggle onToggle={onToggle(0)} id="toggle-id-0" />}
+          toggle={<KebabToggle onToggle={onToggle(0)} id="basic-kebab-toggle" />}
           isOpen={isOpen0}
           isPlain
           dropdownItems={dropdownItems}
-          id="notification-0"
+          id="basic-notification-0"
           position={DropdownPosition.right}
         />
       </NotificationDrawerHeader>
@@ -67,11 +67,11 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               <Dropdown
                 position={DropdownPosition.right}
                 onSelect={onSelect}
-                toggle={<KebabToggle onToggle={onToggle(1)} id="toggle-id-1" />}
+                toggle={<KebabToggle onToggle={onToggle(1)} id="basic-toggle-id-1" />}
                 isOpen={isOpen1}
                 isPlain
                 dropdownItems={dropdownItems}
-                id="notification-1"
+                id="basic-notification-1"
               />
             </NotificationDrawerListItemHeader>
             <NotificationDrawerListItemBody timestamp="5 minutes ago">
@@ -87,11 +87,11 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               <Dropdown
                 position={DropdownPosition.right}
                 onSelect={onSelect}
-                toggle={<KebabToggle onToggle={onToggle(2)} id="toggle-id-2" />}
+                toggle={<KebabToggle onToggle={onToggle(2)} id="basic-toggle-id-2" />}
                 isOpen={isOpen2}
                 isPlain
                 dropdownItems={dropdownItems}
-                id="notification-2"
+                id="basic-notification-2"
               />
             </NotificationDrawerListItemHeader>
             <NotificationDrawerListItemBody timestamp="10 minutes ago">
@@ -109,11 +109,11 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               <Dropdown
                 position={DropdownPosition.right}
                 onSelect={onSelect}
-                toggle={<KebabToggle onToggle={onToggle(3)} id="toggle-id-3" />}
+                toggle={<KebabToggle onToggle={onToggle(3)} id="basic-toggle-id-3" />}
                 isOpen={isOpen3}
                 isPlain
                 dropdownItems={dropdownItems}
-                id="notification-3"
+                id="basic-notification-3"
               />
             </NotificationDrawerListItemHeader>
             <NotificationDrawerListItemBody timestamp="10 minutes ago">
@@ -130,11 +130,11 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               <Dropdown
                 position={DropdownPosition.right}
                 onSelect={onSelect}
-                toggle={<KebabToggle onToggle={onToggle(4)} id="toggle-id-4" />}
+                toggle={<KebabToggle onToggle={onToggle(4)} id="basic-toggle-id-4" />}
                 isOpen={isOpen4}
                 isPlain
                 dropdownItems={dropdownItems}
-                id="notification-4"
+                id="basic-notification-4"
               />
             </NotificationDrawerListItemHeader>
             <NotificationDrawerListItemBody timestamp="20 minutes ago">
@@ -151,11 +151,11 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
                 position={DropdownPosition.right}
                 direction={DropdownDirection.up}
                 onSelect={onSelect}
-                toggle={<KebabToggle onToggle={onToggle(5)} id="toggle-id-5" />}
+                toggle={<KebabToggle onToggle={onToggle(5)} id="basic-toggle-id-5" />}
                 isOpen={isOpen5}
                 isPlain
                 dropdownItems={dropdownItems}
-                id="notification-5"
+                id="basic-notification-5"
               />
             </NotificationDrawerListItemHeader>
             <NotificationDrawerListItemBody timestamp="30 minutes ago">
@@ -167,11 +167,11 @@ export const NotificationDrawerBasic: React.FunctionComponent = () => {
               <Dropdown
                 position={DropdownPosition.right}
                 onSelect={onSelect}
-                toggle={<KebabToggle onToggle={onToggle(6)} id="toggle-id-6" />}
+                toggle={<KebabToggle onToggle={onToggle(6)} id="basic-toggle-id-6" />}
                 isOpen={isOpen6}
                 isPlain
                 dropdownItems={dropdownItems}
-                id="notification-6"
+                id="basic-notification-6"
               />
             </NotificationDrawerListItemHeader>
             <NotificationDrawerListItemBody timestamp="35 minutes ago">

@@ -73,11 +73,13 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
       <NotificationDrawerHeader count={4}>
         <Dropdown
           onSelect={onSelect}
-          toggle={<KebabToggle onToggle={isOpen => onToggle('toggle-id-0', isOpen)} id="toggle-id-0" />}
-          isOpen={isOpenMap && isOpenMap['toggle-id-0']}
+          toggle={
+            <KebabToggle onToggle={isOpen => onToggle('groups-kebab-toggle-1', isOpen)} id="groups-kebab-toggle-1" />
+          }
+          isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-1']}
           isPlain
           dropdownItems={dropdownItems}
-          id="notification-0"
+          id="grouped-notification-1"
           position={DropdownPosition.right}
         />
       </NotificationDrawerHeader>
@@ -99,11 +101,16 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                   <Dropdown
                     position={DropdownPosition.right}
                     onSelect={onSelect}
-                    toggle={<KebabToggle onToggle={isOpen => onToggle('toggle-id-5', isOpen)} id="toggle-id-5" />}
-                    isOpen={isOpenMap && isOpenMap['toggle-id-5']}
+                    toggle={
+                      <KebabToggle
+                        onToggle={isOpen => onToggle('groups-kebab-toggle-2', isOpen)}
+                        id="groups-kebab-toggle-2"
+                      />
+                    }
+                    isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-2']}
                     isPlain
                     dropdownItems={dropdownItems}
-                    id="notification-5"
+                    id="grouped-notification-2"
                   />
                 </NotificationDrawerListItemHeader>
                 <NotificationDrawerListItemBody timestamp="5 minutes ago">
@@ -119,11 +126,16 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                   <Dropdown
                     position={DropdownPosition.right}
                     onSelect={onSelect}
-                    toggle={<KebabToggle onToggle={isOpen => onToggle('toggle-id-6', isOpen)} id="toggle-id-6" />}
-                    isOpen={isOpenMap && isOpenMap['toggle-id-6']}
+                    toggle={
+                      <KebabToggle
+                        onToggle={isOpen => onToggle('groups-kebab-toggle-3', isOpen)}
+                        id="groups-kebab-toggle-3"
+                      />
+                    }
+                    isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-3']}
                     isPlain
                     dropdownItems={dropdownItems}
-                    id="notification-6"
+                    id="grouped-notification-3"
                   />
                 </NotificationDrawerListItemHeader>
                 <NotificationDrawerListItemBody timestamp="10 minutes ago">
@@ -140,11 +152,16 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                   <Dropdown
                     position={DropdownPosition.right}
                     onSelect={onSelect}
-                    toggle={<KebabToggle onToggle={isOpen => onToggle('toggle-id-7', isOpen)} id="toggle-id-7" />}
-                    isOpen={isOpenMap && isOpenMap['toggle-id-7']}
+                    toggle={
+                      <KebabToggle
+                        onToggle={isOpen => onToggle('groups-kebab-toggle-4', isOpen)}
+                        id="groups-kebab-toggle-4"
+                      />
+                    }
+                    isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-4']}
                     isPlain
                     dropdownItems={dropdownItems}
-                    id="notification-7"
+                    id="grouped-notification-7"
                   />
                 </NotificationDrawerListItemHeader>
                 <NotificationDrawerListItemBody timestamp="20 minutes ago">
@@ -161,11 +178,16 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     position={DropdownPosition.right}
                     direction={DropdownDirection.up}
                     onSelect={onSelect}
-                    toggle={<KebabToggle onToggle={isOpen => onToggle('toggle-id-8', isOpen)} id="toggle-id-8" />}
-                    isOpen={isOpenMap && isOpenMap['toggle-id-8']}
+                    toggle={
+                      <KebabToggle
+                        onToggle={isOpen => onToggle('groups-kebab-toggle-5', isOpen)}
+                        id="groups-kebab-toggle-5"
+                      />
+                    }
+                    isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-5']}
                     isPlain
                     dropdownItems={dropdownItems}
-                    id="notification-8"
+                    id="grouped-notification-5"
                   />
                 </NotificationDrawerListItemHeader>
                 <NotificationDrawerListItemBody timestamp="30 minutes ago">
@@ -190,11 +212,16 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                   <Dropdown
                     position={DropdownPosition.right}
                     onSelect={onSelect}
-                    toggle={<KebabToggle onToggle={isOpen => onToggle('toggle-id-9', isOpen)} id="toggle-id-9" />}
-                    isOpen={isOpenMap && isOpenMap['toggle-id-9']}
+                    toggle={
+                      <KebabToggle
+                        onToggle={isOpen => onToggle('groups-kebab-toggle-6', isOpen)}
+                        id="groups-kebab-toggle-6"
+                      />
+                    }
+                    isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-6']}
                     isPlain
                     dropdownItems={dropdownItems}
-                    id="notification-9"
+                    id="grouped-notification-6"
                   />
                 </NotificationDrawerListItemHeader>
                 <NotificationDrawerListItemBody timestamp="5 minutes ago">
@@ -210,11 +237,16 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                   <Dropdown
                     position={DropdownPosition.right}
                     onSelect={onSelect}
-                    toggle={<KebabToggle onToggle={isOpen => onToggle('toggle-id-10', isOpen)} id="toggle-id-10" />}
-                    isOpen={isOpenMap && isOpenMap['toggle-id-10']}
+                    toggle={
+                      <KebabToggle
+                        onToggle={isOpen => onToggle('groups-kebab-toggle-7', isOpen)}
+                        id="groups-kebab-toggle-7"
+                      />
+                    }
+                    isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-7']}
                     isPlain
                     dropdownItems={dropdownItems}
-                    id="notification-10"
+                    id="gropued-notification-7"
                   />
                 </NotificationDrawerListItemHeader>
                 <NotificationDrawerListItemBody timestamp="10 minutes ago">
@@ -231,11 +263,16 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                   <Dropdown
                     position={DropdownPosition.right}
                     onSelect={onSelect}
-                    toggle={<KebabToggle onToggle={isOpen => onToggle('toggle-id-11', isOpen)} id="toggle-id-11" />}
-                    isOpen={isOpenMap && isOpenMap['toggle-id-11']}
+                    toggle={
+                      <KebabToggle
+                        onToggle={isOpen => onToggle('groups-kebab-toggle-8', isOpen)}
+                        id="groups-kebab-toggle-8"
+                      />
+                    }
+                    isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-8']}
                     isPlain
                     dropdownItems={dropdownItems}
-                    id="notification-11"
+                    id="grouped-notification-8"
                   />
                 </NotificationDrawerListItemHeader>
                 <NotificationDrawerListItemBody timestamp="20 minutes ago">
@@ -252,11 +289,16 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
                     position={DropdownPosition.right}
                     direction={DropdownDirection.up}
                     onSelect={onSelect}
-                    toggle={<KebabToggle onToggle={isOpen => onToggle('toggle-id-12', isOpen)} id="toggle-id-12" />}
-                    isOpen={isOpenMap && isOpenMap['toggle-id-12']}
+                    toggle={
+                      <KebabToggle
+                        onToggle={isOpen => onToggle('groups-kebab-toggle-9', isOpen)}
+                        id="groups-kebab-toggle-9"
+                      />
+                    }
+                    isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-9']}
                     isPlain
                     dropdownItems={dropdownItems}
-                    id="notification-12"
+                    id="grouped-notification-9"
                   />
                 </NotificationDrawerListItemHeader>
                 <NotificationDrawerListItemBody timestamp="30 minutes ago">
