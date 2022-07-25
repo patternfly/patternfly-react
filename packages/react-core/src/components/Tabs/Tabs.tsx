@@ -462,14 +462,14 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           </button>
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons} role="tablist">
             {isHorizontalOverflow ? filteredChildrenWithoutOverflow : filteredChildren}
+            {isHorizontalOverflow && overflowingTabCount > 0 && (
+              <OverflowTab
+                menuAppendTo={this.tabOverflowMenuRef.current}
+                overflowingTabs={overflowingTabProps}
+                showTabCount={typeof isHorizontalOverflow === 'boolean' ? false : isHorizontalOverflow.showTabCount}
+              />
+            )}
           </ul>
-          {isHorizontalOverflow && overflowingTabCount > 0 && (
-            <OverflowTab
-              menuAppendTo={this.tabOverflowMenuRef.current}
-              overflowingTabs={overflowingTabProps}
-              showTabCount={typeof isHorizontalOverflow === 'boolean' ? false : isHorizontalOverflow.showTabCount}
-            />
-          )}
           <button
             className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
             aria-label={rightScrollAriaLabel}
