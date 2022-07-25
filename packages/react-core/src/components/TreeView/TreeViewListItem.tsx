@@ -96,8 +96,14 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
     }
   }, [isExpanded, defaultExpanded]);
 
-  const Component = hasCheck ? 'label' : 'button';
-  const ToggleComponent = hasCheck ? 'button' : 'span';
+  let Component: 'label' | 'div' | 'button' = 'button';
+  if (hasCheck) {
+    Component = 'label';
+  } else if (hasSelectableNodes) {
+    Component = 'div';
+  }
+
+  const ToggleComponent = hasCheck || hasSelectableNodes ? 'button' : 'span';
 
   const renderToggle = (randomId: string) => (
     <ToggleComponent
@@ -197,7 +203,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
                   }
                 }
               }}
-              tabIndex={-1}
+              tabIndex={hasSelectableNodes ? 1 : -1}
               {...(hasCheck && { htmlFor: randomId, id: `label-${randomId}` })}
             >
               <span className={css(styles.treeViewNodeContainer)}>
