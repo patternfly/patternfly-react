@@ -30,7 +30,7 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
   isFluid?: boolean;
   /** Sets the the default placement of description list groups to fill from top to bottom. */
   isFillColumns?: boolean;
-  /** Sets the description list to Display variant.*/
+  /** Sets the display variant of the descriptions in the description list.*/
   display?: 'lg' | '2xl';
   /** Sets the number of columns on the description list at various breakpoints */
   columnModifier?: {

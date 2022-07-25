@@ -17,14 +17,7 @@ export const DescriptionListGroup: React.FunctionComponent<DescriptionListGroupP
   isCard,
   ...props
 }: DescriptionListGroupProps) => (
-  <div
-    className={css(
-      isCard && styles.card,
-      isCard ? 'pf-m-description-list__group' : styles.descriptionListGroup,
-      className
-    )}
-    {...props}
-  >
+  <div className={css(isCard ? styles.card : styles.descriptionListGroup, className)} {...props}>
     {children}
   </div>
 );
