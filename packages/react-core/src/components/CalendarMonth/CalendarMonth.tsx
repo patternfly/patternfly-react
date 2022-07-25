@@ -345,7 +345,9 @@ export const CalendarMonth = ({
                       tabIndex={isFocused ? 0 : -1}
                       disabled={!isValid}
                       aria-label={
-                        cellAriaLabel ? cellAriaLabel(date) : `${dayFormatted} ${monthFormatted} ${yearFormatted}`
+                        cellAriaLabel
+                          ? cellAriaLabel(date)
+                          : `${dayFormat(date)} ${monthFormat(date)} ${yearFormat(date)}`
                       }
                       {...(isFocused && { ref: focusRef })}
                     >
