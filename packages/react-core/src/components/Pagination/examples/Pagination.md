@@ -28,9 +28,9 @@ class PaginationTop extends React.Component {
       });
     };
 
-    this.onPerPageSelect = (_event, perPage) => {
+    this.onPerPageSelect = (_event, perPage, page) => {
       this.setState({
-        perPage
+        page, perPage
       });
     };
   }
@@ -68,9 +68,9 @@ class PaginationBottom extends React.Component {
         page: pageNumber
       });
     };
-    this.onPerPageSelect = (_event, perPage) => {
+    this.onPerPageSelect = (_event, perPage, page) => {
       this.setState({
-        perPage
+        page, perPage
       });
     };
   }
@@ -149,9 +149,9 @@ class PaginationDisabled extends React.Component {
       });
     };
 
-    this.onPerPageSelect = (_event, perPage) => {
+    this.onPerPageSelect = (_event, perPage, page) => {
       this.setState({
-        perPage
+        page, perPage
       });
     };
   }
@@ -193,9 +193,9 @@ class PaginationTop extends React.Component {
       });
     };
 
-    this.onPerPageSelect = (_event, perPage) => {
+    this.onPerPageSelect = (_event, perPage, page) => {
       this.setState({
-        perPage
+        page, perPage
       });
     };
   }
@@ -236,9 +236,9 @@ class PaginationTop extends React.Component {
       });
     };
 
-    this.onPerPageSelect = (_event, perPage) => {
+    this.onPerPageSelect = (_event, perPage, page) => {
       this.setState({
-        perPage
+        page, perPage
       });
     };
   }
@@ -279,9 +279,9 @@ class PaginationTop extends React.Component {
       });
     };
 
-    this.onPerPageSelect = (_event, perPage) => {
+    this.onPerPageSelect = (_event, perPage, page) => {
       this.setState({
-        perPage
+        page, perPage
       });
     };
   }
@@ -330,9 +330,9 @@ class PaginationSticky extends React.Component {
       });
     };
 
-    this.onPerPageSelect = (_event, perPage) => {
+    this.onPerPageSelect = (_event, perPage, page) => {
       this.setState({
-        perPage
+        page, perPage
       });
     };
   }
