@@ -6,6 +6,7 @@ import { Popper } from '../../helpers';
 import { Menu, MenuContent, MenuList, MenuItem } from '../Menu';
 import { TabsContext } from './TabsContext';
 import { TabProps } from './Tab';
+import { TabTitleText } from './TabTitleText';
 
 export interface OverflowTabProps extends React.HTMLProps<HTMLLIElement> {
   /** Additional classes added to the overflow tab */
@@ -16,6 +17,10 @@ export interface OverflowTabProps extends React.HTMLProps<HTMLLIElement> {
   overflowingTabs?: TabProps[];
   /** Flag which shows the count of overflowing tabs when enabled */
   showTabCount?: boolean;
+  /** The text which displays when an overflowing tab isn't selected */
+  defaultTitleText?: string;
+  /** The aria label applied to the button which toggles the tab overflow menu */
+  toggleAriaLabel?: string;
 }
 
 export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
@@ -23,6 +28,8 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
   menuAppendTo,
   overflowingTabs = [],
   showTabCount,
+  defaultTitleText = 'More',
+  toggleAriaLabel,
   ...props
 }: OverflowTabProps) => {
   const menuRef = React.useRef<HTMLDivElement>();
@@ -63,7 +70,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
   }, [isExpanded, menuRef, overflowTabRef]);
 
   const selectedTab = overflowingTabs.find(tab => tab.eventKey === localActiveKey);
-  const tabTitle = selectedTab?.title ? selectedTab.title : 'More';
+  const tabTitle = selectedTab?.title ? selectedTab.title : defaultTitleText;
 
   const toggleMenu = () => {
     setIsExpanded(prevIsExpanded => !prevIsExpanded);
@@ -84,13 +91,15 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
       <button
         className={css(styles.tabsLink, isExpanded && styles.modifiers.expanded)}
         onClick={() => toggleMenu()}
-        aria-label="More tabs. Click this button to reveal the other tabs which you can select"
+        aria-label={toggleAriaLabel}
+        aria-haspopup="menu"
+        aria-expanded={isExpanded}
         ref={overflowTabRef}
       >
-        <span className={styles.tabsItemText}>
+        <TabTitleText>
           {tabTitle}
-          {showTabCount && tabTitle === 'More' && ` (${overflowingTabs.length})`}
-        </span>
+          {showTabCount && tabTitle === defaultTitleText && ` (${overflowingTabs.length})`}
+        </TabTitleText>
         <span className={styles.tabsLinkToggleIcon}>
           <AngleRightIcon />
         </span>

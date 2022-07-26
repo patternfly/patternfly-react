@@ -20,6 +20,15 @@ export enum TabsComponent {
   nav = 'nav'
 }
 
+export interface horizontalOverflowObject {
+  /** Flag which shows the count of overflowing tabs when enabled */
+  showTabCount?: boolean;
+  /** The text which displays when an overflowing tab isn't selected */
+  defaultTitleText?: string;
+  /** The aria label applied to the button which toggles the tab overflow menu */
+  toggleAriaLabel?: string;
+}
+
 export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'>, OUIAProps {
   /** Content rendered inside the tabs component. Must be React.ReactElement<TabProps>[] */
   children: React.ReactNode;
@@ -95,8 +104,8 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   toggleAriaLabel?: string;
   /** Callback function to toggle the expandable tabs. */
   onToggle?: (isExpanded: boolean) => void;
-  /** @beta Flag which places overflowing tabs into a menu controlled by a tab labelled "more". Additionally an object can be passed with an option to display the count of overflowing tabs. */
-  isHorizontalOverflow?: boolean | { showTabCount: boolean };
+  /** @beta Flag which places overflowing tabs into a menu controlled by a tab labelled "more". Additionally an object can be passed with custom settings for the overflow tab. */
+  isHorizontalOverflow?: boolean | horizontalOverflowObject;
 }
 
 const variantStyle = {
@@ -390,6 +399,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       }
     };
 
+    const overflowObjectProps = typeof isHorizontalOverflow === 'object' ? { ...isHorizontalOverflow } : {};
+
     return (
       <TabsContextProvider
         value={{
@@ -466,7 +477,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               <OverflowTab
                 menuAppendTo={this.tabOverflowMenuRef.current}
                 overflowingTabs={overflowingTabProps}
-                showTabCount={typeof isHorizontalOverflow === 'boolean' ? false : isHorizontalOverflow.showTabCount}
+                {...overflowObjectProps}
               />
             )}
           </ul>
