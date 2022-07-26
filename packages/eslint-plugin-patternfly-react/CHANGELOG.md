@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.66.0 (2022-07-26)
+
+
+### Features
+
+* **Dropdown:** added secondary styling to split action button ([#7746](https://github.com/patternfly/patternfly-react/issues/7746)) ([e701c32](https://github.com/patternfly/patternfly-react/commit/e701c32bb36097770ecb2c3e17e15df0b720488f))
+
+
+
+
+
 ## 4.65.2 (2022-07-26)
 
 **Note:** Version bump only for package eslint-plugin-patternfly-react
