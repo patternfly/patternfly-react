@@ -22,17 +22,16 @@ import NodeShadows, {
 import LabelBadge from '../../../components/nodes/labels/LabelBadge';
 import LabelIcon from '../../../components/nodes/labels/LabelIcon';
 
-const STATUS_WIDTH = 24;
 const STATUS_ICON_SIZE = 16;
 
 export type TaskNodeProps = {
   element: Node;
   className?: string;
   paddingX?: number;
+  paddingY?: number;
   nameLabelClass?: string;
   status?: RunStatus;
   statusIconSize?: number;
-  statusWidth?: number;
   showStatusState?: boolean;
   badge?: string;
   badgeColor?: string;
@@ -62,8 +61,8 @@ const TaskNode: React.FC<TaskNodeProps> = ({
   element,
   className,
   paddingX = 8,
+  paddingY = 8,
   status,
-  statusWidth = STATUS_WIDTH,
   statusIconSize = STATUS_ICON_SIZE,
   showStatusState = true,
   badge,
@@ -94,12 +93,16 @@ const TaskNode: React.FC<TaskNodeProps> = ({
 }) => {
   const [hovered, hoverRef] = useHover();
   const isHover = hover !== undefined ? hover : hovered;
-  const { height, width } = element.getBounds();
-  const [textSize, textRef] = useSize([element.getLabel()]);
+  const { width } = element.getBounds();
+  const label = truncateMiddle(element.getLabel(), { length: truncateLength, omission: '...' });
+  const [textSize, textRef] = useSize([label, className]);
+  const [statusSize, statusRef] = useSize([status, showStatusState, statusIconSize]);
   const [badgeSize, badgeRef] = useSize([badge]);
-  const textHeight = textSize?.height ?? 0;
   const [actionSize, actionRef] = useSize([actionIcon, paddingX]);
   const [contextSize, contextRef] = useSize([onContextMenu, paddingX]);
+
+  const textWidth = textSize?.width ?? 0;
+  const textHeight = textSize?.height ?? 0;
 
   useAnchor(TaskNodeSourceAnchor, AnchorEnd.source);
   useAnchor(
@@ -111,67 +114,78 @@ const TaskNode: React.FC<TaskNodeProps> = ({
   );
 
   const {
+    height,
     statusStartX,
-    labelStartX,
+    textStartX,
     actionStartX,
     contextStartX,
     pillWidth,
     badgeStartX,
-    badgeStartY,
     iconWidth,
     iconStartX
   } = React.useMemo(() => {
     if (!textSize) {
       return {
+        height: 0,
         statusStartX: 0,
-        labelStartX: 0,
+        textStartX: 0,
         actionStartX: 0,
         contextStartX: 0,
         pillWidth: 0,
         badgeStartX: 0,
-        badgeStartY: 0,
         iconWidth: 0,
         iconStartX: 0
       };
     }
-    const statusSpace = status && showStatusState ? statusWidth : paddingX / 2;
+    const height: number = textHeight + 2 * paddingY;
+    const startX = paddingX + paddingX / 2;
+
     const iconWidth = taskIconClass || taskIcon ? height - taskIconPadding : 0;
     const iconStartX = -(iconWidth * 0.75);
-    const statusStartX = iconWidth ? iconStartX * 0.25 + paddingX * 2 : paddingX;
-    const labelStartX = statusStartX + statusSpace;
-    const textSpace = textSize.width + paddingX;
+
+    const statusStartX = startX - statusIconSize / 4; // Adjust for icon padding
+    const statusSpace = status && showStatusState && statusSize ? statusSize.width + paddingX : 0;
+
+    const textStartX = startX + statusSpace;
+    const textSpace = textWidth + paddingX;
+
+    const badgeStartX = textStartX + textSpace;
     const badgeSpace = badge && badgeSize ? badgeSize.width + paddingX : 0;
-    const actionSpace = actionIcon && actionSize ? actionSize.width + paddingX : 0;
-    const contextSpace = onContextMenu && contextSize ? contextSize.width + paddingX / 2 : 0;
-    const badgeStartX = labelStartX + textSpace;
-    const badgeStartY = (height - (badgeSize?.height ?? 0)) / 2;
+
     const actionStartX = badgeStartX + badgeSpace;
+    const actionSpace = actionIcon && actionSize ? actionSize.width + paddingX : 0;
+
     const contextStartX = actionStartX + actionSpace;
-    const pillWidth = contextStartX + contextSpace;
+    const contextSpace = onContextMenu && contextSize ? contextSize.width + paddingX / 2 : 0;
+
+    const pillWidth = contextStartX + contextSpace + paddingX / 2;
 
     return {
+      height,
       statusStartX,
-      labelStartX,
+      textStartX,
       actionStartX,
       contextStartX,
       badgeStartX,
-      badgeStartY,
       iconWidth,
       iconStartX,
       pillWidth
     };
   }, [
     textSize,
-    status,
-    showStatusState,
-    statusWidth,
+    textHeight,
+    textWidth,
+    paddingY,
     paddingX,
     taskIconClass,
     taskIcon,
-    height,
     taskIconPadding,
-    badge,
+    statusIconSize,
+    status,
+    showStatusState,
+    statusSize,
     badgeSize,
+    badge,
     actionIcon,
     actionSize,
     onContextMenu,
@@ -186,14 +200,9 @@ const TaskNode: React.FC<TaskNodeProps> = ({
     });
   }, [element, pillWidth, width]);
 
-  const truncatedName = React.useMemo(() => truncateMiddle(element.getLabel(), { length: truncateLength }), [
-    element,
-    truncateLength
-  ]);
-
   const nameLabel = (
-    <text ref={textRef} className={css(styles.topologyPipelinesPillText)}>
-      {truncatedName}
+    <text ref={textRef} className={css(styles.topologyPipelinesPillText)} dominantBaseline="middle">
+      {label}
     </text>
   );
 
@@ -230,7 +239,7 @@ const TaskNode: React.FC<TaskNodeProps> = ({
     <LabelBadge
       ref={badgeRef}
       x={badgeStartX}
-      y={badgeStartY}
+      y={(height - (badgeSize?.height ?? 0)) / 2}
       badge={badge}
       badgeClassName={badgeClassName}
       badgeColor={badgeColor}
@@ -257,8 +266,8 @@ const TaskNode: React.FC<TaskNodeProps> = ({
         className={css(styles.topologyPipelinesPillBackground)}
         filter={filter}
       />
-      <g transform={`translate(${labelStartX}, ${(height + textHeight / 2) / 2})`}>
-        {element.getLabel() !== truncatedName && !disableTooltip ? (
+      <g transform={`translate(${textStartX}, ${paddingY + textHeight / 2 + 1})`}>
+        {element.getLabel() !== label && !disableTooltip ? (
           <Tooltip content={element.getLabel()}>
             <g>{nameLabel}</g>
           </Tooltip>
@@ -267,10 +276,7 @@ const TaskNode: React.FC<TaskNodeProps> = ({
         )}
       </g>
       {status && showStatusState && (
-        <g
-          transform={`translate(${statusStartX + (statusWidth - statusIconSize) / 2}, ${(height - statusIconSize) /
-            2})`}
-        >
+        <g transform={`translate(${statusStartX + paddingX / 2}, ${(height - statusIconSize) / 2})`} ref={statusRef}>
           <g
             className={css(
               styles.topologyPipelinesPillStatus,
