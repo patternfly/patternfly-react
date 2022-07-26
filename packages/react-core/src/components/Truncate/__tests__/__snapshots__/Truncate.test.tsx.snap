@@ -5,6 +5,11 @@ exports[`renders default truncation 1`] = `
   <div
     data-testid="Tooltip-mock"
   >
+    <div
+      data-testid="Tooltip-mock-content-container"
+    >
+      Test Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
+    </div>
     <p>
       position: top
     </p>
@@ -26,6 +31,11 @@ exports[`renders start truncation with &lrm; at end 1`] = `
   <div
     data-testid="Tooltip-mock"
   >
+    <div
+      data-testid="Tooltip-mock-content-container"
+    >
+      Test Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
+    </div>
     <p>
       position: top
     </p>

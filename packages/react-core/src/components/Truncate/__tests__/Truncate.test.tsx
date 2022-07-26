@@ -5,6 +5,7 @@ import { Truncate } from '../Truncate';
 jest.mock('../../Tooltip', () => ({
   Tooltip: ({ content, position, children, ...props }) => (
     <div data-testid="Tooltip-mock" {...props}>
+      <div data-testid="Tooltip-mock-content-container">Test {content}</div>
       <p>{`position: ${position}`}</p>
       {children}
     </div>
@@ -145,12 +146,12 @@ test('renders tooltip position', () => {
 test('renders tooltip content', () => {
   render(
     <Truncate
-      content={''}
+      content={'Another Tooltip'}
       tooltipPosition='top'
     />
   );
 
-  const input = screen.getByTestId('Tooltip-mock');
+  const input = screen.getByText('Test Another Tooltip');
 
   expect(input).toBeVisible();
 });
