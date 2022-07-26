@@ -106,6 +106,8 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   isOpen?: boolean;
   /** Flag indicating nav items with sub steps are expandable */
   isNavExpandable?: boolean;
+  /** Callback function to signal the current step in the wizard */
+  onCurrentStepChanged?: (step: WizardStep) => void;
   /** @beta Flag indicating the wizard has a drawer for at least one of the wizard steps */
   hasDrawer?: boolean;
   /** @beta Flag indicating the wizard drawer is expanded */
@@ -164,6 +166,14 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       isNavOpen: false
     };
 
+    if (props.onCurrentStepChanged) {
+      const flattenedSteps = this.getFlattenedSteps();
+      if (flattenedSteps.length >= this.state.currentStep) {
+        const currentStep = flattenedSteps[this.state.currentStep - 1];
+        props.onCurrentStepChanged(currentStep);
+      }
+    }
+
     this.drawerRef = React.createRef();
   }
 
@@ -202,9 +212,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
         }
       }
 
-      this.setState({
-        currentStep: newStep
-      });
+      this.setCurrentStep(newStep, flattenedSteps[newStep - 1]);
       const { id: prevId, name: prevName } = flattenedSteps[currentStep - 1];
       const { id, name } = flattenedSteps[newStep - 1];
       return onNext && onNext({ id, name }, { prevId, prevName });
@@ -218,9 +226,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     if (flattenedSteps.length < currentStep) {
       // Previous step was removed, just update the currentStep state
       const adjustedStep = flattenedSteps.length;
-      this.setState({
-        currentStep: adjustedStep
-      });
+      this.setCurrentStep(adjustedStep, flattenedSteps[adjustedStep - 1]);
     } else {
       let newStep = currentStep;
 
@@ -235,9 +241,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
         }
       }
 
-      this.setState({
-        currentStep: newStep
-      });
+      this.setCurrentStep(newStep, flattenedSteps[newStep - 1]);
       const { id: prevId, name: prevName } = flattenedSteps[newStep];
       const { id, name } = flattenedSteps[newStep - 1];
       return onBack && onBack({ id, name }, { prevId, prevName });
@@ -259,7 +263,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     } else if (step > maxSteps) {
       step = maxSteps;
     }
-    this.setState({ currentStep: step, isNavOpen: false });
+    this.setCurrentStep(step, flattenedSteps[step - 1]);
+    this.setState({ isNavOpen: false });
     const { id: prevId, name: prevName } = flattenedSteps[currentStep - 1];
     const { id, name } = flattenedSteps[step - 1];
     return onGoToStep && onGoToStep({ id, name }, { prevId, prevName });
@@ -275,7 +280,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       }
     }
     if (step) {
-      this.setState({ currentStep: step });
+      this.setCurrentStep(step, flattenedSteps[step - 1]);
     }
   };
 
@@ -289,7 +294,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       }
     }
     if (step) {
-      this.setState({ currentStep: step });
+      this.setCurrentStep(step, flattenedSteps[step - 1]);
     }
   };
 
@@ -338,6 +343,16 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     return appendTo || document.body;
   };
 
+  private setCurrentStep(currentStep: number, currentStepObject: WizardStep) {
+    this.setState({
+      currentStep
+    });
+
+    if (this.props.onCurrentStepChanged) {
+      this.props.onCurrentStepChanged(currentStepObject);
+    }
+  }
+
   componentDidMount() {
     const target = typeof document !== 'undefined' ? document.body : null;
     if (target) {
@@ -384,6 +399,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       titleId,
       descriptionId,
       isNavExpandable,
+      onCurrentStepChanged,
       hasDrawer,
       isDrawerExpanded,
       ...rest

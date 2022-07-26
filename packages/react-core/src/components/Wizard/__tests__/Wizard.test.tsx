@@ -222,6 +222,34 @@ describe('Wizard', () => {
     expect(main).toBeInTheDocument();
     expect(main).toHaveAttribute('aria-labelledby', 'main-aria-labelledby');
   });
+
+  test('wiz with onCurrentStepChanged setter', () => {
+    const stepA = { name: 'A', component: <p>Step 1</p> };
+    const stepB = { name: 'B', component: <p>Step 2</p> };
+    const stepC = { name: 'C', component: <p>Step 3</p> };
+
+    const steps: WizardStep[] = [ stepA, stepB, stepC ];
+    const setter = jest.fn();
+
+    render(
+        <Wizard
+            title="Wiz title"
+            onCurrentStepChanged={ setter }
+            steps={steps}
+        />
+    );
+    expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepA));
+    userEvent.click(screen.getByText(/next/i));
+    expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepB));
+    userEvent.click(screen.getByText(/next/i));
+    expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepC));
+    userEvent.click(screen.getByText('A'));
+    expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepA));
+    userEvent.click(screen.getByText(/next/i));
+    expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepB));
+    userEvent.click(screen.getByText(/back/i));
+    expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepA));
+  });
 });
 
   test('wiz with disabled steps', () => {

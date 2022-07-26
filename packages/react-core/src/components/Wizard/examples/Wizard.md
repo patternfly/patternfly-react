@@ -782,36 +782,29 @@ class ProgressiveWizard extends React.Component {
 }
 ```
 
-### Remember last step
+### Get current step
 
 ```js
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 
-class RememberLastStepWizard extends React.Component {
+class GetCurrentStepWizard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       step: 1
     };
+    this.onCurrentStepChanged = ({ id }) => {
+        this.setState({
+            step: id
+        });
+    }
     this.closeWizard = () => {
       console.log('close wizard');
-    };
-    this.onMove = (curr, prev) => {
-      this.setState({
-        step: curr.id
-      });
-    };
-    this.onSave = () => {
-      this.setState({
-        step: 1
-      });
     };
   }
 
   render() {
-    const { step } = this.state;
-
     const steps = [
       { id: 1, name: 'First step', component: <p>Step 1 content</p> },
       { id: 2, name: 'Second step', component: <p>Step 2 content</p> },
@@ -819,19 +812,16 @@ class RememberLastStepWizard extends React.Component {
       { id: 4, name: 'Fourth step', component: <p>Step 4 content</p> },
       { id: 5, name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
     ];
-    const title = 'Remember last step wizard';
+    const title = 'Get current step wizard';
     return (
       <Wizard
         navAriaLabel={`${title} steps`}
         mainAriaLabel={`${title} content`}
-        startAtStep={step}
-        onNext={this.onMove}
-        onBack={this.onMove}
-        onSave={this.onSave}
         onClose={this.closeWizard}
         description="Simple Wizard Description"
         steps={steps}
         height={400}
+        onCurrentStepChanged={this.onCurrentStepChanged}
       />
     );
   }
