@@ -26,17 +26,21 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
   ...props
 }: OverflowTabProps) => {
   const menuRef = React.useRef<HTMLDivElement>();
-  const overflowTabRef = React.useRef<HTMLLIElement>();
+  const overflowTabRef = React.useRef<HTMLButtonElement>();
 
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   const { localActiveKey, handleTabClick } = React.useContext(TabsContext);
 
+  const closeMenu = () => {
+    setIsExpanded(false);
+    overflowTabRef.current.focus();
+  };
+
   const handleMenuKeys = (ev: KeyboardEvent) => {
     const menuContainsEventTarget = menuRef?.current?.contains(ev.target as Node);
     if (isExpanded && menuContainsEventTarget && ev.key === 'Escape') {
-      setIsExpanded(!isExpanded);
-      overflowTabRef?.current.focus();
+      closeMenu();
     }
   };
 
@@ -44,7 +48,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
     const clickIsOutsideMenu = !menuRef?.current?.contains(ev.target as Node);
     const clickIsOutsideOverflowTab = !overflowTabRef?.current?.contains(ev.target as Node);
     if (isExpanded && clickIsOutsideMenu && clickIsOutsideOverflowTab) {
-      setIsExpanded(false);
+      closeMenu();
     }
   };
 
@@ -74,13 +78,14 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
   const overflowTab = (
     <li
       className={css(styles.tabsItem, 'pf-m-overflow', selectedTab && styles.modifiers.current, className)}
-      ref={overflowTabRef}
+      role="presentation"
       {...props}
     >
       <button
         className={css(styles.tabsLink, isExpanded && styles.modifiers.expanded)}
         onClick={() => toggleMenu()}
         aria-label="More tabs. Click this button to reveal the other tabs which you can select"
+        ref={overflowTabRef}
       >
         <span className={styles.tabsItemText}>
           {tabTitle}
@@ -100,7 +105,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
   ));
 
   const onTabSelect = (event: React.MouseEvent<HTMLElement, MouseEvent>, key: number | string) => {
-    setIsExpanded(false);
+    closeMenu();
     const selectedTabRef = overflowingTabs.find(tab => tab.eventKey === key).tabContentRef;
     handleTabClick(event, key, selectedTabRef);
   };

@@ -14,11 +14,11 @@ export const TabsHorizontalOverflow: React.FunctionComponent = () => {
       <Tabs
         activeKey={activeTabKey}
         onSelect={handleTabClick}
-        aria-label="Tabs in the default overflow example"
+        aria-label="Tabs in the horizontal overflow example"
         role="region"
         isHorizontalOverflow={{ showTabCount }}
       >
-        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Default overflow content users">
+        <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Horizontal overflow content users">
           Users
         </Tab>
         <Tab eventKey={1} title={<TabTitleText>Containers</TabTitleText>}>
