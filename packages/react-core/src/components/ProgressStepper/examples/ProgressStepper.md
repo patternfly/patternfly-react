@@ -47,7 +47,7 @@ Compact progress steppers will only display the current step's `title`, and will
 
 ### With custom icons
 
-```ts file="ProgressStepperIcons.tsx"
+```ts file="ProgressStepperCustomIcons.tsx"
 ```
 
 ### With help popover
