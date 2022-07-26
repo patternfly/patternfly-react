@@ -120,6 +120,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
           styles.modifiers.splitButton,
           splitButtonVariant === 'action' && styles.modifiers.action,
           (toggleVariant === 'primary' || isPrimary) && splitButtonVariant === 'action' && styles.modifiers.primary,
+          toggleVariant === 'secondary' && splitButtonVariant === 'action' && styles.modifiers.secondary,
           isDisabled && styles.modifiers.disabled
         )}
       >

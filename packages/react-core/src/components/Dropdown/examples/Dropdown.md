@@ -113,6 +113,11 @@ import avatarImg from '../../Avatar/examples/avatarImg.svg';
 ```ts file="./DropdownSplitButtonActionPrimary.tsx"
 ```
 
+### Split button secondary action
+
+```ts file="./DropdownSplitButtonActionSecondary.tsx"
+```
+
 ### Basic panel
 
 ```ts file="./DropdownBasicPanel.tsx"
