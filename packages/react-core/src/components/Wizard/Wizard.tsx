@@ -367,6 +367,12 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     }
   }
 
+  componentDidUpdate(prevProps: Readonly<WizardProps>) {
+    if (prevProps.startAtStep !== this.props.startAtStep) {
+      this.setState({ currentStep: this.props.startAtStep });
+    }
+  }
+
   render() {
     const {
       /* eslint-disable @typescript-eslint/no-unused-vars */

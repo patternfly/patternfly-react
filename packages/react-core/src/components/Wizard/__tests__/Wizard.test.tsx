@@ -342,3 +342,34 @@ describe('Wizard', () => {
 
     expect(screen.getByRole('button',{ name: "A-2" })).toBeDisabled();
   });
+
+test('startAtStep can be used to externally control the current step of the wizard', () => {
+  const WizardTest = () => {
+    const [step, setStep] = React.useState(1);
+
+    const incrementStep = () => {
+      setStep(prevStep => prevStep + 1);
+    };
+
+    const steps: WizardStep[] = [
+      { name: 'A', component: <p>Step 1</p> },
+      { name: 'B', component: <p>Step 2</p> },
+      { name: 'C', component: <p>Step 3</p> }
+    ];
+
+    return (
+      <>
+        <Wizard steps={steps} startAtStep={step} />
+        <button onClick={() => incrementStep()}>Increment step</button>
+      </>
+    );
+  };
+
+  render(<WizardTest />);
+
+  expect(screen.queryByText('Step 2')).not.toBeInTheDocument();
+
+  userEvent.click(screen.getByRole('button', { name: 'Increment step'}))
+
+  expect(screen.getByText('Step 2')).toBeVisible();
+});
