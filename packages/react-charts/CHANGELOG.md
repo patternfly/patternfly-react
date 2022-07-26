@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.79.0 (2022-07-26)
+
+
+### Features
+
+* **topology:** Pipelines support for badges/icons variable task node width ([#7697](https://github.com/patternfly/patternfly-react/issues/7697)) ([a499273](https://github.com/patternfly/patternfly-react/commit/a49927315cd61e84a007d05b49e5d7254b977fcb))
+
+
+
+
+
 ## 6.78.11 (2022-07-25)
 
 
