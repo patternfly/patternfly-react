@@ -138,28 +138,28 @@ class SelectableNodesTreeView extends React.Component {
     const options = [
       {
         name: 'Application launcher',
-        id: 'example1-AppLaunch',
+        id: 'SelNodesTreeView-AppLaunch',
         children: [
           {
             name: 'Application 1',
-            id: 'example1-App1',
+            id: 'SelNodesTreeView-App1',
             children: [
-              { name: 'Settings', id: 'example1-App1Settings' },
-              { name: 'Current', id: 'example1-App1Current' }
+              { name: 'Settings', id: 'SelNodesTreeView-App1Settings' },
+              { name: 'Current', id: 'SelNodesTreeView-App1Current' }
             ]
           },
           {
             name: 'Application 2',
-            id: 'example1-App2',
+            id: 'SelNodesTreeView-App2',
             children: [
-              { name: 'Settings', id: 'example1-App2Settings' },
+              { name: 'Settings', id: 'SelNodesTreeView-App2Settings' },
               {
                 name: 'Loader',
-                id: 'example1-App2Loader',
+                id: 'SelNodesTreeView-App2Loader',
                 children: [
-                  { name: 'Loading App 1', id: 'example1-LoadApp1' },
-                  { name: 'Loading App 2', id: 'example1-LoadApp2' },
-                  { name: 'Loading App 3', id: 'example1-LoadApp3' }
+                  { name: 'Loading App 1', id: 'SelNodesTreeView-LoadApp1' },
+                  { name: 'Loading App 2', id: 'SelNodesTreeView-LoadApp2' },
+                  { name: 'Loading App 3', id: 'SelNodesTreeView-LoadApp3' }
                 ]
               }
             ]
@@ -169,29 +169,33 @@ class SelectableNodesTreeView extends React.Component {
       },
       {
         name: 'Cost management',
-        id: 'example1-Cost',
+        id: 'SelNodesTreeView-Cost',
         children: [
           {
             name: 'Application 3',
-            id: 'example1-App3',
+            id: 'SelNodesTreeView-App3',
             children: [
-              { name: 'Settings', id: 'example1-App3Settings' },
-              { name: 'Current', id: 'example1-App3Current' }
+              { name: 'Settings', id: 'SelNodesTreeView-App3Settings' },
+              { name: 'Current', id: 'SelNodesTreeView-App3Current' }
             ]
           }
         ]
       },
       {
         name: 'Sources',
-        id: 'example1-Sources',
+        id: 'SelNodesTreeView-Sources',
         children: [
-          { name: 'Application 4', id: 'example1-App4', children: [{ name: 'Settings', id: 'example1-App4Settings' }] }
+          {
+            name: 'Application 4',
+            id: 'SelNodesTreeView-App4',
+            children: [{ name: 'Settings', id: 'SelNodesTreeView-App4Settings' }]
+          }
         ]
       },
       {
         name: 'Really really really long folder name that overflows the container it is in',
-        id: 'example1-Long',
-        children: [{ name: 'Application 5', id: 'example1-App5' }]
+        id: 'SelNodesTreeView-Long',
+        children: [{ name: 'Application 5', id: 'SelNodesTreeView-App5' }]
       }
     ];
     return (
