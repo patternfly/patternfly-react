@@ -21,7 +21,7 @@ export const MenuWithTitledGroups: React.FunctionComponent = () => {
           </MenuList>
         </MenuGroup>
         <Divider />
-        <MenuGroup label="Group 1">
+        <MenuGroup label="Group 1" labelHeadingLevel="h3">
           <MenuList>
             <MenuItem to="#" itemId={1}>
               Link 1
@@ -30,7 +30,7 @@ export const MenuWithTitledGroups: React.FunctionComponent = () => {
           </MenuList>
         </MenuGroup>
         <Divider />
-        <MenuGroup label="Group 2">
+        <MenuGroup label="Group 2" labelHeadingLevel="h3">
           <MenuList>
             <MenuItem to="#" itemId={3}>
               Link 1

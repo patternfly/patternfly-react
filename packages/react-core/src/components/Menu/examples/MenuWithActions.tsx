@@ -25,7 +25,7 @@ export const MenuWithActions: React.FunctionComponent = () => {
       activeItemId={0}
     >
       <MenuContent>
-        <MenuGroup label="Actions">
+        <MenuGroup label="Actions" labelHeadingLevel="h3">
           <MenuList>
             <MenuItem
               isSelected={selectedItems.indexOf(0) !== -1}

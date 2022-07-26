@@ -56,7 +56,7 @@ export const MenuWithFavorites: React.FunctionComponent = () => {
       <MenuContent>
         {favorites.length > 0 && (
           <React.Fragment>
-            <MenuGroup label="Favorites">
+            <MenuGroup label="Favorites" labelHeadingLevel="h3">
               <MenuList>
                 {items
                   .filter(item => favorites.includes(item.itemId))
@@ -79,7 +79,7 @@ export const MenuWithFavorites: React.FunctionComponent = () => {
             <Divider />
           </React.Fragment>
         )}
-        <MenuGroup label="All actions">
+        <MenuGroup label="All actions" labelHeadingLevel="h3">
           <MenuList>
             {items.map(item => {
               const { text, description, itemId, action, actionId } = item;
