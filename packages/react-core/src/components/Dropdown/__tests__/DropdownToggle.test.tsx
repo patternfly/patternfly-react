@@ -200,7 +200,6 @@ describe('DropdownToggle', () => {
       const dropdownToggle = screen.getByRole('button').parentElement;
 
       expect(dropdownToggle).toHaveClass('pf-m-secondary');
-      expect(asFragment()).toMatchSnapshot();
     });
 
     test('class changes', () => {
