@@ -184,6 +184,24 @@ describe('DropdownToggle', () => {
       expect(asFragment()).toMatchSnapshot();
     });
 
+    test('action split button - renders secondary variant', () => {
+      const { asFragment } = render(
+        <DropdownToggle
+          id="Dropdown Toggle"
+          toggleVariant="secondary"
+          splitButtonItems={[<div key="1">test</div>]}
+          splitButtonVariant="action"
+          parentRef={document.createElement('div')}
+        >
+          Dropdown
+        </DropdownToggle>
+      );
+
+      const dropdownToggle = screen.getByRole('button').parentElement;
+
+      expect(dropdownToggle).toHaveClass('pf-m-secondary');
+    });
+
     test('class changes', () => {
       const { asFragment } = render(
         <DropdownContext.Provider
