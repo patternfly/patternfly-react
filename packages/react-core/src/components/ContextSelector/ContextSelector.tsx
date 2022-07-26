@@ -38,7 +38,7 @@ export interface ContextSelectorProps extends Omit<ToggleMenuBaseProps, 'menuApp
   /** Labels the Context Selector for Screen Readers */
   screenReaderLabel?: string;
   /** Component or string that will be used in the Context Selector.
-   * This prop is placed in a button, and cannot contain any interactive elements 
+   * This prop is placed in a button, and cannot contain any interactive elements
    */
   toggleText?: React.ReactNode | string;
   /** Aria-label for the Context Selector Search Button */
