@@ -70,6 +70,9 @@
   --pf-topology-pipelines__pill-status--m-selected--m-running--color: var(--pf-global--Color--light-100);
   --pf-topology-pipelines__pill-status--m-selected--m-idle--color: var(--pf-global--Color--light-100);
 
+  --pf-topology-pipelines__pill-badge--fill: var(--pf-global--palette--black-200);
+  --pf-topology-pipelines__pill-badge--text--fill: var(--pf-global--palette--black-1000);
+
   /* when expression */
   --pf-topology-pipelines__when-expression-background--Stroke: var(--pf-global--BorderColor--200);
   --pf-topology-pipelines__when-expression-background--Fill: var(--pf-global--BorderColor--200);
@@ -309,8 +312,17 @@
   100% {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
-  }}
+  }
+}
 
+.pf-topology-pipelines__pill-badge {
+  fill: var(--pf-topology-pipelines__pill-badge--fill);
+  stroke-width: 0;
+}
+.pf-topology-pipelines__pill-badge text {
+  fill: var(--pf-topology-pipelines__pill-badge--text--fill);
+  color: var(--pf-topology__node--Color);
+}
 .pf-topology-pipelines__pill.pf-m-selectable {
   cursor: pointer;
 }

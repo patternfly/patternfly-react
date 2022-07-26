@@ -7,6 +7,8 @@ interface DemoInterface {
   name: string;
   /** Demo component associated with the demo  */
   componentType: any;
+  /** Flag if this is the default demo */
+  isDefault?: boolean;
 }
 /** Add the name of the demo and it's component here to have them show up in the demo app */
 export const Demos: DemoInterface[] = [

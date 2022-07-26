@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Topology/topology-pipelines';
 import topologyStyles from '@patternfly/react-styles/css/components/Topology/topology-components';
-import { Tooltip } from '@patternfly/react-core';
+import { Popover, PopoverProps, Tooltip } from '@patternfly/react-core';
 import { observer } from '../../../mobx-exports';
 import { AnchorEnd, Node } from '../../../types';
 import { RunStatus } from '../../types';
@@ -19,19 +19,31 @@ import NodeShadows, {
   NODE_SHADOW_FILTER_ID_DANGER,
   NODE_SHADOW_FILTER_ID_HOVER
 } from '../../../components/nodes/NodeShadows';
+import LabelBadge from '../../../components/nodes/labels/LabelBadge';
+import LabelIcon from '../../../components/nodes/labels/LabelIcon';
 
-const STATUS_WIDTH = 24;
 const STATUS_ICON_SIZE = 16;
 
 export type TaskNodeProps = {
   element: Node;
   className?: string;
   paddingX?: number;
+  paddingY?: number;
   nameLabelClass?: string;
   status?: RunStatus;
   statusIconSize?: number;
-  statusWidth?: number;
   showStatusState?: boolean;
+  badge?: string;
+  badgeColor?: string;
+  badgeTextColor?: string;
+  badgeBorderColor?: string;
+  badgeClassName?: string;
+  badgePopoverProps?: string;
+  badgePopoverParams?: PopoverProps;
+  taskIconClass?: string; // Icon to show for the task
+  taskIcon?: React.ReactNode;
+  taskIconTooltip?: React.ReactNode;
+  taskIconPadding?: number;
   hover?: boolean;
   truncateLength?: number;
   disableTooltip?: boolean;
@@ -49,10 +61,20 @@ const TaskNode: React.FC<TaskNodeProps> = ({
   element,
   className,
   paddingX = 8,
+  paddingY = 8,
   status,
-  statusWidth = STATUS_WIDTH,
   statusIconSize = STATUS_ICON_SIZE,
   showStatusState = true,
+  badge,
+  badgeColor,
+  badgeTextColor,
+  badgeBorderColor,
+  badgeClassName = styles.topologyPipelinesPillBadge,
+  badgePopoverParams,
+  taskIconClass,
+  taskIcon,
+  taskIconTooltip,
+  taskIconPadding = 4,
   hover,
   truncateLength = 14,
   toolTip,
@@ -71,11 +93,16 @@ const TaskNode: React.FC<TaskNodeProps> = ({
 }) => {
   const [hovered, hoverRef] = useHover();
   const isHover = hover !== undefined ? hover : hovered;
-  const { height, width } = element.getBounds();
-  const [textSize, textRef] = useSize([element.getLabel()]);
-  const textHeight = textSize?.height ?? 0;
+  const { width } = element.getBounds();
+  const label = truncateMiddle(element.getLabel(), { length: truncateLength, omission: '...' });
+  const [textSize, textRef] = useSize([label, className]);
+  const [statusSize, statusRef] = useSize([status, showStatusState, statusIconSize]);
+  const [badgeSize, badgeRef] = useSize([badge]);
   const [actionSize, actionRef] = useSize([actionIcon, paddingX]);
   const [contextSize, contextRef] = useSize([onContextMenu, paddingX]);
+
+  const textWidth = textSize?.width ?? 0;
+  const textHeight = textSize?.height ?? 0;
 
   useAnchor(TaskNodeSourceAnchor, AnchorEnd.source);
   useAnchor(
@@ -86,53 +113,96 @@ const TaskNode: React.FC<TaskNodeProps> = ({
     ])
   );
 
-  const { labelStartX, actionStartX, contextStartX, pillWidth, updatedTruncateLength } = React.useMemo(() => {
-    const pillWidth = width - whenOffset - whenSize;
-    const statusSpace = status && showStatusState ? statusWidth : paddingX;
-    const labelStartX = paddingX + statusSpace;
-    const actionSpace = actionIcon && actionSize ? actionSize.width + paddingX : 0;
-    const contextSpace = onContextMenu && contextSize ? contextSize.width + paddingX : 0;
-    const actionStartX = pillWidth - actionSpace;
-    const contextStartX = actionStartX - contextSpace;
+  const {
+    height,
+    statusStartX,
+    textStartX,
+    actionStartX,
+    contextStartX,
+    pillWidth,
+    badgeStartX,
+    iconWidth,
+    iconStartX
+  } = React.useMemo(() => {
+    if (!textSize) {
+      return {
+        height: 0,
+        statusStartX: 0,
+        textStartX: 0,
+        actionStartX: 0,
+        contextStartX: 0,
+        pillWidth: 0,
+        badgeStartX: 0,
+        iconWidth: 0,
+        iconStartX: 0
+      };
+    }
+    const height: number = textHeight + 2 * paddingY;
+    const startX = paddingX + paddingX / 2;
 
-    let updatedTruncateLength = truncateLength;
-    if (contextSpace) {
-      updatedTruncateLength -= 4;
-    }
-    if (actionSpace) {
-      updatedTruncateLength -= 4;
-    }
+    const iconWidth = taskIconClass || taskIcon ? height - taskIconPadding : 0;
+    const iconStartX = -(iconWidth * 0.75);
+
+    const statusStartX = startX - statusIconSize / 4; // Adjust for icon padding
+    const statusSpace = status && showStatusState && statusSize ? statusSize.width + paddingX : 0;
+
+    const textStartX = startX + statusSpace;
+    const textSpace = textWidth + paddingX;
+
+    const badgeStartX = textStartX + textSpace;
+    const badgeSpace = badge && badgeSize ? badgeSize.width + paddingX : 0;
+
+    const actionStartX = badgeStartX + badgeSpace;
+    const actionSpace = actionIcon && actionSize ? actionSize.width + paddingX : 0;
+
+    const contextStartX = actionStartX + actionSpace;
+    const contextSpace = onContextMenu && contextSize ? contextSize.width + paddingX / 2 : 0;
+
+    const pillWidth = contextStartX + contextSpace + paddingX / 2;
 
     return {
-      labelStartX,
+      height,
+      statusStartX,
+      textStartX,
       actionStartX,
       contextStartX,
-      pillWidth,
-      updatedTruncateLength
+      badgeStartX,
+      iconWidth,
+      iconStartX,
+      pillWidth
     };
   }, [
+    textSize,
+    textHeight,
+    textWidth,
+    paddingY,
+    paddingX,
+    taskIconClass,
+    taskIcon,
+    taskIconPadding,
+    statusIconSize,
+    status,
+    showStatusState,
+    statusSize,
+    badgeSize,
+    badge,
     actionIcon,
     actionSize,
-    contextSize,
     onContextMenu,
-    paddingX,
-    showStatusState,
-    status,
-    statusWidth,
-    truncateLength,
-    whenOffset,
-    whenSize,
-    width
+    contextSize
   ]);
 
-  const truncatedName = React.useMemo(() => truncateMiddle(element.getLabel(), { length: updatedTruncateLength }), [
-    element,
-    updatedTruncateLength
-  ]);
+  React.useEffect(() => {
+    const sourceEdges = element.getSourceEdges();
+    sourceEdges.forEach(edge => {
+      const data = edge.getData();
+      edge.setData({ ...(data || {}), indent: width - pillWidth });
+    });
+  }, [element, pillWidth, width]);
 
   const nameLabel = (
-    <text ref={textRef} className={css(styles.topologyPipelinesPillText)}>
-      {truncatedName}
+    <text ref={textRef} className={css(styles.topologyPipelinesPillText)} dominantBaseline="middle">
+      {label}
     </text>
   );
 
@@ -153,6 +223,31 @@ const TaskNode: React.FC<TaskNodeProps> = ({
     filter = createSvgIdUrl(NODE_SHADOW_FILTER_ID_HOVER);
   }
 
+  const taskIconComponent = (taskIconClass || taskIcon) && (
+    <LabelIcon
+      x={iconStartX + iconWidth}
+      y={(height - iconWidth) / 2}
+      width={iconWidth}
+      height={iconWidth}
+      iconClass={taskIconClass}
+      icon={taskIcon}
+      padding={taskIconPadding}
+    />
+  );
+
+  const badgeComponent = badge && (
+    <LabelBadge
+      ref={badgeRef}
+      x={badgeStartX}
+      y={(height - (badgeSize?.height ?? 0)) / 2}
+      badge={badge}
+      badgeClassName={badgeClassName}
+      badgeColor={badgeColor}
+      badgeTextColor={badgeTextColor}
+      badgeBorderColor={badgeBorderColor}
+    />
+  );
+
   const taskPill = (
     <g
       className={pillClasses}
@@ -163,14 +258,16 @@ const TaskNode: React.FC<TaskNodeProps> = ({
     >
       <NodeShadows />
       <rect
+        x={0}
+        y={0}
         width={pillWidth}
         height={height}
         rx={height / 2}
         className={css(styles.topologyPipelinesPillBackground)}
         filter={filter}
       />
-      <g transform={`translate(${labelStartX}, ${(height + textHeight / 2) / 2})`}>
-        {element.getLabel() !== truncatedName && !disableTooltip ? (
+      <g transform={`translate(${textStartX}, ${paddingY + textHeight / 2 + 1})`}>
+        {element.getLabel() !== label && !disableTooltip ? (
           <Tooltip content={element.getLabel()}>
             <g>{nameLabel}</g>
           </Tooltip>
@@ -179,7 +276,7 @@ const TaskNode: React.FC<TaskNodeProps> = ({
         )}
       </g>
       {status && showStatusState && (
-        <g transform={`translate(${paddingX + (statusWidth - statusIconSize) / 2}, ${(height - statusIconSize) / 2})`}>
+        <g transform={`translate(${statusStartX + paddingX / 2}, ${(height - statusIconSize) / 2})`} ref={statusRef}>
           <g
             className={css(
               styles.topologyPipelinesPillStatus,
@@ -192,6 +289,16 @@ const TaskNode: React.FC<TaskNodeProps> = ({
           </g>
         </g>
       )}
+      {taskIconComponent &&
+        (taskIconTooltip ? <Tooltip content={taskIconTooltip}>{taskIconComponent}</Tooltip> : taskIconComponent)}
+      {badgeComponent &&
+        (badgePopoverParams ? (
+          <g onClick={e => e.stopPropagation()}>
+            <Popover {...badgePopoverParams}>{badgeComponent}</Popover>
+          </g>
+        ) : (
+          badgeComponent
+        ))}
       {actionIcon && (
         <>
           <line

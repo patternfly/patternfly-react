@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tab, Tabs, TabTitleText } from '@patternfly/react-core';
-import { PipelineTasks, TASKS_TITLE } from './PipelineTasks';
+import { TASKS_TITLE, TopologyPipelineTasks } from './PipelineTasks';
 
 import './TopologyDemo.css';
 import { LAYOUT_TITLE, PipelineLayout } from './PipelineLayout';
@@ -19,7 +19,7 @@ export const TopologyPipelineDemo: React.FunctionComponent = () => {
     <div className="pf-ri__topology-demo">
       <Tabs unmountOnExit activeKey={activeKey} onSelect={handleTabClick}>
         <Tab eventKey={TASKS} title={<TabTitleText>{TASKS_TITLE}</TabTitleText>}>
-          <PipelineTasks />
+          <TopologyPipelineTasks />
         </Tab>
         <Tab eventKey={LAYOUT} title={<TabTitleText>{LAYOUT_TITLE}</TabTitleText>}>
           <PipelineLayout />

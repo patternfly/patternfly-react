@@ -58,7 +58,7 @@
   fill: var(--pf-global--palette--light-blue-200);
 }
 
-.pf-c-page__main-section#\/topology-demo-page-section {
+.pf-c-page__main-section#\/topology-demo-page-section, .pf-c-page__main-section#\/topology-pipelines-demo-page-section {
   --pf-c-page__main-section--PaddingTop: 0;
   --pf-c-page__main-section--PaddingRight: 0;
   --pf-c-page__main-section--PaddingLeft: 0;

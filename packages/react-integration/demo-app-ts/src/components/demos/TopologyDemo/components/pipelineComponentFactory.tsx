@@ -14,7 +14,9 @@ import {
   ContextMenuSeparator,
   ContextMenuItem,
   withContextMenu,
-  withSelection
+  withSelection,
+  withPanZoom,
+  GraphComponent
 } from '@patternfly/react-topology';
 import DemoTaskNode from './DemoTaskNode';
 import * as React from 'react';
@@ -35,10 +37,13 @@ const createContextMenuItems = (...labels: string[]): React.ReactElement[] => la
 
 const defaultMenu = createContextMenuItems('First', 'Second', 'Third', '-', 'Fourth');
 
-const shapesComponentFactory: ComponentFactory = (
+const pipelineComponentFactory: ComponentFactory = (
   kind: ModelKind,
   type: string
 ): ComponentType<{ element: GraphElement }> | undefined => {
+  if (kind === ModelKind.graph) {
+    return withPanZoom()(GraphComponent);
+  }
   switch (type) {
     case DEFAULT_TASK_NODE_TYPE:
       return withContextMenu(() => defaultMenu)(withSelection()(DemoTaskNode));
@@ -56,4 +61,4 @@ const shapesComponentFactory: ComponentFactory = (
   }
 };
 
-export default shapesComponentFactory;
+export default pipelineComponentFactory;
