@@ -2,47 +2,52 @@
 
 exports[`renders default truncation 1`] = `
 <DocumentFragment>
-  <span
-    class="pf-c-truncate"
+  <div
+    data-testid="Tooltip-mock"
   >
-    <span
-      class="pf-c-truncate__start"
+    <div
+      data-testid="Tooltip-mock-content-container"
     >
-      Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
+      Test Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
+    </div>
+    <p>
+      position: top
+    </p>
+    <span
+      class="pf-c-truncate"
+    >
+      <span
+        class="pf-c-truncate__start"
+      >
+        Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
+      </span>
     </span>
-  </span>
+  </div>
 </DocumentFragment>
 `;
 
-exports[`renders middle truncation 1`] = `
+exports[`renders start truncation with &lrm; at end 1`] = `
 <DocumentFragment>
-  <span
-    class="pf-c-truncate"
+  <div
+    data-testid="Tooltip-mock"
   >
-    <span
-      class="pf-c-truncate__start"
+    <div
+      data-testid="Tooltip-mock-content-container"
     >
-      Vestibulum interdum risus et enim faucibus, sit amet molestie est ac
-    </span>
+      Test Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.
+    </div>
+    <p>
+      position: top
+    </p>
     <span
-      class="pf-c-truncate__end"
+      class="pf-c-truncate"
     >
-      cumsan.
+      <span
+        class="pf-c-truncate__end"
+      >
+        Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.‎
+      </span>
     </span>
-  </span>
-</DocumentFragment>
-`;
-
-exports[`renders start truncation 1`] = `
-<DocumentFragment>
-  <span
-    class="pf-c-truncate"
-  >
-    <span
-      class="pf-c-truncate__end"
-    >
-      Vestibulum interdum risus et enim faucibus, sit amet molestie est accumsan.‎
-    </span>
-  </span>
+  </div>
 </DocumentFragment>
 `;
