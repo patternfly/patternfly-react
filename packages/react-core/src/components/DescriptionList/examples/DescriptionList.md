@@ -136,6 +136,11 @@ A [card component](/components/card) can be used as description list group wrapp
 ```ts file='./DescriptionListGroupWrapperAsCard.tsx'
 ```
 
+### With Card modifiers - selectable card
+
+``` ts file='./DescriptionListCardWithCardModifiers.tsx'
+```
+
 ### Display lg and card variant
 
 ```ts file='./DescriptionListDisplayLgAndCard.tsx'
