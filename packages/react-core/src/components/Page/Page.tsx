@@ -302,15 +302,13 @@ export class Page extends React.Component<PageProps, PageState> {
         <section
           className={css(
             styles.pageMainBreadcrumb,
-            breadcrumbProps &&
-              breadcrumbProps.stickyOnBreakpoint &&
-              formatBreakpointMods(
-                breadcrumbProps.stickyOnBreakpoint,
-                styles,
-                'sticky-',
-                getVerticalBreakpoint(height),
-                true
-              )
+            formatBreakpointMods(
+              breadcrumbProps?.stickyOnBreakpoint,
+              styles,
+              'sticky-',
+              getVerticalBreakpoint(height),
+              true
+            )
           )}
         >
           {breadcrumb}
