@@ -14,10 +14,6 @@ import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-i
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 import { Link } from '@reach/router';
 
-## Component and properties overview
-
-The `button` component contains properties that allow you to alter a button's styling to convey different button actions, states, and intentions.
-
 ## Examples
 
 ### Variants
@@ -38,35 +34,35 @@ PatternFly supports several button styling variants to be used in different scen
 | Plain | Plain buttons have no styling and are intended to be labeled with icons. |
 | Control | Control buttons can be labeled with text or icons. Primarily intended to be paired with other controls in an [input group](https://www.patternfly.org/v4/components/input-group). | 
 
-#### Disabled buttons
+**Disabled buttons**
 
 To indicate that an action is currently unavailable, all button variations can be disabled using the `isDisabled` property.
 
 ```ts file="./ButtonDisabled.tsx"
 ```
 
-#### Small buttons
+**Small buttons**
 
-To fit into tight spaces, primary, secondary. tertiary, danger, and warning button variations can be made smaller using the `isSmall` property.
+To fit into tight spaces, primary, secondary, tertiary, danger, and warning button variations can be made smaller using the `isSmall` property.
 
 ```ts file="./ButtonSmall.tsx"
 ```
 
-#### Call to action (CTA) buttons
+**Call to action (CTA) buttons**
 
 CTA buttons and links direct users to complete an action. Primary, secondary, tertiary, and link button variants can be styled as CTAs using the `isLarge` property. 
 
 ```ts file="./ButtonCallToAction.tsx"
 ```
 
-#### Block level buttons
+**Block level buttons**
 
 Block level buttons span the full width of the parent element and can be enabled using the `isBlock` property.
 
 ```ts file="./ButtonBlock.tsx"
 ```
 
-#### Progress indicators
+**Progress indicators**
 
 Progress indicators can be added to buttons to identify that an action is in progress after a click. 
 
@@ -75,21 +71,21 @@ Progress indicators can be added to buttons to identify that an action is in pro
 
 ### Links 
 
-#### Links as buttons
+**Links as buttons**
 
 Buttons that link to another resource may take the form of primary, secondary, tertiary, or link variants. Use `component="a"` and an `href` property to designate the button's target link.
 
 ```ts file="./ButtonLinks.tsx"
 ```
 
-#### Inline link as span
+**Inline link as span**
 
 Inline links should use `component="span"` and the `isInline` property to wrap inline with surrounding text.
 
 ```ts file="./ButtonInlineSpanLink.tsx"
 ```
 
-#### Router link
+**Router link**
 
 Router links can be used for in-app linking in React environments to prevent page reloading.
 
@@ -105,14 +101,14 @@ Buttons that are aria-disabled are similar to normal disabled buttons, except th
 ```ts file="./ButtonAriaDisabled.tsx"
 ```
 
-#### With tooltip
+**With tooltip**
 
 Unlike normal disabled buttons, aria-disabled buttons can support tooltips.
 
 ```ts file="./ButtonAriaDisabledTooltip.tsx"
 ```
 
-#### Link as button with tooltip
+**Link as button with tooltip**
 
 Aria-disabled buttons can operate as links, which also support tooltips.
 
