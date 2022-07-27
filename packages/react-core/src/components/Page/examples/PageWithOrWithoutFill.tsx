@@ -11,27 +11,26 @@ import {
   PageToggleButton,
   Toolbar,
   ToolbarContent,
-  ToolbarItem,
-  Card,
-  CardBody
+  ToolbarItem
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
-export const CenterAlignedPageSection: React.FunctionComponent = () => {
+export const PageWithOrWithoutFill: React.FunctionComponent = () => {
   const [isNavOpen, setIsNavOpen] = React.useState(true);
 
   const onNavToggle = () => {
     setIsNavOpen(!isNavOpen);
   };
+
   const headerToolbar = (
-    <Toolbar id="centered-toolbar">
+    <Toolbar id="fill-toolbar">
       <ToolbarContent>
         <ToolbarItem>header-tools</ToolbarItem>
       </ToolbarContent>
     </Toolbar>
   );
 
-  const Header = (
+  const header = (
     <Masthead>
       <MastheadToggle>
         <PageToggleButton
@@ -39,7 +38,7 @@ export const CenterAlignedPageSection: React.FunctionComponent = () => {
           aria-label="Global navigation"
           isNavOpen={isNavOpen}
           onNavToggle={onNavToggle}
-          id="centered-nav-toggle"
+          id="fill-nav-toggle"
         >
           <BarsIcon />
         </PageToggleButton>
@@ -52,21 +51,16 @@ export const CenterAlignedPageSection: React.FunctionComponent = () => {
       <MastheadContent>{headerToolbar}</MastheadContent>
     </Masthead>
   );
-  const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="main-padding-sidebar" />;
+
+  const sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="fill-sidebar" />;
+
   return (
-    <Page header={Header} sidebar={Sidebar}>
-      <PageSection isWidthLimited isCenterAligned>
-        <Card>
-          <CardBody>
-            When a width limited page section is wider than the value of
-            <code>--pf-c-page--section--m-limit-width--MaxWidth</code>, the section will be centered in the main
-            section.
-            <br />
-            <br />
-            The content in this example is placed in a card to better illustrate how the section behaves when it is
-            centered. A card is not required to center a page section.
-          </CardBody>
-        </Card>
+    <Page header={header} sidebar={sidebar}>
+      <PageSection>A default page section</PageSection>
+      <PageSection isFilled={true}>This section fills the available space.</PageSection>
+      <PageSection isFilled={false}>
+        This section is set to not fill the available space, since the last page section is set to fill the available
+        space by default.
       </PageSection>
     </Page>
   );

@@ -8,7 +8,7 @@ import {
   PageSectionVariants
 } from '@patternfly/react-core';
 
-export const VerticalPage: React.FunctionComponent = () => {
+export const PageVerticalNavUsingPageHeaderComponent: React.FunctionComponent = () => {
   const [isNavOpen, setIsNavOpen] = React.useState(true);
 
   const onNavToggle = () => {
@@ -19,7 +19,8 @@ export const VerticalPage: React.FunctionComponent = () => {
     href: 'https://patternfly.org',
     target: '_blank'
   };
-  const Header = (
+
+  const header = (
     <PageHeader
       logo="Logo"
       logoProps={logoProps}
@@ -30,9 +31,11 @@ export const VerticalPage: React.FunctionComponent = () => {
       navToggleId="vertical-pageheader-toggle"
     />
   );
-  const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="vertical-pageheader-sidebar" />;
+
+  const sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="vertical-pageheader-sidebar" />;
+
   return (
-    <Page header={Header} sidebar={Sidebar}>
+    <Page header={header} sidebar={sidebar}>
       <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
       <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
       <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>

@@ -24,7 +24,7 @@ import {
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
-export const GroupPage: React.FunctionComponent = () => {
+export const PageGroupSection: React.FunctionComponent = () => {
   const [isNavOpen, setIsNavOpen] = React.useState(true);
 
   const onNavToggle = () => {
@@ -39,7 +39,7 @@ export const GroupPage: React.FunctionComponent = () => {
     </Toolbar>
   );
 
-  const Header = (
+  const header = (
     <Masthead>
       <MastheadToggle>
         <PageToggleButton
@@ -60,10 +60,11 @@ export const GroupPage: React.FunctionComponent = () => {
       <MastheadContent>{headerToolbar}</MastheadContent>
     </Masthead>
   );
-  const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="group-section-sidebar" />;
+
+  const sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="group-section-sidebar" />;
 
   return (
-    <Page header={Header} sidebar={Sidebar}>
+    <Page header={header} sidebar={sidebar}>
       <PageGroup>
         <PageNavigation>
           <Nav aria-label="Group section navigation" variant="tertiary">

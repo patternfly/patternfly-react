@@ -11,11 +11,13 @@ import {
   PageToggleButton,
   Toolbar,
   ToolbarContent,
-  ToolbarItem
+  ToolbarItem,
+  Card,
+  CardBody
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
-export const FillPage: React.FunctionComponent = () => {
+export const PageCenteredSection: React.FunctionComponent = () => {
   const [isNavOpen, setIsNavOpen] = React.useState(true);
 
   const onNavToggle = () => {
@@ -23,14 +25,14 @@ export const FillPage: React.FunctionComponent = () => {
   };
 
   const headerToolbar = (
-    <Toolbar id="fill-toolbar">
+    <Toolbar id="centered-toolbar">
       <ToolbarContent>
         <ToolbarItem>header-tools</ToolbarItem>
       </ToolbarContent>
     </Toolbar>
   );
 
-  const Header = (
+  const header = (
     <Masthead>
       <MastheadToggle>
         <PageToggleButton
@@ -38,7 +40,7 @@ export const FillPage: React.FunctionComponent = () => {
           aria-label="Global navigation"
           isNavOpen={isNavOpen}
           onNavToggle={onNavToggle}
-          id="fill-nav-toggle"
+          id="centered-nav-toggle"
         >
           <BarsIcon />
         </PageToggleButton>
@@ -51,14 +53,23 @@ export const FillPage: React.FunctionComponent = () => {
       <MastheadContent>{headerToolbar}</MastheadContent>
     </Masthead>
   );
-  const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="fill-sidebar" />;
+
+  const sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="main-padding-sidebar" />;
+
   return (
-    <Page header={Header} sidebar={Sidebar}>
-      <PageSection>A default page section</PageSection>
-      <PageSection isFilled={true}>This section fills the available space.</PageSection>
-      <PageSection isFilled={false}>
-        This section is set to not fill the available space, since the last page section is set to fill the available
-        space by default.
+    <Page header={header} sidebar={sidebar}>
+      <PageSection isWidthLimited isCenterAligned>
+        <Card>
+          <CardBody>
+            When a width limited page section is wider than the value of
+            <code>--pf-c-page--section--m-limit-width--MaxWidth</code>, the section will be centered in the main
+            section.
+            <br />
+            <br />
+            The content in this example is placed in a card to better illustrate how the section behaves when it is
+            centered. A card is not required to center a page section.
+          </CardBody>
+        </Card>
       </PageSection>
     </Page>
   );

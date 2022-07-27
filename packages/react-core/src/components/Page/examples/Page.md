@@ -25,47 +25,47 @@ import './page.css';
 
 ### Vertical nav
 
-```ts file="./VerticalNav.tsx"
+```ts file="./PageVerticalNav.tsx"
 ```
 
 ### Horizontal nav
 
-```ts file="./HorizontalNav.tsx"
+```ts file="./PageHorizontalNav.tsx"
 ```
 
 ### Tertiary nav
 
-```ts file="./TertiaryNav.tsx"
+```ts file="./PageTertiaryNav.tsx"
 ```
 
 ### With or without fill
 
-```ts file="./WithOrWithoutFill.tsx"
+```ts file="./PageWithOrWithoutFill.tsx"
 ```
 
 ### Main section padding
 
-```ts file="./MainSectionPadding.tsx"
+```ts file="./PageMainSectionPadding.tsx"
 ```
 
 ### Uncontrolled nav
 
-```ts file="./UncontrolledNav.tsx"
+```ts file="./PageUncontrolledNav.tsx"
 ```
 
 ### Group section
 
-```ts file="./GroupSection.tsx"
+```ts file="./PageGroupSection.tsx"
 ```
 
 ### Vertical nav using PageHeader component
 
-This example is provided becuase PageHeader and PageHeaderTools are still in use; however, going forward Masthead and Toolbar should be used to make headers rather than PageHeader and PageHeaderTools.
+This example is provided because PageHeader and PageHeaderTools are still in use; however, going forward Masthead and Toolbar should be used to make headers rather than PageHeader and PageHeaderTools.
 
-```ts file="./VerticalNavUsingPageHeaderComponent.tsx"
+```ts file="./PageVerticalNavUsingPageHeaderComponent.tsx"
 ```
 
 ### Centered section
 
-```ts file="./CenteredSection.tsx"
+```ts file="./PageCenteredSection.tsx"
 ```

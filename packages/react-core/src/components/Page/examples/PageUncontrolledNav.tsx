@@ -16,7 +16,7 @@ import {
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
-export const UncontrolledNavPage: React.FunctionComponent = () => {
+export const PageUncontrolledNav: React.FunctionComponent = () => {
   const headerToolbar = (
     <Toolbar id="uncontrolled-toolbar">
       <ToolbarContent>
@@ -25,7 +25,7 @@ export const UncontrolledNavPage: React.FunctionComponent = () => {
     </Toolbar>
   );
 
-  const Header = (
+  const header = (
     <Masthead>
       <MastheadToggle>
         <PageToggleButton variant="plain" aria-label="Global navigation" id="uncontrolled-nav-toggle">
@@ -40,9 +40,11 @@ export const UncontrolledNavPage: React.FunctionComponent = () => {
       <MastheadContent>{headerToolbar}</MastheadContent>
     </Masthead>
   );
-  const Sidebar = <PageSidebar nav="Navigation" id="uncontrolled-sidebar" />;
+
+  const sidebar = <PageSidebar nav="Navigation" id="uncontrolled-sidebar" />;
+
   return (
-    <Page isManagedSidebar header={Header} sidebar={Sidebar}>
+    <Page isManagedSidebar header={header} sidebar={sidebar}>
       <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
       <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
       <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>

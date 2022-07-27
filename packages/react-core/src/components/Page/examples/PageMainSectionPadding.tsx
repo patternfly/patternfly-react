@@ -16,7 +16,7 @@ import {
 } from '@patternfly/react-core';
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 
-export const VerticalPage: React.FunctionComponent = () => {
+export const PageMainSectionPadding: React.FunctionComponent = () => {
   const [isNavOpen, setIsNavOpen] = React.useState(true);
 
   const onNavToggle = () => {
@@ -31,7 +31,7 @@ export const VerticalPage: React.FunctionComponent = () => {
     </Toolbar>
   );
 
-  const Header = (
+  const header = (
     <Masthead>
       <MastheadToggle>
         <PageToggleButton
@@ -52,9 +52,11 @@ export const VerticalPage: React.FunctionComponent = () => {
       <MastheadContent>{headerToolbar}</MastheadContent>
     </Masthead>
   );
-  const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="main-padding-sidebar" />;
+
+  const sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="main-padding-sidebar" />;
+
   return (
-    <Page header={Header} sidebar={Sidebar}>
+    <Page header={header} sidebar={sidebar}>
       <PageSection>Section with default padding</PageSection>
       <PageSection variant={PageSectionVariants.light} padding={{ default: 'noPadding' }}>
         Section with no padding
