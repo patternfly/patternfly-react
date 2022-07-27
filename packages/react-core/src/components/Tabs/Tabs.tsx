@@ -462,15 +462,17 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               )}
             </GenerateId>
           )}
-          <button
-            className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
-            aria-label={leftScrollAriaLabel}
-            onClick={this.scrollLeft}
-            disabled={disableLeftScrollButton}
-            aria-hidden={disableLeftScrollButton}
-          >
-            <AngleLeftIcon />
-          </button>
+          {!isHorizontalOverflow && (
+            <button
+              className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
+              aria-label={leftScrollAriaLabel}
+              onClick={this.scrollLeft}
+              disabled={disableLeftScrollButton}
+              aria-hidden={disableLeftScrollButton}
+            >
+              <AngleLeftIcon />
+            </button>
+          )}
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons} role="tablist">
             {isHorizontalOverflow ? filteredChildrenWithoutOverflow : filteredChildren}
             {isHorizontalOverflow && overflowingTabCount > 0 && (
@@ -481,15 +483,17 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               />
             )}
           </ul>
-          <button
-            className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
-            aria-label={rightScrollAriaLabel}
-            onClick={this.scrollRight}
-            disabled={disableRightScrollButton}
-            aria-hidden={disableRightScrollButton}
-          >
-            <AngleRightIcon />
-          </button>
+          {!isHorizontalOverflow && (
+            <button
+              className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
+              aria-label={rightScrollAriaLabel}
+              onClick={this.scrollRight}
+              disabled={disableRightScrollButton}
+              aria-hidden={disableRightScrollButton}
+            >
+              <AngleRightIcon />
+            </button>
+          )}
           {onAdd !== undefined && (
             <span className={css(styles.tabsAdd)}>
               <Button variant="plain" aria-label={addButtonAriaLabel || 'Add tab'} onClick={onAdd}>
