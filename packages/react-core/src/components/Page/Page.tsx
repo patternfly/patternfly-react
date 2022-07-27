@@ -278,21 +278,20 @@ export class Page extends React.Component<PageProps, PageState> {
     }
 
     let crumb = null;
+
     if (breadcrumb && isBreadcrumbWidthLimited) {
       crumb = (
         <section
           className={css(
             styles.pageMainBreadcrumb,
             styles.modifiers.limitWidth,
-            breadcrumbProps &&
-              breadcrumbProps.stickyOnBreakpoint &&
-              formatBreakpointMods(
-                breadcrumbProps.stickyOnBreakpoint,
-                styles,
-                'sticky-',
-                getVerticalBreakpoint(height),
-                true
-              )
+            formatBreakpointMods(
+              breadcrumbProps?.stickyOnBreakpoint,
+              styles,
+              'sticky-',
+              getVerticalBreakpoint(height),
+              true
+            )
           )}
         >
           <div className={css(styles.pageMainBody)}>{breadcrumb}</div>
@@ -354,10 +353,9 @@ export class Page extends React.Component<PageProps, PageState> {
           {...rest}
           className={css(
             styles.page,
-            width !== null && 'pf-m-resize-observer',
+            width !== null && height !== null && 'pf-m-resize-observer',
             width !== null && `pf-m-breakpoint-${getBreakpoint(width)}`,
-            height !== null && 'pf-m-resize-observer',
-            height !== null && `pf-m-breakpoint-${getVerticalBreakpoint(height)}`,
+            height !== null && `pf-m-height-breakpoint-${getVerticalBreakpoint(height)}`,
             className
           )}
         >

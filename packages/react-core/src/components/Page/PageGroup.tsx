@@ -44,9 +44,9 @@ export const PageGroup = ({
       {...props}
       className={css(
         styles.pageMainGroup,
-        formatBreakpointMods(stickyOnBreakpoint, styles, 'sticky-', getVerticalBreakpoint(height), true),
-        sticky === 'top' && styles.modifiers.stickyTop,
-        sticky === 'bottom' && styles.modifiers.stickyBottom,
+        formatBreakpointMods(stickyOnBreakpoint, styles, '-sticky', getVerticalBreakpoint(height), true),
+        !stickyOnBreakpoint && sticky === 'top' && styles.modifiers.stickyTop,
+        !stickyOnBreakpoint && sticky === 'bottom' && styles.modifiers.stickyBottom,
         hasShadowTop && styles.modifiers.shadowTop,
         hasShadowBottom && styles.modifiers.shadowBottom,
         hasOverflowScroll && styles.modifiers.overflowScroll,
