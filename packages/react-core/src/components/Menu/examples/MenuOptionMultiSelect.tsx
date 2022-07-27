@@ -1,13 +1,13 @@
 import React from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
+import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 
-export const MenuWithCheckbox: React.FunctionComponent = () => {
+export const MenuOptionMultiSelect: React.FunctionComponent = () => {
   const [selectedItems, setSelectedItems] = React.useState<number[]>([]);
 
-  /* eslint no-unused-vars: ["error", {"args": "after-used"}] */
   const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
     const item = itemId as number;
-    if (selectedItems.includes(item)) {
+    if (selectedItems.indexOf(item) !== -1) {
       setSelectedItems(selectedItems.filter(id => id !== item));
     } else {
       setSelectedItems([...selectedItems, item]);
@@ -15,17 +15,13 @@ export const MenuWithCheckbox: React.FunctionComponent = () => {
   };
 
   return (
-    <Menu onSelect={onSelect} selected={selectedItems}>
+    <Menu onSelect={onSelect} activeItemId={0} selected={selectedItems}>
       <MenuContent>
         <MenuList>
-          <MenuItem hasCheck itemId={0} isSelected={selectedItems.includes(0)}>
-            Checkbox 1
-          </MenuItem>
-          <MenuItem hasCheck itemId={1} isSelected={selectedItems.includes(1)}>
-            Checkbox 2
-          </MenuItem>
-          <MenuItem hasCheck itemId={2} isDisabled>
-            Checkbox 3
+          <MenuItem itemId={0}>Option 1</MenuItem>
+          <MenuItem itemId={1}>Option 2</MenuItem>
+          <MenuItem icon={<TableIcon aria-hidden />} itemId={2}>
+            Option 3
           </MenuItem>
         </MenuList>
       </MenuContent>

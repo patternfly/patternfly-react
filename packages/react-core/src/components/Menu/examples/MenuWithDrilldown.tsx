@@ -5,11 +5,11 @@ import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-i
 import LayerGroupIcon from '@patternfly/react-icons/dist/esm/icons/layer-group-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 
-export const MenuDrilldownSubmenuFunctions: React.FunctionComponent = () => {
+export const MenuWithDrilldown: React.FunctionComponent = () => {
   const [menuDrilledIn, setMenuDrilledIn] = React.useState<string[]>([]);
   const [drilldownPath, setDrilldownPath] = React.useState<string[]>([]);
   const [menuHeights, setMenuHeights] = React.useState<any>({});
-  const [activeMenu, setActiveMenu] = React.useState<string>('functions-rootMenu');
+  const [activeMenu, setActiveMenu] = React.useState<string>('drilldown-rootMenu');
 
   const drillIn = (fromMenuId: string, toMenuId: string, pathId: string) => {
     setMenuDrilledIn([...menuDrilledIn, fromMenuId]);
@@ -33,7 +33,7 @@ export const MenuDrilldownSubmenuFunctions: React.FunctionComponent = () => {
 
   return (
     <Menu
-      id="functions-rootMenu"
+      id="drilldown-rootMenu"
       containsDrilldown
       drilldownItemPath={drilldownPath}
       drilledInMenus={menuDrilledIn}
@@ -47,8 +47,8 @@ export const MenuDrilldownSubmenuFunctions: React.FunctionComponent = () => {
           <MenuItem
             itemId="group:start_rollout"
             direction="down"
-            drilldownMenu={() => (
-              <DrilldownMenu id="functions-drilldownMenuStart">
+            drilldownMenu={
+              <DrilldownMenu id="drilldown-drilldownMenuStart">
                 <MenuItem itemId="group:start_rollout_breadcrumb" direction="up">
                   Start rollout
                 </MenuItem>
@@ -57,8 +57,8 @@ export const MenuDrilldownSubmenuFunctions: React.FunctionComponent = () => {
                   itemId="group:app_grouping"
                   description="Groups A-C"
                   direction="down"
-                  drilldownMenu={() => (
-                    <DrilldownMenu id="functions-drilldownMenuStartGrouping">
+                  drilldownMenu={
+                    <DrilldownMenu id="drilldown-drilldownMenuStartGrouping">
                       <MenuItem itemId="group:app_grouping_breadcrumb" direction="up">
                         Application grouping
                       </MenuItem>
@@ -67,7 +67,7 @@ export const MenuDrilldownSubmenuFunctions: React.FunctionComponent = () => {
                       <MenuItem itemId="group_b">Group B</MenuItem>
                       <MenuItem itemId="group_c">Group C</MenuItem>
                     </DrilldownMenu>
-                  )}
+                  }
                 >
                   Application grouping
                 </MenuItem>
@@ -75,8 +75,8 @@ export const MenuDrilldownSubmenuFunctions: React.FunctionComponent = () => {
                 <MenuItem
                   itemId="group:labels"
                   direction="down"
-                  drilldownMenu={() => (
-                    <DrilldownMenu id="functions-drilldownMenuStartLabels">
+                  drilldownMenu={
+                    <DrilldownMenu id="drilldown-drilldownMenuStartLabels">
                       <MenuItem itemId="group:labels_breadcrumb" direction="up">
                         Labels
                       </MenuItem>
@@ -85,21 +85,21 @@ export const MenuDrilldownSubmenuFunctions: React.FunctionComponent = () => {
                       <MenuItem itemId="label_2">Label 2</MenuItem>
                       <MenuItem itemId="label_3">Label 3</MenuItem>
                     </DrilldownMenu>
-                  )}
+                  }
                 >
                   Labels
                 </MenuItem>
                 <MenuItem itemId="annotations">Annotations</MenuItem>
               </DrilldownMenu>
-            )}
+            }
           >
             Start rollout
           </MenuItem>
           <MenuItem
             itemId="group:pause_rollout"
             direction="down"
-            drilldownMenu={() => (
-              <DrilldownMenu id="functions-drilldownMenuPause">
+            drilldownMenu={
+              <DrilldownMenu id="drilldown-drilldownMenuPause">
                 <MenuItem itemId="group:pause_rollout_breadcrumb" direction="up">
                   Pause rollouts
                 </MenuItem>
@@ -108,8 +108,8 @@ export const MenuDrilldownSubmenuFunctions: React.FunctionComponent = () => {
                   itemId="group:app_grouping"
                   description="Groups A-C"
                   direction="down"
-                  drilldownMenu={() => (
-                    <DrilldownMenu id="functions-drilldownMenuGrouping">
+                  drilldownMenu={
+                    <DrilldownMenu id="drilldown-drilldownMenuGrouping">
                       <MenuItem itemId="group:app_grouping_breadcrumb" direction="up">
                         Application grouping
                       </MenuItem>
@@ -118,7 +118,7 @@ export const MenuDrilldownSubmenuFunctions: React.FunctionComponent = () => {
                       <MenuItem itemId="group_b">Group B</MenuItem>
                       <MenuItem itemId="group_c">Group C</MenuItem>
                     </DrilldownMenu>
-                  )}
+                  }
                 >
                   Application grouping
                 </MenuItem>
@@ -126,8 +126,8 @@ export const MenuDrilldownSubmenuFunctions: React.FunctionComponent = () => {
                 <MenuItem
                   itemId="group:labels"
                   direction="down"
-                  drilldownMenu={() => (
-                    <DrilldownMenu id="functions-drilldownMenuLabels">
+                  drilldownMenu={
+                    <DrilldownMenu id="drilldown-drilldownMenuLabels">
                       <MenuItem itemId="group:labels_breadcrumb" direction="up">
                         Labels
                       </MenuItem>
@@ -136,13 +136,13 @@ export const MenuDrilldownSubmenuFunctions: React.FunctionComponent = () => {
                       <MenuItem itemId="label_2">Label 2</MenuItem>
                       <MenuItem itemId="label_3">Label 3</MenuItem>
                     </DrilldownMenu>
-                  )}
+                  }
                 >
                   Labels
                 </MenuItem>
                 <MenuItem itemId="annotations">Annotations</MenuItem>
               </DrilldownMenu>
-            )}
+            }
           >
             Pause rollouts
           </MenuItem>
@@ -150,8 +150,8 @@ export const MenuDrilldownSubmenuFunctions: React.FunctionComponent = () => {
             itemId="group:storage"
             icon={<StorageDomainIcon aria-hidden />}
             direction="down"
-            drilldownMenu={() => (
-              <DrilldownMenu id="functions-drilldownMenuStorage">
+            drilldownMenu={
+              <DrilldownMenu id="drilldown-drilldownMenuStorage">
                 <MenuItem itemId="group:storage_breadcrumb" icon={<StorageDomainIcon aria-hidden />} direction="up">
                   Add storage
                 </MenuItem>
@@ -166,7 +166,7 @@ export const MenuDrilldownSubmenuFunctions: React.FunctionComponent = () => {
                   Docker file
                 </MenuItem>
               </DrilldownMenu>
-            )}
+            }
           >
             Add storage
           </MenuItem>
