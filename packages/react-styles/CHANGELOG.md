@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.77.5 (2022-07-27)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
 ## 4.77.4 (2022-07-27)
 
 **Note:** Version bump only for package @patternfly/react-styles
