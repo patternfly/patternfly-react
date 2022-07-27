@@ -50,7 +50,7 @@ describe('DataList', () => {
 
   test('List renders with a hidden input to improve a11y when selectableRow is passed', () => {
     render(
-      <DataList aria-label="this is a simple list" selectableRow={{ type: 'multiple', onChange: () => {} }}>
+      <DataList aria-label="this is a simple list" selectableRow={{ onChange: () => {} }}>
         <DataListItem>
           <DataListItemRow aria-labelledby="test-id">
             <p id="test-id">Test</p>
@@ -59,7 +59,7 @@ describe('DataList', () => {
       </DataList>
     );
 
-    const selectableInput = screen.getByRole('checkbox', { hidden: true });
+    const selectableInput = screen.getByRole('radio', { hidden: true });
 
     expect(selectableInput).toBeInTheDocument();
   });
@@ -75,35 +75,17 @@ describe('DataList', () => {
       </DataList>
     );
 
-    const selectableInput = screen.queryByRole('checkbox', { hidden: true });
+    const selectableInput = screen.queryByRole('radio', { hidden: true });
 
     expect(selectableInput).not.toBeInTheDocument();
-  });
-
-  test('List hidden input renders as a radio when selectableRow.type is radio', () => {
-    render(
-      <DataList aria-label="this is a simple list" selectableRow={{ type: 'single', onChange: () => {} }}>
-        <DataListItem>
-          <DataListItemRow aria-labelledby="test-id">
-            <p id="test-id">Test</p>
-          </DataListItemRow>
-        </DataListItem>
-      </DataList>
-    );
-
-    const selectableRadioInput = screen.getByRole('radio', { hidden: true });
-    const selectableCheckboxInput = screen.queryByRole('checkbox', { hidden: true });
-
-    expect(selectableRadioInput).toBeInTheDocument();
-    expect(selectableCheckboxInput).not.toBeInTheDocument();
   });
 
   test('List calls selectableRow.onChange when the selectable input changes', () => {
     const mock = jest.fn();
 
     render(
-      <DataList aria-label="this is a simple list" selectableRow={{ type: 'multiple', onChange: mock }}>
-        <DataListItem>
+      <DataList aria-label="this is a simple list" selectableRow={{ onChange: mock }} selectedDataListItemId=''>
+        <DataListItem id='item-test-id'>
           <DataListItemRow aria-labelledby="test-id">
             <p id="test-id">Test</p>
           </DataListItemRow>
@@ -111,7 +93,7 @@ describe('DataList', () => {
       </DataList>
     );
 
-    const selectableInput = screen.getByRole('checkbox', { hidden: true });
+    const selectableInput = screen.getByRole('radio', { hidden: true });
     userEvent.click(selectableInput);
 
     expect(mock).toHaveBeenCalled();
@@ -121,8 +103,8 @@ describe('DataList', () => {
     const mock = jest.fn();
 
     render(
-      <DataList aria-label="this is a simple list" selectableRow={{ type: 'multiple', onChange: mock }}>
-        <DataListItem>
+      <DataList aria-label="this is a simple list" selectableRow={{ onChange: mock }} selectedDataListItemId=''>
+        <DataListItem id='item-test-id'>
           <DataListItemRow aria-labelledby="test-id">
             <p id="test-id">Test</p>
           </DataListItemRow>
@@ -135,7 +117,7 @@ describe('DataList', () => {
 
   test('Item applies selectableInputAriaLabel to the hidden input', () => {
     render(
-      <DataList aria-label="this is a simple list" selectableRow={{ type: 'multiple', onChange: () => {} }}>
+      <DataList aria-label="this is a simple list" selectableRow={{ onChange: () => {} }}>
         <DataListItem selectableInputAriaLabel="Data list item label test">
           <DataListItemRow aria-labelledby="test-id">
             <p id="test-id">Test</p>
@@ -144,35 +126,35 @@ describe('DataList', () => {
       </DataList>
     );
 
-    const selectableInput = screen.getByRole('checkbox', { hidden: true });
+    const selectableInput = screen.getByRole('radio', { hidden: true });
 
     expect(selectableInput).toHaveAccessibleName('Data list item label test');
   });
 
   test('Item defaults to labelling its input using its aria-labelledby prop', () => {
     render(
-      <DataList aria-label="this is a simple list" selectableRow={{ type: 'multiple', onChange: () => {} }}>
+      <DataList aria-label="this is a simple list" selectableRow={{ onChange: () => {} }}>
         <DataListItem aria-labelledby="test-id">
           <p id="test-id">Test cell content</p>
         </DataListItem>
       </DataList>
     );
 
-    const selectableInput = screen.getByRole('checkbox', { hidden: true });
+    const selectableInput = screen.getByRole('radio', { hidden: true });
 
     expect(selectableInput).toHaveAccessibleName('Test cell content');
   });
 
   test('Item prioritizes selectableInputAriaLabel over aria-labelledby prop', () => {
     render(
-      <DataList aria-label="this is a simple list" selectableRow={{ type: 'multiple', onChange: () => {} }}>
+      <DataList aria-label="this is a simple list" selectableRow={{ onChange: () => {} }}>
         <DataListItem aria-labelledby="test-id" selectableInputAriaLabel="Data list item label test">
           <p id="test-id">Test cell content</p>
         </DataListItem>
       </DataList>
     );
 
-    const selectableInput = screen.getByRole('checkbox', { hidden: true });
+    const selectableInput = screen.getByRole('radio', { hidden: true });
 
     expect(selectableInput).toHaveAccessibleName('Data list item label test');
   });
