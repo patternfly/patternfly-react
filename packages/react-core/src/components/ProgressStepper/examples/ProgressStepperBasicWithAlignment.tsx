@@ -28,8 +28,8 @@ export const ProgressStepperBasicWithAlignment: React.FunctionComponent = () => 
         <ProgressStep
           variant="success"
           description="This is the first thing to happen"
-          id="basic-desc-step1"
-          titleId="basic-desc-step1-title"
+          id="basic-alignment-step1"
+          titleId="basic-alignment-step1-title"
           aria-label="completed step, step with success"
         >
           First step
@@ -38,8 +38,8 @@ export const ProgressStepperBasicWithAlignment: React.FunctionComponent = () => 
           variant="info"
           isCurrent
           description="This is the second thing to happen"
-          id="basic-desc-step2"
-          titleId="basic-desc-step2-title"
+          id="basic-alignment-step2"
+          titleId="basic-alignment-step2-title"
           aria-label="step with info"
         >
           Second step
@@ -47,8 +47,8 @@ export const ProgressStepperBasicWithAlignment: React.FunctionComponent = () => 
         <ProgressStep
           variant="pending"
           description="This is the last thing to happen"
-          id="basic-desc-step3"
-          titleId="basic-desc-step3-title"
+          id="basic-alignment-step3"
+          titleId="basic-alignment-step3-title"
           aria-label="pending step"
         >
           Third step
