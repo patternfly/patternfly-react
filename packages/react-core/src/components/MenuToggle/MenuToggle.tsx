@@ -60,18 +60,25 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
     const isPlain = variant === 'plain';
     const isPlainText = variant === 'plainText';
     const isTypeahead = variant === 'typeahead';
+    const toggleControls = (
+      <span className={css(styles.menuToggleControls)}>
+        <span className={css(styles.menuToggleToggleIcon)}>
+          <CaretDownIcon aria-hidden />
+        </span>
+      </span>
+    );
 
     const content = (
       <>
         {icon && <span className={css(styles.menuToggleIcon)}>{icon}</span>}
         {isTypeahead ? children : <span className="pf-c-menu-toggle__text">{children}</span>}
         {badge && <span className={css(styles.menuToggleCount)}>{badge}</span>}
-        {!isTypeahead && (
-          <span className={css(styles.menuToggleControls)}>
-            <span className={css(styles.menuToggleToggleIcon)}>
-              <CaretDownIcon aria-hidden />
-            </span>
-          </span>
+        {isTypeahead ? (
+          <button type="button" className="pf-c-menu-toggle__button" onClick={onClick} aria-label="Menu toggle">
+            {toggleControls}
+          </button>
+        ) : (
+          toggleControls
         )}
       </>
     );

@@ -14,11 +14,8 @@ import {
   TextInputGroupMain,
   MenuToggleElement
 } from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/Menu/menu';
-import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 import TimesIcon from '@patternfly/react-icons/dist/esm/icons/times-icon';
-import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
+import TableIcon from '@patternfly/react-icons/dist/esm/icons/table-icon';
 
 const intitalMenuItems: MenuItemProps[] = [
   { itemId: 'Option 1', children: 'Option 1' },
@@ -161,12 +158,9 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
             <TextInputGroupUtilities>
               {!!inputValue && (
                 <Button variant="plain" onClick={() => setInputValue('')} aria-label="Clear input value">
-                  <TimesIcon />
+                  <TimesIcon aria-hidden />
                 </Button>
               )}
-              <Button variant="plain" onClick={toggleMenuOpen} aria-label="Toggle menu">
-                <CaretDownIcon />
-              </Button>
             </TextInputGroupUtilities>
           </TextInputGroup>
         </MenuToggle>
@@ -178,7 +172,8 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
               {menuItems.map((itemProps, index) => (
                 <MenuItem
                   key={itemProps.itemId || itemProps.children}
-                  className={css(focusedItemIndex === index && styles.modifiers.focus, itemProps.className)}
+                  isFocused={focusedItemIndex === index}
+                  className={itemProps.className}
                   onClick={() => setIsSelected(true)}
                   {...itemProps}
                   ref={null}
