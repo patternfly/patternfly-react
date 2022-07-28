@@ -10,177 +10,30 @@ ouia: true
 
 ### Basic
 
-```js
-import React from 'react';
-import { Switch } from '@patternfly/react-core';
-
-class SimpleSwitch extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isChecked: true
-    };
-    this.handleChange = isChecked => {
-      this.setState({ isChecked });
-    };
-  }
-
-  render() {
-    const { isChecked } = this.state;
-    return (
-      <Switch
-        id="simple-switch"
-        label="Message when on"
-        labelOff="Message when off"
-        isChecked={isChecked}
-        onChange={this.handleChange}
-      />
-    );
-  }
-}
+```ts file="./SwitchBasic.tsx"
 ```
 
 ### Reversed Layout
 
-```js
-import React from 'react';
-import { Switch } from '@patternfly/react-core';
-
-class ReversedSwitch extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isChecked: true
-    };
-    this.handleChange = isChecked => {
-      this.setState({ isChecked });
-    };
-  }
-
-  render() {
-    const { isChecked } = this.state;
-    return (
-      <Switch
-        id="reversed-switch"
-        label="Message when on"
-        labelOff="Message when off"
-        isChecked={isChecked}
-        onChange={this.handleChange}
-        isReversed
-      />
-    );
-  }
-}
+```ts file="./SwitchReversed.tsx"
 ```
 
 ### Without label
 
-```js
-import React from 'react';
-import { Switch } from '@patternfly/react-core';
-
-class NoLabelSwitch extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isChecked: true
-    };
-    this.handleChange = isChecked => {
-      this.setState({ isChecked });
-    };
-  }
-
-  render() {
-    const { isChecked } = this.state;
-    return (
-      <Switch id="no-label-switch-on" aria-label="Message when on" isChecked={isChecked} onChange={this.handleChange} />
-    );
-  }
-}
+```ts file="./SwitchWithoutLabel.tsx"
 ```
 
 ### Checked with label
 
-```js
-import React from 'react';
-import { Switch } from '@patternfly/react-core';
-
-class CheckedWithLabelSwitch extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isChecked: true
-    };
-    this.handleChange = isChecked => {
-      this.setState({ isChecked });
-    };
-  }
-
-  render() {
-    const { isChecked } = this.state;
-    return (
-      <Switch
-        label="Message when on"
-        labelOff="Message when off"
-        id="checked-with-label-switch-on"
-        aria-label="Message when on"
-        isChecked={isChecked}
-        hasCheckIcon
-        onChange={this.handleChange}
-      />
-    );
-  }
-}
+```ts file="./SwitchCheckedWithLabel.tsx"
 ```
 
 ### Disabled
 
-```js
-import React from 'react';
-import { Switch } from '@patternfly/react-core';
-
-<React.Fragment>
-  <Switch
-    id="disabled-switch-on"
-    aria-label="Message when on"
-    label="Message when on"
-    labelOff="Message when off"
-    isChecked
-    isDisabled
-  />
-  <br />
-  <Switch
-    id="disabled-switch-off"
-    aria-label="Message when on"
-    label="Message when on"
-    labelOff="Message when off"
-    isChecked={false}
-    isDisabled
-  />
-  <br />
-  <Switch id="disabled-no-label-switch-on" aria-label="Message when on" isChecked isDisabled />
-  <br />
-  <Switch id="disabled-no-label-switch-off" aria-label="Message when on" isChecked={false} isDisabled />
-</React.Fragment>;
+```ts file="./SwitchDisabled.tsx"
 ```
 
 ### Uncontrolled
 
-```js
-import React from 'react';
-import { Switch } from '@patternfly/react-core';
-
-<React.Fragment>
-  <Switch
-    id="uncontrolled-switch-no-label"
-    aria-label="An uncontrolled switch with no label"
-    defaultChecked={false}
-  />
-  <br />
-  <Switch
-    id="uncontrolled-switch-with-label"
-    label="An uncontrolled switch"
-    defaultChecked={false}
-  />
-</React.Fragment>;
+```ts file="./SwitchUncontrolled.tsx"
 ```
