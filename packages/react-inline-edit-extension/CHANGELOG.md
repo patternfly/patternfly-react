@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.72.9 (2022-07-28)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
 ## 4.72.8 (2022-07-28)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension
