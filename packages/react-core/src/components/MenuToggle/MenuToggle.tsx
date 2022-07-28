@@ -74,7 +74,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
         {isTypeahead ? children : <span className="pf-c-menu-toggle__text">{children}</span>}
         {badge && <span className={css(styles.menuToggleCount)}>{badge}</span>}
         {isTypeahead ? (
-          <button type="button" className="pf-c-menu-toggle__button" onClick={onClick} aria-label="Menu toggle">
+          <button type="button" className={css(styles.menuToggleButton)} aria-expanded={isExpanded} onClick={onClick} aria-label="Menu toggle">
             {toggleControls}
           </button>
         ) : (
