@@ -11,8 +11,6 @@ import { TabTitleText } from './TabTitleText';
 export interface OverflowTabProps extends React.HTMLProps<HTMLLIElement> {
   /** Additional classes added to the overflow tab */
   className?: string;
-  /** Element to append the menu displaying the overflow tabs to */
-  menuAppendTo?: HTMLElement | (() => HTMLElement);
   /** The tabs that should be displayed in the menu */
   overflowingTabs?: TabProps[];
   /** Flag which shows the count of overflowing tabs when enabled */
@@ -25,7 +23,6 @@ export interface OverflowTabProps extends React.HTMLProps<HTMLLIElement> {
 
 export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
   className,
-  menuAppendTo,
   overflowingTabs = [],
   showTabCount,
   defaultTitleText = 'More',
@@ -34,6 +31,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
 }: OverflowTabProps) => {
   const menuRef = React.useRef<HTMLDivElement>();
   const overflowTabRef = React.useRef<HTMLButtonElement>();
+  const overflowLIRef = React.useRef<HTMLLIElement>();
 
   const [isExpanded, setIsExpanded] = React.useState(false);
 
@@ -86,6 +84,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
     <li
       className={css(styles.tabsItem, 'pf-m-overflow', selectedTab && styles.modifiers.current, className)}
       role="presentation"
+      ref={overflowLIRef}
       {...props}
     >
       <button
@@ -94,6 +93,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
         aria-label={toggleAriaLabel}
         aria-haspopup="menu"
         aria-expanded={isExpanded}
+        role="tab"
         ref={overflowTabRef}
       >
         <TabTitleText>
@@ -133,7 +133,7 @@ export const OverflowTab: React.FunctionComponent<OverflowTabProps> = ({
       popper={overflowMenu}
       isVisible={isExpanded}
       popperMatchesTriggerWidth={false}
-      appendTo={menuAppendTo}
+      appendTo={overflowLIRef.current}
     />
   );
 };

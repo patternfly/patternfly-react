@@ -127,7 +127,6 @@ interface TabsState {
 export class Tabs extends React.Component<TabsProps, TabsState> {
   static displayName = 'Tabs';
   tabList = React.createRef<HTMLUListElement>();
-  tabOverflowMenuRef: React.RefObject<HTMLDivElement>;
   constructor(props: TabsProps) {
     super(props);
     this.state = {
@@ -150,8 +149,6 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
         );
       }
     }
-
-    this.tabOverflowMenuRef = React.createRef();
   }
 
   scrollTimeout: NodeJS.Timeout = null;
@@ -476,11 +473,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons} role="tablist">
             {isHorizontalOverflow ? filteredChildrenWithoutOverflow : filteredChildren}
             {isHorizontalOverflow && overflowingTabCount > 0 && (
-              <OverflowTab
-                menuAppendTo={this.tabOverflowMenuRef.current}
-                overflowingTabs={overflowingTabProps}
-                {...overflowObjectProps}
-              />
+              <OverflowTab overflowingTabs={overflowingTabProps} {...overflowObjectProps} />
             )}
           </ul>
           {!isHorizontalOverflow && (
@@ -502,7 +495,6 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             </span>
           )}
         </Component>
-        <div ref={this.tabOverflowMenuRef} />
         {filteredChildren
           .filter(
             child =>
