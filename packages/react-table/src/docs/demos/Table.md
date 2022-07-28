@@ -302,17 +302,17 @@ class BulkSelectTableDemo extends React.Component {
 
 ### Expand/collapse all
 
-```js isFullscreen file="table-demos/ExpandCollapseAll.jsx"
+```js isFullscreen file="./table-demos/ExpandCollapseAll.jsx"
 ```
 
 ### Compact
 
-```js isFullscreen file="table-demos/Compact.jsx"
+```js isFullscreen file="./table-demos/Compact.jsx"
 ```
 
 ### Compound expansion
 
-```js isFullscreen file="table-demos/CompoundExpansion.jsx"
+```js isFullscreen file="./table-demos/CompoundExpansion.jsx"
 ```
 
 ### Column management
@@ -2852,7 +2852,7 @@ class StickyHeaderTableDemo extends React.Component {
 
 ### Sticky first column
 
-```js isFullscreen file="table-demos/StickyFirstColumn.jsx"
+```js isFullscreen file="./table-demos/StickyFirstColumn.jsx"
 ```
 
 ### Sticky columns and header with toolbar
