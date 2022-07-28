@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pagination } from '@patternfly/react-core';
 
-export const PaginationTop: React.FunctionComponent = () => {
+export const PaginationIndeterminate: React.FunctionComponent = () => {
   const [page, setPage] = React.useState(1);
   const [perPage, setPerPage] = React.useState(20);
 
@@ -21,11 +21,19 @@ export const PaginationTop: React.FunctionComponent = () => {
   return (
     <Pagination
       perPageComponent="button"
-      itemCount={0}
+      toggleTemplate={({ firstIndex, lastIndex }) => (
+        <React.Fragment>
+          <b>
+            {firstIndex} - {lastIndex}
+          </b>
+          of
+          <b>many</b>
+        </React.Fragment>
+      )}
+      widgetId="pagination-indeterminate"
       perPage={perPage}
       page={page}
       onSetPage={onSetPage}
-      widgetId="pagination-options-menu-top"
       onPerPageSelect={onPerPageSelect}
     />
   );

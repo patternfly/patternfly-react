@@ -10,42 +10,42 @@ ouia: true
 
 ### Top
 
-```ts file="./Top.tsx"
+```ts file="./PaginationTop.tsx"
 ```
 
 ### Bottom
 
-```ts file="./Bottom.tsx"
+```ts file="./PaginationBottom.tsx"
 ```
 
 ### Indeterminate
 
 By not passing `itemCount` and passing `toggleTemplate` you can customize the toggle with text.
 
-```ts file="./Indeterminate.tsx"
+```ts file="./PaginationIndeterminate.tsx"
 ```
 
 ### Disabled
 
-```ts file="./Disabled.tsx"
+```ts file="./PaginationDisabled.tsx"
 ```
 
 ### No items
 
-```ts file="./NoItems.tsx"
+```ts file="./PaginationNoItems.tsx"
 ```
 
 ### One page
 
-```ts file="./OnePage.tsx"
+```ts file="./PaginationOnePage.tsx"
 ```
 
 ### Compact
 
-```ts file="./Compact.tsx"
+```ts file="./PaginationCompact.tsx"
 ```
 
 ### Sticky
 
-```ts isFullscreen file="./Sticky.tsx"
+```ts isFullscreen file="./PaginationSticky.tsx"
 ```

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pagination } from '@patternfly/react-core';
 
-export const PaginationTop: React.FunctionComponent = () => {
+export const PaginationOnePage: React.FunctionComponent = () => {
   const [page, setPage] = React.useState(1);
   const [perPage, setPerPage] = React.useState(20);
 
