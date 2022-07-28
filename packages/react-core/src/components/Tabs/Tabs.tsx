@@ -426,6 +426,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             hasSecondaryBorderBottom && styles.modifiers.borderBottom,
             formatBreakpointMods(inset, styles),
             variantStyle[variant],
+            isHorizontalOverflow && styles.modifiers.overflow,
             className
           )}
           {...getOUIAProps(Tabs.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
