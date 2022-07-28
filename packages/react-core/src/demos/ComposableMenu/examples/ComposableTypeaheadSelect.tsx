@@ -143,7 +143,13 @@ export const ComposableTypeaheadSelect: React.FunctionComponent = () => {
   return (
     <Popper
       trigger={
-        <MenuToggle variant="typeahead" onClick={toggleMenuOpen} innerRef={menuToggleRef} isFullWidth>
+        <MenuToggle
+          variant="typeahead"
+          onClick={toggleMenuOpen}
+          innerRef={menuToggleRef}
+          isExpanded={isMenuOpen}
+          isFullWidth
+        >
           <TextInputGroup isPlain>
             <TextInputGroupMain
               value={inputValue}
