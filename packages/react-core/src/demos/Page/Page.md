@@ -357,7 +357,7 @@ class PageLayoutGrouped extends React.Component {
                 </PageSection>
               }
               groupProps={{
-                stickyOnBreakpoint: { default: 'stickyTop' },
+                stickyOnBreakpoint: { default: 'top' },
               }}
             >
               <PageSection>
@@ -599,7 +599,9 @@ class PageLayoutGrouped extends React.Component {
             </PageSection>
           }
           groupProps={{
-            sticky: 'top'
+            stickyOnBreakpoint: {
+               default: 'top'
+            }
           }}
         >
           <PageSection>
@@ -848,7 +850,7 @@ class PageLayoutGroupedAlt extends React.Component {
 }
 ```
 
-### Sticky section group (with breakpoints)
+### Sticky section breadcrumb (with breakpoints)
 
 ```js isFullscreen
 import React from 'react';

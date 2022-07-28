@@ -5,7 +5,7 @@ import globalBreakpointXl from '@patternfly/react-tokens/dist/esm/global_breakpo
 import { debounce, canUseDOM } from '../../helpers/util';
 import { Drawer, DrawerContent, DrawerContentBody, DrawerPanelContent } from '../Drawer';
 import { PageBreadcrumbProps } from './PageBreadcrumb';
-import { PageGroup, PageGroupProps } from './PageGroup';
+import { PageGroupProps } from './PageGroup';
 import { getResizeObserver } from '../../helpers/resizeObserver';
 import { getBreakpoint, getVerticalBreakpoint } from '../../helpers/util';
 import { formatBreakpointMods } from '../../helpers/util';
@@ -319,11 +319,17 @@ export class Page extends React.Component<PageProps, PageState> {
     const isGrouped = isTertiaryNavGrouped || isBreadcrumbGrouped || additionalGroupedContent;
 
     const group = isGrouped ? (
-      <PageGroup {...groupProps}>
+      <div
+        className={css(
+          styles.pageMainGroup,
+          formatBreakpointMods(groupProps?.stickyOnBreakpoint, styles, 'sticky-', getVerticalBreakpoint(height), true)
+        )}
+        {...groupProps}
+      >
         {isTertiaryNavGrouped && nav}
         {isBreadcrumbGrouped && crumb}
         {additionalGroupedContent}
-      </PageGroup>
+      </div>
     ) : null;
 
     const main = (
