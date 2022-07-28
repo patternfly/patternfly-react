@@ -50,6 +50,8 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   isExternalLink?: boolean;
   /** Flag indicating if the option is selected */
   isSelected?: boolean;
+  /** Flag indicating the item is focused */
+  isFocused?: boolean;
   /** @beta Flyout menu */
   flyoutMenu?: React.ReactElement;
   /** @beta Callback function when mouse leaves trigger */
@@ -88,6 +90,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   isDisabled = false,
   isExternalLink = false,
   isSelected = null,
+  isFocused,
   icon,
   actions,
   onShowFlyout,
@@ -290,6 +293,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
         _isOnPath && styles.modifiers.currentPath,
         isLoadButton && styles.modifiers.load,
         isLoading && styles.modifiers.loading,
+        isFocused && styles.modifiers.focus,
         className
       )}
       onMouseOver={onMouseOver}
