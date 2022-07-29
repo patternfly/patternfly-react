@@ -16,7 +16,7 @@ export const TabsHorizontalOverflow: React.FunctionComponent = () => {
         onSelect={handleTabClick}
         aria-label="Tabs in the horizontal overflow example"
         role="region"
-        isHorizontalOverflow={{ showTabCount }}
+        isOverflowHorizontal={{ showTabCount }}
       >
         <Tab eventKey={0} title={<TabTitleText>Users</TabTitleText>} aria-label="Horizontal overflow content users">
           Users
