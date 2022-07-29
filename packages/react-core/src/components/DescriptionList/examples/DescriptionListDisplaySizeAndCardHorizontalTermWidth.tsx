@@ -4,21 +4,21 @@ import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-i
 
 export const DescriptionListDisplaySizeAndCardHorizontalTermWidth: React.FunctionComponent = () => (
   <DescriptionList displaySize="lg" isHorizontal columnModifier={{ lg: '2Col' }} termWidth="10ch">
-    <Card>
+    <Card component="div">
       <DescriptionListTerm>Name</DescriptionListTerm>
       <DescriptionListDescription>Example</DescriptionListDescription>
     </Card>
-    <Card>
+    <Card component="div">
       <DescriptionListTerm>Namespace</DescriptionListTerm>
       <DescriptionListDescription>
         <a href="#">mary-test</a>
       </DescriptionListDescription>
     </Card>
-    <Card>
+    <Card component="div">
       <DescriptionListTerm>Labels</DescriptionListTerm>
       <DescriptionListDescription>example</DescriptionListDescription>
     </Card>
-    <Card>
+    <Card component="div">
       <DescriptionListTerm>Pod selector</DescriptionListTerm>
       <DescriptionListDescription>
         <Button variant="link" isInline icon={<PlusCircleIcon />}>
@@ -26,7 +26,7 @@ export const DescriptionListDisplaySizeAndCardHorizontalTermWidth: React.Functio
         </Button>
       </DescriptionListDescription>
     </Card>
-    <Card>
+    <Card component="div">
       <DescriptionListTerm>Annotation</DescriptionListTerm>
       <DescriptionListDescription>2 Annotations</DescriptionListDescription>
     </Card>

@@ -31,21 +31,21 @@ export const DescriptionListDisplaySizeAndCard: React.FunctionComponent = () => 
         />
       </div>
       <DescriptionList displaySize={displaySize} columnModifier={{ lg: '2Col' }}>
-        <Card>
+        <Card component="div">
           <DescriptionListTerm>Name</DescriptionListTerm>
           <DescriptionListDescription>Example</DescriptionListDescription>
         </Card>
-        <Card>
+        <Card component="div">
           <DescriptionListTerm>Namespace</DescriptionListTerm>
           <DescriptionListDescription>
             <a href="#">mary-test</a>
           </DescriptionListDescription>
         </Card>
-        <Card>
+        <Card component="div">
           <DescriptionListTerm>Labels</DescriptionListTerm>
           <DescriptionListDescription>example</DescriptionListDescription>
         </Card>
-        <Card>
+        <Card component="div">
           <DescriptionListTerm>Pod selector</DescriptionListTerm>
           <DescriptionListDescription>
             <Button variant="link" isInline icon={<PlusCircleIcon />}>
@@ -53,7 +53,7 @@ export const DescriptionListDisplaySizeAndCard: React.FunctionComponent = () => 
             </Button>
           </DescriptionListDescription>
         </Card>
-        <Card>
+        <Card component="div">
           <DescriptionListTerm>Annotation</DescriptionListTerm>
           <DescriptionListDescription>2 Annotations</DescriptionListDescription>
         </Card>

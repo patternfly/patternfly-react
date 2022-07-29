@@ -30,21 +30,21 @@ export const DescriptionListWithCard: React.FunctionComponent = () => {
         />
       </div>
       <DescriptionList columnModifier={{ lg: '2Col' }}>
-        <Card isSelectable={isSelectable}>
+        <Card component="div" isSelectable={isSelectable}>
           <DescriptionListTerm>Name</DescriptionListTerm>
           <DescriptionListDescription>Example</DescriptionListDescription>
         </Card>
-        <Card isSelectable={isSelectable}>
+        <Card component="div" isSelectable={isSelectable}>
           <DescriptionListTerm>Namespace</DescriptionListTerm>
           <DescriptionListDescription>
             <a href="#">mary-test</a>
           </DescriptionListDescription>
         </Card>
-        <Card isSelectable={isSelectable}>
+        <Card component="div" isSelectable={isSelectable}>
           <DescriptionListTerm>Labels</DescriptionListTerm>
           <DescriptionListDescription>example</DescriptionListDescription>
         </Card>
-        <Card isSelectable={isSelectable}>
+        <Card component="div" isSelectable={isSelectable}>
           <DescriptionListTerm>Pod selector</DescriptionListTerm>
           <DescriptionListDescription>
             <Button variant="link" isInline icon={<PlusCircleIcon />}>
@@ -52,7 +52,7 @@ export const DescriptionListWithCard: React.FunctionComponent = () => {
             </Button>
           </DescriptionListDescription>
         </Card>
-        <Card isSelectable={isSelectable}>
+        <Card component="div" isSelectable={isSelectable}>
           <DescriptionListTerm>Annotation</DescriptionListTerm>
           <DescriptionListDescription>2 Annotations</DescriptionListDescription>
         </Card>
