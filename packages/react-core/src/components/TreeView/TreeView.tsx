@@ -45,6 +45,8 @@ export interface TreeViewProps {
   hasBadges?: boolean;
   /** Flag indicating if tree view has guide lines. */
   hasGuides?: boolean;
+  /** Flag indicating that tree nodes should be independently selectable, even when having children */
+  hasSelectableNodes?: boolean;
   /** Variant presentation styles for the tree view. */
   variant?: 'default' | 'compact' | 'compactNoBackground';
   /** Icon for all leaf or unexpanded node items */
@@ -79,6 +81,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
   hasChecks = false,
   hasBadges = false,
   hasGuides = false,
+  hasSelectableNodes = false,
   variant = 'default',
   defaultAllExpanded = false,
   allExpanded,
@@ -103,6 +106,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
           title={item.title}
           id={item.id}
           isExpanded={allExpanded}
+          isSelectable={hasSelectableNodes}
           defaultExpanded={item.defaultExpanded !== undefined ? item.defaultExpanded : defaultAllExpanded}
           onSelect={onSelect}
           onCheck={onCheck}
@@ -129,6 +133,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
                 hasChecks={hasChecks}
                 hasBadges={hasBadges}
                 hasGuides={hasGuides}
+                hasSelectableNodes={hasSelectableNodes}
                 variant={variant}
                 allExpanded={allExpanded}
                 defaultAllExpanded={defaultAllExpanded}
