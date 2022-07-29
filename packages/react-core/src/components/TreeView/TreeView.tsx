@@ -106,7 +106,7 @@ export const TreeView: React.FunctionComponent<TreeViewProps> = ({
           title={item.title}
           id={item.id}
           isExpanded={allExpanded}
-          hasSelectableNodes={hasSelectableNodes}
+          isSelectable={hasSelectableNodes}
           defaultExpanded={item.defaultExpanded !== undefined ? item.defaultExpanded : defaultAllExpanded}
           onSelect={onSelect}
           onCheck={onCheck}
