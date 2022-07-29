@@ -34,7 +34,7 @@ export const KeyTypes = {
   ArrowRight: 'ArrowRight'
 };
 
-export const globalBreakpoints = {
+export const globalWidthBreakpoints = {
   sm: parseInt(globalBreakpointSm.value),
   md: parseInt(globalBreakpointMd.value),
   lg: parseInt(globalBreakpointLg.value),

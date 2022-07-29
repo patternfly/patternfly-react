@@ -1,5 +1,5 @@
 import * as ReactDOM from 'react-dom';
-import { globalBreakpoints, globalHeightBreakpoints, SIDE } from './constants';
+import { globalWidthBreakpoints, globalHeightBreakpoints, SIDE } from './constants';
 
 /**
  * @param {string} input - String to capitalize first letter
@@ -368,19 +368,19 @@ export const getBreakpoint = (width: number): 'default' | 'sm' | 'md' | 'lg' | '
   if (width === null) {
     return null;
   }
-  if (width >= globalBreakpoints['2xl']) {
+  if (width >= globalWidthBreakpoints['2xl']) {
     return '2xl';
   }
-  if (width >= globalBreakpoints.xl) {
+  if (width >= globalWidthBreakpoints.xl) {
     return 'xl';
   }
-  if (width >= globalBreakpoints.lg) {
+  if (width >= globalWidthBreakpoints.lg) {
     return 'lg';
   }
-  if (width >= globalBreakpoints.md) {
+  if (width >= globalWidthBreakpoints.md) {
     return 'md';
   }
-  if (width >= globalBreakpoints.sm) {
+  if (width >= globalWidthBreakpoints.sm) {
     return 'sm';
   }
   return 'default';
