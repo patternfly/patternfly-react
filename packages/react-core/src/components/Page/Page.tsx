@@ -7,8 +7,7 @@ import { Drawer, DrawerContent, DrawerContentBody, DrawerPanelContent } from '..
 import { PageBreadcrumbProps } from './PageBreadcrumb';
 import { PageGroupProps } from './PageGroup';
 import { getResizeObserver } from '../../helpers/resizeObserver';
-import { getBreakpoint, getVerticalBreakpoint } from '../../helpers/util';
-import { formatBreakpointMods } from '../../helpers/util';
+import { formatBreakpointMods, getBreakpoint, getVerticalBreakpoint } from '../../helpers/util';
 
 export enum PageLayouts {
   vertical = 'vertical',
@@ -89,8 +88,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   getBreakpoint?: (width: number | null) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   /**
    * The page resize observer uses the breakpoints returned from this function when adding the pf-m-breakpoint-[default|sm|md|lg|xl|2xl] class
-   * You can override the default getBreakpoint function to return breakpoints at different sizes than the default
-   * You can view the default getBreakpoint function here:
+   * You can override the default getVerticalBreakpoint function to return breakpoints at different sizes than the default
+   * You can view the default getVerticalBreakpoint function here:
    * https://github.com/patternfly/patternfly-react/blob/main/packages/react-core/src/helpers/util.ts
    */
   getVerticalBreakpoint?: (height: number | null) => 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
@@ -277,44 +276,23 @@ export class Page extends React.Component<PageProps, PageState> {
       nav = <div className={css(styles.pageMainNav)}>{tertiaryNav}</div>;
     }
 
-    let crumb = null;
-
-    if (breadcrumb && isBreadcrumbWidthLimited) {
-      crumb = (
-        <section
-          className={css(
-            styles.pageMainBreadcrumb,
-            styles.modifiers.limitWidth,
-            formatBreakpointMods(
-              breadcrumbProps?.stickyOnBreakpoint,
-              styles,
-              'sticky-',
-              getVerticalBreakpoint(height),
-              true
-            )
-          )}
-        >
-          <div className={css(styles.pageMainBody)}>{breadcrumb}</div>
-        </section>
-      );
-    } else if (breadcrumb) {
-      crumb = (
-        <section
-          className={css(
-            styles.pageMainBreadcrumb,
-            formatBreakpointMods(
-              breadcrumbProps?.stickyOnBreakpoint,
-              styles,
-              'sticky-',
-              getVerticalBreakpoint(height),
-              true
-            )
-          )}
-        >
-          {breadcrumb}
-        </section>
-      );
-    }
+    const crumb = (
+      <section
+        className={css(
+          styles.pageMainBreadcrumb,
+          isBreadcrumbWidthLimited && styles.modifiers.limitWidth,
+          formatBreakpointMods(
+            breadcrumbProps?.stickyOnBreakpoint,
+            styles,
+            'sticky-',
+            getVerticalBreakpoint(height),
+            true
+          )
+        )}
+      >
+        {isBreadcrumbWidthLimited ? <div className={css(styles.pageMainBody)}>{breadcrumb}</div> : breadcrumb}
+      </section>
+    );
 
     const isGrouped = isTertiaryNavGrouped || isBreadcrumbGrouped || additionalGroupedContent;
 

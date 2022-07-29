@@ -1,5 +1,5 @@
 import * as ReactDOM from 'react-dom';
-import { SIDE } from './constants';
+import { globalBreakpoints, globalHeightBreakpoints, SIDE } from './constants';
 
 /**
  * @param {string} input - String to capitalize first letter
@@ -340,19 +340,19 @@ export const getVerticalBreakpoint = (height: number): 'default' | 'sm' | 'md' |
   if (height === null) {
     return null;
   }
-  if (height >= 1280) {
+  if (height >= globalHeightBreakpoints['2xl']) {
     return '2xl';
   }
-  if (height >= 960) {
+  if (height >= globalHeightBreakpoints.xl) {
     return 'xl';
   }
-  if (height >= 768) {
+  if (height >= globalHeightBreakpoints.lg) {
     return 'lg';
   }
-  if (height >= 640) {
+  if (height >= globalHeightBreakpoints.md) {
     return 'md';
   }
-  if (height >= 0) {
+  if (height >= globalHeightBreakpoints.sm) {
     return 'sm';
   }
   return 'default';
@@ -368,19 +368,19 @@ export const getBreakpoint = (width: number): 'default' | 'sm' | 'md' | 'lg' | '
   if (width === null) {
     return null;
   }
-  if (width >= 1450) {
+  if (width >= globalBreakpoints['2xl']) {
     return '2xl';
   }
-  if (width >= 1200) {
+  if (width >= globalBreakpoints.xl) {
     return 'xl';
   }
-  if (width >= 992) {
+  if (width >= globalBreakpoints.lg) {
     return 'lg';
   }
-  if (width >= 768) {
+  if (width >= globalBreakpoints.md) {
     return 'md';
   }
-  if (width >= 576) {
+  if (width >= globalBreakpoints.sm) {
     return 'sm';
   }
   return 'default';
