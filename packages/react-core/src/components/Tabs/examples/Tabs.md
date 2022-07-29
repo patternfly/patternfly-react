@@ -19,6 +19,10 @@ Similarly the 'Tab content light variation' checkbox affects the TabContent back
 
 ## Examples
 
+### Horizontal overflow
+
+```ts file="./TabsHorizontalOverflow.tsx" isBeta
+```
 ### Default
 
 When passing in a Tooltip component to the Tab component, the Tooltip can also be passed in directly to the `tooltip` prop.
@@ -410,10 +414,7 @@ class ScrollButtonsPrimaryTabs extends React.Component {
 }
 ```
 
-### Horizontal overflow
 
-```ts file="./TabsHorizontalOverflow.tsx" isBeta
-```
 
 ### Vertical
 

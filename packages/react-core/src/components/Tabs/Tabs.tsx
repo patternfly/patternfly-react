@@ -396,6 +396,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       }
     };
 
+    const hasOverflowTab = isHorizontalOverflow && overflowingTabCount > 0;
     const overflowObjectProps = typeof isHorizontalOverflow === 'object' ? { ...isHorizontalOverflow } : {};
 
     return (
@@ -426,7 +427,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             hasSecondaryBorderBottom && styles.modifiers.borderBottom,
             formatBreakpointMods(inset, styles),
             variantStyle[variant],
-            isHorizontalOverflow && styles.modifiers.overflow,
+            hasOverflowTab && styles.modifiers.overflow,
             className
           )}
           {...getOUIAProps(Tabs.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
@@ -473,9 +474,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           )}
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons} role="tablist">
             {isHorizontalOverflow ? filteredChildrenWithoutOverflow : filteredChildren}
-            {isHorizontalOverflow && overflowingTabCount > 0 && (
-              <OverflowTab overflowingTabs={overflowingTabProps} {...overflowObjectProps} />
-            )}
+            {hasOverflowTab && <OverflowTab overflowingTabs={overflowingTabProps} {...overflowObjectProps} />}
           </ul>
           {!isHorizontalOverflow && (
             <button
