@@ -11,10 +11,11 @@ propComponents:
     'DescriptionListTermHelpText',
     'DescriptionListTermHelpTextButton',
     'Popover',
+    'Card'
   ]
 ---
 
-import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, DescriptionListGroup, DescriptionListTermHelpText, DescriptionListTermHelpTextButton, Popover } from '@patternfly/react-core';
+import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, DescriptionListGroup, DescriptionListTermHelpText, DescriptionListTermHelpTextButton, Popover, Checkbox, Card } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import BookIcon from '@patternfly/react-icons/dist/esm/icons/book-icon';
@@ -120,45 +121,33 @@ import FlagIcon from '@patternfly/react-icons/dist/esm/icons/flag-icon';
 ```ts file='./DescriptionListDefaultInlineGrid.tsx'
 ```
 
-## Display variants
+### Display size
 
-### Display lg variant
-
-```ts file='./DescriptionListDisplay.tsx'
+```ts file='./DescriptionListWithDisplaySize.tsx'
 ```
 
 ## Card variants
 
-A [card component](/components/card) can be used as description list group wrapper. Using a card in this way applies the card body padding directly to the card and enables the use of card modifiers within a description list group.
+A [card component](/components/card) can be used in place of a description list group.
 
-### Description list group wrapper as card
+### Description list with card
 
-```ts file='./DescriptionListGroupWrapperAsCard.tsx'
+```ts file='./DescriptionListWithCard.tsx'
 ```
 
-### With Card modifiers - selectable card
+### Description list with display size and card
 
-``` ts file='./DescriptionListCardWithCardModifiers.tsx'
+```ts file='./DescriptionListDisplaySizeAndCard.tsx'
 ```
 
-### Display lg and card variant
+### Display size with card, three column on large breakpoint
 
-```ts file='./DescriptionListDisplayLgAndCard.tsx'
+```ts file='./DescriptionListDisplaySizeAndCardThreeColumn.tsx'
 ```
 
-### Display 2xl and card variant
+### Display size with card, horizontal, modified term width
 
-```ts file='./DescriptionListDisplay2xlAndCard.tsx'
-```
-
-### Display and card variant, three column on lg breakpoint
-
-```ts file='./DescriptionListDisplayLgAndCardThreeColumn.tsx'
-```
-
-### Display and card variant, horizontal, modified term width
-
-```ts file='./DescriptionListDisplayLgAndCardHorizontalTermWidth.tsx'
+```ts file='./DescriptionListDisplaySizeAndCardHorizontalTermWidth.tsx'
 ```
 
 ## Auto fit

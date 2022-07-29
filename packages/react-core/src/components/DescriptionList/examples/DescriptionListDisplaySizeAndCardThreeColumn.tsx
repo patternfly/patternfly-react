@@ -1,40 +1,34 @@
 import React from 'react';
-import {
-  Button,
-  DescriptionList,
-  DescriptionListTerm,
-  DescriptionListGroup,
-  DescriptionListDescription
-} from '@patternfly/react-core';
+import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, Card } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 
-export const DescriptionListDisplayLgAndCardHorizontalTermWidth: React.FunctionComponent = () => (
-  <DescriptionList display="lg" isHorizontal columnModifier={{ lg: '2Col' }} termWidth="10ch">
-    <DescriptionListGroup isCard>
+export const DescriptionListDisplayLgAndCardThreeColumn: React.FunctionComponent = () => (
+  <DescriptionList displaySize="lg" columnModifier={{ lg: '3Col' }}>
+    <Card>
       <DescriptionListTerm>Name</DescriptionListTerm>
       <DescriptionListDescription>Example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup isCard>
+    </Card>
+    <Card>
       <DescriptionListTerm>Namespace</DescriptionListTerm>
       <DescriptionListDescription>
         <a href="#">mary-test</a>
       </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup isCard>
+    </Card>
+    <Card>
       <DescriptionListTerm>Labels</DescriptionListTerm>
       <DescriptionListDescription>example</DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup isCard>
+    </Card>
+    <Card>
       <DescriptionListTerm>Pod selector</DescriptionListTerm>
       <DescriptionListDescription>
         <Button variant="link" isInline icon={<PlusCircleIcon />}>
           app=MyApp
         </Button>
       </DescriptionListDescription>
-    </DescriptionListGroup>
-    <DescriptionListGroup isCard>
+    </Card>
+    <Card>
       <DescriptionListTerm>Annotation</DescriptionListTerm>
       <DescriptionListDescription>2 Annotations</DescriptionListDescription>
-    </DescriptionListGroup>
+    </Card>
   </DescriptionList>
 );

@@ -30,8 +30,8 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
   isFluid?: boolean;
   /** Sets the the default placement of description list groups to fill from top to bottom. */
   isFillColumns?: boolean;
-  /** Sets the display variant of the descriptions in the description list.*/
-  display?: 'lg' | '2xl';
+  /** Sets the display size of the descriptions in the description list.*/
+  displaySize?: 'lg' | '2xl';
   /** Sets the number of columns on the description list at various breakpoints */
   columnModifier?: {
     default?: '1Col' | '2Col' | '3Col';
@@ -90,7 +90,7 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   isCompact,
   isFluid,
   isFillColumns,
-  display,
+  displaySize,
   columnModifier,
   autoFitMinModifier,
   termWidth,
@@ -131,8 +131,8 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
         isCompact && styles.modifiers.compact,
         isFluid && styles.modifiers.fluid,
         isFillColumns && styles.modifiers.fillColumns,
-        display === 'lg' && styles.modifiers.displayLg,
-        display === '2xl' && styles.modifiers.display_2xl,
+        displaySize === 'lg' && styles.modifiers.displayLg,
+        displaySize === '2xl' && styles.modifiers.display_2xl,
         className
       )}
       style={style}
