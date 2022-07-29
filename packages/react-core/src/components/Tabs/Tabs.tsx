@@ -20,7 +20,7 @@ export enum TabsComponent {
   nav = 'nav'
 }
 
-export interface horizontalOverflowObject {
+export interface HorizontalOverflowObject {
   /** Flag which shows the count of overflowing tabs when enabled */
   showTabCount?: boolean;
   /** The text which displays when an overflowing tab isn't selected */
@@ -105,7 +105,7 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   /** Callback function to toggle the expandable tabs. */
   onToggle?: (isExpanded: boolean) => void;
   /** @beta Flag which places overflowing tabs into a menu triggered by the last tab. Additionally an object can be passed with custom settings for the overflow tab. */
-  isOverflowHorizontal?: boolean | horizontalOverflowObject;
+  isOverflowHorizontal?: boolean | HorizontalOverflowObject;
 }
 
 const variantStyle = {
