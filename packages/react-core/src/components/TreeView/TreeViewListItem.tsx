@@ -182,7 +182,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       tabIndex={-1}
     >
       <div className={css(styles.treeViewContent)}>
-        <GenerateId prefix="checkbox-id">
+        <GenerateId prefix={hasSelectableNodes ? 'selectable-id' : 'checkbox-id'}>
           {randomId => (
             <Component
               className={css(
@@ -203,7 +203,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
                   }
                 }
               }}
-              tabIndex={hasSelectableNodes ? 1 : -1}
+              tabIndex={hasSelectableNodes ? 0 : -1}
               {...(hasCheck && { htmlFor: randomId })}
               {...((hasCheck || (hasSelectableNodes && children)) && { id: `label-${randomId}` })}
             >
