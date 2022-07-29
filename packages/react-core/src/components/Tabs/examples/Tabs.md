@@ -2,7 +2,7 @@
 id: Tabs
 section: components
 cssPrefix: pf-c-tabs
-propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', 'TabTitleIcon']
+propComponents: ['Tabs', 'Tab', 'TabContent', 'TabTitleText', 'TabTitleIcon', 'horizontalOverflowObject']
 ouia: true
 ---
 
@@ -408,6 +408,11 @@ class ScrollButtonsPrimaryTabs extends React.Component {
     );
   }
 }
+```
+
+### Horizontal overflow
+
+```ts file="./TabsHorizontalOverflow.tsx" isBeta
 ```
 
 ### Vertical
