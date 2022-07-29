@@ -20,7 +20,7 @@ import InfoCircleIcon from '@patternfly/react-icons/dist/esm/icons/info-circle-i
 
 export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
   const [isModalOpen, setModalOpen] = React.useState<boolean>(false);
-  const [idIndex, setIdIndex] = React.useState<number>(3);
+  const [idIndex, setIdIndex] = React.useState<number>(7);
   const [labelText, setLabelText] = React.useState<string>('');
   const [color, setColor] = React.useState<string>();
   const [icon, setIcon] = React.useState<any>();
@@ -40,8 +40,8 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
   const iconToggleRef = React.useRef<HTMLButtonElement>(null);
 
   const [labels, setLabels] = React.useState<any>([
-    { name: 'Label 1', id: 0 },
-    { name: 'Label 2', id: 1 },
+    { name: 'Label 1', id: 4 },
+    { name: 'Label 2', id: 5 },
     {
       name: 'Label 3',
       props: {
@@ -50,7 +50,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
           'aria-label': 'label editable text'
         }
       },
-      id: 2
+      id: 6
     }
   ]);
 
@@ -239,7 +239,7 @@ export const LabelGroupEditableAddModal: React.FunctionComponent = () => {
         {labels.map((label: { name: string; id: string; props: any }, index: number) => (
           <Label
             key={label.id}
-            id={`${label.name}-${index}`}
+            id={label.id}
             color="blue"
             onClose={() => onClose(label.id)}
             onEditCancel={prevText => onEdit(prevText, index)}

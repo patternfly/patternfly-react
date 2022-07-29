@@ -54,7 +54,7 @@ export const PageCenteredSection: React.FunctionComponent = () => {
     </Masthead>
   );
 
-  const sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="main-padding-sidebar" />;
+  const sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} id="centered-section-sidebar" />;
 
   return (
     <Page header={header} sidebar={sidebar}>
