@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.81.0 (2022-07-29)
+
+
+### Features
+
+* **Tabs:** add horizontal overflow option ([#7742](https://github.com/patternfly/patternfly-react/issues/7742)) ([2745cd1](https://github.com/patternfly/patternfly-react/commit/2745cd199669b0c0a5cdbd5c3d4e7453c6e1c435))
+
+
+
+
+
 ## 6.80.9 (2022-07-28)
 
 **Note:** Version bump only for package @patternfly/react-charts
