@@ -14,6 +14,8 @@ import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-i
 import UploadIcon from '@patternfly/react-icons/dist/esm/icons/upload-icon';
 import { Link } from '@reach/router';
 
+## Examples
+
 ## Variant examples
 
 PatternFly supports several button styling variants to be used in different scenarios as needed. The following button variants can be assigned using the `variant` property.
