@@ -40,7 +40,7 @@ export interface ContextSelectorProps extends Omit<ToggleMenuBaseProps, 'menuApp
   /** Component or string that will be used in the Context Selector.
    * This prop is placed in a button, and cannot contain any interactive elements
    */
-  toggleText?: React.ReactNode | string;
+  toggleText?: React.ReactNode;
   /** Aria-label for the Context Selector Search Button */
   searchButtonAriaLabel?: string;
   /** Value in the Search field */
@@ -77,7 +77,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
     onToggle: () => undefined as any,
     onSelect: () => undefined as any,
     screenReaderLabel: '',
-    toggleText: null as React.ReactNode,
+    toggleText: '',
     searchButtonAriaLabel: 'Search menu items',
     searchInputValue: '',
     onSearchInputChange: () => undefined as any,
