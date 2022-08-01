@@ -276,7 +276,7 @@ export class Page extends React.Component<PageProps, PageState> {
       nav = <div className={css(styles.pageMainNav)}>{tertiaryNav}</div>;
     }
 
-    const crumb = (
+    const crumb = breadcrumb ? (
       <section
         className={css(
           styles.pageMainBreadcrumb,
@@ -292,7 +292,7 @@ export class Page extends React.Component<PageProps, PageState> {
       >
         {isBreadcrumbWidthLimited ? <div className={css(styles.pageMainBody)}>{breadcrumb}</div> : breadcrumb}
       </section>
-    );
+    ) : null;
 
     const isGrouped = isTertiaryNavGrouped || isBreadcrumbGrouped || additionalGroupedContent;
 
