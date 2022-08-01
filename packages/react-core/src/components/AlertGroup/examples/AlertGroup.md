@@ -7,7 +7,7 @@ propComponents: ['Alert', 'AlertGroup', 'AlertActionCloseButton', 'AlertActionLi
 
 ## Examples
 
-### Variants
+## Variant examples
 
 Alert groups utilize the same variants that are available to [alert components](components/alert/). You can add multiple alert variants to each group.
 
@@ -27,7 +27,7 @@ Alerts that are asynchronously appended into dynamic `AlertGroups` with `isLiveR
 ```ts file="./AlertGroupToast.tsx"
 ```
 
-**With overflow capture**
+### With overflow capture
 
 After a specified number of alerts displayed is reached, users will see an overflow message instead of new alerts. In the following example, an overflow message will appear when more than four alerts are queued.
 
