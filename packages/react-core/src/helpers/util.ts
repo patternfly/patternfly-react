@@ -1,5 +1,5 @@
 import * as ReactDOM from 'react-dom';
-import { SIDE } from './constants';
+import { globalWidthBreakpoints, globalHeightBreakpoints, SIDE } from './constants';
 
 /**
  * @param {string} input - String to capitalize first letter
@@ -295,12 +295,13 @@ export const formatBreakpointMods = (
   mods: Mods,
   styles: any,
   stylePrefix: string = '',
-  breakpoint?: 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
+  breakpoint?: 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl',
+  vertical?: boolean
 ) => {
   if (!mods) {
     return '';
   }
-  if (breakpoint) {
+  if (breakpoint && !vertical) {
     if (breakpoint in mods) {
       return styles.modifiers[toCamel(`${stylePrefix}${mods[breakpoint as keyof Mods]}`)];
     }
@@ -314,13 +315,47 @@ export const formatBreakpointMods = (
     }
     return '';
   }
+
   return Object.entries(mods || {})
-    .map(([breakpoint, mod]) => `${stylePrefix}${mod}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}`)
+    .map(
+      ([breakpoint, mod]) =>
+        `${stylePrefix}${mod}${breakpoint !== 'default' ? `-on-${breakpoint}` : ''}${
+          vertical && breakpoint !== 'default' ? '-height' : ''
+        }`
+    )
     .map(toCamel)
     .map(mod => mod.replace(/-?(\dxl)/gi, (_res, group) => `_${group}`))
     .map(modifierKey => styles.modifiers[modifierKey])
     .filter(Boolean)
     .join(' ');
+};
+
+/**
+ * Return the breakpoint for the given height
+ *
+ * @param {number | null} height The height to check
+ * @returns {'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'} The breakpoint
+ */
+export const getVerticalBreakpoint = (height: number): 'default' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' => {
+  if (height === null) {
+    return null;
+  }
+  if (height >= globalHeightBreakpoints['2xl']) {
+    return '2xl';
+  }
+  if (height >= globalHeightBreakpoints.xl) {
+    return 'xl';
+  }
+  if (height >= globalHeightBreakpoints.lg) {
+    return 'lg';
+  }
+  if (height >= globalHeightBreakpoints.md) {
+    return 'md';
+  }
+  if (height >= globalHeightBreakpoints.sm) {
+    return 'sm';
+  }
+  return 'default';
 };
 
 /**
@@ -333,19 +368,19 @@ export const getBreakpoint = (width: number): 'default' | 'sm' | 'md' | 'lg' | '
   if (width === null) {
     return null;
   }
-  if (width >= 1450) {
+  if (width >= globalWidthBreakpoints['2xl']) {
     return '2xl';
   }
-  if (width >= 1200) {
+  if (width >= globalWidthBreakpoints.xl) {
     return 'xl';
   }
-  if (width >= 992) {
+  if (width >= globalWidthBreakpoints.lg) {
     return 'lg';
   }
-  if (width >= 768) {
+  if (width >= globalWidthBreakpoints.md) {
     return 'md';
   }
-  if (width >= 576) {
+  if (width >= globalWidthBreakpoints.sm) {
     return 'sm';
   }
   return 'default';
