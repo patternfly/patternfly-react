@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.191.0 (2022-08-01)
+
+
+### Features
+
+* **DescriptionList:** add Display and Card variants ([#7713](https://github.com/patternfly/patternfly-react/issues/7713)) ([8c6e6d8](https://github.com/patternfly/patternfly-react/commit/8c6e6d83cdbe989d306c64f945aac206eac3ff91))
+
+
+
+
+
 ## 4.190.1 (2022-08-01)
 
 
