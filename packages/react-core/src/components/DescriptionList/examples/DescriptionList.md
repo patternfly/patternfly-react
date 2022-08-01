@@ -85,6 +85,11 @@ import FlagIcon from '@patternfly/react-icons/dist/esm/icons/flag-icon';
 ```ts file='./DescriptionListColumnFill.tsx'
 ```
 
+### Display size
+
+```ts file='./DescriptionListWithDisplaySize.tsx'
+```
+
 ## Responsive column definitions
 
 ### Default responsive columns
@@ -119,11 +124,6 @@ import FlagIcon from '@patternfly/react-icons/dist/esm/icons/flag-icon';
 ### Default inline grid
 
 ```ts file='./DescriptionListDefaultInlineGrid.tsx'
-```
-
-### Display size
-
-```ts file='./DescriptionListWithDisplaySize.tsx'
 ```
 
 ## Card variants
