@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.66.1 (2022-08-01)
+
+
+### Bug Fixes
+
+* **Menu/Nav:** flyout variants work with VO navigation ([#7772](https://github.com/patternfly/patternfly-react/issues/7772)) ([6ad76cc](https://github.com/patternfly/patternfly-react/commit/6ad76cc1b466e8e93773f58002acf5ca54ad6e36))
+
+
+
+
+
 # 4.66.0 (2022-07-29)
 
 
