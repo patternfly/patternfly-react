@@ -7,7 +7,7 @@ propComponents: ['Alert', 'AlertGroup', 'AlertActionCloseButton', 'AlertActionLi
 
 ## Examples
 
-## Variant examples
+### Variant examples
 
 Alert groups utilize the same variants that are available to [alert components](components/alert/). You can add multiple alert variants to each group.
 
