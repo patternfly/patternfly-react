@@ -11,10 +11,11 @@ propComponents:
     'DescriptionListTermHelpText',
     'DescriptionListTermHelpTextButton',
     'Popover',
+    'Card'
   ]
 ---
 
-import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, DescriptionListGroup, DescriptionListTermHelpText, DescriptionListTermHelpTextButton, Popover } from '@patternfly/react-core';
+import { Button, DescriptionList, DescriptionListTerm, DescriptionListDescription, DescriptionListGroup, DescriptionListTermHelpText, DescriptionListTermHelpTextButton, Popover, Checkbox, Card } from '@patternfly/react-core';
 import PlusCircleIcon from '@patternfly/react-icons/dist/esm/icons/plus-circle-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import BookIcon from '@patternfly/react-icons/dist/esm/icons/book-icon';
@@ -84,6 +85,11 @@ import FlagIcon from '@patternfly/react-icons/dist/esm/icons/flag-icon';
 ```ts file='./DescriptionListColumnFill.tsx'
 ```
 
+### Display size
+
+```ts file='./DescriptionListWithDisplaySize.tsx'
+```
+
 ## Responsive column definitions
 
 ### Default responsive columns
@@ -118,6 +124,30 @@ import FlagIcon from '@patternfly/react-icons/dist/esm/icons/flag-icon';
 ### Default inline grid
 
 ```ts file='./DescriptionListDefaultInlineGrid.tsx'
+```
+
+## Card variants
+
+A [card component](/components/card) can be used in place of a description list group.
+
+### Description list with card
+
+```ts file='./DescriptionListWithCard.tsx'
+```
+
+### Description list with display size and card
+
+```ts file='./DescriptionListDisplaySizeAndCard.tsx'
+```
+
+### Display size with card, three column on large breakpoint
+
+```ts file='./DescriptionListDisplaySizeAndCardThreeColumn.tsx'
+```
+
+### Display size with card, horizontal, modified term width
+
+```ts file='./DescriptionListDisplaySizeAndCardHorizontalTermWidth.tsx'
 ```
 
 ## Auto fit

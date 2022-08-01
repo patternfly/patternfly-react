@@ -18,4 +18,5 @@ export const DescriptionListGroup: React.FunctionComponent<DescriptionListGroupP
     {children}
   </div>
 );
+
 DescriptionListGroup.displayName = 'DescriptionListGroup';
