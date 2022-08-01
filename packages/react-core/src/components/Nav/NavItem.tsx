@@ -150,6 +150,11 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     </span>
   );
 
+  const ariaFlyoutProps = {
+    'aria-haspopup': 'menu',
+    'aria-expanded': flyoutVisible
+  };
+
   const renderDefaultLink = (context: any): React.ReactNode => {
     const preventLinkDefault = preventDefault || !to;
     return (
@@ -164,6 +169,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
         )}
         aria-current={isActive ? 'page' : null}
         tabIndex={isNavOpen ? null : '-1'}
+        {...(hasFlyout && { ...ariaFlyoutProps })}
         {...props}
       >
         {children}
