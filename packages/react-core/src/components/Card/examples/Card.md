@@ -19,21 +19,21 @@ Basic cards typically have a `<CardTitle>`, `<CardBody>` and `<CardFooter>`, tho
 ```ts file='./CardBasic.tsx'
 ```
 
-#### With no header
+### With no header
 
 Omit `<CardTitle>` if a header is unnecessary. 
 
 ```ts file='./CardWithNoHeader.tsx'
 ```
 
-#### With no footer
+### With no footer
 
 Omit `<CardFooter>` if a footer is unnecessary.
 
 ```ts file='./CardWithNoFooter.tsx'
 ```
 
-#### Modifiers
+### Modifiers
 
 You can further modify the styling of the card's content by using the following properties:
 
@@ -47,28 +47,28 @@ To help define the contents of a card, headers may contain images, a title, and 
 The `CardHeader` component allows the addition of these features by using the `CardHeaderMain` and `CardActions` subcomponents. 
 
 
-#### Title inline with images and actions
+### Title inline with images and actions
 
 Moving `<CardTitle>` within the `CardHeader` component will style it inline with any images or actions.
 
 ```ts file='./CardHeaderInCardHead.tsx'
 ```
 
-#### With HTML heading element
+### With HTML heading element
 
 You may use the `component` property to place the card's title within an HTML heading element.
 
 ```ts file='./CardWithHeadingElement.tsx'
 ```
 
-#### Images and actions
+### Images and actions
 
 You can include header images using `<Brand>` within `<CardHeaderMain>` and you can include header actions within `<CardActions>`.
 
 ```ts file='./CardWithImageAndActions.tsx'
 ```
 
-#### Only actions in card head (no header/footer)
+### Only actions in card head (no header/footer)
 
 You may place `<CardActions>` in `<CardHeader>` even if you're only using `<CardBody>`.
 
@@ -83,21 +83,21 @@ Use the `<CardFooter>` prop to provide additional information at the bottom of t
 
 `<CardBody>` provides details about the item and can include any combination of static text and/or active content. This is a required feature. PatternFly supports a few different body variations, outlined below. 
 
-#### With only a body section
+### With only a body section
 
 `<CardBody>` may be used on its own if `<CardTitle>` and `<CardFooter>` aren't needed. 
 
 ```ts file='./CardWithOnlyBodySection.tsx'
 ```
 
-#### With multiple body sections
+### With multiple body sections
 
 You may use multiple body sections.
 
 ```ts file='./CardWithMultipleBodySections.tsx'
 ```
 
-#### With a body section that fills
+### With a body section that fills
 
 Use the `isFilled` property to let the body content fill the height of the card.
 
@@ -115,14 +115,14 @@ PatternFly supports two types of selectable cards:
 ```ts file='./CardSelectable.tsx'
 ```
 
-#### Legacy 
+### Legacy 
 
 PatternFly currently supports an updated version of selectable cards, but an example of our legacy selectable card is included below.
 
 ```ts file='./CardLegacySelectable.tsx'
 ```
 
-#### Accessibility features
+### Accessibility features
 
 The following cards demonstrate how the `hasSelectableInput` and `onSelectableInputChange` properties improve accessibility for selectable cards.
 
@@ -148,7 +148,7 @@ The hidden content should be contained within the `CardExpandableContent` compon
 ```ts file='./CardExpandable.tsx'
 ```
 
-#### Expandable with icon
+### Expandable with icon
 
 An image can also be included in the card header prior to expansion.
 
