@@ -37,9 +37,6 @@ exports[`Page Check dark page against snapshot 1`] = `
       tabindex="-1"
     >
       <section
-        class="pf-c-page__main-breadcrumb"
-      />
-      <section
         class="pf-c-page__main-section"
       >
         Section with default background
@@ -104,9 +101,6 @@ exports[`Page Check page horizontal layout example against snapshot 1`] = `
       tabindex="-1"
     >
       <section
-        class="pf-c-page__main-breadcrumb"
-      />
-      <section
         class="pf-c-page__main-section"
       >
         Section with default background
@@ -170,9 +164,6 @@ exports[`Page Check page to verify breadcrumb is created - PageBreadcrumb syntax
       class="pf-c-page__main"
       tabindex="-1"
     >
-      <section
-        class="pf-c-page__main-breadcrumb"
-      />
       <section
         class="pf-c-page__main-breadcrumb"
       >
@@ -507,9 +498,6 @@ exports[`Page Check page to verify grouped nav and breadcrumb - new components s
       class="pf-c-page__main"
       tabindex="-1"
     >
-      <section
-        class="pf-c-page__main-breadcrumb"
-      />
       <div
         class="pf-c-page__main-group pf-m-sticky-bottom"
       >
@@ -1087,9 +1075,6 @@ exports[`Page Check page to verify nav is created - PageNavigation syntax 1`] = 
       class="pf-c-page__main"
       tabindex="-1"
     >
-      <section
-        class="pf-c-page__main-breadcrumb"
-      />
       <div
         class="pf-c-page__main-nav"
       >
@@ -1441,9 +1426,6 @@ exports[`Page Check page vertical layout example against snapshot 1`] = `
       class="pf-c-page__main"
       tabindex="-1"
     >
-      <section
-        class="pf-c-page__main-breadcrumb"
-      />
       <section
         class="pf-c-page__main-section"
       >
