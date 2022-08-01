@@ -5,7 +5,7 @@ section: components
 
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
 
-## Progress button
+### Progress button
 
 The following demo shows the intended flow for a button that visually indicates progress. This example demonstrates a login process, which updates the button label based on the `loginState`. 
 

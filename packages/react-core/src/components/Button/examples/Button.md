@@ -16,7 +16,7 @@ import { Link } from '@reach/router';
 
 ## Examples
 
-## Variant examples
+### Variant examples
 
 PatternFly supports several button styling variants to be used in different scenarios as needed. The following button variants can be assigned using the `variant` property.
 
@@ -69,8 +69,6 @@ Progress indicators can be added to buttons to identify that an action is in pro
 ```ts file="./ButtonProgress.tsx"
 ```
 
-## Link examples
-
 ### Links as buttons
 
 Buttons that link to another resource may take the form of primary, secondary, tertiary, or link variants. Use `component="a"` and an `href` property to designate the button's target link.
@@ -92,7 +90,7 @@ Router links can be used for in-app linking in React environments to prevent pag
 ```ts file="./ButtonRouterLink.tsx"
 ```
 
-## Aria-disabled examples
+### Aria-disabled examples
 
 [Accessible Rich Internet Applications (ARIA)](https://www.w3.org/WAI/standards-guidelines/aria/) is a set of roles and attributes specified by the [World Wide Web Consortium]. ARIA defines ways to make web content and web applications more accessible to people with disabilities.
 
