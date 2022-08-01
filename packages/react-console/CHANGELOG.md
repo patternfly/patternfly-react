@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.81.0 (2022-08-01)
+
+
+### Features
+
+* **Page:** add support for vertical breakpoints, add sticky breadcrumb demo ([#7764](https://github.com/patternfly/patternfly-react/issues/7764)) ([9db582d](https://github.com/patternfly/patternfly-react/commit/9db582d63a3499fa78ea8fab3ce31b7877cd479d))
+
+
+
+
+
 # 4.80.0 (2022-08-01)
 
 
