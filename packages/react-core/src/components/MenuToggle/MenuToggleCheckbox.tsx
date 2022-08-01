@@ -13,18 +13,20 @@ export interface MenuToggleCheckboxProps
   isValid?: boolean;
   /** Flag to show if the checkbox is disabled */
   isDisabled?: boolean;
-  /** Flag to show if the checkbox is checked */
+  /** Flag to show if the checkbox is checked when it is controlled by React state.
+   * To make the checkbox uncontrolled instead use the defaultChecked prop, but do not use both.
+   */
   isChecked?: boolean | null;
-  /** Alternate Flag to show if the checkbox is checked */
-  checked?: boolean | null;
+  /** Flag to set the default checked value of the checkbox when it is uncontrolled by React state.
+   * To make the checkbox controlled instead use the isChecked prop, but do not use both.
+   */
+  defaultChecked?: boolean | null;
   /** A callback for when the checkbox selection changes */
   onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
   /** Element to be rendered inside the <span> */
   children?: React.ReactNode;
   /** Id of the checkbox */
   id: string;
-  /** Aria-label of the checkbox */
-  'aria-label': string;
 }
 
 export class MenuToggleCheckbox extends React.Component<MenuToggleCheckboxProps, { ouiaStateId: string }> {
@@ -48,14 +50,14 @@ export class MenuToggleCheckbox extends React.Component<MenuToggleCheckboxProps,
   };
 
   calculateChecked = () => {
-    const { isChecked, checked } = this.props;
+    const { isChecked, defaultChecked } = this.props;
     if (isChecked === null) {
       // return false here and the indeterminate state will be set to true through the ref
       return false;
     } else if (isChecked !== undefined) {
       return isChecked;
     }
-    return checked;
+    return defaultChecked;
   };
 
   render() {
@@ -69,27 +71,28 @@ export class MenuToggleCheckbox extends React.Component<MenuToggleCheckboxProps,
       ouiaSafe,
       /* eslint-disable @typescript-eslint/no-unused-vars */
       onChange,
-      checked,
+      defaultChecked,
+      id,
       /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
     const text = children && (
-      <span className={css(styles.checkLabel, className)} aria-hidden="true" id={props.id}>
+      <span className={css(styles.checkLabel, className)} aria-hidden="true" id={id}>
         {children}
       </span>
     );
     return (
-      <label className={css(styles.check, !children && styles.modifiers.standalone, className)} htmlFor={props.id}>
+      <label className={css(styles.check, !children && styles.modifiers.standalone, className)} htmlFor={id}>
         <input
           className={css(styles.checkInput)}
           {...props}
           {...(this.calculateChecked() !== undefined && { onChange: this.handleChange })}
-          name={props.id}
+          name={id}
           type="checkbox"
           ref={elem => elem && (elem.indeterminate = isChecked === null)}
           aria-invalid={!isValid}
           disabled={isDisabled}
-          checked={this.calculateChecked()}
+          {...(defaultChecked !== undefined ? { defaultChecked } : { checked: isChecked })}
           {...getOUIAProps(
             MenuToggleCheckbox.displayName,
             ouiaId !== undefined ? ouiaId : this.state.ouiaStateId,
