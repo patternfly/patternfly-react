@@ -15,7 +15,7 @@ import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
 
 ## Examples 
 
-## Variant examples
+### Variant examples
 
 PatternFly supports several alert variants for different scenarios and applications. Each variant has an associated status icon, background, and alert title coded to communicate the severity of an alert. Use the `variant` property to apply the following styling options. 
 
@@ -43,7 +43,7 @@ If no `variant` property is specified, then the variant will be set to default. 
 | Danger | Use to indicate that a critical or blocking error has occurred |
 
 
-### Variations
+### Alert variations
 
 PatternFly supports a number of properties and variations that can be used to add extra content to an alert. 
 
@@ -217,13 +217,9 @@ import LaptopIcon from '@patternfly/react-icons/dist/esm/icons/laptop-icon';
 </React.Fragment>
 ```
 
-## Inline alert examples
+### Inline alerts variants
 
-Use inline alerts to display an alert in line with content.
-
-### Inline variants
-
-All alert variants may use the `isInline` property to place alerts in content-heavy areas, such as within forms, wizards, or drawers.
+Use inline alerts to display an alert in line with content. All alert variants may use the `isInline` property to place alerts in content-heavy areas, such as within forms, wizards, or drawers.
 
 ```ts
 import React from 'react';
@@ -236,7 +232,7 @@ import { Alert } from '@patternfly/react-core';
   <Alert variant="danger" isInline title="Danger inline alert title" />
 </React.Fragment>
 ```
-### Inline variations
+### Inline alert variations
 
 The same variations that exist for general alerts can use the `isInline` property to adjust the styling so that they can be placed in line with content.
 
@@ -286,7 +282,7 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
 </React.Fragment>
 ```
 
-### Plain inline variants
+### Plain inline alert variants
 
 Use the `isPlain` property to make any inline alert plain. Plain styling removes the colored background, but keeps colored text and icons.
 
@@ -302,7 +298,7 @@ import { Alert } from '@patternfly/react-core';
 </React.Fragment>
 ```
 
-### Plain inline variations
+### Plain inline alert variations
 
 It is not recommended to use an inline plain alert with `actionClose` nor `actionLinks`.
 
@@ -319,7 +315,7 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
 </Alert>
 ```
 
-## Live region alert examples
+### Live region alert examples
 
 Accessible Rich Internet Applications (ARIA) is a set of roles and attributes specified by the [World Wide Web Consortium](https://www.w3.org/WAI/standards-guidelines/aria/). ARIA defines ways to make web content and web applications more accessible to people with disabilities.
 
