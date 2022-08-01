@@ -95,6 +95,74 @@ describe('Page', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('Verify sticky top breadcrumb on all height breakpoints', () => {
+    const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" topNav="Navigation" />;
+    const Sidebar = <PageSidebar isNavOpen />;
+    const PageBreadcrumb = () => (
+      <Breadcrumb>
+        <BreadcrumbItem>Section Home</BreadcrumbItem>
+        <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
+        <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
+        <BreadcrumbItem to="#" isActive>
+          Section Landing
+        </BreadcrumbItem>
+      </Breadcrumb>
+    );
+
+    const { asFragment } = render(
+      <Page
+        {...props}
+        header={Header}
+        sidebar={Sidebar}
+        breadcrumb={<PageBreadcrumb />}
+        breadcrumbProps={{ stickyOnBreakpoint: { sm: 'top', md: 'top', lg: 'top', xl: 'top', '2xl': 'top' } }}
+      >
+        <PageSection variant="default">Section with default background</PageSection>
+        <PageSection variant="light">Section with light background</PageSection>
+        <PageSection variant="dark">Section with dark background</PageSection>
+        <PageSection variant="darker">Section with darker background</PageSection>
+      </Page>
+    );
+
+    expect(screen.getByRole('main')).not.toHaveAttribute('id');
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Verify sticky bottom breadcrumb on all height breakpoints', () => {
+    const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" topNav="Navigation" />;
+    const Sidebar = <PageSidebar isNavOpen />;
+    const PageBreadcrumb = () => (
+      <Breadcrumb>
+        <BreadcrumbItem>Section Home</BreadcrumbItem>
+        <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
+        <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
+        <BreadcrumbItem to="#" isActive>
+          Section Landing
+        </BreadcrumbItem>
+      </Breadcrumb>
+    );
+
+    const { asFragment } = render(
+      <Page
+        {...props}
+        header={Header}
+        sidebar={Sidebar}
+        breadcrumb={<PageBreadcrumb />}
+        breadcrumbProps={{
+          stickyOnBreakpoint: { sm: 'bottom', md: 'bottom', lg: 'bottom', xl: 'bottom', '2xl': 'bottom' }
+        }}
+      >
+        <PageSection variant="default">Section with default background</PageSection>
+        <PageSection variant="light">Section with light background</PageSection>
+        <PageSection variant="dark">Section with dark background</PageSection>
+        <PageSection variant="darker">Section with darker background</PageSection>
+      </Page>
+    );
+
+    expect(screen.getByRole('main')).not.toHaveAttribute('id');
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('Check page to verify breadcrumb is created - PageBreadcrumb syntax', () => {
     const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" topNav="Navigation" />;
     const Sidebar = <PageSidebar isNavOpen />;
@@ -102,6 +170,62 @@ describe('Page', () => {
     const { asFragment } = render(
       <Page {...props} header={Header} sidebar={Sidebar}>
         <PageBreadcrumb>
+          <Breadcrumb>
+            <BreadcrumbItem>Section Home</BreadcrumbItem>
+            <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
+            <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
+            <BreadcrumbItem to="#" isActive>
+              Section Landing
+            </BreadcrumbItem>
+          </Breadcrumb>
+        </PageBreadcrumb>
+        <PageSection variant="default">Section with default background</PageSection>
+        <PageSection variant="light">Section with light background</PageSection>
+        <PageSection variant="dark">Section with dark background</PageSection>
+        <PageSection variant="darker">Section with darker background</PageSection>
+      </Page>
+    );
+
+    expect(screen.getByRole('main')).not.toHaveAttribute('id');
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Verify sticky top breadcrumb on all height breakpoints - PageBreadcrumb syntax', () => {
+    const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" topNav="Navigation" />;
+    const Sidebar = <PageSidebar isNavOpen />;
+
+    const { asFragment } = render(
+      <Page {...props} header={Header} sidebar={Sidebar}>
+        <PageBreadcrumb stickyOnBreakpoint={{ sm: 'top', md: 'top', lg: 'top', xl: 'top', '2xl': 'top' }}>
+          <Breadcrumb>
+            <BreadcrumbItem>Section Home</BreadcrumbItem>
+            <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
+            <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
+            <BreadcrumbItem to="#" isActive>
+              Section Landing
+            </BreadcrumbItem>
+          </Breadcrumb>
+        </PageBreadcrumb>
+        <PageSection variant="default">Section with default background</PageSection>
+        <PageSection variant="light">Section with light background</PageSection>
+        <PageSection variant="dark">Section with dark background</PageSection>
+        <PageSection variant="darker">Section with darker background</PageSection>
+      </Page>
+    );
+
+    expect(screen.getByRole('main')).not.toHaveAttribute('id');
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Sticky bottom breadcrumb on all height breakpoints - PageBreadcrumb syntax', () => {
+    const Header = <PageHeader logo="Logo" headerTools="PageHeaderTools | Avatar" topNav="Navigation" />;
+    const Sidebar = <PageSidebar isNavOpen />;
+
+    const { asFragment } = render(
+      <Page {...props} header={Header} sidebar={Sidebar}>
+        <PageBreadcrumb
+          stickyOnBreakpoint={{ sm: 'bottom', md: 'bottom', lg: 'bottom', xl: 'bottom', '2xl': 'bottom' }}
+        >
           <Breadcrumb>
             <BreadcrumbItem>Section Home</BreadcrumbItem>
             <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
@@ -158,7 +282,7 @@ describe('Page', () => {
 
     const { asFragment } = render(
       <Page {...props} header={Header} sidebar={Sidebar}>
-        <PageGroup sticky="bottom">
+        <PageGroup stickyOnBreakpoint={{ default: 'bottom' }}>
           <PageBreadcrumb>
             <Breadcrumb>
               <BreadcrumbItem>Section Home</BreadcrumbItem>
@@ -232,7 +356,7 @@ describe('Page', () => {
         tertiaryNav={nav}
         isBreadcrumbGrouped
         isTertiaryNavGrouped
-        groupProps={{ sticky: 'bottom', hasShadowTop: true }}
+        groupProps={{ stickyOnBreakpoint: { default: 'bottom' }, hasShadowTop: true }}
       >
         <PageSection variant="default">Section with default background</PageSection>
         <PageSection variant="light">Section with light background</PageSection>
