@@ -92,21 +92,21 @@ Router links can be used for in-app linking in React environments to prevent pag
 
 ### Aria-disabled examples
 
-[Accessible Rich Internet Applications (ARIA)](https://www.w3.org/WAI/standards-guidelines/aria/) is a set of roles and attributes specified by the [World Wide Web Consortium]. ARIA defines ways to make web content and web applications more accessible to people with disabilities.
+[Accessible Rich Internet Applications (ARIA)](https://www.w3.org/WAI/standards-guidelines/aria/) is a set of roles and attributes specified by the World Wide Web Consortium. ARIA defines ways to make web content and web applications more accessible to people with disabilities.
 
-Buttons that are aria-disabled are similar to normal disabled buttons, except they can receive focus. Every button variant can be aria disabled using the `isAriaDisabled` property.
+Buttons that are aria-disabled are similar to normal disabled buttons, except they can receive focus. Every button variant can be aria-disabled using the `isAriaDisabled` property.
 
 ```ts file="./ButtonAriaDisabled.tsx"
 ```
 
-### With tooltip
+### Aria-disabled with tooltip
 
 Unlike normal disabled buttons, aria-disabled buttons can support tooltips.
 
 ```ts file="./ButtonAriaDisabledTooltip.tsx"
 ```
 
-### Link as button with tooltip
+### Aria-disabled link as button with tooltip
 
 Aria-disabled buttons can operate as links, which also support tooltips.
 
