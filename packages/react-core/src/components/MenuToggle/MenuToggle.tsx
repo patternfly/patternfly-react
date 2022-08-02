@@ -151,7 +151,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
         ref={innerRef as React.Ref<HTMLButtonElement>}
         disabled={isDisabled}
         onClick={onClick}
-        {...otherProps}
+        {...componentProps}
       />
     );
   }
