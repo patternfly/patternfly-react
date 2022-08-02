@@ -6,6 +6,13 @@ import { BadgeProps } from '../Badge';
 
 export type MenuToggleElement = HTMLDivElement | HTMLButtonElement;
 
+export interface SplitButtonOptions {
+  /** Elements to display before the toggle button. When included, renders the menu toggle as a split button. */
+  items?: React.ReactNode[];
+  /** Variant of split button toggle */
+  variant?: 'action' | 'checkbox';
+}
+
 export interface MenuToggleProps
   extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<MenuToggleElement>, MenuToggleElement>, 'ref'> {
   /** Content rendered inside the toggle */
@@ -20,10 +27,8 @@ export interface MenuToggleProps
   isFullHeight?: boolean;
   /** Flag indicating the toggle takes up the full width of its parent */
   isFullWidth?: boolean;
-  /** Elements to display before the toggle button. When included, renders the menu toggle as a split button. */
-  splitButtonItems?: React.ReactNode[];
-  /** Variant of split button toggle */
-  splitButtonVariant?: 'action' | 'checkbox';
+  /** Object use to configure a split button menu toggle */
+  splitButtonOptions?: SplitButtonOptions;
   /** Variant styles of the menu toggle */
   variant?: 'default' | 'plain' | 'primary' | 'plainText' | 'secondary' | 'typeahead';
   /** Optional icon rendered inside the toggle, before the children content */
@@ -41,9 +46,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
     isExpanded: false,
     isDisabled: false,
     isFullWidth: false,
-    isFullHeight: false,
-    variant: 'default',
-    splitButtonVariant: 'checkbox'
+    isFullHeight: false
   };
 
   render() {
@@ -56,8 +59,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
       isDisabled,
       isFullHeight,
       isFullWidth,
-      splitButtonItems,
-      splitButtonVariant,
+      splitButtonOptions,
       variant,
       innerRef,
       onClick,
@@ -119,20 +121,21 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
       return <div ref={innerRef as React.Ref<HTMLDivElement>} className={css(commonStyles)} {...componentProps} />;
     }
 
-    if (splitButtonItems) {
+    if (splitButtonOptions) {
       return (
         <div
           className={css(
             commonStyles,
             styles.modifiers.splitButton,
-            splitButtonVariant === 'action' && styles.modifiers.action
+            splitButtonOptions?.variant === 'action' && styles.modifiers.action
           )}
         >
-          {splitButtonItems}
+          {splitButtonOptions?.items}
           <button
             className={css(styles.menuToggleButton)}
             type="button"
             aria-expanded={isExpanded}
+            aria-label={ariaLabel}
             disabled={isDisabled}
             {...otherProps}
           >

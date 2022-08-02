@@ -32,7 +32,6 @@ export interface MenuToggleCheckboxProps
 export class MenuToggleCheckbox extends React.Component<MenuToggleCheckboxProps, { ouiaStateId: string }> {
   static displayName = 'MenuToggleCheckbox';
   static defaultProps: PickOptional<MenuToggleCheckboxProps> = {
-    className: '',
     isValid: true,
     isDisabled: false,
     onChange: () => undefined as any
@@ -85,7 +84,6 @@ export class MenuToggleCheckbox extends React.Component<MenuToggleCheckboxProps,
       <label className={css(styles.check, !children && styles.modifiers.standalone, className)} htmlFor={id}>
         <input
           className={css(styles.checkInput)}
-          {...props}
           {...(this.calculateChecked() !== undefined && { onChange: this.handleChange })}
           name={id}
           type="checkbox"
@@ -98,6 +96,7 @@ export class MenuToggleCheckbox extends React.Component<MenuToggleCheckboxProps,
             ouiaId !== undefined ? ouiaId : this.state.ouiaStateId,
             ouiaSafe
           )}
+          {...props}
         />
         {text}
       </label>
