@@ -10,7 +10,7 @@ export interface ContextSelectorToggleProps {
   id: string;
   /** Classes applied to root element of toggle */
   className?: string;
-  /** Component or string that will be used in the Context Selector.
+  /** Component or string that will be used in the context selector.
    * This prop is placed in a button, and cannot contain any interactive elements
    */
   toggleText?: React.ReactNode;

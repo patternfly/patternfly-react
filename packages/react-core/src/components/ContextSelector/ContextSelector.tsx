@@ -37,7 +37,7 @@ export interface ContextSelectorProps extends Omit<ToggleMenuBaseProps, 'menuApp
   isFullHeight?: boolean;
   /** Labels the Context Selector for Screen Readers */
   screenReaderLabel?: string;
-  /** Component or string that will be used in the Context Selector.
+  /** Component or string that will be used in the context selector.
    * This prop is placed in a button, and cannot contain any interactive elements
    */
   toggleText?: React.ReactNode;
