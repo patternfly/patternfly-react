@@ -272,10 +272,13 @@ class MenuBase extends React.Component<MenuProps, MenuState> {
             additionalKeyHandler={this.handleExtraKeys}
             createNavigableElements={this.createNavigableElements}
             isActiveElement={(element: Element) =>
+              document.activeElement.closest('li') === element ||
               document.activeElement.parentElement === element ||
               (document.activeElement.closest('ol') && document.activeElement.closest('ol').firstChild === element)
             }
-            getFocusableElement={(navigableElement: Element) => navigableElement.firstChild as Element}
+            getFocusableElement={(navigableElement: Element) =>
+              navigableElement.querySelector('input') || (navigableElement.firstChild as Element)
+            }
             noHorizontalArrowHandling={
               document.activeElement &&
               (document.activeElement.classList.contains('pf-c-breadcrumb__link') ||
