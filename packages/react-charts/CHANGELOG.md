@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 6.84.0 (2022-08-03)
+
+
+### Features
+
+* **MenuToggle:** add split button variants ([#7748](https://github.com/patternfly/patternfly-react/issues/7748)) ([7577725](https://github.com/patternfly/patternfly-react/commit/7577725305533791481ac22d9b36b87d5d3167b1))
+
+
+
+
+
 ## 6.83.1 (2022-08-02)
 
 **Note:** Version bump only for package @patternfly/react-charts
