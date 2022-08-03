@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.72.1 (2022-08-03)
+
+
+### Bug Fixes
+
+* **Menu:** can navigate via keyboard for checkbox variant ([#7743](https://github.com/patternfly/patternfly-react/issues/7743)) ([7cfa876](https://github.com/patternfly/patternfly-react/commit/7cfa87682c225c3e93d6c4e0925b3c34aaede633))
+
+
+
+
+
 # 4.72.0 (2022-08-03)
 
 
