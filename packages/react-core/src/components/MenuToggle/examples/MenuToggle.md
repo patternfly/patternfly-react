@@ -2,7 +2,7 @@
 id: Menu toggle
 section: components
 cssPrefix: pf-c-menu-toggle
-propComponents: ['MenuToggle']
+propComponents: ['MenuToggle', 'MenuToggleAction', 'MenuToggleCheckbox', 'SplitButtonOptions']
 beta: true
 ---
 
@@ -137,6 +137,40 @@ import { MenuToggle } from '@patternfly/react-core';
 </React.Fragment>
 ```
 
+### Split button (checkbox)
+    
+```ts file='MenuToggleSplitButtonCheckbox.tsx'
+```
+
+### Split button (checkbox with toggle text)
+    
+```ts file='MenuToggleSplitButtonCheckboxWithText.tsx'
+```
+
+### Split button (checkbox, primary)
+    
+```ts file='MenuToggleSplitButtonCheckboxPrimary.tsx'
+```
+
+### Split button (checkbox, secondary)
+    
+```ts file='MenuToggleSplitButtonCheckboxSecondary.tsx'
+```
+
+### Split button (action)
+    
+```ts file='MenuToggleSplitButtonAction.tsx'
+```
+
+### Split button (action, primary)
+    
+```ts file='MenuToggleSplitButtonActionPrimary.tsx'
+```
+
+### Split button (action, secondary)
+    
+```ts file='MenuToggleSplitButtonActionSecondary.tsx'
+```
 
 ### With icon/image and text
 
@@ -191,5 +225,4 @@ const fullWidth: React.FunctionComponent = () => {
     </MenuToggle>
   );
 }
-    
 ```
