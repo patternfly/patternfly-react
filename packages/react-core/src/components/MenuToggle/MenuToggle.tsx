@@ -8,7 +8,7 @@ export type MenuToggleElement = HTMLDivElement | HTMLButtonElement;
 
 export interface SplitButtonOptions {
   /** Elements to display before the toggle button. When included, renders the menu toggle as a split button. */
-  items?: React.ReactNode[];
+  items: React.ReactNode[];
   /** Variant of split button toggle */
   variant?: 'action' | 'checkbox';
 }
@@ -27,7 +27,7 @@ export interface MenuToggleProps
   isFullHeight?: boolean;
   /** Flag indicating the toggle takes up the full width of its parent */
   isFullWidth?: boolean;
-  /** Object use to configure a split button menu toggle */
+  /** Object used to configure a split button menu toggle */
   splitButtonOptions?: SplitButtonOptions;
   /** Variant styles of the menu toggle */
   variant?: 'default' | 'plain' | 'primary' | 'plainText' | 'secondary' | 'typeahead';

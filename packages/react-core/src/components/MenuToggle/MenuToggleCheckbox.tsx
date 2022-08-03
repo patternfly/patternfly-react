@@ -72,7 +72,6 @@ export class MenuToggleCheckbox extends React.Component<MenuToggleCheckboxProps,
       onChange,
       defaultChecked,
       id,
-      /* eslint-enable @typescript-eslint/no-unused-vars */
       ...props
     } = this.props;
     const text = children && (
