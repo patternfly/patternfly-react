@@ -227,7 +227,6 @@ export interface ChartLabelProps extends VictoryLabelProps {
 export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
   style,
   textAnchor,
-  id,
   ...rest
 }: ChartLabelProps) => {
   const applyDefaultStyle = (customStyle: React.CSSProperties) =>
@@ -245,7 +244,7 @@ export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
     );
   const newStyle = Array.isArray(style) ? style.map(applyDefaultStyle) : applyDefaultStyle(style);
 
-  return <VictoryLabel style={newStyle as any} textAnchor={textAnchor} id={id} {...rest} />;
+  return <VictoryLabel style={newStyle as any} textAnchor={textAnchor} {...rest} />;
 };
 ChartLabel.displayName = 'ChartLabel';
 
