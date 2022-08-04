@@ -7,33 +7,26 @@ export const ModalWithForm: React.FunctionComponent = () => {
   const [nameValue, setNameValue] = React.useState('');
   const [emailValue, setEmailValue] = React.useState('');
   const [addressValue, setAddressValue] = React.useState('');
-  const nameInputRef = React.useRef();
 
   const handleModalToggle = () => {
     setModalOpen(!isModalOpen);
   };
 
-  const handleNameInputChange = value => {
+  const handleNameInputChange = (value: string) => {
     setNameValue(value);
   };
 
-  const handleEmailInputChange = value => {
+  const handleEmailInputChange = (value: string) => {
     setEmailValue(value);
   };
-  const handleAddressInputChange = value => {
+  const handleAddressInputChange = (value: string) => {
     setAddressValue(value);
   };
-
-  React.useEffect(() => {
-    if (isModalOpen && nameInputRef && nameInputRef.current) {
-      (nameInputRef.current as HTMLInputElement).focus();
-    }
-  }, [isModalOpen]);
 
   return (
     <React.Fragment>
       <Button variant="primary" onClick={handleModalToggle}>
-        Show modal
+        Show modal with form
       </Button>
       <Modal
         variant={ModalVariant.small}
@@ -102,7 +95,6 @@ export const ModalWithForm: React.FunctionComponent = () => {
               name="modal-with-form-form-name"
               value={nameValue}
               onChange={handleNameInputChange}
-              ref={nameInputRef}
             />
           </FormGroup>
           <FormGroup

@@ -26,13 +26,15 @@ export interface TreeViewListItemProps {
   /** Callback for item selection. Note: calling event.preventDefault() will prevent the node from toggling. */
   onSelect?: (event: React.MouseEvent, item: TreeViewDataItem, parent: TreeViewDataItem) => void;
   /** Callback for item checkbox selection */
-  onCheck?: (event: React.ChangeEvent, item: TreeViewDataItem, parent: TreeViewDataItem) => void;
+  onCheck?: (event: React.ChangeEvent<HTMLInputElement>, item: TreeViewDataItem, parent: TreeViewDataItem) => void;
   /** Flag indicating if a tree view item has a checkbox */
   hasCheck?: boolean;
   /** Additional properties of the tree view item checkbox */
   checkProps?: TreeViewCheckProps;
   /** Flag indicating if a tree view item has a badge */
   hasBadge?: boolean;
+  /** Flag indicating that tree nodes should be independently selectable, even when having children */
+  isSelectable?: boolean;
   /** Optional prop for custom badge */
   customBadgeContent?: React.ReactNode;
   /** Additional properties of the tree view item badge */
@@ -73,6 +75,7 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
   hasBadge = false,
   customBadgeContent,
   badgeProps = { isRead: true },
+  isSelectable = false,
   isCompact,
   activeItems = [],
   itemData,
@@ -93,17 +96,27 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
     }
   }, [isExpanded, defaultExpanded]);
 
-  const Component = hasCheck ? 'div' : 'button';
-  const ToggleComponent = hasCheck ? 'button' : 'div';
+  let Component: 'label' | 'div' | 'button' = 'button';
+  if (hasCheck) {
+    Component = 'label';
+  } else if (isSelectable) {
+    Component = 'div';
+  }
+
+  const ToggleComponent = hasCheck || isSelectable ? 'button' : 'span';
+
   const renderToggle = (randomId: string) => (
     <ToggleComponent
       className={css(styles.treeViewNodeToggle)}
-      onClick={() => {
-        if (hasCheck) {
+      onClick={(evt: React.MouseEvent) => {
+        if (isSelectable || hasCheck) {
           setIsExpanded(!internalIsExpanded);
         }
+        if (isSelectable) {
+          evt.stopPropagation();
+        }
       }}
-      {...(hasCheck && { 'aria-labelledby': `label-${randomId}` })}
+      {...((hasCheck || isSelectable) && { 'aria-labelledby': `label-${randomId}` })}
       tabIndex={-1}
     >
       <span className={css(styles.treeViewNodeToggleIcon)}>
@@ -115,8 +128,8 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
     <span className={css(styles.treeViewNodeCheck)}>
       <input
         type="checkbox"
-        onChange={(evt: React.ChangeEvent) => onCheck && onCheck(evt, itemData, parentItem)}
-        onClick={(evt: React.MouseEvent) => evt.stopPropagation()}
+        onChange={evt => onCheck && onCheck(evt, itemData, parentItem)}
+        onClick={evt => evt.stopPropagation()}
         ref={elem => elem && (elem.indeterminate = checkProps.checked === null)}
         {...checkProps}
         checked={checkProps.checked === null ? false : checkProps.checked}
@@ -131,20 +144,18 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       {internalIsExpanded && (expandedIcon || icon)}
     </span>
   );
-  const renderNodeContent = (randomId: string) => {
+  const renderNodeContent = () => {
     const content = (
       <>
         {isCompact && title && <span className={css(styles.treeViewNodeTitle)}>{title}</span>}
         {hasCheck ? (
-          <label className={css(styles.treeViewNodeText)} htmlFor={randomId} id={`label-${randomId}`}>
-            {name}
-          </label>
+          <span className={css(styles.treeViewNodeText)}>{name}</span>
         ) : (
           <span className={css(styles.treeViewNodeText)}>{name}</span>
         )}
       </>
     );
-    return isCompact ? <div className={css(styles.treeViewNodeContent)}>{content}</div> : content;
+    return isCompact ? <span className={css(styles.treeViewNodeContent)}>{content}</span> : content;
   };
   const badgeRendered = (
     <>
@@ -171,12 +182,13 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
       tabIndex={-1}
     >
       <div className={css(styles.treeViewContent)}>
-        <GenerateId prefix="checkbox-id">
+        <GenerateId prefix={isSelectable ? 'selectable-id' : 'checkbox-id'}>
           {randomId => (
             <Component
               className={css(
                 styles.treeViewNode,
-                !children &&
+                children && (isSelectable || hasCheck) && styles.modifiers.selectable,
+                (!children || isSelectable) &&
                   activeItems &&
                   activeItems.length > 0 &&
                   activeItems.some(item => compareItems && item && compareItems(item, itemData))
@@ -186,20 +198,22 @@ const TreeViewListItemBase: React.FunctionComponent<TreeViewListItemProps> = ({
               onClick={(evt: React.MouseEvent) => {
                 if (!hasCheck) {
                   onSelect && onSelect(evt, itemData, parentItem);
-                  if (children && evt.isDefaultPrevented() !== true) {
+                  if (!isSelectable && children && evt.isDefaultPrevented() !== true) {
                     setIsExpanded(!internalIsExpanded);
                   }
                 }
               }}
-              tabIndex={-1}
+              tabIndex={isSelectable ? 0 : -1}
+              {...(hasCheck && { htmlFor: randomId })}
+              {...((hasCheck || (isSelectable && children)) && { id: `label-${randomId}` })}
             >
-              <div className={css(styles.treeViewNodeContainer)}>
+              <span className={css(styles.treeViewNodeContainer)}>
                 {children && renderToggle(randomId)}
                 {hasCheck && renderCheck(randomId)}
                 {icon && iconRendered}
-                {renderNodeContent(randomId)}
+                {renderNodeContent()}
                 {badgeRendered}
-              </div>
+              </span>
             </Component>
           )}
         </GenerateId>

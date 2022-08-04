@@ -2,7 +2,20 @@
 id: Legends
 section: charts
 propComponents: [
-  'ChartLegend'
+  'Chart',
+  'ChartArea',
+  'ChartAxis',
+  'ChartBar',
+  'ChartBullet',
+  'ChartDonut',
+  'ChartGroup',
+  'ChartLabel',
+  'ChartLegend',
+  'ChartLegendTooltip',
+  'ChartLine',
+  'ChartPie',
+  'ChartScatter',
+  'ChartVoronoiContainer'
 ]
 hideDarkMode: true
 ---
@@ -13,6 +26,7 @@ import {
   ChartAxis,
   ChartBar,
   ChartBullet,
+  ChartContainer,
   ChartDonut,
   ChartGroup,
   ChartLabel,
@@ -28,7 +42,6 @@ import {
   getInteractiveLegendItemStyles,
   getResizeObserver
 } from '@patternfly/react-charts';
-import chart_area_Opacity from '@patternfly/react-tokens/dist/esm/chart_area_Opacity';
 import chart_color_black_500 from '@patternfly/react-tokens/dist/esm/chart_color_black_500';
 import '@patternfly/patternfly/patternfly-charts.css';
 
@@ -261,7 +274,6 @@ import {
   ChartLegendTooltip,
   ChartScatter, 
   ChartThemeColor,
-  ChartVoronoiContainer,
   createContainer, 
   getInteractiveLegendEvents, 
   getInteractiveLegendItemStyles,
@@ -640,8 +652,7 @@ This demonstrates an approach for applying links to a legend using a custom labe
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
-import { Tooltip } from '@patternfly/react-core';
+import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 class LegendLinkPieChart extends React.Component {
   constructor(props) {
@@ -649,7 +660,7 @@ class LegendLinkPieChart extends React.Component {
 
     // Custom legend label compoenent
     this.LegendLabel = ({datum, ...rest}) => (
-      <a href="#" aria-label="Learn more about...">
+      <a href="#" aria-label={`Learn more about ${rest.text}`}>
         <ChartLabel {...rest} />
       </a>
     );
@@ -665,11 +676,11 @@ class LegendLinkPieChart extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '275px', width: '450px' }}>
+      <div role="article" aria-describedby="withLinks-desc" aria-labelledby="withLinks-title" style={{ height: '275px', width: '450px' }}>
         <Chart
-          ariaDesc="Average number of pets"
+          ariaDesc="Average number of pets per year"
           ariaTitle="Line chart example"
-          containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+          containerComponent={<ChartVoronoiContainer containerId="withLinks" role="figure" labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
           legendComponent={this.getLegend([
             { name: 'Cats' }, 
             { name: 'Dogs' }, 
@@ -689,8 +700,8 @@ class LegendLinkPieChart extends React.Component {
           }}
           width={450}
         >
-          <ChartAxis tickValues={[2, 3, 4]} />
-          <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+          <ChartAxis tickValues={[2, 3, 4]} tickLabelComponent={<ChartLabel ariaLabel="X axis - the year polled" />} />
+          <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} tickLabelComponent={<ChartLabel ariaLabel="Y axis - average number of pets" />} />
           <ChartGroup>
             <ChartLine
               data={[
@@ -814,4 +825,16 @@ class LegendLayoutPieChart extends React.Component {
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
- - For `ChartLegend` props, see [VictoryLegend](https://formidable.com/open-source/victory/docs/victory-legend)
+- For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)
+- For `ChartArea` props, see [VictoryArea](https://formidable.com/open-source/victory/docs/victory-area)
+- For `ChartAxis` props, see [VictoryAxis](https://formidable.com/open-source/victory/docs/victory-axis)
+- For `ChartBar` props, see [VictoryBar](https://formidable.com/open-source/victory/docs/victory-bar)
+- For `ChartBullet` props, see [VictoryBar](https://formidable.com/open-source/victory/docs/victory-bar)
+- For `ChartDonut` props, see [VictoryPie](https://formidable.com/open-source/victory/docs/victory-pie)
+- For `ChartGroup` props, see [VictoryGroup](https://formidable.com/open-source/victory/docs/victory-group)
+- For `ChartLabel` props, see [VictoryLabel](https://formidable.com/open-source/victory/docs/victory-label)
+- For `ChartLegend` props, see [VictoryLegend](https://formidable.com/open-source/victory/docs/victory-legend)
+- For `ChartLine` props, see [VictoryLine](https://formidable.com/open-source/victory/docs/victory-line)
+- For `ChartPie` props, see [VictoryPie](https://formidable.com/open-source/victory/docs/victory-pie)
+- For `ChartScatter` props, see [VictoryScatter](https://formidable.com/open-source/victory/docs/victory-scatter)
+- For `ChartVoronoiContainer` props, see [VictoryVoronoiContainer](https://formidable.com/open-source/victory/docs/victory-voronoi-container)

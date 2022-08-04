@@ -21,6 +21,8 @@ export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
   topNav?: React.ReactNode;
   /** True to show the nav toggle button (toggles side nav) */
   showNavToggle?: boolean;
+  /** Id for the nav toggle button */
+  navToggleId?: string;
   /** True if the side nav is shown  */
   isNavOpen?: boolean;
   /** This prop is no longer managed through PageHeader but in the Page component. */
@@ -44,6 +46,7 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
   isManagedSidebar: deprecatedIsManagedSidebar = undefined,
   role = undefined as string,
   showNavToggle = false,
+  navToggleId = 'nav-toggle',
   onNavToggle = () => undefined as any,
   'aria-label': ariaLabel = 'Global navigation',
   'aria-controls': ariaControls = null,
@@ -68,7 +71,7 @@ export const PageHeader: React.FunctionComponent<PageHeaderProps> = ({
                 {showNavToggle && (
                   <div className={css(styles.pageHeaderBrandToggle)}>
                     <Button
-                      id="nav-toggle"
+                      id={navToggleId}
                       onClick={navToggle}
                       aria-label={ariaLabel}
                       aria-controls={ariaControls}

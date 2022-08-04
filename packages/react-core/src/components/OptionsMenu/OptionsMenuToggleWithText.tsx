@@ -2,6 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { KEY_CODES } from '../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
+import { DropdownContext } from '../Dropdown';
 
 export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivElement> {
   /** Id of the parent options menu component */
@@ -109,31 +110,35 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   };
 
   return (
-    <div
-      className={css(
-        styles.optionsMenuToggle,
-        styles.modifiers.text,
-        isPlain && styles.modifiers.plain,
-        isDisabled && styles.modifiers.disabled,
-        isActive && styles.modifiers.active
+    <DropdownContext.Consumer>
+      {({ id: contextId }) => (
+        <div
+          className={css(
+            styles.optionsMenuToggle,
+            styles.modifiers.text,
+            isPlain && styles.modifiers.plain,
+            isDisabled && styles.modifiers.disabled,
+            isActive && styles.modifiers.active
+          )}
+          {...props}
+        >
+          <span className={css(styles.optionsMenuToggleText, toggleTextClassName)}>{toggleText}</span>
+          <button
+            className={css(styles.optionsMenuToggleButton, toggleButtonContentsClassName)}
+            id={parentId ? `${parentId}-toggle` : `${contextId}-toggle`}
+            aria-haspopup="listbox"
+            aria-label={ariaLabel}
+            aria-expanded={isOpen}
+            ref={buttonRef}
+            disabled={isDisabled}
+            onClick={() => onToggle(!isOpen)}
+            onKeyDown={onKeyDown}
+          >
+            <span className={css(styles.optionsMenuToggleButtonIcon)}>{toggleButtonContents}</span>
+          </button>
+        </div>
       )}
-      {...props}
-    >
-      <span className={css(styles.optionsMenuToggleText, toggleTextClassName)}>{toggleText}</span>
-      <button
-        className={css(styles.optionsMenuToggleButton, toggleButtonContentsClassName)}
-        id={`${parentId}-toggle`}
-        aria-haspopup="listbox"
-        aria-label={ariaLabel}
-        aria-expanded={isOpen}
-        ref={buttonRef}
-        disabled={isDisabled}
-        onClick={() => onToggle(!isOpen)}
-        onKeyDown={onKeyDown}
-      >
-        <span className={css(styles.optionsMenuToggleButtonIcon)}>{toggleButtonContents}</span>
-      </button>
-    </div>
+    </DropdownContext.Consumer>
   );
 };
 OptionsMenuToggleWithText.displayName = 'OptionsMenuToggleWithText';

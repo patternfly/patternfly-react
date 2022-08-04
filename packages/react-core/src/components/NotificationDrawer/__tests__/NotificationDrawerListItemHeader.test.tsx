@@ -12,6 +12,11 @@ describe('NotificationDrawerListItemHeader', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('renders with correct heading level', () => {
+    const { asFragment } = render(<NotificationDrawerListItemHeader title="Pod quit unexpectedly" headingLevel="h3"/>);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('className is added to the root element', () => {
     render(
       <NotificationDrawerListItemHeader title="Pod quit unexpectedly" className="extra-class" data-testid="test-id" />

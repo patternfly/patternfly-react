@@ -2,6 +2,7 @@ import * as React from 'react';
 import { render } from '@testing-library/react';
 import { ChartContainer } from './ChartContainer';
 import { ChartLegend } from '../ChartLegend';
+import { ChartLabel } from '../ChartLabel';
 
 Object.values([true, false]).forEach(() => {
   test('ChartContainer', () => {
@@ -19,6 +20,7 @@ test('renders container via ChartLegend', () => {
         standalone={false}
         title="Average number of pets"
         width={200}
+        labelComponent={<ChartLabel id="test" />}
       />
     </ChartContainer>
   );

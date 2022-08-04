@@ -10,8 +10,9 @@ import { ChartTooltip } from '../ChartTooltip';
 import { getBulletPrimaryNegativeMeasureTheme, getBulletPrimarySegmentedMeasureTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-bar/src/index.d.ts
+ * ChartBulletPrimarySegmentedMeasure renders a dataset as the primary segmented measure.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-bar/src/index.d.ts
  */
 export interface ChartBulletPrimarySegmentedMeasureProps {
   /**

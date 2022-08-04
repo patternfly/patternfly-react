@@ -44,9 +44,17 @@ export const ComposableTableCompoundExpandable: React.FunctionComponent = () => 
     }
     setExpandedCells(newExpandedCells);
   };
-  const compoundExpandParams = (repo: Repository, columnKey: ColumnKey): TdProps['compoundExpand'] => ({
+  const compoundExpandParams = (
+    repo: Repository,
+    columnKey: ColumnKey,
+    rowIndex: number,
+    columnIndex: number
+  ): TdProps['compoundExpand'] => ({
     isExpanded: expandedCells[repo.name] === columnKey,
-    onToggle: () => setCellExpanded(repo, columnKey, expandedCells[repo.name] !== columnKey)
+    onToggle: () => setCellExpanded(repo, columnKey, expandedCells[repo.name] !== columnKey),
+    expandId: 'composable-compound-expandable-example',
+    rowIndex,
+    columnIndex
   });
 
   return (
@@ -61,7 +69,7 @@ export const ComposableTableCompoundExpandable: React.FunctionComponent = () => 
           <Th />
         </Tr>
       </Thead>
-      {repositories.map(repo => {
+      {repositories.map((repo: Repository, rowIndex: number) => {
         const expandedCellKey = expandedCells[repo.name];
         const isRowExpanded = !!expandedCellKey;
         return (
@@ -70,16 +78,24 @@ export const ComposableTableCompoundExpandable: React.FunctionComponent = () => 
               <Td width={25} dataLabel={columnNames.name} component="th">
                 <a href="#">{repo.name}</a>
               </Td>
-              <Td width={10} dataLabel={columnNames.branches} compoundExpand={compoundExpandParams(repo, 'branches')}>
+              <Td
+                width={10}
+                dataLabel={columnNames.branches}
+                compoundExpand={compoundExpandParams(repo, 'branches', rowIndex, 1)}
+              >
                 <CodeBranchIcon key="icon" /> {repo.branches}
               </Td>
-              <Td width={10} dataLabel={columnNames.prs} compoundExpand={compoundExpandParams(repo, 'prs')}>
+              <Td
+                width={10}
+                dataLabel={columnNames.prs}
+                compoundExpand={compoundExpandParams(repo, 'prs', rowIndex, 2)}
+              >
                 <CodeIcon key="icon" /> {repo.prs}
               </Td>
               <Td
                 width={10}
                 dataLabel={columnNames.workspaces}
-                compoundExpand={compoundExpandParams(repo, 'workspaces')}
+                compoundExpand={compoundExpandParams(repo, 'workspaces', rowIndex, 3)}
               >
                 <CubeIcon key="icon" /> {repo.workspaces}
               </Td>

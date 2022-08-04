@@ -81,6 +81,7 @@ describe('SearchInput', () => {
   test('advanced search with custom attributes', () => {
     const { asFragment } = render(
       <SearchInput
+        data-testid="test-id"
         attributes={[
           { attr: 'username', display: 'Username' },
           { attr: 'firstname', display: 'First name' }
@@ -102,7 +103,43 @@ describe('SearchInput', () => {
 
     userEvent.click(screen.getByRole('button', { name: 'Search' }));
 
+    userEvent.click(screen.getByRole('button', { name: 'Open advanced search' }));
+    expect(screen.getByTestId('test-id')).toContainElement(screen.getByText('First name'))
+
     expect(props.onSearch).toHaveBeenCalled();
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('advanced search with custom attributes and appendTo="inline', () => {
+    const {container}  = render(
+    <SearchInput
+        data-testid="test-id"
+        attributes={[
+          { attr: 'test', display: 'test' },
+        ]}
+        appendTo='inline'
+      />
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'Open advanced search' }));
+    
+    expect(screen.getByTestId('test-id')).toContainElement(screen.getByText('test'))
+  });
+
+  test('advanced search with custom attributes and appendTo external DOM element', () => {
+    const {container}  = render(
+    <SearchInput
+        data-testid="test-id"
+        attributes={[
+          { attr: 'test', display: 'test' },
+        ]}
+        appendTo={document.body}
+      />
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'Open advanced search' }));
+    
+    expect(screen.getByTestId('test-id')).not.toContainElement(screen.getByText('test'))
+    expect(document.body).toContainElement(screen.getByText('test'))
   });
 });

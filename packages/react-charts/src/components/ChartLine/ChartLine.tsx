@@ -30,8 +30,12 @@ export enum ChartLineSortOrder {
 }
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-line/src/index.d.ts
+ * ChartLine renders a dataset as a single line path. Since ChartLine renders only a single element to represent a
+ * dataset rather than individual elements for each data point, some of its behavior is different from other Victory
+ * based components. Pay special attention to style and events props, and take advantage of ChartVoronoiContainer to
+ * enable tooltips. ChartLine can be composed with Chart to create line charts.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-line/src/victory-line.tsx
  */
 export interface ChartLineProps extends VictoryLineProps {
   /**

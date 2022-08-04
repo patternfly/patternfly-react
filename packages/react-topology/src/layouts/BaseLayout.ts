@@ -307,6 +307,10 @@ export class BaseLayout implements Layout {
     }
   };
 
+  protected getLeafNodes = (): Node[] => leafNodeElements(this.graph.getNodes()).filter(n => n.isVisible());
+
+  protected getGroupNodes = (): Node[] => groupNodeElements(this.graph.getNodes()).filter(g => g.isVisible());
+
   protected getLinks(edges: Edge[]): LayoutLink[] {
     const links: LayoutLink[] = [];
     edges.forEach(e => {
@@ -417,8 +421,8 @@ export class BaseLayout implements Layout {
     const prevGroups = this.groups;
 
     // create datum
-    const leafNodes = leafNodeElements(this.graph.getNodes()).filter(n => n.isVisible());
-    const groups = groupNodeElements(this.graph.getNodes()).filter(g => g.isVisible());
+    const leafNodes = this.getLeafNodes();
+    const groups = this.getGroupNodes();
 
     this.nodes = this.getNodes(leafNodes, this.options.nodeDistance);
 

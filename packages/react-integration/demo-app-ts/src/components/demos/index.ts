@@ -1,5 +1,4 @@
 export * from './AboutModal/AboutModalDemo';
-export * from './AccordionDemo/AccordionDemo';
 export * from './AlertDemo/AlertDemo';
 export * from './AlertDemo/AlertTimeoutCloseButtonDemo';
 export * from './AlertGroupDemo/AlertGroupDemo';
@@ -98,6 +97,7 @@ export * from './ToggleGroupDemo/ToggleGroupDemo';
 export * from './ToolbarDemo/ToolbarDemo';
 export * from './TooltipDemo/TooltipDemo';
 export * from './TopologyDemo/TopologyDemo';
+export * from './TopologyDemo/TopologyPipelineDemo';
 export * from './TreeViewDemo/TreeViewDemo';
 export * from './WizardDemo/WizardDemo';
 export * from './JumpLinksDemo/JumpLinksDemo';

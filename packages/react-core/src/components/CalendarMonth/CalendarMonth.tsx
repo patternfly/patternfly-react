@@ -57,6 +57,11 @@ export interface CalendarProps extends CalendarFormat, Omit<React.HTMLProps<HTML
   onSelectToggle?: (open: boolean) => void;
   /** Flag to set browser focus on the passed date **/
   isDateFocused?: boolean;
+  /** Callback when month or year is changed */
+  onMonthChange?: (
+    newDate?: Date,
+    event?: React.MouseEvent | React.ChangeEvent | React.FormEvent<HTMLInputElement>
+  ) => void;
 }
 
 // Must be numeric given current header design
@@ -64,13 +69,20 @@ const yearFormat = (date: Date) => date.getFullYear();
 
 const buildCalendar = (year: number, month: number, weekStart: number, validators: ((date: Date) => boolean)[]) => {
   const defaultDate = new Date(year, month);
+
   const firstDayOfWeek = new Date(defaultDate);
   firstDayOfWeek.setDate(firstDayOfWeek.getDate() - firstDayOfWeek.getDay() + weekStart);
+
   // We will show a maximum of 6 weeks like Google calendar
   // Assume we just want the numbers for now...
   const calendarWeeks = [];
+
+  if (firstDayOfWeek.getMonth() === defaultDate.getMonth() && firstDayOfWeek.getDate() !== 1) {
+    firstDayOfWeek.setDate(firstDayOfWeek.getDate() - 7);
+  }
   for (let i = 0; i < 6; i++) {
     const week = [];
+
     for (let j = 0; j < 7; j++) {
       const date = new Date(firstDayOfWeek);
       week.push({
@@ -107,6 +119,7 @@ export const CalendarMonth = ({
   validators = [() => true],
   className,
   onSelectToggle = () => {},
+  onMonthChange = () => {},
   rangeStart,
   prevMonthAriaLabel = 'Previous month',
   nextMonthAriaLabel = 'Next month',
@@ -155,10 +168,11 @@ export const CalendarMonth = ({
     }
   }, [focusedDate, isDateFocused, focusedDateValidated, focusRef]);
 
-  const onMonthClick = (newDate: Date) => {
+  const onMonthClick = (newDate: Date, ev: React.MouseEvent) => {
     setFocusedDate(newDate);
     setHoveredDate(newDate);
     setShouldFocus(false);
+    onMonthChange(newDate, ev);
   };
 
   const onKeyDown = (ev: React.KeyboardEvent<HTMLTableSectionElement>) => {
@@ -215,7 +229,11 @@ export const CalendarMonth = ({
     <div className={css(styles.calendarMonth, className)} {...props}>
       <div className={styles.calendarMonthHeader}>
         <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.prevMonth)}>
-          <Button variant="plain" aria-label={prevMonthAriaLabel} onClick={() => onMonthClick(prevMonth)}>
+          <Button
+            variant="plain"
+            aria-label={prevMonthAriaLabel}
+            onClick={(ev: React.MouseEvent) => onMonthClick(prevMonth, ev)}
+          >
             <AngleLeftIcon aria-hidden={true} />
           </Button>
         </div>
@@ -233,7 +251,7 @@ export const CalendarMonth = ({
                 setIsSelectOpen(!isSelectOpen);
                 onSelectToggle(!isSelectOpen);
               }}
-              onSelect={(_ev, monthNum) => {
+              onSelect={(ev, monthNum) => {
                 // When we put CalendarMonth in a Popover we want the Popover's onDocumentClick
                 // to see the SelectOption as a child so it doesn't close the Popover.
                 setTimeout(() => {
@@ -244,6 +262,7 @@ export const CalendarMonth = ({
                   setFocusedDate(newDate);
                   setHoveredDate(newDate);
                   setShouldFocus(false);
+                  onMonthChange(newDate, ev);
                 }, 0);
               }}
               variant="single"
@@ -261,18 +280,23 @@ export const CalendarMonth = ({
               aria-label={yearInputAriaLabel}
               type="number"
               value={yearFormatted}
-              onChange={year => {
+              onChange={(year: string, ev: React.FormEvent<HTMLInputElement>) => {
                 const newDate = new Date(focusedDate);
                 newDate.setFullYear(+year);
                 setFocusedDate(newDate);
                 setHoveredDate(newDate);
                 setShouldFocus(false);
+                onMonthChange(newDate, ev);
               }}
             />
           </div>
         </InputGroup>
         <div className={css(styles.calendarMonthHeaderNavControl, styles.modifiers.nextMonth)}>
-          <Button variant="plain" aria-label={nextMonthAriaLabel} onClick={() => onMonthClick(nextMonth)}>
+          <Button
+            variant="plain"
+            aria-label={nextMonthAriaLabel}
+            onClick={(ev: React.MouseEvent) => onMonthClick(nextMonth, ev)}
+          >
             <AngleRightIcon aria-hidden={true} />
           </Button>
         </div>
@@ -338,7 +362,9 @@ export const CalendarMonth = ({
                       tabIndex={isFocused ? 0 : -1}
                       disabled={!isValid}
                       aria-label={
-                        cellAriaLabel ? cellAriaLabel(date) : `${dayFormatted} ${monthFormatted} ${yearFormatted}`
+                        cellAriaLabel
+                          ? cellAriaLabel(date)
+                          : `${dayFormat(date)} ${monthFormat(date)} ${yearFormat(date)}`
                       }
                       {...(isFocused && { ref: focusRef })}
                     >

@@ -3,6 +3,429 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.81.2 (2022-08-03)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.81.1 (2022-08-03)
+
+
+### Bug Fixes
+
+* **Menu:** can navigate via keyboard for checkbox variant ([#7743](https://github.com/patternfly/patternfly-react/issues/7743)) ([7cfa876](https://github.com/patternfly/patternfly-react/commit/7cfa87682c225c3e93d6c4e0925b3c34aaede633))
+
+
+
+
+
+# 4.81.0 (2022-08-03)
+
+
+### Features
+
+* **MenuToggle:** add split button variants ([#7748](https://github.com/patternfly/patternfly-react/issues/7748)) ([7577725](https://github.com/patternfly/patternfly-react/commit/7577725305533791481ac22d9b36b87d5d3167b1))
+
+
+
+
+
+## 4.80.1 (2022-08-02)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+# 4.80.0 (2022-08-01)
+
+
+### Features
+
+* **Page:** add support for vertical breakpoints, add sticky breadcrumb demo ([#7764](https://github.com/patternfly/patternfly-react/issues/7764)) ([9db582d](https://github.com/patternfly/patternfly-react/commit/9db582d63a3499fa78ea8fab3ce31b7877cd479d))
+
+
+
+
+
+# 4.79.0 (2022-08-01)
+
+
+### Features
+
+* **DescriptionList:** add Display and Card variants ([#7713](https://github.com/patternfly/patternfly-react/issues/7713)) ([8c6e6d8](https://github.com/patternfly/patternfly-react/commit/8c6e6d83cdbe989d306c64f945aac206eac3ff91))
+
+
+
+
+
+## 4.78.1 (2022-08-01)
+
+
+### Bug Fixes
+
+* **Menu/Nav:** flyout variants work with VO navigation ([#7772](https://github.com/patternfly/patternfly-react/issues/7772)) ([6ad76cc](https://github.com/patternfly/patternfly-react/commit/6ad76cc1b466e8e93773f58002acf5ca54ad6e36))
+
+
+
+
+
+# 4.78.0 (2022-07-29)
+
+
+### Features
+
+* **Tabs:** add horizontal overflow option ([#7742](https://github.com/patternfly/patternfly-react/issues/7742)) ([2745cd1](https://github.com/patternfly/patternfly-react/commit/2745cd199669b0c0a5cdbd5c3d4e7453c6e1c435))
+
+
+
+
+
+## 4.77.9 (2022-07-28)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.77.8 (2022-07-28)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.77.7 (2022-07-28)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.77.6 (2022-07-28)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.77.5 (2022-07-27)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.77.4 (2022-07-27)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.77.3 (2022-07-27)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.77.2 (2022-07-27)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.77.1 (2022-07-26)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+# 4.77.0 (2022-07-26)
+
+
+### Features
+
+* **Dropdown:** added secondary styling to split action button ([#7746](https://github.com/patternfly/patternfly-react/issues/7746)) ([e701c32](https://github.com/patternfly/patternfly-react/commit/e701c32bb36097770ecb2c3e17e15df0b720488f))
+
+
+
+
+
+## 4.76.2 (2022-07-26)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.76.1 (2022-07-26)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+# 4.76.0 (2022-07-26)
+
+
+### Features
+
+* **topology:** Pipelines support for badges/icons variable task node width ([#7697](https://github.com/patternfly/patternfly-react/issues/7697)) ([a499273](https://github.com/patternfly/patternfly-react/commit/a49927315cd61e84a007d05b49e5d7254b977fcb))
+
+
+
+
+
+## 4.75.11 (2022-07-25)
+
+
+### Bug Fixes
+
+* **Select:** remove variant check from update logic ([#7741](https://github.com/patternfly/patternfly-react/issues/7741)) ([2204cb6](https://github.com/patternfly/patternfly-react/commit/2204cb62e30b4a37b82731f1380e79a3085828ef))
+
+
+
+
+
+## 4.75.10 (2022-07-25)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.75.9 (2022-07-21)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.75.8 (2022-07-21)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.75.7 (2022-07-20)
+
+
+### Bug Fixes
+
+* **Switch:** aria labelledby to update with change ([#7557](https://github.com/patternfly/patternfly-react/issues/7557)) ([9647a0c](https://github.com/patternfly/patternfly-react/commit/9647a0c7f7eb2174f006774b4406408bd065fddc))
+
+
+
+
+
+## 4.75.6 (2022-07-20)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.75.5 (2022-07-19)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.75.4 (2022-07-15)
+
+
+### Bug Fixes
+
+* **LogViewer:** render correctly when there is '\n' in the string array ([#7681](https://github.com/patternfly/patternfly-react/issues/7681)) ([12222c7](https://github.com/patternfly/patternfly-react/commit/12222c76d47396d8df5134c607a9ff689d6d93c9))
+
+
+
+
+
+## 4.75.3 (2022-07-15)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.75.2 (2022-07-15)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.75.1 (2022-07-15)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+# 4.75.0 (2022-07-14)
+
+
+### Features
+
+* **Topology:** Add Topology pipeline support ([#7609](https://github.com/patternfly/patternfly-react/issues/7609)) ([4fb563f](https://github.com/patternfly/patternfly-react/commit/4fb563fb8651c0386f7cc59fd9c736af6fb683ec))
+
+
+
+
+
+## 4.74.15 (2022-07-12)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.74.14 (2022-07-11)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.74.13 (2022-07-11)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.74.12 (2022-07-08)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.74.11 (2022-07-08)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.74.10 (2022-07-08)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.74.9 (2022-07-07)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.74.8 (2022-07-07)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.74.7 (2022-07-07)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.74.6 (2022-07-06)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.74.5 (2022-07-06)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.74.4 (2022-07-05)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.74.3 (2022-07-05)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.74.2 (2022-06-30)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 4.74.1 (2022-06-29)
+
+
+### Bug Fixes
+
+* **Select:** update logic should only apply to typeahead ([#7632](https://github.com/patternfly/patternfly-react/issues/7632)) ([0b9148e](https://github.com/patternfly/patternfly-react/commit/0b9148e67030236e61423895c6632b20dac4617f))
+
+
+
+
+
 # 4.74.0 (2022-06-27)
 
 

@@ -80,11 +80,11 @@ class BasicNotificationDrawer extends React.Component {
         <NotificationDrawerHeader count={3} onClose={this.onDrawerClose}>
           <Dropdown
             onSelect={this.onSelect}
-            toggle={<KebabToggle onToggle={this.onToggle(0)} id="toggle-id-0" />}
+            toggle={<KebabToggle onToggle={this.onToggle(0)} id="basic-kebab-toggle" />}
             isOpen={isOpen0}
             isPlain
             dropdownItems={dropdownItems}
-            id="notification-0"
+            id="basic-notification-0"
             position={DropdownPosition.right}
           />
         </NotificationDrawerHeader>
@@ -99,11 +99,11 @@ class BasicNotificationDrawer extends React.Component {
                 <Dropdown
                   position={DropdownPosition.right}
                   onSelect={this.onSelect}
-                  toggle={<KebabToggle onToggle={this.onToggle(1)} id="toggle-id-1" />}
+                  toggle={<KebabToggle onToggle={this.onToggle(1)} id="basic-toggle-id-1" />}
                   isOpen={isOpen1}
                   isPlain
                   dropdownItems={dropdownItems}
-                  id="notification-1"
+                  id="basic-notification-1"
                 />
               </NotificationDrawerListItemHeader>
               <NotificationDrawerListItemBody timestamp="5 minutes ago">
@@ -119,11 +119,11 @@ class BasicNotificationDrawer extends React.Component {
                 <Dropdown
                   position={DropdownPosition.right}
                   onSelect={this.onSelect}
-                  toggle={<KebabToggle onToggle={this.onToggle(2)} id="toggle-id-2" />}
+                  toggle={<KebabToggle onToggle={this.onToggle(2)} id="basic-toggle-id-2" />}
                   isOpen={isOpen2}
                   isPlain
                   dropdownItems={dropdownItems}
-                  id="notification-2"
+                  id="basic-notification-2"
                 />
               </NotificationDrawerListItemHeader>
               <NotificationDrawerListItemBody timestamp="10 minutes ago">
@@ -141,11 +141,11 @@ class BasicNotificationDrawer extends React.Component {
                 <Dropdown
                   position={DropdownPosition.right}
                   onSelect={this.onSelect}
-                  toggle={<KebabToggle onToggle={this.onToggle(3)} id="toggle-id-3" />}
+                  toggle={<KebabToggle onToggle={this.onToggle(3)} id="basic-toggle-id-3" />}
                   isOpen={isOpen3}
                   isPlain
                   dropdownItems={dropdownItems}
-                  id="notification-3"
+                  id="basic-notification-3"
                 />
               </NotificationDrawerListItemHeader>
               <NotificationDrawerListItemBody timestamp="10 minutes ago">
@@ -162,11 +162,11 @@ class BasicNotificationDrawer extends React.Component {
                 <Dropdown
                   position={DropdownPosition.right}
                   onSelect={this.onSelect}
-                  toggle={<KebabToggle onToggle={this.onToggle(4)} id="toggle-id-4" />}
+                  toggle={<KebabToggle onToggle={this.onToggle(4)} id="basic-toggle-id-4" />}
                   isOpen={isOpen4}
                   isPlain
                   dropdownItems={dropdownItems}
-                  id="notification-4"
+                  id="basic-notification-4"
                 />
               </NotificationDrawerListItemHeader>
               <NotificationDrawerListItemBody timestamp="20 minutes ago">
@@ -183,11 +183,11 @@ class BasicNotificationDrawer extends React.Component {
                   position={DropdownPosition.right}
                   direction={DropdownDirection.up}
                   onSelect={this.onSelect}
-                  toggle={<KebabToggle onToggle={this.onToggle(5)} id="toggle-id-5" />}
+                  toggle={<KebabToggle onToggle={this.onToggle(5)} id="basic-toggle-id-5" />}
                   isOpen={isOpen5}
                   isPlain
                   dropdownItems={dropdownItems}
-                  id="notification-5"
+                  id="basic-notification-5"
                 />
               </NotificationDrawerListItemHeader>
               <NotificationDrawerListItemBody timestamp="30 minutes ago">
@@ -199,11 +199,11 @@ class BasicNotificationDrawer extends React.Component {
                 <Dropdown
                   position={DropdownPosition.right}
                   onSelect={this.onSelect}
-                  toggle={<KebabToggle onToggle={this.onToggle(6)} id="toggle-id-6" />}
+                  toggle={<KebabToggle onToggle={this.onToggle(6)} id="basic-toggle-id-6" />}
                   isOpen={isOpen6}
                   isPlain
                   dropdownItems={dropdownItems}
-                  id="notification-6"
+                  id="basic-notification-6"
                 />
               </NotificationDrawerListItemHeader>
               <NotificationDrawerListItemBody timestamp="35 minutes ago">
@@ -253,8 +253,8 @@ class GroupNotificationDrawer extends React.Component {
     this.state = {
       isOpenMap: null,
       firstGroupExpanded: false,
-      secondGroupExpanded: true,
-      thirdGroupExpanded: false
+      secondGroupExpanded: false,
+      thirdGroupExpanded: true
     };
     this.onToggle = (id, isOpen) => {
       this.setState({
@@ -299,11 +299,11 @@ class GroupNotificationDrawer extends React.Component {
         <NotificationDrawerHeader count={4}>
           <Dropdown
             onSelect={this.onSelect}
-            toggle={<KebabToggle onToggle={isOpen => this.onToggle('toggle-id-0', isOpen)} id="toggle-id-0" />}
-            isOpen={isOpenMap && isOpenMap['toggle-id-0']}
+            toggle={<KebabToggle onToggle={isOpen => this.onToggle('groups-kebab-toggle-1', isOpen)} id="groups-kebab-toggle-1" />}
+            isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-1']}
             isPlain
             dropdownItems={dropdownItems}
-            id="notification-0"
+            id="grouped-notification-1"
             position={DropdownPosition.right}
           />
         </NotificationDrawerHeader>
@@ -326,12 +326,12 @@ class GroupNotificationDrawer extends React.Component {
                       position={DropdownPosition.right}
                       onSelect={this.onSelect}
                       toggle={
-                        <KebabToggle onToggle={isOpen => this.onToggle('toggle-id-5', isOpen)} id="toggle-id-5" />
+                        <KebabToggle onToggle={isOpen => this.onToggle('groups-notification-kebab-toggle-2', isOpen)} id="groups-kebab-toggle-2" />
                       }
-                      isOpen={isOpenMap && isOpenMap['toggle-id-5']}
+                      isOpen={isOpenMap && isOpenMap['groups-notification-kebab-toggle-2']}
                       isPlain
                       dropdownItems={dropdownItems}
-                      id="notification-5"
+                      id="grouped-notification-2"
                     />
                   </NotificationDrawerListItemHeader>
                   <NotificationDrawerListItemBody timestamp="5 minutes ago">
@@ -348,12 +348,12 @@ class GroupNotificationDrawer extends React.Component {
                       position={DropdownPosition.right}
                       onSelect={this.onSelect}
                       toggle={
-                        <KebabToggle onToggle={isOpen => this.onToggle('toggle-id-6', isOpen)} id="toggle-id-6" />
+                        <KebabToggle onToggle={isOpen => this.onToggle('groups-kebab-toggle-3', isOpen)} id="groups-kebab-toggle-3" />
                       }
-                      isOpen={isOpenMap && isOpenMap['toggle-id-6']}
+                      isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-3']}
                       isPlain
                       dropdownItems={dropdownItems}
-                      id="notification-6"
+                      id="grouped-notification-3"
                     />
                   </NotificationDrawerListItemHeader>
                   <NotificationDrawerListItemBody timestamp="10 minutes ago">
@@ -371,12 +371,12 @@ class GroupNotificationDrawer extends React.Component {
                       position={DropdownPosition.right}
                       onSelect={this.onSelect}
                       toggle={
-                        <KebabToggle onToggle={isOpen => this.onToggle('toggle-id-7', isOpen)} id="toggle-id-7" />
+                        <KebabToggle onToggle={isOpen => this.onToggle('groups-kebab-toggle-4', isOpen)} id="groups-kebab-toggle-4" />
                       }
-                      isOpen={isOpenMap && isOpenMap['toggle-id-7']}
+                      isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-4']}
                       isPlain
                       dropdownItems={dropdownItems}
-                      id="notification-7"
+                      id="grouped-notification-4"
                     />
                   </NotificationDrawerListItemHeader>
                   <NotificationDrawerListItemBody timestamp="20 minutes ago">
@@ -394,12 +394,12 @@ class GroupNotificationDrawer extends React.Component {
                       direction={DropdownDirection.up}
                       onSelect={this.onSelect}
                       toggle={
-                        <KebabToggle onToggle={isOpen => this.onToggle('toggle-id-8', isOpen)} id="toggle-id-8" />
+                        <KebabToggle onToggle={isOpen => this.onToggle('groups-kebab-toggle-5', isOpen)} id="groups-kebab-toggle-5" />
                       }
-                      isOpen={isOpenMap && isOpenMap['toggle-id-8']}
+                      isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-5']}
                       isPlain
                       dropdownItems={dropdownItems}
-                      id="notification-8"
+                      id="grouped-notification-5"
                     />
                   </NotificationDrawerListItemHeader>
                   <NotificationDrawerListItemBody timestamp="30 minutes ago">
@@ -408,113 +408,15 @@ class GroupNotificationDrawer extends React.Component {
                 </NotificationDrawerListItem>
               </NotificationDrawerList>
             </NotificationDrawerGroup>
+
             <NotificationDrawerGroup
-              title="Second notification group"
+              title="Second notification group. This is a long title to show how the title will be truncated if it is long and will be shown in a single line."
               isExpanded={secondGroupExpanded}
-              count={2}
-              onExpand={this.toggleSecondDrawer}
-            >
-              <NotificationDrawerList isHidden={!secondGroupExpanded}>
-                <NotificationDrawerListItem variant="info">
-                  <NotificationDrawerListItemHeader
-                    variant="info"
-                    title="Unread info notification title"
-                    srTitle="Info notification:"
-                  >
-                    <Dropdown
-                      position={DropdownPosition.right}
-                      onSelect={this.onSelect}
-                      toggle={
-                        <KebabToggle onToggle={isOpen => this.onToggle('toggle-id-9', isOpen)} id="toggle-id-9" />
-                      }
-                      isOpen={isOpenMap && isOpenMap['toggle-id-9']}
-                      isPlain
-                      dropdownItems={dropdownItems}
-                      id="notification-9"
-                    />
-                  </NotificationDrawerListItemHeader>
-                  <NotificationDrawerListItemBody timestamp="5 minutes ago">
-                    This is an info notification description.
-                  </NotificationDrawerListItemBody>
-                </NotificationDrawerListItem>
-                <NotificationDrawerListItem variant="danger">
-                  <NotificationDrawerListItemHeader
-                    variant="danger"
-                    title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
-                    srTitle="Danger notification:"
-                  >
-                    <Dropdown
-                      position={DropdownPosition.right}
-                      onSelect={this.onSelect}
-                      toggle={
-                        <KebabToggle onToggle={isOpen => this.onToggle('toggle-id-10', isOpen)} id="toggle-id-10" />
-                      }
-                      isOpen={isOpenMap && isOpenMap['toggle-id-10']}
-                      isPlain
-                      dropdownItems={dropdownItems}
-                      id="notification-10"
-                    />
-                  </NotificationDrawerListItemHeader>
-                  <NotificationDrawerListItemBody timestamp="10 minutes ago">
-                    This is a danger notification description. This is a long description to show how the title will
-                    wrap if it is long and wraps to multiple lines.
-                  </NotificationDrawerListItemBody>
-                </NotificationDrawerListItem>
-                <NotificationDrawerListItem variant="warning" isRead>
-                  <NotificationDrawerListItemHeader
-                    variant="warning"
-                    title="Read warning notification title"
-                    srTitle="Warning notification:"
-                  >
-                    <Dropdown
-                      position={DropdownPosition.right}
-                      onSelect={this.onSelect}
-                      toggle={
-                        <KebabToggle onToggle={isOpen => this.onToggle('toggle-id-11', isOpen)} id="toggle-id-11" />
-                      }
-                      isOpen={isOpenMap && isOpenMap['toggle-id-11']}
-                      isPlain
-                      dropdownItems={dropdownItems}
-                      id="notification-11"
-                    />
-                  </NotificationDrawerListItemHeader>
-                  <NotificationDrawerListItemBody timestamp="20 minutes ago">
-                    This is a warning notification description.
-                  </NotificationDrawerListItemBody>
-                </NotificationDrawerListItem>
-                <NotificationDrawerListItem variant="success" isRead>
-                  <NotificationDrawerListItemHeader
-                    variant="success"
-                    title="Read success notification title"
-                    srTitle="Success notification:"
-                  >
-                    <Dropdown
-                      position={DropdownPosition.right}
-                      direction={DropdownDirection.up}
-                      onSelect={this.onSelect}
-                      toggle={
-                        <KebabToggle onToggle={isOpen => this.onToggle('toggle-id-12', isOpen)} id="toggle-id-12" />
-                      }
-                      isOpen={isOpenMap && isOpenMap['toggle-id-12']}
-                      isPlain
-                      dropdownItems={dropdownItems}
-                      id="notification-12"
-                    />
-                  </NotificationDrawerListItemHeader>
-                  <NotificationDrawerListItemBody timestamp="30 minutes ago">
-                    This is a success notification description.
-                  </NotificationDrawerListItemBody>
-                </NotificationDrawerListItem>
-              </NotificationDrawerList>
-            </NotificationDrawerGroup>
-            <NotificationDrawerGroup
-              title="Third notification group. This is a long title to show how the title will be truncated if it is long and will be shown in a single line."
-              isExpanded={thirdGroupExpanded}
               count={0}
-              onExpand={this.toggleThirdDrawer}
+              onExpand={this.toggleSecondDrawer}
               truncateTitle={1}
             >
-              <NotificationDrawerList isHidden={!thirdGroupExpanded}>
+              <NotificationDrawerList isHidden={!secondGroupExpanded}>
                 <EmptyState variant={EmptyStateVariant.full}>
                   <EmptyStateIcon icon={SearchIcon} />
                   <Title headingLevel="h2" size="lg">
@@ -528,6 +430,105 @@ class GroupNotificationDrawer extends React.Component {
                     <Button variant="link">Action</Button>
                   </EmptyStatePrimary>
                 </EmptyState>
+              </NotificationDrawerList>
+            </NotificationDrawerGroup>
+            <NotificationDrawerGroup
+              title="Third notification group"
+              isExpanded={thirdGroupExpanded}
+              count={2}
+              onExpand={this.toggleThirdDrawer}
+            >
+              <NotificationDrawerList isHidden={!thirdGroupExpanded}>
+                <NotificationDrawerListItem variant="info">
+                  <NotificationDrawerListItemHeader
+                    variant="info"
+                    title="Unread info notification title"
+                    srTitle="Info notification:"
+                  >
+                    <Dropdown
+                      position={DropdownPosition.right}
+                      onSelect={this.onSelect}
+                      toggle={
+                        <KebabToggle onToggle={isOpen => this.onToggle('groups-kebab-toggle-6', isOpen)} id="groups-kebab-toggle-6" />
+                      }
+                      isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-6']}
+                      isPlain
+                      dropdownItems={dropdownItems}
+                      id="grouped-notification-6"
+                    />
+                  </NotificationDrawerListItemHeader>
+                  <NotificationDrawerListItemBody timestamp="5 minutes ago">
+                    This is an info notification description.
+                  </NotificationDrawerListItemBody>
+                </NotificationDrawerListItem>
+                <NotificationDrawerListItem variant="danger">
+                  <NotificationDrawerListItemHeader
+                    variant="danger"
+                    title="Unread danger notification title. This is a long title to show how the title will wrap if it is long and wraps to multiple lines."
+                    srTitle="Danger notification:"
+                  >
+                    <Dropdown
+                      position={DropdownPosition.right}
+                      onSelect={this.onSelect}
+                      toggle={
+                        <KebabToggle onToggle={isOpen => this.onToggle('groups-kebab-toggle-7', isOpen)} id="groups-kebab-toggle-7" />
+                      }
+                      isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-7']}
+                      isPlain
+                      dropdownItems={dropdownItems}
+                      id="grouped-notification-7"
+                    />
+                  </NotificationDrawerListItemHeader>
+                  <NotificationDrawerListItemBody timestamp="10 minutes ago">
+                    This is a danger notification description. This is a long description to show how the title will
+                    wrap if it is long and wraps to multiple lines.
+                  </NotificationDrawerListItemBody>
+                </NotificationDrawerListItem>
+                <NotificationDrawerListItem variant="warning" isRead>
+                  <NotificationDrawerListItemHeader
+                    variant="warning"
+                    title="Read warning notification title"
+                    srTitle="Warning notification:"
+                  >
+                    <Dropdown
+                      position={DropdownPosition.right}
+                      onSelect={this.onSelect}
+                      toggle={
+                        <KebabToggle onToggle={isOpen => this.onToggle('groups-kebab-toggle-8', isOpen)} id="groups-kebab-toggle-8" />
+                      }
+                      isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-8']}
+                      isPlain
+                      dropdownItems={dropdownItems}
+                      id="grouped-notification-8"
+                    />
+                  </NotificationDrawerListItemHeader>
+                  <NotificationDrawerListItemBody timestamp="20 minutes ago">
+                    This is a warning notification description.
+                  </NotificationDrawerListItemBody>
+                </NotificationDrawerListItem>
+                <NotificationDrawerListItem variant="success" isRead>
+                  <NotificationDrawerListItemHeader
+                    variant="success"
+                    title="Read success notification title"
+                    srTitle="Success notification:"
+                  >
+                    <Dropdown
+                      position={DropdownPosition.right}
+                      direction={DropdownDirection.up}
+                      onSelect={this.onSelect}
+                      toggle={
+                        <KebabToggle onToggle={isOpen => this.onToggle('groups-kebab-toggle-9', isOpen)} id="groups-kebab-toggle-9" />
+                      }
+                      isOpen={isOpenMap && isOpenMap['groups-kebab-toggle-9']}
+                      isPlain
+                      dropdownItems={dropdownItems}
+                      id="grouped-notification-9"
+                    />
+                  </NotificationDrawerListItemHeader>
+                  <NotificationDrawerListItemBody timestamp="30 minutes ago">
+                    This is a success notification description.
+                  </NotificationDrawerListItemBody>
+                </NotificationDrawerListItem>
               </NotificationDrawerList>
             </NotificationDrawerGroup>
           </NotificationDrawerGroupList>

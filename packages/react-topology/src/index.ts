@@ -1,7 +1,6 @@
 export * from './components';
 export * from './anchors';
 export * from './behavior';
-export * from './components';
 export * from './const';
 export * from './elements';
 export * from './geom';
@@ -10,4 +9,5 @@ export * from './layouts';
 export * from './utils';
 export * from './mobx-exports';
 export * from './types';
+export * from './pipelines';
 export { Visualization } from './Visualization';

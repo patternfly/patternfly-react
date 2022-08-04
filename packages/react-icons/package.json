@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-icons",
-  "version": "4.75.0",
+  "version": "4.82.2",
   "description": "PatternFly 4 Icons as React Components",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -32,12 +32,12 @@
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-regular-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
-    "@patternfly/patternfly": "4.202.1",
+    "@patternfly/patternfly": "4.206.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
     "rimraf": "^2.6.2",
     "tslib": "^2.0.0",
-    "typescript": "^4.0.0"
+    "typescript": "^4.7.4"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0",

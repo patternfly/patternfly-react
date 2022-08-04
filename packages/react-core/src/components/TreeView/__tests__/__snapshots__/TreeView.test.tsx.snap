@@ -23,10 +23,10 @@ exports[`renders compact no background successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="0"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -47,8 +47,8 @@ exports[`renders compact no background successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
-              <div
+              </span>
+              <span
                 class="pf-c-tree-view__node-content"
               >
                 <span
@@ -56,8 +56,8 @@ exports[`renders compact no background successfully 1`] = `
                 >
                   ApplicationLauncher
                 </span>
-              </div>
-            </div>
+              </span>
+            </span>
           </button>
         </div>
         <ul
@@ -77,10 +77,10 @@ exports[`renders compact no background successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -101,8 +101,8 @@ exports[`renders compact no background successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
-                  <div
+                  </span>
+                  <span
                     class="pf-c-tree-view__node-content"
                   >
                     <span
@@ -110,8 +110,8 @@ exports[`renders compact no background successfully 1`] = `
                     >
                       Application 1
                     </span>
-                  </div>
-                </div>
+                  </span>
+                </span>
               </button>
             </div>
           </li>
@@ -128,10 +128,10 @@ exports[`renders compact no background successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -152,8 +152,8 @@ exports[`renders compact no background successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
-                  <div
+                  </span>
+                  <span
                     class="pf-c-tree-view__node-content"
                   >
                     <span
@@ -161,8 +161,8 @@ exports[`renders compact no background successfully 1`] = `
                     >
                       Application 2
                     </span>
-                  </div>
-                </div>
+                  </span>
+                </span>
               </button>
             </div>
           </li>
@@ -181,10 +181,10 @@ exports[`renders compact no background successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -205,8 +205,8 @@ exports[`renders compact no background successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
-              <div
+              </span>
+              <span
                 class="pf-c-tree-view__node-content"
               >
                 <span
@@ -214,8 +214,8 @@ exports[`renders compact no background successfully 1`] = `
                 >
                   Cost Management
                 </span>
-              </div>
-            </div>
+              </span>
+            </span>
           </button>
         </div>
       </li>
@@ -232,10 +232,10 @@ exports[`renders compact no background successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -256,8 +256,8 @@ exports[`renders compact no background successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
-              <div
+              </span>
+              <span
                 class="pf-c-tree-view__node-content"
               >
                 <span
@@ -265,8 +265,8 @@ exports[`renders compact no background successfully 1`] = `
                 >
                   Sources
                 </span>
-              </div>
-            </div>
+              </span>
+            </span>
           </button>
         </div>
       </li>
@@ -283,10 +283,10 @@ exports[`renders compact no background successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -307,8 +307,8 @@ exports[`renders compact no background successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
-              <div
+              </span>
+              <span
                 class="pf-c-tree-view__node-content"
               >
                 <span
@@ -316,8 +316,8 @@ exports[`renders compact no background successfully 1`] = `
                 >
                   Really really really long folder name that overflows the container it is in
                 </span>
-              </div>
-            </div>
+              </span>
+            </span>
           </button>
         </div>
       </li>
@@ -349,10 +349,10 @@ exports[`renders compact successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="0"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -373,8 +373,8 @@ exports[`renders compact successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
-              <div
+              </span>
+              <span
                 class="pf-c-tree-view__node-content"
               >
                 <span
@@ -382,8 +382,8 @@ exports[`renders compact successfully 1`] = `
                 >
                   ApplicationLauncher
                 </span>
-              </div>
-            </div>
+              </span>
+            </span>
           </button>
         </div>
         <ul
@@ -403,10 +403,10 @@ exports[`renders compact successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -427,8 +427,8 @@ exports[`renders compact successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
-                  <div
+                  </span>
+                  <span
                     class="pf-c-tree-view__node-content"
                   >
                     <span
@@ -436,8 +436,8 @@ exports[`renders compact successfully 1`] = `
                     >
                       Application 1
                     </span>
-                  </div>
-                </div>
+                  </span>
+                </span>
               </button>
             </div>
           </li>
@@ -454,10 +454,10 @@ exports[`renders compact successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -478,8 +478,8 @@ exports[`renders compact successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
-                  <div
+                  </span>
+                  <span
                     class="pf-c-tree-view__node-content"
                   >
                     <span
@@ -487,8 +487,8 @@ exports[`renders compact successfully 1`] = `
                     >
                       Application 2
                     </span>
-                  </div>
-                </div>
+                  </span>
+                </span>
               </button>
             </div>
           </li>
@@ -507,10 +507,10 @@ exports[`renders compact successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -531,8 +531,8 @@ exports[`renders compact successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
-              <div
+              </span>
+              <span
                 class="pf-c-tree-view__node-content"
               >
                 <span
@@ -540,8 +540,8 @@ exports[`renders compact successfully 1`] = `
                 >
                   Cost Management
                 </span>
-              </div>
-            </div>
+              </span>
+            </span>
           </button>
         </div>
       </li>
@@ -558,10 +558,10 @@ exports[`renders compact successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -582,8 +582,8 @@ exports[`renders compact successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
-              <div
+              </span>
+              <span
                 class="pf-c-tree-view__node-content"
               >
                 <span
@@ -591,8 +591,8 @@ exports[`renders compact successfully 1`] = `
                 >
                   Sources
                 </span>
-              </div>
-            </div>
+              </span>
+            </span>
           </button>
         </div>
       </li>
@@ -609,10 +609,10 @@ exports[`renders compact successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -633,8 +633,8 @@ exports[`renders compact successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
-              <div
+              </span>
+              <span
                 class="pf-c-tree-view__node-content"
               >
                 <span
@@ -642,8 +642,8 @@ exports[`renders compact successfully 1`] = `
                 >
                   Really really really long folder name that overflows the container it is in
                 </span>
-              </div>
-            </div>
+              </span>
+            </span>
           </button>
         </div>
       </li>
@@ -675,10 +675,10 @@ exports[`renders guides successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="0"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -699,13 +699,13 @@ exports[`renders guides successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 ApplicationLauncher
               </span>
-            </div>
+            </span>
           </button>
         </div>
         <ul
@@ -725,10 +725,10 @@ exports[`renders guides successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -749,13 +749,13 @@ exports[`renders guides successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
+                  </span>
                   <span
                     class="pf-c-tree-view__node-text"
                   >
                     Application 1
                   </span>
-                </div>
+                </span>
               </button>
             </div>
           </li>
@@ -772,10 +772,10 @@ exports[`renders guides successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -796,13 +796,13 @@ exports[`renders guides successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
+                  </span>
                   <span
                     class="pf-c-tree-view__node-text"
                   >
                     Application 2
                   </span>
-                </div>
+                </span>
               </button>
             </div>
           </li>
@@ -821,10 +821,10 @@ exports[`renders guides successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -845,13 +845,13 @@ exports[`renders guides successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 Cost Management
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -868,10 +868,10 @@ exports[`renders guides successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -892,13 +892,13 @@ exports[`renders guides successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 Sources
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -915,10 +915,10 @@ exports[`renders guides successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -939,13 +939,13 @@ exports[`renders guides successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 Really really really long folder name that overflows the container it is in
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -977,10 +977,10 @@ exports[`tree view renders active successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="0"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -1001,13 +1001,13 @@ exports[`tree view renders active successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 ApplicationLauncher
               </span>
-            </div>
+            </span>
           </button>
         </div>
         <ul
@@ -1027,10 +1027,10 @@ exports[`tree view renders active successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -1051,13 +1051,13 @@ exports[`tree view renders active successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
+                  </span>
                   <span
                     class="pf-c-tree-view__node-text"
                   >
                     Application 1
                   </span>
-                </div>
+                </span>
               </button>
             </div>
           </li>
@@ -1074,10 +1074,10 @@ exports[`tree view renders active successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -1098,13 +1098,13 @@ exports[`tree view renders active successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
+                  </span>
                   <span
                     class="pf-c-tree-view__node-text"
                   >
                     Application 2
                   </span>
-                </div>
+                </span>
               </button>
             </div>
           </li>
@@ -1123,10 +1123,10 @@ exports[`tree view renders active successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -1147,13 +1147,13 @@ exports[`tree view renders active successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 Cost Management
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -1170,10 +1170,10 @@ exports[`tree view renders active successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -1194,13 +1194,13 @@ exports[`tree view renders active successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 Sources
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -1217,10 +1217,10 @@ exports[`tree view renders active successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -1241,13 +1241,13 @@ exports[`tree view renders active successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 Really really really long folder name that overflows the container it is in
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -1279,10 +1279,10 @@ exports[`tree view renders badges successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="0"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -1303,7 +1303,7 @@ exports[`tree view renders badges successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
@@ -1318,7 +1318,7 @@ exports[`tree view renders badges successfully 1`] = `
                   2
                 </span>
               </span>
-            </div>
+            </span>
           </button>
         </div>
         <ul
@@ -1338,10 +1338,10 @@ exports[`tree view renders badges successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -1362,7 +1362,7 @@ exports[`tree view renders badges successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
+                  </span>
                   <span
                     class="pf-c-tree-view__node-text"
                   >
@@ -1377,7 +1377,7 @@ exports[`tree view renders badges successfully 1`] = `
                       2
                     </span>
                   </span>
-                </div>
+                </span>
               </button>
             </div>
           </li>
@@ -1394,10 +1394,10 @@ exports[`tree view renders badges successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -1418,7 +1418,7 @@ exports[`tree view renders badges successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
+                  </span>
                   <span
                     class="pf-c-tree-view__node-text"
                   >
@@ -1433,7 +1433,7 @@ exports[`tree view renders badges successfully 1`] = `
                       2
                     </span>
                   </span>
-                </div>
+                </span>
               </button>
             </div>
           </li>
@@ -1452,10 +1452,10 @@ exports[`tree view renders badges successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -1476,7 +1476,7 @@ exports[`tree view renders badges successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
@@ -1491,7 +1491,7 @@ exports[`tree view renders badges successfully 1`] = `
                   1
                 </span>
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -1508,10 +1508,10 @@ exports[`tree view renders badges successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -1532,7 +1532,7 @@ exports[`tree view renders badges successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
@@ -1547,7 +1547,7 @@ exports[`tree view renders badges successfully 1`] = `
                   1
                 </span>
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -1564,10 +1564,10 @@ exports[`tree view renders badges successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -1588,7 +1588,7 @@ exports[`tree view renders badges successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
@@ -1603,7 +1603,7 @@ exports[`tree view renders badges successfully 1`] = `
                   1
                 </span>
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -1635,10 +1635,10 @@ exports[`tree view renders basic successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="0"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -1659,13 +1659,13 @@ exports[`tree view renders basic successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 ApplicationLauncher
               </span>
-            </div>
+            </span>
           </button>
         </div>
         <ul
@@ -1685,10 +1685,10 @@ exports[`tree view renders basic successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -1709,13 +1709,13 @@ exports[`tree view renders basic successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
+                  </span>
                   <span
                     class="pf-c-tree-view__node-text"
                   >
                     Application 1
                   </span>
-                </div>
+                </span>
               </button>
             </div>
           </li>
@@ -1732,10 +1732,10 @@ exports[`tree view renders basic successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -1756,13 +1756,13 @@ exports[`tree view renders basic successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
+                  </span>
                   <span
                     class="pf-c-tree-view__node-text"
                   >
                     Application 2
                   </span>
-                </div>
+                </span>
               </button>
             </div>
           </li>
@@ -1781,10 +1781,10 @@ exports[`tree view renders basic successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -1805,13 +1805,13 @@ exports[`tree view renders basic successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 Cost Management
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -1828,10 +1828,10 @@ exports[`tree view renders basic successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -1852,13 +1852,13 @@ exports[`tree view renders basic successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 Sources
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -1875,10 +1875,10 @@ exports[`tree view renders basic successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -1899,13 +1899,13 @@ exports[`tree view renders basic successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 Really really really long folder name that overflows the container it is in
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -1933,11 +1933,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
         <div
           class="pf-c-tree-view__content"
         >
-          <div
-            class="pf-c-tree-view__node"
+          <label
+            class="pf-c-tree-view__node pf-m-selectable"
+            for="checkbox-id18"
+            id="label-checkbox-id18"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
               <button
@@ -1972,15 +1974,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
                   type="checkbox"
                 />
               </span>
-              <label
+              <span
                 class="pf-c-tree-view__node-text"
-                for="checkbox-id18"
-                id="label-checkbox-id18"
               >
                 ApplicationLauncher
-              </label>
-            </div>
-          </div>
+              </span>
+            </span>
+          </label>
         </div>
         <ul
           class="pf-c-tree-view__list"
@@ -1995,11 +1995,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
             <div
               class="pf-c-tree-view__content"
             >
-              <div
-                class="pf-c-tree-view__node"
+              <label
+                class="pf-c-tree-view__node pf-m-selectable"
+                for="checkbox-id19"
+                id="label-checkbox-id19"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
                   <button
@@ -2034,15 +2036,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
                       type="checkbox"
                     />
                   </span>
-                  <label
+                  <span
                     class="pf-c-tree-view__node-text"
-                    for="checkbox-id19"
-                    id="label-checkbox-id19"
                   >
                     Application 1
-                  </label>
-                </div>
-              </div>
+                  </span>
+                </span>
+              </label>
             </div>
           </li>
           <li
@@ -2054,11 +2054,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
             <div
               class="pf-c-tree-view__content"
             >
-              <div
-                class="pf-c-tree-view__node"
+              <label
+                class="pf-c-tree-view__node pf-m-selectable"
+                for="checkbox-id20"
+                id="label-checkbox-id20"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
                   <button
@@ -2093,15 +2095,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
                       type="checkbox"
                     />
                   </span>
-                  <label
+                  <span
                     class="pf-c-tree-view__node-text"
-                    for="checkbox-id20"
-                    id="label-checkbox-id20"
                   >
                     Application 2
-                  </label>
-                </div>
-              </div>
+                  </span>
+                </span>
+              </label>
             </div>
           </li>
         </ul>
@@ -2115,11 +2115,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
         <div
           class="pf-c-tree-view__content"
         >
-          <div
-            class="pf-c-tree-view__node"
+          <label
+            class="pf-c-tree-view__node pf-m-selectable"
+            for="checkbox-id21"
+            id="label-checkbox-id21"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
               <button
@@ -2154,15 +2156,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
                   type="checkbox"
                 />
               </span>
-              <label
+              <span
                 class="pf-c-tree-view__node-text"
-                for="checkbox-id21"
-                id="label-checkbox-id21"
               >
                 Cost Management
-              </label>
-            </div>
-          </div>
+              </span>
+            </span>
+          </label>
         </div>
       </li>
       <li
@@ -2174,11 +2174,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
         <div
           class="pf-c-tree-view__content"
         >
-          <div
-            class="pf-c-tree-view__node"
+          <label
+            class="pf-c-tree-view__node pf-m-selectable"
+            for="checkbox-id22"
+            id="label-checkbox-id22"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
               <button
@@ -2213,15 +2215,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
                   type="checkbox"
                 />
               </span>
-              <label
+              <span
                 class="pf-c-tree-view__node-text"
-                for="checkbox-id22"
-                id="label-checkbox-id22"
               >
                 Sources
-              </label>
-            </div>
-          </div>
+              </span>
+            </span>
+          </label>
         </div>
       </li>
       <li
@@ -2233,11 +2233,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
         <div
           class="pf-c-tree-view__content"
         >
-          <div
-            class="pf-c-tree-view__node"
+          <label
+            class="pf-c-tree-view__node pf-m-selectable"
+            for="checkbox-id23"
+            id="label-checkbox-id23"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
               <button
@@ -2272,15 +2274,13 @@ exports[`tree view renders checkboxes successfully 1`] = `
                   type="checkbox"
                 />
               </span>
-              <label
+              <span
                 class="pf-c-tree-view__node-text"
-                for="checkbox-id23"
-                id="label-checkbox-id23"
               >
                 Really really really long folder name that overflows the container it is in
-              </label>
-            </div>
-          </div>
+              </span>
+            </span>
+          </label>
         </div>
       </li>
     </ul>
@@ -2311,10 +2311,10 @@ exports[`tree view renders icons successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="0"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -2335,7 +2335,7 @@ exports[`tree view renders icons successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-icon"
               >
@@ -2358,7 +2358,7 @@ exports[`tree view renders icons successfully 1`] = `
               >
                 ApplicationLauncher
               </span>
-            </div>
+            </span>
           </button>
         </div>
         <ul
@@ -2378,10 +2378,10 @@ exports[`tree view renders icons successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -2402,7 +2402,7 @@ exports[`tree view renders icons successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
+                  </span>
                   <span
                     class="pf-c-tree-view__node-icon"
                   >
@@ -2425,7 +2425,7 @@ exports[`tree view renders icons successfully 1`] = `
                   >
                     Application 1
                   </span>
-                </div>
+                </span>
               </button>
             </div>
           </li>
@@ -2442,10 +2442,10 @@ exports[`tree view renders icons successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -2466,7 +2466,7 @@ exports[`tree view renders icons successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
+                  </span>
                   <span
                     class="pf-c-tree-view__node-icon"
                   >
@@ -2489,7 +2489,7 @@ exports[`tree view renders icons successfully 1`] = `
                   >
                     Application 2
                   </span>
-                </div>
+                </span>
               </button>
             </div>
           </li>
@@ -2508,10 +2508,10 @@ exports[`tree view renders icons successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -2532,7 +2532,7 @@ exports[`tree view renders icons successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-icon"
               >
@@ -2555,7 +2555,7 @@ exports[`tree view renders icons successfully 1`] = `
               >
                 Cost Management
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -2572,10 +2572,10 @@ exports[`tree view renders icons successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -2596,7 +2596,7 @@ exports[`tree view renders icons successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-icon"
               >
@@ -2619,7 +2619,7 @@ exports[`tree view renders icons successfully 1`] = `
               >
                 Sources
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -2636,10 +2636,10 @@ exports[`tree view renders icons successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -2660,7 +2660,7 @@ exports[`tree view renders icons successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-icon"
               >
@@ -2683,7 +2683,7 @@ exports[`tree view renders icons successfully 1`] = `
               >
                 Really really really long folder name that overflows the container it is in
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -2711,11 +2711,13 @@ exports[`tree view renders individual flag options successfully 1`] = `
         <div
           class="pf-c-tree-view__content"
         >
-          <div
-            class="pf-c-tree-view__node"
+          <label
+            class="pf-c-tree-view__node pf-m-selectable"
+            for="checkbox-id36"
+            id="label-checkbox-id36"
             tabindex="0"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
               <button
@@ -2767,15 +2769,13 @@ exports[`tree view renders individual flag options successfully 1`] = `
                   />
                 </svg>
               </span>
-              <label
+              <span
                 class="pf-c-tree-view__node-text"
-                for="checkbox-id36"
-                id="label-checkbox-id36"
               >
                 ApplicationLauncher
-              </label>
-            </div>
-          </div>
+              </span>
+            </span>
+          </label>
         </div>
         <ul
           class="pf-c-tree-view__list"
@@ -2794,10 +2794,10 @@ exports[`tree view renders individual flag options successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -2818,13 +2818,13 @@ exports[`tree view renders individual flag options successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
+                  </span>
                   <span
                     class="pf-c-tree-view__node-text"
                   >
                     Application 1
                   </span>
-                </div>
+                </span>
               </button>
             </div>
           </li>
@@ -2841,10 +2841,10 @@ exports[`tree view renders individual flag options successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -2865,7 +2865,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
+                  </span>
                   <span
                     class="pf-c-tree-view__node-text"
                   >
@@ -2880,7 +2880,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                       2
                     </span>
                   </span>
-                </div>
+                </span>
               </button>
             </div>
           </li>
@@ -2899,10 +2899,10 @@ exports[`tree view renders individual flag options successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -2923,7 +2923,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
@@ -2938,7 +2938,7 @@ exports[`tree view renders individual flag options successfully 1`] = `
                   1
                 </span>
               </span>
-            </div>
+            </span>
           </button>
           <div
             class="pf-c-tree-view__action"
@@ -2982,10 +2982,10 @@ exports[`tree view renders individual flag options successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -3006,13 +3006,13 @@ exports[`tree view renders individual flag options successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 Sources
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -3029,10 +3029,10 @@ exports[`tree view renders individual flag options successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -3053,13 +3053,13 @@ exports[`tree view renders individual flag options successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 Really really really long folder name that overflows the container it is in
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -3113,10 +3113,10 @@ exports[`tree view renders toolbar successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="0"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -3137,13 +3137,13 @@ exports[`tree view renders toolbar successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 ApplicationLauncher
               </span>
-            </div>
+            </span>
           </button>
         </div>
         <ul
@@ -3163,10 +3163,10 @@ exports[`tree view renders toolbar successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -3187,13 +3187,13 @@ exports[`tree view renders toolbar successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
+                  </span>
                   <span
                     class="pf-c-tree-view__node-text"
                   >
                     Application 1
                   </span>
-                </div>
+                </span>
               </button>
             </div>
           </li>
@@ -3210,10 +3210,10 @@ exports[`tree view renders toolbar successfully 1`] = `
                 class="pf-c-tree-view__node"
                 tabindex="-1"
               >
-                <div
+                <span
                   class="pf-c-tree-view__node-container"
                 >
-                  <div
+                  <span
                     class="pf-c-tree-view__node-toggle"
                     tabindex="-1"
                   >
@@ -3234,13 +3234,13 @@ exports[`tree view renders toolbar successfully 1`] = `
                         />
                       </svg>
                     </span>
-                  </div>
+                  </span>
                   <span
                     class="pf-c-tree-view__node-text"
                   >
                     Application 2
                   </span>
-                </div>
+                </span>
               </button>
             </div>
           </li>
@@ -3259,10 +3259,10 @@ exports[`tree view renders toolbar successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -3283,13 +3283,13 @@ exports[`tree view renders toolbar successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 Cost Management
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -3306,10 +3306,10 @@ exports[`tree view renders toolbar successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -3330,13 +3330,13 @@ exports[`tree view renders toolbar successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 Sources
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>
@@ -3353,10 +3353,10 @@ exports[`tree view renders toolbar successfully 1`] = `
             class="pf-c-tree-view__node"
             tabindex="-1"
           >
-            <div
+            <span
               class="pf-c-tree-view__node-container"
             >
-              <div
+              <span
                 class="pf-c-tree-view__node-toggle"
                 tabindex="-1"
               >
@@ -3377,13 +3377,13 @@ exports[`tree view renders toolbar successfully 1`] = `
                     />
                   </svg>
                 </span>
-              </div>
+              </span>
               <span
                 class="pf-c-tree-view__node-text"
               >
                 Really really really long folder name that overflows the container it is in
               </span>
-            </div>
+            </span>
           </button>
         </div>
       </li>

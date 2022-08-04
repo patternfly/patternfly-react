@@ -7,7 +7,7 @@ import { ChartBulletStyles, ChartCommonStyles, ChartThemeDefinition } from '../C
 import { getBulletTheme, getBulletLabelX, getBulletLabelY, getPaddingForSide } from '../ChartUtils';
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * ChartBulletTitle renders the bullet chart title.
  */
 export interface ChartBulletTitleProps {
   /**

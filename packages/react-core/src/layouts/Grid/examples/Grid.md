@@ -82,7 +82,7 @@ import { Grid, GridItem } from '@patternfly/react-core';
 
 ## Ordering
 
-### Ordering
+### Standard ordering
 
 ```js
 import React from 'react';

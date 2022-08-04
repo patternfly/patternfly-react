@@ -7,6 +7,8 @@ interface DemoInterface {
   name: string;
   /** Demo component associated with the demo  */
   componentType: any;
+  /** Flag if this is the default demo */
+  isDefault?: boolean;
 }
 /** Add the name of the demo and it's component here to have them show up in the demo app */
 export const Demos: DemoInterface[] = [
@@ -14,11 +16,6 @@ export const Demos: DemoInterface[] = [
     id: 'about-modal-demo',
     name: 'About Modal Demo',
     componentType: Examples.AboutModalDemo
-  },
-  {
-    id: 'accordion-demo',
-    name: 'Accordion Demo',
-    componentType: Examples.AccordionDemo
   },
   {
     id: 'alert-timeout-close-button-demo',
@@ -509,6 +506,11 @@ export const Demos: DemoInterface[] = [
     id: 'topology-demo',
     name: 'Topology Demo',
     componentType: Examples.TopologyDemo
+  },
+  {
+    id: 'topology-pipelines-demo',
+    name: 'Topology Pipelines Demo',
+    componentType: Examples.TopologyPipelineDemo
   },
   {
     id: 'treeview-demo',

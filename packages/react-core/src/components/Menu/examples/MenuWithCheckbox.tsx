@@ -1,11 +1,11 @@
 import React from 'react';
 import { Menu, MenuContent, MenuList, MenuItem } from '@patternfly/react-core';
 
-export const MenuCheckboxList: React.FunctionComponent = () => {
+export const MenuWithCheckbox: React.FunctionComponent = () => {
   const [selectedItems, setSelectedItems] = React.useState<number[]>([]);
 
   /* eslint no-unused-vars: ["error", {"args": "after-used"}] */
-  const onSelect = (event: React.MouseEvent<Element, MouseEvent>, itemId: number | string) => {
+  const onSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, itemId: number | string | undefined) => {
     const item = itemId as number;
     if (selectedItems.includes(item)) {
       setSelectedItems(selectedItems.filter(id => id !== item));

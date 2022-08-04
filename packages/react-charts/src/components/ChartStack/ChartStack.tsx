@@ -22,8 +22,11 @@ import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getDefaultPatternProps, getTheme, renderChildrenWithPatterns } from '../ChartUtils';
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-stack/src/index.d.ts
+ * ChartStack is a wrapper component that renders a given set of children in a stacked layout. Like other wrapper
+ * components, ChartStack also reconciles the domain and layout for all its children, and coordinates animations and
+ * shared events.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-stack/src/index.d.ts
  */
 export interface ChartStackProps extends VictoryStackProps {
   /**

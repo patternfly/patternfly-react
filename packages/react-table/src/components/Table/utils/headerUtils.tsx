@@ -168,6 +168,7 @@ const favoritesTransforms = ({
           transforms:
             onSort && canSortFavorites
               ? [
+                  scopeColTransformer,
                   sortableFavorites({
                     onSort,
                     // favorites should be just before the first user-defined column

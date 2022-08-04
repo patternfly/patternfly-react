@@ -180,7 +180,7 @@ const DefaultGroupExpanded: React.FunctionComponent<DefaultGroupExpandedProps> =
           <path ref={outlineRef} className={styles.topologyGroupBackground} d={pathRef.current} />
         </g>
       </Layer>
-      {showLabel && (
+      {showLabel && (label || element.getLabel()) && (
         <NodeLabel
           className={styles.topologyGroupLabel}
           x={labelLocation.current[0]}

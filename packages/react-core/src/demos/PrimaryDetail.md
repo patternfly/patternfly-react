@@ -5,6 +5,7 @@ section: demos
 
 import DashboardWrapper from './examples/DashboardWrapper';
 import CodeBranchIcon from '@patternfly/react-icons/dist/esm/icons/code-branch-icon';
+import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
 import CubeIcon from '@patternfly/react-icons/dist/esm/icons/cube-icon';
 import CheckCircleIcon from '@patternfly/react-icons/dist/esm/icons/check-circle-icon';
@@ -954,12 +955,17 @@ import React from 'react';
 import {
   Button,
   Card,
+  CardActions,
   CardHeader,
   CardBody,
   CardTitle,
+  Checkbox,
   Divider,
   Dropdown,
+  DropdownToggle,
+  DropdownToggleCheckbox,
   DropdownItem,
+  DropdownPosition,
   DropdownSeparator,
   Drawer,
   DrawerActions,
@@ -969,14 +975,10 @@ import {
   DrawerContentBody,
   DrawerHead,
   DrawerPanelContent,
-  DrawerSection,
   Flex,
   FlexItem,
   Gallery,
   KebabToggle,
-  OverflowMenu,
-  OverflowMenuControl,
-  OverflowMenuItem,
   PageSection,
   PageSectionVariants,
   Pagination,
@@ -990,10 +992,10 @@ import {
   Toolbar,
   ToolbarItem,
   ToolbarContent,
-  ToolbarFilter,
-  ToolbarToggleGroup
+  ToolbarFilter
 } from '@patternfly/react-core';
 import DashboardWrapper from './examples/DashboardWrapper';
+import TrashIcon from '@patternfly/react-icons/dist/esm/icons/trash-icon';
 import pfIcon from './pf-logo-small.svg';
 import activeMQIcon from './activemq-core_200x150.png';
 import avroIcon from './camel-avro_200x150.png';
@@ -1012,7 +1014,12 @@ class PrimaryDetailCardView extends React.Component {
     this.state = {
       page: 1,
       perPage: 10,
+      totalItemCount: 10,
       isDrawerExpanded: false,
+      isChecked: false,
+      selectedItems: [],
+      areAllSelected: false,
+      splitButtonDropdownIsOpen: false,
       activeCard: null,
       filters: {
         products: []
@@ -1032,7 +1039,7 @@ class PrimaryDetailCardView extends React.Component {
       }));
     };
 
-    this.onToolbarDropdownSelect = event => {
+    this.onToolbarDropdownSelect = _event => {
       this.setState({
         isLowerToolbarDropdownOpen: !this.state.isLowerToolbarDropdownOpen
       });
@@ -1044,24 +1051,23 @@ class PrimaryDetailCardView extends React.Component {
       });
     };
 
-    this.onToolbarKebabDropdownSelect = event => {
+    this.onToolbarKebabDropdownSelect = _event => {
       this.setState({
         isLowerToolbarKebabDropdownOpen: !this.state.isLowerToolbarKebabDropdownOpen
       });
     };
 
-    this.deleteItem = item => event => {
-      const filter = getter => val => getter(val) !== item.id;
-      this.setState({
-        res: this.state.res.filter(filter(({ id }) => id)),
-        selectedItems: this.state.selectedItems.filter(filter(id => id))
-      });
+    this.checkAllSelected = (selected, total) => {
+      if (selected && selected < total) {
+        return null;
+      }
+      return selected === total;
     };
 
     this.onNameSelect = (event, selection) => {
       const checked = event.target.checked;
       this.setState(prevState => {
-        const prevSelections = prevState.filters['products'];
+        const prevSelections = prevState.filters.products;
         return {
           filters: {
             ...prevState.filters,
@@ -1095,22 +1101,27 @@ class PrimaryDetailCardView extends React.Component {
       });
     };
 
-    this.onKeyDown = event => {
-      if (event.target !== event.currentTarget || event.currentTarget.id === this.state.activeCard) {
-        return;
-      }
-      if ([13, 32].includes(event.keyCode)) {
-        event.preventDefault();
-        const newSelected = event.currentTarget.id;
-        this.setState({
-          activeCard: newSelected,
-          isDrawerExpanded: true
-        });
-      }
+    this.onCheckboxClick = (event, productId) => {
+      event.stopPropagation();
+      this.setState(prevState =>
+        prevState.selectedItems.includes(productId * 1) || this.state.selectedItems.includes(productId * 1)
+          ? {
+              selectedItems: [...this.state.selectedItems.filter(id => productId * 1 !== id)],
+              areAllSelected: this.checkAllSelected(prevState.selectedItems.length - 1, prevState.totalItemCount)
+            }
+          : {
+              selectedItems: [...prevState.selectedItems, productId * 1],
+              areAllSelected: this.checkAllSelected(prevState.selectedItems.length + 1, prevState.totalItemCount)
+            }
+      );
     };
 
     this.onCardClick = event => {
       if (event.currentTarget.id === this.state.activeCard) {
+        this.setState({
+          isDrawerExpanded: !this.state.isDrawerExpanded,
+          activeCard: null
+        });
         return;
       }
 
@@ -1139,6 +1150,135 @@ class PrimaryDetailCardView extends React.Component {
 
     this.onSetPage = (_evt, page) => {
       this.setState({ page });
+    };
+
+    this.selectPage = () => {
+      const { totalItemCount, perPage } = this.state;
+      let collection = [];
+
+      collection = this.getAllItems();
+
+      this.setState(
+        {
+          selectedItems: collection,
+          areAllSelected: totalItemCount === perPage ? true : false
+        },
+        this.updateSelected
+      );
+    };
+
+    this.selectAll = () => {
+      let collection = [];
+      for (let i = 0; i <= 9; i++) {
+        collection = [...collection, i];
+      }
+
+      this.setState(
+        {
+          selectedItems: collection,
+          isChecked: true,
+          areAllSelected: true
+        },
+        this.updateSelected
+      );
+    };
+
+    this.selectNone = () => {
+      this.setState(
+        {
+          selectedItems: [],
+          isChecked: false,
+          areAllSelected: false,
+          isDrawerExpanded: false,
+          activeCard: null
+        },
+        this.updateSelected
+      );
+    };
+
+    this.splitCheckboxSelectAll = e => {
+      const { checked } = e.target;
+      const { isChecked } = this.state;
+      let collection = [];
+
+      if (checked) {
+        for (let i = 0; i <= 9; i++) {
+          collection = [...collection, i];
+        }
+      }
+
+      this.setState(
+        {
+          selectedItems: collection,
+          areAllSelected: checked,
+          isDrawerExpanded: false,
+          activeCard: null,
+          isChecked
+        },
+        this.updateSelected
+      );
+    };
+
+    this.onSplitButtonSelect = _event => {
+      this.setState((prevState, _props) => ({
+        splitButtonDropdownIsOpen: !prevState.splitButtonDropdownIsOpen,
+        isDrawerExpanded: false,
+        activeCard: null
+      }));
+    };
+
+    this.onSplitButtonToggle = isOpen => {
+      this.setState({
+        splitButtonDropdownIsOpen: isOpen
+      });
+    };
+
+    this.onCardKebabDropdownToggle = (event, key, isCardKebabDropdownOpen) => {
+      event.stopPropagation();
+      this.setState({
+        [key]: isCardKebabDropdownOpen
+      });
+    };
+
+    this.onCardKebabDropdownSelect = (key, _event) => {
+      this.setState({
+        [key]: !this.state[key]
+      });
+    };
+
+    this.deleteItem = (event, item) => {
+      event.stopPropagation();
+      const filter = getter => val => getter(val) !== item.id;
+      const filteredCards = this.state.res.filter(filter(({ id }) => id));
+      this.setState({
+        res: filteredCards,
+        selectedItems: this.state.selectedItems.filter(filter(id => id)),
+        totalItemCount: this.state.totalItemCount - 1,
+        isDrawerExpanded: false,
+        activeCard: null
+      });
+    };
+
+    this.onKeyDown = event => {
+      if (event.target !== event.currentTarget) {
+        return;
+      }
+
+      if ([13, 32].includes(event.keyCode)) {
+        if (event.currentTarget.id === this.state.activeCard) {
+          this.setState({
+            isDrawerExpanded: !this.state.isDrawerExpanded,
+            activeCard: null
+          });
+          return;
+        }
+        event.preventDefault();
+        const newSelected = event.currentTarget.id;
+        this.setState({
+          activeCard: newSelected,
+          isDrawerExpanded: true
+        });
+      }
     };
   }
 
@@ -1197,16 +1337,60 @@ class PrimaryDetailCardView extends React.Component {
     );
   }
 
+  buildSelectDropdown() {
+    const { splitButtonDropdownIsOpen, selectedItems, areAllSelected } = this.state;
+    const numSelected = selectedItems.length;
+    const allSelected = areAllSelected;
+    const anySelected = numSelected > 0;
+    const someChecked = anySelected ? null : false;
+    const isChecked = allSelected ? true : someChecked;
+    const splitButtonDropdownItems = [
+      <DropdownItem key="item-1" onClick={this.selectNone}>
+        Select none (0 items)
+      </DropdownItem>,
+      <DropdownItem key="item-2" onClick={this.selectPage}>
+        Select page ({this.state.res.length} items)
+      </DropdownItem>,
+      <DropdownItem key="item-3" onClick={this.selectAll}>
+        Select all ({this.state.totalItemCount} items)
+      </DropdownItem>
+    ];
+
+    return (
+      <Dropdown
+        position={DropdownPosition.left}
+        onSelect={this.onSplitButtonSelect}
+        toggle={
+          <DropdownToggle
+            splitButtonItems={[
+              <DropdownToggleCheckbox
+                id="example-checkbox-2"
+                key="split-checkbox"
+                aria-label={anySelected ? 'Deselect all' : 'Select all'}
+                isChecked={areAllSelected}
+                onClick={this.splitCheckboxSelectAll}
+              ></DropdownToggleCheckbox>
+            ]}
+            onToggle={this.onSplitButtonToggle}
+          >
+            {numSelected !== 0 && (
+              <React.Fragment>{allSelected ? this.state.totalItemCount : numSelected} selected</React.Fragment>
+            )}
+          </DropdownToggle>
+        }
+        isOpen={splitButtonDropdownIsOpen}
+        dropdownItems={splitButtonDropdownItems}
+      />
+    );
+  }
+
   render() {
     const {
       isDrawerExpanded,
+      isChecked,
+      selectedItems,
       activeCard,
-      isUpperToolbarDropdownOpen,
-      isLowerToolbarDropdownOpen,
-      isUpperToolbarKebabDropdownOpen,
       isLowerToolbarKebabDropdownOpen,
-      isCardKebabDropdownOpen,
-      activeItem,
       filters,
       res
     } = this.state;
@@ -1231,35 +1415,30 @@ class PrimaryDetailCardView extends React.Component {
 
     const toolbarItems = (
       <React.Fragment>
-        <ToolbarItem variant="overflow-menu">
-          <OverflowMenu breakpoint="xl">
-            <OverflowMenuItem isPersistent>{this.buildFilterDropdown()}</OverflowMenuItem>
-            <OverflowMenuItem isPersistent>
-              <Button variant="primary">Create a Project</Button>
-            </OverflowMenuItem>
-            <OverflowMenuControl hasAdditionalOptions>
-              <Dropdown
-                onSelect={this.onToolbarKebabDropdownSelect}
-                toggle={
-                  <KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="card-view-data-toolbar-dropdown" />
-                }
-                isOpen={isLowerToolbarKebabDropdownOpen}
-                isPlain
-                dropdownItems={toolbarKebabDropdownItems}
-                isFlipEnabled
-                menuAppendTo="parent"
-              />
-            </OverflowMenuControl>
-          </OverflowMenu>
+        <ToolbarItem>{this.buildSelectDropdown()}</ToolbarItem>
+        <ToolbarItem>
+          <Button variant="primary">Create instance</Button>
+        </ToolbarItem>
+        <ToolbarItem>
+          <Button variant="secondary">Action</Button>
+        </ToolbarItem>
+        <ToolbarItem hasAdditionalOptions>
+          <Dropdown
+            onSelect={this.onToolbarKebabDropdownSelect}
+            toggle={<KebabToggle onToggle={this.onToolbarKebabDropdownToggle} id="card-view-data-toolbar-dropdown" />}
+            isOpen={isLowerToolbarKebabDropdownOpen}
+            isPlain
+            dropdownItems={toolbarKebabDropdownItems}
+            isFlipEnabled
+            menuAppendTo="parent"
+          />
         </ToolbarItem>
       </React.Fragment>
     );
 
     const filtered =
       filters.products.length > 0
-        ? res.filter(card => {
-            return filters.products.length === 0 || filters.products.includes(card.name);
-          })
+        ? res.filter(card => filters.products.length === 0 || filters.products.includes(card.name))
         : res;
 
     const icons = {
@@ -1276,27 +1455,54 @@ class PrimaryDetailCardView extends React.Component {
     };
 
     const drawerContent = (
-      <Gallery hasGutter role='region' aria-label="Selectable card container">
+      <Gallery hasGutter role="region" aria-label="Selectable card container">
         {filtered.map((product, key) => (
-          <React.Fragment>
-            <Card
-              isHoverable
-              key={key}
-              id={'card-view-' + key}
-              onKeyDown={this.onKeyDown}
-              onClick={this.onCardClick}
-              onSelectableInputChange={this.onChange}
-              isSelectable
-              isSelected={activeCard === 'card-view-' + key}
-              hasSelectableInput
-            >
-              <CardHeader>
-                <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
-              </CardHeader>
-              <CardTitle>{product.name}</CardTitle>
-              <CardBody>{product.description}</CardBody>
-            </Card>
-          </React.Fragment>
+          <Card
+            isHoverable
+            key={product.name}
+            id={'card-view-' + key}
+            onKeyDown={this.onKeyDown}
+            onClick={this.onCardClick}
+            onSelectableInputChange={this.onChange}
+            isSelectableRaised
+            isSelected={activeCard === 'card-view-' + key}
+            hasSelectableInput
+          >
+            <CardHeader>
+              <img src={icons[product.icon]} alt={`${product.name} icon`} style={{ height: '50px' }} />
+              <CardActions>
+                <Dropdown
+                  isPlain
+                  position="right"
+                  onSelect={e => this.onCardKebabDropdownSelect(key, e)}
+                  toggle={
+                    <KebabToggle
+                      onToggle={(isCardKebabDropdownOpen, event) =>
+                        this.onCardKebabDropdownToggle(event, key, isCardKebabDropdownOpen)
+                      }
+                    />
+                  }
+                  isOpen={this.state[key]}
+                  dropdownItems={[
+                    <DropdownItem key="trash" onClick={e => this.deleteItem(e, product)} position="right">
+                      <TrashIcon />
+                      Delete
+                    </DropdownItem>
+                  ]}
+                />
+                <Checkbox
+                  checked={isChecked}
+                  onClick={event => this.onCheckboxClick(event, product.id)}
+                  value={product.id}
+                  isChecked={selectedItems.includes(product.id)}
+                  aria-label="card checkbox example"
+                  id={`check-${product.id}`}
+                />
+              </CardActions>
+            </CardHeader>
+            <CardTitle>{product.name}</CardTitle>
+            <CardBody>{product.description}</CardBody>
+          </Card>
         ))}
       </Gallery>
     );
@@ -1321,10 +1527,10 @@ class PrimaryDetailCardView extends React.Component {
               </p>
             </FlexItem>
             <FlexItem>
-              <Progress value={activeCard * 10} title="Title" />
+              <Progress value={activeCard && activeCard.charAt(activeCard.length - 1) * 10} title="Title" />
             </FlexItem>
             <FlexItem>
-              <Progress value={activeCard * 5} title="Title" />
+              <Progress value={activeCard && activeCard.charAt(activeCard.length - 1) * 5} title="Title" />
             </FlexItem>
           </Flex>
         </DrawerPanelBody>

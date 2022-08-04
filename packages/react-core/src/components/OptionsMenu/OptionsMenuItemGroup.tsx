@@ -24,9 +24,9 @@ export const OptionsMenuItemGroup: React.FunctionComponent<OptionsMenuItemGroupP
   hasSeparator = false,
   ...props
 }: OptionsMenuItemGroupProps) => (
-  <section {...props} className={css(styles.optionsMenuGroup)}>
+  <section {...props} className={css(styles.optionsMenuGroup)} role="none">
     {groupTitle && <h1 className={css(styles.optionsMenuGroupTitle)}>{groupTitle}</h1>}
-    <ul className={className} aria-label={ariaLabel}>
+    <ul className={className} aria-label={ariaLabel} role="group">
       {children}
       {hasSeparator && <Divider component="li" role="separator" />}
     </ul>

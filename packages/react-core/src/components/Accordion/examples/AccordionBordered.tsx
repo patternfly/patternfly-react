@@ -11,7 +11,7 @@ import {
 import ArrowRightIcon from '@patternfly/react-icons/dist/esm/icons/arrow-right-icon';
 
 export const AccordionBordered: React.FunctionComponent = () => {
-  const [expanded, setExpanded] = React.useState('ex-toggle4');
+  const [expanded, setExpanded] = React.useState('bordered-toggle4');
   const [isDisplayLarge, setIsDisplayLarge] = React.useState(false);
 
   const displaySize = isDisplayLarge ? 'large' : 'default';
@@ -29,14 +29,14 @@ export const AccordionBordered: React.FunctionComponent = () => {
         <AccordionItem>
           <AccordionToggle
             onClick={() => {
-              onToggle('ex-toggle1');
+              onToggle('bordered-toggle1');
             }}
-            isExpanded={expanded === 'ex-toggle1'}
-            id="ex-toggle1"
+            isExpanded={expanded === 'bordered-toggle1'}
+            id="bordered-toggle1"
           >
             Item one
           </AccordionToggle>
-          <AccordionContent id="ex-expand1" isHidden={expanded !== 'ex-toggle1'}>
+          <AccordionContent id="bordered-expand1" isHidden={expanded !== 'bordered-toggle1'}>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
@@ -47,14 +47,14 @@ export const AccordionBordered: React.FunctionComponent = () => {
         <AccordionItem>
           <AccordionToggle
             onClick={() => {
-              onToggle('ex-toggle2');
+              onToggle('bordered-toggle2');
             }}
-            isExpanded={expanded === 'ex-toggle2'}
-            id="ex-toggle2"
+            isExpanded={expanded === 'bordered-toggle2'}
+            id="bordered-toggle2"
           >
             Item two
           </AccordionToggle>
-          <AccordionContent id="ex-expand2" isHidden={expanded !== 'ex-toggle2'}>
+          <AccordionContent id="bordered-expand2" isHidden={expanded !== 'bordered-toggle2'}>
             <p>
               Vivamus et tortor sed arcu congue vehicula eget et diam. Praesent nec dictum lorem. Aliquam id diam
               ultrices, faucibus erat id, maximus nunc.
@@ -65,14 +65,14 @@ export const AccordionBordered: React.FunctionComponent = () => {
         <AccordionItem>
           <AccordionToggle
             onClick={() => {
-              onToggle('ex-toggle3');
+              onToggle('bordered-toggle3');
             }}
-            isExpanded={expanded === 'ex-toggle3'}
-            id="ex-toggle3"
+            isExpanded={expanded === 'bordered-toggle3'}
+            id="bordered-toggle3"
           >
             Item three
           </AccordionToggle>
-          <AccordionContent id="ex-expand3" isHidden={expanded !== 'ex-toggle3'}>
+          <AccordionContent id="bordered-expand3" isHidden={expanded !== 'bordered-toggle3'}>
             <p>Morbi vitae urna quis nunc convallis hendrerit. Aliquam congue orci quis ultricies tempus.</p>
           </AccordionContent>
         </AccordionItem>
@@ -80,14 +80,14 @@ export const AccordionBordered: React.FunctionComponent = () => {
         <AccordionItem>
           <AccordionToggle
             onClick={() => {
-              onToggle('ex-toggle4');
+              onToggle('bordered-toggle4');
             }}
-            isExpanded={expanded === 'ex-toggle4'}
-            id="ex-toggle4"
+            isExpanded={expanded === 'bordered-toggle4'}
+            id="bordered-toggle4"
           >
             Item four
           </AccordionToggle>
-          <AccordionContent id="ex-expand4" isHidden={expanded !== 'ex-toggle4'} isCustomContent>
+          <AccordionContent id="bordered-expand4" isHidden={expanded !== 'bordered-toggle4'} isCustomContent>
             <AccordionExpandedContentBody>
               Donec vel posuere orci. Phasellus quis tortor a ex hendrerit efficitur. Aliquam lacinia ligula pharetra,
               sagittis ex ut, pellentesque diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
@@ -107,14 +107,14 @@ export const AccordionBordered: React.FunctionComponent = () => {
         <AccordionItem>
           <AccordionToggle
             onClick={() => {
-              onToggle('ex-toggle5');
+              onToggle('bordered-toggle5');
             }}
-            isExpanded={expanded === 'ex-toggle5'}
-            id="ex-toggle5"
+            isExpanded={expanded === 'bordered-toggle5'}
+            id="bordered-toggle5"
           >
             Item five
           </AccordionToggle>
-          <AccordionContent id="ex-expand5" isHidden={expanded !== 'ex-toggle5'}>
+          <AccordionContent id="bordered-expand5" isHidden={expanded !== 'bordered-toggle5'}>
             <p>Vivamus finibus dictum ex id ultrices. Mauris dictum neque a iaculis blandit.</p>
           </AccordionContent>
         </AccordionItem>

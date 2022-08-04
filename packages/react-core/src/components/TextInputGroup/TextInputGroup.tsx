@@ -9,6 +9,8 @@ export interface TextInputGroupProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Adds disabled styling and a disabled context value which text input group main hooks into for the input itself */
   isDisabled?: boolean;
+  /** Flag to indicate the toggle has no border or background */
+  isPlain?: boolean;
   /** @hide A reference object to attach to the input box */
   innerRef?: React.RefObject<any>;
 }
@@ -21,6 +23,7 @@ export const TextInputGroup: React.FunctionComponent<TextInputGroupProps> = ({
   children,
   className,
   isDisabled,
+  isPlain,
   innerRef,
   ...props
 }: TextInputGroupProps) => {
@@ -30,7 +33,12 @@ export const TextInputGroup: React.FunctionComponent<TextInputGroupProps> = ({
     <TextInputGroupContext.Provider value={{ isDisabled }}>
       <div
         ref={textInputGroupRef}
-        className={css(styles.textInputGroup, isDisabled && styles.modifiers.disabled, className)}
+        className={css(
+          styles.textInputGroup,
+          isDisabled && styles.modifiers.disabled,
+          isPlain && styles.modifiers.plain,
+          className
+        )}
         {...props}
       >
         {children}

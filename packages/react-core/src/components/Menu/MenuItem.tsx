@@ -50,6 +50,8 @@ export interface MenuItemProps extends Omit<React.HTMLProps<HTMLLIElement>, 'onC
   isExternalLink?: boolean;
   /** Flag indicating if the option is selected */
   isSelected?: boolean;
+  /** Flag indicating the item is focused */
+  isFocused?: boolean;
   /** @beta Flyout menu */
   flyoutMenu?: React.ReactElement;
   /** @beta Callback function when mouse leaves trigger */
@@ -88,6 +90,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   isDisabled = false,
   isExternalLink = false,
   isSelected = null,
+  isFocused,
   icon,
   actions,
   onShowFlyout,
@@ -189,11 +192,12 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
     }
   }, [flyoutVisible, flyoutTarget]);
 
-  const handleFlyout = (event: React.KeyboardEvent) => {
-    const key = event.key;
+  const handleFlyout = (event: React.KeyboardEvent | React.MouseEvent) => {
+    const key = (event as React.KeyboardEvent).key;
     const target = event.target;
+    const type = event.type;
 
-    if (key === ' ' || key === 'Enter' || key === 'ArrowRight') {
+    if (key === ' ' || key === 'Enter' || key === 'ArrowRight' || type === 'click') {
       event.stopPropagation();
       if (!flyoutVisible) {
         showFlyout(true);
@@ -248,7 +252,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
   if (isOnPath) {
     additionalProps['aria-expanded'] = true;
   } else if (hasFlyout) {
-    additionalProps['aria-haspopup'] = true;
+    additionalProps['aria-haspopup'] = 'menu';
     additionalProps['aria-expanded'] = flyoutVisible;
   }
   const getAriaCurrent = () => {
@@ -290,6 +294,7 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
         _isOnPath && styles.modifiers.currentPath,
         isLoadButton && styles.modifiers.load,
         isLoading && styles.modifiers.loading,
+        isFocused && styles.modifiers.focus,
         className
       )}
       onMouseOver={onMouseOver}
@@ -305,12 +310,13 @@ const MenuItemBase: React.FunctionComponent<MenuItemProps> = ({
             className={css(styles.menuItem, getIsSelected() && !hasCheck && styles.modifiers.selected, className)}
             aria-current={getAriaCurrent()}
             {...(!hasCheck && { disabled: isDisabled })}
-            {...(!hasCheck && { role: 'menuitem' })}
+            {...(!hasCheck && !flyoutMenu && { role: 'menuitem' })}
             ref={innerRef}
             {...(!hasCheck && {
               onClick: (event: any) => {
                 onItemSelect(event, onSelect);
                 _drill && _drill();
+                flyoutMenu && handleFlyout(event);
               }
             })}
             {...(hasCheck && { htmlFor: randomId })}

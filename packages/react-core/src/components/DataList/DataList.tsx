@@ -21,8 +21,6 @@ export enum DataListWrapModifier {
 }
 
 export interface SelectableRowObject {
-  /** Determines if only one of the selectable rows should be selectable at a time */
-  type: 'multiple' | 'single';
   /** Callback that executes when the screen reader accessible element receives a change event */
   onChange: (id: string, event: React.FormEvent<HTMLInputElement>) => void;
 }

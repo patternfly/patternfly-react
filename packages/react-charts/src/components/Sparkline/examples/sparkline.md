@@ -50,7 +50,7 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContaine
       />
     </ChartGroup>
   </div>
-  <ChartContainer>
+  <ChartContainer title="CPU utilization">
     <ChartLabel text="CPU utilization" dy={15}/>
   </ChartContainer>
 </div>
@@ -86,7 +86,7 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, Cha
       />
     </ChartGroup>
   </div>
-  <ChartContainer>
+  <ChartContainer title="CPU utilization">
     <ChartLabel text="CPU utilization" dy={15}/>
   </ChartContainer>
 </div>
@@ -104,7 +104,7 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, Cha
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
- - For `ChartArea` props, see [VictoryArea](https://formidable.com/open-source/victory/docs/victory-area)
- - For `ChartGroup` props, see [VictoryGroup](https://formidable.com/open-source/victory/docs/victory-group)
- - For `ChartLabel` props, see [VictoryLabel](https://formidable.com/open-source/victory/docs/victory-label)
- - For `ChartVoronoiContainer` props, see [VictoryVoronoiContainer](https://formidable.com/open-source/victory/docs/victory-voronoi-container)
+- For `ChartArea` props, see [VictoryArea](https://formidable.com/open-source/victory/docs/victory-area)
+- For `ChartGroup` props, see [VictoryGroup](https://formidable.com/open-source/victory/docs/victory-group)
+- For `ChartLabel` props, see [VictoryLabel](https://formidable.com/open-source/victory/docs/victory-label)
+- For `ChartVoronoiContainer` props, see [VictoryVoronoiContainer](https://formidable.com/open-source/victory/docs/victory-voronoi-container)

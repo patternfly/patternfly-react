@@ -10,7 +10,8 @@ import {
   DataListItemCells,
   DragDrop,
   Draggable,
-  Droppable
+  Droppable,
+  getUniqueId
 } from '@patternfly/react-core';
 
 interface ItemType {
@@ -20,7 +21,7 @@ interface ItemType {
 
 const getItems = (count: number) =>
   Array.from({ length: count }, (_, idx) => idx).map(idx => ({
-    id: `item-${idx}`,
+    id: `draggable-item-${idx}`,
     content: `item ${idx} `.repeat(idx === 4 ? 20 : 1)
   }));
 
@@ -60,27 +61,29 @@ export const DataListDraggable: React.FunctionComponent = () => {
     }
   }
 
+  const uniqueId = getUniqueId();
+
   return (
     <DragDrop onDrag={onDrag} onDragMove={onDragMove} onDrop={onDrop}>
       <Droppable hasNoWrapper>
         <DataList aria-label="draggable data list example" isCompact>
           {items.map(({ id, content }) => (
             <Draggable key={id} hasNoWrapper>
-              <DataListItem aria-labelledby={id} ref={React.createRef()}>
+              <DataListItem aria-labelledby={`draggable-${id}`} ref={React.createRef()}>
                 <DataListItemRow>
                   <DataListControl>
                     <DataListDragButton
                       aria-label="Reorder"
-                      aria-labelledby={id}
-                      aria-describedby="Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm the drag, or any other key to cancel the drag operation."
+                      aria-labelledby={`draggable-${id}`}
+                      aria-describedby={`description-${uniqueId}`}
                       aria-pressed="false"
                     />
-                    <DataListCheck aria-labelledby={id} name={id} otherControls />
+                    <DataListCheck aria-labelledby={`draggable-${id}`} name={id} otherControls />
                   </DataListControl>
                   <DataListItemCells
                     dataListCells={[
                       <DataListCell key={id}>
-                        <span id={id}>{content}</span>
+                        <span id={`draggable-${id}`}>{content}</span>
                       </DataListCell>
                     ]}
                   />
@@ -92,6 +95,10 @@ export const DataListDraggable: React.FunctionComponent = () => {
       </Droppable>
       <div className="pf-screen-reader" aria-live="assertive">
         {liveText}
+      </div>
+      <div className="pf-screen-reader" id={`description-${uniqueId}`}>
+        Press space or enter to begin dragging, and use the arrow keys to navigate up or down. Press enter to confirm
+        the drag, or any other key to cancel the drag operation.
       </div>
     </DragDrop>
   );

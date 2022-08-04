@@ -33,7 +33,7 @@ export const InputGroupWithDropdown: React.FunctionComponent = () => {
           isOpen={isOpen}
           dropdownItems={dropdownItems}
         />
-        <TextInput id="textInput3" aria-label="input with dropdown and button" />
+        <TextInput id="textInput-with-dropdown" aria-label="input with dropdown and button" />
         <Button id="inputDropdownButton1" variant="control">
           Button
         </Button>

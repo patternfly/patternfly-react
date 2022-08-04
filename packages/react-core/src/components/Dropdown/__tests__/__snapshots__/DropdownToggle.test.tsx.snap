@@ -198,7 +198,7 @@ exports[`DropdownToggle state class changes 1`] = `
   <button
     aria-expanded="false"
     class="pf-c-dropdown__toggle"
-    data-ouia-component-id="OUIA-Generated-DropdownToggle-13"
+    data-ouia-component-id="OUIA-Generated-DropdownToggle-14"
     data-ouia-component-type="PF4/DropdownToggle"
     data-ouia-safe="true"
     id="Dropdown Toggle"

@@ -9,14 +9,10 @@ import { Button, ButtonVariant } from '../Button';
 import { TextInput } from '../TextInput';
 import { InputGroup } from '../InputGroup';
 import { KEY_CODES } from '../../helpers/constants';
-import { FocusTrap } from '../../helpers';
+import { FocusTrap, getUniqueId } from '../../helpers';
 import { ToggleMenuBaseProps } from '../../helpers/Popper/Popper';
 import { Popper } from '../../helpers/Popper/Popper';
 import { getOUIAProps, OUIAProps, getDefaultOUIAId } from '../../helpers';
-
-// seed for the aria-labelledby ID
-let currentId = 0;
-const newId = currentId++;
 
 export interface ContextSelectorProps extends Omit<ToggleMenuBaseProps, 'menuAppendTo'>, OUIAProps {
   /** content rendered inside the Context Selector */
@@ -41,8 +37,10 @@ export interface ContextSelectorProps extends Omit<ToggleMenuBaseProps, 'menuApp
   isFullHeight?: boolean;
   /** Labels the Context Selector for Screen Readers */
   screenReaderLabel?: string;
-  /** Text that appears in the Context Selector Toggle */
-  toggleText?: string;
+  /** Component or string that will be used in the context selector.
+   * This prop is placed in a button, and cannot contain any interactive elements
+   */
+  toggleText?: React.ReactNode;
   /** Aria-label for the Context Selector Search Button */
   searchButtonAriaLabel?: string;
   /** Value in the Search field */
@@ -66,6 +64,8 @@ export interface ContextSelectorProps extends Omit<ToggleMenuBaseProps, 'menuApp
    * appended inline, e.g. `menuAppendTo="parent"`
    */
   isFlipEnabled?: boolean;
+  /** Id of the context selector */
+  id?: string;
 }
 
 export class ContextSelector extends React.Component<ContextSelectorProps, { ouiaStateId: string }> {
@@ -108,9 +108,6 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
   };
 
   render() {
-    const toggleId = `pf-context-selector-toggle-id-${newId}`;
-    const screenReaderLabelId = `pf-context-selector-label-id-${newId}`;
-    const searchButtonId = `pf-context-selector-search-button-id-${newId}`;
     const {
       children,
       className,
@@ -133,14 +130,21 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
       footer,
       disableFocusTrap,
       isFlipEnabled,
+      id,
       ...props
     } = this.props;
+
+    const uniqueId = id || getUniqueId();
+    const toggleId = `pf-context-selector-toggle-id-${uniqueId}`;
+    const screenReaderLabelId = `pf-context-selector-label-id-${uniqueId}`;
+
     const menuContainer = (
       <div
         className={css(styles.contextSelectorMenu)}
         // This removes the `position: absolute`styling from the `.pf-c-context-selector__menu`
         // allowing the menu to flip correctly
         {...(isFlipEnabled && { style: { position: 'revert' } })}
+        id={uniqueId}
       >
         {isOpen && (
           <FocusTrap
@@ -155,12 +159,11 @@ export class ContextSelector extends React.Component<ContextSelectorProps, { oui
                   placeholder={searchInputPlaceholder}
                   onChange={onSearchInputChange}
                   onKeyPress={this.onEnterPressed}
-                  aria-labelledby={searchButtonId}
+                  aria-label={searchButtonAriaLabel}
                 />
                 <Button
                   variant={ButtonVariant.control}
                   aria-label={searchButtonAriaLabel}
-                  id={searchButtonId}
                   onClick={onSearchButtonClick}
                 >
                   <SearchIcon aria-hidden="true" />

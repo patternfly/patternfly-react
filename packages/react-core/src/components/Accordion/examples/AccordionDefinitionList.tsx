@@ -2,7 +2,7 @@ import React from 'react';
 import { Accordion, AccordionItem, AccordionContent, AccordionToggle } from '@patternfly/react-core';
 
 export const AccordionDefinitionList: React.FunctionComponent = () => {
-  const [expanded, setExpanded] = React.useState('ex-toggle2');
+  const [expanded, setExpanded] = React.useState('def-list-toggle2');
 
   const onToggle = (id: string) => {
     if (id === expanded) {
@@ -17,14 +17,14 @@ export const AccordionDefinitionList: React.FunctionComponent = () => {
       <AccordionItem>
         <AccordionToggle
           onClick={() => {
-            onToggle('ex-toggle1');
+            onToggle('def-list-toggle1');
           }}
-          isExpanded={expanded === 'ex-toggle1'}
-          id="ex-toggle1"
+          isExpanded={expanded === 'def-list-toggle1'}
+          id="def-list-toggle1"
         >
           Item one
         </AccordionToggle>
-        <AccordionContent id="ex-expand1" isHidden={expanded !== 'ex-toggle1'}>
+        <AccordionContent id="def-list-expand1" isHidden={expanded !== 'def-list-toggle1'}>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua.
@@ -35,14 +35,14 @@ export const AccordionDefinitionList: React.FunctionComponent = () => {
       <AccordionItem>
         <AccordionToggle
           onClick={() => {
-            onToggle('ex-toggle2');
+            onToggle('def-list-toggle2');
           }}
-          isExpanded={expanded === 'ex-toggle2'}
-          id="ex-toggle2"
+          isExpanded={expanded === 'def-list-toggle2'}
+          id="def-list-toggle2"
         >
           Item two
         </AccordionToggle>
-        <AccordionContent id="ex-expand2" isHidden={expanded !== 'ex-toggle2'}>
+        <AccordionContent id="def-list-expand2" isHidden={expanded !== 'def-list-toggle2'}>
           <p>
             Vivamus et tortor sed arcu congue vehicula eget et diam. Praesent nec dictum lorem. Aliquam id diam
             ultrices, faucibus erat id, maximus nunc.
@@ -53,14 +53,14 @@ export const AccordionDefinitionList: React.FunctionComponent = () => {
       <AccordionItem>
         <AccordionToggle
           onClick={() => {
-            onToggle('ex-toggle3');
+            onToggle('def-list-toggle3');
           }}
-          isExpanded={expanded === 'ex-toggle3'}
-          id="ex-toggle3"
+          isExpanded={expanded === 'def-list-toggle3'}
+          id="def-list-toggle3"
         >
           Item three
         </AccordionToggle>
-        <AccordionContent id="ex-expand3" isHidden={expanded !== 'ex-toggle3'}>
+        <AccordionContent id="def-list-expand3" isHidden={expanded !== 'def-list-toggle3'}>
           <p>Morbi vitae urna quis nunc convallis hendrerit. Aliquam congue orci quis ultricies tempus.</p>
         </AccordionContent>
       </AccordionItem>
@@ -68,14 +68,14 @@ export const AccordionDefinitionList: React.FunctionComponent = () => {
       <AccordionItem>
         <AccordionToggle
           onClick={() => {
-            onToggle('ex-toggle4');
+            onToggle('def-list-toggle4');
           }}
-          isExpanded={expanded === 'ex-toggle4'}
-          id="ex-toggle4"
+          isExpanded={expanded === 'def-list-toggle4'}
+          id="def-list-toggle4"
         >
           Item four
         </AccordionToggle>
-        <AccordionContent id="ex-expand4" isHidden={expanded !== 'ex-toggle4'}>
+        <AccordionContent id="def-list-expand4" isHidden={expanded !== 'def-list-toggle4'}>
           <p>
             Donec vel posuere orci. Phasellus quis tortor a ex hendrerit efficitur. Aliquam lacinia ligula pharetra,
             sagittis ex ut, pellentesque diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
@@ -91,14 +91,14 @@ export const AccordionDefinitionList: React.FunctionComponent = () => {
       <AccordionItem>
         <AccordionToggle
           onClick={() => {
-            onToggle('ex-toggle5');
+            onToggle('def-list-toggle5');
           }}
-          isExpanded={expanded === 'ex-toggle5'}
-          id="ex-toggle5"
+          isExpanded={expanded === 'def-list-toggle5'}
+          id="def-list-toggle5"
         >
           Item five
         </AccordionToggle>
-        <AccordionContent id="ex-expand5" isHidden={expanded !== 'ex-toggle5'}>
+        <AccordionContent id="def-list-expand5" isHidden={expanded !== 'def-list-toggle5'}>
           <p>Vivamus finibus dictum ex id ultrices. Mauris dictum neque a iaculis blandit.</p>
         </AccordionContent>
       </AccordionItem>

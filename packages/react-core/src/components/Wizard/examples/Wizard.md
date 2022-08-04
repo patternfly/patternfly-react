@@ -40,6 +40,31 @@ class SimpleWizard extends React.Component {
 }
 ```
 
+### Basic with disabled steps
+
+```js
+import React from 'react';
+import { Button, Wizard } from '@patternfly/react-core';
+
+class SimpleWizard extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const steps = [
+      { name: 'First step', component: <p>Step 1 content</p> },
+      { name: 'Second step', component: <p>Step 2 content</p>, isDisabled: true},
+      { name: 'Third step', component: <p>Step 3 content</p> },
+      { name: 'Fourth step', component: <p>Step 4 content</p>, isDisabled: true },
+      { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
+    ];
+    const title = 'Basic wizard';
+    return <Wizard navAriaLabel={`${title} steps`} mainAriaLabel={`${title} content`} steps={steps} height={400} />;
+  }
+}
+```
+
 ### Anchors for nav items
 
 ```js
@@ -119,12 +144,12 @@ class IncrementallyEnabledStepsWizard extends React.Component {
     const { stepIdReached } = this.state;
 
     const steps = [
-      { id: 1, name: 'First step', component: <p>Step 1 content</p> },
-      { id: 2, name: 'Second step', component: <p>Step 2 content</p>, canJumpTo: stepIdReached >= 2 },
-      { id: 3, name: 'Third step', component: <p>Step 3 content</p>, canJumpTo: stepIdReached >= 3 },
-      { id: 4, name: 'Fourth step', component: <p>Step 4 content</p>, canJumpTo: stepIdReached >= 4 },
+      { id: 'incrementally-enabled-1', name: 'First step', component: <p>Step 1 content</p> },
+      { id: 'incrementally-enabled-2', name: 'Second step', component: <p>Step 2 content</p>, canJumpTo: stepIdReached >= 2 },
+      { id: 'incrementally-enabled-3', name: 'Third step', component: <p>Step 3 content</p>, canJumpTo: stepIdReached >= 3 },
+      { id: 'incrementally-enabled-4', name: 'Fourth step', component: <p>Step 4 content</p>, canJumpTo: stepIdReached >= 4 },
       {
-        id: 5,
+        id: 'incrementally-enabled-5',
         name: 'Review',
         component: <p>Review step content</p>,
         nextButtonText: 'Finish',
@@ -177,7 +202,7 @@ class SimpleWizard extends React.Component {
       { name: 'Fourth step', component: <p>Step 4 content</p> },
       { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
     ];
-    const title = 'Basic wizard';
+    const title = 'Expandable wizard';
     return (
       <Wizard
         navAriaLabel={`${title} steps`}
@@ -296,29 +321,29 @@ class ValidationWizard extends React.Component {
     const { isFormValid, formValue, allStepsValid, stepIdReached } = this.state;
 
     const steps = [
-      { id: 1, name: 'Information', component: <p>Step 1 content</p> },
+      { id: 'validated-1', name: 'Information', component: <p>Step 1 content</p> },
       {
         name: 'Configuration',
         steps: [
           {
-            id: 2,
+            id: 'validated-2',
             name: 'Substep A with validation',
             component: <SampleForm formValue={formValue} isFormValid={isFormValid} onChange={this.onFormChange} />,
             enableNext: isFormValid,
             canJumpTo: stepIdReached >= 2
           },
-          { id: 3, name: 'Substep B', component: <p>Substep B</p>, canJumpTo: stepIdReached >= 3 }
+          { id: 'validated-3', name: 'Substep B', component: <p>Substep B</p>, canJumpTo: stepIdReached >= 3 }
         ]
       },
       {
-        id: 4,
+        id: 'validated-4',
         name: 'Additional',
         component: <p>Step 3 content</p>,
         enableNext: allStepsValid,
         canJumpTo: stepIdReached >= 4
       },
       {
-        id: 5,
+        id: 'validated-5',
         name: 'Review',
         component: <p>Step 4 content</p>,
         nextButtonText: 'Close',
@@ -757,36 +782,29 @@ class ProgressiveWizard extends React.Component {
 }
 ```
 
-### Remember last step
+### Get current step
 
 ```js
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 
-class RememberLastStepWizard extends React.Component {
+class GetCurrentStepWizard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       step: 1
     };
+    this.onCurrentStepChanged = ({ id }) => {
+        this.setState({
+            step: id
+        });
+    }
     this.closeWizard = () => {
       console.log('close wizard');
-    };
-    this.onMove = (curr, prev) => {
-      this.setState({
-        step: curr.id
-      });
-    };
-    this.onSave = () => {
-      this.setState({
-        step: 1
-      });
     };
   }
 
   render() {
-    const { step } = this.state;
-
     const steps = [
       { id: 1, name: 'First step', component: <p>Step 1 content</p> },
       { id: 2, name: 'Second step', component: <p>Step 2 content</p> },
@@ -794,19 +812,16 @@ class RememberLastStepWizard extends React.Component {
       { id: 4, name: 'Fourth step', component: <p>Step 4 content</p> },
       { id: 5, name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
     ];
-    const title = 'Remember last step wizard';
+    const title = 'Get current step wizard';
     return (
       <Wizard
         navAriaLabel={`${title} steps`}
         mainAriaLabel={`${title} content`}
-        startAtStep={step}
-        onNext={this.onMove}
-        onBack={this.onMove}
-        onSave={this.onSave}
         onClose={this.closeWizard}
         description="Simple Wizard Description"
         steps={steps}
         height={400}
+        onCurrentStepChanged={this.onCurrentStepChanged}
       />
     );
   }

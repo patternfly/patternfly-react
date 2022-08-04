@@ -32,14 +32,7 @@ export const LegacyTableHoverable: React.FunctionComponent = () => {
 
   // In this example, selected rows are tracked by the repo names from each row. This could be any unique identifier.
   // This is to prevent state from being based on row order index in case we later add sorting.
-  const [selectedRepoNames, setSelectedRepoNames] = React.useState<string[]>([]);
-  const setRepoSelected = (repo: Repository, isSelecting = true) =>
-    setSelectedRepoNames(prevSelected => {
-      const otherSelectedRepoNames = prevSelected.filter(r => r !== repo.name);
-      return isSelecting ? [...otherSelectedRepoNames, repo.name] : otherSelectedRepoNames;
-    });
-  const isRepoSelected = (repo: Repository) => selectedRepoNames.includes(repo.name);
-
+  const [selectedRepoName, setSelectedRepoName] = React.useState('');
   const columns: TableProps['cells'] = [
     {
       title: 'Repositories',
@@ -105,7 +98,7 @@ export const LegacyTableHoverable: React.FunctionComponent = () => {
     return {
       cells,
       isHoverable: true,
-      isRowSelected: isRepoSelected(repo)
+      isRowSelected: selectedRepoName === repo.name
     };
   });
 
@@ -116,7 +109,7 @@ export const LegacyTableHoverable: React.FunctionComponent = () => {
         onRowClick={(_event, row, rowProps) => {
           if (rowProps) {
             const repo = repositories[rowProps.rowIndex];
-            setRepoSelected(repo, !isRepoSelected(repo));
+            setSelectedRepoName(repo.name);
           }
         }}
       />

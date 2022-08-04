@@ -11,6 +11,7 @@ import {
   VictoryLabelProps
 } from 'victory-core';
 import { ChartCommonStyles } from '../ChartTheme';
+import { getUniqueId } from '@patternfly/react-core';
 
 export enum ChartLabelDirection {
   rtl = 'rtl',
@@ -25,7 +26,9 @@ export enum ChartLabelPlacement {
 }
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
+ * ChartLabel renders the label components that are used across all Victory based components.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-core/src/victory-label/victory-label.tsx
  */
 export interface ChartLabelProps extends VictoryLabelProps {
   /**
@@ -100,6 +103,10 @@ export interface ChartLabelProps extends VictoryLabelProps {
    * Event handlers are currently only called with their corresponding events.
    */
   events?: React.DOMAttributes<any>;
+  /**
+   * The id prop specifies a HTML ID that will be applied to the rendered text element.
+   */
+  id?: StringOrNumberOrCallback;
   /**
    * The index prop represents the index of the datum in the data array.
    *
@@ -221,6 +228,7 @@ export interface ChartLabelProps extends VictoryLabelProps {
 export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
   style,
   textAnchor,
+  id = () => getUniqueId('chart-legend-label'),
   ...rest
 }: ChartLabelProps) => {
   const applyDefaultStyle = (customStyle: React.CSSProperties) =>
@@ -238,7 +246,7 @@ export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
     );
   const newStyle = Array.isArray(style) ? style.map(applyDefaultStyle) : applyDefaultStyle(style);
 
-  return <VictoryLabel style={newStyle as any} textAnchor={textAnchor} {...rest} />;
+  return <VictoryLabel style={newStyle as any} textAnchor={textAnchor} {...rest} id={id} />;
 };
 ChartLabel.displayName = 'ChartLabel';
 

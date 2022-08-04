@@ -62,10 +62,8 @@ export const useOUIAProps = (componentType: string, id?: OuiaId, ouiaSafe: boole
  * @param {string} variant Optional variant to add to the generated ID
  */
 export const useOUIAId = (componentType: string, id?: OuiaId, variant?: string) => {
-  if (id !== undefined) {
-    return id;
-  }
-  return useMemo(() => getDefaultOUIAId(componentType, variant), [componentType, variant]);
+  const defaultOUIAId = useMemo(() => getDefaultOUIAId(componentType, variant), [componentType, variant]);
+  return id ?? defaultOUIAId;
 };
 
 /**

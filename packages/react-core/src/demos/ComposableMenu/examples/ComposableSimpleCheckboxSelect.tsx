@@ -13,7 +13,7 @@ export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
         if (isOpen && menuRef.current.contains(event.target as Node)) {
           if (event.key === 'Escape' || event.key === 'Tab') {
             setIsOpen(!isOpen);
-            toggleRef.current.focus();
+            toggleRef?.current?.focus();
           }
         }
       }
@@ -23,7 +23,7 @@ export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
 
   const handleClickOutside = React.useCallback(
     event => {
-      if (isOpen && !menuRef.current.contains(event.target as Node)) {
+      if (isOpen && !menuRef?.current?.contains(event.target as Node)) {
         setIsOpen(false);
       }
     },
@@ -43,7 +43,7 @@ export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
     ev.stopPropagation(); // Stop handleClickOutside from handling
     setTimeout(() => {
       if (menuRef.current) {
-        const firstElement = menuRef.current.querySelector('li > button:not(:disabled)');
+        const firstElement = menuRef.current.querySelector('li input:not(:disabled)');
         firstElement && (firstElement as HTMLElement).focus();
       }
     }, 0);
@@ -94,5 +94,5 @@ export const ComposableSimpleCheckboxSelect: React.FunctionComponent = () => {
       </MenuContent>
     </Menu>
   );
-  return <Popper trigger={toggle} popper={menu} isVisible={isOpen} />;
+  return <Popper appendTo={toggleRef.current} trigger={toggle} popper={menu} isVisible={isOpen} />;
 };

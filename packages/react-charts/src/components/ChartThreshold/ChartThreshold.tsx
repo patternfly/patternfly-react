@@ -26,8 +26,9 @@ import { ChartThemeDefinition } from '../ChartTheme';
 import { getThresholdTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-line/src/index.d.ts
+ * CharThreshold renders a dataset as a threshold chart.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-line/src/victory-line.tsx
  */
 export interface ChartThresholdProps extends VictoryLineProps {
   /**

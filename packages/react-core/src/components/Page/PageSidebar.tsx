@@ -17,6 +17,8 @@ export interface PageSidebarProps extends React.HTMLProps<HTMLDivElement> {
   isNavOpen?: boolean;
   /** Indicates the color scheme of the sidebar */
   theme?: 'dark' | 'light';
+  /** Sidebar id */
+  id?: string;
 }
 
 export interface PageSidebarContextProps {
@@ -32,6 +34,7 @@ export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
   nav,
   isNavOpen = true,
   theme = 'dark',
+  id = 'page-sidebar',
   ...props
 }: PageSidebarProps) => (
   <PageContextConsumer>
@@ -40,7 +43,7 @@ export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
 
       return (
         <div
-          id="page-sidebar"
+          id={id}
           className={css(
             styles.pageSidebar,
             theme === 'light' && styles.modifiers.light,
@@ -51,7 +54,7 @@ export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
           aria-hidden={!navOpen}
           {...props}
         >
-          <div className={styles.pageSidebarBody}>
+          <div className={css(styles.pageSidebarBody)}>
             <PageSidebarContext.Provider value={{ isNavOpen: navOpen }}>{nav}</PageSidebarContext.Provider>
           </div>
         </div>

@@ -22,6 +22,7 @@ import { ChartLabel } from '../ChartLabel';
 import { ChartPoint } from '../ChartPoint';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
+import { getUniqueId } from '@patternfly/react-core';
 
 export enum ChartLegendOrientation {
   horizontal = 'horizontal',
@@ -40,8 +41,9 @@ export enum ChartLegendRowGutter {
 }
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and See https://github.com/FormidableLabs/victory/blob/master/packages/victory-legend/src/index.d.ts
+ * ChartLegend renders a chart legend component.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-legend/src/index.d.ts
  */
 export interface ChartLegendProps extends VictoryLegendProps {
   /**
@@ -366,16 +368,28 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
     ...containerComponent.props
   });
 
+  const getLabelComponent = () =>
+    React.cloneElement(labelComponent, {
+      id: () => getUniqueId('chart-legendLabels'),
+      ...labelComponent.props
+    });
+
+  const getTitleComponent = () =>
+    React.cloneElement(titleComponent, {
+      id: () => getUniqueId('chart-titleLabels'),
+      ...titleComponent.props
+    });
+
   // Note: containerComponent is required for theme
   return (
     <VictoryLegend
       colorScale={colorScale}
       containerComponent={container}
       dataComponent={dataComponent}
-      labelComponent={labelComponent}
+      labelComponent={getLabelComponent()}
       style={getDefaultStyle()}
       theme={theme}
-      titleComponent={titleComponent}
+      titleComponent={getTitleComponent()}
       {...rest}
     />
   );
@@ -387,6 +401,7 @@ hoistNonReactStatics(ChartLegend, VictoryLegend, { getBaseProps: true });
 
 (ChartLegend as any).getBaseProps = (props: any) => {
   const theme = getTheme(null);
+
   return (VictoryLegend as any).getBaseProps(
     {
       titleComponent: <ChartLabel />, // Workaround for getBaseProps error

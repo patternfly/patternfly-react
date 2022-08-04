@@ -74,7 +74,7 @@ const TrBase: React.FunctionComponent<TrProps> = ({
 
   React.useEffect(() => {
     if (isSelectable && !rowIsHidden) {
-      setComputedAriaLabel(`${isRowSelected ? 'Selected' : 'Unselected'}, selectable row.`);
+      setComputedAriaLabel(`${isRowSelected ? 'Row selected' : ''}`);
       registerSelectableRow();
     } else {
       setComputedAriaLabel(undefined);

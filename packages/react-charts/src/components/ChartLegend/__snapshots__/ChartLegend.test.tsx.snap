@@ -46,7 +46,7 @@ exports[`ChartLegend 1`] = `
       <text
         direction="inherit"
         dx="0"
-        id="legend-labels-0"
+        id="test2"
         x="30.8"
         y="18.97"
       >
@@ -63,7 +63,7 @@ exports[`ChartLegend 1`] = `
       <text
         direction="inherit"
         dx="0"
-        id="legend-labels-1"
+        id="test2"
         x="116.73125"
         y="18.97"
       >
@@ -138,7 +138,7 @@ exports[`ChartLegend 2`] = `
       <text
         direction="inherit"
         dx="0"
-        id="legend-labels-0"
+        id="test2"
         x="30.8"
         y="18.97"
       >
@@ -155,7 +155,7 @@ exports[`ChartLegend 2`] = `
       <text
         direction="inherit"
         dx="0"
-        id="legend-labels-1"
+        id="test2"
         x="116.73125"
         y="18.97"
       >
@@ -247,7 +247,7 @@ exports[`renders component data 1`] = `
       <text
         direction="inherit"
         dx="0"
-        id="legend-labels-0"
+        id="test4"
         x="30.8"
         y="39.875"
       >
@@ -264,7 +264,7 @@ exports[`renders component data 1`] = `
       <text
         direction="inherit"
         dx="0"
-        id="legend-labels-1"
+        id="test4"
         x="99.58125"
         y="39.875"
       >

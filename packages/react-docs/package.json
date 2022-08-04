@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "5.85.0",
+  "version": "5.92.2",
   "publishConfig": {
     "access": "public",
     "tag": "prerelease-v4"
@@ -14,33 +14,33 @@
   "license": "MIT",
   "scripts": {
     "analyze": "yarn build:docs --analyze",
-    "build:docs": "yarn theme-patternfly-org build all",
+    "build:docs": "pf-docs-framework build all",
     "clean": "rimraf .cache public static/assets static/base.css src/generated/**/*.js",
-    "develop": "theme-patternfly-org start",
-    "serve": "theme-patternfly-org serve public",
-    "screenshots": "theme-patternfly-org screenshots --urlPrefix http://localhost:5000",
+    "develop": "pf-docs-framework start",
+    "serve": "pf-docs-framework serve public",
+    "screenshots": "pf-docs-framework screenshots --urlPrefix http://localhost:5000",
     "test:a11y": "patternfly-a11y --config patternfly-a11y.config"
   },
   "dependencies": {
-    "@patternfly/patternfly": "4.202.1",
-    "@patternfly/react-catalog-view-extension": "^4.75.0",
-    "@patternfly/react-charts": "^6.77.0",
-    "@patternfly/react-code-editor": "^4.65.0",
-    "@patternfly/react-core": "^4.224.0",
-    "@patternfly/react-icons": "^4.75.0",
-    "@patternfly/react-inline-edit-extension": "^4.69.0",
-    "@patternfly/react-log-viewer": "^4.69.0",
-    "@patternfly/react-styles": "^4.74.0",
-    "@patternfly/react-table": "^4.93.0",
-    "@patternfly/react-tokens": "^4.76.0",
-    "@patternfly/react-topology": "^4.71.0",
-    "@patternfly/react-virtualized-extension": "^4.71.0"
+    "@patternfly/patternfly": "4.206.3",
+    "@patternfly/react-catalog-view-extension": "^4.82.2",
+    "@patternfly/react-charts": "^6.84.2",
+    "@patternfly/react-code-editor": "^4.72.2",
+    "@patternfly/react-core": "^4.231.2",
+    "@patternfly/react-icons": "^4.82.2",
+    "@patternfly/react-inline-edit-extension": "^4.76.2",
+    "@patternfly/react-log-viewer": "^4.76.2",
+    "@patternfly/react-styles": "^4.81.2",
+    "@patternfly/react-table": "^4.100.2",
+    "@patternfly/react-tokens": "^4.83.2",
+    "@patternfly/react-topology": "^4.78.2",
+    "@patternfly/react-virtualized-extension": "^4.78.2"
   },
   "devDependencies": {
+    "@patternfly/documentation-framework": "1.1.9",
     "@patternfly/patternfly-a11y": "4.3.1",
     "rimraf": "^2.6.3",
-    "shx": "^0.3.2",
-    "theme-patternfly-org": "0.11.68"
+    "shx": "^0.3.2"
   },
   "keywords": [
     "gatsby"

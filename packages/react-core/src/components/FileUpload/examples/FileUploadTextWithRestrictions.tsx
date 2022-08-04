@@ -39,13 +39,13 @@ export const TextFileUploadWithRestrictions: React.FunctionComponent = () => {
   return (
     <Form>
       <FormGroup
-        fieldId="text-file-with-restrictions"
+        fieldId="text-file-with-restrictions-example"
         helperText="Upload a CSV file"
         helperTextInvalid="Must be a CSV file no larger than 1 KB"
         validated={isRejected ? 'error' : 'default'}
       >
         <FileUpload
-          id="text-file-with-restrictions"
+          id="text-file-with-restrictions-example"
           type="text"
           value={value}
           filename={filename}

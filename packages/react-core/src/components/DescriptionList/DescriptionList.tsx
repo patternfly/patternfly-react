@@ -30,6 +30,8 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
   isFluid?: boolean;
   /** Sets the the default placement of description list groups to fill from top to bottom. */
   isFillColumns?: boolean;
+  /** Sets the display size of the descriptions in the description list.*/
+  displaySize?: 'lg' | '2xl';
   /** Sets the number of columns on the description list at various breakpoints */
   columnModifier?: {
     default?: '1Col' | '2Col' | '3Col';
@@ -56,6 +58,8 @@ export interface DescriptionListProps extends Omit<React.HTMLProps<HTMLDListElem
     xl?: string;
     '2xl'?: string;
   };
+  /** Sets the description list's term column width.*/
+  termWidth?: string;
   /** Sets the horizontal description list's term column width at various breakpoints. */
   horizontalTermWidthModifier?: {
     default?: string;
@@ -86,8 +90,10 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
   isCompact,
   isFluid,
   isFillColumns,
+  displaySize,
   columnModifier,
   autoFitMinModifier,
+  termWidth,
   horizontalTermWidthModifier,
   orientation,
   style,
@@ -97,6 +103,12 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
     style = {
       ...style,
       ...setBreakpointModifiers('--pf-c-description-list--GridTemplateColumns--min', autoFitMinModifier)
+    };
+  }
+  if (termWidth) {
+    style = {
+      ...style,
+      ...{ '--pf-c-description-list__term--width': termWidth }
     };
   }
   if (isHorizontal && horizontalTermWidthModifier) {
@@ -119,6 +131,8 @@ export const DescriptionList: React.FunctionComponent<DescriptionListProps> = ({
         isCompact && styles.modifiers.compact,
         isFluid && styles.modifiers.fluid,
         isFillColumns && styles.modifiers.fillColumns,
+        displaySize === 'lg' && styles.modifiers.displayLg,
+        displaySize === '2xl' && styles.modifiers.display_2xl,
         className
       )}
       style={style}

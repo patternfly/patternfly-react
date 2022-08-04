@@ -10,8 +10,9 @@ import { ChartTooltip } from '../ChartTooltip';
 import { getBulletQualitativeRangeTheme } from '../ChartUtils';
 
 /**
- * See https://github.com/FormidableLabs/victory/blob/master/packages/victory-core/src/index.d.ts
- * and https://github.com/FormidableLabs/victory/blob/master/packages/victory-bar/src/index.d.ts
+ * ChartBulletQualitativeRange renders a dataset as the qualitative range.
+ *
+ * See https://github.com/FormidableLabs/victory/blob/main/packages/victory-bar/src/index.d.ts
  */
 export interface ChartBulletQualitativeRangeProps {
   /**
