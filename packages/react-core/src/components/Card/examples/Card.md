@@ -102,7 +102,7 @@ The first card sets `hasSelectableInput` to true, which renders a checkbox input
 
 By default, this input will have an aria-label that corresponds to the `<CardTitle>`. If this isn't defined, then you must pass a custom aria-label using the `selectableInputAriaLabel` property.
 
-The first card passes an onchange callback to `onSelectableInputChange` in order to enable the selection/deselection of the associated card via checkbox input.
+The first card passes an onChange callback to `onSelectableInputChange` in order to enable the selection/deselection of the associated card via checkbox input.
 
 The second card does not set `hasSelectableInput` to true, so neither the input nor the selection state is communicated to users of assistive technologies. 
 
