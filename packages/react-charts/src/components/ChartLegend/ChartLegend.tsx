@@ -22,7 +22,6 @@ import { ChartLabel } from '../ChartLabel';
 import { ChartPoint } from '../ChartPoint';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
-import { getUniqueId } from '@patternfly/react-core';
 
 export enum ChartLegendOrientation {
   horizontal = 'horizontal',
@@ -370,13 +369,11 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
 
   const getLabelComponent = () =>
     React.cloneElement(labelComponent, {
-      id: () => getUniqueId('chart-legendLabels'),
       ...labelComponent.props
     });
 
   const getTitleComponent = () =>
     React.cloneElement(titleComponent, {
-      id: () => getUniqueId('chart-titleLabels'),
       ...titleComponent.props
     });
 
