@@ -30,6 +30,7 @@ import {
   ChartDonutThreshold,
   ChartDonutUtilization,
   ChartGroup,
+  ChartLabel,
   ChartLegend,
   ChartLegendTooltip,
   ChartPie,
@@ -58,7 +59,7 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ### Basic pie chart
 ```js
 import React from 'react';
-import { ChartPie } from '@patternfly/react-charts';
+import { ChartPie, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
   <ChartPie
@@ -69,6 +70,7 @@ import { ChartPie } from '@patternfly/react-charts';
     hasPatterns
     height={230}
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `basic-pie-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -86,7 +88,7 @@ import { ChartPie } from '@patternfly/react-charts';
 ### Bar chart
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartLabel, ChartLegend, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '450px' }}>
   <Chart
@@ -94,6 +96,7 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiCo
     ariaTitle="Bar chart example"
     containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
     domainPadding={{ x: [30, 25] }}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `basic-bar-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
     legendPosition="bottom"
     hasPatterns
@@ -107,8 +110,8 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiCo
     themeColor={ChartThemeColor.purple}
     width={450}
   >
-    <ChartAxis />
-    <ChartAxis dependentAxis showGrid />
+    <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `basic-bar-tick-${x.text}`} />} />
+    <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `basic-bar-dependent-tick-${x.text}`} />} />
     <ChartGroup offset={11}>
       <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
       <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
@@ -122,7 +125,7 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiCo
 ### Stack chart
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartLabel, ChartLegend, ChartStack, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '250px', width: '600px' }}>
   <Chart
@@ -130,6 +133,7 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiCo
     ariaTitle="Stack chart example"
     containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
     domainPadding={{ x: [30, 25] }}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `basic-stack-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -144,8 +148,8 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiCo
     themeColor={ChartThemeColor.green}
     width={600}
   >
-    <ChartAxis />
-    <ChartAxis dependentAxis showGrid />
+    <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `basic-stack-tick-${x.text}`} />} />
+    <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `basic-stack-dependent-tick-${x.text}`} />} />
     <ChartStack>
       <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
       <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
@@ -159,7 +163,7 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiCo
 ### Donut chart
 ```js
 import React from 'react';
-import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartDonut, ChartLabel, ChartLegend, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
   <ChartDonut
@@ -169,6 +173,7 @@ import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     hasPatterns
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `basic-donut-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -192,7 +197,7 @@ This demonstrates how to hide a pattern for the static, unused portion of the do
 
 ```js
 import React from 'react';
-import { ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartDonutUtilization, ChartLabel, ChartLegend, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '300px' }}>
   <ChartDonutUtilization 
@@ -203,6 +208,7 @@ import { ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts
     hasPatterns
     height={275}
     labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `basic-donut-utilization-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
     legendPosition="bottom"
     padding={{
@@ -226,7 +232,7 @@ This demonstrates how to apply patterns to thresholds.
 
 ```js
 import React from 'react';
-import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartDonutThreshold, ChartDonutUtilization, ChartLabel, ChartLegend, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '675px' }}>
   <ChartDonutThreshold
@@ -248,6 +254,7 @@ import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@pa
     <ChartDonutUtilization
       data={{ x: 'Storage capacity', y: 45 }}
       labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+      legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `donut-utilization-thresholds-label-${x.text.replace(' ', '-')}`} />} />}
       legendData={[{ name: `Storage capacity: 45%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 90%' }]}
       legendPosition="bottom"
       subTitle="of 100 GBps"
@@ -266,6 +273,7 @@ This demonstrates how to add an interactive legend to a pie chart using events s
 import React from 'react';
 import { 
   Chart,
+  ChartLabel,
   ChartLegend,
   ChartThemeColor,
   ChartPie,
@@ -351,7 +359,7 @@ class InteractivePieLegendChart extends React.Component {
           events={this.getEvents()}
           hasPatterns
           height={275}
-          legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} />}
+          legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} labelComponent={<ChartLabel id={(x) => `interactive-pie-label-${x.text.replace(' ', '-')}`} />}/>}
           legendPosition="bottom"
           padding={{
             bottom: 65,
@@ -387,6 +395,7 @@ import {
   ChartArea, 
   ChartAxis, 
   ChartGroup, 
+  ChartLabel,
   ChartLegend,
   ChartLegendTooltip,
   ChartScatter, 
@@ -541,7 +550,7 @@ class InteractiveLegendChart extends React.Component {
             events={this.getEvents()}
             hasPatterns
             height={225}
-            legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} />}
+            legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} labelComponent={<ChartLabel id={(x) => `interactive-area-label-${x.text.replace(' ', '-')}`} />} />}
             legendPosition="bottom-left"
             padding={{
               bottom: 75, // Adjusted to accommodate legend
@@ -553,8 +562,8 @@ class InteractiveLegendChart extends React.Component {
             themeColor={ChartThemeColor.multiUnordered}
             width={width}
           >
-            <ChartAxis tickValues={['2015', '2016', '2017', '2018']} />
-            <ChartAxis dependentAxis showGrid />
+            <ChartAxis tickValues={['2015', '2016', '2017', '2018']} tickLabelComponent={<ChartLabel id={(x) => `interactive-area-tick-${x.text}`} />} />
+            <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `interactive-area-dependent-tick-${x.text}`} />} />
             <ChartGroup>
               {this.series.map((s, index) => {
                 return (
@@ -593,7 +602,7 @@ This demonstrates how to omit patterns from pie chart segments.
 
 ```js
 import React from 'react';
-import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartPie, ChartLabel, ChartLegend, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
   <ChartPie
@@ -604,6 +613,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
     hasPatterns={[ true, true, false, false, false ]}
     height={230}
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `custom-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats: 15' }, { name: 'Dogs: 15' }, { name: 'Birds: 15' }, { name: 'Fish: 25' }, { name: 'Rabbits: 30' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -625,7 +635,7 @@ This demonstrates how to apply a custom color scale to patterns.
 
 ```js
 import React from 'react';
-import { ChartPie } from '@patternfly/react-charts';
+import { ChartPie, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
 import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
@@ -640,6 +650,7 @@ import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color
     hasPatterns={[ true, true, false ]}
     height={230}
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `custom-color-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -660,7 +671,7 @@ This demonstrates how to create custom patterns.
 
 ```js
 import React from 'react';
-import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
 
@@ -682,6 +693,7 @@ import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={230}
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `custom-defs-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -701,7 +713,7 @@ import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color
 ### All patterns
 ```js
 import React from 'react';
-import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '325px', width: '600px' }}>
   <ChartPie
@@ -728,6 +740,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
     hasPatterns
     height={325}
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `all-patterns-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[
       { name: 'Cats: 6' },
       { name: 'Dogs: 6' },

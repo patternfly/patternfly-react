@@ -8,7 +8,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -41,7 +41,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 ### Right aligned legend
 ```js
 import React from 'react';
-import { ChartDonutUtilization } from '@patternfly/react-charts';
+import { ChartDonutUtilization, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 class DonutUtilizationChart extends React.Component {
   constructor(props) {
@@ -77,6 +77,7 @@ class DonutUtilizationChart extends React.Component {
           constrainToVisibleArea
           data={{ x: 'GBps capacity', y: used }}
           labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+          legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `right-aligned-label-${x.text.replace(' ', '-')}`} />} />}
           legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
           legendOrientation="vertical"
           padding={{
@@ -99,7 +100,7 @@ class DonutUtilizationChart extends React.Component {
 ### Inverted with right aligned legend
 ```js
 import React from 'react';
-import { ChartDonutUtilization } from '@patternfly/react-charts';
+import { ChartDonutUtilization, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 class InvertedDonutUtilizationChart extends React.Component {
   constructor(props) {
@@ -136,6 +137,7 @@ class InvertedDonutUtilizationChart extends React.Component {
           data={{ x: 'GBps capacity', y: used }}
           invert
           labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+          legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `inverted-label-${x.text.replace(' ', '-')}`} />} />}
           legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
           legendOrientation="vertical"
           padding={{
@@ -158,7 +160,7 @@ class InvertedDonutUtilizationChart extends React.Component {
 ### Right aligned vertical legend
 ```js
 import React from 'react';
-import { ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartDonutUtilization, ChartThemeColor, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 class VerticalLegendUtilizationChart extends React.Component {
   constructor(props) {
@@ -195,6 +197,7 @@ class VerticalLegendUtilizationChart extends React.Component {
           data={{ x: 'Storage capacity', y: used }}
           height={300}
           labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+          legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `right-vertical-label-${x.text.replace(' ', '-')}`} />} />}
           legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
           legendOrientation="vertical"
           legendPosition="bottom"
@@ -219,7 +222,7 @@ class VerticalLegendUtilizationChart extends React.Component {
 ### Bottom aligned legend
 ```js
 import React from 'react';
-import { ChartDonutUtilization } from '@patternfly/react-charts';
+import { ChartDonutUtilization, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '300px' }}>
   <ChartDonutUtilization
@@ -229,6 +232,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
     data={{ x: 'Storage capacity', y: 45 }}
     height={275}
     labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `bottom-aligned-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
     legendPosition="bottom"
     padding={{
@@ -268,7 +272,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 ### Small with right aligned legend
 ```js
 import React from 'react';
-import { ChartDonutUtilization } from '@patternfly/react-charts';
+import { ChartDonutUtilization, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 class UtilizationChart extends React.Component {
   constructor(props) {
@@ -305,6 +309,7 @@ class UtilizationChart extends React.Component {
           data={{ x: 'Storage capacity', y: used }}
           height={175}
           labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+          legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `small-right-label-${x.text.replace(' ', '-')}`} />} />}
           legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
           legendOrientation="vertical"
           padding={{
@@ -330,7 +335,7 @@ This is a small donut utilization chart with bottom aligned legend and right ali
 
 ```js
 import React from 'react';
-import { ChartDonutUtilization } from '@patternfly/react-charts';
+import { ChartDonutUtilization, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '185px', width: '350px' }}>
   <ChartDonutUtilization
@@ -340,6 +345,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
     data={{ x: 'Storage capacity', y: 45 }}
     height={185}
     labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `small-bottom-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
     legendOrientation="vertical"
     padding={{
@@ -360,7 +366,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 ### Small with right aligned subtitle
 ```js
 import React from 'react';
-import { ChartDonutUtilization } from '@patternfly/react-charts';
+import { ChartDonutUtilization, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '350px' }}>
   <ChartDonutUtilization
@@ -370,6 +376,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
     data={{ x: 'Storage capacity', y: 45 }}
     height={200}
     labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `small-right-subtitle-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
     legendPosition="bottom"
     padding={{
@@ -414,7 +421,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 ### Static thresholds with right aligned legend
 ```js
 import React from 'react';
-import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
+import { ChartDonutThreshold, ChartDonutUtilization, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 class ThresholdChart extends React.Component {
   constructor(props) {
@@ -456,6 +463,7 @@ class ThresholdChart extends React.Component {
           <ChartDonutUtilization
             data={{ x: 'Storage capacity', y: used }}
             labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+            legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `static-label-${x.text.replace(' ', '-')}`} />} />}
             legendData={[{ name: `Storage capacity: ${used}%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 90%' }]}
             legendOrientation="vertical"
             subTitle="of 100 GBps"
@@ -472,7 +480,7 @@ class ThresholdChart extends React.Component {
 ### Inverted static thresholds with right aligned legend
 ```js
 import React from 'react';
-import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
+import { ChartDonutThreshold, ChartDonutUtilization, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 class InvertedThresholdChart extends React.Component {
   constructor(props) {
@@ -520,6 +528,7 @@ class InvertedThresholdChart extends React.Component {
           <ChartDonutUtilization
             data={{ x: 'Storage capacity', y: used }}
             labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+            legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `static-inverted-label-${x.text.replace(' ', '-')}`} />} />}
             legendData={[{ name: `Storage capacity: ${used}%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 20%' }]}
             legendOrientation="vertical"
             subTitle="of 100 GBps"
@@ -536,7 +545,7 @@ class InvertedThresholdChart extends React.Component {
 ### Static thresholds with custom legend
 ```js
 import React from 'react';
-import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 class CustomLegendThresholdChart extends React.Component {
   constructor(props) {
@@ -579,6 +588,7 @@ class CustomLegendThresholdChart extends React.Component {
           <ChartDonutUtilization
             data={{ x: 'Storage capacity', y: used }}
             labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+            legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `custom-label-${x.text.replace(' ', '-')}`} />} />}
             legendData={[{ name: `Storage capacity: ${used}%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 90%' }]}
             legendOrientation="vertical"
             legendPosition="bottom"
@@ -597,7 +607,7 @@ class CustomLegendThresholdChart extends React.Component {
 ### Static thresholds with bottom aligned legend
 ```js
 import React from 'react';
-import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
+import { ChartDonutThreshold, ChartDonutUtilization, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '675px' }}>
   <ChartDonutThreshold
@@ -618,6 +628,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
     <ChartDonutUtilization
       data={{ x: 'Storage capacity', y: 45 }}
       labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+      legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `static-bottom-label-${x.text.replace(' ', '-')}`} />} />}
       legendData={[{ name: `Storage capacity: 45%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 90%' }]}
       legendPosition="bottom"
       subTitle="of 100 GBps"
@@ -655,7 +666,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 ### Small with static thresholds and right aligned legend
 ```js
 import React from 'react';
-import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
+import { ChartDonutThreshold, ChartDonutUtilization, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 class ThresholdChart extends React.Component {
   constructor(props) {
@@ -698,6 +709,7 @@ class ThresholdChart extends React.Component {
           <ChartDonutUtilization
             data={{ x: 'Storage capacity', y: used }}
             labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+            legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `small-static-right-label-${x.text.replace(' ', '-')}`} />} />}
             legendData={[{ name: `Storage capacity: ${used}%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 90%' }]}
             legendOrientation="vertical"
             subTitle="of 100 GBps"
@@ -717,7 +729,7 @@ This is a small donut utilization chart with static thresholds with right aligne
 
 ```js
 import React from 'react';
-import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
+import { ChartDonutThreshold, ChartDonutUtilization, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '425px' }}>
   <ChartDonutThreshold
@@ -739,6 +751,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
     <ChartDonutUtilization
       data={{ x: 'Storage capacity', y: 45 }}
       labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+      legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `small-subtitle-label-${x.text.replace(' ', '-')}`} />} />}
       legendData={[{ name: `Storage capacity: 45%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at  90%' }]}
       legendOrientation="vertical"
       subTitle="of 100 GBps"
@@ -752,7 +765,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 ### Small with thresholds and right aligned subtitle
 ```js
 import React from 'react';
-import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
+import { ChartDonutThreshold, ChartDonutUtilization, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '225px', width: '675px' }}>
   <ChartDonutThreshold
@@ -774,6 +787,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
     <ChartDonutUtilization
       data={{ x: 'Storage capacity', y: 45 }}
       labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+      legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `small-threshold-right-label-${x.text.replace(' ', '-')}`} />} />}
       legendData={[{ name: `Storage capacity: 45%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 90%' }]}
       legendPosition="bottom"
       subTitle="of 100 GBps"

@@ -11,7 +11,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartLegendTooltip, ChartVoronoiContainer, createContainer, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartThemeColor, ChartLegendTooltip, ChartVoronoiContainer, createContainer, getResizeObserver } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory-zoom-container';
 
 ## Introduction
@@ -27,13 +27,14 @@ Learn to build a line chart using a Katacoda tutorial starting with a simple cha
 ### Basic with right aligned legend
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLegendChartLine, ChartLine, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '250px', width: '600px' }}>
   <Chart
     ariaDesc="Average number of pets"
     ariaTitle="Line chart example"
     containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `basic-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -48,8 +49,8 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartVoronoiContainer } from '
     }}
     width={600}
   >
-    <ChartAxis tickValues={[2, 3, 4]} />
-    <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+    <ChartAxis tickValues={[2, 3, 4]} tickLabelComponent={<ChartLabel id={(x) => `basic-tick-${x.text}`} />} />
+    <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} tickLabelComponent={<ChartLabel id={(x) => `basic-dependent-tick-${x.text}`} />} />
     <ChartGroup>
       <ChartLine
         data={[
@@ -99,7 +100,7 @@ This demonstrates how to combine cursor and voronoi containers to display toolti
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartLegendTooltip, createContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartThemeColor, ChartLegendTooltip, createContainer } from '@patternfly/react-charts';
 
 class BottomAlignedLegend extends React.Component {
   render() {
@@ -122,6 +123,7 @@ class BottomAlignedLegend extends React.Component {
               voronoiPadding={50}
             />
           }
+          legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `green-label-${x.text.replace(' ', '-')}`} />} />}
           legendData={legendData}
           legendPosition="bottom"
           height={275}
@@ -136,8 +138,8 @@ class BottomAlignedLegend extends React.Component {
           themeColor={ChartThemeColor.green}
           width={450}
         >
-          <ChartAxis tickValues={[2, 3, 4]} />
-          <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+          <ChartAxis tickValues={[2, 3, 4]} tickLabelComponent={<ChartLabel id={(x) => `green-tick-${x.text}`} />} />
+          <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} tickLabelComponent={<ChartLabel id={(x) => `green-dependent-tick-${x.text}`} />} />
           <ChartGroup>
             <ChartLine
               data={[
@@ -194,7 +196,7 @@ This demonstrates zoom for the x axis only.
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartThemeColor, getResizeObserver } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory-zoom-container';
 
 class MultiColorChart extends React.Component {
@@ -231,6 +233,7 @@ class MultiColorChart extends React.Component {
             ariaDesc="Average number of pets"
             ariaTitle="Line chart example"
             containerComponent={<VictoryZoomContainer zoomDimension="x" />}
+            legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `multi-color-label-${x.text.replace(' ', '-')}`} />} />}
             legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
             legendPosition="bottom-left"
             height={275}
@@ -245,8 +248,8 @@ class MultiColorChart extends React.Component {
             themeColor={ChartThemeColor.multiUnordered}
             width={width}
            >
-            <ChartAxis tickValues={[2, 3, 4]} />
-            <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+            <ChartAxis tickValues={[2, 3, 4]} tickLabelComponent={<ChartLabel id={(x) => `multi-color-tick-${x.text}`} />} />
+            <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} tickLabelComponent={<ChartLabel id={(x) => `multi-color-tick-${x.text}`} />} />
             <ChartGroup>
               <ChartLine
                 data={[

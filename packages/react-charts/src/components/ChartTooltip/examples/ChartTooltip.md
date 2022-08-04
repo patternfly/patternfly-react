@@ -46,7 +46,7 @@ This demonstrates how to use a voronoi container to display tooltips.
 
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
 <div style={{ height: '200px', width: '800px' }}>
@@ -54,6 +54,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
     ariaDesc="Average number of pets - possibly more information to summarize the data in the chart."
     ariaTitle="Area chart example chart title"
     containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `voronoi-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -67,8 +68,8 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
     }}
     width={800}
   >
-    <ChartAxis />
-    <ChartAxis dependentAxis showGrid/>
+    <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `voronoi-tick-${x.text}`} />} />
+    <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `voronoi-dependent-tick-${x.text}`} />} />
     <ChartGroup>
       <ChartArea
         data={[
@@ -110,7 +111,7 @@ This demonstrates how to combine cursor and voronoi containers to display toolti
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, createContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartThemeColor, createContainer } from '@patternfly/react-charts';
 
 class CombinedCursorVoronoiContainer extends React.Component {
   render() {
@@ -131,6 +132,7 @@ class CombinedCursorVoronoiContainer extends React.Component {
               voronoiPadding={50}
             />
           }
+          legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `cursor-label-${x.text.replace(' ', '-')}`} />} />}
           legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
           legendPosition="bottom"
           height={275}
@@ -145,8 +147,8 @@ class CombinedCursorVoronoiContainer extends React.Component {
           themeColor={ChartThemeColor.orange}
           width={450}
         >
-          <ChartAxis tickValues={[2, 3, 4]} />
-          <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+          <ChartAxis tickValues={[2, 3, 4]} tickLabelComponent={<ChartLabel id={(x) => `cursor-tick-${x.text}`} />} />
+          <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} tickLabelComponent={<ChartLabel id={(x) => `cursor-dependent-tick-${x.text}`} />} />
           <ChartGroup>
             <ChartLine
               data={[
@@ -199,7 +201,7 @@ This demonstrates how to embed a legend within a tooltip. Combining cursor and v
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLegendTooltip, ChartLine, ChartThemeColor, createContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLegendTooltip, ChartLine, ChartThemeColor, createContainer } from '@patternfly/react-charts';
 
 class EmbeddedLegend extends React.Component {
   render() {
@@ -222,6 +224,7 @@ class EmbeddedLegend extends React.Component {
               voronoiPadding={50}
             />
           }
+          legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `embedded-label-${x.text.replace(' ', '-')}`} />} />}
           legendData={legendData}
           legendPosition="bottom"
           height={275}
@@ -236,8 +239,8 @@ class EmbeddedLegend extends React.Component {
           themeColor={ChartThemeColor.green}
           width={450}
         >
-          <ChartAxis tickValues={[2, 3, 4]} />
-          <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+          <ChartAxis tickValues={[2, 3, 4]} tickLabelComponent={<ChartLabel id={(x) => `embedded-tick-${x.text}`} />} />
+          <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} tickLabelComponent={<ChartLabel id={(x) => `embedded-dependent-tick-${x.text}`} />} />
           <ChartGroup>
             <ChartLine
               data={[
@@ -294,7 +297,7 @@ This demonstrates how to embed HTML within a tooltip. Combining cursor and voron
 
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartCursorFlyout, ChartCursorTooltip, ChartGroup, ChartPoint, ChartThemeColor } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartCursorFlyout, ChartCursorTooltip, ChartGroup, ChartLabel, ChartLegend, ChartPoint, ChartThemeColor } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
 class EmbeddedHtml extends React.Component {
@@ -367,6 +370,7 @@ class EmbeddedHtml extends React.Component {
               voronoiPadding={50}
             />
           }
+          legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `embed-html-label-${x.text.replace(' ', '-')}`} />} />}
           legendData={legendData}
           legendPosition="bottom-left"
           height={225}
@@ -380,8 +384,8 @@ class EmbeddedHtml extends React.Component {
           themeColor={ChartThemeColor.multiUnordered}
           width={650}
         >
-          <ChartAxis />
-          <ChartAxis dependentAxis showGrid />
+          <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `embed-html-tick-${x.text}`} />} />
+          <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `embed-html-dependent-tick-${x.text}`} />} />
           <ChartGroup>
             <ChartArea
               data={[
@@ -426,7 +430,7 @@ This demonstrates how to embed a legend within a tooltip, but with a custom font
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLegendTooltip, ChartLegend, ChartLine, ChartLegendTooltipContent, ChartLegendTooltipLabel, ChartThemeColor, createContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegendTooltip, ChartLegend, ChartLine, ChartLegendTooltipContent, ChartLegendTooltipLabel, ChartThemeColor, createContainer } from '@patternfly/react-charts';
 
 class EmbeddedLegendAlt extends React.Component {
   render() {
@@ -453,6 +457,7 @@ class EmbeddedLegendAlt extends React.Component {
               voronoiPadding={50}
             />
           }
+          legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `custom-font-label-${x.text.replace(' ', '-')}`} />} />}
           legendData={legendData}
           legendPosition="bottom"
           height={275}
@@ -467,8 +472,8 @@ class EmbeddedLegendAlt extends React.Component {
           themeColor={ChartThemeColor.gold}
           width={450}
         >
-          <ChartAxis tickValues={[2, 3, 4]} />
-          <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+          <ChartAxis tickValues={[2, 3, 4]} tickLabelComponent={<ChartLabel id={(x) => `custom-font-tick-${x.text}`} />} />
+          <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} tickLabelComponent={<ChartLabel id={(x) => `custom-font-dependent-tick-${x.text}`} />} />
           <ChartGroup>
             <ChartLine
               data={[
@@ -525,13 +530,14 @@ This demonstrates an alternate way of applying tooltips using data labels.
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartLabel, ChartLegend, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '450px' }}>
   <Chart
     ariaDesc="Average number of pets - possibly more information to summarize the data in the chart."
     ariaTitle="Data label example chart title"
     domainPadding={{ x: [30, 25] }}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `data-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
     legendPosition="bottom-left"
     height={275}
@@ -604,7 +610,7 @@ class TooltipPieChart extends React.Component {
     // Custom legend label compoenent
     this.LegendLabel = ({datum, ...rest}) => (
       <Tooltip content={datum.name} enableFlip>
-        <ChartLabel {...rest} />
+        <ChartLabel {...rest} id={(x) => `custom-legend-label-${x.text.replace(' ', '-')}`} />
       </Tooltip>
     );
 
@@ -654,7 +660,7 @@ This demonstrates how to customize tooltip label alignment using theme propertie
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiContainer, mergeTheme } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartThemeColor, ChartVoronoiContainer, mergeTheme } from '@patternfly/react-charts';
 
 class TooltipThemeChart extends React.Component {
   constructor(props) {
@@ -685,6 +691,7 @@ class TooltipThemeChart extends React.Component {
           ariaDesc="Average number of pets - possibly more information to summarize the data in the chart."
           ariaTitle="Left aligned example chart title"
           containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea voronoiDimension="x"/>}
+          legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `left-label-${x.text.replace(' ', '-')}`} />} />}
           legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
           legendOrientation="vertical"
           legendPosition="right"
@@ -700,8 +707,8 @@ class TooltipThemeChart extends React.Component {
           theme={this.myCustomTheme}
           width={600}
         >
-          <ChartAxis tickValues={[2, 3, 4]} />
-          <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+          <ChartAxis tickValues={[2, 3, 4]} tickLabelComponent={<ChartLabel id={(x) => `left-tick-${x.text}`} />} />
+          <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} tickLabelComponent={<ChartLabel id={(x) => `left-dependent-tick-${x.text}`} />} />
           <ChartGroup>
             <ChartLine
               data={[

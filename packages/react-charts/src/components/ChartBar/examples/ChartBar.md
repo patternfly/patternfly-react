@@ -11,7 +11,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartTooltip, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartGroup, ChartLabel, ChartLegend, ChartThemeColor, ChartTooltip, ChartVoronoiContainer } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory-zoom-container';
 
 ## Introduction
@@ -27,7 +27,7 @@ Learn to build a bar chart using a Katacoda tutorial starting with a simple char
 ### Basic with right aligned legend
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartGroup, ChartLabel, ChartLegend, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '250px', width: '600px' }}>
   <Chart
@@ -36,6 +36,7 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartVoronoiContainer } from '@
     containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
     domain={{y: [0,9]}}
     domainPadding={{ x: [30, 25] }}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `basic-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -48,8 +49,8 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartVoronoiContainer } from '@
     }}
     width={600}
   >
-    <ChartAxis />
-    <ChartAxis dependentAxis showGrid />
+    <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `basic-tick-${x.text}`} />} />
+    <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `basic-dependent-tick-${x.text}`} />} />
     <ChartGroup offset={11}>
       <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
       <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
@@ -66,7 +67,7 @@ This demonstrates an alternate way of applying tooltips using data labels.
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartGroup, ChartLabel, ChartLegend, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 
 class EmbeddedLegend extends React.Component {
   render() {
@@ -78,6 +79,7 @@ class EmbeddedLegend extends React.Component {
           ariaDesc="Average number of pets"
           ariaTitle="Bar chart example"
           domainPadding={{ x: [30, 25] }}
+          legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `purple-label-${x.text.replace(' ', '-')}`} />} />}
           legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
           legendPosition="bottom"
           height={275}
@@ -90,8 +92,8 @@ class EmbeddedLegend extends React.Component {
           themeColor={ChartThemeColor.purple}
           width={450}
         >
-          <ChartAxis />
-          <ChartAxis dependentAxis showGrid />
+          <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `purple-tick-${x.text}`} />} />
+          <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `purple-dependent-tick-${x.text}`} />} />
           <ChartGroup offset={11}>
             <ChartBar
               data={[
@@ -143,7 +145,7 @@ This demonstrates zoom for both the x and y axis.
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartGroup, ChartLabel, ChartLegend, ChartThemeColor } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory-zoom-container';
 
 <div style={{ height: '400px', width: '450px' }}>
@@ -152,6 +154,7 @@ import { VictoryZoomContainer } from 'victory-zoom-container';
     ariaTitle="Bar chart example"
     containerComponent={<VictoryZoomContainer />}
     domainPadding={{ x: [30, 25] }}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `multi-color-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
     legendPosition="bottom-left"
     height={400}
@@ -164,8 +167,8 @@ import { VictoryZoomContainer } from 'victory-zoom-container';
     themeColor={ChartThemeColor.multiOrdered}
     width={450}
   >
-    <ChartAxis />
-    <ChartAxis dependentAxis showGrid />
+    <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `multi-color-tick-${x.text}`} />} />
+    <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `multi-color-dependent-tick-${x.text}`} />} />
     <ChartGroup offset={11} horizontal>
       <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
       <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
@@ -179,7 +182,7 @@ import { VictoryZoomContainer } from 'victory-zoom-container';
 ### Single with right aligned legend
 ```js
 import React from 'react';
-import { Chart, ChartBar, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartLabel, ChartLegend, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '250px', width: '600px' }}>
   <Chart
@@ -188,6 +191,7 @@ import { Chart, ChartBar, ChartVoronoiContainer } from '@patternfly/react-charts
     containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
     domain={{y: [0,9]}}
     domainPadding={{ x: [30, 25] }}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `single-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats' }]}
     legendOrientation="vertical"
     legendPosition="right"

@@ -18,6 +18,8 @@ Chart,
 ChartArea,
 ChartAxis,
 ChartGroup,
+ChartLabel,
+ChartLegend,
 ChartLine,
 ChartScatter,
 ChartThemeColor,
@@ -34,7 +36,7 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ### Basic
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartScatter, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartScatter, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '450px' }}>
   <Chart
@@ -51,8 +53,8 @@ import { Chart, ChartAxis, ChartGroup, ChartScatter, ChartVoronoiContainer } fro
     minDomain={{y: 0}}
     width={450}
   >
-    <ChartAxis />
-    <ChartAxis dependentAxis showGrid tickValues={[2, 4, 6]} />
+    <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `basic-tick-${x.text}`} />} />
+    <ChartAxis dependentAxis showGrid tickValues={[2, 4, 6]} tickLabelComponent={<ChartLabel id={(x) => `basic-dependent-tick-${x.text}`} />} />
     <ChartGroup>
       <ChartScatter 
         data={[
@@ -73,7 +75,7 @@ This demonstrates how to add interactive data points to a line chart.
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartScatter, ChartThemeColor, ChartVoronoiContainer, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartScatter, ChartThemeColor, ChartVoronoiContainer, getResizeObserver } from '@patternfly/react-charts';
 
 class ScatterLineChart extends React.Component {
   constructor(props) {
@@ -129,7 +131,7 @@ class ScatterLineChart extends React.Component {
         { name: 'Mice', x: '2017', y: 8 },
         { name: 'Mice', x: '2018', y: 7 }
       ],
-      legendItem: { name: 'Birds' }
+      legendItem: { name: 'Mice' }
     }];
   }
 
@@ -157,6 +159,7 @@ class ScatterLineChart extends React.Component {
                 constrainToVisibleArea
               />
             }
+            legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `line-label-${x.text}`} />} />}
             legendData={this.series.map(s => s.legendItem)}
             legendPosition="bottom-left"
             height={275}
@@ -171,8 +174,8 @@ class ScatterLineChart extends React.Component {
             themeColor={ChartThemeColor.orange}
             width={width}
           >
-            <ChartAxis tickValues={[2, 3, 4]} />
-            <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+            <ChartAxis tickValues={[2, 3, 4]} tickLabelComponent={<ChartLabel id={(x) => `line-tick-${x.text}`} />} />
+            <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} tickLabelComponent={<ChartLabel id={(x) => `line-dependent-tick-${x.text}`} />} />
             <ChartGroup>
               {this.series.map((s, idx) => {
                 return (
@@ -209,7 +212,7 @@ This demonstrates how to add interactive data points to an area chart.
 
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartScatter, ChartThemeColor, ChartVoronoiContainer, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartScatter, ChartThemeColor, ChartVoronoiContainer, getResizeObserver } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
 
 class ScatterAreaChart extends React.Component {
@@ -283,6 +286,7 @@ class ScatterAreaChart extends React.Component {
               />
             }
             height={225}
+            legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `area-label-${x.text}`} />} />}
             legendData={this.series.map(s => s.legendItem)}
             legendPosition="bottom-left"
             padding={{
@@ -295,8 +299,8 @@ class ScatterAreaChart extends React.Component {
             themeColor={ChartThemeColor.multiUnordered}
             width={width}
           >
-            <ChartAxis />
-            <ChartAxis dependentAxis showGrid />
+            <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `area-tick-${x.text}`} />} />
+            <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `area-dependent-tick-${x.text}`} />} />
             <ChartGroup>
               {this.series.map((s, idx) => {
                 return (

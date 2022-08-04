@@ -25,6 +25,7 @@ import {
   ChartBar,
   ChartBullet,
   ChartGroup,
+  ChartLabel,
   ChartLegend,
   ChartStack,
   ChartThemeColor,
@@ -54,7 +55,7 @@ This demonstrates how to use a `ResizeObserver` to update the chart's width, whi
 
 ```js
 import React from 'react';
-import { ChartBullet, getResizeObserver } from '@patternfly/react-charts';
+import { ChartBullet, ChartLabel, ChartLegend, getResizeObserver } from '@patternfly/react-charts';
 
 class BulletChart extends React.Component {
   constructor(props) {
@@ -92,6 +93,7 @@ class BulletChart extends React.Component {
           constrainToVisibleArea
           height={250}
           labels={({ datum }) => `${datum.name}: ${datum.y}`}
+          legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `bullet-label-${x.text.replace(' ', '-')}`} />} />}
           legendAllowWrap
           legendPosition="bottom-left"
           maxDomain={{y: 100}}
@@ -126,6 +128,7 @@ import {
   Chart,
   ChartArea,
   ChartAxis,
+  ChartLabel,
   ChartLegend,
   ChartGroup,
   ChartThreshold,
@@ -192,6 +195,7 @@ class MultiColorChart extends React.Component {
                   }
                 ]}
                 itemsPerRow={itemsPerRow}
+                labelComponent={<ChartLabel id={(x) => `threshold-label-${x.text.replace(' ', '-')}`} />}
               />
             }
             height={250}
@@ -205,8 +209,8 @@ class MultiColorChart extends React.Component {
             themeColor={ChartThemeColor.multiUnordered}
             width={width}
           >
-            <ChartAxis />
-            <ChartAxis dependentAxis showGrid />
+            <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `threshold-tick-${x.text}`} />} />
+            <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `threshold-dependent-tick-${x.text}`} />} />
             <ChartGroup>
               <ChartArea
                 data={[
@@ -268,7 +272,7 @@ This demonstrates how to use a `ResizeObserver` to update the chart's width, whi
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartLabel, ChartLegend, ChartStack, ChartTooltip, getResizeObserver } from '@patternfly/react-charts';
 
 class MonthlyResponsiveStack extends React.Component {
   constructor(props) {
@@ -356,6 +360,7 @@ class MonthlyResponsiveStack extends React.Component {
             ariaDesc="Stack Chart with monthly metric data"
             ariaTitle="Monthly Stack Chart"
             domainPadding={{ x: [30, 25] }}
+            legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `stack-label-${x.text.replace(' ', '-')}`} />} />}
             legendData={[{ name: 'Sockets' }, { name: 'Cores' }, { name: 'Nodes' }]}
             legendPosition="bottom"
             height={225}
@@ -367,8 +372,8 @@ class MonthlyResponsiveStack extends React.Component {
             }}
             width={width}
           >
-            <ChartAxis tickValues = {this.getTickValues()} fixLabelOverlap />
-            <ChartAxis dependentAxis showGrid />
+            <ChartAxis tickValues = {this.getTickValues()} fixLabelOverlap tickLabelComponent={<ChartLabel id={(x) => `stack-tick-${x.text}.replace(' ', '-')}`} />} />
+            <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `stack-dependent-tick-${x.text}`} />} />
             <ChartStack domainPadding={{x: [10, 2]}}>
               { this.renderSocketBars() }
               { this.renderCoresBars() }

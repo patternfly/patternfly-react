@@ -5,7 +5,7 @@ propComponents: ['ChartPie']
 hideDarkMode: true
 ---
 
-import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -20,7 +20,7 @@ Learn to build a pie chart using a Katacoda tutorial starting with a simple char
 ### Basic with right aligned legend
 ```js
 import React from 'react';
-import { ChartPie } from '@patternfly/react-charts';
+import { ChartLabel, ChartLegend, ChartPie } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
   <ChartPie
@@ -30,6 +30,7 @@ import { ChartPie } from '@patternfly/react-charts';
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={230}
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `basic-label-${x.text}`} />} />}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -47,7 +48,7 @@ import { ChartPie } from '@patternfly/react-charts';
 ### Orange with right aligned legend
 ```js
 import React from 'react';
-import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
   <ChartPie
@@ -57,6 +58,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={230}
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `orange-label-${x.text}`} />} />}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -75,7 +77,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 ### Multi-color (ordered) with bottom aligned legend
 ```js
 import React from 'react';
-import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartLabel, ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '300px' }}>
   <ChartPie
@@ -85,6 +87,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={275}
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `multi-color-label-${x.text}`} />} />}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendPosition="bottom"
     padding={{

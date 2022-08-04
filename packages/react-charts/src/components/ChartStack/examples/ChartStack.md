@@ -17,6 +17,8 @@ import {
   ChartAxis,
   ChartBar,
   ChartStack,
+  ChartLabel,
+  ChartLegend,
   ChartLegendTooltip,
   ChartThemeColor,
   ChartTooltip,
@@ -38,7 +40,7 @@ Learn to build a stack chart using a Katacoda tutorial starting with a simple ch
 ### Basic with right aligned legend
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartLabel, ChartLegend, ChartStack, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '250px', width: '600px' }}>
   <Chart
@@ -46,6 +48,7 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@
     ariaTitle="Stack chart example"
     containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
     domainPadding={{ x: [30, 25] }}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `basic-label-${x.text}`} />} />}
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -58,8 +61,8 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@
     }}
     width={600}
   >
-    <ChartAxis />
-    <ChartAxis dependentAxis showGrid />
+    <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `basic-tick-${x.text}`} />} />
+    <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `basic-dependent-tick-${x.text}`} />} />
     <ChartStack>
       <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
       <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
@@ -73,7 +76,7 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartVoronoiContainer } from '@
 ### Horizontal with bottom aligned legend
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartLabel, ChartLegend, ChartStack, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '450px' }}>
   <Chart
@@ -81,6 +84,7 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiCo
     ariaTitle="Stack chart example"
     containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
     domainPadding={{ x: [30, 25] }}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `horizontal-label-${x.text}`} />} />}
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
     legendPosition="bottom"
     height={275}
@@ -93,8 +97,8 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiCo
     themeColor={ChartThemeColor.gold}
     width={450}
   >
-    <ChartAxis />
-    <ChartAxis dependentAxis showGrid />
+    <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `horizontal-tick-${x.text}`} />} />
+    <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `horizontal-dependent-tick-${x.text}`} />} />
     <ChartStack>
       <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
       <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
@@ -111,13 +115,14 @@ This demonstrates an alternate way of applying tooltips using data labels.
 
 ```js
 import React from 'react';
-import { Chart, ChartBar, ChartAxis, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartAxis, ChartLabel, ChartLegend, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '450px' }}>
   <Chart
     ariaDesc="Average number of pets"
     ariaTitle="Stack chart example"
     domainPadding={{ x: [30, 25] }}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `multi-colored-label-${x.text}`} />} />}
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
     legendPosition="bottom-left"
     height={275}
@@ -130,8 +135,8 @@ import { Chart, ChartBar, ChartAxis, ChartStack, ChartThemeColor, ChartTooltip }
     themeColor={ChartThemeColor.multiOrdered}
     width={450}
   >
-    <ChartAxis />
-    <ChartAxis dependentAxis showGrid />
+    <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `multi-color-tick-${x.text}`} />} />
+    <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `multi-color-dependent-tick-${x.text}`} />} />
     <ChartStack horizontal>
       <ChartBar 
         data={[
@@ -177,7 +182,7 @@ import { Chart, ChartBar, ChartAxis, ChartStack, ChartThemeColor, ChartTooltip }
 ### Monthly data with responsive container
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartStack, ChartTooltip, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartLabel, ChartLegend, ChartStack, ChartTooltip, getResizeObserver } from '@patternfly/react-charts';
 
 class MonthlyResponsiveStack extends React.Component {
   constructor(props) {
@@ -265,6 +270,7 @@ class MonthlyResponsiveStack extends React.Component {
             ariaDesc="Stack Chart with monthly metric data"
             ariaTitle="Monthly Stack Chart"
             domainPadding={{ x: [30, 25] }}
+            legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `monthly-label-${x.text}`} />} />}
             legendData={[{ name: 'Sockets' }, { name: 'Cores' }, { name: 'Nodes' }]}
             legendPosition="bottom"
             height={225}
@@ -276,8 +282,8 @@ class MonthlyResponsiveStack extends React.Component {
             }}
             width={width}
           >
-            <ChartAxis tickValues = {this.getTickValues()} fixLabelOverlap />
-            <ChartAxis dependentAxis showGrid />
+            <ChartAxis tickValues = {this.getTickValues()} fixLabelOverlap tickLabelComponent={<ChartLabel id={(x) => `monthly-tick-${x.text}`} />} />
+            <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `monthly-dependent-tick-${x.text}`} />} />
             <ChartStack domainPadding={{x: [10, 2]}}>
               { this.renderSocketBars() }
               { this.renderCoresBars() }
@@ -297,7 +303,7 @@ This demonstrates monthly data with a bottom aligned legend and responsiveness f
 
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartStack, ChartLegendTooltip, ChartThemeColor, createContainer, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartLabel, ChartLegend, ChartStack, ChartLegendTooltip, ChartThemeColor, createContainer, getResizeObserver } from '@patternfly/react-charts';
 
 class MultiColorChart extends React.Component {
   constructor(props) {
@@ -346,6 +352,7 @@ class MultiColorChart extends React.Component {
                 voronoiPadding={50}
               />
             }
+            legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `unordered-label-${x.text}`} />} />}
             legendData={legendData}
             legendPosition="bottom-left"
             height={225}
@@ -359,8 +366,8 @@ class MultiColorChart extends React.Component {
             themeColor={ChartThemeColor.multiUnordered}
             width={width}
           >
-            <ChartAxis />
-            <ChartAxis dependentAxis showGrid />
+            <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `unordered-tick-${x.text}`} />} />
+            <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `unordered-dependent-tick-${x.text}`} />} />
             <ChartStack>
               <ChartArea
                 data={[

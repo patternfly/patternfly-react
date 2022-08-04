@@ -7,7 +7,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartDonut, ChartLabel, ChartLegend, ChartThemeColor } from '@patternfly/react-charts';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -40,7 +40,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 ### Right aligned legend
 ```js
 import React from 'react';
-import { ChartDonut } from '@patternfly/react-charts';
+import { ChartDonut, ChartLegend, ChartLabel } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
   <ChartDonut
@@ -49,6 +49,7 @@ import { ChartDonut } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `right-aligned-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -68,7 +69,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 ### Multi-color (ordered) with right aligned legend
 ```js
 import React from 'react';
-import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartDonut, ChartLabel, ChartLegend, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
   <ChartDonut
@@ -77,6 +78,7 @@ import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `multi-color-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -97,7 +99,7 @@ import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
 ### Bottom aligned legend
 ```js
 import React from 'react';
-import { ChartDonut } from '@patternfly/react-charts';
+import { ChartDonut, ChartLegend, ChartLabel } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '300px' }}>
   <ChartDonut
@@ -108,6 +110,7 @@ import { ChartDonut } from '@patternfly/react-charts';
     donutOrientation="top"
     height={275}
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `bottom-aligned-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendPosition="bottom"
     legendWidth={225}
@@ -147,7 +150,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 ### Small with right aligned legend
 ```js
 import React from 'react';
-import { ChartDonut } from '@patternfly/react-charts';
+import { ChartDonut, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '150px', width: '275px' }}>
   <ChartDonut
@@ -157,6 +160,7 @@ import { ChartDonut } from '@patternfly/react-charts';
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={150}
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `small-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -176,7 +180,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 ### Small with bottom aligned subtitle
 ```js
 import React from 'react';
-import { ChartDonut } from '@patternfly/react-charts';
+import { ChartDonut, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '165px', width: '275px' }}>
   <ChartDonut
@@ -186,6 +190,7 @@ import { ChartDonut } from '@patternfly/react-charts';
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={165}
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `small-bottom-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -206,7 +211,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 ### Small with right aligned subtitle
 ```js
 import React from 'react';
-import { ChartDonut } from '@patternfly/react-charts';
+import { ChartDonut, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '300px' }}>
   <ChartDonut
@@ -216,6 +221,7 @@ import { ChartDonut } from '@patternfly/react-charts';
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={200}
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `small-right-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendPosition="bottom"
     padding={{

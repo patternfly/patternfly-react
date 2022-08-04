@@ -2,45 +2,45 @@
 id: Legends
 section: charts
 propComponents: [
-  'Chart',
-  'ChartArea',
-  'ChartAxis',
-  'ChartBar',
-  'ChartBullet',
-  'ChartDonut',
-  'ChartGroup',
-  'ChartLabel',
-  'ChartLegend',
-  'ChartLegendTooltip',
-  'ChartLine',
-  'ChartPie',
-  'ChartScatter',
-  'ChartVoronoiContainer'
+'Chart',
+'ChartArea',
+'ChartAxis',
+'ChartBar',
+'ChartBullet',
+'ChartDonut',
+'ChartGroup',
+'ChartLabel',
+'ChartLegend',
+'ChartLegendTooltip',
+'ChartLine',
+'ChartPie',
+'ChartScatter',
+'ChartVoronoiContainer'
 ]
 hideDarkMode: true
 ---
 
-import { 
-  Chart,
-  ChartArea,
-  ChartAxis,
-  ChartBar,
-  ChartBullet,
-  ChartContainer,
-  ChartDonut,
-  ChartGroup,
-  ChartLabel,
-  ChartLegend,
-  ChartLegendTooltip,
-  ChartLine,
-  ChartPie,
-  ChartScatter,
-  ChartThemeColor,
-  ChartVoronoiContainer,
-  createContainer,
-  getInteractiveLegendEvents,
-  getInteractiveLegendItemStyles,
-  getResizeObserver
+import {
+Chart,
+ChartArea,
+ChartAxis,
+ChartBar,
+ChartBullet,
+ChartContainer,
+ChartDonut,
+ChartGroup,
+ChartLabel,
+ChartLegend,
+ChartLegendTooltip,
+ChartLine,
+ChartPie,
+ChartScatter,
+ChartThemeColor,
+ChartVoronoiContainer,
+createContainer,
+getInteractiveLegendEvents,
+getInteractiveLegendItemStyles,
+getResizeObserver
 } from '@patternfly/react-charts';
 import chart_color_black_500 from '@patternfly/react-tokens/dist/esm/chart_color_black_500';
 import '@patternfly/patternfly/patternfly-charts.css';
@@ -54,15 +54,18 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 ### Basic with right aligned legend
 ```js
 import React from 'react';
-import { ChartDonut } from '@patternfly/react-charts';
+import { ChartAxis, ChartDonut, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
   <ChartDonut
     ariaDesc="Average number of pets"
     ariaTitle="Donut chart example"
+    axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `basic-tick-${x.text}`} />} />}
+    
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `basic-label-${x.text}`} />} />}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -82,7 +85,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 ### Bottom aligned legend
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartGroup, ChartLabel, ChartLegend, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '450px' }}>
   <Chart
@@ -92,6 +95,7 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiCo
     domainPadding={{ x: [30, 25] }}
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
     legendPosition="bottom"
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `bottom-aligned-label-${x.text}`} />} />}
     height={275}
     padding={{
       bottom: 75, // Adjusted to accommodate legend
@@ -102,8 +106,8 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiCo
     themeColor={ChartThemeColor.purple}
     width={450}
   >
-    <ChartAxis />
-    <ChartAxis dependentAxis showGrid />
+    <ChartAxis tickLabelComponent={<ChartLabel id={(x) => {console.log('tickLabelComponent', x); return `bottom-aligned-tick-${x.text}`}} />} />
+    <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `bottom-aligned-dependent-tick-${x.text}`} />} />
     <ChartGroup offset={11}>
       <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
       <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
@@ -120,7 +124,7 @@ This demonstrates a responsive legend which wraps when items are wider than its 
 
 ```js
 import React from 'react';
-import { ChartBullet, getResizeObserver } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, getResizeObserver, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 class BulletChart extends React.Component {
   constructor(props) {
@@ -154,6 +158,7 @@ class BulletChart extends React.Component {
           <ChartBullet
             ariaDesc="Storage capacity"
             ariaTitle="Bullet chart example"
+            axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `left-aligned-tick-${x.text}`} />} />}
             comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
             comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
             constrainToVisibleArea
@@ -161,6 +166,7 @@ class BulletChart extends React.Component {
             labels={({ datum }) => `${datum.name}: ${datum.y}`}
             legendAllowWrap
             legendPosition="bottom-left"
+            legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `left-aligned-label-${x.text}`} />} />}
             maxDomain={{y: 100}}
             padding={{
               bottom: 50,
@@ -190,7 +196,7 @@ This demonstrates a standalone legend vs. using the `legendData` property.
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '450px' }}>
   <Chart
@@ -209,8 +215,8 @@ import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, 
     themeColor={ChartThemeColor.green}
     width={450}
   >
-    <ChartAxis tickValues={[2, 3, 4]} />
-    <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+    <ChartAxis tickValues={[2, 3, 4]} tickLabelComponent={<ChartLabel id={(x) => `stand-alone-tick-${x.text}`} />} />
+    <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} tickLabelComponent={<ChartLabel id={(x) => `stand-alone-dependent-tick-${x.text}`} />} />
     <ChartGroup>
       <ChartLine
         data={[
@@ -254,6 +260,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, 
       data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
       x={80}
       y={235}
+      labelComponent={<ChartLabel id={(x) => {console.log("hi", x); `standalone-label-${x.text.replace(' ', '-')}`}} />}
     />
   </Chart>
 </div>
@@ -270,6 +277,7 @@ import {
   ChartArea, 
   ChartAxis, 
   ChartGroup, 
+  ChartLabel,
   ChartLegend,
   ChartLegendTooltip,
   ChartScatter, 
@@ -423,7 +431,7 @@ class InteractiveLegendChart extends React.Component {
             containerComponent={container}
             events={this.getEvents()}
             height={225}
-            legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} />}
+            legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} labelComponent={<ChartLabel id={(x) => `interactive-label-${x.text.replace(' ', '-')}`} />} />}
             legendPosition="bottom-left"
             padding={{
               bottom: 75, // Adjusted to accommodate legend
@@ -435,8 +443,8 @@ class InteractiveLegendChart extends React.Component {
             themeColor={ChartThemeColor.multiUnordered}
             width={width}
           >
-            <ChartAxis tickValues={['2015', '2016', '2017', '2018']} />
-            <ChartAxis dependentAxis showGrid />
+            <ChartAxis tickValues={['2015', '2016', '2017', '2018']} tickLabelComponent={<ChartLabel id={(x) => `interactive-tick-${x.text.replace(' ', '-')}`} />} />
+            <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `interactive-dependent-tick-${x.text.replace(' ', '-')}`} />} />
             <ChartGroup>
               {this.series.map((s, index) => {
                 return (
@@ -477,6 +485,7 @@ This demonstrates how to add an interactive legend to a pie chart using events s
 import React from 'react';
 import { 
   Chart,
+  ChartLabel,
   ChartLegend,
   ChartThemeColor,
   ChartPie,
@@ -561,7 +570,7 @@ class InteractivePieLegendChart extends React.Component {
           ariaTitle="Pie chart example"
           events={this.getEvents()}
           height={275}
-          legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} />}
+          legendComponent={<ChartLegend name={'legend'} labelComponent={<ChartLabel id={(x) => `interactive-pie-label-${x.text.replace(' ', '-')}`} />} data={this.getLegendData()} />}
           legendPosition="bottom"
           padding={{
             bottom: 65,
@@ -602,7 +611,7 @@ class TooltipPieChart extends React.Component {
     // Custom legend label compoenent
     this.LegendLabel = ({datum, ...rest}) => (
       <Tooltip content={datum.name} enableFlip>
-        <ChartLabel {...rest} />
+        <ChartLabel {...rest} id={(x) => `tooltip-label-${x.text.replace(' ', '-')}`} />
       </Tooltip>
     );
 
@@ -767,6 +776,7 @@ class LegendLayoutPieChart extends React.Component {
         {...rest}
         style={[{ fontWeight: 700 }, {}]}
         text={[values[rest.index], rest.text]}
+        id={`legend-layout-label-${rest.text.replace(' ', '-')}`}
       />
     );
 
@@ -822,7 +832,7 @@ class LegendLayoutPieChart extends React.Component {
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
 ### Note
-Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
+Currently, the generated documenation below is not able to resolve type definitions from Victory imports. For the
 components used in the examples above, Victory pass-thru props are also documented here:
 
 - For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)

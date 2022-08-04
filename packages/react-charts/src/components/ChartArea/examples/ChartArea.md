@@ -12,7 +12,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThreshold, ChartThemeColor, ChartLegendTooltip, ChartVoronoiContainer, createContainer, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartThreshold, ChartThemeColor, ChartLegendTooltip, ChartVoronoiContainer, createContainer, getResizeObserver } from '@patternfly/react-charts';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -27,7 +27,7 @@ Learn to build an area chart using a Katacoda tutorial starting with a simple ch
 ### Basic with right aligned legend
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
 <div style={{ height: '200px', width: '800px' }}>
@@ -35,6 +35,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
     ariaDesc="Average number of pets"
     ariaTitle="Area chart example"
     containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `basic-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -48,8 +49,8 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
     }}
     width={800}
   >
-    <ChartAxis />
-    <ChartAxis dependentAxis showGrid/>
+    <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `basic-tick-${x.text}`} />} />
+    <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `basic-dependent-tick-${x.text}`} />} />
     <ChartGroup>
       <ChartArea
         data={[
@@ -91,7 +92,7 @@ This demonstrates how to combine cursor and voronoi containers to display toolti
 
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartLegendTooltip, createContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartThemeColor, ChartLegendTooltip, createContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
 class BottomAlignedLegend extends React.Component {
@@ -115,6 +116,7 @@ class BottomAlignedLegend extends React.Component {
               voronoiPadding={50}
             />
           }
+          legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `bottom-aligned-label-${x.text.replace(' ', '-')}`} />} />}
           legendData={legendData}
           legendPosition="bottom"
           height={250}
@@ -128,8 +130,8 @@ class BottomAlignedLegend extends React.Component {
           themeColor={ChartThemeColor.cyan}
           width={650}
         >
-          <ChartAxis label="Years"/>
-          <ChartAxis dependentAxis showGrid/>
+          <ChartAxis label="Years" tickLabelComponent={<ChartLabel id={(x) => `bottom-aligned-tick-${x.text}`} />}/>
+          <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `bottom-aligned-dependent-tick-${x.text}`} />}/>
           <ChartGroup>
             <ChartArea
               data={[
@@ -174,7 +176,7 @@ class BottomAlignedLegend extends React.Component {
 ### Multi-color (unordered) bottom-left aligned legend and responsive container
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer, getResizeObserver } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartThemeColor, ChartVoronoiContainer, getResizeObserver } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
 class MultiColorChart extends React.Component {
@@ -210,6 +212,7 @@ class MultiColorChart extends React.Component {
           ariaDesc="Average number of pets"
           ariaTitle="Area chart example"
           containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+          legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `multi-color-label-${x.text.replace(' ', '-')}`} />} />}
           legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
           legendPosition="bottom-left"
           height={225}
@@ -223,8 +226,8 @@ class MultiColorChart extends React.Component {
           themeColor={ChartThemeColor.multiUnordered}
           width={width}
         >
-          <ChartAxis />
-          <ChartAxis dependentAxis showGrid />
+          <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `multi-color-tick-${x.text}`} />} />
+          <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `multi-color-tick-${x.text}`} />} />
           <ChartGroup>
             <ChartArea
               data={[

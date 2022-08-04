@@ -11,6 +11,7 @@ import {
   ChartBar,
   ChartDonut,
   ChartGroup,
+  ChartLabel,
   ChartLegend,
   ChartLine,
   ChartStack,
@@ -38,13 +39,14 @@ This demonstrates how to apply basic theme colors.
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div style={{ height: '275px', width: '450px' }}>
   <Chart
     ariaDesc="Average number of pets"
     ariaTitle="Line chart example"
     containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `green-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
     legendPosition="bottom"
     height={275}
@@ -59,8 +61,8 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiC
     themeColor={ChartThemeColor.green}
     width={450}
   >
-    <ChartAxis tickValues={[2, 3, 4]} />
-    <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+    <ChartAxis tickValues={[2, 3, 4]} tickLabelComponent={<ChartLabel id={(x) => `green-tick-${x.text}`} />} />
+    <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} tickLabelComponent={<ChartLabel id={(x) => `green-dependent-tick-${x.text}`} />} />
     <ChartGroup>
       <ChartLine
         data={[
@@ -110,7 +112,7 @@ This demonstrates how to apply theme colors for ordered charts like bar, donut, 
 
 ```js
 import React from 'react';
-import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartDonut, ChartLabel, ChartLegend, ChartThemeColor } from '@patternfly/react-charts';
 
 <div style={{ height: '230px', width: '350px' }}>
   <ChartDonut
@@ -119,6 +121,7 @@ import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `multi-color-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -142,7 +145,7 @@ This demonstrates how to apply theme colors for unordered charts like area, line
 
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
 <div style={{ height: '200px', width: '800px' }}>
@@ -150,6 +153,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
     ariaDesc="Average number of pets"
     ariaTitle="Area chart example"
     containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `unordered-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -164,8 +168,8 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
     themeColor={ChartThemeColor.multiUnordered}
     width={800}
   >
-    <ChartAxis />
-    <ChartAxis dependentAxis showGrid/>
+    <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `unordered-tick-${x.text}`} />} />
+    <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `unordered-dependent-tick-${x.text}`} />} />
     <ChartGroup>
       <ChartArea
         data={[
@@ -207,7 +211,7 @@ This demonstrates an alternate way of applying a custom color scale and fill col
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartBar, ChartLegend, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartBar, ChartLabel, ChartLegend, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
 import chart_color_gold_300 from '@patternfly/react-tokens/dist/esm/chart_color_gold_300';
@@ -238,6 +242,7 @@ import chart_color_purple_300 from '@patternfly/react-tokens/dist/esm/chart_colo
             symbol: { fill: chart_color_purple_300.var }
           }
         ]}
+        labelComponent={<ChartLabel id={(x) => `custom-label-${x.text.replace(' ', '-')}`} />}
       />
     }
     legendPosition="bottom-left"
@@ -251,8 +256,8 @@ import chart_color_purple_300 from '@patternfly/react-tokens/dist/esm/chart_colo
     themeColor={ChartThemeColor.multiOrdered}
     width={450}
   >
-    <ChartAxis />
-    <ChartAxis dependentAxis showGrid />
+    <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `custom-tick-${x.text}`} />} />
+    <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `custom-dependent-tick-${x.text}`} />} />
     <ChartStack
       horizontal
       colorScale={[
@@ -309,7 +314,7 @@ This demonstrates an alternate way of applying custom stroke and fill colors to 
 
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartThreshold, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLine, ChartLabel, ChartLegend, ChartThemeColor, ChartThreshold, ChartVoronoiContainer } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 
 <div style={{ height: '275px', width: '450px' }}>
@@ -317,6 +322,7 @@ import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_
     ariaDesc="Average number of pets"
     ariaTitle="Line chart example"
     containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `stroke-label-${x.text.replace(' ', '-')}`} />} />}
     legendData={[
       { name: 'Cats' },
       { name: 'Birds' },
@@ -336,8 +342,8 @@ import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_
     themeColor={ChartThemeColor.multiUnordered}
     width={450}
   >
-    <ChartAxis tickValues={[2, 3, 4]} />
-    <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+    <ChartAxis tickValues={[2, 3, 4]} tickLabelComponent={<ChartLabel id={(x) => `stroke-tick-${x.text}`} />} />
+    <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} tickLabelComponent={<ChartLabel id={(x) => `stroke-tick-${x.text}`} />} />
     <ChartGroup>
       <ChartLine
         data={[
@@ -388,7 +394,7 @@ This demonstrates custom theme properties, which may be applied across multiple 
 
 ```js
 import React from 'react';
-import { Chart, ChartBar, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer, mergeTheme } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartAxis, ChartGroup, ChartLabel, ChartLegend, ChartThemeColor, ChartVoronoiContainer, mergeTheme } from '@patternfly/react-charts';
 import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_blue_300';
 import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color_green_300';
 import chart_color_cyan_300 from '@patternfly/react-tokens/dist/esm/chart_color_cyan_300';
@@ -451,6 +457,7 @@ class MultiColorChart extends React.Component {
           containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
           domain={{y: [0,9]}}
           domainPadding={{ x: [30, 25] }}
+          legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `custom-theme-label-${x.text.replace(' ', '-')}`} />} />}
           legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
           legendOrientation="vertical"
           legendPosition="right"
@@ -458,8 +465,8 @@ class MultiColorChart extends React.Component {
           theme={this.myCustomTheme}
           width={600}
         >
-          <ChartAxis />
-          <ChartAxis dependentAxis showGrid />
+          <ChartAxis tickLabelComponent={<ChartLabel id={(x) => `custom-theme-tick-${x.text}`} />} />
+          <ChartAxis dependentAxis showGrid tickLabelComponent={<ChartLabel id={(x) => `custom-theme-tick-${x.text}`} />} />
           <ChartGroup offset={11}>
             <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
             <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />

@@ -9,7 +9,7 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { ChartAxis, ChartBullet, ChartContainer, ChartThemeColor, getResizeObserver } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartContainer, ChartLabel, ChartLegend, ChartThemeColor, getResizeObserver } from '@patternfly/react-charts';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -24,12 +24,13 @@ Learn to build a bullet chart using a Katacoda tutorial starting with a simple c
 ### Basic
 ```js
 import React from 'react';
-import { ChartBullet } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartLabel } from '@patternfly/react-charts';
 
 <div style={{ height: '150px', width: '600px' }}>
   <ChartBullet
     ariaDesc="Storage capacity"
     ariaTitle="Bullet chart example"
+    axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `basic-tick-${x.text}`} />} />}
     comparativeWarningMeasureData={[{ name: 'Warning', y: 88 }]}
     constrainToVisibleArea
     height={150}
@@ -45,17 +46,19 @@ import { ChartBullet } from '@patternfly/react-charts';
 ### Segmented primary measure
 ```js
 import React from 'react';
-import { ChartBullet } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '600px' }}>
   <ChartBullet
     ariaDesc="Storage capacity"
     ariaTitle="Bullet chart example"
+    axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `segmented-tick-${x.text}`} />} />}
     comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
     comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
     constrainToVisibleArea
     height={200}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `segmented-label-${x.text.replace(' ', '-')}`} />} />}
     maxDomain={{y: 100}}
     padding={{
       bottom: 50,
@@ -80,7 +83,7 @@ This demonstrates a responsive legend which wraps when items are wider than its 
 
 ```js
 import React from 'react';
-import { ChartBullet, getResizeObserver } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartLabel, ChartLegend, getResizeObserver } from '@patternfly/react-charts';
 
 class BulletChart extends React.Component {
   constructor(props) {
@@ -113,12 +116,14 @@ class BulletChart extends React.Component {
         <ChartBullet
           ariaDesc="Storage capacity"
           ariaTitle="Bullet chart example"
+          axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `responsive-tick-${x.text}`} />} />}
           comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
           comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
           constrainToVisibleArea
           height={250}
           labels={({ datum }) => `${datum.name}: ${datum.y}`}
           legendAllowWrap
+          legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `responsive-label-${x.text.replace(' ', '-')}`} />} />}
           legendPosition="bottom-left"
           maxDomain={{y: 100}}
           padding={{
@@ -145,17 +150,19 @@ class BulletChart extends React.Component {
 ### Primary measure dot
 ```js
 import React from 'react';
-import { ChartBullet } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '600px' }}>
   <ChartBullet
     ariaDesc="Storage capacity"
     ariaTitle="Bullet chart example"
+    axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `primary-measure-tick-${x.text}`} />} />}
     comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
     comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
     constrainToVisibleArea
     height={200}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `primary-measure-label-${x.text.replace(' ', '-')}`} />} />}
     maxDomain={{y: 100}}
     padding={{
       bottom: 50,
@@ -180,13 +187,13 @@ This is a green bullet chart with error measure and custom axis ticks with 3 leg
 
 ```js
 import React from 'react';
-import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '600px' }}>
   <ChartBullet
     ariaDesc="Storage capacity"
     ariaTitle="Bullet chart example"
-    axisComponent={<ChartAxis tickValues={[0, 75, 150]} />}
+    axisComponent={<ChartAxis tickValues={[0, 75, 150]} tickLabelComponent={<ChartLabel id={(x) => `error-measure-tick-${x.text}`} />} />}
     comparativeErrorMeasureData={[{name: 'Error', y: 120}]}
     comparativeErrorMeasureLegendData={[{ name: 'Error' }]}
     comparativeWarningMeasureData={[{name: 'Warning', y: 80}]}
@@ -194,6 +201,7 @@ import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
     constrainToVisibleArea
     height={200}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `error-measure-label-${x.text.replace(' ', '-')}`} />} />}
     legendItemsPerRow={3}
     padding={{
       bottom: 50,
@@ -219,16 +227,18 @@ This is a gold bullet chart with primary measure greater than max range.
 
 ```js
 import React from 'react';
-import { ChartBullet } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '600px' }}>
   <ChartBullet
     ariaDesc="Storage capacity"
     ariaTitle="Bullet chart example"
+    axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `outside-range-tick-${x.text}`} />} />}
     comparativeWarningMeasureData={[{name: 'Warning', y: 80}]}
     comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
     constrainToVisibleArea
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `outside-range-label-${x.text.replace(' ', '-')}`} />} />}
     height={200}
     maxDomain={{y: 125}}
     minDomain={{y: 50}}
@@ -256,17 +266,19 @@ This bullet chart with negative primary measure is for measures considered to be
 
 ```js
 import React from 'react';
-import { ChartBullet } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '600px' }}>
   <ChartBullet
     ariaDesc="Storage capacity"
     ariaTitle="Bullet chart example"
+    axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `negative-tick-${x.text}`} />} />}
     comparativeWarningMeasureData={[{name: 'Warning', y: 60}]}
     comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
     constrainToVisibleArea
     height={200}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `negative-label-${x.text.replace(' ', '-')}`} />} />}
     maxDomain={{y: 75}}
     minDomain={{y: -25}}
     padding={{
@@ -292,18 +304,20 @@ This reversed bullet chart with right aligned legend is for measures considered 
 
 ```js
 import React from 'react';
-import { ChartBullet } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '700px' }}>
   <ChartBullet
     ariaDesc="Storage capacity"
     ariaTitle="Bullet chart example"
+    axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `reversed-tick-${x.text}`} />} />}
     comparativeWarningMeasureData={[{name: 'Warning', y: -88}]}
     comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
     constrainToVisibleArea
     invert
     height={200}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `reversed-label-${x.text.replace(' ', '-')}`} />} />}
     legendPosition="right"
     legendOrientation="vertical"
     maxDomain={{y: 0}}
@@ -331,17 +345,19 @@ This bullet chart with negative and positive primary measures has 4 legend items
 
 ```js
 import React from 'react';
-import { ChartBullet } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '600px' }}>
   <ChartBullet
     ariaDesc="Storage capacity"
     ariaTitle="Bullet chart example"
+    axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `negative-positive-tick-${x.text}`} />} />}
     comparativeWarningMeasureData={[{name: 'Warning', y: 60}]}
     comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
     constrainToVisibleArea
     height={200}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `negative-positive-label-${x.text.replace(' ', '-')}`} />} />}
     legendItemsPerRow={4}
     maxDomain={{y: 75}}
     minDomain={{y: -25}}
@@ -365,18 +381,20 @@ import { ChartBullet } from '@patternfly/react-charts';
 ### Vertical with segmented primary measure
 ```js
 import React from 'react';
-import { ChartBullet } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '500px', width: '500px' }}>
   <ChartBullet
     ariaDesc="Storage capacity"
     ariaTitle="Bullet chart example"
+    axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `vertical-tick-${x.text}`} />} />}
     comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
     comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
     constrainToVisibleArea
     height={500}
     horizontal={false}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `vertical-label-${x.text.replace(' ', '-')}`} />} />}
     maxDomain={{y: 100}}
     padding={{
       bottom: 125, // Adjusted to accommodate legend
@@ -398,18 +416,20 @@ import { ChartBullet } from '@patternfly/react-charts';
 ### Vertical primary measure outside max range
 ```js
 import React from 'react';
-import { ChartBullet } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '500px', width: '500px' }}>
   <ChartBullet
     ariaDesc="Storage capacity"
     ariaTitle="Bullet chart example"
+    axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `vertical-outside-tick-${x.text}`} />} />}
     comparativeWarningMeasureData={[{name: 'Warning', y: 100}]}
     comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
     constrainToVisibleArea
     height={500}
     horizontal={false}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `vertical-outside-label-${x.text.replace(' ', '-')}`} />} />}
     maxDomain={{y: 125}}
     minDomain={{y: 50}}
     padding={{
@@ -433,14 +453,15 @@ import { ChartBullet } from '@patternfly/react-charts';
 ### Custom labels
 ```js
 import React from 'react';
-import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '150px', width: '600px' }}>
   <ChartBullet
     ariaDesc="Storage capacity"
     ariaTitle="Bullet chart example"
     axisComponent={
-      <ChartAxis 
+      <ChartAxis
+        tickLabelComponent={<ChartLabel id={(x) => `custom-tick-${x.text}`} />}
         tickValues={[0, 25, 50, 75, 100]}
         tickFormat={val => {
           switch (val) {
@@ -473,17 +494,19 @@ import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
 ### Custom size
 ```js
 import React from 'react';
-import { ChartBullet } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '200px', width: '600px' }}>
   <ChartBullet
     ariaDesc="Storage capacity"
     ariaTitle="Bullet chart example"
+    axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `custom-size-tick-${x.text}`} />} />}
     bulletSize={160}
     comparativeWarningMeasureData={[{ name: 'Warning', y: 88 }]}
     comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
     height={200}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
+    legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `custom-size-label-${x.text.replace(' ', '-')}`} />} />}
     maxDomain={{y: 100}}
     padding={{
       bottom: 50,
@@ -505,7 +528,7 @@ import { ChartBullet } from '@patternfly/react-charts';
 ### Horizontal group
 ```js
 import React from 'react';
-import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartContainer, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '500px', width: '600px' }}>
   <ChartContainer 
@@ -514,6 +537,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       width={600}
     >
     <ChartBullet
+      axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `first-tick-${x.text}`} />} />}
       comparativeWarningMeasureData={[{name: 'Warning', y: 78}]}
       constrainToVisibleArea
       height={500}
@@ -533,6 +557,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       width={600}
     />
     <ChartBullet
+      axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `second-tick-${x.text}`} />} />}
       comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
       constrainToVisibleArea
       height={500}
@@ -552,6 +577,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       width={600}
     />
     <ChartBullet
+      axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `third-tick-${x.text}`} />} />}
       comparativeWarningMeasureData={[{name: 'Warning', y: 98}]}
       constrainToVisibleArea
       height={500}
@@ -571,11 +597,13 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       width={600}
     />
     <ChartBullet
+      axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `fourth-tick-${x.text}`} />} />}
       comparativeWarningMeasureData={[{name: 'Warning', y: 78}]}
       comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
       constrainToVisibleArea
       height={500}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
+      legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `fourth-label-${x.text.replace(' ', '-')}`} />} />}
       maxDomain={{y: 100}}
       padding={{
         bottom: 100, // Adjusted to accommodate legend
@@ -599,7 +627,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 ### Vertical group
 ```js
 import React from 'react';
-import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartContainer, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '600px', width: '500px' }}>
   <ChartContainer 
@@ -608,12 +636,14 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       width={500}
     >
     <ChartBullet
+      axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `vertical-1-tick-${x.text}`} />} />}
       comparativeWarningMeasureData={[{name: 'Warning', y: 78}]}
       comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
       constrainToVisibleArea
       height={600}
       horizontal={false}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
+      legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `vertical-1-label-${x.text.replace(' ', '-')}`} />} />}
       maxDomain={{y: 100}}
       padding={{
         bottom: 125, // Adjusted to accommodate legend
@@ -631,6 +661,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       width={500}
     />
     <ChartBullet
+      axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `vertical-2-tick-${x.text}`} />} />}
       comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
       constrainToVisibleArea
       height={600}
@@ -651,6 +682,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       width={500}
     />
     <ChartBullet
+      axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `vertical-3-tick-${x.text}`} />} />}
       comparativeWarningMeasureData={[{name: 'Warning', y: 98}]}
       constrainToVisibleArea
       height={600}
@@ -671,6 +703,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       width={500}
     />
     <ChartBullet
+      axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `vertical-4-tick-${x.text}`} />} />}
       comparativeWarningMeasureData={[{name: 'Warning', y: 78}]}
       constrainToVisibleArea
       height={600}
@@ -697,7 +730,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 ### Horizontal group with title
 ```js
 import React from 'react';
-import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartContainer, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '600px', width: '600px' }}>
   <ChartContainer 
@@ -706,12 +739,14 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       width={600}
     >
     <ChartBullet
+      axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `horizontal-1-tick-${x.text}`} />} />}
       comparativeWarningMeasureData={[{name: 'Warning', y: 78}]}
       constrainToVisibleArea
       groupSubTitle="Measure details"
       groupTitle="Text label"
       height={575}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
+      legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `horizontal-1-label-${x.text.replace(' ', '-')}`} />} />}
       maxDomain={{y: 100}}
       padding={{
         bottom: 100, // Adjusted to accommodate legend
@@ -727,6 +762,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       width={600}
     />
     <ChartBullet
+      axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `horizontal-2-tick-${x.text}`} />} />}
       comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
       constrainToVisibleArea
       height={600}
@@ -746,6 +782,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       width={600}
     />
     <ChartBullet
+      axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `horizontal-3-tick-${x.text}`} />} />}
       comparativeWarningMeasureData={[{name: 'Warning', y: 98}]}
       constrainToVisibleArea
       height={600}
@@ -765,6 +802,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       width={600}
     />
     <ChartBullet
+      axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `horizontal-4-tick-${x.text}`} />} />}
       comparativeWarningMeasureData={[{name: 'Warning', y: 78}]}
       comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
       constrainToVisibleArea
@@ -793,7 +831,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 ### Vertical group with title
 ```js
 import React from 'react';
-import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
+import { ChartAxis, ChartBullet, ChartContainer, ChartLabel, ChartLegend } from '@patternfly/react-charts';
 
 <div style={{ height: '600px', width: '500px' }}>
   <ChartContainer 
@@ -802,6 +840,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       width={500}
     >
     <ChartBullet
+      axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `vertical-group1-tick-${x.text}`} />} />}
       comparativeWarningMeasureData={[{name: 'Warning', y: 78}]}
       comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
       constrainToVisibleArea
@@ -810,6 +849,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       height={600}
       horizontal={false}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
+      legendComponent={<ChartLegend labelComponent={<ChartLabel id={(x) => `vertical-group1-label-${x.text.replace(' ', '-')}`} />} />}
       maxDomain={{y: 100}}
       padding={{
         bottom: 125, // Adjusted to accommodate legend
@@ -827,6 +867,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       width={500}
     />
     <ChartBullet
+      axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `vertical-group2-tick-${x.text}`} />} />}
       comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
       constrainToVisibleArea
       height={600}
@@ -847,6 +888,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       width={500}
     />
     <ChartBullet
+      axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `vertical-group3-tick-${x.text}`} />} />}
       comparativeWarningMeasureData={[{name: 'Warning', y: 98}]}
       constrainToVisibleArea
       height={600}
@@ -867,6 +909,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       width={500}
     />
     <ChartBullet
+      axisComponent={<ChartAxis tickLabelComponent={<ChartLabel id={(x) => `vertical-group4-tick-${x.text}`} />} />}
       comparativeWarningMeasureData={[{name: 'Warning', y: 78}]}
       constrainToVisibleArea
       height={600}
