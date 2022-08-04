@@ -29,3 +29,7 @@ import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclam
 ### Show/hide password
 ```ts file='./LoginPageShowHidePassword.tsx' isFullscreen
 ```
+
+### With language selector
+```ts file='./LoginPageLanguageSelect.tsx' isFullscreen
+```

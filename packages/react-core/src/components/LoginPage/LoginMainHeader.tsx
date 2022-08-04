@@ -12,6 +12,8 @@ export interface LoginMainHeaderProps extends React.HTMLProps<HTMLDivElement> {
   title?: string;
   /** Subtitle that contains the Text, URL, and URL Text for the Login Main Header */
   subtitle?: string;
+  /** Select menu that renders next to the Login Title for the Login Main Header */
+  headerUtilities?: React.ReactNode;
 }
 
 export const LoginMainHeader: React.FunctionComponent<LoginMainHeaderProps> = ({
@@ -19,6 +21,7 @@ export const LoginMainHeader: React.FunctionComponent<LoginMainHeaderProps> = ({
   className = '',
   title = '',
   subtitle = '',
+  headerUtilities = null,
   ...props
 }: LoginMainHeaderProps) => (
   <header className={css(styles.loginMainHeader, className)} {...props}>
@@ -28,6 +31,7 @@ export const LoginMainHeader: React.FunctionComponent<LoginMainHeaderProps> = ({
       </Title>
     )}
     {subtitle && <p className={css(styles.loginMainHeaderDesc)}>{subtitle}</p>}
+    {headerUtilities && <div className={css(styles.loginMainHeaderUtilities)}>{headerUtilities}</div>}
     {children}
   </header>
 );

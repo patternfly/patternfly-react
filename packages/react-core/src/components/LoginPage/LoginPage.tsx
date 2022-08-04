@@ -35,6 +35,8 @@ export interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
   loginTitle: string;
   /** Subtitle for the Login Main Body Header of the LoginPage */
   loginSubtitle?: string;
+  /** Header utilities for the Login Main Body Header of the LoginPage */
+  loginHeaderUtils?: React.ReactNode;
   /** Content rendered inside of Login Main Footer Band to display a sign up for account message */
   signUpForAccountMessage?: React.ReactNode;
   /** Content rendered inside of Login Main Footer Band to display a forgot credentials link* */
@@ -55,6 +57,7 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
   footerListVariants,
   loginTitle,
   loginSubtitle,
+  loginHeaderUtils,
   signUpForAccountMessage = null,
   forgotCredentials = null,
   socialMediaLoginContent = null,
@@ -77,7 +80,7 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
     <React.Fragment>
       {backgroundImgSrc && <BackgroundImage src={backgroundImgSrc} alt={backgroundImgAlt} />}
       <Login header={Header} footer={Footer} className={css(className)} {...props}>
-        <LoginMainHeader title={loginTitle} subtitle={loginSubtitle} />
+        <LoginMainHeader title={loginTitle} subtitle={loginSubtitle} headerUtilities={loginHeaderUtils} />
         <LoginMainBody>{children}</LoginMainBody>
         {(socialMediaLoginContent || forgotCredentials || signUpForAccountMessage) && (
           <LoginMainFooter
