@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.82.3 (2022-08-04)
+
+
+### Bug Fixes
+
+* **charts:** remove uniqueId generation for labels and axis ticks ([#7794](https://github.com/patternfly/patternfly-react/issues/7794)) ([9c44131](https://github.com/patternfly/patternfly-react/commit/9c4413119f14e3e45a1ed12bd870120e278ebc20))
+
+
+
+
+
 ## 4.82.2 (2022-08-03)
 
 **Note:** Version bump only for package @patternfly/react-icons
