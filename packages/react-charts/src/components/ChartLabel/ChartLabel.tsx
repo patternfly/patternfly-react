@@ -245,7 +245,7 @@ export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
     );
   const newStyle = Array.isArray(style) ? style.map(applyDefaultStyle) : applyDefaultStyle(style);
 
-  return <VictoryLabel style={newStyle as any} textAnchor={textAnchor} {...(id && { id })} {...rest} />;
+  return <VictoryLabel style={newStyle as any} textAnchor={textAnchor} id={id} {...rest} />;
 };
 ChartLabel.displayName = 'ChartLabel';
 
