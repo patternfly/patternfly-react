@@ -18,7 +18,6 @@ import { VictoryAxis, VictoryAxisProps, VictoryAxisTTargetType } from 'victory-a
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getAxisTheme, getTheme } from '../ChartUtils';
-import { getUniqueId } from '@patternfly/react-core';
 import { ChartLabel } from '../ChartLabel';
 
 /**
@@ -465,7 +464,6 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
 
   const getTickLabelComponent = () =>
     React.cloneElement(tickLabelComponent, {
-      id: () => getUniqueId('chart-axis-tickLabels'),
       ...tickLabelComponent.props
     });
 

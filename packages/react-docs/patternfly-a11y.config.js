@@ -21,5 +21,6 @@ module.exports = {
     'bypass',
     'nested-interactive'
   ].join(','),
-  ignoreIncomplete: true
+  ignoreIncomplete: true,
+  skip: /^\/charts\//
 };
