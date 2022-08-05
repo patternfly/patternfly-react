@@ -23,28 +23,20 @@ export const NotificationDrawerLightweight: React.FunctionComponent = () => {
   const [firstGroupExpanded, setFirstGroupExpanded] = React.useState(false);
   const [secondGroupExpanded, setSecondGroupExpanded] = React.useState(true);
   const [thirdGroupExpanded, setThirdGroupExpanded] = React.useState(false);
-  /*
-  const onFocus = id => {
-    if (id) {
-      const element = document.getElementById(id);
-      element.focus();
-    }
-  };
-  */
 
-  const toggleFirstDrawer = (event, value) => {
+  const toggleFirstDrawer = (_event: any, value: boolean) => {
     setFirstGroupExpanded(value);
     setSecondGroupExpanded(false);
     setThirdGroupExpanded(false);
   };
 
-  const toggleSecondDrawer = (event, value) => {
+  const toggleSecondDrawer = (_event: any, value: boolean) => {
     setSecondGroupExpanded(value);
     setFirstGroupExpanded(false);
     setThirdGroupExpanded(false);
   };
 
-  const toggleThirdDrawer = (event, value) => {
+  const toggleThirdDrawer = (_event: any, value: boolean) => {
     setThirdGroupExpanded(value);
     setSecondGroupExpanded(false);
     setFirstGroupExpanded(false);
