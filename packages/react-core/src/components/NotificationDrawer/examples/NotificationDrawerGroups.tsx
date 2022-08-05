@@ -31,7 +31,7 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
   const [thirdGroupExpanded, setThirdGroupExpanded] = React.useState(false);
   const [isOpenMap, setIsOpenMap] = React.useState({});
 
-  const onToggle = (id, isOpen) => {
+  const onToggle = (id: string, isOpen: boolean) => {
     setIsOpenMap({ [id]: isOpen });
   };
 
@@ -39,19 +39,19 @@ export const NotificationDrawerGroups: React.FunctionComponent = () => {
     setIsOpenMap({});
   };
 
-  const toggleFirstDrawer = (event, value) => {
+  const toggleFirstDrawer = (event: any, value: boolean) => {
     setFirstGroupExpanded(value);
     setSecondGroupExpanded(false);
     setThirdGroupExpanded(false);
   };
 
-  const toggleSecondDrawer = (event, value) => {
+  const toggleSecondDrawer = (event: any, value: boolean) => {
     setSecondGroupExpanded(value);
     setFirstGroupExpanded(false);
     setThirdGroupExpanded(false);
   };
 
-  const toggleThirdDrawer = (event, value) => {
+  const toggleThirdDrawer = (event: any, value: boolean) => {
     setThirdGroupExpanded(value);
     setSecondGroupExpanded(false);
     setFirstGroupExpanded(false);

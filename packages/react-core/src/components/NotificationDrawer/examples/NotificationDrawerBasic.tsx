@@ -16,19 +16,19 @@ import {
 } from '@patternfly/react-core';
 
 export const NotificationDrawerBasic: React.FunctionComponent = () => {
-  const [isOpenMap, setIsOpenMap] = React.useState(new Array(6).fill(false));
+  const [isOpenMap, setIsOpenMap] = React.useState(new Array(7).fill(false));
 
-  const onToggle = index => isOpen => {
+  const onToggle = (index: number) => (isOpen: boolean) => {
     const newState = [...isOpenMap.slice(0, index), isOpen, ...isOpenMap.slice(index + 1)];
     setIsOpenMap(newState);
   };
 
   const onSelect = () => {
-    setIsOpenMap(new Array(6).fill(false));
+    setIsOpenMap(new Array(7).fill(false));
   };
 
   const onDrawerClose = () => {
-    setIsOpenMap(new Array(6).fill(false));
+    setIsOpenMap(new Array(7).fill(false));
   };
 
   const [isOpen0, isOpen1, isOpen2, isOpen3, isOpen4, isOpen5, isOpen6] = isOpenMap;
