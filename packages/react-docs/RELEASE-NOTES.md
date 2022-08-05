@@ -4,18 +4,18 @@ section: developer-resources
 ---
 
 ## 2022.10 release notes (2022-08-04)
-- [@patternfly/react-catalog-view-extension@4.75.1](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.75.1)
-- [@patternfly/react-charts@6.77.1](https://www.npmjs.com/package/@patternfly/react-charts/v/6.77.1)
-- [@patternfly/react-code-editor@4.65.1](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.65.1)
-- [@patternfly/react-core@4.224.1](https://www.npmjs.com/package/@patternfly/react-core/v/4.224.1)
-- [@patternfly/react-icons@4.75.1](https://www.npmjs.com/package/@patternfly/react-icons/v/4.75.1)
-- [@patternfly/react-inline-edit-extension@4.69.1](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.69.1)
-- [@patternfly/react-log-viewer@4.69.1](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.69.1)
-- [@patternfly/react-styles@4.74.1](https://www.npmjs.com/package/@patternfly/react-styles/v/4.74.1)
-- [@patternfly/react-table@4.93.1](https://www.npmjs.com/package/@patternfly/react-table/v/4.93.1)
-- [@patternfly/react-tokens@4.76.1](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.76.1)
-- [@patternfly/react-topology@4.71.1](https://www.npmjs.com/package/@patternfly/react-topology/v/4.71.1)
-- [@patternfly/react-virtualized-extension@4.71.1](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.71.1)
+- [@patternfly/react-catalog-view-extension@4.82.5](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.82.5)
+- [@patternfly/react-charts@6.84.5](https://www.npmjs.com/package/@patternfly/react-charts/v/6.84.5)
+- [@patternfly/react-code-editor@4.72.5](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.72.5)
+- [@patternfly/react-core@4.231.5](https://www.npmjs.com/package/@patternfly/react-core/v/4.231.5)
+- [@patternfly/react-icons@4.82.5](https://www.npmjs.com/package/@patternfly/react-icons/v/4.82.5)
+- [@patternfly/react-inline-edit-extension@4.76.5](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.76.5)
+- [@patternfly/react-log-viewer@4.75.5](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.76.5)
+- [@patternfly/react-styles@4.76.5](https://www.npmjs.com/package/@patternfly/react-styles/v/4.76.5)
+- [@patternfly/react-table@4.100.5](https://www.npmjs.com/package/@patternfly/react-table/v/4.100.5)
+- [@patternfly/react-tokens@4.83.5](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.83.5)
+- [@patternfly/react-topology@4.78.5](https://www.npmjs.com/package/@patternfly/react-topology/v/4.78.5)
+- [@patternfly/react-virtualized-extension@4.78.5](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.78.5)
 
 ### Components
 - **Accordion:**
@@ -56,6 +56,8 @@ section: developer-resources
 - **Menu toggle:**
   - Added support for type ahead toggle and added demo for composable  type ahead select ([#6903](https://github.com/patternfly/patternfly-react/pull/6903))
   - Added split button variant ([#7748](https://github.com/patternfly/patternfly-react/pull/7748))
+  - Undid type change causing errors ([#7797](https://github.com/patternfly/patternfly-react/pull/7797))
+  - Updated base type to include div attributes as well ([#7798](https://github.com/patternfly/patternfly-react/pull/7798))
 - **Modal:**
   - Converted examples to TypeScript ([#7579](https://github.com/patternfly/patternfly-react/pull/7579))
 - **Multiple file upload:**
@@ -109,6 +111,7 @@ section: developer-resources
 patternfly/patternfly-react/pull/7666))
 - Added resize observer examples ([#7587](https://github.com/patternfly/patternfly-react/pull/7587))
 - Added basic scatter example ([#7588](https://github.com/patternfly/patternfly-react/pull/7588))
+- Removed unique id generation for labels and axis ticks ([#7794](https://github.com/patternfly/patternfly-react/pull/7794))
 
 ### Log viewer
 - Fixed to render correctly when there is '\n' in the string array ([#7681](https://github.com/patternfly/patternfly-react/pull/7681))
