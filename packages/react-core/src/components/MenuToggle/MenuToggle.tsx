@@ -14,7 +14,7 @@ export interface SplitButtonOptions {
 }
 
 export interface MenuToggleProps
-  extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<MenuToggleElement>, MenuToggleElement>, 'ref'> {
+  extends Omit<React.DetailedHTMLProps<React.ButtonHTMLAttributes<MenuToggleElement>, MenuToggleElement>, 'ref'> {
   /** Content rendered inside the toggle */
   children?: React.ReactNode;
   /** Additional classes added to the toggle */
