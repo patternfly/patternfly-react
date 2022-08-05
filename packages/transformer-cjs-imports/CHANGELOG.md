@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.69.4 (2022-08-05)
+
+
+### Bug Fixes
+
+* **MenuToggle:** undo type change causing errors ([#7797](https://github.com/patternfly/patternfly-react/issues/7797)) ([1031ecb](https://github.com/patternfly/patternfly-react/commit/1031ecbeb5b4fa7eb28ed9c035454c7b408b8da8))
+
+
+
+
+
 ## 4.69.3 (2022-08-04)
 
 
