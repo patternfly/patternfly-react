@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-code-editor",
-  "version": "4.72.4",
+  "version": "4.72.5",
   "description": "This package provides a PatternFly wrapper for the Monaco code editor\n",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -30,9 +30,9 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@patternfly/react-core": "^4.231.4",
-    "@patternfly/react-icons": "^4.82.4",
-    "@patternfly/react-styles": "^4.81.4",
+    "@patternfly/react-core": "^4.231.5",
+    "@patternfly/react-icons": "^4.82.5",
+    "@patternfly/react-styles": "^4.81.5",
     "react-dropzone": "9.0.0",
     "tslib": "^2.0.0"
   },

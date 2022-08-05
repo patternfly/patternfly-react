@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.76.5 (2022-08-05)
+
+
+### Bug Fixes
+
+* **MenuToggle:** update base type to include div attributes as well ([#7798](https://github.com/patternfly/patternfly-react/issues/7798)) ([330e496](https://github.com/patternfly/patternfly-react/commit/330e496a7f1fb715ab06a6f6d118f1db8705828a))
+
+
+
+
+
 ## 4.76.4 (2022-08-05)
 
 
