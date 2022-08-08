@@ -33,8 +33,8 @@ section: developer-resources
 - **Context selector:**
   - Updated prop type of `toggleText` ([#7651](https://github.com/patternfly/patternfly-react/pull/7651))
 - **Data list:**
- - Removed multiple select support ([#7752](https://github.com/patternfly/patternfly-react/pull/7752))
- - Fixed error when using `isChecked` prop ([#7635](https://github.com/patternfly/patternfly-react/pull/7635))
+  - Removed multiple select support ([#7752](https://github.com/patternfly/patternfly-react/pull/7752))
+  - Fixed error when using `isChecked` prop ([#7635](https://github.com/patternfly/patternfly-react/pull/7635))
 - **Description list:**
   - Added display and card support ([#7713](https://github.com/patternfly/patternfly-react/pull/7713))
 - **Drag and drop:**
@@ -63,17 +63,17 @@ section: developer-resources
 - **Multiple file upload:**
   - Added composable structure and component descriptions ([#7603](https://github.com/patternfly/patternfly-react/pull/7603))
 - **Navigation:**
-  -Fixed so flyout variants work with voice over navigation ([#7772](https://github.com/patternfly/patternfly-react/pull/7772))
+  - Fixed so flyout variants work with voice over navigation ([#7772](https://github.com/patternfly/patternfly-react/pull/7772))
 - **Notification badge:**
-   Converted examples to TypeScript ([#7636](https://github.com/patternfly/patternfly-react/pull/7636))
+  - Converted examples to TypeScript ([#7636](https://github.com/patternfly/patternfly-react/pull/7636))
 - **Notification drawer:**
   - Cleaned up demo imports ([#7724](https://github.com/patternfly/patternfly-react/pull/7724))
 - **Number input:**
   - Fixed so leading zeros are removed from inputs ([#7544](https://github.com/patternfly/patternfly-react/pull/7544))
 - **Page:**
   - Added support for vertical breakpoints, add sticky breadcrumb demo ([#7764](https://github.com/patternfly/patternfly-react/pull/7764))
- - Converted examples to TypeScript ([#7735](https://github.com/patternfly/patternfly-react/pull/7735))
- - Fixed group section example keyboard accessibility ([#7712](https://github.com/patternfly/patternfly-react/pull/7712))
+  - Converted examples to TypeScript ([#7735](https://github.com/patternfly/patternfly-react/pull/7735))
+  - Fixed group section example keyboard accessibility ([#7712](https://github.com/patternfly/patternfly-react/pull/7712))
 - **Pagination:**
   - Fixed per-page selection handling in examples ([#7739](https://github.com/patternfly/patternfly-react/pull/7739))
   - Converted examples to TypeScript ([#7750](https://github.com/patternfly/patternfly-react/pull/7750))
@@ -81,7 +81,7 @@ section: developer-resources
   - Added examples to show alignment modifiers working together ([#7727](https://github.com/patternfly/patternfly-react/pull/7727))
 - **Radio:**
   - Converted examples to TypeScript ([#7708](https://github.com/patternfly/patternfly-react/pull/7708))
-- **Search Input:**
+- **Search input:**
   - Updated to use popper to control the popup in advanced search ([#7621](https://github.com/patternfly/patternfly-react/pull/7621))
 - **Select:**
   - Removed variant check from update logic ([#7741](https://github.com/patternfly/patternfly-react/pull/7741))
@@ -101,14 +101,13 @@ section: developer-resources
 - **Wizard:**
   - Added callback for when a particular step is changed ([#7598](https://github.com/patternfly/patternfly-react/pull/7598))
   - Added support for an optional step in the wizard ([#7569](https://github.com/patternfly/patternfly-react/pull/7569))
- - Updated to keep `currentStep` state aligned with `startAtStep` prop ([#7749](https://github.com/patternfly/patternfly-react/pull/7749))
+  - Updated to keep `currentStep` state aligned with `startAtStep` prop ([#7749](https://github.com/patternfly/patternfly-react/pull/7749))
 
 ### Charts
 - Added interface descriptions ([#7640](https://github.com/patternfly/patternfly-react/pull/7640))
 - Cleaned up a11y violations in documentation ([#7682](https://github.com/patternfly/patternfly-react/pull/7682))
 - Cleaned up examples unused imports ([#7668](https://github.com/patternfly/patternfly-react/pull/7668))
-- Fixed style prop for `ChartLegendTooltip` ([#7666](https://github.com/
-patternfly/patternfly-react/pull/7666))
+- Fixed style prop for `ChartLegendTooltip` ([#7666](https://github.com/patternfly/patternfly-react/pull/7666))
 - Added resize observer examples ([#7587](https://github.com/patternfly/patternfly-react/pull/7587))
 - Added basic scatter example ([#7588](https://github.com/patternfly/patternfly-react/pull/7588))
 - Removed unique id generation for labels and axis ticks ([#7794](https://github.com/patternfly/patternfly-react/pull/7794))
@@ -132,7 +131,7 @@ patternfly/patternfly-react/pull/7666))
   - Fixed various a11y violations in examples ([#7604](https://github.com/patternfly/patternfly-react/pull/7604))
   - Fixed various a11y violations in examples ([#7619](https://github.com/patternfly/patternfly-react/pull/7619))
   - Updated documentation framework ([#7631](https://github.com/patternfly/patternfly-react/pull/7631))
-  - **Demos:**
+- **Demos:**
   - Used new raised card variant in primary details demo, add bulk select ([#7658](https://github.com/patternfly/patternfly-react/pull/7658))
 - **Dependencies:**
   - Updated dependency @patternfly/documentation-framework to v1.1.9 ([#7717](https://github.com/patternfly/patternfly-react/pull/7717))
