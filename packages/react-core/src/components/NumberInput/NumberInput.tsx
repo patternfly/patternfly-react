@@ -1,6 +1,8 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/NumberInput/number-input';
+import formControlStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
+import { ValidatedOptions } from '../../helpers/constants';
 import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import { InputGroup } from '../InputGroup';
@@ -16,6 +18,11 @@ export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
   widthChars?: number;
   /** Indicates the whole number input should be disabled */
   isDisabled?: boolean;
+  /** Value to indicate if the input is modified to show that validation state.
+   * If set to success, input will be modified to indicate valid state.
+   * If set to error,  input will be modified to indicate error state.
+   */
+  validated?: 'success' | 'warning' | 'default' | 'error';
   /** Callback for the minus button */
   onMinus?: (event: React.MouseEvent, name?: string) => void;
   /** Callback for the text input changing */
@@ -66,6 +73,7 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   className,
   widthChars,
   isDisabled = false,
+  validated = 'default' as 'success' | 'warning' | 'default' | 'error',
   onMinus = () => {},
   onChange,
   onBlur,
@@ -99,7 +107,9 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
 
   return (
     <div
-      className={css(styles.numberInput, className)}
+      className={css(styles.numberInput, className, validated !== 'default' && styles.modifiers.status)}
+      // (props['aria-invalid'] ? props['aria-invalid'] : validated === 'error')
+      // || validated !== 'default' && styles.modifiers.status)}
       {...(widthChars && {
         style: {
           '--pf-c-number-input--c-form-control--width-chars': widthChars,
@@ -122,10 +132,15 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
           </span>
         </Button>
         <input
-          className={css(styles.formControl)}
+          className={css(
+            styles.formControl,
+            validated === ValidatedOptions.success && formControlStyles.modifiers.success,
+            validated === ValidatedOptions.warning && formControlStyles.modifiers.warning
+          )}
           type="number"
           value={value}
           name={inputName}
+          {...(validated === ValidatedOptions.error && { 'aria-invalid': true })}
           aria-label={inputAriaLabel}
           {...(isDisabled && { disabled: isDisabled })}
           {...(onChange && { onChange })}
