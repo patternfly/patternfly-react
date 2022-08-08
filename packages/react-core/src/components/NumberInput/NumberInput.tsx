@@ -19,6 +19,7 @@ export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
   /** Indicates the whole number input should be disabled */
   isDisabled?: boolean;
   /** Value to indicate if the input is modified to show that validation state.
+   * If set to warning, input will be modified to indicate warning state.
    * If set to success, input will be modified to indicate valid state.
    * If set to error,  input will be modified to indicate error state.
    */
@@ -108,8 +109,6 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
   return (
     <div
       className={css(styles.numberInput, className, validated !== 'default' && styles.modifiers.status)}
-      // (props['aria-invalid'] ? props['aria-invalid'] : validated === 'error')
-      // || validated !== 'default' && styles.modifiers.status)}
       {...(widthChars && {
         style: {
           '--pf-c-number-input--c-form-control--width-chars': widthChars,
