@@ -551,7 +551,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
           height,
           ...(name &&
             typeof (child as any).name !== undefined && {
-              name: `${name}-${(child as any).type.displayName}-${index}`
+              name: `${name}-${(child as any).type.displayName}`
             }),
           invert,
           isStatic: false,
