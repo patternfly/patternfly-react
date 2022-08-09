@@ -34,6 +34,7 @@
     "@types/d3": "^5.7.2",
     "@types/d3-force": "^1.2.1",
     "@types/dagre": "0.7.42",
+    "@types/react-measure": "^2.0.6",
     "@types/webcola": "3.2.0",
     "d3": "^5.16.0",
     "dagre": "0.8.2",
@@ -42,7 +43,7 @@
     "mobx-react": "^6.2.0",
     "point-in-svg-path": "^1.0.1",
     "popper.js": "^1.16.1",
-    "react-resize-detector": "^7.1.2",
+    "react-measure": "^2.3.0",
     "tslib": "^2.0.0",
     "webcola": "3.4.0"
   },
