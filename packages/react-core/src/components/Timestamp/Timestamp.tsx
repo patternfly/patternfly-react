@@ -3,36 +3,34 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Tooltip, TooltipProps } from '../Tooltip';
 
-export enum DateTimeStyle {
+export enum TimestampFormats {
   full = 'full',
   long = 'long',
   medium = 'medium',
   short = 'short'
 }
 
-export interface TimestampProps extends React.HTMLProps<HTMLDivElement> {
-  /** Custom content rendered inside the timestamp, such as a relative time or a string other than
-   * a locale string. Passing this prop in will override the default content and timeZoneSuffix prop.
+export interface TimestampProps extends React.HTMLProps<HTMLSpanElement> {
+  /** Custom content rendered inside the timestamp, such as a relative time. Passing this prop
+   * in will override the default content and timeZoneSuffix prop.
    */
   children?: React.ReactNode;
   /** Class to add to the outer span. */
   className?: string;
-  /** An object to apply custom formatting to the displayed date and/or time when not passing in
-   * custom content. Passing this prop in will override the dateStyle and timeStyle props.
+  /** Applies custom formatting to the displayed date and/or time when custom content is not
+   * passed in. Passing this prop in will override the dateFormat and timeFormat props.
    */
-  customStyle?: { [key: string]: string };
-  /** A date object that is used to render default date and/or time content. The default
-   * content is rendered using the toLocaleString method.
-   */
+  customFormat?: { [key: string]: string };
+  /** A date object that is used to render default content inside the timestamp. */
   date?: Date;
-  /** Determines the format of the displayed and UTC tooltip date when not passing in custom
-   * content. Examples:
-   * "Full": Tuesday, August 9, 2022;
-   * "Long": August 9, 2022;
-   * "Medium": Aug 9, 2022;
-   * "Short": 8/9/22
+  /** Determines the format of the displayed date in the timestamp and UTC tooltip when custom
+   * content is not passed in. Examples:
+   * "Full" => Tuesday, August 9, 2022;
+   * "Long" => August 9, 2022;
+   * "Medium" => Aug 9, 2022;
+   * "Short" => 8/9/22
    */
-  dateStyle?: 'full' | 'long' | 'medium' | 'short';
+  dateFormat?: 'full' | 'long' | 'medium' | 'short';
   /** An ISO 8601 formatted date string to apply to the inner time element's datetime attribute. */
   datetime: string;
   /** Flag indicating whether the timestamp has a tooltip to display the UTC time.
@@ -40,27 +38,25 @@ export interface TimestampProps extends React.HTMLProps<HTMLDivElement> {
    */
   hasUTCTooltip?: boolean;
   /** Flag for displaying the time in a 12 hour format (true) or a 24 hour format (false),
-   * when not passing in custom content.
+   * when custom content is not passed in.
    *
-   * If this prop is not passed in, the hour format will be based on the locale
-   * that is passed in, or the current locale otherwise.
-   */
+   * If this prop is not passed in, the hour format will be based on the locale prop's value. */
   is12Hour?: boolean;
-  /** Determines which locale to use in the displayed date when not passing in custom content. Undefined defaults
-   * to the current locale.
+  /** Determines which locale to use in the displayed content when custom content is not
+   * passed in. Defaults to the current locale when this prop is not passed in.
    * See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation
    * for more information.
    */
   locale?: string;
-  /** Determines the format of the displayed time when not passing in custom content. Examples:
-   * "Full": 11:25:00 AM Eastern Daylight Time
-   * "Long": 11:25:00 AM EDT
-   * "Medium": 11:25:00 AM
-   * "Short": 11:25 AM
+  /** Determines the format of the displayed time when custom content is not passed in. Examples:
+   * "Full" => 11:25:00 AM Eastern Daylight Time
+   * "Long" => 11:25:00 AM EDT
+   * "Medium" => 11:25:00 AM
+   * "Short" => 11:25 AM
    */
-  timeStyle?: 'full' | 'long' | 'medium' | 'short';
-  /** Applies a custom suffix to the displayed time when not passing in custom content. This prop
-   * should only be passed in when the timeStyle prop has a value of "medium" or "short".
+  timeFormat?: 'full' | 'long' | 'medium' | 'short';
+  /** Applies a custom suffix to the displayed time when custom content is not passed in.
+   * This prop should only be passed in when the timeFormat prop has a value of "medium" or "short".
    */
   timeZoneSuffix?: string;
   /** Creates a tooltip with custom content. Passing this prop in will override the
@@ -76,40 +72,40 @@ export interface TimestampProps extends React.HTMLProps<HTMLDivElement> {
 export const Timestamp: React.FunctionComponent<TimestampProps> = ({
   children,
   className,
-  customStyle,
+  customFormat,
   date: dateProp = new Date(),
-  dateStyle,
+  dateFormat,
   datetime,
   hasUTCTooltip,
   is12Hour,
   locale = undefined,
-  timeStyle,
+  timeFormat,
   timeZoneSuffix = '',
   tooltipContent,
   tooltipProps,
   utcSuffix = 'UTC',
   ...props
 }: TimestampProps) => {
-  const styleOptions = {
-    ...(dateStyle && !customStyle && { dateStyle }),
-    ...(customStyle && { ...customStyle }),
+  const formatOptions = {
+    ...(dateFormat && !customFormat && { dateStyle: dateFormat }),
+    ...(customFormat && { ...customFormat }),
     ...(is12Hour !== undefined && { hour12: is12Hour })
   };
-  const hasTimeStyle = timeStyle && !customStyle;
+  const hasTimeFormat = timeFormat && !customFormat;
 
   const dateAsLocaleString = new Date(dateProp).toLocaleString(locale, {
-    ...styleOptions,
-    ...(hasTimeStyle && { timeStyle })
+    ...formatOptions,
+    ...(hasTimeFormat && { timeStyle: timeFormat })
   });
 
-  const utcTimeStyle = timeStyle !== 'short' ? 'medium' : 'short';
+  const utctimeFormat = timeFormat !== 'short' ? 'medium' : 'short';
   const convertToUTCString = (date: Date) => new Date(date).toUTCString().slice(0, -3);
   const utcDateString = new Date(convertToUTCString(dateProp)).toLocaleString(locale, {
-    ...styleOptions,
-    ...(hasTimeStyle && { timeStyle: utcTimeStyle })
+    ...formatOptions,
+    ...(hasTimeFormat && { timeStyle: utctimeFormat })
   });
 
-  const timestampContent = (
+  const timestamp = (
     <span className={css(className)} {...props}>
       <time dateTime={datetime}>{!children ? `${dateAsLocaleString} ${timeZoneSuffix}` : children}</time>
     </span>
@@ -117,10 +113,10 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
 
   return hasUTCTooltip || tooltipContent ? (
     <Tooltip content={tooltipContent || `${utcDateString} ${utcSuffix}`} {...tooltipProps}>
-      {timestampContent}
+      {timestamp}
     </Tooltip>
   ) : (
-    timestampContent
+    timestamp
   );
 };
 Timestamp.displayName = 'Timestamp';
