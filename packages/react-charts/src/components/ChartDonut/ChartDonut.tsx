@@ -656,7 +656,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     const subTitleProps = textComponent.props ? textComponent.props : {};
 
     return React.cloneElement(textComponent, {
-      ...(id && { id: `${id}-${(textComponent as any).type.displayName}` }),
+      ...(id && { id: `${id}-${(textComponent as any).type.displayName}-subTitle` }),
       key: 'pf-chart-donut-subtitle',
       style: ChartDonutStyles.label.subTitle,
       text: subTitle,
@@ -689,7 +689,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
 
     return React.cloneElement(titleComponent, {
       ...(Array.isArray(titles) && { capHeight }), // Use capHeight with multiple labels
-      ...(id && { id: `${id}-${(titleComponent as any).type.displayName}` }),
+      ...(id && { id: `${id}-${(titleComponent as any).type.displayName}-title` }),
       key: 'pf-chart-donut-title',
       style: styles,
       text: titles,
