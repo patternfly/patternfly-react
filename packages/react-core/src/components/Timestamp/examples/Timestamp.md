@@ -1,16 +1,14 @@
 ---
 id: Timestamp
 section: components
+cssPrefix: pf-c-timestamp
+propComponents: ['Timestamp']
+beta: true
 ---
-Timestamp is used for ...
 
 ## Examples
+
 ### Basic
 
-```js
-import React from 'react';
-import { Timestamp } from '@patternfly/react-core';
-
-<Timestamp />
+```ts file="./TimestampBasic.tsx"
 ```
-
