@@ -268,10 +268,13 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   height?: number;
   /**
-   * This prop specifies an ID that will be applied to child text elements, assisting with
-   * accessibility for screen readers.
+   * This prop specifies an ID prefix that will be applied to child text elements. This is only necessary when
+   * multiple charts appear in a page, ensuring unique IDs for each chart.
+   *
+   * Note: This should not be confused with a container's containerId prop.
+   * See https://formidable.com/open-source/victory/docs/common-container-props#containerid
    */
-  id?: string;
+  idPrefix?: string;
   /**
    * When creating a donut chart, this prop determines the number of pixels between
    * the center of the chart and the inner edge.
@@ -477,7 +480,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   containerComponent = <ChartContainer />,
   data = [],
   hasPatterns,
-  id,
+  idPrefix,
   invert = false,
   labels = [], // Don't show any tooltip labels by default, let consumer override if needed
   padding,
@@ -552,9 +555,9 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
           data: childData,
           endAngle: 360 * (datum[0]._y ? datum[0]._y / 100 : 0),
           height,
-          ...(id &&
+          ...(idPrefix &&
             typeof (child as any).id !== undefined && {
-              id: `${id}-${(child as any).type.displayName}-${index}`
+              idPrefix: `${idPrefix}-${(child as any).type.displayName}-${index}`
             }),
           invert,
           isStatic: false,

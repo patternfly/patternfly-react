@@ -30,7 +30,7 @@ import { ChartDonut } from '@patternfly/react-charts';
     ariaTitle="Donut chart example"
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-    id="chart1"
+    idPrefix="chart1"
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
     subTitle="Pets"
     title="100"
@@ -49,7 +49,7 @@ import { ChartDonut } from '@patternfly/react-charts';
     ariaTitle="Donut chart example"
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-    id="chart2"
+    idPrefix="chart2"
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
@@ -78,7 +78,7 @@ import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
     ariaTitle="Donut chart example"
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-    id="chart3"
+    idPrefix="chart3"
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
@@ -110,7 +110,7 @@ import { ChartDonut } from '@patternfly/react-charts';
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     donutOrientation="top"
     height={275}
-    id="chart4"
+    idPrefix="chart4"
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendPosition="bottom"
@@ -140,7 +140,7 @@ import { ChartDonut } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={150}
-    id="chart5"
+    idPrefix="chart5"
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
     subTitle="Pets"
     title="100"
@@ -161,7 +161,7 @@ import { ChartDonut } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={150}
-    id="chart6"
+    idPrefix="chart6"
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
@@ -191,7 +191,7 @@ import { ChartDonut } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={165}
-    id="chart7"
+    idPrefix="chart7"
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
@@ -222,7 +222,7 @@ import { ChartDonut } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={200}
-    id="chart8"
+    idPrefix="chart8"
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendPosition="bottom"

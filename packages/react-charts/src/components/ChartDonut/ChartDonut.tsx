@@ -265,10 +265,13 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   height?: number;
   /**
-   * This prop specifies an ID that will be applied to child text elements, assisting with
-   * accessibility for screen readers.
+   * This prop specifies an ID prefix that will be applied to child text elements. This is only necessary when
+   * multiple charts appear in a page, ensuring unique IDs for each chart.
+   *
+   * Note: This should not be confused with a container's containerId prop.
+   * See https://formidable.com/open-source/victory/docs/common-container-props#containerid
    */
-  id?: string;
+  idPrefix?: string;
   /**
    * When creating a donut chart, this prop determines the number of pixels between
    * the center of the chart and the inner edge.
@@ -590,7 +593,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   ariaTitle,
   capHeight = 1.1,
   containerComponent = <ChartContainer />,
-  id,
+  idPrefix,
   innerRadius,
   legendAllowWrap,
   legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
@@ -656,7 +659,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     const subTitleProps = textComponent.props ? textComponent.props : {};
 
     return React.cloneElement(textComponent, {
-      ...(id && { id: `${id}-${(textComponent as any).type.displayName}-subTitle` }),
+      ...(idPrefix && { id: `${idPrefix}-${(textComponent as any).type.displayName}-subTitle` }),
       key: 'pf-chart-donut-subtitle',
       style: ChartDonutStyles.label.subTitle,
       text: subTitle,
@@ -689,7 +692,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
 
     return React.cloneElement(titleComponent, {
       ...(Array.isArray(titles) && { capHeight }), // Use capHeight with multiple labels
-      ...(id && { id: `${id}-${(titleComponent as any).type.displayName}-title` }),
+      ...(idPrefix && { id: `${idPrefix}-${(titleComponent as any).type.displayName}-title` }),
       key: 'pf-chart-donut-title',
       style: styles,
       text: titles,
@@ -717,7 +720,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     <ChartPie
       allowTooltip={allowTooltip}
       height={height}
-      id={id}
+      idPrefix={idPrefix}
       innerRadius={chartInnerRadius > 0 ? chartInnerRadius : 0}
       key="pf-chart-donut-pie"
       legendAllowWrap={legendAllowWrap}

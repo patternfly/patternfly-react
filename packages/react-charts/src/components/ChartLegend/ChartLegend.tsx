@@ -156,10 +156,13 @@ export interface ChartLegendProps extends VictoryLegendProps {
    */
   gutter?: number | { left: number; right: number };
   /**
-   * This prop specifies an ID that will be applied to child text elements, assisting with
-   * accessibility for screen readers.
+   * This prop specifies an ID prefix that will be applied to child text elements. This is only necessary when
+   * multiple charts appear in a page, ensuring unique IDs for each chart.
+   *
+   * Note: This should not be confused with a container's containerId prop.
+   * See https://formidable.com/open-source/victory/docs/common-container-props#containerid
    */
-  id?: string;
+  idPrefix?: string;
   /**
    * The itemsPerRow prop determines how many items to render in each row
    * of a horizontal legend, or in each column of a vertical legend. This
@@ -329,7 +332,7 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
   colorScale,
   containerComponent = <ChartContainer />,
   dataComponent = <ChartPoint />,
-  id,
+  idPrefix,
   labelComponent = <ChartLabel />,
   patternScale,
   responsive = true,
@@ -375,7 +378,7 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
 
   const getLabelComponent = () =>
     React.cloneElement(labelComponent, {
-      ...(id && { id: (props: any) => `${id}-${(labelComponent as any).type.displayName}-${props.index}` }),
+      ...(idPrefix && { id: (props: any) => `${idPrefix}-${(labelComponent as any).type.displayName}-${props.index}` }),
       ...labelComponent.props
     });
 

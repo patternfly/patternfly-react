@@ -229,10 +229,13 @@ export interface ChartProps extends VictoryChartProps {
    */
   horizontal?: boolean;
   /**
-   * This prop specifies an ID that will be applied to child text elements, assisting with
-   * accessibility for screen readers.
+   * This prop specifies an ID prefix that will be applied to child text elements. This is only necessary when
+   * multiple charts appear in a page, ensuring unique IDs for each chart.
+   *
+   * Note: This should not be confused with a container's containerId prop.
+   * See https://formidable.com/open-source/victory/docs/common-container-props#containerid
    */
-  id?: string;
+  idPrefix?: string;
   /**
    * When the innerRadius prop is set, polar charts will be hollow rather than circular.
    *
@@ -470,7 +473,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   children,
   colorScale,
   hasPatterns,
-  id,
+  idPrefix,
   legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendData,
@@ -529,7 +532,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
 
   const legend = React.cloneElement(legendComponent, {
     data: legendData,
-    ...(id && { id: `${id}-${(legendComponent as any).type.displayName}` }),
+    ...(idPrefix && { idPrefix: `${idPrefix}-${(legendComponent as any).type.displayName}` }),
     orientation: legendOrientation,
     theme,
     ...legendComponent.props
@@ -589,9 +592,9 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
         return React.cloneElement(child, {
           colorScale,
           ...(defaultPatternScale && { patternScale: defaultPatternScale }),
-          ...(id &&
-            typeof (child as any).id !== undefined && {
-              id: `${id}-${(child as any).type.displayName}-${index}`
+          ...(idPrefix &&
+            typeof (child as any).idPrefix !== undefined && {
+              idPrefix: `${idPrefix}-${(child as any).type.displayName}-${index}`
             }),
           theme,
           ...childProps,

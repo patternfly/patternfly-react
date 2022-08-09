@@ -33,7 +33,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     comparativeWarningMeasureData={[{ name: 'Warning', y: 88 }]}
     constrainToVisibleArea
     height={150}
-    id="chart1"
+    idPrefix="chart1"
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     maxDomain={{y: 100}}
     primarySegmentedMeasureData={[{ name: 'Measure', y: 60 }]}
@@ -56,7 +56,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
     constrainToVisibleArea
     height={200}
-    id="chart2"
+    idPrefix="chart2"
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     maxDomain={{y: 100}}
     padding={{
@@ -119,7 +119,7 @@ class BulletChart extends React.Component {
           comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
           constrainToVisibleArea
           height={250}
-          id="chart3"
+          idPrefix="chart3"
           labels={({ datum }) => `${datum.name}: ${datum.y}`}
           legendAllowWrap
           legendPosition="bottom-left"
@@ -158,7 +158,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
     constrainToVisibleArea
     height={200}
-    id="chart4"
+    idPrefix="chart4"
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     maxDomain={{y: 100}}
     padding={{
@@ -197,7 +197,7 @@ import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
     comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
     constrainToVisibleArea
     height={200}
-    id="chart5"
+    idPrefix="chart5"
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     legendItemsPerRow={3}
     padding={{
@@ -235,7 +235,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     constrainToVisibleArea
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     height={200}
-    id="chart6"
+    idPrefix="chart6"
     maxDomain={{y: 125}}
     minDomain={{y: 50}}
     padding={{
@@ -272,7 +272,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
     constrainToVisibleArea
     height={200}
-    id="chart7"
+    idPrefix="chart7"
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     maxDomain={{y: 75}}
     minDomain={{y: -25}}
@@ -310,7 +310,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     constrainToVisibleArea
     invert
     height={200}
-    id="chart8"
+    idPrefix="chart8"
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     legendPosition="right"
     legendOrientation="vertical"
@@ -349,7 +349,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
     constrainToVisibleArea
     height={200}
-    id="chart9"
+    idPrefix="chart9"
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     legendItemsPerRow={4}
     maxDomain={{y: 75}}
@@ -384,7 +384,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
     constrainToVisibleArea
     height={500}
-    id="chart10"
+    idPrefix="chart10"
     horizontal={false}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     maxDomain={{y: 100}}
@@ -418,7 +418,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
     constrainToVisibleArea
     height={500}
-    id="chart11"
+    idPrefix="chart11"
     horizontal={false}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     maxDomain={{y: 125}}
@@ -472,7 +472,7 @@ import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
     comparativeWarningMeasureData={[{ name: 'Warning', y: 88 }]}
     constrainToVisibleArea
     height={150}
-    id="chart12"
+    idPrefix="chart12"
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     maxDomain={{y: 100}}
     primarySegmentedMeasureData={[{ name: 'Measure', y: 60 }]}
@@ -495,7 +495,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     comparativeWarningMeasureData={[{ name: 'Warning', y: 88 }]}
     comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
     height={200}
-    id="chart13"
+    idPrefix="chart13"
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     maxDomain={{y: 100}}
     padding={{
@@ -530,7 +530,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       comparativeWarningMeasureData={[{name: 'Warning', y: 78}]}
       constrainToVisibleArea
       height={500}
-      id="chart14"
+      idPrefix="chart14"
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
       padding={{
@@ -550,7 +550,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
       constrainToVisibleArea
       height={500}
-      id="chart15"
+      idPrefix="chart15"
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
       padding={{
@@ -570,7 +570,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       comparativeWarningMeasureData={[{name: 'Warning', y: 98}]}
       constrainToVisibleArea
       height={500}
-      id="chart16"
+      idPrefix="chart16"
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
       padding={{
@@ -591,7 +591,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
       constrainToVisibleArea
       height={500}
-      id="chart17"
+      idPrefix="chart17"
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
       padding={{
@@ -629,7 +629,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
       constrainToVisibleArea
       height={600}
-      id="chart18"
+      idPrefix="chart18"
       horizontal={false}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
@@ -652,7 +652,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
       constrainToVisibleArea
       height={600}
-      id="chart19"
+      idPrefix="chart19"
       horizontal={false}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
@@ -674,7 +674,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       constrainToVisibleArea
       height={600}
       horizontal={false}
-      id="chart20"
+      idPrefix="chart20"
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
       padding={{
@@ -695,7 +695,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       constrainToVisibleArea
       height={600}
       horizontal={false}
-      id="chart21"
+      idPrefix="chart21"
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
       padding={{
@@ -732,7 +732,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       groupSubTitle="Measure details"
       groupTitle="Text label"
       height={575}
-      id="chart22"
+      idPrefix="chart22"
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
       padding={{
@@ -752,7 +752,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
       constrainToVisibleArea
       height={600}
-      id="chart23"
+      idPrefix="chart23"
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
       padding={{
@@ -772,7 +772,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       comparativeWarningMeasureData={[{name: 'Warning', y: 98}]}
       constrainToVisibleArea
       height={600}
-      id="chart24"
+      idPrefix="chart24"
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
       padding={{
@@ -793,7 +793,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
       constrainToVisibleArea
       height={600}
-      id="chart25"
+      idPrefix="chart25"
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
       padding={{
@@ -834,7 +834,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       groupTitle="Text label"
       height={600}
       horizontal={false}
-      id="chart26"
+      idPrefix="chart26"
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
       padding={{
@@ -857,7 +857,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       constrainToVisibleArea
       height={600}
       horizontal={false}
-      id="chart27"
+      idPrefix="chart27"
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
       padding={{
@@ -878,7 +878,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       constrainToVisibleArea
       height={600}
       horizontal={false}
-      id="chart28"
+      idPrefix="chart28"
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
       padding={{
@@ -899,7 +899,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       constrainToVisibleArea
       height={600}
       horizontal={false}
-      id="chart29"
+      idPrefix="chart29"
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
       padding={{

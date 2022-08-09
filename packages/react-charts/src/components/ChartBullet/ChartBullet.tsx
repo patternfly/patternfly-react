@@ -193,10 +193,13 @@ export interface ChartBulletProps {
    */
   horizontal?: boolean;
   /**
-   * This prop specifies an ID that will be applied to child text elements, assisting with
-   * accessibility for screen readers.
+   * This prop specifies an ID prefix that will be applied to child text elements. This is only necessary when
+   * multiple charts appear in a page, ensuring unique IDs for each chart.
+   *
+   * Note: This should not be confused with a container's containerId prop.
+   * See https://formidable.com/open-source/victory/docs/common-container-props#containerid
    */
-  id?: string;
+  idPrefix?: string;
   /**
    * Invert the color scales used to represent primary measures and qualitative ranges.
    */
@@ -499,7 +502,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   groupSubTitle,
   groupTitle,
   horizontal = true,
-  id,
+  idPrefix,
   invert = false,
   labels,
   legendAllowWrap = false,
@@ -661,7 +664,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       ...(comparativeErrorMeasureLegendData ? comparativeErrorMeasureLegendData : []),
       ...(qualitativeRangeLegendData ? qualitativeRangeLegendData : [])
     ],
-    ...(id && { id: `${id}-${(legendComponent as any).type.displayName}` }),
+    ...(idPrefix && { idPrefix: `${idPrefix}-${(legendComponent as any).type.displayName}` }),
     itemsPerRow: legendItemsPerRow,
     orientation: legendOrientation,
     position: legendPosition,
@@ -822,7 +825,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
           y: (domain as any).x
         },
     height: chartSize.height,
-    ...(id && { id: `${id}-${(axisComponent as any).type.displayName}` }),
+    ...(idPrefix && { idPrefix: `${idPrefix}-${(axisComponent as any).type.displayName}` }),
     // Adjust for padding
     offsetX: !horizontal ? defaultPadding.left * 0.5 + (defaultPadding.right * 0.5 - (defaultPadding.right - 55)) : 0,
     offsetY: horizontal ? 80 - defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - 25) : 0,
