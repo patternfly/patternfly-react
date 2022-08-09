@@ -268,6 +268,11 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   height?: number;
   /**
+   * This prop specifies an ID that will be applied to child text elements, assisting with
+   * accessibility for screen readers.
+   */
+  id?: string;
+  /**
    * When creating a donut chart, this prop determines the number of pixels between
    * the center of the chart and the inner edge.
    *
@@ -472,6 +477,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   containerComponent = <ChartContainer />,
   data = [],
   hasPatterns,
+  id,
   invert = false,
   labels = [], // Don't show any tooltip labels by default, let consumer override if needed
   padding,
@@ -546,6 +552,10 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
           data: childData,
           endAngle: 360 * (datum[0]._y ? datum[0]._y / 100 : 0),
           height,
+          ...(id &&
+            typeof (child as any).id !== undefined && {
+              id: `${id}-${(child as any).type.displayName}-${index}`
+            }),
           invert,
           isStatic: false,
           key: `pf-chart-donut-threshold-child-${index}`,

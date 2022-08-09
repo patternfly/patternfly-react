@@ -193,6 +193,11 @@ export interface ChartBulletProps {
    */
   horizontal?: boolean;
   /**
+   * This prop specifies an ID that will be applied to child text elements, assisting with
+   * accessibility for screen readers.
+   */
+  id?: string;
+  /**
    * Invert the color scales used to represent primary measures and qualitative ranges.
    */
   invert?: boolean;
@@ -494,6 +499,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   groupSubTitle,
   groupTitle,
   horizontal = true,
+  id,
   invert = false,
   labels,
   legendAllowWrap = false,
@@ -655,6 +661,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       ...(comparativeErrorMeasureLegendData ? comparativeErrorMeasureLegendData : []),
       ...(qualitativeRangeLegendData ? qualitativeRangeLegendData : [])
     ],
+    ...(id && { id: `${id}-${(legendComponent as any).type.displayName}` }),
     itemsPerRow: legendItemsPerRow,
     orientation: legendOrientation,
     position: legendPosition,
@@ -815,6 +822,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
           y: (domain as any).x
         },
     height: chartSize.height,
+    ...(id && { id: `${id}-${(axisComponent as any).type.displayName}` }),
     // Adjust for padding
     offsetX: !horizontal ? defaultPadding.left * 0.5 + (defaultPadding.right * 0.5 - (defaultPadding.right - 55)) : 0,
     offsetY: horizontal ? 80 - defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - 25) : 0,

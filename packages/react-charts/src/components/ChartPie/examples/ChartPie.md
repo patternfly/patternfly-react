@@ -29,6 +29,7 @@ import { ChartPie } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={230}
+    id="chart1"
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
@@ -56,6 +57,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={230}
+    id="chart2"
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
@@ -84,6 +86,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={275}
+    id="chart3"
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendPosition="bottom"

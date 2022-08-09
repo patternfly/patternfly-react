@@ -187,6 +187,11 @@ export interface ChartAxisProps extends VictoryAxisProps {
    */
   height?: number;
   /**
+   * This prop specifies an ID that will be applied to child text elements, assisting with
+   * accessibility for screen readers.
+   */
+  id?: string;
+  /**
    * If true, this value will flip the domain of a given axis.
    */
   invertAxis?: boolean;
@@ -447,6 +452,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
 
 export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   containerComponent = <ChartContainer />,
+  id,
   showGrid = false,
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -464,6 +470,7 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
 
   const getTickLabelComponent = () =>
     React.cloneElement(tickLabelComponent, {
+      ...(id && { id: (props: any) => `${id}-${(tickLabelComponent as any).type.displayName}-${props.index}` }),
       ...tickLabelComponent.props
     });
 

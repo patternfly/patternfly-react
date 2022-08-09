@@ -248,6 +248,11 @@ export interface ChartPieProps extends VictoryPieProps {
    */
   height?: number;
   /**
+   * This prop specifies an ID that will be applied to child text elements, assisting with
+   * accessibility for screen readers.
+   */
+  id?: string;
+  /**
    * When creating a donut chart, this prop determines the number of pixels between
    * the center of the chart and the inner edge. When this prop is set to zero
    * a regular pie chart is rendered.
@@ -505,6 +510,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   constrainToVisibleArea = false,
   containerComponent = <ChartContainer />,
   hasPatterns,
+  id,
   legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendData,
@@ -592,6 +598,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   const legend = React.cloneElement(legendComponent, {
     colorScale,
     data: legendData,
+    ...(id && { id: `${id}-${(legendComponent as any).type.displayName}` }),
     key: 'pf-chart-pie-legend',
     orientation: legendOrientation,
     theme,

@@ -156,6 +156,11 @@ export interface ChartLegendProps extends VictoryLegendProps {
    */
   gutter?: number | { left: number; right: number };
   /**
+   * This prop specifies an ID that will be applied to child text elements, assisting with
+   * accessibility for screen readers.
+   */
+  id?: string;
+  /**
    * The itemsPerRow prop determines how many items to render in each row
    * of a horizontal legend, or in each column of a vertical legend. This
    * prop should be given as an integer. When this prop is not given,
@@ -324,6 +329,7 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
   colorScale,
   containerComponent = <ChartContainer />,
   dataComponent = <ChartPoint />,
+  id,
   labelComponent = <ChartLabel />,
   patternScale,
   responsive = true,
@@ -369,6 +375,7 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
 
   const getLabelComponent = () =>
     React.cloneElement(labelComponent, {
+      ...(id && { id: (props: any) => `${id}-${(labelComponent as any).type.displayName}-${props.index}` }),
       ...labelComponent.props
     });
 

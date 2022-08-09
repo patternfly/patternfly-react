@@ -229,6 +229,11 @@ export interface ChartProps extends VictoryChartProps {
    */
   horizontal?: boolean;
   /**
+   * This prop specifies an ID that will be applied to child text elements, assisting with
+   * accessibility for screen readers.
+   */
+  id?: string;
+  /**
    * When the innerRadius prop is set, polar charts will be hollow rather than circular.
    *
    * @propType number | Function
@@ -465,6 +470,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   children,
   colorScale,
   hasPatterns,
+  id,
   legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendData,
@@ -523,6 +529,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
 
   const legend = React.cloneElement(legendComponent, {
     data: legendData,
+    ...(id && { id: `${id}-${(legendComponent as any).type.displayName}` }),
     orientation: legendOrientation,
     theme,
     ...legendComponent.props
@@ -576,13 +583,17 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
 
   // Render children
   const renderChildren = () =>
-    React.Children.toArray(children).map(child => {
+    React.Children.toArray(children).map((child, index) => {
       if (React.isValidElement(child)) {
         const { ...childProps } = child.props;
         return React.cloneElement(child, {
           colorScale,
-          theme,
           ...(defaultPatternScale && { patternScale: defaultPatternScale }),
+          ...(id &&
+            typeof (child as any).id !== undefined && {
+              id: `${id}-${(child as any).type.displayName}-${index}`
+            }),
+          theme,
           ...childProps,
           ...((child as any).type.displayName === 'ChartPie' && {
             data: getDefaultData(childProps.data, defaultPatternScale)
