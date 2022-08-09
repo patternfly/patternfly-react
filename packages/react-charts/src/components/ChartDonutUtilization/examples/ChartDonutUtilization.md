@@ -31,8 +31,8 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
     ariaTitle="Donut utilization chart example"
     constrainToVisibleArea
     data={{ x: 'GBps capacity', y: 75 }}
-    idPrefix="chart1"
     labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+    name="chart1"
     subTitle="of 100 GBps"
     title="75%"
   />
@@ -77,10 +77,10 @@ class DonutUtilizationChart extends React.Component {
           ariaTitle="Donut utilization chart example"
           constrainToVisibleArea
           data={{ x: 'GBps capacity', y: used }}
-          idPrefix="chart2"
           labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
           legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
           legendOrientation="vertical"
+          name="chart2"
           padding={{
             bottom: 20,
             left: 20,
@@ -136,11 +136,11 @@ class InvertedDonutUtilizationChart extends React.Component {
           ariaTitle="Donut utilization chart example"
           constrainToVisibleArea
           data={{ x: 'GBps capacity', y: used }}
-          idPrefix="chart3"
           invert
           labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
           legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
           legendOrientation="vertical"
+          name="chart3"
           padding={{
             bottom: 20,
             left: 20,
@@ -197,11 +197,11 @@ class VerticalLegendUtilizationChart extends React.Component {
           constrainToVisibleArea
           data={{ x: 'Storage capacity', y: used }}
           height={300}
-          idPrefix="chart4"
           labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
           legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
           legendOrientation="vertical"
           legendPosition="bottom"
+          name="chart4"
           padding={{
             bottom: 75, // Adjusted to accommodate legend
             left: 20,
@@ -232,10 +232,10 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={{ x: 'Storage capacity', y: 45 }}
     height={275}
-    idPrefix="chart5"
     labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
     legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
     legendPosition="bottom"
+    name="chart5"
     padding={{
       bottom: 65, // Adjusted to accommodate legend
       left: 20,
@@ -262,8 +262,8 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={{ x: 'Storage capacity', y: 75 }}
     height={175}
-    idPrefix="chart6"
     labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+    name="chart6"
     subTitle="of 100 GBps"
     title="75%"
     width={175}
@@ -310,10 +310,10 @@ class UtilizationChart extends React.Component {
           constrainToVisibleArea
           data={{ x: 'Storage capacity', y: used }}
           height={175}
-          idPrefix="chart7"
           labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
           legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
           legendOrientation="vertical"
+          name="chart7"
           padding={{
             bottom: 20,
             left: 20,
@@ -346,10 +346,10 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={{ x: 'Storage capacity', y: 45 }}
     height={185}
-    idPrefix="chart8"
     labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
     legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
     legendOrientation="vertical"
+    name="chart8"
     padding={{
       bottom: 25, // Adjusted to accommodate subTitle
       left: 20,
@@ -377,10 +377,10 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={{ x: 'Storage capacity', y: 45 }}
     height={200}
-    idPrefix="chart9"
     labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
     legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
     legendPosition="bottom"
+    name="chart9"
     padding={{
       bottom: 45, // Adjusted to accommodate legend
       left: 20,
@@ -408,8 +408,8 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
     ariaTitle="Donut utilization chart with static threshold example"
     constrainToVisibleArea
     data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
-    idPrefix="chart10"
     labels={({ datum }) => datum.x ? datum.x : null}
+    name="chart10"
   >
     <ChartDonutUtilization
       data={{ x: 'Storage capacity', y: 45 }}
@@ -454,8 +454,8 @@ class ThresholdChart extends React.Component {
           ariaTitle="Donut utilization chart with static threshold example"
           constrainToVisibleArea
           data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
-          idPrefix="chart11"
           labels={({ datum }) => datum.x ? datum.x : null}
+          name="chart11"
           padding={{
             bottom: 20,
             left: 20,
@@ -518,9 +518,9 @@ class InvertedThresholdChart extends React.Component {
           ariaTitle="Donut utilization chart with static threshold example"
           constrainToVisibleArea
           data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 20%', y: 20 }]}
-          idPrefix="chart12"
           invert
           labels={({ datum }) => datum.x ? datum.x : null}
+          name="chart12"
           padding={{
             bottom: 20,
             left: 20,
@@ -579,8 +579,8 @@ class CustomLegendThresholdChart extends React.Component {
           constrainToVisibleArea
           data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
           height={350}
-          idPrefix="chart13"
           labels={({ datum }) => datum.x ? datum.x : null}
+          name="chart13"
           padding={{
             bottom: 125, // Adjusted to accommodate legend
             left: 20,
@@ -619,8 +619,8 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
     constrainToVisibleArea
     data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
     height={275}
-    idPrefix="chart14"
     labels={({ datum }) => datum.x ? datum.x : null}
+    name="chart14"
     padding={{
       bottom: 65, // Adjusted to accommodate legend
       left: 20,
@@ -653,8 +653,8 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
     constrainToVisibleArea
     data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
     height={185}
-    idPrefix="chart15"
     labels={({ datum }) => datum.x ? datum.x : null}
+    name="chart15"
     width={185}
   >
     <ChartDonutUtilization
@@ -701,8 +701,8 @@ class ThresholdChart extends React.Component {
           constrainToVisibleArea
           data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
           height={185}
-          idPrefix="chart16"
           labels={({ datum }) => datum.x ? datum.x : null}
+          name="chart16"
           padding={{
             bottom: 20,
             left: 20,
@@ -742,8 +742,8 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
     constrainToVisibleArea
     data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
     height={200}
-    idPrefix="chart17"
     labels={({ datum }) => datum.x ? datum.x : null}
+    name="chart17"
     padding={{
       bottom: 30, // Adjusted to accommodate label
       left: 20,
@@ -778,8 +778,8 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
     constrainToVisibleArea
     data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
     height={225}
-    idPrefix="chart18"
     labels={({ datum }) => datum.x ? datum.x : null}
+    name="chart18"
     padding={{
       bottom: 60, // Adjusted to accommodate legend
       left: 20,

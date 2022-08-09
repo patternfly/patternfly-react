@@ -193,14 +193,6 @@ export interface ChartBulletProps {
    */
   horizontal?: boolean;
   /**
-   * This prop specifies an ID prefix that will be applied to child text elements. This is only necessary when
-   * multiple charts appear in a page, ensuring unique IDs for each chart.
-   *
-   * Note: This should not be confused with a container's containerId prop.
-   * See https://formidable.com/open-source/victory/docs/common-container-props#containerid
-   */
-  idPrefix?: string;
-  /**
    * Invert the color scales used to represent primary measures and qualitative ranges.
    */
   invert?: boolean;
@@ -283,6 +275,12 @@ export interface ChartBulletProps {
    * Note: The x domain is expected to be `x: 0` in order to position all measures properly
    */
   minDomain?: number | { x?: number; y?: number };
+  /**
+   * The name prop is typically used to reference a component instance when defining shared events. However, this
+   * optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory
+   * based components output unique IDs when multiple charts appear in a page.
+   */
+  name?: string;
   /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
@@ -502,7 +500,6 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   groupSubTitle,
   groupTitle,
   horizontal = true,
-  idPrefix,
   invert = false,
   labels,
   legendAllowWrap = false,
@@ -511,6 +508,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   legendPosition = 'bottom' as ChartLegendPosition,
   maxDomain,
   minDomain,
+  name,
   padding,
   primaryDotMeasureComponent = <ChartBulletPrimaryDotMeasure />,
   primaryDotMeasureData,
@@ -664,7 +662,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       ...(comparativeErrorMeasureLegendData ? comparativeErrorMeasureLegendData : []),
       ...(qualitativeRangeLegendData ? qualitativeRangeLegendData : [])
     ],
-    ...(idPrefix && { idPrefix: `${idPrefix}-${(legendComponent as any).type.displayName}` }),
+    ...(name && { name: `${name}-${(legendComponent as any).type.displayName}` }),
     itemsPerRow: legendItemsPerRow,
     orientation: legendOrientation,
     position: legendPosition,
@@ -825,7 +823,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
           y: (domain as any).x
         },
     height: chartSize.height,
-    ...(idPrefix && { idPrefix: `${idPrefix}-${(axisComponent as any).type.displayName}` }),
+    ...(name && { name: `${name}-${(axisComponent as any).type.displayName}` }),
     // Adjust for padding
     offsetX: !horizontal ? defaultPadding.left * 0.5 + (defaultPadding.right * 0.5 - (defaultPadding.right - 55)) : 0,
     offsetY: horizontal ? 80 - defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - 25) : 0,

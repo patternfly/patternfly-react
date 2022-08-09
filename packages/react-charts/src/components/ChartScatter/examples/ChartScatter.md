@@ -47,9 +47,9 @@ import { Chart, ChartAxis, ChartGroup, ChartScatter, ChartVoronoiContainer } fro
       />
     }
     height={275}
-    idPrefix="chart1"
     maxDomain={{y: 8}}
     minDomain={{y: 0}}
+    name="chart1"
     width={450}
   >
     <ChartAxis />
@@ -130,7 +130,7 @@ class ScatterLineChart extends React.Component {
         { name: 'Mice', x: '2017', y: 8 },
         { name: 'Mice', x: '2018', y: 7 }
       ],
-      legendItem: { name: 'Birds' }
+      legendItem: { name: 'Mice' }
     }];
   }
 
@@ -161,9 +161,9 @@ class ScatterLineChart extends React.Component {
             legendData={this.series.map(s => s.legendItem)}
             legendPosition="bottom-left"
             height={275}
-            idPrefix="chart2"
             maxDomain={{y: 10}}
             minDomain={{y: 0}}
+            name="chart2"
             padding={{
               bottom: 75, // Adjusted to accommodate legend
               left: 50,
@@ -285,9 +285,9 @@ class ScatterAreaChart extends React.Component {
               />
             }
             height={225}
-            idPrefix="chart3"
             legendData={this.series.map(s => s.legendItem)}
             legendPosition="bottom-left"
+            name="chart3"
             padding={{
               bottom: 75, // Adjusted to accommodate legend
               left: 50,

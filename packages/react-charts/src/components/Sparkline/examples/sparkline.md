@@ -36,8 +36,8 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContaine
       ariaTitle="Sparkline chart example"
       containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
       height={100}
-      idPrefix="chart1"
       maxDomain={{y: 9}}
+      name="chart1"
       padding={0}
       width={400}
     >
@@ -72,8 +72,8 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, Cha
       ariaTitle="Sparkline chart example"
       containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} />}
       height={100}
-      idPrefix="chart2"
       maxDomain={{y: 9}}
+      name="chart2"
       padding={0}
       themeColor={ChartThemeColor.green}
       width={400}

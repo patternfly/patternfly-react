@@ -248,14 +248,6 @@ export interface ChartPieProps extends VictoryPieProps {
    */
   height?: number;
   /**
-   * This prop specifies an ID prefix that will be applied to child text elements. This is only necessary when
-   * multiple charts appear in a page, ensuring unique IDs for each chart.
-   *
-   * Note: This should not be confused with a container's containerId prop.
-   * See https://formidable.com/open-source/victory/docs/common-container-props#containerid
-   */
-  idPrefix?: string;
-  /**
    * When creating a donut chart, this prop determines the number of pixels between
    * the center of the chart and the inner edge. When this prop is set to zero
    * a regular pie chart is rendered.
@@ -346,7 +338,9 @@ export interface ChartPieProps extends VictoryPieProps {
    */
   legendPosition?: 'bottom' | 'right';
   /**
-   * The name prop is used to reference a component instance when defining shared events.
+   * The name prop is typically used to reference a component instance when defining shared events. However, this
+   * optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory
+   * based components output unique IDs when multiple charts appear in a page.
    */
   name?: string;
   /**
@@ -513,11 +507,11 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   constrainToVisibleArea = false,
   containerComponent = <ChartContainer />,
   hasPatterns,
-  idPrefix,
   legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
+  name,
   patternScale,
   patternUnshiftIndex,
 
@@ -601,7 +595,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   const legend = React.cloneElement(legendComponent, {
     colorScale,
     data: legendData,
-    ...(idPrefix && { idPrefix: `${idPrefix}-${(legendComponent as any).type.displayName}` }),
+    ...(name && { name: `${name}-${(legendComponent as any).type.displayName}` }),
     key: 'pf-chart-pie-legend',
     orientation: legendOrientation,
     theme,

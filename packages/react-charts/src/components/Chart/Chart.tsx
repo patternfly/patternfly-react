@@ -229,14 +229,6 @@ export interface ChartProps extends VictoryChartProps {
    */
   horizontal?: boolean;
   /**
-   * This prop specifies an ID prefix that will be applied to child text elements. This is only necessary when
-   * multiple charts appear in a page, ensuring unique IDs for each chart.
-   *
-   * Note: This should not be confused with a container's containerId prop.
-   * See https://formidable.com/open-source/victory/docs/common-container-props#containerid
-   */
-  idPrefix?: string;
-  /**
    * When the innerRadius prop is set, polar charts will be hollow rather than circular.
    *
    * @propType number | Function
@@ -317,6 +309,12 @@ export interface ChartProps extends VictoryChartProps {
    * minDomain={{ y: 0 }}
    */
   minDomain?: number | { x?: number; y?: number };
+  /**
+   * The name prop is typically used to reference a component instance when defining shared events. However, this
+   * optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory
+   * based components output unique IDs when multiple charts appear in a page.
+   */
+  name?: string;
   /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
@@ -473,11 +471,11 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   children,
   colorScale,
   hasPatterns,
-  idPrefix,
   legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
+  name,
   padding,
   patternScale,
   showAxis = true,
@@ -532,7 +530,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
 
   const legend = React.cloneElement(legendComponent, {
     data: legendData,
-    ...(idPrefix && { idPrefix: `${idPrefix}-${(legendComponent as any).type.displayName}` }),
+    ...(name && { name: `${name}-${(legendComponent as any).type.displayName}` }),
     orientation: legendOrientation,
     theme,
     ...legendComponent.props
@@ -592,9 +590,9 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
         return React.cloneElement(child, {
           colorScale,
           ...(defaultPatternScale && { patternScale: defaultPatternScale }),
-          ...(idPrefix &&
-            typeof (child as any).idPrefix !== undefined && {
-              idPrefix: `${idPrefix}-${(child as any).type.displayName}-${index}`
+          ...(name &&
+            typeof (child as any).name !== undefined && {
+              name: `${name}-${(child as any).type.displayName}-${index}`
             }),
           theme,
           ...childProps,

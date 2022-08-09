@@ -29,11 +29,11 @@ import { ChartPie } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={230}
-    idPrefix="chart1"
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
+    name="chart1"
     padding={{
       bottom: 20,
       left: 20,
@@ -57,11 +57,11 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={230}
-    idPrefix="chart2"
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
+    name="chart2"
     padding={{
       bottom: 20,
       left: 20,
@@ -86,10 +86,10 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={275}
-    idPrefix="chart3"
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendPosition="bottom"
+    name="chart3"
     padding={{
       bottom: 65,
       left: 20,

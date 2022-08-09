@@ -187,14 +187,6 @@ export interface ChartAxisProps extends VictoryAxisProps {
    */
   height?: number;
   /**
-   * This prop specifies an ID prefix that will be applied to child text elements. This is only necessary when
-   * multiple charts appear in a page, ensuring unique IDs for each chart.
-   *
-   * Note: This should not be confused with a container's containerId prop.
-   * See https://formidable.com/open-source/victory/docs/common-container-props#containerid
-   */
-  idPrefix?: string;
-  /**
    * If true, this value will flip the domain of a given axis.
    */
   invertAxis?: boolean;
@@ -240,7 +232,9 @@ export interface ChartAxisProps extends VictoryAxisProps {
    */
   minDomain?: number | { x?: number; y?: number };
   /**
-   * ChartAxis uses the standard name prop
+   * The name prop is typically used to reference a component instance when defining shared events. However, this
+   * optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory
+   * based components output unique IDs when multiple charts appear in a page.
    */
   name?: string;
   /**
@@ -455,7 +449,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
 
 export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   containerComponent = <ChartContainer />,
-  idPrefix,
+  name,
   showGrid = false,
   themeColor,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -473,8 +467,8 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
 
   const getTickLabelComponent = () =>
     React.cloneElement(tickLabelComponent, {
-      ...(idPrefix && {
-        id: (props: any) => `${idPrefix}-${(tickLabelComponent as any).type.displayName}-${props.index}`
+      ...(name && {
+        id: (props: any) => `${name}-${(tickLabelComponent as any).type.displayName}-${props.index}`
       }),
       ...tickLabelComponent.props
     });

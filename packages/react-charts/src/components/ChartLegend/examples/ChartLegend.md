@@ -62,11 +62,11 @@ import { ChartDonut } from '@patternfly/react-charts';
     ariaTitle="Donut chart example"
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-    idPrefix="chart1"
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
+    name="chart1"
     padding={{
       bottom: 20,
       left: 20,
@@ -94,7 +94,7 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiCo
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
     legendPosition="bottom"
     height={275}
-    idPrefix="chart2"
+    name="chart2"
     padding={{
       bottom: 75, // Adjusted to accommodate legend
       left: 50,
@@ -160,11 +160,11 @@ class BulletChart extends React.Component {
             comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
             constrainToVisibleArea
             height={250}
-            idPrefix="chart3"
             labels={({ datum }) => `${datum.name}: ${datum.y}`}
             legendAllowWrap
             legendPosition="bottom-left"
             maxDomain={{y: 100}}
+            name="chart3"
             padding={{
               bottom: 50,
               left: 50,
@@ -201,9 +201,9 @@ import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, 
     ariaTitle="Line chart example"
     containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
     height={275}
-    idPrefix="chart4"
     maxDomain={{y: 10}}
     minDomain={{y: 0}}
+    name="chart4"
     padding={{
       bottom: 75, // Adjusted to accommodate legend
       left: 50,
@@ -336,7 +336,7 @@ class InteractiveLegendChart extends React.Component {
     this.getEvents = () => getInteractiveLegendEvents({
       chartNames: this.getChartNames(),
       isHidden: this.isHidden,
-      legendName: 'legend',
+      legendName: 'chart5-ChartLegend',
       onLegendClick: this.handleLegendClick
     });
 
@@ -427,9 +427,9 @@ class InteractiveLegendChart extends React.Component {
             containerComponent={container}
             events={this.getEvents()}
             height={225}
-            idPrefix="chart5"
-            legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} />}
+            legendComponent={<ChartLegend name={'chart5-ChartLegend'} data={this.getLegendData()} />}
             legendPosition="bottom-left"
+            name="chart5"
             padding={{
               bottom: 75, // Adjusted to accommodate legend
               left: 50,
@@ -521,7 +521,7 @@ class InteractivePieLegendChart extends React.Component {
     this.getEvents = () => getInteractiveLegendEvents({
       chartNames: this.getChartNames(),
       isHidden: this.isHidden,
-      legendName: 'legend',
+      legendName: 'chart6-ChartLegend',
       onLegendClick: this.handleLegendClick
     });
 
@@ -566,9 +566,9 @@ class InteractivePieLegendChart extends React.Component {
           ariaTitle="Pie chart example"
           events={this.getEvents()}
           height={275}
-          idPrefix="chart6"
-          legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} />}
+          legendComponent={<ChartLegend name={'chart6-ChartLegend'} data={this.getLegendData()} />}
           legendPosition="bottom"
+          name="chart6"
           padding={{
             bottom: 65,
             left: 20,
@@ -630,7 +630,6 @@ class TooltipPieChart extends React.Component {
           constrainToVisibleArea
           data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
           height={275}
-          idPrefix="chart7"
           labels={({ datum }) => `${datum.x}: ${datum.y}`}
           legendComponent={this.getLegend([
             { name: 'Cats: 35' }, 
@@ -638,6 +637,7 @@ class TooltipPieChart extends React.Component {
             { name: 'Birds: 10' }
           ])}
           legendPosition="bottom"
+          name="chart7"
           padding={{
             bottom: 65,
             left: 20,
@@ -697,9 +697,9 @@ class LegendLinkPieChart extends React.Component {
           legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
           legendPosition="bottom"
           height={275}
-          idPrefix="chart8"
           maxDomain={{y: 10}}
           minDomain={{y: 0}}
+          name="chart8"
           padding={{
             bottom: 75, // Adjusted to accommodate legend
             left: 50,
@@ -792,14 +792,13 @@ class LegendLayoutPieChart extends React.Component {
 
   render() {
     return (
-      <div style={{ height: '230px', width: '350px' }}>
+      <div style={{ height: '230px', width: '375px' }}>
         <ChartDonut
           ariaDesc="Average number of pets"
           ariaTitle="Pie chart example"
           constrainToVisibleArea
           data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
           height={230}
-          idPrefix="chart9"
           labels={({ datum }) => `${datum.x}: ${datum.y}`}
           legendComponent={this.getLegend([
             { name: 'Cats' }, 
@@ -808,6 +807,7 @@ class LegendLayoutPieChart extends React.Component {
           ], [ 35, 55, 10 ])}
           legendOrientation="vertical"
           legendPosition="right"
+          name="chart9"
           padding={{
             bottom: 20,
             left: 20,
@@ -817,7 +817,7 @@ class LegendLayoutPieChart extends React.Component {
           subTitle="Pets"
           title="100"
           themeColor={ChartThemeColor.multiOrdered}
-          width={350}
+          width={375}
         />
       </div>
     );

@@ -268,14 +268,6 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   height?: number;
   /**
-   * This prop specifies an ID prefix that will be applied to child text elements. This is only necessary when
-   * multiple charts appear in a page, ensuring unique IDs for each chart.
-   *
-   * Note: This should not be confused with a container's containerId prop.
-   * See https://formidable.com/open-source/victory/docs/common-container-props#containerid
-   */
-  idPrefix?: string;
-  /**
    * When creating a donut chart, this prop determines the number of pixels between
    * the center of the chart and the inner edge.
    *
@@ -304,7 +296,9 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   labels?: string[] | number[] | ((data: any) => string | number | null);
   /**
-   * The name prop is used to reference a component instance when defining shared events.
+   * The name prop is typically used to reference a component instance when defining shared events. However, this
+   * optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory
+   * based components output unique IDs when multiple charts appear in a page.
    */
   name?: string;
   /**
@@ -480,9 +474,9 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   containerComponent = <ChartContainer />,
   data = [],
   hasPatterns,
-  idPrefix,
   invert = false,
   labels = [], // Don't show any tooltip labels by default, let consumer override if needed
+  name,
   padding,
   radius,
   standalone = true,
@@ -555,9 +549,9 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
           data: childData,
           endAngle: 360 * (datum[0]._y ? datum[0]._y / 100 : 0),
           height,
-          ...(idPrefix &&
+          ...(name &&
             typeof (child as any).id !== undefined && {
-              idPrefix: `${idPrefix}-${(child as any).type.displayName}-${index}`
+              name: `${name}-${(child as any).type.displayName}-${index}`
             }),
           invert,
           isStatic: false,

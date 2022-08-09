@@ -68,11 +68,11 @@ import { ChartPie } from '@patternfly/react-charts';
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     hasPatterns
     height={230}
-    idPrefix="chart1"
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
+    name="chart1"
     padding={{
       bottom: 20,
       left: 20,
@@ -99,7 +99,7 @@ import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiCo
     legendPosition="bottom"
     hasPatterns
     height={275}
-    idPrefix="chart2"
+    name="chart2"
     padding={{
       bottom: 75, // Adjusted to accommodate legend
       left: 50,
@@ -137,7 +137,7 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartVoronoiCo
     legendPosition="right"
     hasPatterns
     height={250}
-    idPrefix="chart3"
+    name="chart3"
     padding={{
       bottom: 50,
       left: 50,
@@ -171,11 +171,11 @@ import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     hasPatterns
-    idPrefix="chart4"
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
+    name="chart4"
     padding={{
       bottom: 20,
       left: 20,
@@ -206,10 +206,10 @@ import { ChartDonutUtilization, ChartThemeColor } from '@patternfly/react-charts
     data={{ x: 'Storage capacity', y: 45 }}
     hasPatterns
     height={275}
-    idPrefix="chart5"
     labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
     legendData={[{ name: `Storage capacity: 45%` }, { name: 'Unused' }]}
     legendPosition="bottom"
+    name="chart5"
     padding={{
       bottom: 65, // Adjusted to accommodate legend
       left: 20,
@@ -241,8 +241,8 @@ import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor } from '@pa
     data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
     hasPatterns
     height={275}
-    idPrefix="chart6"
     labels={({ datum }) => datum.x ? datum.x : null}
+    name="chart6"
     padding={{
       bottom: 65, // Adjusted to accommodate legend
       left: 20,
@@ -311,7 +311,7 @@ class InteractivePieLegendChart extends React.Component {
     this.getEvents = () => getInteractiveLegendEvents({
       chartNames: this.getChartNames(),
       isHidden: this.isHidden,
-      legendName: 'legend',
+      legendName: 'chart7-ChartLegend',
       onLegendClick: this.handleLegendClick
     });
 
@@ -357,9 +357,9 @@ class InteractivePieLegendChart extends React.Component {
           events={this.getEvents()}
           hasPatterns
           height={275}
-          idPrefix="chart7"
-          legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} />}
+          legendComponent={<ChartLegend name={'chart7-ChartLegend'} data={this.getLegendData()} />}
           legendPosition="bottom"
+          name="chart7"
           padding={{
             bottom: 65,
             left: 20,
@@ -456,7 +456,7 @@ class InteractiveLegendChart extends React.Component {
     this.getEvents = () => getInteractiveLegendEvents({
       chartNames: this.getChartNames(),
       isHidden: this.isHidden,
-      legendName: 'legend',
+      legendName: 'chart8-ChartLegend',
       onLegendClick: this.handleLegendClick
     });
 
@@ -548,9 +548,9 @@ class InteractiveLegendChart extends React.Component {
             events={this.getEvents()}
             hasPatterns
             height={225}
-            idPrefix="chart8"
-            legendComponent={<ChartLegend name={'legend'} data={this.getLegendData()} />}
+            legendComponent={<ChartLegend name={'chart8-ChartLegend'} data={this.getLegendData()} />}
             legendPosition="bottom-left"
+            name="chart8"
             padding={{
               bottom: 75, // Adjusted to accommodate legend
               left: 50,
@@ -611,11 +611,11 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
     data={[{ x: 'Cats', y: 15 }, { x: 'Dogs', y: 15 }, { x: 'Birds', y: 15 }, { x: 'Fish', y: 25 }, { x: 'Rabbits', y: 30 }]}
     hasPatterns={[ true, true, false, false, false ]}
     height={230}
-    idPrefix="chart9"
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
     legendData={[{ name: 'Cats: 15' }, { name: 'Dogs: 15' }, { name: 'Birds: 15' }, { name: 'Fish: 25' }, { name: 'Rabbits: 30' }]}
     legendOrientation="vertical"
     legendPosition="right"
+    name="chart9"
     padding={{
       bottom: 20,
       left: 20,
@@ -648,11 +648,11 @@ import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     hasPatterns={[ true, true, false ]}
     height={230}
-    idPrefix="chart10"
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
+    name="chart10"
     padding={{
       bottom: 20,
       left: 20,
@@ -691,11 +691,11 @@ import chart_color_green_300 from '@patternfly/react-tokens/dist/esm/chart_color
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
     height={230}
-    idPrefix="chart11"
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
     legendPosition="right"
+    name="chart11"
     padding={{
       bottom: 20,
       left: 20,
@@ -738,7 +738,6 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
     ]}
     hasPatterns
     height={325}
-    idPrefix="chart12"
     labels={({ datum }) => `${datum.x}: ${datum.y}`}
     legendData={[
       { name: 'Cats: 6' },
@@ -759,6 +758,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
     ]}
     legendAllowWrap
     legendPosition="bottom"
+    name="chart12"
     padding={{
       bottom: 110,
       left: 20,
