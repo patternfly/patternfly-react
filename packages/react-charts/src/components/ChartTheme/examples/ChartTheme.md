@@ -48,6 +48,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiC
     legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
     legendPosition="bottom"
     height={275}
+    idPrefix="chart1"
     maxDomain={{y: 10}}
     minDomain={{y: 0}}
     padding={{
@@ -118,6 +119,7 @@ import { ChartDonut, ChartThemeColor } from '@patternfly/react-charts';
     ariaTitle="Donut chart example"
     constrainToVisibleArea
     data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+    idPrefix="chart2"
     labels={({ datum }) => `${datum.x}: ${datum.y}%`}
     legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     legendOrientation="vertical"
@@ -150,6 +152,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
     ariaDesc="Average number of pets"
     ariaTitle="Area chart example"
     containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+    idPrefix="chart3"
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
     legendOrientation="vertical"
     legendPosition="right"
@@ -242,6 +245,7 @@ import chart_color_purple_300 from '@patternfly/react-tokens/dist/esm/chart_colo
     }
     legendPosition="bottom-left"
     height={275}
+    idPrefix="chart4"
     padding={{
       bottom: 75, // Adjusted to accommodate legend
       left: 50,
@@ -317,6 +321,7 @@ import chart_color_blue_300 from '@patternfly/react-tokens/dist/esm/chart_color_
     ariaDesc="Average number of pets"
     ariaTitle="Line chart example"
     containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+    idPrefix="chart5"
     legendData={[
       { name: 'Cats' },
       { name: 'Birds' },
@@ -451,6 +456,7 @@ class MultiColorChart extends React.Component {
           containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
           domain={{y: [0,9]}}
           domainPadding={{ x: [30, 25] }}
+          idPrefix="chart6"
           legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
           legendOrientation="vertical"
           legendPosition="right"

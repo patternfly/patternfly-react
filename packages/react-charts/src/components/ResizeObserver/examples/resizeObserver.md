@@ -91,6 +91,7 @@ class BulletChart extends React.Component {
           comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
           constrainToVisibleArea
           height={250}
+          idPrefix="chart1"
           labels={({ datum }) => `${datum.name}: ${datum.y}`}
           legendAllowWrap
           legendPosition="bottom-left"
@@ -176,6 +177,7 @@ class MultiColorChart extends React.Component {
                 constrainToVisibleArea
               />
             }
+            idPrefix="chart2"
             legendPosition="bottom-left"
             legendComponent={
               <ChartLegend
@@ -359,6 +361,7 @@ class MonthlyResponsiveStack extends React.Component {
             legendData={[{ name: 'Sockets' }, { name: 'Cores' }, { name: 'Nodes' }]}
             legendPosition="bottom"
             height={225}
+            idPrefix="chart3"
             padding={{
               bottom: 75, // Adjusted to accommodate legend
               left: 50,

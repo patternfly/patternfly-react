@@ -38,6 +38,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartVoronoiContainer } from '
     legendOrientation="vertical"
     legendPosition="right"
     height={250}
+    idPrefix="chart1"
     maxDomain={{y: 10}}
     minDomain={{y: 0}}
     padding={{
@@ -125,6 +126,7 @@ class BottomAlignedLegend extends React.Component {
           legendData={legendData}
           legendPosition="bottom"
           height={275}
+          idPrefix="chart2"
           maxDomain={{y: 10}}
           minDomain={{y: 0}}
           padding={{
@@ -234,6 +236,7 @@ class MultiColorChart extends React.Component {
             legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
             legendPosition="bottom-left"
             height={275}
+            idPrefix="chart3"
             maxDomain={{y: 10}}
             minDomain={{y: 0}}
             padding={{

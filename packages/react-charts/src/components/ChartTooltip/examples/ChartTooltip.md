@@ -58,6 +58,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
     legendOrientation="vertical"
     legendPosition="right"
     height={200}
+    idPrefix="chart1"
     maxDomain={{y: 9}}
     padding={{
       bottom: 50,
@@ -134,6 +135,7 @@ class CombinedCursorVoronoiContainer extends React.Component {
           legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
           legendPosition="bottom"
           height={275}
+          idPrefix="chart2"
           maxDomain={{y: 10}}
           minDomain={{y: 0}}
           padding={{
@@ -222,6 +224,7 @@ class EmbeddedLegend extends React.Component {
               voronoiPadding={50}
             />
           }
+          idPrefix="chart3"
           legendData={legendData}
           legendPosition="bottom"
           height={275}
@@ -367,6 +370,7 @@ class EmbeddedHtml extends React.Component {
               voronoiPadding={50}
             />
           }
+          idPrefix="chart4"
           legendData={legendData}
           legendPosition="bottom-left"
           height={225}
@@ -453,6 +457,7 @@ class EmbeddedLegendAlt extends React.Component {
               voronoiPadding={50}
             />
           }
+          idPrefix="chart5"
           legendData={legendData}
           legendPosition="bottom"
           height={275}
@@ -535,6 +540,7 @@ import { Chart, ChartAxis, ChartBar, ChartStack, ChartThemeColor, ChartTooltip }
     legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
     legendPosition="bottom-left"
     height={275}
+    idPrefix="chart6"
     padding={{
       bottom: 75, // Adjusted to accommodate legend
       left: 50,
@@ -626,6 +632,7 @@ class TooltipPieChart extends React.Component {
           constrainToVisibleArea
           data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
           height={275}
+          idPrefix="chart7"
           labels={({ datum }) => `${datum.x}: ${datum.y}`}
           legendComponent={this.getLegend([
             { name: 'Cats: 35' }, 
@@ -689,6 +696,7 @@ class TooltipThemeChart extends React.Component {
           legendOrientation="vertical"
           legendPosition="right"
           height={250}
+          idPrefix="chart8"
           maxDomain={{y: 10}}
           minDomain={{y: 0}}
           padding={{
@@ -763,6 +771,7 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, Cha
       ariaTitle="CSS overflow example chart title"
       containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} />}
       height={100}
+      idPrefix="chart9"
       maxDomain={{y: 9}}
       padding={0}
       themeColor={ChartThemeColor.green}
@@ -816,6 +825,7 @@ class TooltipChart extends React.Component {
               ariaDesc="Storage capacity  - possibly more information to summarize the data in the chart."
               ariaTitle="Wrapped example chart title"
               data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
+              idPrefix="chart10"
               labels={() => null}
             >
               <ChartDonutUtilization
