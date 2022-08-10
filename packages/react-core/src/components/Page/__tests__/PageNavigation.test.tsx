@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { PageNavigation } from '../PageNavigation';
 
 describe('page navigation', () => {
@@ -30,5 +30,45 @@ describe('page navigation', () => {
   test('Verify overflow scroll', () => {
     const { asFragment } = render(<PageNavigation hasOverflowScroll>test</PageNavigation>);
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('Renders without an aria-label by default', () => {
+    render(<PageNavigation>test</PageNavigation>);
+
+    expect(screen.getByText('test')).not.toHaveAccessibleName('Test label');
+  });
+
+  test('Renders with the passed aria-label applied', () => {
+    render(<PageNavigation aria-label="Test label">test</PageNavigation>);
+
+    expect(screen.getByText('test')).toHaveAccessibleName('Test label');
+  });
+
+  test('Does not log a warning in the console by default', () => {
+    const consoleWarning = jest.spyOn(console, 'warn').mockImplementation();
+
+    render(<PageNavigation>test</PageNavigation>);
+
+    expect(consoleWarning).not.toHaveBeenCalled();
+  });
+
+  test('Does not log a warning in the console when an aria-label is included with hasOverflowScroll', () => {
+    const consoleWarning = jest.spyOn(console, 'warn').mockImplementation();
+
+    render(
+      <PageNavigation hasOverflowScroll aria-label="Test label">
+        test
+      </PageNavigation>
+    );
+
+    expect(consoleWarning).not.toHaveBeenCalled();
+  });
+
+  test('Logs a warning in the console when an aria-label is not included with hasOverflowScroll', () => {
+    const consoleWarning = jest.spyOn(console, 'warn').mockImplementation();
+
+    render(<PageNavigation hasOverflowScroll>test</PageNavigation>);
+
+    expect(consoleWarning).toHaveBeenCalled();
   });
 });

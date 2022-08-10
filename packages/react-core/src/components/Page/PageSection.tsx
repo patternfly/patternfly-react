@@ -61,6 +61,10 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   hasShadowBottom?: boolean;
   /** Flag indicating if the PageSection has a scrolling overflow */
   hasOverflowScroll?: boolean;
+  /** Adds an accessible name to the page section. Required when the has overflow scroll prop is set to true.
+   * Additionally it should likely be used if a heading is not being used to describe the content of this section.
+   */
+  'aria-label'?: string;
 }
 
 const variantType = {
@@ -93,9 +97,17 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   hasShadowTop = false,
   hasShadowBottom = false,
   hasOverflowScroll = false,
+  'aria-label': ariaLabel,
   ...props
 }: PageSectionProps) => {
   const { height, getVerticalBreakpoint } = React.useContext(PageContext);
+
+  React.useEffect(() => {
+    if (hasOverflowScroll && !ariaLabel) {
+      /* eslint-disable no-console */
+      console.warn('An accessible aria-label is required when hasOverflowScroll is set to true.');
+    }
+  }, [hasOverflowScroll, ariaLabel]);
 
   return (
     <section
@@ -117,6 +129,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
         className
       )}
       {...(hasOverflowScroll && { tabIndex: 0 })}
+      aria-label={ariaLabel}
     >
       {isWidthLimited && <div className={css(styles.pageMainBody)}>{children}</div>}
       {!isWidthLimited && children}

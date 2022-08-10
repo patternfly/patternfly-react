@@ -34,7 +34,12 @@ export const Name = () => {
             <Switch label="Always show BackToTopButton" onChange={handleChange} isChecked={isAlwaysVisible} />
           </TextContent>
         </PageSection>
-        <PageSection hasOverflowScroll name="scrolling-section" tabIndex={0}>
+        <PageSection
+          hasOverflowScroll
+          name="scrolling-section"
+          tabIndex={0}
+          aria-label="Scrollable container of demonstration cards with a back to top element"
+        >
           <Gallery hasGutter>
             {Array.apply(0, Array(60)).map((_x: any, i: number) => (
               <GalleryItem key={i}>
