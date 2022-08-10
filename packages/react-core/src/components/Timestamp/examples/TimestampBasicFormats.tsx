@@ -1,28 +1,32 @@
 import React from 'react';
-import { Timestamp } from '@patternfly/react-core';
+import { Timestamp, TimestampFormats } from '@patternfly/react-core';
 
 export const TimestampBasicFormats: React.FunctionComponent = () => {
-  const isoDate = '2022-08-09';
-  const isoTime = 'T14:57:00';
-  const displayDate = new Date(2022, 7, 9, 14, 57, 0);
+  const currentDate = new Date();
+  const dateAsISO = currentDate.toISOString();
 
   return (
     <>
-      <Timestamp datetime={isoDate + isoTime} date={displayDate} dateFormat="full" timeFormat="full" />
+      <Timestamp
+        datetime={dateAsISO}
+        date={currentDate}
+        dateFormat={TimestampFormats.full}
+        timeFormat={TimestampFormats.full}
+      />
       <br />
       <br />
-      <Timestamp datetime={isoDate} date={displayDate} dateFormat="full" />
+      <Timestamp datetime={dateAsISO} date={currentDate} dateFormat={TimestampFormats.full} />
       <br />
       <br />
-      <Timestamp datetime={isoTime} date={displayDate} timeFormat="full" />
+      <Timestamp datetime={dateAsISO} date={currentDate} timeFormat={TimestampFormats.full} />
       <br />
       <br />
       <Timestamp
-        datetime={isoTime}
-        date={displayDate}
-        dateFormat="medium"
-        timeFormat="short"
-        timeZoneSuffix="EST (-05:00)"
+        datetime={dateAsISO}
+        date={currentDate}
+        dateFormat={TimestampFormats.medium}
+        timeFormat={TimestampFormats.short}
+        timeZoneSuffix="US Eastern"
       />
     </>
   );

@@ -31,7 +31,12 @@ export interface TimestampProps extends React.HTMLProps<HTMLSpanElement> {
    * "Short" => 8/9/22
    */
   dateFormat?: 'full' | 'long' | 'medium' | 'short';
-  /** An ISO 8601 formatted date string to apply to the inner time element's datetime attribute. */
+  /** An ISO 8601 formatted date string to apply to the inner time element's datetime attribute.
+   * This can either be a UTC datetime string, or a local datetime string.
+   *
+   * For more information about the time element's datetime attribute:
+   * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time#valid_datetime_values
+   */
   datetime: string;
   /** Flag indicating whether the timestamp has a tooltip to display the UTC time.
    * To render a tooltip with custom content, pass in the tooltipContent prop instead.
@@ -44,8 +49,8 @@ export interface TimestampProps extends React.HTMLProps<HTMLSpanElement> {
   is12Hour?: boolean;
   /** Determines which locale to use in the displayed content when custom content is not
    * passed in. Defaults to the current locale when this prop is not passed in.
-   * See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation
-   * for more information.
+   * For more information about locale's:
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation
    */
   locale?: string;
   /** Determines the format of the displayed time when custom content is not passed in. Examples:
@@ -86,6 +91,7 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
   utcSuffix = 'UTC',
   ...props
 }: TimestampProps) => {
+  const hasTooltip = hasUTCTooltip || tooltipContent;
   const formatOptions = {
     ...(dateFormat && !customFormat && { dateStyle: dateFormat }),
     ...(customFormat && { ...customFormat }),
@@ -106,7 +112,7 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
   });
 
   const timestamp = (
-    <span className={css(className)} {...props}>
+    <span className={css(className)} {...(hasTooltip && { tabIndex: 0 })} {...props}>
       <time dateTime={datetime}>{!children ? `${dateAsLocaleString} ${timeZoneSuffix}` : children}</time>
     </span>
   );
