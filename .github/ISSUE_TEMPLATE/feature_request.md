@@ -2,7 +2,7 @@
 name: Feature request
 about: Suggest a new feature for PatternFly
 title: "[Component] - [short description]"
-labels: Feature, needs triage
+labels: feature request, needs triage
 assignees: ''
 
 ---
