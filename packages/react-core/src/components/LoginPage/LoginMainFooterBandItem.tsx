@@ -3,9 +3,9 @@ import styles from '@patternfly/react-styles/css/components/Login/login';
 import { css } from '@patternfly/react-styles';
 
 export interface LoginMainFooterBandItemProps extends React.HTMLProps<HTMLParagraphElement> {
-  /** Content rendered inside the footer Link Item */
+  /** Content rendered inside the footer link item */
   children?: React.ReactNode;
-  /** Additional classes added to the Footer Link Item  */
+  /** Additional classes added to the footer link item  */
   className?: string;
 }
 

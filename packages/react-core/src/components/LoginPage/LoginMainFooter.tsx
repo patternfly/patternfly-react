@@ -3,15 +3,15 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Login/login';
 
 export interface LoginMainFooterProps extends React.HTMLProps<HTMLDivElement> {
-  /** Additional classes added to the Login Main Footer */
+  /** Additional classes added to the login main footer */
   className?: string;
-  /** Content rendered inside the Login Main Footer */
+  /** Content rendered inside the login main footer */
   children?: React.ReactNode;
-  /** Content rendered inside the Login Main Footer as Social Media Links* */
+  /** Content rendered inside the login main footer as social media links* */
   socialMediaLoginContent?: React.ReactNode;
-  /** Content rendered inside of Login Main Footer Band to display a sign up for account message */
+  /** Content rendered inside of login main footer band to display a sign up for account message */
   signUpForAccountMessage?: React.ReactNode;
-  /** Content rendered inside of Login Main Footer Band do display a forgot credentials link* */
+  /** Content rendered inside of login main footer band do display a forgot credentials link* */
   forgotCredentials?: React.ReactNode;
 }
 

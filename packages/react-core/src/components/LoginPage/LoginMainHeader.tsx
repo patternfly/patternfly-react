@@ -4,15 +4,15 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Login/login';
 
 export interface LoginMainHeaderProps extends React.HTMLProps<HTMLDivElement> {
-  /** Content rendered inside the Login Main Header */
+  /** Content rendered inside the login main header */
   children?: React.ReactNode;
-  /** Additional classes added to the Login Main Header */
+  /** Additional classes added to the login main header */
   className?: string;
-  /** Title for the Login Main Header */
+  /** Title for the login main header */
   title?: string;
-  /** Subtitle that contains the Text, URL, and URL Text for the Login Main Header */
+  /** Subtitle that contains the text, URL, and URL text for the login main header */
   subtitle?: string;
-  /** Select menu that renders next to the Login Title for the Login Main Header */
+  /** Actions that render for the login main header */
   headerUtilities?: React.ReactNode;
 }
 

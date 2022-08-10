@@ -9,28 +9,40 @@ import {
   ListItem,
   ListVariant,
   Select,
-  SelectOption
+  SelectOption,
+  SelectOptionObject
 } from '@patternfly/react-core';
 import ExclamationCircleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-circle-icon';
 
 export const LoginPageLanguageSelect: React.FunctionComponent = () => {
-  const [showHelperText, setShowHelperText] = React.useState<boolean>(false);
-  const [username, setUsername] = React.useState<string>('');
-  const [isValidUsername, setIsValidUsername] = React.useState<boolean>(true);
-  const [password, setPassword] = React.useState<string>('');
-  const [isValidPassword, setIsValidPassword] = React.useState<boolean>(true);
-  const [isRememberMeChecked, setIsRememberMeChecked] = React.useState<boolean>(false);
-  const [isHeaderUtilsOpen, setIsHeaderUtilsOpen] = React.useState<boolean>(false);
-  const [selectedHeaderUtils, setSelectedHeaderUtils] = React.useState<string | SelectOption>();
+  const [showHelperText, setShowHelperText] = React.useState(false);
+  const [username, setUsername] = React.useState('');
+  const [isValidUsername, setIsValidUsername] = React.useState(true);
+  const [password, setPassword] = React.useState('');
+  const [isValidPassword, setIsValidPassword] = React.useState(true);
+  const [isRememberMeChecked, setIsRememberMeChecked] = React.useState(false);
+  const [isHeaderUtilsOpen, setIsHeaderUtilsOpen] = React.useState(false);
+  const [selectedHeaderUtils, setSelectedHeaderUtils] = React.useState<string | SelectOptionObject>('English');
+
+  /** i18n object is used to simulate i18n integration of native language translation */
+  const i18n = {
+    English: 'English',
+    Mandarin: '普通话',
+    Hindi: 'हिन्दी',
+    Spanish: 'Español',
+    Portuguese: 'Português',
+    Arabic: 'عربى',
+    Bengali: 'বাংলা'
+  };
 
   const headerUtilsOptions = [
-    <SelectOption key={0} value="English" />,
-    <SelectOption key={1} value="Mandarin" />,
-    <SelectOption key={2} value="Hindi" />,
-    <SelectOption key={3} value="Spanish" />,
-    <SelectOption key={4} value="Portuguese" />,
-    <SelectOption key={5} value="Arabic" />,
-    <SelectOption key={6} value="Bengali" />
+    <SelectOption key={0} value={i18n.English} />,
+    <SelectOption key={1} value={i18n.Mandarin} />,
+    <SelectOption key={2} value={i18n.Hindi} />,
+    <SelectOption key={3} value={i18n.Spanish} />,
+    <SelectOption key={4} value={i18n.Portuguese} />,
+    <SelectOption key={5} value={i18n.Arabic} />,
+    <SelectOption key={6} value={i18n.Bengali} />
   ];
 
   const onHeaderUtilsToggle = (isExpanded: boolean) => {
@@ -39,7 +51,7 @@ export const LoginPageLanguageSelect: React.FunctionComponent = () => {
 
   const onHeaderUtilsSelect = (
     _event: React.MouseEvent<Element, MouseEvent> | React.ChangeEvent<Element>,
-    value: string | SelectOption
+    value: string | SelectOptionObject
   ) => {
     setSelectedHeaderUtils(value);
     setIsHeaderUtilsOpen(false);
@@ -47,7 +59,6 @@ export const LoginPageLanguageSelect: React.FunctionComponent = () => {
 
   const headerUtils = (
     <Select
-      variant="single"
       aria-label="Select Language"
       onToggle={onHeaderUtilsToggle}
       onSelect={onHeaderUtilsSelect}
@@ -169,11 +180,12 @@ export const LoginPageLanguageSelect: React.FunctionComponent = () => {
       brandImgAlt="PatternFly logo"
       backgroundImgSrc={images}
       backgroundImgAlt="Images"
+      alt="Images"
       footerListItems={listItem}
       textContent="This is placeholder text only. Use this area to place any information or introductory message about your application that may be relevant to users."
       loginTitle="Log in to your account"
       loginSubtitle="Enter your single sign-on LDAP credentials."
-      loginHeaderUtils={headerUtils}
+      headerUtilities={headerUtils}
       socialMediaLoginContent={socialMediaLoginContent}
       signUpForAccountMessage={signUpForAccountMessage}
       forgotCredentials={forgotCredentials}
