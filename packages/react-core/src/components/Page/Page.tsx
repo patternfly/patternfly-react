@@ -78,7 +78,7 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    * Can add callback to be notified when resize occurs, for example to set the sidebar isNav prop to false for a width < 768px
    * Returns object { mobileView: boolean, windowSize: number }
    */
-  onPageResize?: (object: any) => void;
+  onPageResize?: ((object: any) => void) | null;
   /**
    * The page resize observer uses the breakpoints returned from this function when adding the pf-m-breakpoint-[default|sm|md|lg|xl|2xl] class
    * You can override the default getBreakpoint function to return breakpoints at different sizes than the default
