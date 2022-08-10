@@ -54,7 +54,7 @@ function writeClassMaps(classMaps) {
     while ((relImportMatch = relImportRegex.exec(code))) {
       const relImportPath = relImportMatch[1];
       const absImportPath = /(\/node_modules\/.*)/gm.exec(resolve(dirname(file), relImportPath))[1];
-      code = code.replaceAll(relImportPath, absImportPath);
+      code = code.replace(relImportPath, absImportPath);
     }
     writeFileSync(join(outDir, outPath), code);
   });
