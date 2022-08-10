@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.69.6 (2022-08-10)
+
+
+### Reverts
+
+* Revert "feat(VisualizationSurface): replace react-measure with react-resize-detector (#7706)" (#7809) ([3c9cd8f](https://github.com/patternfly/patternfly-react/commit/3c9cd8f32d621f30aef0a4d4e0aa892b08354e7b)), closes [#7706](https://github.com/patternfly/patternfly-react/issues/7706) [#7809](https://github.com/patternfly/patternfly-react/issues/7809)
+
+
+
+
+
 ## 4.69.5 (2022-08-05)
 
 
