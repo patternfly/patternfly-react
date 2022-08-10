@@ -1,13 +1,12 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/NumberInput/number-input';
-import formControlStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
-import { ValidatedOptions } from '../../helpers/constants';
 import MinusIcon from '@patternfly/react-icons/dist/esm/icons/minus-icon';
 import PlusIcon from '@patternfly/react-icons/dist/esm/icons/plus-icon';
 import { InputGroup } from '../InputGroup';
 import { Button, ButtonProps } from '../Button';
 import { KEY_CODES } from '../../helpers';
+import { TextInput } from '../TextInput';
 
 export interface NumberInputProps extends React.HTMLProps<HTMLDivElement> {
   /** Value of the number input */
@@ -130,23 +129,18 @@ export const NumberInput: React.FunctionComponent<NumberInputProps> = ({
             <MinusIcon aria-hidden="true" />
           </span>
         </Button>
-        <input
-          className={css(
-            styles.formControl,
-            validated === ValidatedOptions.success && formControlStyles.modifiers.success,
-            validated === ValidatedOptions.warning && formControlStyles.modifiers.warning
-          )}
+        <TextInput
           type="number"
           value={value}
           name={inputName}
-          {...(validated === ValidatedOptions.error && { 'aria-invalid': true })}
           aria-label={inputAriaLabel}
-          {...(isDisabled && { disabled: isDisabled })}
-          {...(onChange && { onChange })}
+          {...(isDisabled && { isDisabled })}
+          {...(onChange && { onChange: (v, e) => onChange(e) })}
           onBlur={handleBlur}
           {...(!onChange && { readOnly: true })}
-          {...inputProps}
           onKeyDown={keyDownHandler}
+          validated={validated}
+          {...inputProps}
         />
         <Button
           variant="control"
