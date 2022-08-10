@@ -1,5 +1,5 @@
 const { join, basename, resolve, relative, dirname } = require('path');
-const { outputFileSync, copyFileSync } = require('fs-extra');
+const { outputFileSync, readFileSync, writeFileSync } = require('fs-extra');
 const { generateClassMaps } = require('./generateClassMaps');
 
 const outDir = resolve(__dirname, '../css');
@@ -46,7 +46,17 @@ function writeClassMaps(classMaps) {
     writeCJSExport(outPath, classMap);
     writeDTSExport(outPath, classMap);
     writeESMExport(outPath, classMap);
-    copyFileSync(file, join(outDir, outPath));
+
+    // Convert relative urls to absolute from /node_modules ex: url('../../assets/images...image.svg') => url('/nodes_modules/...image.svg')
+    let code = readFileSync(file).toString();
+    const relImportRegex = /url\(['"]((?:\.+\/)+.*)['"]/gm;
+    let relImportMatch;
+    while ((relImportMatch = relImportRegex.exec(code))) {
+      const relImportPath = relImportMatch[1];
+      const absImportPath = /(\/node_modules\/.*)/gm.exec(resolve(dirname(file), relImportPath))[1];
+      code = code.replaceAll(relImportPath, absImportPath);
+    }
+    writeFileSync(join(outDir, outPath), code);
   });
 
   // eslint-disable-next-line no-console
