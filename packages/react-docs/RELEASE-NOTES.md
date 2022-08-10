@@ -4,18 +4,18 @@ section: developer-resources
 ---
 
 ## 2022.10 release notes (2022-08-04)
-- [@patternfly/react-catalog-view-extension@4.82.5](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.82.5)
-- [@patternfly/react-charts@6.84.5](https://www.npmjs.com/package/@patternfly/react-charts/v/6.84.5)
-- [@patternfly/react-code-editor@4.72.5](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.72.5)
-- [@patternfly/react-core@4.231.5](https://www.npmjs.com/package/@patternfly/react-core/v/4.231.5)
-- [@patternfly/react-icons@4.82.5](https://www.npmjs.com/package/@patternfly/react-icons/v/4.82.5)
-- [@patternfly/react-inline-edit-extension@4.76.5](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.76.5)
-- [@patternfly/react-log-viewer@4.75.5](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.76.5)
-- [@patternfly/react-styles@4.76.5](https://www.npmjs.com/package/@patternfly/react-styles/v/4.76.5)
-- [@patternfly/react-table@4.100.5](https://www.npmjs.com/package/@patternfly/react-table/v/4.100.5)
-- [@patternfly/react-tokens@4.83.5](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.83.5)
-- [@patternfly/react-topology@4.78.5](https://www.npmjs.com/package/@patternfly/react-topology/v/4.78.5)
-- [@patternfly/react-virtualized-extension@4.78.5](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.78.5)
+- [@patternfly/react-catalog-view-extension@4.82.6](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.82.6)
+- [@patternfly/react-charts@6.84.6](https://www.npmjs.com/package/@patternfly/react-charts/v/6.84.6)
+- [@patternfly/react-code-editor@4.72.6](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.72.6)
+- [@patternfly/react-core@4.231.6](https://www.npmjs.com/package/@patternfly/react-core/v/4.231.6)
+- [@patternfly/react-icons@4.82.6](https://www.npmjs.com/package/@patternfly/react-icons/v/4.82.6)
+- [@patternfly/react-inline-edit-extension@4.76.6](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.76.6)
+- [@patternfly/react-log-viewer@4..6.6](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.76.6)
+- [@patternfly/react-styles@4.76.6](https://www.npmjs.com/package/@patternfly/react-styles/v/4.76.6)
+- [@patternfly/react-table@4.100.6](https://www.npmjs.com/package/@patternfly/react-table/v/4.100.6)
+- [@patternfly/react-tokens@4.83.6](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.83.6)
+- [@patternfly/react-topology@4.78.6](https://www.npmjs.com/package/@patternfly/react-topology/v/4.78.6)
+- [@patternfly/react-virtualized-extension@4.78.6](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.78.6)
 
 ### Components
 - **Accordion:**
@@ -138,6 +138,7 @@ section: developer-resources
   - Updated dependency @patternfly/patternfly to v4.206.2 ([#7783](https://github.com/patternfly/patternfly-react/pull/7783))
   - Updated TypeScript dependencies ([#7671](https://github.com/patternfly/patternfly-react/pull/7671))
   - Replaced react-measure with react-resize-detector ([#7706](https://github.com/patternfly/patternfly-react/pull/7706))
+  - Reverted replacing react-measure with react-resize-detector ([#7809](https://github.com/patternfly/patternfly-react/pull/7809))
 
 ## 2022.08 release notes (2022-06-29)
 - [@patternfly/react-catalog-view-extension@4.75.1](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.75.1)
