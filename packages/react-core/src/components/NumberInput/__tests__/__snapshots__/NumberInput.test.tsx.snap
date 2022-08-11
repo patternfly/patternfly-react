@@ -43,6 +43,7 @@ exports[`numberInput disables lower threshold 1`] = `
         data-ouia-component-id="OUIA-Generated-TextInputBase-7"
         data-ouia-component-type="PF4/TextInput"
         data-ouia-safe="true"
+        readonly=""
         type="number"
         value="0"
       />
@@ -120,6 +121,7 @@ exports[`numberInput disables upper threshold 1`] = `
         data-ouia-component-id="OUIA-Generated-TextInputBase-8"
         data-ouia-component-type="PF4/TextInput"
         data-ouia-safe="true"
+        readonly=""
         type="number"
         value="100"
       />
@@ -200,6 +202,7 @@ exports[`numberInput passes button props successfully 1`] = `
         data-ouia-component-id="OUIA-Generated-TextInputBase-13"
         data-ouia-component-type="PF4/TextInput"
         data-ouia-safe="true"
+        readonly=""
         type="number"
         value="5"
       />
@@ -357,6 +360,7 @@ exports[`numberInput renders custom width 1`] = `
         data-ouia-component-id="OUIA-Generated-TextInputBase-11"
         data-ouia-component-type="PF4/TextInput"
         data-ouia-safe="true"
+        readonly=""
         type="number"
         value="5"
       />
@@ -435,6 +439,7 @@ exports[`numberInput renders defaults & extra props 1`] = `
         data-ouia-component-id="OUIA-Generated-TextInputBase-1"
         data-ouia-component-type="PF4/TextInput"
         data-ouia-safe="true"
+        readonly=""
         type="number"
         value="0"
       />
@@ -514,6 +519,7 @@ exports[`numberInput renders disabled 1`] = `
         data-ouia-component-type="PF4/TextInput"
         data-ouia-safe="true"
         disabled=""
+        readonly=""
         type="number"
         value="90"
       />
@@ -592,6 +598,7 @@ exports[`numberInput renders error validated 1`] = `
         data-ouia-component-id="OUIA-Generated-TextInputBase-3"
         data-ouia-component-type="PF4/TextInput"
         data-ouia-safe="true"
+        readonly=""
         type="number"
         value="0"
       />
@@ -669,6 +676,7 @@ exports[`numberInput renders success validated 1`] = `
         data-ouia-component-id="OUIA-Generated-TextInputBase-2"
         data-ouia-component-type="PF4/TextInput"
         data-ouia-safe="true"
+        readonly=""
         type="number"
         value="0"
       />
@@ -751,6 +759,7 @@ exports[`numberInput renders unit & position 1`] = `
         data-ouia-component-id="OUIA-Generated-TextInputBase-10"
         data-ouia-component-type="PF4/TextInput"
         data-ouia-safe="true"
+        readonly=""
         type="number"
         value="5"
       />
@@ -828,6 +837,7 @@ exports[`numberInput renders unit 1`] = `
         data-ouia-component-id="OUIA-Generated-TextInputBase-9"
         data-ouia-component-type="PF4/TextInput"
         data-ouia-safe="true"
+        readonly=""
         type="number"
         value="5"
       />
@@ -910,6 +920,7 @@ exports[`numberInput renders value 1`] = `
         data-ouia-component-id="OUIA-Generated-TextInputBase-5"
         data-ouia-component-type="PF4/TextInput"
         data-ouia-safe="true"
+        readonly=""
         type="number"
         value="90"
       />
@@ -987,6 +998,7 @@ exports[`numberInput renders warning validated 1`] = `
         data-ouia-component-id="OUIA-Generated-TextInputBase-4"
         data-ouia-component-type="PF4/TextInput"
         data-ouia-safe="true"
+        readonly=""
         type="number"
         value="0"
       />
