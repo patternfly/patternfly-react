@@ -7,7 +7,7 @@ export const TabsHorizontalOverflowDemo: React.FunctionComponent = () => {
   const [defaultTitleText, setDefaultTitleText] = React.useState(undefined);
   const [toggleAriaLabel, setToggleAriaLabel] = React.useState(undefined);
 
-  const handleTabClick = (_event: any, tabIndex: string | number) => {
+  const handleTabClick = (_event: React.MouseEvent<HTMLElement, MouseEvent>, tabIndex: string | number) => {
     setActiveTabKey(tabIndex);
   };
 

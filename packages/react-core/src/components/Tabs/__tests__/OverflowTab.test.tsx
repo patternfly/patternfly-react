@@ -47,9 +47,13 @@ const tabsContextDefaultProps = {
 };
 
 test('Renders', () => {
-  render(<OverflowTab data-testid="overflow-tab" />);
+  render(
+    <div data-testid="overflow-tab-container">
+      <OverflowTab />
+    </div>
+  );
 
-  expect(screen.getByTestId('overflow-tab')).toBeVisible();
+  expect(screen.getByTestId('overflow-tab-container').firstChild).toBeVisible();
 });
 
 test('Renders with the passed aria label', () => {
@@ -126,7 +130,7 @@ test('Renders without pf-m-current when the overflowingTabs does not include the
   expect(screen.getByRole('presentation')).not.toHaveClass('pf-m-current');
 });
 
-test('Renders with pf-m-current when the overflowingTabs include the tab indicated by localActiveKey via a context', () => {
+test("Renders with pf-m-current when TabContext's localActiveKey matches an overflowingTabs' eventKey", () => {
   render(
     <TabsContext.Provider value={{ ...tabsContextDefaultProps, localActiveKey: 1 }}>
       <OverflowTab overflowingTabs={[{ title: 'Tab one', eventKey: 1 }]} />
@@ -332,6 +336,7 @@ test('Renders the tab with aria-expanded set to true when the menu is opened', (
 test('Passes Popper popperMatchesTriggerWidth set to false', () => {
   render(<OverflowTab />);
 
+  // This assertion relies on the structure of the Popper mock to verify the correct props are being sent to Popper
   expect(screen.getByText('Popper matches trigger width: false')).toBeVisible();
 });
 
@@ -340,6 +345,7 @@ test('Passes Popper an appendTo value of the presentation element', () => {
 
   userEvent.click(screen.getByRole('tab'));
 
+  // This assertion relies on the structure of the Popper mock to verify the correct props are being sent to Popper
   expect(screen.getByText('Append to class name: pf-c-tabs__item pf-m-overflow')).toBeVisible();
 });
 
@@ -356,6 +362,7 @@ test('Does not render an overflowing tab as a selected menu item by default', ()
 
   userEvent.click(screen.getByRole('tab'));
 
+  // This assertion relies on the structure of the Popper mock to verify the correct props are being sent to Popper
   expect(screen.queryByText('Selected: true')).not.toBeInTheDocument();
 });
 
@@ -372,6 +379,7 @@ test('Renders an overflowing tab as a selected menu item when its key matches th
 
   userEvent.click(screen.getByRole('tab'));
 
+  // This assertion relies on the structure of the Popper mock to verify the correct props are being sent to Popper
   expect(screen.getByText('Selected: true')).toBeVisible();
 });
 
