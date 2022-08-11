@@ -11,7 +11,6 @@ import {
   VictoryLabelProps
 } from 'victory-core';
 import { ChartCommonStyles } from '../ChartTheme';
-import { getUniqueId } from '@patternfly/react-core';
 
 export enum ChartLabelDirection {
   rtl = 'rtl',
@@ -228,7 +227,6 @@ export interface ChartLabelProps extends VictoryLabelProps {
 export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
   style,
   textAnchor,
-  id = () => getUniqueId('chart-legend-label'),
   ...rest
 }: ChartLabelProps) => {
   const applyDefaultStyle = (customStyle: React.CSSProperties) =>
@@ -246,7 +244,7 @@ export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
     );
   const newStyle = Array.isArray(style) ? style.map(applyDefaultStyle) : applyDefaultStyle(style);
 
-  return <VictoryLabel style={newStyle as any} textAnchor={textAnchor} {...rest} id={id} />;
+  return <VictoryLabel style={newStyle as any} textAnchor={textAnchor} {...rest} />;
 };
 ChartLabel.displayName = 'ChartLabel';
 

@@ -3,6 +3,66 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.72.8 (2022-08-11)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## 4.72.7 (2022-08-10)
+
+**Note:** Version bump only for package @patternfly/react-code-editor
+
+
+
+
+
+## 4.72.6 (2022-08-10)
+
+
+### Reverts
+
+* Revert "feat(VisualizationSurface): replace react-measure with react-resize-detector (#7706)" (#7809) ([3c9cd8f](https://github.com/patternfly/patternfly-react/commit/3c9cd8f32d621f30aef0a4d4e0aa892b08354e7b)), closes [#7706](https://github.com/patternfly/patternfly-react/issues/7706) [#7809](https://github.com/patternfly/patternfly-react/issues/7809)
+
+
+
+
+
+## 4.72.5 (2022-08-05)
+
+
+### Bug Fixes
+
+* **MenuToggle:** update base type to include div attributes as well ([#7798](https://github.com/patternfly/patternfly-react/issues/7798)) ([330e496](https://github.com/patternfly/patternfly-react/commit/330e496a7f1fb715ab06a6f6d118f1db8705828a))
+
+
+
+
+
+## 4.72.4 (2022-08-05)
+
+
+### Bug Fixes
+
+* **MenuToggle:** undo type change causing errors ([#7797](https://github.com/patternfly/patternfly-react/issues/7797)) ([1031ecb](https://github.com/patternfly/patternfly-react/commit/1031ecbeb5b4fa7eb28ed9c035454c7b408b8da8))
+
+
+
+
+
+## 4.72.3 (2022-08-04)
+
+
+### Bug Fixes
+
+* **charts:** remove uniqueId generation for labels and axis ticks ([#7794](https://github.com/patternfly/patternfly-react/issues/7794)) ([9c44131](https://github.com/patternfly/patternfly-react/commit/9c4413119f14e3e45a1ed12bd870120e278ebc20))
+
+
+
+
+
 ## 4.72.2 (2022-08-03)
 
 **Note:** Version bump only for package @patternfly/react-code-editor
