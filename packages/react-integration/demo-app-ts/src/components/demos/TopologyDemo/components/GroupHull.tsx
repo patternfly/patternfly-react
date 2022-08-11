@@ -20,6 +20,7 @@ import {
 } from '@patternfly/react-topology';
 
 type GroupHullProps = {
+  children?: React.ReactNode;
   element: Node;
   droppable?: boolean;
   hover?: boolean;
