@@ -4,24 +4,27 @@ section: developer-resources
 ---
 
 ## 2022.10 release notes (2022-08-04)
-- [@patternfly/react-catalog-view-extension@4.82.6](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.82.6)
-- [@patternfly/react-charts@6.84.6](https://www.npmjs.com/package/@patternfly/react-charts/v/6.84.6)
-- [@patternfly/react-code-editor@4.72.6](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.72.6)
-- [@patternfly/react-core@4.231.6](https://www.npmjs.com/package/@patternfly/react-core/v/4.231.6)
-- [@patternfly/react-icons@4.82.6](https://www.npmjs.com/package/@patternfly/react-icons/v/4.82.6)
-- [@patternfly/react-inline-edit-extension@4.76.6](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.76.6)
-- [@patternfly/react-log-viewer@4..6.6](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.76.6)
-- [@patternfly/react-styles@4.76.6](https://www.npmjs.com/package/@patternfly/react-styles/v/4.76.6)
-- [@patternfly/react-table@4.100.6](https://www.npmjs.com/package/@patternfly/react-table/v/4.100.6)
-- [@patternfly/react-tokens@4.83.6](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.83.6)
-- [@patternfly/react-topology@4.78.6](https://www.npmjs.com/package/@patternfly/react-topology/v/4.78.6)
-- [@patternfly/react-virtualized-extension@4.78.6](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.78.6)
+- [@patternfly/react-catalog-view-extension@4.82.8](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.82.8)
+- [@patternfly/react-charts.8.84.8](https://www.npmjs.com/package/@patternfly/react-charts/v.8.84.8)
+- [@patternfly/react-code-editor@4.72.8](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.72.8)
+- [@patternfly/react-core@4.231.8](https://www.npmjs.com/package/@patternfly/react-core/v/4.231.8)
+- [@patternfly/react-icons@4.82.8](https://www.npmjs.com/package/@patternfly/react-icons/v/4.82.8)
+- [@patternfly/react-inline-edit-extension@4..8.8](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4..8.8)
+- [@patternfly/react-log-viewer@4..8.8](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4..8.8)
+- [@patternfly/react-styles@4..8.8](https://www.npmjs.com/package/@patternfly/react-styles/v/4..8.8)
+- [@patternfly/react-table@4.100.8](https://www.npmjs.com/package/@patternfly/react-table/v/4.100.8)
+- [@patternfly/react-tokens@4.83.8](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.83.8)
+- [@patternfly/react-topology@4.78.8](https://www.npmjs.com/package/@patternfly/react-topology/v/4.78.8)
+- [@patternfly/react-virtualized-extension@4.78.8](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.78.8)
+
 
 ### Components
 - **Accordion:**
   - Updated tests to new standards ([#7645](https://github.com/patternfly/patternfly-react/pull/7645))
 - **Action list:**
   - Updated tests to new standards ([#7669](https://github.com/patternfly/patternfly-react/pull/7669))
+- **Alert:**
+  - Added default aria-label back ([#7816](https://github.com/patternfly/patternfly-react/pull/7816))
 - **Button:**
   - Fixed progress animation in example code ([#7716](https://github.com/patternfly/patternfly-react/pull/7716))
 - **Calendar month:**
