@@ -4,6 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { FormSelect } from '../FormSelect';
 import { TextArea } from '../TextArea';
 import { TextInput } from '../TextInput';
+import { Button } from '../Button';
 
 export interface InputGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the input group. */
@@ -20,7 +21,7 @@ export const InputGroup: React.FunctionComponent<InputGroupProps> = ({
   innerRef,
   ...props
 }: InputGroupProps) => {
-  const formCtrls = [FormSelect, TextArea, TextInput].map(comp => comp.displayName);
+  const formCtrls = [FormSelect, TextArea, TextInput, Button].map(comp => comp.displayName);
   const idItem = React.Children.toArray(children).find(
     (child: any) => !formCtrls.includes(child.type.displayName) && child.props.id
   ) as React.ReactElement<{ id: string }>;

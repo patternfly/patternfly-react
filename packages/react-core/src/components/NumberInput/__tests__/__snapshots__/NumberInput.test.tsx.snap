@@ -195,7 +195,6 @@ exports[`numberInput passes button props successfully 1`] = `
         </span>
       </button>
       <input
-        aria-describedby="minus-id"
         aria-invalid="false"
         aria-label="Input"
         class="pf-c-form-control"

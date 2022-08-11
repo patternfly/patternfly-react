@@ -57,6 +57,49 @@ class BasicNumberInput extends React.Component {
 }
 ```
 
+### Without onChange
+
+```js
+import React from 'react';
+import { NumberInput } from '@patternfly/react-core';
+
+class BasicNumberInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 90
+    };
+
+    this.onMinus = () => {
+      this.setState({
+        value: this.state.value - 1
+      });
+    };
+
+    this.onPlus = () => {
+      this.setState({
+        value: this.state.value + 1
+      });
+    };
+  }
+
+  render() {
+    const { value } = this.state;
+    return (
+      <NumberInput
+        value={value}
+        onMinus={this.onMinus}
+        onPlus={this.onPlus}
+        inputName="input"
+        inputAriaLabel="number input"
+        minusBtnAriaLabel="minus"
+        plusBtnAriaLabel="plus"
+      />
+    );
+  }
+}
+```
+
 ### With unit
 
 ```js
