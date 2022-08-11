@@ -16,8 +16,14 @@ import AngleDoubleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-d
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import PficonSortCommonAscIcon from '@patternfly/react-icons/dist/esm/icons/pficon-sort-common-asc-icon';
 
+interface Option {
+  text: string;
+  selected: boolean;
+  isVisible: boolean;
+}
+
 export const DualListSelectorComposable: React.FunctionComponent = () => {
-  const [availableOptions, setAvailableOptions] = React.useState([
+  const [availableOptions, setAvailableOptions] = React.useState<Option[]>([
     { text: 'Apple', selected: false, isVisible: true },
     { text: 'Banana', selected: false, isVisible: true },
     { text: 'Pineapple', selected: false, isVisible: true },
@@ -26,7 +32,7 @@ export const DualListSelectorComposable: React.FunctionComponent = () => {
     { text: 'Peach', selected: false, isVisible: true },
     { text: 'Strawberry', selected: false, isVisible: true }
   ]);
-  const [chosenOptions, setChosenOptions] = React.useState([]);
+  const [chosenOptions, setChosenOptions] = React.useState<Option[]>([]);
   const [availableFilter, setAvailableFilter] = React.useState('');
   const [chosenFilter, setChosenFilter] = React.useState('');
 

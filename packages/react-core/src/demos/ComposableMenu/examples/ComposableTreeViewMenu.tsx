@@ -13,8 +13,8 @@ import {
 export const ComposableTreeViewMenu: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [checkedItems, setCheckedItems] = React.useState<TreeViewDataItem[]>([]);
-  const toggleRef = React.useRef<HTMLButtonElement>();
-  const containerRef = React.useRef<HTMLDivElement>();
+  const toggleRef = React.useRef<HTMLButtonElement>(null);
+  const containerRef = React.useRef<HTMLDivElement>(null);
   const menuRef = React.useRef<HTMLDivElement>();
 
   const statusOptions: TreeViewDataItem[] = [
@@ -93,7 +93,7 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
   const areSomeDescendantsChecked = (dataItem: TreeViewDataItem) =>
     dataItem.children ? dataItem.children.some(child => areSomeDescendantsChecked(child)) : isChecked(dataItem);
   const flattenTree = (tree: TreeViewDataItem[]) => {
-    let result = [];
+    let result: TreeViewDataItem[] = [];
     tree.forEach(item => {
       result.push(item);
       if (item.children) {
@@ -105,6 +105,7 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
 
   const mapTree = (item: TreeViewDataItem) => {
     const hasCheck = areAllDescendantsChecked(item);
+    item.checkProps = item.checkProps || {};
     // Reset checked properties to be updated
     item.checkProps.checked = false;
 
@@ -143,7 +144,7 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
   const onCheck = (evt: React.ChangeEvent, treeViewItem: TreeViewDataItem, treeType: string) => {
     const checked = (evt.target as HTMLInputElement).checked;
 
-    let options = [];
+    let options: TreeViewDataItem[] = [];
     switch (treeType) {
       case 'status':
         options = statusOptions;
@@ -169,21 +170,21 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
     if (!isOpen) {
       return;
     }
-    if (menuRef.current.contains(event.target as Node) || toggleRef.current.contains(event.target as Node)) {
+    if (menuRef.current?.contains(event.target as Node) || toggleRef.current?.contains(event.target as Node)) {
       // The escape key when pressed while inside the menu should close the menu and refocus the toggle
       if (event.key === 'Escape') {
         setIsOpen(!isOpen);
-        toggleRef.current.focus();
+        toggleRef.current?.focus();
       }
 
       // The tab key when pressed while inside the menu and on the contained last tree view should close the menu and refocus the toggle
       // Shift tab should keep the default behavior to return to a previous tree view
       if (event.key === 'Tab' && !event.shiftKey) {
-        const treeList = menuRef.current.querySelectorAll('.pf-c-tree-view');
+        const treeList = menuRef.current?.querySelectorAll('.pf-c-tree-view') || [];
         if (treeList[treeList.length - 1].contains(event.target as Node)) {
           event.preventDefault();
           setIsOpen(!isOpen);
-          toggleRef.current.focus();
+          toggleRef.current?.focus();
         }
       }
     }
@@ -191,7 +192,7 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
 
   // Controls that a click outside the menu while the menu is open should close the menu
   const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current.contains(event.target as Node)) {
+    if (isOpen && !menuRef.current?.contains(event.target as Node)) {
       setIsOpen(false);
     }
   };
@@ -266,7 +267,7 @@ export const ComposableTreeViewMenu: React.FunctionComponent = () => {
         trigger={toggle}
         popper={menu}
         isVisible={isOpen}
-        appendTo={containerRef.current}
+        appendTo={containerRef.current || undefined}
         popperMatchesTriggerWidth={false}
       />
     </div>

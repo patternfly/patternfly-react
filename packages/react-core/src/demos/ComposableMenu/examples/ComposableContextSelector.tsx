@@ -54,39 +54,37 @@ export const ComposableContextSelector: React.FunctionComponent = () => {
     'Azure 2'
   ];
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [selected, setSelected] = React.useState<ItemData | string>(
-    typeof items[0] === 'string' ? items[0] : items[0].text
-  );
+  const [selected, setSelected] = React.useState(typeof items[0] === 'string' ? items[0] : items[0].text);
   const [filteredItems, setFilteredItems] = React.useState<ItemArrayType>(items);
   const [searchInputValue, setSearchInputValue] = React.useState<string>('');
-  const menuRef = React.useRef<HTMLDivElement>();
-  const toggleRef = React.useRef<HTMLButtonElement>();
-  const menuFooterBtnRef = React.useRef<HTMLButtonElement>();
-  const containerRef = React.useRef<HTMLDivElement>();
+  const menuRef = React.useRef<HTMLDivElement>(null);
+  const toggleRef = React.useRef<HTMLButtonElement>(null);
+  const menuFooterBtnRef = React.useRef<HTMLButtonElement>(null);
+  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const handleMenuKeys = (event: KeyboardEvent) => {
     if (!isOpen) {
       return;
     }
-    if (menuFooterBtnRef.current.contains(event.target as Node)) {
+    if (menuFooterBtnRef.current?.contains(event.target as Node)) {
       if (event.key === 'Tab') {
         if (event.shiftKey) {
           return;
         }
         setIsOpen(!isOpen);
-        toggleRef.current.focus();
+        toggleRef.current?.focus();
       }
     }
-    if (menuRef.current.contains(event.target as Node)) {
+    if (menuRef.current?.contains(event.target as Node)) {
       if (event.key === 'Escape') {
         setIsOpen(!isOpen);
-        toggleRef.current.focus();
+        toggleRef.current?.focus();
       }
     }
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (isOpen && !menuRef.current.contains(event.target as Node)) {
+    if (isOpen && !menuRef.current?.contains(event.target as Node)) {
       setIsOpen(false);
     }
   };

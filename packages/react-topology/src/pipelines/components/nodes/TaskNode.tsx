@@ -25,6 +25,7 @@ import LabelIcon from '../../../components/nodes/labels/LabelIcon';
 const STATUS_ICON_SIZE = 16;
 
 export type TaskNodeProps = {
+  children?: React.ReactNode;
   element: Node;
   className?: string;
   paddingX?: number;

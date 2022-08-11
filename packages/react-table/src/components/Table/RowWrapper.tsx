@@ -12,6 +12,7 @@ export interface RowWrapperRow {
 }
 
 export interface RowWrapperProps extends OUIAProps {
+  children?: React.ReactNode;
   trRef?: React.Ref<any> | Function;
   className?: string;
   onScroll?: React.UIEventHandler;

@@ -87,7 +87,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
       <>
         {icon && <span className={css(styles.menuToggleIcon)}>{icon}</span>}
         {isTypeahead ? children : <span className={css(styles.menuToggleText)}>{children}</span>}
-        {badge && <span className={css(styles.menuToggleCount)}>{badge}</span>}
+        {React.isValidElement(badge) && <span className={css(styles.menuToggleCount)}>{badge}</span>}
         {isTypeahead ? (
           <button
             type="button"
@@ -166,7 +166,7 @@ export class MenuToggleBase extends React.Component<MenuToggleProps> {
   }
 }
 
-export const MenuToggle = React.forwardRef((props: MenuToggleProps, ref: React.Ref<MenuToggleElement>) => (
+export const MenuToggle = React.forwardRef<MenuToggleElement, MenuToggleProps>((props, ref) => (
   <MenuToggleBase innerRef={ref} {...props} />
 ));
 
