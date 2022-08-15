@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.78.9 (2022-08-15)
+
+**Note:** Version bump only for package @patternfly/react-virtualized-extension
+
+
+
+
+
 ## 4.78.8 (2022-08-11)
 
 **Note:** Version bump only for package @patternfly/react-virtualized-extension
