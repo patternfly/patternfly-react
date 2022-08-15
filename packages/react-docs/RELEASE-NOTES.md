@@ -5,18 +5,17 @@ section: developer-resources
 
 ## 2022.10 release notes (2022-08-04)
 - [@patternfly/react-catalog-view-extension@4.82.8](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/4.82.8)
-- [@patternfly/react-charts.8.84.8](https://www.npmjs.com/package/@patternfly/react-charts/v.8.84.8)
+- [@patternfly/react-charts@6.84.8](https://www.npmjs.com/package/@patternfly/react-charts/v/6.84.8)
 - [@patternfly/react-code-editor@4.72.8](https://www.npmjs.com/package/@patternfly/react-code-editor/v/4.72.8)
 - [@patternfly/react-core@4.231.8](https://www.npmjs.com/package/@patternfly/react-core/v/4.231.8)
 - [@patternfly/react-icons@4.82.8](https://www.npmjs.com/package/@patternfly/react-icons/v/4.82.8)
-- [@patternfly/react-inline-edit-extension@4..8.8](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4..8.8)
-- [@patternfly/react-log-viewer@4..8.8](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4..8.8)
-- [@patternfly/react-styles@4..8.8](https://www.npmjs.com/package/@patternfly/react-styles/v/4..8.8)
+- [@patternfly/react-inline-edit-extension@4.76.8](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/4.76.8)
+- [@patternfly/react-log-viewer@4.76.8](https://www.npmjs.com/package/@patternfly/react-log-viewer/v/4.76.8)
+- [@patternfly/react-styles@4.81.8](https://www.npmjs.com/package/@patternfly/react-styles/v/4.81.8)
 - [@patternfly/react-table@4.100.8](https://www.npmjs.com/package/@patternfly/react-table/v/4.100.8)
 - [@patternfly/react-tokens@4.83.8](https://www.npmjs.com/package/@patternfly/react-tokens/v/4.83.8)
 - [@patternfly/react-topology@4.78.8](https://www.npmjs.com/package/@patternfly/react-topology/v/4.78.8)
 - [@patternfly/react-virtualized-extension@4.78.8](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/4.78.8)
-
 
 ### Components
 - **Accordion:**
