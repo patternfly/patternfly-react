@@ -45,3 +45,8 @@ By using the `toggleContent` prop, you can pass in content other than a simple s
 
 ```ts file="ExpandableSectionCustomToggle.tsx"
 ```
+
+### Truncate expansion
+
+```ts file="ExpandableSectionTruncateExpansion.tsx"
+```

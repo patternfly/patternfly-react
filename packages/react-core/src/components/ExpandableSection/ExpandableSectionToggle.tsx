@@ -16,6 +16,8 @@ export interface ExpandableSectionToggleProps extends React.HTMLProps<HTMLDivEle
   contentId?: string;
   /** Direction the toggle arrow should point when the expandable section is expanded. */
   direction?: 'up' | 'down';
+  /** Flag to determine toggle styling when the expandable content is truncated. */
+  hasTruncatedContent?: boolean;
 }
 
 export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionToggleProps> = ({
@@ -25,6 +27,7 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
   onToggle,
   contentId,
   direction = 'down',
+  hasTruncatedContent = false,
   ...props
 }: ExpandableSectionToggleProps) => (
   <div
@@ -43,14 +46,16 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
       aria-controls={contentId}
       onClick={() => onToggle(!isExpanded)}
     >
-      <span
-        className={css(
-          styles.expandableSectionToggleIcon,
-          isExpanded && direction === 'up' && styles.modifiers.expandTop
-        )}
-      >
-        <AngleRightIcon aria-hidden />
-      </span>
+      {!hasTruncatedContent && (
+        <span
+          className={css(
+            styles.expandableSectionToggleIcon,
+            isExpanded && direction === 'up' && styles.modifiers.expandTop
+          )}
+        >
+          <AngleRightIcon aria-hidden />
+        </span>
+      )}
       <span className={css(styles.expandableSectionToggleText)}>{children}</span>
     </button>
   </div>

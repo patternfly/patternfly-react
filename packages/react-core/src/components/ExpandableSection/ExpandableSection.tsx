@@ -5,9 +5,9 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import { PickOptional } from '../../helpers/typeUtils';
 
 export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> {
-  /** Content rendered inside the Expandable Component */
+  /** Content rendered inside the expandable section. */
   children?: React.ReactNode;
-  /** Additional classes added to the Expandable Component */
+  /** Additional classes added to the expandable section. */
   className?: string;
   /** Flag to indicate if the content is expanded */
   isExpanded?: boolean;
@@ -19,7 +19,7 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
   toggleTextCollapsed?: string;
   /** React node that appears in the attached toggle in place of toggle text */
   toggleContent?: React.ReactNode;
-  /** Callback function to toggle the expandable content. Detached expandable sections should use the onToggle property of ExpandableSectionToggle. */
+  /** Callback function to toggle the expandable section. Detached expandable sections should use the onToggle property of the expandable section toggle sub-component. */
   onToggle?: (isExpanded: boolean) => void;
   /** Forces active state */
   isActive?: boolean;
@@ -33,6 +33,8 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
   isWidthLimited?: boolean;
   /** Flag to indicate if the content is indented */
   isIndented?: boolean;
+  /** Flag to indicate if the expandable content is truncated. */
+  isTruncated?: boolean;
 }
 
 interface ExpandableSectionState {
@@ -61,7 +63,8 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     displaySize: 'default',
     isWidthLimited: false,
     isIndented: false,
-    contentId: ''
+    contentId: '',
+    isTruncated: false
   };
 
   private calculateToggleText(
@@ -96,6 +99,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
       isWidthLimited,
       isIndented,
       contentId,
+      isTruncated,
       ...props
     } = this.props;
     let onToggle = onToggleProp;
@@ -116,9 +120,24 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
       propOrStateIsExpanded
     );
 
+    const expandableToggle = !isDetached && (
+      <button
+        className={css(styles.expandableSectionToggle)}
+        type="button"
+        aria-expanded={propOrStateIsExpanded}
+        onClick={() => onToggle(!propOrStateIsExpanded)}
+      >
+        {!isTruncated && (
+          <span className={css(styles.expandableSectionToggleIcon)}>
+            <AngleRightIcon aria-hidden />
+          </span>
+        )}
+        <span className={css(styles.expandableSectionToggleText)}>{toggleContent || computedToggleText}</span>
+      </button>
+    );
+
     return (
       <div
-        {...props}
         className={css(
           styles.expandableSection,
           propOrStateIsExpanded && styles.modifiers.expanded,
@@ -127,25 +146,16 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
           displaySize === 'large' && styles.modifiers.displayLg,
           isWidthLimited && styles.modifiers.limitWidth,
           isIndented && styles.modifiers.indented,
+          // isTruncated && styles.modifiers.truncate,
           className
         )}
+        {...props}
       >
-        {!isDetached && (
-          <button
-            className={css(styles.expandableSectionToggle)}
-            type="button"
-            aria-expanded={propOrStateIsExpanded}
-            onClick={() => onToggle(!propOrStateIsExpanded)}
-          >
-            <span className={css(styles.expandableSectionToggleIcon)}>
-              <AngleRightIcon aria-hidden />
-            </span>
-            <span className={css(styles.expandableSectionToggleText)}>{toggleContent || computedToggleText}</span>
-          </button>
-        )}
+        {!isTruncated && expandableToggle}
         <div className={css(styles.expandableSectionContent)} hidden={!propOrStateIsExpanded} id={contentId}>
           {children}
         </div>
+        {isTruncated && expandableToggle}
       </div>
     );
   }
