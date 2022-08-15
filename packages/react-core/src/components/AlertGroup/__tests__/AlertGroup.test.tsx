@@ -23,9 +23,10 @@ describe('AlertGroup', () => {
     expect(asFragment()).toBeTruthy();
   });
 
-  test('Alert group overflow shows up', () => {
+  test('Alert group overflow shows up', async () => {
     const overflowMessage = 'View 2 more alerts';
     const onOverflowClick = jest.fn();
+    const user = userEvent.setup();
 
     render(
       <AlertGroup overflowMessage={overflowMessage} onOverflowClick={onOverflowClick}>
@@ -38,7 +39,7 @@ describe('AlertGroup', () => {
     const overflowButton = screen.getByRole('button', { name: 'View 2 more alerts' });
     expect(overflowButton).toBeInTheDocument();
 
-    userEvent.click(overflowButton);
+    await user.click(overflowButton);
     expect(onOverflowClick).toHaveBeenCalled();
   });
 
@@ -62,8 +63,9 @@ describe('AlertGroup', () => {
     expect(screen.getByLabelText('group label')).toHaveClass('pf-m-toast');
   });
 
-  test('alertgroup closes when alerts are closed', () => {
+  test('alertgroup closes when alerts are closed', async () => {
     const onClose = jest.fn();
+    const user = userEvent.setup();
 
     render(
       <AlertGroup isToast appendTo={document.body}>
@@ -75,7 +77,7 @@ describe('AlertGroup', () => {
       </AlertGroup>
     );
 
-    userEvent.click(screen.getByLabelText('Close'));
+    await user.click(screen.getByLabelText('Close'));
     expect(onClose).toHaveBeenCalled();
   });
 });

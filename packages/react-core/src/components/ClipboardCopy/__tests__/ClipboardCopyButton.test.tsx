@@ -22,14 +22,16 @@ test('copy button render', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('copy button onClick', () => {
+test('copy button onClick', async () => {
   const onclick = jest.fn();
+  const user = userEvent.setup();
+
   render(
     <ClipboardCopyButton {...props} onClick={onclick}>
       Copy to Clipboard
     </ClipboardCopyButton>
   );
 
-  userEvent.click(screen.getByRole('button'));
+  await user.click(screen.getByRole('button'));
   expect(onclick).toHaveBeenCalled();
 });

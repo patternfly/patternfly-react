@@ -243,7 +243,10 @@ exports[`SearchInput advanced search with custom attributes 1`] = `
     </div>
     <span
       class=""
-      style="position: absolute; left: 0px; top: 0px; z-index: 9999; width: 0px;"
+      data-popper-escaped="true"
+      data-popper-placement="bottom-start"
+      data-popper-reference-hidden="true"
+      style="position: absolute; top: 0px; left: 0px; transform: translate(0px, 0px); width: 0px; z-index: 9999;"
     >
       <div
         class="pf-c-panel pf-m-raised"

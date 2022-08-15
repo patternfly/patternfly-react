@@ -80,8 +80,9 @@ describe('DataList', () => {
     expect(selectableInput).not.toBeInTheDocument();
   });
 
-  test('List calls selectableRow.onChange when the selectable input changes', () => {
+  test('List calls selectableRow.onChange when the selectable input changes', async () => {
     const mock = jest.fn();
+    const user = userEvent.setup();
 
     render(
       <DataList aria-label="this is a simple list" selectableRow={{ onChange: mock }} selectedDataListItemId=''>
@@ -94,7 +95,7 @@ describe('DataList', () => {
     );
 
     const selectableInput = screen.getByRole('radio', { hidden: true });
-    userEvent.click(selectableInput);
+    await user.click(selectableInput);
 
     expect(mock).toHaveBeenCalled();
   });

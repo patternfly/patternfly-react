@@ -8,8 +8,9 @@ import { DropdownContext } from '../dropdownConstants';
 
 describe('DropdownToggle', () => {
   describe('API', () => {
-    test('click on closed', () => {
+    test('click on closed', async () => {
       const mockToggle = jest.fn();
+      const user = userEvent.setup();
 
       render(
         <DropdownToggle onToggle={mockToggle} parentRef={document.createElement('div')}>
@@ -17,12 +18,13 @@ describe('DropdownToggle', () => {
         </DropdownToggle>
       );
 
-      userEvent.click(screen.getByRole('button'));
+      await user.click(screen.getByRole('button'));
       expect(mockToggle.mock.calls[0][0]).toBe(true);
     });
 
-    test('click on opened', () => {
+    test('click on opened', async () => {
       const mockToggle = jest.fn();
+      const user = userEvent.setup();
 
       render(
         <DropdownToggle id="Dropdown Toggle" onToggle={mockToggle} isOpen parentRef={document.createElement('div')}>
@@ -30,7 +32,7 @@ describe('DropdownToggle', () => {
         </DropdownToggle>
       );
 
-      userEvent.click(screen.getByRole('button'));
+      await user.click(screen.getByRole('button'));
       expect(mockToggle.mock.calls[0][0]).toBe(false);
     });
 

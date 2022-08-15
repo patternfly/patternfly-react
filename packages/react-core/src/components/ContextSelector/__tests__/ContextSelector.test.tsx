@@ -25,11 +25,13 @@ describe('ContextSelector', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('Verify onToggle is called ', () => {
+  test('Verify onToggle is called ', async () => {
     const mockfn = jest.fn();
+    const user = userEvent.setup();
+
     render(<ContextSelector onToggle={mockfn}>{items}</ContextSelector>);
 
-    userEvent.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('button'));
     expect(mockfn.mock.calls).toHaveLength(1);
   });
 });

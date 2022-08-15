@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { NumberInput } from '../NumberInput';
 import userEvent from '@testing-library/user-event';
 
@@ -101,73 +101,83 @@ describe('numberInput', () => {
     expect(onChangeMock).not.toHaveBeenCalled();
   });
 
-  test('calls onChange callback when input changes', () => {
+  test('calls onChange callback when input changes', async () => {
     const onChangeMock = jest.fn();
+    const user = userEvent.setup();
+
     render(<NumberInput onChange={onChangeMock}>55</NumberInput>);
 
     const input = screen.getByRole('spinbutton');
-    userEvent.type(input, '55');
+    await user.type(input, '55');
 
     expect(onChangeMock).toHaveBeenCalledTimes(2);
   });
 
-  test('does not call onBlur callback when input does not lose focus', () => {
+  test('does not call onBlur callback when input does not lose focus', async () => {
     const onBlurMock = jest.fn();
+    const user = userEvent.setup();
 
     render(<NumberInput onBlur={onBlurMock}>5</NumberInput>);
 
     const input = screen.getByRole('spinbutton');
-    userEvent.click(input);
+    await user.click(input);
 
     expect(onBlurMock).not.toHaveBeenCalled();
   });
 
-  test('calls onBlur callback when input loses focus', () => {
+  test('calls onBlur callback when input loses focus', async () => {
     const onBlurMock = jest.fn();
+    const user = userEvent.setup();
 
     render(<NumberInput onBlur={onBlurMock}>5</NumberInput>);
 
     const input = screen.getByRole('spinbutton');
-    userEvent.click(input);
-    userEvent.click(document.body);
+    await user.click(input);
+    await user.click(document.body);
 
     expect(onBlurMock).toHaveBeenCalledTimes(1);
   });
 
-  test('removes leading zeros from a positive whole number', () => {
+  test('removes leading zeros from a positive whole number', async () => {
+    const user = userEvent.setup();
+
     render(<NumberInput value={10} onChange={() => {}} />);
 
     const input = screen.getByRole('spinbutton');
-    userEvent.type(input, '{arrowleft}{arrowleft}0');
-    expect(input).toHaveDisplayValue('010');
+    await user.type(input, '{ArrowLeft}{ArrowLeft}0');
+    waitFor(() => expect(input).toHaveDisplayValue('010'));
 
-    userEvent.click(document.body);
+    await user.click(document.body);
 
-    expect(input).toHaveDisplayValue('10');
+    waitFor(() => expect(input).toHaveDisplayValue('10'));
   });
 
-  test('removes leading zeros from a negative whole number', () => {
+  test('removes leading zeros from a negative whole number', async () => {
+    const user = userEvent.setup();
+
     render(<NumberInput value={-18} onChange={() => {}} />);
 
     const input = screen.getByRole('spinbutton');
-    userEvent.type(input, '{arrowleft}{arrowleft}0');
-    expect(input).toHaveDisplayValue('-018');
+    await user.type(input, '{ArrowLeft}{ArrowLeft}0');
+    waitFor(() => expect(input).toHaveDisplayValue('-018'));
 
-    userEvent.click(document.body);
+    await user.click(document.body);
 
-    expect(input).toHaveDisplayValue('-18');
+    waitFor(() => expect(input).toHaveDisplayValue('-18'));
   });
 
-  test('removes leading zeros from a decimal number', () => {
+  test('removes leading zeros from a decimal number', async () => {
+    const user = userEvent.setup();
+
     render(<NumberInput value={47.01} onChange={() => {}} />);
 
     const input = screen.getByRole('spinbutton');
-    userEvent.type(input, '{arrowleft}{arrowleft}{arrowleft}{arrowleft}{arrowleft}0');
-    expect(input).toHaveDisplayValue('047.01');
+    await user.type(input, '{ArrowLeft}{ArrowLeft}{ArrowLeft}{ArrowLeft}{ArrowLeft}0');
+    waitFor(() => expect(input).toHaveDisplayValue('047.01'));
 
-    userEvent.click(document.body);
+    await user.click(document.body);
 
-    expect(input).toHaveDisplayValue('47.01');
+    waitFor(() => expect(input).toHaveDisplayValue('47.01'));
   });
 
   test('renders 0 if no value passed', () => {

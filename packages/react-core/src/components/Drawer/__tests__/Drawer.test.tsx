@@ -126,7 +126,7 @@ test(`Drawer has resizable callback and id`, () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('Resizeable DrawerPanelContent can be wrapped in a context without causing an error', () => {
+test('Resizeable DrawerPanelContent can be wrapped in a context without causing an error', async () => {
   const TestContext = React.createContext({});
 
   const consoleError = jest.spyOn(console, 'error').mockImplementation();
@@ -148,6 +148,8 @@ test('Resizeable DrawerPanelContent can be wrapped in a context without causing 
     </TestContext.Provider>
   );
 
+  const user = userEvent.setup();
+
   render(
     <Drawer isExpanded={true} position="left">
       <DrawerContent panelContent={panelContent}>
@@ -156,8 +158,8 @@ test('Resizeable DrawerPanelContent can be wrapped in a context without causing 
     </Drawer>
   );
 
-  userEvent.tab();
-  userEvent.keyboard('{arrowleft}');
+  await user.tab();
+  await user.keyboard('{ArrowLeft}');
 
   expect(consoleError).not.toHaveBeenCalled();
 })

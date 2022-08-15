@@ -223,13 +223,14 @@ describe('Wizard', () => {
     expect(main).toHaveAttribute('aria-labelledby', 'main-aria-labelledby');
   });
 
-  test('wiz with onCurrentStepChanged setter', () => {
+  test('wiz with onCurrentStepChanged setter', async () => {
     const stepA = { name: 'A', component: <p>Step 1</p> };
     const stepB = { name: 'B', component: <p>Step 2</p> };
     const stepC = { name: 'C', component: <p>Step 3</p> };
 
     const steps: WizardStep[] = [ stepA, stepB, stepC ];
     const setter = jest.fn();
+    const user = userEvent.setup();
 
     render(
         <Wizard
@@ -239,15 +240,15 @@ describe('Wizard', () => {
         />
     );
     expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepA));
-    userEvent.click(screen.getByText(/next/i));
+    await user.click(screen.getByText(/next/i));
     expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepB));
-    userEvent.click(screen.getByText(/next/i));
+    await user.click(screen.getByText(/next/i));
     expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepC));
-    userEvent.click(screen.getByText('A'));
+    await user.click(screen.getByText('A'));
     expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepA));
-    userEvent.click(screen.getByText(/next/i));
+    await user.click(screen.getByText(/next/i));
     expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepB));
-    userEvent.click(screen.getByText(/back/i));
+    await user.click(screen.getByText(/back/i));
     expect(setter).toHaveBeenLastCalledWith(expect.objectContaining(stepA));
   });
 });
@@ -274,14 +275,15 @@ describe('Wizard', () => {
     expect(screen.getByRole('button',{ name: "E" })).toBeDisabled();
   });
 
-  test('wiz skip the step disabled when press the next/back button', () => {
+  test('wiz skip the step disabled when press the next/back button', async () => {
     const steps: WizardStep[] = [
       { name: 'A', component: <p>Step 1</p>},
       { name: 'B', component: <p>Step 2</p>, isDisabled: true },
       { name: 'C', component: <p>Step 3</p>},
 
     ];
-    
+    const user = userEvent.setup();
+
     render(
       <Wizard
         navAriaLabel="nav aria-label"
@@ -290,19 +292,20 @@ describe('Wizard', () => {
       />
     );
 
-    userEvent.click(screen.getByRole('button', { name: 'Next' }));
+    await user.click(screen.getByRole('button', { name: 'Next' }));
     expect(screen.getByRole('button',{ name: "C" })).toHaveClass('pf-m-current')
 
-    userEvent.click(screen.getByRole('button', { name: 'Back' }));
+    await user.click(screen.getByRole('button', { name: 'Back' }));
     expect(screen.getByRole('button',{ name: "A" })).toHaveClass('pf-m-current')
   });
   
-  test('wiz skip the step when click on the nav item disabled', () => {
+  test('wiz skip the step when click on the nav item disabled', async () => {
     const steps: WizardStep[] = [
       { name: 'A', component: <p>Step 1</p>},
       { name: 'B', component: <p>Step 2</p>, isDisabled: true },
       { name: 'C', component: <p>Step 3</p>}
     ];
+    const user = userEvent.setup();
     
     render(
       <Wizard
@@ -315,7 +318,7 @@ describe('Wizard', () => {
     const navItemButton = screen.getByRole('button',{ name: "B" })
     const navItemButtonSelected = screen.getByRole('button',{ name: "A" })
     
-    userEvent.click(navItemButton);
+    await user.click(navItemButton);
 
     expect(navItemButton).not.toHaveClass('pf-m-current')
     expect(navItemButtonSelected).toHaveClass('pf-m-current')
@@ -343,7 +346,7 @@ describe('Wizard', () => {
     expect(screen.getByRole('button',{ name: "A-2" })).toBeDisabled();
   });
 
-test('startAtStep can be used to externally control the current step of the wizard', () => {
+test('startAtStep can be used to externally control the current step of the wizard', async () => {
   const WizardTest = () => {
     const [step, setStep] = React.useState(1);
 
@@ -364,12 +367,13 @@ test('startAtStep can be used to externally control the current step of the wiza
       </>
     );
   };
+  const user = userEvent.setup();
 
   render(<WizardTest />);
 
   expect(screen.queryByText('Step 2')).not.toBeInTheDocument();
 
-  userEvent.click(screen.getByRole('button', { name: 'Increment step'}))
+  await user.click(screen.getByRole('button', { name: 'Increment step'}))
 
   expect(screen.getByText('Step 2')).toBeVisible();
 });

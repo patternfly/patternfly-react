@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { css } from '../../../../../react-styles/dist/js';
@@ -24,11 +24,13 @@ describe('Modal', () => {
     expect(document.createElement).toHaveBeenCalledWith('div');
   });
 
-  test('modal closes with escape', () => {
+  test('modal closes with escape', async () => {
+    const user = userEvent.setup();
+    
     render(<Modal {...props} isOpen appendTo={document.body} />);
 
-    userEvent.type(screen.getByText(props.title), '{esc}');
-    expect(props.onClose).toHaveBeenCalled();
+    await user.type(screen.getByText(props.title), '{Escape}');
+    waitFor(() => expect(props.onClose).toHaveBeenCalled());
   });
 
   test('modal does not call onClose for esc key if it is not open', () => {

@@ -201,9 +201,10 @@ describe('KebabToggle', () => {
 });
 
 describe('API', () => {
-  test('click on item', () => {
+  test('click on item', async () => {
     const mockToggle = jest.fn();
     const mockSelect = jest.fn();
+    const user = userEvent.setup();
 
     render(
       <Dropdown
@@ -214,7 +215,7 @@ describe('API', () => {
       />
     );
 
-    userEvent.click(screen.getByText('Link')); // "Link" is the text of the first item
+    await user.click(screen.getByText('Link')); // "Link" is the text of the first item
     expect(mockToggle.mock.calls).toHaveLength(0);
     expect(mockSelect.mock.calls).toHaveLength(1);
   });

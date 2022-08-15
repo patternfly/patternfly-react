@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { AboutModal, AboutModalProps } from '../AboutModal';
@@ -15,11 +15,13 @@ const props: AboutModalProps = {
 };
 
 describe('AboutModal', () => {
-  test('closes with escape', () => {
+  test('closes with escape', async () => {
+    const user = userEvent.setup();
+    
     render(<AboutModal {...props} isOpen />);
 
-    userEvent.type(screen.getByRole('dialog'), '{esc}');
-    expect(props.onClose).toHaveBeenCalled();
+    await user.type(screen.getByRole('dialog'), '{Escape}');
+    waitFor(() => expect(props.onClose).toHaveBeenCalled());
   });
 
   test('does not render the modal when isOpen is not specified', () => {

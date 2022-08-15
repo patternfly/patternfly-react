@@ -52,29 +52,33 @@ describe('DesktopViewer', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('launch button', () => {
+  test('launch button', async () => {
     const onDownload = jest.fn();
     const onGenerate = jest.fn().mockReturnValue({ content: 'Foo' });
+    const user = userEvent.setup();
 
     render(<DesktopViewer spice={spice} vnc={vnc} onDownload={onDownload} onGenerate={onGenerate} />);
 
-    userEvent.click(screen.getByRole('button', { name: 'Launch Remote Viewer' }));
+    await user.click(screen.getByRole('button', { name: 'Launch Remote Viewer' }));
     expect(onGenerate).toHaveBeenCalledTimes(1);
     expect(onDownload).toHaveBeenCalledTimes(1);
   });
 
-  test('RDP launch button', () => {
+  test('RDP launch button', async () => {
     const onDownload = jest.fn();
     const onGenerate = jest.fn().mockReturnValue({ content: 'Foo' });
+    const user = userEvent.setup();
 
     render(<DesktopViewer rdp={rdp} onDownload={onDownload} onGenerate={onGenerate} />);
 
-    userEvent.click(screen.getByRole('button', { name: 'Launch Remote Desktop' }));
+    await user.click(screen.getByRole('button', { name: 'Launch Remote Desktop' }));
     expect(onGenerate).toHaveBeenCalledTimes(1);
     expect(onDownload).toHaveBeenCalledTimes(1);
   });
 
-  test('with custom more-info content', () => {
+  test('with custom more-info content', async () => {
+    const user = userEvent.setup();
+
     render(
       <DesktopViewer spice={spice} vnc={vnc}>
         <p id="custom-more-info">My more-info content</p>
@@ -83,7 +87,7 @@ describe('DesktopViewer', () => {
 
     expect(screen.queryByText('My more-info content')).toBeNull();
 
-    userEvent.click(screen.getByRole('button', { name: 'Remote Viewer Details' }));
+    await user.click(screen.getByRole('button', { name: 'Remote Viewer Details' }));
     // If one of the items is shown in the description list, the rest will be in the document as well.
     expect(screen.getByText('RHEL, CentOS')).toBeInTheDocument();
   });

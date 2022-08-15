@@ -107,7 +107,7 @@ describe('Select', () => {
   });
 
   describe('custom select filter', () => {
-    test('filters properly', () => {
+    test('filters properly', async () => {
       const customFilter = (e: React.ChangeEvent<HTMLInputElement>, value: string) => {
         let input: RegExp;
         try {
@@ -121,6 +121,8 @@ describe('Select', () => {
             : selectOptions;
         return typeaheadFilteredChildren;
       };
+      const user = userEvent.setup();
+
       render(
         <Select
           toggleId="custom-select-filters"
@@ -136,7 +138,7 @@ describe('Select', () => {
         </Select>
       );
 
-      userEvent.type(screen.getByTestId('test-id').querySelector('input'), 'r');
+      await user.type(screen.getByTestId('test-id').querySelector('input'), 'r');
 
       expect(screen.getByText('Mr')).toBeInTheDocument();
       expect(screen.getByText('Mrs')).toBeInTheDocument();
@@ -333,7 +335,9 @@ describe('typeahead select', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('test select existing option on a non-creatable select', () => {
+  test('test select existing option on a non-creatable select', async () => {
+    const user = userEvent.setup();
+
     render(
       <Select variant={SelectVariant.typeahead} onToggle={jest.fn()} isOpen ouiaId="test-id">
         {selectOptions}
@@ -341,8 +345,8 @@ describe('typeahead select', () => {
     );
 
     const input = screen.getByTestId('test-id').querySelector('input');
-    userEvent.type(input, 'Other');
-    userEvent.type(input, '{enter}');
+    await user.type(input, 'Other');
+    await user.type(input, '{enter}');
 
     expect(screen.getByText('Other')).toBeVisible();
   });
@@ -392,9 +396,10 @@ describe('typeahead multi select', () => {
 });
 
 describe('API', () => {
-  test('click on item', () => {
+  test('click on item', async () => {
     const mockToggle = jest.fn();
     const mockSelect = jest.fn();
+    const user = userEvent.setup();
 
     render(
       <Select variant="single" onToggle={mockToggle} onSelect={mockSelect} isOpen ouiaId="test-id">
@@ -402,7 +407,7 @@ describe('API', () => {
       </Select>
     );
 
-    userEvent.click(screen.getByRole('option', { name: 'Mr' }));
+    await user.click(screen.getByRole('option', { name: 'Mr' }));
 
     expect(mockToggle).not.toHaveBeenCalled();
     expect(mockSelect).toHaveBeenCalled();

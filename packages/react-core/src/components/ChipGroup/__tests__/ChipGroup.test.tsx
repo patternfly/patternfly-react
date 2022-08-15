@@ -35,7 +35,9 @@ describe('ChipGroup', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('chip group expanded', () => {
+  test('chip group expanded', async () => {
+    const user = userEvent.setup();
+
     render(
       <ChipGroup>
         <Chip>1</Chip>
@@ -48,7 +50,7 @@ describe('ChipGroup', () => {
     const moreText = screen.getByText('1 more');
     expect(moreText).toBeInTheDocument();
 
-    userEvent.click(moreText);
+    await user.click(moreText);
     expect(screen.getByText('Show Less')).toBeInTheDocument();
   });
 

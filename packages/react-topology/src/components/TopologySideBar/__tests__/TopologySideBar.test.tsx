@@ -15,8 +15,9 @@ describe('TopologySideBar', () => {
     expect(screen.getByText('Header')).toBeInTheDocument();
   });
 
-  test('should display topology sidebar w/ close correctly', () => {
+  test('should display topology sidebar w/ close correctly', async () => {
     const mockClose = jest.fn();
+    const user = userEvent.setup();
 
     render(
       <TopologySideBar className="my-test-class" show onClose={mockClose}>
@@ -24,7 +25,7 @@ describe('TopologySideBar', () => {
       </TopologySideBar>
     );
 
-    userEvent.click(screen.getByRole('button', { name: 'Close' }));
+    await user.click(screen.getByRole('button', { name: 'Close' }));
     expect(mockClose).toHaveBeenCalled();
   });
 

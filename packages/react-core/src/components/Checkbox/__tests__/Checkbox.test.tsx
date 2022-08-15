@@ -67,11 +67,13 @@ describe('Checkbox', () => {
     expect(screen.getByText('This is where custom content goes.')).toBeInTheDocument();
   });
 
-  test('checkbox onChange handler called when component is clicked', () => {
+  test('checkbox onChange handler called when component is clicked', async () => {
     const onChangeHandler = jest.fn();
+    const user = userEvent.setup();
+
     render(<Checkbox id="check" onChange={onChangeHandler} aria-label="check" isChecked={false} />);
 
-    userEvent.click(screen.getByLabelText('check'));
+    await user.click(screen.getByLabelText('check'));
     expect(onChangeHandler).toHaveBeenCalled();
   });
 

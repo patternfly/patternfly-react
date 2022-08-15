@@ -35,8 +35,9 @@ describe('VncActions', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('VncActions calls ctrl+alt+del action', () => {
+  test('VncActions calls ctrl+alt+del action', async () => {
     const onCtrlAltDel = jest.fn();
+    const user = userEvent.setup();
 
     render(
       <VncActions
@@ -47,8 +48,8 @@ describe('VncActions', () => {
       />
     );
 
-    userEvent.click(screen.getByRole('button', { name: 'My Send Shortcut description' }));
-    userEvent.click(screen.getByText('CtrlAltDel'));
+    await user.click(screen.getByRole('button', { name: 'My Send Shortcut description' }));
+    await user.click(screen.getByText('CtrlAltDel'));
 
     expect(onCtrlAltDel).toHaveBeenCalledTimes(1);
   });
