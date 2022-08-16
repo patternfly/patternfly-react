@@ -29,8 +29,10 @@ jest.mock('../../Menu', () => {
     MenuList: ({ children }) => <ul data-testid="menu-list-mock">{children}</ul>,
     MenuItem: ({ children, itemId, isSelected }) => (
       <>
-        <li id={`${itemId}-menu-item-mock`}>{children}</li>
-        <p>Selected: {`${isSelected}`}</p>
+        <li id={`${itemId}-menu-item-mock`}>
+          {children}
+          <p>Selected: {`${isSelected}`}</p>
+        </li>
       </>
     )
   };
