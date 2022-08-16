@@ -3,7 +3,9 @@
 exports[`tooltip renders 1`] = `
 <DocumentFragment>
   <div>
-    Toggle tooltip
+    <div>
+      Toggle tooltip
+    </div>
   </div>
 </DocumentFragment>
 `;

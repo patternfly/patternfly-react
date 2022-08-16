@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { FindRefWrapper } from './FindRefWrapper';
 import { usePopper } from './thirdparty/react-popper/usePopper';
 import { Placement, BasePlacement, Modifier } from './thirdparty/popper-core';
 import { css } from '@patternfly/react-styles';
@@ -153,13 +152,21 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
 }) => {
   const [triggerElement, setTriggerElement] = React.useState(null);
   const [refElement, setRefElement] = React.useState<HTMLElement>(null);
-  const [popperElement, setPopperElement] = React.useState(null);
+  const [popperElement, setPopperElement] = React.useState<HTMLElement>(null);
   const [ready, setReady] = React.useState(false);
   const refOrTrigger = refElement || triggerElement;
   const onDocumentClickCallback = React.useCallback(
     (event: MouseEvent) => onDocumentClick(event, refOrTrigger, popperElement),
     [isVisible, triggerElement, refElement, popperElement, onDocumentClick]
   );
+
+  const handlePopper = React.useCallback(node => {
+    setPopperElement(node?.firstElementChild as HTMLElement);
+  }, []);
+
+  const handleTrigger = React.useCallback(node => {
+    setTriggerElement(node?.firstElementChild as HTMLElement);
+  }, []);
 
   React.useEffect(() => {
     setReady(true);
@@ -324,15 +331,9 @@ export const Popper: React.FunctionComponent<PopperProps> = ({
 
   return (
     <>
-      {!reference && trigger && (
-        <FindRefWrapper onFoundRef={(foundRef: any) => setTriggerElement(foundRef)}>{trigger}</FindRefWrapper>
-      )}
-      {ready &&
-        isVisible &&
-        ReactDOM.createPortal(
-          <FindRefWrapper onFoundRef={(foundRef: any) => setPopperElement(foundRef)}>{menuWithPopper}</FindRefWrapper>,
-          getTarget()
-        )}
+      {!reference && trigger && typeof trigger === 'object' && <div ref={handleTrigger}>{trigger}</div>}
+      {!reference && trigger && typeof trigger === 'function' && trigger(setTriggerElement)}
+      {ready && isVisible && ReactDOM.createPortal(<div ref={handlePopper}>{menuWithPopper}</div>, getTarget())}
     </>
   );
 };
