@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.232.0 (2022-08-16)
+
+
+### Features
+
+* Allow for 'next' and 'deprecated' react-core subpaths ([#7824](https://github.com/patternfly/patternfly-react/issues/7824)) ([0e68bd3](https://github.com/patternfly/patternfly-react/commit/0e68bd349e9a8b4b08bb8b777358dcde41d5462f))
+
+
+
+
+
 ## 4.231.9 (2022-08-15)
 
 **Note:** Version bump only for package @patternfly/react-core
