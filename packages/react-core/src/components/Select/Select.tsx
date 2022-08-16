@@ -558,7 +558,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
   };
 
   extendTypeaheadChildren(typeaheadCurrIndex: number, favoritesGroup?: React.ReactNode[]) {
-    const { isGrouped, onFavorite } = this.props;
+    const { isGrouped, onFavorite, createText } = this.props;
     const typeaheadChildren = favoritesGroup
       ? favoritesGroup.concat(this.state.typeaheadFilteredChildren)
       : this.state.typeaheadFilteredChildren;
@@ -586,8 +586,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                       activeElement &&
                       (activeElement.id === (child as React.ReactElement).props.id ||
                         (this.props.isCreatable &&
-                          typeaheadActiveChild.innerText ===
-                            `{createText} "${(group as React.ReactElement).props.value}"`))
+                          typeaheadActiveChild.textContent ===
+                            `${createText} "${(group as React.ReactElement).props.value}"`))
                   })
             )
           });
@@ -600,10 +600,10 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
                 : React.cloneElement(child as React.ReactElement, {
                     isFocused:
                       typeaheadActiveChild &&
-                      (typeaheadActiveChild.innerText === (child as React.ReactElement).props.value.toString() ||
+                      (typeaheadActiveChild.textContent === (child as React.ReactElement).props.value.toString() ||
                         (this.props.isCreatable &&
-                          typeaheadActiveChild.innerText ===
-                            `{createText} "${(child as React.ReactElement).props.value}"`))
+                          typeaheadActiveChild.textContent ===
+                            `${createText} "${(child as React.ReactElement).props.value}"`))
                   })
             )
           });
@@ -612,8 +612,8 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           return React.cloneElement(group as React.ReactElement, {
             isFocused:
               typeaheadActiveChild &&
-              (typeaheadActiveChild.innerText === group.props.value.toString() ||
-                (this.props.isCreatable && typeaheadActiveChild.innerText === `{createText} "${group.props.value}"`))
+              (typeaheadActiveChild.textContent === group.props.value.toString() ||
+                (this.props.isCreatable && typeaheadActiveChild.textContent === `${createText} "${group.props.value}"`))
           });
         }
       });
@@ -624,9 +624,9 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         ? child
         : React.cloneElement(child as React.ReactElement, {
             isFocused: typeaheadActiveChild
-              ? typeaheadActiveChild.innerText === (child as React.ReactElement).props.value.toString() ||
+              ? typeaheadActiveChild.textContent === (child as React.ReactElement).props.value.toString() ||
                 (this.props.isCreatable &&
-                  typeaheadActiveChild.innerText === `{createText} "${(child as React.ReactElement).props.value}"`)
+                  typeaheadActiveChild.textContent === `${createText} "${(child as React.ReactElement).props.value}"`)
               : index === typeaheadCurrIndex // fallback for view more + typeahead use cases, when the new expanded list is loaded and refCollection hasn't be updated yet
           });
     });
@@ -665,11 +665,11 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
       : this.refCollection[nextIndex][0];
 
     let typeaheadInputValue = '';
-    if (isCreatable && optionTextElm.innerText.includes(createText)) {
+    if (isCreatable && optionTextElm.textContent.includes(createText)) {
       typeaheadInputValue = this.state.creatableValue;
     } else if (optionTextElm && !isLoad) {
       // !isLoad prevents the view more button text from appearing the typeahead input
-      typeaheadInputValue = optionTextElm.innerText;
+      typeaheadInputValue = optionTextElm.textContent;
     }
     this.setState(prevState => ({
       typeaheadCurrIndex: updateCurrentIndex ? nextIndex : prevState.typeaheadCurrIndex,
@@ -725,15 +725,15 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
             if (!typeaheadActiveChild.classList.contains('pf-m-load')) {
               const hasDescriptionElm = typeaheadActiveChild.childElementCount > 1;
               const typeaheadActiveChildText = hasDescriptionElm
-                ? (typeaheadActiveChild.firstChild as HTMLElement).innerText
-                : typeaheadActiveChild.innerText;
+                ? (typeaheadActiveChild.firstChild as HTMLElement).textContent
+                : typeaheadActiveChild.textContent;
               this.setState({
                 typeaheadInputValue: typeaheadActiveChildText
               });
             }
           } else if (this.refCollection[0] && this.refCollection[0][0]) {
             this.setState({
-              typeaheadInputValue: this.refCollection[0][0].innerText
+              typeaheadInputValue: this.refCollection[0][0].textContent
             });
           }
           if (typeaheadActiveChild) {
