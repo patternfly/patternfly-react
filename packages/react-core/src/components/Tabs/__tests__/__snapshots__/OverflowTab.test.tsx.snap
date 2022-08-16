@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Matches snapshot 1`] = `
+exports[`Matches snapshot when expanded 1`] = `
 <DocumentFragment>
   <div
     data-testid="popper-mock"
@@ -59,18 +59,18 @@ exports[`Matches snapshot 1`] = `
               id="1-menu-item-mock"
             >
               Tab one
+              <p>
+                Selected: true
+              </p>
             </li>
-            <p>
-              Selected: true
-            </p>
             <li
               id="2-menu-item-mock"
             >
               Tab two
+              <p>
+                Selected: false
+              </p>
             </li>
-            <p>
-              Selected: false
-            </p>
           </ul>
         </div>
         <button>
