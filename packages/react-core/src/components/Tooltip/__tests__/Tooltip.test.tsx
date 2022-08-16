@@ -5,18 +5,31 @@ import { TooltipArrow } from "../TooltipArrow";
 import { TooltipContent } from "../TooltipContent";
 import userEvent from '@testing-library/user-event';
 
+jest.mock('../../../helpers', () => ({
+  Popper: ({ enableFlip, appendTo, distance, flipBehavior, ...props }) => (
+    <div data-testid="popper-mock" {...props}>
+      <div data-testid="enableFlip">{enableFlip}</div>
+      <div data-testid="distance">{distance}</div>
+      <div data-testid="flipBehavior">{flipBehavior}</div>
+      <p>{`enableFlip: ${enableFlip}`}</p>
+      <p>Append to class name: {appendTo && `${appendTo.className}`}</p>
+    </div>
+  )
+}));
+
 /** Testing tooltip content */
 
 test('tooltip content renders', () => {
-  const { asFragment } = render(
+  render(
     <TooltipContent
       children={
-          <div>Test</div>
+        <div>Test</div>
       }
+      data-testid='Tooltip'
     />
   );
 
-  expect(asFragment()).toMatchSnapshot();
+  expect(screen.getByTestId('Tooltip')).toBeVisible();
 });
   
 test('renders pf-c-tooltip__content class', () => {
@@ -157,7 +170,6 @@ test('renders with inherited element props spread to the component', () => {
 test('tooltip renders', () => {
   const { asFragment } = render(
     <Tooltip
-      position="top"
       content={
         <div>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
@@ -231,6 +243,30 @@ test('renders tooltip on DOM without userEvent when isVisible prop passed', asyn
 
   const tooltip = await screen.findByLabelText("test-label");
   expect(tooltip).toHaveClass("pf-c-tooltip");
+});
+
+test('passes Popper enableFlip set to true', async () => {
+  render(
+    <Tooltip
+      enableFlip
+      content={
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+        </div>
+      }
+    >
+      <div>Toggle tooltip</div>
+    </Tooltip>
+  );
+
+  const user = screen.getByText("Toggle tooltip");
+  userEvent.hover(user);
+
+  // const scr = screen.getByTestId('enableFlip');
+  const input = await screen.findByText('enableFlip: true');
+
+  // expect(scr).toBeVisible();
+  expect(input).toBeVisible();
 });
 
 test('renders default classname pf-c-tooltip', async () => {
@@ -337,3 +373,22 @@ test('renders animationDuration styling', async () => {
   const style = window.getComputedStyle(tooltip);
   expect(style.transition).toBe("opacity 300ms cubic-bezier(.54, 1.5, .38, 1.11)");
 });
+
+// enable flip: mock out popper - test against props that popper is receiving and what it should receive like in truncate
+// just like when tooltip for truncate, you can set up popper mock to get the enableFlip
+
+// appendTo is passed straight to popper -- same with distance
+
+// aria - has assertions against what the accessible name is
+// test against trigger prop for popper!!!
+// maybe just have popper render trigger with custom data test id and have assertions based on that and the accessible name
+
+// flipBehavior is straight to popper
+
+// id - same thing w aria prop AND make sure it's getting passed to the proper place
+// not rly a good rtl to test for IDs -> have it render what trigger returns and make assertions based on accessible name -> test aria prop and id prop
+// select using data test-id bc content is a div
+
+// reference is straight to popper
+// but also note: aria-live uses reference -> might have to use toHave attribute
+
