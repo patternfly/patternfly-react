@@ -383,7 +383,7 @@ test('Renders an overflowing tab as a selected menu item when its key matches th
   expect(screen.getByText('Selected: true')).toBeVisible();
 });
 
-test('Matches snapshot', () => {
+test('Matches snapshot when expanded', () => {
   const { asFragment } = render(
     <TabsContext.Provider value={{ ...tabsContextDefaultProps, localActiveKey: 1 }}>
       <OverflowTab
