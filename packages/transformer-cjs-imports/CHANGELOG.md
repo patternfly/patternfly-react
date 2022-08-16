@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.70.3 (2022-08-16)
+
+
+### Bug Fixes
+
+* **Select:** apply aria-describedby to correct element ([#7790](https://github.com/patternfly/patternfly-react/issues/7790)) ([1795ff5](https://github.com/patternfly/patternfly-react/commit/1795ff5a939cfab5af03f11640737377b7c39441))
+
+
+
+
+
 ## 4.70.2 (2022-08-16)
 
 **Note:** Version bump only for package transformer-cjs-imports
