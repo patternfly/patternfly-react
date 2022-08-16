@@ -338,7 +338,9 @@ export interface ChartPieProps extends VictoryPieProps {
    */
   legendPosition?: 'bottom' | 'right';
   /**
-   * The name prop is used to reference a component instance when defining shared events.
+   * The name prop is typically used to reference a component instance when defining shared events. However, this
+   * optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory
+   * based components output unique IDs when multiple charts appear in a page.
    */
   name?: string;
   /**
@@ -509,6 +511,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
+  name,
   patternScale,
   patternUnshiftIndex,
 
@@ -592,6 +595,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   const legend = React.cloneElement(legendComponent, {
     colorScale,
     data: legendData,
+    ...(name && { name: `${name}-${(legendComponent as any).type.displayName}` }),
     key: 'pf-chart-pie-legend',
     orientation: legendOrientation,
     theme,

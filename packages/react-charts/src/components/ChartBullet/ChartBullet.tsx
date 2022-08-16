@@ -276,6 +276,12 @@ export interface ChartBulletProps {
    */
   minDomain?: number | { x?: number; y?: number };
   /**
+   * The name prop is typically used to reference a component instance when defining shared events. However, this
+   * optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory
+   * based components output unique IDs when multiple charts appear in a page.
+   */
+  name?: string;
+  /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
@@ -502,6 +508,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   legendPosition = 'bottom' as ChartLegendPosition,
   maxDomain,
   minDomain,
+  name,
   padding,
   primaryDotMeasureComponent = <ChartBulletPrimaryDotMeasure />,
   primaryDotMeasureData,
@@ -655,6 +662,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       ...(comparativeErrorMeasureLegendData ? comparativeErrorMeasureLegendData : []),
       ...(qualitativeRangeLegendData ? qualitativeRangeLegendData : [])
     ],
+    ...(name && { name: `${name}-${(legendComponent as any).type.displayName}` }),
     itemsPerRow: legendItemsPerRow,
     orientation: legendOrientation,
     position: legendPosition,
@@ -815,6 +823,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
           y: (domain as any).x
         },
     height: chartSize.height,
+    ...(name && { name: `${name}-${(axisComponent as any).type.displayName}` }),
     // Adjust for padding
     offsetX: !horizontal ? defaultPadding.left * 0.5 + (defaultPadding.right * 0.5 - (defaultPadding.right - 55)) : 0,
     offsetY: horizontal ? 80 - defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - 25) : 0,

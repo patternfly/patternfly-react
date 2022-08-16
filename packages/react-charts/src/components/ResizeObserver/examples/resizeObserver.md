@@ -95,6 +95,7 @@ class BulletChart extends React.Component {
           legendAllowWrap
           legendPosition="bottom-left"
           maxDomain={{y: 100}}
+          name="chart1"
           padding={{
             bottom: 50,
             left: 50,
@@ -195,6 +196,7 @@ class MultiColorChart extends React.Component {
               />
             }
             height={250}
+            name="chart2"
             padding={{
               bottom: 100, // Adjusted to accomodate legend
               left: 50,
@@ -359,6 +361,7 @@ class MonthlyResponsiveStack extends React.Component {
             legendData={[{ name: 'Sockets' }, { name: 'Cores' }, { name: 'Nodes' }]}
             legendPosition="bottom"
             height={225}
+            name="chart3"
             padding={{
               bottom: 75, // Adjusted to accommodate legend
               left: 50,

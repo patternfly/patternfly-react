@@ -35,6 +35,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     height={150}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     maxDomain={{y: 100}}
+    name="chart1"
     primarySegmentedMeasureData={[{ name: 'Measure', y: 60 }]}
     qualitativeRangeData={[{ name: 'Range', y: 50 }, { name: 'Range', y: 75 }]}
     width={600}
@@ -57,6 +58,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     height={200}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     maxDomain={{y: 100}}
+    name="chart2"
     padding={{
       bottom: 50,
       left: 150, // Adjusted to accommodate labels
@@ -121,6 +123,7 @@ class BulletChart extends React.Component {
           legendAllowWrap
           legendPosition="bottom-left"
           maxDomain={{y: 100}}
+          name="chart3"
           padding={{
             bottom: 50,
             left: 50,
@@ -157,6 +160,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     height={200}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     maxDomain={{y: 100}}
+    name="chart4"
     padding={{
       bottom: 50,
       left: 150, // Adjusted to accommodate labels
@@ -195,6 +199,7 @@ import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
     height={200}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     legendItemsPerRow={3}
+    name="chart5"
     padding={{
       bottom: 50,
       left: 150, // Adjusted to accommodate labels
@@ -232,6 +237,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     height={200}
     maxDomain={{y: 125}}
     minDomain={{y: 50}}
+    name="chart6"
     padding={{
       bottom: 50,
       left: 150, // Adjusted to accommodate labels
@@ -269,6 +275,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     maxDomain={{y: 75}}
     minDomain={{y: -25}}
+    name="chart7"
     padding={{
       bottom: 50,
       left: 150, // Adjusted to accommodate labels
@@ -308,6 +315,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     legendOrientation="vertical"
     maxDomain={{y: 0}}
     minDomain={{y: -100}}
+    name="chart8"
     padding={{
       bottom: 50,
       left: 150, // Adjusted to accommodate labels
@@ -345,6 +353,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     legendItemsPerRow={4}
     maxDomain={{y: 75}}
     minDomain={{y: -25}}
+    name="chart9"
     padding={{
       bottom: 50,
       left: 150, // Adjusted to accommodate labels
@@ -378,6 +387,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     horizontal={false}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     maxDomain={{y: 100}}
+    name="chart10"
     padding={{
       bottom: 125, // Adjusted to accommodate legend
       left: 400,
@@ -412,6 +422,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     maxDomain={{y: 125}}
     minDomain={{y: 50}}
+    name="chart11"
     padding={{
       bottom: 125, // Adjusted to accommodate legend
       left: 400,
@@ -463,6 +474,7 @@ import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
     height={150}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     maxDomain={{y: 100}}
+    name="chart12"
     primarySegmentedMeasureData={[{ name: 'Measure', y: 60 }]}
     qualitativeRangeData={[{ name: 'Range', y: 50 }, { name: 'Range', y: 75 }]}
     width={600}
@@ -485,6 +497,7 @@ import { ChartBullet } from '@patternfly/react-charts';
     height={200}
     labels={({ datum }) => `${datum.name}: ${datum.y}`}
     maxDomain={{y: 100}}
+    name="chart13"
     padding={{
       bottom: 50,
       left: 150, // Adjusted to accomodate labels
@@ -519,6 +532,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       height={500}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
+      name="chart14"
       padding={{
         bottom: 100, // Adjusted to accommodate legend
         left: 150, // Adjusted to accommodate labels
@@ -538,6 +552,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       height={500}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
+      name="chart15"
       padding={{
         bottom: 100, // Adjusted to accommodate legend
         left: 150, // Adjusted to accommodate labels
@@ -557,6 +572,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       height={500}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
+      name="chart16"
       padding={{
         bottom: 100, // Adjusted to accommodate legend
         left: 150, // Adjusted to accommodate labels
@@ -577,6 +593,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       height={500}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
+      name="chart17"
       padding={{
         bottom: 100, // Adjusted to accommodate legend
         left: 150, // Adjusted to accommodate labels
@@ -615,6 +632,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       horizontal={false}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
+      name="chart18"
       padding={{
         bottom: 125, // Adjusted to accommodate legend
         left: 50,
@@ -637,6 +655,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       horizontal={false}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
+      name="chart19"
       padding={{
         bottom: 125, // Adjusted to accommodate legend
         left: 300,
@@ -657,6 +676,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       horizontal={false}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
+      name="chart20"
       padding={{
         bottom: 125, // Adjusted to accommodate legend
         left: 550,
@@ -677,6 +697,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       horizontal={false}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
+      name="chart21"
       padding={{
         bottom: 125, // Adjusted to accommodate legend
         left: 800,
@@ -713,6 +734,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       height={575}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
+      name="chart22"
       padding={{
         bottom: 100, // Adjusted to accommodate legend
         left: 150, // Adjusted to accommodate labels
@@ -732,6 +754,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       height={600}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
+      name="chart23"
       padding={{
         bottom: 100, // Adjusted to accommodate legend
         left: 150, // Adjusted to accommodate labels
@@ -751,6 +774,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       height={600}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
+      name="chart24"
       padding={{
         bottom: 100, // Adjusted to accommodate legend
         left: 150, // Adjusted to accommodate labels
@@ -771,6 +795,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       height={600}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
+      name="chart25"
       padding={{
         bottom: 100, // Adjusted to accommodate legend
         left: 150, // Adjusted to accommodate labels
@@ -811,6 +836,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       horizontal={false}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
+      name="chart26"
       padding={{
         bottom: 125, // Adjusted to accommodate legend
         left: 50,
@@ -833,6 +859,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       horizontal={false}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
+      name="chart27"
       padding={{
         bottom: 125, // Adjusted to accommodate legend
         left: 300,
@@ -853,6 +880,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       horizontal={false}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
+      name="chart28"
       padding={{
         bottom: 125, // Adjusted to accommodate legend
         left: 550,
@@ -873,6 +901,7 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       horizontal={false}
       labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
+      name="chart29"
       padding={{
         bottom: 125, // Adjusted to accommodate legend
         left: 800,

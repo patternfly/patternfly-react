@@ -310,6 +310,12 @@ export interface ChartProps extends VictoryChartProps {
    */
   minDomain?: number | { x?: number; y?: number };
   /**
+   * The name prop is typically used to reference a component instance when defining shared events. However, this
+   * optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory
+   * based components output unique IDs when multiple charts appear in a page.
+   */
+  name?: string;
+  /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
@@ -469,6 +475,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
+  name,
   padding,
   patternScale,
   showAxis = true,
@@ -523,6 +530,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
 
   const legend = React.cloneElement(legendComponent, {
     data: legendData,
+    ...(name && { name: `${name}-${(legendComponent as any).type.displayName}` }),
     orientation: legendOrientation,
     theme,
     ...legendComponent.props
@@ -576,13 +584,17 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
 
   // Render children
   const renderChildren = () =>
-    React.Children.toArray(children).map(child => {
+    React.Children.toArray(children).map((child, index) => {
       if (React.isValidElement(child)) {
         const { ...childProps } = child.props;
         return React.cloneElement(child, {
           colorScale,
-          theme,
           ...(defaultPatternScale && { patternScale: defaultPatternScale }),
+          ...(name &&
+            typeof (child as any).name !== undefined && {
+              name: `${name}-${(child as any).type.displayName}-${index}`
+            }),
+          theme,
           ...childProps,
           ...((child as any).type.displayName === 'ChartPie' && {
             data: getDefaultData(childProps.data, defaultPatternScale)

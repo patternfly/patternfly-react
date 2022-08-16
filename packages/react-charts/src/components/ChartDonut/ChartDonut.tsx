@@ -353,7 +353,9 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   legendPosition?: 'bottom' | 'right';
   /**
-   * The name prop is used to reference a component instance when defining shared events.
+   * The name prop is typically used to reference a component instance when defining shared events. However, this
+   * optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory
+   * based components output unique IDs when multiple charts appear in a page.
    */
   name?: string;
   /**
@@ -588,6 +590,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   innerRadius,
   legendAllowWrap,
   legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
+  name,
   padAngle,
   padding,
   radius,
@@ -650,6 +653,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     const subTitleProps = textComponent.props ? textComponent.props : {};
 
     return React.cloneElement(textComponent, {
+      ...(name && { id: `${name}-${(textComponent as any).type.displayName}-subTitle` }),
       key: 'pf-chart-donut-subtitle',
       style: ChartDonutStyles.label.subTitle,
       text: subTitle,
@@ -682,6 +686,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
 
     return React.cloneElement(titleComponent, {
       ...(Array.isArray(titles) && { capHeight }), // Use capHeight with multiple labels
+      ...(name && { id: `${name}-${(titleComponent as any).type.displayName}-title` }),
       key: 'pf-chart-donut-title',
       style: styles,
       text: titles,
@@ -713,6 +718,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
       key="pf-chart-donut-pie"
       legendAllowWrap={legendAllowWrap}
       legendPosition={legendPosition}
+      name={name}
       padAngle={padAngle !== undefined ? padAngle : getPadAngle}
       padding={padding}
       radius={chartRadius > 0 ? chartRadius : 0}
