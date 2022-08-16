@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<DocumentFragment>
+  <span
+    class="pf-c-timestamp"
+  >
+    <time
+      datetime="2022-01-01T05:00:00.000Z"
+    >
+      1/1/2022, 12:00:00 AM 
+    </time>
+  </span>
+</DocumentFragment>
+`;

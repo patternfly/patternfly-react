@@ -1,5 +1,5 @@
 import * as React from 'react';
-// import styles from '@patternfly/react-styles/css/components/Timestamp';
+import styles from '@patternfly/react-styles/css/components/Timestamp/timestamp';
 import { css } from '@patternfly/react-styles';
 import { Tooltip, TooltipProps } from '../Tooltip';
 
@@ -104,20 +104,24 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
     ...(hasTimeFormat && { timeStyle: timeFormat })
   });
 
-  const utctimeFormat = timeFormat !== 'short' ? 'medium' : 'short';
+  const utcTimeFormat = timeFormat !== 'short' ? 'medium' : 'short';
   const convertToUTCString = (date: Date) => new Date(date).toUTCString().slice(0, -3);
   const utcDateString = new Date(convertToUTCString(dateProp)).toLocaleString(locale, {
     ...formatOptions,
-    ...(hasTimeFormat && { timeStyle: utctimeFormat })
+    ...(hasTimeFormat && { timeStyle: utcTimeFormat })
   });
 
   const timestamp = (
-    <span className={css(className)} {...(hasTooltip && { tabIndex: 0 })} {...props}>
+    <span
+      className={css(styles.timestamp, hasTooltip && styles.modifiers.helpText, className)}
+      {...(hasTooltip && { tabIndex: 0 })}
+      {...props}
+    >
       <time dateTime={datetime}>{!children ? `${dateAsLocaleString} ${timeZoneSuffix}` : children}</time>
     </span>
   );
 
-  return hasUTCTooltip || tooltipContent ? (
+  return hasTooltip ? (
     <Tooltip content={tooltipContent || `${utcDateString} ${utcSuffix}`} {...tooltipProps}>
       {timestamp}
     </Tooltip>
