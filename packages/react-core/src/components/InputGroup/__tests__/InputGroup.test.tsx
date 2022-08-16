@@ -3,8 +3,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import { InputGroup } from '../InputGroup';
+import { Button } from '../../Button';
 import { TextInput } from '../../TextInput';
-import { Button } from '@patternfly/react-core';
 
 describe('InputGroup', () => {
   test('add aria-describedby to form-control if one of the non form-controls has id', () => {
@@ -13,7 +13,7 @@ describe('InputGroup', () => {
     render(
       <InputGroup>
         <TextInput value="some data" aria-label="some text" />
-        <Button id="button-id">
+        <Button variant="primary" id="button-id">
           hello
         </Button>
       </InputGroup>
