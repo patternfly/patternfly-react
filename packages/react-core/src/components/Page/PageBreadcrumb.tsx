@@ -28,7 +28,7 @@ export interface PageBreadcrumbProps extends React.HTMLProps<HTMLElement> {
   hasShadowBottom?: boolean;
   /** Flag indicating if the PageBreadcrumb has a scrolling overflow */
   hasOverflowScroll?: boolean;
-  /** Adds an accessible name to the breadcrumb section. Required when the has overflow scroll prop is set to true. */
+  /** Adds an accessible name to the breadcrumb section. Required when the hasOverflowScroll prop is set to true. */
   'aria-label'?: string;
 }
 

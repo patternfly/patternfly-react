@@ -61,7 +61,7 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   hasShadowBottom?: boolean;
   /** Flag indicating if the PageSection has a scrolling overflow */
   hasOverflowScroll?: boolean;
-  /** Adds an accessible name to the page section. Required when the has overflow scroll prop is set to true.
+  /** Adds an accessible name to the page section. Required when the hasOverflowScroll prop is set to true.
    * This prop should also be passed in if a heading is not being used to describe the content of the page section.
    */
   'aria-label'?: string;
