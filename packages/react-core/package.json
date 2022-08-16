@@ -5,6 +5,18 @@
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
+  "exports": {
+    ".": "./dist/esm/index.js",
+    "./next": "./dist/esm/next/index.js",
+    "./deprecated": "./dist/esm/deprecated/index.js",
+    "./package.json": "./package.json"
+  },
+  "typesVersions": {
+    "*": {
+      "next": ["dist/esm/next/index.d.ts"],
+      "deprecated": ["dist/esm/deprecated/index.d.ts"]
+    }
+  },
   "patternfly:src": "src/",
   "sideEffects": [
     "*.css",
