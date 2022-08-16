@@ -1267,7 +1267,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           className
         )}
         {...(width && { style: { width } })}
-        {...(ariaDescribedby && { 'aria-describedby': ariaDescribedby })}
         {...(validated !== ValidatedOptions.default && { 'aria-invalid': ariaInvalid })}
       >
         {isOpen && menuContainer}
@@ -1288,7 +1287,6 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
         ref={this.parentRef}
         {...getOUIAProps(Select.displayName, ouiaId !== undefined ? ouiaId : this.state.ouiaStateId, ouiaSafe)}
         {...(width && { style: { width } })}
-        {...(ariaDescribedby && { 'aria-describedby': ariaDescribedby })}
         {...(validated !== ValidatedOptions.default && { 'aria-invalid': ariaInvalid })}
       >
         <SelectToggle
@@ -1308,6 +1306,7 @@ export class Select extends React.Component<SelectProps & OUIAProps, SelectState
           variant={variant}
           aria-labelledby={`${ariaLabelledBy || ''} ${selectToggleId}`}
           aria-label={toggleAriaLabel}
+          {...(ariaDescribedby && { 'aria-describedby': ariaDescribedby })}
           handleTypeaheadKeys={this.handleTypeaheadKeys}
           moveFocusToLastMenuItem={this.moveFocusToLastMenuItem}
           isDisabled={isDisabled}
