@@ -39,7 +39,7 @@ export interface TimestampProps extends React.HTMLProps<HTMLSpanElement> {
    */
   datetime: string;
   /** Flag indicating whether the timestamp has a tooltip to display the UTC time.
-   * To render a tooltip with custom content, pass in the tooltipContent prop instead.
+   * To render a tooltip with custom content, pass in tooltipProps instead.
    */
   hasUTCTooltip?: boolean;
   /** Flag for displaying the time in a 12 hour format (true) or a 24 hour format (false),
@@ -64,11 +64,7 @@ export interface TimestampProps extends React.HTMLProps<HTMLSpanElement> {
    * This prop should only be passed in when the timeFormat prop has a value of "medium" or "short".
    */
   timeZoneSuffix?: string;
-  /** Creates a tooltip with custom content. Passing this prop in will override the
-   * hasUTCTooltip and utcSuffix props.
-   */
-  tooltipContent?: React.ReactNode;
-  /** Adds custom props to a tooltip if one is rendered. */
+  /** Adds a custom tooltip to the timestamp. */
   tooltipProps?: TooltipProps;
   /** Applies a custom suffix to the UTC tooltip. */
   utcSuffix?: string;
@@ -86,12 +82,11 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
   locale = undefined,
   timeFormat,
   timeZoneSuffix = '',
-  tooltipContent,
   tooltipProps,
   utcSuffix = 'UTC',
   ...props
 }: TimestampProps) => {
-  const hasTooltip = hasUTCTooltip || tooltipContent;
+  const hasTooltip = hasUTCTooltip || tooltipProps?.content;
   const formatOptions = {
     ...(dateFormat && !customFormat && { dateStyle: dateFormat }),
     ...(customFormat && { ...customFormat }),
@@ -122,7 +117,7 @@ export const Timestamp: React.FunctionComponent<TimestampProps> = ({
   );
 
   return hasTooltip ? (
-    <Tooltip content={tooltipContent || `${utcDateString} ${utcSuffix}`} {...tooltipProps}>
+    <Tooltip content={tooltipProps?.content || `${utcDateString} ${utcSuffix}`} {...tooltipProps}>
       {timestamp}
     </Tooltip>
   ) : (
