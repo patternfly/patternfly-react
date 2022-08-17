@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.70.5 (2022-08-17)
+
+
+### Bug Fixes
+
+* **charts:** add victory-cursor-container dependency ([#7803](https://github.com/patternfly/patternfly-react/issues/7803)) ([6f1f00d](https://github.com/patternfly/patternfly-react/commit/6f1f00d0d60d9f841a3204e9378ac93a4333c41b))
+
+
+
+
+
 ## 4.70.4 (2022-08-17)
 
 **Note:** Version bump only for package transformer-cjs-imports
