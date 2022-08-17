@@ -123,7 +123,7 @@ describe('Notification Drawer Basic Demo Test', () => {
   });
 
   it('Verify truncateTitle in drawer group title and tooltip', () => {
-    cy.get('#long-title-item > .pf-c-notification-drawer__list-item-header-title')
+    cy.get('#long-title-item > div > .pf-c-notification-drawer__list-item-header-title')
       .should('have.class', 'pf-m-truncate')
       .then((tooltipLink: JQuery<HTMLDivElement>) => {
         cy.get('.pf-c-tooltip').should('not.exist');

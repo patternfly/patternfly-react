@@ -22,7 +22,7 @@ describe('Alert Demo Test', () => {
   });
 
   it('Verify truncateTitle alert and tooltip', () => {
-    cy.get('#long-title-alert > .pf-c-alert__title')
+    cy.get('#long-title-alert .pf-c-alert__title')
       .should('have.class', 'pf-m-truncate')
       .then((tooltipLink: JQuery<HTMLDivElement>) => {
         cy.get('.pf-c-tooltip').should('not.exist');
