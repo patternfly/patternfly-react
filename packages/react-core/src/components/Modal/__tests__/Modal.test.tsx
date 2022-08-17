@@ -30,7 +30,7 @@ describe('Modal', () => {
     render(<Modal {...props} isOpen appendTo={document.body} />);
 
     await user.type(screen.getByText(props.title), '{Escape}');
-    waitFor(() => expect(props.onClose).toHaveBeenCalled());
+    expect(props.onClose).toHaveBeenCalled();
   });
 
   test('modal does not call onClose for esc key if it is not open', () => {
