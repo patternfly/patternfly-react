@@ -1,6 +1,5 @@
 import React from 'react';
-import { NumberInput } from '@patternfly/react-core';
-import { ValidatedOptions } from '../../../helpers';
+import { NumberInput, ValidatedOptions } from '@patternfly/react-core';
 
 export const WithStatus: React.FunctionComponent = () => {
   const max = 10;
