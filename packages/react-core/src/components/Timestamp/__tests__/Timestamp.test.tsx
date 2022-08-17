@@ -142,7 +142,13 @@ test('Renders with pf-m-help-text class when tooltipProps is passed in', () => {
 });
 
 test('Renders with default UTC tooltip content', () => {
-  render(<Timestamp datetime={new Date(2022, 0, 1).toISOString()} date={new Date(2022, 0, 1)} hasUTCTooltip />);
+  render(
+    <Timestamp
+      datetime={new Date('1 Jan 2022 00:00:00 EST').toISOString()}
+      date={new Date('1 Jan 2022 00:00:00 EST')}
+      hasUTCTooltip
+    />
+  );
 
   expect(screen.getByText('1/1/2022, 5:00:00 AM UTC')).toBeInTheDocument();
 });
@@ -150,8 +156,8 @@ test('Renders with default UTC tooltip content', () => {
 test('Renders with custom UTC suffix', () => {
   render(
     <Timestamp
-      datetime={new Date(2022, 0, 1).toISOString()}
-      date={new Date(2022, 0, 1)}
+      datetime={new Date('1 Jan 2022 00:00:00 EST').toISOString()}
+      date={new Date('1 Jan 2022 00:00:00 EST')}
       hasUTCTooltip
       utcSuffix="Coordinated Universal Time"
     />
