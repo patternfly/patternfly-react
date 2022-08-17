@@ -21,7 +21,7 @@ describe('AboutModal', () => {
     render(<AboutModal {...props} isOpen />);
 
     await user.type(screen.getByRole('dialog'), '{Escape}');
-    waitFor(() => expect(props.onClose).toHaveBeenCalled());
+    expect(props.onClose).toHaveBeenCalled();
   });
 
   test('does not render the modal when isOpen is not specified', () => {
