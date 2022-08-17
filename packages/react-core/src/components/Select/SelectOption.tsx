@@ -391,36 +391,42 @@ export class SelectOption extends React.Component<SelectOptionProps> {
         );
       } else if (variant === SelectVariant.checkbox && !isNoResultsOption && !isLoading && !isLoad) {
         return (
-          <label
-            {...props}
-            className={css(
-              checkStyles.check,
-              styles.selectMenuItem,
-              isDisabled && styles.modifiers.disabled,
-              description && styles.modifiers.description,
-              className
-            )}
-            onKeyDown={(event: React.KeyboardEvent) => {
-              this.onKeyDown(event, 0, undefined, true);
-            }}
-          >
-            <input
-              id={inputId || `${inputIdPrefix}-${value.toString()}`}
-              className={css(checkStyles.checkInput)}
-              type="checkbox"
-              onChange={event => {
-                if (!isDisabled) {
-                  onClick(event);
-                  onSelect(event, value);
-                }
+          <li role="presentation">
+            <label
+              role="option"
+              aria-selected={isChecked}
+              {...props}
+              className={css(
+                checkStyles.check,
+                styles.selectMenuItem,
+                isDisabled && styles.modifiers.disabled,
+                description && styles.modifiers.description,
+                className
+              )}
+              onKeyDown={(event: React.KeyboardEvent) => {
+                this.onKeyDown(event, 0, undefined, true);
               }}
-              ref={this.ref}
-              checked={isChecked || false}
-              disabled={isDisabled}
-            />
-            <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{itemDisplay}</span>
-            {description && <div className={css(checkStyles.checkDescription)}>{description}</div>}
-          </label>
+            >
+              <input
+                id={inputId || `${inputIdPrefix}-${value.toString()}`}
+                className={css(checkStyles.checkInput)}
+                type="checkbox"
+                onChange={event => {
+                  if (!isDisabled) {
+                    onClick(event);
+                    onSelect(event, value);
+                  }
+                }}
+                ref={this.ref}
+                checked={isChecked || false}
+                disabled={isDisabled}
+              />
+              <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>
+                {itemDisplay}
+              </span>
+              {description && <div className={css(checkStyles.checkDescription)}>{description}</div>}
+            </label>
+          </li>
         );
       } else if (variant === SelectVariant.checkbox && isNoResultsOption && !isLoading && !isLoad) {
         return (
