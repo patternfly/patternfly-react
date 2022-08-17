@@ -3,7 +3,26 @@ id: Table
 section: components
 ---
 
-import { Checkbox, PageSection, ToolbarExpandIconWrapper, ToolbarContent } from '@patternfly/react-core';
+import {
+Checkbox,
+PageSection,
+ToolbarExpandIconWrapper,
+ToolbarContent,
+Toolbar,
+ToolbarItem,
+SearchInput,
+Masthead,
+MastheadToggle,
+MastheadMain,
+MastheadContent,
+SkipToContent,
+Breadcrumb,
+BreadcrumbItem,
+Page,
+PageSectionVariants,
+TextContent,
+Text,
+Divider } from '@patternfly/react-core';
 import CheckIcon from '@patternfly/react-icons/dist/esm/icons/check-icon';
 import CloneIcon from '@patternfly/react-icons/dist/esm/icons/clone-icon';
 import CodeIcon from '@patternfly/react-icons/dist/esm/icons/code-icon';
@@ -26,6 +45,7 @@ import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-i
 import BarsIcon from '@patternfly/react-icons/dist/esm/icons/bars-icon';
 import AttentionBellIcon from '@patternfly/react-icons/dist/esm/icons/attention-bell-icon';
 import DashboardWrapper from '@patternfly/react-core/src/demos/examples/DashboardWrapper';
+import BlueprintIcon from '@patternfly/react-icons/dist/esm/icons/blueprint-icon';
 
 ## Demos
 
@@ -1889,7 +1909,7 @@ class FilterTableDemo extends React.Component {
     const categoryMenuItems = [
       <SelectOption key="cat1" value="Location" />,
       <SelectOption key="cat2" value="Name" />,
-      <SelectOption key="cat3" value="Status" />,
+      <SelectOption key="cat3" value="Status" />
     ];
 
     return (
@@ -2346,7 +2366,7 @@ ComposableTableSortable = () => {
             }
             isPlain
             isGrouped
-            menuAppendTo='parent'
+            menuAppendTo="parent"
             isFlipEnabled
           />
         </ToolbarItem>
@@ -3000,6 +3020,13 @@ class PageLayoutDefaultNav extends React.Component {
 ### Sticky first column
 
 ```js isFullscreen file="table-demos/StickyFirstColumn.jsx"
+```
+
+### Sticky columns and header with toolbar
+
+A toolbar may be added above a sticky table either inside or outside the `OuterScrollContainer`.
+
+```ts isFullscreen file="examples/ComposableTableStickyToolbar.tsx"
 ```
 
 ## Empty states
