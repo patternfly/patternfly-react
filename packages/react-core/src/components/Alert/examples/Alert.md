@@ -32,7 +32,7 @@ import { Alert } from '@patternfly/react-core';
 </React.Fragment>
 ```
 
-If no `variant` property is specified, then the variant will be set to default. Otherwise, use the following variants:
+If no `variant` property is specified, then the variant will be set to "default". Otherwise, use the following variants:
 
 | Variant | Description |
 |---|---|
@@ -45,13 +45,13 @@ If no `variant` property is specified, then the variant will be set to default. 
 
 ### Alert variations
 
-PatternFly supports a number of properties and variations that can be used to add extra content to an alert. 
+PatternFly supports several properties and variations that can be used to add extra content to an alert. 
 
 * Use the `actionLinks` property to add one or more `AlertActionLink` components that place links beneath the alert message. You must pass in `href` and `component="a"` properties to have an `AlertActionLink` act as a proper link, rather than as a button.
 
-* Links may also be added within the alert message using an `href`.  
+* Use a native HTML `<a>` element to add links within an alert message.
 
-* Use the `actionClose` property to add an `AlertActionCloseButton` component, which manages and customizes alert dismissals.
+* Use the `actionClose` property to add an `AlertActionCloseButton` component, which can be used to manage and customize alert dismissals.
 
 ```ts
 import React from 'react';
@@ -95,7 +95,7 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
 ```
 ### Alert timeout
 
-Use the `timeout` property to automatically dismiss an alert after a period of time. If set to `true`, the `timeout` will be 8000 milliseconds. Provide a number to dismiss the alert after a specific number of milliseconds.
+Use the `timeout` property to automatically dismiss an alert after a period of time. If set to `true`, the `timeout` will be 8000 milliseconds. Provide a specific value to dismiss the alert after a different number of milliseconds.
 
 ```ts
 import React from 'react';
@@ -133,9 +133,11 @@ const AlertTimeout: React.FunctionComponent = () => {
 
 ### Expandable alerts
 
-An alert can contain additional, hidden information that is made visible by clicking a caret icon. This information can be expanded and collapsed each time the icon is clicked.
+An alert can contain additional, hidden information that is made visible when users click a caret icon. This information can be expanded and collapsed each time the icon is clicked.
 
-It is not recommended to use an expandable alert using `timeout` within a toast [alert group](/components/alert-group) because the alert could timeout before users have time to interact with and view the entire alert. See the [toast alert considerations](/components/alert/accessibility#toast-alerts) section of the alert accessibility documentation to understand the accessibility risks associated with using toast alerts.
+It is not recommended to use an expandable alert with a `timeout` in a toast [alert group](/components/alert-group) because the alert could timeout before users have time to interact with and view the entire alert. 
+
+See the [toast alert considerations](/components/alert/accessibility#toast-alerts) section of the alert accessibility documentation to understand the accessibility risks associated with using toast alerts.
 
 ```ts
 import React from 'react';
@@ -176,7 +178,7 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
 
 ### Truncated alerts
 
-Use the `truncateTitle` property to shorten a long `title`. Setting `truncateTitle` equal to a number (passed in as `{n}`) will reduce the number of lines of text in the alert's `title` property. Users may hover over a truncated alert to see the full message in a popup. 
+Use the `truncateTitle` property to shorten a long `title`. Set `truncateTitle` equal to a number (passed in as `{n}`) to reduce the number of lines of text in the alert's `title`. Users may hover over or tab to a truncated `title` to see the full message in a tooltip.
 
 ```ts
 import React from 'react';
@@ -234,7 +236,7 @@ import { Alert } from '@patternfly/react-core';
 ```
 ### Inline alert variations
 
-The same variations that exist for general alerts can use the `isInline` property to adjust the styling so that they can be placed in line with content.
+All general alert variations can use the `isInline` property to apply inline styling.
 
 ```ts
 import React from 'react';
@@ -284,7 +286,7 @@ import { Alert, AlertActionCloseButton, AlertActionLink } from '@patternfly/reac
 
 ### Plain inline alert variants
 
-Use the `isPlain` property to make any inline alert plain. Plain styling removes the colored background, but keeps colored text and icons.
+Use the `isPlain` property to make any inline alert plain. Plain styling removes the colored background but keeps colored text and icons.
 
 ```ts
 import React from 'react';
@@ -300,7 +302,7 @@ import { Alert } from '@patternfly/react-core';
 
 ### Plain inline alert variations
 
-It is not recommended to use an inline plain alert with `actionClose` nor `actionLinks`.
+It is not recommended to use a plain inline alert with `actionClose` nor `actionLinks` because these alerts are non-dismissible and should persist until the error or action related to the alert is resolved.
 
 ```ts
 import React from 'react';
