@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/ExpandableSection/expandable-section';
 import { css } from '@patternfly/react-styles';
+import lineClamp from '@patternfly/react-tokens/dist/esm/c_expandable_section_m_truncate__content_LineClamp';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import { PickOptional } from '../../helpers/typeUtils';
 
@@ -33,13 +34,21 @@ export interface ExpandableSectionProps extends React.HTMLProps<HTMLDivElement> 
   isWidthLimited?: boolean;
   /** Flag to indicate if the content is indented */
   isIndented?: boolean;
-  /** Flag to indicate if the expandable content is truncated. */
-  isTruncated?: boolean;
+  /** Truncates the expandable content to the specified number of lines. */
+  truncateContent?: number;
 }
 
 interface ExpandableSectionState {
   isExpanded: boolean;
 }
+
+const setLineClamp = (lines: number, element: HTMLDivElement) => {
+  if (!element || lines < 1) {
+    return;
+  }
+
+  element.style.setProperty(lineClamp.name, lines.toString());
+};
 
 export class ExpandableSection extends React.Component<ExpandableSectionProps, ExpandableSectionState> {
   static displayName = 'ExpandableSection';
@@ -51,6 +60,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     };
   }
 
+  expandableContentRef = React.createRef<HTMLDivElement>();
   static defaultProps: PickOptional<ExpandableSectionProps> = {
     className: '',
     toggleText: '',
@@ -64,7 +74,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
     isWidthLimited: false,
     isIndented: false,
     contentId: '',
-    isTruncated: false
+    truncateContent: 0
   };
 
   private calculateToggleText(
@@ -80,6 +90,18 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
       return toggleTextCollapsed;
     }
     return toggleText;
+  }
+
+  componentDidMount() {
+    const expandableContent = this.expandableContentRef.current;
+    setLineClamp(this.props.truncateContent, expandableContent);
+  }
+
+  componentDidUpdate(prevProps: ExpandableSectionProps) {
+    if (prevProps.truncateContent !== this.props.truncateContent) {
+      const expandableContent = this.expandableContentRef.current;
+      setLineClamp(this.props.truncateContent, expandableContent);
+    }
   }
 
   render() {
@@ -99,7 +121,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
       isWidthLimited,
       isIndented,
       contentId,
-      isTruncated,
+      truncateContent,
       ...props
     } = this.props;
     let onToggle = onToggleProp;
@@ -127,7 +149,7 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
         aria-expanded={propOrStateIsExpanded}
         onClick={() => onToggle(!propOrStateIsExpanded)}
       >
-        {!isTruncated && (
+        {!truncateContent && (
           <span className={css(styles.expandableSectionToggleIcon)}>
             <AngleRightIcon aria-hidden />
           </span>
@@ -146,16 +168,21 @@ export class ExpandableSection extends React.Component<ExpandableSectionProps, E
           displaySize === 'large' && styles.modifiers.displayLg,
           isWidthLimited && styles.modifiers.limitWidth,
           isIndented && styles.modifiers.indented,
-          // isTruncated && styles.modifiers.truncate,
+          truncateContent && styles.modifiers.truncate,
           className
         )}
         {...props}
       >
-        {!isTruncated && expandableToggle}
-        <div className={css(styles.expandableSectionContent)} hidden={!propOrStateIsExpanded} id={contentId}>
+        {!truncateContent && expandableToggle}
+        <div
+          ref={this.expandableContentRef}
+          className={css(styles.expandableSectionContent)}
+          hidden={!propOrStateIsExpanded}
+          id={contentId}
+        >
           {children}
         </div>
-        {isTruncated && expandableToggle}
+        {truncateContent > 0 && expandableToggle}
       </div>
     );
   }

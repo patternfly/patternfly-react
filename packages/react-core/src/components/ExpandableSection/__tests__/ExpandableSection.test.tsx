@@ -64,3 +64,29 @@ test('Renders ExpandableSection indented', () => {
   );
   expect(asFragment()).toMatchSnapshot();
 });
+
+test('Does not render with pf-m-truncate class when truncateContent is not passed', () => {
+  render(<ExpandableSection {...props}>test</ExpandableSection>);
+
+  expect(screen.getByText('test').parentElement).not.toHaveClass('pf-m-truncate');
+});
+
+test('Does not render with pf-m-truncate class when truncateContent is 0', () => {
+  render(
+    <ExpandableSection truncateContent={0} {...props}>
+      test
+    </ExpandableSection>
+  );
+
+  expect(screen.getByText('test').parentElement).not.toHaveClass('pf-m-truncate');
+});
+
+test('Renders with pf-m-truncate class when truncateContent is greater than 0', () => {
+  render(
+    <ExpandableSection truncateContent={3} {...props}>
+      test
+    </ExpandableSection>
+  );
+
+  expect(screen.getByText('test').parentElement).toHaveClass('pf-m-truncate');
+});
