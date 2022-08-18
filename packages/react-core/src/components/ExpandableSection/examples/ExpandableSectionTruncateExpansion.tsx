@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExpandableSection } from '@patternfly/react-core';
+import { ExpandableSection, ExpandableSectionVariant } from '@patternfly/react-core';
 
 export const ExpandableSectionTruncateExpansion: React.FunctionComponent = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
@@ -10,7 +10,8 @@ export const ExpandableSectionTruncateExpansion: React.FunctionComponent = () =>
 
   return (
     <ExpandableSection
-      truncateContent={3}
+      variant={ExpandableSectionVariant.truncate}
+      truncateMaxLines={3}
       toggleText={isExpanded ? 'Show less' : 'Show more'}
       onToggle={onToggle}
       isExpanded={isExpanded}

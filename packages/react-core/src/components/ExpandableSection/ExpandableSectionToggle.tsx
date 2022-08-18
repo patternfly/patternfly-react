@@ -31,19 +31,21 @@ export const ExpandableSectionToggle: React.FunctionComponent<ExpandableSectionT
   ...props
 }: ExpandableSectionToggleProps) => (
   <div
-    {...props}
     className={css(
       styles.expandableSection,
       isExpanded && styles.modifiers.expanded,
       styles.modifiers.detached,
+      hasTruncatedContent && styles.modifiers.truncate,
       className
     )}
+    {...props}
   >
     <button
       className={css(styles.expandableSectionToggle)}
       type="button"
       aria-expanded={isExpanded}
       aria-controls={contentId}
+      {...(hasTruncatedContent && { 'aria-hidden': true })}
       onClick={() => onToggle(!isExpanded)}
     >
       {!hasTruncatedContent && (

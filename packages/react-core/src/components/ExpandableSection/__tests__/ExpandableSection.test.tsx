@@ -3,7 +3,7 @@ import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { ExpandableSection } from '../ExpandableSection';
+import { ExpandableSection, ExpandableSectionVariant } from '../ExpandableSection';
 import { ExpandableSectionToggle } from '../ExpandableSectionToggle';
 
 const props = {};
@@ -65,15 +65,15 @@ test('Renders ExpandableSection indented', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-test('Does not render with pf-m-truncate class when truncateContent is not passed', () => {
+test('Does not render with pf-m-truncate class when variant is not passed', () => {
   render(<ExpandableSection {...props}>test</ExpandableSection>);
 
   expect(screen.getByText('test').parentElement).not.toHaveClass('pf-m-truncate');
 });
 
-test('Does not render with pf-m-truncate class when truncateContent is 0', () => {
+test('Does not render with pf-m-truncate class when variant is not truncate', () => {
   render(
-    <ExpandableSection truncateContent={0} {...props}>
+    <ExpandableSection variant={ExpandableSectionVariant.default} {...props}>
       test
     </ExpandableSection>
   );
@@ -81,9 +81,9 @@ test('Does not render with pf-m-truncate class when truncateContent is 0', () =>
   expect(screen.getByText('test').parentElement).not.toHaveClass('pf-m-truncate');
 });
 
-test('Renders with pf-m-truncate class when truncateContent is greater than 0', () => {
+test('Renders with pf-m-truncate class when variant is truncate', () => {
   render(
-    <ExpandableSection truncateContent={3} {...props}>
+    <ExpandableSection variant={ExpandableSectionVariant.truncate} truncateMaxLines={1} {...props}>
       test
     </ExpandableSection>
   );
