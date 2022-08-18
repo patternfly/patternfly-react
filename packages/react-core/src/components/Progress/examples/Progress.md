@@ -7,169 +7,70 @@ propComponents: ['Progress']
 
 ## Examples
 ### Basic
-```ts
-import React from 'react';
-import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
-
-<Progress value={33} title="Title" />
+```ts file="./ProgressBasic.tsx"
 ```
 
 ### Small
-```ts
-import React from 'react';
-import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
-
-<Progress value={33} title="Title" size={ProgressSize.sm} />
+```ts file="./ProgressSmall.tsx"
 ```
 
 ### Large
-```ts
-import React from 'react';
-import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
-
-<Progress value={33} title="Title" size={ProgressSize.lg} />
+```ts file="./ProgressLarge.tsx"
 ```
 
 ### Outside
-```ts
-import React from 'react';
-import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
-
-<Progress value={33} title="Title" measureLocation={ProgressMeasureLocation.outside} />
+```ts file="./ProgressOutside.tsx"
 ```
 
 ### Inside
-```ts
-import React from 'react';
-import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
-
-<Progress value={33} title="Title" measureLocation={ProgressMeasureLocation.inside} />
+```ts file="./ProgressInside.tsx"
 ```
 
 ### Success
-```ts
-import React from 'react';
-import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
-
-<Progress value={100} title="Title" variant={ProgressVariant.success} />
+```ts file="./ProgressSuccess.tsx"
 ```
 
 ### Failure
-```ts
-import React from 'react';
-import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
-
-<Progress value={33} title="Title" variant={ProgressVariant.danger} />
+```ts file="./ProgressFailure.tsx"
 ```
 
 ### Warning
-```ts
-import React from 'react';
-import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
-
-<Progress value={90} title="Title" variant={ProgressVariant.warning} />
+```ts file="./ProgressWarning.tsx"
 ```
 
 ### Inside success
-```ts
-import React from 'react';
-import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
-
-<Progress
-  value={100}
-  title="Title"
-  measureLocation={ProgressMeasureLocation.inside}
-  variant={ProgressVariant.success}
-/>
+```ts file="./ProgressInsideSuccess.tsx"
 ```
 
 ### Outside failure
-```ts
-import React from 'react';
-import { Progress, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
-
-<Progress
-  value={33}
-  title="Title"
-  measureLocation={ProgressMeasureLocation.outside}
-  variant={ProgressVariant.danger}
-/>
+```ts file="./ProgressOutsideFailure.tsx"
 ```
 
 ### Single line
-```ts
-import React from 'react';
-import { Progress, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
-
-<Progress value={33} measureLocation={ProgressMeasureLocation.outside} aria-label="Title"/>
+```ts file="./ProgressSingleLine.tsx"
 ```
 
 ### Without measure
-```ts
-import React from 'react';
-import { Progress, ProgressMeasureLocation } from '@patternfly/react-core';
-
-<Progress value={33} title="Title" measureLocation={ProgressMeasureLocation.none} />
+```ts file="./ProgressWithoutMeasure.tsx"
 ```
 
 ### Failure without measure
-```ts
-import React from 'react';
-import { Progress, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
-
-<Progress
-  value={33}
-  title="Title"
-  measureLocation={ProgressMeasureLocation.none}
-  variant={ProgressVariant.danger}
-/>
+```ts file="./ProgressFailureWithoutMeasure.tsx"
 ```
 
 
 ### Finite step
-```ts
-import React from 'react';
-import { Progress, ProgressMeasureLocation } from '@patternfly/react-core';
-
-<Progress value={2} min={0} max={5} title="Title" measureLocation={ProgressMeasureLocation.top} label="2 of 5" valueText="2 of 5"/>
+```ts file="./ProgressFiniteStep.tsx"
 ```
 
-### Progress (step instruction)
-```ts
-import React from 'react';
-import { Progress} from '@patternfly/react-core';
-
-<Progress value={2} title="Title" min={0} max={5} label="Step 2: Copying files" valueText="Step 2: Copying files" />
+### Progress with step instructions
+```ts file="./ProgressStepInstruction.tsx"
 ```
 
 ### Truncate title
-```ts
-import React from 'react';
-import { Progress } from '@patternfly/react-core';
-
-<Progress value={33} title="Very very very very very very very very very very very long title which should be truncated if it does not fit onto one line above the progress bar" isTitleTruncated />
+```ts file="./ProgressTruncateTitle.tsx"
 ```
 
 ### Title outside of progress bar
-```ts
-import React from 'react';
-import {
-    DescriptionList, 
-    DescriptionListGroup, 
-    DescriptionListTerm, 
-    DescriptionListDescription,
-    Progress, 
-    ProgressMeasureLocation,
-} from '@patternfly/react-core';
-
-<DescriptionList>
-  <DescriptionListGroup>
-    <DescriptionListTerm id="progress-label">
-        Title outside of progress bar
-    </DescriptionListTerm>
-    <DescriptionListDescription>
-      <Progress value={33} measureLocation={ProgressMeasureLocation.outside} aria-labelledby="progress-label"/>
-    </DescriptionListDescription>
-  </DescriptionListGroup>
-</DescriptionList>
+```ts file="./ProgressTitleOutsideOfProgressBar.tsx"
 ```
