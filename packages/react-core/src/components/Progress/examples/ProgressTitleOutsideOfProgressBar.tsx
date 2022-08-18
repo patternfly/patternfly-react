@@ -11,9 +11,13 @@ import {
 export const ProgressTitleOutsideOfProgressBar: React.FunctionComponent = () => (
   <DescriptionList>
     <DescriptionListGroup>
-      <DescriptionListTerm id="progress-label">Title outside of progress bar</DescriptionListTerm>
+      <DescriptionListTerm id="title-outside-progress-example-label">Title outside of progress bar</DescriptionListTerm>
       <DescriptionListDescription>
-        <Progress value={33} measureLocation={ProgressMeasureLocation.outside} aria-labelledby="progress-label" />
+        <Progress
+          value={33}
+          measureLocation={ProgressMeasureLocation.outside}
+          aria-labelledby="title-outside-progress-example-label"
+        />
       </DescriptionListDescription>
     </DescriptionListGroup>
   </DescriptionList>

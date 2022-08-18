@@ -63,7 +63,7 @@ propComponents: ['Progress']
 ```ts file="./ProgressFiniteStep.tsx"
 ```
 
-### Progress (step instruction)
+### Progress with step instructions
 ```ts file="./ProgressStepInstruction.tsx"
 ```
 
