@@ -3,10 +3,14 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
-import { Button, ButtonVariant } from '../Button';
+import { Button, ButtonVariant } from '../../../components/Button';
 import { Step, SubStep, WizardNavStepFunction } from './types';
 
-export interface WizardComposableFooterProps {
+/**
+ * Hosts the standard structure of a footer with ties to the active step so that text for buttons can vary from step to step.
+ */
+
+export interface WizardFooterProps {
   /** The currently active WizardStep */
   activeStep: Step | SubStep;
   /** Next button callback */
@@ -25,7 +29,7 @@ export interface WizardComposableFooterProps {
   disableBackButton?: boolean;
 }
 
-export const WizardComposableFooter = ({
+export const WizardFooter = ({
   onNext,
   onBack,
   onClose,
@@ -34,19 +38,19 @@ export const WizardComposableFooter = ({
   nextButtonText = 'Next',
   backButtonText = 'Back',
   cancelButtonText = 'Cancel'
-}: WizardComposableFooterProps) => (
+}: WizardFooterProps) => (
   <footer className={css(styles.wizardFooter)}>
-    <Button variant={ButtonVariant.primary} type="submit" onClick={onNext} isDisabled={activeStep.disableNext}>
-      {activeStep.nextButtonText || nextButtonText}
+    <Button variant={ButtonVariant.primary} type="submit" onClick={onNext} isDisabled={activeStep?.disableNext}>
+      {activeStep?.nextButtonText || nextButtonText}
     </Button>
 
-    {!activeStep.hideBackButton && (
+    {!activeStep?.hideBackButton && (
       <Button variant={ButtonVariant.secondary} onClick={onBack} isDisabled={disableBackButton}>
         {backButtonText}
       </Button>
     )}
 
-    {!activeStep.hideCancelButton && (
+    {!activeStep?.hideCancelButton && (
       <div className={styles.wizardFooterCancel}>
         <Button variant={ButtonVariant.link} onClick={onClose}>
           {cancelButtonText}
@@ -56,4 +60,4 @@ export const WizardComposableFooter = ({
   </footer>
 );
 
-WizardComposableFooter.displayName = 'WizardComposableFooter';
+WizardFooter.displayName = 'WizardFooter';

@@ -41,8 +41,6 @@ module.exports = (baseSourceMD, sourceProps) => {
   sourceMD(path.join(reactCorePath, '/components/**/examples/*.md'), 'react');
   sourceMD(path.join(reactCorePath, '/next/components/**/examples/*.md'), 'react-next');
   sourceMD(path.join(reactCorePath, '/**/demos/**/*.md'), 'react-demos');
-  sourceMD(path.join(reactCorePath, '/**/Wizard/examples/*.md'), 'react-legacy');
-  sourceMD(path.join(reactCorePath, '/**/WizardComposable/examples/*.md'), 'react-composable');
 
   // React-table MD
   sourceMD(path.join(reactTablePath, '/**/TableComposable/examples/*.md'), 'react-composable');

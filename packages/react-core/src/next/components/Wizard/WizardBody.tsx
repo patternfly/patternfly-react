@@ -3,7 +3,11 @@ import React from 'react';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { css } from '@patternfly/react-styles';
 
-export interface WizardComposableBodyProps {
+/**
+ * Used as a wrapper for WizardStep content, where the wrapping element is customizable.
+ */
+
+export interface WizardBodyProps {
   children?: React.ReactNode | React.ReactNode[];
   /** Set to true to remove the default body padding */
   hasNoBodyPadding?: boolean;
@@ -15,21 +19,16 @@ export interface WizardComposableBodyProps {
   wrapperElement?: React.ElementType;
 }
 
-export const WizardComposableBody = ({
+export const WizardBody = ({
   children,
   hasNoBodyPadding = false,
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledBy,
   wrapperElement: Wrapper = 'div'
-}: WizardComposableBodyProps) => (
-  <Wrapper
-    aria-label={ariaLabel}
-    aria-labelledby={ariaLabelledBy}
-    className={css(styles.wizardMain)}
-    {...(Wrapper === 'div' && { role: 'main' })}
-  >
+}: WizardBodyProps) => (
+  <Wrapper aria-label={ariaLabel} aria-labelledby={ariaLabelledBy} className={css(styles.wizardMain)}>
     <div className={css(styles.wizardMainBody, hasNoBodyPadding && styles.modifiers.noPadding)}>{children}</div>
   </Wrapper>
 );
 
-WizardComposableBody.displayName = 'WizardComposableBody';
+WizardBody.displayName = 'WizardBody';

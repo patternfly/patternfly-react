@@ -1,9 +1,6 @@
 import React from 'react';
 
 import {
-  WizardComposable,
-  WizardComposableStep,
-  WizardHeader,
   FormGroup,
   TextInput,
   Drawer,
@@ -15,19 +12,25 @@ import {
   DrawerHead,
   DrawerActions,
   DrawerCloseButton,
-  WizardComposableBody,
-  WizardComposableFooter,
-  useWizardContext,
   WizardNavItem,
-  Step,
-  useWizardFooter
+  WizardHeader
 } from '@patternfly/react-core';
+import {
+  Step,
+  Wizard,
+  WizardStep,
+  WizardBody,
+  WizardFooter,
+  useWizardFooter,
+  WizardStepProps,
+  useWizardContext
+} from '@patternfly/react-core/next';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
 const CustomWizardFooter = () => {
   const { activeStep, onNext, onBack, onClose } = useWizardContext();
-  return <WizardComposableFooter activeStep={activeStep} onNext={onNext} onBack={onBack} onClose={onClose} />;
+  return <WizardFooter activeStep={activeStep} onNext={onNext} onBack={onBack} onClose={onClose} />;
 };
 
 const CustomNavItem = () => {
@@ -37,7 +40,7 @@ const CustomNavItem = () => {
   return (
     <WizardNavItem
       id={step.id}
-      content={step.name}
+      content={<span style={{ color: 'var(--pf-global--default-color--200)' }}>Custom item</span>}
       isCurrent={activeStep.id === step.id}
       step={steps.indexOf(step) + 1}
       isDisabled={step.isDisabled || !step.visited}
@@ -63,7 +66,7 @@ const StepContentWithDrawer = () => {
           </DrawerPanelContent>
         }
       >
-        <WizardComposableBody>
+        <WizardBody>
           <Flex direction={{ default: 'column' }}>
             {!isDrawerExpanded && (
               <Button isInline variant="link" onClick={() => setIsDrawerExpanded(prevExpanded => !prevExpanded)}>
@@ -75,7 +78,7 @@ const StepContentWithDrawer = () => {
               <TextInput aria-label="Some Text Input Label" />
             </FormGroup>
           </Flex>
-        </WizardComposableBody>
+        </WizardBody>
       </DrawerContent>
     </Drawer>
   );
@@ -120,36 +123,38 @@ const StepWithCustomFooter = () => {
   return <>Step 3 content w/ custom async footer</>;
 };
 
+const CustomStepFour = (props: WizardStepProps) => <div {...props} />;
+
 export const WizardKitchenSink: React.FunctionComponent = () => (
-  <WizardComposable
+  <Wizard
     height={400}
     header={<WizardHeader title="You're a wizard, Harry" closeButtonAriaLabel="Close header" />}
     footer={<CustomWizardFooter />}
     nav={{ forceStepVisit: true, isExpandable: true }}
   >
-    <WizardComposableStep id="first-step" name="First step" includeStepBody={false}>
+    <WizardStep id="sink-first-step" name="First step" body={null}>
       <StepContentWithDrawer />
-    </WizardComposableStep>
-    <WizardComposableStep
-      id="second-step"
+    </WizardStep>
+    <WizardStep
+      id="sink-second-step"
       name="Second step"
       steps={[
-        <WizardComposableStep id="sub-step-one" key="substep-one" name="Substep 1">
+        <WizardStep id="sink-sub-step-one" key="substep-one" name="Substep 1">
           Substep 1 content
-        </WizardComposableStep>,
-        <WizardComposableStep id="sub-step-two" key="substep-two" name="Substep 2">
+        </WizardStep>,
+        <WizardStep id="sink-sub-step-two" key="substep-two" name="Substep 2">
           Substep 2 content
-        </WizardComposableStep>
+        </WizardStep>
       ]}
     />
-    <WizardComposableStep id="third-step" name="Third step" navItem={<CustomNavItem />}>
+    <WizardStep id="sink-third-step" name="Third step" navItem={<CustomNavItem />}>
       <StepWithCustomFooter />
-    </WizardComposableStep>
-    <WizardComposableStep id="fourth-step" name="Fourth step">
-      Step 4 content
-    </WizardComposableStep>
-    <WizardComposableStep id="review-step" name="Review" nextButtonText="Submit" disableNext>
+    </WizardStep>
+    <CustomStepFour id="sink-fourth-step" name="Fourth step">
+      <WizardBody>Step 4 content</WizardBody>
+    </CustomStepFour>
+    <WizardStep id="sink-review-step" name="Review" nextButtonText="Submit" disableNext>
       Review step content
-    </WizardComposableStep>
-  </WizardComposable>
+    </WizardStep>
+  </Wizard>
 );

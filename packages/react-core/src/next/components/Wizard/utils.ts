@@ -1,22 +1,24 @@
 import React from 'react';
 
 import { Step, SubStep, WizardNavStepData } from './types';
-import { WizardComposableStep, WizardComposableStepProps } from './WizardComposableStep';
+import { WizardStep, WizardStepProps } from './WizardStep';
+
+function hasWizardStepProps(props: WizardStepProps | any): props is WizardStepProps {
+  return props.name !== undefined && props.id !== undefined && props.children !== undefined;
+}
 
 /**
  * Accumulate list of step & sub-step props pulled from child components
  * @param children
  * @returns (Step | SubStep)[]
  */
-export const buildSteps = (
-  children: React.ReactElement<WizardComposableStepProps> | React.ReactElement<WizardComposableStepProps>[]
-) =>
+export const buildSteps = (children: React.ReactElement<WizardStepProps> | React.ReactElement<WizardStepProps>[]) =>
   React.Children.toArray(children).reduce((acc: (Step | SubStep)[], child) => {
-    if (React.isValidElement(child) && typeof child.type !== 'string') {
-      if (child.type === WizardComposableStep) {
+    if (React.isValidElement(child)) {
+      if (child.type === WizardStep || hasWizardStepProps(child.props)) {
         // Omit "children" and use the whole "child" (WizardStep) for the component prop. Sub-steps will do the same.
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const { steps: subSteps, id, children, ...stepProps } = child.props as WizardComposableStepProps;
+        const { steps: subSteps, id, children, ...stepProps } = child.props as WizardStepProps;
 
         acc.push({
           id,
@@ -33,7 +35,7 @@ export const buildSteps = (
           })
         });
       } else {
-        throw new Error('Wizard only accepts children of type WizardComposableStep');
+        throw new Error('Wizard only accepts children of type WizardStep');
       }
     }
 

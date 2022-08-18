@@ -1,5 +1,5 @@
 import React from 'react';
-import { WizardNavItemProps, WizardNavProps } from '../Wizard';
+import { WizardNavItemProps, WizardNavProps } from '../../../components/Wizard';
 
 export interface Step {
   /** Name of the step's nav item */
@@ -74,13 +74,13 @@ export function isCustomWizardFooter(
 }
 
 export function isWizardBasicStep(step: Step | SubStep): step is Step {
-  return (step as Step).subStepIds === undefined && !isWizardSubStep(step);
+  return (step as Step)?.subStepIds === undefined && !isWizardSubStep(step);
 }
 
 export function isWizardSubStep(step: Step | SubStep): step is SubStep {
-  return (step as SubStep).parentId !== undefined;
+  return (step as SubStep)?.parentId !== undefined;
 }
 
 export function isWizardParentStep(step: Step | SubStep): step is Step {
-  return (step as Step).subStepIds !== undefined;
+  return (step as Step)?.subStepIds !== undefined;
 }

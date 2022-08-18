@@ -2,7 +2,7 @@ import React from 'react';
 import { Step, SubStep } from './types';
 import { getActiveStep } from './utils';
 
-export interface WizardComposableContextProps {
+export interface WizardContextProps {
   steps: (Step | SubStep)[];
   activeStep: Step | SubStep;
   footer: React.ReactElement;
@@ -15,9 +15,9 @@ export interface WizardComposableContextProps {
   setFooter(footer: React.ReactElement): void;
 }
 
-export const WizardComposableContext = React.createContext({} as WizardComposableContextProps);
+export const WizardContext = React.createContext({} as WizardContextProps);
 
-interface WizardComposableContextRenderProps {
+interface WizardContextRenderProps {
   steps: (Step | SubStep)[];
   activeStep: Step | SubStep;
   footer: React.ReactElement;
@@ -26,11 +26,11 @@ interface WizardComposableContextRenderProps {
   onClose(): void;
 }
 
-interface WizardComposableContextProviderProps {
+export interface WizardContextProviderProps {
   steps: (Step | SubStep)[];
   currentStepIndex: number;
   footer: React.ReactElement;
-  children: React.ReactElement | ((props: WizardComposableContextRenderProps) => React.ReactElement);
+  children: React.ReactElement | ((props: WizardContextRenderProps) => React.ReactElement);
   onNext(): void;
   onBack(): void;
   onClose(): void;
@@ -40,7 +40,7 @@ interface WizardComposableContextProviderProps {
 }
 
 // eslint-disable-next-line patternfly-react/no-anonymous-functions
-export const WizardComposableContextProvider: React.FunctionComponent<WizardComposableContextProviderProps> = ({
+export const WizardContextProvider: React.FunctionComponent<WizardContextProviderProps> = ({
   steps: initialSteps,
   footer: initialFooter,
   currentStepIndex,
@@ -58,7 +58,7 @@ export const WizardComposableContextProvider: React.FunctionComponent<WizardComp
 
   // When the active step changes and the newly active step isn't visited, set the visited flag to true.
   React.useEffect(() => {
-    if (!activeStep.visited) {
+    if (activeStep && !activeStep?.visited) {
       setSteps(prevSteps =>
         prevSteps.map(step => {
           if (step.id === activeStep.id) {
@@ -69,10 +69,10 @@ export const WizardComposableContextProvider: React.FunctionComponent<WizardComp
         })
       );
     }
-  }, [activeStep.id, activeStep.visited]);
+  }, [activeStep]);
 
   return (
-    <WizardComposableContext.Provider
+    <WizardContext.Provider
       value={{
         steps,
         activeStep,
@@ -87,9 +87,9 @@ export const WizardComposableContextProvider: React.FunctionComponent<WizardComp
       }}
     >
       {typeof children === 'function' ? children({ activeStep, steps, footer, onNext, onBack, onClose }) : children}
-    </WizardComposableContext.Provider>
+    </WizardContext.Provider>
   );
 };
 
-export const WizardComposableContextConsumer = WizardComposableContext.Consumer;
-export const useWizardContext = () => React.useContext(WizardComposableContext);
+export const WizardContextConsumer = WizardContext.Consumer;
+export const useWizardContext = () => React.useContext(WizardContext);

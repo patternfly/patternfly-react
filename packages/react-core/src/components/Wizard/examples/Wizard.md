@@ -13,7 +13,7 @@ import SlackHashIcon from '@patternfly/react-icons/dist/esm/icons/slack-hash-ico
 import FinishedStep from './FinishedStep';
 import SampleForm from './SampleForm';
 
-If you seek a Wizard solution that allows for more composition, see the [React composition](/components/wizard/react-composition) tab.
+If you seek a Wizard solution that allows for more composition, see the [React next](/components/wizard/react-next) tab.
 
 ## Examples
 
@@ -56,7 +56,7 @@ class SimpleWizard extends React.Component {
   render() {
     const steps = [
       { name: 'First step', component: <p>Step 1 content</p> },
-      { name: 'Second step', component: <p>Step 2 content</p>, isDisabled: true},
+      { name: 'Second step', component: <p>Step 2 content</p>, isDisabled: true },
       { name: 'Third step', component: <p>Step 3 content</p> },
       { name: 'Fourth step', component: <p>Step 4 content</p>, isDisabled: true },
       { name: 'Review', component: <p>Review step content</p>, nextButtonText: 'Finish' }
@@ -147,9 +147,24 @@ class IncrementallyEnabledStepsWizard extends React.Component {
 
     const steps = [
       { id: 'incrementally-enabled-1', name: 'First step', component: <p>Step 1 content</p> },
-      { id: 'incrementally-enabled-2', name: 'Second step', component: <p>Step 2 content</p>, canJumpTo: stepIdReached >= 2 },
-      { id: 'incrementally-enabled-3', name: 'Third step', component: <p>Step 3 content</p>, canJumpTo: stepIdReached >= 3 },
-      { id: 'incrementally-enabled-4', name: 'Fourth step', component: <p>Step 4 content</p>, canJumpTo: stepIdReached >= 4 },
+      {
+        id: 'incrementally-enabled-2',
+        name: 'Second step',
+        component: <p>Step 2 content</p>,
+        canJumpTo: stepIdReached >= 2
+      },
+      {
+        id: 'incrementally-enabled-3',
+        name: 'Third step',
+        component: <p>Step 3 content</p>,
+        canJumpTo: stepIdReached >= 3
+      },
+      {
+        id: 'incrementally-enabled-4',
+        name: 'Fourth step',
+        component: <p>Step 4 content</p>,
+        canJumpTo: stepIdReached >= 4
+      },
       {
         id: 'incrementally-enabled-5',
         name: 'Review',

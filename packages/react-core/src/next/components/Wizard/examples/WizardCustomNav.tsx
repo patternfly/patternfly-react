@@ -1,12 +1,6 @@
 import React from 'react';
-import {
-  Step,
-  SubStep,
-  WizardComposable,
-  WizardComposableStep,
-  WizardNav,
-  WizardNavItem
-} from '@patternfly/react-core';
+import { WizardNav, WizardNavItem } from '@patternfly/react-core';
+import { Step, SubStep, Wizard, WizardStep } from '@patternfly/react-core/next';
 
 export const WizardCustomNav: React.FunctionComponent = () => {
   const nav = (
@@ -31,16 +25,16 @@ export const WizardCustomNav: React.FunctionComponent = () => {
   );
 
   return (
-    <WizardComposable height={400} nav={nav}>
-      <WizardComposableStep name="First step" id="first-step">
+    <Wizard height={400} nav={nav}>
+      <WizardStep name="First step" id="cnav-first-step">
         <p>Did you say...custom nav?</p>
-      </WizardComposableStep>
-      <WizardComposableStep name="Second step" id="second-step">
+      </WizardStep>
+      <WizardStep name="Second step" id="cnav-second-step">
         <p>Step 2 content</p>
-      </WizardComposableStep>
-      <WizardComposableStep name="Review" id="fifth-step" nextButtonText="Wrap it up">
+      </WizardStep>
+      <WizardStep name="Review" id="cnav-review-step" nextButtonText="Wrap it up">
         <p>Review step content</p>
-      </WizardComposableStep>
-    </WizardComposable>
+      </WizardStep>
+    </Wizard>
   );
 };

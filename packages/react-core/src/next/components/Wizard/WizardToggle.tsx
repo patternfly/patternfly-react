@@ -5,8 +5,8 @@ import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 import CaretDownIcon from '@patternfly/react-icons/dist/esm/icons/caret-down-icon';
 
-import { KeyTypes } from '../../helpers/constants';
-import { WizardNav, WizardNavItem } from '../Wizard';
+import { KeyTypes } from '../../../helpers/constants';
+import { WizardNav, WizardNavItem } from '../../../components/Wizard';
 import {
   Step,
   SubStep,
@@ -18,7 +18,11 @@ import {
   isWizardParentStep
 } from './types';
 
-export interface WizardComposableToggleProps {
+/**
+ * Used to toggle between step content, including the body and footer. This is also where the nav and its expandability is controlled.
+ */
+
+export interface WizardToggleProps {
   /** List of steps and/or sub-steps */
   steps: (Step | SubStep)[];
   /** The currently active WizardStep */
@@ -35,7 +39,7 @@ export interface WizardComposableToggleProps {
   unmountInactiveSteps?: boolean;
 }
 
-export const WizardComposableToggle = ({
+export const WizardToggle = ({
   steps,
   activeStep,
   footer,
@@ -43,7 +47,7 @@ export const WizardComposableToggle = ({
   goToStepByIndex,
   unmountInactiveSteps = true,
   'aria-label': ariaLabel = 'Wizard toggle'
-}: WizardComposableToggleProps) => {
+}: WizardToggleProps) => {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
   const isActiveSubStep = isWizardSubStep(activeStep);
 
@@ -68,9 +72,9 @@ export const WizardComposableToggle = ({
 
   // Only render the active step when unmountInactiveSteps is true
   const bodyContent = unmountInactiveSteps
-    ? activeStep.component
+    ? activeStep?.component
     : steps.map(step => {
-        if (activeStep.name === step.name) {
+        if (activeStep?.name === step.name) {
           return step.component;
         }
 
@@ -108,7 +112,7 @@ export const WizardComposableToggle = ({
                     firstSubStepIndex = subStepIndex;
                   }
 
-                  if (activeStep.id === subStep.id) {
+                  if (activeStep?.id === subStep.id) {
                     hasActiveChild = true;
                   }
 
@@ -119,7 +123,7 @@ export const WizardComposableToggle = ({
                       key={subStep.id}
                       id={subStep.id}
                       content={subStep.name}
-                      isCurrent={activeStep.id === subStep.id}
+                      isCurrent={activeStep?.id === subStep.id}
                       isDisabled={subStep.isDisabled || (nav?.forceStepVisit && !subStep.visited)}
                       step={subStepIndex}
                       onNavItemClick={goToStepByIndex}
@@ -158,7 +162,7 @@ export const WizardComposableToggle = ({
                       key={step.id}
                       id={step.id}
                       content={step.name}
-                      isCurrent={activeStep.id === step.id}
+                      isCurrent={activeStep?.id === step.id}
                       isDisabled={step.isDisabled || (nav?.forceStepVisit && !step.visited)}
                       step={stepIndex}
                       onNavItemClick={goToStepByIndex}
@@ -169,7 +173,7 @@ export const WizardComposableToggle = ({
             })}
           </WizardNav>
         );
-      }, [activeStep.id, goToStepByIndex, isNavOpen, nav, steps]);
+      }, [activeStep?.id, goToStepByIndex, isNavOpen, nav, steps]);
 
   return (
     <>
@@ -181,10 +185,10 @@ export const WizardComposableToggle = ({
       >
         <span className={css(styles.wizardToggleList)}>
           <span className={css(styles.wizardToggleListItem)}>
-            {activeStep.name}
+            {activeStep?.name}
             {isActiveSubStep && <AngleRightIcon className={css(styles.wizardToggleSeparator)} aria-hidden="true" />}
           </span>
-          {isActiveSubStep && <span className={css(styles.wizardToggleListItem)}>{activeStep.name}</span>}
+          {isActiveSubStep && <span className={css(styles.wizardToggleListItem)}>{activeStep?.name}</span>}
         </span>
 
         <span className={css(styles.wizardToggleIcon)}>
@@ -203,4 +207,4 @@ export const WizardComposableToggle = ({
   );
 };
 
-WizardComposableToggle.displayName = 'WizardComposableToggle';
+WizardToggle.displayName = 'WizardToggle';

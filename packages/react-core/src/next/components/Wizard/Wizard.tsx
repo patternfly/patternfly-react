@@ -12,14 +12,19 @@ import {
   CustomWizardNavFunction
 } from './types';
 import { buildSteps, normalizeNavStep } from './utils';
-import { useWizardContext, WizardComposableContextProvider } from './WizardComposabeContext';
-import { WizardComposableStepProps } from './WizardComposableStep';
-import { WizardComposableFooter } from './WizardComposableFooter';
-import { WizardComposableToggle } from './WizardComposableToggle';
+import { useWizardContext, WizardContextProvider } from './WizardContext';
+import { WizardStepProps } from './WizardStep';
+import { WizardFooter } from './WizardFooter';
+import { WizardToggle } from './WizardToggle';
 
-export interface WizardComposableProps extends React.HTMLProps<HTMLDivElement> {
-  /** Step, footer, or header child components */
-  children: React.ReactElement<WizardComposableStepProps> | React.ReactElement<WizardComposableStepProps>[];
+/**
+ * Wrapper for all steps and hosts state, including navigation helpers, within context.
+ * The WizardContext provided by default gives any child of Wizard access to those resources.
+ */
+
+export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
+  /** Step components */
+  children: React.ReactElement<WizardStepProps> | React.ReactElement<WizardStepProps>[];
   /** Wizard header */
   header?: React.ReactNode;
   /** Wizard footer */
@@ -46,7 +51,7 @@ export interface WizardComposableProps extends React.HTMLProps<HTMLDivElement> {
   onClose?(): void;
 }
 
-export const WizardComposable = (props: WizardComposableProps) => {
+export const Wizard = (props: WizardProps) => {
   const { startIndex = 1, children, footer, onNavByIndex, onNext, onBack, onSave, onClose, ...internalProps } = props;
   const [currentStepIndex, setCurrentStepIndex] = React.useState(startIndex);
   const steps = buildSteps(children);
@@ -122,7 +127,7 @@ export const WizardComposable = (props: WizardComposableProps) => {
   };
 
   return (
-    <WizardComposableContextProvider
+    <WizardContextProvider
       steps={steps}
       currentStepIndex={currentStepIndex}
       footer={isCustomWizardFooter(footer) && footer}
@@ -133,24 +138,24 @@ export const WizardComposable = (props: WizardComposableProps) => {
       goToStepByName={goToStepByName}
       goToStepByIndex={goToStepByIndex}
     >
-      <WizardComposableInternal {...internalProps}>{children}</WizardComposableInternal>
-    </WizardComposableContextProvider>
+      <WizardInternal {...internalProps} footer={footer}>
+        {children}
+      </WizardInternal>
+    </WizardContextProvider>
   );
 };
 
 // eslint-disable-next-line patternfly-react/no-anonymous-functions
-const WizardComposableInternal = ({ height, width, className, header, nav, ...restProps }: WizardComposableProps) => {
-  const { activeStep, steps, footer, onNext, onBack, onClose, goToStepByIndex } = useWizardContext();
+const WizardInternal = ({ height, width, className, header, footer, nav, ...divProps }: WizardProps) => {
+  const { activeStep, steps, footer: customFooter, onNext, onBack, onClose, goToStepByIndex } = useWizardContext();
 
-  const wizardFooter = isCustomWizardFooter(footer) ? (
-    footer
-  ) : (
-    <WizardComposableFooter
+  const wizardFooter = customFooter || (
+    <WizardFooter
       activeStep={activeStep}
       onNext={onNext}
       onBack={onBack}
       onClose={onClose}
-      disableBackButton={activeStep.id === steps[0].id}
+      disableBackButton={activeStep?.id === steps[0]?.id}
       {...footer}
     />
   );
@@ -162,10 +167,10 @@ const WizardComposableInternal = ({ height, width, className, header, nav, ...re
         ...(height ? { height } : {}),
         ...(width ? { width } : {})
       }}
-      {...restProps}
+      {...divProps}
     >
       {header}
-      <WizardComposableToggle
+      <WizardToggle
         steps={steps}
         activeStep={activeStep}
         footer={wizardFooter}
@@ -176,4 +181,4 @@ const WizardComposableInternal = ({ height, width, className, header, nav, ...re
   );
 };
 
-WizardComposable.displayName = 'WizardComposable';
+Wizard.displayName = 'Wizard';

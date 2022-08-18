@@ -1,5 +1,5 @@
 import React from 'react';
-import { useWizardContext } from '../WizardComposabeContext';
+import { useWizardContext } from '../WizardContext';
 
 /**
  * Set a unique footer for the wizard. stepId is only required if inactive steps are hidden instead of unmounted.
