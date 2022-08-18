@@ -105,7 +105,7 @@ export const PageSection: React.FunctionComponent<PageSectionProps> = ({
   React.useEffect(() => {
     if (hasOverflowScroll && !ariaLabel) {
       /* eslint-disable no-console */
-      console.warn('An accessible aria-label is required when hasOverflowScroll is set to true.');
+      console.warn('PageSection: An accessible aria-label is required when hasOverflowScroll is set to true.');
     }
   }, [hasOverflowScroll, ariaLabel]);
 
